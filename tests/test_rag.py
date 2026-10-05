@@ -43,3 +43,13 @@ def test_intencion_pais_reconoce_paises_y_gentilicios():
         plano = _sin_tildes(consulta)
         assert INTENCION_PAISES.search(plano), consulta
         assert codigo in {c for p, c in PAIS_NOMBRADO.items() if p in plano}, consulta
+
+
+def test_curriculo_australiano_es_marco_no_pais(grafo):
+    """«currículo australiano» apunta al marco ACARA: no debe reforzar los objetivos de Australia como país."""
+    from goes_science_kg.rag import GraphRAG
+
+    nodos, aristas = grafo
+    ctx = GraphRAG(nodos, aristas).recuperar("¿Qué descriptores del currículo australiano cubren la selección natural?")
+    primeros = [n.id for n, _ in ctx.nodos[:5]]
+    assert not any(i.startswith("OP:AU-") for i in primeros[:1]), primeros

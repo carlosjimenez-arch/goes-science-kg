@@ -158,7 +158,8 @@ def _metricas(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
 
 
 def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
-    """Aplica mover / nuevo / fusionar al grafo en memoria y compara métricas antes y después."""
+    """Aplica mover / nuevo / fusionar / dividir / revisar (y quitar_conceptos) al grafo en memoria y compara
+    métricas antes y después."""
     from goes_science_kg import conceptos as cp
     from goes_science_kg.modelos import Arista as A
     from goes_science_kg.modelos import Confianza
@@ -181,8 +182,23 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
             elif not cid:
                 sin_resolver.append(nombre)
 
-    for a in p["acciones"]:
+    # Etiquetas que retiran las propuestas de OTRAS asignaturas del mismo ciclo (p. ej., Biología deja de tratar
+    # «Química de los carbohidratos» en 10.°): afectan el primer grado de conceptos de esta asignatura.
+    cruzadas = []
+    for otra in sorted(ruta("asignaturas").glob(f"*/propuesta/propuesta_G{g0:02d}-G{g1:02d}.json")):
+        if otra.parent.parent.name == asig:
+            continue
+        for a in json.loads(otra.read_text(encoding="utf-8"))["acciones"]:
+            if a.get("quitar_conceptos"):
+                cruzadas.append({**a, "accion": "_quitar", "origen": otra.parent.parent.name})
+    for a in cruzadas + p["acciones"]:
         afectados = [f"TEMA:{t}" for t in a.get("temas_afectados", [])]
+        if a.get("quitar_conceptos"):
+            # Cualquier acción puede retirar etiquetas que no corresponden al tema reformulado.
+            quitar = {por_nombre.get(n.lower()) for n in a["quitar_conceptos"]} - {None}
+            sin_resolver += [n for n in a["quitar_conceptos"] if n.lower() not in por_nombre]
+            nuevas_a = [x for x in nuevas_a if not (x.origen in afectados and x.destino in quitar
+                                                     and x.tipo == TipoArista.TRABAJA)]
         if a["accion"] == "mover" and a.get("grado_propuesto"):
             for t in afectados:
                 if t in nuevos_n:
@@ -230,7 +246,9 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
     pendientes = [s for s in analizar(asig, list(nuevos_n.values()), nuevas_a, ev)["secuencia"]
                   if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"]
     return {"antes": antes, "despues": despues, "secuencia_alta_pendiente": pendientes,
-            "conceptos_no_resueltos": sorted(set(sin_resolver))}
+            "conceptos_no_resueltos": sorted(set(sin_resolver)),
+            "quitas_de_otras_asignaturas": [{"asignatura": a["origen"], "accion": a["n"], "temas": a["temas_afectados"],
+                                             "conceptos": a["quitar_conceptos"]} for a in cruzadas]}
 
 
 # -- Resumen de todas las propuestas -----------------------------------------------------------------
@@ -259,12 +277,15 @@ def escribir_resumen() -> str:
           "pendiente de la revisión del equipo de Ciencias del MINED. Ninguno quita temas y todos conservan el "
           "total de su ciclo.", "",
           "**Verificación:** `gskg propuesta simular` aplica las acciones sobre el grafo (mover, fusionar, crear, "
-          "reformular, dividir), recalcula el diagnóstico y compara antes y después:", "",
+          "reformular, dividir y retirar etiquetas que un tema reformulado deja de trabajar), recalcula el diagnóstico "
+          "y compara antes y después. También aplica las etiquetas que retiran las propuestas de otras asignaturas del "
+          "mismo ciclo (p. ej., Biología 10.° deja de tratar la química de los carbohidratos):", "",
           "- *Errores de secuencia (alta)*: prerrequisitos de confianza alta que la malla enseña después del concepto "
-          "que los necesita.",
+          "que los necesita. Los que quedan son decisiones abiertas en cada informe.",
           "- *Llegan ≥2 grados tarde*: conceptos del ciclo que El Salvador introduce dos o más grados después que la "
-          "mediana de Uruguay, Colombia y Singapur. No aplica (n/a) en 10.°–11.°, porque los currículos de los países "
-          "en el grafo llegan solo a 9.°.",
+          "mediana de los seis países del grafo (Uruguay, Colombia, Singapur, Inglaterra, Australia y Japón), con "
+          "grados equivalentes por edad. No aplica (n/a) en 10.°–11.°, porque los currículos de los países en el grafo "
+          "llegan solo a 9.°.",
           "- *Desfase medio*: promedio de |grado SV − mediana de países| de los conceptos comparables del ciclo.", "",
           "| Asignatura | Ciclo | Acciones | Errores de secuencia (alta) | Llegan ≥2 grados tarde | Desfase medio "
           "| Documentos |", "|---|---|---|---|---|---|---|", *filas, "",

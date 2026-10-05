@@ -45,6 +45,7 @@ Química no llega tarde en 5.° y 6.°: esos grados ya trabajan estructura atóm
 
 **4. Menos abstracción en 5.° y química del aire y de los materiales (acciones 2, 3 y 11).**
 - Los números cuánticos (3.10) se reformulan como niveles de energía, porque requieren el modelo mecanocuántico de 10.°.
+  El tema deja de trabajar *Números cuánticos*, que pasa a Bachillerato.
 - Se agrega un tema sobre la composición del aire y los contaminantes (CO 4.5, JP 5, SG 5, UY 5).
 - En 8.°, después de los sólidos cristalinos, un tema relaciona la estructura de metales, cerámicas y materiales
   compuestos con sus propiedades.
@@ -67,7 +68,8 @@ Química no llega tarde en 5.° y 6.°: esos grados ya trabajan estructura atóm
 Todos los grados superan el 15 %. 6.° y 7.° suben; 8.° baja.
 
 ## Prerrequisitos que se ordenan
-Lo comprobó un script de validación. Ningún concepto queda antes que sus prerrequisitos y todos los conceptos están en el
+Lo comprobó la simulación (`gskg propuesta simular`). Los errores de secuencia de confianza alta del ciclo bajan de 8 a 1;
+solo queda *Catalizadores* en el tema de enzimas de Biología (decisión abierta 1). Todos los conceptos están en el
 vocabulario.
 - La conservación de la masa (6.°) llega antes del balanceo (7.°).
 - Las sustancias puras (6.°) llegan después del modelo de partículas (5.°).
@@ -84,8 +86,11 @@ En los demás casos, el prerrequisito queda en el **mismo grado**. Al ordenar la
 ## Decisiones abiertas para el MINED
 1. **Datos que conviene verificar.** Algunos conceptos aparecen en 10.° aunque ya se trabajan antes:
    - *Calor como energía en tránsito*: la unidad 2 de 6.°, de Física, ya lo trabaja.
-   - *Catalizadores*: el tema de enzimas de 6.° (Biología 5.2) los usa sin energía de activación (10.°). Conviene
-     tratarlos solo de forma cualitativa.
+   - *Catalizadores*: el tema de enzimas de 6.° (Biología 5.2) los usa sin energía de activación (10.°). Es el
+     único error de secuencia de confianza alta que queda en el ciclo. No se corrige aquí, porque el tema es de
+     Biología. ¿La arista *Energía de activación y perfil energético → Catalizadores* debe exigirse también para
+     la idea cualitativa de catalizador (la enzima acelera una reacción sin gastarse)? Si no, basta con tratarlos
+     de forma cualitativa en 6.°.
 2. **Combustión.** Solo se trabaja como reacción química en 11.°. En 7.° aparece en un tema de Física (dispositivos de
    combustión), y la acción 9 la usa como ejemplo de oxidación. ¿Basta, o se quiere un tema propio en 8.°?
 3. **Modelo de partículas.** Puede ir en 5.° como tema nuevo o adelantando el tema 2.1 de 6.° de Física. La segunda

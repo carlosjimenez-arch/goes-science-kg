@@ -36,6 +36,8 @@ Lee también la especificación `specs/06_propuesta_curricular.md`.
    "evidencia": ["SG 5, UY 3", "prerrequisito: Difusión y ósmosis"], "justificacion": "≤40 palabras"}],
  "temas_por_grado_propuesto": {"5": 0, "6": 0, "7": 0, "8": 0}}
 ```
+`quitar_conceptos` (opcional, en cualquier acción): nombres exactos del vocabulario que el tema reformulado deja de
+trabajar. Úsalo cuando una etiqueta secundaria fija mal el primer grado de un concepto; el simulador la retira.
 2. `asignaturas/<asignatura>/propuesta/informe_G<g0>-G<g1>.md`: el informe para el equipo de Ciencias, en lenguaje claro
    (máximo 2 páginas). Debe decir qué cambia y por qué (agrupado en 3 a 5 ideas), cómo queda la distribución por
    grado antes y después, qué prerrequisitos se ordenan y qué decisiones quedan abiertas para el MINED.

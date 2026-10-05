@@ -4,9 +4,9 @@
   2,
   4
  ],
- "version": "propuesta-v3",
+ "version": "propuesta-v4",
  "estado": "borrador",
- "nota": "v3: candidatos regenerados con Japón (JP; equivalencia por edad de ingreso: grado JP N = grado SV N−1). Países de alto desempeño: SG, ENG, AU y JP. Salen de los candidatos de este ciclo Herencia de rasgos (destino 5), Órganos de los sentidos, Competencia por recursos y Relaciones intraespecíficas, por eso se retiran el tema nuevo de herencia, el tema nuevo de estrategias reproductivas (B2.2 se cubre ahora ampliando G03-5.2, sin costo), sus dos fusiones y el traslado de los sentidos. Corrección: los candidatos se regeneraron con el marco T4_27 (antes figuraba T8_27 por error). En acciones con varios temas afectados, tema_propuesto e indicador_logro listan un tema por cada id, en el mismo orden y separados por « | ». La numeración de los temas nuevos o reubicados es provisional.",
+ "nota": "v3: candidatos regenerados con Japón (JP; equivalencia por edad de ingreso: grado JP N = grado SV N−1). Países de alto desempeño: SG, ENG, AU y JP. Salen de los candidatos de este ciclo Herencia de rasgos (destino 5), Órganos de los sentidos, Competencia por recursos y Relaciones intraespecíficas, por eso se retiran el tema nuevo de herencia, el tema nuevo de estrategias reproductivas (B2.2 se cubre ahora ampliando G03-5.2, sin costo), sus dos fusiones y el traslado de los sentidos. Corrección: los candidatos se regeneraron con el marco T4_27 (antes figuraba T8_27 por error). En acciones con varios temas afectados, tema_propuesto e indicador_logro listan un tema por cada id, en el mismo orden y separados por « | ». La numeración de los temas nuevos o reubicados es provisional. v4: se retiran etiquetas que fijaban mal el primer grado de conceptos avanzados (quitar_conceptos en las acciones 4, 8, 9, 10 y 14): vacunas sin «inmunidad activa y pasiva», respiración sin intercambio de gases, alimentos fermentados sin el mecanismo de la fermentación y niveles de organización ecológicos en lugar de célula-tejido-órgano. Se agrega la acción 14 (G04-5.7).",
  "temas_por_grado_actual": {
   "2": 27,
   "3": 32,
@@ -90,15 +90,17 @@
    "tema_propuesto": "6.10. Explicación de cómo las vacunas ayudan a las defensas del cuerpo a prevenir enfermedades causadas por microorganismos.",
    "indicador_logro": "Explica con un esquema sencillo que algunas enfermedades las causan microorganismos y que las vacunas preparan las defensas del cuerpo para enfrentarlos.",
    "conceptos": [
-    "Inmunidad activa, pasiva y vacunas",
     "Contagio y prevención de enfermedades",
     "Tipos de patógenos"
    ],
    "evidencia": [
-    "corregir_secuencia: Inmunidad activa, pasiva y vacunas (2.°) necesita Sistema inmunitario (10.°), brecha 8",
+    "corregir_secuencia: Inmunidad activa, pasiva y vacunas (2.°) necesita Sistema inmunitario (10.°), brecha 8; el tema solo trabaja la vacuna como medida de prevención",
     "prerrequisito disponible: Tipos de patógenos (G03-6.1 y 6.3)"
    ],
-   "justificacion": "En 2.° las vacunas llegan antes de que se sepa qué es un patógeno. En 3.° van después de infección y patógenos. El sistema inmunitario formal sigue en 10.° (decisión abierta 2)."
+   "justificacion": "En 2.° las vacunas llegan antes de que se sepa qué es un patógeno. En 3.° van después de infección y patógenos, como medida de prevención; la inmunidad activa y pasiva queda para Bachillerato, después del sistema inmunitario.",
+   "quitar_conceptos": [
+    "Inmunidad activa, pasiva y vacunas"
+   ]
   },
   {
    "n": 5,
@@ -181,7 +183,10 @@
    "evidencia": [
     "corregir_secuencia: Intercambio de gases en animales (3.°) necesita Sistema respiratorio (4.°), brecha 1"
    ],
-   "justificacion": "En 3.° basta reconocer los órganos con que respiran los animales. El intercambio de gases se deja para después del sistema respiratorio de 4.°. 5.4 queda como prerrequisito de la cadena trófica (acción 3)."
+   "justificacion": "En 3.° basta reconocer los órganos con que respiran los animales. El intercambio de gases se deja para después del sistema respiratorio de 4.°. 5.4 queda como prerrequisito de la cadena trófica (acción 3).",
+   "quitar_conceptos": [
+    "Intercambio de gases en animales"
+   ]
   },
   {
    "n": 9,
@@ -204,7 +209,10 @@
     "corregir_secuencia: Productores, consumidores y descomponedores (3.°) necesita Cadena alimentaria (4.°), brecha 1; resuelta con la acción 3",
     "corregir_secuencia: Fermentación y respiración anaerobia (3.°) necesita Glucólisis, ciclo de Krebs y cadena respiratoria (10.°), brecha 7"
    ],
-   "justificacion": "La degradación llega después de la cadena trófica (acción 3, unidad 5) y nombra a los descomponedores. Los alimentos fermentados se quedan en lo observable; el mecanismo de la fermentación sigue en Bachillerato."
+   "justificacion": "La degradación llega después de la cadena trófica (acción 3, unidad 5) y nombra a los descomponedores. Los alimentos fermentados se quedan en lo observable; el mecanismo de la fermentación sigue en Bachillerato.",
+   "quitar_conceptos": [
+    "Fermentación y respiración anaerobia"
+   ]
   },
   {
    "n": 10,
@@ -218,12 +226,16 @@
    "tema_propuesto": "3.3. Caracterización de los niveles de organización ecológica: organismo, población, comunidad y ecosistema.",
    "indicador_logro": "Ordena en un esquema de un ecosistema local un organismo, su población, la comunidad y el ecosistema, y da un ejemplo de cada nivel.",
    "conceptos": [
-    "Niveles de organización de los seres vivos"
+    "Niveles de organización ecológica"
    ],
    "evidencia": [
-    "corregir_secuencia: Niveles de organización de los seres vivos (4.°) necesita La célula como unidad de la vida (6.°), brecha 2"
+    "corregir_secuencia: Niveles de organización de los seres vivos (4.°) necesita La célula como unidad de la vida (6.°), brecha 2",
+    "prerrequisitos disponibles: Factores bióticos y abióticos (G04-3.2) y Hábitat y ecosistemas comunes (2.°)"
    ],
-   "justificacion": "El tema trata la organización ecológica, que empieza en el organismo y no requiere la célula. Se precisa la redacción. La célula se adelanta en la propuesta 5.°–8.°."
+   "justificacion": "El tema trata la organización ecológica, que empieza en el organismo y no requiere la célula. Se etiqueta con ese concepto y no con la escala célula-tejido-órgano, que sigue en 6.°.",
+   "quitar_conceptos": [
+    "Niveles de organización de los seres vivos"
+   ]
   },
   {
    "n": 11,
@@ -298,6 +310,29 @@
     "3 temas sobre tropismos y nastias (4.7 a 4.9)"
    ],
    "justificacion": "Repiten un mismo concepto con un detalle taxonómico o práctico alto para la edad. No se fusionan ahora porque el presupuesto ya cuadra. Quedan como opción si el MINED pasa horas a otras disciplinas (decisión abierta 1)."
+  },
+  {
+   "n": 14,
+   "accion": "revisar",
+   "temas_afectados": [
+    "G04-CIE-U5-5.7"
+   ],
+   "grado_actual": 4,
+   "grado_propuesto": 4,
+   "unidad_propuesta": "5. Cuerpo humano: materia y energía.",
+   "tema_propuesto": "5.7. Relación del sistema circulatorio con los sistemas respiratorio y digestivo: la sangre lleva a todo el cuerpo el oxígeno y los nutrientes.",
+   "indicador_logro": "Traza en un esquema del cuerpo el recorrido de la sangre y señala dónde recoge el oxígeno y los nutrientes y adónde los lleva.",
+   "conceptos": [
+    "Sistema circulatorio"
+   ],
+   "quitar_conceptos": [
+    "Niveles de organización de los seres vivos"
+   ],
+   "evidencia": [
+    "corregir_secuencia: Niveles de organización de los seres vivos (4.°) necesita La célula como unidad de la vida (6.°), brecha 2",
+    "prerrequisito disponible: Sistema respiratorio (G04-5.3 y 5.4) y Sistema digestivo (G04-5.2)"
+   ],
+   "justificacion": "El tema relaciona sistemas del cuerpo, no la escala célula-tejido-órgano-sistema, que exige la célula (6.°). Se redacta en términos de lo que la sangre transporta, sin costo de presupuesto."
   }
  ],
  "temas_por_grado_propuesto": {

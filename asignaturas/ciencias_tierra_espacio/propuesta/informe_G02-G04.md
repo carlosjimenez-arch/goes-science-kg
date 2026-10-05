@@ -1,12 +1,12 @@
 # Propuesta de Ciencias de la Tierra y el Espacio, 2.° a 4.° (borrador)
 
-Versión `propuesta-v3`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v4`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 El detalle de cada acción, con su evidencia, está en `propuesta_G02-G04.json`. Esta versión se recalculó con los
 candidatos regenerados, que ahora incluyen a Japón (JP) entre los países de alto desempeño, junto con Singapur (SG),
 Inglaterra (ENG) y Australia (AU).
 
 ## En resumen
-Proponemos 7 acciones: 3 fusiones, 3 temas nuevos y 1 reformulación (`revisar`). El total del ciclo se mantiene en
+Proponemos 9 acciones: 3 fusiones, 3 temas nuevos y 3 reformulaciones (`revisar`). El total del ciclo se mantiene en
 **46 temas** y no se quita ningún tema.
 
 El cambio central sigue siendo que **3.° pasa a ser el grado de los procesos de la Tierra**. Allí entran tres
@@ -35,6 +35,11 @@ paga uniendo la indagación y la simulación de fenómenos geológicos de 4.° (
 **4. Recursos renovables antes del ahorro de energía (acción 7).** El tema 2.7 de 2.° se reformula para introducir la
 diferencia entre recursos renovables y no renovables, que hoy llega en 7.°. No gasta temas del presupuesto.
 
+**5. Etiquetas demasiado avanzadas en temas observacionales (acciones 8 y 9).** El tema de rocas de uso común
+(G03-2.6) es un inventario de objetos de roca, no un tema de minería, y el de la Luna (G04-4.3) es un experimento de
+cráteres, no una explicación de las mareas. Se retiran esas etiquetas (`quitar_conceptos`): la minería necesita los
+minerales (8.°) y las mareas, la gravedad y las órbitas. No gastan temas del presupuesto.
+
 ## Qué cambió con Japón
 - **Las tres acciones centrales ganan respaldo:** Japón enseña en 3.° el ciclo del agua, el suelo y el tiempo
   atmosférico. Cada uno queda con al menos tres países de alto desempeño, y se confirma 3.° como grado destino.
@@ -58,9 +63,10 @@ diferencia entre recursos renovables y no renovables, que hoy llega en 7.°. No 
 Todos los grados quedan por encima del 15 %.
 
 ## Prerrequisitos que se ordenan
-Lo comprobó un script de validación. Se resuelven siete de las diez secuencias invertidas del archivo. Ningún tema
-nuevo queda antes que sus bloqueos. Las tres que quedan pendientes son la geotermia (ahora de Física), las mareas y los
-recursos minerales; ver las decisiones 3, 4 y 6. Varios pares quedan en el **mismo grado**, así que al ordenar los
+Lo comprobó el simulador. Se resuelven nueve de las diez secuencias invertidas de confianza alta (de 10 a 1). Ningún
+tema nuevo queda antes que sus bloqueos. Los recursos minerales (G03-2.6) y las mareas (G04-4.3) se resuelven
+retirando etiquetas que esos temas no trabajan. Queda pendiente solo la geotermia del tema 2.3 de 2.°, que ahora es de
+Física; ver la decisión 3. Varios pares quedan en el **mismo grado**, así que al ordenar los
 temas hay que respetar este orden:
 - océanos (3.1) → ciclo del agua → lagos, ríos y acuíferos (3.°)
 - meteorización → erosión y suelo → formación de las rocas (3.°, en el mismo tema y en el siguiente)
@@ -72,12 +78,16 @@ temas hay que respetar este orden:
    y sus escalas llegan en 6.° en Física. Proponemos introducir solo la lectura en °C dentro del mismo tema.
 2. **Descomponedores (coordinar con Biología):** el tema del suelo debe ir después del tema de 3.° sobre productores,
    consumidores y descomponedores.
-3. **Temas que ahora son de Física:** la geotermia de 2.° (G02-2.3) necesita el calor interno de la Tierra, que no
-   tiene tema, y las fuentes renovables de 2.3 van antes del tema 2.7 reformulado. Hay que resolverlo con Física.
-4. **Minerales:** el tema G03-2.6 tiene la etiqueta «Recursos minerales y minería», pero los minerales llegan en 8.°.
-   ¿Conviene tratarlos solo de forma descriptiva en 3.°, junto con las rocas, o quitar esa etiqueta del tema?
+3. **Geotermia en un tema que ahora es de Física:** queda pendiente la arista «Convección del manto y energía interna
+   de la Tierra» → «Energía geotérmica», porque G02-2.3 (2.°) tiene la etiqueta «Energía geotérmica» y el calor
+   interno de la Tierra no tiene tema. La arista es correcta; lo que sobra es la etiqueta en un tema de 2.° que solo
+   reconoce que «el calor de la tierra» da electricidad. Proponemos que la propuesta de Física retire esa etiqueta
+   (`quitar_conceptos`) o que el MINED decida mantenerla. Además, las fuentes renovables de 2.3 van antes del tema 2.7
+   reformulado.
+4. **Minerales:** la acción 8 retira la etiqueta «Recursos minerales y minería» del tema G03-2.6, porque los minerales
+   llegan en 8.°. Hay que confirmar que el tema se enseñe solo como reconocimiento de rocas en objetos cotidianos.
 5. **Temas que se mantienen en grados superiores:** el ciclo del agua (G07-5.1), el tiempo atmosférico (G07-5.14 a 5.16)
    y el suelo y la meteorización (G05-6.14 a 6.19) siguen en su lugar. Conviene ajustar su profundidad para que no se
    repitan.
-6. **Datos que hay que verificar:** el tema G04-4.3 sigue etiquetado con «Mareas», cuyo prerrequisito (gravedad y
-   órbitas) no tiene tema en la malla.
+6. **Mareas:** la acción 9 retira la etiqueta «Mareas» del tema G04-4.3. Su prerrequisito (gravedad y órbitas) no
+   tiene tema en la malla; conviene ubicar ambos en un grado superior.

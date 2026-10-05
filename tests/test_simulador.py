@@ -19,3 +19,27 @@ def test_dividir_mueve_conceptos_al_tema_nuevo(tmp_path, monkeypatch):
     monkeypatch.setattr(pr, "ruta", lambda rel: tmp_path / rel if str(rel).startswith("asignaturas") else original(rel))
     r = pr.simular("fisica", 2, 4, nodos, aristas)
     assert r["conceptos_no_resueltos"] == []
+
+
+def test_quitar_conceptos_retira_la_etiqueta(tmp_path, monkeypatch):
+    """Prueba de humo: una acción con quitar_conceptos se aplica y resuelve el nombre del concepto."""
+    import json
+
+    from goes_science_kg import propuesta as pr
+    from goes_science_kg.conceptos import vocabulario
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.modelos import TipoArista
+
+    nodos, aristas = cargar()
+    t, c = next((a.origen, a.destino) for a in aristas if a.tipo == TipoArista.TRABAJA
+                and a.origen.startswith("TEMA:G06-") and a.destino.startswith("CON:biologia/"))
+    nombre = vocabulario()[c]["nombre"]
+    d = tmp_path / "asignaturas" / "biologia" / "propuesta"
+    d.mkdir(parents=True)
+    (d / "propuesta_G05-G08.json").write_text(json.dumps({"version": "prueba", "acciones": [
+        {"n": 1, "accion": "revisar", "temas_afectados": [t.removeprefix("TEMA:")], "quitar_conceptos": [nombre]}]}),
+        encoding="utf-8")
+    real = pr.ruta
+    monkeypatch.setattr(pr, "ruta", lambda rel: tmp_path / rel if rel.startswith("asignaturas") else real(rel))
+    r = pr.simular("biologia", 5, 8, nodos, aristas)
+    assert r["conceptos_no_resueltos"] == []

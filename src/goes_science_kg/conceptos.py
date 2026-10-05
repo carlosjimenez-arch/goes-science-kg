@@ -303,5 +303,14 @@ def unir_etiquetado_paises() -> dict:
 
 @cache
 def etiquetado_paises() -> dict[str, dict]:
+    """Etiquetado de objetivos de países, más los conceptos del triaje (etiquetado_paises_triaje.json)."""
     p = ruta(f"{DIR}/etiquetado_paises.json")
-    return {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    filas = {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    pt, voc = ruta(f"{DIR}/etiquetado_paises_triaje.json"), vocabulario()
+    for r in json.loads(pt.read_text(encoding="utf-8")) if pt.exists() else []:
+        f = filas.get(r["id"])
+        extra = [c for c in r["conceptos"] if c in voc and f and c not in f["conceptos"]]
+        if extra:
+            f["conceptos"] = f["conceptos"] + extra
+            f["conceptos_triaje"] = sorted(extra)
+    return filas

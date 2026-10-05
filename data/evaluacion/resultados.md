@@ -52,3 +52,36 @@ natural, respiración aerobia y anaerobia) aparecían arriba sin estar marcados 
 escribió antes. Se agregaron 5 ids del KS4 como relevantes; se descartó uno que no correspondía (Q48: energía en
 reacciones, no conservación de la masa). Resultado: MRR 0,772, recall@10 0,622, recall@25 0,833. Las preguntas
 locales bajaron de 0,89 a 0,87; conviene revisarlas en la próxima sesión.
+
+**Objetivos de país sin intención de país (2026-10-05, 60 preguntas).** Con 1.265 objetivos de seis países, algunos
+superaban a los temas de la malla en preguntas locales (Q12: un objetivo de Japón antes que los temas de 7.°). Se
+atenúan los objetivos de país cuando la consulta no habla de países (`PESO_PAIS_SIN_INTENCION`):
+
+| Peso | MRR | recall@10 | recall@25 | local | marco | comparación |
+|---|---|---|---|---|---|---|
+| 1,0 | 0,772 | 0,622 | 0,833 | 0,866 | 0,629 | 0,819 |
+| **0,8** | **0,794** | 0,633 | 0,839 | 0,894 | 0,708 | 0,822 |
+| 0,6 | 0,794 | 0,633 | 0,839 | 0,894 | 0,708 | 0,822 |
+| 0,4 | 0,794 | 0,633 | 0,839 | 0,894 | 0,708 | 0,822 |
+
+Se elige 0,8, el más suave entre los que alcanzan el máximo.
+
+**Conceptos ante una consulta de prerrequisitos (2026-10-05, 60 preguntas).** En las preguntas de prerrequisitos,
+temas y objetivos de marco desplazaban a los conceptos (Q20, Q22: los relevantes aparecían en los puestos 7–21).
+Se pondera ×`PESO_CONCEPTO_PRERREQ` a los conceptos cuando la consulta pregunta por prerrequisitos:
+
+| Peso | MRR | recall@10 | recall@25 | prerrequisito |
+|---|---|---|---|---|
+| 1,0 | 0,794 | 0,633 | 0,839 | 0,616 |
+| 1,3 | 0,794 | 0,633 | 0,839 | 0,616 |
+| **1,6** | **0,826** | 0,632 | 0,835 | 0,808 |
+| 2,0 | 0,826 | 0,632 | 0,835 | 0,808 |
+| 2,5 | 0,830 | 0,638 | 0,838 | 0,833 |
+
+Se elige 1,6, el primer valor de la meseta: son solo 10 preguntas de prerrequisitos y no conviene sobreajustar.
+
+**Marco frente a país (2026-10-05, 60 preguntas).** «Currículo australiano» activaba la intención de país (Australia
+×2) aunque se refiere al marco ACARA, y «objetivos internacionales» activaba a la vez las intenciones de país y de
+marco. Ahora, si la consulta habla de un marco, el refuerzo de país solo se aplica cuando se nombra un país, y
+«currículo australiano» cuenta como ACARA. Preguntas de marco: MRR 0,708 → 0,854. Global: MRR 0,846, recall@10
+0,632, recall@25 0,840 (comparación 0,82, local 0,89, marco 0,85, prerrequisito 0,81).

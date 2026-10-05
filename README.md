@@ -23,8 +23,8 @@ uv run pytest -q
 ## Estado
 **Grafo v1**: 3.641 nodos y 20.047 aristas.
 - 1.260 temas de la malla (1.245 en alcance y 15 de tecnología o transversales fuera de alcance).
-- **498 conceptos y 30 prácticas científicas**, con 797 prerrequisitos entre conceptos (un grafo sin ciclos por
-  asignatura) y 11 equivalencias entre asignaturas.
+- **512 conceptos y 30 prácticas científicas**, con 829 prerrequisitos entre conceptos (un grafo sin ciclos por
+  asignatura) y equivalencias entre asignaturas. 14 conceptos vienen del triaje de los que propuso el etiquetado.
 - 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
   (este último es el pivote de Biología y Química de 10.°–11.°).
 - 1.265 objetivos de 6 países: Uruguay, Colombia, Singapur, **Inglaterra**, **Australia** y **Japón** (estos cuatro
@@ -37,10 +37,12 @@ países) y un **visor interactivo** (`grafo.html`).
 
 **Por asignatura**: `asignaturas/<x>/` tiene la ficha, el **mapa de progresión** (`progresion.html`), las brechas
 (md + Excel), las propuestas curriculares en borrador ([resumen](asignaturas/PROPUESTAS.md)) y los CSV de revisión.
+Las 10 propuestas, simuladas sobre el grafo, bajan los errores de secuencia de confianza alta de 52 a 4 (cada uno
+queda como decisión abierta para el MINED).
 
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
-API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 52 preguntas: MRR 0,79 y recall@25 0,86 ([resultados](data/evaluacion/resultados.md)).
+API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas: MRR 0,85 y recall@25 0,84 ([resultados](data/evaluacion/resultados.md)).
 
 Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).

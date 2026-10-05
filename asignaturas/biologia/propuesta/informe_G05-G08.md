@@ -88,8 +88,8 @@ Simulación en memoria (`propuesta.simular`) sobre los candidatos regenerados co
 
 | Métrica | Antes | v3 | v4 |
 |---|---|---|---|
-| Secuencias invertidas en el ciclo | 7 | 1 | **0** |
-| Secuencias invertidas de confianza alta | 3 | 0 | **0** |
+| Secuencias invertidas en el ciclo | 7 | 1 | **2** |
+| Secuencias invertidas de confianza alta | 3 | 0 | **1** |
 | Conceptos que llegan 2 o más grados tarde | 14 | 6 | **5** |
 | Desfase medio (grados) | 2,06 | 1,64 | **1,59** |
 
@@ -98,7 +98,12 @@ Simulación en memoria (`propuesta.simular`) sobre los candidatos regenerados co
    En 6.° se crea la unidad provisional 7, sobre estructura y transporte en las plantas.
 2. **Enzimas en 5.°:** presentar las enzimas como proteínas formadas por aminoácidos exige un modelo sencillo (cuentas).
    Quedan dos dependencias de Química sin resolver en 5.°: energía de activación (catalizadores) y fuerzas
-   intermoleculares. Si se prefiere, enzimas y digestión química pueden quedar en 6.° como en v3, pero 5.° bajaría a 15 temas (14,2 %) y haría falta otro tema allí.
+   intermoleculares. El tema de enzimas (G06-5.2, acción 2) **deja de llevar la etiqueta *Catalizadores***
+   (`quitar_conceptos`): muestra que la catalasa acelera un proceso, pero no trabaja la energía de activación, que es
+   lo que define el concepto químico. Así Química 5.° a 8.° deja de enseñar catalizadores en 6.° antes de la energía de
+   activación (10.°). El costo es la única secuencia de confianza alta que queda en Biología (enzimas en 5.°,
+   catalizadores en 10.°): proponemos tratarla como aceptable, porque en 5.° la enzima se presenta solo como «algo que
+   acelera sin gastarse»; o bien revisar esa arista del grafo. Si se prefiere, enzimas y digestión química pueden quedar en 6.° como en v3, pero 5.° bajaría a 15 temas (14,2 %) y haría falta otro tema allí.
 3. **Coordinación con Ciencias de la Tierra:** el tema de evidencias de la evolución debe ir junto al de fósiles de 5.°,
    sin repetirlo.
 4. **Enfermedades (B6.1):** solo tienen un tema débil en el ciclo y no hay países en el archivo que respalden un tema

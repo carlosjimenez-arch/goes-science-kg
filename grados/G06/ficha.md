@@ -121,15 +121,18 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
 | Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
 | Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
+| Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
 | Transporte en plantas: xilema y floema | 8 | ENG 2, JP 5.0, SG 5.0, UY 3.0 |
 | Minerales y sus propiedades | 8 | AU 2, ENG 6.0 |
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
+| Agricultura y seguridad alimentaria | 7 | ENG 6.0, UY 3.0 |
 | Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
 | Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, JP 2, SG 5.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
 | Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
+| Tejidos animales | 8 | AU 7.0, CO 5.0, UY 4.0 |
 | Calidad del aire y contaminación atmosférica | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |
 | Espejos planos e imágenes | 10 | ENG 6.0, UY 4.0 |
 | Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |

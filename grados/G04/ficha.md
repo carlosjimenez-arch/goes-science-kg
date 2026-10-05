@@ -126,6 +126,7 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
 | Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
 | Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
+| Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
 | Reproducción sexual de las plantas con flor | 6 | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
 | Transporte en plantas: xilema y floema | 8 | ENG 2, JP 5.0, SG 5.0, UY 3.0 |
 | Erosión, transporte y sedimentación | 5 | AU 4.0, CO 4.5, JP 4.0, UY 3.0 |

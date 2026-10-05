@@ -13,3 +13,5 @@ sesión y los marcadores en MAYÚSCULAS (LOTES, ASIG, G0–G1, XX-YY, LOTE).
 | `prompt_propuesta.md` | Propuesta curricular por ciclo | `prompts/propuesta_curricular.md` |
 | `msg_v2.md` | Pedir la revisión de una propuesta tras regenerar candidatos | — |
 | `msg_v3_japon.md` | Revisión de las propuestas al sumar Japón (encargo autocontenido) | `prompts/propuesta_curricular.md` |
+| `msg_v_triaje_bachillerato.md` | Revisión de 10.°–11.° tras sumar los conceptos del triaje | `prompts/propuesta_curricular.md` |
+| `msg_quitar_conceptos.md` | Resolver errores de secuencia por etiquetas mal puestas (`quitar_conceptos`) | `prompts/propuesta_curricular.md` |

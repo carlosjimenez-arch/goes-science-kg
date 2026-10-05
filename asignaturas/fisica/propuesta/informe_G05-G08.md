@@ -1,13 +1,14 @@
-# Propuesta de Física, 5.° a 8.° (borrador, v3)
+# Propuesta de Física, 5.° a 8.° (borrador, v4)
 
-Versión `propuesta-v3`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v4`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G05-G08.json`.
 
 Esta versión usa el archivo de candidatos regenerado, que suma a **Japón (JP)** como país de referencia. Los países
 de alto desempeño del grafo son ahora Singapur (SG), Inglaterra (ENG), Australia (AU) y Japón.
 
 ## En resumen
-Proponemos 20 acciones: 3 movimientos, 7 fusiones, 7 temas nuevos y 3 reformulaciones (`revisar`).
+Proponemos 21 acciones: 3 movimientos, 7 fusiones, 7 temas nuevos y 4 reformulaciones (`revisar`). La v4 solo
+precisa el alcance de cuatro temas (acciones 19 y 21), sin cambiar la distribución.
 El total del ciclo se mantiene en **86 temas** y no se quita ninguno. Hay dos cambios centrales:
 - **7.° vuelve a tener Física.** Hoy tiene 2 temas y pasaría a 16, con dos unidades: *Trabajo y energía* y
   *Ondas, sonido y luz*.
@@ -46,20 +47,24 @@ hoy en 9.°) y el equilibrio térmico con el calor como energía en tránsito (h
 - *Ondas, sonido y luz*: los tipos de onda, sus gráficas y el sonido como onda pasan desde 8.°. Siguen dos temas
   nuevos: el espectro electromagnético (CO 8,5, ENG 6, UY 6) y la refracción con lentes (AU, ENG, JP).
 
-En 8.° siguen la cinemática, las leyes de Newton, el momento lineal, la rotación, el péndulo y el tono y las ondas
-estacionarias.
+En 8.° siguen la cinemática, las leyes de Newton, el momento lineal, la rotación, el péndulo y el tono del sonido en
+cuerdas y tubos (sin ondas estacionarias ni armónicos formales).
 
 **3. Presupuesto: siete fusiones de temas que repiten un contenido.** Medición (dos fusiones en 5.°), capilaridad
 (6.°), momento lineal, péndulo, potencia y rotación (8.°). Cada una paga uno de los siete temas nuevos.
 
-**4. Secuencias que se corrigen sin gastar presupuesto (acciones 18 a 20).** Se reformulan tres temas:
+**4. Secuencias que se corrigen sin gastar presupuesto (acciones 18 a 21).** Se reformulan seis temas:
 - el 3.2 de 6.° introduce la ley de Ohm (hoy en 11.°) antes de calcular resistencias equivalentes;
-- el 2.8 de 5.° presenta con flechas la fuerza neta y la fricción antes de la inercia;
-- el 1.8 de 8.° incluye la caída libre y la gravedad como su causa (hoy en 10.°) antes del tiro parabólico.
+- el 2.8 y el 2.9 de 5.° tratan de forma cualitativa las fuerzas equilibradas y desequilibradas y la fricción;
+  dejan de etiquetarse con la primera y la segunda ley de Newton, que necesitan la fuerza neta (7.°) y se
+  formalizan en 8.° (1.7);
+- el 1.8 de 8.° incluye la caída libre y la gravedad como su causa (hoy en 10.°) antes del tiro parabólico;
+- el 3.8 y el 3.11 de 8.° miden qué magnitudes cambian el tono en cuerdas y tubos; dejan de etiquetarse con las
+  ondas estacionarias y los armónicos, que necesitan la superposición (11.°).
 
 ## Distribución por grado
 
-| Grado | Antes | v2 | v3 | % del ciclo (v3) |
+| Grado | Antes | v2 | v3 y v4 | % del ciclo (v4) |
 |---|---|---|---|---|
 | 5.° | 23 | 25 | 24 | 27,9 % |
 | 6.° | 24 | 24 | 24 | 27,9 % |
@@ -74,6 +79,9 @@ Un script de validación comprobó que el total del ciclo se conserva, que los i
 que ningún tema queda antes que un prerrequisito que antes estaba en orden. De las secuencias invertidas de Física
 en el ciclo se corrigen 7: imanes → campo magnético; conductores → circuito; carga → corriente; ley de Ohm →
 resistencia equivalente; calor → calor específico; fricción → fuerzas mecánicas; caída libre → proyectiles.
+Además, al precisar el alcance de los temas 2.8, 2.9, 3.8 y 3.11, la fuerza neta (7.°) queda antes de las leyes de
+Newton (8.°) y no se adelantan las ondas estacionarias. La simulación pasa de 9 secuencias invertidas de confianza
+alta en el ciclo a 1, que no es de Física (decisión abierta 5).
 El espectro también ordena el efecto invernadero de 7.°.
 
 Cuando un tema y su prerrequisito quedan en el **mismo grado**, al ordenar las unidades hay que respetar:
@@ -95,8 +103,11 @@ Cuando un tema y su prerrequisito quedan en el **mismo grado**, al ordenar las u
    - el sonido podría bajar a 6.° (destino sugerido), pero sus bloqueos viajan juntos a 7.°.
 4. **Gravitación:** la propuesta solo nombra la gravedad como causa de la caída libre (8.°). Si el MINED quiere
    adelantar la gravitación (CO 4,5, ENG 6, UY 5), puede reformular el tema 2.14 de 5.° sin costo.
-5. **Secuencias que siguen abiertas:** *ondas estacionarias* (8.°) necesita la *superposición* (11.°); *Big Bang*
-   (5.°, Ciencias de la Tierra y del Espacio) necesita el efecto Doppler (11.°).
+5. **Secuencia que sigue abierta: arista «Efecto Doppler → Expansión del universo y Big Bang» (confianza alta).**
+   El tema 5.1 de 5.° (Ciencias de la Tierra y del Espacio; esa propuesta lo pasa a 6.°) trata el Big Bang, y el
+   efecto Doppler llega en 11.°. Física no tiene tema que corregir. La arista vale para explicar la expansión por
+   el corrimiento al rojo, no para una presentación descriptiva del origen del universo: el MINED decide si la
+   arista baja a confianza media o si ese tema se limita a describir, sin evidencias espectrales.
 6. **Coordinación con Química:** la capilaridad (6.°) se explica con las fuerzas entre partículas de los temas 4.7
    y 4.8 de Química de 6.°, que deben ir antes.
 7. **Repeticiones en 9.° a 11.°:** conviene ajustar la profundidad de la carga eléctrica (G09 6.1), el equilibrio

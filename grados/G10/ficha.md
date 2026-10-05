@@ -140,6 +140,7 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 |---|---|---|
 | Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
+| Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
 | Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, JP 2, SG 5.0 |
 | Ley de Ohm | 11 | ENG 6.0, JP 7.0 |
 | Oxidación y reducción | 11 | ENG 6.0, JP 7.0 |

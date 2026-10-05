@@ -1,10 +1,10 @@
 # Propuesta de Biología, 2.° a 4.° (borrador)
 
-Versión `propuesta-v3`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v4`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G02-G04.json`.
 
 ## En resumen
-Proponemos 13 acciones: 1 tema nuevo, 1 fusión, 2 movimientos y 9 reformulaciones (`revisar`).
+Proponemos 14 acciones: 1 tema nuevo, 1 fusión, 2 movimientos y 10 reformulaciones (`revisar`).
 El total del ciclo se mantiene en **99 temas** y no se quita ninguno.
 
 Esta versión incorpora a **Japón** como país de referencia. Los países de alto desempeño del grafo son ahora
@@ -30,7 +30,8 @@ estrategias de reproducción**, se cubre en su parte de estrategias sin gastar p
   degradación (6.7) ya puede nombrar a los descomponedores. Además, 4.° pierde un tema.
 
 **3. Las vacunas suben de 2.° a 3.° (acción 4).** Pasan a la unidad de microorganismos, después de infección y
-patógenos, con la idea introductoria de «defensas del cuerpo».
+patógenos, como medida de prevención. El tema deja de contar como «inmunidad activa y pasiva», que necesita el
+sistema inmunitario (10.°).
 
 **4. Se completan y ordenan temas sin gastar presupuesto (acciones 5 a 11).**
 - **2.° (4.8):** se hace explícita la relación entre estructura y función del cuerpo animal, prerrequisito del
@@ -39,10 +40,13 @@ patógenos, con la idea introductoria de «defensas del cuerpo».
   11.°; Japón (3.°) y Australia (4.°) los enseñan en este ciclo.
 - **3.° (5.2):** el ciclo de vida de los animales se amplía a sus estrategias de reproducción (huevos o crías
   vivas, número de crías, cuidado parental). Así se cubre T4_27-B2.2, que hoy no tiene ningún tema.
-- **3.° (5.4):** se reconocen los órganos con que respiran los animales; el intercambio de gases espera al
-  sistema respiratorio de 4.°.
-- **3.° (6.8)** se queda en lo observable (alimentos fermentados); **4.° (3.3)** se precisa como organización
-  *ecológica*, sin exigir la célula.
+- **3.° (5.4):** se reconocen los órganos con que respiran los animales; el intercambio de gases sale del tema y
+  espera al sistema respiratorio de 4.°.
+- **3.° (6.8)** se queda en lo observable (alimentos fermentados) y deja de contar como mecanismo de la
+  fermentación. **4.° (3.3)** se precisa como organización *ecológica* (organismo, población, comunidad,
+  ecosistema), sin exigir la célula.
+- **4.° (5.7, acción 14):** el sistema circulatorio se relaciona con el respiratorio y el digestivo por lo que la
+  sangre transporta, sin la escala célula-tejido-órgano-sistema, que llega en 6.°.
 - **4.° (5.2):** el modelo del sistema digestivo muestra cómo el alimento se deshace y pasa a la sangre. Prepara la
   digestión química, sin adelantar las enzimas.
 
@@ -85,22 +89,27 @@ Lo comprobó un script de validación.
 - ciclo de vida de los animales → estrategias de reproducción (3.°, mismo tema)
 - estructura y función del cuerpo animal (2.°) → sistema locomotor (4.°)
 - sistema respiratorio (4.°) → intercambio de gases (sale de 3.°)
+- factores bióticos y abióticos (4.°, 3.2) → niveles de organización ecológica (4.°, 3.3)
 
 Cuando el tema y su prerrequisito quedan en el mismo grado, al ordenar las unidades hay que respetar este orden:
 en 3.°, la unidad 4 antes que la 5, y en la unidad 5, el tema 5.4 antes que la cadena trófica, y la unidad 5 antes
 que la 6.
 
-**Quedan pendientes dos secuencias** (decisiones 2 y 3):
-- vacunas (3.°) → sistema inmunitario (10.°)
-- niveles de organización (4.°) → la célula (6.°)
+**No queda ninguna secuencia de confianza alta pendiente en el ciclo** (antes de la propuesta, 5). Las cuatro que
+seguían en v3 venían de etiquetas demasiado avanzadas para el tema, y se retiran (`quitar_conceptos`):
+- vacunas (3.°): «inmunidad activa, pasiva y vacunas», que exige el sistema inmunitario (10.°);
+- alimentos fermentados (3.°, 6.8): «fermentación y respiración anaerobia», que exige la respiración celular (10.°);
+- organización ecológica (4.°, 3.3) y circulación (4.°, 5.7): «niveles de organización de los seres vivos», que
+  exige la célula (6.°);
+- nutrición y respiración animal (3.°, 5.4): «intercambio de gases», que exige el sistema respiratorio (4.°).
 
 ## Decisiones abiertas para el MINED
 1. **Peso de Biología y carga de 4.°:** ¿se aplican las fusiones de la acción 12 o se consolidan los temas de la
    acción 13 para pasar horas a otras disciplinas?
-2. **Vacunas:** el grafo exige el sistema inmunitario (10.°). Proponemos en 3.° solo la idea de «defensas del
-   cuerpo»; la alternativa es introducir las defensas del cuerpo como concepto propio en primaria.
-3. **Datos que conviene verificar:**
-   - G04-3.3 está etiquetado con un concepto que exige la célula.
-   - G03-6.8 está etiquetado como «fermentación y respiración anaerobia», un concepto de Bachillerato.
+2. **Vacunas:** proponemos tratarlas en 3.° solo como prevención. Si el MINED quiere que expliquen cómo actúan,
+   hay que introducir antes una idea sencilla de «defensas del cuerpo», porque la arista sistema inmunitario →
+   inmunidad activa, pasiva y vacunas se mantiene.
+3. **Etiquetas retiradas:** confirmar que G03-5.4, G03-6.8, G04-3.3 y G04-5.7 ya no trabajan los conceptos
+   avanzados que se les quitan; si el MINED prefiere conservarlos, vuelven las secuencias pendientes.
 4. **Coordinación con la propuesta de 5.° a 8.°:** la herencia de rasgos (la otra mitad de B2.2) y la digestión química (con las
    enzimas) se resuelven allí; la fecundación en plantas con flor pasa a ser una profundización del tema nuevo de 3.°.

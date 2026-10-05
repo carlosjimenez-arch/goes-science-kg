@@ -1,14 +1,14 @@
 # Propuesta de Física, 10.° y 11.° (borrador)
 
-Versión `propuesta-v1`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v2`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G10-G11.json`.
 
 ## En resumen
-Proponemos **8 acciones**: 2 movimientos y 6 reformulaciones (`revisar`). No hay temas nuevos ni fusiones
+Proponemos **10 acciones**: 2 movimientos y 8 reformulaciones (`revisar`). No hay temas nuevos ni fusiones
 ejecutadas. El total del ciclo se mantiene en **267 temas** y no se quita ninguno.
 
 La malla de Bachillerato ya cubre los 23 objetivos de TIMSS Advanced 2015 (TA15). Por eso la propuesta es pequeña:
-- **ordena** dos secuencias de óptica que hoy van al revés;
+- **ordena** dos secuencias de óptica que hoy van al revés y una de física cuántica (cuantización antes del fotón);
 - **señala** dónde se repite lo de 8.° y 9.° o se profundiza más de lo que pide TA15.
 
 Ahí está el tiempo que el MINED puede recuperar si decide fusionar.
@@ -25,13 +25,19 @@ Ahí está el tiempo que el MINED puede recuperar si decide fusionar.
 - El tema G10 16.12 (ojo e instrumentos) pasa a la unidad 17 de 11.°.
 - Se ubica entre la ecuación de las lentes (17.5) y el ojo (17.6).
 
-**3. Dos etiquetas que no corresponden (acciones 3 y 4).**
+**3. Etiquetas que no corresponden y una idea que se adelanta (acciones 3, 4, 9 y 10).**
 - **G10 16.7** está etiquetado como dualidad onda-partícula, pero su indicador trata del modelo de rayos. Se
   redacta como *modelo de rayos* y la dualidad queda en 11.° (15.2), después del fotón.
 - **Conductores y aislantes** (G11 6.3) aparece como candidato a bajar a 10.° (CO 4, SG 5). **No se mueve.**
   - En 10.° no hay electricidad.
   - El retraso real está en primaria; las propuestas de 2.°–4.° y 5.°–8.° ya lo resuelven.
   - En 11.° el tema pasa a explicar la diferencia con el modelo de electrones libres.
+- **Cuantización de la energía (acción 9).** Química de 10.° (G10 3.5, espectros de emisión) ya usa el fotón,
+  pero la hipótesis de Planck llega en 11.° (G11 15.3). El cuerpo negro ya se estudia en 10.° (G10 13.3):
+  ese tema se cierra con una introducción cualitativa a la hipótesis de Planck. G11 15.3 la formaliza.
+- **G10 5.6 (acción 10)** clasifica las fuerzas en interacciones fundamentales, pero está etiquetado como
+  *modelo estándar de partículas*. Se acota a las cuatro interacciones, sin partículas mediadoras, y la acción retira
+  esa etiqueta (el MINED la valida). El modelo estándar queda en 11.° (20.5), después del núcleo (20.1 y 20.2).
 
 **4. Dónde se puede liberar tiempo (acciones 5 a 8, todas `revisar`).** El análisis previo encontró exceso de
 ondas y de física moderna. El objetivo *Reflexión, refracción, interferencia y difracción* (TA-O1.4) tiene
@@ -70,15 +76,28 @@ Un script de validación confirma:
 - que todos los ids existen;
 - que ningún tema movido queda antes de un bloqueo.
 
-Las dos secuencias de confianza alta del archivo de candidatos quedan corregidas:
-- superposición de ondas → interferencia de la luz;
-- lentes delgadas → ojo e instrumentos ópticos.
+El archivo de candidatos regenerado tiene tres secuencias de confianza alta:
+- superposición de ondas → interferencia de la luz: **corregida** (acción 1);
+- cuantización de la energía → fotón y efecto fotoeléctrico: **corregida** (acción 9);
+- núcleo atómico → modelo estándar de partículas: **corregida** (acción 10, que retira la etiqueta secundaria
+  de G10 5.6; el MINED valida ese retiro).
 
-Con la acción 3 también se corrige *fotón → dualidad*.
+La secuencia *lentes delgadas → ojo e instrumentos ópticos* ya no aparece en el grafo; la acción 2 se mantiene
+porque el orden sigue siendo el correcto. Con la acción 3 también se mantiene *fotón → dualidad*.
 
 **Orden dentro de 11.°:** la unidad 18 (interferencia de la luz) debe enseñarse **antes** de la unidad 15
 (*La luz*), porque la dualidad onda-partícula necesita la interferencia. La secuencia queda así:
 unidad 5 (superposición) → unidad 18 → unidad 15.
+
+## Qué cambió con el triaje de conceptos
+- El triaje añadió 14 conceptos; en Física de 10.° y 11.° solo entra uno: *Movimiento circular uniformemente
+  acelerado* (G10 9.2, 9.3, 9.5 y 9.7). Sus dos prerrequisitos sugeridos (movimiento circular y aceleración
+  constante) se enseñan antes y no generan errores de secuencia.
+- Los dos errores nuevos no vienen de aristas del triaje (ambas aristas son de confianza alta y correctas).
+  Vienen de etiquetas secundarias del reetiquetado: el fotón en Química G10 3.5 y el modelo estándar en Física G10 5.6.
+- Con esta versión, la simulación pasa de 3 a **0** errores de secuencia de confianza alta en el ciclo.
+- Los candidatos a adelantar ahora incluyen también *Ley de Ohm* y *Ondas de radio y telecomunicaciones* (de 11.° a
+  10.°). No se mueven, por la misma razón que conductores y aislantes: 10.° no tiene unidad de electricidad.
 
 ## Decisiones abiertas para el MINED
 1. **Integraciones:** ¿se aprueban las integraciones de las acciones 5 a 8? Cada una libera tiempo, pero cambia
@@ -86,10 +105,14 @@ unidad 5 (superposición) → unidad 18 → unidad 15.
 2. **Uso del tiempo liberado:** según nuestro conteo, *Estructura atómica y espectros de emisión y absorción*
    (TA-O2.1) tiene un solo tema principal en el ciclo. Es un buen destino para lo que se libere.
    El archivo de candidatos no lo marca como débil, así que conviene confirmarlo.
-3. **Dato que conviene verificar:** el grafo indica que *Ondas electromagnéticas* (G10 16.1) necesita
-   *Longitud de onda, frecuencia y rapidez*, que el ciclo ubica en 11.°. Sin embargo, 8.° ya la trabaja
-   (G08 3.8 a 3.12). No se propone mover nada por ese dato.
+3. **Dato que conviene verificar:** el grafo indica (confianza media) que *Ondas electromagnéticas* y
+   *Refracción de la luz* (G10 16.1 y 16.8) necesitan *Rapidez de la luz*, que el ciclo ubica en 11.° (G11 15.1,
+   experimentos de Rømer y Fizeau). La óptica de 10.° solo necesita saber que la luz cambia de rapidez al cambiar
+   de medio, no esas mediciones históricas. No se propone mover nada por ese dato.
 4. **Óptica geométrica en dos grados:** proponemos que 10.° quede en lo cualitativo y 11.° haga los cálculos.
    La otra opción es pasar toda la óptica a 11.°, pero 11.° quedaría con más de 155 temas.
 5. **Ciencias del espacio (unidad 22, 9 temas)** y **modelo estándar (G11 20.5)** van más allá del núcleo de TA15.
    No se tocan en esta versión, pero son candidatos a revisar si hace falta más tiempo.
+6. **Etiquetas:** validar que se retire *Modelo estándar de partículas* de G10 5.6, como propone la
+   acción 10. Para el equipo de Química: G10 3.5 usa el fotón; conviene que su redacción remita a la
+   cuantización o que se coordine con G10 13.3 de Física (acción 9).

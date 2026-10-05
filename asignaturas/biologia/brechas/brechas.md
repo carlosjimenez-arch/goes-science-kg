@@ -17,7 +17,7 @@
 
 ## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto
 
-Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 99 de 153). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
+Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 107 de 153). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
 
 ### Llega 2 o más grados tarde
 
@@ -26,6 +26,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Concepto | SV | Mediana países | Alto desempeño | Países | Oportunidad |
 |---|---|---|---|---|---|
 | Adaptaciones conductuales | 11.° | 3.5 | 4 | AU 4.0, CO 2, JP 3.0, SG 6.0 | +7.5 |
+| Nutrición mineral de las plantas | 11.° | 4 | 3 | CO 6.5, ENG 2, JP 4.0 | +7 |
 | Herencia de rasgos | 10.° | 4.5 | 5 | CO 2, ENG 4.0, JP 8.0, SG 5.0 | +5.5 |
 | Papel de los seres vivos en el ciclo del agua | 10.° | 5.75 | 5 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 | +4.25 |
 | Célula animal y célula vegetal | 11.° | 7 | 7 | AU 7.0, CO 6.5, ENG 6.0, JP 7.0, UY 7.0 | +4 |
@@ -34,6 +35,8 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Evidencias de la evolución | 10.° | 6 | 8 | AU 9.0, CO 2, ENG 4.0, JP 8.0 | +4 |
 | Transporte en plantas: xilema y floema | 8.° | 4 | 5 | ENG 2, JP 5.0, SG 5.0, UY 3.0 | +4 |
 | Ciclos del carbono y del oxígeno | 10.° | 6.25 | 6 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 | +3.75 |
+| Tejidos animales | 8.° | 5 | 7 | AU 7.0, CO 5.0, UY 4.0 | +3 |
+| Agricultura y seguridad alimentaria | 7.° | 4.5 | 6 | ENG 6.0, UY 3.0 | +2.5 |
 | Ingeniería genética y ADN recombinante | 11.° | 8.5 | 8.5 | CO 8.5, ENG 8.5, UY 6.0 | +2.5 |
 | Intercambio de gases en plantas | 8.° | 5.5 | 6 | ENG 6.0, JP 7.0, SG 5.0, UY 5.0 | +2.5 |
 | Relaciones intraespecíficas | 7.° | 4.5 | — | CO 3.0, UY 6.0 | +2.5 |
@@ -61,6 +64,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Meiosis | 6.° | 9 | -3 |
 | Sistema nervioso | 4.° | 7 | -3 |
 | ADN y cromosomas | 6.° | 8.5 | -2.5 |
+| Energía de los alimentos y balance energético | 4.° | 6.5 | -2.5 |
 | Grandes grupos taxonómicos | 2.° | 4.5 | -2.5 |
 | Grupos de vertebrados | 2.° | 4.5 | -2.5 |
 | Invertebrados e insectos | 2.° | 4.5 | -2.5 |
@@ -71,6 +75,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Enfermedades infecciosas y no infecciosas | 3.° | 5 | -2 |
 | Intercambio de gases en animales | 3.° | 5 | -2 |
 | Niveles de organización de los seres vivos | 4.° | 6 | -2 |
+| Niveles de organización ecológica | 4.° | 6 | -2 |
 | Nutrientes y sus funciones | 4.° | 6 | -2 |
 | Redes tróficas | 4.° | 6 | -2 |
 | Simbiosis: mutualismo, comensalismo y parasitismo | 4.° | 6 | -2 |

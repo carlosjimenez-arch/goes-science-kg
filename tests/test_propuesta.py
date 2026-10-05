@@ -34,3 +34,12 @@ def test_candidatos_usan_el_marco_del_ciclo():
         ciclo = p.stem.removeprefix("candidatos_")
         if ciclo in esperado:
             assert json.loads(p.read_text(encoding="utf-8"))["marco"] == esperado[ciclo], p
+
+
+def test_simulacion_aplica_quitas_de_otras_asignaturas():
+    """Biología 10.°–11.° retira etiquetas de Química; la simulación de Química debe verlas."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.propuesta import simular
+
+    r = simular("quimica", 10, 11, *cargar())
+    assert any(q["asignatura"] == "biologia" for q in r["quitas_de_otras_asignaturas"])

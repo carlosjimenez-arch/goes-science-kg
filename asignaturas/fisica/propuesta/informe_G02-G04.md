@@ -1,14 +1,14 @@
 # Propuesta de Física, 2.° a 4.° (borrador)
 
-Versión `propuesta-v3`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v5`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G02-G04.json`.
 
 ## En resumen
-Proponemos 17 acciones: 5 temas nuevos, 1 división, 5 fusiones y 6 reformulaciones (`revisar`). No hay movimientos entre grados.
+Proponemos 19 acciones: 5 temas nuevos, 1 división, 5 fusiones y 8 reformulaciones (`revisar`). No hay movimientos entre grados.
 Casi todos los conceptos que El Salvador enseña tarde están hoy en 5.° a 11.°, fuera de este ciclo, así que no se pueden
 mover gratis. El total del ciclo se mantiene en **35 temas** y no se quita ninguno. El cambio central es redistribuir:
 se reducen las máquinas simples y la medición, que están repetidas, y se da espacio a **la temperatura, el sonido, los imanes,
-la fricción, la luz y los circuitos eléctricos**, que hoy tienen uno o ningún tema en el ciclo. **3.° gana peso:** pasa
+la fricción, la gravedad y el peso, la luz y los circuitos eléctricos**, que hoy tienen uno o ningún tema en el ciclo. **3.° gana peso:** pasa
 de 6 a 10 temas; 4.° baja solo de 9 a 7 y 2.°, de 20 a 18.
 
 ## Qué cambia y por qué
@@ -35,13 +35,22 @@ de 6 a 10 temas; 4.° baja solo de 9 a 7 y 2.°, de 20 a 18.
 
 Estas fusiones liberan 6 temas, los mismos que ocupan los 5 nuevos y la división.
 
-**4. Se corrigen secuencias sin gastar presupuesto.** Varias etiquetas son demasiado ambiciosas para 2.°. Se reformulan:
-- 1.4 de 3.° nombra la gravedad como fuerza a distancia. Hoy no aparece en ningún grado, y la masa y el peso la necesitan.
-- 5.2 mide masa con la balanza; el peso se deja para después de la gravedad.
-- 5.4 (estructuras) compara diseños sin hablar del módulo de Young.
-- 3.2 compara «más rápido o más lento» sin el concepto de velocidad.
+**4. Se corrigen secuencias sin gastar presupuesto.** Varias etiquetas son demasiado ambiciosas para 2.°. Se reformulan
+los temas y se retira la etiqueta que no trabajan (`quitar_conceptos`):
+- **Gravedad y peso en 3.°.** La gravedad no se enseña hoy como concepto en ningún grado; Australia e Inglaterra la enseñan
+  en el equivalente a 3.° (AU 3, ENG 3; también UY 4 y SG 6). El tema 1.4 de 3.° la nombra como fuerza a distancia: los
+  objetos caen porque la Tierra los atrae. El tema 1.5, a continuación, presenta el peso como esa atracción (se cuelgan
+  objetos de una liga), de forma cualitativa (JP 2, UY 3 y 4, CO 4, SG 6). Ambos son `revisar`: no cuestan temas.
+- 5.2 de 2.° mide masa con la balanza; el peso llega en 1.5 de 3.°, después de la gravedad (se retira *Masa y peso* de 5.2).
+- 5.4 (estructuras) compara diseños sin hablar del módulo de Young (se retira *Esfuerzo, deformación y módulo de Young*).
+- 3.2 compara «más rápido o más lento» sin el concepto de velocidad (se retira *Rapidez y velocidad*).
+- 2.1 y 2.2 (fusionados) identifican aparatos que usan electricidad, sin armar circuitos (se retira *Circuito eléctrico
+  simple*, que empieza en 4.° con los conductores).
 - 2.6 (sol y sombra) trabaja solo calentar y enfriar, sin conducción, convección ni radiación.
 - 1.1 de 3.° nombra las unidades de uso diario (metro, kilogramo, litro); el SI formal sigue en 5.°.
+- 2.3 (fuentes naturales de electricidad) nombra el calor de los volcanes como una fuente más, sin explicar su origen
+  (se retira *Energía geotérmica*, que necesita la convección del manto y la energía interna de la Tierra). Corrige
+  una secuencia de Tierra y Espacio 2.° a 4.°, que queda sin secuencias de confianza alta.
 
 ## Distribución por grado
 
@@ -71,9 +80,12 @@ Lo comprobó un script de validación. Ningún concepto nuevo queda antes que su
 - fuerzas de contacto y a distancia → fricción y resistencia del aire (3.°)
 - fuentes de luz y sombras (2.°) → reflexión de la luz (4.°)
 - conductores y aislantes → circuito eléctrico simple (4.°, mismo tema)
-- gravedad (3.°) → masa y peso (fuera del ciclo)
+- fuerzas de contacto y a distancia → gravedad (3.°, 1.4) → masa y peso (3.°, 1.5); la masa y el peso pasan de 10.° a 3.°
 
-Importa el orden **dentro** del grado: en 3.°, los temas 1.7 y 1.8 van después de 1.3 a 1.5; en 4.°, el tema de
+Con estas etiquetas retiradas, la simulación baja los errores de secuencia de confianza alta en el ciclo de 4 a 1, y los
+conceptos que llegan tarde 2 o más grados, de 10 a 4. Queda uno que no depende de Física (ver decisión abierta 5).
+
+Importa el orden **dentro** del grado: en 3.°, el peso (1.5) va después de la gravedad (1.4), y 1.7 y 1.8 después de 1.3 a 1.5; en 4.°, el tema de
 circuitos empieza por los conductores y va antes de 1.10 (energía en electrodomésticos).
 
 No se adelantan cuatro conceptos porque tienen bloqueos tardíos: la dilatación térmica y el calor como energía
@@ -99,8 +111,15 @@ SG, ENG, AU y JP. Su incorporación cambió lo siguiente:
    intensidad y eco. Conviene confirmarla con los currículos de JP, SG y ENG.
 2. **Efecto en 5.° a 8.°.** Al introducirse antes, estos temas podrían repetirse si no se ajustan: el termómetro y las
    escalas (G06-2.2 y 2.3), el circuito y el multímetro (G06-3.1 y 3.2), el SI (G05-1.1 a 1.6) y la fricción (10.°).
-   La propuesta de 5.° a 8.° ya no necesita crear los conductores y aislantes. ¿Dónde se distingue masa de peso: 4.° o 5.°?
+   La propuesta de 5.° a 8.° ya no necesita crear los conductores y aislantes. El peso se introduce en 3.°; la diferencia
+   formal entre masa y peso (el peso cambia en la Luna, la masa no) queda para 5.° o después (CO 4, UY 4, SG 6).
 3. **Peso de las Ciencias Físicas frente a TIMSS 4.°.** Esta propuesta reparte mejor los temas dentro de Física, pero no
    aumenta su número. Subirlo exigiría tomar temas de otras asignaturas del ciclo: es una decisión entre asignaturas.
 4. **Carga de 2.°.** Se podría pasar la unidad de movimiento (3.1 a 3.3) a 3.°, junto a las fuerzas. No lo proponemos
    porque rompería su vínculo con los movimientos de la Tierra (3.4 a 3.8). Queda a criterio del MINED.
+5. **Densidad en 2.°.** El tema de Química «flotan o se hunden» (G02-1.10) lleva *Densidad y flotación*, equivalente a
+   *Densidad*, y la arista *Masa y peso → Densidad* exige masa y peso antes. Con el peso en 3.° (acción 19) la brecha baja
+   de 8 grados a 1, pero la secuencia sigue invertida: el peso no puede ir en 2.° porque la gravedad necesita las fuerzas
+   a distancia de 3.°. En 2.° flotar y hundirse es cualitativo y solo necesita comparar masas, que 2.° ya mide con la
+   balanza (Japón compara pesos de objetos del mismo volumen en el equivalente a 2.°). Se cierra en Química (etiqueta de
+   G02-1.10) o revisando la arista (la densidad necesita la masa, no la distinción masa-peso).

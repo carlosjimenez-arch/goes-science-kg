@@ -1,6 +1,6 @@
 # Propuesta de Ciencias de la Tierra y del Espacio, 5.° a 8.° (borrador)
 
-Versión `propuesta-v3`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v4`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G05-G08.json`.
 
 ## En resumen
@@ -54,7 +54,9 @@ unidad 5) → efecto invernadero (6.13) → cambio climático (6.14 y 6.15 fusio
 energías renovables y no renovables; sostenibilidad y prácticas sostenibles; causas y efectos del cambio climático.
 
 **5. Dos temas de 5.° se reformulan sin gastar presupuesto (acciones 16 y 17):** 6.6 introduce la convección del manto
-antes de la tectónica; 6.9 se centra en la intensidad sísmica, que es observable, y deja la magnitud para 9.°.
+antes de la tectónica; 6.9 se centra en la intensidad sísmica, que es observable, y deja la magnitud para 9.°. En la v4, 6.9 deja de
+llevar la etiqueta de ondas sísmicas (`quitar_conceptos`): el concepto se introduce en 9.° (G09 5.8 y 5.9), después de
+las ondas mecánicas de 8.°.
 
 ## Distribución por grado
 
@@ -77,7 +79,7 @@ queda antes de un bloqueo del archivo de candidatos. Se resuelven estas secuenci
 - imanes → campo magnético terrestre;
 - convección del manto → tectónica;
 - calentamiento desigual → ciclones;
-- ondas mecánicas → magnitud sísmica;
+- ondas mecánicas (8.°) → ondas sísmicas y magnitud (9.°), al retirar esa etiqueta del tema 6.9 de 5.°;
 - combustibles fósiles → calidad del aire (dentro de 7.°);
 - fotosíntesis y combustión → ciclo del carbono → cambio climático.
 
@@ -102,3 +104,8 @@ sistemas terrestres, que hoy no se enseñan, se introducen dentro del tema del c
 5. **Bachillerato.** Con la gravedad en 6.° y el ciclo del carbono en 7.°, conviene ajustar la profundidad de G10 5.7 y
    6.5 y del ciclo del carbono de 10.°, y que las mareas de 9.° (G09 4.10) se profundicen, no se repitan.
 6. **Carga de 7.°.** 7.° sigue con 26 temas (41 %). Equilibrarlo con 8.° debe decidirse junto con el ciclo de 9.° a 11.°.
+7. **Arista «Ondas sísmicas, magnitud e intensidad» → «Precursores, monitoreo y alerta de sismos y erupciones».**
+   Es la única secuencia de confianza alta que queda: 5.° enseña los sismos precursores y la vigilancia volcánica
+   (G05 6.10 y 6.12) antes de las ondas sísmicas (9.°). No la corregimos porque creemos que la arista es demasiado
+   fuerte: reconocer réplicas y precursores y vigilar gases, temperatura y deformación de un volcán no exige la teoría
+   de las ondas; solo la exigen los sistemas de alerta temprana (G09 5.11). Proponemos debilitarla o retirarla del grafo.

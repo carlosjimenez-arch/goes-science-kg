@@ -31,6 +31,16 @@ el menor cambio posible respecto de la malla actual y con cada cambio justificad
   (ver `reportes/cobertura_curricular/CLAUDE.md`, «Convenciones»).
 - `informe.md`: qué cambia, por qué, impacto en las métricas antes y después, y decisiones pendientes.
 
+## Simulación (`gskg propuesta simular <asig> <g0> <g1>` → `simulacion_G..-G...json`)
+Aplica la propuesta al grafo en memoria y compara antes y después: errores de secuencia en el ciclo (todos y de
+confianza alta), conceptos que llegan 2 o más grados tarde frente a la mediana de los países y desfase medio.
+- `mover`, `fusionar`, `dividir`, `nuevo` y `revisar` cambian grados, temas y etiquetas.
+- `quitar_conceptos` (opcional en cualquier acción) retira etiquetas que el tema reformulado deja de trabajar.
+- Las `quitar_conceptos` de las **otras asignaturas del mismo ciclo** también se aplican (campo
+  `quitas_de_otras_asignaturas`): por ejemplo, Biología 10.° deja de tratar «Química de los carbohidratos», lo que
+  resuelve una secuencia de Química. El resto de las acciones de otras asignaturas no se aplica.
+- `secuencia_alta_pendiente` lista lo que queda por resolver; el informe lo trata como decisiones abiertas.
+
 ## Restricciones
 - No se proponen contenidos que no estén en algún marco **ni** en algún país de referencia.
 - Cada propuesta lleva `estado: borrador` hasta que el MINED la revise (`revisado_por`).

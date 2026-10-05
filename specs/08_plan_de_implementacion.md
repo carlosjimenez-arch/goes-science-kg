@@ -32,8 +32,9 @@ muestra el resultado al usuario antes de seguir, se actualiza este archivo (✅)
 ## Fase 3 · Conceptos, prácticas y prerrequisitos ✅ (2026-10-05)
 Hecho: 498 conceptos (vocabulario por asignatura, prompt `prompts/vocabulario_conceptos.md`), 30 prácticas,
 1.245 temas y 506 objetivos de países etiquetados, 797 prerrequisitos (DAG), 11 equivalencias entre asignaturas,
-los 49 temas sin asignatura resueltos (34 asignados y 15 fuera de alcance). Pendiente: revisión humana de las
-etiquetas de confianza baja y de los 292 conceptos propuestos (`data/interim/conceptos/conceptos_propuestos.json`).
+los 49 temas sin asignatura resueltos (34 asignados y 15 fuera de alcance). Después: 292 conceptos propuestos
+triados (14 nuevos, capa `triaje_propuestos.json`; hoy 512 conceptos y 829 prerrequisitos) y 1.265 objetivos de 6 países
+etiquetados. Pendiente: revisión humana de las etiquetas de confianza baja y del triaje.
 1. Skill `grafo-asignar-disciplina`: los 49 temas sin asignatura.
 2. Skill `grafo-conceptos`: vocabulario canónico de conceptos por asignatura y aristas TRABAJA
    desde temas, objetivos de marco y objetivos de país.

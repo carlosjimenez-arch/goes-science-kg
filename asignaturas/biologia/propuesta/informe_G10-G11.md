@@ -1,6 +1,6 @@
 # Propuesta de Biología, 10.° y 11.° (borrador)
 
-Versión `propuesta-v1`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v2`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G10-G11.json`.
 
 ## En resumen
@@ -93,3 +93,9 @@ Al ordenar los temas dentro de cada grado, hay que respetar esta secuencia:
 5. **Temas FUERA del marco.** Hay que decidir los temas FUERA que siguen en la malla con el CSV de
    `revision/2026-10-05_alineacion_acara_bachillerato.csv`. Entre ellos están los de agroindustria y el de agro-químicos (3.18).
    No proponemos quitarlos.
+6. **Coordinación con Química (biomoléculas).** La revisión de Química 10.°–11.° detectó que los temas 1.1–1.6 de
+   10.° llevaban como etiquetas secundarias «Química de los carbohidratos» y «Química de los lípidos». Eso fija esos
+   conceptos en 10.°, antes de «Grupos funcionales» y «Esterificación e hidrólisis» (Química 11.°). En la v2 se
+   retiran esas etiquetas (acciones 2, 4 y 21): Biología trata las biomoléculas de forma descriptiva
+   (estructura-función) y la química orgánica queda en Química 11.°, unidad 11. Falta acordarlo con el equipo de
+   Química. Queda pendiente decidir si se hace lo mismo con «Química de los ácidos nucleicos» en el tema 1.10.

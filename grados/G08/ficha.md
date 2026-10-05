@@ -107,6 +107,7 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
 | Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
+| Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
 | Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |

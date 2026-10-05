@@ -42,11 +42,14 @@ PAIS_NOMBRADO = {"uruguay": "UY", "colombia": "CO", "singapur": "SG", "inglaterr
                  "britanic": "ENG", "australia": "AU", "japon": "JP", "japones": "JP"}
 INTENCION_PAISES = re.compile(r"\b(pais|paises|internacional|otros sistemas|compar|" + "|".join(PAIS_NOMBRADO) + ")")
 INTENCION_MARCO = re.compile(
-    r"\b(timss|pisa|acara|australian|marco|marcos|evaluaci[oó]n internacional|objetivos? internacional)", re.I)
+    r"\b(timss|pisa|acara|australian|curriculo australiano|marco|marcos|evaluaci[oó]n internacional|"
+    r"objetivos? internacional)", re.I)
 MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "acara": ("AUSS",),
-                  "australian": ("AUSS",)}
+                  "australian": ("AUSS",), "curriculo australiano": ("AUSS",)}
 PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
 PESO_TIPO = {TipoNodo.CONCEPTO: 1.15}  # ablación en data/evaluacion/resultados.md
+PESO_CONCEPTO_PRERREQ = 1.6  # conceptos cuando la consulta pregunta por prerrequisitos (ablación en resultados.md)
+PESO_PAIS_SIN_INTENCION = 0.8  # objetivos de país si la consulta no habla de países (ablación en resultados.md)
 
 
 def _sin_tildes(texto: str) -> str:
@@ -159,16 +162,26 @@ class GraphRAG:
         q = normalizar(consulta)
         plano = _sin_tildes(consulta)
         paises = INTENCION_PAISES.search(plano)
-        nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b{p}", plano)}
-        marco = INTENCION_MARCO.search(consulta)
-        marcos = {m for clave, ms in MARCO_NOMBRADO.items() if clave in consulta.lower() for m in ms}
+        marco = INTENCION_MARCO.search(plano)
+        # «currículo australiano» es el marco ACARA, no el país; con intención de marco, el refuerzo de país solo
+        # se aplica si se nombra un país.
+        plano_paises = re.sub(r"curriculo australiano|australian curriculum", "acara", plano)
+        nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b{p}", plano_paises)}
+        paises = paises if not marco else (paises and nombrados)
+        prerreq = INTENCION_PRERREQ.search(consulta)
+        marcos = {m for clave, ms in MARCO_NOMBRADO.items() if clave in plano for m in ms}
 
         def peso(n: Nodo) -> float:
             w = self._foco(n, grado) * PESO_TIPO.get(n.tipo, 1.0)
-            if paises and n.tipo == TipoNodo.OBJETIVO_PAIS:
-                w *= 2.0 if (not nombrados or n.props.get("pais") in nombrados) else 0.5
+            if n.tipo == TipoNodo.OBJETIVO_PAIS:
+                if paises:
+                    w *= 2.0 if (not nombrados or n.props.get("pais") in nombrados) else 0.5
+                else:
+                    w *= PESO_PAIS_SIN_INTENCION
             if marco and n.tipo == TipoNodo.OBJETIVO_MARCO:
                 w *= PESO_MARCO if (not marcos or n.props.get("marco") in marcos) else 0.6
+            if prerreq and n.tipo == TipoNodo.CONCEPTO:
+                w *= PESO_CONCEPTO_PRERREQ
             return w
 
         candidatos = [(d, self.bm25.puntaje(q, d) * peso(self.por_id[d])) for d in self.bm25.docs]
@@ -191,7 +204,7 @@ class GraphRAG:
                 if s > puntos.get(v, 0.0):
                     puntos[v] = s
             frontera = nueva
-        if INTENCION_PRERREQ.search(consulta):
+        if prerreq:
             self._ancestros(puntos, asignatura)
         elegidos = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))[:k_final]
         ids = {d for d, _ in elegidos}

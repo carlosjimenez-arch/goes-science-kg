@@ -15,6 +15,11 @@ consulta ──► BM25 en español (nodos con texto) ──► semillas (filtra
                               (opcional) Claude genera una respuesta citando los ids
 ```
 - **Recuperación determinista y local.** No necesita red ni claves, y las pruebas fijan su comportamiento.
+- **Intención de país.** Si la consulta nombra países o gentilicios (Japón, japoneses, Inglaterra…), sus objetivos pesan ×2;
+  si no habla de países, los objetivos de país pesan ×0,8 para no desplazar a la malla.
+- **Marco frente a país.** Si la consulta habla de un marco (TIMSS, PISA, ACARA, «currículo australiano»), el refuerzo
+  de país solo se aplica cuando se nombra un país.
+- **Intención de prerrequisito.** Los conceptos pesan ×1,6 y la recuperación sube por el DAG desde los 3 mejores.
 - **Foco por grado.** Con `--grado`, los temas de ese grado pesan 1,5 veces más, lo de otros grados 0,5 veces,
   y los temas de otros grados se atenúan también en la expansión. TIMSS 2023 nunca entra al contexto.
 - **Citas.** Cada nodo lleva su fuente: documento y página, código ACARA, u hoja y fila de la malla.
@@ -29,7 +34,7 @@ consulta ──► BM25 en español (nodos con texto) ──► semillas (filtra
    + prerrequisitos), y resumir cada comunidad con Claude en lotes. Sirve para preguntas globales
    («¿cuáles son los grandes bloques de 8.°?»).
 2. **Búsqueda híbrida**: sumar embeddings densos al BM25 si la evaluación muestra fallas de vocabulario (sinónimos).
-3. ✅ (versión «plata», 52 preguntas, `data/evaluacion/`) **Evaluación**: un conjunto de 30 a 50 preguntas con respuesta de referencia escrita por el equipo de Ciencias,
+3. ✅ (versión «plata», 60 preguntas, `data/evaluacion/`) **Evaluación**: un conjunto de 30 a 50 preguntas con respuesta de referencia escrita por el equipo de Ciencias,
    con recall@k de la recuperación y fidelidad de las citas de la respuesta.
 4. ✅ **API de lectura** (FastAPI; `gskg servir`): `/api/grados`, `/api/grados/{g}`, `/api/conceptos/{asig}/{slug}`,
    `/api/propuestas`, `/api/rag`, `/api/rag/global`. Siguiente: un panel docente que la consuma.

@@ -2,24 +2,24 @@
 
 Borradores por asignatura y ciclo, generados con el grafo de conocimiento (spec 06). Estado: **borrador**, pendiente de la revisión del equipo de Ciencias del MINED. Ninguno quita temas y todos conservan el total de su ciclo.
 
-**Verificación:** `gskg propuesta simular` aplica las acciones sobre el grafo (mover, fusionar, crear, reformular, dividir), recalcula el diagnóstico y compara antes y después:
+**Verificación:** `gskg propuesta simular` aplica las acciones sobre el grafo (mover, fusionar, crear, reformular, dividir y retirar etiquetas que un tema reformulado deja de trabajar), recalcula el diagnóstico y compara antes y después. También aplica las etiquetas que retiran las propuestas de otras asignaturas del mismo ciclo (p. ej., Biología 10.° deja de tratar la química de los carbohidratos):
 
-- *Errores de secuencia (alta)*: prerrequisitos de confianza alta que la malla enseña después del concepto que los necesita.
-- *Llegan ≥2 grados tarde*: conceptos del ciclo que El Salvador introduce dos o más grados después que la mediana de Uruguay, Colombia y Singapur. No aplica (n/a) en 10.°–11.°, porque los currículos de los países en el grafo llegan solo a 9.°.
+- *Errores de secuencia (alta)*: prerrequisitos de confianza alta que la malla enseña después del concepto que los necesita. Los que quedan son decisiones abiertas en cada informe.
+- *Llegan ≥2 grados tarde*: conceptos del ciclo que El Salvador introduce dos o más grados después que la mediana de los seis países del grafo (Uruguay, Colombia, Singapur, Inglaterra, Australia y Japón), con grados equivalentes por edad. No aplica (n/a) en 10.°–11.°, porque los currículos de los países en el grafo llegan solo a 9.°.
 - *Desfase medio*: promedio de |grado SV − mediana de países| de los conceptos comparables del ciclo.
 
 | Asignatura | Ciclo | Acciones | Errores de secuencia (alta) | Llegan ≥2 grados tarde | Desfase medio | Documentos |
 |---|---|---|---|---|---|---|
-| Biología | 2.°–4.° | 13 (fusionar 1, mover 2, nuevo 1, revisar 9) | 5 → **4** | 5 → **2** | 2.19 → **1.97** | [informe](biologia/propuesta/informe_G02-G04.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G02-G04.xlsx) |
-| Biología | 5.°–8.° | 19 (dividir 1, fusionar 5, mover 6, nuevo 6, revisar 1) | 3 → **0** | 14 → **4** | 1.96 → **1.59** | [informe](biologia/propuesta/informe_G05-G08.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G05-G08.xlsx) |
-| Biología | 10.°–11.° | 20 (fusionar 8, mover 2, nuevo 8, revisar 2) | 0 → **0** | n/a | n/a | [informe](biologia/propuesta/informe_G10-G11.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G10-G11.xlsx) |
-| Tierra y Espacio | 2.°–4.° | 7 (fusionar 3, nuevo 3, revisar 1) | 10 → **3** | 4 → **1** | 2.13 → **1.8** | [informe](ciencias_tierra_espacio/propuesta/informe_G02-G04.md) · [Excel](ciencias_tierra_espacio/propuesta/Propuesta_Ciencias_tierra_espacio_G02-G04.xlsx) |
+| Biología | 2.°–4.° | 14 (fusionar 1, mover 2, nuevo 1, revisar 10) | 5 → **0** | 6 → **3** | 2.27 → **1.99** | [informe](biologia/propuesta/informe_G02-G04.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G02-G04.xlsx) |
+| Biología | 5.°–8.° | 19 (dividir 1, fusionar 5, mover 6, nuevo 6, revisar 1) | 3 → **1** | 16 → **6** | 1.99 → **1.64** | [informe](biologia/propuesta/informe_G05-G08.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G05-G08.xlsx) |
+| Biología | 10.°–11.° | 21 (fusionar 8, mover 2, nuevo 8, revisar 3) | 0 → **0** | n/a | n/a | [informe](biologia/propuesta/informe_G10-G11.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G10-G11.xlsx) |
+| Tierra y Espacio | 2.°–4.° | 9 (fusionar 3, nuevo 3, revisar 3) | 10 → **0** | 4 → **1** | 2.13 → **1.83** | [informe](ciencias_tierra_espacio/propuesta/informe_G02-G04.md) · [Excel](ciencias_tierra_espacio/propuesta/Propuesta_Ciencias_tierra_espacio_G02-G04.xlsx) |
 | Tierra y Espacio | 5.°–8.° | 17 (fusionar 4, mover 7, nuevo 4, revisar 2) | 5 → **1** | 6 → **6** | 2.24 → **1.98** | [informe](ciencias_tierra_espacio/propuesta/informe_G05-G08.md) · [Excel](ciencias_tierra_espacio/propuesta/Propuesta_Ciencias_tierra_espacio_G05-G08.xlsx) |
-| Física | 2.°–4.° | 17 (dividir 1, fusionar 5, nuevo 5, revisar 6) | 4 → **4** | 10 → **4** | 2.42 → **1.68** | [informe](fisica/propuesta/informe_G02-G04.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G02-G04.xlsx) |
-| Física | 5.°–8.° | 20 (fusionar 7, mover 3, nuevo 7, revisar 3) | 9 → **3** | 22 → **15** | 2.26 → **1.79** | [informe](fisica/propuesta/informe_G05-G08.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G05-G08.xlsx) |
-| Física | 10.°–11.° | 8 (mover 2, revisar 6) | 3 → **2** | n/a | n/a | [informe](fisica/propuesta/informe_G10-G11.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G10-G11.xlsx) |
-| Química | 5.°–8.° | 19 (fusionar 8, mover 1, nuevo 8, revisar 2) | 8 → **2** | 11 → **2** | 2.3 → **1.76** | [informe](quimica/propuesta/informe_G05-G08.md) · [Excel](quimica/propuesta/Propuesta_Quimica_G05-G08.xlsx) |
-| Química | 10.°–11.° | 18 (fusionar 5, mover 1, nuevo 5, revisar 7) | 5 → **3** | n/a | n/a | [informe](quimica/propuesta/informe_G10-G11.md) · [Excel](quimica/propuesta/Propuesta_Quimica_G10-G11.xlsx) |
+| Física | 2.°–4.° | 19 (dividir 1, fusionar 5, nuevo 5, revisar 8) | 4 → **1** | 10 → **4** | 2.42 → **1.54** | [informe](fisica/propuesta/informe_G02-G04.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G02-G04.xlsx) |
+| Física | 5.°–8.° | 21 (fusionar 7, mover 3, nuevo 7, revisar 4) | 9 → **1** | 22 → **16** | 2.26 → **1.76** | [informe](fisica/propuesta/informe_G05-G08.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G05-G08.xlsx) |
+| Física | 10.°–11.° | 10 (mover 2, revisar 8) | 3 → **0** | n/a | n/a | [informe](fisica/propuesta/informe_G10-G11.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G10-G11.xlsx) |
+| Química | 5.°–8.° | 19 (fusionar 8, mover 1, nuevo 8, revisar 2) | 8 → **0** | 11 → **2** | 2.3 → **1.76** | [informe](quimica/propuesta/informe_G05-G08.md) · [Excel](quimica/propuesta/Propuesta_Quimica_G05-G08.xlsx) |
+| Química | 10.°–11.° | 19 (dividir 1, fusionar 6, mover 1, nuevo 5, revisar 6) | 5 → **0** | n/a | n/a | [informe](quimica/propuesta/informe_G10-G11.md) · [Excel](quimica/propuesta/Propuesta_Quimica_G10-G11.xlsx) |
 
 Notas:
 - **Química 2.°–4.°** no tiene propuesta: la malla no tiene Química en 4.° y no hay conceptos que lleguen tarde.

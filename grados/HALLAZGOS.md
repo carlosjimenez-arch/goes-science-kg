@@ -31,7 +31,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Mareas necesita Gravedad y órbitas (nunca); Niveles de organización de los seres vivos necesita La célula como unidad de la vida (6.°); Ciclones tropicales y tormentas necesita Tiempo atmosférico y sus variables (7.°); Clima: diferencia con el tiempo, tipos y factores necesita Tiempo atmosférico y sus variables (7.°); Uso del suelo y su degradación necesita Erosión, transporte y sedimentación (5.°); Uso del suelo y su degradación necesita Suelo: formación, componentes y tipos (5.°).
 
-**Alto desempeño ya lo enseña:** Materiales magnéticos (SV 6.°); Tiempo atmosférico y sus variables (SV 7.°); Imanes y polos magnéticos (SV 6.°); Ciclo del agua (SV 7.°); Suelo: formación, componentes y tipos (SV 5.°); Fricción y resistencia del aire (SV 10.°); y 9 más.
+**Alto desempeño ya lo enseña:** Materiales magnéticos (SV 6.°); Tiempo atmosférico y sus variables (SV 7.°); Imanes y polos magnéticos (SV 6.°); Ciclo del agua (SV 7.°); Suelo: formación, componentes y tipos (SV 5.°); Fricción y resistencia del aire (SV 10.°); y 10 más.
 
 ## 5.° grado
 
@@ -39,7 +39,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Formación del sistema solar necesita Gravedad y órbitas (nunca); Tectónica de placas necesita Convección del manto y energía interna de la Tierra (nunca); Campo magnético terrestre necesita Imanes y polos magnéticos (6.°); Ciclo de vida de las estrellas necesita Fisión y fusión nuclear (11.°); Ondas sísmicas, magnitud e intensidad necesita Ondas mecánicas transversales y longitudinales (8.°); Campo magnético y magnetismo terrestre necesita Imanes y polos magnéticos (6.°); y 5 más.
 
-**Alto desempeño ya lo enseña:** Materiales magnéticos (SV 6.°); Tiempo atmosférico y sus variables (SV 7.°); Imanes y polos magnéticos (SV 6.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); y 17 más.
+**Alto desempeño ya lo enseña:** Materiales magnéticos (SV 6.°); Tiempo atmosférico y sus variables (SV 7.°); Imanes y polos magnéticos (SV 6.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); y 18 más.
 
 ## 6.° grado
 
@@ -47,7 +47,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Biomoléculas necesita El carbono y las moléculas orgánicas (11.°); Enzimas necesita Proteínas: estructura y función (10.°); Capacidad calorífica y calor específico necesita Calor como energía en tránsito (10.°); Circuito eléctrico simple necesita Conductores y aislantes eléctricos (11.°); Corriente, voltaje y resistencia necesita Carga eléctrica y electrización (9.°); Resistencia equivalente necesita Ley de Ohm (11.°); y 5 más.
 
-**Alto desempeño ya lo enseña:** Tiempo atmosférico y sus variables (SV 7.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); y 23 más.
+**Alto desempeño ya lo enseña:** Tiempo atmosférico y sus variables (SV 7.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); y 24 más.
 
 ## 7.° grado
 
@@ -55,7 +55,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Filogenia y parentesco evolutivo necesita Evidencias de la evolución (10.°); Ecuación química y su balanceo necesita Conservación de la masa (10.°).
 
-**Alto desempeño ya lo enseña:** Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Reflexión de la luz (SV 10.°); Digestión química y absorción de nutrientes (SV 8.°); Transporte en plantas: xilema y floema (SV 8.°); y 25 más.
+**Alto desempeño ya lo enseña:** Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Reflexión de la luz (SV 10.°); Digestión química y absorción de nutrientes (SV 8.°); Nutrición mineral de las plantas (SV 11.°); y 26 más.
 
 ## 8.° grado
 
@@ -63,7 +63,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Enzimas necesita Proteínas: estructura y función (10.°); Fuerzas mecánicas comunes necesita Fricción y resistencia del aire (10.°); Cinemática en dos dimensiones y proyectiles necesita Caída libre (10.°); Ondas estacionarias y armónicos necesita Superposición e interferencia de ondas (11.°).
 
-**Alto desempeño ya lo enseña:** Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Reflexión de la luz (SV 10.°); Calor como energía en tránsito (SV 10.°); Ventaja mecánica (SV 9.°); y 21 más.
+**Alto desempeño ya lo enseña:** Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Reflexión de la luz (SV 10.°); Nutrición mineral de las plantas (SV 11.°); Calor como energía en tránsito (SV 10.°); y 22 más.
 
 ## 9.° grado
 
@@ -71,7 +71,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Mareas necesita Gravedad y órbitas (nunca); Acidificación del océano necesita Ciclo del carbono en los sistemas terrestres (10.°); Capacidad calorífica y calor específico necesita Calor como energía en tránsito (10.°); Capacitancia y condensadores necesita Energía potencial y potencial eléctrico (11.°); Circuito eléctrico simple necesita Conductores y aislantes eléctricos (11.°); Primera ley de la termodinámica necesita Calor como energía en tránsito (10.°); y 1 más.
 
-**Alto desempeño ya lo enseña:** Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Reflexión de la luz (SV 10.°); Calor como energía en tránsito (SV 10.°); Herencia de rasgos (SV 10.°); y 19 más.
+**Alto desempeño ya lo enseña:** Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Reflexión de la luz (SV 10.°); Nutrición mineral de las plantas (SV 11.°); Calor como energía en tránsito (SV 10.°); y 20 más.
 
 ## 10.° grado
 
@@ -79,7 +79,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Ciclo del carbono en los sistemas terrestres necesita Sistemas terrestres y sus interacciones (nunca); Masa y peso necesita Gravedad: atracción hacia la Tierra (nunca); Biomoléculas necesita El carbono y las moléculas orgánicas (11.°); Fotón y efecto fotoeléctrico necesita Cuantización de la energía (11.°); Interferencia de la luz necesita Superposición e interferencia de ondas (11.°); Modelo estándar de partículas necesita Núcleo atómico e isótopos (11.°); y 5 más.
 
-**Alto desempeño ya lo enseña:** Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Conductores y aislantes eléctricos (SV 11.°); Ley de Ohm (SV 11.°); Oxidación y reducción (SV 11.°); Abastecimiento y conservación del agua dulce (SV nunca); y 1 más.
+**Alto desempeño ya lo enseña:** Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Nutrición mineral de las plantas (SV 11.°); Conductores y aislantes eléctricos (SV 11.°); Ley de Ohm (SV 11.°); Oxidación y reducción (SV 11.°); y 2 más.
 
 ## 11.° grado
 

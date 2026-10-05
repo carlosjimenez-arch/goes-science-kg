@@ -4,10 +4,10 @@
   10,
   11
  ],
- "version": "propuesta-v1",
+ "version": "propuesta-v2",
  "estado": "borrador",
  "marco": "AUSS (ACARA Senior Secondary Chemistry v8.4; unidades 1-2 ≈ 10.°, 3-4 ≈ 11.°)",
- "nota": "En acciones con varios temas afectados, tema_propuesto e indicador_logro listan un tema por cada id, en el mismo orden y separados por « | », salvo en las acciones 17 y 18 (revisar nivel), donde los temas se conservan sin cambio. Los candidatos no traen países para este ciclo (mover_antes vacío): la evidencia son los objetivos AUSS de reforzar y los prerrequisitos. La numeración de temas nuevos es provisional; la ubicación está en unidad_propuesta. Los temas fusionados conservan el número del primero.",
+ "nota": "En acciones con varios temas afectados, tema_propuesto e indicador_logro listan un tema por cada id, en el mismo orden y separados por « | », salvo en la acción 2 (dividir), donde tema_propuesto es el tema nuevo que sale de 2.6, y en las acciones 17 y 18 (revisar nivel), donde los temas se conservan sin cambio. Los candidatos solo traen países para Oxidación y reducción (mover_antes: ENG 6, JP 7); en el resto, la evidencia son los objetivos AUSS de reforzar y los prerrequisitos. La numeración de temas nuevos es provisional; la ubicación está en unidad_propuesta. Los temas fusionados conservan el número del primero.",
  "acciones": [
   {
    "accion": "mover",
@@ -26,6 +26,7 @@
     "Ecuación química y su balanceo"
    ],
    "evidencia": [
+    "mover_antes: Oxidación y reducción, ENG 6, JP 7 (destino sugerido 10.°, sin bloqueos)",
     "corregir_secuencia: Oxidación y reducción (11.°) es prerrequisito de Agentes oxidantes y reductores (10.°, G10 13.3 y 13.7), confianza alta",
     "corregir_secuencia: Oxidación y reducción (11.°) es prerrequisito de Electrólisis y celdas electrolíticas (10.°, G10 13.8), confianza alta",
     "ACSCH106 (reforzar: 1 tema, débil)"
@@ -34,22 +35,26 @@
    "n": 1
   },
   {
-   "accion": "revisar",
+   "accion": "dividir",
    "temas_afectados": [
     "G10-QUI-U2-2.6"
    ],
    "grado_actual": 10,
-   "grado_propuesto": 10,
-   "unidad_propuesta": "2. Las cantidades en química",
-   "tema_propuesto": "2.6. Determinación de la fórmula empírica y molecular de compuestos a partir de datos de análisis elemental y de su masa molar.",
-   "indicador_logro": "Calcula la fórmula empírica y la molecular de un compuesto a partir de su composición porcentual y su masa molar, y verifica el resultado con la suma de masas atómicas.",
+   "grado_propuesto": 11,
+   "unidad_propuesta": "2. Introducción a la química orgánica (después de 2.9, nomenclatura de alquenos y alquinos; antes de la unidad 3)",
+   "tema_propuesto": "2.13. Construcción de isómeros de cadena y de posición de alcanos y alquenos con modelos moleculares y su nombre IUPAC.",
+   "indicador_logro": "Construye con modelos moleculares todos los isómeros de cadena del C5H12 y los de posición del C4H8, escribe sus fórmulas semidesarrolladas, los nombra según la IUPAC y explica por qué comparten la fórmula molecular pero no las propiedades.",
    "conceptos": [
-    "Composición porcentual y fórmulas empírica y molecular"
+    "Isomería estructural",
+    "Hidrocarburos: alcanos, alquenos y alquinos",
+    "Nomenclatura orgánica IUPAC"
    ],
    "evidencia": [
-    "corregir_secuencia: Hidrocarburos: alcanos, alquenos y alquinos (11.°) es prerrequisito de Isomería estructural (10.°), confianza alta"
+    "corregir_secuencia: Hidrocarburos: alcanos, alquenos y alquinos (11.°) es prerrequisito de Isomería estructural (10.°, G10 2.6), confianza alta",
+    "simulación de v1: reformular 2.6 (revisar) no le quitaba la isomería y la secuencia seguía invertida",
+    "prerrequisito: Hidrocarburos y Nomenclatura orgánica IUPAC (G11 2.4 a 2.9, mismo grado, antes)"
    ],
-   "justificacion": "El reconocimiento de isómeros sale de 10.°: exige las cadenas de hidrocarburos de 11.°. La isomería se mantiene en 11.° (3.14), después de los hidrocarburos. El tema conserva el cálculo de fórmulas.",
+   "justificacion": "El reconocimiento de isómeros sale de 2.6 de 10.° y pasa a 11.°, justo después de nombrar alcanos y alquenos. Prepara 3.14 (estereoisómeros). El resto de 2.6 se une con 2.5 (acción 19), que paga este tema.",
    "n": 2
   },
   {
@@ -413,6 +418,27 @@
    ],
    "justificacion": "Son los temas más avanzados de cada bloque. No se quitan: se señalan para que el MINED decida si conserva ese nivel o los trata de forma cualitativa.",
    "n": 18
+  },
+  {
+   "accion": "fusionar",
+   "temas_afectados": [
+    "G10-QUI-U2-2.5",
+    "G10-QUI-U2-2.6"
+   ],
+   "grado_actual": 10,
+   "grado_propuesto": 10,
+   "unidad_propuesta": "2. Las cantidades en química",
+   "tema_propuesto": "2.5. Cálculo de la composición centesimal y de las fórmulas empírica y molecular de compuestos inorgánicos y orgánicos a partir de datos experimentales y de análisis elemental.",
+   "indicador_logro": "Calcula la composición centesimal de un compuesto y, a partir de datos de análisis elemental y de su masa molar, obtiene su fórmula empírica y su fórmula molecular, y verifica el resultado con la suma de masas atómicas.",
+   "conceptos": [
+    "Composición porcentual y fórmulas empírica y molecular",
+    "Masa molar"
+   ],
+   "evidencia": [
+    "fusión: ambos temas trabajan Composición porcentual y fórmulas empírica y molecular en 10.° (2.6 ya sin la isomería, acción 2)"
+   ],
+   "justificacion": "Sin el reconocimiento de isómeros, 2.6 repite el cálculo de fórmulas de 2.5 con compuestos orgánicos. Unidos, el cálculo se practica con ambos tipos de compuesto. La fusión paga el tema de isómeros de 11.° (acción 2).",
+   "n": 19
   }
  ],
  "temas_por_grado_actual": {
@@ -420,7 +446,7 @@
   "11": 97
  },
  "temas_por_grado_propuesto": {
-  "10": 114,
-  "11": 95
+  "10": 113,
+  "11": 96
  }
 }
