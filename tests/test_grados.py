@@ -1,0 +1,34 @@
+import json
+
+from goes_science_kg.config import ruta
+from goes_science_kg.grados import GRADOS, subgrafo
+from goes_science_kg.modelos import TipoNodo
+from goes_science_kg.prerrequisitos import evidencia_orden
+
+
+def test_subgrafo_del_grado_contiene_solo_sus_temas(grafo):
+    nodos, aristas = grafo
+    ev = evidencia_orden(nodos, aristas)
+    sn, sa, d = subgrafo(7, nodos, aristas, ev)
+    temas = [n for n in sn if n.tipo == TipoNodo.TEMA]
+    assert temas and all(t.grado == 7 for t in temas)
+    ids = {n.id for n in sn}
+    assert all(a.origen in ids and a.destino in ids for a in sa)
+    assert d["temas"] == len(temas)
+    assert d["conceptos_nuevos"] + d["conceptos_retomados"] == d["conceptos"]
+
+
+def test_estados_de_anclaje_validos(grafo):
+    nodos, aristas = grafo
+    ev = evidencia_orden(nodos, aristas)
+    for g in (5, 8, 10):
+        _, _, d = subgrafo(g, nodos, aristas, ev)
+        assert all(a["estado"] in {"previo", "mismo_grado", "posterior", "ausente"} for a in d["anclajes"])
+
+
+def test_salidas_por_grado_existen():
+    for g in GRADOS:
+        assert (ruta(f"grados/G{g:02d}") / "ficha.md").exists()
+        assert (ruta(f"grados/G{g:02d}") / "grafo.html").exists()
+        m = json.loads((ruta(f"data/grafo/grados/G{g:02d}") / "manifest.json").read_text(encoding="utf-8"))
+        assert m["nodos"]["Tema"] > 0

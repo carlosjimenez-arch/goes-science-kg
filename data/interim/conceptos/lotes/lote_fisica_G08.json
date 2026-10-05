@@ -1,0 +1,1090 @@
+{
+ "lote": "fisica_G08",
+ "version": "etiquetado-v1",
+ "instrucciones": "prompts/etiquetar_conceptos.md",
+ "vocabulario": [
+  {
+   "id": "CON:fisica/absorcion-radiacion-efecto-invernadero",
+   "nombre": "Absorción de radiación y efecto invernadero",
+   "definicion": "Gases como el CO₂ absorben radiación infrarroja emitida por la Tierra y elevan la temperatura de la atmósfera."
+  },
+  {
+   "id": "CON:fisica/aceleracion",
+   "nombre": "Aceleración",
+   "definicion": "Cambio de la velocidad por unidad de tiempo; puede aumentar o disminuir la rapidez o cambiar la dirección."
+  },
+  {
+   "id": "CON:fisica/aceleracion-fuerza-centripeta",
+   "nombre": "Aceleración y fuerza centrípeta",
+   "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta."
+  },
+  {
+   "id": "CON:fisica/aplicaciones-leyes-newton",
+   "nombre": "Aplicaciones de las leyes de Newton",
+   "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados."
+  },
+  {
+   "id": "CON:fisica/astronomia-multionda",
+   "nombre": "Observación astronómica en distintas longitudes de onda",
+   "definicion": "Telescopios y detectores captan radiación electromagnética de radio a gamma para estudiar el universo."
+  },
+  {
+   "id": "CON:fisica/caida-libre",
+   "nombre": "Caída libre",
+   "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire."
+  },
+  {
+   "id": "CON:fisica/calentamiento-enfriamiento",
+   "nombre": "Calentamiento y enfriamiento",
+   "definicion": "Al contacto, el objeto caliente se enfría y el frío se calienta hasta igualar su temperatura."
+  },
+  {
+   "id": "CON:fisica/calor-latente",
+   "nombre": "Calor latente",
+   "definicion": "Energía absorbida o liberada en un cambio de fase sin variar la temperatura: Q = mL."
+  },
+  {
+   "id": "CON:fisica/calor-vs-temperatura",
+   "nombre": "Calor como energía en tránsito",
+   "definicion": "El calor es energía transferida por diferencia de temperatura; se distingue de la temperatura y de la energía interna."
+  },
+  {
+   "id": "CON:fisica/cambios-estado",
+   "nombre": "Cambios de estado",
+   "definicion": "Fusión, solidificación, evaporación, condensación y sublimación ocurren al ganar o perder energía térmica."
+  },
+  {
+   "id": "CON:fisica/campo-electrico",
+   "nombre": "Campo eléctrico",
+   "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas."
+  },
+  {
+   "id": "CON:fisica/campo-magnetico",
+   "nombre": "Campo magnético y magnetismo terrestre",
+   "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula."
+  },
+  {
+   "id": "CON:fisica/capacidad-calorifica-calor-especifico",
+   "nombre": "Capacidad calorífica y calor específico",
+   "definicion": "Energía necesaria para elevar la temperatura de un cuerpo o de un kilogramo de sustancia un grado: Q = mcΔT."
+  },
+  {
+   "id": "CON:fisica/capacitancia",
+   "nombre": "Capacitancia y condensadores",
+   "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC."
+  },
+  {
+   "id": "CON:fisica/carga-electrica-electrizacion",
+   "nombre": "Carga eléctrica y electrización",
+   "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada."
+  },
+  {
+   "id": "CON:fisica/centro-gravedad-estabilidad",
+   "nombre": "Centro de gravedad y estabilidad",
+   "definicion": "Punto donde actúa el peso de un cuerpo; su posición respecto a la base de apoyo determina la estabilidad."
+  },
+  {
+   "id": "CON:fisica/circuito-electrico-simple",
+   "nombre": "Circuito eléctrico simple",
+   "definicion": "Un circuito necesita un camino cerrado desde la fuente por los componentes; la electricidad se transforma en luz, calor o sonido."
+  },
+  {
+   "id": "CON:fisica/circuitos-serie-paralelo",
+   "nombre": "Circuitos en serie y en paralelo",
+   "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos."
+  },
+  {
+   "id": "CON:fisica/colisiones",
+   "nombre": "Colisiones elásticas e inelásticas",
+   "definicion": "Choques en que se conserva el momento; en los elásticos también la energía cinética, en los inelásticos no."
+  },
+  {
+   "id": "CON:fisica/color-dispersion-luz",
+   "nombre": "Color y dispersión de la luz",
+   "definicion": "La luz blanca se descompone en colores (arcoíris); el color de un objeto depende de la luz que refleja."
+  },
+  {
+   "id": "CON:fisica/conductores-aislantes-electricos",
+   "nombre": "Conductores y aislantes eléctricos",
+   "definicion": "Materiales que permiten o impiden el paso de la corriente eléctrica."
+  },
+  {
+   "id": "CON:fisica/conservacion-energia",
+   "nombre": "Conservación de la energía",
+   "definicion": "La energía total de un sistema aislado se mantiene constante; solo se transforma o transfiere."
+  },
+  {
+   "id": "CON:fisica/conservacion-energia-mecanica",
+   "nombre": "Conservación de la energía mecánica",
+   "definicion": "Sin fuerzas no conservativas, la suma de energía cinética y potencial de un sistema permanece constante."
+  },
+  {
+   "id": "CON:fisica/conservacion-momento-lineal",
+   "nombre": "Conservación del momento lineal",
+   "definicion": "En un sistema aislado el momento lineal total se conserva, aunque actúen fuerzas internas."
+  },
+  {
+   "id": "CON:fisica/corriente-alterna-transformador",
+   "nombre": "Corriente alterna y transformador",
+   "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC."
+  },
+  {
+   "id": "CON:fisica/corriente-voltaje-resistencia",
+   "nombre": "Corriente, voltaje y resistencia",
+   "definicion": "Magnitudes básicas de un circuito: flujo de carga, diferencia de potencial que lo impulsa y oposición al paso."
+  },
+  {
+   "id": "CON:fisica/cosmologia-big-bang",
+   "nombre": "Expansión del universo y Big Bang",
+   "definicion": "Las galaxias se alejan (ley de Hubble); el universo se originó en un estado caliente y denso hace unos 13 800 millones de años."
+  },
+  {
+   "id": "CON:fisica/cuantizacion-energia-planck",
+   "nombre": "Cuantización de la energía",
+   "definicion": "La energía de la radiación se emite en paquetes discretos E = hf, idea de Planck para el cuerpo negro."
+  },
+  {
+   "id": "CON:fisica/densidad",
+   "nombre": "Densidad",
+   "definicion": "Masa por unidad de volumen de un material; permite comparar materiales y predecir si flotan."
+  },
+  {
+   "id": "CON:fisica/desintegracion-radiactiva",
+   "nombre": "Desintegración radiactiva",
+   "definicion": "Núcleos inestables emiten radiación alfa, beta o gamma; su número decae exponencialmente con una vida media."
+  },
+  {
+   "id": "CON:fisica/difraccion-luz",
+   "nombre": "Difracción de ondas y de la luz",
+   "definicion": "Las ondas se curvan al pasar aberturas comparables a su longitud de onda; rendijas, redes y difracción de rayos X."
+  },
+  {
+   "id": "CON:fisica/dilatacion-termica",
+   "nombre": "Dilatación térmica",
+   "definicion": "Aumento de las dimensiones de un cuerpo al elevarse su temperatura, cuantificado por coeficientes de dilatación."
+  },
+  {
+   "id": "CON:fisica/dinamica-rotacion-momento-inercia",
+   "nombre": "Dinámica y energía de rotación",
+   "definicion": "El torque neto produce aceleración angular (τ = Iα); un cuerpo que gira o rueda tiene energía cinética ½Iω²."
+  },
+  {
+   "id": "CON:fisica/disipacion-eficiencia",
+   "nombre": "Disipación de energía y eficiencia",
+   "definicion": "En toda transformación parte de la energía se disipa como calor; la eficiencia es la fracción útil obtenida."
+  },
+  {
+   "id": "CON:fisica/dualidad-onda-particula",
+   "nombre": "Dualidad onda-partícula",
+   "definicion": "Luz y materia presentan comportamiento ondulatorio y corpuscular; longitud de onda de De Broglie."
+  },
+  {
+   "id": "CON:fisica/efecto-doppler",
+   "nombre": "Efecto Doppler",
+   "definicion": "Cambio de la frecuencia percibida cuando la fuente o el observador se mueven; aplica a sonido y luz."
+  },
+  {
+   "id": "CON:fisica/elasticidad-esfuerzo-deformacion",
+   "nombre": "Esfuerzo, deformación y módulo de Young",
+   "definicion": "Respuesta de los sólidos a esfuerzos de tensión o compresión; límite elástico, deformación plástica y ruptura."
+  },
+  {
+   "id": "CON:fisica/electroiman",
+   "nombre": "Electroimanes y efecto magnético de la corriente",
+   "definicion": "Una corriente eléctrica produce un campo magnético (Oersted); una bobina con núcleo de hierro forma un electroimán."
+  },
+  {
+   "id": "CON:fisica/energia-cinetica",
+   "nombre": "Energía cinética",
+   "definicion": "Energía asociada al movimiento de un cuerpo, ½mv², que depende de su masa y su rapidez."
+  },
+  {
+   "id": "CON:fisica/energia-enlace-nuclear",
+   "nombre": "Defecto de masa y energía de enlace nuclear",
+   "definicion": "La masa del núcleo es menor que la de sus nucleones; esa diferencia equivale a la energía de enlace."
+  },
+  {
+   "id": "CON:fisica/energia-potencial-gravitatoria",
+   "nombre": "Energía potencial gravitatoria y elástica",
+   "definicion": "Energía almacenada por la posición en un campo gravitatorio (mgh) o por la deformación de un cuerpo elástico (½kx²)."
+  },
+  {
+   "id": "CON:fisica/energia-usos-vida-diaria",
+   "nombre": "La energía y sus usos",
+   "definicion": "La energía permite producir cambios; las personas la usan en forma de calor, luz, movimiento y electricidad."
+  },
+  {
+   "id": "CON:fisica/equilibrio-termico",
+   "nombre": "Equilibrio térmico y ley cero",
+   "definicion": "Dos cuerpos en contacto intercambian calor hasta igualar temperaturas; la ley cero fundamenta la termometría."
+  },
+  {
+   "id": "CON:fisica/equilibrio-traslacional",
+   "nombre": "Condiciones de equilibrio estático",
+   "definicion": "Un cuerpo rígido está en equilibrio si la fuerza neta y el torque neto sobre él son nulos."
+  },
+  {
+   "id": "CON:fisica/equivalencia-masa-energia",
+   "nombre": "Equivalencia masa-energía",
+   "definicion": "La masa es una forma de energía: E = mc²; base de la energía relativista y nuclear."
+  },
+  {
+   "id": "CON:fisica/espejos-esfericos",
+   "nombre": "Espejos esféricos",
+   "definicion": "Espejos cóncavos y convexos forman imágenes reales o virtuales determinadas por trazado de rayos y la ecuación del espejo."
+  },
+  {
+   "id": "CON:fisica/espejos-planos",
+   "nombre": "Espejos planos e imágenes",
+   "definicion": "Un espejo plano forma una imagen virtual, del mismo tamaño y con inversión lateral; se analiza con diagramas de rayos."
+  },
+  {
+   "id": "CON:fisica/estados-materia",
+   "nombre": "Estados de la materia",
+   "definicion": "Sólidos, líquidos y gases se distinguen por su forma y volumen propios o adaptables."
+  },
+  {
+   "id": "CON:fisica/fision-fusion-nuclear",
+   "nombre": "Fisión y fusión nuclear",
+   "definicion": "Reacciones en que núcleos pesados se dividen o ligeros se unen liberando energía; base de reactores y estrellas."
+  },
+  {
+   "id": "CON:fisica/flotacion-hundimiento",
+   "nombre": "Flotación y hundimiento",
+   "definicion": "Algunos objetos flotan y otros se hunden según su material y forma, al compararse con el líquido."
+  },
+  {
+   "id": "CON:fisica/formas-energia",
+   "nombre": "Formas de energía",
+   "definicion": "Energía cinética, potencial, luminosa, sonora, eléctrica, térmica y química como manifestaciones de la energía."
+  },
+  {
+   "id": "CON:fisica/foton-efecto-fotoelectrico",
+   "nombre": "Fotón y efecto fotoeléctrico",
+   "definicion": "La luz se comporta como partículas (fotones) que arrancan electrones de un metal por encima de una frecuencia umbral."
+  },
+  {
+   "id": "CON:fisica/friccion-resistencia-aire",
+   "nombre": "Fricción y resistencia del aire",
+   "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos."
+  },
+  {
+   "id": "CON:fisica/fuentes-energia-renovables",
+   "nombre": "Fuentes de energía renovables y no renovables",
+   "definicion": "Recursos energéticos (solar, eólica, hídrica, combustibles fósiles) que se distinguen por su capacidad de renovarse e impacto ambiental."
+  },
+  {
+   "id": "CON:fisica/fuerza-elastica-ley-hooke",
+   "nombre": "Fuerza elástica y ley de Hooke",
+   "definicion": "La fuerza de un resorte es proporcional a su deformación y se opone a ella: F = −kx."
+  },
+  {
+   "id": "CON:fisica/fuerza-empuje-tiron",
+   "nombre": "Fuerza como empuje o tirón",
+   "definicion": "Una fuerza es un empuje o tirón; las fuerzas desequilibradas cambian la rapidez, dirección o forma de un objeto."
+  },
+  {
+   "id": "CON:fisica/fuerza-lorentz",
+   "nombre": "Fuerza magnética sobre cargas en movimiento",
+   "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas)."
+  },
+  {
+   "id": "CON:fisica/fuerza-neta-diagrama-cuerpo-libre",
+   "nombre": "Fuerza neta y diagrama de cuerpo libre",
+   "definicion": "La fuerza neta es la suma vectorial de las fuerzas sobre un cuerpo, representadas en un diagrama de cuerpo libre."
+  },
+  {
+   "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+   "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+   "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores."
+  },
+  {
+   "id": "CON:fisica/fuerzas-contacto-distancia",
+   "nombre": "Fuerzas de contacto y a distancia",
+   "definicion": "Algunas fuerzas actúan por contacto (empuje, fricción) y otras a distancia (gravitatoria, magnética, eléctrica)."
+  },
+  {
+   "id": "CON:fisica/fuerzas-mecanicas-comunes",
+   "nombre": "Fuerzas mecánicas comunes",
+   "definicion": "Fuerza normal, tensión, fricción, fuerza elástica y empuje como interacciones de contacto con magnitud y dirección."
+  },
+  {
+   "id": "CON:fisica/graficas-movimiento",
+   "nombre": "Gráficas del movimiento",
+   "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento."
+  },
+  {
+   "id": "CON:fisica/gravedad-atrae-hacia-tierra",
+   "nombre": "Gravedad: atracción hacia la Tierra",
+   "definicion": "La gravedad es la fuerza que atrae los objetos hacia el centro de la Tierra y los hace caer."
+  },
+  {
+   "id": "CON:fisica/gravitacion-universal",
+   "nombre": "Ley de gravitación universal",
+   "definicion": "Dos masas se atraen con una fuerza proporcional al producto de sus masas e inversa al cuadrado de su distancia."
+  },
+  {
+   "id": "CON:fisica/imanes-polos",
+   "nombre": "Imanes y polos magnéticos",
+   "definicion": "Los imanes tienen dos polos; polos iguales se repelen y opuestos se atraen."
+  },
+  {
+   "id": "CON:fisica/induccion-electromagnetica",
+   "nombre": "Inducción electromagnética: Faraday y Lenz",
+   "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos."
+  },
+  {
+   "id": "CON:fisica/interferencia-luz",
+   "nombre": "Interferencia de la luz",
+   "definicion": "Superposición de ondas luminosas coherentes: experimento de Young, películas delgadas e interferómetros."
+  },
+  {
+   "id": "CON:fisica/lentes-delgadas",
+   "nombre": "Lentes delgadas e imágenes",
+   "definicion": "Lentes convergentes y divergentes forman imágenes según su distancia focal; ecuación de las lentes y aumento."
+  },
+  {
+   "id": "CON:fisica/ley-coulomb",
+   "nombre": "Ley de Coulomb",
+   "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia."
+  },
+  {
+   "id": "CON:fisica/ley-ohm",
+   "nombre": "Ley de Ohm",
+   "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR."
+  },
+  {
+   "id": "CON:fisica/leyes-kepler",
+   "nombre": "Leyes de Kepler",
+   "definicion": "Del modelo geocéntrico al heliocéntrico: los planetas describen elipses, barren áreas iguales y T² es proporcional a a³."
+  },
+  {
+   "id": "CON:fisica/leyes-kirchhoff",
+   "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+   "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales."
+  },
+  {
+   "id": "CON:fisica/magnitudes-escalares-vectoriales",
+   "nombre": "Magnitudes escalares y vectoriales",
+   "definicion": "Las magnitudes vectoriales tienen módulo, dirección y sentido; las escalares solo valor numérico con unidad."
+  },
+  {
+   "id": "CON:fisica/magnitudes-ondas",
+   "nombre": "Longitud de onda, frecuencia y rapidez",
+   "definicion": "Magnitudes de una onda periódica (amplitud, período, frecuencia, longitud de onda) relacionadas por v = λf."
+  },
+  {
+   "id": "CON:fisica/maquinas-simples",
+   "nombre": "Máquinas simples",
+   "definicion": "Palancas, poleas, engranajes y planos inclinados facilitan el trabajo: reducen la fuerza o cambian su dirección; se combinan en máquinas compuestas."
+  },
+  {
+   "id": "CON:fisica/masa-y-peso",
+   "nombre": "Masa y peso",
+   "definicion": "La masa mide la cantidad de materia e inercia; el peso es la fuerza gravitatoria sobre ella (W = mg)."
+  },
+  {
+   "id": "CON:fisica/materiales-magneticos",
+   "nombre": "Materiales magnéticos",
+   "definicion": "Los imanes atraen algunos metales (hierro, níquel, cobalto); el magnetismo se explica por dominios magnéticos."
+  },
+  {
+   "id": "CON:fisica/materiales-opacos-transparentes",
+   "nombre": "Materiales opacos, transparentes y translúcidos",
+   "definicion": "Los materiales dejan pasar, dispersan o bloquean la luz según absorban o transmitan."
+  },
+  {
+   "id": "CON:fisica/mecanismos-transferencia-calor",
+   "nombre": "Conducción, convección y radiación",
+   "definicion": "El calor se transfiere por conducción (según la conductividad del material), convección y radiación."
+  },
+  {
+   "id": "CON:fisica/medicion-magnitudes-instrumentos",
+   "nombre": "Medición de magnitudes con instrumentos",
+   "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud)."
+  },
+  {
+   "id": "CON:fisica/modelo-estandar-particulas",
+   "nombre": "Modelo estándar de partículas",
+   "definicion": "Clasificación de las partículas elementales en quarks, leptones y bosones mediadores de las interacciones fundamentales."
+  },
+  {
+   "id": "CON:fisica/modelo-particulas",
+   "nombre": "Modelo de partículas de la materia",
+   "definicion": "La materia está formada por partículas en movimiento constante; su movimiento y separación, mayores a más temperatura, explican los estados."
+  },
+  {
+   "id": "CON:fisica/momento-angular",
+   "nombre": "Momento angular y su conservación",
+   "definicion": "El momento angular L = Iω se conserva cuando el torque externo neto es nulo."
+  },
+  {
+   "id": "CON:fisica/momento-lineal-impulso",
+   "nombre": "Momento lineal e impulso",
+   "definicion": "El momento lineal es p = mv; el impulso de una fuerza produce un cambio igual del momento."
+  },
+  {
+   "id": "CON:fisica/movimiento-armonico-simple",
+   "nombre": "Movimiento armónico simple",
+   "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase."
+  },
+  {
+   "id": "CON:fisica/movimiento-circular-uniforme",
+   "nombre": "Movimiento circular y variables angulares",
+   "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial."
+  },
+  {
+   "id": "CON:fisica/movimiento-proyectiles",
+   "nombre": "Cinemática en dos dimensiones y proyectiles",
+   "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia."
+  },
+  {
+   "id": "CON:fisica/movimiento-uniformemente-acelerado",
+   "nombre": "Movimiento con aceleración constante",
+   "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante."
+  },
+  {
+   "id": "CON:fisica/movimiento-y-reposo",
+   "nombre": "Movimiento, reposo y tipos de trayectoria",
+   "definicion": "Un objeto se mueve si cambia de posición; puede hacerlo rápido o lento, en línea recta, circular, vaivén o zigzag."
+  },
+  {
+   "id": "CON:fisica/niveles-energia-espectros",
+   "nombre": "Niveles de energía atómicos y espectros",
+   "definicion": "Los electrones ocupan niveles discretos; las transiciones emiten o absorben fotones que forman espectros de líneas."
+  },
+  {
+   "id": "CON:fisica/nucleo-atomico-isotopos",
+   "nombre": "Núcleo atómico e isótopos",
+   "definicion": "El núcleo está formado por protones y neutrones unidos por la fuerza nuclear fuerte; los isótopos difieren en neutrones."
+  },
+  {
+   "id": "CON:fisica/ojo-instrumentos-opticos",
+   "nombre": "El ojo y los instrumentos ópticos",
+   "definicion": "Funcionamiento óptico del ojo, sus defectos y su corrección, y de lupa, microscopio y telescopio."
+  },
+  {
+   "id": "CON:fisica/ondas-electromagneticas-espectro",
+   "nombre": "Ondas electromagnéticas y espectro",
+   "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia."
+  },
+  {
+   "id": "CON:fisica/ondas-estacionarias",
+   "nombre": "Ondas estacionarias y armónicos",
+   "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos."
+  },
+  {
+   "id": "CON:fisica/ondas-mecanicas-tipos",
+   "nombre": "Ondas mecánicas transversales y longitudinales",
+   "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas."
+  },
+  {
+   "id": "CON:fisica/ondas-radio-telecomunicaciones",
+   "nombre": "Ondas de radio y telecomunicaciones",
+   "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición."
+  },
+  {
+   "id": "CON:fisica/orbitas-satelites",
+   "nombre": "Órbitas y satélites",
+   "definicion": "La gravedad actúa como fuerza centrípeta en las órbitas; determina rapidez y período orbital y la ingravidez aparente."
+  },
+  {
+   "id": "CON:fisica/pendulo-simple",
+   "nombre": "Péndulo simple",
+   "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial."
+  },
+  {
+   "id": "CON:fisica/polarizacion-luz",
+   "nombre": "Polarización de la luz",
+   "definicion": "La luz es una onda transversal que puede polarizarse con filtros o por reflexión (ley de Malus, ángulo de Brewster)."
+  },
+  {
+   "id": "CON:fisica/posicion-desplazamiento",
+   "nombre": "Posición, desplazamiento y trayectoria",
+   "definicion": "La posición se mide respecto a un sistema de referencia; el desplazamiento es el cambio vectorial de posición."
+  },
+  {
+   "id": "CON:fisica/postulados-relatividad",
+   "nombre": "Relatividad especial",
+   "definicion": "La rapidez de la luz es invariante y las leyes son iguales en sistemas inerciales; tiempo y longitud dependen del observador."
+  },
+  {
+   "id": "CON:fisica/potencia-electrica-joule",
+   "nombre": "Potencia eléctrica y efecto Joule",
+   "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh."
+  },
+  {
+   "id": "CON:fisica/potencia-mecanica",
+   "nombre": "Potencia mecánica",
+   "definicion": "Rapidez con la que se realiza trabajo o se transfiere energía; se mide en vatios."
+  },
+  {
+   "id": "CON:fisica/potencial-electrico",
+   "nombre": "Energía potencial y potencial eléctrico",
+   "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico."
+  },
+  {
+   "id": "CON:fisica/presion",
+   "nombre": "Presión",
+   "definicion": "Fuerza perpendicular por unidad de área; explica efectos de una misma fuerza sobre áreas distintas."
+  },
+  {
+   "id": "CON:fisica/presion-hidrostatica",
+   "nombre": "Presión hidrostática y atmosférica",
+   "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud."
+  },
+  {
+   "id": "CON:fisica/primera-ley-newton",
+   "nombre": "Primera ley de Newton: inercia",
+   "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero."
+  },
+  {
+   "id": "CON:fisica/primera-ley-termodinamica",
+   "nombre": "Primera ley de la termodinámica",
+   "definicion": "El cambio de energía interna es igual al calor recibido menos el trabajo realizado: ΔU = Q − W."
+  },
+  {
+   "id": "CON:fisica/principio-arquimedes",
+   "nombre": "Principio de Arquímedes: empuje",
+   "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación."
+  },
+  {
+   "id": "CON:fisica/principio-bernoulli",
+   "nombre": "Hidrodinámica: continuidad y Bernoulli",
+   "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión."
+  },
+  {
+   "id": "CON:fisica/principio-pascal",
+   "nombre": "Principio de Pascal",
+   "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica."
+  },
+  {
+   "id": "CON:fisica/procesos-termodinamicos",
+   "nombre": "Procesos termodinámicos",
+   "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V."
+  },
+  {
+   "id": "CON:fisica/propagacion-rectilinea-sombras",
+   "nombre": "Fuentes de luz, propagación y sombras",
+   "definicion": "La luz sale de fuentes naturales o artificiales y viaja en línea recta; un objeto que la bloquea forma sombra."
+  },
+  {
+   "id": "CON:fisica/radiacion-ionizante-aplicaciones",
+   "nombre": "Radiación ionizante: detección, efectos y aplicaciones",
+   "definicion": "Radiación capaz de ionizar la materia; se detecta con contadores y se usa en medicina con protección radiológica."
+  },
+  {
+   "id": "CON:fisica/radiacion-termica-cuerpo-negro",
+   "nombre": "Radiación térmica y cuerpo negro",
+   "definicion": "Todo cuerpo emite radiación según su temperatura; leyes de Stefan-Boltzmann y de desplazamiento de Wien."
+  },
+  {
+   "id": "CON:fisica/rapidez-luz",
+   "nombre": "Rapidez de la luz",
+   "definicion": "La luz viaja a rapidez finita, máxima en el vacío (c ≈ 3×10⁸ m/s), y menor en otros medios."
+  },
+  {
+   "id": "CON:fisica/rapidez-velocidad",
+   "nombre": "Rapidez y velocidad",
+   "definicion": "Rapidez es distancia recorrida por unidad de tiempo; velocidad es desplazamiento por unidad de tiempo, con dirección."
+  },
+  {
+   "id": "CON:fisica/reflexion-interna-total",
+   "nombre": "Reflexión interna total",
+   "definicion": "Si la luz pasa a un medio menos refringente con ángulo mayor al crítico, se refleja totalmente; base de la fibra óptica."
+  },
+  {
+   "id": "CON:fisica/reflexion-luz",
+   "nombre": "Reflexión de la luz",
+   "definicion": "La luz rebota en las superficies; el ángulo de incidencia es igual al de reflexión."
+  },
+  {
+   "id": "CON:fisica/refraccion-luz",
+   "nombre": "Refracción de la luz",
+   "definicion": "Cambio de dirección de la luz al pasar entre medios de distinto índice de refracción, según la ley de Snell."
+  },
+  {
+   "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+   "nombre": "Relaciones presión-volumen-temperatura en gases",
+   "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases)."
+  },
+  {
+   "id": "CON:fisica/resistencia-equivalente",
+   "nombre": "Resistencia equivalente",
+   "definicion": "Reducción de resistencias en serie, paralelo y circuitos mixtos a una sola equivalente."
+  },
+  {
+   "id": "CON:fisica/segunda-ley-maquinas-termicas",
+   "nombre": "Segunda ley de la termodinámica",
+   "definicion": "Ninguna máquina convierte todo el calor en trabajo; eficiencia, ciclo de Carnot, refrigeradores e irreversibilidad (entropía)."
+  },
+  {
+   "id": "CON:fisica/segunda-ley-newton",
+   "nombre": "Segunda ley de Newton",
+   "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma."
+  },
+  {
+   "id": "CON:fisica/semiconductores-dispositivos",
+   "nombre": "Semiconductores y electrónica básica",
+   "definicion": "Materiales tipo n y p forman diodos y transistores, base de circuitos integrados y compuertas lógicas."
+  },
+  {
+   "id": "CON:fisica/sistema-internacional-unidades",
+   "nombre": "Sistema Internacional de Unidades",
+   "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas."
+  },
+  {
+   "id": "CON:fisica/sonido-como-onda",
+   "nombre": "El sonido como onda mecánica",
+   "definicion": "Onda longitudinal de compresiones y rarefacciones que necesita un medio y cuya rapidez depende de este."
+  },
+  {
+   "id": "CON:fisica/sonido-vibraciones",
+   "nombre": "El sonido se produce por vibraciones",
+   "definicion": "Los objetos que vibran producen sonido, que viaja hasta el oído a través de un medio."
+  },
+  {
+   "id": "CON:fisica/suma-vectores-componentes",
+   "nombre": "Suma de vectores y componentes rectangulares",
+   "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante."
+  },
+  {
+   "id": "CON:fisica/superposicion-interferencia",
+   "nombre": "Superposición e interferencia de ondas",
+   "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones."
+  },
+  {
+   "id": "CON:fisica/temperatura-medicion-escalas",
+   "nombre": "Temperatura y escalas termométricas",
+   "definicion": "La temperatura se mide con termómetros en escalas Celsius, Fahrenheit y Kelvin, con puntos fijos y cero absoluto."
+  },
+  {
+   "id": "CON:fisica/tension-superficial-capilaridad",
+   "nombre": "Tensión superficial y capilaridad",
+   "definicion": "Efectos de las fuerzas de cohesión y adhesión en la superficie de los líquidos y en tubos delgados."
+  },
+  {
+   "id": "CON:fisica/teoria-cinetica-gases",
+   "nombre": "Gas ideal y teoría cinética",
+   "definicion": "Ecuación de estado pV = nRT y su explicación por choques y energía cinética media de las moléculas; límites del modelo."
+  },
+  {
+   "id": "CON:fisica/tercera-ley-newton",
+   "nombre": "Tercera ley de Newton: acción y reacción",
+   "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos."
+  },
+  {
+   "id": "CON:fisica/tono-volumen-sonido",
+   "nombre": "Características del sonido: tono, intensidad y eco",
+   "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco."
+  },
+  {
+   "id": "CON:fisica/torque",
+   "nombre": "Torque o momento de fuerza",
+   "definicion": "Capacidad de una fuerza para producir rotación; producto de la fuerza por su brazo de palanca."
+  },
+  {
+   "id": "CON:fisica/trabajo-mecanico",
+   "nombre": "Trabajo mecánico",
+   "definicion": "Transferencia de energía por una fuerza a lo largo de un desplazamiento; el trabajo neto iguala el cambio de energía cinética."
+  },
+  {
+   "id": "CON:fisica/transformaciones-energia",
+   "nombre": "Transformaciones de la energía",
+   "definicion": "La energía pasa de una forma a otra en aparatos y procesos (eléctrica a luz, calor o sonido)."
+  },
+  {
+   "id": "CON:fisica/ventaja-mecanica",
+   "nombre": "Ventaja mecánica",
+   "definicion": "Cociente entre la fuerza obtenida y la aplicada en una máquina; ganar fuerza implica recorrer mayor distancia."
+  },
+  {
+   "id": "CON:fisica/viscosidad-regimen-flujo",
+   "nombre": "Viscosidad y régimen de flujo",
+   "definicion": "Resistencia interna de un fluido a fluir; el número de Reynolds distingue flujo laminar y turbulento."
+  }
+ ],
+ "practicas": [
+  {
+   "id": "PRAC:formular-preguntas-investigables",
+   "nombre": "Formular preguntas investigables"
+  },
+  {
+   "id": "PRAC:formular-hipotesis-y-predicciones",
+   "nombre": "Formular hipótesis y predicciones"
+  },
+  {
+   "id": "PRAC:planificar-investigaciones",
+   "nombre": "Planificar investigaciones"
+  },
+  {
+   "id": "PRAC:controlar-variables",
+   "nombre": "Identificar y controlar variables"
+  },
+  {
+   "id": "PRAC:evaluar-disenos-de-investigacion",
+   "nombre": "Evaluar diseños de investigación"
+  },
+  {
+   "id": "PRAC:observar-y-registrar",
+   "nombre": "Observar y registrar sistemáticamente"
+  },
+  {
+   "id": "PRAC:medir-con-instrumentos",
+   "nombre": "Medir con instrumentos y unidades"
+  },
+  {
+   "id": "PRAC:trabajar-con-seguridad-y-etica",
+   "nombre": "Trabajar con seguridad y ética"
+  },
+  {
+   "id": "PRAC:repetir-mediciones-y-estimar-error",
+   "nombre": "Repetir mediciones y estimar el error"
+  },
+  {
+   "id": "PRAC:representar-datos",
+   "nombre": "Representar datos en tablas y gráficos"
+  },
+  {
+   "id": "PRAC:interpretar-datos-y-concluir",
+   "nombre": "Interpretar datos y sacar conclusiones"
+  },
+  {
+   "id": "PRAC:distinguir-correlacion-y-causalidad",
+   "nombre": "Distinguir correlación de causalidad"
+  },
+  {
+   "id": "PRAC:analizar-datos-con-estadistica",
+   "nombre": "Analizar datos con herramientas estadísticas"
+  },
+  {
+   "id": "PRAC:usar-matematicas-en-ciencias",
+   "nombre": "Usar matemáticas para resolver problemas científicos"
+  },
+  {
+   "id": "PRAC:usar-pensamiento-computacional-y-simulaciones",
+   "nombre": "Usar pensamiento computacional y simulaciones"
+  },
+  {
+   "id": "PRAC:desarrollar-y-usar-modelos",
+   "nombre": "Desarrollar y usar modelos"
+  },
+  {
+   "id": "PRAC:evaluar-modelos-y-limitaciones",
+   "nombre": "Evaluar modelos y sus limitaciones"
+  },
+  {
+   "id": "PRAC:transformar-representaciones",
+   "nombre": "Usar y transformar representaciones"
+  },
+  {
+   "id": "PRAC:construir-explicaciones-con-evidencia",
+   "nombre": "Construir explicaciones basadas en evidencia"
+  },
+  {
+   "id": "PRAC:argumentar-con-evidencia",
+   "nombre": "Argumentar con evidencia y razonamiento"
+  },
+  {
+   "id": "PRAC:evaluar-afirmaciones-y-argumentos",
+   "nombre": "Evaluar afirmaciones y argumentos"
+  },
+  {
+   "id": "PRAC:evaluar-fuentes-de-informacion",
+   "nombre": "Buscar y evaluar fuentes de información"
+  },
+  {
+   "id": "PRAC:comunicar-resultados",
+   "nombre": "Comunicar resultados científicos"
+  },
+  {
+   "id": "PRAC:distinguir-observacion-e-inferencia",
+   "nombre": "Distinguir observación de inferencia"
+  },
+  {
+   "id": "PRAC:naturaleza-provisional-del-conocimiento",
+   "nombre": "Reconocer el carácter provisional del conocimiento"
+  },
+  {
+   "id": "PRAC:ciencia-como-empresa-colectiva",
+   "nombre": "Valorar la ciencia como empresa colectiva"
+  },
+  {
+   "id": "PRAC:limites-de-la-ciencia",
+   "nombre": "Reconocer el alcance y límites de la ciencia"
+  },
+  {
+   "id": "PRAC:evaluar-implicaciones-y-decidir",
+   "nombre": "Evaluar implicaciones y tomar decisiones informadas"
+  },
+  {
+   "id": "PRAC:definir-problemas-de-diseno",
+   "nombre": "Definir problemas de diseño"
+  },
+  {
+   "id": "PRAC:disenar-y-evaluar-soluciones",
+   "nombre": "Diseñar y evaluar soluciones"
+  }
+ ],
+ "items": [
+  {
+   "id": "G08-CIE-U1-1.1",
+   "unidad": "1. Mecánica",
+   "contenido": "Instrumentos de medición",
+   "procedimental": "1.1. Construcción y calibración de un instrumento de medición.",
+   "indicador": "1.1. Calibra un instrumento de medición de construcción propia."
+  },
+  {
+   "id": "G08-CIE-U1-1.10",
+   "unidad": "1. Mecánica",
+   "contenido": "Movimiento de rotación",
+   "procedimental": "1.10. Reconocimiento del torque como la causa del equilbrio rotacional.",
+   "indicador": "1.10. Reconoce la relación entre el torque resultante y el equilibrio rotacional."
+  },
+  {
+   "id": "G08-CIE-U1-1.11",
+   "unidad": "1. Mecánica",
+   "contenido": "Movimiento de rotación",
+   "procedimental": "1.11. Cálculo de magnitudes cinemáticas del movimiento circular uniforme a partir de resultados experimentales.",
+   "indicador": "1.11. Calcula magnitudes del movimiento circular uniforme a partir de resultados experimentales."
+  },
+  {
+   "id": "G08-CIE-U1-1.12",
+   "unidad": "1. Mecánica",
+   "contenido": "Momento lineal",
+   "procedimental": "1.12. Indagación del cambio del momento lineal en objetos a partir de la experimentación con fuerza y tiempo.",
+   "indicador": "1.12. Explica qué es un cambio del momento lineal de un objeto en términos de fuerza y tiempo."
+  },
+  {
+   "id": "G08-CIE-U1-1.13",
+   "unidad": "1. Mecánica",
+   "contenido": "Momento lineal",
+   "procedimental": "1.13. Experimentación con el cambio del momento lineal de objetos.",
+   "indicador": "1.13. Explica con sus palabras el cambio del momento lineal de objetos a partir del impulso."
+  },
+  {
+   "id": "G08-CIE-U1-1.14",
+   "unidad": "1. Mecánica",
+   "contenido": "Momento lineal",
+   "procedimental": "1.14. Cálculo del momento lineal total.",
+   "indicador": "1.14. Efectúa cálculos de conservación del momento lineal de dos objetos."
+  },
+  {
+   "id": "G08-CIE-U1-1.2",
+   "unidad": "1. Mecánica",
+   "contenido": "Instrumentos de medición",
+   "procedimental": "1.2. Identificación de la técnica de medición de una magnitud física.",
+   "indicador": "1.2. Diferencia entre técnica directa e indirecta durante la medición de una magnitud física."
+  },
+  {
+   "id": "G08-CIE-U1-1.3",
+   "unidad": "1. Mecánica",
+   "contenido": "Instrumentos de medición",
+   "procedimental": "1.3. Interpretación de las características de los gráficos.",
+   "indicador": "1.3. Interpreta la pendiente, el área bajo la curva y el comportamiento de la proporcionalidad directa e indirecta en distintos gráficos."
+  },
+  {
+   "id": "G08-CIE-U1-1.4",
+   "unidad": "1. Mecánica",
+   "contenido": "Vectores",
+   "procedimental": "1.4. Medición de las componentes de un vector en un par de ejes perpendiculares.",
+   "indicador": "1.4. Mide directamente las componentes de un vector a lo largo de un par de ejes perpendiculares."
+  },
+  {
+   "id": "G08-CIE-U1-1.5",
+   "unidad": "1. Mecánica",
+   "contenido": "Vectores",
+   "procedimental": "1.5. Adición y sustracción de vectores por el método de las componentes rectangulares.",
+   "indicador": "1.5. Suma y resta dos vectores por el método de las componentes rectangulares."
+  },
+  {
+   "id": "G08-CIE-U1-1.6",
+   "unidad": "1. Mecánica",
+   "contenido": "Vectores",
+   "procedimental": "1.6. Aplicación de la técnica de diagrama de cuerpo libre a partir de la identificación experimental de fuerzas que actúan sobre un objeto.",
+   "indicador": "1.6. Aplica la técnica de diagrama de cuerpo libre sobre un objeto de análisis."
+  },
+  {
+   "id": "G08-CIE-U1-1.7",
+   "unidad": "1. Mecánica",
+   "contenido": "Movimiento en una y dos dimensiones",
+   "procedimental": "1.7. Resolución de problemas empleando las leyes del movimiento de Newton.",
+   "indicador": "1.7. Resuelve problemas empleando las leyes del movimiento de Newton."
+  },
+  {
+   "id": "G08-CIE-U1-1.8",
+   "unidad": "1. Mecánica",
+   "contenido": "Movimiento en una y dos dimensiones",
+   "procedimental": "1.8. Resolución de problemas acerca del movimiento rectilíneo emplendo interpretación de gráficas.",
+   "indicador": "1.8. Resuelve problemas acerca del movimiento rectilíneo empleando interpretación de gráficas."
+  },
+  {
+   "id": "G08-CIE-U1-1.9",
+   "unidad": "1. Mecánica",
+   "contenido": "Movimiento en una y dos dimensiones",
+   "procedimental": "1.9. Resolución de problemas acerca del movimiento parabólico emplendo interpretación de gráficas.",
+   "indicador": "1.9. Resuelve problemas acerca del movimiento parabólico empleando interpretación de gráficas."
+  },
+  {
+   "id": "G08-CIE-U2-2.1",
+   "unidad": "2. Energía",
+   "contenido": "Teorema del trabajo y la energía cinética",
+   "procedimental": "2.1. Indagación del concepto de trabajo utilizando máquinas simples.",
+   "indicador": "2.1. Ejemplifica el concepto de trabajo utilizando máquinas simples."
+  },
+  {
+   "id": "G08-CIE-U2-2.10",
+   "unidad": "2. Energía",
+   "contenido": "Potencia mecánica",
+   "procedimental": "2.10. Cálculo experimental de la potencia mecánica de máquinas para la obtención del momento lineal.",
+   "indicador": "2.10. Calcula la potencia mecánica de máquinas para la obtención del momento lineal."
+  },
+  {
+   "id": "G08-CIE-U2-2.11",
+   "unidad": "2. Energía",
+   "contenido": "Potencia mecánica",
+   "procedimental": "2.11. Resolución de problemas acerca de la potencia mecánica.",
+   "indicador": "2.11. Resuelve problemas relacionados con la potencia mecánica."
+  },
+  {
+   "id": "G08-CIE-U2-2.2",
+   "unidad": "2. Energía",
+   "contenido": "Teorema del trabajo y la energía cinética",
+   "procedimental": "2.2. Resolución de problemas empleando el teorema del trabajo y la energía cinética.",
+   "indicador": "2.2. Resuelve problemas empleando el teorema del trabajo y la energía cinética."
+  },
+  {
+   "id": "G08-CIE-U2-2.3",
+   "unidad": "2. Energía",
+   "contenido": "Teorema del trabajo y la energía cinética",
+   "procedimental": "2.3. Interpretación de los signos matemáticos del trabajo a partir de la experimentación.",
+   "indicador": "2.3. Interpreta los signos matemáticos del trabajo a partir de experimentos."
+  },
+  {
+   "id": "G08-CIE-U2-2.4",
+   "unidad": "2. Energía",
+   "contenido": "Tipos de energía mecánica",
+   "procedimental": "2.4. Indagación del concepto de trabajo de rotación.",
+   "indicador": "2.4. Ejemplifica el concepto de trabajo de rotación con situaciones cotidianas."
+  },
+  {
+   "id": "G08-CIE-U2-2.5",
+   "unidad": "2. Energía",
+   "contenido": "Tipos de energía mecánica",
+   "procedimental": "2.5. Experimentación con el momento de inercia en objetos con movimiento rotacional.",
+   "indicador": "2.5. Explica los momentos de inercia de objetos a partir del movimiento rotacional."
+  },
+  {
+   "id": "G08-CIE-U2-2.6",
+   "unidad": "2. Energía",
+   "contenido": "Tipos de energía mecánica",
+   "procedimental": "2.6. Cálculo de la energía total a partir de las energías cinética y potencial de objetos que se trasladan y rotan.",
+   "indicador": "2.6. Diferencia las energías cinética y potencial de la energía total de objetos que se trasladan y rotan."
+  },
+  {
+   "id": "G08-CIE-U2-2.7",
+   "unidad": "2. Energía",
+   "contenido": "Principio de conservacion de la energía mecánica",
+   "procedimental": "2.7. Experimentación con la ley de conservación de la energía mecánica.",
+   "indicador": "2.7. Explica la ley de conservación de la energía mecánica a partir de un experimento."
+  },
+  {
+   "id": "G08-CIE-U2-2.8",
+   "unidad": "2. Energía",
+   "contenido": "Principio de conservacion de la energía mecánica",
+   "procedimental": "2.8. Interpretación de las características de las gráficas de energía cinética y potencial obtenidas a partir de un experimento.",
+   "indicador": "2.8. Interpreta gráficas de energía cinética y potencial obtenidas a partir de un experimento."
+  },
+  {
+   "id": "G08-CIE-U2-2.9",
+   "unidad": "2. Energía",
+   "contenido": "Potencia mecánica",
+   "procedimental": "2.9. Indagación del concepto de potencia mecánica.",
+   "indicador": "2.9. Ejemplifica el concepto de potencia mecánica."
+  },
+  {
+   "id": "G08-CIE-U3-3.1",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Energía mecánica del movimiento armónico simple (MAS)",
+   "procedimental": "3.1. Indagación de las fuerzas que realizan trabajo sobre un péndulo simple.",
+   "indicador": "3.1. Reconoce las fuerzas que realizan trabajo sobre un péndulo simple."
+  },
+  {
+   "id": "G08-CIE-U3-3.10",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Movimiento ondulatorio y sonido",
+   "procedimental": "3.10. Identificación experimental del tipo de onda a partir del movimiento de la fuente de vibración en columnas de aire.",
+   "indicador": "3.10. Identifica el tipo de onda a partir del movimiento de la fuente de vibración en columnas de aire."
+  },
+  {
+   "id": "G08-CIE-U3-3.11",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Movimiento ondulatorio y sonido",
+   "procedimental": "3.11. Identificación experimental de las magnitudes y las condiciones que varían la frecuencia o el tono del sonido producido en tubos de aire.",
+   "indicador": "3.11. Identifica las magnitudes y las condiciones que varían la frecuencia o el tono del sonido producido en tubos de aire."
+  },
+  {
+   "id": "G08-CIE-U3-3.12",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Movimiento ondulatorio y sonido",
+   "procedimental": "3.12. Resolución de problemas teóricos a partir de las gráficas de presión de aire contra distancia, y de densidad de aire contra distancia de una onda longitudinal.",
+   "indicador": "3.12. Resuelve problemas teóricos a partir de las gráficas desplazamiento contra posición, y densidad contra posición de una onda longitudinal."
+  },
+  {
+   "id": "G08-CIE-U3-3.2",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Energía mecánica del movimiento armónico simple (MAS)",
+   "procedimental": "3.2. Experimentación para identificar la transformación de la energía del péndulo simple.",
+   "indicador": "3.2. Identifica la transformación de la energía del péndulo simple, a partir de un experimento."
+  },
+  {
+   "id": "G08-CIE-U3-3.3",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Energía mecánica del movimiento armónico simple (MAS)",
+   "procedimental": "3.3. Interpretación de las características de las gráficas de energía del oscilador armónico simple.",
+   "indicador": "3.3. Explica las características de las gráficas de energía del oscilador armónico simple."
+  },
+  {
+   "id": "G08-CIE-U3-3.4",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Medición del MAS",
+   "procedimental": "3.4. Medición directa del período y de la amplitud de oscilación de un péndulo simple.",
+   "indicador": "3.4. Mide el período y la amplitud de oscilación de un péndulo simple."
+  },
+  {
+   "id": "G08-CIE-U3-3.5",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Medición del MAS",
+   "procedimental": "3.5. Cálculo experimental de una altura empleando el período de oscilación de un péndulo simple.",
+   "indicador": "3.5. Calcula una altura empleando el período de oscilación de un péndulo simple."
+  },
+  {
+   "id": "G08-CIE-U3-3.6",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Medición del MAS",
+   "procedimental": "3.6. Diseño de un experimento para determinar una altura empleando un péndulo simple.",
+   "indicador": "3.6. Diseña un experimento para la determinación de una altura empleando un péndulo simple."
+  },
+  {
+   "id": "G08-CIE-U3-3.7",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Movimiento ondulatorio y sonido",
+   "procedimental": "3.7. Identificación experimental del tipo de onda a partir del movimiento de la fuente de vibración de cuerdas.",
+   "indicador": "3.7. Identifica el tipo de onda a partir del movimiento de la fuente de vibración de cuerdas."
+  },
+  {
+   "id": "G08-CIE-U3-3.8",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Movimiento ondulatorio y sonido",
+   "procedimental": "3.8. Identificación experimental de las magnitudes y las condiciones que varían la frecuencia o el tono del sonido producido en cuerdas.",
+   "indicador": "3.8. Identifica las magnitudes y las condiciones que varían la frecuencia o el tono del sonido producido en cuerdas."
+  },
+  {
+   "id": "G08-CIE-U3-3.9",
+   "unidad": "3. Ondas mecánicas",
+   "contenido": "Movimiento ondulatorio y sonido",
+   "procedimental": "3.9. Resolución de problemas teóricos a partir de las gráficas de desplazamiento contra posición, y de desplazamiento contra tiempo de una onda transversal.",
+   "indicador": "3.9. Resuelve problemas teóricos a partir de las gráficas de desplazamiento contra posición, y de densidad contra posición de una onda transversal."
+  }
+ ]
+}

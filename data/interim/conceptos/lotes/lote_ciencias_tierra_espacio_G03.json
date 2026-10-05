@@ -1,0 +1,631 @@
+{
+ "lote": "ciencias_tierra_espacio_G03",
+ "version": "etiquetado-v1",
+ "instrucciones": "prompts/etiquetar_conceptos.md",
+ "vocabulario": [
+  {
+   "id": "CON:ciencias_tierra_espacio/acidificacion-del-oceano",
+   "nombre": "Acidificación del océano",
+   "definicion": "Disminución del pH del agua de mar al disolverse el CO2 atmosférico adicional, que afecta a corales y organismos con conchas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/aguas-subterraneas-y-acuiferos",
+   "nombre": "Aguas subterráneas y acuíferos",
+   "definicion": "Agua que se infiltra y se almacena en poros y grietas de rocas y sedimentos, formando acuíferos que se recargan lentamente."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/amenazas-naturales",
+   "nombre": "Amenazas naturales geológicas e hidrometeorológicas",
+   "definicion": "Fenómenos naturales potencialmente dañinos, como sismos, erupciones, deslizamientos, inundaciones y huracanes, presentes en el territorio."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/big-bang",
+   "nombre": "Origen del universo: el Big Bang",
+   "definicion": "El universo se originó hace unos 13800 millones de años desde un estado muy denso y caliente y continúa expandiéndose."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/calentamiento-global",
+   "nombre": "Calentamiento global",
+   "definicion": "Aumento sostenido de la temperatura media de la Tierra en las últimas décadas, con efectos observables en el clima y los seres vivos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/calidad-del-aire",
+   "nombre": "Calidad del aire y contaminación atmosférica",
+   "definicion": "Concentración de contaminantes como partículas, ozono troposférico y óxidos que afectan la salud y los ecosistemas; se mide con índices."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/campo-magnetico-terrestre",
+   "nombre": "Campo magnético terrestre",
+   "definicion": "Campo generado por el movimiento del hierro líquido del núcleo externo; orienta las brújulas y protege de partículas del viento solar."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
+   "nombre": "Capas de la atmósfera y variación con la altitud",
+   "definicion": "La atmósfera se estratifica en troposfera, estratosfera, mesosfera y termosfera; la presión disminuye y la temperatura varía con la altitud."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/capas-internas-de-la-tierra",
+   "nombre": "Capas internas de la Tierra",
+   "definicion": "La Tierra se compone de corteza, manto, núcleo externo líquido y núcleo interno sólido, con composición, temperatura y densidad distintas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/causas-del-cambio-climatico",
+   "nombre": "Cambio climático: causas y efectos",
+   "definicion": "Variación del clima por causas naturales y, hoy, por emisiones humanas de gases de efecto invernadero; provoca deshielo, subida del mar y eventos extremos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclo-de-las-rocas",
+   "nombre": "Ciclo de las rocas",
+   "definicion": "Proceso continuo por el que las rocas se transforman de un tipo en otro mediante fusión, enfriamiento, meteorización, erosión, sedimentación y metamorfismo."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+   "nombre": "Ciclo del agua",
+   "definicion": "Circulación continua del agua por evaporación, transpiración, condensación, precipitación, escorrentía e infiltración, impulsada por la energía solar."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
+   "nombre": "Ciclo del carbono en los sistemas terrestres",
+   "definicion": "El carbono circula entre atmósfera, océanos, seres vivos, rocas y combustibles fósiles; las actividades humanas alteran sus flujos y reservorios."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+   "nombre": "Ciclones tropicales y tormentas",
+   "definicion": "Sistemas de baja presión sobre océanos cálidos con vientos intensos, lluvias y oleaje; incluyen depresiones, tormentas tropicales y huracanes."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/combustibles-fosiles",
+   "nombre": "Combustibles fósiles: formación y uso",
+   "definicion": "Carbón, petróleo y gas natural se formaron durante millones de años a partir de restos orgánicos enterrados; su combustión libera CO2."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
+   "nombre": "La atmósfera y su composición",
+   "definicion": "Capa de aire que rodea la Tierra, mezcla de gases (sobre todo nitrógeno y oxígeno, con vapor de agua y CO2) necesaria para la vida."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/conservacion-de-recursos-y-residuos",
+   "nombre": "Conservación de recursos, residuos y sostenibilidad",
+   "definicion": "Usar responsablemente los recursos y aplicar las 3R reduce su agotamiento y la contaminación, en busca de un desarrollo sostenible."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/conservacion-del-agua",
+   "nombre": "Abastecimiento y conservación del agua dulce",
+   "definicion": "El agua dulce disponible es limitada y desigual; su conservación exige uso eficiente, protección de zonas de recarga y evitar la contaminación."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+   "nombre": "Convección del manto y energía interna de la Tierra",
+   "definicion": "El calor interno, residual y radiactivo, genera corrientes de convección en el manto que impulsan el movimiento de las placas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
+   "nombre": "Corrientes oceánicas superficiales y profundas",
+   "definicion": "El viento mueve las corrientes superficiales; las diferencias de temperatura y salinidad impulsan la circulación profunda termohalina que redistribuye calor."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/cuencas-y-aguas-superficiales",
+   "nombre": "Cuencas hidrográficas y aguas superficiales",
+   "definicion": "Territorio drenado por un río y sus afluentes, como la cuenca del Lempa; organiza el escurrimiento de ríos, lagos y embalses."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/deriva-continental-y-expansion-del-fondo-oceanico",
+   "nombre": "Deriva continental y expansión del fondo oceánico",
+   "definicion": "Evidencias (encaje de costas, fósiles, rocas, dorsales y edad del fondo marino) muestran que los continentes se han desplazado."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/eclipses",
+   "nombre": "Eclipses solares y lunares",
+   "definicion": "Ocultaciones que ocurren cuando Sol, Tierra y Luna se alinean y la sombra de uno de los cuerpos cae sobre el otro."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/efecto-invernadero",
+   "nombre": "Efecto invernadero",
+   "definicion": "Gases como CO2, metano y vapor de agua absorben y reemiten radiación infrarroja de la superficie, manteniendo la Tierra más cálida."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/el-sol-como-estrella",
+   "nombre": "El Sol como estrella",
+   "definicion": "El Sol es una estrella que emite luz y calor; planetas y lunas carecen de luz propia y se ven por la luz que reflejan."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/energia-geotermica",
+   "nombre": "Energía geotérmica",
+   "definicion": "Aprovechamiento del calor interno de la Tierra en zonas volcánicas para generar electricidad, importante en la matriz de El Salvador."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/erosion-y-sedimentacion",
+   "nombre": "Erosión, transporte y sedimentación",
+   "definicion": "El viento, el agua y el hielo arrancan y transportan materiales que se depositan en capas, modificando el paisaje muy lentamente."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/estrellas-y-nebulosas",
+   "nombre": "Estrellas y nebulosas",
+   "definicion": "Esferas de gas que emiten energía por fusión nuclear; nacen en nebulosas de gas y polvo y difieren en color, tamaño y brillo."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/evolucion-estelar",
+   "nombre": "Ciclo de vida de las estrellas",
+   "definicion": "Según su masa, una estrella evoluciona de protoestrella a secuencia principal, gigante roja y termina como enana blanca, estrella de neutrones o agujero negro."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/exploracion-espacial",
+   "nombre": "Exploración espacial",
+   "definicion": "Uso de telescopios, satélites artificiales, sondas y misiones tripuladas para observar y estudiar la Tierra y el espacio."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/fases-de-la-luna",
+   "nombre": "Fases de la Luna",
+   "definicion": "Cambios en la parte iluminada visible de la Luna según su posición relativa al Sol y la Tierra durante su órbita de unos 29,5 días."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/formacion-de-la-tierra",
+   "nombre": "Formación y evolución temprana de la Tierra",
+   "definicion": "La Tierra se formó hace unos 4600 millones de años por acreción, se diferenció en capas y desarrolló atmósfera y océanos primitivos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/formacion-del-sistema-solar",
+   "nombre": "Formación del sistema solar",
+   "definicion": "El Sol y los planetas se formaron hace unos 4600 millones de años por el colapso gravitatorio de una nebulosa de gas y polvo."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/fosiles",
+   "nombre": "Fósiles y su formación",
+   "definicion": "Restos o huellas de organismos antiguos conservados en rocas, ámbar o hielo, generalmente formados por enterramiento rápido en sedimentos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/fuentes-de-energia",
+   "nombre": "Fuentes de energía renovables y no renovables",
+   "definicion": "La energía se obtiene del Sol, viento, agua, calor interno, biomasa, núcleos atómicos o fósiles, cada fuente con ventajas y desventajas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/galaxias",
+   "nombre": "Galaxias y escala del universo",
+   "definicion": "Sistemas de miles de millones de estrellas unidos por gravedad, como la Vía Láctea, separados por distancias medidas en años luz."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/geologia-y-geomorfologia-de-el-salvador",
+   "nombre": "Geología y geomorfología de El Salvador",
+   "definicion": "El territorio salvadoreño está formado principalmente por rocas volcánicas recientes, organizadas en formaciones y unidades de relieve mostradas en el mapa geológico."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/glaciaciones",
+   "nombre": "Grandes cambios globales: glaciaciones e impactos de asteroides",
+   "definicion": "Glaciaciones e impactos de asteroides han transformado la superficie terrestre, el nivel del mar y la vida a lo largo de la historia."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+   "nombre": "Gravedad y órbitas",
+   "definicion": "La atracción gravitatoria del Sol y los planetas mantiene a planetas y satélites en sus órbitas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/hidrosfera-distribucion-del-agua",
+   "nombre": "Hidrosfera: distribución del agua dulce y salada",
+   "definicion": "La mayor parte de la superficie es agua, casi toda salada en océanos; el agua dulce, escasa, está en glaciares, subsuelo, ríos y lagos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
+   "nombre": "Impacto de las actividades humanas en los recursos",
+   "definicion": "La agricultura, la tala, la minería y la urbanización agotan y contaminan suelos, agua y aire, alterando los sistemas terrestres."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/inclinacion-del-eje-y-estaciones",
+   "nombre": "Inclinación del eje terrestre y estaciones astronómicas",
+   "definicion": "La inclinación del eje durante la traslación cambia el ángulo de los rayos solares y la duración del día, originando las estaciones."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/interaccion-oceano-atmosfera",
+   "nombre": "Interacción océano-atmósfera",
+   "definicion": "El océano intercambia calor, agua y gases con la atmósfera, regulando el clima; fenómenos como El Niño alteran lluvias y temperaturas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/la-luna",
+   "nombre": "La Luna: características y origen",
+   "definicion": "Satélite natural de la Tierra que gira a su alrededor, sin atmósfera apreciable, con cráteres; probablemente se formó tras un gran impacto."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/limites-de-placas",
+   "nombre": "Límites de placas: convergentes, divergentes y transformantes",
+   "definicion": "Las placas se separan, chocan o se deslizan lateralmente; cada tipo de borde produce rasgos y fenómenos característicos, como la subducción."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/mareas",
+   "nombre": "Mareas",
+   "definicion": "Subidas y bajadas periódicas del nivel del mar causadas principalmente por la atracción gravitatoria de la Luna y, en menor medida, del Sol."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/meteorizacion",
+   "nombre": "Meteorización",
+   "definicion": "Desintegración y alteración de las rocas en su lugar por acción física, química y biológica del agua, el aire, la temperatura y los seres vivos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
+   "nombre": "Minerales y sus propiedades",
+   "definicion": "Sólidos naturales inorgánicos de composición química definida y estructura cristalina, identificables por dureza, brillo, color, raya y exfoliación."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/nubes-y-precipitacion",
+   "nombre": "Formación de nubes y precipitación",
+   "definicion": "Cuando el aire húmedo asciende se enfría y su vapor se condensa en gotitas que forman nubes; al crecer, caen como lluvia o granizo."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/oleaje-y-dinamica-costera",
+   "nombre": "Oleaje, dinámica costera y sedimentación marina",
+   "definicion": "Las olas, generadas por el viento, erosionan y transportan sedimentos a lo largo de la costa, formando playas, esteros y depósitos marinos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ondas-sismicas",
+   "nombre": "Ondas sísmicas, magnitud e intensidad",
+   "definicion": "Ondas P, S y superficiales transportan la energía del sismo; la magnitud mide la energía liberada y la intensidad sus efectos locales."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/origen-del-vulcanismo",
+   "nombre": "Origen del magma y vulcanismo",
+   "definicion": "El magma se forma por fusión parcial del manto o la corteza, sobre todo en zonas de subducción, dorsales y puntos calientes."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/patrones-estacionales-del-tiempo",
+   "nombre": "Patrones estacionales: época seca y lluviosa",
+   "definicion": "La temperatura y la lluvia cambian de forma regular a lo largo del año; en El Salvador se alternan la estación seca y la lluviosa."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/planetas-y-su-comparacion",
+   "nombre": "Planetas: tipos y comparación",
+   "definicion": "Los planetas rocosos interiores y gaseosos exteriores difieren en tamaño, composición, atmósfera, temperatura y distancia al Sol."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
+   "nombre": "Calidad y tratamiento del agua",
+   "definicion": "La calidad del agua se evalúa con indicadores; se potabiliza, se desaliniza o se depura el agua residual dentro del ciclo urbano del agua."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/precursores-y-monitoreo-geologico",
+   "nombre": "Precursores, monitoreo y alerta de sismos y erupciones",
+   "definicion": "Señales como enjambres sísmicos, deformación o emisión de gases permiten vigilar volcanes y fallas y emitir alertas tempranas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
+   "nombre": "El océano: propiedades del agua de mar y zonas",
+   "definicion": "El agua de mar tiene sales disueltas; salinidad, temperatura, luz y densidad varían con la profundidad, definiendo zonas oceánicas distintas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
+   "nombre": "Calentamiento desigual de la Tierra y circulación atmosférica",
+   "definicion": "La radiación solar calienta desigualmente la superficie según la latitud; las diferencias de temperatura y presión generan vientos y circulación global."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
+   "nombre": "Recursos minerales y minería",
+   "definicion": "Los minerales útiles se extraen de yacimientos limitados; su explotación aporta materias primas pero genera impactos ambientales y sociales."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
+   "nombre": "Recursos naturales renovables y no renovables",
+   "definicion": "Agua, viento, suelo, bosques, minerales y combustibles que usamos; los renovables se regeneran y los no renovables son finitos."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/registro-fosil-y-cambios-ambientales",
+   "nombre": "Registro fósil y cambios ambientales del pasado",
+   "definicion": "La ubicación y el orden de los fósiles en los estratos permiten inferir cómo cambiaron los ambientes, la superficie terrestre y la vida."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/riesgo-y-vulnerabilidad",
+   "nombre": "Riesgo de desastre: amenaza, vulnerabilidad y prevención",
+   "definicion": "El riesgo depende de la amenaza y de la vulnerabilidad y capacidad de la población; se reduce con prevención, preparación y alertas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/rotacion-dia-y-noche",
+   "nombre": "Rotación de la Tierra: día, noche y sombras",
+   "definicion": "La Tierra gira sobre su eje cada 24 horas, causando el día, la noche, el movimiento aparente del Sol y los cambios de las sombras."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas",
+   "nombre": "Satélites, asteroides y cometas",
+   "definicion": "Cuerpos menores del sistema solar: lunas que orbitan planetas, asteroides del cinturón principal y cometas de hielo y polvo."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sismicidad-de-el-salvador",
+   "nombre": "Sismicidad de El Salvador",
+   "definicion": "Los sismos salvadoreños provienen de la subducción frente a la costa y de fallas locales, como la zona de falla de El Salvador."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sismos",
+   "nombre": "Sismos y fallas geológicas",
+   "definicion": "Liberación brusca de energía acumulada en fallas o bordes de placa, que se propaga desde el hipocentro y se siente en el epicentro."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sistema-solar",
+   "nombre": "El sistema solar y el modelo heliocéntrico",
+   "definicion": "El Sol en el centro y los cuerpos que giran a su alrededor: planetas, satélites, planetas enanos, asteroides y cometas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sistemas-terrestres",
+   "nombre": "Sistemas terrestres y sus interacciones",
+   "definicion": "La Tierra funciona como geosfera, hidrosfera, atmósfera y biosfera que intercambian materia y energía, de modo que un cambio en uno afecta a otros."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+   "nombre": "Suelo: formación, componentes y tipos",
+   "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tectonica-de-placas",
+   "nombre": "Tectónica de placas",
+   "definicion": "La litosfera está dividida en placas rígidas que se mueven sobre el manto, originando sismos, volcanes, montañas y fosas."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "nombre": "Tiempo atmosférico y sus variables",
+   "definicion": "Estado de la atmósfera en un lugar y momento, descrito por temperatura, humedad, presión, precipitación, nubosidad y viento."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tiempo-geologico",
+   "nombre": "Tiempo geológico y datación",
+   "definicion": "Escala de millones de años dividida en eones, eras y periodos; la edad de rocas y fósiles se estima por datación relativa y radiométrica."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores",
+   "nombre": "Clima: diferencia con el tiempo, tipos y factores",
+   "definicion": "Patrón promedio del tiempo durante muchos años; los tipos de clima dependen de latitud, altitud, hemisferio, cercanía al mar y relieve."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+   "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+   "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/traslacion-y-ano",
+   "nombre": "Traslación de la Tierra y el año",
+   "definicion": "La Tierra da una vuelta completa alrededor del Sol en aproximadamente 365 días, lo que define el año."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tsunamis",
+   "nombre": "Tsunamis",
+   "definicion": "Series de olas de gran longitud generadas por sismos submarinos, erupciones o deslizamientos, que inundan las costas con gran energía."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+   "nombre": "Uso del suelo y su degradación",
+   "definicion": "La agricultura, la tala y la urbanización cambian el uso del suelo y pueden acelerar su erosión, compactación y pérdida de fertilidad."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/volcanes-estructura-y-tipos",
+   "nombre": "Volcanes: estructura, tipos y productos",
+   "definicion": "Aberturas por donde sale magma; se describen por su cámara, chimenea y cráter, su forma, tipo de erupción y productos (lava, ceniza, gases)."
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/vulcanismo-de-el-salvador",
+   "nombre": "Vulcanismo de El Salvador",
+   "definicion": "La subducción de la placa de Cocos origina la cadena volcánica salvadoreña, con volcanes activos y un historial de erupciones documentado."
+  }
+ ],
+ "practicas": [
+  {
+   "id": "PRAC:formular-preguntas-investigables",
+   "nombre": "Formular preguntas investigables"
+  },
+  {
+   "id": "PRAC:formular-hipotesis-y-predicciones",
+   "nombre": "Formular hipótesis y predicciones"
+  },
+  {
+   "id": "PRAC:planificar-investigaciones",
+   "nombre": "Planificar investigaciones"
+  },
+  {
+   "id": "PRAC:controlar-variables",
+   "nombre": "Identificar y controlar variables"
+  },
+  {
+   "id": "PRAC:evaluar-disenos-de-investigacion",
+   "nombre": "Evaluar diseños de investigación"
+  },
+  {
+   "id": "PRAC:observar-y-registrar",
+   "nombre": "Observar y registrar sistemáticamente"
+  },
+  {
+   "id": "PRAC:medir-con-instrumentos",
+   "nombre": "Medir con instrumentos y unidades"
+  },
+  {
+   "id": "PRAC:trabajar-con-seguridad-y-etica",
+   "nombre": "Trabajar con seguridad y ética"
+  },
+  {
+   "id": "PRAC:repetir-mediciones-y-estimar-error",
+   "nombre": "Repetir mediciones y estimar el error"
+  },
+  {
+   "id": "PRAC:representar-datos",
+   "nombre": "Representar datos en tablas y gráficos"
+  },
+  {
+   "id": "PRAC:interpretar-datos-y-concluir",
+   "nombre": "Interpretar datos y sacar conclusiones"
+  },
+  {
+   "id": "PRAC:distinguir-correlacion-y-causalidad",
+   "nombre": "Distinguir correlación de causalidad"
+  },
+  {
+   "id": "PRAC:analizar-datos-con-estadistica",
+   "nombre": "Analizar datos con herramientas estadísticas"
+  },
+  {
+   "id": "PRAC:usar-matematicas-en-ciencias",
+   "nombre": "Usar matemáticas para resolver problemas científicos"
+  },
+  {
+   "id": "PRAC:usar-pensamiento-computacional-y-simulaciones",
+   "nombre": "Usar pensamiento computacional y simulaciones"
+  },
+  {
+   "id": "PRAC:desarrollar-y-usar-modelos",
+   "nombre": "Desarrollar y usar modelos"
+  },
+  {
+   "id": "PRAC:evaluar-modelos-y-limitaciones",
+   "nombre": "Evaluar modelos y sus limitaciones"
+  },
+  {
+   "id": "PRAC:transformar-representaciones",
+   "nombre": "Usar y transformar representaciones"
+  },
+  {
+   "id": "PRAC:construir-explicaciones-con-evidencia",
+   "nombre": "Construir explicaciones basadas en evidencia"
+  },
+  {
+   "id": "PRAC:argumentar-con-evidencia",
+   "nombre": "Argumentar con evidencia y razonamiento"
+  },
+  {
+   "id": "PRAC:evaluar-afirmaciones-y-argumentos",
+   "nombre": "Evaluar afirmaciones y argumentos"
+  },
+  {
+   "id": "PRAC:evaluar-fuentes-de-informacion",
+   "nombre": "Buscar y evaluar fuentes de información"
+  },
+  {
+   "id": "PRAC:comunicar-resultados",
+   "nombre": "Comunicar resultados científicos"
+  },
+  {
+   "id": "PRAC:distinguir-observacion-e-inferencia",
+   "nombre": "Distinguir observación de inferencia"
+  },
+  {
+   "id": "PRAC:naturaleza-provisional-del-conocimiento",
+   "nombre": "Reconocer el carácter provisional del conocimiento"
+  },
+  {
+   "id": "PRAC:ciencia-como-empresa-colectiva",
+   "nombre": "Valorar la ciencia como empresa colectiva"
+  },
+  {
+   "id": "PRAC:limites-de-la-ciencia",
+   "nombre": "Reconocer el alcance y límites de la ciencia"
+  },
+  {
+   "id": "PRAC:evaluar-implicaciones-y-decidir",
+   "nombre": "Evaluar implicaciones y tomar decisiones informadas"
+  },
+  {
+   "id": "PRAC:definir-problemas-de-diseno",
+   "nombre": "Definir problemas de diseño"
+  },
+  {
+   "id": "PRAC:disenar-y-evaluar-soluciones",
+   "nombre": "Diseñar y evaluar soluciones"
+  }
+ ],
+ "items": [
+  {
+   "id": "G03-CIE-U2-2.10",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Tipos de volcanes.",
+   "procedimental": "2.10. Clasificación de los volcanes por sus formas.",
+   "indicador": "2.10. Clasifica volcanes por sus formas."
+  },
+  {
+   "id": "G03-CIE-U2-2.11",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Tipos de volcanes.",
+   "procedimental": "2.11. Clasificación de los volcanes por su tipo de erupción.",
+   "indicador": "2.11. Clasifica volcanes por su tipo de erupción."
+  },
+  {
+   "id": "G03-CIE-U2-2.12",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Capas de la Tierra.",
+   "procedimental": "2.12. Comparación de las composiciones químicas y ubicación de las capas de la Tierra.",
+   "indicador": "2.12. Compara las composiciones químicas y ubicación de las capas de la Tierra."
+  },
+  {
+   "id": "G03-CIE-U2-2.13",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Capas de la Tierra.",
+   "procedimental": "2.13. Representación de la estructura interna de la Tierra según sus propiedades físicas.",
+   "indicador": "2.13. Representa la estructura interna de la Tierra según sus propiedades físicas."
+  },
+  {
+   "id": "G03-CIE-U2-2.15",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Atmósfera terrestre.",
+   "procedimental": "2.15. Descripción de las características de las capas atmosféricas de la Tierra.",
+   "indicador": "2.15. Describe las características de las capas atmosféricas de la Tierra."
+  },
+  {
+   "id": "G03-CIE-U2-2.6",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Las rocas.",
+   "procedimental": "2.6. Identificación de rocas como elementos de uso común",
+   "indicador": "2.6. Identifica las rocas como elementos de uso común."
+  },
+  {
+   "id": "G03-CIE-U2-2.7",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Las rocas.",
+   "procedimental": "2.7. Clasificación de rocas por sus características y ambientes de formación",
+   "indicador": "2.7. Clasifica rocas por sus características y ambientes de formación."
+  },
+  {
+   "id": "G03-CIE-U2-2.8",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Rocas y volcanes.",
+   "procedimental": "2.8. Reconocimiento de los procesos responsables de la formación de las rocas.",
+   "indicador": "2.8. Reconoce los procesos responsables de la formación de las rocas."
+  },
+  {
+   "id": "G03-CIE-U2-2.9",
+   "unidad": "2. Interacciones terrestres.",
+   "contenido": "Rocas y volcanes.",
+   "procedimental": "2.9. Comparación de las características generales de los productos de origen volcánico.",
+   "indicador": "2.9. Compara las características generales de productos de origen volcánico."
+  },
+  {
+   "id": "G03-CIE-U3-3.1",
+   "unidad": "3. El agua.",
+   "contenido": "Hidrósfera terrestre.",
+   "procedimental": "3.1. Representación de las principales características e importancia de los océanos.",
+   "indicador": "3.1. Representa las principales características e importancia de los océanos."
+  },
+  {
+   "id": "G03-CIE-U3-3.14",
+   "unidad": "3. El agua.",
+   "contenido": "Tratamiento del agua.",
+   "procedimental": "3.14. Reconocimiento de la importancia de tratar las aguas residuales.",
+   "indicador": "3.14. Reconoce la importancia de brindar tratamiento a las aguas residuales."
+  },
+  {
+   "id": "G03-CIE-U3-3.2",
+   "unidad": "3. El agua.",
+   "contenido": "Hidrósfera terrestre.",
+   "procedimental": "3.2. Descripción de las principales características e importancia de los lagos.",
+   "indicador": "3.2. Describe las principales características e importancia de los lagos."
+  },
+  {
+   "id": "G03-CIE-U3-3.3",
+   "unidad": "3. El agua.",
+   "contenido": "Hidrósfera terrestre.",
+   "procedimental": "3.3. Exploración de las principales características e importancia de los ríos.",
+   "indicador": "3.3. Explora las principales características e importancia de los ríos."
+  },
+  {
+   "id": "G03-CIE-U3-3.4",
+   "unidad": "3. El agua.",
+   "contenido": "Hidrósfera terrestre.",
+   "procedimental": "3.4. Descripción de las principales características e importancia de los glaciares.",
+   "indicador": "3.4. Describe las principales características e importancia de los glaciares."
+  },
+  {
+   "id": "G03-CIE-U3-3.5",
+   "unidad": "3. El agua.",
+   "contenido": "Hidrósfera terrestre.",
+   "procedimental": "3.5. Modelación de un acuífero para estudiar sus características e importancia.",
+   "indicador": "3.5. Emplea un modelo de un acuífero para estudiar sus características e importancia."
+  }
+ ]
+}

@@ -1,0 +1,1853 @@
+{
+ "lote": "fisica_G11",
+ "version": "etiquetado-v1",
+ "instrucciones": "prompts/etiquetar_conceptos.md",
+ "vocabulario": [
+  {
+   "id": "CON:fisica/absorcion-radiacion-efecto-invernadero",
+   "nombre": "Absorción de radiación y efecto invernadero",
+   "definicion": "Gases como el CO₂ absorben radiación infrarroja emitida por la Tierra y elevan la temperatura de la atmósfera."
+  },
+  {
+   "id": "CON:fisica/aceleracion",
+   "nombre": "Aceleración",
+   "definicion": "Cambio de la velocidad por unidad de tiempo; puede aumentar o disminuir la rapidez o cambiar la dirección."
+  },
+  {
+   "id": "CON:fisica/aceleracion-fuerza-centripeta",
+   "nombre": "Aceleración y fuerza centrípeta",
+   "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta."
+  },
+  {
+   "id": "CON:fisica/aplicaciones-leyes-newton",
+   "nombre": "Aplicaciones de las leyes de Newton",
+   "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados."
+  },
+  {
+   "id": "CON:fisica/astronomia-multionda",
+   "nombre": "Observación astronómica en distintas longitudes de onda",
+   "definicion": "Telescopios y detectores captan radiación electromagnética de radio a gamma para estudiar el universo."
+  },
+  {
+   "id": "CON:fisica/caida-libre",
+   "nombre": "Caída libre",
+   "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire."
+  },
+  {
+   "id": "CON:fisica/calentamiento-enfriamiento",
+   "nombre": "Calentamiento y enfriamiento",
+   "definicion": "Al contacto, el objeto caliente se enfría y el frío se calienta hasta igualar su temperatura."
+  },
+  {
+   "id": "CON:fisica/calor-latente",
+   "nombre": "Calor latente",
+   "definicion": "Energía absorbida o liberada en un cambio de fase sin variar la temperatura: Q = mL."
+  },
+  {
+   "id": "CON:fisica/calor-vs-temperatura",
+   "nombre": "Calor como energía en tránsito",
+   "definicion": "El calor es energía transferida por diferencia de temperatura; se distingue de la temperatura y de la energía interna."
+  },
+  {
+   "id": "CON:fisica/cambios-estado",
+   "nombre": "Cambios de estado",
+   "definicion": "Fusión, solidificación, evaporación, condensación y sublimación ocurren al ganar o perder energía térmica."
+  },
+  {
+   "id": "CON:fisica/campo-electrico",
+   "nombre": "Campo eléctrico",
+   "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas."
+  },
+  {
+   "id": "CON:fisica/campo-magnetico",
+   "nombre": "Campo magnético y magnetismo terrestre",
+   "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula."
+  },
+  {
+   "id": "CON:fisica/capacidad-calorifica-calor-especifico",
+   "nombre": "Capacidad calorífica y calor específico",
+   "definicion": "Energía necesaria para elevar la temperatura de un cuerpo o de un kilogramo de sustancia un grado: Q = mcΔT."
+  },
+  {
+   "id": "CON:fisica/capacitancia",
+   "nombre": "Capacitancia y condensadores",
+   "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC."
+  },
+  {
+   "id": "CON:fisica/carga-electrica-electrizacion",
+   "nombre": "Carga eléctrica y electrización",
+   "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada."
+  },
+  {
+   "id": "CON:fisica/centro-gravedad-estabilidad",
+   "nombre": "Centro de gravedad y estabilidad",
+   "definicion": "Punto donde actúa el peso de un cuerpo; su posición respecto a la base de apoyo determina la estabilidad."
+  },
+  {
+   "id": "CON:fisica/circuito-electrico-simple",
+   "nombre": "Circuito eléctrico simple",
+   "definicion": "Un circuito necesita un camino cerrado desde la fuente por los componentes; la electricidad se transforma en luz, calor o sonido."
+  },
+  {
+   "id": "CON:fisica/circuitos-serie-paralelo",
+   "nombre": "Circuitos en serie y en paralelo",
+   "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos."
+  },
+  {
+   "id": "CON:fisica/colisiones",
+   "nombre": "Colisiones elásticas e inelásticas",
+   "definicion": "Choques en que se conserva el momento; en los elásticos también la energía cinética, en los inelásticos no."
+  },
+  {
+   "id": "CON:fisica/color-dispersion-luz",
+   "nombre": "Color y dispersión de la luz",
+   "definicion": "La luz blanca se descompone en colores (arcoíris); el color de un objeto depende de la luz que refleja."
+  },
+  {
+   "id": "CON:fisica/conductores-aislantes-electricos",
+   "nombre": "Conductores y aislantes eléctricos",
+   "definicion": "Materiales que permiten o impiden el paso de la corriente eléctrica."
+  },
+  {
+   "id": "CON:fisica/conservacion-energia",
+   "nombre": "Conservación de la energía",
+   "definicion": "La energía total de un sistema aislado se mantiene constante; solo se transforma o transfiere."
+  },
+  {
+   "id": "CON:fisica/conservacion-energia-mecanica",
+   "nombre": "Conservación de la energía mecánica",
+   "definicion": "Sin fuerzas no conservativas, la suma de energía cinética y potencial de un sistema permanece constante."
+  },
+  {
+   "id": "CON:fisica/conservacion-momento-lineal",
+   "nombre": "Conservación del momento lineal",
+   "definicion": "En un sistema aislado el momento lineal total se conserva, aunque actúen fuerzas internas."
+  },
+  {
+   "id": "CON:fisica/corriente-alterna-transformador",
+   "nombre": "Corriente alterna y transformador",
+   "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC."
+  },
+  {
+   "id": "CON:fisica/corriente-voltaje-resistencia",
+   "nombre": "Corriente, voltaje y resistencia",
+   "definicion": "Magnitudes básicas de un circuito: flujo de carga, diferencia de potencial que lo impulsa y oposición al paso."
+  },
+  {
+   "id": "CON:fisica/cosmologia-big-bang",
+   "nombre": "Expansión del universo y Big Bang",
+   "definicion": "Las galaxias se alejan (ley de Hubble); el universo se originó en un estado caliente y denso hace unos 13 800 millones de años."
+  },
+  {
+   "id": "CON:fisica/cuantizacion-energia-planck",
+   "nombre": "Cuantización de la energía",
+   "definicion": "La energía de la radiación se emite en paquetes discretos E = hf, idea de Planck para el cuerpo negro."
+  },
+  {
+   "id": "CON:fisica/densidad",
+   "nombre": "Densidad",
+   "definicion": "Masa por unidad de volumen de un material; permite comparar materiales y predecir si flotan."
+  },
+  {
+   "id": "CON:fisica/desintegracion-radiactiva",
+   "nombre": "Desintegración radiactiva",
+   "definicion": "Núcleos inestables emiten radiación alfa, beta o gamma; su número decae exponencialmente con una vida media."
+  },
+  {
+   "id": "CON:fisica/difraccion-luz",
+   "nombre": "Difracción de ondas y de la luz",
+   "definicion": "Las ondas se curvan al pasar aberturas comparables a su longitud de onda; rendijas, redes y difracción de rayos X."
+  },
+  {
+   "id": "CON:fisica/dilatacion-termica",
+   "nombre": "Dilatación térmica",
+   "definicion": "Aumento de las dimensiones de un cuerpo al elevarse su temperatura, cuantificado por coeficientes de dilatación."
+  },
+  {
+   "id": "CON:fisica/dinamica-rotacion-momento-inercia",
+   "nombre": "Dinámica y energía de rotación",
+   "definicion": "El torque neto produce aceleración angular (τ = Iα); un cuerpo que gira o rueda tiene energía cinética ½Iω²."
+  },
+  {
+   "id": "CON:fisica/disipacion-eficiencia",
+   "nombre": "Disipación de energía y eficiencia",
+   "definicion": "En toda transformación parte de la energía se disipa como calor; la eficiencia es la fracción útil obtenida."
+  },
+  {
+   "id": "CON:fisica/dualidad-onda-particula",
+   "nombre": "Dualidad onda-partícula",
+   "definicion": "Luz y materia presentan comportamiento ondulatorio y corpuscular; longitud de onda de De Broglie."
+  },
+  {
+   "id": "CON:fisica/efecto-doppler",
+   "nombre": "Efecto Doppler",
+   "definicion": "Cambio de la frecuencia percibida cuando la fuente o el observador se mueven; aplica a sonido y luz."
+  },
+  {
+   "id": "CON:fisica/elasticidad-esfuerzo-deformacion",
+   "nombre": "Esfuerzo, deformación y módulo de Young",
+   "definicion": "Respuesta de los sólidos a esfuerzos de tensión o compresión; límite elástico, deformación plástica y ruptura."
+  },
+  {
+   "id": "CON:fisica/electroiman",
+   "nombre": "Electroimanes y efecto magnético de la corriente",
+   "definicion": "Una corriente eléctrica produce un campo magnético (Oersted); una bobina con núcleo de hierro forma un electroimán."
+  },
+  {
+   "id": "CON:fisica/energia-cinetica",
+   "nombre": "Energía cinética",
+   "definicion": "Energía asociada al movimiento de un cuerpo, ½mv², que depende de su masa y su rapidez."
+  },
+  {
+   "id": "CON:fisica/energia-enlace-nuclear",
+   "nombre": "Defecto de masa y energía de enlace nuclear",
+   "definicion": "La masa del núcleo es menor que la de sus nucleones; esa diferencia equivale a la energía de enlace."
+  },
+  {
+   "id": "CON:fisica/energia-potencial-gravitatoria",
+   "nombre": "Energía potencial gravitatoria y elástica",
+   "definicion": "Energía almacenada por la posición en un campo gravitatorio (mgh) o por la deformación de un cuerpo elástico (½kx²)."
+  },
+  {
+   "id": "CON:fisica/energia-usos-vida-diaria",
+   "nombre": "La energía y sus usos",
+   "definicion": "La energía permite producir cambios; las personas la usan en forma de calor, luz, movimiento y electricidad."
+  },
+  {
+   "id": "CON:fisica/equilibrio-termico",
+   "nombre": "Equilibrio térmico y ley cero",
+   "definicion": "Dos cuerpos en contacto intercambian calor hasta igualar temperaturas; la ley cero fundamenta la termometría."
+  },
+  {
+   "id": "CON:fisica/equilibrio-traslacional",
+   "nombre": "Condiciones de equilibrio estático",
+   "definicion": "Un cuerpo rígido está en equilibrio si la fuerza neta y el torque neto sobre él son nulos."
+  },
+  {
+   "id": "CON:fisica/equivalencia-masa-energia",
+   "nombre": "Equivalencia masa-energía",
+   "definicion": "La masa es una forma de energía: E = mc²; base de la energía relativista y nuclear."
+  },
+  {
+   "id": "CON:fisica/espejos-esfericos",
+   "nombre": "Espejos esféricos",
+   "definicion": "Espejos cóncavos y convexos forman imágenes reales o virtuales determinadas por trazado de rayos y la ecuación del espejo."
+  },
+  {
+   "id": "CON:fisica/espejos-planos",
+   "nombre": "Espejos planos e imágenes",
+   "definicion": "Un espejo plano forma una imagen virtual, del mismo tamaño y con inversión lateral; se analiza con diagramas de rayos."
+  },
+  {
+   "id": "CON:fisica/estados-materia",
+   "nombre": "Estados de la materia",
+   "definicion": "Sólidos, líquidos y gases se distinguen por su forma y volumen propios o adaptables."
+  },
+  {
+   "id": "CON:fisica/fision-fusion-nuclear",
+   "nombre": "Fisión y fusión nuclear",
+   "definicion": "Reacciones en que núcleos pesados se dividen o ligeros se unen liberando energía; base de reactores y estrellas."
+  },
+  {
+   "id": "CON:fisica/flotacion-hundimiento",
+   "nombre": "Flotación y hundimiento",
+   "definicion": "Algunos objetos flotan y otros se hunden según su material y forma, al compararse con el líquido."
+  },
+  {
+   "id": "CON:fisica/formas-energia",
+   "nombre": "Formas de energía",
+   "definicion": "Energía cinética, potencial, luminosa, sonora, eléctrica, térmica y química como manifestaciones de la energía."
+  },
+  {
+   "id": "CON:fisica/foton-efecto-fotoelectrico",
+   "nombre": "Fotón y efecto fotoeléctrico",
+   "definicion": "La luz se comporta como partículas (fotones) que arrancan electrones de un metal por encima de una frecuencia umbral."
+  },
+  {
+   "id": "CON:fisica/friccion-resistencia-aire",
+   "nombre": "Fricción y resistencia del aire",
+   "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos."
+  },
+  {
+   "id": "CON:fisica/fuentes-energia-renovables",
+   "nombre": "Fuentes de energía renovables y no renovables",
+   "definicion": "Recursos energéticos (solar, eólica, hídrica, combustibles fósiles) que se distinguen por su capacidad de renovarse e impacto ambiental."
+  },
+  {
+   "id": "CON:fisica/fuerza-elastica-ley-hooke",
+   "nombre": "Fuerza elástica y ley de Hooke",
+   "definicion": "La fuerza de un resorte es proporcional a su deformación y se opone a ella: F = −kx."
+  },
+  {
+   "id": "CON:fisica/fuerza-empuje-tiron",
+   "nombre": "Fuerza como empuje o tirón",
+   "definicion": "Una fuerza es un empuje o tirón; las fuerzas desequilibradas cambian la rapidez, dirección o forma de un objeto."
+  },
+  {
+   "id": "CON:fisica/fuerza-lorentz",
+   "nombre": "Fuerza magnética sobre cargas en movimiento",
+   "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas)."
+  },
+  {
+   "id": "CON:fisica/fuerza-neta-diagrama-cuerpo-libre",
+   "nombre": "Fuerza neta y diagrama de cuerpo libre",
+   "definicion": "La fuerza neta es la suma vectorial de las fuerzas sobre un cuerpo, representadas en un diagrama de cuerpo libre."
+  },
+  {
+   "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+   "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+   "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores."
+  },
+  {
+   "id": "CON:fisica/fuerzas-contacto-distancia",
+   "nombre": "Fuerzas de contacto y a distancia",
+   "definicion": "Algunas fuerzas actúan por contacto (empuje, fricción) y otras a distancia (gravitatoria, magnética, eléctrica)."
+  },
+  {
+   "id": "CON:fisica/fuerzas-mecanicas-comunes",
+   "nombre": "Fuerzas mecánicas comunes",
+   "definicion": "Fuerza normal, tensión, fricción, fuerza elástica y empuje como interacciones de contacto con magnitud y dirección."
+  },
+  {
+   "id": "CON:fisica/graficas-movimiento",
+   "nombre": "Gráficas del movimiento",
+   "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento."
+  },
+  {
+   "id": "CON:fisica/gravedad-atrae-hacia-tierra",
+   "nombre": "Gravedad: atracción hacia la Tierra",
+   "definicion": "La gravedad es la fuerza que atrae los objetos hacia el centro de la Tierra y los hace caer."
+  },
+  {
+   "id": "CON:fisica/gravitacion-universal",
+   "nombre": "Ley de gravitación universal",
+   "definicion": "Dos masas se atraen con una fuerza proporcional al producto de sus masas e inversa al cuadrado de su distancia."
+  },
+  {
+   "id": "CON:fisica/imanes-polos",
+   "nombre": "Imanes y polos magnéticos",
+   "definicion": "Los imanes tienen dos polos; polos iguales se repelen y opuestos se atraen."
+  },
+  {
+   "id": "CON:fisica/induccion-electromagnetica",
+   "nombre": "Inducción electromagnética: Faraday y Lenz",
+   "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos."
+  },
+  {
+   "id": "CON:fisica/interferencia-luz",
+   "nombre": "Interferencia de la luz",
+   "definicion": "Superposición de ondas luminosas coherentes: experimento de Young, películas delgadas e interferómetros."
+  },
+  {
+   "id": "CON:fisica/lentes-delgadas",
+   "nombre": "Lentes delgadas e imágenes",
+   "definicion": "Lentes convergentes y divergentes forman imágenes según su distancia focal; ecuación de las lentes y aumento."
+  },
+  {
+   "id": "CON:fisica/ley-coulomb",
+   "nombre": "Ley de Coulomb",
+   "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia."
+  },
+  {
+   "id": "CON:fisica/ley-ohm",
+   "nombre": "Ley de Ohm",
+   "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR."
+  },
+  {
+   "id": "CON:fisica/leyes-kepler",
+   "nombre": "Leyes de Kepler",
+   "definicion": "Del modelo geocéntrico al heliocéntrico: los planetas describen elipses, barren áreas iguales y T² es proporcional a a³."
+  },
+  {
+   "id": "CON:fisica/leyes-kirchhoff",
+   "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+   "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales."
+  },
+  {
+   "id": "CON:fisica/magnitudes-escalares-vectoriales",
+   "nombre": "Magnitudes escalares y vectoriales",
+   "definicion": "Las magnitudes vectoriales tienen módulo, dirección y sentido; las escalares solo valor numérico con unidad."
+  },
+  {
+   "id": "CON:fisica/magnitudes-ondas",
+   "nombre": "Longitud de onda, frecuencia y rapidez",
+   "definicion": "Magnitudes de una onda periódica (amplitud, período, frecuencia, longitud de onda) relacionadas por v = λf."
+  },
+  {
+   "id": "CON:fisica/maquinas-simples",
+   "nombre": "Máquinas simples",
+   "definicion": "Palancas, poleas, engranajes y planos inclinados facilitan el trabajo: reducen la fuerza o cambian su dirección; se combinan en máquinas compuestas."
+  },
+  {
+   "id": "CON:fisica/masa-y-peso",
+   "nombre": "Masa y peso",
+   "definicion": "La masa mide la cantidad de materia e inercia; el peso es la fuerza gravitatoria sobre ella (W = mg)."
+  },
+  {
+   "id": "CON:fisica/materiales-magneticos",
+   "nombre": "Materiales magnéticos",
+   "definicion": "Los imanes atraen algunos metales (hierro, níquel, cobalto); el magnetismo se explica por dominios magnéticos."
+  },
+  {
+   "id": "CON:fisica/materiales-opacos-transparentes",
+   "nombre": "Materiales opacos, transparentes y translúcidos",
+   "definicion": "Los materiales dejan pasar, dispersan o bloquean la luz según absorban o transmitan."
+  },
+  {
+   "id": "CON:fisica/mecanismos-transferencia-calor",
+   "nombre": "Conducción, convección y radiación",
+   "definicion": "El calor se transfiere por conducción (según la conductividad del material), convección y radiación."
+  },
+  {
+   "id": "CON:fisica/medicion-magnitudes-instrumentos",
+   "nombre": "Medición de magnitudes con instrumentos",
+   "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud)."
+  },
+  {
+   "id": "CON:fisica/modelo-estandar-particulas",
+   "nombre": "Modelo estándar de partículas",
+   "definicion": "Clasificación de las partículas elementales en quarks, leptones y bosones mediadores de las interacciones fundamentales."
+  },
+  {
+   "id": "CON:fisica/modelo-particulas",
+   "nombre": "Modelo de partículas de la materia",
+   "definicion": "La materia está formada por partículas en movimiento constante; su movimiento y separación, mayores a más temperatura, explican los estados."
+  },
+  {
+   "id": "CON:fisica/momento-angular",
+   "nombre": "Momento angular y su conservación",
+   "definicion": "El momento angular L = Iω se conserva cuando el torque externo neto es nulo."
+  },
+  {
+   "id": "CON:fisica/momento-lineal-impulso",
+   "nombre": "Momento lineal e impulso",
+   "definicion": "El momento lineal es p = mv; el impulso de una fuerza produce un cambio igual del momento."
+  },
+  {
+   "id": "CON:fisica/movimiento-armonico-simple",
+   "nombre": "Movimiento armónico simple",
+   "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase."
+  },
+  {
+   "id": "CON:fisica/movimiento-circular-uniforme",
+   "nombre": "Movimiento circular y variables angulares",
+   "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial."
+  },
+  {
+   "id": "CON:fisica/movimiento-proyectiles",
+   "nombre": "Cinemática en dos dimensiones y proyectiles",
+   "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia."
+  },
+  {
+   "id": "CON:fisica/movimiento-uniformemente-acelerado",
+   "nombre": "Movimiento con aceleración constante",
+   "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante."
+  },
+  {
+   "id": "CON:fisica/movimiento-y-reposo",
+   "nombre": "Movimiento, reposo y tipos de trayectoria",
+   "definicion": "Un objeto se mueve si cambia de posición; puede hacerlo rápido o lento, en línea recta, circular, vaivén o zigzag."
+  },
+  {
+   "id": "CON:fisica/niveles-energia-espectros",
+   "nombre": "Niveles de energía atómicos y espectros",
+   "definicion": "Los electrones ocupan niveles discretos; las transiciones emiten o absorben fotones que forman espectros de líneas."
+  },
+  {
+   "id": "CON:fisica/nucleo-atomico-isotopos",
+   "nombre": "Núcleo atómico e isótopos",
+   "definicion": "El núcleo está formado por protones y neutrones unidos por la fuerza nuclear fuerte; los isótopos difieren en neutrones."
+  },
+  {
+   "id": "CON:fisica/ojo-instrumentos-opticos",
+   "nombre": "El ojo y los instrumentos ópticos",
+   "definicion": "Funcionamiento óptico del ojo, sus defectos y su corrección, y de lupa, microscopio y telescopio."
+  },
+  {
+   "id": "CON:fisica/ondas-electromagneticas-espectro",
+   "nombre": "Ondas electromagnéticas y espectro",
+   "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia."
+  },
+  {
+   "id": "CON:fisica/ondas-estacionarias",
+   "nombre": "Ondas estacionarias y armónicos",
+   "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos."
+  },
+  {
+   "id": "CON:fisica/ondas-mecanicas-tipos",
+   "nombre": "Ondas mecánicas transversales y longitudinales",
+   "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas."
+  },
+  {
+   "id": "CON:fisica/ondas-radio-telecomunicaciones",
+   "nombre": "Ondas de radio y telecomunicaciones",
+   "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición."
+  },
+  {
+   "id": "CON:fisica/orbitas-satelites",
+   "nombre": "Órbitas y satélites",
+   "definicion": "La gravedad actúa como fuerza centrípeta en las órbitas; determina rapidez y período orbital y la ingravidez aparente."
+  },
+  {
+   "id": "CON:fisica/pendulo-simple",
+   "nombre": "Péndulo simple",
+   "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial."
+  },
+  {
+   "id": "CON:fisica/polarizacion-luz",
+   "nombre": "Polarización de la luz",
+   "definicion": "La luz es una onda transversal que puede polarizarse con filtros o por reflexión (ley de Malus, ángulo de Brewster)."
+  },
+  {
+   "id": "CON:fisica/posicion-desplazamiento",
+   "nombre": "Posición, desplazamiento y trayectoria",
+   "definicion": "La posición se mide respecto a un sistema de referencia; el desplazamiento es el cambio vectorial de posición."
+  },
+  {
+   "id": "CON:fisica/postulados-relatividad",
+   "nombre": "Relatividad especial",
+   "definicion": "La rapidez de la luz es invariante y las leyes son iguales en sistemas inerciales; tiempo y longitud dependen del observador."
+  },
+  {
+   "id": "CON:fisica/potencia-electrica-joule",
+   "nombre": "Potencia eléctrica y efecto Joule",
+   "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh."
+  },
+  {
+   "id": "CON:fisica/potencia-mecanica",
+   "nombre": "Potencia mecánica",
+   "definicion": "Rapidez con la que se realiza trabajo o se transfiere energía; se mide en vatios."
+  },
+  {
+   "id": "CON:fisica/potencial-electrico",
+   "nombre": "Energía potencial y potencial eléctrico",
+   "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico."
+  },
+  {
+   "id": "CON:fisica/presion",
+   "nombre": "Presión",
+   "definicion": "Fuerza perpendicular por unidad de área; explica efectos de una misma fuerza sobre áreas distintas."
+  },
+  {
+   "id": "CON:fisica/presion-hidrostatica",
+   "nombre": "Presión hidrostática y atmosférica",
+   "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud."
+  },
+  {
+   "id": "CON:fisica/primera-ley-newton",
+   "nombre": "Primera ley de Newton: inercia",
+   "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero."
+  },
+  {
+   "id": "CON:fisica/primera-ley-termodinamica",
+   "nombre": "Primera ley de la termodinámica",
+   "definicion": "El cambio de energía interna es igual al calor recibido menos el trabajo realizado: ΔU = Q − W."
+  },
+  {
+   "id": "CON:fisica/principio-arquimedes",
+   "nombre": "Principio de Arquímedes: empuje",
+   "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación."
+  },
+  {
+   "id": "CON:fisica/principio-bernoulli",
+   "nombre": "Hidrodinámica: continuidad y Bernoulli",
+   "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión."
+  },
+  {
+   "id": "CON:fisica/principio-pascal",
+   "nombre": "Principio de Pascal",
+   "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica."
+  },
+  {
+   "id": "CON:fisica/procesos-termodinamicos",
+   "nombre": "Procesos termodinámicos",
+   "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V."
+  },
+  {
+   "id": "CON:fisica/propagacion-rectilinea-sombras",
+   "nombre": "Fuentes de luz, propagación y sombras",
+   "definicion": "La luz sale de fuentes naturales o artificiales y viaja en línea recta; un objeto que la bloquea forma sombra."
+  },
+  {
+   "id": "CON:fisica/radiacion-ionizante-aplicaciones",
+   "nombre": "Radiación ionizante: detección, efectos y aplicaciones",
+   "definicion": "Radiación capaz de ionizar la materia; se detecta con contadores y se usa en medicina con protección radiológica."
+  },
+  {
+   "id": "CON:fisica/radiacion-termica-cuerpo-negro",
+   "nombre": "Radiación térmica y cuerpo negro",
+   "definicion": "Todo cuerpo emite radiación según su temperatura; leyes de Stefan-Boltzmann y de desplazamiento de Wien."
+  },
+  {
+   "id": "CON:fisica/rapidez-luz",
+   "nombre": "Rapidez de la luz",
+   "definicion": "La luz viaja a rapidez finita, máxima en el vacío (c ≈ 3×10⁸ m/s), y menor en otros medios."
+  },
+  {
+   "id": "CON:fisica/rapidez-velocidad",
+   "nombre": "Rapidez y velocidad",
+   "definicion": "Rapidez es distancia recorrida por unidad de tiempo; velocidad es desplazamiento por unidad de tiempo, con dirección."
+  },
+  {
+   "id": "CON:fisica/reflexion-interna-total",
+   "nombre": "Reflexión interna total",
+   "definicion": "Si la luz pasa a un medio menos refringente con ángulo mayor al crítico, se refleja totalmente; base de la fibra óptica."
+  },
+  {
+   "id": "CON:fisica/reflexion-luz",
+   "nombre": "Reflexión de la luz",
+   "definicion": "La luz rebota en las superficies; el ángulo de incidencia es igual al de reflexión."
+  },
+  {
+   "id": "CON:fisica/refraccion-luz",
+   "nombre": "Refracción de la luz",
+   "definicion": "Cambio de dirección de la luz al pasar entre medios de distinto índice de refracción, según la ley de Snell."
+  },
+  {
+   "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+   "nombre": "Relaciones presión-volumen-temperatura en gases",
+   "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases)."
+  },
+  {
+   "id": "CON:fisica/resistencia-equivalente",
+   "nombre": "Resistencia equivalente",
+   "definicion": "Reducción de resistencias en serie, paralelo y circuitos mixtos a una sola equivalente."
+  },
+  {
+   "id": "CON:fisica/segunda-ley-maquinas-termicas",
+   "nombre": "Segunda ley de la termodinámica",
+   "definicion": "Ninguna máquina convierte todo el calor en trabajo; eficiencia, ciclo de Carnot, refrigeradores e irreversibilidad (entropía)."
+  },
+  {
+   "id": "CON:fisica/segunda-ley-newton",
+   "nombre": "Segunda ley de Newton",
+   "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma."
+  },
+  {
+   "id": "CON:fisica/semiconductores-dispositivos",
+   "nombre": "Semiconductores y electrónica básica",
+   "definicion": "Materiales tipo n y p forman diodos y transistores, base de circuitos integrados y compuertas lógicas."
+  },
+  {
+   "id": "CON:fisica/sistema-internacional-unidades",
+   "nombre": "Sistema Internacional de Unidades",
+   "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas."
+  },
+  {
+   "id": "CON:fisica/sonido-como-onda",
+   "nombre": "El sonido como onda mecánica",
+   "definicion": "Onda longitudinal de compresiones y rarefacciones que necesita un medio y cuya rapidez depende de este."
+  },
+  {
+   "id": "CON:fisica/sonido-vibraciones",
+   "nombre": "El sonido se produce por vibraciones",
+   "definicion": "Los objetos que vibran producen sonido, que viaja hasta el oído a través de un medio."
+  },
+  {
+   "id": "CON:fisica/suma-vectores-componentes",
+   "nombre": "Suma de vectores y componentes rectangulares",
+   "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante."
+  },
+  {
+   "id": "CON:fisica/superposicion-interferencia",
+   "nombre": "Superposición e interferencia de ondas",
+   "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones."
+  },
+  {
+   "id": "CON:fisica/temperatura-medicion-escalas",
+   "nombre": "Temperatura y escalas termométricas",
+   "definicion": "La temperatura se mide con termómetros en escalas Celsius, Fahrenheit y Kelvin, con puntos fijos y cero absoluto."
+  },
+  {
+   "id": "CON:fisica/tension-superficial-capilaridad",
+   "nombre": "Tensión superficial y capilaridad",
+   "definicion": "Efectos de las fuerzas de cohesión y adhesión en la superficie de los líquidos y en tubos delgados."
+  },
+  {
+   "id": "CON:fisica/teoria-cinetica-gases",
+   "nombre": "Gas ideal y teoría cinética",
+   "definicion": "Ecuación de estado pV = nRT y su explicación por choques y energía cinética media de las moléculas; límites del modelo."
+  },
+  {
+   "id": "CON:fisica/tercera-ley-newton",
+   "nombre": "Tercera ley de Newton: acción y reacción",
+   "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos."
+  },
+  {
+   "id": "CON:fisica/tono-volumen-sonido",
+   "nombre": "Características del sonido: tono, intensidad y eco",
+   "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco."
+  },
+  {
+   "id": "CON:fisica/torque",
+   "nombre": "Torque o momento de fuerza",
+   "definicion": "Capacidad de una fuerza para producir rotación; producto de la fuerza por su brazo de palanca."
+  },
+  {
+   "id": "CON:fisica/trabajo-mecanico",
+   "nombre": "Trabajo mecánico",
+   "definicion": "Transferencia de energía por una fuerza a lo largo de un desplazamiento; el trabajo neto iguala el cambio de energía cinética."
+  },
+  {
+   "id": "CON:fisica/transformaciones-energia",
+   "nombre": "Transformaciones de la energía",
+   "definicion": "La energía pasa de una forma a otra en aparatos y procesos (eléctrica a luz, calor o sonido)."
+  },
+  {
+   "id": "CON:fisica/ventaja-mecanica",
+   "nombre": "Ventaja mecánica",
+   "definicion": "Cociente entre la fuerza obtenida y la aplicada en una máquina; ganar fuerza implica recorrer mayor distancia."
+  },
+  {
+   "id": "CON:fisica/viscosidad-regimen-flujo",
+   "nombre": "Viscosidad y régimen de flujo",
+   "definicion": "Resistencia interna de un fluido a fluir; el número de Reynolds distingue flujo laminar y turbulento."
+  }
+ ],
+ "practicas": [
+  {
+   "id": "PRAC:formular-preguntas-investigables",
+   "nombre": "Formular preguntas investigables"
+  },
+  {
+   "id": "PRAC:formular-hipotesis-y-predicciones",
+   "nombre": "Formular hipótesis y predicciones"
+  },
+  {
+   "id": "PRAC:planificar-investigaciones",
+   "nombre": "Planificar investigaciones"
+  },
+  {
+   "id": "PRAC:controlar-variables",
+   "nombre": "Identificar y controlar variables"
+  },
+  {
+   "id": "PRAC:evaluar-disenos-de-investigacion",
+   "nombre": "Evaluar diseños de investigación"
+  },
+  {
+   "id": "PRAC:observar-y-registrar",
+   "nombre": "Observar y registrar sistemáticamente"
+  },
+  {
+   "id": "PRAC:medir-con-instrumentos",
+   "nombre": "Medir con instrumentos y unidades"
+  },
+  {
+   "id": "PRAC:trabajar-con-seguridad-y-etica",
+   "nombre": "Trabajar con seguridad y ética"
+  },
+  {
+   "id": "PRAC:repetir-mediciones-y-estimar-error",
+   "nombre": "Repetir mediciones y estimar el error"
+  },
+  {
+   "id": "PRAC:representar-datos",
+   "nombre": "Representar datos en tablas y gráficos"
+  },
+  {
+   "id": "PRAC:interpretar-datos-y-concluir",
+   "nombre": "Interpretar datos y sacar conclusiones"
+  },
+  {
+   "id": "PRAC:distinguir-correlacion-y-causalidad",
+   "nombre": "Distinguir correlación de causalidad"
+  },
+  {
+   "id": "PRAC:analizar-datos-con-estadistica",
+   "nombre": "Analizar datos con herramientas estadísticas"
+  },
+  {
+   "id": "PRAC:usar-matematicas-en-ciencias",
+   "nombre": "Usar matemáticas para resolver problemas científicos"
+  },
+  {
+   "id": "PRAC:usar-pensamiento-computacional-y-simulaciones",
+   "nombre": "Usar pensamiento computacional y simulaciones"
+  },
+  {
+   "id": "PRAC:desarrollar-y-usar-modelos",
+   "nombre": "Desarrollar y usar modelos"
+  },
+  {
+   "id": "PRAC:evaluar-modelos-y-limitaciones",
+   "nombre": "Evaluar modelos y sus limitaciones"
+  },
+  {
+   "id": "PRAC:transformar-representaciones",
+   "nombre": "Usar y transformar representaciones"
+  },
+  {
+   "id": "PRAC:construir-explicaciones-con-evidencia",
+   "nombre": "Construir explicaciones basadas en evidencia"
+  },
+  {
+   "id": "PRAC:argumentar-con-evidencia",
+   "nombre": "Argumentar con evidencia y razonamiento"
+  },
+  {
+   "id": "PRAC:evaluar-afirmaciones-y-argumentos",
+   "nombre": "Evaluar afirmaciones y argumentos"
+  },
+  {
+   "id": "PRAC:evaluar-fuentes-de-informacion",
+   "nombre": "Buscar y evaluar fuentes de información"
+  },
+  {
+   "id": "PRAC:comunicar-resultados",
+   "nombre": "Comunicar resultados científicos"
+  },
+  {
+   "id": "PRAC:distinguir-observacion-e-inferencia",
+   "nombre": "Distinguir observación de inferencia"
+  },
+  {
+   "id": "PRAC:naturaleza-provisional-del-conocimiento",
+   "nombre": "Reconocer el carácter provisional del conocimiento"
+  },
+  {
+   "id": "PRAC:ciencia-como-empresa-colectiva",
+   "nombre": "Valorar la ciencia como empresa colectiva"
+  },
+  {
+   "id": "PRAC:limites-de-la-ciencia",
+   "nombre": "Reconocer el alcance y límites de la ciencia"
+  },
+  {
+   "id": "PRAC:evaluar-implicaciones-y-decidir",
+   "nombre": "Evaluar implicaciones y tomar decisiones informadas"
+  },
+  {
+   "id": "PRAC:definir-problemas-de-diseno",
+   "nombre": "Definir problemas de diseño"
+  },
+  {
+   "id": "PRAC:disenar-y-evaluar-soluciones",
+   "nombre": "Diseñar y evaluar soluciones"
+  }
+ ],
+ "items": [
+  {
+   "id": "G11-FIS-U1-1.1",
+   "unidad": "1. Movimiento armónico simple",
+   "contenido": "El oscilador masa-resorte",
+   "procedimental": "1.1. Determinación experimental de la constante elástica de un resorte a partir de la gráfica fuerza-elongación.",
+   "indicador": "1.1. Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones."
+  },
+  {
+   "id": "G11-FIS-U1-1.2",
+   "unidad": "1. Movimiento armónico simple",
+   "contenido": "El oscilador masa-resorte",
+   "procedimental": "1.2. Representación del movimiento armónico simple como la proyección de un movimiento circular uniforme sobre un eje.",
+   "indicador": "1.2. Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia."
+  },
+  {
+   "id": "G11-FIS-U1-1.3",
+   "unidad": "1. Movimiento armónico simple",
+   "contenido": "Energía en las oscilaciones",
+   "procedimental": "1.3. Cálculo de las energías potencial elástica, cinética y mecánica de un oscilador armónico en distintas posiciones.",
+   "indicador": "1.3. Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva."
+  },
+  {
+   "id": "G11-FIS-U1-1.4",
+   "unidad": "1. Movimiento armónico simple",
+   "contenido": "El péndulo simple",
+   "procedimental": "1.4. Determinación del valor local de la aceleración de la gravedad mediante el período de un péndulo simple.",
+   "indicador": "1.4. Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos pequeños."
+  },
+  {
+   "id": "G11-FIS-U1-1.5",
+   "unidad": "1. Movimiento armónico simple",
+   "contenido": "Oscilaciones reales",
+   "procedimental": "1.5. Análisis gráfico del decaimiento de la amplitud en un oscilador amortiguado.",
+   "indicador": "1.5. Compara el movimiento armónico simple con el amortiguado a partir de gráficas de amplitud en función del tiempo y estima la constante de amortiguamiento."
+  },
+  {
+   "id": "G11-FIS-U1-1.6",
+   "unidad": "1. Movimiento armónico simple",
+   "contenido": "Oscilaciones reales",
+   "procedimental": "1.6. Explicación de la resonancia en sistemas forzados y de sus efectos en estructuras y fenómenos naturales.",
+   "indicador": "1.6. Explica la resonancia como la transferencia máxima de energía cuando la frecuencia de la fuerza impulsora coincide con la frecuencia natural del sistema."
+  },
+  {
+   "id": "G11-FIS-U10-10.1",
+   "unidad": "10. Fuerzas magnéticas",
+   "contenido": "Fuerza magnética sobre cargas",
+   "procedimental": "10.1. Cálculo de la magnitud y la dirección de la fuerza magnética sobre una carga en movimiento mediante el producto vectorial.",
+   "indicador": "10.1. Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales."
+  },
+  {
+   "id": "G11-FIS-U10-10.2",
+   "unidad": "10. Fuerzas magnéticas",
+   "contenido": "Fuerza magnética sobre cargas",
+   "procedimental": "10.2. Análisis del movimiento circular uniforme de una partícula cargada en un campo magnético uniforme.",
+   "indicador": "10.2. Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico."
+  },
+  {
+   "id": "G11-FIS-U10-10.3",
+   "unidad": "10. Fuerzas magnéticas",
+   "contenido": "Fuerza magnética sobre cargas",
+   "procedimental": "10.3. Interpretación del funcionamiento del espectrómetro de masas y de sus aplicaciones en el análisis químico y ambiental.",
+   "indicador": "10.3. Calcula la relación masa-carga de un ion a partir del radio de su trayectoria en un espectrómetro de masas y explica sus aplicaciones científicas."
+  },
+  {
+   "id": "G11-FIS-U10-10.4",
+   "unidad": "10. Fuerzas magnéticas",
+   "contenido": "Fuerza magnética sobre corrientes",
+   "procedimental": "10.4. Medición de la fuerza magnética sobre un conductor con corriente suministrada por pilas en el campo de un imán.",
+   "indicador": "10.4. Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz."
+  },
+  {
+   "id": "G11-FIS-U10-10.5",
+   "unidad": "10. Fuerzas magnéticas",
+   "contenido": "Fuerza magnética sobre corrientes",
+   "procedimental": "10.5. Cálculo del par de torsión sobre una bobina con corriente y análisis del funcionamiento de un motor de corriente continua.",
+   "indicador": "10.5. Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor."
+  },
+  {
+   "id": "G11-FIS-U11-11.1",
+   "unidad": "11. Campos magnéticos",
+   "contenido": "Campo magnético",
+   "procedimental": "11.1. Representación de las líneas de campo magnético de imanes y del campo terrestre a partir de observaciones con brújulas y limaduras.",
+   "indicador": "11.1. Representa las líneas de campo magnético de imanes y de la Tierra, e interpreta la declinación magnética en su localidad."
+  },
+  {
+   "id": "G11-FIS-U11-11.2",
+   "unidad": "11. Campos magnéticos",
+   "contenido": "Campo magnético",
+   "procedimental": "11.2. Medición del campo magnético de un conductor rectilíneo y de una bobina con corriente de pilas usando el magnetómetro del teléfono.",
+   "indicador": "11.2. Calcula el campo magnético de un conductor rectilíneo largo y verifica experimentalmente su dependencia inversa con la distancia."
+  },
+  {
+   "id": "G11-FIS-U11-11.3",
+   "unidad": "11. Campos magnéticos",
+   "contenido": "Ley de Ampère",
+   "procedimental": "11.3. Aplicación de la ley de Ampère para determinar el campo magnético de un conductor rectilíneo y de un solenoide.",
+   "indicador": "11.3. Aplica la ley de Ampère para deducir el campo magnético en el interior de un solenoide y lo compara con el medido en un electroimán de pilas."
+  },
+  {
+   "id": "G11-FIS-U11-11.4",
+   "unidad": "11. Campos magnéticos",
+   "contenido": "Materiales magnéticos",
+   "procedimental": "11.4. Clasificación de materiales según su respuesta magnética y análisis de sus aplicaciones tecnológicas.",
+   "indicador": "11.4. Clasifica materiales en ferromagnéticos, paramagnéticos y diamagnéticos según su permeabilidad y explica aplicaciones como el disco duro y la detección de huellas dactilares."
+  },
+  {
+   "id": "G11-FIS-U12-12.1",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Introducción a las ecuaciones de Maxwell",
+   "procedimental": "12.1. Demostración práctica del voltaje inducido.",
+   "indicador": "12.1. Explica el fenómeno de la inducción de voltaje."
+  },
+  {
+   "id": "G11-FIS-U12-12.2",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Introducción a las ecuaciones de Maxwell",
+   "procedimental": "12.2. Comprobación experimental de las ecuaciones de Maxwell.",
+   "indicador": "12.2. Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell."
+  },
+  {
+   "id": "G11-FIS-U12-12.3",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Introducción a las ecuaciones de Maxwell",
+   "procedimental": "12.3. Cálculo de magnitudes físicas en dispositivos electromagnéticos.",
+   "indicador": "12.3. Calcula magnitudes físicas en dispositivos electromagnéticos."
+  },
+  {
+   "id": "G11-FIS-U12-12.4",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Ondas electromagnéticas",
+   "procedimental": "12.4. Indagación de los tipos de ondas que se encuentran en el espectro electromagnético.",
+   "indicador": "12.4. Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético."
+  },
+  {
+   "id": "G11-FIS-U12-12.5",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Ondas electromagnéticas",
+   "procedimental": "12.5. Experimentación con ondas electromagnéticas para identificar sus propiedades.",
+   "indicador": "12.5. Describe las propiedades de las ondas electromagnéticas a partir de un experimento."
+  },
+  {
+   "id": "G11-FIS-U12-12.6",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Ondas electromagnéticas",
+   "procedimental": "12.6. Resolución de problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética.",
+   "indicador": "12.6. Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética."
+  },
+  {
+   "id": "G11-FIS-U12-12.7",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Telecomunicaciones",
+   "procedimental": "12.7. Indagación del funcionamiento de diferentes tecnologías de comunicación inalámbrica.",
+   "indicador": "12.7. Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica."
+  },
+  {
+   "id": "G11-FIS-U12-12.8",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Telecomunicaciones",
+   "procedimental": "12.8. Construcción de un sistema de radiocomunicación funcional que incluya componentes electrónicos.",
+   "indicador": "12.8. Construye un sistema de radiotelecomunicación funcional."
+  },
+  {
+   "id": "G11-FIS-U12-12.9",
+   "unidad": "12. Electromagnetismo",
+   "contenido": "Telecomunicaciones",
+   "procedimental": "12.9. Investigación del desarrollo tecnológico de los sistemas de radiocomunicación.",
+   "indicador": "12.9. Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación."
+  },
+  {
+   "id": "G11-FIS-U13-13.1",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Corriente alterna",
+   "procedimental": "13.1. Análisis de la corriente alterna sinusoidal y cálculo de sus valores máximos y eficaces.",
+   "indicador": "13.1. Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz."
+  },
+  {
+   "id": "G11-FIS-U13-13.2",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Corriente alterna",
+   "procedimental": "13.2. Análisis del funcionamiento del transformador y de su papel en el transporte de energía eléctrica en la red salvadoreña.",
+   "indicador": "13.2. Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas."
+  },
+  {
+   "id": "G11-FIS-U13-13.3",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Elementos reactivos",
+   "procedimental": "13.3. Cálculo de la reactancia capacitiva y análisis de su dependencia con la frecuencia.",
+   "indicador": "13.3. Calcula la reactancia capacitiva de un condensador a distintas frecuencias e interpreta el adelanto de la corriente respecto del voltaje."
+  },
+  {
+   "id": "G11-FIS-U13-13.4",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Elementos reactivos",
+   "procedimental": "13.4. Medición de la reactancia inductiva de una bobina con un generador de señales de bajo voltaje a diferentes frecuencias.",
+   "indicador": "13.4. Determina la reactancia inductiva de una bobina a partir de mediciones de voltaje y corriente y la relaciona con la ley de Faraday."
+  },
+  {
+   "id": "G11-FIS-U13-13.5",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Circuitos RLC",
+   "procedimental": "13.5. Resolución de circuitos RLC en serie mediante el cálculo de impedancia, corriente y ángulo de fase.",
+   "indicador": "13.5. Calcula la impedancia, la corriente eficaz y el ángulo de fase de un circuito RLC en serie a partir de sus componentes y de la frecuencia."
+  },
+  {
+   "id": "G11-FIS-U13-13.6",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Circuitos RLC",
+   "procedimental": "13.6. Determinación de la frecuencia de resonancia de un circuito RLC y análisis del efecto de la resistencia en la curva de resonancia.",
+   "indicador": "13.6. Calcula la frecuencia de resonancia de un circuito RLC y explica cómo la resistencia modifica la agudeza de la curva de resonancia."
+  },
+  {
+   "id": "G11-FIS-U13-13.7",
+   "unidad": "13. Circuitos de corriente alterna",
+   "contenido": "Dispositivos semiconductores",
+   "procedimental": "13.7. Análisis de la conducción en semiconductores dopados y de la curva característica de un diodo alimentado con pilas.",
+   "indicador": "13.7. Explica la conducción en semiconductores tipo n y tipo p y la usa para interpretar la curva característica de un diodo y su función rectificadora."
+  },
+  {
+   "id": "G11-FIS-U14-14.1",
+   "unidad": "14. Ondas electromagnéticas",
+   "contenido": "Efecto Doppler electromagnético",
+   "procedimental": "14.1. Cálculo del cambio de frecuencia de ondas electromagnéticas emitidas por fuentes que se acercan o se alejan del observador.",
+   "indicador": "14.1. Calcula la rapidez de acercamiento o alejamiento de una fuente a partir del corrimiento Doppler de su radiación electromagnética."
+  },
+  {
+   "id": "G11-FIS-U14-14.2",
+   "unidad": "14. Ondas electromagnéticas",
+   "contenido": "Polarización",
+   "procedimental": "14.2. Medición de la intensidad de luz transmitida por un par de polarizadores en función del ángulo entre sus ejes.",
+   "indicador": "14.2. Aplica la ley de Malus para predecir la intensidad transmitida por un sistema de dos o tres polarizadores."
+  },
+  {
+   "id": "G11-FIS-U14-14.3",
+   "unidad": "14. Ondas electromagnéticas",
+   "contenido": "Radiación no ionizante en la vida diaria",
+   "procedimental": "14.3. Evaluación crítica de afirmaciones sobre los efectos en la salud de la radiación no ionizante emitida por antenas, redes wifi y hornos de microondas.",
+   "indicador": "14.3. Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud."
+  },
+  {
+   "id": "G11-FIS-U15-15.1",
+   "unidad": "15. La luz",
+   "contenido": "Rapidez de la luz",
+   "procedimental": "15.1. Análisis de los experimentos históricos de Rømer y Fizeau para determinar la rapidez de la luz.",
+   "indicador": "15.1. Calcula la rapidez de la luz a partir de los datos de los experimentos de Rømer y Fizeau y compara el resultado con el valor definido de c."
+  },
+  {
+   "id": "G11-FIS-U15-15.2",
+   "unidad": "15. La luz",
+   "contenido": "Naturaleza de la luz",
+   "procedimental": "15.2. Reconstrucción histórica del debate entre los modelos corpuscular y ondulatorio de la luz hasta la dualidad onda-partícula.",
+   "indicador": "15.2. Explica qué fenómenos de la luz favorecen el modelo ondulatorio y cuáles el corpuscular, y por qué ambos son necesarios."
+  },
+  {
+   "id": "G11-FIS-U15-15.3",
+   "unidad": "15. La luz",
+   "contenido": "Cuantización de la energía",
+   "procedimental": "15.3. Interpretación de las curvas de emisión del cuerpo negro y de la hipótesis de Planck sobre la cuantización de la energía.",
+   "indicador": "15.3. Aplica la ley de Wien y la relación E = hf para estimar la temperatura de un emisor y la energía de sus cuantos de radiación."
+  },
+  {
+   "id": "G11-FIS-U15-15.4",
+   "unidad": "15. La luz",
+   "contenido": "Cuantización de la energía",
+   "procedimental": "15.4. Análisis del efecto fotoeléctrico mediante la ecuación de Einstein y la relación entre frecuencia de la luz y energía cinética de los electrones.",
+   "indicador": "15.4. Calcula la energía cinética máxima de los fotoelectrones y la frecuencia umbral de un metal con la ecuación Kmáx = hf − W₀."
+  },
+  {
+   "id": "G11-FIS-U15-15.5",
+   "unidad": "15. La luz",
+   "contenido": "Momento del fotón",
+   "procedimental": "15.5. Cálculo del momento de un fotón y del cambio de longitud de onda en la dispersión Compton.",
+   "indicador": "15.5. Calcula el corrimiento Compton de rayos X dispersados en distintos ángulos y lo explica como una colisión entre fotón y electrón."
+  },
+  {
+   "id": "G11-FIS-U15-15.6",
+   "unidad": "15. La luz",
+   "contenido": "Naturaleza ondulatoria de la materia",
+   "procedimental": "15.6. Cálculo de la longitud de onda de De Broglie de partículas y objetos macroscópicos.",
+   "indicador": "15.6. Calcula la longitud de onda de De Broglie de electrones y objetos cotidianos y explica por qué solo en las partículas se observan efectos ondulatorios."
+  },
+  {
+   "id": "G11-FIS-U15-15.7",
+   "unidad": "15. La luz",
+   "contenido": "Naturaleza ondulatoria de la materia",
+   "procedimental": "15.7. Aplicación del principio de incertidumbre de Heisenberg a partículas confinadas y a objetos macroscópicos.",
+   "indicador": "15.7. Estima la incertidumbre mínima en el momento de una partícula confinada y argumenta los límites que impone a su descripción."
+  },
+  {
+   "id": "G11-FIS-U16-16.1",
+   "unidad": "16. Reflexión de la luz",
+   "contenido": "Modelo de rayos",
+   "procedimental": "16.1. Representación de la luz mediante frentes de onda y rayos perpendiculares a ellos para fuentes puntuales y lejanas.",
+   "indicador": "16.1. Relaciona los frentes de onda esféricos y planos con los rayos divergentes y paralelos que los representan."
+  },
+  {
+   "id": "G11-FIS-U16-16.2",
+   "unidad": "16. Reflexión de la luz",
+   "contenido": "Espejos planos",
+   "procedimental": "16.2. Determinación geométrica de la posición de imágenes en espejos planos y en sistemas de dos espejos en ángulo.",
+   "indicador": "16.2. Calcula el número de imágenes formadas por dos espejos planos en ángulo y la altura mínima de un espejo para ver el cuerpo completo."
+  },
+  {
+   "id": "G11-FIS-U16-16.3",
+   "unidad": "16. Reflexión de la luz",
+   "contenido": "Espejos esféricos",
+   "procedimental": "16.3. Determinación experimental de la distancia focal de un espejo cóncavo y de su relación con el radio de curvatura.",
+   "indicador": "16.3. Determina la distancia focal de un espejo cóncavo con una fuente lejana y verifica la relación f = R/2."
+  },
+  {
+   "id": "G11-FIS-U16-16.4",
+   "unidad": "16. Reflexión de la luz",
+   "contenido": "Espejos esféricos",
+   "procedimental": "16.4. Construcción de diagramas de rayos principales para localizar imágenes en espejos cóncavos y convexos.",
+   "indicador": "16.4. Localiza mediante trazado de rayos principales la imagen de un objeto en espejos cóncavos y convexos y describe su naturaleza."
+  },
+  {
+   "id": "G11-FIS-U16-16.5",
+   "unidad": "16. Reflexión de la luz",
+   "contenido": "Ecuación del espejo",
+   "procedimental": "16.5. Resolución de problemas con la ecuación del espejo y la ecuación del aumento aplicando la convención de signos.",
+   "indicador": "16.5. Calcula la posición, el aumento y la naturaleza de la imagen en espejos esféricos con la ecuación 1/dₒ + 1/dᵢ = 1/f y m = −dᵢ/dₒ."
+  },
+  {
+   "id": "G11-FIS-U17-17.1",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Polarización por reflexión",
+   "procedimental": "17.1. Determinación del ángulo de Brewster para superficies de agua y vidrio y comprobación de la polarización de la luz reflejada.",
+   "indicador": "17.1. Calcula el ángulo de Brewster con tan θ_B = n₂/n₁ y explica por qué la luz reflejada a ese ángulo está totalmente polarizada."
+  },
+  {
+   "id": "G11-FIS-U17-17.10",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Instrumentos ópticos",
+   "procedimental": "17.10. Análisis de las aberraciones esférica y cromática de las lentes y de las estrategias para corregirlas.",
+   "indicador": "17.10. Explica el origen de las aberraciones esférica y cromática y describe cómo se corrigen con diafragmas y lentes acromáticas."
+  },
+  {
+   "id": "G11-FIS-U17-17.2",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Lentes delgadas",
+   "procedimental": "17.2. Clasificación de lentes según su forma y determinación de su distancia focal y potencia en dioptrías.",
+   "indicador": "17.2. Determina experimentalmente la distancia focal de una lente convergente y expresa su potencia en dioptrías."
+  },
+  {
+   "id": "G11-FIS-U17-17.3",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Lentes delgadas",
+   "procedimental": "17.3. Construcción de diagramas de rayos para localizar imágenes formadas por lentes convergentes y divergentes.",
+   "indicador": "17.3. Localiza con diagramas de rayos la imagen de lentes convergentes y divergentes y describe su naturaleza, orientación y tamaño."
+  },
+  {
+   "id": "G11-FIS-U17-17.4",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Ecuación de las lentes",
+   "procedimental": "17.4. Verificación experimental de la ecuación de las lentes delgadas mediante la medición de distancias de objeto e imagen.",
+   "indicador": "17.4. Calcula la posición y el aumento de la imagen formada por una lente delgada con 1/dₒ + 1/dᵢ = 1/f y m = −dᵢ/dₒ."
+  },
+  {
+   "id": "G11-FIS-U17-17.5",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Sistemas de lentes",
+   "procedimental": "17.5. Resolución de problemas de sistemas de dos lentes en los que la imagen de la primera actúa como objeto de la segunda.",
+   "indicador": "17.5. Calcula la posición final y el aumento total de la imagen formada por un sistema de dos lentes delgadas."
+  },
+  {
+   "id": "G11-FIS-U17-17.6",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "El ojo humano",
+   "procedimental": "17.6. Análisis del ojo como sistema óptico y cálculo de la potencia de lentes correctoras para miopía e hipermetropía.",
+   "indicador": "17.6. Calcula la potencia de la lente correctora para una persona con miopía o hipermetropía a partir de su punto lejano o cercano."
+  },
+  {
+   "id": "G11-FIS-U17-17.7",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Instrumentos ópticos",
+   "procedimental": "17.7. Cálculo del aumento angular de una lupa con la imagen en el punto cercano y en el infinito.",
+   "indicador": "17.7. Calcula el aumento angular de una lupa y explica por qué aumenta el tamaño angular percibido por el ojo."
+  },
+  {
+   "id": "G11-FIS-U17-17.8",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Instrumentos ópticos",
+   "procedimental": "17.8. Cálculo del aumento total de un microscopio compuesto a partir de las distancias focales del objetivo y del ocular.",
+   "indicador": "17.8. Calcula el aumento total de un microscopio compuesto y explica la función del objetivo y del ocular."
+  },
+  {
+   "id": "G11-FIS-U17-17.9",
+   "unidad": "17. Refracción de la luz",
+   "contenido": "Instrumentos ópticos",
+   "procedimental": "17.9. Cálculo del aumento angular de un telescopio astronómico a partir de las distancias focales del objetivo y del ocular.",
+   "indicador": "17.9. Calcula el aumento angular de un telescopio con M = −fₒ/fₑ y explica por qué el objetivo debe tener gran distancia focal."
+  },
+  {
+   "id": "G11-FIS-U18-18.1",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Interferencia",
+   "procedimental": "18.1. Medición de la longitud de onda de un láser a partir del patrón de interferencia de doble rendija.",
+   "indicador": "18.1. Calcula la longitud de onda de la luz a partir de la separación entre franjas de un patrón de doble rendija con d·sen θ = mλ."
+  },
+  {
+   "id": "G11-FIS-U18-18.2",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Interferencia",
+   "procedimental": "18.2. Análisis de la interferencia en películas delgadas considerando el cambio de fase por reflexión y el espesor de la película.",
+   "indicador": "18.2. Calcula el espesor mínimo de una película delgada que produce interferencia constructiva o destructiva para una longitud de onda dada."
+  },
+  {
+   "id": "G11-FIS-U18-18.3",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Interferencia",
+   "procedimental": "18.3. Cálculo de desplazamientos microscópicos a partir del número de franjas que cambian en un interferómetro de Michelson.",
+   "indicador": "18.3. Calcula el desplazamiento de un espejo del interferómetro de Michelson a partir del número de franjas contadas con Δd = Nλ/2."
+  },
+  {
+   "id": "G11-FIS-U18-18.4",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Difracción",
+   "procedimental": "18.4. Medición del ancho de una rendija o de un cabello a partir del patrón de difracción de un láser.",
+   "indicador": "18.4. Calcula el ancho de una rendija o el grosor de un cabello a partir de la posición de los mínimos con a·sen θ = mλ."
+  },
+  {
+   "id": "G11-FIS-U18-18.5",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Difracción",
+   "procedimental": "18.5. Aplicación del criterio de Rayleigh para determinar la separación angular mínima que distingue un instrumento óptico.",
+   "indicador": "18.5. Calcula con θ_mín = 1.22λ/D la separación angular mínima que resuelven el ojo, una cámara y un telescopio."
+  },
+  {
+   "id": "G11-FIS-U18-18.6",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Difracción",
+   "procedimental": "18.6. Determinación de la separación entre pistas de discos CD y DVD usándolos como redes de difracción por reflexión.",
+   "indicador": "18.6. Calcula la separación entre líneas de una red o entre pistas de un disco óptico a partir de los ángulos de los máximos con d·sen θ = mλ."
+  },
+  {
+   "id": "G11-FIS-U18-18.7",
+   "unidad": "18. Naturaleza ondulatoria de la luz",
+   "contenido": "Difracción de rayos X",
+   "procedimental": "18.7. Aplicación de la ley de Bragg para calcular la separación entre planos cristalinos a partir de datos de difracción de rayos X.",
+   "indicador": "18.7. Calcula la separación entre planos de un cristal con la ley de Bragg 2d·sen θ = mλ a partir de datos de difracción."
+  },
+  {
+   "id": "G11-FIS-U19-19.1",
+   "unidad": "19. Relatividad",
+   "contenido": "Postulados de la relatividad especial",
+   "procedimental": "19.1. Análisis de los dos postulados de Einstein y de su contradicción con la suma galileana de velocidades aplicada a la luz.",
+   "indicador": "19.1. Explica por qué la invariancia de la rapidez de la luz obliga a abandonar el tiempo absoluto de la mecánica clásica."
+  },
+  {
+   "id": "G11-FIS-U19-19.2",
+   "unidad": "19. Relatividad",
+   "contenido": "Consecuencias en el tiempo",
+   "procedimental": "19.2. Cálculo del intervalo de tiempo dilatado mediante el factor de Lorentz en relojes que se mueven a gran rapidez.",
+   "indicador": "19.2. Calcula el intervalo de tiempo dilatado a partir del tiempo propio y la rapidez relativa, y lo aplica a muones atmosféricos y viajes espaciales."
+  },
+  {
+   "id": "G11-FIS-U19-19.3",
+   "unidad": "19. Relatividad",
+   "contenido": "Dinámica relativista",
+   "procedimental": "19.3. Comparación del momento clásico y el momento relativista de partículas aceleradas a rapideces próximas a la de la luz.",
+   "indicador": "19.3. Calcula el momento relativista de una partícula y explica por qué ningún objeto con masa puede alcanzar la rapidez de la luz."
+  },
+  {
+   "id": "G11-FIS-U19-19.4",
+   "unidad": "19. Relatividad",
+   "contenido": "Dinámica relativista",
+   "procedimental": "19.4. Aplicación de la equivalencia masa-energía y de la relación E² = (pc)² + (mc²)² en partículas y procesos nucleares.",
+   "indicador": "19.4. Calcula la energía en reposo, la energía cinética relativista y el momento de una partícula a partir de su masa y su rapidez."
+  },
+  {
+   "id": "G11-FIS-U19-19.5",
+   "unidad": "19. Relatividad",
+   "contenido": "Cinemática relativista",
+   "procedimental": "19.5. Cálculo de velocidades relativas mediante la fórmula relativista de adición y comparación con la suma galileana.",
+   "indicador": "19.5. Determina la velocidad de un objeto respecto de otro observador con la fórmula relativista y verifica que el resultado nunca supera c."
+  },
+  {
+   "id": "G11-FIS-U2-2.1",
+   "unidad": "2. Elasticidad",
+   "contenido": "Deformación de sólidos",
+   "procedimental": "2.1. Cálculo del esfuerzo, la deformación unitaria y el módulo de Young en elementos sometidos a tensión y compresión.",
+   "indicador": "2.1. Calcula el esfuerzo y la deformación unitaria de barras y cables sometidos a tensión o compresión y determina el cambio de longitud con el módulo de Young."
+  },
+  {
+   "id": "G11-FIS-U2-2.2",
+   "unidad": "2. Elasticidad",
+   "contenido": "Deformación de sólidos",
+   "procedimental": "2.2. Interpretación de gráficas esfuerzo-deformación de materiales que cumplen y que no cumplen la ley de Hooke.",
+   "indicador": "2.2. Interpreta gráficas de esfuerzo contra deformación para identificar la zona elástica, el límite elástico y la deformación plástica de un material."
+  },
+  {
+   "id": "G11-FIS-U2-2.3",
+   "unidad": "2. Elasticidad",
+   "contenido": "Materiales y riesgo sísmico",
+   "procedimental": "2.3. Comparación de las propiedades elásticas de materiales de construcción y de su papel en el diseño sismorresistente.",
+   "indicador": "2.3. Argumenta, con valores de módulo de Young y esfuerzo de ruptura, por qué el concreto reforzado con acero es adecuado para construcciones sismorresistentes en El Salvador."
+  },
+  {
+   "id": "G11-FIS-U20-20.1",
+   "unidad": "20. Física nuclear",
+   "contenido": "El núcleo atómico",
+   "procedimental": "20.1. Cálculo del radio y la densidad nuclear mediante R = R₀A^(1/3) y comparación con la densidad de la materia ordinaria.",
+   "indicador": "20.1. Calcula el radio y la densidad de distintos núcleos y explica por qué la densidad nuclear es prácticamente constante."
+  },
+  {
+   "id": "G11-FIS-U20-20.2",
+   "unidad": "20. Física nuclear",
+   "contenido": "El núcleo atómico",
+   "procedimental": "20.2. Análisis de la competencia entre la fuerza nuclear fuerte y la repulsión eléctrica en la banda de estabilidad N frente a Z.",
+   "indicador": "20.2. Explica la estabilidad de un núcleo a partir del balance entre la fuerza nuclear fuerte de corto alcance y la repulsión electrostática entre protones."
+  },
+  {
+   "id": "G11-FIS-U20-20.3",
+   "unidad": "20. Física nuclear",
+   "contenido": "Energía nuclear",
+   "procedimental": "20.3. Cálculo del defecto de masa y la energía de enlace por nucleón, y construcción de la curva de energía de enlace.",
+   "indicador": "20.3. Calcula la energía de enlace por nucleón a partir del defecto de masa e interpreta la curva para identificar los núcleos más estables."
+  },
+  {
+   "id": "G11-FIS-U20-20.4",
+   "unidad": "20. Física nuclear",
+   "contenido": "Partículas subatómicas",
+   "procedimental": "20.4. Análisis del espectro continuo de energía de la desintegración beta como evidencia de la existencia del neutrino.",
+   "indicador": "20.4. Explica cómo el espectro continuo de la desintegración beta llevó a postular el neutrino y describe cómo se detecta."
+  },
+  {
+   "id": "G11-FIS-U20-20.5",
+   "unidad": "20. Física nuclear",
+   "contenido": "Partículas elementales",
+   "procedimental": "20.5. Clasificación de las partículas elementales según el modelo estándar y descripción de las interacciones fundamentales.",
+   "indicador": "20.5. Clasifica partículas en quarks, leptones y bosones, y describe la composición en quarks de protones y neutrones."
+  },
+  {
+   "id": "G11-FIS-U20-20.6",
+   "unidad": "20. Física nuclear",
+   "contenido": "Cosmología",
+   "procedimental": "20.6. Interpretación de las evidencias de la teoría del Big Bang: ley de Hubble, radiación cósmica de fondo y abundancia de elementos ligeros.",
+   "indicador": "20.6. Explica las evidencias de la teoría del Big Bang y relaciona la nucleosíntesis primordial con la abundancia de hidrógeno y helio del universo."
+  },
+  {
+   "id": "G11-FIS-U21-21.1",
+   "unidad": "21. Física radiactiva",
+   "contenido": "Desintegración radiactiva",
+   "procedimental": "21.1. Escritura y balance de ecuaciones de desintegración alfa, beta y gamma aplicando la conservación del número másico y de la carga.",
+   "indicador": "21.1. Escribe ecuaciones balanceadas de desintegración alfa, beta y gamma, e identifica el núcleo hijo a partir de la conservación de A y Z."
+  },
+  {
+   "id": "G11-FIS-U21-21.2",
+   "unidad": "21. Física radiactiva",
+   "contenido": "Ley de desintegración",
+   "procedimental": "21.2. Modelación de la desintegración radiactiva con dados y simulaciones, y cálculo de la actividad y la vida media con la ley exponencial.",
+   "indicador": "21.2. Aplica N = N₀e^(−λt) y A = λN para calcular el número de núcleos, la actividad y la vida media de una muestra."
+  },
+  {
+   "id": "G11-FIS-U21-21.3",
+   "unidad": "21. Física radiactiva",
+   "contenido": "Aplicaciones de la ley de desintegración",
+   "procedimental": "21.3. Cálculo de la edad de muestras arqueológicas y geológicas con la ley de desintegración a partir de datos publicados.",
+   "indicador": "21.3. Calcula la edad de una muestra por radiocarbono a partir de la fracción de carbono-14 remanente y valora la incertidumbre del resultado."
+  },
+  {
+   "id": "G11-FIS-U21-21.4",
+   "unidad": "21. Física radiactiva",
+   "contenido": "Medición de la radiación",
+   "procedimental": "21.4. Análisis del principio de funcionamiento de los detectores de radiación a partir de la ionización y la excitación que produce la radiación.",
+   "indicador": "21.4. Explica cómo el contador Geiger-Müller, el detector de centelleo y la cámara de niebla registran partículas y fotones."
+  },
+  {
+   "id": "G11-FIS-U22-22.1",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Sistema solar",
+   "procedimental": "22.1. Exploración del razonamiento que originó los sistemas geocéntrico y heliocéntrico.",
+   "indicador": "22.1. Explica el razonamiento que llevó al planteamiento de los sistemas geocéntrico y heliocéntrico."
+  },
+  {
+   "id": "G11-FIS-U22-22.2",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Sistema solar",
+   "procedimental": "22.2. Simulación de los parámetros orbitales de sistemas planetarios descritos por las leyes de Kepler.",
+   "indicador": "22.2. Identifica los parámetros orbitales de los sistemas planetarios descritos por las leyes de Kepler."
+  },
+  {
+   "id": "G11-FIS-U22-22.3",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Sistema solar",
+   "procedimental": "22.3. Cálculo de la masa de la Tierra a partir de la ley de la gravitación universal de Newton.",
+   "indicador": "22.3. Calcula la masa de la Tierra a partir de la ley de la gravitación universal de Newton."
+  },
+  {
+   "id": "G11-FIS-U22-22.4",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Tecnologías para la observación espacial",
+   "procedimental": "22.4. Análisis del espectro de radiación térmica emitido por un cuerpo celeste.",
+   "indicador": "22.4. Relaciona la temperatura de un objeto astronómico con el tipo de radiación que emite."
+  },
+  {
+   "id": "G11-FIS-U22-22.5",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Tecnologías para la observación espacial",
+   "procedimental": "22.5. Reconocimiento de las ventajas y desventajas en el uso de telescopios de refracción y reflexión.",
+   "indicador": "22.5. Reconoce las ventajas y desventajas en el uso de telescopios de refracción y reflexión."
+  },
+  {
+   "id": "G11-FIS-U22-22.6",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Tecnologías para la observación espacial",
+   "procedimental": "22.6. Exploración de los tipos de detectores de imágenes empleados en los observatorios astronómicos terrestres y espaciales.",
+   "indicador": "22.6. Ejemplifica tipos de detectores de imágenes empleados en los observatorios astronómicos terrestres y espaciales."
+  },
+  {
+   "id": "G11-FIS-U22-22.7",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Sistemas planetarios",
+   "procedimental": "22.7. Indagación de los métodos para detectar y caracterizar un exoplaneta.",
+   "indicador": "22.7. Explica un método empleado para detectar o caracterizar un exoplaneta."
+  },
+  {
+   "id": "G11-FIS-U22-22.8",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Sistemas planetarios",
+   "procedimental": "22.8. Exploración de las propiedades deducibles de los exoplanetas.",
+   "indicador": "22.8. Ejemplifica las propiedades deducibles de los exoplanetas."
+  },
+  {
+   "id": "G11-FIS-U22-22.9",
+   "unidad": "22. Ciencias del espacio",
+   "contenido": "Sistemas planetarios",
+   "procedimental": "22.9. Discusión acerca de las condiciones que permiten el desarrollo de vida en un planeta y cómo detectarlas.",
+   "indicador": "22.9. Argumenta cuáles son las condiciones que permiten el desarrollo de la vida en un planeta."
+  },
+  {
+   "id": "G11-FIS-U23-23.1",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Teoría de la relatividad especial",
+   "procedimental": "23.1. Reconocimiento de las métricas del espacio relativista y no relativista, y sus invarianzas.",
+   "indicador": "23.1. Identifica las métricas del espacio relativista y no relativista, y sus invarianzas."
+  },
+  {
+   "id": "G11-FIS-U23-23.2",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Teoría de la relatividad especial",
+   "procedimental": "23.2. Interpretación de los marcos de referencia inerciales para eventos simultáneos.",
+   "indicador": "23.2. Interpreta los marcos de referencia inerciales para eventos simultáneos."
+  },
+  {
+   "id": "G11-FIS-U23-23.3",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Teoría de la relatividad especial",
+   "procedimental": "23.3. Cálculo de la longitud de objetos que se mueven a una rapidez cercana a la de la luz.",
+   "indicador": "23.3. Calcula la longitud de objetos que se mueven a una rapidez cercana a la de la luz."
+  },
+  {
+   "id": "G11-FIS-U23-23.4",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Interacción de la radiación y la materia",
+   "procedimental": "23.4. Exploración de los tipos de radiación ionizante y sus efectos en las células.",
+   "indicador": "23.4. Reconoce los tipos de radiación ionizante y sus principales efectos en las células."
+  },
+  {
+   "id": "G11-FIS-U23-23.5",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Interacción de la radiación y la materia",
+   "procedimental": "23.5. Reconocimiento de la radiación de partículas y la radiación electromagnética a partir de sus interacciones con la materia.",
+   "indicador": "23.5. Diferencia la radiación de partículas de la radiación electromagnética por sus interacciones con la materia."
+  },
+  {
+   "id": "G11-FIS-U23-23.6",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Interacción de la radiación y la materia",
+   "procedimental": "23.6. Identificación de los tipos de radiación ionizante y sus aplicaciones médicas.",
+   "indicador": "23.6. Ejemplifica aplicaciones médicas de la radiación ionizante según su tipo."
+  },
+  {
+   "id": "G11-FIS-U23-23.7",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Física nuclear",
+   "procedimental": "23.7. Indagación del concepto y características fundamentales de las reacciones de fisión y fusión nuclear.",
+   "indicador": "23.7. Reconoce las características fundamentales de las reacciones de fisión y fusión nuclear."
+  },
+  {
+   "id": "G11-FIS-U23-23.8",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Física nuclear",
+   "procedimental": "23.8. Generalización del proceso de transformación del combustible nuclear en energía eléctrica.",
+   "indicador": "23.8. Representa el proceso general de transformación de un combustible nuclear en energía eléctrica."
+  },
+  {
+   "id": "G11-FIS-U23-23.9",
+   "unidad": "23. Introducción a la física moderna",
+   "contenido": "Física nuclear",
+   "procedimental": "23.9. Investigación de las aplicaciones tecnológicas nucleares no eléctricas.",
+   "indicador": "23.9. Ejemplifica aplicaciones tecnológcas nucleares no eléctricas."
+  },
+  {
+   "id": "G11-FIS-U3-3.1",
+   "unidad": "3. Ondas",
+   "contenido": "Características de las ondas",
+   "procedimental": "3.1. Clasificación de ondas mecánicas según la dirección de oscilación del medio y la de propagación.",
+   "indicador": "3.1. Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia."
+  },
+  {
+   "id": "G11-FIS-U3-3.2",
+   "unidad": "3. Ondas",
+   "contenido": "Características de las ondas",
+   "procedimental": "3.2. Relación entre las ondas periódicas y el movimiento armónico simple de cada punto del medio.",
+   "indicador": "3.2. Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación v = λf para calcular magnitudes de la onda."
+  },
+  {
+   "id": "G11-FIS-U3-3.3",
+   "unidad": "3. Ondas",
+   "contenido": "Propagación en cuerdas",
+   "procedimental": "3.3. Medición de la velocidad de propagación de pulsos en cuerdas con diferentes tensiones y densidades lineales.",
+   "indicador": "3.3. Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con v = √(F_T/μ)."
+  },
+  {
+   "id": "G11-FIS-U3-3.4",
+   "unidad": "3. Ondas",
+   "contenido": "Propagación en cuerdas",
+   "procedimental": "3.4. Interpretación de la función de onda armónica y(x,t) = A sen(kx − ωt + φ) en ondas transversales y longitudinales.",
+   "indicador": "3.4. Obtiene la amplitud, la longitud de onda, la frecuencia, la velocidad y el ángulo de fase a partir de la función de una onda armónica."
+  },
+  {
+   "id": "G11-FIS-U4-4.1",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "El sonido como onda",
+   "procedimental": "4.1. Análisis de la formación de ondas sonoras longitudinales como variaciones de presión en el aire.",
+   "indicador": "4.1. Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido."
+  },
+  {
+   "id": "G11-FIS-U4-4.2",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "El sonido como onda",
+   "procedimental": "4.2. Medición de la velocidad del sonido en el aire y comparación con la velocidad en líquidos y sólidos.",
+   "indicador": "4.2. Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio."
+  },
+  {
+   "id": "G11-FIS-U4-4.3",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "Intensidad del sonido",
+   "procedimental": "4.3. Cálculo de la intensidad sonora a diferentes distancias de una fuente puntual.",
+   "indicador": "4.3. Calcula la intensidad sonora a distintas distancias de una fuente con I = P/(4πr²) y la compara con el umbral de audición y el umbral de dolor."
+  },
+  {
+   "id": "G11-FIS-U4-4.4",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "Intensidad del sonido",
+   "procedimental": "4.4. Cálculo e interpretación de niveles de intensidad sonora en decibelios en ambientes cotidianos.",
+   "indicador": "4.4. Calcula niveles de intensidad sonora con β = 10 log(I/I₀) y compara intensidades de fuentes que difieren en un número dado de decibelios."
+  },
+  {
+   "id": "G11-FIS-U4-4.5",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "Sonido en movimiento",
+   "procedimental": "4.5. Análisis del cambio de frecuencia percibida cuando la fuente o el observador se mueven.",
+   "indicador": "4.5. Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda."
+  },
+  {
+   "id": "G11-FIS-U4-4.6",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "Sonido en movimiento",
+   "procedimental": "4.6. Explicación de la física del ultrasonido y de sus aplicaciones diagnósticas y terapéuticas en la medicina.",
+   "indicador": "4.6. Explica cómo la reflexión de ultrasonido y el efecto Doppler permiten obtener imágenes y medir el flujo sanguíneo en el diagnóstico médico."
+  },
+  {
+   "id": "G11-FIS-U4-4.7",
+   "unidad": "4. Ondas de sonido",
+   "contenido": "Audición humana",
+   "procedimental": "4.7. Interpretación de las curvas de igual sonoridad y de los riesgos de la exposición prolongada a niveles altos de sonido.",
+   "indicador": "4.7. Interpreta las curvas de Fletcher-Munson para explicar la diferente sensibilidad del oído según la frecuencia y argumenta medidas de protección auditiva."
+  },
+  {
+   "id": "G11-FIS-U5-5.1",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Principio de superposición",
+   "procedimental": "5.1. Análisis de la superposición de pulsos que viajan en sentidos opuestos en un resorte largo.",
+   "indicador": "5.1. Construye gráficamente la forma resultante de dos pulsos superpuestos en distintos instantes aplicando el principio de superposición lineal."
+  },
+  {
+   "id": "G11-FIS-U5-5.2",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Principio de superposición",
+   "procedimental": "5.2. Análisis de la interferencia constructiva y destructiva de ondas sonoras según la diferencia de camino.",
+   "indicador": "5.2. Determina las condiciones de interferencia constructiva y destructiva de dos fuentes sonoras coherentes a partir de la diferencia de camino y la longitud de onda."
+  },
+  {
+   "id": "G11-FIS-U5-5.3",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Difracción e interferencia",
+   "procedimental": "5.3. Relación entre el ancho de una abertura, la longitud de onda y la amplitud de la difracción de ondas mecánicas.",
+   "indicador": "5.3. Explica cómo la relación entre la longitud de onda y el tamaño de la abertura determina si una onda mecánica se difracta de forma estrecha o ancha."
+  },
+  {
+   "id": "G11-FIS-U5-5.4",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Difracción e interferencia",
+   "procedimental": "5.4. Cálculo de la frecuencia de pulsación entre dos sonidos de frecuencias cercanas y su uso en la afinación.",
+   "indicador": "5.4. Calcula la frecuencia de pulsación entre dos tonos cercanos con f_p = |f₁ − f₂| y explica su uso en la afinación de instrumentos musicales."
+  },
+  {
+   "id": "G11-FIS-U5-5.5",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Ondas estacionarias",
+   "procedimental": "5.5. Cálculo de las frecuencias de los armónicos de una cuerda fija en ambos extremos.",
+   "indicador": "5.5. Calcula las frecuencias de los armónicos de una cuerda tensa fija en sus extremos y localiza sus nodos y antinodos."
+  },
+  {
+   "id": "G11-FIS-U5-5.6",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Ondas estacionarias",
+   "procedimental": "5.6. Determinación de las frecuencias de resonancia en tubos abiertos y cerrados.",
+   "indicador": "5.6. Calcula las frecuencias de resonancia de tubos abiertos y cerrados y explica por qué los tubos cerrados solo producen armónicos impares."
+  },
+  {
+   "id": "G11-FIS-U5-5.7",
+   "unidad": "5. Superposición lineal y fenómenos de interferencia",
+   "contenido": "Sonidos complejos",
+   "procedimental": "5.7. Análisis del espectro de frecuencias de sonidos producidos por diferentes instrumentos musicales.",
+   "indicador": "5.7. Interpreta el espectro de frecuencias de un sonido complejo para explicar el timbre de un instrumento a partir de la amplitud de sus armónicos."
+  },
+  {
+   "id": "G11-FIS-U6-6.1",
+   "unidad": "6. Fuerzas eléctricas",
+   "contenido": "La carga eléctrica",
+   "procedimental": "6.1. Relación entre la estructura atómica de la materia y el origen de la carga eléctrica cuantizada.",
+   "indicador": "6.1. Explica el origen de la carga eléctrica a partir de la estructura atómica y calcula el número de electrones transferidos a partir de una carga dada."
+  },
+  {
+   "id": "G11-FIS-U6-6.2",
+   "unidad": "6. Fuerzas eléctricas",
+   "contenido": "La carga eléctrica",
+   "procedimental": "6.2. Aplicación de la ley de conservación de la carga en procesos de electrización y en aplicaciones cotidianas de la electrostática.",
+   "indicador": "6.2. Aplica la conservación de la carga para determinar la carga final de objetos que interactúan y explica aplicaciones de la fuerza electrostática."
+  },
+  {
+   "id": "G11-FIS-U6-6.3",
+   "unidad": "6. Fuerzas eléctricas",
+   "contenido": "Materiales y electrización",
+   "procedimental": "6.3. Clasificación de materiales como conductores o aislantes según la movilidad de sus cargas.",
+   "indicador": "6.3. Clasifica materiales en conductores y aislantes a partir de un experimento con electroscopio y explica la diferencia con base en la movilidad de los electrones."
+  },
+  {
+   "id": "G11-FIS-U6-6.4",
+   "unidad": "6. Fuerzas eléctricas",
+   "contenido": "Materiales y electrización",
+   "procedimental": "6.4. Comparación de los procesos de carga por contacto y por inducción mediante diagramas de distribución de cargas.",
+   "indicador": "6.4. Explica con diagramas de distribución de cargas la diferencia entre la carga por contacto y la carga por inducción, incluido el signo de la carga resultante."
+  },
+  {
+   "id": "G11-FIS-U6-6.5",
+   "unidad": "6. Fuerzas eléctricas",
+   "contenido": "Ley de Coulomb",
+   "procedimental": "6.5. Cálculo vectorial de la fuerza eléctrica neta sobre una carga debida a varias cargas puntuales en un plano.",
+   "indicador": "6.5. Calcula la magnitud y la dirección de la fuerza eléctrica neta sobre una carga debida a dos o tres cargas puntuales ubicadas en un plano, aplicando la superposición de componentes."
+  },
+  {
+   "id": "G11-FIS-U7-7.1",
+   "unidad": "7. Campos eléctricos",
+   "contenido": "El campo eléctrico",
+   "procedimental": "7.1. Cálculo del campo eléctrico producido por una o varias cargas puntuales en un punto del espacio.",
+   "indicador": "7.1. Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales y lo usa para determinar la fuerza sobre una carga de prueba."
+  },
+  {
+   "id": "G11-FIS-U7-7.2",
+   "unidad": "7. Campos eléctricos",
+   "contenido": "El campo eléctrico",
+   "procedimental": "7.2. Representación de campos eléctricos mediante líneas de campo para distintas configuraciones de carga.",
+   "indicador": "7.2. Dibuja las líneas de campo de un dipolo y de dos cargas positivas aplicando sus propiedades, e infiere la intensidad del campo a partir de su densidad."
+  },
+  {
+   "id": "G11-FIS-U7-7.3",
+   "unidad": "7. Campos eléctricos",
+   "contenido": "Conductores en equilibrio",
+   "procedimental": "7.3. Comprobación experimental del blindaje electrostático en recintos conductores.",
+   "indicador": "7.3. Explica por qué el campo eléctrico es nulo dentro de un conductor en equilibrio y lo relaciona con el blindaje de circuitos y la protección en vehículos."
+  },
+  {
+   "id": "G11-FIS-U7-7.4",
+   "unidad": "7. Campos eléctricos",
+   "contenido": "Conductores en equilibrio",
+   "procedimental": "7.4. Aplicación de la ley de Gauss para calcular el campo eléctrico de distribuciones de carga con simetría esférica y plana.",
+   "indicador": "7.4. Aplica la ley de Gauss para obtener el campo de una carga puntual y de una esfera conductora cargada, y relaciona el flujo con la carga encerrada."
+  },
+  {
+   "id": "G11-FIS-U7-7.5",
+   "unidad": "7. Campos eléctricos",
+   "contenido": "Aplicaciones tecnológicas",
+   "procedimental": "7.5. Explicación de la física de la xerografía en fotocopiadoras e impresoras láser y comparación con las impresoras de inyección de tinta.",
+   "indicador": "7.5. Explica las etapas de la xerografía en términos de carga, fotoconductividad y campo eléctrico, y compara el funcionamiento de impresoras láser y de inyección de tinta."
+  },
+  {
+   "id": "G11-FIS-U8-8.1",
+   "unidad": "8. Energía potencial eléctrica",
+   "contenido": "Energía potencial eléctrica",
+   "procedimental": "8.1. Comparación entre la energía potencial gravitatoria y la energía potencial eléctrica como energías asociadas a fuerzas conservativas.",
+   "indicador": "8.1. Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias."
+  },
+  {
+   "id": "G11-FIS-U8-8.2",
+   "unidad": "8. Energía potencial eléctrica",
+   "contenido": "Energía potencial eléctrica",
+   "procedimental": "8.2. Cálculo de la diferencia de potencial a partir del trabajo realizado por la fuerza eléctrica sobre una carga de prueba.",
+   "indicador": "8.2. Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos."
+  },
+  {
+   "id": "G11-FIS-U8-8.3",
+   "unidad": "8. Energía potencial eléctrica",
+   "contenido": "Potencial de cargas puntuales",
+   "procedimental": "8.3. Cálculo del potencial eléctrico total producido por varias cargas puntuales mediante suma escalar.",
+   "indicador": "8.3. Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición."
+  },
+  {
+   "id": "G11-FIS-U8-8.4",
+   "unidad": "8. Energía potencial eléctrica",
+   "contenido": "Potencial de cargas puntuales",
+   "procedimental": "8.4. Medición de líneas equipotenciales en un medio conductor alimentado con una pila de 9 V.",
+   "indicador": "8.4. Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas."
+  },
+  {
+   "id": "G11-FIS-U8-8.5",
+   "unidad": "8. Energía potencial eléctrica",
+   "contenido": "Condensadores",
+   "procedimental": "8.5. Construcción de un condensador de placas paralelas con papel aluminio y medición de su capacitancia con distintos dieléctricos.",
+   "indicador": "8.5. Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas."
+  },
+  {
+   "id": "G11-FIS-U8-8.6",
+   "unidad": "8. Energía potencial eléctrica",
+   "contenido": "Aplicaciones biomédicas",
+   "procedimental": "8.6. Interpretación de las diferencias de potencial en neuronas y en el corazón como base de las técnicas de diagnóstico médico.",
+   "indicador": "8.6. Explica cómo el electrocardiograma registra diferencias de potencial del corazón e interpreta los valores típicos de un trazo."
+  },
+  {
+   "id": "G11-FIS-U9-9.1",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Corriente y fuerza electromotriz",
+   "procedimental": "9.1. Análisis de la fuerza electromotriz como energía por unidad de carga que suministra una fuente y de la corriente como flujo de carga.",
+   "indicador": "9.1. Calcula la carga que circula y la energía que entrega una fuente a partir de su fuerza electromotriz, la corriente y el tiempo de funcionamiento."
+  },
+  {
+   "id": "G11-FIS-U9-9.10",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Fuentes reales y leyes de Kirchhoff",
+   "procedimental": "9.10. Medición correcta de corriente y voltaje con el multímetro, analizando la conexión en serie o en paralelo del instrumento.",
+   "indicador": "9.10. Conecta correctamente un amperímetro y un voltímetro en un circuito y explica cómo su resistencia interna afecta la medición."
+  },
+  {
+   "id": "G11-FIS-U9-9.11",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Condensadores en circuitos",
+   "procedimental": "9.11. Cálculo de la capacitancia equivalente y de la carga almacenada en combinaciones de condensadores en serie y en paralelo.",
+   "indicador": "9.11. Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo."
+  },
+  {
+   "id": "G11-FIS-U9-9.12",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Condensadores en circuitos",
+   "procedimental": "9.12. Medición de la carga y descarga de un condensador en un circuito RC alimentado con una pila de 9 V.",
+   "indicador": "9.12. Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC."
+  },
+  {
+   "id": "G11-FIS-U9-9.13",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Seguridad eléctrica",
+   "procedimental": "9.13. Análisis de los efectos fisiológicos de la corriente según su intensidad y de las medidas de protección en instalaciones eléctricas.",
+   "indicador": "9.13. Estima con la ley de Ohm la corriente que atravesaría el cuerpo humano en distintas condiciones y justifica las medidas de seguridad eléctrica."
+  },
+  {
+   "id": "G11-FIS-U9-9.2",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Corriente y fuerza electromotriz",
+   "procedimental": "9.2. Construcción de curvas voltaje-corriente para un resistor y un LED alimentados con pilas.",
+   "indicador": "9.2. Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico."
+  },
+  {
+   "id": "G11-FIS-U9-9.3",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Resistencia de los materiales",
+   "procedimental": "9.3. Medición de la resistencia de alambres de distinta longitud y grosor para determinar la resistividad del material.",
+   "indicador": "9.3. Calcula la resistividad de un material a partir de mediciones de resistencia, longitud y área, y la compara con valores de referencia."
+  },
+  {
+   "id": "G11-FIS-U9-9.4",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Resistencia de los materiales",
+   "procedimental": "9.4. Cálculo de la potencia y la energía consumida por aparatos del hogar a partir de sus especificaciones.",
+   "indicador": "9.4. Calcula la potencia disipada en un resistor y el consumo mensual de energía de aparatos domésticos en kilowatt hora."
+  },
+  {
+   "id": "G11-FIS-U9-9.5",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Combinación de resistencias",
+   "procedimental": "9.5. Análisis de la corriente, el voltaje y la potencia en resistencias conectadas en serie.",
+   "indicador": "9.5. Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones."
+  },
+  {
+   "id": "G11-FIS-U9-9.6",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Combinación de resistencias",
+   "procedimental": "9.6. Análisis de la distribución de corriente en resistencias conectadas en paralelo y su aplicación en las instalaciones del hogar.",
+   "indicador": "9.6. Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma."
+  },
+  {
+   "id": "G11-FIS-U9-9.7",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Combinación de resistencias",
+   "procedimental": "9.7. Resolución de circuitos con resistencias parcialmente en serie y parcialmente en paralelo mediante reducción sucesiva.",
+   "indicador": "9.7. Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias."
+  },
+  {
+   "id": "G11-FIS-U9-9.8",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Fuentes reales y leyes de Kirchhoff",
+   "procedimental": "9.8. Determinación experimental de la fuerza electromotriz y la resistencia interna de una pila a partir de la gráfica voltaje en bornes-corriente.",
+   "indicador": "9.8. Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada."
+  },
+  {
+   "id": "G11-FIS-U9-9.9",
+   "unidad": "9. Circuitos eléctricos",
+   "contenido": "Fuentes reales y leyes de Kirchhoff",
+   "procedimental": "9.9. Aplicación de las reglas de Kirchhoff para resolver circuitos de dos mallas con dos fuentes.",
+   "indicador": "9.9. Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones."
+  }
+ ]
+}

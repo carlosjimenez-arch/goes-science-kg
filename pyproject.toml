@@ -22,6 +22,8 @@ dependencies = [
 pdf = ["pdfplumber>=0.11"]
 # Análisis tabular y reportes.
 analisis = ["pandas>=2.0"]
+# GraphRAG: generación de respuestas con Claude (la recuperación no lo necesita).
+rag = ["anthropic>=0.70"]
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]
@@ -40,3 +42,7 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# La plantilla HTML del visor es una cadena larga: el largo de línea no aplica.
+"src/goes_science_kg/visor.py" = ["E501"]

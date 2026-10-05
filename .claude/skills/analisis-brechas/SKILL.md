@@ -5,6 +5,10 @@ description: Genera el análisis de brechas de una asignatura (cobertura, balanc
 
 # Brechas por asignatura
 
+> **Estado (2026-10-05): primera versión hecha** con `gskg brechas` (`src/goes_science_kg/brechas.py`):
+> cobertura por ciclo, oportunidad por concepto y errores de secuencia, en `asignaturas/<x>/brechas/`
+> (md + json + csv). Falta el Excel con fórmulas del paso 3.
+
 Reglas de cálculo: `reportes/cobertura_curricular/CLAUDE.md` («Reglas de negocio»). Siguen vigentes.
 
 1. Implementa `src/goes_science_kg/analisis/` como funciones puras sobre el grafo cargado

@@ -5,6 +5,12 @@ description: Construye la capa de Conceptos y Prácticas del grafo (nodos Concep
 
 # Conceptos y prácticas
 
+> **Estado (2026-10-05): hecho.** 498 conceptos, 30 prácticas, 1.245 temas y 506 objetivos de países etiquetados.
+> Comandos: `gskg conceptos preparar-vocabulario | consolidar | preparar-etiquetado | unir-etiquetado |
+> preparar-paises | unir-paises`. Prompts: `prompts/vocabulario_conceptos.md`, `prompts/etiquetar_conceptos.md`.
+> Para rehacer una asignatura: corrige `data/interim/conceptos/vocabulario_<asig>.json` o las salidas de lote,
+> vuelve a unir, reconstruye el grafo y ejecuta `gskg grados construir`.
+
 Un **concepto** es una idea científica enseñable y evaluable (p. ej. «fotosíntesis», «modelo de
 partículas», «circuito en serie»). No es un tema ni una actividad.
 

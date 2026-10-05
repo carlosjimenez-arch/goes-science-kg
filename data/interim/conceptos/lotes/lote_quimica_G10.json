@@ -1,0 +1,1610 @@
+{
+ "lote": "quimica_G10",
+ "version": "etiquetado-v1",
+ "instrucciones": "prompts/etiquetar_conceptos.md",
+ "vocabulario": [
+  {
+   "id": "CON:quimica/acidos-y-bases-propiedades",
+   "nombre": "Ácidos y bases: propiedades",
+   "definicion": "Sustancias cotidianas reconocibles por su sabor, efecto sobre indicadores y reactividad; los ácidos tienen pH menor que 7 y las bases mayor."
+  },
+  {
+   "id": "CON:quimica/agentes-oxidantes-y-reductores",
+   "nombre": "Agentes oxidantes y reductores",
+   "definicion": "Especies que causan la oxidación o reducción de otras; su fuerza relativa se ordena por serie de actividad y potenciales estándar."
+  },
+  {
+   "id": "CON:quimica/aminoacidos-y-proteinas",
+   "nombre": "Aminoácidos y estructura de las proteínas",
+   "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización."
+  },
+  {
+   "id": "CON:quimica/atomo-y-particulas-subatomicas",
+   "nombre": "Átomo y partículas subatómicas",
+   "definicion": "Núcleo con protones y neutrones rodeado de electrones; el número atómico identifica al elemento y el másico suma protones y neutrones."
+  },
+  {
+   "id": "CON:quimica/autoionizacion-del-agua-y-ph",
+   "nombre": "Autoionización del agua, Kw y cálculo de pH",
+   "definicion": "Kw relaciona [H+] y [OH-]; el pH y pOH son escalas logarítmicas calculadas a partir de esas concentraciones."
+  },
+  {
+   "id": "CON:quimica/cambios-de-estado",
+   "nombre": "Cambios de estado",
+   "definicion": "Fusión, solidificación, evaporación, condensación y sublimación ocurren al calentar o enfriar una sustancia, sin formar sustancias nuevas."
+  },
+  {
+   "id": "CON:quimica/cambios-fisicos-y-quimicos",
+   "nombre": "Cambios físicos y químicos",
+   "definicion": "Los cambios físicos no producen materiales nuevos; los químicos (combustión, descomposición, oxidación) sí producen sustancias nuevas."
+  },
+  {
+   "id": "CON:quimica/catalizadores",
+   "nombre": "Catalizadores",
+   "definicion": "Sustancias que ofrecen una ruta de menor energía de activación sin consumirse; incluye catálisis homogénea, heterogénea y enzimática."
+  },
+  {
+   "id": "CON:quimica/celdas-galvanicas",
+   "nombre": "Celdas galvánicas",
+   "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea."
+  },
+  {
+   "id": "CON:quimica/ciencia-de-materiales",
+   "nombre": "Metales, cerámicas y materiales compuestos",
+   "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados."
+  },
+  {
+   "id": "CON:quimica/combustibles-y-biocombustibles",
+   "nombre": "Combustibles fósiles y biocombustibles",
+   "definicion": "Comparación de combustibles fósiles, biodiésel, etanol e hidrógeno según energía liberada, obtención y productos de combustión."
+  },
+  {
+   "id": "CON:quimica/combustion",
+   "nombre": "Combustión",
+   "definicion": "Reacción de un combustible con oxígeno que libera energía como calor y luz; puede ser completa o incompleta según los productos."
+  },
+  {
+   "id": "CON:quimica/composicion-del-aire-y-contaminantes",
+   "nombre": "Composición del aire y contaminantes atmosféricos",
+   "definicion": "Mezcla de gases del aire; óxidos de azufre y nitrógeno y CFC la contaminan, causando lluvia ácida y daño al ozono."
+  },
+  {
+   "id": "CON:quimica/composicion-porcentual-y-formulas",
+   "nombre": "Composición porcentual y fórmulas empírica y molecular",
+   "definicion": "Porcentaje en masa de cada elemento en un compuesto y su uso para deducir la fórmula empírica y la molecular."
+  },
+  {
+   "id": "CON:quimica/concentracion-de-disoluciones",
+   "nombre": "Soluto, disolvente y concentración",
+   "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm."
+  },
+  {
+   "id": "CON:quimica/configuracion-electronica",
+   "nombre": "Configuración electrónica",
+   "definicion": "Distribución de los electrones en niveles y subniveles según Aufbau, exclusión de Pauli y regla de Hund; explica la estructura de la tabla periódica."
+  },
+  {
+   "id": "CON:quimica/conservacion-de-la-masa",
+   "nombre": "Conservación de la masa",
+   "definicion": "En una reacción los átomos se reordenan sin crearse ni destruirse, por lo que la masa total se conserva."
+  },
+  {
+   "id": "CON:quimica/constante-de-equilibrio",
+   "nombre": "Constante de equilibrio",
+   "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio."
+  },
+  {
+   "id": "CON:quimica/cromatografia",
+   "nombre": "Cromatografía",
+   "definicion": "Técnica que separa componentes por su interacción diferencial con una fase móvil y una estacionaria; determina composición y pureza."
+  },
+  {
+   "id": "CON:quimica/densidad-y-flotacion",
+   "nombre": "Densidad y flotación",
+   "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido."
+  },
+  {
+   "id": "CON:quimica/diagramas-de-fases",
+   "nombre": "Diagramas de fases",
+   "definicion": "Gráfico presión-temperatura que muestra las condiciones de equilibrio entre fases, con punto triple y punto crítico."
+  },
+  {
+   "id": "CON:quimica/difusion-efusion-y-gases-reales",
+   "nombre": "Mezclas de gases, difusión y gases reales",
+   "definicion": "Ley de Dalton de presiones parciales, ley de Graham de difusión y desviaciones de los gases reales (van der Waals)."
+  },
+  {
+   "id": "CON:quimica/disolucion-y-su-rapidez",
+   "nombre": "Disolución y rapidez de disolución",
+   "definicion": "Un sólido se disuelve en un líquido como el agua; temperatura, agitación y superficie de contacto aumentan su rapidez."
+  },
+  {
+   "id": "CON:quimica/disoluciones-amortiguadoras",
+   "nombre": "Hidrólisis de sales y disoluciones amortiguadoras",
+   "definicion": "Sales que generan pH ácido o básico al reaccionar con agua; mezclas ácido débil-base conjugada resisten cambios de pH."
+  },
+  {
+   "id": "CON:quimica/disoluciones-coloides-y-suspensiones",
+   "nombre": "Disoluciones, coloides y suspensiones",
+   "definicion": "Dispersiones que se distinguen por el tamaño de partícula dispersa: las disoluciones son homogéneas; coloides muestran efecto Tyndall; suspensiones sedimentan."
+  },
+  {
+   "id": "CON:quimica/ecuacion-de-gases-ideales-y-volumen-molar",
+   "nombre": "Ecuación de los gases ideales y volumen molar",
+   "definicion": "PV = nRT relaciona cantidad, presión, volumen y temperatura; a condiciones normales un mol de gas ocupa un volumen fijo."
+  },
+  {
+   "id": "CON:quimica/ecuacion-de-nernst",
+   "nombre": "Ecuación de Nernst",
+   "definicion": "Calcula el potencial de una celda en condiciones no estándar a partir de concentraciones y lo relaciona con ΔG y K."
+  },
+  {
+   "id": "CON:quimica/ecuacion-quimica-y-balanceo",
+   "nombre": "Ecuación química y su balanceo",
+   "definicion": "Representación simbólica de una reacción con reactivos, productos, estados y coeficientes que igualan los átomos de cada elemento."
+  },
+  {
+   "id": "CON:quimica/ecuaciones-nucleares",
+   "nombre": "Ecuaciones y reacciones nucleares",
+   "definicion": "Representación de desintegraciones, transmutación, fisión y fusión conservando número másico y atómico."
+  },
+  {
+   "id": "CON:quimica/el-carbono-y-las-moleculas-organicas",
+   "nombre": "El carbono y las moléculas orgánicas",
+   "definicion": "El carbono forma cuatro enlaces y cadenas con hidrógeno y otros átomos, generando esqueletos hidrocarbonados de gran diversidad."
+  },
+  {
+   "id": "CON:quimica/electrolisis",
+   "nombre": "Electrólisis y celdas electrolíticas",
+   "definicion": "Uso de energía eléctrica externa para producir reacciones redox no espontáneas, como en galvanoplastia y obtención de metales."
+  },
+  {
+   "id": "CON:quimica/electrolitos",
+   "nombre": "Electrolitos fuertes y débiles",
+   "definicion": "Sustancias que en disolución o fundidas producen iones y conducen electricidad; se disocian total o parcialmente."
+  },
+  {
+   "id": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+   "nombre": "Electronegatividad y polaridad de enlace",
+   "definicion": "La diferencia de electronegatividad entre átomos enlazados genera enlaces no polares, polares o iónicos con momento dipolar de enlace."
+  },
+  {
+   "id": "CON:quimica/electrones-de-valencia-y-regla-del-octeto",
+   "nombre": "Electrones de valencia y regla del octeto",
+   "definicion": "Los electrones de la capa externa determinan la valencia; los átomos tienden a alcanzar una capa de valencia estable al enlazarse."
+  },
+  {
+   "id": "CON:quimica/energia-de-activacion-y-perfil-energetico",
+   "nombre": "Energía de activación y perfil energético",
+   "definicion": "Energía mínima para que ocurra la reacción, representada con el complejo activado y ΔH en un diagrama de perfil energético."
+  },
+  {
+   "id": "CON:quimica/energia-de-enlace",
+   "nombre": "Energía de enlace",
+   "definicion": "Romper enlaces absorbe energía y formarlos la libera; el balance entre ambos determina si una reacción es exotérmica o endotérmica."
+  },
+  {
+   "id": "CON:quimica/energia-de-gibbs-y-espontaneidad",
+   "nombre": "Energía de Gibbs y espontaneidad",
+   "definicion": "ΔG = ΔH − TΔS predice si un proceso es espontáneo a temperatura y presión constantes."
+  },
+  {
+   "id": "CON:quimica/energia-reticular",
+   "nombre": "Energía reticular y ciclo de Born-Haber",
+   "definicion": "Energía liberada al formarse una red iónica desde iones gaseosos; se calcula con el ciclo de Born-Haber y explica su estabilidad."
+  },
+  {
+   "id": "CON:quimica/enlace-covalente",
+   "nombre": "Enlace covalente",
+   "definicion": "Unión de átomos que comparten pares de electrones; puede ser simple, doble, triple, polar, no polar o coordinado."
+  },
+  {
+   "id": "CON:quimica/enlace-de-valencia-y-orbitales-moleculares",
+   "nombre": "Teorías del enlace de valencia y de orbitales moleculares",
+   "definicion": "Modelos cuánticos del enlace covalente por solapamiento de orbitales: enlaces sigma y pi, orden de enlace y magnetismo molecular."
+  },
+  {
+   "id": "CON:quimica/enlace-ionico",
+   "nombre": "Enlace iónico",
+   "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina."
+  },
+  {
+   "id": "CON:quimica/enlace-metalico",
+   "nombre": "Enlace metálico",
+   "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales."
+  },
+  {
+   "id": "CON:quimica/enlace-quimico",
+   "nombre": "Enlace químico",
+   "definicion": "Atracción electrostática entre átomos por transferencia o compartición de electrones que mantiene unidas a las sustancias."
+  },
+  {
+   "id": "CON:quimica/entalpia-de-reaccion",
+   "nombre": "Entalpía de reacción y ecuaciones termoquímicas",
+   "definicion": "Calor intercambiado a presión constante en una reacción (ΔH), representado en ecuaciones termoquímicas y diagramas de entalpía."
+  },
+  {
+   "id": "CON:quimica/entropia",
+   "nombre": "Entropía",
+   "definicion": "Medida de la dispersión de la energía y de la materia en un sistema; el segundo principio indica que la entropía del universo aumenta."
+  },
+  {
+   "id": "CON:quimica/equilibrio-dinamico",
+   "nombre": "Equilibrio químico dinámico",
+   "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes."
+  },
+  {
+   "id": "CON:quimica/equilibrio-en-procesos-industriales",
+   "nombre": "Equilibrio y rapidez en procesos industriales",
+   "definicion": "Selección de condiciones como en Haber-Bosch o el proceso de contacto para equilibrar rendimiento, rapidez y costo."
+  },
+  {
+   "id": "CON:quimica/equilibrio-y-termodinamica",
+   "nombre": "Relación entre energía de Gibbs y constante de equilibrio",
+   "definicion": "ΔG° = −RT ln K vincula espontaneidad y extensión de la reacción; la ecuación de van't Hoff describe K con la temperatura."
+  },
+  {
+   "id": "CON:quimica/escala-de-ph",
+   "nombre": "Escala de pH",
+   "definicion": "Escala que compara la acidez o alcalinidad de disoluciones acuosas según su concentración de iones hidrógeno; 7 es neutro."
+  },
+  {
+   "id": "CON:quimica/espectrometria-de-masas",
+   "nombre": "Espectrometría de masas",
+   "definicion": "Técnica que ioniza y separa partículas por su relación masa/carga para determinar composición isotópica y estructura molecular."
+  },
+  {
+   "id": "CON:quimica/espectros-atomicos-y-modelo-de-bohr",
+   "nombre": "Espectros atómicos y modelo de Bohr",
+   "definicion": "Los electrones ocupan niveles de energía; las transiciones entre ellos emiten o absorben luz de frecuencias específicas, base del ensayo a la llama."
+  },
+  {
+   "id": "CON:quimica/espectroscopia-y-estructura-organica",
+   "nombre": "Técnicas para determinar estructuras orgánicas",
+   "definicion": "Espectroscopía infrarroja, espectrometría de masas y cristalografía de rayos X se combinan para determinar la estructura de moléculas."
+  },
+  {
+   "id": "CON:quimica/estados-de-la-materia",
+   "nombre": "Estados de la materia",
+   "definicion": "Sólido, líquido y gas se distinguen por si conservan su forma y su volumen; el estado del agua depende de la temperatura."
+  },
+  {
+   "id": "CON:quimica/estequiometria",
+   "nombre": "Estequiometría",
+   "definicion": "Cálculo de cantidades de reactivos y productos a partir de los coeficientes de la ecuación balanceada y el mol."
+  },
+  {
+   "id": "CON:quimica/estereoquimica",
+   "nombre": "Estereoquímica y quiralidad",
+   "definicion": "Isómeros con igual conectividad y distinta disposición espacial: geométricos cis-trans y enantiómeros de moléculas quirales."
+  },
+  {
+   "id": "CON:quimica/esterificacion-e-hidrolisis",
+   "nombre": "Esterificación e hidrólisis",
+   "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico."
+  },
+  {
+   "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+   "nombre": "Estructura y propiedades de los polímeros",
+   "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable."
+  },
+  {
+   "id": "CON:quimica/estructuras-de-lewis",
+   "nombre": "Notación y estructuras de Lewis",
+   "definicion": "Representación de electrones de valencia como puntos y de pares compartidos como líneas para modelar enlaces y pares libres."
+  },
+  {
+   "id": "CON:quimica/fuerza-de-acidos-y-bases",
+   "nombre": "Fuerza de ácidos y bases: Ka y Kb",
+   "definicion": "Grado de ionización en equilibrio cuantificado por Ka, Kb y pKa; los ácidos polipróticos tienen ionizaciones sucesivas."
+  },
+  {
+   "id": "CON:quimica/fuerzas-intermoleculares",
+   "nombre": "Fuerzas intermoleculares",
+   "definicion": "Atracciones entre moléculas: dispersión de London, dipolo-dipolo y puentes de hidrógeno, cuya intensidad depende de geometría y polaridad."
+  },
+  {
+   "id": "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas",
+   "nombre": "Fuerzas intermoleculares y propiedades físicas",
+   "definicion": "La intensidad de las fuerzas intermoleculares explica puntos de fusión y ebullición, presión de vapor, viscosidad y solubilidad."
+  },
+  {
+   "id": "CON:quimica/fundamentos-de-reactividad-organica",
+   "nombre": "Fundamentos de la reactividad orgánica",
+   "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos."
+  },
+  {
+   "id": "CON:quimica/geometria-molecular-rpecv",
+   "nombre": "Geometría molecular (RPECV)",
+   "definicion": "La repulsión entre pares electrónicos de valencia, enlazantes y libres, determina la forma tridimensional y los ángulos de enlace de una molécula."
+  },
+  {
+   "id": "CON:quimica/grupos-funcionales",
+   "nombre": "Grupos funcionales",
+   "definicion": "Agrupaciones de átomos (alcohol, aldehído, cetona, ácido carboxílico, éster, amina, amida, haluro) que determinan propiedades y reacciones características."
+  },
+  {
+   "id": "CON:quimica/hibridacion-de-orbitales",
+   "nombre": "Hibridación de orbitales",
+   "definicion": "Combinación de orbitales atómicos en orbitales híbridos sp, sp2 y sp3 que explica geometrías y la tetravalencia del carbono."
+  },
+  {
+   "id": "CON:quimica/hidrocarburos-alifaticos",
+   "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+   "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad."
+  },
+  {
+   "id": "CON:quimica/hidrocarburos-aromaticos",
+   "nombre": "Hidrocarburos aromáticos",
+   "definicion": "Compuestos con anillos bencénicos de electrones deslocalizados, de estabilidad especial y reacciones de sustitución."
+  },
+  {
+   "id": "CON:quimica/indicadores-acido-base",
+   "nombre": "Indicadores ácido-base",
+   "definicion": "Ácidos o bases débiles cuyas formas ácida y básica tienen colores distintos, con un intervalo de viraje característico."
+  },
+  {
+   "id": "CON:quimica/iones",
+   "nombre": "Iones",
+   "definicion": "Átomos o grupos de átomos con carga por ganar o perder electrones; cationes y aniones se representan con fórmulas que indican carga."
+  },
+  {
+   "id": "CON:quimica/isomeria-estructural",
+   "nombre": "Isomería estructural",
+   "definicion": "Compuestos con la misma fórmula molecular y distinta conectividad: isómeros de cadena, posición y función."
+  },
+  {
+   "id": "CON:quimica/isotopos",
+   "nombre": "Isótopos",
+   "definicion": "Átomos de un elemento con igual número de protones y distinto de neutrones; comparten propiedades químicas pero difieren en masa y estabilidad nuclear."
+  },
+  {
+   "id": "CON:quimica/ley-de-hess-y-entalpias-de-formacion",
+   "nombre": "Ley de Hess y entalpías de formación",
+   "definicion": "La variación de entalpía es independiente del camino; se calcula combinando ecuaciones o entalpías estándar de formación."
+  },
+  {
+   "id": "CON:quimica/ley-de-velocidad-y-orden-de-reaccion",
+   "nombre": "Ley de velocidad, orden de reacción y ecuación de Arrhenius",
+   "definicion": "Ecuación que relaciona velocidad con concentraciones (órdenes, leyes integradas, semivida) y dependencia de la constante con la temperatura."
+  },
+  {
+   "id": "CON:quimica/leyes-de-los-gases",
+   "nombre": "Leyes de los gases",
+   "definicion": "Relaciones entre presión, volumen y temperatura de un gas: leyes de Boyle, Charles y Gay-Lussac."
+  },
+  {
+   "id": "CON:quimica/leyes-ponderales",
+   "nombre": "Leyes ponderales y volumétricas",
+   "definicion": "Leyes de proporciones definidas y múltiples y de volúmenes de combinación, explicadas por la teoría atómica de Dalton."
+  },
+  {
+   "id": "CON:quimica/masa-atomica-relativa",
+   "nombre": "Masa atómica relativa",
+   "definicion": "Masa promedio ponderada de los isótopos naturales de un elemento respecto a 1/12 de la masa del carbono-12."
+  },
+  {
+   "id": "CON:quimica/masa-molar",
+   "nombre": "Masa molar",
+   "definicion": "Masa de un mol de sustancia en g/mol, calculada a partir de las masas atómicas relativas; permite convertir entre masa y moles."
+  },
+  {
+   "id": "CON:quimica/materia-y-materiales",
+   "nombre": "Materia y materiales",
+   "definicion": "Todo lo que tiene masa y ocupa volumen es materia; los objetos están hechos de materiales cuyas propiedades medibles determinan sus usos."
+  },
+  {
+   "id": "CON:quimica/materiales-y-ambiente",
+   "nombre": "Reutilización y reciclaje de materiales",
+   "definicion": "Los materiales pueden reutilizarse, reciclarse o darles nuevos usos para reducir residuos y su impacto ambiental."
+  },
+  {
+   "id": "CON:quimica/mecanismos-de-reaccion",
+   "nombre": "Mecanismos de reacción",
+   "definicion": "Secuencia de etapas elementales con su molecularidad e intermediarios; la etapa lenta determina la velocidad."
+  },
+  {
+   "id": "CON:quimica/mezclas",
+   "nombre": "Mezclas homogéneas y heterogéneas",
+   "definicion": "Combinación de sustancias que conservan sus propiedades; puede ser homogénea (una fase) o heterogénea (componentes distinguibles) y separarse físicamente."
+  },
+  {
+   "id": "CON:quimica/minerales",
+   "nombre": "Minerales: composición y estructura cristalina",
+   "definicion": "Sólidos naturales inorgánicos con composición química definida y estructura cristalina, que determinan sus propiedades físicas y usos."
+  },
+  {
+   "id": "CON:quimica/modelo-de-particulas",
+   "nombre": "Modelo de partículas de la materia",
+   "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado."
+  },
+  {
+   "id": "CON:quimica/modelo-mecanocuantico-y-orbitales",
+   "nombre": "Modelo mecanocuántico y orbitales atómicos",
+   "definicion": "La dualidad onda-partícula describe al electrón como un orbital: región de probabilidad con forma s, p, d o f y energía definida."
+  },
+  {
+   "id": "CON:quimica/modelos-atomicos-historicos",
+   "nombre": "Evolución de los modelos atómicos",
+   "definicion": "Modelos de Dalton, Thomson, Rutherford y Bohr, propuestos y reemplazados según evidencia experimental como rayos catódicos y dispersión alfa."
+  },
+  {
+   "id": "CON:quimica/mol-y-numero-de-avogadro",
+   "nombre": "Mol y número de Avogadro",
+   "definicion": "El mol es la cantidad de sustancia con 6,022 × 10^23 entidades; conecta el mundo atómico con masas medibles."
+  },
+  {
+   "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+   "nombre": "Molaridad y unidades químicas de concentración",
+   "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto."
+  },
+  {
+   "id": "CON:quimica/moleculas-y-formulas-quimicas",
+   "nombre": "Moléculas y fórmulas químicas",
+   "definicion": "Las moléculas son combinaciones de átomos unidos; una fórmula química indica qué elementos y cuántos átomos forman una sustancia."
+  },
+  {
+   "id": "CON:quimica/nanomateriales",
+   "nombre": "Nanomateriales y manufactura molecular",
+   "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores."
+  },
+  {
+   "id": "CON:quimica/neutralizacion",
+   "nombre": "Neutralización y reacciones de los ácidos",
+   "definicion": "Los ácidos reaccionan con bases (sal y agua), metales (hidrógeno) y carbonatos (CO2), patrones que permiten predecir productos."
+  },
+  {
+   "id": "CON:quimica/nomenclatura-inorganica",
+   "nombre": "Compuestos inorgánicos: funciones y nomenclatura",
+   "definicion": "Óxidos, hidruros, ácidos, hidróxidos y sales binarias y ternarias, y reglas para nombrarlos y formularlos."
+  },
+  {
+   "id": "CON:quimica/nomenclatura-organica",
+   "nombre": "Nomenclatura orgánica IUPAC",
+   "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes."
+  },
+  {
+   "id": "CON:quimica/numero-de-oxidacion",
+   "nombre": "Número de oxidación",
+   "definicion": "Carga aparente asignada a un átomo en un compuesto según reglas; permite formular compuestos e identificar procesos redox."
+  },
+  {
+   "id": "CON:quimica/numeros-cuanticos",
+   "nombre": "Números cuánticos",
+   "definicion": "Los números n, l, ml y ms describen nivel, subnivel, orientación del orbital y espín de cada electrón."
+  },
+  {
+   "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+   "nombre": "Oxidación y corrosión de los metales",
+   "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica."
+  },
+  {
+   "id": "CON:quimica/oxidacion-y-reduccion",
+   "nombre": "Oxidación y reducción",
+   "definicion": "Oxidación es pérdida y reducción ganancia de electrones; ocurren juntas y se representan y balancean con semiecuaciones."
+  },
+  {
+   "id": "CON:quimica/polaridad-molecular",
+   "nombre": "Polaridad molecular",
+   "definicion": "Una molécula es polar si la suma de sus dipolos de enlace no se anula, según su geometría y simetría."
+  },
+  {
+   "id": "CON:quimica/polimerizacion",
+   "nombre": "Polimerización por adición y por condensación",
+   "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon)."
+  },
+  {
+   "id": "CON:quimica/polimeros-y-ambiente",
+   "nombre": "Polímeros y ambiente",
+   "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos."
+  },
+  {
+   "id": "CON:quimica/potenciales-de-electrodo",
+   "nombre": "Potenciales estándar de electrodo y de celda",
+   "definicion": "Los potenciales estándar de reducción permiten calcular el potencial de una celda y predecir la espontaneidad redox."
+  },
+  {
+   "id": "CON:quimica/principio-de-le-chatelier",
+   "nombre": "Principio de Le Chatelier",
+   "definicion": "Un sistema en equilibrio perturbado por cambios de concentración, presión o temperatura se desplaza para contrarrestar la perturbación."
+  },
+  {
+   "id": "CON:quimica/proceso-de-disolucion",
+   "nombre": "Proceso de disolución y solvatación",
+   "definicion": "Sustancias iónicas y moleculares se disuelven al interactuar con el disolvente (hidratación); implica una entalpía de disolución y depende de temperatura."
+  },
+  {
+   "id": "CON:quimica/procesos-de-la-industria-quimica",
+   "nombre": "Procesos de la industria química",
+   "definicion": "Escalamiento, operaciones unitarias y balance de materia en industrias de ácido sulfúrico, fertilizantes, cemento, azúcar, etanol y café."
+  },
+  {
+   "id": "CON:quimica/producto-de-solubilidad",
+   "nombre": "Producto de solubilidad (Kps)",
+   "definicion": "Constante del equilibrio entre un sólido poco soluble y sus iones; predice precipitación y la menor solubilidad por ion común."
+  },
+  {
+   "id": "CON:quimica/propiedades-coligativas",
+   "nombre": "Propiedades coligativas",
+   "definicion": "Propiedades que dependen del número de partículas de soluto: descenso de presión de vapor, aumento ebulloscópico, descenso crioscópico y presión osmótica."
+  },
+  {
+   "id": "CON:quimica/propiedades-fisicas-de-los-materiales",
+   "nombre": "Propiedades físicas de los materiales",
+   "definicion": "Características medibles sin cambiar la sustancia (dureza, conducción, magnetismo, flotación) que permiten clasificar materiales y explicar usos, como los de metales."
+  },
+  {
+   "id": "CON:quimica/propiedades-fisicas-y-quimicas",
+   "nombre": "Propiedades físicas y químicas",
+   "definicion": "Las propiedades físicas se observan sin cambiar la sustancia; las químicas (reactividad, inflamabilidad) solo al transformarla; incluye propiedades intensivas y extensivas."
+  },
+  {
+   "id": "CON:quimica/propiedades-periodicas",
+   "nombre": "Propiedades periódicas",
+   "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva."
+  },
+  {
+   "id": "CON:quimica/propiedades-singulares-del-agua",
+   "nombre": "Propiedades singulares del agua",
+   "definicion": "Alto punto de ebullición, mayor densidad del líquido que del hielo, tensión superficial y calor específico explicados por puentes de hidrógeno."
+  },
+  {
+   "id": "CON:quimica/quimica-de-los-acidos-nucleicos",
+   "nombre": "Química de los ácidos nucleicos",
+   "definicion": "Nucleótidos unidos por enlaces fosfodiéster y bases apareadas por puentes de hidrógeno forman ADN y ARN."
+  },
+  {
+   "id": "CON:quimica/quimica-de-los-carbohidratos",
+   "nombre": "Química de los carbohidratos",
+   "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa."
+  },
+  {
+   "id": "CON:quimica/quimica-de-los-lipidos",
+   "nombre": "Química de los lípidos",
+   "definicion": "Ácidos grasos saturados e insaturados, triglicéridos, saponificación, terpenos y esteroides como el colesterol."
+  },
+  {
+   "id": "CON:quimica/quimica-descriptiva-de-los-elementos",
+   "nombre": "Química descriptiva de los elementos",
+   "definicion": "Propiedades, obtención, compuestos y usos de metales y no metales según su posición periódica, incluidos halógenos y gases nobles."
+  },
+  {
+   "id": "CON:quimica/quimica-verde",
+   "nombre": "Química verde y economía atómica",
+   "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos."
+  },
+  {
+   "id": "CON:quimica/radiactividad",
+   "nombre": "Radiactividad y emisiones nucleares",
+   "definicion": "Desintegración espontánea de núcleos inestables con emisión de partículas alfa, beta y radiación gamma."
+  },
+  {
+   "id": "CON:quimica/rapidez-de-reaccion-factores",
+   "nombre": "Factores que afectan la rapidez de reacción",
+   "definicion": "La rapidez aumenta con mayor temperatura, concentración, superficie de contacto o presencia de catalizador."
+  },
+  {
+   "id": "CON:quimica/reaccion-quimica-y-evidencias",
+   "nombre": "Reacción química y sus evidencias",
+   "definicion": "Proceso en que se forman sustancias nuevas, evidenciado por gas, precipitado, cambio de color, calor o luz."
+  },
+  {
+   "id": "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+   "nombre": "Reacciones de precipitación e identificación de iones",
+   "definicion": "Formación de sólidos insolubles al mezclar disoluciones iónicas, usada para identificar y separar iones (marcha analítica)."
+  },
+  {
+   "id": "CON:quimica/reacciones-exotermicas-y-endotermicas",
+   "nombre": "Reacciones exotérmicas y endotérmicas",
+   "definicion": "Las reacciones exotérmicas liberan energía al entorno y las endotérmicas la absorben, observándose cambios de temperatura."
+  },
+  {
+   "id": "CON:quimica/reacciones-organicas",
+   "nombre": "Reacciones orgánicas características",
+   "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos."
+  },
+  {
+   "id": "CON:quimica/reactivo-limitante",
+   "nombre": "Reactivo limitante y en exceso",
+   "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso."
+  },
+  {
+   "id": "CON:quimica/redes-covalentes-y-alotropos-del-carbono",
+   "nombre": "Redes covalentes y alótropos del carbono",
+   "definicion": "Sólidos de átomos unidos covalentemente en red, como diamante, grafito, fulerenos y grafeno, con propiedades muy distintas."
+  },
+  {
+   "id": "CON:quimica/rendimiento-de-reaccion",
+   "nombre": "Rendimiento de una reacción",
+   "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos."
+  },
+  {
+   "id": "CON:quimica/resonancia-y-carga-formal",
+   "nombre": "Resonancia y carga formal",
+   "definicion": "Cuando una sola estructura de Lewis no describe la molécula se usan formas resonantes; la carga formal elige la estructura más estable."
+  },
+  {
+   "id": "CON:quimica/semivida-y-series-de-desintegracion",
+   "nombre": "Semivida, series de desintegración y residuos radiactivos",
+   "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos."
+  },
+  {
+   "id": "CON:quimica/separacion-de-mezclas",
+   "nombre": "Métodos físicos de separación de mezclas",
+   "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes."
+  },
+  {
+   "id": "CON:quimica/sintesis-quimica-y-rutas-de-reaccion",
+   "nombre": "Síntesis química y rutas de reacción",
+   "definicion": "Diseño de rutas de una o varias reacciones, eligiendo reactivos y condiciones para obtener productos específicos con alto rendimiento y pureza."
+  },
+  {
+   "id": "CON:quimica/solidos-cristalinos-y-amorfos",
+   "nombre": "Sólidos cristalinos y amorfos",
+   "definicion": "Los sólidos pueden ser cristalinos (iónicos, moleculares, covalentes, metálicos) o amorfos, con propiedades según sus partículas y fuerzas."
+  },
+  {
+   "id": "CON:quimica/solubilidad",
+   "nombre": "Solubilidad y disoluciones saturadas",
+   "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad."
+  },
+  {
+   "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+   "nombre": "Sustancias puras: elementos y compuestos",
+   "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida."
+  },
+  {
+   "id": "CON:quimica/tabla-periodica",
+   "nombre": "Organización de la tabla periódica",
+   "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades."
+  },
+  {
+   "id": "CON:quimica/teoria-cinetica-de-los-gases",
+   "nombre": "Teoría cinética de los gases",
+   "definicion": "Los gases son partículas en movimiento aleatorio cuyos choques generan presión; la energía cinética media depende de la temperatura."
+  },
+  {
+   "id": "CON:quimica/teoria-de-colisiones",
+   "nombre": "Teoría de colisiones",
+   "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie."
+  },
+  {
+   "id": "CON:quimica/teorias-acido-base",
+   "nombre": "Teorías ácido-base (Arrhenius, Brønsted-Lowry, Lewis)",
+   "definicion": "Los ácidos donan protones y las bases los aceptan formando pares conjugados; Lewis amplía a aceptores y donadores de pares electrónicos."
+  },
+  {
+   "id": "CON:quimica/tipo-de-enlace-y-propiedades",
+   "nombre": "Tipo de enlace y propiedades de las sustancias",
+   "definicion": "El tipo de enlace explica punto de fusión, conductividad, dureza y fragilidad de sustancias iónicas, metálicas, moleculares y de red covalente."
+  },
+  {
+   "id": "CON:quimica/tipos-de-reacciones-quimicas",
+   "nombre": "Clasificación de las reacciones químicas",
+   "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos."
+  },
+  {
+   "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+   "nombre": "Calidad y tratamiento del agua",
+   "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran."
+  },
+  {
+   "id": "CON:quimica/valoracion-acido-base",
+   "nombre": "Valoración ácido-base",
+   "definicion": "Análisis volumétrico que determina una concentración identificando el punto de equivalencia con indicadores o curvas de pH."
+  },
+  {
+   "id": "CON:quimica/velocidad-de-reaccion-medicion",
+   "nombre": "Medición de la velocidad de reacción",
+   "definicion": "Velocidad expresada como cambio de concentración de reactivos o productos por unidad de tiempo, media o instantánea."
+  }
+ ],
+ "practicas": [
+  {
+   "id": "PRAC:formular-preguntas-investigables",
+   "nombre": "Formular preguntas investigables"
+  },
+  {
+   "id": "PRAC:formular-hipotesis-y-predicciones",
+   "nombre": "Formular hipótesis y predicciones"
+  },
+  {
+   "id": "PRAC:planificar-investigaciones",
+   "nombre": "Planificar investigaciones"
+  },
+  {
+   "id": "PRAC:controlar-variables",
+   "nombre": "Identificar y controlar variables"
+  },
+  {
+   "id": "PRAC:evaluar-disenos-de-investigacion",
+   "nombre": "Evaluar diseños de investigación"
+  },
+  {
+   "id": "PRAC:observar-y-registrar",
+   "nombre": "Observar y registrar sistemáticamente"
+  },
+  {
+   "id": "PRAC:medir-con-instrumentos",
+   "nombre": "Medir con instrumentos y unidades"
+  },
+  {
+   "id": "PRAC:trabajar-con-seguridad-y-etica",
+   "nombre": "Trabajar con seguridad y ética"
+  },
+  {
+   "id": "PRAC:repetir-mediciones-y-estimar-error",
+   "nombre": "Repetir mediciones y estimar el error"
+  },
+  {
+   "id": "PRAC:representar-datos",
+   "nombre": "Representar datos en tablas y gráficos"
+  },
+  {
+   "id": "PRAC:interpretar-datos-y-concluir",
+   "nombre": "Interpretar datos y sacar conclusiones"
+  },
+  {
+   "id": "PRAC:distinguir-correlacion-y-causalidad",
+   "nombre": "Distinguir correlación de causalidad"
+  },
+  {
+   "id": "PRAC:analizar-datos-con-estadistica",
+   "nombre": "Analizar datos con herramientas estadísticas"
+  },
+  {
+   "id": "PRAC:usar-matematicas-en-ciencias",
+   "nombre": "Usar matemáticas para resolver problemas científicos"
+  },
+  {
+   "id": "PRAC:usar-pensamiento-computacional-y-simulaciones",
+   "nombre": "Usar pensamiento computacional y simulaciones"
+  },
+  {
+   "id": "PRAC:desarrollar-y-usar-modelos",
+   "nombre": "Desarrollar y usar modelos"
+  },
+  {
+   "id": "PRAC:evaluar-modelos-y-limitaciones",
+   "nombre": "Evaluar modelos y sus limitaciones"
+  },
+  {
+   "id": "PRAC:transformar-representaciones",
+   "nombre": "Usar y transformar representaciones"
+  },
+  {
+   "id": "PRAC:construir-explicaciones-con-evidencia",
+   "nombre": "Construir explicaciones basadas en evidencia"
+  },
+  {
+   "id": "PRAC:argumentar-con-evidencia",
+   "nombre": "Argumentar con evidencia y razonamiento"
+  },
+  {
+   "id": "PRAC:evaluar-afirmaciones-y-argumentos",
+   "nombre": "Evaluar afirmaciones y argumentos"
+  },
+  {
+   "id": "PRAC:evaluar-fuentes-de-informacion",
+   "nombre": "Buscar y evaluar fuentes de información"
+  },
+  {
+   "id": "PRAC:comunicar-resultados",
+   "nombre": "Comunicar resultados científicos"
+  },
+  {
+   "id": "PRAC:distinguir-observacion-e-inferencia",
+   "nombre": "Distinguir observación de inferencia"
+  },
+  {
+   "id": "PRAC:naturaleza-provisional-del-conocimiento",
+   "nombre": "Reconocer el carácter provisional del conocimiento"
+  },
+  {
+   "id": "PRAC:ciencia-como-empresa-colectiva",
+   "nombre": "Valorar la ciencia como empresa colectiva"
+  },
+  {
+   "id": "PRAC:limites-de-la-ciencia",
+   "nombre": "Reconocer el alcance y límites de la ciencia"
+  },
+  {
+   "id": "PRAC:evaluar-implicaciones-y-decidir",
+   "nombre": "Evaluar implicaciones y tomar decisiones informadas"
+  },
+  {
+   "id": "PRAC:definir-problemas-de-diseno",
+   "nombre": "Definir problemas de diseño"
+  },
+  {
+   "id": "PRAC:disenar-y-evaluar-soluciones",
+   "nombre": "Diseñar y evaluar soluciones"
+  }
+ ],
+ "items": [
+  {
+   "id": "G10-QUI-U1-1.1",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La química y su método",
+   "procedimental": "1.1. Análisis de la química como ciencia central que conecta las ciencias físicas, las ciencias de la vida y las ciencias aplicadas.",
+   "indicador": "1.1. Explica con ejemplos del entorno cómo la química se relaciona con la física, la biología, la medicina y la ingeniería."
+  },
+  {
+   "id": "G10-QUI-U1-1.10",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La medición en el laboratorio químico",
+   "procedimental": "1.10. Aplicación de una técnica sistemática para resolver problemas químicos cuantitativos.",
+   "indicador": "1.10. Resuelve problemas químicos cuantitativos siguiendo una estrategia de análisis, planificación, cálculo y verificación de la razonabilidad del resultado."
+  },
+  {
+   "id": "G10-QUI-U1-1.11",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La materia y sus propiedades",
+   "procedimental": "1.11. Interpretación de los estados de la materia y de los sistemas materiales mediante el modelo cinético-molecular.",
+   "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados."
+  },
+  {
+   "id": "G10-QUI-U1-1.12",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La materia y sus propiedades",
+   "procedimental": "1.12. Determinación experimental de la densidad de sólidos y líquidos como propiedad intensiva para identificar sustancias.",
+   "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias."
+  },
+  {
+   "id": "G10-QUI-U1-1.13",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La materia y sus propiedades",
+   "procedimental": "1.13. Clasificación de muestras de materia en sustancias puras, mezclas homogéneas, mezclas heterogéneas, coloides y emulsiones.",
+   "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall."
+  },
+  {
+   "id": "G10-QUI-U1-1.14",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La materia y sus propiedades",
+   "procedimental": "1.14. Selección y aplicación de métodos de separación de mezclas según las propiedades de sus componentes.",
+   "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel."
+  },
+  {
+   "id": "G10-QUI-U1-1.2",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La química y su método",
+   "procedimental": "1.2. Clasificación de problemas y productos cotidianos según la rama de la química que los estudia.",
+   "indicador": "1.2. Asigna situaciones cotidianas a la rama de la química correspondiente y justifica la interacción entre ramas en un mismo problema."
+  },
+  {
+   "id": "G10-QUI-U1-1.3",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La química y su método",
+   "procedimental": "1.3. Evaluación de avances tecnológicos basados en conocimientos químicos, con sus beneficios y riesgos.",
+   "indicador": "1.3. Evalúa las ventajas y desventajas de un avance tecnológico de base química a partir de evidencia sobre su impacto social y ambiental."
+  },
+  {
+   "id": "G10-QUI-U1-1.4",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La química y su método",
+   "procedimental": "1.4. Reconstrucción de la historia de la química a partir de descubrimientos que transformaron la sociedad.",
+   "indicador": "1.4. Relaciona los principales descubrimientos de la historia de la química con el cambio en la forma de investigar y con sus aplicaciones actuales."
+  },
+  {
+   "id": "G10-QUI-U1-1.5",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La química y su método",
+   "procedimental": "1.5. Análisis de la contribución social de la química y la tecnología a la calidad de vida en El Salvador.",
+   "indicador": "1.5. Explica con datos la contribución de la química a la salud, la alimentación, la higiene y el control de la contaminación en su país."
+  },
+  {
+   "id": "G10-QUI-U1-1.6",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "El método científico en química",
+   "procedimental": "1.6. Aplicación de las etapas del método científico a una investigación química sencilla con materiales seguros.",
+   "indicador": "1.6. Diseña y ejecuta una investigación química sencilla en la que controla variables y contrasta su hipótesis con los resultados."
+  },
+  {
+   "id": "G10-QUI-U1-1.7",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La medición en el laboratorio químico",
+   "procedimental": "1.7. Uso de la notación científica y los órdenes de magnitud para expresar y operar cantidades químicas muy grandes o muy pequeñas.",
+   "indicador": "1.7. Opera en notación científica con cantidades químicas y estima órdenes de magnitud de masas, volúmenes y números de partículas."
+  },
+  {
+   "id": "G10-QUI-U1-1.8",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La medición en el laboratorio químico",
+   "procedimental": "1.8. Comparación de la exactitud y la precisión de mediciones de volumen realizadas con distintos instrumentos de laboratorio.",
+   "indicador": "1.8. Diferencia exactitud y precisión calculando el error relativo y la dispersión de series de mediciones de volumen."
+  },
+  {
+   "id": "G10-QUI-U1-1.9",
+   "unidad": "1. La química como ciencia: ciclo de indagación",
+   "contenido": "La medición en el laboratorio químico",
+   "procedimental": "1.9. Aplicación de las reglas de las cifras significativas al registro de mediciones y a los cálculos de magnitudes derivadas.",
+   "indicador": "1.9. Expresa mediciones y resultados de cálculos con el número correcto de cifras significativas según la resolución del instrumento."
+  },
+  {
+   "id": "G10-QUI-U10-10.1",
+   "unidad": "10. Cálculos estequiométricos",
+   "contenido": "Relaciones estequiométricas",
+   "procedimental": "10.1. Cálculo de cantidades de reactivos y productos a partir de ecuaciones balanceadas considerando la pureza de los reactivos y la concentración de disoluciones.",
+   "indicador": "10.1. Calcula masas, cantidades de sustancia y volúmenes de disolución de reactivos y productos incorporando la pureza y la concentración en sus cálculos."
+  },
+  {
+   "id": "G10-QUI-U10-10.2",
+   "unidad": "10. Cálculos estequiométricos",
+   "contenido": "Relaciones estequiométricas",
+   "procedimental": "10.2. Determinación del reactivo limitante y del reactivo en exceso en reacciones con cantidades iniciales arbitrarias.",
+   "indicador": "10.2. Determina el reactivo limitante y la cantidad sobrante del reactivo en exceso, y calcula a partir de ellos la cantidad máxima de producto."
+  },
+  {
+   "id": "G10-QUI-U10-10.3",
+   "unidad": "10. Cálculos estequiométricos",
+   "contenido": "Eficiencia de las reacciones",
+   "procedimental": "10.3. Cálculo del rendimiento porcentual de una reacción y análisis de las causas de diferencia entre el rendimiento teórico y el experimental.",
+   "indicador": "10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto."
+  },
+  {
+   "id": "G10-QUI-U10-10.4",
+   "unidad": "10. Cálculos estequiométricos",
+   "contenido": "Eficiencia de las reacciones",
+   "procedimental": "10.4. Resolución de problemas de reacciones consecutivas y simultáneas mediante la ecuación neta y el rendimiento global del proceso.",
+   "indicador": "10.4. Obtiene la ecuación neta de un proceso de varias etapas y calcula el rendimiento global a partir del rendimiento de cada etapa."
+  },
+  {
+   "id": "G10-QUI-U11-11.1",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Energía en las reacciones químicas",
+   "procedimental": "11.1. Medición calorimétrica del calor de reacción a presión constante y representación en diagramas de entalpía.",
+   "indicador": "11.1. Determina experimentalmente la entalpía de una reacción en un calorímetro de vasos y la representa en un diagrama de entalpía exotérmico o endotérmico."
+  },
+  {
+   "id": "G10-QUI-U11-11.2",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Energía en las reacciones químicas",
+   "procedimental": "11.2. Cálculo de entalpías estándar de reacción mediante entalpías de formación tabuladas y la ley de Hess.",
+   "indicador": "11.2. Calcula la entalpía estándar de una reacción combinando ecuaciones termoquímicas con la ley de Hess o con entalpías estándar de formación."
+  },
+  {
+   "id": "G10-QUI-U11-11.3",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Energía en las reacciones químicas",
+   "procedimental": "11.3. Estimación de entalpías de reacción a partir de entalpías medias de enlace y análisis de su relación con la fuerza de los enlaces.",
+   "indicador": "11.3. Estima la entalpía de reacción con entalpías medias de enlace y explica por qué el resultado difiere del obtenido con entalpías de formación."
+  },
+  {
+   "id": "G10-QUI-U11-11.4",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Espontaneidad de los procesos",
+   "procedimental": "11.4. Análisis de procesos físicos y químicos espontáneos y no espontáneos a partir del segundo principio de la termodinámica.",
+   "indicador": "11.4. Diferencia la espontaneidad de un proceso de su rapidez y explica, con el segundo principio, por qué ciertos procesos ocurren en un solo sentido."
+  },
+  {
+   "id": "G10-QUI-U11-11.5",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Espontaneidad de los procesos",
+   "procedimental": "11.5. Interpretación de la entropía como medida de la dispersión de la energía y de los factores de los que depende en las sustancias.",
+   "indicador": "11.5. Explica cómo el estado de agregación, la temperatura y la complejidad molecular modifican la entropía de una sustancia, con base en el tercer principio."
+  },
+  {
+   "id": "G10-QUI-U11-11.6",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Espontaneidad de los procesos",
+   "procedimental": "11.6. Cálculo de la variación de entropía estándar de reacción y de la entropía del universo para predecir la espontaneidad.",
+   "indicador": "11.6. Calcula ΔS° de una reacción con entropías molares estándar y determina la espontaneidad sumando la variación de entropía del entorno."
+  },
+  {
+   "id": "G10-QUI-U11-11.7",
+   "unidad": "11. Termodinámica en reacciones químicas",
+   "contenido": "Espontaneidad de los procesos",
+   "procedimental": "11.7. Aplicación de la energía de Gibbs para predecir la espontaneidad de reacciones y determinar la temperatura a la que cambia su sentido.",
+   "indicador": "11.7. Predice la espontaneidad de una reacción con ΔG° = ΔH° − TΔS° y calcula la temperatura a partir de la cual se vuelve espontánea."
+  },
+  {
+   "id": "G10-QUI-U12-12.1",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Velocidad de reacción",
+   "procedimental": "12.1. Cálculo de velocidades medias e instantáneas de reacción a partir de datos de concentración, volumen de gas o masa en función del tiempo.",
+   "indicador": "12.1. Calcula la velocidad media e instantánea de una reacción a partir de una curva experimental y la expresa en función de cualquier reactivo o producto."
+  },
+  {
+   "id": "G10-QUI-U12-12.10",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Cálculos de equilibrio",
+   "procedimental": "12.10. Resolución de problemas de equilibrio con tablas ICE para obtener concentraciones en el equilibrio y grados de disociación.",
+   "indicador": "12.10. Calcula concentraciones en el equilibrio y el grado de disociación con tablas ICE, e interpreta la magnitud de K para predecir la extensión de la reacción."
+  },
+  {
+   "id": "G10-QUI-U12-12.11",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Cálculos de equilibrio",
+   "procedimental": "12.11. Predicción cuantitativa del sentido de la reacción comparando Q con K tras perturbaciones de concentración, presión y temperatura.",
+   "indicador": "12.11. Predice el sentido de desplazamiento de un sistema perturbado comparando Q con K y calcula la nueva composición de equilibrio."
+  },
+  {
+   "id": "G10-QUI-U12-12.12",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Cálculos de equilibrio",
+   "procedimental": "12.12. Formulación y cálculo de constantes de equilibrios heterogéneos en sistemas de carbonatos y gases de interés ambiental.",
+   "indicador": "12.12. Escribe y aplica la constante de equilibrios heterogéneos excluyendo sólidos y líquidos puros, y la usa para explicar procesos naturales con carbonatos."
+  },
+  {
+   "id": "G10-QUI-U12-12.13",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Equilibrio y termodinámica",
+   "procedimental": "12.13. Cálculo de la constante de equilibrio a partir de ΔG° y de su variación con la temperatura mediante la ecuación de van't Hoff.",
+   "indicador": "12.13. Calcula K a partir de ΔG° = −RT ln K y predice con la ecuación de van't Hoff cómo cambia K con la temperatura según el signo de ΔH°."
+  },
+  {
+   "id": "G10-QUI-U12-12.14",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Equilibrio y termodinámica",
+   "procedimental": "12.14. Análisis de las condiciones del proceso Haber como compromiso entre factores termodinámicos y cinéticos.",
+   "indicador": "12.14. Justifica la presión, temperatura y catalizador del proceso Haber integrando Le Châtelier, K y cinética, y valora su impacto en la agricultura y el ambiente."
+  },
+  {
+   "id": "G10-QUI-U12-12.2",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Velocidad de reacción",
+   "procedimental": "12.2. Determinación de la ley de velocidad y de los órdenes de reacción mediante el método de las velocidades iniciales.",
+   "indicador": "12.2. Determina los órdenes parciales, el orden total y la constante de velocidad de una reacción a partir de tablas de velocidades iniciales."
+  },
+  {
+   "id": "G10-QUI-U12-12.3",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Velocidad de reacción",
+   "procedimental": "12.3. Análisis gráfico de la concentración en función del tiempo mediante las leyes integradas de velocidad y cálculo de la semivida.",
+   "indicador": "12.3. Identifica el orden de una reacción linealizando datos de concentración contra tiempo y calcula su semivida con la ley integrada correspondiente."
+  },
+  {
+   "id": "G10-QUI-U12-12.4",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Modelos de la velocidad de reacción",
+   "procedimental": "12.4. Interpretación de la teoría de las colisiones y del complejo activado mediante diagramas de energía potencial y simulaciones.",
+   "indicador": "12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción."
+  },
+  {
+   "id": "G10-QUI-U12-12.5",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Modelos de la velocidad de reacción",
+   "procedimental": "12.5. Análisis de mecanismos de reacción y deducción de la ley de velocidad a partir de la etapa determinante.",
+   "indicador": "12.5. Deduce la ley de velocidad a partir de un mecanismo con etapa determinante e identifica los intermediarios y la molecularidad de cada etapa."
+  },
+  {
+   "id": "G10-QUI-U12-12.6",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Factores que modifican la velocidad",
+   "procedimental": "12.6. Determinación experimental de la energía de activación mediante la ecuación de Arrhenius y la gráfica de ln k contra 1/T.",
+   "indicador": "12.6. Calcula la energía de activación de una reacción a partir de la pendiente de la gráfica de Arrhenius obtenida con datos a varias temperaturas."
+  },
+  {
+   "id": "G10-QUI-U12-12.7",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Factores que modifican la velocidad",
+   "procedimental": "12.7. Comparación experimental de catalizadores homogéneos, heterogéneos y enzimáticos en la descomposición del peróxido de hidrógeno diluido.",
+   "indicador": "12.7. Explica cómo un catalizador modifica el mecanismo y la energía de activación sin alterar ΔH, y clasifica catálisis homogéneas, heterogéneas y enzimáticas."
+  },
+  {
+   "id": "G10-QUI-U12-12.8",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Equilibrio químico",
+   "procedimental": "12.8. Deducción de la constante de equilibrio a partir de la igualdad de las velocidades de las reacciones directa e inversa.",
+   "indicador": "12.8. Deduce la expresión de Kc a partir de la igualdad de las velocidades directa e inversa en reacciones elementales y la relaciona con la ley de acción de masas."
+  },
+  {
+   "id": "G10-QUI-U12-12.9",
+   "unidad": "12. Cinética y equilibrio químico",
+   "contenido": "Equilibrio químico",
+   "procedimental": "12.9. Cálculo de Kp y de su relación con Kc, y transformación de la constante al invertir, multiplicar o sumar ecuaciones químicas.",
+   "indicador": "12.9. Calcula Kp a partir de presiones parciales o fracciones molares y aplica Kp = Kc(RT)^Δn y las reglas de transformación de K al modificar la ecuación."
+  },
+  {
+   "id": "G10-QUI-U13-13.1",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos metálicos",
+   "procedimental": "13.1. Comparación de las propiedades, métodos de obtención y usos de los metales alcalinos y alcalinotérreos, con énfasis en la sal marina y la cal.",
+   "indicador": "13.1. Compara la reactividad, la obtención y los usos de los metales de los grupos 1 y 2 relacionándolos con su configuración electrónica y su energía de ionización."
+  },
+  {
+   "id": "G10-QUI-U13-13.2",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos metálicos",
+   "procedimental": "13.2. Análisis de las propiedades, la obtención y las aplicaciones de los elementos térreos, de otros metales del bloque p y de los semimetales.",
+   "indicador": "13.2. Explica el carácter anfótero del aluminio y las propiedades semiconductoras del silicio y del germanio, y ubica los metales, semimetales y no metales en la tabla periódica."
+  },
+  {
+   "id": "G10-QUI-U13-13.3",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos metálicos",
+   "procedimental": "13.3. Caracterización de los metales de transición por sus estados de oxidación, el color de sus compuestos y sus aplicaciones en aleaciones.",
+   "indicador": "13.3. Categoriza metales de transición según sus propiedades y usos, y predice reacciones de desplazamiento con base en su actividad relativa."
+  },
+  {
+   "id": "G10-QUI-U13-13.4",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos no metálicos",
+   "procedimental": "13.4. Relación de las propiedades de los alótropos del carbono y de los carbonoideos con procesos biológicos, climáticos y tecnológicos.",
+   "indicador": "13.4. Relaciona las estructuras de los alótropos del carbono con sus propiedades y explica el papel del carbono en el ciclo biogeoquímico y el cambio climático."
+  },
+  {
+   "id": "G10-QUI-U13-13.5",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos no metálicos",
+   "procedimental": "13.5. Análisis de las propiedades y funciones de los nitrogenoideos y de sus compuestos en los ciclos biogeoquímicos y en la calidad del agua.",
+   "indicador": "13.5. Argumenta la importancia de los compuestos del nitrógeno y del fósforo para la vida y explica cómo su exceso provoca la eutrofización de cuerpos de agua."
+  },
+  {
+   "id": "G10-QUI-U13-13.6",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos no metálicos",
+   "procedimental": "13.6. Descripción de las propiedades del oxígeno, el ozono y el azufre, y de los compuestos de azufre de origen volcánico e industrial.",
+   "indicador": "13.6. Describe las propiedades físicas y químicas de los anfígenos y explica la formación de SO₂, H₂S y lluvia ácida a partir del azufre volcánico."
+  },
+  {
+   "id": "G10-QUI-U13-13.7",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos no metálicos",
+   "procedimental": "13.7. Análisis de las propiedades, la obtención y las aplicaciones de los halógenos en la salud pública y el tratamiento del agua.",
+   "indicador": "13.7. Explica la variación del poder oxidante de los halógenos en el grupo y relaciona la obtención y los usos del cloro, el yodo y el flúor con la salud pública."
+  },
+  {
+   "id": "G10-QUI-U13-13.8",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Gases nobles e hidrógeno",
+   "procedimental": "13.8. Relación de las propiedades de los gases nobles y del hidrógeno con sus aplicaciones y con la obtención de hidrógeno por electrólisis del agua.",
+   "indicador": "13.8. Relaciona la configuración electrónica de los gases nobles con sus aplicaciones y describe los isótopos, la obtención y los usos energéticos del hidrógeno."
+  },
+  {
+   "id": "G10-QUI-U13-13.9",
+   "unidad": "13. Química inorgánica",
+   "contenido": "Elementos de transición interna",
+   "procedimental": "13.9. Clasificación de los elementos de transición interna y exploración de los elementos sintetizados recientemente.",
+   "indicador": "13.9. Clasifica los elementos de transición interna en lantánidos y actínidos, explica sus aplicaciones tecnológicas y describe cómo se sintetizan y nombran los nuevos elementos."
+  },
+  {
+   "id": "G10-QUI-U2-2.1",
+   "unidad": "2. Las cantidades en química",
+   "contenido": "Leyes de la combinación química",
+   "procedimental": "2.1. Comprobación experimental de la ley de conservación de la masa y análisis de datos de las leyes de las proporciones definidas y múltiples.",
+   "indicador": "2.1. Comprueba la conservación de la masa en un sistema cerrado y aplica las leyes de las proporciones definidas y múltiples a datos de composición de compuestos."
+  },
+  {
+   "id": "G10-QUI-U2-2.2",
+   "unidad": "2. Las cantidades en química",
+   "contenido": "Leyes de la combinación química",
+   "procedimental": "2.2. Explicación de las leyes ponderales a partir de los postulados de la teoría atómica de Dalton y análisis de sus limitaciones.",
+   "indicador": "2.2. Explica las leyes ponderales mediante los postulados de Dalton y señala qué postulados fueron modificados por descubrimientos posteriores."
+  },
+  {
+   "id": "G10-QUI-U2-2.3",
+   "unidad": "2. Las cantidades en química",
+   "contenido": "Leyes de la combinación química",
+   "procedimental": "2.3. Interpretación de la ley de los volúmenes de combinación y de la hipótesis de Avogadro como complemento de la teoría atómica.",
+   "indicador": "2.3. Aplica la ley de los volúmenes de combinación y la hipótesis de Avogadro para deducir la fórmula de gases y la existencia de moléculas diatómicas."
+  },
+  {
+   "id": "G10-QUI-U2-2.4",
+   "unidad": "2. Las cantidades en química",
+   "contenido": "La cantidad de sustancia",
+   "procedimental": "2.4. Resolución de problemas que relacionan masa, cantidad de sustancia y número de partículas en muestras reales.",
+   "indicador": "2.4. Resuelve problemas encadenados de masa, moles, número de moléculas y número de átomos de cada elemento en muestras de sustancias de uso cotidiano."
+  },
+  {
+   "id": "G10-QUI-U2-2.5",
+   "unidad": "2. Las cantidades en química",
+   "contenido": "La cantidad de sustancia",
+   "procedimental": "2.5. Cálculo de la composición centesimal, la fórmula empírica y la fórmula molecular de compuestos a partir de datos experimentales.",
+   "indicador": "2.5. Determina la fórmula empírica y la fórmula molecular de un compuesto a partir de su composición centesimal y de su masa molar."
+  },
+  {
+   "id": "G10-QUI-U2-2.6",
+   "unidad": "2. Las cantidades en química",
+   "contenido": "La cantidad de sustancia",
+   "procedimental": "2.6. Determinación de la fórmula de compuestos orgánicos a partir de datos de análisis elemental y reconocimiento de isómeros.",
+   "indicador": "2.6. Deduce la fórmula molecular de un compuesto orgánico a partir de datos de su análisis elemental y reconoce isómeros con propiedades distintas."
+  },
+  {
+   "id": "G10-QUI-U3-3.1",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "Evolución de los modelos atómicos",
+   "procedimental": "3.1. Análisis de los experimentos con rayos catódicos que condujeron al descubrimiento del electrón y al modelo de Thomson.",
+   "indicador": "3.1. Explica cómo la desviación de los rayos catódicos en campos eléctricos y magnéticos llevó a Thomson a proponer el electrón y su modelo atómico."
+  },
+  {
+   "id": "G10-QUI-U3-3.10",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "El modelo mecanocuántico",
+   "procedimental": "3.10. Escritura de configuraciones electrónicas y diagramas de orbitales de átomos e iones, incluidos los elementos de transición, aplicando los principios de construcción.",
+   "indicador": "3.10. Escribe configuraciones electrónicas y diagramas de orbitales aplicando el principio de Aufbau, la exclusión de Pauli y la regla de Hund, y predice el comportamiento magnético de la sustancia."
+  },
+  {
+   "id": "G10-QUI-U3-3.2",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "Evolución de los modelos atómicos",
+   "procedimental": "3.2. Interpretación del experimento de Geiger y Marsden y de las propiedades de las radiaciones alfa, beta y gamma mediante un simulador.",
+   "indicador": "3.2. Deduce la existencia de un núcleo pequeño, denso y positivo a partir de los resultados de la dispersión de partículas alfa en una lámina de oro."
+  },
+  {
+   "id": "G10-QUI-U3-3.3",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "Evolución de los modelos atómicos",
+   "procedimental": "3.3. Análisis del descubrimiento del protón y del neutrón y comparación de las propiedades de las partículas subatómicas.",
+   "indicador": "3.3. Compara la carga, la masa y la ubicación de protones, neutrones y electrones, y explica por qué el neutrón fue la última partícula en descubrirse."
+  },
+  {
+   "id": "G10-QUI-U3-3.4",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "Estructura del átomo",
+   "procedimental": "3.4. Cálculo de las partículas subatómicas de átomos e iones y de la masa atómica promedio de un elemento a partir de la abundancia de sus isótopos.",
+   "indicador": "3.4. Calcula la masa atómica promedio de un elemento a partir de la masa y la abundancia de sus isótopos y determina las partículas de átomos e iones."
+  },
+  {
+   "id": "G10-QUI-U3-3.5",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "Estructura del átomo",
+   "procedimental": "3.5. Observación y análisis de espectros de emisión con un espectroscopio sencillo y relación de la luz con la energía de los fotones.",
+   "indicador": "3.5. Relaciona la longitud de onda, la frecuencia y la energía de la luz y explica los espectros atómicos de emisión y absorción como huellas de cada elemento."
+  },
+  {
+   "id": "G10-QUI-U3-3.6",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "Estructura del átomo",
+   "procedimental": "3.6. Cálculo de las energías y longitudes de onda de las transiciones del átomo de hidrógeno con el modelo de Bohr.",
+   "indicador": "3.6. Calcula la longitud de onda de las líneas espectrales del hidrógeno con la ecuación de Rydberg y las asigna a la serie correspondiente."
+  },
+  {
+   "id": "G10-QUI-U3-3.7",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "El modelo mecanocuántico",
+   "procedimental": "3.7. Análisis de las limitaciones del modelo de Bohr y de las hipótesis que fundamentan el modelo mecanocuántico del átomo.",
+   "indicador": "3.7. Explica las limitaciones del modelo de Bohr y las hipótesis de De Broglie, Heisenberg y Schrödinger que dan lugar al concepto de orbital."
+  },
+  {
+   "id": "G10-QUI-U3-3.8",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "El modelo mecanocuántico",
+   "procedimental": "3.8. Determinación de los valores permitidos de los números cuánticos y de su relación con niveles, subniveles y orbitales.",
+   "indicador": "3.8. Determina los conjuntos permitidos de números cuánticos de un electrón e identifica los que son imposibles justificando la regla que violan."
+  },
+  {
+   "id": "G10-QUI-U3-3.9",
+   "unidad": "3. Modelos atómicos y estructura",
+   "contenido": "El modelo mecanocuántico",
+   "procedimental": "3.9. Interpretación de la forma, el tamaño y la energía relativa de los orbitales y de su orden de llenado mediante el diagrama de Möller.",
+   "indicador": "3.9. Describe la forma de los orbitales s, p y d y ordena los subniveles por energía creciente aplicando la regla n + l y el diagrama de Möller."
+  },
+  {
+   "id": "G10-QUI-U4-4.1",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Construcción de la tabla periódica",
+   "procedimental": "4.1. Análisis de los aportes y las limitaciones de las clasificaciones históricas de los elementos hasta la tabla de Mendeléiev.",
+   "indicador": "4.1. Evalúa los aportes y las limitaciones de las clasificaciones históricas de los elementos y explica el valor predictivo de la tabla de Mendeléiev."
+  },
+  {
+   "id": "G10-QUI-U4-4.2",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Construcción de la tabla periódica",
+   "procedimental": "4.2. Interpretación de la ley periódica actual y de la organización de la tabla en grupos, periodos y tipos de elementos.",
+   "indicador": "4.2. Explica por qué la tabla actual se ordena por número atómico y ubica a los elementos según su grupo, periodo y carácter metálico."
+  },
+  {
+   "id": "G10-QUI-U4-4.3",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Construcción de la tabla periódica",
+   "procedimental": "4.3. Relación entre la configuración electrónica de la capa de valencia y la posición de los elementos en los bloques de la tabla periódica.",
+   "indicador": "4.3. Deduce el grupo, el periodo y el bloque de un elemento a partir de su configuración electrónica y escribe la configuración de sus iones más comunes."
+  },
+  {
+   "id": "G10-QUI-U4-4.4",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Propiedades periódicas",
+   "procedimental": "4.4. Análisis de la variación del radio atómico y del radio iónico en la tabla periódica en función de la carga nuclear efectiva.",
+   "indicador": "4.4. Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva y compara el tamaño de átomos con el de sus iones."
+  },
+  {
+   "id": "G10-QUI-U4-4.5",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Propiedades periódicas",
+   "procedimental": "4.5. Interpretación de las energías de ionización sucesivas y de su variación en la tabla periódica a partir de datos reales.",
+   "indicador": "4.5. Deduce el número de electrones de valencia de un elemento a partir del salto en sus energías de ionización sucesivas y explica su variación periódica."
+  },
+  {
+   "id": "G10-QUI-U4-4.6",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Propiedades periódicas",
+   "procedimental": "4.6. Interpretación de la afinidad electrónica como cambio de energía y de su variación según la posición de los elementos en la tabla periódica.",
+   "indicador": "4.6. Interpreta el signo de la afinidad electrónica como proceso exotérmico o endotérmico y explica por qué los halógenos tienen los valores más favorables."
+  },
+  {
+   "id": "G10-QUI-U4-4.7",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Propiedades periódicas",
+   "procedimental": "4.7. Comparación de las escalas de electronegatividad y uso de la diferencia de electronegatividad para anticipar el tipo de enlace.",
+   "indicador": "4.7. Explica la variación de la electronegatividad en la tabla periódica y usa la diferencia de electronegatividad para predecir la polaridad de un enlace."
+  },
+  {
+   "id": "G10-QUI-U4-4.8",
+   "unidad": "4. Tabla periódica de los elementos",
+   "contenido": "Propiedades periódicas",
+   "procedimental": "4.8. Análisis de las tendencias de reactividad de metales y no metales en la tabla periódica a partir de demostraciones y videos.",
+   "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad."
+  },
+  {
+   "id": "G10-QUI-U5-5.1",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Naturaleza del enlace químico",
+   "procedimental": "5.1. Interpretación de la curva de energía potencial frente a la distancia internuclear en la formación de un enlace.",
+   "indicador": "5.1. Explica la formación de un enlace a partir del mínimo de energía de la curva energía-distancia internuclear."
+  },
+  {
+   "id": "G10-QUI-U5-5.10",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Enlace iónico",
+   "procedimental": "5.10. Descripción de las etapas de formación de un compuesto iónico y de los tipos de redes cristalinas.",
+   "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl."
+  },
+  {
+   "id": "G10-QUI-U5-5.11",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Enlace iónico",
+   "procedimental": "5.11. Cálculo de la energía reticular de compuestos iónicos mediante el ciclo de Born-Haber.",
+   "indicador": "5.11. Calcula la energía reticular del NaCl y del MgO con el ciclo de Born-Haber y relaciona su valor con la estabilidad del cristal."
+  },
+  {
+   "id": "G10-QUI-U5-5.12",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Propiedades de las sustancias iónicas",
+   "procedimental": "5.12. Comprobación experimental de la conductividad eléctrica de sustancias iónicas en estado sólido y en disolución.",
+   "indicador": "5.12. Explica por qué los compuestos iónicos conducen la corriente eléctrica disueltos en agua pero no en estado sólido."
+  },
+  {
+   "id": "G10-QUI-U5-5.13",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Enlace metálico",
+   "procedimental": "5.13. Explicación del enlace metálico mediante el modelo de la nube electrónica y la teoría de bandas.",
+   "indicador": "5.13. Explica la diferencia entre conductores, semiconductores y aislantes a partir de la teoría de bandas."
+  },
+  {
+   "id": "G10-QUI-U5-5.14",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Propiedades de las sustancias metálicas",
+   "procedimental": "5.14. Relación de las propiedades de los metales y sus aleaciones con el modelo de enlace metálico.",
+   "indicador": "5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos."
+  },
+  {
+   "id": "G10-QUI-U5-5.2",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Enlace covalente",
+   "procedimental": "5.2. Construcción de estructuras de Lewis de moléculas e iones poliatómicos, incluidas las excepciones a la regla del octeto.",
+   "indicador": "5.2. Representa estructuras de Lewis de moléculas e iones poliatómicos y reconoce casos de hipovalencia e hipervalencia."
+  },
+  {
+   "id": "G10-QUI-U5-5.3",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Enlace covalente",
+   "procedimental": "5.3. Comparación de la teoría del enlace de valencia y la teoría de orbitales moleculares en la explicación del enlace covalente.",
+   "indicador": "5.3. Calcula el orden de enlace de moléculas diatómicas sencillas con la teoría de orbitales moleculares y lo relaciona con su estabilidad."
+  },
+  {
+   "id": "G10-QUI-U5-5.4",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Enlace covalente",
+   "procedimental": "5.4. Representación de enlaces múltiples y estructuras resonantes en moléculas e iones.",
+   "indicador": "5.4. Representa las estructuras resonantes del ozono y del ion carbonato y explica por qué sus enlaces tienen la misma longitud."
+  },
+  {
+   "id": "G10-QUI-U5-5.5",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Polaridad de las moléculas",
+   "procedimental": "5.5. Clasificación de enlaces y moléculas según la diferencia de electronegatividad y el momento dipolar.",
+   "indicador": "5.5. Clasifica enlaces como apolares, polares o iónicos según la diferencia de electronegatividad y determina si una molécula es polar."
+  },
+  {
+   "id": "G10-QUI-U5-5.6",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Geometría molecular",
+   "procedimental": "5.6. Predicción de la geometría molecular y los ángulos de enlace mediante la teoría de repulsión de los pares electrónicos de la capa de valencia.",
+   "indicador": "5.6. Predice la geometría y los ángulos de enlace de moléculas con hasta seis dominios electrónicos aplicando la TRPECV."
+  },
+  {
+   "id": "G10-QUI-U5-5.7",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Geometría molecular",
+   "procedimental": "5.7. Relación entre el tipo de hibridación del átomo central y la geometría de la molécula.",
+   "indicador": "5.7. Asigna la hibridación sp, sp² o sp³ al átomo central de una molécula y la relaciona con su geometría y sus enlaces σ y π."
+  },
+  {
+   "id": "G10-QUI-U5-5.8",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Fuerzas intermoleculares",
+   "procedimental": "5.8. Análisis de la relación entre el tipo de fuerza intermolecular y el punto de ebullición de sustancias moleculares.",
+   "indicador": "5.8. Explica las diferencias en los puntos de ebullición de sustancias moleculares según sus fuerzas de dispersión, dipolo-dipolo y enlaces de hidrógeno."
+  },
+  {
+   "id": "G10-QUI-U5-5.9",
+   "unidad": "5. Los enlaces químicos",
+   "contenido": "Sustancias covalentes",
+   "procedimental": "5.9. Comparación de las propiedades de las sustancias moleculares y los sólidos covalentes reticulares.",
+   "indicador": "5.9. Diferencia sustancias moleculares de sólidos covalentes por su dureza, punto de fusión y conductividad."
+  },
+  {
+   "id": "G10-QUI-U6-6.1",
+   "unidad": "6. Los gases",
+   "contenido": "El estado gaseoso",
+   "procedimental": "6.1. Medición de la presión atmosférica y análisis de su variación con la altitud.",
+   "indicador": "6.1. Explica la variación de la presión atmosférica con la altitud a partir de mediciones y del experimento de Torricelli."
+  },
+  {
+   "id": "G10-QUI-U6-6.2",
+   "unidad": "6. Los gases",
+   "contenido": "Leyes de los gases",
+   "procedimental": "6.2. Comprobación experimental de la ley de Boyle-Mariotte y análisis gráfico de las leyes de Charles y Gay-Lussac.",
+   "indicador": "6.2. Determina con datos experimentales la constante de proporcionalidad de la ley de Boyle-Mariotte y aplica las leyes de Charles y Gay-Lussac."
+  },
+  {
+   "id": "G10-QUI-U6-6.3",
+   "unidad": "6. Los gases",
+   "contenido": "Ecuación de estado",
+   "procedimental": "6.3. Cálculo de cantidades de gases producidos o consumidos en reacciones químicas mediante la ecuación de estado del gas ideal.",
+   "indicador": "6.3. Calcula el volumen de gas producido en una reacción química combinando la estequiometría con la ecuación PV = nRT."
+  },
+  {
+   "id": "G10-QUI-U6-6.4",
+   "unidad": "6. Los gases",
+   "contenido": "Mezclas de gases",
+   "procedimental": "6.4. Cálculo de presiones parciales y fracciones molares en mezclas de gases, incluida la recolección de gases sobre agua.",
+   "indicador": "6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total."
+  },
+  {
+   "id": "G10-QUI-U6-6.5",
+   "unidad": "6. Los gases",
+   "contenido": "El aire",
+   "procedimental": "6.5. Análisis de la composición del aire y de datos de humedad y contaminantes atmosféricos en El Salvador.",
+   "indicador": "6.5. Interpreta datos de composición del aire, humedad relativa y concentración de contaminantes para valorar la calidad del aire local."
+  },
+  {
+   "id": "G10-QUI-U6-6.6",
+   "unidad": "6. Los gases",
+   "contenido": "Difusión y efusión",
+   "procedimental": "6.6. Aplicación de la ley de Graham para comparar las velocidades de difusión y efusión de distintos gases.",
+   "indicador": "6.6. Calcula la relación de velocidades de efusión de dos gases con la ley de Graham y la relaciona con sus masas molares."
+  },
+  {
+   "id": "G10-QUI-U6-6.7",
+   "unidad": "6. Los gases",
+   "contenido": "Gases reales",
+   "procedimental": "6.7. Comparación del comportamiento de gases reales e ideales mediante el factor de compresibilidad y la ecuación de van der Waals.",
+   "indicador": "6.7. Explica las desviaciones del comportamiento ideal de un gas real a altas presiones y bajas temperaturas usando el factor de compresibilidad."
+  },
+  {
+   "id": "G10-QUI-U7-7.1",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "Estados de agregación",
+   "procedimental": "7.1. Comparación de las características de sólidos, líquidos y gases mediante el modelo cinético de partículas.",
+   "indicador": "7.1. Explica las diferencias de forma, volumen, compresibilidad y fluidez de los tres estados con el modelo cinético de partículas."
+  },
+  {
+   "id": "G10-QUI-U7-7.2",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "Fuerzas entre partículas",
+   "procedimental": "7.2. Relación entre el tipo de partículas y de fuerzas presentes en un sólido y sus puntos de fusión.",
+   "indicador": "7.2. Clasifica sólidos en moleculares, iónicos, covalentes y metálicos según las partículas y fuerzas que los forman y ordena sus puntos de fusión."
+  },
+  {
+   "id": "G10-QUI-U7-7.3",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "Propiedades de los líquidos",
+   "procedimental": "7.3. Medición de la viscosidad, la tensión superficial y la capilaridad de líquidos y su relación con las fuerzas intermoleculares.",
+   "indicador": "7.3. Relaciona la viscosidad, la tensión superficial y la presión de vapor de distintos líquidos con la intensidad de sus fuerzas intermoleculares."
+  },
+  {
+   "id": "G10-QUI-U7-7.4",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "Propiedades de los sólidos",
+   "procedimental": "7.4. Análisis de las curvas de calentamiento de sólidos cristalinos y amorfos y del proceso de sublimación.",
+   "indicador": "7.4. Diferencia sólidos cristalinos de amorfos por su punto de fusión definido o su ablandamiento gradual en curvas de calentamiento."
+  },
+  {
+   "id": "G10-QUI-U7-7.5",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "Diagramas de fases",
+   "procedimental": "7.5. Interpretación de diagramas de fases para predecir el estado de una sustancia a una presión y temperatura dadas.",
+   "indicador": "7.5. Predice el estado de agregación del agua y del CO₂ a una presión y temperatura dadas usando su diagrama de fases."
+  },
+  {
+   "id": "G10-QUI-U7-7.6",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "El agua",
+   "procedimental": "7.6. Análisis del comportamiento anómalo de la densidad del agua y de su importancia para los ecosistemas acuáticos.",
+   "indicador": "7.6. Explica la densidad máxima del agua a 4 °C y la flotación del hielo a partir de la estructura de enlaces de hidrógeno."
+  },
+  {
+   "id": "G10-QUI-U7-7.7",
+   "unidad": "7. Los líquidos y los sólidos",
+   "contenido": "Estados frontera",
+   "procedimental": "7.7. Descripción de las características intermedias de los vidrios y los cristales líquidos y de sus aplicaciones tecnológicas.",
+   "indicador": "7.7. Explica por qué los vidrios y los cristales líquidos presentan propiedades intermedias entre sólidos y líquidos y describe sus aplicaciones."
+  },
+  {
+   "id": "G10-QUI-U8-8.1",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Dispersiones",
+   "procedimental": "8.1. Clasificación de dispersiones según el tamaño de las partículas de la fase dispersa y el estado de las fases.",
+   "indicador": "8.1. Clasifica dispersiones en disoluciones, coloides y suspensiones según el tamaño de partícula y justifica sus propiedades observables."
+  },
+  {
+   "id": "G10-QUI-U8-8.2",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Coloides",
+   "procedimental": "8.2. Identificación de coloides mediante el efecto Tyndall y clasificación en hidrófilos e hidrófobos.",
+   "indicador": "8.2. Identifica coloides con el efecto Tyndall y explica la estabilidad de coloides hidrófilos e hidrófobos."
+  },
+  {
+   "id": "G10-QUI-U8-8.3",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Concentración de las disoluciones",
+   "procedimental": "8.3. Cálculo de la concentración de disoluciones en molaridad, molalidad, fracción molar y partes por millón.",
+   "indicador": "8.3. Calcula la molalidad y la fracción molar de una disolución y las compara con su molaridad y su concentración en partes por millón."
+  },
+  {
+   "id": "G10-QUI-U8-8.4",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Preparación de disoluciones",
+   "procedimental": "8.4. Preparación de disoluciones de concentración conocida a partir de un soluto sólido y por dilución de una disolución madre.",
+   "indicador": "8.4. Prepara disoluciones de concentración conocida pesando un soluto sólido y diluyendo una disolución madre con material volumétrico."
+  },
+  {
+   "id": "G10-QUI-U8-8.5",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Cálculos con disoluciones",
+   "procedimental": "8.5. Resolución de problemas de conversión de unidades de concentración, mezcla de disoluciones y estequiometría en disolución.",
+   "indicador": "8.5. Resuelve problemas que combinan conversión de unidades de concentración, mezcla de disoluciones y estequiometría en disolución."
+  },
+  {
+   "id": "G10-QUI-U8-8.6",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Proceso de disolución",
+   "procedimental": "8.6. Análisis del proceso de disolución de compuestos iónicos y covalentes polares y de su balance energético.",
+   "indicador": "8.6. Explica el proceso de disolución de un compuesto iónico mediante la hidratación de sus iones y relaciona el signo de la entalpía de disolución con el cambio de temperatura."
+  },
+  {
+   "id": "G10-QUI-U8-8.7",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Solubilidad",
+   "procedimental": "8.7. Interpretación de curvas de solubilidad de sólidos y gases en agua en función de la temperatura.",
+   "indicador": "8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura."
+  },
+  {
+   "id": "G10-QUI-U8-8.8",
+   "unidad": "8. Disoluciones y coloides",
+   "contenido": "Propiedades coligativas",
+   "procedimental": "8.8. Cálculo de las variaciones de las propiedades coligativas y su aplicación en procesos tecnológicos y biológicos.",
+   "indicador": "8.8. Calcula el aumento del punto de ebullición, el descenso del punto de congelación y la presión osmótica de disoluciones y explica la ósmosis inversa."
+  },
+  {
+   "id": "G10-QUI-U9-9.1",
+   "unidad": "9. Reacciones químicas",
+   "contenido": "Representación de las reacciones químicas",
+   "procedimental": "9.1. Interpretación de ecuaciones químicas balanceadas con estados de agregación, condiciones de reacción y conservación de átomos y masa.",
+   "indicador": "9.1. Interpreta la información cualitativa y cuantitativa que aporta una ecuación química balanceada, incluidos estados de agregación y condiciones de reacción."
+  },
+  {
+   "id": "G10-QUI-U9-9.2",
+   "unidad": "9. Reacciones químicas",
+   "contenido": "Clasificación de las reacciones químicas",
+   "procedimental": "9.2. Clasificación de reacciones químicas cotidianas e industriales según la reorganización de sus reactivos y productos.",
+   "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación."
+  },
+  {
+   "id": "G10-QUI-U9-9.3",
+   "unidad": "9. Reacciones químicas",
+   "contenido": "Evidencias de las reacciones químicas",
+   "procedimental": "9.3. Observación experimental de evidencias de cambio químico en reacciones con reactivos seguros de uso escolar.",
+   "indicador": "9.3. Relaciona cada evidencia observada en el laboratorio (cambio de color, gas, precipitado o variación de temperatura) con la reacción química que la produce."
+  },
+  {
+   "id": "G10-QUI-U9-9.4",
+   "unidad": "9. Reacciones químicas",
+   "contenido": "Seguridad en el laboratorio de química",
+   "procedimental": "9.4. Análisis de pictogramas SGA y fichas de datos de seguridad para planificar el manejo y la disposición de residuos de las reacciones escolares.",
+   "indicador": "9.4. Elabora un protocolo de seguridad para una práctica de reacciones químicas que identifica peligros con pictogramas SGA y define la disposición correcta de cada residuo."
+  }
+ ]
+}

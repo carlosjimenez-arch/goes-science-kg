@@ -51,8 +51,9 @@ clasificaciones previas es `(archivo canónico, hoja, fila)`.
 Exportar: `gskg grafo exportar` (GraphML). Para Neo4j, agregar `exportar --formato neo4j`
 (CSV de nodos y relaciones) en la fase 2 si hace falta.
 
-## Estado v0 (lo que ya existe)
-2.326 nodos y 9.350 aristas: 1.260 temas, 493 objetivos de marco (incluidos los 263 de ACARA Senior
-Secondary), 506 objetivos de países y 2.027 aristas CUBRE. Hay 49 temas sin asignatura y 338 aristas de
-confianza baja.
+## Estado v1 (2026-10-05)
+2.854 nodos y 15.479 aristas: 1.260 temas, 498 conceptos, 30 prácticas, 493 objetivos de marco, 506 objetivos de
+países; 4.789 TRABAJA (temas, objetivos de marco y de países → conceptos y prácticas), 797 PRERREQUISITO_DE,
+2.027 CUBRE. `EQUIVALE_A` también une conceptos equivalentes entre asignaturas (método `revision`).
+Sin temas por asignar; 501 aristas de confianza baja pendientes de revisión humana.
 Ver `data/grafo/manifest.json`.

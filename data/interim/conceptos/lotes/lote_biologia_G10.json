@@ -1,0 +1,1321 @@
+{
+ "lote": "biologia_G10",
+ "version": "etiquetado-v1",
+ "instrucciones": "prompts/etiquetar_conceptos.md",
+ "vocabulario": [
+  {
+   "id": "CON:biologia/acervo-genico-y-frecuencias-alelicas",
+   "nombre": "Acervo génico y frecuencias alélicas",
+   "definicion": "Conjunto de alelos de una población y la proporción de cada uno; la evolución es el cambio de esas frecuencias."
+  },
+  {
+   "id": "CON:biologia/adaptaciones-conductuales",
+   "nombre": "Adaptaciones conductuales",
+   "definicion": "Conductas como migración, hibernación o vida en grupo que aumentan la supervivencia de los animales en su ambiente."
+  },
+  {
+   "id": "CON:biologia/adaptaciones-estructurales",
+   "nombre": "Adaptaciones estructurales",
+   "definicion": "Rasgos físicos, como camuflaje, tallos gruesos o espinas, que ayudan a un organismo a sobrevivir en su ambiente."
+  },
+  {
+   "id": "CON:biologia/adn-y-cromosomas",
+   "nombre": "ADN y cromosomas",
+   "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular."
+  },
+  {
+   "id": "CON:biologia/amenazas-a-la-biodiversidad",
+   "nombre": "Amenazas a la biodiversidad",
+   "definicion": "Sobreexplotación, destrucción de hábitats, monocultivos, especies invasoras y contaminación reducen especies y aceleran el cambio de ecosistemas."
+  },
+  {
+   "id": "CON:biologia/atp-y-energia-celular",
+   "nombre": "ATP y energía en los sistemas vivos",
+   "definicion": "El ATP almacena y transfiere energía en la célula; los seres vivos transforman energía cumpliendo las leyes de la termodinámica."
+  },
+  {
+   "id": "CON:biologia/biodiversidad",
+   "nombre": "Biodiversidad",
+   "definicion": "Variedad de la vida en sus niveles de genes, especies y ecosistemas en una región o en todo el planeta."
+  },
+  {
+   "id": "CON:biologia/biomas-y-tipos-de-ambientes",
+   "nombre": "Biomas y clasificación de ambientes",
+   "definicion": "Grandes ecosistemas, como selvas, bosques, sabanas y desiertos, descritos y clasificados por su clima, sustrato y especies características."
+  },
+  {
+   "id": "CON:biologia/biomoleculas",
+   "nombre": "Biomoléculas",
+   "definicion": "Carbohidratos, lípidos, proteínas y ácidos nucleicos: moléculas orgánicas que forman las estructuras y sostienen las funciones celulares."
+  },
+  {
+   "id": "CON:biologia/biotecnologia-microbiana",
+   "nombre": "Biotecnología microbiana",
+   "definicion": "Uso de bacterias, levaduras y hongos para producir alimentos, medicamentos, enzimas o biocombustibles mediante fermentación y modificación genética."
+  },
+  {
+   "id": "CON:biologia/biotecnologia-vegetal",
+   "nombre": "Biotecnología vegetal y agroindustria",
+   "definicion": "Mejoramiento genético, cultivo de tejidos y plantas transgénicas para aumentar productividad, resistencia y calidad de cultivos."
+  },
+  {
+   "id": "CON:biologia/cadena-alimentaria",
+   "nombre": "Cadena alimentaria",
+   "definicion": "Secuencia lineal que muestra quién se come a quién, desde un productor hasta varios niveles de consumidores."
+  },
+  {
+   "id": "CON:biologia/cambio-climatico-y-seres-vivos",
+   "nombre": "Cambio climático y seres vivos",
+   "definicion": "El calentamiento global altera distribución de especies, ciclos de vida y capacidad de carga de los ecosistemas."
+  },
+  {
+   "id": "CON:biologia/capacidad-de-carga",
+   "nombre": "Capacidad de carga",
+   "definicion": "Tamaño máximo de población que un ambiente sostiene, alterable por cambios bióticos, abióticos y eventos climáticos."
+  },
+  {
+   "id": "CON:biologia/celula-animal-y-vegetal",
+   "nombre": "Célula animal y célula vegetal",
+   "definicion": "La célula vegetal se distingue de la animal por tener pared celular, cloroplastos y una vacuola central grande."
+  },
+  {
+   "id": "CON:biologia/celula-procariota-y-eucariota",
+   "nombre": "Célula procariota y eucariota",
+   "definicion": "Las procariotas carecen de núcleo y organelos membranosos y tienen cromosoma circular; ambas comparten origen evolutivo común."
+  },
+  {
+   "id": "CON:biologia/ciclo-de-vida-de-las-plantas",
+   "nombre": "Ciclo de vida de las plantas",
+   "definicion": "Etapas de germinación, crecimiento, floración, polinización, formación del fruto y dispersión de semillas en plantas con flor."
+  },
+  {
+   "id": "CON:biologia/ciclo-de-vida-de-los-animales",
+   "nombre": "Ciclo de vida de los animales",
+   "definicion": "Etapas de nacimiento, crecimiento, reproducción y muerte; algunos animales, como ranas y mariposas, presentan metamorfosis."
+  },
+  {
+   "id": "CON:biologia/ciclo-del-agua-y-seres-vivos",
+   "nombre": "Papel de los seres vivos en el ciclo del agua",
+   "definicion": "Los seres vivos toman, usan y devuelven agua mediante transpiración, respiración, bebida y desechos, participando del ciclo hidrológico."
+  },
+  {
+   "id": "CON:biologia/ciclo-del-carbono-y-oxigeno",
+   "nombre": "Ciclos del carbono y del oxígeno",
+   "definicion": "Circulación de carbono y oxígeno entre atmósfera, seres vivos, suelos y océanos mediante fotosíntesis, respiración, descomposición y combustión."
+  },
+  {
+   "id": "CON:biologia/ciclo-del-nitrogeno",
+   "nombre": "Ciclo del nitrógeno",
+   "definicion": "Transformación del nitrógeno por bacterias fijadoras, nitrificantes y desnitrificantes entre atmósfera, suelo y seres vivos."
+  },
+  {
+   "id": "CON:biologia/ciclos-del-fosforo-y-azufre",
+   "nombre": "Ciclos del fósforo y del azufre",
+   "definicion": "Circulación de fósforo y azufre entre rocas, suelo, agua y seres vivos; el fósforo carece de fase atmosférica significativa."
+  },
+  {
+   "id": "CON:biologia/circulacion-e-intercambio-capilar",
+   "nombre": "Circulación e intercambio capilar",
+   "definicion": "Los capilares, por sus paredes finas y gran superficie, permiten el intercambio de materiales entre la sangre y los tejidos."
+  },
+  {
+   "id": "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
+   "nombre": "Clasificación de seres vivos por sus rasgos",
+   "definicion": "Agrupación de plantas y animales según rasgos físicos y de conducta observables, como cubierta corporal, forma de reproducirse o de desplazarse."
+  },
+  {
+   "id": "CON:biologia/clasificacion-jerarquica",
+   "nombre": "Clasificación jerárquica y nomenclatura",
+   "definicion": "Sistema de categorías anidadas, de dominio a especie, basado en semejanzas de rasgos y secuencias, con nombre científico binomial."
+  },
+  {
+   "id": "CON:biologia/competencia-por-recursos",
+   "nombre": "Competencia por recursos",
+   "definicion": "Interacción entre organismos que necesitan el mismo recurso limitado, como alimento, agua, luz o espacio."
+  },
+  {
+   "id": "CON:biologia/concepto-de-especie",
+   "nombre": "Concepto de especie",
+   "definicion": "Grupo de organismos semejantes morfológica o genéticamente que se reproducen entre sí con descendencia fértil, con excepciones."
+  },
+  {
+   "id": "CON:biologia/conservacion-de-la-biodiversidad",
+   "nombre": "Conservación de la biodiversidad",
+   "definicion": "Estrategias como áreas protegidas, protección de especies endémicas y restauración ecológica para mantener la diversidad biológica."
+  },
+  {
+   "id": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "nombre": "Contagio y prevención de enfermedades",
+   "definicion": "Algunas enfermedades se transmiten por contacto entre personas; lavado de manos, higiene y vacunas ayudan a prevenirlas."
+  },
+  {
+   "id": "CON:biologia/contaminacion-y-seres-vivos",
+   "nombre": "Contaminación y sus efectos en los seres vivos",
+   "definicion": "Sustancias o desechos en aire, agua y suelo que dañan la salud de personas, plantas y animales."
+  },
+  {
+   "id": "CON:biologia/crecimiento-poblacional",
+   "nombre": "Crecimiento poblacional",
+   "definicion": "Cambio del tamaño de una población según natalidad, mortalidad y migración, con modelos de crecimiento exponencial y logístico."
+  },
+  {
+   "id": "CON:biologia/depredacion",
+   "nombre": "Depredación",
+   "definicion": "Relación en la que un depredador caza y consume a su presa, regulando el tamaño de ambas poblaciones."
+  },
+  {
+   "id": "CON:biologia/diferenciacion-y-especializacion-celular",
+   "nombre": "Diferenciación y especialización celular",
+   "definicion": "Proceso por el que células con el mismo genoma adquieren estructuras y funciones distintas para formar tejidos especializados."
+  },
+  {
+   "id": "CON:biologia/difusion-y-osmosis",
+   "nombre": "Difusión y ósmosis",
+   "definicion": "Movimiento pasivo de sustancias a favor de su gradiente de concentración; la ósmosis es la difusión de agua a través de membranas."
+  },
+  {
+   "id": "CON:biologia/digestion-y-absorcion-de-nutrientes",
+   "nombre": "Digestión química y absorción de nutrientes",
+   "definicion": "Enzimas digestivas degradan macromoléculas y las vellosidades intestinales absorben los productos hacia la sangre."
+  },
+  {
+   "id": "CON:biologia/diversidad-genetica-de-poblaciones",
+   "nombre": "Diversidad genética de poblaciones",
+   "definicion": "Variedad de alelos en una población; si es reducida, la población es menos capaz de adaptarse y corre mayor riesgo de extinción."
+  },
+  {
+   "id": "CON:biologia/ecosistemas-acuaticos-y-marinos",
+   "nombre": "Ecosistemas acuáticos y marinos",
+   "definicion": "Ríos, lagos, manglares, arrecifes y océano, con zonas y organismos determinados por luz, salinidad, profundidad y corrientes."
+  },
+  {
+   "id": "CON:biologia/ecosistemas-naturales-rurales-urbanos",
+   "nombre": "Ecosistemas naturales, rurales y urbanos",
+   "definicion": "Ecosistemas con distinto grado de intervención humana que difieren en rasgos físicos, organismos y relaciones entre ellos."
+  },
+  {
+   "id": "CON:biologia/enfermedades-infecciosas-y-no-infecciosas",
+   "nombre": "Enfermedades infecciosas y no infecciosas",
+   "definicion": "Las infecciosas las causa un patógeno y se transmiten entre hospederos; las genéticas o del estilo de vida no son contagiosas."
+  },
+  {
+   "id": "CON:biologia/enzimas",
+   "nombre": "Enzimas",
+   "definicion": "Proteínas catalizadoras específicas cuya actividad depende de temperatura, pH, inhibidores y concentración de sustrato y productos."
+  },
+  {
+   "id": "CON:biologia/epidemiologia-y-control-de-brotes",
+   "nombre": "Propagación de enfermedades y control de brotes",
+   "definicion": "Persistencia del patógeno, transmisión, movilidad e inmunidad poblacional explican epidemias y permiten evaluar estrategias de control."
+  },
+  {
+   "id": "CON:biologia/equilibrio-de-hardy-weinberg",
+   "nombre": "Equilibrio de Hardy-Weinberg",
+   "definicion": "Modelo que predice frecuencias alélicas y genotípicas constantes en una población sin selección, mutación, migración ni deriva."
+  },
+  {
+   "id": "CON:biologia/especiacion-y-macroevolucion",
+   "nombre": "Especiación y macroevolución",
+   "definicion": "Formación de nuevas especies, p. ej. alopátrica, y diversificación de grupos por acumulación de cambios microevolutivos en el tiempo."
+  },
+  {
+   "id": "CON:biologia/especies-clave",
+   "nombre": "Especies clave",
+   "definicion": "Especies cuya disminución o desaparición altera la comunidad mucho más de lo esperado por su abundancia o biomasa."
+  },
+  {
+   "id": "CON:biologia/estrategias-reproductivas",
+   "nombre": "Estrategias reproductivas y supervivencia de la descendencia",
+   "definicion": "Producir muchas semillas o crías, o brindar cuidado parental, aumenta la probabilidad de que la descendencia sobreviva."
+  },
+  {
+   "id": "CON:biologia/estructura-del-adn",
+   "nombre": "Estructura del ADN",
+   "definicion": "Doble hélice de nucleótidos con bases complementarias (A-T, C-G) unidas por enlaces de hidrógeno débiles entre cadenas."
+  },
+  {
+   "id": "CON:biologia/estructuras-celulares-basicas",
+   "nombre": "Estructuras celulares básicas",
+   "definicion": "Membrana, citoplasma, núcleo, mitocondrias, cloroplastos, pared y vacuolas cumplen funciones específicas dentro de la célula."
+  },
+  {
+   "id": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "nombre": "Estructuras del cuerpo animal y su función",
+   "definicion": "Piel, huesos, músculos, corazón, pulmones y estómago cumplen funciones específicas de protección, sostén, movimiento, circulación, respiración y digestión."
+  },
+  {
+   "id": "CON:biologia/evidencias-de-la-evolucion",
+   "nombre": "Evidencias de la evolución",
+   "definicion": "Fósiles, anatomía comparada, embriología y genómica comparada muestran que las especies cambian y comparten ancestros comunes."
+  },
+  {
+   "id": "CON:biologia/extincion-de-especies",
+   "nombre": "Extinción de especies",
+   "definicion": "Desaparición de una especie cuando su variación no le permite sobrevivir y reproducirse ante cambios del ambiente."
+  },
+  {
+   "id": "CON:biologia/factores-bioticos-y-abioticos",
+   "nombre": "Factores bióticos y abióticos",
+   "definicion": "Componentes vivos e inertes de un ecosistema, como clima, suelo, agua y luz, que determinan qué organismos pueden habitarlo."
+  },
+  {
+   "id": "CON:biologia/factores-limitantes-de-poblaciones",
+   "nombre": "Factores limitantes de las poblaciones",
+   "definicion": "Depredadores, alimento, agua, espacio y enfermedades limitan el tamaño de una población y el equilibrio entre poblaciones."
+  },
+  {
+   "id": "CON:biologia/fases-de-la-fotosintesis",
+   "nombre": "Fases de la fotosíntesis y ciclo de Calvin",
+   "definicion": "Fase luminosa en tilacoides que produce ATP y NADPH, y ciclo de Calvin en el estroma que fija CO2 en azúcares."
+  },
+  {
+   "id": "CON:biologia/fecundacion-y-desarrollo-embrionario",
+   "nombre": "Fecundación y desarrollo embrionario",
+   "definicion": "Unión de gametos que forma un cigoto, el cual se divide y diferencia en embrión y luego en un nuevo organismo."
+  },
+  {
+   "id": "CON:biologia/fermentacion-y-respiracion-anaerobia",
+   "nombre": "Fermentación y respiración anaerobia",
+   "definicion": "Obtención de energía sin oxígeno que produce poco ATP y genera productos como ácido láctico o etanol."
+  },
+  {
+   "id": "CON:biologia/filogenia-y-parentesco-evolutivo",
+   "nombre": "Filogenia y parentesco evolutivo",
+   "definicion": "Los sistemas de clasificación y los árboles filogenéticos representan relaciones de ancestro común entre grupos de organismos."
+  },
+  {
+   "id": "CON:biologia/flujo-de-energia-y-piramides",
+   "nombre": "Flujo de energía y pirámides ecológicas",
+   "definicion": "La energía solar pasa de productores a consumidores, perdiéndose como calor en cada nivel; se representa con pirámides de energía o biomasa."
+  },
+  {
+   "id": "CON:biologia/fosiles",
+   "nombre": "Fósiles y registro fósil",
+   "definicion": "Restos o huellas de organismos conservados en rocas sedimentarias que indican qué seres vivieron, cuándo y en qué ambientes."
+  },
+  {
+   "id": "CON:biologia/fotosintesis",
+   "nombre": "Fotosíntesis",
+   "definicion": "Proceso por el que plantas y algas usan luz, agua, CO2 y clorofila para producir glucosa y liberar oxígeno."
+  },
+  {
+   "id": "CON:biologia/genes-y-alelos",
+   "nombre": "Genes y alelos",
+   "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas."
+  },
+  {
+   "id": "CON:biologia/genomica-y-perfiles-de-adn",
+   "nombre": "Secuenciación del ADN y perfiles genéticos",
+   "definicion": "Determinación del orden de nucleótidos para mapear genomas y obtención de perfiles de ADN que identifican a individuos."
+  },
+  {
+   "id": "CON:biologia/genotipo-y-fenotipo",
+   "nombre": "Genotipo y fenotipo",
+   "definicion": "El genotipo es la combinación de alelos de un individuo; el fenotipo son los rasgos observables que resultan de genes y ambiente."
+  },
+  {
+   "id": "CON:biologia/glucolisis-y-ciclo-de-krebs",
+   "nombre": "Glucólisis, ciclo de Krebs y cadena respiratoria",
+   "definicion": "Etapas de la respiración aerobia en citosol y mitocondria que oxidan la glucosa y producen la mayor parte del ATP."
+  },
+  {
+   "id": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+   "nombre": "Grupos de alimentos y dieta balanceada",
+   "definicion": "Los alimentos se agrupan según su aporte; una dieta balanceada combina grupos en proporciones adecuadas para crecer y mantenerse sano."
+  },
+  {
+   "id": "CON:biologia/grupos-de-vertebrados",
+   "nombre": "Grupos de vertebrados",
+   "definicion": "Mamíferos, aves, reptiles, anfibios y peces se distinguen por rasgos como cubierta corporal, respiración, reproducción y regulación de temperatura."
+  },
+  {
+   "id": "CON:biologia/habitat-y-ecosistemas-comunes",
+   "nombre": "Hábitat y ecosistemas comunes",
+   "definicion": "Lugar donde vive un organismo; bosques, desiertos, sabanas, ríos y océanos albergan plantas y animales adaptados a sus condiciones."
+  },
+  {
+   "id": "CON:biologia/habitos-de-vida-saludable",
+   "nombre": "Hábitos de vida saludable",
+   "definicion": "Ejercicio, descanso, higiene, buena alimentación y cuidado emocional mantienen la salud física y mental y previenen enfermedades."
+  },
+  {
+   "id": "CON:biologia/herencia-de-rasgos",
+   "nombre": "Herencia de rasgos",
+   "definicion": "La descendencia se parece a sus progenitores porque hereda rasgos; otros rasgos se adquieren o aprenden y no se heredan."
+  },
+  {
+   "id": "CON:biologia/herencia-mendeliana",
+   "nombre": "Herencia mendeliana",
+   "definicion": "Transmisión de alelos dominantes y recesivos según segregación e independencia; las proporciones se predicen con cuadros de Punnett."
+  },
+  {
+   "id": "CON:biologia/herencia-no-mendeliana",
+   "nombre": "Herencia ligada al sexo, alelos múltiples y poligénica",
+   "definicion": "Patrones de herencia como la ligada al cromosoma X, codominancia, alelos múltiples (grupos sanguíneos) y rasgos de varios genes."
+  },
+  {
+   "id": "CON:biologia/historia-de-la-vida-en-la-tierra",
+   "nombre": "Historia de la vida en la Tierra",
+   "definicion": "La vida existe desde hace unos 3500 millones de años y ha cambiado y diversificado, con transformaciones drásticas de los ecosistemas."
+  },
+  {
+   "id": "CON:biologia/homeostasis",
+   "nombre": "Homeostasis",
+   "definicion": "Mantenimiento de condiciones internas estables, como temperatura y agua, mediante cambios fisiológicos, estructurales y conductuales."
+  },
+  {
+   "id": "CON:biologia/impacto-humano-en-los-ecosistemas",
+   "nombre": "Impacto humano en los ecosistemas",
+   "definicion": "Acciones humanas que perjudican o benefician las poblaciones de un ecosistema, como deforestación, reforestación o protección de especies."
+  },
+  {
+   "id": "CON:biologia/impulso-nervioso-y-sinapsis",
+   "nombre": "Impulso nervioso y sinapsis",
+   "definicion": "Potencial de acción a lo largo del axón y transmisión química entre neuronas mediante neurotransmisores y transducción de señales."
+  },
+  {
+   "id": "CON:biologia/ingenieria-genetica",
+   "nombre": "Ingeniería genética y ADN recombinante",
+   "definicion": "Uso de enzimas de restricción, ligasas y plásmidos como vectores para insertar genes en organismos y transformar bacterias."
+  },
+  {
+   "id": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
+   "nombre": "Inmunidad activa, pasiva y vacunas",
+   "definicion": "La inmunidad activa surge tras infección o vacunación; la pasiva proviene de anticuerpos recibidos por placenta o suero."
+  },
+  {
+   "id": "CON:biologia/inmunidad-adaptativa",
+   "nombre": "Inmunidad adaptativa",
+   "definicion": "Respuesta específica de vertebrados: humoral con anticuerpos de linfocitos B y celular con linfocitos T, con memoria inmunológica."
+  },
+  {
+   "id": "CON:biologia/inmunidad-innata",
+   "nombre": "Inmunidad innata",
+   "definicion": "Defensas generales de plantas y animales, como barreras, inflamación, fagocitos, defensinas y complemento, que actúan ante cualquier patógeno."
+  },
+  {
+   "id": "CON:biologia/intercambio-de-gases-en-animales",
+   "nombre": "Intercambio de gases en animales",
+   "definicion": "Difusión de oxígeno y dióxido de carbono por superficies respiratorias finas y extensas, comparando pulmones, branquias y tráqueas entre animales."
+  },
+  {
+   "id": "CON:biologia/intercambio-de-gases-en-plantas",
+   "nombre": "Intercambio de gases en plantas",
+   "definicion": "Entrada y salida de gases por estomas y superficies vegetales, con movimiento interno por difusión."
+  },
+  {
+   "id": "CON:biologia/invertebrados-e-insectos",
+   "nombre": "Invertebrados e insectos",
+   "definicion": "Animales sin columna vertebral, como insectos, arácnidos, moluscos y gusanos; los insectos tienen seis patas, tres regiones corporales y exoesqueleto."
+  },
+  {
+   "id": "CON:biologia/la-celula-unidad-de-la-vida",
+   "nombre": "La célula como unidad de la vida",
+   "definicion": "Todos los seres vivos están formados por células, que realizan las funciones vitales y proceden de otras células por división."
+  },
+  {
+   "id": "CON:biologia/mecanismos-de-microevolucion",
+   "nombre": "Mecanismos de microevolución",
+   "definicion": "Mutación, flujo génico, deriva genética y selección natural modifican las frecuencias alélicas de una población."
+  },
+  {
+   "id": "CON:biologia/medidas-de-biodiversidad",
+   "nombre": "Medidas de biodiversidad",
+   "definicion": "Índices de riqueza y abundancia relativa de especies que permiten comparar la biodiversidad entre lugares y momentos."
+  },
+  {
+   "id": "CON:biologia/meiosis",
+   "nombre": "Meiosis",
+   "definicion": "División celular que reduce a la mitad el número de cromosomas y forma gametos genéticamente distintos por entrecruzamiento y segregación."
+  },
+  {
+   "id": "CON:biologia/membrana-celular",
+   "nombre": "Membrana celular",
+   "definicion": "Bicapa de fosfolípidos con proteínas que delimita la célula y regula el paso de gases, nutrientes y desechos."
+  },
+  {
+   "id": "CON:biologia/microorganismos",
+   "nombre": "Microorganismos",
+   "definicion": "Seres vivos microscópicos, como bacterias, hongos microscópicos y protistas, que pueden ser beneficiosos o causar enfermedades."
+  },
+  {
+   "id": "CON:biologia/mitosis-y-ciclo-celular",
+   "nombre": "Mitosis y ciclo celular",
+   "definicion": "División del núcleo que produce dos células hijas genéticamente idénticas; permite el crecimiento, la reparación y la reproducción asexual."
+  },
+  {
+   "id": "CON:biologia/modelos-de-ecosistemas-y-muestreo",
+   "nombre": "Modelos ecológicos basados en muestreo",
+   "definicion": "Modelos de interacciones que predicen cambios del ecosistema a partir de muestras; su confiabilidad depende de la representatividad."
+  },
+  {
+   "id": "CON:biologia/mutaciones",
+   "nombre": "Mutaciones",
+   "definicion": "Cambios génicos o cromosómicos por errores de replicación o división, o por agentes ambientales; son la fuente última de nuevos alelos."
+  },
+  {
+   "id": "CON:biologia/necesidades-de-los-seres-vivos",
+   "nombre": "Necesidades de los seres vivos",
+   "definicion": "Plantas y animales requieren aire, agua, alimento o luz y un ambiente adecuado para sobrevivir."
+  },
+  {
+   "id": "CON:biologia/nicho-ecologico",
+   "nombre": "Nicho ecológico y exclusión competitiva",
+   "definicion": "Papel y conjunto de condiciones y recursos que usa una especie; dos especies no comparten el mismo nicho indefinidamente."
+  },
+  {
+   "id": "CON:biologia/niveles-de-organizacion",
+   "nombre": "Niveles de organización de los seres vivos",
+   "definicion": "Las células especializadas forman tejidos, los tejidos forman órganos y los órganos forman sistemas en organismos multicelulares."
+  },
+  {
+   "id": "CON:biologia/nutricion-autotrofa-y-heterotrofa",
+   "nombre": "Nutrición autótrofa y heterótrofa",
+   "definicion": "Las plantas fabrican su alimento con luz, aire y agua; los animales obtienen alimento comiendo plantas u otros animales."
+  },
+  {
+   "id": "CON:biologia/nutrientes-y-sus-funciones",
+   "nombre": "Nutrientes y sus funciones",
+   "definicion": "Carbohidratos, lípidos, proteínas, vitaminas, minerales y agua aportan energía, materiales de construcción y regulación al organismo."
+  },
+  {
+   "id": "CON:biologia/organelos-de-la-celula-eucariota",
+   "nombre": "Organelos de la célula eucariota",
+   "definicion": "Retículo endoplasmático, aparato de Golgi, lisosomas, mitocondrias y cloroplastos compartimentan síntesis, energía y eliminación de desechos."
+  },
+  {
+   "id": "CON:biologia/organos-de-los-sentidos",
+   "nombre": "Órganos de los sentidos",
+   "definicion": "Ojos, oídos, nariz, lengua y piel captan estímulos del ambiente y envían información al sistema nervioso."
+  },
+  {
+   "id": "CON:biologia/osmorregulacion",
+   "nombre": "Osmorregulación y equilibrio hídrico",
+   "definicion": "Mecanismos de animales y plantas para mantener el balance de agua y solutos, como la función de la nefrona."
+  },
+  {
+   "id": "CON:biologia/partes-de-la-planta-y-sus-funciones",
+   "nombre": "Partes de la planta y sus funciones",
+   "definicion": "Raíz, tallo, hoja, flor, fruto y semilla cumplen funciones de fijación, transporte, fabricación de alimento y reproducción."
+  },
+  {
+   "id": "CON:biologia/pcr-y-electroforesis",
+   "nombre": "PCR y electroforesis en gel",
+   "definicion": "La PCR amplifica fragmentos de ADN y la electroforesis los separa por tamaño para analizarlos y compararlos."
+  },
+  {
+   "id": "CON:biologia/presion-y-flujo-en-seres-vivos",
+   "nombre": "Presión y flujo de fluidos en los seres vivos",
+   "definicion": "Aplicación de presión, caudal y viscosidad al flujo sanguíneo, la presión arterial y el movimiento de fluidos en organismos."
+  },
+  {
+   "id": "CON:biologia/productores-consumidores-descomponedores",
+   "nombre": "Productores, consumidores y descomponedores",
+   "definicion": "Papeles de los organismos en un ecosistema: producir materia orgánica, consumirla o descomponerla devolviendo nutrientes al suelo."
+  },
+  {
+   "id": "CON:biologia/proteinas-estructura-y-funcion",
+   "nombre": "Proteínas: estructura y función",
+   "definicion": "Cadenas de aminoácidos plegadas cuya forma determina funciones estructurales, de transporte, de defensa, de señalización y enzimáticas."
+  },
+  {
+   "id": "CON:biologia/redes-troficas",
+   "nombre": "Redes tróficas",
+   "definicion": "Conjunto de cadenas alimentarias interconectadas que muestran las múltiples relaciones de alimentación de una comunidad."
+  },
+  {
+   "id": "CON:biologia/regulacion-de-la-expresion-genica",
+   "nombre": "Regulación de la expresión génica",
+   "definicion": "Control de cuándo y cuánto se transcriben y traducen los genes, que explica la diferenciación celular y la influencia ambiental."
+  },
+  {
+   "id": "CON:biologia/reinos-de-los-seres-vivos",
+   "nombre": "Grandes grupos taxonómicos",
+   "definicion": "Bacterias, protistas, hongos, plantas y animales se distinguen por tipo celular, nutrición, organización y reproducción."
+  },
+  {
+   "id": "CON:biologia/relacion-superficie-volumen",
+   "nombre": "Relación superficie-volumen",
+   "definicion": "Al crecer una célula su volumen aumenta más que su superficie, lo que limita el intercambio de materiales y su tamaño."
+  },
+  {
+   "id": "CON:biologia/relaciones-intraespecificas",
+   "nombre": "Relaciones intraespecíficas",
+   "definicion": "Interacciones entre individuos de la misma especie, como cooperación, sociedades, territorialidad y competencia por pareja o recursos."
+  },
+  {
+   "id": "CON:biologia/replicacion-del-adn",
+   "nombre": "Replicación del ADN",
+   "definicion": "Copia semiconservativa del ADN en la que cada cadena sirve de molde para sintetizar una nueva antes de la división celular."
+  },
+  {
+   "id": "CON:biologia/reproduccion-de-plantas-con-flor",
+   "nombre": "Reproducción sexual de las plantas con flor",
+   "definicion": "Polinización, fecundación en el ovario de la flor y formación de semilla y fruto en las angiospermas."
+  },
+  {
+   "id": "CON:biologia/reproduccion-humana-y-pubertad",
+   "nombre": "Reproducción humana y pubertad",
+   "definicion": "Órganos reproductores masculinos y femeninos, cambios de la pubertad, ciclo menstrual, fecundación y embarazo."
+  },
+  {
+   "id": "CON:biologia/reproduccion-sexual-y-asexual",
+   "nombre": "Reproducción sexual y asexual",
+   "definicion": "La reproducción asexual produce descendientes idénticos a partir de un progenitor; la sexual une gametos y genera descendencia variada."
+  },
+  {
+   "id": "CON:biologia/requerimientos-de-la-celula",
+   "nombre": "Requerimientos de materia y energía de la célula",
+   "definicion": "La célula necesita energía luminosa o química, gases, nutrientes e iones, y debe eliminar sus desechos para sobrevivir."
+  },
+  {
+   "id": "CON:biologia/resistencia-a-antibioticos",
+   "nombre": "Antibióticos y resistencia bacteriana",
+   "definicion": "Los antibióticos eliminan bacterias, pero las variantes resistentes sobreviven y se multiplican, haciendo que el fármaco pierda eficacia."
+  },
+  {
+   "id": "CON:biologia/respiracion-celular",
+   "nombre": "Respiración celular",
+   "definicion": "Proceso por el que las células usan oxígeno para degradar glucosa y obtener energía, liberando dióxido de carbono y agua."
+  },
+  {
+   "id": "CON:biologia/respuesta-a-estimulos",
+   "nombre": "Respuesta de los seres vivos a estímulos",
+   "definicion": "Los seres vivos detectan cambios externos como temperatura, luz o peligro y responden con conductas o cambios corporales."
+  },
+  {
+   "id": "CON:biologia/retroalimentacion-negativa",
+   "nombre": "Modelo estímulo-respuesta y retroalimentación negativa",
+   "definicion": "Receptores detectan un cambio, un centro de control lo procesa y efectores lo contrarrestan, devolviendo la variable a su valor normal."
+  },
+  {
+   "id": "CON:biologia/seleccion-natural",
+   "nombre": "Selección natural",
+   "definicion": "Los individuos con variaciones ventajosas sobreviven y se reproducen más, por lo que esos rasgos aumentan en la población."
+  },
+  {
+   "id": "CON:biologia/seres-vivos-y-no-vivos",
+   "nombre": "Seres vivos y no vivos",
+   "definicion": "Los seres vivos nacen, crecen, se nutren, responden a estímulos, se reproducen y mueren; los objetos no vivos no realizan esas funciones."
+  },
+  {
+   "id": "CON:biologia/simbiosis",
+   "nombre": "Simbiosis: mutualismo, comensalismo y parasitismo",
+   "definicion": "Relaciones estrechas entre especies en las que ambas se benefician, una se beneficia sin afectar a la otra o una la perjudica."
+  },
+  {
+   "id": "CON:biologia/sintesis-de-proteinas",
+   "nombre": "Síntesis de proteínas",
+   "definicion": "Transcripción de un gen a ARN mensajero y traducción en el ribosoma a una secuencia de aminoácidos según el código genético."
+  },
+  {
+   "id": "CON:biologia/sistema-circulatorio",
+   "nombre": "Sistema circulatorio",
+   "definicion": "Corazón, vasos sanguíneos y sangre transportan oxígeno, nutrientes y desechos entre los órganos del cuerpo."
+  },
+  {
+   "id": "CON:biologia/sistema-digestivo",
+   "nombre": "Sistema digestivo",
+   "definicion": "Conjunto de órganos que transforman los alimentos en nutrientes absorbibles y eliminan los residuos no digeridos."
+  },
+  {
+   "id": "CON:biologia/sistema-endocrino-y-hormonas",
+   "nombre": "Sistema endocrino y hormonas",
+   "definicion": "Glándulas endocrinas secretan hormonas que viajan por la sangre y modifican el metabolismo de células y órganos diana."
+  },
+  {
+   "id": "CON:biologia/sistema-excretor",
+   "nombre": "Sistema excretor",
+   "definicion": "Riñones y vías urinarias filtran la sangre y eliminan desechos y exceso de agua en forma de orina."
+  },
+  {
+   "id": "CON:biologia/sistema-inmunitario",
+   "nombre": "Sistema inmunitario",
+   "definicion": "Glóbulos blancos, anticuerpos y barreras del cuerpo que reconocen y eliminan patógenos y sustancias extrañas."
+  },
+  {
+   "id": "CON:biologia/sistema-locomotor",
+   "nombre": "Sistema locomotor",
+   "definicion": "Huesos, articulaciones y músculos trabajan juntos para sostener el cuerpo, proteger órganos y permitir el movimiento."
+  },
+  {
+   "id": "CON:biologia/sistema-nervioso",
+   "nombre": "Sistema nervioso",
+   "definicion": "Encéfalo, médula espinal y nervios reciben información, la procesan y coordinan las respuestas del cuerpo."
+  },
+  {
+   "id": "CON:biologia/sistema-respiratorio",
+   "nombre": "Sistema respiratorio",
+   "definicion": "Órganos que llevan aire a los pulmones, donde el oxígeno pasa a la sangre y se expulsa dióxido de carbono."
+  },
+  {
+   "id": "CON:biologia/sostenibilidad-de-la-biosfera",
+   "nombre": "Sostenibilidad de la biosfera",
+   "definicion": "Uso de recursos naturales que satisface necesidades humanas sin degradar los ecosistemas ni comprometer a generaciones futuras."
+  },
+  {
+   "id": "CON:biologia/sucesion-ecologica",
+   "nombre": "Sucesión ecológica",
+   "definicion": "Reemplazo gradual de poblaciones en un hábitat que modifica las condiciones bióticas y abióticas e impulsa nuevos cambios."
+  },
+  {
+   "id": "CON:biologia/tejidos-vegetales",
+   "nombre": "Tejidos vegetales",
+   "definicion": "Tejidos meristemáticos, protectores, fundamentales y conductores que forman los órganos de la planta según su función."
+  },
+  {
+   "id": "CON:biologia/termorregulacion",
+   "nombre": "Termorregulación",
+   "definicion": "Mecanismos estructurales, conductuales y fisiológicos con que los endotermos controlan el intercambio de calor y su temperatura corporal."
+  },
+  {
+   "id": "CON:biologia/tipos-de-patogenos",
+   "nombre": "Tipos de patógenos",
+   "definicion": "Priones, virus, bacterias, hongos, protistas y parásitos que causan enfermedades al invadir un organismo hospedero."
+  },
+  {
+   "id": "CON:biologia/transmision-de-patogenos",
+   "nombre": "Transmisión de patógenos",
+   "definicion": "Adaptaciones de los patógenos para entrar en células y propagarse por contacto, fluidos, alimentos, agua contaminada o vectores."
+  },
+  {
+   "id": "CON:biologia/transporte-activo-y-endocitosis",
+   "nombre": "Transporte activo y endocitosis",
+   "definicion": "Paso de sustancias contra su gradiente con gasto de ATP, o englobamiento de partículas en vesículas de membrana."
+  },
+  {
+   "id": "CON:biologia/transporte-en-plantas",
+   "nombre": "Transporte en plantas: xilema y floema",
+   "definicion": "El xilema conduce agua y minerales por presión radicular, transpiración y cohesión; el floema transloca azúcares fotosintéticos."
+  },
+  {
+   "id": "CON:biologia/tropismos-y-hormonas-vegetales",
+   "nombre": "Tropismos y hormonas vegetales",
+   "definicion": "Respuestas de crecimiento de las plantas a la luz, la gravedad o el contacto, reguladas por hormonas como las auxinas."
+  },
+  {
+   "id": "CON:biologia/variacion-genetica",
+   "nombre": "Variación genética en la descendencia",
+   "definicion": "La meiosis, la fecundación y las mutaciones hacen que la descendencia se parezca a sus progenitores sin ser idéntica."
+  },
+  {
+   "id": "CON:biologia/virus",
+   "nombre": "Virus",
+   "definicion": "Agentes acelulares con material genético y cápside que solo se replican dentro de células hospederas."
+  }
+ ],
+ "practicas": [
+  {
+   "id": "PRAC:formular-preguntas-investigables",
+   "nombre": "Formular preguntas investigables"
+  },
+  {
+   "id": "PRAC:formular-hipotesis-y-predicciones",
+   "nombre": "Formular hipótesis y predicciones"
+  },
+  {
+   "id": "PRAC:planificar-investigaciones",
+   "nombre": "Planificar investigaciones"
+  },
+  {
+   "id": "PRAC:controlar-variables",
+   "nombre": "Identificar y controlar variables"
+  },
+  {
+   "id": "PRAC:evaluar-disenos-de-investigacion",
+   "nombre": "Evaluar diseños de investigación"
+  },
+  {
+   "id": "PRAC:observar-y-registrar",
+   "nombre": "Observar y registrar sistemáticamente"
+  },
+  {
+   "id": "PRAC:medir-con-instrumentos",
+   "nombre": "Medir con instrumentos y unidades"
+  },
+  {
+   "id": "PRAC:trabajar-con-seguridad-y-etica",
+   "nombre": "Trabajar con seguridad y ética"
+  },
+  {
+   "id": "PRAC:repetir-mediciones-y-estimar-error",
+   "nombre": "Repetir mediciones y estimar el error"
+  },
+  {
+   "id": "PRAC:representar-datos",
+   "nombre": "Representar datos en tablas y gráficos"
+  },
+  {
+   "id": "PRAC:interpretar-datos-y-concluir",
+   "nombre": "Interpretar datos y sacar conclusiones"
+  },
+  {
+   "id": "PRAC:distinguir-correlacion-y-causalidad",
+   "nombre": "Distinguir correlación de causalidad"
+  },
+  {
+   "id": "PRAC:analizar-datos-con-estadistica",
+   "nombre": "Analizar datos con herramientas estadísticas"
+  },
+  {
+   "id": "PRAC:usar-matematicas-en-ciencias",
+   "nombre": "Usar matemáticas para resolver problemas científicos"
+  },
+  {
+   "id": "PRAC:usar-pensamiento-computacional-y-simulaciones",
+   "nombre": "Usar pensamiento computacional y simulaciones"
+  },
+  {
+   "id": "PRAC:desarrollar-y-usar-modelos",
+   "nombre": "Desarrollar y usar modelos"
+  },
+  {
+   "id": "PRAC:evaluar-modelos-y-limitaciones",
+   "nombre": "Evaluar modelos y sus limitaciones"
+  },
+  {
+   "id": "PRAC:transformar-representaciones",
+   "nombre": "Usar y transformar representaciones"
+  },
+  {
+   "id": "PRAC:construir-explicaciones-con-evidencia",
+   "nombre": "Construir explicaciones basadas en evidencia"
+  },
+  {
+   "id": "PRAC:argumentar-con-evidencia",
+   "nombre": "Argumentar con evidencia y razonamiento"
+  },
+  {
+   "id": "PRAC:evaluar-afirmaciones-y-argumentos",
+   "nombre": "Evaluar afirmaciones y argumentos"
+  },
+  {
+   "id": "PRAC:evaluar-fuentes-de-informacion",
+   "nombre": "Buscar y evaluar fuentes de información"
+  },
+  {
+   "id": "PRAC:comunicar-resultados",
+   "nombre": "Comunicar resultados científicos"
+  },
+  {
+   "id": "PRAC:distinguir-observacion-e-inferencia",
+   "nombre": "Distinguir observación de inferencia"
+  },
+  {
+   "id": "PRAC:naturaleza-provisional-del-conocimiento",
+   "nombre": "Reconocer el carácter provisional del conocimiento"
+  },
+  {
+   "id": "PRAC:ciencia-como-empresa-colectiva",
+   "nombre": "Valorar la ciencia como empresa colectiva"
+  },
+  {
+   "id": "PRAC:limites-de-la-ciencia",
+   "nombre": "Reconocer el alcance y límites de la ciencia"
+  },
+  {
+   "id": "PRAC:evaluar-implicaciones-y-decidir",
+   "nombre": "Evaluar implicaciones y tomar decisiones informadas"
+  },
+  {
+   "id": "PRAC:definir-problemas-de-diseno",
+   "nombre": "Definir problemas de diseño"
+  },
+  {
+   "id": "PRAC:disenar-y-evaluar-soluciones",
+   "nombre": "Diseñar y evaluar soluciones"
+  }
+ ],
+ "items": [
+  {
+   "id": "G10-BIO-U1-1.1",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Carbohidratos",
+   "procedimental": "1.1. Identificación de los carbohidratos y sus estructuras.",
+   "indicador": "1.1. Identifica la función carbohidrato y sus estructuras."
+  },
+  {
+   "id": "G10-BIO-U1-1.10",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Ácidos nucleicos",
+   "procedimental": "1.10. Identificación de las funciones de los nucleótidos libres.",
+   "indicador": "1.10. Identifica las funciones de los nucleótidos libres."
+  },
+  {
+   "id": "G10-BIO-U1-1.11",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Ácidos nucleicos",
+   "procedimental": "1.11. Interpretación de la estructura química de los ácidos nucleicos.",
+   "indicador": "1.11. Elabora modelos tridimensionales de las estructuras químicas de los ácidos nucleicos."
+  },
+  {
+   "id": "G10-BIO-U1-1.2",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Carbohidratos",
+   "procedimental": "1.2. Interpretación de las clasificaciones y las propiedades de los carbohidratos.",
+   "indicador": "1.2. Reconoce las clasificaciones y propiedades de los carbohidratos."
+  },
+  {
+   "id": "G10-BIO-U1-1.3",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Carbohidratos",
+   "procedimental": "1.3. Explicación de la importancia de los polisacáridos y su metabolismo.",
+   "indicador": "1.3. Explica la importancia de los polisacáridos y su metabolismo."
+  },
+  {
+   "id": "G10-BIO-U1-1.4",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Lípidos",
+   "procedimental": "1.4. Reconocimiento de los lípidos y su clasificación general.",
+   "indicador": "1.4. Reconoce la función lípidos y su clasificación general."
+  },
+  {
+   "id": "G10-BIO-U1-1.5",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Lípidos",
+   "procedimental": "1.5. Extracción de distintos tipos de lípidos.",
+   "indicador": "1.5. Realiza una extracción de lípidos."
+  },
+  {
+   "id": "G10-BIO-U1-1.6",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Lípidos",
+   "procedimental": "1.6. Explicación del metabolismo de lípidos.",
+   "indicador": "1.6. Describe el proceso general del me- tabolismo de los lípidos."
+  },
+  {
+   "id": "G10-BIO-U1-1.7",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Proteínas",
+   "procedimental": "1.7. Reconocimiento de la estructura de los aminoácidos y su estereoquímica.",
+   "indicador": "1.7. Reconoce la estructura general de los aminoácidos."
+  },
+  {
+   "id": "G10-BIO-U1-1.8",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Proteínas",
+   "procedimental": "1.8. Extracción e identificación de proteínas.",
+   "indicador": "1.8. Desarrolla un proceso de extracción de proteínas."
+  },
+  {
+   "id": "G10-BIO-U1-1.9",
+   "unidad": "1. Biomoléculas",
+   "contenido": "Proteínas",
+   "procedimental": "1.9. Clasificación de las proteínas de acuerdo con diferentes criterios.",
+   "indicador": "1.9. Clasifica a las proteínas empleando diferentes criterios."
+  },
+  {
+   "id": "G10-BIO-U2-2.1",
+   "unidad": "2. Biología celular",
+   "contenido": "Alimentación de las células",
+   "procedimental": "2.1. Indagación del uso de energía en los seres vivos a partir de fenómenos cotidianos.",
+   "indicador": "2.1. Ejemplifica el uso de energía en los seres vivos a partir de fenómenos cotidianos."
+  },
+  {
+   "id": "G10-BIO-U2-2.10",
+   "unidad": "2. Biología celular",
+   "contenido": "Respiración celular",
+   "procedimental": "2.10. Indagación de los procesos oxidativos que suceden en la respiración celular.",
+   "indicador": "2.10. Ejemplifica los procesos oxidativos que suceden en la respiración celular."
+  },
+  {
+   "id": "G10-BIO-U2-2.11",
+   "unidad": "2. Biología celular",
+   "contenido": "Respiración celular",
+   "procedimental": "2.11. Comprobación experimental de la respiración celular aerobia y la fermentación.",
+   "indicador": "2.11. Efectúa un experimento para comprobar la ocurrencia de la respiración celular aerobia o de la fermentación."
+  },
+  {
+   "id": "G10-BIO-U2-2.12",
+   "unidad": "2. Biología celular",
+   "contenido": "Respiración celular",
+   "procedimental": "2.12. Simulación del funcionamiento de una cadena de transporte de electrones.",
+   "indicador": "2.12. Explica el funcionamiento general de una cadena de transporte de electrones."
+  },
+  {
+   "id": "G10-BIO-U2-2.13",
+   "unidad": "2. Biología celular",
+   "contenido": "Fotosíntesis",
+   "procedimental": "2.13. Demostración experimental de la actividad fotosintética.",
+   "indicador": "2.13. Interpreta los resultados de un experimento demostrativo de la actividad fotosintética."
+  },
+  {
+   "id": "G10-BIO-U2-2.14",
+   "unidad": "2. Biología celular",
+   "contenido": "Fotosíntesis",
+   "procedimental": "2.14. Experimentación con la extracción y separación de pigmentos fotosintéticos.",
+   "indicador": "2.14. Efectúa un experimento de extracción y separación de pigmentos fotosintéticos."
+  },
+  {
+   "id": "G10-BIO-U2-2.15",
+   "unidad": "2. Biología celular",
+   "contenido": "Fotosíntesis",
+   "procedimental": "2.15. Simulación de los procesos de fotofosforilación de la fotosíntesis.",
+   "indicador": "2.15. Explica los procesos de fotofosforilación de la fotosíntesis."
+  },
+  {
+   "id": "G10-BIO-U2-2.2",
+   "unidad": "2. Biología celular",
+   "contenido": "Alimentación de las células",
+   "procedimental": "2.2. Análisis de los conceptos de entropía y organización en los seres vivos.",
+   "indicador": "2.2. Explica los conceptos de entropía y organización en los seres vivos."
+  },
+  {
+   "id": "G10-BIO-U2-2.3",
+   "unidad": "2. Biología celular",
+   "contenido": "Información molecular",
+   "procedimental": "2.3. Explicación del código genético y la nomenclatura de aminoácidos.",
+   "indicador": "2.3. Reconoce el código genético y la nomenclatura de aminoácidos como formas de representar información molecular."
+  },
+  {
+   "id": "G10-BIO-U2-2.4",
+   "unidad": "2. Biología celular",
+   "contenido": "Energía biológicamente útil",
+   "procedimental": "2.4. Indagación del concepto de energía biológicamente útil.",
+   "indicador": "2.4. Explica el concepto de energía biológicamente útil."
+  },
+  {
+   "id": "G10-BIO-U2-2.5",
+   "unidad": "2. Biología celular",
+   "contenido": "Energía biológicamente útil",
+   "procedimental": "2.5. Reconocimiento de los tipos de energía biológicamente útil empleando simulaciones o manipulativos.",
+   "indicador": "2.5. Reconoce los tipos de energía biológicamente útil."
+  },
+  {
+   "id": "G10-BIO-U2-2.6",
+   "unidad": "2. Biología celular",
+   "contenido": "Energía biológicamente útil",
+   "procedimental": "2.6. Exploración de procesos celulares que emplean energía biológicamente útil.",
+   "indicador": "2.6. Ejemplifica procesos celulares que emplean energía biológicamente útil."
+  },
+  {
+   "id": "G10-BIO-U2-2.7",
+   "unidad": "2. Biología celular",
+   "contenido": "Enzimas y metabolismo",
+   "procedimental": "2.7. Indagación de la presencia de enzimas en los seres vivos.",
+   "indicador": "2.7. Argumenta la presencia de enzimas en los seres vivos."
+  },
+  {
+   "id": "G10-BIO-U2-2.8",
+   "unidad": "2. Biología celular",
+   "contenido": "Enzimas y metabolismo",
+   "procedimental": "2.8. Demostración experimental de la actividad enzimática.",
+   "indicador": "2.8. Interpreta los resultados de un experimento demostrativo de la actividad enzimática."
+  },
+  {
+   "id": "G10-BIO-U2-2.9",
+   "unidad": "2. Biología celular",
+   "contenido": "Enzimas y metabolismo",
+   "procedimental": "2.9. Búsqueda y visualización de enzimas en bases de datos.",
+   "indicador": "2.9. Obtiene información de enzimas a partir del uso de bases de datos."
+  },
+  {
+   "id": "G10-BIO-U3-3.1",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistema nervioso",
+   "procedimental": "3.1. Indagación de los tipos de reflejos y las funciones corporales controladas por el sistema nervioso somático y autónomo.",
+   "indicador": "3.1. Ejemplifica los tipos de reflejos y las funciones corporales controladas por el sistema nervioso somático y autónomo."
+  },
+  {
+   "id": "G10-BIO-U3-3.10",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistema inmunitario",
+   "procedimental": "3.10. Reconocimiento de los componentes y líneas de defensa del sistema inmunitario con relación a la respuesta innata y adaptativa.",
+   "indicador": "3.10. Explica brevemente los componentes y líneas de defensa del sistema inmunitario en relación con la respuesta innata y adaptativa."
+  },
+  {
+   "id": "G10-BIO-U3-3.11",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistema inmunitario",
+   "procedimental": "3.11. Exploración de los impactos del estrés y del sueño en las respuestas inmunitarias.",
+   "indicador": "3.11. Describe los impactos del estrés y del sueño en las respuestas inmunitarias."
+  },
+  {
+   "id": "G10-BIO-U3-3.12",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistema inmunitario",
+   "procedimental": "3.12. Investigación de las enfermedades que afectan el sistema inmunitario y sus consecuencias.",
+   "indicador": "3.12. Ejemplifica enfermedades que afectan el sistema inmunitario y sus consecuencias."
+  },
+  {
+   "id": "G10-BIO-U3-3.2",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistema nervioso",
+   "procedimental": "3.2. Construcción de modelos de células nerviosas ajustados a sus funciones.",
+   "indicador": "3.2. Construye un modelo de neurona o neuroglia ajustado a su anatomía celular y funciones principales."
+  },
+  {
+   "id": "G10-BIO-U3-3.3",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistema nervioso",
+   "procedimental": "3.3. Explicación de la anatomía general y funciones corporales reguladas por el sistema nervioso central y el sistema nervioso periférico.",
+   "indicador": "3.3. Explica la anatomía general y las principales funciones corporales reguladas por el sistema nervioso central y el sistema nervioso periférico."
+  },
+  {
+   "id": "G10-BIO-U3-3.4",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistemas sensoriales",
+   "procedimental": "3.4. Reconocimiento del papel de los órganos receptores para percibir el entorno.",
+   "indicador": "3.4. Explica el papel de los órganos receptores para percibir el entorno."
+  },
+  {
+   "id": "G10-BIO-U3-3.5",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistemas sensoriales",
+   "procedimental": "3.5. Experimentación con el proceso de recepción de estímulos a través de distintos órganos receptores.",
+   "indicador": "3.5. Sintetiza el proceso general de recepción de estímulos a través de distintos órganos receptores."
+  },
+  {
+   "id": "G10-BIO-U3-3.6",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Sistemas sensoriales",
+   "procedimental": "3.6. Simulación de los procesos fisiológicos de las neuronas sensoriales y motoras.",
+   "indicador": "3.6. Representa un proceso fisiológico en el que participan las neuronas sensoriales o motoras."
+  },
+  {
+   "id": "G10-BIO-U3-3.7",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Respuesta endocrina",
+   "procedimental": "3.7. Indagación de la importancia de las hormonas y el concepto de órgano diana.",
+   "indicador": "3.7. Explica la importancia de las hormonas y el concepto de órgano diana."
+  },
+  {
+   "id": "G10-BIO-U3-3.8",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Respuesta endocrina",
+   "procedimental": "3.8. Identificación de las principales respuestas endocrinas y las glándulas involucradas.",
+   "indicador": "3.8. Ejemplifica las principales respuestas endocrinas y las glándulas involucradas."
+  },
+  {
+   "id": "G10-BIO-U3-3.9",
+   "unidad": "3. Anatomía y fisiología humana",
+   "contenido": "Respuesta endocrina",
+   "procedimental": "3.9. Determinación de las respuestas a corto y largo plazo de las glándulas endocrinas ante estímulos del entorno.",
+   "indicador": "3.9. Reconoce respuestas a corto y largo plazo de las glándulas endocrinas ante estímulos del entorno."
+  },
+  {
+   "id": "G10-BIO-U4-4.1",
+   "unidad": "4. Genética moderna",
+   "contenido": "Herencia no mendeliana",
+   "procedimental": "4.1. Resolución de cruzamientos con dominancia incompleta y codominancia a partir de proporciones fenotípicas observadas.",
+   "indicador": "4.1. Distingue la dominancia incompleta de la codominancia al interpretar las proporciones fenotípicas de la F2 de un cruzamiento."
+  },
+  {
+   "id": "G10-BIO-U4-4.2",
+   "unidad": "4. Genética moderna",
+   "contenido": "Herencia no mendeliana",
+   "procedimental": "4.2. Análisis de la herencia de los grupos sanguíneos ABO y Rh como ejemplo de alelos múltiples y codominancia.",
+   "indicador": "4.2. Determina los genotipos y fenotipos posibles de los grupos sanguíneos ABO y Rh en la descendencia de parejas ficticias."
+  },
+  {
+   "id": "G10-BIO-U4-4.3",
+   "unidad": "4. Genética moderna",
+   "contenido": "Herencia ligada al sexo",
+   "procedimental": "4.3. Resolución de problemas de herencia de rasgos ligados al cromosoma X en casos humanos y en Drosophila melanogaster.",
+   "indicador": "4.3. Explica por qué los rasgos recesivos ligados al cromosoma X se manifiestan con mayor frecuencia en varones que en mujeres."
+  },
+  {
+   "id": "G10-BIO-U4-4.4",
+   "unidad": "4. Genética moderna",
+   "contenido": "Análisis de genealogías",
+   "procedimental": "4.4. Interpretación de genealogías publicadas o ficticias para inferir el modo de herencia de un rasgo.",
+   "indicador": "4.4. Infiere a partir de un pedigrí si un rasgo se hereda de forma autosómica o ligada al sexo, y dominante o recesiva."
+  },
+  {
+   "id": "G10-BIO-U4-4.5",
+   "unidad": "4. Genética moderna",
+   "contenido": "Teoría cromosómica de la herencia",
+   "procedimental": "4.5. Cálculo de frecuencias de recombinación entre genes ligados y construcción de mapas genéticos lineales.",
+   "indicador": "4.5. Construye un mapa genético de tres genes ligados a partir de las frecuencias de recombinación obtenidas en cruzamientos de prueba."
+  },
+  {
+   "id": "G10-BIO-U4-4.6",
+   "unidad": "4. Genética moderna",
+   "contenido": "Genética humana",
+   "procedimental": "4.6. Análisis de cariotipos publicados y de casos ficticios de enfermedades hereditarias en el marco del consejo genético.",
+   "indicador": "4.6. Interpreta un cariotipo humano publicado e identifica anomalías numéricas o estructurales relacionándolas con el síndrome correspondiente."
+  },
+  {
+   "id": "G10-BIO-U4-4.7",
+   "unidad": "4. Genética moderna",
+   "contenido": "Genómica",
+   "procedimental": "4.7. Discusión de los alcances del Proyecto Genoma Humano y de las implicaciones éticas, legales y sociales de la genómica.",
+   "indicador": "4.7. Argumenta beneficios y riesgos éticos del uso de la información genómica humana en la medicina, los seguros y la justicia."
+  },
+  {
+   "id": "G10-BIO-U5-5.1",
+   "unidad": "5. Evolución",
+   "contenido": "Historia del pensamiento evolutivo",
+   "procedimental": "5.1. Contraste entre las ideas fijistas y el transformismo de Lamarck a partir de textos históricos y ejemplos.",
+   "indicador": "5.1. Contrasta los postulados del fijismo y del transformismo de Lamarck, y señala las limitaciones de la herencia de caracteres adquiridos."
+  },
+  {
+   "id": "G10-BIO-U5-5.2",
+   "unidad": "5. Evolución",
+   "contenido": "Historia del pensamiento evolutivo",
+   "procedimental": "5.2. Análisis de los postulados de la teoría de la selección natural y del contexto histórico de su formulación por Darwin y Wallace.",
+   "indicador": "5.2. Explica los postulados de la teoría de la selección natural y el aporte independiente de Darwin y Wallace a su formulación."
+  },
+  {
+   "id": "G10-BIO-U5-5.3",
+   "unidad": "5. Evolución",
+   "contenido": "Evidencias de la evolución",
+   "procedimental": "5.3. Cálculo de la edad de fósiles y rocas mediante la ley de desintegración radiactiva y los principios de la estratigrafía.",
+   "indicador": "5.3. Calcula la edad aproximada de un fósil a partir de la vida media de un isótopo y del orden de los estratos."
+  },
+  {
+   "id": "G10-BIO-U5-5.4",
+   "unidad": "5. Evolución",
+   "contenido": "Evidencias de la evolución",
+   "procedimental": "5.4. Comparación de estructuras anatómicas de distintas especies para diferenciar homologías, analogías y estructuras vestigiales.",
+   "indicador": "5.4. Clasifica estructuras anatómicas en homólogas, análogas o vestigiales y explica qué relación evolutiva evidencia cada tipo."
+  },
+  {
+   "id": "G10-BIO-U5-5.5",
+   "unidad": "5. Evolución",
+   "contenido": "Evidencias de la evolución",
+   "procedimental": "5.5. Comparación de etapas del desarrollo embrionario de vertebrados como evidencia de un ancestro común.",
+   "indicador": "5.5. Explica cómo las semejanzas en el desarrollo embrionario de los vertebrados evidencian su ascendencia común."
+  },
+  {
+   "id": "G10-BIO-U5-5.6",
+   "unidad": "5. Evolución",
+   "contenido": "Evidencias de la evolución",
+   "procedimental": "5.6. Análisis de la distribución geográfica de las especies y del Gran Intercambio Biótico Americano tras el cierre del istmo centroamericano.",
+   "indicador": "5.6. Explica la presencia en El Salvador de especies de origen sudamericano y norteamericano a partir del cierre del istmo centroamericano."
+  },
+  {
+   "id": "G10-BIO-U5-5.7",
+   "unidad": "5. Evolución",
+   "contenido": "Evidencias de la evolución",
+   "procedimental": "5.7. Comparación de secuencias de proteínas conservadas entre especies para estimar su grado de parentesco.",
+   "indicador": "5.7. Estima el grado de parentesco entre especies a partir del número de diferencias en la secuencia de aminoácidos del citocromo c."
+  },
+  {
+   "id": "G10-BIO-U5-5.8",
+   "unidad": "5. Evolución",
+   "contenido": "Síntesis evolutiva y evolución humana",
+   "procedimental": "5.8. Integración de la genética y la selección natural en la síntesis evolutiva moderna y análisis de la evidencia de la evolución humana.",
+   "indicador": "5.8. Explica la evolución humana como un proceso ramificado a partir de la evidencia fósil y genética de los homininos."
+  },
+  {
+   "id": "G10-BIO-U6-6.1",
+   "unidad": "6. Termodinámica y sistemas vivos",
+   "contenido": "Energía libre en los sistemas vivos",
+   "procedimental": "6.1. Cálculo de la variación de energía libre de reacciones biológicas acopladas a la hidrólisis del ATP.",
+   "indicador": "6.1. Calcula la variación de energía libre de una reacción acoplada y explica por qué la hidrólisis del ATP la vuelve espontánea."
+  },
+  {
+   "id": "G10-BIO-U6-6.2",
+   "unidad": "6. Termodinámica y sistemas vivos",
+   "contenido": "Metabolismo energético del organismo",
+   "procedimental": "6.2. Medición indirecta de la tasa metabólica de semillas en germinación a partir de la producción de dióxido de carbono.",
+   "indicador": "6.2. Estima la tasa metabólica de un organismo a partir de datos de intercambio de gases y el cociente respiratorio."
+  },
+  {
+   "id": "G10-BIO-U6-6.3",
+   "unidad": "6. Termodinámica y sistemas vivos",
+   "contenido": "Metabolismo energético del organismo",
+   "procedimental": "6.3. Análisis de datos publicados de temperatura corporal y consumo de oxígeno de endotermos y ectotermos frente a la temperatura ambiental.",
+   "indicador": "6.3. Explica con gráficas de temperatura corporal y tasa metabólica las diferencias en la termorregulación de endotermos y ectotermos."
+  },
+  {
+   "id": "G10-BIO-U6-6.4",
+   "unidad": "6. Termodinámica y sistemas vivos",
+   "contenido": "Tamaño corporal y energía",
+   "procedimental": "6.4. Análisis de la relación entre masa corporal y tasa metabólica mediante gráficas logarítmicas y la ley de Kleiber.",
+   "indicador": "6.4. Determina el exponente de la ley de Kleiber a partir de datos publicados y explica por qué los animales pequeños tienen mayor tasa metabólica por kilogramo."
+  },
+  {
+   "id": "G10-BIO-U6-6.5",
+   "unidad": "6. Termodinámica y sistemas vivos",
+   "contenido": "Energía en los ecosistemas",
+   "procedimental": "6.5. Cálculo de la eficiencia de transferencia de energía entre niveles tróficos con datos de un ecosistema de manglar.",
+   "indicador": "6.5. Calcula la eficiencia de transferencia de energía entre niveles tróficos y explica por qué las cadenas tróficas tienen pocos eslabones."
+  },
+  {
+   "id": "G10-BIO-U7-7.1",
+   "unidad": "7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis)",
+   "contenido": "Catabolismo de la glucosa",
+   "procedimental": "7.1. Representación de las etapas de la glucólisis y cálculo de su balance neto de ATP y NADH.",
+   "indicador": "7.1. Describe las fases de inversión y de rendimiento de la glucólisis y calcula su balance neto de ATP, NADH y piruvato."
+  },
+  {
+   "id": "G10-BIO-U7-7.2",
+   "unidad": "7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis)",
+   "contenido": "Catabolismo de la glucosa",
+   "procedimental": "7.2. Análisis de la descarboxilación oxidativa del piruvato y del ciclo de Krebs como fuente de coenzimas reducidas y dióxido de carbono.",
+   "indicador": "7.2. Explica cómo el piruvato se transforma en acetil-CoA y cómo el ciclo de Krebs produce NADH, FADH2, ATP y CO2 en la matriz mitocondrial."
+  },
+  {
+   "id": "G10-BIO-U7-7.3",
+   "unidad": "7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis)",
+   "contenido": "Catabolismo de la glucosa",
+   "procedimental": "7.3. Cálculo del rendimiento energético total de la oxidación completa de una molécula de glucosa.",
+   "indicador": "7.3. Calcula el rendimiento total de ATP de la respiración aerobia de una glucosa y estima su eficiencia energética."
+  },
+  {
+   "id": "G10-BIO-U7-7.4",
+   "unidad": "7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis)",
+   "contenido": "Anabolismo fotosintético",
+   "procedimental": "7.4. Análisis de las fases de fijación, reducción y regeneración del ciclo de Calvin y del papel de la enzima RuBisCO.",
+   "indicador": "7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato."
+  },
+  {
+   "id": "G10-BIO-U7-7.5",
+   "unidad": "7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis)",
+   "contenido": "Anabolismo fotosintético",
+   "procedimental": "7.5. Comparación experimental y anatómica de las estrategias fotosintéticas C3, C4 y CAM en plantas cultivadas y silvestres.",
+   "indicador": "7.5. Relaciona las adaptaciones C4 y CAM con la eficiencia en el uso del agua de la caña de azúcar, el maíz, la piña y las cactáceas."
+  },
+  {
+   "id": "G10-BIO-U7-7.6",
+   "unidad": "7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis)",
+   "contenido": "Integración del metabolismo",
+   "procedimental": "7.6. Integración de las rutas catabólicas y anabólicas en un mapa metabólico y análisis de sus puntos de regulación.",
+   "indicador": "7.6. Explica cómo se integran y regulan el catabolismo y el anabolismo a partir de un mapa metabólico con sus puntos de control."
+  },
+  {
+   "id": "G10-BIO-U8-8.1",
+   "unidad": "8. Ciclos biogeoquímicos en la Tierra",
+   "contenido": "La Tierra como sistema",
+   "procedimental": "8.1. Modelación de los ciclos biogeoquímicos como sistemas de reservorios y flujos con cálculo de tiempos de residencia.",
+   "indicador": "8.1. Calcula el tiempo de residencia de un elemento en un reservorio a partir de su tamaño y de los flujos de entrada o salida."
+  },
+  {
+   "id": "G10-BIO-U8-8.2",
+   "unidad": "8. Ciclos biogeoquímicos en la Tierra",
+   "contenido": "Ciclo del agua",
+   "procedimental": "8.2. Análisis del balance hídrico de la cuenca del río Lempa con datos de precipitación, evapotranspiración y caudal.",
+   "indicador": "8.2. Aplica la ecuación del balance hídrico a la cuenca del río Lempa e interpreta la variación estacional de su caudal."
+  },
+  {
+   "id": "G10-BIO-U8-8.3",
+   "unidad": "8. Ciclos biogeoquímicos en la Tierra",
+   "contenido": "Ciclo del carbono",
+   "procedimental": "8.3. Interpretación de la serie de concentración de dióxido de carbono atmosférico de Mauna Loa y de los flujos globales del carbono.",
+   "indicador": "8.3. Interpreta la curva de Keeling explicando su oscilación anual por la fotosíntesis y su tendencia creciente por las emisiones humanas."
+  },
+  {
+   "id": "G10-BIO-U8-8.4",
+   "unidad": "8. Ciclos biogeoquímicos en la Tierra",
+   "contenido": "Ciclo del nitrógeno",
+   "procedimental": "8.4. Observación de nódulos radicales en leguminosas y análisis de los procesos microbianos del ciclo del nitrógeno.",
+   "indicador": "8.4. Explica las transformaciones del nitrógeno realizadas por microorganismos y compara la fijación biológica con la industrial."
+  },
+  {
+   "id": "G10-BIO-U8-8.5",
+   "unidad": "8. Ciclos biogeoquímicos en la Tierra",
+   "contenido": "Ciclos del fósforo y del azufre",
+   "procedimental": "8.5. Comparación de los ciclos del fósforo y del azufre con énfasis en el aporte del vulcanismo salvadoreño.",
+   "indicador": "8.5. Diferencia el ciclo sedimentario del fósforo del ciclo del azufre y explica el aporte de los volcanes salvadoreños a este último."
+  },
+  {
+   "id": "G10-BIO-U8-8.6",
+   "unidad": "8. Ciclos biogeoquímicos en la Tierra",
+   "contenido": "Alteraciones humanas de los ciclos",
+   "procedimental": "8.6. Análisis de datos de calidad del agua de lagos salvadoreños para explicar la eutrofización y las floraciones de cianobacterias.",
+   "indicador": "8.6. Explica la eutrofización como consecuencia del exceso de nitrógeno y fósforo, y la relaciona con las floraciones de cianobacterias en Ilopango y Coatepeque."
+  }
+ ]
+}

@@ -5,15 +5,27 @@ Reglas (specs/05_asignaturas.md, config/asignaturas.yaml):
 2. 2.°–9.°: el dominio del objetivo TIMSS 2027 principal (obj1);    metodo = «timss»
    en TIMSS 4.° «Ciencias físicas» decide el área (P1 → química, resto → física).
 3. Si obj1 es FUERA: el contenido PISA principal (7.°–9.°).         metodo = «pisa»
-4. Si nada aplica: None («por asignar»; lo resuelve la skill grafo-asignar-disciplina).
+4. Si nada aplica: la decisión de la skill grafo-asignar-disciplina
+   (data/interim/asignacion_disciplina.json).                       metodo = «ia»
+   Puede dejar el tema fuera de alcance (tecnología o transversal).
 """
 
 from __future__ import annotations
 
+import json
 from functools import cache
 
-from goes_science_kg.config import cargar
+from goes_science_kg.config import cargar, ruta
 from goes_science_kg.ingesta import legado
+
+ASIGNACION_MANUAL = "data/interim/asignacion_disciplina.json"
+
+
+@cache
+def asignacion_manual() -> dict[str, dict]:
+    """Decisiones de la skill grafo-asignar-disciplina, por id de tema (sin prefijo TEMA:)."""
+    p = ruta(ASIGNACION_MANUAL)
+    return {d["id"]: d for d in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
 @cache
@@ -55,7 +67,8 @@ def asignatura_de_objetivo(codigo: str) -> str | None:
     return _dominio_a_asignatura().get(o["dominio"])
 
 
-def asignatura_de_tema(asignatura_malla: str, timss: dict | None, pisa: dict | None) -> tuple[str | None, str]:
+def asignatura_de_tema(asignatura_malla: str, timss: dict | None, pisa: dict | None,
+                       manual: dict | None = None) -> tuple[str | None, str]:
     """Devuelve (asignatura, metodo)."""
     if asignatura_malla != "ciencias":
         return asignatura_malla, "malla"
@@ -66,4 +79,6 @@ def asignatura_de_tema(asignatura_malla: str, timss: dict | None, pisa: dict | N
     cont1 = (pisa or {}).get("cont1", "")
     if cont1 and (a := asignatura_de_objetivo(cont1)):
         return a, "pisa"
+    if manual:
+        return manual.get("asignatura"), "ia"
     return None, "pendiente"

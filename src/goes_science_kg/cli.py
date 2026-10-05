@@ -113,6 +113,194 @@ def alinear_unir() -> None:
     typer.echo(json.dumps(unir("AUSS_", "bachillerato_auss", catalogo_acara_senior()), ensure_ascii=False))
 
 
+conceptos_app = typer.Typer(help="Capa de conceptos y prácticas (fase 3)", no_args_is_help=True)
+app.add_typer(conceptos_app, name="conceptos")
+
+
+@conceptos_app.command("preparar-vocabulario")
+def conceptos_preparar_vocabulario() -> None:
+    """Insumos por asignatura para que un subagente construya el vocabulario."""
+    from goes_science_kg.conceptos import preparar_vocabulario
+    from goes_science_kg.grafo.almacen import cargar
+
+    for p in preparar_vocabulario(cargar()[0]):
+        typer.echo(f"→ {p}")
+
+
+@conceptos_app.command("consolidar")
+def conceptos_consolidar() -> None:
+    """Valida y une vocabulario_<asignatura>.json → vocabulario.json."""
+    from goes_science_kg.conceptos import consolidar_vocabulario
+
+    typer.echo(json.dumps(consolidar_vocabulario(), ensure_ascii=False))
+
+
+@conceptos_app.command("preparar-etiquetado")
+def conceptos_preparar_etiquetado() -> None:
+    """Lotes por asignatura y grado para etiquetar temas con conceptos y prácticas."""
+    from goes_science_kg.conceptos import preparar_etiquetado
+    from goes_science_kg.grafo.almacen import cargar
+
+    for p in preparar_etiquetado(cargar()[0]):
+        typer.echo(f"→ {p}")
+
+
+@conceptos_app.command("unir-etiquetado")
+def conceptos_unir_etiquetado() -> None:
+    """Valida y une las salidas de los subagentes → etiquetado_temas.json."""
+    from goes_science_kg.conceptos import unir_etiquetado
+
+    typer.echo(json.dumps(unir_etiquetado(), ensure_ascii=False))
+
+
+@conceptos_app.command("preparar-paises")
+def conceptos_preparar_paises() -> None:
+    """Lotes para etiquetar los objetivos de países directamente con conceptos."""
+    from goes_science_kg.conceptos import preparar_etiquetado_paises
+    from goes_science_kg.grafo.almacen import cargar
+
+    for p in preparar_etiquetado_paises(cargar()[0]):
+        typer.echo(f"→ {p}")
+
+
+@conceptos_app.command("unir-paises")
+def conceptos_unir_paises() -> None:
+    """Valida y une las salidas → etiquetado_paises.json."""
+    from goes_science_kg.conceptos import unir_etiquetado_paises
+
+    typer.echo(json.dumps(unir_etiquetado_paises(), ensure_ascii=False))
+
+
+@conceptos_app.command("preparar-prerrequisitos")
+def conceptos_preparar_prerrequisitos() -> None:
+    """Lotes por asignatura con la evidencia de orden (SV, países, marcos) para el subagente."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.prerrequisitos import preparar
+
+    for p in preparar(*cargar()):
+        typer.echo(f"→ {p}")
+
+
+@conceptos_app.command("unir-prerrequisitos")
+def conceptos_unir_prerrequisitos() -> None:
+    """Valida, rompe ciclos y quita redundancias transitivas → prerrequisitos.json."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.prerrequisitos import unir
+
+    typer.echo(json.dumps(unir(cargar()[0]), ensure_ascii=False))
+
+
+grados_app = typer.Typer(help="Grafos por grado (2.° a 11.°)", no_args_is_help=True)
+app.add_typer(grados_app, name="grados")
+
+
+@grados_app.command("construir")
+def grados_construir() -> None:
+    """Subgrafo y diagnóstico de cada grado → data/grafo/grados/ y grados/G<gg>/ficha.md."""
+    from goes_science_kg.grados import construir_grados
+    from goes_science_kg.grafo.almacen import cargar
+
+    version = json.loads(ruta("data/grafo/manifest.json").read_text(encoding="utf-8"))["version"]
+    for r in construir_grados(*cargar(), version):
+        typer.echo(json.dumps(r, ensure_ascii=False))
+
+
+@grados_app.command("resumenes")
+def grados_resumenes() -> None:
+    """Une los títulos y resúmenes de bloques (subagentes) → data/interim/comunidades/resumenes.json."""
+    from goes_science_kg.comunidades import consolidar_resumenes
+
+    typer.echo(json.dumps(consolidar_resumenes(), ensure_ascii=False))
+
+
+@app.command()
+def rag(
+    consulta: str,
+    grado: int = typer.Option(None, help="Filtra los temas a un grado (2–11)"),
+    asignatura: str = typer.Option(None, help="biologia | fisica | quimica | ciencias_tierra_espacio"),
+    k: int = typer.Option(25, help="Nodos en el contexto"),
+    responder_con_claude: bool = typer.Option(False, "--responder", help="Genera la respuesta con Claude"),
+    global_: bool = typer.Option(False, "--global", help="Búsqueda global: bloques temáticos del grado"),
+) -> None:
+    """GraphRAG: recupera evidencia del grafo (y opcionalmente responde con Claude)."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.rag import GraphRAG, busqueda_global, responder
+
+    if global_:
+        if not grado:
+            raise typer.BadParameter("--global requiere --grado")
+        for c in busqueda_global(consulta, grado):
+            typer.echo(f"[{c['id']}] {c.get('titulo') or c['nombre']} (puntaje {c['puntaje']})\n"
+                       f"    {c.get('resumen_ia') or c['resumen']}")
+        return
+
+    ctx = GraphRAG(*cargar()).recuperar(consulta, grado=grado, asignatura=asignatura, k_final=k)
+    typer.echo(responder(ctx) if responder_con_claude else ctx.como_texto())
+
+
+@app.command("evaluar-rag")
+def evaluar_rag() -> None:
+    """Mide la recuperación de GraphRAG con data/evaluacion/rag_preguntas.json (recall@k, MRR)."""
+    from goes_science_kg.evaluacion import evaluar
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.rag import GraphRAG
+
+    typer.echo(json.dumps(evaluar(GraphRAG(*cargar())), ensure_ascii=False, indent=1))
+
+
+propuesta_app = typer.Typer(help="Propuesta curricular por asignatura y ciclo (fase 5)", no_args_is_help=True)
+app.add_typer(propuesta_app, name="propuesta")
+
+
+@propuesta_app.command("candidatos")
+def propuesta_candidatos(asignatura: str, desde: int, hasta: int, marco: str = "T8_27") -> None:
+    """Candidatos de cambio con evidencia → asignaturas/<x>/propuesta/candidatos_G..-G...json."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.propuesta import escribir_candidatos
+
+    typer.echo(f"→ {escribir_candidatos(asignatura, desde, hasta, marco, *cargar())}")
+
+
+@propuesta_app.command("simular")
+def propuesta_simular(asignatura: str, desde: int, hasta: int) -> None:
+    """Aplica la propuesta al grafo en memoria y mide el impacto → simulacion_G..-G...json."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.propuesta import simular
+
+    r = simular(asignatura, desde, hasta, *cargar())
+    p = ruta(f"asignaturas/{asignatura}/propuesta/simulacion_G{desde:02d}-G{hasta:02d}.json")
+    p.write_text(json.dumps(r, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    typer.echo(json.dumps({"antes": r["antes"], "despues": r["despues"],
+                           "secuencia_alta_pendiente": len(r["secuencia_alta_pendiente"]),
+                           "conceptos_no_resueltos": r["conceptos_no_resueltos"]}, ensure_ascii=False))
+
+
+@propuesta_app.command("resumen")
+def propuesta_resumen() -> None:
+    """Tabla de todas las propuestas con su simulación → asignaturas/PROPUESTAS.md."""
+    from goes_science_kg.propuesta import escribir_resumen
+
+    typer.echo(f"→ {escribir_resumen()}")
+
+
+@propuesta_app.command("excel")
+def propuesta_excel(asignatura: str, desde: int, hasta: int) -> None:
+    """Libro Excel de la propuesta (después de que el especialista escribe propuesta_G..-G...json)."""
+    from goes_science_kg.propuesta import escribir_excel
+
+    typer.echo(f"→ {escribir_excel(asignatura, desde, hasta)}")
+
+
+@app.command()
+def brechas() -> None:
+    """Análisis de brechas por asignatura → asignaturas/<x>/brechas/."""
+    from goes_science_kg.brechas import escribir_brechas
+    from goes_science_kg.grafo.almacen import cargar
+
+    for r in escribir_brechas(*cargar()):
+        typer.echo(json.dumps(r, ensure_ascii=False))
+
+
 @app.command()
 def fichas() -> None:
     """Genera asignaturas/<asignatura>/ficha.md desde el grafo guardado."""

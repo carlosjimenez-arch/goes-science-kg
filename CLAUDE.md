@@ -15,6 +15,7 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 3. Trabaja por fase. Al cerrar una, muestra el resultado, marca ✅ en la spec 08 y haz commit.
 
 ## Estructura
+- `grados/G<gg>/`: grafo de cada grado (ficha + visor HTML). Es el entregable que pidió el MINED (spec 09).
 - `asignaturas/<asignatura>/`: una carpeta por disciplina. El `README.md` lo escribe el equipo;
   `ficha.md`, `brechas/` y `propuesta/` se generan.
 - `config/`: reglas en YAML (mallas, asignaturas, marcos, referentes). Se cambian aquí, no en el código.
@@ -57,6 +58,15 @@ uv run gskg grafo construir       # grafo → data/grafo/ (falla si hay errores)
 uv run gskg grafo validar         # invariantes + avisos + métricas
 uv run gskg fichas                # asignaturas/<x>/ficha.md
 uv run gskg grafo exportar        # data/grafo/export/grafo.graphml
+uv run gskg grados construir      # grafos por grado: data/grafo/grados/ + grados/G<gg>/{ficha.md,grafo.html}
+uv run gskg rag "<consulta>" --grado 7 [--asignatura biologia] [--responder] [--global]
+uv run gskg evaluar-rag           # recall@k y MRR sobre data/evaluacion/rag_preguntas.json
+# Capa de conceptos (cada paso «preparar» genera lotes para subagentes; «unir» valida):
+uv run gskg conceptos preparar-vocabulario | consolidar | preparar-etiquetado | unir-etiquetado
+uv run gskg conceptos preparar-paises | unir-paises | preparar-prerrequisitos | unir-prerrequisitos
+uv run gskg grados resumenes      # títulos y resúmenes de bloques temáticos (subagentes)
+uv run gskg brechas               # asignaturas/<x>/brechas/
+uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run pytest -q
-make todo                         # construir + validar + fichas + pruebas
+make todo                         # construir + validar + fichas + grados + pruebas
 ```

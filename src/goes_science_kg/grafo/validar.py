@@ -49,9 +49,15 @@ def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
                 and not (n.fuente and n.fuente.localizador)):
             r.errores.append(f"{n.id}: objetivo AUSS sin código localizador")
 
+    import networkx as nx
+
+    dag = nx.DiGraph([(a.origen, a.destino) for a in aristas if a.tipo == TipoArista.PRERREQUISITO_DE])
+    if not nx.is_directed_acyclic_graph(dag):
+        r.errores.append(f"PRERREQUISITO_DE tiene ciclos, p. ej. {nx.find_cycle(dag)[:4]}")
+
     # Avisos: lo que la revisión humana o las fases siguientes deben resolver.
     temas = [n for n in nodos if n.tipo == TipoNodo.TEMA]
-    sin_asig = [n.id for n in temas if not n.asignatura]
+    sin_asig = [n.id for n in temas if not n.asignatura and not n.props.get("fuera_de_alcance")]
     if sin_asig:
         r.avisos.append(f"{len(sin_asig)} temas sin asignatura (skill grafo-asignar-disciplina)")
     largas = [a for a in aristas if a.justificacion and len(a.justificacion.split()) > MAX_PALABRAS_JUSTIFICACION]
