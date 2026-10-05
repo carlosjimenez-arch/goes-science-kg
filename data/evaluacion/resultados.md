@@ -39,3 +39,16 @@ ajustar pesos.
 TIMSS, PISA o ACARA no mejora (MRR de las preguntas de marco: 0,69 con peso 1,0; 0,63 con 1,2; 0,69 con 1,4; 0,68 con
 1,8), porque la mitad de los relevantes de esas preguntas son temas de la malla. Queda el peso en 1,0 y solo se conserva
 el filtro que atenúa los marcos no nombrados.
+
+**Japón e intención de país (2026-10-05, 60 preguntas).** Se sumaron 8 preguntas sobre Japón (Q53–Q60). Con ellas el
+MRR bajó a 0,754, porque la intención de país solo reconocía Uruguay, Colombia y Singapur: «Japón», «japoneses»,
+«Inglaterra» y «Australia» no activaban el peso ×2 ni el filtro por país nombrado. Ahora se reconocen el nombre y el
+gentilicio, comparados sin tildes: MRR 0,789, recall@10 0,629, recall@25 0,839. Por tipo: comparación 0,84,
+local 0,89, marco 0,63 y prerrequisito 0,61.
+
+**Inglaterra KS4 (2026-10-05, 60 preguntas).** Los 149 objetivos del KS4 bajaron el MRR de 0,789 a 0,754. En cuatro
+preguntas de comparación, objetivos del KS4 que sí responden (tabla periódica, separación de mezclas, selección
+natural, respiración aerobia y anaerobia) aparecían arriba sin estar marcados como relevantes, porque el conjunto se
+escribió antes. Se agregaron 5 ids del KS4 como relevantes; se descartó uno que no correspondía (Q48: energía en
+reacciones, no conservación de la masa). Resultado: MRR 0,772, recall@10 0,622, recall@25 0,833. Las preguntas
+locales bajaron de 0,89 a 0,87; conviene revisarlas en la próxima sesión.

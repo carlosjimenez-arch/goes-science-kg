@@ -47,9 +47,10 @@ Estado y motivo de cada uno en `config/referentes.yaml`.
 | Colombia | alineado (272) | — |
 | Singapur | alineado (99, solo primaria) | Lower Secondary Science (el MOE retiró el enlace) |
 | Chile | pendiente | Bases Curriculares (el sitio bloquea la descarga automática: bajar a mano) |
-| **Inglaterra** | alineado (270; KS1–KS3) — TIMSS 2023 Ciencias: 5.° en 4.° y 8.° grado | KS4 (opcional) |
+| **Inglaterra** | alineado (419; KS1–KS4; KS4 = 8.°–9.° SV) — TIMSS 2023 Ciencias: 5.° en 4.° y 8.° grado | A-level no es currículo nacional |
 | **Australia** | alineado (152; F–10 v9) — TIMSS 2023 Ciencias: 8.° en 4.° grado, 13.° en 8.° | — |
-| Japón, Corea, Finlandia | pendientes (top 10 TIMSS 2023) | Currículo oficial en inglés: MEXT solo tiene traducción de 2008; Corea y Finlandia por buscar |
+| **Japón** | alineado (188; Course of Study 2017, texto oficial del MEXT vía jp-cos, parafraseado del japonés) — TIMSS 2023: 6.° en 4.° y 3.° en 8.° | — |
+| Corea, Finlandia | pendientes (top 10 TIMSS 2023) | Corea: sin versión oficial en inglés; Finlandia: ePerusteet solo en finés y sueco, por bandas (1–2, 3–6, 7–9) |
 | Estonia, Canadá-Ontario | pendientes | Ontario publica en HTML (dcp.edu.gov.on.ca) |
 
 ### Criterios para elegir países de alto desempeño

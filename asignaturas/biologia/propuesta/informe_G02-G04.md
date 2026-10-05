@@ -1,116 +1,106 @@
 # Propuesta de Biología, 2.° a 4.° (borrador)
 
-Versión `propuesta-v2`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v3`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G02-G04.json`.
 
 ## En resumen
-Proponemos 14 acciones: 3 temas nuevos, 3 fusiones, 2 movimientos y 6 reformulaciones (`revisar`).
+Proponemos 13 acciones: 1 tema nuevo, 1 fusión, 2 movimientos y 9 reformulaciones (`revisar`).
 El total del ciclo se mantiene en **99 temas** y no se quita ninguno.
 
-El total pasó de 98 a 99 temas por la reasignación de disciplinas:
-- sale G03-2.14 (atmósfera), que ahora es de Ciencias de la Tierra;
-- entran G03-6.8 (alimentos transformados por microorganismos) y G04-2.12 (tipos de cultivos).
-
-Biología ya pesa más de lo esperado en el ciclo (52 % de los temas de Ciencias; TIMSS indica 45 %). Por eso no se
-agregan temas: los tres nuevos se pagan con tres fusiones. El cambio central es cubrir el único objetivo sin
-ningún tema, **T4_27-B2.2 Herencia y estrategias de reproducción**.
+Esta versión incorpora a **Japón** como país de referencia. Los países de alto desempeño del grafo son ahora
+Singapur, Inglaterra, Australia y Japón. Con Japón cambió la mediana de varios conceptos, y la propuesta se
+hace **más pequeña y más sólida**: se retiran las acciones que ya no tienen respaldo y se agrega una que ordena
+la ecología de 3.° y 4.°. El único objetivo del marco de 4.° sin ningún tema, **T4_27-B2.2 Herencia y
+estrategias de reproducción**, se cubre en su parte de estrategias sin gastar presupuesto.
 
 ## Qué cambia y por qué
 
-**1. Se cubren la reproducción y la herencia (acciones 1 a 6).**
-- *3.°, Las plantas:* tema nuevo sobre polinización, semillas, frutos y propagación por esquejes. Inglaterra (2.°),
-  Uruguay (3.°) y Singapur (5.°) lo enseñan antes; El Salvador, en 6.°. El tema introduce la reproducción
-  sexual y asexual, que es su prerrequisito.
-- *3.°, Los animales:* tema nuevo sobre estrategias de reproducción: huevos o crías vivas, número de crías y
-  cuidado parental.
-- *4.°, Cuerpo humano:* tema nuevo sobre los rasgos heredados. Hoy la herencia aparece en 10.°; Colombia la
-  enseña en 2.°, Inglaterra en 4.° y Singapur en 5.°.
-- Se pagan con tres fusiones de temas que repiten contenido:
-  - en 3.°, vertebrados (5.12 y 5.13);
-  - en 4.°, medidas antropométricas (2.9 y 2.10);
-  - en 4.°, requerimientos y menús (2.4 y 2.7).
+**1. La reproducción de las plantas con flor llega a 3.° (acciones 1 y 2).**
+- Tema nuevo en la unidad de plantas de 3.°: polinización, semillas, frutos y propagación por esquejes.
+  Inglaterra lo enseña en 2.°, Uruguay en 3.° y Japón en 4.°; El Salvador, en 6.°.
+- El tema introduce también la reproducción sexual y asexual, que es su prerrequisito.
+- Se paga con la fusión de los dos temas de vertebrados de 3.° (5.12 y 5.13), que se orientan a la relación
+  entre estructura y función.
 
-**2. Dos temas cambian de grado (acciones 7 y 8).**
-- **Los sentidos bajan de 4.° a 2.°** (CO 2, ENG 2, UY 3). Van junto a la respuesta a estímulos (1.9) y a la
-  relación entre las partes del cuerpo de un animal y su función (4.8, reformulado). Esto también alivia 4.°.
-- **Las vacunas suben de 2.° a 3.°.** Pasan a la unidad de microorganismos, después de infección y patógenos.
+**2. La cadena trófica baja de 4.° a 3.° (acciones 3 y 9).**
+- Hoy los descomponedores aparecen en 3.° (6.7) antes que la cadena alimentaria (4.°).
+- La cadena trófica es además el prerrequisito de la depredación, que Inglaterra (2.°), Colombia (3.°) y Japón
+  (5.°) enseñan mucho antes que El Salvador (7.°).
+- En 3.° la cadena va después de las formas de nutrición (5.4) y antes de la unidad de microorganismos, donde la
+  degradación (6.7) ya puede nombrar a los descomponedores. Además, 4.° pierde un tema.
 
-**3. Se ordenan secuencias sin gastar presupuesto (acciones 9 a 13).**
-- **2.° (4.8):** se hace explícita la relación entre la estructura del cuerpo animal y su función. Hoy no tiene
-  grado en la malla y es prerrequisito de los sentidos y del sistema locomotor.
-- **3.° (5.3):** el tema de taxismos se amplía a conductas que ayudan a sobrevivir. Hoy las adaptaciones
-  conductuales aparecen en 11.° (CO 2, AU 4, SG 6).
-- **4.°, unidad 3 (se reordena):**
-  1. primero la cadena trófica;
-  2. luego las interacciones, con la competencia (CO 3, ENG 6) y la depredación (ENG 2, CO 3) explícitas;
-  3. al final el nicho, como «papel de la especie».
-- **4.° (3.3):** se precisa como organización *ecológica*, de modo que no exige la célula.
-- **3.° (6.7 y 6.8):** degradación y alimentos fermentados se quedan en lo observable. Los descomponedores se
-  nombran en 4.° y el mecanismo de la fermentación sigue en Bachillerato.
+**3. Las vacunas suben de 2.° a 3.° (acción 4).** Pasan a la unidad de microorganismos, después de infección y
+patógenos, con la idea introductoria de «defensas del cuerpo».
 
-**4. Temas señalados por si se quiere aligerar Biología (acción 14).** Hay dos grupos de temas que podrían
-consolidarse:
-- seis temas de invertebrados en 3.° (5.6 a 5.11);
-- tres temas de tropismos y nastias (4.7 a 4.9).
+**4. Se completan y ordenan temas sin gastar presupuesto (acciones 5 a 11).**
+- **2.° (4.8):** se hace explícita la relación entre estructura y función del cuerpo animal, prerrequisito del
+  sistema locomotor de 4.°.
+- **3.° (5.3):** los taxismos se amplían a conductas que ayudan a sobrevivir (migración, hibernación). Hoy están en
+  11.°; Japón (3.°) y Australia (4.°) los enseñan en este ciclo.
+- **3.° (5.2):** el ciclo de vida de los animales se amplía a sus estrategias de reproducción (huevos o crías
+  vivas, número de crías, cuidado parental). Así se cubre T4_27-B2.2, que hoy no tiene ningún tema.
+- **3.° (5.4):** se reconocen los órganos con que respiran los animales; el intercambio de gases espera al
+  sistema respiratorio de 4.°.
+- **3.° (6.8)** se queda en lo observable (alimentos fermentados); **4.° (3.3)** se precisa como organización
+  *ecológica*, sin exigir la célula.
+- **4.° (5.2):** el modelo del sistema digestivo muestra cómo el alimento se deshace y pasa a la sangre. Prepara la
+  digestión química, sin adelantar las enzimas.
 
-## Qué cambió con los países de alto desempeño
-- **Reproducción de plantas con flor:** Inglaterra (2.°) se suma a Uruguay y Singapur. Con ese respaldo, en v2
-  pasa a ser tema nuevo en 3.° y deja de esperar a 5.°.
-- **Órganos de los sentidos:** Inglaterra los enseña en 2.°. Pasa a ser candidato y se mueve de 4.° a 2.°.
-- **Herencia de rasgos y adaptaciones conductuales:** Inglaterra (4.°) y Australia (4.°) confirman las acciones de v1.
-  Herencia ya no depende solo de Colombia.
-- **Competencia y depredación:** Inglaterra las respalda. Se nombran de forma explícita en 4.° y la unidad se reordena
-  para que la cadena trófica vaya antes que la depredación.
-- **Fósiles y evidencias de la evolución** (ENG 4, CO 2): **no** se agrega tema. La malla ya trabaja la formación de
-  fósiles en 5.° (Ciencias de la Tierra, U6, 6.2 a 6.4), y la propuesta de 5.° a 8.° los presenta allí como
-  evidencia de la evolución.
-- **Digestión química** (ENG, SG y UY en 4.°) sigue bloqueada: necesita las enzimas, que llegan en 6.°.
-  **Transporte en plantas** (ENG 2) también: necesita difusión y tejidos vegetales; se resuelve en 5.°.
+**5. Temas señalados por si se necesita espacio (acciones 12 y 13).** Requerimientos y menús (2.4 y 2.7),
+medidas antropométricas (2.9 y 2.10), invertebrados (5.6 a 5.11) y tropismos (4.7 a 4.9).
+
+## Qué cambió con Japón
+- **Herencia de rasgos sale del ciclo.** Japón la enseña en 8.°, y la mediana de alto desempeño queda en 5.°.
+  El tema nuevo de herencia de 4.° se retira; el concepto pasa a la propuesta de 5.° a 8.°.
+- **Se retira el traslado de los sentidos.** Los órganos de los sentidos ya no aparecen como candidato a
+  adelantar. Sin él y sin el tema de herencia, las estrategias de reproducción (B2.2) se cubren ampliando 5.2 en
+  lugar de con un tema nuevo, y se retiran las dos fusiones de Nutrición que pagaban los temas nuevos de v2.
+- **Se confirman la reproducción de plantas y las conductas.** Japón (4.°) respalda la flor, la semilla y el
+  fruto. Japón (3.°) y Australia (4.°) respaldan las adaptaciones conductuales.
+- **Competencia y relaciones intraespecíficas** dejan de ser candidatos en este ciclo. Por eso no se reordena la
+  unidad 3 de 4.°. La depredación sigue (destino 3.°) y se resuelve bajando la cadena trófica.
+- **Digestión química** gana respaldo (ENG 4, SG 4, UY 4, JP 5), pero sigue bloqueada por las enzimas (6.°). Solo
+  se ajusta el modelo de 4.°. **Transporte en plantas** (ENG 2, UY 3, JP 5, SG 5) sigue bloqueado por la difusión
+  (6.°) y los tejidos vegetales (8.°).
 
 ## Distribución por grado
 
 | Grado | Antes | Después | % del ciclo (después) |
 |---|---|---|---|
-| 2.° | 27 | 27 | 27,3 % |
+| 2.° | 27 | 26 | 26,3 % |
 | 3.° | 32 | 34 | 34,3 % |
-| 4.° | 40 | 38 | 38,4 % |
+| 4.° | 40 | 39 | 39,4 % |
 | **Total** | **99** | **99** | |
 
-Todos los grados quedan por encima del 15 %. 4.° deja de crecer y baja dos temas.
+Todos los grados quedan por encima del 15 %. 4.° sigue siendo el más cargado; la acción 12 deja dos fusiones
+listas si el MINED quiere aliviarlo.
 
 ## Prerrequisitos que se ordenan
 Lo comprobó un script de validación.
 
 **Quedan en orden:**
-- estructura y función del cuerpo animal (2.°) → sentidos (2.°) y sistema locomotor (4.°)
+- nutrición autótrofa y heterótrofa (5.4) → cadena alimentaria → depredación y descomponedores (3.°)
+- cadena alimentaria (3.°) → degradación por descomponedores (6.7, 3.°) y redes tróficas (4.°)
 - reproducción sexual y asexual → plantas con flor (3.°, mismo tema)
-- cadena alimentaria → depredación y descomponedores (4.°)
-- competencia → relaciones intraespecíficas y nicho (4.°)
-- niveles de organización ecológica (3.3) → relaciones intraespecíficas (4.°)
+- ciclo de vida de los animales → estrategias de reproducción (3.°, mismo tema)
+- estructura y función del cuerpo animal (2.°) → sistema locomotor (4.°)
+- sistema respiratorio (4.°) → intercambio de gases (sale de 3.°)
 
 Cuando el tema y su prerrequisito quedan en el mismo grado, al ordenar las unidades hay que respetar este orden:
-- en 2.°, 1.9 y 4.8 antes que los sentidos;
-- en 3.°, la unidad 4 antes que la 5;
-- en 4.°, la cadena trófica antes que las interacciones.
+en 3.°, la unidad 4 antes que la 5, y en la unidad 5, el tema 5.4 antes que la cadena trófica, y la unidad 5 antes
+que la 6.
 
-**Quedan pendientes dos secuencias.** Las dos dependen de cómo están etiquetados los conceptos (decisiones 2 y 3):
+**Quedan pendientes dos secuencias** (decisiones 2 y 3):
 - vacunas (3.°) → sistema inmunitario (10.°)
-- niveles de organización (4.°) → la célula (6.°; 5.° en la propuesta de 5.° a 8.°)
+- niveles de organización (4.°) → la célula (6.°)
 
 ## Decisiones abiertas para el MINED
-1. **Peso de Biología:** está siete puntos por encima de TIMSS. ¿Se consolidan los temas de la acción 14 para pasar
-   horas a otras disciplinas?
-2. **Vacunas:** el grafo exige el sistema inmunitario (10.°) antes de las vacunas. En 3.° proponemos solo la idea de
-   «defensas del cuerpo». Hay dos opciones:
-   - aceptar este nivel introductorio;
-   - introducir las defensas del cuerpo como concepto propio en primaria.
+1. **Peso de Biología y carga de 4.°:** ¿se aplican las fusiones de la acción 12 o se consolidan los temas de la
+   acción 13 para pasar horas a otras disciplinas?
+2. **Vacunas:** el grafo exige el sistema inmunitario (10.°). Proponemos en 3.° solo la idea de «defensas del
+   cuerpo»; la alternativa es introducir las defensas del cuerpo como concepto propio en primaria.
 3. **Datos que conviene verificar:**
-   - Los candidatos ubican la competencia y la simbiosis en 7.°, pero G04-3.6 ya las trabaja.
    - G04-3.3 está etiquetado con un concepto que exige la célula.
-   - «Fósiles y registro fósil» figura en 10.°, aunque 5.° ya trabaja la formación de fósiles.
    - G03-6.8 está etiquetado como «fermentación y respiración anaerobia», un concepto de Bachillerato.
-4. **Coordinación con la propuesta de 5.° a 8.°:**
-   - La fecundación de plantas con flor que esa propuesta lleva a 5.° pasa a ser una profundización del tema
-     nuevo de 3.°.
-   - La célula sigue en 5.° (Colombia y Uruguay la enseñan en 4.°).
-5. **Herencia en Bachillerato:** conviene ajustar la profundidad de 10.° para que no repita el tema nuevo de 4.°.
+4. **Coordinación con la propuesta de 5.° a 8.°:** la herencia de rasgos (la otra mitad de B2.2) y la digestión química (con las
+   enzimas) se resuelven allí; la fecundación en plantas con flor pasa a ser una profundización del tema nuevo de 3.°.

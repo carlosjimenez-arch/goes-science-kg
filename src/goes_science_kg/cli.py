@@ -253,10 +253,17 @@ app.add_typer(propuesta_app, name="propuesta")
 
 
 @propuesta_app.command("candidatos")
-def propuesta_candidatos(asignatura: str, desde: int, hasta: int, marco: str = "T8_27") -> None:
-    """Candidatos de cambio con evidencia → asignaturas/<x>/propuesta/candidatos_G..-G...json."""
+def propuesta_candidatos(asignatura: str, desde: int, hasta: int, marco: str | None = None) -> None:
+    """Candidatos de cambio con evidencia → asignaturas/<x>/propuesta/candidatos_G..-G...json.
+
+    Sin --marco se usa el marco del ciclo: TIMSS 4.° (T4_27) hasta 4.°, TIMSS 8.° (T8_27) hasta 9.° y, en
+    Bachillerato, TIMSS Advanced (TA15) para Física y ACARA Senior Secondary (AUSS) para Biología y Química.
+    """
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.propuesta import escribir_candidatos
+
+    if marco is None:
+        marco = "T4_27" if hasta <= 4 else "T8_27" if hasta <= 9 else "TA15" if asignatura == "fisica" else "AUSS"
 
     typer.echo(f"→ {escribir_candidatos(asignatura, desde, hasta, marco, *cargar())}")
 

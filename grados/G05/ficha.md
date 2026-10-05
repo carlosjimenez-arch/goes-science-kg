@@ -11,9 +11,9 @@
 | Física | 23 |
 | Química | 18 |
 
-- **63 conceptos**: 51 nuevos en este grado, 11 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **64 conceptos**: 51 nuevos en este grado, 11 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T8_27 18.
-- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 117.
+- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 132.
 
 ## Conceptos más trabajados
 
@@ -41,23 +41,23 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Estructura atómica y tabla periódica | 15 | 18 | Química | 3. Estructura atómica.; 4. Tabla periódica. |
+| Estructura atómica y tabla periódica | 16 | 18 | Química, Física | 3. Estructura atómica.; 4. Tabla periódica. |
+| Movimiento, fuerzas y energía mecánica | 11 | 12 | Física | 2. Mecánica. |
 | Universo, sistema solar y Tierra primitiva | 10 | 9 | Ciencias de la Tierra y del Espacio, Física | 5. Ciencias del espacio.; 6. Ciencias de la Tierra. |
-| Medición, movimiento y leyes de Newton | 10 | 18 | Física | 2. Mecánica.; 1. Magnitudes físicas. |
 | Tectónica, sismos y volcanes en El Salvador | 9 | 7 | Ciencias de la Tierra y del Espacio | 6. Ciencias de la Tierra. |
 | El suelo: formación, erosión y uso | 7 | 8 | Ciencias de la Tierra y del Espacio, Química | 6. Ciencias de la Tierra. |
 | Tiempo geológico y fósiles | 5 | 6 | Ciencias de la Tierra y del Espacio, Biología | 6. Ciencias de la Tierra.; 5. Ciencias del espacio. |
-| Energía mecánica y sus transformaciones | 5 | 4 | Física | 2. Mecánica. |
+| Medición, unidades y magnitudes físicas | 4 | 10 | Física | 1. Magnitudes físicas.; 2. Mecánica. |
 
 ### Qué se aprende en cada bloque
 
 - **Estructura atómica y tabla periódica.** Los estudiantes reconstruyen la historia de los modelos atómicos, determinan números atómico y másico, forman iones, estudian isótopos y configuraciones electrónicas y relacionan la tabla periódica con propiedades y fórmulas químicas. Observación curricular: bloque muy coherente pero denso y abstracto; números cuánticos y configuraciones electrónicas son contenidos de nivel avanzado para quinto grado.
+- **Movimiento, fuerzas y energía mecánica.** Los estudiantes describen posición, desplazamiento y trayectoria, diferencian rapidez y velocidad, experimentan la inercia y la aceleración por una fuerza neta, y relacionan el movimiento con la energía cinética y potencial. El bloque está bien encadenado de la cinemática a la energía, pero concentra muchos conceptos formales de física en quinto grado.
 - **Universo, sistema solar y Tierra primitiva.** Los estudiantes exploran el Big Bang, las escalas astronómicas, tipos de galaxias, nebulosas y evolución estelar, y modelan la formación del sistema solar y de la corteza terrestre. Incluyen el campo magnético y la deriva continental. Observación curricular: hilo narrativo claro del universo a la Tierra, aunque la deriva continental quedaría mejor junto a la tectónica de placas.
-- **Medición, movimiento y leyes de Newton.** Los estudiantes miden magnitudes en el Sistema Internacional, convierten unidades y analizan errores; luego describen posición, desplazamiento, rapidez y velocidad, y experimentan con inercia, aceleración y torque. Observación curricular: el bloque une medición y mecánica de forma lógica, pero es extenso y con contenidos propios de secundaria (propagación del error, torque), lo que exige revisar profundidad y tiempo.
 - **Tectónica, sismos y volcanes en El Salvador.** Los estudiantes identifican las placas que afectan el istmo centroamericano, relacionan la tectónica con sismos y vulcanismo, distinguen magnitud e intensidad y conocen el monitoreo volcánico y las acciones ante una erupción. Observación curricular: bloque coherente y muy pertinente al país; retoma la gestión de riesgo de segundo grado con mayor profundidad explicativa.
 - **El suelo: formación, erosión y uso.** Los estudiantes indagan la estructura del suelo, la meteorización y sus procesos químicos, demuestran la erosión por agua y viento y analizan los suelos de El Salvador, su uso y su degradación por la actividad humana. Observación curricular: bloque bien integrado que conecta ciencia y contexto local; los procesos químicos del suelo requieren bases de química aún incipientes.
 - **Tiempo geológico y fósiles.** Los estudiantes categorizan eones, eras y períodos, modelan la formación de fósiles, explican su datación, reconocen fósiles de El Salvador y los grandes eventos de diversificación y extinción. Observación curricular: buen puente entre ciencias de la Tierra y biología que prepara la evolución; la datación conviene tratarla de forma conceptual.
-- **Energía mecánica y sus transformaciones.** Los estudiantes relacionan el movimiento con la energía cinética, experimentan con resortes y caída libre para evidenciar la energía potencial elástica y gravitatoria y estudian transformaciones en sistemas mecánicos. Observación curricular: el bloque es experimental y bien hilado hacia la conservación de la energía; su formalización (ley de Hooke) es exigente para quinto grado.
+- **Medición, unidades y magnitudes físicas.** Los estudiantes miden magnitudes en unidades del Sistema Internacional, convierten unidades, comparan precisión y exactitud, identifican fuentes de error y distinguen magnitudes escalares y vectoriales; también aplican la idea de torque. La medición es la base del bloque; la propagación del error y el torque parecen avanzados para el grado y podrían reubicarse.
 
 ## Prácticas científicas
 
@@ -104,7 +104,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Número de oxidación | Electronegatividad y polaridad de enlace | posterior | 6 | media |
 | Números cuánticos | Modelo mecanocuántico y orbitales atómicos | posterior | 10 | alta |
 
-Además, 48 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 49 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -112,39 +112,34 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Tiempo atmosférico y sus variables | 7 | AU 2, CO 8.5, ENG 2 |
-| Depredación | 7 | CO 3.0, ENG 2 |
-| Materiales magnéticos | 6 | ENG 2, SG 3.0 |
-| Transporte en plantas: xilema y floema | 8 | ENG 2, SG 5.0, UY 3.0 |
-| Ciclo del agua | 7 | AU 3.0, ENG 2, SG 5.0, UY 3.0 |
+| Materiales magnéticos | 6 | ENG 2, JP 2, SG 3.0 |
+| Tiempo atmosférico y sus variables | 7 | AU 2, CO 8.5, ENG 2, JP 3.0 |
+| Imanes y polos magnéticos | 6 | AU 3.0, CO 2, ENG 2, JP 2, SG 3.0, UY 5.0 |
+| Depredación | 7 | CO 3.0, ENG 2, JP 5.0 |
+| Ciclo del agua | 7 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 |
 | Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
-| Imanes y polos magnéticos | 6 | AU 3.0, CO 2, ENG 2, SG 3.0, UY 5.0 |
 | Temperatura y escalas termométricas | 6 | ENG 2, SG 4.0, UY 3.0 |
+| Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
+| Corriente, voltaje y resistencia | 6 | ENG 4.0, JP 3.0 |
+| Dilatación térmica | 6 | ENG 6.0, JP 3.0, SG 4.0, UY 3.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
-| Ventaja mecánica | 9 | CO 4.0, ENG 3.0 |
-| Adaptaciones conductuales | 11 | AU 4.0, CO 2, SG 6.0 |
-| Digestión química y absorción de nutrientes | 8 | ENG 4.0, SG 4.0, UY 4.0 |
-| Estructuras del cuerpo animal y su función | nunca | AU 7.0, CO 2, ENG 2, SG 4.0, UY 8.0 |
-| Evidencias de la evolución | 10 | AU 9.0, CO 2, ENG 4.0 |
-| Herencia de rasgos | 10 | CO 2, ENG 4.0, SG 5.0 |
-| Reproducción sexual de las plantas con flor | 6 | AU 8.0, ENG 2, SG 5.0, UY 3.0 |
+| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
+| Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
+| Reproducción sexual de las plantas con flor | 6 | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
+| Transporte en plantas: xilema y floema | 8 | ENG 2, JP 5.0, SG 5.0, UY 3.0 |
 | Minerales y sus propiedades | 8 | AU 2, ENG 6.0 |
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
-| Dilatación térmica | 6 | ENG 6.0, SG 4.0, UY 3.0 |
-| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, SG 4.0, UY 4.0 |
+| Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
 | Flotación y hundimiento | 6 | CO 4.5, ENG 6.0, SG 3.0, UY 4.0 |
+| Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
+| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, JP 2, SG 5.0 |
+| Electroimanes y efecto magnético de la corriente | 6 | ENG 6.0, JP 4.0, SG 3.0, UY 5.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
+| Presión | 6 | ENG 6.0, JP 3.0 |
 | Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
-| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, SG 5.0 |
-| Intercambio de gases en plantas | 8 | ENG 6.0, SG 5.0, UY 5.0 |
-| La célula como unidad de la vida | 6 | AU 7.0, CO 4.5, ENG 6.0, SG 5.0, UY 4.0 |
-| Reproducción sexual y asexual | 6 | AU 8.0, CO 8.0, ENG 3.0, SG 5.0, UY 3.0 |
-| Calidad del aire y contaminación atmosférica | 7 | CO 4.5, SG 5.0, UY 5.0 |
-| Circuito eléctrico simple | 6 | AU 5.0, CO 2, ENG 2, SG 5.0, UY 5.0 |
-| Electroimanes y efecto magnético de la corriente | 6 | ENG 6.0, SG 3.0, UY 5.0 |
+| Calidad del aire y contaminación atmosférica | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |
+| Circuitos en serie y en paralelo | 6 | ENG 6.0, JP 3.0, SG 5.0 |
 | Espejos planos e imágenes | 10 | ENG 6.0, UY 4.0 |
 | Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |
-| Principio de Arquímedes: empuje | 6 | ENG 6.0, UY 4.0 |
-| Refracción de la luz | 10 | AU 4.0, ENG 6.0, UY 5.0 |
-| Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, SG 5.0, UY 5.0 |
+| Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |

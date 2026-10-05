@@ -10,7 +10,7 @@
 | Física | 146 |
 | Química | 97 |
 
-- **208 conceptos**: 58 nuevos en este grado, 150 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **219 conceptos**: 55 nuevos en este grado, 164 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: AUSS 112, TA15 19.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 0.
 
@@ -40,30 +40,32 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Oscilaciones, electricidad y magnetismo | 34 | 60 | Física, Biología | 9. Circuitos eléctricos; 13. Circuitos de corriente alterna; 1. Movimiento armónico simple |
-| Ondas, sonido, luz y astronomía | 29 | 65 | Física | 17. Refracción de la luz; 22. Ciencias del espacio; 18. Naturaleza ondulatoria de la luz |
-| Plantas, células y biotecnología vegetal | 25 | 32 | Biología | 3. Biotecnología vegetal y agroindustria; 4. Bases genéticas de la evolución; 6. Mecánica de fluidos en los seres vivos |
-| Electroquímica, materiales y química industrial | 24 | 32 | Química | 6. Electroquímica; 1. Ciencia de materiales; 7. Química industrial |
-| Química orgánica y biomoléculas | 22 | 50 | Química | 3. Compuestos orgánicos; 2. Introducción a la química orgánica; 11. Carbohidratos y lípidos |
-| Ecología de poblaciones y sostenibilidad | 20 | 22 | Biología | 1. Ecología y ambiente; 7. Dinámica de poblaciones (relaciones intra e interespecíficas); 5. Análisis de biodiversidad |
-| Genética de poblaciones y evolución | 16 | 25 | Biología | 8. Microevolución y adaptaciones; 4. Bases genéticas de la evolución; 5. Análisis de biodiversidad |
-| Física moderna: relatividad y física nuclear | 11 | 24 | Física | 23. Introducción a la física moderna; 19. Relatividad; 20. Física nuclear |
-| Ácidos, bases y pH | 11 | 17 | Química | 4. Reacción ácido-base; 9. Compuestos del carbono; 12. Proteínas y ácidos nucleicos |
-| Microorganismos, virus y ciclos biogeoquímicos | 10 | 17 | Biología | 2. Biotecnología microbiana y los virus; 1. Ecología y ambiente; 4. Bases genéticas de la evolución |
+| Ondas, sonido, luz y astronomía | 29 | 67 | Física | 17. Refracción de la luz; 22. Ciencias del espacio; 12. Electromagnetismo |
+| Plantas, células y biotecnología vegetal | 26 | 33 | Biología | 3. Biotecnología vegetal y agroindustria; 4. Bases genéticas de la evolución; 6. Mecánica de fluidos en los seres vivos |
+| Oscilaciones, electromagnetismo y corriente alterna | 25 | 46 | Física, Biología | 1. Movimiento armónico simple; 13. Circuitos de corriente alterna; 8. Energía potencial eléctrica |
+| Química orgánica y biomoléculas | 24 | 51 | Química, Biología | 3. Compuestos orgánicos; 2. Introducción a la química orgánica; 11. Carbohidratos y lípidos |
+| Poblaciones, evolución y biodiversidad | 21 | 23 | Biología | 7. Dinámica de poblaciones (relaciones intra e interespecíficas); 5. Análisis de biodiversidad; 8. Microevolución y adaptaciones |
+| Genética de poblaciones y conservación | 20 | 24 | Biología, Ciencias de la Tierra y del Espacio | 1. Ecología y ambiente; 4. Bases genéticas de la evolución; 5. Análisis de biodiversidad |
+| Física moderna: relatividad y física nuclear | 16 | 28 | Física, Biología, Ciencias de la Tierra y del Espacio, Química | 23. Introducción a la física moderna; 19. Relatividad; 20. Física nuclear |
+| Circuitos eléctricos y electroquímica | 16 | 24 | Química, Física | 6. Electroquímica; 9. Circuitos eléctricos; 13. Circuitos de corriente alterna |
+| Equilibrios ácido-base y de solubilidad | 13 | 20 | Química | 4. Reacción ácido-base; 5. Reacciones de precipitación; 12. Proteínas y ácidos nucleicos |
+| Microorganismos, virus y ciclos biogeoquímicos | 12 | 21 | Biología | 2. Biotecnología microbiana y los virus; 1. Ecología y ambiente; 4. Bases genéticas de la evolución |
+| Materiales y química industrial | 11 | 14 | Química | 1. Ciencia de materiales; 7. Química industrial; 10. Polímeros y macromoléculas |
 | Reacciones nucleares y residuos radiactivos | 3 | 4 | Química | 8. Reacciones nucleares |
 
 ### Qué se aprende en cada bloque
 
-- **Oscilaciones, electricidad y magnetismo.** Se estudian el movimiento armónico simple y el péndulo, y luego la carga, el campo y el potencial eléctricos, los circuitos, el magnetismo, la inducción y la corriente alterna. La conservación de la energía conecta oscilaciones y electricidad. Es un bloque amplio y exigente; además incluye un tema de productividad biológica que parece agrupado por coincidencia y no por afinidad conceptual.
 - **Ondas, sonido, luz y astronomía.** Los estudiantes estudian ondas mecánicas y sonoras, superposición, ondas estacionarias y efecto Doppler, y luego la naturaleza ondulatoria y cuántica de la luz, el espectro electromagnético y las telecomunicaciones. El bloque se extiende a la astronomía: leyes de Kepler, órbitas y expansión del universo. Retoma varios temas de óptica de 10.°, por lo que conviene revisar la repetición entre grados.
 - **Plantas, células y biotecnología vegetal.** Se estudian células y tejidos vegetales, transporte en xilema y floema, hormonas vegetales y tropismos, junto con técnicas de cultivo in vitro y su uso agroindustrial. Se conectan con ADN, expresión génica e ingeniería genética, y con la circulación en seres vivos. El bloque une ciencia básica y aplicación productiva, pero mezcla muchos conceptos y conviene delimitar mejor su eje central.
-- **Electroquímica, materiales y química industrial.** Los estudiantes trabajan reacciones redox, celdas galvánicas y electrolíticas, corrosión, precipitación y solubilidad, y los aplican a procesos industriales, materiales (metales, cerámicas, polímeros, nanomateriales) y química verde. El bloque vincula química con tecnología y ambiente, como los microplásticos. Es amplio y aplicado; retoma estequiometría de 10.°, lo que favorece la continuidad si se explicita.
+- **Oscilaciones, electromagnetismo y corriente alterna.** Los estudiantes estudian elasticidad, movimiento armónico simple y péndulo, fuerzas magnéticas sobre cargas y corrientes, inducción, transformadores y circuitos RLC. La energía y las oscilaciones conectan la mecánica con los circuitos de corriente alterna. Es un bloque muy amplio y exigente; agrupa varias unidades que podrían secuenciarse con más claridad.
 - **Química orgánica y biomoléculas.** Se estudian el carbono, los hidrocarburos, los grupos funcionales, la nomenclatura, la isomería y las reacciones orgánicas, hasta los polímeros, carbohidratos, lípidos, proteínas y ácidos nucleicos. El bloque conecta estructura molecular con propiedades y con la química de los seres vivos. Retoma biomoléculas ya vistas en biología de 10.°; conviene coordinar para que ambos enfoques se complementen.
-- **Ecología de poblaciones y sostenibilidad.** Los estudiantes analizan factores bióticos y abióticos, crecimiento poblacional, capacidad de carga, relaciones entre especies y sucesión ecológica, y miden la biodiversidad con muestreos. Luego abordan amenazas como deforestación, contaminación y cambio climático, y la restauración de ecosistemas. Es un bloque coherente con fuerte vínculo a problemas ambientales locales, útil para proyectos de indagación.
-- **Genética de poblaciones y evolución.** Se estudian la variación genética, mutaciones, frecuencias alélicas y el equilibrio de Hardy-Weinberg, los mecanismos de microevolución y la especiación. Se aplican a la resistencia bacteriana a antibióticos y a la conservación de la biodiversidad y el germoplasma. El bloque profundiza lo visto en 10.°; conviene explicitar esa progresión para evitar repetir herencia mendeliana y meiosis.
-- **Física moderna: relatividad y física nuclear.** Los estudiantes analizan la rapidez de la luz, los postulados de la relatividad especial y la equivalencia masa-energía, y los aplican al núcleo atómico: energía de enlace, desintegración radiactiva, fisión y fusión, radiación ionizante y modelo estándar. Es un bloque coherente y exigente en cálculo; se superpone con reacciones nucleares de química, por lo que conviene coordinar ambas asignaturas.
-- **Ácidos, bases y pH.** Se estudian las teorías ácido-base, la fuerza de ácidos y bases, el pH, la hidrólisis de sales, las disoluciones amortiguadoras y las valoraciones con indicadores. Se aplican a la lluvia ácida y a procesos industriales mediante el principio de Le Chatelier. Es un bloque coherente que se apoya en el equilibrio químico de 10.°; conviene asegurar esa base antes de los cálculos de pH.
+- **Poblaciones, evolución y biodiversidad.** Se estudian atributos y crecimiento de poblaciones, capacidad de carga, interacciones entre especies, selección natural, especiación, adaptaciones de especies salvadoreñas e índices de biodiversidad. La ecología de poblaciones se conecta con la evolución a través de la selección. Usa modelos y datos reales; reúne muchos conceptos, lo que exige buena articulación entre unidades.
+- **Genética de poblaciones y conservación.** Los estudiantes resuelven cruces mendelianos, calculan frecuencias alélicas, aplican Hardy-Weinberg y simulan deriva génica, y analizan pérdida de biodiversidad, uso del suelo y restauración de ecosistemas. La diversidad genética une la evolución con la conservación. El bloque mezcla genética y ambiente; la conexión es valiosa pero conviene hacerla explícita.
+- **Física moderna: relatividad y física nuclear.** Se estudian la rapidez de la luz, la relatividad especial, la equivalencia masa-energía, la estructura nuclear, la desintegración radiactiva, la datación, la fisión y fusión y los efectos de la radiación. La relación masa-energía conecta relatividad y física nuclear. Es un bloque coherente; incluye dos temas aislados de otras unidades que no encajan bien.
+- **Circuitos eléctricos y electroquímica.** Los estudiantes analizan circuitos de corriente continua, ley de Ohm y Kirchhoff, y estudian reacciones redox, celdas galvánicas y electrolíticas, ecuación de Nernst y corrosión. La fuerza electromotriz y el potencial de celda unen Física y Química. Es una integración interdisciplinaria valiosa que podría aprovecharse coordinando ambas asignaturas.
+- **Equilibrios ácido-base y de solubilidad.** Se calculan pH de ácidos y bases fuertes y débiles, se estudian hidrólisis, amortiguadores, titulaciones e indicadores, y se aplican el producto de solubilidad y la precipitación selectiva. El equilibrio químico conecta todos los temas, con aplicaciones a lluvia ácida y pH sanguíneo. Es un bloque profundo y cuantitativo que retoma lo visto en 9.° grado.
 - **Microorganismos, virus y ciclos biogeoquímicos.** Los estudiantes conocen microorganismos y virus, sus técnicas de observación, su uso en biotecnología y el papel de las vacunas. También estudian cómo los seres vivos participan en los ciclos del carbono, nitrógeno, fósforo y agua. El bloque une salud, industria y ecosistemas; repite ciclos biogeoquímicos ya tratados en 10.°, por lo que conviene definir qué profundidad aporta cada grado.
+- **Materiales y química industrial.** Los estudiantes comparan metales, cerámicas, polímeros, materiales compuestos y nanomateriales, aplican balances de materia a procesos industriales salvadoreños y usan la química verde para comparar rutas de síntesis. Las propiedades de los materiales se conectan con su producción, uso y reciclaje. El bloque es aplicado y contextualizado; combina varias unidades con hilo común.
 - **Reacciones nucleares y residuos radiactivos.** Se estudian el descubrimiento de la radiactividad, el balanceo de ecuaciones nucleares, las series de desintegración y la semivida, y la clasificación de residuos radiactivos. Es un bloque breve y coherente, pero duplica parcialmente la física nuclear de 11.° y la radiactividad de química de 10.°; conviene coordinar para evitar repeticiones.
 
 ## Prácticas científicas
@@ -99,13 +101,9 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nunca**.
 
-| Concepto del grado | Prerrequisito | Estado | Primer grado SV | Confianza |
-|---|---|---|---|---|
-| Secuenciación del ADN y perfiles genéticos | PCR y electroforesis en gel | ausente | — | alta |
-| Sistema circulatorio | Estructuras del cuerpo animal y su función | ausente | — | media |
-| Sistema respiratorio | Estructuras del cuerpo animal y su función | ausente | — | media |
+Ninguno.
 
-Además, 45 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 44 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -114,6 +112,6 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
-| Estructuras del cuerpo animal y su función | nunca | AU 7.0, CO 2, ENG 2, SG 4.0, UY 8.0 |
+| Abastecimiento y conservación del agua dulce | nunca | ENG 8.5, SG 5.0 |
 | Sistemas terrestres y sus interacciones | nunca | AU 9.0, CO 4.5 |
-| Transmisión de patógenos | nunca | CO 6.5, UY 9.0 |
+| Transmisión de patógenos | nunca | CO 6.5, ENG 8.5, UY 9.0 |

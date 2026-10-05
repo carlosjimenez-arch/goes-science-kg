@@ -6,10 +6,10 @@
   "quimica": 10,
   "biologia": 34
  },
- "conceptos": 63,
+ "conceptos": 65,
  "conceptos_nuevos": 50,
- "conceptos_retomados": 12,
- "conceptos_anticipados": 1,
+ "conceptos_retomados": 13,
+ "conceptos_anticipados": 2,
  "practicas": {
   "PRAC:observar-y-registrar": 12,
   "PRAC:desarrollar-y-usar-modelos": 6,
@@ -110,6 +110,20 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/atp-y-energia-celular",
+   "concepto": "CON:biologia/fases-de-la-fotosintesis",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/fotosintesis",
+   "concepto": "CON:biologia/fases-de-la-fotosintesis",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:biologia/reproduccion-sexual-y-asexual",
    "concepto": "CON:biologia/fecundacion-y-desarrollo-embrionario",
    "estado": "mismo_grado",
@@ -187,6 +201,13 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/diferenciacion-y-especializacion-celular",
+   "concepto": "CON:biologia/tejidos-animales",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/atp-y-energia-celular",
    "concepto": "CON:biologia/transporte-activo-y-endocitosis",
    "estado": "mismo_grado",
@@ -208,20 +229,6 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:fisica/circuito-electrico-simple",
-   "concepto": "CON:fisica/circuitos-serie-paralelo",
-   "estado": "mismo_grado",
-   "primer_grado_sv": 6,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:fisica/circuito-electrico-simple",
-   "concepto": "CON:fisica/corriente-voltaje-resistencia",
-   "estado": "mismo_grado",
-   "primer_grado_sv": 6,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:fisica/modelo-particulas",
    "concepto": "CON:fisica/dilatacion-termica",
    "estado": "mismo_grado",
@@ -234,13 +241,6 @@
    "estado": "mismo_grado",
    "primer_grado_sv": 6,
    "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:fisica/circuito-electrico-simple",
-   "concepto": "CON:fisica/electroiman",
-   "estado": "mismo_grado",
-   "primer_grado_sv": 6,
-   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:fisica/imanes-polos",
@@ -388,6 +388,13 @@
    "estado": "posterior",
    "primer_grado_sv": 10,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/oxidacion-y-reduccion",
+   "concepto": "CON:biologia/fases-de-la-fotosintesis",
+   "estado": "posterior",
+   "primer_grado_sv": 11,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:biologia/celula-animal-y-vegetal",
@@ -572,6 +579,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/niveles-de-organizacion",
+   "concepto": "CON:biologia/tejidos-animales",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
    "concepto": "CON:fisica/cambios-estado",
    "estado": "previo",
@@ -581,6 +595,20 @@
   {
    "prerrequisito": "CON:fisica/estados-materia",
    "concepto": "CON:fisica/cambios-estado",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/circuito-electrico-simple",
+   "concepto": "CON:fisica/circuitos-serie-paralelo",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/circuito-electrico-simple",
+   "concepto": "CON:fisica/corriente-voltaje-resistencia",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "alta"
@@ -604,6 +632,13 @@
    "concepto": "CON:fisica/electroiman",
    "estado": "previo",
    "primer_grado_sv": 5,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/circuito-electrico-simple",
+   "concepto": "CON:fisica/electroiman",
+   "estado": "previo",
+   "primer_grado_sv": 2,
    "confianza": "alta"
   },
   {
@@ -747,7 +782,8 @@
    "paises": {
     "AU": 2,
     "CO": 8.5,
-    "ENG": 2
+    "ENG": 2,
+    "JP": 3.0
    }
   },
   {
@@ -755,16 +791,8 @@
    "sv": 7,
    "paises": {
     "CO": 3.0,
-    "ENG": 2
-   }
-  },
-  {
-   "concepto": "CON:biologia/transporte-en-plantas",
-   "sv": 8,
-   "paises": {
     "ENG": 2,
-    "SG": 5.0,
-    "UY": 3.0
+    "JP": 5.0
    }
   },
   {
@@ -773,6 +801,7 @@
    "paises": {
     "AU": 3.0,
     "ENG": 2,
+    "JP": 3.0,
     "SG": 5.0,
     "UY": 3.0
    }
@@ -787,6 +816,16 @@
    }
   },
   {
+   "concepto": "CON:biologia/adaptaciones-conductuales",
+   "sv": 11,
+   "paises": {
+    "AU": 4.0,
+    "CO": 2,
+    "JP": 3.0,
+    "SG": 6.0
+   }
+  },
+  {
    "concepto": "CON:fisica/gravedad-atrae-hacia-tierra",
    "sv": null,
    "paises": {
@@ -797,20 +836,15 @@
    }
   },
   {
-   "concepto": "CON:fisica/ventaja-mecanica",
-   "sv": 9,
-   "paises": {
-    "CO": 4.0,
-    "ENG": 3.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/adaptaciones-conductuales",
-   "sv": 11,
+   "concepto": "CON:fisica/reflexion-luz",
+   "sv": 10,
    "paises": {
     "AU": 4.0,
-    "CO": 2,
-    "SG": 6.0
+    "CO": 3.0,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 4.0,
+    "UY": 4.0
    }
   },
   {
@@ -818,37 +852,19 @@
    "sv": 8,
    "paises": {
     "ENG": 4.0,
+    "JP": 5.0,
     "SG": 4.0,
     "UY": 4.0
    }
   },
   {
-   "concepto": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "sv": null,
+   "concepto": "CON:biologia/transporte-en-plantas",
+   "sv": 8,
    "paises": {
-    "AU": 7.0,
-    "CO": 2,
     "ENG": 2,
-    "SG": 4.0,
-    "UY": 8.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/evidencias-de-la-evolucion",
-   "sv": 10,
-   "paises": {
-    "AU": 9.0,
-    "CO": 2,
-    "ENG": 4.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/herencia-de-rasgos",
-   "sv": 10,
-   "paises": {
-    "CO": 2,
-    "ENG": 4.0,
-    "SG": 5.0
+    "JP": 5.0,
+    "SG": 5.0,
+    "UY": 3.0
    }
   },
   {
@@ -869,14 +885,22 @@
    }
   },
   {
-   "concepto": "CON:fisica/reflexion-luz",
+   "concepto": "CON:fisica/ventaja-mecanica",
+   "sv": 9,
+   "paises": {
+    "CO": 4.0,
+    "ENG": 3.0,
+    "JP": 5.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/herencia-de-rasgos",
    "sv": 10,
    "paises": {
-    "AU": 4.0,
-    "CO": 3.0,
-    "ENG": 2,
-    "SG": 4.0,
-    "UY": 4.0
+    "CO": 2,
+    "ENG": 4.0,
+    "JP": 8.0,
+    "SG": 5.0
    }
   },
   {
@@ -885,6 +909,17 @@
    "paises": {
     "CO": 3.0,
     "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/conductores-aislantes-electricos",
+   "sv": 11,
+   "paises": {
+    "AU": 5.0,
+    "CO": 4.5,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 5.0
    }
   },
   {
@@ -906,30 +941,13 @@
    }
   },
   {
-   "concepto": "CON:fisica/conductores-aislantes-electricos",
-   "sv": 11,
-   "paises": {
-    "AU": 5.0,
-    "CO": 4.5,
-    "ENG": 2,
-    "SG": 5.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/intercambio-de-gases-en-plantas",
-   "sv": 8,
-   "paises": {
-    "ENG": 6.0,
-    "SG": 5.0,
-    "UY": 5.0
-   }
-  },
-  {
    "concepto": "CON:ciencias_tierra_espacio/calidad-del-aire",
    "sv": 7,
    "paises": {
     "CO": 4.5,
+    "ENG": 8.5,
     "UY": 5.0,
+    "JP": 5.0,
     "SG": 5.0
    }
   },
@@ -951,45 +969,42 @@
    }
   },
   {
+   "concepto": "CON:quimica/composicion-del-aire-y-contaminantes",
+   "sv": 7,
+   "paises": {
+    "CO": 4.5,
+    "ENG": 8.5,
+    "UY": 5.0,
+    "JP": 5.0,
+    "SG": 5.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/intercambio-de-gases-en-plantas",
+   "sv": 8,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 7.0,
+    "SG": 5.0,
+    "UY": 5.0
+   }
+  },
+  {
    "concepto": "CON:fisica/refraccion-luz",
    "sv": 10,
    "paises": {
     "AU": 4.0,
     "ENG": 6.0,
+    "JP": 6.0,
     "UY": 5.0
    }
   },
   {
-   "concepto": "CON:quimica/composicion-del-aire-y-contaminantes",
-   "sv": 7,
-   "paises": {
-    "CO": 4.5,
-    "UY": 5.0,
-    "SG": 5.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/lentes-delgadas",
-   "sv": 10,
-   "paises": {
-    "ENG": 6.0,
-    "UY": 5.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/potencia-electrica-joule",
+   "concepto": "CON:quimica/indicadores-acido-base",
    "sv": 9,
    "paises": {
-    "CO": 5.0,
-    "ENG": 6.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/trabajo-mecanico",
-   "sv": 8,
-   "paises": {
     "ENG": 6.0,
-    "UY": 5.0
+    "JP": 5.0
    }
   },
   {
@@ -997,32 +1012,19 @@
    "sv": 10,
    "paises": {
     "CO": 6.5,
+    "ENG": 8.5,
+    "JP": 5.0,
     "SG": 5.0
    }
   },
   {
-   "concepto": "CON:ciencias_tierra_espacio/efecto-invernadero",
-   "sv": 7,
+   "concepto": "CON:biologia/evidencias-de-la-evolucion",
+   "sv": 10,
    "paises": {
-    "CO": 4.5,
-    "UY": 7.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/absorcion-radiacion-efecto-invernadero",
-   "sv": 7,
-   "paises": {
-    "CO": 4.5,
-    "UY": 7.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/clasificacion-jerarquica",
-   "sv": 7,
-   "paises": {
-    "AU": 6.0,
-    "CO": 6.0,
-    "UY": 8.0
+    "AU": 9.0,
+    "CO": 2,
+    "ENG": 4.0,
+    "JP": 8.0
    }
   },
   {
@@ -1041,6 +1043,7 @@
    "paises": {
     "CO": 6.0,
     "ENG": 6.0,
+    "JP": 7.0,
     "UY": 5.0
    }
   },
@@ -1049,7 +1052,8 @@
    "sv": 8,
    "paises": {
     "AU": 6.0,
-    "ENG": 6.0
+    "ENG": 6.0,
+    "JP": 6.0
    }
   },
   {
@@ -1058,7 +1062,8 @@
    "paises": {
     "AU": 6.0,
     "CO": 4.5,
-    "ENG": 6.0
+    "ENG": 6.0,
+    "JP": 6.0
    }
   },
   {
@@ -1067,6 +1072,15 @@
    "paises": {
     "ENG": 6.0,
     "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/lentes-delgadas",
+   "sv": 10,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 6.0,
+    "UY": 5.0
    }
   },
   {
@@ -1079,12 +1093,40 @@
    }
   },
   {
+   "concepto": "CON:fisica/potencia-electrica-joule",
+   "sv": 9,
+   "paises": {
+    "CO": 5.0,
+    "ENG": 6.0,
+    "JP": 7.0
+   }
+  },
+  {
    "concepto": "CON:fisica/sonido-como-onda",
    "sv": 8,
    "paises": {
     "AU": 8.0,
     "ENG": 2,
+    "JP": 6.0,
     "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/trabajo-mecanico",
+   "sv": 8,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 8.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:quimica/acidos-y-bases-propiedades",
+   "sv": 7,
+   "paises": {
+    "CO": 8.5,
+    "ENG": 6.0,
+    "JP": 5.0
    }
   },
   {
@@ -1094,12 +1136,17 @@
     "AU": 6.0,
     "CO": 6.0,
     "ENG": 6.0,
+    "JP": 7.0,
     "UY": 5.0
    }
   }
  ],
- "referentes_paises": 181,
+ "referentes_paises": 194,
  "top_conceptos": [
+  [
+   "CON:biologia/organelos-de-la-celula-eucariota",
+   5
+  ],
   [
    "CON:fisica/circuitos-serie-paralelo",
    5
@@ -1110,10 +1157,6 @@
   ],
   [
    "CON:biologia/fotosintesis",
-   4
-  ],
-  [
-   "CON:biologia/organelos-de-la-celula-eucariota",
    4
   ],
   [
@@ -1137,6 +1180,10 @@
    3
   ],
   [
+   "CON:biologia/tejidos-animales",
+   3
+  ],
+  [
    "CON:fisica/principio-bernoulli",
    3
   ],
@@ -1154,10 +1201,6 @@
   ],
   [
    "CON:biologia/meiosis",
-   2
-  ],
-  [
-   "CON:biologia/niveles-de-organizacion",
    2
   ]
  ]

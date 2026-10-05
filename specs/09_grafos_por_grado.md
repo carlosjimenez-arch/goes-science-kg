@@ -30,8 +30,8 @@ y la ficha legible en `grados/G<gg>/ficha.md`. El índice está en `grados/READM
    `TRABAJA` → concepto) queda solo como respaldo si un país no tiene etiquetado directo.
 
 ## Limitaciones conocidas
-- Países en el grafo: Uruguay, Colombia, Singapur (primaria), Inglaterra y Australia. Los de alto desempeño (top 10
-  de TIMSS 2023 Ciencias) son Singapur, Inglaterra y Australia.
+- Países en el grafo: Uruguay, Colombia, Singapur (primaria), Inglaterra, Australia y Japón. Los de alto desempeño
+  (top 10 de TIMSS 2023 Ciencias) son Singapur, Inglaterra, Australia y Japón.
 - Los objetivos por **banda** (KS3 de Inglaterra = 5.°–7.°; Estándares de Colombia por grupos de grados) cuentan
   en el punto medio de la banda.
 - La equivalencia de grados entre países se hace por **edad de ingreso** (`config/referentes.yaml`).

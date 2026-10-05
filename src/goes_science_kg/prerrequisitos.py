@@ -178,4 +178,14 @@ def cargar_prerrequisitos() -> list[dict]:
     r = ruta(f"{DIR}/rechazados.json")
     rechazados = ({(x["origen"], x["destino"]) for x in json.loads(r.read_text(encoding="utf-8"))}
                   if r.exists() else set())
-    return [e for e in json.loads(p.read_text(encoding="utf-8")) if (e["origen"], e["destino"]) not in rechazados]
+    from goes_science_kg.conceptos import VERSION_TRIAJE, conceptos_del_triaje, vocabulario
+
+    aristas = json.loads(p.read_text(encoding="utf-8"))
+    # Conceptos nuevos del triaje: sus prerrequisitos sugeridos entran como evidencia lógica de confianza media.
+    # Solo llegan aristas hacia el concepto nuevo, así que no pueden crear ciclos.
+    voc = vocabulario()
+    aristas += [{"origen": o, "destino": c["id"], "tipo_evidencia": "logica", "evidencias": ["triaje"],
+                 "confianza": "media", "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje).",
+                 "version": VERSION_TRIAJE}
+                for c in conceptos_del_triaje() for o in c["prerrequisitos_sugeridos"] if o in voc]
+    return [e for e in aristas if (e["origen"], e["destino"]) not in rechazados]

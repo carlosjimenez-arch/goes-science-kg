@@ -32,7 +32,7 @@ Total: **425 temas**. Asignados por: ia 5, malla 267, pisa 1, revision 10, timss
 
 | Marco | Código | Objetivo | Países que lo trabajan |
 |---|---|---|---|
-| T8_27 | T8_27-P3.1 | Propiedades de la luz | CO, ENG, UY |
+| T8_27 | T8_27-P3.1 | Propiedades de la luz | CO, ENG, JP, UY |
 
 ## Referentes de otros países en el grafo
 
@@ -40,6 +40,7 @@ Total: **425 temas**. Asignados por: ia 5, malla 267, pisa 1, revision 10, timss
 |---|---|
 | AU | 75 |
 | CO | 90 |
-| ENG | 123 |
+| ENG | 175 |
+| JP | 54 |
 | SG | 44 |
 | UY | 32 |

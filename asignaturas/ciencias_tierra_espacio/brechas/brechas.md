@@ -16,43 +16,45 @@
 
 ## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto
 
-Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 42 de 79). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
+Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 50 de 79). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
 
 ### Llega 2 o más grados tarde
 
-La columna «Alto desempeño» es la mediana solo de los países entre los 10 primeros de TIMSS 2023 Ciencias (con datos en el grafo: AU, ENG, SG; ver `config/referentes.yaml`).
+La columna «Alto desempeño» es la mediana solo de los países entre los 10 primeros de TIMSS 2023 Ciencias (con datos en el grafo: AU, ENG, JP, SG; ver `config/referentes.yaml`).
 
 | Concepto | SV | Mediana países | Alto desempeño | Países | Oportunidad |
 |---|---|---|---|---|---|
-| Tiempo atmosférico y sus variables | 7.° | 2 | 2 | AU 2, CO 8.5, ENG 2 | +5 |
+| Tiempo atmosférico y sus variables | 7.° | 2.5 | 2 | AU 2, CO 8.5, ENG 2, JP 3.0 | +4.5 |
 | Corrientes oceánicas superficiales y profundas | 9.° | 4.75 | — | CO 4.5, UY 5.0 | +4.25 |
-| Ciclo del agua | 7.° | 3 | 3 | AU 3.0, ENG 2, SG 5.0, UY 3.0 | +4 |
+| Ciclo del agua | 7.° | 3 | 3 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 | +4 |
 | Minerales y sus propiedades | 8.° | 4 | 4 | AU 2, ENG 6.0 | +4 |
-| Ciclo del carbono en los sistemas terrestres | 10.° | 6.5 | 7 | AU 8.0, CO 6.5, ENG 6.0 | +3.5 |
-| Fósiles y su formación | 5.° | 2 | 2 | CO 2, ENG 2, UY 6.0 | +3 |
-| Suelo: formación, componentes y tipos | 5.° | 2.5 | 2 | AU 2, CO 6.5, ENG 2, UY 3.0 | +2.5 |
-| Calidad del aire y contaminación atmosférica | 7.° | 5 | 5 | CO 4.5, SG 5.0, UY 5.0 | +2 |
+| Ciclo del carbono en los sistemas terrestres | 10.° | 6.25 | 6 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 | +3.75 |
+| Calidad del aire y contaminación atmosférica | 7.° | 5 | 5 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 | +2 |
+| Suelo: formación, componentes y tipos | 5.° | 3 | 2 | AU 2, CO 6.5, ENG 2, JP 3.0, UY 3.0 | +2 |
 
 ### Llega 2 o más grados antes
 
 | Concepto | SV | Mediana países | Oportunidad |
 |---|---|---|---|
-| Conservación de recursos, residuos y sostenibilidad | 2.° | 6.5 | -4.5 |
-| Fuentes de energía renovables y no renovables | 2.° | 6.25 | -4.25 |
-| Sismos y fallas geológicas | 2.° | 6.25 | -4.25 |
+| Conservación de recursos, residuos y sostenibilidad | 2.° | 7 | -5 |
+| Fuentes de energía renovables y no renovables | 2.° | 6.5 | -4.5 |
+| El Sol como estrella | 2.° | 6 | -4 |
+| Planetas: tipos y comparación | 4.° | 8 | -4 |
+| Sismos y fallas geológicas | 2.° | 6 | -4 |
 | Ciclo de las rocas | 3.° | 6.5 | -3.5 |
 | Recursos naturales renovables y no renovables | 2.° | 5.25 | -3.25 |
-| Inclinación del eje terrestre y estaciones astronómicas | 2.° | 4.75 | -2.75 |
+| Inclinación del eje terrestre y estaciones astronómicas | 2.° | 5 | -3 |
 | Capas internas de la Tierra | 3.° | 5.5 | -2.5 |
+| Traslación de la Tierra y el año | 2.° | 4.5 | -2.5 |
 | Exploración espacial | 4.° | 6.25 | -2.25 |
+| Registro fósil y cambios ambientales del pasado | 5.° | 7.25 | -2.25 |
 | Calentamiento global | 7.° | 9 | -2 |
 | Cambio climático: causas y efectos | 7.° | 9 | -2 |
-| El Sol como estrella | 4.° | 6 | -2 |
 | La atmósfera y su composición | 3.° | 5 | -2 |
-| Tiempo geológico y datación | 5.° | 7 | -2 |
 
 ### Lo trabajan los países y El Salvador nunca
 
+- Abastecimiento y conservación del agua dulce (ENG 8.5, SG 5.0)
 - Sistemas terrestres y sus interacciones (AU 9.0, CO 4.5)
 
 ## 3. Secuencia: prerrequisitos que llegan después del concepto que los necesita
@@ -92,7 +94,9 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Amenazas naturales geológicas e hidrometeorológicas | 2.° | Ciclones tropicales y tormentas | 4.° | media |
 | Ciclo de las rocas | 3.° | Origen del magma y vulcanismo | 5.° | media |
 | Ciclones tropicales y tormentas | 4.° | Presión hidrostática y atmosférica | 6.° | media |
+| Grandes cambios globales: glaciaciones e impactos de asteroides | 3.° | Registro fósil y cambios ambientales del pasado | 5.° | media |
 | Volcanes: estructura, tipos y productos | 3.° | Origen del magma y vulcanismo | 5.° | media |
+| Grandes cambios globales: glaciaciones e impactos de asteroides | 3.° | Clima: diferencia con el tiempo, tipos y factores | 4.° | media |
 
 
 ## Cómo usar esto

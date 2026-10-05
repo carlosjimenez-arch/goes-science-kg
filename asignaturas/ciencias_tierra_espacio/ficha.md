@@ -28,7 +28,7 @@ Total: **134 temas**. Asignados por: ia 20, pisa 1, revision 11, timss 102.
 
 | Marco | Código | Objetivo | Países que lo trabajan |
 |---|---|---|---|
-| T8_27 | T8_27-E5.1 | Equipo usado en investigaciones de ciencias de la Tierra | CO, ENG |
+| T8_27 | T8_27-E5.1 | Equipo usado en investigaciones de ciencias de la Tierra | CO, ENG, JP |
 | PISA25 | PISA-T8 | Origen del universo y del sistema solar (evolución estelar, formación de planetas, Big Bang) | — |
 
 ## Referentes de otros países en el grafo
@@ -37,6 +37,7 @@ Total: **134 temas**. Asignados por: ia 20, pisa 1, revision 11, timss 102.
 |---|---|
 | AU | 11 |
 | CO | 19 |
-| ENG | 20 |
+| ENG | 30 |
+| JP | 47 |
 | SG | 5 |
 | UY | 17 |

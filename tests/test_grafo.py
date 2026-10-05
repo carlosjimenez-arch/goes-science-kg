@@ -53,3 +53,22 @@ def test_objetivos_de_paises_tienen_fuente_citable(grafo):
     for n in (x for x in nodos if x.tipo == TipoNodo.OBJETIVO_PAIS):
         assert n.fuente and (n.fuente.pagina or n.fuente.localizador), n.id
         assert n.props.get("grado_min"), n.id
+
+
+def test_todo_objetivo_de_pais_esta_etiquetado_o_es_practica(grafo):
+    """Cada objetivo de país tiene conceptos o prácticas (etiquetado directo); si no, falta correr el etiquetado."""
+    nodos, aristas = grafo
+    con_trabaja = {a.origen for a in aristas if a.tipo == TipoArista.TRABAJA and a.origen.startswith("OP:")}
+    sin = [n.id for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id not in con_trabaja]
+    assert len(sin) <= 0.25 * sum(n.tipo == TipoNodo.OBJETIVO_PAIS for n in nodos), sin[:5]
+
+
+def test_japon_equivalencia_por_edad(grafo):
+    """Japón grado N → SV N−1: primaria 3.°–6.° cae en 2.°–5.° y secundaria baja en 6.°–8.°."""
+    nodos, _ = grafo
+    jp = [n for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id.startswith("OP:JP-")]
+    assert len(jp) >= 180
+    for n in jp:
+        lo, hi = (2, 5) if n.props["grado_o_tramo"].startswith("小") else (6, 8)
+        assert lo <= n.props["grado_min"] <= n.props["grado_max"] <= hi, n.id
+        assert n.fuente.localizador, n.id

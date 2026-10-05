@@ -13,20 +13,6 @@
  "total_temas_ciclo": 35,
  "mover_antes": [
   {
-   "concepto": "Calentamiento y enfriamiento",
-   "concepto_id": "CON:fisica/calentamiento-enfriamiento",
-   "grado_actual": 10,
-   "grado_destino": 3,
-   "paises": {
-    "AU": 2,
-    "CO": 2,
-    "ENG": 6.0,
-    "SG": 4.0
-   },
-   "bloqueos": [],
-   "temas_actuales": []
-  },
-  {
    "concepto": "Fricción y resistencia del aire",
    "concepto_id": "CON:fisica/friccion-resistencia-aire",
    "grado_actual": 10,
@@ -49,6 +35,22 @@
      "unidad": "5. Las leyes de Newton"
     }
    ]
+  },
+  {
+   "concepto": "Reflexión de la luz",
+   "concepto_id": "CON:fisica/reflexion-luz",
+   "grado_actual": 10,
+   "grado_destino": 4,
+   "paises": {
+    "AU": 4.0,
+    "CO": 3.0,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 4.0,
+    "UY": 4.0
+   },
+   "bloqueos": [],
+   "temas_actuales": []
   },
   {
    "concepto": "Calor como energía en tránsito",
@@ -79,28 +81,14 @@
    ]
   },
   {
-   "concepto": "Reflexión de la luz",
-   "concepto_id": "CON:fisica/reflexion-luz",
-   "grado_actual": 10,
-   "grado_destino": 4,
-   "paises": {
-    "AU": 4.0,
-    "CO": 3.0,
-    "ENG": 2,
-    "SG": 4.0,
-    "UY": 4.0
-   },
-   "bloqueos": [],
-   "temas_actuales": []
-  },
-  {
    "concepto": "Ventaja mecánica",
    "concepto_id": "CON:fisica/ventaja-mecanica",
    "grado_actual": 9,
    "grado_destino": 4,
    "paises": {
     "CO": 4.0,
-    "ENG": 3.0
+    "ENG": 3.0,
+    "JP": 5.0
    },
    "bloqueos": [
     {
@@ -111,37 +99,13 @@
    "temas_actuales": []
   },
   {
-   "concepto": "Equilibrio térmico y ley cero",
-   "concepto_id": "CON:fisica/equilibrio-termico",
-   "grado_actual": 9,
-   "grado_destino": 4,
-   "paises": {
-    "AU": 2,
-    "ENG": 6.0,
-    "SG": 4.0,
-    "UY": 5.0
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Temperatura y escalas termométricas",
-     "primer_grado_sv": 6
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G09-CIE-U2-2.6",
-     "tema": "2.6. Indagación del concepto de equilibrio térmico entre dos cuerpos.",
-     "unidad": "2. Calor y temperatura"
-    }
-   ]
-  },
-  {
    "concepto": "Materiales magnéticos",
    "concepto_id": "CON:fisica/materiales-magneticos",
    "grado_actual": 6,
    "grado_destino": 2,
    "paises": {
     "ENG": 2,
+    "JP": 2,
     "SG": 3.0
    },
    "bloqueos": [
@@ -167,6 +131,7 @@
     "AU": 3.0,
     "CO": 2,
     "ENG": 2,
+    "JP": 2,
     "SG": 3.0,
     "UY": 5.0
    },
@@ -188,12 +153,7 @@
     "SG": 4.0,
     "UY": 3.0
    },
-   "bloqueos": [
-    {
-     "prerrequisito": "Calentamiento y enfriamiento",
-     "primer_grado_sv": 10
-    }
-   ],
+   "bloqueos": [],
    "temas_actuales": [
     {
      "id": "G06-CIE-U2-2.2",
@@ -208,12 +168,41 @@
    ]
   },
   {
+   "concepto": "Corriente, voltaje y resistencia",
+   "concepto_id": "CON:fisica/corriente-voltaje-resistencia",
+   "grado_actual": 6,
+   "grado_destino": 4,
+   "paises": {
+    "ENG": 4.0,
+    "JP": 3.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Carga eléctrica y electrización",
+     "primer_grado_sv": 9
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G06-CIE-U3-3.1",
+     "tema": "3.1. Uso del multímetro para medir voltaje y corriente eléctrica.",
+     "unidad": "3. Electricidad y magnetismo."
+    },
+    {
+     "id": "G06-CIE-U3-3.2",
+     "tema": "3.2. Identificación del valor de resistencias eléctricas según código de color y multímetro.",
+     "unidad": "3. Electricidad y magnetismo."
+    }
+   ]
+  },
+  {
    "concepto": "Dilatación térmica",
    "concepto_id": "CON:fisica/dilatacion-termica",
    "grado_actual": 6,
    "grado_destino": 4,
    "paises": {
     "ENG": 6.0,
+    "JP": 3.0,
     "SG": 4.0,
     "UY": 3.0
    },
@@ -285,19 +274,11 @@
    "confianza": "alta"
   },
   {
-   "concepto": "Cambios de estado",
+   "concepto": "Circuito eléctrico simple",
    "grado_concepto": 2,
-   "prerrequisito": "Calentamiento y enfriamiento",
-   "grado_prerrequisito": 10,
-   "brecha": 8,
-   "confianza": "alta"
-  },
-  {
-   "concepto": "Conducción, convección y radiación",
-   "grado_concepto": 2,
-   "prerrequisito": "Calentamiento y enfriamiento",
-   "grado_prerrequisito": 10,
-   "brecha": 8,
+   "prerrequisito": "Conductores y aislantes eléctricos",
+   "grado_prerrequisito": 11,
+   "brecha": 9,
    "confianza": "alta"
   },
   {
@@ -400,6 +381,7 @@
    "unidad": "2. Energía.",
    "tema": "2.2. Indagación de los dispositivos que requieren electricidad y su fuente de energía.",
    "conceptos": [
+    "Circuito eléctrico simple",
     "La energía y sus usos",
     "Formas de energía"
    ]
@@ -420,6 +402,7 @@
    "unidad": "2. Energía.",
    "tema": "2.4. Indagación de las fuentes de energía térmica del entorno.",
    "conceptos": [
+    "Calentamiento y enfriamiento",
     "La energía y sus usos"
    ]
   },
@@ -439,6 +422,7 @@
    "unidad": "2. Energía.",
    "tema": "2.6. Comparación de objetos colocados al sol y a la sombra para observar el efecto de la energía solar.",
    "conceptos": [
+    "El Sol como estrella",
     "Calentamiento y enfriamiento",
     "Conducción, convección y radiación"
    ]
@@ -505,6 +489,7 @@
    "unidad": "5. Objetos técnicos.",
    "tema": "5.4. Registro de valores de la máxima resistencia que soporta una estructura.",
    "conceptos": [
+    "Centro de gravedad y estabilidad",
     "Esfuerzo, deformación y módulo de Young"
    ]
   },
@@ -598,6 +583,7 @@
    "unidad": "1. Máquinas y energía.",
    "tema": "1.10. Cálculo de las transformaciones de energía en electrodomésticos y el cuerpo humano.",
    "conceptos": [
+    "Energía de los alimentos y balance energético",
     "Transformaciones de la energía"
    ]
   },

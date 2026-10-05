@@ -33,7 +33,7 @@ Total: **370 temas**. Asignados por: ia 8, malla 162, pisa 1, revision 11, timss
 
 | Marco | Código | Objetivo | Países que lo trabajan |
 |---|---|---|---|
-| T4_27 | T4_27-B2.2 | Herencia y estrategias de reproducción | CO, ENG, UY |
+| T4_27 | T4_27-B2.2 | Herencia y estrategias de reproducción | CO, ENG, JP, UY |
 | AUSS | ACSBL019 | Diversidad de ecosistemas y hábitats, descritos por sus especies, las interacciones entre especies y los factores abióticos del ambiente. | — |
 | AUSS | ACSBL024 | Especies clave en la estructura de la comunidad; su disminución o desaparición impacta el ecosistema más de lo esperado por su abundancia o biomasa. | — |
 | AUSS | ACSBL045 | Membrana celular como límite que regula el intercambio de gases, nutrientes y desechos entre la célula y su entorno. | — |
@@ -53,6 +53,7 @@ Total: **370 temas**. Asignados por: ia 8, malla 162, pisa 1, revision 11, timss
 |---|---|
 | AU | 15 |
 | CO | 96 |
-| ENG | 80 |
+| ENG | 126 |
+| JP | 49 |
 | SG | 38 |
 | UY | 66 |

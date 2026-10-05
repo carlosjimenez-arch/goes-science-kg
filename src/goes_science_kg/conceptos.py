@@ -75,9 +75,52 @@ def preparar_vocabulario(nodos) -> list[str]:
 
 @cache
 def vocabulario() -> dict[str, dict]:
-    """Conceptos consolidados (id → concepto). Vacío si aún no existe."""
+    """Conceptos consolidados (id → concepto), más los conceptos nuevos del triaje. Vacío si aún no existe."""
     p = ruta(f"{DIR}/vocabulario.json")
-    return {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    voc = {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    for c in conceptos_del_triaje():
+        voc.setdefault(c["id"], c)
+    return voc
+
+
+# -- Triaje de conceptos propuestos (capa sobre el etiquetado, como las revisiones) ----------------
+# data/interim/conceptos/triaje_propuestos.json decide qué hacer con cada nombre que el etiquetado propuso:
+# «nuevo» (entra al vocabulario), «sinonimo» (ya existe: concepto_id) o «descartar» (si es un detalle de un concepto,
+# trae concepto_id). Se aplica al cargar, así que sobrevive a volver a correr unir-etiquetado. Las decisiones de
+# confianza baja no se aplican (quedan para revisión humana).
+VERSION_TRIAJE = "triaje-v1"
+
+
+@cache
+def triaje() -> list[dict]:
+    p = ruta(f"{DIR}/triaje_propuestos.json")
+    return [t for t in json.loads(p.read_text(encoding="utf-8")) if t.get("confianza") != "baja"] if p.exists() else []
+
+
+def _id_triaje(t: dict) -> str | None:
+    if t["decision"] == "nuevo":
+        return f"CON:{t['asignatura']}/{slug(t['nombre'])}"
+    return t.get("concepto_id")
+
+
+@cache
+def conceptos_del_triaje() -> tuple[dict, ...]:
+    nuevos: dict[str, dict] = {}
+    for t in triaje():
+        if t["decision"] != "nuevo":
+            continue
+        c = nuevos.setdefault(_id_triaje(t), {
+            "id": _id_triaje(t), "nombre": t["nombre"], "definicion": t["definicion"], "sinonimos": [],
+            "objetivos_marco": [], "origen": "triaje", "nivel": None, "asignatura": t["asignatura"],
+            "version": VERSION_TRIAJE, "prerrequisitos_sugeridos": []})
+        c["sinonimos"] = sorted({*c["sinonimos"], *(x for x in t.get("agrupa", [t["propuesto"]]) if x != t["nombre"])})
+        c["prerrequisitos_sugeridos"] = sorted({*c["prerrequisitos_sugeridos"], *t.get("prerrequisitos_sugeridos", [])})
+    return tuple(nuevos[k] for k in sorted(nuevos))
+
+
+def mapa_triaje() -> dict[str, str]:
+    """Nombre propuesto → id de concepto (nuevo, sinónimo o concepto del que es un detalle)."""
+    return {t["propuesto"]: cid for t in triaje() if (cid := _id_triaje(t))}
 
 
 @cache
@@ -186,8 +229,16 @@ def unir_etiquetado() -> dict:
 
 @cache
 def etiquetado() -> dict[str, dict]:
+    """Etiquetado de temas; los nombres «nuevos» resueltos por el triaje se suman como conceptos secundarios."""
     p = ruta(f"{DIR}/etiquetado_temas.json")
-    return {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    filas = {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    mapa, voc = mapa_triaje(), vocabulario()
+    for f in filas.values():
+        extra = [c for n in f.get("nuevos", []) if (c := mapa.get(n)) in voc and c not in f["conceptos"]]
+        if extra:
+            f["conceptos"] = f["conceptos"] + sorted(set(extra), key=extra.index)
+            f["conceptos_triaje"] = sorted(set(extra))
+    return filas
 
 
 # -- 2-bis. etiquetado directo de objetivos de países --------------------------------------------
@@ -203,9 +254,12 @@ def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool 
     escritos = []
     for pais in sorted({n.props["pais"] for n in ops}):
         items = [n for n in ops if n.props["pais"] == pais]
+        # La numeración sigue tras los lotes existentes: reutilizar un número dejaría su salida_ desalineada.
+        previos = [int(p.stem.rsplit("_", 1)[1]) for p in ruta(f"{DIR}/lotes_paises").glob(f"lote_PAIS_{pais}_*.json")]
+        base = max(previos, default=0) if solo_pendientes else 0
         for i in range(0, len(items), por_lote):
             lote = {
-                "lote": f"PAIS_{pais}_{i // por_lote + 1}", "version": "etiquetado-paises-v1",
+                "lote": f"PAIS_{pais}_{base + i // por_lote + 1}", "version": "etiquetado-paises-v1",
                 "instrucciones": "prompts/etiquetar_conceptos.md (los ítems son objetivos de un país, no temas)",
                 "vocabulario": [{k: c[k] for k in ("id", "nombre", "definicion")} | {"asignatura": c["asignatura"]}
                                 for c in voc.values()],

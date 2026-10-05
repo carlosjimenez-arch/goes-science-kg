@@ -38,6 +38,18 @@ def resumenes() -> dict[str, dict]:
     return {r["id"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
+def resumen_para(g: int, miembros) -> dict | None:
+    """El resumen del grado cuyo bloque original más se parece a este (Jaccard ≥ umbral).
+
+    Louvain puede renumerar los bloques al cambiar el grafo; por eso se empareja por conceptos y no por id.
+    Con un umbral mayor que 0,5, dos bloques disjuntos nunca reclaman el mismo resumen.
+    """
+    pref = f"COM:G{g:02d}-"
+    candidatos = [(_jaccard(r["conceptos"], miembros), i) for i, r in resumenes().items() if i.startswith(pref)]
+    j, i = max(candidatos, key=lambda x: (x[0], x[1]), default=(0, None))
+    return resumenes()[i] if j >= UMBRAL_JACCARD else None
+
+
 def consolidar_resumenes() -> dict:
     """Une resúmenes vigentes y salidas nuevas de subagentes → resumenes.json.
 
@@ -53,8 +65,10 @@ def consolidar_resumenes() -> dict:
         for linea in p.read_text(encoding="utf-8").splitlines():
             n = json.loads(linea)
             nombres[n["id"]] = n["etiqueta"]
-    vigentes = {i: r for i, r in resumenes().items()
-                if i in actuales and _jaccard(r["conceptos"], actuales[i]["conceptos"]) >= UMBRAL_JACCARD}
+    vigentes = {}
+    for i, c in actuales.items():
+        if r := resumen_para(c["grado"], c["conceptos"]):
+            vigentes[i] = {**r, "id": i, "conceptos": sorted(c["conceptos"])}
     d = ruta("data/interim/comunidades")
     for p in sorted(d.glob("salida_*.json")):
         lote = {b["id"]: b for b in json.loads((d / p.name.replace("salida_", "lote_", 1)).read_text(encoding="utf-8"))}
@@ -105,8 +119,8 @@ def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[
             return [k for k, _ in sorted(cnt.items(), key=lambda x: (-x[1], str(x[0])))[:n]]
 
         cid = f"COM:G{g:02d}-{i + 1:02d}"
-        r = resumenes().get(cid)
-        vigente = r is not None and _jaccard(r["conceptos"], miembros) >= UMBRAL_JACCARD
+        r = resumen_para(g, miembros)
+        vigente = r is not None
         resultado.append({
             "id": cid,
             "titulo": r["titulo"] if vigente else None,

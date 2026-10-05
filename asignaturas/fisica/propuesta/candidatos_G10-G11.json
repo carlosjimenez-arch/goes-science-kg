@@ -17,8 +17,11 @@
    "grado_actual": 11,
    "grado_destino": 10,
    "paises": {
-    "CO": 4,
-    "SG": 5
+    "AU": 5.0,
+    "CO": 4.5,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 5.0
    },
    "bloqueos": [],
    "temas_actuales": [
@@ -28,13 +31,74 @@
      "unidad": "6. Fuerzas eléctricas"
     }
    ]
+  },
+  {
+   "concepto": "Ley de Ohm",
+   "concepto_id": "CON:fisica/ley-ohm",
+   "grado_actual": 11,
+   "grado_destino": 10,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 7.0
+   },
+   "bloqueos": [],
+   "temas_actuales": [
+    {
+     "id": "G11-FIS-U9-9.13",
+     "tema": "9.13. Análisis de los efectos fisiológicos de la corriente según su intensidad y de las medidas de protección en instalaciones eléctricas.",
+     "unidad": "9. Circuitos eléctricos"
+    },
+    {
+     "id": "G11-FIS-U9-9.2",
+     "tema": "9.2. Construcción de curvas voltaje-corriente para un resistor y un LED alimentados con pilas.",
+     "unidad": "9. Circuitos eléctricos"
+    }
+   ]
+  },
+  {
+   "concepto": "Ondas de radio y telecomunicaciones",
+   "concepto_id": "CON:fisica/ondas-radio-telecomunicaciones",
+   "grado_actual": 11,
+   "grado_destino": 10,
+   "paises": {
+    "CO": 8.5,
+    "ENG": 8.5
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Ondas electromagnéticas y espectro",
+     "primer_grado_sv": 10
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G11-FIS-U12-12.7",
+     "tema": "12.7. Indagación del funcionamiento de diferentes tecnologías de comunicación inalámbrica.",
+     "unidad": "12. Electromagnetismo"
+    },
+    {
+     "id": "G11-FIS-U12-12.8",
+     "tema": "12.8. Construcción de un sistema de radiocomunicación funcional que incluya componentes electrónicos.",
+     "unidad": "12. Electromagnetismo"
+    },
+    {
+     "id": "G11-FIS-U12-12.9",
+     "tema": "12.9. Investigación del desarrollo tecnológico de los sistemas de radiocomunicación.",
+     "unidad": "12. Electromagnetismo"
+    },
+    {
+     "id": "G11-FIS-U14-14.3",
+     "tema": "14.3. Evaluación crítica de afirmaciones sobre los efectos en la salud de la radiación no ionizante emitida por antenas, redes wifi y hornos de microondas.",
+     "unidad": "14. Ondas electromagnéticas"
+    }
+   ]
   }
  ],
  "corregir_secuencia": [
   {
-   "concepto": "El ojo y los instrumentos ópticos",
+   "concepto": "Fotón y efecto fotoeléctrico",
    "grado_concepto": 10,
-   "prerrequisito": "Lentes delgadas e imágenes",
+   "prerrequisito": "Cuantización de la energía",
    "grado_prerrequisito": 11,
    "brecha": 1,
    "confianza": "alta"
@@ -43,6 +107,14 @@
    "concepto": "Interferencia de la luz",
    "grado_concepto": 10,
    "prerrequisito": "Superposición e interferencia de ondas",
+   "grado_prerrequisito": 11,
+   "brecha": 1,
+   "confianza": "alta"
+  },
+  {
+   "concepto": "Modelo estándar de partículas",
+   "grado_concepto": 10,
+   "prerrequisito": "Núcleo atómico e isótopos",
    "grado_prerrequisito": 11,
    "brecha": 1,
    "confianza": "alta"
@@ -272,6 +344,7 @@
    "unidad": "12. Temperatura y calor",
    "tema": "12.10. Cálculo de la humedad relativa y del punto de rocío a partir de datos meteorológicos de estaciones salvadoreñas.",
    "conceptos": [
+    "Calor latente",
     "Cambios de estado"
    ]
   },
@@ -350,7 +423,8 @@
    "unidad": "12. Temperatura y calor",
    "tema": "12.9. Interpretación de diagramas de fase presión-temperatura del agua y del dióxido de carbono.",
    "conceptos": [
-    "Cambios de estado"
+    "Cambios de estado",
+    "Diagramas de fases"
    ]
   },
   {
@@ -418,7 +492,8 @@
    "unidad": "15. Termodinámica",
    "tema": "15.1. Caracterización de sistemas termodinámicos reales identificando su frontera, su entorno y sus variables de estado.",
    "conceptos": [
-    "Primera ley de la termodinámica"
+    "Primera ley de la termodinámica",
+    "Procesos termodinámicos"
    ]
   },
   {
@@ -437,7 +512,8 @@
    "tema": "15.11. Cálculo del cambio de entropía en cambios de fase, en el ciclo de Carnot y en la transferencia irreversible de calor.",
    "conceptos": [
     "Calor latente",
-    "Segunda ley de la termodinámica"
+    "Segunda ley de la termodinámica",
+    "Entropía"
    ]
   },
   {
@@ -446,6 +522,7 @@
    "unidad": "15. Termodinámica",
    "tema": "15.12. Investigación documental sobre la tercera ley y los métodos para alcanzar temperaturas cercanas al cero absoluto.",
    "conceptos": [
+    "Segunda ley de la termodinámica",
     "Temperatura y escalas termométricas"
    ]
   },
@@ -909,7 +986,8 @@
    "tema": "5.6. Clasificación de las fuerzas en interacciones fundamentales y fuerzas de contacto, y su identificación en situaciones reales.",
    "conceptos": [
     "Fuerzas de contacto y a distancia",
-    "Fuerzas mecánicas comunes"
+    "Fuerzas mecánicas comunes",
+    "Modelo estándar de partículas"
    ]
   },
   {
@@ -1167,7 +1245,8 @@
    "tema": "9.2. Cálculo de la velocidad y la aceleración angulares medias e instantáneas a partir de gráficas ángulo-tiempo.",
    "conceptos": [
     "Gráficas del movimiento",
-    "Movimiento circular y variables angulares"
+    "Movimiento circular y variables angulares",
+    "Movimiento circular uniformemente acelerado"
    ]
   },
   {
@@ -1176,7 +1255,8 @@
    "unidad": "9. Cinemática de rotación",
    "tema": "9.3. Resolución de problemas con las ecuaciones de la cinemática rotacional con aceleración angular constante.",
    "conceptos": [
-    "Movimiento circular y variables angulares"
+    "Movimiento circular y variables angulares",
+    "Movimiento circular uniformemente acelerado"
    ]
   },
   {
@@ -1196,7 +1276,8 @@
    "tema": "9.5. Cálculo de las componentes tangencial y centrípeta de la aceleración de un punto de un cuerpo que gira con aceleración angular.",
    "conceptos": [
     "Aceleración y fuerza centrípeta",
-    "Movimiento circular y variables angulares"
+    "Movimiento circular y variables angulares",
+    "Movimiento circular uniformemente acelerado"
    ]
   },
   {
@@ -1216,7 +1297,8 @@
    "tema": "9.7. Representación vectorial de la velocidad y la aceleración angulares mediante la regla de la mano derecha.",
    "conceptos": [
     "Magnitudes escalares y vectoriales",
-    "Movimiento circular y variables angulares"
+    "Movimiento circular y variables angulares",
+    "Movimiento circular uniformemente acelerado"
    ]
   },
   {
@@ -1380,7 +1462,8 @@
    "conceptos": [
     "Campo eléctrico",
     "Campo magnético y magnetismo terrestre",
-    "Inducción electromagnética: Faraday y Lenz"
+    "Inducción electromagnética: Faraday y Lenz",
+    "Ondas electromagnéticas y espectro"
    ]
   },
   {
@@ -1970,6 +2053,7 @@
    "unidad": "21. Física radiactiva",
    "tema": "21.3. Cálculo de la edad de muestras arqueológicas y geológicas con la ley de desintegración a partir de datos publicados.",
    "conceptos": [
+    "Tiempo geológico y datación",
     "Desintegración radiactiva"
    ]
   },
@@ -2056,6 +2140,7 @@
    "unidad": "22. Ciencias del espacio",
    "tema": "22.8. Exploración de las propiedades deducibles de los exoplanetas.",
    "conceptos": [
+    "Observación astronómica en distintas longitudes de onda",
     "Leyes de Kepler",
     "Órbitas y satélites"
    ]
@@ -2065,7 +2150,9 @@
    "grado": 11,
    "unidad": "22. Ciencias del espacio",
    "tema": "22.9. Discusión acerca de las condiciones que permiten el desarrollo de vida en un planeta y cómo detectarlas.",
-   "conceptos": []
+   "conceptos": [
+    "Observación astronómica en distintas longitudes de onda"
+   ]
   },
   {
    "id": "G11-FIS-U23-23.1",
@@ -2468,6 +2555,7 @@
    "unidad": "8. Energía potencial eléctrica",
    "tema": "8.6. Interpretación de las diferencias de potencial en neuronas y en el corazón como base de las técnicas de diagnóstico médico.",
    "conceptos": [
+    "Impulso nervioso y sinapsis",
     "Energía potencial y potencial eléctrico"
    ]
   },
@@ -2515,7 +2603,8 @@
    "unidad": "9. Circuitos eléctricos",
    "tema": "9.13. Análisis de los efectos fisiológicos de la corriente según su intensidad y de las medidas de protección en instalaciones eléctricas.",
    "conceptos": [
-    "Ley de Ohm"
+    "Ley de Ohm",
+    "Potencia eléctrica y efecto Joule"
    ]
   },
   {

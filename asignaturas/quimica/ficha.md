@@ -49,6 +49,7 @@ Total: **316 temas**. Asignados por: malla 209, pisa 4, revision 8, timss 95.
 |---|---|
 | AU | 13 |
 | CO | 43 |
-| ENG | 44 |
+| ENG | 78 |
+| JP | 37 |
 | SG | 6 |
 | UY | 19 |

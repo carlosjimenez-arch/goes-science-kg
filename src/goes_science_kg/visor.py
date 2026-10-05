@@ -74,16 +74,27 @@ aside{width:320px;max-width:40vw;padding:12px 16px;border-left:1px solid var(--b
 <label><input type="checkbox" class="asig" value="fisica" checked> Física</label>
 <label><input type="checkbox" class="asig" value="quimica" checked> Química</label>
 <label><input type="checkbox" class="asig" value="ciencias_tierra_espacio" checked> Tierra y Espacio</label>
-<label><input type="checkbox" id="temas" checked> Mostrar temas</label>
+<label><input type="checkbox" id="temas"> Mostrar temas</label>
 <span class="leyenda muted">● tema ■ concepto ◆ práctica · <span style="background:#C62828"></span>prerrequisito que llega tarde · <span style="background:#9E9E9E"></span>prerrequisito de otro grado</span>
 </div></header>
 <main><div id="red"></div><aside id="detalle"><p class="muted">Haz clic en un nodo para ver su detalle y su fuente.</p></aside></main>
 <script>
 const DATOS = __DATOS__;
+// vis-network dibuja en canvas: los colores de texto se fijan aquí (no toma las variables CSS).
+const oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const tinta = oscuro ? '#ececea' : '#1d1d1b';
+DATOS.nodos.forEach(n => {
+  n.font = n.shape === 'box' ? {color: '#ffffff', size: 13, face: 'Arial'} : {color: tinta, size: 11, face: 'Arial'};
+  if (n.shape === 'box') n.margin = 6;
+  n.hidden = n.tipo === 'Tema';  // vista inicial: mapa de conceptos y prácticas
+});
 const nodos = new vis.DataSet(DATOS.nodos), aristas = new vis.DataSet(DATOS.aristas);
 const red = new vis.Network(document.getElementById('red'), {nodes: nodos, edges: aristas}, {
-  physics: {solver: 'forceAtlas2Based', stabilization: {iterations: 200}},
-  nodes: {font: {size: 12, face: 'Arial'}}, interaction: {hover: true}});
+  physics: {solver: 'forceAtlas2Based', forceAtlas2Based: {gravitationalConstant: -90, springLength: 140},
+            stabilization: {iterations: 400}},
+  layout: {improvedLayout: false},
+  nodes: {scaling: {label: {drawThreshold: 3}}}, interaction: {hover: true, tooltipDelay: 150}});
+red.once('stabilizationIterationsDone', () => { red.setOptions({physics: false}); red.fit(); });
 function filtrar(){
   const asigs = new Set([...document.querySelectorAll('.asig:checked')].map(e => e.value));
   const temas = document.getElementById('temas').checked, q = document.getElementById('buscar').value.toLowerCase();

@@ -21,14 +21,14 @@ uv run pytest -q
 ```
 
 ## Estado
-**Grafo v1**: 3.286 nodos y 17.753 aristas.
+**Grafo v1**: 3.641 nodos y 20.047 aristas.
 - 1.260 temas de la malla (1.245 en alcance y 15 de tecnología o transversales fuera de alcance).
 - **498 conceptos y 30 prácticas científicas**, con 797 prerrequisitos entre conceptos (un grafo sin ciclos por
   asignatura) y 11 equivalencias entre asignaturas.
 - 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
   (este último es el pivote de Biología y Química de 10.°–11.°).
-- 928 objetivos de 5 países: Uruguay, Colombia, Singapur, **Inglaterra** y **Australia** (estos tres últimos en el
-  top 10 de Ciencias de TIMSS 2023, verificado con los anexos oficiales), alineados a TIMSS 2027 y etiquetados con
+- 1.265 objetivos de 6 países: Uruguay, Colombia, Singapur, **Inglaterra**, **Australia** y **Japón** (estos cuatro
+  últimos en el top 10 de Ciencias de TIMSS 2023, verificado con los anexos oficiales), alineados a TIMSS 2027 y etiquetados con
   conceptos.
 
 **Grafos por grado** (lo que pidió el MINED): [`grados/`](grados/README.md). Cada grado tiene una ficha

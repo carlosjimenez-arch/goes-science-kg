@@ -6,10 +6,10 @@
   "biologia": 40,
   "ciencias_tierra_espacio": 20
  },
- "conceptos": 50,
- "conceptos_nuevos": 33,
- "conceptos_retomados": 17,
- "conceptos_anticipados": 0,
+ "conceptos": 55,
+ "conceptos_nuevos": 34,
+ "conceptos_retomados": 20,
+ "conceptos_anticipados": 1,
  "practicas": {
   "PRAC:desarrollar-y-usar-modelos": 11,
   "PRAC:usar-matematicas-en-ciencias": 4,
@@ -30,41 +30,6 @@
  },
  "anclajes": [
   {
-   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "concepto": "CON:biologia/organos-de-los-sentidos",
-   "estado": "ausente",
-   "primer_grado_sv": null,
-   "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
-   "estado": "ausente",
-   "primer_grado_sv": null,
-   "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "concepto": "CON:biologia/sistema-circulatorio",
-   "estado": "ausente",
-   "primer_grado_sv": null,
-   "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "concepto": "CON:biologia/sistema-locomotor",
-   "estado": "ausente",
-   "primer_grado_sv": null,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "concepto": "CON:biologia/sistema-respiratorio",
-   "estado": "ausente",
-   "primer_grado_sv": null,
-   "confianza": "media"
-  },
-  {
    "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
    "concepto": "CON:ciencias_tierra_espacio/exploracion-espacial",
    "estado": "ausente",
@@ -77,6 +42,20 @@
    "estado": "ausente",
    "primer_grado_sv": null,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/biotecnologia-vegetal",
+   "concepto": "CON:biologia/agricultura-y-seguridad-alimentaria",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+   "concepto": "CON:biologia/agricultura-y-seguridad-alimentaria",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 4,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:biologia/factores-bioticos-y-abioticos",
@@ -93,11 +72,25 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/nutrientes-y-sus-funciones",
+   "concepto": "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/competencia-por-recursos",
    "concepto": "CON:biologia/nicho-ecologico",
    "estado": "mismo_grado",
    "primer_grado_sv": 4,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/factores-bioticos-y-abioticos",
+   "concepto": "CON:biologia/niveles-de-organizacion-ecologica",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 4,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:biologia/cadena-alimentaria",
@@ -219,13 +212,6 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/el-sol-como-estrella",
-   "concepto": "CON:ciencias_tierra_espacio/sistema-solar",
-   "estado": "mismo_grado",
-   "primer_grado_sv": 4,
-   "confianza": "media"
-  },
-  {
    "prerrequisito": "CON:biologia/ingenieria-genetica",
    "concepto": "CON:biologia/biotecnologia-vegetal",
    "estado": "posterior",
@@ -235,6 +221,13 @@
   {
    "prerrequisito": "CON:biologia/reproduccion-de-plantas-con-flor",
    "concepto": "CON:biologia/biotecnologia-vegetal",
+   "estado": "posterior",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/respiracion-celular",
+   "concepto": "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
    "estado": "posterior",
    "primer_grado_sv": 6,
    "confianza": "media"
@@ -317,6 +310,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/impacto-humano-en-los-ecosistemas",
+   "concepto": "CON:biologia/agricultura-y-seguridad-alimentaria",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
    "concepto": "CON:biologia/biodiversidad",
    "estado": "previo",
@@ -338,8 +338,29 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "concepto": "CON:biologia/conservacion-e-inocuidad-de-los-alimentos",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/microorganismos",
+   "concepto": "CON:biologia/conservacion-e-inocuidad-de-los-alimentos",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/microorganismos",
    "concepto": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+   "concepto": "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "media"
@@ -387,6 +408,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/habitat-y-ecosistemas-comunes",
+   "concepto": "CON:biologia/niveles-de-organizacion-ecologica",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
    "concepto": "CON:biologia/nutrientes-y-sus-funciones",
    "estado": "previo",
@@ -394,11 +422,32 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "concepto": "CON:biologia/organos-de-los-sentidos",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/respuesta-a-estimulos",
    "concepto": "CON:biologia/organos-de-los-sentidos",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
+   "concepto": "CON:biologia/plantas-y-animales-utiles-al-ser-humano",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/necesidades-de-los-seres-vivos",
+   "concepto": "CON:biologia/plantas-y-animales-utiles-al-ser-humano",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:biologia/microorganismos",
@@ -419,6 +468,34 @@
    "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
    "estado": "previo",
    "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "concepto": "CON:biologia/sistema-circulatorio",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "concepto": "CON:biologia/sistema-locomotor",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "concepto": "CON:biologia/sistema-respiratorio",
+   "estado": "previo",
+   "primer_grado_sv": 2,
    "confianza": "media"
   },
   {
@@ -455,6 +532,13 @@
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/el-sol-como-estrella",
+   "concepto": "CON:ciencias_tierra_espacio/sistema-solar",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/traslacion-y-ano",
@@ -494,21 +578,12 @@
  ],
  "faltantes_por_edad": [
   {
-   "concepto": "CON:biologia/fosiles",
-   "sv": 5,
+   "concepto": "CON:fisica/materiales-magneticos",
+   "sv": 6,
    "paises": {
-    "CO": 2,
     "ENG": 2,
-    "UY": 6.0
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/fosiles",
-   "sv": 5,
-   "paises": {
-    "CO": 2,
-    "ENG": 2,
-    "UY": 6.0
+    "JP": 2,
+    "SG": 3.0
    }
   },
   {
@@ -517,7 +592,20 @@
    "paises": {
     "AU": 2,
     "CO": 8.5,
-    "ENG": 2
+    "ENG": 2,
+    "JP": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/imanes-polos",
+   "sv": 6,
+   "paises": {
+    "AU": 3.0,
+    "CO": 2,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 3.0,
+    "UY": 5.0
    }
   },
   {
@@ -525,7 +613,19 @@
    "sv": 7,
    "paises": {
     "CO": 3.0,
-    "ENG": 2
+    "ENG": 2,
+    "JP": 5.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+   "sv": 7,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 2,
+    "JP": 3.0,
+    "SG": 5.0,
+    "UY": 3.0
    }
   },
   {
@@ -535,33 +635,7 @@
     "AU": 2,
     "CO": 6.5,
     "ENG": 2,
-    "UY": 3.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/materiales-magneticos",
-   "sv": 6,
-   "paises": {
-    "ENG": 2,
-    "SG": 3.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/transporte-en-plantas",
-   "sv": 8,
-   "paises": {
-    "ENG": 2,
-    "SG": 5.0,
-    "UY": 3.0
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
-   "sv": 7,
-   "paises": {
-    "AU": 3.0,
-    "ENG": 2,
-    "SG": 5.0,
+    "JP": 3.0,
     "UY": 3.0
    }
   },
@@ -572,17 +646,6 @@
     "AU": 3.0,
     "ENG": 2,
     "SG": 6.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/imanes-polos",
-   "sv": 6,
-   "paises": {
-    "AU": 3.0,
-    "CO": 2,
-    "ENG": 2,
-    "SG": 3.0,
-    "UY": 5.0
    }
   },
   {
@@ -604,6 +667,54 @@
    }
   },
   {
+   "concepto": "CON:biologia/adaptaciones-conductuales",
+   "sv": 11,
+   "paises": {
+    "AU": 4.0,
+    "CO": 2,
+    "JP": 3.0,
+    "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/fosiles",
+   "sv": 5,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "JP": 5.0,
+    "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/fosiles",
+   "sv": 5,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "JP": 5.0,
+    "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/corriente-voltaje-resistencia",
+   "sv": 6,
+   "paises": {
+    "ENG": 4.0,
+    "JP": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/dilatacion-termica",
+   "sv": 6,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 3.0,
+    "SG": 4.0,
+    "UY": 3.0
+   }
+  },
+  {
    "concepto": "CON:fisica/gravedad-atrae-hacia-tierra",
    "sv": null,
    "paises": {
@@ -614,20 +725,15 @@
    }
   },
   {
-   "concepto": "CON:fisica/ventaja-mecanica",
-   "sv": 9,
-   "paises": {
-    "CO": 4.0,
-    "ENG": 3.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/adaptaciones-conductuales",
-   "sv": 11,
+   "concepto": "CON:fisica/reflexion-luz",
+   "sv": 10,
    "paises": {
     "AU": 4.0,
-    "CO": 2,
-    "SG": 6.0
+    "CO": 3.0,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 4.0,
+    "UY": 4.0
    }
   },
   {
@@ -635,37 +741,9 @@
    "sv": 8,
    "paises": {
     "ENG": 4.0,
+    "JP": 5.0,
     "SG": 4.0,
     "UY": 4.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "sv": null,
-   "paises": {
-    "AU": 7.0,
-    "CO": 2,
-    "ENG": 2,
-    "SG": 4.0,
-    "UY": 8.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/evidencias-de-la-evolucion",
-   "sv": 10,
-   "paises": {
-    "AU": 9.0,
-    "CO": 2,
-    "ENG": 4.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/herencia-de-rasgos",
-   "sv": 10,
-   "paises": {
-    "CO": 2,
-    "ENG": 4.0,
-    "SG": 5.0
    }
   },
   {
@@ -674,6 +752,17 @@
    "paises": {
     "AU": 8.0,
     "ENG": 2,
+    "JP": 4.0,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/transporte-en-plantas",
+   "sv": 8,
+   "paises": {
+    "ENG": 2,
+    "JP": 5.0,
     "SG": 5.0,
     "UY": 3.0
    }
@@ -684,6 +773,7 @@
    "paises": {
     "AU": 4.0,
     "CO": 4.5,
+    "JP": 4.0,
     "UY": 3.0
    }
   },
@@ -705,27 +795,16 @@
    }
   },
   {
-   "concepto": "CON:fisica/dilatacion-termica",
-   "sv": 6,
+   "concepto": "CON:fisica/ventaja-mecanica",
+   "sv": 9,
    "paises": {
-    "ENG": 6.0,
-    "SG": 4.0,
-    "UY": 3.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/reflexion-luz",
-   "sv": 10,
-   "paises": {
-    "AU": 4.0,
-    "CO": 3.0,
-    "ENG": 2,
-    "SG": 4.0,
-    "UY": 4.0
+    "CO": 4.0,
+    "ENG": 3.0,
+    "JP": 5.0
    }
   }
  ],
- "referentes_paises": 57,
+ "referentes_paises": 71,
  "top_conceptos": [
   [
    "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
@@ -734,6 +813,10 @@
   [
    "CON:fisica/maquinas-simples",
    6
+  ],
+  [
+   "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
+   5
   ],
   [
    "CON:biologia/nutrientes-y-sus-funciones",
@@ -781,10 +864,6 @@
   ],
   [
    "CON:biologia/reproduccion-humana-y-pubertad",
-   2
-  ],
-  [
-   "CON:biologia/sistema-digestivo",
    2
   ]
  ]

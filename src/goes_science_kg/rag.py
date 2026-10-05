@@ -37,15 +37,20 @@ consolidadas consolidado previo previos aborda abordan ensena ensenan ensenar cu
 para hacer pais paises otros""".split())
 INTENCION_PRERREQ = re.compile(r"\b(antes de|previo|previos|prerrequisit|deben saber|deben dominar|necesitan? saber|"
                                r"base para|para comprender|para entender|consolidad)", re.I)
-INTENCION_PAISES = re.compile(
-    r"\b(pa[ií]s|pa[ií]ses|uruguay|colombia|singapur|internacional|otros sistemas|compar)", re.I)
+# Raíces sin tildes (se comparan con la consulta sin tildes): nombre del país y gentilicio.
+PAIS_NOMBRADO = {"uruguay": "UY", "colombia": "CO", "singapur": "SG", "inglaterra": "ENG", "ingles": "ENG",
+                 "britanic": "ENG", "australia": "AU", "japon": "JP", "japones": "JP"}
+INTENCION_PAISES = re.compile(r"\b(pais|paises|internacional|otros sistemas|compar|" + "|".join(PAIS_NOMBRADO) + ")")
 INTENCION_MARCO = re.compile(
     r"\b(timss|pisa|acara|australian|marco|marcos|evaluaci[oó]n internacional|objetivos? internacional)", re.I)
 MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "acara": ("AUSS",),
                   "australian": ("AUSS",)}
 PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
-PAIS_NOMBRADO = {"uruguay": "UY", "colombia": "CO", "singapur": "SG"}
 PESO_TIPO = {TipoNodo.CONCEPTO: 1.15}  # ablación en data/evaluacion/resultados.md
+
+
+def _sin_tildes(texto: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", texto.lower()) if unicodedata.category(c) != "Mn")
 
 
 def normalizar(texto: str) -> list[str]:
@@ -152,8 +157,9 @@ class GraphRAG:
     def recuperar(self, consulta: str, grado: int | None = None, asignatura: str | None = None,
                   k_semillas: int = 8, saltos: int = 2, k_final: int = 25) -> Contexto:
         q = normalizar(consulta)
-        paises = INTENCION_PAISES.search(consulta)
-        nombrados = {c for p, c in PAIS_NOMBRADO.items() if p in consulta.lower()}
+        plano = _sin_tildes(consulta)
+        paises = INTENCION_PAISES.search(plano)
+        nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b{p}", plano)}
         marco = INTENCION_MARCO.search(consulta)
         marcos = {m for clave, ms in MARCO_NOMBRADO.items() if clave in consulta.lower() for m in ms}
 

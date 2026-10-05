@@ -12,3 +12,4 @@ sesión y los marcadores en MAYÚSCULAS (LOTES, ASIG, G0–G1, XX-YY, LOTE).
 | `prompt_comunidades.md` | Título y resumen de bloques temáticos | (autocontenido) |
 | `prompt_propuesta.md` | Propuesta curricular por ciclo | `prompts/propuesta_curricular.md` |
 | `msg_v2.md` | Pedir la revisión de una propuesta tras regenerar candidatos | — |
+| `msg_v3_japon.md` | Revisión de las propuestas al sumar Japón (encargo autocontenido) | `prompts/propuesta_curricular.md` |

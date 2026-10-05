@@ -11,8 +11,9 @@
 #   y puntaje promedio. Falta PISA 2022 (Vol. I, OCDE) para completar la evidencia.
 #
 # Equivalencia de grados por EDAD DE INGRESO (El Salvador: 1.° grado a los 7 años):
-#   Inglaterra Year N → SV grado N−2, mínimo 2 (Years 1–4 = 2.°, Year 5 = 3.°, Year 6 = 4.°; KS3 Years 7–9 = 5.°–7.°)
+#   Inglaterra Year N → SV grado N−2, mínimo 2 (Years 1–4 = 2.°, Year 5 = 3.°, Year 6 = 4.°; KS3 Years 7–9 = 5.°–7.°; KS4 Years 10–11 = 8.°–9.°)
 #   Australia Year N → SV grado N−1 (Foundation–Year 3 = 2.°; Year 7–10 = 6.°–9.°)
+#   Japón grado N → SV grado N−1 (primaria 3.°–6.° = 2.°–5.°; secundaria baja 1.°–3.° = 6.°–8.°)
 #   Singapur P N → SV N; Uruguay y Colombia: mismo número de grado (1.° de Colombia se cuenta como 2.°).
 
 paises:
@@ -48,10 +49,12 @@ paises:
     vacios: ["El sitio del Mineduc bloquea la descarga automática: bajar a mano"]
   JP:
     nombre: Japón
-    motivo: Alto desempeño en TIMSS y PISA Ciencias; Course of Study con traducción oficial al inglés.
+    motivo: 3.° en Ciencias de 8.° grado y 6.° en 4.° grado en TIMSS 2023; Course of Study 2017 por grado.
     timss2023_ciencias: {g4: {puesto: 6, puntaje: 555}, g8: {puesto: 3, puntaje: 557}}
-    idioma: en
-    estado: pendiente
+    idioma: ja
+    estado: alineado
+    documentos: [jp_cos_826, jp_cos_836]
+    fuente_nota: "Texto oficial del Course of Study 2017 (MEXT) publicado como datos enlazados por jp-cos (github.com/jp-cos)"
   KR:
     nombre: Corea del Sur
     motivo: Alto desempeño en TIMSS y PISA Ciencias.
@@ -65,7 +68,7 @@ paises:
     estado: pendiente
   ENG:
     nombre: Inglaterra
-    documentos: [eng_ks12, eng_ks3]
+    documentos: [eng_ks12, eng_ks3, eng_ks4]
     motivo: 5.° lugar en Ciencias de TIMSS 2023 en 4.° y 8.° grado; National Curriculum por año (licencia OGL).
     timss2023_ciencias: {g4: {puesto: 5, puntaje: 556}, g8: {puesto: 5, puntaje: 531}}
     idioma: en

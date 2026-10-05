@@ -11,17 +11,17 @@
 | Física | 37 |
 | Química | 20 |
 
-- **73 conceptos**: 35 nuevos en este grado, 38 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **75 conceptos**: 35 nuevos en este grado, 40 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: PISA25 23, T8_27 24.
-- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 49.
+- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 117.
 
 ## Conceptos más trabajados
 
 | Concepto | Asignatura | Temas |
 |---|---|---|
+| El océano: propiedades del agua de mar y zonas | Ciencias de la Tierra y del Espacio | 5 |
 | Corrientes oceánicas superficiales y profundas | Ciencias de la Tierra y del Espacio | 4 |
 | Oleaje, dinámica costera y sedimentación marina | Ciencias de la Tierra y del Espacio | 4 |
-| El océano: propiedades del agua de mar y zonas | Ciencias de la Tierra y del Espacio | 4 |
 | Campo magnético y magnetismo terrestre | Física | 4 |
 | Hidrodinámica: continuidad y Bernoulli | Física | 4 |
 | Segunda ley de la termodinámica | Física | 4 |
@@ -41,27 +41,25 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Termodinámica, electricidad y magnetismo aplicados | 16 | 18 | Física | 7. Magnetismo aplicado; 2. Calor y temperatura; 6. Electricidad |
-| Cambios de estado y vulcanismo salvadoreño | 10 | 8 | Ciencias de la Tierra y del Espacio, Física | 5. Geología de El Salvador; 2. Calor y temperatura |
-| Ondas, sismos, rocas y dinámica costera | 9 | 10 | Ciencias de la Tierra y del Espacio, Física | 5. Geología de El Salvador; 4. Oceanografía |
-| Océanos: propiedades, corrientes y problemática | 8 | 9 | Ciencias de la Tierra y del Espacio, Biología | 4. Oceanografía |
-| Mecánica de fluidos: hidrostática e hidrodinámica | 8 | 13 | Física | 1. Mecánica de fluidos; 4. Oceanografía |
-| Ácidos, bases y pH | 7 | 7 | Química | 3. Equilibrio químico |
-| Equilibrio químico y soluciones amortiguadoras | 7 | 13 | Química | 3. Equilibrio químico |
-| Ecosistemas marino-costeros | 3 | 2 | Biología | 4. Oceanografía |
-| Carga eléctrica, campo y ley de Coulomb | 3 | 3 | Física | 6. Electricidad |
+| Geología, sismos y volcanes de El Salvador | 16 | 15 | Ciencias de la Tierra y del Espacio, Física | 5. Geología de El Salvador; 4. Oceanografía |
+| Electricidad y circuitos | 11 | 9 | Física | 6. Electricidad; 7. Magnetismo aplicado |
+| Ácidos, bases y pH | 10 | 8 | Química, Biología, Ciencias de la Tierra y del Espacio | 3. Equilibrio químico; 4. Oceanografía |
+| El océano: propiedades, corrientes y ecosistemas | 10 | 12 | Ciencias de la Tierra y del Espacio, Biología, Física | 4. Oceanografía; 1. Mecánica de fluidos |
+| Termodinámica y magnetismo aplicado | 10 | 14 | Física, Ciencias de la Tierra y del Espacio | 7. Magnetismo aplicado; 2. Calor y temperatura; 4. Oceanografía |
+| Equilibrio químico y disoluciones amortiguadoras | 7 | 13 | Química | 3. Equilibrio químico |
+| Mecánica de fluidos: hidrostática e hidrodinámica | 6 | 11 | Física | 1. Mecánica de fluidos |
+| Cambios de estado y calor | 3 | 3 | Física | 2. Calor y temperatura |
 
 ### Qué se aprende en cada bloque
 
-- **Termodinámica, electricidad y magnetismo aplicados.** Los estudiantes experimentan con procesos termodinámicos y las leyes de la termodinámica, construyen circuitos con componentes electrónicos y un motor de corriente directa, y reconocen aplicaciones del magnetismo en la Tierra, el espacio y la medicina. La energía y su transformación conectan los temas. Bloque muy amplio que reúne tres unidades; conviene revisar su carga.
-- **Cambios de estado y vulcanismo salvadoreño.** Se experimenta con cambios de fase y se calcula calor latente y específico a partir de gráficos; en paralelo se estudian estructuras volcánicas, causas e historial eruptivo de El Salvador, el vulcanismo en el sistema solar y los sistemas de alerta temprana. La conexión entre calorimetría y volcanes es débil; conviene tratarlos como bloques distintos.
-- **Ondas, sismos, rocas y dinámica costera.** Los estudiantes clasifican rocas, identifican rasgos geomorfológicos, fallas y zonas sísmicas de El Salvador, simulan ondas sísmicas e indagan el oleaje, la dinámica costera y la sedimentación marina. Las ondas mecánicas unen sismos y oleaje. Mezcla física con ciencias de la Tierra; conviene hacer explícito el concepto físico de onda antes de sus aplicaciones.
-- **Océanos: propiedades, corrientes y problemática.** Se exploran las propiedades físicas y químicas del océano, su topografía y zonas, la estratificación vertical y las corrientes superficiales y profundas impulsadas por el sol y el viento, cerrando con la problemática ambiental oceánica. La interacción océano-atmósfera articula el bloque. Coherente y experimental; enlaza bien con la circulación atmosférica.
+- **Geología, sismos y volcanes de El Salvador.** Se estudian rocas, geomorfología, vulcanismo, sismos, fallas y ondas sísmicas en El Salvador, junto con oleaje y dinámica costera. Las ondas mecánicas de Física sirven para explicar sismos y olas. El bloque está muy contextualizado y aporta a la gestión de riesgo; mezcla oceanografía y geología, lo que podría ordenarse mejor en la secuencia de unidades.
+- **Electricidad y circuitos.** Los estudiantes trabajan carga eléctrica, campo y ley de Coulomb, construyen circuitos con componentes electrónicos y analizan la instalación eléctrica del hogar y la rectificación de corriente. La electrostática conduce a los circuitos y a sus aplicaciones. El bloque reúne muchos conceptos en pocos temas; habría que revisar si la profundidad es realista para el grado.
+- **Ácidos, bases y pH.** Se estudian las propiedades y teorías de ácidos y bases, la escala de pH, los indicadores naturales, el cálculo de pH y la titulación, además de su manejo seguro. Un tema de oceanografía conecta el pH con la problemática ambiental del océano. El enlace con la acidificación oceánica es valioso, aunque aparece aislado y podría trabajarse de forma más explícita.
+- **El océano: propiedades, corrientes y ecosistemas.** Los estudiantes exploran las propiedades físicas y químicas del océano, su zonificación, las corrientes y los ecosistemas marinos, y miden magnitudes de fluidos considerando el error. La densidad, el viento y el calor explican la circulación oceánica y la estratificación. El bloque integra Tierra, Biología y Física de forma natural; es un buen modelo de enfoque interdisciplinario.
+- **Termodinámica y magnetismo aplicado.** Se estudian procesos termodinámicos, la primera y segunda ley y máquinas térmicas, junto con aplicaciones del campo magnético en la Tierra, la medicina y el motor eléctrico. Ambos temas se unen por la transformación y eficiencia de la energía. El bloque mezcla dos unidades distintas; la relación entre ellas es débil y conviene revisar su secuencia.
+- **Equilibrio químico y disoluciones amortiguadoras.** Se estudian la rapidez de reacción, el equilibrio químico y su constante, el principio de Le Châtelier, la fuerza de ácidos y bases y las soluciones buffer. Bloque coherente pero de alta exigencia conceptual y matemática; depende del bloque de ácidos y bases, por lo que conviene ubicarlo después.
 - **Mecánica de fluidos: hidrostática e hidrodinámica.** Los estudiantes miden empuje y peso aparente, construyen una prensa hidráulica, comprueban Torricelli y Stokes, calculan viscosidad y resuelven problemas de hidrostática e hidrodinámica, considerando el error de medida. Retoma y profundiza los fluidos de 6.°, buena progresión en espiral; conviene asegurar que no repita sin avanzar en lo cuantitativo.
-- **Ácidos, bases y pH.** Se indagan las características de ácidos y bases según Arrhenius, Brønsted-Lowry y Lewis, se extraen indicadores naturales, se calcula el pH, se clasifican soluciones y se detecta el punto de equivalencia en una titulación, cerrando con su manejo seguro. Bloque coherente de química que progresa de lo cualitativo a lo cuantitativo y retoma el pH visto en 7.°.
-- **Equilibrio químico y soluciones amortiguadoras.** Los estudiantes indagan el equilibrio químico, expresan y calculan constantes de equilibrio, aplican el principio de Le Châtelier, distinguen ácidos y bases fuertes y débiles y comprueban el efecto de las soluciones buffer. La rapidez de reacción abre el bloque. Coherente pero exigente; requiere dominio previo de ácidos, bases y pH.
-- **Ecosistemas marino-costeros.** Se caracterizan los ecosistemas marino-costeros y se describe la estructura y dinámica de los ecosistemas marinos, aplicando factores bióticos y abióticos y redes tróficas. Bloque breve de biología dentro de Oceanografía; retoma la ecología de 7.° en un contexto nuevo, lo que favorece la progresión si se enlaza explícitamente.
-- **Carga eléctrica, campo y ley de Coulomb.** Los estudiantes demuestran la electrización de los cuerpos, experimentan con el campo y la fuerza eléctrica y calculan la fuerza entre cargas puntuales en una dimensión. La carga conecta campo y fuerza. Bloque breve y coherente que debería anteceder a circuitos y magnetismo en la secuencia de la unidad de Electricidad.
+- **Cambios de estado y calor.** Los estudiantes experimentan cambios de fase, construyen gráficos de temperatura contra tiempo y calculan calor latente y calor específico. Los tres conceptos se conectan en la curva de calentamiento. Es un bloque pequeño y coherente, con buen equilibrio entre experimentación y cálculo; sirve de base para la termodinámica del mismo grado.
 
 ## Prácticas científicas
 
@@ -109,32 +107,45 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
 | Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
+| Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
-| Adaptaciones conductuales | 11 | AU 4.0, CO 2, SG 6.0 |
-| Estructuras del cuerpo animal y su función | nunca | AU 7.0, CO 2, ENG 2, SG 4.0, UY 8.0 |
-| Evidencias de la evolución | 10 | AU 9.0, CO 2, ENG 4.0 |
-| Herencia de rasgos | 10 | CO 2, ENG 4.0, SG 5.0 |
+| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
-| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, SG 4.0, UY 4.0 |
-| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, SG 5.0 |
+| Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |
+| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, JP 2, SG 5.0 |
 | Espejos planos e imágenes | 10 | ENG 6.0, UY 4.0 |
 | Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |
-| Refracción de la luz | 10 | AU 4.0, ENG 6.0, UY 5.0 |
-| Lentes delgadas e imágenes | 10 | ENG 6.0, UY 5.0 |
-| Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, SG 5.0 |
+| Refracción de la luz | 10 | AU 4.0, ENG 6.0, JP 6.0, UY 5.0 |
+| Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 |
+| Evidencias de la evolución | 10 | AU 9.0, CO 2, ENG 4.0, JP 8.0 |
+| Lentes delgadas e imágenes | 10 | ENG 6.0, JP 6.0, UY 5.0 |
 | Ondas electromagnéticas y espectro | 10 | CO 8.5, ENG 6.0, UY 6.0 |
-| Impulso nervioso y sinapsis | 10 | CO 4.5, UY 8.0 |
-| Ciclos del carbono y del oxígeno | 10 | AU 8.0, CO 6.5, ENG 6.0 |
-| Ciclo del carbono en los sistemas terrestres | 10 | AU 8.0, CO 6.5, ENG 6.0 |
-| Reacciones exotérmicas y endotérmicas | 10 | AU 7.0, ENG 6.0 |
-| Célula animal y célula vegetal | 11 | AU 7.0, CO 6.5, ENG 6.0, UY 7.0 |
+| Ciclos del carbono y del oxígeno | 10 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 |
+| Ciclo del carbono en los sistemas terrestres | 10 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 |
+| Ley de Ohm | 11 | ENG 6.0, JP 7.0 |
+| Oxidación y reducción | 11 | ENG 6.0, JP 7.0 |
+| Abastecimiento y conservación del agua dulce | nunca | ENG 8.5, SG 5.0 |
 | Sistemas terrestres y sus interacciones | nunca | AU 9.0, CO 4.5 |
+| Célula animal y célula vegetal | 11 | AU 7.0, CO 6.5, ENG 6.0, JP 7.0, UY 7.0 |
 | Conservación de la energía | 10 | AU 8.0, CO 8.5, ENG 6.0, UY 6.0 |
-| Ingeniería genética y ADN recombinante | 11 | CO 8.5, UY 6.0 |
+| Metales, cerámicas y materiales compuestos | 10 | ENG 6.0, JP 8.0 |
+| Reacciones exotérmicas y endotérmicas | 10 | AU 7.0, ENG 6.0, JP 7.0 |
 | Gas ideal y teoría cinética | 10 | CO 8.5, ENG 6.0 |
 | Teoría cinética de los gases | 10 | CO 8.5, ENG 6.0 |
-| Transmisión de patógenos | nunca | CO 6.5, UY 9.0 |
+| Ciclo del nitrógeno | 10 | CO 7.0, ENG 8.5 |
 | Enlace químico | 10 | CO 6.5, UY 9.0 |
-| Homeostasis | 10 | CO 8.0, UY 8.0 |
-| Sistema endocrino y hormonas | 10 | AU 8.0, CO 8.0, UY 8.0 |
-| Conservación de la masa | 10 | AU 8.0, CO 8.0, ENG 6.0, UY 9.0 |
+| Homeostasis | 10 | CO 8.0, ENG 8.5, UY 8.0 |
+| Impulso nervioso y sinapsis | 10 | CO 4.5, ENG 8.5, UY 8.0 |
+| Sistema endocrino y hormonas | 10 | AU 8.0, CO 8.0, ENG 8.5, UY 8.0 |
+| Conservación de la masa | 10 | AU 8.0, CO 8.0, ENG 6.0, JP 2, UY 9.0 |
+| Electrólisis y celdas electrolíticas | 10 | ENG 8.5, JP 8.0, UY 5.0 |
+| Modelo estímulo-respuesta y retroalimentación negativa | 10 | AU 8.0, ENG 8.5 |
+| Radiactividad y emisiones nucleares | 10 | AU 8.0, ENG 8.5 |
+| Secuenciación del ADN y perfiles genéticos | 10 | CO 8.5, ENG 8.5 |
+| Ingeniería genética y ADN recombinante | 11 | CO 8.5, ENG 8.5, UY 6.0 |
+| Transmisión de patógenos | nunca | CO 6.5, ENG 8.5, UY 9.0 |
+| Ondas de radio y telecomunicaciones | 11 | CO 8.5, ENG 8.5 |
+| Herencia ligada al sexo, alelos múltiples y poligénica | 10 | CO 9.0, ENG 8.5 |
+| Inmunidad adaptativa | 10 | ENG 8.5, UY 9.0 |
+| Inmunidad innata | 10 | ENG 8.5, UY 9.0 |
+| Sistema inmunitario | 10 | ENG 8.5, UY 9.0 |

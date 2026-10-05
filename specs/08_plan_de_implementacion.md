@@ -12,9 +12,12 @@ muestra el resultado al usuario antes de seguir, se actualiza este archivo (✅)
 1. **Verificar los países de alto desempeño.** Descargar los informes internacionales de
    TIMSS 2023 (IEA) y PISA 2022 Vol. I (OCDE). Registrar en `config/referentes.yaml` la posición
    de cada país con documento y página. DdT: cada país tiene `evidencia_desempeno` citada.
+   *Avance:* TIMSS 2023 ✅ (anexos 2.1.1 y 2.2.1, citados). PISA 2022 pendiente: la OCDE responde 403 a descargas automáticas.
 2. **Descargar currículos** (skill `fuentes-descargar`): Chile (a mano si sigue bloqueado),
    Singapur Lower Secondary, Japón, Corea, Estonia, Inglaterra, Australia, Finlandia y Ontario.
    DdT: `estado.csv` con sha256; las faltantes, documentadas con su URL.
+   *Avance:* Inglaterra KS1–KS4 ✅, Australia v9 F–10 ✅, Japón 2017 ✅ (texto oficial vía jp-cos). Finlandia y Corea
+   descartados por ahora (idioma y bandas; ver spec 03). Pendientes: Chile, Singapur Lower Secondary, Estonia, Ontario.
 3. ✅ **Pivote para Química y Biología de 10.°–11.°**: ACARA Senior Secondary v8.4 (spec 03). Catálogo y alineación de los 371 temas hechos.
 4. Completar las páginas del catálogo TIMSS Advanced Física.
 5. Módulos `ingesta/paises.py` e `ia/lotes.py` (preparar y unir lotes, validar códigos) con pruebas.
@@ -24,6 +27,7 @@ muestra el resultado al usuario antes de seguir, se actualiza este archivo (✅)
 2. Hacer una muestra de control de 20 ítems por país y luego los lotes completos (skill `alinear-objetivos`).
 3. Integrarlos al grafo (`construir.py` lee `data/interim/alineaciones/` además del legado).
    DdT: `gskg grafo validar` sin errores; una ficha por asignatura con ≥7 países.
+   *Avance:* 6 países (1.265 objetivos), los 3 nuevos etiquetados con conceptos y alineados a TIMSS 2027.
 
 ## Fase 3 · Conceptos, prácticas y prerrequisitos ✅ (2026-10-05)
 Hecho: 498 conceptos (vocabulario por asignatura, prompt `prompts/vocabulario_conceptos.md`), 30 prácticas,

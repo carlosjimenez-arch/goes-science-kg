@@ -14,20 +14,6 @@
  "total_temas_ciclo": 86,
  "mover_antes": [
   {
-   "concepto": "Calentamiento y enfriamiento",
-   "concepto_id": "CON:fisica/calentamiento-enfriamiento",
-   "grado_actual": 10,
-   "grado_destino": 5,
-   "paises": {
-    "AU": 2,
-    "CO": 2,
-    "ENG": 6.0,
-    "SG": 4.0
-   },
-   "bloqueos": [],
-   "temas_actuales": []
-  },
-  {
    "concepto": "Fricción y resistencia del aire",
    "concepto_id": "CON:fisica/friccion-resistencia-aire",
    "grado_actual": 10,
@@ -55,6 +41,7 @@
     "AU": 5.0,
     "CO": 4.5,
     "ENG": 2,
+    "JP": 2,
     "SG": 5.0
    },
    "bloqueos": [],
@@ -65,6 +52,22 @@
      "unidad": "6. Fuerzas eléctricas"
     }
    ]
+  },
+  {
+   "concepto": "Reflexión de la luz",
+   "concepto_id": "CON:fisica/reflexion-luz",
+   "grado_actual": 10,
+   "grado_destino": 5,
+   "paises": {
+    "AU": 4.0,
+    "CO": 3.0,
+    "ENG": 2,
+    "JP": 2,
+    "SG": 4.0,
+    "UY": 4.0
+   },
+   "bloqueos": [],
+   "temas_actuales": []
   },
   {
    "concepto": "Calor como energía en tránsito",
@@ -93,81 +96,6 @@
      "unidad": "12. Temperatura y calor"
     }
    ]
-  },
-  {
-   "concepto": "Reflexión de la luz",
-   "concepto_id": "CON:fisica/reflexion-luz",
-   "grado_actual": 10,
-   "grado_destino": 5,
-   "paises": {
-    "AU": 4.0,
-    "CO": 3.0,
-    "ENG": 2,
-    "SG": 4.0,
-    "UY": 4.0
-   },
-   "bloqueos": [],
-   "temas_actuales": []
-  },
-  {
-   "concepto": "Lentes delgadas e imágenes",
-   "concepto_id": "CON:fisica/lentes-delgadas",
-   "grado_actual": 11,
-   "grado_destino": 6,
-   "paises": {
-    "ENG": 6.0,
-    "UY": 5.0
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Refracción de la luz",
-     "primer_grado_sv": 10
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G11-FIS-U17-17.10",
-     "tema": "17.10. Análisis de las aberraciones esférica y cromática de las lentes y de las estrategias para corregirlas.",
-     "unidad": "17. Refracción de la luz"
-    },
-    {
-     "id": "G11-FIS-U17-17.2",
-     "tema": "17.2. Clasificación de lentes según su forma y determinación de su distancia focal y potencia en dioptrías.",
-     "unidad": "17. Refracción de la luz"
-    },
-    {
-     "id": "G11-FIS-U17-17.3",
-     "tema": "17.3. Construcción de diagramas de rayos para localizar imágenes formadas por lentes convergentes y divergentes.",
-     "unidad": "17. Refracción de la luz"
-    },
-    {
-     "id": "G11-FIS-U17-17.4",
-     "tema": "17.4. Verificación experimental de la ecuación de las lentes delgadas mediante la medición de distancias de objeto e imagen.",
-     "unidad": "17. Refracción de la luz"
-    },
-    {
-     "id": "G11-FIS-U17-17.5",
-     "tema": "17.5. Resolución de problemas de sistemas de dos lentes en los que la imagen de la primera actúa como objeto de la segunda.",
-     "unidad": "17. Refracción de la luz"
-    }
-   ]
-  },
-  {
-   "concepto": "Ventaja mecánica",
-   "concepto_id": "CON:fisica/ventaja-mecanica",
-   "grado_actual": 9,
-   "grado_destino": 5,
-   "paises": {
-    "CO": 4.0,
-    "ENG": 3.0
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Torque o momento de fuerza",
-     "primer_grado_sv": 5
-    }
-   ],
-   "temas_actuales": []
   },
   {
    "concepto": "Espejos planos e imágenes",
@@ -212,28 +140,22 @@
    ]
   },
   {
-   "concepto": "Refracción de la luz",
-   "concepto_id": "CON:fisica/refraccion-luz",
-   "grado_actual": 10,
+   "concepto": "Ventaja mecánica",
+   "concepto_id": "CON:fisica/ventaja-mecanica",
+   "grado_actual": 9,
    "grado_destino": 5,
    "paises": {
-    "AU": 4.0,
-    "ENG": 6.0,
-    "UY": 5.0
+    "CO": 4.0,
+    "ENG": 3.0,
+    "JP": 5.0
    },
    "bloqueos": [
     {
-     "prerrequisito": "Rapidez de la luz",
-     "primer_grado_sv": 11
+     "prerrequisito": "Torque o momento de fuerza",
+     "primer_grado_sv": 5
     }
    ],
-   "temas_actuales": [
-    {
-     "id": "G10-FIS-U16-16.8",
-     "tema": "16.8. Medición de los ángulos de incidencia, refracción, reflexión y crítico.",
-     "unidad": "16. Óptica"
-    }
-   ]
+   "temas_actuales": []
   },
   {
    "concepto": "Equilibrio térmico y ley cero",
@@ -257,6 +179,96 @@
      "id": "G09-CIE-U2-2.6",
      "tema": "2.6. Indagación del concepto de equilibrio térmico entre dos cuerpos.",
      "unidad": "2. Calor y temperatura"
+    }
+   ]
+  },
+  {
+   "concepto": "Ley de Ohm",
+   "concepto_id": "CON:fisica/ley-ohm",
+   "grado_actual": 11,
+   "grado_destino": 7,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 7.0
+   },
+   "bloqueos": [],
+   "temas_actuales": [
+    {
+     "id": "G11-FIS-U9-9.13",
+     "tema": "9.13. Análisis de los efectos fisiológicos de la corriente según su intensidad y de las medidas de protección en instalaciones eléctricas.",
+     "unidad": "9. Circuitos eléctricos"
+    },
+    {
+     "id": "G11-FIS-U9-9.2",
+     "tema": "9.2. Construcción de curvas voltaje-corriente para un resistor y un LED alimentados con pilas.",
+     "unidad": "9. Circuitos eléctricos"
+    }
+   ]
+  },
+  {
+   "concepto": "Refracción de la luz",
+   "concepto_id": "CON:fisica/refraccion-luz",
+   "grado_actual": 10,
+   "grado_destino": 6,
+   "paises": {
+    "AU": 4.0,
+    "ENG": 6.0,
+    "JP": 6.0,
+    "UY": 5.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Rapidez de la luz",
+     "primer_grado_sv": 11
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G10-FIS-U16-16.8",
+     "tema": "16.8. Medición de los ángulos de incidencia, refracción, reflexión y crítico.",
+     "unidad": "16. Óptica"
+    }
+   ]
+  },
+  {
+   "concepto": "Lentes delgadas e imágenes",
+   "concepto_id": "CON:fisica/lentes-delgadas",
+   "grado_actual": 10,
+   "grado_destino": 6,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 6.0,
+    "UY": 5.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Refracción de la luz",
+     "primer_grado_sv": 10
+    }
+   ],
+   "temas_actuales": []
+  },
+  {
+   "concepto": "Materiales magnéticos",
+   "concepto_id": "CON:fisica/materiales-magneticos",
+   "grado_actual": 6,
+   "grado_destino": 5,
+   "paises": {
+    "ENG": 2,
+    "JP": 2,
+    "SG": 3.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Imanes y polos magnéticos",
+     "primer_grado_sv": 6
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G06-CIE-U3-3.8",
+     "tema": "3.8. Comparación experimental de la alineación de dominios magnéticos en un imán y un electroimán.",
+     "unidad": "3. Electricidad y magnetismo."
     }
    ]
   },
@@ -289,54 +301,20 @@
    ]
   },
   {
-   "concepto": "Materiales magnéticos",
-   "concepto_id": "CON:fisica/materiales-magneticos",
+   "concepto": "Imanes y polos magnéticos",
+   "concepto_id": "CON:fisica/imanes-polos",
    "grado_actual": 6,
    "grado_destino": 5,
    "paises": {
+    "AU": 3.0,
+    "CO": 2,
     "ENG": 2,
-    "SG": 3.0
+    "JP": 2,
+    "SG": 3.0,
+    "UY": 5.0
    },
-   "bloqueos": [
-    {
-     "prerrequisito": "Imanes y polos magnéticos",
-     "primer_grado_sv": 6
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G06-CIE-U3-3.8",
-     "tema": "3.8. Comparación experimental de la alineación de dominios magnéticos en un imán y un electroimán.",
-     "unidad": "3. Electricidad y magnetismo."
-    }
-   ]
-  },
-  {
-   "concepto": "Potencia eléctrica y efecto Joule",
-   "concepto_id": "CON:fisica/potencia-electrica-joule",
-   "grado_actual": 9,
-   "grado_destino": 6,
-   "paises": {
-    "CO": 5.0,
-    "ENG": 6.0
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Corriente, voltaje y resistencia",
-     "primer_grado_sv": 6
-    },
-    {
-     "prerrequisito": "Disipación de energía y eficiencia",
-     "primer_grado_sv": 10
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G09-CIE-U6-6.8",
-     "tema": "6.8. Relación de las especificaciones de un dispositivo eléctrico con su funcionamiento.",
-     "unidad": "6. Electricidad"
-    }
-   ]
+   "bloqueos": [],
+   "temas_actuales": []
   },
   {
    "concepto": "Carga eléctrica y electrización",
@@ -346,6 +324,7 @@
    "paises": {
     "CO": 6.0,
     "ENG": 6.0,
+    "JP": 7.0,
     "UY": 5.0
    },
    "bloqueos": [],
@@ -368,51 +347,32 @@
     "ENG": 6.0,
     "UY": 6.0
    },
+   "bloqueos": [],
+   "temas_actuales": []
+  },
+  {
+   "concepto": "Potencia eléctrica y efecto Joule",
+   "concepto_id": "CON:fisica/potencia-electrica-joule",
+   "grado_actual": 9,
+   "grado_destino": 6,
+   "paises": {
+    "CO": 5.0,
+    "ENG": 6.0,
+    "JP": 7.0
+   },
    "bloqueos": [
     {
-     "prerrequisito": "Conservación de la energía mecánica",
-     "primer_grado_sv": 8
-    },
-    {
-     "prerrequisito": "Disipación de energía y eficiencia",
-     "primer_grado_sv": 10
+     "prerrequisito": "Corriente, voltaje y resistencia",
+     "primer_grado_sv": 6
     }
    ],
-   "temas_actuales": []
-  },
-  {
-   "concepto": "Disipación de energía y eficiencia",
-   "concepto_id": "CON:fisica/disipacion-eficiencia",
-   "grado_actual": 10,
-   "grado_destino": 7,
-   "paises": {
-    "AU": 8.0,
-    "CO": 7.0,
-    "UY": 6.0
-   },
-   "bloqueos": [],
    "temas_actuales": [
     {
-     "id": "G10-FIS-U7-7.6",
-     "tema": "7.6. Cálculo del trabajo de las fuerzas no conservativas como variación de la energía mecánica del sistema.",
-     "unidad": "7. Trabajo y energía"
+     "id": "G09-CIE-U6-6.8",
+     "tema": "6.8. Relación de las especificaciones de un dispositivo eléctrico con su funcionamiento.",
+     "unidad": "6. Electricidad"
     }
    ]
-  },
-  {
-   "concepto": "Imanes y polos magnéticos",
-   "concepto_id": "CON:fisica/imanes-polos",
-   "grado_actual": 6,
-   "grado_destino": 5,
-   "paises": {
-    "AU": 3.0,
-    "CO": 2,
-    "ENG": 2,
-    "SG": 3.0,
-    "UY": 5.0
-   },
-   "bloqueos": [],
-   "temas_actuales": []
   },
   {
    "concepto": "Temperatura y escalas termométricas",
@@ -424,12 +384,7 @@
     "SG": 4.0,
     "UY": 3.0
    },
-   "bloqueos": [
-    {
-     "prerrequisito": "Calentamiento y enfriamiento",
-     "primer_grado_sv": 10
-    }
-   ],
+   "bloqueos": [],
    "temas_actuales": [
     {
      "id": "G06-CIE-U2-2.2",
@@ -444,58 +399,58 @@
    ]
   },
   {
-   "concepto": "Trabajo mecánico",
-   "concepto_id": "CON:fisica/trabajo-mecanico",
-   "grado_actual": 8,
-   "grado_destino": 6,
+   "concepto": "Gas ideal y teoría cinética",
+   "concepto_id": "CON:fisica/teoria-cinetica-gases",
+   "grado_actual": 10,
+   "grado_destino": 7,
    "paises": {
     "ENG": 6.0,
-    "UY": 5.0
+    "CO": 8.5
    },
    "bloqueos": [
     {
-     "prerrequisito": "Fuerzas mecánicas comunes",
-     "primer_grado_sv": 8
+     "prerrequisito": "Relaciones presión-volumen-temperatura en gases",
+     "primer_grado_sv": 9
     }
    ],
    "temas_actuales": [
     {
-     "id": "G08-CIE-U2-2.1",
-     "tema": "2.1. Indagación del concepto de trabajo utilizando máquinas simples.",
-     "unidad": "2. Energía"
+     "id": "G10-FIS-U14-14.1",
+     "tema": "14.1. Aplicación de la ecuación de estado del gas ideal a problemas con presión absoluta, volumen, temperatura y número de moléculas.",
+     "unidad": "14. Los gases ideales"
     },
     {
-     "id": "G08-CIE-U2-2.2",
-     "tema": "2.2. Resolución de problemas empleando el teorema del trabajo y la energía cinética.",
-     "unidad": "2. Energía"
-    },
-    {
-     "id": "G08-CIE-U2-2.3",
-     "tema": "2.3. Interpretación de los signos matemáticos del trabajo a partir de la experimentación.",
-     "unidad": "2. Energía"
+     "id": "G10-FIS-U14-14.2",
+     "tema": "14.2. Deducción de la relación entre la energía cinética media de las moléculas y la temperatura absoluta del gas.",
+     "unidad": "14. Los gases ideales"
     }
    ]
   },
   {
-   "concepto": "Condiciones de equilibrio estático",
-   "concepto_id": "CON:fisica/equilibrio-traslacional",
-   "grado_actual": 8,
-   "grado_destino": 6,
+   "concepto": "Corriente, voltaje y resistencia",
+   "concepto_id": "CON:fisica/corriente-voltaje-resistencia",
+   "grado_actual": 6,
+   "grado_destino": 5,
    "paises": {
-    "AU": 6.0,
-    "ENG": 6.0
+    "ENG": 4.0,
+    "JP": 3.0
    },
    "bloqueos": [
     {
-     "prerrequisito": "Suma de vectores y componentes rectangulares",
-     "primer_grado_sv": 8
+     "prerrequisito": "Carga eléctrica y electrización",
+     "primer_grado_sv": 9
     }
    ],
    "temas_actuales": [
     {
-     "id": "G08-CIE-U1-1.10",
-     "tema": "1.10. Reconocimiento del torque como la causa del equilbrio rotacional.",
-     "unidad": "1. Mecánica"
+     "id": "G06-CIE-U3-3.1",
+     "tema": "3.1. Uso del multímetro para medir voltaje y corriente eléctrica.",
+     "unidad": "3. Electricidad y magnetismo."
+    },
+    {
+     "id": "G06-CIE-U3-3.2",
+     "tema": "3.2. Identificación del valor de resistencias eléctricas según código de color y multímetro.",
+     "unidad": "3. Electricidad y magnetismo."
     }
    ]
   },
@@ -506,6 +461,7 @@
    "grado_destino": 5,
    "paises": {
     "ENG": 6.0,
+    "JP": 3.0,
     "SG": 4.0,
     "UY": 3.0
    },
@@ -528,6 +484,58 @@
    ]
   },
   {
+   "concepto": "Fuerza magnética sobre corrientes y motor eléctrico",
+   "concepto_id": "CON:fisica/fuerza-sobre-corrientes-motor",
+   "grado_actual": 9,
+   "grado_destino": 7,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 7.0
+   },
+   "bloqueos": [],
+   "temas_actuales": [
+    {
+     "id": "G09-CIE-U7-7.5",
+     "tema": "7.5. Construcción de un motor de corriente directa.",
+     "unidad": "7. Magnetismo aplicado"
+    },
+    {
+     "id": "G09-CIE-U7-7.6",
+     "tema": "7.6. Explicación del funcionamiento del motor de corriente directa.",
+     "unidad": "7. Magnetismo aplicado"
+    },
+    {
+     "id": "G09-CIE-U7-7.7",
+     "tema": "7.7. Comparación entre las tecnologías del motor eléctrico y el motor de combustión interna.",
+     "unidad": "7. Magnetismo aplicado"
+    }
+   ]
+  },
+  {
+   "concepto": "Condiciones de equilibrio estático",
+   "concepto_id": "CON:fisica/equilibrio-traslacional",
+   "grado_actual": 8,
+   "grado_destino": 6,
+   "paises": {
+    "AU": 6.0,
+    "ENG": 6.0,
+    "JP": 6.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Suma de vectores y componentes rectangulares",
+     "primer_grado_sv": 8
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G08-CIE-U1-1.10",
+     "tema": "1.10. Reconocimiento del torque como la causa del equilbrio rotacional.",
+     "unidad": "1. Mecánica"
+    }
+   ]
+  },
+  {
    "concepto": "El sonido como onda mecánica",
    "concepto_id": "CON:fisica/sonido-como-onda",
    "grado_actual": 8,
@@ -535,6 +543,7 @@
    "paises": {
     "AU": 8.0,
     "ENG": 2,
+    "JP": 6.0,
     "UY": 6.0
    },
    "bloqueos": [
@@ -559,7 +568,8 @@
    "paises": {
     "AU": 6.0,
     "CO": 4.5,
-    "ENG": 6.0
+    "ENG": 6.0,
+    "JP": 6.0
    },
    "bloqueos": [
     {
@@ -591,6 +601,40 @@
     }
    ],
    "temas_actuales": []
+  },
+  {
+   "concepto": "Trabajo mecánico",
+   "concepto_id": "CON:fisica/trabajo-mecanico",
+   "grado_actual": 8,
+   "grado_destino": 6,
+   "paises": {
+    "ENG": 6.0,
+    "JP": 8.0,
+    "UY": 5.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Fuerzas mecánicas comunes",
+     "primer_grado_sv": 8
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G08-CIE-U2-2.1",
+     "tema": "2.1. Indagación del concepto de trabajo utilizando máquinas simples.",
+     "unidad": "2. Energía"
+    },
+    {
+     "id": "G08-CIE-U2-2.2",
+     "tema": "2.2. Resolución de problemas empleando el teorema del trabajo y la energía cinética.",
+     "unidad": "2. Energía"
+    },
+    {
+     "id": "G08-CIE-U2-2.3",
+     "tema": "2.3. Interpretación de los signos matemáticos del trabajo a partir de la experimentación.",
+     "unidad": "2. Energía"
+    }
+   ]
   }
  ],
  "corregir_secuencia": [
@@ -600,14 +644,6 @@
    "prerrequisito": "Efecto Doppler",
    "grado_prerrequisito": 11,
    "brecha": 6,
-   "confianza": "alta"
-  },
-  {
-   "concepto": "Circuito eléctrico simple",
-   "grado_concepto": 6,
-   "prerrequisito": "Conductores y aislantes eléctricos",
-   "grado_prerrequisito": 11,
-   "brecha": 5,
    "confianza": "alta"
   },
   {
@@ -635,14 +671,6 @@
    "confianza": "alta"
   },
   {
-   "concepto": "Hidrodinámica: continuidad y Bernoulli",
-   "grado_concepto": 6,
-   "prerrequisito": "Presión hidrostática y atmosférica",
-   "grado_prerrequisito": 9,
-   "brecha": 3,
-   "confianza": "alta"
-  },
-  {
    "concepto": "Ondas estacionarias y armónicos",
    "grado_concepto": 8,
    "prerrequisito": "Superposición e interferencia de ondas",
@@ -659,14 +687,6 @@
    "confianza": "alta"
   },
   {
-   "concepto": "Principio de Arquímedes: empuje",
-   "grado_concepto": 6,
-   "prerrequisito": "Presión hidrostática y atmosférica",
-   "grado_prerrequisito": 9,
-   "brecha": 3,
-   "confianza": "alta"
-  },
-  {
    "concepto": "Cinemática en dos dimensiones y proyectiles",
    "grado_concepto": 8,
    "prerrequisito": "Caída libre",
@@ -679,14 +699,6 @@
    "grado_concepto": 8,
    "prerrequisito": "Fricción y resistencia del aire",
    "grado_prerrequisito": 10,
-   "brecha": 2,
-   "confianza": "alta"
-  },
-  {
-   "concepto": "Hidrodinámica: continuidad y Bernoulli",
-   "grado_concepto": 6,
-   "prerrequisito": "Conservación de la energía mecánica",
-   "grado_prerrequisito": 8,
    "brecha": 2,
    "confianza": "alta"
   },

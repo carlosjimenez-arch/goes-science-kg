@@ -32,3 +32,14 @@ def test_determinista(grafo):
     a = [n.id for n, _ in rag.recuperar("ecosistemas y cadenas tróficas", grado=7).nodos]
     b = [n.id for n, _ in rag.recuperar("ecosistemas y cadenas tróficas", grado=7).nodos]
     assert a == b
+
+
+def test_intencion_pais_reconoce_paises_y_gentilicios():
+    from goes_science_kg.rag import INTENCION_PAISES, PAIS_NOMBRADO, _sin_tildes
+
+    for consulta, codigo in [("¿Cómo enseña Japón las fases de la Luna?", "JP"),
+                             ("¿Qué aprenden los estudiantes japoneses sobre solubilidad?", "JP"),
+                             ("Currículo de Inglaterra en KS3", "ENG"), ("¿Y en Australia?", "AU")]:
+        plano = _sin_tildes(consulta)
+        assert INTENCION_PAISES.search(plano), consulta
+        assert codigo in {c for p, c in PAIS_NOMBRADO.items() if p in plano}, consulta
