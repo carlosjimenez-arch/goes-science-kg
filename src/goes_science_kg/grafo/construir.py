@@ -12,9 +12,10 @@ from goes_science_kg.disciplinas import asignacion_manual, asignatura_de_objetiv
 from goes_science_kg.ingesta import legado
 from goes_science_kg.ingesta.mallas import TemaMalla, extraer
 from goes_science_kg.modelos import Arista, Confianza, Fuente, Nodo, TipoArista, TipoNodo
+from goes_science_kg.revisiones import revisiones_temas
 
-VERSION_GRAFO = "v0"
-CODIGO_PAIS = {"Uruguay": "UY", "Colombia": "CO", "Singapur": "SG", "Chile": "CL"}
+VERSION_GRAFO = "v1"
+CODIGO_PAIS = {p["nombre"]: c for c, p in cargar("referentes")["paises"].items()}
 
 
 class Constructor:
@@ -105,6 +106,9 @@ class Constructor:
             timss, pisa, auss = ct.get(llave), cp.get(llave), ca.get(llave)
             manual = asignacion_manual().get(t.id)
             asig, metodo = asignatura_de_tema(t.asignatura, timss, pisa, manual)
+            revision = revisiones_temas().get(t.id, {})
+            if revision.get("asignatura"):
+                asig, metodo, manual = revision["asignatura"], "revision", revision
             tid = self.nodo(
                 id=f"TEMA:{t.id}", tipo=TipoNodo.TEMA, etiqueta=t.procedimental, asignatura=asig, grado=t.grado,
                 fuente=Fuente(documento=f"MALLA:{t.archivo}", hoja=t.hoja, fila=t.fila),
@@ -113,17 +117,18 @@ class Constructor:
                        "evidencia": t.evidencia, "habilidad_timss": t.habilidad_timss,
                        "competencia_pisa": t.competencia_pisa, "micro_pisa": t.micro_pisa,
                        "fuera_de_alcance": (manual or {}).get("fuera_de_alcance") if metodo == "ia" else None,
+                       "asignatura_revisada_desde": revision.get("asignatura_anterior") if revision else None,
                        "estado_timss": (timss or {}).get("obj1") if (timss or {}).get("obj1") in
                        ("FUERA", "PENDIENTE") else None})
             self.arista(origen=tid, destino=f"GRADO:{t.grado:02d}", tipo=TipoArista.EN_GRADO, metodo="malla")
             self.arista(origen=tid, destino=f"DOC:MALLA:{t.archivo}", tipo=TipoArista.FUENTE, metodo="malla",
                         props={"hoja": t.hoja, "fila": t.fila})
             if asig:
-                if metodo == "ia":
-                    self.arista(origen=tid, destino=f"ASIG:{asig}", tipo=TipoArista.DE_ASIGNATURA, metodo="ia",
+                if metodo in ("ia", "revision"):
+                    self.arista(origen=tid, destino=f"ASIG:{asig}", tipo=TipoArista.DE_ASIGNATURA, metodo=metodo,
                                 confianza=self._confianza(manual.get("confianza")),
                                 justificacion=manual.get("justificacion"), version=manual.get("version"),
-                                props={"via": "ia"})
+                                props={"via": metodo, "revisado_por": manual.get("revisado_por")})
                 else:
                     self.arista(origen=tid, destino=f"ASIG:{asig}", tipo=TipoArista.DE_ASIGNATURA,
                                 metodo="malla" if metodo == "malla" else "regla", props={"via": metodo})
@@ -149,14 +154,20 @@ class Constructor:
                     props={"revisado_por": c.get("revisado_por") or None, **extra})
 
     def paises(self) -> None:
+        from goes_science_kg import conceptos as cp
+
         docs = legado.documento_por_archivo()
-        for o in legado.alineacion_paises():
+        etiquetas = cp.etiquetado_paises()
+        for o in [*legado.alineacion_paises(), *legado.paises_nuevos()]:
             cod = CODIGO_PAIS[o["pais"]]
             pid = self.nodo(id=f"PAIS:{cod}", tipo=TipoNodo.PAIS, etiqueta=o["pais"])
             doc = docs.get(o["documento"], o["documento"])
             asig = asignatura_de_objetivo(o["obj1"]) if o.get("obj1") not in (None, "", "FUERA") else None
+            if asig is None and etiquetas.get(o["id"], {}).get("conceptos"):
+                asig = etiquetas[o["id"]]["conceptos"][0].split("/")[0].removeprefix("CON:")
             oid = self.nodo(id=f"OP:{o['id']}", tipo=TipoNodo.OBJETIVO_PAIS, etiqueta=o["texto"], asignatura=asig,
-                            grado=o.get("grado_min"), fuente=Fuente(documento=doc, pagina=o.get("pagina")),
+                            grado=o.get("grado_min"),
+                            fuente=Fuente(documento=doc, pagina=o.get("pagina"), localizador=o.get("localizador")),
                             props={"pais": cod, "grado_min": o.get("grado_min"), "grado_max": o.get("grado_max"),
                                    "grado_o_tramo": o.get("grado_o_tramo"), "eje": o.get("eje"),
                                    "tipo": o.get("tipo"), "marco_alineacion": o.get("marco")})
@@ -219,18 +230,28 @@ class Constructor:
                             rol="principal" if i == 0 else "secundario", metodo="ia",
                             confianza=self._confianza(e["confianza"]), justificacion=e["justificacion"],
                             version=e["version"])
-        for tid, e in cp.etiquetado().items():
+        etiquetas = dict(cp.etiquetado())
+        for tid, r in revisiones_temas().items():
+            if "conceptos" in r or "practicas" in r:  # la revisión reemplaza SOLO los campos que trae
+                base = etiquetas.get(tid, {"conceptos": [], "practicas": []})
+                etiquetas[tid] = {**base, **{k: r[k] for k in ("conceptos", "practicas") if k in r},
+                                  "confianza": r.get("confianza", "alta"), "justificacion": r.get("justificacion"),
+                                  "version": r.get("version"), "revisado_por": r.get("revisado_por") or "revisión"}
+        for tid, e in etiquetas.items():
             if f"TEMA:{tid}" not in self.nodos:
                 continue
-            for i, cid in enumerate(e["conceptos"]):
+            metodo = "revision" if e.get("revisado_por") else "ia"
+            extra = {"revisado_por": e["revisado_por"]} if e.get("revisado_por") else {}
+            conceptos_validos = [c for c in e["conceptos"] if c in self.nodos]
+            for i, cid in enumerate(conceptos_validos):
                 self.arista(origen=f"TEMA:{tid}", destino=cid, tipo=TipoArista.TRABAJA,
-                            rol="principal" if i == 0 else "secundario", metodo="ia",
+                            rol="principal" if i == 0 else "secundario", metodo=metodo,
                             confianza=self._confianza(e["confianza"]), justificacion=e["justificacion"],
-                            version=e["version"])
-            for pid in e["practicas"]:
-                self.arista(origen=f"TEMA:{tid}", destino=pid, tipo=TipoArista.TRABAJA, rol="practica", metodo="ia",
+                            version=e["version"], props=extra)
+            for pid in (x for x in e["practicas"] if x in self.nodos):
+                self.arista(origen=f"TEMA:{tid}", destino=pid, tipo=TipoArista.TRABAJA, rol="practica", metodo=metodo,
                             confianza=self._confianza(e["confianza"]), justificacion=e["justificacion"],
-                            version=e["version"])
+                            version=e["version"], props=extra)
 
 
 def construir() -> tuple[list[Nodo], list[Arista]]:

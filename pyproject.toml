@@ -24,6 +24,8 @@ pdf = ["pdfplumber>=0.11"]
 analisis = ["pandas>=2.0"]
 # GraphRAG: generación de respuestas con Claude (la recuperación no lo necesita).
 rag = ["anthropic>=0.70"]
+# API de lectura (gskg servir).
+api = ["fastapi>=0.110", "uvicorn>=0.29", "httpx>=0.27"]
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]
@@ -46,3 +48,4 @@ select = ["E", "F", "I", "B", "UP"]
 [tool.ruff.lint.per-file-ignores]
 # La plantilla HTML del visor es una cadena larga: el largo de línea no aplica.
 "src/goes_science_kg/visor.py" = ["E501"]
+"src/goes_science_kg/progresion.py" = ["E501"]

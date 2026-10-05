@@ -10,7 +10,7 @@
 | Física | 146 |
 | Química | 97 |
 
-- **208 conceptos**: 70 nuevos en este grado y 138 que se retoman de grados anteriores.
+- **208 conceptos**: 58 nuevos en este grado, 150 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: AUSS 112, TA15 19.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 0.
 
@@ -76,24 +76,24 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Desarrollar y usar modelos | 23 |
 | Interpretar datos y sacar conclusiones | 21 |
 | Buscar y evaluar fuentes de información | 9 |
-| Evaluar implicaciones y tomar decisiones informadas | 8 |
 | Construir explicaciones basadas en evidencia | 8 |
+| Evaluar implicaciones y tomar decisiones informadas | 8 |
 | Representar datos en tablas y gráficos | 8 |
 | Planificar investigaciones | 7 |
 | Argumentar con evidencia y razonamiento | 6 |
 | Identificar y controlar variables | 6 |
-| Usar pensamiento computacional y simulaciones | 6 |
 | Usar y transformar representaciones | 6 |
+| Usar pensamiento computacional y simulaciones | 6 |
 | Trabajar con seguridad y ética | 5 |
 | Diseñar y evaluar soluciones | 4 |
 | Valorar la ciencia como empresa colectiva | 3 |
 | Analizar datos con herramientas estadísticas | 2 |
 | Evaluar modelos y sus limitaciones | 2 |
 | Reconocer el carácter provisional del conocimiento | 2 |
-| Formular preguntas investigables | 1 |
 | Comunicar resultados científicos | 1 |
 | Evaluar afirmaciones y argumentos | 1 |
 | Evaluar diseños de investigación | 1 |
+| Formular preguntas investigables | 1 |
 
 ## Prerrequisitos que no llegan a tiempo
 
@@ -104,9 +104,8 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Secuenciación del ADN y perfiles genéticos | PCR y electroforesis en gel | ausente | — | alta |
 | Sistema circulatorio | Estructuras del cuerpo animal y su función | ausente | — | media |
 | Sistema respiratorio | Estructuras del cuerpo animal y su función | ausente | — | media |
-| Composición del aire y contaminantes atmosféricos | La atmósfera y su composición | ausente | — | media |
 
-Además, 53 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 45 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -114,7 +113,7 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Estructuras del cuerpo animal y su función | nunca | CO 2, SG 4, UY 8 |
-| La atmósfera y su composición | nunca | CO 4, SG 5, UY 5 |
-| Gravedad: atracción hacia la Tierra | nunca | SG 6, UY 4 |
-| Transmisión de patógenos | nunca | CO 6, UY 9 |
+| Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
+| Estructuras del cuerpo animal y su función | nunca | AU 7.0, CO 2, ENG 2, SG 4.0, UY 8.0 |
+| Sistemas terrestres y sus interacciones | nunca | AU 9.0, CO 4.5 |
+| Transmisión de patógenos | nunca | CO 6.5, UY 9.0 |

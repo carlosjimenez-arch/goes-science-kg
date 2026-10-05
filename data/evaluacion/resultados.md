@@ -8,7 +8,9 @@ países y 8 de marco). Las redactó un subagente especialista mirando el grafo, 
 |---|---|---|---|---|---|
 | v1: BM25 + expansión 2 saltos + foco por grado | 0,761 | 0,380 | 0,568 | 0,749 | 0,975 |
 | v2: + palabras vacías de pregunta, intención «prerrequisito» (sube por el DAG), peso de concepto 1,15 | 0,788 | — | 0,624 | 0,838 | 1,000 |
-| v3: + intención «países» (prioriza objetivos de país; filtra si nombra uno) | **0,812** | — | **0,640** | **0,855** | **1,000** |
+| v3: + intención «países» (prioriza objetivos de país; filtra si nombra uno) | 0,812 | — | 0,640 | 0,855 | 1,000 |
+| v3 con 5 países (se suman 422 objetivos de Inglaterra y Australia y la revisión de asignaturas) | 0,774 | — | 0,592 | 0,849 | — |
+| v3 con 52 preguntas (12 nuevas sobre Inglaterra, Australia y asignaturas revisadas) | **0,788** | — | **0,640** | **0,861** | — |
 
 Ablación del peso de las semillas de tipo concepto (v2):
 
@@ -27,3 +29,13 @@ marco mencionan «internacional»), prerrequisito 0,59.
 
 Pendiente: las preguntas de marco y de prerrequisitos son las más débiles. Próximos pasos: intención «marco»
 (TIMSS/PISA/ACARA → priorizar `ObjetivoMarco`), búsqueda densa para sinónimos y revisión «oro» del conjunto (spec 10).
+
+**Nota (2026-10-05, con 5 países):** el MRR baja de 0,81 a 0,77 porque los 422 objetivos nuevos de Inglaterra y
+Australia compiten en la recuperación y las preguntas de comparación del conjunto solo citan los tres países
+originales como relevantes. Hay que ampliar el conjunto con preguntas sobre los países nuevos antes de volver a
+ajustar pesos.
+
+**Ablación de la intención «marco» (2026-10-05, 52 preguntas):** priorizar `ObjetivoMarco` cuando la pregunta nombra
+TIMSS, PISA o ACARA no mejora (MRR de las preguntas de marco: 0,69 con peso 1,0; 0,63 con 1,2; 0,69 con 1,4; 0,68 con
+1,8), porque la mitad de los relevantes de esas preguntas son temas de la malla. Queda el peso en 1,0 y solo se conserva
+el filtro que atenúa los marcos no nombrados.

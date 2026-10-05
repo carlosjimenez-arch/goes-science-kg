@@ -6,11 +6,11 @@
  ],
  "marco": "T4_27",
  "temas_por_grado": {
-  "2": 19,
+  "2": 20,
   "3": 6,
   "4": 9
  },
- "total_temas_ciclo": 34,
+ "total_temas_ciclo": 35,
  "mover_antes": [
   {
    "concepto": "Calentamiento y enfriamiento",
@@ -18,11 +18,37 @@
    "grado_actual": 10,
    "grado_destino": 3,
    "paises": {
+    "AU": 2,
     "CO": 2,
-    "SG": 4
+    "ENG": 6.0,
+    "SG": 4.0
    },
    "bloqueos": [],
    "temas_actuales": []
+  },
+  {
+   "concepto": "Fricción y resistencia del aire",
+   "concepto_id": "CON:fisica/friccion-resistencia-aire",
+   "grado_actual": 10,
+   "grado_destino": 3,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 6.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Fuerzas de contacto y a distancia",
+     "primer_grado_sv": 3
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G10-FIS-U5-5.9",
+     "tema": "5.9. Determinación experimental de los coeficientes de rozamiento estático y cinético entre distintos materiales.",
+     "unidad": "5. Las leyes de Newton"
+    }
+   ]
   },
   {
    "concepto": "Calor como energía en tránsito",
@@ -30,8 +56,9 @@
    "grado_actual": 10,
    "grado_destino": 4,
    "paises": {
-    "SG": 4,
-    "UY": 3
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 3.0
    },
    "bloqueos": [
     {
@@ -52,53 +79,36 @@
    ]
   },
   {
-   "concepto": "Conductores y aislantes eléctricos",
-   "concepto_id": "CON:fisica/conductores-aislantes-electricos",
-   "grado_actual": 11,
-   "grado_destino": 4,
-   "paises": {
-    "CO": 4,
-    "SG": 5
-   },
-   "bloqueos": [],
-   "temas_actuales": [
-    {
-     "id": "G11-FIS-U6-6.3",
-     "tema": "6.3. Clasificación de materiales como conductores o aislantes según la movilidad de sus cargas.",
-     "unidad": "6. Fuerzas eléctricas"
-    }
-   ]
-  },
-  {
    "concepto": "Reflexión de la luz",
    "concepto_id": "CON:fisica/reflexion-luz",
    "grado_actual": 10,
    "grado_destino": 4,
    "paises": {
-    "CO": 3,
-    "SG": 4,
-    "UY": 4
+    "AU": 4.0,
+    "CO": 3.0,
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 4.0
    },
    "bloqueos": [],
    "temas_actuales": []
   },
   {
-   "concepto": "Ley de gravitación universal",
-   "concepto_id": "CON:fisica/gravitacion-universal",
-   "grado_actual": 10,
+   "concepto": "Ventaja mecánica",
+   "concepto_id": "CON:fisica/ventaja-mecanica",
+   "grado_actual": 9,
    "grado_destino": 4,
    "paises": {
-    "CO": 4,
-    "UY": 5
+    "CO": 4.0,
+    "ENG": 3.0
    },
-   "bloqueos": [],
-   "temas_actuales": [
+   "bloqueos": [
     {
-     "id": "G10-FIS-U5-5.7",
-     "tema": "5.7. Cálculo de fuerzas gravitatorias con la ley de gravitación universal y relación del peso con la atracción terrestre.",
-     "unidad": "5. Las leyes de Newton"
+     "prerrequisito": "Torque o momento de fuerza",
+     "primer_grado_sv": 5
     }
-   ]
+   ],
+   "temas_actuales": []
   },
   {
    "concepto": "Equilibrio térmico y ley cero",
@@ -106,8 +116,10 @@
    "grado_actual": 9,
    "grado_destino": 4,
    "paises": {
-    "SG": 4,
-    "UY": 5
+    "AU": 2,
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 5.0
    },
    "bloqueos": [
     {
@@ -124,14 +136,39 @@
    ]
   },
   {
+   "concepto": "Materiales magnéticos",
+   "concepto_id": "CON:fisica/materiales-magneticos",
+   "grado_actual": 6,
+   "grado_destino": 2,
+   "paises": {
+    "ENG": 2,
+    "SG": 3.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Imanes y polos magnéticos",
+     "primer_grado_sv": 6
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G06-CIE-U3-3.8",
+     "tema": "3.8. Comparación experimental de la alineación de dominios magnéticos en un imán y un electroimán.",
+     "unidad": "3. Electricidad y magnetismo."
+    }
+   ]
+  },
+  {
    "concepto": "Imanes y polos magnéticos",
    "concepto_id": "CON:fisica/imanes-polos",
    "grado_actual": 6,
    "grado_destino": 3,
    "paises": {
+    "AU": 3.0,
     "CO": 2,
-    "SG": 3,
-    "UY": 5
+    "ENG": 2,
+    "SG": 3.0,
+    "UY": 5.0
    },
    "bloqueos": [
     {
@@ -142,13 +179,43 @@
    "temas_actuales": []
   },
   {
+   "concepto": "Temperatura y escalas termométricas",
+   "concepto_id": "CON:fisica/temperatura-medicion-escalas",
+   "grado_actual": 6,
+   "grado_destino": 3,
+   "paises": {
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 3.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Calentamiento y enfriamiento",
+     "primer_grado_sv": 10
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G06-CIE-U2-2.2",
+     "tema": "2.2. Construcción de un termoscopio funcional.",
+     "unidad": "2. Calor y temperatura."
+    },
+    {
+     "id": "G06-CIE-U2-2.3",
+     "tema": "2.3. Comparación entre escalas de temperatura.",
+     "unidad": "2. Calor y temperatura."
+    }
+   ]
+  },
+  {
    "concepto": "Dilatación térmica",
    "concepto_id": "CON:fisica/dilatacion-termica",
    "grado_actual": 6,
    "grado_destino": 4,
    "paises": {
-    "SG": 4,
-    "UY": 3
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 3.0
    },
    "bloqueos": [
     {
@@ -172,17 +239,13 @@
    "concepto": "Sistema Internacional de Unidades",
    "concepto_id": "CON:fisica/sistema-internacional-unidades",
    "grado_actual": 5,
-   "grado_destino": 2,
+   "grado_destino": 3,
    "paises": {
     "CO": 2,
-    "UY": 3
+    "ENG": 6.0,
+    "UY": 3.0
    },
-   "bloqueos": [
-    {
-     "prerrequisito": "Medición de magnitudes con instrumentos",
-     "primer_grado_sv": 2
-    }
-   ],
+   "bloqueos": [],
    "temas_actuales": [
     {
      "id": "G05-CIE-U1-1.1",
@@ -210,68 +273,6 @@
      "unidad": "1. Magnitudes físicas."
     }
    ]
-  },
-  {
-   "concepto": "Temperatura y escalas termométricas",
-   "concepto_id": "CON:fisica/temperatura-medicion-escalas",
-   "grado_actual": 6,
-   "grado_destino": 4,
-   "paises": {
-    "SG": 4,
-    "UY": 3
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Calentamiento y enfriamiento",
-     "primer_grado_sv": 10
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G06-CIE-U2-2.2",
-     "tema": "2.2. Construcción de un termoscopio funcional.",
-     "unidad": "2. Calor y temperatura."
-    },
-    {
-     "id": "G06-CIE-U2-2.3",
-     "tema": "2.3. Comparación entre escalas de temperatura.",
-     "unidad": "2. Calor y temperatura."
-    }
-   ]
-  },
-  {
-   "concepto": "Electroimanes y efecto magnético de la corriente",
-   "concepto_id": "CON:fisica/electroiman",
-   "grado_actual": 6,
-   "grado_destino": 4,
-   "paises": {
-    "SG": 3,
-    "UY": 5
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Campo magnético y magnetismo terrestre",
-     "primer_grado_sv": 5
-    },
-    {
-     "prerrequisito": "Circuito eléctrico simple",
-     "primer_grado_sv": 6
-    }
-   ],
-   "temas_actuales": []
-  },
-  {
-   "concepto": "Flotación y hundimiento",
-   "concepto_id": "CON:fisica/flotacion-hundimiento",
-   "grado_actual": 6,
-   "grado_destino": 4,
-   "paises": {
-    "CO": 4,
-    "SG": 3,
-    "UY": 4
-   },
-   "bloqueos": [],
-   "temas_actuales": []
   }
  ],
  "corregir_secuencia": [
@@ -401,6 +402,16 @@
    "conceptos": [
     "La energía y sus usos",
     "Formas de energía"
+   ]
+  },
+  {
+   "id": "G02-CIE-U2-2.3",
+   "grado": 2,
+   "unidad": "2. Energía.",
+   "tema": "2.3. Identificación de fuentes naturales de energía eléctrica.",
+   "conceptos": [
+    "Energía geotérmica",
+    "Fuentes de energía renovables y no renovables"
    ]
   },
   {

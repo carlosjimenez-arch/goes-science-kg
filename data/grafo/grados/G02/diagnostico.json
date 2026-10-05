@@ -2,21 +2,22 @@
  "grado": 2,
  "temas": 66,
  "temas_por_asignatura": {
-  "fisica": 19,
+  "fisica": 20,
   "quimica": 9,
-  "ciencias_tierra_espacio": 11,
+  "ciencias_tierra_espacio": 10,
   "biologia": 27
  },
- "conceptos": 62,
- "conceptos_nuevos": 58,
- "conceptos_retomados": 4,
+ "conceptos": 61,
+ "conceptos_nuevos": 61,
+ "conceptos_retomados": 0,
+ "conceptos_anticipados": 0,
  "practicas": {
-  "PRAC:observar-y-registrar": 19,
+  "PRAC:observar-y-registrar": 22,
   "PRAC:disenar-y-evaluar-soluciones": 5,
   "PRAC:trabajar-con-seguridad-y-etica": 5,
-  "PRAC:medir-con-instrumentos": 2,
-  "PRAC:formular-hipotesis-y-predicciones": 2,
+  "PRAC:medir-con-instrumentos": 3,
   "PRAC:desarrollar-y-usar-modelos": 2,
+  "PRAC:formular-hipotesis-y-predicciones": 2,
   "PRAC:evaluar-implicaciones-y-decidir": 1,
   "PRAC:interpretar-datos-y-concluir": 1
  },
@@ -207,6 +208,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
+   "concepto": "CON:biologia/sostenibilidad-de-la-biosfera",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:ciencias_tierra_espacio/sismos",
    "concepto": "CON:ciencias_tierra_espacio/amenazas-naturales",
    "estado": "mismo_grado",
@@ -214,15 +222,15 @@
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/fuentes-de-energia",
-   "concepto": "CON:ciencias_tierra_espacio/energia-geotermica",
+   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
+   "concepto": "CON:ciencias_tierra_espacio/conservacion-de-recursos-y-residuos",
    "estado": "mismo_grado",
    "primer_grado_sv": 2,
-   "confianza": "media"
+   "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:fisica/formas-energia",
-   "concepto": "CON:ciencias_tierra_espacio/fuentes-de-energia",
+   "prerrequisito": "CON:ciencias_tierra_espacio/fuentes-de-energia",
+   "concepto": "CON:ciencias_tierra_espacio/energia-geotermica",
    "estado": "mismo_grado",
    "primer_grado_sv": 2,
    "confianza": "media"
@@ -282,6 +290,13 @@
    "estado": "mismo_grado",
    "primer_grado_sv": 2,
    "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:fisica/mecanismos-transferencia-calor",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:fisica/materiales-opacos-transparentes",
@@ -375,32 +390,11 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
-   "concepto": "CON:biologia/sostenibilidad-de-la-biosfera",
-   "estado": "posterior",
-   "primer_grado_sv": 7,
-   "confianza": "media"
-  },
-  {
    "prerrequisito": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
    "concepto": "CON:ciencias_tierra_espacio/amenazas-naturales",
    "estado": "posterior",
    "primer_grado_sv": 4,
    "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
-   "concepto": "CON:ciencias_tierra_espacio/conservacion-de-recursos-y-residuos",
-   "estado": "posterior",
-   "primer_grado_sv": 7,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
-   "concepto": "CON:ciencias_tierra_espacio/fuentes-de-energia",
-   "estado": "posterior",
-   "primer_grado_sv": 7,
-   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
@@ -431,13 +425,6 @@
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
-   "concepto": "CON:fisica/mecanismos-transferencia-calor",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:fisica/modelo-particulas",
    "concepto": "CON:fisica/mecanismos-transferencia-calor",
    "estado": "posterior",
@@ -459,13 +446,64 @@
    "confianza": "alta"
   }
  ],
- "faltantes_por_edad": [],
- "referentes_paises": 4,
+ "faltantes_por_edad": [
+  {
+   "concepto": "CON:biologia/ciclo-de-vida-de-los-animales",
+   "sv": 3,
+   "paises": {
+    "AU": 2,
+    "CO": 2,
+    "ENG": 2,
+    "SG": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/fosiles",
+   "sv": 5,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/organos-de-los-sentidos",
+   "sv": 4,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/fosiles",
+   "sv": 5,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "sv": 7,
+   "paises": {
+    "AU": 2,
+    "CO": 8.5,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+   "sv": 3,
+   "paises": {
+    "AU": 2,
+    "ENG": 2
+   }
+  }
+ ],
+ "referentes_paises": 142,
  "top_conceptos": [
-  [
-   "CON:quimica/propiedades-fisicas-de-los-materiales",
-   4
-  ],
   [
    "CON:biologia/habitat-y-ecosistemas-comunes",
    4
@@ -475,28 +513,12 @@
    4
   ],
   [
-   "CON:fisica/medicion-magnitudes-instrumentos",
-   3
-  ],
-  [
    "CON:fisica/energia-usos-vida-diaria",
-   3
+   4
   ],
   [
-   "CON:fisica/formas-energia",
-   3
-  ],
-  [
-   "CON:fisica/transformaciones-energia",
-   3
-  ],
-  [
-   "CON:fisica/movimiento-y-reposo",
-   3
-  ],
-  [
-   "CON:biologia/sostenibilidad-de-la-biosfera",
-   3
+   "CON:quimica/propiedades-fisicas-de-los-materiales",
+   4
   ],
   [
    "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
@@ -507,19 +529,39 @@
    3
   ],
   [
-   "CON:quimica/propiedades-fisicas-y-quimicas",
+   "CON:biologia/sostenibilidad-de-la-biosfera",
+   3
+  ],
+  [
+   "CON:fisica/formas-energia",
+   3
+  ],
+  [
+   "CON:fisica/medicion-magnitudes-instrumentos",
+   3
+  ],
+  [
+   "CON:fisica/movimiento-y-reposo",
+   3
+  ],
+  [
+   "CON:fisica/transformaciones-energia",
+   3
+  ],
+  [
+   "CON:biologia/adaptaciones-estructurales",
    2
   ],
   [
-   "CON:ciencias_tierra_espacio/conservacion-de-recursos-y-residuos",
+   "CON:biologia/habitos-de-vida-saludable",
    2
   ],
   [
-   "CON:ciencias_tierra_espacio/rotacion-dia-y-noche",
+   "CON:biologia/impacto-humano-en-los-ecosistemas",
    2
   ],
   [
-   "CON:ciencias_tierra_espacio/patrones-estacionales-del-tiempo",
+   "CON:ciencias_tierra_espacio/amenazas-naturales",
    2
   ]
  ]

@@ -291,6 +291,28 @@ def propuesta_excel(asignatura: str, desde: int, hasta: int) -> None:
     typer.echo(f"→ {escribir_excel(asignatura, desde, hasta)}")
 
 
+revision_app = typer.Typer(help="Revisión humana con el equipo de Ciencias del MINED", no_args_is_help=True)
+app.add_typer(revision_app, name="revision")
+
+
+@revision_app.command("exportar")
+def revision_exportar() -> None:
+    """CSV por asignatura: etiquetas de confianza baja y prerrequisitos que sostienen hallazgos."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.revision_humana import exportar
+
+    for p in exportar(*cargar()):
+        typer.echo(f"→ {p}")
+
+
+@revision_app.command("importar")
+def revision_importar(archivo: str) -> None:
+    """Convierte un CSV revisado en revisiones (data/interim/revisiones/). Luego: gskg grafo construir."""
+    from goes_science_kg.revision_humana import importar
+
+    typer.echo(json.dumps(importar(archivo), ensure_ascii=False))
+
+
 @app.command()
 def brechas() -> None:
     """Análisis de brechas por asignatura → asignaturas/<x>/brechas/."""
@@ -299,6 +321,24 @@ def brechas() -> None:
 
     for r in escribir_brechas(*cargar()):
         typer.echo(json.dumps(r, ensure_ascii=False))
+
+
+@app.command()
+def progresion() -> None:
+    """Mapa de progresión de conceptos por asignatura → asignaturas/<x>/progresion.html."""
+    from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.progresion import escribir_todas
+
+    for p in escribir_todas(*cargar()):
+        typer.echo(f"→ {p}")
+
+
+@app.command()
+def servir(puerto: int = 8010, host: str = "127.0.0.1") -> None:
+    """API de lectura (FastAPI) en http://127.0.0.1:<puerto>/docs. Requiere `uv sync --extra api`."""
+    import uvicorn
+
+    uvicorn.run("goes_science_kg.api:app", host=host, port=puerto)
 
 
 @app.command()

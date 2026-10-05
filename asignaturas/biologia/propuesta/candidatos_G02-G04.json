@@ -8,9 +8,9 @@
  "temas_por_grado": {
   "2": 27,
   "3": 32,
-  "4": 39
+  "4": 40
  },
- "total_temas_ciclo": 98,
+ "total_temas_ciclo": 99,
  "mover_antes": [
   {
    "concepto": "Adaptaciones conductuales",
@@ -18,11 +18,74 @@
    "grado_actual": 11,
    "grado_destino": 4,
    "paises": {
+    "AU": 4.0,
     "CO": 2,
-    "SG": 6
+    "SG": 6.0
    },
    "bloqueos": [],
    "temas_actuales": []
+  },
+  {
+   "concepto": "Fósiles y registro fósil",
+   "concepto_id": "CON:biologia/fosiles",
+   "grado_actual": 10,
+   "grado_destino": 3,
+   "paises": {
+    "CO": 2,
+    "ENG": 4.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "primer_grado_sv": 3
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G10-BIO-U5-5.3",
+     "tema": "5.3. Cálculo de la edad de fósiles y rocas mediante la ley de desintegración radiactiva y los principios de la estratigrafía.",
+     "unidad": "5. Evolución"
+    }
+   ]
+  },
+  {
+   "concepto": "Evidencias de la evolución",
+   "concepto_id": "CON:biologia/evidencias-de-la-evolucion",
+   "grado_actual": 10,
+   "grado_destino": 4,
+   "paises": {
+    "AU": 9.0,
+    "CO": 2,
+    "ENG": 4.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Fósiles y registro fósil",
+     "primer_grado_sv": 10
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G10-BIO-U5-5.4",
+     "tema": "5.4. Comparación de estructuras anatómicas de distintas especies para diferenciar homologías, analogías y estructuras vestigiales.",
+     "unidad": "5. Evolución"
+    },
+    {
+     "id": "G10-BIO-U5-5.5",
+     "tema": "5.5. Comparación de etapas del desarrollo embrionario de vertebrados como evidencia de un ancestro común.",
+     "unidad": "5. Evolución"
+    },
+    {
+     "id": "G10-BIO-U5-5.6",
+     "tema": "5.6. Análisis de la distribución geográfica de las especies y del Gran Intercambio Biótico Americano tras el cierre del istmo centroamericano.",
+     "unidad": "5. Evolución"
+    },
+    {
+     "id": "G10-BIO-U5-5.7",
+     "tema": "5.7. Comparación de secuencias de proteínas conservadas entre especies para estimar su grado de parentesco.",
+     "unidad": "5. Evolución"
+    }
+   ]
   },
   {
    "concepto": "Herencia de rasgos",
@@ -31,46 +94,21 @@
    "grado_destino": 4,
    "paises": {
     "CO": 2,
-    "SG": 5
+    "ENG": 4.0,
+    "SG": 5.0
    },
    "bloqueos": [],
    "temas_actuales": []
   },
   {
-   "concepto": "Digestión química y absorción de nutrientes",
-   "concepto_id": "CON:biologia/digestion-y-absorcion-de-nutrientes",
-   "grado_actual": 8,
-   "grado_destino": 4,
-   "paises": {
-    "SG": 4,
-    "UY": 4
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Enzimas",
-     "primer_grado_sv": 8
-    },
-    {
-     "prerrequisito": "Sistema digestivo",
-     "primer_grado_sv": 4
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G08-CIE-U7-7.11",
-     "tema": "7.11. Experimentación con los procesos químicos y mecánicos que intervienen en la digestión.",
-     "unidad": "7. Anatomía y Fisiología Animal"
-    }
-   ]
-  },
-  {
    "concepto": "Transporte en plantas: xilema y floema",
    "concepto_id": "CON:biologia/transporte-en-plantas",
    "grado_actual": 8,
-   "grado_destino": 4,
+   "grado_destino": 3,
    "paises": {
-    "SG": 5,
-    "UY": 3
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
    },
    "bloqueos": [
     {
@@ -96,13 +134,70 @@
    ]
   },
   {
+   "concepto": "Depredación",
+   "concepto_id": "CON:biologia/depredacion",
+   "grado_actual": 7,
+   "grado_destino": 2,
+   "paises": {
+    "CO": 3.0,
+    "ENG": 2
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Cadena alimentaria",
+     "primer_grado_sv": 4
+    }
+   ],
+   "temas_actuales": []
+  },
+  {
+   "concepto": "Digestión química y absorción de nutrientes",
+   "concepto_id": "CON:biologia/digestion-y-absorcion-de-nutrientes",
+   "grado_actual": 8,
+   "grado_destino": 4,
+   "paises": {
+    "ENG": 4.0,
+    "SG": 4.0,
+    "UY": 4.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Enzimas",
+     "primer_grado_sv": 6
+    },
+    {
+     "prerrequisito": "Sistema digestivo",
+     "primer_grado_sv": 4
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G08-CIE-U7-7.11",
+     "tema": "7.11. Experimentación con los procesos químicos y mecánicos que intervienen en la digestión.",
+     "unidad": "7. Anatomía y Fisiología Animal"
+    }
+   ]
+  },
+  {
+   "concepto": "Competencia por recursos",
+   "concepto_id": "CON:biologia/competencia-por-recursos",
+   "grado_actual": 7,
+   "grado_destino": 4,
+   "paises": {
+    "CO": 3.0,
+    "ENG": 6.0
+   },
+   "bloqueos": [],
+   "temas_actuales": []
+  },
+  {
    "concepto": "Relaciones intraespecíficas",
    "concepto_id": "CON:biologia/relaciones-intraespecificas",
    "grado_actual": 7,
    "grado_destino": 4,
    "paises": {
-    "CO": 3,
-    "UY": 6
+    "CO": 3.0,
+    "UY": 6.0
    },
    "bloqueos": [
     {
@@ -117,64 +212,15 @@
    "temas_actuales": []
   },
   {
-   "concepto": "Simbiosis: mutualismo, comensalismo y parasitismo",
-   "concepto_id": "CON:biologia/simbiosis",
-   "grado_actual": 7,
-   "grado_destino": 4,
-   "paises": {
-    "CO": 3,
-    "UY": 6
-   },
-   "bloqueos": [
-    {
-     "prerrequisito": "Competencia por recursos",
-     "primer_grado_sv": 7
-    },
-    {
-     "prerrequisito": "Factores bióticos y abióticos",
-     "primer_grado_sv": 4
-    }
-   ],
-   "temas_actuales": [
-    {
-     "id": "G07-CIE-U4-4.1",
-     "tema": "4.1. Identificación de interacciones ecológicas a partir de contextos prácticos.",
-     "unidad": "4. Ecología"
-    },
-    {
-     "id": "G07-CIE-U4-4.2",
-     "tema": "4.2. Descripción de interacciones ecológicas observadas en contextos prácticos.",
-     "unidad": "4. Ecología"
-    }
-   ]
-  },
-  {
-   "concepto": "La célula como unidad de la vida",
-   "concepto_id": "CON:biologia/la-celula-unidad-de-la-vida",
-   "grado_actual": 6,
-   "grado_destino": 4,
-   "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 4
-   },
-   "bloqueos": [],
-   "temas_actuales": [
-    {
-     "id": "G06-CIE-U5-5.3",
-     "tema": "5.3. Construcción de línea temporal sobre el desarrollo de la teoría celular.",
-     "unidad": "5. Célula."
-    }
-   ]
-  },
-  {
    "concepto": "Reproducción sexual de las plantas con flor",
    "concepto_id": "CON:biologia/reproduccion-de-plantas-con-flor",
    "grado_actual": 6,
    "grado_destino": 4,
    "paises": {
-    "SG": 5,
-    "UY": 3
+    "AU": 8.0,
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
    },
    "bloqueos": [
     {
@@ -187,6 +233,34 @@
      "id": "G06-CIE-U6-6.8",
      "tema": "6.8. Descripción de la fecundación y planos de división celular en plantas.",
      "unidad": "6. Biología del desarrollo."
+    }
+   ]
+  },
+  {
+   "concepto": "Órganos de los sentidos",
+   "concepto_id": "CON:biologia/organos-de-los-sentidos",
+   "grado_actual": 4,
+   "grado_destino": 2,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "UY": 3.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Estructuras del cuerpo animal y su función",
+     "primer_grado_sv": null
+    },
+    {
+     "prerrequisito": "Respuesta de los seres vivos a estímulos",
+     "primer_grado_sv": 2
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G04-CIE-U6-6.6",
+     "tema": "6.6. Experimentación con los sistemas sensoriales del cuerpo humano.",
+     "unidad": "6. Cuerpo humano: movimiento e interacciones."
     }
    ]
   }
@@ -206,6 +280,14 @@
    "prerrequisito": "Sistema inmunitario",
    "grado_prerrequisito": 10,
    "brecha": 8,
+   "confianza": "alta"
+  },
+  {
+   "concepto": "Fermentación y respiración anaerobia",
+   "grado_concepto": 3,
+   "prerrequisito": "Glucólisis, ciclo de Krebs y cadena respiratoria",
+   "grado_prerrequisito": 10,
+   "brecha": 7,
    "confianza": "alta"
   },
   {
@@ -497,16 +579,6 @@
    ]
   },
   {
-   "id": "G03-CIE-U2-2.14",
-   "grado": 3,
-   "unidad": "2. Interacciones terrestres.",
-   "tema": "2.14. Explicación de la importancia de la atmósfera para la vida en la Tierra.",
-   "conceptos": [
-    "Ciclos del carbono y del oxígeno",
-    "Necesidades de los seres vivos"
-   ]
-  },
-  {
    "id": "G03-CIE-U3-3.6",
    "grado": 3,
    "unidad": "3. El agua.",
@@ -788,6 +860,17 @@
    ]
   },
   {
+   "id": "G03-CIE-U6-6.8",
+   "grado": 3,
+   "unidad": "6. Los microorganismos.",
+   "tema": "6.8. Reconocimiento de alimentos transformados por microorganismos.",
+   "conceptos": [
+    "Biotecnología microbiana",
+    "Fermentación y respiración anaerobia",
+    "Microorganismos"
+   ]
+  },
+  {
    "id": "G03-CIE-U6-6.9",
    "grado": 3,
    "unidad": "6. Los microorganismos.",
@@ -822,6 +905,16 @@
    "conceptos": [
     "Necesidades de los seres vivos",
     "Partes de la planta y sus funciones"
+   ]
+  },
+  {
+   "id": "G04-CIE-U2-2.12",
+   "grado": 4,
+   "unidad": "2. Nutrición.",
+   "tema": "2.12. Clasificación de tipos de cultivos vegetales según su propósito e intensidad.",
+   "conceptos": [
+    "Biotecnología vegetal y agroindustria",
+    "Uso del suelo y su degradación"
    ]
   },
   {

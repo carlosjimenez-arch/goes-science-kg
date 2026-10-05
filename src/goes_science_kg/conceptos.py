@@ -179,7 +179,7 @@ def unir_etiquetado() -> dict:
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     _escribir(f"{DIR}/etiquetado_temas.json", sorted(filas, key=lambda f: f["id"]))
-    _escribir(f"{DIR}/conceptos_propuestos.json", nuevos.most_common())
+    _escribir(f"{DIR}/conceptos_propuestos.json", sorted(nuevos.items(), key=lambda x: (-x[1], x[0])))
     return {"temas": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas)),
             "conceptos_propuestos": len(nuevos)}
 
@@ -192,11 +192,14 @@ def etiquetado() -> dict[str, dict]:
 
 # -- 2-bis. etiquetado directo de objetivos de países --------------------------------------------
 # Más preciso que heredar conceptos vía el objetivo de marco (spec 09, «Limitaciones»).
-def preparar_etiquetado_paises(nodos, por_lote: int = 70) -> list[str]:
+def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool = True) -> list[str]:
+    """Lotes por país. Con solo_pendientes, únicamente los objetivos aún sin etiquetar (p. ej. un país nuevo)."""
     from goes_science_kg.modelos import TipoNodo
 
     voc, prac = vocabulario(), practicas()
-    ops = sorted((n for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS), key=lambda n: n.id)
+    hechos = set(etiquetado_paises()) if solo_pendientes else set()
+    ops = sorted((n for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id.removeprefix("OP:") not in hechos),
+                 key=lambda n: n.id)
     escritos = []
     for pais in sorted({n.props["pais"] for n in ops}):
         items = [n for n in ops if n.props["pais"] == pais]

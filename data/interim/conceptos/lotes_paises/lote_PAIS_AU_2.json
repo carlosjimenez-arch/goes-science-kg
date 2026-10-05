@@ -1,0 +1,3609 @@
+{
+ "lote": "PAIS_AU_2",
+ "version": "etiquetado-paises-v1",
+ "instrucciones": "prompts/etiquetar_conceptos.md (los ítems son objetivos de un país, no temas)",
+ "vocabulario": [
+  {
+   "id": "CON:biologia/acervo-genico-y-frecuencias-alelicas",
+   "nombre": "Acervo génico y frecuencias alélicas",
+   "definicion": "Conjunto de alelos de una población y la proporción de cada uno; la evolución es el cambio de esas frecuencias.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/adaptaciones-conductuales",
+   "nombre": "Adaptaciones conductuales",
+   "definicion": "Conductas como migración, hibernación o vida en grupo que aumentan la supervivencia de los animales en su ambiente.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/adaptaciones-estructurales",
+   "nombre": "Adaptaciones estructurales",
+   "definicion": "Rasgos físicos, como camuflaje, tallos gruesos o espinas, que ayudan a un organismo a sobrevivir en su ambiente.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/adn-y-cromosomas",
+   "nombre": "ADN y cromosomas",
+   "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/amenazas-a-la-biodiversidad",
+   "nombre": "Amenazas a la biodiversidad",
+   "definicion": "Sobreexplotación, destrucción de hábitats, monocultivos, especies invasoras y contaminación reducen especies y aceleran el cambio de ecosistemas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/atp-y-energia-celular",
+   "nombre": "ATP y energía en los sistemas vivos",
+   "definicion": "El ATP almacena y transfiere energía en la célula; los seres vivos transforman energía cumpliendo las leyes de la termodinámica.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/biodiversidad",
+   "nombre": "Biodiversidad",
+   "definicion": "Variedad de la vida en sus niveles de genes, especies y ecosistemas en una región o en todo el planeta.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/biomas-y-tipos-de-ambientes",
+   "nombre": "Biomas y clasificación de ambientes",
+   "definicion": "Grandes ecosistemas, como selvas, bosques, sabanas y desiertos, descritos y clasificados por su clima, sustrato y especies características.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/biomoleculas",
+   "nombre": "Biomoléculas",
+   "definicion": "Carbohidratos, lípidos, proteínas y ácidos nucleicos: moléculas orgánicas que forman las estructuras y sostienen las funciones celulares.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/biotecnologia-microbiana",
+   "nombre": "Biotecnología microbiana",
+   "definicion": "Uso de bacterias, levaduras y hongos para producir alimentos, medicamentos, enzimas o biocombustibles mediante fermentación y modificación genética.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/biotecnologia-vegetal",
+   "nombre": "Biotecnología vegetal y agroindustria",
+   "definicion": "Mejoramiento genético, cultivo de tejidos y plantas transgénicas para aumentar productividad, resistencia y calidad de cultivos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/cadena-alimentaria",
+   "nombre": "Cadena alimentaria",
+   "definicion": "Secuencia lineal que muestra quién se come a quién, desde un productor hasta varios niveles de consumidores.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/cambio-climatico-y-seres-vivos",
+   "nombre": "Cambio climático y seres vivos",
+   "definicion": "El calentamiento global altera distribución de especies, ciclos de vida y capacidad de carga de los ecosistemas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/capacidad-de-carga",
+   "nombre": "Capacidad de carga",
+   "definicion": "Tamaño máximo de población que un ambiente sostiene, alterable por cambios bióticos, abióticos y eventos climáticos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/celula-animal-y-vegetal",
+   "nombre": "Célula animal y célula vegetal",
+   "definicion": "La célula vegetal se distingue de la animal por tener pared celular, cloroplastos y una vacuola central grande.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/celula-procariota-y-eucariota",
+   "nombre": "Célula procariota y eucariota",
+   "definicion": "Las procariotas carecen de núcleo y organelos membranosos y tienen cromosoma circular; ambas comparten origen evolutivo común.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ciclo-de-vida-de-las-plantas",
+   "nombre": "Ciclo de vida de las plantas",
+   "definicion": "Etapas de germinación, crecimiento, floración, polinización, formación del fruto y dispersión de semillas en plantas con flor.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ciclo-de-vida-de-los-animales",
+   "nombre": "Ciclo de vida de los animales",
+   "definicion": "Etapas de nacimiento, crecimiento, reproducción y muerte; algunos animales, como ranas y mariposas, presentan metamorfosis.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ciclo-del-agua-y-seres-vivos",
+   "nombre": "Papel de los seres vivos en el ciclo del agua",
+   "definicion": "Los seres vivos toman, usan y devuelven agua mediante transpiración, respiración, bebida y desechos, participando del ciclo hidrológico.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ciclo-del-carbono-y-oxigeno",
+   "nombre": "Ciclos del carbono y del oxígeno",
+   "definicion": "Circulación de carbono y oxígeno entre atmósfera, seres vivos, suelos y océanos mediante fotosíntesis, respiración, descomposición y combustión.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ciclo-del-nitrogeno",
+   "nombre": "Ciclo del nitrógeno",
+   "definicion": "Transformación del nitrógeno por bacterias fijadoras, nitrificantes y desnitrificantes entre atmósfera, suelo y seres vivos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ciclos-del-fosforo-y-azufre",
+   "nombre": "Ciclos del fósforo y del azufre",
+   "definicion": "Circulación de fósforo y azufre entre rocas, suelo, agua y seres vivos; el fósforo carece de fase atmosférica significativa.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/circulacion-e-intercambio-capilar",
+   "nombre": "Circulación e intercambio capilar",
+   "definicion": "Los capilares, por sus paredes finas y gran superficie, permiten el intercambio de materiales entre la sangre y los tejidos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
+   "nombre": "Clasificación de seres vivos por sus rasgos",
+   "definicion": "Agrupación de plantas y animales según rasgos físicos y de conducta observables, como cubierta corporal, forma de reproducirse o de desplazarse.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/clasificacion-jerarquica",
+   "nombre": "Clasificación jerárquica y nomenclatura",
+   "definicion": "Sistema de categorías anidadas, de dominio a especie, basado en semejanzas de rasgos y secuencias, con nombre científico binomial.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/competencia-por-recursos",
+   "nombre": "Competencia por recursos",
+   "definicion": "Interacción entre organismos que necesitan el mismo recurso limitado, como alimento, agua, luz o espacio.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/concepto-de-especie",
+   "nombre": "Concepto de especie",
+   "definicion": "Grupo de organismos semejantes morfológica o genéticamente que se reproducen entre sí con descendencia fértil, con excepciones.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/conservacion-de-la-biodiversidad",
+   "nombre": "Conservación de la biodiversidad",
+   "definicion": "Estrategias como áreas protegidas, protección de especies endémicas y restauración ecológica para mantener la diversidad biológica.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "nombre": "Contagio y prevención de enfermedades",
+   "definicion": "Algunas enfermedades se transmiten por contacto entre personas; lavado de manos, higiene y vacunas ayudan a prevenirlas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/contaminacion-y-seres-vivos",
+   "nombre": "Contaminación y sus efectos en los seres vivos",
+   "definicion": "Sustancias o desechos en aire, agua y suelo que dañan la salud de personas, plantas y animales.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/crecimiento-poblacional",
+   "nombre": "Crecimiento poblacional",
+   "definicion": "Cambio del tamaño de una población según natalidad, mortalidad y migración, con modelos de crecimiento exponencial y logístico.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/depredacion",
+   "nombre": "Depredación",
+   "definicion": "Relación en la que un depredador caza y consume a su presa, regulando el tamaño de ambas poblaciones.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/diferenciacion-y-especializacion-celular",
+   "nombre": "Diferenciación y especialización celular",
+   "definicion": "Proceso por el que células con el mismo genoma adquieren estructuras y funciones distintas para formar tejidos especializados.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/difusion-y-osmosis",
+   "nombre": "Difusión y ósmosis",
+   "definicion": "Movimiento pasivo de sustancias a favor de su gradiente de concentración; la ósmosis es la difusión de agua a través de membranas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/digestion-y-absorcion-de-nutrientes",
+   "nombre": "Digestión química y absorción de nutrientes",
+   "definicion": "Enzimas digestivas degradan macromoléculas y las vellosidades intestinales absorben los productos hacia la sangre.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/diversidad-genetica-de-poblaciones",
+   "nombre": "Diversidad genética de poblaciones",
+   "definicion": "Variedad de alelos en una población; si es reducida, la población es menos capaz de adaptarse y corre mayor riesgo de extinción.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ecosistemas-acuaticos-y-marinos",
+   "nombre": "Ecosistemas acuáticos y marinos",
+   "definicion": "Ríos, lagos, manglares, arrecifes y océano, con zonas y organismos determinados por luz, salinidad, profundidad y corrientes.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ecosistemas-naturales-rurales-urbanos",
+   "nombre": "Ecosistemas naturales, rurales y urbanos",
+   "definicion": "Ecosistemas con distinto grado de intervención humana que difieren en rasgos físicos, organismos y relaciones entre ellos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/enfermedades-infecciosas-y-no-infecciosas",
+   "nombre": "Enfermedades infecciosas y no infecciosas",
+   "definicion": "Las infecciosas las causa un patógeno y se transmiten entre hospederos; las genéticas o del estilo de vida no son contagiosas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/enzimas",
+   "nombre": "Enzimas",
+   "definicion": "Proteínas catalizadoras específicas cuya actividad depende de temperatura, pH, inhibidores y concentración de sustrato y productos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/epidemiologia-y-control-de-brotes",
+   "nombre": "Propagación de enfermedades y control de brotes",
+   "definicion": "Persistencia del patógeno, transmisión, movilidad e inmunidad poblacional explican epidemias y permiten evaluar estrategias de control.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/equilibrio-de-hardy-weinberg",
+   "nombre": "Equilibrio de Hardy-Weinberg",
+   "definicion": "Modelo que predice frecuencias alélicas y genotípicas constantes en una población sin selección, mutación, migración ni deriva.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/especiacion-y-macroevolucion",
+   "nombre": "Especiación y macroevolución",
+   "definicion": "Formación de nuevas especies, p. ej. alopátrica, y diversificación de grupos por acumulación de cambios microevolutivos en el tiempo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/especies-clave",
+   "nombre": "Especies clave",
+   "definicion": "Especies cuya disminución o desaparición altera la comunidad mucho más de lo esperado por su abundancia o biomasa.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/estrategias-reproductivas",
+   "nombre": "Estrategias reproductivas y supervivencia de la descendencia",
+   "definicion": "Producir muchas semillas o crías, o brindar cuidado parental, aumenta la probabilidad de que la descendencia sobreviva.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/estructura-del-adn",
+   "nombre": "Estructura del ADN",
+   "definicion": "Doble hélice de nucleótidos con bases complementarias (A-T, C-G) unidas por enlaces de hidrógeno débiles entre cadenas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/estructuras-celulares-basicas",
+   "nombre": "Estructuras celulares básicas",
+   "definicion": "Membrana, citoplasma, núcleo, mitocondrias, cloroplastos, pared y vacuolas cumplen funciones específicas dentro de la célula.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "nombre": "Estructuras del cuerpo animal y su función",
+   "definicion": "Piel, huesos, músculos, corazón, pulmones y estómago cumplen funciones específicas de protección, sostén, movimiento, circulación, respiración y digestión.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/evidencias-de-la-evolucion",
+   "nombre": "Evidencias de la evolución",
+   "definicion": "Fósiles, anatomía comparada, embriología y genómica comparada muestran que las especies cambian y comparten ancestros comunes.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/extincion-de-especies",
+   "nombre": "Extinción de especies",
+   "definicion": "Desaparición de una especie cuando su variación no le permite sobrevivir y reproducirse ante cambios del ambiente.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/factores-bioticos-y-abioticos",
+   "nombre": "Factores bióticos y abióticos",
+   "definicion": "Componentes vivos e inertes de un ecosistema, como clima, suelo, agua y luz, que determinan qué organismos pueden habitarlo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/factores-limitantes-de-poblaciones",
+   "nombre": "Factores limitantes de las poblaciones",
+   "definicion": "Depredadores, alimento, agua, espacio y enfermedades limitan el tamaño de una población y el equilibrio entre poblaciones.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/fases-de-la-fotosintesis",
+   "nombre": "Fases de la fotosíntesis y ciclo de Calvin",
+   "definicion": "Fase luminosa en tilacoides que produce ATP y NADPH, y ciclo de Calvin en el estroma que fija CO2 en azúcares.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/fecundacion-y-desarrollo-embrionario",
+   "nombre": "Fecundación y desarrollo embrionario",
+   "definicion": "Unión de gametos que forma un cigoto, el cual se divide y diferencia en embrión y luego en un nuevo organismo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/fermentacion-y-respiracion-anaerobia",
+   "nombre": "Fermentación y respiración anaerobia",
+   "definicion": "Obtención de energía sin oxígeno que produce poco ATP y genera productos como ácido láctico o etanol.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/filogenia-y-parentesco-evolutivo",
+   "nombre": "Filogenia y parentesco evolutivo",
+   "definicion": "Los sistemas de clasificación y los árboles filogenéticos representan relaciones de ancestro común entre grupos de organismos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/flujo-de-energia-y-piramides",
+   "nombre": "Flujo de energía y pirámides ecológicas",
+   "definicion": "La energía solar pasa de productores a consumidores, perdiéndose como calor en cada nivel; se representa con pirámides de energía o biomasa.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/fosiles",
+   "nombre": "Fósiles y registro fósil",
+   "definicion": "Restos o huellas de organismos conservados en rocas sedimentarias que indican qué seres vivieron, cuándo y en qué ambientes.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/fotosintesis",
+   "nombre": "Fotosíntesis",
+   "definicion": "Proceso por el que plantas y algas usan luz, agua, CO2 y clorofila para producir glucosa y liberar oxígeno.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/genes-y-alelos",
+   "nombre": "Genes y alelos",
+   "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/genomica-y-perfiles-de-adn",
+   "nombre": "Secuenciación del ADN y perfiles genéticos",
+   "definicion": "Determinación del orden de nucleótidos para mapear genomas y obtención de perfiles de ADN que identifican a individuos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/genotipo-y-fenotipo",
+   "nombre": "Genotipo y fenotipo",
+   "definicion": "El genotipo es la combinación de alelos de un individuo; el fenotipo son los rasgos observables que resultan de genes y ambiente.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/glucolisis-y-ciclo-de-krebs",
+   "nombre": "Glucólisis, ciclo de Krebs y cadena respiratoria",
+   "definicion": "Etapas de la respiración aerobia en citosol y mitocondria que oxidan la glucosa y producen la mayor parte del ATP.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+   "nombre": "Grupos de alimentos y dieta balanceada",
+   "definicion": "Los alimentos se agrupan según su aporte; una dieta balanceada combina grupos en proporciones adecuadas para crecer y mantenerse sano.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/grupos-de-vertebrados",
+   "nombre": "Grupos de vertebrados",
+   "definicion": "Mamíferos, aves, reptiles, anfibios y peces se distinguen por rasgos como cubierta corporal, respiración, reproducción y regulación de temperatura.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/habitat-y-ecosistemas-comunes",
+   "nombre": "Hábitat y ecosistemas comunes",
+   "definicion": "Lugar donde vive un organismo; bosques, desiertos, sabanas, ríos y océanos albergan plantas y animales adaptados a sus condiciones.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/habitos-de-vida-saludable",
+   "nombre": "Hábitos de vida saludable",
+   "definicion": "Ejercicio, descanso, higiene, buena alimentación y cuidado emocional mantienen la salud física y mental y previenen enfermedades.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/herencia-de-rasgos",
+   "nombre": "Herencia de rasgos",
+   "definicion": "La descendencia se parece a sus progenitores porque hereda rasgos; otros rasgos se adquieren o aprenden y no se heredan.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/herencia-mendeliana",
+   "nombre": "Herencia mendeliana",
+   "definicion": "Transmisión de alelos dominantes y recesivos según segregación e independencia; las proporciones se predicen con cuadros de Punnett.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/herencia-no-mendeliana",
+   "nombre": "Herencia ligada al sexo, alelos múltiples y poligénica",
+   "definicion": "Patrones de herencia como la ligada al cromosoma X, codominancia, alelos múltiples (grupos sanguíneos) y rasgos de varios genes.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/historia-de-la-vida-en-la-tierra",
+   "nombre": "Historia de la vida en la Tierra",
+   "definicion": "La vida existe desde hace unos 3500 millones de años y ha cambiado y diversificado, con transformaciones drásticas de los ecosistemas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/homeostasis",
+   "nombre": "Homeostasis",
+   "definicion": "Mantenimiento de condiciones internas estables, como temperatura y agua, mediante cambios fisiológicos, estructurales y conductuales.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/impacto-humano-en-los-ecosistemas",
+   "nombre": "Impacto humano en los ecosistemas",
+   "definicion": "Acciones humanas que perjudican o benefician las poblaciones de un ecosistema, como deforestación, reforestación o protección de especies.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/impulso-nervioso-y-sinapsis",
+   "nombre": "Impulso nervioso y sinapsis",
+   "definicion": "Potencial de acción a lo largo del axón y transmisión química entre neuronas mediante neurotransmisores y transducción de señales.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/ingenieria-genetica",
+   "nombre": "Ingeniería genética y ADN recombinante",
+   "definicion": "Uso de enzimas de restricción, ligasas y plásmidos como vectores para insertar genes en organismos y transformar bacterias.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
+   "nombre": "Inmunidad activa, pasiva y vacunas",
+   "definicion": "La inmunidad activa surge tras infección o vacunación; la pasiva proviene de anticuerpos recibidos por placenta o suero.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/inmunidad-adaptativa",
+   "nombre": "Inmunidad adaptativa",
+   "definicion": "Respuesta específica de vertebrados: humoral con anticuerpos de linfocitos B y celular con linfocitos T, con memoria inmunológica.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/inmunidad-innata",
+   "nombre": "Inmunidad innata",
+   "definicion": "Defensas generales de plantas y animales, como barreras, inflamación, fagocitos, defensinas y complemento, que actúan ante cualquier patógeno.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/intercambio-de-gases-en-animales",
+   "nombre": "Intercambio de gases en animales",
+   "definicion": "Difusión de oxígeno y dióxido de carbono por superficies respiratorias finas y extensas, comparando pulmones, branquias y tráqueas entre animales.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/intercambio-de-gases-en-plantas",
+   "nombre": "Intercambio de gases en plantas",
+   "definicion": "Entrada y salida de gases por estomas y superficies vegetales, con movimiento interno por difusión.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/invertebrados-e-insectos",
+   "nombre": "Invertebrados e insectos",
+   "definicion": "Animales sin columna vertebral, como insectos, arácnidos, moluscos y gusanos; los insectos tienen seis patas, tres regiones corporales y exoesqueleto.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/la-celula-unidad-de-la-vida",
+   "nombre": "La célula como unidad de la vida",
+   "definicion": "Todos los seres vivos están formados por células, que realizan las funciones vitales y proceden de otras células por división.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/mecanismos-de-microevolucion",
+   "nombre": "Mecanismos de microevolución",
+   "definicion": "Mutación, flujo génico, deriva genética y selección natural modifican las frecuencias alélicas de una población.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/medidas-de-biodiversidad",
+   "nombre": "Medidas de biodiversidad",
+   "definicion": "Índices de riqueza y abundancia relativa de especies que permiten comparar la biodiversidad entre lugares y momentos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/meiosis",
+   "nombre": "Meiosis",
+   "definicion": "División celular que reduce a la mitad el número de cromosomas y forma gametos genéticamente distintos por entrecruzamiento y segregación.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/membrana-celular",
+   "nombre": "Membrana celular",
+   "definicion": "Bicapa de fosfolípidos con proteínas que delimita la célula y regula el paso de gases, nutrientes y desechos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/microorganismos",
+   "nombre": "Microorganismos",
+   "definicion": "Seres vivos microscópicos, como bacterias, hongos microscópicos y protistas, que pueden ser beneficiosos o causar enfermedades.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/mitosis-y-ciclo-celular",
+   "nombre": "Mitosis y ciclo celular",
+   "definicion": "División del núcleo que produce dos células hijas genéticamente idénticas; permite el crecimiento, la reparación y la reproducción asexual.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/modelos-de-ecosistemas-y-muestreo",
+   "nombre": "Modelos ecológicos basados en muestreo",
+   "definicion": "Modelos de interacciones que predicen cambios del ecosistema a partir de muestras; su confiabilidad depende de la representatividad.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/mutaciones",
+   "nombre": "Mutaciones",
+   "definicion": "Cambios génicos o cromosómicos por errores de replicación o división, o por agentes ambientales; son la fuente última de nuevos alelos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/necesidades-de-los-seres-vivos",
+   "nombre": "Necesidades de los seres vivos",
+   "definicion": "Plantas y animales requieren aire, agua, alimento o luz y un ambiente adecuado para sobrevivir.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/nicho-ecologico",
+   "nombre": "Nicho ecológico y exclusión competitiva",
+   "definicion": "Papel y conjunto de condiciones y recursos que usa una especie; dos especies no comparten el mismo nicho indefinidamente.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/niveles-de-organizacion",
+   "nombre": "Niveles de organización de los seres vivos",
+   "definicion": "Las células especializadas forman tejidos, los tejidos forman órganos y los órganos forman sistemas en organismos multicelulares.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/nutricion-autotrofa-y-heterotrofa",
+   "nombre": "Nutrición autótrofa y heterótrofa",
+   "definicion": "Las plantas fabrican su alimento con luz, aire y agua; los animales obtienen alimento comiendo plantas u otros animales.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/nutrientes-y-sus-funciones",
+   "nombre": "Nutrientes y sus funciones",
+   "definicion": "Carbohidratos, lípidos, proteínas, vitaminas, minerales y agua aportan energía, materiales de construcción y regulación al organismo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/organelos-de-la-celula-eucariota",
+   "nombre": "Organelos de la célula eucariota",
+   "definicion": "Retículo endoplasmático, aparato de Golgi, lisosomas, mitocondrias y cloroplastos compartimentan síntesis, energía y eliminación de desechos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/organos-de-los-sentidos",
+   "nombre": "Órganos de los sentidos",
+   "definicion": "Ojos, oídos, nariz, lengua y piel captan estímulos del ambiente y envían información al sistema nervioso.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/osmorregulacion",
+   "nombre": "Osmorregulación y equilibrio hídrico",
+   "definicion": "Mecanismos de animales y plantas para mantener el balance de agua y solutos, como la función de la nefrona.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/partes-de-la-planta-y-sus-funciones",
+   "nombre": "Partes de la planta y sus funciones",
+   "definicion": "Raíz, tallo, hoja, flor, fruto y semilla cumplen funciones de fijación, transporte, fabricación de alimento y reproducción.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/pcr-y-electroforesis",
+   "nombre": "PCR y electroforesis en gel",
+   "definicion": "La PCR amplifica fragmentos de ADN y la electroforesis los separa por tamaño para analizarlos y compararlos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/presion-y-flujo-en-seres-vivos",
+   "nombre": "Presión y flujo de fluidos en los seres vivos",
+   "definicion": "Aplicación de presión, caudal y viscosidad al flujo sanguíneo, la presión arterial y el movimiento de fluidos en organismos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/productores-consumidores-descomponedores",
+   "nombre": "Productores, consumidores y descomponedores",
+   "definicion": "Papeles de los organismos en un ecosistema: producir materia orgánica, consumirla o descomponerla devolviendo nutrientes al suelo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/proteinas-estructura-y-funcion",
+   "nombre": "Proteínas: estructura y función",
+   "definicion": "Cadenas de aminoácidos plegadas cuya forma determina funciones estructurales, de transporte, de defensa, de señalización y enzimáticas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/redes-troficas",
+   "nombre": "Redes tróficas",
+   "definicion": "Conjunto de cadenas alimentarias interconectadas que muestran las múltiples relaciones de alimentación de una comunidad.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/regulacion-de-la-expresion-genica",
+   "nombre": "Regulación de la expresión génica",
+   "definicion": "Control de cuándo y cuánto se transcriben y traducen los genes, que explica la diferenciación celular y la influencia ambiental.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/reinos-de-los-seres-vivos",
+   "nombre": "Grandes grupos taxonómicos",
+   "definicion": "Bacterias, protistas, hongos, plantas y animales se distinguen por tipo celular, nutrición, organización y reproducción.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/relacion-superficie-volumen",
+   "nombre": "Relación superficie-volumen",
+   "definicion": "Al crecer una célula su volumen aumenta más que su superficie, lo que limita el intercambio de materiales y su tamaño.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/relaciones-intraespecificas",
+   "nombre": "Relaciones intraespecíficas",
+   "definicion": "Interacciones entre individuos de la misma especie, como cooperación, sociedades, territorialidad y competencia por pareja o recursos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/replicacion-del-adn",
+   "nombre": "Replicación del ADN",
+   "definicion": "Copia semiconservativa del ADN en la que cada cadena sirve de molde para sintetizar una nueva antes de la división celular.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/reproduccion-de-plantas-con-flor",
+   "nombre": "Reproducción sexual de las plantas con flor",
+   "definicion": "Polinización, fecundación en el ovario de la flor y formación de semilla y fruto en las angiospermas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/reproduccion-humana-y-pubertad",
+   "nombre": "Reproducción humana y pubertad",
+   "definicion": "Órganos reproductores masculinos y femeninos, cambios de la pubertad, ciclo menstrual, fecundación y embarazo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/reproduccion-sexual-y-asexual",
+   "nombre": "Reproducción sexual y asexual",
+   "definicion": "La reproducción asexual produce descendientes idénticos a partir de un progenitor; la sexual une gametos y genera descendencia variada.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/requerimientos-de-la-celula",
+   "nombre": "Requerimientos de materia y energía de la célula",
+   "definicion": "La célula necesita energía luminosa o química, gases, nutrientes e iones, y debe eliminar sus desechos para sobrevivir.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/resistencia-a-antibioticos",
+   "nombre": "Antibióticos y resistencia bacteriana",
+   "definicion": "Los antibióticos eliminan bacterias, pero las variantes resistentes sobreviven y se multiplican, haciendo que el fármaco pierda eficacia.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/respiracion-celular",
+   "nombre": "Respiración celular",
+   "definicion": "Proceso por el que las células usan oxígeno para degradar glucosa y obtener energía, liberando dióxido de carbono y agua.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/respuesta-a-estimulos",
+   "nombre": "Respuesta de los seres vivos a estímulos",
+   "definicion": "Los seres vivos detectan cambios externos como temperatura, luz o peligro y responden con conductas o cambios corporales.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/retroalimentacion-negativa",
+   "nombre": "Modelo estímulo-respuesta y retroalimentación negativa",
+   "definicion": "Receptores detectan un cambio, un centro de control lo procesa y efectores lo contrarrestan, devolviendo la variable a su valor normal.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/seleccion-natural",
+   "nombre": "Selección natural",
+   "definicion": "Los individuos con variaciones ventajosas sobreviven y se reproducen más, por lo que esos rasgos aumentan en la población.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/seres-vivos-y-no-vivos",
+   "nombre": "Seres vivos y no vivos",
+   "definicion": "Los seres vivos nacen, crecen, se nutren, responden a estímulos, se reproducen y mueren; los objetos no vivos no realizan esas funciones.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/simbiosis",
+   "nombre": "Simbiosis: mutualismo, comensalismo y parasitismo",
+   "definicion": "Relaciones estrechas entre especies en las que ambas se benefician, una se beneficia sin afectar a la otra o una la perjudica.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sintesis-de-proteinas",
+   "nombre": "Síntesis de proteínas",
+   "definicion": "Transcripción de un gen a ARN mensajero y traducción en el ribosoma a una secuencia de aminoácidos según el código genético.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-circulatorio",
+   "nombre": "Sistema circulatorio",
+   "definicion": "Corazón, vasos sanguíneos y sangre transportan oxígeno, nutrientes y desechos entre los órganos del cuerpo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-digestivo",
+   "nombre": "Sistema digestivo",
+   "definicion": "Conjunto de órganos que transforman los alimentos en nutrientes absorbibles y eliminan los residuos no digeridos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-endocrino-y-hormonas",
+   "nombre": "Sistema endocrino y hormonas",
+   "definicion": "Glándulas endocrinas secretan hormonas que viajan por la sangre y modifican el metabolismo de células y órganos diana.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-excretor",
+   "nombre": "Sistema excretor",
+   "definicion": "Riñones y vías urinarias filtran la sangre y eliminan desechos y exceso de agua en forma de orina.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-inmunitario",
+   "nombre": "Sistema inmunitario",
+   "definicion": "Glóbulos blancos, anticuerpos y barreras del cuerpo que reconocen y eliminan patógenos y sustancias extrañas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-locomotor",
+   "nombre": "Sistema locomotor",
+   "definicion": "Huesos, articulaciones y músculos trabajan juntos para sostener el cuerpo, proteger órganos y permitir el movimiento.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-nervioso",
+   "nombre": "Sistema nervioso",
+   "definicion": "Encéfalo, médula espinal y nervios reciben información, la procesan y coordinan las respuestas del cuerpo.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sistema-respiratorio",
+   "nombre": "Sistema respiratorio",
+   "definicion": "Órganos que llevan aire a los pulmones, donde el oxígeno pasa a la sangre y se expulsa dióxido de carbono.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sostenibilidad-de-la-biosfera",
+   "nombre": "Sostenibilidad de la biosfera",
+   "definicion": "Uso de recursos naturales que satisface necesidades humanas sin degradar los ecosistemas ni comprometer a generaciones futuras.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/sucesion-ecologica",
+   "nombre": "Sucesión ecológica",
+   "definicion": "Reemplazo gradual de poblaciones en un hábitat que modifica las condiciones bióticas y abióticas e impulsa nuevos cambios.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/tejidos-vegetales",
+   "nombre": "Tejidos vegetales",
+   "definicion": "Tejidos meristemáticos, protectores, fundamentales y conductores que forman los órganos de la planta según su función.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/termorregulacion",
+   "nombre": "Termorregulación",
+   "definicion": "Mecanismos estructurales, conductuales y fisiológicos con que los endotermos controlan el intercambio de calor y su temperatura corporal.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/tipos-de-patogenos",
+   "nombre": "Tipos de patógenos",
+   "definicion": "Priones, virus, bacterias, hongos, protistas y parásitos que causan enfermedades al invadir un organismo hospedero.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/transmision-de-patogenos",
+   "nombre": "Transmisión de patógenos",
+   "definicion": "Adaptaciones de los patógenos para entrar en células y propagarse por contacto, fluidos, alimentos, agua contaminada o vectores.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/transporte-activo-y-endocitosis",
+   "nombre": "Transporte activo y endocitosis",
+   "definicion": "Paso de sustancias contra su gradiente con gasto de ATP, o englobamiento de partículas en vesículas de membrana.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/transporte-en-plantas",
+   "nombre": "Transporte en plantas: xilema y floema",
+   "definicion": "El xilema conduce agua y minerales por presión radicular, transpiración y cohesión; el floema transloca azúcares fotosintéticos.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/tropismos-y-hormonas-vegetales",
+   "nombre": "Tropismos y hormonas vegetales",
+   "definicion": "Respuestas de crecimiento de las plantas a la luz, la gravedad o el contacto, reguladas por hormonas como las auxinas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/variacion-genetica",
+   "nombre": "Variación genética en la descendencia",
+   "definicion": "La meiosis, la fecundación y las mutaciones hacen que la descendencia se parezca a sus progenitores sin ser idéntica.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:biologia/virus",
+   "nombre": "Virus",
+   "definicion": "Agentes acelulares con material genético y cápside que solo se replican dentro de células hospederas.",
+   "asignatura": "biologia"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/acidificacion-del-oceano",
+   "nombre": "Acidificación del océano",
+   "definicion": "Disminución del pH del agua de mar al disolverse el CO2 atmosférico adicional, que afecta a corales y organismos con conchas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/aguas-subterraneas-y-acuiferos",
+   "nombre": "Aguas subterráneas y acuíferos",
+   "definicion": "Agua que se infiltra y se almacena en poros y grietas de rocas y sedimentos, formando acuíferos que se recargan lentamente.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/amenazas-naturales",
+   "nombre": "Amenazas naturales geológicas e hidrometeorológicas",
+   "definicion": "Fenómenos naturales potencialmente dañinos, como sismos, erupciones, deslizamientos, inundaciones y huracanes, presentes en el territorio.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/big-bang",
+   "nombre": "Origen del universo: el Big Bang",
+   "definicion": "El universo se originó hace unos 13800 millones de años desde un estado muy denso y caliente y continúa expandiéndose.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/calentamiento-global",
+   "nombre": "Calentamiento global",
+   "definicion": "Aumento sostenido de la temperatura media de la Tierra en las últimas décadas, con efectos observables en el clima y los seres vivos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/calidad-del-aire",
+   "nombre": "Calidad del aire y contaminación atmosférica",
+   "definicion": "Concentración de contaminantes como partículas, ozono troposférico y óxidos que afectan la salud y los ecosistemas; se mide con índices.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/campo-magnetico-terrestre",
+   "nombre": "Campo magnético terrestre",
+   "definicion": "Campo generado por el movimiento del hierro líquido del núcleo externo; orienta las brújulas y protege de partículas del viento solar.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
+   "nombre": "Capas de la atmósfera y variación con la altitud",
+   "definicion": "La atmósfera se estratifica en troposfera, estratosfera, mesosfera y termosfera; la presión disminuye y la temperatura varía con la altitud.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/capas-internas-de-la-tierra",
+   "nombre": "Capas internas de la Tierra",
+   "definicion": "La Tierra se compone de corteza, manto, núcleo externo líquido y núcleo interno sólido, con composición, temperatura y densidad distintas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/causas-del-cambio-climatico",
+   "nombre": "Cambio climático: causas y efectos",
+   "definicion": "Variación del clima por causas naturales y, hoy, por emisiones humanas de gases de efecto invernadero; provoca deshielo, subida del mar y eventos extremos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclo-de-las-rocas",
+   "nombre": "Ciclo de las rocas",
+   "definicion": "Proceso continuo por el que las rocas se transforman de un tipo en otro mediante fusión, enfriamiento, meteorización, erosión, sedimentación y metamorfismo.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+   "nombre": "Ciclo del agua",
+   "definicion": "Circulación continua del agua por evaporación, transpiración, condensación, precipitación, escorrentía e infiltración, impulsada por la energía solar.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
+   "nombre": "Ciclo del carbono en los sistemas terrestres",
+   "definicion": "El carbono circula entre atmósfera, océanos, seres vivos, rocas y combustibles fósiles; las actividades humanas alteran sus flujos y reservorios.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+   "nombre": "Ciclones tropicales y tormentas",
+   "definicion": "Sistemas de baja presión sobre océanos cálidos con vientos intensos, lluvias y oleaje; incluyen depresiones, tormentas tropicales y huracanes.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/combustibles-fosiles",
+   "nombre": "Combustibles fósiles: formación y uso",
+   "definicion": "Carbón, petróleo y gas natural se formaron durante millones de años a partir de restos orgánicos enterrados; su combustión libera CO2.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
+   "nombre": "La atmósfera y su composición",
+   "definicion": "Capa de aire que rodea la Tierra, mezcla de gases (sobre todo nitrógeno y oxígeno, con vapor de agua y CO2) necesaria para la vida.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/conservacion-de-recursos-y-residuos",
+   "nombre": "Conservación de recursos, residuos y sostenibilidad",
+   "definicion": "Usar responsablemente los recursos y aplicar las 3R reduce su agotamiento y la contaminación, en busca de un desarrollo sostenible.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/conservacion-del-agua",
+   "nombre": "Abastecimiento y conservación del agua dulce",
+   "definicion": "El agua dulce disponible es limitada y desigual; su conservación exige uso eficiente, protección de zonas de recarga y evitar la contaminación.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+   "nombre": "Convección del manto y energía interna de la Tierra",
+   "definicion": "El calor interno, residual y radiactivo, genera corrientes de convección en el manto que impulsan el movimiento de las placas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
+   "nombre": "Corrientes oceánicas superficiales y profundas",
+   "definicion": "El viento mueve las corrientes superficiales; las diferencias de temperatura y salinidad impulsan la circulación profunda termohalina que redistribuye calor.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/cuencas-y-aguas-superficiales",
+   "nombre": "Cuencas hidrográficas y aguas superficiales",
+   "definicion": "Territorio drenado por un río y sus afluentes, como la cuenca del Lempa; organiza el escurrimiento de ríos, lagos y embalses.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/deriva-continental-y-expansion-del-fondo-oceanico",
+   "nombre": "Deriva continental y expansión del fondo oceánico",
+   "definicion": "Evidencias (encaje de costas, fósiles, rocas, dorsales y edad del fondo marino) muestran que los continentes se han desplazado.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/eclipses",
+   "nombre": "Eclipses solares y lunares",
+   "definicion": "Ocultaciones que ocurren cuando Sol, Tierra y Luna se alinean y la sombra de uno de los cuerpos cae sobre el otro.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/efecto-invernadero",
+   "nombre": "Efecto invernadero",
+   "definicion": "Gases como CO2, metano y vapor de agua absorben y reemiten radiación infrarroja de la superficie, manteniendo la Tierra más cálida.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/el-sol-como-estrella",
+   "nombre": "El Sol como estrella",
+   "definicion": "El Sol es una estrella que emite luz y calor; planetas y lunas carecen de luz propia y se ven por la luz que reflejan.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/energia-geotermica",
+   "nombre": "Energía geotérmica",
+   "definicion": "Aprovechamiento del calor interno de la Tierra en zonas volcánicas para generar electricidad, importante en la matriz de El Salvador.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/erosion-y-sedimentacion",
+   "nombre": "Erosión, transporte y sedimentación",
+   "definicion": "El viento, el agua y el hielo arrancan y transportan materiales que se depositan en capas, modificando el paisaje muy lentamente.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/estrellas-y-nebulosas",
+   "nombre": "Estrellas y nebulosas",
+   "definicion": "Esferas de gas que emiten energía por fusión nuclear; nacen en nebulosas de gas y polvo y difieren en color, tamaño y brillo.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/evolucion-estelar",
+   "nombre": "Ciclo de vida de las estrellas",
+   "definicion": "Según su masa, una estrella evoluciona de protoestrella a secuencia principal, gigante roja y termina como enana blanca, estrella de neutrones o agujero negro.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/exploracion-espacial",
+   "nombre": "Exploración espacial",
+   "definicion": "Uso de telescopios, satélites artificiales, sondas y misiones tripuladas para observar y estudiar la Tierra y el espacio.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/fases-de-la-luna",
+   "nombre": "Fases de la Luna",
+   "definicion": "Cambios en la parte iluminada visible de la Luna según su posición relativa al Sol y la Tierra durante su órbita de unos 29,5 días.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/formacion-de-la-tierra",
+   "nombre": "Formación y evolución temprana de la Tierra",
+   "definicion": "La Tierra se formó hace unos 4600 millones de años por acreción, se diferenció en capas y desarrolló atmósfera y océanos primitivos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/formacion-del-sistema-solar",
+   "nombre": "Formación del sistema solar",
+   "definicion": "El Sol y los planetas se formaron hace unos 4600 millones de años por el colapso gravitatorio de una nebulosa de gas y polvo.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/fosiles",
+   "nombre": "Fósiles y su formación",
+   "definicion": "Restos o huellas de organismos antiguos conservados en rocas, ámbar o hielo, generalmente formados por enterramiento rápido en sedimentos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/fuentes-de-energia",
+   "nombre": "Fuentes de energía renovables y no renovables",
+   "definicion": "La energía se obtiene del Sol, viento, agua, calor interno, biomasa, núcleos atómicos o fósiles, cada fuente con ventajas y desventajas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/galaxias",
+   "nombre": "Galaxias y escala del universo",
+   "definicion": "Sistemas de miles de millones de estrellas unidos por gravedad, como la Vía Láctea, separados por distancias medidas en años luz.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/geologia-y-geomorfologia-de-el-salvador",
+   "nombre": "Geología y geomorfología de El Salvador",
+   "definicion": "El territorio salvadoreño está formado principalmente por rocas volcánicas recientes, organizadas en formaciones y unidades de relieve mostradas en el mapa geológico.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/glaciaciones",
+   "nombre": "Grandes cambios globales: glaciaciones e impactos de asteroides",
+   "definicion": "Glaciaciones e impactos de asteroides han transformado la superficie terrestre, el nivel del mar y la vida a lo largo de la historia.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+   "nombre": "Gravedad y órbitas",
+   "definicion": "La atracción gravitatoria del Sol y los planetas mantiene a planetas y satélites en sus órbitas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/hidrosfera-distribucion-del-agua",
+   "nombre": "Hidrosfera: distribución del agua dulce y salada",
+   "definicion": "La mayor parte de la superficie es agua, casi toda salada en océanos; el agua dulce, escasa, está en glaciares, subsuelo, ríos y lagos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
+   "nombre": "Impacto de las actividades humanas en los recursos",
+   "definicion": "La agricultura, la tala, la minería y la urbanización agotan y contaminan suelos, agua y aire, alterando los sistemas terrestres.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/inclinacion-del-eje-y-estaciones",
+   "nombre": "Inclinación del eje terrestre y estaciones astronómicas",
+   "definicion": "La inclinación del eje durante la traslación cambia el ángulo de los rayos solares y la duración del día, originando las estaciones.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/interaccion-oceano-atmosfera",
+   "nombre": "Interacción océano-atmósfera",
+   "definicion": "El océano intercambia calor, agua y gases con la atmósfera, regulando el clima; fenómenos como El Niño alteran lluvias y temperaturas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/la-luna",
+   "nombre": "La Luna: características y origen",
+   "definicion": "Satélite natural de la Tierra que gira a su alrededor, sin atmósfera apreciable, con cráteres; probablemente se formó tras un gran impacto.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/limites-de-placas",
+   "nombre": "Límites de placas: convergentes, divergentes y transformantes",
+   "definicion": "Las placas se separan, chocan o se deslizan lateralmente; cada tipo de borde produce rasgos y fenómenos característicos, como la subducción.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/mareas",
+   "nombre": "Mareas",
+   "definicion": "Subidas y bajadas periódicas del nivel del mar causadas principalmente por la atracción gravitatoria de la Luna y, en menor medida, del Sol.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/meteorizacion",
+   "nombre": "Meteorización",
+   "definicion": "Desintegración y alteración de las rocas en su lugar por acción física, química y biológica del agua, el aire, la temperatura y los seres vivos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
+   "nombre": "Minerales y sus propiedades",
+   "definicion": "Sólidos naturales inorgánicos de composición química definida y estructura cristalina, identificables por dureza, brillo, color, raya y exfoliación.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/nubes-y-precipitacion",
+   "nombre": "Formación de nubes y precipitación",
+   "definicion": "Cuando el aire húmedo asciende se enfría y su vapor se condensa en gotitas que forman nubes; al crecer, caen como lluvia o granizo.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/oleaje-y-dinamica-costera",
+   "nombre": "Oleaje, dinámica costera y sedimentación marina",
+   "definicion": "Las olas, generadas por el viento, erosionan y transportan sedimentos a lo largo de la costa, formando playas, esteros y depósitos marinos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/ondas-sismicas",
+   "nombre": "Ondas sísmicas, magnitud e intensidad",
+   "definicion": "Ondas P, S y superficiales transportan la energía del sismo; la magnitud mide la energía liberada y la intensidad sus efectos locales.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/origen-del-vulcanismo",
+   "nombre": "Origen del magma y vulcanismo",
+   "definicion": "El magma se forma por fusión parcial del manto o la corteza, sobre todo en zonas de subducción, dorsales y puntos calientes.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/patrones-estacionales-del-tiempo",
+   "nombre": "Patrones estacionales: época seca y lluviosa",
+   "definicion": "La temperatura y la lluvia cambian de forma regular a lo largo del año; en El Salvador se alternan la estación seca y la lluviosa.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/planetas-y-su-comparacion",
+   "nombre": "Planetas: tipos y comparación",
+   "definicion": "Los planetas rocosos interiores y gaseosos exteriores difieren en tamaño, composición, atmósfera, temperatura y distancia al Sol.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
+   "nombre": "Calidad y tratamiento del agua",
+   "definicion": "La calidad del agua se evalúa con indicadores; se potabiliza, se desaliniza o se depura el agua residual dentro del ciclo urbano del agua.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/precursores-y-monitoreo-geologico",
+   "nombre": "Precursores, monitoreo y alerta de sismos y erupciones",
+   "definicion": "Señales como enjambres sísmicos, deformación o emisión de gases permiten vigilar volcanes y fallas y emitir alertas tempranas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
+   "nombre": "El océano: propiedades del agua de mar y zonas",
+   "definicion": "El agua de mar tiene sales disueltas; salinidad, temperatura, luz y densidad varían con la profundidad, definiendo zonas oceánicas distintas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
+   "nombre": "Calentamiento desigual de la Tierra y circulación atmosférica",
+   "definicion": "La radiación solar calienta desigualmente la superficie según la latitud; las diferencias de temperatura y presión generan vientos y circulación global.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
+   "nombre": "Recursos minerales y minería",
+   "definicion": "Los minerales útiles se extraen de yacimientos limitados; su explotación aporta materias primas pero genera impactos ambientales y sociales.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
+   "nombre": "Recursos naturales renovables y no renovables",
+   "definicion": "Agua, viento, suelo, bosques, minerales y combustibles que usamos; los renovables se regeneran y los no renovables son finitos.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/registro-fosil-y-cambios-ambientales",
+   "nombre": "Registro fósil y cambios ambientales del pasado",
+   "definicion": "La ubicación y el orden de los fósiles en los estratos permiten inferir cómo cambiaron los ambientes, la superficie terrestre y la vida.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/riesgo-y-vulnerabilidad",
+   "nombre": "Riesgo de desastre: amenaza, vulnerabilidad y prevención",
+   "definicion": "El riesgo depende de la amenaza y de la vulnerabilidad y capacidad de la población; se reduce con prevención, preparación y alertas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/rotacion-dia-y-noche",
+   "nombre": "Rotación de la Tierra: día, noche y sombras",
+   "definicion": "La Tierra gira sobre su eje cada 24 horas, causando el día, la noche, el movimiento aparente del Sol y los cambios de las sombras.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas",
+   "nombre": "Satélites, asteroides y cometas",
+   "definicion": "Cuerpos menores del sistema solar: lunas que orbitan planetas, asteroides del cinturón principal y cometas de hielo y polvo.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sismicidad-de-el-salvador",
+   "nombre": "Sismicidad de El Salvador",
+   "definicion": "Los sismos salvadoreños provienen de la subducción frente a la costa y de fallas locales, como la zona de falla de El Salvador.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sismos",
+   "nombre": "Sismos y fallas geológicas",
+   "definicion": "Liberación brusca de energía acumulada en fallas o bordes de placa, que se propaga desde el hipocentro y se siente en el epicentro.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sistema-solar",
+   "nombre": "El sistema solar y el modelo heliocéntrico",
+   "definicion": "El Sol en el centro y los cuerpos que giran a su alrededor: planetas, satélites, planetas enanos, asteroides y cometas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/sistemas-terrestres",
+   "nombre": "Sistemas terrestres y sus interacciones",
+   "definicion": "La Tierra funciona como geosfera, hidrosfera, atmósfera y biosfera que intercambian materia y energía, de modo que un cambio en uno afecta a otros.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+   "nombre": "Suelo: formación, componentes y tipos",
+   "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tectonica-de-placas",
+   "nombre": "Tectónica de placas",
+   "definicion": "La litosfera está dividida en placas rígidas que se mueven sobre el manto, originando sismos, volcanes, montañas y fosas.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "nombre": "Tiempo atmosférico y sus variables",
+   "definicion": "Estado de la atmósfera en un lugar y momento, descrito por temperatura, humedad, presión, precipitación, nubosidad y viento.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tiempo-geologico",
+   "nombre": "Tiempo geológico y datación",
+   "definicion": "Escala de millones de años dividida en eones, eras y periodos; la edad de rocas y fósiles se estima por datación relativa y radiométrica.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores",
+   "nombre": "Clima: diferencia con el tiempo, tipos y factores",
+   "definicion": "Patrón promedio del tiempo durante muchos años; los tipos de clima dependen de latitud, altitud, hemisferio, cercanía al mar y relieve.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+   "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+   "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/traslacion-y-ano",
+   "nombre": "Traslación de la Tierra y el año",
+   "definicion": "La Tierra da una vuelta completa alrededor del Sol en aproximadamente 365 días, lo que define el año.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/tsunamis",
+   "nombre": "Tsunamis",
+   "definicion": "Series de olas de gran longitud generadas por sismos submarinos, erupciones o deslizamientos, que inundan las costas con gran energía.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+   "nombre": "Uso del suelo y su degradación",
+   "definicion": "La agricultura, la tala y la urbanización cambian el uso del suelo y pueden acelerar su erosión, compactación y pérdida de fertilidad.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/volcanes-estructura-y-tipos",
+   "nombre": "Volcanes: estructura, tipos y productos",
+   "definicion": "Aberturas por donde sale magma; se describen por su cámara, chimenea y cráter, su forma, tipo de erupción y productos (lava, ceniza, gases).",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:ciencias_tierra_espacio/vulcanismo-de-el-salvador",
+   "nombre": "Vulcanismo de El Salvador",
+   "definicion": "La subducción de la placa de Cocos origina la cadena volcánica salvadoreña, con volcanes activos y un historial de erupciones documentado.",
+   "asignatura": "ciencias_tierra_espacio"
+  },
+  {
+   "id": "CON:fisica/absorcion-radiacion-efecto-invernadero",
+   "nombre": "Absorción de radiación y efecto invernadero",
+   "definicion": "Gases como el CO₂ absorben radiación infrarroja emitida por la Tierra y elevan la temperatura de la atmósfera.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/aceleracion",
+   "nombre": "Aceleración",
+   "definicion": "Cambio de la velocidad por unidad de tiempo; puede aumentar o disminuir la rapidez o cambiar la dirección.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/aceleracion-fuerza-centripeta",
+   "nombre": "Aceleración y fuerza centrípeta",
+   "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/aplicaciones-leyes-newton",
+   "nombre": "Aplicaciones de las leyes de Newton",
+   "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/astronomia-multionda",
+   "nombre": "Observación astronómica en distintas longitudes de onda",
+   "definicion": "Telescopios y detectores captan radiación electromagnética de radio a gamma para estudiar el universo.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/caida-libre",
+   "nombre": "Caída libre",
+   "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/calentamiento-enfriamiento",
+   "nombre": "Calentamiento y enfriamiento",
+   "definicion": "Al contacto, el objeto caliente se enfría y el frío se calienta hasta igualar su temperatura.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/calor-latente",
+   "nombre": "Calor latente",
+   "definicion": "Energía absorbida o liberada en un cambio de fase sin variar la temperatura: Q = mL.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/calor-vs-temperatura",
+   "nombre": "Calor como energía en tránsito",
+   "definicion": "El calor es energía transferida por diferencia de temperatura; se distingue de la temperatura y de la energía interna.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/cambios-estado",
+   "nombre": "Cambios de estado",
+   "definicion": "Fusión, solidificación, evaporación, condensación y sublimación ocurren al ganar o perder energía térmica.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/campo-electrico",
+   "nombre": "Campo eléctrico",
+   "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/campo-magnetico",
+   "nombre": "Campo magnético y magnetismo terrestre",
+   "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/capacidad-calorifica-calor-especifico",
+   "nombre": "Capacidad calorífica y calor específico",
+   "definicion": "Energía necesaria para elevar la temperatura de un cuerpo o de un kilogramo de sustancia un grado: Q = mcΔT.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/capacitancia",
+   "nombre": "Capacitancia y condensadores",
+   "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/carga-electrica-electrizacion",
+   "nombre": "Carga eléctrica y electrización",
+   "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/centro-gravedad-estabilidad",
+   "nombre": "Centro de gravedad y estabilidad",
+   "definicion": "Punto donde actúa el peso de un cuerpo; su posición respecto a la base de apoyo determina la estabilidad.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/circuito-electrico-simple",
+   "nombre": "Circuito eléctrico simple",
+   "definicion": "Un circuito necesita un camino cerrado desde la fuente por los componentes; la electricidad se transforma en luz, calor o sonido.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/circuitos-serie-paralelo",
+   "nombre": "Circuitos en serie y en paralelo",
+   "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/colisiones",
+   "nombre": "Colisiones elásticas e inelásticas",
+   "definicion": "Choques en que se conserva el momento; en los elásticos también la energía cinética, en los inelásticos no.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/color-dispersion-luz",
+   "nombre": "Color y dispersión de la luz",
+   "definicion": "La luz blanca se descompone en colores (arcoíris); el color de un objeto depende de la luz que refleja.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/conductores-aislantes-electricos",
+   "nombre": "Conductores y aislantes eléctricos",
+   "definicion": "Materiales que permiten o impiden el paso de la corriente eléctrica.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/conservacion-energia",
+   "nombre": "Conservación de la energía",
+   "definicion": "La energía total de un sistema aislado se mantiene constante; solo se transforma o transfiere.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/conservacion-energia-mecanica",
+   "nombre": "Conservación de la energía mecánica",
+   "definicion": "Sin fuerzas no conservativas, la suma de energía cinética y potencial de un sistema permanece constante.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/conservacion-momento-lineal",
+   "nombre": "Conservación del momento lineal",
+   "definicion": "En un sistema aislado el momento lineal total se conserva, aunque actúen fuerzas internas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/corriente-alterna-transformador",
+   "nombre": "Corriente alterna y transformador",
+   "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/corriente-voltaje-resistencia",
+   "nombre": "Corriente, voltaje y resistencia",
+   "definicion": "Magnitudes básicas de un circuito: flujo de carga, diferencia de potencial que lo impulsa y oposición al paso.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/cosmologia-big-bang",
+   "nombre": "Expansión del universo y Big Bang",
+   "definicion": "Las galaxias se alejan (ley de Hubble); el universo se originó en un estado caliente y denso hace unos 13 800 millones de años.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/cuantizacion-energia-planck",
+   "nombre": "Cuantización de la energía",
+   "definicion": "La energía de la radiación se emite en paquetes discretos E = hf, idea de Planck para el cuerpo negro.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/densidad",
+   "nombre": "Densidad",
+   "definicion": "Masa por unidad de volumen de un material; permite comparar materiales y predecir si flotan.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/desintegracion-radiactiva",
+   "nombre": "Desintegración radiactiva",
+   "definicion": "Núcleos inestables emiten radiación alfa, beta o gamma; su número decae exponencialmente con una vida media.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/difraccion-luz",
+   "nombre": "Difracción de ondas y de la luz",
+   "definicion": "Las ondas se curvan al pasar aberturas comparables a su longitud de onda; rendijas, redes y difracción de rayos X.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/dilatacion-termica",
+   "nombre": "Dilatación térmica",
+   "definicion": "Aumento de las dimensiones de un cuerpo al elevarse su temperatura, cuantificado por coeficientes de dilatación.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/dinamica-rotacion-momento-inercia",
+   "nombre": "Dinámica y energía de rotación",
+   "definicion": "El torque neto produce aceleración angular (τ = Iα); un cuerpo que gira o rueda tiene energía cinética ½Iω².",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/disipacion-eficiencia",
+   "nombre": "Disipación de energía y eficiencia",
+   "definicion": "En toda transformación parte de la energía se disipa como calor; la eficiencia es la fracción útil obtenida.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/dualidad-onda-particula",
+   "nombre": "Dualidad onda-partícula",
+   "definicion": "Luz y materia presentan comportamiento ondulatorio y corpuscular; longitud de onda de De Broglie.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/efecto-doppler",
+   "nombre": "Efecto Doppler",
+   "definicion": "Cambio de la frecuencia percibida cuando la fuente o el observador se mueven; aplica a sonido y luz.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/elasticidad-esfuerzo-deformacion",
+   "nombre": "Esfuerzo, deformación y módulo de Young",
+   "definicion": "Respuesta de los sólidos a esfuerzos de tensión o compresión; límite elástico, deformación plástica y ruptura.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/electroiman",
+   "nombre": "Electroimanes y efecto magnético de la corriente",
+   "definicion": "Una corriente eléctrica produce un campo magnético (Oersted); una bobina con núcleo de hierro forma un electroimán.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/energia-cinetica",
+   "nombre": "Energía cinética",
+   "definicion": "Energía asociada al movimiento de un cuerpo, ½mv², que depende de su masa y su rapidez.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/energia-enlace-nuclear",
+   "nombre": "Defecto de masa y energía de enlace nuclear",
+   "definicion": "La masa del núcleo es menor que la de sus nucleones; esa diferencia equivale a la energía de enlace.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/energia-potencial-gravitatoria",
+   "nombre": "Energía potencial gravitatoria y elástica",
+   "definicion": "Energía almacenada por la posición en un campo gravitatorio (mgh) o por la deformación de un cuerpo elástico (½kx²).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/energia-usos-vida-diaria",
+   "nombre": "La energía y sus usos",
+   "definicion": "La energía permite producir cambios; las personas la usan en forma de calor, luz, movimiento y electricidad.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/equilibrio-termico",
+   "nombre": "Equilibrio térmico y ley cero",
+   "definicion": "Dos cuerpos en contacto intercambian calor hasta igualar temperaturas; la ley cero fundamenta la termometría.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/equilibrio-traslacional",
+   "nombre": "Condiciones de equilibrio estático",
+   "definicion": "Un cuerpo rígido está en equilibrio si la fuerza neta y el torque neto sobre él son nulos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/equivalencia-masa-energia",
+   "nombre": "Equivalencia masa-energía",
+   "definicion": "La masa es una forma de energía: E = mc²; base de la energía relativista y nuclear.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/espejos-esfericos",
+   "nombre": "Espejos esféricos",
+   "definicion": "Espejos cóncavos y convexos forman imágenes reales o virtuales determinadas por trazado de rayos y la ecuación del espejo.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/espejos-planos",
+   "nombre": "Espejos planos e imágenes",
+   "definicion": "Un espejo plano forma una imagen virtual, del mismo tamaño y con inversión lateral; se analiza con diagramas de rayos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/estados-materia",
+   "nombre": "Estados de la materia",
+   "definicion": "Sólidos, líquidos y gases se distinguen por su forma y volumen propios o adaptables.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fision-fusion-nuclear",
+   "nombre": "Fisión y fusión nuclear",
+   "definicion": "Reacciones en que núcleos pesados se dividen o ligeros se unen liberando energía; base de reactores y estrellas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/flotacion-hundimiento",
+   "nombre": "Flotación y hundimiento",
+   "definicion": "Algunos objetos flotan y otros se hunden según su material y forma, al compararse con el líquido.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/formas-energia",
+   "nombre": "Formas de energía",
+   "definicion": "Energía cinética, potencial, luminosa, sonora, eléctrica, térmica y química como manifestaciones de la energía.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/foton-efecto-fotoelectrico",
+   "nombre": "Fotón y efecto fotoeléctrico",
+   "definicion": "La luz se comporta como partículas (fotones) que arrancan electrones de un metal por encima de una frecuencia umbral.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/friccion-resistencia-aire",
+   "nombre": "Fricción y resistencia del aire",
+   "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuentes-energia-renovables",
+   "nombre": "Fuentes de energía renovables y no renovables",
+   "definicion": "Recursos energéticos (solar, eólica, hídrica, combustibles fósiles) que se distinguen por su capacidad de renovarse e impacto ambiental.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerza-elastica-ley-hooke",
+   "nombre": "Fuerza elástica y ley de Hooke",
+   "definicion": "La fuerza de un resorte es proporcional a su deformación y se opone a ella: F = −kx.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerza-empuje-tiron",
+   "nombre": "Fuerza como empuje o tirón",
+   "definicion": "Una fuerza es un empuje o tirón; las fuerzas desequilibradas cambian la rapidez, dirección o forma de un objeto.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerza-lorentz",
+   "nombre": "Fuerza magnética sobre cargas en movimiento",
+   "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerza-neta-diagrama-cuerpo-libre",
+   "nombre": "Fuerza neta y diagrama de cuerpo libre",
+   "definicion": "La fuerza neta es la suma vectorial de las fuerzas sobre un cuerpo, representadas en un diagrama de cuerpo libre.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+   "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+   "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerzas-contacto-distancia",
+   "nombre": "Fuerzas de contacto y a distancia",
+   "definicion": "Algunas fuerzas actúan por contacto (empuje, fricción) y otras a distancia (gravitatoria, magnética, eléctrica).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/fuerzas-mecanicas-comunes",
+   "nombre": "Fuerzas mecánicas comunes",
+   "definicion": "Fuerza normal, tensión, fricción, fuerza elástica y empuje como interacciones de contacto con magnitud y dirección.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/graficas-movimiento",
+   "nombre": "Gráficas del movimiento",
+   "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/gravedad-atrae-hacia-tierra",
+   "nombre": "Gravedad: atracción hacia la Tierra",
+   "definicion": "La gravedad es la fuerza que atrae los objetos hacia el centro de la Tierra y los hace caer.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/gravitacion-universal",
+   "nombre": "Ley de gravitación universal",
+   "definicion": "Dos masas se atraen con una fuerza proporcional al producto de sus masas e inversa al cuadrado de su distancia.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/imanes-polos",
+   "nombre": "Imanes y polos magnéticos",
+   "definicion": "Los imanes tienen dos polos; polos iguales se repelen y opuestos se atraen.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/induccion-electromagnetica",
+   "nombre": "Inducción electromagnética: Faraday y Lenz",
+   "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/interferencia-luz",
+   "nombre": "Interferencia de la luz",
+   "definicion": "Superposición de ondas luminosas coherentes: experimento de Young, películas delgadas e interferómetros.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/lentes-delgadas",
+   "nombre": "Lentes delgadas e imágenes",
+   "definicion": "Lentes convergentes y divergentes forman imágenes según su distancia focal; ecuación de las lentes y aumento.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ley-coulomb",
+   "nombre": "Ley de Coulomb",
+   "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ley-ohm",
+   "nombre": "Ley de Ohm",
+   "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/leyes-kepler",
+   "nombre": "Leyes de Kepler",
+   "definicion": "Del modelo geocéntrico al heliocéntrico: los planetas describen elipses, barren áreas iguales y T² es proporcional a a³.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/leyes-kirchhoff",
+   "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+   "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/magnitudes-escalares-vectoriales",
+   "nombre": "Magnitudes escalares y vectoriales",
+   "definicion": "Las magnitudes vectoriales tienen módulo, dirección y sentido; las escalares solo valor numérico con unidad.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/magnitudes-ondas",
+   "nombre": "Longitud de onda, frecuencia y rapidez",
+   "definicion": "Magnitudes de una onda periódica (amplitud, período, frecuencia, longitud de onda) relacionadas por v = λf.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/maquinas-simples",
+   "nombre": "Máquinas simples",
+   "definicion": "Palancas, poleas, engranajes y planos inclinados facilitan el trabajo: reducen la fuerza o cambian su dirección; se combinan en máquinas compuestas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/masa-y-peso",
+   "nombre": "Masa y peso",
+   "definicion": "La masa mide la cantidad de materia e inercia; el peso es la fuerza gravitatoria sobre ella (W = mg).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/materiales-magneticos",
+   "nombre": "Materiales magnéticos",
+   "definicion": "Los imanes atraen algunos metales (hierro, níquel, cobalto); el magnetismo se explica por dominios magnéticos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/materiales-opacos-transparentes",
+   "nombre": "Materiales opacos, transparentes y translúcidos",
+   "definicion": "Los materiales dejan pasar, dispersan o bloquean la luz según absorban o transmitan.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/mecanismos-transferencia-calor",
+   "nombre": "Conducción, convección y radiación",
+   "definicion": "El calor se transfiere por conducción (según la conductividad del material), convección y radiación.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/medicion-magnitudes-instrumentos",
+   "nombre": "Medición de magnitudes con instrumentos",
+   "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/modelo-estandar-particulas",
+   "nombre": "Modelo estándar de partículas",
+   "definicion": "Clasificación de las partículas elementales en quarks, leptones y bosones mediadores de las interacciones fundamentales.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/modelo-particulas",
+   "nombre": "Modelo de partículas de la materia",
+   "definicion": "La materia está formada por partículas en movimiento constante; su movimiento y separación, mayores a más temperatura, explican los estados.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/momento-angular",
+   "nombre": "Momento angular y su conservación",
+   "definicion": "El momento angular L = Iω se conserva cuando el torque externo neto es nulo.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/momento-lineal-impulso",
+   "nombre": "Momento lineal e impulso",
+   "definicion": "El momento lineal es p = mv; el impulso de una fuerza produce un cambio igual del momento.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/movimiento-armonico-simple",
+   "nombre": "Movimiento armónico simple",
+   "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/movimiento-circular-uniforme",
+   "nombre": "Movimiento circular y variables angulares",
+   "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/movimiento-proyectiles",
+   "nombre": "Cinemática en dos dimensiones y proyectiles",
+   "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/movimiento-uniformemente-acelerado",
+   "nombre": "Movimiento con aceleración constante",
+   "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/movimiento-y-reposo",
+   "nombre": "Movimiento, reposo y tipos de trayectoria",
+   "definicion": "Un objeto se mueve si cambia de posición; puede hacerlo rápido o lento, en línea recta, circular, vaivén o zigzag.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/niveles-energia-espectros",
+   "nombre": "Niveles de energía atómicos y espectros",
+   "definicion": "Los electrones ocupan niveles discretos; las transiciones emiten o absorben fotones que forman espectros de líneas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/nucleo-atomico-isotopos",
+   "nombre": "Núcleo atómico e isótopos",
+   "definicion": "El núcleo está formado por protones y neutrones unidos por la fuerza nuclear fuerte; los isótopos difieren en neutrones.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ojo-instrumentos-opticos",
+   "nombre": "El ojo y los instrumentos ópticos",
+   "definicion": "Funcionamiento óptico del ojo, sus defectos y su corrección, y de lupa, microscopio y telescopio.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ondas-electromagneticas-espectro",
+   "nombre": "Ondas electromagnéticas y espectro",
+   "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ondas-estacionarias",
+   "nombre": "Ondas estacionarias y armónicos",
+   "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ondas-mecanicas-tipos",
+   "nombre": "Ondas mecánicas transversales y longitudinales",
+   "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ondas-radio-telecomunicaciones",
+   "nombre": "Ondas de radio y telecomunicaciones",
+   "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/orbitas-satelites",
+   "nombre": "Órbitas y satélites",
+   "definicion": "La gravedad actúa como fuerza centrípeta en las órbitas; determina rapidez y período orbital y la ingravidez aparente.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/pendulo-simple",
+   "nombre": "Péndulo simple",
+   "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/polarizacion-luz",
+   "nombre": "Polarización de la luz",
+   "definicion": "La luz es una onda transversal que puede polarizarse con filtros o por reflexión (ley de Malus, ángulo de Brewster).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/posicion-desplazamiento",
+   "nombre": "Posición, desplazamiento y trayectoria",
+   "definicion": "La posición se mide respecto a un sistema de referencia; el desplazamiento es el cambio vectorial de posición.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/postulados-relatividad",
+   "nombre": "Relatividad especial",
+   "definicion": "La rapidez de la luz es invariante y las leyes son iguales en sistemas inerciales; tiempo y longitud dependen del observador.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/potencia-electrica-joule",
+   "nombre": "Potencia eléctrica y efecto Joule",
+   "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/potencia-mecanica",
+   "nombre": "Potencia mecánica",
+   "definicion": "Rapidez con la que se realiza trabajo o se transfiere energía; se mide en vatios.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/potencial-electrico",
+   "nombre": "Energía potencial y potencial eléctrico",
+   "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/presion",
+   "nombre": "Presión",
+   "definicion": "Fuerza perpendicular por unidad de área; explica efectos de una misma fuerza sobre áreas distintas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/presion-hidrostatica",
+   "nombre": "Presión hidrostática y atmosférica",
+   "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/primera-ley-newton",
+   "nombre": "Primera ley de Newton: inercia",
+   "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/primera-ley-termodinamica",
+   "nombre": "Primera ley de la termodinámica",
+   "definicion": "El cambio de energía interna es igual al calor recibido menos el trabajo realizado: ΔU = Q − W.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/principio-arquimedes",
+   "nombre": "Principio de Arquímedes: empuje",
+   "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/principio-bernoulli",
+   "nombre": "Hidrodinámica: continuidad y Bernoulli",
+   "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/principio-pascal",
+   "nombre": "Principio de Pascal",
+   "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/procesos-termodinamicos",
+   "nombre": "Procesos termodinámicos",
+   "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/propagacion-rectilinea-sombras",
+   "nombre": "Fuentes de luz, propagación y sombras",
+   "definicion": "La luz sale de fuentes naturales o artificiales y viaja en línea recta; un objeto que la bloquea forma sombra.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/radiacion-ionizante-aplicaciones",
+   "nombre": "Radiación ionizante: detección, efectos y aplicaciones",
+   "definicion": "Radiación capaz de ionizar la materia; se detecta con contadores y se usa en medicina con protección radiológica.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/radiacion-termica-cuerpo-negro",
+   "nombre": "Radiación térmica y cuerpo negro",
+   "definicion": "Todo cuerpo emite radiación según su temperatura; leyes de Stefan-Boltzmann y de desplazamiento de Wien.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/rapidez-luz",
+   "nombre": "Rapidez de la luz",
+   "definicion": "La luz viaja a rapidez finita, máxima en el vacío (c ≈ 3×10⁸ m/s), y menor en otros medios.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/rapidez-velocidad",
+   "nombre": "Rapidez y velocidad",
+   "definicion": "Rapidez es distancia recorrida por unidad de tiempo; velocidad es desplazamiento por unidad de tiempo, con dirección.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/reflexion-interna-total",
+   "nombre": "Reflexión interna total",
+   "definicion": "Si la luz pasa a un medio menos refringente con ángulo mayor al crítico, se refleja totalmente; base de la fibra óptica.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/reflexion-luz",
+   "nombre": "Reflexión de la luz",
+   "definicion": "La luz rebota en las superficies; el ángulo de incidencia es igual al de reflexión.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/refraccion-luz",
+   "nombre": "Refracción de la luz",
+   "definicion": "Cambio de dirección de la luz al pasar entre medios de distinto índice de refracción, según la ley de Snell.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+   "nombre": "Relaciones presión-volumen-temperatura en gases",
+   "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/resistencia-equivalente",
+   "nombre": "Resistencia equivalente",
+   "definicion": "Reducción de resistencias en serie, paralelo y circuitos mixtos a una sola equivalente.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/segunda-ley-maquinas-termicas",
+   "nombre": "Segunda ley de la termodinámica",
+   "definicion": "Ninguna máquina convierte todo el calor en trabajo; eficiencia, ciclo de Carnot, refrigeradores e irreversibilidad (entropía).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/segunda-ley-newton",
+   "nombre": "Segunda ley de Newton",
+   "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/semiconductores-dispositivos",
+   "nombre": "Semiconductores y electrónica básica",
+   "definicion": "Materiales tipo n y p forman diodos y transistores, base de circuitos integrados y compuertas lógicas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/sistema-internacional-unidades",
+   "nombre": "Sistema Internacional de Unidades",
+   "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/sonido-como-onda",
+   "nombre": "El sonido como onda mecánica",
+   "definicion": "Onda longitudinal de compresiones y rarefacciones que necesita un medio y cuya rapidez depende de este.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/sonido-vibraciones",
+   "nombre": "El sonido se produce por vibraciones",
+   "definicion": "Los objetos que vibran producen sonido, que viaja hasta el oído a través de un medio.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/suma-vectores-componentes",
+   "nombre": "Suma de vectores y componentes rectangulares",
+   "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/superposicion-interferencia",
+   "nombre": "Superposición e interferencia de ondas",
+   "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/temperatura-medicion-escalas",
+   "nombre": "Temperatura y escalas termométricas",
+   "definicion": "La temperatura se mide con termómetros en escalas Celsius, Fahrenheit y Kelvin, con puntos fijos y cero absoluto.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/tension-superficial-capilaridad",
+   "nombre": "Tensión superficial y capilaridad",
+   "definicion": "Efectos de las fuerzas de cohesión y adhesión en la superficie de los líquidos y en tubos delgados.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/teoria-cinetica-gases",
+   "nombre": "Gas ideal y teoría cinética",
+   "definicion": "Ecuación de estado pV = nRT y su explicación por choques y energía cinética media de las moléculas; límites del modelo.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/tercera-ley-newton",
+   "nombre": "Tercera ley de Newton: acción y reacción",
+   "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/tono-volumen-sonido",
+   "nombre": "Características del sonido: tono, intensidad y eco",
+   "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/torque",
+   "nombre": "Torque o momento de fuerza",
+   "definicion": "Capacidad de una fuerza para producir rotación; producto de la fuerza por su brazo de palanca.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/trabajo-mecanico",
+   "nombre": "Trabajo mecánico",
+   "definicion": "Transferencia de energía por una fuerza a lo largo de un desplazamiento; el trabajo neto iguala el cambio de energía cinética.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/transformaciones-energia",
+   "nombre": "Transformaciones de la energía",
+   "definicion": "La energía pasa de una forma a otra en aparatos y procesos (eléctrica a luz, calor o sonido).",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/ventaja-mecanica",
+   "nombre": "Ventaja mecánica",
+   "definicion": "Cociente entre la fuerza obtenida y la aplicada en una máquina; ganar fuerza implica recorrer mayor distancia.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:fisica/viscosidad-regimen-flujo",
+   "nombre": "Viscosidad y régimen de flujo",
+   "definicion": "Resistencia interna de un fluido a fluir; el número de Reynolds distingue flujo laminar y turbulento.",
+   "asignatura": "fisica"
+  },
+  {
+   "id": "CON:quimica/acidos-y-bases-propiedades",
+   "nombre": "Ácidos y bases: propiedades",
+   "definicion": "Sustancias cotidianas reconocibles por su sabor, efecto sobre indicadores y reactividad; los ácidos tienen pH menor que 7 y las bases mayor.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/agentes-oxidantes-y-reductores",
+   "nombre": "Agentes oxidantes y reductores",
+   "definicion": "Especies que causan la oxidación o reducción de otras; su fuerza relativa se ordena por serie de actividad y potenciales estándar.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/aminoacidos-y-proteinas",
+   "nombre": "Aminoácidos y estructura de las proteínas",
+   "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/atomo-y-particulas-subatomicas",
+   "nombre": "Átomo y partículas subatómicas",
+   "definicion": "Núcleo con protones y neutrones rodeado de electrones; el número atómico identifica al elemento y el másico suma protones y neutrones.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/autoionizacion-del-agua-y-ph",
+   "nombre": "Autoionización del agua, Kw y cálculo de pH",
+   "definicion": "Kw relaciona [H+] y [OH-]; el pH y pOH son escalas logarítmicas calculadas a partir de esas concentraciones.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/cambios-de-estado",
+   "nombre": "Cambios de estado",
+   "definicion": "Fusión, solidificación, evaporación, condensación y sublimación ocurren al calentar o enfriar una sustancia, sin formar sustancias nuevas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/cambios-fisicos-y-quimicos",
+   "nombre": "Cambios físicos y químicos",
+   "definicion": "Los cambios físicos no producen materiales nuevos; los químicos (combustión, descomposición, oxidación) sí producen sustancias nuevas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/catalizadores",
+   "nombre": "Catalizadores",
+   "definicion": "Sustancias que ofrecen una ruta de menor energía de activación sin consumirse; incluye catálisis homogénea, heterogénea y enzimática.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/celdas-galvanicas",
+   "nombre": "Celdas galvánicas",
+   "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ciencia-de-materiales",
+   "nombre": "Metales, cerámicas y materiales compuestos",
+   "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/combustibles-y-biocombustibles",
+   "nombre": "Combustibles fósiles y biocombustibles",
+   "definicion": "Comparación de combustibles fósiles, biodiésel, etanol e hidrógeno según energía liberada, obtención y productos de combustión.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/combustion",
+   "nombre": "Combustión",
+   "definicion": "Reacción de un combustible con oxígeno que libera energía como calor y luz; puede ser completa o incompleta según los productos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/composicion-del-aire-y-contaminantes",
+   "nombre": "Composición del aire y contaminantes atmosféricos",
+   "definicion": "Mezcla de gases del aire; óxidos de azufre y nitrógeno y CFC la contaminan, causando lluvia ácida y daño al ozono.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/composicion-porcentual-y-formulas",
+   "nombre": "Composición porcentual y fórmulas empírica y molecular",
+   "definicion": "Porcentaje en masa de cada elemento en un compuesto y su uso para deducir la fórmula empírica y la molecular.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/concentracion-de-disoluciones",
+   "nombre": "Soluto, disolvente y concentración",
+   "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/configuracion-electronica",
+   "nombre": "Configuración electrónica",
+   "definicion": "Distribución de los electrones en niveles y subniveles según Aufbau, exclusión de Pauli y regla de Hund; explica la estructura de la tabla periódica.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/conservacion-de-la-masa",
+   "nombre": "Conservación de la masa",
+   "definicion": "En una reacción los átomos se reordenan sin crearse ni destruirse, por lo que la masa total se conserva.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/constante-de-equilibrio",
+   "nombre": "Constante de equilibrio",
+   "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/cromatografia",
+   "nombre": "Cromatografía",
+   "definicion": "Técnica que separa componentes por su interacción diferencial con una fase móvil y una estacionaria; determina composición y pureza.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/densidad-y-flotacion",
+   "nombre": "Densidad y flotación",
+   "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/diagramas-de-fases",
+   "nombre": "Diagramas de fases",
+   "definicion": "Gráfico presión-temperatura que muestra las condiciones de equilibrio entre fases, con punto triple y punto crítico.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/difusion-efusion-y-gases-reales",
+   "nombre": "Mezclas de gases, difusión y gases reales",
+   "definicion": "Ley de Dalton de presiones parciales, ley de Graham de difusión y desviaciones de los gases reales (van der Waals).",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/disolucion-y-su-rapidez",
+   "nombre": "Disolución y rapidez de disolución",
+   "definicion": "Un sólido se disuelve en un líquido como el agua; temperatura, agitación y superficie de contacto aumentan su rapidez.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/disoluciones-amortiguadoras",
+   "nombre": "Hidrólisis de sales y disoluciones amortiguadoras",
+   "definicion": "Sales que generan pH ácido o básico al reaccionar con agua; mezclas ácido débil-base conjugada resisten cambios de pH.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/disoluciones-coloides-y-suspensiones",
+   "nombre": "Disoluciones, coloides y suspensiones",
+   "definicion": "Dispersiones que se distinguen por el tamaño de partícula dispersa: las disoluciones son homogéneas; coloides muestran efecto Tyndall; suspensiones sedimentan.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ecuacion-de-gases-ideales-y-volumen-molar",
+   "nombre": "Ecuación de los gases ideales y volumen molar",
+   "definicion": "PV = nRT relaciona cantidad, presión, volumen y temperatura; a condiciones normales un mol de gas ocupa un volumen fijo.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ecuacion-de-nernst",
+   "nombre": "Ecuación de Nernst",
+   "definicion": "Calcula el potencial de una celda en condiciones no estándar a partir de concentraciones y lo relaciona con ΔG y K.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ecuacion-quimica-y-balanceo",
+   "nombre": "Ecuación química y su balanceo",
+   "definicion": "Representación simbólica de una reacción con reactivos, productos, estados y coeficientes que igualan los átomos de cada elemento.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ecuaciones-nucleares",
+   "nombre": "Ecuaciones y reacciones nucleares",
+   "definicion": "Representación de desintegraciones, transmutación, fisión y fusión conservando número másico y atómico.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/el-carbono-y-las-moleculas-organicas",
+   "nombre": "El carbono y las moléculas orgánicas",
+   "definicion": "El carbono forma cuatro enlaces y cadenas con hidrógeno y otros átomos, generando esqueletos hidrocarbonados de gran diversidad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/electrolisis",
+   "nombre": "Electrólisis y celdas electrolíticas",
+   "definicion": "Uso de energía eléctrica externa para producir reacciones redox no espontáneas, como en galvanoplastia y obtención de metales.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/electrolitos",
+   "nombre": "Electrolitos fuertes y débiles",
+   "definicion": "Sustancias que en disolución o fundidas producen iones y conducen electricidad; se disocian total o parcialmente.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+   "nombre": "Electronegatividad y polaridad de enlace",
+   "definicion": "La diferencia de electronegatividad entre átomos enlazados genera enlaces no polares, polares o iónicos con momento dipolar de enlace.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/electrones-de-valencia-y-regla-del-octeto",
+   "nombre": "Electrones de valencia y regla del octeto",
+   "definicion": "Los electrones de la capa externa determinan la valencia; los átomos tienden a alcanzar una capa de valencia estable al enlazarse.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/energia-de-activacion-y-perfil-energetico",
+   "nombre": "Energía de activación y perfil energético",
+   "definicion": "Energía mínima para que ocurra la reacción, representada con el complejo activado y ΔH en un diagrama de perfil energético.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/energia-de-enlace",
+   "nombre": "Energía de enlace",
+   "definicion": "Romper enlaces absorbe energía y formarlos la libera; el balance entre ambos determina si una reacción es exotérmica o endotérmica.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/energia-de-gibbs-y-espontaneidad",
+   "nombre": "Energía de Gibbs y espontaneidad",
+   "definicion": "ΔG = ΔH − TΔS predice si un proceso es espontáneo a temperatura y presión constantes.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/energia-reticular",
+   "nombre": "Energía reticular y ciclo de Born-Haber",
+   "definicion": "Energía liberada al formarse una red iónica desde iones gaseosos; se calcula con el ciclo de Born-Haber y explica su estabilidad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/enlace-covalente",
+   "nombre": "Enlace covalente",
+   "definicion": "Unión de átomos que comparten pares de electrones; puede ser simple, doble, triple, polar, no polar o coordinado.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/enlace-de-valencia-y-orbitales-moleculares",
+   "nombre": "Teorías del enlace de valencia y de orbitales moleculares",
+   "definicion": "Modelos cuánticos del enlace covalente por solapamiento de orbitales: enlaces sigma y pi, orden de enlace y magnetismo molecular.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/enlace-ionico",
+   "nombre": "Enlace iónico",
+   "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/enlace-metalico",
+   "nombre": "Enlace metálico",
+   "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/enlace-quimico",
+   "nombre": "Enlace químico",
+   "definicion": "Atracción electrostática entre átomos por transferencia o compartición de electrones que mantiene unidas a las sustancias.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/entalpia-de-reaccion",
+   "nombre": "Entalpía de reacción y ecuaciones termoquímicas",
+   "definicion": "Calor intercambiado a presión constante en una reacción (ΔH), representado en ecuaciones termoquímicas y diagramas de entalpía.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/entropia",
+   "nombre": "Entropía",
+   "definicion": "Medida de la dispersión de la energía y de la materia en un sistema; el segundo principio indica que la entropía del universo aumenta.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/equilibrio-dinamico",
+   "nombre": "Equilibrio químico dinámico",
+   "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/equilibrio-en-procesos-industriales",
+   "nombre": "Equilibrio y rapidez en procesos industriales",
+   "definicion": "Selección de condiciones como en Haber-Bosch o el proceso de contacto para equilibrar rendimiento, rapidez y costo.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/equilibrio-y-termodinamica",
+   "nombre": "Relación entre energía de Gibbs y constante de equilibrio",
+   "definicion": "ΔG° = −RT ln K vincula espontaneidad y extensión de la reacción; la ecuación de van't Hoff describe K con la temperatura.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/escala-de-ph",
+   "nombre": "Escala de pH",
+   "definicion": "Escala que compara la acidez o alcalinidad de disoluciones acuosas según su concentración de iones hidrógeno; 7 es neutro.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/espectrometria-de-masas",
+   "nombre": "Espectrometría de masas",
+   "definicion": "Técnica que ioniza y separa partículas por su relación masa/carga para determinar composición isotópica y estructura molecular.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/espectros-atomicos-y-modelo-de-bohr",
+   "nombre": "Espectros atómicos y modelo de Bohr",
+   "definicion": "Los electrones ocupan niveles de energía; las transiciones entre ellos emiten o absorben luz de frecuencias específicas, base del ensayo a la llama.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/espectroscopia-y-estructura-organica",
+   "nombre": "Técnicas para determinar estructuras orgánicas",
+   "definicion": "Espectroscopía infrarroja, espectrometría de masas y cristalografía de rayos X se combinan para determinar la estructura de moléculas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/estados-de-la-materia",
+   "nombre": "Estados de la materia",
+   "definicion": "Sólido, líquido y gas se distinguen por si conservan su forma y su volumen; el estado del agua depende de la temperatura.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/estequiometria",
+   "nombre": "Estequiometría",
+   "definicion": "Cálculo de cantidades de reactivos y productos a partir de los coeficientes de la ecuación balanceada y el mol.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/estereoquimica",
+   "nombre": "Estereoquímica y quiralidad",
+   "definicion": "Isómeros con igual conectividad y distinta disposición espacial: geométricos cis-trans y enantiómeros de moléculas quirales.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/esterificacion-e-hidrolisis",
+   "nombre": "Esterificación e hidrólisis",
+   "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+   "nombre": "Estructura y propiedades de los polímeros",
+   "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/estructuras-de-lewis",
+   "nombre": "Notación y estructuras de Lewis",
+   "definicion": "Representación de electrones de valencia como puntos y de pares compartidos como líneas para modelar enlaces y pares libres.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/fuerza-de-acidos-y-bases",
+   "nombre": "Fuerza de ácidos y bases: Ka y Kb",
+   "definicion": "Grado de ionización en equilibrio cuantificado por Ka, Kb y pKa; los ácidos polipróticos tienen ionizaciones sucesivas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/fuerzas-intermoleculares",
+   "nombre": "Fuerzas intermoleculares",
+   "definicion": "Atracciones entre moléculas: dispersión de London, dipolo-dipolo y puentes de hidrógeno, cuya intensidad depende de geometría y polaridad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas",
+   "nombre": "Fuerzas intermoleculares y propiedades físicas",
+   "definicion": "La intensidad de las fuerzas intermoleculares explica puntos de fusión y ebullición, presión de vapor, viscosidad y solubilidad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/fundamentos-de-reactividad-organica",
+   "nombre": "Fundamentos de la reactividad orgánica",
+   "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/geometria-molecular-rpecv",
+   "nombre": "Geometría molecular (RPECV)",
+   "definicion": "La repulsión entre pares electrónicos de valencia, enlazantes y libres, determina la forma tridimensional y los ángulos de enlace de una molécula.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/grupos-funcionales",
+   "nombre": "Grupos funcionales",
+   "definicion": "Agrupaciones de átomos (alcohol, aldehído, cetona, ácido carboxílico, éster, amina, amida, haluro) que determinan propiedades y reacciones características.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/hibridacion-de-orbitales",
+   "nombre": "Hibridación de orbitales",
+   "definicion": "Combinación de orbitales atómicos en orbitales híbridos sp, sp2 y sp3 que explica geometrías y la tetravalencia del carbono.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/hidrocarburos-alifaticos",
+   "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+   "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/hidrocarburos-aromaticos",
+   "nombre": "Hidrocarburos aromáticos",
+   "definicion": "Compuestos con anillos bencénicos de electrones deslocalizados, de estabilidad especial y reacciones de sustitución.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/indicadores-acido-base",
+   "nombre": "Indicadores ácido-base",
+   "definicion": "Ácidos o bases débiles cuyas formas ácida y básica tienen colores distintos, con un intervalo de viraje característico.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/iones",
+   "nombre": "Iones",
+   "definicion": "Átomos o grupos de átomos con carga por ganar o perder electrones; cationes y aniones se representan con fórmulas que indican carga.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/isomeria-estructural",
+   "nombre": "Isomería estructural",
+   "definicion": "Compuestos con la misma fórmula molecular y distinta conectividad: isómeros de cadena, posición y función.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/isotopos",
+   "nombre": "Isótopos",
+   "definicion": "Átomos de un elemento con igual número de protones y distinto de neutrones; comparten propiedades químicas pero difieren en masa y estabilidad nuclear.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ley-de-hess-y-entalpias-de-formacion",
+   "nombre": "Ley de Hess y entalpías de formación",
+   "definicion": "La variación de entalpía es independiente del camino; se calcula combinando ecuaciones o entalpías estándar de formación.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/ley-de-velocidad-y-orden-de-reaccion",
+   "nombre": "Ley de velocidad, orden de reacción y ecuación de Arrhenius",
+   "definicion": "Ecuación que relaciona velocidad con concentraciones (órdenes, leyes integradas, semivida) y dependencia de la constante con la temperatura.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/leyes-de-los-gases",
+   "nombre": "Leyes de los gases",
+   "definicion": "Relaciones entre presión, volumen y temperatura de un gas: leyes de Boyle, Charles y Gay-Lussac.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/leyes-ponderales",
+   "nombre": "Leyes ponderales y volumétricas",
+   "definicion": "Leyes de proporciones definidas y múltiples y de volúmenes de combinación, explicadas por la teoría atómica de Dalton.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/masa-atomica-relativa",
+   "nombre": "Masa atómica relativa",
+   "definicion": "Masa promedio ponderada de los isótopos naturales de un elemento respecto a 1/12 de la masa del carbono-12.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/masa-molar",
+   "nombre": "Masa molar",
+   "definicion": "Masa de un mol de sustancia en g/mol, calculada a partir de las masas atómicas relativas; permite convertir entre masa y moles.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/materia-y-materiales",
+   "nombre": "Materia y materiales",
+   "definicion": "Todo lo que tiene masa y ocupa volumen es materia; los objetos están hechos de materiales cuyas propiedades medibles determinan sus usos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/materiales-y-ambiente",
+   "nombre": "Reutilización y reciclaje de materiales",
+   "definicion": "Los materiales pueden reutilizarse, reciclarse o darles nuevos usos para reducir residuos y su impacto ambiental.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/mecanismos-de-reaccion",
+   "nombre": "Mecanismos de reacción",
+   "definicion": "Secuencia de etapas elementales con su molecularidad e intermediarios; la etapa lenta determina la velocidad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/mezclas",
+   "nombre": "Mezclas homogéneas y heterogéneas",
+   "definicion": "Combinación de sustancias que conservan sus propiedades; puede ser homogénea (una fase) o heterogénea (componentes distinguibles) y separarse físicamente.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/minerales",
+   "nombre": "Minerales: composición y estructura cristalina",
+   "definicion": "Sólidos naturales inorgánicos con composición química definida y estructura cristalina, que determinan sus propiedades físicas y usos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/modelo-de-particulas",
+   "nombre": "Modelo de partículas de la materia",
+   "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/modelo-mecanocuantico-y-orbitales",
+   "nombre": "Modelo mecanocuántico y orbitales atómicos",
+   "definicion": "La dualidad onda-partícula describe al electrón como un orbital: región de probabilidad con forma s, p, d o f y energía definida.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/modelos-atomicos-historicos",
+   "nombre": "Evolución de los modelos atómicos",
+   "definicion": "Modelos de Dalton, Thomson, Rutherford y Bohr, propuestos y reemplazados según evidencia experimental como rayos catódicos y dispersión alfa.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/mol-y-numero-de-avogadro",
+   "nombre": "Mol y número de Avogadro",
+   "definicion": "El mol es la cantidad de sustancia con 6,022 × 10^23 entidades; conecta el mundo atómico con masas medibles.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+   "nombre": "Molaridad y unidades químicas de concentración",
+   "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/moleculas-y-formulas-quimicas",
+   "nombre": "Moléculas y fórmulas químicas",
+   "definicion": "Las moléculas son combinaciones de átomos unidos; una fórmula química indica qué elementos y cuántos átomos forman una sustancia.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/nanomateriales",
+   "nombre": "Nanomateriales y manufactura molecular",
+   "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/neutralizacion",
+   "nombre": "Neutralización y reacciones de los ácidos",
+   "definicion": "Los ácidos reaccionan con bases (sal y agua), metales (hidrógeno) y carbonatos (CO2), patrones que permiten predecir productos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/nomenclatura-inorganica",
+   "nombre": "Compuestos inorgánicos: funciones y nomenclatura",
+   "definicion": "Óxidos, hidruros, ácidos, hidróxidos y sales binarias y ternarias, y reglas para nombrarlos y formularlos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/nomenclatura-organica",
+   "nombre": "Nomenclatura orgánica IUPAC",
+   "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/numero-de-oxidacion",
+   "nombre": "Número de oxidación",
+   "definicion": "Carga aparente asignada a un átomo en un compuesto según reglas; permite formular compuestos e identificar procesos redox.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/numeros-cuanticos",
+   "nombre": "Números cuánticos",
+   "definicion": "Los números n, l, ml y ms describen nivel, subnivel, orientación del orbital y espín de cada electrón.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+   "nombre": "Oxidación y corrosión de los metales",
+   "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/oxidacion-y-reduccion",
+   "nombre": "Oxidación y reducción",
+   "definicion": "Oxidación es pérdida y reducción ganancia de electrones; ocurren juntas y se representan y balancean con semiecuaciones.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/polaridad-molecular",
+   "nombre": "Polaridad molecular",
+   "definicion": "Una molécula es polar si la suma de sus dipolos de enlace no se anula, según su geometría y simetría.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/polimerizacion",
+   "nombre": "Polimerización por adición y por condensación",
+   "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/polimeros-y-ambiente",
+   "nombre": "Polímeros y ambiente",
+   "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/potenciales-de-electrodo",
+   "nombre": "Potenciales estándar de electrodo y de celda",
+   "definicion": "Los potenciales estándar de reducción permiten calcular el potencial de una celda y predecir la espontaneidad redox.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/principio-de-le-chatelier",
+   "nombre": "Principio de Le Chatelier",
+   "definicion": "Un sistema en equilibrio perturbado por cambios de concentración, presión o temperatura se desplaza para contrarrestar la perturbación.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/proceso-de-disolucion",
+   "nombre": "Proceso de disolución y solvatación",
+   "definicion": "Sustancias iónicas y moleculares se disuelven al interactuar con el disolvente (hidratación); implica una entalpía de disolución y depende de temperatura.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/procesos-de-la-industria-quimica",
+   "nombre": "Procesos de la industria química",
+   "definicion": "Escalamiento, operaciones unitarias y balance de materia en industrias de ácido sulfúrico, fertilizantes, cemento, azúcar, etanol y café.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/producto-de-solubilidad",
+   "nombre": "Producto de solubilidad (Kps)",
+   "definicion": "Constante del equilibrio entre un sólido poco soluble y sus iones; predice precipitación y la menor solubilidad por ion común.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/propiedades-coligativas",
+   "nombre": "Propiedades coligativas",
+   "definicion": "Propiedades que dependen del número de partículas de soluto: descenso de presión de vapor, aumento ebulloscópico, descenso crioscópico y presión osmótica.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/propiedades-fisicas-de-los-materiales",
+   "nombre": "Propiedades físicas de los materiales",
+   "definicion": "Características medibles sin cambiar la sustancia (dureza, conducción, magnetismo, flotación) que permiten clasificar materiales y explicar usos, como los de metales.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/propiedades-fisicas-y-quimicas",
+   "nombre": "Propiedades físicas y químicas",
+   "definicion": "Las propiedades físicas se observan sin cambiar la sustancia; las químicas (reactividad, inflamabilidad) solo al transformarla; incluye propiedades intensivas y extensivas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/propiedades-periodicas",
+   "nombre": "Propiedades periódicas",
+   "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/propiedades-singulares-del-agua",
+   "nombre": "Propiedades singulares del agua",
+   "definicion": "Alto punto de ebullición, mayor densidad del líquido que del hielo, tensión superficial y calor específico explicados por puentes de hidrógeno.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/quimica-de-los-acidos-nucleicos",
+   "nombre": "Química de los ácidos nucleicos",
+   "definicion": "Nucleótidos unidos por enlaces fosfodiéster y bases apareadas por puentes de hidrógeno forman ADN y ARN.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/quimica-de-los-carbohidratos",
+   "nombre": "Química de los carbohidratos",
+   "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/quimica-de-los-lipidos",
+   "nombre": "Química de los lípidos",
+   "definicion": "Ácidos grasos saturados e insaturados, triglicéridos, saponificación, terpenos y esteroides como el colesterol.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/quimica-descriptiva-de-los-elementos",
+   "nombre": "Química descriptiva de los elementos",
+   "definicion": "Propiedades, obtención, compuestos y usos de metales y no metales según su posición periódica, incluidos halógenos y gases nobles.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/quimica-verde",
+   "nombre": "Química verde y economía atómica",
+   "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/radiactividad",
+   "nombre": "Radiactividad y emisiones nucleares",
+   "definicion": "Desintegración espontánea de núcleos inestables con emisión de partículas alfa, beta y radiación gamma.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/rapidez-de-reaccion-factores",
+   "nombre": "Factores que afectan la rapidez de reacción",
+   "definicion": "La rapidez aumenta con mayor temperatura, concentración, superficie de contacto o presencia de catalizador.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/reaccion-quimica-y-evidencias",
+   "nombre": "Reacción química y sus evidencias",
+   "definicion": "Proceso en que se forman sustancias nuevas, evidenciado por gas, precipitado, cambio de color, calor o luz.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+   "nombre": "Reacciones de precipitación e identificación de iones",
+   "definicion": "Formación de sólidos insolubles al mezclar disoluciones iónicas, usada para identificar y separar iones (marcha analítica).",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/reacciones-exotermicas-y-endotermicas",
+   "nombre": "Reacciones exotérmicas y endotérmicas",
+   "definicion": "Las reacciones exotérmicas liberan energía al entorno y las endotérmicas la absorben, observándose cambios de temperatura.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/reacciones-organicas",
+   "nombre": "Reacciones orgánicas características",
+   "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/reactivo-limitante",
+   "nombre": "Reactivo limitante y en exceso",
+   "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/redes-covalentes-y-alotropos-del-carbono",
+   "nombre": "Redes covalentes y alótropos del carbono",
+   "definicion": "Sólidos de átomos unidos covalentemente en red, como diamante, grafito, fulerenos y grafeno, con propiedades muy distintas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/rendimiento-de-reaccion",
+   "nombre": "Rendimiento de una reacción",
+   "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/resonancia-y-carga-formal",
+   "nombre": "Resonancia y carga formal",
+   "definicion": "Cuando una sola estructura de Lewis no describe la molécula se usan formas resonantes; la carga formal elige la estructura más estable.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/semivida-y-series-de-desintegracion",
+   "nombre": "Semivida, series de desintegración y residuos radiactivos",
+   "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/separacion-de-mezclas",
+   "nombre": "Métodos físicos de separación de mezclas",
+   "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/sintesis-quimica-y-rutas-de-reaccion",
+   "nombre": "Síntesis química y rutas de reacción",
+   "definicion": "Diseño de rutas de una o varias reacciones, eligiendo reactivos y condiciones para obtener productos específicos con alto rendimiento y pureza.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/solidos-cristalinos-y-amorfos",
+   "nombre": "Sólidos cristalinos y amorfos",
+   "definicion": "Los sólidos pueden ser cristalinos (iónicos, moleculares, covalentes, metálicos) o amorfos, con propiedades según sus partículas y fuerzas.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/solubilidad",
+   "nombre": "Solubilidad y disoluciones saturadas",
+   "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+   "nombre": "Sustancias puras: elementos y compuestos",
+   "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/tabla-periodica",
+   "nombre": "Organización de la tabla periódica",
+   "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/teoria-cinetica-de-los-gases",
+   "nombre": "Teoría cinética de los gases",
+   "definicion": "Los gases son partículas en movimiento aleatorio cuyos choques generan presión; la energía cinética media depende de la temperatura.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/teoria-de-colisiones",
+   "nombre": "Teoría de colisiones",
+   "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/teorias-acido-base",
+   "nombre": "Teorías ácido-base (Arrhenius, Brønsted-Lowry, Lewis)",
+   "definicion": "Los ácidos donan protones y las bases los aceptan formando pares conjugados; Lewis amplía a aceptores y donadores de pares electrónicos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/tipo-de-enlace-y-propiedades",
+   "nombre": "Tipo de enlace y propiedades de las sustancias",
+   "definicion": "El tipo de enlace explica punto de fusión, conductividad, dureza y fragilidad de sustancias iónicas, metálicas, moleculares y de red covalente.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/tipos-de-reacciones-quimicas",
+   "nombre": "Clasificación de las reacciones químicas",
+   "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+   "nombre": "Calidad y tratamiento del agua",
+   "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/valoracion-acido-base",
+   "nombre": "Valoración ácido-base",
+   "definicion": "Análisis volumétrico que determina una concentración identificando el punto de equivalencia con indicadores o curvas de pH.",
+   "asignatura": "quimica"
+  },
+  {
+   "id": "CON:quimica/velocidad-de-reaccion-medicion",
+   "nombre": "Medición de la velocidad de reacción",
+   "definicion": "Velocidad expresada como cambio de concentración de reactivos o productos por unidad de tiempo, media o instantánea.",
+   "asignatura": "quimica"
+  }
+ ],
+ "practicas": [
+  {
+   "id": "PRAC:formular-preguntas-investigables",
+   "nombre": "Formular preguntas investigables"
+  },
+  {
+   "id": "PRAC:formular-hipotesis-y-predicciones",
+   "nombre": "Formular hipótesis y predicciones"
+  },
+  {
+   "id": "PRAC:planificar-investigaciones",
+   "nombre": "Planificar investigaciones"
+  },
+  {
+   "id": "PRAC:controlar-variables",
+   "nombre": "Identificar y controlar variables"
+  },
+  {
+   "id": "PRAC:evaluar-disenos-de-investigacion",
+   "nombre": "Evaluar diseños de investigación"
+  },
+  {
+   "id": "PRAC:observar-y-registrar",
+   "nombre": "Observar y registrar sistemáticamente"
+  },
+  {
+   "id": "PRAC:medir-con-instrumentos",
+   "nombre": "Medir con instrumentos y unidades"
+  },
+  {
+   "id": "PRAC:trabajar-con-seguridad-y-etica",
+   "nombre": "Trabajar con seguridad y ética"
+  },
+  {
+   "id": "PRAC:repetir-mediciones-y-estimar-error",
+   "nombre": "Repetir mediciones y estimar el error"
+  },
+  {
+   "id": "PRAC:representar-datos",
+   "nombre": "Representar datos en tablas y gráficos"
+  },
+  {
+   "id": "PRAC:interpretar-datos-y-concluir",
+   "nombre": "Interpretar datos y sacar conclusiones"
+  },
+  {
+   "id": "PRAC:distinguir-correlacion-y-causalidad",
+   "nombre": "Distinguir correlación de causalidad"
+  },
+  {
+   "id": "PRAC:analizar-datos-con-estadistica",
+   "nombre": "Analizar datos con herramientas estadísticas"
+  },
+  {
+   "id": "PRAC:usar-matematicas-en-ciencias",
+   "nombre": "Usar matemáticas para resolver problemas científicos"
+  },
+  {
+   "id": "PRAC:usar-pensamiento-computacional-y-simulaciones",
+   "nombre": "Usar pensamiento computacional y simulaciones"
+  },
+  {
+   "id": "PRAC:desarrollar-y-usar-modelos",
+   "nombre": "Desarrollar y usar modelos"
+  },
+  {
+   "id": "PRAC:evaluar-modelos-y-limitaciones",
+   "nombre": "Evaluar modelos y sus limitaciones"
+  },
+  {
+   "id": "PRAC:transformar-representaciones",
+   "nombre": "Usar y transformar representaciones"
+  },
+  {
+   "id": "PRAC:construir-explicaciones-con-evidencia",
+   "nombre": "Construir explicaciones basadas en evidencia"
+  },
+  {
+   "id": "PRAC:argumentar-con-evidencia",
+   "nombre": "Argumentar con evidencia y razonamiento"
+  },
+  {
+   "id": "PRAC:evaluar-afirmaciones-y-argumentos",
+   "nombre": "Evaluar afirmaciones y argumentos"
+  },
+  {
+   "id": "PRAC:evaluar-fuentes-de-informacion",
+   "nombre": "Buscar y evaluar fuentes de información"
+  },
+  {
+   "id": "PRAC:comunicar-resultados",
+   "nombre": "Comunicar resultados científicos"
+  },
+  {
+   "id": "PRAC:distinguir-observacion-e-inferencia",
+   "nombre": "Distinguir observación de inferencia"
+  },
+  {
+   "id": "PRAC:naturaleza-provisional-del-conocimiento",
+   "nombre": "Reconocer el carácter provisional del conocimiento"
+  },
+  {
+   "id": "PRAC:ciencia-como-empresa-colectiva",
+   "nombre": "Valorar la ciencia como empresa colectiva"
+  },
+  {
+   "id": "PRAC:limites-de-la-ciencia",
+   "nombre": "Reconocer el alcance y límites de la ciencia"
+  },
+  {
+   "id": "PRAC:evaluar-implicaciones-y-decidir",
+   "nombre": "Evaluar implicaciones y tomar decisiones informadas"
+  },
+  {
+   "id": "PRAC:definir-problemas-de-diseno",
+   "nombre": "Definir problemas de diseño"
+  },
+  {
+   "id": "PRAC:disenar-y-evaluar-soluciones",
+   "nombre": "Diseñar y evaluar soluciones"
+  }
+ ],
+ "items": [
+  {
+   "id": "AU-AC9S5I06",
+   "texto": "Escribir y crear textos para comunicar ideas y hallazgos a propósitos y públicos específicos, seleccionando recursos lingüísticos y herramientas digitales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 5",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S5U01",
+   "texto": "Examinar cómo ciertas estructuras y comportamientos de los seres vivos les permiten sobrevivir en hábitats específicos.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 5",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S5U02",
+   "texto": "Describir cómo la meteorización, la erosión, el transporte y la sedimentación causan cambios lentos o rápidos en la superficie terrestre.",
+   "eje": "Earth and space sciences",
+   "grado_o_tramo": "Year 5",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S5U03",
+   "texto": "Identificar fuentes de luz, reconocer que la luz viaja en línea recta y describir la formación de sombras, la reflexión y la refracción.",
+   "eje": "Physical sciences",
+   "grado_o_tramo": "Year 5",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S5U04",
+   "texto": "Explicar propiedades observables de sólidos, líquidos y gases modelando el movimiento y la disposición de sus partículas.",
+   "eje": "Chemical sciences",
+   "grado_o_tramo": "Year 5",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6H01",
+   "texto": "Examinar por qué los avances científicos suelen resultar de la colaboración o se basan en el trabajo de otros.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6H02",
+   "texto": "Investigar cómo individuos y comunidades usan el conocimiento científico para identificar problemas, considerar respuestas y tomar decisiones.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6I01",
+   "texto": "Plantear preguntas investigables para identificar patrones y probar relaciones, y hacer predicciones razonadas.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6I02",
+   "texto": "Planificar y realizar investigaciones repetibles, decidiendo variables a cambiar, medir y controlar, describiendo riesgos, uso seguro del equipo y permisos necesarios.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6I03",
+   "texto": "Usar equipo para observar, medir y registrar datos con precisión razonable, usando herramientas digitales cuando convenga.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6I04",
+   "texto": "Construir y usar representaciones apropiadas (tablas, gráficos, modelos) para organizar y procesar datos y describir patrones, tendencias y relaciones.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6I05",
+   "texto": "Comparar métodos y hallazgos con los de otros, reconocer posibles fuentes de error, plantear nuevas preguntas y seleccionar evidencia para conclusiones razonadas.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6I06",
+   "texto": "Escribir y crear textos para comunicar ideas y hallazgos a propósitos y públicos específicos, seleccionando recursos lingüísticos y herramientas digitales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6U01",
+   "texto": "Investigar las condiciones físicas de un hábitat y analizar cómo sus cambios afectan el crecimiento y la supervivencia de los seres vivos.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6U02",
+   "texto": "Describir el movimiento de la Tierra y los planetas alrededor del Sol y modelar cómo inclinación, rotación y traslación explican fenómenos cíclicos como la duración del día.",
+   "eje": "Earth and space sciences",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6U03",
+   "texto": "Investigar la transferencia y transformación de energía en circuitos eléctricos, incluido el papel de sus componentes, aislantes y conductores.",
+   "eje": "Physical sciences",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S6U04",
+   "texto": "Comparar cambios reversibles (disolución, cambios de estado) con cambios irreversibles que producen sustancias nuevas (cocción, oxidación).",
+   "eje": "Chemical sciences",
+   "grado_o_tramo": "Year 6",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7H01",
+   "texto": "Explicar cómo nueva evidencia o perspectivas distintas pueden llevar a cambios en el conocimiento científico.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7H02",
+   "texto": "Investigar cómo las perspectivas culturales y las cosmovisiones influyen en el desarrollo del conocimiento científico.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7H03",
+   "texto": "Examinar cómo las respuestas científicas a problemas actuales pueden impactar la sociedad, considerando aspectos éticos, ambientales, sociales y económicos.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7H04",
+   "texto": "Explorar el papel de la comunicación científica en las opiniones individuales y en las políticas y regulaciones comunitarias.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I01",
+   "texto": "Formular preguntas investigables, predicciones razonadas e hipótesis para explorar modelos científicos, identificar patrones y probar relaciones.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I02",
+   "texto": "Planificar y realizar investigaciones reproducibles para probar hipótesis, identificando variables y supuestos, gestionando riesgos y considerando aspectos éticos y patrimoniales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I03",
+   "texto": "Seleccionar y usar equipo para generar y registrar datos con precisión, usando herramientas digitales cuando convenga.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I04",
+   "texto": "Seleccionar y construir representaciones apropiadas (tablas, gráficos, modelos, relaciones matemáticas) para organizar y procesar datos e información.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I05",
+   "texto": "Analizar datos e información para describir patrones, tendencias y relaciones e identificar anomalías.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I06",
+   "texto": "Analizar métodos, conclusiones y afirmaciones en busca de supuestos, fuentes de error, evidencia contradictoria y preguntas sin responder.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I07",
+   "texto": "Construir argumentos basados en evidencia para sustentar conclusiones o evaluar afirmaciones, considerando aspectos éticos y protocolos culturales al usar datos secundarios.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7I08",
+   "texto": "Escribir y crear textos para comunicar ideas, hallazgos y argumentos a propósitos y públicos específicos, con lenguaje y formato apropiados y herramientas digitales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7U01",
+   "texto": "Investigar el papel de la clasificación para ordenar la diversidad de la vida y usar y elaborar herramientas de clasificación como claves dicotómicas.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7U02",
+   "texto": "Usar modelos como redes tróficas para representar el flujo de materia y energía en ecosistemas y predecir el impacto de cambios bióticos y abióticos en poblaciones.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7U03",
+   "texto": "Modelar los cambios cíclicos en las posiciones de Tierra, Sol y Luna y explicar cómo causan eclipses e influyen en estaciones y mareas.",
+   "eje": "Earth and space sciences",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7U04",
+   "texto": "Investigar y representar fuerzas equilibradas y no equilibradas, incluida la gravitatoria, y relacionar cambios de movimiento con la masa y la magnitud y dirección de las fuerzas.",
+   "eje": "Physical sciences",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7U05",
+   "texto": "Usar la teoría de partículas para describir disposición, movimiento y atracción de partículas en una sustancia y relacionarlas con sus propiedades.",
+   "eje": "Chemical sciences",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S7U06",
+   "texto": "Usar un modelo de partículas para diferenciar sustancias puras y mezclas y aplicar las propiedades de las sustancias para separar mezclas.",
+   "eje": "Chemical sciences",
+   "grado_o_tramo": "Year 7",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8H01",
+   "texto": "Explicar cómo nueva evidencia o perspectivas distintas pueden llevar a cambios en el conocimiento científico.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8H02",
+   "texto": "Investigar cómo las perspectivas culturales y las cosmovisiones influyen en el desarrollo del conocimiento científico.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8H03",
+   "texto": "Examinar cómo las respuestas científicas a problemas actuales pueden impactar la sociedad, considerando aspectos éticos, ambientales, sociales y económicos.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8H04",
+   "texto": "Explorar el papel de la comunicación científica en las opiniones individuales y en las políticas y regulaciones comunitarias.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I01",
+   "texto": "Formular preguntas investigables, predicciones razonadas e hipótesis para explorar modelos científicos, identificar patrones y probar relaciones.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I02",
+   "texto": "Planificar y realizar investigaciones reproducibles para probar hipótesis, identificando variables y supuestos, gestionando riesgos y considerando aspectos éticos y patrimoniales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I03",
+   "texto": "Seleccionar y usar equipo para generar y registrar datos con precisión, usando herramientas digitales cuando convenga.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I04",
+   "texto": "Seleccionar y construir representaciones apropiadas (tablas, gráficos, modelos, relaciones matemáticas) para organizar y procesar datos e información.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I05",
+   "texto": "Analizar datos e información para describir patrones, tendencias y relaciones e identificar anomalías.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I06",
+   "texto": "Analizar métodos, conclusiones y afirmaciones en busca de supuestos, fuentes de error, evidencia contradictoria y preguntas sin responder.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I07",
+   "texto": "Construir argumentos basados en evidencia para sustentar conclusiones o evaluar afirmaciones, considerando aspectos éticos y protocolos culturales al usar datos secundarios.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8I08",
+   "texto": "Escribir y crear textos para comunicar ideas, hallazgos y argumentos a propósitos y públicos específicos, con lenguaje y formato apropiados y herramientas digitales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U01",
+   "texto": "Reconocer la célula como unidad básica de los seres vivos, comparar células vegetales y animales y describir funciones de estructuras y organelos especializados.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U02",
+   "texto": "Analizar la relación estructura-función de células, tejidos y órganos en un sistema de órganos vegetal y uno animal, y cómo permiten la supervivencia del individuo.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U03",
+   "texto": "Investigar la actividad tectónica y la formación de relieves en límites divergentes, convergentes y transformantes, y describir la evidencia de la tectónica de placas.",
+   "eje": "Earth and space sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U04",
+   "texto": "Describir los procesos clave del ciclo de las rocas y sus escalas de tiempo, y cómo las propiedades de rocas sedimentarias, ígneas y metamórficas reflejan su formación y uso.",
+   "eje": "Earth and space sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U05",
+   "texto": "Clasificar formas de energía como cinética o potencial e investigar la transferencia y transformación de energía en sistemas simples.",
+   "eje": "Physical sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U06",
+   "texto": "Clasificar la materia en elementos, compuestos o mezclas y comparar sus representaciones: modelos 2D y 3D, símbolos de elementos y fórmulas de moléculas y compuestos.",
+   "eje": "Chemical sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S8U07",
+   "texto": "Comparar cambios físicos y químicos e identificar indicadores de cambio de energía en las reacciones químicas.",
+   "eje": "Chemical sciences",
+   "grado_o_tramo": "Year 8",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9H01",
+   "texto": "Explicar cómo se valida y refina el conocimiento científico, incluido el papel de la publicación y la revisión por pares.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9H02",
+   "texto": "Investigar cómo los avances tecnológicos impulsan la ciencia y cómo la ciencia ha contribuido al desarrollo de tecnologías e ingeniería.",
+   "eje": "Nature and development of science",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9H03",
+   "texto": "Analizar los factores clave que contribuyen a que la sociedad adopte ampliamente conocimientos y prácticas científicas.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9H04",
+   "texto": "Examinar cómo los valores y necesidades de la sociedad influyen en el enfoque de la investigación científica.",
+   "eje": "Use and influence of science",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I01",
+   "texto": "Formular preguntas investigables, predicciones razonadas e hipótesis para probar relaciones y desarrollar modelos explicativos.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I02",
+   "texto": "Planificar y realizar investigaciones válidas y reproducibles, controlando fuentes de error, siguiendo evaluaciones de riesgo y considerando aspectos éticos y patrimoniales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I03",
+   "texto": "Seleccionar y usar equipo para generar y registrar datos precisos con tamaños de muestra útiles y datos replicables, usando herramientas digitales.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I04",
+   "texto": "Seleccionar y construir representaciones apropiadas (tablas, gráficos, estadística descriptiva, modelos, relaciones matemáticas) para organizar y procesar datos.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I05",
+   "texto": "Analizar y relacionar diversos datos e información para identificar y explicar patrones, tendencias, relaciones y anomalías.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I06",
+   "texto": "Evaluar la validez y reproducibilidad de métodos y la validez de conclusiones y afirmaciones, identificando supuestos, evidencia contradictoria e incertidumbre.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I07",
+   "texto": "Construir argumentos a partir del análisis de diversa evidencia para sustentar conclusiones o evaluar afirmaciones, considerando ética y protocolos culturales de datos secundarios.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9I08",
+   "texto": "Escribir y crear textos para comunicar eficazmente ideas, hallazgos y argumentos a públicos definidos, seleccionando contenido, lenguaje y formato apropiados.",
+   "eje": "Science inquiry",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9U01",
+   "texto": "Comparar el papel de los sistemas corporales en regular y coordinar la respuesta a un estímulo y describir un mecanismo de retroalimentación negativa.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9U02",
+   "texto": "Describir forma y función de células y órganos reproductores en animales y plantas y analizar cómo la reproducción sexual y asexual asegura la supervivencia de la especie.",
+   "eje": "Biological sciences",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9U03",
+   "texto": "Representar el ciclo del carbono y examinar cómo combustión, fotosíntesis y respiración dependen de interacciones entre geosfera, biosfera, hidrosfera y atmósfera.",
+   "eje": "Earth and space sciences",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  },
+  {
+   "id": "AU-AC9S9U04",
+   "texto": "Usar modelos ondulatorio y de partículas para describir la transferencia de energía a través de distintos medios y evaluar la utilidad de cada modelo.",
+   "eje": "Physical sciences",
+   "grado_o_tramo": "Year 9",
+   "asignatura_estimada": null
+  }
+ ]
+}

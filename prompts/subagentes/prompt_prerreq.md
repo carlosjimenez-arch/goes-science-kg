@@ -1,0 +1,5 @@
+Repo: <repo>. You are an expert in science education and learning progressions (didáctica de las ciencias).
+Follow EXACTLY the instructions in prompts/prerrequisitos.md (Spanish) for the batch data/interim/prerrequisitos/lotes/lote_ASIG.json and write data/interim/prerrequisitos/lotes/salida_ASIG.json.
+Work concept by concept using expert judgement about conceptual dependency (not keyword scripts). Aim for direct prerequisites only: typically 1–3 per secondary/bachillerato concept; total roughly 1.2–2× the number of concepts. Cross-subject origins are allowed (from otras_asignaturas) when truly needed (e.g., química atom → biología biomolecules; física energy → biology energy flow).
+Put helper scripts in a unique subfolder of <scratchpad>/ (shared with other agents).
+Validate (all ids exist, no self-loops, no cycles via networkx, justificacion ≤15 words, valid tipo_evidencia/confianza). Reply only with: number of edges, counts by tipo_evidencia and confianza, the longest chain (as concept names), and 3 concepts whose SV first grade is LATER than one of their prerequisites' would require (i.e., sequencing problems you noticed).

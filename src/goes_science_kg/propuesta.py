@@ -13,6 +13,7 @@ Paso 3 (determinista): `escribir_excel()` arma el libro de la propuesta para el 
 from __future__ import annotations
 
 import json
+import math
 from collections import Counter, defaultdict
 
 from goes_science_kg.brechas import analizar
@@ -36,7 +37,7 @@ def candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], arist
 
     mover = []
     for f in r["llega_tarde"]:
-        destino = max(g0, round(f["mediana_paises"]))
+        destino = max(g0, math.floor(f["mediana_paises"] + 0.5))  # empates hacia arriba (como Math.round)
         if not (g0 <= destino <= g1) or f["sv"] <= destino:
             continue
         bloqueos = [{"prerrequisito": por_id[a.origen].etiqueta, "primer_grado_sv": ev[a.origen]["sv"]}
@@ -169,36 +170,48 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
     nuevos_n = {n.id: n.model_copy(deep=True) for n in nodos}
     nuevas_a = list(aristas)
     sin_resolver = []
+
+    def _agregar_conceptos(t: str, nombres: list[str]) -> None:
+        for nombre in nombres:
+            cid = por_nombre.get(nombre.lower())
+            if cid and t in nuevos_n:
+                nuevas_a.append(A(origen=t, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia", rol="principal",
+                                  confianza=Confianza.ALTA, justificacion="Acción propuesta (simulación).",
+                                  version=p["version"]))
+            elif not cid:
+                sin_resolver.append(nombre)
+
     for a in p["acciones"]:
         afectados = [f"TEMA:{t}" for t in a.get("temas_afectados", [])]
         if a["accion"] == "mover" and a.get("grado_propuesto"):
             for t in afectados:
                 if t in nuevos_n:
                     nuevos_n[t].grado = a["grado_propuesto"]
+                    _agregar_conceptos(t, a.get("conceptos", []))
         elif a["accion"] == "fusionar" and len(afectados) > 1:
+            queda = afectados[0]
+            # El tema que queda hereda los conceptos de los absorbidos (y los que nombra la acción).
+            heredadas = [x.model_copy(update={"origen": queda}) for x in nuevas_a
+                         if x.origen in afectados[1:] and x.tipo == TipoArista.TRABAJA]
             for t in afectados[1:]:
                 nuevos_n.pop(t, None)
-            nuevas_a = [x for x in nuevas_a if x.origen in nuevos_n and x.destino in nuevos_n]
-        elif a["accion"] in ("revisar", "dividir"):
-            # Reformular o dividir un tema: el tema pasa a trabajar también los conceptos de la acción.
+            nuevas_a = [x for x in nuevas_a if x.origen in nuevos_n and x.destino in nuevos_n] + heredadas
+            _agregar_conceptos(queda, a.get("conceptos", []))
+            if a.get("grado_propuesto") and queda in nuevos_n:  # la fusión también puede cambiar de grado
+                nuevos_n[queda].grado = a["grado_propuesto"]
+        elif a["accion"] == "revisar":
+            # Reformular un tema: pasa a trabajar también los conceptos de la acción.
             for t in afectados:
-                for nombre in a.get("conceptos", []):
-                    cid = por_nombre.get(nombre.lower())
-                    if cid and t in nuevos_n:
-                        nuevas_a.append(A(origen=t, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia",
-                                          rol="principal", confianza=Confianza.ALTA,
-                                          justificacion="Reformulación propuesta (simulación).", version=p["version"]))
-                    elif not cid:
-                        sin_resolver.append(nombre)
-            if a["accion"] == "dividir" and a.get("grado_propuesto") and afectados:
-                tid = f"TEMA:PROP-{asig}-{a['n']}"
-                nuevos_n[tid] = N(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=asig,
-                                  grado=a["grado_propuesto"])
-                for nombre in a.get("conceptos", []):
-                    if cid := por_nombre.get(nombre.lower()):
-                        nuevas_a.append(A(origen=tid, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia",
-                                          rol="principal", confianza=Confianza.ALTA,
-                                          justificacion="Tema dividido (simulación).", version=p["version"]))
+                _agregar_conceptos(t, a.get("conceptos", []))
+        elif a["accion"] == "dividir" and afectados:
+            # Dividir: los conceptos de la acción se van al tema nuevo (en su grado) y salen del original.
+            ids = {por_nombre.get(n.lower()) for n in a.get("conceptos", [])} - {None}
+            nuevas_a = [x for x in nuevas_a if not (x.origen in afectados and x.destino in ids
+                                                     and x.tipo == TipoArista.TRABAJA)]
+            tid = f"TEMA:PROP-{asig}-{a['n']}"
+            nuevos_n[tid] = N(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=asig,
+                              grado=a.get("grado_propuesto") or nuevos_n[afectados[0]].grado)
+            _agregar_conceptos(tid, a.get("conceptos", []))
         elif a["accion"] == "nuevo" and a.get("grado_propuesto"):
             tid = f"TEMA:PROP-{asig}-{a['n']}"
             nuevos_n[tid] = N(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=asig,
@@ -258,9 +271,10 @@ def escribir_resumen() -> str:
           "Notas:",
           "- **Química 2.°–4.°** no tiene propuesta: la malla no tiene Química en 4.° y no hay conceptos que "
           "lleguen tarde.",
-          "- **Tierra y Espacio 5.°–8.°** sube de 2 a 3 los conceptos que llegan tarde a propósito: mueve la unidad "
-          "del "
-          "espacio de 5.° a 6.° para que la gravedad y las órbitas vayan antes.",
+          "- **Tierra y Espacio 5.°–8.°** casi no reduce los conceptos que llegan tarde: a propósito mueve la unidad "
+          "del espacio de 5.° a 6.° para que la gravedad y las órbitas vayan antes.",
+          "- Las propuestas de 2.°–8.° ya usan los 5 países (con Inglaterra y Australia, de alto desempeño); las de "
+          "10.°–11.° se basan en los marcos (ACARA y TIMSS Advanced).",
           "- Los errores de secuencia que quedan se explican en cada informe (introducciones cualitativas o etiquetas "
           "por revisar). Cada informe lista sus **decisiones abiertas para el MINED**.",
           "- Las propuestas de un ciclo afectan a los siguientes (por ejemplo, si un tema baja a 5.°, el de 9.° debe "

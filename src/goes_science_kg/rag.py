@@ -39,6 +39,11 @@ INTENCION_PRERREQ = re.compile(r"\b(antes de|previo|previos|prerrequisit|deben s
                                r"base para|para comprender|para entender|consolidad)", re.I)
 INTENCION_PAISES = re.compile(
     r"\b(pa[ií]s|pa[ií]ses|uruguay|colombia|singapur|internacional|otros sistemas|compar)", re.I)
+INTENCION_MARCO = re.compile(
+    r"\b(timss|pisa|acara|australian|marco|marcos|evaluaci[oó]n internacional|objetivos? internacional)", re.I)
+MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "acara": ("AUSS",),
+                  "australian": ("AUSS",)}
+PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
 PAIS_NOMBRADO = {"uruguay": "UY", "colombia": "CO", "singapur": "SG"}
 PESO_TIPO = {TipoNodo.CONCEPTO: 1.15}  # ablación en data/evaluacion/resultados.md
 
@@ -149,11 +154,15 @@ class GraphRAG:
         q = normalizar(consulta)
         paises = INTENCION_PAISES.search(consulta)
         nombrados = {c for p, c in PAIS_NOMBRADO.items() if p in consulta.lower()}
+        marco = INTENCION_MARCO.search(consulta)
+        marcos = {m for clave, ms in MARCO_NOMBRADO.items() if clave in consulta.lower() for m in ms}
 
         def peso(n: Nodo) -> float:
             w = self._foco(n, grado) * PESO_TIPO.get(n.tipo, 1.0)
             if paises and n.tipo == TipoNodo.OBJETIVO_PAIS:
                 w *= 2.0 if (not nombrados or n.props.get("pais") in nombrados) else 0.5
+            if marco and n.tipo == TipoNodo.OBJETIVO_MARCO:
+                w *= PESO_MARCO if (not marcos or n.props.get("marco") in marcos) else 0.6
             return w
 
         candidatos = [(d, self.bm25.puntaje(q, d) * peso(self.por_id[d])) for d in self.bm25.docs]

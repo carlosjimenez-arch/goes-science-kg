@@ -25,6 +25,16 @@ from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 DIR = "data/interim/prerrequisitos"
 VERSION = "prerrequisitos-v1"
+def paises_alto_desempeno(tope: int = 10) -> set[str]:
+    """Países entre los `tope` primeros de TIMSS 2023 Ciencias en 4.° u 8.° (evidencia en config/referentes.yaml)."""
+    out = set()
+    for cod, p in cargar("referentes")["paises"].items():
+        t = p.get("timss2023_ciencias") or {}
+        if any((t.get(g) or {}).get("puesto", 99) <= tope for g in ("g4", "g8")):
+            out.add(cod)
+    return out
+
+
 NIVEL_MARCO = {"T4_27": 4, "T8_27": 8, "PISA25": 9, "TA15": 11, "AUSS": 11}
 PESO = {"alta": 3, "media": 2, "baja": 1}
 TIPOS = {"declarada", "orden_observado", "logica"}
@@ -44,12 +54,12 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
     def _min(actual, nuevo):
         return nuevo if actual is None else min(actual, nuevo)
 
-    # Primer grado SV: temas donde el concepto es PRINCIPAL, o secundario con confianza alta (una mención
-    # secundaria dudosa no es «enseñarlo»); si no hay ninguno, el primer grado como secundario (sv_secundario).
+    # Primer grado SV: temas donde el concepto es PRINCIPAL, o secundario con confianza alta o media (una mención
+    # secundaria de confianza baja no es «enseñarlo»); si no hay ninguna, el primer grado como secundario.
     for a in aristas:
         if a.tipo == TipoArista.TRABAJA and a.origen.startswith("TEMA:") and a.destino in ev:
             g = por_id[a.origen].grado
-            fuerte = a.rol == "principal" or (a.confianza is not None and a.confianza.value == "alta")
+            fuerte = a.rol == "principal" or (a.confianza is not None and a.confianza.value in ("alta", "media"))
             clave = "sv" if fuerte else "sv_secundario"
             ev[a.destino][clave] = _min(ev[a.destino].get(clave), g)
     for e in ev.values():
@@ -62,7 +72,11 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
                 ev[c]["marco"] = _min(ev[c]["marco"], nivel)
     def _pais(op_id: str, cons) -> None:
         op = por_id[op_id]
-        pais, g = op.props.get("pais"), max(2, op.props.get("grado_min") or 2)
+        # Objetivos por banda (KS3 de Inglaterra, Estándares de Colombia): el punto medio de la banda, no el mínimo,
+        # para no atribuir al primer año de la banda todo lo que se enseña a lo largo de ella.
+        gmin = op.props.get("grado_min") or 2
+        gmax = op.props.get("grado_max") or gmin
+        pais, g = op.props.get("pais"), max(2, (gmin + gmax) / 2)
         for c in cons:
             ev[c]["paises"][pais] = _min(ev[c]["paises"].get(pais), g)
 
@@ -86,7 +100,10 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
             ev[c]["sv"] = min(svs) if svs else None
             ev[c]["paises"] = dict(paises)
             ev[c]["equivalentes"] = sorted(grupo - {c})
+    alto = paises_alto_desempeno()
     for e in ev.values():
+        alto_g = [g for p, g in e["paises"].items() if p in alto]
+        e["mediana_alto_desempeno"] = statistics.median(alto_g) if alto_g else None
         e["via_paises"] = "directo" if op_a_con else "pivote"
         e["paises_mediana"] = statistics.median(e["paises"].values()) if e["paises"] else None
     return ev
@@ -154,5 +171,11 @@ def unir(nodos: list[Nodo]) -> dict:
 
 
 def cargar_prerrequisitos() -> list[dict]:
+    """Prerrequisitos consolidados menos los que rechazó la revisión humana."""
     p = ruta(f"{DIR}/prerrequisitos.json")
-    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
+    if not p.exists():
+        return []
+    r = ruta(f"{DIR}/rechazados.json")
+    rechazados = ({(x["origen"], x["destino"]) for x in json.loads(r.read_text(encoding="utf-8"))}
+                  if r.exists() else set())
+    return [e for e in json.loads(p.read_text(encoding="utf-8")) if (e["origen"], e["destino"]) not in rechazados]

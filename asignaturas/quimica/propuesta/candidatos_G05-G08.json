@@ -6,21 +6,60 @@
  ],
  "marco": "T8_27",
  "temas_por_grado": {
-  "5": 19,
+  "5": 18,
   "6": 10,
   "7": 13,
   "8": 25
  },
- "total_temas_ciclo": 67,
+ "total_temas_ciclo": 66,
  "mover_antes": [
+  {
+   "concepto": "Procesos de la industria química",
+   "concepto_id": "CON:quimica/procesos-de-la-industria-quimica",
+   "grado_actual": 11,
+   "grado_destino": 6,
+   "paises": {
+    "CO": 6.5,
+    "ENG": 6.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Estequiometría",
+     "primer_grado_sv": 8
+    },
+    {
+     "prerrequisito": "Clasificación de las reacciones químicas",
+     "primer_grado_sv": 6
+    }
+   ],
+   "temas_actuales": [
+    {
+     "id": "G11-QUI-U7-7.1",
+     "tema": "7.1. Aplicación del balance de materia a un proceso industrial representado en un diagrama de bloques con sus operaciones unitarias.",
+     "unidad": "7. Química industrial"
+    },
+    {
+     "id": "G11-QUI-U7-7.3",
+     "tema": "7.3. Descripción de las etapas químicas de la producción de azúcar y etanol a partir de la caña y del aprovechamiento energético del bagazo.",
+     "unidad": "7. Química industrial"
+    },
+    {
+     "id": "G11-QUI-U7-7.5",
+     "tema": "7.5. Interpretación de las reacciones de calcinación, hidratación y fraguado en la producción de cal y cemento.",
+     "unidad": "7. Química industrial"
+    }
+   ]
+  },
   {
    "concepto": "Sustancias puras: elementos y compuestos",
    "concepto_id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
    "grado_actual": 10,
    "grado_destino": 6,
    "paises": {
-    "CO": 6,
-    "UY": 5
+    "AU": 6.0,
+    "CO": 6.0,
+    "ENG": 6.0,
+    "UY": 5.0
    },
    "bloqueos": [
     {
@@ -37,13 +76,61 @@
    ]
   },
   {
+   "concepto": "Reacciones exotérmicas y endotérmicas",
+   "concepto_id": "CON:quimica/reacciones-exotermicas-y-endotermicas",
+   "grado_actual": 10,
+   "grado_destino": 6,
+   "paises": {
+    "AU": 7.0,
+    "ENG": 6.0
+   },
+   "bloqueos": [
+    {
+     "prerrequisito": "Calor como energía en tránsito",
+     "primer_grado_sv": 10
+    }
+   ],
+   "temas_actuales": []
+  },
+  {
+   "concepto": "Combustión",
+   "concepto_id": "CON:quimica/combustion",
+   "grado_actual": 11,
+   "grado_destino": 8,
+   "paises": {
+    "AU": 8.0,
+    "CO": 8.5,
+    "ENG": 6.0
+   },
+   "bloqueos": [],
+   "temas_actuales": []
+  },
+  {
+   "concepto": "Teoría cinética de los gases",
+   "concepto_id": "CON:quimica/teoria-cinetica-de-los-gases",
+   "grado_actual": 10,
+   "grado_destino": 7,
+   "paises": {
+    "CO": 8.5,
+    "ENG": 6.0
+   },
+   "bloqueos": [],
+   "temas_actuales": [
+    {
+     "id": "G10-QUI-U6-6.1",
+     "tema": "6.1. Medición de la presión atmosférica y análisis de su variación con la altitud.",
+     "unidad": "6. Los gases"
+    }
+   ]
+  },
+  {
    "concepto": "Enlace químico",
    "concepto_id": "CON:quimica/enlace-quimico",
    "grado_actual": 10,
    "grado_destino": 8,
    "paises": {
-    "CO": 6,
-    "UY": 9
+    "CO": 6.5,
+    "UY": 9.0
    },
    "bloqueos": [],
    "temas_actuales": [
@@ -60,17 +147,32 @@
    "grado_actual": 7,
    "grado_destino": 5,
    "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0,
+    "SG": 5.0
    },
-   "bloqueos": [
-    {
-     "prerrequisito": "La atmósfera y su composición",
-     "primer_grado_sv": null
-    }
-   ],
+   "bloqueos": [],
    "temas_actuales": []
+  },
+  {
+   "concepto": "Conservación de la masa",
+   "concepto_id": "CON:quimica/conservacion-de-la-masa",
+   "grado_actual": 10,
+   "grado_destino": 8,
+   "paises": {
+    "AU": 8.0,
+    "CO": 8.0,
+    "ENG": 6.0,
+    "UY": 9.0
+   },
+   "bloqueos": [],
+   "temas_actuales": [
+    {
+     "id": "G10-QUI-U2-2.1",
+     "tema": "2.1. Comprobación experimental de la ley de conservación de la masa y análisis de datos de las leyes de las proporciones definidas y múltiples.",
+     "unidad": "2. Las cantidades en química"
+    }
+   ]
   }
  ],
  "corregir_secuencia": [
@@ -136,14 +238,6 @@
    "prerrequisito": "Conservación de la masa",
    "grado_prerrequisito": 10,
    "brecha": 3,
-   "confianza": "alta"
-  },
-  {
-   "concepto": "Proceso de disolución y solvatación",
-   "grado_concepto": 8,
-   "prerrequisito": "Fuerzas intermoleculares",
-   "grado_prerrequisito": 10,
-   "brecha": 2,
    "confianza": "alta"
   },
   {
@@ -327,24 +421,6 @@
    ]
   },
   {
-   "id": "G05-CIE-U6-6.14",
-   "grado": 5,
-   "unidad": "6. Ciencias de la Tierra.",
-   "tema": "6.14. Identificación de los procesos químicos que ocurren en el suelo.",
-   "conceptos": [
-    "Reacción química y sus evidencias"
-   ]
-  },
-  {
-   "id": "G06-CIE-U1-1.1",
-   "grado": 6,
-   "unidad": "1. Fluidos.",
-   "tema": "1.1. Experimentación con objetos de diferentes densidades.",
-   "conceptos": [
-    "Densidad y flotación"
-   ]
-  },
-  {
    "id": "G06-CIE-U4-4.1",
    "grado": 6,
    "unidad": "4. Interacciones químicas.",
@@ -414,22 +490,33 @@
    ]
   },
   {
+   "id": "G06-CIE-U4-4.7",
+   "grado": 6,
+   "unidad": "4. Interacciones químicas.",
+   "tema": "4.7. Demostración experimental macroscópica de las fuerzas intermoleculares.",
+   "conceptos": [
+    "Tensión superficial y capilaridad",
+    "Fuerzas intermoleculares",
+    "Fuerzas intermoleculares y propiedades físicas"
+   ]
+  },
+  {
+   "id": "G06-CIE-U4-4.8",
+   "grado": 6,
+   "unidad": "4. Interacciones químicas.",
+   "tema": "4.8. Construcción del concepto de las fuerzas intermoleculares.",
+   "conceptos": [
+    "Fuerzas intermoleculares",
+    "Modelo de partículas de la materia"
+   ]
+  },
+  {
    "id": "G06-CIE-U4-4.9",
    "grado": 6,
    "unidad": "4. Interacciones químicas.",
    "tema": "4.9. Determinación experimental de evidencias de reacción química.",
    "conceptos": [
     "Reacción química y sus evidencias"
-   ]
-  },
-  {
-   "id": "G06-CIE-U5-5.2",
-   "grado": 6,
-   "unidad": "5. Célula.",
-   "tema": "5.2. Experimentación con la actividad enzimática.",
-   "conceptos": [
-    "Catalizadores",
-    "Factores que afectan la rapidez de reacción"
    ]
   },
   {

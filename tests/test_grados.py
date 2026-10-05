@@ -15,7 +15,7 @@ def test_subgrafo_del_grado_contiene_solo_sus_temas(grafo):
     ids = {n.id for n in sn}
     assert all(a.origen in ids and a.destino in ids for a in sa)
     assert d["temas"] == len(temas)
-    assert d["conceptos_nuevos"] + d["conceptos_retomados"] == d["conceptos"]
+    assert d["conceptos_nuevos"] + d["conceptos_retomados"] + d["conceptos_anticipados"] == d["conceptos"]
 
 
 def test_estados_de_anclaje_validos(grafo):
@@ -32,3 +32,9 @@ def test_salidas_por_grado_existen():
         assert (ruta(f"grados/G{g:02d}") / "grafo.html").exists()
         m = json.loads((ruta(f"data/grafo/grados/G{g:02d}") / "manifest.json").read_text(encoding="utf-8"))
         assert m["nodos"]["Tema"] > 0
+
+
+def test_primer_grado_no_tiene_retomados(grafo):
+    nodos, aristas = grafo
+    _, _, d = subgrafo(2, nodos, aristas, evidencia_orden(nodos, aristas))
+    assert d["conceptos_retomados"] == 0

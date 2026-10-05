@@ -1,90 +1,97 @@
 # Propuesta de Química, 5.° a 8.° (borrador)
 
-Versión `propuesta-v1`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
+Versión `propuesta-v2`, estado **borrador** hasta la revisión del equipo de Ciencias del MINED.
 Detalle de cada acción, con su evidencia, en `propuesta_G05-G08.json`.
 
 ## En resumen
-Proponemos 13 acciones: 4 temas nuevos, 4 fusiones, 1 movimiento (de dos temas) y 4 reformulaciones (`revisar`).
-El total del ciclo se mantiene en **67 temas** y no se quita ninguno. A diferencia de Biología, Química no llega
-tarde en este ciclo. Al contrario, 5.° y 6.° ya trabajan estructura atómica y enlaces. El problema es otro:
-**varios temas se enseñan antes que las ideas que los sostienen**. La propuesta ordena esas secuencias con el menor
-cambio posible.
+Proponemos 15 acciones: 6 temas nuevos, 6 fusiones, 1 movimiento (de dos temas) y 2 reformulaciones (`revisar`).
+El total del ciclo se mantiene en **66 temas** y no se quita ninguno.
+
+Química no llega tarde en 5.° y 6.°: esos grados ya trabajan estructura atómica y enlaces. Hay dos problemas:
+- **Varios temas se enseñan antes que las ideas que los sostienen.**
+- **Faltan la energía de las reacciones y la combustión**, que los países de alto desempeño enseñan entre 6.° y 8.°.
+
+## Qué cambió con los países de alto desempeño
+- **Inglaterra y Australia respaldan las sustancias puras en 6.°.** Coinciden con Colombia y Uruguay, así que la acción 5
+  ya no depende de un solo país.
+- **La conservación de la masa se mantiene en 6.°.** Inglaterra la enseña en ese grado. El destino sugerido (8.°) llegaría
+  después del balanceo de 7.°.
+- **Dos temas nuevos:** reacciones exotérmicas y endotérmicas en 6.° (ENG 6, AU 7) y combustión en 8.° (ENG 6, AU 8, CO 8.5).
+  Para pagarlos hacen falta dos fusiones más en 8.°.
+- **Se retiran dos acciones de la v1.** La reasignación de disciplina dejó el tema de enzimas (G06 5.2) fuera de Química.
+  Además, las fuerzas intermoleculares ya son de Química en 6.° (4.7 y 4.8), y con eso se resuelve la solvatación de 8.°
+  sin reformular 4.17.
+- **No se adoptan dos candidatos con un solo país de alto desempeño:**
+  - La teoría cinética de los gases en 7.° (ENG 6, CO 8.5).
+  - Los procesos industriales en 6.°: necesitan estequiometría (8.°), y en 8.° ya existe el tema 4.11.
 
 ## Qué cambia y por qué
 
 **1. Las ideas básicas llegan antes que el átomo y las fórmulas (acciones 1, 4 y 5).**
-- En 5.° se enseña el átomo antes que el modelo de partículas, que hoy llega en 6.°. Se abre la unidad 3 de 5.°
-  con un tema nuevo sobre el modelo de partículas.
-- En 5.° se escriben fórmulas y se deduce la interacción iónica (4.5 y 4.6) sin saber qué es un compuesto ni qué es
-  un enlace. Ambos temas pasan a la unidad *Interacciones químicas* de 6.°.
-- En 6.° entra un tema nuevo sobre sustancias puras: elementos, compuestos y mezclas. Colombia y Uruguay lo enseñan en
-  6.° y 5.°; El Salvador, en 10.°.
+- En 5.°, un tema nuevo sobre el modelo de partículas abre la unidad de estructura atómica.
+- Las fórmulas y la interacción iónica (4.5 y 4.6 de 5.°) pasan a la unidad *Interacciones químicas* de 6.°.
+- En esa unidad entra un tema nuevo sobre sustancias puras.
 
-**2. La idea general precede a los casos particulares (acciones 6, 7, 8 y 13).**
-- El tema 4.1 de 6.° (notación de Lewis) se reformula para explicar *por qué* se forma un enlace químico antes de los
-  enlaces iónico, metálico y covalente. Colombia lo trabaja en 6.°.
-- En 7.° se balancean ecuaciones en cuatro temas sin haber visto la conservación de la masa. Se agrega en 6.° un
-  experimento sobre esa ley, después de las evidencias de reacción (4.9).
-- El tema 5.2 de 6.° (enzimas) introduce de forma cualitativa la energía de activación para explicar qué hace un catalizador.
-- El tema 4.17 de 8.° retoma las atracciones entre partículas antes de explicar la disolución.
+**2. La idea general precede a los casos particulares (acciones 6 y 7).**
+- El tema 4.1 de 6.° explica qué es un enlace químico antes de los enlaces iónico, metálico y covalente.
+- Un experimento en 6.° presenta la conservación de la masa antes del balanceo de ecuaciones de 7.°.
 
-**3. Se baja el nivel de abstracción en 5.° (acción 2).** Los números cuánticos (3.10) necesitan el modelo
-mecanocuántico, que llega en 10.°. Se reformulan como distribución de electrones en niveles de energía (modelo de
-capas). Eso basta para la tabla periódica y los enlaces.
+**3. La energía de las reacciones entra en el ciclo (acciones 8 y 9).**
+- En 6.°, la clasificación de reacciones suma el criterio energético (exotérmicas y endotérmicas), después de la
+  unidad *Calor y temperatura*.
+- En 8.°, la combustión une estequiometría, energía y los contaminantes del aire.
 
-**4. La química del aire entra en 5.° (acción 3).** Colombia, Singapur y Uruguay enseñan la composición del aire
-y los contaminantes entre 4.° y 5.°. Aquí no hay un tema de química que lo trabaje. Se agrega en la unidad de Ciencias
-de la Tierra de 5.°, junto a los procesos químicos del suelo (6.14). El tema empieza por la composición de la atmósfera,
-su prerrequisito.
+**4. Menos abstracción en 5.° y química del aire (acciones 2 y 3).**
+- Los números cuánticos (3.10) se reformulan como niveles de energía, porque requieren el modelo mecanocuántico de 10.°.
+- Se agrega un tema sobre la composición del aire y los contaminantes (CO 4.5, SG 5, UY 5).
 
-**5. 8.° se aligera con cuatro fusiones (acciones 9 a 12).** La unidad *Estequiometría y dispersiones* tiene 20 temas y
-algunos repiten contenido:
-- propiedades coligativas (4.18 y 4.19);
-- número de Avogadro (4.4 y 4.5);
-- tipos de dispersiones (4.12 y 4.14);
-- unidades físicas de concentración (4.1 y 4.3).
-
-Las cuatro fusiones pagan los cuatro temas nuevos.
+**5. 8.° se aligera con seis fusiones (acciones 10 a 15).** Cada una une dos temas que repiten el mismo contenido:
+- propiedades coligativas;
+- número de Avogadro;
+- tipos de dispersiones;
+- unidades físicas de concentración;
+- cálculo e interpretación estequiométrica;
+- hábito y estructura cristalina.
 
 ## Distribución por grado
 
 | Grado | Antes | Después | % del ciclo (después) |
 |---|---|---|---|
-| 5.° | 19 | 19 | 28,4 % |
-| 6.° | 10 | 14 | 20,9 % |
-| 7.° | 13 | 13 | 19,4 % |
-| 8.° | 25 | 21 | 31,3 % |
-| **Total** | **67** | **67** | |
+| 5.° | 18 | 18 | 27,3 % |
+| 6.° | 10 | 15 | 22,7 % |
+| 7.° | 13 | 13 | 19,7 % |
+| 8.° | 25 | 20 | 30,3 % |
+| **Total** | **66** | **66** | |
 
-Todos los grados quedan por encima del 15 %. La carga se reparte mejor: 6.° sube y 8.° baja.
+Todos los grados superan el 15 %. 6.° sube y 8.° baja.
 
 ## Prerrequisitos que se ordenan
-Lo comprobó un script de validación. Ya no aparece ningún concepto antes que sus prerrequisitos. Las diez secuencias
-invertidas del archivo de candidatos quedan resueltas:
-- La conservación de la masa (6.°) ya llega antes del balanceo (7.°).
+Lo comprobó un script de validación. Ningún concepto queda antes que sus prerrequisitos y todos los conceptos están en el
+vocabulario.
+- La conservación de la masa (6.°) llega antes del balanceo (7.°).
+- Las reacciones exotérmicas y endotérmicas (6.°) llegan antes de la combustión (8.°).
 - Los números cuánticos salen de 5.°.
-- En los demás casos, el prerrequisito queda en el **mismo grado**. Al ordenar las unidades hay que respetar este orden:
-  - modelo de partículas → átomo (5.°, unidad 3)
-  - atmósfera → composición del aire (5.°, en el mismo tema)
-  - sustancias puras → fórmulas y moléculas (6.°, al inicio de la unidad 4)
-  - enlace químico (4.1) → enlaces iónico, metálico y covalente (4.2 a 4.4) → fórmulas iónicas (tema movido de 5.°)
-  - modelos moleculares (4.5) → polaridad (4.6) (6.°)
-  - energía de activación → catalizadores (6.°, en el mismo tema)
-  - fuerzas intermoleculares → solvatación (8.°, en el mismo tema)
+
+En los demás casos, el prerrequisito queda en el **mismo grado**. Al ordenar las unidades hay que respetar este orden:
+- modelo de partículas → átomo (5.°)
+- sustancias puras → fórmulas y moléculas (6.°)
+- enlace químico (4.1) → enlaces iónico, metálico y covalente → fórmulas iónicas (6.°)
+- modelos moleculares (4.5) → polaridad (4.6) (6.°)
+- unidad *Calor y temperatura* → reacciones exotérmicas y endotérmicas (6.°)
+- estequiometría (4.7) → combustión y procesos industriales (4.11) (8.°)
 
 ## Decisiones abiertas para el MINED
-1. **Datos que conviene verificar.** Varias secuencias invertidas parecen errores de etiquetado. Puede que no sean vacíos reales:
-   - *Fuerzas intermoleculares* figura en 10.°, pero los temas 4.7 y 4.8 de 6.° ya las trabajan (están etiquetados como Física).
-   - *Geometría molecular* figura en 10.°, pero el tema 4.5 de 6.° la trabaja.
-   - *Sustancias puras* figura en 10.°, pero el tema 5.3 de 8.° la menciona.
-
-   Si se corrige el etiquetado, las acciones 5 y 13 podrían reducirse.
-2. **Modelo de partículas.** Ya se enseña en 6.° (tema 2.1, Física). En lugar del tema nuevo de 5.°, se puede mover ese
-   tema a 5.° en coordinación con Física. En ese caso, la fusión 9 queda libre.
-3. **Composición del aire.** El archivo la ubica en 7.° pero sin tema asociado, y la atmósfera no tiene grado en El Salvador.
-   Hay que coordinar con Ciencias de la Tierra para no duplicarla.
-4. **Configuraciones electrónicas (3.11, 5.°).** Si se quitan los números cuánticos, conviene limitar también las
-   configuraciones por subniveles al modelo de capas.
-5. **Polaridad molecular en 6.°.** Con momento dipolar es exigente para la edad. ¿Se limita a la polaridad de enlace?
-6. **Enlace químico en Bachillerato.** Al introducirse en 6.°, el tema 5.1 de 10.° (curva de energía potencial)
-   debe profundizar y no repetir. Lo mismo vale para las sustancias puras (1.13 de 10.°).
+1. **Datos que conviene verificar.** Algunos conceptos aparecen en 10.° aunque ya se trabajan en el ciclo:
+   - *Calor como energía en tránsito*: la unidad 2 de 6.°, de Física, ya lo trabaja.
+   - *Geometría molecular*: el tema 4.5 de 6.° ya la trabaja.
+   - *Procesos de la industria química*: el tema 4.11 de 8.° ya los trabaja; el archivo los ubica en 11.°.
+2. **Modelo de partículas.** Puede ir en 5.° como tema nuevo o adelantando el tema 2.1 de 6.° de Física. La segunda
+   opción libera la fusión 10.
+3. **Composición del aire.** Hay que coordinar con Ciencias de la Tierra para no duplicarla.
+4. **Configuraciones electrónicas (3.11, 5.°).** Conviene limitarlas al modelo de capas.
+5. **Polaridad molecular en 6.°.** Con momento dipolar es exigente. ¿Se limita a la polaridad de enlace?
+6. **Bachillerato.** Varios temas se repetirían en 10.° y 11.°, que deberían profundizarlos:
+   - enlace químico (G10 5.1);
+   - sustancias puras (G10 1.13);
+   - conservación de la masa (G10 2.1);
+   - combustión.

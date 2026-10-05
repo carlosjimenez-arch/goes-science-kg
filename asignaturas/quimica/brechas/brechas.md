@@ -15,27 +15,37 @@
 
 ## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto
 
-Se compara el primer grado de cada concepto en El Salvador con la mediana de Uruguay, Colombia y Singapur (conceptos que trabajan al menos dos países: 21 de 139). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
+Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 34 de 139). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
 
 ### Llega 2 o más grados tarde
 
-| Concepto | SV | Mediana países | Países | Oportunidad |
-|---|---|---|---|---|
-| Sustancias puras: elementos y compuestos | 10.° | 5.5 | CO 6, UY 5 | +4.5 |
-| Enlace químico | 10.° | 7.5 | CO 6, UY 9 | +2.5 |
-| Composición del aire y contaminantes atmosféricos | 7.° | 5 | CO 4, SG 5, UY 5 | +2 |
+La columna «Alto desempeño» es la mediana solo de los países entre los 10 primeros de TIMSS 2023 Ciencias (con datos en el grafo: AU, ENG, SG; ver `config/referentes.yaml`).
+
+| Concepto | SV | Mediana países | Alto desempeño | Países | Oportunidad |
+|---|---|---|---|---|---|
+| Reacciones exotérmicas y endotérmicas | 10.° | 6.5 | 6.5 | AU 7.0, ENG 6.0 | +3.5 |
+| Teoría cinética de los gases | 10.° | 7.25 | 6 | CO 8.5, ENG 6.0 | +2.75 |
+| Enlace químico | 10.° | 7.75 | — | CO 6.5, UY 9.0 | +2.25 |
+| Composición del aire y contaminantes atmosféricos | 7.° | 5 | 5 | CO 4.5, SG 5.0, UY 5.0 | +2 |
+| Conservación de la masa | 10.° | 8 | 7 | AU 8.0, CO 8.0, ENG 6.0, UY 9.0 | +2 |
+| Sustancias puras: elementos y compuestos | 8.° | 6 | 6 | AU 6.0, CO 6.0, ENG 6.0, UY 5.0 | +2 |
 
 ### Llega 2 o más grados antes
 
 | Concepto | SV | Mediana países | Oportunidad |
 |---|---|---|---|
-| Soluto, disolvente y concentración | 3.° | 8.5 | -5.5 |
-| Propiedades físicas y químicas | 2.° | 7 | -5 |
-| Mezclas homogéneas y heterogéneas | 2.° | 5 | -3 |
+| Soluto, disolvente y concentración | 3.° | 8.75 | -5.75 |
+| Disolución y rapidez de disolución | 3.° | 7.5 | -4.5 |
+| Configuración electrónica | 5.° | 9 | -4 |
+| Mezclas homogéneas y heterogéneas | 2.° | 6 | -4 |
+| Propiedades físicas y químicas | 2.° | 6 | -4 |
+| Propiedades singulares del agua | 3.° | 6 | -3 |
+| Reacción química y sus evidencias | 2.° | 5 | -3 |
+| Propiedades periódicas | 5.° | 7.75 | -2.75 |
+| Compuestos inorgánicos: funciones y nomenclatura | 5.° | 7.5 | -2.5 |
+| Densidad y flotación | 2.° | 4.5 | -2.5 |
 | Métodos físicos de separación de mezclas | 2.° | 4.5 | -2.5 |
-| Propiedades periódicas | 5.° | 7.5 | -2.5 |
-| Átomo y partículas subatómicas | 5.° | 7.5 | -2.5 |
-| Propiedades singulares del agua | 3.° | 5 | -2 |
+| Átomo y partículas subatómicas | 5.° | 7.25 | -2.25 |
 
 ### Lo trabajan los países y El Salvador nunca
 
@@ -45,24 +55,20 @@ Ninguno.
 
 | Concepto | Grado | Necesita | Grado del prerrequisito | Confianza |
 |---|---|---|---|---|
-| Propiedades singulares del agua | 3.° | Fuerzas intermoleculares | 10.° | alta |
 | Enlace iónico | 5.° | Enlace químico | 10.° | alta |
-| Moléculas y fórmulas químicas | 5.° | Sustancias puras: elementos y compuestos | 10.° | alta |
 | Números cuánticos | 5.° | Modelo mecanocuántico y orbitales atómicos | 10.° | alta |
-| Soluto, disolvente y concentración | 3.° | Disolución y rapidez de disolución | 8.° | alta |
 | Catalizadores | 6.° | Energía de activación y perfil energético | 10.° | alta |
 | Enlace covalente | 6.° | Enlace químico | 10.° | alta |
 | Enlace metálico | 6.° | Enlace químico | 10.° | alta |
-| Polaridad molecular | 6.° | Geometría molecular (RPECV) | 10.° | alta |
 | Ecuación química y su balanceo | 7.° | Conservación de la masa | 10.° | alta |
-| Proceso de disolución y solvatación | 8.° | Fuerzas intermoleculares | 10.° | alta |
+| Moléculas y fórmulas químicas | 5.° | Sustancias puras: elementos y compuestos | 8.° | alta |
+| Propiedades singulares del agua | 3.° | Fuerzas intermoleculares | 6.° | alta |
 | Agentes oxidantes y reductores | 10.° | Oxidación y reducción | 11.° | alta |
 | Electrólisis y celdas electrolíticas | 10.° | Oxidación y reducción | 11.° | alta |
 | Isomería estructural | 10.° | Hidrocarburos: alcanos, alquenos y alquinos | 11.° | alta |
 | Reacción química y sus evidencias | 2.° | Cambios físicos y químicos | 3.° | alta |
 | Átomo y partículas subatómicas | 5.° | Modelo de partículas de la materia | 6.° | alta |
-| Composición del aire y contaminantes atmosféricos | 7.° | La atmósfera y su composición | nunca | media |
-| Minerales: composición y estructura cristalina | 8.° | Sustancias puras: elementos y compuestos | 10.° | media |
+| Combustibles fósiles y biocombustibles | 7.° | Hidrocarburos: alcanos, alquenos y alquinos | 11.° | media |
 | Aminoácidos y estructura de las proteínas | 10.° | Polimerización por adición y por condensación | 11.° | media |
 | Iones | 5.° | Electrones de valencia y regla del octeto | 6.° | media |
 | Modelo mecanocuántico y orbitales atómicos | 10.° | Dualidad onda-partícula | 11.° | media |

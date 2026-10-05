@@ -47,12 +47,15 @@ Estado y motivo de cada uno en `config/referentes.yaml`.
 | Colombia | alineado (272) | — |
 | Singapur | alineado (99, solo primaria) | Lower Secondary Science (el MOE retiró el enlace) |
 | Chile | pendiente | Bases Curriculares (el sitio bloquea la descarga automática: bajar a mano) |
-| Japón, Corea, Estonia, Inglaterra, Australia, Finlandia, Canadá-Ontario | pendientes | Todo |
+| **Inglaterra** | alineado (270; KS1–KS3) — TIMSS 2023 Ciencias: 5.° en 4.° y 8.° grado | KS4 (opcional) |
+| **Australia** | alineado (152; F–10 v9) — TIMSS 2023 Ciencias: 8.° en 4.° grado, 13.° en 8.° | — |
+| Japón, Corea, Finlandia | pendientes (top 10 TIMSS 2023) | Currículo oficial en inglés: MEXT solo tiene traducción de 2008; Corea y Finlandia por buscar |
+| Estonia, Canadá-Ontario | pendientes | Ontario publica en HTML (dcp.edu.gov.on.ca) |
 
 ### Criterios para elegir países de alto desempeño
 1. Ubicarse en el grupo superior de **TIMSS 2023 Ciencias** (4.° u 8.°) o de **PISA 2022 Ciencias**.
-   **Hay que verificarlo** contra los informes internacionales oficiales (IEA y OCDE) y citar
-   documento y página en `config/referentes.yaml`. No usar cifras de memoria.
+   ✅ TIMSS 2023 verificado con los anexos oficiales 2.1.1 y 2.2.1 (IEA; documentos `timss23_res_g4`/`g8`), registrado
+   en `config/referentes.yaml`. Falta PISA 2022 (OCDE).
 2. Tener el currículo oficial **público y descargable**, idealmente en español o inglés y con
    licencia que permita el uso.
 3. Que esté **organizado por grado o por etapa corta**, para poder ubicar el primer grado en que

@@ -6,6 +6,7 @@ Una carpeta por disciplina. En todas se usa la misma estructura:
 |---|---|---|
 | `README.md` | Equipo | Alcance, marcos, hallazgos y decisiones abiertas |
 | `ficha.md` | `gskg fichas` | Temas por grado, cobertura de marcos y países (no editar) |
+| `progresion.html` | `gskg progresion` | Mapa de progresión: cada concepto con su primer grado en El Salvador y en cada país, ordenado por el grafo de prerrequisitos |
 | `brechas/` | `gskg brechas` | Cobertura por ciclo, oportunidad por concepto frente a países y errores de secuencia |
 | `propuesta/` | `gskg propuesta candidatos` + especialista + `gskg propuesta excel` | Borrador de malla por ciclo: candidatos, propuesta (JSON + Excel) e informe |
 | `revision/` | Skill `revision-humana` | CSV para el equipo de Ciencias del MINED |

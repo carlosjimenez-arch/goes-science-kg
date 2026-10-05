@@ -5,9 +5,15 @@
 #   descargado → el documento está en data/fuentes/externos/ pero falta extraer/alinear
 #   pendiente  → hay que conseguir el documento (correr la skill fuentes-descargar)
 #
-# IMPORTANTE: los datos de desempeño (posiciones en TIMSS 2023 / PISA 2022) que justifican
-# cada país se deben VERIFICAR y citar (informe + página) al completar la fase 1 del plan.
-# Aquí solo se registra la intención; no son cifras verificadas.
+# Desempeño verificado (2026-10-05) con los anexos oficiales de TIMSS 2023 (IEA), Ciencias:
+#   documentos timss23_res_g4 (Exhibit 2.1.1, 4.° grado) y timss23_res_g8 (Exhibit 2.2.1, 8.° grado).
+#   `timss2023_ciencias` = puesto entre los participantes (los sistemas de referencia como Ontario se listan aparte)
+#   y puntaje promedio. Falta PISA 2022 (Vol. I, OCDE) para completar la evidencia.
+#
+# Equivalencia de grados por EDAD DE INGRESO (El Salvador: 1.° grado a los 7 años):
+#   Inglaterra Year N → SV grado N−2, mínimo 2 (Years 1–4 = 2.°, Year 5 = 3.°, Year 6 = 4.°; KS3 Years 7–9 = 5.°–7.°)
+#   Australia Year N → SV grado N−1 (Foundation–Year 3 = 2.°; Year 7–10 = 6.°–9.°)
+#   Singapur P N → SV N; Uruguay y Colombia: mismo número de grado (1.° de Colombia se cuenta como 2.°).
 
 paises:
   UY:
@@ -26,6 +32,7 @@ paises:
   SG:
     nombre: Singapur
     motivo: Alto desempeño sostenido en TIMSS y PISA Ciencias.
+    timss2023_ciencias: {g4: {puesto: 1, puntaje: 607}, g8: {puesto: 1, puntaje: 606}}
     idioma: en
     estado: alineado
     documentos: [sg_prim, sg_lowsec]
@@ -34,6 +41,7 @@ paises:
   CL:
     nombre: Chile
     motivo: Referente regional con Objetivos de Aprendizaje por grado.
+    timss2023_ciencias: {g4: {puesto: 39, puntaje: 479}, g8: {puesto: 28, puntaje: 455}}
     idioma: es
     estado: pendiente
     documentos: [cl_bc16, cl_bc72m]
@@ -41,11 +49,13 @@ paises:
   JP:
     nombre: Japón
     motivo: Alto desempeño en TIMSS y PISA Ciencias; Course of Study con traducción oficial al inglés.
+    timss2023_ciencias: {g4: {puesto: 6, puntaje: 555}, g8: {puesto: 3, puntaje: 557}}
     idioma: en
     estado: pendiente
   KR:
     nombre: Corea del Sur
     motivo: Alto desempeño en TIMSS y PISA Ciencias.
+    timss2023_ciencias: {g4: {puesto: 2, puntaje: 583}, g8: {puesto: 4, puntaje: 545}}
     idioma: en
     estado: pendiente
   EE:
@@ -55,23 +65,28 @@ paises:
     estado: pendiente
   ENG:
     nombre: Inglaterra
-    motivo: Alto desempeño en TIMSS; National Curriculum de Ciencias por etapa (licencia abierta OGL).
+    documentos: [eng_ks12, eng_ks3]
+    motivo: 5.° lugar en Ciencias de TIMSS 2023 en 4.° y 8.° grado; National Curriculum por año (licencia OGL).
+    timss2023_ciencias: {g4: {puesto: 5, puntaje: 556}, g8: {puesto: 5, puntaje: 531}}
     idioma: en
-    estado: pendiente
+    estado: alineado
   AU:
     nombre: Australia
     motivo: Australian Curriculum (licencia CC BY 4.0). Senior Secondary Biology/Chemistry v8.4 ya es el pivote de 10.°–11.°; falta F–10 Science v9 por grado.
+    timss2023_ciencias: {g4: {puesto: 8, puntaje: 550}, g8: {puesto: 13, puntaje: 520}}
     idioma: en
-    estado: pendiente
-    documentos: [au_ss_bio_u13, au_ss_bio_u4, au_ss_chem_u13, au_ss_chem_u4]
+    estado: alineado
+    documentos: [au_f6_v9, au_710_v9, au_ss_bio_u13, au_ss_bio_u4, au_ss_chem_u13, au_ss_chem_u4]
   FI:
     nombre: Finlandia
     motivo: Referente europeo histórico de PISA; currículo básico nacional.
+    timss2023_ciencias: {g4: {puesto: 10, puntaje: 542}, g8: {puesto: 6, puntaje: 531}}
     idioma: en
     estado: pendiente
   CA-ON:
     nombre: Canadá (Ontario)
     motivo: Alto desempeño en PISA Ciencias; Science and Technology 1–8 (2022) por grado.
+    timss2023_ciencias: {g4: {sistema_de_referencia: true, puntaje: 525}}
     idioma: en
     estado: pendiente
 

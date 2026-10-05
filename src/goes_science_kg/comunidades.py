@@ -22,6 +22,12 @@ from goes_science_kg.config import ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 SEMILLA = 42
+UMBRAL_JACCARD = 0.75  # un resumen sigue vigente si el bloque conserva ≥75 % de sus conceptos
+
+
+def _jaccard(a, b) -> float:
+    a, b = set(a), set(b)
+    return len(a & b) / max(1, len(a | b))
 RESUMENES = "data/interim/comunidades/resumenes.json"
 
 
@@ -33,21 +39,36 @@ def resumenes() -> dict[str, dict]:
 
 
 def consolidar_resumenes() -> dict:
-    """Une salida_*.json (subagentes) con los conceptos actuales de cada comunidad → resumenes.json."""
+    """Une resúmenes vigentes y salidas nuevas de subagentes → resumenes.json.
+
+    Un resumen solo se acepta si los conceptos del bloque para el que se escribió (lote_*.json, por nombre) son
+    exactamente los del bloque actual con ese id; así un id reutilizado tras reconstruir no hereda un texto ajeno.
+    """
     actuales = {}
     for p in sorted(ruta("data/grafo/grados").glob("G*/comunidades.json")):
         for c in json.loads(p.read_text(encoding="utf-8")):
             actuales[c["id"]] = c
-    filas = []
-    for p in sorted(ruta("data/interim/comunidades").glob("salida_*.json")):
+    nombres = {}
+    for p in ruta("data/grafo/grados").glob("G*/nodos.jsonl"):
+        for linea in p.read_text(encoding="utf-8").splitlines():
+            n = json.loads(linea)
+            nombres[n["id"]] = n["etiqueta"]
+    vigentes = {i: r for i, r in resumenes().items()
+                if i in actuales and _jaccard(r["conceptos"], actuales[i]["conceptos"]) >= UMBRAL_JACCARD}
+    d = ruta("data/interim/comunidades")
+    for p in sorted(d.glob("salida_*.json")):
+        lote = {b["id"]: b for b in json.loads((d / p.name.replace("salida_", "lote_", 1)).read_text(encoding="utf-8"))}
         for r in json.loads(p.read_text(encoding="utf-8")):
-            if r["id"] in actuales:
-                filas.append({"id": r["id"], "conceptos": sorted(actuales[r["id"]]["conceptos"]),
-                              "titulo": r["titulo"], "resumen_ia": r["resumen"], "version": "comunidades-v1"})
-    ruta(RESUMENES).write_text(json.dumps(sorted(filas, key=lambda f: f["id"]), ensure_ascii=False, indent=1) + "\n",
-                               encoding="utf-8")
+            c = actuales.get(r["id"])
+            actuales_nombres = [nombres.get(x, x) for x in c["conceptos"]] if c else []
+            if c and _jaccard(lote[r["id"]]["conceptos"], actuales_nombres) >= UMBRAL_JACCARD:
+                vigentes[r["id"]] = {"id": r["id"], "conceptos": sorted(c["conceptos"]), "titulo": r["titulo"],
+                                     "resumen_ia": r["resumen"], "version": "comunidades-v1"}
+    ruta(RESUMENES).write_text(json.dumps(sorted(vigentes.values(), key=lambda f: f["id"]), ensure_ascii=False,
+                                          indent=1) + "\n", encoding="utf-8")
     resumenes.cache_clear()
-    return {"resumenes": len(filas)}
+    sin = [i for i, c in actuales.items() if len(c["conceptos"]) >= 2 and i not in vigentes]
+    return {"resumenes_vigentes": len(vigentes), "bloques_sin_resumen": len(sin)}
 
 
 def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[dict]:
@@ -77,11 +98,15 @@ def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[
         centrales = sorted(miembros, key=lambda c: (-sub.degree(c, weight="weight"), c))
         temas_c = sorted(t for t, cons in conceptos_de_tema.items() if set(cons) & miembros)
         unidades = Counter(por_id[t].props.get("unidad") for t in temas_c)
-        asignaturas = Counter(por_id[c].asignatura for c in miembros)
-        objetivos = Counter(o for t in temas_c for o in cubre_de_tema[t])
+        asignaturas = Counter(por_id[c].asignatura for c in sorted(miembros))
+        objetivos = Counter(o for t in temas_c for o in sorted(cubre_de_tema[t]))
+
+        def top(cnt: Counter, n: int) -> list:  # empates resueltos por clave: salida independiente del hash
+            return [k for k, _ in sorted(cnt.items(), key=lambda x: (-x[1], str(x[0])))[:n]]
+
         cid = f"COM:G{g:02d}-{i + 1:02d}"
         r = resumenes().get(cid)
-        vigente = r is not None and r["conceptos"] == sorted(miembros)
+        vigente = r is not None and _jaccard(r["conceptos"], miembros) >= UMBRAL_JACCARD
         resultado.append({
             "id": cid,
             "titulo": r["titulo"] if vigente else None,
@@ -90,11 +115,11 @@ def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[
             "nombre": " · ".join(por_id[c].etiqueta for c in centrales[:3]),
             "conceptos": centrales,
             "temas": temas_c,
-            "asignaturas": dict(asignaturas.most_common()),
-            "unidades": [u for u, _ in unidades.most_common(5)],
-            "objetivos_marco": [o.removeprefix("OBJ:") for o, _ in objetivos.most_common(8)],
+            "asignaturas": {k: asignaturas[k] for k in top(asignaturas, 99)},
+            "unidades": top(unidades, 5),
+            "objetivos_marco": [o.removeprefix("OBJ:") for o in top(objetivos, 8)],
             "resumen": (f"{len(miembros)} conceptos y {len(temas_c)} temas; centro en "
                         + ", ".join(por_id[c].etiqueta for c in centrales[:5])
-                        + ". Unidades: " + "; ".join(u for u, _ in unidades.most_common(3) if u) + "."),
+                        + ". Unidades: " + "; ".join(u for u in top(unidades, 3) if u) + "."),
         })
     return resultado

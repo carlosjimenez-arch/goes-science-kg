@@ -52,7 +52,7 @@ Exportar: `gskg grafo exportar` (GraphML). Para Neo4j, agregar `exportar --forma
 (CSV de nodos y relaciones) en la fase 2 si hace falta.
 
 ## Estado v1 (2026-10-05)
-2.854 nodos y 15.479 aristas: 1.260 temas, 498 conceptos, 30 prácticas, 493 objetivos de marco, 506 objetivos de
+3.286 nodos y 17.753 aristas: 1.260 temas, 498 conceptos, 30 prácticas, 493 objetivos de marco, 928 objetivos de
 países; 4.789 TRABAJA (temas, objetivos de marco y de países → conceptos y prácticas), 797 PRERREQUISITO_DE,
 2.027 CUBRE. `EQUIVALE_A` también une conceptos equivalentes entre asignaturas (método `revision`).
 Sin temas por asignar; 501 aristas de confianza baja pendientes de revisión humana.

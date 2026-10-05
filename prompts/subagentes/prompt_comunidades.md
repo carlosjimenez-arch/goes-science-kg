@@ -1,0 +1,4 @@
+Repo: <repo>. You are a science-education specialist writing for El Salvador's MINED curriculum team (Spanish, clear, non-technical).
+Input: data/interim/comunidades/lote_LOTE.json — "thematic blocks" (communities of concepts detected in each grade's knowledge graph), each with id, grado, conceptos (names), temas (El Salvador topic statements), unidades, asignaturas.
+For EACH block write: {"id": "...", "titulo": "short pedagogical title, ≤8 words", "resumen": "2–3 sentences: what students learn in this block, how the concepts connect, and one observation useful for curriculum design (e.g., coherence, mixing of disciplines, depth). ≤70 words."}
+Base everything only on the given concepts/temas; do not invent content. Write data/interim/comunidades/salida_LOTE.json (JSON array, one object per block, every id once). Validate with a script (ids, word limits). Reply only with the number of blocks written.

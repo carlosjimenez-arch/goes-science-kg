@@ -16,72 +16,82 @@
 
 ## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto
 
-Se compara el primer grado de cada concepto en El Salvador con la mediana de Uruguay, Colombia y Singapur (conceptos que trabajan al menos dos países: 25 de 79). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
+Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 42 de 79). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
 
 ### Llega 2 o más grados tarde
 
-| Concepto | SV | Mediana países | Países | Oportunidad |
-|---|---|---|---|---|
-| Corrientes oceánicas superficiales y profundas | 9.° | 4.5 | CO 4, UY 5 | +4.5 |
-| Mareas | 9.° | 4.5 | CO 4, UY 5 | +4.5 |
-| Ciclo del agua | 7.° | 4 | SG 5, UY 3 | +3 |
-| Calidad del aire y contaminación atmosférica | 7.° | 5 | CO 4, SG 5, UY 5 | +2 |
+La columna «Alto desempeño» es la mediana solo de los países entre los 10 primeros de TIMSS 2023 Ciencias (con datos en el grafo: AU, ENG, SG; ver `config/referentes.yaml`).
+
+| Concepto | SV | Mediana países | Alto desempeño | Países | Oportunidad |
+|---|---|---|---|---|---|
+| Tiempo atmosférico y sus variables | 7.° | 2 | 2 | AU 2, CO 8.5, ENG 2 | +5 |
+| Corrientes oceánicas superficiales y profundas | 9.° | 4.75 | — | CO 4.5, UY 5.0 | +4.25 |
+| Ciclo del agua | 7.° | 3 | 3 | AU 3.0, ENG 2, SG 5.0, UY 3.0 | +4 |
+| Minerales y sus propiedades | 8.° | 4 | 4 | AU 2, ENG 6.0 | +4 |
+| Ciclo del carbono en los sistemas terrestres | 10.° | 6.5 | 7 | AU 8.0, CO 6.5, ENG 6.0 | +3.5 |
+| Fósiles y su formación | 5.° | 2 | 2 | CO 2, ENG 2, UY 6.0 | +3 |
+| Suelo: formación, componentes y tipos | 5.° | 2.5 | 2 | AU 2, CO 6.5, ENG 2, UY 3.0 | +2.5 |
+| Calidad del aire y contaminación atmosférica | 7.° | 5 | 5 | CO 4.5, SG 5.0, UY 5.0 | +2 |
 
 ### Llega 2 o más grados antes
 
 | Concepto | SV | Mediana países | Oportunidad |
 |---|---|---|---|
-| Fuentes de energía renovables y no renovables | 2.° | 6 | -4 |
-| Sismos y fallas geológicas | 2.° | 6 | -4 |
-| Exploración espacial | 4.° | 6 | -2 |
-| Hidrosfera: distribución del agua dulce y salada | 3.° | 5 | -2 |
+| Conservación de recursos, residuos y sostenibilidad | 2.° | 6.5 | -4.5 |
+| Fuentes de energía renovables y no renovables | 2.° | 6.25 | -4.25 |
+| Sismos y fallas geológicas | 2.° | 6.25 | -4.25 |
+| Ciclo de las rocas | 3.° | 6.5 | -3.5 |
+| Recursos naturales renovables y no renovables | 2.° | 5.25 | -3.25 |
+| Inclinación del eje terrestre y estaciones astronómicas | 2.° | 4.75 | -2.75 |
+| Capas internas de la Tierra | 3.° | 5.5 | -2.5 |
+| Exploración espacial | 4.° | 6.25 | -2.25 |
+| Calentamiento global | 7.° | 9 | -2 |
+| Cambio climático: causas y efectos | 7.° | 9 | -2 |
+| El Sol como estrella | 4.° | 6 | -2 |
+| La atmósfera y su composición | 3.° | 5 | -2 |
 | Tiempo geológico y datación | 5.° | 7 | -2 |
 
 ### Lo trabajan los países y El Salvador nunca
 
-- La atmósfera y su composición (CO 4, SG 5, UY 5)
+- Sistemas terrestres y sus interacciones (AU 9.0, CO 4.5)
 
 ## 3. Secuencia: prerrequisitos que llegan después del concepto que los necesita
 
 | Concepto | Grado | Necesita | Grado del prerrequisito | Confianza |
 |---|---|---|---|---|
-| Capas de la atmósfera y variación con la altitud | 3.° | La atmósfera y su composición | nunca | alta |
+| Ciclo del carbono en los sistemas terrestres | 10.° | Sistemas terrestres y sus interacciones | nunca | alta |
 | Energía geotérmica | 2.° | Convección del manto y energía interna de la Tierra | nunca | alta |
 | Formación del sistema solar | 5.° | Gravedad y órbitas | nunca | alta |
-| Mareas | 9.° | Gravedad y órbitas | nunca | alta |
+| Mareas | 4.° | Gravedad y órbitas | nunca | alta |
 | Tectónica de placas | 5.° | Convección del manto y energía interna de la Tierra | nunca | alta |
 | Ciclo de vida de las estrellas | 5.° | Fisión y fusión nuclear | 11.° | alta |
-| Conservación de recursos, residuos y sostenibilidad | 2.° | Recursos naturales renovables y no renovables | 7.° | alta |
-| Fuentes de energía renovables y no renovables | 2.° | Recursos naturales renovables y no renovables | 7.° | alta |
+| Recursos minerales y minería | 3.° | Minerales y sus propiedades | 8.° | alta |
 | Aguas subterráneas y acuíferos | 3.° | Ciclo del agua | 7.° | alta |
 | Cuencas hidrográficas y aguas superficiales | 3.° | Ciclo del agua | 7.° | alta |
 | Ciclones tropicales y tormentas | 4.° | Tiempo atmosférico y sus variables | 7.° | alta |
 | Clima: diferencia con el tiempo, tipos y factores | 4.° | Tiempo atmosférico y sus variables | 7.° | alta |
 | Ondas sísmicas, magnitud e intensidad | 5.° | Ondas mecánicas transversales y longitudinales | 8.° | alta |
 | Ciclo de las rocas | 3.° | Erosión, transporte y sedimentación | 5.° | alta |
+| Acidificación del océano | 9.° | Ciclo del carbono en los sistemas terrestres | 10.° | alta |
 | Campo magnético terrestre | 5.° | Imanes y polos magnéticos | 6.° | alta |
 | Uso del suelo y su degradación | 4.° | Erosión, transporte y sedimentación | 5.° | alta |
 | Uso del suelo y su degradación | 4.° | Suelo: formación, componentes y tipos | 5.° | alta |
 | Calidad y tratamiento del agua | 3.° | Abastecimiento y conservación del agua dulce | nunca | media |
-| Cambio climático: causas y efectos | 7.° | Ciclo del carbono en los sistemas terrestres | nunca | media |
 | Ciclo de vida de las estrellas | 5.° | Gravedad y órbitas | nunca | media |
 | Exploración espacial | 4.° | Gravedad y órbitas | nunca | media |
-| Tiempo atmosférico y sus variables | 7.° | La atmósfera y su composición | nunca | media |
-| Capas de la atmósfera y variación con la altitud | 3.° | Presión hidrostática y atmosférica | 9.° | media |
 | Origen del universo: el Big Bang | 5.° | Efecto Doppler | 11.° | media |
 | Tiempo geológico y datación | 5.° | Desintegración radiactiva | 11.° | media |
 | Ciclones tropicales y tormentas | 4.° | Calentamiento desigual de la Tierra y circulación atmosférica | 9.° | media |
-| Ciclones tropicales y tormentas | 4.° | Presión hidrostática y atmosférica | 9.° | media |
 | Clima: diferencia con el tiempo, tipos y factores | 4.° | Calentamiento desigual de la Tierra y circulación atmosférica | 9.° | media |
 | Patrones estacionales: época seca y lluviosa | 2.° | Tiempo atmosférico y sus variables | 7.° | media |
 | Tipos de rocas: ígneas, sedimentarias y metamórficas | 3.° | Minerales y sus propiedades | 8.° | media |
-| Combustibles fósiles: formación y uso | 7.° | Combustión | 11.° | media |
-| Impacto de las actividades humanas en los recursos | 5.° | Recursos minerales y minería | 8.° | media |
+| Cambio climático: causas y efectos | 7.° | Ciclo del carbono en los sistemas terrestres | 10.° | media |
+| Capas de la atmósfera y variación con la altitud | 3.° | Presión hidrostática y atmosférica | 6.° | media |
 | Sismos y fallas geológicas | 2.° | Límites de placas: convergentes, divergentes y transformantes | 5.° | media |
 | Aguas subterráneas y acuíferos | 3.° | Suelo: formación, componentes y tipos | 5.° | media |
 | Amenazas naturales geológicas e hidrometeorológicas | 2.° | Ciclones tropicales y tormentas | 4.° | media |
 | Ciclo de las rocas | 3.° | Origen del magma y vulcanismo | 5.° | media |
-| Minerales y sus propiedades | 8.° | Sustancias puras: elementos y compuestos | 10.° | media |
+| Ciclones tropicales y tormentas | 4.° | Presión hidrostática y atmosférica | 6.° | media |
 | Volcanes: estructura, tipos y productos | 3.° | Origen del magma y vulcanismo | 5.° | media |
 
 

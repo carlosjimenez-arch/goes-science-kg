@@ -40,8 +40,8 @@ def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
     for n in nodos:
         if n.tipo == TipoNodo.TEMA and not (n.fuente and n.fuente.hoja and n.fuente.fila):
             r.errores.append(f"{n.id}: tema sin hoja/fila de la malla")
-        if n.tipo in (TipoNodo.OBJETIVO_PAIS,) and not (n.fuente and n.fuente.pagina):
-            r.errores.append(f"{n.id}: objetivo de país sin página")
+        if n.tipo == TipoNodo.OBJETIVO_PAIS and not (n.fuente and (n.fuente.pagina or n.fuente.localizador)):
+            r.errores.append(f"{n.id}: objetivo de país sin página ni localizador")
         if (n.tipo == TipoNodo.OBJETIVO_MARCO and n.props.get("marco") in ("T4_27", "T8_27", "PISA25")
                 and not (n.fuente and n.fuente.pagina)):
             r.errores.append(f"{n.id}: objetivo de marco sin página")

@@ -13,7 +13,7 @@ países. El fin es **proponer, por asignatura, una curricularización mejor y co
 
 ## Inicio rápido
 ```bash
-uv sync --extra dev --extra pdf --extra analisis
+uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api
 uv run gskg grafo construir    # arma el grafo en data/grafo/
 uv run gskg grafo validar      # revisa invariantes
 uv run gskg fichas             # genera asignaturas/<x>/ficha.md
@@ -21,21 +21,26 @@ uv run pytest -q
 ```
 
 ## Estado
-**Grafo v1**: 2.854 nodos y 15.479 aristas.
+**Grafo v1**: 3.286 nodos y 17.753 aristas.
 - 1.260 temas de la malla (1.245 en alcance y 15 de tecnología o transversales fuera de alcance).
 - **498 conceptos y 30 prácticas científicas**, con 797 prerrequisitos entre conceptos (un grafo sin ciclos por
   asignatura) y 11 equivalencias entre asignaturas.
 - 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
   (este último es el pivote de Biología y Química de 10.°–11.°).
-- 506 objetivos de Uruguay, Colombia y Singapur, alineados a TIMSS 2027 y etiquetados con conceptos.
+- 928 objetivos de 5 países: Uruguay, Colombia, Singapur, **Inglaterra** y **Australia** (estos tres últimos en el
+  top 10 de Ciencias de TIMSS 2023, verificado con los anexos oficiales), alineados a TIMSS 2027 y etiquetados con
+  conceptos.
 
 **Grafos por grado** (lo que pidió el MINED): [`grados/`](grados/README.md). Cada grado tiene una ficha
 (conceptos nuevos y retomados, bloques temáticos, prerrequisitos que llegan tarde y faltantes frente a otros
 países) y un **visor interactivo** (`grafo.html`).
 
+**Por asignatura**: `asignaturas/<x>/` tiene la ficha, el **mapa de progresión** (`progresion.html`), las brechas
+(md + Excel), las propuestas curriculares en borrador ([resumen](asignaturas/PROPUESTAS.md)) y los CSV de revisión.
+
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
-La recuperación se mide con 40 preguntas: MRR 0,81 y recall@25 0,86 ([resultados](data/evaluacion/resultados.md)).
+API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 52 preguntas: MRR 0,79 y recall@25 0,86 ([resultados](data/evaluacion/resultados.md)).
 
 Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).

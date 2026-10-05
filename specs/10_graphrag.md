@@ -24,11 +24,12 @@ consulta ──► BM25 en español (nodos con texto) ──► semillas (filtra
   `uv sync --extra rag` y credenciales de Anthropic (`ANTHROPIC_API_KEY` o `ant auth login`).
 
 ## Próximos pasos
-1. **Resúmenes de comunidades** (el «Global search» de GraphRAG): agrupar los conceptos de cada grado y asignatura
+1. ✅ **Resúmenes de comunidades** (hecho: 95 bloques con resumen de especialista, `--global`; el «Global search» de GraphRAG): agrupar los conceptos de cada grado y asignatura
    con Louvain (`networkx.community.louvain_communities`) sobre el grafo concepto-concepto (co-ocurrencia en temas
    + prerrequisitos), y resumir cada comunidad con Claude en lotes. Sirve para preguntas globales
    («¿cuáles son los grandes bloques de 8.°?»).
 2. **Búsqueda híbrida**: sumar embeddings densos al BM25 si la evaluación muestra fallas de vocabulario (sinónimos).
-3. **Evaluación**: un conjunto de 30 a 50 preguntas con respuesta de referencia escrita por el equipo de Ciencias,
+3. ✅ (versión «plata», 52 preguntas, `data/evaluacion/`) **Evaluación**: un conjunto de 30 a 50 preguntas con respuesta de referencia escrita por el equipo de Ciencias,
    con recall@k de la recuperación y fidelidad de las citas de la respuesta.
-4. **API de lectura** (FastAPI), como en `goes-math-kg`, para un panel docente.
+4. ✅ **API de lectura** (FastAPI; `gskg servir`): `/api/grados`, `/api/grados/{g}`, `/api/conceptos/{asig}/{slug}`,
+   `/api/propuestas`, `/api/rag`, `/api/rag/global`. Siguiente: un panel docente que la consuma.

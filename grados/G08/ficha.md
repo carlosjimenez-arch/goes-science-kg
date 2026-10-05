@@ -11,29 +11,29 @@
 | Física | 37 |
 | Química | 25 |
 
-- **74 conceptos**: 39 nuevos en este grado y 35 que se retoman de grados anteriores.
+- **74 conceptos**: 35 nuevos en este grado, 39 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: PISA25 22, T8_27 21.
-- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 57.
+- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 70.
 
 ## Conceptos más trabajados
 
 | Concepto | Asignatura | Temas |
 |---|---|---|
 | Tejidos vegetales | Biología | 6 |
-| Trabajo mecánico | Física | 5 |
 | Péndulo simple | Física | 5 |
+| Trabajo mecánico | Física | 5 |
 | Minerales: composición y estructura cristalina | Química | 5 |
+| Transporte en plantas: xilema y floema | Biología | 4 |
 | Conservación de la energía mecánica | Física | 4 |
 | Longitud de onda, frecuencia y rapidez | Física | 4 |
 | Soluto, disolvente y concentración | Química | 4 |
 | Solubilidad y disoluciones saturadas | Química | 4 |
-| Transporte en plantas: xilema y floema | Biología | 4 |
-| Gráficas del movimiento | Física | 3 |
-| Potencia mecánica | Física | 3 |
-| Energía cinética | Física | 3 |
-| Dinámica y energía de rotación | Física | 3 |
-| Ondas mecánicas transversales y longitudinales | Física | 3 |
-| Mol y número de Avogadro | Química | 3 |
+| Diferenciación y especialización celular | Biología | 3 |
+| Fotosíntesis | Biología | 3 |
+| Intercambio de gases en animales | Biología | 3 |
+| Intercambio de gases en plantas | Biología | 3 |
+| Niveles de organización de los seres vivos | Biología | 3 |
+| Osmorregulación y equilibrio hídrico | Biología | 3 |
 
 ## Bloques temáticos del grado
 
@@ -74,12 +74,12 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Identificar y controlar variables | 6 |
 | Medir con instrumentos y unidades | 5 |
 | Usar y transformar representaciones | 5 |
-| Interpretar datos y sacar conclusiones | 3 |
 | Construir explicaciones basadas en evidencia | 3 |
-| Diseñar y evaluar soluciones | 1 |
+| Interpretar datos y sacar conclusiones | 3 |
 | Argumentar con evidencia y razonamiento | 1 |
-| Evaluar implicaciones y tomar decisiones informadas | 1 |
 | Comunicar resultados científicos | 1 |
+| Diseñar y evaluar soluciones | 1 |
+| Evaluar implicaciones y tomar decisiones informadas | 1 |
 
 ## Prerrequisitos que no llegan a tiempo
 
@@ -92,14 +92,11 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Sistema respiratorio | Estructuras del cuerpo animal y su función | ausente | — | media |
 | Enzimas | Proteínas: estructura y función | posterior | 10 | alta |
 | Osmorregulación y equilibrio hídrico | Homeostasis | posterior | 10 | media |
-| Minerales y sus propiedades | Sustancias puras: elementos y compuestos | posterior | 10 | media |
 | Fuerzas mecánicas comunes | Fricción y resistencia del aire | posterior | 10 | alta |
 | Cinemática en dos dimensiones y proyectiles | Caída libre | posterior | 10 | alta |
 | Ondas estacionarias y armónicos | Superposición e interferencia de ondas | posterior | 11 | alta |
-| Minerales: composición y estructura cristalina | Sustancias puras: elementos y compuestos | posterior | 10 | media |
-| Proceso de disolución y solvatación | Fuerzas intermoleculares | posterior | 10 | alta |
 
-Además, 25 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 24 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -107,30 +104,38 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Calentamiento y enfriamiento | 10 | CO 2, SG 4 |
-| Herencia de rasgos | 10 | CO 2, SG 5 |
-| Calor como energía en tránsito | 10 | SG 4, UY 3 |
-| Adaptaciones conductuales | 11 | CO 2, SG 6 |
-| Estructuras del cuerpo animal y su función | nunca | CO 2, SG 4, UY 8 |
-| Reflexión de la luz | 10 | CO 3, SG 4, UY 4 |
-| Corrientes oceánicas superficiales y profundas | 9 | CO 4, UY 5 |
-| Mareas | 9 | CO 4, UY 5 |
-| Conductores y aislantes eléctricos | 11 | CO 4, SG 5 |
-| Equilibrio térmico y ley cero | 9 | SG 4, UY 5 |
-| Ley de gravitación universal | 10 | CO 4, UY 5 |
-| La atmósfera y su composición | nunca | CO 4, SG 5, UY 5 |
-| Gravedad: atracción hacia la Tierra | nunca | SG 6, UY 4 |
-| Papel de los seres vivos en el ciclo del agua | 10 | CO 6, SG 5 |
-| Carga eléctrica y electrización | 9 | CO 6, UY 5 |
-| Sustancias puras: elementos y compuestos | 10 | CO 6, UY 5 |
-| Flujo de energía y pirámides ecológicas | 10 | CO 6, SG 6, UY 6 |
-| Impulso nervioso y sinapsis | 10 | CO 4, UY 8 |
-| Célula animal y célula vegetal | 11 | CO 6, UY 7 |
-| Disipación de energía y eficiencia | 10 | CO 7, UY 6 |
-| Ingeniería genética y ADN recombinante | 11 | CO 8, UY 6 |
-| Conservación de la energía | 10 | CO 8, UY 6 |
-| Ondas electromagnéticas y espectro | 10 | CO 8, UY 6 |
-| Transmisión de patógenos | nunca | CO 6, UY 9 |
-| Enlace químico | 10 | CO 6, UY 9 |
-| Homeostasis | 10 | CO 8, UY 8 |
-| Sistema endocrino y hormonas | 10 | CO 8, UY 8 |
+| Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
+| Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
+| Ventaja mecánica | 9 | CO 4.0, ENG 3.0 |
+| Adaptaciones conductuales | 11 | AU 4.0, CO 2, SG 6.0 |
+| Estructuras del cuerpo animal y su función | nunca | AU 7.0, CO 2, ENG 2, SG 4.0, UY 8.0 |
+| Evidencias de la evolución | 10 | AU 9.0, CO 2, ENG 4.0 |
+| Herencia de rasgos | 10 | CO 2, ENG 4.0, SG 5.0 |
+| Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
+| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, SG 4.0, UY 4.0 |
+| Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
+| Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
+| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, SG 5.0 |
+| Espejos planos e imágenes | 10 | ENG 6.0, UY 4.0 |
+| Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |
+| Refracción de la luz | 10 | AU 4.0, ENG 6.0, UY 5.0 |
+| Lentes delgadas e imágenes | 10 | ENG 6.0, UY 5.0 |
+| Potencia eléctrica y efecto Joule | 9 | CO 5.0, ENG 6.0 |
+| Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, SG 5.0 |
+| Carga eléctrica y electrización | 9 | CO 6.0, ENG 6.0, UY 5.0 |
+| Ondas electromagnéticas y espectro | 10 | CO 8.5, ENG 6.0, UY 6.0 |
+| Impulso nervioso y sinapsis | 10 | CO 4.5, UY 8.0 |
+| Ciclos del carbono y del oxígeno | 10 | AU 8.0, CO 6.5, ENG 6.0 |
+| Ciclo del carbono en los sistemas terrestres | 10 | AU 8.0, CO 6.5, ENG 6.0 |
+| Reacciones exotérmicas y endotérmicas | 10 | AU 7.0, ENG 6.0 |
+| Célula animal y célula vegetal | 11 | AU 7.0, CO 6.5, ENG 6.0, UY 7.0 |
+| Sistemas terrestres y sus interacciones | nunca | AU 9.0, CO 4.5 |
+| Conservación de la energía | 10 | AU 8.0, CO 8.5, ENG 6.0, UY 6.0 |
+| Ingeniería genética y ADN recombinante | 11 | CO 8.5, UY 6.0 |
+| Gas ideal y teoría cinética | 10 | CO 8.5, ENG 6.0 |
+| Teoría cinética de los gases | 10 | CO 8.5, ENG 6.0 |
+| Transmisión de patógenos | nunca | CO 6.5, UY 9.0 |
+| Enlace químico | 10 | CO 6.5, UY 9.0 |
+| Homeostasis | 10 | CO 8.0, UY 8.0 |
+| Sistema endocrino y hormonas | 10 | AU 8.0, CO 8.0, UY 8.0 |
+| Conservación de la masa | 10 | AU 8.0, CO 8.0, ENG 6.0, UY 9.0 |

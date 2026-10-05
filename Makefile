@@ -1,4 +1,4 @@
-.PHONY: instalar temas grafo validar fichas exportar pruebas lint grados evaluar brechas todo
+.PHONY: instalar temas grafo validar fichas exportar pruebas lint grados evaluar brechas todo progresion
 
 instalar:
 	uv sync --extra dev --extra pdf --extra analisis
@@ -30,7 +30,10 @@ grados:
 evaluar:
 	uv run gskg evaluar-rag
 
-todo: grafo validar fichas grados brechas pruebas lint
+todo: grafo validar fichas grados brechas progresion pruebas lint
 
 brechas:
 	uv run gskg brechas
+
+progresion:
+	uv run gskg progresion

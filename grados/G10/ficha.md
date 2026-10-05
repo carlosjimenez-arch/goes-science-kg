@@ -10,7 +10,7 @@
 | Física | 121 |
 | Química | 112 |
 
-- **227 conceptos**: 90 nuevos en este grado y 137 que se retoman de grados anteriores.
+- **227 conceptos**: 83 nuevos en este grado, 143 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: AUSS 109, TA15 12.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 0.
 
@@ -21,18 +21,18 @@
 | ATP y energía en los sistemas vivos | Biología | 12 |
 | Biomoléculas | Biología | 10 |
 | Química descriptiva de los elementos | Química | 10 |
-| Trabajo mecánico | Física | 8 |
-| Suma de vectores y componentes rectangulares | Física | 8 |
 | Movimiento circular y variables angulares | Física | 8 |
+| Suma de vectores y componentes rectangulares | Física | 8 |
+| Trabajo mecánico | Física | 8 |
 | Glucólisis, ciclo de Krebs y cadena respiratoria | Biología | 7 |
 | Aceleración y fuerza centrípeta | Física | 7 |
 | Propiedades periódicas | Química | 6 |
-| Proteínas: estructura y función | Biología | 5 |
-| Fases de la fotosíntesis y ciclo de Calvin | Biología | 5 |
 | Enzimas | Biología | 5 |
 | Evidencias de la evolución | Biología | 5 |
+| Fases de la fotosíntesis y ciclo de Calvin | Biología | 5 |
+| Proteínas: estructura y función | Biología | 5 |
 | Segunda ley de la termodinámica | Física | 5 |
-| Estequiometría | Química | 5 |
+| Configuración electrónica | Química | 5 |
 
 ## Bloques temáticos del grado
 
@@ -48,7 +48,7 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Energía, velocidad y equilibrio de reacciones | 18 | 23 | Química | 12. Cinética y equilibrio químico; 11. Termodinámica en reacciones químicas; 5. Los enlaces químicos |
 | Luz, óptica y estructura cuántica del átomo | 17 | 17 | Física, Química | 16. Óptica; 3. Modelos atómicos y estructura |
 | Genética mendeliana y evolución | 16 | 14 | Biología | 5. Evolución; 4. Genética moderna |
-| Trabajo, energía y fluidos en movimiento | 15 | 18 | Física, Biología | 7. Trabajo y energía; 11. Mecánica de fluidos; 6. Termodinámica y sistemas vivos |
+| Trabajo, energía y fluidos en movimiento | 15 | 18 | Física, Biología | 7. Trabajo y energía; 11. Mecánica de fluidos; 10. Dinámica de rotación |
 | Enlace covalente y geometría molecular | 10 | 8 | Química | 5. Los enlaces químicos; 1. La química como ciencia: ciclo de indagación; 4. Tabla periódica de los elementos |
 | Sistema nervioso, endocrino y homeostasis | 8 | 9 | Biología | 3. Anatomía y fisiología humana |
 | Sistema inmunitario y salud | 5 | 3 | Biología | 3. Anatomía y fisiología humana |
@@ -79,27 +79,27 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Medir con instrumentos y unidades | 20 |
 | Observar y registrar sistemáticamente | 19 |
 | Desarrollar y usar modelos | 15 |
-| Usar y transformar representaciones | 9 |
 | Construir explicaciones basadas en evidencia | 9 |
+| Usar y transformar representaciones | 9 |
 | Argumentar con evidencia y razonamiento | 8 |
 | Representar datos en tablas y gráficos | 7 |
-| Planificar investigaciones | 5 |
-| Reconocer el carácter provisional del conocimiento | 5 |
 | Evaluar modelos y sus limitaciones | 5 |
+| Reconocer el carácter provisional del conocimiento | 5 |
+| Planificar investigaciones | 5 |
 | Identificar y controlar variables | 4 |
 | Buscar y evaluar fuentes de información | 4 |
 | Evaluar implicaciones y tomar decisiones informadas | 4 |
-| Trabajar con seguridad y ética | 3 |
-| Usar pensamiento computacional y simulaciones | 3 |
 | Valorar la ciencia como empresa colectiva | 3 |
 | Repetir mediciones y estimar el error | 3 |
-| Formular preguntas investigables | 2 |
+| Trabajar con seguridad y ética | 3 |
+| Usar pensamiento computacional y simulaciones | 3 |
 | Evaluar afirmaciones y argumentos | 2 |
 | Formular hipótesis y predicciones | 2 |
+| Formular preguntas investigables | 2 |
 | Analizar datos con herramientas estadísticas | 1 |
-| Reconocer el alcance y límites de la ciencia | 1 |
 | Comunicar resultados científicos | 1 |
 | Diseñar y evaluar soluciones | 1 |
+| Reconocer el alcance y límites de la ciencia | 1 |
 
 ## Prerrequisitos que no llegan a tiempo
 
@@ -111,14 +111,11 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Órganos de los sentidos | Estructuras del cuerpo animal y su función | ausente | — | media |
 | Caída libre | Gravedad: atracción hacia la Tierra | ausente | — | media |
 | Masa y peso | Gravedad: atracción hacia la Tierra | ausente | — | alta |
-| Composición del aire y contaminantes atmosféricos | La atmósfera y su composición | ausente | — | media |
 | Biomoléculas | El carbono y las moléculas orgánicas | posterior | 11 | alta |
 | Fases de la fotosíntesis y ciclo de Calvin | Oxidación y reducción | posterior | 11 | media |
-| Selección natural | Variación genética en la descendencia | posterior | 11 | alta |
 | Difracción de ondas y de la luz | Superposición e interferencia de ondas | posterior | 11 | media |
 | Dualidad onda-partícula | Fotón y efecto fotoeléctrico | posterior | 11 | alta |
 | Interferencia de la luz | Superposición e interferencia de ondas | posterior | 11 | alta |
-| El ojo y los instrumentos ópticos | Lentes delgadas e imágenes | posterior | 11 | alta |
 | Ondas electromagnéticas y espectro | Rapidez de la luz | posterior | 11 | media |
 | Refracción de la luz | Rapidez de la luz | posterior | 11 | media |
 | Agentes oxidantes y reductores | Oxidación y reducción | posterior | 11 | alta |
@@ -126,7 +123,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Isomería estructural | Hidrocarburos: alcanos, alquenos y alquinos | posterior | 11 | alta |
 | Modelo mecanocuántico y orbitales atómicos | Dualidad onda-partícula | posterior | 11 | media |
 
-Además, 70 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 58 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -134,11 +131,11 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Adaptaciones conductuales | 11 | CO 2, SG 6 |
-| Estructuras del cuerpo animal y su función | nunca | CO 2, SG 4, UY 8 |
-| Conductores y aislantes eléctricos | 11 | CO 4, SG 5 |
-| La atmósfera y su composición | nunca | CO 4, SG 5, UY 5 |
-| Gravedad: atracción hacia la Tierra | nunca | SG 6, UY 4 |
-| Célula animal y célula vegetal | 11 | CO 6, UY 7 |
-| Ingeniería genética y ADN recombinante | 11 | CO 8, UY 6 |
-| Transmisión de patógenos | nunca | CO 6, UY 9 |
+| Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
+| Adaptaciones conductuales | 11 | AU 4.0, CO 2, SG 6.0 |
+| Estructuras del cuerpo animal y su función | nunca | AU 7.0, CO 2, ENG 2, SG 4.0, UY 8.0 |
+| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, SG 5.0 |
+| Célula animal y célula vegetal | 11 | AU 7.0, CO 6.5, ENG 6.0, UY 7.0 |
+| Sistemas terrestres y sus interacciones | nunca | AU 9.0, CO 4.5 |
+| Ingeniería genética y ADN recombinante | 11 | CO 8.5, UY 6.0 |
+| Transmisión de patógenos | nunca | CO 6.5, UY 9.0 |

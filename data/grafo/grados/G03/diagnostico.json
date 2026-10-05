@@ -3,35 +3,29 @@
  "temas": 66,
  "temas_por_asignatura": {
   "fisica": 6,
-  "quimica": 13,
-  "ciencias_tierra_espacio": 15,
+  "quimica": 12,
+  "ciencias_tierra_espacio": 16,
   "biologia": 32
  },
- "conceptos": 41,
- "conceptos_nuevos": 23,
- "conceptos_retomados": 18,
+ "conceptos": 43,
+ "conceptos_nuevos": 29,
+ "conceptos_retomados": 13,
+ "conceptos_anticipados": 1,
  "practicas": {
-  "PRAC:observar-y-registrar": 15,
+  "PRAC:observar-y-registrar": 17,
   "PRAC:desarrollar-y-usar-modelos": 6,
+  "PRAC:planificar-investigaciones": 5,
   "PRAC:medir-con-instrumentos": 4,
-  "PRAC:planificar-investigaciones": 4,
   "PRAC:comunicar-resultados": 2,
-  "PRAC:trabajar-con-seguridad-y-etica": 2,
   "PRAC:transformar-representaciones": 2,
+  "PRAC:controlar-variables": 1,
   "PRAC:evaluar-implicaciones-y-decidir": 1,
-  "PRAC:controlar-variables": 1
+  "PRAC:trabajar-con-seguridad-y-etica": 1
  },
  "objetivos_marco": {
   "T4_27": 18
  },
  "anclajes": [
-  {
-   "prerrequisito": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
-   "concepto": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
-   "estado": "ausente",
-   "primer_grado_sv": null,
-   "confianza": "alta"
-  },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/conservacion-del-agua",
    "concepto": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
@@ -40,8 +34,22 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/fermentacion-y-respiracion-anaerobia",
+   "concepto": "CON:biologia/biotecnologia-microbiana",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/tipos-de-patogenos",
    "concepto": "CON:biologia/enfermedades-infecciosas-y-no-infecciosas",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
+   "concepto": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
    "estado": "mismo_grado",
    "primer_grado_sv": 3,
    "confianza": "alta"
@@ -68,6 +76,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:quimica/disolucion-y-su-rapidez",
+   "concepto": "CON:quimica/concentracion-de-disoluciones",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:quimica/concentracion-de-disoluciones",
    "concepto": "CON:quimica/solubilidad",
    "estado": "mismo_grado",
@@ -82,17 +97,10 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:biologia/fotosintesis",
-   "concepto": "CON:biologia/ciclo-del-carbono-y-oxigeno",
+   "prerrequisito": "CON:biologia/glucolisis-y-ciclo-de-krebs",
+   "concepto": "CON:biologia/fermentacion-y-respiracion-anaerobia",
    "estado": "posterior",
-   "primer_grado_sv": 6,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:biologia/respiracion-celular",
-   "concepto": "CON:biologia/ciclo-del-carbono-y-oxigeno",
-   "estado": "posterior",
-   "primer_grado_sv": 6,
+   "primer_grado_sv": 10,
    "confianza": "alta"
   },
   {
@@ -134,7 +142,7 @@
    "prerrequisito": "CON:fisica/presion-hidrostatica",
    "concepto": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
    "estado": "posterior",
-   "primer_grado_sv": 9,
+   "primer_grado_sv": 6,
    "confianza": "media"
   },
   {
@@ -166,13 +174,6 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
-   "concepto": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
-   "estado": "posterior",
-   "primer_grado_sv": 7,
-   "confianza": "media"
-  },
-  {
    "prerrequisito": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
    "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
    "estado": "posterior",
@@ -187,17 +188,10 @@
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:quimica/disolucion-y-su-rapidez",
-   "concepto": "CON:quimica/concentracion-de-disoluciones",
-   "estado": "posterior",
-   "primer_grado_sv": 8,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:quimica/fuerzas-intermoleculares",
    "concepto": "CON:quimica/propiedades-singulares-del-agua",
    "estado": "posterior",
-   "primer_grado_sv": 10,
+   "primer_grado_sv": 6,
    "confianza": "alta"
   },
   {
@@ -334,6 +328,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:quimica/mezclas",
+   "concepto": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:quimica/separacion-de-mezclas",
    "concepto": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
    "estado": "previo",
@@ -343,6 +344,13 @@
   {
    "prerrequisito": "CON:fisica/densidad",
    "concepto": "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
+   "concepto": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "media"
@@ -413,19 +421,95 @@
  ],
  "faltantes_por_edad": [
   {
+   "concepto": "CON:biologia/fosiles",
+   "sv": 5,
+   "paises": {
+    "CO": 2,
+    "ENG": 2,
+    "UY": 6.0
+   }
+  },
+  {
    "concepto": "CON:biologia/organos-de-los-sentidos",
    "sv": 4,
    "paises": {
     "CO": 2,
-    "UY": 3
+    "ENG": 2,
+    "UY": 3.0
    }
   },
   {
-   "concepto": "CON:fisica/sistema-internacional-unidades",
+   "concepto": "CON:ciencias_tierra_espacio/fosiles",
    "sv": 5,
    "paises": {
     "CO": 2,
-    "UY": 3
+    "ENG": 2,
+    "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "sv": 7,
+   "paises": {
+    "AU": 2,
+    "CO": 8.5,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:biologia/depredacion",
+   "sv": 7,
+   "paises": {
+    "CO": 3.0,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+   "sv": 5,
+   "paises": {
+    "AU": 2,
+    "CO": 6.5,
+    "ENG": 2,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/materiales-magneticos",
+   "sv": 6,
+   "paises": {
+    "ENG": 2,
+    "SG": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/cadena-alimentaria",
+   "sv": 4,
+   "paises": {
+    "AU": 3.0,
+    "CO": 4.0,
+    "ENG": 2,
+    "SG": 6.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/transporte-en-plantas",
+   "sv": 8,
+   "paises": {
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+   "sv": 7,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
    }
   },
   {
@@ -433,72 +517,70 @@
    "sv": 4,
    "paises": {
     "CO": 2,
-    "UY": 4
+    "ENG": 3.0,
+    "UY": 4.0
    }
   },
   {
-   "concepto": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:fisica/friccion-resistencia-aire",
    "sv": 10,
    "paises": {
-    "CO": 2,
-    "SG": 4
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 6.0
    }
   },
   {
    "concepto": "CON:fisica/imanes-polos",
    "sv": 6,
    "paises": {
+    "AU": 3.0,
     "CO": 2,
-    "SG": 3,
-    "UY": 5
+    "ENG": 2,
+    "SG": 3.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/sistema-internacional-unidades",
+   "sv": 5,
+   "paises": {
+    "CO": 2,
+    "ENG": 6.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "sv": 6,
+   "paises": {
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 3.0
    }
   }
  ],
- "referentes_paises": 37,
+ "referentes_paises": 88,
  "top_conceptos": [
+  [
+   "CON:biologia/microorganismos",
+   7
+  ],
   [
    "CON:biologia/invertebrados-e-insectos",
    6
-  ],
-  [
-   "CON:biologia/microorganismos",
-   6
-  ],
-  [
-   "CON:biologia/partes-de-la-planta-y-sus-funciones",
-   5
   ],
   [
    "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
    5
   ],
   [
+   "CON:biologia/partes-de-la-planta-y-sus-funciones",
+   5
+  ],
+  [
    "CON:ciencias_tierra_espacio/tipos-de-rocas",
    4
-  ],
-  [
-   "CON:fisica/fuerzas-contacto-distancia",
-   3
-  ],
-  [
-   "CON:quimica/cambios-fisicos-y-quimicos",
-   3
-  ],
-  [
-   "CON:ciencias_tierra_espacio/volcanes-estructura-y-tipos",
-   3
-  ],
-  [
-   "CON:quimica/separacion-de-mezclas",
-   3
-  ],
-  [
-   "CON:ciencias_tierra_espacio/hidrosfera-distribucion-del-agua",
-   3
-  ],
-  [
-   "CON:quimica/disoluciones-coloides-y-suspensiones",
-   3
   ],
   [
    "CON:biologia/respuesta-a-estimulos",
@@ -509,11 +591,35 @@
    3
   ],
   [
-   "CON:fisica/medicion-magnitudes-instrumentos",
+   "CON:ciencias_tierra_espacio/hidrosfera-distribucion-del-agua",
+   3
+  ],
+  [
+   "CON:ciencias_tierra_espacio/volcanes-estructura-y-tipos",
+   3
+  ],
+  [
+   "CON:fisica/fuerzas-contacto-distancia",
+   3
+  ],
+  [
+   "CON:quimica/disoluciones-coloides-y-suspensiones",
+   3
+  ],
+  [
+   "CON:quimica/separacion-de-mezclas",
+   3
+  ],
+  [
+   "CON:biologia/grupos-de-vertebrados",
    2
   ],
   [
-   "CON:fisica/fuerza-empuje-tiron",
+   "CON:biologia/necesidades-de-los-seres-vivos",
+   2
+  ],
+  [
+   "CON:biologia/reinos-de-los-seres-vivos",
    2
   ]
  ]

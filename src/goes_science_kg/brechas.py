@@ -19,7 +19,7 @@ from collections import Counter, defaultdict
 
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
-from goes_science_kg.prerrequisitos import evidencia_orden
+from goes_science_kg.prerrequisitos import evidencia_orden, paises_alto_desempeno
 
 CICLOS = {"T4_27": (2, 4), "T8_27": (5, 8), "PISA25": (7, 9), "TA15": (10, 11), "AUSS": (10, 11)}
 
@@ -59,7 +59,7 @@ def analizar(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> d
         e = ev[c.id]
         if len(e["paises"]) >= 2 and e["paises_mediana"] is not None:
             fila = {"concepto": c.id, "nombre": c.etiqueta, "sv": e["sv"], "mediana_paises": e["paises_mediana"],
-                    "paises": e["paises"]}
+                    "mediana_alto_desempeno": e.get("mediana_alto_desempeno"), "paises": e["paises"]}
             if e["sv"] is None:
                 nunca.append(fila)
             else:
@@ -98,12 +98,18 @@ def _md(r: dict) -> str:
             md += ["", f"**{m} sin cobertura en {c['ciclo']}:** "
                    + "; ".join(f"{f['objetivo']} {f['texto']}" for f in c["sin_cobertura"][:12])]
     md += ["", "## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto", "",
-           f"Se compara el primer grado de cada concepto en El Salvador con la mediana de Uruguay, Colombia y Singapur "
+           f"Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del "
+           f"grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) "
            f"(conceptos que trabajan al menos dos países: {r['comparables_con_paises']} de {r['conceptos']}). "
            "Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.", "",
-           "### Llega 2 o más grados tarde", "", "| Concepto | SV | Mediana países | Países | Oportunidad |",
-           "|---|---|---|---|---|",
+           "### Llega 2 o más grados tarde", "",
+           "La columna «Alto desempeño» es la mediana solo de los países entre los 10 primeros de TIMSS 2023 Ciencias "
+           "(con datos en el grafo: "
+           + ", ".join(sorted(paises_alto_desempeno() & {p for o in r["oportunidad_todos"] for p in o["paises"]}))
+           + "; ver `config/referentes.yaml`).", "",
+           "| Concepto | SV | Mediana países | Alto desempeño | Países | Oportunidad |", "|---|---|---|---|---|---|",
            *[f"| {f['nombre']} | {f['sv']}.° | {f['mediana_paises']:g} | "
+             + (f"{f['mediana_alto_desempeno']:g}" if f.get("mediana_alto_desempeno") is not None else "—") + " | "
              + ", ".join(f"{p} {g}" for p, g in sorted(f["paises"].items())) + f" | +{f['oportunidad']:g} |"
              for f in r["llega_tarde"]], "", "### Llega 2 o más grados antes", "",
            "| Concepto | SV | Mediana países | Oportunidad |", "|---|---|---|---|",
@@ -137,11 +143,57 @@ def escribir_brechas(nodos: list[Nodo], aristas: list[Arista]) -> list[dict]:
         (d / "brechas.json").write_text(json.dumps(r, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         (d / "brechas.md").write_text(_md(r), encoding="utf-8")
         with open(d / "oportunidad_conceptos.csv", "w", newline="", encoding="utf-8-sig") as f:
-            w = csv.writer(f)
-            w.writerow(["concepto", "nombre", "primer_grado_sv", "mediana_paises", "UY", "CO", "SG", "oportunidad"])
+            w = csv.writer(f, lineterminator="\n")
+            paises = sorted({p for o in r["oportunidad_todos"] for p in o["paises"]})
+            w.writerow(["concepto", "nombre", "primer_grado_sv", "mediana_paises", "mediana_alto_desempeno",
+                        *paises, "oportunidad"])
             for o in sorted(r["oportunidad_todos"], key=lambda o: -o["oportunidad"]):
-                w.writerow([o["concepto"], o["nombre"], o["sv"], o["mediana_paises"], o["paises"].get("UY", ""),
-                            o["paises"].get("CO", ""), o["paises"].get("SG", ""), o["oportunidad"]])
+                w.writerow([o["concepto"], o["nombre"], o["sv"], o["mediana_paises"], o.get("mediana_alto_desempeno"),
+                            *[o["paises"].get(p, "") for p in paises], o["oportunidad"]])
+        escribir_excel(asig, r)
         resumen.append({"asignatura": asig, "llega_tarde": len(r["llega_tarde"]), "adelantado": len(r["adelantado"]),
                         "nunca_en_sv": len(r["nunca_en_sv"]), "secuencia": len(r["secuencia"])})
     return resumen
+
+
+def escribir_excel(asig: str, r: dict) -> str:
+    """Brechas_<Asignatura>.xlsx: hoja de datos «Oportunidad» y «Resumen» con FÓRMULAS sobre ella
+    (estilo de los libros 2027: verde bosque 1E4D3A, sin azul; sin XLOOKUP/FILTER; compatible con Numbers)."""
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill
+
+    nombre = cargar("asignaturas")["asignaturas"][asig]["nombre"]
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Oportunidad"
+    paises = sorted({p for o in r["oportunidad_todos"] for p in o["paises"]})
+    enc = ["Concepto", "Primer grado SV", "Mediana países", "Mediana alto desempeño", *paises, "Oportunidad"]
+    ws.append(enc)
+    for o in sorted(r["oportunidad_todos"], key=lambda o: (-o["oportunidad"], o["nombre"])):
+        ws.append([o["nombre"], o["sv"], o["mediana_paises"], o.get("mediana_alto_desempeno"),
+                   *[o["paises"].get(p) for p in paises], o["oportunidad"]])
+    n = ws.max_row
+    col_op = chr(ord("A") + len(enc) - 1)
+    for c in ws[1]:
+        c.font, c.fill = Font(name="Arial", bold=True, color="FFFFFF"), PatternFill("solid", fgColor="1E4D3A")
+    rs = wb.create_sheet("Resumen")
+    filas = [
+        ("Conceptos comparables con los países", f"=COUNTA(Oportunidad!A2:A{n})"),
+        ("Llegan 2 o más grados tarde", f'=COUNTIF(Oportunidad!{col_op}2:{col_op}{n},">=2")'),
+        ("Llegan 2 o más grados antes", f'=COUNTIF(Oportunidad!{col_op}2:{col_op}{n},"<=-2")'),
+        ("Oportunidad promedio (grados)", f"=AVERAGE(Oportunidad!{col_op}2:{col_op}{n})"),
+        ("Errores de secuencia (todos)", len(r["secuencia"])),
+        ("Errores de secuencia (confianza alta)", sum(s["confianza"] == "alta" for s in r["secuencia"])),
+    ]
+    rs.append([f"Brechas · {nombre}", "Valor"])
+    for f in filas:
+        rs.append(list(f))
+    rs.append([])
+    rs.append(["Oportunidad = primer grado en El Salvador − mediana de los países de referencia (grado equivalente "
+               "por edad de ingreso). Positivo: El Salvador llega tarde. Fuente: gskg brechas."])
+    for c in rs[1]:
+        c.font, c.fill = Font(name="Arial", bold=True, color="FFFFFF"), PatternFill("solid", fgColor="1E4D3A")
+    rs.column_dimensions["A"].width, ws.column_dimensions["A"].width = 46, 44
+    p = ruta(cargar("asignaturas")["asignaturas"][asig]["carpeta"]) / "brechas" / f"Brechas_{asig.capitalize()}.xlsx"
+    wb.save(p)
+    return str(p.relative_to(ruta(".")))

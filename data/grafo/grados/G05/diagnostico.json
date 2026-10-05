@@ -3,29 +3,30 @@
  "temas": 71,
  "temas_por_asignatura": {
   "fisica": 23,
-  "ciencias_tierra_espacio": 27,
-  "quimica": 19,
-  "biologia": 2
+  "quimica": 18,
+  "ciencias_tierra_espacio": 29,
+  "biologia": 1
  },
  "conceptos": 63,
- "conceptos_nuevos": 47,
- "conceptos_retomados": 16,
+ "conceptos_nuevos": 51,
+ "conceptos_retomados": 11,
+ "conceptos_anticipados": 1,
  "practicas": {
-  "PRAC:usar-matematicas-en-ciencias": 6,
   "PRAC:desarrollar-y-usar-modelos": 6,
-  "PRAC:transformar-representaciones": 5,
+  "PRAC:usar-matematicas-en-ciencias": 6,
   "PRAC:medir-con-instrumentos": 4,
+  "PRAC:transformar-representaciones": 4,
   "PRAC:repetir-mediciones-y-estimar-error": 3,
-  "PRAC:construir-explicaciones-con-evidencia": 2,
   "PRAC:observar-y-registrar": 2,
-  "PRAC:naturaleza-provisional-del-conocimiento": 1,
-  "PRAC:evaluar-modelos-y-limitaciones": 1,
   "PRAC:ciencia-como-empresa-colectiva": 1,
   "PRAC:comunicar-resultados": 1,
+  "PRAC:construir-explicaciones-con-evidencia": 1,
   "PRAC:evaluar-fuentes-de-informacion": 1,
-  "PRAC:trabajar-con-seguridad-y-etica": 1,
+  "PRAC:evaluar-modelos-y-limitaciones": 1,
+  "PRAC:interpretar-datos-y-concluir": 1,
+  "PRAC:naturaleza-provisional-del-conocimiento": 1,
   "PRAC:planificar-investigaciones": 1,
-  "PRAC:interpretar-datos-y-concluir": 1
+  "PRAC:trabajar-con-seguridad-y-etica": 1
  },
  "objetivos_marco": {
   "T8_27": 18
@@ -403,18 +404,18 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:fisica/imanes-polos",
+   "concepto": "CON:ciencias_tierra_espacio/campo-magnetico-terrestre",
+   "estado": "posterior",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:fisica/fision-fusion-nuclear",
    "concepto": "CON:ciencias_tierra_espacio/evolucion-estelar",
    "estado": "posterior",
    "primer_grado_sv": 11,
    "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
-   "concepto": "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
-   "estado": "posterior",
-   "primer_grado_sv": 8,
-   "confianza": "media"
   },
   {
    "prerrequisito": "CON:fisica/ondas-mecanicas-tipos",
@@ -476,7 +477,7 @@
    "prerrequisito": "CON:quimica/sustancias-puras-elementos-y-compuestos",
    "concepto": "CON:quimica/moleculas-y-formulas-quimicas",
    "estado": "posterior",
-   "primer_grado_sv": 10,
+   "primer_grado_sv": 8,
    "confianza": "alta"
   },
   {
@@ -501,8 +502,8 @@
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/tipos-de-rocas",
-   "concepto": "CON:biologia/fosiles",
+   "prerrequisito": "CON:ciencias_tierra_espacio/capas-internas-de-la-tierra",
+   "concepto": "CON:ciencias_tierra_espacio/campo-magnetico-terrestre",
    "estado": "previo",
    "primer_grado_sv": 3,
    "confianza": "media"
@@ -561,6 +562,13 @@
    "concepto": "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
    "estado": "previo",
    "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
+   "concepto": "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
+   "estado": "previo",
+   "primer_grado_sv": 3,
    "confianza": "media"
   },
   {
@@ -713,20 +721,132 @@
  ],
  "faltantes_por_edad": [
   {
-   "concepto": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "sv": 7,
+   "paises": {
+    "AU": 2,
+    "CO": 8.5,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:biologia/depredacion",
+   "sv": 7,
+   "paises": {
+    "CO": 3.0,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:fisica/materiales-magneticos",
+   "sv": 6,
+   "paises": {
+    "ENG": 2,
+    "SG": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/transporte-en-plantas",
+   "sv": 8,
+   "paises": {
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+   "sv": 7,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/friccion-resistencia-aire",
    "sv": 10,
    "paises": {
-    "CO": 2,
-    "SG": 4
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 6.0
    }
   },
   {
    "concepto": "CON:fisica/imanes-polos",
    "sv": 6,
    "paises": {
+    "AU": 3.0,
     "CO": 2,
-    "SG": 3,
-    "UY": 5
+    "ENG": 2,
+    "SG": 3.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "sv": 6,
+   "paises": {
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/gravedad-atrae-hacia-tierra",
+   "sv": null,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 3.0,
+    "SG": 6.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/ventaja-mecanica",
+   "sv": 9,
+   "paises": {
+    "CO": 4.0,
+    "ENG": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/adaptaciones-conductuales",
+   "sv": 11,
+   "paises": {
+    "AU": 4.0,
+    "CO": 2,
+    "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/digestion-y-absorcion-de-nutrientes",
+   "sv": 8,
+   "paises": {
+    "ENG": 4.0,
+    "SG": 4.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "sv": null,
+   "paises": {
+    "AU": 7.0,
+    "CO": 2,
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 8.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/evidencias-de-la-evolucion",
+   "sv": 10,
+   "paises": {
+    "AU": 9.0,
+    "CO": 2,
+    "ENG": 4.0
    }
   },
   {
@@ -734,244 +854,208 @@
    "sv": 10,
    "paises": {
     "CO": 2,
-    "SG": 5
-   }
-  },
-  {
-   "concepto": "CON:fisica/calor-vs-temperatura",
-   "sv": 10,
-   "paises": {
-    "SG": 4,
-    "UY": 3
-   }
-  },
-  {
-   "concepto": "CON:fisica/dilatacion-termica",
-   "sv": 6,
-   "paises": {
-    "SG": 4,
-    "UY": 3
-   }
-  },
-  {
-   "concepto": "CON:fisica/temperatura-medicion-escalas",
-   "sv": 6,
-   "paises": {
-    "SG": 4,
-    "UY": 3
-   }
-  },
-  {
-   "concepto": "CON:biologia/adaptaciones-conductuales",
-   "sv": 11,
-   "paises": {
-    "CO": 2,
-    "SG": 6
-   }
-  },
-  {
-   "concepto": "CON:biologia/digestion-y-absorcion-de-nutrientes",
-   "sv": 8,
-   "paises": {
-    "SG": 4,
-    "UY": 4
-   }
-  },
-  {
-   "concepto": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "sv": null,
-   "paises": {
-    "CO": 2,
-    "SG": 4,
-    "UY": 8
-   }
-  },
-  {
-   "concepto": "CON:biologia/la-celula-unidad-de-la-vida",
-   "sv": 6,
-   "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 4
+    "ENG": 4.0,
+    "SG": 5.0
    }
   },
   {
    "concepto": "CON:biologia/reproduccion-de-plantas-con-flor",
    "sv": 6,
    "paises": {
-    "SG": 5,
-    "UY": 3
+    "AU": 8.0,
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
    }
   },
   {
-   "concepto": "CON:biologia/transporte-en-plantas",
+   "concepto": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
    "sv": 8,
    "paises": {
-    "SG": 5,
-    "UY": 3
+    "AU": 2,
+    "ENG": 6.0
    }
   },
   {
-   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
-   "sv": 7,
+   "concepto": "CON:fisica/calor-vs-temperatura",
+   "sv": 10,
    "paises": {
-    "SG": 5,
-    "UY": 3
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 3.0
    }
   },
   {
-   "concepto": "CON:fisica/electroiman",
+   "concepto": "CON:fisica/dilatacion-termica",
    "sv": 6,
    "paises": {
-    "SG": 3,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:fisica/flotacion-hundimiento",
-   "sv": 6,
-   "paises": {
-    "CO": 4,
-    "SG": 3,
-    "UY": 4
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 3.0
    }
   },
   {
    "concepto": "CON:fisica/reflexion-luz",
    "sv": 10,
    "paises": {
-    "CO": 3,
-    "SG": 4,
-    "UY": 4
+    "AU": 4.0,
+    "CO": 3.0,
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/flotacion-hundimiento",
+   "sv": 6,
+   "paises": {
+    "CO": 4.5,
+    "ENG": 6.0,
+    "SG": 3.0,
+    "UY": 4.0
    }
   },
   {
    "concepto": "CON:biologia/relaciones-intraespecificas",
    "sv": 7,
    "paises": {
-    "CO": 3,
-    "UY": 6
-   }
-  },
-  {
-   "concepto": "CON:biologia/simbiosis",
-   "sv": 7,
-   "paises": {
-    "CO": 3,
-    "UY": 6
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
-   "sv": 9,
-   "paises": {
-    "CO": 4,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/mareas",
-   "sv": 9,
-   "paises": {
-    "CO": 4,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:fisica/conductores-aislantes-electricos",
-   "sv": 11,
-   "paises": {
-    "CO": 4,
-    "SG": 5
+    "CO": 3.0,
+    "UY": 6.0
    }
   },
   {
    "concepto": "CON:fisica/equilibrio-termico",
    "sv": 9,
    "paises": {
-    "SG": 4,
-    "UY": 5
+    "AU": 2,
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 5.0
    }
   },
   {
-   "concepto": "CON:fisica/gravitacion-universal",
-   "sv": 10,
+   "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
+   "sv": 9,
    "paises": {
-    "CO": 4,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0
    }
   },
   {
-   "concepto": "CON:biologia/intercambio-de-gases-en-animales",
-   "sv": 8,
+   "concepto": "CON:fisica/conductores-aislantes-electricos",
+   "sv": 11,
    "paises": {
-    "SG": 5,
-    "UY": 5
+    "AU": 5.0,
+    "CO": 4.5,
+    "ENG": 2,
+    "SG": 5.0
    }
   },
   {
    "concepto": "CON:biologia/intercambio-de-gases-en-plantas",
    "sv": 8,
    "paises": {
-    "SG": 5,
-    "UY": 5
+    "ENG": 6.0,
+    "SG": 5.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/la-celula-unidad-de-la-vida",
+   "sv": 6,
+   "paises": {
+    "AU": 7.0,
+    "CO": 4.5,
+    "ENG": 6.0,
+    "SG": 5.0,
+    "UY": 4.0
    }
   },
   {
    "concepto": "CON:biologia/reproduccion-sexual-y-asexual",
    "sv": 6,
    "paises": {
-    "CO": 8,
-    "SG": 5,
-    "UY": 3
+    "AU": 8.0,
+    "CO": 8.0,
+    "ENG": 3.0,
+    "SG": 5.0,
+    "UY": 3.0
    }
   },
   {
    "concepto": "CON:ciencias_tierra_espacio/calidad-del-aire",
    "sv": 7,
    "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
-   "sv": null,
-   "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0,
+    "SG": 5.0
    }
   },
   {
    "concepto": "CON:fisica/circuito-electrico-simple",
    "sv": 6,
    "paises": {
+    "AU": 5.0,
     "CO": 2,
-    "SG": 5,
-    "UY": 5
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 5.0
    }
   },
   {
-   "concepto": "CON:fisica/gravedad-atrae-hacia-tierra",
-   "sv": null,
+   "concepto": "CON:fisica/electroiman",
+   "sv": 6,
    "paises": {
-    "SG": 6,
-    "UY": 4
+    "ENG": 6.0,
+    "SG": 3.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/espejos-planos",
+   "sv": 10,
+   "paises": {
+    "ENG": 6.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/gravitacion-universal",
+   "sv": 10,
+   "paises": {
+    "CO": 4.5,
+    "ENG": 6.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/principio-arquimedes",
+   "sv": 6,
+   "paises": {
+    "ENG": 6.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/refraccion-luz",
+   "sv": 10,
+   "paises": {
+    "AU": 4.0,
+    "ENG": 6.0,
+    "UY": 5.0
    }
   },
   {
    "concepto": "CON:quimica/composicion-del-aire-y-contaminantes",
    "sv": 7,
    "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0,
+    "SG": 5.0
    }
   }
  ],
- "referentes_paises": 26,
+ "referentes_paises": 117,
  "top_conceptos": [
   [
    "CON:fisica/medicion-magnitudes-instrumentos",
@@ -982,8 +1066,28 @@
    5
   ],
   [
+   "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+   4
+  ],
+  [
    "CON:quimica/atomo-y-particulas-subatomicas",
    4
+  ],
+  [
+   "CON:ciencias_tierra_espacio/fosiles",
+   3
+  ],
+  [
+   "CON:ciencias_tierra_espacio/tiempo-geologico",
+   3
+  ],
+  [
+   "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+   3
+  ],
+  [
+   "CON:fisica/posicion-desplazamiento",
+   3
   ],
   [
    "CON:quimica/iones",
@@ -994,35 +1098,7 @@
    3
   ],
   [
-   "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
-   3
-  ],
-  [
-   "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
-   3
-  ],
-  [
-   "CON:fisica/posicion-desplazamiento",
-   2
-  ],
-  [
-   "CON:fisica/energia-potencial-gravitatoria",
-   2
-  ],
-  [
-   "CON:fisica/rapidez-velocidad",
-   2
-  ],
-  [
-   "CON:quimica/modelos-atomicos-historicos",
-   2
-  ],
-  [
-   "CON:quimica/isotopos",
-   2
-  ],
-  [
-   "CON:quimica/moleculas-y-formulas-quimicas",
+   "CON:ciencias_tierra_espacio/evolucion-estelar",
    2
   ],
   [
@@ -1030,7 +1106,15 @@
    2
   ],
   [
-   "CON:ciencias_tierra_espacio/tiempo-geologico",
+   "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
+   2
+  ],
+  [
+   "CON:ciencias_tierra_espacio/limites-de-placas",
+   2
+  ],
+  [
+   "CON:ciencias_tierra_espacio/meteorizacion",
    2
   ]
  ]

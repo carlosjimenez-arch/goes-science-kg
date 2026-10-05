@@ -77,6 +77,21 @@ def clasificacion_auss() -> dict[tuple[str, str, int], dict]:
     return _por_llave(json.loads(p.read_text(encoding="utf-8"))) if p.exists() else {}
 
 
+def paises_nuevos() -> list[dict]:
+    """Objetivos de países extraídos en este repo (data/interim/paises/<pais>.json; skill pais-extraer-objetivos),
+    con su alineación a TIMSS 2027 si existe (data/interim/alineaciones/paises_<pais>.json)."""
+    d = ruta("data/interim/paises")
+    salida = []
+    if not d.exists():
+        return salida
+    for p in sorted(d.glob("*.json")):
+        objs = json.loads(p.read_text(encoding="utf-8"))
+        a = ruta(f"data/interim/alineaciones/paises_{p.stem}.json")
+        alin = {x["id"]: x for x in json.loads(a.read_text(encoding="utf-8"))} if a.exists() else {}
+        salida += [o | {k: v for k, v in alin.get(o["id"], {}).items() if k not in o} for o in objs]
+    return salida
+
+
 def manifiesto_fuentes() -> list[dict]:
     """manifest.csv + estado.csv de data/fuentes/externos (id, título, url, archivo, sha256)."""
     base = ruta(DIR_EXTERNOS)

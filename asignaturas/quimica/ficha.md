@@ -1,22 +1,22 @@
 # Ficha · Química
 
-> Generada por `gskg fichas` desde el grafo v0. No editar a mano.
+> Generada por `gskg fichas` desde el grafo v1. No editar a mano.
 
 ## Temas de la malla de El Salvador por grado
 
 | Grado | Temas | Unidades principales |
 |---|---|---|
 | 2.° | 9 | 1. Materia. |
-| 3.° | 13 | 3. El agua.; 2. Interacciones terrestres.; 6. Los microorganismos. |
-| 5.° | 19 | 3. Estructura atómica.; 4. Tabla periódica.; 6. Ciencias de la Tierra. |
-| 6.° | 10 | 4. Interacciones químicas.; 1. Fluidos.; 5. Célula. |
+| 3.° | 12 | 3. El agua.; 2. Interacciones terrestres. |
+| 5.° | 18 | 3. Estructura atómica.; 4. Tabla periódica. |
+| 6.° | 10 | 4. Interacciones químicas. |
 | 7.° | 13 | 1. Compuestos inorgánicos; 5. Recurso hídrico |
 | 8.° | 25 | 4. Estequiometría y dispersiones; 5. Minerales |
 | 9.° | 20 | 3. Equilibrio químico |
 | 10.° | 112 | 1. La química como ciencia: ciclo de indagación; 12. Cinética y equilibrio químico; 5. Los enlaces químicos; 3. Modelos atómicos y estructura |
 | 11.° | 97 | 3. Compuestos orgánicos; 2. Introducción a la química orgánica; 4. Reacción ácido-base; 6. Electroquímica |
 
-Total: **318 temas**. Asignados por: malla 209, pisa 4, timss 105.
+Total: **316 temas**. Asignados por: malla 209, pisa 4, revision 8, timss 95.
 
 ## Cobertura de los marcos internacionales
 
@@ -47,6 +47,8 @@ Total: **318 temas**. Asignados por: malla 209, pisa 4, timss 105.
 
 | País | Objetivos alineados a esta asignatura |
 |---|---|
+| AU | 13 |
 | CO | 43 |
+| ENG | 44 |
 | SG | 6 |
 | UY | 19 |

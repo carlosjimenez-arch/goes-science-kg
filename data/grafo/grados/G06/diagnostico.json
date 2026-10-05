@@ -2,28 +2,31 @@
  "grado": 6,
  "temas": 68,
  "temas_por_asignatura": {
+  "fisica": 24,
   "quimica": 10,
-  "fisica": 25,
-  "biologia": 33
+  "biologia": 34
  },
- "conceptos": 60,
- "conceptos_nuevos": 44,
- "conceptos_retomados": 16,
+ "conceptos": 63,
+ "conceptos_nuevos": 50,
+ "conceptos_retomados": 12,
+ "conceptos_anticipados": 1,
  "practicas": {
   "PRAC:observar-y-registrar": 12,
   "PRAC:desarrollar-y-usar-modelos": 6,
   "PRAC:transformar-representaciones": 5,
-  "PRAC:planificar-investigaciones": 5,
   "PRAC:medir-con-instrumentos": 4,
+  "PRAC:planificar-investigaciones": 4,
+  "PRAC:construir-explicaciones-con-evidencia": 2,
   "PRAC:usar-matematicas-en-ciencias": 2,
-  "PRAC:usar-pensamiento-computacional-y-simulaciones": 1,
-  "PRAC:disenar-y-evaluar-soluciones": 1,
-  "PRAC:construir-explicaciones-con-evidencia": 1,
-  "PRAC:trabajar-con-seguridad-y-etica": 1,
-  "PRAC:comunicar-resultados": 1,
-  "PRAC:evaluar-fuentes-de-informacion": 1,
   "PRAC:ciencia-como-empresa-colectiva": 1,
-  "PRAC:naturaleza-provisional-del-conocimiento": 1
+  "PRAC:comunicar-resultados": 1,
+  "PRAC:controlar-variables": 1,
+  "PRAC:disenar-y-evaluar-soluciones": 1,
+  "PRAC:evaluar-fuentes-de-informacion": 1,
+  "PRAC:interpretar-datos-y-concluir": 1,
+  "PRAC:naturaleza-provisional-del-conocimiento": 1,
+  "PRAC:trabajar-con-seguridad-y-etica": 1,
+  "PRAC:usar-pensamiento-computacional-y-simulaciones": 1
  },
  "objetivos_marco": {
   "T8_27": 21
@@ -74,6 +77,13 @@
   {
    "prerrequisito": "CON:biologia/membrana-celular",
    "concepto": "CON:biologia/difusion-y-osmosis",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/catalizadores",
+   "concepto": "CON:biologia/enzimas",
    "estado": "mismo_grado",
    "primer_grado_sv": 6,
    "confianza": "alta"
@@ -261,8 +271,29 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:fisica/presion-hidrostatica",
+   "concepto": "CON:fisica/principio-arquimedes",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/presion-hidrostatica",
+   "concepto": "CON:fisica/principio-bernoulli",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:fisica/circuitos-serie-paralelo",
    "concepto": "CON:fisica/resistencia-equivalente",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/fuerzas-intermoleculares",
+   "concepto": "CON:fisica/tension-superficial-capilaridad",
    "estado": "mismo_grado",
    "primer_grado_sv": 6,
    "confianza": "alta"
@@ -282,6 +313,20 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:quimica/polaridad-molecular",
+   "concepto": "CON:quimica/fuerzas-intermoleculares",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/fuerzas-intermoleculares",
+   "concepto": "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:quimica/estructuras-de-lewis",
    "concepto": "CON:quimica/geometria-molecular-rpecv",
    "estado": "mismo_grado",
@@ -290,6 +335,13 @@
   },
   {
    "prerrequisito": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+   "concepto": "CON:quimica/polaridad-molecular",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/geometria-molecular-rpecv",
    "concepto": "CON:quimica/polaridad-molecular",
    "estado": "mismo_grado",
    "primer_grado_sv": 6,
@@ -331,18 +383,18 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/proteinas-estructura-y-funcion",
+   "concepto": "CON:biologia/enzimas",
+   "estado": "posterior",
+   "primer_grado_sv": 10,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:biologia/celula-animal-y-vegetal",
    "concepto": "CON:biologia/organelos-de-la-celula-eucariota",
    "estado": "posterior",
    "primer_grado_sv": 11,
    "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
-   "concepto": "CON:fisica/cambios-estado",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
-   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:fisica/calor-vs-temperatura",
@@ -366,52 +418,10 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
-   "concepto": "CON:fisica/mecanismos-transferencia-calor",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:fisica/presion-hidrostatica",
-   "concepto": "CON:fisica/principio-arquimedes",
-   "estado": "posterior",
-   "primer_grado_sv": 9,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:fisica/conservacion-energia-mecanica",
-   "concepto": "CON:fisica/principio-bernoulli",
-   "estado": "posterior",
-   "primer_grado_sv": 8,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:fisica/presion-hidrostatica",
-   "concepto": "CON:fisica/principio-bernoulli",
-   "estado": "posterior",
-   "primer_grado_sv": 9,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:fisica/ley-ohm",
    "concepto": "CON:fisica/resistencia-equivalente",
    "estado": "posterior",
    "primer_grado_sv": 11,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
-   "concepto": "CON:fisica/temperatura-medicion-escalas",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
-   "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:quimica/fuerzas-intermoleculares",
-   "concepto": "CON:fisica/tension-superficial-capilaridad",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
    "confianza": "alta"
   },
   {
@@ -446,14 +456,7 @@
    "prerrequisito": "CON:quimica/sustancias-puras-elementos-y-compuestos",
    "concepto": "CON:quimica/moleculas-y-formulas-quimicas",
    "estado": "posterior",
-   "primer_grado_sv": 10,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:quimica/geometria-molecular-rpecv",
-   "concepto": "CON:quimica/polaridad-molecular",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
+   "primer_grado_sv": 8,
    "confianza": "alta"
   },
   {
@@ -569,11 +572,32 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:fisica/cambios-estado",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:fisica/estados-materia",
    "concepto": "CON:fisica/cambios-estado",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/masa-y-peso",
+   "concepto": "CON:fisica/densidad",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/medicion-magnitudes-instrumentos",
+   "concepto": "CON:fisica/densidad",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:fisica/campo-magnetico",
@@ -597,6 +621,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:fisica/mecanismos-transferencia-calor",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:fisica/estados-materia",
    "concepto": "CON:fisica/modelo-particulas",
    "estado": "previo",
@@ -618,15 +649,22 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:fisica/medicion-magnitudes-instrumentos",
+   "prerrequisito": "CON:fisica/conservacion-energia-mecanica",
+   "concepto": "CON:fisica/principio-bernoulli",
+   "estado": "previo",
+   "primer_grado_sv": 5,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
    "concepto": "CON:fisica/temperatura-medicion-escalas",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:quimica/propiedades-fisicas-de-los-materiales",
-   "concepto": "CON:quimica/densidad-y-flotacion",
+   "prerrequisito": "CON:fisica/medicion-magnitudes-instrumentos",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "media"
@@ -660,24 +698,17 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:quimica/estados-de-la-materia",
+   "concepto": "CON:quimica/modelo-de-particulas",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:quimica/atomo-y-particulas-subatomicas",
    "concepto": "CON:quimica/moleculas-y-formulas-quimicas",
    "estado": "previo",
    "primer_grado_sv": 5,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:quimica/concentracion-de-disoluciones",
-   "concepto": "CON:quimica/rapidez-de-reaccion-factores",
-   "estado": "previo",
-   "primer_grado_sv": 3,
-   "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:quimica/reaccion-quimica-y-evidencias",
-   "concepto": "CON:quimica/rapidez-de-reaccion-factores",
-   "estado": "previo",
-   "primer_grado_sv": 2,
    "confianza": "alta"
   },
   {
@@ -711,11 +742,104 @@
  ],
  "faltantes_por_edad": [
   {
-   "concepto": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "sv": 7,
+   "paises": {
+    "AU": 2,
+    "CO": 8.5,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:biologia/depredacion",
+   "sv": 7,
+   "paises": {
+    "CO": 3.0,
+    "ENG": 2
+   }
+  },
+  {
+   "concepto": "CON:biologia/transporte-en-plantas",
+   "sv": 8,
+   "paises": {
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+   "sv": 7,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/friccion-resistencia-aire",
    "sv": 10,
    "paises": {
+    "AU": 3.0,
+    "ENG": 2,
+    "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/gravedad-atrae-hacia-tierra",
+   "sv": null,
+   "paises": {
+    "AU": 3.0,
+    "ENG": 3.0,
+    "SG": 6.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/ventaja-mecanica",
+   "sv": 9,
+   "paises": {
+    "CO": 4.0,
+    "ENG": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/adaptaciones-conductuales",
+   "sv": 11,
+   "paises": {
+    "AU": 4.0,
     "CO": 2,
-    "SG": 4
+    "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/digestion-y-absorcion-de-nutrientes",
+   "sv": 8,
+   "paises": {
+    "ENG": 4.0,
+    "SG": 4.0,
+    "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "sv": null,
+   "paises": {
+    "AU": 7.0,
+    "CO": 2,
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 8.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/evidencias-de-la-evolucion",
+   "sv": 10,
+   "paises": {
+    "AU": 9.0,
+    "CO": 2,
+    "ENG": 4.0
    }
   },
   {
@@ -723,244 +847,265 @@
    "sv": 10,
    "paises": {
     "CO": 2,
-    "SG": 5
+    "ENG": 4.0,
+    "SG": 5.0
+   }
+  },
+  {
+   "concepto": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
+   "sv": 8,
+   "paises": {
+    "AU": 2,
+    "ENG": 6.0
    }
   },
   {
    "concepto": "CON:fisica/calor-vs-temperatura",
    "sv": 10,
    "paises": {
-    "SG": 4,
-    "UY": 3
-   }
-  },
-  {
-   "concepto": "CON:biologia/adaptaciones-conductuales",
-   "sv": 11,
-   "paises": {
-    "CO": 2,
-    "SG": 6
-   }
-  },
-  {
-   "concepto": "CON:biologia/digestion-y-absorcion-de-nutrientes",
-   "sv": 8,
-   "paises": {
-    "SG": 4,
-    "UY": 4
-   }
-  },
-  {
-   "concepto": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "sv": null,
-   "paises": {
-    "CO": 2,
-    "SG": 4,
-    "UY": 8
-   }
-  },
-  {
-   "concepto": "CON:biologia/transporte-en-plantas",
-   "sv": 8,
-   "paises": {
-    "SG": 5,
-    "UY": 3
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
-   "sv": 7,
-   "paises": {
-    "SG": 5,
-    "UY": 3
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 3.0
    }
   },
   {
    "concepto": "CON:fisica/reflexion-luz",
    "sv": 10,
    "paises": {
-    "CO": 3,
-    "SG": 4,
-    "UY": 4
+    "AU": 4.0,
+    "CO": 3.0,
+    "ENG": 2,
+    "SG": 4.0,
+    "UY": 4.0
    }
   },
   {
    "concepto": "CON:biologia/relaciones-intraespecificas",
    "sv": 7,
    "paises": {
-    "CO": 3,
-    "UY": 6
-   }
-  },
-  {
-   "concepto": "CON:biologia/simbiosis",
-   "sv": 7,
-   "paises": {
-    "CO": 3,
-    "UY": 6
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
-   "sv": 9,
-   "paises": {
-    "CO": 4,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/mareas",
-   "sv": 9,
-   "paises": {
-    "CO": 4,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:fisica/conductores-aislantes-electricos",
-   "sv": 11,
-   "paises": {
-    "CO": 4,
-    "SG": 5
+    "CO": 3.0,
+    "UY": 6.0
    }
   },
   {
    "concepto": "CON:fisica/equilibrio-termico",
    "sv": 9,
    "paises": {
-    "SG": 4,
-    "UY": 5
+    "AU": 2,
+    "ENG": 6.0,
+    "SG": 4.0,
+    "UY": 5.0
    }
   },
   {
-   "concepto": "CON:fisica/gravitacion-universal",
-   "sv": 10,
+   "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
+   "sv": 9,
    "paises": {
-    "CO": 4,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0
    }
   },
   {
-   "concepto": "CON:biologia/intercambio-de-gases-en-animales",
-   "sv": 8,
+   "concepto": "CON:fisica/conductores-aislantes-electricos",
+   "sv": 11,
    "paises": {
-    "SG": 5,
-    "UY": 5
+    "AU": 5.0,
+    "CO": 4.5,
+    "ENG": 2,
+    "SG": 5.0
    }
   },
   {
    "concepto": "CON:biologia/intercambio-de-gases-en-plantas",
    "sv": 8,
    "paises": {
-    "SG": 5,
-    "UY": 5
+    "ENG": 6.0,
+    "SG": 5.0,
+    "UY": 5.0
    }
   },
   {
    "concepto": "CON:ciencias_tierra_espacio/calidad-del-aire",
    "sv": 7,
    "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0,
+    "SG": 5.0
    }
   },
   {
-   "concepto": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
-   "sv": null,
+   "concepto": "CON:fisica/espejos-planos",
+   "sv": 10,
    "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
+    "ENG": 6.0,
+    "UY": 4.0
    }
   },
   {
-   "concepto": "CON:fisica/gravedad-atrae-hacia-tierra",
-   "sv": null,
+   "concepto": "CON:fisica/gravitacion-universal",
+   "sv": 10,
    "paises": {
-    "SG": 6,
-    "UY": 4
+    "CO": 4.5,
+    "ENG": 6.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/refraccion-luz",
+   "sv": 10,
+   "paises": {
+    "AU": 4.0,
+    "ENG": 6.0,
+    "UY": 5.0
    }
   },
   {
    "concepto": "CON:quimica/composicion-del-aire-y-contaminantes",
    "sv": 7,
    "paises": {
-    "CO": 4,
-    "SG": 5,
-    "UY": 5
+    "CO": 4.5,
+    "UY": 5.0,
+    "SG": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/lentes-delgadas",
+   "sv": 10,
+   "paises": {
+    "ENG": 6.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/potencia-electrica-joule",
+   "sv": 9,
+   "paises": {
+    "CO": 5.0,
+    "ENG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/trabajo-mecanico",
+   "sv": 8,
+   "paises": {
+    "ENG": 6.0,
+    "UY": 5.0
    }
   },
   {
    "concepto": "CON:biologia/ciclo-del-agua-y-seres-vivos",
    "sv": 10,
    "paises": {
-    "CO": 6,
-    "SG": 5
+    "CO": 6.5,
+    "SG": 5.0
    }
   },
   {
    "concepto": "CON:ciencias_tierra_espacio/efecto-invernadero",
    "sv": 7,
    "paises": {
-    "CO": 4,
-    "UY": 7
+    "CO": 4.5,
+    "UY": 7.0
    }
   },
   {
    "concepto": "CON:fisica/absorcion-radiacion-efecto-invernadero",
    "sv": 7,
    "paises": {
-    "CO": 4,
-    "UY": 7
+    "CO": 4.5,
+    "UY": 7.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/clasificacion-jerarquica",
+   "sv": 7,
+   "paises": {
+    "AU": 6.0,
+    "CO": 6.0,
+    "UY": 8.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/flujo-de-energia-y-piramides",
+   "sv": 7,
+   "paises": {
+    "AU": 6.0,
+    "CO": 6.5,
+    "SG": 6.0,
+    "UY": 6.0
    }
   },
   {
    "concepto": "CON:fisica/carga-electrica-electrizacion",
    "sv": 9,
    "paises": {
-    "CO": 6,
-    "UY": 5
+    "CO": 6.0,
+    "ENG": 6.0,
+    "UY": 5.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/equilibrio-traslacional",
+   "sv": 8,
+   "paises": {
+    "AU": 6.0,
+    "ENG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/fuerza-neta-diagrama-cuerpo-libre",
+   "sv": 8,
+   "paises": {
+    "AU": 6.0,
+    "CO": 4.5,
+    "ENG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/fuerzas-mecanicas-comunes",
+   "sv": 8,
+   "paises": {
+    "ENG": 6.0,
+    "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+   "sv": 10,
+   "paises": {
+    "CO": 8.5,
+    "ENG": 6.0,
+    "UY": 6.0
+   }
+  },
+  {
+   "concepto": "CON:fisica/sonido-como-onda",
+   "sv": 8,
+   "paises": {
+    "AU": 8.0,
+    "ENG": 2,
+    "UY": 6.0
    }
   },
   {
    "concepto": "CON:quimica/sustancias-puras-elementos-y-compuestos",
-   "sv": 10,
+   "sv": 8,
    "paises": {
-    "CO": 6,
-    "UY": 5
-   }
-  },
-  {
-   "concepto": "CON:biologia/flujo-de-energia-y-piramides",
-   "sv": 10,
-   "paises": {
-    "CO": 6,
-    "SG": 6,
-    "UY": 6
-   }
-  },
-  {
-   "concepto": "CON:biologia/impulso-nervioso-y-sinapsis",
-   "sv": 10,
-   "paises": {
-    "CO": 4,
-    "UY": 8
+    "AU": 6.0,
+    "CO": 6.0,
+    "ENG": 6.0,
+    "UY": 5.0
    }
   }
  ],
- "referentes_paises": 61,
+ "referentes_paises": 181,
  "top_conceptos": [
   [
    "CON:fisica/circuitos-serie-paralelo",
    5
   ],
   [
-   "CON:fisica/tension-superficial-capilaridad",
-   4
-  ],
-  [
-   "CON:biologia/organelos-de-la-celula-eucariota",
+   "CON:biologia/diferenciacion-y-especializacion-celular",
    4
   ],
   [
@@ -968,27 +1113,11 @@
    4
   ],
   [
-   "CON:biologia/diferenciacion-y-especializacion-celular",
+   "CON:biologia/organelos-de-la-celula-eucariota",
    4
   ],
   [
-   "CON:fisica/principio-bernoulli",
-   3
-  ],
-  [
-   "CON:fisica/modelo-particulas",
-   3
-  ],
-  [
-   "CON:fisica/temperatura-medicion-escalas",
-   3
-  ],
-  [
    "CON:biologia/estructuras-celulares-basicas",
-   3
-  ],
-  [
-   "CON:biologia/microorganismos",
    3
   ],
   [
@@ -996,7 +1125,7 @@
    3
   ],
   [
-   "CON:biologia/reproduccion-sexual-y-asexual",
+   "CON:biologia/microorganismos",
    3
   ],
   [
@@ -1004,11 +1133,31 @@
    3
   ],
   [
-   "CON:fisica/dilatacion-termica",
+   "CON:biologia/reproduccion-sexual-y-asexual",
+   3
+  ],
+  [
+   "CON:fisica/principio-bernoulli",
+   3
+  ],
+  [
+   "CON:fisica/temperatura-medicion-escalas",
+   3
+  ],
+  [
+   "CON:fisica/tension-superficial-capilaridad",
+   3
+  ],
+  [
+   "CON:biologia/ciclo-de-vida-de-las-plantas",
    2
   ],
   [
-   "CON:fisica/mecanismos-transferencia-calor",
+   "CON:biologia/meiosis",
+   2
+  ],
+  [
+   "CON:biologia/niveles-de-organizacion",
    2
   ]
  ]
