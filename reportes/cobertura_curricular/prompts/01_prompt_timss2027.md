@@ -1,0 +1,16 @@
+# Prompt 01 · Cobertura frente a TIMSS 2027 (marco principal)
+
+Lee CLAUDE.md completo, en especial «Marco de referencia: TIMSS 2027 es el PRINCIPAL». La cobertura v1 (TIMSS 2023) ya existe y no se toca. Trabaja por etapas y muéstrame el resultado de cada una antes de pasar a la siguiente.
+
+1. **Catálogo 2027.** Del cap. 2 (Ciencias) de `data/referencia/externos/timss/TIMSS2027_Marcos_Evaluacion.pdf` construye `data/referencia/catalogo_timss2027.json` con el esquema de CLAUDE.md: 4.° y 8.°, todas las áreas (incluidas las de «Investigations»), cada objetivo numerado con sus sub-ítems, `ambiental` (asterisco en el PDF), `es_investigacion` y `pagina_fuente`. Valida contra el PDF: metas de dominio (4.° 45/35/20; 8.° 35/20/25/20), metas cognitivas (4.° 35/40/25; 8.° 35/35/30) y número de áreas por dominio. Cuéntame cuántos objetivos quedaron por dominio y cuántos son ambientales.
+2. **Qué cambió.** Escribe `data/referencia/cambios_timss_2023_2027.md` (áreas nuevas, fusionadas o divididas, con página) y `data/referencia/equivalencias_timss_2023_2027.csv` (codigo_2023 → codigo_2027, tipo, nota).
+3. **Clasificación 2027 sin empezar de cero.**
+   a. Traduce `clasificacion_v1.json` con las equivalencias de tipo «igual». Esos temas conservan confianza y justificación (version «v2-2027-equivalencia»).
+   b. Reclasifica con subagentes (un lote por grado, `prompts/clasificar_lote.md` con el catálogo 2027) SOLO: los temas cuyo objetivo 2023 no tiene equivalente directo, y TODOS los temas que en v1 quedaron «FUERA» (pueden caer en «Investigations» o en áreas nuevas como Luz y sonido o Atmósfera).
+   c. Guarda todo en `data/referencia/clasificacion_v2_timss2027.json`. Física 10.°–11.° conserva TIMSS Advanced 2015 tal como está.
+4. **Parametrizar, no duplicar.** Agrega `--marco 2023|2027` a `scripts/merge_clasificacion.py`, `scripts/build_cobertura.py` y `scripts/anotar_mallas.py` (catálogo, clasificación, metas cognitivas, nombres de salida). Con `--marco 2023` el resultado debe ser idéntico al actual: compruébalo comparando las hojas Resumen antes y después.
+5. **Nuevas métricas en el libro 2027.** Hoja «Ambiental» (% de temas evaluables por grado y ciclo que trabajan objetivos ambientales vs ~25 %) y hoja «Investigaciones» (temas por grado en las áreas de Investigations). En Resumen agrega una columna «Cambio vs 2023» (objetivos cubiertos y dominio con mayor faltante en cada versión).
+6. **Generar y verificar.** `build_cobertura.py --marco 2027` → `outputs/Cobertura_TIMSS2027_Ciencias_SV.xlsx`; `scripts/recalc.py` con 0 errores; `anotar_mallas.py --marco 2027` → `outputs/mallas_anotadas_2027/`. Agrega pruebas en `tests/` para el catálogo 2027 (metas, códigos únicos, páginas presentes) y para que cada tema de Ciencias y Física tenga clasificación 2027. `pytest -q` en verde.
+7. **Informe corto (en el chat y en `outputs/informe_timss2027.md`).** Por ciclo: balance vs metas, objetivos 2027 no cubiertos o débiles, % ambiental, temas en Investigations, cuántos temas FUERA en v1 dejaron de serlo, y la lista de clasificaciones con confianza «baja» para el equipo de Ciencias.
+
+Reglas: no tocar `input/`, `data/raw/`, PDF de referencia ni entregables v1; no inventar códigos; todo número en Excel es fórmula; pregunta antes de cambiar una regla de CLAUDE.md.

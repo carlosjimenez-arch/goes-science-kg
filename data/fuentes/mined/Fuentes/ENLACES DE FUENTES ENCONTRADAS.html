@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fundamentación — Fuentes Verificadas</title>
+<style>
+:root{
+  --bg:#FBF8F2;--surface:#FFFFFF;--ink:#16202B;--ink2:#4B5A68;--ink3:#7C8A97;
+  --line:#E7E1D3;--line2:#F1EDE2;--gold:#A66A08;--gold-s:#F6EBD4;
+  --i-main:#0E7C86;--i-s:#E3F3F4;
+  --s-main:#3B4FA0;--s-s:#E7E9F7;
+  --o-main:#C15D1F;--o-s:#FBEAD9;
+  --t-main:#A62A6B;--t-s:#F7E1EE;
+  --e-main:#B8362B;--e-s:#F8E1DE;
+  --grad:linear-gradient(135deg,var(--s-main) 0%,var(--t-main) 52%,var(--o-main) 100%);
+  --grad-rainbow:linear-gradient(135deg,var(--i-main),var(--s-main),var(--t-main),var(--o-main),var(--e-main));
+  --se:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  --sa:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mo:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --maxw:1000px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sa);margin:0;padding:0;-webkit-font-smoothing:antialiased}
+.w{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:var(--se);font-weight:600;line-height:1.2;margin:0}
+p{margin:0}
+button{font:inherit}
+img,svg{display:block}
+.topbar{height:4px;background:var(--grad-rainbow)}
+
+header.hero{position:relative;overflow:hidden;padding:70px 0 44px;color:#fff;background:var(--grad)}
+header.hero::before{content:"";position:absolute;inset:0;background:rgba(10,12,20,.3)}
+header.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1.6px,transparent 1.6px);background-size:26px 26px;opacity:.5}
+.blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.5;animation:drift 14s ease-in-out infinite alternate}
+.blob.b1{width:300px;height:300px;background:var(--i-main);top:-130px;left:-90px}
+.blob.b2{width:240px;height:240px;background:var(--gold);bottom:-110px;right:-50px;animation-delay:-5s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(24px,-16px) scale(1.1)}}
+header.hero .w{position:relative;z-index:2}
+.ki{font:11px var(--mo);letter-spacing:.16em;text-transform:uppercase;color:#fff;opacity:.9;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ki .rule{width:28px;height:1px;background:#fff;opacity:.7}
+h1.title{font-size:clamp(28px,4.8vw,42px);letter-spacing:-.01em;max-width:760px;color:#fff}
+header.hero .sub{font-family:var(--se);font-size:16px;color:rgba(255,255,255,.92);margin-top:12px;max-width:640px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.meta-row span{font:11px var(--mo);letter-spacing:.03em;color:#fff;background:rgba(255,255,255,.18);padding:6px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.3)}
+
+section{padding:48px 0 60px}
+.acc-group{display:flex;flex-direction:column;gap:12px}
+.acc-item{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;transition:box-shadow .2s}
+.acc-item.open{box-shadow:0 6px 20px rgba(22,32,43,.07)}
+.acc-head{width:100%;display:flex;align-items:center;gap:16px;padding:18px 20px;background:none;border:none;cursor:pointer;text-align:left;color:inherit}
+.acc-head:hover{background:var(--line2)}
+.acc-ic{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff}
+.acc-title{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.acc-title h4{font-size:16px}
+.acc-title .meta{font-size:12.5px;color:var(--ink3);font-family:var(--sa);font-weight:400}
+.acc-chev{flex:0 0 auto;color:var(--ink3);transition:transform .3s ease}
+.acc-item.open .acc-chev{transform:rotate(180deg);color:var(--ink)}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-panel-inner{padding:4px 20px 22px}
+
+.fcards{display:flex;flex-direction:column;gap:12px}
+.fcard{background:var(--line2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;border-left:3px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 18px;align-items:flex-start;justify-content:space-between}
+.fcard.gob{border-left-color:var(--ink)}
+.fcard.marco{border-left-color:var(--i-main)}
+.fcard.acad{border-left-color:var(--s-main)}
+.fcard.apoyo{border-left-color:var(--ink3)}
+.fcard .fc-main{flex:1;min-width:220px}
+.fcard .yr{font:11px var(--mo);color:var(--ink3)}
+.fcard h5{font-family:var(--se);font-size:15px;margin-top:5px;line-height:1.35}
+.fcard .auth{font-size:12.5px;color:var(--ink2);margin-top:6px}
+.fcard .why{font-size:12.5px;color:var(--ink2);font-style:italic;margin-top:8px;line-height:1.5}
+.fcard .fc-cta{flex:0 0 auto;align-self:center}
+.readlink{display:inline-flex;align-items:center;gap:6px;font:12px var(--mo);font-weight:700;color:#fff;background:var(--gold);padding:9px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .15s,transform .15s}
+.readlink:hover{background:#8A5806;transform:translateY(-1px)}
+.srcbadge{display:inline-flex;align-items:center;font:11px var(--mo);font-weight:700;color:var(--ink3);background:var(--line2);border:1px solid var(--line);padding:8px 13px;border-radius:8px;white-space:nowrap}
+
+footer{padding:56px 0 56px;background:var(--ink);color:rgba(255,255,255,.85);text-align:center}
+footer .flogo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px}
+footer .flogo span{width:16px;height:16px;border-radius:50%;mix-blend-mode:screen}
+footer .flogo span:nth-child(1){background:var(--i-main)}
+footer .flogo span:nth-child(2){background:var(--t-main)}
+footer .flogo span:nth-child(3){background:var(--o-main)}
+footer h3{color:#fff;font-size:19px}
+footer p{margin-top:8px;font:12px var(--mo);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+
+<header class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="w">
+    <div class="ki"><span class="rule"></span>Malla CyT · El Salvador</div>
+    <h1 class="title">Fundamentación — fuentes verificadas</h1>
+    <p class="sub">El currículo oficial de El Salvador, marcos internacionales de ciencia y tecnología, y fundamentación académica.</p>
+    <div class="meta-row">
+      <span>14 fuentes</span>
+      <span>4 grupos</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="w">
+    <div class="acc-group">
+      <div class="acc-item open">
+        <button class="acc-head" aria-expanded="true">
+          <span class="acc-ic" style="background:var(--ink)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span>
+          <span class="acc-title"><h4>Currículo oficial vigente — la base</h4><span class="meta">MINED (El Salvador) + CAPRES</span></span>
+          <span class="acc-chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner">
+          <div class="fcards">
+            <div class="fcard gob">
+              <div class="fc-main"><div class="yr">MINED · 2022</div><h5>Programas de estudio de Ciencia y Tecnología — Segundo a sexto grado de Educación Básica</h5><div class="why">Introduce el modelo ICC+I y reemplaza a Ciencia, Salud y Medio Ambiente.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.mined.gob.sv/materiales/2026/CIENCIA_Y_TECNOLOGIA/1.%20Programas%20de%20estudio/Programas%20de%20estudio_Ciencia%20y%20Tecnolog%C3%ADa_2.%C2%B0%20a%206.%C2%B0%20grados.pdf" target="_blank" rel="noopener">Leer PDF oficial →</a></div>
+            </div>
+            <div class="fcard gob">
+              <div class="fc-main"><div class="yr">MINED · 2024</div><h5>Programas de estudio de Ciencia y Tecnología — Tercer Ciclo de Educación Básica (7.º-9.º)</h5><div class="why">Ejes integradores (I/S/O/T/E), competencias y áreas disciplinares.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.mined.gob.sv/materiales/2026/CIENCIA_Y_TECNOLOGIA/1.%20Programas%20de%20estudio/Programas%20de%20estudio_Ciencia%20y%20Tecnolog%C3%ADa_III%20ciclo.pdf" target="_blank" rel="noopener">Leer PDF oficial →</a></div>
+            </div>
+            <div class="fcard gob">
+              <div class="fc-main"><div class="yr">MINED · 2026</div><h5>Programas de estudio de Ciencia y Tecnología — Educación Media / Bachillerato (10.º-11.º)</h5><div class="why">Cierra el proceso formativo de 10 años.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.mined.gob.sv/materiales/2026/CIENCIA_Y_TECNOLOGIA/1.%20Programas%20de%20estudio/Programas%20de%20estudio_Ciencia%20y%20Tecnolog%C3%ADa_Bachillerato.pdf" target="_blank" rel="noopener">Leer PDF oficial →</a></div>
+            </div>
+            <div class="fcard gob">
+              <div class="fc-main"><div class="yr">CAPRES · 2026</div><h5>Malla Curricular CyT — matriz operativa oficial, 2.º-11.º</h5><div class="why">Eje, competencia, contenidos, procedimientos e indicadores por unidad.</div></div>
+              <div class="fc-cta"><span class="srcbadge">Fuente interna</span></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-ic" style="background:var(--i-main)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg></span>
+          <span class="acc-title"><h4>Marcos internacionales de referencia rigurosa</h4><span class="meta">STEM+ regional, PISA/OCDE, NGSS</span></span>
+          <span class="acc-chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner">
+          <div class="fcards">
+            <div class="fcard marco">
+              <div class="fc-main"><div class="yr">Bascopé, Ibaceta, Ruiz — Red STEM Latinoamérica / Siemens Stiftung · 2024</div><h5>Marco STEM+ para la implementación de innovación educativa en Latinoamérica</h5><div class="why">Valida el enfoque ciencia+tecnología integrada, perspectiva regional.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://educacion.stem.siemens-stiftung.org/wp-content/uploads/2024/11/Marco_STEM_VF_30_Sep_2024.pdf" target="_blank" rel="noopener">Leer PDF →</a></div>
+            </div>
+            <div class="fcard marco">
+              <div class="fc-main"><div class="yr">OCDE — Programme for International Student Assessment · 2026</div><h5>PISA 2025 Assessment and Analytical Framework (capítulo de Ciencias)</h5><div class="why">Define las 3 competencias científicas internacionales.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/05/pisa-2025-assessment-and-analytical-framework_3abce6d6/86c36975-en.pdf" target="_blank" rel="noopener">Leer PDF oficial →</a></div>
+            </div>
+            <div class="fcard marco">
+              <div class="fc-main"><div class="yr">Achieve, Inc. / NGSS · 2013</div><h5>Appendix F — Science and Engineering Practices in the NGSS</h5><div class="why">8 prácticas científicas y de ingeniería de referencia.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.nextgenscience.org/sites/default/files/Appendix%20F%20%20Science%20and%20Engineering%20Practices%20in%20the%20NGSS%20-%20FINAL%20060513.pdf" target="_blank" rel="noopener">Leer PDF oficial →</a></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-ic" style="background:var(--s-main)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg></span>
+          <span class="acc-title"><h4>Fundamentación académica universitaria</h4><span class="meta">National Academies, UC Berkeley, Stanford d.school</span></span>
+          <span class="acc-chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner">
+          <div class="fcards">
+            <div class="fcard acad">
+              <div class="fc-main"><div class="yr">National Research Council — The National Academies (EE. UU.) · 2012</div><h5>A Framework for K-12 Science Education: Practices, Crosscutting Concepts, and Core Ideas</h5><div class="why">Base conceptual directa del NGSS.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.nationalacademies.org/read/13165" target="_blank" rel="noopener">Leer →</a></div>
+            </div>
+            <div class="fcard acad">
+              <div class="fc-main"><div class="yr">National Research Council — comité presidido por Adam Gamoran · 2011</div><h5>Successful K-12 STEM Education</h5><div class="why">Criterios de una educación STEM efectiva.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.nationalacademies.org/read/13158" target="_blank" rel="noopener">Leer →</a></div>
+            </div>
+            <div class="fcard acad">
+              <div class="fc-main"><div class="yr">UC Berkeley (financiado por NSF) · 2022</div><h5>Understanding Science: How Science Really Works</h5><div class="why">Cómo funciona realmente la ciencia.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://undsci.berkeley.edu/understanding-science-101/how-science-works/" target="_blank" rel="noopener">Leer →</a></div>
+            </div>
+            <div class="fcard acad">
+              <div class="fc-main"><div class="yr">Stanford d.school — Hasso Plattner Institute of Design · 2018</div><h5>The Design Thinking Bootleg</h5><div class="why">Empatizar, definir, idear, prototipar, probar.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://dschool.sfo3.digitaloceanspaces.com/documents/dschool_bootleg_deck_2018_final_sm2-6.pdf" target="_blank" rel="noopener">Leer PDF oficial →</a></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-ic" style="background:var(--ink3)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 7l-3 7a3.5 3.5 0 0 0 7 0l-3-7zM19 7l-3 7a3.5 3.5 0 0 0 7 0l-3-7zM5 7h14"/></svg></span>
+          <span class="acc-title"><h4>Apoyo comparativo</h4><span class="meta">Colombia — MEN</span></span>
+          <span class="acc-chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="acc-panel"><div class="acc-panel-inner">
+          <div class="fcards">
+            <div class="fcard apoyo">
+              <div class="fc-main"><div class="yr">Ministerio de Educación Nacional, Colombia · 1998</div><h5>Lineamientos Curriculares — Ciencias Naturales y Educación Ambiental</h5><div class="why">Procesos de pensamiento científico.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.mineducacion.gov.co/1759/articles-339975_recurso_5.pdf" target="_blank" rel="noopener">Leer PDF →</a></div>
+            </div>
+            <div class="fcard apoyo">
+              <div class="fc-main"><div class="yr">Ministerio de Educación Nacional, Colombia / Ascofade · 2008</div><h5>Ser competente en tecnología: ¡una necesidad para el desarrollo!</h5><div class="why">Competencia tecnológica: naturaleza, apropiación, solución de problemas.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://www.mineducacion.gov.co/1759/articles-340033_archivo_pdf_Orientaciones_grales_educacion_tecnologia.pdf" target="_blank" rel="noopener">Leer PDF →</a></div>
+            </div>
+            <div class="fcard apoyo">
+              <div class="fc-main"><div class="yr">Ministerio de Educación Nacional, Colombia · 2023</div><h5>Orientaciones Curriculares de Tecnología e Informática</h5><div class="why">Contenidos y actividades tecnológicas modernas.</div></div>
+              <div class="fc-cta"><a class="readlink" href="https://colombiaaprende.edu.co/contenidos/coleccion/orientaciones-curriculares-de-tecnologia-e-informatica" target="_blank" rel="noopener">Leer →</a></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <div class="flogo"><span></span><span></span><span></span></div>
+    <h3>Fundamentación — Ciencia y Tecnología</h3>
+    <p>El Salvador · 14 fuentes verificadas</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function setPanel(item, open){
+    var head = item.querySelector('.acc-head');
+    var panel = item.querySelector('.acc-panel');
+    item.classList.toggle('open', open);
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.style.maxHeight = open ? (panel.scrollHeight + 'px') : null;
+  }
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var head = item.querySelector('.acc-head');
+    head.addEventListener('click', function(){
+      setPanel(item, !item.classList.contains('open'));
+    });
+  });
+  document.querySelectorAll('.acc-item.open').forEach(function(item){ setPanel(item, true); });
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.acc-item.open').forEach(function(item){
+      item.querySelector('.acc-panel').style.maxHeight = item.querySelector('.acc-panel').scrollHeight + 'px';
+    });
+  });
+})();
+</script>
+</body>
+</html>
