@@ -1,13 +1,14 @@
 # Traspaso para la próxima sesión de Claude Code
 
-> Sesión del 2026-10-05 (14:10–18:10). Rol: experto en educación científica e ingeniero de IA, grafos y GraphRAG.
+> Sesión del 2026-10-05 (14:10–18:10; commits a las 14:59, 15:37, 16:25, 17:07 y al cierre). Rol: experto en educación científica e ingeniero de IA, grafos y GraphRAG.
 > Objetivo de la sesión: construir los **grafos por grado** (lo que pidió el MINED) y dejar el proyecto listo para
 > proponer una curricularización mejor, anclada en marcos internacionales y países de alto desempeño.
 
 ## Cómo retomar (5 minutos)
 ```bash
-uv sync --extra dev --extra pdf --extra analisis --extra rag
+uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api
 uv run make todo        # grafo → validar → fichas → grados → brechas → pruebas → lint (todo en verde)
+uv run make propuestas  # simula las 11 propuestas sobre el grafo actual y rehace PROPUESTAS.md
 uv run gskg evaluar-rag # MRR y recall@k de GraphRAG
 ```
 Lee, en orden: `CLAUDE.md` → este archivo → `specs/08_plan_de_implementacion.md` → `specs/09` y `specs/10`.
@@ -18,11 +19,11 @@ Lee, en orden: `CLAUDE.md` → este archivo → `specs/08_plan_de_implementacion
 | Grafo completo | `data/grafo/` (JSONL + manifest) | 1.260 temas · 512 conceptos (14 del triaje) · 30 prácticas · 493 objetivos de marco · 1.265 objetivos de 6 países · 829 prerrequisitos (DAG) |
 | **Grafos por grado** | `grados/` (index.html, G02…G11 con ficha.md + grafo.html) y `data/grafo/grados/` | Diagnóstico, bloques temáticos con resumen y visor interactivo |
 | Países | `data/interim/paises/` (ENG, AU, JP) + legado (UY, CO, SG) | Inglaterra (KS1–KS4), Australia y Japón extraídos, etiquetados y alineados (Japón desde el texto oficial del MEXT, en japonés); desempeño TIMSS 2023 verificado y citado en `config/referentes.yaml` |
-| GraphRAG | `src/goes_science_kg/rag.py`, `gskg rag` | Local y citado; `--global` (bloques); `--responder` (Claude, probado con un cliente simulado, nunca contra la API real); 60 preguntas (8 de Japón): MRR 0,85 y recall@25 0,84 (ver `data/evaluacion/resultados.md`); la intención de país reconoce nombres y gentilicios |
+| GraphRAG | `src/goes_science_kg/rag.py`, `gskg rag` | Local y citado; `--global` (bloques); `--responder` (Claude, probado con un cliente simulado, nunca contra la API real). Conjunto de ajuste (60 preguntas): MRR 0,85. **Conjunto de prueba independiente (16): MRR 0,65**, sin mejora frente a antes de la sesión (ver `data/evaluacion/resultados.md`); la intención de país reconoce nombres y gentilicios |
 | API de lectura | `src/goes_science_kg/api.py`, `gskg servir` | FastAPI: grados, conceptos, propuestas, rag |
 | Mapas de progresión | `asignaturas/<x>/progresion.html` | Concepto × grado: SV frente a países, ordenado por el grafo de prerrequisitos |
 | Brechas | `asignaturas/<x>/brechas/` | md + json + csv + Excel con fórmulas; mediana de todos los países y solo de los de alto desempeño (AU, ENG, JP, SG) |
-| Propuestas | `asignaturas/<x>/propuesta/`, resumen en `asignaturas/PROPUESTAS.md` | 10 borradores 2.°–11.° (v2–v5) verificados con el simulador: errores de secuencia de confianza alta 52 → 4 (los 4 son decisiones abiertas en los informes) |
+| Propuestas | `asignaturas/<x>/propuesta/`, resumen en `asignaturas/PROPUESTAS.md` | 11 borradores 2.°–11.° (Química 2.°–4.° v1 es mínima) verificados con el simulador: errores de secuencia de confianza alta 54 → 3. Los 3 dependen de aristas discutibles: Catalizadores → Enzimas, Ondas sísmicas → Precursores de sismos, Efecto Doppler → Big Bang; decidir con el MINED si se mantienen |
 | Revisión humana | `asignaturas/<x>/revision/` + `gskg revision exportar/importar` | CSV listos para el MINED (no se han devuelto) |
 | Revisiones aplicadas | `data/interim/revisiones/` | 19 temas reasignados de asignatura (revisión experta, pendiente de validación del MINED) |
 
@@ -58,6 +59,24 @@ Espacio, herencia en Biología 5.°–8.°). Gravedad: Física 2.°–4.° (v5) 
 9. **Capas sobre la IA**: revisiones (`data/interim/revisiones/`), triaje de conceptos (`triaje_propuestos.json`) y etiquetado de países del triaje se aplican al cargar; volver a correr `unir-*` no las borra.
 10. **GraphRAG**: la intención de país reconoce nombres y gentilicios; sin intención de país, los objetivos de país pesan ×0,8; ante una consulta de prerrequisitos, los conceptos pesan ×1,6 (ablaciones en `data/evaluacion/resultados.md`).
 
+## Revisión de código de esta sesión (17:15) y correcciones
+Un agente revisó `git diff 166852b..HEAD -- src tests`. Se corrigieron los 10 hallazgos (agrupados):
+1. **Simulador:** las quitas de otras asignaturas ya no contaminan el reporte con nombres sin resolver. Se aplican todas
+   las que resuelven; solo se listan las que tocan conceptos de la asignatura o sus equivalentes.
+2. **Simulador:** los nombres repetidos entre asignaturas («Cambios de estado») se resuelven prefiriendo la asignatura
+   que propone la acción.
+3. **GraphRAG:** una consulta con marco y países sin nombrarlos ya no penaliza a los objetivos de país.
+4. **GraphRAG:** las intenciones usan palabras completas («compartimentos», «paisaje» y «en inglés» ya no son país;
+   «australianos» es país y no el marco ACARA).
+5. **Lotes de países:** `preparar-paises` es idempotente (no repite objetivos que ya están en un lote) y la
+   regeneración completa borra los lotes viejos del país.
+6. **Triaje:** las aristas del triaje que repitan un par o cierren un ciclo se descartan al cargar.
+7. **Resúmenes de bloques:** conservan el conjunto de conceptos para el que se escribieron, así que no derivan entre
+   reconstrucciones.
+8. **Cachés:** se limpian tras reescribir el vocabulario y los etiquetados.
+9. **Pruebas:** verifican el camino real del código (`etiquetas_retiradas` en la simulación, regex con límites de
+   palabra).
+
 ## Qué sigue (en orden de valor)
 1. **Revisión del MINED.** Enviar `asignaturas/*/revision/*.csv`, `asignaturas/PROPUESTAS.md` y los informes. Al recibirlos: `gskg revision importar <csv>` → `make todo` → volver a simular las propuestas.
 2. **Más países de alto desempeño.**
@@ -70,7 +89,9 @@ Espacio, herencia en Biología 5.°–8.°). Gravedad: Física 2.°–4.° (v5) 
    - Finlandia (6.° en 8.° grado): ePerusteet solo está en finés y sueco y por bandas (1–2, 3–6, 7–9); se descartó por ahora.
    - Flujo probado: skill `fuentes-descargar` → `pais-extraer-objetivos` → `gskg conceptos preparar-paises` (solo pendientes) → etiquetar con `prompts/subagentes/prompt_paises.md` → alinear con `reportes/cobertura_curricular/prompts/alinear_paises.md` → `unir-paises` → `make todo`.
 3. **PISA 2022 Vol. I (OCDE)** para completar la evidencia de desempeño en `referentes.yaml`. El sitio de la OCDE
-   devuelve 403 a `curl`/WebFetch; abrir el anexo B1 (tabla I.B1.2.3) en el navegador o usar el PISA Data Explorer.
+   devuelve 403 a `curl`/WebFetch. En el navegador el anexo B1 sí carga (…/full-report/component-25.html), pero la
+   tabla I.B1.2.3 viene plegada como imagen: descargar su Excel desde el enlace «Statlink» de la tabla (lo hace una
+   persona; requiere aprobar la descarga) o usar el PISA Data Explorer.
 4. **Calidad de datos.**
    - 630 aristas de confianza baja (ver `gskg grafo validar`); van a revisión humana en los CSV de `asignaturas/*/revision/`.
    - 292 conceptos propuestos por el etiquetado: ✅ triados en `data/interim/conceptos/triaje_propuestos.json`
@@ -87,13 +108,18 @@ Espacio, herencia en Biología 5.°–8.°). Gravedad: Física 2.°–4.° (v5) 
      `vocabulario.json` y borrar la capa; si no, basta con borrar `triaje_propuestos.json`.
    - Algunos conceptos amplios mezclan niveles, por ejemplo «Ondas sísmicas, magnitud e intensidad»; conviene dividirlos.
 5. **GraphRAG.**
+   - **Prioridad: la detección de intención no generaliza.** En 16 preguntas de prueba independientes
+     (`data/evaluacion/rag_preguntas_prueba.json`; ver `resultados.md`, «Conjunto de prueba independiente»), la MRR es
+     0,65 antes y después de los ajustes del día; prerrequisito 0,34 y marco 0,49. Ninguna de esas preguntas activa
+     las intenciones. Hacer más robusta la detección (léxico amplio o un clasificador con Claude) y medir con un
+     conjunto de prueba nuevo. No ajustar con el de prueba.
    - Hoy, por tipo: comparación 0,82, local 0,89, marco 0,85, prerrequisito 0,81 (en esta sesión: marco 0,71 → 0,85 al
      separar «currículo australiano» del país; prerrequisito 0,62 → 0,81). El conjunto es «plata» (60 preguntas): ampliar
      antes de seguir ajustando pesos.
    - Búsqueda densa para sinónimos.
    - Pasar el conjunto de evaluación de «plata» a «oro» con el equipo de Ciencias.
    - Panel docente sobre la API de lectura que ya existe (`gskg servir`).
-6. ✅ **Excel.** Los 14 libros (`Brechas_*.xlsx` y `Propuesta_*.xlsx`) se recalcularon con Numbers (osascript, copias en el scratchpad) el 2026-10-05 (última vez a las 17:07, tras regenerarlos): 0 errores y 159 fórmulas con valor. Repetir tras regenerar los libros.
+6. ✅ **Excel.** Los 15 libros (`Brechas_*.xlsx` y `Propuesta_*.xlsx`) se recalcularon con Numbers (osascript, copias en el scratchpad; última vez el 2026-10-05 a las 17:25): 0 errores y 173 fórmulas con valor. Repetir tras regenerar los libros.
 7. **Bachillerato.** Las propuestas de 10.°–11.° no tienen comparación con países. Por edad, el KS4 inglés (ya en el grafo) equivale a 8.°–9.°, no a Bachillerato; 10.°–11.° (16–18 años) corresponde a A-level, que no es currículo nacional, y a Senior Secondary de Australia, que ya es el pivote (AUSS). Para comparar habría que sumar otro país con currículo nacional de 16–18 años (p. ej., Singapur H2, si el SEAB vuelve a publicar sus programas).
 
 ## Cuidado con

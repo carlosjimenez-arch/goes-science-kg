@@ -183,9 +183,19 @@ def cargar_prerrequisitos() -> list[dict]:
     aristas = json.loads(p.read_text(encoding="utf-8"))
     # Conceptos nuevos del triaje: sus prerrequisitos sugeridos entran como evidencia lógica de confianza media.
     # Solo llegan aristas hacia el concepto nuevo, así que no pueden crear ciclos.
+    # Hoy los conceptos del triaje no tienen aristas salientes, pero un próximo `unir` podría dárselas: se descarta
+    # toda arista del triaje que repita un par o cierre un ciclo.
+    import networkx as nx
+
     voc = vocabulario()
-    aristas += [{"origen": o, "destino": c["id"], "tipo_evidencia": "logica", "evidencias": ["triaje"],
-                 "confianza": "media", "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje).",
-                 "version": VERSION_TRIAJE}
-                for c in conceptos_del_triaje() for o in c["prerrequisitos_sugeridos"] if o in voc]
+    g = nx.DiGraph((e["origen"], e["destino"]) for e in aristas if (e["origen"], e["destino"]) not in rechazados)
+    for c in conceptos_del_triaje():
+        for o in c["prerrequisitos_sugeridos"]:
+            d = c["id"]
+            if o not in voc or g.has_edge(o, d) or (d in g and o in g and nx.has_path(g, d, o)):
+                continue
+            g.add_edge(o, d)
+            aristas.append({"origen": o, "destino": d, "tipo_evidencia": "logica", "evidencias": ["triaje"],
+                            "confianza": "media", "version": VERSION_TRIAJE,
+                            "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje)."})
     return [e for e in aristas if (e["origen"], e["destino"]) not in rechazados]

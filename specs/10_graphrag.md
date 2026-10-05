@@ -34,7 +34,8 @@ consulta ──► BM25 en español (nodos con texto) ──► semillas (filtra
    + prerrequisitos), y resumir cada comunidad con Claude en lotes. Sirve para preguntas globales
    («¿cuáles son los grandes bloques de 8.°?»).
 2. **Búsqueda híbrida**: sumar embeddings densos al BM25 si la evaluación muestra fallas de vocabulario (sinónimos).
-3. ✅ (versión «plata», 60 preguntas, `data/evaluacion/`) **Evaluación**: un conjunto de 30 a 50 preguntas con respuesta de referencia escrita por el equipo de Ciencias,
+3. ✅ (versión «plata»: 60 preguntas de ajuste y 16 de prueba independientes, `data/evaluacion/`; la detección de
+   intención no generaliza a la prueba: ver `resultados.md`) **Evaluación**: un conjunto de 30 a 50 preguntas con respuesta de referencia escrita por el equipo de Ciencias,
    con recall@k de la recuperación y fidelidad de las citas de la respuesta.
 4. ✅ **API de lectura** (FastAPI; `gskg servir`): `/api/grados`, `/api/grados/{g}`, `/api/conceptos/{asig}/{slug}`,
    `/api/propuestas`, `/api/rag`, `/api/rag/global`. Siguiente: un panel docente que la consuma.

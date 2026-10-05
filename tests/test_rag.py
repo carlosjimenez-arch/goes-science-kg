@@ -35,14 +35,23 @@ def test_determinista(grafo):
 
 
 def test_intencion_pais_reconoce_paises_y_gentilicios():
+    import re
+
     from goes_science_kg.rag import INTENCION_PAISES, PAIS_NOMBRADO, _sin_tildes
+
+    def nombrados(plano):
+        return {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano)}
 
     for consulta, codigo in [("¿Cómo enseña Japón las fases de la Luna?", "JP"),
                              ("¿Qué aprenden los estudiantes japoneses sobre solubilidad?", "JP"),
                              ("Currículo de Inglaterra en KS3", "ENG"), ("¿Y en Australia?", "AU")]:
         plano = _sin_tildes(consulta)
         assert INTENCION_PAISES.search(plano), consulta
-        assert codigo in {c for p, c in PAIS_NOMBRADO.items() if p in plano}, consulta
+        assert codigo in nombrados(plano), consulta
+    # palabras comunes que no son intención de país (revisión de código 2026-10-05)
+    for consulta in ["compartimentos celulares", "un paisaje volcánico", "el texto en inglés"]:
+        plano = _sin_tildes(consulta)
+        assert not INTENCION_PAISES.search(plano) and not nombrados(plano), consulta
 
 
 def test_curriculo_australiano_es_marco_no_pais(grafo):
@@ -51,5 +60,6 @@ def test_curriculo_australiano_es_marco_no_pais(grafo):
 
     nodos, aristas = grafo
     ctx = GraphRAG(nodos, aristas).recuperar("¿Qué descriptores del currículo australiano cubren la selección natural?")
-    primeros = [n.id for n, _ in ctx.nodos[:5]]
-    assert not any(i.startswith("OP:AU-") for i in primeros[:1]), primeros
+    primeros = [n.id for n, _ in ctx.nodos[:10]]
+    assert not primeros[0].startswith("OP:"), primeros
+    assert any(i.startswith("OBJ:") for i in primeros), primeros

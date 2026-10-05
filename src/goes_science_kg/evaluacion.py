@@ -19,8 +19,8 @@ from goes_science_kg.rag import GraphRAG
 CONJUNTO = "data/evaluacion/rag_preguntas.json"
 
 
-def evaluar(rag: GraphRAG, ks: tuple[int, ...] = (5, 10, 25)) -> dict:
-    preguntas = json.loads(ruta(CONJUNTO).read_text(encoding="utf-8"))
+def evaluar(rag: GraphRAG, ks: tuple[int, ...] = (5, 10, 25), conjunto: str = CONJUNTO) -> dict:
+    preguntas = json.loads(ruta(conjunto).read_text(encoding="utf-8"))
     filas = []
     for p in preguntas:
         ctx = rag.recuperar(p["pregunta"], grado=p.get("grado"), asignatura=p.get("asignatura"), k_final=max(ks))

@@ -163,6 +163,8 @@ def consolidar_vocabulario() -> dict:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     _escribir(f"{DIR}/vocabulario.json", sorted(todos, key=lambda c: c["id"]))
     vocabulario.cache_clear()
+    etiquetado.cache_clear()  # filtran contra el vocabulario
+    etiquetado_paises.cache_clear()
     return dict(Counter(c["asignatura"] for c in todos))
 
 
@@ -223,6 +225,7 @@ def unir_etiquetado() -> dict:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     _escribir(f"{DIR}/etiquetado_temas.json", sorted(filas, key=lambda f: f["id"]))
     _escribir(f"{DIR}/conceptos_propuestos.json", sorted(nuevos.items(), key=lambda x: (-x[1], x[0])))
+    etiquetado.cache_clear()
     return {"temas": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas)),
             "conceptos_propuestos": len(nuevos)}
 
@@ -254,9 +257,19 @@ def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool 
     escritos = []
     for pais in sorted({n.props["pais"] for n in ops}):
         items = [n for n in ops if n.props["pais"] == pais]
-        # La numeración sigue tras los lotes existentes: reutilizar un número dejaría su salida_ desalineada.
-        previos = [int(p.stem.rsplit("_", 1)[1]) for p in ruta(f"{DIR}/lotes_paises").glob(f"lote_PAIS_{pais}_*.json")]
-        base = max(previos, default=0) if solo_pendientes else 0
+        d = ruta(f"{DIR}/lotes_paises")
+        existentes = sorted(d.glob(f"lote_PAIS_{pais}_*.json"))
+        if solo_pendientes:
+            # La numeración sigue tras los lotes existentes (reutilizar un número dejaría su salida_ desalineada) y
+            # no se repiten objetivos que ya están en un lote aunque aún no tengan salida (correr dos veces es seguro).
+            en_lotes = {i["id"] for p in existentes for i in json.loads(p.read_text(encoding="utf-8"))["items"]}
+            items = [n for n in items if n.id.removeprefix("OP:") not in en_lotes]
+            base = max((int(m.group(1)) for p in existentes if (m := re.search(r"_(\d+)$", p.stem))), default=0)
+        else:
+            # Regeneración completa: se borran los lotes y salidas del país para no mezclar con los nuevos.
+            for p in existentes + sorted(d.glob(f"salida_PAIS_{pais}_*.json")):
+                p.unlink()
+            base = 0
         for i in range(0, len(items), por_lote):
             lote = {
                 "lote": f"PAIS_{pais}_{base + i // por_lote + 1}", "version": "etiquetado-paises-v1",
@@ -296,7 +309,9 @@ def unir_etiquetado_paises() -> dict:
                           "version": lote["version"]})
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
+    filas = list({f["id"]: f for f in filas}.values())  # un id repetido entre lotes: gana el último
     _escribir(f"{DIR}/etiquetado_paises.json", sorted(filas, key=lambda f: f["id"]))
+    etiquetado_paises.cache_clear()
     return {"objetivos": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas)),
             "sin_concepto": sum(not f["conceptos"] for f in filas)}
 

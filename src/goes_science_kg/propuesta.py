@@ -167,14 +167,20 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
 
     p = json.loads((ruta(f"asignaturas/{asig}/propuesta") / f"propuesta_G{g0:02d}-G{g1:02d}.json")
                    .read_text(encoding="utf-8"))
-    por_nombre = {c["nombre"].lower(): cid for cid, c in cp.vocabulario().items()}
+    por_nombre = {c["nombre"].lower(): cid for cid, c in sorted(cp.vocabulario().items())}
+    # Cinco nombres se repiten entre asignaturas («Cambios de estado» en Física y Química): se prefiere el de la
+    # asignatura que propone la acción.
+    por_asig_nombre = {(c["asignatura"], c["nombre"].lower()): cid for cid, c in cp.vocabulario().items()}
+
+    def resolver(nombre: str, de: str = asig) -> str | None:
+        return por_asig_nombre.get((de, nombre.lower())) or por_nombre.get(nombre.lower())
     nuevos_n = {n.id: n.model_copy(deep=True) for n in nodos}
     nuevas_a = list(aristas)
     sin_resolver = []
 
     def _agregar_conceptos(t: str, nombres: list[str]) -> None:
         for nombre in nombres:
-            cid = por_nombre.get(nombre.lower())
+            cid = resolver(nombre)
             if cid and t in nuevos_n:
                 nuevas_a.append(A(origen=t, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia", rol="principal",
                                   confianza=Confianza.ALTA, justificacion="Acción propuesta (simulación).",
@@ -184,21 +190,32 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
 
     # Etiquetas que retiran las propuestas de OTRAS asignaturas del mismo ciclo (p. ej., Biología deja de tratar
     # «Química de los carbohidratos» en 10.°): afectan el primer grado de conceptos de esta asignatura.
-    cruzadas = []
+    cruzadas, retiradas = [], 0
+    # Conceptos de esta asignatura y sus equivalentes en otras (comparten primer grado): solo esas quitas se reportan.
+    relevantes = {cid for cid, c in cp.vocabulario().items() if c["asignatura"] == asig}
+    relevantes |= {x for e in cp.equivalencias() if {e["a"], e["b"]} & relevantes for x in (e["a"], e["b"])}
     for otra in sorted(ruta("asignaturas").glob(f"*/propuesta/propuesta_G{g0:02d}-G{g1:02d}.json")):
         if otra.parent.parent.name == asig:
             continue
+        de = otra.parent.parent.name
         for a in json.loads(otra.read_text(encoding="utf-8"))["acciones"]:
-            if a.get("quitar_conceptos"):
-                cruzadas.append({**a, "accion": "_quitar", "origen": otra.parent.parent.name})
+            # Se aplican todas las que resuelven (retirar una etiqueta es local y seguro, y puede afectar a esta
+            # asignatura vía un concepto equivalente); los nombres que no resuelven los reporta la otra propuesta.
+            validos = [n for n in a.get("quitar_conceptos", []) if resolver(n, de)]
+            if validos:
+                ids = {resolver(n, de) for n in validos}
+                cruzadas.append({**a, "accion": "_quitar", "origen": de, "quitar_conceptos": validos,
+                                 "relevante": bool(ids & relevantes)})
     for a in cruzadas + p["acciones"]:
         afectados = [f"TEMA:{t}" for t in a.get("temas_afectados", [])]
         if a.get("quitar_conceptos"):
             # Cualquier acción puede retirar etiquetas que no corresponden al tema reformulado.
-            quitar = {por_nombre.get(n.lower()) for n in a["quitar_conceptos"]} - {None}
-            sin_resolver += [n for n in a["quitar_conceptos"] if n.lower() not in por_nombre]
+            quitar = {resolver(n, a.get("origen", asig)) for n in a["quitar_conceptos"]} - {None}
+            sin_resolver += [n for n in a["quitar_conceptos"] if resolver(n) is None]
+            antes_q = len(nuevas_a)
             nuevas_a = [x for x in nuevas_a if not (x.origen in afectados and x.destino in quitar
                                                      and x.tipo == TipoArista.TRABAJA)]
+            retiradas += antes_q - len(nuevas_a)
         if a["accion"] == "mover" and a.get("grado_propuesto"):
             for t in afectados:
                 if t in nuevos_n:
@@ -221,7 +238,7 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
                 _agregar_conceptos(t, a.get("conceptos", []))
         elif a["accion"] == "dividir" and afectados:
             # Dividir: los conceptos de la acción se van al tema nuevo (en su grado) y salen del original.
-            ids = {por_nombre.get(n.lower()) for n in a.get("conceptos", [])} - {None}
+            ids = {resolver(n) for n in a.get("conceptos", [])} - {None}
             nuevas_a = [x for x in nuevas_a if not (x.origen in afectados and x.destino in ids
                                                      and x.tipo == TipoArista.TRABAJA)]
             tid = f"TEMA:PROP-{asig}-{a['n']}"
@@ -233,7 +250,7 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
             nuevos_n[tid] = N(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=asig,
                               grado=a["grado_propuesto"])
             for i, nombre in enumerate(a.get("conceptos", [])):
-                cid = por_nombre.get(nombre.lower())
+                cid = resolver(nombre)
                 if cid:
                     nuevas_a.append(A(origen=tid, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia",
                                       rol="principal" if i == 0 else "secundario", confianza=Confianza.ALTA,
@@ -246,9 +263,9 @@ def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
     pendientes = [s for s in analizar(asig, list(nuevos_n.values()), nuevas_a, ev)["secuencia"]
                   if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"]
     return {"antes": antes, "despues": despues, "secuencia_alta_pendiente": pendientes,
-            "conceptos_no_resueltos": sorted(set(sin_resolver)),
+            "conceptos_no_resueltos": sorted(set(sin_resolver)), "etiquetas_retiradas": retiradas,
             "quitas_de_otras_asignaturas": [{"asignatura": a["origen"], "accion": a["n"], "temas": a["temas_afectados"],
-                                             "conceptos": a["quitar_conceptos"]} for a in cruzadas]}
+                                             "conceptos": a["quitar_conceptos"]} for a in cruzadas if a["relevante"]]}
 
 
 # -- Resumen de todas las propuestas -----------------------------------------------------------------
@@ -290,12 +307,13 @@ def escribir_resumen() -> str:
           "| Asignatura | Ciclo | Acciones | Errores de secuencia (alta) | Llegan ≥2 grados tarde | Desfase medio "
           "| Documentos |", "|---|---|---|---|---|---|---|", *filas, "",
           "Notas:",
-          "- **Química 2.°–4.°** no tiene propuesta: la malla no tiene Química en 4.° y no hay conceptos que "
-          "lleguen tarde.",
+          *([] if ruta("asignaturas/quimica/propuesta/propuesta_G02-G04.json").exists() else [
+              "- **Química 2.°–4.°** no tiene propuesta: la malla no tiene Química en 4.° y no hay conceptos que "
+              "lleguen tarde."]),
           "- **Tierra y Espacio 5.°–8.°** casi no reduce los conceptos que llegan tarde: a propósito mueve la unidad "
           "del espacio de 5.° a 6.° para que la gravedad y las órbitas vayan antes.",
-          "- Las propuestas de 2.°–8.° ya usan los 5 países (con Inglaterra y Australia, de alto desempeño); las de "
-          "10.°–11.° se basan en los marcos (ACARA y TIMSS Advanced).",
+          "- Las propuestas de 2.°–8.° usan los 6 países (Singapur, Inglaterra, Australia y Japón son de alto "
+          "desempeño); las de 10.°–11.° se basan en los marcos (ACARA y TIMSS Advanced).",
           "- Los errores de secuencia que quedan se explican en cada informe (introducciones cualitativas o etiquetas "
           "por revisar). Cada informe lista sus **decisiones abiertas para el MINED**.",
           "- Las propuestas de un ciclo afectan a los siguientes (por ejemplo, si un tema baja a 5.°, el de 9.° debe "

@@ -239,13 +239,16 @@ def rag(
 
 
 @app.command("evaluar-rag")
-def evaluar_rag() -> None:
-    """Mide la recuperación de GraphRAG con data/evaluacion/rag_preguntas.json (recall@k, MRR)."""
+def evaluar_rag(
+    conjunto: str = typer.Option("data/evaluacion/rag_preguntas.json",
+                                 help="Archivo de preguntas (p. ej. el de prueba, que no se usa para ajustar)"),
+) -> None:
+    """Mide la recuperación de GraphRAG con un conjunto de preguntas (recall@k, MRR)."""
     from goes_science_kg.evaluacion import evaluar
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.rag import GraphRAG
 
-    typer.echo(json.dumps(evaluar(GraphRAG(*cargar())), ensure_ascii=False, indent=1))
+    typer.echo(json.dumps(evaluar(GraphRAG(*cargar()), conjunto=conjunto), ensure_ascii=False, indent=1))
 
 
 propuesta_app = typer.Typer(help="Propuesta curricular por asignatura y ciclo (fase 5)", no_args_is_help=True)

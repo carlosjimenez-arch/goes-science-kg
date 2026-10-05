@@ -37,12 +37,12 @@ países) y un **visor interactivo** (`grafo.html`).
 
 **Por asignatura**: `asignaturas/<x>/` tiene la ficha, el **mapa de progresión** (`progresion.html`), las brechas
 (md + Excel), las propuestas curriculares en borrador ([resumen](asignaturas/PROPUESTAS.md)) y los CSV de revisión.
-Las 10 propuestas, simuladas sobre el grafo, bajan los errores de secuencia de confianza alta de 52 a 4 (cada uno
-queda como decisión abierta para el MINED).
+Las 11 propuestas, simuladas sobre el grafo, bajan los errores de secuencia de confianza alta de 54 a 3 (los 3
+dependen de aristas de prerrequisito discutibles y quedan como decisiones abiertas para el MINED).
 
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
-API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas: MRR 0,85 y recall@25 0,84 ([resultados](data/evaluacion/resultados.md)).
+API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y 16 de prueba independientes (MRR 0,65) ([resultados](data/evaluacion/resultados.md)).
 
 Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).

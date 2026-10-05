@@ -37,13 +37,16 @@ consolidadas consolidado previo previos aborda abordan ensena ensenan ensenar cu
 para hacer pais paises otros""".split())
 INTENCION_PRERREQ = re.compile(r"\b(antes de|previo|previos|prerrequisit|deben saber|deben dominar|necesitan? saber|"
                                r"base para|para comprender|para entender|consolidad)", re.I)
-# Raíces sin tildes (se comparan con la consulta sin tildes): nombre del país y gentilicio.
-PAIS_NOMBRADO = {"uruguay": "UY", "colombia": "CO", "singapur": "SG", "inglaterra": "ENG", "ingles": "ENG",
-                 "britanic": "ENG", "australia": "AU", "japon": "JP", "japones": "JP"}
-INTENCION_PAISES = re.compile(r"\b(pais|paises|internacional|otros sistemas|compar|" + "|".join(PAIS_NOMBRADO) + ")")
+# Patrones sin tildes (se comparan con la consulta sin tildes, como palabras completas): país y gentilicio.
+# «inglés» no cuenta: casi siempre es el idioma.
+PAIS_NOMBRADO = {r"uruguay\w*": "UY", r"colombia\w*": "CO", r"singapur\w*": "SG", "inglaterra": "ENG",
+                 r"britanic[oa]s?": "ENG", r"australian[oa]s?|australia": "AU", r"japon(es|esa|eses|esas)?": "JP"}
+INTENCION_PAISES = re.compile(r"\b(pais|paises|internacional(es)?|otros sistemas|"
+                              r"compar(a|an|ar|e|en|acion|aciones|ando|ado|ada|ados|adas)|"
+                              + "|".join(PAIS_NOMBRADO) + r")\b")
 INTENCION_MARCO = re.compile(
-    r"\b(timss|pisa|acara|australian|curriculo australiano|marco|marcos|evaluaci[oó]n internacional|"
-    r"objetivos? internacional)", re.I)
+    r"\b(timss|pisa|acara|australian|curriculo australiano|marco|marcos|evaluacion internacional|"
+    r"objetivos? internacional(es)?)\b")
 MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "acara": ("AUSS",),
                   "australian": ("AUSS",), "curriculo australiano": ("AUSS",)}
 PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
@@ -161,22 +164,23 @@ class GraphRAG:
                   k_semillas: int = 8, saltos: int = 2, k_final: int = 25) -> Contexto:
         q = normalizar(consulta)
         plano = _sin_tildes(consulta)
-        paises = INTENCION_PAISES.search(plano)
         marco = INTENCION_MARCO.search(plano)
         # «currículo australiano» es el marco ACARA, no el país; con intención de marco, el refuerzo de país solo
         # se aplica si se nombra un país.
         plano_paises = re.sub(r"curriculo australiano|australian curriculum", "acara", plano)
-        nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b{p}", plano_paises)}
-        paises = paises if not marco else (paises and nombrados)
+        paises = INTENCION_PAISES.search(plano_paises)
+        nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano_paises)}
+        intencion_pais = bool(paises)
+        refuerzo_pais = paises if not marco else (paises and nombrados)  # con marco, solo si se nombra un país
         prerreq = INTENCION_PRERREQ.search(consulta)
-        marcos = {m for clave, ms in MARCO_NOMBRADO.items() if clave in plano for m in ms}
+        marcos = {m for clave, ms in MARCO_NOMBRADO.items() if re.search(rf"\b{clave}\b", plano) for m in ms}
 
         def peso(n: Nodo) -> float:
             w = self._foco(n, grado) * PESO_TIPO.get(n.tipo, 1.0)
             if n.tipo == TipoNodo.OBJETIVO_PAIS:
-                if paises:
+                if refuerzo_pais:
                     w *= 2.0 if (not nombrados or n.props.get("pais") in nombrados) else 0.5
-                else:
+                elif not intencion_pais:
                     w *= PESO_PAIS_SIN_INTENCION
             if marco and n.tipo == TipoNodo.OBJETIVO_MARCO:
                 w *= PESO_MARCO if (not marcos or n.props.get("marco") in marcos) else 0.6

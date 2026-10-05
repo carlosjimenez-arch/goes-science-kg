@@ -68,7 +68,9 @@ def consolidar_resumenes() -> dict:
     vigentes = {}
     for i, c in actuales.items():
         if r := resumen_para(c["grado"], c["conceptos"]):
-            vigentes[i] = {**r, "id": i, "conceptos": sorted(c["conceptos"])}
+            # Se conserva el conjunto para el que se escribió el resumen: si se reemplazara por el actual, el texto
+            # podría derivar de reconstrucción en reconstrucción hasta describir otro bloque.
+            vigentes[i] = {**r, "id": i}
     d = ruta("data/interim/comunidades")
     for p in sorted(d.glob("salida_*.json")):
         lote = {b["id"]: b for b in json.loads((d / p.name.replace("salida_", "lote_", 1)).read_text(encoding="utf-8"))}

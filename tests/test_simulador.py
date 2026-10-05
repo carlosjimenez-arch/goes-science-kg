@@ -22,7 +22,7 @@ def test_dividir_mueve_conceptos_al_tema_nuevo(tmp_path, monkeypatch):
 
 
 def test_quitar_conceptos_retira_la_etiqueta(tmp_path, monkeypatch):
-    """Prueba de humo: una acción con quitar_conceptos se aplica y resuelve el nombre del concepto."""
+    """Una acción con quitar_conceptos retira la arista TRABAJA del tema a ese concepto."""
     import json
 
     from goes_science_kg import propuesta as pr
@@ -43,3 +43,23 @@ def test_quitar_conceptos_retira_la_etiqueta(tmp_path, monkeypatch):
     monkeypatch.setattr(pr, "ruta", lambda rel: tmp_path / rel if rel.startswith("asignaturas") else real(rel))
     r = pr.simular("biologia", 5, 8, nodos, aristas)
     assert r["conceptos_no_resueltos"] == []
+    assert r["etiquetas_retiradas"] >= 1
+
+
+def test_quitas_de_otra_asignatura_no_contaminan_el_reporte(tmp_path, monkeypatch):
+    """Revisión de código: un nombre con errata en otra asignatura no aparece como no resuelto en esta."""
+    import json
+
+    from goes_science_kg import propuesta as pr
+    from goes_science_kg.grafo.almacen import cargar
+
+    for asig, acciones in [("quimica", []), ("biologia", [{"n": 1, "accion": "revisar", "temas_afectados": [],
+                                                           "quitar_conceptos": ["Concepto con errata"]}])]:
+        d = tmp_path / "asignaturas" / asig / "propuesta"
+        d.mkdir(parents=True)
+        (d / "propuesta_G10-G11.json").write_text(json.dumps({"version": "prueba", "acciones": acciones}),
+                                                  encoding="utf-8")
+    real = pr.ruta
+    monkeypatch.setattr(pr, "ruta", lambda rel: tmp_path / rel if rel.startswith("asignaturas") else real(rel))
+    r = pr.simular("quimica", 10, 11, *cargar())
+    assert r["conceptos_no_resueltos"] == [] and r["quitas_de_otras_asignaturas"] == []

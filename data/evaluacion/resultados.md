@@ -85,3 +85,27 @@ Se elige 1,6, el primer valor de la meseta: son solo 10 preguntas de prerrequisi
 marco. Ahora, si la consulta habla de un marco, el refuerzo de país solo se aplica cuando se nombra un país, y
 «currículo australiano» cuenta como ACARA. Preguntas de marco: MRR 0,708 → 0,854. Global: MRR 0,846, recall@10
 0,632, recall@25 0,840 (comparación 0,82, local 0,89, marco 0,85, prerrequisito 0,81).
+
+**Revisión de código y nueva ablación del peso de marco (2026-10-05, 17:20).** Las intenciones ahora usan palabras
+completas («compartimentos», «paisaje» y «en inglés» ya no cuentan como país) y una consulta con marco y países sin
+nombrar no penaliza a los objetivos de país. Resultado: MRR 0,846, recall@10 0,632, recall@25 0,835. Repetida sin la
+interferencia del refuerzo de país, la ablación de `PESO_MARCO` confirma 1,0: con 1,2 y 1,4 no cambia nada, y con 1,8
+las preguntas de marco bajan de 0,854 a 0,792.
+
+## Conjunto de prueba independiente (2026-10-05, 17:20)
+Los pesos de este día (`PESO_PAIS_SIN_INTENCION`, `PESO_CONCEPTO_PRERREQ`, la separación marco/país) se ajustaron con
+las 60 preguntas de `rag_preguntas.json`. Para medir el sobreajuste, un agente que no vio `rag.py` ni este archivo
+escribió 16 preguntas nuevas con redacción variada (`rag_preguntas_prueba.json`, 4 por tipo).
+**No se usa para ajustar.**
+
+| Versión | MRR | recall@10 | recall@25 | local | comparación | marco | prerrequisito |
+|---|---|---|---|---|---|---|---|
+| Antes de la sesión (commit 166852b) | 0,647 | 0,470 | 0,801 | 1,00 | 0,76 | 0,48 | 0,34 |
+| Al cierre de la sesión | 0,647 | 0,516 | 0,799 | 1,00 | 0,76 | 0,49 | 0,34 |
+
+**Lectura honesta:** las mejoras de marco y prerrequisito del conjunto de ajuste **no se generalizan**. Ninguna de las
+8 preguntas nuevas de esos tipos activa su intención, porque las expresiones regulares solo reconocen frases
+como «antes de» o «TIMSS» en ciertas formas: «¿sobre qué conceptos se apoya…?», «¿qué base conceptual necesita…?» o
+«¿qué tendría que haberse trabajado antes…?» pasan sin detectarse. Próximo paso: detectar la intención de forma más
+robusta (léxico más amplio, o un clasificador pequeño con Claude) y medirla en un conjunto de prueba **nuevo**. Si se
+ajusta con este, deja de ser independiente.

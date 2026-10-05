@@ -60,7 +60,8 @@ uv run gskg fichas                # asignaturas/<x>/ficha.md
 uv run gskg grafo exportar        # data/grafo/export/grafo.graphml
 uv run gskg grados construir      # grafos por grado: data/grafo/grados/ + grados/G<gg>/{ficha.md,grafo.html}
 uv run gskg rag "<consulta>" --grado 7 [--asignatura biologia] [--responder] [--global]
-uv run gskg evaluar-rag           # recall@k y MRR sobre data/evaluacion/rag_preguntas.json
+uv run gskg evaluar-rag           # recall@k y MRR sobre data/evaluacion/rag_preguntas.json (ajuste)
+uv run gskg evaluar-rag --conjunto data/evaluacion/rag_preguntas_prueba.json   # prueba independiente: no ajustar con él
 uv run gskg servir                # API de lectura en http://127.0.0.1:8010/docs (grados, conceptos, propuestas, rag)
 # Capa de conceptos (cada paso «preparar» genera lotes para subagentes; «unir» valida):
 uv run gskg conceptos preparar-vocabulario | consolidar | preparar-etiquetado | unir-etiquetado
@@ -71,5 +72,6 @@ uv run gskg progresion            # asignaturas/<x>/progresion.html
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run pytest -q
-make todo                         # construir + validar + fichas + grados + pruebas
+make todo                         # construir + validar + fichas + grados + brechas + progresión + pruebas + lint
+make propuestas                   # simula las 11 propuestas, rehace sus Excel y asignaturas/PROPUESTAS.md
 ```
