@@ -131,3 +131,20 @@ léxico ampliado, el conjunto de ajuste sigue en MRR 0,846. **La prueba 2 ya se 
 un conjunto nuevo.**
 Hueco conocido del léxico: «¿de qué depende…?» (orden invertido) no se reconoce. No se corrigió después de medir,
 para que la cifra corresponda al código.
+
+## Conjunto de prueba ciego 3: marco (2026-10-05, 17:31)
+Hipótesis: los `ObjetivoMarco` quedan abajo cuando la consulta nombra un marco. Se implementó `GARANTIA_MARCO`, que
+sube los 3 objetivos más pertinentes del marco nombrado justo debajo de la mejor semilla, y se amplió el léxico de
+marco («metas internacionales», «marcos de referencia», «descriptores»…). Regla fijada **antes** de medir: adoptarla
+si en la prueba 3 sube recall@10 y la MRR no cae más de 0,02. Un agente que no vio el código ni las otras pruebas
+escribió 12 preguntas de marco (`rag_preguntas_prueba3.json`); el léxico reconoce las 12. Medición única:
+
+| Versión | MRR | recall@5 | recall@10 | recall@25 |
+|---|---|---|---|---|
+| Antes de la sesión (166852b) | 0,738 | 0,356 | 0,583 | 0,839 |
+| Cierre, sin garantía | 0,734 | 0,372 | 0,600 | 0,872 |
+| Cierre, con garantía (3) | 0,734 | 0,372 | 0,600 | 0,872 |
+
+**Decisión:** no se adopta (`GARANTIA_MARCO = 0`); no cambia nada en la prueba ciega. Lectura: con preguntas de marco
+redactadas por otra persona, la recuperación ya es razonable (MRR 0,73). El 0,49 de la prueba 1 se debía a pocas
+preguntas difíciles. Frente a antes de la sesión: MRR igual y recall@25 de 0,84 a 0,87.

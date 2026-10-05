@@ -54,13 +54,14 @@ INTENCION_PAISES = re.compile(r"\b(pais|paises|internacional(es)?|otros sistemas
                               r"compar(a|an|ar|e|en|acion|aciones|ando|ado|ada|ados|adas)|"
                               + "|".join(PAIS_NOMBRADO) + r")\b")
 INTENCION_MARCO = re.compile(
-    r"\b(timss|pisa|acara|australian|curriculo australiano|marco|marcos|evaluacion internacional|"
-    r"objetivos? internacional(es)?)\b")
+    r"\b(timss|pisa|acara|australian|curriculo australiano|marco|marcos|evaluacion(es)? internacional(es)?|"
+    r"(objetivos?|metas?|estandares|descriptores|referentes) internacional(es)?|marcos? de referencia)\b")
 MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "acara": ("AUSS",),
                   "australian": ("AUSS",), "curriculo australiano": ("AUSS",)}
 PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
 PESO_TIPO = {TipoNodo.CONCEPTO: 1.15}  # ablación en data/evaluacion/resultados.md
 PESO_CONCEPTO_PRERREQ = 1.6  # conceptos cuando la consulta pregunta por prerrequisitos (ablación en resultados.md)
+GARANTIA_MARCO = 0  # ObjetivoMarco garantizados arriba con intención de marco; 0 = no (sin efecto en la prueba ciega 3)
 PESO_PAIS_SIN_INTENCION = 0.8  # objetivos de país si la consulta no habla de países (ablación en resultados.md)
 
 
@@ -219,6 +220,18 @@ class GraphRAG:
             frontera = nueva
         if prerreq:
             self._ancestros(puntos, asignatura)
+        if marco and GARANTIA_MARCO and puntos:
+            # Los objetivos del marco quedaban debajo de temas y conceptos: se suben los más pertinentes por BM25 (del
+            # marco nombrado, si lo hay) justo debajo de la mejor semilla.
+            objetivos = sorted(((d, self.bm25.puntaje(q, d)) for d in self.bm25.docs
+                                if self.por_id[d].tipo == TipoNodo.OBJETIVO_MARCO
+                                and (not marcos or self.por_id[d].props.get("marco") in marcos)),
+                               key=lambda x: (-x[1], x[0]))
+            tope = max(puntos.values())
+            for i, (d, _) in enumerate(o for o in objetivos if o[1] > 0):
+                if i >= GARANTIA_MARCO:
+                    break
+                puntos[d] = max(puntos.get(d, 0.0), tope * (0.9 - 0.01 * i))
         elegidos = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))[:k_final]
         ids = {d for d, _ in elegidos}
         unicas = {(a.origen, a.destino, a.tipo, a.rol): a for d in ids for _, a in self.vecinos[d]

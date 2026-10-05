@@ -1,6 +1,6 @@
 # Traspaso para la próxima sesión de Claude Code
 
-> Sesión del 2026-10-05 (14:10–18:10; commits a las 14:59, 15:37, 16:25, 17:07 y al cierre). Rol: experto en educación científica e ingeniero de IA, grafos y GraphRAG.
+> Sesión del 2026-10-05 (14:10–17:35; commits a las 14:59, 15:37, 16:25, 17:07, 17:25, 17:29 y 17:35). Rol: experto en educación científica e ingeniero de IA, grafos y GraphRAG.
 > Objetivo de la sesión: construir los **grafos por grado** (lo que pidió el MINED) y dejar el proyecto listo para
 > proponer una curricularización mejor, anclada en marcos internacionales y países de alto desempeño.
 
@@ -109,12 +109,13 @@ Un agente revisó `git diff 166852b..HEAD -- src tests`. Se corrigieron los 10 h
    - Algunos conceptos amplios mezclan niveles, por ejemplo «Ondas sísmicas, magnitud e intensidad»; conviene dividirlos.
 5. **GraphRAG.**
    - **Evaluación honesta.** Hay tres conjuntos en `data/evaluacion/`: ajuste (60 preguntas, MRR 0,85), prueba 1
-     (16 preguntas, MRR 0,66; ya contaminada para el léxico) y prueba ciega 2 (12 preguntas de prerrequisitos, MRR
-     0,26 antes de la sesión → 0,55 hoy, medida una sola vez). Ver `resultados.md`.
-   - **Prioridad: la intención de marco** sigue sin generalizar (prueba 1: marco 0,49). Los `ObjetivoMarco` quedan
-     abajo cuando la consulta nombra TIMSS, PISA o ACARA. Probar a recuperar primero los objetivos del marco nombrado
-     y expandir hacia los temas que los `CUBREN`, o un clasificador de intención con Claude. Medir con un conjunto
-     ciego **nuevo** (no reutilizar las pruebas 1 y 2).
+     (16 preguntas, MRR 0,66; ya contaminada para el léxico) y prueba ciega 2 (12 preguntas de prerrequisitos: MRR
+     0,26 antes de la sesión → 0,55 hoy) y prueba ciega 3 (12 de marco: 0,74 → 0,73), cada una medida una sola vez.
+     Ver `resultados.md`.
+   - Marco: en la prueba ciega 3 (12 preguntas) la MRR es 0,73, mejor de lo que sugería la prueba 1 (0,49). Se probó
+     garantizar objetivos del marco nombrado (`GARANTIA_MARCO`) y no cambió nada, así que quedó desactivado. Ya se
+     usaron los conjuntos ciegos 2 y 3: cualquier mejora nueva necesita un conjunto ciego **nuevo**. El siguiente paso
+     de más valor es la generación con Claude (`--responder`) evaluada por fidelidad de las citas.
    - Hueco del léxico de prerrequisitos: «¿de qué depende…?».
    - Hoy, por tipo: comparación 0,82, local 0,89, marco 0,85, prerrequisito 0,81 (en esta sesión: marco 0,71 → 0,85 al
      separar «currículo australiano» del país; prerrequisito 0,62 → 0,81). El conjunto es «plata» (60 preguntas): ampliar
