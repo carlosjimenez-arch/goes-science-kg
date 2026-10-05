@@ -35,8 +35,17 @@ como cuando grado grados tema temas estudiante estudiantes alumno alumnos docent
 sabe necesita necesitan dominar dominan comprender entender trabajar trabaja relacion ideas idea antes despues
 consolidadas consolidado previo previos aborda abordan ensena ensenan ensenar cual cuales que quien donde
 para hacer pais paises otros""".split())
-INTENCION_PRERREQ = re.compile(r"\b(antes de|previo|previos|prerrequisit|deben saber|deben dominar|necesitan? saber|"
-                               r"base para|para comprender|para entender|consolidad)", re.I)
+# Léxico amplio (sin tildes): verbos de requisito, bases y fundamentos, «haberse visto antes»… Se fijó por
+# conocimiento del idioma, ANTES de ver el conjunto de prueba 2 (data/evaluacion/resultados.md). «antes» suelto no
+# cuenta: «¿en qué país se enseña antes…?» es una comparación.
+INTENCION_PRERREQ = re.compile(
+    r"\b(antes de|previ[oa]s?|prerrequisit\w*|pre-?requisit\w*|requisit\w*|requier\w*|requerid\w*|"
+    r"necesit\w*|necesari\w*|debe(n|ria|rian)? (saber|dominar|conocer|manejar|haber)|"
+    r"bases?( conceptual(es)?| para| sobre)|fundament\w*|se (apoya|apoyan|basa|basan|sustenta|sustentan)|"
+    r"(apoya|basa|sustenta)(n)? en|depend\w* de|para (comprender|entender|poder)|"
+    r"(haberse|haber|haya|hayan) (trabajado|visto|estudiado|aprendido|dominado)|"
+    r"(trabajad|vist|estudiad|aprendid)[oa]s? (antes|previamente)|conocimientos (previos|necesarios)|"
+    r"ideas previas|consolidad\w*|sin (saber|conocer|dominar))\b")
 # Patrones sin tildes (se comparan con la consulta sin tildes, como palabras completas): país y gentilicio.
 # «inglés» no cuenta: casi siempre es el idioma.
 PAIS_NOMBRADO = {r"uruguay\w*": "UY", r"colombia\w*": "CO", r"singapur\w*": "SG", "inglaterra": "ENG",
@@ -172,7 +181,7 @@ class GraphRAG:
         nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano_paises)}
         intencion_pais = bool(paises)
         refuerzo_pais = paises if not marco else (paises and nombrados)  # con marco, solo si se nombra un país
-        prerreq = INTENCION_PRERREQ.search(consulta)
+        prerreq = INTENCION_PRERREQ.search(plano)
         marcos = {m for clave, ms in MARCO_NOMBRADO.items() if re.search(rf"\b{clave}\b", plano) for m in ms}
 
         def peso(n: Nodo) -> float:

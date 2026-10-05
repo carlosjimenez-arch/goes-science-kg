@@ -19,7 +19,7 @@ Lee, en orden: `CLAUDE.md` → este archivo → `specs/08_plan_de_implementacion
 | Grafo completo | `data/grafo/` (JSONL + manifest) | 1.260 temas · 512 conceptos (14 del triaje) · 30 prácticas · 493 objetivos de marco · 1.265 objetivos de 6 países · 829 prerrequisitos (DAG) |
 | **Grafos por grado** | `grados/` (index.html, G02…G11 con ficha.md + grafo.html) y `data/grafo/grados/` | Diagnóstico, bloques temáticos con resumen y visor interactivo |
 | Países | `data/interim/paises/` (ENG, AU, JP) + legado (UY, CO, SG) | Inglaterra (KS1–KS4), Australia y Japón extraídos, etiquetados y alineados (Japón desde el texto oficial del MEXT, en japonés); desempeño TIMSS 2023 verificado y citado en `config/referentes.yaml` |
-| GraphRAG | `src/goes_science_kg/rag.py`, `gskg rag` | Local y citado; `--global` (bloques); `--responder` (Claude, probado con un cliente simulado, nunca contra la API real). Conjunto de ajuste (60 preguntas): MRR 0,85. **Conjunto de prueba independiente (16): MRR 0,65**, sin mejora frente a antes de la sesión (ver `data/evaluacion/resultados.md`); la intención de país reconoce nombres y gentilicios |
+| GraphRAG | `src/goes_science_kg/rag.py`, `gskg rag` | Local y citado; `--global` (bloques); `--responder` (Claude, probado con un cliente simulado, nunca contra la API real). Ajuste (60 preguntas): MRR 0,85. Prueba 1 (16): 0,66. **Prueba ciega 2 de prerrequisitos (12): 0,26 → 0,55** respecto a antes de la sesión (ver `data/evaluacion/resultados.md`); la intención de país reconoce nombres y gentilicios |
 | API de lectura | `src/goes_science_kg/api.py`, `gskg servir` | FastAPI: grados, conceptos, propuestas, rag |
 | Mapas de progresión | `asignaturas/<x>/progresion.html` | Concepto × grado: SV frente a países, ordenado por el grafo de prerrequisitos |
 | Brechas | `asignaturas/<x>/brechas/` | md + json + csv + Excel con fórmulas; mediana de todos los países y solo de los de alto desempeño (AU, ENG, JP, SG) |
@@ -57,7 +57,7 @@ Espacio, herencia en Biología 5.°–8.°). Gravedad: Física 2.°–4.° (v5) 
 7. **Resúmenes de bloques** ligados a sus conceptos con tolerancia Jaccard ≥ 0,75, porque Louvain cambia un poco cuando el grafo cambia.
 8. **Simulador de propuestas**: cada propuesta se aplica al grafo y se mide antes y después. Gracias a él, la propuesta de Biología 5.°–8.° v1 se corrigió porque creaba 4 errores de secuencia nuevos. Cualquier acción puede llevar `quitar_conceptos` para retirar una etiqueta mal puesta. **Límite:** cada simulación aplica solo la propuesta de su asignatura; un cambio en Biología que arregla una secuencia de Química no se ve en la simulación de Química (próximo paso: simulación conjunta por ciclo).
 9. **Capas sobre la IA**: revisiones (`data/interim/revisiones/`), triaje de conceptos (`triaje_propuestos.json`) y etiquetado de países del triaje se aplican al cargar; volver a correr `unir-*` no las borra.
-10. **GraphRAG**: la intención de país reconoce nombres y gentilicios; sin intención de país, los objetivos de país pesan ×0,8; ante una consulta de prerrequisitos, los conceptos pesan ×1,6 (ablaciones en `data/evaluacion/resultados.md`).
+10. **GraphRAG**: la intención de país reconoce nombres y gentilicios; sin intención de país, los objetivos de país pesan ×0,8; ante una consulta de prerrequisitos (léxico amplio: «se apoya en», «base conceptual», «haberse trabajado»…), los conceptos pesan ×1,6 (ablaciones y pruebas ciegas en `data/evaluacion/resultados.md`).
 
 ## Revisión de código de esta sesión (17:15) y correcciones
 Un agente revisó `git diff 166852b..HEAD -- src tests`. Se corrigieron los 10 hallazgos (agrupados):
@@ -108,11 +108,14 @@ Un agente revisó `git diff 166852b..HEAD -- src tests`. Se corrigieron los 10 h
      `vocabulario.json` y borrar la capa; si no, basta con borrar `triaje_propuestos.json`.
    - Algunos conceptos amplios mezclan niveles, por ejemplo «Ondas sísmicas, magnitud e intensidad»; conviene dividirlos.
 5. **GraphRAG.**
-   - **Prioridad: la detección de intención no generaliza.** En 16 preguntas de prueba independientes
-     (`data/evaluacion/rag_preguntas_prueba.json`; ver `resultados.md`, «Conjunto de prueba independiente»), la MRR es
-     0,65 antes y después de los ajustes del día; prerrequisito 0,34 y marco 0,49. Ninguna de esas preguntas activa
-     las intenciones. Hacer más robusta la detección (léxico amplio o un clasificador con Claude) y medir con un
-     conjunto de prueba nuevo. No ajustar con el de prueba.
+   - **Evaluación honesta.** Hay tres conjuntos en `data/evaluacion/`: ajuste (60 preguntas, MRR 0,85), prueba 1
+     (16 preguntas, MRR 0,66; ya contaminada para el léxico) y prueba ciega 2 (12 preguntas de prerrequisitos, MRR
+     0,26 antes de la sesión → 0,55 hoy, medida una sola vez). Ver `resultados.md`.
+   - **Prioridad: la intención de marco** sigue sin generalizar (prueba 1: marco 0,49). Los `ObjetivoMarco` quedan
+     abajo cuando la consulta nombra TIMSS, PISA o ACARA. Probar a recuperar primero los objetivos del marco nombrado
+     y expandir hacia los temas que los `CUBREN`, o un clasificador de intención con Claude. Medir con un conjunto
+     ciego **nuevo** (no reutilizar las pruebas 1 y 2).
+   - Hueco del léxico de prerrequisitos: «¿de qué depende…?».
    - Hoy, por tipo: comparación 0,82, local 0,89, marco 0,85, prerrequisito 0,81 (en esta sesión: marco 0,71 → 0,85 al
      separar «currículo australiano» del país; prerrequisito 0,62 → 0,81). El conjunto es «plata» (60 preguntas): ampliar
      antes de seguir ajustando pesos.

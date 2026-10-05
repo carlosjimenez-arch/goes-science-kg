@@ -19,7 +19,7 @@ consulta ──► BM25 en español (nodos con texto) ──► semillas (filtra
   si no habla de países, los objetivos de país pesan ×0,8 para no desplazar a la malla.
 - **Marco frente a país.** Si la consulta habla de un marco (TIMSS, PISA, ACARA, «currículo australiano»), el refuerzo
   de país solo se aplica cuando se nombra un país.
-- **Intención de prerrequisito.** Los conceptos pesan ×1,6 y la recuperación sube por el DAG desde los 3 mejores.
+- **Intención de prerrequisito** (léxico amplio, sin tildes). Los conceptos pesan ×1,6 y la recuperación sube por el DAG desde los 3 mejores.
 - **Foco por grado.** Con `--grado`, los temas de ese grado pesan 1,5 veces más, lo de otros grados 0,5 veces,
   y los temas de otros grados se atenúan también en la expansión. TIMSS 2023 nunca entra al contexto.
 - **Citas.** Cada nodo lleva su fuente: documento y página, código ACARA, u hoja y fila de la malla.

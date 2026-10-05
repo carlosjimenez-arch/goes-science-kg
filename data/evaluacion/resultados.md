@@ -109,3 +109,25 @@ como «antes de» o «TIMSS» en ciertas formas: «¿sobre qué conceptos se apo
 «¿qué tendría que haberse trabajado antes…?» pasan sin detectarse. Próximo paso: detectar la intención de forma más
 robusta (léxico más amplio, o un clasificador pequeño con Claude) y medirla en un conjunto de prueba **nuevo**. Si se
 ajusta con este, deja de ser independiente.
+
+## Conjunto de prueba ciego 2: prerrequisitos (2026-10-05, 17:30)
+Para atacar la falla de la detección de intención sin sobreajustar:
+1. Un agente que no vio `rag.py`, `resultados.md` ni la prueba 1 escribió 12 preguntas de prerrequisitos con
+   redacción variada (`rag_preguntas_prueba2.json`).
+2. **Antes de abrirlas**, la intención de prerrequisito se amplió con un léxico armado por conocimiento del idioma:
+   verbos de requisito, «bases», «fundamentos», «se apoya en», «haberse trabajado», etc.
+3. Se midió **una sola vez**:
+
+| Versión | MRR | recall@5 | recall@10 | recall@25 |
+|---|---|---|---|---|
+| Antes de la sesión (166852b) | 0,257 | 0,333 | 0,528 | 0,667 |
+| Pesos del día, léxico viejo | 0,470 | 0,417 | 0,611 | 0,694 |
+| **Pesos del día, léxico ampliado** | **0,547** | 0,472 | 0,583 | 0,694 |
+
+El léxico ampliado reconoce 8 de las 12 preguntas. En este conjunto ciego, los cambios del día sí se generalizan
+para prerrequisitos (MRR 0,26 → 0,55). En la prueba 1 no se notaban porque ninguna de sus preguntas activaba la
+intención; esa prueba ya quedó contaminada para el léxico, porque se leyeron sus preguntas antes de ampliarlo. Con el
+léxico ampliado, el conjunto de ajuste sigue en MRR 0,846. **La prueba 2 ya se usó una vez: la próxima mejora necesita
+un conjunto nuevo.**
+Hueco conocido del léxico: «¿de qué depende…?» (orden invertido) no se reconoce. No se corrigió después de medir,
+para que la cifra corresponda al código.

@@ -42,7 +42,7 @@ dependen de aristas de prerrequisito discutibles y quedan como decisiones abiert
 
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
-API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y 16 de prueba independientes (MRR 0,65) ([resultados](data/evaluacion/resultados.md)).
+API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).
 
 Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).

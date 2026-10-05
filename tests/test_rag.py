@@ -63,3 +63,15 @@ def test_curriculo_australiano_es_marco_no_pais(grafo):
     primeros = [n.id for n, _ in ctx.nodos[:10]]
     assert not primeros[0].startswith("OP:"), primeros
     assert any(i.startswith("OBJ:") for i in primeros), primeros
+
+
+def test_intencion_prerrequisito_con_redaccion_variada():
+    from goes_science_kg.rag import INTENCION_PRERREQ, _sin_tildes
+
+    for consulta in ["¿Sobre qué conceptos se apoya la conservación de la energía?",
+                     "¿Qué base conceptual necesita un estudiante para calcular el pH?",
+                     "¿Qué tendría que haberse trabajado antes de la meiosis?"]:
+        # Hueco conocido: «¿de qué depende…?» (orden invertido) no se reconoce; se mide antes de ampliar (resultados.md).
+        assert INTENCION_PRERREQ.search(_sin_tildes(consulta)), consulta
+    for consulta in ["¿En qué país se enseña antes la fotosíntesis?", "¿Qué se ve en 7.° sobre el clima?"]:
+        assert not INTENCION_PRERREQ.search(_sin_tildes(consulta)), consulta
