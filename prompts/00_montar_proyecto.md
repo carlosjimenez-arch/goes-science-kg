@@ -28,7 +28,6 @@ que **proponer, por asignatura, una curricularización mejor para El Salvador**,
   antes de seguir.
 
 **Pregúntame antes de:**
-- elegir el pivote de Química y Biología de 10.°–11.° (fase 1.3);
 - agregar países que no estén en `config/referentes.yaml`;
 - cambiar una regla de negocio de `CLAUDE.md` o de `reportes/cobertura_curricular/CLAUDE.md`;
 - proponer quitar temas de la malla.

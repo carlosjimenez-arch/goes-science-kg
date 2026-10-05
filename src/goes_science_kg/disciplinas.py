@@ -35,6 +35,10 @@ def asignatura_de_objetivo(codigo: str) -> str | None:
     reglas = cargar("asignaturas")["asignacion"]
     if codigo.startswith("TA-"):
         return "fisica"
+    if codigo.startswith("ACSBL"):
+        return "biologia"
+    if codigo.startswith("ACSCH"):
+        return "quimica"
     if codigo.startswith("PISA-"):
         if codigo.startswith("PISA-F"):
             return reglas["pisa_sistemas_fisicos"].get(codigo, reglas["pisa_sistemas_fisicos_resto"])

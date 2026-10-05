@@ -14,9 +14,8 @@ muestra el resultado al usuario antes de seguir, se actualiza este archivo (✅)
    de cada país con documento y página. DdT: cada país tiene `evidencia_desempeno` citada.
 2. **Descargar currículos** (skill `fuentes-descargar`): Chile (a mano si sigue bloqueado),
    Singapur Lower Secondary, Japón, Corea, Estonia, Inglaterra, Australia, Finlandia y Ontario.
-   Volver a bajar `ERCE2019_Analisis_curricular.pdf` (hoy es un HTML).
    DdT: `estado.csv` con sha256; las faltantes, documentadas con su URL.
-3. **Pivote para Química y Biología de 10.°–11.°**: proponer opciones (spec 03) y **preguntar** al usuario.
+3. ✅ **Pivote para Química y Biología de 10.°–11.°**: ACARA Senior Secondary v8.4 (spec 03). Catálogo y alineación de los 371 temas hechos.
 4. Completar las páginas del catálogo TIMSS Advanced Física.
 5. Módulos `ingesta/paises.py` e `ia/lotes.py` (preparar y unir lotes, validar códigos) con pruebas.
 

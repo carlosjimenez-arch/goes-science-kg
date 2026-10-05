@@ -41,6 +41,15 @@ marcos:
     grados_sv: [7, 8, 9]
     # Solo los elementos de contenido, procedimentales y epistémicos son nodos de objetivo.
     tipos_objetivo: [contenido, procedimental, epistemico]
+  AUSS:
+    nombre: Australian Curriculum · Senior Secondary (Biology, Chemistry) v8.4
+    organismo: ACARA (Australia) · licencia CC BY 4.0
+    catalogo: data/referencia/catalogo_acara_senior.json
+    grados_sv: [10, 11]
+    asignaturas: [biologia, quimica]
+    # Pivote de Bachillerato para Biología y Química (decisión del 2026-10-05; ver specs/03).
+    # Sin metas de balance publicadas: cada curso tiene 4 unidades de ~1 semestre (Units 1–2 ≈ 10.°, 3–4 ≈ 11.°).
+    unidades_por_grado: {10: [1, 2], 11: [3, 4]}
   T23:
     nombre: TIMSS 2023 (referencia secundaria)
     organismo: IEA
@@ -52,5 +61,6 @@ marcos:
 clasificaciones:
   timss2027: reportes/cobertura_curricular/data/referencia/clasificacion_v2_timss2027.json
   pisa2025: reportes/cobertura_curricular/data/referencia/clasificacion_pisa2025.json
+  auss: data/interim/alineaciones/bachillerato_auss.json
   paises_objetivos: reportes/cobertura_curricular/data/interim/paises
   paises_alineacion: reportes/cobertura_curricular/data/interim/paises/alineacion.json

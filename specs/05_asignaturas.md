@@ -33,9 +33,9 @@ CUBRE secundaria o, desde la fase 3, con TRABAJA hacia conceptos de otra asignat
 ## Marcos por asignatura y grado
 | Asignatura | 2.°–4.° | 5.°–8.° | 7.°–9.° | 10.°–11.° |
 |---|---|---|---|---|
-| Biología | TIMSS 4.° (45 %) | TIMSS 8.° (35 %) | PISA Sistemas vivos | sin pivote → definir (spec 03) |
+| Biología | TIMSS 4.° (45 %) | TIMSS 8.° (35 %) | PISA Sistemas vivos | ACARA Senior Secondary Biology (AUSS) |
 | Física | TIMSS 4.° Cs. físicas | TIMSS 8.° (25 %) | PISA Sistemas físicos | TIMSS Advanced Física |
-| Química | TIMSS 4.° Cs. físicas (P1) | TIMSS 8.° (20 %) | PISA Sistemas físicos (F1, F2) | sin pivote → definir |
+| Química | TIMSS 4.° Cs. físicas (P1) | TIMSS 8.° (20 %) | PISA Sistemas físicos (F1, F2) | ACARA Senior Secondary Chemistry (AUSS) |
 | Tierra y Espacio | TIMSS 4.° (20 %) | TIMSS 8.° (20 %) | PISA Tierra y espacio | — |
 
 Las metas de balance, cobertura, profundidad, nivel cognitivo y la regla de presupuesto siguen

@@ -36,8 +36,8 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 - Las reglas de cobertura, balance, profundidad, nivel cognitivo y presupuesto de
   `reportes/cobertura_curricular/CLAUDE.md` siguen vigentes.
 - Las decisiones humanas (`revisado_por`) ganan sobre la IA y no se reclasifican sin preguntar.
-- Pregunta antes de: agregar países fuera de `config/referentes.yaml`, elegir el pivote de
-  Química y Biología de Bachillerato, o proponer quitar temas.
+- Pregunta antes de: agregar países fuera de `config/referentes.yaml`, cambiar el pivote de
+  Química y Biología de Bachillerato (hoy ACARA Senior Secondary, spec 03), o proponer quitar temas.
 - Alcance: solo ciencias. Los temas de tecnología se marcan fuera de alcance y se enlazan con `goes-techonoly-kg`.
 
 ## Convenciones

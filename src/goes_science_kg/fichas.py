@@ -52,13 +52,20 @@ def ficha(asig: str, nodos: list[Nodo], aristas: list[Arista], version: str) -> 
 
     lineas += ["## Cobertura de los marcos internacionales", ""]
     filas, faltan = [], []
-    for marco in ("T4_27", "T8_27", "TA15", "PISA25"):
-        objs = [o for o in objetivos if o.props.get("marco") == marco]
+    # AUSS se separa: sus objetivos de indagación y naturaleza de la ciencia se repiten en cada unidad
+    # y no deben esconder los faltantes de contenido disciplinar.
+    grupos = [("T4_27", None), ("T8_27", None), ("TA15", None), ("AUSS", "contenido"),
+              ("AUSS", "practicas"), ("PISA25", None)]
+    for marco, eje in grupos:
+        objs = [o for o in objetivos if o.props.get("marco") == marco
+                and (eje is None or (o.props.get("eje") == "contenido") == (eje == "contenido"))]
         if not objs:
             continue
         cub = [o for o in objs if any(t in ids_temas for t in cubre[o.id])]
-        filas.append([marco, len(objs), len(cub), f"{len(cub) / len(objs):.0%}"])
-        faltan += [(marco, o) for o in objs if o not in cub]
+        nombre = marco if eje is None else f"{marco} · {'contenido' if eje == 'contenido' else 'indagación y NdC'}"
+        filas.append([nombre, len(objs), len(cub), f"{len(cub) / len(objs):.0%}"])
+        if eje != "practicas":
+            faltan += [(marco, o) for o in objs if o not in cub]
     lineas += [_tabla(["Marco", "Objetivos", "Cubiertos (en cualquier grado)", "%"], filas), ""]
     if faltan:
         lineas += ["### Objetivos sin ningún tema de esta asignatura", ""]

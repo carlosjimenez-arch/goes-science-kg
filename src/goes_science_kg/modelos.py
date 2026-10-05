@@ -61,12 +61,13 @@ class Confianza(StrEnum):
 
 
 class Fuente(BaseModel):
-    """De dónde sale un nodo. Documento externo (id del manifiesto + página) o malla (hoja + fila)."""
+    """De dónde sale un nodo: documento externo (id del manifiesto + página o localizador) o malla (hoja + fila)."""
 
     model_config = ConfigDict(extra="forbid")
 
     documento: str
     pagina: int | None = None
+    localizador: str | None = None  # p. ej. código oficial cuando el documento no tiene páginas (HTML)
     hoja: str | None = None
     fila: int | None = None
 

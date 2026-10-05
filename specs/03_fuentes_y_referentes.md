@@ -15,15 +15,28 @@ Todo es **solo lectura**. Para agregar una fuente: fila en `manifest.csv`, desca
 | TIMSS 2027 · 4.° | 2–4 | 32 | `reportes/cobertura_curricular/data/referencia/catalogo_timss2027.json` |
 | TIMSS 2027 · 8.° | 5–8 | 48 | ídem |
 | TIMSS Advanced 2015 · Física | 10–11 | 23 | `catalogo_timss.json` (TA, sin página: completar) |
+| ACARA Senior Secondary · Biología y Química (AUSS) | 10–11 | 125 + 138 | `data/referencia/catalogo_acara_senior.json` |
 | PISA 2025 · Ciencias | 7–9 | 21 de contenido + 8 procedimentales + 20 epistémicos | `catalogo_pisa2025.json` |
 | TIMSS 2023 (secundario) | 2–8 | 78 | `catalogo_timss.json` + equivalencias con 2027 |
 
-**Faltan pivotes para Química y Biología de Bachillerato.** Candidatos que hay que evaluar
-en la fase 1 (decide el equipo GOES):
-- **PISA 2025** como techo de alfabetización científica a los 15 años.
-- **Currículos de alto desempeño de 10.° y 11.°**: Singapur (O-Level Chemistry/Biology),
-  Inglaterra (GCSE Combined Science), Australia (Senior Secondary Chemistry/Biology).
-- **IB Diploma (Chemistry, Biology)** solo como referencia, porque tiene licencia restringida.
+### Pivote de Bachillerato para Química y Biología (decidido el 2026-10-05)
+No existe un TIMSS Advanced de Química ni de Biología. Se eligió como pivote el **Australian
+Curriculum: Senior Secondary (Biology, Chemistry) v8.4** de ACARA por cuatro razones:
+1. **Edad:** cubre Years 11–12 (16–18 años). Coincide con 10.°–11.° de El Salvador
+   (unidades 1–2 ≈ 10.° y 3–4 ≈ 11.°).
+2. **Licencia abierta:** CC BY 4.0. Se puede versionar, parafrasear y citar.
+3. **Estructura comparable a TIMSS Advanced:** cada descripción de contenido tiene un código
+   oficial estable (ACSBL…, ACSCH…). Se usa como localizador, porque el documento es HTML y no tiene páginas.
+4. **Alto desempeño y base internacional:** Australia está en el grupo superior de PISA Ciencias
+   (verificar en la fase 1.1). ACARA declara que lo construyó revisando los currículos de Reino Unido,
+   Singapur, Ontario y Nueva Zelanda, el IB y el Framework for K-12 Science Education de EE. UU.
+   (hoja informativa oficial de Senior Secondary Science).
+
+Descartados como pivote:
+- **Singapur O-Level (SEAB 6092/6093):** Sec 3–4, 15–16 años. El sitio de SEAB devolvía 404 el 2026-10-05.
+  Queda como referencia de país en la fase 1.
+- **IB Diploma:** licencia restringida.
+- **PISA 2025:** mide a los 15 años y sigue siendo el piso de alfabetización científica.
 
 ## Países
 Estado y motivo de cada uno en `config/referentes.yaml`.
@@ -50,8 +63,7 @@ Estado y motivo de cada uno en `config/referentes.yaml`.
 ### Estándares y evaluaciones complementarias
 - **NGSS** (EE. UU.): prácticas de ciencia e ingeniería y progresiones K–12. Ya está en
   `data/fuentes/mined/Fuentes/`. Sirve para la capa de prácticas y prerrequisitos.
-- **ERCE 2019** (UNESCO-LLECE, 6.°): referente regional. `ERCE2019_Analisis_curricular.pdf` es en
-  realidad un HTML de error (2 KB): hay que volver a descargarlo.
+- **ERCE 2019** (UNESCO-LLECE, 6.°): referente regional (niveles de aprendizaje y aportes para la enseñanza).
 - **Progresiones de Aprendizaje de Uruguay (2022)**: evidencia directa de secuencia y prerrequisitos.
 
 ## Licencias y publicación

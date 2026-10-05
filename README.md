@@ -21,9 +21,10 @@ uv run pytest -q
 ```
 
 ## Estado
-**Grafo v0**: 2.058 nodos y 7.998 aristas, construido con lo que ya existía.
+**Grafo v0**: 2.326 nodos y 9.350 aristas.
 - 1.260 temas de la malla.
-- 230 objetivos de los marcos.
+- 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
+  (este último es el pivote de Biología y Química de 10.°–11.°).
 - 506 objetivos de Uruguay, Colombia y Singapur, alineados a TIMSS 2027.
 
 Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en

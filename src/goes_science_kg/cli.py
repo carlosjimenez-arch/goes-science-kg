@@ -80,6 +80,39 @@ def grafo_exportar(formato: str = typer.Option("graphml", help="graphml")) -> No
     typer.echo(f"→ {(out / 'grafo.graphml').relative_to(ruta('.'))}")
 
 
+catalogo_app = typer.Typer(help="Catálogos de marcos pivote", no_args_is_help=True)
+app.add_typer(catalogo_app, name="catalogo")
+alinear_app = typer.Typer(help="Lotes de alineación con subagentes", no_args_is_help=True)
+app.add_typer(alinear_app, name="alinear")
+
+
+@catalogo_app.command("acara")
+def catalogo_acara() -> None:
+    """ACARA Senior Secondary (Biología, Química) → data/referencia/catalogo_acara_senior.json."""
+    from goes_science_kg.ingesta.acara import SALIDA, escribir_catalogo
+
+    typer.echo(f"{escribir_catalogo()} objetivos → {SALIDA}")
+
+
+@alinear_app.command("preparar-bachillerato")
+def alinear_preparar(version: str = "auss-v1") -> None:
+    """Lotes de Biología y Química 10.°–11.° contra AUSS (uno por asignatura y grado)."""
+    from goes_science_kg.alineacion import preparar_bachillerato
+    from goes_science_kg.ingesta.legado import catalogo_acara_senior
+
+    for p in preparar_bachillerato(catalogo_acara_senior(), version):
+        typer.echo(f"→ {p}")
+
+
+@alinear_app.command("unir-bachillerato")
+def alinear_unir() -> None:
+    """Valida y une las salidas de los subagentes → data/interim/alineaciones/bachillerato_auss.json."""
+    from goes_science_kg.alineacion import unir
+    from goes_science_kg.ingesta.legado import catalogo_acara_senior
+
+    typer.echo(json.dumps(unir("AUSS_", "bachillerato_auss", catalogo_acara_senior()), ensure_ascii=False))
+
+
 @app.command()
 def fichas() -> None:
     """Genera asignaturas/<asignatura>/ficha.md desde el grafo guardado."""

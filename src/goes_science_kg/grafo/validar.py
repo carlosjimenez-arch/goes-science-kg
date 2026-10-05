@@ -45,6 +45,9 @@ def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
         if (n.tipo == TipoNodo.OBJETIVO_MARCO and n.props.get("marco") in ("T4_27", "T8_27", "PISA25")
                 and not (n.fuente and n.fuente.pagina)):
             r.errores.append(f"{n.id}: objetivo de marco sin página")
+        if (n.tipo == TipoNodo.OBJETIVO_MARCO and n.props.get("marco") == "AUSS"
+                and not (n.fuente and n.fuente.localizador)):
+            r.errores.append(f"{n.id}: objetivo AUSS sin código localizador")
 
     # Avisos: lo que la revisión humana o las fases siguientes deben resolver.
     temas = [n for n in nodos if n.tipo == TipoNodo.TEMA]

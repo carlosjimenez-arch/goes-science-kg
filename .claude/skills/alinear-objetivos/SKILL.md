@@ -10,7 +10,8 @@ Prompts de referencia (ya probados): `reportes/cobertura_curricular/prompts/alin
 
 1. **Preparar lotes** (script, no a mano): `data/interim/alineaciones/lotes/lote_<PAIS>_<MARCO>_<n>.json`,
    con 40 a 60 ítems por lote. Cada lote incluye el catálogo completo del marco que corresponde al grado.
-   - Grados 1–4 → T4_27; 5–8 → T8_27; 7–9 también PISA25; Física 10–11 → TA15.
+   - Grados 1–4 → T4_27; 5–8 → T8_27; 7–9 también PISA25; Física 10–11 → TA15; Biología y Química 10–11 → AUSS
+     (ya hecho: `gskg alinear preparar-bachillerato` / `unir-bachillerato`, prompt `prompts/alinear_bachillerato_auss.md`).
 2. **Muestra de control**: 20 ítems al azar. Clasifícalos y muéstralos al usuario. Si hay 3 errores o más,
    ajusta las instrucciones antes de seguir.
 3. **Subagentes en paralelo**, uno por lote, con estas reglas:

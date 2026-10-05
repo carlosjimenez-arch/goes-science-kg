@@ -24,7 +24,24 @@ Total: **318 temas**. Asignados por: malla 209, pisa 4, timss 105.
 |---|---|---|---|
 | T4_27 | 3 | 3 | 100% |
 | T8_27 | 9 | 9 | 100% |
+| AUSS · contenido | 78 | 68 | 87% |
+| AUSS · indagación y NdC | 60 | 28 | 47% |
 | PISA25 | 2 | 2 | 100% |
+
+### Objetivos sin ningún tema de esta asignatura
+
+| Marco | Código | Objetivo | Países que lo trabajan |
+|---|---|---|---|
+| AUSS | ACSCH023 | Espectrometría de masas: ionización de sustancias y análisis de espectros para determinar la composición isotópica de los elementos. | — |
+| AUSS | ACSCH038 | Comparación de combustibles fósiles y biocombustibles según energía liberada, idoneidad de uso y naturaleza de los productos de combustión. | — |
+| AUSS | ACSCH066 | Escala de pH para comparar la acidez o alcalinidad de disoluciones acuosas según la concentración de iones hidrógeno. | — |
+| AUSS | ACSCH067 | Patrones de reacción de ácidos y bases (con bases, metales y carbonatos) para predecir productos a partir de reactivos conocidos. | — |
+| AUSS | ACSCH068 | Las condiciones de reacción afectan la velocidad de reacción y, en algunos casos, la identidad de los productos. | — |
+| AUSS | ACSCH092 | Reversibilidad de las reacciones químicas explicada por las energías de activación de las reacciones directa e inversa. | — |
+| AUSS | ACSCH094 | Efecto de cambios de concentración y presión sobre el equilibrio químico, explicado y predicho aplicando la teoría de colisiones a las reacciones directa e inversa. | — |
+| AUSS | ACSCH109 | Uso de nanopartículas metálicas como catalizadores en celdas de combustible para mejorar la eficiencia de la producción de energía. | — |
+| AUSS | ACSCH131 | Síntesis química: selección de reactivos para obtener productos con propiedades específicas, como fármacos, combustibles, cosméticos y productos de limpieza. | — |
+| AUSS | ACSCH138 | Manufactura molecular, incluida la síntesis de proteínas: posicionamiento de moléculas para reacciones específicas y obtención de productos como nanotubos de carbono, nanorrobots y sensores médicos. | — |
 
 ## Referentes de otros países en el grafo
 

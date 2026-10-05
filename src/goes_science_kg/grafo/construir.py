@@ -57,13 +57,15 @@ class Constructor:
                              **({"metas_dominio": m["metas_dominio"]} if "metas_dominio" in m else {}),
                              **({"metas_cognitivas": m["metas_cognitivas"]} if "metas_cognitivas" in m else {})})
 
-    def _objetivo(self, codigo: str, marco: str, etiqueta: str, doc: str, pagina: int | None, props: dict) -> None:
+    def _objetivo(self, codigo: str, marco: str, etiqueta: str, doc: str, pagina: int | None, props: dict,
+                  localizador: str | None = None) -> None:
         asig = asignatura_de_objetivo(codigo) if marco != "T23" else None
         oid = self.nodo(id=f"OBJ:{codigo}", tipo=TipoNodo.OBJETIVO_MARCO, etiqueta=etiqueta, asignatura=asig,
-                        fuente=Fuente(documento=doc, pagina=pagina), props={"marco": marco, **props})
+                        fuente=Fuente(documento=doc, pagina=pagina, localizador=localizador),
+                        props={"marco": marco, **props})
         self.arista(origen=oid, destino=f"MARCO:{marco}", tipo=TipoArista.EN_MARCO, metodo="catalogo")
         self.arista(origen=oid, destino=f"DOC:{doc}", tipo=TipoArista.FUENTE, metodo="catalogo",
-                    props={"pagina": pagina})
+                    props={"pagina": pagina, "localizador": localizador})
         if asig:
             self.arista(origen=oid, destino=f"ASIG:{asig}", tipo=TipoArista.DE_ASIGNATURA, metodo="regla")
 
@@ -83,6 +85,13 @@ class Constructor:
             if e["tipo"] in tipos:
                 self._objetivo(e["codigo"], "PISA25", e["texto"], "pisa25final", e.get("pagina"), {
                     "tipo_conocimiento": e["tipo"], "grupo": e.get("grupo"), "titulo_en": e.get("titulo_en")})
+        docs = legado.documento_por_archivo()
+        for o in legado.catalogo_acara_senior():
+            self._objetivo(o["codigo"], "AUSS", o["objetivo"], docs[o["documento"]], None, {
+                "unidad": o["unidad"], "unidad_titulo": o.get("unidad_titulo"),
+                "unidad_titulo_en": o["unidad_titulo_en"], "eje": o["eje"], "tema": o.get("tema"),
+                "tema_en": o["tema_en"], "texto_en": o["texto_en"],
+                "es_investigacion": o["eje"] == "indagacion"}, localizador=o["localizador"])
         for r in legado.equivalencias_timss():
             if r["codigo_2023"] and r["codigo_2027"] and f"OBJ:{r['codigo_2027']}" in self.nodos:
                 self.arista(origen=f"OBJ:{r['codigo_2023']}", destino=f"OBJ:{r['codigo_2027']}",
@@ -90,10 +99,10 @@ class Constructor:
                             props={"tipo": r["tipo"], "nota": r["nota"]})
 
     def temas(self, temas: list[TemaMalla]) -> None:
-        ct, cp = legado.clasificacion_timss(), legado.clasificacion_pisa()
+        ct, cp, ca = legado.clasificacion_timss(), legado.clasificacion_pisa(), legado.clasificacion_auss()
         for t in temas:
             llave = (t.archivo, t.hoja, t.fila)
-            timss, pisa = ct.get(llave), cp.get(llave)
+            timss, pisa, auss = ct.get(llave), cp.get(llave), ca.get(llave)
             asig, metodo = asignatura_de_tema(t.asignatura, timss, pisa)
             tid = self.nodo(
                 id=f"TEMA:{t.id}", tipo=TipoNodo.TEMA, etiqueta=t.procedimental, asignatura=asig, grado=t.grado,
@@ -113,6 +122,9 @@ class Constructor:
             if timss:
                 for rol, campo in (("principal", "obj1"), ("secundario", "obj2")):
                     self._cubre(tid, timss.get(campo), rol, timss, "timss")
+            if auss:
+                self._cubre(tid, auss.get("obj1"), "principal", auss, "auss")
+                self._cubre(tid, auss.get("obj2"), "secundario", auss, "auss")
             if pisa:
                 self._cubre(tid, pisa.get("cont1"), "principal", pisa, "pisa")
                 self._cubre(tid, pisa.get("cont2"), "secundario", pisa, "pisa")

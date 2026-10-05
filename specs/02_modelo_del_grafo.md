@@ -9,7 +9,7 @@ Versión ejecutable: `src/goes_science_kg/modelos.py`. Si cambia uno, cambia el 
 | `Grado` | `GRADO:07` | Grado de El Salvador (2–11) | — |
 | `Documento` | `DOC:timss27`, `DOC:MALLA:<archivo>` | Fuente (manifiesto o malla) | url/archivo + sha256 |
 | `Marco` | `MARCO:T8_27` | Evaluación internacional | — |
-| `ObjetivoMarco` | `OBJ:T8_27-B1.2`, `OBJ:PISA-V3`, `OBJ:TA-M1.1` | Objetivo del pivote | documento + página |
+| `ObjetivoMarco` | `OBJ:T8_27-B1.2`, `OBJ:PISA-V3`, `OBJ:TA-M1.1`, `OBJ:ACSCH127` | Objetivo del pivote | documento + página (o `localizador` = código oficial si el documento es HTML) |
 | `Pais` | `PAIS:UY` | País de referencia | — |
 | `ObjetivoPais` | `OP:UY-BIO-G3-01` | Objetivo de aprendizaje de un país | documento + página |
 | `Tema` | `TEMA:G07-CIE-U2-2.3` | Tema procedimental de la malla de El Salvador | archivo + hoja + fila |
@@ -52,6 +52,7 @@ Exportar: `gskg grafo exportar` (GraphML). Para Neo4j, agregar `exportar --forma
 (CSV de nodos y relaciones) en la fase 2 si hace falta.
 
 ## Estado v0 (lo que ya existe)
-2.058 nodos y 7.998 aristas: 1.260 temas, 230 objetivos de marco, 506 objetivos de países y
-1.456 aristas CUBRE. Hay 49 temas sin asignatura y 213 aristas de confianza baja.
+2.326 nodos y 9.350 aristas: 1.260 temas, 493 objetivos de marco (incluidos los 263 de ACARA Senior
+Secondary), 506 objetivos de países y 2.027 aristas CUBRE. Hay 49 temas sin asignatura y 338 aristas de
+confianza baja.
 Ver `data/grafo/manifest.json`.

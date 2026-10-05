@@ -63,6 +63,20 @@ def alineacion_paises() -> list[dict]:
     return _json(cargar("marcos")["clasificaciones"]["paises_alineacion"])
 
 
+@cache
+def catalogo_acara_senior() -> list[dict]:
+    """Pivote AUSS de Biología y Química 10.°–11.° (vacío si aún no se construyó)."""
+    p = ruta(cargar("marcos")["marcos"]["AUSS"]["catalogo"])
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
+
+
+@cache
+def clasificacion_auss() -> dict[tuple[str, str, int], dict]:
+    """Alineación de Biología y Química 10.°–11.° con AUSS (vacía si aún no existe)."""
+    p = ruta(cargar("marcos")["clasificaciones"]["auss"])
+    return _por_llave(json.loads(p.read_text(encoding="utf-8"))) if p.exists() else {}
+
+
 def manifiesto_fuentes() -> list[dict]:
     """manifest.csv + estado.csv de data/fuentes/externos (id, título, url, archivo, sha256)."""
     base = ruta(DIR_EXTERNOS)
