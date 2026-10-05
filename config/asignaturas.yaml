@@ -1,0 +1,60 @@
+# Las cuatro asignaturas (disciplinas) del grafo. Alcance: solo ciencias; los temas
+# técnicos de «Ciencia y Tecnología» (p. ej. «Objetos técnicos») se enlazan con goes-techonoly-kg.
+#
+# En 2.°–9.° la malla es INTEGRADA («Ciencia y Tecnología»): cada tema se asigna a una
+# disciplina con las reglas de `asignacion` (ver specs/05_asignaturas.md). En 10.°–11.°
+# cada asignatura tiene su propia malla.
+
+asignaturas:
+  biologia:
+    nombre: Biología
+    carpeta: asignaturas/biologia
+    grados: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    malla_bachillerato: biologia
+    timss_dominios: [Biología]
+    pisa_grupos: [Sistemas vivos]
+    ejes_pais: [Biología, Diversidad, Ciclos, Sistemas, Interacciones, Ciencias del Ambiente]
+
+  fisica:
+    nombre: Física
+    carpeta: asignaturas/fisica
+    grados: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    malla_bachillerato: fisica
+    timss_dominios: [Física]
+    # TIMSS 4.° «Ciencias físicas» se reparte entre física y química por área (ver asignacion).
+    pisa_grupos: [Sistemas físicos]
+    ejes_pais: [Física, Energía, Fuerzas, Interacciones]
+
+  quimica:
+    nombre: Química
+    carpeta: asignaturas/quimica
+    grados: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    malla_bachillerato: quimica
+    timss_dominios: [Química]
+    pisa_grupos: [Sistemas físicos]
+    ejes_pais: [Química, Materia]
+
+  ciencias_tierra_espacio:
+    nombre: Ciencias de la Tierra y del Espacio
+    carpeta: asignaturas/ciencias_tierra_espacio
+    grados: [2, 3, 4, 5, 6, 7, 8, 9]
+    # Sin malla propia en Bachillerato; contenidos afines viven dentro de Biología (ecología, ambiente).
+    malla_bachillerato: null
+    timss_dominios: [Ciencias de la Tierra]
+    pisa_grupos: [Sistemas de la Tierra y el espacio]
+    ejes_pais: [Tierra, Espacio, Geografía]
+
+asignacion:
+  # Áreas de TIMSS 4.° «Ciencias físicas» (código de área → disciplina).
+  timss4_ciencias_fisicas:
+    T4_27-P1: quimica   # Propiedades y cambios de la materia
+    T4_27-P2: fisica    # Energía y transferencia
+    T4_27-P3: fisica    # Luz y sonido
+    T4_27-P4: fisica    # Electricidad y magnetismo
+    T4_27-P5: fisica    # Movimiento y fuerzas
+    T4_27-P6: fisica    # Investigaciones (revisar caso a caso)
+  # PISA «Sistemas físicos»: el objetivo decide entre física y química.
+  pisa_sistemas_fisicos:
+    PISA-F1: quimica    # Estructura y propiedades de la materia
+    PISA-F2: quimica    # Cambios químicos de la materia
+  pisa_sistemas_fisicos_resto: fisica

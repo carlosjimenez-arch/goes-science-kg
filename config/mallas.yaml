@@ -1,0 +1,33 @@
+# Mallas curriculares del MINED (borradores «Mallas sugeridas», copia de la carpeta de Drive).
+# Fuente única: data/fuentes/mined/Mallas sugeridas/  (SOLO LECTURA)
+#
+# El archivo de cada malla se fija AQUÍ de forma explícita. No se elige por fecha de
+# modificación: git no conserva esas fechas y, tras un clone, la elección sería arbitraria.
+# Las versiones «(1)» de 2.°–4.° son las más recientes (28-sep-2026) y las que usó la
+# clasificación TIMSS/PISA de reportes/cobertura_curricular.
+directorio: data/fuentes/mined/Mallas sugeridas
+
+archivos:
+  - {archivo: "Matriz_Ciencias_2do_Grado_U1_U6_3(1).xlsx", canonico: Matriz_Ciencias_2do_Grado_U1_U6_3.xlsx, grado: 2, asignatura: ciencias}
+  - {archivo: "Matriz_Ciencias_3er_Grado_U1_U6(1).xlsx", canonico: Matriz_Ciencias_3er_Grado_U1_U6.xlsx, grado: 3, asignatura: ciencias}
+  - {archivo: "Matriz_Ciencias_4to_Grado_U1_U6(1).xlsx", canonico: Matriz_Ciencias_4to_Grado_U1_U6.xlsx, grado: 4, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_5to_Grado_U1_U6.xlsx, grado: 5, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_6to_Grado_U1_U6.xlsx, grado: 6, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, grado: 7, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_8vo_Grado_U1_U7.xlsx, grado: 8, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_9no_Grado_U1_U7.xlsx, grado: 9, asignatura: ciencias}
+  # Bachillerato: un libro por asignatura; el grado sale del nombre de la hoja («Física 10.°»).
+  - {archivo: Matriz_Bachillerato_Fisica_10_11.xlsx, asignatura: fisica}
+  - {archivo: Matriz_Bachillerato_Quimica_10_11.xlsx, asignatura: quimica}
+  - {archivo: Matriz_Bachillerato_Biologia_10_11.xlsx, asignatura: biologia}
+
+# Versiones anteriores que se conservan pero NO se procesan.
+descartados:
+  - {archivo: Matriz_Ciencias_2do_Grado_U1_U6_3.xlsx, motivo: "versión del 27-sep, reemplazada por «(1)»"}
+  - {archivo: Matriz_Ciencias_3er_Grado_U1_U6.xlsx, motivo: "versión del 27-sep, reemplazada por «(1)»"}
+  - {archivo: Matriz_Ciencias_4to_Grado_U1_U6.xlsx, motivo: "versión del 27-sep, reemplazada por «(1)»"}
+
+# Columnas de las hojas de unidad. Encabezados en las filas 1 y 2; datos desde la fila 3.
+# «Unidad» y «Contenido» vienen en celdas combinadas y se arrastran hacia abajo.
+fila_datos: 3
+fases_pisa: ["1. Aproximar", "2. Explorar", "3. Explicar", "4. Indagar", "5. Reforzar"]

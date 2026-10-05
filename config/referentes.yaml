@@ -1,0 +1,87 @@
+# Currículos de referencia (países). Criterios de selección en specs/03_fuentes_y_referentes.md.
+#
+# estado:
+#   alineado   → objetivos extraídos y alineados con TIMSS 2027 (en el grafo v0)
+#   descargado → el documento está en data/fuentes/externos/ pero falta extraer/alinear
+#   pendiente  → hay que conseguir el documento (correr la skill fuentes-descargar)
+#
+# IMPORTANTE: los datos de desempeño (posiciones en TIMSS 2023 / PISA 2022) que justifican
+# cada país se deben VERIFICAR y citar (informe + página) al completar la fase 1 del plan.
+# Aquí solo se registra la intención; no son cifras verificadas.
+
+paises:
+  UY:
+    nombre: Uruguay
+    motivo: Base declarada por el equipo GOES para la nueva currícula; referente regional.
+    idioma: es
+    estado: alineado
+    documentos: [uy_fq3, uy_fq4, uy_fq5, uy_bio3, uy_bio4, uy_bio5, uy_bio6, uy_te3, uy_te4, uy_geo5, uy_fis6, uy_qui6, uy_prog, uy_mcn]
+    vacios: ["Física-Química 7.°", "Tierra y Espacio 7.°–9.°"]
+  CO:
+    nombre: Colombia
+    motivo: Referente regional; la malla del MINED ya cita a MEN Colombia.
+    idioma: es
+    estado: alineado
+    documentos: [co_dba, co_ebc]
+  SG:
+    nombre: Singapur
+    motivo: Alto desempeño sostenido en TIMSS y PISA Ciencias.
+    idioma: en
+    estado: alineado
+    documentos: [sg_prim, sg_lowsec]
+    vacios: ["Secundaria baja (MOE retiró el enlace del Lower Secondary Science Syllabus)"]
+  CL:
+    nombre: Chile
+    motivo: Referente regional con Objetivos de Aprendizaje por grado.
+    idioma: es
+    estado: pendiente
+    documentos: [cl_bc16, cl_bc72m]
+    vacios: ["El sitio del Mineduc bloquea la descarga automática: bajar a mano"]
+  JP:
+    nombre: Japón
+    motivo: Alto desempeño en TIMSS y PISA Ciencias; Course of Study con traducción oficial al inglés.
+    idioma: en
+    estado: pendiente
+  KR:
+    nombre: Corea del Sur
+    motivo: Alto desempeño en TIMSS y PISA Ciencias.
+    idioma: en
+    estado: pendiente
+  EE:
+    nombre: Estonia
+    motivo: Mejor desempeño europeo en PISA Ciencias; currículo nacional publicado en inglés.
+    idioma: en
+    estado: pendiente
+  ENG:
+    nombre: Inglaterra
+    motivo: Alto desempeño en TIMSS; National Curriculum de Ciencias por etapa (licencia abierta OGL).
+    idioma: en
+    estado: pendiente
+  AU:
+    nombre: Australia
+    motivo: Australian Curriculum v9 (Science) por grado, licencia abierta.
+    idioma: en
+    estado: pendiente
+  FI:
+    nombre: Finlandia
+    motivo: Referente europeo histórico de PISA; currículo básico nacional.
+    idioma: en
+    estado: pendiente
+  CA-ON:
+    nombre: Canadá (Ontario)
+    motivo: Alto desempeño en PISA Ciencias; Science and Technology 1–8 (2022) por grado.
+    idioma: en
+    estado: pendiente
+
+# Estándares (no son países pero sirven de referente de prácticas científicas).
+estandares:
+  NGSS:
+    nombre: Next Generation Science Standards (EE. UU.)
+    motivo: Prácticas de ciencia e ingeniería y progresiones K–12; ya hay un PDF en la carpeta del MINED.
+    estado: descargado
+    archivo_local: data/fuentes/mined/Fuentes/Standars Science and Engineering Practices in the NGSS - FINAL 060513.pdf
+  ERCE19:
+    nombre: ERCE 2019 (UNESCO-LLECE) · Ciencias 6.°
+    motivo: Evaluación regional en la que participa América Latina.
+    estado: descargado
+    documentos: [erce19_niveles, erce19_aportes]

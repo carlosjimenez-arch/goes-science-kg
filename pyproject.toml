@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "goes-science-kg"
+version = "0.1.0"
+description = "Grafo de conocimiento de Ciencias (Biología, Física, Química, Tierra y Espacio) para El Salvador, anclado en marcos internacionales y currículos de otros países."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Equipo GOES — Gobierno de El Salvador" }]
+dependencies = [
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+    "openpyxl>=3.1",
+    "networkx>=3.2",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+# Extracción de PDF (catálogos de marcos y currículos de países).
+pdf = ["pdfplumber>=0.11"]
+# Análisis tabular y reportes.
+analisis = ["pandas>=2.0"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+gskg = "goes_science_kg.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/goes_science_kg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["reportes", "data", ".git", ".venv"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

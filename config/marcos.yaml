@@ -1,0 +1,56 @@
+# Marcos internacionales (evaluaciones) que funcionan como PIVOTE del grafo.
+# Todo currículo (El Salvador y otros países) se alinea contra estos objetivos, nunca país contra país.
+#
+# Los catálogos y las clasificaciones vienen del trabajo previo en reportes/cobertura_curricular
+# (construidos desde los PDF oficiales, con página). El grafo los lee en modo SOLO LECTURA.
+legado: reportes/cobertura_curricular
+
+marcos:
+  T4_27:
+    nombre: TIMSS 2027 · 4.° grado
+    organismo: IEA
+    documento: timss27
+    catalogo: reportes/cobertura_curricular/data/referencia/catalogo_timss2027.json
+    filtro_marco: T4_27
+    grados_sv: [2, 3, 4]
+    metas_dominio: {Biología: 0.45, Ciencias físicas: 0.35, Ciencias de la Tierra: 0.20}
+    metas_cognitivas: {Conocer: 0.35, Aplicar: 0.40, Razonar: 0.25}
+  T8_27:
+    nombre: TIMSS 2027 · 8.° grado
+    organismo: IEA
+    documento: timss27
+    catalogo: reportes/cobertura_curricular/data/referencia/catalogo_timss2027.json
+    filtro_marco: T8_27
+    grados_sv: [5, 6, 7, 8]
+    metas_dominio: {Biología: 0.35, Química: 0.20, Física: 0.25, Ciencias de la Tierra: 0.20}
+    metas_cognitivas: {Conocer: 0.35, Aplicar: 0.35, Razonar: 0.30}
+  TA15:
+    nombre: TIMSS Advanced 2015 · Física
+    organismo: IEA
+    documento: timssadv15
+    catalogo: reportes/cobertura_curricular/data/referencia/catalogo_timss.json
+    filtro_marco: TA
+    grados_sv: [10, 11]
+    asignaturas: [fisica]
+    metas_cognitivas: {Conocer: 0.30, Aplicar: 0.40, Razonar: 0.30}
+  PISA25:
+    nombre: PISA 2025 · Ciencias
+    organismo: OCDE
+    documento: pisa25final
+    catalogo: reportes/cobertura_curricular/data/referencia/catalogo_pisa2025.json
+    grados_sv: [7, 8, 9]
+    # Solo los elementos de contenido, procedimentales y epistémicos son nodos de objetivo.
+    tipos_objetivo: [contenido, procedimental, epistemico]
+  T23:
+    nombre: TIMSS 2023 (referencia secundaria)
+    organismo: IEA
+    documento: timss23
+    catalogo: reportes/cobertura_curricular/data/referencia/catalogo_timss.json
+    filtro_marco_prefijo: [T4, T8]
+    equivalencias: reportes/cobertura_curricular/data/referencia/equivalencias_timss_2023_2027.csv
+
+clasificaciones:
+  timss2027: reportes/cobertura_curricular/data/referencia/clasificacion_v2_timss2027.json
+  pisa2025: reportes/cobertura_curricular/data/referencia/clasificacion_pisa2025.json
+  paises_objetivos: reportes/cobertura_curricular/data/interim/paises
+  paises_alineacion: reportes/cobertura_curricular/data/interim/paises/alineacion.json
