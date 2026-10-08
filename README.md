@@ -52,6 +52,19 @@ API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mid
 Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).
 
+## Secuencia del proceso
+Cada paso usa lo que deja el anterior. `make todo` corre los automáticos en este orden y deja el repo sin diferencias si
+todo está al día (las salidas son deterministas y una prueba verifica que `data/grafo/` corresponde a las fuentes).
+
+| # | Paso | Comando | Entrada → salida |
+|---|---|---|---|
+| 1 | Mallas | `gskg temas` | Excel del MINED → `data/interim/temas.json` |
+| 2 | Conceptos (con revisión) | `gskg conceptos preparar-* / unir-*` | lotes de subagentes → vocabulario, etiquetado, prerrequisitos |
+| 3 | Grafo | `gskg grafo construir` y `validar` | temas, conceptos, marcos y países → `data/grafo/` |
+| 4 | Lecturas del grafo | `gskg fichas`, `grados construir`, `brechas`, `progresion` | grafo → `asignaturas/`, `grados/` |
+| 5 | Propuestas (con revisión) | `make propuestas` | propuestas → simulación, Excel y `asignaturas/PROPUESTAS.md` |
+| 6 | Internacional | `make internacional` (o `make internacional-ia` con Vertex) | países y malla V2 → `internacional/` |
+
 ## Cómo continuar con Claude Code
 Abre Claude Code en esta carpeta y pega [`prompts/00_montar_proyecto.md`](prompts/00_montar_proyecto.md).
 Claude Code lee [`CLAUDE.md`](CLAUDE.md), las [specs](specs/) y las skills de `.claude/skills/`.

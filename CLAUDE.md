@@ -73,6 +73,7 @@ uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MI
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
 uv run pytest -q
-make todo                         # construir + validar + fichas + grados + brechas + progresión + pruebas + lint
+make todo                         # temas → grafo → validar → fichas, grados, brechas, progresión → internacional → pruebas + lint
+make internacional-ia             # extraer + etiquetar (Vertex, con caché) + construir
 make propuestas                   # simula las 11 propuestas, rehace sus Excel y asignaturas/PROPUESTAS.md
 ```
