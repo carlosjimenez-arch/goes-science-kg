@@ -65,13 +65,6 @@ def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
     return resumen
 
 
-def _cargar_etiquetas(prefijo: str) -> dict[str, dict]:
-    salida: dict[str, dict] = {}
-    for f in sorted(ruta(etiquetar.DIR).glob(f"{prefijo}*.json")):
-        salida.update(json.loads(f.read_text(encoding="utf-8")))
-    return salida
-
-
 def ensenados(e: dict) -> list[str]:
     """Conceptos que el enunciado enseña según la regla de presencia."""
     sec = e["secundarios"] if e["confianza"] in ("alta", "media") else []
@@ -81,11 +74,18 @@ def ensenados(e: dict) -> list[str]:
 def con_equivalentes(ids: list[str]) -> list[str]:
     """Agrega los conceptos equivalentes entre asignaturas (conceptos.equivalencias(), revisadas por una persona): la
     misma idea puede estar en Física en un currículo y en Tierra y Espacio en otro (p. ej. el Big Bang)."""
+    eq = _equivalencias()
+    return sorted({*ids, *(y for x in ids for y in eq.get(x, ()))})
+
+
+@cache
+def _equivalencias() -> dict[str, frozenset[str]]:
+    """Concepto → conceptos equivalentes. Se arma una vez: con_equivalentes se llama ~20 000 veces por corrida."""
     eq: dict[str, set[str]] = defaultdict(set)
     for e in conceptos.equivalencias():
         eq[e["a"]].add(e["b"])
         eq[e["b"]].add(e["a"])
-    return sorted({*ids, *(y for x in ids for y in eq[x])})
+    return {k: frozenset(v) for k, v in eq.items()}
 
 
 def _grado(o: dict) -> float:
@@ -109,7 +109,7 @@ def _antecedente() -> list[dict]:
 def construir() -> dict:
     """Escribe data/grafo/internacional/: grafo (nodos, aristas) y consenso por concepto."""
     voc, prac = conceptos.vocabulario(), conceptos.practicas()
-    etq = _cargar_etiquetas("pais_")
+    etq = etiquetar.cargar_etiquetas("pais_")
     objs = [o for o in objetivos() if o["id"] in etq]
     nodos, aristas = [], []
     cursos = sorted({(o["pais"], o["curso"], o["nivel"]) for o in objs})

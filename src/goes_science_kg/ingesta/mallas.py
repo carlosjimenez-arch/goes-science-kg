@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import asdict, dataclass, field
+from functools import cache
 
 import openpyxl
 
@@ -63,8 +64,12 @@ def _columnas(ws) -> list[str]:
     return cols
 
 
-def extraer(nombre_config: str = "mallas") -> list[TemaMalla]:
-    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la Versión 1)."""
+@cache
+def extraer(nombre_config: str = "mallas") -> tuple[TemaMalla, ...]:
+    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la Versión 1).
+
+    Con caché: leer los Excel es lo más lento del proceso y varios pasos piden la misma malla en una corrida.
+    """
     cfg = cargar(nombre_config)
     base = ruta(cfg["directorio"])
     fases = cfg["fases_pisa"]
@@ -102,7 +107,7 @@ def extraer(nombre_config: str = "mallas") -> list[TemaMalla]:
                 ))
         wb.close()
     _asignar_ids(temas)
-    return temas
+    return tuple(temas)
 
 
 def _asignar_ids(temas: list[TemaMalla]) -> None:

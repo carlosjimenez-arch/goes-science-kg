@@ -20,7 +20,7 @@ from pathlib import Path
 from goes_science_kg.brechas import analizar
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista
-from goes_science_kg.prerrequisitos import evidencia_orden
+from goes_science_kg.prerrequisitos import cargar_prerrequisitos, evidencia_orden
 
 COLUMNAS_DECISION = ["decision (aceptar|cambiar|rechazar)", "nuevos_conceptos (ids; separados por ;)", "comentario",
                      "revisado_por"]
@@ -121,6 +121,7 @@ def importar(archivo: str) -> dict:
                   for r in filas if r[COLUMNAS_DECISION[0]].strip().lower() == "rechazar"]
         destino.parent.mkdir(parents=True, exist_ok=True)
         destino.write_text(json.dumps(previos + nuevos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        cargar_prerrequisitos.cache_clear()
         return {"prerrequisitos_rechazados": len(nuevos), "aceptados": len(filas) - len(nuevos)}
     voc = vocabulario()
     revisiones = []

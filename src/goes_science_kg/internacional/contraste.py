@@ -47,8 +47,8 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
 
     temas = {t.id: t.dict() for t in extraer("mallas_v2")}
     por: dict[str, set[tuple[int, str]]] = defaultdict(set)
-    for f in sorted(ruta(etiquetar.DIR).glob("malla_v2_*.json")):
-        for tid, e in json.loads(f.read_text(encoding="utf-8")).items():
+    for _, etiquetas in etiquetar.leer_etiquetados("malla_v2_"):
+        for tid, e in etiquetas.items():
             if tid in temas:
                 for c in con_equivalentes(ensenados(e)):
                     por[c].add((temas[tid]["grado"], tid))

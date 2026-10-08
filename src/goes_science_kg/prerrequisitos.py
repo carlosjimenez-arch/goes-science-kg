@@ -17,6 +17,7 @@ from __future__ import annotations
 import json
 import statistics
 from collections import defaultdict
+from functools import cache
 
 import networkx as nx
 
@@ -167,15 +168,18 @@ def unir(nodos: list[Nodo]) -> dict:
     for nombre, datos in (("prerrequisitos.json", final), ("descartadas_ciclo.json", rotas),
                           ("descartadas_transitivas.json", redundantes)):
         (ruta(DIR) / nombre).write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    cargar_prerrequisitos.cache_clear()
     return {"aristas": len(final), "rotas_por_ciclo": len(rotas), "transitivas_quitadas": len(redundantes),
             "cadena_mas_larga": len(nx.dag_longest_path(g))}
 
 
-def cargar_prerrequisitos() -> list[dict]:
-    """Prerrequisitos consolidados menos los que rechazó la revisión humana."""
+@cache
+def cargar_prerrequisitos() -> tuple[dict, ...]:
+    """Prerrequisitos consolidados menos los que rechazó la revisión humana (con caché; `unir` y la revisión
+    humana la limpian al escribir)."""
     p = ruta(f"{DIR}/prerrequisitos.json")
     if not p.exists():
-        return []
+        return ()
     r = ruta(f"{DIR}/rechazados.json")
     rechazados = ({(x["origen"], x["destino"]) for x in json.loads(r.read_text(encoding="utf-8"))}
                   if r.exists() else set())
@@ -199,4 +203,4 @@ def cargar_prerrequisitos() -> list[dict]:
             aristas.append({"origen": o, "destino": d, "tipo_evidencia": "logica", "evidencias": ["triaje"],
                             "confianza": "media", "version": VERSION_TRIAJE,
                             "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje)."})
-    return [e for e in aristas if (e["origen"], e["destino"]) not in rechazados]
+    return tuple(e for e in aristas if (e["origen"], e["destino"]) not in rechazados)

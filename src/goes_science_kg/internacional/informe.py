@@ -11,8 +11,8 @@ from collections import defaultdict
 
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.excel import guardar as guardar_excel
-from goes_science_kg.internacional import contraste, profundidad, visor
-from goes_science_kg.internacional.consenso import _cargar_etiquetas, objetivos, paises
+from goes_science_kg.internacional import contraste, etiquetar, profundidad, visor
+from goes_science_kg.internacional.consenso import objetivos, paises
 
 DIR = "internacional"
 NOMBRE = {"fisica": "Física", "quimica": "Química", "biologia": "Biología",
@@ -214,7 +214,7 @@ def _norma(s: str) -> str:
 def _propuestos(objs: dict) -> dict[str, list[dict]]:
     """Nombres propuestos por el etiquetado de los países (no son ids), agrupados por asignatura."""
     por: dict[tuple[str, str], dict] = {}
-    for i, e in _cargar_etiquetas("pais_").items():
+    for i, e in etiquetar.cargar_etiquetas("pais_").items():
         o = objs.get(i)
         if not o or not o["asignatura"]:
             continue
@@ -236,7 +236,7 @@ def _propuestos(objs: dict) -> dict[str, list[dict]]:
 
 def _revision(objs: dict, base) -> dict:
     """CSV de revisión humana: objetivos «parcial» y etiquetas de confianza baja."""
-    etq = _cargar_etiquetas("pais_")
+    etq = etiquetar.cargar_etiquetas("pais_")
     filas = []
     for i, o in sorted(objs.items()):
         e = etq.get(i, {})

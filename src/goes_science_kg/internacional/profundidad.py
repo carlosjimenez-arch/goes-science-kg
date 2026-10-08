@@ -11,14 +11,12 @@ Prácticas: las etiquetas `PRAC:` del etiquetado (mismo modelo y catálogo en lo
 
 from __future__ import annotations
 
-import json
 import re
 from collections import Counter, defaultdict
 
 from goes_science_kg import conceptos
-from goes_science_kg.config import ruta
 from goes_science_kg.internacional import etiquetar
-from goes_science_kg.internacional.consenso import _cargar_etiquetas, ensenados, objetivos, paises
+from goes_science_kg.internacional.consenso import ensenados, objetivos, paises
 
 NIVELES = ("recordar", "aplicar", "razonar")
 _LEMAS = {
@@ -95,10 +93,9 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
     voc = conceptos.vocabulario()
     etq_sv: dict[str, dict] = {}
     # Solo el etiquetado con el vocabulario de la asignatura, como el de los países (las prácticas no cambian).
-    for f in sorted(ruta(etiquetar.DIR).glob("malla_v2_*.json")):
-        if f.stem.endswith("_completo"):
-            continue
-        etq_sv.update(json.loads(f.read_text(encoding="utf-8")))
+    for nombre, etiquetas in etiquetar.leer_etiquetados("malla_v2_"):
+        if not nombre.endswith("_completo"):
+            etq_sv.update(etiquetas)
     salida: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
     for t in extraer("mallas_v2"):
         if t.grado < 9 or t.id not in etq_sv:
@@ -108,7 +105,7 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
         if asig:
             salida[asig]["SV"].append({"id": t["id"], "texto": t["indicador"] or t["procedimental"],
                                        "practicas": etq_sv[t["id"]]["practicas"]})
-    etq = _cargar_etiquetas("pais_")
+    etq = etiquetar.cargar_etiquetas("pais_")
     for o in objetivos():
         if o["nivel"] != "nucleo" or o["grado_sv_max"] < 9 or o["id"] not in etq or not o["asignatura"]:
             continue

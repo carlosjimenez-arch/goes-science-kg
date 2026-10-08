@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 from concurrent.futures import ThreadPoolExecutor
+from functools import cache
 
 from goes_science_kg import conceptos
 from goes_science_kg.config import ruta
@@ -117,8 +118,24 @@ def etiquetar(items: list[dict], asignatura: str, nombre: str, hilos: int = 6) -
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(json.dumps(dict(sorted(salida.items())), ensure_ascii=False, indent=1) + "\n",
                        encoding="utf-8")
+    leer_etiquetados.cache_clear()
     return {"nombre": nombre, "items": len(items), "etiquetados": len(salida), "faltan": len(faltan),
             "ids_invalidos": invalidos}
+
+
+@cache
+def leer_etiquetados(prefijo: str) -> tuple[tuple[str, dict], ...]:
+    """(nombre, etiquetas) de cada etiquetado/<prefijo>*.json, en orden de nombre. Con caché: `etiquetar` la limpia."""
+    return tuple((f.stem, json.loads(f.read_text(encoding="utf-8")))
+                 for f in sorted(ruta(DIR).glob(f"{prefijo}*.json")))
+
+
+def cargar_etiquetas(prefijo: str) -> dict[str, dict]:
+    """Etiquetas de todos los archivos con ese prefijo, unidas por id (si un id se repite, gana el último archivo)."""
+    salida: dict[str, dict] = {}
+    for _, etiquetas in leer_etiquetados(prefijo):
+        salida.update(etiquetas)
+    return salida
 
 
 def items_malla_v2(grado_min: int = 9) -> dict[str, list[dict]]:
