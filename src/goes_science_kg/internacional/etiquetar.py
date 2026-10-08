@@ -13,6 +13,7 @@ from functools import cache
 
 from goes_science_kg import conceptos
 from goes_science_kg.config import ruta
+from goes_science_kg.ingesta.mallas import extraer
 from goes_science_kg.internacional import vertex
 
 DIR = "data/interim/internacional/etiquetado"
@@ -140,7 +141,6 @@ def cargar_etiquetas(prefijo: str) -> dict[str, dict]:
 
 def items_malla_v2(grado_min: int = 9) -> dict[str, list[dict]]:
     """Temas de la malla V2 desde `grado_min`, agrupados por asignatura de la malla, como {id, texto}."""
-    from goes_science_kg.ingesta.mallas import extraer
 
     grupos: dict[str, list[dict]] = {}
     for t in extraer("mallas_v2"):

@@ -17,6 +17,7 @@ Salidas: data/grafo/grados/G<gg>/{nodos,aristas}.jsonl + diagnostico.json, y gra
 
 from __future__ import annotations
 
+import html as h
 import json
 from collections import Counter, defaultdict
 
@@ -24,7 +25,7 @@ from goes_science_kg.comunidades import comunidades_grado
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.grafo.almacen import guardar
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
-from goes_science_kg.prerrequisitos import evidencia_orden
+from goes_science_kg.prerrequisitos import evidencia_orden, paises_alto_desempeno
 from goes_science_kg.visor import escribir_visor
 
 GRADOS = range(2, 12)
@@ -173,7 +174,6 @@ def _ficha(d: dict, por_id: dict[str, Nodo]) -> str:
 
 def _hallazgos(diags: list[dict], por_id: dict[str, Nodo], ev: dict) -> None:
     """grados/HALLAZGOS.md: una página con lo accionable de cada grado (para el equipo curricular)."""
-    from goes_science_kg.prerrequisitos import paises_alto_desempeno
 
     alto = paises_alto_desempeno()
     nombre = lambda i: por_id[i].etiqueta if i in por_id else i  # noqa: E731
@@ -257,7 +257,6 @@ NOTA_INDICE = ("Generado por gskg grados construir. Las relaciones propuestas po
 
 def _indice_html(resumen: list[dict]) -> None:
     """grados/index.html: portada navegable de los grafos por grado (abre los visores)."""
-    import html as h
 
     filas = "".join(
         f"<tr><td><a href='G{r['grado']:02d}/grafo.html'>{r['grado']}.° grado</a></td><td>{r['temas']}</td>"

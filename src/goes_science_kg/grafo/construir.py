@@ -7,11 +7,13 @@ curricular se agregan en fases posteriores (specs/08_plan_de_implementacion.md).
 
 from __future__ import annotations
 
+from goes_science_kg import conceptos as cp
 from goes_science_kg.config import cargar
 from goes_science_kg.disciplinas import asignacion_manual, asignatura_de_objetivo, asignatura_de_tema
 from goes_science_kg.ingesta import legado
 from goes_science_kg.ingesta.mallas import TemaMalla, extraer
 from goes_science_kg.modelos import Arista, Confianza, Fuente, Nodo, TipoArista, TipoNodo
+from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 from goes_science_kg.revisiones import revisiones_temas
 
 VERSION_GRAFO = "v1"
@@ -154,7 +156,6 @@ class Constructor:
                     props={"revisado_por": c.get("revisado_por") or None, **extra})
 
     def paises(self) -> None:
-        from goes_science_kg import conceptos as cp
 
         docs = legado.documento_por_archivo()
         etiquetas = cp.etiquetado_paises()
@@ -189,8 +190,15 @@ class Constructor:
 
     def conceptos(self) -> None:
         """Capa de conceptos y prácticas (vacía si aún no existe el vocabulario)."""
-        from goes_science_kg import conceptos as cp
+        self._vocabulario()
+        self._practicas()
+        self._equivalencias()
+        self._prerrequisitos()
+        self._etiquetado_paises()
+        self._etiquetado_temas()
 
+    def _vocabulario(self) -> None:
+        """Nodos de concepto, su asignatura y los objetivos de marco de los que deriva cada uno."""
         for c in cp.vocabulario().values():
             cid = self.nodo(id=c["id"], tipo=TipoNodo.CONCEPTO, etiqueta=c["nombre"], asignatura=c["asignatura"],
                             props={k: c.get(k) for k in ("definicion", "sinonimos", "nivel", "origen")})
@@ -200,6 +208,9 @@ class Constructor:
                     self.arista(origen=f"OBJ:{cod}", destino=cid, tipo=TipoArista.TRABAJA, metodo="ia",
                                 confianza=Confianza.MEDIA, version=c["version"],
                                 justificacion="El vocabulario deriva este concepto de este objetivo del marco.")
+
+    def _practicas(self) -> None:
+        """Nodos de práctica científica y los objetivos de marco que el catálogo cita como fuente."""
         for p in cp.practicas().values():
             pid = self.nodo(id=p["id"], tipo=TipoNodo.PRACTICA, etiqueta=p["nombre"],
                             props={k: p.get(k) for k in ("definicion", "grupo", "progresion", "fuentes")})
@@ -208,20 +219,26 @@ class Constructor:
                     self.arista(origen=f"OBJ:{f}", destino=pid, tipo=TipoArista.TRABAJA, metodo="ia",
                                 confianza=Confianza.MEDIA, version=cp.VERSION_VOCABULARIO,
                                 justificacion="El catálogo de prácticas cita este objetivo como fuente.")
-        from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
+    def _equivalencias(self) -> None:
+        """Equivalencias revisadas entre conceptos de distintas asignaturas."""
         for e in cp.equivalencias():
             if e["a"] in self.nodos and e["b"] in self.nodos:
                 self.arista(origen=e["a"], destino=e["b"], tipo=TipoArista.EQUIVALE_A, metodo="revision",
                             justificacion=e["justificacion"], version=e["version"],
                             props={"revisado_por": e.get("revisado_por")})
 
+    def _prerrequisitos(self) -> None:
+        """Aristas de prerrequisito entre conceptos (sin las que rechazó la revisión humana)."""
         for e in cargar_prerrequisitos():
             if e["origen"] in self.nodos and e["destino"] in self.nodos:
                 self.arista(origen=e["origen"], destino=e["destino"], tipo=TipoArista.PRERREQUISITO_DE, metodo="ia",
                             confianza=self._confianza(e["confianza"]), justificacion=e["justificacion"],
                             version=e["version"], props={"tipo_evidencia": e["tipo_evidencia"],
                                                          "evidencias": e.get("evidencias", [])})
+
+    def _etiquetado_paises(self) -> None:
+        """Objetivo de país → concepto (el primero es el principal)."""
         for oid, e in cp.etiquetado_paises().items():
             if f"OP:{oid}" not in self.nodos:
                 continue
@@ -230,14 +247,10 @@ class Constructor:
                             rol="principal" if i == 0 else "secundario", metodo="ia",
                             confianza=self._confianza(e["confianza"]), justificacion=e["justificacion"],
                             version=e["version"])
-        etiquetas = dict(cp.etiquetado())
-        for tid, r in revisiones_temas().items():
-            if "conceptos" in r or "practicas" in r:  # la revisión reemplaza SOLO los campos que trae
-                base = etiquetas.get(tid, {"conceptos": [], "practicas": []})
-                etiquetas[tid] = {**base, **{k: r[k] for k in ("conceptos", "practicas") if k in r},
-                                  "confianza": r.get("confianza", "alta"), "justificacion": r.get("justificacion"),
-                                  "version": r.get("version"), "revisado_por": r.get("revisado_por") or "revisión"}
-        for tid, e in etiquetas.items():
+
+    def _etiquetado_temas(self) -> None:
+        """Tema de la malla → conceptos y prácticas, con las revisiones humanas aplicadas encima de la IA."""
+        for tid, e in self._etiquetas_revisadas().items():
             if f"TEMA:{tid}" not in self.nodos:
                 continue
             metodo = "revision" if e.get("revisado_por") else "ia"
@@ -252,6 +265,18 @@ class Constructor:
                 self.arista(origen=f"TEMA:{tid}", destino=pid, tipo=TipoArista.TRABAJA, rol="practica", metodo=metodo,
                             confianza=self._confianza(e["confianza"]), justificacion=e["justificacion"],
                             version=e["version"], props=extra)
+
+    @staticmethod
+    def _etiquetas_revisadas() -> dict[str, dict]:
+        """Etiquetado de temas de la IA con las revisiones encima: la revisión reemplaza SOLO los campos que trae."""
+        etiquetas = dict(cp.etiquetado())
+        for tid, r in revisiones_temas().items():
+            if "conceptos" in r or "practicas" in r:  # la revisión reemplaza SOLO los campos que trae
+                base = etiquetas.get(tid, {"conceptos": [], "practicas": []})
+                etiquetas[tid] = {**base, **{k: r[k] for k in ("conceptos", "practicas") if k in r},
+                                  "confianza": r.get("confianza", "alta"), "justificacion": r.get("justificacion"),
+                                  "version": r.get("version"), "revisado_por": r.get("revisado_por") or "revisión"}
+        return etiquetas
 
 
 def construir() -> tuple[list[Nodo], list[Arista]]:

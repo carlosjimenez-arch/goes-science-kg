@@ -8,6 +8,8 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass, field
 
+import networkx as nx
+
 from goes_science_kg.modelos import ARISTAS_INFERIDAS, Arista, Confianza, Nodo, TipoArista, TipoNodo
 
 MAX_PALABRAS_JUSTIFICACION = 15
@@ -49,7 +51,6 @@ def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
                 and not (n.fuente and n.fuente.localizador)):
             r.errores.append(f"{n.id}: objetivo AUSS sin código localizador")
 
-    import networkx as nx
 
     dag = nx.DiGraph([(a.origen, a.destino) for a in aristas if a.tipo == TipoArista.PRERREQUISITO_DE])
     if not nx.is_directed_acyclic_graph(dag):

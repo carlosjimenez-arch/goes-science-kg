@@ -18,6 +18,7 @@ from datetime import date
 from pathlib import Path
 
 from goes_science_kg.brechas import analizar
+from goes_science_kg.conceptos import vocabulario
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista
 from goes_science_kg.prerrequisitos import cargar_prerrequisitos, evidencia_orden
@@ -94,7 +95,6 @@ def importar(archivo: str) -> dict:
     Valida antes de escribir: decisión conocida, `revisado_por` obligatorio y códigos de concepto existentes.
     Las revisiones del mismo día y asignatura se acumulan (no se sobrescriben).
     """
-    from goes_science_kg.conceptos import vocabulario
 
     p = ruta(archivo)
     with open(p, encoding="utf-8-sig") as f:

@@ -9,6 +9,10 @@ import re
 import unicodedata
 from collections import defaultdict
 
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill
+from openpyxl.utils import get_column_letter as col
+
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.internacional import contraste, etiquetar, profundidad, visor
@@ -259,9 +263,6 @@ def _revision(objs: dict, base) -> dict:
 
 def _excel(asig: str, filas: list[dict], base) -> None:
     """Hoja Datos (valores), Contraste (todo número es fórmula sobre Datos) y Resumen (conteos por clase)."""
-    from openpyxl import Workbook
-    from openpyxl.styles import Font, PatternFill
-    from openpyxl.utils import get_column_letter as col
 
     ps = paises()
     n = len(ps)

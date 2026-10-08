@@ -17,6 +17,9 @@ import csv
 import json
 from collections import Counter, defaultdict
 
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill
+
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
@@ -160,8 +163,6 @@ def escribir_brechas(nodos: list[Nodo], aristas: list[Arista]) -> list[dict]:
 def escribir_excel(asig: str, r: dict) -> str:
     """Brechas_<Asignatura>.xlsx: hoja de datos «Oportunidad» y «Resumen» con FÓRMULAS sobre ella
     (estilo de los libros 2027: verde bosque 1E4D3A, sin azul; sin XLOOKUP/FILTER; compatible con Numbers)."""
-    from openpyxl import Workbook
-    from openpyxl.styles import Font, PatternFill
 
     nombre = cargar("asignaturas")["asignaturas"][asig]["nombre"]
     wb = Workbook()

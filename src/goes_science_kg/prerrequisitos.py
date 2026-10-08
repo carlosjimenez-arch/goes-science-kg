@@ -21,6 +21,7 @@ from functools import cache
 
 import networkx as nx
 
+from goes_science_kg.conceptos import VERSION_TRIAJE, conceptos_del_triaje, vocabulario
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
@@ -41,22 +42,38 @@ PESO = {"alta": 3, "media": 2, "baja": 1}
 TIPOS = {"declarada", "orden_observado", "logica"}
 
 
+def _min(actual: float | None, nuevo: float) -> float:
+    return nuevo if actual is None else min(actual, nuevo)
+
+
 def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]:
     """Por concepto: primer grado SV, primer grado por país (vía pivote) y nivel mínimo de marco."""
     por_id = {n.id: n for n in nodos}
-    obj_a_con, tema_a_con, op_a_con = defaultdict(set), defaultdict(set), defaultdict(set)
+    obj_a_con, op_a_con = defaultdict(set), defaultdict(set)
     for a in aristas:
         if a.tipo == TipoArista.TRABAJA and a.destino.startswith("CON:"):
-            destino = {"OBJ": obj_a_con, "TEMA": tema_a_con, "OP": op_a_con}[a.origen.split(":")[0]]
-            destino[a.origen].add(a.destino)
+            prefijo = a.origen.split(":")[0]
+            if prefijo in ("OBJ", "OP"):
+                (obj_a_con if prefijo == "OBJ" else op_a_con)[a.origen].add(a.destino)
     ev: dict[str, dict] = {n.id: {"sv": None, "paises": {}, "marco": None}
                            for n in nodos if n.tipo == TipoNodo.CONCEPTO}
+    _primer_grado_sv(ev, por_id, aristas)
+    _nivel_de_marco(ev, por_id, obj_a_con)
+    _primer_grado_paises(ev, por_id, aristas, obj_a_con, op_a_con)
+    _compartir_entre_equivalentes(ev, aristas)
+    alto = paises_alto_desempeno()
+    for e in ev.values():
+        e["paises"] = dict(sorted(e["paises"].items()))   # orden estable: no depende del orden de los conjuntos
+        alto_g = [g for p, g in e["paises"].items() if p in alto]
+        e["mediana_alto_desempeno"] = statistics.median(alto_g) if alto_g else None
+        e["via_paises"] = "directo" if op_a_con else "pivote"
+        e["paises_mediana"] = statistics.median(e["paises"].values()) if e["paises"] else None
+    return ev
 
-    def _min(actual, nuevo):
-        return nuevo if actual is None else min(actual, nuevo)
 
-    # Primer grado SV: temas donde el concepto es PRINCIPAL, o secundario con confianza alta o media (una mención
-    # secundaria de confianza baja no es «enseñarlo»); si no hay ninguna, el primer grado como secundario.
+def _primer_grado_sv(ev: dict[str, dict], por_id: dict[str, Nodo], aristas: list[Arista]) -> None:
+    """Primer grado SV: temas donde el concepto es PRINCIPAL, o secundario con confianza alta o media (una mención
+    secundaria de confianza baja no es «enseñarlo»); si no hay ninguna, el primer grado como secundario."""
     for a in aristas:
         if a.tipo == TipoArista.TRABAJA and a.origen.startswith("TEMA:") and a.destino in ev:
             g = por_id[a.origen].grado
@@ -66,12 +83,21 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
     for e in ev.values():
         if e["sv"] is None and e.get("sv_secundario") is not None:
             e["sv"], e["sv_solo_secundario"] = e["sv_secundario"], True
+
+
+def _nivel_de_marco(ev: dict[str, dict], por_id: dict[str, Nodo], obj_a_con: dict[str, set[str]]) -> None:
+    """Nivel mínimo de los marcos (TIMSS, PISA…) cuyos objetivos trabajan el concepto."""
     for oid, cons in obj_a_con.items():
         nivel = NIVEL_MARCO.get(por_id[oid].props.get("marco"))
-        for c in cons:
-            if nivel:
+        if nivel:
+            for c in cons:
                 ev[c]["marco"] = _min(ev[c]["marco"], nivel)
-    def _pais(op_id: str, cons) -> None:
+
+
+def _primer_grado_paises(ev: dict[str, dict], por_id: dict[str, Nodo], aristas: list[Arista],
+                         obj_a_con: dict[str, set[str]], op_a_con: dict[str, set[str]]) -> None:
+    """Primer grado por país: directo (objetivo de país → concepto) o, si no hay, vía el objetivo de marco pivote."""
+    def _pais(op_id: str, cons: set[str]) -> None:
         op = por_id[op_id]
         # Objetivos por banda (KS3 de Inglaterra, Estándares de Colombia): el punto medio de la banda, no el mínimo,
         # para no atribuir al primer año de la banda todo lo que se enseña a lo largo de ella.
@@ -88,12 +114,15 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
         for a in aristas:
             if a.tipo == TipoArista.ALINEA_CON and a.destino in obj_a_con:
                 _pais(a.origen, obj_a_con[a.destino])
-    # Conceptos equivalentes entre asignaturas comparten el primer grado (SV y países).
+
+
+def _compartir_entre_equivalentes(ev: dict[str, dict], aristas: list[Arista]) -> None:
+    """Conceptos equivalentes entre asignaturas comparten el primer grado (SV y países)."""
     eq = nx.Graph([(a.origen, a.destino) for a in aristas
                    if a.tipo == TipoArista.EQUIVALE_A and a.origen in ev and a.destino in ev])
     for grupo in nx.connected_components(eq):
         svs = [ev[c]["sv"] for c in grupo if ev[c]["sv"] is not None]
-        paises: dict[str, int] = {}
+        paises: dict[str, float] = {}
         for c in sorted(grupo):
             for p, g in ev[c]["paises"].items():
                 paises[p] = min(g, paises.get(p, g))
@@ -101,14 +130,6 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
             ev[c]["sv"] = min(svs) if svs else None
             ev[c]["paises"] = dict(paises)
             ev[c]["equivalentes"] = sorted(grupo - {c})
-    alto = paises_alto_desempeno()
-    for e in ev.values():
-        e["paises"] = dict(sorted(e["paises"].items()))   # orden estable: no depende del orden de los conjuntos
-        alto_g = [g for p, g in e["paises"].items() if p in alto]
-        e["mediana_alto_desempeno"] = statistics.median(alto_g) if alto_g else None
-        e["via_paises"] = "directo" if op_a_con else "pivote"
-        e["paises_mediana"] = statistics.median(e["paises"].values()) if e["paises"] else None
-    return ev
 
 
 def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
@@ -183,14 +204,12 @@ def cargar_prerrequisitos() -> tuple[dict, ...]:
     r = ruta(f"{DIR}/rechazados.json")
     rechazados = ({(x["origen"], x["destino"]) for x in json.loads(r.read_text(encoding="utf-8"))}
                   if r.exists() else set())
-    from goes_science_kg.conceptos import VERSION_TRIAJE, conceptos_del_triaje, vocabulario
 
     aristas = json.loads(p.read_text(encoding="utf-8"))
     # Conceptos nuevos del triaje: sus prerrequisitos sugeridos entran como evidencia lógica de confianza media.
     # Solo llegan aristas hacia el concepto nuevo, así que no pueden crear ciclos.
     # Hoy los conceptos del triaje no tienen aristas salientes, pero un próximo `unir` podría dárselas: se descarta
     # toda arista del triaje que repita un par o cierre un ciclo.
-    import networkx as nx
 
     voc = vocabulario()
     g = nx.DiGraph((e["origen"], e["destino"]) for e in aristas if (e["origen"], e["destino"]) not in rechazados)

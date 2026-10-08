@@ -15,6 +15,7 @@ import re
 from collections import Counter, defaultdict
 
 from goes_science_kg import conceptos
+from goes_science_kg.ingesta.mallas import extraer
 from goes_science_kg.internacional import etiquetar
 from goes_science_kg.internacional.consenso import ensenados, objetivos, paises
 
@@ -88,7 +89,6 @@ def _asignatura_tema(t: dict, e: dict, voc: dict) -> str | None:
 
 def _unidades() -> dict[str, dict[str, list[dict]]]:
     """asignatura → {'SV': [enunciados], '<país>': [enunciados del núcleo de 9.°–11.°]} con texto y prácticas."""
-    from goes_science_kg.ingesta.mallas import extraer
 
     voc = conceptos.vocabulario()
     etq_sv: dict[str, dict] = {}

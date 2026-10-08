@@ -25,6 +25,8 @@ from functools import cache
 from pathlib import Path
 
 from goes_science_kg.config import cargar, ruta
+from goes_science_kg.ingesta import legado
+from goes_science_kg.modelos import TipoNodo
 
 DIR = "data/interim/conceptos"
 VERSION_VOCABULARIO = "conceptos-v1"
@@ -51,7 +53,6 @@ def _leer(rel: str):
 # -- 1. vocabulario -----------------------------------------------------------------------------
 def preparar_vocabulario(nodos) -> list[str]:
     """Un insumo por asignatura con todos sus objetivos de marco (texto + subítems) y las unidades SV."""
-    from goes_science_kg.modelos import TipoNodo
 
     escritos = []
     for asig in cargar("asignaturas")["asignaturas"]:
@@ -138,7 +139,6 @@ def practicas() -> dict[str, dict]:
 
 def consolidar_vocabulario() -> dict:
     """Une vocabulario_<asig>.json en vocabulario.json, validando ids, asignaturas y códigos de marco."""
-    from goes_science_kg.ingesta import legado
 
     codigos = ({o["codigo"] for o in legado.catalogo_timss2027()}
                | {o["codigo"] for o in legado.catalogo_timss_v1() if o["marco"] == "TA"}
@@ -171,7 +171,6 @@ def consolidar_vocabulario() -> dict:
 # -- 2. etiquetado ------------------------------------------------------------------------------
 def preparar_etiquetado(nodos) -> list[str]:
     """Un lote por asignatura y grado con los temas y el vocabulario de ESA asignatura + prácticas."""
-    from goes_science_kg.modelos import TipoNodo
 
     voc, prac = vocabulario(), practicas()
     escritos = []
@@ -248,7 +247,6 @@ def etiquetado() -> dict[str, dict]:
 # Más preciso que heredar conceptos vía el objetivo de marco (spec 09, «Limitaciones»).
 def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool = True) -> list[str]:
     """Lotes por país. Con solo_pendientes, únicamente los objetivos aún sin etiquetar (p. ej. un país nuevo)."""
-    from goes_science_kg.modelos import TipoNodo
 
     voc, prac = vocabulario(), practicas()
     hechos = set(etiquetado_paises()) if solo_pendientes else set()

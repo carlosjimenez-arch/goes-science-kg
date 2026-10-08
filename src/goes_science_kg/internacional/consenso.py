@@ -22,6 +22,7 @@ from goes_science_kg import conceptos
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.internacional import etiquetar
 from goes_science_kg.internacional.extraer import DIR_SALIDA
+from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
 DIR_GRAFO = "data/grafo/internacional"
 VERSION = "grafo-internacional-v1"
@@ -143,7 +144,6 @@ def construir() -> dict:
         x = voc.get(c) or prac.get(c)
         nodos.append({"id": c, "tipo": "Concepto" if c in voc else "Practica", "nombre": x["nombre"],
                       "asignatura": x.get("asignatura"), "definicion": x.get("definicion")})
-    from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
     for a in cargar_prerrequisitos():
         if a["origen"] in usados and a["destino"] in usados:

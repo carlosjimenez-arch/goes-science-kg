@@ -28,8 +28,10 @@ from collections import Counter, defaultdict
 
 from goes_science_kg import conceptos
 from goes_science_kg.config import ruta
+from goes_science_kg.ingesta.mallas import extraer
 from goes_science_kg.internacional import etiquetar
 from goes_science_kg.internacional.consenso import DIR_GRAFO, GRADOS, con_equivalentes, ensenados, paises
+from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
 UMBRAL = 0.5
 MIN_PAISES = 5
@@ -43,7 +45,6 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
 
     Unión de todos los etiquetados de la V2 (vocabulario de la asignatura y completo) más las equivalencias entre
     asignaturas: un tema enseña c si algún etiquetado lo encuentra."""
-    from goes_science_kg.ingesta.mallas import extraer
 
     temas = {t.id: t.dict() for t in extraer("mallas_v2")}
     por: dict[str, set[tuple[int, str]]] = defaultdict(set)
@@ -129,7 +130,6 @@ def revisiones_expertas() -> dict[str, dict]:
 
 
 def _secuencia(sv: dict, voc: dict) -> list[dict]:
-    from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
     salida = []
     for a in cargar_prerrequisitos():

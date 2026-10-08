@@ -16,12 +16,14 @@ de responder solo con esa evidencia y citar los ids. Requiere `uv sync --extra r
 
 from __future__ import annotations
 
+import json
 import math
 import re
 import unicodedata
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 
+from goes_science_kg.config import ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 TIPOS_INDEXADOS = {TipoNodo.TEMA, TipoNodo.CONCEPTO, TipoNodo.PRACTICA, TipoNodo.OBJETIVO_MARCO,
@@ -172,36 +174,43 @@ class GraphRAG:
 
     def recuperar(self, consulta: str, grado: int | None = None, asignatura: str | None = None,
                   k_semillas: int = 8, saltos: int = 2, k_final: int = 25) -> Contexto:
+        """Semillas por BM25 ponderado por intención → expansión por vecinos → refuerzos → los k mejores."""
         q = normalizar(consulta)
-        plano = _sin_tildes(consulta)
-        marco = INTENCION_MARCO.search(plano)
-        # «currículo australiano» es el marco ACARA, no el país; con intención de marco, el refuerzo de país solo
-        # se aplica si se nombra un país.
-        plano_paises = re.sub(r"curriculo australiano|australian curriculum", "acara", plano)
-        paises = INTENCION_PAISES.search(plano_paises)
-        nombrados = {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano_paises)}
-        intencion_pais = bool(paises)
-        refuerzo_pais = paises if not marco else (paises and nombrados)  # con marco, solo si se nombra un país
-        prerreq = INTENCION_PRERREQ.search(plano)
-        marcos = {m for clave, ms in MARCO_NOMBRADO.items() if re.search(rf"\b{clave}\b", plano) for m in ms}
+        intencion = _Intencion.de(consulta)
+        puntos = self._semillas(q, grado, asignatura, intencion, k_semillas)
+        self._expandir(puntos, grado, asignatura, saltos)
+        if intencion.prerreq:
+            self._ancestros(puntos, asignatura)
+        if intencion.marco and GARANTIA_MARCO and puntos:
+            self._garantizar_marco(puntos, q, intencion.marcos)
+        elegidos = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))[:k_final]
+        return Contexto(consulta, grado, asignatura, [(self.por_id[d], s) for d, s in elegidos],
+                        self._relaciones({d for d, _ in elegidos}))
 
-        def peso(n: Nodo) -> float:
-            w = self._foco(n, grado) * PESO_TIPO.get(n.tipo, 1.0)
-            if n.tipo == TipoNodo.OBJETIVO_PAIS:
-                if refuerzo_pais:
-                    w *= 2.0 if (not nombrados or n.props.get("pais") in nombrados) else 0.5
-                elif not intencion_pais:
-                    w *= PESO_PAIS_SIN_INTENCION
-            if marco and n.tipo == TipoNodo.OBJETIVO_MARCO:
-                w *= PESO_MARCO if (not marcos or n.props.get("marco") in marcos) else 0.6
-            if prerreq and n.tipo == TipoNodo.CONCEPTO:
-                w *= PESO_CONCEPTO_PRERREQ
-            return w
+    def _peso(self, n: Nodo, grado: int | None, intencion: _Intencion) -> float:
+        """Peso de un nodo según su tipo, el grado pedido y la intención de la consulta."""
+        w = self._foco(n, grado) * PESO_TIPO.get(n.tipo, 1.0)
+        if n.tipo == TipoNodo.OBJETIVO_PAIS:
+            if intencion.refuerzo_pais:
+                w *= 2.0 if (not intencion.nombrados or n.props.get("pais") in intencion.nombrados) else 0.5
+            elif not intencion.pais:
+                w *= PESO_PAIS_SIN_INTENCION
+        if intencion.marco and n.tipo == TipoNodo.OBJETIVO_MARCO:
+            w *= PESO_MARCO if (not intencion.marcos or n.props.get("marco") in intencion.marcos) else 0.6
+        if intencion.prerreq and n.tipo == TipoNodo.CONCEPTO:
+            w *= PESO_CONCEPTO_PRERREQ
+        return w
 
-        candidatos = [(d, self.bm25.puntaje(q, d) * peso(self.por_id[d])) for d in self.bm25.docs]
-        semillas = sorted(((d, s) for d, s in candidatos if s > 0 and self._admite(self.por_id[d], grado, asignatura)),
-                          key=lambda x: (-x[1], x[0]))[:k_semillas]
-        puntos: dict[str, float] = {d: s for d, s in semillas}
+    def _semillas(self, q: list[str], grado: int | None, asignatura: str | None, intencion: _Intencion,
+                  k: int) -> dict[str, float]:
+        """Los k documentos con mayor BM25 × peso que pasan los filtros de grado y asignatura."""
+        candidatos = ((d, self.bm25.puntaje(q, d) * self._peso(self.por_id[d], grado, intencion))
+                      for d in self.bm25.docs)
+        admitidos = ((d, s) for d, s in candidatos if s > 0 and self._admite(self.por_id[d], grado, asignatura))
+        return dict(sorted(admitidos, key=lambda x: (-x[1], x[0]))[:k])
+
+    def _expandir(self, puntos: dict[str, float], grado: int | None, asignatura: str | None, saltos: int) -> None:
+        """Propaga el puntaje a los vecinos, amortiguado por el tipo de arista y por cada salto (modifica `puntos`)."""
         frontera = dict(puntos)
         for salto in range(1, saltos + 1):
             nueva: dict[str, float] = {}
@@ -218,33 +227,56 @@ class GraphRAG:
                 if s > puntos.get(v, 0.0):
                     puntos[v] = s
             frontera = nueva
-        if prerreq:
-            self._ancestros(puntos, asignatura)
-        if marco and GARANTIA_MARCO and puntos:
-            # Los objetivos del marco quedaban debajo de temas y conceptos: se suben los más pertinentes por BM25 (del
-            # marco nombrado, si lo hay) justo debajo de la mejor semilla.
-            objetivos = sorted(((d, self.bm25.puntaje(q, d)) for d in self.bm25.docs
-                                if self.por_id[d].tipo == TipoNodo.OBJETIVO_MARCO
-                                and (not marcos or self.por_id[d].props.get("marco") in marcos)),
-                               key=lambda x: (-x[1], x[0]))
-            tope = max(puntos.values())
-            for i, (d, _) in enumerate(o for o in objetivos if o[1] > 0):
-                if i >= GARANTIA_MARCO:
-                    break
-                puntos[d] = max(puntos.get(d, 0.0), tope * (0.9 - 0.01 * i))
-        elegidos = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))[:k_final]
-        ids = {d for d, _ in elegidos}
+
+    def _garantizar_marco(self, puntos: dict[str, float], q: list[str], marcos: set[str]) -> None:
+        """Los objetivos del marco quedaban debajo de temas y conceptos: se suben los más pertinentes por BM25 (del
+        marco nombrado, si lo hay) justo debajo de la mejor semilla."""
+        objetivos = sorted(((d, self.bm25.puntaje(q, d)) for d in self.bm25.docs
+                            if self.por_id[d].tipo == TipoNodo.OBJETIVO_MARCO
+                            and (not marcos or self.por_id[d].props.get("marco") in marcos)),
+                           key=lambda x: (-x[1], x[0]))
+        tope = max(puntos.values())
+        pertinentes = [d for d, s in objetivos if s > 0][:GARANTIA_MARCO]
+        for i, d in enumerate(pertinentes):
+            puntos[d] = max(puntos.get(d, 0.0), tope * (0.9 - 0.01 * i))
+
+    def _relaciones(self, ids: set[str]) -> list[Arista]:
+        """Aristas entre los nodos elegidos, sin repetir y en orden estable."""
         unicas = {(a.origen, a.destino, a.tipo, a.rol): a for d in ids for _, a in self.vecinos[d]
                   if a.origen in ids and a.destino in ids}
-        relaciones = sorted(unicas.values(), key=lambda a: (a.tipo, a.origen, a.destino))
-        return Contexto(consulta, grado, asignatura, [(self.por_id[d], s) for d, s in elegidos], relaciones)
+        return sorted(unicas.values(), key=lambda a: (a.tipo, a.origen, a.destino))
+
+
+@dataclass(frozen=True)
+class _Intencion:
+    """Lo que la consulta pide más allá de sus palabras: marco, países y prerrequisitos."""
+    marco: bool
+    marcos: frozenset[str]
+    pais: bool
+    nombrados: frozenset[str]
+    refuerzo_pais: bool
+    prerreq: bool
+
+    @classmethod
+    def de(cls, consulta: str) -> _Intencion:
+        plano = _sin_tildes(consulta)
+        marco = bool(INTENCION_MARCO.search(plano))
+        # «currículo australiano» es el marco ACARA, no el país; con intención de marco, el refuerzo de país solo
+        # se aplica si se nombra un país.
+        plano_paises = re.sub(r"curriculo australiano|australian curriculum", "acara", plano)
+        pais = bool(INTENCION_PAISES.search(plano_paises))
+        nombrados = frozenset(c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano_paises))
+        return cls(marco=marco,
+                   marcos=frozenset(m for clave, ms in MARCO_NOMBRADO.items()
+                                    if re.search(rf"\b{clave}\b", plano) for m in ms),
+                   pais=pais, nombrados=nombrados,
+                   refuerzo_pais=pais and (not marco or bool(nombrados)),
+                   prerreq=bool(INTENCION_PRERREQ.search(plano)))
 
 
 def busqueda_global(consulta: str, grado: int, k: int = 5) -> list[dict]:
     """Búsqueda «global»: devuelve los bloques temáticos (comunidades) del grado más pertinentes a la consulta."""
-    import json
 
-    from goes_science_kg.config import ruta
 
     p = ruta(f"data/grafo/grados/G{grado:02d}/comunidades.json")
     if not p.exists():

@@ -16,10 +16,15 @@ import json
 import math
 from collections import Counter, defaultdict
 
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.utils import get_column_letter
+
+from goes_science_kg import conceptos as cp
 from goes_science_kg.brechas import analizar
 from goes_science_kg.config import ruta
 from goes_science_kg.excel import guardar as guardar_excel
-from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
+from goes_science_kg.modelos import Arista, Confianza, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden
 
 
@@ -83,9 +88,6 @@ VERDE, VERDE_CLARO, GRIS = "1E4D3A", "DDEBDD", "F2F2F2"
 def escribir_excel(asig: str, g0: int, g1: int) -> str:
     """Libro para el MINED: pestañas «Acciones» y «Distribucion». Estilo de los libros 2027 (sin azul);
     los totales y diferencias son fórmulas; compatible con Numbers (sin «·» en pestañas ni CHAR(10))."""
-    from openpyxl import Workbook
-    from openpyxl.styles import Alignment, Font, PatternFill
-    from openpyxl.utils import get_column_letter
 
     d = ruta(f"asignaturas/{asig}/propuesta")
     p = json.loads((d / f"propuesta_G{g0:02d}-G{g1:02d}.json").read_text(encoding="utf-8"))
@@ -158,113 +160,152 @@ def _metricas(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
                                    / max(1, sum(1 for f in en_ciclo if "oportunidad" in f)), 2)}
 
 
-def simular(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
-    """Aplica mover / nuevo / fusionar / dividir / revisar (y quitar_conceptos) al grafo en memoria y compara
-    métricas antes y después."""
-    from goes_science_kg import conceptos as cp
-    from goes_science_kg.modelos import Arista as A
-    from goes_science_kg.modelos import Confianza
-    from goes_science_kg.modelos import Nodo as N
+class _Simulacion:
+    """Grafo en memoria sobre el que se aplican, una a una, las acciones de una propuesta."""
 
-    p = json.loads((ruta(f"asignaturas/{asig}/propuesta") / f"propuesta_G{g0:02d}-G{g1:02d}.json")
-                   .read_text(encoding="utf-8"))
-    por_nombre = {c["nombre"].lower(): cid for cid, c in sorted(cp.vocabulario().items())}
-    # Cinco nombres se repiten entre asignaturas («Cambios de estado» en Física y Química): se prefiere el de la
-    # asignatura que propone la acción.
-    por_asig_nombre = {(c["asignatura"], c["nombre"].lower()): cid for cid, c in cp.vocabulario().items()}
+    def __init__(self, asig: str, nodos: list[Nodo], aristas: list[Arista], version: str):
+        voc = cp.vocabulario()
+        self.asig, self.version = asig, version
+        self.por_nombre = {c["nombre"].lower(): cid for cid, c in sorted(voc.items())}
+        # Cinco nombres se repiten entre asignaturas («Cambios de estado» en Física y Química): se prefiere el de la
+        # asignatura que propone la acción.
+        self.por_asig_nombre = {(c["asignatura"], c["nombre"].lower()): cid for cid, c in voc.items()}
+        self.nodos = {n.id: n.model_copy(deep=True) for n in nodos}
+        self.aristas = list(aristas)
+        self.sin_resolver: list[str] = []
+        self.retiradas = 0
 
-    def resolver(nombre: str, de: str = asig) -> str | None:
-        return por_asig_nombre.get((de, nombre.lower())) or por_nombre.get(nombre.lower())
-    nuevos_n = {n.id: n.model_copy(deep=True) for n in nodos}
-    nuevas_a = list(aristas)
-    sin_resolver = []
+    def resolver(self, nombre: str, de: str | None = None) -> str | None:
+        return self.por_asig_nombre.get((de or self.asig, nombre.lower())) or self.por_nombre.get(nombre.lower())
 
-    def _agregar_conceptos(t: str, nombres: list[str]) -> None:
+    def _trabaja(self, t: str, cid: str, rol: str, justificacion: str) -> Arista:
+        return Arista(origen=t, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia", rol=rol, confianza=Confianza.ALTA,
+                      justificacion=justificacion, version=self.version)
+
+    def _agregar_conceptos(self, t: str, nombres: list[str]) -> None:
         for nombre in nombres:
-            cid = resolver(nombre)
-            if cid and t in nuevos_n:
-                nuevas_a.append(A(origen=t, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia", rol="principal",
-                                  confianza=Confianza.ALTA, justificacion="Acción propuesta (simulación).",
-                                  version=p["version"]))
+            cid = self.resolver(nombre)
+            if cid and t in self.nodos:
+                self.aristas.append(self._trabaja(t, cid, "principal", "Acción propuesta (simulación)."))
             elif not cid:
-                sin_resolver.append(nombre)
+                self.sin_resolver.append(nombre)
 
-    # Etiquetas que retiran las propuestas de OTRAS asignaturas del mismo ciclo (p. ej., Biología deja de tratar
-    # «Química de los carbohidratos» en 10.°): afectan el primer grado de conceptos de esta asignatura.
-    cruzadas, retiradas = [], 0
-    # Conceptos de esta asignatura y sus equivalentes en otras (comparten primer grado): solo esas quitas se reportan.
-    relevantes = {cid for cid, c in cp.vocabulario().items() if c["asignatura"] == asig}
-    relevantes |= {x for e in cp.equivalencias() if {e["a"], e["b"]} & relevantes for x in (e["a"], e["b"])}
-    for otra in sorted(ruta("asignaturas").glob(f"*/propuesta/propuesta_G{g0:02d}-G{g1:02d}.json")):
-        if otra.parent.parent.name == asig:
-            continue
-        de = otra.parent.parent.name
-        for a in json.loads(otra.read_text(encoding="utf-8"))["acciones"]:
-            # Se aplican todas las que resuelven (retirar una etiqueta es local y seguro, y puede afectar a esta
-            # asignatura vía un concepto equivalente); los nombres que no resuelven los reporta la otra propuesta.
-            validos = [n for n in a.get("quitar_conceptos", []) if resolver(n, de)]
-            if validos:
-                ids = {resolver(n, de) for n in validos}
-                cruzadas.append({**a, "accion": "_quitar", "origen": de, "quitar_conceptos": validos,
-                                 "relevante": bool(ids & relevantes)})
-    for a in cruzadas + p["acciones"]:
+    def _sin_trabaja(self, temas: list[str], conceptos: set[str]) -> None:
+        """Retira las aristas TRABAJA de esos temas hacia esos conceptos."""
+        self.aristas = [x for x in self.aristas if not (x.origen in temas and x.destino in conceptos
+                                                        and x.tipo == TipoArista.TRABAJA)]
+
+    def aplicar(self, a: dict) -> None:
         afectados = [f"TEMA:{t}" for t in a.get("temas_afectados", [])]
         if a.get("quitar_conceptos"):
-            # Cualquier acción puede retirar etiquetas que no corresponden al tema reformulado.
-            quitar = {resolver(n, a.get("origen", asig)) for n in a["quitar_conceptos"]} - {None}
-            sin_resolver += [n for n in a["quitar_conceptos"] if resolver(n) is None]
-            antes_q = len(nuevas_a)
-            nuevas_a = [x for x in nuevas_a if not (x.origen in afectados and x.destino in quitar
-                                                     and x.tipo == TipoArista.TRABAJA)]
-            retiradas += antes_q - len(nuevas_a)
-        if a["accion"] == "mover" and a.get("grado_propuesto"):
-            for t in afectados:
-                if t in nuevos_n:
-                    nuevos_n[t].grado = a["grado_propuesto"]
-                    _agregar_conceptos(t, a.get("conceptos", []))
-        elif a["accion"] == "fusionar" and len(afectados) > 1:
-            queda = afectados[0]
-            # El tema que queda hereda los conceptos de los absorbidos (y los que nombra la acción).
-            heredadas = [x.model_copy(update={"origen": queda}) for x in nuevas_a
-                         if x.origen in afectados[1:] and x.tipo == TipoArista.TRABAJA]
-            for t in afectados[1:]:
-                nuevos_n.pop(t, None)
-            nuevas_a = [x for x in nuevas_a if x.origen in nuevos_n and x.destino in nuevos_n] + heredadas
-            _agregar_conceptos(queda, a.get("conceptos", []))
-            if a.get("grado_propuesto") and queda in nuevos_n:  # la fusión también puede cambiar de grado
-                nuevos_n[queda].grado = a["grado_propuesto"]
-        elif a["accion"] == "revisar":
-            # Reformular un tema: pasa a trabajar también los conceptos de la acción.
-            for t in afectados:
-                _agregar_conceptos(t, a.get("conceptos", []))
-        elif a["accion"] == "dividir" and afectados:
-            # Dividir: los conceptos de la acción se van al tema nuevo (en su grado) y salen del original.
-            ids = {resolver(n) for n in a.get("conceptos", [])} - {None}
-            nuevas_a = [x for x in nuevas_a if not (x.origen in afectados and x.destino in ids
-                                                     and x.tipo == TipoArista.TRABAJA)]
-            tid = f"TEMA:PROP-{asig}-{a['n']}"
-            nuevos_n[tid] = N(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=asig,
-                              grado=a.get("grado_propuesto") or nuevos_n[afectados[0]].grado)
-            _agregar_conceptos(tid, a.get("conceptos", []))
-        elif a["accion"] == "nuevo" and a.get("grado_propuesto"):
-            tid = f"TEMA:PROP-{asig}-{a['n']}"
-            nuevos_n[tid] = N(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=asig,
-                              grado=a["grado_propuesto"])
-            for i, nombre in enumerate(a.get("conceptos", [])):
-                cid = resolver(nombre)
-                if cid:
-                    nuevas_a.append(A(origen=tid, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia",
-                                      rol="principal" if i == 0 else "secundario", confianza=Confianza.ALTA,
-                                      justificacion="Tema propuesto (simulación).", version=p["version"]))
-                else:
-                    sin_resolver.append(nombre)
+            self._quitar(a, afectados)
+        accion = {"mover": self._mover, "fusionar": self._fusionar, "revisar": self._revisar,
+                  "dividir": self._dividir, "nuevo": self._nuevo}.get(a["accion"])
+        if accion:
+            accion(a, afectados)
+
+    def _quitar(self, a: dict, afectados: list[str]) -> None:
+        """Cualquier acción puede retirar etiquetas que no corresponden al tema reformulado."""
+        quitar = {self.resolver(n, a.get("origen")) for n in a["quitar_conceptos"]} - {None}
+        self.sin_resolver += [n for n in a["quitar_conceptos"] if self.resolver(n) is None]
+        antes = len(self.aristas)
+        self._sin_trabaja(afectados, quitar)
+        self.retiradas += antes - len(self.aristas)
+
+    def _mover(self, a: dict, afectados: list[str]) -> None:
+        if not a.get("grado_propuesto"):
+            return
+        for t in afectados:
+            if t in self.nodos:
+                self.nodos[t].grado = a["grado_propuesto"]
+                self._agregar_conceptos(t, a.get("conceptos", []))
+
+    def _fusionar(self, a: dict, afectados: list[str]) -> None:
+        """El tema que queda hereda los conceptos de los absorbidos (y los que nombra la acción)."""
+        if len(afectados) <= 1:
+            return
+        queda = afectados[0]
+        heredadas = [x.model_copy(update={"origen": queda}) for x in self.aristas
+                     if x.origen in afectados[1:] and x.tipo == TipoArista.TRABAJA]
+        for t in afectados[1:]:
+            self.nodos.pop(t, None)
+        self.aristas = [x for x in self.aristas if x.origen in self.nodos and x.destino in self.nodos] + heredadas
+        self._agregar_conceptos(queda, a.get("conceptos", []))
+        if a.get("grado_propuesto") and queda in self.nodos:  # la fusión también puede cambiar de grado
+            self.nodos[queda].grado = a["grado_propuesto"]
+
+    def _revisar(self, a: dict, afectados: list[str]) -> None:
+        """Reformular un tema: pasa a trabajar también los conceptos de la acción."""
+        for t in afectados:
+            self._agregar_conceptos(t, a.get("conceptos", []))
+
+    def _dividir(self, a: dict, afectados: list[str]) -> None:
+        """Los conceptos de la acción se van al tema nuevo (en su grado) y salen del original."""
+        if not afectados:
+            return
+        self._sin_trabaja(afectados, {self.resolver(n) for n in a.get("conceptos", [])} - {None})
+        tid = self._tema_nuevo(a, a.get("grado_propuesto") or self.nodos[afectados[0]].grado)
+        self._agregar_conceptos(tid, a.get("conceptos", []))
+
+    def _nuevo(self, a: dict, afectados: list[str]) -> None:
+        if not a.get("grado_propuesto"):
+            return
+        tid = self._tema_nuevo(a, a["grado_propuesto"])
+        for i, nombre in enumerate(a.get("conceptos", [])):
+            cid = self.resolver(nombre)
+            if cid:
+                self.aristas.append(self._trabaja(tid, cid, "principal" if i == 0 else "secundario",
+                                                  "Tema propuesto (simulación)."))
+            else:
+                self.sin_resolver.append(nombre)
+
+    def _tema_nuevo(self, a: dict, grado: int) -> str:
+        tid = f"TEMA:PROP-{self.asig}-{a['n']}"
+        self.nodos[tid] = Nodo(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=self.asig,
+                               grado=grado)
+        return tid
+
+
+def _quitas_de_otras_asignaturas(asig: str, g0: int, g1: int, sim: _Simulacion) -> list[dict]:
+    """Etiquetas que retiran las propuestas de OTRAS asignaturas del mismo ciclo (p. ej., Biología deja de tratar
+    «Química de los carbohidratos» en 10.°): afectan el primer grado de conceptos de esta asignatura.
+
+    Se aplican todas las que resuelven (retirar una etiqueta es local y seguro, y puede afectar a esta asignatura vía
+    un concepto equivalente); solo se reportan las que tocan conceptos de esta asignatura o sus equivalentes. Los
+    nombres que no resuelven los reporta la otra propuesta."""
+    relevantes = {cid for cid, c in cp.vocabulario().items() if c["asignatura"] == asig}
+    relevantes |= {x for e in cp.equivalencias() if {e["a"], e["b"]} & relevantes for x in (e["a"], e["b"])}
+    cruzadas = []
+    for otra in sorted(ruta("asignaturas").glob(f"*/propuesta/propuesta_G{g0:02d}-G{g1:02d}.json")):
+        de = otra.parent.parent.name
+        if de == asig:
+            continue
+        for a in json.loads(otra.read_text(encoding="utf-8"))["acciones"]:
+            validos = [n for n in a.get("quitar_conceptos", []) if sim.resolver(n, de)]
+            if validos:
+                ids = {sim.resolver(n, de) for n in validos}
+                cruzadas.append({**a, "accion": "_quitar", "origen": de, "quitar_conceptos": validos,
+                                 "relevante": bool(ids & relevantes)})
+    return cruzadas
+
+
+def simular(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista]) -> dict:
+    """Aplica mover / nuevo / fusionar / dividir / revisar (y quitar_conceptos) al grafo en memoria y compara
+    métricas antes y después."""
+    p = json.loads((ruta(f"asignaturas/{asig}/propuesta") / f"propuesta_G{g0:02d}-G{g1:02d}.json")
+                   .read_text(encoding="utf-8"))
+    sim = _Simulacion(asig, nodos, aristas, p["version"])
+    cruzadas = _quitas_de_otras_asignaturas(asig, g0, g1, sim)
+    for a in cruzadas + p["acciones"]:
+        sim.aplicar(a)
+    nuevos = list(sim.nodos.values())
     antes = _metricas(asig, g0, g1, nodos, aristas)
-    despues = _metricas(asig, g0, g1, list(nuevos_n.values()), nuevas_a)
-    ev = evidencia_orden(list(nuevos_n.values()), nuevas_a)
-    pendientes = [s for s in analizar(asig, list(nuevos_n.values()), nuevas_a, ev)["secuencia"]
+    despues = _metricas(asig, g0, g1, nuevos, sim.aristas)
+    ev = evidencia_orden(nuevos, sim.aristas)
+    pendientes = [s for s in analizar(asig, nuevos, sim.aristas, ev)["secuencia"]
                   if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"]
     return {"antes": antes, "despues": despues, "secuencia_alta_pendiente": pendientes,
-            "conceptos_no_resueltos": sorted(set(sin_resolver)), "etiquetas_retiradas": retiradas,
+            "conceptos_no_resueltos": sorted(set(sim.sin_resolver)), "etiquetas_retiradas": sim.retiradas,
             "quitas_de_otras_asignaturas": [{"asignatura": a["origen"], "accion": a["n"], "temas": a["temas_afectados"],
                                              "conceptos": a["quitar_conceptos"]} for a in cruzadas if a["relevante"]]}
 
