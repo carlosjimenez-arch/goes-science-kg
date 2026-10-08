@@ -130,8 +130,9 @@ def analizar() -> dict:
             dem = Counter(demanda(i["texto"]) for i in items)
             fam = Counter(f for i in items
                           for f in {FAMILIA_DE.get(p, "naturaleza_y_contexto") for p in i["practicas"]})
-            filas[quien] = {"n": len(items), "demanda": dict(dem),
-                            "familias": dict(fam), "practicas": sorted({p for i in items for p in i["practicas"]}),
+            filas[quien] = {"n": len(items), "demanda": dict(sorted(dem.items())),
+                            "familias": dict(sorted(fam.items())),
+                            "practicas": sorted({p for i in items for p in i["practicas"]}),
                             "con_practica": sum(bool(i["practicas"]) for i in items)}
             for i in items:
                 if i.get("demanda_ia") and (d := demanda(i["texto"])) != "sin_verbo":

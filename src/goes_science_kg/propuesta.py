@@ -18,6 +18,7 @@ from collections import Counter, defaultdict
 
 from goes_science_kg.brechas import analizar
 from goes_science_kg.config import ruta
+from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden
 
@@ -139,7 +140,7 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
         for celda in fila:
             celda.font = normal
     nombre = f"Propuesta_{asig.capitalize()}_G{g0:02d}-G{g1:02d}.xlsx"
-    wb.save(d / nombre)
+    guardar_excel(wb, d / nombre)
     return str((d / nombre).relative_to(ruta(".")))
 
 

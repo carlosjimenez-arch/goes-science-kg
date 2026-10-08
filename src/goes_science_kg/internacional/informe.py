@@ -10,6 +10,7 @@ import unicodedata
 from collections import defaultdict
 
 from goes_science_kg.config import cargar, ruta
+from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.internacional import contraste, profundidad, visor
 from goes_science_kg.internacional.consenso import _cargar_etiquetas, objetivos, paises
 
@@ -303,4 +304,4 @@ def _excel(asig: str, filas: list[dict], base) -> None:
             celda.fill, celda.font = verde, Font(color="FFFFFF", bold=True)
         hoja.column_dimensions["A"].width = 48
         hoja.freeze_panes = "B2"
-    wb.save(base / f"Contraste_{asig}.xlsx")
+    guardar_excel(wb, base / f"Contraste_{asig}.xlsx")

@@ -93,7 +93,7 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
     for grupo in nx.connected_components(eq):
         svs = [ev[c]["sv"] for c in grupo if ev[c]["sv"] is not None]
         paises: dict[str, int] = {}
-        for c in grupo:
+        for c in sorted(grupo):
             for p, g in ev[c]["paises"].items():
                 paises[p] = min(g, paises.get(p, g))
         for c in grupo:
@@ -102,6 +102,7 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
             ev[c]["equivalentes"] = sorted(grupo - {c})
     alto = paises_alto_desempeno()
     for e in ev.values():
+        e["paises"] = dict(sorted(e["paises"].items()))   # orden estable: no depende del orden de los conjuntos
         alto_g = [g for p, g in e["paises"].items() if p in alto]
         e["mediana_alto_desempeno"] = statistics.median(alto_g) if alto_g else None
         e["via_paises"] = "directo" if op_a_con else "pivote"
