@@ -20,6 +20,11 @@ DIR = "data/interim/revisiones"
 
 @cache
 def revisiones_temas() -> dict[str, dict]:
+    """Revisiones por tema, indexadas por id; los archivos se fusionan en orden alfabético (en cada campo gana el
+    último).
+
+    Cada registro lleva `archivo_revision` con el último archivo que lo tocó. Resultado en caché.
+    """
     d = ruta(DIR)
     out: dict[str, dict] = {}
     if not d.exists():

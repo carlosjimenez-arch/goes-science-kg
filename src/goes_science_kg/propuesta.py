@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import math
 from collections import Counter, defaultdict
+from typing import TYPE_CHECKING
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
@@ -27,8 +28,13 @@ from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.modelos import Arista, Confianza, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden
 
+if TYPE_CHECKING:
+    from openpyxl.worksheet.worksheet import Worksheet
+
 
 def candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], aristas: list[Arista]) -> dict:
+    """Candidatos de cambio de `asig` en el ciclo g0–g1 (mover_antes, corregir_secuencia y reforzar frente a
+    `marco`) con su evidencia, más la distribución y la lista de temas del ciclo."""
     ev = evidencia_orden(nodos, aristas)
     por_id = {n.id: n for n in nodos}
     r = analizar(asig, nodos, aristas, ev)
@@ -72,7 +78,9 @@ def candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], arist
             "temas_del_ciclo": temas_ciclo}
 
 
-def escribir_candidatos(asig: str, g0: int, g1: int, marco: str, nodos, aristas) -> str:
+def escribir_candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], aristas: list[Arista]) -> str:
+    """Escribe los candidatos en asignaturas/<asig>/propuesta/candidatos_G<g0>-G<g1>.json. Devuelve la ruta
+    relativa."""
     c = candidatos(asig, g0, g1, marco, nodos, aristas)
     d = ruta(f"asignaturas/{asig}/propuesta")
     d.mkdir(parents=True, exist_ok=True)
@@ -97,7 +105,7 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
     normal = Font(name="Arial", size=10)
     ajuste = Alignment(wrap_text=True, vertical="top")
 
-    def cabecera(ws, titulos, anchos):
+    def cabecera(ws: Worksheet, titulos: list[str], anchos: list[int]):
         ws.append(titulos)
         for i, w in enumerate(anchos, 1):
             celda = ws.cell(row=1, column=i)
@@ -147,7 +155,7 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
 
 
 # -- Simulación: impacto de la propuesta sobre el grafo ---------------------------------------------
-def _metricas(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
+def _metricas(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista]) -> dict:
     ev = evidencia_orden(nodos, aristas)
     r = analizar(asig, nodos, aristas, ev)
     en_ciclo = [f for f in r["oportunidad_todos"] if (f["sv"] is not None and g0 <= f["sv"] <= g1)
@@ -316,6 +324,7 @@ NOMBRES = {"biologia": "Biología", "fisica": "Física", "quimica": "Química",
 
 
 def escribir_resumen() -> str:
+    """Escribe asignaturas/PROPUESTAS.md con el antes → después de cada simulación. Devuelve la ruta relativa."""
     filas = []
     for p in sorted(ruta("asignaturas").glob("*/propuesta/simulacion_G*.json")):
         asig, ciclo = p.parent.parent.name, p.stem.removeprefix("simulacion_")

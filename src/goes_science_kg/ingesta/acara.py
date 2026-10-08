@@ -48,6 +48,8 @@ def _unidades(h: str) -> dict[int, str]:
 
 
 def parsear(asignatura: str) -> list[dict]:
+    """Objetivos en inglés de `asignatura` leídos del HTML de ACARA (unidad, eje, tema, texto y código), ordenados
+    por código. No escribe nada."""
     curso = CURSOS[asignatura]
     objetivos: dict[str, dict] = {}
     for archivo in curso["archivos"]:
@@ -95,6 +97,7 @@ def catalogo() -> list[dict]:
 
 
 def escribir_catalogo() -> int:
+    """Escribe el catálogo bilingüe en data/referencia/catalogo_acara_senior.json. Devuelve cuántos objetivos tiene."""
     cat = catalogo()
     ruta(SALIDA).parent.mkdir(parents=True, exist_ok=True)
     ruta(SALIDA).write_text(json.dumps(cat, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

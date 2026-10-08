@@ -8,6 +8,7 @@ import json
 import re
 import unicodedata
 from collections import defaultdict
+from typing import TYPE_CHECKING
 
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill
@@ -17,6 +18,9 @@ from goes_science_kg.config import cargar, ruta
 from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.internacional import contraste, etiquetar, profundidad, visor
 from goes_science_kg.internacional.consenso import objetivos, paises
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 DIR = "internacional"
 NOMBRE = {"fisica": "Física", "quimica": "Química", "biologia": "Biología",
@@ -145,6 +149,8 @@ def _seccion_practicas(asig: str, prof: dict) -> list[str]:
 
 
 def escribir() -> dict:
+    """Escribe en internacional/ un informe .md y un Excel por asignatura, revision_humana.csv, el visor y
+    contraste.json. Devuelve el resumen por asignatura, los países, los casos de secuencia y las filas a revisar."""
     r = contraste.clasificar()
     prof = profundidad.analizar()
     objs = {o["id"]: o for o in objetivos()}
@@ -238,7 +244,7 @@ def _propuestos(objs: dict) -> dict[str, list[dict]]:
     return dict(sorted(salida.items()))
 
 
-def _revision(objs: dict, base) -> dict:
+def _revision(objs: dict, base: Path) -> dict:
     """CSV de revisión humana: objetivos «parcial» y etiquetas de confianza baja."""
     etq = etiquetar.cargar_etiquetas("pais_")
     filas = []
@@ -261,7 +267,7 @@ def _revision(objs: dict, base) -> dict:
     return {"filas": len(filas)}
 
 
-def _excel(asig: str, filas: list[dict], base) -> None:
+def _excel(asig: str, filas: list[dict], base: Path) -> None:
     """Hoja Datos (valores), Contraste (todo número es fórmula sobre Datos) y Resumen (conteos por clase)."""
 
     ps = paises()

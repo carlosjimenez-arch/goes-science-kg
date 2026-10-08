@@ -12,6 +12,10 @@ import re
 import zipfile
 from datetime import datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from openpyxl.workbook.workbook import Workbook
 
 FECHA_FIJA = datetime(2026, 1, 1)
 _FECHA_ZIP = (2026, 1, 1, 0, 0, 0)
@@ -19,7 +23,7 @@ _FECHA_XML = rb"2026-01-01T00:00:00Z"
 _CORE = re.compile(rb"(<dcterms:(?:created|modified)[^>]*>)[^<]*")
 
 
-def guardar(wb, destino: Path) -> Path:
+def guardar(wb: Workbook, destino: Path) -> Path:
     """Guarda `wb` en `destino` con fechas fijas. Devuelve la ruta."""
     wb.properties.creator = "goes-science-kg"
     wb.properties.created = wb.properties.modified = FECHA_FIJA

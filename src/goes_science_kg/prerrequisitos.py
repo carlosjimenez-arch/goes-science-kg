@@ -133,6 +133,8 @@ def _compartir_entre_equivalentes(ev: dict[str, dict], aristas: list[Arista]) ->
 
 
 def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
+    """Escribe un lote por asignatura (conceptos con su evidencia de orden) en lotes/lote_<asig>.json para el
+    subagente. Devuelve las rutas relativas escritas."""
     ev = evidencia_orden(nodos, aristas)
     conceptos = [n for n in nodos if n.tipo == TipoNodo.CONCEPTO]
     d = ruta(f"{DIR}/lotes")
@@ -153,6 +155,8 @@ def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
 
 
 def unir(nodos: list[Nodo]) -> dict:
+    """Valida las salidas del subagente, rompe ciclos, quita redundancias transitivas y escribe prerrequisitos.json
+    y las dos listas de descartadas. Lanza ValueError si alguna arista es inválida; devuelve los conteos."""
     ids = {n.id for n in nodos if n.tipo == TipoNodo.CONCEPTO}
     candidatas, errores = [], []
     for p in sorted(ruta(f"{DIR}/lotes").glob("salida_*.json")):

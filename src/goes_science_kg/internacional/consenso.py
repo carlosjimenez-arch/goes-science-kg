@@ -33,11 +33,13 @@ ASIG_SV = {"fisica": "fisica", "quimica": "quimica", "biologia": "biologia",
 
 
 def paises() -> list[str]:
+    """Códigos de los países del estudio internacional (config/internacional.yaml), en orden alfabético."""
     return sorted(cargar("internacional")["paises"])
 
 
 @cache
 def objetivos() -> tuple[dict, ...]:
+    """Objetivos extraídos de todos los países (DIR_SALIDA/<país>.json), ordenados por id; con caché."""
     filas = []
     for p in paises():
         f = ruta(DIR_SALIDA) / f"{p}.json"

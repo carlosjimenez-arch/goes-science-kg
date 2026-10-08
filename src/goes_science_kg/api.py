@@ -36,6 +36,7 @@ def _json(rel: str):
 
 @app.get("/api/salud")
 def salud() -> dict:
+    """Estado del servicio y manifiesto del grafo publicado."""
     return {"estado": "ok", "manifest": _json("data/grafo/manifest.json")}
 
 

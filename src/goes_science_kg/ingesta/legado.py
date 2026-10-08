@@ -22,6 +22,7 @@ def _json(rel: str) -> Any:
 
 @cache
 def catalogo_timss2027() -> list[dict]:
+    """Objetivos de TIMSS 2027 (4.° y 8.°)."""
     return _json(cargar("marcos")["marcos"]["T4_27"]["catalogo"])
 
 
@@ -33,10 +34,12 @@ def catalogo_timss_v1() -> list[dict]:
 
 @cache
 def catalogo_pisa2025() -> dict:
+    """Catálogo de PISA 2025 tal cual (los objetivos están en la clave `elementos`)."""
     return _json(cargar("marcos")["marcos"]["PISA25"]["catalogo"])
 
 
 def equivalencias_timss() -> list[dict]:
+    """Filas del CSV de equivalencias entre objetivos de TIMSS 2023 y TIMSS 2027."""
     with open(ruta(cargar("marcos")["marcos"]["T23"]["equivalencias"]), encoding="utf-8") as f:
         return list(csv.DictReader(f))
 

@@ -76,6 +76,8 @@ def clase_de(sv_primer: int | None, sv_9_11: int | None, g_cons: int | None, n_n
 
 
 def clasificar() -> dict:
+    """Clasifica cada concepto del consenso (y lo que la V2 enseña en 9.°–11.° sin referente) con la regla del
+    módulo; las revisiones expertas ganan. Lee consenso.json; devuelve filas, secuencia, temas y núcleo por grado."""
     voc = conceptos.vocabulario()
     cons = json.loads((ruta(DIR_GRAFO) / "consenso.json").read_text(encoding="utf-8"))
     sv, temas = _sv()
@@ -143,10 +145,13 @@ def _secuencia(sv: dict, voc: dict) -> list[dict]:
 
 
 def resumen(r: dict) -> dict:
+    """Conceptos por clase en cada asignatura."""
     return {a: dict(Counter(f["clase"] for f in r["filas"] if f["asignatura"] == a)) for a in ASIGNATURAS}
 
 
 def evidencia_paises(fila: dict, max_paises: int = 9) -> str:
+    """«PAÍS grado» con el primer grado de núcleo de cada país que tiene el concepto («PAÍS esp.» si no lo tiene en el
+    núcleo), hasta `max_paises` países."""
     partes = []
     for p in paises():
         f = fila["paises"].get(p)

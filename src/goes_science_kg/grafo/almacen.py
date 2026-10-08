@@ -25,6 +25,8 @@ def _sha(p: Path) -> str:
 
 
 def guardar(nodos: list[Nodo], aristas: list[Arista], version: str, directorio: str = DIR_GRAFO) -> dict:
+    """Escribe nodos.jsonl y aristas.jsonl (en el orden recibido) y manifest.json en `directorio`. Devuelve el
+    manifiesto."""
     d = ruta(directorio)
     d.mkdir(parents=True, exist_ok=True)
     for nombre, filas in (("nodos.jsonl", nodos), ("aristas.jsonl", aristas)):
@@ -43,6 +45,7 @@ def guardar(nodos: list[Nodo], aristas: list[Arista], version: str, directorio: 
 
 
 def cargar(directorio: str = DIR_GRAFO) -> tuple[list[Nodo], list[Arista]]:
+    """Lee los nodos y las aristas guardados en `directorio`."""
     d = ruta(directorio)
     with open(d / "nodos.jsonl", encoding="utf-8") as f:
         nodos = [Nodo.model_validate_json(linea) for linea in f]
@@ -52,6 +55,7 @@ def cargar(directorio: str = DIR_GRAFO) -> tuple[list[Nodo], list[Arista]]:
 
 
 def a_networkx(nodos: list[Nodo], aristas: list[Arista]) -> nx.MultiDiGraph:
+    """Proyección a un MultiDiGraph de networkx; la clave de cada arista es «tipo:rol»."""
     g = nx.MultiDiGraph()
     for n in nodos:
         g.add_node(n.id, **n.model_dump(mode="json", exclude={"id"}))

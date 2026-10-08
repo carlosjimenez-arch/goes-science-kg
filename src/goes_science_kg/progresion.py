@@ -33,6 +33,8 @@ def _niveles(asig: str, nodos: list[Nodo], aristas: list[Arista]) -> dict[str, i
 
 
 def escribir(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> str:
+    """Escribe asignaturas/<x>/progresion.html de `asig`; `ev` es la salida de `evidencia_orden`. Devuelve la ruta
+    relativa."""
     por_id = {n.id: n for n in nodos}
     nivel = _niveles(asig, nodos, aristas)
     alto = paises_alto_desempeno()
@@ -52,6 +54,7 @@ def escribir(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> s
 
 
 def escribir_todas(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
+    """Escribe el mapa de progresión de cada asignatura. Devuelve las rutas relativas."""
     ev = evidencia_orden(nodos, aristas)
     return [escribir(a, nodos, aristas, ev) for a in cargar("asignaturas")["asignaturas"]]
 

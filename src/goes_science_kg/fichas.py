@@ -19,6 +19,7 @@ def _tabla(encabezado: list[str], filas: list[list]) -> str:
 
 
 def ficha(asig: str, nodos: list[Nodo], aristas: list[Arista], version: str) -> str:
+    """Markdown de la ficha de `asig`: temas por grado, cobertura de los marcos, objetivos sin tema y referentes."""
     a_cfg = cargar("asignaturas")["asignaturas"][asig]
     por_id = {n.id: n for n in nodos}
     temas = [n for n in nodos if n.tipo == TipoNodo.TEMA and n.asignatura == asig]
@@ -82,6 +83,7 @@ def ficha(asig: str, nodos: list[Nodo], aristas: list[Arista], version: str) -> 
 
 
 def escribir_fichas(nodos: list[Nodo], aristas: list[Arista], version: str) -> list[str]:
+    """Escribe la ficha.md de cada asignatura en su carpeta. Devuelve las rutas relativas escritas."""
     escritas = []
     for asig, a in cargar("asignaturas")["asignaturas"].items():
         p = ruta(a["carpeta"]) / "ficha.md"

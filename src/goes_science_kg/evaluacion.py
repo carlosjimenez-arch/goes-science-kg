@@ -20,6 +20,9 @@ CONJUNTO = "data/evaluacion/rag_preguntas.json"
 
 
 def evaluar(rag: GraphRAG, ks: tuple[int, ...] = (5, 10, 25), conjunto: str = CONJUNTO) -> dict:
+    """Mide la recuperación de `rag` sobre `conjunto`: promedios de recall@k, acierto@k y MRR, desglose por tipo
+    de pregunta (recall@10 y MRR) y las cinco peores preguntas.
+    """
     preguntas = json.loads(ruta(conjunto).read_text(encoding="utf-8"))
     filas = []
     for p in preguntas:

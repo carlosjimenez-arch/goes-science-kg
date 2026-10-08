@@ -17,16 +17,21 @@ MAX_PALABRAS_JUSTIFICACION = 15
 
 @dataclass
 class Reporte:
+    """Resultado de `validar`: errores que bloquean, avisos para revisión humana y métricas."""
+
     errores: list[str] = field(default_factory=list)
     avisos: list[str] = field(default_factory=list)
     metricas: dict[str, int] = field(default_factory=dict)
 
     @property
     def ok(self) -> bool:
+        """Verdadero si no hay errores."""
         return not self.errores
 
 
 def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
+    """Revisa los invariantes del grafo (ids, extremos, trazabilidad de inferencias, fuentes, ciclos de
+    prerrequisitos) y reúne avisos y métricas."""
     r = Reporte()
     ids = Counter(n.id for n in nodos)
     r.errores += [f"id duplicado: {i}" for i, k in ids.items() if k > 1]

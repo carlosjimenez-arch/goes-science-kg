@@ -15,17 +15,21 @@ import json
 from collections import Counter, defaultdict
 from functools import cache
 from itertools import combinations
+from typing import TYPE_CHECKING
 
 import networkx as nx
 
 from goes_science_kg.config import ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
+if TYPE_CHECKING:
+    from collections.abc import Iterable
+
 SEMILLA = 42
 UMBRAL_JACCARD = 0.75  # un resumen sigue vigente si el bloque conserva ≥75 % de sus conceptos
 
 
-def _jaccard(a, b) -> float:
+def _jaccard(a: Iterable[str], b: Iterable[str]) -> float:
     a, b = set(a), set(b)
     return len(a & b) / max(1, len(a | b))
 RESUMENES = "data/interim/comunidades/resumenes.json"
@@ -38,7 +42,7 @@ def resumenes() -> dict[str, dict]:
     return {r["id"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
-def resumen_para(g: int, miembros) -> dict | None:
+def resumen_para(g: int, miembros: Iterable[str]) -> dict | None:
     """El resumen del grado cuyo bloque original más se parece a este (Jaccard ≥ umbral).
 
     Louvain puede renumerar los bloques al cambiar el grafo; por eso se empareja por conceptos y no por id.
@@ -88,6 +92,8 @@ def consolidar_resumenes() -> dict:
 
 
 def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[dict]:
+    """Bloques temáticos del grado `g`: comunidades Louvain del grafo concepto–concepto, de mayor a menor, con su
+    resumen determinista y, si sigue vigente, el título y el resumen del especialista."""
     por_id = {n.id: n for n in nodos}
     temas = {n.id for n in nodos if n.tipo == TipoNodo.TEMA and n.grado == g and n.asignatura}
     conceptos_de_tema, cubre_de_tema = defaultdict(list), defaultdict(set)

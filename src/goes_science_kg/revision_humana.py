@@ -36,6 +36,8 @@ def _escribir(p: Path, encabezado: list[str], filas: list[list]) -> None:
 
 
 def exportar(nodos: list[Nodo], aristas: list[Arista], fecha: str | None = None) -> list[str]:
+    """Escribe por asignatura, en asignaturas/<x>/revision/, los dos CSV de revisión con prefijo `fecha` (hoy por
+    defecto) sin sobrescribir los existentes. Devuelve las rutas relativas."""
     fecha = fecha or date.today().isoformat()
     por_id = {n.id: n for n in nodos}
     ev = evidencia_orden(nodos, aristas)

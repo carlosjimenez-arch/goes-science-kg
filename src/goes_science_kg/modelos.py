@@ -17,6 +17,8 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class TipoNodo(StrEnum):
+    """Tipos de nodo del grafo; el comentario de cada valor muestra el formato de su id."""
+
     ASIGNATURA = "Asignatura"        # ASIG:biologia
     GRADO = "Grado"                  # GRADO:07 (grados de El Salvador)
     MARCO = "Marco"                  # MARCO:T8_27
@@ -32,6 +34,8 @@ class TipoNodo(StrEnum):
 
 
 class TipoArista(StrEnum):
+    """Tipos de arista del grafo; el comentario de cada valor indica los tipos de nodo que une."""
+
     EN_GRADO = "EN_GRADO"                # Tema → Grado
     DE_ASIGNATURA = "DE_ASIGNATURA"      # Tema | ObjetivoMarco | ObjetivoPais → Asignatura
     EN_MARCO = "EN_MARCO"                # ObjetivoMarco → Marco
@@ -55,6 +59,8 @@ ARISTAS_INFERIDAS = {
 
 
 class Confianza(StrEnum):
+    """Nivel de confianza de una arista inferida."""
+
     ALTA = "alta"
     MEDIA = "media"
     BAJA = "baja"
@@ -73,6 +79,8 @@ class Fuente(BaseModel):
 
 
 class Nodo(BaseModel):
+    """Nodo del grafo: id estable, tipo, etiqueta y, según el tipo, asignatura, grado, fuente y propiedades."""
+
     model_config = ConfigDict(extra="forbid")
 
     id: str
@@ -85,6 +93,9 @@ class Nodo(BaseModel):
 
 
 class Arista(BaseModel):
+    """Arista dirigida entre dos ids; si es de un tipo inferido y su método es «ia», exige confianza, justificación
+    y versión."""
+
     model_config = ConfigDict(extra="forbid")
 
     origen: str
@@ -107,4 +118,5 @@ class Arista(BaseModel):
 
     @property
     def clave(self) -> tuple[str, str, str, str | None]:
+        """Identidad de la arista: (origen, destino, tipo, rol)."""
         return (self.origen, self.destino, self.tipo, self.rol)

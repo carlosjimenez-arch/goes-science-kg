@@ -7,6 +7,8 @@ curricular se agregan en fases posteriores (specs/08_plan_de_implementacion.md).
 
 from __future__ import annotations
 
+from typing import Any
+
 from goes_science_kg import conceptos as cp
 from goes_science_kg.config import cargar
 from goes_science_kg.disciplinas import asignacion_manual, asignatura_de_objetivo, asignatura_de_tema
@@ -21,17 +23,22 @@ CODIGO_PAIS = {p["nombre"]: c for c, p in cargar("referentes")["paises"].items()
 
 
 class Constructor:
+    """Acumula nodos y aristas por capas; si un id (o la clave de una arista) se repite, se queda el primero."""
+
     def __init__(self) -> None:
+        """Empieza con el grafo vacío."""
         self.nodos: dict[str, Nodo] = {}
         self.aristas: dict[tuple, Arista] = {}
 
     # -- utilidades -------------------------------------------------------------------------
-    def nodo(self, **kw) -> str:
+    def nodo(self, **kw: Any) -> str:
+        """Agrega el nodo si su id aún no existe y devuelve el id."""
         n = Nodo(**kw)
         self.nodos.setdefault(n.id, n)
         return n.id
 
-    def arista(self, **kw) -> None:
+    def arista(self, **kw: Any) -> None:
+        """Agrega la arista si aún no existe otra con la misma clave."""
         a = Arista(**kw)
         self.aristas.setdefault(a.clave, a)
 
@@ -41,6 +48,7 @@ class Constructor:
 
     # -- capas ------------------------------------------------------------------------------
     def base(self) -> None:
+        """Nodos de asignaturas, grados 2–11, documentos fuente, mallas y marcos."""
         for asig, a in cargar("asignaturas")["asignaturas"].items():
             self.nodo(id=f"ASIG:{asig}", tipo=TipoNodo.ASIGNATURA, etiqueta=a["nombre"], asignatura=asig,
                       props={"grados": a["grados"]})
@@ -73,6 +81,8 @@ class Constructor:
             self.arista(origen=oid, destino=f"ASIG:{asig}", tipo=TipoArista.DE_ASIGNATURA, metodo="regla")
 
     def marcos(self) -> None:
+        """Objetivos de TIMSS 2027, TIMSS 2023, TIMSS Advanced 2015, PISA 2025 y ACARA Senior, más las
+        equivalencias TIMSS 2023 → 2027."""
         for o in legado.catalogo_timss2027():
             self._objetivo(o["codigo"], o["marco"], o["objetivo"], "timss27", o.get("pagina_fuente"), {
                 "dominio": o["dominio"], "area_codigo": o["area_codigo"], "area": o["area"],
@@ -102,6 +112,8 @@ class Constructor:
                             props={"tipo": r["tipo"], "nota": r["nota"]})
 
     def temas(self, temas: list[TemaMalla]) -> None:
+        """Temas de la malla con su asignatura (la revisión gana), grado y fuente, y sus aristas CUBRE hacia los
+        objetivos de TIMSS, ACARA y PISA."""
         ct, cp, ca = legado.clasificacion_timss(), legado.clasificacion_pisa(), legado.clasificacion_auss()
         for t in temas:
             llave = (t.archivo, t.hoja, t.fila)
@@ -156,6 +168,8 @@ class Constructor:
                     props={"revisado_por": c.get("revisado_por") or None, **extra})
 
     def paises(self) -> None:
+        """Países y sus objetivos, con fuente, asignatura (por el objetivo de marco o, si no hay, por el primer
+        concepto etiquetado) y aristas ALINEA_CON hacia los objetivos de marco."""
 
         docs = legado.documento_por_archivo()
         etiquetas = cp.etiquetado_paises()
@@ -280,6 +294,7 @@ class Constructor:
 
 
 def construir() -> tuple[list[Nodo], list[Arista]]:
+    """Arma el grafo completo con todas las capas; devuelve nodos y aristas en orden estable."""
     c = Constructor()
     c.base()
     c.marcos()

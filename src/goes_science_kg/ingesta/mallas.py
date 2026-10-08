@@ -14,16 +14,22 @@ from __future__ import annotations
 import re
 from dataclasses import asdict, dataclass, field
 from functools import cache
+from typing import TYPE_CHECKING
 
 import openpyxl
 
 from goes_science_kg.config import cargar, ruta
+
+if TYPE_CHECKING:
+    from openpyxl.worksheet._read_only import ReadOnlyWorksheet
 
 CODIGO_ASIG = {"ciencias": "CIE", "fisica": "FIS", "quimica": "QUI", "biologia": "BIO"}
 
 
 @dataclass
 class TemaMalla:
+    """Un tema: una fila con «Procedimental» de una malla, con su ubicación (archivo, hoja, fila) y sus columnas."""
+
     id: str
     archivo: str          # nombre canónico (sin «(1)»): es la llave de las clasificaciones previas
     ruta: str             # archivo realmente leído
@@ -42,10 +48,11 @@ class TemaMalla:
     micro_pisa: dict[str, list[str]] = field(default_factory=dict)
 
     def dict(self) -> dict:
+        """Los campos del tema como diccionario."""
         return asdict(self)
 
 
-def _limpio(v) -> str:
+def _limpio(v: object) -> str:
     return re.sub(r"\s+", " ", str(v or "")).strip()
 
 
@@ -54,7 +61,7 @@ def _num(texto: str, patron: str) -> str | None:
     return m.group(1) if m else None
 
 
-def _columnas(ws) -> list[str]:
+def _columnas(ws: ReadOnlyWorksheet) -> list[str]:
     h1 = [c.value or "" for c in ws[1]]
     h2 = [c.value or "" for c in ws[2]]
     cols = [(str(a) or str(b)).split("\n")[0].strip() for a, b in zip(h1, h2, strict=False)]

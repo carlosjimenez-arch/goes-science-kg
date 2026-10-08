@@ -84,6 +84,8 @@ ESQUEMA_VALIDAR = {
 
 @dataclass
 class Ventana:
+    """Tramo de un documento que va en una sola llamada al modelo: páginas de un PDF (adjuntas) o una sección HTML."""
+
     doc: dict
     paginas: list[int]            # números de página del documento (1 = primera página del archivo)
     adjuntos: list[tuple[bytes, str]]
@@ -134,6 +136,7 @@ def _ventanas_html(doc: dict) -> Iterator[Ventana]:
 
 
 def ventanas(doc: dict) -> Iterator[Ventana]:
+    """Tramos de `doc`: secciones de texto si es HTML; si no, grupos de VENTANA páginas dentro de sus rangos del PDF."""
     return _ventanas_html(doc) if doc["archivo"].endswith((".html", ".htm")) else _ventanas_pdf(doc)
 
 

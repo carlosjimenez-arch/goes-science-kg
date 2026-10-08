@@ -10,14 +10,20 @@ from __future__ import annotations
 
 import html
 import json
+from typing import TYPE_CHECKING
 
 from goes_science_kg.config import relativa
 from goes_science_kg.internacional.consenso import objetivos, paises
 
+if TYPE_CHECKING:
+    from pathlib import Path
+
 POR_PAIS = 2   # objetivos citados por país en el detalle
 
 
-def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str], destino) -> str:
+def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str], destino: Path) -> str:
+    """Escribe `destino`/visor.html con las filas del contraste `r`, una pestaña por asignatura de `nombres`.
+    Devuelve la ruta relativa."""
     objs = {o["id"]: o for o in objetivos()}
     ps = paises()
     filas = []

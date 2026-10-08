@@ -41,6 +41,10 @@ def _indices(aristas: list[Arista]):
 
 
 def subgrafo(g: int, nodos: list[Nodo], aristas: list[Arista], ev: dict[str, dict]) -> tuple[list, list, dict]:
+    """Subgrafo del grado `g` (núcleo, anclajes y referentes) y su diagnóstico didáctico.
+
+    Devuelve (nodos, aristas, diagnóstico); `ev` es la salida de `evidencia_orden`.
+    """
     por_id = {n.id: n for n in nodos}
     sal, ent = _indices(aristas)
     temas = [n for n in nodos if n.tipo == TipoNodo.TEMA and n.grado == g and n.asignatura]
@@ -205,6 +209,8 @@ def _hallazgos(diags: list[dict], por_id: dict[str, Nodo]) -> None:
 
 
 def construir_grados(nodos: list[Nodo], aristas: list[Arista], version: str) -> list[dict]:
+    """Construye el subgrafo, el diagnóstico, las comunidades, la ficha y el visor de cada grado, más el índice y
+    HALLAZGOS.md en grados/. Escribe en data/grafo/grados/ y grados/; devuelve un resumen por grado."""
     ev = evidencia_orden(nodos, aristas)
     por_id = {n.id: n for n in nodos}
     resumen, diags = [], []

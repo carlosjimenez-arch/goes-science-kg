@@ -33,6 +33,8 @@ def _profundidad(n: int) -> str:
 
 
 def analizar(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> dict:
+    """Brechas de `asig`: cobertura de los marcos por ciclo, oportunidad por concepto, errores de secuencia y
+    conceptos que los países trabajan y El Salvador nunca. `ev` es la salida de `evidencia_orden`."""
     por_id = {n.id: n for n in nodos}
     temas = {n.id: n for n in nodos if n.tipo == TipoNodo.TEMA}
     # 1. Cobertura por ciclo
@@ -138,6 +140,8 @@ def _md(r: dict) -> str:
 
 
 def escribir_brechas(nodos: list[Nodo], aristas: list[Arista]) -> list[dict]:
+    """Analiza cada asignatura y escribe brechas.json, brechas.md, oportunidad_conceptos.csv y el libro de Excel
+    en asignaturas/<x>/brechas/. Devuelve, por asignatura, cuántos hallazgos hay de cada tipo."""
     ev = evidencia_orden(nodos, aristas)
     resumen = []
     for asig, a in cargar("asignaturas")["asignaturas"].items():

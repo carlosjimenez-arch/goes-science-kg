@@ -26,7 +26,7 @@ from pathlib import Path
 
 from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.ingesta import legado
-from goes_science_kg.modelos import TipoNodo
+from goes_science_kg.modelos import Nodo, TipoNodo
 
 DIR = "data/interim/conceptos"
 VERSION_VOCABULARIO = "conceptos-v1"
@@ -35,11 +35,12 @@ CONFIANZAS = {"alta", "media", "baja"}
 
 
 def slug(texto: str) -> str:
+    """Texto en ASCII y minúsculas, con guiones en lugar de lo que no sea letra o dígito (máx. 60 caracteres)."""
     t = unicodedata.normalize("NFKD", texto.lower()).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:60]
 
 
-def _escribir(rel: str, datos) -> Path:
+def _escribir(rel: str, datos: object) -> Path:
     p = ruta(rel)
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -51,7 +52,7 @@ def _leer(rel: str):
 
 
 # -- 1. vocabulario -----------------------------------------------------------------------------
-def preparar_vocabulario(nodos) -> list[str]:
+def preparar_vocabulario(nodos: list[Nodo]) -> list[str]:
     """Un insumo por asignatura con todos sus objetivos de marco (texto + subítems) y las unidades SV."""
 
     escritos = []
@@ -94,6 +95,7 @@ VERSION_TRIAJE = "triaje-v1"
 
 @cache
 def triaje() -> list[dict]:
+    """Decisiones del triaje de conceptos propuestos, sin las de confianza baja. Vacío si no existe; con caché."""
     p = ruta(f"{DIR}/triaje_propuestos.json")
     return [t for t in json.loads(p.read_text(encoding="utf-8")) if t.get("confianza") != "baja"] if p.exists() else []
 
@@ -106,6 +108,8 @@ def _id_triaje(t: dict) -> str | None:
 
 @cache
 def conceptos_del_triaje() -> tuple[dict, ...]:
+    """Conceptos que el triaje decidió crear («nuevo»), uno por id con sus sinónimos y prerrequisitos sugeridos
+    acumulados; ordenados por id y con caché."""
     nuevos: dict[str, dict] = {}
     for t in triaje():
         if t["decision"] != "nuevo":
@@ -133,6 +137,7 @@ def equivalencias() -> list[dict]:
 
 @cache
 def practicas() -> dict[str, dict]:
+    """Prácticas científicas (id → práctica). Vacío si aún no existe; con caché."""
     p = ruta(f"{DIR}/practicas.json")
     return {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
@@ -168,7 +173,7 @@ def consolidar_vocabulario() -> dict:
 
 
 # -- 2. etiquetado ------------------------------------------------------------------------------
-def preparar_etiquetado(nodos) -> list[str]:
+def preparar_etiquetado(nodos: list[Nodo]) -> list[str]:
     """Un lote por asignatura y grado con los temas y el vocabulario de ESA asignatura + prácticas."""
 
     voc, prac = vocabulario(), practicas()
@@ -191,6 +196,8 @@ def preparar_etiquetado(nodos) -> list[str]:
 
 
 def unir_etiquetado() -> dict:
+    """Valida las salidas del subagente contra sus lotes y escribe etiquetado_temas.json y conceptos_propuestos.json
+    (nombres nuevos por frecuencia). Lanza ValueError si hay errores; devuelve los conteos."""
     voc, prac = vocabulario(), practicas()
     filas, errores, nuevos = [], [], Counter()
     for p_lote in sorted(ruta(f"{DIR}/lotes").glob("lote_*.json")):
@@ -244,7 +251,7 @@ def etiquetado() -> dict[str, dict]:
 
 # -- 2-bis. etiquetado directo de objetivos de países --------------------------------------------
 # Más preciso que heredar conceptos vía el objetivo de marco (spec 09, «Limitaciones»).
-def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool = True) -> list[str]:
+def preparar_etiquetado_paises(nodos: list[Nodo], por_lote: int = 70, solo_pendientes: bool = True) -> list[str]:
     """Lotes por país. Con solo_pendientes, únicamente los objetivos aún sin etiquetar (p. ej. un país nuevo)."""
 
     voc, prac = vocabulario(), practicas()
@@ -283,6 +290,8 @@ def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool 
 
 
 def unir_etiquetado_paises() -> dict:
+    """Valida las salidas de los lotes de países y escribe etiquetado_paises.json (un id repetido: gana el último).
+    Lanza ValueError si hay errores; devuelve los conteos."""
     voc, prac = vocabulario(), practicas()
     filas, errores = [], []
     for p_lote in sorted(ruta(f"{DIR}/lotes_paises").glob("lote_*.json")):

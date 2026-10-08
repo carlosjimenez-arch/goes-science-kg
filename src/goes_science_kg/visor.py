@@ -116,6 +116,7 @@ red.on('click', p => {
 
 
 def escribir_visor(g: int, nodos: list[Nodo], aristas: list[Arista], diagnostico: dict) -> str:
+    """Escribe grados/G<gg>/grafo.html, el visor interactivo del subgrafo del grado. Devuelve la ruta relativa."""
     datos = json.dumps(_datos(g, nodos, aristas, diagnostico), ensure_ascii=False).replace("</", "<\\/")
     p = ruta(f"grados/G{g:02d}") / "grafo.html"
     p.parent.mkdir(parents=True, exist_ok=True)

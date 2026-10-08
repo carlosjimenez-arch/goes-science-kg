@@ -72,6 +72,7 @@ def _sin_tildes(texto: str) -> str:
 
 
 def normalizar(texto: str) -> list[str]:
+    """Palabras de `texto` en minúsculas y ASCII (sin tildes), de más de dos caracteres y sin palabras vacías."""
     t = unicodedata.normalize("NFKD", (texto or "").lower()).encode("ascii", "ignore").decode()
     return [w for w in re.findall(r"[a-z0-9]+", t) if len(w) > 2 and w not in VACIAS]
 
@@ -85,7 +86,10 @@ def _texto(n: Nodo) -> str:
 
 
 class BM25:
+    """Índice BM25 en memoria sobre documentos ya tokenizados (id → palabras)."""
+
     def __init__(self, docs: dict[str, list[str]], k1: float = 1.4, b: float = 0.75):
+        """Precalcula el largo medio, el IDF de cada término y las frecuencias por documento."""
         self.docs, self.k1, self.b = docs, k1, b
         self.largo_medio = sum(map(len, docs.values())) / max(1, len(docs))
         df = Counter(t for toks in docs.values() for t in set(toks))
@@ -94,6 +98,7 @@ class BM25:
         self.tf = {d: Counter(toks) for d, toks in docs.items()}
 
     def puntaje(self, consulta: list[str], doc: str) -> float:
+        """Puntaje BM25 del documento `doc` para la consulta ya tokenizada."""
         tf, largo = self.tf[doc], len(self.docs[doc])
         s = 0.0
         for t in consulta:
@@ -105,6 +110,8 @@ class BM25:
 
 @dataclass
 class Contexto:
+    """Resultado de una recuperación: consulta, filtros, nodos con su puntaje y relaciones entre ellos."""
+
     consulta: str
     grado: int | None
     asignatura: str | None
@@ -112,6 +119,7 @@ class Contexto:
     relaciones: list[Arista] = field(default_factory=list)
 
     def como_texto(self) -> str:
+        """El contexto en Markdown para el modelo: evidencia citable (id, tipo, grado, fuente) y relaciones."""
         md = [f"Consulta: {self.consulta}",
               f"Filtro: grado={self.grado or 'todos'} asignatura={self.asignatura or 'todas'}",
              "", "## Evidencia"]
@@ -132,7 +140,10 @@ class Contexto:
 
 
 class GraphRAG:
+    """Recuperación local sobre el grafo: BM25 sobre los nodos con texto y expansión por aristas curriculares."""
+
     def __init__(self, nodos: list[Nodo], aristas: list[Arista]):
+        """Indexa los vecinos por las aristas con peso (en ambos sentidos) y arma el BM25 de los nodos con texto."""
         self.por_id = {n.id: n for n in nodos}
         self.vecinos: dict[str, list[tuple[str, Arista]]] = defaultdict(list)
         for a in aristas:
