@@ -28,12 +28,26 @@ MODELO_EXTRAER = os.environ.get("GSKG_MODELO_EXTRAER", "gemini-3.1-pro-preview")
 MODELO_VALIDAR = os.environ.get("GSKG_MODELO_VALIDAR", "gemini-2.5-pro")
 MODELO_ETIQUETAR = os.environ.get("GSKG_MODELO_ETIQUETAR", "gemini-2.5-pro")
 
-_lock = threading.Lock()
-_llamadas = 0
+class PresupuestoAgotadoError(RuntimeError):
+    """Se alcanzó el tope de llamadas del proceso (VERTEX_MAX_CALLS)."""
 
 
-class PresupuestoAgotado(RuntimeError):
-    pass
+class _Contador:
+    """Llamadas pagadas en este proceso (compartido entre hilos)."""
+
+    def __init__(self) -> None:
+        self._lock = threading.Lock()
+        self.total = 0
+
+    def reservar(self) -> None:
+        tope = int(os.environ.get("VERTEX_MAX_CALLS", "0"))
+        with self._lock:
+            if tope and self.total >= tope:
+                raise PresupuestoAgotadoError(f"Se agotó el presupuesto de {tope} llamadas")
+            self.total += 1
+
+
+_contador = _Contador()
 
 
 @cache
@@ -54,17 +68,9 @@ def _clave(modelo: str, sistema: str, prompt: str, esquema: dict | None, adjunto
     return hashlib.sha256(bruto.encode()).hexdigest()
 
 
-def _reservar() -> None:
-    global _llamadas
-    tope = int(os.environ.get("VERTEX_MAX_CALLS", "0"))
-    with _lock:
-        if tope and _llamadas >= tope:
-            raise PresupuestoAgotado(f"Se agotó el presupuesto de {tope} llamadas")
-        _llamadas += 1
-
-
 def llamadas() -> int:
-    return _llamadas
+    """Llamadas pagadas (no en caché) en este proceso."""
+    return _contador.total
 
 
 def generar_json(prompt: str, *, modelo: str, sistema: str = "", esquema: dict | None = None,
@@ -90,7 +96,7 @@ def generar_json(prompt: str, *, modelo: str, sistema: str = "", esquema: dict |
     )
     ultimo: Exception | None = None
     for intento in range(reintentos):
-        _reservar()
+        _contador.reservar()
         try:
             partes = [types.Part.from_bytes(data=d, mime_type=m) for d, m in adjuntos] + [prompt]
             r = _cliente().models.generate_content(model=modelo, contents=partes, config=conf)
@@ -100,7 +106,7 @@ def generar_json(prompt: str, *, modelo: str, sistema: str = "", esquema: dict |
             archivo.write_text(json.dumps({"modelo": modelo, "respuesta": respuesta}, ensure_ascii=False),
                                encoding="utf-8")
             return respuesta
-        except PresupuestoAgotado:
+        except PresupuestoAgotadoError:
             raise
         except Exception as e:  # cuota (429), 5xx o JSON truncado: se reintenta
             ultimo = e

@@ -73,9 +73,8 @@ def asignatura_de_tema(asignatura_malla: str, timss: dict | None, pisa: dict | N
     if asignatura_malla != "ciencias":
         return asignatura_malla, "malla"
     obj1 = (timss or {}).get("obj1", "")
-    if obj1 and obj1 not in ("FUERA", "PENDIENTE"):
-        if a := asignatura_de_objetivo(obj1):
-            return a, "timss"
+    if obj1 and obj1 not in ("FUERA", "PENDIENTE") and (a := asignatura_de_objetivo(obj1)):
+        return a, "timss"
     cont1 = (pisa or {}).get("cont1", "")
     if cont1 and (a := asignatura_de_objetivo(cont1)):
         return a, "pisa"

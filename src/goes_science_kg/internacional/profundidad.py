@@ -100,11 +100,11 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
     for t in extraer("mallas_v2"):
         if t.grado < 9 or t.id not in etq_sv:
             continue
-        t = t.dict()
-        asig = _asignatura_tema(t, etq_sv[t["id"]], voc)
+        ficha = t.dict()
+        asig = _asignatura_tema(ficha, etq_sv[t.id], voc)
         if asig:
-            salida[asig]["SV"].append({"id": t["id"], "texto": t["indicador"] or t["procedimental"],
-                                       "practicas": etq_sv[t["id"]]["practicas"]})
+            salida[asig]["SV"].append({"id": t.id, "texto": ficha["indicador"] or ficha["procedimental"],
+                                       "practicas": etq_sv[t.id]["practicas"]})
     etq = etiquetar.cargar_etiquetas("pais_")
     for o in objetivos():
         if o["nivel"] != "nucleo" or o["grado_sv_max"] < 9 or o["id"] not in etq or not o["asignatura"]:

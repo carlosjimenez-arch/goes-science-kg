@@ -150,8 +150,8 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
 def _metricas(asig: str, g0: int, g1: int, nodos, aristas) -> dict:
     ev = evidencia_orden(nodos, aristas)
     r = analizar(asig, nodos, aristas, ev)
-    en_ciclo = [f for f in r["oportunidad_todos"] if f["sv"] is not None and g0 <= f["sv"] <= g1
-                or f["mediana_paises"] is not None and g0 <= f["mediana_paises"] <= g1]
+    en_ciclo = [f for f in r["oportunidad_todos"] if (f["sv"] is not None and g0 <= f["sv"] <= g1)
+                or (f["mediana_paises"] is not None and g0 <= f["mediana_paises"] <= g1)]
     return {"secuencia_en_ciclo": sum(1 for s in r["secuencia"] if g0 <= s["grado_concepto"] <= g1),
             "secuencia_alta_en_ciclo": sum(1 for s in r["secuencia"]
                                            if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"),
@@ -247,7 +247,7 @@ class _Simulacion:
         tid = self._tema_nuevo(a, a.get("grado_propuesto") or self.nodos[afectados[0]].grado)
         self._agregar_conceptos(tid, a.get("conceptos", []))
 
-    def _nuevo(self, a: dict, afectados: list[str]) -> None:
+    def _nuevo(self, a: dict, _afectados: list[str]) -> None:
         if not a.get("grado_propuesto"):
             return
         tid = self._tema_nuevo(a, a["grado_propuesto"])

@@ -99,9 +99,9 @@ def _ventanas_pdf(doc: dict) -> Iterator[Ventana]:
     if isinstance(rangos[0], int):   # un solo rango [p0, p1] o varios [[p0, p1], …]
         rangos = [rangos]
     for p0, p1 in rangos:
-        p1 = min(p1, len(lector.pages))
-        for ini in range(p0, p1 + 1, VENTANA):
-            pags = list(range(ini, min(ini + VENTANA - 1, p1) + 1))
+        fin = min(p1, len(lector.pages))
+        for ini in range(p0, fin + 1, VENTANA):
+            pags = list(range(ini, min(ini + VENTANA - 1, fin) + 1))
             escritor = PdfWriter()
             for p in pags:
                 escritor.add_page(lector.pages[p - 1])

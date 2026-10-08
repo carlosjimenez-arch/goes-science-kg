@@ -156,9 +156,8 @@ def consolidar_vocabulario() -> dict:
             todos.append({**c, "asignatura": asig, "version": VERSION_VOCABULARIO})
     if dup := [i for i, k in Counter(c["id"] for c in todos).items() if k > 1]:
         errores.append(f"ids duplicados: {dup[:10]}")
-    for p in _leer(f"{DIR}/practicas.json"):
-        if not p["id"].startswith("PRAC:"):
-            errores.append(f"{p['id']}: práctica sin prefijo PRAC:")
+    errores.extend(f"{p['id']}: práctica sin prefijo PRAC:" for p in _leer(f"{DIR}/practicas.json")
+                   if not p["id"].startswith("PRAC:"))
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     _escribir(f"{DIR}/vocabulario.json", sorted(todos, key=lambda c: c["id"]))

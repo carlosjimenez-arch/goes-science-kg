@@ -172,7 +172,7 @@ def _ficha(d: dict, por_id: dict[str, Nodo]) -> str:
     return "\n".join(md)
 
 
-def _hallazgos(diags: list[dict], por_id: dict[str, Nodo], ev: dict) -> None:
+def _hallazgos(diags: list[dict], por_id: dict[str, Nodo]) -> None:
     """grados/HALLAZGOS.md: una página con lo accionable de cada grado (para el equipo curricular)."""
 
     alto = paises_alto_desempeno()
@@ -227,7 +227,7 @@ def construir_grados(nodos: list[Nodo], aristas: list[Arista], version: str) -> 
                         "faltantes_por_edad": len(d["faltantes_por_edad"]),
                         "comunidades": len(d["comunidades"])})
     _indice(resumen)
-    _hallazgos(diags, por_id, ev)
+    _hallazgos(diags, por_id)
     return resumen
 
 

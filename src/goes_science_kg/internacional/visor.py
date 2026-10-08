@@ -28,9 +28,8 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
             if not d:
                 continue
             celdas[p] = [d["primer_grado_nucleo"], d["en_especializacion"], d["nucleo_9_11"]]
-            for i in d["objetivos"][:POR_PAIS]:
-                if o := objs.get(i):
-                    evidencia.append([p, o["curso"], o["nivel"], o["documento"], o.get("pagina") or "", o["texto"]])
+            evidencia.extend([p, o["curso"], o["nivel"], o["documento"], o.get("pagina") or "", o["texto"]]
+                             for i in d["objetivos"][:POR_PAIS] if (o := objs.get(i)))
         temas = []
         for t in f["sv_temas"][:6]:
             x = r["temas"][t]

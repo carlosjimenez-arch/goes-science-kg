@@ -201,7 +201,7 @@ def escribir() -> dict:
         (base / f"{asig}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
         _excel(asig, filas, base)
     revision = _revision(objs, base)
-    visor.escribir(r, CLASES + [("no_aplica", "Sin exigencia", "Ni la V2 ni el núcleo internacional lo exigen.")],
+    visor.escribir(r, [*CLASES, ("no_aplica", "Sin exigencia", "Ni la V2 ni el núcleo internacional lo exigen.")],
                    NOMBRE, base)
     (base / "contraste.json").write_text(json.dumps(
         {"resumen": res, "filas": r["filas"], "secuencia": r["secuencia"], "profundidad": prof,

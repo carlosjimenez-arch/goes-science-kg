@@ -102,8 +102,8 @@ def _antecedente() -> list[dict]:
             g = (o["grado_min"] + o["grado_max"]) / 2
             if g > 8.5 or o["id"] not in etq:
                 continue
-            for c in etq[o["id"]]["conceptos"]:
-                filas.append({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"]})
+            filas.extend({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"]}
+                         for c in etq[o["id"]]["conceptos"])
     return filas
 
 
@@ -145,10 +145,9 @@ def construir() -> dict:
         nodos.append({"id": c, "tipo": "Concepto" if c in voc else "Practica", "nombre": x["nombre"],
                       "asignatura": x.get("asignatura"), "definicion": x.get("definicion")})
 
-    for a in cargar_prerrequisitos():
-        if a["origen"] in usados and a["destino"] in usados:
-            aristas.append({"origen": a["origen"], "destino": a["destino"], "tipo": "PRERREQUISITO",
-                            "confianza": a.get("confianza"), "tipo_evidencia": a.get("tipo_evidencia")})
+    aristas.extend({"origen": a["origen"], "destino": a["destino"], "tipo": "PRERREQUISITO",
+                    "confianza": a.get("confianza"), "tipo_evidencia": a.get("tipo_evidencia")}
+                   for a in cargar_prerrequisitos() if a["origen"] in usados and a["destino"] in usados)
 
     consenso = _consenso(objs, etq, voc)
     base = ruta(DIR_GRAFO)

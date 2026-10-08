@@ -40,7 +40,7 @@ def escribir(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> s
     for cid in sorted(nivel, key=lambda c: (nivel[c], ev[c]["sv"] or 99, por_id[c].etiqueta)):
         e = ev[cid]
         filas.append({"c": por_id[cid].etiqueta, "d": por_id[cid].props.get("definicion") or "", "n": nivel[cid],
-                      "sv": e["sv"], "p": {k: v for k, v in e["paises"].items()}, "m": e["paises_mediana"]})
+                      "sv": e["sv"], "p": dict(e["paises"]), "m": e["paises_mediana"]})
     nombre = cargar("asignaturas")["asignaturas"][asig]["nombre"]
     datos = json.dumps({"filas": filas, "grados": GRADOS, "alto": sorted(alto)}, ensure_ascii=False)
     pagina = PLANTILLA.replace("__TITULO__", html.escape(f"Progresión de conceptos · {nombre}")) \
