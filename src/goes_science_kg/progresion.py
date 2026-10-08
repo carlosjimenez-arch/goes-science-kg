@@ -13,7 +13,7 @@ import json
 
 import networkx as nx
 
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden, paises_alto_desempeno
 
@@ -46,8 +46,9 @@ def escribir(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> s
     pagina = PLANTILLA.replace("__TITULO__", html.escape(f"Progresión de conceptos · {nombre}")) \
                       .replace("__DATOS__", datos.replace("</", "<\\/"))
     p = ruta(cargar("asignaturas")["asignaturas"][asig]["carpeta"]) / "progresion.html"
+    p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(pagina, encoding="utf-8")
-    return str(p.relative_to(ruta(".")))
+    return relativa(p)
 
 
 def escribir_todas(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:

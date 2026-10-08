@@ -20,7 +20,7 @@ from collections import Counter, defaultdict
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill
 
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden, paises_alto_desempeno
@@ -198,4 +198,4 @@ def escribir_excel(asig: str, r: dict) -> str:
     rs.column_dimensions["A"].width, ws.column_dimensions["A"].width = 46, 44
     p = ruta(cargar("asignaturas")["asignaturas"][asig]["carpeta"]) / "brechas" / f"Brechas_{asig.capitalize()}.xlsx"
     guardar_excel(wb, p)
-    return str(p.relative_to(ruta(".")))
+    return relativa(p)

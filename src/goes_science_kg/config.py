@@ -25,7 +25,16 @@ def raiz() -> Path:
 
 
 def ruta(rel: str | Path) -> Path:
+    """Ruta dentro del repo (una ruta absoluta se respeta tal cual)."""
     return raiz() / rel
+
+
+def relativa(p: Path) -> str:
+    """`p` relativa a la raíz del repo para mostrarla; si queda fuera (p. ej. una carpeta temporal), absoluta."""
+    try:
+        return str(p.resolve().relative_to(raiz()))
+    except ValueError:
+        return str(p)
 
 
 @cache

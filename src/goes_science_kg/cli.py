@@ -7,7 +7,7 @@ from typing import Annotated
 
 import typer
 
-from goes_science_kg.config import DIR_INTERIM, ruta
+from goes_science_kg.config import DIR_INTERIM, relativa, ruta
 
 app = typer.Typer(help="Grafo de conocimiento de Ciencias · El Salvador", no_args_is_help=True)
 grafo_app = typer.Typer(help="Construir, validar y exportar el grafo", no_args_is_help=True)
@@ -23,7 +23,7 @@ def temas() -> None:
     out = ruta(DIR_INTERIM) / "temas.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps([t.dict() for t in ts], ensure_ascii=False, indent=1), encoding="utf-8")
-    typer.echo(f"{len(ts)} temas → {out.relative_to(ruta('.'))}")
+    typer.echo(f"{len(ts)} temas → {relativa(out)}")
 
 
 @grafo_app.command("construir")
@@ -78,7 +78,7 @@ def grafo_exportar(formato: str = typer.Option("graphml", help="graphml")) -> No
         plano.add_edge(u, v, key=k, **{x: json.dumps(y, ensure_ascii=False) if isinstance(y, dict | list) else y
                                        for x, y in d.items() if y is not None})
     nx.write_graphml(plano, out / "grafo.graphml")
-    typer.echo(f"→ {(out / 'grafo.graphml').relative_to(ruta('.'))}")
+    typer.echo(f"→ {relativa(out / 'grafo.graphml')}")
 
 
 catalogo_app = typer.Typer(help="Catálogos de marcos pivote", no_args_is_help=True)

@@ -22,7 +22,7 @@ from functools import cache
 import networkx as nx
 
 from goes_science_kg.conceptos import VERSION_TRIAJE, conceptos_del_triaje, vocabulario
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 DIR = "data/interim/prerrequisitos"
@@ -148,7 +148,7 @@ def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
         }
         p = d / f"lote_{asig}.json"
         p.write_text(json.dumps(lote, ensure_ascii=False, indent=1), encoding="utf-8")
-        escritos.append(str(p.relative_to(ruta("."))))
+        escritos.append(relativa(p))
     return escritos
 
 

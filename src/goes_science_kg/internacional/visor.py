@@ -11,7 +11,7 @@ from __future__ import annotations
 import html
 import json
 
-from goes_science_kg.config import ruta
+from goes_science_kg.config import relativa
 from goes_science_kg.internacional.consenso import objetivos, paises
 
 POR_PAIS = 2   # objetivos citados por país en el detalle
@@ -45,7 +45,7 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
                       .replace("__TITULO__", html.escape("Contraste internacional 9.°–11.°"))
     p = destino / "visor.html"
     p.write_text(pagina, encoding="utf-8")
-    return str(p.relative_to(ruta(".")))
+    return relativa(p)
 
 
 PLANTILLA = """<!doctype html>

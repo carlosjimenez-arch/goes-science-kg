@@ -24,7 +24,7 @@ from collections import Counter
 from functools import cache
 from pathlib import Path
 
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.ingesta import legado
 from goes_science_kg.modelos import TipoNodo
 
@@ -70,7 +70,7 @@ def preparar_vocabulario(nodos) -> list[str]:
             } for o in sorted(objs, key=lambda x: x.id)],
             "unidades_malla_sv": [{"grado": g, "unidad": u, "temas": k} for (g, u), k in sorted(unidades.items())],
         }
-        escritos.append(str(_escribir(f"{DIR}/insumos/{asig}.json", insumo).relative_to(ruta("."))))
+        escritos.append(relativa(_escribir(f"{DIR}/insumos/{asig}.json", insumo)))
     return escritos
 
 
@@ -187,7 +187,7 @@ def preparar_etiquetado(nodos) -> list[str]:
                        "indicador": t.props.get("indicador")}
                       for t in sorted(temas, key=lambda x: x.id) if t.asignatura == asig and t.grado == grado],
         }
-        escritos.append(str(_escribir(f"{DIR}/lotes/lote_{lote['lote']}.json", lote).relative_to(ruta("."))))
+        escritos.append(relativa(_escribir(f"{DIR}/lotes/lote_{lote['lote']}.json", lote)))
     return escritos
 
 
@@ -279,7 +279,7 @@ def preparar_etiquetado_paises(nodos, por_lote: int = 70, solo_pendientes: bool 
                            "grado_o_tramo": n.props.get("grado_o_tramo"), "asignatura_estimada": n.asignatura}
                           for n in items[i:i + por_lote]],
             }
-            escritos.append(str(_escribir(f"{DIR}/lotes_paises/lote_{lote['lote']}.json", lote).relative_to(ruta("."))))
+            escritos.append(relativa(_escribir(f"{DIR}/lotes_paises/lote_{lote['lote']}.json", lote)))
     return escritos
 
 

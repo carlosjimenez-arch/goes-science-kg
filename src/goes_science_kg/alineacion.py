@@ -12,7 +12,7 @@ from __future__ import annotations
 import json
 from collections import Counter
 
-from goes_science_kg.config import ruta
+from goes_science_kg.config import relativa, ruta
 from goes_science_kg.ingesta.mallas import TemaMalla, extraer
 
 DIR = "data/interim/alineaciones"
@@ -38,7 +38,7 @@ def preparar_bachillerato(catalogo: list[dict], version: str) -> list[str]:
         }
         p = d / f"lote_{lote['lote']}.json"
         p.write_text(json.dumps(lote, ensure_ascii=False, indent=1), encoding="utf-8")
-        escritos.append(str(p.relative_to(ruta("."))))
+        escritos.append(relativa(p))
     return escritos
 
 

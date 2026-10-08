@@ -22,7 +22,7 @@ from openpyxl.utils import get_column_letter
 
 from goes_science_kg import conceptos as cp
 from goes_science_kg.brechas import analizar
-from goes_science_kg.config import ruta
+from goes_science_kg.config import relativa, ruta
 from goes_science_kg.excel import guardar as guardar_excel
 from goes_science_kg.modelos import Arista, Confianza, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden
@@ -78,7 +78,7 @@ def escribir_candidatos(asig: str, g0: int, g1: int, marco: str, nodos, aristas)
     d.mkdir(parents=True, exist_ok=True)
     p = d / f"candidatos_G{g0:02d}-G{g1:02d}.json"
     p.write_text(json.dumps(c, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    return str(p.relative_to(ruta(".")))
+    return relativa(p)
 
 
 # -- Paso 3: libro Excel de la propuesta ----------------------------------------------------------
@@ -143,7 +143,7 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
             celda.font = normal
     nombre = f"Propuesta_{asig.capitalize()}_G{g0:02d}-G{g1:02d}.xlsx"
     guardar_excel(wb, d / nombre)
-    return str((d / nombre).relative_to(ruta(".")))
+    return relativa(d / nombre)
 
 
 # -- Simulación: impacto de la propuesta sobre el grafo ---------------------------------------------
@@ -362,4 +362,4 @@ def escribir_resumen() -> str:
           "profundizar). Coordinarlas es parte de la revisión (ver `HANDOFF.md`).", ""]
     p = ruta("asignaturas/PROPUESTAS.md")
     p.write_text("\n".join(md), encoding="utf-8")
-    return str(p.relative_to(ruta(".")))
+    return relativa(p)

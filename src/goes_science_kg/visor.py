@@ -10,7 +10,7 @@ from __future__ import annotations
 import html
 import json
 
-from goes_science_kg.config import ruta
+from goes_science_kg.config import relativa, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 COLOR_ASIG = {"biologia": "#2E7D32", "fisica": "#1565C0", "quimica": "#8E24AA", "ciencias_tierra_espacio": "#EF6C00"}
@@ -118,5 +118,6 @@ red.on('click', p => {
 def escribir_visor(g: int, nodos: list[Nodo], aristas: list[Arista], diagnostico: dict) -> str:
     datos = json.dumps(_datos(g, nodos, aristas, diagnostico), ensure_ascii=False).replace("</", "<\\/")
     p = ruta(f"grados/G{g:02d}") / "grafo.html"
+    p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(PLANTILLA.replace("__GRADO__", html.escape(str(g))).replace("__DATOS__", datos), encoding="utf-8")
-    return str(p.relative_to(ruta(".")))
+    return relativa(p)

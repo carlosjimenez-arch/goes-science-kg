@@ -19,7 +19,7 @@ from pathlib import Path
 
 from goes_science_kg.brechas import analizar
 from goes_science_kg.conceptos import vocabulario
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista
 from goes_science_kg.prerrequisitos import cargar_prerrequisitos, evidencia_orden
 
@@ -73,7 +73,7 @@ def exportar(nodos: list[Nodo], aristas: list[Arista], fecha: str | None = None)
         _escribir(p2, ["prerrequisito_id", "prerrequisito", "concepto_id", "concepto", "primer_grado_sv_prerrequisito",
                        "primer_grado_sv_concepto", "sostiene_hallazgo_de_secuencia", "confianza", "tipo_evidencia",
                        "justificacion_ia", *COLUMNAS_DECISION], filas)
-        escritos += [str(p1.relative_to(ruta("."))), str(p2.relative_to(ruta(".")))]
+        escritos += [relativa(p1), relativa(p2)]
     return escritos
 
 

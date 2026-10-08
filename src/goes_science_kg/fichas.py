@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 
@@ -87,5 +87,5 @@ def escribir_fichas(nodos: list[Nodo], aristas: list[Arista], version: str) -> l
         p = ruta(a["carpeta"]) / "ficha.md"
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(ficha(asig, nodos, aristas, version), encoding="utf-8")
-        escritas.append(str(p.relative_to(ruta("."))))
+        escritas.append(relativa(p))
     return escritas
