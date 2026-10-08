@@ -48,7 +48,7 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 - Excel: todo número de análisis es una fórmula. Compatible con Numbers (sin «·» en pestañas, sin CHAR(10),
   sin XLOOKUP/FILTER). Estilo 2027: encabezado verde bosque 1E4D3A y sin azul.
 - Commits: `tipo(ámbito): resumen` en español. `pytest -q` en verde antes de cada commit.
-- El remoto usa el alias SSH `goes` (`git@goes:carlosjimenez-arch/goes-science-kg.git`).
+- El remoto usa el alias SSH `github-goes` (`git@github-goes:carlosjimenez-arch/goes-science-kg.git`).
 
 ## Comandos
 ```bash
@@ -71,6 +71,7 @@ uv run gskg brechas               # asignaturas/<x>/brechas/
 uv run gskg progresion            # asignaturas/<x>/progresion.html
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
+uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
 uv run pytest -q
 make todo                         # construir + validar + fichas + grados + brechas + progresión + pruebas + lint
 make propuestas                   # simula las 11 propuestas, rehace sus Excel y asignaturas/PROPUESTAS.md

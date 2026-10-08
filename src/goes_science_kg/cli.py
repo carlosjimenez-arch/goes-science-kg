@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from typing import Annotated
 
 import typer
 
@@ -362,6 +363,39 @@ def fichas() -> None:
     version = _json.loads(ruta("data/grafo/manifest.json").read_text(encoding="utf-8"))["version"]
     for p in escribir_fichas(*cargar(), version):
         typer.echo(f"→ {p}")
+
+
+internacional_app = typer.Typer(help="Grafos internacionales de 9.°–11.° y contraste con la malla V2 (spec 11)",
+                                no_args_is_help=True)
+app.add_typer(internacional_app, name="internacional")
+
+
+@internacional_app.command("extraer")
+def internacional_extraer(paises: Annotated[list[str] | None, typer.Argument(help="SG, JP…")] = None) -> None:
+    """Extrae y valida con Vertex los objetivos de los países (config/internacional.yaml)."""
+    from goes_science_kg.internacional import consenso, extraer
+
+    for p in paises or consenso.paises():
+        typer.echo(extraer.extraer_pais(p))
+
+
+@internacional_app.command("etiquetar")
+def internacional_etiquetar(paises: Annotated[list[str] | None, typer.Argument(help="vacío = todos")] = None) -> None:
+    """Etiqueta con conceptos los objetivos de los países y la malla V2 (2.°–11.°)."""
+    from goes_science_kg.internacional import consenso, etiquetar
+
+    for r in [*consenso.etiquetar_paises(paises or None), *etiquetar.etiquetar_malla_v2(),
+              etiquetar.etiquetar_malla_v2_antecedente()]:
+        typer.echo(r)
+
+
+@internacional_app.command("construir")
+def internacional_construir() -> None:
+    """Arma data/grafo/internacional/ (grafo por país + consenso) y los informes de internacional/."""
+    from goes_science_kg.internacional import consenso, informe
+
+    typer.echo(consenso.construir())
+    typer.echo(informe.escribir())
 
 
 if __name__ == "__main__":

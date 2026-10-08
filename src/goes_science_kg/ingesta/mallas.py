@@ -63,8 +63,9 @@ def _columnas(ws) -> list[str]:
     return cols
 
 
-def extraer() -> list[TemaMalla]:
-    cfg = cargar("mallas")
+def extraer(nombre_config: str = "mallas") -> list[TemaMalla]:
+    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la Versión 1)."""
+    cfg = cargar(nombre_config)
     base = ruta(cfg["directorio"])
     fases = cfg["fases_pisa"]
     temas: list[TemaMalla] = []
@@ -93,7 +94,7 @@ def extraer() -> list[TemaMalla]:
                     id="", archivo=canonico, ruta=archivo, hoja=ws.title, fila=fila, grado=grado,
                     asignatura=asig, unidad=unidad, contenido=contenido,
                     subcontenido=_limpio(d.get("Subcontenidos")), procedimental=proc,
-                    indicador=_limpio(d.get("Indicadores de logro")),
+                    indicador=_limpio(d.get("Indicadores de logro") or d.get("Indicador avanzado")),
                     evidencia=_limpio(d.get("Evidencia de aprendizaje")),
                     habilidad_timss=_limpio(d.get("Habilidad TIMSS")),
                     competencia_pisa=_limpio(d.get("Competencia PISA 2025")),

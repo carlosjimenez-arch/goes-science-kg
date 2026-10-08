@@ -1,0 +1,240 @@
+# Documentos que se extraen para los grafos internacionales de 9.°–11.° (spec 11).
+# Las descargas, con URL, sha256, licencia y notas de vigencia, están en
+# data/fuentes/externos/paises/<pais>/sec_bach/_registro.json (Japón: japon/bachillerato/).
+#
+# Por cada documento:
+#   paginas:     páginas del PDF (1 = primera página del ARCHIVO, no la numeración impresa). Puede ser [p0, p1]
+#                o una lista de rangos.
+#   nivel:       nucleo (lo cursa la mayoría) | especializacion (electiva).
+#   grado_sv:    rango de grados equivalentes de El Salvador cuando el documento no precisa el año.
+#   grados_pais: año del país → grado SV, cuando el documento sí lo precisa.
+#   asignatura:  fisica | quimica | biologia | tierra_espacio | ciencias_integradas (el modelo decide por objetivo).
+# Se eligió UN documento por curso para no contar dos veces el mismo contenido. Lo que se descartó, y por qué,
+# va al final.
+
+paises:
+  SG: {nombre: Singapur, nucleo_post16: false, nota: "SEC 2027 reemplaza O-Level; JC2 queda fuera de rango (SV 12)"}
+  JP: {nombre: Japón, nucleo_post16: true, nota: "Obligatorio: 科学と人間生活 + un 基礎, o tres 基礎"}
+  KR: {nombre: Corea del Sur, nucleo_post16: false, nota: "Currículo 2022; 고3 aún cursa el de 2015 hasta 2027"}
+  ENG: {nombre: Inglaterra, nucleo_post16: false, nota: "Ciencias no obligatorias después de los 16 años"}
+  AU: {nombre: Australia, nucleo_post16: false, nota: "Ciencias obligatorias hasta Year 10 (SV 9)"}
+  HK: {nombre: Hong Kong, nucleo_post16: false, nota: "Sin ciencia común en S4–S6 desde 2021/22: solo electivas"}
+  TW: {nombre: Taiwán, nucleo_post16: true, nota: "部定必修 de las 4 disciplinas, 2–4 créditos cada una"}
+  EE: {nombre: Estonia, nucleo_post16: true, nota: "Gymnasium: 15 cursos obligatorios de ciencias"}
+  "ON": {nombre: Ontario, nucleo_post16: false, nota: "OSSD exige 2 créditos de ciencias (Grade 9 y 10). Fuente de Grade 9 aceptada por el usuario"}
+
+documentos:
+  # ── Singapur ───────────────────────────────────────────────────────────────────────────────────────────
+  - {id: sg_k326_k328, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_SEC_G3_Science_PhysChem_K326_2027.pdf,
+     titulo: "SEC G3 Science (secciones de Física, Química y Biología)", curso: "SEC G3 Science (Combined)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [9, 54], grado_sv: [9, 10],
+     grados_pais: {"Sec 3": 9, "Sec 4": 10}}
+  - {id: sg_k323, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_SEC_G3_Physics_K323_2027.pdf,
+     titulo: "SEC G3 Physics (K323)", curso: "SEC G3 Physics", asignatura: fisica, nivel: especializacion,
+     paginas: [9, 29], grado_sv: [9, 10]}
+  - {id: sg_k324, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_SEC_G3_Chemistry_K324_2027.pdf,
+     titulo: "SEC G3 Chemistry (K324)", curso: "SEC G3 Chemistry", asignatura: quimica, nivel: especializacion,
+     paginas: [9, 25], grado_sv: [9, 10]}
+  - {id: sg_k325, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_SEC_G3_Biology_K325_2027.pdf,
+     titulo: "SEC G3 Biology (K325)", curso: "SEC G3 Biology", asignatura: biologia, nivel: especializacion,
+     paginas: [8, 24], grado_sv: [9, 10]}
+  - {id: sg_h1_fis, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H1_Physics_8867_2027.pdf,
+     titulo: "GCE A-Level H1 Physics (8867)", curso: "A-Level H1 Physics", asignatura: fisica, nivel: nucleo,
+     paginas: [8, 18], grado_sv: [11, 11]}
+  - {id: sg_h1_qui, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H1_Chemistry_8873_2027.pdf,
+     titulo: "GCE A-Level H1 Chemistry (8873)", curso: "A-Level H1 Chemistry", asignatura: quimica, nivel: nucleo,
+     paginas: [9, 22], grado_sv: [11, 11]}
+  - {id: sg_h1_bio, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H1_Biology_8876_2027.pdf,
+     titulo: "GCE A-Level H1 Biology (8876)", curso: "A-Level H1 Biology", asignatura: biologia, nivel: nucleo,
+     paginas: [8, 18], grado_sv: [11, 11]}
+  - {id: sg_h2_fis, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H2_Physics_9478_2027.pdf,
+     titulo: "GCE A-Level H2 Physics (9478)", curso: "A-Level H2 Physics", asignatura: fisica, nivel: especializacion,
+     paginas: [9, 33], grado_sv: [11, 11]}
+  - {id: sg_h2_qui, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H2_Chemistry_9476_2027.pdf,
+     titulo: "GCE A-Level H2 Chemistry (9476)", curso: "A-Level H2 Chemistry", asignatura: quimica, nivel: especializacion,
+     paginas: [11, 34], grado_sv: [11, 11]}
+  - {id: sg_h2_bio, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H2_Biology_9477_2027.pdf,
+     titulo: "GCE A-Level H2 Biology (9477)", curso: "A-Level H2 Biology", asignatura: biologia, nivel: especializacion,
+     paginas: [8, 22], grado_sv: [11, 11]}
+
+  # ── Japón: 高等学校学習指導要領 (2018), capítulo 理科 ────────────────────────────────────────────────────
+  - {id: jp_15, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "科学と人間生活 (Ciencia y vida humana)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [105, 107], grado_sv: [9, 10]}
+  - {id: jp_25, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "物理基礎 (Física Básica)", asignatura: fisica, nivel: nucleo,
+     paginas: [107, 110], grado_sv: [9, 10]}
+  - {id: jp_45, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "化学基礎 (Química Básica)", asignatura: quimica, nivel: nucleo,
+     paginas: [114, 116], grado_sv: [9, 10]}
+  - {id: jp_65, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "生物基礎 (Biología Básica)", asignatura: biologia, nivel: nucleo,
+     paginas: [119, 122], grado_sv: [9, 10]}
+  - {id: jp_85, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "地学基礎 (Ciencias de la Tierra Básica)", asignatura: tierra_espacio,
+     nivel: nucleo, paginas: [126, 128], grado_sv: [9, 11]}
+  - {id: jp_35, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "物理 (Física)", asignatura: fisica, nivel: especializacion,
+     paginas: [110, 114], grado_sv: [10, 11]}
+  - {id: jp_55, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "化学 (Química)", asignatura: quimica, nivel: especializacion,
+     paginas: [116, 119], grado_sv: [10, 11]}
+  - {id: jp_75, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "生物 (Biología)", asignatura: biologia, nivel: especializacion,
+     paginas: [122, 126], grado_sv: [10, 11]}
+  - {id: jp_95, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "地学 (Ciencias de la Tierra)", asignatura: tierra_espacio,
+     nivel: especializacion, paginas: [128, 131], grado_sv: [10, 11]}
+
+  # ── Corea del Sur: 2022 개정 과학과 교육과정 [별책 9] ──────────────────────────────────────────────────────
+  - {id: kr_tonghap, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "통합과학1·2 (Ciencia Integrada)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [81, 97], grado_sv: [9, 9]}
+  - {id: kr_tamgu, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "과학탐구실험1·2 (Experimentos de indagación)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [98, 112], grado_sv: [9, 9]}
+  - {id: kr_mulli, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "물리학 (Física)", asignatura: fisica, nivel: especializacion,
+     paginas: [113, 124], grado_sv: [10, 10]}
+  - {id: kr_hwahak, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "화학 (Química)", asignatura: quimica, nivel: especializacion,
+     paginas: [125, 136], grado_sv: [10, 10]}
+  - {id: kr_saengmyeong, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "생명과학 (Ciencias de la Vida)", asignatura: biologia, nivel: especializacion,
+     paginas: [137, 148], grado_sv: [10, 10]}
+  - {id: kr_jigu, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "지구과학 (Ciencias de la Tierra)", asignatura: tierra_espacio,
+     nivel: especializacion, paginas: [149, 164], grado_sv: [10, 10]}
+  - {id: kr_jinro_fis, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "역학과 에너지 · 전자기와 양자 (Física de profundización)", asignatura: fisica,
+     nivel: especializacion, paginas: [165, 188], grado_sv: [10, 11]}
+  - {id: kr_jinro_qui, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "물질과 에너지 · 화학 반응의 세계 (Química de profundización)", asignatura: quimica,
+     nivel: especializacion, paginas: [189, 211], grado_sv: [10, 11]}
+  - {id: kr_jinro_bio, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "세포와 물질대사 · 생물의 유전 (Biología de profundización)", asignatura: biologia,
+     nivel: especializacion, paginas: [212, 234], grado_sv: [10, 11]}
+  - {id: kr_jinro_tye, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "지구시스템과학 · 행성우주과학 (Tierra y Espacio de profundización)",
+     asignatura: tierra_espacio, nivel: especializacion, paginas: [235, 260], grado_sv: [10, 11]}
+
+  # ── Inglaterra: contenido oficial del DfE ─────────────────────────────────────────────────────────────
+  - {id: eng_gcse_comb, pais: ENG, archivo: data/fuentes/externos/paises/inglaterra/sec_bach/ENG_GCSE_CombinedScience_SubjectContent_2015.pdf,
+     titulo: "GCSE Combined Science: subject content (DfE)", curso: "GCSE Combined Science", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [7, 36], grado_sv: [8, 9]}
+  - {id: eng_gcse_triple, pais: ENG, archivo: data/fuentes/externos/paises/inglaterra/sec_bach/ENG_GCSE_SingleScience_BioChemPhys_SubjectContent_2015.pdf,
+     titulo: "GCSE Biology, Chemistry, Physics: subject content (DfE)", curso: "GCSE separate sciences (triple)",
+     asignatura: ciencias_integradas, nivel: especializacion, paginas: [7, 45], grado_sv: [8, 9]}
+  - {id: eng_alevel, pais: ENG, archivo: data/fuentes/externos/paises/inglaterra/sec_bach/ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf,
+     titulo: "GCE AS and A level subject content: biology, chemistry, physics (DfE)", curso: "A level Biology / Chemistry / Physics",
+     asignatura: ciencias_integradas, nivel: especializacion, paginas: [[5, 15], [18, 23]], grado_sv: [10, 11]}
+  - {id: eng_alevel_geo, pais: ENG, archivo: data/fuentes/externos/paises/inglaterra/sec_bach/ENG_GCE_ASAL_Geology_SubjectContent_2016.pdf,
+     titulo: "GCE AS and A level subject content: geology (DfE)", curso: "A level Geology", asignatura: tierra_espacio,
+     nivel: especializacion, paginas: [3, 16], grado_sv: [10, 11]}
+
+  # ── Australia: Senior Secondary v8.4 (HTML; el núcleo de Year 10 se importa de data/interim/paises) ──────
+  - {id: au_ss_bio, pais: AU, archivo: data/fuentes/externos/bachillerato/AU_SeniorSecondary_Biology_v8.4_U1-3.html,
+     titulo: "Senior Secondary Biology v8.4 (unidades 1–3)", curso: "Senior Secondary Biology", asignatura: biologia,
+     nivel: especializacion, grado_sv: [10, 11], grados_pais: {"Unit 1": 10, "Unit 2": 10, "Unit 3": 11, "Unit 4": 11}}
+  - {id: au_ss_bio4, pais: AU, archivo: data/fuentes/externos/bachillerato/AU_SeniorSecondary_Biology_v8.4_U4.html,
+     titulo: "Senior Secondary Biology v8.4 (unidad 4)", curso: "Senior Secondary Biology", asignatura: biologia,
+     nivel: especializacion, grado_sv: [11, 11]}
+  - {id: au_ss_qui, pais: AU, archivo: data/fuentes/externos/bachillerato/AU_SeniorSecondary_Chemistry_v8.4_U1-3.html,
+     titulo: "Senior Secondary Chemistry v8.4 (unidades 1–3)", curso: "Senior Secondary Chemistry", asignatura: quimica,
+     nivel: especializacion, grado_sv: [10, 11], grados_pais: {"Unit 1": 10, "Unit 2": 10, "Unit 3": 11, "Unit 4": 11}}
+  - {id: au_ss_qui4, pais: AU, archivo: data/fuentes/externos/bachillerato/AU_SeniorSecondary_Chemistry_v8.4_U4.html,
+     titulo: "Senior Secondary Chemistry v8.4 (unidad 4)", curso: "Senior Secondary Chemistry", asignatura: quimica,
+     nivel: especializacion, grado_sv: [11, 11]}
+  - {id: au_ss_fis, pais: AU, archivo: data/fuentes/externos/paises/australia/sec_bach/AU_SeniorSecondary_Physics_v8.4_U1-3.html,
+     titulo: "Senior Secondary Physics v8.4 (unidades 1–3)", curso: "Senior Secondary Physics", asignatura: fisica,
+     nivel: especializacion, grado_sv: [10, 11], grados_pais: {"Unit 1": 10, "Unit 2": 10, "Unit 3": 11, "Unit 4": 11}}
+  - {id: au_ss_fis4, pais: AU, archivo: data/fuentes/externos/paises/australia/sec_bach/AU_SeniorSecondary_Physics_v8.4_U4.html,
+     titulo: "Senior Secondary Physics v8.4 (unidad 4)", curso: "Senior Secondary Physics", asignatura: fisica,
+     nivel: especializacion, grado_sv: [11, 11]}
+  - {id: au_ss_tye, pais: AU, archivo: data/fuentes/externos/paises/australia/sec_bach/AU_SeniorSecondary_EarthEnvironmentalScience_v8.4_U1-3.html,
+     titulo: "Senior Secondary Earth and Environmental Science v8.4 (unidades 1–3)", curso: "Senior Secondary Earth and Environmental Science",
+     asignatura: tierra_espacio, nivel: especializacion, grado_sv: [10, 11],
+     grados_pais: {"Unit 1": 10, "Unit 2": 10, "Unit 3": 11, "Unit 4": 11}}
+  - {id: au_ss_tye4, pais: AU, archivo: data/fuentes/externos/paises/australia/sec_bach/AU_SeniorSecondary_EarthEnvironmentalScience_v8.4_U4.html,
+     titulo: "Senior Secondary Earth and Environmental Science v8.4 (unidad 4)", curso: "Senior Secondary Earth and Environmental Science",
+     asignatura: tierra_espacio, nivel: especializacion, grado_sv: [11, 11]}
+
+  # ── Hong Kong: marcos actualizados S4–6 (borradores de consulta del CDC, jun. 2026), por decisión del usuario
+  #    (2026-10-07). Reemplazan a las guías 2015/2018; son electivas.
+  - {id: hk_bio, pais: HK, archivo: data/fuentes/externos/paises/hong_kong/sec_bach/HK_Biology_UpdatedFramework_S4-6_ConsultDraft_2026.pdf,
+     titulo: "Biology Curriculum Framework (S4–6), borrador de consulta 2026", curso: "HKDSE Biology (marco actualizado)",
+     asignatura: biologia, nivel: especializacion, paginas: [16, 106], grado_sv: [9, 11]}
+  - {id: hk_qui, pais: HK, archivo: data/fuentes/externos/paises/hong_kong/sec_bach/HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf,
+     titulo: "Chemistry Curriculum Framework (S4–6), borrador de consulta 2026", curso: "HKDSE Chemistry (marco actualizado)",
+     asignatura: quimica, nivel: especializacion, paginas: [17, 100], grado_sv: [9, 11]}
+  - {id: hk_fis, pais: HK, archivo: data/fuentes/externos/paises/hong_kong/sec_bach/HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf,
+     titulo: "Physics Curriculum Framework (S4–6), borrador de consulta 2026", curso: "HKDSE Physics (marco actualizado)",
+     asignatura: fisica, nivel: especializacion, paginas: [22, 79], grado_sv: [9, 11]}
+
+  # ── Taiwán: 十二年國教課綱 自然科學領域 (2018), 學習表現 y 學習內容 ──────────────────────────────────────────
+  - {id: tw_req_desempeno, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "部定必修: 學習表現 (desempeños comunes)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [35, 37], grado_sv: [9, 10]}
+  - {id: tw_req_contenido, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "部定必修: 生物、物理、化學、地球科學 (學習內容)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [37, 43], grado_sv: [9, 10]}
+  - {id: tw_req_indagacion, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "自然科學探究與實作 (Indagación y práctica)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [43, 45], grado_sv: [9, 10]}
+  - {id: tw_ele, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "加深加廣選修: 生物、物理、化學、地球科學", asignatura: ciencias_integradas,
+     nivel: especializacion, paginas: [46, 57], grado_sv: [10, 11]}
+
+  # ── Estonia: currículos nacionales 2023 ───────────────────────────────────────────────────────────────
+  - {id: ee_basic, pais: EE, archivo: data/fuentes/externos/paises/estonia/sec_bach/EE_Basic_Annex4_Natural_Science_2023_en.pdf,
+     titulo: "National Curriculum for Basic Schools, Annex 4: Natural Science (2023)", curso: "Escuela básica, III etapa (grados 7–9)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [12, 28], grado_sv: [7, 9],
+     grados_pais: {"grade 7": 7, "grade 8": 8, "grade 9": 9}}
+  - {id: ee_gym, pais: EE, archivo: data/fuentes/externos/paises/estonia/sec_bach/EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf,
+     titulo: "Gümnaasiumi riiklik õppekava, Lisa 4: Loodusained (2023)", curso: "Gymnasium, cursos obligatorios",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [5, 20], grado_sv: [10, 11]}
+  - {id: ee_gym_ele, pais: EE, archivo: data/fuentes/externos/paises/estonia/sec_bach/EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf,
+     titulo: "Gümnaasiumi riiklik õppekava, Lisa 8: Valikkursused (2023)", curso: "Gymnasium, electivos de ciencias",
+     asignatura: ciencias_integradas, nivel: especializacion, paginas: [26, 45], grado_sv: [10, 11]}
+
+  # ── Ontario ────────────────────────────────────────────────────────────────────────────────────────────
+  - {id: on_snc2d, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades9-10_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 9 and 10 (2008)", curso: "Science, Grade 10, Academic (SNC2D)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [72, 84], grado_sv: [9, 9]}
+  - {id: on_sbi3u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Biology, Grade 11 (SBI3U)", asignatura: biologia,
+     nivel: especializacion, paginas: [48, 61], grado_sv: [10, 10]}
+  - {id: on_sbi4u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Biology, Grade 12 (SBI4U)", asignatura: biologia,
+     nivel: especializacion, paginas: [76, 91], grado_sv: [11, 11]}
+  - {id: on_sch3u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Chemistry, Grade 11 (SCH3U)", asignatura: quimica,
+     nivel: especializacion, paginas: [92, 105], grado_sv: [10, 10]}
+  - {id: on_sch4u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Chemistry, Grade 12 (SCH4U)", asignatura: quimica,
+     nivel: especializacion, paginas: [106, 119], grado_sv: [11, 11]}
+  - {id: on_ses4u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Earth and Space Science, Grade 12 (SES4U)",
+     asignatura: tierra_espacio, nivel: especializacion, paginas: [136, 151], grado_sv: [11, 11]}
+  - {id: on_sph3u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Physics, Grade 11 (SPH3U)", asignatura: fisica,
+     nivel: especializacion, paginas: [182, 195], grado_sv: [10, 10]}
+  - {id: on_sph4u, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grades11-12_2008.pdf,
+     titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Physics, Grade 12 (SPH4U)", asignatura: fisica,
+     nivel: especializacion, paginas: [196, 209], grado_sv: [11, 11]}
+
+# Objetivos ya extraídos (sesiones anteriores) que se reutilizan como núcleo.
+importar:
+  - {pais: AU, archivo: data/interim/paises/australia.json, grados_sv: [9], nivel: nucleo, curso: "Science Year 10 (v9)",
+     documento: au_710_v9}
+
+# Descartados (y por qué):
+#   SG O-Level 2026: mismo contenido que SEC G3 (similitud 0,92), último año de examen.
+#   SG SEC G2/G1 y Lower Secondary: otro nivel de exigencia o antecedente (SV 7–8).
+#   HK Combined Science 2018: descontinuado desde 2021/22. HK guías 2015/2018: reemplazadas por los marcos 2026.
+#   ENG: no hay contenido nuevo publicado (el currículo renovado se publica en 2027; GCSE nuevos desde 2029).
+#   KR 2015: se usa 2022 (vigente para 고1–고2). KR 융합 선택 y [별책 20]: marginales.
+#   JP 解説: amplía los mismos ítems; se usa el texto normativo. ENG KS4: lo detalla el GCSE.
+#   ENG GCSE Geology/Astronomy y A level Environmental Science: asignaturas minoritarias.
+#   TW 附錄四: explica los mismos ítems de 學習內容. ON SNC2P, SBI3C, SCH4C, SPH4C, SVN3M/E, SNC4M/E: vías aplicadas o
+#   universitarias no comparables con un Bachillerato general.

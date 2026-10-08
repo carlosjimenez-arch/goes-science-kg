@@ -40,6 +40,11 @@ países) y un **visor interactivo** (`grafo.html`).
 Las 11 propuestas, simuladas sobre el grafo, bajan los errores de secuencia de confianza alta de 54 a 3 (los 3
 dependen de aristas de prerrequisito discutibles y quedan como decisiones abiertas para el MINED).
 
+**Contraste internacional de 9.°–11.°** (malla V2): [`internacional/`](internacional/README.md). Hay grafos de
+9 países de alto desempeño (SG, JP, KR, ENG, AU, HK, TW, EE y ON; 8.602 objetivos extraídos y validados con Vertex
+AI), un consenso por concepto y un informe por asignatura con los hallazgos verificados contra las fuentes.
+Se construye con `uv run gskg internacional extraer | etiquetar | construir`.
+
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
 API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).
