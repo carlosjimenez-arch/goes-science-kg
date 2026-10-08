@@ -2,7 +2,7 @@
 	internacional internacional-ia
 
 instalar:
-	uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api --extra vertex
+	uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex
 
 temas:
 	uv run gskg temas

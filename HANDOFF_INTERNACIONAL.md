@@ -39,7 +39,7 @@ crítico y detallado. **Todo con la cuenta GOES**:
 
 ## Cómo retomar
 ```bash
-uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api --extra vertex
+uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex
 uv run gskg internacional extraer          # 9 países; lo que ya está en caché no se vuelve a pagar
 uv run gskg internacional extraer          # 2.ª vez: debe reportar «llamadas» ≈ 0 en cada país (caché estable)
 uv run gskg internacional etiquetar        # países + malla V2 (gemini-2.5-pro); unas 300 llamadas

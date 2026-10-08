@@ -6,7 +6,7 @@
 
 ## Cómo retomar (5 minutos)
 ```bash
-uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api
+uv sync --extra dev --extra pdf --extra rag --extra api
 uv run make todo        # grafo → validar → fichas → grados → brechas → pruebas → lint (todo en verde)
 uv run make propuestas  # simula las 11 propuestas sobre el grafo actual y rehace PROPUESTAS.md
 uv run gskg evaluar-rag # MRR y recall@k de GraphRAG

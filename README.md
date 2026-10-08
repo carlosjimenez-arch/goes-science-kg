@@ -13,7 +13,7 @@ países. El fin es **proponer, por asignatura, una curricularización mejor y co
 
 ## Inicio rápido
 ```bash
-uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api
+uv sync --extra dev --extra pdf --extra rag --extra api
 uv run gskg grafo construir    # arma el grafo en data/grafo/
 uv run gskg grafo validar      # revisa invariantes
 uv run gskg fichas             # genera asignaturas/<x>/ficha.md

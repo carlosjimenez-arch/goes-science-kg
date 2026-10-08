@@ -52,7 +52,7 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 
 ## Comandos
 ```bash
-uv sync --extra dev --extra pdf --extra analisis --extra rag --extra api
+uv sync --extra dev --extra pdf --extra rag --extra api
 uv run gskg temas                 # mallas → data/interim/temas.json
 uv run gskg grafo construir       # grafo → data/grafo/ (falla si hay errores)
 uv run gskg grafo validar         # invariantes + avisos + métricas
