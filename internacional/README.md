@@ -5,16 +5,20 @@
 > `uv run gskg internacional construir`.
 
 ## Qué hay aquí
-- **9 países**: SG, JP, KR, ENG, AU, HK, TW, EE y ON. Son 60 documentos oficiales y **8.602 objetivos** validados:
-  Gemini 3.1 Pro extrae y Gemini 2.5 Pro valida contra la página del PDF. 636 quedaron como «parciales» y 337 se
-  descartaron por no fieles.
+- **9 países**: SG, JP, KR, ENG, AU, HK, TW, EE y ON. Son 62 documentos oficiales (3 de antecedente: secundaria
+  baja de KR, TW y ON) y **9.040 objetivos** validados:
+  Gemini 3.1 Pro extrae y Gemini 2.5 Pro valida contra la página del PDF.
 - **Grafo** en `data/grafo/internacional/`: país → curso → objetivo → concepto, más los prerrequisitos del repo.
   Son 9.205 nodos y 36.114 aristas.
 - **Consenso** por concepto: 509 conceptos. Para cada uno, cuántos países lo enseñan en el núcleo y en la
   especialización, y el grado SV de su primera aparición.
 - **Contraste** con la malla V2 de 9.°–11.°: un informe por asignatura y un Excel con fórmulas (hojas Datos,
   Contraste y Resumen).
-- **Revisión humana**: `revision_humana.csv` con 1.157 objetivos parciales o con etiquetas de confianza baja.
+- **Visor**: `visor.html`, con una pestaña por asignatura, filtros por clase y, al hacer clic en un concepto, la
+  evidencia citada de la V2 y de los países.
+- **Revisión experta**: `data/interim/internacional/revisiones.json`. Son 5 clases corregidas a mano, con su
+  evidencia, y ganan sobre la regla automática.
+- **Revisión humana**: `revision_humana.csv` con 1.210 objetivos parciales o con etiquetas de confianza baja.
   Tiene columnas `decision` y `revisado_por` para el MINED.
 
 ## Cómo leer las clases
@@ -27,7 +31,7 @@ cambiaría de clase.
 |---|---|
 | no retomado | La V2 solo lo ve antes de 9.° y ≥ 5 países lo profundizan en el núcleo de 9.°–11.°: es un **hueco de profundización** |
 | tardío / adelantado | Solo se juzga lo que la V2 **introduce** en 9.°–11.° |
-| solo especialización | La V2 lo pone en un curso obligatorio, pero en los países es contenido de electiva (≤ 1 núcleo y ≥ 3 electivas) |
+| solo especialización | La V2 lo pone en un curso obligatorio, pero en los países es contenido de electiva: ≤ 1 país lo enseña de forma sólida en su núcleo (principal en un objetivo o secundario en dos, contando la secundaria baja) y ≥ 3 lo tienen en electivas |
 | retomado / previo | Espiral normal (antes de 9.° y otra vez en 9.°–11.°) / solo antes de 9.°, sin exigencia internacional |
 
 ## Hallazgos estructurales
@@ -40,12 +44,12 @@ cambiaría de clase.
 
    | Malla | Temas | Ligados a especialización |
    |---|---|---|
-   | 9.° Ciencias | 108 | 15 (14 %); en la Unidad 3 (Equilibrio químico), 10 de 20 |
-   | 10.° Física / Química / Biología | 114 / 105 / 70 | 14 % / **28 %** / 19 % |
-   | 11.° Física / Química / Biología | 146 / 97 / 92 | 17 % / **26 %** / 11 % |
+   | 9.° Ciencias | 108 | 15 (14 %); en la Unidad 3 (Equilibrio químico), 7 de 20 |
+   | 10.° Física / Química / Biología | 114 / 105 / 70 | 14 % / **30 %** / 26 % |
+   | 11.° Física / Química / Biología | 146 / 97 / 92 | 17 % / **27 %** / 12 % |
 
    Química es la asignatura más cargada: Gibbs, entropía, orbitales moleculares, hibridación, ley de velocidad
-   y Arrhenius, Kps y mecanismos de reacción.
+   y Arrhenius, Kps, potenciales de electrodo, ley de Hess y mecanismos de reacción.
 3. **Tierra y Espacio no existe como asignatura en 10.°–11.°.** La V2 la concentra en 9.° (Unidades 4 y 5,
    Oceanografía y Geología de El Salvador, con 29 filas). En Bachillerato la reparte entre Biología (cambio
    climático, G11-BIO-U1-1.8), Química (ciclo del carbono, G10-QUI-U13-13.4) y Física (cosmología,
@@ -73,11 +77,14 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
 - **Equilibrio cuantitativo en 9.°.** La Unidad 3 de 9.° incluye constante de equilibrio (G09-CIE-U3-3.6/3.7),
   Ka (3.13–3.14) y disoluciones amortiguadoras (3.15–3.17). En los países es especialización: ENG lo ve en
   A level (p. 10), JP en 化学, la electiva (p. 116–119), y SG en H1 y H2.
-  **Matiz:** Le Châtelier **cualitativo** a los 15 años sí es estándar. ENG Combined pide «predict the effect of
-  changing reaction conditions… on equilibrium» (p. 24). Lo que se adelanta es la parte cuantitativa.
+  **Matiz:** Le Châtelier **cualitativo** sí es estándar y queda alineado. TW lo ve en secundaria baja
+  («化學平衡及溫度、濃度如何影響化學平衡的因素», p. 32) y ENG Combined pide «predict the effect of changing reaction
+  conditions… on equilibrium» (p. 24). Lo que se adelanta es la parte cuantitativa.
 - **Química de 10.°–11.° con nivel universitario inicial:** Gibbs y espontaneidad, entropía, OM y TEV, hibridación,
   resonancia y carga formal, ley de velocidad y Arrhenius, mecanismos de reacción, Kps y estereoquímica. Son
-  19 conceptos que a lo sumo un país tiene en su núcleo (por lo general SG H1) y que ≥ 3 países tienen en electivas.
+  más potenciales de electrodo, ley de Hess y rutas de síntesis. Son 21 conceptos que a lo sumo un país enseña de
+  forma sólida en su núcleo (por lo general SG H1) y que ≥ 3 países tienen en electivas. Las leyes de los gases
+  **no** están en esa lista: KR las enseña en 중학교 ([9과06-02/03], p. 51).
 - **Secuencia:** la V2 reconoce isómeros (10.°, G10-QUI-U2-2.6, fila 22) antes de tener hidrocarburos (11.°).
   Además, usa estados de oxidación y poder oxidante en 10.° (G10-QUI-U13-13.3/13.7) antes de la unidad formal
   de redox de 11.° (G11-QUI-U11-11.2, fila 90).
@@ -127,7 +134,7 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
 ## Recomendaciones (para decidir con el MINED; ninguna quita temas)
 1. **Química de 9.°:** dejar el equilibrio **cualitativo** (reversibilidad y Le Châtelier) y **reubicar** K, Ka y
    amortiguadoras en 11.°, o en una profundización optativa si se crea.
-2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 19 + 12 conceptos de especialización, para
+2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 21 + 12 conceptos de especialización, para
    que el núcleo obligatorio se parezca al de JP, TW y EE. Otra opción es tratarlos de forma cualitativa, como
    hace TW con la física moderna.
 3. **Física nuclear** (fisión, fusión y radiación ionizante): adelantarla a 9.° o 10.°.
@@ -146,7 +153,7 @@ la página y la paráfrasis es fiel. Hay dos problemas de alcance que el validad
 fidelidad, no pertinencia: EE incluye geografía humana como Tierra y Espacio (51 objetivos; 24 sin concepto, el
 resto en ambiente y recursos) y ON extrae las «Big Ideas» de los cursos.
 
-**Hallazgos:** se verificaron 20 contra la V2 (fila) y el PDF (página).
+**Hallazgos:** se verificaron 36 contra la V2 (fila) y el PDF (página): 20 en la primera ronda y 16 al agregar el antecedente.
 
 | # | Hallazgo | Resultado |
 |---|---|---|
@@ -170,6 +177,10 @@ resto en ambiente y recursos) y ON extrae las «Big Ideas» de los cursos.
 | 18 | PCR y secuenciación en 9.°: especialización | ⚠️ Parcial: el indicador pide argumentar, no la técnica |
 | 19 | Geografía humana de EE en Tierra y Espacio | Límite declarado |
 | 20 | «Big Ideas» de ON extraídas como objetivos | Límite declarado |
+| 21 | Leyes de los gases en el núcleo de KR (antecedente) | ✅ Confirmado ([9과06-02/03], p. 51) |
+| 22 | Le Châtelier en el núcleo de TW (antecedente) | ✅ Confirmado (p. 32) |
+| 23–25 | Quiralidad (TW), cuerpo negro (KR) y fluidos en seres vivos (TW) en secundaria baja | ❌ Falsos: etiquetas secundarias sueltas. Corregido con la regla de núcleo sólido |
+| 26–36 | 11 conceptos que la regla nueva agregó a especialización | 6 ✅ y 5 ❌ corregidos en `revisiones.json` |
 
 Seis falsos se corrigieron con cambios de método, que se describen abajo. La tabla automática de secuencia
 sigue teniendo falsos positivos (2 de 4 en la muestra), así que en los informes se presenta como «candidatos».
@@ -186,11 +197,20 @@ sigue teniendo falsos positivos (2 de 4 en la muestra), así que en los informes
    etiquetas.
 7. **Profundidad y prácticas** (puntos 5 y 6 de la spec), que no estaban implementados.
 8. **CSV de revisión humana** y hoja Resumen en el Excel.
+9. **Antecedente de KR, TW y ON:** secundaria baja (KR 중학교, pp. 46–67; TW 第四學習階段, pp. 25–35; ON SNC1W 2022,
+   pp. 46–55), que suma 438 objetivos. Fecha la primera aparición y no entra en el núcleo de 9.°–11.°. Se etiquetó en
+   grupos aparte para no invalidar la caché.
+10. **Núcleo «sólido» para la excepción de especialización:** el concepto tiene que ser principal en un objetivo o
+    secundario en dos. Con el antecedente, una sola etiqueta secundaria laxa sacaba conceptos de la clase; la
+    revisión manual mostró que 3 de 5 de esos cambios eran falsos (quiralidad, cuerpo negro, fluidos).
+11. **Revisión experta** de los 11 conceptos que la regla nueva agregó a «solo especialización»: 6 se confirmaron
+    (Calvin, Hess, potenciales de electrodo, rutas de síntesis, capacidad de carga y termorregulación) y 5 se
+    corrigieron a «alineado» en `revisiones.json` (inmunidad innata y adaptativa, relaciones p-V-T, superposición,
+    equilibrio industrial). Cada corrección cita las páginas de los países.
 
 ## Límites
-- **Antecedente incompleto:** solo ENG, AU, JP y EE (básica, 7.°–9.°) tienen datos de antes de 9.°. KR, TW y ON
-  tienen su secundaria baja en los mismos PDF, pero no se extrajo (son unas 50 ventanas). Por eso «no retomado»
-  es conservador.
+- **Antecedente:** 7 de 9 países tienen datos de antes de 9.° (ENG, AU, JP, EE, KR, TW y ON). Faltan SG (Lower
+  Secondary, que se descartó en el catálogo) y HK (S1–S3).
 - **El vocabulario nació de la malla salvadoreña.** Lo que El Salvador no enseña puede no existir en él. Ningún
   concepto propuesto llega a 5 núcleos; el más cercano es «serie de reactividad de los metales» (EE, ENG y SG).
   Ver la tabla de propuestos en cada informe.
@@ -204,6 +224,8 @@ sigue teniendo falsos positivos (2 de 4 en la muestra), así que en los informes
   conteos. El núcleo de AU (Year 10, 19 objetivos) es grueso y no tiene asignatura, así que no entra en
   profundidad ni en prácticas.
 - **Grados:** HK no indica el año dentro de S4–S6 (punto medio 10). KR 고3 todavía cursa el currículo de 2015.
-- **Excel:** la columna «Lectura» usa una regla simplificada (mediana en lugar de consenso) que coincide con la
-  clase oficial en 494 de 512 conceptos. La clase oficial está en la columna de al lado. No se pudo automatizar
-  el recálculo en Numbers. Las funciones usadas (IF, COUNT, MEDIAN, AND, OR, COUNTIF y SUM) son compatibles.
+- **Excel:** la columna «Lectura» usa una regla simplificada (mediana en lugar de consenso), y la clase oficial
+  está en la columna de al lado. No se recalculó en Numbers. Las funciones usadas (IF, COUNT, MEDIAN, AND, OR,
+  COUNTIF y SUM) son compatibles.
+- **Revisión experta:** las 5 correcciones de `revisiones.json` las hizo esta sesión leyendo las fuentes. Están
+  marcadas como pendientes de confirmar con el MINED.

@@ -7,7 +7,10 @@ Clasificación de cada concepto de la asignatura. Consenso: ≥ 50 % de los paí
   (hueco de profundización en Bachillerato).
 - tardio: El Salvador lo introduce en 9.°–11.°, ≥ 2 grados después de g.
 - solo_especializacion: El Salvador lo introduce en 9.°–11.° (obligatorio), pero en los países solo aparece en
-  cursos electivos (a lo sumo 1 país lo tiene en el núcleo y al menos 3 en especialización).
+  cursos electivos: a lo sumo 1 país lo enseña de forma sólida en su núcleo (como principal en un objetivo o como
+  secundario en dos, contando la secundaria baja) y al menos 3 lo tienen en especialización. Una etiqueta secundaria
+  suelta no basta (revisión manual: 3 de 5 casos así eran falsos); exigir que sea principal tampoco, porque el
+  etiquetado suele elegir un concepto vecino más general (p. ej. inmunidad adaptativa en JP 生物基礎).
 - adelantado: El Salvador lo introduce en 9.°–11.°, ≥ 1,5 grados antes que la mediana del núcleo de los países.
 - alineado: El Salvador lo introduce en 9.°–11.° y el momento coincide (± 1,5 grados).
 - retomado: El Salvador lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.°.
@@ -53,7 +56,7 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
 
 
 def clase_de(sv_primer: int | None, sv_9_11: int | None, g_cons: int | None, n_nucleo_9_11: int,
-             mediana_nucleo: float | None, n_nucleo: int, n_esp: int) -> str:
+             mediana_nucleo: float | None, n_nucleo_foco: int, n_esp: int) -> str:
     """Regla del docstring del módulo. `g_cons`: primer grado en que el núcleo alcanza el consenso;
     `sv_9_11`: primer grado de la V2 dentro de 9.°–11.° (None si no está en esos grados)."""
     if sv_primer is None:
@@ -64,7 +67,7 @@ def clase_de(sv_primer: int | None, sv_9_11: int | None, g_cons: int | None, n_n
         return "retomado"
     if g_cons is not None and sv_primer >= g_cons + 2:
         return "tardio"
-    if n_nucleo <= 1 and n_esp >= MIN_ESPECIALIZACION:
+    if n_nucleo_foco <= 1 and n_esp >= MIN_ESPECIALIZACION:
         return "solo_especializacion"
     if mediana_nucleo is not None and sv_primer <= mediana_nucleo - TOLERANCIA:
         return "adelantado"
@@ -88,9 +91,10 @@ def clasificar() -> dict:
                        and len(c["nucleo_hasta_grado"][str(g)]) >= MIN_PAISES), None)
         med = c["mediana_primer_grado_nucleo"]
         n_esp = sum(f["en_especializacion"] for f in c["paises"].values())
-        clase = clase_de(sv_primer, sv_9_11, g_cons, c["n_nucleo_9_11"], med, c["n_nucleo"], n_esp)
+        clase = clase_de(sv_primer, sv_9_11, g_cons, c["n_nucleo_9_11"], med, c["n_nucleo_foco"], n_esp)
         filas.append({**{k: c[k] for k in ("concepto", "nombre", "asignatura", "n_paises", "n_nucleo",
-                                           "n_solo_especializacion", "n_nucleo_9_11", "mediana_primer_grado_nucleo")},
+                                           "n_solo_especializacion", "n_nucleo_9_11", "n_nucleo_foco",
+                                           "mediana_primer_grado_nucleo")},
                       "n_especializacion": n_esp, "grado_consenso": g_cons,
                       "proporcion_nucleo": c["proporcion_nucleo_hasta_grado"],
                       "sv_primer_grado": sv_primer, "sv_9_11": sv_9_11,
@@ -102,13 +106,26 @@ def clasificar() -> dict:
             continue
         asig = {"ciencias_tierra_espacio": "tierra_espacio"}.get(voc[c]["asignatura"], voc[c]["asignatura"])
         filas.append({"concepto": c, "nombre": voc[c]["nombre"], "asignatura": asig, "n_paises": 0, "n_nucleo": 0,
-                      "n_solo_especializacion": 0, "n_nucleo_9_11": 0, "mediana_primer_grado_nucleo": None,
+                      "n_solo_especializacion": 0, "n_nucleo_9_11": 0, "n_nucleo_foco": 0,
+                      "mediana_primer_grado_nucleo": None,
                       "n_especializacion": 0, "sv_9_11": min(g for g, _ in gs if g >= GRADOS[0]),
                       "grado_consenso": None, "proporcion_nucleo": {}, "sv_primer_grado": gs[0][0],
                       "sv_temas": [t for _, t in gs][:8], "paises": {}, "clase": "sin_referente"})
+    revisiones = revisiones_expertas()
+    for f in filas:
+        if rv := revisiones.get(f["concepto"]):
+            f["clase_ia"], f["clase"] = f["clase"], rv["clase"]
+            f["revision"] = {"justificacion": rv["justificacion"], "revisado_por": rv["revisado_por"]}
     secuencia = _secuencia(sv, voc)
     return {"filas": sorted(filas, key=lambda f: (f["asignatura"], f["clase"], f["concepto"])),
             "secuencia": secuencia, "temas": temas, "paises_con_nucleo": cons["paises_con_nucleo_por_grado"]}
+
+
+def revisiones_expertas() -> dict[str, dict]:
+    """Clases decididas en revisión experta (data/interim/internacional/revisiones.json). Ganan sobre la regla
+    automática, como las decisiones humanas del grafo principal; cada una trae su evidencia y quién la revisó."""
+    p = ruta("data/interim/internacional/revisiones.json")
+    return {r["concepto"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
 def _secuencia(sv: dict, voc: dict) -> list[dict]:

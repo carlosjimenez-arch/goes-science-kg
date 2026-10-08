@@ -71,11 +71,16 @@ ENUNCIADOS:
 def _normalizar(i: str, voc: dict, prac: dict) -> str:
     """Corrige solo el separador cuando el modelo escribe «CON:fisica:x» en lugar de «CON:fisica/x». El id corregido
     tiene que existir en el catálogo; si no existe, queda como estaba y se descarta como inválido."""
-    if i in voc or i in prac or i.count(":") < 2:
+    if i in voc or i in prac or ":" not in i:
         return i
     prefijo, resto = i.split(":", 1)
-    candidato = f"{prefijo}:{resto.replace(':', '/', 1)}"
-    return candidato if candidato in voc or candidato in prac else i
+    if ":" in resto:
+        candidato = f"{prefijo}:{resto.replace(':', '/', 1)}"
+        return candidato if candidato in voc or candidato in prac else i
+    if "/" not in resto:   # «CON:tabla-periodica»: le falta la asignatura; vale solo si el nombre es único
+        candidatos = [c for c in voc if c.startswith(f"{prefijo}:") and c.endswith(f"/{resto}")]
+        return candidatos[0] if len(candidatos) == 1 else i
+    return i
 
 
 def etiquetar(items: list[dict], asignatura: str, nombre: str, hilos: int = 6) -> dict:

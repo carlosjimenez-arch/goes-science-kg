@@ -10,7 +10,7 @@ import unicodedata
 from collections import defaultdict
 
 from goes_science_kg.config import cargar, ruta
-from goes_science_kg.internacional import contraste, profundidad
+from goes_science_kg.internacional import contraste, profundidad, visor
 from goes_science_kg.internacional.consenso import _cargar_etiquetas, objetivos, paises
 
 DIR = "internacional"
@@ -71,6 +71,8 @@ def _tabla(filas: list[dict], r: dict, objs: dict, max_filas: int = 40) -> list[
             if d["objetivos"] and d["objetivos"][0] in objs:
                 ev.append(_cita(objs[d["objetivos"][0]]))
                 citados += 1
+        if f.get("revision"):
+            ev.append(f"Revisión experta: {f['revision']['justificacion']}")
         lineas.append(f"| {f['nombre']} | {_grados_sv(f, r)} | {cons} | {contraste.evidencia_paises(f)} "
                       f"| {'<br>'.join(ev)} |")
     if len(filas) > max_filas:
@@ -159,6 +161,11 @@ def escribir() -> dict:
         md += ["", "Países con núcleo común por grado SV (denominador del consenso): "
                + "; ".join(f"{g}.°: {', '.join(r['paises_con_nucleo'][str(g)])}" for g in contraste.GRADOS), "",
                _sensibilidad(filas), ""]
+        rev = [f for f in filas if f.get("revision")]
+        if rev:
+            md += [f"Revisión experta: {len(rev)} conceptos cambiaron de clase frente a la regla automática "
+                   "(`data/interim/internacional/revisiones.json`): "
+                   + "; ".join(f"{f['nombre']} ({f['clase_ia']} → {f['clase']})" for f in rev) + ".", ""]
         for clave, titulo, desc in CLASES:
             if clave in SIN_TABLA:
                 continue
@@ -189,6 +196,8 @@ def escribir() -> dict:
         (base / f"{asig}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
         _excel(asig, filas, base)
     revision = _revision(objs, base)
+    visor.escribir(r, CLASES + [("no_aplica", "Sin exigencia", "Ni la V2 ni el núcleo internacional lo exigen.")],
+                   NOMBRE, base)
     (base / "contraste.json").write_text(json.dumps(
         {"resumen": res, "filas": r["filas"], "secuencia": r["secuencia"], "profundidad": prof,
          "propuestos": propuestos}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

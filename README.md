@@ -41,7 +41,7 @@ Las 11 propuestas, simuladas sobre el grafo, bajan los errores de secuencia de c
 dependen de aristas de prerrequisito discutibles y quedan como decisiones abiertas para el MINED).
 
 **Contraste internacional de 9.°–11.°** (malla V2): [`internacional/`](internacional/README.md). Hay grafos de
-9 países de alto desempeño (SG, JP, KR, ENG, AU, HK, TW, EE y ON; 8.602 objetivos extraídos y validados con Vertex
+9 países de alto desempeño (SG, JP, KR, ENG, AU, HK, TW, EE y ON; 9.040 objetivos extraídos y validados con Vertex
 AI), un consenso por concepto y un informe por asignatura con los hallazgos verificados contra las fuentes.
 Se construye con `uv run gskg internacional extraer | etiquetar | construir`.
 

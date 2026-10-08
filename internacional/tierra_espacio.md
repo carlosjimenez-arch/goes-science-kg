@@ -28,8 +28,8 @@ La V2 solo lo ve antes de 9.°; al menos 5 países lo profundizan en su núcleo 
 
 | Concepto | Grados SV (V2) | Consenso del núcleo | Países (grado de 1.ª aparición; esp. = solo electiva) | Evidencia |
 |---|---|---|---|---|
-| Efecto invernadero | 7.°–8.° | 9.° (75% de los países con núcleo); 8 con núcleo en 9.°–11.° | AU 9, EE 10.5, ENG 8.5, HK esp., JP 10, KR 9, ON 9, SG 9.5, TW 9.5 | SV: G07-CIE-U6-6.13 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15)<br>AU · Science Year 10 (v9) [núcleo] (au_710_v9, AC9S10U04): «Usar modelos del flujo de energía entre geosfera, biosfera, hidrosfera y atmósfera para explicar patrones del cambio climático global.»<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Conoce los factores que causan el cambio climático.» |
-| Capas de la atmósfera y variación con la altitud | 3.°–7.° | 10.° (62% de los países con núcleo); 5 con núcleo en 9.°–11.° | AU esp., EE 10.5, JP 10, KR 9, ON 9, TW 9.5 | SV: G03-CIE-U2-2.15 (Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 17)<br>AU · Senior Secondary Earth and Environmental Science [esp.] (au_ss_tye, p. 2): «Describir la estructura en capas de la atmósfera moderna (troposfera, mesosfera, estratosfera y termosfera), la cual se caracteriza por cambios de temperatura.»<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Explica el balance de radiación de la Tierra y lo relaciona con la composición y estructura atmosférica.» |
+| Efecto invernadero | 7.°–8.° | 9.° (75% de los países con núcleo); 8 con núcleo en 9.°–11.° | AU 9, EE 10.5, ENG 8.5, HK esp., JP 10, KR 9, ON 9, SG 9.5, TW 7 | SV: G07-CIE-U6-6.13 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15)<br>AU · Science Year 10 (v9) [núcleo] (au_710_v9, AC9S10U04): «Usar modelos del flujo de energía entre geosfera, biosfera, hidrosfera y atmósfera para explicar patrones del cambio climático global.»<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Conoce los factores que causan el cambio climático.» |
+| Capas de la atmósfera y variación con la altitud | 3.°–7.° | 10.° (62% de los países con núcleo); 5 con núcleo en 9.°–11.° | AU esp., EE 10.5, JP 10, KR 7, ON 9, TW 7 | SV: G03-CIE-U2-2.15 (Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 17)<br>AU · Senior Secondary Earth and Environmental Science [esp.] (au_ss_tye, p. 2): «Describir la estructura en capas de la atmósfera moderna (troposfera, mesosfera, estratosfera y termosfera), la cual se caracteriza por cambios de temperatura.»<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Explica el balance de radiación de la Tierra y lo relaciona con la composición y estructura atmosférica.» |
 
 ## Sin referente (2)
 
@@ -80,7 +80,9 @@ El vocabulario nació de la malla salvadoreña, así que un contenido que El Sal
 |---|---|---|
 | Geología regional | EE, ENG, JP, TW | EE, TW |
 | Naturaleza de la ciencia | AU, EE, ENG, KR | EE |
+| Corrimiento al rojo | EE, ENG, KR | KR |
 | Mapas meteorológicos | EE, KR, TW | EE |
+| Marejada ciclónica | JP, KR, TW | TW |
 | Estratigrafía | AU, ENG, JP, KR, ON, TW | — |
 | Datación radiométrica | AU, ENG, JP, ON | — |
 | Paleomagnetismo | AU, ENG, JP, ON | — |
@@ -91,6 +93,4 @@ El vocabulario nació de la malla salvadoreña, así que un contenido que El Sal
 | Leyes de Kepler | JP, KR, ON | — |
 | Medición de distancias astronómicas | KR, ON, TW | — |
 | Metamorfismo | JP, KR, TW | — |
-| Paleoclimatología | AU, ENG, ON | — |
-| Tomografía sísmica | ENG, JP, KR | — |
 

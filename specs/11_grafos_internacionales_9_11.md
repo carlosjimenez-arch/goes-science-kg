@@ -94,3 +94,8 @@ La primera corrida produjo artefactos que la revisión manual detectó. El detal
   prácticas por cobertura del catálogo.
 - **Secuencia:** los errores automáticos son candidatos (2 de 4 falsos en la muestra) y solo se afirman los
   verificados.
+- **Antecedente:** se agregó la secundaria baja de KR, TW y ON (`antecedente: true`). Para que un núcleo cuente
+  como que «enseña» un concepto en la excepción de especialización, la evidencia tiene que ser sólida: principal en
+  un objetivo o secundaria en dos.
+- **Revisión experta:** `data/interim/internacional/revisiones.json` gana sobre la regla automática. Cada entrada
+  trae su evidencia y `revisado_por`.

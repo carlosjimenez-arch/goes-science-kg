@@ -20,7 +20,9 @@ def test_config_internacional_valida():
         assert d["nivel"] in ("nucleo", "especializacion"), d["id"]
         assert d["asignatura"] in extraer.CODIGO_ASIG, d["id"]
         g0, g1 = d["grado_sv"]
-        assert 7 <= g0 <= g1 <= 11, d["id"]
+        minimo = 6 if d.get("antecedente") else 7   # antecedente: secundaria baja (KR 중1 ≈ SV 6.°)
+        assert minimo <= g0 <= g1 <= 11, d["id"]
+        assert not d.get("antecedente") or g1 <= 8, d["id"]
         assert all(7 <= g <= 11 for g in (d.get("grados_pais") or {}).values()), d["id"]
 
 
@@ -149,3 +151,10 @@ def test_generar_json_no_altera_el_esquema(monkeypatch, tmp_path):
     assert esquema == original
     clave = vertex._clave("m", "", "p", original, [])
     assert _json.loads((tmp_path / clave[:2] / f"{clave}.json").read_text())["respuesta"] == {"ok": True}
+
+
+def test_normalizar_ids_solo_si_existen():
+    voc = {"CON:fisica/primera-ley-newton": {}, "CON:quimica/tabla-periodica": {}}
+    assert etiquetar._normalizar("CON:fisica:primera-ley-newton", voc, {}) == "CON:fisica/primera-ley-newton"
+    assert etiquetar._normalizar("CON:tabla-periodica", voc, {}) == "CON:quimica/tabla-periodica"
+    assert etiquetar._normalizar("CON:inventado", voc, {}) == "CON:inventado"   # no se inventan códigos

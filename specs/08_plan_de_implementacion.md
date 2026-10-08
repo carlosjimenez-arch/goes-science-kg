@@ -66,9 +66,9 @@ etiquetados. Pendiente: revisión humana de las etiquetas de confianza baja y de
 - DdT: presupuesto cuadrado, DAG respetado, cada cambio con evidencia e informe por asignatura.
 
 ## Fase 5-bis · Grafos internacionales de 9.°–11.° y contraste con la malla V2 ✅ (2026-10-08)
-Spec 11. 9 países, 60 documentos y 8.602 objetivos (Vertex AI: un modelo extrae y otro valida), grafo y consenso en
+Spec 11. 9 países, 62 documentos y 9.040 objetivos (con la secundaria baja de KR, TW y ON) (Vertex AI: un modelo extrae y otro valida), grafo y consenso en
 `data/grafo/internacional/`, informes, Excel y CSV de revisión en `internacional/`, y hallazgos verificados en
-`internacional/README.md`. Falta el visor HTML y extraer la secundaria baja de KR, TW y ON (antecedente).
+`internacional/README.md`, y visor en `internacional/visor.html`. Falta la revisión del MINED.
 
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.

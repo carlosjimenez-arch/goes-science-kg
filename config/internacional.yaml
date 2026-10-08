@@ -223,6 +223,18 @@ documentos:
      titulo: "The Ontario Curriculum, Science Grades 11 and 12 (2008)", curso: "Physics, Grade 12 (SPH4U)", asignatura: fisica,
      nivel: especializacion, paginas: [196, 209], grado_sv: [11, 11]}
 
+  # ── Antecedente (secundaria baja, SV ≤ 8): solo fecha la primera aparición de un concepto; no entra en el
+  #    núcleo de 9.°–11.°. Se etiqueta en grupos aparte (pais_<p>_<asig>_antecedente).
+  - {id: kr_jung, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "중학교 과학 1~3학년군 (Ciencias, secundaria baja)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [46, 67], grado_sv: [6, 8], antecedente: true}
+  - {id: tw_jh, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "國民中學 第四學習階段 (grados 7–9)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [25, 35], grado_sv: [6, 8], antecedente: true}
+  - {id: on_snc1w, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grade9_SNC1W_2022.pdf,
+     titulo: "The Ontario Curriculum, Science Grade 9 (SNC1W, 2022)", curso: "Science, Grade 9, De-streamed (SNC1W)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [46, 55], grado_sv: [8, 8], antecedente: true}
+
 # Objetivos ya extraídos (sesiones anteriores) que se reutilizan como núcleo.
 importar:
   - {pais: AU, archivo: data/interim/paises/australia.json, grados_sv: [9], nivel: nucleo, curso: "Science Year 10 (v9)",

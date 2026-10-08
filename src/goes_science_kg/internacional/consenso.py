@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import json
 import statistics
-from collections import defaultdict
+from collections import Counter, defaultdict
 from functools import cache
 
 from goes_science_kg import conceptos
@@ -48,6 +48,8 @@ def objetivos() -> tuple[dict, ...]:
 def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
     """Etiqueta los objetivos de cada país, agrupados por asignatura (los importados sin asignatura van con todo el
     vocabulario)."""
+    # Los documentos de antecedente (secundaria baja) van en grupos aparte: así no cambian los lotes ya etiquetados.
+    antecedente = {d["id"] for d in cargar("internacional")["documentos"] if d.get("antecedente")}
     resumen = []
     for p in paises():
         if solo and p not in solo:
@@ -55,9 +57,11 @@ def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
         grupos: dict[str, list[dict]] = defaultdict(list)
         for o in objetivos():
             if o["pais"] == p:
-                grupos[o["asignatura"] or "ciencias"].append({"id": o["id"], "texto": o["texto"]})
-        for asig, items in sorted(grupos.items()):
-            resumen.append(etiquetar.etiquetar(items, asig, f"pais_{p}_{asig}"))
+                sufijo = "_antecedente" if o["documento"] in antecedente else ""
+                grupos[(o["asignatura"] or "ciencias") + sufijo].append({"id": o["id"], "texto": o["texto"]})
+        for grupo, items in sorted(grupos.items()):
+            asig = grupo.removesuffix("_antecedente")
+            resumen.append(etiquetar.etiquetar(items, asig, f"pais_{p}_{grupo}"))
     return resumen
 
 
@@ -169,9 +173,15 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
     con_nucleo = {g: sorted({o["pais"] for o in objs if o["nivel"] == "nucleo" and o["grado_sv_min"] <= g})
                   for g in GRADOS}
     por: dict[str, dict[str, dict]] = defaultdict(lambda: defaultdict(lambda: {"nucleo": [], "especializacion": []}))
+    # Evidencia del núcleo por país: 2 puntos por objetivo con el concepto como principal, 1 como secundario.
+    # Con ≥ 2 puntos el núcleo «lo enseña» de forma sólida (un principal, o al menos dos secundarios).
+    foco: dict[str, Counter] = defaultdict(Counter)
     for o in objs:
+        principales = set(con_equivalentes(etq[o["id"]]["principales"]))
         for c in con_equivalentes(ensenados(etq[o["id"]])):
             por[c][o["pais"]][o["nivel"]].append((_grado(o), o["id"], o["grado_sv_max"]))
+            if o["nivel"] == "nucleo":
+                foco[c][o["pais"]] += 2 if c in principales else 1
     previo: dict[str, dict[str, float]] = defaultdict(dict)
     for a in _antecedente():
         g = previo[a["concepto"]].get(a["pais"])
@@ -210,6 +220,7 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             "paises": filas, "n_paises": len(filas),
             "n_nucleo": len(primeros_nucleo),
             "n_nucleo_9_11": sum(f["nucleo_9_11"] for f in filas.values()),
+            "n_nucleo_foco": sum(v >= 2 for v in foco[c].values()),
             "n_solo_especializacion": sum(f["primer_grado_nucleo"] is None for f in filas.values()),
             "mediana_primer_grado_nucleo": statistics.median(primeros_nucleo) if primeros_nucleo else None,
             "mediana_primer_grado": statistics.median(primeros),

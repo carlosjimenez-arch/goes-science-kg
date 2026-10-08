@@ -101,9 +101,8 @@ uv run pytest -q && uv run ruff check src tests
   - Solo ENG, AU y JP tienen antecedente de grados ≤ 8.
 
 ## Pendientes
-1. **Visor HTML** de `internacional/` (entregable de la spec 11): no está hecho.
-2. **Antecedente de KR, TW y ON:** su secundaria baja está en los mismos PDF (unas 50 ventanas). Con ella, «no
-   retomado» y el momento serían menos conservadores.
+1. ✅ Visor HTML (`internacional/visor.html`) y antecedente de KR, TW y ON (`antecedente: true` en el catálogo).
+2. Confirmar con el MINED las 5 correcciones de `data/interim/internacional/revisiones.json`.
 3. **Recalcular los Excel en Numbers a mano.** La automatización con AppleScript se quedó esperando un diálogo.
    Las funciones son compatibles.
 4. Preguntar al usuario qué hacer con la carpeta `Mallas sugeridas/` de la raíz (no se versiona).
