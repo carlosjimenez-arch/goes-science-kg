@@ -82,7 +82,36 @@ def vocabulario() -> dict[str, dict]:
     voc = {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
     for c in conceptos_del_triaje():
         voc.setdefault(c["id"], c)
+    for d in divisiones():
+        if d["concepto"] in voc:
+            voc[d["concepto"]] = {**voc[d["concepto"]], **d["redefinir"]}
+            voc.setdefault(d["nuevo"]["id"], {"sinonimos": [], "objetivos_marco": [], "origen": "division",
+                                              "version": VERSION_DIVISION, **d["nuevo"]})
     return voc
+
+
+# -- Divisiones de conceptos (capa de decisión, como el triaje) ------------------------------------
+# data/interim/conceptos/divisiones.json parte un concepto que mezclaba dos ideas: redefine el original, crea el nuevo,
+# reasigna cada elemento etiquetado con el original (asignaciones explícitas por conjunto) y ajusta sus prerrequisitos.
+# Se aplica al cargar, así que sobrevive a volver a correr el etiquetado.
+VERSION_DIVISION = "division-v1"
+
+
+@cache
+def divisiones() -> tuple[dict, ...]:
+    """Decisiones de división de conceptos. Vacío si no existe; con caché."""
+    p = ruta(f"{DIR}/divisiones.json")
+    return tuple(json.loads(p.read_text(encoding="utf-8"))["divisiones"]) if p.exists() else ()
+
+
+def aplicar_divisiones(conjunto: str, item: str, ids: list[str]) -> list[str]:
+    """Reemplaza en `ids` cada concepto dividido por los que la decisión asigna a `item` dentro de `conjunto`
+    (malla_v1, objetivos_pais, internacional o malla_v2), en la misma posición. Sin asignación, no cambia nada."""
+    for d in divisiones():
+        if d["concepto"] in ids and (nuevos := d["asignaciones"].get(conjunto, {}).get(item)):
+            i = ids.index(d["concepto"])
+            ids = list(dict.fromkeys([*ids[:i], *nuevos, *ids[i + 1:]]))
+    return ids
 
 
 # -- Triaje de conceptos propuestos (capa sobre el etiquetado, como las revisiones) ----------------
@@ -242,6 +271,7 @@ def etiquetado() -> dict[str, dict]:
     filas = {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
     mapa, voc = mapa_triaje(), vocabulario()
     for f in filas.values():
+        f["conceptos"] = aplicar_divisiones("malla_v1", f["id"], f["conceptos"])
         extra = [c for n in f.get("nuevos", []) if (c := mapa.get(n)) in voc and c not in f["conceptos"]]
         if extra:
             f["conceptos"] = f["conceptos"] + sorted(set(extra), key=extra.index)
@@ -327,6 +357,8 @@ def etiquetado_paises() -> dict[str, dict]:
     """Etiquetado de objetivos de países, más los conceptos del triaje (etiquetado_paises_triaje.json)."""
     p = ruta(f"{DIR}/etiquetado_paises.json")
     filas = {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    for f in filas.values():
+        f["conceptos"] = aplicar_divisiones("objetivos_pais", f["id"], f["conceptos"])
     pt, voc = ruta(f"{DIR}/etiquetado_paises_triaje.json"), vocabulario()
     for r in json.loads(pt.read_text(encoding="utf-8")) if pt.exists() else []:
         f = filas.get(r["id"])

@@ -133,10 +133,10 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
 | Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
 | Tejidos animales | 8 | AU 7.0, CO 5.0, UY 4.0 |
-| Calidad del aire y contaminación atmosférica | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |
+| Calidad del aire y contaminación atmosférica | 7 | CO 4.5, ENG 8.5, UY 5.0 |
 | Espejos planos e imágenes | 10 | ENG 6.0, UY 4.0 |
 | Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |
-| Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |
+| Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 6.0 |
 | Intercambio de gases en plantas | 8 | ENG 6.0, JP 7.0, SG 5.0, UY 5.0 |
 | Refracción de la luz | 10 | AU 4.0, ENG 6.0, JP 6.0, UY 5.0 |
 | Indicadores ácido-base | 9 | ENG 6.0, JP 5.0 |

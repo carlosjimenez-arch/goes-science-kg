@@ -1,0 +1,336 @@
+{
+ "version": "division-v1",
+ "nota": "Divisiones de conceptos del vocabulario. Se aplican al cargar (vocabulario, etiquetados y prerrequisitos), así que sobreviven a volver a correr el etiquetado. Las asignaciones dicen, para cada elemento etiquetado con el concepto original, qué concepto(s) le corresponden; las reglas que las generaron están en «criterio».",
+ "divisiones": [
+  {
+   "concepto": "CON:quimica/configuracion-electronica",
+   "redefinir": {
+    "nombre": "Configuración electrónica por orbitales",
+    "nivel": "bachillerato",
+    "definicion": "Distribución de los electrones en subniveles y orbitales (s, p, d, f) según el principio de Aufbau, la exclusión de Pauli y la regla de Hund; explica los bloques de la tabla periódica."
+   },
+   "nuevo": {
+    "id": "CON:quimica/distribucion-electronica-por-niveles",
+    "nombre": "Distribución electrónica por niveles (modelo de capas)",
+    "asignatura": "quimica",
+    "nivel": "secundaria",
+    "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+    "sinonimos": [
+     "estructura electrónica",
+     "distribución de electrones por capas",
+     "disposición de los electrones",
+     "diagrama de Bohr"
+    ]
+   },
+   "justificacion": "El concepto mezclaba dos modelos. La regla del octeto, el enlace y la tabla periódica de secundaria se enseñan con el modelo de capas; los orbitales son de Bachillerato. Juntos, el enlace químico dependía de la mecánica cuántica (cadena de 30 prerrequisitos).",
+   "criterio": "Texto: orbitales, subniveles, s/p/d/f, Aufbau, Hund, Pauli o cuánticos → orbitales; capas, niveles de energía, capa de valencia, Bohr o disposición de electrones → capas; ambos → los dos. Sin indicio: el modelo del curso (internacional) o el grado (≤ 9.° capas) en la malla; los temas de 10.° sobre propiedades de grupos (alcalinos, gases nobles) van a capas.",
+   "prerrequisitos": {
+    "quitar": [
+     [
+      "CON:quimica/configuracion-electronica",
+      "CON:quimica/electrones-de-valencia-y-regla-del-octeto"
+     ],
+     [
+      "CON:quimica/configuracion-electronica",
+      "CON:quimica/propiedades-periodicas"
+     ]
+    ],
+    "agregar": [
+     {
+      "origen": "CON:quimica/modelos-atomicos-historicos",
+      "destino": "CON:quimica/distribucion-electronica-por-niveles",
+      "justificacion": "Las capas electrónicas se introducen con el modelo de Bohr."
+     },
+     {
+      "origen": "CON:quimica/distribucion-electronica-por-niveles",
+      "destino": "CON:quimica/electrones-de-valencia-y-regla-del-octeto",
+      "justificacion": "Los electrones de valencia son los de la capa externa."
+     },
+     {
+      "origen": "CON:quimica/distribucion-electronica-por-niveles",
+      "destino": "CON:quimica/propiedades-periodicas",
+      "justificacion": "Las tendencias periódicas se explican con capas y carga nuclear."
+     },
+     {
+      "origen": "CON:quimica/distribucion-electronica-por-niveles",
+      "destino": "CON:quimica/configuracion-electronica",
+      "justificacion": "El modelo de capas precede al de subniveles y orbitales."
+     }
+    ]
+   },
+   "asignaciones": {
+    "internacional": {
+     "AU-IMP-AU-AC9S10U06": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "AU-QUI-au_ss_qui-p001-01": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "AU-QUI-au_ss_qui-p001-02": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "AU-QUI-au_ss_qui-p001-04": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "EE-QUI-ee_basic-p026-11": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "EE-QUI-ee_gym-p018-10": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "EE-QUI-ee_gym_ele-p027-07": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "EE-QUI-ee_gym_ele-p035-01": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ENG-QUI-eng_alevel-p009-05": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ENG-QUI-eng_alevel-p010-14": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ENG-QUI-eng_alevel-p011-01": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ENG-QUI-eng_gcse_comb-p019-04": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-eng_gcse_comb-p019-06": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-eng_gcse_comb-p020-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-eng_gcse_triple-p020-03": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-eng_gcse_triple-p021-07": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-eng_gcse_triple-p021-08": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-eng_gcse_triple-p021-10": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-03": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-07": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-21": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-25": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-28": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p019-29": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "HK-QUI-hk_qui-p022-06": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "JP-QUI-jp_45-p115-08": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "JP-QUI-jp_45-p115-09": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "JP-QUI-jp_45-p116-06": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "JP-QUI-jp_55-p118-10": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "JP-QUI-jp_55-p119-18": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "KR-QUI-kr_tonghap-p085-04": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ON-QUI-on_sch3u-p092-08": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ON-QUI-on_sch3u-p097-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ON-QUI-on_sch4u-p112-06": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ON-QUI-on_sch4u-p113-01": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ON-QUI-on_sch4u-p113-05": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "ON-QUI-on_snc1w-p051-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_h1_qui-p011-03": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h1_qui-p011-09": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h1_qui-p011-11": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h1_qui-p011-12": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h1_qui-p014-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_h1_qui-p014-07": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p011-23": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p013-03": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p013-05": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p013-09": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p013-11": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p013-12": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p016-01": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_h2_qui-p016-02": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p016-07": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p034-07": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p034-12": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p034-13": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p034-15": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_h2_qui-p034-16": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "SG-QUI-sg_k324-p018-03": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k324-p018-07": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k324-p018-10": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k324-p018-12": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k326_k328-p028-01": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k326_k328-p032-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k326_k328-p032-05": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "SG-QUI-sg_k326_k328-p032-08": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "TW-QUI-tw_ele-p053-06": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "TW-QUI-tw_ele-p053-10": [
+      "CON:quimica/configuracion-electronica"
+     ]
+    },
+    "malla_v1": {
+     "G05-CIE-U3-3.11": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G10-QUI-U13-13.1": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G10-QUI-U13-13.8": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G10-QUI-U3-3.10": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "G10-QUI-U3-3.9": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "G10-QUI-U4-4.3": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "CON:quimica/configuracion-electronica"
+     ]
+    },
+    "malla_v2": {
+     "G05-CIE-U3-3.11": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G05-CIE-U4-4.3": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G05-CIE-U4-4.4": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G10-QUI-U13-13.1": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G10-QUI-U13-13.8": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "G10-QUI-U3-3.10": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "G10-QUI-U3-3.9": [
+      "CON:quimica/configuracion-electronica"
+     ],
+     "G10-QUI-U4-4.3": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "CON:quimica/configuracion-electronica"
+     ]
+    },
+    "objetivos_pais": {
+     "AU-AC9S10U06": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "ENG-QUI-KS4-04": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "UY-QUI-G9-02": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ]
+    }
+   },
+   "revisado_por": "sesión 2026-10-09 (decisión pedagógica delegada por el responsable del proyecto)",
+   "fecha": "2026-10-09"
+  }
+ ]
+}

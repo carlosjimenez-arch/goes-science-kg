@@ -46,7 +46,7 @@ cambiaría de clase.
    | Malla | Temas | Ligados a especialización |
    |---|---|---|
    | 9.° Ciencias | 108 | 15 (14 %); en la Unidad 3 (Equilibrio químico), 7 de 20 |
-   | 10.° Física / Química / Biología | 114 / 105 / 70 | 14 % / **30 %** / 26 % |
+   | 10.° Física / Química / Biología | 114 / 105 / 70 | 14 % / **32 %** / 26 % |
    | 11.° Física / Química / Biología | 146 / 97 / 92 | 17 % / **27 %** / 12 % |
 
    Química es la asignatura más cargada: Gibbs, entropía, orbitales moleculares, hibridación, ley de velocidad
@@ -83,12 +83,15 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
   conditions… on equilibrium» (p. 24). Lo que se adelanta es la parte cuantitativa.
 - **Química de 10.°–11.° con nivel universitario inicial:** Gibbs y espontaneidad, entropía, OM y TEV, hibridación,
   resonancia y carga formal, ley de velocidad y Arrhenius, mecanismos de reacción, Kps y estereoquímica. Son
-  más potenciales de electrodo, ley de Hess y rutas de síntesis. Son 21 conceptos que a lo sumo un país enseña de
+  más potenciales de electrodo, ley de Hess, rutas de síntesis y la configuración electrónica **por orbitales**
+  (10.°; el modelo de capas sí es núcleo y queda retomado). Son 22 conceptos que a lo sumo un país enseña de
   forma sólida en su núcleo (por lo general SG H1) y que ≥ 3 países tienen en electivas. Las leyes de los gases
   **no** están en esa lista: KR las enseña en 중학교 ([9과06-02/03], p. 51).
 - **Secuencia:** la V2 reconoce isómeros (10.°, G10-QUI-U2-2.6, fila 22) antes de tener hidrocarburos (11.°).
   Además, usa estados de oxidación y poder oxidante en 10.° (G10-QUI-U13-13.3/13.7) antes de la unidad formal
   de redox de 11.° (G11-QUI-U11-11.2, fila 90).
+- **Coordinación Biología–Química:** Biología enseña «Proteínas: estructura y función» en 10.° (G10-BIO-U1) y
+  Química los aminoácidos y la estructura de las proteínas en 11.°: la base química llega un año después.
 - **Duplicación entre asignaturas:** las leyes de los gases están dos veces en 10.°, en Química (U6,
   Boyle-Charles, fila 56) y en Física (U14, pV = NkT, fila 98).
 
@@ -135,7 +138,7 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
 ## Recomendaciones (para decidir con el MINED; ninguna quita temas)
 1. **Química de 9.°:** dejar el equilibrio **cualitativo** (reversibilidad y Le Châtelier) y **reubicar** K, Ka y
    amortiguadoras en 11.°, o en una profundización optativa si se crea.
-2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 21 + 12 conceptos de especialización, para
+2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 22 + 12 conceptos de especialización, para
    que el núcleo obligatorio se parezca al de JP, TW y EE. Otra opción es tratarlos de forma cualitativa, como
    hace TW con la física moderna.
 3. **Física nuclear** (fisión, fusión y radiación ionizante): adelantarla a 9.° o 10.°.

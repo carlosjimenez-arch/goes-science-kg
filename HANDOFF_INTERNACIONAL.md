@@ -107,11 +107,13 @@ uv run pytest -q && uv run ruff check src tests
    Las funciones son compatibles.
 4. Preguntar al usuario qué hacer con la carpeta `Mallas sugeridas/` de la raíz (no se versiona).
 5. Triaje de los conceptos propuestos (tabla en cada informe), sobre todo «serie de reactividad de los metales».
-6. **Calidad de los grafos (auditoría del 2026-10-09, `tests/test_calidad_grafos.py`).** Hay tres decisiones del equipo
-   pendientes:
-   - 3 prerrequisitos entre conceptos declarados equivalentes (`CONTRADICCIONES_PENDIENTES` en la prueba): hay que
-     quitar la equivalencia o el prerrequisito. La recomendación es quitar la equivalencia.
-   - Dividir «Configuración electrónica» en distribución por niveles (Bohr) y configuración por orbitales. Hoy, el
-     enlace químico depende de la mecánica cuántica a través de una cadena de 30 prerrequisitos.
-   - Los 83 documentos aislados del grafo principal (69 internacionales y 14 registrados sin uso): sacarlos o enlazarlos.
-   Hallazgo curricular: la V1 y la V2 tienen números cuánticos y configuración electrónica en 5.° (G05-CIE-U3-3.10 y 3.11).
+6. ✅ **Calidad de los grafos (auditoría y decisiones del 2026-10-09; `tests/test_calidad_grafos.py`).**
+   - Contradicciones de equivalencia resueltas con criterio pedagógico: absorción de radiación ≡ efecto invernadero
+     (se rechaza el prerrequisito, `prerrequisitos/rechazados.json`); aminoácidos → proteínas y composición del aire →
+     calidad del aire dejan de ser equivalencias y quedan como prerrequisitos (`conceptos/equivalencias_retiradas.json`).
+   - «Configuración electrónica» dividida (`conceptos/divisiones.json`): por orbitales (Bachillerato) y por niveles o
+     modelo de capas (secundaria), con 85 asignaciones explícitas. El enlace químico ya no depende de la mecánica cuántica.
+   - Los documentos que ningún nodo cita salen del grafo principal (124 → 41); el grafo internacional los enlaza.
+   - Ojo: el vocabulario cambió, así que volver a correr `gskg internacional etiquetar` o `conceptos` invalida la caché
+     de Vertex (todas las llamadas de etiquetado se vuelven a pagar). `make internacional` no llama a Vertex.
+   - Hallazgo curricular: la V1 y la V2 tienen números cuánticos y configuración electrónica en 5.° (G05-CIE-U3-3.10 y 3.11).

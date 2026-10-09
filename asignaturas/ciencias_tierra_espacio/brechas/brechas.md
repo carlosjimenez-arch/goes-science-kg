@@ -29,7 +29,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Ciclo del agua | 7.° | 3 | 3 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 | +4 |
 | Minerales y sus propiedades | 8.° | 4 | 4 | AU 2, ENG 6.0 | +4 |
 | Ciclo del carbono en los sistemas terrestres | 10.° | 6.25 | 6 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 | +3.75 |
-| Calidad del aire y contaminación atmosférica | 7.° | 5 | 5 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 | +2 |
+| Calidad del aire y contaminación atmosférica | 7.° | 5 | 8.5 | CO 4.5, ENG 8.5, UY 5.0 | +2 |
 | Suelo: formación, componentes y tipos | 5.° | 3 | 2 | AU 2, CO 6.5, ENG 2, JP 3.0, UY 3.0 | +2 |
 
 ### Llega 2 o más grados antes

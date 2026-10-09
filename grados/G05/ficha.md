@@ -41,7 +41,7 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Estructura atómica y tabla periódica | 16 | 18 | Química, Física | 3. Estructura atómica.; 4. Tabla periódica. |
+| Estructura atómica y tabla periódica | 15 | 17 | Química, Física | 3. Estructura atómica.; 4. Tabla periódica. |
 | Movimiento, fuerzas y energía mecánica | 11 | 12 | Física | 2. Mecánica. |
 | Universo, sistema solar y Tierra primitiva | 10 | 9 | Ciencias de la Tierra y del Espacio, Física | 5. Ciencias del espacio.; 6. Ciencias de la Tierra. |
 | Tectónica, sismos y volcanes en El Salvador | 9 | 7 | Ciencias de la Tierra y del Espacio | 6. Ciencias de la Tierra. |
@@ -141,8 +141,8 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Presión | 6 | ENG 6.0, JP 3.0 |
 | Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
 | Tejidos animales | 8 | AU 7.0, CO 5.0, UY 4.0 |
-| Calidad del aire y contaminación atmosférica | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |
+| Calidad del aire y contaminación atmosférica | 7 | CO 4.5, ENG 8.5, UY 5.0 |
 | Circuitos en serie y en paralelo | 6 | ENG 6.0, JP 3.0, SG 5.0 |
 | Espejos planos e imágenes | 10 | ENG 6.0, UY 4.0 |
 | Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |
-| Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 |
+| Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 6.0 |

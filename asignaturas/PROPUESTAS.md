@@ -12,7 +12,7 @@ Borradores por asignatura y ciclo, generados con el grafo de conocimiento (spec 
 |---|---|---|---|---|---|---|
 | Biología | 2.°–4.° | 14 (fusionar 1, mover 2, nuevo 1, revisar 10) | 5 → **0** | 6 → **3** | 2.27 → **1.99** | [informe](biologia/propuesta/informe_G02-G04.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G02-G04.xlsx) |
 | Biología | 5.°–8.° | 19 (dividir 1, fusionar 5, mover 6, nuevo 6, revisar 1) | 3 → **1** | 16 → **6** | 1.99 → **1.64** | [informe](biologia/propuesta/informe_G05-G08.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G05-G08.xlsx) |
-| Biología | 10.°–11.° | 21 (fusionar 8, mover 2, nuevo 8, revisar 3) | 0 → **0** | n/a | n/a | [informe](biologia/propuesta/informe_G10-G11.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G10-G11.xlsx) |
+| Biología | 10.°–11.° | 21 (fusionar 8, mover 2, nuevo 8, revisar 3) | 1 → **1** | n/a | n/a | [informe](biologia/propuesta/informe_G10-G11.md) · [Excel](biologia/propuesta/Propuesta_Biologia_G10-G11.xlsx) |
 | Tierra y Espacio | 2.°–4.° | 9 (fusionar 3, nuevo 3, revisar 3) | 10 → **0** | 4 → **1** | 2.13 → **1.83** | [informe](ciencias_tierra_espacio/propuesta/informe_G02-G04.md) · [Excel](ciencias_tierra_espacio/propuesta/Propuesta_Ciencias_tierra_espacio_G02-G04.xlsx) |
 | Tierra y Espacio | 5.°–8.° | 17 (fusionar 4, mover 7, nuevo 4, revisar 2) | 5 → **1** | 6 → **6** | 2.24 → **1.98** | [informe](ciencias_tierra_espacio/propuesta/informe_G05-G08.md) · [Excel](ciencias_tierra_espacio/propuesta/Propuesta_Ciencias_tierra_espacio_G05-G08.xlsx) |
 | Física | 2.°–4.° | 19 (dividir 1, fusionar 5, nuevo 5, revisar 8) | 4 → **0** | 10 → **5** | 2.42 → **1.55** | [informe](fisica/propuesta/informe_G02-G04.md) · [Excel](fisica/propuesta/Propuesta_Fisica_G02-G04.xlsx) |

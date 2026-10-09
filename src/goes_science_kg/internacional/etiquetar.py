@@ -127,8 +127,21 @@ def etiquetar(items: list[dict], asignatura: str, nombre: str, hilos: int = 6) -
 @cache
 def leer_etiquetados(prefijo: str) -> tuple[tuple[str, dict], ...]:
     """(nombre, etiquetas) de cada etiquetado/<prefijo>*.json, en orden de nombre. Con caché: `etiquetar` la limpia."""
-    return tuple((f.stem, json.loads(f.read_text(encoding="utf-8")))
+    conjunto = {"pais_": "internacional", "malla_v2_": "malla_v2"}.get(prefijo)
+    return tuple((f.stem, _con_divisiones(conjunto, json.loads(f.read_text(encoding="utf-8"))))
                  for f in sorted(ruta(DIR).glob(f"{prefijo}*.json")))
+
+
+def _con_divisiones(conjunto: str | None, etiquetas: dict[str, dict]) -> dict[str, dict]:
+    """Aplica las divisiones de conceptos (conceptos.divisiones) a principales y secundarios de cada enunciado."""
+    if not conjunto:
+        return etiquetas
+    salida = {}
+    for i, e in etiquetas.items():
+        principales = conceptos.aplicar_divisiones(conjunto, i, e["principales"])
+        secundarios = [c for c in conceptos.aplicar_divisiones(conjunto, i, e["secundarios"]) if c not in principales]
+        salida[i] = {**e, "principales": principales, "secundarios": secundarios}
+    return salida
 
 
 def cargar_etiquetas(prefijo: str) -> dict[str, dict]:

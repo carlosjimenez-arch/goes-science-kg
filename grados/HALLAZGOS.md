@@ -39,7 +39,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Formación del sistema solar necesita Gravedad y órbitas (nunca); Tectónica de placas necesita Convección del manto y energía interna de la Tierra (nunca); Campo magnético terrestre necesita Imanes y polos magnéticos (6.°); Ciclo de vida de las estrellas necesita Fisión y fusión nuclear (11.°); Ondas sísmicas, magnitud e intensidad necesita Ondas mecánicas transversales y longitudinales (8.°); Campo magnético y magnetismo terrestre necesita Imanes y polos magnéticos (6.°); y 5 más.
 
-**Alto desempeño ya lo enseña:** Materiales magnéticos (SV 6.°); Tiempo atmosférico y sus variables (SV 7.°); Imanes y polos magnéticos (SV 6.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); y 18 más.
+**Alto desempeño ya lo enseña:** Materiales magnéticos (SV 6.°); Tiempo atmosférico y sus variables (SV 7.°); Imanes y polos magnéticos (SV 6.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); y 17 más.
 
 ## 6.° grado
 
@@ -47,7 +47,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 **Secuencia:** Biomoléculas necesita El carbono y las moléculas orgánicas (11.°); Enzimas necesita Proteínas: estructura y función (10.°); Capacidad calorífica y calor específico necesita Calor como energía en tránsito (10.°); Circuito eléctrico simple necesita Conductores y aislantes eléctricos (11.°); Corriente, voltaje y resistencia necesita Carga eléctrica y electrización (9.°); Resistencia equivalente necesita Ley de Ohm (11.°); y 5 más.
 
-**Alto desempeño ya lo enseña:** Tiempo atmosférico y sus variables (SV 7.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); y 24 más.
+**Alto desempeño ya lo enseña:** Tiempo atmosférico y sus variables (SV 7.°); Depredación (SV 7.°); Ciclo del agua (SV 7.°); Fricción y resistencia del aire (SV 10.°); Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); y 23 más.
 
 ## 7.° grado
 
@@ -75,15 +75,15 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 ## 10.° grado
 
-303 temas · 240 conceptos (90 nuevos) · [ficha](G10/ficha.md) · [visor](G10/grafo.html)
+303 temas · 241 conceptos (91 nuevos) · [ficha](G10/ficha.md) · [visor](G10/grafo.html)
 
-**Secuencia:** Ciclo del carbono en los sistemas terrestres necesita Sistemas terrestres y sus interacciones (nunca); Masa y peso necesita Gravedad: atracción hacia la Tierra (nunca); Biomoléculas necesita El carbono y las moléculas orgánicas (11.°); Fotón y efecto fotoeléctrico necesita Cuantización de la energía (11.°); Interferencia de la luz necesita Superposición e interferencia de ondas (11.°); Modelo estándar de partículas necesita Núcleo atómico e isótopos (11.°); y 5 más.
+**Secuencia:** Ciclo del carbono en los sistemas terrestres necesita Sistemas terrestres y sus interacciones (nunca); Masa y peso necesita Gravedad: atracción hacia la Tierra (nunca); Biomoléculas necesita El carbono y las moléculas orgánicas (11.°); Proteínas: estructura y función necesita Aminoácidos y estructura de las proteínas (11.°); Fotón y efecto fotoeléctrico necesita Cuantización de la energía (11.°); Interferencia de la luz necesita Superposición e interferencia de ondas (11.°); y 6 más.
 
 **Alto desempeño ya lo enseña:** Adaptaciones conductuales (SV 11.°); Gravedad: atracción hacia la Tierra (SV nunca); Nutrición mineral de las plantas (SV 11.°); Conductores y aislantes eléctricos (SV 11.°); Ley de Ohm (SV 11.°); Oxidación y reducción (SV 11.°); y 2 más.
 
 ## 11.° grado
 
-335 temas · 219 conceptos (55 nuevos) · [ficha](G11/ficha.md) · [visor](G11/grafo.html)
+335 temas · 219 conceptos (56 nuevos) · [ficha](G11/ficha.md) · [visor](G11/grafo.html)
 
 **Secuencia:** sin problemas de confianza alta.
 

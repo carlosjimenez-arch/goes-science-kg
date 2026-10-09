@@ -10,7 +10,7 @@
 | Física | 121 |
 | Química | 112 |
 
-- **240 conceptos**: 90 nuevos en este grado, 149 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **241 conceptos**: 91 nuevos en este grado, 149 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: AUSS 109, TA15 12.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 0.
 
@@ -40,13 +40,14 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Átomo, tabla periódica y química de los elementos | 39 | 45 | Química, Física | 5. Los enlaces químicos; 13. Química inorgánica; 4. Tabla periódica de los elementos |
-| Calor, temperatura, gases y fluidos | 37 | 56 | Física, Química, Biología | 15. Termodinámica; 12. Temperatura y calor; 11. Termodinámica en reacciones químicas |
+| Calor, temperatura, gases y fluidos | 36 | 55 | Física, Química, Biología | 15. Termodinámica; 12. Temperatura y calor; 11. Termodinámica en reacciones químicas |
 | Mecánica: movimiento, fuerzas y rotación | 33 | 53 | Física | 5. Las leyes de Newton; 3. Movimiento: cinemática en una dimensión; 6. Movimiento circular uniforme |
+| Tipo de enlace y propiedades de las sustancias · Enlace covalente · Sólidos cristalinos y amorfos | 24 | 25 | Química | 5. Los enlaces químicos; 7. Los líquidos y los sólidos; 13. Química inorgánica |
 | Biomoléculas y metabolismo energético celular | 23 | 39 | Biología, Química, Ciencias de la Tierra y del Espacio | 2. Biología celular; 1. Biomoléculas; 7. Química de los seres vivos (ciclos de Krebs, Calvin y glucólisis) |
 | Cantidades químicas, disoluciones y estequiometría | 21 | 24 | Química | 2. Las cantidades en química; 6. Los gases; 8. Disoluciones y coloides |
 | Genética mendeliana y evolución | 18 | 14 | Biología, Ciencias de la Tierra y del Espacio | 5. Evolución; 4. Genética moderna |
 | Luz, óptica y estructura cuántica del átomo | 18 | 17 | Física, Química | 16. Óptica; 3. Modelos atómicos y estructura |
+| Química descriptiva de los elementos · Distribución electrónica por niveles (modelo de capas) · Isótopos | 17 | 25 | Química, Física | 13. Química inorgánica; 4. Tabla periódica de los elementos; 3. Modelos atómicos y estructura |
 | Trabajo, energía y fluidos en movimiento | 15 | 18 | Física, Biología | 7. Trabajo y energía; 11. Mecánica de fluidos; 10. Dinámica de rotación |
 | Cinética y equilibrio químico | 11 | 14 | Química | 12. Cinética y equilibrio químico |
 | Sistema nervioso, endocrino y homeostasis | 8 | 9 | Biología | 3. Anatomía y fisiología humana |
@@ -57,7 +58,6 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 ### Qué se aprende en cada bloque
 
-- **Átomo, tabla periódica y química de los elementos.** Se recorre la evolución de los modelos atómicos, partículas subatómicas, isótopos, configuración electrónica, propiedades periódicas, enlace y la química descriptiva de cada grupo de elementos. La estructura del átomo explica la tabla periódica y esta, las propiedades de los elementos. Es un bloque muy extenso; podría dividirse para asegurar profundidad y tiempo suficiente.
 - **Calor, temperatura, gases y fluidos.** Se estudian temperatura, calor, cambios de estado, dilatación, transferencia de calor, gases, presión y flotación, hasta las leyes de la termodinámica, todo apoyado en el modelo de partículas. El bloque integra física, química y biología (termorregulación, propiedades coligativas), lo que favorece un enfoque interdisciplinario, pero conviene coordinar entre asignaturas para no repetir el modelo de partículas y las leyes de los gases.
 - **Mecánica: movimiento, fuerzas y rotación.** Los estudiantes describen el movimiento con vectores, gráficas y aceleración constante, lo explican con las leyes de Newton y lo extienden al movimiento circular, la gravitación, el momento lineal, el torque y la rotación. Es un bloque muy coherente que encadena cinemática, dinámica y equilibrio; por su amplitud conviene cuidar la secuencia para que vectores y trigonometría precedan a los problemas de rotación.
 - **Biomoléculas y metabolismo energético celular.** Los estudiantes estudian carbohidratos, lípidos, proteínas y ácidos nucleicos, las enzimas y el uso de energía en la célula: respiración, fermentación y fotosíntesis. Las biomoléculas son la base de las rutas metabólicas que producen y usan ATP. Integra Biología y Química de forma coherente; la cantidad de procesos exige cuidar la carga y la profundidad.
@@ -114,6 +114,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Masa y peso | Gravedad: atracción hacia la Tierra | ausente | — | alta |
 | Biomoléculas | El carbono y las moléculas orgánicas | posterior | 11 | alta |
 | Fases de la fotosíntesis y ciclo de Calvin | Oxidación y reducción | posterior | 11 | media |
+| Proteínas: estructura y función | Aminoácidos y estructura de las proteínas | posterior | 11 | alta |
 | Tiempo geológico y datación | Desintegración radiactiva | posterior | 11 | media |
 | Difracción de ondas y de la luz | Superposición e interferencia de ondas | posterior | 11 | media |
 | Fotón y efecto fotoeléctrico | Cuantización de la energía | posterior | 11 | alta |
@@ -130,7 +131,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Química de los carbohidratos | Grupos funcionales | posterior | 11 | alta |
 | Química de los lípidos | Esterificación e hidrólisis | posterior | 11 | alta |
 
-Además, 62 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 61 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 

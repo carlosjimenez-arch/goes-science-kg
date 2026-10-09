@@ -23,15 +23,6 @@ from goes_science_kg.grafo.almacen import cargar as cargar_grafo
 from goes_science_kg.modelos import TipoArista as A
 from goes_science_kg.modelos import TipoNodo as N
 
-# Prerrequisitos entre conceptos declarados equivalentes: una contradicción (si son el mismo concepto, uno no puede
-# ser prerrequisito del otro). Pendientes de decisión del equipo (quitar la equivalencia o el prerrequisito); la prueba
-# falla si aparece otra o cuando se resuelvan, para actualizar esta lista a propósito.
-CONTRADICCIONES_PENDIENTES = {
-    ("CON:fisica/absorcion-radiacion-efecto-invernadero", "CON:ciencias_tierra_espacio/efecto-invernadero"),
-    ("CON:quimica/aminoacidos-y-proteinas", "CON:biologia/proteinas-estructura-y-funcion"),
-    ("CON:quimica/composicion-del-aire-y-contaminantes", "CON:ciencias_tierra_espacio/calidad-del-aire"),
-}
-
 CONTRATO = {
     A.EN_GRADO: ({N.TEMA}, {N.GRADO}),
     A.DE_ASIGNATURA: ({N.TEMA, N.OBJETIVO_MARCO, N.OBJETIVO_PAIS, N.CONCEPTO}, {N.ASIGNATURA}),
@@ -92,13 +83,47 @@ def test_dag_de_prerrequisitos_sin_ciclos_ni_redundancias(principal):
     assert dag.number_of_edges() == nx.transitive_reduction(dag).number_of_edges()
 
 
-def test_prerrequisitos_entre_equivalentes(principal):
+def test_sin_prerrequisitos_entre_equivalentes(principal):
+    """Si dos conceptos son el mismo (EQUIVALE_A), uno no puede ser prerrequisito del otro. Las 3 contradicciones de la
+    auditoría se resolvieron el 2026-10-09 (equivalencias_retiradas.json y prerrequisitos/rechazados.json)."""
     _, aristas, _ = principal
     eq = {frozenset((a.origen, a.destino)) for a in aristas
           if a.tipo == A.EQUIVALE_A and a.origen.startswith("CON:")}
-    encontradas = {(a.origen, a.destino) for a in aristas
-                   if a.tipo == A.PRERREQUISITO_DE and frozenset((a.origen, a.destino)) in eq}
-    assert encontradas == CONTRADICCIONES_PENDIENTES
+    assert not [(a.origen, a.destino) for a in aristas
+                if a.tipo == A.PRERREQUISITO_DE and frozenset((a.origen, a.destino)) in eq]
+
+
+def test_sin_nodos_aislados(principal):
+    nodos, aristas, _ = principal
+    conectados = {a.origen for a in aristas} | {a.destino for a in aristas}
+    assert not [n.id for n in nodos if n.id not in conectados]
+
+
+def test_el_enlace_quimico_no_depende_de_la_mecanica_cuantica(principal):
+    """Regresión pedagógica: la regla del octeto y el enlace se enseñan con el modelo de capas (división de
+    «Configuración electrónica», conceptos/divisiones.json)."""
+    _, aristas, _ = principal
+    dag = nx.DiGraph([(a.origen, a.destino) for a in aristas if a.tipo == A.PRERREQUISITO_DE])
+    for cuantico in ("CON:quimica/numeros-cuanticos", "CON:quimica/configuracion-electronica"):
+        assert not nx.has_path(dag, cuantico, "CON:quimica/enlace-quimico")
+    assert nx.has_path(dag, "CON:quimica/distribucion-electronica-por-niveles", "CON:quimica/enlace-quimico")
+
+
+def test_divisiones_aplicadas_en_todos_los_conjuntos():
+    from goes_science_kg.internacional import etiquetar
+
+    cargadas = {"malla_v1": {i: e["conceptos"] for i, e in conceptos.etiquetado().items()},
+                "objetivos_pais": {i: e["conceptos"] for i, e in conceptos.etiquetado_paises().items()},
+                "internacional": {i: e["principales"] + e["secundarios"]
+                                  for i, e in etiquetar.cargar_etiquetas("pais_").items()}}
+    for d in conceptos.divisiones():
+        assert d["nuevo"]["id"] in conceptos.vocabulario()
+        for conjunto, asignaciones in d["asignaciones"].items():
+            for item, esperados in asignaciones.items():
+                if conjunto in cargadas:
+                    assert set(esperados) <= set(cargadas[conjunto][item]), (conjunto, item)
+                    if d["concepto"] not in esperados:
+                        assert d["concepto"] not in cargadas[conjunto][item], (conjunto, item)
 
 
 def test_relaciones_esperadas_en_cada_nodo(principal):
@@ -212,8 +237,11 @@ def test_internacional_coherente_con_el_principal_y_sus_fuentes(principal, inter
     assert {n["id"] for n in obj} == {o["id"] for o in objetivos()}
     # Jerarquía y fuente: un curso y un documento del registro por objetivo (los mismos ids que el principal).
     assert all(ent[n["id"]]["CONTIENE"] == 1 and sal[n["id"]]["FUENTE"] == 1 for n in obj)
+    from goes_science_kg.ingesta import legado
+
+    registro = {f"DOC:{r['id']}" for r in legado.manifiesto_fuentes()}
     docs = [n for n in nodos.values() if n["tipo"] == "Documento"]
-    assert docs and all(n["id"] in por_id for n in docs)
+    assert docs and all(n["id"] in registro for n in docs)   # mismos ids que el registro de fuentes
     # Conceptos y prerrequisitos idénticos a los del principal.
     for n in nodos.values():
         if n["tipo"] in ("Concepto", "Practica"):

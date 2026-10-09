@@ -15,7 +15,7 @@
 
 ## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto
 
-Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 49 de 139). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
+Se compara el primer grado de cada concepto en El Salvador con la mediana de los países de referencia del grafo (grado equivalente por edad de ingreso; ver `config/referentes.yaml`) (conceptos que trabajan al menos dos países: 49 de 140). Oportunidad = grado SV − mediana; positivo = El Salvador llega tarde.
 
 ### Llega 2 o más grados tarde
 
@@ -29,7 +29,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Reacciones exotérmicas y endotérmicas | 10.° | 7 | 7 | AU 7.0, ENG 6.0, JP 7.0 | +3 |
 | Teoría cinética de los gases | 10.° | 7.25 | 6 | CO 8.5, ENG 6.0 | +2.75 |
 | Enlace químico | 10.° | 7.75 | — | CO 6.5, UY 9.0 | +2.25 |
-| Composición del aire y contaminantes atmosféricos | 7.° | 5 | 5 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 5.0 | +2 |
+| Composición del aire y contaminantes atmosféricos | 7.° | 5 | 5 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 6.0 | +2 |
 | Conservación de la masa | 10.° | 8 | 6 | AU 8.0, CO 8.0, ENG 6.0, JP 2, UY 9.0 | +2 |
 | Electrólisis y celdas electrolíticas | 10.° | 8 | 8.25 | ENG 8.5, JP 8.0, UY 5.0 | +2 |
 | Neutralización y reacciones de los ácidos | 9.° | 7 | 7 | ENG 6.0, JP 8.0 | +2 |
@@ -42,7 +42,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Reutilización y reciclaje de materiales | 2.° | 8.25 | -6.25 |
 | Soluto, disolvente y concentración | 3.° | 8.5 | -5.5 |
 | Disolución y rapidez de disolución | 3.° | 7.5 | -4.5 |
-| Configuración electrónica | 5.° | 9 | -4 |
+| Distribución electrónica por niveles (modelo de capas) | 5.° | 9 | -4 |
 | Mezclas homogéneas y heterogéneas | 2.° | 6 | -4 |
 | Propiedades físicas y químicas | 2.° | 6 | -4 |
 | Enlace iónico | 5.° | 8.25 | -3.25 |
@@ -81,7 +81,6 @@ Ninguno.
 | Reacción química y sus evidencias | 2.° | Cambios físicos y químicos | 3.° | alta |
 | Átomo y partículas subatómicas | 5.° | Modelo de partículas de la materia | 6.° | alta |
 | Combustibles fósiles y biocombustibles | 7.° | Hidrocarburos: alcanos, alquenos y alquinos | 11.° | media |
-| Aminoácidos y estructura de las proteínas | 10.° | Polimerización por adición y por condensación | 11.° | media |
 | Iones | 5.° | Electrones de valencia y regla del octeto | 6.° | media |
 | Modelo mecanocuántico y orbitales atómicos | 10.° | Dualidad onda-partícula | 11.° | media |
 | Número de oxidación | 5.° | Electronegatividad y polaridad de enlace | 6.° | media |

@@ -43,6 +43,13 @@ class Constructor:
         a = Arista(**kw)
         self.aristas.setdefault(a.clave, a)
 
+    def sin_documentos_sin_citar(self) -> None:
+        """Quita los documentos del registro que ningún nodo cita (p. ej. los del estudio internacional, que tiene su
+        propio grafo, o fuentes registradas que no se usaron): quedaban como nodos aislados."""
+        citados = {a.destino for a in self.aristas.values() if a.tipo == TipoArista.FUENTE}
+        for i in [i for i, n in self.nodos.items() if n.tipo == TipoNodo.DOCUMENTO and i not in citados]:
+            del self.nodos[i]
+
     @staticmethod
     def _confianza(v: str | None) -> Confianza | None:
         return Confianza(v) if v in {c.value for c in Confianza} else None
@@ -304,6 +311,7 @@ def construir() -> tuple[list[Nodo], list[Arista]]:
     c.temas(extraer())
     c.paises()
     c.conceptos()
+    c.sin_documentos_sin_citar()
     nodos = sorted(c.nodos.values(), key=lambda n: (n.tipo, n.id))
     aristas = sorted(c.aristas.values(), key=lambda a: (a.tipo, a.origen, a.destino, a.rol or ""))
     return nodos, aristas

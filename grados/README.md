@@ -12,11 +12,11 @@ la ficha del grafo de ese grado (`ficha.md`) y un visor interactivo (`grafo.html
 | [4.°](G04/ficha.md) · [visor](G04/grafo.html) | 69 | 55 | 34 | 16 | 24 | 252 | 874 |
 | [5.°](G05/ficha.md) · [visor](G05/grafo.html) | 71 | 64 | 51 | 18 | 34 | 340 | 1120 |
 | [6.°](G06/ficha.md) · [visor](G06/grafo.html) | 68 | 65 | 50 | 15 | 41 | 403 | 1286 |
-| [7.°](G07/ficha.md) · [visor](G07/grafo.html) | 90 | 79 | 42 | 8 | 45 | 406 | 1640 |
+| [7.°](G07/ficha.md) · [visor](G07/grafo.html) | 90 | 79 | 42 | 8 | 45 | 405 | 1634 |
 | [8.°](G08/ficha.md) · [visor](G08/grafo.html) | 93 | 76 | 36 | 5 | 44 | 452 | 1724 |
 | [9.°](G09/ficha.md) · [visor](G09/grafo.html) | 84 | 75 | 35 | 7 | 44 | 388 | 1464 |
-| [10.°](G10/ficha.md) · [visor](G10/grafo.html) | 303 | 240 | 90 | 20 | 12 | 762 | 3276 |
-| [11.°](G11/ficha.md) · [visor](G11/grafo.html) | 335 | 219 | 55 | 0 | 4 | 808 | 3421 |
+| [10.°](G10/ficha.md) · [visor](G10/grafo.html) | 303 | 241 | 91 | 21 | 12 | 763 | 3279 |
+| [11.°](G11/ficha.md) · [visor](G11/grafo.html) | 335 | 219 | 56 | 0 | 4 | 808 | 3420 |
 
 Lo más accionable de cada grado, en una página: [`HALLAZGOS.md`](HALLAZGOS.md).
 Cómo leerlo: [`specs/09_grafos_por_grado.md`](../specs/09_grafos_por_grado.md).

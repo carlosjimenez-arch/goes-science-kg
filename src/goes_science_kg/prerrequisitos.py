@@ -21,7 +21,13 @@ from functools import cache
 
 import networkx as nx
 
-from goes_science_kg.conceptos import VERSION_TRIAJE, conceptos_del_triaje, vocabulario
+from goes_science_kg.conceptos import (
+    VERSION_DIVISION,
+    VERSION_TRIAJE,
+    conceptos_del_triaje,
+    divisiones,
+    vocabulario,
+)
 from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
@@ -198,6 +204,18 @@ def unir(nodos: list[Nodo]) -> dict:
             "cadena_mas_larga": len(nx.dag_longest_path(g))}
 
 
+def _con_divisiones(aristas: list[dict], voc: dict[str, dict]) -> list[dict]:
+    """Aplica los cambios de prerrequisitos de las divisiones de conceptos (quitar y agregar aristas)."""
+    for d in divisiones():
+        quitar = {tuple(x) for x in d["prerrequisitos"]["quitar"]}
+        aristas = [e for e in aristas if (e["origen"], e["destino"]) not in quitar]
+        aristas += [{"origen": x["origen"], "destino": x["destino"], "tipo_evidencia": "logica",
+                     "evidencias": ["division"], "confianza": "alta", "version": VERSION_DIVISION,
+                     "justificacion": x["justificacion"]}
+                    for x in d["prerrequisitos"]["agregar"] if x["origen"] in voc and x["destino"] in voc]
+    return aristas
+
+
 @cache
 def cargar_prerrequisitos() -> tuple[dict, ...]:
     """Prerrequisitos consolidados menos los que rechazó la revisión humana (con caché; `unir` y la revisión
@@ -216,6 +234,7 @@ def cargar_prerrequisitos() -> tuple[dict, ...]:
     # toda arista del triaje que repita un par o cierre un ciclo.
 
     voc = vocabulario()
+    aristas = _con_divisiones(aristas, voc)
     g = nx.DiGraph((e["origen"], e["destino"]) for e in aristas if (e["origen"], e["destino"]) not in rechazados)
     for c in conceptos_del_triaje():
         for o in c["prerrequisitos_sugeridos"]:
@@ -229,5 +248,6 @@ def cargar_prerrequisitos() -> tuple[dict, ...]:
     # Como en `unir`: sin aristas transitivas. Solo se quitan las del triaje (las demás ya vienen reducidas).
     reducido = nx.transitive_reduction(g)
     redundantes = {(e["origen"], e["destino"]) for e in aristas
-                   if e.get("version") == VERSION_TRIAJE and not reducido.has_edge(e["origen"], e["destino"])}
+                   if e.get("version") in (VERSION_TRIAJE, VERSION_DIVISION)
+                   and not reducido.has_edge(e["origen"], e["destino"])}
     return tuple(e for e in aristas if (e["origen"], e["destino"]) not in rechazados | redundantes)

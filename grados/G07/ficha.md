@@ -104,7 +104,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Ciclones tropicales y tormentas | Calentamiento desigual de la Tierra y circulación atmosférica | posterior | 9 | media |
 | Ecuación química y su balanceo | Conservación de la masa | posterior | 10 | alta |
 
-Además, 34 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 33 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 

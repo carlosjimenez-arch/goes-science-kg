@@ -96,6 +96,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Niveles de organización de los seres vivos | 4.° | La célula como unidad de la vida | 6.° | alta |
 | Intercambio de gases en animales | 3.° | Sistema respiratorio | 4.° | alta |
 | Productores, consumidores y descomponedores | 3.° | Cadena alimentaria | 4.° | alta |
+| Proteínas: estructura y función | 10.° | Aminoácidos y estructura de las proteínas | 11.° | alta |
 | Biotecnología vegetal y agroindustria | 4.° | Ingeniería genética y ADN recombinante | 11.° | media |
 | Fases de la fotosíntesis y ciclo de Calvin | 6.° | Oxidación y reducción | 11.° | media |
 | Organelos de la célula eucariota | 6.° | Célula animal y célula vegetal | 11.° | media |
