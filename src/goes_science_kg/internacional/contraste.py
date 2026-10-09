@@ -1,24 +1,26 @@
-"""Contraste de la malla V2 (9.°–11.°) con el consenso internacional (spec 11).
+"""Contraste de la malla V2 con el consenso internacional, por tramo de grados T (specs 11 y 12).
 
 Clasificación de cada concepto de la asignatura. Consenso: ≥ 50 % de los países con núcleo común y al menos
-5 países (spec 11: «≥ 5 de 9»; Hong Kong no tiene núcleo, así que son 5 de 8: una mayoría, no un empate).
+5 países (spec 11: «≥ 5 de 9»; Hong Kong no tiene núcleo en 9.°–11.°, así que son 5 de 8: una mayoría, no un empate).
 - faltante: el consenso lo tiene en el núcleo hasta el grado g y El Salvador no lo enseña en 2.°–11.°.
-- no_retomado: El Salvador solo lo enseña antes de 9.° y al menos 5 países lo enseñan en su núcleo de 9.°–11.°
-  (hueco de profundización en Bachillerato).
-- tardio: El Salvador lo introduce en 9.°–11.°, ≥ 2 grados después de g.
-- solo_especializacion: El Salvador lo introduce en 9.°–11.° (obligatorio), pero en los países solo aparece en
-  cursos electivos: a lo sumo 1 país lo enseña de forma sólida en su núcleo (como principal en un objetivo o como
+- tardio: El Salvador lo introduce ≥ 2 grados después de g, dentro de T o después de T.
+- posterior: El Salvador lo enseña solo después de T y el núcleo internacional no lo exige dentro de T.
+- no_retomado: El Salvador solo lo enseña antes de T y al menos 5 países lo enseñan en su núcleo dentro de T
+  (hueco de profundización).
+- solo_especializacion: El Salvador lo introduce en T (obligatorio), pero en los países solo aparece en cursos
+  electivos: a lo sumo 1 país lo enseña de forma sólida en su núcleo (como principal en un objetivo o como
   secundario en dos, contando la secundaria baja) y al menos 3 lo tienen en especialización. Una etiqueta secundaria
   suelta no basta (revisión manual: 3 de 5 casos así eran falsos); exigir que sea principal tampoco, porque el
   etiquetado suele elegir un concepto vecino más general (p. ej. inmunidad adaptativa en JP 生物基礎).
-- adelantado: El Salvador lo introduce en 9.°–11.°, ≥ 1,5 grados antes que la mediana del núcleo de los países.
-- alineado: El Salvador lo introduce en 9.°–11.° y el momento coincide (± 1,5 grados).
-- retomado: El Salvador lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.°.
-- previo: El Salvador solo lo enseña antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°.
-- sin_referente: El Salvador lo enseña en 9.°–11.° y ningún país de los 9 lo tiene en 9.°–11. ni antes.
-El momento (adelantado, tardío) solo se juzga para lo que El Salvador introduce en 9.°–11.°: los datos de los
-países son de 9.°–11.° (más el antecedente de ENG, AU y JP), así que no permiten fechar la primaria salvadoreña.
-Secuencia: prerrequisito p → c donde El Salvador enseña p después que c.
+- adelantado: El Salvador lo introduce en T, ≥ 1,5 grados antes que la mediana del núcleo de los países.
+- alineado: El Salvador lo introduce en T y el momento coincide (± 1,5 grados).
+- retomado: El Salvador lo introduce antes de T y lo vuelve a trabajar en T.
+- previo: El Salvador solo lo enseña antes de T y el núcleo internacional no lo exige en T.
+- sin_referente: El Salvador lo enseña en T y ningún país lo tiene en T ni antes.
+El momento (adelantado, tardío) solo se juzga para lo que El Salvador introduce en T: los datos de los países son
+del tramo (más su antecedente), así que no permiten fechar lo que El Salvador enseña antes. En 2.°–8.° no hay nada
+antes del tramo ni cursos electivos: «retomado», «previo», «no_retomado» y «solo_especializacion» no aparecen.
+Secuencia: prerrequisito p → c donde El Salvador enseña p después que c (c introducido en T).
 """
 
 from __future__ import annotations
@@ -29,8 +31,8 @@ from collections import Counter, defaultdict
 from goes_science_kg import conceptos
 from goes_science_kg.config import ruta
 from goes_science_kg.ingesta.mallas import extraer
-from goes_science_kg.internacional import etiquetar
-from goes_science_kg.internacional.consenso import DIR_GRAFO, GRADOS, con_equivalentes, ensenados, paises
+from goes_science_kg.internacional import etiquetar, tramo
+from goes_science_kg.internacional.consenso import con_equivalentes, ensenados, paises
 from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
 UMBRAL = 0.5
@@ -56,15 +58,20 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
     return {c: sorted(v) for c, v in por.items()}, temas
 
 
-def clase_de(sv_primer: int | None, sv_9_11: int | None, g_cons: int | None, n_nucleo_9_11: int,
-             mediana_nucleo: float | None, n_nucleo_foco: int, n_esp: int) -> str:
+def clase_de(sv_primer: int | None, sv_en_tramo: int | None, g_cons: int | None, n_nucleo_en_tramo: int,
+             mediana_nucleo: float | None, n_nucleo_foco: int, n_esp: int,
+             grados: tuple[int, ...] | None = None) -> str:
     """Regla del docstring del módulo. `g_cons`: primer grado en que el núcleo alcanza el consenso;
-    `sv_9_11`: primer grado de la V2 dentro de 9.°–11.° (None si no está en esos grados)."""
+    `sv_en_tramo`: primer grado de la V2 dentro del tramo (None si no está en él); `grados`: los del tramo
+    (por defecto, el activo)."""
+    grados = grados or tramo.actual().grados
     if sv_primer is None:
         return "faltante" if g_cons is not None else "no_aplica"
-    if sv_9_11 is None:
-        return "no_retomado" if n_nucleo_9_11 >= MIN_PAISES else "previo"
-    if sv_primer < GRADOS[0]:
+    if sv_en_tramo is None:
+        if sv_primer > grados[-1]:          # la V2 lo enseña solo después del tramo
+            return "tardio" if g_cons is not None else "posterior"
+        return "no_retomado" if n_nucleo_en_tramo >= MIN_PAISES else "previo"
+    if sv_primer < grados[0]:
         return "retomado"
     if g_cons is not None and sv_primer >= g_cons + 2:
         return "tardio"
@@ -76,10 +83,10 @@ def clase_de(sv_primer: int | None, sv_9_11: int | None, g_cons: int | None, n_n
 
 
 def clasificar() -> dict:
-    """Clasifica cada concepto del consenso (y lo que la V2 enseña en 9.°–11.° sin referente) con la regla del
-    módulo; las revisiones expertas ganan. Lee consenso.json; devuelve filas, secuencia, temas y núcleo por grado."""
-    voc = conceptos.vocabulario()
-    cons = json.loads((ruta(DIR_GRAFO) / "consenso.json").read_text(encoding="utf-8"))
+    """Clasifica cada concepto del consenso del tramo activo (y lo que la V2 enseña en el tramo sin referente) con la
+    regla del módulo; las revisiones expertas ganan. Devuelve filas, secuencia, temas y núcleo por grado."""
+    voc, t = conceptos.vocabulario(), tramo.actual()
+    cons = json.loads((ruta(t.grafo) / "consenso.json").read_text(encoding="utf-8"))
     sv, temas = _sv()
     filas = []
     en_consenso = set()
@@ -89,29 +96,30 @@ def clasificar() -> dict:
             continue
         grados_sv = sv.get(c["concepto"], [])
         sv_primer = grados_sv[0][0] if grados_sv else None
-        sv_9_11 = next((g for g, _ in grados_sv if g >= GRADOS[0]), None)
-        g_cons = next((g for g in GRADOS if c["proporcion_nucleo_hasta_grado"][str(g)] >= UMBRAL
+        sv_en_tramo = next((g for g, _ in grados_sv if g in t.grados), None)
+        g_cons = next((g for g in t.grados if c["proporcion_nucleo_hasta_grado"][str(g)] >= UMBRAL
                        and len(c["nucleo_hasta_grado"][str(g)]) >= MIN_PAISES), None)
         med = c["mediana_primer_grado_nucleo"]
         n_esp = sum(f["en_especializacion"] for f in c["paises"].values())
-        clase = clase_de(sv_primer, sv_9_11, g_cons, c["n_nucleo_9_11"], med, c["n_nucleo_foco"], n_esp)
+        clase = clase_de(sv_primer, sv_en_tramo, g_cons, c["n_nucleo_en_tramo"], med, c["n_nucleo_foco"], n_esp,
+                         t.grados)
         filas.append({**{k: c[k] for k in ("concepto", "nombre", "asignatura", "n_paises", "n_nucleo",
-                                           "n_solo_especializacion", "n_nucleo_9_11", "n_nucleo_foco",
+                                           "n_solo_especializacion", "n_nucleo_en_tramo", "n_nucleo_foco",
                                            "mediana_primer_grado_nucleo")},
                       "n_especializacion": n_esp, "grado_consenso": g_cons,
                       "proporcion_nucleo": c["proporcion_nucleo_hasta_grado"],
-                      "sv_primer_grado": sv_primer, "sv_9_11": sv_9_11,
+                      "sv_primer_grado": sv_primer, "sv_en_tramo": sv_en_tramo,
                       "sv_temas": [t for _, t in grados_sv][:8],
                       "paises": c["paises"], "clase": clase})
-    # Lo que El Salvador enseña en 9.°–11.° sin ningún referente.
+    # Lo que El Salvador enseña en el tramo sin ningún referente.
     for c, gs in sorted(sv.items()):
-        if c in en_consenso or c not in voc or not any(g >= 9 for g, _ in gs):
+        if c in en_consenso or c not in voc or not any(g in t.grados for g, _ in gs):
             continue
         asig = {"ciencias_tierra_espacio": "tierra_espacio"}.get(voc[c]["asignatura"], voc[c]["asignatura"])
         filas.append({"concepto": c, "nombre": voc[c]["nombre"], "asignatura": asig, "n_paises": 0, "n_nucleo": 0,
-                      "n_solo_especializacion": 0, "n_nucleo_9_11": 0, "n_nucleo_foco": 0,
+                      "n_solo_especializacion": 0, "n_nucleo_en_tramo": 0, "n_nucleo_foco": 0,
                       "mediana_primer_grado_nucleo": None,
-                      "n_especializacion": 0, "sv_9_11": min(g for g, _ in gs if g >= GRADOS[0]),
+                      "n_especializacion": 0, "sv_en_tramo": min(g for g, _ in gs if g in t.grados),
                       "grado_consenso": None, "proporcion_nucleo": {}, "sv_primer_grado": gs[0][0],
                       "sv_temas": [t for _, t in gs][:8], "paises": {}, "clase": "sin_referente"})
     revisiones = revisiones_expertas()
@@ -119,24 +127,24 @@ def clasificar() -> dict:
         if rv := revisiones.get(f["concepto"]):
             f["clase_ia"], f["clase"] = f["clase"], rv["clase"]
             f["revision"] = {"justificacion": rv["justificacion"], "revisado_por": rv["revisado_por"]}
-    secuencia = _secuencia(sv, voc)
+    secuencia = _secuencia(sv, voc, t.grados)
     return {"filas": sorted(filas, key=lambda f: (f["asignatura"], f["clase"], f["concepto"])),
             "secuencia": secuencia, "temas": temas, "paises_con_nucleo": cons["paises_con_nucleo_por_grado"]}
 
 
 def revisiones_expertas() -> dict[str, dict]:
-    """Clases decididas en revisión experta (data/interim/internacional/revisiones.json). Ganan sobre la regla
-    automática, como las decisiones humanas del grafo principal; cada una trae su evidencia y quién la revisó."""
-    p = ruta("data/interim/internacional/revisiones.json")
+    """Clases decididas en revisión experta (revisiones.json del tramo activo). Ganan sobre la regla automática, como
+    las decisiones humanas del grafo principal; cada una trae su evidencia y quién la revisó."""
+    p = ruta(tramo.actual().revisiones)
     return {r["concepto"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
-def _secuencia(sv: dict, voc: dict) -> list[dict]:
+def _secuencia(sv: dict, voc: dict, grados: tuple[int, ...]) -> list[dict]:
 
     salida = []
     for a in cargar_prerrequisitos():
         p, c = a["origen"], a["destino"]
-        if p in sv and c in sv and sv[c][0][0] >= 9 and sv[p][0][0] > sv[c][0][0]:
+        if p in sv and c in sv and sv[c][0][0] in grados and sv[p][0][0] > sv[c][0][0]:
             salida.append({"prerrequisito": p, "nombre_prerrequisito": voc[p]["nombre"], "concepto": c,
                            "nombre_concepto": voc[c]["nombre"], "grado_prerrequisito": sv[p][0][0],
                            "grado_concepto": sv[c][0][0], "confianza": a.get("confianza"),

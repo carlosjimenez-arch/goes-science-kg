@@ -1,4 +1,4 @@
-"""Informes del contraste internacional de 9.°–11.° (spec 11): internacional/<asignatura>.md, Excel con fórmulas y
+"""Informes del contraste internacional del tramo activo (specs 11 y 12): <informe>/<asignatura>.md, Excel con fórmulas y
 CSV de revisión humana."""
 
 from __future__ import annotations
@@ -16,31 +16,43 @@ from openpyxl.utils import get_column_letter as col
 
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.excel import guardar as guardar_excel
-from goes_science_kg.internacional import contraste, etiquetar, profundidad, visor
+from goes_science_kg.internacional import contraste, etiquetar, profundidad, tramo, visor
 from goes_science_kg.internacional.consenso import objetivos, paises
 
 if TYPE_CHECKING:
     from pathlib import Path
 
-DIR = "internacional"
 NOMBRE = {"fisica": "Física", "quimica": "Química", "biologia": "Biología",
           "tierra_espacio": "Ciencias de la Tierra y del Espacio"}
-CLASES = [
-    ("faltante", "Faltantes del núcleo común",
-     "El consenso (≥ 5 países) lo enseña a todos los estudiantes hasta ese grado; la V2 no lo tiene en 2.°–11.°."),
-    ("no_retomado", "No retomados en 9.°–11.°",
-     "La V2 solo lo ve antes de 9.°; al menos 5 países lo profundizan en su núcleo de 9.°–11.°."),
-    ("tardio", "Llegan tarde",
-     "La V2 lo introduce en 9.°–11.°, dos o más grados después de que el núcleo alcanza el consenso."),
-    ("solo_especializacion", "Nivel de especialización en un curso obligatorio",
-     "La V2 lo introduce en 9.°–11.°, pero los países solo lo enseñan en cursos electivos."),
-    ("adelantado", "Adelantados",
-     "La V2 lo introduce en 9.°–11.°, 1,5 grados o más antes que la mediana del núcleo de los países."),
-    ("sin_referente", "Sin referente", "La V2 lo enseña en 9.°–11.° y ninguno de los 9 países lo tiene."),
-    ("alineado", "Alineados", "La V2 lo introduce en 9.°–11.° con un momento coherente con el consenso (± 1,5 grados)."),
-    ("retomado", "Retomados", "La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral)."),
-    ("previo", "Solo antes de 9.°", "La V2 lo ve antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°."),
-]
+def clases(t: tramo.Tramo | None = None) -> list[tuple[str, str, str]]:
+    """(clave, título, qué significa) de las clases que pueden ocurrir en el tramo: en 2.°–8.° no hay nada antes del
+    tramo ni electivas; en 9.°–11.° no hay nada después."""
+    t = t or tramo.actual()
+    e, g0 = t.etiqueta, t.grados[0]
+    salida = [
+        ("faltante", "Faltantes del núcleo común",
+         "El consenso (≥ 5 países) lo enseña a todos los estudiantes hasta ese grado; la V2 no lo tiene en 2.°–11.°."),
+        ("no_retomado", f"No retomados en {e}",
+         f"La V2 solo lo ve antes de {g0}.°; al menos 5 países lo profundizan en su núcleo de {e}."),
+        ("tardio", "Llegan tarde",
+         f"La V2 lo introduce en {e}, dos o más grados después de que el núcleo alcanza el consenso."),
+        ("posterior", f"Solo después de {e}",
+         f"La V2 lo enseña después de {e} y el núcleo internacional no lo exige antes."),
+        ("solo_especializacion", "Nivel de especialización en un curso obligatorio",
+         f"La V2 lo introduce en {e}, pero los países solo lo enseñan en cursos electivos."),
+        ("adelantado", "Adelantados",
+         f"La V2 lo introduce en {e}, 1,5 grados o más antes que la mediana del núcleo de los países."),
+        ("sin_referente", "Sin referente", f"La V2 lo enseña en {e} y ninguno de los 9 países lo tiene."),
+        ("alineado", "Alineados", f"La V2 lo introduce en {e} con un momento coherente con el consenso (± 1,5 grados)."),
+        ("retomado", "Retomados", f"La V2 lo introduce antes de {g0}.° y lo vuelve a trabajar en {e} (espiral)."),
+        ("previo", f"Solo antes de {g0}.°", f"La V2 lo ve antes de {g0}.° y el núcleo internacional no lo exige en {e}."),
+    ]
+    imposibles = {"posterior"} if t.grados[-1] >= 11 else set()
+    if t.grados[0] <= 2:
+        imposibles |= {"no_retomado", "retomado", "previo", "solo_especializacion"}
+    return [c for c in salida if c[0] not in imposibles]
+
+
 SIN_TABLA = {"alineado", "retomado", "previo"}
 
 
@@ -69,7 +81,7 @@ def _tabla(filas: list[dict], r: dict, objs: dict, max_filas: int = 40) -> list[
         prop = f["proporcion_nucleo"].get(str(g)) if g else None
         med = f["mediana_primer_grado_nucleo"]
         cons = (f"{g}.° ({prop:.0%} de los países con núcleo)" if g else (f"mediana {med:g}" if med else "—"))
-        cons += f"; {f['n_nucleo_9_11']} con núcleo en 9.°–11.°"
+        cons += f"; {f['n_nucleo_en_tramo']} con núcleo en {tramo.actual().etiqueta}"
         ev = []
         if f["sv_temas"]:
             ev.append("SV: " + _tema(r["temas"][f["sv_temas"][0]]))
@@ -91,7 +103,7 @@ def _tabla(filas: list[dict], r: dict, objs: dict, max_filas: int = 40) -> list[
 
 def _orden(f: dict) -> tuple:
     if f["clase"] in ("no_retomado", "faltante"):
-        return (-f["n_nucleo_9_11"], f["nombre"])
+        return (-f["n_nucleo_en_tramo"], f["nombre"])
     if f["clase"] == "solo_especializacion":
         return (-f["n_especializacion"], f["nombre"])
     g = f["grado_consenso"]
@@ -100,16 +112,16 @@ def _orden(f: dict) -> tuple:
 
 def _sensibilidad(filas: list[dict]) -> str:
     """Cuántos conceptos cambiarían de clase con 4 países en lugar de 5 (empate en 8 núcleos)."""
-    n4 = sum(f["clase"] == "previo" and f["n_nucleo_9_11"] == contraste.MIN_PAISES - 1 for f in filas)
+    n4 = sum(f["clase"] == "previo" and f["n_nucleo_en_tramo"] == contraste.MIN_PAISES - 1 for f in filas)
     return (f"Sensibilidad: con 4 países en lugar de {contraste.MIN_PAISES}, {n4} conceptos más pasarían de «solo "
-            f"antes de 9.°» a «no retomados».")
+            f"antes de {tramo.actual().grados[0]}.°» a «no retomados».")
 
 
 def _seccion_profundidad(asig: str, prof: dict) -> list[str]:
     d = prof["asignaturas"].get(asig)
     if not d:
         return []
-    md = ["## Profundidad: demanda cognitiva en 9.°–11.°", "",
+    md = [f"## Profundidad: demanda cognitiva en {tramo.actual().etiqueta}", "",
           "Mismo clasificador por verbos (escala TIMSS) para la V2 y para el núcleo de cada país; los enunciados sin "
           "verbo reconocible no entran en el porcentaje. Coincidencia del clasificador con la etiqueta de Gemini: "
           f"{prof['acuerdo_con_ia']['proporcion']:.0%} (la diferencia principal: TIMSS pone «explicar» en aplicar).", "",
@@ -129,7 +141,7 @@ def _seccion_practicas(asig: str, prof: dict) -> list[str]:
     d = prof["asignaturas"].get(asig)
     if not d:
         return []
-    md = ["## Prácticas científicas en 9.°–11.°", "",
+    md = [f"## Prácticas científicas en {tramo.actual().etiqueta}", "",
           "La V2 trae una columna procedimental en cada fila y los países separan prácticas de contenidos, así que la "
           "proporción de enunciados con práctica no es comparable. Se compara la cobertura del catálogo.", "",
           "| Currículo | Indagación | Modelación | Argumentación | Naturaleza y contexto | Prácticas distintas |",
@@ -143,7 +155,7 @@ def _seccion_practicas(asig: str, prof: dict) -> list[str]:
         nombre = "**El Salvador (V2)**" if quien == "SV" else quien
         md.append(f"| {nombre} | {' | '.join(fam)} | {len(f['practicas'])} |")
     aus = d["practicas_ausentes"]
-    md += ["", "Prácticas que exige el núcleo de ≥ 5 países y la V2 no nombra en 9.°–11.°: "
+    md += ["", f"Prácticas que exige el núcleo de ≥ 5 países y la V2 no nombra en {tramo.actual().etiqueta}: "
            + (", ".join(f"`{p}`" for p in aus) if aus else "ninguna."), ""]
     return md
 
@@ -154,30 +166,31 @@ def escribir() -> dict:
     r = contraste.clasificar()
     prof = profundidad.analizar()
     objs = {o["id"]: o for o in objetivos()}
-    cfg = cargar("internacional")
-    base = ruta(DIR)
+    t = tramo.actual()
+    cfg = cargar(t.config)
+    base = ruta(t.informe)
     base.mkdir(parents=True, exist_ok=True)
     res = contraste.resumen(r)
     propuestos = _propuestos(objs)
     for asig in contraste.ASIGNATURAS:
         filas = [f for f in r["filas"] if f["asignatura"] == asig]
-        md = [f"# {NOMBRE[asig]} · contraste internacional de 9.°–11.° (malla V2)", "",
-              "> Generado por `gskg internacional construir`. Método y límites: `specs/11_grafos_internacionales_9_11.md`"
-              " y `internacional/README.md`.",
+        md = [f"# {NOMBRE[asig]} · contraste internacional de {t.etiqueta} (malla V2)", "",
+              f"> Generado por `gskg internacional construir`. Método y límites: `{t.spec}`"
+              f" y `{t.informe}/README.md`.",
               "> Los datos de los países los extrajo y validó Gemini (Vertex AI, proyecto GOES), con un modelo para",
               "> extraer y otro para validar. Las clases dependen de etiquetas de IA y requieren revisión del MINED.", "",
               "## Resumen", "", "| Clase | Conceptos | Qué significa |", "|---|---|---|"]
-        for clave, titulo, desc in CLASES:
+        for clave, titulo, desc in clases(t):
             md.append(f"| {titulo} | {res[asig].get(clave, 0)} | {desc} |")
         md += ["", "Países con núcleo común por grado SV (denominador del consenso): "
-               + "; ".join(f"{g}.°: {', '.join(r['paises_con_nucleo'][str(g)])}" for g in contraste.GRADOS), "",
+               + "; ".join(f"{g}.°: {', '.join(r['paises_con_nucleo'][str(g)])}" for g in t.grados), "",
                _sensibilidad(filas), ""]
         rev = [f for f in filas if f.get("revision")]
         if rev:
             md += [f"Revisión experta: {len(rev)} conceptos cambiaron de clase frente a la regla automática "
-                   "(`data/interim/internacional/revisiones.json`): "
+                   f"(`{t.revisiones}`): "
                    + "; ".join(f"{f['nombre']} ({f['clase_ia']} → {f['clase']})" for f in rev) + ".", ""]
-        for clave, titulo, desc in CLASES:
+        for clave, titulo, desc in clases(t):
             if clave in SIN_TABLA:
                 continue
             sel = sorted((f for f in filas if f["clase"] == clave), key=_orden)
@@ -188,7 +201,7 @@ def escribir() -> dict:
             md += [f"## Candidatos a error de secuencia en la V2 ({len(sec)})", "",
                    "El prerrequisito llega después que el concepto que lo necesita (grafo de prerrequisitos del repo). "
                    "Son candidatos: en la revisión manual de 2026-10-08, 2 de 4 resultaron falsos porque el etiquetado "
-                   "no vio el prerrequisito en primaria. Los confirmados están en `internacional/README.md`.",
+                   f"no vio el prerrequisito en primaria. Los confirmados están en `{t.informe}/README.md`.",
                    "", "| Concepto (grado) | Prerrequisito que llega después (grado) | Confianza | Tema SV |",
                    "|---|---|---|---|"]
             for s in sec:
@@ -207,7 +220,7 @@ def escribir() -> dict:
         (base / f"{asig}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
         _excel(asig, filas, base)
     revision = _revision(objs, base)
-    visor.escribir(r, [*CLASES, ("no_aplica", "Sin exigencia", "Ni la V2 ni el núcleo internacional lo exigen.")],
+    visor.escribir(r, [*clases(t), ("no_aplica", "Sin exigencia", "Ni la V2 ni el núcleo internacional lo exigen.")],
                    NOMBRE, base)
     (base / "contraste.json").write_text(json.dumps(
         {"resumen": res, "filas": r["filas"], "secuencia": r["secuencia"], "profundidad": prof,
@@ -267,6 +280,13 @@ def _revision(objs: dict, base: Path) -> dict:
     return {"filas": len(filas)}
 
 
+def _despues(i: int, t: tramo.Tramo) -> str:
+    """Rama de la fórmula para lo que la V2 enseña solo después del tramo (no existe en 9.°–11.°)."""
+    if t.grados[-1] >= 11:
+        return ""
+    return f'IF(B{i}>{t.grados[-1]},IF(C{i}>=5,"SV tarde","despues del tramo"),'
+
+
 def _excel(asig: str, filas: list[dict], base: Path) -> None:
     """Hoja Datos (valores), Contraste (todo número es fórmula sobre Datos) y Resumen (conteos por clase)."""
 
@@ -275,33 +295,36 @@ def _excel(asig: str, filas: list[dict], base: Path) -> None:
     wb = Workbook()
     d = wb.active
     d.title = "Datos"
-    d.append(["Concepto", "Clase (IA)", "Grado SV V2", "Grado SV en 9-11", *[f"{p} nucleo" for p in ps],
-              *[f"{p} nucleo 9-11" for p in ps], *[f"{p} esp" for p in ps]])
+    t = tramo.actual()
+    d.append(["Concepto", "Clase (IA)", "Grado SV V2", f"Grado SV en {t.rango}", *[f"{p} nucleo" for p in ps],
+              *[f"{p} nucleo {t.rango}" for p in ps], *[f"{p} esp" for p in ps]])
     for f in filas:
         fp = [f["paises"].get(p, {}) for p in ps]
-        d.append([f["nombre"], f["clase"], f["sv_primer_grado"], f.get("sv_9_11"),
-                  *[x.get("primer_grado_nucleo") for x in fp], *[1 if x.get("nucleo_9_11") else None for x in fp],
+        d.append([f["nombre"], f["clase"], f["sv_primer_grado"], f.get("sv_en_tramo"),
+                  *[x.get("primer_grado_nucleo") for x in fp], *[1 if x.get("nucleo_en_tramo") else None for x in fp],
                   *[1 if x.get("en_especializacion") else None for x in fp]])
     a0, a1 = col(5), col(4 + n)
     b0, b1 = col(5 + n), col(4 + 2 * n)
     c0, c1 = col(5 + 2 * n), col(4 + 3 * n)
     c = wb.create_sheet("Contraste")
     c.append(["Concepto", "Grado SV V2", "Paises con nucleo", "Mediana nucleo", "Paises con especializacion",
-              "Diferencia SV - mediana", "Grado SV en 9-11", "Paises con nucleo en 9-11", "Lectura (regla simplificada)",
+              "Diferencia SV - mediana", f"Grado SV en {t.rango}", f"Paises con nucleo en {t.rango}",
+              "Lectura (regla simplificada)",
               "Clase oficial"])
     for i in range(2, len(filas) + 2):
         c.append([f"=Datos!A{i}", f"=IF(Datos!C{i}=\"\",\"\",Datos!C{i})", f"=COUNT(Datos!{a0}{i}:{a1}{i})",
                   f'=IF(C{i}=0,"",MEDIAN(Datos!{a0}{i}:{a1}{i}))', f"=COUNT(Datos!{c0}{i}:{c1}{i})",
                   f'=IF(OR(B{i}="",D{i}=""),"",B{i}-D{i})', f"=IF(Datos!D{i}=\"\",\"\",Datos!D{i})",
                   f"=COUNT(Datos!{b0}{i}:{b1}{i})",
-                  f'=IF(B{i}="",IF(C{i}>=5,"falta en SV",""),IF(G{i}="",IF(H{i}>=5,"no retomado en 9-11","previo"),'
-                  f'IF(B{i}<9,"retomado",IF(AND(C{i}<=1,E{i}>=3),"solo especializacion",IF(F{i}="","coherente",'
+                  f'=IF(B{i}="",IF(C{i}>=5,"falta en SV",""),IF(G{i}="",{_despues(i, t)}IF(H{i}>=5,'
+                  f'"no retomado en {t.rango}","previo"){")" if t.grados[-1] < 11 else ""},'
+                  f'IF(B{i}<{t.grados[0]},"retomado",IF(AND(C{i}<=1,E{i}>=3),"solo especializacion",IF(F{i}="","coherente",'
                   f'IF(F{i}<=-1.5,"SV adelantado",IF(F{i}>=2,"SV tarde","coherente")))))))',
                   f"=Datos!B{i}"])
     r = wb.create_sheet("Resumen")
     r.append(["Clase", "Conceptos"])
     ultima = len(filas) + 1
-    for clave, _, _ in CLASES:
+    for clave, _, _ in clases(t):
         fila = r.max_row + 1
         r.append([clave, f"=COUNTIF(Datos!B2:B{ultima},A{fila})"])
     r.append(["Total", f"=SUM(B2:B{r.max_row})"])

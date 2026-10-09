@@ -14,9 +14,9 @@ from functools import cache
 from goes_science_kg import conceptos
 from goes_science_kg.config import ruta
 from goes_science_kg.ingesta.mallas import extraer
-from goes_science_kg.internacional import vertex
+from goes_science_kg.internacional import tramo, vertex
 
-DIR = "data/interim/internacional/etiquetado"
+DIR = tramo.ETIQUETADO_COMUN   # malla V2 y catálogo; los países, en la carpeta de su tramo
 VERSION = "etiquetado-internacional-v1"
 POR_LOTE = 20
 ASIG_VOCAB = {"fisica": ["fisica"], "quimica": ["quimica"], "biologia": ["biologia"],
@@ -154,21 +154,31 @@ def etiquetar(items: list[dict], asignatura: str, nombre: str, hilos: int = 6) -
             "modelo": vertex.MODELO_ETIQUETAR, "version": VERSION,
         }
     faltan = sorted(validos - set(salida))
-    destino = ruta(DIR) / f"{nombre}.json"
+    destino = ruta(_carpeta(nombre)) / f"{nombre}.json"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(json.dumps(dict(sorted(salida.items())), ensure_ascii=False, indent=1) + "\n",
                        encoding="utf-8")
-    leer_etiquetados.cache_clear()
+    _leer_etiquetados.cache_clear()
     return {"nombre": nombre, "items": len(items), "etiquetados": len(salida), "faltan": len(faltan),
             "ids_invalidos": invalidos}
 
 
-@cache
+def _carpeta(nombre: str) -> str:
+    """Los etiquetados de los países son de cada tramo; los de la malla V2 (2.°–11.°), comunes."""
+    return tramo.actual().etiquetado if nombre.startswith("pais_") else tramo.ETIQUETADO_COMUN
+
+
 def leer_etiquetados(prefijo: str) -> tuple[tuple[str, dict], ...]:
-    """(nombre, etiquetas) de cada etiquetado/<prefijo>*.json, en orden de nombre. Con caché: `etiquetar` la limpia."""
+    """(nombre, etiquetas) de cada <prefijo>*.json, en orden de nombre, con las divisiones aplicadas. Con caché por
+    carpeta: `etiquetar` la limpia al escribir."""
+    return _leer_etiquetados(prefijo, _carpeta(prefijo))
+
+
+@cache
+def _leer_etiquetados(prefijo: str, carpeta: str) -> tuple[tuple[str, dict], ...]:
     conjunto = {"pais_": "internacional", "malla_v2_": "malla_v2"}.get(prefijo)
     return tuple((f.stem, _con_divisiones(conjunto, json.loads(f.read_text(encoding="utf-8"))))
-                 for f in sorted(ruta(DIR).glob(f"{prefijo}*.json")))
+                 for f in sorted(ruta(carpeta).glob(f"{prefijo}*.json")))
 
 
 def _con_divisiones(conjunto: str | None, etiquetas: dict[str, dict]) -> dict[str, dict]:

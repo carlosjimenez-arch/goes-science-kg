@@ -1,0 +1,91 @@
+# Documentos del estudio internacional de 2.°–8.° (spec 12). Mismo formato que config/internacional.yaml (9.°–11.°).
+#
+# Equivalencia de grados por edad de ingreso (SV 1.° ≈ 7 años; misma regla que la spec 11):
+#   Singapur P = SV, Sec 1–2 = SV 7–8 · Japón, Corea, Taiwán y Hong Kong: primaria = SV + 1 (小3 / 초3 / 三年級 = SV 2),
+#   secundaria baja 1.°–3.° = SV 6–8 · Inglaterra Year = SV + 2 · Australia Year = SV + 1 · Estonia grado = SV ·
+#   Ontario Grade = SV + 1.
+# En 2.°–8.° todo es núcleo (obligatorio): no hay especialización.
+#
+# Documentos marcados «igual que 9_11»: copia exacta de su entrada en config/internacional.yaml (mismo título, curso y
+# páginas), así que su extracción ya está en la caché de Vertex y no cuesta nada.
+
+paises:
+  SG: {nombre: Singapur, nota: "Primary Science P3–P6 (2023) y Lower Secondary Science G2/G3 (2024)"}
+  JP: {nombre: Japón, nota: "小学校・中学校学習指導要領 理科 (2017): objetivos ya extraídos del grafo principal (jp-cos)"}
+  KR: {nombre: Corea del Sur, nota: "2022 개정 과학과 교육과정: 초등 3~4, 5~6 y 중학교 1~3학년군"}
+  ENG: {nombre: Inglaterra, nota: "National Curriculum KS1–KS3 (2013), ya extraído; Year 10 (SV 8) desde GCSE Combined"}
+  AU: {nombre: Australia, nota: "Australian Curriculum v9 F–10, ya extraído del grafo principal"}
+  HK: {nombre: Hong Kong, nota: "PENDIENTE: descargar Primary Science (2025) y S1–3 Science (skill fuentes-descargar)"}
+  TW: {nombre: Taiwán, nota: "十二年國教 自然科學領域: 第二~第四學習階段"}
+  EE: {nombre: Estonia, nota: "Põhikool, Annex 4 Natural Science (2023): etapas I–III"}
+  "ON": {nombre: Ontario, nota: "SNC1W (Grade 9 = SV 8). PENDIENTE: descargar Science and Technology Grades 1–8 (2022)"}
+
+documentos:
+  # ── Singapur ───────────────────────────────────────────────────────────────────────────────────────────
+  - {id: sg_primaria, pais: SG, archivo: data/fuentes/externos/paises/singapur/SG_Primary_Science_2023.pdf,
+     titulo: "Primary Science Syllabus (2023)", curso: "Primary Science P3–P6", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [[17, 19], [38, 81]], grado_sv: [3, 6],   # habilidades P4/P6 y resultados de aprendizaje
+     grados_pais: {"P3": 3, "P4": 4, "P5": 5, "P6": 6, "Lower Block": [3, 4], "Upper Block": [5, 6]}}
+  - {id: sg_secundaria_baja, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_LowerSec_Science_G2G3_2024.pdf,
+     titulo: "Lower Secondary Science Syllabus G2/G3 (2024)", curso: "Lower Secondary Science G2/G3 (Sec 1–2)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [30, 52], grado_sv: [7, 8],   # sección 5
+     grados_pais: {"Sec 1": 7, "Sec 2": 8}}
+
+  # ── Corea ──────────────────────────────────────────────────────────────────────────────────────────────
+  - {id: kr_primaria_34, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "초등학교 과학 3~4학년군 (Ciencias, primaria)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [19, 31], grado_sv: [2, 3]}
+  - {id: kr_primaria_56, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "초등학교 과학 5~6학년군 (Ciencias, primaria)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [32, 45], grado_sv: [4, 5]}
+  # igual que 9_11
+  - {id: kr_jung, pais: KR, archivo: data/fuentes/externos/paises/corea/sec_bach/KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf,
+     titulo: "2022 개정 과학과 교육과정", curso: "중학교 과학 1~3학년군 (Ciencias, secundaria baja)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [46, 67], grado_sv: [6, 8]}
+
+  # ── Inglaterra (Year 10 = SV 8) ─────────────────────────────────────────────────────────────────────────
+  # igual que 9_11
+  - {id: eng_gcse_comb, pais: ENG, archivo: data/fuentes/externos/paises/inglaterra/sec_bach/ENG_GCSE_CombinedScience_SubjectContent_2015.pdf,
+     titulo: "GCSE Combined Science: subject content (DfE)", curso: "GCSE Combined Science", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [7, 36], grado_sv: [8, 9]}
+
+  # ── Taiwán ─────────────────────────────────────────────────────────────────────────────────────────────
+  - {id: tw_primaria, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "國民小學 第二、第三學習階段 (grados 3–6)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [15, 25], grado_sv: [2, 5],
+     grados_pais: {"第二學習階段": [2, 3], "第三學習階段": [4, 5], "Ⅱ": [2, 3], "Ⅲ": [4, 5]}}
+  # igual que 9_11
+  - {id: tw_jh, pais: TW, archivo: data/fuentes/externos/paises/taiwan/sec_bach/TW_12YBE_Ciencias_Naturales_2018_zh.pdf,
+     titulo: "十二年國民基本教育課程綱要 自然科學領域", curso: "國民中學 第四學習階段 (grados 7–9)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [25, 35], grado_sv: [6, 8]}
+
+  # ── Estonia ────────────────────────────────────────────────────────────────────────────────────────────
+  - {id: ee_basica_12, pais: EE, archivo: data/fuentes/externos/paises/estonia/sec_bach/EE_Basic_Annex4_Natural_Science_2023_en.pdf,
+     titulo: "National Curriculum for Basic Schools, Annex 4: Natural Science (2023)", curso: "Escuela básica, I y II etapa (grados 1–6)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [8, 11], grado_sv: [2, 6],
+     grados_pais: {"first school stage": [2, 3], "second school stage": [4, 6]}}
+  # igual que 9_11
+  - {id: ee_basic, pais: EE, archivo: data/fuentes/externos/paises/estonia/sec_bach/EE_Basic_Annex4_Natural_Science_2023_en.pdf,
+     titulo: "National Curriculum for Basic Schools, Annex 4: Natural Science (2023)", curso: "Escuela básica, III etapa (grados 7–9)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [12, 28], grado_sv: [7, 9],
+     grados_pais: {"grade 7": 7, "grade 8": 8, "grade 9": 9}}
+
+  # ── Ontario ────────────────────────────────────────────────────────────────────────────────────────────
+  # igual que 9_11
+  - {id: on_snc1w, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_Science_Grade9_SNC1W_2022.pdf,
+     titulo: "The Ontario Curriculum, Science Grade 9 (SNC1W, 2022)", curso: "Science, Grade 9, De-streamed (SNC1W)",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [46, 55], grado_sv: [8, 8]}
+
+# Objetivos ya extraídos y etiquetados en el grafo principal (data/interim/paises), con grado SV: no cuestan nada.
+importar:
+  - {pais: ENG, archivo: data/interim/paises/inglaterra.json, grados_sv: [2, 3, 4], nivel: nucleo,
+     curso: "National Curriculum KS1–KS2 Science", documento: eng_ks12}
+  - {pais: ENG, archivo: data/interim/paises/inglaterra.json, grados_sv: [5, 6, 7], nivel: nucleo,
+     curso: "National Curriculum KS3 Science", documento: eng_ks3}
+  - {pais: AU, archivo: data/interim/paises/australia.json, grados_sv: [2, 3, 4, 5, 6, 7, 8], nivel: nucleo,
+     curso: "Australian Curriculum Science F–10 (v9)", documento: au_f6_v9}
+  - {pais: JP, archivo: data/interim/paises/japon.json, grados_sv: [2, 3, 4, 5, 6, 7, 8], nivel: nucleo,
+     curso: "学習指導要領 理科 (小学校・中学校, 2017)", documento: jp_cos_826}
+
+# Pendientes de descarga (no hay documento todavía): Hong Kong Primary Science (2025) y Science S1–3; Ontario
+# Science and Technology Grades 1–8 (2022). Hasta tenerlos, HK no tiene núcleo en 2.°–8.° y ON solo tiene SV 8.

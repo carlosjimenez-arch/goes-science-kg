@@ -1,5 +1,5 @@
-"""Profundidad (demanda cognitiva) y prácticas científicas: malla V2 de 9.°–11.° frente al núcleo de los países
-(spec 11, puntos 5 y 6).
+"""Profundidad (demanda cognitiva) y prácticas científicas: malla V2 frente al núcleo de los países, en el tramo
+activo (spec 11, puntos 5 y 6; spec 12).
 
 Demanda: la V2 no la declara y la de los países la puso Gemini, así que comparar esas dos fuentes mezclaría
 métodos. Se usa el MISMO clasificador determinista en los dos lados: los verbos del enunciado (indicador de la V2,
@@ -16,7 +16,7 @@ from collections import Counter, defaultdict
 
 from goes_science_kg import conceptos
 from goes_science_kg.ingesta.mallas import extraer
-from goes_science_kg.internacional import etiquetar
+from goes_science_kg.internacional import etiquetar, tramo
 from goes_science_kg.internacional.consenso import ensenados, objetivos, paises
 
 NIVELES = ("recordar", "aplicar", "razonar")
@@ -88,7 +88,8 @@ def _asignatura_tema(t: dict, e: dict, voc: dict) -> str | None:
 
 
 def _unidades() -> dict[str, dict[str, list[dict]]]:
-    """asignatura → {'SV': [enunciados], '<país>': [enunciados del núcleo de 9.°–11.°]} con texto y prácticas."""
+    """asignatura → {'SV': [enunciados], '<país>': [enunciados del núcleo en el tramo]} con texto y prácticas."""
+    t_activo = tramo.actual()
 
     voc = conceptos.vocabulario()
     etq_sv: dict[str, dict] = {}
@@ -98,7 +99,7 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
             etq_sv.update(etiquetas)
     salida: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
     for t in extraer("mallas_v2"):
-        if t.grado < 9 or t.id not in etq_sv:
+        if t.grado not in t_activo.grados or t.id not in etq_sv:
             continue
         ficha = t.dict()
         asig = _asignatura_tema(ficha, etq_sv[t.id], voc)
@@ -107,7 +108,8 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
                                        "practicas": etq_sv[t.id]["practicas"]})
     etq = etiquetar.cargar_etiquetas("pais_")
     for o in objetivos():
-        if o["nivel"] != "nucleo" or o["grado_sv_max"] < 9 or o["id"] not in etq or not o["asignatura"]:
+        if (o["nivel"] != "nucleo" or not t_activo.contiene(o["grado_sv_min"], o["grado_sv_max"])
+                or o["id"] not in etq or not o["asignatura"]):
             continue
         if not ensenados(etq[o["id"]]) and not etq[o["id"]]["practicas"]:
             continue
@@ -136,7 +138,7 @@ def analizar() -> dict:
                     total += 1
                     acuerdo += d == i["demanda_ia"]
         paises_n = [p for p in paises() if p in filas]
-        # Prácticas que exige el núcleo de ≥ 5 países en la asignatura y que la V2 no etiqueta en 9.°–11.°.
+        # Prácticas que exige el núcleo de ≥ 5 países en la asignatura y que la V2 no etiqueta en el tramo.
         cuenta = Counter(p for q in paises_n for p in filas[q]["practicas"])
         sv_prac = set(filas.get("SV", {}).get("practicas", []))
         resultado[asig] = {"filas": filas, "paises": paises_n,

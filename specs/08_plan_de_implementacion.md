@@ -70,6 +70,10 @@ Spec 11. 9 países, 62 documentos y 9.040 objetivos (con la secundaria baja de K
 `data/grafo/internacional/`, informes, Excel y CSV de revisión en `internacional/`, y hallazgos verificados en
 `internacional/README.md`, y visor en `internacional/visor.html`. Falta la revisión del MINED.
 
+## Fase 5-ter · Grafos internacionales de 2.°–8.° (spec 12) · lista para ejecutar
+Código por tramo (`--tramo 2_8`), catálogo `config/internacional_2_8.yaml` y costo estimado (116 llamadas de
+extracción). Pendiente: aprobación del gasto y descarga de HK y ON 1–8.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

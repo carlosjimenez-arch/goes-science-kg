@@ -1,4 +1,4 @@
-"""Grafos por país y grafo de consenso internacional por asignatura, para 9.°–11.° (spec 11).
+"""Grafos por país y grafo de consenso internacional por asignatura, por tramo de grados (specs 11 y 12).
 
 Regla de presencia, la misma del grafo principal: un objetivo ENSEÑA un concepto si lo tiene como principal, o como
 secundario con confianza alta o media.
@@ -22,29 +22,30 @@ from pathlib import Path
 from goes_science_kg import conceptos
 from goes_science_kg.config import cargar, ruta
 from goes_science_kg.ingesta import legado
-from goes_science_kg.internacional import etiquetar
-from goes_science_kg.internacional.extraer import DIR_SALIDA
+from goes_science_kg.internacional import etiquetar, tramo
 from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
-DIR_GRAFO = "data/grafo/internacional"
 VERSION = "grafo-internacional-v1"
-GRADOS = (9, 10, 11)
 ANTECEDENTE = {"ENG": "inglaterra", "AU": "australia", "JP": "japon"}
 ASIG_SV = {"fisica": "fisica", "quimica": "quimica", "biologia": "biologia",
            "ciencias_tierra_espacio": "tierra_espacio"}
 
 
 def paises() -> list[str]:
-    """Códigos de los países del estudio internacional (config/internacional.yaml), en orden alfabético."""
-    return sorted(cargar("internacional")["paises"])
+    """Códigos de los países del tramo activo (config/<tramo>.yaml), en orden alfabético."""
+    return sorted(cargar(tramo.actual().config)["paises"])
+
+
+def objetivos() -> tuple[dict, ...]:
+    """Objetivos extraídos de todos los países del tramo activo, ordenados por id; con caché por tramo."""
+    return _objetivos(tramo.actual().clave)
 
 
 @cache
-def objetivos() -> tuple[dict, ...]:
-    """Objetivos extraídos de todos los países (DIR_SALIDA/<país>.json), ordenados por id; con caché."""
+def _objetivos(clave: str) -> tuple[dict, ...]:
     filas = []
     for p in paises():
-        f = ruta(DIR_SALIDA) / f"{p}.json"
+        f = ruta(tramo.TRAMOS[clave].objetivos) / f"{p}.json"
         if f.exists():
             filas += json.loads(f.read_text(encoding="utf-8"))
     return tuple(sorted(filas, key=lambda o: o["id"]))
@@ -59,7 +60,7 @@ def grupos_paises(solo: list[str] | None = None) -> list[etiquetar.Grupo]:
     """Grupos de etiquetado: objetivos de cada país agrupados por asignatura (los importados sin asignatura van con
     todo el vocabulario)."""
     # Los documentos de antecedente (secundaria baja) van en grupos aparte: así no cambian los lotes ya etiquetados.
-    antecedente = {d["id"] for d in cargar("internacional")["documentos"] if d.get("antecedente")}
+    antecedente = {d["id"] for d in cargar(tramo.actual().config)["documentos"] if d.get("antecedente")}
     resumen = []
     for p in paises():
         if solo and p not in solo:
@@ -116,7 +117,7 @@ def _antecedente() -> list[dict]:
     for codigo, archivo in ANTECEDENTE.items():
         for o in json.loads(ruta(f"data/interim/paises/{archivo}.json").read_text(encoding="utf-8")):
             g = (o["grado_min"] + o["grado_max"]) / 2
-            if g > 8.5 or o["id"] not in etq:
+            if g > tramo.actual().grados[0] - 0.5 or o["id"] not in etq:   # solo lo anterior al tramo
                 continue
             filas.extend({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"]}
                          for c in etq[o["id"]]["conceptos"])
@@ -124,14 +125,14 @@ def _antecedente() -> list[dict]:
 
 
 def construir() -> dict:
-    """Escribe data/grafo/internacional/: grafo (nodos, aristas) y consenso por concepto."""
+    """Escribe la carpeta del grafo del tramo activo: grafo (nodos, aristas) y consenso por concepto."""
     voc, prac = conceptos.vocabulario(), conceptos.practicas()
     etq = etiquetar.cargar_etiquetas("pais_")
     objs = [o for o in objetivos() if o["id"] in etq]
     nodos, aristas = [], []
     cursos = sorted({(o["pais"], o["curso"], o["nivel"]) for o in objs})
     for p in paises():
-        info = cargar("internacional")["paises"][p]
+        info = cargar(tramo.actual().config)["paises"][p]
         nodos.append({"id": f"PAIS:{p}", "tipo": "Pais", "nombre": info["nombre"], "nota": info.get("nota")})
     for p, curso, nivel in cursos:
         cid = f"CURSO:{p}/{curso}"
@@ -177,7 +178,7 @@ def construir() -> dict:
                    for a in cargar_prerrequisitos() if a["origen"] in usados and a["destino"] in usados)
 
     consenso = _consenso(objs, etq, voc)
-    base = ruta(DIR_GRAFO)
+    base = ruta(tramo.actual().grafo)
     base.mkdir(parents=True, exist_ok=True)
     nodos.sort(key=lambda n: n["id"])
     aristas.sort(key=lambda a: (a["tipo"], a["origen"], a["destino"], a.get("peso", "")))
@@ -195,11 +196,12 @@ def construir() -> dict:
 
 
 def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
+    grados = tramo.actual().grados
     # Denominador del consenso: países con un núcleo común (para todos) que llega hasta el grado g o antes.
     # Pregunta: ¿qué proporción de los currículos comunes ya enseñó el concepto a esa edad? Hong Kong, sin núcleo
     # en S4–S6, no entra en el denominador (sí en la especialización).
     con_nucleo = {g: sorted({o["pais"] for o in objs if o["nivel"] == "nucleo" and o["grado_sv_min"] <= g})
-                  for g in GRADOS}
+                  for g in grados}
     por: dict[str, dict[str, dict]] = defaultdict(lambda: defaultdict(lambda: {"nucleo": [], "especializacion": []}))
     # Evidencia del núcleo por país: 2 puntos por objetivo con el concepto como principal, 1 como secundario.
     # Con ≥ 2 puntos el núcleo «lo enseña» de forma sólida (un principal, o al menos dos secundarios).
@@ -228,12 +230,13 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             primero = min([*gn, *ge, *([ga] if ga is not None else [])], default=None)
             if primero is None:
                 continue
-            # El núcleo de 9.°–11.° solo cuenta objetivos extraídos cuyo rango llega a 9.° (no el antecedente).
-            nucleo_9_11 = any(gmax >= GRADOS[0] for _, _, gmax in d["nucleo"])
+            # El núcleo del tramo solo cuenta objetivos extraídos cuyo rango llega al tramo (no el antecedente).
+            nucleo_en_tramo = any(gmax >= grados[0] for _, _, gmax in d["nucleo"])
             # Evidencia: primero los objetivos del núcleo, después los de especialización.
             ids = sorted({i for _, i, _ in d["nucleo"]}) + sorted({i for _, i, _ in d["especializacion"]})
             filas[p] = {"primer_grado_nucleo": primero_nucleo, "primer_grado": primero,
-                        "antes_de_9": ga is not None, "en_especializacion": bool(ge), "nucleo_9_11": nucleo_9_11,
+                        "antes_del_tramo": ga is not None, "en_especializacion": bool(ge),
+                        "nucleo_en_tramo": nucleo_en_tramo,
                         "objetivos": list(dict.fromkeys(ids))[:12]}
             if primero_nucleo is not None:
                 primeros_nucleo.append(primero_nucleo)
@@ -242,18 +245,18 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             continue
         nucleo_hasta = {g: sorted(p for p, f in filas.items()
                                   if f["primer_grado_nucleo"] is not None and f["primer_grado_nucleo"] <= g + 0.5)
-                        for g in GRADOS}
+                        for g in grados}
         salida.append({
             "concepto": c, "nombre": voc[c]["nombre"], "asignatura": ASIG_SV.get(voc[c]["asignatura"]),
             "paises": filas, "n_paises": len(filas),
             "n_nucleo": len(primeros_nucleo),
-            "n_nucleo_9_11": sum(f["nucleo_9_11"] for f in filas.values()),
+            "n_nucleo_en_tramo": sum(f["nucleo_en_tramo"] for f in filas.values()),
             "n_nucleo_foco": sum(v >= 2 for v in foco[c].values()),
             "n_solo_especializacion": sum(f["primer_grado_nucleo"] is None for f in filas.values()),
             "mediana_primer_grado_nucleo": statistics.median(primeros_nucleo) if primeros_nucleo else None,
             "mediana_primer_grado": statistics.median(primeros),
             "nucleo_hasta_grado": nucleo_hasta,
             "proporcion_nucleo_hasta_grado": {g: round(len(nucleo_hasta[g]) / max(1, len(con_nucleo[g])), 3)
-                                              for g in GRADOS},
+                                              for g in grados},
         })
     return {"version": VERSION, "paises_con_nucleo_por_grado": con_nucleo, "conceptos": salida}

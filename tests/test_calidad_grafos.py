@@ -260,7 +260,7 @@ def test_todo_elemento_con_un_concepto_dividido_tiene_asignacion():
         "objetivos_pais": {f["id"]: f["conceptos"] for f in json.loads(
             ruta("data/interim/conceptos/etiquetado_paises.json").read_text(encoding="utf-8"))},
         "internacional": {}, "malla_v2": {}}
-    for f in sorted(ruta("data/interim/internacional/etiquetado").glob("*.json")):
+    for f in sorted(ruta("data/interim").glob("internacional*/etiquetado/*.json")):   # los dos tramos
         conjunto = "internacional" if f.name.startswith("pais_") else "malla_v2"
         for i, e in json.loads(f.read_text(encoding="utf-8")).items():
             crudas[conjunto].setdefault(i, []).extend(e["principales"] + e["secundarios"])

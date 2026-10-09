@@ -388,6 +388,15 @@ internacional_app = typer.Typer(help="Grafos internacionales de 9.°–11.° y c
 app.add_typer(internacional_app, name="internacional")
 
 
+@internacional_app.callback()
+def internacional_opciones(tramo: Annotated[str, typer.Option(help="Tramo de grados: 9_11 (spec 11) o 2_8 (spec 12)")]
+                           = "9_11") -> None:
+    """Grafos internacionales y contraste con la malla V2, por tramo de grados."""
+    from goes_science_kg.internacional import tramo as tramos
+
+    tramos.usar(tramo)
+
+
 CONFIRMAR = Annotated[bool, typer.Option("--confirmar", help="Pagar las llamadas a Vertex que no están en caché.")]
 
 

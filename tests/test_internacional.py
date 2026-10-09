@@ -10,8 +10,12 @@ from goes_science_kg.internacional import contraste, etiquetar, extraer, vertex
 from goes_science_kg.internacional.consenso import ensenados
 
 
-def test_config_internacional_valida():
-    cfg = cargar("internacional")
+@pytest.mark.parametrize("clave", ["9_11", "2_8"])
+def test_config_internacional_valida(clave):
+    from goes_science_kg.internacional import tramo
+
+    t = tramo.TRAMOS[clave]
+    cfg = cargar(t.config)
     ids = [d["id"] for d in cfg["documentos"]]
     assert len(ids) == len(set(ids))
     for d in cfg["documentos"]:
@@ -20,10 +24,17 @@ def test_config_internacional_valida():
         assert d["nivel"] in ("nucleo", "especializacion"), d["id"]
         assert d["asignatura"] in extraer.CODIGO_ASIG, d["id"]
         g0, g1 = d["grado_sv"]
-        minimo = 6 if d.get("antecedente") else 7   # antecedente: secundaria baja (KR 중1 ≈ SV 6.°)
-        assert minimo <= g0 <= g1 <= 11, d["id"]
-        assert not d.get("antecedente") or g1 <= 8, d["id"]
-        assert all(7 <= g <= 11 for g in (d.get("grados_pais") or {}).values()), d["id"]
+        assert 2 <= g0 <= g1 <= 11 and (t.contiene(g0, g1) or d.get("antecedente")), d["id"]
+        if clave == "9_11":
+            minimo = 6 if d.get("antecedente") else 7   # antecedente: secundaria baja (KR 중1 ≈ SV 6.°)
+            assert minimo <= g0, d["id"]
+            assert not d.get("antecedente") or g1 <= 8, d["id"]
+        for g in (d.get("grados_pais") or {}).values():   # un grado o un rango [g0, g1]
+            a, b = g if isinstance(g, list) else (g, g)
+            assert g0 <= a <= b <= g1, d["id"]
+    for imp in cfg.get("importar", []):
+        assert imp["pais"] in cfg["paises"] and ruta(imp["archivo"]).is_file()
+        assert all(t.contiene(g) for g in imp["grados_sv"]), imp
 
 
 def test_ontario_no_se_lee_como_booleano():
@@ -80,7 +91,7 @@ def test_etiquetar_descarta_ids_inventados(monkeypatch, tmp_path):
                                "propuestos": [], "confianza": "alta", "justificacion": "x"}]}
 
     monkeypatch.setattr(vertex, "generar_json", falso)
-    monkeypatch.setattr(etiquetar, "DIR", str(tmp_path))
+    monkeypatch.setattr(etiquetar, "_carpeta", lambda nombre: str(tmp_path))
     r = etiquetar.etiquetar([{"id": "T1", "texto": "t"}], "fisica", "prueba")
     assert r["etiquetados"] == 1 and r["ids_invalidos"] == 3
     salida = (tmp_path / "prueba.json").read_text(encoding="utf-8")
@@ -93,7 +104,7 @@ def test_regla_de_presencia():
     assert ensenados({**e, "confianza": "media"}) == ["A", "B"]
 
 
-# (sv_primer, sv_9_11, g_cons, n_nucleo_9_11, mediana_nucleo, n_nucleo, n_esp)
+# (sv_primer, sv_en_tramo, g_cons, n_nucleo_en_tramo, mediana_nucleo, n_nucleo_foco, n_esp)
 @pytest.mark.parametrize("args, esperado", [
     ((None, None, 9, 6, 9.0, 6, 2), "faltante"),
     ((None, None, None, 0, None, 0, 3), "no_aplica"),

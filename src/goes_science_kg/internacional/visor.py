@@ -1,4 +1,4 @@
-"""Visor del contraste internacional de 9.°–11.° (internacional/visor.html, spec 11).
+"""Visor del contraste internacional del tramo activo (<informe>/visor.html, specs 11 y 12).
 
 Una pestaña por asignatura. Cada fila es un concepto con su clase, los grados de la V2 y, por país, el grado SV de
 primera aparición (resaltado si es núcleo; «e» si solo está en especialización). Al hacer clic se ve la evidencia:
@@ -13,6 +13,7 @@ import json
 from typing import TYPE_CHECKING
 
 from goes_science_kg.config import relativa
+from goes_science_kg.internacional import tramo
 from goes_science_kg.internacional.consenso import objetivos, paises
 
 if TYPE_CHECKING:
@@ -33,7 +34,7 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
             d = f["paises"].get(p)
             if not d:
                 continue
-            celdas[p] = [d["primer_grado_nucleo"], d["en_especializacion"], d["nucleo_9_11"]]
+            celdas[p] = [d["primer_grado_nucleo"], d["en_especializacion"], d["nucleo_en_tramo"]]
             evidencia.extend([p, o["curso"], o["nivel"], o["documento"], o.get("pagina") or "", o["texto"]]
                              for i in d["objetivos"][:POR_PAIS] if (o := objs.get(i)))
         temas = []
@@ -42,12 +43,15 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
             temas.append([t, x["archivo"].split("/")[-1], x["hoja"], x["fila"], x["grado"],
                           f"{x['contenido']}. {x['indicador']}"[:260]])
         filas.append({"a": f["asignatura"], "c": f["nombre"], "k": f["clase"], "sv": f["sv_primer_grado"],
-                      "s9": f.get("sv_9_11"), "n9": f["n_nucleo_9_11"], "ne": f["n_especializacion"],
+                      "s9": f.get("sv_en_tramo"), "n9": f["n_nucleo_en_tramo"], "ne": f["n_especializacion"],
                       "p": celdas, "t": temas, "e": evidencia})
     datos = {"filas": filas, "paises": ps, "clases": [[k, t, d] for k, t, d in clases],
              "asignaturas": [[k, v] for k, v in nombres.items()]}
-    pagina = PLANTILLA.replace("__DATOS__", json.dumps(datos, ensure_ascii=False).replace("</", "<\\/")) \
-                      .replace("__TITULO__", html.escape("Contraste internacional 9.°–11.°"))
+    t = tramo.actual()
+    pagina = (PLANTILLA.replace("__TITULO__", html.escape(f"Contraste internacional {t.etiqueta}"))
+              .replace("__TRAMO__", html.escape(t.etiqueta))
+              .replace("__README__", html.escape(f"{t.informe}/README.md"))
+              .replace("__DATOS__", json.dumps(datos, ensure_ascii=False).replace("</", "<\\/")))
     p = destino / "visor.html"
     p.write_text(pagina, encoding="utf-8")
     return relativa(p)
@@ -83,14 +87,14 @@ tr.det b{color:var(--sv)}.leyenda{font-size:12px;color:var(--muted)}
 <h1>__TITULO__</h1>
 <p>Malla V2 de El Salvador frente al núcleo común (lo que cursa la mayoría) de 9 países: SG, JP, KR, ENG, AU, HK, TW,
 EE y ON. En cada país, la celda muestra el grado SV equivalente en que aparece el concepto por primera vez; en
-<b>negrita y fondo verde</b> si está en su núcleo de 9.°–11.° y con «e» si solo está en cursos electivos. Haz clic en
-un concepto para ver la evidencia. Método, hallazgos verificados y límites: <code>internacional/README.md</code>.</p>
+<b>negrita y fondo verde</b> si está en su núcleo de __TRAMO__ y con «e» si solo está en cursos electivos. Haz clic en
+un concepto para ver la evidencia. Método, hallazgos verificados y límites: <code>__README__</code>.</p>
 <div class="pestanas" id="asigs"></div>
 <input type="search" id="q" placeholder="Buscar concepto…">
 <div class="chips" id="chips"></div>
 <div class="leyenda" id="desc"></div>
 <div class="tabla"><table><thead><tr id="cab"><th>Concepto</th><th>Clase</th><th>Grados V2</th>
-<th>Núcleo 9.°–11.°</th><th>Electivas</th></tr></thead><tbody id="cuerpo"></tbody></table></div>
+<th>Núcleo __TRAMO__</th><th>Electivas</th></tr></thead><tbody id="cuerpo"></tbody></table></div>
 <script>
 const D = __DATOS__;
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

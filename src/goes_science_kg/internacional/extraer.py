@@ -21,9 +21,8 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 
 from goes_science_kg.config import cargar, ruta
-from goes_science_kg.internacional import vertex
+from goes_science_kg.internacional import tramo, vertex
 
-DIR_SALIDA = "data/interim/internacional/objetivos"
 VERSION = "internacional-v1"
 VENTANA = 2
 CARACTERES_SECCION = 12000
@@ -231,7 +230,7 @@ def _procesar(v: Ventana) -> list[dict]:
 def llamadas_pendientes(pais: str) -> int:
     """Llamadas a Vertex que costaría extraer el país (cota inferior: una ventana sin extracción en caché cuenta 2,
     extraer y validar)."""
-    cfg = cargar("internacional")
+    cfg = cargar(tramo.actual().config)
     docs = [{**d, "pais": pais, "pais_nombre": cfg["paises"][pais]["nombre"]} for d in cfg["documentos"]
             if d["pais"] == pais]
     total = 0
@@ -253,7 +252,7 @@ def _importados(pais: str) -> list[dict]:
     """Objetivos de sesiones anteriores que se reutilizan tal cual (config: importar)."""
     tipos = {"Práctica": "practica", "Conocimiento": "conocimiento", "Aplicación": "aplicacion"}
     salida = []
-    for imp in cargar("internacional").get("importar", []):
+    for imp in cargar(tramo.actual().config).get("importar", []):
         if imp["pais"] != pais:
             continue
         for o in json.loads(ruta(imp["archivo"]).read_text(encoding="utf-8")):
@@ -273,7 +272,7 @@ def _importados(pais: str) -> list[dict]:
 
 def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> dict:
     """Extrae y valida los documentos del país (o solo los ids de `solo`). Devuelve conteos."""
-    cfg = cargar("internacional")
+    cfg = cargar(tramo.actual().config)
     info = cfg["paises"][pais]
     docs = [{**d, "pais": pais, "pais_nombre": info["nombre"]} for d in cfg["documentos"]
             if d["pais"] == pais and (not solo or d["id"] in solo)]
@@ -285,7 +284,8 @@ def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> di
         for o in objs:
             d = v.doc
             grado = (d.get("grados_pais") or {}).get(o.get("grado_pais", "").strip())
-            g0, g1 = (grado, grado) if grado else tuple(d["grado_sv"])
+            # grados_pais da un grado SV o un rango [g0, g1] (p. ej. una etapa de dos años, como 第二學習階段).
+            g0, g1 = (tuple(grado) if isinstance(grado, list) else (grado, grado)) if grado else tuple(d["grado_sv"])
             fila = {
                 "pais": pais, "documento": d["id"], "archivo": d["archivo"], "pagina": o["pagina"],
                 "curso": d["curso"], "nivel": d["nivel"],
@@ -298,7 +298,7 @@ def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> di
             (descartados if o["validacion"]["veredicto"] == "no_fiel" else salida).append(fila)
     _asignar_ids(salida)
     salida += _importados(pais)
-    base = ruta(DIR_SALIDA)
+    base = ruta(tramo.actual().objetivos)
     base.mkdir(parents=True, exist_ok=True)
     (base / f"{pais}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (base / f"{pais}_descartados.json").write_text(

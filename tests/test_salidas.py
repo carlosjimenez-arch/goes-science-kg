@@ -77,9 +77,11 @@ def test_alineacion_rechaza_codigos_inventados(tmp_path, monkeypatch):
 
 def test_consenso_versionado_al_dia(tmp_path, monkeypatch):
     """El consenso internacional versionado corresponde a los objetivos y etiquetas versionados."""
-    from goes_science_kg.internacional import consenso
+    import dataclasses
 
-    monkeypatch.setattr(consenso, "DIR_GRAFO", str(tmp_path))
+    from goes_science_kg.internacional import consenso, tramo
+
+    monkeypatch.setitem(tramo.TRAMOS, "9_11", dataclasses.replace(tramo.TRAMOS["9_11"], grafo=str(tmp_path)))
     nuevo = consenso.construir()
     versionado = json.loads(ruta("data/grafo/internacional/manifest.json").read_text(encoding="utf-8"))
     assert json.loads(json.dumps(nuevo)) == versionado
@@ -88,11 +90,13 @@ def test_consenso_versionado_al_dia(tmp_path, monkeypatch):
 
 
 def test_informe_internacional(tmp_path, monkeypatch):
+    import dataclasses
+
     from openpyxl import load_workbook
 
-    from goes_science_kg.internacional import contraste, informe
+    from goes_science_kg.internacional import contraste, informe, tramo
 
-    monkeypatch.setattr(informe, "DIR", str(tmp_path))
+    monkeypatch.setitem(tramo.TRAMOS, "9_11", dataclasses.replace(tramo.TRAMOS["9_11"], informe=str(tmp_path)))
     r = informe.escribir()
     for asig in contraste.ASIGNATURAS:
         md = (tmp_path / f"{asig}.md").read_text(encoding="utf-8")
@@ -115,9 +119,9 @@ def test_visor_internacional_escapa_el_cierre_de_script(tmp_path):
     from goes_science_kg.internacional import informe, visor
 
     fila = {"concepto": "CON:x/y", "nombre": "</script><b>inyección</b>", "asignatura": "fisica", "clase": "alineado",
-            "sv_primer_grado": 10, "sv_9_11": 10, "n_nucleo_9_11": 1, "n_especializacion": 0, "paises": {},
+            "sv_primer_grado": 10, "sv_en_tramo": 10, "n_nucleo_en_tramo": 1, "n_especializacion": 0, "paises": {},
             "sv_temas": []}
-    visor.escribir({"filas": [fila], "temas": {}}, informe.CLASES, informe.NOMBRE, tmp_path)
+    visor.escribir({"filas": [fila], "temas": {}}, informe.clases(), informe.NOMBRE, tmp_path)
     html = (tmp_path / "visor.html").read_text(encoding="utf-8")
     assert html.count("</script>") == 1                       # solo el cierre real del bloque
     datos = json.loads(re.search(r"const D = (.*?);\n", html).group(1).replace("<\\/", "</"))
@@ -148,3 +152,21 @@ def test_visor_de_grado_y_comunidades(grafo, tmp_path, monkeypatch):
     externos = re.findall(r'<script src="([^"]+)"', html)
     assert all(re.search(r"@\d+\.\d+\.\d+/", u) for u in externos), externos   # versión exacta fijada
     assert html.count("</script>") == html.count("<script")
+
+
+@pytest.mark.parametrize("clave", ["9_11", "2_8"])
+def test_formula_lectura_balanceada_en_cada_tramo(tmp_path, clave):
+    """La fórmula «Lectura» del Excel cambia según el tramo; un paréntesis de más la vuelve inválida en Numbers."""
+    from openpyxl import load_workbook
+
+    from goes_science_kg.internacional import informe, tramo
+
+    tramo.usar(clave)
+    try:
+        fila = {"nombre": "x", "clase": "alineado", "sv_primer_grado": 9, "sv_en_tramo": None, "paises": {}}
+        informe._excel("fisica", [fila], tmp_path)
+        formula = load_workbook(tmp_path / "Contraste_fisica.xlsx")["Contraste"]["I2"].value
+        assert formula.count("(") == formula.count(")"), formula
+        assert ("despues del tramo" in formula) == (clave == "2_8")
+    finally:
+        tramo.usar("9_11")
