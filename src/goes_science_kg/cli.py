@@ -370,23 +370,47 @@ internacional_app = typer.Typer(help="Grafos internacionales de 9.°–11.° y c
 app.add_typer(internacional_app, name="internacional")
 
 
+CONFIRMAR = Annotated[bool, typer.Option("--confirmar", help="Pagar las llamadas a Vertex que no están en caché.")]
+
+
+def _frenar_si_hay_costo(pendientes: int, confirmar: bool) -> None:
+    """Sin --confirmar, no se gasta: informa cuántas llamadas pagaría y sale con código 1."""
+    typer.echo(f"Llamadas a Vertex fuera de la caché: {pendientes}")
+    if pendientes and not confirmar:
+        typer.echo("No se llamó a Vertex. Repite con --confirmar para pagarlas.", err=True)
+        raise typer.Exit(1)
+
+
 @internacional_app.command("extraer")
-def internacional_extraer(paises: Annotated[list[str] | None, typer.Argument(help="SG, JP…")] = None) -> None:
+def internacional_extraer(paises: Annotated[list[str] | None, typer.Argument(help="SG, JP…")] = None,
+                          confirmar: CONFIRMAR = False) -> None:
     """Extrae y valida con Vertex los objetivos de los países (config/internacional.yaml)."""
     from goes_science_kg.internacional import consenso, extraer
 
-    for p in paises or consenso.paises():
+    elegidos = paises or consenso.paises()
+    _frenar_si_hay_costo(sum(extraer.llamadas_pendientes(p) for p in elegidos), confirmar)
+    for p in elegidos:
         typer.echo(extraer.extraer_pais(p))
 
 
 @internacional_app.command("etiquetar")
-def internacional_etiquetar(paises: Annotated[list[str] | None, typer.Argument(help="vacío = todos")] = None) -> None:
+def internacional_etiquetar(paises: Annotated[list[str] | None, typer.Argument(help="vacío = todos")] = None,
+                            confirmar: CONFIRMAR = False) -> None:
     """Etiqueta con conceptos los objetivos de los países y la malla V2 (2.°–11.°)."""
     from goes_science_kg.internacional import consenso, etiquetar
 
-    for r in [*consenso.etiquetar_paises(paises or None), *etiquetar.etiquetar_malla_v2(),
-              etiquetar.etiquetar_malla_v2_antecedente()]:
-        typer.echo(r)
+    grupos = [*consenso.grupos_paises(paises or None), *etiquetar.grupos_malla_v2()]
+    _frenar_si_hay_costo(etiquetar.pendientes(grupos), confirmar)
+    for g in grupos:
+        typer.echo(etiquetar.etiquetar(*g))
+
+
+@internacional_app.command("congelar-catalogo")
+def internacional_congelar_catalogo(version: str) -> None:
+    """Congela el catálogo de etiquetado con el vocabulario vivo. Invalida la caché: re-etiquetar se paga completo."""
+    from goes_science_kg.internacional import etiquetar
+
+    typer.echo(etiquetar.congelar_catalogo(version))
 
 
 @internacional_app.command("construir")

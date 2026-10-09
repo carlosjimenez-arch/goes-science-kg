@@ -228,6 +228,27 @@ def _procesar(v: Ventana) -> list[dict]:
     return objetivos
 
 
+def llamadas_pendientes(pais: str) -> int:
+    """Llamadas a Vertex que costaría extraer el país (cota inferior: una ventana sin extracción en caché cuenta 2,
+    extraer y validar)."""
+    cfg = cargar("internacional")
+    docs = [{**d, "pais": pais, "pais_nombre": cfg["paises"][pais]["nombre"]} for d in cfg["documentos"]
+            if d["pais"] == pais]
+    total = 0
+    for v in (v for d in docs for v in ventanas(d)):
+        clave = {"modelo": vertex.MODELO_EXTRAER, "sistema": SISTEMA, "esquema": ESQUEMA_EXTRAER,
+                 "adjuntos": v.adjuntos}
+        if not vertex.en_cache(_prompt_extraer(v), **clave):
+            total += 2
+            continue
+        r = vertex.generar_json(_prompt_extraer(v), **clave)   # en caché: no llama a Vertex
+        objetivos = [o for o in r.get("objetivos", []) if o.get("texto")]
+        if objetivos and not vertex.en_cache(_prompt_validar(v, objetivos), modelo=vertex.MODELO_VALIDAR,
+                                             esquema=ESQUEMA_VALIDAR, adjuntos=v.adjuntos):
+            total += 1
+    return total
+
+
 def _importados(pais: str) -> list[dict]:
     """Objetivos de sesiones anteriores que se reutilizan tal cual (config: importar)."""
     tipos = {"Práctica": "practica", "Conocimiento": "conocimiento", "Aplicación": "aplicacion"}

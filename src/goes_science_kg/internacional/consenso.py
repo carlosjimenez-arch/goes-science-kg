@@ -51,8 +51,13 @@ def objetivos() -> tuple[dict, ...]:
 
 
 def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
-    """Etiqueta los objetivos de cada país, agrupados por asignatura (los importados sin asignatura van con todo el
-    vocabulario)."""
+    """Etiqueta los objetivos de cada país (ver grupos_paises)."""
+    return [etiquetar.etiquetar(*g) for g in grupos_paises(solo)]
+
+
+def grupos_paises(solo: list[str] | None = None) -> list[etiquetar.Grupo]:
+    """Grupos de etiquetado: objetivos de cada país agrupados por asignatura (los importados sin asignatura van con
+    todo el vocabulario)."""
     # Los documentos de antecedente (secundaria baja) van en grupos aparte: así no cambian los lotes ya etiquetados.
     antecedente = {d["id"] for d in cargar("internacional")["documentos"] if d.get("antecedente")}
     resumen = []
@@ -65,8 +70,7 @@ def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
                 sufijo = "_antecedente" if o["documento"] in antecedente else ""
                 grupos[(o["asignatura"] or "ciencias") + sufijo].append({"id": o["id"], "texto": o["texto"]})
         for grupo, items in sorted(grupos.items()):
-            asig = grupo.removesuffix("_antecedente")
-            resumen.append(etiquetar.etiquetar(items, asig, f"pais_{p}_{grupo}"))
+            resumen.append((items, grupo.removesuffix("_antecedente"), f"pais_{p}_{grupo}"))
     return resumen
 
 

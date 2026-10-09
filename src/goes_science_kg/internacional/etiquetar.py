@@ -42,12 +42,41 @@ ESQUEMA = {
 }
 
 
+CATALOGO = "data/interim/internacional/catalogo_etiquetado.json"
+Grupo = tuple[list[dict], str, str]   # (items [{id, texto}], asignatura del vocabulario, nombre del archivo)
+
+
+@cache
+def catalogo_congelado() -> dict:
+    """Catálogo que reciben los prompts (CATALOGO). Congelado a propósito: si se armara con el vocabulario vivo,
+    cualquier cambio (triaje, divisiones) cambiaría todos los prompts e invalidaría la caché de Vertex. Los cambios de
+    vocabulario entran por las capas de decisión al cargar. Sin archivo, se usa el vocabulario vivo."""
+    p = ruta(CATALOGO)
+    if p.exists():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {"version": "vivo", "conceptos": sorted(conceptos.vocabulario().values(), key=lambda c: c["id"]),
+            "practicas": sorted(conceptos.practicas().values(), key=lambda p: p["id"])}
+
+
+def congelar_catalogo(version: str) -> dict:
+    """Escribe CATALOGO con el vocabulario vivo (incluidas triaje y divisiones). Cambiarlo invalida la caché de
+    etiquetado: volver a etiquetar se paga completo. Solo para re-etiquetar a propósito con el vocabulario nuevo."""
+    voc = sorted(conceptos.vocabulario().values(), key=lambda c: c["id"])
+    prac = sorted(conceptos.practicas().values(), key=lambda p: p["id"])
+    datos = {"version": version,
+             "conceptos": [{k: c.get(k) for k in ("id", "nombre", "definicion", "asignatura")} for c in voc],
+             "practicas": [{k: p[k] for k in ("id", "nombre")} for p in prac]}
+    ruta(CATALOGO).write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    catalogo_congelado.cache_clear()
+    return {"version": version, "conceptos": len(datos["conceptos"])}
+
+
 def _catalogo(asignatura: str) -> str:
-    voc = conceptos.vocabulario()
+    cat = catalogo_congelado()
     asigs = ASIG_VOCAB[asignatura]
-    filas = [f"{c['id']} | {c['nombre']} | {c.get('definicion', '')[:140]}"
-             for c in sorted(voc.values(), key=lambda c: c["id"]) if c["asignatura"] in asigs]
-    prac = [f"{p['id']} | {p['nombre']}" for p in sorted(conceptos.practicas().values(), key=lambda p: p["id"])]
+    filas = [f"{c['id']} | {c['nombre']} | {(c.get('definicion') or '')[:140]}"
+             for c in cat["conceptos"] if c["asignatura"] in asigs]
+    prac = [f"{p['id']} | {p['nombre']}" for p in cat["practicas"]]
     return ("CONCEPTOS (id | nombre | definición):\n" + "\n".join(filas)
             + "\n\nPRÁCTICAS (id | nombre):\n" + "\n".join(prac))
 
@@ -85,10 +114,20 @@ def _normalizar(i: str, voc: dict, prac: dict) -> str:
     return i
 
 
+def _lotes(items: list[dict]) -> list[list[dict]]:
+    return [items[i:i + POR_LOTE] for i in range(0, len(items), POR_LOTE)]
+
+
+def pendientes(grupos: list[Grupo]) -> int:
+    """Llamadas a Vertex que costaría etiquetar estos grupos (lotes que no están en la caché)."""
+    return sum(not vertex.en_cache(_prompt(asig, lote), modelo=vertex.MODELO_ETIQUETAR, esquema=ESQUEMA)
+               for items, asig, _ in grupos for lote in _lotes(items))
+
+
 def etiquetar(items: list[dict], asignatura: str, nombre: str, hilos: int = 6) -> dict:
     """items: [{id, texto}] de una misma asignatura. Escribe data/interim/internacional/etiquetado/<nombre>.json."""
     voc, prac = conceptos.vocabulario(), conceptos.practicas()
-    lotes = [items[i:i + POR_LOTE] for i in range(0, len(items), POR_LOTE)]
+    lotes = _lotes(items)
 
     def uno(lote: list[dict]) -> list[dict]:
         r = vertex.generar_json(_prompt(asignatura, lote), modelo=vertex.MODELO_ETIQUETAR, esquema=ESQUEMA)
@@ -170,15 +209,22 @@ def etiquetar_malla_v2(asignaturas: list[str] | None = None) -> list[dict]:
     (p. ej. el cambio climático está en Biología 11.°), y con un solo vocabulario esos temas no reciben su concepto.
     El contraste toma la UNIÓN de los dos etiquetados: afirmar que a El Salvador le falta algo exige que ninguno de
     los dos lo encuentre (cada etiquetado tiene ~20 % de variación en conceptos individuales)."""
-    grupos = items_malla_v2()
-    salida = []
-    for asig, items in sorted(grupos.items()):
+    return [etiquetar(*g) for g in grupos_malla_v2(asignaturas)]
+
+
+def grupos_malla_v2(asignaturas: list[str] | None = None) -> list[Grupo]:
+    """Grupos de etiquetado de la V2: 9.°–11.° con los dos vocabularios y 2.°–8.° como antecedente."""
+    grupos: list[Grupo] = []
+    for asig, items in sorted(items_malla_v2().items()):
         if asignaturas and asig not in asignaturas:
             continue
-        salida.append(etiquetar(items, asig, f"malla_v2_{asig}"))
+        grupos.append((items, asig, f"malla_v2_{asig}"))
         if asig != "ciencias":   # 9.° ya usa el vocabulario completo
-            salida.append(etiquetar(items, "ciencias", f"malla_v2_{asig}_completo"))
-    return salida
+            grupos.append((items, "ciencias", f"malla_v2_{asig}_completo"))
+    if not asignaturas:
+        antecedente = [i for i in items_malla_v2(grado_min=2)["ciencias"] if int(i["id"][1:3]) <= 8]
+        grupos.append((antecedente, "ciencias", "malla_v2_g02_08"))
+    return grupos
 
 
 def etiquetar_malla_v2_antecedente() -> dict:

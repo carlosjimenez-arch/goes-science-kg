@@ -158,3 +158,28 @@ def test_normalizar_ids_solo_si_existen():
     assert etiquetar._normalizar("CON:fisica:primera-ley-newton", voc, {}) == "CON:fisica/primera-ley-newton"
     assert etiquetar._normalizar("CON:tabla-periodica", voc, {}) == "CON:quimica/tabla-periodica"
     assert etiquetar._normalizar("CON:inventado", voc, {}) == "CON:inventado"   # no se inventan códigos
+
+
+def test_catalogo_de_etiquetado_congelado(monkeypatch):
+    """Los prompts no dependen del vocabulario vivo: cambiarlo (triaje, divisiones) no invalida la caché de Vertex."""
+    etiquetar.catalogo_congelado.cache_clear()
+    monkeypatch.setattr(conceptos, "vocabulario", lambda: (_ for _ in ()).throw(AssertionError("vocabulario vivo")))
+    texto = etiquetar._catalogo("quimica")
+    assert "CON:quimica/configuracion-electronica" in texto
+    assert "distribucion-electronica-por-niveles" not in texto   # el concepto nuevo entra por la capa de divisiones
+
+
+@pytest.mark.parametrize("comando", ["etiquetar", "extraer"])
+def test_sin_confirmar_no_se_gasta(monkeypatch, comando):
+    from typer.testing import CliRunner
+
+    from goes_science_kg import cli
+    from goes_science_kg.internacional import extraer as mod_extraer
+
+    llamados = []
+    monkeypatch.setattr(etiquetar, "pendientes", lambda grupos: 7)
+    monkeypatch.setattr(mod_extraer, "llamadas_pendientes", lambda pais: 7)
+    monkeypatch.setattr(etiquetar, "etiquetar", lambda *a, **k: llamados.append(a))
+    monkeypatch.setattr(mod_extraer, "extraer_pais", lambda *a, **k: llamados.append(a))
+    r = CliRunner().invoke(cli.app, ["internacional", comando, "JP"])
+    assert r.exit_code == 1 and "--confirmar" in r.output and not llamados

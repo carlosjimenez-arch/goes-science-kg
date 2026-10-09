@@ -73,6 +73,13 @@ def llamadas() -> int:
     return _contador.total
 
 
+def en_cache(prompt: str, *, modelo: str, sistema: str = "", esquema: dict | None = None,
+             adjuntos: list[tuple[bytes, str]] | None = None) -> bool:
+    """Si la llamada ya está en la caché (no costaría nada repetirla)."""
+    clave = _clave(modelo, sistema, prompt, esquema, adjuntos or [])
+    return (ruta(DIR_CACHE) / clave[:2] / f"{clave}.json").exists()
+
+
 def generar_json(prompt: str, *, modelo: str, sistema: str = "", esquema: dict | None = None,
                  adjuntos: list[tuple[bytes, str]] | None = None, max_tokens: int = 32768,
                  reintentos: int = 5) -> Any:

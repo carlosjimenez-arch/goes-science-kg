@@ -249,3 +249,22 @@ def test_internacional_coherente_con_el_principal_y_sus_fuentes(principal, inter
     pre = {(a.origen, a.destino) for a in aristas if a.tipo == A.PRERREQUISITO_DE}
     pre_int = {(a["origen"], a["destino"]) for a in ina if a["tipo"] == "PRERREQUISITO"}
     assert pre_int == {p for p in pre if p[0] in nodos and p[1] in nodos}
+
+
+def test_todo_elemento_con_un_concepto_dividido_tiene_asignacion():
+    """Etiquetas crudas (antes de la capa de divisiones): si un etiquetado nuevo usa un concepto dividido en un elemento
+    sin asignación, hay que decidir a cuál de las partes va (criterio en conceptos/divisiones.json)."""
+    crudas = {
+        "malla_v1": {f["id"]: f["conceptos"] for f in json.loads(
+            ruta("data/interim/conceptos/etiquetado_temas.json").read_text(encoding="utf-8"))},
+        "objetivos_pais": {f["id"]: f["conceptos"] for f in json.loads(
+            ruta("data/interim/conceptos/etiquetado_paises.json").read_text(encoding="utf-8"))},
+        "internacional": {}, "malla_v2": {}}
+    for f in sorted(ruta("data/interim/internacional/etiquetado").glob("*.json")):
+        conjunto = "internacional" if f.name.startswith("pais_") else "malla_v2"
+        for i, e in json.loads(f.read_text(encoding="utf-8")).items():
+            crudas[conjunto].setdefault(i, []).extend(e["principales"] + e["secundarios"])
+    for d in conceptos.divisiones():
+        sin = [(c, i) for c, items in crudas.items() for i, ids in items.items()
+               if d["concepto"] in ids and i not in d["asignaciones"].get(c, {})]
+        assert not sin, f"{d['concepto']}: {len(sin)} elementos sin asignación, p. ej. {sin[:3]}"
