@@ -406,6 +406,14 @@ def _frenar_si_hay_costo(pendientes: int, confirmar: bool) -> None:
     if pendientes and not confirmar:
         typer.echo("No se llamó a Vertex. Repite con --confirmar para pagarlas.", err=True)
         raise typer.Exit(1)
+    if pendientes:   # se va a gastar: solo con la cuenta GOES
+        from goes_science_kg.internacional import vertex
+
+        try:
+            vertex.verificar_cuenta()
+        except RuntimeError as e:
+            typer.echo(str(e), err=True)
+            raise typer.Exit(1) from e
 
 
 @internacional_app.command("extraer")

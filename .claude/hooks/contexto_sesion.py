@@ -29,6 +29,14 @@ def _git(*args: str) -> str:
         return ""
 
 
+def _gcloud() -> str | None:
+    try:
+        r = subprocess.run(["gcloud", "config", "get-value", "account"], capture_output=True, text=True, timeout=10)
+        return r.stdout.strip() or None
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
 def _decisiones() -> list[str]:
     lineas = []
     for nombre, rel in DECISIONES.items():
@@ -56,7 +64,7 @@ def _etapas() -> list[str]:
 
 def main() -> None:
     cfg = config()
-    correo, rama = _git("config", "user.email"), _git("branch", "--show-current")
+    correo, rama, gcloud = _git("config", "user.email"), _git("branch", "--show-current"), _gcloud()
     sin_commit = [linea for linea in _git("status", "--short").splitlines() if "Mallas sugeridas" not in linea]
     texto = "\n".join([
         "Estado del proyecto goes-science-kg (hook SessionStart):",
@@ -64,6 +72,8 @@ def main() -> None:
         f"- Cuenta de git: {correo or '(vacía)'} "
         f"({'es la de GOES' if correo == cfg['correo_git'] else 'NO es la de GOES: ' + cfg['correo_git']}).",
         f"- Proyecto de GCP esperado: {cfg['proyecto_gcp']} (credenciales por defecto de gcloud; el .env no se lee).",
+        f"- Cuenta activa de gcloud: {gcloud or '(no disponible)'}"
+        f"{'' if gcloud in (None, cfg['correo_git']) else ' — NO es la de GOES; Vertex se detendrá antes de gastar'}.",
         "- Decisiones de contenido (capas que ganan sobre la IA):", *_decisiones(),
         "- Estudio internacional:", *_etapas(),
         "- Guardas activas (.claude/hooks): .env y fuentes protegidos, gasto en Vertex con aprobación del usuario,"

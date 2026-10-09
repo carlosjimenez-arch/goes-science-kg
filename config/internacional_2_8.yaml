@@ -15,10 +15,10 @@ paises:
   KR: {nombre: Corea del Sur, nota: "2022 개정 과학과 교육과정: 초등 3~4, 5~6 y 중학교 1~3학년군"}
   ENG: {nombre: Inglaterra, nota: "National Curriculum KS1–KS3 (2013), ya extraído; Year 10 (SV 8) desde GCSE Combined"}
   AU: {nombre: Australia, nota: "Australian Curriculum v9 F–10, ya extraído del grafo principal"}
-  HK: {nombre: Hong Kong, nota: "PENDIENTE: descargar Primary Science (2025) y S1–3 Science (skill fuentes-descargar)"}
+  HK: {nombre: Hong Kong, nota: "Science (P1–6) Curriculum Guide (2025, en chino) y Science (S1–3) Curriculum Framework (2025)"}
   TW: {nombre: Taiwán, nota: "十二年國教 自然科學領域: 第二~第四學習階段"}
   EE: {nombre: Estonia, nota: "Põhikool, Annex 4 Natural Science (2023): etapas I–III"}
-  "ON": {nombre: Ontario, nota: "SNC1W (Grade 9 = SV 8). PENDIENTE: descargar Science and Technology Grades 1–8 (2022)"}
+  "ON": {nombre: Ontario, nota: "Science and Technology Grades 1–8 (2022), Grades 3–8 = SV 2–7, y SNC1W (Grade 9 = SV 8)"}
 
 documentos:
   # ── Singapur ───────────────────────────────────────────────────────────────────────────────────────────
@@ -76,6 +76,37 @@ documentos:
      titulo: "The Ontario Curriculum, Science Grade 9 (SNC1W, 2022)", curso: "Science, Grade 9, De-streamed (SNC1W)",
      asignatura: ciencias_integradas, nivel: nucleo, paginas: [46, 55], grado_sv: [8, 8]}
 
+  # ── Hong Kong ──────────────────────────────────────────────────────────────────────────────────────────
+  # Primaria: P = SV + 1; P1–P2 quedan antes de 2.° y se asignan a 2.° (conservador, como ENG y AU).
+  - {id: hk_primaria, pais: HK, archivo: data/fuentes/externos/paises/hong_kong/sec_bach/HK_Science_P1-6_CurriculumGuide_2025_zh.pdf,
+     titulo: "科學教育學習領域 科學（小一至小六）課程指引 (2025)", curso: "Science (P1–P6)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [27, 48], grado_sv: [2, 5],
+     grados_pais: {"小一": 2, "小二": 2, "小三": 2, "小四": 3, "小五": 4, "小六": 5, "P1": 2, "P2": 2, "P3": 2, "P4": 3,
+                   "P5": 4, "P6": 5}}
+  - {id: hk_s1_3, pais: HK, archivo: data/fuentes/externos/paises/hong_kong/sec_bach/HK_Science_S1-3_CurriculumFramework_2025.pdf,
+     titulo: "Science (S1–3) Curriculum Framework (2025)", curso: "Science (S1–S3)", asignatura: ciencias_integradas,
+     nivel: nucleo, paginas: [35, 82], grado_sv: [6, 8], grados_pais: {"S1": 6, "S2": 7, "S3": 8}}
+
+  # ── Ontario (Grade = SV + 1) ───────────────────────────────────────────────────────────────────────────
+  - {id: on_st_g3, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_ScienceTechnology_Grades1-8_2022.pdf,
+     titulo: "The Ontario Curriculum, Grades 1–8: Science and Technology (2022)", curso: "Science and Technology, Grade 3",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [114, 124], grado_sv: [2, 2]}
+  - {id: on_st_g4, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_ScienceTechnology_Grades1-8_2022.pdf,
+     titulo: "The Ontario Curriculum, Grades 1–8: Science and Technology (2022)", curso: "Science and Technology, Grade 4",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [125, 135], grado_sv: [3, 3]}
+  - {id: on_st_g5, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_ScienceTechnology_Grades1-8_2022.pdf,
+     titulo: "The Ontario Curriculum, Grades 1–8: Science and Technology (2022)", curso: "Science and Technology, Grade 5",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [136, 146], grado_sv: [4, 4]}
+  - {id: on_st_g6, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_ScienceTechnology_Grades1-8_2022.pdf,
+     titulo: "The Ontario Curriculum, Grades 1–8: Science and Technology (2022)", curso: "Science and Technology, Grade 6",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [147, 157], grado_sv: [5, 5]}
+  - {id: on_st_g7, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_ScienceTechnology_Grades1-8_2022.pdf,
+     titulo: "The Ontario Curriculum, Grades 1–8: Science and Technology (2022)", curso: "Science and Technology, Grade 7",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [158, 168], grado_sv: [6, 6]}
+  - {id: on_st_g8, pais: "ON", archivo: data/fuentes/externos/paises/ontario/sec_bach/ON_ScienceTechnology_Grades1-8_2022.pdf,
+     titulo: "The Ontario Curriculum, Grades 1–8: Science and Technology (2022)", curso: "Science and Technology, Grade 8",
+     asignatura: ciencias_integradas, nivel: nucleo, paginas: [169, 179], grado_sv: [7, 7]}
+
 # Objetivos ya extraídos y etiquetados en el grafo principal (data/interim/paises), con grado SV: no cuestan nada.
 importar:
   - {pais: ENG, archivo: data/interim/paises/inglaterra.json, grados_sv: [2, 3, 4], nivel: nucleo,
@@ -87,5 +118,3 @@ importar:
   - {pais: JP, archivo: data/interim/paises/japon.json, grados_sv: [2, 3, 4, 5, 6, 7, 8], nivel: nucleo,
      curso: "学習指導要領 理科 (小学校・中学校, 2017)", documento: jp_cos_826}
 
-# Pendientes de descarga (no hay documento todavía): Hong Kong Primary Science (2025) y Science S1–3; Ontario
-# Science and Technology Grades 1–8 (2022). Hasta tenerlos, HK no tiene núcleo en 2.°–8.° y ON solo tiene SV 8.

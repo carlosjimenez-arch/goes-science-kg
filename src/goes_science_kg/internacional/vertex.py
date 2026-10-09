@@ -73,6 +73,41 @@ def llamadas() -> int:
     return _contador.total
 
 
+CUENTA_ESPERADA = ".claude/harness.json"   # correo_git: la cuenta GOES con la que se trabaja
+
+
+def cuenta_adc() -> str | None:
+    """Correo de la cuenta de las credenciales por defecto de gcloud (ADC), según el servicio tokeninfo de Google.
+    None si no se puede saber (sin credenciales o sin red). No imprime ni guarda el token."""
+    import urllib.parse
+    import urllib.request
+
+    try:
+        import google.auth
+        import google.auth.transport.requests
+
+        credenciales, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
+        credenciales.refresh(google.auth.transport.requests.Request())
+        url = "https://oauth2.googleapis.com/tokeninfo?" + urllib.parse.urlencode({"access_token": credenciales.token})
+        with urllib.request.urlopen(url, timeout=15) as r:
+            return json.loads(r.read()).get("email")
+    except Exception:  # noqa: BLE001 — cualquier fallo significa «no se pudo verificar»
+        return None
+
+
+def verificar_cuenta() -> None:
+    """Antes de gastar: las credenciales tienen que ser de la cuenta GOES (.claude/harness.json). Lanza RuntimeError
+    con la instrucción para volver a autenticarse si no lo son o no se puede verificar."""
+    esperada = json.loads(ruta(CUENTA_ESPERADA).read_text(encoding="utf-8"))["correo_git"]
+    actual = cuenta_adc()
+    if actual != esperada:
+        raise RuntimeError(
+            f"Las credenciales de Vertex (ADC) son de {actual or 'una cuenta que no se pudo verificar'}, "
+            f"no de {esperada}. "
+            f"Vuelve a autenticarte con la cuenta GOES: gcloud auth application-default login (elige {esperada}) y "
+            "gcloud auth application-default set-quota-project <proyecto de .env>.")
+
+
 def en_cache(prompt: str, *, modelo: str, sistema: str = "", esquema: dict | None = None,
              adjuntos: list[tuple[bytes, str]] | None = None) -> bool:
     """Si la llamada ya está en la caché (no costaría nada repetirla)."""

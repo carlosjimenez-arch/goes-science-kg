@@ -194,3 +194,18 @@ def test_sin_confirmar_no_se_gasta(monkeypatch, comando):
     monkeypatch.setattr(mod_extraer, "extraer_pais", lambda *a, **k: llamados.append(a))
     r = CliRunner().invoke(cli.app, ["internacional", comando, "JP"])
     assert r.exit_code == 1 and "--confirmar" in r.output and not llamados
+
+
+@pytest.mark.parametrize("cuenta", ["otra@ejemplo.com", None])
+def test_no_se_gasta_con_otra_cuenta(monkeypatch, cuenta):
+    """Con --confirmar, si las credenciales no son de la cuenta GOES (o no se puede verificar), no se llama a Vertex."""
+    from typer.testing import CliRunner
+
+    from goes_science_kg import cli
+
+    llamados = []
+    monkeypatch.setattr(etiquetar, "pendientes", lambda grupos: 3)
+    monkeypatch.setattr(etiquetar, "etiquetar", lambda *a, **k: llamados.append(a))
+    monkeypatch.setattr(vertex, "cuenta_adc", lambda: cuenta)
+    r = CliRunner().invoke(cli.app, ["internacional", "etiquetar", "JP", "--confirmar"])
+    assert r.exit_code == 1 and "cuenta GOES" in r.output and not llamados
