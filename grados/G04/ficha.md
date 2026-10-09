@@ -101,7 +101,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Uso del suelo y su degradación | Suelo: formación, componentes y tipos | posterior | 5 | alta |
 | Volcanes: estructura, tipos y productos | Origen del magma y vulcanismo | posterior | 5 | media |
 
-Además, 24 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 23 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 

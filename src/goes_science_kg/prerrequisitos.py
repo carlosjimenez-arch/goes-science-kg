@@ -226,4 +226,8 @@ def cargar_prerrequisitos() -> tuple[dict, ...]:
             aristas.append({"origen": o, "destino": d, "tipo_evidencia": "logica", "evidencias": ["triaje"],
                             "confianza": "media", "version": VERSION_TRIAJE,
                             "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje)."})
-    return tuple(e for e in aristas if (e["origen"], e["destino"]) not in rechazados)
+    # Como en `unir`: sin aristas transitivas. Solo se quitan las del triaje (las demás ya vienen reducidas).
+    reducido = nx.transitive_reduction(g)
+    redundantes = {(e["origen"], e["destino"]) for e in aristas
+                   if e.get("version") == VERSION_TRIAJE and not reducido.has_edge(e["origen"], e["destino"])}
+    return tuple(e for e in aristas if (e["origen"], e["destino"]) not in rechazados | redundantes)

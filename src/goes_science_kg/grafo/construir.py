@@ -7,10 +7,11 @@ curricular se agregan en fases posteriores (specs/08_plan_de_implementacion.md).
 
 from __future__ import annotations
 
+import hashlib
 from typing import Any
 
 from goes_science_kg import conceptos as cp
-from goes_science_kg.config import cargar
+from goes_science_kg.config import cargar, ruta
 from goes_science_kg.disciplinas import asignacion_manual, asignatura_de_objetivo, asignatura_de_tema
 from goes_science_kg.ingesta import legado
 from goes_science_kg.ingesta.mallas import TemaMalla, extraer
@@ -59,9 +60,11 @@ class Constructor:
                       props={k: d.get(k) for k in ("organismo", "anio", "url", "archivo_local", "sha256", "ok")})
         for item in cargar("mallas")["archivos"]:
             nombre = item.get("canonico", item["archivo"])
+            archivo = f"{cargar('mallas')['directorio']}/{item['archivo']}"
+            # sha256 como en el resto de documentos: si el MINED entrega otra versión con el mismo nombre, cambia.
             self.nodo(id=f"DOC:MALLA:{nombre}", tipo=TipoNodo.DOCUMENTO, etiqueta=f"Malla MINED · {nombre}",
-                      props={"organismo": "MINED El Salvador", "archivo_local":
-                             f"{cargar('mallas')['directorio']}/{item['archivo']}"})
+                      props={"organismo": "MINED El Salvador", "archivo_local": archivo,
+                             "sha256": hashlib.sha256(ruta(archivo).read_bytes()).hexdigest()})
         for clave, m in cargar("marcos")["marcos"].items():
             self.nodo(id=f"MARCO:{clave}", tipo=TipoNodo.MARCO, etiqueta=m["nombre"],
                       props={"organismo": m["organismo"], "grados_sv": m.get("grados_sv", []),

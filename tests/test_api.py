@@ -24,3 +24,11 @@ def test_rag():
     r = cliente.get("/api/rag", params={"q": "fotosíntesis y respiración", "grado": 6, "k": 10})
     assert r.status_code == 200 and len(r.json()["nodos"]) == 10
     assert cliente.get("/api/rag", params={"q": "x"}).status_code == 422
+
+
+def test_equivalentes_en_los_dos_sentidos():
+    """EQUIVALE_A se guarda en un sentido (a → b), pero la API la muestra desde los dos conceptos."""
+    a = cliente.get("/api/conceptos/fisica/modelo-particulas").json()
+    b = cliente.get("/api/conceptos/quimica/modelo-de-particulas").json()
+    assert "CON:quimica/modelo-de-particulas" in {x["id"] for x in a["equivalentes"]}
+    assert "CON:fisica/modelo-particulas" in {x["id"] for x in b["equivalentes"]}

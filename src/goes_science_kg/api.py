@@ -64,7 +64,8 @@ def grado(grado: int) -> dict:
 
 @app.get("/api/conceptos/{asignatura}/{slug}")
 def concepto(asignatura: str, slug: str) -> dict:
-    """Un concepto con sus prerrequisitos, los conceptos que habilita y los temas que lo trabajan."""
+    """Un concepto con sus prerrequisitos, los conceptos que habilita, sus equivalentes en otras asignaturas (la
+    relación es simétrica aunque la arista se guarde en un sentido) y los temas y objetivos que lo trabajan."""
     por_id, aristas, _ = _grafo()
     cid = f"CON:{asignatura}/{slug}"
     if cid not in por_id:
@@ -80,6 +81,12 @@ def concepto(asignatura: str, slug: str) -> dict:
                                if a.tipo == TipoArista.PRERREQUISITO_DE and a.destino == cid],
             "habilita": [etiqueta(a.destino) for a in aristas
                          if a.tipo == TipoArista.PRERREQUISITO_DE and a.origen == cid],
+            "equivalentes": sorted((etiqueta(a.destino if a.origen == cid else a.origen) for a in aristas
+                                    if a.tipo == TipoArista.EQUIVALE_A and cid in (a.origen, a.destino)),
+                                   key=lambda x: x["id"]),
+            "objetivos_marco": sorted((etiqueta(a.origen) for a in aristas if a.tipo == TipoArista.TRABAJA
+                                       and a.destino == cid and por_id[a.origen].tipo == TipoNodo.OBJETIVO_MARCO),
+                                      key=lambda x: x["id"]),
             "temas_sv": sorted((etiqueta(a.origen) for a in aristas if a.tipo == TipoArista.TRABAJA
                                 and a.destino == cid and por_id[a.origen].tipo == TipoNodo.TEMA),
                                key=lambda t: (t["grado"] or 0, t["id"])),

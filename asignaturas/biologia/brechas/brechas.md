@@ -101,7 +101,6 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Organelos de la célula eucariota | 6.° | Célula animal y célula vegetal | 11.° | media |
 | ADN y cromosomas | 6.° | Herencia de rasgos | 10.° | media |
 | Intercambio de gases en animales | 3.° | Difusión y ósmosis | 6.° | media |
-| Selección artificial | 7.° | Herencia de rasgos | 10.° | media |
 | Síntesis de proteínas | 7.° | Proteínas: estructura y función | 10.° | media |
 | Biotecnología vegetal y agroindustria | 4.° | Reproducción sexual de las plantas con flor | 6.° | media |
 | Energía de los alimentos y balance energético | 4.° | Respiración celular | 6.° | media |

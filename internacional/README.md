@@ -9,7 +9,8 @@
   baja de KR, TW y ON) y **9.040 objetivos** validados:
   Gemini 3.1 Pro extrae y Gemini 2.5 Pro valida contra la página del PDF.
 - **Grafo** en `data/grafo/internacional/`: país → curso → objetivo → concepto, más los prerrequisitos del repo.
-  Son 9.205 nodos y 36.114 aristas.
+  Cada objetivo enlaza con su documento mediante una arista `FUENTE` con la página; los documentos usan los mismos
+  ids `DOC:` que el grafo principal, así que se puede navegar de documento a objetivos y de vuelta.
 - **Consenso** por concepto: 509 conceptos. Para cada uno, cuántos países lo enseñan en el núcleo y en la
   especialización, y el grado SV de su primera aparición.
 - **Contraste** con la malla V2 de 9.°–11.°: un informe por asignatura y un Excel con fórmulas (hojas Datos,

@@ -99,7 +99,6 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | ADN y cromosomas | Herencia de rasgos | posterior | 10 | media |
 | Biotecnología vegetal y agroindustria | Ingeniería genética y ADN recombinante | posterior | 11 | media |
 | Filogenia y parentesco evolutivo | Evidencias de la evolución | posterior | 10 | alta |
-| Selección artificial | Herencia de rasgos | posterior | 10 | media |
 | Síntesis de proteínas | Proteínas: estructura y función | posterior | 10 | media |
 | Cambio climático: causas y efectos | Ciclo del carbono en los sistemas terrestres | posterior | 10 | media |
 | Ciclones tropicales y tormentas | Calentamiento desigual de la Tierra y circulación atmosférica | posterior | 9 | media |

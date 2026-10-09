@@ -17,9 +17,11 @@ import json
 import statistics
 from collections import Counter, defaultdict
 from functools import cache
+from pathlib import Path
 
 from goes_science_kg import conceptos
 from goes_science_kg.config import cargar, ruta
+from goes_science_kg.ingesta import legado
 from goes_science_kg.internacional import etiquetar
 from goes_science_kg.internacional.extraer import DIR_SALIDA
 from goes_science_kg.prerrequisitos import cargar_prerrequisitos
@@ -66,6 +68,14 @@ def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
             asig = grupo.removesuffix("_antecedente")
             resumen.append(etiquetar.etiquetar(items, asig, f"pais_{p}_{grupo}"))
     return resumen
+
+
+def _registro_de_documentos() -> dict[str, dict]:
+    """Registro de fuentes (manifest.csv) indexado por nombre de archivo y por id, para enlazar cada objetivo con el
+    mismo nodo Documento que usa el grafo principal."""
+    filas = legado.manifiesto_fuentes()
+    return {**{Path(r["archivo_local"]).name: r for r in filas if r.get("archivo_local")},
+            **{r["id"]: r for r in filas}}
 
 
 def ensenados(e: dict) -> list[str]:
@@ -124,13 +134,21 @@ def construir() -> dict:
         nodos.append({"id": cid, "tipo": "Curso", "pais": p, "nombre": curso, "nivel": nivel})
         aristas.append({"origen": f"PAIS:{p}", "destino": cid, "tipo": "OFRECE"})
     usados: set[str] = set()
+    registro = _registro_de_documentos()
+    documentos: dict[str, dict] = {}
     for o in objs:
         e = etq[o["id"]]
+        doc = registro.get(Path(o["archivo"]).name) or registro.get(o["documento"])
         nodos.append({**{k: o[k] for k in (
             "id", "pais", "documento", "archivo", "pagina", "curso", "nivel", "asignatura", "grado_sv_min",
             "grado_sv_max", "eje", "demanda", "texto")}, "tipo": "ObjetivoPais", "tipo_objetivo": o["tipo"],
-            "validacion": o["validacion"]["veredicto"], "version": o["version"]})
+            "validacion": o["validacion"]["veredicto"], "version": o["version"],
+            "documento_registro": doc["id"] if doc else None})
         aristas.append({"origen": f"CURSO:{o['pais']}/{o['curso']}", "destino": o["id"], "tipo": "CONTIENE"})
+        if doc:   # mismo id que el nodo Documento del grafo principal: se navega documento ↔ objetivos
+            documentos[doc["id"]] = doc
+            aristas.append({"origen": o["id"], "destino": f"DOC:{doc['id']}", "tipo": "FUENTE",
+                            **({"pagina": o["pagina"]} if o.get("pagina") else {})})
         for c in e["principales"]:
             aristas.append({"origen": o["id"], "destino": c, "tipo": "ENSEÑA", "peso": "principal",
                             "confianza": e["confianza"], "justificacion": e["justificacion"], "version": e["version"]})
@@ -142,6 +160,9 @@ def construir() -> dict:
         for pr in e["practicas"]:
             aristas.append({"origen": o["id"], "destino": pr, "tipo": "PRACTICA", "confianza": e["confianza"]})
             usados.add(pr)
+    for d in documentos.values():
+        nodos.append({"id": f"DOC:{d['id']}", "tipo": "Documento", "nombre": d["titulo"],
+                      **{k: d.get(k) for k in ("organismo", "anio", "url", "archivo_local", "sha256")}})
     for c in sorted(usados):
         x = voc.get(c) or prac.get(c)
         nodos.append({"id": c, "tipo": "Concepto" if c in voc else "Practica", "nombre": x["nombre"],
@@ -161,6 +182,8 @@ def construir() -> dict:
                                                encoding="utf-8")
     (base / "consenso.json").write_text(json.dumps(consenso, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     manifest = {"version": VERSION, "paises": paises(), "objetivos": len(objs),
+                "objetivos_sin_documento_registrado": sum(n.get("documento_registro") is None
+                                                          for n in nodos if n["tipo"] == "ObjetivoPais"),
                 "nodos": len(nodos), "aristas": len(aristas), "conceptos_en_consenso": len(consenso["conceptos"]),
                 "paises_con_nucleo_por_grado": consenso["paises_con_nucleo_por_grado"]}
     (base / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

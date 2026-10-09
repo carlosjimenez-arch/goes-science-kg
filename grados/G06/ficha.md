@@ -40,9 +40,9 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| La célula: estructura, energía y material genético | 17 | 19 | Biología, Química | 5. Célula.; 6. Biología del desarrollo.; 4. Interacciones químicas. |
+| La célula: estructura, energía y material genético | 15 | 18 | Biología, Química | 5. Célula.; 4. Interacciones químicas.; 6. Biología del desarrollo. |
 | Enlaces químicos y estructura de moléculas | 11 | 7 | Química | 4. Interacciones químicas. |
-| Reproducción, división celular y desarrollo | 8 | 11 | Biología | 6. Biología del desarrollo. |
+| Reproducción, división celular y desarrollo | 10 | 12 | Biología | 6. Biología del desarrollo. |
 | Circuitos eléctricos y magnetismo | 8 | 9 | Física | 3. Electricidad y magnetismo. |
 | Fluidos: densidad, presión, flotación y Bernoulli | 6 | 6 | Física | 1. Fluidos. |
 | Calor y temperatura desde el modelo de partículas | 5 | 6 | Física | 2. Calor y temperatura. |
