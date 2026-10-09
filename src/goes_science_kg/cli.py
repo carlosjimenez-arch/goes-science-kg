@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 from typing import Annotated
 
 import typer
@@ -314,6 +315,23 @@ def revision_exportar() -> None:
 
     for p in exportar(*cargar()):
         typer.echo(f"→ {p}")
+
+
+@revision_app.command("exportar-decisiones")
+def revision_exportar_decisiones() -> None:
+    """CSV de las decisiones de contenido (equivalencias, prerrequisitos, divisiones, clases) para el MINED."""
+    from goes_science_kg.revision_decisiones import exportar_decisiones
+
+    for p in exportar_decisiones():
+        typer.echo(f"→ {relativa(Path(p))}")
+
+
+@revision_app.command("importar-decisiones")
+def revision_importar_decisiones(archivo: str) -> None:
+    """Registra el veredicto del MINED (aceptar | cambiar | rechazar). Luego: make todo."""
+    from goes_science_kg.revision_decisiones import importar_decisiones
+
+    typer.echo(json.dumps(importar_decisiones(archivo), ensure_ascii=False))
 
 
 @revision_app.command("importar")

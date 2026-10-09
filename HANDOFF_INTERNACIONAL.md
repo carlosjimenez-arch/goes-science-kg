@@ -114,6 +114,9 @@ uv run pytest -q && uv run ruff check src tests
    - «Configuración electrónica» dividida (`conceptos/divisiones.json`): por orbitales (Bachillerato) y por niveles o
      modelo de capas (secundaria), con 85 asignaciones explícitas. El enlace químico ya no depende de la mecánica cuántica.
    - Los documentos que ningún nodo cita salen del grafo principal (124 → 41); el grafo internacional los enlaza.
-   - Ojo: el vocabulario cambió, así que volver a correr `gskg internacional etiquetar` o `conceptos` invalida la caché
-     de Vertex (todas las llamadas de etiquetado se vuelven a pagar). `make internacional` no llama a Vertex.
+   - Caché protegida: los prompts usan el catálogo congelado (`internacional/catalogo_etiquetado.json`), así que el
+     vocabulario puede cambiar por capas sin re-pagar el etiquetado (verificado: 0 llamadas). `extraer` y
+     `etiquetar` no gastan sin `--confirmar`.
+   - Confirmación del MINED: `gskg revision exportar-decisiones` → `asignaturas/decisiones/` (9 decisiones y 85
+     asignaciones); al recibirlo, `gskg revision importar-decisiones <csv>` y `make todo`.
    - Hallazgo curricular: la V1 y la V2 tienen números cuánticos y configuración electrónica en 5.° (G05-CIE-U3-3.10 y 3.11).

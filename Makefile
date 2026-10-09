@@ -62,8 +62,9 @@ propuestas:
 internacional:
 	uv run gskg internacional construir
 
-# Extracción y etiquetado con Vertex AI (credenciales de gcloud). Lo que ya está en caché no se vuelve a pagar.
+# Extracción y etiquetado con Vertex AI (credenciales de gcloud). Lo que ya está en caché no se vuelve a pagar;
+# si algo costaría llamadas, se detiene y pide `--confirmar` (make internacional-ia CONFIRMAR=--confirmar).
 internacional-ia:
-	uv run gskg internacional extraer
-	uv run gskg internacional etiquetar
+	uv run gskg internacional extraer $(CONFIRMAR)
+	uv run gskg internacional etiquetar $(CONFIRMAR)
 	uv run gskg internacional construir

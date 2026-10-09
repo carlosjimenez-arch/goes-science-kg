@@ -70,10 +70,12 @@ uv run gskg grados resumenes      # títulos y resúmenes de bloques temáticos 
 uv run gskg brechas               # asignaturas/<x>/brechas/
 uv run gskg progresion            # asignaturas/<x>/progresion.html
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
+uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirmar con el MINED las decisiones de contenido
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
 uv run pytest -q
 make todo                         # temas → grafo → validar → fichas, grados, brechas, progresión → internacional → pruebas + lint
-make internacional-ia             # extraer + etiquetar (Vertex, con caché) + construir
+make internacional-ia             # extraer + etiquetar + construir; sin --confirmar no gasta en Vertex
+uv run gskg internacional congelar-catalogo <versión>   # solo para re-etiquetar a propósito (se paga completo)
 make propuestas                   # simula las 11 propuestas, rehace sus Excel y asignaturas/PROPUESTAS.md
 ```
