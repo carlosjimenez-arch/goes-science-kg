@@ -50,6 +50,15 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 - Commits: `tipo(ámbito): resumen` en español. `pytest -q` en verde antes de cada commit.
 - El remoto usa el alias SSH `github-goes` (`git@github-goes:carlosjimenez-arch/goes-science-kg.git`).
 
+## Harness (Claude Code)
+`.claude/settings.json` conecta hooks que aplican estas reglas solos (detalle en `.claude/hooks/README.md`):
+- Al iniciar la sesión se inyecta el estado: rama, cuenta de git, decisiones sin confirmar con el MINED y etapas.
+- Se bloquea leer `.env`, editar `data/fuentes/`, `reportes/`, PDF o salidas generadas (`data/grafo/`), y hacer commit
+  con otra cuenta o con `ruff`/`pytest` en rojo.
+- Todo gasto en Vertex (`--confirmar`, `congelar-catalogo`) pide la aprobación del usuario.
+- Subagente `verificador-hallazgos` (solo lectura) y skills `internacional-contraste`, `calidad-grafos` y
+  `decisiones-mined`.
+
 ## Comandos
 ```bash
 uv sync --extra dev --extra pdf --extra rag --extra api

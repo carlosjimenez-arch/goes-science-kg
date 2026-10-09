@@ -120,3 +120,8 @@ uv run pytest -q && uv run ruff check src tests
    - Confirmación del MINED: `gskg revision exportar-decisiones` → `asignaturas/decisiones/` (9 decisiones y 85
      asignaciones); al recibirlo, `gskg revision importar-decisiones <csv>` y `make todo`.
    - Hallazgo curricular: la V1 y la V2 tienen números cuánticos y configuración electrónica en 5.° (G05-CIE-U3-3.10 y 3.11).
+7. ✅ **Harness y etapa siguiente (2026-10-09).** Hooks en `.claude/settings.json` (ver `.claude/hooks/README.md`),
+   subagente `verificador-hallazgos` y skills `internacional-contraste`, `calidad-grafos` y `decisiones-mined`. El
+   proceso internacional funciona por tramo (`--tramo 9_11|2_8`); la etapa 2.°–8.° (spec 12) está lista para
+   ejecutar: 116 llamadas de extracción estimadas, a la espera de la aprobación del gasto y de descargar HK y ON 1–8.
+

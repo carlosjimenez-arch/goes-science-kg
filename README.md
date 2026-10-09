@@ -66,6 +66,9 @@ todo está al día (las salidas son deterministas y una prueba verifica que `dat
 | 6 | Internacional | `make internacional` (o `make internacional-ia` con Vertex) | países y malla V2 → `internacional/` |
 
 ## Cómo continuar con Claude Code
+El repo trae su propio harness: hooks que protegen `.env` y las fuentes, piden aprobación antes de gastar en Vertex y
+exigen la cuenta GOES y pruebas en verde para hacer commit; además, un subagente verificador y skills por proceso
+(`.claude/hooks/README.md`).
 Abre Claude Code en esta carpeta y pega [`prompts/00_montar_proyecto.md`](prompts/00_montar_proyecto.md).
 Claude Code lee [`CLAUDE.md`](CLAUDE.md), las [specs](specs/) y las skills de `.claude/skills/`.
 

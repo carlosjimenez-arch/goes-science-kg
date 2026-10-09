@@ -23,7 +23,7 @@ pruebas:
 	uv run pytest -q
 
 lint:
-	uv run ruff check src tests
+	uv run ruff check src tests .claude/hooks
 
 grados:
 	uv run gskg grados construir
