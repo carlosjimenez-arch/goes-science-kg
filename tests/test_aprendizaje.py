@@ -74,7 +74,8 @@ def test_capa_pedagogica_integra_y_vinculada_a_objetivos(nav, ped):
     assert errores_capa(ped, nav) == []
     assert all(a["objetivos"] and all(t.startswith("TEMA:") for t in a["objetivos"]) for a in ped.actividades.values())
     estados = {x["estado"] for x in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values()]}
-    assert estados <= {"propuesta_pendiente", "verificado"}
+    assert estados <= {"propuesta_pendiente", "revisado_panel", "verificado"}
+    assert all(x.get("revision_panel") for x in ped.actividades.values() if x["estado"] == "revisado_panel")
     assert all(x.get("revisado_por") for x in ped.actividades.values() if x["estado"] == "verificado")
 
 
@@ -345,3 +346,45 @@ def test_verificador_exige_citas_literales():
                                    "proteínas", "estado": "respaldada"}]}
     assert errores(inventada, turno, ctx)                                    # respaldo que no está en el contexto
     assert errores({"afirmaciones": []}, " ".join(["palabra"] * 40), ctx)   # nada que verificar en un turno largo
+
+
+def test_salvaguardas_para_menores():
+    from goes_science_kg.aprendizaje.evaluador import Evaluador
+    from goes_science_kg.aprendizaje.salvaguardas import limpiar, senales_de_riesgo, texto_para_estudiante
+
+    texto, retirados = limpiar("Me llamo Ana Pérez, mi correo es ana@x.com y mi número 7123-4567. El agua sale.")
+    assert "Ana" not in texto and "ana@x.com" not in texto and "7123" not in texto and "El agua sale." in texto
+    assert retirados
+    assert senales_de_riesgo("No quiero vivir, en mi casa me pegan") == ["autolesion", "violencia_o_abuso"]
+    assert senales_de_riesgo("Me toca hacer la tarea: el agua sale de la papa") == []   # «me toca» = «es mi turno»
+    assert "brecha" not in texto_para_estudiante("Tienes una brecha en concentración. Repasemos.")
+    modelo = _guion({"criterios": [], "error": -1, "confianza": "alta", "justificacion": ""})
+    ev = Evaluador(modelo).evaluar(ABIERTA, "No sé, en mi casa me pegan mucho")
+    assert ev.requiere_docente and ev.origen == "salvaguarda" and not modelo.llamadas   # no llega al modelo
+    Evaluador(modelo).evaluar(ABIERTA, "Sale agua; me llamo Luis Gómez")
+    assert "Luis" not in modelo.llamadas[-1].prompt                                   # sin datos personales
+
+
+def test_respuestas_numericas_escritas_a_mano():
+    from goes_science_kg.aprendizaje.sesion import evaluar
+
+    act = {"formato": "numerica", "valor": 50000, "tolerancia": 1}
+    for r in ("50000", "50 000", "50.000", "50,000", "50000 Pa"):
+        assert evaluar(act, r, Pedagogia())[0], r
+    assert not evaluar({"formato": "numerica", "valor": 3.5, "tolerancia": 0.05}, "35", Pedagogia())[0]
+    assert evaluar({"formato": "numerica", "valor": 3.5, "tolerancia": 0.05}, "3,5", Pedagogia())[0]
+    assert not evaluar(act, "no sé", Pedagogia())[0]
+
+
+def test_barajar_conserva_la_clave_y_el_diagnostico(ped):
+    from goes_science_kg.aprendizaje.sesion import barajar
+
+    act = ped.actividades["ACT:G09-CIE-U2-2.4/obj-1"]
+    claves = set()
+    for estudiante in ("e1", "e2", "e3", "e4", "e5", "e6"):
+        m, a_original = barajar(act, estudiante)
+        assert m["opciones"][m["correcta"]] == act["opciones"][act["correcta"]]
+        assert all(act["distractores"][a_original[k]] == v for k, v in m["distractores"].items())
+        assert barajar(act, estudiante) == (m, a_original)                 # determinista
+        claves.add(m["correcta"])
+    assert len(claves) > 1                                                 # la clave no queda siempre en la misma letra

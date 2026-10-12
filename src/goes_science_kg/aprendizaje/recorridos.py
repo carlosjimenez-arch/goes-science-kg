@@ -61,8 +61,9 @@ RECORRIDOS = [
      "objetivo": "TEMA:G05-CIE-U6-6.14",
      "titulo": "Suelo (5.°, primaria): extensión a primaria con tutor y respuesta abierta",
      "muestra": "El mismo ciclo en primaria, con lenguaje de 5.° (60 palabras). El tutor (simulado) presenta cada "
-                "refuerzo; su primer turno es demasiado largo, la guarda lo rechaza y el segundo pasa. La "
-                "reevaluación es una respuesta abierta que califica el evaluador (simulado) con la rúbrica.",
+                "refuerzo; su primer turno es demasiado largo, la guarda lo rechaza y el segundo pasa. El refuerzo "
+                "de suelo (10 min) supera el límite de primaria (8 min, decisión del piloto): no se hace y queda una "
+                "nota al docente. La reevaluación es una respuesta abierta que califica el evaluador (simulado).",
      "tutor": True, "evaluador": True,
      "guion": {"ACT:G05-CIE-U6-6.14/obj-1": "distractor"}},
     {"id": "R5", "archivo": "R5_respuesta_abierta_a_revision.md", "estudiante": "EST-DEMO-5", "grado": 9,

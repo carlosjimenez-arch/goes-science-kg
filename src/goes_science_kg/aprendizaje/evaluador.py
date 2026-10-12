@@ -7,7 +7,8 @@ de lenguaje propone; el código decide, con guardas deterministas:
 - la dificultad solo puede ser una de las que la rúbrica asocia a un error típico;
 - la respuesta del estudiante es un dato: si parece una instrucción al evaluador, no se llama al modelo.
 Si la confianza es baja, o alguna guarda falla, la respuesta va a **revisión docente** y no actualiza el estado del
-estudiante. Una respuesta vacía es incorrecta sin llamar al modelo.
+estudiante. Una respuesta vacía es incorrecta sin llamar al modelo. Antes de todo, las salvaguardas (salvaguardas.py):
+una señal de riesgo va al docente sin pasar por el modelo, y los datos personales se retiran del texto.
 """
 
 from __future__ import annotations
@@ -112,6 +113,12 @@ class Evaluador:
         self.modelo = modelo
 
     def evaluar(self, actividad: dict, respuesta: str) -> Evaluacion:
+        from .salvaguardas import limpiar, senales_de_riesgo
+
+        if riesgo := senales_de_riesgo(respuesta):   # no va al modelo ni se califica: al docente, con el protocolo
+            return Evaluacion(None, None, "baja", requiere_docente=True, origen="salvaguarda",
+                              motivo=f"señal de riesgo ({', '.join(riesgo)}): aviso inmediato al docente")
+        respuesta, _ = limpiar(respuesta)   # sin datos personales antes de enviarla o compararla
         if not _norma(respuesta):
             return Evaluacion(False, None, "alta", origen="regla", motivo="respuesta vacía")
         if _INSTRUCCION.search(_norma(respuesta)):

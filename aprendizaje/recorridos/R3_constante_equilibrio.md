@@ -30,12 +30,12 @@
 5. **sondeo** · ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09 [sondeo, razonar] → «B» ✓. P(Molaridad y unidades químicas de concentración) 0.60→0.84
 6. **sondeo** · ACT:quimica/constante-de-equilibrio/sondeo-1-G09 [sondeo, recordar] → «B» ✗ (delata DIF:quimica/constante-de-equilibrio/1). P(Constante de equilibrio) 0.12→0.02
 7. **diagnóstico** · Resultado: H1 descartada; H2 descartada; H3 confirmada
-8. **durante** · Refuerzo I1 (durante, profundidad 0): MT:quimica/constante-de-equilibrio/G09 «Cómo se escribe la constante de equilibrio» [propuesta_pendiente], 10 min. Motivo: hipótesis H3 confirmada.
+8. **durante** · Refuerzo I1 (durante, profundidad 0): MT:quimica/constante-de-equilibrio/G09 «Cómo se escribe la constante de equilibrio» [revisado_panel], 10 min. Motivo: hipótesis H3 confirmada.
 9. **durante** · ACT:quimica/constante-de-equilibrio/practica-G09 [practica, explicar] → «B» ✓. P(Constante de equilibrio) 0.02→0.06
 10. **durante** · ACT:quimica/constante-de-equilibrio/comprobacion-G09 [comprobacion, razonar] → «40» ✓. P(Constante de equilibrio) 0.06→0.54
 11. **durante** · Criterio cumplido: se vuelve a G09-CIE-U3-3.6.
 12. **reevaluación** · ACT:G09-CIE-U3-3.6/obj-2 [objetivo, interpretar_datos] → «B» ✓. P(G09-CIE-U3-3.6) 0.25→0.55, P(Constante de equilibrio) 0.61→0.85
-13. **cierre** · Objetivo logrado provisional (P=0.55). Repasos: 2026-10-13, 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
+13. **cierre** · Objetivo logrado provisional (P=0.55). Repasos: 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
 
 ## Hipótesis (se comprueban; no son conclusiones)
 
@@ -49,7 +49,7 @@
 
 | Id | Momento | Objetivo | Concepto | Motivo | Recurso (estado) | Fuentes | Min | Criterio de comprensión | Condición para volver | Prof. | Resultado |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| I1 | durante | G09-CIE-U3-3.6 | Constante de equilibrio | hipótesis H3 confirmada | MT:quimica/constante-de-equilibrio/G09 (propuesta_pendiente) | concepto CON:quimica/constante-de-equilibrio (definición del vocabulario); CON:quimica/constante-de-equilibrio; TEMA:G09-CIE-U3-3.6 | 10 | Responde bien la comprobación: escribe K para una ecuación nueva, con los coeficientes como exponentes, y obtiene su valor. (actividad ACT:quimica/constante-de-equilibrio/comprobacion-G09) | criterio cumplido, 2 intentos o 10 min → volver a G09-CIE-U3-3.6 | 0 | cumplido |
+| I1 | durante | G09-CIE-U3-3.6 | Constante de equilibrio | hipótesis H3 confirmada | MT:quimica/constante-de-equilibrio/G09 (revisado_panel) | concepto CON:quimica/constante-de-equilibrio (definición del vocabulario); CON:quimica/constante-de-equilibrio; TEMA:G09-CIE-U3-3.6 | 10 | Responde bien la comprobación: escribe K para una ecuación nueva, con los coeficientes como exponentes, y obtiene su valor. (actividad ACT:quimica/constante-de-equilibrio/comprobacion-G09) | criterio cumplido, 2 intentos o 10 min → volver a G09-CIE-U3-3.6 | 0 | cumplido |
 | I2 | posterior | G09-CIE-U3-3.6 | Constante de equilibrio | logro en la sesión (E7) | repaso espaciado con actividades del objetivo (—) | malla TEMA:G09-CIE-U3-3.6 | 5 | una actividad del objetivo distinta de las ya usadas, correcta | un fallo vuelve el repaso al primer intervalo | 0 | pendiente |
 
 ## Estado final del estudiante (solo su perfil; el grafo compartido no cambia)
@@ -65,7 +65,6 @@ Desvío de la sesión: 1 refuerzos, 10 min (límites: 3 y 25 min).
 
 ## Repasos programados (posterior)
 
-- 2026-10-13 (+1 d)
 - 2026-10-15 (+3 d)
 - 2026-10-19 (+7 d)
 - 2026-10-26 (+14 d)
@@ -104,7 +103,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "nombre": "Constante de equilibrio",
   "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
   "microtema": "MT:quimica/constante-de-equilibrio/G09",
-  "estado_microtema": "propuesta_pendiente"
+  "estado_microtema": "revisado_panel"
  },
  "fuentes": [
   "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 3 - Equilibrio químico» fila 8",

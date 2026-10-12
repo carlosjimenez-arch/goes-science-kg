@@ -28,12 +28,12 @@
 4. **sondeo** · ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09 [sondeo, razonar] → «A» ✗ (delata DIF:quimica/concentracion-de-disoluciones/1). P(Soluto, disolvente y concentración) 0.60→0.17
 5. **sondeo** · ACT:quimica/concentracion-de-disoluciones/sondeo-2-G09 [sondeo, explicar] → «D» ✗. P(Soluto, disolvente y concentración) 0.17→0.03
 6. **diagnóstico** · Resultado: H2 confirmada; H1 sin_comprobar; H3 sin_comprobar
-7. **durante** · Refuerzo I1 (durante, profundidad 1): MT:quimica/concentracion-de-disoluciones/G09 «Cantidad de soluto no es lo mismo que concentración» [propuesta_pendiente], 10 min. Motivo: hipótesis H2 confirmada.
+7. **durante** · Refuerzo I1 (durante, profundidad 1): MT:quimica/concentracion-de-disoluciones/G09 «Cantidad de soluto no es lo mismo que concentración» [revisado_panel], 10 min. Motivo: hipótesis H2 confirmada.
 8. **durante** · ACT:quimica/concentracion-de-disoluciones/practica-G09 [practica, interpretar_datos] → «D» ✓. P(Soluto, disolvente y concentración) 0.03→0.09
 9. **durante** · ACT:quimica/concentracion-de-disoluciones/comprobacion-G09 [comprobacion, razonar] → «20» ✓. P(Soluto, disolvente y concentración) 0.09→0.63
 10. **durante** · Criterio cumplido: se vuelve a G09-CIE-U8-8.2.
 11. **reevaluación** · ACT:G09-CIE-U8-8.2/obj-2 [objetivo, interpretar_datos] → «C» ✓. P(G09-CIE-U8-8.2) 0.12→0.32, P(Difusión y ósmosis) 0.12→0.32
-12. **cierre** · Objetivo logrado provisional (P=0.32). Repasos: 2026-10-13, 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
+12. **cierre** · Objetivo logrado provisional (P=0.32). Repasos: 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
 
 ## Hipótesis (se comprueban; no son conclusiones)
 
@@ -47,7 +47,7 @@
 
 | Id | Momento | Objetivo | Concepto | Motivo | Recurso (estado) | Fuentes | Min | Criterio de comprensión | Condición para volver | Prof. | Resultado |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| I1 | durante | G09-CIE-U8-8.2 | Soluto, disolvente y concentración | hipótesis H2 confirmada | MT:quimica/concentracion-de-disoluciones/G09 (propuesta_pendiente) | concepto CON:quimica/concentracion-de-disoluciones (definición del vocabulario); CON:quimica/concentracion-de-disoluciones; TEMA:G09-CIE-U8-8.2 | 10 | Responde correctamente la comprobación, que pide la concentración de una porción tomada de una disolución sin confundirla con la cantidad de sal que contiene. (actividad ACT:quimica/concentracion-de-disoluciones/comprobacion-G09) | criterio cumplido, 2 intentos o 10 min → volver a G09-CIE-U8-8.2 | 1 | cumplido |
+| I1 | durante | G09-CIE-U8-8.2 | Soluto, disolvente y concentración | hipótesis H2 confirmada | MT:quimica/concentracion-de-disoluciones/G09 (revisado_panel) | concepto CON:quimica/concentracion-de-disoluciones (definición del vocabulario); CON:quimica/concentracion-de-disoluciones; TEMA:G09-CIE-U8-8.2 | 10 | Responde correctamente la comprobación, que pide la concentración de una porción tomada de una disolución sin confundirla con la cantidad de sal que contiene. (actividad ACT:quimica/concentracion-de-disoluciones/comprobacion-G09) | criterio cumplido, 2 intentos o 10 min → volver a G09-CIE-U8-8.2 | 1 | cumplido |
 | I2 | posterior | G09-CIE-U8-8.2 | Difusión y ósmosis | logro en la sesión (E6) | repaso espaciado con actividades del objetivo (—) | malla TEMA:G09-CIE-U8-8.2 | 5 | una actividad del objetivo distinta de las ya usadas, correcta | un fallo vuelve el repaso al primer intervalo | 0 | pendiente |
 
 ## Estado final del estudiante (solo su perfil; el grafo compartido no cambia)
@@ -62,7 +62,6 @@ Desvío de la sesión: 1 refuerzos, 10 min (límites: 3 y 25 min).
 
 ## Repasos programados (posterior)
 
-- 2026-10-13 (+1 d)
 - 2026-10-15 (+3 d)
 - 2026-10-19 (+7 d)
 - 2026-10-26 (+14 d)
@@ -101,7 +100,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "nombre": "Difusión y ósmosis",
   "definicion": "Movimiento pasivo de sustancias a favor de su gradiente de concentración; la ósmosis es la difusión de agua a través de membranas.",
   "microtema": "MT:biologia/difusion-y-osmosis/G09",
-  "estado_microtema": "propuesta_pendiente"
+  "estado_microtema": "revisado_panel"
  },
  "fuentes": [
   "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 8 - La célula» fila 4",

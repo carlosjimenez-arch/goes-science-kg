@@ -25,14 +25,14 @@
 ## Recorrido paso a paso
 
 1. **objetivo** · G09-CIE-U2-2.4 (9.°): 2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.
-2. **previo** · Refuerzo I1 (previo, profundidad 1): MT:fisica/relaciones-presion-volumen-temperatura-gases/G09 «Presión, volumen y temperatura van de la mano» [propuesta_pendiente], 10 min. Motivo: secuencia de la malla: «Relaciones presión-volumen-temperatura en gases» se trabaja por primera vez en G09-CIE-U2-2.4, no antes del objetivo.
+2. **previo** · Refuerzo I1 (previo, profundidad 1): MT:fisica/relaciones-presion-volumen-temperatura-gases/G09 «Presión, volumen y temperatura van de la mano» [revisado_panel], 10 min. Motivo: secuencia de la malla: «Relaciones presión-volumen-temperatura en gases» se trabaja por primera vez en G09-CIE-U2-2.4, no antes del objetivo.
 3. **previo** · ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09 [practica, observar] → «A» ✓. P(Relaciones presión-volumen-temperatura en gases) 0.30→0.61
 4. **previo** · ACT:fisica/relaciones-presion-volumen-temperatura-gases/comprobacion-G09 [comprobacion, razonar] → «B» ✗ (delata DIF:fisica/temperatura-medicion-escalas/1). P(Relaciones presión-volumen-temperatura en gases) 0.61→0.17
 5. **diagnóstico** · Hipótesis (en el orden en que se comprueban): H2 base «Temperatura y escalas termométricas» (0.8); H1 base «Presión» (0.4); H3 base «Modelo de partículas de la materia» (0.28); H4 en el concepto «Relaciones presión-volumen-temperatura en gases» (0.7)
 6. **sondeo** · ACT:fisica/temperatura-medicion-escalas/sondeo-1-G09 [sondeo, razonar] → «B» ✗ (delata DIF:fisica/temperatura-medicion-escalas/1). P(Temperatura y escalas termométricas) 0.60→0.17
 7. **sondeo** · ACT:fisica/temperatura-medicion-escalas/sondeo-2-G09 [sondeo, interpretar_datos] → «C» ✗. P(Temperatura y escalas termométricas) 0.17→0.03
 8. **diagnóstico** · Resultado: H2 confirmada; H1 sin_comprobar; H3 sin_comprobar; H4 sin_comprobar
-9. **durante** · Refuerzo I2 (durante, profundidad 2): MT:fisica/temperatura-medicion-escalas/G09 «Celsius, kelvin y el cero absoluto» [propuesta_pendiente], 8 min. Motivo: hipótesis H2 confirmada.
+9. **durante** · Refuerzo I2 (durante, profundidad 2): MT:fisica/temperatura-medicion-escalas/G09 «Celsius, kelvin y el cero absoluto» [revisado_panel], 8 min. Motivo: hipótesis H2 confirmada.
 10. **durante** · ACT:fisica/temperatura-medicion-escalas/practica-G09 [practica, interpretar_datos] → «A» ✓. P(Temperatura y escalas termométricas) 0.03→0.09
 11. **durante** · ACT:fisica/temperatura-medicion-escalas/comprobacion-G09 [comprobacion, razonar] → «A» ✓. P(Temperatura y escalas termométricas) 0.09→0.26
 12. **durante** · Criterio cumplido: se vuelve a G09-CIE-U2-2.4.
@@ -40,7 +40,7 @@
 14. **previo** · Criterio cumplido: se vuelve a G09-CIE-U2-2.4.
 15. **evaluación** · ACT:G09-CIE-U2-2.4/obj-1 [objetivo, razonar] → «B» ✓. P(G09-CIE-U2-2.4) 0.50→0.78, P(Procesos termodinámicos) 0.50→0.78
 16. **reevaluación** · ACT:G09-CIE-U2-2.4/obj-2 [objetivo, interpretar_datos] → «A» ✓. P(G09-CIE-U2-2.4) 0.78→0.93, P(Procesos termodinámicos) 0.78→0.93
-17. **cierre** · Objetivo dominado (P=0.93). Repasos: 2026-10-13, 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
+17. **cierre** · Objetivo dominado (P=0.93). Repasos: 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
 
 ## Hipótesis (se comprueban; no son conclusiones)
 
@@ -55,8 +55,8 @@
 
 | Id | Momento | Objetivo | Concepto | Motivo | Recurso (estado) | Fuentes | Min | Criterio de comprensión | Condición para volver | Prof. | Resultado |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| I1 | previo | G09-CIE-U2-2.4 | Relaciones presión-volumen-temperatura en gases | secuencia de la malla: «Relaciones presión-volumen-temperatura en gases» se trabaja por primera vez en G09-CIE-U2-2.4, no antes del objetivo | MT:fisica/relaciones-presion-volumen-temperatura-gases/G09 (propuesta_pendiente) | concepto CON:fisica/relaciones-presion-volumen-temperatura-gases (definición del vocabulario); CON:fisica/relaciones-presion-volumen-temperatura-gases; TEMA:G09-CIE-U2-2.4 | 10 | Responde correctamente la comprobación: predice la presión de un gas a volumen constante usando temperaturas en kelvin. (actividad ACT:fisica/relaciones-presion-volumen-temperatura-gases/comprobacion-G09) | criterio cumplido, 2 intentos o 10 min → volver a G09-CIE-U2-2.4 | 1 | cumplido |
-| I2 | durante | G09-CIE-U2-2.4 | Temperatura y escalas termométricas | hipótesis H2 confirmada | MT:fisica/temperatura-medicion-escalas/G09 (propuesta_pendiente) | concepto CON:fisica/temperatura-medicion-escalas (definición del vocabulario); CON:fisica/temperatura-medicion-escalas; TEMA:G09-CIE-U2-2.4 | 8 | Responde correctamente la comprobación: calcula en kelvin la temperatura que duplica la presión de un gas y la expresa en °C. (actividad ACT:fisica/temperatura-medicion-escalas/comprobacion-G09) | criterio cumplido, 2 intentos o 8 min → volver a G09-CIE-U2-2.4 | 2 | cumplido |
+| I1 | previo | G09-CIE-U2-2.4 | Relaciones presión-volumen-temperatura en gases | secuencia de la malla: «Relaciones presión-volumen-temperatura en gases» se trabaja por primera vez en G09-CIE-U2-2.4, no antes del objetivo | MT:fisica/relaciones-presion-volumen-temperatura-gases/G09 (revisado_panel) | concepto CON:fisica/relaciones-presion-volumen-temperatura-gases (definición del vocabulario); CON:fisica/relaciones-presion-volumen-temperatura-gases; TEMA:G09-CIE-U2-2.4 | 10 | Responde correctamente la comprobación: predice la presión de un gas a volumen constante usando temperaturas en kelvin. (actividad ACT:fisica/relaciones-presion-volumen-temperatura-gases/comprobacion-G09) | criterio cumplido, 2 intentos o 10 min → volver a G09-CIE-U2-2.4 | 1 | cumplido |
+| I2 | durante | G09-CIE-U2-2.4 | Temperatura y escalas termométricas | hipótesis H2 confirmada | MT:fisica/temperatura-medicion-escalas/G09 (revisado_panel) | concepto CON:fisica/temperatura-medicion-escalas (definición del vocabulario); CON:fisica/temperatura-medicion-escalas; TEMA:G09-CIE-U2-2.4 | 8 | Responde correctamente la comprobación: calcula en kelvin la temperatura que duplica la presión de un gas y la expresa en °C. (actividad ACT:fisica/temperatura-medicion-escalas/comprobacion-G09) | criterio cumplido, 2 intentos o 8 min → volver a G09-CIE-U2-2.4 | 2 | cumplido |
 | I3 | posterior | G09-CIE-U2-2.4 | Procesos termodinámicos | logro en la sesión (E9) | repaso espaciado con actividades del objetivo (—) | malla TEMA:G09-CIE-U2-2.4 | 5 | una actividad del objetivo distinta de las ya usadas, correcta | un fallo vuelve el repaso al primer intervalo | 0 | pendiente |
 
 ## Estado final del estudiante (solo su perfil; el grafo compartido no cambia)
@@ -72,7 +72,6 @@ Desvío de la sesión: 2 refuerzos, 18 min (límites: 3 y 25 min).
 
 ## Repasos programados (posterior)
 
-- 2026-10-13 (+1 d)
 - 2026-10-15 (+3 d)
 - 2026-10-19 (+7 d)
 - 2026-10-26 (+14 d)
@@ -124,7 +123,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "nombre": "Procesos termodinámicos",
   "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
   "microtema": "MT:fisica/procesos-termodinamicos/G09",
-  "estado_microtema": "propuesta_pendiente"
+  "estado_microtema": "revisado_panel"
  },
  "fuentes": [
   "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 2 - Calor y temperatura» fila 6",

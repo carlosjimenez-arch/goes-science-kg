@@ -35,10 +35,19 @@ class Presupuesto:
     notas_docente: list[str] = field(default_factory=list)
     propuestas: list[dict] = field(default_factory=list)
     cola: Path | None = None   # cola de propuestas (None: la de config/aprendizaje.yaml)
+    grado: int | None = None   # para los límites propios del tramo (refuerzo.por_tramo)
+
+    def limites(self) -> dict:
+        """Los límites de refuerzo del grado: los generales y, encima, los de su tramo si los tiene."""
+        r = config()["refuerzo"]
+        tramo = next((k for k, t in config()["adaptacion"].items() if self.grado in t["grados"]), None)
+        return {**r, **(r.get("por_tramo") or {}).get(tramo, {})}
 
     def admite(self, minutos: int, profundidad: int) -> str | None:
         """None si cabe; si no, el límite que se tocaría."""
-        r = config()["refuerzo"]
+        r = self.limites()
+        if minutos > r["minutos_max_por_refuerzo"]:
+            return f"refuerzo de {minutos} min > {r['minutos_max_por_refuerzo']} min en este grado"
         if profundidad > r["profundidad_maxima"]:
             return f"profundidad {profundidad} > {r['profundidad_maxima']}"
         if self.refuerzos + 1 > r["max_por_sesion"]:

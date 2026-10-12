@@ -71,7 +71,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "nombre": "Constante de equilibrio",
   "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
   "microtema": "MT:quimica/constante-de-equilibrio/G09",
-  "estado_microtema": "propuesta_pendiente"
+  "estado_microtema": "revisado_panel"
  },
  "fuentes": [
   "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 3 - Equilibrio químico» fila 8",

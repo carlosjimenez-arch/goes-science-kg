@@ -16,6 +16,8 @@ del microtema.
 
 from __future__ import annotations
 
+import random
+import re
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
@@ -28,6 +30,7 @@ from .estudiante import Evidencia, Intervencion, Perfil
 from .evaluador import Evaluador
 from .pedagogia import Pedagogia
 from .relaciones import Navegador
+from .salvaguardas import limpiar, texto_para_estudiante
 from .tutor import Tutor
 
 
@@ -35,17 +38,50 @@ def config() -> dict:
     return cargar("aprendizaje")
 
 
-def evaluar(actividad: dict, respuesta: str, ped: Pedagogia) -> tuple[bool, str | None]:
-    """Función de evaluación: (¿correcta?, dificultad que delata la respuesta, si alguna)."""
-    if actividad["formato"] == "numerica":
+def lecturas_numericas(texto: str) -> list[float]:
+    """Los valores que puede querer decir una respuesta numérica escrita a mano: «50 000», «50000 Pa», «50.000» o
+    «50,000» (miles o decimales: se prueban las dos lecturas), «3,5» o «3.5». Vacía si no hay un número."""
+    t = re.sub(r"[^\d.,\-]", "", texto.replace(" ", ""))
+    if not re.search(r"\d", t):
+        return []
+    lecturas = set()
+    for decimal, miles in ((".", ","), (",", ".")):
         try:
-            return abs(float(respuesta) - float(actividad["valor"])) <= float(actividad["tolerancia"]), None
+            lecturas.add(float(t.replace(miles, "").replace(decimal, ".")))
         except ValueError:
-            return False, None
+            continue
+    return sorted(lecturas)
+
+
+def evaluar(actividad: dict, respuesta: str, ped: Pedagogia) -> tuple[bool, str | None]:
+    """Función de evaluación: (¿correcta?, dificultad que delata la respuesta, si alguna). Una respuesta numérica es
+    correcta si alguna lectura razonable de lo escrito cae dentro de la tolerancia (panel, 2026-10-12: «50 000» o
+    «50000 Pa» no son errores de física)."""
+    if actividad["formato"] == "numerica":
+        valor, tol = float(actividad["valor"]), float(actividad["tolerancia"])
+        return any(abs(x - valor) <= tol for x in lecturas_numericas(str(respuesta))), None
     if respuesta == actividad["correcta"]:
         return True, None
     dif = ped.dificultad_de_opcion(actividad, respuesta)
     return False, dif["id"] if dif else None
+
+
+def barajar(actividad: dict, semilla: str) -> tuple[dict, dict[str, str]]:
+    """La actividad de opción múltiple con las opciones en otro orden, determinista por `semilla` (p. ej. estudiante y
+    actividad), y el mapa letra mostrada → letra original para evaluar. La clave y los distractores se reescriben con
+    las letras nuevas: el diagnóstico no cambia. Panel, 2026-10-12: la clave era la A en 34 de 84 ítems y la opción más
+    larga en 57; sin barajar, un estudiante aprende a elegir la A. La interfaz del piloto muestra la barajada."""
+    if actividad.get("formato") != "opcion_multiple":
+        return actividad, {}
+    originales = sorted(actividad["opciones"])
+    orden = originales[:]
+    random.Random(f"{semilla}|{actividad['id']}").shuffle(orden)
+    a_original = dict(zip(originales, orden, strict=True))          # letra mostrada → letra original
+    a_mostrada = {v: k for k, v in a_original.items()}
+    mostrada = {**actividad, "opciones": {k: actividad["opciones"][a_original[k]] for k in originales},
+                "correcta": a_mostrada[actividad["correcta"]],
+                "distractores": {a_mostrada[k]: v for k, v in (actividad.get("distractores") or {}).items()}}
+    return mostrada, a_original
 
 
 @dataclass
@@ -91,7 +127,7 @@ class Sesion:
         self.perfil, self.nav, self.ped, self.guion, self.fecha = perfil, nav, ped, guion, fecha
         self.tutor, self.evaluador = tutor, evaluador
         self.revision_docente: list[dict] = []
-        self.presupuesto = planificador.Presupuesto(cola=cola)
+        self.presupuesto = planificador.Presupuesto(cola=cola, grado=perfil.grado)
         self.previas: dict[str, tuple[float, str]] = {}
         self.usadas: set[str] = set()
         self.pasos: list[Paso] = []
@@ -147,12 +183,12 @@ class Sesion:
         ultimo = None
         if anterior is not None and ev is not None:
             dif = self.ped.dificultades.get(ev.dificultad or "")
-            ultimo = {"enunciado": anterior["enunciado"], "respuesta": ev.respuesta, "correcta": ev.correcta,
-                      "dificultad": dif["descripcion"] if dif else None}
+            ultimo = {"enunciado": anterior["enunciado"], "respuesta": limpiar(ev.respuesta)[0],
+                      "correcta": ev.correcta, "dificultad": dif["descripcion"] if dif else None}
         t = self.tutor.turno(tarea, paq, mt, actividad, ultimo)
         nota = f" [respaldo: {'; '.join(t.errores)}]" if t.origen == "respaldo" else (
             f" [corregido tras: {'; '.join(t.errores)}]" if t.errores else "")
-        self._paso("tutor", f"«{t.texto()}» (fuentes {', '.join(t.fuentes) or '—'}){nota}")
+        self._paso("tutor", f"«{texto_para_estudiante(t.texto())}» (fuentes {', '.join(t.fuentes) or '—'}){nota}")
 
     # -- funciones -----------------------------------------------------------------------------------------------
     def diagnosticar(self, objetivo: str, actividad: dict, ev: Evidencia) -> diagnostico.Hipotesis | None:

@@ -30,10 +30,17 @@ refuerzo:
   minutos_max_por_sesion: 25          # tiempo total de desvío antes de volver al objetivo
   intentos_por_refuerzo: 2            # si no se cumple el criterio, se vuelve al objetivo y se avisa al docente
   max_previos: 1                      # activaciones previas por objetivo (bases que la malla enseña después)
+  # Límites propios de primaria (panel de expertos, 2026-10-12, fase C del piloto): sesiones de 15–20 min con el
+  # docente; lo pendiente pasa a la sesión siguiente.
+  por_tramo:
+    primaria_baja: {max_por_sesion: 2, minutos_max_por_refuerzo: 8, minutos_max_por_sesion: 16}
+    primaria_alta: {max_por_sesion: 2, minutos_max_por_refuerzo: 8, minutos_max_por_sesion: 16}
 
-# Repaso espaciado después de dominar un objetivo (días). Un fallo en el repaso vuelve al primer intervalo.
+# Repaso espaciado después de dominar un objetivo (días de calendario). Un fallo en el repaso vuelve al primer
+# intervalo. Con dos sesiones por semana (decisión del piloto, 2026-10-12) equivalen a la sesión siguiente, una
+# semana, dos semanas y un mes; el repaso se hace en la primera sesión desde esa fecha.
 repaso:
-  intervalos_dias: [1, 3, 7, 14, 30]
+  intervalos_dias: [3, 7, 14, 30]
 
 # Adaptación por grado (spec 13): longitud y registro del lenguaje del tutor.
 adaptacion:

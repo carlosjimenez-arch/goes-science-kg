@@ -2,7 +2,7 @@
 
 > Recorrido generado por `uv run gskg tutor recorridos` (spec 13). Estudiante **simulado** con un guion de respuestas; actividades, dificultades y microtemas en estado **propuesta_pendiente** (redactados por un especialista IA, sin revisión del equipo de Ciencias). Muestra que el ciclo funciona sobre el grafo; no demuestra una mejora del aprendizaje. El tutor y el evaluador son **modelos de guion** (sin Vertex): muestran el circuito y sus guardas, no la calidad de un modelo real.
 
-**Qué muestra:** El mismo ciclo en primaria, con lenguaje de 5.° (60 palabras). El tutor (simulado) presenta cada refuerzo; su primer turno es demasiado largo, la guarda lo rechaza y el segundo pasa. La reevaluación es una respuesta abierta que califica el evaluador (simulado) con la rúbrica.
+**Qué muestra:** El mismo ciclo en primaria, con lenguaje de 5.° (60 palabras). El tutor (simulado) presenta cada refuerzo; su primer turno es demasiado largo, la guarda lo rechaza y el segundo pasa. El refuerzo de suelo (10 min) supera el límite de primaria (8 min, decisión del piloto): no se hace y queda una nota al docente. La reevaluación es una respuesta abierta que califica el evaluador (simulado).
 
 ## Objetivo curricular (malla V2, sin cambios)
 - **G05-CIE-U6-6.14** (5.°, ciencias_tierra_espacio): 6.14. Identificación de los procesos químicos que ocurren en el suelo.
@@ -24,7 +24,7 @@
 ## Recorrido paso a paso
 
 1. **objetivo** · G05-CIE-U6-6.14 (5.°): 6.14. Identifica los principales procesos químicos que ocurren en el suelo.
-2. **previo** · Refuerzo I1 (previo, profundidad 1): MT:ciencias_tierra_espacio/meteorizacion/G05 «Las rocas también cambian» [propuesta_pendiente], 8 min. Motivo: secuencia de la malla: «Meteorización» se trabaja por primera vez en G05-CIE-U6-6.14, no antes del objetivo.
+2. **previo** · Refuerzo I1 (previo, profundidad 1): MT:ciencias_tierra_espacio/meteorizacion/G05 «Las rocas también cambian» [revisado_panel], 8 min. Motivo: secuencia de la malla: «Meteorización» se trabaja por primera vez en G05-CIE-U6-6.14, no antes del objetivo.
 3. **tutor** · «Mira una pared vieja de piedra: tiene grietas y pedacitos sueltos al pie. Eso es meteorización: las rocas se quiebran o se transforman donde están, por el calor y el frío, el agua, el aire y seres vivos como las raíces. Si luego el agua o el viento se llevan los pedacitos, eso ya es erosión. ¿Qué respondes en la actividad que sigue?» (fuentes F2, F3) [corregido tras: mensaje de 168 palabras; máximo 60 en 5.°]
 4. **previo** · ACT:ciencias_tierra_espacio/meteorizacion/practica-G05 [practica, interpretar_datos] → «B» ✓. P(Meteorización) 0.30→0.61
 5. **tutor** · «¡Bien hecho! Ahora una situación nueva. ¿Qué respondes en la que sigue?» (fuentes F3)
@@ -35,15 +35,9 @@
 10. **diagnóstico** · Hipótesis (en el orden en que se comprueban): H3 en el concepto «Suelo: formación, componentes y tipos» (1.0); H2 base «Productores, consumidores y descomponedores» (0.28); H1 base «Meteorización» (0.13)
 11. **sondeo** · ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/sondeo-1-G05 [sondeo, observar] → «A» ✓. P(Suelo: formación, componentes y tipos) 0.12→0.32
 12. **diagnóstico** · Resultado: H3 confirmada; H2 sin_comprobar; H1 sin_comprobar
-13. **durante** · Refuerzo I2 (durante, profundidad 0): MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05 «¿De qué está hecho el suelo?» [propuesta_pendiente], 10 min. Motivo: hipótesis H3 confirmada.
-14. **tutor** · «Toma un puñado de suelo de la milpa: verás granitos de roca, pedacitos de hojas y raíces, y quizá una lombriz. El suelo se forma muy despacio: las rocas se quiebran y cambian, y los restos de seres vivos se descomponen en humus. También guarda agua y aire. Según el tamaño de sus granos, puede ser arenoso, limoso o arcilloso. ¿Qué respondes en la actividad que sigue?» (fuentes F2, F3)
-15. **durante** · ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/practica-G05 [practica, observar] → «D» ✓. P(Suelo: formación, componentes y tipos) 0.32→0.63
-16. **tutor** · «¡Bien hecho! Ahora una situación nueva. ¿Qué respondes en la que sigue?» (fuentes F3)
-17. **durante** · ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05 [comprobacion, razonar] → «A» ✓. P(Suelo: formación, componentes y tipos) 0.63→0.86
-18. **tutor** · «Trabajaste «¿De qué está hecho el suelo?». Volvemos a tu clase.» (fuentes F1)
-19. **durante** · Criterio cumplido: se vuelve a G05-CIE-U6-6.14.
-20. **reevaluación** · ACT:G05-CIE-U6-6.14/obj-abierta [objetivo, razonar] → «No estoy de acuerdo con Rosa. En el suelo, los hongos y las bacterias descomponen las hojas caídas y las transforman en humus, una sustancia nueva, oscura y con nutrientes para las plantas. Otra señal es el color rojizo de algunos suelos: el hierro de las rocas se combina con el aire y el agua y forma óxido de hierro.» ✓. Evaluador (alta): criterios cumplidos c1, c2, c3. P(G05-CIE-U6-6.14) 0.25→0.86, P(Suelo: formación, componentes y tipos) 0.88→0.99
-21. **cierre** · Objetivo dominado (P=0.86). Repasos: 2026-10-13, 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
+13. **durante** · Límite (refuerzo de 10 min > 8 min en este grado): no se reforzó «Suelo: formación, componentes y tipos»; volver con el docente.
+14. **reevaluación** · ACT:G05-CIE-U6-6.14/obj-abierta [objetivo, razonar] → «No estoy de acuerdo con Rosa. En el suelo, los hongos y las bacterias descomponen las hojas caídas y las transforman en humus, una sustancia nueva, oscura y con nutrientes para las plantas. Otra señal es el color rojizo de algunos suelos: el hierro de las rocas se combina con el aire y el agua y forma óxido de hierro.» ✓. Evaluador (alta): criterios cumplidos c1, c2, c3. P(G05-CIE-U6-6.14) 0.12→0.71, P(Suelo: formación, componentes y tipos) 0.32→0.90
+15. **cierre** · Objetivo logrado provisional (P=0.71). Repasos: 2026-10-15, 2026-10-19, 2026-10-26, 2026-11-11. Se vuelve a la secuencia de la malla.
 
 ## Hipótesis (se comprueban; no son conclusiones)
 
@@ -57,23 +51,21 @@
 
 | Id | Momento | Objetivo | Concepto | Motivo | Recurso (estado) | Fuentes | Min | Criterio de comprensión | Condición para volver | Prof. | Resultado |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| I1 | previo | G05-CIE-U6-6.14 | Meteorización | secuencia de la malla: «Meteorización» se trabaja por primera vez en G05-CIE-U6-6.14, no antes del objetivo | MT:ciencias_tierra_espacio/meteorizacion/G05 (propuesta_pendiente) | concepto CON:ciencias_tierra_espacio/meteorizacion (definición del vocabulario); CON:ciencias_tierra_espacio/meteorizacion; TEMA:G05-CIE-U6-6.14 | 8 | Responde correctamente la comprobación: predice qué placa de piedra tendrá las letras más borrosas y lo explica por la meteorización en el mismo lugar. (actividad ACT:ciencias_tierra_espacio/meteorizacion/comprobacion-G05) | criterio cumplido, 2 intentos o 8 min → volver a G05-CIE-U6-6.14 | 1 | cumplido |
-| I2 | durante | G05-CIE-U6-6.14 | Suelo: formación, componentes y tipos | hipótesis H3 confirmada | MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05 (propuesta_pendiente) | concepto CON:ciencias_tierra_espacio/suelo-formacion-y-tipos (definición del vocabulario); CON:ciencias_tierra_espacio/suelo-formacion-y-tipos; TEMA:G05-CIE-U6-6.14 | 10 | Responde correctamente la comprobación: predice en cuál de dos terrenos con la misma roca hay un suelo más oscuro y fértil, y lo explica por la formación de humus. (actividad ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05) | criterio cumplido, 2 intentos o 10 min → volver a G05-CIE-U6-6.14 | 0 | cumplido |
-| I3 | posterior | G05-CIE-U6-6.14 | Suelo: formación, componentes y tipos | logro en la sesión (E7) | repaso espaciado con actividades del objetivo (—) | malla TEMA:G05-CIE-U6-6.14 | 5 | una actividad del objetivo distinta de las ya usadas, correcta | un fallo vuelve el repaso al primer intervalo | 0 | pendiente |
+| I1 | previo | G05-CIE-U6-6.14 | Meteorización | secuencia de la malla: «Meteorización» se trabaja por primera vez en G05-CIE-U6-6.14, no antes del objetivo | MT:ciencias_tierra_espacio/meteorizacion/G05 (revisado_panel) | concepto CON:ciencias_tierra_espacio/meteorizacion (definición del vocabulario); CON:ciencias_tierra_espacio/meteorizacion; TEMA:G05-CIE-U6-6.14 | 8 | Responde correctamente la comprobación: predice qué placa de piedra tendrá las letras más borrosas y lo explica por la meteorización en el mismo lugar. (actividad ACT:ciencias_tierra_espacio/meteorizacion/comprobacion-G05) | criterio cumplido, 2 intentos o 8 min → volver a G05-CIE-U6-6.14 | 1 | cumplido |
+| I2 | posterior | G05-CIE-U6-6.14 | Suelo: formación, componentes y tipos | logro en la sesión (E5) | repaso espaciado con actividades del objetivo (—) | malla TEMA:G05-CIE-U6-6.14 | 5 | una actividad del objetivo distinta de las ya usadas, correcta | un fallo vuelve el repaso al primer intervalo | 0 | pendiente |
 
 ## Estado final del estudiante (solo su perfil; el grafo compartido no cambia)
 
 | Concepto u objetivo | P(dominio) | Estado | Previa | Evidencias |
 |---|---|---|---|---|
-| G05-CIE-U6-6.14 | 0.86 | dominado | objetivo en curso | 2 |
+| G05-CIE-U6-6.14 | 0.71 | logrado_provisional | objetivo en curso | 2 |
 | Meteorización | 0.87 | dominado | la malla no lo trabaja antes del objetivo | 2 |
-| Suelo: formación, componentes y tipos | 0.99 | dominado | objetivo en curso | 5 |
+| Suelo: formación, componentes y tipos | 0.90 | dominado | objetivo en curso | 3 |
 
-Desvío de la sesión: 2 refuerzos, 18 min (límites: 3 y 25 min).
+Desvío de la sesión: 1 refuerzos, 8 min (límites: 3 y 25 min).
 
 ## Repasos programados (posterior)
 
-- 2026-10-13 (+1 d)
 - 2026-10-15 (+3 d)
 - 2026-10-19 (+7 d)
 - 2026-10-26 (+14 d)
@@ -94,19 +86,6 @@ Desvío de la sesión: 2 refuerzos, 18 min (límites: 3 y 25 min).
 | 2 | 5 | G05-CIE-U6-6.2 6.2. Modelación del proceso de formación de fósiles. | Fósiles y su formación |
 | 2 | 5 | G05-CIE-U6-6.20 6.20. Observación de los usos actuales del suelo en la comunidad. | Uso del suelo y su degradación |
 
-**Suelo: formación, componentes y tipos** apoya, en 5.°–7.°:
-
-| Distancia | Grado | Tema | Por el concepto |
-|---|---|---|---|
-| 0 | 5 | G05-CIE-U6-6.14 6.14. Identificación de los procesos químicos que ocurren en el suelo. | Suelo: formación, componentes y tipos |
-| 0 | 5 | G05-CIE-U6-6.15 6.15. Indagación de la estructura del suelo y concepto de meteorizació | Suelo: formación, componentes y tipos |
-| 0 | 5 | G05-CIE-U6-6.16 6.16. Caracterización física de los suelos: clases y tipos. | Suelo: formación, componentes y tipos |
-| 0 | 5 | G05-CIE-U6-6.19 6.19. Descripción de los principales suelos de El Salvador. | Suelo: formación, componentes y tipos |
-| 1 | 5 | G05-CIE-U6-6.18 6.18. Indagación de los efectos de la actividad humana en la degradaci | Uso del suelo y su degradación |
-| 1 | 5 | G05-CIE-U6-6.20 6.20. Observación de los usos actuales del suelo en la comunidad. | Uso del suelo y su degradación |
-| 1 | 5 | G05-CIE-U6-6.21 6.21. Análisis de cambio de cobertura y uso del suelo en El Salvador. | Uso del suelo y su degradación |
-| 1 | 7 | G07-CIE-U4-4.10 4.10. Relación entre perturbaciones y sucesiones ecológicas. | Sucesión ecológica |
-
 ## Contexto inyectado al tutor (primer paso, recortado)
 
 La referencia internacional entra como comparación para el docente, no como prerrequisito.
@@ -125,7 +104,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "nombre": "Suelo: formación, componentes y tipos",
   "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre.",
   "microtema": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
-  "estado_microtema": "propuesta_pendiente"
+  "estado_microtema": "revisado_panel"
  },
  "fuentes": [
   "malla: MALLA:Matriz_Ciencias_5to_Grado_U1_U6.xlsx hoja «Unidad 6 - Ciencias de la Tierr» fila 16",
@@ -157,4 +136,4 @@ La referencia internacional entra como comparación para el docente, no como pre
 
 ## Notas para el docente y propuestas a revisión
 
-- —
+- Límite (refuerzo de 10 min > 8 min en este grado): no se reforzó «Suelo: formación, componentes y tipos»; volver con el docente.

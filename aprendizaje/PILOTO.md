@@ -1,10 +1,25 @@
 # Propuesta de piloto del tutor y de política de datos de estudiantes
 
-> **Borrador para decisión de GOES y del MINED (2026-10-12).** Nada de esto está aprobado. El sistema que se describe
+> **Decisiones técnicas tomadas el 2026-10-12** (sección 0) por delegación del responsable del proyecto, con la
+> asesoría del panel de expertos IA (spec 14, `panel/DICTAMEN.md`). Siguen necesitando el aval institucional del
+> MINED para trabajar con estudiantes. Las secciones 1–6 son la propuesta original. El sistema que se describe
 > es el prototipo de la spec 13 (`specs/13_apoyo_al_aprendizaje.md`). Las recomendaciones van marcadas como tales; las
 > decisiones que se piden están en la última sección. La política de datos es una propuesta técnica: la tienen que
 > validar la asesoría jurídica de GOES y del MINED con la normativa vigente de protección de datos personales y de
 > niñez y adolescencia.
+
+## 0. Decisiones tomadas (2026-10-12)
+| # | Decisión | Evidencia | Estado en el repositorio |
+|---|---|---|---|
+| 1 | **Fases A → B0 → B → C.** **B0 es nueva:** 1 centro, 1–2 secciones de 9.°, 2 semanas, sin grupo de comparación, con revisión diaria de todos los turnos. | Panel (psicopedagogo): la fase A no ve a estudiantes reales y B0 lo detecta a bajo costo. | Documentado aquí. |
+| 2 | **Unidad del piloto: 9.° U8, La célula** (4 objetivos; uno ya tiene contenido revisado por el panel). La alternativa, según el calendario, es U1, Mecánica de fluidos. | El panel descarta U3, porque el contraste propone reubicar K, Ka y amortiguadoras. Descarta U2, por un problema de secuencia. Descarta U9, por temas sensibles. U8 es la unidad más chica, así que el contenido se puede revisar entero. | Falta redactar y revisar los otros 3 objetivos de U8. |
+| 3 | **B es un piloto de factibilidad con estimación preliminar del efecto, no una prueba de eficacia.** Los criterios de avance y de detención se escriben antes de empezar (sección 3 y punto 5 abajo). | Con 6–8 secciones el efecto de diseño es de 4 a 8: no hay potencia para detectar d ≈ 0,35. | Documentado aquí. |
+| 4 | **Uso en clase, con el docente presente.** 2 sesiones por semana de 20–25 min. El grupo de comparación dedica el mismo tiempo a la práctica habitual. El repaso espaciado se adapta a ese calendario. | El panel la considera la única modalidad que vigila la fidelidad, iguala el acceso y protege a los menores. | `config/aprendizaje.yaml`: `repaso.intervalos_dias` = 3, 7, 14 y 30. |
+| 5 | **Fidelidad científica del tutor: las dos medidas.** Primero, una prueba de banco antes de B0: ≥ 200 turnos, dos revisores humanos, 0 errores. Además, un verificador de fidelidad en cada turno, con un modelo distinto del tutor. En B0 se revisan todos los turnos; en B, una muestra diaria del 10 %. | La prueba de humo mostró un error que justo refuerza la idea equivocada del objetivo. Con 0 errores en 200 turnos, la tasa real queda por debajo de 1,5 % con 95 % de confianza. | Verificador construido: `aprendizaje/fidelidad.py`, obligatorio en `llm.fidelidad`. La prueba de banco requiere aprobar el gasto en Vertex: de 400 a 800 llamadas. |
+| 6 | **Salvaguardas de menores**, además de la sección 4: un filtro de datos personales antes del modelo; un protocolo ante señales de riesgo (no se llama al modelo y se avisa al docente); nunca mostrar etiquetas como «brecha» ni comparaciones; consentimiento explicado también de forma oral; asentimiento con palabras de la edad; ninguna consecuencia académica. | Panel (psicopedagogo). | Construido: `aprendizaje/salvaguardas.py`, integrado al evaluador y al tutor. Faltan el consentimiento oral, la región fija y el contrato sin entrenamiento, que son tareas institucionales. |
+| 7 | **El contenido llega a estudiantes solo con verificación humana interina.** Hace falta: dictamen favorable del panel (estado `revisado_panel`); firma de un docente de aula del grado en `revisado_por` (estado `verificado`); los puntos de `REVISION_PENDIENTE.md` cerrados; y las rúbricas calificadas por dos docentes. Mientras κ < 0,7, toda respuesta abierta pasa por el docente. | El panel también es IA y puede compartir los sesgos del redactor. | Estados `propuesta_pendiente` → `revisado_panel` → `verificado` en la capa. Los 138 elementos están en `revisado_panel`. |
+| 8 | **Primaria (fase C) solo después de B sin incidentes.** Condiciones: lectura en voz alta para todos; enunciados de 50 palabras como máximo; respuesta abierta oral o con dibujo; el evaluador solo sugiere; parejas por dispositivo; 2 refuerzos de 8 min como máximo. | 7 de los 18 enunciados de 5.° pasan de 50 palabras, con una mediana de unas 115 contando las opciones. | Límites por tramo en `config/aprendizaje.yaml` (`refuerzo.por_tramo`; se ven en R4). Regla de enunciados agregada al redactor. |
+| 9 | **Opciones barajadas y respuestas numéricas tolerantes.** | Panel: la clave era la A en 34 de 84 ítems. Además, «50 000» se marcaba como error. | `sesion.barajar()` y `sesion.lecturas_numericas()`, con pruebas. |
 
 ## 1. Qué tiene que responder el piloto
 1. **¿Mejora el logro de los objetivos?** Comparar con la práctica habitual en una prueba posterior sobre los mismos
