@@ -8,8 +8,10 @@ evidencia actualiza el estado y el estado decide la siguiente intervención.
 5. Reevaluación con OTRA actividad del objetivo (otra habilidad).
 6. Estado: logro provisional o nota al docente; repasos espaciados; vuelta al objetivo.
 
-La evaluación de opción múltiple y numérica es determinista. Las respuestas abiertas necesitan un evaluador con
-rúbrica (pendiente; spec 13), por eso la capa pedagógica del prototipo solo usa esos dos formatos.
+La evaluación de opción múltiple y numérica es determinista. Las respuestas abiertas las califica el evaluador
+(evaluador.py, separado del tutor) con su rúbrica; sin evaluador, o si el evaluador no está seguro, van a revisión
+docente y no cambian el estado. Con un tutor (tutor.py), cada refuerzo se presenta como diálogo; sin él, con el texto
+del microtema.
 """
 
 from __future__ import annotations
@@ -23,8 +25,10 @@ from goes_science_kg.config import cargar
 from . import diagnostico, planificador
 from .contexto import paquete
 from .estudiante import Evidencia, Intervencion, Perfil
+from .evaluador import Evaluador
 from .pedagogia import Pedagogia
 from .relaciones import Navegador
+from .tutor import Tutor
 
 
 def config() -> dict:
@@ -53,6 +57,14 @@ class Guion:
 
     def responder(self, actividad: dict) -> str:
         modo = self.respuestas.get(actividad["id"], "correcta")
+        if actividad["formato"] == "abierta":   # «correcta»: la respuesta modelo; si no, un error típico o el texto
+            r = actividad["rubrica"]
+            errores = r.get("errores") or []
+            if modo == "correcta":
+                return r["respuesta_modelo"]
+            if modo in ("distractor", "incorrecta") and errores:
+                return errores[0 if modo == "distractor" else -1]["ejemplo"]
+            return modo
         if actividad["formato"] == "numerica":
             return str(actividad["valor"]) if modo == "correcta" else str(round(float(actividad["valor"]) * 2 + 1, 3))
         if modo == "correcta":
@@ -75,8 +87,10 @@ class Sesion:
     """Una sesión de un estudiante con un objetivo. No escribe en las capas compartidas."""
 
     def __init__(self, perfil: Perfil, nav: Navegador, ped: Pedagogia, guion: Guion, fecha: date,
-                 cola: Path | None = None):
+                 cola: Path | None = None, tutor: Tutor | None = None, evaluador: Evaluador | None = None):
         self.perfil, self.nav, self.ped, self.guion, self.fecha = perfil, nav, ped, guion, fecha
+        self.tutor, self.evaluador = tutor, evaluador
+        self.revision_docente: list[dict] = []
         self.presupuesto = planificador.Presupuesto(cola=cola)
         self.previas: dict[str, tuple[float, str]] = {}
         self.usadas: set[str] = set()
@@ -90,10 +104,25 @@ class Sesion:
     def _nombre(self, cid: str) -> str:
         return self.nav.por_id[cid].etiqueta if cid.startswith("CON:") else cid.removeprefix("TEMA:")
 
-    def presentar(self, actividad: dict, objetivo: str, fase: str) -> Evidencia:
-        """Presenta una actividad, evalúa la respuesta y actualiza SOLO lo que la actividad evalúa."""
+    def presentar(self, actividad: dict, objetivo: str, fase: str) -> Evidencia | None:
+        """Presenta una actividad, evalúa la respuesta y actualiza SOLO lo que la actividad evalúa. Una respuesta
+        abierta que el evaluador no decide va a revisión docente: devuelve None y no cambia el estado."""
         respuesta = self.guion.responder(actividad)
-        correcta, dif = evaluar(actividad, respuesta, self.ped)
+        if actividad["formato"] == "abierta":
+            ev_abierta = (self.evaluador.evaluar(actividad, respuesta) if self.evaluador else None)
+            if ev_abierta is None or ev_abierta.requiere_docente:
+                motivo = ev_abierta.motivo if ev_abierta else "no hay evaluador de respuestas abiertas"
+                self.revision_docente.append({"actividad": actividad["id"], "objetivo": objetivo, "motivo": motivo})
+                self.usadas.add(actividad["id"])
+                self._paso(fase, f"{actividad['id']} [abierta, {actividad['habilidad']}] → «{respuesta}» → revisión "
+                                 f"docente ({motivo}). El estado no cambia.")
+                return None
+            correcta, dif = bool(ev_abierta.correcta), ev_abierta.dificultad
+            cumplidos = [c["id"] for c in ev_abierta.criterios if c["cumple"]]
+            detalle = f" Evaluador ({ev_abierta.confianza}): criterios cumplidos {', '.join(cumplidos) or 'ninguno'}."
+        else:
+            correcta, dif = evaluar(actividad, respuesta, self.ped)
+            detalle = ""
         for c in actividad["evalua"]:
             self.previas.setdefault(c, diagnostico.previa(self.nav, objetivo, c))
         antes = {c: self._p(c) for c in actividad["evalua"]}
@@ -103,12 +132,27 @@ class Sesion:
         self.usadas.add(actividad["id"])
         cambios = ", ".join(f"P({self._nombre(c)}) {antes[c]:.2f}→{self._p(c):.2f}" for c in actividad["evalua"])
         self._paso(fase, f"{actividad['id']} [{actividad['rol']}, {actividad['habilidad']}] → «{respuesta}» "
-                         f"{'✓' if correcta else '✗'}{f' (delata {dif})' if dif else ''}. {cambios}")
+                         f"{'✓' if correcta else '✗'}{f' (delata {dif})' if dif else ''}.{detalle} {cambios}")
         return ev
 
     def _p(self, cid: str) -> float:
         tabla = self.perfil.objetivos if cid.startswith("TEMA:") else self.perfil.conceptos
         return tabla[cid].p if cid in tabla else self.previas.get(cid, (float("nan"), ""))[0]
+
+    def _turno(self, tarea: str, paq: dict, mt: dict, actividad: dict | None = None, anterior: dict | None = None,
+               ev: Evidencia | None = None) -> None:
+        """Un turno del tutor (si hay tutor): el texto que vería el estudiante, con las guardas aplicadas."""
+        if not self.tutor:
+            return
+        ultimo = None
+        if anterior is not None and ev is not None:
+            dif = self.ped.dificultades.get(ev.dificultad or "")
+            ultimo = {"enunciado": anterior["enunciado"], "respuesta": ev.respuesta, "correcta": ev.correcta,
+                      "dificultad": dif["descripcion"] if dif else None}
+        t = self.tutor.turno(tarea, paq, mt, actividad, ultimo)
+        nota = f" [respaldo: {'; '.join(t.errores)}]" if t.origen == "respaldo" else (
+            f" [corregido tras: {'; '.join(t.errores)}]" if t.errores else "")
+        self._paso("tutor", f"«{t.texto()}» (fuentes {', '.join(t.fuentes) or '—'}){nota}")
 
     # -- funciones -----------------------------------------------------------------------------------------------
     def diagnosticar(self, objetivo: str, actividad: dict, ev: Evidencia) -> diagnostico.Hipotesis | None:
@@ -128,10 +172,13 @@ class Sesion:
             self._paso(momento, self.presupuesto.notas_docente[-1])
             return False
         mt = self.ped.microtemas[i.recurso]
-        self.contextos.append(paquete(self.perfil, self.nav, self.ped, objetivo, concepto))
+        paq = paquete(self.perfil, self.nav, self.ped, objetivo, concepto)
+        self.contextos.append(paq)
         self._paso(momento, f"Refuerzo {i.id} ({momento}, profundidad {profundidad}): {mt['id']} «{mt['titulo']}» "
                             f"[{mt['estado']}], {mt['duracion_min']} min. Motivo: {motivo}.")
-        self.presentar(self.ped.actividades[mt["practica"]], objetivo, momento)
+        practica = self.ped.actividades[mt["practica"]]
+        self._turno("introducir", paq, mt, practica)
+        ev_practica = self.presentar(practica, objetivo, momento)
         comprobaciones = [mt["comprobacion"]] + [a["id"] for a in self.ped.es_evaluado_por(
             concepto, grado=self.perfil.grado) if a["rol"] in ("sondeo", "comprobacion")]
         for _ in range(config()["refuerzo"]["intentos_por_refuerzo"]):
@@ -139,15 +186,20 @@ class Sesion:
             if act_id is None:
                 break
             act = self.ped.actividades[act_id]
+            self._turno("retroalimentar", paq, mt, act, practica, ev_practica)
             ev = self.presentar(act, objetivo, momento)
+            practica, ev_practica = act, ev
             i.intentos += 1
-            if ev.correcta:
+            if ev is not None and ev.correcta:
                 i.resultado = "cumplido"
                 self.perfil.aprendio(concepto)
                 if concepto in self.nav.conceptos_de_tema(objetivo, ("principal",)):
                     self.perfil.aprendio(objetivo)   # reforzar el concepto del objetivo es reforzar el objetivo
+                self._turno("cerrar", paq, mt)
                 self._paso(momento, f"Criterio cumplido: se vuelve a {objetivo.removeprefix('TEMA:')}.")
                 return True
+            if ev is None:
+                continue
             conf = self.diagnosticar(objetivo, act, ev)
             if conf and conf.tipo == "base":
                 self.reforzar(objetivo, conf.concepto, "durante", f"hipótesis {conf.id} confirmada", profundidad + 1)
@@ -167,11 +219,14 @@ class Sesion:
             self.reforzar(objetivo, b.concepto, "previo",
                           f"secuencia de la malla: «{self._nombre(b.concepto)}» se trabaja por primera vez en "
                           f"{(b.primer_tema or 'ningún tema').removeprefix('TEMA:')}, no antes del objetivo", 1)
-        acts = self.ped.es_evaluado_por(objetivo, rol="objetivo", grado=self.perfil.grado)
+        todas = self.ped.es_evaluado_por(objetivo, rol="objetivo", grado=self.perfil.grado)
+        acts = [a for a in todas if a["formato"] != "abierta"]
+        abiertas = [a for a in todas if a["formato"] == "abierta"] if self.evaluador else []
         if not acts:
             raise ValueError(f"No hay actividades para {objetivo} en {self.perfil.grado}.°")
         inicial = acts[0]
         ev = self.presentar(inicial, objetivo, "evaluación")
+        assert ev is not None   # la evaluación inicial nunca es abierta
         if not ev.correcta:
             conf = self.diagnosticar(objetivo, inicial, ev)
             if conf:
@@ -179,11 +234,18 @@ class Sesion:
                               0 if conf.tipo == "en_el_concepto" else 1)
             else:
                 self.reforzar(objetivo, principal, "durante", "ninguna base confirmada: dificultad en el objetivo", 0)
-        otra = next((a for a in acts if a["id"] not in self.usadas and a["habilidad"] != inicial["habilidad"]),
-                    next((a for a in acts if a["id"] not in self.usadas), None))
+        # Con evaluador, la reevaluación es la respuesta abierta: otra forma de evidencia (producir una explicación en
+        # lugar de elegir una opción). Sin él, otra actividad con otra habilidad.
+        otra = next((a for a in abiertas if a["id"] not in self.usadas), None) or next(
+            (a for a in acts if a["id"] not in self.usadas and a["habilidad"] != inicial["habilidad"]),
+            next((a for a in acts if a["id"] not in self.usadas), None))
         final = self.presentar(otra, objetivo, "reevaluación") if otra else ev
         estado = self.perfil.objetivos[objetivo]
-        if final.correcta:
+        if final is None:
+            self.presupuesto.notas_docente.append("La reevaluación abierta espera la revisión del docente; el objetivo "
+                                                  "queda como estaba hasta entonces.")
+            self._paso("cierre", self.presupuesto.notas_docente[-1])
+        elif final.correcta:
             if estado.estado != "dominado":
                 estado.estado = "logrado_provisional"
             repasos = self.perfil.programar_repasos(objetivo, self.fecha)
@@ -199,4 +261,5 @@ class Sesion:
             self._paso("cierre", self.presupuesto.notas_docente[-1])
         return {"objetivo": objetivo, "estado": estado.estado, "p": round(estado.p, 3),
                 "refuerzos": self.presupuesto.refuerzos, "minutos_desvio": self.presupuesto.minutos,
-                "notas_docente": self.presupuesto.notas_docente, "propuestas": self.presupuesto.propuestas}
+                "notas_docente": self.presupuesto.notas_docente, "propuestas": self.presupuesto.propuestas,
+                **({"revision_docente": self.revision_docente} if self.revision_docente else {})}

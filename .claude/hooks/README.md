@@ -8,7 +8,7 @@ biblioteca estándar de Python y se prueban en `tests/test_harness.py`.
 | Hook | Cuándo | Qué hace |
 |---|---|---|
 | `contexto_sesion.py` | al iniciar, retomar, limpiar o compactar | rama, cambios sin commit, cuenta de git frente a la de GOES, decisiones sin confirmar con el MINED y estado de las etapas internacionales |
-| `guardia_bash.py` | antes de cada comando de terminal | **bloquea** leer o copiar `.env`, escribir en `data/fuentes/` o `reportes/`, commit con otra cuenta o con `ruff`/`pytest` en rojo, push forzado a main o a otro remoto; **pide aprobación** para todo gasto en Vertex (`--confirmar`, `congelar-catalogo`, `make internacional-ia CONFIRMAR=…`) |
+| `guardia_bash.py` | antes de cada comando de terminal | **bloquea** leer o copiar `.env`, escribir en `data/fuentes/` o `reportes/`, commit con otra cuenta o con `ruff`/`pytest` en rojo, push forzado a main o a otro remoto; **pide aprobación** para todo gasto en Vertex (`--confirmar` de `internacional` o de `tutor`, `congelar-catalogo`, `make internacional-ia CONFIRMAR=…`) |
 | `guardia_archivos.py` | antes de editar o escribir un archivo | **bloquea** `.env`, PDF, `data/fuentes/`, `reportes/` y salidas generadas (`data/grafo/`, caché de Vertex) |
 | `validar_lotes.py` | al terminar un subagente de lotes (`SubagentStop`) | corre `gskg lotes validar --agente <nombre>` (las mismas reglas que cada «unir»); si la salida no pasa, **devuelve al subagente a corregirla** (hasta 3 veces; después lo deja terminar y avisa al usuario) |
 

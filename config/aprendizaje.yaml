@@ -48,3 +48,13 @@ rutas:
   propuestas: data/interim/aprendizaje/propuestas_pendientes.jsonl   # cola de revisión (fuera de la capa)
   estudiantes: data/estudiantes              # estado individual (no se versiona)
   recorridos: aprendizaje/recorridos         # recorridos de ejemplo generados (demo reproducible)
+
+# Modelos de lenguaje (spec 13). El tutor redacta cada turno; el evaluador, separado del tutor, califica las respuestas
+# abiertas con su rúbrica. Solo se llaman con --confirmar: cada llamada se paga en Vertex (proyecto GOES) y el hook
+# pide la aprobación del usuario. Sin caché en disco, porque los prompts llevan respuestas de estudiantes, y ningún
+# prompt lleva el nombre ni el identificador del estudiante. Qué modelo se usa en un piloto lo deciden GOES y el MINED.
+llm:
+  tutor: {modelo: gemini-2.5-flash, temperatura: 0.3}
+  evaluador: {modelo: gemini-2.5-pro, temperatura: 0}
+  intentos_tutor: 2          # si un turno no pasa las guardas se reintenta con los errores; después, el texto del microtema
+  palabras_pregunta: 35      # la pregunta del tutor es breve: el enunciado de la actividad se muestra aparte

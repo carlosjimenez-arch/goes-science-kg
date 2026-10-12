@@ -30,8 +30,23 @@ Eres especialista en enseñanza de las ciencias para primaria y secundaria. Reci
   real. Si un distractor es la respuesta típica de una dificultad que escribiste en este lote, mapéalo en
   `distractores` a ese `DIF:`. No todos los distractores necesitan mapeo.
 - **Numérica:** `valor`, `tolerancia` y `unidad`; `opciones`, `correcta` y `distractores` van en null o vacíos.
+- **Abierta** (solo en la ranura `obj-abierta`, que trae `"formato": "abierta"`): el estudiante escribe 1–3 oraciones
+  (habilidad `explicar` o `razonar`). `opciones`, `correcta` y `distractores` van en null; agrega `rubrica`:
+  ```json
+  "rubrica": {"respuesta_modelo": "...",
+              "criterios": [{"id": "c1", "descripcion": "nombra ...", "obligatorio": true},
+                            {"id": "c2", "descripcion": "relaciona ... con ...", "obligatorio": true},
+                            {"id": "c3", "descripcion": "usa un ejemplo ...", "obligatorio": false}],
+              "errores": [{"descripcion": "confunde ... con ...", "ejemplo": "respuesta típica que lo muestra",
+                           "dificultad": "DIF:..."}]}
+  ```
+  `respuesta_modelo`: lo que escribiría un estudiante del grado que logró el objetivo (no un párrafo de libro), con
+  el doble de `adaptacion.palabras_max` como máximo. Cada criterio es observable en el texto («nombra», «relaciona»,
+  «justifica con»); 2–4 criterios y al menos uno obligatorio. `errores`: 1–3 respuestas típicas equivocadas; si una
+  delata una dificultad de este lote o de la capa, pon su `DIF:` (si no, `null`). La rúbrica la usa un evaluador
+  separado del tutor: escríbela para que dos docentes distintos califiquen igual.
 - `retroalimentacion`: una o dos oraciones que expliquen la respuesta correcta sin regañar.
-- `duracion_min`: 2–4 para sondeos y comprobaciones, 5–10 para prácticas y objetivos.
+- `duracion_min`: 2–4 para sondeos y comprobaciones, 5–10 para prácticas y objetivos (3–6 para la abierta).
 - `sondeo-1` y `sondeo-2` de un mismo concepto deben ser situaciones distintas (si uno es explicar, el otro
   interpretar datos o razonar). La `comprobacion` debe ser distinta de la práctica y de los sondeos.
 

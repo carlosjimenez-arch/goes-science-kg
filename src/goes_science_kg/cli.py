@@ -393,6 +393,71 @@ def tutor_contexto(tema: str, grado: int = typer.Option(...), concepto: str = ty
                           ensure_ascii=False, indent=1))
 
 
+def _modelo_llm(rol: str, confirmar: bool):
+    """El modelo de Vertex del rol si hay --confirmar (tras verificar la cuenta GOES); si no, None (no se gasta)."""
+    if not confirmar:
+        return None
+    from goes_science_kg.aprendizaje.llm import de_config
+    from goes_science_kg.internacional import vertex
+
+    vertex.verificar_cuenta()
+    return de_config(rol)
+
+
+@tutor_app.command("turno")
+def tutor_turno(tema: str, grado: int = typer.Option(...), concepto: str = typer.Option(None),
+                confirmar: bool = typer.Option(False, "--confirmar", help="Llama al modelo (Vertex: se paga)."),
+                ) -> None:
+    """Un turno del agente tutor que presenta el refuerzo de un concepto del objetivo (estudiante nuevo, sin evidencia).
+    Sin --confirmar muestra el respaldo determinista y cuántas llamadas costaría; con --confirmar llama a Vertex."""
+    from goes_science_kg.aprendizaje.contexto import paquete
+    from goes_science_kg.aprendizaje.estudiante import Perfil
+    from goes_science_kg.aprendizaje.llm import config as config_llm
+    from goes_science_kg.aprendizaje.pedagogia import Pedagogia
+    from goes_science_kg.aprendizaje.tutor import Tutor, fuentes
+
+    nav, ped = _nav(), Pedagogia.cargar()
+    tid = tema if tema.startswith("TEMA:") else f"TEMA:{tema}"
+    paq = paquete(Perfil("cli", grado), nav, ped, tid, concepto)
+    mt = ped.microtemas.get(paq["foco"]["microtema"] or "")
+    if not mt:
+        raise typer.BadParameter(f"No hay microtema de {paq['foco']['concepto']} para {grado}.°")
+    practica = ped.actividades[mt["practica"]]
+    modelo = _modelo_llm("tutor", confirmar)
+    if modelo is None:
+        t = Tutor.respaldo("introducir", mt, fuentes(paq, mt), [])
+        typer.echo(f"Sin --confirmar: respaldo determinista. Con --confirmar costaría 1 llamada (hasta "
+                   f"{config_llm()['intentos_tutor']} si una guarda rechaza el turno).")
+    else:
+        t = Tutor(modelo).turno("introducir", paq, mt, practica)
+    typer.echo(json.dumps({"origen": t.origen, "mensaje": t.mensaje, "pregunta": t.pregunta, "fuentes": t.fuentes,
+                           "errores_descartados": t.errores, "actividad": practica["enunciado"]},
+                          ensure_ascii=False, indent=1))
+
+
+@tutor_app.command("evaluar")
+def tutor_evaluar(actividad: str, respuesta: str,
+                  confirmar: bool = typer.Option(False, "--confirmar", help="Llama al evaluador (Vertex: se paga).")
+                  ) -> None:
+    """Califica una respuesta abierta con la rúbrica de la actividad. Sin --confirmar no hay evaluador: la respuesta
+    iría a revisión docente (se muestra la rúbrica); con --confirmar llama a Vertex (1 llamada)."""
+    from dataclasses import asdict
+
+    from goes_science_kg.aprendizaje.evaluador import Evaluador
+    from goes_science_kg.aprendizaje.pedagogia import Pedagogia
+
+    act = Pedagogia.cargar().actividades.get(actividad)
+    if not act or act["formato"] != "abierta":
+        raise typer.BadParameter(f"{actividad} no es una actividad abierta de la capa pedagógica")
+    modelo = _modelo_llm("evaluador", confirmar)
+    if modelo is None:
+        typer.echo("Sin --confirmar: sin evaluador, la respuesta va a revisión docente. Con --confirmar costaría 1 "
+                   "llamada.")
+        typer.echo("Rúbrica: " + json.dumps(act["rubrica"], ensure_ascii=False, indent=1))
+        return
+    typer.echo(json.dumps(asdict(Evaluador(modelo).evaluar(act, respuesta)), ensure_ascii=False, indent=1))
+
+
 @tutor_app.command("preparar-actividades")
 def tutor_preparar_actividades(temas: list[str]) -> None:
     """Lotes para el subagente redactor-actividades (uno por objetivo) → data/pedagogia/lotes/."""

@@ -101,13 +101,24 @@ Una muestra nueva al azar de 24 hallazgos dio 13 confirmados, 5 parciales y 6 fa
 19 correcciones expertas, 150 inciertos y ningún gasto en Vertex. Pendiente: la confirmación del MINED y revisar los
 inciertos.
 
-## Fase 7 · Apoyo al aprendizaje (spec 13) · prototipo ✅ (2026-10-11)
+## Fase 7 · Apoyo al aprendizaje (spec 13) · prototipo ✅ (2026-10-11; tutor y evaluador el 2026-10-12)
 `src/goes_science_kg/aprendizaje/`, `gskg tutor …`, `config/aprendizaje.yaml`. Relaciones con inversa explícita (una
 arista, dos lecturas), diagnóstico por hipótesis que se comprueban, refuerzo previo/durante/posterior con límites,
 estado por estudiante fuera de las capas compartidas, cola de propuestas a revisión. Capa pedagógica de 3 objetivos de
 9.° (55 actividades, 13 dificultades, 13 microtemas; todo propuesta pendiente) y tres recorridos reproducibles en
-`aprendizaje/recorridos/`. Pendiente: revisión del contenido, agente tutor conversacional, evaluador de respuestas
-abiertas, contenido de primaria, política de datos y piloto con estudiantes.
+`aprendizaje/recorridos/`.
+
+**2026-10-12:**
+- **Tutor conversacional** (`tutor.py`) con guardas deterministas.
+- **Evaluador de respuestas abiertas** (`evaluador.py`): separado del tutor, con citas literales y revisión docente.
+- **Modelos intercambiables** (`llm.py`): Vertex sin caché, solo con `--confirmar`.
+- **Formato «abierta»** con rúbrica en la capa pedagógica.
+- **Contenido de 3.°, 5.° y 7.°:** 96 actividades, 21 dificultades y 21 microtemas en total.
+- **Recorridos R4 y R5:** primaria y revisión docente.
+- **Propuesta de piloto y de política de datos:** `aprendizaje/PILOTO.md`.
+
+Pendiente: revisión del contenido, prueba con el modelo real (requiere aprobación del gasto), interfaz y las
+decisiones del piloto.
 
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.

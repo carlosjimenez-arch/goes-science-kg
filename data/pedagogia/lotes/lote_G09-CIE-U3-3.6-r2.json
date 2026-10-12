@@ -1,0 +1,61 @@
+{
+ "lote": "G09-CIE-U3-3.6-r2",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 9,
+ "adaptacion": {
+  "palabras_max": 80,
+  "registro": "modelos y datos simples"
+ },
+ "objetivo": {
+  "id": "TEMA:G09-CIE-U3-3.6",
+  "procedimental": "3.6. Representación de la constante de equilibrio a partir de ecuaciones de reacción química.",
+  "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+  "evidencia": "Representación e interpretación de constantes",
+  "unidad": "3. Equilibrio químico",
+  "principal": {
+   "id": "CON:quimica/constante-de-equilibrio",
+   "nombre": "Constante de equilibrio",
+   "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:quimica/equilibrio-dinamico",
+   "nombre": "Equilibrio químico dinámico",
+   "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+   "profundidad": 1,
+   "via": [
+    "CON:quimica/constante-de-equilibrio"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G09-CIE-U3-3.1",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+   "nombre": "Molaridad y unidades químicas de concentración",
+   "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+   "profundidad": 1,
+   "via": [
+    "CON:quimica/constante-de-equilibrio"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G08-CIE-U4-4.9",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G09-CIE-U3-3.6/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.6",
+    "CON:quimica/constante-de-equilibrio"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  }
+ ]
+}

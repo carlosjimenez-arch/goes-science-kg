@@ -117,21 +117,23 @@ def en_cache(prompt: str, *, modelo: str, sistema: str = "", esquema: dict | Non
 
 def generar_json(prompt: str, *, modelo: str, sistema: str = "", esquema: dict | None = None,
                  adjuntos: list[tuple[bytes, str]] | None = None, max_tokens: int = 32768,
-                 reintentos: int = 5) -> Any:
+                 reintentos: int = 5, cache: bool = True, temperatura: float = 0) -> Any:
     """Devuelve el JSON que genera el modelo. `adjuntos`: (bytes, mime), p. ej. un PDF de unas páginas.
 
-    Usa la caché si la llamada ya se hizo (la clave incluye el sha256 de cada adjunto).
+    Usa la caché si la llamada ya se hizo (la clave incluye el sha256 de cada adjunto). Con `cache=False` ni lee ni
+    escribe la caché: lo usa el tutor (spec 13), porque sus prompts llevan respuestas de estudiantes y la caché es una
+    carpeta del proyecto, no la del estudiante.
     """
     adjuntos = adjuntos or []
     clave = _clave(modelo, sistema, prompt, esquema, adjuntos)
     archivo = ruta(DIR_CACHE) / clave[:2] / f"{clave}.json"
-    if archivo.exists():
+    if cache and archivo.exists():
         return json.loads(archivo.read_text(encoding="utf-8"))["respuesta"]
 
     from google.genai import types
 
     conf = types.GenerateContentConfig(
-        temperature=0, max_output_tokens=max_tokens, response_mime_type="application/json",
+        temperature=temperatura, max_output_tokens=max_tokens, response_mime_type="application/json",
         # Copia: el SDK modifica el esquema que recibe, y eso cambiaría la clave de caché de las llamadas siguientes.
         response_schema=copy.deepcopy(esquema), system_instruction=sistema or None,
         automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
@@ -144,9 +146,10 @@ def generar_json(prompt: str, *, modelo: str, sistema: str = "", esquema: dict |
             r = _cliente().models.generate_content(model=modelo, contents=partes, config=conf)
             texto = r.text or ""
             respuesta = json.loads(texto)
-            archivo.parent.mkdir(parents=True, exist_ok=True)
-            archivo.write_text(json.dumps({"modelo": modelo, "respuesta": respuesta}, ensure_ascii=False),
-                               encoding="utf-8")
+            if cache:
+                archivo.parent.mkdir(parents=True, exist_ok=True)
+                archivo.write_text(json.dumps({"modelo": modelo, "respuesta": respuesta}, ensure_ascii=False),
+                                   encoding="utf-8")
             return respuesta
         except PresupuestoAgotadoError:
             raise

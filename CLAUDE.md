@@ -84,10 +84,12 @@ uv run gskg brechas               # asignaturas/<x>/brechas/
 uv run gskg progresion            # asignaturas/<x>/progresion.html
 uv run gskg lotes validar [--agente <subagente>]   # salidas de subagentes con las reglas de la unión
 uv run gskg tutor bases|apoya|alinear|contexto|preparar-actividades|unir-actividades|validar|recorridos   # spec 13
+uv run gskg tutor turno <tema> --grado g | evaluar <actividad> "<respuesta>"   # tutor y evaluador; --confirmar = Vertex
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
 uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirmar con el MINED las decisiones de contenido
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
+uv run gskg internacional --tramo 2_8 corregir-metadatos   # grados y Extension Part de los países, sin Vertex (spec 12)
 uv run pytest -q
 make todo                         # temas → grafo → validar → fichas, grados, brechas, progresión → internacional → pruebas + lint
 make internacional-ia             # extraer + etiquetar + construir; sin --confirmar no gasta en Vertex

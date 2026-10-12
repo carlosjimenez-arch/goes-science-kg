@@ -25,7 +25,7 @@ from .relaciones import Navegador
 
 HABILIDADES = ("recordar", "observar", "explicar", "interpretar_datos", "razonar")
 ROLES = ("objetivo", "sondeo", "practica", "comprobacion")
-FORMATOS = ("opcion_multiple", "numerica")   # «abierta» exige un evaluador con rúbrica (pendiente: spec 13)
+FORMATOS = ("opcion_multiple", "numerica", "abierta")   # «abierta» la califica el evaluador con su rúbrica
 ESTADOS = ("propuesta_pendiente", "verificado")
 VERSION = "pedagogia-v1"
 ARCHIVOS = {"actividad": "actividades.json", "dificultad": "dificultades.json", "microtema": "microtemas.json"}
@@ -125,9 +125,30 @@ def _errores_actividad(a: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
                 e.append(f"distractor {op}→{dif} inválido")
     if a.get("formato") == "numerica" and (a.get("valor") is None or a.get("tolerancia") is None):
         e.append("numérica: valor y tolerancia")
+    if a.get("formato") == "abierta":
+        e += _errores_rubrica(a.get("rubrica") or {}, ped, min(a.get("grados") or [11]))
     if a.get("estado") == "verificado" and not a.get("revisado_por"):
         e.append("«verificado» exige revisado_por")
     return [f"{a['id']}: {x}" for x in e]
+
+
+def _errores_rubrica(r: dict, ped: Pedagogia, grado: int) -> list[str]:
+    """Una respuesta abierta se califica solo con su rúbrica: respuesta modelo, criterios (≥ 2, alguno obligatorio)
+    y errores típicos con un ejemplo de respuesta y la dificultad que delatan."""
+    e = []
+    if not r.get("respuesta_modelo") or _palabras(r.get("respuesta_modelo")) > 2 * palabras_max(grado):
+        e.append(f"abierta: respuesta_modelo de 1 a {2 * palabras_max(grado)} palabras")
+    crit = r.get("criterios") or []
+    ids = [c.get("id") for c in crit]
+    if len(crit) < 2 or len(set(ids)) != len(ids) or not all(c.get("descripcion") for c in crit):
+        e.append("abierta: ≥ 2 criterios con id único y descripción")
+    if not any(c.get("obligatorio") for c in crit):
+        e.append("abierta: al menos un criterio obligatorio")
+    for x in r.get("errores") or []:
+        if not x.get("descripcion") or not x.get("ejemplo") or (x.get("dificultad") and
+                                                                 x["dificultad"] not in ped.dificultades):
+            e.append(f"abierta: error típico con descripción, ejemplo y dificultad existente ({x.get('dificultad')})")
+    return e
 
 
 def _errores_dificultad(d: dict, nav: Navegador) -> list[str]:
@@ -227,14 +248,24 @@ def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None
                     "evalua": [tid, principal], "requisito": r}
                    for i, r in ((1, "evaluación inicial del objetivo (indicador de logro)"),
                                 (2, "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"))]
+        ranuras.append({"id": f"ACT:{_slug(tid)}/obj-abierta", "tipo": "actividad", "rol": "objetivo",
+                        "formato": "abierta", "evalua": [tid, principal],
+                        "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, "
+                                     "criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"})
         ranuras += _ranuras_de_base(principal, grado, "objetivo")
         for b in elegidas:
             ranuras += _ranuras_de_base(b.concepto, grado, "base")
         ranuras = [r for r in ranuras if r["id"] not in hechos]
+        if not ranuras:
+            continue
         hechos |= {r["id"] for r in ranuras}
         definicion = lambda c: nav.por_id[c].props.get("definicion")  # noqa: E731
+        nombre = _slug(tid).replace("/", "_")
+        ronda = 1
+        while (d / f"lote_{nombre}{f'-r{ronda}' if ronda > 1 else ''}.json").exists():
+            ronda += 1   # un objetivo con lote anterior: las ranuras nuevas van a un lote de otra ronda
         lote = {
-            "lote": _slug(tid).replace("/", "_"), "version": VERSION,
+            "lote": f"{nombre}-r{ronda}" if ronda > 1 else nombre, "version": VERSION,
             "instrucciones": "prompts/redactar_actividades.md",
             "grado": grado, "adaptacion": {"palabras_max": palabras_max(grado), "registro": registro(grado)},
             "objetivo": {"id": tid, "procedimental": t.etiqueta, "indicador": t.props.get("indicador"),
@@ -271,6 +302,8 @@ def errores_lote(lote: dict, salida: list[dict], nav: Navegador | None = None,
             continue
         if e.get("tipo") != r["tipo"] or (r.get("rol") and e.get("rol") != r["rol"]):
             errores.append(f"{e['id']}: tipo o rol distinto del de la ranura")
+        if r.get("formato") and e.get("formato") != r["formato"]:
+            errores.append(f"{e['id']}: formato debe ser {r['formato']}")
         if r.get("evalua") and set(e.get("evalua") or []) != set(r["evalua"]):
             errores.append(f"{e['id']}: evalua debe ser {r['evalua']}")
         if r.get("concepto") and e.get("concepto") != r["concepto"]:
@@ -279,8 +312,8 @@ def errores_lote(lote: dict, salida: list[dict], nav: Navegador | None = None,
             errores.append(f"{e['id']}: lo que redacta un subagente nace «propuesta_pendiente»")
         if e.get("tipo") == "actividad" and lote["grado"] not in (e.get("grados") or []):
             errores.append(f"{e['id']}: grados debe incluir {lote['grado']}")
-    obj = [e for e in salida if e.get("rol") == "objetivo"]
-    if len(obj) == 2 and obj[0].get("habilidad") == obj[1].get("habilidad"):
+    obj = {e["id"].rsplit("/", 1)[-1]: e for e in salida if e.get("rol") == "objetivo" and e.get("id")}
+    if {"obj-1", "obj-2"} <= obj.keys() and obj["obj-1"].get("habilidad") == obj["obj-2"].get("habilidad"):
         errores.append("obj-1 y obj-2 deben usar habilidades distintas")
     validar = {"actividad": lambda x: _errores_actividad(x, nav, ped),
                "dificultad": lambda x: _errores_dificultad(x, nav),

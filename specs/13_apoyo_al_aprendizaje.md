@@ -1,8 +1,14 @@
 # 13 · Sistema de apoyo al aprendizaje sobre el grafo (diseño y prototipo)
 
-> Estado (2026-10-11): **prototipo mínimo reproducible** en `src/goes_science_kg/aprendizaje/`, con tres recorridos
-> de ejemplo en `aprendizaje/recorridos/`. El contenido pedagógico es **propuesta pendiente de revisión**. El
-> funcionamiento técnico no demuestra una mejora del aprendizaje: eso exige un piloto con estudiantes (sección 9).
+> Estado (2026-10-12): **prototipo reproducible** en `src/goes_science_kg/aprendizaje/`.
+> - El **tutor conversacional** (`tutor.py`) y el **evaluador de respuestas abiertas** (`evaluador.py`) están
+>   construidos, con guardas deterministas y modelos intercambiables (`llm.py`). Se probaron con modelos de guion;
+>   con Vertex solo se llaman con `--confirmar`.
+> - Hay contenido de **primaria** (3.° y 5.°) y de **7.°**, además de 9.°.
+> - Hay cinco recorridos en `aprendizaje/recorridos/`.
+> - La propuesta de piloto y de política de datos está en `aprendizaje/PILOTO.md`.
+> - Todo el contenido pedagógico es **propuesta pendiente de revisión**. Que el sistema funcione técnicamente no
+>   demuestra que mejore el aprendizaje: eso exige un piloto con estudiantes (sección 9).
 
 ## 1. Propósito y frontera
 Un sistema que el estudiante usa directamente para **complementar** la malla del MINED: identifica el objetivo que
@@ -154,8 +160,8 @@ comparativa en el contexto del tutor y en el informe al docente. No crea prerreq
 | Alineación curricular | texto del estudiante o tarea del docente, grado | qué tema de la malla; si es ambiguo, preguntar | GraphRAG del proyecto, malla | objetivo + candidatos + decisión | determinista (`contexto.alinear`); un LLM solo para desambiguar en diálogo |
 | Diagnóstico | evidencia, estado, bases | qué hipótesis abrir, qué sondear, cuándo confirmar | navegador, capa pedagógica, estado | hipótesis con estado | **determinista** (`diagnostico.py`): auditable, sin que un LLM decida el dominio |
 | Planificación del refuerzo | hipótesis confirmada, objetivo, grado, presupuesto | qué microtema, en qué momento, si cabe en los límites | capa pedagógica, límites | `Intervencion` o nota/propuesta | determinista (`planificador.py`) |
-| Tutoría | intervención + paquete de contexto | cómo explicar, qué andamiaje, cómo pedir la respuesta | contexto inyectado; LLM | diálogo; respuesta del estudiante | **agente LLM** con herramientas de solo lectura (pendiente de construir; el prototipo usa el texto del microtema) |
-| Evaluación | respuesta, actividad | correcta o no; qué dificultad delata | clave, distractores; rúbrica para abiertas | evidencia | determinista para opción múltiple y numérica; LLM evaluador **separado del tutor** para respuestas abiertas, con revisión docente si la confianza es baja (pendiente) |
+| Tutoría | intervención + paquete de contexto | cómo explicar, qué andamiaje, cómo pedir la respuesta | contexto inyectado; LLM | diálogo; respuesta del estudiante | **agente LLM** (`tutor.py`): la sesión le da la tarea del turno (introducir, retroalimentar, cerrar) y el contexto; el modelo solo redacta. Guardas: largo por grado, no revelar la respuesta, citar solo fuentes del paquete, sin enlaces ni datos personales; si falla dos veces, el texto del microtema |
+| Evaluación | respuesta, actividad | correcta o no; qué dificultad delata | clave, distractores; rúbrica para abiertas | evidencia | determinista para opción múltiple y numérica. Las abiertas las califica un LLM **separado del tutor** (`evaluador.py`) con la rúbrica; el código decide: cita literal por criterio, «correcta» = criterios obligatorios cumplidos, dificultad solo de la rúbrica. Con confianza baja, una guarda que falla o una respuesta que parece instrucción, va a **revisión docente** y no cambia el estado |
 
 **Por qué así:** un solo agente conversacional (tutoría) da coherencia y baja latencia al diálogo; el diagnóstico, la
 planificación y el estado son servicios deterministas que ese agente llama como herramientas, para que el estado del
@@ -184,15 +190,31 @@ uv run gskg tutor contexto G09-CIE-U8-8.2 --grado 9     # lo que se inyecta al t
 uv run gskg tutor preparar-actividades <tema>…          # lotes → subagente redactor-actividades
 uv run gskg tutor unir-actividades                      # valida y agrega (nace «propuesta_pendiente»)
 uv run gskg tutor validar                               # capa pedagógica e inversas
-uv run gskg tutor recorridos                            # los tres recorridos → aprendizaje/recorridos/
+uv run gskg tutor recorridos                            # los cinco recorridos → aprendizaje/recorridos/
+uv run gskg tutor turno G09-CIE-U8-8.2 --grado 9        # un turno del tutor (sin --confirmar: respaldo, sin gasto)
+uv run gskg tutor evaluar ACT:G05-CIE-U6-6.14/obj-abierta "…"   # una respuesta abierta (con --confirmar: Vertex)
 ```
+Modelos (`config/aprendizaje.yaml`, `llm`): Gemini en Vertex, proyecto GOES. Sin caché en disco, porque los prompts
+llevan respuestas de estudiantes, y sin el identificador del estudiante en ningún prompt. `--confirmar` pasa por la
+guarda de gasto del harness, que pide la aprobación del usuario.
 Pruebas: `tests/test_aprendizaje.py` (inversas, bases, hipótesis, límites, reevaluación con otra actividad, vínculo
 con objetivos, aislamiento de las capas compartidas y determinismo).
 
 ## 9. Qué está comprobado y qué sigue siendo hipótesis
-- **Comprobado técnicamente:** las relaciones inversas son coherentes; cada intervención está vinculada a un
-  objetivo; la evidencia de un estudiante no modifica `data/grafo/` ni `data/pedagogia/` (huella sha256 antes y
-  después); los límites se respetan; los recorridos son deterministas.
+- **Comprobado técnicamente:**
+  - las relaciones inversas son coherentes;
+  - cada intervención está vinculada a un objetivo;
+  - la evidencia de un estudiante no modifica `data/grafo/` ni `data/pedagogia/` (huella sha256 antes y después);
+  - los límites se respetan y los recorridos son deterministas;
+  - las guardas del tutor rechazan turnos que revelan la respuesta, son demasiado largos, citan fuentes ajenas,
+    traen enlaces o piden datos personales;
+  - el evaluador no acepta citas que el estudiante no escribió, no obedece instrucciones dentro de la respuesta y
+    manda a revisión docente lo incierto;
+  - el identificador del estudiante no llega a ningún prompt y el tutor no usa la caché.
+
+  Todo esto está probado con modelos de guion.
+- **Sin probar con un modelo real:** la calidad de los turnos y la concordancia del evaluador con los docentes. La
+  fase A del piloto (`aprendizaje/PILOTO.md`) la mide antes de usar el sistema con estudiantes.
 - **Hipótesis de diseño:** los parámetros (previas, desliz, umbrales, límites, intervalos de repaso), el orden de las
   hipótesis y la duración de los refuerzos. Se calibran con datos de un piloto.
 - **Propuesta pendiente:** todo el contenido pedagógico y todas las relaciones de prerrequisito.
@@ -200,12 +222,23 @@ con objetivos, aislamiento de las capas compartidas y determinismo).
   pre/post sobre los objetivos, tiempo en tarea, opinión docente) y la aprobación del MINED.
 
 ## 10. Datos faltantes y decisiones pendientes
-**Datos:** banco de actividades revisado (hoy 3 objetivos, todo pendiente); dificultades con fuente (literatura de
-didáctica o diagnóstico docente); revisión humana de los prerrequisitos (0 de 822); evaluador de respuestas abiertas
-con rúbrica; contenido para primaria; recursos multimedia; datos de un piloto para calibrar; huecos de etiquetado de
-temas (p. ej. conservación de la energía en 5.° y 8.°).
+**Datos que faltan:**
+- **Banco de actividades revisado.** Hoy hay 6 objetivos (3.°, 5.°, 7.° y tres de 9.°) y todo está pendiente de
+  revisión.
+- **Dificultades con fuente:** literatura de didáctica o diagnóstico docente.
+- **Prerrequisitos revisados por una persona:** 0 de 822.
+- **Calibración del evaluador** con respuestas reales calificadas por docentes.
+- **Recursos multimedia y formatos no textuales** para primaria.
+- **Datos de un piloto** para calibrar los parámetros.
+- **Interfaz para estudiantes y docentes:** hoy solo hay línea de comandos.
+- **Huecos de etiquetado de temas.** Por ejemplo, conservación de la energía en 5.° y 8.°, o conservación de la masa
+  en 7.°, que el grafo principal no reconoce como enseñada en G07-CIE-U1-1.2.
 
-**Decisiones del MINED/GOES:** quién revisa y aprueba la capa pedagógica y con qué criterio; política de datos de
-estudiantes (consentimiento, menores de edad, retención, anonimización); si el tutor se usa en clase o fuera; qué
-modelo LLM y dónde se aloja; cómo se informa al docente; qué grados y asignaturas entran al piloto; y si los huecos de
-secuencia que el tutor detecta se llevan a la revisión de la malla.
+**Decisiones del MINED/GOES**, con una propuesta para cada una en `aprendizaje/PILOTO.md`:
+- quién revisa y aprueba la capa pedagógica y con qué criterio;
+- la política de datos de estudiantes: consentimiento, menores de edad, retención y seudonimización;
+- si el tutor se usa en clase o fuera de clase;
+- qué modelo LLM se usa, en qué región y con qué presupuesto de llamadas;
+- cómo se informa al docente;
+- qué grados y asignaturas entran al piloto;
+- si los huecos de secuencia que detecta el tutor se llevan a la revisión de la malla.
