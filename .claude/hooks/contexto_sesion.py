@@ -49,8 +49,9 @@ def _decisiones() -> list[str]:
         registros = datos["divisiones"] if isinstance(datos, dict) else datos
         pendientes = sum(not r.get("confirmaciones") and not r.get("observaciones") for r in registros)
         observadas = sum(bool(r.get("observaciones")) for r in registros)
-        lineas.append(f"  - {nombre}: {len(registros)} ({pendientes} sin confirmar con el MINED, "
-                      f"{observadas} observadas)")
+        panel = sum(bool(r.get("dictamenes_panel")) for r in registros)
+        lineas.append(f"  - {nombre}: {len(registros)} ({pendientes} sin confirmar con el MINED, {panel} con dictamen "
+                      f"del panel IA, {observadas} observadas)")
     return lineas
 
 

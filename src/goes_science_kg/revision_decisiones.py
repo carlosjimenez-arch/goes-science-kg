@@ -91,7 +91,11 @@ DESCRIPCION: dict[str, tuple[Callable[[dict], str], Callable[[dict], str], str, 
 def _estado(r: dict) -> str:
     if r.get("observaciones"):
         return "observada (pide nueva decisión)"
-    return "confirmada" if r.get("confirmaciones") else "pendiente de confirmar"
+    if r.get("confirmaciones"):
+        return "confirmada"
+    if r.get("dictamenes_panel"):   # spec 14: dictamen del panel de expertos IA, no es una confirmación del MINED
+        return f"dictamen del panel: {r['dictamenes_panel'][-1]['decision']} (pendiente de confirmar)"
+    return "pendiente de confirmar"
 
 
 def _textos() -> dict[str, dict[str, str]]:

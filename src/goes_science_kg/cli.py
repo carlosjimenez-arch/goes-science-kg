@@ -426,10 +426,16 @@ def tutor_turno(tema: str, grado: int = typer.Option(...), concepto: str = typer
     modelo = _modelo_llm("tutor", confirmar)
     if modelo is None:
         t = Tutor.respaldo("introducir", mt, fuentes(paq, mt), [])
-        typer.echo(f"Sin --confirmar: respaldo determinista. Con --confirmar costaría 1 llamada (hasta "
-                   f"{config_llm()['intentos_tutor']} si una guarda rechaza el turno).")
+        por_intento = 2 if config_llm()["fidelidad"]["obligatoria"] else 1
+        typer.echo(f"Sin --confirmar: respaldo determinista. Con --confirmar costaría {por_intento} llamadas por "
+                   f"intento (tutor{' y verificador de fidelidad' if por_intento == 2 else ''}), hasta "
+                   f"{config_llm()['intentos_tutor']} intentos.")
     else:
-        t = Tutor(modelo).turno("introducir", paq, mt, practica)
+        from goes_science_kg.aprendizaje.fidelidad import Verificador
+
+        verificador = Verificador(_modelo_llm("fidelidad", confirmar)) if config_llm()["fidelidad"]["obligatoria"] \
+            else None
+        t = Tutor(modelo, verificador=verificador).turno("introducir", paq, mt, practica)
     typer.echo(json.dumps({"origen": t.origen, "mensaje": t.mensaje, "pregunta": t.pregunta, "fuentes": t.fuentes,
                            "errores_descartados": t.errores, "actividad": practica["enunciado"]},
                           ensure_ascii=False, indent=1))
@@ -609,6 +615,55 @@ def fichas() -> None:
     version = _json.loads(ruta("data/grafo/manifest.json").read_text(encoding="utf-8"))["version"]
     for p in escribir_fichas(*cargar(), version):
         typer.echo(f"→ {p}")
+
+
+panel_app = typer.Typer(help="Panel de expertos IA: revisión técnica interina (spec 14)", no_args_is_help=True)
+app.add_typer(panel_app, name="panel")
+
+
+@panel_app.command("preparar")
+def panel_preparar(ronda: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma")) -> None:
+    """Lotes de la ronda para cada rol del panel → data/interim/panel/lotes/."""
+    from goes_science_kg import panel
+
+    lista = tipos.split(",") if tipos else None
+    if ronda == 1:
+        typer.echo(f"{panel.iniciar(lista)} expedientes nuevos en el estado")
+    for p in panel.preparar(ronda, lista):
+        typer.echo(f"→ {p}")
+
+
+@panel_app.command("consolidar")
+def panel_consolidar(ronda: int = typer.Option(...)) -> None:
+    """Valida las salidas de la ronda y avanza cada expediente (unanimidad, deliberación o secuencia)."""
+    from goes_science_kg import panel
+
+    typer.echo(panel.consolidar(ronda))
+    typer.echo(json.dumps(panel.resumen(), ensure_ascii=False, indent=1))
+
+
+@panel_app.command("aplicar")
+def panel_aplicar() -> None:
+    """Escribe lo resuelto en las capas (decisiones, asignaciones, capa pedagógica) con su procedencia."""
+    from goes_science_kg import panel
+
+    typer.echo(panel.aplicar())
+
+
+@panel_app.command("informe")
+def panel_informe() -> None:
+    """panel/DICTAMEN.md con lo resuelto, lo que quedó sin consenso y la asesoría del piloto."""
+    from goes_science_kg import panel
+
+    typer.echo(f"→ {panel.informe()}")
+
+
+@panel_app.command("resumen")
+def panel_resumen() -> None:
+    """Expedientes por tipo y estado."""
+    from goes_science_kg import panel
+
+    typer.echo(json.dumps(panel.resumen(), ensure_ascii=False, indent=1))
 
 
 internacional_app = typer.Typer(help="Grafos internacionales de 9.°–11.° y contraste con la malla V2 (spec 11)",

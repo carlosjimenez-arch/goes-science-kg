@@ -62,6 +62,9 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
   la salida no pasa `gskg lotes validar`. La unión la corre la sesión principal.
 - Subagente `verificador-hallazgos` (solo lectura) y skills `internacional-contraste`, `calidad-grafos` y
   `decisiones-mined`.
+- **Panel de expertos IA** (spec 14): `experto-biologia`, `experto-fisica`, `experto-quimica`, `experto-tierra-espacio` y
+  `psicopedagogo` dictaminan las decisiones que esperaban al MINED (`gskg panel preparar|consolidar|aplicar|informe`).
+  Sus dictámenes no son confirmaciones del MINED: quedan como «dictamen del panel», con evidencia, y son reversibles.
 
 ## Comandos
 ```bash
@@ -87,6 +90,7 @@ uv run gskg tutor bases|apoya|alinear|contexto|preparar-actividades|unir-activid
 uv run gskg tutor turno <tema> --grado g | evaluar <actividad> "<respuesta>"   # tutor y evaluador; --confirmar = Vertex
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
 uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirmar con el MINED las decisiones de contenido
+uv run gskg panel preparar --ronda n | consolidar --ronda n | aplicar | informe | resumen   # panel de expertos IA (spec 14)
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
 uv run gskg internacional --tramo 2_8 corregir-metadatos   # grados y Extension Part de los países, sin Vertex (spec 12)

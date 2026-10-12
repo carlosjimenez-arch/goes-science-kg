@@ -1,0 +1,41 @@
+# Panel de expertos IA (spec 14): revisión técnica interina mientras no hay un equipo del MINED que revise.
+# Sus dictámenes NO son confirmaciones del MINED ni decisiones humanas: quedan como «dictamen del panel», con su
+# evidencia, y el MINED (o el responsable del proyecto) puede confirmarlos o revertirlos.
+
+roles:
+  experto-biologia: {asignaturas: [biologia], nombre: "Didáctica de la Biología"}
+  experto-fisica: {asignaturas: [fisica], nombre: "Didáctica de la Física"}
+  experto-quimica: {asignaturas: [quimica], nombre: "Didáctica de la Química"}
+  experto-tierra-espacio: {asignaturas: [ciencias_tierra_espacio, tierra_espacio], nombre: "Didáctica de las Ciencias de la Tierra y del Espacio"}
+  psicopedagogo: {asignaturas: [], nombre: "Psicopedagogía (desarrollo, aprendizaje, lenguaje y evaluación)"}
+
+# Qué puede decidir el panel en cada tipo de expediente y quién lo dictamina.
+tipos:
+  decision: {opciones: [aceptar, rechazar], psicopedagogo: [division]}   # capa de decisión de contenido
+  asignacion: {opciones: [aceptar, cambiar, rechazar], psicopedagogo: []}   # asignaciones de la división de un concepto
+  cambio_asignatura: {opciones: [aceptar, rechazar], psicopedagogo: []}
+  contenido: {opciones: [aprobar, corregir], psicopedagogo: todos}      # capa pedagógica: experto → psicopedagogo → experto
+  hallazgo: {opciones: [respaldar, matizar, no_respaldar], psicopedagogo: todos}
+  propuesta: {opciones: [adoptar, adaptar, descartar], psicopedagogo: todos}
+  piloto: {opciones: [recomendar], psicopedagogo: todos, solo_psicopedagogo: true}   # asesor: decide el responsable
+
+# Consolidación (determinista): se resuelve con unanimidad de los roles requeridos y confianza media o alta. Si no, una
+# ronda de deliberación con los dictámenes de los demás; si sigue sin unanimidad, «sin consenso» → decisión humana.
+rondas_max: 3
+palabras_justificacion: 70
+
+# Campos de la capa pedagógica que el panel puede corregir (el resto: ids, vínculos, estado, no se tocan).
+campos_editables:
+  actividad: [enunciado, opciones, correcta, distractores, valor, tolerancia, unidad, retroalimentacion, rubrica, habilidad, duracion_min]
+  dificultad: [descripcion, senales, justificacion]
+  microtema: [titulo, explicacion, ejemplo, criterio, duracion_min]
+
+# Decisiones del piloto que el panel asesora (aprendizaje/PILOTO.md, sección 6).
+piloto:
+  - {id: alcance, pregunta: "¿Qué grado, unidad y escala recomiendan para el piloto, y en qué orden de fases?"}
+  - {id: modalidad, pregunta: "¿En clase con el docente presente o fuera de clase? ¿Cuánto tiempo por sesión y por semana?"}
+  - {id: primaria, pregunta: "¿Qué condiciones mínimas necesita una exploración en primaria (5.°): lectura, formatos, acompañamiento?"}
+  - {id: datos_menores, pregunta: "¿Qué salvaguardas mínimas de datos y de bienestar exigen para menores (consentimiento, seudonimización, retención, revisión docente)?"}
+  - {id: fidelidad_tutor, pregunta: "Una prueba mostró que el tutor puede decir algo científicamente impreciso que las guardas no detectan. ¿Qué control exigen antes de usarlo con estudiantes?"}
+  - {id: evaluacion_piloto, pregunta: "¿Qué medidas y criterios de éxito o de detención recomiendan?"}
+  - {id: aprobacion_contenido, pregunta: "Mientras no haya revisión del MINED, ¿qué estado mínimo debe tener el contenido para usarse con estudiantes?"}

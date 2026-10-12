@@ -56,5 +56,6 @@ rutas:
 llm:
   tutor: {modelo: gemini-2.5-flash, temperatura: 0.3}
   evaluador: {modelo: gemini-2.5-pro, temperatura: 0}
+  fidelidad: {modelo: gemini-2.5-pro, temperatura: 0, obligatoria: true}   # verificador de fidelidad (spec 14): +1 llamada por turno
   intentos_tutor: 2          # si un turno no pasa las guardas se reintenta con los errores; después, el texto del microtema
   palabras_pregunta: 35      # la pregunta del tutor es breve: el enunciado de la actividad se muestra aparte

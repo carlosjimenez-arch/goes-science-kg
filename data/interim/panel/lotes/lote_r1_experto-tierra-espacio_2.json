@@ -1,0 +1,616 @@
+{
+ "lote": "r1_experto-tierra-espacio_2",
+ "ronda": 1,
+ "rol": "experto-tierra-espacio",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-tierra-espacio.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:ciencias_tierra_espacio/tipos-de-rocas/practica-G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:ciencias_tierra_espacio/tipos-de-rocas/practica-G05",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "evalua": [
+      "CON:ciencias_tierra_espacio/tipos-de-rocas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      5
+     ],
+     "enunciado": "Una roca de un volcán (ígnea) se meteoriza durante miles de años. Los ríos llevan sus pedacitos hasta el fondo del mar, donde se acumulan en capas que, con el tiempo, se aprietan y se pegan. ¿Qué tipo de roca se forma y por qué?",
+     "opciones": {
+      "A": "Ígnea otra vez, porque los pedacitos vienen de una roca de volcán y una roca siempre es del mismo tipo que su material.",
+      "B": "Sedimentaria, porque se formó con pedacitos de otras rocas acumulados en capas y pegados.",
+      "C": "Metamórfica, porque el agua del mar calienta mucho los pedacitos.",
+      "D": "Ninguna: los pedacitos de roca nunca vuelven a formar una roca, se quedan sueltos para siempre."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:ciencias_tierra_espacio/tipos-de-rocas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Lo que define el tipo de roca es cómo se formó. Aunque los pedacitos vengan de una roca ígnea, al acumularse en capas y pegarse forman una roca sedimentaria. Así, con el tiempo, las rocas pasan de un tipo a otro.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:ciencias_tierra_espacio/tipos-de-rocas"
+     },
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:ACT:ciencias_tierra_espacio/tipos-de-rocas/practica-G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:ciencias_tierra_espacio/tipos-de-rocas/sondeo-1-G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:ciencias_tierra_espacio/tipos-de-rocas/sondeo-1-G05",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "evalua": [
+      "CON:ciencias_tierra_espacio/tipos-de-rocas"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      5
+     ],
+     "enunciado": "Cerca del lago de Ilopango se encuentra piedra pómez: es clara, muy liviana, tiene muchos agujeritos y hasta flota en el agua. ¿Qué tipo de roca es y por qué?",
+     "opciones": {
+      "A": "Sedimentaria, porque es clara y liviana como la arena.",
+      "B": "Ígnea: se formó cuando magma lleno de gases salió en una erupción y se enfrió muy rápido; los agujeritos son burbujas de gas que quedaron atrapadas.",
+      "C": "Metamórfica, porque el agua del lago le hizo los agujeritos con los años.",
+      "D": "No es una roca, porque las rocas son pesadas y se hunden."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:ciencias_tierra_espacio/tipos-de-rocas/1",
+      "D": "DIF:ciencias_tierra_espacio/tipos-de-rocas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las rocas se clasifican por cómo se formaron, no por su color ni por su peso. La pómez es ígnea: viene de magma con mucho gas que se enfrió rápido en una erupción, y sus agujeritos son las burbujas que quedaron.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:ciencias_tierra_espacio/tipos-de-rocas"
+     },
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:ACT:ciencias_tierra_espacio/tipos-de-rocas/sondeo-1-G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:ciencias_tierra_espacio/tipos-de-rocas/sondeo-2-G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:ciencias_tierra_espacio/tipos-de-rocas/sondeo-2-G05",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "evalua": [
+      "CON:ciencias_tierra_espacio/tipos-de-rocas"
+     ],
+     "habilidad": "observar",
+     "formato": "opcion_multiple",
+     "grados": [
+      5
+     ],
+     "enunciado": "Con una lupa, Ana describió cuatro rocas. ¿Cuál se formó por acumulación de sedimentos, es decir, de pedacitos de otras rocas o de conchas que se fueron juntando y pegando?",
+     "opciones": {
+      "A": "Una roca gris oscura con cristales muy pequeños, recogida en las faldas del volcán de San Salvador.",
+      "B": "Una roca de color claro, como la arena, con cristales grandes y brillantes bien trabados entre sí, sin capas.",
+      "C": "Una roca con franjas brillantes y onduladas, como si la hubieran apretado mucho.",
+      "D": "Una roca con capas de granitos de arena pegados, y una conchita atrapada entre dos capas."
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:ciencias_tierra_espacio/tipos-de-rocas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las capas de granitos pegados y la concha atrapada son pistas de que la roca se formó poco a poco con sedimentos acumulados: es sedimentaria. El color claro no basta para saber cómo se formó una roca.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:ciencias_tierra_espacio/tipos-de-rocas"
+     },
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:ACT:ciencias_tierra_espacio/tipos-de-rocas/sondeo-2-G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:ciencias_tierra_espacio/meteorizacion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:ciencias_tierra_espacio/meteorizacion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:ciencias_tierra_espacio/meteorizacion",
+     "descripcion": "Confundir meteorización con erosión: creer que una roca solo cambia cuando el agua o el viento la arrastran a otro lugar, sin reconocer que se quiebra y se transforma donde está.",
+     "senales": "Describe la meteorización como «la lluvia se lleva la tierra»; dice que una roca que no se mueve no cambia; usa meteorización y erosión como si fueran lo mismo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión común porque ambos procesos suelen ocurrir juntos en el paisaje.",
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/meteorizacion",
+     "nombre": "Meteorización",
+     "definicion": "Desintegración y alteración de las rocas en su lugar por acción física, química y biológica del agua, el aire, la temperatura y los seres vivos.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:DIF:ciencias_tierra_espacio/meteorizacion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:ciencias_tierra_espacio/suelo-formacion-y-tipos/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:ciencias_tierra_espacio/suelo-formacion-y-tipos/1",
+     "tipo": "dificultad",
+     "concepto": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "descripcion": "Ver el suelo como un material inerte que no cambia: solo «tierra» o roca molida, sin reconocer que también contiene restos y seres vivos, agua y aire, ni que se forma y se transforma lentamente con procesos como la descomposición o la oxidación.",
+     "senales": "Dice que el suelo siempre ha estado igual o que es solo piedras molidas; trata las hojas, raíces y lombrices como basura ajena al suelo; afirma que en el suelo no ocurren cambios químicos.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea frecuente en primaria: el suelo como «tierra» estática y sin vida.",
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "nombre": "Suelo: formación, componentes y tipos",
+     "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:DIF:ciencias_tierra_espacio/suelo-formacion-y-tipos/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:ciencias_tierra_espacio/tipos-de-rocas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:ciencias_tierra_espacio/tipos-de-rocas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "descripcion": "Clasificar las rocas por su aspecto (color, peso, dureza) o por el material del que vienen, en lugar de por el proceso que las formó: enfriamiento de magma, acumulación de sedimentos o transformación por calor y presión.",
+     "senales": "Dice que una roca es ígnea porque es oscura o dura y sedimentaria porque es clara o liviana; duda que la pómez sea roca porque flota; cree que una roca hecha de pedacitos de roca volcánica sigue siendo ígnea.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Los estudiantes suelen agrupar rocas por rasgos visibles y no por su origen.",
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:DIF:ciencias_tierra_espacio/tipos-de-rocas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/meteorizacion/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:ciencias_tierra_espacio/meteorizacion/G05",
+     "tipo": "microtema",
+     "concepto": "CON:ciencias_tierra_espacio/meteorizacion",
+     "grados": [
+      5
+     ],
+     "titulo": "Las rocas también cambian",
+     "explicacion": "Mira una pared vieja de piedra: tiene grietas y pedacitos sueltos al pie. Eso es meteorización: las rocas se quiebran o se transforman donde están, por el calor y el frío, el agua, el aire y seres vivos como las raíces. Si luego el agua o el viento se llevan los pedacitos, eso ya es erosión.",
+     "ejemplo": "Un clavo olvidado en el patio se cubre de herrumbre. Algo parecido pasa con las rocas que tienen hierro: el aire y el agua las transforman, se ponen rojizas y se desmoronan.",
+     "practica": "ACT:ciencias_tierra_espacio/meteorizacion/practica-G05",
+     "comprobacion": "ACT:ciencias_tierra_espacio/meteorizacion/comprobacion-G05",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: predice qué placa de piedra tendrá las letras más borrosas y lo explica por la meteorización en el mismo lugar.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:ciencias_tierra_espacio/meteorizacion",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/meteorizacion",
+     "nombre": "Meteorización",
+     "definicion": "Desintegración y alteración de las rocas en su lugar por acción física, química y biológica del agua, el aire, la temperatura y los seres vivos.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:ciencias_tierra_espacio/meteorizacion/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+     "tipo": "microtema",
+     "concepto": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "grados": [
+      5
+     ],
+     "titulo": "¿De qué está hecho el suelo?",
+     "explicacion": "Toma un puñado de suelo de la milpa: verás granitos de roca, pedacitos de hojas y raíces, y quizá una lombriz. El suelo se forma muy despacio: las rocas se quiebran y cambian, y los restos de seres vivos se descomponen en humus. También guarda agua y aire. Según el tamaño de sus granos, puede ser arenoso, limoso o arcilloso.",
+     "ejemplo": "En el corte de un camino en una ladera se ven capas: arriba, suelo oscuro con raíces; más abajo, suelo más claro con piedras; al fondo, la roca de la que se formó.",
+     "practica": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/practica-G05",
+     "comprobacion": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: predice en cuál de dos terrenos con la misma roca hay un suelo más oscuro y fértil, y lo explica por la formación de humus.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "nombre": "Suelo: formación, componentes y tipos",
+     "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+     "tipo": "microtema",
+     "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "grados": [
+      5
+     ],
+     "titulo": "Las rocas se agrupan por cómo se formaron",
+     "explicacion": "Dos piedras pueden verse iguales y haberse formado distinto: las rocas se agrupan por su origen. Las ígneas se forman al enfriarse el magma o la lava, como en nuestros volcanes. Las sedimentarias, cuando pedacitos de rocas o conchas se acumulan en capas y se pegan. Las metamórficas, cuando el calor y la presión transforman otra roca sin derretirla.",
+     "ejemplo": "La piedra de las coladas de lava del volcán de San Salvador es ígnea; la caliza, que se forma con restos de conchas acumulados en el fondo del mar, es sedimentaria.",
+     "practica": "ACT:ciencias_tierra_espacio/tipos-de-rocas/practica-G05",
+     "comprobacion": "ACT:ciencias_tierra_espacio/tipos-de-rocas/comprobacion-G05",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: decide que dos rocas del mismo color son de tipos distintos porque se formaron de manera distinta.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:ciencias_tierra_espacio/tipos-de-rocas",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "3.2. Representación del ciclo del agua: evaporación, condensación, precipitación, escorrentía e infiltración.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "ciencias_tierra_espacio",
+    "ciclo": "G02-G04",
+    "accion": "nuevo",
+    "grado_propuesto": 3,
+    "unidad_propuesta": "3. El agua. (después de 3.1 y antes de 3.2)",
+    "tema_propuesto": "3.2. Representación del ciclo del agua: evaporación, condensación, precipitación, escorrentía e infiltración.",
+    "indicador_logro": "Arma un modelo del ciclo del agua (por ejemplo, en un recipiente cerrado al sol) y explica con un esquema cómo el agua de océanos, ríos, lagos y acuíferos se conecta en el ciclo.",
+    "conceptos": [
+     "Ciclo del agua"
+    ],
+    "evidencia": [
+     "AU 3, ENG 2, JP 3, SG 5, UY 3 (Ciclo del agua; hoy en 7.°, G07-CIE-U5-5.1)",
+     "prerrequisito: Hidrosfera: distribución del agua dulce y salada (3.°, G03-3.1, va antes)",
+     "prerrequisito: Ciclo del agua (hoy en 7.°) de Aguas subterráneas y acuíferos y de Cuencas hidrográficas y aguas superficiales (3.°), confianza alta, brecha 4"
+    ],
+    "justificacion": "Australia, Japón y Uruguay lo enseñan en 3.° e Inglaterra en 2.°; El Salvador, en 7.°. Va en 3.°, después de 3.1 (hidrosfera, su bloqueo) y antes de lagos, ríos y acuíferos. Se paga con la fusión 1.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega el ciclo del agua en primaria."
+   },
+   "id": "PRO:ciencias_tierra_espacio:G02-G04#2",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ]
+  }
+ ]
+}

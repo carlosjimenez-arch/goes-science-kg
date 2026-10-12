@@ -26,7 +26,9 @@ from .relaciones import Navegador
 HABILIDADES = ("recordar", "observar", "explicar", "interpretar_datos", "razonar")
 ROLES = ("objetivo", "sondeo", "practica", "comprobacion")
 FORMATOS = ("opcion_multiple", "numerica", "abierta")   # «abierta» la califica el evaluador con su rúbrica
-ESTADOS = ("propuesta_pendiente", "verificado")
+# propuesta_pendiente: la redactó un especialista IA; revisado_panel: la revisó el panel de expertos IA (spec 14) y
+# espera el aval humano; verificado: la aprobó una persona (revisado_por).
+ESTADOS = ("propuesta_pendiente", "revisado_panel", "verificado")
 VERSION = "pedagogia-v1"
 ARCHIVOS = {"actividad": "actividades.json", "dificultad": "dificultades.json", "microtema": "microtemas.json"}
 
@@ -182,11 +184,20 @@ def _errores_microtema(m: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
     return [f"{m['id']}: {x}" for x in e]
 
 
+def errores_elemento(e: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
+    """Errores de un elemento de la capa (actividad, dificultad o microtema), con la capa `ped` como contexto."""
+    errores = {"actividad": lambda: _errores_actividad(e, nav, ped),
+               "dificultad": lambda: _errores_dificultad(e, nav),
+               "microtema": lambda: _errores_microtema(e, nav, ped)}[e["tipo"]]()
+    if e.get("estado") == "revisado_panel" and not e.get("revision_panel"):
+        errores.append(f"{e['id']}: «revisado_panel» exige revision_panel (dictámenes del panel)")
+    return errores
+
+
 def errores_capa(ped: Pedagogia, nav: Navegador) -> list[str]:
     """Integridad de la capa pedagógica: cada elemento vinculado a ids existentes y a un objetivo curricular."""
-    return ([x for a in ped.actividades.values() for x in _errores_actividad(a, nav, ped)]
-            + [x for d in ped.dificultades.values() for x in _errores_dificultad(d, nav)]
-            + [x for m in ped.microtemas.values() for x in _errores_microtema(m, nav, ped)])
+    return [x for e in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values()]
+            for x in errores_elemento(e, nav, ped)]
 
 
 # -- cola de propuestas (lo único que una sesión puede escribir en lo compartido) ------------------------------------

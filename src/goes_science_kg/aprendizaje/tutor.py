@@ -8,6 +8,8 @@ mostrarse:
 - no revela la respuesta de la actividad que sigue (la letra o el texto de la opción correcta, el valor numérico, la
   respuesta modelo de una abierta);
 - cita solo fuentes del paquete (F1…Fn); sin enlaces y sin pedir datos personales.
+Con un verificador de fidelidad (fidelidad.py), además, cada afirmación científica del turno tiene que estar
+respaldada con una cita literal del contexto revisado.
 Si un turno no pasa, se reintenta con los errores; si vuelve a fallar, se muestra el microtema tal como está en la capa
 pedagógica (respaldo determinista) y queda registrado.
 """
@@ -174,8 +176,8 @@ def prompt(tarea: str, paq: dict, microtema: dict | None, actividad: dict | None
 class Tutor:
     """Redacta turnos con `modelo` (ver llm.py) y aplica las guardas."""
 
-    def __init__(self, modelo, intentos: int | None = None):
-        self.modelo = modelo
+    def __init__(self, modelo, intentos: int | None = None, verificador=None):
+        self.modelo, self.verificador = modelo, verificador
         self.intentos = intentos or config_llm()["intentos_tutor"]
         self.turnos: list[Turno] = []
 
@@ -196,6 +198,8 @@ class Tutor:
                 errores = [f"el modelo falló: {type(ex).__name__}"]
                 break
             nuevos = errores_turno(r, tarea, grado, permitidas, actividad)
+            if not nuevos and self.verificador:
+                nuevos = self.verificador.revisar(f"{r['mensaje']} {r.get('pregunta') or ''}".strip(), paq, microtema)
             if not nuevos:
                 t = Turno(tarea, r["mensaje"].strip(), (r.get("pregunta") or "").strip(), sorted(r["fuentes"]),
                           "modelo", errores)

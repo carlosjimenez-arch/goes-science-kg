@@ -305,3 +305,43 @@ def test_r4_primaria_con_tutor_y_evaluador(nav, ped, tmp_path):
     final = sesion.perfil.evidencias[-1]
     assert final.actividad.endswith("/obj-abierta") and final.correcta         # reevaluación abierta, calificada
     assert resumen["estado"] in ("logrado_provisional", "dominado")
+
+
+def test_verificador_de_fidelidad_descarta_el_turno_impreciso_de_la_prueba_de_humo(nav, ped):
+    from goes_science_kg.aprendizaje.contexto import paquete
+    from goes_science_kg.aprendizaje.fidelidad import Verificador, contexto
+    from goes_science_kg.aprendizaje.tutor import Tutor
+
+    paq = paquete(Perfil("t", 7), nav, ped, "TEMA:G07-CIE-U2-2.7")
+    mt = ped.microtemas[paq["foco"]["microtema"]]
+    ctx = contexto(paq, mt)
+    respaldo = ctx.split("\n")[0][:60]
+    impreciso = {"mensaje": "Así, el gen es el color, y los alelos son las opciones de color.", "pregunta": "¿Lista?",
+                 "fuentes": ["F3"]}
+    fiel = {"mensaje": "Un mismo gen puede tener versiones distintas: los alelos.", "pregunta": "¿Lista?",
+            "fuentes": ["F3"]}
+    tutor_modelo = _guion(lambda p: fiel if "se descartó" in p else impreciso)
+
+    def verificar(prompt):
+        turno = prompt.split("TURNO DEL TUTOR:\n")[1]
+        if "el gen es el color" in turno:
+            return {"afirmaciones": [{"turno": "el gen es el color", "contexto": "", "estado": "contradice"}]}
+        return {"afirmaciones": [{"turno": "Un mismo gen puede tener versiones distintas", "contexto": respaldo,
+                                  "estado": "respaldada"}]}
+
+    t = Tutor(tutor_modelo, verificador=Verificador(_guion(verificar))).turno("introducir", paq, mt)
+    assert t.origen == "modelo" and t.mensaje == fiel["mensaje"]
+    assert any("contradice el contexto" in e for e in t.errores)   # el primer turno se descartó por fidelidad
+
+
+def test_verificador_exige_citas_literales():
+    from goes_science_kg.aprendizaje.fidelidad import errores
+
+    ctx = "Definición: un alelo es una versión de un gen."
+    turno = "Un alelo es una versión de un gen, como el color amarillo del maíz."
+    assert errores({"afirmaciones": [{"turno": "Un alelo es una versión de un gen", "contexto": "un alelo es una "
+                                      "versión de un gen", "estado": "respaldada"}]}, turno, ctx) == []
+    inventada = {"afirmaciones": [{"turno": "Un alelo es una versión de un gen", "contexto": "los alelos son "
+                                   "proteínas", "estado": "respaldada"}]}
+    assert errores(inventada, turno, ctx)                                    # respaldo que no está en el contexto
+    assert errores({"afirmaciones": []}, " ".join(["palabra"] * 40), ctx)   # nada que verificar en un turno largo
