@@ -1,0 +1,585 @@
+[
+ {
+  "id": "PIL:modalidad",
+  "decision": "recomendar",
+  "justificacion": "En clase y con el docente presente: es la única modalidad que vigila la fidelidad del tutor (la prueba de humo mostró un error de sentido que las guardas no detectan), iguala el acceso a dispositivos y conexión, protege a menores y permite medir el tiempo en tarea. Los tiempos que propongo son hipótesis de diseño que la fase A debe ajustar.",
+  "recomendacion": "1) Fase B solo en clase, con el docente en el aula; sin uso en casa durante el piloto. 2) Sesión del tutor de 20 a 25 min dentro de la clase de 55: unos 10 min de apertura con el docente, el tutor y unos 10 min de cierre en común. 3) Dos sesiones por semana (40 a 50 min semanales); nunca más de tres. 4) Ajustar el repaso espaciado al horario: hoy supone días seguidos (1, 3, 7, 14 y 30 días); con dos clases por semana, usar «la siguiente sesión, a la semana, a las dos semanas y al mes». 5) Las secciones de comparación dedican el mismo tiempo a la práctica habitual, para no confundir el efecto del tutor con más tiempo en tarea. 6) Un dispositivo por estudiante; si se comparte, registrarlo como condición distinta. 7) Reservar tiempo docente semanal para la cola de revisión de respuestas abiertas y medirlo (pregunta 5 del piloto). 8) Uso fuera de clase solo en una fase posterior, voluntario y para repasos, sin notas y con préstamo de equipos para no ampliar la brecha.",
+  "evidencia": [
+   {
+    "fuente": "aprendizaje/PILOTO.md §6, decisión 2",
+    "cita": "Recomienda uso en clase con el docente presente: más control y menos brecha de acceso."
+   },
+   {
+    "fuente": "aprendizaje/README.md, prueba de humo del 2026-10-12",
+    "cita": "Un turno de 7.° confundió gen y rasgo; las guardas no detectan errores de sentido."
+   },
+   {
+    "fuente": "config/aprendizaje.yaml (refuerzo, repaso)",
+    "cita": "Desvío máximo de 25 min por sesión; repasos a 1, 3, 7, 14 y 30 días."
+   },
+   {
+    "fuente": "aprendizaje/PILOTO.md §3",
+    "cita": "Asignación por sección; se miden el tiempo en tarea y el desvío por sesión."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PIL:primaria",
+  "decision": "recomendar",
+  "justificacion": "El contenido de 5.° excede lo que un niño de 10 u 11 años lee con soltura en pantalla: 7 de 18 enunciados pasan de 50 palabras (máximo 90) y, con opciones, la mediana es 115. La respuesta abierta pide escribir tres ideas. Sin lectura en voz alta, respuesta oral y acompañamiento, la exploración mediría lectura y escritura, no ciencia.",
+  "recomendacion": "Condiciones mínimas de la fase C (5.°), que mide factibilidad y no efecto: 1) Lectura: enunciados de 50 palabras como máximo y opciones de 12, una idea por oración y vocabulario definido en el texto; la guarda de largo del grado debe aplicarse a todo lo que se muestra, no solo al turno del tutor. Lectura en voz alta (audio o docente) disponible para todos, sin que pedirla marque a nadie. 2) Formatos: primero la manipulación real (suelo, vinagre, frascos) y el tutor como complemento; cada situación con una imagen y su descripción; respuesta abierta oral o con dibujo rotulado, transcrita por el docente. 3) Evaluador: en primaria solo sugiere; el docente decide toda respuesta abierta y el estado no cambia sin él, porque no está calibrado con escritura infantil. 4) Acompañamiento: docente siempre presente, parejas por dispositivo, sesiones de 15 a 20 min, una o dos por semana; límites propios del tramo: 2 refuerzos de 8 min como máximo y lo pendiente pasa a la sesión siguiente. 5) Bienestar: mensajes que sostienen el esfuerzo, sin conteo de errores ni la palabra «brecha» a la vista del estudiante. 6) Contenido de 5.° revisado por un docente de primaria (localismos, práctica que repite la explicación del microtema). 7) Asentimiento oral y con imágenes, además del consentimiento de la familia. 8) Medir: ayudas de lectura pedidas, tiempo por actividad y si cada error fue de lectura o de concepto (observación docente).",
+  "evidencia": [
+   {
+    "fuente": "data/pedagogia/actividades.json (18 actividades de 5.°)",
+    "cita": "Enunciado: mediana 45 palabras y máximo 90 (obj-2); 7 de 18 pasan de 50. Con opciones, mediana 115."
+   },
+   {
+    "fuente": "ACT:G05-CIE-U6-6.14/obj-abierta",
+    "cita": "Pide en 1 a 3 oraciones un ejemplo, su causa y una señal; la respuesta modelo tiene 60 palabras."
+   },
+   {
+    "fuente": "specs/13_apoyo_al_aprendizaje.md §7",
+    "cita": "Falta calibrar el lenguaje con docentes de primaria y formatos no textuales: imágenes, manipulación, lectura en voz alta."
+   },
+   {
+    "fuente": "aprendizaje/README.md, prueba de humo",
+    "cita": "En 5.° la explicación del tutor apunta a la opción correcta de la práctica."
+   },
+   {
+    "fuente": "aprendizaje/recorridos/R4_suelo_primaria.md",
+    "cita": "En 5.° el desvío fue de 18 min con 2 refuerzos; los límites actuales son 3 refuerzos y 25 min."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:biologia:G02-G04#1",
+  "decision": "adaptar",
+  "justificacion": "Es adecuado para 3.°: flor, fruto, semilla y esqueje se observan y manipulan, y continúa 2.° 1.10. Pero junta cinco procesos en un tema y usa «reproducción sexual y asexual», rótulos que la V2 trabaja en 6.° (6.8, 6.9). Propongo lenguaje concreto, polinización cualitativa y un registro de varias semanas en lugar de definiciones.",
+  "texto": "4.10. Observación de cómo nacen plantas nuevas: de la flor al fruto y la semilla, y de un pedazo de la planta (esqueje o tubérculo). Indicador: señala en una flor real dónde está el polen y dónde se forman las semillas, ordena con dibujos el paso de flor a fruto, y registra durante varias semanas una planta que nace de semilla y otra de un esqueje. «Sexual» y «asexual» quedan para 6.°.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G02-CIE-U4-1.10 (fila 5)",
+    "cita": "Representa con dibujos las etapas semilla, planta, flor y fruto."
+   },
+   {
+    "fuente": "TEMA:G06-CIE-U6-6.8 (fila 10) y G06-CIE-U6-6.9 (fila 11)",
+    "cita": "La fecundación con flor disecada y la propagación asexual se trabajan en 6.°."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "En 3.°, lo observable y manipulable, una idea por paso; los rótulos abstractos llegan después."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:biologia:G05-G08#19",
+  "decision": "adaptar",
+  "justificacion": "La conducta que ayuda a sobrevivir es observable y adecuada a 9–11 años. Pero la V2 no tiene unidad de Biología en 5.°: la ubicación propuesta no existe. Encaja en 4.°, tras hábitat y nicho (3.8), retomando taxismos y cuidado de crías de 3.° (5.3, 5.14). La hibernación no es un ejemplo local; conviene sustituirla.",
+  "texto": "4.°, unidad 3, después de 3.8: «Identificación de conductas que ayudan a los animales a sobrevivir en su ambiente». Indicador: explica con ejemplos de El Salvador (aves migratorias que pasan por el país, murciélagos que salen de noche, zompopos que trabajan en grupo, tortugas que vuelven a desovar a la playa) cómo una conducta ayuda a sobrevivir; retoma los taxismos de 3.° (5.3).",
+  "evidencia": [
+   {
+    "fuente": "data/interim/temas.json (unidades de 5.° en la V2)",
+    "cita": "Magnitudes, mecánica, estructura atómica, tabla periódica, espacio y Tierra: ninguna de Biología."
+   },
+   {
+    "fuente": "TEMA:G04-CIE-U3-3.8 (fila 10)",
+    "cita": "Hábitat y nicho de tres animales salvadoreños."
+   },
+   {
+    "fuente": "TEMA:G03-CIE-U5-5.3 (fila 5) y G03-CIE-U5-5.14 (fila 16)",
+    "cita": "Taxismos con cochinillas y estrategias que favorecen la supervivencia de las crías."
+   },
+   {
+    "fuente": "TEMA:G11-BIO-U8-8.5 (fila 92)",
+    "cita": "Las adaptaciones conductuales se clasifican en 11.°; falta la base temprana."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:biologia:G10-G11#10",
+  "decision": "adaptar",
+  "justificacion": "El nivel es alcanzable en 10.°, pero la V2 ya trabaja las líneas de defensa innata y adaptativa en 3.10 (y en 9.° 9.1). Un tema con cinco nombres técnicos repetiría parte de 3.10 y sumaría vocabulario sin anclaje. Propongo centrarlo en la inflamación como proceso, desde una herida que el estudiante conoce, y nombrar defensinas y complemento como apoyo.",
+  "texto": "3.13. Explicación de la inflamación y la fagocitosis como respuesta innata ante una herida o una infección. Indicador: describe en un esquema secuencial, a partir de una herida cotidiana, cómo actúan las barreras, la inflamación (enrojecimiento, calor, hinchazón, dolor) y los fagocitos, y ubica las defensinas y el complemento como moléculas que ayudan; retoma 3.10 sin repetirlo.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-BIO-U3-3.10 (fila 38)",
+    "cita": "Componentes y líneas de defensa del sistema inmunitario, respuesta innata y adaptativa."
+   },
+   {
+    "fuente": "TEMA:G09-CIE-U9-9.1 (fila 3)",
+    "cita": "Funcionamiento del sistema inmunológico y papel de las vacunas."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Partir de signos vividos (una herida inflamada) reduce la carga de un esquema con muchos agentes."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:biologia:G10-G11#17",
+  "decision": "adoptar",
+  "justificacion": "Adecuado para 11.°: comparar con datos dos ecosistemas cercanos activa lo trabajado en 4.° (3.4, 3.5) y 7.° (4.8, 4.11) y da contexto a una unidad que abre con productividad y DBO, muy técnica. El indicador ya pide datos y clasificación, no solo describir. Al enseñarlo, retomar y no repetir lo de 4.° y 7.°.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G04-CIE-U3-3.4 (fila 6) y G04-CIE-U3-3.5 (fila 7)",
+    "cita": "Diversidad ecosistémica y formaciones vegetales de El Salvador en 4.°."
+   },
+   {
+    "fuente": "TEMA:G07-CIE-U4-4.11 (fila 13)",
+    "cita": "Biomas y sus criterios de clasificación en 7.°."
+   },
+   {
+    "fuente": "TEMA:G11-BIO-U1-1.1 (fila 3)",
+    "cita": "La unidad abre con productividad y DBO a partir de oxígeno disuelto."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:biologia:G10-G11#19",
+  "decision": "adoptar",
+  "justificacion": "Adecuado para 11.°: predecir con datos un efecto en cascada exige razonar con varias variables y relaciones indirectas, propio del nivel formal, y se apoya en el modelo depredador-presa de 7.6 y en el nicho de 4.°. El caso de los murciélagos polinizadores es más cercano que el de la nutria marina; los dos sirven si se trabajan con datos.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-BIO-U7-7.6 (fila 86)",
+    "cita": "Modelo de Lotka-Volterra comparado con datos históricos."
+   },
+   {
+    "fuente": "TEMA:G04-CIE-U3-3.8 (fila 10)",
+    "cita": "Hábitat y nicho en 4.°."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Razonar efectos indirectos a partir de datos es alcanzable en 10.°–11.°."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:biologia:G10-G11#3",
+  "decision": "adoptar",
+  "justificacion": "El mosaico fluido modela entidades no observables, algo adecuado en 10.° con un modelo físico o un dibujo. La V2 usa la membrana en 6.° (5.8) y 9.° (8.2) como límite que deja pasar sustancias, y en 10.° 2.15 la membrana tilacoidal, sin enseñar su estructura: este tema llena ese hueco. Si no se crea la unidad 9, ubicarlo antes de 2.15.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G06-CIE-U5-5.8 (fila 10)",
+    "cita": "Propiedades de las membranas biológicas con masas antes y después."
+   },
+   {
+    "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+    "cita": "Difusión y ósmosis a través de la membrana en tejidos vegetales."
+   },
+   {
+    "fuente": "TEMA:G10-BIO-U2-2.15 (fila 28)",
+    "cita": "Esquema rotulado de la membrana tilacoidal."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:biologia:G10-G11#8",
+  "decision": "adaptar",
+  "justificacion": "Integrar cuatro estructuras de dos reinos y la relación superficie-volumen en un tema es mucha carga simultánea, aunque el razonamiento proporcional es alcanzable en 10.°. Propongo una idea por paso: primero construir la relación con cubos que se miden y luego aplicarla, empezando por alvéolos y vellosidades. La V2 solo usa esa relación después (10.° 6.4).",
+  "texto": "9.5. Relación superficie-volumen y su papel en las superficies de intercambio de animales y plantas. Indicador: calcula con cubos de distinto tamaño (papel, plastilina o gelatina) cómo cambia la relación superficie-volumen y la usa para explicar con esquemas cómo la superficie, el grosor y la irrigación de alvéolos y vellosidades facilitan el intercambio; extiende la idea a estomas y nefronas.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-BIO-U6-6.4 (fila 59)",
+    "cita": "Masa corporal y tasa metabólica con gráficas logarítmicas: la relación aparece después."
+   },
+   {
+    "fuente": "TEMA:G08-CIE-U7-7.13 (fila 15) y G08-CIE-U6-6.11 (fila 13)",
+    "cita": "Excreción y transpiración en 8.°, base de los ejemplos."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Un principio común construido antes de cuatro casos reduce la carga de integrarlos."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:ciencias_tierra_espacio:G02-G04#2",
+  "decision": "adaptar",
+  "justificacion": "El ciclo del agua con un modelo cerrado es adecuado para 3.°, pero evaporar y condensar son cambios de estado, y la V2 los trabaja al final de la unidad (3.15). Ponerlo antes de 3.2 obliga a usar procesos aún no vistos; a esa edad es común creer que el agua evaporada desaparece. Propongo ubicarlo después de 3.15, como cierre que une todos los cuerpos de agua.",
+  "texto": "Después de 3.15, como cierre de la unidad 3: «Representación del ciclo del agua». Indicador: arma un modelo del ciclo (agua en una bolsa o frasco cerrado al sol) y explica con un dibujo cómo el agua de océanos, lagos, ríos, glaciares y acuíferos se evapora, se condensa, cae, corre por el suelo (escorrentía) y se mete en la tierra (infiltración).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G03-CIE-U3-3.15 (fila 17)",
+    "cita": "Cambios de estado del agua con la temperatura: último tema de la unidad 3."
+   },
+   {
+    "fuente": "TEMA:G03-CIE-U3-3.1 (fila 3)",
+    "cita": "La unidad abre con los océanos; la acción iría justo después."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "El ciclo se apoya en el cambio de estado; sin él, el vapor invisible se interpreta como desaparición."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:fisica:G02-G04#3",
+  "decision": "adaptar",
+  "justificacion": "Experimentar con lo que frena el movimiento es adecuado para 3.°. Pero la V2 ya mide el roce en 1.3 (estiramiento de la liga en distintas superficies) y su capa pedagógica usa «roce». Repetir superficies suma carga sin aportar; lo nuevo es la resistencia del aire. Además, en un carrito que rueda el frenado no es roce de deslizamiento: mejor evitarlo en 3.°.",
+  "texto": "Tema nuevo después de 1.6: «Experimentación con la resistencia del aire, una fuerza que frena como el roce». Indicador: compara cómo caen una hoja extendida y una arrugada, o un objeto con y sin paracaídas de bolsa, y explica que el aire empuja contra lo que se mueve, como el roce que midió en 1.3. Usa «roce» y «fricción» como sinónimos.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G03-CIE-U1-1.3 (fila 5)",
+    "cita": "Registro de la fuerza necesaria (estiramiento de la liga) en distintas superficies."
+   },
+   {
+    "fuente": "data/pedagogia/REVISION_PENDIENTE.md (G03-CIE-U1-1.3, punto 3)",
+    "cita": "En algo que rueda, el frenado viene sobre todo de la resistencia a la rodadura y del aire."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Un fenómeno nuevo por tema; retomar lo ya medido evita repetir el mismo experimento."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:fisica:G05-G08#12",
+  "decision": "descartar",
+  "justificacion": "La premisa (conservación de la energía hasta 10.°) es un hueco de etiquetado: la V2 la trabaja en 5.° 2.15, en 7.° 6.2 mide la eficiencia de recursos cotidianos y en 8.° 2.7 calcula pérdidas con rebotes. Un tema nuevo en 7.° repetiría ese recorrido y sumaría carga. El diagrama de flujo de energía puede pedirse como evidencia en 6.2 o 2.7, sin tema nuevo.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G05-CIE-U2-2.15 (fila 17)",
+    "cita": "Conservación de la energía mecánica; diagrama de barras en tres puntos del péndulo."
+   },
+   {
+    "fuente": "TEMA:G07-CIE-U6-6.2 (fila 4)",
+    "cita": "Compara la eficiencia de recursos energéticos cotidianos con mediciones repetidas."
+   },
+   {
+    "fuente": "TEMA:G08-CIE-U2-2.7 (fila 9)",
+    "cita": "Alturas de rebote con pérdidas calculadas y crítica a un video de movimiento perpetuo."
+   },
+   {
+    "fuente": "specs/13_apoyo_al_aprendizaje.md §2",
+    "cita": "La verificación de la spec 11 encontró la conservación de la energía en la V2 en 5.° y 8.°."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:fisica:G05-G08#14",
+  "decision": "adaptar",
+  "justificacion": "Ordenar radiaciones por longitud de onda exige la idea de onda, que la V2 enseña en 8.° (unidad 3); 7.° no tiene unidad de ondas, así que la ubicación propuesta no existe. Propongo llevarlo a 8.° tras 3.12, de forma descriptiva: orden, usos y cuidados, sin el modelo de campos (11.° 12.4). El efecto invernadero de 7.° (6.13) puede seguir siendo fenomenológico.",
+  "texto": "8.°, después de 3.12: «Descripción del espectro electromagnético». Indicador: ordena en un esquema ilustrado las ondas de radio, microondas, infrarrojo, luz visible, ultravioleta y rayos X según su longitud de onda, reconoce que todas viajan a la rapidez de la luz y da un uso y un cuidado de cada una, sin el modelo de campos eléctrico y magnético (11.°).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G08-CIE-U3-3.7 (fila 9) y G08-CIE-U3-3.9 (fila 11)",
+    "cita": "Tipos de onda y gráficas de ondas transversales en 8.°."
+   },
+   {
+    "fuente": "TEMA:G11-FIS-U12-12.4 (fila 71)",
+    "cita": "Espectro electromagnético a escala logarítmica en 11.°."
+   },
+   {
+    "fuente": "data/interim/temas.json (unidades de 7.° en la V2)",
+    "cita": "Compuestos inorgánicos, genética, biodiversidad, ecología, recurso hídrico, ambiente y energía."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:fisica:G05-G08#6",
+  "decision": "descartar",
+  "justificacion": "La V2 ya enseña la electrización por frotamiento, contacto e inducción en 5.° (3.6), antes del multímetro de 6.° (3.1): el problema de secuencia que motiva la acción no existe en la V2. Un tema igual en 6.° duplicaría contenido. Basta una activación breve de 3.6 al abrir la unidad 3 de 6.°, que relacione la carga con la corriente.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G05-CIE-U3-3.6 (fila 8)",
+    "cita": "Tipos de transferencia de carga: triboelectricidad, inducción y contacto."
+   },
+   {
+    "fuente": "TEMA:G06-CIE-U3-3.1 (fila 3)",
+    "cita": "Uso del multímetro para medir voltaje y corriente."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:fisica:G05-G08#8",
+  "decision": "adaptar",
+  "justificacion": "El indicador repite el experimento de 3.° (1.8: agua caliente y fría cada dos minutos) y la idea de 4.° (1.12). En 6.° vale si sube de nivel: graficar temperatura y tiempo, predecir la temperatura final y explicar con partículas (2.1) que pasa energía del caliente al frío, frente a la idea de que «pasa el frío». Así es espiral, no repetición.",
+  "texto": "2.8. Explicación del equilibrio térmico con el modelo de partículas. Indicador: grafica la temperatura de agua caliente y fría en contacto hasta que se igualan, predice cómo cambia la temperatura final si cambian las cantidades y explica con partículas que la energía pasa del cuerpo caliente al frío (no «el frío» al caliente); retoma 3.° 1.8 y 4.° 1.12 sin repetirlos.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G03-CIE-U1-1.8 (fila 10)",
+    "cita": "Temperaturas del agua caliente y fría cada dos minutos, con una conclusión."
+   },
+   {
+    "fuente": "TEMA:G04-CIE-U1-1.12 (fila 14)",
+    "cita": "Transferencia de calor entre objetos en contacto; corrige la idea «el suéter da calor»."
+   },
+   {
+    "fuente": "TEMA:G06-CIE-U2-2.1 (fila 3)",
+    "cita": "Movimiento de las partículas según la temperatura."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#1",
+  "decision": "adoptar",
+  "justificacion": "Es la acción más importante del lote para el desarrollo: la V2 pide en 5.° modelo atómico, números cuánticos y configuraciones (3.2 a 3.11) sin un modelo de partículas previo, el puente entre lo que se observa y lo que no. Disolver azúcar, comprimir aire en una jeringa y calentar agua, con dibujos de partículas, son tareas concretas y alcanzables a los 10–11 años.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G05-CIE-U3-3.10 (fila 12) y G05-CIE-U3-3.11 (fila 13)",
+    "cita": "Números cuánticos y configuraciones electrónicas en 5.°."
+   },
+   {
+    "fuente": "TEMA:G06-CIE-U2-2.1 (fila 3)",
+    "cita": "El movimiento de partículas llega en 6.°, después del átomo."
+   },
+   {
+    "fuente": "Johnstone, A. H. (1991). Why is science difficult to learn? Things are seldom what they seem. Journal of Computer Assisted Learning, 7(2), 75–83",
+    "cita": "Pasar de lo macroscópico a lo submicroscópico y lo simbólico es una fuente central de dificultad."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#10",
+  "decision": "adaptar",
+  "justificacion": "Los indicadores de col morada son concretos y baratos, adecuados para 7.°. Pero la V2 ya usa indicador y pH con productos cotidianos en 1.7: lo nuevo es la neutralización. Además, «productos del hogar» incluye cloro y destapacañerías, corrosivos, y el cloro con vinagre libera un gas tóxico. Propongo centrarlo en la neutralización con productos seguros y el papel pH como opcional.",
+  "texto": "Identificación de la neutralización con un indicador natural (después de 1.9, o de 5.9 como se propuso). Indicador: con col morada, y papel pH si la escuela lo tiene, observa cómo cambia el color al agregar poco a poco una base suave (bicarbonato o agua jabonosa) a un ácido suave (vinagre o limón) hasta acercarse a neutro. Solo productos seguros: nunca cloro, lejía ni destapacañerías.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G07-CIE-U1-1.7 (fila 9)",
+    "cita": "Tabla de muestras con el color del indicador y el valor de pH."
+   },
+   {
+    "fuente": "TEMA:G09-CIE-U3-3.19 (fila 21)",
+    "cita": "Punto de equivalencia por titulación en 9.°."
+   },
+   {
+    "fuente": "criterio de seguridad",
+    "cita": "La lejía (hipoclorito) mezclada con un ácido como el vinagre libera cloro gaseoso."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#11",
+  "decision": "adoptar",
+  "justificacion": "Adecuado para 8.°: compara propiedades que se prueban con objetos cotidianos (rayar, doblar, conducir) y las relaciona con la estructura que el estudiante acaba de ver en los cristales (5.4 a 5.6). Trabaja con datos y modelos, lo esperable en 7.°–9.°, y prepara los materiales de 11.° (1.3). Para la fragilidad, mejor observar que romper piezas.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G08-CIE-U5-5.4 (fila 6)",
+    "cita": "Formación de cristales a partir de un experimento."
+   },
+   {
+    "fuente": "TEMA:G11-QUI-U1-1.3 (fila 5)",
+    "cita": "Aplicaciones tecnológicas y médicas de cerámicas y metales en 11.°."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#3",
+  "decision": "adaptar",
+  "justificacion": "La composición del aire es alcanzable en 5.° si la proporción se representa con algo concreto: en un gráfico circular el 0,04 % de CO₂ no se ve. Nombrar contaminantes (SO₂, óxidos de nitrógeno, partículas) carga vocabulario que 7.° trabaja en 5.12, y la unidad 6 de 5.° ya tiene 21 temas. Propongo una cuadrícula de 100 y fuentes locales, sin culpar a quien cocina con leña.",
+  "texto": "6.15. Identificación de los componentes del aire y de fuentes de contaminación en la comunidad. Indicador: representa en una cuadrícula de 100 cuadros cuántas partes del aire son nitrógeno y oxígeno, reconoce que el dióxido de carbono y el vapor de agua son una parte muy pequeña, e identifica fuentes de humo y polvo de su comunidad y una forma de reducirlas. Los nombres de contaminantes quedan para 7.° (5.12).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G07-CIE-U5-5.12 (fila 14)",
+    "cita": "Cuadro de contaminantes del aire con fuentes y efectos en 7.°."
+   },
+   {
+    "fuente": "data/interim/temas.json (5.°, unidad 6)",
+    "cita": "La unidad 6 de 5.° tiene 21 temas, del 6.1 al 6.21."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Una cuadrícula de 100 es concreta para 10–11 años; porcentajes menores que 1 no lo son."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#5",
+  "decision": "adoptar",
+  "justificacion": "Adecuado para 6.°: clasificar muestras cotidianas y justificar con dibujos de partículas une lo observable con el modelo, y ordena lo que la V2 da en 3.° (mezclas, 2.3 a 2.5) y en 5.° (átomos y fórmulas, 4.5) antes de Lewis (4.1). Necesita el modelo de partículas: lo da 6.° 2.1 o, mejor, la acción 1 en 5.°.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G03-CIE-U2-2.3 (fila 5) y G03-CIE-U2-2.5 (fila 7)",
+    "cita": "Tipos de mezclas y su separación en 3.°."
+   },
+   {
+    "fuente": "TEMA:G05-CIE-U4-4.5 (fila 7)",
+    "cita": "Fórmulas con el número de átomos de cada elemento en 5.°."
+   },
+   {
+    "fuente": "TEMA:G06-CIE-U4-4.1 (fila 3)",
+    "cita": "La unidad 4 de 6.° abre con la notación de Lewis."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#7",
+  "decision": "adaptar",
+  "justificacion": "Una prueba concreta de que la masa se conserva, antes de balancear, es adecuada para 6.°. Pero la V2 ya la toca en 7.° 1.2 (lana de acero), y el montaje con globo puede engañar: al inflarse, el empuje del aire baja la lectura de la balanza y confirma la idea de que la masa «se pierde». Propongo recipiente rígido cerrado y comparación con uno abierto.",
+  "texto": "4.14 (después de 4.9). Comprobación de que la masa se conserva en una reacción. Indicador: mide la masa de vinagre y una pizca de bicarbonato en una botella plástica de gaseosa bien tapada antes y después de mezclarlos, la compara con el mismo ensayo en un vaso abierto y explica la diferencia con modelos de partículas que se reordenan; 7.° 1.2 lo retoma al balancear.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G07-CIE-U1-1.2 (fila 4)",
+    "cita": "Cuadro que separa observación, hipótesis, ley y modelo en el experimento de la lana de acero."
+   },
+   {
+    "fuente": "specs/13_apoyo_al_aprendizaje.md §10",
+    "cita": "La conservación de la masa en 7.° no la reconoce el grafo en G07-CIE-U1-1.2."
+   },
+   {
+    "fuente": "criterio disciplinar (a confirmar por el experto de Química)",
+    "cita": "El empuje del aire sobre un globo inflado es de cerca de 1,2 g por litro: lo detecta una balanza escolar."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#8",
+  "decision": "adaptar",
+  "justificacion": "Clasificar por el cambio de temperatura es concreto y adecuado para 7.°. Pero agua con cloruro de calcio es una disolución, no una reacción: como ejemplo puede confundir cambio físico y químico, que se trabaja desde 3.°, y el cloruro de calcio no está en todas las escuelas. Propongo una reacción exotérmica con material conocido: la lana de acero con vinagre de 1.2.",
+  "texto": "1.14. Clasificación experimental de reacciones exotérmicas y endotérmicas según el cambio de temperatura. Indicador: mide la temperatura antes y después de dos reacciones (vinagre con bicarbonato, que se enfría, y lana de acero humedecida con vinagre, que se calienta al oxidarse) y explica hacia dónde se transfiere la energía en cada caso.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G07-CIE-U1-1.2 (fila 4)",
+    "cita": "La unidad ya usa el experimento de la lana de acero."
+   },
+   {
+    "fuente": "TEMA:G06-CIE-U4-4.9 (fila 11)",
+    "cita": "Evidencias de reacción química frente a un cambio físico, en 6.°."
+   },
+   {
+    "fuente": "criterio disciplinar (a confirmar por el experto de Química)",
+    "cita": "Disolver cloruro de calcio libera calor, pero es un proceso de disolución, no una reacción."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G05-G08#9",
+  "decision": "adaptar",
+  "justificacion": "Definir por ganancia o pérdida de oxígeno es concreto y adecuado para 7.°, y continúa los óxidos de 1.1 y 1.2. Pero listar el número de oxidación como concepto invita a formalizar con reglas abstractas, y obtener un metal de su óxido no es viable en el aula: debe ser un caso descrito. Propongo nivel cualitativo, sin números de oxidación.",
+  "texto": "1.13. Identificación de oxidación y reducción en fenómenos cotidianos, a nivel cualitativo (ganancia o pérdida de oxígeno). Indicador: en la oxidación de un clavo o de la lana de acero y en la combustión de una vela, señala qué sustancia gana oxígeno; con imágenes o un video de cómo se obtiene hierro de su mineral, señala cuál lo pierde. Sin números de oxidación.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G07-CIE-U1-1.1 (fila 3) y G07-CIE-U1-1.2 (fila 4)",
+    "cita": "Óxidos en fenómenos cotidianos y su obtención con la lana de acero."
+   },
+   {
+    "fuente": "TEMA:G05-CIE-U4-4.7 (fila 9)",
+    "cita": "Ejercicios de números de oxidación desde 5.°."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Una definición observable antes de la regla formal; el formalismo, en 10.°–11.°."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G10-G11#10",
+  "decision": "adaptar",
+  "justificacion": "Coordinar dos espectros para inferir una estructura tiene mucha carga representacional; en 11.° es alcanzable con ejemplos resueltos y espectros simplificados, sin equipo de laboratorio. Depende de leer espectros de masas (acción 3), que la V2 no adoptó. Propongo acotarlo: bandas de pocos grupos funcionales y el ion molecular como masa molar, en moléculas pequeñas.",
+  "texto": "3.15. Identificación de compuestos orgánicos sencillos con espectros infrarrojo y de masas simplificados. Indicador: tras ejemplos resueltos, reconoce en el infrarrojo la banda de un grupo O–H o C=O, toma del espectro de masas la masa molar (ion molecular) y elige entre dos o tres estructuras candidatas de hasta cuatro carbonos, justificando con ambas evidencias.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U3-3.7 (fila 30)",
+    "cita": "Identificación práctica de aldehídos, cetonas, ácidos carboxílicos y derivados."
+   },
+   {
+    "fuente": "TEMA:G11-FIS-U10-10.3 (fila 61)",
+    "cita": "Funcionamiento del espectrómetro de masas en Física de 11.°."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Ejemplos resueltos y pocas opciones bajan la carga al coordinar dos representaciones."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G10-G11#11",
+  "decision": "adaptar",
+  "justificacion": "Comparar combustibles para un uso local es motivador y adecuado para 11.°. Pero 10.° 11.2 ya pide una tabla de combustibles con energía por gramo y CO₂: el tema debe partir de ella y aportar lo que falta (biocombustibles, otros productos de combustión, decisión argumentada). Quemar gasolina o propano en el aula no es seguro: medir solo con etanol.",
+  "texto": "9.8. Comparación de combustibles fósiles y biocombustibles para un uso local. Indicador: a partir de la tabla de energía por gramo de 10.° (11.2), agrega etanol y biodiésel, compara sus productos de combustión (CO₂, CO, hollín, SO₂) y recomienda con argumentos un combustible para un uso local; mide solo con un mechero de alcohol y usa datos tabulados para gasolina y propano.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-QUI-U11-11.2 (fila 86)",
+    "cita": "Tabla comparativa de combustibles con energía por gramo y CO₂ emitido."
+   },
+   {
+    "fuente": "criterio de seguridad",
+    "cita": "Gasolina y propano son inflamables y volátiles; el etanol en mechero es habitual."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G10-G11#12",
+  "decision": "adaptar",
+  "justificacion": "Diseñar una ruta de síntesis exige integrar varias reacciones: es una tarea de creación alcanzable en 11.° solo con andamiaje. La V2 ya compara dos rutas con economía atómica (7.7) y analiza el rendimiento de la esterificación (9.5). Propongo un caso guiado como cierre de la unidad 9, con productos viables en el aula; el ácido acetilsalicílico, solo como caso en papel.",
+  "texto": "9.9. Propuesta guiada de una ruta de síntesis como cierre de la unidad 9. Indicador: con las reacciones de 9.2 a 9.6, propone una ruta de una o dos etapas para un éster aromatizante o un jabón, justifica reactivos, condiciones y catalizador, calcula el rendimiento esperado y la compara con otra ruta usando la economía atómica de 7.7. Otros productos, solo como caso en papel.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U7-7.7 (fila 72)",
+    "cita": "Cálculo de la economía atómica de dos rutas de síntesis."
+   },
+   {
+    "fuente": "TEMA:G11-QUI-U9-9.5 (fila 81)",
+    "cita": "Esterificación con análisis del rendimiento de la síntesis."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Una tarea de diseño con andamiaje (caso guiado, opciones acotadas) evita la sobrecarga."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G10-G11#3",
+  "decision": "adaptar",
+  "justificacion": "Leer un espectro de masas como un gráfico de barras y calcular la masa atómica relativa es adecuado para 10.° y da datos reales al cálculo de 3.4. Pero explicar ionización, aceleración, desviación y detección antes de que Física (11.° 10.3) enseñe la desviación magnética lleva a memorizar pasos sin comprenderlos. Propongo leer el espectro en 10.° y dejar el instrumento a Física.",
+  "texto": "3.11. Interpretación de espectros de masas para obtener la composición isotópica y la masa atómica relativa. Indicador: lee en el espectro de masas de un elemento (cloro, magnesio o boro) la masa y la abundancia de cada isótopo y calcula su masa atómica relativa. El funcionamiento del espectrómetro queda para Física de 11.° (10.3).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-QUI-U3-3.4 (fila 26)",
+    "cita": "Masa atómica promedio a partir de la masa y la abundancia de los isótopos."
+   },
+   {
+    "fuente": "TEMA:G11-FIS-U10-10.3 (fila 61)",
+    "cita": "Relación masa-carga a partir del radio de la trayectoria en el espectrómetro."
+   }
+  ],
+  "confianza": "media"
+ },
+ {
+  "id": "PRO:quimica:G10-G11#5",
+  "decision": "adoptar",
+  "justificacion": "Es un puente conceptual entre la cinética (12.4) y la deducción formal de K (12.8): explicar de forma cualitativa por qué una reacción es reversible antes del formalismo reduce la carga y enfrenta la idea de que en el equilibrio la reacción se detiene. Es adecuado para 10.° con el perfil energético. Debe retomar 12.4 y dejar el modelo de probetas a 12.8.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-QUI-U12-12.4 (fila 95)",
+    "cita": "Teoría de colisiones con diagrama de energía potencial."
+   },
+   {
+    "fuente": "TEMA:G10-QUI-U12-12.8 (fila 99)",
+    "cita": "Deducción de Kc con el modelo de probetas y las leyes de velocidad."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "Lo cualitativo antes del formalismo; una idea por paso."
+   }
+  ],
+  "confianza": "media"
+ }
+]

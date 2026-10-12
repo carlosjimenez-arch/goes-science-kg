@@ -83,10 +83,12 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
   conditions… on equilibrium» (p. 24). Lo que se adelanta es la parte cuantitativa.
 - **Química de 10.°–11.° con nivel universitario inicial:** Gibbs y espontaneidad, entropía, OM y TEV, hibridación,
   resonancia y carga formal, ley de velocidad y Arrhenius, mecanismos de reacción, Kps y estereoquímica. Son
-  más potenciales de electrodo, ley de Hess, rutas de síntesis y la configuración electrónica **por orbitales**
-  (10.°; el modelo de capas sí es núcleo y queda retomado). Son 22 conceptos que a lo sumo un país enseña de
+  más potenciales de electrodo, ley de Hess y rutas de síntesis. Son 21 conceptos que a lo sumo un país enseña de
   forma sólida en su núcleo (por lo general SG H1) y que ≥ 3 países tienen en electivas. Las leyes de los gases
-  **no** están en esa lista: KR las enseña en 중학교 ([9과06-02/03], p. 51).
+  **no** están en esa lista: KR las enseña en 중학교 ([9과06-02/03], p. 51). La configuración electrónica **por
+  orbitales** salió de la lista el 2026-10-12: el panel de expertos (spec 14) verificó que la V2 ya la usa en 5.°
+  (G05-CIE-U3-3.11: diagrama de Moeller y regla de Pauli), así que queda «retomada». Ese es un problema distinto:
+  formalismo de bachillerato en primaria (hallazgo de 2.°–8.°).
 - **Secuencia:** la V2 reconoce isómeros (10.°, G10-QUI-U2-2.6, fila 22) antes de tener hidrocarburos (11.°).
   Además, usa estados de oxidación y poder oxidante en 10.° (G10-QUI-U13-13.3/13.7) antes de la unidad formal
   de redox de 11.° (G11-QUI-U11-11.2, fila 90).
@@ -119,10 +121,11 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
   técnica. Conviene precisar el alcance más que mover el tema.
 - **Metabolismo energético a nivel de electiva en 10.°:** glucólisis, Krebs y cadena respiratoria (G10-BIO-U2-2.12,
   G10-BIO-U7-7.2). Solo SG (H1) lo tiene en el núcleo.
-- **Secuencia (revisión experta):** la V2 enseña Krebs y la cadena de transporte de electrones **sin haber
-  presentado la mitocondria**. La célula de 9.° (G09-CIE-U8-8.1, fila 3) nombra membrana, citoplasma, núcleo,
-  pared, cloroplastos y vacuola, pero no mitocondrias ni ribosomas. SG Combined las pide en el núcleo a partir de
-  micrografías electrónicas (p. 43).
+- **Secuencia (corregida por el panel de expertos, 2026-10-12):** la V2 sí presenta la mitocondria, en 6.°
+  (G06-CIE-U5-5.12/5.13: respiración celular, estructura mitocondrial y ATP). El hueco es que 9.° no la retoma: la
+  célula de 9.° (G09-CIE-U8-8.1, fila 3) nombra membrana, citoplasma, núcleo, pared, cloroplastos y vacuola, pero no
+  mitocondrias ni ribosomas, y Krebs y la cadena de transporte de electrones llegan en 10.° sin ese repaso. SG
+  Combined pide los organelos en el núcleo a partir de micrografías electrónicas (p. 43).
 - **Desbalance en 9.°:** las cinco unidades de Biología suman 16 filas (Evolución 1, Biosfera 2), frente a 20 de
   Equilibrio químico.
 
@@ -130,20 +133,22 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
 - **Efecto invernadero no retomado:** la V2 no lo menciona en 9.°–11.°, y los 8 países con núcleo lo tienen (JP
   地学基礎 «温室効果», p. 128; KR [10통과2-02-03], p. 90; TW ENb-Vc, p. 43; ON SNC2D, p. 73). La V2 trata las
   causas del cambio climático en Biología 11.° (G11-BIO-U1-1.8) **sin el mecanismo físico** que lo explica.
-- **Atmósfera (capas y composición) no retomada:** la V2 la tiene solo en 3.°, y 5 países la tienen en el núcleo
-  de 9.°–11.°.
+- **Atmósfera (capas y composición) no retomada:** la V2 la tiene en 3.° y en 7.° (capas: G07-CIE-U5-5.11), y 5
+  países la tienen en el núcleo de 9.°–11.°. El efecto invernadero se simula en 7.° (G07-CIE-U6-6.13); lo que falta
+  en 9.°–11.° es su mecanismo físico (corrección del panel de expertos, 2026-10-12).
 - **Contextualización sin referente:** Geología y Vulcanismo de El Salvador (9.°) no tienen equivalente en otros
   países, y es esperable que así sea: es un acierto de pertinencia local, no un problema.
 
 ## Recomendaciones (para decidir con el MINED; ninguna quita temas)
 1. **Química de 9.°:** dejar el equilibrio **cualitativo** (reversibilidad y Le Châtelier) y **reubicar** K, Ka y
    amortiguadoras en 11.°, o en una profundización optativa si se crea.
-2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 22 + 12 conceptos de especialización, para
+2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 21 + 12 conceptos de especialización, para
    que el núcleo obligatorio se parezca al de JP, TW y EE. Otra opción es tratarlos de forma cualitativa, como
    hace TW con la física moderna.
 3. **Física nuclear** (fisión, fusión y radiación ionizante): adelantarla a 9.° o 10.°.
 4. **Secuencias:** gases (leyes antes de procesos termodinámicos), ondas (superposición antes de interferencia),
-   redox (formal antes de sus aplicaciones), mitocondria antes del metabolismo e hidrocarburos antes de isomería.
+   redox (formal antes de sus aplicaciones), retomar la mitocondria antes del metabolismo e hidrocarburos antes de
+   isomería.
    Hay que coordinar Física y Química de 10.° para no repetir las leyes de los gases.
 5. **Tierra y Espacio en Bachillerato:** incluir el efecto invernadero y la atmósfera, por ejemplo en la
    Física 10.° de transferencia de calor y radiación, junto al cambio climático de Biología 11.°. JP y TW muestran

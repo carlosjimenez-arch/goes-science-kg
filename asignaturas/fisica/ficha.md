@@ -9,7 +9,7 @@
 | 2.° | 20 | 2. Energía.; 5. Objetos técnicos.; 3. El movimiento; 1. Materia. |
 | 3.° | 8 | 1. Medidas y fuerzas. |
 | 4.° | 15 | 1. Máquinas y energía. |
-| 5.° | 23 | 2. Mecánica.; 1. Magnitudes físicas. |
+| 5.° | 24 | 2. Mecánica.; 1. Magnitudes físicas.; 3. Estructura atómica. |
 | 6.° | 24 | 3. Electricidad y magnetismo.; 1. Fluidos.; 2. Calor y temperatura. |
 | 7.° | 3 | 6. Ambiente y energía |
 | 8.° | 37 | 1. Mecánica; 3. Ondas mecánicas; 2. Energía |
@@ -17,7 +17,7 @@
 | 10.° | 121 | 15. Termodinámica; 16. Óptica; 5. Las leyes de Newton; 11. Mecánica de fluidos |
 | 11.° | 146 | 9. Circuitos eléctricos; 17. Refracción de la luz; 12. Electromagnetismo; 22. Ciencias del espacio |
 
-Total: **434 temas**. Asignados por: ia 5, malla 267, pisa 1, revision 11, timss 150.
+Total: **435 temas**. Asignados por: ia 5, malla 267, pisa 1, revision 12, timss 150.
 
 ## Cobertura de los marcos internacionales
 

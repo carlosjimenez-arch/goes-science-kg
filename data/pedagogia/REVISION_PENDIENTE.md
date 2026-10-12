@@ -1,6 +1,19 @@
 # Capa pedagógica · puntos para la revisión del equipo de Ciencias
 
-Todo lo que hay en `actividades.json`, `dificultades.json` y `microtemas.json` es **propuesta_pendiente**: lo redactó
+> **2026-10-12: el panel de expertos IA revisó los 138 elementos** (spec 14). Aprobó 69 tal cual y corrigió 69:
+> exactitud científica, lenguaje, ítems ambiguos y claves que se delataban. Todos están en `revisado_panel`, que **no
+> basta** para usarlos con estudiantes: falta la firma de un docente del grado (aprendizaje/PILOTO.md, decisión 7).
+> Algunos puntos de abajo quedaron resueltos en las correcciones y su detalle está en `revision_panel` de cada
+> elemento. Siguen abiertos:
+> - los valores de K de N₂ + O₂ ⇌ 2NO, sin fuente;
+> - dificultades nuevas: «dominante = más común» y «sólidos y líquidos puros en K»;
+> - la alineación con el objetivo de varias actividades de 9.° (física 2.2/2.5/2.8 y molaridad en 3.6);
+> - «tirón» o «jalón» en 3.°;
+> - el microtema de suelo de 5.°, que dura 10 min cuando el límite de primaria es de 8;
+> - los «procesos químicos del suelo» de 5.°, que debe confirmar el MINED.
+
+Antes del panel, todo lo que había en `actividades.json`, `dificultades.json` y `microtemas.json` era
+**propuesta_pendiente**: lo redactó
 el subagente `redactor-actividades` (el 2026-10-11 los tres objetivos de 9.°; el 2026-10-12 sus respuestas abiertas y
 los objetivos de 3.°, 5.° y 7.°) y lo validó `gskg lotes validar` (forma, ids y vínculos), pero nadie revisó su
 contenido. Las rúbricas de las respuestas abiertas las usa el evaluador automático: revisarlas como si fueran a

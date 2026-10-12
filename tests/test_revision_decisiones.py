@@ -43,7 +43,9 @@ def test_exportar_lista_todas_las_decisiones(copias):
     decisiones, asignaciones = rd.exportar_decisiones("2026-01-01")
     filas = list(csv.DictReader(open(decisiones, encoding="utf-8-sig")))
     tipos = {r["tipo"] for r in filas}
-    assert tipos == set(rd.ARCHIVOS) and all(r["estado"] == "pendiente de confirmar" for r in filas)
+    assert tipos == set(rd.ARCHIVOS)
+    # ninguna está confirmada por el MINED: pendientes o con dictamen del panel de expertos IA (spec 14)
+    assert all(r["estado"] == "pendiente de confirmar" or r["estado"].startswith("dictamen del panel") for r in filas)
     assert len(list(csv.DictReader(open(asignaciones, encoding="utf-8-sig")))) == 85
 
 

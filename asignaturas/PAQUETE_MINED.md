@@ -4,10 +4,19 @@ Esto es lo que el equipo GOES necesita que el MINED revise, en orden de priorida
 nada cambia la malla sin una decisión del MINED. Cada archivo indica qué columnas llenar (`decision`, `comentario` y
 `revisado_por`).
 
-## 1. Confirmar decisiones de contenido: 35 decisiones y 85 asignaciones
-El equipo GOES tomó estas decisiones fuera de la IA. El grafo ya las aplica, pero falta su confirmación.
+> **Revisión técnica interina.** El 2026-10-12 todavía no había un equipo del MINED que revisara. Por eso un **panel
+> de expertos IA** dictaminó estas decisiones y la capa pedagógica (spec 14). El panel tiene un experto por ciencia y
+> un psicopedagogo, y trabajó con evidencia en la fuente, deliberación y unanimidad. El resumen y lo que dejó sin
+> consenso están en [`panel/README.md`](../panel/README.md) y [`panel/DICTAMEN.md`](../panel/DICTAMEN.md). Sus
+> dictámenes **no son confirmaciones del MINED**: en los CSV aparecen como «dictamen del panel: … (pendiente de
+> confirmar)», para que el MINED los confirme o los revierta.
 
-**[`decisiones/2026-10-12_decisiones.csv`](decisiones/2026-10-12_decisiones.csv)** (reemplaza al del 2026-10-11):
+## 1. Confirmar decisiones de contenido: 170 decisiones y 85 asignaciones
+El grafo ya aplica estas decisiones, pero falta la confirmación del MINED.
+
+**[`decisiones/2026-10-12_decisiones-2.csv`](decisiones/2026-10-12_decisiones-2.csv)** (reemplaza a los anteriores). Trae
+168 con dictamen del panel y 2 decisiones nuevas tomadas tras sus observaciones: la neutralización pasa a «tardío» y
+los agentes oxidantes, a «posterior». Las 35 originales:
 - 2 equivalencias retiradas.
 - 1 prerrequisito rechazado.
 - 1 división de concepto: «configuración electrónica» por orbitales en Bachillerato y por capas en secundaria.
@@ -16,8 +25,12 @@ El equipo GOES tomó estas decisiones fuera de la IA. El grafo ya las aplica, pe
 - 5 clases corregidas en el contraste de 9.°–11.°.
 - 19 clases corregidas en el contraste de 2.°–8.° (**8 nuevas**). Todas están verificadas contra las fuentes.
 
-**[`decisiones/2026-10-12_asignaciones_division.csv`](decisiones/2026-10-12_asignaciones_division.csv):** a qué
-versión de «configuración electrónica» se asignó cada tema u objetivo.
+Además, **135 clases del contraste de 2.°–8.°** que la doble lectura había dejado inciertas, ahora clasificadas por el
+panel con evidencia en la fila de la V2 y en la página de cada país.
+
+**[`decisiones/2026-10-12_asignaciones_division-2.csv`](decisiones/2026-10-12_asignaciones_division-2.csv):** a qué
+versión de «configuración electrónica» se asignó cada tema u objetivo. El panel respaldó 78 y reasignó 7; por
+ejemplo, G05-CIE-U3-3.11 queda con las dos versiones, porque 5.° ya usa la notación por subniveles.
 
 En `decision` se escribe: aceptar, cambiar (solo en asignaciones) o rechazar. Un rechazo no revierte nada: pide una
 nueva decisión.
@@ -52,7 +65,15 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
   - formación de imágenes en espejos planos: 10.° frente a 5.°–8.°;
   - lentes e imágenes: 10.°–11.° frente a 7.°–8.°;
   - reacciones exotérmicas y endotérmicas: 10.° frente a 7.°;
-  - ley de Ohm como relación explícita: 11.°, aunque 6.° ya usa la relación sin nombrarla.
+  - ley de Ohm como relación explícita: 11.°, aunque 6.° ya usa la relación sin nombrarla;
+  - neutralización: 9.° frente a 7.° (corregido por el panel).
+- **Llegan tarde según el panel** (clasificados con evidencia, sin una segunda verificación):
+  - masa y peso: 10.° frente a 6.°–7.°;
+  - potencia eléctrica: 9.° frente a 7.°;
+  - refracción: 7.° frente a 5.°;
+  - el ojo y los instrumentos ópticos: 11.° frente a 6.°–8.°;
+  - relaciones de los gases: 9.° frente a 7.°;
+  - recursos renovables: 7.° frente a 5.°.
 - **Van antes que todos los países:**
   - **números cuánticos en 5.°**, con su formalismo; ningún país los enseña antes de bachillerato;
   - enlace iónico en 5.°–6.°;
@@ -69,9 +90,10 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
   - precursores y monitoreo de sismos y erupciones en 5.°, por el riesgo local;
   - formación de la Tierra en 5.°.
 - **Hueco de profundización:** las adaptaciones de los seres vivos no se retoman entre 3.° y 10.°.
+- **Error en la malla:** G05-CIE-U6-6.7 dice bordes de placa «pasivos»; lo correcto es «transformantes».
 - **Límite del método:** las clases automáticas de 2.°–8.° tenían 46 % de falsos. El método se corrigió el 2026-10-12
-  y se probó con una muestra nueva: bajó a 25 %. Por eso solo se presentan los hallazgos verificados. 150 conceptos
-  quedan «inciertos» hasta revisarlos.
+  y se probó con una muestra nueva: bajó a 25 %. Por eso solo se presentan los hallazgos verificados. El panel
+  clasificó 135 de los 150 conceptos inciertos; quedan 15 para una persona.
 
 ## 3. Propuestas curriculares y lo que la V2 ya incorporó
 [`PROPUESTAS.md`](PROPUESTAS.md) tiene 11 borradores por ciclo, simulados sobre la V2. Los errores de secuencia de
@@ -93,14 +115,21 @@ confianza alta bajan de 55 a 5. Ninguno quita temas.
 - refuerza y vuelve al objetivo.
 
 Tiene un tutor conversacional y un evaluador de respuestas abiertas, los dos con guardas. Su contenido abarca 6
-objetivos (3.°, 5.°, 7.° y tres de 9.°) y todo está en borrador.
+objetivos (3.°, 5.°, 7.° y tres de 9.°). El panel revisó los 138 elementos y corrigió 69; están en estado
+`revisado_panel`, que no basta para usarlos con estudiantes: falta la firma de un docente.
 
 **Lo que pedimos al MINED:**
 1. **Revisar el contenido.** Los puntos para su revisión están en
    [`data/pedagogia/REVISION_PENDIENTE.md`](../data/pedagogia/REVISION_PENDIENTE.md).
-2. **Decidir sobre el piloto.** [`aprendizaje/PILOTO.md`](../aprendizaje/PILOTO.md) trae la propuesta de piloto y de
-   política de datos de menores. Pide decidir grado, unidad, centros, consentimiento, retención, modelo y región, y
-   quién aprueba el contenido.
+2. **Avalar el piloto.** [`aprendizaje/PILOTO.md`](../aprendizaje/PILOTO.md) trae las decisiones técnicas que ya se
+   tomaron:
+   - fases A → B0 → B → C;
+   - unidad 9.° U8, La célula;
+   - uso en clase;
+   - control de fidelidad del tutor en dos niveles;
+   - salvaguardas para menores.
+
+   Trabajar con estudiantes exige el aval institucional del MINED, que además debe designar a los revisores.
 
 ## Cómo devolverlo
 1. Llenen los CSV y envíenlos al equipo GOES.

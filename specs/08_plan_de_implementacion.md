@@ -120,6 +120,25 @@ estado por estudiante fuera de las capas compartidas, cola de propuestas a revis
 Pendiente: revisión del contenido, prueba con el modelo real (requiere aprobación del gasto), interfaz y las
 decisiones del piloto.
 
+## Fase 8 · Panel de expertos IA (spec 14) ✅ (2026-10-12)
+`panel.py`, `gskg panel …`, `config/panel.yaml`, cinco agentes en `.claude/agents/` y el hook SubagentStop. Es una
+revisión técnica interina mientras no haya un equipo del MINED.
+- **Alcance:** 510 expedientes en 3 rondas, con 32 subagentes.
+- **Resultados:** 493 resueltos, 17 sin consenso (para una persona) y lo resuelto ya aplicado en las capas, con su
+  procedencia.
+- **Lo que corrigió:**
+  - 69 elementos de la capa pedagógica;
+  - 135 clases del contraste de 2.°–8.°;
+  - 7 asignaciones de concepto;
+  - las etiquetas de 4 temas.
+- **Decisiones del piloto:** `aprendizaje/PILOTO.md`, sección 0.
+- **Lo que se construyó a partir de sus dictámenes:**
+  - salvaguardas para menores;
+  - opciones barajadas;
+  - respuestas numéricas tolerantes;
+  - límites de refuerzo para primaria;
+  - el verificador de fidelidad, obligatorio.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

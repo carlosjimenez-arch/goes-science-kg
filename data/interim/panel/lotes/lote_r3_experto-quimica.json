@@ -1,0 +1,1102 @@
+{
+ "lote": "r3_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U3-3.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U3-3.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.6",
+      "CON:quimica/constante-de-equilibrio"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "El nitrógeno y el oxígeno del aire pueden reaccionar así: N₂(g) + O₂(g) ⇌ 2NO(g). A 25 °C, K ≈ 4 × 10⁻³¹ (es decir, 0,000…0004, con 30 ceros después de la coma); dentro del motor de un carro, a unos 2000 °C, K ≈ 1 × 10⁻³ (es decir, 0,001). Escribe la expresión de K y explica, en 2 o 3 oraciones, en cuál de los dos casos hay más NO en el equilibrio y qué te dice el valor de K sobre la mezcla.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "K = [NO]² / ([N₂][O₂]). Cuanto más grande es K, mayor es la concentración de productos frente a la de reactivos en el equilibrio. En el motor K es mucho mayor que a 25 °C, así que allí hay más NO; a 25 °C K es tan pequeña que casi todo sigue siendo N₂ y O₂. En los dos casos K es menor que 1, así que predominan los reactivos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe K = [NO]² / ([N₂][O₂]): productos en el numerador, reactivos en el denominador y el coeficiente 2 como exponente.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Concluye que hay más NO en el equilibrio dentro del motor y lo justifica con que allí K es mayor (mayor K, más producto frente a los reactivos).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Señala que en ambos casos K es menor que 1, así que en el equilibrio predominan N₂ y O₂.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa el coeficiente estequiométrico como factor y no como exponente.",
+        "ejemplo": "K = 2[NO] / ([N₂][O₂]); en el motor hay más NO porque K es mayor.",
+        "dificultad": "DIF:quimica/constante-de-equilibrio/1"
+       },
+       {
+        "descripcion": "Lee mal los exponentes negativos: cree que 4 × 10⁻³¹ es mayor que 1 × 10⁻³, o que un K más pequeño indica más productos.",
+        "ejemplo": "A 25 °C hay más NO, porque su K tiene el exponente más grande (31).",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Interpreta K como la rapidez de la reacción y no como la proporción de productos y reactivos en el equilibrio.",
+        "ejemplo": "En el motor la reacción es más rápida porque K es mayor, y por eso sale más NO.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "K = [NO]² / ([N₂][O₂]) compara productos con reactivos en el equilibrio: cuanto mayor es K, más NO hay frente a N₂ y O₂. En el motor K (10⁻³) es muchísimo mayor que a 25 °C (10⁻³¹), así que allí hay más NO, aunque en ambos casos predominan N₂ y O₂.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U3-3.6"
+     },
+     "origen": "redactor-actividades (G09-CIE-U3-3.6-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:ACT:G09-CIE-U3-3.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G09-CIE-U3-3.6/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Verifiqué los valores sin fuente: con ΔG°f(NO) ≈ 86,6 kJ/mol, K(25 °C) ≈ 4 × 10⁻³¹; con ΔH° ≈ 180 kJ y ΔS° ≈ 25 J/K, K(≈ 2000 °C) ≈ 1 × 10⁻³. Expresión, rúbrica (más NO en el motor; en ambos casos predominan N₂ y O₂, pues K < 1 y Δn = 0) y errores típicos son correctos. Los exponentes negativos quedan para el psicopedagogo.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "K = exp(−ΔG°/RT): 173 kJ a 298 K da ≈ 4 × 10⁻³¹; ≈ 124 kJ a 2273 K da ≈ 1 × 10⁻³"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.6 (fila 8)",
+       "cita": "reconocer el significado del valor de K"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:G09-CIE-U3-3.6/obj-abierta",
+     "decision": "corregir",
+     "confianza": "alta",
+     "justificacion": "Química correcta. Respondo lo que el experto dejó para mí: comparar 4 × 10⁻³¹ con 1 × 10⁻³ es una barrera matemática ajena a lo que se mide (el significado de K), y un fallo ahí se confundiría con no entender K. Agrego cada valor también en forma decimal, sin decir cuál es mayor, como segunda representación. La rúbrica conserva el error de lectura de exponentes.",
+     "evidencia": [
+      {
+       "fuente": "revisión del experto de Química",
+       "cita": "los exponentes negativos quedan para el psicopedagogo"
+      },
+      {
+       "fuente": "rúbrica, error 2",
+       "cita": "cree que 4 × 10⁻³¹ es mayor que 1 × 10⁻³ por el exponente 31"
+      },
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "dar más de una representación del mismo dato reduce barreras ajenas al objetivo"
+      }
+     ],
+     "cambios": {
+      "enunciado": "El nitrógeno y el oxígeno del aire pueden reaccionar así: N₂(g) + O₂(g) ⇌ 2NO(g). A 25 °C, K ≈ 4 × 10⁻³¹ (es decir, 0,000…0004, con 30 ceros después de la coma); dentro del motor de un carro, a unos 2000 °C, K ≈ 1 × 10⁻³ (es decir, 0,001). Escribe la expresión de K y explica, en 2 o 3 oraciones, en cuál de los dos casos hay más NO en el equilibrio y qué te dice el valor de K sobre la mezcla."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/concentracion-de-disoluciones/practica-G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/concentracion-de-disoluciones/practica-G09",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G09-CIE-U8-8.2"
+     ],
+     "evalua": [
+      "CON:quimica/concentracion-de-disoluciones"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Para un experimento con papa se prepararon cuatro disoluciones de sal: (1) 5 g en 100 mL; (2) 20 g en 500 mL; (3) 25 g en 500 mL; (4) 10 g en 250 mL de disolución. Pista: calcula los gramos por litro de cada una dividiendo la masa entre el volumen en litros. ¿Qué afirmación es correcta?",
+     "opciones": {
+      "A": "La 3 es más concentrada que la 1, porque tiene más sal.",
+      "B": "La 1 es la menos concentrada, porque tiene menos sal.",
+      "C": "La 2 y la 3 tienen la misma concentración, porque tienen el mismo volumen.",
+      "D": "La 2 y la 4 tienen la misma concentración, aunque tienen distinta cantidad de sal."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/concentracion-de-disoluciones/1",
+      "B": "DIF:quimica/concentracion-de-disoluciones/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "5 g en 0,1 L y 25 g en 0,5 L dan 50 g/L; 20 g en 0,5 L y 10 g en 0,25 L dan 40 g/L. Dos disoluciones con distinta cantidad de sal pueden tener la misma concentración.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/concentracion-de-disoluciones"
+     },
+     "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/concentracion-de-disoluciones",
+     "nombre": "Soluto, disolvente y concentración",
+     "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "id": "PED:ACT:quimica/concentracion-de-disoluciones/practica-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/concentracion-de-disoluciones/practica-G09",
+     "decision": "aprobar",
+     "justificacion": "Concentraciones correctas: 50, 40, 50 y 40 g/L, así que D es la única verdadera. A y B confunden cantidad de soluto con concentración (dificultad 1, bien mapeada) y C supone que el mismo volumen implica la misma concentración. Sin errores de contenido; que D sea la opción más larga es un asunto de redacción para el psicopedagogo.",
+     "evidencia": [
+      {
+       "fuente": "cálculo propio",
+       "cita": "5/0,1 = 50; 20/0,5 = 40; 25/0,5 = 50; 10/0,25 = 40 g/L"
+      },
+      {
+       "fuente": "DIF:quimica/concentracion-de-disoluciones/1",
+       "cita": "juzga la concentración por los gramos de soluto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:quimica/concentracion-de-disoluciones/practica-G09",
+     "decision": "corregir",
+     "justificacion": "Dos fallas de ítem. A es verdadera a medias: la 3 sí es la más concentrada, empatada con la 1 (50 g/L). La clave D duplica en largo a las demás y trae los valores, lo que la delata sin calcular. Reescribo A para que sea falsa sin ambigüedad (sigue mapeando la dificultad 1) y acorto D. Clave, ciencia y retroalimentación intactas.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/practica-G09 (opciones A y D)",
+       "cita": "A: «la 3 es la más concentrada» (empata con la 1); D: 20 palabras con «(50 g/L)» y «(40 g/L)» frente a 10–14"
+      },
+      {
+       "fuente": "revisión experto-quimica, ronda 1",
+       "cita": "Concentraciones correctas: 50, 40, 50 y 40 g/L, así que D es la única verdadera. A y B confunden cantidad de soluto con concentración (dificultad 1, bien mapead"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "La 3 es más concentrada que la 1, porque tiene más sal.",
+       "B": "La 1 es la menos concentrada, porque tiene menos sal.",
+       "C": "La 2 y la 3 tienen la misma concentración, porque tienen el mismo volumen.",
+       "D": "La 2 y la 4 tienen la misma concentración, aunque tienen distinta cantidad de sal."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G09-CIE-U8-8.2"
+     ],
+     "evalua": [
+      "CON:quimica/concentracion-de-disoluciones"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Vaso 1: 10 g de azúcar en 100 mL de disolución. Vaso 2: 20 g de azúcar en 500 mL de disolución. ¿Cuál disolución está más concentrada?",
+     "opciones": {
+      "A": "La del vaso 2, porque tiene más azúcar.",
+      "B": "La del vaso 1, porque tiene más azúcar en cada mililitro.",
+      "C": "Están igual de concentradas, porque las dos son agua con azúcar.",
+      "D": "No se puede saber sin probarlas."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/concentracion-de-disoluciones/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El vaso 1 tiene 100 g/L y el vaso 2, 40 g/L. La concentración compara la masa de soluto con el volumen de disolución; no basta con ver cuál tiene más gramos.",
+     "duracion_min": 2,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/concentracion-de-disoluciones"
+     },
+     "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/concentracion-de-disoluciones",
+     "nombre": "Soluto, disolvente y concentración",
+     "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "id": "PED:ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09",
+     "decision": "aprobar",
+     "justificacion": "Vaso A: 100 g/L; vaso B: 40 g/L. La clave B es correcta y el distractor A representa la confusión real entre cantidad de soluto y concentración. La retroalimentación define bien la concentración como masa de soluto por volumen de disolución.",
+     "evidencia": [
+      {
+       "fuente": "cálculo propio",
+       "cita": "10 g / 0,1 L = 100 g/L; 20 g / 0,5 L = 40 g/L"
+      },
+      {
+       "fuente": "CON:quimica/concentracion-de-disoluciones",
+       "cita": "cantidad de soluto en cierta cantidad de disolución"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09",
+     "decision": "corregir",
+     "justificacion": "Las etiquetas de los vasos chocan con las letras: la opción A dice «vaso B» y la B dice «vaso A». Quien razona bien puede marcar la letra equivocada, y el diagnóstico registraría una dificultad que no tiene. Numero los vasos (1 y 2) en enunciado, opciones y retroalimentación, y acorto un poco la clave. Clave, datos y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/sondeo-1-G09 (enunciado y opciones)",
+       "cita": "«Vaso A… Vaso B»; opción A = «La del vaso B», opción B = «La del vaso A»"
+      },
+      {
+       "fuente": "spec 13, sección 4 B",
+       "cita": "el distractor elegido abre hipótesis sobre la dificultad que delata"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Vaso 1: 10 g de azúcar en 100 mL de disolución. Vaso 2: 20 g de azúcar en 500 mL de disolución. ¿Cuál disolución está más concentrada?",
+      "opciones": {
+       "A": "La del vaso 2, porque tiene más azúcar.",
+       "B": "La del vaso 1, porque tiene más azúcar en cada mililitro.",
+       "C": "Están igual de concentradas, porque las dos son agua con azúcar.",
+       "D": "No se puede saber sin probarlas."
+      },
+      "retroalimentacion": "El vaso 1 tiene 100 g/L y el vaso 2, 40 g/L. La concentración compara la masa de soluto con el volumen de disolución; no basta con ver cuál tiene más gramos."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "evalua": [
+      "CON:quimica/equilibrio-dinamico"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "En un laboratorio de investigación hay un frasco cerrado con agua y tanta sal que quedan cristales sin disolver en el fondo; desde hace días la cantidad de sal disuelta no cambia. Se cambian los cristales del fondo por la misma cantidad de cristales de sal «marcada»: parte de sus iones lleva un isótopo que un instrumento puede rastrear. ¿Qué esperas encontrar al día siguiente?",
+     "opciones": {
+      "A": "Ningún ion marcado en el agua: la sal ya no se disolvía porque el proceso se había detenido.",
+      "B": "Iones marcados en el agua, aunque la cantidad de sal disuelta sigue igual.",
+      "C": "Más sal disuelta que antes, porque los cristales nuevos se disuelven por completo.",
+      "D": "Iones marcados en el agua, pero ningún ion del agua pasa a los cristales: la sal solo se disuelve."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el equilibrio la sal se sigue disolviendo y cristalizando con la misma rapidez: iones marcados pasan al agua y otros iones del agua vuelven al sólido, sin que cambie la cantidad disuelta.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/equilibrio-dinamico"
+     },
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "En un laboratorio de investigación hay un frasco cerrado con agua y tanta sal que quedan cristales sin disolver en el fondo; desde hace días la cantidad de sal disuelta no cambia. Se cambian los cristales del fondo por la misma cantidad de cristales de sal «marcada»: parte de sus iones lleva un isótopo que un instrumento puede rastrear. ¿Qué esperas encontrar al día siguiente?",
+      "opciones": {
+       "A": "Ningún ion marcado en el agua: la sal ya no se disolvía porque el proceso se había detenido.",
+       "B": "Iones marcados en el agua e iones sin marcar en los cristales, aunque la cantidad de sal disuelta sigue igual.",
+       "C": "Más sal disuelta que antes, porque los cristales nuevos se disuelven por completo.",
+       "D": "Iones marcados en el agua, pero ningún ion sin marcar en los cristales: la sal solo se disuelve y no vuelve a formar cristales."
+      },
+      "retroalimentacion": "En el equilibrio la sal se sigue disolviendo y cristalizando con la misma rapidez: los iones marcados pasan al agua y otros, sin marcar, vuelven al sólido, sin que cambie la cantidad disuelta."
+     },
+     "justificacion": "La física del ítem es correcta (intercambio con trazador en una disolución saturada). Cambio «átomos» por «iones»: la sal disuelta está formada por iones, que los estudiantes ya conocen desde 5.°, y hablar de átomos que pasan al agua refuerza la idea errónea de que la sal se disuelve en átomos o moléculas. Clave y distractores no cambian.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G05-CIE-U3-3.7 (fila 9) y G05-CIE-U3-3.8 (fila 10)",
+       "cita": "iones monoatómicos e isótopos ya vistos en 5.°"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "NaCl se disuelve como Na⁺ y Cl⁻; el trazador marca un isótopo dentro del ion"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+     "decision": "corregir",
+     "justificacion": "D trae una doble negación («ningún ion sin marcar»). Además, como solo parte de los iones está marcada, «iones sin marcar en los cristales» se cumple aunque no haya intercambio: B y D no se distinguen por lo que dicen. Dejo en B lo que delata el equilibrio dinámico y reescribo D y la retroalimentación en coherencia. Que el experto de Química lo confirme.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/equilibrio-dinamico/comprobacion-G09 (enunciado)",
+       "cita": "«parte de sus iones lleva un isótopo»: los cristales nuevos ya traen iones sin marcar"
+      },
+      {
+       "fuente": "ACT:quimica/equilibrio-dinamico/comprobacion-G09 (opción D)",
+       "cita": "«ningún ion sin marcar en los cristales»"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "opciones": {
+       "A": "Ningún ion marcado en el agua: la sal ya no se disolvía porque el proceso se había detenido.",
+       "B": "Iones marcados en el agua, aunque la cantidad de sal disuelta sigue igual.",
+       "C": "Más sal disuelta que antes, porque los cristales nuevos se disuelven por completo.",
+       "D": "Iones marcados en el agua, pero ningún ion del agua pasa a los cristales: la sal solo se disuelve."
+      },
+      "retroalimentacion": "En el equilibrio la sal se sigue disolviendo y cristalizando con la misma rapidez: iones marcados pasan al agua y otros iones del agua vuelven al sólido, sin que cambie la cantidad disuelta."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "evalua": [
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Disuelves 0,25 mol de azúcar en agua hasta tener 500 mL de disolución. Luego sirves un vaso de 100 mL de esa disolución. ¿Qué molaridad tiene el vaso y por qué?",
+     "opciones": {
+      "A": "0,10 mol/L, porque el vaso tiene solo la quinta parte de la mezcla.",
+      "B": "0,05 mol/L, porque en el vaso hay 0,05 mol de azúcar.",
+      "C": "0,50 mol/L, porque tiene la quinta parte del azúcar en la quinta parte del volumen.",
+      "D": "2,5 mol/L, porque se dividen los 0,25 mol entre los 0,100 L del vaso."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+      "B": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La mezcla es homogénea: el vaso tiene 0,05 mol en 0,100 L, y 0,05 / 0,100 = 0,50 mol/L, igual que la mezcla completa. Servir una porción cambia la cantidad de soluto, no la concentración.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     },
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "decision": "aprobar",
+     "justificacion": "Cálculo correcto: el vaso tiene 0,05 mol en 0,100 L, 0,50 mol/L, igual que la jarra. La clave C es la única correcta. A (creer que la porción diluye) y B (moles por molaridad) son errores reales y ambos caben en la dificultad 1, cuyas señales los describen; que compartan dificultad no es un error. D queda sin mapear, lo que es válido.",
+     "evidencia": [
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "Sus señales incluyen creer que al servir una porción la concentración baja y escribir moles en lugar de mol/L."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,25 mol / 0,500 L = 0,50 mol/L; 0,05 mol / 0,100 L = 0,50 mol/L: la concentración es intensiva."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "decision": "corregir",
+     "justificacion": "La clave C (22 palabras) es mucho más larga que las otras (11 a 14) y cierra con «la proporción es la misma», que la delata. La acorto con el mismo argumento. Además, «500 mL de agua con azúcar» puede leerse como volumen de agua; aclaro que son 500 mL de disolución, como en los ítems de concentración. Clave y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09 (opciones)",
+       "cita": "A 13, B 11, C 22 y D 14 palabras"
+      },
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/comprobacion-G09 (enunciado)",
+       "cita": "«hasta completar 200 mL de disolución»"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Disuelves 0,25 mol de azúcar en agua hasta tener 500 mL de disolución. Luego sirves un vaso de 100 mL de esa disolución. ¿Qué molaridad tiene el vaso y por qué?",
+      "opciones": {
+       "A": "0,10 mol/L, porque el vaso tiene solo la quinta parte de la mezcla.",
+       "B": "0,05 mol/L, porque en el vaso hay 0,05 mol de azúcar.",
+       "C": "0,50 mol/L, porque tiene la quinta parte del azúcar en la quinta parte del volumen.",
+       "D": "2,5 mol/L, porque se dividen los 0,25 mol entre los 0,100 L del vaso."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "evalua": [
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Preparaste dos frescos de tamarindo por separado, con el mismo tipo de azúcar: uno en una jarra y otro en un vaso. La jarra tiene 0,50 mol de azúcar en 2,0 L de fresco, y el vaso, 0,15 mol de azúcar en 0,25 L. ¿Cuál fresco está más concentrado?",
+     "opciones": {
+      "A": "El de la jarra, porque tiene más moles de azúcar.",
+      "B": "El del vaso, porque tiene más azúcar por cada litro de fresco.",
+      "C": "Están igual de concentrados, porque los dos tienen azúcar disuelta en agua.",
+      "D": "El de la jarra, porque tiene más volumen de fresco."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Hay que dividir los moles entre el volumen: la jarra tiene 0,50 / 2,0 = 0,25 mol/L y el vaso, 0,15 / 0,25 = 0,60 mol/L. El vaso tiene menos azúcar en total, pero más por cada litro.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     },
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+     "decision": "aprobar",
+     "justificacion": "Valores correctos: A = 0,25 mol/L y B = 0,60 mol/L; la clave B es la única correcta. El distractor A (más moles, más concentrada) corresponde a la dificultad 1 y es una confusión real entre cantidad de soluto y concentración. C y D son plausibles sin mapear. El dato de B es un fresco muy dulce pero posible.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,50 / 2,0 = 0,25 mol/L; 0,15 / 0,25 = 0,60 mol/L."
+      },
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "Cree que la disolución con más soluto es la más concentrada, sin dividir entre el volumen."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+     "decision": "corregir",
+     "justificacion": "Tres trampas de forma: «con el mismo azúcar» puede leerse como la misma cantidad; quien viene del ítem del fresco servido puede creer que el vaso salió de la jarra; y «jarra A» y «vaso B» se confunden con las letras de las opciones. Aclaro que son dos frescos preparados por separado y quito las letras. Datos, clave y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09 (enunciado)",
+       "cita": "«dos frescos de tamarindo con el mismo azúcar. La jarra A… el vaso B»"
+      },
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/sondeo-2-G09",
+       "cita": "el vaso servido de la jarra tiene la misma concentración"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Preparaste dos frescos de tamarindo por separado, con el mismo tipo de azúcar: uno en una jarra y otro en un vaso. La jarra tiene 0,50 mol de azúcar en 2,0 L de fresco, y el vaso, 0,15 mol de azúcar en 0,25 L. ¿Cuál fresco está más concentrado?",
+      "opciones": {
+       "A": "El de la jarra, porque tiene más moles de azúcar.",
+       "B": "El del vaso, porque tiene más azúcar por cada litro de fresco.",
+       "C": "Están igual de concentrados, porque los dos tienen azúcar disuelta en agua.",
+       "D": "El de la jarra, porque tiene más volumen de fresco."
+      },
+      "retroalimentacion": "Hay que dividir los moles entre el volumen: la jarra tiene 0,50 / 2,0 = 0,25 mol/L y el vaso, 0,15 / 0,25 = 0,60 mol/L. El vaso tiene menos azúcar en total, pero más por cada litro."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "evalua": [
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Se prepararon cuatro disoluciones de sal (NaCl). P: 0,10 mol en 0,50 L. Q: 0,20 mol en 1,0 L. R: 0,10 mol en 0,25 L. S: 0,40 mol en 0,50 L. ¿Qué dos disoluciones tienen la misma molaridad?",
+     "opciones": {
+      "A": "P y R",
+      "B": "P y S",
+      "C": "P y Q",
+      "D": "Q y S"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "P tiene 0,10 / 0,50 = 0,20 mol/L y Q tiene 0,20 / 1,0 = 0,20 mol/L. Tener los mismos moles, como P y R, no basta: también importa el volumen.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     },
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+     "decision": "aprobar",
+     "justificacion": "P = 0,20, Q = 0,20, R = 0,40 y S = 0,80 mol/L: solo P y Q coinciden, así que la clave C es única. El distractor A (mismos moles) mapea bien a la dificultad 1. Cambia la habilidad respecto del sondeo 1, como pide la ranura. Detalle de redacción, no de ciencia: dice «una tabla» y los datos van en el texto.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,10/0,50 = 0,20; 0,20/1,0 = 0,20; 0,10/0,25 = 0,40; 0,40/0,50 = 0,80 mol/L."
+      },
+      {
+       "fuente": "src/goes_science_kg/aprendizaje/pedagogia.py (_ranuras_de_base)",
+       "cita": "El sondeo 2 debe usar otra habilidad que el sondeo 1 para confirmar la hipótesis."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+     "decision": "corregir",
+     "justificacion": "El enunciado dice «una tabla registra», pero no hay tabla: los datos van en el texto. Un estudiante con lectura lenta o con lector de pantalla puede buscar una tabla que no existe. Cambio solo esa frase. Las opciones son breves y homogéneas; datos, clave y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09 (enunciado)",
+       "cita": "«Una tabla registra cuatro disoluciones…» seguido de los datos en línea"
+      },
+      {
+       "fuente": "revisión experto-quimica, ronda 1",
+       "cita": "P = 0,20, Q = 0,20, R = 0,40 y S = 0,80 mol/L: solo P y Q coinciden, así que la clave C es única. El distractor A (mismos moles) mapea bien a la dificultad 1. C"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Se prepararon cuatro disoluciones de sal (NaCl). P: 0,10 mol en 0,50 L. Q: 0,20 mol en 1,0 L. R: 0,10 mol en 0,25 L. S: 0,40 mol en 0,50 L. ¿Qué dos disoluciones tienen la misma molaridad?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/constante-de-equilibrio/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/constante-de-equilibrio/G09",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/constante-de-equilibrio",
+     "grados": [
+      9
+     ],
+     "titulo": "Cómo se escribe la constante de equilibrio",
+     "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio; K lo resume. Arriba van las concentraciones de equilibrio de productos; abajo, las de reactivos. Cada una lleva su coeficiente como exponente, no como factor. Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos.",
+     "ejemplo": "Para N₂(g) + 3H₂(g) ⇌ 2NH₃(g): K = [NH₃]² / ([N₂][H₂]³). Para CaCO₃(s) ⇌ CaO(s) + CO₂(g): K = [CO₂], porque los sólidos no se escriben.",
+     "practica": "ACT:quimica/constante-de-equilibrio/practica-G09",
+     "comprobacion": "ACT:quimica/constante-de-equilibrio/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación: escribe K para una ecuación nueva, con los coeficientes como exponentes, y obtiene su valor.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/constante-de-equilibrio",
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+     "decision": "corregir",
+     "justificacion": "Decir que «el agua líquida no se escribe» siembra una regla que habrá que desaprender: el agua se omite cuando es disolvente o líquido puro, no siempre (en la esterificación sí entra en K). Se generaliza a sólidos y líquidos puros, como hace 12.12 en 10.°, y se aclara que K usa concentraciones de equilibrio. Se cambia «un estado que ya no cambia», que refuerza la idea de equilibrio estático.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.12",
+       "cita": "Escribe la constante de equilibrios heterogéneos excluyendo sólidos y líquidos puros."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En ácido + alcohol ⇌ éster + agua, el agua es producto y se incluye en Kc."
+      },
+      {
+       "fuente": "DIF:quimica/equilibrio-dinamico/1",
+       "cita": "Creer que en el equilibrio ya no pasa nada es la idea previa que se quiere evitar."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio, y K lo resume: concentraciones de equilibrio de productos arriba y de reactivos abajo, cada una elevada a su coeficiente (es exponente, no multiplica). Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+     "decision": "corregir",
+     "justificacion": "Exacta tras la revisión del experto, pero la segunda oración tiene 37 palabras con tres ideas anidadas, y «(es exponente, no multiplica)» no dice cuál es el sujeto. La divido en tres oraciones cortas y digo «cada una lleva su coeficiente como exponente, no como factor». Las reglas son las mismas; quedan 80 palabras.",
+     "evidencia": [
+      {
+       "fuente": "MT:quimica/constante-de-equilibrio/G09 (explicación)",
+       "cita": "«y K lo resume: concentraciones de equilibrio de productos arriba y de reactivos abajo, cada una elevada a su coeficiente (es exponente, no multiplica)»"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "una idea por oración baja la carga cognitiva al aprender una notación nueva"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio; K lo resume. Arriba van las concentraciones de equilibrio de productos; abajo, las de reactivos. Cada una lleva su coeficiente como exponente, no como factor. Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    }
+   ]
+  }
+ ]
+}

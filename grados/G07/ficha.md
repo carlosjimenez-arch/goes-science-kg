@@ -11,7 +11,7 @@
 | Física | 3 |
 | Química | 13 |
 
-- **82 conceptos**: 42 nuevos en este grado, 40 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **81 conceptos**: 40 nuevos en este grado, 41 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: PISA25 24, T8_27 27.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 125.
 
@@ -42,8 +42,8 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
 | Herencia, variación y evolución | 13 | 11 | Biología | 2. Genética y evolución |
-| Biodiversidad, recursos y fuentes de energía | 12 | 15 | Física, Ciencias de la Tierra y del Espacio, Biología, Química | 6. Ambiente y energía; 3. Biodiversidad; 4. Ecología |
 | Interacciones ecológicas y estructura de ecosistemas | 12 | 8 | Biología | 4. Ecología |
+| Transformaciones de la energía · Combustibles fósiles: formación y uso · Recursos naturales renovables y no renovables | 11 | 15 | Física, Ciencias de la Tierra y del Espacio, Biología, Química | 6. Ambiente y energía; 3. Biodiversidad; 4. Ecología |
 | Compuestos inorgánicos, reacciones y calidad del agua | 9 | 15 | Química, Biología, Ciencias de la Tierra y del Espacio | 1. Compuestos inorgánicos; 5. Recurso hídrico |
 | ADN: estructura y replicación | 7 | 8 | Biología | 2. Genética y evolución |
 | Recurso hídrico y tiempo atmosférico | 7 | 12 | Ciencias de la Tierra y del Espacio | 5. Recurso hídrico |
@@ -55,7 +55,6 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 ### Qué se aprende en cada bloque
 
 - **Herencia, variación y evolución.** A partir de genes, alelos y las leyes de Mendel, los estudiantes analizan genotipo, fenotipo, mutaciones y enfermedades hereditarias, y luego la variabilidad de poblaciones, la selección natural y la resistencia bacteriana. Bloque coherente que conecta genética y microevolución; incluye una aplicación de mejoramiento genético que exige dominio previo de los conceptos de herencia.
-- **Biodiversidad, recursos y fuentes de energía.** Los estudiantes cuantifican la biodiversidad, reconocen usos de organismos locales y estudian los recursos energéticos: combustibles, energías renovables, eficiencia y generación de electricidad, construyendo dispositivos. El bloque mezcla biología, física, química y ciencias de la Tierra alrededor del aprovechamiento de recursos; es rico para un enfoque integrado, pero requiere un hilo conductor claro.
 - **Interacciones ecológicas y estructura de ecosistemas.** Los estudiantes identifican interacciones como competencia, depredación y simbiosis, definen especie y población, describen comunidades, la estructura de los ecosistemas, perturbaciones y sucesión, y los criterios para clasificar biomas. Los conceptos de redes tróficas y flujo de energía dan unidad al bloque. Es coherente y propio de biología; retoma ideas de cuarto grado con mayor profundidad.
 - **Compuestos inorgánicos, reacciones y calidad del agua.** Los estudiantes identifican óxidos, hidruros, hidrácidos, sales, hidróxidos y oxácidos en productos cotidianos, los nombran, formulan las ecuaciones que los producen y las balancean; luego miden parámetros fisicoquímicos y biológicos de la calidad del agua. El bloque es extenso y repetitivo, pues la misma secuencia se aplica a cada función química; el agua podría aprovecharse más como contexto integrador.
 - **ADN: estructura y replicación.** Los estudiantes indagan las funciones del material genético, extraen y tiñen ácidos nucleicos y simulan la replicación del ADN, relacionándola con cromosomas y mutaciones. Se retoma lo visto en sexto grado con mayor profundidad. Bloque coherente; la síntesis de proteínas aparece como concepto, pero no hay temas que la trabajen directamente.
@@ -128,7 +127,6 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Indicadores ácido-base | 9 | ENG 6.0, JP 5.0 |
 | Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 |
 | Evidencias de la evolución | 9 | AU 9.0, CO 2, ENG 4.0, JP 8.0 |
-| Carga eléctrica y electrización | 9 | CO 6.0, ENG 6.0, JP 7.0, UY 5.0 |
 | Condiciones de equilibrio estático | 8 | AU 6.0, ENG 6.0, JP 6.0 |
 | Fuerza neta y diagrama de cuerpo libre | 8 | AU 6.0, CO 4.5, ENG 6.0, JP 6.0 |
 | Fuerzas mecánicas comunes | 8 | ENG 6.0, SG 6.0 |

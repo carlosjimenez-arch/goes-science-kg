@@ -622,23 +622,24 @@ app.add_typer(panel_app, name="panel")
 
 
 @panel_app.command("preparar")
-def panel_preparar(ronda: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma")) -> None:
+def panel_preparar(ronda: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma"),
+                   serie: str = typer.Option("", help="lotes aparte para un grupo de tipos")) -> None:
     """Lotes de la ronda para cada rol del panel → data/interim/panel/lotes/."""
     from goes_science_kg import panel
 
     lista = tipos.split(",") if tipos else None
     if ronda == 1:
         typer.echo(f"{panel.iniciar(lista)} expedientes nuevos en el estado")
-    for p in panel.preparar(ronda, lista):
+    for p in panel.preparar(ronda, lista, serie):
         typer.echo(f"→ {p}")
 
 
 @panel_app.command("consolidar")
-def panel_consolidar(ronda: int = typer.Option(...)) -> None:
+def panel_consolidar(ronda: int = typer.Option(...), serie: str = typer.Option("")) -> None:
     """Valida las salidas de la ronda y avanza cada expediente (unanimidad, deliberación o secuencia)."""
     from goes_science_kg import panel
 
-    typer.echo(panel.consolidar(ronda))
+    typer.echo(panel.consolidar(ronda, serie))
     typer.echo(json.dumps(panel.resumen(), ensure_ascii=False, indent=1))
 
 

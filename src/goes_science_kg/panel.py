@@ -39,7 +39,7 @@ DIR = "data/interim/panel"
 VERSION = "panel-v1"
 PESO_MAX_LOTE = 36   # carga de un lote; un expediente pesa según cuánto hay que leer y verificar
 PESO = {"asignacion": 0.3, "cambio_asignatura": 0.5, "decision": 1, "hallazgo": 1, "propuesta": 1, "piloto": 2,
-        "contenido": 1.2}
+        "contenido": 1.2, "clase_incierta": 1.2}
 CONFIANZAS = ("alta", "media", "baja")
 REQUIERE_TEXTO = {"rechazar": "alternativa", "matizar": "texto", "no_respaldar": "alternativa", "adaptar": "texto",
                   "recomendar": "recomendacion"}
@@ -241,10 +241,48 @@ def _exp_piloto() -> dict[str, dict]:
             for d in config()["piloto"]}
 
 
+def _exp_inciertos() -> dict[str, dict]:
+    """Conceptos «inciertos» del contraste de 2.°–8.° (las dos lecturas dan clases distintas) sin revisión experta."""
+    from goes_science_kg.ingesta.mallas import extraer
+    from goes_science_kg.internacional import tramo
+    from goes_science_kg.internacional.consenso import objetivos
+
+    anterior = tramo.actual().clave
+    tramo.usar("2_8")
+    try:
+        objs = {o["id"]: o for o in objetivos()}
+    finally:
+        tramo.usar(anterior)
+    temas = {t.id: t for t in extraer()}
+    salida = {}
+    for c, f in sorted(_contraste("2_8").items()):
+        if f["clase"] != "incierto" or f.get("revision"):
+            continue
+        paises = {}
+        for p, d in sorted(f["paises"].items()):
+            o = next((objs[i] for i in d["objetivos"] if i in objs), None)
+            paises[p] = {"primer_grado_nucleo": d["primer_grado_nucleo"], "en_especializacion": d["en_especializacion"],
+                         **({"ejemplo": f"{o['id']} [{o['archivo'].split('/')[-1]} p. {o.get('pagina')}, SV "
+                                        f"{o['grado_sv_min']}–{o['grado_sv_max']}]: {o['texto'][:160]}"} if o else {})}
+        ids = [*f["sv_temas"], *f.get("sv_temas_texto", [])]
+        sv = [f"{t} (grado {temas[t].grado}, {temas[t].archivo}, hoja «{temas[t].hoja}», fila {temas[t].fila}): "
+              f"{temas[t].contenido}. {temas[t].indicador}"[:300] for t in ids if t in temas][:6]
+        salida[f"INC:{c}"] = {
+            "tipo": "clase_incierta", "titulo": f"{f['nombre']} ({c})", "roles": [_rol(c)],
+            "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase "
+                        "(regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+            "datos": {"concepto": _concepto(c), "lecturas": f["lecturas"], "alertas": f.get("alertas"),
+                      "v2_primer_grado": {"amplio": f["sv_primer_grado"], "estricto": f["sv_primer_grado_solido"]},
+                      "consenso": {"grado_amplio": f["grado_consenso"], "grado_estricto": f["grado_consenso_solido"],
+                                   "mediana": f["mediana_primer_grado_nucleo"], "n_paises": f["n_nucleo"]},
+                      "temas_v2": sv, "paises": paises}}
+    return salida
+
+
 def expedientes() -> dict[str, dict]:
     """Todos los expedientes que el panel puede dictaminar, por id."""
     return {**_exp_decisiones(), **_exp_asignaciones(), **_exp_cambios_asignatura(), **_exp_contenido(),
-            **_exp_hallazgos(), **_exp_propuestas(), **_exp_piloto()}
+            **_exp_hallazgos(), **_exp_propuestas(), **_exp_piloto(), **_exp_inciertos()}
 
 
 # -- estado ---------------------------------------------------------------------------------------------------------
@@ -289,10 +327,10 @@ def iniciar(tipos: list[str] | None = None) -> int:
     return len(nuevos)
 
 
-def preparar(ronda: int, tipos: list[str] | None = None) -> list[str]:
+def preparar(ronda: int, tipos: list[str] | None = None, serie: str = "") -> list[str]:
     """Escribe los lotes de la ronda con los expedientes del estado (por rol, partidos por peso: PESO_MAX_LOTE). Desde
     la ronda 2, cada expediente lleva los dictámenes anteriores (deliberación) o la versión vigente del elemento
-    (contenido). Devuelve las rutas escritas."""
+    (contenido). `serie` separa los lotes de un grupo de tipos que corre aparte (p. ej. «inc»). Devuelve las rutas."""
     estado = cargar_estado()
     por_rol: dict[str, list[dict]] = defaultdict(list)
     for i, x in sorted(estado.items()):
@@ -322,7 +360,7 @@ def preparar(ronda: int, tipos: list[str] | None = None) -> list[str]:
                 partes.append([])
             partes[-1].append(exp)
         for k, parte in enumerate(partes, start=1):
-            nombre = f"r{ronda}_{rol}" + (f"_{k}" if len(partes) > 1 else "")
+            nombre = f"r{ronda}{'-' + serie if serie else ''}_{rol}" + (f"_{k}" if len(partes) > 1 else "")
             lote = {"lote": nombre, "ronda": ronda, "rol": rol, "version": VERSION,
                     "instrucciones": ["prompts/panel_dictaminar.md", f".claude/agents/{rol}.md"],
                     "expedientes": parte}
@@ -401,12 +439,12 @@ def _clave_decision(d: dict) -> tuple:
     return (d["decision"], tuple(sorted(d.get("asignado_a") or [])))
 
 
-def consolidar(ronda: int) -> dict:
+def consolidar(ronda: int, serie: str = "") -> dict:
     """Lee las salidas de la ronda (todas válidas o nada), agrega los dictámenes al estado y avanza cada expediente.
     Devuelve los conteos por estado."""
     estado = cargar_estado()
     nuevos = []
-    for p_lote in sorted(_dir_lotes().glob(f"lote_r{ronda}_*.json")):
+    for p_lote in sorted(_dir_lotes().glob(f"lote_r{ronda}{'-' + serie if serie else ''}_*.json")):
         p_sal = p_lote.with_name(p_lote.name.replace("lote_", "salida_", 1))
         if not p_sal.exists():
             raise ValueError(f"falta {p_sal.name}")
@@ -417,9 +455,8 @@ def consolidar(ronda: int) -> dict:
     for d in nuevos:
         x = estado[d["id"]]
         x["dictamenes"] = [v for v in x["dictamenes"] if not (v["ronda"] == ronda and v["rol"] == d["rol"])] + [d]
-    for x in estado.values():
-        if any(d["ronda"] == ronda for d in x["dictamenes"]):
-            _avanzar(x, ronda)
+    for i in sorted({d["id"] for d in nuevos}):   # solo lo que recibió dictámenes en esta llamada (y esta serie)
+        _avanzar(estado[i], ronda)
     _guardar_estado(estado)
     return dict(Counter(x["estado"] for x in estado.values()))
 
@@ -498,8 +535,14 @@ def aplicar() -> dict:
 
     capa_ped = {t: {e["id"]: e for e in json.loads((directorio() / a).read_text(encoding="utf-8"))}
                 for t, a in ARCHIVOS.items()}
+    clases_panel: list[dict] = []
     for i, x in sorted(estado.items()):
         if x["estado"] != "resuelta" or x.get("aplicado") or x["tipo"] in ("hallazgo", "propuesta", "piloto"):
+            continue
+        if x["tipo"] == "clase_incierta":
+            clases_panel.append(x)
+            x["aplicado"] = date.today().isoformat()
+            hechos[x["tipo"]] += 1
             continue
         reg = _registro(x)
         if x["tipo"] == "decision":
@@ -540,6 +583,22 @@ def aplicar() -> dict:
             rd._guardar(t, registros)
     for p, datos in coherencia.items():
         p.write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    if clases_panel:   # clases del contraste de 2.°–8.°: entran como revisión experta del panel (ganan sobre la regla)
+        p = ruta("data/interim/internacional_2_8/revisiones.json")
+        revs = json.loads(p.read_text(encoding="utf-8"))
+        ya = {r["concepto"] for r in revs}
+        for x in clases_panel:
+            c = x["datos"]["concepto"]["id"]
+            if c in ya:
+                continue
+            d = x["dictamenes"][-1]
+            revs.append({"concepto": c, "nombre": x["datos"]["concepto"]["nombre"],
+                         "clase": x["resolucion"]["decision"], "clase_ia": "incierto",
+                         "justificacion": d["justificacion"],
+                         "evidencia": d["evidencia"], "dictamenes_panel": [_registro(x)],
+                         "revisado_por": f"panel de expertos IA ({d['rol']}, {d['fecha']}; dictamen, pendiente de "
+                                         "confirmar)"})
+        p.write_text(json.dumps(revs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     for t, archivo in ARCHIVOS.items():
         (directorio() / archivo).write_text(json.dumps(sorted(capa_ped[t].values(), key=lambda e: e["id"]),
                                                        ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -582,13 +641,14 @@ def informe() -> str:
                  ("asignacion", "Asignaciones de la división de «configuración electrónica»"),
                  ("hallazgo", "Hallazgos del contraste internacional"),
                  ("propuesta", "Acciones de las propuestas que la V2 no adoptó"),
+                 ("clase_incierta", "Conceptos inciertos del contraste de 2.°–8.°"),
                  ("contenido", "Capa pedagógica"), ("piloto", "Asesoría para el piloto del tutor")]
     for t, titulo in secciones:
         filas = por_tipo.get(t, [])
         if not filas:
             continue
         md += ["", f"## {titulo}", ""]
-        if t in ("asignacion", "contenido", "cambio_asignatura"):
+        if t in ("asignacion", "contenido", "cambio_asignatura", "clase_incierta"):
             cambios = [(i, x) for i, x in filas if x["estado"] == "resuelta" and x["resolucion"]["decision"]
                        in ("cambiar", "corregir", "rechazar")]
             md.append(f"{sum(x['estado'] == 'resuelta' for _, x in filas)} resueltos; {len(cambios)} con cambios o "

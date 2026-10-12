@@ -10,7 +10,7 @@
 | Ciencias de la Tierra y del Espacio | 20 |
 | Física | 15 |
 
-- **64 conceptos**: 36 nuevos en este grado, 27 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **63 conceptos**: 36 nuevos en este grado, 27 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T4_27 21.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 124.
 
@@ -28,11 +28,11 @@
 | Sistema circulatorio | Biología | 3 |
 | La Luna: características y origen | Ciencias de la Tierra y del Espacio | 3 |
 | Satélites, asteroides y cometas | Ciencias de la Tierra y del Espacio | 3 |
+| Agricultura y seguridad alimentaria | Biología | 2 |
 | Factores bióticos y abióticos | Biología | 2 |
 | Hábitat y ecosistemas comunes | Biología | 2 |
 | Necesidades de los seres vivos | Biología | 2 |
 | Niveles de organización de los seres vivos | Biología | 2 |
-| Reproducción humana y pubertad | Biología | 2 |
 
 ## Bloques temáticos del grado
 
@@ -40,12 +40,12 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Ecosistemas, interacciones y cadenas alimentarias | 13 | 9 | Biología, Ciencias de la Tierra y del Espacio | 3. Naturaleza y sus interacciones. |
+| Hábitat y ecosistemas comunes · Necesidades de los seres vivos · Agricultura y seguridad alimentaria | 13 | 10 | Biología, Ciencias de la Tierra y del Espacio | 3. Naturaleza y sus interacciones.; 2. Nutrición. |
 | Nutrición, alimentación y salud del cuerpo | 7 | 14 | Biología | 2. Nutrición.; 6. Cuerpo humano: movimiento e interacciones.; 1. Máquinas y energía. |
 | Sistemas del cuerpo humano | 7 | 13 | Biología | 5. Cuerpo humano: materia y energía.; 6. Cuerpo humano: movimiento e interacciones.; 3. Naturaleza y sus interacciones. |
 | Fenómenos naturales y riesgo en El Salvador | 7 | 7 | Ciencias de la Tierra y del Espacio | 3. Naturaleza y sus interacciones. |
 | El sistema solar y la Luna | 7 | 8 | Ciencias de la Tierra y del Espacio | 4. Sistema solar. |
-| Cultivos, huertos y alimentos del entorno | 6 | 4 | Biología, Ciencias de la Tierra y del Espacio | 2. Nutrición.; 3. Naturaleza y sus interacciones. |
+| Competencia por recursos · Productores, consumidores y descomponedores · Redes tróficas | 5 | 2 | Biología | 3. Naturaleza y sus interacciones. |
 | Luz, sombras, fases lunares y eclipses | 5 | 3 | Física, Ciencias de la Tierra y del Espacio | 4. Sistema solar.; 1. Máquinas y energía. |
 | Energía en los aparatos cotidianos | 3 | 3 | Física | 1. Máquinas y energía. |
 | Transferencia de calor y aislantes térmicos | 2 | 1 | Física | 1. Máquinas y energía. |
@@ -54,12 +54,10 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 ### Qué se aprende en cada bloque
 
-- **Ecosistemas, interacciones y cadenas alimentarias.** Los estudiantes distinguen factores bióticos y abióticos, describen niveles de organización ecológica, hábitat y nicho, y representan cadenas y redes tróficas con productores, consumidores y descomponedores. También reconocen formaciones vegetales y climas tropicales de El Salvador. Es un bloque denso, con trece conceptos; algunos, como exclusión competitiva o simbiosis, podrían exceder la profundidad esperada en 4.°.
 - **Nutrición, alimentación y salud del cuerpo.** Los estudiantes distinguen alimento y nutriente, clasifican nutrientes y grupos de alimentos, comparan valores nutritivos, elaboran menús y miden variables del estado nutricional. También estudian la estructura y cuidado del sistema reproductor. El núcleo de nutrición es sólido y aplicado, pero el bloque mezcla reproducción y energía en aparatos, temas que conviene separar.
 - **Sistemas del cuerpo humano.** Los estudiantes describen funciones y cuidados de los sistemas digestivo, respiratorio, circulatorio, excretor y nervioso, construyen modelos y experimentan con los sentidos. El sistema circulatorio se presenta como enlace entre los demás. Observación curricular: el enfoque integrador es una fortaleza; incluye además un tema de niveles de organización ecológica que encaja mejor en el bloque de ecosistemas.
 - **Fenómenos naturales y riesgo en El Salvador.** Los estudiantes indagan fenómenos hidrometeorológicos y geológicos, explican ciclones y tormentas, simulan fenómenos geológicos y recopilan eventos históricos con impacto en el país. Todo se orienta a reconocer riesgos y amenazas locales. Observación curricular: retoma y profundiza el bloque de amenazas de segundo grado, mostrando una progresión coherente y muy pertinente al contexto nacional.
 - **El sistema solar y la Luna.** Los estudiantes comparan modelos del sistema solar, modelan la estructura del Sol, explican las fases de la Luna y los eclipses y caracterizan planetas, satélites y asteroides. Observación curricular: es un bloque amplio y bien enlazado alrededor de la interacción Sol-Tierra-Luna; algunos temas, como las hipótesis sobre el origen lunar, podrían priorizarse menos para ganar profundidad.
-- **Cultivos, huertos y alimentos del entorno.** Los estudiantes practican técnicas básicas de huerto, clasifican cultivos según su propósito e intensidad y exploran el origen de los alimentos del hogar. Se relacionan necesidades de las plantas, uso del suelo y agricultura. Es un bloque práctico y contextualizado; tiene pocos temas propios y podría articularse con el bloque de nutrición para dar continuidad.
 - **Luz, sombras, fases lunares y eclipses.** Los estudiantes experimentan con la formación de sombras, el reflejo de la luz en un espejo y la separación de la luz blanca en colores, y explican las fases de la Luna y los eclipses según cómo se alinean el Sol, la Tierra y la Luna. El bloque une física y astronomía con acierto: la propagación de la luz y las sombras dan la base para comprender los eclipses.
 - **Energía en los aparatos cotidianos.** Los estudiantes identifican fuentes de energía en objetos tecnológicos, relacionan la forma de energía de un dispositivo con su utilidad y calculan transformaciones en electrodomésticos y en el cuerpo humano. Observación curricular: retoma la energía de segundo grado con un salto hacia el cálculo; conviene verificar que el nivel cuantitativo sea alcanzable en cuarto grado.
 - **Transferencia de calor y aislantes térmicos.** Los estudiantes experimentan con el calor que pasa de un objeto caliente a uno frío cuando se tocan y comparan materiales cotidianos que conducen o aíslan el calor. El bloque es pequeño y enfocado, y da continuidad al calentamiento y enfriamiento de 3.°; sin embargo, la actividad se centra en la conducción, mientras que convección y radiación quedan como conceptos sin tema que las desarrolle.
@@ -90,8 +88,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 
 | Concepto del grado | Prerrequisito | Estado | Primer grado SV | Confianza |
 |---|---|---|---|---|
-| Biotecnología vegetal y agroindustria | Ingeniería genética y ADN recombinante | posterior | 9 | media |
-| Biotecnología vegetal y agroindustria | Reproducción sexual de las plantas con flor | posterior | 6 | media |
+| Agricultura y seguridad alimentaria | Biotecnología vegetal y agroindustria | posterior | 6 | media |
 | Energía de los alimentos y balance energético | Respiración celular | posterior | 6 | media |
 | Niveles de organización de los seres vivos | La célula como unidad de la vida | posterior | 6 | alta |
 | Ciclones tropicales y tormentas | Calentamiento desigual de la Tierra y circulación atmosférica | posterior | 8 | media |
@@ -105,7 +102,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Volcanes: estructura, tipos y productos | Origen del magma y vulcanismo | posterior | 5 | media |
 | Conducción, convección y radiación | Modelo de partículas de la materia | posterior | 6 | media |
 
-Además, 24 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 23 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 

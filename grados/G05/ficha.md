@@ -8,10 +8,10 @@
 |---|---|
 | Biología | 1 |
 | Ciencias de la Tierra y del Espacio | 29 |
-| Física | 23 |
-| Química | 18 |
+| Física | 24 |
+| Química | 17 |
 
-- **64 conceptos**: 49 nuevos en este grado, 13 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **64 conceptos**: 51 nuevos en este grado, 13 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T8_27 18.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 132.
 
@@ -27,13 +27,13 @@
 | Tiempo geológico y datación | Ciencias de la Tierra y del Espacio | 3 |
 | Uso del suelo y su degradación | Ciencias de la Tierra y del Espacio | 3 |
 | Posición, desplazamiento y trayectoria | Física | 3 |
-| Iones | Química | 3 |
 | Organización de la tabla periódica | Química | 3 |
 | Ciclo de vida de las estrellas | Ciencias de la Tierra y del Espacio | 2 |
 | Galaxias y escala del universo | Ciencias de la Tierra y del Espacio | 2 |
 | Impacto de las actividades humanas en los recursos | Ciencias de la Tierra y del Espacio | 2 |
 | Límites de placas: convergentes, divergentes y transformantes | Ciencias de la Tierra y del Espacio | 2 |
 | Meteorización | Ciencias de la Tierra y del Espacio | 2 |
+| Precursores, monitoreo y alerta de sismos y erupciones | Ciencias de la Tierra y del Espacio | 2 |
 
 ## Bloques temáticos del grado
 
@@ -41,17 +41,17 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Estructura atómica y tabla periódica | 15 | 17 | Química, Física | 3. Estructura atómica.; 4. Tabla periódica. |
 | Movimiento, fuerzas y energía mecánica | 11 | 12 | Física | 2. Mecánica. |
+| Átomo y partículas subatómicas · Distribución electrónica por niveles (modelo de capas) · Configuración electrónica por orbitales | 11 | 14 | Química, Física | 3. Estructura atómica.; 4. Tabla periódica. |
 | Universo, sistema solar y Tierra primitiva | 10 | 9 | Ciencias de la Tierra y del Espacio, Física | 5. Ciencias del espacio.; 6. Ciencias de la Tierra. |
 | Tectónica, sismos y volcanes en El Salvador | 9 | 7 | Ciencias de la Tierra y del Espacio | 6. Ciencias de la Tierra. |
 | El suelo: formación, erosión y uso | 7 | 8 | Ciencias de la Tierra y del Espacio, Química | 6. Ciencias de la Tierra. |
 | Tiempo geológico y fósiles | 5 | 6 | Ciencias de la Tierra y del Espacio, Biología | 6. Ciencias de la Tierra.; 5. Ciencias del espacio. |
+| Moléculas y fórmulas químicas · Enlace iónico · Iones | 5 | 4 | Química | 4. Tabla periódica.; 3. Estructura atómica. |
 | Medición, unidades y magnitudes físicas | 4 | 10 | Física | 1. Magnitudes físicas.; 2. Mecánica. |
 
 ### Qué se aprende en cada bloque
 
-- **Estructura atómica y tabla periódica.** Los estudiantes reconstruyen la historia de los modelos atómicos, determinan números atómico y másico, forman iones, estudian isótopos y configuraciones electrónicas y relacionan la tabla periódica con propiedades y fórmulas químicas. Observación curricular: bloque muy coherente pero denso y abstracto; números cuánticos y configuraciones electrónicas son contenidos de nivel avanzado para quinto grado.
 - **Movimiento, fuerzas y energía mecánica.** Los estudiantes describen posición, desplazamiento y trayectoria, diferencian rapidez y velocidad, experimentan la inercia y la aceleración por una fuerza neta, y relacionan el movimiento con la energía cinética y potencial. El bloque está bien encadenado de la cinemática a la energía, pero concentra muchos conceptos formales de física en quinto grado.
 - **Universo, sistema solar y Tierra primitiva.** Los estudiantes exploran el Big Bang, las escalas astronómicas, tipos de galaxias, nebulosas y evolución estelar, y modelan la formación del sistema solar y de la corteza terrestre. Incluyen el campo magnético y la deriva continental. Observación curricular: hilo narrativo claro del universo a la Tierra, aunque la deriva continental quedaría mejor junto a la tectónica de placas.
 - **Tectónica, sismos y volcanes en El Salvador.** Los estudiantes identifican las placas que afectan el istmo centroamericano, relacionan la tectónica con sismos y vulcanismo, distinguen magnitud e intensidad y conocen el monitoreo volcánico y las acciones ante una erupción. Observación curricular: bloque coherente y muy pertinente al país; retoma la gestión de riesgo de segundo grado con mayor profundidad explicativa.
@@ -125,7 +125,6 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
 | Flotación y hundimiento | 6 | CO 4.5, ENG 6.0, SG 3.0, UY 4.0 |
-| Agricultura y seguridad alimentaria | 7 | ENG 6.0, UY 3.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
 | Electroimanes y efecto magnético de la corriente | 6 | ENG 6.0, JP 4.0, SG 3.0, UY 5.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |

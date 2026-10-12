@@ -1,0 +1,1859 @@
+{
+ "lote": "r1-inc_experto-quimica",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Aminoácidos y estructura de las proteínas (CON:quimica/aminoacidos-y-proteinas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 3): Biomoléculas.. 5.1. Identifica los principales grupos de biomoléculas por sus características.",
+     "G10-BIO-U1-1.7 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 9): Proteínas. 1.7. Reconoce la estructura general de los aminoácidos.",
+     "G10-BIO-U1-1.9 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 11): Proteínas. 1.9. Clasifica a las proteínas empleando diferentes criterios.",
+     "G10-BIO-U2-2.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 16): Información molecular. 2.3. Reconoce el código genético y la nomenclatura de aminoácidos como formas de representar información molecular.",
+     "G11-QUI-U12-12.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 96): Química de los aminoácidos. 12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "G11-QUI-U12-12.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 97): Estructura de las proteínas. 12.2. Relaciona cada nivel estructural de una proteína con el enlace o la interacción química que lo estabiliza: peptídico, puentes de hidrógeno, iónico, disulfuro o hidrof"
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:quimica/aminoacidos-y-proteinas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Metales, cerámicas y materiales compuestos (CON:quimica/ciencia-de-materiales)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "posterior",
+     "estricta": "tardio"
+    },
+    "alertas": {
+     "vecinos": [
+      "CON:quimica/propiedades-fisicas-de-los-materiales"
+     ]
+    },
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G10-QUI-U13-13.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 108): Elementos metálicos. 13.3. Categoriza metales de transición según sus propiedades y usos, y predice reacciones de desplazamiento con base en su actividad relativa.",
+     "G10-QUI-U5-5.14 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 54): Propiedades de las sustancias metálicas. 5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos.",
+     "G10-QUI-U7-7.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 68): Estados frontera. 7.7. Explica por qué los vidrios y los cristales líquidos presentan propiedades intermedias entre sólidos y líquidos y describe sus aplicaciones.",
+     "G10-QUI-U5-5.13 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 53): Enlace metálico. 5.13. Explica la diferencia entre conductores, semiconductores y aislantes a partir de la teoría de bandas.",
+     "G11-QUI-U1-1.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 3): Metales y cerámicas. 1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "G11-QUI-U1-1.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 4): Metales y cerámicas. 1.2. Relaciona la estructura de metales y cerámicas con sus propiedades y aplicaciones."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S4U04 [AU_Science_F-6_v9_contenido.docx p. None, SV 3–3]: Examinar propiedades de materiales naturales y fabricados (fibras, metales, vidrio, plásticos) y cómo esas propiedades determinan su uso."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p027-13 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27, SV 7–9]: Evaluar las posibilidades de aplicación del hierro, aluminio, cobre y sus aleaciones en la vida diaria, relacionándolas con sus propiedades."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-KS3-30 [ENG_NC_Science_KS3_2013.pdf p. 9, SV 5–7]: Propiedades de cerámicas, polímeros y materiales compuestos (cualitativo)."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_s1_3-p082-01 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 82, SV 6–8]: Buscar información sobre el avance en la invención de nuevos plásticos."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p033-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 33, SV 6–8]: Describir las características, procesos de fabricación simples y aplicaciones cotidianas de materiales artificiales comunes."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/ciencia-de-materiales",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Combustión (CON:quimica/combustion)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/combustion",
+     "nombre": "Combustión",
+     "definicion": "Reacción de un combustible con oxígeno que libera energía como calor y luz; puede ser completa o incompleta según los productos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": {
+     "vecinos": [
+      "CON:quimica/cambios-fisicos-y-quimicos",
+      "CON:quimica/reaccion-quimica-y-evidencias"
+     ]
+    },
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 5,
+     "grado_estricto": 6,
+     "mediana": 4.75,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G07-CIE-U6-6.5 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 7): Energías no renovables. 6.5. Elabora un dispositivo de combustión para el aprovechamiento de energías no renovables.",
+     "G07-CIE-U6-6.6 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 8): Energías no renovables. 6.6. Esquematiza el proceso general de transformación de combustibles en energía eléctrica.",
+     "G09-CIE-U7-7.7 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 7 - Magnetismo aplicado», fila 9): Principio del motor. 7.7 Compara las tecnologías del motor eléctrico y del motor de combustión interna.",
+     "G10-QUI-U9-9.2 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 78): Clasificación de las reacciones químicas. 9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la",
+     "G11-QUI-U9-9.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 79): Reacciones de los hidrocarburos. 9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S9U03 [AU_Science_7-10_v9_contenido.docx p. None, SV 8–8]: Representar el ciclo del carbono y examinar cómo combustión, fotosíntesis y respiración dependen de interacciones entre geosfera, biosfera, hidrosfera y atmósfe"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p012-02 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 12, SV 7–9]: Explicar, usando como ejemplo la fotosíntesis, la respiración y la combustión, que las reacciones químicas absorben o liberan energía."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-KS3-14 [ENG_NC_Science_KS3_2013.pdf p. 8, SV 5–7]: Reacciones de combustión, descomposición térmica, oxidación y desplazamiento."
+     },
+     "HK": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_primaria-p036-01 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 36, SV 4–4]: Conocer ejemplos de cambios reversibles, como la condensación, e irreversibles, como la combustión."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263111100000 [jp_cos_826 p. 82, SV 5–5]: Al arder materia vegetal se consume oxígeno del aire y se produce dióxido de carbono."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_primaria_56-p043-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 43, SV 4–5]: Comparar la materia antes y después de la combustión para explicar que sus propiedades cambian durante este proceso."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_secundaria_baja-p045-01 [SG_LowerSec_Science_G2G3_2024.pdf p. 45, SV 7–8]: Conocer diferentes tipos de cambios químicos: combustión, descomposición térmica, oxidación (oxidación y respiración celular) y neutralización."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p031-11 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8]: Definir la oxidación como la ganancia de oxígeno y la reducción como la pérdida de oxígeno."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/combustion",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Composición del aire y contaminantes atmosféricos (CON:quimica/composicion-del-aire-y-contaminantes)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/composicion-del-aire-y-contaminantes",
+     "nombre": "Composición del aire y contaminantes atmosféricos",
+     "definicion": "Mezcla de gases del aire; óxidos de azufre y nitrógeno y CFC la contaminan, causando lluvia ácida y daño al ozono.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": 8,
+     "mediana": 5.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G07-CIE-U6-6.13 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15): Cambio climático. 6.13. Representa los fenómenos de efecto invernadero y lluvia ácida.",
+     "G07-CIE-U5-5.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 14): Atmósfera. 5.12. Reconoce los principales parámetros que inciden en la calidad del aire.",
+     "G10-QUI-U13-13.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 111): Elementos no metálicos. 13.6. Describe las propiedades físicas y químicas de los anfígenos y explica la formación de SO₂, H₂S y lluvia ácida a partir del azufre volcánico.",
+     "G10-QUI-U6-6.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 59): El aire. 6.5. Interpreta datos de composición del aire, humedad relativa y concentración de contaminantes para valorar la calidad del aire local.",
+     "G10-BIO-U8-8.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 71): Ciclos del fósforo y del azufre. 8.5. Diferencia el ciclo sedimentario del fósforo del ciclo del azufre y explica el aporte de los volcanes salvadoreños a este último.",
+     "G11-QUI-U4-4.12 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 49): Lluvia ácida. 4.12. Explica con ecuaciones la formación de la lluvia ácida a partir de SO₂ y NOₓ, calcula el pH de la lluvia natural con CO₂ y evalúa con datos reales sus efectos en el territorio."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-14 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9]: Explicar el papel del oxígeno en la combustión y la naturaleza, y analizar la importancia y destrucción de la capa de ozono."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p027-01 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 27, SV 8–9]: Describir las principales fuentes de monóxido de carbono, dióxido de azufre, óxidos de nitrógeno y partículas atmosféricas, y explicar los problemas que causa s"
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_primaria-p034-03 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 34, SV 2–2]: Enumerar ejemplos de mezclas, como arena y piedras, agua azucarada, arena y limaduras de hierro, o aire."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263111100000 [jp_cos_826 p. 82, SV 5–5]: Al arder materia vegetal se consume oxígeno del aire y se produce dióxido de carbono."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_primaria_34-p030-05 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 30, SV 2–3]: Investigar los tipos y propiedades de los gases utilizados en la vida diaria."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/composicion-del-aire-y-contaminantes",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Composición porcentual y fórmulas empírica y molecular (CON:quimica/composicion-porcentual-y-formulas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/composicion-porcentual-y-formulas",
+     "nombre": "Composición porcentual y fórmulas empírica y molecular",
+     "definicion": "Porcentaje en masa de cada elemento en un compuesto y su uso para deducir la fórmula empírica y la molecular.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-QUI-U2-2.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 21): La cantidad de sustancia. 2.5. Determina la fórmula empírica y la fórmula molecular de un compuesto a partir de su composición centesimal y de su masa molar.",
+     "G10-QUI-U2-2.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22): La cantidad de sustancia. 2.6. Deduce la fórmula molecular de un compuesto orgánico a partir de datos de su análisis elemental y reconoce isómeros con propiedades distintas.",
+     "G06-CIE-U4-4.4 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 6): Enlace covalente.. 4.4. Explica el concepto de molécula y enlace covalente.",
+     "G10-BIO-U1-1.1 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 3): Carbohidratos. 1.1. Identifica la función carbohidrato y sus estructuras.",
+     "G10-QUI-U2-2.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 17): Leyes de la combinación química. 2.1. Comprueba la conservación de la masa en un sistema cerrado y aplica las leyes de las proporciones definidas y múltiples a datos de composición de compuestos.",
+     "G10-QUI-U2-2.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 19): Leyes de la combinación química. 2.3. Aplica la ley de los volúmenes de combinación y la hipótesis de Avogadro para deducir la fórmula de gases y la existencia de moléculas diatómicas."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p021-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 21, SV 8–9]: Deducir la fórmula empírica de un compuesto a partir del número relativo de átomos presentes, o de un modelo o diagrama, y viceversa."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/composicion-porcentual-y-formulas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Configuración electrónica por orbitales (CON:quimica/configuracion-electronica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/configuracion-electronica",
+     "nombre": "Configuración electrónica por orbitales",
+     "definicion": "Distribución de los electrones en subniveles y orbitales (s, p, d, f) según el principio de Aufbau, la exclusión de Pauli y la regla de Hund; explica los bloques de la tabla periódica.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G10-QUI-U3-3.10 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 32): El modelo mecanocuántico. 3.10. Escribe configuraciones electrónicas y diagramas de orbitales aplicando el principio de Aufbau, la exclusión de Pauli y la regla de Hund, y predice el comportamiento magn",
+     "G10-QUI-U3-3.9 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 31): El modelo mecanocuántico. 3.9. Describe la forma de los orbitales s, p y d y ordena los subniveles por energía creciente aplicando la regla n + l y el diagrama de Möller.",
+     "G10-QUI-U4-4.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 35): Construcción de la tabla periódica. 4.3. Deduce el grupo, el periodo y el bloque de un elemento a partir de su configuración electrónica y escribe la configuración de sus iones más comunes.",
+     "G05-CIE-U3-3.11 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 13): Configuración electrónica.. 3.11. Representa distintos tipos de configuraciones electrónicas.",
+     "G05-CIE-U3-3.2 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 3): Teoría atómica.. 3.1. Construye una definición de átomo.",
+     "G08-CIE-U8-8.5 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 7): Movimientos de la Tierra. 8.5. Explica las estaciones a partir de la inclinación del eje y de los movimientos de la Tierra."
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:quimica/configuracion-electronica",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Diagramas de fases (CON:quimica/diagramas-de-fases)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/diagramas-de-fases",
+     "nombre": "Diagramas de fases",
+     "definicion": "Gráfico presión-temperatura que muestra las condiciones de equilibrio entre fases, con punto triple y punto crítico.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G10-FIS-U12-12.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 92): Fases de la materia. 12.9. Interpreta diagramas de fase para predecir el estado de una sustancia y la temperatura de ebullición según la presión.",
+     "G10-QUI-U7-7.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 66): Diagramas de fases. 7.5. Predice el estado de agregación del agua y del CO₂ a una presión y temperatura dadas usando su diagrama de fases.",
+     "G06-CIE-U3-3.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Electricidad y magne», fila 3): Magnitudes basicas de la electricidad.. 3.1. Mide voltaje y corriente eléctrica empleando un multímetro.",
+     "G08-CIE-U8-8.4 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 6): El sistema Sol-Tierra-Luna. 8.4. Modela las fases de la Luna y los eclipses a partir de las posiciones relativas del Sol, la Tierra y la Luna.",
+     "G10-BIO-U7-7.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 64): Anabolismo fotosintético. 7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato.",
+     "G10-FIS-U12-12.1 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 84): Temperatura y su medición. 12.1. Deduce y aplica las relaciones lineales de conversión entre las escalas Celsius, Fahrenheit y Kelvin."
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:quimica/diagramas-de-fases",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Mezclas de gases, difusión y gases reales (CON:quimica/difusion-efusion-y-gases-reales)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/difusion-efusion-y-gases-reales",
+     "nombre": "Mezclas de gases, difusión y gases reales",
+     "definicion": "Ley de Dalton de presiones parciales, ley de Graham de difusión y desviaciones de los gases reales (van der Waals).",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.25,
+     "n_paises": 2
+    },
+    "temas_v2": [
+     "G10-QUI-U12-12.9 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 100): Equilibrio químico. 12.9. Calcula Kp a partir de presiones parciales o fracciones molares y aplica Kp = Kc(RT)^Δn y las reglas de transformación de K al modificar la ecuación.",
+     "G10-QUI-U6-6.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 58): Mezclas de gases. 6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total.",
+     "G10-QUI-U6-6.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 60): Difusión y efusión. 6.6. Calcula la relación de velocidades de efusión de dos gases con la ley de Graham y la relaciona con sus masas molares.",
+     "G10-QUI-U6-6.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 61): Gases reales. 6.7. Explica las desviaciones del comportamiento ideal de un gas real a altas presiones y bajas temperaturas usando el factor de compresibilidad.",
+     "G08-CIE-U10-10.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 10 - Sistemas terrestres», fila 3): Ciclo del carbono. 10.1. Representa el ciclo del carbono entre la atmósfera, los océanos, la biosfera y la geosfera.",
+     "G08-CIE-U4-4.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 3): Unidades físicas de concentración. 4.1. Identifica las unidades físicas de concentración en sustancias de uso cotidiano."
+    ],
+    "paises": {
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_jung-p049-10 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 49, SV 6–8]: Inferir que las partículas de la materia están en movimiento a partir de la observación de los fenómenos de difusión y evaporación."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_secundaria_baja-p039-01 [SG_LowerSec_Science_G2G3_2024.pdf p. 39, SV 7–8]: Comprender que la difusión es el movimiento neto de partículas desde una región de mayor concentración hacia una región de menor concentración."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/difusion-efusion-y-gases-reales",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Distribución electrónica por niveles (modelo de capas) (CON:quimica/distribucion-electronica-por-niveles)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 5
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G05-CIE-U3-3.11 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 13): Configuración electrónica.. 3.11. Representa distintos tipos de configuraciones electrónicas.",
+     "G05-CIE-U4-4.3 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Tabla periódica», fila 5): Estructura de la Tabla Periódica.. 4.3. Describe los criterios de organización presentes en la Tabla Periódica actual.",
+     "G05-CIE-U4-4.4 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Tabla periódica», fila 6): Propiedades periódicas.. 4.4. Interpreta las propiedades periódicas de los elementos químicos.",
+     "G10-QUI-U13-13.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 106): Elementos metálicos. 13.1. Compara la reactividad, la obtención y los usos de los metales de los grupos 1 y 2 relacionándolos con su configuración electrónica y su energía de ionización.",
+     "G10-QUI-U13-13.8 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 113): Gases nobles e hidrógeno. 13.8. Relaciona la configuración electrónica de los gases nobles con sus aplicaciones y describe los isótopos, la obtención y los usos energéticos del hidrógeno.",
+     "G10-QUI-U4-4.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 35): Construcción de la tabla periódica. 4.3. Deduce el grupo, el periodo y el bloque de un elemento a partir de su configuración electrónica y escribe la configuración de sus iones más comunes."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-11 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9]: Explicar la estructura atómica, usar la tabla periódica para hallar propiedades de elementos y dibujar diagramas de configuración electrónica."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p019-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 19, SV 8–9]: Explicar cómo la posición de un elemento en la Tabla Periódica se relaciona con la disposición de electrones en sus átomos y su número atómico."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-QUI-on_snc1w-p051-02 [ON_Science_Grade9_SNC1W_2022.pdf p. 51, SV 8–8]: Explicar la relación entre la posición de un elemento en la tabla periódica y la estructura de sus átomos mediante el uso de modelos."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/distribucion-electronica-por-niveles",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Energía de activación y perfil energético (CON:quimica/energia-de-activacion-y-perfil-energetico)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/energia-de-activacion-y-perfil-energetico",
+     "nombre": "Energía de activación y perfil energético",
+     "definicion": "Energía mínima para que ocurra la reacción, representada con el complejo activado y ΔH en un diagrama de perfil energético.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 6.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-QUI-U12-12.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 95): Modelos de la velocidad de reacción. 12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "G10-QUI-U12-12.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 97): Factores que modifican la velocidad. 12.6. Calcula la energía de activación de una reacción a partir de la pendiente de la gráfica de Arrhenius obtenida con datos a varias temperaturas.",
+     "G10-QUI-U12-12.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 98): Factores que modifican la velocidad. 12.7. Explica cómo un catalizador modifica el mecanismo y la energía de activación sin alterar ΔH, y clasifica catálisis homogéneas, heterogéneas y enzimáticas.",
+     "G05-CIE-U2-2.15 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Mecánica», fila 17): Energía mecánica.. 2.15. Identifica las transformaciones de energía a través de experimentos.",
+     "G10-FIS-U7-7.5 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 50): Conservación de la energía mecánica. 7.5. Resuelve problemas de conservación de la energía mecánica en sistemas con resortes y cambios de altura usando diagramas de barras de energía.",
+     "G10-QUI-U13-13.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 108): Elementos metálicos. 13.3. Categoriza metales de transición según sus propiedades y usos, y predice reacciones de desplazamiento con base en su actividad relativa."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-KS3-19 [ENG_NC_Science_KS3_2013.pdf p. 8, SV 5–7]: Qué hacen los catalizadores."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/energia-de-activacion-y-perfil-energetico",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Enlace metálico (CON:quimica/enlace-metalico)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G06-CIE-U4-4.3 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 5): Enlace químico.. 4.3. Describe las propiedades y características del enlace metálico.",
+     "G10-QUI-U5-5.13 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 53): Enlace metálico. 5.13. Explica la diferencia entre conductores, semiconductores y aislantes a partir de la teoría de bandas.",
+     "G10-QUI-U5-5.14 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 54): Propiedades de las sustancias metálicas. 5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos.",
+     "G11-QUI-U1-1.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 3): Metales y cerámicas. 1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "G11-QUI-U1-1.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 9): Propiedades de los materiales. 1.7. Relaciona las propiedades de los metales, las cerámicas y los polímeros con sus principales usos.",
+     "G11-QUI-U6-6.9 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 63): Celdas electroquímicas y potenciales redox. 6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-12 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9]: Explicar las diferencias entre los enlaces covalentes, iónicos y metálicos."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p020-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 20, SV 8–9]: Describir y comparar la naturaleza y disposición de los enlaces químicos en compuestos iónicos, moléculas simples, estructuras covalentes gigantes, polímeros y "
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_s1_3-p082-03 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 82, SV 6–8]: Comparar las propiedades físicas (resistencia, maleabilidad, ductilidad, conductividad eléctrica y térmica) de algunos metales."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/enlace-metalico",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Enlace químico (CON:quimica/enlace-quimico)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/enlace-quimico",
+     "nombre": "Enlace químico",
+     "definicion": "Atracción electrostática entre átomos por transferencia o compartición de electrones que mantiene unidas a las sustancias.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.75,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G05-CIE-U4-4.5 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Tabla periódica», fila 7): Formulación química.. 4.5. Reconoce los principios que llevan a la formulación química.",
+     "G10-QUI-U5-5.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 41): Naturaleza del enlace químico. 5.1. Explica la formación de un enlace a partir del mínimo de energía de la curva energía-distancia internuclear.",
+     "G10-QUI-U4-4.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 39): Propiedades periódicas. 4.7. Explica la variación de la electronegatividad en la tabla periódica y usa la diferencia de electronegatividad para predecir la polaridad de un enlace.",
+     "G06-CIE-U4-4.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 3): Enlace químico.. 4.1. Aplica los principios de notación de Lewis.",
+     "G06-CIE-U4-4.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 4): Enlace químico.. 4.2. Describe las propiedades y características del enlace iónico.",
+     "G06-CIE-U4-4.3 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 5): Enlace químico.. 4.3. Describe las propiedades y características del enlace metálico."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-12 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9]: Explicar las diferencias entre los enlaces covalentes, iónicos y metálicos."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p020-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 20, SV 8–9]: Describir las limitaciones de representaciones y modelos particulares, incluyendo diagramas de puntos y cruces, modelos de bolas y varillas, y representaciones "
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_s1_3-p059-11 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 59, SV 6–8]: Reconocer que las moléculas consisten en dos o más átomos unidos químicamente."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_secundaria_baja-p040-04 [SG_LowerSec_Science_G2G3_2024.pdf p. 40, SV 7–8]: Comprender que una molécula es un grupo de dos o más átomos que están combinados químicamente."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/enlace-quimico",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Equilibrio químico dinámico (CON:quimica/equilibrio-dinamico)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 9
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.75,
+     "n_paises": 2
+    },
+    "temas_v2": [
+     "G09-CIE-U3-3.1 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 3): Introducción al equilibrio químico. 3.1. Define con sus palabras el concepto de equilibrio químico.",
+     "G09-CIE-U3-3.3 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 5): Introducción al equilibrio químico. 3.3. Identifica el tipo de equilibrio químico y la expresión de la constante de equilibrio en una reacción.",
+     "G09-CIE-U3-3.18 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 20): Equilibrio ácido base. 3.18. Aplica el principio de Le Châtelier en el equilibrio ácido base.",
+     "G09-CIE-U3-3.4 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 6): Constante de equilibrio y su interpretación. 3.4. Identifica los fatores que afectan el equilibrio químico.",
+     "G09-CIE-U3-3.5 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 7): Constante de equilibrio y su interpretación. 3.5. Predice el sentido del desplazamiento de la reacción aplicando el principio de Le Châtelier.",
+     "G10-QUI-U12-12.12 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 103): Cálculos de equilibrio. 12.12. Escribe y aplica la constante de equilibrios heterogéneos excluyendo sólidos y líquidos puros, y la usa para explicar procesos naturales con carbonatos."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p024-11 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 24, SV 8–9]: Predecir el efecto de cambiar las condiciones en el equilibrio y sugerir condiciones para obtener un producto particular."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p032-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8]: Comprender el concepto de reacciones reversibles."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/equilibrio-dinamico",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Fuerzas intermoleculares (CON:quimica/fuerzas-intermoleculares)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/fuerzas-intermoleculares",
+     "nombre": "Fuerzas intermoleculares",
+     "definicion": "Atracciones entre moléculas: dispersión de London, dipolo-dipolo y puentes de hidrógeno, cuya intensidad depende de geometría y polaridad.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G06-CIE-U4-4.7 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 9): Fuerzas intermoleculares.. 4.7. Efectúa una demostración experimental macroscópica de las fuerzas intermoleculares.",
+     "G06-CIE-U4-4.8 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 10): Fuerzas intermoleculares.. 4.8. Explica el concepto de las fuerzas intermoleculares.",
+     "G10-QUI-U5-5.8 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 48): Fuerzas intermoleculares. 5.8. Explica las diferencias en los puntos de ebullición de sustancias moleculares según sus fuerzas de dispersión, dipolo-dipolo y enlaces de hidrógeno.",
+     "G10-QUI-U7-7.2 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 63): Fuerzas entre partículas. 7.2. Clasifica sólidos en moleculares, iónicos, covalentes y metálicos según las partículas y fuerzas que los forman y ordena sus puntos de fusión.",
+     "G10-QUI-U7-7.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 64): Propiedades de los líquidos. 7.3. Relaciona la viscosidad, la tensión superficial y la presión de vapor de distintos líquidos con la intensidad de sus fuerzas intermoleculares.",
+     "G10-QUI-U7-7.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 67): El agua. 7.6. Explica la densidad máxima del agua a 4 °C y la flotación del hielo a partir de la estructura de enlaces de hidrógeno."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S7U05 [AU_Science_7-10_v9_contenido.docx p. None, SV 6–6]: Usar la teoría de partículas para describir disposición, movimiento y atracción de partículas en una sustancia y relacionarlas con sus propiedades."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p020-06 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 20, SV 8–9]: Explicar cómo las propiedades macroscópicas de los materiales se relacionan con sus tipos de enlaces, fuerzas intermoleculares y disposición, reconociendo que l"
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_jung-p049-07 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 49, SV 6–8]: Explicar por qué la temperatura permanece constante durante un cambio de estado en relación con la energía térmica transferida en el proceso."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/fuerzas-intermoleculares",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Fundamentos de la reactividad orgánica (CON:quimica/fundamentos-de-reactividad-organica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G11-QUI-U9-9.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 77): Fundamentos de la reactividad orgánica. 9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electróni",
+     "G11-QUI-U10-10.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 84): Reacciones de polimerización. 10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polím",
+     "G05-CIE-U3-3.3 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 5): Teoría atómica.. 3.3. Construye un modelo atómico, identificando sus partes.",
+     "G10-QUI-U3-3.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25): Evolución de los modelos atómicos. 3.3. Compara la carga, la masa y la ubicación de protones, neutrones y electrones, y explica por qué el neutrón fue la última partícula en descubrirse.",
+     "G11-FIS-U19-19.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 116): Postulados de la relatividad especial. 19.1. Explica por qué la invariancia de la rapidez de la luz obliga a abandonar el tiempo absoluto de la mecánica clásica.",
+     "G11-FIS-U23-23.8 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 147): Física nuclear. 23.8. Representa el proceso general de transformación de un combustible nuclear en energía eléctrica."
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:quimica/fundamentos-de-reactividad-organica",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Masa atómica relativa (CON:quimica/masa-atomica-relativa)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/masa-atomica-relativa",
+     "nombre": "Masa atómica relativa",
+     "definicion": "Masa promedio ponderada de los isótopos naturales de un elemento respecto a 1/12 de la masa del carbono-12.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 5
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.5,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G05-CIE-U3-3.9 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 11): Isótopos.. 3.9. Cuantifica la masa atómica relativa de isótopos.",
+     "G08-CIE-U4-4.6 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 8): Relaciones estequiométricas. 4.6. Emplea las masas atómicas relativas para calcular la masa molar.",
+     "G10-QUI-U2-2.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 20): La cantidad de sustancia. 2.4. Resuelve problemas encadenados de masa, moles, número de moléculas y número de átomos de cada elemento en muestras de sustancias de uso cotidiano.",
+     "G10-QUI-U3-3.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 26): Estructura del átomo. 3.4. Calcula la masa atómica promedio de un elemento a partir de la masa y la abundancia de sus isótopos y determina las partículas de átomos e iones.",
+     "G05-CIE-U5-5.1 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Ciencias del espacio», fila 3): El Big Bang.. 5.1. Explica con sus palabras los argumentos que sostienen la hipótesis del Big Bang.",
+     "G10-QUI-U2-2.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 17): Leyes de la combinación química. 2.1. Comprueba la conservación de la masa en un sistema cerrado y aplica las leyes de las proporciones definidas y múltiples a datos de composición de compuestos."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p019-07 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 19, SV 8–9]: Explicar, en términos de isótopos, cómo esto cambia la disposición propuesta por Mendeleev."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_s1_3-p081-06 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 81, SV 6–8]: Ser consciente de que los científicos del pasado organizaban los elementos según la masa de los átomos y sus propiedades químicas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_secundaria_baja-p040-09 [SG_LowerSec_Science_G2G3_2024.pdf p. 40, SV 7–8]: Reconocer que los átomos tienen masa, la cual es aportada principalmente por la masa del núcleo."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p026-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 26, SV 6–8]: Comprender que el peso atómico y el peso molecular representan la masa relativa entre átomos y moléculas."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/masa-atomica-relativa",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Minerales: composición y estructura cristalina (CON:quimica/minerales)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/minerales",
+     "nombre": "Minerales: composición y estructura cristalina",
+     "definicion": "Sólidos naturales inorgánicos con composición química definida y estructura cristalina, que determinan sus propiedades físicas y usos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 8
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G08-CIE-U5-5.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 3): ¿Qué es un mineral?. 5.1. Ejemplifica objetos comunes elaborados a partir de minerales.",
+     "G08-CIE-U5-5.2 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 4): Propiedades de los minerales. 5.2. Caracteriza a los minerales con base en sus propiedades físicas.",
+     "G08-CIE-U5-5.3 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 5): Propiedades de los minerales. 5.3. Reconoce combinaciones de elementos químicos que comúnmente conforman los minerales.",
+     "G08-CIE-U5-5.5 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 7): Estructura. 5.5. Determina el hábito cristalino de un mineral preparado experimentalmente.",
+     "G08-CIE-U5-5.6 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 8): Estructura. 5.6. Reconoce las estructuras cristalinas de los minerales.",
+     "G08-CIE-U5-5.4 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 6): Estructura. 5.4. Explica el proceso de formación de cristales."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S8U04 [AU_Science_7-10_v9_contenido.docx p. None, SV 7–7]: Describir los procesos clave del ciclo de las rocas y sus escalas de tiempo, y cómo las propiedades de rocas sedimentarias, ígneas y metamórficas reflejan su fo"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p027-09 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27, SV 7–9]: Explicar la presencia de los compuestos inorgánicos más importantes en la naturaleza y su uso en la vida cotidiana."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_s1_3-p078-03 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 78, SV 6–8]: Reconocer que los químicos extraídos de la Tierra producen materiales útiles, pero su uso y desecho inadecuados causan contaminación."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/minerales",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Compuestos inorgánicos: funciones y nomenclatura (CON:quimica/nomenclatura-inorganica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-inorganica",
+     "nombre": "Compuestos inorgánicos: funciones y nomenclatura",
+     "definicion": "Óxidos, hidruros, ácidos, hidróxidos y sales binarias y ternarias, y reglas para nombrarlos y formularlos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G05-CIE-U4-4.5 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Tabla periódica», fila 7): Formulación química.. 4.5. Reconoce los principios que llevan a la formulación química.",
+     "G07-CIE-U1-1.1 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 3): Compuestos inorgánicos binarios. 1.1. Identifica a los óxidos en fenómenos o aplicaciones cotidianas.",
+     "G07-CIE-U1-1.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 12): Compuestos inorgánicos ternarios. 1.10. Identifica las oxisales en aplicaciones cotidianas.",
+     "G07-CIE-U1-1.11 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 13): Compuestos inorgánicos ternarios. 1.11. Formula y balancea ecuaciones de reacción química para la obtención de oxisales.",
+     "G07-CIE-U1-1.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 14): Compuestos inorgánicos ternarios. 1.12. Aplica diferentes nomenclaturas químicas para denominar oxisales.",
+     "G07-CIE-U1-1.2 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 4): Compuestos inorgánicos binarios. 1.2. Formula y balancea ecuaciones de reacción química para la obtención de óxidos."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p027-04 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27, SV 7–9]: Comprender y redactar textos químicos sobre las propiedades de los compuestos inorgánicos y las relaciones entre sustancias."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-PRA-KS3-16 [ENG_NC_Science_KS3_2013.pdf p. 5, SV 5–7]: Comprender y usar unidades del SI y la nomenclatura química IUPAC."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p031-17 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8]: Describir la acidez o basicidad de óxidos metálicos y no metálicos en agua, y la reacción de ácidos con metales y mármol."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/nomenclatura-inorganica",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Nomenclatura orgánica IUPAC (CON:quimica/nomenclatura-organica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 6.5,
+     "n_paises": 2
+    },
+    "temas_v2": [
+     "G11-QUI-U11-11.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 93): Química de los lípidos. 11.5. Explica las diferencias en la temperatura de fusión de ácidos grasos según su longitud, insaturación e isomería, y los nombra en forma sistemática, común y abreviada.",
+     "G11-QUI-U2-2.12 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 23): Alquinos. 2.12. Emplea nomenclatura IUPAC para nombrar alquinos.",
+     "G11-QUI-U2-2.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 17): Alcanos. 2.6. Emplea nomenclatura IUPAC para nombrar alcanos.",
+     "G11-QUI-U2-2.9 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 20): Alquenos. 2.9. Emplea nomenclatura IUPAC para nombrar alquenos.",
+     "G11-QUI-U3-3.12 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 35): Otros compuestos orgánicos. 3.12. Emplea nomenclatura IUPAC para nombrar tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "G11-QUI-U3-3.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 26): Hidrocarburos aromáticos. 3.3. Emplea nomenclatura IUPAC para nombrar hidrocarburos aromáticos."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-PRA-KS3-16 [ENG_NC_Science_KS3_2013.pdf p. 5, SV 5–7]: Comprender y usar unidades del SI y la nomenclatura química IUPAC."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p032-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8]: Identificar alcanos, alcoholes, ácidos orgánicos y ésteres comunes en la vida diaria."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/nomenclatura-organica",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Oxidación y corrosión de los metales (CON:quimica/oxidacion-y-corrosion-de-metales)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+     "nombre": "Oxidación y corrosión de los metales",
+     "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 3.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G07-CIE-U1-1.1 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 3): Compuestos inorgánicos binarios. 1.1. Identifica a los óxidos en fenómenos o aplicaciones cotidianas.",
+     "G11-QUI-U6-6.11 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 65): Celdas electroquímicas y potenciales redox. 6.11. Explica la corrosión del hierro como un proceso electroquímico y argumenta el método de protección más adecuado para un metal expuesto al ambiente coste",
+     "G11-QUI-U6-6.9 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 63): Celdas electroquímicas y potenciales redox. 6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos."
+    ],
+    "paises": {
+     "HK": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_primaria-p036-02 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 36, SV 4–4]: Explicar métodos para prevenir la corrosión de los metales."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263121300000 [jp_cos_826 p. 84, SV 5–5]: Algunas soluciones acuosas transforman los metales."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p031-13 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8]: Identificar reacciones de oxidación-reducción comunes y sus aplicaciones en la vida diaria."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/oxidacion-y-corrosion-de-metales",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Proceso de disolución y solvatación (CON:quimica/proceso-de-disolucion)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/proceso-de-disolucion",
+     "nombre": "Proceso de disolución y solvatación",
+     "definicion": "Sustancias iónicas y moleculares se disuelven al interactuar con el disolvente (hidratación); implica una entalpía de disolución y depende de temperatura.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 8
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G07-CIE-U2-2.3 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 5): Material genético. 2.3. Explica con sus palabras el funcionamiento de técnicas básicas para la extracción y tinción de ácidos nucleicos.",
+     "G08-CIE-U4-4.17 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 19): Dispersiones químicas.. 4.17. Explica el comportamiento de las partículas según los factores que afectan la solubilidad.",
+     "G10-QUI-U8-8.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 74): Proceso de disolución. 8.6. Explica el proceso de disolución de un compuesto iónico mediante la hidratación de sus iones y relaciona el signo de la entalpía de disolución con el cambio de temperatura.",
+     "G10-QUI-U11-11.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 85): Energía en las reacciones químicas. 11.1. Determina experimentalmente la entalpía de una reacción en un calorímetro de vasos y la representa en un diagrama de entalpía exotérmico o endotérmico."
+    ],
+    "paises": {
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_s1_3-p057-01 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 57, SV 6–8]: Realizar trabajo práctico para investigar el cambio de volumen al mezclar agua con alcohol."
+     },
+     "ON": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-QUI-on_st_g7-p164-04 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 164, SV 6–6]: Explicar por qué el agua es conocida como el solvente universal."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p031-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8]: Explicar que los electrolitos conducen electricidad al disociarse en aniones y cationes en solución acuosa."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/proceso-de-disolucion",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/procesos-de-la-industria-quimica",
+     "nombre": "Procesos de la industria química",
+     "definicion": "Escalamiento, operaciones unitarias y balance de materia en industrias de ácido sulfúrico, fertilizantes, cemento, azúcar, etanol y café.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 8
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G08-CIE-U4-4.11 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 13): Unidades químicas de concentración. 4.11. Reconoce las aplicaciones industriales de las unidades químicas de concentración.",
+     "G08-CIE-U4-4.20 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 22): Propiedades coligativas de las soluciones.. 4.20. Describe las aplicaciones industriales de las propiedades coligativas.",
+     "G11-QUI-U7-7.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 66): Del laboratorio a la planta. 7.1. Resuelve balances de materia en un diagrama de bloques e identifica las operaciones unitarias que intervienen en un proceso industrial.",
+     "G11-QUI-U7-7.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 68): Agroindustria salvadoreña. 7.3. Describe las etapas de extracción, clarificación, evaporación y cristalización del azúcar y calcula el rendimiento teórico de etanol en la fermentación de la melaza.",
+     "G11-QUI-U7-7.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 70): Materiales de construcción. 7.5. Escribe las reacciones de calcinación de la caliza, apagado de la cal y carbonatación, y calcula el dióxido de carbono emitido por tonelada de cal producida.",
+     "G11-QUI-U2-2.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 18): Alquenos. 2.7. Reconoce la función alqueno como materia prima en la industria química."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p023-08 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 23, SV 8–9]: Recordar que el petróleo crudo es una fuente principal de hidrocarburos y materia prima para la industria petroquímica."
+     },
+     "ON": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-QUI-on_st_g7-p163-03 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 163, SV 6–6]: Evaluar los impactos ambientales y sociales de los diferentes métodos industriales utilizados para separar mezclas."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p033-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 33, SV 6–8]: Describir las características, procesos de fabricación simples y aplicaciones cotidianas de materiales artificiales comunes."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/procesos-de-la-industria-quimica",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Propiedades físicas y químicas (CON:quimica/propiedades-fisicas-y-quimicas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/propiedades-fisicas-y-quimicas",
+     "nombre": "Propiedades físicas y químicas",
+     "definicion": "Las propiedades físicas se observan sin cambiar la sustancia; las químicas (reactividad, inflamabilidad) solo al transformarla; incluye propiedades intensivas y extensivas.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 2
+    },
+    "consenso": {
+     "grado_amplio": 2,
+     "grado_estricto": 6,
+     "mediana": 2.5,
+     "n_paises": 9
+    },
+    "temas_v2": [
+     "G02-CIE-U1-1.6 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 8): Transformaciones de la materia.. Reconoce las propiedades químicas de materiales o sustancias comunes en su entorno.",
+     "G02-CIE-U1-1.7 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 9): Transformaciones de la materia.. Efectúa un experimento que muestra una o más propiedades químicas de la materia.",
+     "G02-CIE-U1-1.2 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 4): ¿Qué es medir?. Explica con sus palabras los conceptos de medición y diferencia entre describir con palabras y medir con números.",
+     "G03-CIE-U3-3.7 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 3 - El agua», fila 9): Propiedades del agua.. 3.7. Efectúa un experimento para evidenciar las propiedades fisicoquímicas del agua.",
+     "G08-CIE-U4-4.13 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 15): Dispersiones químicas. 4.13. Clasifica las dispersiones químicas de acuerdo con sus propiedades.",
+     "G08-CIE-U6-6.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 6 - Anatomía y fisiologí», fila 3): Los tejidos vegetales. 6.1. Identifica propiedades físicas o químicas de los principales tejidos vegetales."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S3U04 [AU_Science_F-6_v9_contenido.docx p. None, SV 2–2]: Investigar propiedades observables de sólidos y líquidos y cómo agregar o quitar calor produce cambios de estado."
+     },
+     "EE": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-04 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9]: Planificar y realizar de forma segura experimentos químicos para conocer las propiedades de las sustancias y las leyes naturales."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-KS3-11 [ENG_NC_Science_KS3_2013.pdf p. 8, SV 5–7]: Identificación de sustancias puras."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_primaria-p034-02 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 34, SV 2–2]: Describir las propiedades del agua y del aire (sin color, olor ni sabor, y sin forma fija)."
+     },
+     "JP": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8361213211100000 [jp_cos_836 p. 40, SV 6–6]: Investigar las propiedades de materiales cotidianos, como densidad y cambios al calentarlos, distinguiendo propiedades propias y comunes; manejar instrumentos y"
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_jung-p049-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 49, SV 6–8]: Centrarse en que el punto de fusión, ebullición y congelación son las temperaturas a las que ocurren los cambios de estado."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-QUI-on_snc1w-p051-06 [ON_Science_Grade9_SNC1W_2022.pdf p. 51, SV 8–8]: Investigar propiedades físicas y químicas de los elementos para relacionarlas con la organización de la tabla periódica, clasificar elementos e identificar patr"
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_secundaria_baja-p034-04 [SG_LowerSec_Science_G2G3_2024.pdf p. 34, SV 7–8]: Comprender que las mezclas muestran las características de sus constituyentes."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p027-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8]: Describir las propiedades físicas y químicas de la materia."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/propiedades-fisicas-y-quimicas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Química de los carbohidratos (CON:quimica/quimica-de-los-carbohidratos)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-carbohidratos",
+     "nombre": "Química de los carbohidratos",
+     "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 3): Biomoléculas.. 5.1. Identifica los principales grupos de biomoléculas por sus características.",
+     "G10-BIO-U1-1.1 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 3): Carbohidratos. 1.1. Identifica la función carbohidrato y sus estructuras.",
+     "G10-BIO-U1-1.2 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 4): Carbohidratos. 1.2. Reconoce las clasificaciones y propiedades de los carbohidratos.",
+     "G10-BIO-U1-1.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 5): Carbohidratos. 1.3. Explica la importancia de los polisacáridos y su metabolismo.",
+     "G11-QUI-U11-11.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 89): Química de los carbohidratos. 11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "G11-QUI-U11-11.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 90): Química de los carbohidratos. 11.2. Explica por qué la maltosa y la lactosa son azúcares reductores y la sacarosa no, a partir de la posición del enlace O-glucosídico."
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:quimica/quimica-de-los-carbohidratos",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Radiactividad y emisiones nucleares (CON:quimica/radiactividad)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/radiactividad",
+     "nombre": "Radiactividad y emisiones nucleares",
+     "definicion": "Desintegración espontánea de núcleos inestables con emisión de partículas alfa, beta y radiación gamma.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G05-CIE-U3-3.8 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 10): Isótopos.. 3.8. Explica qué es un isótopo y cuáles son sus aplicaciones.",
+     "G10-QUI-U3-3.2 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 24): Evolución de los modelos atómicos. 3.2. Deduce la existencia de un núcleo pequeño, denso y positivo a partir de los resultados de la dispersión de partículas alfa en una lámina de oro.",
+     "G11-QUI-U8-8.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 73): Radiactividad. 8.1. Relaciona los experimentos de Becquerel y de Marie y Pierre Curie con el descubrimiento de elementos radiactivos y aplica las leyes del desplazamiento para ubicar el producto en la ta",
+     "G11-QUI-U8-8.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 75): Ecuaciones nucleares. 8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "G11-QUI-U8-8.4 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 76): Gestión de residuos radiactivos. 8.4. Clasifica residuos radiactivos según su estado físico, tipo de radiación y actividad, y evalúa críticamente las estrategias de gestión adoptadas en distintos países.",
+     "G11-FIS-U23-23.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 143): Interacción de la radiación y la materia. 23.4. Reconoce los tipos de radiación ionizante y sus principales efectos en las células."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S9U06 [AU_Science_7-10_v9_contenido.docx p. None, SV 8–8]: Explicar cómo cambió el modelo atómico tras descubrir electrones, protones y neutrones y describir cómo el decaimiento radiactivo natural produce átomos estable"
+     }
+    }
+   },
+   "id": "INC:CON:quimica/radiactividad",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Factores que afectan la rapidez de reacción (CON:quimica/rapidez-de-reaccion-factores)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/rapidez-de-reaccion-factores",
+     "nombre": "Factores que afectan la rapidez de reacción",
+     "definicion": "La rapidez aumenta con mayor temperatura, concentración, superficie de contacto o presencia de catalizador.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 6.5,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 4): Biomoléculas.. 5.2. Explica el funcionamiento general de la actividad enzimática a partir de un experimento.",
+     "G09-CIE-U3-3.2 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 4): Introducción al equilibrio químico. 3.2. Identifica los factores que afecta la velocidad de reacción.",
+     "G09-CIE-U3-3.1 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 3): Introducción al equilibrio químico. 3.1. Define con sus palabras el concepto de equilibrio químico.",
+     "G10-QUI-U12-12.14 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 105): Equilibrio y termodinámica. 12.14. Justifica la presión, temperatura y catalizador del proceso Haber integrando Le Châtelier, K y cinética, y valora su impacto en la agricultura y el ambiente.",
+     "G10-QUI-U12-12.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 95): Modelos de la velocidad de reacción. 12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "G10-BIO-U2-2.8 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 21): Enzimas y metabolismo. 2.8. Interpreta los resultados de un experimento demostrativo de la actividad enzimática."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p027-12 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27, SV 7–9]: Estudiar el efecto de los factores que afectan la velocidad de las reacciones entre un metal y un ácido."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-KS3-19 [ENG_NC_Science_KS3_2013.pdf p. 8, SV 5–7]: Qué hacen los catalizadores."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_s1_3-p061-11 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 61, SV 6–8]: Realizar pruebas justas para determinar la solubilidad de una sustancia a diferentes temperaturas."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p031-22 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8]: Reconocer experimentalmente la velocidad de reacción y los factores que la afectan, como naturaleza, temperatura, concentración, área de contacto y catalizadore"
+     }
+    }
+   },
+   "id": "INC:CON:quimica/rapidez-de-reaccion-factores",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Rendimiento de una reacción (CON:quimica/rendimiento-de-reaccion)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G10-QUI-U10-10.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 81): Relaciones estequiométricas. 10.1. Calcula masas, cantidades de sustancia y volúmenes de disolución de reactivos y productos incorporando la pureza y la concentración en sus cálculos.",
+     "G10-QUI-U10-10.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 83): Eficiencia de las reacciones. 10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "G10-QUI-U10-10.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 84): Eficiencia de las reacciones. 10.4. Obtiene la ecuación neta de un proceso de varias etapas y calcula el rendimiento global a partir del rendimiento de cada etapa.",
+     "G11-QUI-U7-7.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 68): Agroindustria salvadoreña. 7.3. Describe las etapas de extracción, clarificación, evaporación y cristalización del azúcar y calcula el rendimiento teórico de etanol en la fermentación de la melaza.",
+     "G11-QUI-U7-7.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 72): Hacia una industria sostenible. 7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "G08-CIE-U4-4.8 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 10): Relaciones estequiométricas. 4.8. Interpreta resultados de cálculos estequiométricos."
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:quimica/rendimiento-de-reaccion",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Solubilidad y disoluciones saturadas (CON:quimica/solubilidad)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/solubilidad",
+     "nombre": "Solubilidad y disoluciones saturadas",
+     "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 3
+    },
+    "consenso": {
+     "grado_amplio": 4,
+     "grado_estricto": 6,
+     "mediana": 4.25,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G03-CIE-U3-3.11 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 3 - El agua», fila 13): Disoluciones, suspensiones y coloides.. 3.11. Clasifica disoluciones por su grado de saturación.",
+     "G08-CIE-U4-4.15 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 17): Dispersiones químicas. 4.15. Clasifica las soluciones químicas con base en la cantidad de soluto.",
+     "G08-CIE-U4-4.16 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 18): Dispersiones químicas.. 4.16. Identifica los factores que afectan la solubilidad.",
+     "G08-CIE-U4-4.17 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 19): Dispersiones químicas.. 4.17. Explica el comportamiento de las partículas según los factores que afectan la solubilidad.",
+     "G08-CIE-U5-5.4 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 6): Estructura. 5.4. Explica el proceso de formación de cristales.",
+     "G10-QUI-U8-8.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 75): Solubilidad. 8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-07 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9]: Utilizar la tabla periódica, la tabla de solubilidad y la serie de reactividad para encontrar valores de magnitudes físicas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-Y5-01 [ENG_NC_Science_KS1-2_2013.pdf p. 28, SV 3–3]: Comparar y agrupar materiales según dureza, solubilidad, transparencia, conductividad eléctrica y térmica y respuesta a imanes."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_primaria-p035-07 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 35, SV 2–2]: Saber que algunas sustancias, como sal y azúcar, se disuelven en agua, mientras que otras, como arena, no."
+     },
+     "JP": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260253111200000 [jp_cos_826 p. 68, SV 4–4]: La cantidad de sustancia que se disuelve en agua tiene un límite."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_jung-p053-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 53, SV 6–8]: Conocer el significado de las propiedades de la materia y explicar la densidad, solubilidad, punto de fusión y ebullición mediante experimentos."
+     },
+     "ON": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-QUI-on_st_g7-p164-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 164, SV 6–6]: Describir cualitativa y cuantitativamente la concentración de una solución saturada y diferenciar entre soluciones saturadas e insaturadas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_secundaria_baja-p034-10 [SG_LowerSec_Science_G2G3_2024.pdf p. 34, SV 7–8]: Investigar los factores que afectan la velocidad de disolución y la solubilidad de las sustancias."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_primaria-p023-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 23, SV 2–3]: Algunas sustancias se disuelven en agua, mientras que otras no se disuelven fácilmente."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/solubilidad",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Teoría cinética de los gases (CON:quimica/teoria-cinetica-de-los-gases)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/teoria-cinetica-de-los-gases",
+     "nombre": "Teoría cinética de los gases",
+     "definicion": "Los gases son partículas en movimiento aleatorio cuyos choques generan presión; la energía cinética media depende de la temperatura.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 5.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G09-CIE-U2-2.4 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 6): Procesos termodinámicos. 2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "G10-FIS-U14-14.1 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 98): Modelo del gas ideal. 14.1. Resuelve problemas con la ecuación pV = NkT e interpreta isotermas en el diagrama presión-volumen.",
+     "G10-FIS-U14-14.2 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 99): Teoría cinética de los gases. 14.2. Calcula la energía cinética media y la rapidez cuadrática media de las moléculas de un gas a partir de su temperatura.",
+     "G10-FIS-U15-15.5 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 104): Procesos termodinámicos. 15.5. Calcula el trabajo de expansiones isotérmicas y adiabáticas de un gas ideal y compara sus curvas en el diagrama p-V.",
+     "G10-FIS-U15-15.6 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 105): Procesos termodinámicos. 15.6. Deduce la relación C_p − C_V = R y calcula el calor absorbido por un gas ideal a volumen y a presión constantes.",
+     "G10-QUI-U6-6.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 55): El estado gaseoso. 6.1. Explica la variación de la presión atmosférica con la altitud a partir de mediciones y del experimento de Torricelli."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p035-11 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 35, SV 8–9]: Explicar cualitativamente la relación entre el movimiento molecular en un gas, su temperatura y presión, y la relación temperatura-presión a volumen constante."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-FIS-hk_s1_3-p062-22 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 62, SV 6–8]: Usar el movimiento de partículas para explorar la relación entre presión del aire y temperatura, proponiendo explicaciones científicas."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_jung-p051-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 51, SV 6–8]: Conocer el significado de presión y explicar la presión de un gas en función del movimiento de sus partículas."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_primaria-p019-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 19, SV 4–5]: El aire se compone de varios gases, se expande con el calor y no tiene forma ni volumen fijos."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/teoria-cinetica-de-los-gases",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/tipo-de-enlace-y-propiedades",
+     "nombre": "Tipo de enlace y propiedades de las sustancias",
+     "definicion": "El tipo de enlace explica punto de fusión, conductividad, dureza y fragilidad de sustancias iónicas, metálicas, moleculares y de red covalente.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G06-CIE-U4-4.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 4): Enlace químico.. 4.2. Describe las propiedades y características del enlace iónico.",
+     "G06-CIE-U4-4.3 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 5): Enlace químico.. 4.3. Describe las propiedades y características del enlace metálico.",
+     "G10-QUI-U5-5.12 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 52): Propiedades de las sustancias iónicas. 5.12. Explica por qué los compuestos iónicos conducen la corriente eléctrica disueltos en agua pero no en estado sólido.",
+     "G10-QUI-U5-5.14 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 54): Propiedades de las sustancias metálicas. 5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos.",
+     "G10-QUI-U5-5.9 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 49): Sustancias covalentes. 5.9. Diferencia sustancias moleculares de sólidos covalentes por su dureza, punto de fusión y conductividad.",
+     "G10-QUI-U7-7.2 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 63): Fuerzas entre partículas. 7.2. Clasifica sólidos en moleculares, iónicos, covalentes y metálicos según las partículas y fuerzas que los forman y ordena sus puntos de fusión."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p028-02 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 28, SV 7–9]: Comparar y explicar las propiedades de las sustancias simples del carbono, así como comparar las propiedades de los óxidos de carbono."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-QUI-KS3-26 [ENG_NC_Science_KS3_2013.pdf p. 9, SV 5–7]: Propiedades de metales y no metales."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-QUI-hk_s1_3-p082-03 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 82, SV 6–8]: Comparar las propiedades físicas (resistencia, maleabilidad, ductilidad, conductividad eléctrica y térmica) de algunos metales."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p028-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Reconocer que los elementos tienen diferentes propiedades debido a las distintas formas en que se organizan sus átomos."
+     }
+    }
+   },
+   "id": "INC:CON:quimica/tipo-de-enlace-y-propiedades",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  }
+ ]
+}

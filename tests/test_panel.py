@@ -123,3 +123,23 @@ def test_contenido_en_secuencia(aislado):
     e = panel.cargar_estado()["P"]
     assert e["estado"] == "resuelta" and e["resolucion"]["decision"] == "corregir"
     assert e["version_vigente"]["retroalimentacion"] == "Versión del experto."
+
+
+def test_el_dictamen_queda_como_del_panel_y_no_como_confirmacion():
+    from goes_science_kg import revision_decisiones as rd
+
+    x = _expediente("decision", ["experto-quimica"])
+    x["dictamenes"] = [{**_dic("X", "rechazar", alternativa="Mantener la clase automática."), "ronda": 1,
+                        "rol": "experto-quimica"}]
+    x["resolucion"] = {"decision": "rechazar", "ronda": 1}
+    reg = panel._registro(x)
+    assert "no es una confirmación del MINED" in reg["nota"] and reg["alternativa"]
+    r = {"dictamenes_panel": [reg]}
+    assert rd._estado(r).startswith("dictamen del panel: rechazar")
+    assert rd._estado({**r, "confirmaciones": [{"revisado_por": "MINED"}]}) == "confirmada"   # lo humano gana
+
+
+def test_los_inciertos_son_expedientes_del_experto_de_la_disciplina():
+    inc = panel._exp_inciertos()
+    assert inc and all(len(x["roles"]) == 1 and x["roles"][0].startswith("experto-") for x in inc.values())
+    assert all(x["datos"]["lecturas"]["amplia"] != x["datos"]["lecturas"]["estricta"] for x in inc.values())

@@ -1,0 +1,571 @@
+{
+ "lote": "r2_experto-biologia",
+ "ronda": 2,
+ "rol": "experto-biologia",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-biologia.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "cambio_asignatura",
+   "titulo": "G03-CIE-U6-6.8: quimica → biologia",
+   "pregunta": "¿Son correctos la asignatura y los conceptos que la revisión asignó al tema?",
+   "datos": {
+    "tema": "G03-CIE-U6-6.8",
+    "antes": "quimica",
+    "ahora": "biologia",
+    "justificacion": "Alimentos fermentados por microorganismos: biotecnología microbiana.",
+    "conceptos": [
+     {
+      "id": "CON:biologia/biotecnologia-microbiana",
+      "nombre": "Biotecnología microbiana",
+      "definicion": "Uso de bacterias, levaduras y hongos para producir alimentos, medicamentos, enzimas o biocombustibles mediante fermentación y modificación genética.",
+      "asignatura": "biologia"
+     },
+     {
+      "id": "CON:biologia/microorganismos",
+      "nombre": "Microorganismos",
+      "definicion": "Seres vivos microscópicos, como bacterias, hongos microscópicos y protistas, que pueden ser beneficiosos o causar enfermedades.",
+      "asignatura": "biologia"
+     },
+     {
+      "id": "CON:biologia/fermentacion-y-respiracion-anaerobia",
+      "nombre": "Fermentación y respiración anaerobia",
+      "definicion": "Obtención de energía sin oxígeno que produce poco ATP y genera productos como ácido láctico o etanol.",
+      "asignatura": "biologia"
+     }
+    ],
+    "texto": "6. Los microorganismos. · Importancia de los microorganismos.. 6.8. Reconocimiento de alimentos transformados por microorganismos. Indicador: 6.8. Reconoce alimentos transformados por microorganismos."
+   },
+   "id": "ASI:G03-CIE-U6-6.8",
+   "opciones": [
+    "aceptar",
+    "rechazar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "ASI:G03-CIE-U6-6.8",
+     "decision": "aceptar",
+     "justificacion": "Está en la unidad de microorganismos y la evidencia es una botella con levadura y globo: fermentación microbiana. Biología es la asignatura adecuada y los conceptos son correctos; en 3.° basta lo observable (el gas que infla el globo), sin el nivel energético (ATP) de la definición.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.8 (Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 6 - Los microorganismos», fila 10)",
+       "cita": "Registro de la botella con levadura y globo, con una explicación."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La levadura fermenta el azúcar y libera CO2."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "ASI:G03-CIE-U6-6.8",
+     "decision": "rechazar",
+     "justificacion": "La asignatura es correcta (unidad «Los microorganismos»), pero el principal no. Biotecnología microbiana es un concepto de bachillerato que incluye modificación genética y medicamentos; en 3.° solo se reconoce que levaduras y bacterias transforman alimentos. Como principal fecha en 3.° la biotecnología, y el contraste 2.°–8.° la marca «adelantada» (mediana 7) por granularidad, no por contenido.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.8 (Matriz 3.er grado, Unidad 6, fila 10)",
+       "cita": "Reconoce alimentos transformados por microorganismos; evidencia: botella con levadura y globo"
+      },
+      {
+       "fuente": "internacional/2_8/contraste.json (CON:biologia/biotecnologia-microbiana)",
+       "cita": "clase adelantado en las dos lecturas: V2 en 3.° por G03-CIE-U6-6.8; mediana 7 (EE, HK, KR, TW)"
+      },
+      {
+       "fuente": "CON:biologia/microorganismos",
+       "cita": "nivel primaria: seres microscópicos que pueden ser beneficiosos o causar enfermedades"
+      }
+     ],
+     "confianza": "media",
+     "alternativa": "Mantener Biología. Poner CON:biologia/microorganismos como concepto principal y dejar biotecnología microbiana y fermentación como secundarios: en 3.° se reconoce que levaduras y bacterias transforman alimentos (pan, yogur, queso), sin la biotecnología industrial ni el ATP de la fermentación.",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "cambio_asignatura",
+   "titulo": "G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio",
+   "pregunta": "¿Son correctos la asignatura y los conceptos que la revisión asignó al tema?",
+   "datos": {
+    "tema": "G07-CIE-U6-6.12",
+    "antes": "biologia",
+    "ahora": "ciencias_tierra_espacio",
+    "justificacion": "Evaluación de impacto ambiental amplio, no solo ecosistémico.",
+    "conceptos": [
+     {
+      "id": "CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas",
+      "nombre": "Impacto de las actividades humanas en los recursos",
+      "definicion": "La agricultura, la tala, la minería y la urbanización agotan y contaminan suelos, agua y aire, alterando los sistemas terrestres.",
+      "asignatura": "ciencias_tierra_espacio"
+     },
+     {
+      "id": "CON:biologia/impacto-humano-en-los-ecosistemas",
+      "nombre": "Impacto humano en los ecosistemas",
+      "definicion": "Acciones humanas que perjudican o benefician las poblaciones de un ecosistema, como deforestación, reforestación o protección de especies.",
+      "asignatura": "biologia"
+     }
+    ],
+    "texto": "6. Ambiente y energía · Impacto ambiental. 6.12. Cuantificación de impactos ambientales. Indicador: 6.12. Desarrolla un ejercicio hipotético de estimación de impactos ambientales."
+   },
+   "id": "ASI:G07-CIE-U6-6.12",
+   "opciones": [
+    "aceptar",
+    "rechazar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "ASI:G07-CIE-U6-6.12",
+     "decision": "rechazar",
+     "justificacion": "La matriz de impacto es transversal, pero el cambio a Tierra y Espacio rompe la coherencia del bloque «Impacto ambiental», cuyos 6.10 y 6.11 son de Biología, y va contra la alineación principal TIMSS T8_27-B5.6 (Biología: efectos de la contaminación y de la conducta humana). La propia revisión le dio confianza baja. Basta el concepto secundario para enlazar Tierra y Espacio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U6-6.12 (Unidad 6 - Ambiente y energía, fila 14)",
+       "cita": "Matriz de impacto con escala explicada y comparación con otro grupo."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U6-6.10 y 6.11 (filas 12–13)",
+       "cita": "Perturbaciones antropogénicas en ecosistemas, asignadas a Biología."
+      },
+      {
+       "fuente": "data/grafo/aristas.jsonl (CUBRE principal)",
+       "cita": "TEMA:G07-CIE-U6-6.12 → OBJ:T8_27-B5.6 (Biología)."
+      },
+      {
+       "fuente": "data/interim/revisiones/2026-10-05_coherencia_asignatura.json",
+       "cita": "La revisión registró confianza baja."
+      }
+     ],
+     "confianza": "media",
+     "alternativa": "Mantener Biología, con CON:biologia/impacto-humano-en-los-ecosistemas como concepto principal y CON:ciencias_tierra_espacio/impacto-ambiental-de-actividades-humanas como secundario.",
+     "ronda": 1,
+     "rol": "experto-tierra-espacio",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "ASI:G07-CIE-U6-6.12",
+     "decision": "aceptar",
+     "justificacion": "Una matriz de impacto ambiental valora efectos sobre suelo, agua, aire y seres vivos, no solo sobre ecosistemas: Tierra y Espacio, con el impacto en los recursos como principal y el impacto ecosistémico como secundario, es defendible. Separa el tema de 6.10 y 6.11 (Biología), pero el foco distinto lo justifica.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U6-6.12 (Matriz 7.° grado, Unidad 6, fila 14)",
+       "cita": "Ejercicio hipotético de estimación de impactos; matriz de impacto con escala explicada"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "hallazgo",
+   "titulo": "Las adaptaciones no se retoman entre 3.° y 10.°",
+   "pregunta": "¿El panel respalda la lectura y la recomendación curricular?",
+   "datos": {
+    "id": "H28-adaptaciones",
+    "tramo": "2_8",
+    "asignatura": "biologia",
+    "titulo": "Las adaptaciones no se retoman entre 3.° y 10.°",
+    "evidencia": "V2: G02-CIE-U4-4.8 y luego solo G08-CIE-U6-6.3 (celular) y G11-BIO-U8-8.5; 6 de 8 países las tratan en SV 3–6.",
+    "recomendacion": "Retomar las adaptaciones de los organismos en 5.°–6.°.",
+    "fuente": "internacional/2_8/README.md"
+   },
+   "id": "HAL:H28-adaptaciones",
+   "opciones": [
+    "respaldar",
+    "matizar",
+    "no_respaldar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "HAL:H28-adaptaciones",
+     "decision": "respaldar",
+     "confianza": "alta",
+     "justificacion": "El hueco es real y pesa en el aprendizaje: 11.° explica las adaptaciones por selección natural sin una base intermedia. En 5.°–6.° (11–12 años), relacionar estructura, conducta y ambiente con especies locales es concreto y observable, y prepara la explicación evolutiva. Conviene evitar el lenguaje finalista («se adaptó porque lo necesitaba»), que es una idea previa muy resistente.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G02-CIE-U4-4.8 (fila 14)",
+       "cita": "Relaciona rasgos de un animal con su alimento y su hábitat (pico del colibrí)."
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U6-6.3 (fila 5)",
+       "cita": "Solo adaptaciones de células vegetales en los tejidos."
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U8-8.5 (fila 92)",
+       "cita": "Adaptaciones de especies salvadoreñas explicadas por selección natural."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "La espiral exige retomar con más complejidad; ocho grados sin retomar dejan la base en el nivel de 2.°."
+      }
+     ],
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "HAL:H28-adaptaciones",
+     "decision": "matizar",
+     "justificacion": "La lectura es correcta: tras 2.° (G02-CIE-U4-4.8) y el taxismo de 3.° (G03-CIE-U5-5.3), la V2 no retoma la relación entre rasgos y ambiente hasta 10.°–11.° (G08-CIE-U6-6.3 es celular). Falta matizar que la selección natural sí está en 7.° (G07-CIE-U2-2.13 a 2.16): el hueco es el puente descriptivo hacia ella, y debe enseñarse sin teleología.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G02-CIE-U4-4.8 (fila 14)",
+       "cita": "relaciona características de un animal con su alimentación y hábitat"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.15 y 2.16 (filas 17–18)",
+       "cita": "resistencia bacteriana; fuerzas evolutivas que actúan sobre una población"
+      },
+      {
+       "fuente": "internacional/2_8/contraste.json (adaptaciones-estructurales)",
+       "cita": "AU 4, ENG 4, EE 5, HK 3, SG 6: núcleo en SV 3–6"
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.8 (fila 10)",
+       "cita": "hábitat y nicho ecológico de tres animales salvadoreños"
+      }
+     ],
+     "confianza": "alta",
+     "texto": "La V2 presenta las adaptaciones en 2.° (G02-CIE-U4-4.8) y no vuelve a la relación entre rasgos y ambiente hasta 10.°–11.°; la selección natural sí está en 7.° (G07-CIE-U2-2.13 a 2.16), pero sin ese puente. Retomar en 4.°–6.° —por ejemplo, junto a hábitat y nicho (G04-CIE-U3-3.8)— adaptaciones estructurales y conductuales de especies salvadoreñas, presentadas como rasgos heredados que favorecen la supervivencia y la reproducción, sin lenguaje de intención («para», «necesitan adaptarse»), como base de la selección natural de 7.°.",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "hallazgo",
+   "titulo": "Enfermedades infecciosas y no infecciosas en 3.°, adelantadas frente a la mediana",
+   "pregunta": "¿El panel respalda la lectura y la recomendación curricular?",
+   "datos": {
+    "id": "H28-enfermedades",
+    "tramo": "2_8",
+    "asignatura": "biologia",
+    "titulo": "Enfermedades infecciosas y no infecciosas en 3.°, adelantadas frente a la mediana",
+    "evidencia": "G03-CIE-U6-6.1. HK P4 y KR en el mismo grado; ON, SG y ENG más tarde.",
+    "recomendacion": "Coherente: dos países al mismo nivel.",
+    "fuente": "internacional/2_8/README.md"
+   },
+   "id": "HAL:H28-enfermedades",
+   "opciones": [
+    "respaldar",
+    "matizar",
+    "no_respaldar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "HAL:H28-enfermedades",
+     "decision": "respaldar",
+     "confianza": "alta",
+     "justificacion": "También es coherente con el desarrollo: el indicador pide explicar con sus palabras y con dibujos cómo ocurre un contagio y cómo prevenirlo, algo concreto y cotidiano a los 8–9 años, y 6.2 agrega la observación al microscopio. Cuidar que los ejemplos no estigmaticen a las personas enfermas ni asusten.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.1 (fila 3)",
+       "cita": "Explicación con dibujos de un contagio y de cómo prevenirlo."
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.2 (fila 4)",
+       "cita": "Observación de un microorganismo al microscopio óptico."
+      },
+      {
+       "fuente": "internacional/2_8/README.md",
+       "cita": "HK P4 (p. 28) y KR (p. 24) lo tratan en el mismo grado."
+      }
+     ],
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "HAL:H28-enfermedades",
+     "decision": "matizar",
+     "justificacion": "La conclusión (sin cambio) es correcta, pero el título exagera: G03-CIE-U6-6.1 trata infección, contagio y prevención, no la distinción entre infecciosas y no infecciosas; las no transmisibles llegan en 9.° (G09-CIE-U9-9.4). Frente a HK y KR, que tratan las infecciosas comunes en el mismo grado, está alineada. El «adelanto» viene de un concepto que junta los dos tipos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.1 (Matriz 3.er grado, Unidad 6, fila 3)",
+       "cita": "explica infección y enfermedad; dibujos de cómo ocurre un contagio y cómo prevenirlo"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U9-9.4 (Matriz 9.° grado, Unidad 9, fila 6)",
+       "cita": "enfermedades no transmisibles: diabetes, hipertensión, obesidad"
+      },
+      {
+       "fuente": "HK-BIO-hk_primaria-p028-11 / KR-BIO-kr_primaria_34-p024-02",
+       "cita": "enfermedades infecciosas comunes, sus causas y su prevención (SV 2–3)"
+      }
+     ],
+     "confianza": "alta",
+     "texto": "En 3.° la V2 trata infección, contagio y prevención (G03-CIE-U6-6.1); la distinción entre enfermedades infecciosas y no infecciosas no está en 3.°: las no transmisibles llegan en 9.° (G09-CIE-U9-9.4). Frente a HK P4 y KR, que enseñan las infecciosas comunes en el mismo grado, la V2 está alineada; el «adelanto» aparece porque el concepto junta los dos tipos. No hay cambio que hacer. Cuidar que el lenguaje sobre el contagio no culpe ni estigmatice a las personas enfermas.",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, y propagación por esquejes o tubérculos.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G02-G04",
+    "accion": "nuevo",
+    "grado_propuesto": 3,
+    "unidad_propuesta": "4. Las plantas. (después de 4.2)",
+    "tema_propuesto": "4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, y propagación por esquejes o tubérculos.",
+    "indicador_logro": "Señala en una flor real las partes que intervienen en la polinización, relaciona la flor con el fruto y la semilla, y compara una planta que nace de semilla con otra que nace de un esqueje.",
+    "conceptos": [
+     "Reproducción sexual de las plantas con flor",
+     "Reproducción sexual y asexual",
+     "Ciclo de vida de las plantas"
+    ],
+    "evidencia": [
+     "ENG 2, UY 3, JP 4, SG 5, AU 8 (Reproducción sexual de las plantas con flor; hoy en 6.°, destino 4)",
+     "bloqueo: Reproducción sexual y asexual (hoy en 6.°; este tema la introduce)"
+    ],
+    "justificacion": "Inglaterra (2.°), Uruguay (3.°) y Japón (4.°) enseñan flor, semilla y fruto antes que El Salvador (6.°). Se ubica en 3.° porque ahí está la unidad de plantas. Introduce su bloqueo. Se paga con la fusión 2.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega reproducción de plantas ni propagación vegetativa."
+   },
+   "id": "PRO:biologia:G02-G04#1",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "PRO:biologia:G02-G04#1",
+     "decision": "adaptar",
+     "justificacion": "Es adecuado para 3.°: flor, fruto, semilla y esqueje se observan y manipulan, y continúa 2.° 1.10. Pero junta cinco procesos en un tema y usa «reproducción sexual y asexual», rótulos que la V2 trabaja en 6.° (6.8, 6.9). Propongo lenguaje concreto, polinización cualitativa y un registro de varias semanas en lugar de definiciones.",
+     "texto": "4.10. Observación de cómo nacen plantas nuevas: de la flor al fruto y la semilla, y de un pedazo de la planta (esqueje o tubérculo). Indicador: señala en una flor real dónde está el polen y dónde se forman las semillas, ordena con dibujos el paso de flor a fruto, y registra durante varias semanas una planta que nace de semilla y otra de un esqueje. «Sexual» y «asexual» quedan para 6.°.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G02-CIE-U4-1.10 (fila 5)",
+       "cita": "Representa con dibujos las etapas semilla, planta, flor y fruto."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.8 (fila 10) y G06-CIE-U6-6.9 (fila 11)",
+       "cita": "La fecundación con flor disecada y la propagación asexual se trabajan en 6.°."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "En 3.°, lo observable y manipulable, una idea por paso; los rótulos abstractos llegan después."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PRO:biologia:G02-G04#1",
+     "decision": "adoptar",
+     "justificacion": "Hoy la malla pasa de los órganos de la planta (3.°) a la fecundación celular (6.°, 6.8) sin el ciclo flor-fruto-semilla visible, que es su base. Es concreto y observable a los 8–9 años. La evidencia es moderada: mediana 4,5 en ocho países; con núcleo sólido, solo Inglaterra y Hong Kong antes de 4.°. La V2 no hizo la fusión que lo pagaba; el espacio lo decide el MINED.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U4-4.2",
+       "cita": "Relaciona los órganos vegetales con sus funciones"
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.8",
+       "cita": "Describe la fecundación y los planos de división celular en plantas"
+      },
+      {
+       "fuente": "data/grafo/internacional_2_8/consenso.json (CON:biologia/reproduccion-de-plantas-con-flor)",
+       "cita": "8 países en el núcleo; mediana del primer grado 4,5; sólido hasta 3.°: ENG y HK"
+      },
+      {
+       "fuente": "data/interim/propuestas/adopcion_v2.json",
+       "cita": "la V2 no agrega reproducción de plantas ni propagación vegetativa"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "1.13. Descripción y clasificación de los ecosistemas de El Salvador por sus especies, sus interacciones y sus factores abióticos.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "1. Ecología y ambiente (al inicio de la unidad)",
+    "tema_propuesto": "1.13. Descripción y clasificación de los ecosistemas de El Salvador por sus especies, sus interacciones y sus factores abióticos.",
+    "indicador_logro": "Compara dos ecosistemas salvadoreños (por ejemplo, manglar y bosque nebuloso) con datos de clima, sustrato, especies e interacciones, y los clasifica.",
+    "conceptos": [
+     "Factores bióticos y abióticos",
+     "Ecosistemas naturales, rurales y urbanos",
+     "Biodiversidad"
+    ],
+    "evidencia": [
+     "ACSBL019 (0 temas)",
+     "ACSBL021 (1 tema, débil: G11-3.9)",
+     "AUSS unidad 1"
+    ],
+    "justificacion": "La unidad de ecología empieza por productividad sin describir ecosistemas. ACARA abre con su diversidad y clasificación. Usa ejemplos locales. Se paga con la fusión 16.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega ecosistemas salvadoreños ni su clasificación."
+   },
+   "id": "PRO:biologia:G10-G11#17",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "PRO:biologia:G10-G11#17",
+     "decision": "adoptar",
+     "justificacion": "Adecuado para 11.°: comparar con datos dos ecosistemas cercanos activa lo trabajado en 4.° (3.4, 3.5) y 7.° (4.8, 4.11) y da contexto a una unidad que abre con productividad y DBO, muy técnica. El indicador ya pide datos y clasificación, no solo describir. Al enseñarlo, retomar y no repetir lo de 4.° y 7.°.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.4 (fila 6) y G04-CIE-U3-3.5 (fila 7)",
+       "cita": "Diversidad ecosistémica y formaciones vegetales de El Salvador en 4.°."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U4-4.11 (fila 13)",
+       "cita": "Biomas y sus criterios de clasificación en 7.°."
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.1 (fila 3)",
+       "cita": "La unidad abre con productividad y DBO a partir de oxígeno disuelto."
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PRO:biologia:G10-G11#17",
+     "decision": "adaptar",
+     "justificacion": "ACARA abre la unidad 1 describiendo y clasificando ecosistemas por factores bióticos y abióticos (ACSBL019 y ACSBL021), y Bachillerato no lo retoma. Pero no es contenido nuevo: la V2 lo trabaja en 4.° (3.4–3.6) y 7.° (4.8, 4.11). Vale como retorno en espiral solo si sube de nivel: comparar con datos y clasificar con criterios explícitos. La fusión 16 que lo pagaba no se hizo.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/biologia_en_u1-3.json (ACSBL019, ACSBL021)",
+       "cita": "ecosistemas descritos por especies, interacciones y factores abióticos como clima y sustrato"
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.5",
+       "cita": "Reconoce los principales tipos de formaciones vegetales de El Salvador"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U4-4.11",
+       "cita": "Identifica variables utilizadas como criterios para clasificar biomas"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.1",
+       "cita": "la unidad 1 de 11.° empieza por productividad y DBO"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Abrir la unidad 1 de 11.° con un tema de datos, no de descripción: comparar dos ecosistemas salvadoreños (p. ej., el manglar de la bahía de Jiquilisco y el bosque nebuloso de Montecristo) con datos de clima, sustrato, especies e interacciones, y clasificarlos con criterios explícitos. Retoma 4.° (3.4–3.5) y 7.° (4.8, 4.11) sin repetirlos y prepara la productividad (1.1) y la similitud entre comunidades (5.8).",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "9.2. Explicación de la estructura de la membrana celular y de su papel como límite que regula el intercambio con el entorno.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "9. La célula: estructura, membranas e intercambio (nueva en 10.°; ubicar entre las unidades 1 y 2)",
+    "tema_propuesto": "9.2. Explicación de la estructura de la membrana celular y de su papel como límite que regula el intercambio con el entorno.",
+    "indicador_logro": "Representa con un modelo de mosaico fluido la bicapa de fosfolípidos y sus proteínas y explica cómo regula la entrada y salida de gases, nutrientes y desechos.",
+    "conceptos": [
+     "Membrana celular"
+    ],
+    "evidencia": [
+     "ACSBL045 (0 temas en 10.°–11.°)",
+     "AUSS unidad 2 (≈ 10.°)",
+     "prerrequisito: Biomoléculas (unidad 1 de 10.°) y Estructuras celulares básicas (6.°)"
+    ],
+    "justificacion": "La membrana solo se trabaja en 6.°. Es la base del transporte y del intercambio que ACARA desarrolla en la unidad 2. Va después de lípidos y proteínas. Se paga con la fusión 2.",
+    "conciliacion_v2": "8.2 trata difusión y ósmosis; no enseña estructura de membrana ni mosaico fluido."
+   },
+   "id": "PRO:biologia:G10-G11#3",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "PRO:biologia:G10-G11#3",
+     "decision": "adoptar",
+     "justificacion": "El mosaico fluido modela entidades no observables, algo adecuado en 10.° con un modelo físico o un dibujo. La V2 usa la membrana en 6.° (5.8) y 9.° (8.2) como límite que deja pasar sustancias, y en 10.° 2.15 la membrana tilacoidal, sin enseñar su estructura: este tema llena ese hueco. Si no se crea la unidad 9, ubicarlo antes de 2.15.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.8 (fila 10)",
+       "cita": "Propiedades de las membranas biológicas con masas antes y después."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "Difusión y ósmosis a través de la membrana en tejidos vegetales."
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U2-2.15 (fila 28)",
+       "cita": "Esquema rotulado de la membrana tilacoidal."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PRO:biologia:G10-G11#3",
+     "decision": "adaptar",
+     "justificacion": "La premisa está desactualizada: la V2 agregó 8.2 en 9.° (difusión y ósmosis a través de la membrana). Aun así, ningún tema enseña la estructura de la membrana después de las biomoléculas, donde cobra sentido (ACSBL045 y ACSBL046). La adapto como paso de espiral que une estructura y tipos de transporte. La unidad 9 nueva y la fusión 2 no existen en la V2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "Experimentación con difusión y ósmosis a través de la membrana celular en tejidos vegetales"
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.8",
+       "cita": "Efectúa un experimento donde se evidencien las propiedades de una membrana biológica"
+      },
+      {
+       "fuente": "data/interim/acara/biologia_en_u1-3.json (ACSBL045, ACSBL046)",
+       "cita": "la membrana controla el intercambio; transporte por difusión, ósmosis, transporte activo y endocitosis"
+      }
+     ],
+     "confianza": "alta",
+     "texto": "Tema de 10.° al cierre de la unidad 1 (después de lípidos y proteínas): estructura de la membrana (doble capa de fosfolípidos con proteínas, modelo de mosaico fluido) y cómo esa estructura explica qué la cruza por difusión simple, qué necesita proteínas de transporte y qué requiere energía (transporte activo, endocitosis y exocitosis). Retoma la ósmosis de 9.° (8.2) y las membranas de 6.° (5.8) sin repetir sus experimentos.",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  }
+ ]
+}

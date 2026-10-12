@@ -15,8 +15,10 @@
 - **Revisión humana:**
   - `revision_humana.csv`: objetivos de los países con extracción parcial o etiquetas de confianza baja.
   - `revision_clases.csv`: conceptos «inciertos» y hallazgos con alertas.
-- **Correcciones expertas:** 19 clases en `data/interim/internacional_2_8/revisiones.json`. Cada una trae su evidencia
-  y gana sobre la regla automática. Van a confirmación del MINED con `gskg revision exportar-decisiones`.
+- **Correcciones expertas:** 154 clases en `data/interim/internacional_2_8/revisiones.json`. Son 19 de las
+  verificaciones y 135 del panel de expertos IA (spec 14), que clasificó con evidencia en la fuente los conceptos
+  inciertos. Cada una gana sobre la regla automática y va a confirmación del MINED con
+  `gskg revision exportar-decisiones`.
 
 ## Método v2: solo se afirma lo que resiste dos lecturas (2026-10-12)
 La primera verificación (24 hallazgos) dio **46 % de falsos**. Casi todos venían de etiquetas sueltas, de la V2 o de
@@ -55,6 +57,7 @@ Las salidas de 9.°–11.° no cambian: el tramo usa el método v1 (`lectura_dob
 |---|---|---|---|---|
 | 1 (2026-10-11), método v1 | 24 hallazgos de todas las clases | 7 | 6 | **11 (46 %)** |
 | 2 (2026-10-12), método v2 sin la búsqueda de texto, **muestra nueva al azar** | 8 tardíos, 7 adelantados, 4 sin referente, 2 posteriores y 3 secuencias | 13 | 5 | **6 (25 %)** |
+| Panel de expertos IA (2026-10-12) | los 150 conceptos inciertos, verificados en la fila de la V2 y en la página de cada país | 135 clasificados (58 alineados, 34 posteriores, 23 sin referente, 14 adelantados, 6 tardíos) | — | 15 sin consenso, para una persona |
 
 - **Puntuación del método v2 completo sobre los 42 conceptos verificados en las dos rondas:**
   - afirma 28 clases y acierta 24 (86 %), contando como acierto los parciales;
@@ -76,12 +79,23 @@ Formato de la evidencia: tema de la V2 con hoja y fila; país con documento y p�
 ### Llegan tarde
 | Hallazgo | Evidencia | Lectura |
 |---|---|---|
-| **Agentes oxidantes y reductores, reducción y par redox** (V2 desde 10.°) | **V2:** la oxidación con oxígeno está en 7.° (G07-CIE-U1-1.1/1.2); la reducción y la serie de actividad, en G10-QUI-U13-13.3 (fila 108); el redox formal, en G11-QUI-U6. **Países:** TW Jc-Ⅳ-1 a 7 (p. 31, SV 6–8), ENG KS3 (p. 8–9: desplazamiento, serie de reactividad, obtener metales con carbono), EE (p. 27), JP 中2–3. | Introducir en 7.°–8.° la serie de reactividad y la reducción cualitativa. |
+| **Reducción, serie de actividad y par redox** (V2 desde 10.°) | **V2:** la oxidación con oxígeno está en 7.° (G07-CIE-U1-1.1/1.2); la reducción y la serie de actividad, en G10-QUI-U13-13.3 (fila 108); el redox formal, en G11-QUI-U6. **Países:** TW Jc-Ⅳ-1 a 7 (p. 31, SV 6–8), ENG KS3 (p. 8–9: desplazamiento, serie de reactividad, obtener metales con carbono), EE (p. 27), JP 中2–3. HK p. 80 solo extrae metales con carbono, por eso el concepto «agentes oxidantes y reductores» queda en «posterior» (4 países). | Introducir en 7.°–8.° la serie de reactividad y la reducción cualitativa. |
+| **Neutralización ácido-base** (V2 en 9.°) | **V2:** G09-CIE-U3-3.19; antes, ácido con bicarbonato como reacción (2.°, 6.°). **Países (SV 7):** HK S1–3 p. 60 (8.4, núcleo; no está en cursiva), ENG KS3 (p. 8), TW Jd-Ⅳ-6 (p. 31), SG (p. 45). La verificación anterior la daba por alineada al tomar HK como Extension; el panel lo corrigió. | Introducir la neutralización con indicadores en 7.°–8.°, junto a los indicadores de G07-CIE-U1-1.7. |
 | **Suelo** (V2 en 5.°) | **V2:** G05-CIE-U6-6.14 a 6.19; antes solo «la planta necesita suelo» (G02-CIE-U4-4.3). **Países a la altura de 3.°:** ENG Year 3 (p. 17), HK P4 (4EA3, p. 40), AU Year 3, ON Grade 3 (p. 123–124), JP 小4 (p. 61), TW etapa II. | Adelantar a 3.° la formación, los componentes y los tipos de suelo (6 países). |
 | **Formación de imágenes en espejos planos** (V2 en 10.°) | **V2:** reflexión en espejos en G04-CIE-U1-1.14; imágenes en G10-FIS-U16-16.10. **Países (SV 5–8):** HK P6 (p. 38), KR [9과10-02] (p. 55), SG Lower Sec (p. 37), TW Ka-Ⅳ-8/9, ENG KS3 (p. 12). | Introducir la imagen en espejo plano en la óptica de 6.°–8.°. |
 | **Lentes e imágenes** (V2 en 10.°–11.°) | **V2:** antes de 10.° la lupa es solo un instrumento; en 7.° hay refracción sin lentes (G07-CIE-U6-6.21); las lentes explícitas están en G11-FIS-U17-17.2 a 17.10. **Países:** KR [9과10-02] (p. 55, cualitativo), TW INe-Ⅲ-8 (p. 23) y p. 32, EE (p. 19), JP 中1, ENG KS3 (p. 12, lente convexa). | Introducir lentes convergentes cualitativas (imagen, lupa, ojo) en 7.°–8.°. |
 | **Reacciones exotérmicas y endotérmicas** (V2 en 10.°) | **V2:** G10-QUI-U9-9.3 (fila 79); en 6.° solo el cambio de temperatura como evidencia de reacción (G06-CIE-U4-4.9). **Países:** ENG KS3 (p. 8), JP 中2, KR [9과16-06] (p. 60), TW (p. 27), EE (p. 12). | Nombrar en 7.°–8.° la energía que se libera o se absorbe en las reacciones. |
 | **Ley de Ohm como relación explícita** (parcial; V2 la nombra en 11.°) | **V2:** en 6.° se miden voltaje y corriente y se predice la corriente (G06-CIE-U3-3.1 a 3.5) sin nombrar la ley; la ley está en G11-FIS-U9-9.2 (fila 47). **Países (SV 7–8):** KR [9과14-02] (p. 58), TW (p. 32), JP 中2, ENG KS3 (p. 12, R = V/I). SG la deja opcional (p. 48). | Nombrar la relación V = I·R en 8.°–9.°, sobre lo que 6.° ya trabaja. |
+
+### Llegan tarde según el panel de expertos (clasificados con evidencia, sin una segunda verificación)
+| Hallazgo | Evidencia | Lectura |
+|---|---|---|
+| **Masa y peso** (V2 en 10.°) | **V2:** distingue masa y peso (W = mg) recién en G10-FIS-U5-5.1 (fila 27); en 2.° se mide masa con balanza. **Países (SV 4.5–7):** ON (p. 157), SG (p. 65), TW (p. 22), ENG KS3 (p. 13), KR (p. 50), HK (p. 63). | Distinguir masa y peso de forma cualitativa en 6.°–7.°. |
+| **Potencia eléctrica y efecto Joule** (V2 en 9.°) | **V2:** G09-CIE-U6-6.8 (fila 10); la unidad de circuitos de 6.° no trata la potencia y en 4.° solo hay un precursor (1 W = 1 J/s con focos, G04-CIE-U1-1.10). **Países (hacia SV 7):** ENG KS3 (p. 9: W, kWh y facturas), JP, KR, TW, HK. | Agregarla a la unidad de circuitos de 6.°–7.°. |
+| **Refracción de la luz** (V2 en 7.°) | **V2:** se nombra y trabaja por primera vez en G07-CIE-U6-6.21 (fila 23); el arcoíris de 4.° (G04-CIE-U1-1.14) es dispersión sin refracción. **Países (hacia SV 5):** ON Grade 4 (C2.3, p. 131), AU Year 5, KR, TW y HK P6, de forma cualitativa. | Nombrar la refracción, cualitativa, en la óptica de 4.°–5.°. |
+| **El ojo y los instrumentos ópticos** (V2 en 11.°) | **V2:** el ojo, la lupa, el microscopio y el telescopio, en G11-FIS-U17-17.6 a 17.9 (filas 104–107); antes solo hay dispositivos con espejos planos (10.°). **Países (SV 6–8):** ENG, HK, EE, TW y KR. | Con lentes y espejos planos: una unidad de óptica cualitativa en 7.°–8.°. |
+| **Relaciones presión, volumen y temperatura en gases** (V2 en 9.°) | **V2:** G09-CIE-U2-2.4 (fila 6); el globo de 6.° (G06-CIE-U2-2.7) es dilatación térmica, sin presión. **Países (hacia SV 7):** KR (p. 51: Boyle y Charles), TW, ON Grade 8, HK, JP 小4. | Introducir las relaciones cualitativas en 8.°, antes de los procesos termodinámicos de 9.° (también lo pide el contraste de 9.°–11.°). |
+| **Recursos renovables y no renovables** (V2 en 7.°) | **V2:** G07-CIE-U6-6.1 (fila 3). **Países (hacia 5.°):** HK 3EA3 (p. 40), TW (p. 24), ON E2.5 (p. 146), KR [6과08] (p. 38), EE (p. 11). Está justo en el umbral de 2 grados. | Introducirlos de forma cualitativa en 4.°–5.°. |
 
 ### Van antes que los países
 | Hallazgo | Evidencia | Lectura |
@@ -106,6 +120,7 @@ Formato de la evidencia: tema de la V2 con hoja y fila; país con documento y p�
 
 ### Sin desajuste (se informan como nota)
 - **Solo después de 8.°, igual que en los países:**
+  - agentes oxidantes y reductores como concepto (V2 en 10.°; solo 4 países los nombran antes);
   - celdas galvánicas (V2 en 11.°);
   - corrientes oceánicas (9.°);
   - termorregulación (9.°);
@@ -113,7 +128,6 @@ Formato de la evidencia: tema de la V2 con hoja y fila; país con documento y p�
   - radiación ionizante (11.°).
 - **Dentro de la tolerancia de ± 1,5 grados:**
   - motor eléctrico y sistema endocrino (V2 en 9.°);
-  - neutralización ácido-base (9.° frente a 8.° en sentido estricto);
   - fricción (3.°);
   - conservación de la masa (7.°);
   - indicadores ácido-base (7.°).
@@ -139,8 +153,8 @@ Formato de la evidencia: tema de la V2 con hoja y fila; país con documento y p�
 | Masa y peso antes que gravedad; tejidos antes que diferenciación (secuencias, ronda 2) | medir masa no exige la gravedad; los tejidos histológicos van con la diferenciación en 6.° | etiquetas de un solo lado | no: siguen como candidatos sin presentar |
 
 ## Límites y pendientes
-- **150 conceptos inciertos (31 %)** esperan revisión en `revision_clases.csv`. Son el costo de afirmar solo lo que
-  resiste las dos lecturas.
+- **15 conceptos inciertos** esperan a una persona. El panel clasificó con evidencia 135 de los 150 que dejó la doble
+  lectura; los que quedan tienen dos lecturas válidas (`panel/DICTAMEN.md`).
 - **Notas de los países que excluyen contenido** (KR p. 39: «no se trata la neutralización»; SG p. 48: opcional) y
   notas de alcance de JP (触れること) que no se importaron.
 - **Metadatos de 9.°–11.° (corregidos el 2026-10-12):** 66 objetivos de electivas de AU Senior Secondary («Units 1

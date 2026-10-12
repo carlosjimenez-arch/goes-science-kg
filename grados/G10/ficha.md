@@ -10,7 +10,7 @@
 | Física | 121 |
 | Química | 112 |
 
-- **241 conceptos**: 80 nuevos en este grado, 160 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **241 conceptos**: 79 nuevos en este grado, 161 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: AUSS 109, TA15 12.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 0.
 

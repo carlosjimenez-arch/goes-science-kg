@@ -3,6 +3,13 @@
 > Creada el 2026-10-12, a pedido del responsable del proyecto: hoy no hay un equipo del MINED que revise. El panel
 > resuelve con criterio técnico las decisiones que esperaban esa revisión, para que el proyecto avance. Sus
 > dictámenes **no son confirmaciones del MINED**.
+>
+> **Primera revisión (2026-10-12):**
+> - 510 expedientes en 3 rondas, con 32 subagentes;
+> - 493 resueltos y 17 sin consenso, que quedan para una persona;
+> - lo resuelto ya está aplicado en las capas.
+>
+> Resultados en `panel/README.md` y `panel/DICTAMEN.md`.
 
 ## 1. Propósito y límites
 - **Qué hace.** Dictamina las decisiones pendientes de revisión: las decisiones de contenido, la división de un
@@ -51,6 +58,7 @@ Las instrucciones comunes están en `prompts/panel_dictaminar.md`:
 | `hallazgo` | `data/interim/panel/hallazgos.json` (hallazgos verificados de los README del contraste) | experto + psicopedagogo | respaldar · matizar · no_respaldar |
 | `propuesta` | acciones «no adoptadas» de la conciliación con la V2 | experto + psicopedagogo | adoptar · adaptar · descartar |
 | `piloto` | `config/panel.yaml` | psicopedagogo (asesora; decide el responsable) | recomendar |
+| `clase_incierta` | conceptos «inciertos» del contraste de 2.°–8.° | experto de la disciplina, con verificación en la fuente | faltante · tardío · posterior · adelantado · sin_referente · alineado (lo resuelto entra a `revisiones.json` del tramo) |
 
 ## 4. Circuito y consolidación (`src/goes_science_kg/panel.py`)
 ```bash
@@ -63,6 +71,10 @@ uv run gskg panel preparar --ronda 3      # visto bueno final del experto en el 
 uv run gskg panel consolidar --ronda 3
 uv run gskg panel aplicar                 # escribe lo resuelto en las capas, con procedencia (idempotente)
 uv run gskg panel informe                 # panel/DICTAMEN.md
+# Un grupo de tipos que corre aparte lleva su serie de lotes, para no mezclarse con las rondas principales:
+uv run gskg panel preparar --ronda 1 --tipos clase_incierta --serie inc
+uv run gskg panel consolidar --ronda 1 --serie inc
+# y las rondas principales se preparan con --tipos sin ese grupo (si no, lo pendiente de la serie entra en ellas)
 ```
 - **Paralelo** (todo menos el contenido):
   - se resuelve con unanimidad de los roles requeridos y confianza media o alta;

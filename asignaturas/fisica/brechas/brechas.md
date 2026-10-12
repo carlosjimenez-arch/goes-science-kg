@@ -30,7 +30,6 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Ley de Ohm | 11.° | 6.5 | 6.5 | ENG 6.0, JP 7.0 | +4.5 |
 | Lentes delgadas e imágenes | 10.° | 6 | 6 | ENG 6.0, JP 6.0, UY 5.0 | +4 |
 | Ondas electromagnéticas y espectro | 10.° | 6 | 6 | CO 8.5, ENG 6.0, UY 6.0 | +4 |
-| Carga eléctrica y electrización | 9.° | 6 | 6.5 | CO 6.0, ENG 6.0, JP 7.0, UY 5.0 | +3 |
 | Conservación de la energía | 10.° | 7 | 7 | AU 8.0, CO 8.5, ENG 6.0, UY 6.0 | +3 |
 | Potencia eléctrica y efecto Joule | 9.° | 6 | 6.5 | CO 5.0, ENG 6.0, JP 7.0 | +3 |
 | Gas ideal y teoría cinética | 10.° | 7.25 | 6 | CO 8.5, ENG 6.0 | +2.75 |
@@ -75,7 +74,6 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Expansión del universo y Big Bang | 5.° | Efecto Doppler | 11.° | alta |
 | Resistencia equivalente | 6.° | Ley de Ohm | 11.° | alta |
 | Absorción de radiación y efecto invernadero | 7.° | Ondas electromagnéticas y espectro | 10.° | alta |
-| Corriente, voltaje y resistencia | 6.° | Carga eléctrica y electrización | 9.° | alta |
 | Esfuerzo, deformación y módulo de Young | 2.° | Fuerza elástica y ley de Hooke | 5.° | alta |
 | Ondas estacionarias y armónicos | 8.° | Superposición e interferencia de ondas | 11.° | alta |
 | Primera ley de Newton: inercia | 5.° | Fuerza neta y diagrama de cuerpo libre | 8.° | alta |
@@ -83,6 +81,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Capacitancia y condensadores | 9.° | Energía potencial y potencial eléctrico | 11.° | alta |
 | Cinemática en dos dimensiones y proyectiles | 8.° | Caída libre | 10.° | alta |
 | Circuito eléctrico simple | 2.° | Conductores y aislantes eléctricos | 4.° | alta |
+| Corriente alterna y transformador | 9.° | Inducción electromagnética: Faraday y Lenz | 11.° | alta |
 | Fuerzas mecánicas comunes | 8.° | Fricción y resistencia del aire | 10.° | alta |
 | Capacidad calorífica y calor específico | 9.° | Calor como energía en tránsito | 10.° | alta |
 | Fotón y efecto fotoeléctrico | 10.° | Cuantización de la energía | 11.° | alta |

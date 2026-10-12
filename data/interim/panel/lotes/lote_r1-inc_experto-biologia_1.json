@@ -1,0 +1,2171 @@
+{
+ "lote": "r1-inc_experto-biologia_1",
+ "ronda": 1,
+ "rol": "experto-biologia",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-biologia.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Adaptaciones conductuales (CON:biologia/adaptaciones-conductuales)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/adaptaciones-conductuales",
+     "nombre": "Adaptaciones conductuales",
+     "definicion": "Conductas como migración, hibernación o vida en grupo que aumentan la supervivencia de los animales en su ambiente.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": {
+     "vecinos": [
+      "CON:biologia/adaptaciones-estructurales",
+      "CON:biologia/habitat-y-ecosistemas-comunes"
+     ]
+    },
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": 4,
+     "grado_estricto": 4,
+     "mediana": 4.0,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G03-CIE-U5-5.3 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 5 - Los animales», fila 5): Características de los animales.. 5.3. Explica un tipo de taxismo evidenciado mediante la observación.",
+     "G10-BIO-U6-6.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 58): Metabolismo energético del organismo. 6.3. Explica con gráficas de temperatura corporal y tasa metabólica las diferencias en la termorregulación de endotermos y ectotermos.",
+     "G11-BIO-U8-8.5 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 92): Selección natural y adaptación. 8.5. Explica cómo las adaptaciones morfológicas, fisiológicas y conductuales del mangle rojo, el mangle negro y otras especies salvadoreñas resultan de la selección natu"
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S5U01 [AU_Science_F-6_v9_contenido.docx p. None, SV 4–4]: Examinar cómo ciertas estructuras y comportamientos de los seres vivos les permiten sobrevivir en hábitats específicos."
+     },
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p012-02 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 12, SV 7–9]: Asociar las adaptaciones biológicas con las condiciones ambientales físicas y químicas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-BIO-Y6-08 [ENG_NC_Science_KS1-2_2013.pdf p. 32, SV 4–4]: Identificar cómo animales y plantas se adaptan a su ambiente y que la adaptación puede conducir a la evolución."
+     },
+     "HK": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p031-06 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 31, SV 3–3]: Enumerar ejemplos de características que permiten a los animales adaptarse a su medio ambiente."
+     },
+     "JP": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260243221100000 [jp_cos_826 p. 59, SV 3–3]: La actividad de los animales varía según la estación, cálida o fría."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_34-p020-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 20, SV 2–3]: Investigar plantas en diversos hábitats y explicar cómo su apariencia y estilo de vida están relacionados con su entorno."
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p068-01 [SG_Primary_Science_2023.pdf p. 68, SV 6–6]: Comprender el efecto en los organismos cuando el ambiente se vuelve desfavorable, provocando que se adapten y sobrevivan, se muden a otros lugares o mueran."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_primaria-p020-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 20, SV 4–5]: Las características morfológicas animales se relacionan con el comportamiento; diferentes estructuras corporales determinan distintas formas de movimiento."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/adaptaciones-conductuales",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "ATP y energía en los sistemas vivos (CON:biologia/atp-y-energia-celular)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/atp-y-energia-celular",
+     "nombre": "ATP y energía en los sistemas vivos",
+     "definicion": "El ATP almacena y transfiere energía en la célula; los seres vivos transforman energía cumpliendo las leyes de la termodinámica.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.12 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 14): Respiración y mitocondria.. 5.12. Explica el mecanismo general de la respiración celular eucariota.",
+     "G06-CIE-U5-5.13 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 15): Respiración y mitocondria.. 5.13. Describe la estructura y funciones de las mitocondrias.",
+     "G06-CIE-U5-5.8 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 10): Membranas biológicas.. 5.8. Efectúa un experimento donde se evidencien las propiedades de una membrana biológica.",
+     "G10-BIO-U1-1.10 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 12): Ácidos nucleicos. 1.10. Identifica las funciones de los nucleótidos libres.",
+     "G10-BIO-U2-2.1 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 14): Alimentación de las células. 2.1. Ejemplifica el uso de energía en los seres vivos a partir de fenómenos cotidianos.",
+     "G10-BIO-U2-2.10 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 23): Respiración celular. 2.10. Ejemplifica los procesos oxidativos que suceden en la respiración celular."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p009-06 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 9, SV 8–9]: Comprender que los compuestos orgánicos se usan como combustibles en la respiración celular para permitir otras reacciones químicas vitales."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p052-02 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 52, SV 6–8]: Reconocer que la fotosíntesis es el proceso mediante el cual las plantas fabrican su alimento, convirtiendo energía luminosa en energía química."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p057-08 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 57, SV 6–8]: Comprender la relación entre respiración y fotosíntesis en plantas, y analizar los cambios de energía y materia en estos procesos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/atp-y-energia-celular",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Atributos de las poblaciones (CON:biologia/atributos-de-las-poblaciones)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/atributos-de-las-poblaciones",
+     "nombre": "Atributos de las poblaciones",
+     "definicion": "Las poblaciones se describen por su densidad, distribución espacial, estructura de edades y supervivencia mediante tablas de vida.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G07-CIE-U4-4.4 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 4 - Ecología», fila 6): Ecología de poblaciones. 4.4. Describe la estructura y dinámica elemental de una población utilizando datos experimentales.",
+     "G11-BIO-U2-2.6 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 20): Cultivo de microorganismos. 2.6. Estima la cantidad de colonias de un cultivo microbiano en un medio sólido utilizando un método de recuento sencillo.",
+     "G11-BIO-U7-7.1 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 81): Atributos de una población. 7.1. Determina el patrón de distribución espacial de una población (uniforme, aleatorio o agregado) calculando la densidad y la relación varianza-media de conteos por cuadra",
+     "G11-BIO-U7-7.2 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 82): Atributos de una población. 7.2. Estima el tamaño de una población con el índice de Lincoln-Petersen y evalúa cómo el incumplimiento de sus supuestos afecta la estimación.",
+     "G11-BIO-U7-7.4 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 84): Crecimiento poblacional. 7.4. Construye curvas de supervivencia a partir de tablas de vida y clasifica especies según su estrategia reproductiva r o K.",
+     "G11-BIO-U7-7.7 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 87): Poblaciones y conservación. 7.7. Evalúa con datos de anidación y supervivencia la eficacia de medidas de conservación de tortugas marinas en la costa salvadoreña."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p015-17 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 15, SV 7–9]: Analizar el efecto de los factores ambientales sobre la abundancia de organismos basándose en diagramas y tablas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p015-01 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 15, SV 8–9]: Describir cómo realizar una investigación de campo sobre distribución y abundancia de organismos, y explicar cómo determinar su número en un área."
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p069-02 [SG_Primary_Science_2023.pdf p. 69, SV 6–6]: Diferenciar entre organismo (ser vivo), población (grupo de la misma especie en un lugar y tiempo) y comunidad (varias poblaciones viviendo juntas en un lugar)."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_primaria-p021-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 21, SV 4–5]: Definir población como un grupo de la misma especie en un área y tiempo específicos, y comunidad como la combinación de múltiples poblaciones en un área."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/atributos-de-las-poblaciones",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Biotecnología vegetal y agroindustria (CON:biologia/biotecnologia-vegetal)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/biotecnologia-vegetal",
+     "nombre": "Biotecnología vegetal y agroindustria",
+     "definicion": "Mejoramiento genético, cultivo de tejidos y plantas transgénicas para aumentar productividad, resistencia y calidad de cultivos.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G06-CIE-U6-6.9 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 11): Desarrollo Vegetal.. 6.9. Ejemplifica las principales técnicas de propagación vegetal asexual.",
+     "G07-CIE-U2-2.17 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 19): Mecanismos de evolución. 2.17. Diseña un procedimiento para el hipotético mejoramiento genético de un organismo.",
+     "G11-BIO-U3-3.1 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 30): Introducción a la biotecnología vegetal. 3.1. Ejemplifica aplicaciones de la biotecnología vegetal.",
+     "G11-BIO-U3-3.11 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 40): Desarrollo vegetal. 3.11. Ejemplifica efectos de las hormonas vegetales o fitorreguladores en el desarrollo de las plantas o sus estructuras.",
+     "G11-BIO-U3-3.13 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 42): Cultivo in vitro de plantas. 3.13. Generaliza las condiciones a tener en cuenta para iniciar un cultivo in vitro de plantas.",
+     "G11-BIO-U3-3.14 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 43): Cultivo in vitro de plantas. 3.14. Explica un método simple para establecer un cultivo in vitro de plantas."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p017-02 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 17, SV 7–9]: Dar ejemplos de campos de la ingeniería genética y evaluar las posibilidades de modificación genética de organismos basándose en puntos de vista científicos."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p017-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 17, SV 8–9]: Explicar los posibles beneficios y riesgos, incluyendo consideraciones prácticas y éticas, del uso de tecnología genética en agricultura y medicina."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p030-11 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 30, SV 6–8]: La biotecnología ayuda a resolver problemas agrícolas, alimentarios, energéticos, médicos y ambientales, pero puede traer nuevos problemas."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/biotecnologia-vegetal",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Cambio climático y seres vivos (CON:biologia/cambio-climatico-y-seres-vivos)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/cambio-climatico-y-seres-vivos",
+     "nombre": "Cambio climático y seres vivos",
+     "definicion": "El calentamiento global altera distribución de especies, ciclos de vida y capacidad de carga de los ecosistemas.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": null,
+     "mediana": 6.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G07-CIE-U6-6.15 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 17): Cambio climático. 6.15. Explica los principales efectos adversos del cambio climático antropogénico.",
+     "G10-BIO-U8-8.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 69): Ciclo del carbono. 8.3. Interpreta la curva de Keeling explicando su oscilación anual por la fotosíntesis y su tendencia creciente por las emisiones humanas.",
+     "G11-BIO-U1-1.8 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 10): Problemática ambiental global. 1.8. Explica las principales causas y consecuencias del cambio climático antropogénico."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p012-01 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 12, SV 7–9]: Analizar el posible impacto ambiental y la huella ecológica de sus actividades, y justificar la necesidad de conservar energía."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p053-03 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 53, SV 6–8]: Reconocer las ventajas de plantar para el medio ambiente y su papel en la mitigación del cambio climático."
+     },
+     "ON": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_snc1w-p048-01 [ON_Science_Grade9_SNC1W_2022.pdf p. 48, SV 8–8]: Evaluar los impactos del cambio climático en comunidades de Canadá, incluyendo a las Primeras Naciones, los Métis y los Inuit."
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p071-01 [SG_Primary_Science_2023.pdf p. 71, SV 6–6]: Dar ejemplos del impacto humano, positivo (conservación, reforestación) y negativo (agotamiento de recursos naturales, deforestación, contaminación y calentamie"
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p034-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 34, SV 6–8]: Describir el impacto del calentamiento global en los seres vivos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/cambio-climatico-y-seres-vivos",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Papel de los seres vivos en el ciclo del agua (CON:biologia/ciclo-del-agua-y-seres-vivos)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/ciclo-del-agua-y-seres-vivos",
+     "nombre": "Papel de los seres vivos en el ciclo del agua",
+     "definicion": "Los seres vivos toman, usan y devuelven agua mediante transpiración, respiración, bebida y desechos, participando del ciclo hidrológico.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 7
+    },
+    "temas_v2": [
+     "G03-CIE-U3-3.6 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 3 - El agua», fila 8): Hidrósfera terrestre.. 3.6. Emplea un modelo para observar condiciones de sequía.",
+     "G07-CIE-U5-5.1 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 3): La hidrósfera. 5.1. Identifica las etapas y características generales del ciclo hidrológico natural y con intervención antrópica.",
+     "G10-BIO-U8-8.2 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 68): Ciclo del agua. 8.2. Aplica la ecuación del balance hídrico a la cuenca del río Lempa e interpreta la variación estacional de su caudal.",
+     "G10-BIO-U8-8.1 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 67): La Tierra como sistema. 8.1. Calcula el tiempo de residencia de un elemento en un reservorio a partir de su tamaño y de los flujos de entrada o salida.",
+     "G11-BIO-U1-1.2 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 4): Flujo de energía y materiales en los ecosistemas. 1.2. Reconoce procesos biológicos que forman parte de los ciclos biogeoquímicos.",
+     "G11-BIO-U1-1.3 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 5): Flujo de energía y materiales en los ecosistemas. 1.3. Explica el desarrollo de un ciclo biogeoquímico."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p015-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 15, SV 8–9]: Explicar la importancia del ciclo del carbono y del ciclo del agua para los organismos vivos."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p048-01 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 48, SV 6–8]: Conocer el papel de las plantas en el ciclo del agua, por ejemplo, a través de la transpiración."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263221200000 [jp_cos_826 p. 91, SV 5–5]: Raíz, tallo y hojas tienen conductos de agua; el agua absorbida por la raíz sale sobre todo por las hojas mediante transpiración."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_56-p040-04 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 40, SV 4–5]: Realizar un experimento para confirmar el proceso de transpiración en las plantas."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_snc1w-p049-07 [ON_Science_Grade9_SNC1W_2022.pdf p. 49, SV 8–8]: Investigar las interacciones entre biosfera, hidrosfera, litosfera y atmósfera, y explicar por qué son importantes para la sostenibilidad de los ecosistemas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p051-01 [SG_Primary_Science_2023.pdf p. 51, SV 5–5]: Reconocer la importancia del agua para los procesos vitales."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Comprender que la distribución de las plantas afecta el flujo de agua superficial, la temperatura y la calidad del aire."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/ciclo-del-agua-y-seres-vivos",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Ciclos del carbono y del oxígeno (CON:biologia/ciclo-del-carbono-y-oxigeno)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/ciclo-del-carbono-y-oxigeno",
+     "nombre": "Ciclos del carbono y del oxígeno",
+     "definicion": "Circulación de carbono y oxígeno entre atmósfera, seres vivos, suelos y océanos mediante fotosíntesis, respiración, descomposición y combustión.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 5,
+     "grado_estricto": 7,
+     "mediana": 5.0,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G03-CIE-U2-2.14 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 16): Atmósfera terrestre.. 2.14. Explica la importancia de la atmósfera para la vida en la Tierra.",
+     "G06-CIE-U5-5.17 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 19): Fotosíntesis y cloroplasto.. 5.17. Explica el mecanismo general del proceso de fotosíntesis en plantas.",
+     "G08-CIE-U10-10.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 10 - Sistemas terrestres», fila 3): Ciclo del carbono. 10.1. Representa el ciclo del carbono entre la atmósfera, los océanos, la biosfera y la geosfera.",
+     "G09-CIE-U12-12.1 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 12 - Biosfera y sostenib», fila 3): Ciclos biogeoquímicos. 12.1. Explica los ciclos del carbono y del nitrógeno a escala de la biosfera y la alteración que producen las actividades humanas.",
+     "G09-CIE-U4-4.17 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 19): Biología marina. 4.17. Explica la acidificación del océano a partir de mediciones repetidas del pH de agua expuesta a CO2 y de su efecto sobre materiales de carbonato de calcio.",
+     "G09-CIE-U8-8.3 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 8 - La célula», fila 5): Energía y célula. 8.3. Compara la fotosíntesis y la respiración celular a partir del cambio de color de un indicador de CO2 en tubos con plantas acuáticas en luz y en oscuridad."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S9U03 [AU_Science_7-10_v9_contenido.docx p. None, SV 8–8]: Representar el ciclo del carbono y examinar cómo combustión, fotosíntesis y respiración dependen de interacciones entre geosfera, biosfera, hidrosfera y atmósfe"
+     },
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p012-03 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 12, SV 7–9]: Describir las asociaciones entre la naturaleza viva y no viva utilizando el ejemplo del ciclo del carbono."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p009-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 9, SV 8–9]: Comprender que las sustancias químicas en los ecosistemas circulan continuamente por el mundo natural."
+     },
+     "HK": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p032-05 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 32, SV 5–5]: Explicar la importancia que tiene el proceso de fotosíntesis de las plantas para otros seres vivos."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p057-08 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 57, SV 6–8]: Comprender la relación entre respiración y fotosíntesis en plantas, y analizar los cambios de energía y materia en estos procesos."
+     },
+     "ON": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_snc1w-p049-01 [ON_Science_Grade9_SNC1W_2022.pdf p. 49, SV 8–8]: Comparar y contrastar los procesos de respiración celular y fotosíntesis, y explicar cómo su relación complementaria contribuye al equilibrio dinámico de los ec"
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p046-04 [SG_LowerSec_Science_G2G3_2024.pdf p. 46, SV 7–8]: Describir cómo los nutrientes de los organismos se reciclan en el medio ambiente mediante la acción de los descomponedores."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p027-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8]: Describir cómo las plantas realizan la fotosíntesis en los cloroplastos, convirtiendo dióxido de carbono y agua en azúcares y oxígeno."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/ciclo-del-carbono-y-oxigeno",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Ciclos del fósforo y del azufre (CON:biologia/ciclos-del-fosforo-y-azufre)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/ciclos-del-fosforo-y-azufre",
+     "nombre": "Ciclos del fósforo y del azufre",
+     "definicion": "Circulación de fósforo y azufre entre rocas, suelo, agua y seres vivos; el fósforo carece de fase atmosférica significativa.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G10-BIO-U8-8.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 71): Ciclos del fósforo y del azufre. 8.5. Diferencia el ciclo sedimentario del fósforo del ciclo del azufre y explica el aporte de los volcanes salvadoreños a este último.",
+     "G10-BIO-U8-8.6 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 72): Alteraciones humanas de los ciclos. 8.6. Explica la eutrofización como consecuencia del exceso de nitrógeno y fósforo, y la relaciona con las floraciones de cianobacterias en Ilopango y Coatepeque.",
+     "G10-QUI-U13-13.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 110): Elementos no metálicos. 13.5. Argumenta la importancia de los compuestos del nitrógeno y del fósforo para la vida y explica cómo su exceso provoca la eutrofización de cuerpos de agua.",
+     "G11-BIO-U1-1.2 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 4): Flujo de energía y materiales en los ecosistemas. 1.2. Reconoce procesos biológicos que forman parte de los ciclos biogeoquímicos.",
+     "G11-BIO-U1-1.3 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 5): Flujo de energía y materiales en los ecosistemas. 1.3. Explica el desarrollo de un ciclo biogeoquímico.",
+     "G08-CIE-U5-5.10 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 12): Minerales y rocas. 5.10. Modela el ciclo de las rocas y explica la meteorización, la erosión, la sedimentación y el metamorfismo."
+    ],
+    "paises": {}
+   },
+   "id": "INC:CON:biologia/ciclos-del-fosforo-y-azufre",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Circulación e intercambio capilar (CON:biologia/circulacion-e-intercambio-capilar)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/circulacion-e-intercambio-capilar",
+     "nombre": "Circulación e intercambio capilar",
+     "definicion": "Los capilares, por sus paredes finas y gran superficie, permiten el intercambio de materiales entre la sangre y los tejidos.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G08-CIE-U7-7.7 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 9): Sistemas respiratorio y circulatorio. 7.7. Explica con sus palabras cómo se relaciona el intercambio de gases y la circulación.",
+     "G11-BIO-U6-6.2 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 76): Circulación sanguínea. 6.2. Calcula la rapidez de la sangre en la aorta y en los capilares con la ecuación de continuidad y justifica la ventaja de un flujo lento en el intercambio capilar.",
+     "G08-CIE-U1-1.7 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 1 - Mecánica», fila 9): Movimiento en una y dos dimensiones. 1.7. Resuelve problemas empleando las leyes del movimiento de Newton."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p016-18 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 16, SV 7–9]: Asociar las especificidades estructurales de los diferentes vasos sanguíneos y componentes de la sangre con sus funciones."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p011-01 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 11, SV 8–9]: Describir el sistema circulatorio humano y su relación con el intercambio gaseoso, y explicar la adaptación estructural del corazón y vasos sanguíneos a sus fun"
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p069-13 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 69, SV 6–8]: Describir el intercambio de gases entre los alvéolos y los capilares sanguíneos circundantes."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p050-03 [SG_LowerSec_Science_G2G3_2024.pdf p. 50, SV 7–8]: Explicar cómo la difusión facilita el transporte de sustancias en humanos, como el alimento digerido y el oxígeno desde la sangre a los tejidos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/circulacion-e-intercambio-capilar",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Clasificación jerárquica y nomenclatura (CON:biologia/clasificacion-jerarquica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/clasificacion-jerarquica",
+     "nombre": "Clasificación jerárquica y nomenclatura",
+     "definicion": "Sistema de categorías anidadas, de dominio a especie, basado en semejanzas de rasgos y secuencias, con nombre científico binomial.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G07-CIE-U3-3.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 12): Sistemática y cladística. 3.10. Explica el concepto de cladística en relación con los agrupamientos.",
+     "G07-CIE-U3-3.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 14): Sistema de los tres dominios. 3.12. Describe los principales grupos taxonómicos del sistema de los tres dominios.",
+     "G07-CIE-U3-3.4 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 6): Agrupamiento de especies. 3.4. Clasifica grupos de seres vivos empleando un sistema de clasificación.",
+     "G07-CIE-U3-3.7 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 9): Taxonomía. 3.7. Reconoce la composición y usos de los nombres científicos.",
+     "G07-CIE-U3-3.8 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 10): Taxonomía. 3.8. Identifica criterios taxonómicos empleados en las claves dicotómicas.",
+     "G07-CIE-U3-3.9 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 11): Taxonomía. 3.9. Utiliza plataformas de biodiversidad para obtener información taxonómica o ecológica."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basica_12-p010-12 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 10, SV 4–6]: Usar claves de identificación para aprender sobre las especies."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p017-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 17, SV 8–9]: Describir el impacto de los avances en biología sobre los sistemas de clasificación."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p039-06 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39, SV 6–8]: Indicar que los científicos agrupan a los seres vivos en diferentes categorías según sus características principales."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p047-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 47, SV 6–8]: Comprender el concepto de especie y el sistema de clasificación, y clasificar a los seres vivos a nivel de reino."
+     },
+     "ON": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g6-p150-04 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 150, SV 5–5]: Describir las características distintivas de diferentes grupos de organismos y utilizarlas para clasificarlos mediante un sistema de clasificación."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p030-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 30, SV 6–8]: Clasificar a los seres vivos según las características de su morfología y estructura."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/clasificacion-jerarquica",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Contaminación y sus efectos en los seres vivos (CON:biologia/contaminacion-y-seres-vivos)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/contaminacion-y-seres-vivos",
+     "nombre": "Contaminación y sus efectos en los seres vivos",
+     "definicion": "Sustancias o desechos en aire, agua y suelo que dañan la salud de personas, plantas y animales.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 2
+    },
+    "consenso": {
+     "grado_amplio": 5,
+     "grado_estricto": 6,
+     "mediana": 3.25,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G02-CIE-U6-6.8 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y salud», fila 10): Acciones humanas que transforman el entorno.. Registra los residuos que genera en su vida diaria y propone cómo reducirlos.",
+     "G03-CIE-U3-3.14 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 3 - El agua», fila 16): Tratamiento del agua.. 3.14. Reconoce la importancia de brindar tratamiento a las aguas residuales.",
+     "G07-CIE-U5-5.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 14): Atmósfera. 5.12. Reconoce los principales parámetros que inciden en la calidad del aire.",
+     "G07-CIE-U5-5.13 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 15): Atmósfera. 5.13. Explica la clasificación de la calidad del aire según el Índice Centroamericano de Calidad del Aire (ICCA).",
+     "G07-CIE-U5-5.8 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 10): Calidad del agua. 5.8. Identifica parámetros biológicos de calidad del agua.",
+     "G07-CIE-U6-6.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 12): Impacto ambiental. 6.10. Lista posibles perturbaciones ecosistémicas derivadas de la explotación energética."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basica_12-p011-01 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 11, SV 4–6]: Analizar el consumo familiar de agua o energía y la generación de residuos, evaluar su impacto y sugerir ahorros."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_primaria-p028-08 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 28, SV 5–5]: Conocer los efectos adversos que el tabaquismo, el alcoholismo, el abuso de medicamentos y las drogas causan al cuerpo."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_34-p029-08 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 29, SV 2–3]: Investigar y practicar acciones de conservación centradas en casos de contaminación ambiental como la del aire, agua y suelo."
+     },
+     "ON": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_snc1w-p049-04 [ON_Science_Grade9_SNC1W_2022.pdf p. 49, SV 8–8]: Explicar los efectos de diversas actividades humanas sobre el equilibrio dinámico de los ecosistemas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p074-01 [SG_Primary_Science_2023.pdf p. 74, SV 6–6]: Dar ejemplos del impacto humano en el medio ambiente, tanto positivo (conservación, reforestación) como negativo (agotamiento de recursos, deforestación, contam"
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p033-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 33, SV 6–8]: Aplicar las condiciones y mecanismos de crecimiento biológico en el tratamiento de contaminantes ambientales."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/contaminacion-y-seres-vivos",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Diferenciación y especialización celular (CON:biologia/diferenciacion-y-especializacion-celular)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/diferenciacion-y-especializacion-celular",
+     "nombre": "Diferenciación y especialización celular",
+     "definicion": "Proceso por el que células con el mismo genoma adquieren estructuras y funciones distintas para formar tejidos especializados.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.19 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 21): Matriz extracelular.. 5.19. Describe la estructura general y funciones de la matriz extracelular.",
+     "G06-CIE-U5-5.20 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 22): Matriz extracelular.. 5.20. Reconoce las funciones de la matriz extracelular en tejidos secretores.",
+     "G06-CIE-U5-5.22 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 24): Matriz extracelular.. 5.22. Expone las implicaciones de la matriz extracelular en las lesiones.",
+     "G06-CIE-U5-5.6 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 8): Niveles de organización de los seres vivos.. 5.6. Reconoce los niveles de organización biológica presentes en un sistema vivo.",
+     "G06-CIE-U5-5.7 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 9): Niveles de organización de los seres vivos.. 5.7. Reconoce las características distintivas de una muestra de tejido, órgano y sistema.",
+     "G06-CIE-U6-6.11 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 13): Desarrollo Animal.. 6.11. Compara las etapas de desarrollo entre vertebrados e invertebrados."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S8U02 [AU_Science_7-10_v9_contenido.docx p. None, SV 7–7]: Analizar la relación estructura-función de células, tejidos y órganos en un sistema de órganos vegetal y uno animal, y cómo permiten la supervivencia del indivi"
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p010-03 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 10, SV 8–9]: Describir la función de las células madre en animales embrionarios y adultos, y de los meristemos en las plantas."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p039-13 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39, SV 6–8]: Reconocer que las células pueden dividirse, crecer y diferenciarse en distintos tipos celulares."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g8-p173-02 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 173, SV 7–7]: Describir la organización de las células en tejidos, órganos y sistemas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p038-02 [SG_LowerSec_Science_G2G3_2024.pdf p. 38, SV 7–8]: Comprender que las células vegetales y animales típicas son modelos utilizados para representar sus diversas formas."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/diferenciacion-y-especializacion-celular",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Diversidad genética de poblaciones (CON:biologia/diversidad-genetica-de-poblaciones)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/diversidad-genetica-de-poblaciones",
+     "nombre": "Diversidad genética de poblaciones",
+     "definicion": "Variedad de alelos en una población; si es reducida, la población es menos capaz de adaptarse y corre mayor riesgo de extinción.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 6.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G07-CIE-U2-2.13 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 15): Mecanismos de evolución. 2.13. Reconoce la heterogeneidad de una población a través de sus frecuencias genotípicas.",
+     "G07-CIE-U2-2.14 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 16): Mecanismos de evolución. 2.14. Identifica las fuerzas que incrementan y disminuyen la variabilidad genética.",
+     "G07-CIE-U2-2.8 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 10): Polimorfismo y alelos. 2.8. Reconoce la ocurrencia de polimorfismos a partir de casos.",
+     "G11-BIO-U3-3.16 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 45): Manejo de germoplasma. 3.16. Reconoce la importancia de la conservación del germoplasma.",
+     "G11-BIO-U4-4.11 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 58): Mecanismos evolutivos. 4.11. Explica el papel de las mutaciones en la adaptabilidad y el incremento de la diversidad genética.",
+     "G11-BIO-U5-5.2 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 64): Biodiversidad genética poblacional. 5.2. Calcula las frecuencias genotípicas y alélicas para una población."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p016-14 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 16, SV 8–9]: Indicar que generalmente existe una amplia variación genética dentro de una población de una especie."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p047-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 47, SV 6–8]: Comprender el concepto de biodiversidad e inferir la relación existente entre la variación y la biodiversidad."
+     },
+     "ON": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g6-p151-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 151, SV 5–5]: Demostrar comprensión de la biodiversidad como la diversidad de vida en la Tierra, incluyendo organismos dentro de especies, entre especies y comunidades, y sus"
+     }
+    }
+   },
+   "id": "INC:CON:biologia/diversidad-genetica-de-poblaciones",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Energía de los alimentos y balance energético (CON:biologia/energia-de-los-alimentos-y-balance-energetico)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
+     "nombre": "Energía de los alimentos y balance energético",
+     "definicion": "Los alimentos aportan energía (kcal); su balance con el gasto metabólico y la actividad física determina el estado nutricional.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 4,
+     "estricto": 4
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": null,
+     "mediana": 4.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G04-CIE-U1-1.10 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Máquinas y energía», fila 12): Transformaciones de la energía.. 1.10. Efectúa cálculos simples de transformación de energía en electrodomésticos y el cuerpo humano.",
+     "G04-CIE-U2-2.10 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 12): Antropometría.. 2.10. Realiza un ejercicio donde represente y utilice datos antropométricos.",
+     "G04-CIE-U2-2.3 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 5): Consumo y obtención de energía.. 2.3. Compara el valor nutritivo de alimentos comunes.",
+     "G04-CIE-U2-2.4 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 6): Consumo y obtención de energía.. 2.4. Estima la cantidad de alimento necesaria para suplir los requerimientos nutricionales.",
+     "G04-CIE-U2-2.5 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 7): Consumo y obtención de energía.. 2.5. Compara el gasto y la obtención de la energía contenida en la dieta diaria.",
+     "G04-CIE-U2-2.9 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 11): Antropometría.. 2.9. Hace mediciones cuantitativas de variables útiles para conocer el estado nutricional del ser humano."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p014-11 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 14, SV 7–9]: Explicar las interrelaciones entre el metabolismo y el intercambio de energía."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-BIO-KS3-11 [ENG_NC_Science_KS3_2013.pdf p. 5, SV 5–7]: Cálculo de los requerimientos energéticos de una dieta diaria saludable."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_primaria-p027-04 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 27, SV 2–2]: Enumerar hábitos de vida saludables, como una dieta equilibrada, ejercicio regular, sueño adecuado y buen estado de ánimo."
+     },
+     "ON": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g5-p139-03 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 139, SV 4–4]: Explicar cómo la alfabetización alimentaria puede apoyar la toma de decisiones que afectan la salud física y mental."
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p079-05 [SG_Primary_Science_2023.pdf p. 79, SV 6–6]: Reconocer que los seres vivos necesitan energía de la respiración para sus procesos vitales, enfocándose en la liberación de energía de los alimentos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/energia-de-los-alimentos-y-balance-energetico",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Enzimas (CON:biologia/enzimas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/enzimas",
+     "nombre": "Enzimas",
+     "definicion": "Proteínas catalizadoras específicas cuya actividad depende de temperatura, pH, inhibidores y concentración de sustrato y productos.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 4): Biomoléculas.. 5.2. Explica el funcionamiento general de la actividad enzimática a partir de un experimento.",
+     "G08-CIE-U7-7.11 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 13): Sistemas digestivos. 7.11. Efectúa un experimento para simular los procesos químicos o mecánicos que intervienen en la digestión.",
+     "G10-BIO-U2-2.7 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 20): Enzimas y metabolismo. 2.7. Argumenta la presencia de enzimas en los seres vivos.",
+     "G10-BIO-U2-2.8 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 21): Enzimas y metabolismo. 2.8. Interpreta los resultados de un experimento demostrativo de la actividad enzimática.",
+     "G10-BIO-U2-2.9 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 22): Enzimas y metabolismo. 2.9. Obtiene información de enzimas a partir del uso de bases de datos.",
+     "G10-BIO-U7-7.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 64): Anabolismo fotosintético. 7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p009-09 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 9, SV 8–9]: Comprender que los procesos vitales dependen de moléculas cuya estructura está relacionada con su función."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p070-04 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 70, SV 6–8]: Reconocer que algunos jugos digestivos contienen enzimas para la digestión química."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p057-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 57, SV 6–8]: Comprender la estructura y función del sistema digestivo e inferir el proceso de digestión en relación con la acción de las enzimas digestivas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p049-05 [SG_LowerSec_Science_G2G3_2024.pdf p. 49, SV 7–8]: Investigar el efecto de las enzimas en la digestión, limitándose a clases como carbohidrasas, proteasas y lipasas."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p027-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8]: Investigar experimentalmente los factores que afectan la velocidad de acción enzimática en el metabolismo de los seres vivos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/enzimas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Propagación de enfermedades y control de brotes (CON:biologia/epidemiologia-y-control-de-brotes)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/epidemiologia-y-control-de-brotes",
+     "nombre": "Propagación de enfermedades y control de brotes",
+     "definicion": "Persistencia del patógeno, transmisión, movilidad e inmunidad poblacional explican epidemias y permiten evaluar estrategias de control.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "posterior",
+     "estricta": "no_aplica"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": null
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 5.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-BIO-U2-2.10 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 24): Aplicaciones en medicina y farmacología. 2.10. Reconoce las vacunas y las pruebas de detección clínica como tecnologías médicas para la prevención y diagnóstico de enfermedades de origen microbiano."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p012-03 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 12, SV 8–9]: Explicar cómo se propagan las enfermedades transmisibles (causadas por virus, bacterias, protistas y hongos) en animales y plantas."
+     },
+     "HK": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_primaria-p028-10 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 28, SV 3–3]: Identificar las vías de transmisión de enfermedades infecciosas (gotitas, vectores, contacto, alimentos, sangre) y su prevención."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_34-p024-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 24, SV 2–3]: Interesarse por una sociedad segura frente a infecciones y explicar la relación entre hábitos de vida y brotes epidémicos mediante procesos de infección."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p051-09 [SG_LowerSec_Science_G2G3_2024.pdf p. 51, SV 7–8]: Sugerir razones para el crecimiento de la población humana mundial, como los avances en medicina y la mejora del saneamiento."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/epidemiologia-y-control-de-brotes",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Especies clave (CON:biologia/especies-clave)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/especies-clave",
+     "nombre": "Especies clave",
+     "definicion": "Especies cuya disminución o desaparición altera la comunidad mucho más de lo esperado por su abundancia o biomasa.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "no_aplica"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": null
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 3.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G07-CIE-U3-3.8 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 10): Taxonomía. 3.8. Identifica criterios taxonómicos empleados en las claves dicotómicas."
+    ],
+    "paises": {
+     "ON": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g4-p128-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 128, SV 3–3]: Analizar el impacto de la disminución o extinción de una especie en su hábitat y describir acciones posibles para prevenirlo."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/especies-clave",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Estrategias reproductivas y supervivencia de la descendencia (CON:biologia/estrategias-reproductivas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/estrategias-reproductivas",
+     "nombre": "Estrategias reproductivas y supervivencia de la descendencia",
+     "definicion": "Producir muchas semillas o crías, o brindar cuidado parental, aumenta la probabilidad de que la descendencia sobreviva.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 3
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": null,
+     "mediana": 6.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G03-CIE-U5-5.14 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 5 - Los animales», fila 16): Herencia y supervivencia de las crías.. 5.14. Compara rasgos heredados y no heredados entre crías y progenitores, y describe estrategias que favorecen la supervivencia de las crías.",
+     "G11-BIO-U7-7.4 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 84): Crecimiento poblacional. 7.4. Construye curvas de supervivencia a partir de tablas de vida y clasifica especies según su estrategia reproductiva r o K.",
+     "G11-BIO-U7-7.7 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 87): Poblaciones y conservación. 7.7. Evalúa con datos de anidación y supervivencia la eficacia de medidas de conservación de tortugas marinas en la costa salvadoreña."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S9U02 [AU_Science_7-10_v9_contenido.docx p. None, SV 8–8]: Describir forma y función de células y órganos reproductores en animales y plantas y analizar cómo la reproducción sexual y asexual asegura la supervivencia de "
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p014-19 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 14, SV 7–9]: Relacionar la necesidad de cuidar a las crías con las peculiaridades de reproducción y desarrollo de diferentes grupos."
+     },
+     "HK": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p030-07 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 30, SV 3–3]: Reconocer métodos de los seres vivos para aumentar su descendencia y supervivencia."
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p070-01 [SG_Primary_Science_2023.pdf p. 70, SV 6–6]: Comprender que las adaptaciones (estructurales o conductuales) mejoran la supervivencia al permitir afrontar factores físicos, obtener alimento, evadir depredad"
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_primaria-p023-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 23, SV 4–5]: Los animales tienen comportamientos de búsqueda de alimento, reproducción, protección, comunicación y sociales."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/estrategias-reproductivas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Factores limitantes de las poblaciones (CON:biologia/factores-limitantes-de-poblaciones)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/factores-limitantes-de-poblaciones",
+     "nombre": "Factores limitantes de las poblaciones",
+     "definicion": "Depredadores, alimento, agua, espacio y enfermedades limitan el tamaño de una población y el equilibrio entre poblaciones.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": null,
+     "mediana": 6.5,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G07-CIE-U4-4.4 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 4 - Ecología», fila 6): Ecología de poblaciones. 4.4. Describe la estructura y dinámica elemental de una población utilizando datos experimentales.",
+     "G11-BIO-U7-7.5 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 85): Relaciones entre organismos. 7.5. Explica con datos cómo la competencia intraespecífica y la cooperación regulan el crecimiento de una población según su densidad.",
+     "G11-BIO-U7-7.6 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 86): Relaciones entre organismos. 7.6. Interpreta las oscilaciones acopladas de presas y depredadores con el modelo de Lotka-Volterra y lo contrasta con series de datos reales.",
+     "G11-BIO-U7-7.3 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 83): Crecimiento poblacional. 7.3. Ajusta los modelos exponencial y logístico a series de datos poblacionales y estima la tasa intrínseca de crecimiento y la capacidad de carga."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S7U02 [AU_Science_7-10_v9_contenido.docx p. None, SV 6–6]: Usar modelos como redes tróficas para representar el flujo de materia y energía en ecosistemas y predecir el impacto de cambios bióticos y abióticos en poblacio"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p015-17 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 15, SV 7–9]: Analizar el efecto de los factores ambientales sobre la abundancia de organismos basándose en diagramas y tablas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p015-09 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 15, SV 8–9]: Explicar cómo algunos factores abióticos y bióticos afectan a las comunidades."
+     },
+     "ON": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g4-p129-05 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 129, SV 3–3]: Describir una comunidad como especies interactuando en un hábitat común e identificar factores que afectan la supervivencia de plantas y animales en un hábitat "
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p068-03 [SG_Primary_Science_2023.pdf p. 68, SV 6–6]: Identificar los factores físicos (temperatura, luz, agua), disponibilidad de alimento y tipos de organismos (productores, consumidores, descomponedores) que afe"
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p034-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 34, SV 6–8]: Describir el impacto y la aplicación de los contaminantes ambientales en el crecimiento biológico."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/factores-limitantes-de-poblaciones",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Fases de la fotosíntesis y ciclo de Calvin (CON:biologia/fases-de-la-fotosintesis)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/fases-de-la-fotosintesis",
+     "nombre": "Fases de la fotosíntesis y ciclo de Calvin",
+     "definicion": "Fase luminosa en tilacoides que produce ATP y NADPH, y ciclo de Calvin en el estroma que fija CO2 en azúcares.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.16 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 18): Fotosíntesis y cloroplasto.. 5.16. Efectúa un experimento para extraer pigmentos fotosintéticos.",
+     "G10-BIO-U2-2.14 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 27): Fotosíntesis. 2.14. Efectúa un experimento de extracción y separación de pigmentos fotosintéticos.",
+     "G10-BIO-U2-2.15 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 28): Fotosíntesis. 2.15. Explica los procesos de fotofosforilación de la fotosíntesis.",
+     "G10-BIO-U7-7.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 64): Anabolismo fotosintético. 7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato.",
+     "G10-BIO-U7-7.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 65): Anabolismo fotosintético. 7.5. Relaciona las adaptaciones C4 y CAM con la eficiencia en el uso del agua de la caña de azúcar, el maíz, la piña y las cactáceas.",
+     "G10-BIO-U7-7.6 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 66): Integración del metabolismo. 7.6. Explica cómo se integran y regulan el catabolismo y el anabolismo a partir de un mapa metabólico con sus puntos de control."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p015-06 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 15, SV 7–9]: Preparar y analizar diagramas de los precursores, productos finales y condiciones que afectan el proceso de fotosíntesis."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/fases-de-la-fotosintesis",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Fotosíntesis (CON:biologia/fotosintesis)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/fotosintesis",
+     "nombre": "Fotosíntesis",
+     "definicion": "Proceso por el que plantas y algas usan luz, agua, CO2 y clorofila para producir glucosa y liberar oxígeno.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 4,
+     "grado_estricto": 5,
+     "mediana": 4.5,
+     "n_paises": 9
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.14 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 16): Fotosíntesis y cloroplasto.. 5.14. Describe la estructura y funciones de los cloroplastos.",
+     "G06-CIE-U5-5.15 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 17): Fotosíntesis y cloroplasto.. 5.15. Evidencia el proceso de fotosíntesis a partir de un experimento.",
+     "G06-CIE-U5-5.16 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 18): Fotosíntesis y cloroplasto.. 5.16. Efectúa un experimento para extraer pigmentos fotosintéticos.",
+     "G06-CIE-U5-5.17 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 19): Fotosíntesis y cloroplasto.. 5.17. Explica el mecanismo general del proceso de fotosíntesis en plantas.",
+     "G08-CIE-U6-6.10 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 6 - Anatomía y fisiologí», fila 12): La hoja y sus funciones. 6.10. Reconoce las funciones fisiológicas de las hojas.",
+     "G08-CIE-U6-6.11 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 6 - Anatomía y fisiologí», fila 13): La hoja y sus funciones. 6.11. Efectúa un experimento para evidenciar los procesos de transpiración y fotosíntesis en plantas."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S9U03 [AU_Science_7-10_v9_contenido.docx p. None, SV 8–8]: Representar el ciclo del carbono y examinar cómo combustión, fotosíntesis y respiración dependen de interacciones entre geosfera, biosfera, hidrosfera y atmósfe"
+     },
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p014-11 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 14, SV 7–9]: Explicar las interrelaciones entre el metabolismo y el intercambio de energía."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p009-02 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 9, SV 8–9]: Comprender que la vida depende de la fotosíntesis, donde plantas y algas usan luz solar, CO2 y agua para crear compuestos orgánicos y oxígeno."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p032-03 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 32, SV 5–5]: Conocer las condiciones necesarias para la fotosíntesis: luz solar, agua, dióxido de carbono y clorofila."
+     },
+     "JP": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260253211300000 [jp_cos_826 p. 72, SV 4–4]: En el crecimiento de las plantas intervienen la luz solar y los fertilizantes, entre otros factores."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p057-06 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 57, SV 6–8]: Comprender el proceso de almacenamiento y uso de los productos de la fotosíntesis como fuente de energía y explicarlo mediante modelos."
+     },
+     "ON": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_snc1w-p049-01 [ON_Science_Grade9_SNC1W_2022.pdf p. 49, SV 8–8]: Comparar y contrastar los procesos de respiración celular y fotosíntesis, y explicar cómo su relación complementaria contribuye al equilibrio dinámico de los ec"
+     },
+     "SG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p079-01 [SG_Primary_Science_2023.pdf p. 79, SV 6–6]: Diferenciar entre las formas en que las plantas y los animales obtienen energía."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p027-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8]: Describir cómo las plantas realizan la fotosíntesis en los cloroplastos, convirtiendo dióxido de carbono y agua en azúcares y oxígeno."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/fotosintesis",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Genes y alelos (CON:biologia/genes-y-alelos)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 8,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G06-CIE-U6-6.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 3): Material genético.. 6.1. Explica la estructura y funciones generales del material genético.",
+     "G07-CIE-U2-2.1 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 3): Material genético. 2.1. Reconoce las funciones del material genético.",
+     "G07-CIE-U2-2.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 12): Genética clásica. 2.10. Reconoce la relación cromosoma-alelo a partir de casos concretos.",
+     "G07-CIE-U2-2.7 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 9): Polimorfismo y alelos. 2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "G07-CIE-U2-2.8 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 10): Polimorfismo y alelos. 2.8. Reconoce la ocurrencia de polimorfismos a partir de casos.",
+     "G07-CIE-U2-2.9 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 11): Polimorfismo y alelos. 2.9. Ejemplifica enfermedades humanas causadas por alelos defectuosos."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p017-05 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 17, SV 7–9]: Explicar la conexión entre el ADN, los genes y los cromosomas, y su papel en la herencia y la expresión de los genes."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p016-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 16, SV 8–9]: Explicar los términos: gameto, cromosoma, gen, alelo/variante, dominante, recesivo, homocigoto, heterocigoto, genotipo y fenotipo."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p043-10 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 43, SV 6–8]: Indicar que la herencia es la transmisión de rasgos entre generaciones mediante información genética."
+     },
+     "JP": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8362233512100000 [jp_cos_836 p. 105, SV 8–8]: A partir de cruzamientos, descubrir las regularidades de la transmisión de caracteres de progenitores a descendientes."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p065-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65, SV 6–8]: Comprender la relación entre cromosomas y genes, e interpretar las características de la mitosis y meiosis centrándose en el comportamiento cromosómico."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/genes-y-alelos",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Grupos de alimentos y dieta balanceada (CON:biologia/grupos-de-alimentos-y-dieta-balanceada)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+     "nombre": "Grupos de alimentos y dieta balanceada",
+     "definicion": "Los alimentos se agrupan según su aporte; una dieta balanceada combina grupos en proporciones adecuadas para crecer y mantenerse sano.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 2
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 3.25,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G02-CIE-U6-6.12 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y salud», fila 14): Alimentación saludable.. Explica los beneficios de consumir alimentos variados.",
+     "G04-CIE-U2-2.13 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 15): Cultivos.. 2.13. Determina la procedencia de los alimentos que se consumen en su hogar.",
+     "G04-CIE-U2-2.3 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 5): Consumo y obtención de energía.. 2.3. Compara el valor nutritivo de alimentos comunes.",
+     "G04-CIE-U2-2.4 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 6): Consumo y obtención de energía.. 2.4. Estima la cantidad de alimento necesaria para suplir los requerimientos nutricionales.",
+     "G04-CIE-U2-2.6 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 8): Alimentación saludable.. 2.6. Clasifica los alimentos en grupos estandarizados.",
+     "G04-CIE-U2-2.7 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 9): Alimentación saludable.. 2.7. Elabora un menú tomando en cuenta los requerimientos nutricionales de una persona."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p016-03 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 16, SV 7–9]: Explicar las funciones de proteínas, grasas, carbohidratos, vitaminas, minerales y agua en el organismo, y los problemas por su consumo excesivo o deficiente."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-BIO-KS3-10 [ENG_NC_Science_KS3_2013.pdf p. 5, SV 5–7]: Componentes de una dieta saludable (carbohidratos, lípidos, proteínas, vitaminas, minerales, fibra y agua) y por qué se necesita cada uno."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_primaria-p027-02 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 27, SV 2–2]: Conocer los tipos de alimentos comunes en una dieta equilibrada."
+     },
+     "ON": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g5-p139-03 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 139, SV 4–4]: Explicar cómo la alfabetización alimentaria puede apoyar la toma de decisiones que afectan la salud física y mental."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p049-06 [SG_LowerSec_Science_G2G3_2024.pdf p. 49, SV 7–8]: Mostrar aprecio por la importancia de elecciones sensatas de alimentos y estilo de vida contra la diabetes."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_primaria-p024-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 24, SV 2–3]: Diferentes entornos afectan los tipos, fuentes y hábitos alimenticios de los humanos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Herencia ligada al sexo, alelos múltiples y poligénica (CON:biologia/herencia-no-mendeliana)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/herencia-no-mendeliana",
+     "nombre": "Herencia ligada al sexo, alelos múltiples y poligénica",
+     "definicion": "Patrones de herencia como la ligada al cromosoma X, codominancia, alelos múltiples (grupos sanguíneos) y rasgos de varios genes.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G10-BIO-U4-4.1 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 41): Herencia no mendeliana. 4.1. Distingue la dominancia incompleta de la codominancia al interpretar las proporciones fenotípicas de la F2 de un cruzamiento.",
+     "G10-BIO-U4-4.2 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 42): Herencia no mendeliana. 4.2. Determina los genotipos y fenotipos posibles de los grupos sanguíneos ABO y Rh en la descendencia de parejas ficticias.",
+     "G10-BIO-U4-4.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 43): Herencia ligada al sexo. 4.3. Explica por qué los rasgos recesivos ligados al cromosoma X se manifiestan con mayor frecuencia en varones que en mujeres.",
+     "G10-BIO-U4-4.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 44): Análisis de genealogías. 4.4. Infiere a partir de un pedigrí si un rasgo se hereda de forma autosómica o ligada al sexo, y dominante o recesiva.",
+     "G10-BIO-U4-4.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 45): Teoría cromosómica de la herencia. 4.5. Construye un mapa genético de tres genes ligados a partir de las frecuencias de recombinación obtenidas en cruzamientos de prueba.",
+     "G07-CIE-U2-2.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 12): Genética clásica. 2.10. Reconoce la relación cromosoma-alelo a partir de casos concretos."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p016-06 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 16, SV 8–9]: Describir la determinación del sexo en humanos."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p043-09 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 43, SV 6–8]: Dar ejemplos de variación continua y discontinua en humanos."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p065-05 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65, SV 6–8]: Considerar que existen fenotipos humanos no determinados por un solo gen, abordando únicamente contenidos científicamente probados."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p030-09 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 30, SV 6–8]: El sexo humano está determinado principalmente por los cromosomas sexuales."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/herencia-no-mendeliana",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Impacto humano en los ecosistemas (CON:biologia/impacto-humano-en-los-ecosistemas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/impacto-humano-en-los-ecosistemas",
+     "nombre": "Impacto humano en los ecosistemas",
+     "definicion": "Acciones humanas que perjudican o benefician las poblaciones de un ecosistema, como deforestación, reforestación o protección de especies.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 2
+    },
+    "consenso": {
+     "grado_amplio": 2,
+     "grado_estricto": 4,
+     "mediana": 2.5,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G02-CIE-U4-4.12 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 18): Importancia de los animales.. Identifica amenazas para los animales y propone formas de protegerlos.",
+     "G02-CIE-U5-5.8 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 5 - Objetos técnicos», fila 10): Cuidado de plantas y animales.. Construye una estructura sencilla para ayudar a animales silvestres y comprueba si la usan.",
+     "G02-CIE-U6-6.6 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y salud», fila 8): Acciones humanas que transforman el entorno.. Reconoce acciones humanas que transforman el entorno, como construir y cultivar.",
+     "G07-CIE-U6-6.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 12): Impacto ambiental. 6.10. Lista posibles perturbaciones ecosistémicas derivadas de la explotación energética.",
+     "G07-CIE-U6-6.11 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 13): Impacto ambiental. 6.11. Explica con sus palabras cuáles son las principales actividades humanas que impactan los ecosistemas naturales de El Salvador.",
+     "G07-CIE-U6-6.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 14): Impacto ambiental. 6.12. Desarrolla un ejercicio hipotético de estimación de impactos ambientales."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p012-01 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 12, SV 7–9]: Analizar el posible impacto ambiental y la huella ecológica de sus actividades, y justificar la necesidad de conservar energía."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p015-02 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 15, SV 8–9]: Describir las interacciones humanas positivas y negativas dentro de los ecosistemas y explicar su impacto en la biodiversidad."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p031-09 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 31, SV 5–5]: Explicar las causas por las cuales las especies en peligro están al borde de la extinción."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263231300000 [jp_cos_826 p. 92, SV 5–5]: Las personas se relacionan con el ambiente y viven adaptándose ingeniosamente a él."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_34-p029-05 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 29, SV 2–3]: Investigar el impacto humano en el ecosistema, y debatir y practicar acciones para su conservación."
+     },
+     "ON": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_snc1w-p048-03 [ON_Science_Grade9_SNC1W_2022.pdf p. 48, SV 8–8]: Investigar y explicar cómo las prácticas sostenibles de diversas comunidades reflejan la comprensión de la importancia del equilibrio dinámico de los ecosistema"
+     },
+     "SG": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p058-03 [SG_Primary_Science_2023.pdf p. 58, SV 5–5]: Mostrar cuidado y preocupación asumiendo un comportamiento responsable hacia las plantas."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p033-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 33, SV 6–8]: Reconocer que las actividades humanas alteran el medio ambiente y pueden afectar la supervivencia de otras especies."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/impacto-humano-en-los-ecosistemas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Intercambio de gases en plantas (CON:biologia/intercambio-de-gases-en-plantas)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/intercambio-de-gases-en-plantas",
+     "nombre": "Intercambio de gases en plantas",
+     "definicion": "Entrada y salida de gases por estomas y superficies vegetales, con movimiento interno por difusión.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 8
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 5.5,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G08-CIE-U6-6.10 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 6 - Anatomía y fisiologí», fila 12): La hoja y sus funciones. 6.10. Reconoce las funciones fisiológicas de las hojas.",
+     "G08-CIE-U6-6.11 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 6 - Anatomía y fisiologí», fila 13): La hoja y sus funciones. 6.11. Efectúa un experimento para evidenciar los procesos de transpiración y fotosíntesis en plantas.",
+     "G08-CIE-U6-6.12 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 6 - Anatomía y fisiologí», fila 14): La hoja y sus funciones. 6.12. Explica con lenguaje científico las principales funciones fisiológicas de las hojas.",
+     "G10-BIO-U6-6.2 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 57): Metabolismo energético del organismo. 6.2. Estima la tasa metabólica de un organismo a partir de datos de intercambio de gases y el cociente respiratorio.",
+     "G10-BIO-U7-7.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 65): Anabolismo fotosintético. 7.5. Relaciona las adaptaciones C4 y CAM con la eficiencia en el uso del agua de la caña de azúcar, el maíz, la piña y las cactáceas."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p011-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 11, SV 8–9]: Describir los procesos de transpiración y translocación, incluyendo la estructura y función de los estomas."
+     },
+     "JP": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8362223312100000 [jp_cos_836 p. 92, SV 7–7]: Relacionar la estructura de hojas, tallos y raíces con la fotosíntesis, la respiración y la transpiración."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_56-p040-04 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 40, SV 4–5]: Realizar un experimento para confirmar el proceso de transpiración en las plantas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p055-01 [SG_Primary_Science_2023.pdf p. 55, SV 5–5]: Comparar cómo las plantas, los peces y los humanos absorben oxígeno y liberan dióxido de carbono."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/intercambio-de-gases-en-plantas",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "La célula como unidad de la vida (CON:biologia/la-celula-unidad-de-la-vida)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/la-celula-unidad-de-la-vida",
+     "nombre": "La célula como unidad de la vida",
+     "definicion": "Todos los seres vivos están formados por células, que realizan las funciones vitales y proceden de otras células por división.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 6,
+     "grado_estricto": 7,
+     "mediana": 6.0,
+     "n_paises": 9
+    },
+    "temas_v2": [
+     "G03-CIE-U5-5.5 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 5 - Los animales», fila 7): Características de los animales.. 5.5. Resume las características unificadoras de los animales.",
+     "G06-CIE-U5-5.3 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 5): ¿Qué es una célula?. 5.3. Reconoce los principales eventos del desarrollo de la teoría celular.",
+     "G09-CIE-U8-8.1 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 8 - La célula», fila 3): Estructura celular. 8.1. Compara células procariotas y eucariotas, animales y vegetales, a partir de observaciones microscópicas de muestras vegetales y preparaciones comerciales.",
+     "G10-BIO-U3-3.2 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 30): Sistema nervioso. 3.2. Construye un modelo de neurona o neuroglia ajustado a su anatomía celular y funciones principales.",
+     "G11-BIO-U2-2.14 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 28): Los virus. 2.14. Compara las etapas de los ciclos lítico y lisogénico y explica en qué condiciones un virus pasa de uno a otro.",
+     "G11-BIO-U5-5.4 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 66): Origen común de la vida. 5.4. Relaciona las características de los seres vivos con las evidencias que apuntan a su origen común."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S8U01 [AU_Science_7-10_v9_contenido.docx p. None, SV 7–7]: Reconocer la célula como unidad básica de los seres vivos, comparar células vegetales y animales y describir funciones de estructuras y organelos especializados"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p014-07 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 14, SV 7–9]: Diferenciar células animales y vegetales y sus partes principales en dibujos, y analizar las funciones de estas partes."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p009-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 9, SV 8–9]: Comprender que las células son las unidades fundamentales de los seres vivos y pueden formar tejidos, órganos y sistemas adaptados."
+     },
+     "HK": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p033-05 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 33, SV 5–5]: Saber que la célula es la unidad básica de los seres vivos."
+     },
+     "JP": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8362223311100000 [jp_cos_836 p. 91, SV 7–7]: Los seres vivos están formados por células; descubrir las características de las células vegetales y animales usando el microscopio."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p047-05 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 47, SV 6–8]: Comprender que la célula es la unidad básica de la vida e inferir la relación entre la estructura y la función celular."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g8-p172-04 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 172, SV 7–7]: Demostrar una comprensión fundamental de las células mediante la aplicación de la teoría celular."
+     },
+     "SG": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p044-04 [SG_Primary_Science_2023.pdf p. 44, SV 5–5]: Reconocer que la célula es la unidad básica de la vida."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Identificar los niveles de organización en organismos multicelulares: célula, tejido, órgano y sistema de órganos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/la-celula-unidad-de-la-vida",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Meiosis (CON:biologia/meiosis)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/meiosis",
+     "nombre": "Meiosis",
+     "definicion": "División celular que reduce a la mitad el número de cromosomas y forma gametos genéticamente distintos por entrecruzamiento y segregación.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G06-CIE-U6-6.3 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 5): Ciclo celular.. 6.3. Describe las etapas de la meiosis a partir de micrografías, muestras o esquemas.",
+     "G06-CIE-U6-6.6 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 8): Reproducción Asexual y Sexual.. 6.6. Explica la alternancia de fases empleando muestras o esquemas.",
+     "G09-CIE-U8-8.4 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 8 - La célula», fila 6): División celular. 8.4. Representa con modelos la mitosis y la meiosis y las relaciona con el crecimiento, la reparación de tejidos y la reproducción.",
+     "G10-BIO-U4-4.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 45): Teoría cromosómica de la herencia. 4.5. Construye un mapa genético de tres genes ligados a partir de las frecuencias de recombinación obtenidas en cruzamientos de prueba.",
+     "G11-BIO-U4-4.10 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 57): Mecanismos evolutivos. 4.10. Reconoce el proceso de recombinación genética como un mecanismo evolutivo.",
+     "G11-BIO-U4-4.6 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 53): Ciclo celular. 4.6. Describe los principales procesos de la división meiótica."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p017-18 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 17, SV 7–9]: Comparar la estructura y desarrollo de óvulos y espermatozoides, explicar la fecundación y sus factores, y dar ejemplos de cambios en el desarrollo fetal."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p010-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 10, SV 8–9]: Explicar el papel de la división celular meiótica en la reducción a la mitad del número de cromosomas para formar gametos."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p042-14 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 42, SV 6–8]: Indicar que las células sexuales humanas transportan un conjunto de cromosomas (23 cromosomas)."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p065-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65, SV 6–8]: Comprender la relación entre cromosomas y genes, e interpretar las características de la mitosis y meiosis centrándose en el comportamiento cromosómico."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/meiosis",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Mitosis y ciclo celular (CON:biologia/mitosis-y-ciclo-celular)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/mitosis-y-ciclo-celular",
+     "nombre": "Mitosis y ciclo celular",
+     "definicion": "División del núcleo que produce dos células hijas genéticamente idénticas; permite el crecimiento, la reparación y la reproducción asexual.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 7
+    },
+    "temas_v2": [
+     "G06-CIE-U6-6.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 4): Ciclo celular.. 6.2. Describe las etapas de la mitosis a partir de micrografías, muestras o esquemas.",
+     "G06-CIE-U6-6.4 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 6): Ciclo celular.. 6.4. Identifica estructuras anatómicas asociadas con la apoptosis y senescencia celular.",
+     "G06-CIE-U6-6.8 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 10): Desarrollo Vegetal.. 6.8. Describe el proceso de fecundación y planos de división celular en plantas.",
+     "G06-CIE-U5-5.22 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 24): Matriz extracelular.. 5.22. Expone las implicaciones de la matriz extracelular en las lesiones.",
+     "G06-CIE-U6-6.5 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 7): Reproducción Asexual y Sexual.. 6.5. Ejemplifica mecanismos básicos de reproducción de las formas de vida unicelulares.",
+     "G07-CIE-U2-2.4 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 6): Replicación. 2.4. Identifica sucesos cotidianos que involucran la replicación del ADN."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p010-01 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 10, SV 8–9]: Describir el cáncer como resultado de cambios celulares que provocan un crecimiento y división descontrolados."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p039-13 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39, SV 6–8]: Reconocer que las células pueden dividirse, crecer y diferenciarse en distintos tipos celulares."
+     },
+     "JP": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8362233511100000 [jp_cos_836 p. 104, SV 8–8]: Observar la división celular (mitosis), descubrir su secuencia y relacionarla con el crecimiento de los organismos."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p065-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65, SV 6–8]: Comprender la relación entre cromosomas y genes, e interpretar las características de la mitosis y meiosis centrándose en el comportamiento cromosómico."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g8-p172-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 172, SV 7–7]: Demostrar comprensión de la estructura y función básicas de las células vegetales y animales y de los procesos celulares."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p049-04 [SG_LowerSec_Science_G2G3_2024.pdf p. 49, SV 7–8]: Indicar que los productos finales de la digestión se usan en procesos celulares como respiración, crecimiento y reparación."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Comprender que las células se dividen y que los cromosomas experimentan cambios durante este proceso de división."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/mitosis-y-ciclo-celular",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Niveles de organización de los seres vivos (CON:biologia/niveles-de-organizacion)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/niveles-de-organizacion",
+     "nombre": "Niveles de organización de los seres vivos",
+     "definicion": "Las células especializadas forman tejidos, los tejidos forman órganos y los órganos forman sistemas en organismos multicelulares.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 4,
+     "estricto": 4
+    },
+    "consenso": {
+     "grado_amplio": 5,
+     "grado_estricto": 6,
+     "mediana": 5.0,
+     "n_paises": 9
+    },
+    "temas_v2": [
+     "G04-CIE-U3-3.3 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Naturaleza y sus int», fila 5): Niveles de organización ecológica.. 3.3. Caracteriza los niveles de organización ecológica.",
+     "G04-CIE-U5-5.7 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 5 - C. humano materia y », fila 9): Sistema circulatorio.. 5.7. Explica los vínculos del sistema circulatorio con los demás sistemas del cuerpo humano.",
+     "G06-CIE-U5-5.6 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 8): Niveles de organización de los seres vivos.. 5.6. Reconoce los niveles de organización biológica presentes en un sistema vivo.",
+     "G06-CIE-U5-5.7 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 9): Niveles de organización de los seres vivos.. 5.7. Reconoce las características distintivas de una muestra de tejido, órgano y sistema.",
+     "G06-CIE-U5-5.19 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 21): Matriz extracelular.. 5.19. Describe la estructura general y funciones de la matriz extracelular.",
+     "G08-CIE-U7-7.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 3): Tipos de tejidos animales. 7.1. Identifica las principales características estructurales y funcionales de los tejidos animales fundamentales."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S8U02 [AU_Science_7-10_v9_contenido.docx p. None, SV 7–7]: Analizar la relación estructura-función de células, tejidos y órganos en un sistema de órganos vegetal y uno animal, y cómo permiten la supervivencia del indivi"
+     },
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p016-01 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 16, SV 7–9]: Elaborar y analizar dibujos y esquemas del sistema digestivo para explicar la digestión de los alimentos y la absorción de nutrientes."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p009-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 9, SV 8–9]: Comprender que las células son las unidades fundamentales de los seres vivos y pueden formar tejidos, órganos y sistemas adaptados."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p038-12 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 38, SV 6–8]: Preparar portaobjetos y examinar tejidos vegetales y animales utilizando un microscopio."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263211400000 [jp_cos_826 p. 89, SV 5–5]: El cuerpo tiene diversos órganos que mantienen las funciones vitales."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p047-04 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 47, SV 6–8]: Comprender los niveles de organización biológica y comparar y analizar las diferencias entre animales y plantas."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g8-p173-02 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 173, SV 7–7]: Describir la organización de las células en tejidos, órganos y sistemas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p053-01 [SG_Primary_Science_2023.pdf p. 53, SV 3–6]: Comprender que las diferentes partes de un sistema influyen entre sí y trabajan juntas para realizar funciones."
+     },
+     "TW": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Identificar los niveles de organización en organismos multicelulares: célula, tejido, órgano y sistema de órganos."
+     }
+    }
+   },
+   "id": "INC:CON:biologia/niveles-de-organizacion",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  }
+ ]
+}

@@ -31,7 +31,6 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Transporte en plantas: xilema y floema | 8.° | 4 | 5 | ENG 2, JP 5.0, SG 5.0, UY 3.0 | +4 |
 | Evidencias de la evolución | 9.° | 6 | 8 | AU 9.0, CO 2, ENG 4.0, JP 8.0 | +3 |
 | Tejidos animales | 8.° | 5 | 7 | AU 7.0, CO 5.0, UY 4.0 | +3 |
-| Agricultura y seguridad alimentaria | 7.° | 4.5 | 6 | ENG 6.0, UY 3.0 | +2.5 |
 | Intercambio de gases en plantas | 8.° | 5.5 | 6 | ENG 6.0, JP 7.0, SG 5.0, UY 5.0 | +2.5 |
 | Relaciones intraespecíficas | 7.° | 4.5 | — | CO 3.0, UY 6.0 | +2.5 |
 | Célula animal y célula vegetal | 9.° | 7 | 7 | AU 7.0, CO 6.5, ENG 6.0, JP 7.0, UY 7.0 | +2 |
@@ -60,7 +59,6 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Grandes grupos taxonómicos | 2.° | 4.5 | -2.5 |
 | Grupos de vertebrados | 2.° | 4.5 | -2.5 |
 | Invertebrados e insectos | 2.° | 4.5 | -2.5 |
-| Biotecnología vegetal y agroindustria | 4.° | 6.25 | -2.25 |
 | Historia de la vida en la Tierra | 5.° | 7.25 | -2.25 |
 | Microorganismos | 2.° | 4.25 | -2.25 |
 | Adaptaciones estructurales | 2.° | 4 | -2 |
@@ -89,12 +87,12 @@ Ninguno.
 | Intercambio de gases en animales | 3.° | Sistema respiratorio | 4.° | alta |
 | Productores, consumidores y descomponedores | 3.° | Cadena alimentaria | 4.° | alta |
 | Proteínas: estructura y función | 10.° | Aminoácidos y estructura de las proteínas | 11.° | alta |
-| Biotecnología vegetal y agroindustria | 4.° | Ingeniería genética y ADN recombinante | 9.° | media |
 | Fases de la fotosíntesis y ciclo de Calvin | 6.° | Oxidación y reducción | 11.° | media |
+| Biotecnología vegetal y agroindustria | 6.° | Ingeniería genética y ADN recombinante | 9.° | media |
 | Intercambio de gases en animales | 3.° | Difusión y ósmosis | 6.° | media |
 | Organelos de la célula eucariota | 6.° | Célula animal y célula vegetal | 9.° | media |
 | Síntesis de proteínas | 7.° | Proteínas: estructura y función | 10.° | media |
-| Biotecnología vegetal y agroindustria | 4.° | Reproducción sexual de las plantas con flor | 6.° | media |
+| Agricultura y seguridad alimentaria | 4.° | Biotecnología vegetal y agroindustria | 6.° | media |
 | Energía de los alimentos y balance energético | 4.° | Respiración celular | 6.° | media |
 | Osmorregulación y equilibrio hídrico | 8.° | Homeostasis | 9.° | media |
 

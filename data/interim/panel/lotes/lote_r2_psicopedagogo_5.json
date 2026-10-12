@@ -1,0 +1,2448 @@
+{
+ "lote": "r2_psicopedagogo_5",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/relaciones-presion-volumen-temperatura-gases/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/relaciones-presion-volumen-temperatura-gases/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+     "descripcion": "No identificar qué variable se mantiene constante al relacionar presión, volumen y temperatura: creer que calentar un gas siempre aumenta su volumen, aunque el recipiente sea rígido, o que un recipiente cerrado siempre tiene volumen y presión fijos.",
+     "senales": "Predice que un gas en un frasco rígido crece al calentarse; confunde «cerrado» con «volumen constante»; ignora la condición dada.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Dificultad común al aplicar leyes de gases sin fijar la variable controlada.",
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+     "nombre": "Relaciones presión-volumen-temperatura en gases",
+     "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:DIF:fisica/relaciones-presion-volumen-temperatura-gases/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/relaciones-presion-volumen-temperatura-gases/1",
+     "decision": "aprobar",
+     "justificacion": "Exacta: el error de fondo es no fijar la variable controlada, y los ejemplos (gas que «crece» en un frasco rígido; «cerrado» tomado como volumen constante) son errores reales de este nivel. Juntar dos manifestaciones es aceptable porque tienen el mismo remedio: identificar qué se mantiene constante, como pide el microtema.",
+     "evidencia": [
+      {
+       "fuente": "MT:fisica/relaciones-presion-volumen-temperatura-gases/G09 (explicación)",
+       "cita": "antes de predecir, identifica qué variable se mantiene constante"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "pV = nRT: con n fijo, fijar una variable determina cómo cambian las otras dos"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/temperatura-medicion-escalas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/temperatura-medicion-escalas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/temperatura-medicion-escalas",
+     "descripcion": "Usar grados Celsius en lugar de kelvin en las relaciones de los gases, como si 0 °C fuera la ausencia de temperatura y las proporciones valieran en esa escala.",
+     "senales": "Dice que de 20 °C a 40 °C la temperatura se duplica; divide 57/27 para predecir la presión; trata 0 °C como cero absoluto.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error típico al aplicar proporcionalidad de gases con escala Celsius.",
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/temperatura-medicion-escalas",
+     "nombre": "Temperatura y escalas termométricas",
+     "definicion": "La temperatura se mide con termómetros en escalas Celsius, Fahrenheit y Kelvin, con puntos fijos y cero absoluto.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:DIF:fisica/temperatura-medicion-escalas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/temperatura-medicion-escalas/1",
+     "decision": "aprobar",
+     "justificacion": "Describe con precisión el error de aplicar proporcionalidad con la escala Celsius, cuyo cero es convencional. Las señales son concretas, verificables y coinciden con los sondeos y la comprobación (20 → 40 °C; 57/27). Es una dificultad real y frecuente en 9.°.",
+     "evidencia": [
+      {
+       "fuente": "ACT:fisica/temperatura-medicion-escalas/sondeo-1-G09 (enunciado)",
+       "cita": "«la temperatura se duplicó, así que la presión también se duplica»"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "las leyes de los gases son proporcionales a la temperatura absoluta; 0 °C = 273 K"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/concentracion-de-disoluciones/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/concentracion-de-disoluciones/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/concentracion-de-disoluciones",
+     "descripcion": "Confunde la cantidad de soluto con la concentración: juzga qué tan concentrada está una disolución por los gramos de soluto (o por la cantidad de agua) sin relacionarlos con el volumen de disolución.",
+     "senales": "Elige como más concentrada la disolución con más gramos aunque tenga mucho más volumen, o cree que al servir una porción su concentración baja o sube.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al comparar disoluciones; altera la lectura de los experimentos de ósmosis.",
+     "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/concentracion-de-disoluciones",
+     "nombre": "Soluto, disolvente y concentración",
+     "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "id": "PED:DIF:quimica/concentracion-de-disoluciones/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/concentracion-de-disoluciones/1",
+     "decision": "aprobar",
+     "justificacion": "Describe una confusión real y frecuente: tratar la concentración como si dependiera de la cantidad total de soluto y no de la razón soluto/volumen (propiedad intensiva frente a extensiva). Las señales son observables y coherentes con las actividades. La justificación la vincula bien con la lectura del experimento de ósmosis de 8.2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2",
+       "cita": "Explica la ósmosis por el cambio de masa de tejidos en soluciones de distinta concentración."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Confundir cantidad de soluto con concentración es un error conocido al comparar disoluciones."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/constante-de-equilibrio/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/constante-de-equilibrio/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/constante-de-equilibrio",
+     "descripcion": "Usa los coeficientes estequiométricos como factores que multiplican la concentración (2[NH₃]) en lugar de exponentes ([NH₃]²) al escribir o calcular K.",
+     "senales": "Escribe un número delante de los corchetes, como 2[CO] o 3[H₂]; al calcular multiplica por el coeficiente y obtiene un K distinto; elige opciones con coeficientes como factores.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al pasar de la ecuación balanceada a la ley de acción de masas.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:DIF:quimica/constante-de-equilibrio/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/constante-de-equilibrio/1",
+     "decision": "aprobar",
+     "justificacion": "Es un error real y típico al pasar de la ecuación balanceada a la expresión de K: usar el coeficiente como factor y no como exponente. La descripción es exacta y las señales permiten detectarlo en respuestas escritas y en opciones. Sirve directamente al indicador 3.6.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.6",
+       "cita": "Representa la constante de equilibrio a partir de ecuaciones de reacción química."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En K = [NH₃]²/([N₂][H₂]³) los coeficientes son exponentes."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/equilibrio-dinamico/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/equilibrio-dinamico/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/equilibrio-dinamico",
+     "descripcion": "Cree que al llegar al equilibrio la reacción se detiene: como las concentraciones ya no cambian, supone que reactivos y productos dejaron de transformarse.",
+     "senales": "Dice que «la reacción terminó» o «ya no pasa nada»; interpreta concentraciones o color constantes como rapidez cero; no espera que partículas marcadas pasen al otro lado de la reacción.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Concepción alternativa frecuente: confundir concentraciones constantes con reacción detenida.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:DIF:quimica/equilibrio-dinamico/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/equilibrio-dinamico/1",
+     "decision": "aprobar",
+     "justificacion": "Recoge la idea previa más conocida sobre el equilibrio: creer que la reacción se detiene porque las concentraciones ya no cambian. Descripción exacta; las señales, incluida la de partículas marcadas, son observables y coinciden con la comprobación del microtema.",
+     "evidencia": [
+      {
+       "fuente": "CON:quimica/equilibrio-dinamico",
+       "cita": "Velocidades directa e inversa iguales y concentraciones constantes en sistema cerrado."
+      },
+      {
+       "fuente": "MT:quimica/equilibrio-dinamico/G09",
+       "cita": "Su comprobación pide predecir qué pasa con partículas marcadas en un sistema en equilibrio."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "descripcion": "Confunde la cantidad de soluto (moles o gramos) con la concentración: cree que la disolución con más soluto es la más concentrada, sin dividir entre el volumen.",
+     "senales": "Compara disoluciones solo por los moles o los gramos; cree que al servir una porción la concentración baja; escribe los moles en lugar de mol/L dentro de los corchetes.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente: comparar disoluciones por cantidad de soluto e ignorar el volumen.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+     "decision": "aprobar",
+     "justificacion": "Error real: comparar disoluciones por la cantidad de soluto sin dividir entre el volumen. Las señales cubren las tres formas en que aparece en este objetivo (comparar, servir una porción y escribir moles dentro de los corchetes). Se solapa con la dificultad de concentración en g/L, pero en otro concepto y otra unidad; es aceptable.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+       "cita": "Los distractores A y B se mapean a esta dificultad."
+      },
+      {
+       "fuente": "DIF:quimica/concentracion-de-disoluciones/1",
+       "cita": "Misma confusión expresada en gramos por litro, para 8.2."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:biologia/adn-y-cromosomas/G07",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:biologia/adn-y-cromosomas/G07",
+     "tipo": "microtema",
+     "concepto": "CON:biologia/adn-y-cromosomas",
+     "grados": [
+      7
+     ],
+     "titulo": "Dónde están los genes: ADN y cromosomas",
+     "explicacion": "Imagina hilos larguísimos enrollados en carretes para que quepan en una caja pequeña. Así está el ADN en el núcleo de la célula: son varios hilos muy largos, cada uno enrollado con proteínas, y cada hilo enrollado es un cromosoma. Un gen es un tramo de uno de esos hilos, y cada cromosoma tiene muchos genes. Los cromosomas van en pares, uno de cada progenitor; por eso hay dos copias de casi todos los genes.",
+     "ejemplo": "Las células del cuerpo humano tienen 46 cromosomas, o sea, 23 pares; las del maíz tienen 20, o sea, 10 pares. Una célula de la hoja y una de la raíz del maíz guardan los mismos 20 cromosomas.",
+     "practica": "ACT:biologia/adn-y-cromosomas/practica-G07",
+     "comprobacion": "ACT:biologia/adn-y-cromosomas/comprobacion-G07",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación, que pide corregir una frase nueva usando la relación entre ADN, cromosoma y gen.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:biologia/adn-y-cromosomas",
+      "TEMA:G06-CIE-U6-6.1"
+     ],
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/adn-y-cromosomas",
+     "nombre": "ADN y cromosomas",
+     "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "id": "PED:MT:biologia/adn-y-cromosomas/G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:biologia/adn-y-cromosomas/G07",
+     "decision": "corregir",
+     "justificacion": "La analogía es buena, pero dice que el ADN «es un hilo» con varios paquetes, lo que sugiere un solo hilo continuo para todos los cromosomas; cada cromosoma es una molécula de ADN distinta. Además, «dos copias de cada gen» falla en los genes de X e Y de los varones. Corrijo ambas cosas sin pasar de 80 palabras; el ejemplo (46 y 20 cromosomas) es correcto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo; el microtema es su base"
+      },
+      {
+       "fuente": "notas_de_los_redactores (punto 3)",
+       "cita": "«dos copias de cada gen» no se cumple en los genes de X e Y de los varones"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "cada cromosoma contiene una sola molécula de ADN; el maíz tiene 2n = 20 y el ser humano 2n = 46"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Imagina hilos larguísimos enrollados en carretes para que quepan en una caja pequeña. Así está el ADN en el núcleo de la célula: son varios hilos muy largos, cada uno enrollado con proteínas, y cada hilo enrollado es un cromosoma. Un gen es un tramo de uno de esos hilos, y cada cromosoma tiene muchos genes. Los cromosomas van en pares, uno de cada progenitor; por eso hay dos copias de casi todos los genes."
+     },
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:biologia/difusion-y-osmosis/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:biologia/difusion-y-osmosis/G09",
+     "tipo": "microtema",
+     "concepto": "CON:biologia/difusion-y-osmosis",
+     "grados": [
+      9
+     ],
+     "titulo": "Hacia dónde se mueve el agua",
+     "explicacion": "Si dejas una zanahoria blanda en agua una noche, amanece firme. Es ósmosis: el agua atraviesa la membrana de las células desde la disolución con menos solutos hacia la que tiene más. Es un caso de difusión: las partículas de agua se reparten solas desde donde hay más agua (menos soluto) hacia donde hay menos agua (más soluto), sin gastar energía. Por eso un tejido vegetal gana masa en agua pura y la pierde en agua muy salada.",
+     "ejemplo": "Un trozo de papa de 10,0 g pesó 11,2 g tras una hora en agua destilada (entró agua); otro trozo igual pesó 8,9 g tras una hora en agua muy salada (salió agua).",
+     "practica": "ACT:biologia/difusion-y-osmosis/practica-G09",
+     "comprobacion": "ACT:biologia/difusion-y-osmosis/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación, que pide predecir qué pasa con rodajas de pepino con sal y justificar el sentido del movimiento del agua.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:biologia/difusion-y-osmosis",
+      "TEMA:G09-CIE-U8-8.2"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/difusion-y-osmosis",
+     "nombre": "Difusión y ósmosis",
+     "definicion": "Movimiento pasivo de sustancias a favor de su gradiente de concentración; la ósmosis es la difusión de agua a través de membranas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "id": "PED:MT:biologia/difusion-y-osmosis/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:biologia/difusion-y-osmosis/G09",
+     "decision": "corregir",
+     "justificacion": "Dos problemas: las pasas tienen células muertas y no ilustran la membrana celular; y definir la difusión «desde donde están más concentradas» sin aclarar que se habla del agua invita a invertir el sentido de la ósmosis, justo la dificultad que se quiere corregir. Uso un tejido vivo y explicito que el agua va de donde hay más agua a donde hay menos. El ejemplo aclara que son dos trozos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "Explica la difusión y la ósmosis por el cambio de masa de tejidos vegetales en soluciones de distinta concentración"
+      },
+      {
+       "fuente": "DIF:biologia/difusion-y-osmosis/1",
+       "cita": "cree que el agua va hacia la disolución con menos soluto"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en la ósmosis el agua se mueve hacia el lado con más soluto, es decir, con menos agua libre"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Si dejas una zanahoria blanda en agua una noche, amanece firme. Es ósmosis: el agua atraviesa la membrana de las células desde la disolución con menos solutos hacia la que tiene más. Es un caso de difusión: las partículas de agua se reparten solas desde donde hay más agua (menos soluto) hacia donde hay menos agua (más soluto), sin gastar energía. Por eso un tejido vegetal gana masa en agua pura y la pierde en agua muy salada.",
+      "ejemplo": "Un trozo de papa de 10,0 g pesó 11,2 g tras una hora en agua destilada (entró agua); otro trozo igual pesó 8,9 g tras una hora en agua muy salada (salió agua)."
+     },
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:biologia/genes-y-alelos/G07",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:biologia/genes-y-alelos/G07",
+     "tipo": "microtema",
+     "concepto": "CON:biologia/genes-y-alelos",
+     "grados": [
+      7
+     ],
+     "titulo": "Un mismo gen, distintas versiones",
+     "explicacion": "En una mazorca puede haber granos amarillos y blancos. Todos tienen el mismo gen para el color del grano, pero ese gen existe en versiones distintas: cada versión se llama alelo. El maíz, la arveja y las personas tienen dos copias de casi todos sus genes, una de cada progenitor, y pueden ser alelos iguales o distintos. Si un alelo se nota con una sola copia, se llama dominante; eso no quiere decir que sea el más común.",
+     "ejemplo": "El grupo sanguíneo depende de un solo gen con tres alelos principales: A, B y O. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen.",
+     "practica": "ACT:biologia/genes-y-alelos/practica-G07",
+     "comprobacion": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación, que pide interpretar un conteo nuevo de plantas de tomate sin confundir alelo con gen ni dominante con más frecuente.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:biologia/genes-y-alelos",
+      "TEMA:G07-CIE-U2-2.7"
+     ],
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "id": "PED:MT:biologia/genes-y-alelos/G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "decision": "corregir",
+     "justificacion": "Lo central es exacto: un gen con varias versiones y dominante no significa más común. Dos precisiones: «las plantas y los animales tienen dos copias de cada gen» falla en los genes de X e Y de los varones y en muchas plantas cultivadas poliploides, y el gen ABO tiene más de tres alelos. Limito la afirmación a los organismos de los ejemplos y digo «tres alelos principales».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "notas_de_los_redactores (puntos 3 y 4)",
+       "cita": "«dos copias de cada gen» no se cumple en X e Y ni en haploides"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "maíz y arveja son diploides; el ABO tiene muchas variantes agrupadas en A, B y O"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una mazorca puede haber granos amarillos y blancos. Todos tienen el mismo gen para el color del grano, pero ese gen existe en versiones distintas: cada versión se llama alelo. El maíz, la arveja y las personas tienen dos copias de casi todos sus genes, una de cada progenitor, y pueden ser alelos iguales o distintos. Si un alelo se nota con una sola copia, se llama dominante; eso no quiere decir que sea el más común.",
+      "ejemplo": "El grupo sanguíneo depende de un solo gen con tres alelos principales: A, B y O. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen."
+     },
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:biologia/membrana-celular/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:biologia/membrana-celular/G09",
+     "tipo": "microtema",
+     "concepto": "CON:biologia/membrana-celular",
+     "grados": [
+      9
+     ],
+     "titulo": "La membrana: una frontera que selecciona",
+     "explicacion": "Una hoja de lechuga marchita recupera su firmeza en agua, pero su jugo no se escapa. Lo logra la membrana celular: una doble capa delgada de fosfolípidos con proteínas que rodea cada célula y regula lo que pasa. Es selectivamente permeable: el agua y el oxígeno la cruzan con facilidad; muchas otras sustancias pasan poco o solo por proteínas especiales. En las plantas, la pared celular está por fuera, es rígida y da forma, pero no hace esa selección.",
+     "ejemplo": "El oxígeno entra a las células de la raíz y el dióxido de carbono sale de ellas atravesando la membrana; la mayoría de las proteínas que la célula fabrica no la atraviesan y se quedan adentro.",
+     "practica": "ACT:biologia/membrana-celular/practica-G09",
+     "comprobacion": "ACT:biologia/membrana-celular/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación, que pide predecir qué pasa con el pigmento de la remolacha cuando la membrana se daña.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:biologia/membrana-celular",
+      "TEMA:G09-CIE-U8-8.2"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/membrana-celular",
+     "nombre": "Membrana celular",
+     "definicion": "Bicapa de fosfolípidos con proteínas que delimita la célula y regula el paso de gases, nutrientes y desechos.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "id": "PED:MT:biologia/membrana-celular/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:biologia/membrana-celular/G09",
+     "decision": "corregir",
+     "justificacion": "Dos imprecisiones: la membrana es una doble capa de fosfolípidos, no una capa; y el ejemplo afirma que las proteínas que fabrica la célula se quedan adentro, cuando muchas se secretan (enzimas digestivas, insulina), lo que chocaría con temas posteriores. Corrijo a «doble capa» y a «la mayoría de las proteínas no la atraviesan». Lo demás es exacto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "Explica la difusión y la ósmosis por el cambio de masa de tejidos vegetales en soluciones de distinta concentración"
+      },
+      {
+       "fuente": "CON:biologia/membrana-celular",
+       "cita": "estructura y permeabilidad selectiva de la membrana"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "bicapa lipídica; las proteínas de secreción salen por exocitosis, no por difusión"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Una hoja de lechuga marchita recupera su firmeza en agua, pero su jugo no se escapa. Lo logra la membrana celular: una doble capa delgada de fosfolípidos con proteínas que rodea cada célula y regula lo que pasa. Es selectivamente permeable: el agua y el oxígeno la cruzan con facilidad; muchas otras sustancias pasan poco o solo por proteínas especiales. En las plantas, la pared celular está por fuera, es rígida y da forma, pero no hace esa selección.",
+      "ejemplo": "El oxígeno entra a las células de la raíz y el dióxido de carbono sale de ellas atravesando la membrana; la mayoría de las proteínas que la célula fabrica no la atraviesan y se quedan adentro."
+     },
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:biologia/productores-consumidores-descomponedores/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:biologia/productores-consumidores-descomponedores/G05",
+     "tipo": "microtema",
+     "concepto": "CON:biologia/productores-consumidores-descomponedores",
+     "grados": [
+      5
+     ],
+     "titulo": "¿Quién recicla los restos?",
+     "explicacion": "En la milpa, el maíz es productor: fabrica su alimento con la luz del sol. El gusano que come sus hojas y el pájaro que come al gusano son consumidores. Cuando caen hojas o muere un animal, los descomponedores, como hongos y bacterias, transforman esos restos en humus, rico en nutrientes que el maíz vuelve a usar.",
+     "ejemplo": "Un tronco caído en el bosque se ablanda, se llena de hongos y, con los años, termina siendo parte del suelo.",
+     "practica": "ACT:biologia/productores-consumidores-descomponedores/practica-G05",
+     "comprobacion": "ACT:biologia/productores-consumidores-descomponedores/comprobacion-G05",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: predice qué pasaría con los restos y los nutrientes del suelo si faltaran los descomponedores.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:biologia/productores-consumidores-descomponedores",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/productores-consumidores-descomponedores",
+     "nombre": "Productores, consumidores y descomponedores",
+     "definicion": "Papeles de los organismos en un ecosistema: producir materia orgánica, consumirla o descomponerla devolviendo nutrientes al suelo.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:biologia/productores-consumidores-descomponedores/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:biologia/productores-consumidores-descomponedores/G05",
+     "decision": "aprobar",
+     "justificacion": "Exacto para 5.°: productor, consumidores y descomponedores bien ejemplificados en la milpa, con el retorno de nutrientes que el maíz reutiliza. «Fabrica su alimento con la luz del sol» es una simplificación aceptable que no contradice la fotosíntesis posterior. El ejemplo del tronco es correcto y el criterio coincide con la comprobación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G05-CIE-U6-6.14",
+       "cita": "Identifica los principales procesos químicos del suelo; el concepto es base (prerrequisito)"
+      },
+      {
+       "fuente": "ACT:biologia/productores-consumidores-descomponedores/comprobacion-G05",
+       "cita": "predecir qué pasa con los restos y los nutrientes del suelo sin descomponedores"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "la descomposición devuelve nutrientes minerales que las plantas absorben"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/meteorizacion/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:ciencias_tierra_espacio/meteorizacion/G05",
+     "tipo": "microtema",
+     "concepto": "CON:ciencias_tierra_espacio/meteorizacion",
+     "grados": [
+      5
+     ],
+     "titulo": "Las rocas también cambian",
+     "explicacion": "Mira una pared vieja de piedra: tiene grietas y pedacitos sueltos al pie. Eso es meteorización: las rocas se quiebran o se transforman donde están, por el calor y el frío, el agua, el aire y seres vivos como las raíces. Si luego el agua o el viento se llevan los pedacitos, eso ya es erosión.",
+     "ejemplo": "Un clavo olvidado en el patio se cubre de herrumbre. Algo parecido pasa con las rocas que tienen hierro: el aire y el agua las transforman, se ponen rojizas y se desmoronan.",
+     "practica": "ACT:ciencias_tierra_espacio/meteorizacion/practica-G05",
+     "comprobacion": "ACT:ciencias_tierra_espacio/meteorizacion/comprobacion-G05",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: predice qué placa de piedra tendrá las letras más borrosas y lo explica por la meteorización en el mismo lugar.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:ciencias_tierra_espacio/meteorizacion",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/meteorizacion",
+     "nombre": "Meteorización",
+     "definicion": "Desintegración y alteración de las rocas en su lugar por acción física, química y biológica del agua, el aire, la temperatura y los seres vivos.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:ciencias_tierra_espacio/meteorizacion/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/meteorizacion/G05",
+     "decision": "aprobar",
+     "justificacion": "Exacto y adecuado a 5.°: define la meteorización como quiebre o transformación en el lugar, con agentes físicos, químicos y biológicos, y la separa de la erosión por el transporte. La analogía del clavo oxidado con los minerales con hierro es una simplificación coherente con lo que viene después. Incluir los cambios de temperatura es válido mientras no se les dé más peso que al agua. 56 palabras.",
+     "evidencia": [
+      {
+       "fuente": "CON:ciencias_tierra_espacio/meteorizacion",
+       "cita": "acción física, química y biológica del agua, el aire, la temperatura y los seres vivos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en clima tropical húmedo domina la meteorización química; la térmica contribuye, con peso discutido"
+      },
+      {
+       "fuente": "ACT:ciencias_tierra_espacio/meteorizacion/comprobacion-G05",
+       "cita": "el criterio del microtema coincide con la comprobación de las placas de piedra"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-tierra-espacio",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+     "tipo": "microtema",
+     "concepto": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "grados": [
+      5
+     ],
+     "titulo": "¿De qué está hecho el suelo?",
+     "explicacion": "Toma un puñado de suelo de la milpa: verás granitos de roca, pedacitos de hojas y raíces, y quizá una lombriz. El suelo se forma muy despacio: las rocas se quiebran y cambian, y los restos de seres vivos se descomponen en humus. También guarda agua y aire. Según el tamaño de sus granos, puede ser arenoso, limoso o arcilloso.",
+     "ejemplo": "En el corte de un camino en una ladera se ven capas: arriba, suelo oscuro con raíces; más abajo, suelo más claro con piedras; al fondo, la roca de la que se formó.",
+     "practica": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/practica-G05",
+     "comprobacion": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: predice en cuál de dos terrenos con la misma roca hay un suelo más oscuro y fértil, y lo explica por la formación de humus.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "nombre": "Suelo: formación, componentes y tipos",
+     "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+     "decision": "aprobar",
+     "justificacion": "Exacto: componentes del suelo, formación lenta por meteorización y descomposición en humus, y clases texturales básicas. El perfil del corte de camino es una idealización aceptable de los horizontes; en El Salvador el material de origen suele ser ceniza volcánica, lo que no lo contradice. «Según el tamaño de sus granos» simplifica la proporción de arena, limo y arcilla; 6.16 lo retoma. 60 palabras, en el límite.",
+     "evidencia": [
+      {
+       "fuente": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+       "cita": "meteorización de rocas y materia orgánica; horizontes y textura que varían"
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U6-6.16 (fila 18)",
+       "cita": "caracterización física de los suelos: clases y tipos, después de 6.14"
+      },
+      {
+       "fuente": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05",
+       "cita": "el criterio (humus en el terreno con bosque) coincide con la comprobación"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-tierra-espacio",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+     "tipo": "microtema",
+     "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "grados": [
+      5
+     ],
+     "titulo": "Las rocas se agrupan por cómo se formaron",
+     "explicacion": "Dos piedras pueden verse iguales y haberse formado distinto: las rocas se agrupan por su origen. Las ígneas se forman al enfriarse el magma o la lava, como en nuestros volcanes. Las sedimentarias, cuando pedacitos de rocas o conchas se acumulan en capas y se pegan. Las metamórficas, cuando el calor y la presión transforman otra roca sin derretirla.",
+     "ejemplo": "La piedra de las coladas de lava del volcán de San Salvador es ígnea; la caliza, que se forma con restos de conchas acumulados en el fondo del mar, es sedimentaria.",
+     "practica": "ACT:ciencias_tierra_espacio/tipos-de-rocas/practica-G05",
+     "comprobacion": "ACT:ciencias_tierra_espacio/tipos-de-rocas/comprobacion-G05",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: decide que dos rocas del mismo color son de tipos distintos porque se formaron de manera distinta.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:ciencias_tierra_espacio/tipos-de-rocas",
+      "TEMA:G05-CIE-U6-6.14"
+     ],
+     "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+     "decision": "aprobar",
+     "justificacion": "Correcto para 5.°: clasifica por origen, distingue metamorfismo de fusión («sin derretirla») y usa ejemplos verificables: coladas de lava del volcán de San Salvador (como la de 1917) y la caliza, en su mayoría formada por conchas y esqueletos marinos. Son simplificaciones coherentes con lo que viene después (calizas químicas, tobas piroclásticas). El criterio coincide con la comprobación. 59 palabras.",
+     "evidencia": [
+      {
+       "fuente": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+       "cita": "enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "el volcán de San Salvador tiene coladas de lava, entre ellas la de la erupción de 1917"
+      },
+      {
+       "fuente": "ACT:ciencias_tierra_espacio/tipos-de-rocas/comprobacion-G05",
+       "cita": "dos rocas del mismo color con orígenes distintos: coincide con el criterio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-tierra-espacio",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/calor-vs-temperatura/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/calor-vs-temperatura/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/calor-vs-temperatura",
+     "grados": [
+      9
+     ],
+     "titulo": "Calor no es lo mismo que temperatura",
+     "explicacion": "Cuando sirves atol caliente en una taza, la taza y tus manos se calientan. La temperatura indica qué tan caliente está algo: qué tan rápido se mueven, en promedio, sus partículas. El calor es la energía que pasa de un cuerpo a otro porque tienen temperaturas distintas, siempre del más caliente al más frío. Un cuerpo no «tiene» calor: tiene energía interna. Una olla y una taza de atol a la misma temperatura no guardan la misma energía.",
+     "ejemplo": "Dos vasos de agua a 30 °C mezclados quedan a 30 °C, no a 60 °C: las temperaturas no se suman.",
+     "practica": "ACT:fisica/calor-vs-temperatura/practica-G09",
+     "comprobacion": "ACT:fisica/calor-vs-temperatura/comprobacion-G09",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: explica cuál cuerpo cede más calor aunque ambos estén a la misma temperatura.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/calor-vs-temperatura",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/calor-vs-temperatura",
+     "nombre": "Calor como energía en tránsito",
+     "definicion": "El calor es energía transferida por diferencia de temperatura; se distingue de la temperatura y de la energía interna.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/calor-vs-temperatura/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/calor-vs-temperatura/G09",
+     "decision": "aprobar",
+     "justificacion": "Correcto para 9.°: distingue temperatura (agitación media de las partículas), calor (energía transferida por diferencia de temperatura) y energía interna. «Qué tan rápido se mueven en promedio» es una simplificación coherente con la energía cinética media de 10.°. Tiene 78 palabras (máximo 80) y el criterio coincide con la comprobación.",
+     "evidencia": [
+      {
+       "fuente": "CON:fisica/calor-vs-temperatura (definición)",
+       "cita": "energía transferida por diferencia de temperatura; distinta de temperatura y energía interna"
+      },
+      {
+       "fuente": "ACT:fisica/calor-vs-temperatura/comprobacion-G09",
+       "cita": "la olla grande cede más calor que la taza al enfriarse"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U12-12.6",
+       "cita": "energía interna como suma de energías de las partículas"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/conservacion-energia/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/conservacion-energia/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/conservacion-energia",
+     "grados": [
+      9
+     ],
+     "titulo": "La energía no se gasta: cambia de forma",
+     "explicacion": "Cuando frenas en bicicleta, la llanta y el freno se calientan. La energía de movimiento no desapareció: se transformó en energía térmica. En un sistema aislado, la energía total siempre es la misma; solo pasa de una forma a otra (movimiento, altura, química, térmica, luz) o de un cuerpo a otro. Cuando decimos que «se perdió» energía, en realidad pasó al ambiente como calor y ya no la podemos aprovechar.",
+     "ejemplo": "Un foco recibe 100 J de energía eléctrica; 30 J salen como luz y 70 J como calor: en total siguen siendo 100 J.",
+     "practica": "ACT:fisica/conservacion-energia/practica-G09",
+     "comprobacion": "ACT:fisica/conservacion-energia/comprobacion-G09",
+     "duracion_min": 8,
+     "criterio": "Calcula correctamente la comprobación: la energía que sale como calor de un motor, usando que la energía total se conserva.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/conservacion-energia",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/conservacion-energia",
+     "nombre": "Conservación de la energía",
+     "definicion": "La energía total de un sistema aislado se mantiene constante; solo se transforma o transfiere.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/conservacion-energia/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/conservacion-energia/G09",
+     "decision": "aprobar",
+     "justificacion": "Exacto: al frenar, la energía de movimiento pasa a energía térmica; la energía total de un sistema aislado se conserva; «perdida» significa dispersa y no aprovechable. El ejemplo del foco cuadra (30 + 70 = 100 J) y el criterio coincide con la comprobación numérica (1000 = 250 + 750 J). Largo dentro del límite.",
+     "evidencia": [
+      {
+       "fuente": "MT:fisica/conservacion-energia/G09 (ejemplo)",
+       "cita": "100 J = 30 J de luz + 70 J de calor"
+      },
+      {
+       "fuente": "ACT:fisica/conservacion-energia/comprobacion-G09",
+       "cita": "valor 750 J con tolerancia 0"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/fuerza-empuje-tiron/G03",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/fuerza-empuje-tiron/G03",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/fuerza-empuje-tiron",
+     "grados": [
+      3
+     ],
+     "titulo": "Empujar y jalar",
+     "explicacion": "Una fuerza es un empuje o un tirón. Empujas al cerrar una puerta. Jalas al abrir una gaveta. Una fuerza puede mover algo, frenarlo, hacerlo doblar o cambiar su forma. Las cosas no guardan fuerza adentro.",
+     "ejemplo": "En el patio, tu pie empuja la pelota y la pone a rodar. Si un compañero la para con el pie, otra fuerza la frena.",
+     "practica": "ACT:fisica/fuerza-empuje-tiron/practica-G03",
+     "comprobacion": "ACT:fisica/fuerza-empuje-tiron/comprobacion-G03",
+     "duracion_min": 8,
+     "criterio": "Responde bien la comprobación: elige un tirón para frenar la carreta y un empujón para hacerla doblar, sin decir que la fuerza se gasta.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/fuerza-empuje-tiron",
+      "TEMA:G02-CIE-U2-2.1-f4",
+      "TEMA:G03-CIE-U1-1.3"
+     ],
+     "origen": "redactor-actividades (G03-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-empuje-tiron",
+     "nombre": "Fuerza como empuje o tirón",
+     "definicion": "Una fuerza es un empuje o tirón; las fuerzas desequilibradas cambian la rapidez, dirección o forma de un objeto.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G03-CIE-U1-1.3",
+     "grado": 3,
+     "indicador": "1.3. Efectúa un experimento que involucre la manipulación de fuerzas de contacto.",
+     "evidencia": "Registro de la fuerza necesaria (estiramiento de la liga en cm, o en N con dinamómetro) en distintas superficies"
+    },
+    "adaptacion": {
+     "palabras_max": 40,
+     "registro": "concreto, cotidiano, una idea por oración"
+    },
+    "notas_de_los_redactores": "1. El concepto principal incluye las fuerzas a distancia, así que la práctica y el microtema usan un imán. En la malla,\n   el imán llega en 1.4, después de este objetivo: decidir si se deja.\n2. Los datos de `obj-2` (estiramiento de la liga por superficie) son inventados; en clase la tabla puede no coincidir.\n3. En la pelota y la carreta, la retroalimentación dice que «la cancha la roza y la frena». En algo que rueda el\n   frenado viene sobre todo de la resistencia a la rodadura y del aire.\n4. El sondeo 1 de empuje y tirón pide la idea de roce, que es del concepto principal: un fallo puede deberse a la\n   fricción y no a la base.\n5. Vocabulario: ¿«fricción» o solo «roce» en 3.°? La rúbrica acepta los dos. Confirmar «tirro», «gaveta», «pupitre».\n6. Varios distractores apuntan a la misma dificultad, y un error de la rúbrica («se cansa y ya no tiene fuerza») podría\n   mapearse a la idea de que la fuerza se gasta.\n7. Seguridad: en `obj-1` la liga se jala despacio; cuidar que no se suelte de golpe.\n8. Las dos dificultades son ideas infantiles conocidas, pero no traen referencia."
+   },
+   "id": "PED:MT:fisica/fuerza-empuje-tiron/G03",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/fuerza-empuje-tiron/G03",
+     "decision": "aprobar",
+     "justificacion": "Correcto y adecuado a 3.°: define la fuerza como empuje o tirón, enumera sus efectos (mover, frenar, hacer doblar, deformar) y niega de forma explícita la idea de ímpetu. El ejemplo atribuye el frenado a otra fuerza, como debe ser. Tiene 36 palabras (máximo 40) y el criterio coincide con la comprobación de la carreta.",
+     "evidencia": [
+      {
+       "fuente": "CON:fisica/fuerza-empuje-tiron (definición)",
+       "cita": "las fuerzas desequilibradas cambian la rapidez, la dirección o la forma"
+      },
+      {
+       "fuente": "DIF:fisica/fuerza-empuje-tiron/1",
+       "cita": "la fuerza como algo que el objeto lleva adentro y se gasta"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/fuerzas-contacto-distancia/G03",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/fuerzas-contacto-distancia/G03",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/fuerzas-contacto-distancia",
+     "grados": [
+      3
+     ],
+     "titulo": "Fuerzas que tocan y fuerzas que no tocan",
+     "explicacion": "Algunas fuerzas actúan al tocar. Tu mano empuja una carreta. El piso roza la suela de tus sandalias y no te deja resbalar: esa fuerza es la fricción. Otras fuerzas actúan sin tocar, como un imán que atrae un clip.",
+     "ejemplo": "Si arrastras una caja por el piso liso del aula y luego por la tierra del patio, en la tierra cuesta más: ese suelo la roza y la frena más.",
+     "practica": "ACT:fisica/fuerzas-contacto-distancia/practica-G03",
+     "comprobacion": "ACT:fisica/fuerzas-contacto-distancia/comprobacion-G03",
+     "duracion_min": 8,
+     "criterio": "Responde bien la comprobación: reconoce que la mano y el piso le hacen fuerzas de contacto a un pupitre que se empuja.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/fuerzas-contacto-distancia",
+      "TEMA:G03-CIE-U1-1.3"
+     ],
+     "origen": "redactor-actividades (G03-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerzas-contacto-distancia",
+     "nombre": "Fuerzas de contacto y a distancia",
+     "definicion": "Algunas fuerzas actúan por contacto (empuje, fricción) y otras a distancia (gravitatoria, magnética, eléctrica).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G03-CIE-U1-1.3",
+     "grado": 3,
+     "indicador": "1.3. Efectúa un experimento que involucre la manipulación de fuerzas de contacto.",
+     "evidencia": "Registro de la fuerza necesaria (estiramiento de la liga en cm, o en N con dinamómetro) en distintas superficies"
+    },
+    "adaptacion": {
+     "palabras_max": 40,
+     "registro": "concreto, cotidiano, una idea por oración"
+    },
+    "notas_de_los_redactores": "1. El concepto principal incluye las fuerzas a distancia, así que la práctica y el microtema usan un imán. En la malla,\n   el imán llega en 1.4, después de este objetivo: decidir si se deja.\n2. Los datos de `obj-2` (estiramiento de la liga por superficie) son inventados; en clase la tabla puede no coincidir.\n3. En la pelota y la carreta, la retroalimentación dice que «la cancha la roza y la frena». En algo que rueda el\n   frenado viene sobre todo de la resistencia a la rodadura y del aire.\n4. El sondeo 1 de empuje y tirón pide la idea de roce, que es del concepto principal: un fallo puede deberse a la\n   fricción y no a la base.\n5. Vocabulario: ¿«fricción» o solo «roce» en 3.°? La rúbrica acepta los dos. Confirmar «tirro», «gaveta», «pupitre».\n6. Varios distractores apuntan a la misma dificultad, y un error de la rúbrica («se cansa y ya no tiene fuerza») podría\n   mapearse a la idea de que la fuerza se gasta.\n7. Seguridad: en `obj-1` la liga se jala despacio; cuidar que no se suelte de golpe.\n8. Las dos dificultades son ideas infantiles conocidas, pero no traen referencia."
+   },
+   "id": "PED:MT:fisica/fuerzas-contacto-distancia/G03",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/fuerzas-contacto-distancia/G03",
+     "decision": "aprobar",
+     "justificacion": "Correcto: la fricción como fuerza de contacto que ejerce el piso y el imán como fuerza a distancia. El ejemplo (más roce en la tierra que en el piso liso) es sólido y conecta con la evidencia de 1.3. Nombrar el imán antes de 1.4 y 1.7 es solo un contraste, no un error de contenido. Tiene 40 palabras, en el límite.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U1-1.3 (fila 5)",
+       "cita": "registro de la fuerza necesaria en distintas superficies"
+      },
+      {
+       "fuente": "notas de los redactores, punto 1",
+       "cita": "el imán llega en 1.4, después de este objetivo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/presion/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/presion/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/presion",
+     "grados": [
+      9
+     ],
+     "titulo": "Presión: la fuerza repartida en un área",
+     "explicacion": "En la arena de la playa te hundes más con tacones finos que con sandalias anchas, aunque pesas lo mismo. La presión es la fuerza perpendicular dividida entre el área donde actúa: p = F/A, y se mide en pascales (1 Pa = 1 N/m²). La misma fuerza sobre un área pequeña produce una presión grande. En un gas, la presión es el empuje de las partículas que chocan contra cada metro cuadrado de pared.",
+     "ejemplo": "Una caja de 300 N apoyada sobre una cara de 0.1 m² ejerce 3000 Pa; sobre una cara de 0.05 m² ejerce 6000 Pa.",
+     "practica": "ACT:fisica/presion/practica-G09",
+     "comprobacion": "ACT:fisica/presion/comprobacion-G09",
+     "duracion_min": 8,
+     "criterio": "Calcula correctamente la comprobación: la presión que ejerce el émbolo de una jeringa, dividiendo la fuerza entre el área en m².",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/presion",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/presion",
+     "nombre": "Presión",
+     "definicion": "Fuerza perpendicular por unidad de área; explica efectos de una misma fuerza sobre áreas distintas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/presion/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/presion/G09",
+     "decision": "aprobar",
+     "justificacion": "Exacto: p = F/A con fuerza perpendicular, unidad pascal (1 Pa = 1 N/m²) y la presión de un gas como efecto de los choques de sus partículas. Los cálculos del ejemplo son correctos (300/0,1 = 3000 Pa; 300/0,05 = 6000 Pa) y el criterio coincide con la comprobación de la jeringa (10 N / 0,0002 m² = 50 000 Pa).",
+     "evidencia": [
+      {
+       "fuente": "MT:fisica/presion/G09 (ejemplo)",
+       "cita": "300 N sobre 0.1 m² dan 3000 Pa; sobre 0.05 m², 6000 Pa"
+      },
+      {
+       "fuente": "ACT:fisica/presion/comprobacion-G09",
+       "cita": "valor 50000 Pa con tolerancia 500"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/primera-ley-termodinamica/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/primera-ley-termodinamica/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/primera-ley-termodinamica",
+     "grados": [
+      9
+     ],
+     "titulo": "El balance de energía de un gas",
+     "explicacion": "Piensa en el gas como una cuenta de ahorro de energía. El calor que recibe es un depósito; el trabajo que hace al empujar un émbolo es un retiro. Lo que queda es el cambio de su energía interna: ΔU = Q − W. Si recibe calor pero lo usa todo para expandirse, su energía interna no cambia. Si lo comprimen sin dejar escapar calor, el trabajo que recibe aumenta su energía interna y se calienta.",
+     "ejemplo": "Un gas recibe 500 J de calor y hace 200 J de trabajo al levantar un émbolo: su energía interna aumenta 500 − 200 = 300 J.",
+     "practica": "ACT:fisica/primera-ley-termodinamica/practica-G09",
+     "comprobacion": "ACT:fisica/primera-ley-termodinamica/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Calcula correctamente la comprobación, una compresión sin intercambio de calor, con el signo del cambio de energía interna.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/primera-ley-termodinamica",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/primera-ley-termodinamica",
+     "nombre": "Primera ley de la termodinámica",
+     "definicion": "El cambio de energía interna es igual al calor recibido menos el trabajo realizado: ΔU = Q − W.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/primera-ley-termodinamica/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/primera-ley-termodinamica/G09",
+     "decision": "aprobar",
+     "justificacion": "Correcto y con la convención declarada: el trabajo que hace el gas es un «retiro», así que ΔU = Q − W. Los dos casos límite son exactos (expansión isotérmica: ΔU = 0; compresión adiabática: el gas se calienta) y el ejemplo da 300 J. El criterio coincide con la comprobación (+150 J). La analogía bancaria refuerza el calor como transferencia.",
+     "evidencia": [
+      {
+       "fuente": "CON:fisica/primera-ley-termodinamica (definición)",
+       "cita": "ΔU = Q − W"
+      },
+      {
+       "fuente": "ACT:fisica/primera-ley-termodinamica/comprobacion-G09",
+       "cita": "W = −150 J, ΔU = +150 J"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/procesos-termodinamicos/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/procesos-termodinamicos/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/procesos-termodinamicos",
+     "grados": [
+      9
+     ],
+     "titulo": "Cuatro maneras de cambiar un gas",
+     "explicacion": "Cuando aprietas una jeringa tapada o calientas un frasco bien cerrado, la misma cantidad de aire cambia de presión, volumen o temperatura. Para nombrar el proceso, busca lo que no cambia: presión constante es isobárico; volumen constante, isocórico; temperatura constante, isotérmico. Si el gas no intercambia calor, como en una compresión muy rápida, es adiabático. En un diagrama presión-volumen, el trabajo del gas es el área bajo la curva: si el volumen no cambia, el trabajo es cero.",
+     "ejemplo": "Una jeringa tapada con el émbolo libre se mete en agua caliente: el émbolo sube a presión constante (isobárico) y el gas hace trabajo al empujarlo.",
+     "practica": "ACT:fisica/procesos-termodinamicos/practica-G09",
+     "comprobacion": "ACT:fisica/procesos-termodinamicos/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: identifica el proceso de una olla cerrada y explica por qué su trabajo es cero.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/procesos-termodinamicos",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/procesos-termodinamicos",
+     "nombre": "Procesos termodinámicos",
+     "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/procesos-termodinamicos/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/procesos-termodinamicos/G09",
+     "decision": "corregir",
+     "justificacion": "La clasificación de procesos y el trabajo como área bajo la curva p-V son correctos. Pero los ejemplos de apertura no son procesos de una cantidad fija de gas: al inflar una llanta se agrega aire y una olla tapada común deja escapar vapor. Eso induce a explicar la presión de una llanta con la ley de Boyle. Se cambian por la jeringa y el frasco de la práctica.",
+     "evidencia": [
+      {
+       "fuente": "CON:fisica/procesos-termodinamicos (definición)",
+       "cita": "isobárico, isocórico, isotérmico y adiabático; trabajo como área bajo la curva p-V"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "los cuatro procesos suponen una cantidad fija de gas; inflar una llanta la aumenta"
+      },
+      {
+       "fuente": "ACT:fisica/procesos-termodinamicos/practica-G09 (enunciado)",
+       "cita": "usa un frasco rígido tapado y una jeringa tapada"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Cuando aprietas una jeringa tapada o calientas un frasco bien cerrado, la misma cantidad de aire cambia de presión, volumen o temperatura. Para nombrar el proceso, busca lo que no cambia: presión constante es isobárico; volumen constante, isocórico; temperatura constante, isotérmico. Si el gas no intercambia calor, como en una compresión muy rápida, es adiabático. En un diagrama presión-volumen, el trabajo del gas es el área bajo la curva: si el volumen no cambia, el trabajo es cero."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/relaciones-presion-volumen-temperatura-gases/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/relaciones-presion-volumen-temperatura-gases/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+     "grados": [
+      9
+     ],
+     "titulo": "Presión, volumen y temperatura van de la mano",
+     "explicacion": "Un gas está formado por partículas que se mueven sin parar y chocan contra las paredes. Si lo calientas, se mueven más rápido: si el recipiente puede crecer, como un globo, aumenta el volumen; si es rígido, como un frasco tapado, aumenta la presión. Si lo comprimes sin cambiar su temperatura, su presión sube: a la mitad del volumen, el doble de presión. Antes de predecir, identifica qué variable se mantiene constante y usa la temperatura en kelvin.",
+     "ejemplo": "Una pelota inflada que queda al sol en la cancha se pone más dura: su volumen casi no cambia, así que lo que sube es la presión.",
+     "practica": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "comprobacion": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: predice la presión de un gas a volumen constante usando temperaturas en kelvin.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+     "nombre": "Relaciones presión-volumen-temperatura en gases",
+     "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/relaciones-presion-volumen-temperatura-gases/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/relaciones-presion-volumen-temperatura-gases/G09",
+     "decision": "aprobar",
+     "justificacion": "Exacto con el modelo cinético: al calentar, sube el volumen si el recipiente cede y la presión si es rígido; a temperatura constante, mitad de volumen da doble presión; pide fijar la variable y usar kelvin. El ejemplo de la pelota al sol es correcto y el criterio coincide con la comprobación (300 → 330 K; 100 → 110 kPa).",
+     "evidencia": [
+      {
+       "fuente": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/comprobacion-G09",
+       "cita": "de 300 K a 330 K, la presión pasa de 100 kPa a 110 kPa"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "pV = nRT con n fijo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/temperatura-medicion-escalas/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/temperatura-medicion-escalas/G09",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/temperatura-medicion-escalas",
+     "grados": [
+      9
+     ],
+     "titulo": "Celsius, kelvin y el cero absoluto",
+     "explicacion": "En la escala Celsius, 0 °C es donde se congela el agua y 100 °C donde hierve al nivel del mar: son puntos fijos elegidos por comodidad. Pero 0 °C no es «ausencia de temperatura». La escala Kelvin empieza en el cero absoluto, −273 °C, la temperatura más baja posible; para pasar de °C a K se suma 273. En las leyes de los gases siempre se usa kelvin: de 20 °C a 40 °C la temperatura no se duplica.",
+     "ejemplo": "27 °C son 300 K; para duplicar esa temperatura absoluta hay que llegar a 600 K, que son 327 °C, no 54 °C.",
+     "practica": "ACT:fisica/temperatura-medicion-escalas/practica-G09",
+     "comprobacion": "ACT:fisica/temperatura-medicion-escalas/comprobacion-G09",
+     "duracion_min": 8,
+     "criterio": "Responde correctamente la comprobación: calcula en kelvin la temperatura que duplica la presión de un gas y la expresa en °C.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/temperatura-medicion-escalas",
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/temperatura-medicion-escalas",
+     "nombre": "Temperatura y escalas termométricas",
+     "definicion": "La temperatura se mide con termómetros en escalas Celsius, Fahrenheit y Kelvin, con puntos fijos y cero absoluto.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "id": "PED:MT:fisica/temperatura-medicion-escalas/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/temperatura-medicion-escalas/G09",
+     "decision": "aprobar",
+     "justificacion": "Exacto para 9.°: puntos fijos de Celsius, 0 °C no es ausencia de temperatura, cero absoluto y K = °C + 273 (redondear 273,15 es aceptable y está declarado). Ejemplo correcto: 2 × 300 K = 600 K = 327 °C. El criterio coincide con la comprobación (7 °C = 280 K → 560 K = 287 °C). Tiene 80 palabras, en el límite.",
+     "evidencia": [
+      {
+       "fuente": "ACT:fisica/temperatura-medicion-escalas/comprobacion-G09",
+       "cita": "de 280 K a 560 K, que son 287 °C"
+      },
+      {
+       "fuente": "notas de los redactores, punto 3",
+       "cita": "273 en lugar de 273,15"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/concentracion-de-disoluciones/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/concentracion-de-disoluciones/G09",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/concentracion-de-disoluciones",
+     "grados": [
+      9
+     ],
+     "titulo": "Cantidad de soluto no es lo mismo que concentración",
+     "explicacion": "Un fresco puede saber más dulce que otro aunque lleve menos azúcar: depende de cuánto fresco se preparó. La concentración indica cuánto soluto hay en cierta cantidad de disolución, por ejemplo en gramos por litro (g/L): masa de soluto entre volumen de disolución. Así, 5 g en 100 mL (50 g/L) es más concentrado que 20 g en 1 L (20 g/L). Una porción de una disolución tiene menos soluto, pero la misma concentración.",
+     "ejemplo": "Para el experimento con papa, 20 g de sal en 200 mL de disolución dan 100 g/L; los mismos 20 g en 1 L dan solo 20 g/L.",
+     "practica": "ACT:quimica/concentracion-de-disoluciones/practica-G09",
+     "comprobacion": "ACT:quimica/concentracion-de-disoluciones/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación, que pide la concentración de una porción tomada de una disolución sin confundirla con la cantidad de sal que contiene.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/concentracion-de-disoluciones",
+      "TEMA:G09-CIE-U8-8.2"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/concentracion-de-disoluciones",
+     "nombre": "Soluto, disolvente y concentración",
+     "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "id": "PED:MT:quimica/concentracion-de-disoluciones/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/concentracion-de-disoluciones/G09",
+     "decision": "aprobar",
+     "justificacion": "Contenido exacto: definición de concentración como masa de soluto entre volumen de disolución, cálculos correctos (50, 20 y 100 g/L) y la idea clave de que una porción conserva la concentración. 74 palabras, dentro del límite. Que la explicación adelante la idea de la comprobación es una decisión didáctica para el psicopedagogo, no un error científico.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "5 g/0,1 L = 50 g/L; 20 g/1 L = 20 g/L; 20 g/0,2 L = 100 g/L."
+      },
+      {
+       "fuente": "notas_de_los_redactores (TEMA:G09-CIE-U8-8.2), punto 5",
+       "cita": "La explicación del microtema adelanta la idea que pide su comprobación."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/constante-de-equilibrio/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/constante-de-equilibrio/G09",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/constante-de-equilibrio",
+     "grados": [
+      9
+     ],
+     "titulo": "Cómo se escribe la constante de equilibrio",
+     "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio, y K lo resume: concentraciones de equilibrio de productos arriba y de reactivos abajo, cada una elevada a su coeficiente (es exponente, no multiplica). Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos.",
+     "ejemplo": "Para N₂(g) + 3H₂(g) ⇌ 2NH₃(g): K = [NH₃]² / ([N₂][H₂]³). Para CaCO₃(s) ⇌ CaO(s) + CO₂(g): K = [CO₂], porque los sólidos no se escriben.",
+     "practica": "ACT:quimica/constante-de-equilibrio/practica-G09",
+     "comprobacion": "ACT:quimica/constante-de-equilibrio/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación: escribe K para una ecuación nueva, con los coeficientes como exponentes, y obtiene su valor.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/constante-de-equilibrio",
+      "TEMA:G09-CIE-U3-3.6"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+     "decision": "corregir",
+     "justificacion": "Decir que «el agua líquida no se escribe» siembra una regla que habrá que desaprender: el agua se omite cuando es disolvente o líquido puro, no siempre (en la esterificación sí entra en K). Se generaliza a sólidos y líquidos puros, como hace 12.12 en 10.°, y se aclara que K usa concentraciones de equilibrio. Se cambia «un estado que ya no cambia», que refuerza la idea de equilibrio estático.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.12",
+       "cita": "Escribe la constante de equilibrios heterogéneos excluyendo sólidos y líquidos puros."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En ácido + alcohol ⇌ éster + agua, el agua es producto y se incluye en Kc."
+      },
+      {
+       "fuente": "DIF:quimica/equilibrio-dinamico/1",
+       "cita": "Creer que en el equilibrio ya no pasa nada es la idea previa que se quiere evitar."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio, y K lo resume: concentraciones de equilibrio de productos arriba y de reactivos abajo, cada una elevada a su coeficiente (es exponente, no multiplica). Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/equilibrio-dinamico/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/equilibrio-dinamico/G09",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/equilibrio-dinamico",
+     "grados": [
+      9
+     ],
+     "titulo": "El equilibrio no es una reacción detenida",
+     "explicacion": "En una gaseosa cerrada, la cantidad de gas ya no cambia, pero el CO₂ sigue saliendo del líquido y volviendo a disolverse al mismo ritmo. En una reacción reversible dentro de un recipiente cerrado pasa lo mismo: los reactivos forman productos y los productos vuelven a formar reactivos. Si se parte de reactivos, al principio domina la reacción directa; luego las dos rapideces se igualan. Desde ahí las concentraciones quedan constantes, pero ambas reacciones siguen: es un equilibrio dinámico.",
+     "ejemplo": "En un recipiente cerrado y caliente (unos 400 °C) con hidrógeno y vapor de yodo (violeta) se forma HI y el color se aclara hasta que deja de cambiar; desde ese momento se forman y se descomponen moléculas de HI con la misma rapidez.",
+     "practica": "ACT:quimica/equilibrio-dinamico/practica-G09",
+     "comprobacion": "ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación, que pide predecir qué pasa con partículas marcadas en un sistema que ya está en equilibrio.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/equilibrio-dinamico",
+      "TEMA:G09-CIE-U3-3.1"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:MT:quimica/equilibrio-dinamico/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/equilibrio-dinamico/G09",
+     "decision": "corregir",
+     "justificacion": "Dos imprecisiones. El ejemplo omite la temperatura: hidrógeno y yodo apenas reaccionan a temperatura ambiente, y el equilibrio con HI se estudia a unos 400 °C. «Al principio domina la directa» solo vale si se parte de reactivos; el equilibrio también se alcanza desde los productos. Se corrige sin pasar de 80 palabras. Lo demás, incluida la gaseosa, es correcto.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "H₂(g) + I₂(g) ⇌ 2HI(g) es el ejemplo clásico a temperatura alta; a 25 °C es lentísima."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Partiendo de HI puro se llega al mismo tipo de equilibrio: domina primero la inversa."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, la cantidad de gas ya no cambia, pero el CO₂ sigue saliendo del líquido y volviendo a disolverse al mismo ritmo. En una reacción reversible dentro de un recipiente cerrado pasa lo mismo: los reactivos forman productos y los productos vuelven a formar reactivos. Si se parte de reactivos, al principio domina la reacción directa; luego las dos rapideces se igualan. Desde ahí las concentraciones quedan constantes, pero ambas reacciones siguen: es un equilibrio dinámico.",
+      "ejemplo": "En un recipiente cerrado y caliente (unos 400 °C) con hidrógeno y vapor de yodo (violeta) se forma HI y el color se aclara hasta que deja de cambiar; desde ese momento se forman y se descomponen moléculas de HI con la misma rapidez."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "grados": [
+      9
+     ],
+     "titulo": "Molaridad: cuánto soluto hay en cada litro",
+     "explicacion": "Dos vasos de fresco pueden tener la misma cantidad de azúcar y no ser igual de dulces: importa en cuánto líquido está. La molaridad mide la concentración como moles de soluto por litro de disolución: M = n / V, en mol/L. Si sirves una porción, la concentración no cambia: tiene menos soluto, pero también menos volumen. En la constante de equilibrio, los corchetes [ ] significan molaridad, así que primero conviertes los moles a mol/L.",
+     "ejemplo": "0,40 mol de azúcar en 2,0 L de fresco: M = 0,40 mol / 2,0 L = 0,20 mol/L. Si el volumen está en mililitros, primero se pasa a litros (500 mL = 0,500 L).",
+     "practica": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "comprobacion": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+     "duracion_min": 8,
+     "criterio": "Responde bien la comprobación: convierte moles a mol/L para escribir una concentración dentro de K.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+      "TEMA:G08-CIE-U4-4.9"
+     ],
+     "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "id": "PED:MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+     "decision": "aprobar",
+     "justificacion": "Exacto: molaridad como moles de soluto por litro de disolución (no de disolvente), M = n/V en mol/L, la porción conserva la concentración y los corchetes de K expresan mol/L. El ejemplo y la conversión de mL a L son correctos. 76 palabras. El criterio se alinea con el uso de la molaridad dentro de K que pide 3.6.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,40 mol / 2,0 L = 0,20 mol/L; 500 mL = 0,500 L."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.6",
+       "cita": "Representa la constante de equilibrio a partir de ecuaciones de reacción química."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-12"
+    }
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, y propagación por esquejes o tubérculos.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G02-G04",
+    "accion": "nuevo",
+    "grado_propuesto": 3,
+    "unidad_propuesta": "4. Las plantas. (después de 4.2)",
+    "tema_propuesto": "4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, y propagación por esquejes o tubérculos.",
+    "indicador_logro": "Señala en una flor real las partes que intervienen en la polinización, relaciona la flor con el fruto y la semilla, y compara una planta que nace de semilla con otra que nace de un esqueje.",
+    "conceptos": [
+     "Reproducción sexual de las plantas con flor",
+     "Reproducción sexual y asexual",
+     "Ciclo de vida de las plantas"
+    ],
+    "evidencia": [
+     "ENG 2, UY 3, JP 4, SG 5, AU 8 (Reproducción sexual de las plantas con flor; hoy en 6.°, destino 4)",
+     "bloqueo: Reproducción sexual y asexual (hoy en 6.°; este tema la introduce)"
+    ],
+    "justificacion": "Inglaterra (2.°), Uruguay (3.°) y Japón (4.°) enseñan flor, semilla y fruto antes que El Salvador (6.°). Se ubica en 3.° porque ahí está la unidad de plantas. Introduce su bloqueo. Se paga con la fusión 2.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega reproducción de plantas ni propagación vegetativa."
+   },
+   "id": "PRO:biologia:G02-G04#1",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "PRO:biologia:G02-G04#1",
+     "decision": "adoptar",
+     "justificacion": "Hoy la malla pasa de los órganos de la planta (3.°) a la fecundación celular (6.°, 6.8) sin el ciclo flor-fruto-semilla visible, que es su base. Es concreto y observable a los 8–9 años. La evidencia es moderada: mediana 4,5 en ocho países; con núcleo sólido, solo Inglaterra y Hong Kong antes de 4.°. La V2 no hizo la fusión que lo pagaba; el espacio lo decide el MINED.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U4-4.2",
+       "cita": "Relaciona los órganos vegetales con sus funciones"
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.8",
+       "cita": "Describe la fecundación y los planos de división celular en plantas"
+      },
+      {
+       "fuente": "data/grafo/internacional_2_8/consenso.json (CON:biologia/reproduccion-de-plantas-con-flor)",
+       "cita": "8 países en el núcleo; mediana del primer grado 4,5; sólido hasta 3.°: ENG y HK"
+      },
+      {
+       "fuente": "data/interim/propuestas/adopcion_v2.json",
+       "cita": "la V2 no agrega reproducción de plantas ni propagación vegetativa"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PRO:biologia:G02-G04#1",
+     "decision": "adaptar",
+     "justificacion": "Es adecuado para 3.°: flor, fruto, semilla y esqueje se observan y manipulan, y continúa 2.° 1.10. Pero junta cinco procesos en un tema y usa «reproducción sexual y asexual», rótulos que la V2 trabaja en 6.° (6.8, 6.9). Propongo lenguaje concreto, polinización cualitativa y un registro de varias semanas en lugar de definiciones.",
+     "texto": "4.10. Observación de cómo nacen plantas nuevas: de la flor al fruto y la semilla, y de un pedazo de la planta (esqueje o tubérculo). Indicador: señala en una flor real dónde está el polen y dónde se forman las semillas, ordena con dibujos el paso de flor a fruto, y registra durante varias semanas una planta que nace de semilla y otra de un esqueje. «Sexual» y «asexual» quedan para 6.°.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G02-CIE-U4-1.10 (fila 5)",
+       "cita": "Representa con dibujos las etapas semilla, planta, flor y fruto."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.8 (fila 10) y G06-CIE-U6-6.9 (fila 11)",
+       "cita": "La fecundación con flor disecada y la propagación asexual se trabajan en 6.°."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "En 3.°, lo observable y manipulable, una idea por paso; los rótulos abstractos llegan después."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "1.13. Descripción y clasificación de los ecosistemas de El Salvador por sus especies, sus interacciones y sus factores abióticos.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "1. Ecología y ambiente (al inicio de la unidad)",
+    "tema_propuesto": "1.13. Descripción y clasificación de los ecosistemas de El Salvador por sus especies, sus interacciones y sus factores abióticos.",
+    "indicador_logro": "Compara dos ecosistemas salvadoreños (por ejemplo, manglar y bosque nebuloso) con datos de clima, sustrato, especies e interacciones, y los clasifica.",
+    "conceptos": [
+     "Factores bióticos y abióticos",
+     "Ecosistemas naturales, rurales y urbanos",
+     "Biodiversidad"
+    ],
+    "evidencia": [
+     "ACSBL019 (0 temas)",
+     "ACSBL021 (1 tema, débil: G11-3.9)",
+     "AUSS unidad 1"
+    ],
+    "justificacion": "La unidad de ecología empieza por productividad sin describir ecosistemas. ACARA abre con su diversidad y clasificación. Usa ejemplos locales. Se paga con la fusión 16.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega ecosistemas salvadoreños ni su clasificación."
+   },
+   "id": "PRO:biologia:G10-G11#17",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "PRO:biologia:G10-G11#17",
+     "decision": "adaptar",
+     "justificacion": "ACARA abre la unidad 1 describiendo y clasificando ecosistemas por factores bióticos y abióticos (ACSBL019 y ACSBL021), y Bachillerato no lo retoma. Pero no es contenido nuevo: la V2 lo trabaja en 4.° (3.4–3.6) y 7.° (4.8, 4.11). Vale como retorno en espiral solo si sube de nivel: comparar con datos y clasificar con criterios explícitos. La fusión 16 que lo pagaba no se hizo.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/biologia_en_u1-3.json (ACSBL019, ACSBL021)",
+       "cita": "ecosistemas descritos por especies, interacciones y factores abióticos como clima y sustrato"
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.5",
+       "cita": "Reconoce los principales tipos de formaciones vegetales de El Salvador"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U4-4.11",
+       "cita": "Identifica variables utilizadas como criterios para clasificar biomas"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.1",
+       "cita": "la unidad 1 de 11.° empieza por productividad y DBO"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Abrir la unidad 1 de 11.° con un tema de datos, no de descripción: comparar dos ecosistemas salvadoreños (p. ej., el manglar de la bahía de Jiquilisco y el bosque nebuloso de Montecristo) con datos de clima, sustrato, especies e interacciones, y clasificarlos con criterios explícitos. Retoma 4.° (3.4–3.5) y 7.° (4.8, 4.11) sin repetirlos y prepara la productividad (1.1) y la similitud entre comunidades (5.8).",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PRO:biologia:G10-G11#17",
+     "decision": "adoptar",
+     "justificacion": "Adecuado para 11.°: comparar con datos dos ecosistemas cercanos activa lo trabajado en 4.° (3.4, 3.5) y 7.° (4.8, 4.11) y da contexto a una unidad que abre con productividad y DBO, muy técnica. El indicador ya pide datos y clasificación, no solo describir. Al enseñarlo, retomar y no repetir lo de 4.° y 7.°.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.4 (fila 6) y G04-CIE-U3-3.5 (fila 7)",
+       "cita": "Diversidad ecosistémica y formaciones vegetales de El Salvador en 4.°."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U4-4.11 (fila 13)",
+       "cita": "Biomas y sus criterios de clasificación en 7.°."
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.1 (fila 3)",
+       "cita": "La unidad abre con productividad y DBO a partir de oxígeno disuelto."
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  },
+  {
+   "tipo": "propuesta",
+   "titulo": "9.2. Explicación de la estructura de la membrana celular y de su papel como límite que regula el intercambio con el entorno.",
+   "pregunta": "La V2 no adoptó esta acción de la propuesta. ¿Se adopta, se adapta o se descarta?",
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "9. La célula: estructura, membranas e intercambio (nueva en 10.°; ubicar entre las unidades 1 y 2)",
+    "tema_propuesto": "9.2. Explicación de la estructura de la membrana celular y de su papel como límite que regula el intercambio con el entorno.",
+    "indicador_logro": "Representa con un modelo de mosaico fluido la bicapa de fosfolípidos y sus proteínas y explica cómo regula la entrada y salida de gases, nutrientes y desechos.",
+    "conceptos": [
+     "Membrana celular"
+    ],
+    "evidencia": [
+     "ACSBL045 (0 temas en 10.°–11.°)",
+     "AUSS unidad 2 (≈ 10.°)",
+     "prerrequisito: Biomoléculas (unidad 1 de 10.°) y Estructuras celulares básicas (6.°)"
+    ],
+    "justificacion": "La membrana solo se trabaja en 6.°. Es la base del transporte y del intercambio que ACARA desarrolla en la unidad 2. Va después de lípidos y proteínas. Se paga con la fusión 2.",
+    "conciliacion_v2": "8.2 trata difusión y ósmosis; no enseña estructura de membrana ni mosaico fluido."
+   },
+   "id": "PRO:biologia:G10-G11#3",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "dictamenes_anteriores": [
+    {
+     "id": "PRO:biologia:G10-G11#3",
+     "decision": "adaptar",
+     "justificacion": "La premisa está desactualizada: la V2 agregó 8.2 en 9.° (difusión y ósmosis a través de la membrana). Aun así, ningún tema enseña la estructura de la membrana después de las biomoléculas, donde cobra sentido (ACSBL045 y ACSBL046). La adapto como paso de espiral que une estructura y tipos de transporte. La unidad 9 nueva y la fusión 2 no existen en la V2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "Experimentación con difusión y ósmosis a través de la membrana celular en tejidos vegetales"
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.8",
+       "cita": "Efectúa un experimento donde se evidencien las propiedades de una membrana biológica"
+      },
+      {
+       "fuente": "data/interim/acara/biologia_en_u1-3.json (ACSBL045, ACSBL046)",
+       "cita": "la membrana controla el intercambio; transporte por difusión, ósmosis, transporte activo y endocitosis"
+      }
+     ],
+     "confianza": "alta",
+     "texto": "Tema de 10.° al cierre de la unidad 1 (después de lípidos y proteínas): estructura de la membrana (doble capa de fosfolípidos con proteínas, modelo de mosaico fluido) y cómo esa estructura explica qué la cruza por difusión simple, qué necesita proteínas de transporte y qué requiere energía (transporte activo, endocitosis y exocitosis). Retoma la ósmosis de 9.° (8.2) y las membranas de 6.° (5.8) sin repetir sus experimentos.",
+     "ronda": 1,
+     "rol": "experto-biologia",
+     "fecha": "2026-10-12"
+    },
+    {
+     "id": "PRO:biologia:G10-G11#3",
+     "decision": "adoptar",
+     "justificacion": "El mosaico fluido modela entidades no observables, algo adecuado en 10.° con un modelo físico o un dibujo. La V2 usa la membrana en 6.° (5.8) y 9.° (8.2) como límite que deja pasar sustancias, y en 10.° 2.15 la membrana tilacoidal, sin enseñar su estructura: este tema llena ese hueco. Si no se crea la unidad 9, ubicarlo antes de 2.15.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.8 (fila 10)",
+       "cita": "Propiedades de las membranas biológicas con masas antes y después."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "Difusión y ósmosis a través de la membrana en tejidos vegetales."
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U2-2.15 (fila 28)",
+       "cita": "Esquema rotulado de la membrana tilacoidal."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-12",
+     "nota": "tu dictamen anterior"
+    }
+   ]
+  }
+ ]
+}

@@ -125,7 +125,6 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Indicadores ácido-base | 9 | ENG 6.0, JP 5.0 |
 | Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 |
 | Evidencias de la evolución | 9 | AU 9.0, CO 2, ENG 4.0, JP 8.0 |
-| Carga eléctrica y electrización | 9 | CO 6.0, ENG 6.0, JP 7.0, UY 5.0 |
 | Lentes delgadas e imágenes | 10 | ENG 6.0, JP 6.0, UY 5.0 |
 | Ondas electromagnéticas y espectro | 10 | CO 8.5, ENG 6.0, UY 6.0 |
 | Potencia eléctrica y efecto Joule | 9 | CO 5.0, ENG 6.0, JP 7.0 |

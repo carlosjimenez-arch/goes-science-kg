@@ -10,7 +10,7 @@
 | Física | 24 |
 | Química | 10 |
 
-- **65 conceptos**: 47 nuevos en este grado, 16 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **65 conceptos**: 48 nuevos en este grado, 15 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T8_27 21.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 194.
 
@@ -95,7 +95,6 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Fases de la fotosíntesis y ciclo de Calvin | Oxidación y reducción | posterior | 11 | media |
 | Organelos de la célula eucariota | Célula animal y célula vegetal | posterior | 9 | media |
 | Capacidad calorífica y calor específico | Calor como energía en tránsito | posterior | 10 | alta |
-| Corriente, voltaje y resistencia | Carga eléctrica y electrización | posterior | 9 | alta |
 | Resistencia equivalente | Ley de Ohm | posterior | 11 | alta |
 | Catalizadores | Energía de activación y perfil energético | posterior | 10 | alta |
 | Enlace covalente | Enlace químico | posterior | 10 | alta |
@@ -122,7 +121,6 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Minerales y sus propiedades | 8 | AU 2, ENG 6.0 |
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
-| Agricultura y seguridad alimentaria | 7 | ENG 6.0, UY 3.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
 | Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
@@ -137,7 +135,6 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 |
 | Evidencias de la evolución | 9 | AU 9.0, CO 2, ENG 4.0, JP 8.0 |
 | Flujo de energía y pirámides ecológicas | 7 | AU 6.0, CO 6.5, SG 6.0, UY 6.0 |
-| Carga eléctrica y electrización | 9 | CO 6.0, ENG 6.0, JP 7.0, UY 5.0 |
 | Condiciones de equilibrio estático | 8 | AU 6.0, ENG 6.0, JP 6.0 |
 | Fuerza neta y diagrama de cuerpo libre | 8 | AU 6.0, CO 4.5, ENG 6.0, JP 6.0 |
 | Fuerzas mecánicas comunes | 8 | ENG 6.0, SG 6.0 |

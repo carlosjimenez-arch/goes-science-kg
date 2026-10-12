@@ -11,7 +11,7 @@
 | Física | 37 |
 | Química | 20 |
 
-- **110 conceptos**: 45 nuevos en este grado, 65 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **110 conceptos**: 44 nuevos en este grado, 65 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: PISA25 37, T8_27 34.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 191.
 
@@ -109,10 +109,11 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Síntesis de proteínas | Proteínas: estructura y función | posterior | 10 | media |
 | Capacidad calorífica y calor específico | Calor como energía en tránsito | posterior | 10 | alta |
 | Capacitancia y condensadores | Energía potencial y potencial eléctrico | posterior | 11 | alta |
+| Corriente alterna y transformador | Inducción electromagnética: Faraday y Lenz | posterior | 11 | alta |
 | Primera ley de la termodinámica | Calor como energía en tránsito | posterior | 10 | alta |
 | Primera ley de la termodinámica | Conservación de la energía | posterior | 10 | alta |
 
-Además, 24 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 22 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
