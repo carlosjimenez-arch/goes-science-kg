@@ -205,7 +205,7 @@ def items_malla_v2(grado_min: int = 9) -> dict[str, list[dict]]:
     """Temas de la malla V2 desde `grado_min`, agrupados por asignatura de la malla, como {id, texto}."""
 
     grupos: dict[str, list[dict]] = {}
-    for t in extraer("mallas_v2"):
+    for t in extraer():
         if t.grado < grado_min:
             continue
         texto = f"{t.contenido}. {t.subcontenido}. {t.procedimental} Indicador: {t.indicador}"

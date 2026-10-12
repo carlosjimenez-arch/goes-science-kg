@@ -1,29 +1,31 @@
 {
  "grado": 3,
- "temas": 66,
+ "temas": 72,
  "temas_por_asignatura": {
-  "fisica": 6,
-  "quimica": 12,
-  "ciencias_tierra_espacio": 16,
-  "biologia": 32
+  "fisica": 8,
+  "quimica": 13,
+  "ciencias_tierra_espacio": 18,
+  "biologia": 33
  },
- "conceptos": 48,
- "conceptos_nuevos": 31,
- "conceptos_retomados": 15,
+ "conceptos": 59,
+ "conceptos_nuevos": 38,
+ "conceptos_retomados": 19,
  "conceptos_anticipados": 2,
  "practicas": {
-  "PRAC:observar-y-registrar": 17,
+  "PRAC:observar-y-registrar": 18,
   "PRAC:desarrollar-y-usar-modelos": 6,
+  "PRAC:medir-con-instrumentos": 6,
   "PRAC:planificar-investigaciones": 5,
-  "PRAC:medir-con-instrumentos": 4,
   "PRAC:comunicar-resultados": 2,
   "PRAC:transformar-representaciones": 2,
+  "PRAC:construir-explicaciones-con-evidencia": 1,
   "PRAC:controlar-variables": 1,
   "PRAC:evaluar-implicaciones-y-decidir": 1,
+  "PRAC:interpretar-datos-y-concluir": 1,
   "PRAC:trabajar-con-seguridad-y-etica": 1
  },
  "objetivos_marco": {
-  "T4_27": 18
+  "T4_27": 22
  },
  "anclajes": [
   {
@@ -48,11 +50,32 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/ciclo-de-vida-de-los-animales",
+   "concepto": "CON:biologia/estrategias-reproductivas",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/ciclo-de-vida-de-los-animales",
+   "concepto": "CON:biologia/herencia-de-rasgos",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
    "concepto": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
    "estado": "mismo_grado",
    "primer_grado_sv": 3,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/registro-fosil-y-cambios-ambientales",
+   "concepto": "CON:ciencias_tierra_espacio/glaciaciones",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
@@ -71,6 +94,34 @@
   {
    "prerrequisito": "CON:quimica/concentracion-de-disoluciones",
    "concepto": "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
+   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:fisica/temperatura-medicion-escalas",
+   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:fisica/fuerzas-contacto-distancia",
+   "concepto": "CON:fisica/imanes-polos",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:fisica/imanes-polos",
+   "concepto": "CON:fisica/materiales-magneticos",
    "estado": "mismo_grado",
    "primer_grado_sv": 3,
    "confianza": "media"
@@ -174,11 +225,11 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/registro-fosil-y-cambios-ambientales",
-   "concepto": "CON:ciencias_tierra_espacio/glaciaciones",
+   "prerrequisito": "CON:ciencias_tierra_espacio/erosion-y-sedimentacion",
+   "concepto": "CON:ciencias_tierra_espacio/fosiles",
    "estado": "posterior",
    "primer_grado_sv": 5,
-   "confianza": "media"
+   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores",
@@ -192,6 +243,13 @@
    "concepto": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
    "estado": "posterior",
    "primer_grado_sv": 8,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/tiempo-geologico",
+   "concepto": "CON:ciencias_tierra_espacio/registro-fosil-y-cambios-ambientales",
+   "estado": "posterior",
+   "primer_grado_sv": 5,
    "confianza": "alta"
   },
   {
@@ -426,6 +484,27 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:fisica/calentamiento-enfriamiento",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:fisica/medicion-magnitudes-instrumentos",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:quimica/estados-de-la-materia",
+   "concepto": "CON:quimica/cambios-de-estado",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:quimica/cambios-de-estado",
    "concepto": "CON:quimica/cambios-fisicos-y-quimicos",
    "estado": "previo",
@@ -449,6 +528,13 @@
   {
    "prerrequisito": "CON:quimica/mezclas",
    "concepto": "CON:quimica/disoluciones-coloides-y-suspensiones",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/materia-y-materiales",
+   "concepto": "CON:quimica/estados-de-la-materia",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "alta"
@@ -484,15 +570,6 @@
  ],
  "faltantes_por_edad": [
   {
-   "concepto": "CON:fisica/materiales-magneticos",
-   "sv": 6,
-   "paises": {
-    "ENG": 2,
-    "JP": 2,
-    "SG": 3.0
-   }
-  },
-  {
    "concepto": "CON:biologia/organos-de-los-sentidos",
    "sv": 4,
    "paises": {
@@ -500,28 +577,6 @@
     "ENG": 2,
     "JP": 7.0,
     "UY": 3.0
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
-   "sv": 7,
-   "paises": {
-    "AU": 2,
-    "CO": 8.5,
-    "ENG": 2,
-    "JP": 3.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/imanes-polos",
-   "sv": 6,
-   "paises": {
-    "AU": 3.0,
-    "CO": 2,
-    "ENG": 2,
-    "JP": 2,
-    "SG": 3.0,
-    "UY": 5.0
    }
   },
   {
@@ -581,18 +636,9 @@
     "ENG": 6.0,
     "UY": 3.0
    }
-  },
-  {
-   "concepto": "CON:fisica/temperatura-medicion-escalas",
-   "sv": 6,
-   "paises": {
-    "ENG": 2,
-    "SG": 4.0,
-    "UY": 3.0
-   }
   }
  ],
- "referentes_paises": 106,
+ "referentes_paises": 114,
  "top_conceptos": [
   [
    "CON:biologia/microorganismos",

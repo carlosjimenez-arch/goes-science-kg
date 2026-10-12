@@ -10,7 +10,7 @@ documento.
 
 ## Cómo verificar cada hallazgo
 1. **Lado de El Salvador (malla V2):** ubica el tema por su id (p. ej. `G10-QUI-U3-3.10`) con
-   `uv run python -c "from goes_science_kg.ingesta.mallas import extraer; ..."` (usa `extraer("mallas_v2")`) y lee
+   `uv run python -c "from goes_science_kg.ingesta.mallas import extraer; ..."` (`extraer()` lee la malla vigente, la V2; `extraer("mallas_v1")`, la V1) y lee
    contenido, subcontenido e indicador. Busca también si el concepto aparece en otros grados con una búsqueda de texto
    sobre todos los temas (un «no lo tiene» exige que no aparezca en ningún grado).
 2. **Lado de los países:** cada objetivo trae documento y página. Abre la página con `pypdf` (posición en el PDF, no la

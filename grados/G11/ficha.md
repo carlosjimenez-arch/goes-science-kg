@@ -10,7 +10,7 @@
 | Física | 146 |
 | Química | 97 |
 
-- **219 conceptos**: 56 nuevos en este grado, 163 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **219 conceptos**: 50 nuevos en este grado, 169 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: AUSS 112, TA15 19.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 0.
 
@@ -103,7 +103,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 
 Ninguno.
 
-Además, 45 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 44 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -114,4 +114,3 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
 | Abastecimiento y conservación del agua dulce | nunca | ENG 8.5, SG 5.0 |
 | Sistemas terrestres y sus interacciones | nunca | AU 9.0, CO 4.5 |
-| Transmisión de patógenos | nunca | CO 6.5, ENG 8.5, UY 9.0 |

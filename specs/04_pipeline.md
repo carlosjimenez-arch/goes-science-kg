@@ -6,7 +6,7 @@ subagentes por lote (`.claude/skills/`) y un paso determinista para unir los res
 | # | Etapa | Entrada | Salida | Cómo | Acepta si |
 |---|---|---|---|---|---|
 | 0 | Fuentes | `manifest.csv` | PDF + `estado.csv` | skill `fuentes-descargar` | sha256 registrado; las faltantes quedan listadas |
-| 1 | Temas | `config/mallas.yaml` | `data/interim/temas.json` | `gskg temas` | 1.260 temas, ids únicos |
+| 1 | Temas | `config/mallas.yaml` (V2) | `data/interim/temas.json` | `gskg temas` | 1.307 temas, ids únicos; la V1 (1.260) contenida sin cambios |
 | 2 | Catálogos pivote | PDF de marcos | `data/referencia/catalogo_*.json` | skill `marco-catalogo` | metas validadas contra el PDF; página en cada objetivo |
 | 3 | Objetivos de países | PDF de países | `data/interim/paises/<pais>.json` | skill `pais-extraer-objetivos` | documento + página + grado en cada objetivo |
 | 4 | Alineación | objetivos + catálogo | `data/interim/alineaciones/*.json` | skill `alinear-objetivos` | 100 % alineado; confianza «baja» listada |

@@ -98,7 +98,7 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
         if not nombre.endswith("_completo"):
             etq_sv.update(etiquetas)
     salida: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
-    for t in extraer("mallas_v2"):
+    for t in extraer():
         if t.grado not in t_activo.grados or t.id not in etq_sv:
             continue
         ficha = t.dict()

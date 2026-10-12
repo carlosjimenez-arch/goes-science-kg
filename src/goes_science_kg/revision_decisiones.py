@@ -89,9 +89,11 @@ def _textos() -> dict[str, dict[str, str]]:
     from goes_science_kg.ingesta.mallas import extraer
     from goes_science_kg.internacional.consenso import objetivos
 
-    tema = lambda t: f"{t.contenido}. {t.indicador}"  # noqa: E731
-    return {"malla_v1": {t.id: tema(t) for t in extraer()},
-            "malla_v2": {t.id: tema(t) for t in extraer("mallas_v2")},
+    # Los dos conjuntos son etiquetados de la misma malla (la V2, que contiene la V1 sin cambios): «malla_v1» es el
+    # del grafo principal (subagentes) y «malla_v2» el del contraste internacional (Vertex). Los nombres se conservan
+    # porque son la llave de las decisiones ya exportadas.
+    textos = {t.id: f"{t.contenido}. {t.indicador}" for t in extraer()}
+    return {"malla_v1": textos, "malla_v2": textos,
             "objetivos_pais": {o["id"]: o["texto"] for o in [*legado.alineacion_paises(), *legado.paises_nuevos()]},
             "internacional": {o["id"]: o["texto"] for o in objetivos()}}
 

@@ -160,19 +160,34 @@ def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
     return escritos
 
 
+def _errores_arista(e: dict, ids: set[str]) -> list[str]:
+    if e.get("origen") not in ids or e.get("destino") not in ids or e.get("origen") == e.get("destino"):
+        return [f"arista inválida {e.get('origen')} → {e.get('destino')}"]
+    if e.get("tipo_evidencia") not in TIPOS or e.get("confianza") not in PESO:
+        return [f"tipo/confianza inválidos en {e['origen']} → {e['destino']}"]
+    return []
+
+
+def errores_salida(aristas: list[dict], ids: set[str] | None = None) -> list[str]:
+    """Errores de la salida de un lote de prerrequisitos: los que hacen fallar unir (y que revisa
+    `gskg lotes validar` al terminar el subagente ordenador-prerrequisitos). `ids`: conceptos válidos (por defecto,
+    el vocabulario vigente)."""
+    if ids is None:
+        from goes_science_kg.conceptos import vocabulario
+
+        ids = set(vocabulario())
+    return [x for e in aristas for x in _errores_arista(e, ids)]
+
+
 def unir(nodos: list[Nodo]) -> dict:
     """Valida las salidas del subagente, rompe ciclos, quita redundancias transitivas y escribe prerrequisitos.json
     y las dos listas de descartadas. Lanza ValueError si alguna arista es inválida; devuelve los conteos."""
     ids = {n.id for n in nodos if n.tipo == TipoNodo.CONCEPTO}
     candidatas, errores = [], []
     for p in sorted(ruta(f"{DIR}/lotes").glob("salida_*.json")):
-        for e in json.loads(p.read_text(encoding="utf-8")):
-            if e["origen"] not in ids or e["destino"] not in ids or e["origen"] == e["destino"]:
-                errores.append(f"{p.name}: arista inválida {e['origen']} → {e['destino']}")
-            elif e.get("tipo_evidencia") not in TIPOS or e.get("confianza") not in PESO:
-                errores.append(f"{p.name}: tipo/confianza inválidos en {e['origen']} → {e['destino']}")
-            else:
-                candidatas.append(e)
+        aristas = json.loads(p.read_text(encoding="utf-8"))
+        errores += [f"{p.name}: {e}" for e in errores_salida(aristas, ids)]
+        candidatas += [e for e in aristas if not _errores_arista(e, ids)]
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
 

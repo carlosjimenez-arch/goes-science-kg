@@ -45,19 +45,29 @@ def equivalencias_timss() -> list[dict]:
 
 
 def _por_llave(filas: list[dict]) -> dict[tuple[str, str, int], dict]:
-    return {(c["archivo"], c["hoja"], int(c["fila"])): c for c in filas}
+    """Por (archivo, hoja, fila) con el nombre de archivo de la malla vigente: las clasificaciones previas usan el
+    nombre del libro en la V1 (`legado` en config/mallas.yaml); hoja y fila no cambiaron entre versiones."""
+    vigente = {i["legado"]: i["archivo"] for i in cargar("mallas")["archivos"] if "legado" in i}
+    return {(vigente.get(c["archivo"], c["archivo"]), c["hoja"], int(c["fila"])): c for c in filas}
+
+
+def _con_capa(clave: str) -> list[dict]:
+    """Clasificación previa más la de los temas que agregó la V2 (alineacion.preparar_temas_nuevos), si existe."""
+    clasif = cargar("marcos")["clasificaciones"]
+    p = ruta(clasif[f"{clave}_temas_nuevos"])
+    return _json(clasif[clave]) + (json.loads(p.read_text(encoding="utf-8")) if p.exists() else [])
 
 
 @cache
 def clasificacion_timss() -> dict[tuple[str, str, int], dict]:
     """Clasificación TIMSS 2027 (2.°–9.°) y TIMSS Advanced (Física 10.°–11.°), por (archivo, hoja, fila)."""
-    return _por_llave(_json(cargar("marcos")["clasificaciones"]["timss2027"]))
+    return _por_llave(_con_capa("timss2027"))
 
 
 @cache
 def clasificacion_pisa() -> dict[tuple[str, str, int], dict]:
     """Clasificación PISA 2025 (7.°–9.°), por (archivo, hoja, fila)."""
-    return _por_llave(_json(cargar("marcos")["clasificaciones"]["pisa2025"]))
+    return _por_llave(_con_capa("pisa2025"))
 
 
 @cache

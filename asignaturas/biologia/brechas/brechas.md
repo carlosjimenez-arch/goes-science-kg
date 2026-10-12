@@ -6,12 +6,10 @@
 
 | Marco | Ciclo | Objetivos | Cubiertos | Débiles (1 tema) | Sin cobertura |
 |---|---|---|---|---|---|
-| T4_27 | 2.°–4.° | 13 | 12 | 0 | 1 |
-| T8_27 | 5.°–8.° | 16 | 16 | 3 | 0 |
+| T4_27 | 2.°–4.° | 13 | 13 | 1 | 0 |
+| T8_27 | 5.°–8.° | 16 | 16 | 2 | 0 |
 | PISA25 | 7.°–9.° | 8 | 8 | 0 | 0 |
 | AUSS | 10.°–11.° | 69 | 57 | 15 | 12 |
-
-**T4_27 sin cobertura en 2.°–4.°:** T4_27-B2.2 Herencia y estrategias de reproducción
 
 **AUSS sin cobertura en 10.°–11.°:** ACSBL019 Diversidad de ecosistemas y hábitats, descritos por sus especies, las interacciones entre especies y los factores abióticos del ambiente.; ACSBL024 Especies clave en la estructura de la comunidad; su disminución o desaparición impacta el ecosistema más de lo esperado por su abundancia o biomasa.; ACSBL045 Membrana celular como límite que regula el intercambio de gases, nutrientes y desechos entre la célula y su entorno.; ACSBL046 Transporte a través de membranas por difusión, ósmosis, transporte activo y endocitosis.; ACSBL047 Factores del intercambio a través de membranas: relación superficie-volumen, gradientes de concentración y naturaleza física y química de las sustancias.; ACSBL048 Semejanzas entre células procariotas y eucariotas por origen evolutivo común, y diferencias: procariotas sin núcleo ni organelos membranosos, más pequeñas, cromosoma circular, unicelulares.; ACSBL054 Organización jerárquica de los organismos multicelulares en células, tejidos, órganos y sistemas.; ACSBL057 Intercambio de nutrientes y desechos en animales mediante células y tejidos de los sistemas digestivo (vellosidades) y excretor (nefronas).; ACSBL059 Intercambio de gases en plantas por estomas y superficie vegetal, con movimiento interno por difusión, independiente del sistema de transporte.; ACSBL119 Cambios físicos o químicos causados por patógenos en células o tejidos del hospedero, como sustancias extrañas o toxinas, que estimulan la respuesta inmunitaria.; ACSBL121 Respuestas innatas en animales, incluida la respuesta inflamatoria con acción de fagocitos, defensinas y el sistema del complemento.; ACSBL124 Transmisión y propagación de enfermedades facilitadas por el desplazamiento regional y global de organismos.
 
@@ -27,24 +25,18 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 |---|---|---|---|---|---|
 | Adaptaciones conductuales | 11.° | 3.5 | 4 | AU 4.0, CO 2, JP 3.0, SG 6.0 | +7.5 |
 | Nutrición mineral de las plantas | 11.° | 4 | 3 | CO 6.5, ENG 2, JP 4.0 | +7 |
-| Herencia de rasgos | 10.° | 4.5 | 5 | CO 2, ENG 4.0, JP 8.0, SG 5.0 | +5.5 |
 | Papel de los seres vivos en el ciclo del agua | 10.° | 5.75 | 5 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 | +4.25 |
-| Célula animal y célula vegetal | 11.° | 7 | 7 | AU 7.0, CO 6.5, ENG 6.0, JP 7.0, UY 7.0 | +4 |
 | Depredación | 7.° | 3 | 3.5 | CO 3.0, ENG 2, JP 5.0 | +4 |
 | Digestión química y absorción de nutrientes | 8.° | 4 | 4 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 | +4 |
-| Evidencias de la evolución | 10.° | 6 | 8 | AU 9.0, CO 2, ENG 4.0, JP 8.0 | +4 |
 | Transporte en plantas: xilema y floema | 8.° | 4 | 5 | ENG 2, JP 5.0, SG 5.0, UY 3.0 | +4 |
-| Ciclos del carbono y del oxígeno | 10.° | 6.25 | 6 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 | +3.75 |
+| Evidencias de la evolución | 9.° | 6 | 8 | AU 9.0, CO 2, ENG 4.0, JP 8.0 | +3 |
 | Tejidos animales | 8.° | 5 | 7 | AU 7.0, CO 5.0, UY 4.0 | +3 |
 | Agricultura y seguridad alimentaria | 7.° | 4.5 | 6 | ENG 6.0, UY 3.0 | +2.5 |
-| Ingeniería genética y ADN recombinante | 11.° | 8.5 | 8.5 | CO 8.5, ENG 8.5, UY 6.0 | +2.5 |
 | Intercambio de gases en plantas | 8.° | 5.5 | 6 | ENG 6.0, JP 7.0, SG 5.0, UY 5.0 | +2.5 |
 | Relaciones intraespecíficas | 7.° | 4.5 | — | CO 3.0, UY 6.0 | +2.5 |
-| Ciclo del nitrógeno | 10.° | 7.75 | 8.5 | CO 7.0, ENG 8.5 | +2.25 |
-| Homeostasis | 10.° | 8 | 8.5 | CO 8.0, ENG 8.5, UY 8.0 | +2 |
+| Célula animal y célula vegetal | 9.° | 7 | 7 | AU 7.0, CO 6.5, ENG 6.0, JP 7.0, UY 7.0 | +2 |
 | Impulso nervioso y sinapsis | 10.° | 8 | 8.5 | CO 4.5, ENG 8.5, UY 8.0 | +2 |
 | Reproducción sexual de las plantas con flor | 6.° | 4 | 4.5 | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 | +2 |
-| Sistema endocrino y hormonas | 10.° | 8 | 8.25 | AU 8.0, CO 8.0, ENG 8.5, UY 8.0 | +2 |
 
 ### Llega 2 o más grados antes
 
@@ -82,30 +74,29 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 
 ### Lo trabajan los países y El Salvador nunca
 
-- Transmisión de patógenos (CO 6.5, ENG 8.5, UY 9.0)
+Ninguno.
 
 ## 3. Secuencia: prerrequisitos que llegan después del concepto que los necesita
 
 | Concepto | Grado | Necesita | Grado del prerrequisito | Confianza |
 |---|---|---|---|---|
-| Inmunidad activa, pasiva y vacunas | 2.° | Sistema inmunitario | 10.° | alta |
 | Fermentación y respiración anaerobia | 3.° | Glucólisis, ciclo de Krebs y cadena respiratoria | 10.° | alta |
+| Inmunidad activa, pasiva y vacunas | 2.° | Sistema inmunitario | 9.° | alta |
 | Biomoléculas | 6.° | El carbono y las moléculas orgánicas | 11.° | alta |
 | Enzimas | 6.° | Proteínas: estructura y función | 10.° | alta |
-| Filogenia y parentesco evolutivo | 7.° | Evidencias de la evolución | 10.° | alta |
+| Filogenia y parentesco evolutivo | 7.° | Evidencias de la evolución | 9.° | alta |
 | Niveles de organización de los seres vivos | 4.° | La célula como unidad de la vida | 6.° | alta |
 | Intercambio de gases en animales | 3.° | Sistema respiratorio | 4.° | alta |
 | Productores, consumidores y descomponedores | 3.° | Cadena alimentaria | 4.° | alta |
 | Proteínas: estructura y función | 10.° | Aminoácidos y estructura de las proteínas | 11.° | alta |
-| Biotecnología vegetal y agroindustria | 4.° | Ingeniería genética y ADN recombinante | 11.° | media |
+| Biotecnología vegetal y agroindustria | 4.° | Ingeniería genética y ADN recombinante | 9.° | media |
 | Fases de la fotosíntesis y ciclo de Calvin | 6.° | Oxidación y reducción | 11.° | media |
-| Organelos de la célula eucariota | 6.° | Célula animal y célula vegetal | 11.° | media |
-| ADN y cromosomas | 6.° | Herencia de rasgos | 10.° | media |
 | Intercambio de gases en animales | 3.° | Difusión y ósmosis | 6.° | media |
+| Organelos de la célula eucariota | 6.° | Célula animal y célula vegetal | 9.° | media |
 | Síntesis de proteínas | 7.° | Proteínas: estructura y función | 10.° | media |
 | Biotecnología vegetal y agroindustria | 4.° | Reproducción sexual de las plantas con flor | 6.° | media |
 | Energía de los alimentos y balance energético | 4.° | Respiración celular | 6.° | media |
-| Osmorregulación y equilibrio hídrico | 8.° | Homeostasis | 10.° | media |
+| Osmorregulación y equilibrio hídrico | 8.° | Homeostasis | 9.° | media |
 
 
 ## Cómo usar esto

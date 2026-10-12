@@ -48,7 +48,7 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
     Unión de todos los etiquetados de la V2 (vocabulario de la asignatura y completo) más las equivalencias entre
     asignaturas: un tema enseña c si algún etiquetado lo encuentra."""
 
-    temas = {t.id: t.dict() for t in extraer("mallas_v2")}
+    temas = {t.id: t.dict() for t in extraer()}
     por: dict[str, set[tuple[int, str]]] = defaultdict(set)
     for _, etiquetas in etiquetar.leer_etiquetados("malla_v2_"):
         for tid, e in etiquetas.items():

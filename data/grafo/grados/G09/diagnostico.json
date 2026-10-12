@@ -1,54 +1,78 @@
 {
  "grado": 9,
- "temas": 84,
+ "temas": 102,
  "temas_por_asignatura": {
   "fisica": 37,
+  "biologia": 19,
   "quimica": 20,
-  "ciencias_tierra_espacio": 24,
-  "biologia": 3
+  "ciencias_tierra_espacio": 26
  },
- "conceptos": 75,
- "conceptos_nuevos": 35,
- "conceptos_retomados": 40,
+ "conceptos": 110,
+ "conceptos_nuevos": 45,
+ "conceptos_retomados": 65,
  "conceptos_anticipados": 0,
  "practicas": {
   "PRAC:usar-matematicas-en-ciencias": 11,
-  "PRAC:desarrollar-y-usar-modelos": 5,
-  "PRAC:interpretar-datos-y-concluir": 5,
-  "PRAC:controlar-variables": 4,
+  "PRAC:interpretar-datos-y-concluir": 9,
+  "PRAC:desarrollar-y-usar-modelos": 7,
+  "PRAC:construir-explicaciones-con-evidencia": 6,
+  "PRAC:controlar-variables": 5,
   "PRAC:disenar-y-evaluar-soluciones": 4,
+  "PRAC:evaluar-fuentes-de-informacion": 4,
+  "PRAC:medir-con-instrumentos": 4,
   "PRAC:transformar-representaciones": 4,
-  "PRAC:medir-con-instrumentos": 3,
-  "PRAC:construir-explicaciones-con-evidencia": 2,
+  "PRAC:argumentar-con-evidencia": 3,
+  "PRAC:repetir-mediciones-y-estimar-error": 3,
+  "PRAC:evaluar-afirmaciones-y-argumentos": 2,
+  "PRAC:evaluar-implicaciones-y-decidir": 2,
   "PRAC:formular-hipotesis-y-predicciones": 2,
+  "PRAC:observar-y-registrar": 2,
   "PRAC:planificar-investigaciones": 2,
   "PRAC:trabajar-con-seguridad-y-etica": 2,
-  "PRAC:argumentar-con-evidencia": 1,
   "PRAC:comunicar-resultados": 1,
-  "PRAC:evaluar-fuentes-de-informacion": 1,
-  "PRAC:observar-y-registrar": 1,
-  "PRAC:repetir-mediciones-y-estimar-error": 1,
+  "PRAC:limites-de-la-ciencia": 1,
   "PRAC:representar-datos": 1,
   "PRAC:usar-pensamiento-computacional-y-simulaciones": 1
  },
  "objetivos_marco": {
-  "PISA25": 23,
-  "T8_27": 24
+  "PISA25": 37,
+  "T8_27": 34
  },
  "anclajes": [
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
-   "concepto": "CON:ciencias_tierra_espacio/mareas",
+   "prerrequisito": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+   "concepto": "CON:ciencias_tierra_espacio/tectonica-de-placas",
    "estado": "ausente",
    "primer_grado_sv": null,
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
-   "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
+   "prerrequisito": "CON:biologia/evidencias-de-la-evolucion",
+   "concepto": "CON:biologia/filogenia-y-parentesco-evolutivo",
    "estado": "mismo_grado",
    "primer_grado_sv": 9,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/sistema-inmunitario",
+   "concepto": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/sistema-endocrino-y-hormonas",
+   "concepto": "CON:biologia/retroalimentacion-negativa",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/homeostasis",
+   "concepto": "CON:biologia/sistema-endocrino-y-hormonas",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
@@ -191,11 +215,11 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
-   "concepto": "CON:ciencias_tierra_espacio/acidificacion-del-oceano",
+   "prerrequisito": "CON:biologia/proteinas-estructura-y-funcion",
+   "concepto": "CON:biologia/sintesis-de-proteinas",
    "estado": "posterior",
    "primer_grado_sv": 10,
-   "confianza": "alta"
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:fisica/calor-vs-temperatura",
@@ -207,13 +231,6 @@
   {
    "prerrequisito": "CON:fisica/potencial-electrico",
    "concepto": "CON:fisica/capacitancia",
-   "estado": "posterior",
-   "primer_grado_sv": 11,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:fisica/conductores-aislantes-electricos",
-   "concepto": "CON:fisica/circuito-electrico-simple",
    "estado": "posterior",
    "primer_grado_sv": 11,
    "confianza": "alta"
@@ -233,10 +250,80 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/celula-animal-y-vegetal",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/celula-procariota-y-eucariota",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/microorganismos",
+   "concepto": "CON:biologia/celula-procariota-y-eucariota",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/fotosintesis",
+   "concepto": "CON:biologia/ciclo-del-carbono-y-oxigeno",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/respiracion-celular",
+   "concepto": "CON:biologia/ciclo-del-carbono-y-oxigeno",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/biomoleculas",
+   "concepto": "CON:biologia/ciclo-del-nitrogeno",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/productores-consumidores-descomponedores",
+   "concepto": "CON:biologia/ciclo-del-nitrogeno",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/microorganismos",
+   "concepto": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/habitat-y-ecosistemas-comunes",
    "concepto": "CON:biologia/contaminacion-y-seres-vivos",
    "estado": "previo",
    "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/membrana-celular",
+   "concepto": "CON:biologia/difusion-y-osmosis",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/concentracion-de-disoluciones",
+   "concepto": "CON:biologia/difusion-y-osmosis",
+   "estado": "previo",
+   "primer_grado_sv": 3,
    "confianza": "media"
   },
   {
@@ -254,10 +341,101 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/respiracion-celular",
+   "concepto": "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "concepto": "CON:biologia/enfermedades-infecciosas-y-no-infecciosas",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/tipos-de-patogenos",
+   "concepto": "CON:biologia/enfermedades-infecciosas-y-no-infecciosas",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/fosiles",
+   "concepto": "CON:biologia/evidencias-de-la-evolucion",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/grupos-de-vertebrados",
+   "concepto": "CON:biologia/evidencias-de-la-evolucion",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/habitat-y-ecosistemas-comunes",
    "concepto": "CON:biologia/factores-bioticos-y-abioticos",
    "estado": "previo",
    "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/clasificacion-jerarquica",
+   "concepto": "CON:biologia/filogenia-y-parentesco-evolutivo",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+   "concepto": "CON:biologia/fosiles",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/nutricion-autotrofa-y-heterotrofa",
+   "concepto": "CON:biologia/fotosintesis",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/reaccion-quimica-y-evidencias",
+   "concepto": "CON:biologia/fotosintesis",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/genes-y-alelos",
+   "concepto": "CON:biologia/genotipo-y-fenotipo",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/necesidades-de-los-seres-vivos",
+   "concepto": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
+   "concepto": "CON:biologia/habitos-de-vida-saludable",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/sistema-nervioso",
+   "concepto": "CON:biologia/homeostasis",
+   "estado": "previo",
+   "primer_grado_sv": 4,
    "confianza": "media"
   },
   {
@@ -268,10 +446,213 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/sintesis-de-proteinas",
+   "concepto": "CON:biologia/ingenieria-genetica",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "concepto": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/mitosis-y-ciclo-celular",
+   "concepto": "CON:biologia/meiosis",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/reproduccion-sexual-y-asexual",
+   "concepto": "CON:biologia/meiosis",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/biomoleculas",
+   "concepto": "CON:biologia/membrana-celular",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/membrana-celular",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/adn-y-cromosomas",
+   "concepto": "CON:biologia/mitosis-y-ciclo-celular",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/replicacion-del-adn",
+   "concepto": "CON:biologia/pcr-y-electroforesis",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:biologia/productores-consumidores-descomponedores",
    "concepto": "CON:biologia/redes-troficas",
    "estado": "previo",
    "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/sintesis-de-proteinas",
+   "concepto": "CON:biologia/regulacion-de-la-expresion-genica",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/ciclo-de-vida-de-los-animales",
+   "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
+   "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/requerimientos-de-la-celula",
+   "concepto": "CON:biologia/respiracion-celular",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/reaccion-quimica-y-evidencias",
+   "concepto": "CON:biologia/respiracion-celular",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructura-del-adn",
+   "concepto": "CON:biologia/sintesis-de-proteinas",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/organelos-de-la-celula-eucariota",
+   "concepto": "CON:biologia/sintesis-de-proteinas",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/sistema-circulatorio",
+   "concepto": "CON:biologia/sistema-endocrino-y-hormonas",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/sistema-circulatorio",
+   "concepto": "CON:biologia/sistema-inmunitario",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/tipos-de-patogenos",
+   "concepto": "CON:biologia/sistema-inmunitario",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/niveles-de-organizacion",
+   "concepto": "CON:biologia/sistema-nervioso",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/organos-de-los-sentidos",
+   "concepto": "CON:biologia/sistema-nervioso",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/conservacion-de-la-biodiversidad",
+   "concepto": "CON:biologia/sostenibilidad-de-la-biosfera",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/recursos-renovables-y-no-renovables",
+   "concepto": "CON:biologia/sostenibilidad-de-la-biosfera",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/microorganismos",
+   "concepto": "CON:biologia/tipos-de-patogenos",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/contagio-y-prevencion-de-enfermedades",
+   "concepto": "CON:biologia/transmision-de-patogenos",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/tipos-de-patogenos",
+   "concepto": "CON:biologia/transmision-de-patogenos",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/adn-y-cromosomas",
+   "concepto": "CON:biologia/virus",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/celula-procariota-y-eucariota",
+   "concepto": "CON:biologia/virus",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/tipos-de-patogenos",
+   "concepto": "CON:biologia/virus",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
+   "concepto": "CON:ciencias_tierra_espacio/acidificacion-del-oceano",
+   "estado": "previo",
+   "primer_grado_sv": 8,
    "confianza": "alta"
   },
   {
@@ -299,7 +680,7 @@
    "prerrequisito": "CON:fisica/imanes-polos",
    "concepto": "CON:ciencias_tierra_espacio/campo-magnetico-terrestre",
    "estado": "previo",
-   "primer_grado_sv": 6,
+   "primer_grado_sv": 3,
    "confianza": "alta"
   },
   {
@@ -307,6 +688,13 @@
    "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
    "estado": "previo",
    "primer_grado_sv": 3,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
+   "concepto": "CON:ciencias_tierra_espacio/corrientes-oceanicas",
+   "estado": "previo",
+   "primer_grado_sv": 8,
    "confianza": "alta"
   },
   {
@@ -356,6 +744,13 @@
    "concepto": "CON:ciencias_tierra_espacio/limites-de-placas",
    "estado": "previo",
    "primer_grado_sv": 5,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+   "concepto": "CON:ciencias_tierra_espacio/mareas",
+   "estado": "previo",
+   "primer_grado_sv": 8,
    "confianza": "alta"
   },
   {
@@ -485,6 +880,13 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:ciencias_tierra_espacio/deriva-continental-y-expansion-del-fondo-oceanico",
+   "concepto": "CON:ciencias_tierra_espacio/tectonica-de-placas",
+   "estado": "previo",
+   "primer_grado_sv": 5,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
    "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
    "estado": "previo",
@@ -530,7 +932,7 @@
    "prerrequisito": "CON:fisica/imanes-polos",
    "concepto": "CON:fisica/campo-magnetico",
    "estado": "previo",
-   "primer_grado_sv": 6,
+   "primer_grado_sv": 3,
    "confianza": "alta"
   },
   {
@@ -545,6 +947,13 @@
    "concepto": "CON:fisica/carga-electrica-electrizacion",
    "estado": "previo",
    "primer_grado_sv": 5,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/conductores-aislantes-electricos",
+   "concepto": "CON:fisica/circuito-electrico-simple",
+   "estado": "previo",
+   "primer_grado_sv": 4,
    "confianza": "alta"
   },
   {
@@ -607,7 +1016,7 @@
    "prerrequisito": "CON:fisica/temperatura-medicion-escalas",
    "concepto": "CON:fisica/equilibrio-termico",
    "estado": "previo",
-   "primer_grado_sv": 6,
+   "primer_grado_sv": 3,
    "confianza": "alta"
   },
   {
@@ -740,7 +1149,7 @@
    "prerrequisito": "CON:fisica/temperatura-medicion-escalas",
    "concepto": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
    "estado": "previo",
-   "primer_grado_sv": 6,
+   "primer_grado_sv": 3,
    "confianza": "alta"
   },
   {
@@ -901,18 +1310,6 @@
    }
   },
   {
-   "concepto": "CON:fisica/reflexion-luz",
-   "sv": 10,
-   "paises": {
-    "AU": 4.0,
-    "CO": 3.0,
-    "ENG": 2,
-    "JP": 2,
-    "SG": 4.0,
-    "UY": 4.0
-   }
-  },
-  {
    "concepto": "CON:biologia/nutricion-mineral-de-las-plantas",
    "sv": 11,
    "paises": {
@@ -928,27 +1325,6 @@
     "ENG": 6.0,
     "SG": 4.0,
     "UY": 3.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/herencia-de-rasgos",
-   "sv": 10,
-   "paises": {
-    "CO": 2,
-    "ENG": 4.0,
-    "JP": 8.0,
-    "SG": 5.0
-   }
-  },
-  {
-   "concepto": "CON:fisica/conductores-aislantes-electricos",
-   "sv": 11,
-   "paises": {
-    "AU": 5.0,
-    "CO": 4.5,
-    "ENG": 2,
-    "JP": 2,
-    "SG": 5.0
    }
   },
   {
@@ -969,16 +1345,6 @@
    }
   },
   {
-   "concepto": "CON:fisica/refraccion-luz",
-   "sv": 10,
-   "paises": {
-    "AU": 4.0,
-    "ENG": 6.0,
-    "JP": 6.0,
-    "UY": 5.0
-   }
-  },
-  {
    "concepto": "CON:biologia/ciclo-del-agua-y-seres-vivos",
    "sv": 10,
    "paises": {
@@ -986,16 +1352,6 @@
     "ENG": 8.5,
     "JP": 5.0,
     "SG": 5.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/evidencias-de-la-evolucion",
-   "sv": 10,
-   "paises": {
-    "AU": 9.0,
-    "CO": 2,
-    "ENG": 4.0,
-    "JP": 8.0
    }
   },
   {
@@ -1014,26 +1370,6 @@
     "CO": 8.5,
     "ENG": 6.0,
     "UY": 6.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/ciclo-del-carbono-y-oxigeno",
-   "sv": 10,
-   "paises": {
-    "AU": 8.0,
-    "CO": 6.5,
-    "ENG": 6.0,
-    "JP": 5.0
-   }
-  },
-  {
-   "concepto": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
-   "sv": 10,
-   "paises": {
-    "AU": 8.0,
-    "CO": 6.5,
-    "ENG": 6.0,
-    "JP": 5.0
    }
   },
   {
@@ -1066,17 +1402,6 @@
    "paises": {
     "AU": 9.0,
     "CO": 4.5
-   }
-  },
-  {
-   "concepto": "CON:biologia/celula-animal-y-vegetal",
-   "sv": 11,
-   "paises": {
-    "AU": 7.0,
-    "CO": 6.5,
-    "ENG": 6.0,
-    "JP": 7.0,
-    "UY": 7.0
    }
   },
   {
@@ -1123,14 +1448,6 @@
    }
   },
   {
-   "concepto": "CON:biologia/ciclo-del-nitrogeno",
-   "sv": 10,
-   "paises": {
-    "CO": 7.0,
-    "ENG": 8.5
-   }
-  },
-  {
    "concepto": "CON:quimica/enlace-quimico",
    "sv": 10,
    "paises": {
@@ -1139,29 +1456,10 @@
    }
   },
   {
-   "concepto": "CON:biologia/homeostasis",
-   "sv": 10,
-   "paises": {
-    "CO": 8.0,
-    "ENG": 8.5,
-    "UY": 8.0
-   }
-  },
-  {
    "concepto": "CON:biologia/impulso-nervioso-y-sinapsis",
    "sv": 10,
    "paises": {
     "CO": 4.5,
-    "ENG": 8.5,
-    "UY": 8.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/sistema-endocrino-y-hormonas",
-   "sv": 10,
-   "paises": {
-    "AU": 8.0,
-    "CO": 8.0,
     "ENG": 8.5,
     "UY": 8.0
    }
@@ -1187,14 +1485,6 @@
    }
   },
   {
-   "concepto": "CON:biologia/retroalimentacion-negativa",
-   "sv": 10,
-   "paises": {
-    "AU": 8.0,
-    "ENG": 8.5
-   }
-  },
-  {
    "concepto": "CON:quimica/radiactividad",
    "sv": 10,
    "paises": {
@@ -1208,24 +1498,6 @@
    "paises": {
     "CO": 8.5,
     "ENG": 8.5
-   }
-  },
-  {
-   "concepto": "CON:biologia/ingenieria-genetica",
-   "sv": 11,
-   "paises": {
-    "CO": 8.5,
-    "ENG": 8.5,
-    "UY": 6.0
-   }
-  },
-  {
-   "concepto": "CON:biologia/transmision-de-patogenos",
-   "sv": null,
-   "paises": {
-    "CO": 6.5,
-    "ENG": 8.5,
-    "UY": 9.0
    }
   },
   {
@@ -1259,17 +1531,9 @@
     "ENG": 8.5,
     "UY": 9.0
    }
-  },
-  {
-   "concepto": "CON:biologia/sistema-inmunitario",
-   "sv": 10,
-   "paises": {
-    "ENG": 8.5,
-    "UY": 9.0
-   }
   }
  ],
- "referentes_paises": 117,
+ "referentes_paises": 191,
  "top_conceptos": [
   [
    "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
@@ -1304,6 +1568,10 @@
    4
   ],
   [
+   "CON:biologia/impacto-humano-en-los-ecosistemas",
+   3
+  ],
+  [
    "CON:ciencias_tierra_espacio/vulcanismo-de-el-salvador",
    3
   ],
@@ -1325,10 +1593,6 @@
   ],
   [
    "CON:fisica/viscosidad-regimen-flujo",
-   3
-  ],
-  [
-   "CON:quimica/disoluciones-amortiguadoras",
    3
   ]
  ]

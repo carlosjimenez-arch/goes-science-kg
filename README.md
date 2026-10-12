@@ -21,9 +21,10 @@ uv run pytest -q
 ```
 
 ## Estado
-**Grafo v1**: 3.641 nodos y 20.047 aristas.
-- 1.260 temas de la malla (1.245 en alcance y 15 de tecnología o transversales fuera de alcance).
-- **512 conceptos y 30 prácticas científicas**, con 829 prerrequisitos entre conceptos (un grafo sin ciclos por
+**Grafo v1** sobre la **malla V2** del MINED (desde el 2026-10-11): 3.675 nodos y 20.538 aristas.
+- 1.307 temas de la malla (1.292 en alcance y 15 de tecnología o transversales fuera de alcance). La V2 conserva los
+  1.260 temas de la V1 sin cambios y agrega 47; la V1 queda en `config/mallas_v1.yaml`.
+- **513 conceptos y 30 prácticas científicas**, con 822 prerrequisitos entre conceptos (un grafo sin ciclos por
   asignatura) y equivalencias entre asignaturas. 14 conceptos vienen del triaje de los que propuso el etiquetado.
 - 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
   (este último es el pivote de Biología y Química de 10.°–11.°).
@@ -37,8 +38,9 @@ países) y un **visor interactivo** (`grafo.html`).
 
 **Por asignatura**: `asignaturas/<x>/` tiene la ficha, el **mapa de progresión** (`progresion.html`), las brechas
 (md + Excel), las propuestas curriculares en borrador ([resumen](asignaturas/PROPUESTAS.md)) y los CSV de revisión.
-Las 11 propuestas, simuladas sobre el grafo, bajan los errores de secuencia de confianza alta de 54 a 3 (los 3
-dependen de aristas de prerrequisito discutibles y quedan como decisiones abiertas para el MINED).
+Las 11 propuestas (escritas sobre la V1) se conciliaron con la V2: de sus 47 acciones «nuevo», el MINED adoptó 5 en
+el mismo grado, 8 en otro grado y 8 en parte. Simuladas sobre la V2, bajan los errores de secuencia de confianza alta
+de 55 a 5 (decisiones abiertas para el MINED en cada informe).
 
 **Contraste internacional de 9.°–11.°** (malla V2): [`internacional/`](internacional/README.md). Hay grafos de
 9 países de alto desempeño (SG, JP, KR, ENG, AU, HK, TW, EE y ON; 9.040 objetivos extraídos y validados con Vertex

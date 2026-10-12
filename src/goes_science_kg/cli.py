@@ -115,6 +115,26 @@ def alinear_unir() -> None:
     typer.echo(json.dumps(unir("AUSS_", "bachillerato_auss", catalogo_acara_senior()), ensure_ascii=False))
 
 
+@alinear_app.command("preparar-temas")
+def alinear_preparar_temas() -> None:
+    """Lotes TIMSS 2027 y PISA 2025 para los temas de 2.°–9.° sin clasificación previa (los nuevos de la V2)."""
+    from goes_science_kg.alineacion import preparar_temas_nuevos
+
+    escritos = preparar_temas_nuevos()
+    for p in escritos:
+        typer.echo(f"→ {p}")
+    if not escritos:
+        typer.echo("No hay temas sin clasificación.")
+
+
+@alinear_app.command("unir-temas")
+def alinear_unir_temas() -> None:
+    """Valida y une las salidas → data/interim/alineaciones/temas_nuevos_{timss2027,pisa2025}.json."""
+    from goes_science_kg.alineacion import unir_temas_nuevos
+
+    typer.echo(json.dumps(unir_temas_nuevos(), ensure_ascii=False))
+
+
 conceptos_app = typer.Typer(help="Capa de conceptos y prácticas (fase 3)", no_args_is_help=True)
 app.add_typer(conceptos_app, name="conceptos")
 
@@ -138,13 +158,18 @@ def conceptos_consolidar() -> None:
 
 
 @conceptos_app.command("preparar-etiquetado")
-def conceptos_preparar_etiquetado() -> None:
+def conceptos_preparar_etiquetado(
+        todos: bool = typer.Option(False, "--todos", help="Rehace todos los lotes (si no, solo los temas pendientes)"),
+) -> None:
     """Lotes por asignatura y grado para etiquetar temas con conceptos y prácticas."""
     from goes_science_kg.conceptos import preparar_etiquetado
     from goes_science_kg.grafo.almacen import cargar
 
-    for p in preparar_etiquetado(cargar()[0]):
+    escritos = preparar_etiquetado(cargar()[0], solo_pendientes=not todos)
+    for p in escritos:
         typer.echo(f"→ {p}")
+    if not escritos:
+        typer.echo("No hay temas pendientes de etiquetar.")
 
 
 @conceptos_app.command("unir-etiquetado")
@@ -287,6 +312,22 @@ def propuesta_simular(asignatura: str, desde: int, hasta: int) -> None:
                            "conceptos_no_resueltos": r["conceptos_no_resueltos"]}, ensure_ascii=False))
 
 
+@propuesta_app.command("preparar-adopcion")
+def propuesta_preparar_adopcion() -> None:
+    """Lote para conciliar las acciones «nuevo» con los temas que agregó la V2 → data/interim/propuestas/."""
+    from goes_science_kg.propuesta import preparar_adopcion_v2
+
+    typer.echo(f"→ {preparar_adopcion_v2()}")
+
+
+@propuesta_app.command("unir-adopcion")
+def propuesta_unir_adopcion() -> None:
+    """Valida la salida del especialista → data/interim/propuestas/adopcion_v2.json."""
+    from goes_science_kg.propuesta import unir_adopcion_v2
+
+    typer.echo(json.dumps(unir_adopcion_v2(), ensure_ascii=False))
+
+
 @propuesta_app.command("resumen")
 def propuesta_resumen() -> None:
     """Tabla de todas las propuestas con su simulación → asignaturas/PROPUESTAS.md."""
@@ -301,6 +342,38 @@ def propuesta_excel(asignatura: str, desde: int, hasta: int) -> None:
     from goes_science_kg.propuesta import escribir_excel
 
     typer.echo(f"→ {escribir_excel(asignatura, desde, hasta)}")
+
+
+lotes_app = typer.Typer(help="Lotes de subagentes: validación de sus salidas (harness de agentes)",
+                        no_args_is_help=True)
+app.add_typer(lotes_app, name="lotes")
+
+
+@lotes_app.command("validar")
+def lotes_validar(
+        tipo: str = typer.Option(None, help="alineacion | etiquetado | prerrequisitos | bloques | adopcion"),
+        agente: str = typer.Option(None, help="Nombre de un subagente de .claude/agents (usa su tipo de lote)"),
+        base: str = typer.Option(None, hidden=True, help="Raíz alternativa donde buscar los lotes (pruebas)"),
+) -> None:
+    """Valida cada salida_*.json contra su lote con las reglas de la unión. Sale con 1 si hay errores."""
+    from pathlib import Path
+
+    from goes_science_kg.lotes import comando_union, tipo_de_agente, validar
+
+    if agente is not None:
+        tipo = tipo_de_agente(agente)
+        if tipo is None:
+            typer.echo(f"{agente} no produce lotes: nada que validar.")
+            return
+    errores = validar(tipo, Path(base) if base else None)
+    for archivo, errs in errores.items():
+        typer.echo(f"✗ {archivo}: {len(errs)} errores")
+        for e in errs[:10]:
+            typer.echo(f"    - {e}")
+    if errores:
+        raise typer.Exit(1)
+    typer.echo(f"✓ salidas válidas ({tipo or 'todos los tipos'}); se consolidan con: "
+               f"{comando_union(tipo) if tipo else 'el «unir» de cada tipo'}")
 
 
 revision_app = typer.Typer(help="Revisión humana con el equipo de Ciencias del MINED", no_args_is_help=True)

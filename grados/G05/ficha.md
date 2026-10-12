@@ -11,7 +11,7 @@
 | Física | 23 |
 | Química | 18 |
 
-- **64 conceptos**: 51 nuevos en este grado, 11 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **64 conceptos**: 49 nuevos en este grado, 13 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T8_27 18.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 132.
 
@@ -85,16 +85,14 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 
 | Concepto del grado | Prerrequisito | Estado | Primer grado SV | Confianza |
 |---|---|---|---|---|
-| Ciclo de vida de las estrellas | Gravedad y órbitas | ausente | — | media |
-| Exploración espacial | Gravedad y órbitas | ausente | — | media |
-| Formación del sistema solar | Gravedad y órbitas | ausente | — | alta |
 | Tectónica de placas | Convección del manto y energía interna de la Tierra | ausente | — | alta |
 | Origen del universo: el Big Bang | Efecto Doppler | posterior | 11 | media |
-| Campo magnético terrestre | Imanes y polos magnéticos | posterior | 6 | alta |
+| Ciclo de vida de las estrellas | Gravedad y órbitas | posterior | 8 | media |
 | Ciclo de vida de las estrellas | Fisión y fusión nuclear | posterior | 11 | alta |
+| Exploración espacial | Gravedad y órbitas | posterior | 8 | media |
+| Formación del sistema solar | Gravedad y órbitas | posterior | 8 | alta |
 | Ondas sísmicas, magnitud e intensidad | Ondas mecánicas transversales y longitudinales | posterior | 8 | alta |
 | Tiempo geológico y datación | Desintegración radiactiva | posterior | 11 | media |
-| Campo magnético y magnetismo terrestre | Imanes y polos magnéticos | posterior | 6 | alta |
 | Energía cinética | Trabajo mecánico | posterior | 8 | media |
 | Primera ley de Newton: inercia | Fuerza neta y diagrama de cuerpo libre | posterior | 8 | alta |
 | Átomo y partículas subatómicas | Modelo de partículas de la materia | posterior | 6 | alta |
@@ -104,7 +102,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Número de oxidación | Electronegatividad y polaridad de enlace | posterior | 6 | media |
 | Números cuánticos | Modelo mecanocuántico y orbitales atómicos | posterior | 10 | alta |
 
-Además, 49 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 46 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -112,18 +110,13 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Materiales magnéticos | 6 | ENG 2, JP 2, SG 3.0 |
-| Tiempo atmosférico y sus variables | 7 | AU 2, CO 8.5, ENG 2, JP 3.0 |
-| Imanes y polos magnéticos | 6 | AU 3.0, CO 2, ENG 2, JP 2, SG 3.0, UY 5.0 |
 | Depredación | 7 | CO 3.0, ENG 2, JP 5.0 |
 | Ciclo del agua | 7 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 |
 | Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
-| Temperatura y escalas termométricas | 6 | ENG 2, SG 4.0, UY 3.0 |
 | Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
 | Corriente, voltaje y resistencia | 6 | ENG 4.0, JP 3.0 |
 | Dilatación térmica | 6 | ENG 6.0, JP 3.0, SG 4.0, UY 3.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
-| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
 | Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
 | Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
 | Reproducción sexual de las plantas con flor | 6 | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
@@ -133,9 +126,7 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
 | Flotación y hundimiento | 6 | CO 4.5, ENG 6.0, SG 3.0, UY 4.0 |
 | Agricultura y seguridad alimentaria | 7 | ENG 6.0, UY 3.0 |
-| Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
-| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, JP 2, SG 5.0 |
 | Electroimanes y efecto magnético de la corriente | 6 | ENG 6.0, JP 4.0, SG 3.0, UY 5.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
 | Presión | 6 | ENG 6.0, JP 3.0 |

@@ -10,7 +10,7 @@
 | Física | 24 |
 | Química | 10 |
 
-- **65 conceptos**: 50 nuevos en este grado, 13 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **65 conceptos**: 47 nuevos en este grado, 16 que se retoman de grados anteriores y 2 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T8_27 21.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 194.
 
@@ -89,14 +89,12 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 
 | Concepto del grado | Prerrequisito | Estado | Primer grado SV | Confianza |
 |---|---|---|---|---|
-| ADN y cromosomas | Herencia de rasgos | posterior | 10 | media |
 | Biomoléculas | El carbono y las moléculas orgánicas | posterior | 11 | alta |
-| Biotecnología vegetal y agroindustria | Ingeniería genética y ADN recombinante | posterior | 11 | media |
+| Biotecnología vegetal y agroindustria | Ingeniería genética y ADN recombinante | posterior | 9 | media |
 | Enzimas | Proteínas: estructura y función | posterior | 10 | alta |
 | Fases de la fotosíntesis y ciclo de Calvin | Oxidación y reducción | posterior | 11 | media |
-| Organelos de la célula eucariota | Célula animal y célula vegetal | posterior | 11 | media |
+| Organelos de la célula eucariota | Célula animal y célula vegetal | posterior | 9 | media |
 | Capacidad calorífica y calor específico | Calor como energía en tránsito | posterior | 10 | alta |
-| Circuito eléctrico simple | Conductores y aislantes eléctricos | posterior | 11 | alta |
 | Corriente, voltaje y resistencia | Carga eléctrica y electrización | posterior | 9 | alta |
 | Resistencia equivalente | Ley de Ohm | posterior | 11 | alta |
 | Catalizadores | Energía de activación y perfil energético | posterior | 10 | alta |
@@ -105,7 +103,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Enlace metálico | Enlace químico | posterior | 10 | alta |
 | Moléculas y fórmulas químicas | Sustancias puras: elementos y compuestos | posterior | 8 | alta |
 
-Además, 47 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 44 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -113,13 +111,11 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Tiempo atmosférico y sus variables | 7 | AU 2, CO 8.5, ENG 2, JP 3.0 |
 | Depredación | 7 | CO 3.0, ENG 2, JP 5.0 |
 | Ciclo del agua | 7 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 |
 | Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
 | Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
-| Reflexión de la luz | 10 | AU 4.0, CO 3.0, ENG 2, JP 2, SG 4.0, UY 4.0 |
 | Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
 | Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
 | Transporte en plantas: xilema y floema | 8 | ENG 2, JP 5.0, SG 5.0, UY 3.0 |
@@ -127,9 +123,7 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
 | Agricultura y seguridad alimentaria | 7 | ENG 6.0, UY 3.0 |
-| Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
-| Conductores y aislantes eléctricos | 11 | AU 5.0, CO 4.5, ENG 2, JP 2, SG 5.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |
 | Corrientes oceánicas superficiales y profundas | 9 | CO 4.5, UY 5.0 |
 | Tejidos animales | 8 | AU 7.0, CO 5.0, UY 4.0 |
@@ -138,10 +132,10 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 | Ley de gravitación universal | 10 | CO 4.5, ENG 6.0, UY 5.0 |
 | Composición del aire y contaminantes atmosféricos | 7 | CO 4.5, ENG 8.5, JP 5.0, SG 5.0, UY 6.0 |
 | Intercambio de gases en plantas | 8 | ENG 6.0, JP 7.0, SG 5.0, UY 5.0 |
-| Refracción de la luz | 10 | AU 4.0, ENG 6.0, JP 6.0, UY 5.0 |
+| Refracción de la luz | 7 | AU 4.0, ENG 6.0, JP 6.0, UY 5.0 |
 | Indicadores ácido-base | 9 | ENG 6.0, JP 5.0 |
 | Papel de los seres vivos en el ciclo del agua | 10 | CO 6.5, ENG 8.5, JP 5.0, SG 5.0 |
-| Evidencias de la evolución | 10 | AU 9.0, CO 2, ENG 4.0, JP 8.0 |
+| Evidencias de la evolución | 9 | AU 9.0, CO 2, ENG 4.0, JP 8.0 |
 | Flujo de energía y pirámides ecológicas | 7 | AU 6.0, CO 6.5, SG 6.0, UY 6.0 |
 | Carga eléctrica y electrización | 9 | CO 6.0, ENG 6.0, JP 7.0, UY 5.0 |
 | Condiciones de equilibrio estático | 8 | AU 6.0, ENG 6.0, JP 6.0 |

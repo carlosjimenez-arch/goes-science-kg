@@ -54,6 +54,21 @@ def resumen_para(g: int, miembros: Iterable[str]) -> dict | None:
     return resumenes()[i] if j >= UMBRAL_JACCARD else None
 
 
+def errores_resumenes(lote: list[dict], salida: list[dict]) -> list[str]:
+    """Errores de la salida de un lote de bloques (prompts/subagentes/prompt_comunidades.md): cada id una vez,
+    título de 8 palabras como máximo y resumen de 70. Lo revisa `gskg lotes validar` al terminar redactor-bloques."""
+    ids, vistos = [b["id"] for b in lote], [r.get("id") for r in salida]
+    errores = [] if sorted(ids) == sorted(vistos) else [f"ids distintos del lote: faltan "
+                                                         f"{sorted(set(ids) - set(vistos))[:3]}, sobran "
+                                                         f"{sorted(set(vistos) - set(ids))[:3]}"]
+    for r in salida:
+        if not r.get("titulo") or len(r["titulo"].split()) > 8:
+            errores.append(f"{r.get('id')}: título vacío o de más de 8 palabras")
+        if not r.get("resumen") or len(r["resumen"].split()) > 70:
+            errores.append(f"{r.get('id')}: resumen vacío o de más de 70 palabras")
+    return errores
+
+
 def consolidar_resumenes() -> dict:
     """Une resúmenes vigentes y salidas nuevas de subagentes → resumenes.json.
 

@@ -6,13 +6,11 @@
 
 | Marco | Ciclo | Objetivos | Cubiertos | Débiles (1 tema) | Sin cobertura |
 |---|---|---|---|---|---|
-| T4_27 | 2.°–4.° | 7 | 7 | 1 | 0 |
-| T8_27 | 5.°–8.° | 11 | 9 | 0 | 2 |
-| PISA25 | 7.°–9.° | 8 | 7 | 0 | 1 |
+| T4_27 | 2.°–4.° | 7 | 7 | 0 | 0 |
+| T8_27 | 5.°–8.° | 11 | 10 | 0 | 1 |
+| PISA25 | 7.°–9.° | 8 | 8 | 0 | 0 |
 
-**T8_27 sin cobertura en 5.°–8.°:** T8_27-E4.1 Fenómenos observables por los movimientos de la Tierra y la Luna; T8_27-E5.1 Equipo usado en investigaciones de ciencias de la Tierra
-
-**PISA25 sin cobertura en 7.°–9.°:** PISA-T8 Origen del universo y del sistema solar (evolución estelar, formación de planetas, Big Bang)
+**T8_27 sin cobertura en 5.°–8.°:** T8_27-E5.1 Equipo usado en investigaciones de ciencias de la Tierra
 
 ## 2. ¿Cuándo llega El Salvador? Oportunidad por concepto
 
@@ -24,11 +22,9 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 
 | Concepto | SV | Mediana países | Alto desempeño | Países | Oportunidad |
 |---|---|---|---|---|---|
-| Tiempo atmosférico y sus variables | 7.° | 2.5 | 2 | AU 2, CO 8.5, ENG 2, JP 3.0 | +4.5 |
 | Corrientes oceánicas superficiales y profundas | 9.° | 4.75 | — | CO 4.5, UY 5.0 | +4.25 |
 | Ciclo del agua | 7.° | 3 | 3 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 | +4 |
 | Minerales y sus propiedades | 8.° | 4 | 4 | AU 2, ENG 6.0 | +4 |
-| Ciclo del carbono en los sistemas terrestres | 10.° | 6.25 | 6 | AU 8.0, CO 6.5, ENG 6.0, JP 5.0 | +3.75 |
 | Calidad del aire y contaminación atmosférica | 7.° | 5 | 8.5 | CO 4.5, ENG 8.5, UY 5.0 | +2 |
 | Suelo: formación, componentes y tipos | 5.° | 3 | 2 | AU 2, CO 6.5, ENG 2, JP 3.0, UY 3.0 | +2 |
 
@@ -38,6 +34,7 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 |---|---|---|---|
 | Conservación de recursos, residuos y sostenibilidad | 2.° | 7 | -5 |
 | Fuentes de energía renovables y no renovables | 2.° | 6.5 | -4.5 |
+| Registro fósil y cambios ambientales del pasado | 3.° | 7.25 | -4.25 |
 | El Sol como estrella | 2.° | 6 | -4 |
 | Planetas: tipos y comparación | 4.° | 8 | -4 |
 | Sismos y fallas geológicas | 2.° | 6 | -4 |
@@ -47,7 +44,6 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 | Capas internas de la Tierra | 3.° | 5.5 | -2.5 |
 | Traslación de la Tierra y el año | 2.° | 4.5 | -2.5 |
 | Exploración espacial | 4.° | 6.25 | -2.25 |
-| Registro fósil y cambios ambientales del pasado | 5.° | 7.25 | -2.25 |
 | Calentamiento global | 7.° | 9 | -2 |
 | Cambio climático: causas y efectos | 7.° | 9 | -2 |
 | La atmósfera y su composición | 3.° | 5 | -2 |
@@ -61,42 +57,41 @@ La columna «Alto desempeño» es la mediana solo de los países entre los 10 pr
 
 | Concepto | Grado | Necesita | Grado del prerrequisito | Confianza |
 |---|---|---|---|---|
-| Ciclo del carbono en los sistemas terrestres | 10.° | Sistemas terrestres y sus interacciones | nunca | alta |
+| Ciclo del carbono en los sistemas terrestres | 8.° | Sistemas terrestres y sus interacciones | nunca | alta |
 | Energía geotérmica | 2.° | Convección del manto y energía interna de la Tierra | nunca | alta |
-| Formación del sistema solar | 5.° | Gravedad y órbitas | nunca | alta |
-| Mareas | 4.° | Gravedad y órbitas | nunca | alta |
+| Gravedad y órbitas | 8.° | Gravedad: atracción hacia la Tierra | nunca | alta |
 | Tectónica de placas | 5.° | Convección del manto y energía interna de la Tierra | nunca | alta |
 | Ciclo de vida de las estrellas | 5.° | Fisión y fusión nuclear | 11.° | alta |
 | Recursos minerales y minería | 3.° | Minerales y sus propiedades | 8.° | alta |
 | Aguas subterráneas y acuíferos | 3.° | Ciclo del agua | 7.° | alta |
 | Cuencas hidrográficas y aguas superficiales | 3.° | Ciclo del agua | 7.° | alta |
-| Ciclones tropicales y tormentas | 4.° | Tiempo atmosférico y sus variables | 7.° | alta |
-| Clima: diferencia con el tiempo, tipos y factores | 4.° | Tiempo atmosférico y sus variables | 7.° | alta |
+| Mareas | 4.° | Gravedad y órbitas | 8.° | alta |
+| Formación del sistema solar | 5.° | Gravedad y órbitas | 8.° | alta |
 | Ondas sísmicas, magnitud e intensidad | 5.° | Ondas mecánicas transversales y longitudinales | 8.° | alta |
 | Ciclo de las rocas | 3.° | Erosión, transporte y sedimentación | 5.° | alta |
-| Acidificación del océano | 9.° | Ciclo del carbono en los sistemas terrestres | 10.° | alta |
-| Campo magnético terrestre | 5.° | Imanes y polos magnéticos | 6.° | alta |
+| Fósiles y su formación | 3.° | Erosión, transporte y sedimentación | 5.° | alta |
+| Registro fósil y cambios ambientales del pasado | 3.° | Tiempo geológico y datación | 5.° | alta |
 | Uso del suelo y su degradación | 4.° | Erosión, transporte y sedimentación | 5.° | alta |
 | Uso del suelo y su degradación | 4.° | Suelo: formación, componentes y tipos | 5.° | alta |
 | Calidad y tratamiento del agua | 3.° | Abastecimiento y conservación del agua dulce | nunca | media |
-| Ciclo de vida de las estrellas | 5.° | Gravedad y órbitas | nunca | media |
-| Exploración espacial | 4.° | Gravedad y órbitas | nunca | media |
 | Origen del universo: el Big Bang | 5.° | Efecto Doppler | 11.° | media |
 | Tiempo geológico y datación | 5.° | Desintegración radiactiva | 11.° | media |
-| Ciclones tropicales y tormentas | 4.° | Calentamiento desigual de la Tierra y circulación atmosférica | 9.° | media |
-| Clima: diferencia con el tiempo, tipos y factores | 4.° | Calentamiento desigual de la Tierra y circulación atmosférica | 9.° | media |
-| Patrones estacionales: época seca y lluviosa | 2.° | Tiempo atmosférico y sus variables | 7.° | media |
 | Tipos de rocas: ígneas, sedimentarias y metamórficas | 3.° | Minerales y sus propiedades | 8.° | media |
-| Cambio climático: causas y efectos | 7.° | Ciclo del carbono en los sistemas terrestres | 10.° | media |
+| Ciclones tropicales y tormentas | 4.° | Calentamiento desigual de la Tierra y circulación atmosférica | 8.° | media |
+| Clima: diferencia con el tiempo, tipos y factores | 4.° | Calentamiento desigual de la Tierra y circulación atmosférica | 8.° | media |
+| Exploración espacial | 4.° | Gravedad y órbitas | 8.° | media |
 | Capas de la atmósfera y variación con la altitud | 3.° | Presión hidrostática y atmosférica | 6.° | media |
+| Ciclo de vida de las estrellas | 5.° | Gravedad y órbitas | 8.° | media |
 | Sismos y fallas geológicas | 2.° | Límites de placas: convergentes, divergentes y transformantes | 5.° | media |
 | Aguas subterráneas y acuíferos | 3.° | Suelo: formación, componentes y tipos | 5.° | media |
 | Amenazas naturales geológicas e hidrometeorológicas | 2.° | Ciclones tropicales y tormentas | 4.° | media |
 | Ciclo de las rocas | 3.° | Origen del magma y vulcanismo | 5.° | media |
 | Ciclones tropicales y tormentas | 4.° | Presión hidrostática y atmosférica | 6.° | media |
-| Grandes cambios globales: glaciaciones e impactos de asteroides | 3.° | Registro fósil y cambios ambientales del pasado | 5.° | media |
 | Volcanes: estructura, tipos y productos | 3.° | Origen del magma y vulcanismo | 5.° | media |
+| Cambio climático: causas y efectos | 7.° | Ciclo del carbono en los sistemas terrestres | 8.° | media |
 | Grandes cambios globales: glaciaciones e impactos de asteroides | 3.° | Clima: diferencia con el tiempo, tipos y factores | 4.° | media |
+| Tiempo atmosférico y sus variables | 2.° | La atmósfera y su composición | 3.° | media |
+| Tiempo atmosférico y sus variables | 2.° | Temperatura y escalas termométricas | 3.° | media |
 
 
 ## Cómo usar esto

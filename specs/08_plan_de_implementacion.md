@@ -70,9 +70,23 @@ Spec 11. 9 países, 62 documentos y 9.040 objetivos (con la secundaria baja de K
 `data/grafo/internacional/`, informes, Excel y CSV de revisión en `internacional/`, y hallazgos verificados en
 `internacional/README.md`, y visor en `internacional/visor.html`. Falta la revisión del MINED.
 
+## Fase 5-quater · El grafo principal pasa a la malla V2 ✅ (2026-10-11)
+La V2 del MINED contiene los 1.260 temas de la V1 sin cambios (mismo id, hoja, fila y texto; lo verifica
+`tests/test_mallas.py`) y agrega 47 en 2.°–9.°. `config/mallas.yaml` lee la V2 y la V1 queda en `config/mallas_v1.yaml`.
+- Las clasificaciones previas TIMSS/PISA se traducen al nombre de archivo de la V2 (`legado` en la config); los 47 temas
+  nuevos se alinearon con los mismos prompts (`gskg alinear preparar-temas | unir-temas`) y se etiquetaron con conceptos
+  (`preparar-etiquetado` solo prepara pendientes). Cuatro cambian de asignatura por coherencia con su unidad
+  (`revisiones/2026-10-11_coherencia_asignatura_v2.json`, pendiente del MINED).
+- Grafo: 1.307 temas (1.292 en alcance), 3.675 nodos y 20.538 aristas; objetivos de marco cubiertos 306 → 317. La V2
+  cubre «Herencia y estrategias de reproducción» (TIMSS 4.°), el único objetivo de Biología 4.° sin tema en la V1.
+- Grados: 29 bloques temáticos nuevos con resumen (ronda R4). GraphRAG sin cambios (MRR 0,849 / 0,661 / 0,544 / 0,734).
+- **Conciliación de las propuestas** (`data/interim/propuestas/adopcion_v2.json`): de 47 acciones «nuevo», el MINED adoptó
+  5 en el mismo grado (Física y Tierra y Espacio de 3.°–4.°), 8 en otro grado y 8 en parte; 26 siguen pendientes. Las
+  adoptadas no se vuelven a simular y `asignaturas/PROPUESTAS.md` lista la conciliación. Falta confirmarla con el MINED.
+
 ## Fase 5-ter · Grafos internacionales de 2.°–8.° (spec 12) · lista para ejecutar
-Código por tramo (`--tramo 2_8`), catálogo `config/internacional_2_8.yaml` y costo estimado (116 llamadas de
-extracción). Pendiente: aprobación del gasto y descarga de HK y ON 1–8.
+Código por tramo (`--tramo 2_8`), catálogo `config/internacional_2_8.yaml`. HK P1–6 y S1–3 y ON 1–8 descargados
+(2026-10-09). Extracción hecha (9 países, 3.616 objetivos; 2026-10-09 y 2026-10-11); etiquetado aprobado y en curso.
 
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.

@@ -43,3 +43,18 @@ def test_simulacion_aplica_quitas_de_otras_asignaturas():
 
     r = simular("quimica", 10, 11, *cargar())
     assert any(q["asignatura"] == "biologia" for q in r["quitas_de_otras_asignaturas"])
+
+
+def test_conciliacion_con_la_v2_completa_y_valida():
+    """Cada acción «nuevo» tiene su conciliación con la V2, y los temas citados son de los 47 que agregó la V2."""
+    from goes_science_kg.ingesta.mallas import extraer
+    from goes_science_kg.propuesta import ESTADOS_ADOPCION, adopcion_v2
+
+    adopcion = adopcion_v2()
+    nuevos_v2 = {t.id for t in extraer()} - {t.id for t in extraer("mallas_v1")}
+    for p in sorted(ruta("asignaturas").glob("*/propuesta/propuesta_G*.json")):
+        asig, ciclo = p.parent.parent.name, p.stem.removeprefix("propuesta_")
+        for a in json.loads(p.read_text(encoding="utf-8"))["acciones"]:
+            if a["accion"] == "nuevo":
+                f = adopcion[(asig, ciclo, a["n"])]
+                assert f["estado"] in ESTADOS_ADOPCION and set(f["temas_v2"]) <= nuevos_v2

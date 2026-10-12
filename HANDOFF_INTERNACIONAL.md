@@ -14,7 +14,9 @@ crítico y detallado. **Todo con la cuenta GOES**:
 
 ## Decisiones del usuario (no reabrir)
 - **Países (9):** SG, JP, KR, ENG, AU, HK, TW, EE, ON. HK y TW ya están agregados a `config/referentes.yaml`.
-- **Contraste contra la malla V2.** La V1 sigue alimentando el grafo principal.
+- **Contraste contra la malla V2.** Desde el 2026-10-11 la V2 también alimenta el grafo principal (decisión del
+  usuario): contiene los 1.260 temas de la V1 sin cambios y agrega 47, así que nada de lo anterior se pierde. La V1
+  queda en `config/mallas_v1.yaml` solo como referencia.
 - **Dos niveles por país:** núcleo (lo cursa la mayoría) y especialización (electiva). El contraste principal es
   contra el núcleo; la especialización funciona como techo.
 - **Ontario:** se acepta la fuente de Grade 9.
@@ -29,7 +31,7 @@ crítico y detallado. **Todo con la cuenta GOES**:
 |---|---|
 | Descarga de fuentes oficiales (~100 docs) | ✅ `data/fuentes/externos/paises/*/sec_bach/` (Japón: `japon/bachillerato/`), cada una con su `_registro.json` (URL, sha256, vigencia, % de alumnos). Ya están en `manifest.csv` y `estado.csv` |
 | Catálogo de extracción | ✅ `config/internacional.yaml`: 60 documentos, uno por curso, con páginas del PDF, nivel y grado SV |
-| Malla V2 | ✅ copiada a `data/fuentes/mined/Mallas sugeridas v2/`; `config/mallas_v2.yaml`; `extraer("mallas_v2")` |
+| Malla V2 | ✅ copiada a `data/fuentes/mined/Mallas sugeridas v2/`; `config/mallas.yaml` (desde el 2026-10-11; antes `mallas_v2.yaml`); `extraer()` |
 | Etiquetado de la malla V2 | ✅ 2.°–11.° completo: `data/interim/internacional/etiquetado/malla_v2_*.json` (746 temas de 9.°–11.° y 561 de 2.°–8.°) |
 | Extracción y validación de los países | ✅ 9 países, 8.602 objetivos; la 2.ª corrida hace 0 llamadas (caché estable verificada) |
 | Etiquetado de los países | ✅ 9 países; la V2 de 9.°–11.° con dos vocabularios (`malla_v2_<asig>` y `_completo`) |

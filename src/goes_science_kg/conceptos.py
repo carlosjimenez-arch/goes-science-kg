@@ -202,15 +202,27 @@ def consolidar_vocabulario() -> dict:
 
 
 # -- 2. etiquetado ------------------------------------------------------------------------------
-def preparar_etiquetado(nodos: list[Nodo]) -> list[str]:
-    """Un lote por asignatura y grado con los temas y el vocabulario de ESA asignatura + prácticas."""
+def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True) -> list[str]:
+    """Un lote por asignatura y grado con los temas y el vocabulario de ESA asignatura + prácticas.
+
+    Con solo_pendientes, únicamente los temas sin etiquetar que tampoco están ya en un lote (p. ej. los que agregó
+    la V2), en lotes `<asig>_G<gg>_<n>` numerados tras los existentes; así no se reescriben lotes que ya tienen
+    salida y correrlo dos veces es seguro. Sin él, se rehacen los lotes base `<asig>_G<gg>`."""
 
     voc, prac = vocabulario(), practicas()
     escritos = []
     temas = [n for n in nodos if n.tipo == TipoNodo.TEMA and n.asignatura]
+    existentes = sorted(ruta(f"{DIR}/lotes").glob("lote_*.json"))
+    if solo_pendientes:
+        hechos = set(etiquetado()) | {i["id"] for p in existentes
+                                      for i in json.loads(p.read_text(encoding="utf-8"))["items"]}
+        temas = [t for t in temas if t.id.removeprefix("TEMA:") not in hechos]
     for asig, grado in sorted({(t.asignatura, t.grado) for t in temas}):
+        nombre = f"{asig}_G{grado:02d}"
+        if solo_pendientes:
+            nombre += f"_{sum(1 for p in existentes if p.stem.startswith(f'lote_{nombre}')) + 1}"
         lote = {
-            "lote": f"{asig}_G{grado:02d}", "version": VERSION_ETIQUETADO,
+            "lote": nombre, "version": VERSION_ETIQUETADO,
             "instrucciones": "prompts/etiquetar_conceptos.md",
             "vocabulario": [{k: c[k] for k in ("id", "nombre", "definicion")} for c in voc.values()
                             if c["asignatura"] == asig],
@@ -224,10 +236,30 @@ def preparar_etiquetado(nodos: list[Nodo]) -> list[str]:
     return escritos
 
 
+def errores_lote_temas(lote: dict, salida: list[dict]) -> list[str]:
+    """Errores de la salida de un lote de temas: los mismos que hacen fallar unir_etiquetado (y que revisa
+    `gskg lotes validar` al terminar el subagente etiquetador-conceptos)."""
+    voc, prac = vocabulario(), practicas()
+    por_id = {s.get("id"): s for s in salida}
+    faltan = {i["id"] for i in lote["items"]} - por_id.keys()
+    errores = [f"faltan {sorted(faltan)[:3]}"] if faltan else []
+    for item in lote["items"]:
+        if not (s := por_id.get(item["id"])):
+            continue
+        if malos := [c for c in s.get("conceptos", []) if c not in voc]:
+            errores.append(f"{item['id']}: conceptos inexistentes {malos}")
+        if malos := [c for c in s.get("practicas", []) if c not in prac]:
+            errores.append(f"{item['id']}: prácticas inexistentes {malos}")
+        if not s.get("conceptos") and not s.get("practicas"):
+            errores.append(f"{item['id']}: sin conceptos ni prácticas")
+        if s.get("confianza") not in CONFIANZAS:
+            errores.append(f"{item['id']}: confianza inválida")
+    return errores
+
+
 def unir_etiquetado() -> dict:
     """Valida las salidas del subagente contra sus lotes y escribe etiquetado_temas.json y conceptos_propuestos.json
     (nombres nuevos por frecuencia). Lanza ValueError si hay errores; devuelve los conteos."""
-    voc, prac = vocabulario(), practicas()
     filas, errores, nuevos = [], [], Counter()
     for p_lote in sorted(ruta(f"{DIR}/lotes").glob("lote_*.json")):
         lote = json.loads(p_lote.read_text(encoding="utf-8"))
@@ -235,21 +267,13 @@ def unir_etiquetado() -> dict:
         if not p_sal.exists():
             errores.append(f"falta {p_sal.name}")
             continue
-        salida = {s["id"]: s for s in json.loads(p_sal.read_text(encoding="utf-8"))}
-        if faltan := {i["id"] for i in lote["items"]} - salida.keys():
-            errores.append(f"{p_sal.name}: faltan {sorted(faltan)[:3]}")
+        lista = json.loads(p_sal.read_text(encoding="utf-8"))
+        errores += [f"{p_sal.name}: {e}" for e in errores_lote_temas(lote, lista)]
+        salida = {s["id"]: s for s in lista}
         for item in lote["items"]:
             s = salida.get(item["id"])
             if not s:
                 continue
-            if malos := [c for c in s.get("conceptos", []) if c not in voc]:
-                errores.append(f"{item['id']}: conceptos inexistentes {malos}")
-            if malos := [c for c in s.get("practicas", []) if c not in prac]:
-                errores.append(f"{item['id']}: prácticas inexistentes {malos}")
-            if not s.get("conceptos") and not s.get("practicas"):
-                errores.append(f"{item['id']}: sin conceptos ni prácticas")
-            if s.get("confianza") not in CONFIANZAS:
-                errores.append(f"{item['id']}: confianza inválida")
             for n in s.get("nuevos", []):
                 nuevos[n] += 1
             filas.append({"id": item["id"], "conceptos": s.get("conceptos", []), "practicas": s.get("practicas", []),
@@ -319,10 +343,25 @@ def preparar_etiquetado_paises(nodos: list[Nodo], por_lote: int = 70, solo_pendi
     return escritos
 
 
+def errores_lote_paises(lote: dict, salida: list[dict]) -> list[str]:
+    """Errores de la salida de un lote de objetivos de países (los de unir_etiquetado_paises)."""
+    voc, prac = vocabulario(), practicas()
+    por_id = {s.get("id"): s for s in salida}
+    errores = []
+    for item in lote["items"]:
+        if not (s := por_id.get(item["id"])):
+            errores.append(f"falta {item['id']}")
+            continue
+        if malos := [c for c in s.get("conceptos", []) + s.get("practicas", []) if c not in voc and c not in prac]:
+            errores.append(f"{item['id']}: ids inexistentes {malos}")
+        if s.get("confianza") not in CONFIANZAS:
+            errores.append(f"{item['id']}: confianza inválida")
+    return errores
+
+
 def unir_etiquetado_paises() -> dict:
     """Valida las salidas de los lotes de países y escribe etiquetado_paises.json (un id repetido: gana el último).
     Lanza ValueError si hay errores; devuelve los conteos."""
-    voc, prac = vocabulario(), practicas()
     filas, errores = [], []
     for p_lote in sorted(ruta(f"{DIR}/lotes_paises").glob("lote_*.json")):
         lote = json.loads(p_lote.read_text(encoding="utf-8"))
@@ -330,16 +369,12 @@ def unir_etiquetado_paises() -> dict:
         if not p_sal.exists():
             errores.append(f"falta {p_sal.name}")
             continue
-        salida = {s["id"]: s for s in json.loads(p_sal.read_text(encoding="utf-8"))}
+        lista = json.loads(p_sal.read_text(encoding="utf-8"))
+        errores += [f"{p_sal.name}: {e}" for e in errores_lote_paises(lote, lista)]
+        salida = {s["id"]: s for s in lista}
         for item in lote["items"]:
-            s = salida.get(item["id"])
-            if not s:
-                errores.append(f"{p_sal.name}: falta {item['id']}")
+            if not (s := salida.get(item["id"])):
                 continue
-            if malos := [c for c in s.get("conceptos", []) + s.get("practicas", []) if c not in voc and c not in prac]:
-                errores.append(f"{item['id']}: ids inexistentes {malos}")
-            if s.get("confianza") not in CONFIANZAS:
-                errores.append(f"{item['id']}: confianza inválida")
             filas.append({"id": item["id"], "conceptos": s.get("conceptos", []), "practicas": s.get("practicas", []),
                           "confianza": s.get("confianza"), "justificacion": s.get("justificacion"),
                           "version": lote["version"]})

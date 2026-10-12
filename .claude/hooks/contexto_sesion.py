@@ -52,14 +52,31 @@ def _decisiones() -> list[str]:
     return lineas
 
 
+ETAPAS = (  # (nombre, objetivos extraídos, etiquetado de los países, consenso); rutas de internacional/tramo.py
+    ("9.°–11.° (spec 11)", "data/interim/internacional/objetivos", "data/interim/internacional/etiquetado",
+     "data/grafo/internacional/consenso.json"),
+    ("2.°–8.° (spec 12)", "data/interim/internacional_2_8/objetivos", "data/interim/internacional_2_8/etiquetado",
+     "data/grafo/internacional_2_8/consenso.json"),
+)
+
+
+def _estado_etapa(objetivos: str, etiquetado: str, consenso: str) -> str:
+    """Hasta dónde llegó una etapa, mirando lo que dejó en disco (una extracción a medias también cuenta)."""
+    if (RAIZ / consenso).exists():
+        return "construido"
+    d_obj, d_etq = RAIZ / objetivos, RAIZ / etiquetado
+    paises = sorted(p.stem for p in d_obj.glob("*.json") if not p.stem.endswith("_descartados")) \
+        if d_obj.exists() else []
+    if not paises:
+        return "lista para ejecutar; espera aprobación del gasto en Vertex"
+    etiquetados = sorted({p.stem.split("_")[1] for p in d_etq.glob("pais_*.json")}) if d_etq.exists() else []
+    if etiquetados:
+        return f"países etiquetados ({len(etiquetados)}: {', '.join(etiquetados)}); falta construir"
+    return f"objetivos extraídos de {len(paises)} países ({', '.join(paises)}); falta etiquetar y construir"
+
+
 def _etapas() -> list[str]:
-    def hay(rel: str) -> bool:
-        return (RAIZ / rel).exists()
-    pendiente = "lista para ejecutar; espera aprobación del gasto en Vertex"
-    return [
-        f"  - 9.°–11.° (spec 11): {'construido' if hay('data/grafo/internacional/consenso.json') else 'sin construir'}",
-        f"  - 2.°–8.° (spec 12): {'construido' if hay('data/grafo/internacional_2_8/consenso.json') else pendiente}",
-    ]
+    return [f"  - {nombre}: {_estado_etapa(*rutas)}" for nombre, *rutas in ETAPAS]
 
 
 def main() -> None:

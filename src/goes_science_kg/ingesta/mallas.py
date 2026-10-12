@@ -73,7 +73,7 @@ def _columnas(ws: ReadOnlyWorksheet) -> list[str]:
 
 @cache
 def extraer(nombre_config: str = "mallas") -> tuple[TemaMalla, ...]:
-    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la Versión 1).
+    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la vigente, Versión 2; «mallas_v1», la V1).
 
     Con caché: leer los Excel es lo más lento del proceso y varios pasos piden la misma malla en una corrida.
     """

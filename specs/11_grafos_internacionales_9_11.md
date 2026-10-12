@@ -10,8 +10,8 @@
   en Bachillerato. Esa ausencia es un hallazgo estructural que se mide, no se omite.
 - **Países (9):** Singapur, Japón, Corea del Sur, Inglaterra, Australia, Hong Kong, Taiwán, Estonia, Ontario.
   Hong Kong y Taiwán se agregaron a `config/referentes.yaml` con autorización del usuario (2026-10-07).
-- **Malla a contrastar:** Versión 2 (`config/mallas_v2.yaml` → `data/fuentes/mined/Mallas sugeridas v2/`).
-  El grafo principal sigue leyendo la Versión 1.
+- **Malla a contrastar:** Versión 2 (`config/mallas.yaml` → `data/fuentes/mined/Mallas sugeridas v2/`).
+  Desde el 2026-10-11 el grafo principal también lee la V2 (la V1 queda en `config/mallas_v1.yaml`).
 
 ## Equivalencia de grados (por edad de ingreso; SV 1.° ≈ 7 años)
 | País | SV 9.° (≈15) | SV 10.° (≈16) | SV 11.° (≈17) | Fuera de rango |

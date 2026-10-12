@@ -7,7 +7,7 @@
 | Grado | Temas | Unidades principales |
 |---|---|---|
 | 2.° | 9 | 1. Materia. |
-| 3.° | 12 | 3. El agua.; 2. Interacciones terrestres. |
+| 3.° | 13 | 3. El agua.; 2. Interacciones terrestres. |
 | 5.° | 18 | 3. Estructura atómica.; 4. Tabla periódica. |
 | 6.° | 10 | 4. Interacciones químicas. |
 | 7.° | 13 | 1. Compuestos inorgánicos; 5. Recurso hídrico |
@@ -16,7 +16,7 @@
 | 10.° | 112 | 1. La química como ciencia: ciclo de indagación; 12. Cinética y equilibrio químico; 5. Los enlaces químicos; 3. Modelos atómicos y estructura |
 | 11.° | 97 | 3. Compuestos orgánicos; 2. Introducción a la química orgánica; 4. Reacción ácido-base; 6. Electroquímica |
 
-Total: **316 temas**. Asignados por: malla 209, pisa 4, revision 8, timss 95.
+Total: **317 temas**. Asignados por: malla 209, pisa 4, revision 8, timss 96.
 
 ## Cobertura de los marcos internacionales
 
