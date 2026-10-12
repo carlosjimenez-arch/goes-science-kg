@@ -312,6 +312,10 @@ def grados_sv(d: dict, grado_pais: str) -> tuple[float, float]:
     agregado («P5 Foundation»), el rango que las cubre. Sin coincidencia, el rango del documento."""
     mapa = {k.lower(): v for k, v in (d.get("grados_pais") or {}).items()}
     gp = (grado_pais or "").strip().lower()
+    # «Units 1 and 2», «Unit 3 & 4» → «unit 1 unit 2»: listas de números tras una palabra de las claves.
+    for palabra in {k.rsplit(" ", 1)[0] for k in mapa if re.fullmatch(r"\w+ \d+", k)}:
+        gp = re.sub(rf"\b{palabra}s?\s+(\d+(?:\s*(?:,|&|and|y)\s*(?:{palabra}\s+)?\d+)+)",
+                    lambda m, w=palabra: " ".join(f"{w} {n}" for n in re.findall(r"\d+", m.group(1))), gp)
     valores = [mapa[gp]] if gp in mapa else [v for k, v in mapa.items() if gp and re.search(
         rf"(?<![\w]){re.escape(k)}(?![\w])", gp)]
     if not valores:

@@ -143,8 +143,9 @@ Formato de la evidencia: tema de la V2 con hoja y fila; país con documento y p�
   resiste las dos lecturas.
 - **Notas de los países que excluyen contenido** (KR p. 39: «no se trata la neutralización»; SG p. 48: opcional) y
   notas de alcance de JP (触れること) que no se importaron.
-- **Metadatos de 9.°–11.°:** 66 objetivos de electivas de AU Senior Secondary («Unit 1 & 2») caen en el rango del
-  documento. No se corrigió para no mover salidas ya verificadas; afecta solo a la especialización.
+- **Metadatos de 9.°–11.° (corregidos el 2026-10-12):** 66 objetivos de electivas de AU Senior Secondary («Units 1
+  and 2», «Unit 3 & 4») tenían el rango del documento. Con la corrección no cambia ninguna clase, secuencia ni informe
+  de 9.°–11.°; solo el primer grado de AU en 4 conceptos de especialización (medio grado).
 - **Ids inventados:** 52 ids de concepto inventados por el modelo quedaron como «propuestos» y no entran al grafo
   (31 son de AU). Un objetivo de JP quedó sin etiquetar.
 - **Rangos de grados:** KR, TW y ENG KS1–2 dan rangos; el grado de cada objetivo es el punto medio.

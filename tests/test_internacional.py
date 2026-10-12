@@ -295,11 +295,12 @@ def test_partes_validas_y_ampliar():
     ("second school stage", (4, 6)),
     ("P5 Foundation", (5, 5)),             # la clave con un agregado
     ("P4-P6", (4, 6)),                     # varias claves: el rango que las cubre
+    ("Units 1 and 2", (2, 2)),             # plural con lista de números (AU Senior Secondary)
     ("", (2, 6)),                          # sin grado del país: el rango del documento
 ])
 def test_grados_sv_del_catalogo(grado_pais, esperado):
     d = {"grado_sv": [2, 6], "grados_pais": {"first school stage": [2, 3], "second school stage": [4, 6],
-                                             "P4": 4, "P5": 5, "P6": 6}}
+                                             "P4": 4, "P5": 5, "P6": 6, "Unit 1": 2, "Unit 2": 2}}
     assert extraer.grados_sv(d, grado_pais) == esperado
 
 
