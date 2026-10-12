@@ -1,8 +1,9 @@
 # 12 · Grafos internacionales de 2.° a 8.° y contraste con la malla Versión 2
 
-> Siguiente etapa lógica después de la spec 11 (9.°–11.°). Queda **lista para ejecutar**: el código ya trabaja por
-> tramo de grados, el catálogo de fuentes está en `config/internacional_2_8.yaml` y el costo está estimado. Correrla
-> cuesta llamadas a Vertex, así que espera la aprobación del responsable del proyecto.
+> **Construida el 2026-10-11** (extracción 2026-10-09 y 2026-10-11; etiquetado aprobado: 162 llamadas). 9 países,
+> 3.615 objetivos, 448 conceptos en consenso. La verificación de 24 hallazgos dio 46 % de falsos por el etiquetado de
+> la V2: solo se presentan los hallazgos verificados de `internacional/2_8/README.md`; las mejoras de método pendientes
+> están ahí mismo.
 
 ## Qué cambia frente a la spec 11
 El método es el mismo: extraer y validar con dos modelos distintos, etiquetar con el catálogo congelado, construir el
@@ -30,8 +31,8 @@ antes de 9.°; no es un problema, solo ubica el concepto.
 | Australia | Year 3 | Year 6 | Year 9 | importado: v9 F–10 |
 | Taiwán | 三年級 (Ⅱ) | 六年級 (Ⅲ) | 國三 (Ⅳ) | 第二~第三學習階段 (pp. 15–25), 第四 (pp. 25–35) |
 | Estonia | grado 2 | grado 5 | grado 8 | etapas I–II (pp. 8–11), III (pp. 12–28) |
-| Ontario | Grade 3 | Grade 6 | Grade 9 | SNC1W (SV 8). **Pendiente:** Science and Technology 1–8 (2022) |
-| Hong Kong | P3 | P6 | S3 | **Pendiente:** Primary Science (2025) y Science S1–3 |
+| Ontario | Grade 3 | Grade 6 | Grade 9 | Science and Technology 1–8 (2022), Grades 3–8 = SV 2–7, y SNC1W (SV 8) |
+| Hong Kong | P3 | P6 | S3 | Science (P1–6) Curriculum Guide (2025) y Science (S1–3) Curriculum Framework (2025) |
 
 Hasta descargar las fuentes pendientes, Hong Kong no tiene núcleo en 2.°–8.° y Ontario solo aporta 8.°: el denominador
 del consenso es de 7 países en casi todos los grados. Se declara en el informe.

@@ -69,7 +69,10 @@ def clase_de(sv_primer: int | None, sv_en_tramo: int | None, g_cons: int | None,
         return "faltante" if g_cons is not None else "no_aplica"
     if sv_en_tramo is None:
         if sv_primer > grados[-1]:          # la V2 lo enseña solo después del tramo
-            return "tardio" if g_cons is not None else "posterior"
+            if g_cons is None:
+                return "posterior"
+            # «tardío» exige ≥ 2 grados también aquí (docstring y spec 12); a menos distancia el momento coincide.
+            return "tardio" if sv_primer >= g_cons + 2 else "alineado"
         return "no_retomado" if n_nucleo_en_tramo >= MIN_PAISES else "previo"
     if sv_primer < grados[0]:
         return "retomado"

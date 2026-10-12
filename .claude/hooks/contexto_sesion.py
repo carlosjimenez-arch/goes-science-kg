@@ -19,6 +19,7 @@ DECISIONES = {
     "prerrequisitos rechazados": "data/interim/prerrequisitos/rechazados.json",
     "divisiones de conceptos": "data/interim/conceptos/divisiones.json",
     "clases corregidas (9.°–11.°)": "data/interim/internacional/revisiones.json",
+    "clases corregidas (2.°–8.°)": "data/interim/internacional_2_8/revisiones.json",
 }
 
 

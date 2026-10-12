@@ -31,6 +31,7 @@ ARCHIVOS = {
     "prerrequisito_rechazado": "data/interim/prerrequisitos/rechazados.json",
     "division": "data/interim/conceptos/divisiones.json",
     "clase_internacional": "data/interim/internacional/revisiones.json",
+    "clase_internacional_2_8": "data/interim/internacional_2_8/revisiones.json",
 }
 ENCABEZADO = ["clave", "tipo", "decision_tomada", "justificacion", "decidido_por", "estado", *COLUMNAS_DECISION]
 ENCABEZADO_ASIGNACIONES = ["clave", "concepto_dividido", "conjunto", "elemento", "texto", "asignado_a",
@@ -74,6 +75,10 @@ DESCRIPCION: dict[str, tuple[Callable[[dict], str], Callable[[dict], str], str, 
     "clase_internacional": (lambda r: r["concepto"],
                             lambda r: f"Clase de «{r['nombre']}» en el contraste: {r['clase_ia']} → {r['clase']}",
                             "justificacion", "revisado_por"),
+    "clase_internacional_2_8": (lambda r: r["concepto"],
+                                lambda r: (f"Clase de «{r['nombre']}» en el contraste de 2.°–8.°: {r['clase_ia']} → "
+                                           f"{r['clase']}"),
+                                "justificacion", "revisado_por"),
 }
 
 
