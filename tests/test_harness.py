@@ -77,6 +77,54 @@ def test_contexto_de_sesion():
 def test_settings_conecta_los_hooks():
     s = json.loads(ruta(".claude/settings.json").read_text(encoding="utf-8"))
     comandos = [h["command"] for grupo in s["hooks"].values() for m in grupo for h in m["hooks"]]
-    for script in ("contexto_sesion.py", "guardia_bash.py", "guardia_archivos.py"):
+    for script in ("contexto_sesion.py", "guardia_bash.py", "guardia_archivos.py", "validar_lotes.py"):
         assert any(script in c for c in comandos) and (HOOKS / script).is_file()
     assert "Read(./.env)" in s["permissions"]["deny"]
+
+
+# -- Harness de agentes: subagentes de lotes y su validación al terminar ---------------------------------------------
+def _frontmatter(p) -> dict:
+    texto = p.read_text(encoding="utf-8")
+    assert texto.startswith("---\n"), p
+    cabecera = texto.split("---\n", 2)[1]
+    return dict(linea.split(": ", 1) for linea in cabecera.strip().splitlines())
+
+
+def test_cada_subagente_de_lotes_esta_definido_y_se_autovalida():
+    from goes_science_kg.lotes import AGENTES
+
+    for nombre in AGENTES:
+        p = ruta(f".claude/agents/{nombre}.md")
+        fm = _frontmatter(p)
+        assert fm["name"] == nombre and fm["description"]
+        assert f"gskg lotes validar --agente {nombre}" in p.read_text(encoding="utf-8")
+        assert "Write" in fm["tools"] and "Agent" not in fm["tools"]   # escribe su salida; no delega
+
+
+def test_subagent_stop_valida_a_todos_los_subagentes_de_lotes():
+    from goes_science_kg.lotes import AGENTES
+
+    s = json.loads(ruta(".claude/settings.json").read_text(encoding="utf-8"))
+    (grupo,) = s["hooks"]["SubagentStop"]
+    assert set(grupo["matcher"].split("|")) == set(AGENTES)
+    assert "validar_lotes.py" in grupo["hooks"][0]["command"]
+
+
+def test_las_salidas_actuales_pasan_la_validacion():
+    from goes_science_kg.lotes import validar
+
+    assert validar() == {}
+
+
+def test_validar_lotes_bloquea_una_salida_invalida_y_deja_pasar_las_validas(tmp_path):
+    d = tmp_path / "data/interim/comunidades"
+    d.mkdir(parents=True)
+    (d / "lote_X.json").write_text(json.dumps([{"id": "COM:G02-01", "grado": 2, "conceptos": ["a", "b"]}]))
+    entrada = {"hook_event_name": "SubagentStop", "agent_type": "redactor-bloques", "agent_id": f"prueba-{os.getpid()}"}
+    (d / "salida_X.json").write_text(json.dumps([{"id": "COM:G02-01", "titulo": "uno dos tres cuatro cinco seis siete "
+                                                  "ocho nueve", "resumen": "Breve."}]))
+    salida = _correr("validar_lotes.py", entrada, GSKG_LOTES_BASE=str(tmp_path))
+    assert salida["decision"] == "block" and "más de 8 palabras" in salida["reason"]
+    (d / "salida_X.json").write_text(json.dumps([{"id": "COM:G02-01", "titulo": "Seres vivos", "resumen": "Breve."}]))
+    assert _correr("validar_lotes.py", entrada, GSKG_LOTES_BASE=str(tmp_path)) is None
+    assert _correr("validar_lotes.py", {**entrada, "agent_type": "verificador-hallazgos"}) is None

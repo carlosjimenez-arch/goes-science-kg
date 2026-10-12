@@ -10,6 +10,11 @@ description: Produce la propuesta de malla mejorada de una asignatura (mantener,
 > `gskg propuesta candidatos <asig> <g0> <g1> --marco T4_27|T8_27` → subagente con `prompts/propuesta_curricular.md`
 > → `gskg propuesta simular <asig> <g0> <g1>` (si crea errores de secuencia, devuélveselos al subagente) →
 > `gskg propuesta excel <asig> <g0> <g1>`. Falta Bachillerato (10.°–11.°, marco AUSS o TA15).
+>
+> **Malla nueva del MINED (2026-10-11, V2):** antes de revisar una propuesta, concilia sus acciones «nuevo» con los
+> temas que agregó la malla: `gskg propuesta preparar-adopcion` → subagente `conciliador-propuestas` →
+> `gskg propuesta unir-adopcion` → `make propuestas`. Las acciones ya adoptadas en el mismo grado no se vuelven a
+> simular y `asignaturas/PROPUESTAS.md` lista la conciliación.
 
 Especificación completa: `specs/06_propuesta_curricular.md`. Trabajo previo útil:
 `reportes/cobertura_curricular/data/referencia/presupuesto_candidatos.json` y `prompts/presupuesto_lote.md`.

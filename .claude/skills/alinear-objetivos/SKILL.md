@@ -14,7 +14,9 @@ Prompts de referencia (ya probados): `reportes/cobertura_curricular/prompts/alin
      (ya hecho: `gskg alinear preparar-bachillerato` / `unir-bachillerato`, prompt `prompts/alinear_bachillerato_auss.md`).
 2. **Muestra de control**: 20 ítems al azar. Clasifícalos y muéstralos al usuario. Si hay 3 errores o más,
    ajusta las instrucciones antes de seguir.
-3. **Subagentes en paralelo**, uno por lote, con estas reglas:
+3. **Subagentes `alineador-marcos` en paralelo** (`.claude/agents/alineador-marcos.md`), uno por lote; al terminar, el
+   hook los valida con `gskg lotes validar`. Lotes de temas sin clasificación: `gskg alinear preparar-temas` →
+   subagentes → `gskg alinear unir-temas`. Reglas que ya trae el subagente:
    - `obj1` = el objetivo que mejor describe el contenido; `obj2` = opcional, solo si es claro.
    - `FUERA` si no hay contenido del marco.
    - Investigaciones: va a un área de *Investigations* solo si el foco es la práctica (planificar, medir,

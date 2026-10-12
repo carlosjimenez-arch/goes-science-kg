@@ -18,6 +18,14 @@
         ]
       }
     ],
+    "SubagentStop": [
+      {
+        "matcher": "alineador-marcos|etiquetador-conceptos|ordenador-prerrequisitos|redactor-bloques|conciliador-propuestas",
+        "hooks": [
+          {"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validar_lotes.py", "timeout": 240}
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Bash",

@@ -22,7 +22,8 @@ Evidencias, de más fuerte a más débil:
 Pasos:
 1. Candidatos: para cada par de conceptos de la misma asignatura con co-ocurrencia en objetivos, calcula
    la evidencia de tipo 2 con un script.
-2. Subagentes por asignatura: confirman o rechazan los candidatos y agregan los de tipo 1 y 3.
+2. Subagentes `ordenador-prerrequisitos`, uno por asignatura (`.claude/agents/`; el hook valida su salida al
+   terminar): confirman o rechazan los candidatos y agregan los de tipo 1 y 3.
    Salida: `{origen, destino, tipo_evidencia, evidencias:[…], confianza, justificacion}`.
 3. Elimina la redundancia transitiva (si A→B→C, quita A→C salvo que tenga evidencia declarada).
 4. **Valida que sea un DAG** (`networkx.is_directed_acyclic_graph`). Si hay un ciclo, quita la arista de
