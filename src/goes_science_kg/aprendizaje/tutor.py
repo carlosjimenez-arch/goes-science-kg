@@ -45,8 +45,10 @@ Reglas (si no las cumples, tu turno se descarta):
 2. «mensaje»: {palabras} palabras como máximo. «pregunta»: una sola pregunta breve ({pregunta} palabras como máximo);
    en «cerrar» puede ir vacía. El enunciado y las opciones de la actividad se muestran aparte: no los copies.
 3. Nunca reveles la respuesta de la actividad que sigue: ni la letra, ni el texto de la opción correcta, ni el valor.
-4. Usa solo lo que está en el contexto. «fuentes»: las etiquetas (F1, F2…) de las fuentes del contexto en que te
-   apoyas; no inventes otras ni pongas enlaces.
+4. Usa solo lo que está en el contexto. Las definiciones van con el sentido exacto del contexto (foco y microtema):
+   no las simplifiques de forma que digan otra cosa (por ejemplo, no confundas un concepto con el rasgo que produce).
+   «fuentes»: las etiquetas (F1, F2…) de las fuentes en que te apoyas, solo en ese campo y nunca dentro del mensaje;
+   no inventes otras ni pongas enlaces.
 5. No pidas datos personales (nombre completo, dirección, teléfono, correo) ni hables de la evaluación del estudiante.
 Responde solo con el JSON pedido."""
 
@@ -132,6 +134,8 @@ def errores_turno(t: dict, tarea: str, grado: int, permitidas: dict[str, str], a
         e.append(f"revela la respuesta: {motivo}")
     if extra := sorted(set(t.get("fuentes") or []) - permitidas.keys()):
         e.append(f"fuentes que no están en el contexto: {extra}")
+    if re.search(r"\bF\d+\b", f"{mensaje} {pregunta}"):
+        e.append("etiquetas de fuentes dentro del texto (van solo en «fuentes»)")
     texto = f"{mensaje} {pregunta}"
     if re.search(r"https?://|www\.", texto):
         e.append("trae un enlace")

@@ -70,8 +70,9 @@ revisar el contenido de **todos** los objetivos de esa unidad (hoy hay 3; una un
 2. **Contenido.** Hay que redactar y revisar todos los objetivos de la unidad del piloto con el subagente
    `redactor-actividades`, y después revisarlos en el equipo de Ciencias.
 3. **Prerrequisitos.** Hay que revisar los prerrequisitos de esos objetivos; hoy los 822 son propuestas de IA.
-4. **Prueba de humo con el modelo real.** Correr con Vertex los turnos y las evaluaciones de los recorridos. Necesita
-   la aprobación del gasto: hoy todo corre con modelos de guion.
+4. **Control de fidelidad del tutor.** La prueba de humo con Vertex (2026-10-12) mostró que un turno puede decir
+   algo científicamente impreciso que las guardas no detectan. Hay dos caminos: revisar turnos reales en la fase A,
+   o agregar un segundo control automático (una llamada más por turno). Es una decisión de costo y calidad.
 5. **Estimación de llamadas.** Por sesión se calculan de 6 a 10:
    - unas 3 del tutor por refuerzo, con un máximo de 3 refuerzos;
    - 1 del evaluador si hay respuesta abierta.

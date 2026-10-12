@@ -213,8 +213,14 @@ con objetivos, aislamiento de las capas compartidas y determinismo).
   - el identificador del estudiante no llega a ningún prompt y el tutor no usa la caché.
 
   Todo esto está probado con modelos de guion.
-- **Sin probar con un modelo real:** la calidad de los turnos y la concordancia del evaluador con los docentes. La
-  fase A del piloto (`aprendizaje/PILOTO.md`) la mide antes de usar el sistema con estudiantes.
+- **Prueba de humo con Vertex (2026-10-12, 12 llamadas aprobadas; detalle en `aprendizaje/README.md`):**
+  - **Tutor:** 4 turnos de 4 salieron del modelo, 2 de ellos tras rechazar uno demasiado largo. Un turno confundía
+    el gen con el rasgo, y las guardas no detectan errores de sentido: se reforzó la instrucción y el turno repetido
+    salió correcto.
+  - **Evaluador:** 5 respuestas de 5 se calificaron como se esperaba (2 correctas, 2 errores típicos con su
+    dificultad y 1 ambigua a revisión docente).
+- **Sin medir:** la calidad de los turnos y la concordancia del evaluador con los docentes. La fase A del piloto
+  (`aprendizaje/PILOTO.md`) las mide antes de usar el sistema con estudiantes.
 - **Hipótesis de diseño:** los parámetros (previas, desliz, umbrales, límites, intervalos de repaso), el orden de las
   hipótesis y la duración de los refuerzos. Se calibran con datos de un piloto.
 - **Propuesta pendiente:** todo el contenido pedagógico y todas las relaciones de prerrequisito.

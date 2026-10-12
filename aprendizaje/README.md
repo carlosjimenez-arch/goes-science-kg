@@ -64,9 +64,22 @@ uv run gskg tutor evaluar ACT:G05-CIE-U6-6.14/obj-abierta "…"   # sin --confir
   la primera ley, seguridad de las actividades, dificultades que juntan dos ideas) están en
   [`data/pedagogia/REVISION_PENDIENTE.md`](../data/pedagogia/REVISION_PENDIENTE.md).
 
+## Prueba de humo con el modelo real (2026-10-12, 12 llamadas aprobadas)
+Se usó Gemini en Vertex con respuestas de ejemplo escritas por el equipo, sin datos de estudiantes.
+
+| Prueba | Resultado |
+|---|---|
+| 4 turnos del tutor (3.°, 5.°, 7.° y 9.°) | Los 4 salieron del modelo. En 3.° y 9.° el primer turno se pasaba del largo del grado (46 de 40 y 86 de 80 palabras); la guarda lo rechazó y el reintento pasó. |
+| Calidad de los turnos | El turno de 7.° decía «el gen es el color»: confundía el gen con el rasgo, que es justo la dificultad del objetivo. Las guardas no detectan errores de sentido. Se reforzó la instrucción (definiciones con el sentido exacto del contexto) y el turno repetido salió correcto. Además, se agregó una guarda contra las etiquetas de fuente dentro del texto. |
+| Pistas por sentido | En 5.° la explicación del tutor apunta a la opción correcta de la práctica sin copiarla. Es la misma idea que trae el microtema: la práctica está muy cerca de la explicación. Queda para la revisión del contenido. |
+| 5 respuestas abiertas (5.° y 7.°) | Las 5 se evaluaron como se esperaba: 2 paráfrasis correctas aceptadas con citas literales; 2 errores típicos detectados con su dificultad; 1 respuesta ambigua enviada a revisión docente por confianza baja. En una de 7.° el criterio opcional c3 se dio por cumplido con generosidad. |
+
+Es una muestra mínima: confirma que el circuito funciona con el modelo real, no su calidad. La calidad y la
+concordancia con los docentes se miden en la fase A del piloto.
+
 ## Lo que no hace (todavía)
-- No se probó con un modelo real. La calidad de los turnos y la concordancia del evaluador con los docentes se miden
-  en la fase A del piloto, y correrlo con Vertex necesita aprobación del gasto.
+- No tiene validación con docentes. El tutor puede decir algo científicamente impreciso que las guardas no detectan:
+  hace falta revisión humana de turnos reales (fase A del piloto) o un segundo control de fidelidad, con su costo.
 - No tiene interfaz para estudiantes ni docentes: es de línea de comandos.
 - No cubre una unidad completa. Hay 6 objetivos; un piloto necesita todos los de su unidad, revisados.
 - No guarda datos reales de estudiantes: `data/estudiantes/` no se versiona. La propuesta de política de datos está

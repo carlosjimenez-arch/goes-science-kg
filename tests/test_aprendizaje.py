@@ -235,6 +235,7 @@ def test_evaluador_no_obedece_a_la_respuesta_ni_gasta_en_vacias():
     ({"mensaje": "Escríbeme tu nombre completo y tu teléfono.", "pregunta": "¿Lista?", "fuentes": []},
      "datos personales"),
     ({"mensaje": "Lee https://ejemplo.com", "pregunta": "¿Lista?", "fuentes": []}, "enlace"),
+    ({"mensaje": "El agua pasa por la membrana (F2, F3).", "pregunta": "¿Lista?", "fuentes": ["F2"]}, "etiquetas"),
 ])
 def test_guardas_del_tutor(nav, ped, salida, guarda):
     from goes_science_kg.aprendizaje.contexto import paquete
