@@ -84,9 +84,21 @@ La V2 del MINED contiene los 1.260 temas de la V1 sin cambios (mismo id, hoja, f
   5 en el mismo grado (Física y Tierra y Espacio de 3.°–4.°), 8 en otro grado y 8 en parte; 26 siguen pendientes. Las
   adoptadas no se vuelven a simular y `asignaturas/PROPUESTAS.md` lista la conciliación. Falta confirmarla con el MINED.
 
-## Fase 5-ter · Grafos internacionales de 2.°–8.° (spec 12) · lista para ejecutar
+## Fase 5-ter · Grafos internacionales de 2.°–8.° (spec 12) ✅ construida; método por mejorar (2026-10-11)
 Código por tramo (`--tramo 2_8`), catálogo `config/internacional_2_8.yaml`. HK P1–6 y S1–3 y ON 1–8 descargados
-(2026-10-09). Extracción hecha (9 países, 3.616 objetivos; 2026-10-09 y 2026-10-11); etiquetado aprobado y en curso.
+(2026-10-09). 9 países, 3.615 objetivos, 448 conceptos en consenso; `internacional/2_8/`. La verificación de 24
+hallazgos dio 7 confirmados, 6 parciales y 11 falsos (etiquetado de la V2): se corrigió la regla de «tardío» después del
+tramo (≥ 2 grados) y se registraron 11 correcciones expertas. Solo se presentan los hallazgos verificados del README.
+Pendiente: mejoras de método (presencia sólida en la V2, mínimo de países, relación «parte de», equivalencias
+simétricas, búsqueda de texto) y la confirmación del MINED.
+
+## Fase 7 · Apoyo al aprendizaje (spec 13) · prototipo ✅ (2026-10-11)
+`src/goes_science_kg/aprendizaje/`, `gskg tutor …`, `config/aprendizaje.yaml`. Relaciones con inversa explícita (una
+arista, dos lecturas), diagnóstico por hipótesis que se comprueban, refuerzo previo/durante/posterior con límites,
+estado por estudiante fuera de las capas compartidas, cola de propuestas a revisión. Capa pedagógica de 3 objetivos de
+9.° (55 actividades, 13 dificultades, 13 microtemas; todo propuesta pendiente) y tres recorridos reproducibles en
+`aprendizaje/recorridos/`. Pendiente: revisión del contenido, agente tutor conversacional, evaluador de respuestas
+abiertas, contenido de primaria, política de datos y piloto con estudiantes.
 
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.

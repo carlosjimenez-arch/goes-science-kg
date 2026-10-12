@@ -344,6 +344,96 @@ def propuesta_excel(asignatura: str, desde: int, hasta: int) -> None:
     typer.echo(f"→ {escribir_excel(asignatura, desde, hasta)}")
 
 
+tutor_app = typer.Typer(help="Apoyo al aprendizaje sobre el grafo (spec 13, prototipo)", no_args_is_help=True)
+app.add_typer(tutor_app, name="tutor")
+
+
+def _nav():
+    from goes_science_kg.aprendizaje.pedagogia import navegador_compartido
+
+    return navegador_compartido()
+
+
+@tutor_app.command("bases")
+def tutor_bases(tema: str, profundidad: int = 2) -> None:
+    """Desde un objetivo hacia sus bases: «¿qué necesita comprender?»."""
+    nav = _nav()
+    tema = tema if tema.startswith("TEMA:") else f"TEMA:{tema}"
+    for b in nav.bases(tema, profundidad):
+        typer.echo(f"{'  ' * (b.profundidad - 1)}{b.profundidad} {nav.por_id[b.concepto].etiqueta} [{b.concepto}] "
+                   f"conf {b.confianza} · {'antes' if b.antes_del_objetivo else 'NO antes'} en la malla "
+                   f"({(b.primer_tema or '—').removeprefix('TEMA:')}) · {b.estado_relacion}")
+
+
+@tutor_app.command("apoya")
+def tutor_apoya(concepto: str, grado: int = typer.Option(None), alcance: int = 2) -> None:
+    """Desde una base hacia lo que apoya: «¿dónde ayudará reforzar esto?»."""
+    for f in _nav().apoya(concepto, grado, alcance=alcance):
+        typer.echo(f"distancia {f['distancia']} · {f['grado']}.° {f['tema'].removeprefix('TEMA:')} "
+                   f"({f['concepto_nombre']}): {f['tema_texto'][:90]}")
+
+
+@tutor_app.command("alinear")
+def tutor_alinear(texto: str, grado: int = typer.Option(...), asignatura: str = typer.Option(None)) -> None:
+    """Identifica el objetivo de la malla para un texto del estudiante o del docente."""
+    from goes_science_kg.aprendizaje.contexto import alinear
+
+    typer.echo(json.dumps(alinear(texto, grado, _nav(), asignatura), ensure_ascii=False, indent=1))
+
+
+@tutor_app.command("contexto")
+def tutor_contexto(tema: str, grado: int = typer.Option(...), concepto: str = typer.Option(None)) -> None:
+    """El contexto que se inyecta al agente tutor para un objetivo (estudiante nuevo, sin evidencia)."""
+    from goes_science_kg.aprendizaje.contexto import paquete
+    from goes_science_kg.aprendizaje.estudiante import Perfil
+    from goes_science_kg.aprendizaje.pedagogia import Pedagogia
+
+    tema = tema if tema.startswith("TEMA:") else f"TEMA:{tema}"
+    typer.echo(json.dumps(paquete(Perfil("nuevo", grado), _nav(), Pedagogia.cargar(), tema, concepto),
+                          ensure_ascii=False, indent=1))
+
+
+@tutor_app.command("preparar-actividades")
+def tutor_preparar_actividades(temas: list[str]) -> None:
+    """Lotes para el subagente redactor-actividades (uno por objetivo) → data/pedagogia/lotes/."""
+    from goes_science_kg.aprendizaje.pedagogia import preparar_lote
+
+    for p in preparar_lote([t if t.startswith("TEMA:") else f"TEMA:{t}" for t in temas], _nav()):
+        typer.echo(f"→ {p}")
+
+
+@tutor_app.command("unir-actividades")
+def tutor_unir_actividades() -> None:
+    """Valida las salidas de redactor-actividades y las agrega a data/pedagogia/ (nacen «propuesta_pendiente»)."""
+    from goes_science_kg.aprendizaje.pedagogia import unir
+
+    typer.echo(json.dumps(unir(), ensure_ascii=False))
+
+
+@tutor_app.command("validar")
+def tutor_validar() -> None:
+    """Integridad de la capa pedagógica (vínculos a objetivos e ids) y coherencia de las relaciones inversas."""
+    from goes_science_kg.aprendizaje.pedagogia import Pedagogia, errores_capa
+    from goes_science_kg.aprendizaje.recorridos import errores_inversas
+
+    nav = _nav()
+    errores = errores_capa(Pedagogia.cargar(), nav) + errores_inversas(nav)
+    for e in errores[:30]:
+        typer.echo(f"✗ {e}")
+    if errores:
+        raise typer.Exit(1)
+    typer.echo("✓ capa pedagógica e inversas coherentes")
+
+
+@tutor_app.command("recorridos")
+def tutor_recorridos() -> None:
+    """Corre los tres recorridos de ejemplo (estudiantes simulados) → aprendizaje/recorridos/."""
+    from goes_science_kg.aprendizaje.recorridos import escribir_recorridos
+
+    for p in escribir_recorridos():
+        typer.echo(f"→ {p}")
+
+
 lotes_app = typer.Typer(help="Lotes de subagentes: validación de sus salidas (harness de agentes)",
                         no_args_is_help=True)
 app.add_typer(lotes_app, name="lotes")

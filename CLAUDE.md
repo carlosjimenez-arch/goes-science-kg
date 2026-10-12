@@ -57,7 +57,7 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
   con otra cuenta o con `ruff`/`pytest` en rojo.
 - Todo gasto en Vertex (`--confirmar`, `congelar-catalogo`) pide la aprobación del usuario.
 - Subagentes de lotes (`.claude/agents/`): `alineador-marcos`, `etiquetador-conceptos`, `ordenador-prerrequisitos`,
-  `redactor-bloques` y `conciliador-propuestas`. Úsalos en lugar de subagentes genéricos: traen su prompt y sus reglas,
+  `redactor-bloques`, `conciliador-propuestas` y `redactor-actividades` (capa pedagógica, spec 13). Úsalos en lugar de subagentes genéricos: traen su prompt y sus reglas,
   escriben solo su `salida_*.json` y, al terminar, el hook `validar_lotes.py` (SubagentStop) los devuelve a corregir si
   la salida no pasa `gskg lotes validar`. La unión la corre la sesión principal.
 - Subagente `verificador-hallazgos` (solo lectura) y skills `internacional-contraste`, `calidad-grafos` y
@@ -83,6 +83,7 @@ uv run gskg grados resumenes      # títulos y resúmenes de bloques temáticos 
 uv run gskg brechas               # asignaturas/<x>/brechas/
 uv run gskg progresion            # asignaturas/<x>/progresion.html
 uv run gskg lotes validar [--agente <subagente>]   # salidas de subagentes con las reglas de la unión
+uv run gskg tutor bases|apoya|alinear|contexto|preparar-actividades|unir-actividades|validar|recorridos   # spec 13
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
 uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirmar con el MINED las decisiones de contenido
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)

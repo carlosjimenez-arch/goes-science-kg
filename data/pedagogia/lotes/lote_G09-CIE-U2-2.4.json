@@ -1,0 +1,449 @@
+{
+ "lote": "G09-CIE-U2-2.4",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 9,
+ "adaptacion": {
+  "palabras_max": 80,
+  "registro": "modelos y datos simples"
+ },
+ "objetivo": {
+  "id": "TEMA:G09-CIE-U2-2.4",
+  "procedimental": "2.4. Experimentación con procesos termodinámicos en un gas ideal.",
+  "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+  "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado",
+  "unidad": "2. Calor y temperatura",
+  "principal": {
+   "id": "CON:fisica/procesos-termodinamicos",
+   "nombre": "Procesos termodinámicos",
+   "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/primera-ley-termodinamica",
+   "nombre": "Primera ley de la termodinámica",
+   "definicion": "El cambio de energía interna es igual al calor recibido menos el trabajo realizado: ΔU = Q − W.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": "TEMA:G09-CIE-U2-2.7",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+   "nombre": "Relaciones presión-volumen-temperatura en gases",
+   "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases).",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": "TEMA:G09-CIE-U2-2.4",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/calor-vs-temperatura",
+   "nombre": "Calor como energía en tránsito",
+   "definicion": "El calor es energía transferida por diferencia de temperatura; se distingue de la temperatura y de la energía interna.",
+   "profundidad": 2,
+   "via": [
+    "CON:fisica/procesos-termodinamicos",
+    "CON:fisica/primera-ley-termodinamica"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": "TEMA:G10-FIS-U12-12.6",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/conservacion-energia",
+   "nombre": "Conservación de la energía",
+   "definicion": "La energía total de un sistema aislado se mantiene constante; solo se transforma o transfiere.",
+   "profundidad": 2,
+   "via": [
+    "CON:fisica/procesos-termodinamicos",
+    "CON:fisica/primera-ley-termodinamica"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": "TEMA:G10-FIS-U7-7.8",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/presion",
+   "nombre": "Presión",
+   "definicion": "Fuerza perpendicular por unidad de área; explica efectos de una misma fuerza sobre áreas distintas.",
+   "profundidad": 2,
+   "via": [
+    "CON:fisica/procesos-termodinamicos",
+    "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G06-CIE-U1-1.3",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/temperatura-medicion-escalas",
+   "nombre": "Temperatura y escalas termométricas",
+   "definicion": "La temperatura se mide con termómetros en escalas Celsius, Fahrenheit y Kelvin, con puntos fijos y cero absoluto.",
+   "profundidad": 2,
+   "via": [
+    "CON:fisica/procesos-termodinamicos",
+    "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G03-CIE-U1-1.8",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G09-CIE-U2-2.4/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G09-CIE-U2-2.4",
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G09-CIE-U2-2.4/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G09-CIE-U2-2.4",
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:fisica/procesos-termodinamicos/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/procesos-termodinamicos/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/procesos-termodinamicos/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/procesos-termodinamicos"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/procesos-termodinamicos/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/procesos-termodinamicos",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/procesos-termodinamicos/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/procesos-termodinamicos",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/primera-ley-termodinamica/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/primera-ley-termodinamica"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/primera-ley-termodinamica/sondeo-2-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/primera-ley-termodinamica"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/primera-ley-termodinamica/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/primera-ley-termodinamica"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/primera-ley-termodinamica/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/primera-ley-termodinamica"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/primera-ley-termodinamica/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/primera-ley-termodinamica",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/primera-ley-termodinamica/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/primera-ley-termodinamica",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/sondeo-2-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/relaciones-presion-volumen-temperatura-gases/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/relaciones-presion-volumen-temperatura-gases/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/calor-vs-temperatura/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/calor-vs-temperatura"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/calor-vs-temperatura/sondeo-2-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/calor-vs-temperatura"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/calor-vs-temperatura/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/calor-vs-temperatura"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/calor-vs-temperatura/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/calor-vs-temperatura"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/calor-vs-temperatura/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/calor-vs-temperatura",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/calor-vs-temperatura/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/calor-vs-temperatura",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/conservacion-energia/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/conservacion-energia"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/conservacion-energia/sondeo-2-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/conservacion-energia"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/conservacion-energia/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/conservacion-energia"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/conservacion-energia/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/conservacion-energia"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/conservacion-energia/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/conservacion-energia",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/conservacion-energia",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/presion/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/presion"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/presion/sondeo-2-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/presion"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/presion/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/presion"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/presion/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/presion"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/presion/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/presion",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/presion/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/presion",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/temperatura-medicion-escalas/sondeo-1-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/temperatura-medicion-escalas"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/temperatura-medicion-escalas/sondeo-2-G09",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/temperatura-medicion-escalas"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/temperatura-medicion-escalas/practica-G09",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/temperatura-medicion-escalas"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/temperatura-medicion-escalas/comprobacion-G09",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/temperatura-medicion-escalas"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/temperatura-medicion-escalas/G09",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "requisito": "explicación ≤80 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/temperatura-medicion-escalas/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  }
+ ]
+}

@@ -47,6 +47,11 @@ de 55 a 5 (decisiones abiertas para el MINED en cada informe).
 AI), un consenso por concepto y un informe por asignatura con los hallazgos verificados contra las fuentes.
 Se construye con `uv run gskg internacional extraer | etiquetar | construir`.
 
+**Apoyo al aprendizaje (prototipo, spec 13)**: un tutor que complementa la malla sin cambiarla: revisa las bases de
+un objetivo, comprueba hipótesis con preguntas breves, refuerza, reevalúa con otra actividad y programa repasos.
+Tres recorridos de ejemplo en [`aprendizaje/`](aprendizaje/README.md) (`uv run gskg tutor recorridos`); el
+contenido pedagógico es propuesta pendiente de revisión y la mejora del aprendizaje requiere un piloto.
+
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
 API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).

@@ -14,15 +14,23 @@
       {
         "matcher": "startup|resume|clear|compact",
         "hooks": [
-          {"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/contexto_sesion.py", "timeout": 20}
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/contexto_sesion.py",
+            "timeout": 20
+          }
         ]
       }
     ],
     "SubagentStop": [
       {
-        "matcher": "alineador-marcos|etiquetador-conceptos|ordenador-prerrequisitos|redactor-bloques|conciliador-propuestas",
+        "matcher": "alineador-marcos|etiquetador-conceptos|ordenador-prerrequisitos|redactor-bloques|conciliador-propuestas|redactor-actividades",
         "hooks": [
-          {"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validar_lotes.py", "timeout": 240}
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validar_lotes.py",
+            "timeout": 240
+          }
         ]
       }
     ],
@@ -30,13 +38,21 @@
       {
         "matcher": "Bash",
         "hooks": [
-          {"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guardia_bash.py", "timeout": 900}
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guardia_bash.py",
+            "timeout": 900
+          }
         ]
       },
       {
         "matcher": "Edit|Write|MultiEdit|NotebookEdit",
         "hooks": [
-          {"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guardia_archivos.py", "timeout": 10}
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guardia_archivos.py",
+            "timeout": 10
+          }
         ]
       }
     ]

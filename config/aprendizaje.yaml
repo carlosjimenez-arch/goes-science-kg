@@ -1,0 +1,50 @@
+# Sistema de apoyo al aprendizaje (spec 13). Reglas que se ajustan aquí, no en el código.
+# Todo número es una HIPÓTESIS de diseño: se calibra con el piloto con estudiantes, no se da por demostrado.
+
+# Estado del estudiante: probabilidad de dominio por concepto y por objetivo (rastreo bayesiano simplificado, BKT).
+dominio:
+  inicial_visto: 0.6         # la malla trabaja el concepto (principal) en un grado anterior al del estudiante
+  inicial_no_visto: 0.3      # aún no lo trabaja (o lo trabaja después: hueco de secuencia de la malla)
+  inicial_en_curso: 0.5      # el concepto principal del objetivo que el estudiante está trabajando
+  desliz: 0.1                # P(responder mal | domina)
+  acierto_azar: {opcion_multiple: 0.25, abierta: 0.05}
+  aprendizaje_tras_refuerzo: 0.15
+  umbral_dominio: 0.8        # por encima: dominado
+  umbral_brecha: 0.35        # por debajo, con dos evidencias: brecha confirmada
+
+# Diagnóstico: una respuesta incorrecta abre hipótesis; no concluye sobre los conceptos relacionados.
+diagnostico:
+  max_hipotesis_abiertas: 3
+  max_sondeos_por_intento: 3          # preguntas breves para comprobar hipótesis antes de volver al objetivo
+  evidencias_para_confirmar: 2        # observaciones concordantes para confirmar o descartar
+  confianza_minima_prerrequisito: media   # aristas «baja» no generan hipótesis
+  peso_confianza: {alta: 1.0, media: 0.7}
+  peso_distractor: 2.0                # el distractor elegido apunta a una dificultad de ese concepto
+  umbral_descartar: 0.6               # tras un sondeo, una base con dominio ≥ este valor se descarta
+
+# Refuerzo: límites para no entrar en recorridos interminables ni sobrecargar.
+refuerzo:
+  profundidad_maxima: 2               # prerrequisito de un prerrequisito, como máximo
+  max_por_sesion: 3
+  minutos_max_por_refuerzo: 15
+  minutos_max_por_sesion: 25          # tiempo total de desvío antes de volver al objetivo
+  intentos_por_refuerzo: 2            # si no se cumple el criterio, se vuelve al objetivo y se avisa al docente
+  max_previos: 1                      # activaciones previas por objetivo (bases que la malla enseña después)
+
+# Repaso espaciado después de dominar un objetivo (días). Un fallo en el repaso vuelve al primer intervalo.
+repaso:
+  intervalos_dias: [1, 3, 7, 14, 30]
+
+# Adaptación por grado (spec 13): longitud y registro del lenguaje del tutor.
+adaptacion:
+  primaria_baja: {grados: [2, 3, 4], palabras_max: 40, registro: "concreto, cotidiano, una idea por oración"}
+  primaria_alta: {grados: [5, 6], palabras_max: 60, registro: "concreto con primeras representaciones"}
+  secundaria: {grados: [7, 8, 9], palabras_max: 80, registro: "modelos y datos simples"}
+  bachillerato: {grados: [10, 11], palabras_max: 100, registro: "modelos formales y cuantitativos"}
+
+# Dónde vive cada capa. El estado individual NUNCA se guarda junto al conocimiento compartido.
+rutas:
+  pedagogia: data/pedagogia                  # capa pedagógica compartida (versionada; cambia por revisión)
+  propuestas: data/interim/aprendizaje/propuestas_pendientes.jsonl   # cola de revisión (fuera de la capa)
+  estudiantes: data/estudiantes              # estado individual (no se versiona)
+  recorridos: aprendizaje/recorridos         # recorridos de ejemplo generados (demo reproducible)

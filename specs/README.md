@@ -16,6 +16,7 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 09 | [grafos_por_grado](09_grafos_por_grado.md) | El grafo de cada grado (entregable al MINED) |
 | 10 | [graphrag](10_graphrag.md) | Recuperación citada sobre el grafo |
 | 11 | [grafos_internacionales_9_11](11_grafos_internacionales_9_11.md) | 9 países frente a la malla V2 en 9.°–11.° |
-| 12 | [grafos_internacionales_2_8](12_grafos_internacionales_2_8.md) | El mismo contraste en 2.°–8.° (listo para ejecutar) |
+| 12 | [grafos_internacionales_2_8](12_grafos_internacionales_2_8.md) | El mismo contraste en 2.°–8.° |
+| 13 | [apoyo_al_aprendizaje](13_apoyo_al_aprendizaje.md) | Tutor que complementa la malla sobre el grafo (diseño y prototipo) |
 
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.
