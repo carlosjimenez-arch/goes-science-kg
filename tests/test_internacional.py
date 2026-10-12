@@ -209,3 +209,111 @@ def test_no_se_gasta_con_otra_cuenta(monkeypatch, cuenta):
     monkeypatch.setattr(vertex, "cuenta_adc", lambda: cuenta)
     r = CliRunner().invoke(cli.app, ["internacional", "etiquetar", "JP", "--confirmar"])
     assert r.exit_code == 1 and "cuenta GOES" in r.output and not llamados
+
+
+# -- Doble lectura de 2.°–8.° (spec 12, método v2) ----------------------------------------------------------------
+def test_solo_2_8_usa_doble_lectura():
+    from goes_science_kg.internacional import tramo
+
+    assert tramo.TRAMOS["2_8"].lectura_doble and not tramo.TRAMOS["9_11"].lectura_doble
+
+
+def test_presencia_solida():
+    from goes_science_kg.internacional.consenso import primer_grado_solido
+
+    assert primer_grado_solido([(5, 2)]) == 5                     # un principal
+    assert primer_grado_solido([(7, 1), (4, 1)]) == 7             # dos secundarios: cuenta el segundo
+    assert primer_grado_solido([(3, 1)]) is None                  # una etiqueta secundaria suelta no basta
+
+
+def test_menos_de_3_paises_no_fechan():
+    # V2 en 4.°, un solo país en 7.°: con la regla simple sería «adelantado»; con doble lectura no hay referente
+    assert contraste.clase_de(4, 4, None, 1, 7.0, 1, 0, (2, 3, 4, 5, 6, 7, 8)) == "adelantado"
+    assert contraste.clase_de(4, 4, None, 1, 7.0, 1, 0, (2, 3, 4, 5, 6, 7, 8), n_mediana=1) == "sin_referente"
+
+
+def _consenso(g_laxo, g_solido, med=6.0, med_solida=6.0, n=6, n_solido=6):
+    grados = (2, 3, 4, 5, 6, 7, 8)
+    def fila(g0, paises):
+        return {str(g): (paises if g0 is not None and g >= g0 else []) for g in grados}
+    seis = ["AU", "EE", "ENG", "JP", "KR", "TW"]
+    return {"paises": {}, "n_nucleo_en_tramo": n, "n_nucleo_foco": n_solido, "n_nucleo": n, "n_nucleo_solido": n_solido,
+            "mediana_primer_grado_nucleo": med, "mediana_primer_grado_nucleo_solido": med_solida,
+            "nucleo_hasta_grado": fila(g_laxo, seis), "nucleo_solido_hasta_grado": fila(g_solido, seis),
+            "proporcion_nucleo_hasta_grado": {k: len(v) / 9 for k, v in fila(g_laxo, seis).items()},
+            "proporcion_nucleo_solido_hasta_grado": {k: len(v) / 9 for k, v in fila(g_solido, seis).items()}}
+
+
+def _pres(amplio, estricto):
+    en = lambda g: g if g is not None and g <= 8 else None   # noqa: E731
+    return {"amplio": amplio, "estricto": estricto, "amplio_en_tramo": en(amplio), "estricto_en_tramo": en(estricto)}
+
+
+def test_clase_doble_solo_afirma_lo_que_resiste_las_dos_lecturas():
+    grados = (2, 3, 4, 5, 6, 7, 8)
+    # Tardío firme: la V2 no lo tiene antes ni con una etiqueta suelta y los países lo dan sólido en 3.°
+    assert contraste.clase_doble(_pres(6, 6), _consenso(3, 3), grados)[0] == "tardio"
+    # Una etiqueta suelta de la V2 en 3.° (factores bióticos, campo magnético): ya no se afirma «tardío»
+    clase, lect = contraste.clase_doble(_pres(3, 6), _consenso(3, 3, med=3.5, med_solida=3.5), grados)
+    assert clase == "incierto" and lect == {"amplia": "alineado", "estricta": "tardio"}
+    # Los países solo lo tienen como etiqueta secundaria suelta (ley de Coulomb): tampoco
+    assert contraste.clase_doble(_pres(9, 9), _consenso(7, None), grados)[0] == "incierto"
+    # Sin ningún país: «sin referente» solo si la V2 lo enseña de forma sólida en el tramo (leyes de Kepler)
+    assert contraste.clase_doble(_pres(4, 4), None, grados)[0] == "sin_referente"
+    assert contraste.clase_doble(_pres(4, 11), None, grados) == ("incierto", {"amplia": "sin_referente",
+                                                                             "estricta": "posterior"})
+
+
+def test_busqueda_de_texto():
+    c = {"nombre": "Sustancias puras: elementos y compuestos", "sinonimos": ["elementos y compuestos"]}
+    fr = contraste.frases(c)
+    assert ("sustan", "pura") in fr and ("elemen", "compue") in fr
+    assert contraste.aparece(fr, "Clasifica las sustancias puras y las mezclas")
+    assert contraste.aparece(fr, "Diferencia elementos de compuestos químicos")
+    assert not contraste.aparece(fr, "Reconoce los elementos de la tabla periódica")
+    assert not contraste.aparece(fr, "Los elementos del paisaje cambian; los suelos están compuestos de rocas")  # lejos
+    # una palabra suelta no es una frase: «pila» no basta para «celdas galvánicas»
+    assert contraste.frases({"nombre": "Celdas galvánicas", "sinonimos": ["pila"]}) == [("celda", "galvan")]
+
+
+def test_partes_validas_y_ampliar():
+    from goes_science_kg.internacional.consenso import ampliar
+
+    voc = conceptos.vocabulario()
+    partes = conceptos.partes()
+    assert partes
+    for r in partes:
+        assert r["parte"] in voc and r["todo"] in voc and r["parte"] != r["todo"], r
+        assert r["revisado_por"] and r["justificacion"], r
+    assert {(r["todo"], r["parte"]) for r in partes}.isdisjoint({(r["parte"], r["todo"]) for r in partes})  # sin ciclos
+    assert "CON:fisica/conservacion-energia" in ampliar(["CON:fisica/conservacion-energia-mecanica"])
+    assert "CON:fisica/conservacion-energia-mecanica" not in ampliar(["CON:fisica/conservacion-energia"])
+
+
+@pytest.mark.parametrize("grado_pais, esperado", [
+    ("First school stage", (2, 3)),        # sin distinguir mayúsculas (antes caía en el rango del documento)
+    ("second school stage", (4, 6)),
+    ("P5 Foundation", (5, 5)),             # la clave con un agregado
+    ("P4-P6", (4, 6)),                     # varias claves: el rango que las cubre
+    ("", (2, 6)),                          # sin grado del país: el rango del documento
+])
+def test_grados_sv_del_catalogo(grado_pais, esperado):
+    d = {"grado_sv": [2, 6], "grados_pais": {"first school stage": [2, 3], "second school stage": [4, 6],
+                                             "P4": 4, "P5": 5, "P6": 6}}
+    assert extraer.grados_sv(d, grado_pais) == esperado
+
+
+def test_metadatos_de_2_8_ya_corregidos():
+    """corregir_metadatos() es idempotente y ya se aplicó: ningún objetivo de EE o SG queda con el rango entero."""
+    import json
+
+    from goes_science_kg.internacional import tramo
+
+    t = tramo.TRAMOS["2_8"]
+    docs = {d["id"]: d for d in cargar(t.config)["documentos"]}
+    for pais in ("EE", "SG", "HK"):
+        for o in json.loads((ruta(t.objetivos) / f"{pais}.json").read_text(encoding="utf-8")):
+            if o["documento"] in docs:
+                assert (o["grado_sv_min"], o["grado_sv_max"]) == extraer.grados_sv(docs[o["documento"]],
+                                                                                    o.get("grado_pais", "")), o["id"]
+    assert "hk_s1_3" in cargar(t.config)["extension_en_cursiva"]

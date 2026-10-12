@@ -164,6 +164,14 @@ def equivalencias() -> list[dict]:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
 
 
+def partes() -> list[dict]:
+    """Relaciones «parte de» entre conceptos vecinos (capa de decisión, partes.json): enseñar la parte cuenta como
+    enseñar el todo, no al revés (la conservación de la energía mecánica es parte de la conservación de la energía).
+    Solo las usa el contraste internacional con doble lectura (spec 12)."""
+    p = ruta(f"{DIR}/partes.json")
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
+
+
 @cache
 def practicas() -> dict[str, dict]:
     """Prácticas científicas (id → práctica). Vacío si aún no existe; con caché."""

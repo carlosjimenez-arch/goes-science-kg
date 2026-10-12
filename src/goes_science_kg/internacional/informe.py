@@ -42,18 +42,24 @@ def clases(t: tramo.Tramo | None = None) -> list[tuple[str, str, str]]:
          f"La V2 lo introduce en {e}, pero los países solo lo enseñan en cursos electivos."),
         ("adelantado", "Adelantados",
          f"La V2 lo introduce en {e}, 1,5 grados o más antes que la mediana del núcleo de los países."),
-        ("sin_referente", "Sin referente", f"La V2 lo enseña en {e} y ninguno de los 9 países lo tiene."),
+        ("sin_referente", "Sin referente",
+         f"La V2 lo enseña en {e} y menos de {contraste.MIN_PAISES_MOMENTO} países lo tienen en su núcleo: no hay "
+         "referente para fecharlo." if t.lectura_doble else f"La V2 lo enseña en {e} y ninguno de los 9 países lo tiene."),
         ("alineado", "Alineados", f"La V2 lo introduce en {e} con un momento coherente con el consenso (± 1,5 grados)."),
         ("retomado", "Retomados", f"La V2 lo introduce antes de {g0}.° y lo vuelve a trabajar en {e} (espiral)."),
         ("previo", f"Solo antes de {g0}.°", f"La V2 lo ve antes de {g0}.° y el núcleo internacional no lo exige en {e}."),
     ]
+    if t.lectura_doble:
+        salida.append(("incierto", "Inciertos (a revisión)",
+                       "La lectura amplia y la estricta del etiquetado dan clases distintas: no se afirma nada hasta "
+                       "revisarlo (revision_clases.csv)."))
     imposibles = {"posterior"} if t.grados[-1] >= 11 else set()
     if t.grados[0] <= 2:
         imposibles |= {"no_retomado", "retomado", "previo", "solo_especializacion"}
     return [c for c in salida if c[0] not in imposibles]
 
 
-SIN_TABLA = {"alineado", "retomado", "previo"}
+SIN_TABLA = {"alineado", "retomado", "previo", "incierto"}
 
 
 def _cita(o: dict) -> str:
@@ -92,6 +98,7 @@ def _tabla(filas: list[dict], r: dict, objs: dict, max_filas: int = 40) -> list[
             if d["objetivos"] and d["objetivos"][0] in objs:
                 ev.append(_cita(objs[d["objetivos"][0]]))
                 citados += 1
+        ev += [f"⚠ Revisar: {a}" for a in visor._alertas(f.get("alertas") or {})]
         if f.get("revision"):
             ev.append(f"Revisión experta: {f['revision']['justificacion']}")
         lineas.append(f"| {f['nombre']} | {_grados_sv(f, r)} | {cons} | {contraste.evidencia_paises(f)} "
@@ -190,6 +197,11 @@ def escribir() -> dict:
             md += [f"Revisión experta: {len(rev)} conceptos cambiaron de clase frente a la regla automática "
                    f"(`{t.revisiones}`): "
                    + "; ".join(f"{f['nombre']} ({f['clase_ia']} → {f['clase']})" for f in rev) + ".", ""]
+        inciertos = [f for f in filas if f["clase"] == "incierto"]
+        if inciertos:
+            md += [f"Inciertos: {len(inciertos)} conceptos tienen clases distintas en la lectura amplia y en la "
+                   "estricta; no se afirma nada de ellos hasta revisarlos (`revision_clases.csv`, con las dos clases).",
+                   ""]
         for clave, titulo, desc in clases(t):
             if clave in SIN_TABLA:
                 continue
@@ -198,15 +210,19 @@ def escribir() -> dict:
                 md += [f"## {titulo} ({len(sel)})", "", desc, "", *_tabla(sel, r, objs), ""]
         sec = [s for s in r["secuencia"] if s["concepto"] in {f["concepto"] for f in filas}]
         if sec:
+            prudente = (" Lectura prudente: el concepto con presencia sólida en la V2 y el prerrequisito sin ninguna "
+                        "etiqueta hasta después; la alerta marca los temas cuyo texto ya nombra el prerrequisito."
+                        if t.lectura_doble else "")
             md += [f"## Candidatos a error de secuencia en la V2 ({len(sec)})", "",
                    "El prerrequisito llega después que el concepto que lo necesita (grafo de prerrequisitos del repo). "
                    "Son candidatos: en la revisión manual de 2026-10-08, 2 de 4 resultaron falsos porque el etiquetado "
-                   f"no vio el prerrequisito en primaria. Los confirmados están en `{t.informe}/README.md`.",
+                   f"no vio el prerrequisito en primaria. Los confirmados están en `{t.informe}/README.md`.{prudente}",
                    "", "| Concepto (grado) | Prerrequisito que llega después (grado) | Confianza | Tema SV |",
                    "|---|---|---|---|"]
             for s in sec:
+                alerta = f" ⚠ texto en {', '.join(s['alertas']['texto'])}" if s.get("alertas") else ""
                 md.append(f"| {s['nombre_concepto']} ({s['grado_concepto']}.°) | {s['nombre_prerrequisito']} "
-                          f"({s['grado_prerrequisito']}.°) | {s['confianza']} | {s['tema_concepto']} |")
+                          f"({s['grado_prerrequisito']}.°) | {s['confianza']} | {s['tema_concepto']}{alerta} |")
             md.append("")
         md += _seccion_profundidad(asig, prof) + _seccion_practicas(asig, prof)
         top = [p for p in propuestos.get(asig, []) if p["n_paises"] >= 3][:15]
@@ -220,6 +236,8 @@ def escribir() -> dict:
         (base / f"{asig}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
         _excel(asig, filas, base)
     revision = _revision(objs, base)
+    if t.lectura_doble:
+        revision["clases"] = _revision_clases(r["filas"], base)
     visor.escribir(r, [*clases(t), ("no_aplica", "Sin exigencia", "Ni la V2 ni el núcleo internacional lo exigen.")],
                    NOMBRE, base)
     (base / "contraste.json").write_text(json.dumps(
@@ -280,6 +298,30 @@ def _revision(objs: dict, base: Path) -> dict:
     return {"filas": len(filas)}
 
 
+def _revision_clases(filas: list[dict], base: Path) -> int:
+    """revision_clases.csv: conceptos inciertos (las dos lecturas no coinciden) y hallazgos con alertas, para decidir
+    su clase a mano. La decisión va a revisiones.json del tramo con su evidencia."""
+    sel = [f for f in filas if f["clase"] == "incierto" or (f.get("alertas") and not f.get("revision"))]
+    campos = ["concepto", "nombre", "asignatura", "clase", "lectura_amplia", "lectura_estricta", "sv_grado_amplio",
+              "sv_grado_estricto", "consenso_amplio", "consenso_estricto", "mediana_paises", "mediana_paises_solida",
+              "paises_nucleo", "paises_nucleo_solido", "temas_sv", "alertas", "decision", "comentario", "revisado_por"]
+    with (base / "revision_clases.csv").open("w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=campos)
+        w.writeheader()
+        for f in sorted(sel, key=lambda f: (f["asignatura"], -f["n_nucleo"], f["concepto"])):
+            w.writerow({"concepto": f["concepto"], "nombre": f["nombre"], "asignatura": f["asignatura"],
+                        "clase": f["clase"], "lectura_amplia": f["lecturas"]["amplia"],
+                        "lectura_estricta": f["lecturas"]["estricta"], "sv_grado_amplio": f["sv_primer_grado"],
+                        "sv_grado_estricto": f["sv_primer_grado_solido"], "consenso_amplio": f["grado_consenso"],
+                        "consenso_estricto": f["grado_consenso_solido"],
+                        "mediana_paises": f["mediana_primer_grado_nucleo"],
+                        "mediana_paises_solida": f["mediana_primer_grado_nucleo_solido"],
+                        "paises_nucleo": f["n_nucleo"], "paises_nucleo_solido": f["n_nucleo_solido"],
+                        "temas_sv": " ".join(f["sv_temas"][:4]), "alertas": "; ".join(visor._alertas(
+                            f.get("alertas") or {})), "decision": "", "comentario": "", "revisado_por": ""})
+    return len(sel)
+
+
 def _despues(i: int, t: tramo.Tramo) -> str:
     """Rama de la fórmula para lo que la V2 enseña solo después del tramo (no existe en 9.°–11.°)."""
     if t.grados[-1] >= 11:
@@ -296,13 +338,16 @@ def _excel(asig: str, filas: list[dict], base: Path) -> None:
     d = wb.active
     d.title = "Datos"
     t = tramo.actual()
+    doble = ["Grado SV solido", "Lectura amplia", "Lectura estricta"] if t.lectura_doble else []
     d.append(["Concepto", "Clase (IA)", "Grado SV V2", f"Grado SV en {t.rango}", *[f"{p} nucleo" for p in ps],
-              *[f"{p} nucleo {t.rango}" for p in ps], *[f"{p} esp" for p in ps]])
+              *[f"{p} nucleo {t.rango}" for p in ps], *[f"{p} esp" for p in ps], *doble])
     for f in filas:
         fp = [f["paises"].get(p, {}) for p in ps]
+        lect = f.get("lecturas") or {}
+        extra = [f.get("sv_primer_grado_solido"), lect.get("amplia"), lect.get("estricta")] if t.lectura_doble else []
         d.append([f["nombre"], f["clase"], f["sv_primer_grado"], f.get("sv_en_tramo"),
                   *[x.get("primer_grado_nucleo") for x in fp], *[1 if x.get("nucleo_en_tramo") else None for x in fp],
-                  *[1 if x.get("en_especializacion") else None for x in fp]])
+                  *[1 if x.get("en_especializacion") else None for x in fp], *extra])
     a0, a1 = col(5), col(4 + n)
     b0, b1 = col(5 + n), col(4 + 2 * n)
     c0, c1 = col(5 + 2 * n), col(4 + 3 * n)

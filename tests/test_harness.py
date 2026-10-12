@@ -38,6 +38,8 @@ def _bash(comando: str, **env: str) -> str | None:
     ("uv run gskg internacional --tramo 2_8 extraer", None),  # sin --confirmar solo estima
     ("uv run gskg internacional --tramo 2_8 extraer --confirmar", "ask"),
     ("uv run gskg internacional etiquetar --confirmar", "ask"),
+    ("uv run gskg tutor turno G09-CIE-U8-8.2 --grado 9 --confirmar", "ask"),   # tutor con Vertex (spec 13)
+    ("uv run gskg tutor turno G09-CIE-U8-8.2 --grado 9", None),
     ("uv run gskg internacional congelar-catalogo v2", "ask"),
     ("make internacional-ia CONFIRMAR=--confirmar", "ask"),
     ("git push --force origin main", "deny"),

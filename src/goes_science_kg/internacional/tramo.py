@@ -21,6 +21,9 @@ class Tramo:
     informe: str         # informes, Excel, visor y CSV de revisión
     revisiones: str      # clases corregidas en revisión experta
     spec: str            # especificación del método
+    # Doble lectura (spec 12, método v2): una clase solo se afirma si sale igual con la lectura más amplia y con la más
+    # estricta de la presencia en la V2 y en los países; si no, queda «incierta» y va a revisión.
+    lectura_doble: bool = False
 
     @property
     def etiqueta(self) -> str:
@@ -42,7 +45,8 @@ TRAMOS = {
                   "data/interim/internacional/revisiones.json", "specs/11_grafos_internacionales_9_11.md"),
     "2_8": Tramo("2_8", (2, 3, 4, 5, 6, 7, 8), "internacional_2_8", "data/interim/internacional_2_8/objetivos",
                  "data/interim/internacional_2_8/etiquetado", "data/grafo/internacional_2_8", "internacional/2_8",
-                 "data/interim/internacional_2_8/revisiones.json", "specs/12_grafos_internacionales_2_8.md"),
+                 "data/interim/internacional_2_8/revisiones.json", "specs/12_grafos_internacionales_2_8.md",
+                 lectura_doble=True),
 }
 # El etiquetado de la malla V2 (2.°–11.°) y el catálogo congelado son comunes a los dos tramos.
 ETIQUETADO_COMUN = "data/interim/internacional/etiquetado"

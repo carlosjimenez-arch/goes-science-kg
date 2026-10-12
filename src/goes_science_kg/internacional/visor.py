@@ -44,7 +44,9 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
                           f"{x['contenido']}. {x['indicador']}"[:260]])
         filas.append({"a": f["asignatura"], "c": f["nombre"], "k": f["clase"], "sv": f["sv_primer_grado"],
                       "s9": f.get("sv_en_tramo"), "n9": f["n_nucleo_en_tramo"], "ne": f["n_especializacion"],
-                      "p": celdas, "t": temas, "e": evidencia})
+                      "p": celdas, "t": temas, "e": evidencia,
+                      **({"l": f["lecturas"]} if "lecturas" in f else {}),
+                      **({"al": _alertas(f["alertas"])} if f.get("alertas") else {})})
     datos = {"filas": filas, "paises": ps, "clases": [[k, t, d] for k, t, d in clases],
              "asignaturas": [[k, v] for k, v in nombres.items()]}
     t = tramo.actual()
@@ -55,6 +57,17 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
     p = destino / "visor.html"
     p.write_text(pagina, encoding="utf-8")
     return relativa(p)
+
+
+def _alertas(a: dict) -> list[str]:
+    """Alertas de una fila del contraste en frases cortas."""
+    salida = []
+    if a.get("texto"):
+        salida.append("el texto de " + ", ".join(a["texto"]) + " ya nombra el concepto")
+    if a.get("vecinos"):
+        salida.append("los objetivos de los países también enseñan " + ", ".join(a["vecinos"])
+                      + ", que la V2 da antes")
+    return salida
 
 
 PLANTILLA = """<!doctype html>
@@ -80,7 +93,8 @@ th{position:sticky;top:0;background:var(--bg)}td.c{text-align:left;max-width:300
 td.g{width:38px;background:var(--celda)}td.g.n{background:var(--nuc);font-weight:bold}
 .k{font-size:11px;padding:2px 6px;border-radius:10px;border:1px solid currentColor;white-space:nowrap}
 .k.faltante,.k.no_retomado,.k.tardio{color:var(--falta)}.k.solo_especializacion,.k.adelantado{color:var(--esp)}
-.k.alineado,.k.retomado{color:var(--ok)}.k.previo,.k.sin_referente,.k.no_aplica{color:var(--neutro)}
+.k.alineado,.k.retomado{color:var(--ok)}.k.previo,.k.sin_referente,.k.no_aplica,.k.posterior{color:var(--neutro)}
+.k.incierto{color:var(--neutro);border-style:dashed}
 tr.det td{text-align:left;background:var(--celda);font-size:12px;line-height:1.45}
 tr.det b{color:var(--sv)}.leyenda{font-size:12px;color:var(--muted)}
 </style></head><body>
@@ -111,7 +125,9 @@ function grados(f){
 function detalle(f){
   const t = f.t.map(x => `<div><b>SV ${esc(x[0])}</b> (${esc(x[1])}, hoja «${esc(x[2])}», fila ${esc(x[3])}): ${esc(x[5])}</div>`).join('');
   const e = f.e.map(x => `<div><b>${esc(x[0])}</b> · ${esc(x[1])} [${x[2] === 'nucleo' ? 'núcleo' : 'electiva'}] (${esc(x[3])}${x[4] ? ', p. ' + esc(x[4]) : ''}): «${esc(x[5])}»</div>`).join('');
-  return `<tr class="det"><td colspan="${5 + D.paises.length}">${desc[f.k] ? `<div><i>${esc(desc[f.k])}</i></div>` : ''}${t || '<div>La V2 no lo tiene en 2.°–11.°.</div>'}${e}</td></tr>`;
+  const l = f.l ? `<div>Lectura amplia: <b>${esc(titulo[f.l.amplia] || f.l.amplia)}</b> · lectura estricta: <b>${esc(titulo[f.l.estricta] || f.l.estricta)}</b></div>` : '';
+  const al = (f.al || []).map(x => `<div>⚠ Revisar: ${esc(x)}.</div>`).join('');
+  return `<tr class="det"><td colspan="${5 + D.paises.length}">${desc[f.k] ? `<div><i>${esc(desc[f.k])}</i></div>` : ''}${l}${al}${t || '<div>La V2 no lo tiene en 2.°–11.°.</div>'}${e}</td></tr>`;
 }
 function pintar(){
   document.querySelectorAll('#asigs button').forEach(b => b.classList.toggle('on', b.dataset.a === asig));

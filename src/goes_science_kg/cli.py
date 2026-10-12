@@ -611,6 +611,14 @@ def internacional_congelar_catalogo(version: str) -> None:
     typer.echo(etiquetar.congelar_catalogo(version))
 
 
+@internacional_app.command("corregir-metadatos")
+def internacional_corregir_metadatos() -> None:
+    """Corrige grados y nivel (Extension Part en cursiva) de los objetivos ya extraídos, sin Vertex (spec 12)."""
+    from goes_science_kg.internacional import extraer
+
+    typer.echo(extraer.corregir_metadatos())
+
+
 @internacional_app.command("construir")
 def internacional_construir() -> None:
     """Arma data/grafo/internacional/ (grafo por país + consenso) y los informes de internacional/."""

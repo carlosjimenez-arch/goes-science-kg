@@ -117,6 +117,28 @@ def extraer(nombre_config: str = "mallas") -> tuple[TemaMalla, ...]:
     return tuple(temas)
 
 
+@cache
+def textos_completos(nombre_config: str = "mallas") -> dict[str, str]:
+    """Id del tema → texto de TODAS las celdas de su fila (también evidencia, habilidad TIMSS, microhabilidades PISA e
+    indicador avanzado), más su contenido y subcontenido. Para búsquedas de texto que no dependan de las columnas que
+    lee el etiquetado (spec 12, verificación de 2.°–8.°)."""
+    cfg = cargar(nombre_config)
+    base = ruta(cfg["directorio"])
+    temas = extraer(nombre_config)
+    por_fila = {(t.ruta, t.hoja, t.fila): t for t in temas}
+    salida: dict[str, str] = {}
+    for archivo in sorted({t.ruta for t in temas}):
+        wb = openpyxl.load_workbook(base / archivo, data_only=True, read_only=True)
+        for ws in wb.worksheets:
+            for fila, row in enumerate(ws.iter_rows(min_row=cfg["fila_datos"], values_only=True),
+                                       start=cfg["fila_datos"]):
+                if t := por_fila.get((archivo, ws.title, fila)):
+                    celdas = " ".join(_limpio(v) for v in row if v not in (None, ""))
+                    salida[t.id] = f"{t.contenido} {t.subcontenido} {celdas}"
+        wb.close()
+    return salida
+
+
 def _asignar_ids(temas: list[TemaMalla]) -> None:
     """G{grado}-{ASIG}-U{unidad}-{código}; si el código se repite, se agrega la fila."""
     base: dict[str, list[TemaMalla]] = {}

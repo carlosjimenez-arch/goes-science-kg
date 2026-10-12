@@ -283,9 +283,7 @@ def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> di
     for v, objs in zip(vs, resultados, strict=True):
         for o in objs:
             d = v.doc
-            grado = (d.get("grados_pais") or {}).get(o.get("grado_pais", "").strip())
-            # grados_pais da un grado SV o un rango [g0, g1] (p. ej. una etapa de dos años, como 第二學習階段).
-            g0, g1 = (tuple(grado) if isinstance(grado, list) else (grado, grado)) if grado else tuple(d["grado_sv"])
+            g0, g1 = grados_sv(d, o.get("grado_pais", ""))
             fila = {
                 "pais": pais, "documento": d["id"], "archivo": d["archivo"], "pagina": o["pagina"],
                 "curso": d["curso"], "nivel": d["nivel"],
@@ -306,6 +304,81 @@ def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> di
     parciales = sum(o["validacion"]["veredicto"] == "parcial" for o in salida)
     return {"pais": pais, "ventanas": len(vs), "objetivos": len(salida), "parciales": parciales,
             "descartados": len(descartados), "llamadas": vertex.llamadas()}
+
+
+def grados_sv(d: dict, grado_pais: str) -> tuple[float, float]:
+    """Rango de grados SV de un objetivo según `grados_pais` del documento (un grado o un rango [g0, g1] por clave).
+    Sin distinguir mayúsculas («First school stage»), y si el grado del país nombra varias claves («P4-P6») o lleva un
+    agregado («P5 Foundation»), el rango que las cubre. Sin coincidencia, el rango del documento."""
+    mapa = {k.lower(): v for k, v in (d.get("grados_pais") or {}).items()}
+    gp = (grado_pais or "").strip().lower()
+    valores = [mapa[gp]] if gp in mapa else [v for k, v in mapa.items() if gp and re.search(
+        rf"(?<![\w]){re.escape(k)}(?![\w])", gp)]
+    if not valores:
+        return tuple(d["grado_sv"])
+    planos = [x for v in valores for x in (v if isinstance(v, list) else [v])]
+    return min(planos), max(planos)
+
+
+def _norma_cita(s: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+
+def _texto_en_cursiva(archivo: str, pagina: int) -> str:
+    """Texto en cursiva de una página del PDF (normalizado). La cursiva se reconoce por el nombre de la fuente o por
+    el nombre que trae la fuente incrustada («Italic», «Cursiva», «Kursiv»), porque el PDF de HK oculta los nombres."""
+    from pypdf import PdfReader
+
+    pag = PdfReader(ruta(archivo)).pages[pagina - 1]
+    cursivas = set()
+    for v in pag["/Resources"]["/Font"].values():
+        f = v.get_object()
+        base = str(f.get("/BaseFont", ""))
+        desc = f["/DescendantFonts"][0].get_object() if "/DescendantFonts" in f else f
+        fd = desc.get("/FontDescriptor")
+        fd = fd.get_object() if fd else {}
+        programa = fd.get("/FontFile2") or fd.get("/FontFile3") or fd.get("/FontFile")
+        datos = programa.get_object().get_data().replace(b"\x00", b"") if programa else b""
+        if re.search(r"Italic|Oblique", base) or re.search(rb"Italic|Cursiva|Kursiv|kursyw|Oblique", datos):
+            cursivas.add(base)
+    trozos: list[str] = []
+    pag.extract_text(visitor_text=lambda t, cm, tm, font, size: trozos.append(t)
+                     if font is not None and str(font.get("/BaseFont", "")) in cursivas else None)
+    return _norma_cita(" ".join(trozos))
+
+
+def corregir_metadatos() -> dict:
+    """Corrige, sin llamar a Vertex, los metadatos de los objetivos ya extraídos del tramo activo (los ids no cambian):
+    - grados SV con grados_sv() y el catálogo vigente (la verificación de 2.°–8.° encontró las etapas de Estonia y los
+      «P5 Foundation» de Singapur con el rango del documento entero);
+    - nivel «especializacion» para lo que un documento de `extension_en_cursiva` (config del tramo) imprime en
+      cursiva: la Extension Part de HK S1–3 es ampliación, no núcleo («blue italics», p. 27 del documento).
+    Devuelve los cambios por documento."""
+    cfg = cargar(tramo.actual().config)
+    docs = {d["id"]: d for d in cfg["documentos"]}
+    extension = set(cfg.get("extension_en_cursiva") or [])
+    cursiva: dict[tuple[str, int], str] = {}
+    cambios: dict[str, int] = {}
+    for f in sorted(ruta(tramo.actual().objetivos).glob("*.json")):
+        if f.stem.endswith("_descartados"):
+            continue
+        objs = json.loads(f.read_text(encoding="utf-8"))
+        for o in objs:
+            d = docs.get(o["documento"])
+            if not d:
+                continue   # importados del grafo principal: traen su grado y su nivel
+            antes = (o["grado_sv_min"], o["grado_sv_max"], o["nivel"])
+            o["grado_sv_min"], o["grado_sv_max"] = grados_sv(d, o.get("grado_pais", ""))
+            if d["id"] in extension and len(_norma_cita(o["cita"])) >= 15:
+                clave = (d["archivo"], o["pagina"])
+                if clave not in cursiva:
+                    cursiva[clave] = _texto_en_cursiva(*clave)
+                if _norma_cita(o["cita"])[:60] in cursiva[clave]:
+                    o["nivel"], o["nota_nivel"] = "especializacion", "Extension Part (en cursiva en el documento)"
+            if (o["grado_sv_min"], o["grado_sv_max"], o["nivel"]) != antes:
+                cambios[o["documento"]] = cambios.get(o["documento"], 0) + 1
+        f.write_text(json.dumps(objs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return cambios
 
 
 def _asignar_ids(objs: list[dict]) -> None:

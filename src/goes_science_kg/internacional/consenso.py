@@ -5,6 +5,11 @@ secundario con confianza alta o media.
 
 Grado de un objetivo = punto medio de su rango SV (p. ej. «Sec 3–4» = 9,5).
 
+Doble lectura (tramos con `lectura_doble`, spec 12): además del primer grado de cada país con la regla de presencia
+(lectura amplia), se calcula el primer grado con presencia SÓLIDA en el núcleo (lectura estricta): 2 puntos por
+objetivo con el concepto como principal y 1 como secundario, acumulados por grado hasta llegar a 2. Ahí también se
+aplican las relaciones «parte de» (conceptos.partes()), además de las equivalencias.
+
 Antecedente: los objetivos de grados ≤ 8 de Inglaterra, Australia y Japón, que ya están en el grafo principal
 (data/interim/paises + etiquetado_paises), solo sirven para fechar la primera aparición de un concepto. Así, algo
 que esos países enseñan en 7.° no aparece como «nuevo en 10.°». Los demás países no tienen antecedente cargado y
@@ -96,6 +101,39 @@ def con_equivalentes(ids: list[str]) -> list[str]:
     return sorted({*ids, *(y for x in ids for y in eq.get(x, ()))})
 
 
+def ampliar(ids: list[str]) -> list[str]:
+    """con_equivalentes más los todos de cada parte (conceptos.partes()) y sus equivalentes: si un enunciado enseña la
+    conservación de la energía mecánica, también enseña la conservación de la energía. Solo con doble lectura."""
+    base = con_equivalentes(ids)
+    todos = _partes()
+    return con_equivalentes(sorted({*base, *(t for x in base for t in todos.get(x, ()))}))
+
+
+def expandir(ids: list[str]) -> list[str]:
+    """La expansión del tramo activo: ampliar() con doble lectura y con_equivalentes() sin ella."""
+    return ampliar(ids) if tramo.actual().lectura_doble else con_equivalentes(ids)
+
+
+@cache
+def _partes() -> dict[str, frozenset[str]]:
+    """Parte → todos que la contienen."""
+    todos: dict[str, set[str]] = defaultdict(set)
+    for r in conceptos.partes():
+        todos[r["parte"]].add(r["todo"])
+    return {k: frozenset(v) for k, v in todos.items()}
+
+
+def primer_grado_solido(puntos: list[tuple[float, int]], minimo: int = 2) -> float | None:
+    """Primer grado en que los puntos acumulados (en orden de grado) llegan a `minimo`: un principal (2) o dos
+    secundarios (1 + 1)."""
+    acumulado = 0
+    for g, p in sorted(puntos):
+        acumulado += p
+        if acumulado >= minimo:
+            return g
+    return None
+
+
 @cache
 def _equivalencias() -> dict[str, frozenset[str]]:
     """Concepto → conceptos equivalentes. Se arma una vez: con_equivalentes se llama ~20 000 veces por corrida."""
@@ -111,7 +149,8 @@ def _grado(o: dict) -> float:
 
 
 def _antecedente() -> list[dict]:
-    """(pais, concepto, grado) de los objetivos de grados ≤ 8 ya etiquetados en el grafo principal."""
+    """(pais, concepto, grado, puntos) de los objetivos de grados ≤ 8 ya etiquetados en el grafo principal; el primer
+    concepto de cada objetivo es el principal (2 puntos) y los demás, secundarios (1)."""
     etq = conceptos.etiquetado_paises()
     filas = []
     for codigo, archivo in ANTECEDENTE.items():
@@ -119,8 +158,8 @@ def _antecedente() -> list[dict]:
             g = (o["grado_min"] + o["grado_max"]) / 2
             if g > tramo.actual().grados[0] - 0.5 or o["id"] not in etq:   # solo lo anterior al tramo
                 continue
-            filas.extend({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"]}
-                         for c in etq[o["id"]]["conceptos"])
+            filas.extend({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"], "puntos": 2 if i == 0 else 1}
+                         for i, c in enumerate(etq[o["id"]]["conceptos"]))
     return filas
 
 
@@ -196,7 +235,7 @@ def construir() -> dict:
 
 
 def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
-    grados = tramo.actual().grados
+    grados, doble = tramo.actual().grados, tramo.actual().lectura_doble
     # Denominador del consenso: países con un núcleo común (para todos) que llega hasta el grado g o antes.
     # Pregunta: ¿qué proporción de los currículos comunes ya enseñó el concepto a esa edad? Hong Kong, sin núcleo
     # en S4–S6, no entra en el denominador (sí en la especialización).
@@ -206,16 +245,20 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
     # Evidencia del núcleo por país: 2 puntos por objetivo con el concepto como principal, 1 como secundario.
     # Con ≥ 2 puntos el núcleo «lo enseña» de forma sólida (un principal, o al menos dos secundarios).
     foco: dict[str, Counter] = defaultdict(Counter)
+    puntos: dict[str, dict[str, list[tuple[float, int]]]] = defaultdict(lambda: defaultdict(list))
     for o in objs:
-        principales = set(con_equivalentes(etq[o["id"]]["principales"]))
-        for c in con_equivalentes(ensenados(etq[o["id"]])):
+        principales = set(expandir(etq[o["id"]]["principales"]))
+        for c in expandir(ensenados(etq[o["id"]])):
             por[c][o["pais"]][o["nivel"]].append((_grado(o), o["id"], o["grado_sv_max"]))
             if o["nivel"] == "nucleo":
                 foco[c][o["pais"]] += 2 if c in principales else 1
+                puntos[c][o["pais"]].append((_grado(o), 2 if c in principales else 1))
     previo: dict[str, dict[str, float]] = defaultdict(dict)
     for a in _antecedente():
-        g = previo[a["concepto"]].get(a["pais"])
-        previo[a["concepto"]][a["pais"]] = a["grado"] if g is None else min(g, a["grado"])
+        for c in (expandir([a["concepto"]]) if doble else [a["concepto"]]):
+            g = previo[c].get(a["pais"])
+            previo[c][a["pais"]] = a["grado"] if g is None else min(g, a["grado"])
+            puntos[c][a["pais"]].append((a["grado"], a["puntos"]))
     salida = []
     for c in sorted(set(por) | set(previo)):
         if c not in voc:
@@ -238,6 +281,8 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
                         "antes_del_tramo": ga is not None, "en_especializacion": bool(ge),
                         "nucleo_en_tramo": nucleo_en_tramo,
                         "objetivos": list(dict.fromkeys(ids))[:12]}
+            if doble:
+                filas[p]["primer_grado_nucleo_solido"] = primer_grado_solido(puntos[c][p])
             if primero_nucleo is not None:
                 primeros_nucleo.append(primero_nucleo)
             primeros.append(primero)
@@ -246,6 +291,17 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
         nucleo_hasta = {g: sorted(p for p, f in filas.items()
                                   if f["primer_grado_nucleo"] is not None and f["primer_grado_nucleo"] <= g + 0.5)
                         for g in grados}
+        extra = {}
+        if doble:
+            solidos = [f["primer_grado_nucleo_solido"] for f in filas.values()
+                       if f["primer_grado_nucleo_solido"] is not None]
+            hasta = {g: sorted(p for p, f in filas.items() if f["primer_grado_nucleo_solido"] is not None
+                               and f["primer_grado_nucleo_solido"] <= g + 0.5) for g in grados}
+            extra = {"n_nucleo_solido": len(solidos),
+                     "mediana_primer_grado_nucleo_solido": statistics.median(solidos) if solidos else None,
+                     "nucleo_solido_hasta_grado": hasta,
+                     "proporcion_nucleo_solido_hasta_grado": {g: round(len(hasta[g]) / max(1, len(con_nucleo[g])), 3)
+                                                              for g in grados}}
         salida.append({
             "concepto": c, "nombre": voc[c]["nombre"], "asignatura": ASIG_SV.get(voc[c]["asignatura"]),
             "paises": filas, "n_paises": len(filas),
@@ -258,5 +314,6 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             "nucleo_hasta_grado": nucleo_hasta,
             "proporcion_nucleo_hasta_grado": {g: round(len(nucleo_hasta[g]) / max(1, len(con_nucleo[g])), 3)
                                               for g in grados},
+            **extra,
         })
     return {"version": VERSION, "paises_con_nucleo_por_grado": con_nucleo, "conceptos": salida}

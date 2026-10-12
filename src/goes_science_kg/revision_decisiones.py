@@ -1,8 +1,9 @@
 """Confirmación con el MINED de las decisiones tomadas fuera de la IA (spec 07, circuito de revisión humana).
 
 Las decisiones de contenido viven en capas que se aplican al cargar: equivalencias retiradas, prerrequisitos
-rechazados, divisiones de conceptos y clases corregidas del contraste internacional. Este módulo las lleva al
-equipo de Ciencias y trae su veredicto, con las mismas columnas de decisión que los demás CSV de revisión:
+rechazados, divisiones de conceptos, relaciones «parte de» y clases corregidas del contraste internacional. Este
+módulo las lleva al equipo de Ciencias y trae su veredicto, con las mismas columnas de decisión que los demás CSV de
+revisión:
 
 exportar_decisiones() → asignaturas/decisiones/<fecha>_decisiones.csv (una fila por decisión) y
                         <fecha>_asignaciones_division.csv (una fila por elemento reasignado en cada división).
@@ -30,6 +31,7 @@ ARCHIVOS = {
     "equivalencia_retirada": "data/interim/conceptos/equivalencias_retiradas.json",
     "prerrequisito_rechazado": "data/interim/prerrequisitos/rechazados.json",
     "division": "data/interim/conceptos/divisiones.json",
+    "parte_de": "data/interim/conceptos/partes.json",
     "clase_internacional": "data/interim/internacional/revisiones.json",
     "clase_internacional_2_8": "data/interim/internacional_2_8/revisiones.json",
 }
@@ -71,6 +73,10 @@ DESCRIPCION: dict[str, tuple[Callable[[dict], str], Callable[[dict], str], str, 
                                 "comentario", "revisado_por"),
     "division": (lambda r: r["concepto"],
                  lambda r: f"Dividir «{_nombre(r['concepto'])}»: se crea «{r['nuevo']['nombre']}»",
+                 "justificacion", "revisado_por"),
+    "parte_de": (lambda r: f"{r['parte']}|{r['todo']}",
+                 lambda r: (f"Contar «{_nombre(r['parte'])}» como parte de «{_nombre(r['todo'])}» en el contraste "
+                            "internacional"),
                  "justificacion", "revisado_por"),
     "clase_internacional": (lambda r: r["concepto"],
                             lambda r: f"Clase de «{r['nombre']}» en el contraste: {r['clase_ia']} → {r['clase']}",

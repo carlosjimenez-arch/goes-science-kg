@@ -1,9 +1,9 @@
 # 12 · Grafos internacionales de 2.° a 8.° y contraste con la malla Versión 2
 
 > **Construida el 2026-10-11** (extracción 2026-10-09 y 2026-10-11; etiquetado aprobado: 162 llamadas). 9 países,
-> 3.615 objetivos, 448 conceptos en consenso. La verificación de 24 hallazgos dio 46 % de falsos por el etiquetado de
-> la V2: solo se presentan los hallazgos verificados de `internacional/2_8/README.md`; las mejoras de método pendientes
-> están ahí mismo.
+> 3.615 objetivos, 448 conceptos en consenso. La primera verificación (24 hallazgos) dio 46 % de falsos; con el
+> **método v2** (2026-10-12, sección «Método v2») una muestra nueva al azar dio 25 %. Al MINED solo se presentan los
+> hallazgos verificados de `internacional/2_8/README.md`.
 
 ## Qué cambia frente a la spec 11
 El método es el mismo: extraer y validar con dos modelos distintos, etiquetar con el catálogo congelado, construir el
@@ -20,6 +20,25 @@ grafo y el consenso, contrastar con la V2 y revisar a mano una muestra. Cambia l
 Aquí el momento sí se puede juzgar: los datos de los países cubren todo el tramo, así que «adelantado» y «tardío» son
 los hallazgos centrales. «posterior» marca lo que la V2 deja para 9.°–11.° y que el núcleo internacional tampoco exige
 antes de 9.°; no es un problema, solo ubica el concepto.
+
+## Método v2: doble lectura (2026-10-12)
+El etiquetado de la V2 en primaria es irregular (etiquetas secundarias sueltas, conceptos que solo están en columnas
+que no se etiquetan) y los países también tienen etiquetas sueltas. La regla de clases es la misma de la spec 11, pero
+se aplica con dos lecturas y solo se afirma lo que coincide (`Tramo.lectura_doble`, `contraste._clasificar_doble`):
+- **amplia** (favorable a la V2): la V2 con cualquier etiqueta de sus dos etiquetados (Vertex `malla_v2_*` y el del
+  grafo principal) o con el concepto nombrado como frase en el texto de cualquier columna de la fila
+  (`mallas.textos_completos`); los países con presencia sólida (principal, o secundaria en dos objetivos).
+- **estricta** (desfavorable): la V2 con presencia sólida (2 puntos acumulados); los países con la regla de presencia.
+- Si difieren: **incierto** (`revision_clases.csv`). «adelantado» exige ≥ 3 países detrás de la mediana (con menos,
+  «sin referente»). Las relaciones «parte de» (`conceptos/partes.json`) cuentan en los dos lados. Una secuencia exige
+  el concepto como principal y el prerrequisito ausente también del texto.
+- **Metadatos:** `gskg internacional --tramo 2_8 corregir-metadatos` recalcula los grados con el catálogo (mayúsculas,
+  «P5 Foundation», «P4-P6») y pasa a especialización lo que un documento de `extension_en_cursiva` imprime en cursiva
+  (HK S1–3). No llama a Vertex y es idempotente.
+- 9.°–11.° sigue con el método v1: sus salidas no cambian.
+
+Resultado: de 481 conceptos, 150 inciertos; los 5 «tardíos» automáticos que quedan están verificados. Detalle de la
+verificación y de los errores que persisten en `internacional/2_8/README.md`.
 
 ## Equivalencia de grados (por edad de ingreso; SV 1.° ≈ 7 años)
 | País | SV 2.° | SV 5.° | SV 8.° | Fuente en el catálogo |

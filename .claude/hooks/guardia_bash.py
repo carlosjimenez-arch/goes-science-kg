@@ -2,7 +2,8 @@
 
 - deny: leer o copiar .env; escribir en data/fuentes/ o reportes/ desde la terminal; commit con una cuenta que no es la
   de GOES; commit con pruebas o lint en rojo; push forzado a main o a un remoto que no es el alias de GOES.
-- ask: cualquier comando que gaste en Vertex (--confirmar, congelar-catalogo, make internacional-ia CONFIRMAR=…).
+- ask: cualquier comando que gaste en Vertex (--confirmar de internacional o del tutor, congelar-catalogo,
+  make internacional-ia CONFIRMAR=…).
 - sin salida: todo lo demás sigue el flujo normal de permisos.
 """
 
@@ -41,6 +42,7 @@ def revisar(comando: str) -> None:
     # 3. Gasto en Vertex: lo aprueba el usuario.
     if (re.search(r"gskg\s+internacional\b.*\b(extraer|etiquetar)\b.*--confirmar", comando)
             or re.search(r"gskg\s+internacional\b.*\bcongelar-catalogo\b", comando)
+            or re.search(r"gskg\s+tutor\b.*--confirmar", comando)
             or re.search(r"make\s+internacional-ia\b.*CONFIRMAR=\S+", comando)):
         decidir("ask", "Este comando gasta llamadas a Vertex (proyecto GOES). Antes corre sin --confirmar para ver "
                        "el costo.")

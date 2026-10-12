@@ -84,13 +84,22 @@ La V2 del MINED contiene los 1.260 temas de la V1 sin cambios (mismo id, hoja, f
   5 en el mismo grado (Física y Tierra y Espacio de 3.°–4.°), 8 en otro grado y 8 en parte; 26 siguen pendientes. Las
   adoptadas no se vuelven a simular y `asignaturas/PROPUESTAS.md` lista la conciliación. Falta confirmarla con el MINED.
 
-## Fase 5-ter · Grafos internacionales de 2.°–8.° (spec 12) ✅ construida; método por mejorar (2026-10-11)
+## Fase 5-ter · Grafos internacionales de 2.°–8.° (spec 12) ✅ (2026-10-11; método v2 el 2026-10-12)
 Código por tramo (`--tramo 2_8`), catálogo `config/internacional_2_8.yaml`. HK P1–6 y S1–3 y ON 1–8 descargados
 (2026-10-09). 9 países, 3.615 objetivos, 448 conceptos en consenso; `internacional/2_8/`. La verificación de 24
 hallazgos dio 7 confirmados, 6 parciales y 11 falsos (etiquetado de la V2): se corrigió la regla de «tardío» después del
 tramo (≥ 2 grados) y se registraron 11 correcciones expertas. Solo se presentan los hallazgos verificados del README.
-Pendiente: mejoras de método (presencia sólida en la V2, mínimo de países, relación «parte de», equivalencias
-simétricas, búsqueda de texto) y la confirmación del MINED.
+**Método v2 (2026-10-12):**
+- doble lectura (amplia y estricta; si difieren, «incierto»);
+- segundo etiquetado de la V2 (el del grafo principal) y búsqueda de texto como frase en toda la fila;
+- mínimo de 3 países para «adelantado»;
+- 7 relaciones «parte de»;
+- secuencias prudentes;
+- metadatos de EE, SG y HK corregidos sin Vertex.
+
+Una muestra nueva al azar de 24 hallazgos dio 13 confirmados, 5 parciales y 6 falsos (25 %, antes 46 %). En total hay
+19 correcciones expertas, 150 inciertos y ningún gasto en Vertex. Pendiente: la confirmación del MINED y revisar los
+inciertos.
 
 ## Fase 7 · Apoyo al aprendizaje (spec 13) · prototipo ✅ (2026-10-11)
 `src/goes_science_kg/aprendizaje/`, `gskg tutor …`, `config/aprendizaje.yaml`. Relaciones con inversa explícita (una
