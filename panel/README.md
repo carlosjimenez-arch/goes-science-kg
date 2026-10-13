@@ -54,6 +54,19 @@ Detalle por ciencia, errores de la malla y lo que aprendió el método: [`bucle/
 snapshots en [`bucle/`](bucle/). La columna «Solidez» de [`DICTAMEN.md`](DICTAMEN.md) y el estado del CSV para el MINED
 la muestran por dictamen.
 
+**Series inc9 e inc9b (2026-10-13):** al pasar 9.°–11.° a la doble lectura, el panel decidió 59 clases inciertas
+(55 + 4 que aparecieron al sumar el antecedente de 2.°–8.°), y el bucle las revisó aparte. Reabrió 9 y la réplica
+cambió 8, que la vuelta 2 sostuvo. Lo que aprendió el método quedó como reglas en `prompts/panel_dictaminar.md`: no
+contar conceptos vecinos como núcleo, y no usar la regla del umbral para esquivar un hallazgo claro. Detalle en
+[`bucle/README.md`](bucle/README.md).
+
+**Estado completo del panel:** 571 expedientes, con esta solidez:
+- 526 sólidos;
+- 18 respaldados;
+- 1 frágil (organelos);
+- 19 decisiones delegadas;
+- 7 recomendaciones del piloto, que por diseño no pasan por el bucle.
+
 **Decisión delegada tras el bucle:** las fuerzas intermoleculares pasan a «sin referente». Solo ENG GCSE (p. 20) las
 tiene en el núcleo; HK p. 81 es Extension Part.
 

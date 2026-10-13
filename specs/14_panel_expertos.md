@@ -192,6 +192,9 @@ uv run gskg bucle impugnar --vuelta 2          # solo lo que cambió
 uv run gskg panel aplicar && uv run gskg panel informe   # reaplica lo cambiado; DICTAMEN.md con la solidez
 uv run gskg bucle cita "<fuente>" "<cita>"     # ¿está literal? (lo usan los agentes)
 uv run gskg bucle fuente "<fuente>"            # el texto en que se busca
+# Expedientes nuevos (p. ej. clases inciertas que aparecen después): una serie aparte, con sus propias vueltas.
+uv run gskg bucle impugnar --vuelta 1 --serie inc9      # lotes b1-inc9_*; la vuelta 2 solo toma los cambios de la serie
+uv run gskg bucle replicar --vuelta 1 --paso 1 --serie inc9   # lotes r11-inc9_*
 ```
 
 ### 7.6 Límites
@@ -222,3 +225,16 @@ uv run gskg bucle fuente "<fuente>"            # el texto en que se busca
   marcaba como inestables 3 casos en que la réplica había llegado a lo mismo que la sonda. Además, los snapshots por
   grado contaban tres veces los objetivos de otros países. Las dos cosas están corregidas y probadas, y los totales
   publicados («466») se corrigieron.
+
+### 7.8 Series inc9 e inc9b (2026-10-13)
+- **Qué se revisó:** las 59 clases inciertas de 9.°–11.° que decidió el panel: 55 de la doble lectura y 4 que
+  aparecieron al sumar el antecedente de 2.°–8.°.
+- **Vuelta 1:** el refutador reabrió 9 y la réplica cambió 8.
+- **Vuelta 2:** sostuvo los 8 cambios. Quedan 58 sólidos y 1 respaldado.
+- **Bucle externo:**
+  - el refutador de Física vio que la secundaria baja de HK no contaba. Desde ahora el antecedente suma el núcleo de
+    2.°–8.° de los demás países (`consenso.ANTECEDENTE_2_8`);
+  - los dos errores de criterio del panel (conceptos vecinos contados como núcleo y la regla del umbral usada como
+    comodín) pasaron a ser reglas de `prompts/panel_dictaminar.md`;
+  - se corrigió un bug de `panel aplicar`: la solidez de las clases de 9.°–11.° se buscaba en las revisiones de
+    2.°–8.°.

@@ -1,17 +1,17 @@
 # Reforzamiento de Física: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **9.°–11.° con doble lectura y núcleo parcial; 57 clases revisadas por el panel (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Series inc9 e inc9b: clases inciertas de 9.°–11.° (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 170 | 9 | 5 | 4 | 250 | 19/22 | 0 |
+| 171 | 13 | 9 | 4 | 289 | 19/22 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
 |---|---|---|---|---|---|---|
 | asignatura de temas | 17 | 0 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 6 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 65 | 2 | 0 | 6 | 0 | 0 |
 | capa pedagógica | 58 | 0 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 12 | 0 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 4 | 2 | 0 | 0 | 0 | 0 |
@@ -21,6 +21,10 @@
 
 | Expediente | Antes | Ahora | Por qué (revisor adversarial) |
 |---|---|---|---|
+| Observación astronómica en distintas longitudes de onda (CON:fisica/astronomia-… | retomado | solo_especializacion | Las menciones previas a 9.° son de contexto: 5.° mira imágenes de nebulosas y 8.° critica una publicación con imágenes del James Webb; ninguna trata bandas ni detectores, que entran en 11.° (22.6). Solo TW lo tiene en su núcleo, y con un país la regla igual d… |
+| Cuantización de la energía (CON:fisica/cuantizacion-energia-planck, 9.°–11.°) | solo_especializacion | sin_referente | «Solo especialización» exige a lo sumo un país con presencia sólida en su núcleo. Además de TW 必修, los cursos obligatorios del gimnasio estonio (Lisa 4) piden explicar la dualidad de la luz, usar E = hf y aplicar la ecuación de Einstein del efecto fotoeléctri… |
+| Energía potencial y potencial eléctrico (CON:fisica/potencial-electrico, 9.°–11… | alineado | solo_especializacion | El dictamen evita «solo especialización» contando a SG como segundo núcleo, pero SG Combined es núcleo parcial y en la lectura sólida cuenta como especialización; además su objetivo es la diferencia de potencial de circuitos, el concepto vecino que el propio … |
+| Reflexión interna total (CON:fisica/reflexion-interna-total, 9.°–11.°) | solo_especializacion | alineado | La regla cuenta la secundaria baja; el dictamen solo miró 9.°–11.°. La reflexión interna total está en la parte troncal (Core Part) de HK S1–3, con experimentos sobre sus condiciones, y el Course of Study de secundaria baja de Japón ordena tratar el 全反射; con … |
 | Flotación y hundimiento (CON:fisica/flotacion-hundimiento) | adelantado | alineado | El concepto (flota o se hunde según material y forma) está en primaria en ON Grade 2, HK P3 y P6, SG P3 y KR 5.°–6.°. El panel dice que solo HK y SG, y fecha la mediana con empuje y densidad (ENG KS3, ON 8, TW, EE), que la V2 da en 6.° (G06-CIE-U1-1.2). Con s… |
 | Potencia eléctrica y efecto Joule (CON:fisica/potencia-electrica-joule) | tardio | alineado | La V2 no lo introduce en 9.°: en 8.° (G08-2.11, rotulada «potencia mecánica») calcula el consumo de aparatos en kWh con la factura de la casa, y en 4.° usa 1 W = 1 J/s con focos. Es lo que ENG KS3 y SG cuentan como núcleo. Con 8.°, frente a consenso en 7, no … |
 | Relaciones presión-volumen-temperatura en gases (CON:fisica/relaciones-presion-… | tardio | alineado | HK no lo tiene en su núcleo: la sección 9.4 (p. 64, presión y partículas) va en cursiva azul, que el documento define como Extension Part, y la p. 62 dice «may further guide». Sin HK, hasta SV 7 solo JP, KR, ON y TW (4 de 9): no hay consenso; llega en 8.° con… |
@@ -41,4 +45,4 @@
 - Péndulo simple (CON:fisica/pendulo-simple): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
 - Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
 
-**Patrones de error de lo impugnado:** otra_asignatura_o_nombre 2, progresion 1, etiqueta_suelta 1, electiva_como_nucleo 1, item_defectuoso 1, otro 1, conteo_de_paises 1.
+**Patrones de error de lo impugnado:** conteo_de_paises 3, otra_asignatura_o_nombre 2, etiqueta_suelta 2, electiva_como_nucleo 2, progresion 1, item_defectuoso 1, otro 1.

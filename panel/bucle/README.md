@@ -45,6 +45,71 @@ en el historial de git.
   el Rh como otro gen, dos claves que se delataban por su largo, un ítem que se acertaba votando por la etiqueta más
   repetida y una práctica con agua «caliente» que pasa a tibia por seguridad.
 
+## Serie inc9: las clases inciertas de 9.°–11.° (2026-10-13)
+Al pasar 9.°–11.° a la doble lectura quedaron 57 clases inciertas. El panel decidió 55 y 2 se resolvieron por
+delegación. Las 55 pasaron por el bucle en una serie aparte (lotes `b1-inc9`, `r11-inc9`, `b2-inc9`):
+| Etapa | Resultado |
+|---|---|
+| Vuelta 1: impugnación | 46 se sostienen, 2 debilitados y 7 refutados; 9 reabiertos |
+| Vuelta 1: réplica | 8 cambiados y 1 mantenido (diagramas de fases: EE se suma al núcleo, pero son 2 países) |
+| Vuelta 2 | los 8 cambios se sostienen: el bucle se detiene |
+| Solidez | de las 55: 54 sólidas y 1 respaldada; además, 2 delegadas |
+
+**Lo que cambió:**
+- a «solo especialización» (la V2 hace obligatorio lo que fuera es electivo): ciclo del nitrógeno (9.°), química verde
+  (Química 11.°), técnicas de estructura orgánica (cristalografía en Física 11.°), potencial eléctrico en un punto del
+  campo (Física 11.°) y astronomía multionda (Física 11.°);
+- a «sin referente»: oleaje y dinámica costera (la palabra «oleaje» de 4.° está en la lista de efectos de un ciclón;
+  9.° lo presenta como fenómeno nuevo) y cuantización de Planck (solo EE y TW en el núcleo);
+- a «alineado»: reflexión interna total (núcleo de HK S1–3, JP 中1 y ON SNC2D; no es especialización).
+
+**Por qué se equivocó el panel:** casi siempre por una de dos razones, que ahora están como reglas en
+`prompts/panel_dictaminar.md` («Clases inciertas del contraste»):
+- contó como núcleo objetivos de un concepto vecino (desarrollo sostenible, ciclado de la materia, diferencia de
+  potencial de un circuito);
+- usó la regla del umbral para no afirmar «sin referente» o «solo especialización» cuando la evidencia era clara.
+
+**Antecedente de 2.°–8.° (bucle externo).** El refutador de Física vio que la reflexión interna total, núcleo de HK
+S1–3, no contaba porque la secundaria baja de HK no estaba cargada en 9.°–11.°. Desde ahora el antecedente suma el
+núcleo de 2.°–8.° de HK, SG, EE, KR, TW y ON (`consenso.ANTECEDENTE_2_8`), ya extraído y etiquetado, sin Vertex:
+- 8 clases automáticas cambiaron. Por ejemplo, indicadores ácido-base y genómica dejan de ser «solo especialización»
+  (HK S1–3, KR, SG y TW los tienen en el núcleo);
+- 4 quedaron inciertas y el panel las decidió (serie inc9b):
+  - rapidez de la luz → alineado: el valor de HK está en la Extension Part y el de SG es opcional, así que quedan 3
+    países;
+  - estructura y propiedades de polímeros → solo especialización;
+  - capacidad de carga → solo especialización;
+  - nutrición mineral de las plantas → alineado.
+- El antecedente trae también el ruido de las etiquetas de esos países: hay etiquetas principales de conceptos
+  vecinos, como la propagación de la luz por su rapidez en HK. La doble lectura lo convierte en clases inciertas, no
+  en hallazgos falsos.
+
+**Recomendaciones del panel en esta serie (no son clases ni quitan temas):**
+- ciclo del nitrógeno: en 9.°, de forma cualitativa; la fijación, la nitrificación y la desnitrificación, en Biología
+  10.°;
+- rapidez de la luz: ENG, TW y ON dan el dato entre 6.° y 9.°, y la V2 lo hace explícito en 11.°. Se puede adelantar:
+  el cambio de rapidez como causa de la refracción en 7.°, el relámpago y el trueno en 8.° y n = c/v en el indicador
+  de 10.°;
+- polímeros: la relación estructura-propiedad, de forma cualitativa (cadenas lineales y entrecruzadas); la
+  tacticidad, como ampliación;
+- capacidad de carga: apoyarla en la curva de levaduras de 7.° (G07-CIE-U4-4.4) y limitar el ajuste del modelo a la
+  lectura de la meseta;
+- nutrición mineral: nombrar en 8.° (G08-CIE-U6-6.4) que la raíz absorbe sales minerales, como tres referentes antes
+  de 9.°; en 11.°, separar «nutriente mineral» de «alimento de la planta»;
+- diagrama de fases: está dos veces en 10.° (Física 12.9 y Química 7.5); coordinar las dos asignaturas.
+
+**Etiquetas de objetivos de países que el bucle encontró mal** (no cambian ninguna clase, porque esos conceptos
+tienen revisión del panel; corregirlas en el próximo etiquetado):
+- KR-TYE-kr_primaria_34-p023-02: lleva oleaje como concepto principal, pero la p. 23 excluye la erosión, el transporte
+  y la sedimentación por el agua de mar;
+- EE-FIS-ee_gym-p012-25: trata el diagrama de fases y no lleva ese concepto;
+- EE-FIS-ee_gym-p012-23: la ecuación de Einstein y E = hf quedaron solo en «fotón y efecto fotoeléctrico»;
+- HK-FIS-hk_s1_3-p074-07: lleva como principal la rapidez de la luz, pero solo dice que la luz se propaga en el vacío;
+- SG Lower Secondary p. 50 («xylem transports water and mineral salts»): sin la etiqueta de nutrición mineral;
+- EE-BIO-ee_gym-p008-17: lleva como principal la capacidad de carga, pero trata la autorregulación del ecosistema;
+- Japón: los 内容の取扱い del Course of Study de secundaria baja (p. ej., 全反射も扱い) no están en
+  `data/interim/paises/japon.json`.
+
 ## Errores y problemas de la propia malla (para el MINED)
 **Errores científicos:**
 - G05-CIE-U6-6.7: bordes de placa «pasivos»; lo correcto es «transformantes».

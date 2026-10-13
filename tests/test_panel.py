@@ -151,3 +151,16 @@ def test_los_inciertos_son_expedientes_del_experto_de_la_disciplina():
     assert all(x["datos"]["tramo"] == ("9_11" if i.startswith("INC:9_11:") else "2_8") for i, x in inc.items())
     assert all(len(x["roles"]) == 1 and x["roles"][0].startswith("experto-") for x in inc.values())
     assert all(x["datos"]["lecturas"]["amplia"] != x["datos"]["lecturas"]["estricta"] for x in inc.values())
+
+
+def test_cada_clase_incierta_busca_su_registro_en_su_tramo():
+    """Antes, aplicar buscaba siempre en las revisiones de 2.°–8.°: la solidez de 9.°–11.° no llegaba a su registro y
+    pisaba la de un registro de 2.°–8.° del mismo concepto."""
+    por_tramo = {"2_8": [{"concepto": "CON:x", "dictamenes_panel": [{"decision": "posterior"}]}],
+                 "9_11": [{"concepto": "CON:x", "dictamenes_panel": [{"decision": "alineado"}]}]}
+    x9 = {"tipo": "clase_incierta", "datos": {"tramo": "9_11", "concepto": {"id": "CON:x"}}}
+    x2 = {"tipo": "clase_incierta", "datos": {"concepto": {"id": "CON:x"}}}   # anterior a los tramos: 2.°–8.°
+    for x, esperada in ((x9, "alineado"), (x2, "posterior")):
+        revs = panel._revisiones_del_tramo(x, por_tramo)
+        assert panel._registro_en_capa("INC", x, {}, {}, {}, revs)["decision"] == esperada
+    assert panel._revisiones_del_tramo({"tipo": "hallazgo", "datos": {}}, por_tramo) == []

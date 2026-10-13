@@ -69,6 +69,25 @@ Campos según la decisión:
 | `hallazgo` | ¿El panel respalda la lectura del hallazgo verificado y su recomendación curricular? | respaldar · matizar (+ texto) · no_respaldar (+ alternativa) |
 | `propuesta` | La V2 no adoptó esta acción de las propuestas: ¿se adopta, se adapta o se descarta? | adoptar · adaptar (+ texto) · descartar |
 | `piloto` | La pregunta del expediente sobre el piloto del tutor | recomendar (+ recomendacion) |
+| `clase_incierta` | Las dos lecturas del contraste internacional (amplia y estricta) no coinciden: ¿qué clase sostiene la fuente? | las clases del tramo (`opciones` del expediente) |
+
+## Clases inciertas del contraste
+Las clases están en `internacional/README.md` (9.°–11.°) e `internacional/2_8/README.md` (2.°–8.°). Cuenta los países
+por lo que su fuente enseña, no por sus etiquetas. El bucle encontró estos errores en la serie de 9.°–11.° (2026-10-13):
+- **Concepto vecino.** Un objetivo etiquetado con este concepto no cuenta como núcleo si enseña otro cercano: la
+  diferencia de potencial de un circuito no es el potencial eléctrico, el desarrollo sostenible no es la química verde,
+  el ciclado de la materia no es el ciclo del nitrógeno. Al revés, un objetivo con otra etiqueta cuenta si enseña de
+  verdad este concepto. En los dos casos, cítalo.
+- **Núcleo parcial.** «nucleo_parcial» (SG Combined, JP 基礎, SG H1) cuenta como núcleo en la lectura amplia y como
+  especialización en la estricta.
+- **La regla del umbral no es un comodín.** «Solo se afirma lo que coincide»: si la clase depende de contar UN país o
+  una mención de paso, gana la clase que no afirma un desajuste. Pero «sin_referente», «solo_especializacion»,
+  «tardio» o «adelantado» se afirman cuando la evidencia los sostiene sin ambigüedad (p. ej., ningún núcleo real y tres
+  electivas o más).
+- **Una palabra en una lista no es enseñar.** El «oleaje» entre los efectos de un ciclón impide afirmar que el tema
+  falta, pero no basta para decir que la V2 lo retoma.
+- **La clase no pide quitar el tema.** «solo_especializacion» dice que la V2 hace obligatorio lo que fuera es electivo;
+  la recomendación (acotar, tratar de forma cualitativa, adelantar) va en la justificación.
 
 ## Réplica del bucle de fortalecimiento
 Si el lote trae `replica_del_bucle`, un revisor adversarial o una sonda ciega impugnó la resolución. Sigue la sección

@@ -1,17 +1,17 @@
 # Reforzamiento de Biología: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **9.°–11.° con doble lectura y núcleo parcial; 57 clases revisadas por el panel (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Series inc9 e inc9b: clases inciertas de 9.°–11.° (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 125 | 11 | 7 | 4 | 207 | 8/8 | 0 |
+| 127 | 12 | 8 | 4 | 230 | 8/8 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
 |---|---|---|---|---|---|---|
 | asignatura de temas | 16 | 1 | 0 | 1 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 4 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 49 | 1 | 1 | 4 | 0 | 0 |
 | capa pedagógica | 34 | 0 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 11 | 0 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 1 | 1 | 0 | 0 | 0 | 0 |
@@ -21,6 +21,7 @@
 
 | Expediente | Antes | Ahora | Por qué (revisor adversarial) |
 |---|---|---|---|
+| Ciclo del nitrógeno (CON:biologia/ciclo-del-nitrogeno, 9.°–11.°) | alineado | solo_especializacion | Ningún núcleo de los 9 países nombra el ciclo del nitrógeno: ENG Combined nombra solo los del carbono y el agua; SG, AU y EE, solo el del carbono; ON y JP 科学と人間生活 hablan de ciclado genérico. Sí lo nombran electivas: HK Biology, JP 生物 y TW 加深加廣選修 (también AU E… |
 | Propagación de enfermedades y control de brotes (CON:biologia/epidemiologia-y-c… | alineado | posterior | La fila de 3.° (6.1) enseña infección frente a enfermedad y cómo prevenir un contagio: es el concepto vecino «contagio y prevención de enfermedades», no epidemias, movilidad ni inmunidad poblacional. Ninguna lectura del código la encontró (amplia: posterior).… |
 | Mitosis y ciclo celular (CON:biologia/mitosis-y-ciclo-celular) | alineado | adelantado | La mediana 7 descansa en etiquetas sueltas: ON Grade 8 y SG hablan de procesos celulares o de la digestión, sin división celular; HK solo dice que las células se dividen; TW excluye el proceso. Con los países que enseñan la mitosis (KR, TW cualitativo, JP 中3,… |
 | ACT:biologia/adn-y-cromosomas/practica-G07 | corregir | corregir (nueva versión) | La retroalimentación dice «hay dos copias de cada gen». El propio experto corrigió esa frase en los microtemas de ADN y de alelos («casi todos»), porque los varones tienen una sola copia de los genes del X, que la V2 enseña en 10.°. Dejarla aquí contradice al… |
@@ -45,4 +46,4 @@
 - Organelos de la célula eucariota (CON:biologia/organelos-de-la-celula-eucariota): cita una fuente que no existe: ENG_NC_Science_KS3_2013.pdf p. 172
 - Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar)
 
-**Patrones de error de lo impugnado:** error_cientifico 3, fuente_mal_leida 2, etiqueta_suelta 2, item_defectuoso 2, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.
+**Patrones de error de lo impugnado:** etiqueta_suelta 3, error_cientifico 3, fuente_mal_leida 2, item_defectuoso 2, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.

@@ -558,12 +558,14 @@ def aplicar() -> dict:
     capa_ped = {t: {e["id"]: e for e in json.loads((directorio() / a).read_text(encoding="utf-8"))}
                 for t, a in ARCHIVOS.items()}
     revs_por_tramo = {"2_8": capas["clase_internacional_2_8"], "9_11": capas["clase_internacional"]}
-    revs = revs_por_tramo["2_8"]   # el mismo archivo que las clases inciertas resueltas por el panel (2.°–8.°)
     clases_panel: list[dict] = []
     for i, x in sorted(estado.items()):
         if x["estado"] != "resuelta" or x["tipo"] in ("hallazgo", "propuesta", "piloto"):
             continue
         if x.get("aplicado"):   # ya aplicado: solo se actualiza la solidez que midió el bucle
+            # Las clases inciertas buscan su registro en las revisiones de SU tramo. Antes miraban siempre las de
+            # 2.°–8.°: las de 9.°–11.° quedaban sin solidez y se pisaba la de un registro de 2.°–8.° del mismo concepto.
+            revs = _revisiones_del_tramo(x, revs_por_tramo)
             if (s := (x.get("bucle") or {}).get("solidez")) and (reg := _registro_en_capa(
                     i, x, claves, coherencia, capa_ped, revs)) is not None and reg.get("solidez") != s:
                 reg["solidez"] = s
@@ -622,7 +624,7 @@ def aplicar() -> dict:
         x["aplicado"] = reg["fecha"]
         hechos[x["tipo"]] += 1
     for x in clases_panel:   # clases del contraste: entran como revisión experta del panel (ganan sobre la regla)
-        revs = revs_por_tramo[x["datos"].get("tramo", "2_8")]
+        revs = _revisiones_del_tramo(x, revs_por_tramo)
         ya = {r["concepto"]: r for r in revs}
         c = x["datos"]["concepto"]["id"]
         d = x["dictamenes"][-1]
@@ -644,6 +646,12 @@ def aplicar() -> dict:
                                                        ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     _guardar_estado(estado)
     return dict(hechos)
+
+
+def _revisiones_del_tramo(x: dict, revs_por_tramo: dict[str, list[dict]]) -> list[dict]:
+    """Las revisiones del contraste donde va la clase incierta x: las de su tramo (las anteriores a 9.°–11.° no
+    guardaban el tramo y son de 2.°–8.°). Otros tipos no escriben ahí."""
+    return revs_por_tramo[x["datos"].get("tramo", "2_8")] if x["tipo"] == "clase_incierta" else []
 
 
 def _registro_en_capa(i: str, x: dict, claves: dict, coherencia: dict, capa_ped: dict, revs: list[dict]) -> dict | None:

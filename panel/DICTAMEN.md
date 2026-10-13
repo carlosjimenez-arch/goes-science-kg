@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | asignacion | 85 | 85 | 0 | aceptar 78, cambiar 6, rechazar 1 |
 | cambio_asignatura | 44 | 43 | 1 | aceptar 40, rechazar 3 |
-| clase_incierta | 207 | 190 | 17 | adelantado 14, alineado 85, no_aplica 2, posterior 35, retomado 18, sin_referente 22, solo_especializacion 10, tardio 4 |
+| clase_incierta | 211 | 194 | 17 | adelantado 14, alineado 85, no_aplica 1, posterior 35, retomado 16, sin_referente 24, solo_especializacion 15, tardio 4 |
 | contenido | 138 | 138 | 0 | aprobar 65, corregir 73 |
 | decision | 35 | 35 | 0 | aceptar 32, rechazar 3 |
 | hallazgo | 25 | 24 | 1 | matizar 18, no_respaldar 1, respaldar 5 |
@@ -148,7 +148,7 @@
 
 ## Conceptos inciertos del contraste de 2.°–8.°
 
-190 resueltos; 0 con cambios o rechazo (abajo); el resto se aceptó o aprobó tal cual.
+194 resueltos; 0 con cambios o rechazo (abajo); el resto se aceptó o aprobó tal cual.
 
 **Sin consenso (17), para una decisión humana:**
 
@@ -271,7 +271,7 @@ Cada dictamen resuelto pasó por un revisor adversarial que buscó en las fuente
 |---|---|---|---|---|---|
 | asignacion | 84 | 1 | 0 | 0 | 0 |
 | cambio_asignatura | 42 | 1 | 0 | 1 | 0 |
-| clase_incierta | 129 | 5 | 1 | 17 | 0 |
+| clase_incierta | 187 | 6 | 1 | 17 | 0 |
 | contenido | 138 | 0 | 0 | 0 | 0 |
 | decision | 33 | 2 | 0 | 0 | 0 |
 | hallazgo | 20 | 4 | 0 | 1 | 0 |
@@ -279,12 +279,12 @@ Cada dictamen resuelto pasó por un revisor adversarial que buscó en las fuente
 
 | Vuelta | Impugnados | Sostenidos | Réplica: mantenidos | Réplica: cambiados | Réplica: sin consenso |
 |---|---|---|---|---|---|
-| 1 | 35 | 451 | 11 | 24 | 0 |
-| 2 | 3 | 21 | 3 | 0 | 0 |
+| 1 | 44 | 501 | 12 | 32 | 0 |
+| 2 | 3 | 29 | 3 | 0 | 0 |
 
 **Sonda ciega** (el mismo rol, sin ver la resolución): asignacion 14/15; cambio_asignatura 7/7; clase_incierta 20/23; decision 6/6; hallazgo 4/6; propuesta 5/6 coinciden.
 
-**Patrones de error de lo impugnado:** otra_asignatura_o_nombre 8, fuente_mal_leida 6, error_cientifico 5, etiqueta_suelta 4, conteo_de_paises 3, item_defectuoso 3, grado_mal_mapeado 2, progresion 1, electiva_como_nucleo 1, otro 1.
+**Patrones de error de lo impugnado:** otra_asignatura_o_nombre 9, etiqueta_suelta 8, fuente_mal_leida 6, conteo_de_paises 6, error_cientifico 5, item_defectuoso 3, electiva_como_nucleo 2, grado_mal_mapeado 2, progresion 1, otro 1.
 
 **Lo que el bucle cambió:**
 
@@ -294,6 +294,14 @@ Cada dictamen resuelto pasó por un revisor adversarial que buscó en las fuente
 | Clase de «Fuerzas intermoleculares y propiedades físicas» en el contraste de 2.°–8.°: inc… | aceptar | rechazar | **experto-quimica:** Clase «sin referente»: la V2 enseña las fuerzas intermoleculares en 6.° (G06-CIE-U4-4.7 y 4.8) y solo Inglaterra (GCSE, SV 8–9) las nombra en su núcleo. Recomendación al MINED sin cambios: en 6.°, tratamiento cualitativo (atracciones entre partículas que explican la evaporación… |
 | Reducción, agentes oxidantes y serie de reactividad llegan tarde (V2 10.°–11.°) | respaldar | matizar | **experto-quimica:** Se respalda la lectura. Recomendación precisada: en 7.° (unidad 1, junto a la obtención de óxidos de 1.1 y 1.2), presentar oxidación y reducción juntas como ganancia y pérdida de oxígeno (por ejemplo, obtener cobre de su óxido con carbono, en video o demostración docente), acla… |
 | El efecto invernadero no se retoma en 9.°–11.° | matizar | no_respaldar | **experto-tierra-espacio:** Corregir el hallazgo y su fila en internacional/README.md: la V2 sí retoma el efecto invernadero en 10.°–11.°, con su mecanismo (G10-FIS-U13-13.3, microhabilidad E6), con el efecto natural en el cambio climático (G11-BIO-U1-1.8) y con la emisión infrarroja de la Tierra (… |
+| Ciclo del nitrógeno (CON:biologia/ciclo-del-nitrogeno, 9.°–11.°) | alineado | solo_especializacion | **experto-biologia:** Cambio a solo_especializacion. En la fuente, ningún núcleo de los 9 países nombra el ciclo del nitrógeno: ENG Combined, solo carbono y agua; EE, SG y HK S1–3, solo carbono; ON y JP 科学と人間生活, ciclado genérico. Lo nombran 6 electivas: HK Biology, JP 生物, TW 加深加廣選修, AU EES, ENG A l… |
+| Oleaje, dinámica costera y sedimentación marina (CON:ciencias_tierra_espacio/oleaje-y-din… | retomado | sin_referente | **experto-tierra-espacio:** Cambio a sin_referente. En 4.° «oleaje» solo figura en la lista de manifestaciones del ciclón; indicador, producto y actividades tratan su formación y la alerta, sin trabajar olas ni costa. La mención lateral sirve para no afirmar ausencias, no para declarar una espiral:… |
+| Observación astronómica en distintas longitudes de onda (CON:fisica/astronomia-multionda,… | retomado | solo_especializacion | **experto-fisica:** Cambio. «Retomado» no se sostiene: en 5.° y 8.° la V2 usa imágenes de telescopios como recurso, sin bandas ni detectores; el concepto entra en 11.° (22.4–22.6). Solo TW 必修 lo tiene en su núcleo, con una frase cualitativa. HK, EE, KR, ON y TW lo dan en electivas (etiquetadas como… |
+| Cuantización de la energía (CON:fisica/cuantizacion-energia-planck, 9.°–11.°) | solo_especializacion | sin_referente | **experto-fisica:** Cambio. «Solo especialización» cae: el gimnasio obligatorio de EE pide la ecuación de Einstein del efecto fotoeléctrico y E = hf. Con TW 必修 son dos núcleos sólidos; la regla admite uno. No hay tercero (SG H1, JP 基礎 y KR 통합과학 no lo traen). Con menos de 3 núcleos, la regla da «sin… |
+| Energía potencial y potencial eléctrico (CON:fisica/potencial-electrico, 9.°–11.°) | alineado | solo_especializacion | **experto-fisica:** Cambio. Mi «alineado» contaba a SG Combined, núcleo parcial (especialización en la lectura sólida), cuyo objetivo es la diferencia de potencial de circuitos: el concepto vecino que excluí en el 6.° salvadoreño. Igual ENG Combined y HK S1–3. El potencial de campo solo está en el … |
+| Reflexión interna total (CON:fisica/reflexion-interna-total, 9.°–11.°) | solo_especializacion | alineado | **experto-fisica:** Cambio. La regla cuenta la secundaria baja y no la miré. La reflexión interna total está en la parte troncal de HK S1–3, con experimentos, y el Course of Study de 中1 de Japón ordena tratarla con la refracción. Con ON SNC2D son tres núcleos, no uno. Mediana cercana a 7.°; la V2 l… |
+| Técnicas para determinar estructuras orgánicas (CON:quimica/espectroscopia-y-estructura-o… | no_aplica | solo_especializacion | **experto-quimica:** Cambio a «solo especialización». En Física 11.° (obligatoria) la cristalografía de rayos X es contenido, no ilustración: el producto pide explicar cómo se determinó la estructura de una proteína; 10.3 suma la espectrometría de masas, que el panel ya contó así. En los países sol… |
+| Química verde y economía atómica (CON:quimica/quimica-verde, 9.°–11.°) | alineado | solo_especializacion | **experto-quimica:** Cambio a «solo especialización»: mi «alineado» contaba como núcleo conceptos vecinos (ciclo de vida en ENG y ON, desarrollo sostenible en TW, biocombustibles en SG). Con el concepto real hay 0 núcleos (ON y AU 7–10 solo lo nombran como ejemplo opcional) y al menos cuatro electi… |
 | Propagación de enfermedades y control de brotes (CON:biologia/epidemiologia-y-control-de-… | alineado | posterior | **experto-biologia:** Cambio a posterior: la impugnación tiene razón. En 3.° (6.1) la V2 enseña infección, contagio y su prevención en la persona (el concepto vecino «contagio y prevención»), no epidemias, movilidad ni inmunidad poblacional, que entran en 9.° (inmunidad colectiva, casos de dengue p… |
 | Mitosis y ciclo celular (CON:biologia/mitosis-y-ciclo-celular) | alineado | adelantado | **experto-biologia:** Recomendación al MINED (no cambia la malla desde el panel): en 6.° conservar la introducción de la división celular, pero tratarla de forma cualitativa: las células se dividen para crecer y reparar tejidos; antes de dividirse los cromosomas se copian y se reparten por igual, y… |
 | Calidad del aire y contaminación atmosférica (CON:ciencias_tierra_espacio/calidad-del-air… | sin_referente | alineado | **experto-tierra-espacio:** Cambio a «alineado». La impugnación se sostiene: Inglaterra GCSE Combined (SV 8, núcleo) enseña las fuentes de CO, SO2, NOx y partículas y sus problemas; es este concepto, aunque el etiquetado lo puso en el vecino de Química. Con Hong Kong y Taiwán (SV 6–8) son tres país… |

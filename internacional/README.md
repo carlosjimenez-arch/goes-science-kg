@@ -13,22 +13,27 @@
 >
 > **Resultado:** 57 conceptos quedaron inciertos porque una lectura afirmaba un desajuste y la otra no. El panel
 > resolvió 55, verificando en la fuente con citas literales; los 2 sin consenso (ley de Ohm y eutrofización) se
-> resolvieron por decisión delegada. Clases finales del tramo: 301 retomados, 86 alineados, 52 solo de
-> especialización, 50 previos, 18 sin referente y 6 fuera del contraste.
+> resolvieron por decisión delegada. Al sumar como antecedente el núcleo de 2.°–8.° de los demás países quedaron
+> otros 4 inciertos, que también decidió el panel. Clases finales del tramo: 300 retomados, 87 alineados, 52 solo de
+> especialización, 50 previos, 19 sin referente y 5 fuera del contraste.
 >
 > **Qué corrigió el panel:**
 > - **Clases que afirmaban un desajuste falso:** salían de coincidencias de texto espurias («fases» de la Luna para
 >   los diagramas de fases; «sedimentación» del ciclo de las rocas para los ciclos del fósforo) o de filas que sí
 >   enseñan el concepto y no se contaban (cromatografía en 6.°, catalizador en 9.°).
-> - **Solo de especialización en la V2 obligatoria:** capacitancia, cuantización de Planck, modelo estándar,
->   reflexión interna total, fases de la fotosíntesis y espectrometría de masas. Coincide con el hallazgo de la
->   profundidad de 10.°–11.°.
+> - **Solo de especialización en la V2 obligatoria:** capacitancia, modelo estándar, fases de la fotosíntesis,
+>   espectrometría de masas, ciclo del nitrógeno, química verde, técnicas de estructura orgánica, potencial eléctrico,
+>   astronomía multionda, polímeros y capacidad de carga. Coincide con el hallazgo de la profundidad de 10.°–11.°.
+>   La clase no pide quitar esos temas: dice que la V2 hace obligatorio lo que fuera es electivo.
 >
-> Estos 55 dictámenes aún no pasan por el bucle de fortalecimiento («sin bucle» en `panel/bucle/`).
+> **Bucle de fortalecimiento** (series inc9 e inc9b, `panel/bucle/README.md`): de los 59 dictámenes del panel, el
+> revisor adversarial reabrió 9. La réplica cambió 8: la cuantización de Planck y el oleaje pasan a «sin referente»,
+> la reflexión interna total a «alineado» (es núcleo de HK S1–3, JP 中1 y ON) y cinco conceptos a «solo
+> especialización». La vuelta 2 los sostuvo todos. Quedan 58 sólidos y 1 respaldado.
 
 ## Qué hay aquí
 - **9 países**: SG, JP, KR, ENG, AU, HK, TW, EE y ON. Son 62 documentos oficiales (3 de antecedente: secundaria
-  baja de KR, TW y ON) y **9.040 objetivos** validados:
+  baja de KR, TW y ON; el resto del antecedente sale de 2.°–8.°, punto 12) y **9.040 objetivos** validados:
   Gemini 3.1 Pro extrae y Gemini 2.5 Pro valida contra la página del PDF.
 - **Grafo** en `data/grafo/internacional/`: país → curso → objetivo → concepto, más los prerrequisitos del repo.
   Cada objetivo enlaza con su documento mediante una arista `FUENTE` con la página; los documentos usan los mismos
@@ -262,10 +267,16 @@ sigue teniendo falsos positivos (2 de 4 en la muestra), así que en los informes
     (Calvin, Hess, potenciales de electrodo, rutas de síntesis, capacidad de carga y termorregulación) y 5 se
     corrigieron a «alineado» en `revisiones.json` (inmunidad innata y adaptativa, relaciones p-V-T, superposición,
     equilibrio industrial). Cada corrección cita las páginas de los países.
+12. **Antecedente de 2.°–8.° (2026-10-13):** el núcleo de 2.°–8.° de HK, SG, EE, KR, TW y ON (spec 12), ya extraído y
+    etiquetado, fecha la primera aparición en 9.°–11.°: primaria y secundaria baja de HK (sin la Extension Part) y SG,
+    primaria de EE, KR, TW y ON (`consenso.ANTECEDENTE_2_8`, 3.344 filas, sin Vertex). Lo pidió el bucle: la reflexión
+    interna total, núcleo de HK S1–3, salía como especialización. Cambiaron 8 clases automáticas y 4 quedaron
+    inciertas, que decidió el panel.
 
 ## Límites
-- **Antecedente:** 7 de 9 países tienen datos de antes de 9.° (ENG, AU, JP, EE, KR, TW y ON). Faltan SG (Lower
-  Secondary, que se descartó en el catálogo) y HK (S1–S3).
+- **Antecedente:** los 9 países tienen datos de antes de 9.° desde el 2026-10-13 (SG y HK, desde el tramo 2.°–8.°).
+  Las etiquetas de ese antecedente traen ruido: hay principales de conceptos vecinos. La doble lectura lo convierte
+  en clases inciertas, y el panel las revisa en la fuente.
 - **El vocabulario nació de la malla salvadoreña.** Lo que El Salvador no enseña puede no existir en él. Ningún
   concepto propuesto llega a 5 núcleos; el más cercano es «serie de reactividad de los metales» (EE, ENG y SG).
   Ver la tabla de propuestos en cada informe.

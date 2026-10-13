@@ -97,6 +97,7 @@ uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirm
 uv run gskg panel preparar --ronda n | consolidar --ronda n | aplicar | informe | resumen   # panel de expertos IA (spec 14)
 uv run gskg bucle anclar | impugnar --vuelta k | sonda --vuelta k | cerrar-impugnacion --vuelta k   # bucle (spec 14 §7)
 uv run gskg bucle replicar --vuelta k --paso p | cerrar-replica --vuelta k --paso p | solidez | cita "<fuente>" "<cita>"
+# expedientes nuevos: la misma secuencia con --serie <s> en impugnar, cerrar-impugnacion, replicar y cerrar-replica
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
 uv run gskg internacional --tramo 2_8 corregir-metadatos   # grados y Extension Part de los países, sin Vertex (spec 12)
