@@ -251,22 +251,72 @@ def _markdown(p: dict) -> str:
     return "\n".join(md) + "\n"
 
 
+def vecinos(tema_v2: str, k: int = 3) -> list[dict]:
+    """Temas de la malla vigente del mismo grado parecidos a un tema que la V3 quitó, con dos medidas: la parte de sus
+    conceptos que comparten (etiquetas) y la parte de su texto que está en el tema nuevo (contención). Las etiquetas
+    solas engañan: 10.° FIS 5.10 comparte todos los conceptos de 6.4 (curvas), pero el que enseña la curva peraltada
+    es 6.5. Se ordena por la suma de las dos. Es una sugerencia, no una equivalencia."""
+    from goes_science_kg import conceptos
+    from goes_science_kg.ingesta.mallas import _contencion, _raices, extraer
+
+    i = tema_v2.removeprefix("TEMA:")
+    etq = conceptos.etiquetado()
+    v2 = {t.id: t for t in extraer("mallas_v2")}
+    cs = (etq.get(i) or {}).get("conceptos", [])
+    if i not in v2 or not cs:
+        return []
+    salida = []
+    for t in extraer():
+        if t.grado != v2[i].grado:
+            continue
+        c3 = (etq.get(t.id) or {}).get("conceptos", [])
+        comunes = [c for c in cs if c in c3]
+        texto = _contencion(v2[i], _raices(" ".join([t.procedimental, t.subcontenido, t.contenido, t.indicador])))
+        if not comunes and texto < 0.3:
+            continue
+        salida.append({"id": t.id, "procedimental": t.procedimental, "coincidencia": round(len(comunes) / len(cs), 2),
+                       "contencion_texto": texto, "comparte": comunes})
+    return sorted(salida, key=lambda x: (-(x["coincidencia"] + x["contencion_texto"]), x["id"]))[:k]
+
+
 def escribir(temas: list[str]) -> list:
-    """Escribe <SALIDA>/<tema>.json y .md, y el índice con la completitud de cada paquete."""
+    """Escribe <SALIDA>/<tema>.json y .md, y el índice con la completitud de cada paquete. Cada pedido es un id de tema
+    o «pedido=vigente» (p. ej. G10-FIS-U6-6.4=G10-FIS-U6-6.5) cuando la V3 quitó el pedido y alguien eligió el tema
+    que lo reemplaza; un pedido que la V3 quitó y sin reemplazo queda en el índice con sus vecinos, sin paquete."""
+    from goes_science_kg.ingesta.mallas import vigente_de
+
     d = ruta(SALIDA)
     d.mkdir(parents=True, exist_ok=True)
-    escritos, filas = [], []
-    for tema in temas:
-        p = paquete(tema)
+    escritos, filas, sin_tema = [], [], []
+    for pedido in temas:
+        original, _, elegido = pedido.partition("=")
+        if not elegido and vigente_de(original if original.startswith("TEMA:") else f"TEMA:{original}") is None:
+            sin_tema.append((original, vecinos(original)))
+            continue
+        p = paquete(elegido or original)
+        if elegido:
+            p["reemplazo"] = {"pedido": original, "tema_usado": p["tema"]["id"],
+                              "motivo": "la V3 quitó el tema pedido; este es el que se eligió en su lugar",
+                              "vecinos_por_concepto": vecinos(original)}
         i = p["tema"]["id"]
         (d / f"{i}.json").write_text(json.dumps(p, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         (d / f"{i}.md").write_text(_markdown(p), encoding="utf-8")
         escritos += [d / f"{i}.json", d / f"{i}.md"]
-        filas.append((tema, i, p["completitud"]))
+        filas.append((original, i, p["completitud"], bool(elegido)))
     claves = list(filas[0][2]) if filas else []
     md = ["# Paquetes de clase", "", AVISO, "", "| Pedido | Tema vigente | " + " | ".join(c.replace("_", " ")
                                                                                          for c in claves) + " |",
           "|---|---|" + "---|" * len(claves)]
-    md += [f"| {pedido} | [{i}]({i}.md) | " + " | ".join(c[k] for k in claves) + " |" for pedido, i, c in filas]
+    md += [f"| {pedido} | [{i}]({i}.md){' (reemplazo)' if reemplazo else ''} | " + " | ".join(c[k] for k in claves)
+           + " |" for pedido, i, c, reemplazo in filas]
+    if sin_tema:
+        md += ["", "## Pedidos que la V3 quitó y no tienen reemplazo elegido", "",
+               "Ningún tema de la V3 los enseña. Estos vecinos comparten parte de sus conceptos; elegir uno es "
+               "decisión de quien genera las clases (`gskg tutor paquete <pedido>=<vecino>`).", ""]
+        for pedido, vs in sin_tema:
+            md.append(f"- **{pedido}**: " + ("; ".join(f"{v['id']} ({int(v['coincidencia'] * 100)} % de sus conceptos, "
+                                                        f"{int(v['contencion_texto'] * 100)} % de su texto) "
+                                                        f"{v['procedimental'][:80]}" for v in vs)
+                                             or "sin vecinos por concepto"))
     (d / "README.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return escritos

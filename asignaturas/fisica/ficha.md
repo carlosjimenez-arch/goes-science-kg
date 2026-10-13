@@ -17,7 +17,7 @@
 | 10.° | 32 | 3. Dinámica: leyes de Newton, movimiento circular y equilibrio; 6. Temperatura, calor y termodinámica; 1. La física como ciencia: indagación y herramientas; 7. Óptica |
 | 11.° | 32 | 1. Oscilaciones, ondas mecánicas y sonido; 4. Magnetismo y electromagnetismo; 6. Física moderna: cuántica, relatividad y núcleo; 2. Electrostática |
 
-Total: **217 temas**. Asignados por: ia 5, malla 64, pisa 1, revision 11, timss 136.
+Total: **217 temas**. Asignados por: ia 5, malla 63, pisa 1, revision 12, timss 136.
 
 ## Cobertura de los marcos internacionales
 
