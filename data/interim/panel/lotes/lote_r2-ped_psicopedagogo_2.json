@@ -1,0 +1,2480 @@
+{
+ "lote": "r2-ped_psicopedagogo_2",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/polimerizacion/sondeo-2-G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/polimerizacion/sondeo-2-G11",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G11-QUI-U12-12.1"
+     ],
+     "evalua": [
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Tabla de masas molares: glicina (C2H5NO2), 75 g/mol; alanina (C3H7NO2), 89 g/mol; serina (C3H7NO3), 105 g/mol; agua, 18 g/mol. Estos tres aminoácidos se unen en un tripéptido lineal. ¿Cuál es la masa molar del tripéptido?",
+     "opciones": {
+      "A": "269 g/mol, la suma de los tres aminoácidos",
+      "B": "251 g/mol, la suma menos una molécula de agua",
+      "C": "233 g/mol, la suma menos dos moléculas de agua",
+      "D": "215 g/mol, la suma menos tres moléculas de agua"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/polimerizacion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un tripéptido tiene dos enlaces peptídicos y en cada uno sale una molécula de agua: 75 + 89 + 105 − 2 × 18 = 233 g/mol.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/polimerizacion"
+     },
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/polimerizacion/sondeo-2-G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/polimerizacion/sondeo-2-G11",
+     "decision": "aprobar",
+     "justificacion": "Masas molares reales bien redondeadas (75, 89, 105 y 18 g/mol). Un tripéptido lineal tiene dos enlaces peptídicos: 269 − 2 × 18 = 233 g/mol, clave C, igual al cálculo con masas exactas (≈ 233.2). Los distractores varían el número de aguas restadas y A está bien mapeado a la dificultad 1.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "75.07 + 89.09 + 105.09 − 2 × 18.02 ≈ 233.2 g/mol."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/fuerza-elastica-ley-hooke/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/fuerza-elastica-ley-hooke/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/fuerza-elastica-ley-hooke",
+     "descripcion": "Usar la longitud total del resorte en lugar de su alargamiento (el cambio respecto de la longitud natural) al aplicar F = kx, como si la fuerza fuera proporcional a la longitud.",
+     "senales": "Calcula k dividiendo la fuerza entre la longitud total; predice que con el doble de peso el resorte mide el doble; grafica la fuerza contra la longitud y espera que la recta pase por el origen.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error típico al leer datos de longitud: confunde la variable de la ley.",
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-elastica-ley-hooke",
+     "nombre": "Fuerza elástica y ley de Hooke",
+     "definicion": "La fuerza de un resorte es proporcional a su deformación y se opone a ella: F = −kx.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/fuerza-elastica-ley-hooke/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/fuerza-elastica-ley-hooke/1",
+     "decision": "aprobar",
+     "justificacion": "Error real y frecuente al trabajar con datos de longitud: dividir la fuerza entre la longitud total o esperar que la recta F–L pase por el origen. Las señales son observables en la tabla y la gráfica que pide el indicador.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U1-1.2",
+       "cita": "El indicador pide k por la pendiente de la gráfica fuerza-elongación.",
+       "cita_literal": "Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La ley relaciona fuerza y elongación, no longitud total."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-armonico-simple/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-armonico-simple/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-armonico-simple",
+     "descripcion": "Creer que el período de un oscilador depende de la amplitud: que, si se suelta desde más lejos, tarda más en ir y volver porque recorre más distancia (o menos, porque el resorte empuja más fuerte), sin ver que fuerza y rapidez crecen en la misma proporción que el recorrido.",
+     "senales": "Predice que al duplicar la amplitud el período se duplica o se reduce a la mitad; lo justifica con «recorre más camino» o «lo empuja más fuerte»; en la práctica espera tiempos distintos para 10 oscilaciones con 2 cm y con 4 cm de amplitud.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa frecuente; el MAS es isócrono porque la fuerza crece con la amplitud.",
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-armonico-simple",
+     "nombre": "Movimiento armónico simple",
+     "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-armonico-simple/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/movimiento-armonico-simple/1",
+     "decision": "aprobar",
+     "justificacion": "Correcta y real: la intuición «más recorrido, más tiempo» o «más fuerza, menos tiempo» es una idea previa común. La explicación (fuerza y rapidez crecen con la amplitud) es exacta para el oscilador lineal y las señales se ven en la medición de 10 oscilaciones con 2 y 4 cm.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "T = 2π√(m/k) no depende de la amplitud mientras la fuerza sea lineal."
+      },
+      {
+       "fuente": "EXP:G11-FIS-U1-1.2/1",
+       "cita": "Los pasos 6 y 7 comparan el período con amplitudes de 2 y 4 cm."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-armonico-simple/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-armonico-simple/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-armonico-simple",
+     "descripcion": "Supone que la energía potencial elástica crece en proporción directa a la posición, como la fuerza, y no con el cuadrado de la elongación (Ep = ½kx²): por eso cree que a la mitad de la amplitud la energía se reparte mitad cinética y mitad potencial.",
+     "senales": "En la tabla de energías pone en x = A/2 la mitad de la energía total como potencial (en vez de un cuarto); grafica Ep y Ec contra la posición como rectas o como una «V» en lugar de parábolas; dice que las dos energías son iguales en x = A/2 (lo son en x ≈ 0.71A); calcula Ep como kx o como ½kx.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al construir la tabla y la gráfica de energías contra posición.",
+     "origen": "redactor-actividades (G11-FIS-U1-1.2-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-armonico-simple",
+     "nombre": "Movimiento armónico simple",
+     "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-armonico-simple/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/movimiento-armonico-simple/2",
+     "decision": "aprobar",
+     "justificacion": "Exacta: Ep = ½kx² crece con el cuadrado; en x = A/2 la potencial es ¼ de la total y Ec = Ep en x = A/√2 ≈ 0.71A. Suponer reparto lineal es un error plausible al construir la tabla de energías que pide la evidencia del tema; las señales (rectas o «V» en vez de parábolas) son observables.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U1-1.2",
+       "cita": "La evidencia es la tabla y la gráfica de energías contra la posición.",
+       "cita_literal": "Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "½k(A/2)² = ¼·½kA²."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-armonico-simple/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-armonico-simple/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-armonico-simple",
+     "descripcion": "Traslada al sistema masa-resorte lo aprendido del péndulo simple: cree que el período no depende de la masa colgada y sí de la gravedad, cuando en el resorte depende de la masa y de la constante elástica (T = 2π√(m/k)) y no de g.",
+     "senales": "Predice que al duplicar la masa el período no cambia «porque en el péndulo la masa no influye»; usa T = 2π√(L/g) para un resorte; dice que en la Luna el resorte oscilaría más lento o que colgado en vertical tiene otro período que sobre una mesa horizontal sin fricción.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Transferencia común del péndulo al resorte, cuyo período depende de m y k.",
+     "origen": "redactor-actividades (G11-FIS-U1-1.2-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-armonico-simple",
+     "nombre": "Movimiento armónico simple",
+     "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-armonico-simple/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/movimiento-armonico-simple/3",
+     "decision": "aprobar",
+     "justificacion": "Física correcta: el período masa-resorte depende de m y k y no de g; vertical u horizontal da el mismo T. La transferencia desde el péndulo es plausible porque en 11.° ambos se estudian juntos (temas 1.2 y 2.3), aunque no tengo una fuente que la documente; las señales son observables.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U2-2.3",
+       "cita": "El mismo grado estudia el péndulo simple y su período con g.",
+       "cita_literal": "Ecuación del péndulo simple como MAS"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Colgado, el peso solo desplaza el equilibrio; T = 2π√(m/k)."
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-armonico-simple/4",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-armonico-simple/4",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-armonico-simple",
+     "descripcion": "Confunde el oscilador con el punto que gira en el círculo de referencia: como ese punto tiene rapidez constante, cree que el cuerpo también recorre el vaivén con rapidez constante y solo cambia de sentido en los extremos, en lugar de ver que su rapidez es máxima en el equilibrio y nula en los extremos.",
+     "senales": "Dibuja x(t) como un zigzag de rectas en vez de una curva senoidal y v(t) como escalones de valor constante; calcula la rapidez en cualquier posición como 4A/T; toma ωA como la rapidez en todo punto y no solo al pasar por el equilibrio.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión frecuente al usar el círculo de referencia para representar el MAS.",
+     "origen": "redactor-actividades (G11-FIS-U1-1.2-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-armonico-simple",
+     "nombre": "Movimiento armónico simple",
+     "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-armonico-simple/4",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/movimiento-armonico-simple/4",
+     "decision": "aprobar",
+     "justificacion": "Exacta y pertinente: el círculo de referencia que pide el indicador invita a trasladar la rapidez constante del punto que gira al oscilador. Las señales (zigzag en x(t), ωA en todo punto, 4A/T como rapidez) son observables. Conviene mapearla en la rúbrica de la abierta del objetivo (corregido allí).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U1-1.2",
+       "cita": "El indicador usa el círculo de referencia para representar x, v y a.",
+       "cita_literal": "Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La proyección tiene v = −ωA sen(ωt), máxima en x = 0 y nula en ±A."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/procesos-termodinamicos/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/procesos-termodinamicos/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/procesos-termodinamicos",
+     "descripcion": "No liga el trabajo del gas con el cambio de volumen: cree que el gas hace trabajo siempre que cambian su presión o su temperatura, aun en un recipiente rígido (proceso isocórico), o que no hace trabajo a presión constante (isobárico) porque «la presión no cambia».",
+     "senales": "Dice que el aire de un frasco de vidrio tapado «hace trabajo» al calentarse; afirma que el gas de una jeringa que se expande con el émbolo libre no trabaja porque su presión se mantiene; calcula el trabajo con el cambio de presión en lugar del cambio de volumen.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente: sin cambio de volumen no hay trabajo del gas.",
+     "origen": "redactor-actividades (G09-CIE-U2-2.4-r4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/procesos-termodinamicos",
+     "nombre": "Procesos termodinámicos",
+     "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo o bolsa en botella con agua **tibia** que sirve el docente (que se pueda tocar sin quemarse) y agua fría, con hielo si hay; lápiz de punta roma. Corregido por el bucle de fortalecimiento (2026-10-12): «agua caliente, no hirviendo» admitía 70–90 °C, con riesgo de quemadura, y el PET se ablanda; la malla pide agua tibia (G09-CIE-U2-2.4).\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada, agua tibia y botella grande, sin apretarla."
+   },
+   "id": "PED:DIF:fisica/procesos-termodinamicos/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/procesos-termodinamicos/2",
+     "decision": "aprobar",
+     "justificacion": "Exacta: el trabajo del gas exige cambio de volumen (nulo en el isocórico, pΔV en el isobárico). Atribuirlo al cambio de presión o temperatura es una confusión conocida. Las señales (frasco rígido, émbolo libre, VΔp) corresponden a las estaciones del experimento de 9.°.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.5",
+       "cita": "El tema siguiente de 9.° calcula el trabajo con gráficas P-V.",
+       "cita_literal": "calcular el trabajo como área bajo la curva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "W = ∫p dV: sin ΔV no hay trabajo del gas."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/procesos-termodinamicos/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/procesos-termodinamicos/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/procesos-termodinamicos",
+     "descripcion": "Lee el diagrama p-V como un dibujo y no como una gráfica: confunde qué tramo representa cada proceso (el horizontal es a presión constante y el vertical a volumen constante) y toma como trabajo un área equivocada, como la que queda entre la curva y el eje de presión, en lugar de la que queda bajo la curva hasta el eje de volumen.",
+     "senales": "Llama isocórico a un tramo horizontal o isobárico a uno vertical; sombrea el área entre la curva y el eje de presión para el trabajo; lee el eje horizontal como tiempo («primero sube la presión y después pasa el tiempo»); no distingue expansión de compresión por el sentido de la flecha.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Dificultad común al pasar del proceso a su representación en el diagrama p-V.",
+     "origen": "redactor-actividades (G09-CIE-U2-2.4-r4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/procesos-termodinamicos",
+     "nombre": "Procesos termodinámicos",
+     "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo o bolsa en botella con agua **tibia** que sirve el docente (que se pueda tocar sin quemarse) y agua fría, con hielo si hay; lápiz de punta roma. Corregido por el bucle de fortalecimiento (2026-10-12): «agua caliente, no hirviendo» admitía 70–90 °C, con riesgo de quemadura, y el PET se ablanda; la malla pide agua tibia (G09-CIE-U2-2.4).\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada, agua tibia y botella grande, sin apretarla."
+   },
+   "id": "PED:DIF:fisica/procesos-termodinamicos/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/procesos-termodinamicos/3",
+     "decision": "aprobar",
+     "justificacion": "Exacta con la convención usual (p vertical, V horizontal): horizontal es isobárico, vertical isocórico y el trabajo es el área hasta el eje V. Leer la gráfica como dibujo o el eje como tiempo es un error real. Está alineada con 9.°: la malla pide el área bajo la curva en el tema 2.5.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.5",
+       "cita": "La malla de 9.° pide calcular el trabajo como área bajo la curva.",
+       "cita_literal": "calcular el trabajo como área bajo la curva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En un diagrama p-V el área bajo la curva hasta el eje V es el trabajo."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/procesos-termodinamicos/4",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/procesos-termodinamicos/4",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/procesos-termodinamicos",
+     "descripcion": "Nombra el proceso por la variable que cambia o que se manipula, y no por la que se mantiene constante: llama «isotérmico» a calentar un gas porque «cambia la temperatura» o «isobárico» a comprimirlo porque «sube la presión», sin usar el significado de iso- («igual»).",
+     "senales": "En el registro del experimento, el proceso nombrado coincide con la variable cambiada y no con la controlada; llama isotérmico al aire de un frasco tapado que se calienta en agua (es isocórico); no sabe decir a qué variable se refieren -bárico, -córico y -térmico.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error de vocabulario frecuente al registrar variables controladas y proceso identificado.",
+     "origen": "redactor-actividades (G09-CIE-U2-2.4-r4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/procesos-termodinamicos",
+     "nombre": "Procesos termodinámicos",
+     "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo o bolsa en botella con agua **tibia** que sirve el docente (que se pueda tocar sin quemarse) y agua fría, con hielo si hay; lápiz de punta roma. Corregido por el bucle de fortalecimiento (2026-10-12): «agua caliente, no hirviendo» admitía 70–90 °C, con riesgo de quemadura, y el PET se ablanda; la malla pide agua tibia (G09-CIE-U2-2.4).\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada, agua tibia y botella grande, sin apretarla."
+   },
+   "id": "PED:DIF:fisica/procesos-termodinamicos/4",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/procesos-termodinamicos/4",
+     "decision": "aprobar",
+     "justificacion": "Error de vocabulario real y muy pertinente: la evidencia de 9.° pide registrar la variable cambiada, las controladas y el proceso, y el estudiante suele nombrar el proceso por la que cambia. El ejemplo (frasco tapado que se calienta = isocórico) es correcto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4",
+       "cita": "La evidencia pide variable cambiada, variables controladas y proceso identificado.",
+       "cita_literal": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4",
+       "cita": "La malla pide identificar la magnitud que se mantuvo constante.",
+       "cita_literal": "Razonar: identificar la magnitud que se mantuvo constante"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/segunda-ley-newton/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/segunda-ley-newton/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/segunda-ley-newton",
+     "descripcion": "Asociar la fuerza neta y la aceleración con la velocidad: creer que la fuerza neta apunta hacia donde se mueve el cuerpo, que es mayor donde va más rápido y que, si el cuerpo está detenido un instante, la fuerza neta y la aceleración son cero.",
+     "senales": "Dice que en el extremo de una oscilación o en lo más alto de un lanzamiento la aceleración es cero «porque está quieto»; pone la fuerza neta en el sentido del movimiento aunque el cuerpo vaya frenando; ubica la aceleración máxima del oscilador en el equilibrio, donde va más rápido; multiplica la masa por la velocidad para obtener la fuerza.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Concepción «fuerza implica movimiento», muy extendida y persistente en bachillerato.",
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/segunda-ley-newton/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/segunda-ley-newton/1",
+     "decision": "aprobar",
+     "justificacion": "Es la idea previa aristotélica mejor documentada de la mecánica: fuerza y aceleración asociadas a la velocidad. La descripción es exacta y las señales (aceleración cero en el extremo o en lo más alto, m·v como fuerza) son observables en los ítems del tema.",
+     "evidencia": [
+      {
+       "fuente": "Clement (1982), Am. J. Phys. 50(1)",
+       "cita": "Preconcepción de que el movimiento implica una fuerza en su sentido."
+      },
+      {
+       "fuente": "Halloun y Hestenes (1985), Am. J. Phys. 53(11)",
+       "cita": "Conceptos de sentido común sobre el movimiento."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/aminoacidos-y-proteinas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/aminoacidos-y-proteinas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/aminoacidos-y-proteinas",
+     "descripcion": "Cree que «carga neta cero» significa que el aminoácido no tiene grupos cargados (lo dibuja como H2N–CH(R)–COOH) y que eso ocurre siempre a pH 7, en vez de verlo como un ion dipolar (–NH3+ y –COO−) cuyas cargas se compensan a un pH propio de cada aminoácido: su punto isoeléctrico.",
+     "senales": "Dibuja en el pI la forma sin cargas; responde que el pI de todo aminoácido es 7 o que a pH 7 ningún aminoácido migra en la electroforesis; usa «neutro» como sinónimo de «sin cargas» o de «pH 7».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión frecuente entre carga neta cero, ausencia de cargas y pH neutro.",
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/aminoacidos-y-proteinas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/aminoacidos-y-proteinas/1",
+     "decision": "aprobar",
+     "justificacion": "Idea previa real y frecuente: confundir carga neta cero con ausencia de cargas, y el pI con pH 7. Las señales son observables (dibujo sin cargas, «el pI de todo aminoácido es 7», «a pH 7 nada migra»). Junta dos confusiones afines, pero ambas se corrigen con la misma idea del ion dipolar.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1 (Matriz Bachillerato Química, hoja «Química 11.°», fila 65)",
+       "cita": "El indicador pide calcular el pI con los pKa y predecir la carga neta a distintos pH.",
+       "cita_literal": "predice la carga neta que presenta a distintos valores de pH"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El pI depende de los pKa de cada aminoácido; solo por coincidencia se acerca a 7."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/aminoacidos-y-proteinas/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/aminoacidos-y-proteinas/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/aminoacidos-y-proteinas",
+     "descripcion": "Invierte la relación entre el pH y la carga: cree que en medio básico (pH mayor que el pI) el aminoácido queda con carga neta positiva y en medio ácido con carga negativa, como si «básico» significara «positivo», en vez de razonar que por debajo del pI los grupos conservan sus protones (carga neta +) y por encima los ceden (carga neta −).",
+     "senales": "Afirma que a pH 10 la glicina tiene carga neta positiva y migra hacia el cátodo; dice que a pH bajo el grupo –COOH «pierde» su protón; en la hoja de cálculo pone al revés el signo de la carga en las filas con pH mayor y menor que el pI; asocia «más OH−» con «más carga positiva».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al predecir carga y migración a partir de pH y pI.",
+     "origen": "redactor-actividades (G11-QUI-U12-12.1-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/aminoacidos-y-proteinas/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/aminoacidos-y-proteinas/2",
+     "decision": "aprobar",
+     "justificacion": "Error real al predecir carga y migración: invertir el signo según el pH. La química de la descripción es correcta (bajo el pI los grupos conservan protones, carga +; sobre el pI los ceden, carga −) y la señal de la glicina a pH 10 es coherente con su pI, cercano a 6. Señales observables en la hoja de cálculo y en la electroforesis.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1 (Matriz Bachillerato Química, hoja «Química 11.°», fila 65)",
+       "cita": "El indicador pide calcular el pI con los pKa y predecir la carga neta a distintos pH.",
+       "cita_literal": "predice la carga neta que presenta a distintos valores de pH"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Glicina a pH 10, sobre su pI: predomina el anión y migra al ánodo."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/aminoacidos-y-proteinas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/aminoacidos-y-proteinas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/aminoacidos-y-proteinas",
+     "descripcion": "Calcula el punto isoeléctrico promediando todos los pKa del aminoácido, o siempre los del carboxilo y el amino alfa, aunque la cadena lateral sea ionizable: no identifica primero la forma con carga neta cero ni elige los dos pKa que la rodean (los dos menores en aminoácidos ácidos, los dos mayores en básicos).",
+     "senales": "Divide entre 3 la suma de tres pKa; para el ácido aspártico obtiene un pI intermedio (cercano a 5 o 6) en vez de uno ácido, cercano a 3, y para la lisina uno cercano a 6 o 7 en vez de uno básico, cercano a 10; aplica a todos los aminoácidos el promedio de los pKa del carboxilo y el amino alfa sin escribir antes las formas iónicas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error común con aminoácidos de cadena lateral ionizable al elegir los pKa.",
+     "origen": "redactor-actividades (G11-QUI-U12-12.1-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/aminoacidos-y-proteinas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/aminoacidos-y-proteinas/3",
+     "decision": "aprobar",
+     "justificacion": "Error real y frecuente con cadenas laterales ionizables. Verifiqué las cifras aproximadas con valores tabulados: ácido aspártico, pI ≈ 2.8 (promediar los tres pKa da ≈ 5; los dos alfa, ≈ 5.7); lisina, pI ≈ 9.7 (≈ 7.2 y ≈ 5.6). La regla de los dos pKa menores en ácidos y los dos mayores en básicos es correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1 (Matriz Bachillerato Química, hoja «Química 11.°», fila 65)",
+       "cita": "El indicador pide calcular el pI con los pKa y predecir la carga neta a distintos pH.",
+       "cita_literal": "Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Asp: pKa ≈ 1.9, 3.7, 9.6 → pI ≈ 2.8. Lys: pKa ≈ 2.2, 9.0, 10.5 → pI ≈ 9.7."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/aminoacidos-y-proteinas/4",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/aminoacidos-y-proteinas/4",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/aminoacidos-y-proteinas",
+     "descripcion": "Lee mal la curva de titulación: ubica cada pKa en un salto vertical (punto de equivalencia) en lugar del centro de la zona plana, donde el pH casi no cambia porque la mitad del grupo ya cedió su protón; por eso cree que a pH = pKa el grupo está totalmente desprotonado y confunde con un pKa el pI, que en la glicina cae en el salto entre las dos zonas planas.",
+     "senales": "Marca los pKa en las partes más empinadas de la curva; dice que a pH = pKa1 «ya no queda» –COOH; lee el pI en el centro de una zona plana; no relaciona 0.5, 1 y 1.5 equivalentes de base añadidos con el primer pKa, el pI y el segundo pKa.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión habitual entre punto de equivalencia y punto de media titulación.",
+     "origen": "redactor-actividades (G11-QUI-U12-12.1-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/aminoacidos-y-proteinas/4",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/aminoacidos-y-proteinas/4",
+     "decision": "aprobar",
+     "justificacion": "Confusión real entre punto de equivalencia y punto de media titulación, bien explicada: el pKa está en el centro de la zona plana, con la mitad del grupo desprotonada, y el pI de la glicina en el salto entre zonas. Las señales son observables en la gráfica y la relación 0.5–1–1.5 equivalentes con pKa1, pI y pKa2 es correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1 (Matriz Bachillerato Química, hoja «Química 11.°», fila 65)",
+       "cita": "El indicador pide calcular el pI con los pKa y predecir la carga neta a distintos pH.",
+       "cita_literal": "Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "A media titulación [HA] = [A−] y pH = pKa; en la equivalencia el pH cambia bruscamente."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/constante-de-equilibrio/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/constante-de-equilibrio/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/constante-de-equilibrio",
+     "descripcion": "Incluye los sólidos y líquidos puros (como CaCO₃(s) o H₂O(l)) en la expresión de Kc igual que los gases y las sustancias disueltas, y no distingue el equilibrio heterogéneo (sustancias en fases distintas) del homogéneo (todas en la misma fase).",
+     "senales": "Para CaCO₃(s) ⇌ CaO(s) + CO₂(g) escribe Kc = [CaO][CO₂]/[CaCO₃] en lugar de Kc = [CO₂]; clasifica una reacción como homogénea o heterogénea por el número de sustancias y no por sus estados (s, l, g, ac); ignora los símbolos de estado al escribir K.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error común al representar K en equilibrios con sólidos o líquidos puros.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.3-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.3",
+     "grado": 9,
+     "indicador": "3.3. Identifica el tipo de equilibrio químico y representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Expresiones de Kc para cinco reacciones con la interpretación de su valor"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/constante-de-equilibrio/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/constante-de-equilibrio/2",
+     "decision": "aprobar",
+     "justificacion": "Error real y frecuente al escribir K. La descripción es correcta para 9.° (sólidos y líquidos puros se omiten; heterogéneo es con sustancias en fases distintas) y la señal con CaCO₃ ⇌ CaO + CO₂ coincide con la actividad abierta. Hablar de «estados (s, l, g, ac)» en vez de fases es una simplificación aceptable en el grado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.3 (Matriz 9.° V2, hoja «Unidad 3 - Equilibrio químico», fila 5)",
+       "cita": "El indicador pide identificar el tipo de equilibrio y representar Kc a partir de ecuaciones.",
+       "cita_literal": "Identifica el tipo de equilibrio químico y representa la constante de equilibrio"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La actividad de sólidos y líquidos puros es constante y se incluye en el valor de K."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/constante-de-equilibrio/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/constante-de-equilibrio/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/constante-de-equilibrio",
+     "descripcion": "Confunde el valor de K con la rapidez de la reacción: cree que un K grande indica que el equilibrio se alcanza pronto y uno pequeño que la reacción es lenta, cuando K solo dice si predominan los productos o los reactivos una vez alcanzado el equilibrio.",
+     "senales": "Interpreta Kc = 1 × 10⁵ como «la reacción es muy rápida» y Kc = 1 × 10⁻³ como «tarda mucho»; usa «avanza rápido» como sinónimo de «se forma mucho producto»; afirma que un catalizador aumenta el valor de K.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Mezcla frecuente de equilibrio (cuánto se forma) con cinética (qué tan rápido).",
+     "origen": "redactor-actividades (G09-CIE-U3-3.3-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.3",
+     "grado": 9,
+     "indicador": "3.3. Identifica el tipo de equilibrio químico y representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Expresiones de Kc para cinco reacciones con la interpretación de su valor"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/constante-de-equilibrio/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/constante-de-equilibrio/3",
+     "decision": "aprobar",
+     "justificacion": "Confusión conocida entre la extensión del equilibrio y la rapidez para alcanzarlo (equilibrio frente a cinética). La descripción es correcta: K dice si predominan productos o reactivos, no cuánto tarda. La señal del catalizador que «aumenta K» es un error observable y frecuente.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.3 (Matriz 9.° V2, hoja «Unidad 3 - Equilibrio químico», fila 5)",
+       "cita": "El indicador pide identificar el tipo de equilibrio y representar Kc a partir de ecuaciones.",
+       "cita_literal": "Identifica el tipo de equilibrio químico y representa la constante de equilibrio"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Un catalizador acelera ambos sentidos por igual y no cambia K."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/constante-de-equilibrio/4",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/constante-de-equilibrio/4",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/constante-de-equilibrio",
+     "descripcion": "Cree que en el equilibrio las concentraciones de reactivos y productos son iguales, o que quedan en la proporción de los coeficientes, en vez de entender que solo dejan de cambiar y que la relación entre ellas la fija el valor de K.",
+     "senales": "Dice que en el equilibrio «hay la misma cantidad de reactivos que de productos»; espera Kc = 1 en todo equilibrio; en una gráfica de concentración contra tiempo marca el equilibrio donde se cruzan las curvas y no donde se vuelven horizontales; ante Kc = 1 × 10⁻³ dice que la reacción «no está en equilibrio».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa extendida: confunde concentraciones constantes con concentraciones iguales.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.3-r2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.3",
+     "grado": 9,
+     "indicador": "3.3. Identifica el tipo de equilibrio químico y representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Expresiones de Kc para cinco reacciones con la interpretación de su valor"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/constante-de-equilibrio/4",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/constante-de-equilibrio/4",
+     "decision": "aprobar",
+     "justificacion": "Idea previa extendida y documentada: confundir concentraciones constantes con concentraciones iguales o en la proporción de los coeficientes. Descripción correcta y señales observables (cruce de curvas, Kc = 1 en todo equilibrio). Coincide con el distractor C de la actividad obj-2, que propongo mapear a ella.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.3 (Matriz 9.° V2, hoja «Unidad 3 - Equilibrio químico», fila 5)",
+       "cita": "El indicador pide identificar el tipo de equilibrio y representar Kc a partir de ecuaciones.",
+       "cita_literal": "Identifica el tipo de equilibrio químico y representa la constante de equilibrio"
+      },
+      {
+       "fuente": "Hackling y Garnett (1985), Misconceptions of chemical equilibrium, European Journal of Science Education 7(2)",
+       "cita": "Entre las concepciones erróneas: igualdad de concentraciones de reactivos y productos en el equilibrio."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/fuerzas-intermoleculares/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/fuerzas-intermoleculares/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/fuerzas-intermoleculares",
+     "descripcion": "Confunde las fuerzas intermoleculares con los enlaces covalentes dentro de la molécula: cree que al hervir, evaporar o disolver una sustancia molecular se rompen enlaces como el O–H, o que el puente de hidrógeno es el propio enlace covalente entre el H y el O de una molécula.",
+     "senales": "Dice que las burbujas del agua hirviendo son hidrógeno y oxígeno; explica la evaporación o la disolución del azúcar como ruptura de enlaces covalentes, o la desnaturalización por calor como ruptura de enlaces peptídicos; dibuja el puente de hidrógeno sobre el enlace O–H de una misma molécula, y no entre el H de un grupo y el O o N de otro grupo o de otra molécula.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa extendida: no distingue atracciones entre moléculas de enlaces dentro de ellas.",
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fuerzas-intermoleculares",
+     "nombre": "Fuerzas intermoleculares",
+     "definicion": "Atracciones entre moléculas: dispersión de London, dipolo-dipolo y puentes de hidrógeno, cuya intensidad depende de geometría y polaridad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/fuerzas-intermoleculares/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/fuerzas-intermoleculares/1",
+     "decision": "corregir",
+     "cambios": {
+      "descripcion": "Confunde las fuerzas intermoleculares con los enlaces covalentes dentro de la molécula: cree que al hervir, evaporar o disolver una sustancia molecular se rompen enlaces como el O–H, o que el puente de hidrógeno es el propio enlace covalente entre el H y el O de una molécula.",
+      "senales": "Dice que las burbujas del agua hirviendo son hidrógeno y oxígeno; explica la evaporación o la disolución del azúcar como ruptura de enlaces covalentes, o la desnaturalización por calor como ruptura de enlaces peptídicos; dibuja el puente de hidrógeno sobre el enlace O–H de una misma molécula, y no entre el H de un grupo y el O o N de otro grupo o de otra molécula."
+     },
+     "justificacion": "Idea previa real, pero una señal está mal: «dibuja el puente de hidrógeno dentro de una sola molécula» marcaría como error algo correcto en este tema, pues la hélice α y el plegamiento se sostienen con puentes de hidrógeno dentro de una misma cadena. El error es confundirlo con el enlace O–H. También acoto la desnaturalización a enlaces peptídicos: el calor puede reordenar puentes disulfuro, que son covalentes.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En la hélice α, el C=O de un residuo forma puente de hidrógeno con el N–H de otro de la misma cadena."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/polimerizacion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/polimerizacion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/polimerizacion",
+     "descripcion": "Trata la polimerización por condensación como una simple suma de monómeros: no reconoce que en cada unión sale una molécula pequeña (agua en el enlace peptídico), ni que la hidrólisis consume una molécula de agua por cada enlace que rompe.",
+     "senales": "Escribe la fórmula o la masa de un dipéptido como la suma exacta de los dos aminoácidos; dice que la hidrólisis no usa agua o que la libera; no distingue la condensación de la adición.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error común al escribir fórmulas y masas de péptidos y polímeros de condensación.",
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/polimerizacion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/polimerizacion/1",
+     "decision": "aprobar",
+     "justificacion": "Error real y frecuente al escribir fórmulas y masas de péptidos: tratar la condensación como una suma. La descripción es químicamente correcta (sale una molécula pequeña por unión; la hidrólisis consume una por enlace) y las señales corresponden a los distractores de la práctica, la comprobación y el sondeo 2.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Dipéptido = suma de aminoácidos − H2O; la hidrólisis añade un H2O por enlace."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U2-2.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U2-2.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U2-2.4",
+      "CON:fisica/procesos-termodinamicos"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Cuatro estaciones con aire encerrado: ¿qué magnitud se mantuvo constante?",
+     "proposito": "Provocar en el aire encerrado de una jeringa y de una botella (que se comporta casi como un gas ideal) procesos isobárico, isocórico, isotérmico y adiabático aproximados, cambiando una sola condición a la vez, para que el grupo registre la variable cambiada, las variables controladas y la magnitud (p, V o T) que quedó casi constante, y con eso identifique el proceso. Parte de una situación cotidiana: la advertencia «no exponer al calor» de las latas de aerosol.",
+     "materiales": [
+      "1 jeringa plástica nueva y sin aguja por grupo, de 60 mL o, si no hay, de 20 mL (de farmacia), con escala en mL",
+      "Tapón de la punta de la jeringa o plastilina para sellarla",
+      "Cinta adhesiva ancha (mejor de embalaje que masking tape, que se despega con la humedad), un plumón y un trapo para secar",
+      "2 recipientes plásticos (vasos grandes o palanganas): uno con agua y hielo, otro con agua tibia de unos 40 °C servida por la docente desde un termo",
+      "Termómetro digital de cocina o de laboratorio de alcohol (líquido rojo), uno por grupo o compartido",
+      "1 botella PET vacía de 500 o 600 mL y un globo, o mejor una bolsa plástica delgada y una liga para sujetarla a la boca (queda floja y mantiene mejor la presión constante)",
+      "1 botella PET de gaseosa de 2 L con tapa, unos 20 mL de agua tibia, una cartulina negra y la linterna de un celular",
+      "Reloj o cronómetro (puede ser el del celular)",
+      "Etiqueta o envase vacío de una lata de aerosol con la advertencia «no exponer al calor»",
+      "Opcional: computadora, tableta o celular con el simulador «Propiedades de los gases» de PhET, descargado antes para usarlo sin internet",
+      "Cuaderno con la tabla de registro"
+     ],
+     "procedimiento": [
+      "1. Sesión 1, inicio (5 min). La docente muestra la etiqueta de una lata de aerosol vacía con la advertencia «no exponer al calor», sin calentarla ni perforarla. Cada grupo escribe una hipótesis: «Si aumenta la temperatura del gas, entonces su presión o su volumen… porque…».",
+      "2. Copien en el cuaderno una tabla con estas columnas: estación, variable que cambiamos, variables que mantuvimos fijas, qué cambió (con números), magnitud que quedó casi constante y proceso.",
+      "3. Preparen la jeringa (5 min). Saquen el émbolo hasta unos dos tercios de la escala (por ejemplo, 40 mL en una de 60 mL) y sellen la punta con el tapón o con plastilina bien apretada. Prueben el sello: empujen un poco, suelten y verifiquen que el émbolo regresa a la misma marca. Anoten la temperatura del aula y el volumen inicial.",
+      "4. Estación 1, émbolo libre (15 min). Sumerjan el cuerpo de la jeringa en el agua con hielo, sosteniéndola por las aletas sin tocar el émbolo. Esperen 3 min, giren el émbolo un cuarto de vuelta para vencer el rozamiento y anoten la temperatura del agua y el volumen, leyendo la escala a la altura de los ojos.",
+      "5. Pasen la jeringa al agua tibia. Esperen otros 3 min, giren el émbolo y anoten temperatura y volumen. Repitan una vez más frío y tibio para ver si los valores se repiten.",
+      "6. Coloquen el globo desinflado (o la bolsa floja, sujeta con la liga) en la boca de la botella PET pequeña y sumerjan la botella primero en el agua tibia y luego en la fría (2 min en cada una). Anoten qué le pasa al globo o a la bolsa.",
+      "7. Estación 2, émbolo trabado (15 min). Dejen la jeringa 2 min al aire y séquenla con el trapo. Marquen con plumón la posición del émbolo y trábenlo con varias tiras de cinta cruzadas en X que peguen con firmeza el vástago a las aletas, para que el volumen no pueda cambiar. La cinta debe quedar fuera del agua y seca: mojada se despega.",
+      "8. Sumerjan la jeringa trabada 3 min en el agua con hielo, con la punta hacia abajo y sin mojar la cinta. Antes de soltar, revisen que el émbolo siga en su marca (si se movió, la traba falló: anótenlo y repitan). Sin sacarla del agua, despeguen la cinta y giren el émbolo un cuarto de vuelta para vencer el rozamiento: observen si entra o sale y anoten el nuevo volumen.",
+      "9. Sequen la jeringa, traben otra vez el émbolo en esa nueva marca, pásenla 3 min al agua tibia y suéltenlo de la misma forma, girándolo un cuarto de vuelta. Anoten el movimiento y el volumen final, y compárenlos con los de la estación 1 a temperaturas parecidas.",
+      "10. Cierre de la sesión 1 (5 min). Completen en la tabla las filas de las estaciones 1 y 2, sequen la mesa y guarden la jeringa sellada para la sesión 2.",
+      "11. Sesión 2, estación 3, compresión lenta (10 min). Con la jeringa sellada a temperatura ambiente, empujen el émbolo despacio (unos 10 s) hasta tres cuartos del volumen inicial; sosténganlo 30 s y suéltenlo despacio. Repitan hasta dos tercios del volumen. Comparen la fuerza que hizo falta en cada caso y anoten el volumen al que regresa el émbolo.",
+      "12. Estación 4, expansión rápida (10 min). Pongan los 20 mL de agua tibia en la botella de 2 L, tápenla bien y agítenla 10 s. Apriétenla con fuerza con las dos manos durante 5 s y suéltenla de golpe; miren el interior con la linterna de lado y la cartulina negra detrás. Repitan apretar y soltar varias veces y anoten cuándo aparece y cuándo desaparece la niebla.",
+      "13. Simulador (15 min). Si hay equipo, abran «Propiedades de los gases» en la pantalla del gas ideal y agreguen partículas con la bomba. En la opción para mantener una magnitud constante elijan el volumen y calienten; luego la presión, dejando que cambie el volumen, y calienten; luego la temperatura y muevan la pared despacio. Anoten p, V y T antes y después de cada cambio.",
+      "14. En el simulador, elijan que no se mantenga nada constante, no usen el calentador y muevan la pared rápido para comprimir el gas y luego para expandirlo. Anoten qué pasa con la temperatura.",
+      "15. Cierre (10 min). Cada grupo completa la tabla, nombra el proceso de cada estación justificando qué magnitud quedó casi constante y compara los resultados con su hipótesis y con la advertencia de la lata.",
+      "16. Limpieza (5 min). El agua y el hielo van al lavadero o a las plantas; sequen mesas y piso; laven, sequen y guarden las jeringas sin el tapón."
+     ],
+     "seguridad": [
+      "El agua tibia la calienta y la sirve la docente; no debe pasar de unos 40 °C (se toca sin molestia; compruébenlo con el termómetro). No se usan agua hirviendo ni llamas en ninguna estación.",
+      "Nunca calentar, perforar ni tirar al fuego latas de aerosol u otros envases cerrados; en la clase solo se muestra la etiqueta o una lata vacía.",
+      "Jeringas nuevas y sin aguja. Si traen aguja, la docente la retira con su capuchón puesto y la desecha en un envase rígido cerrado. Las jeringas de la práctica no se usan después para medicamentos.",
+      "Al soltar un émbolo trabado o comprimido, apuntar la jeringa hacia abajo y lejos de la cara. No comprimir a golpes ni con el peso del cuerpo: el tapón puede saltar.",
+      "Termómetros digitales o de alcohol, nunca de mercurio. Si se rompe uno de vidrio, no tocar los trozos y avisar a la docente.",
+      "Secar de inmediato el agua derramada para evitar resbalones y mantener computadoras, celulares y cables lejos de los recipientes con agua.",
+      "Preguntar si alguien es alérgico al látex antes de usar el globo; si es así, esa persona no lo manipula."
+     ],
+     "datos_esperados": "Estación 1 (casi isobárico: con el émbolo libre la presión del aire encerrado queda igual a la de afuera): el volumen sube al calentar y baja al enfriar. En un gas ideal a presión constante el volumen es proporcional a la temperatura en kelvin (T = °C + 273): de unos 5 °C (278 K) a unos 40 °C (313 K) crecería cerca de 13 %, unos 5 mL si había 40 mL de aire; en el aula es normal medir algo menos por el rozamiento del émbolo y porque el aire no alcanza del todo la temperatura del agua. El cociente V/T casi constante solo aparece con kelvin; con °C sale absurdo (de 5 °C a 40 °C serían 8 veces más). El globo se infla un poco en el agua tibia y se arruga o se mete hacia la botella en la fría. El globo o la bolsa solo muestran la tendencia del volumen: mientras quedan flojos la presión casi no cambia; si el hule del globo se estira, aprieta el aire y la presión sube un poco, y el proceso ya no es del todo isobárico. Estación 2 (isocórico mientras dura la cinta): el volumen no cambia, pero la presión sí, cerca de 13 % entre el hielo y el agua tibia (del orden de 10 000 Pa; la presión atmosférica del lugar es valor de la tabla de referencia y es menor en lugares altos). La evidencia es indirecta: al soltar, el émbolo entra después del frío y sale después del tibio, y termina cerca de las marcas de la estación 1. Si la cinta se moja o cede, el émbolo se corre durante la espera y el proceso deja de ser isocórico; por eso se revisa la marca antes de soltar. El rozamiento del émbolo también puede frenar el movimiento al soltar: por eso se gira. Estación 3 (casi isotérmico, por ser lento): al bajar el volumen sube la presión y p·V se mantiene casi igual; llegar a dos tercios del volumen exige cerca de 1.5 veces la presión inicial, una fuerza extra de decenas de newtons en una jeringa de 60 mL, y por eso cuesta más que llegar a tres cuartos. Al soltar, el émbolo vuelve casi al volumen inicial; si no vuelve, hubo fuga y cambió la cantidad de aire. Estación 4 (casi adiabático, por ser rápido): al soltar de golpe aparece una niebla tenue que desaparece al volver a apretar; el aire se expande sin tiempo para recibir calor, hace trabajo, se enfría y el vapor de agua se condensa. La niebla puede ser muy tenue, o no verse, si el aire tiene pocas partículas donde condensarse: conviene que la docente lo pruebe antes de la clase; si no aparece, el enfriamiento por expansión se trabaja con el simulador (paso 14). Simulador: a volumen fijo p y T suben en proporción; a presión fija V y T suben en proporción; a temperatura fija, al reducir V sube p; sin nada constante, comprimir rápido sube T y expandir la baja. Ningún proceso del aula es perfecto: lo esperable es la tendencia correcta y reconocer qué magnitud quedó casi constante. Sobre la lata: en un aerosol real parte del propelente está líquido, y su presión sube con la temperatura aún más rápido que la de un gas ideal; la conclusión (a volumen fijo, más temperatura, más presión) es la misma y el riesgo, mayor.",
+     "analisis": [
+      "Para cada estación, escriban qué variable cambiaron a propósito, cuáles mantuvieron fijas y cuál de las tres magnitudes (p, V o T) quedó casi constante. Con eso, nombren el proceso: isobárico, isocórico, isotérmico o adiabático.",
+      "Con los datos de la estación 1, calculen V/T con la temperatura en °C y luego en kelvin. ¿Cuál de los dos cocientes se parece más entre el frío y el tibio? ¿Por qué la escala Celsius no sirve para esta proporción?",
+      "En las estaciones 1 y 2 se calentó el mismo aire. ¿Qué cambió en cada una mientras se calentaba? ¿Qué evidencia tienen de que en la estación 2 subió la presión, si no la midieron con un aparato?",
+      "¿Por qué en la estación 3 se pidió empujar despacio y en la 4 soltar de golpe? Predigan qué pasaría con la temperatura del aire de la jeringa si la comprimieran muy rápido.",
+      "En la estación 4 el aire se enfrió sin tocar agua fría. ¿Qué hizo el aire al expandirse que le hizo perder energía? Relaciónenlo con la nubecita que se forma al destapar una gaseosa fría.",
+      "Dibujen a mano alzada un diagrama p–V (presión en el eje vertical) con la línea de los procesos isobárico, isocórico e isotérmico. ¿En cuál el gas no hace trabajo porque su volumen no cambia?",
+      "Evalúen su control de variables: ¿hubo fugas, rozamiento o tiempos de espera distintos? ¿Qué cambiarían para que el cambio observado dependa solo de la temperatura?",
+      "Vuelvan a la lata de aerosol: si se calienta, ¿qué magnitud no puede cambiar, cuál sube y por qué la lata puede reventar? ¿Sus datos apoyan o contradicen su hipótesis inicial?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin simulador ni electricidad: la docente copia en la pizarra una tabla rotulada «datos de un grupo de ejemplo, calculados con el modelo de gas ideal», por ejemplo a volumen fijo 300 K → 100 kPa, 330 K → 110 kPa, 360 K → 120 kPa, y a temperatura fija 30 mL → 100 kPa, 20 mL → 150 kPa, 15 mL → 200 kPa, para que los grupos identifiquen la magnitud constante y el proceso. Sin hielo: agua del chorro contra agua tibia (la diferencia es menor; conviene la jeringa de 60 mL). Sin jeringas: dos botellas PET con globo, una en agua tibia y otra en fría, y una botella PET enjuagada con agua tibia, tapada y puesta en agua fría, que se abolla porque baja la presión dentro. Ampliación para grupos rápidos: un compañero sostiene la jeringa vertical con la punta sellada hacia abajo sobre la mesa, se pega una tapa de cartón al émbolo y se ponen encima 1, 2 y 3 cuadernos iguales; al aumentar la carga el volumen baja cada vez menos (p·V casi constante).",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U2-2.4-r3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/procesos-termodinamicos",
+     "nombre": "Procesos termodinámicos",
+     "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo o bolsa en botella con agua **tibia** que sirve el docente (que se pueda tocar sin quemarse) y agua fría, con hielo si hay; lápiz de punta roma. Corregido por el bucle de fortalecimiento (2026-10-12): «agua caliente, no hirviendo» admitía 70–90 °C, con riesgo de quemadura, y el PET se ablanda; la malla pide agua tibia (G09-CIE-U2-2.4).\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada, agua tibia y botella grande, sin apretarla."
+   },
+   "id": "PED:EXP:G09-CIE-U2-2.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U2-2.4/1",
+     "decision": "corregir",
+     "justificacion": "Física correcta y segura: de 278 a 313 K, +13 % (≈5 mL en 40 mL), Δp ≈ 10⁴ Pa, 1.5 p₀ a dos tercios del volumen (≈26 N extra) y presión atmosférica sin cifra inventada. Se corrige factibilidad: la cinta mojada no traba y el rozamiento oculta el efecto; el globo estirado no es isobárico; la niebla puede no verse; el aerosol real no es gas ideal.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4",
+       "cita": "La evidencia exige registrar variable cambiada, controladas y proceso.",
+       "cita_literal": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4",
+       "cita": "La malla pide experimentar con procesos en un gas ideal.",
+       "cita_literal": "Experimentación con procesos termodinámicos en un gas ideal"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Con 7 kPa de diferencia, la fuerza sobre un émbolo de 5.6 cm² es ≈4 N, del orden del rozamiento del émbolo; la traba y el giro deciden si se ve el efecto."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "materiales": [
+       "1 jeringa plástica nueva y sin aguja por grupo, de 60 mL o, si no hay, de 20 mL (de farmacia), con escala en mL",
+       "Tapón de la punta de la jeringa o plastilina para sellarla",
+       "Cinta adhesiva ancha (mejor de embalaje que masking tape, que se despega con la humedad), un plumón y un trapo para secar",
+       "2 recipientes plásticos (vasos grandes o palanganas): uno con agua y hielo, otro con agua tibia de unos 40 °C servida por la docente desde un termo",
+       "Termómetro digital de cocina o de laboratorio de alcohol (líquido rojo), uno por grupo o compartido",
+       "1 botella PET vacía de 500 o 600 mL y un globo, o mejor una bolsa plástica delgada y una liga para sujetarla a la boca (queda floja y mantiene mejor la presión constante)",
+       "1 botella PET de gaseosa de 2 L con tapa, unos 20 mL de agua tibia, una cartulina negra y la linterna de un celular",
+       "Reloj o cronómetro (puede ser el del celular)",
+       "Etiqueta o envase vacío de una lata de aerosol con la advertencia «no exponer al calor»",
+       "Opcional: computadora, tableta o celular con el simulador «Propiedades de los gases» de PhET, descargado antes para usarlo sin internet",
+       "Cuaderno con la tabla de registro"
+      ],
+      "procedimiento": [
+       "1. Sesión 1, inicio (5 min). La docente muestra la etiqueta de una lata de aerosol vacía con la advertencia «no exponer al calor», sin calentarla ni perforarla. Cada grupo escribe una hipótesis: «Si aumenta la temperatura del gas, entonces su presión o su volumen… porque…».",
+       "2. Copien en el cuaderno una tabla con estas columnas: estación, variable que cambiamos, variables que mantuvimos fijas, qué cambió (con números), magnitud que quedó casi constante y proceso.",
+       "3. Preparen la jeringa (5 min). Saquen el émbolo hasta unos dos tercios de la escala (por ejemplo, 40 mL en una de 60 mL) y sellen la punta con el tapón o con plastilina bien apretada. Prueben el sello: empujen un poco, suelten y verifiquen que el émbolo regresa a la misma marca. Anoten la temperatura del aula y el volumen inicial.",
+       "4. Estación 1, émbolo libre (15 min). Sumerjan el cuerpo de la jeringa en el agua con hielo, sosteniéndola por las aletas sin tocar el émbolo. Esperen 3 min, giren el émbolo un cuarto de vuelta para vencer el rozamiento y anoten la temperatura del agua y el volumen, leyendo la escala a la altura de los ojos.",
+       "5. Pasen la jeringa al agua tibia. Esperen otros 3 min, giren el émbolo y anoten temperatura y volumen. Repitan una vez más frío y tibio para ver si los valores se repiten.",
+       "6. Coloquen el globo desinflado (o la bolsa floja, sujeta con la liga) en la boca de la botella PET pequeña y sumerjan la botella primero en el agua tibia y luego en la fría (2 min en cada una). Anoten qué le pasa al globo o a la bolsa.",
+       "7. Estación 2, émbolo trabado (15 min). Dejen la jeringa 2 min al aire y séquenla con el trapo. Marquen con plumón la posición del émbolo y trábenlo con varias tiras de cinta cruzadas en X que peguen con firmeza el vástago a las aletas, para que el volumen no pueda cambiar. La cinta debe quedar fuera del agua y seca: mojada se despega.",
+       "8. Sumerjan la jeringa trabada 3 min en el agua con hielo, con la punta hacia abajo y sin mojar la cinta. Antes de soltar, revisen que el émbolo siga en su marca (si se movió, la traba falló: anótenlo y repitan). Sin sacarla del agua, despeguen la cinta y giren el émbolo un cuarto de vuelta para vencer el rozamiento: observen si entra o sale y anoten el nuevo volumen.",
+       "9. Sequen la jeringa, traben otra vez el émbolo en esa nueva marca, pásenla 3 min al agua tibia y suéltenlo de la misma forma, girándolo un cuarto de vuelta. Anoten el movimiento y el volumen final, y compárenlos con los de la estación 1 a temperaturas parecidas.",
+       "10. Cierre de la sesión 1 (5 min). Completen en la tabla las filas de las estaciones 1 y 2, sequen la mesa y guarden la jeringa sellada para la sesión 2.",
+       "11. Sesión 2, estación 3, compresión lenta (10 min). Con la jeringa sellada a temperatura ambiente, empujen el émbolo despacio (unos 10 s) hasta tres cuartos del volumen inicial; sosténganlo 30 s y suéltenlo despacio. Repitan hasta dos tercios del volumen. Comparen la fuerza que hizo falta en cada caso y anoten el volumen al que regresa el émbolo.",
+       "12. Estación 4, expansión rápida (10 min). Pongan los 20 mL de agua tibia en la botella de 2 L, tápenla bien y agítenla 10 s. Apriétenla con fuerza con las dos manos durante 5 s y suéltenla de golpe; miren el interior con la linterna de lado y la cartulina negra detrás. Repitan apretar y soltar varias veces y anoten cuándo aparece y cuándo desaparece la niebla.",
+       "13. Simulador (15 min). Si hay equipo, abran «Propiedades de los gases» en la pantalla del gas ideal y agreguen partículas con la bomba. En la opción para mantener una magnitud constante elijan el volumen y calienten; luego la presión, dejando que cambie el volumen, y calienten; luego la temperatura y muevan la pared despacio. Anoten p, V y T antes y después de cada cambio.",
+       "14. En el simulador, elijan que no se mantenga nada constante, no usen el calentador y muevan la pared rápido para comprimir el gas y luego para expandirlo. Anoten qué pasa con la temperatura.",
+       "15. Cierre (10 min). Cada grupo completa la tabla, nombra el proceso de cada estación justificando qué magnitud quedó casi constante y compara los resultados con su hipótesis y con la advertencia de la lata.",
+       "16. Limpieza (5 min). El agua y el hielo van al lavadero o a las plantas; sequen mesas y piso; laven, sequen y guarden las jeringas sin el tapón."
+      ],
+      "datos_esperados": "Estación 1 (casi isobárico: con el émbolo libre la presión del aire encerrado queda igual a la de afuera): el volumen sube al calentar y baja al enfriar. En un gas ideal a presión constante el volumen es proporcional a la temperatura en kelvin (T = °C + 273): de unos 5 °C (278 K) a unos 40 °C (313 K) crecería cerca de 13 %, unos 5 mL si había 40 mL de aire; en el aula es normal medir algo menos por el rozamiento del émbolo y porque el aire no alcanza del todo la temperatura del agua. El cociente V/T casi constante solo aparece con kelvin; con °C sale absurdo (de 5 °C a 40 °C serían 8 veces más). El globo se infla un poco en el agua tibia y se arruga o se mete hacia la botella en la fría. El globo o la bolsa solo muestran la tendencia del volumen: mientras quedan flojos la presión casi no cambia; si el hule del globo se estira, aprieta el aire y la presión sube un poco, y el proceso ya no es del todo isobárico. Estación 2 (isocórico mientras dura la cinta): el volumen no cambia, pero la presión sí, cerca de 13 % entre el hielo y el agua tibia (del orden de 10 000 Pa; la presión atmosférica del lugar es valor de la tabla de referencia y es menor en lugares altos). La evidencia es indirecta: al soltar, el émbolo entra después del frío y sale después del tibio, y termina cerca de las marcas de la estación 1. Si la cinta se moja o cede, el émbolo se corre durante la espera y el proceso deja de ser isocórico; por eso se revisa la marca antes de soltar. El rozamiento del émbolo también puede frenar el movimiento al soltar: por eso se gira. Estación 3 (casi isotérmico, por ser lento): al bajar el volumen sube la presión y p·V se mantiene casi igual; llegar a dos tercios del volumen exige cerca de 1.5 veces la presión inicial, una fuerza extra de decenas de newtons en una jeringa de 60 mL, y por eso cuesta más que llegar a tres cuartos. Al soltar, el émbolo vuelve casi al volumen inicial; si no vuelve, hubo fuga y cambió la cantidad de aire. Estación 4 (casi adiabático, por ser rápido): al soltar de golpe aparece una niebla tenue que desaparece al volver a apretar; el aire se expande sin tiempo para recibir calor, hace trabajo, se enfría y el vapor de agua se condensa. La niebla puede ser muy tenue, o no verse, si el aire tiene pocas partículas donde condensarse: conviene que la docente lo pruebe antes de la clase; si no aparece, el enfriamiento por expansión se trabaja con el simulador (paso 14). Simulador: a volumen fijo p y T suben en proporción; a presión fija V y T suben en proporción; a temperatura fija, al reducir V sube p; sin nada constante, comprimir rápido sube T y expandir la baja. Ningún proceso del aula es perfecto: lo esperable es la tendencia correcta y reconocer qué magnitud quedó casi constante. Sobre la lata: en un aerosol real parte del propelente está líquido, y su presión sube con la temperatura aún más rápido que la de un gas ideal; la conclusión (a volumen fijo, más temperatura, más presión) es la misma y el riesgo, mayor."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.3"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.3",
+      "CON:quimica/constante-de-equilibrio"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Qué entra y qué no entra en Kc: sal saturada, gaseosa y el modelo de los frijoles",
+     "proposito": "Comprobar con datos que, en un equilibrio heterogéneo, la cantidad de sólido puro no cambia la concentración de lo disuelto (por eso el sólido no aparece en Kc); reconocer las dos fases del equilibrio del CO₂ en una gaseosa; y, con un modelo de frijoles, obtener un valor de K que no depende de cómo empieza la mezcla y cuyo tamaño dice si predomina el producto o el reactivo.",
+     "materiales": [
+      "Sal de mesa (unos 150 g por grupo)",
+      "Agua del chorro o purificada",
+      "5 vasos plásticos transparentes iguales (de 350 a 500 mL) y un marcador para rotularlos",
+      "Cuchara o paleta para agitar",
+      "Jeringa de 20 mL sin aguja (de farmacia) o probeta de 100 mL",
+      "Filtro de papel para café o tela limpia de algodón",
+      "Balanza de cocina digital que mida de 1 en 1 g (una para varios grupos)",
+      "Una botella plástica de gaseosa de 600 mL, cerrada y fría (una para toda la clase)",
+      "120 frijoles o granos de maíz por grupo y dos platos rotulados «reactivo» y «producto»",
+      "Hoja de registro, lápiz y calculadora"
+     ],
+     "procedimiento": [
+      "1. Sesión 1. Rotula tres vasos como vaso 1, vaso 2 y vaso 3. Con la jeringa (5 veces 20 mL) o la probeta, pon 100 mL de agua en cada uno.",
+      "2. Agrega 50 g de sal al vaso 1, 80 g al vaso 2 y 10 g al vaso 3. En los vasos 1 y 2 debe sobrar sal en el fondo; en el vaso 3 se disuelve toda.",
+      "3. Agita los tres vasos por turnos durante 10 minutos y deja reposar 5 minutos. Revisa que en los vasos 1 y 2 quede sal sin disolver; si no queda, agrega 10 g más y agita otra vez.",
+      "4. Pasa el líquido claro de cada vaso por el filtro a un vaso limpio y rotulado, sin arrastrar la sal del fondo.",
+      "5. Pon un vaso vacío y seco en la balanza y presiona «tara» para marcar cero. Agrega 60 mL (3 jeringas de 20 mL) del líquido filtrado del vaso 1 y anota la masa. Vacía, seca y repite con el líquido de los vasos 2 y 3 y con 60 mL de agua sola.",
+      "6. Escribe en el cuaderno la ecuación NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) con sus fases, el tipo de equilibrio y la expresión de Kc.",
+      "7. Demostración del docente: muestra la gaseosa cerrada y pide señalar las dos fases (gas arriba, líquido abajo). Abre la tapa despacio, apuntando lejos de las personas, observen las burbujas, ciérrala y observen 3 minutos más. Cada grupo escribe CO₂(g) ⇌ CO₂(aq), su tipo de equilibrio y su Kc.",
+      "8. Sesión 2. Cada grupo recibe un ensayo del modelo de los frijoles: ensayo 1, 120 frijoles en «reactivo» y 0 en «producto»; ensayo 2, 0 en «reactivo» y 120 en «producto»; ensayo 3, 60 en «reactivo» y 0 en «producto»; ensayo 4, igual que el 1 pero con las reglas intercambiadas (paso 9).",
+      "9. Reglas de cada ronda: al inicio, cuenta los frijoles de cada plato. Separa la cuarta parte de los de «reactivo» (divide entre 4) y la octava parte de los de «producto» (divide entre 8); redondea al entero más cercano y, si termina en .5, hacia arriba. En el ensayo 4 se divide entre 8 en «reactivo» y entre 4 en «producto».",
+      "10. Pasa al mismo tiempo los frijoles separados al otro plato. Anota en una tabla: número de ronda, frijoles en «reactivo», frijoles en «producto» y cuántos pasaron en cada sentido.",
+      "11. Repite las rondas hasta que los números de los dos platos no cambien en tres rondas seguidas (unas 10 a 15 rondas).",
+      "12. Calcula el K del modelo con los números finales: K = frijoles en «producto» ÷ frijoles en «reactivo». Escríbelo con dos cifras.",
+      "13. Puesta en común: cada grupo escribe en la pizarra su ensayo, sus números finales y su K. La clase compara los ensayos 1, 2 y 3 entre sí y luego con el 4.",
+      "14. Cierre: cada estudiante completa un cuadro con cinco reacciones (las de las preguntas de análisis), su tipo de equilibrio, su expresión de Kc y lo que diría un Kc grande o pequeño."
+     ],
+     "seguridad": [
+      "En la práctica no se prueba ni se bebe nada, tampoco la gaseosa ni el agua con sal.",
+      "La gaseosa la abre solo el docente, despacio y con la tapa apuntando lejos de las caras; se usa botella de plástico, no de vidrio.",
+      "El agua con sal derramada hace resbaloso el piso: se seca de inmediato con un trapo.",
+      "Las jeringas se usan sin aguja.",
+      "Desechos: el agua con sal se vierte en el lavadero con bastante agua, no en el suelo ni en las plantas, porque la sal daña la tierra. Los frijoles usados no se comen; se guardan para otra práctica. Todos se lavan las manos al terminar."
+     ],
+     "datos_esperados": "Sesión 1: los vasos 1 y 2 conservan sal sin disolver y 60 mL de su líquido claro tienen casi la misma masa (difieren en 2 g o menos, dentro del error de la jeringa y de una balanza de 1 g), claramente mayor que la de 60 mL de agua; el vaso 3, sin sal sobrante, da una masa intermedia. La densidad de la salmuera saturada a la temperatura del aula es un valor de la tabla de referencia. Conclusión esperada: si hay sólido presente, la cantidad de sólido no cambia la concentración de lo disuelto. En la gaseosa cerrada casi no se ven burbujas; al abrir salen muchas y, al cerrar, disminuyen. Sesión 2 (verificado con las reglas del paso 9): los ensayos 1, 2 y 3 se estabilizan en 6 a 9 rondas y dan un K del modelo cercano a 2 (entre 1.8 y 2.2 por el redondeo; por ejemplo, 41 y 79 frijoles en el ensayo 1, 38 y 82 en el 2, 21 y 39 en el 3). El K no depende del inicio ni del total de frijoles y coincide con el cociente de las reglas, (1/4) ÷ (1/8) = 2. Ya estable, siguen pasando unos 10 frijoles por ronda en cada sentido (5 en el ensayo 3). El ensayo 4 se estabiliza en 82 en «reactivo» y 38 en «producto»: K cercano a 0.5, y predomina el reactivo.",
+     "analisis": [
+      "¿Qué tipo de equilibrio es NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) y cuál es su Kc? Usa las masas de los vasos 1 y 2 para explicar por qué el NaCl(s) no aparece en Kc.",
+      "¿Por qué el vaso 3 no sirve para esa conclusión? ¿Hay equilibrio heterogéneo si no queda sólido?",
+      "En la gaseosa cerrada, ¿qué fases hay y cuál es la expresión de Kc de CO₂(g) ⇌ CO₂(aq)? ¿Por qué con la botella abierta no se llega al equilibrio? ¿En qué se parece al CO₂ que el mar toma del aire?",
+      "En el modelo, ¿cambió el K al empezar con todos los frijoles en «producto» o con solo 60 frijoles? ¿Qué fue lo único que cambió el K?",
+      "Cuando los números ya no cambiaban, ¿seguían pasando frijoles de un plato a otro? ¿Qué dice eso sobre si la reacción se detiene en el equilibrio?",
+      "Completa el cuadro de cinco reacciones con su tipo de equilibrio y su expresión de Kc: NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq); CO₂(g) ⇌ CO₂(aq); el modelo reactivo ⇌ producto; N₂(g) + 3H₂(g) ⇌ 2NH₃(g); C(s) + H₂O(g) ⇌ CO(g) + H₂(g).",
+      "La hemoglobina de la sangre puede llevar O₂ o CO: HbO₂ + CO ⇌ HbCO + O₂, con una constante mucho mayor que 1 (valor de la tabla de referencia). Escribe su Kc y explica qué le pasa a la hemoglobina de quien cocina con leña en una cocina cerrada. ¿Qué medidas de ventilación propondrías a esa familia y por qué?",
+      "Límites del modelo: ¿en qué se parecen los frijoles a las moléculas y en qué no?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin balanza: evaporar al sol, durante 2 o 3 días, 20 mL del líquido claro de los vasos 1 y 2 en dos platos iguales y comparar la sal que queda (debe ser casi la misma). Si se puede, preparar los vasos el día anterior para asegurar que el líquido quede saturado. Sin frijoles: granos de maíz, piedritas o papelitos. Sin gaseosa: el docente describe o muestra en video lo que pasa al abrirla. Simulación: en una hoja de cálculo, R_nuevo = R − R/4 + P/8 y P_nuevo = P + R/4 − P/8, copiado en 20 filas; enlaza con la actividad desconectada de la malla (algoritmo para escribir Kc y cuadro digital de resultados).",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.3",
+     "grado": 9,
+     "indicador": "3.3. Identifica el tipo de equilibrio químico y representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Expresiones de Kc para cinco reacciones con la interpretación de su valor"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U3-3.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "1. Sesión 1. Rotula tres vasos como vaso 1, vaso 2 y vaso 3. Con la jeringa (5 veces 20 mL) o la probeta, pon 100 mL de agua en cada uno.",
+       "2. Agrega 50 g de sal al vaso 1, 80 g al vaso 2 y 10 g al vaso 3. En los vasos 1 y 2 debe sobrar sal en el fondo; en el vaso 3 se disuelve toda.",
+       "3. Agita los tres vasos por turnos durante 10 minutos y deja reposar 5 minutos. Revisa que en los vasos 1 y 2 quede sal sin disolver; si no queda, agrega 10 g más y agita otra vez.",
+       "4. Pasa el líquido claro de cada vaso por el filtro a un vaso limpio y rotulado, sin arrastrar la sal del fondo.",
+       "5. Pon un vaso vacío y seco en la balanza y presiona «tara» para marcar cero. Agrega 60 mL (3 jeringas de 20 mL) del líquido filtrado del vaso 1 y anota la masa. Vacía, seca y repite con el líquido de los vasos 2 y 3 y con 60 mL de agua sola.",
+       "6. Escribe en el cuaderno la ecuación NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) con sus fases, el tipo de equilibrio y la expresión de Kc.",
+       "7. Demostración del docente: muestra la gaseosa cerrada y pide señalar las dos fases (gas arriba, líquido abajo). Abre la tapa despacio, apuntando lejos de las personas, observen las burbujas, ciérrala y observen 3 minutos más. Cada grupo escribe CO₂(g) ⇌ CO₂(aq), su tipo de equilibrio y su Kc.",
+       "8. Sesión 2. Cada grupo recibe un ensayo del modelo de los frijoles: ensayo 1, 120 frijoles en «reactivo» y 0 en «producto»; ensayo 2, 0 en «reactivo» y 120 en «producto»; ensayo 3, 60 en «reactivo» y 0 en «producto»; ensayo 4, igual que el 1 pero con las reglas intercambiadas (paso 9).",
+       "9. Reglas de cada ronda: al inicio, cuenta los frijoles de cada plato. Separa la cuarta parte de los de «reactivo» (divide entre 4) y la octava parte de los de «producto» (divide entre 8); redondea al entero más cercano y, si termina en .5, hacia arriba. En el ensayo 4 se divide entre 8 en «reactivo» y entre 4 en «producto».",
+       "10. Pasa al mismo tiempo los frijoles separados al otro plato. Anota en una tabla: número de ronda, frijoles en «reactivo», frijoles en «producto» y cuántos pasaron en cada sentido.",
+       "11. Repite las rondas hasta que los números de los dos platos no cambien en tres rondas seguidas (unas 10 a 15 rondas).",
+       "12. Calcula el K del modelo con los números finales: K = frijoles en «producto» ÷ frijoles en «reactivo». Escríbelo con dos cifras.",
+       "13. Puesta en común: cada grupo escribe en la pizarra su ensayo, sus números finales y su K. La clase compara los ensayos 1, 2 y 3 entre sí y luego con el 4.",
+       "14. Cierre: cada estudiante completa un cuadro con cinco reacciones (las de las preguntas de análisis), su tipo de equilibrio, su expresión de Kc y lo que diría un Kc grande o pequeño."
+      ],
+      "datos_esperados": "Sesión 1: los vasos 1 y 2 conservan sal sin disolver y 60 mL de su líquido claro tienen casi la misma masa (difieren en 2 g o menos, dentro del error de la jeringa y de una balanza de 1 g), claramente mayor que la de 60 mL de agua; el vaso 3, sin sal sobrante, da una masa intermedia. La densidad de la salmuera saturada a la temperatura del aula es un valor de la tabla de referencia. Conclusión esperada: si hay sólido presente, la cantidad de sólido no cambia la concentración de lo disuelto. En la gaseosa cerrada casi no se ven burbujas; al abrir salen muchas y, al cerrar, disminuyen. Sesión 2 (verificado con las reglas del paso 9): los ensayos 1, 2 y 3 se estabilizan en 6 a 9 rondas y dan un K del modelo cercano a 2 (entre 1.8 y 2.2 por el redondeo; por ejemplo, 41 y 79 frijoles en el ensayo 1, 38 y 82 en el 2, 21 y 39 en el 3). El K no depende del inicio ni del total de frijoles y coincide con el cociente de las reglas, (1/4) ÷ (1/8) = 2. Ya estable, siguen pasando unos 10 frijoles por ronda en cada sentido (5 en el ensayo 3). El ensayo 4 se estabiliza en 82 en «reactivo» y 38 en «producto»: K cercano a 0.5, y predomina el reactivo."
+     },
+     "justificacion": "Química y seguridad correctas; simulé el modelo de frijoles con las reglas del paso 9 y da lo previsto (41/79, 38/82, 21/39 y 82/38, estables en 6 a 9 rondas). Falla la factibilidad del paso 5: 100 mL de agua saturada dan unos 113 mL de salmuera, y la sal del fondo y el filtro retienen parte; el vaso 2 no rinde 100 mL filtrados. Se pesan 60 mL.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.3 (Matriz 9.° V2, hoja «Unidad 3 - Equilibrio químico», fila 5)",
+       "cita": "El indicador pide identificar el tipo de equilibrio y representar Kc a partir de ecuaciones.",
+       "cita_literal": "Identifica el tipo de equilibrio químico y representa la constante de equilibrio"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Solubilidad del NaCl ≈ 36 g/100 g de agua a 25 °C; 136 g de salmuera saturada ocupan unos 113 mL."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Con 44 g de sal sobrante (vaso 2), el sólido húmedo y el filtro retienen más de 10 mL de líquido."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U1-1.2/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U1-1.2/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U1-1.2"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U1-1.2",
+      "CON:fisica/movimiento-armonico-simple"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Del resorte al oscilador: constante elástica, período y energía",
+     "proposito": "Medir la constante elástica de un resorte como pendiente de la gráfica fuerza-alargamiento y usarla para predecir un alargamiento; comprobar que el período del oscilador masa-resorte no depende de la amplitud y sí de la masa; y construir, a partir de un video, la tabla y la gráfica de energías cinética, potencial y total contra la posición para decidir con datos si la energía mecánica se conserva.",
+     "materiales": [
+      "Un resorte de ferretería o de un juguete en desuso (10 a 20 cm) que se estire varios centímetros con unos 100 a 300 g sin quedar deformado",
+      "Soporte universal, o un palo de escoba bien sujeto con cinta entre dos pupitres firmes",
+      "Cinco o seis masas: bolsitas cerradas con arena, monedas o tuercas, pesadas en una balanza de cocina o de laboratorio",
+      "Un gancho de alambre o un clip grande para colgar las masas",
+      "Regla de 30 cm o cinta métrica, fijada con cinta adhesiva junto al resorte",
+      "Cronómetro o celular con cronómetro",
+      "Celular con cámara (mejor si graba en cámara lenta) y una pila de cuadernos para dejarlo quieto",
+      "Papel milimetrado, o computadora con hoja de cálculo (LibreOffice Calc, Excel o Google Sheets)",
+      "Cinta adhesiva de color para marcar el borde inferior de la masa"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1) El docente cuelga el resorte del soporte. Fijen la regla vertical al lado y anoten la longitud natural L0 del resorte sin carga.",
+      "2. Pesen cada masa en la balanza y anoten m en kilogramos. Prueben primero la mayor: el resorte debe estirarse sin quedar deformado al quitarla; si no recupera su longitud, usen masas menores.",
+      "3. Cuelguen las masas una por una, esperen a que queden quietas y midan la longitud L. Calculen el alargamiento x = L − L0 (no la longitud total) y la fuerza F = mg con g = 9.8 m/s². Anoten m, F, L y x en una tabla.",
+      "4. Grafiquen F contra x, tracen la recta de mejor ajuste entre los puntos (sin obligarla a pasar por el origen) y calculen su pendiente: esa es la constante elástica k, en N/m.",
+      "5. Elijan un objeto nuevo (un estuche o un llavero), pésenlo, predigan su alargamiento leyéndolo en la recta (si pasa por el origen, x = mg/k) y compruébenlo colgándolo.",
+      "6. Cuelguen una masa, bájenla unos 2 cm desde su posición de equilibrio y suéltenla. La amplitud debe ser menor que el alargamiento que esa masa produce en equilibrio (si el resorte se estira solo 3 cm, usen 1 y 2 cm): si no, el resorte se afloja arriba y la oscilación deja de ser armónica. Midan con el cronómetro el tiempo de 10 oscilaciones completas; repitan tres veces y calculen T = t/10 con el promedio.",
+      "7. Repitan el paso 6 con la misma masa, pero con el doble de amplitud (unos 4 cm).",
+      "8. Repitan el paso 6 con otras dos masas (por ejemplo, el doble y el cuádruple de la primera) y calculen para cada una el valor 2π√(m/k) para compararlo con T medido.",
+      "9. (Sesión 2) Peguen la cinta de color en el borde inferior de la masa. Coloquen el celular quieto sobre los cuadernos, a la altura de la masa, con la regla visible, y graben unas cinco oscilaciones de amplitud pequeña (3 a 5 cm, siempre menor que el alargamiento de equilibrio).",
+      "10. Revisen en la configuración de la cámara cuántos cuadros por segundo graba de verdad (en cámara lenta son más). Avancen el video cuadro por cuadro, o usen el programa gratuito Tracker si hay computadora, y anoten la posición y de la marca, medida desde la posición de equilibrio, en una oscilación completa.",
+      "11. Calculen la rapidez en cada punto con la posición de los cuadros vecinos: v ≈ (posición siguiente − posición anterior) / (tiempo entre esos dos cuadros).",
+      "12. Para cada posición calculen Ep = ½ky² y Ec = ½mv², y su suma. Nota para el docente: en un resorte vertical, si y se mide desde el equilibrio con la masa colgada, la energía elástica más la gravitatoria equivale a ½ky² más una constante; por eso se usa esa expresión.",
+      "13. Hagan la tabla y la gráfica de Ec, Ep y energía total contra la posición, en papel o en la hoja de cálculo, y escriban el análisis respondiendo las preguntas."
+     ],
+     "seguridad": [
+      "No cuelguen más masa de la que indica el docente ni estiren el resorte con la mano más de unos centímetros: puede deformarse o soltarse del gancho y saltar hacia la cara.",
+      "Cierren bien las bolsitas y mantengan pies y manos fuera de la zona debajo de la masa; usen amplitudes pequeñas para que la masa no se desprenda.",
+      "El soporte lo instala el docente: nadie se sube a sillas ni pupitres; verifiquen que el palo o el soporte no se mueva antes de colgar masas.",
+      "Si el resorte tiene puntas de alambre cortadas, cúbranlas con cinta adhesiva.",
+      "Coloquen el celular sobre una superficie estable, lejos de la masa que oscila."
+     ],
+     "datos_esperados": "Parte 1: los puntos F–x forman una recta que pasa cerca del origen mientras no se pase del límite elástico; su pendiente es k. En resortes de espiras juntas es común una tensión inicial: con cargas pequeñas casi no se estiran y la recta corta el eje de fuerza un poco por encima del origen; la pendiente sigue siendo k. En resortes de ferretería suele salir entre unas decenas y algo más de cien N/m, según el resorte: no hay un valor «correcto» de tabla. Si se grafica F contra la longitud total, la recta tiene la misma pendiente pero no pasa por el origen: corta el eje de longitudes cerca de L0. La predicción con el objeto nuevo debería acertar con un error de pocos milímetros. Parte 2: los períodos son de décimas de segundo a cerca de un segundo, y 10 oscilaciones duran algunos segundos. Al duplicar la amplitud, T cambia menos que la diferencia entre mediciones repetidas (pocos por ciento, sobre todo por el tiempo de reacción). Al cuadruplicar la masa, T casi se duplica (T crece con √m). El T medido suele salir algo mayor que 2π√(m/k) porque parte de la masa del propio resorte también oscila. Parte 3: Ep es máxima en los extremos y cero en el equilibrio; Ec, al revés; ambas curvas son parábolas y su suma queda casi horizontal. Con la lectura del video es normal que la suma varíe del orden de un 10 % sin patrón (error de medición) y que baje poco a poco de una oscilación a la siguiente, a la vez que la amplitud se reduce (resistencia del aire y rozamiento interno del resorte y del soporte). Si la amplitud supera el alargamiento de equilibrio, el resorte se afloja arriba, la masa da tirones y el período deja de ser constante.",
+     "analisis": [
+      "¿Los puntos de la gráfica F–x forman una recta que pasa por el origen? ¿Qué representa la pendiente y en qué unidad se mide? ¿Cómo sería la recta si hubieran graficado F contra la longitud total L?",
+      "¿Qué tan cerca quedó su predicción del alargamiento del objeto nuevo? ¿A qué atribuyen la diferencia?",
+      "¿Cambió el período al duplicar la amplitud? Comparen esa diferencia con la variación entre sus tres mediciones repetidas y concluyan si el cambio es real.",
+      "¿Cómo cambia el período al aumentar la masa? Comparen T medido con 2π√(m/k) y expliquen por qué el medido puede salir algo mayor.",
+      "En su gráfica de energías, ¿dónde es máxima Ec y dónde Ep? ¿Se mantiene la energía total? Si cambia, decidan con sus datos si se debe a errores de medición (sube y baja sin patrón) o a pérdidas por rozamiento con el aire y en el propio resorte (baja de forma sostenida y la amplitud se reduce), y argumenten.",
+      "¿Por qué conviene medir el tiempo de 10 oscilaciones y no el de una sola?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin resorte: una liga gruesa sirve para practicar la medición, pero su gráfica F–x se curva (no cumple bien la ley de Hooke), lo que da una buena discusión. Sin celular para video: hagan la parte 3 con la simulación gratuita «Masas y resortes» de PhET, que muestra las barras de energía, o calculen solo la rapidez máxima con vmax = 2πA/T y comparen ½m·vmax² con ½kA². Para el círculo de referencia: pongan una rueda de bicicleta acostada girando junto al oscilador e ilumínenla de lado con una linterna lejana; la sombra de un tornillo del borde va y viene en la pared. En GeoGebra, un deslizador de tiempo muestra a la vez el punto que gira y su proyección.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-armonico-simple",
+     "nombre": "Movimiento armónico simple",
+     "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U1-1.2/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U1-1.2/1",
+     "decision": "corregir",
+     "justificacion": "Física correcta: períodos de 0.3–0.9 s, T ∝ √m, la masa del resorte alarga T, ½ky² desde el equilibrio vertical bien justificado y k sin valor de tabla. Se corrige: amplitud menor que el alargamiento de equilibrio (si no, el resorte se afloja y deja de ser MAS); tensión inicial en resortes de espiras juntas (no forzar la recta por el origen); amortiguamiento no solo del aire.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U1-1.2",
+       "cita": "El indicador pide k por la pendiente y predecir elongaciones.",
+       "cita_literal": "Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U1-1.2",
+       "cita": "La evidencia es la tabla y la gráfica de energías con análisis escrito.",
+       "cita_literal": "Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Con amplitud mayor que mg/k el resorte llega a su longitud natural y la fuerza deja de ser lineal; con tensión inicial F = F0 + kx."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "procedimiento": [
+       "1. (Sesión 1) El docente cuelga el resorte del soporte. Fijen la regla vertical al lado y anoten la longitud natural L0 del resorte sin carga.",
+       "2. Pesen cada masa en la balanza y anoten m en kilogramos. Prueben primero la mayor: el resorte debe estirarse sin quedar deformado al quitarla; si no recupera su longitud, usen masas menores.",
+       "3. Cuelguen las masas una por una, esperen a que queden quietas y midan la longitud L. Calculen el alargamiento x = L − L0 (no la longitud total) y la fuerza F = mg con g = 9.8 m/s². Anoten m, F, L y x en una tabla.",
+       "4. Grafiquen F contra x, tracen la recta de mejor ajuste entre los puntos (sin obligarla a pasar por el origen) y calculen su pendiente: esa es la constante elástica k, en N/m.",
+       "5. Elijan un objeto nuevo (un estuche o un llavero), pésenlo, predigan su alargamiento leyéndolo en la recta (si pasa por el origen, x = mg/k) y compruébenlo colgándolo.",
+       "6. Cuelguen una masa, bájenla unos 2 cm desde su posición de equilibrio y suéltenla. La amplitud debe ser menor que el alargamiento que esa masa produce en equilibrio (si el resorte se estira solo 3 cm, usen 1 y 2 cm): si no, el resorte se afloja arriba y la oscilación deja de ser armónica. Midan con el cronómetro el tiempo de 10 oscilaciones completas; repitan tres veces y calculen T = t/10 con el promedio.",
+       "7. Repitan el paso 6 con la misma masa, pero con el doble de amplitud (unos 4 cm).",
+       "8. Repitan el paso 6 con otras dos masas (por ejemplo, el doble y el cuádruple de la primera) y calculen para cada una el valor 2π√(m/k) para compararlo con T medido.",
+       "9. (Sesión 2) Peguen la cinta de color en el borde inferior de la masa. Coloquen el celular quieto sobre los cuadernos, a la altura de la masa, con la regla visible, y graben unas cinco oscilaciones de amplitud pequeña (3 a 5 cm, siempre menor que el alargamiento de equilibrio).",
+       "10. Revisen en la configuración de la cámara cuántos cuadros por segundo graba de verdad (en cámara lenta son más). Avancen el video cuadro por cuadro, o usen el programa gratuito Tracker si hay computadora, y anoten la posición y de la marca, medida desde la posición de equilibrio, en una oscilación completa.",
+       "11. Calculen la rapidez en cada punto con la posición de los cuadros vecinos: v ≈ (posición siguiente − posición anterior) / (tiempo entre esos dos cuadros).",
+       "12. Para cada posición calculen Ep = ½ky² y Ec = ½mv², y su suma. Nota para el docente: en un resorte vertical, si y se mide desde el equilibrio con la masa colgada, la energía elástica más la gravitatoria equivale a ½ky² más una constante; por eso se usa esa expresión.",
+       "13. Hagan la tabla y la gráfica de Ec, Ep y energía total contra la posición, en papel o en la hoja de cálculo, y escriban el análisis respondiendo las preguntas."
+      ],
+      "datos_esperados": "Parte 1: los puntos F–x forman una recta que pasa cerca del origen mientras no se pase del límite elástico; su pendiente es k. En resortes de espiras juntas es común una tensión inicial: con cargas pequeñas casi no se estiran y la recta corta el eje de fuerza un poco por encima del origen; la pendiente sigue siendo k. En resortes de ferretería suele salir entre unas decenas y algo más de cien N/m, según el resorte: no hay un valor «correcto» de tabla. Si se grafica F contra la longitud total, la recta tiene la misma pendiente pero no pasa por el origen: corta el eje de longitudes cerca de L0. La predicción con el objeto nuevo debería acertar con un error de pocos milímetros. Parte 2: los períodos son de décimas de segundo a cerca de un segundo, y 10 oscilaciones duran algunos segundos. Al duplicar la amplitud, T cambia menos que la diferencia entre mediciones repetidas (pocos por ciento, sobre todo por el tiempo de reacción). Al cuadruplicar la masa, T casi se duplica (T crece con √m). El T medido suele salir algo mayor que 2π√(m/k) porque parte de la masa del propio resorte también oscila. Parte 3: Ep es máxima en los extremos y cero en el equilibrio; Ec, al revés; ambas curvas son parábolas y su suma queda casi horizontal. Con la lectura del video es normal que la suma varíe del orden de un 10 % sin patrón (error de medición) y que baje poco a poco de una oscilación a la siguiente, a la vez que la amplitud se reduce (resistencia del aire y rozamiento interno del resorte y del soporte). Si la amplitud supera el alargamiento de equilibrio, el resorte se afloja arriba, la masa da tirones y el período deja de ser constante.",
+      "analisis": [
+       "¿Los puntos de la gráfica F–x forman una recta que pasa por el origen? ¿Qué representa la pendiente y en qué unidad se mide? ¿Cómo sería la recta si hubieran graficado F contra la longitud total L?",
+       "¿Qué tan cerca quedó su predicción del alargamiento del objeto nuevo? ¿A qué atribuyen la diferencia?",
+       "¿Cambió el período al duplicar la amplitud? Comparen esa diferencia con la variación entre sus tres mediciones repetidas y concluyan si el cambio es real.",
+       "¿Cómo cambia el período al aumentar la masa? Comparen T medido con 2π√(m/k) y expliquen por qué el medido puede salir algo mayor.",
+       "En su gráfica de energías, ¿dónde es máxima Ec y dónde Ep? ¿Se mantiene la energía total? Si cambia, decidan con sus datos si se debe a errores de medición (sube y baja sin patrón) o a pérdidas por rozamiento con el aire y en el propio resorte (baja de forma sostenida y la amplitud se reduce), y argumenten.",
+       "¿Por qué conviene medir el tiempo de 10 oscilaciones y no el de una sola?"
+      ]
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-QUI-U12-12.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-QUI-U12-12.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-QUI-U12-12.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U12-12.1",
+      "CON:quimica/aminoacidos-y-proteinas"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Curva de titulación de la glicina: mesetas, salto y punto isoeléctrico",
+     "proposito": "Medir cómo cambia el pH de una disolución de glicina al agregarle ácido y base, construir su curva de titulación, reconocer las dos zonas de amortiguación, estimar los pKa en el centro de cada una, calcular el punto isoeléctrico y relacionar cada tramo con la forma iónica que predomina (catión, ion dipolar o anión).",
+     "materiales": [
+      "Glicina, 0.75 g por grupo (reactivo del laboratorio; si no hay, ver variantes)",
+      "Ácido clorhídrico 0.1 mol/L e hidróxido de sodio 0.1 mol/L, 40 mL de cada uno por grupo, preparados por el docente",
+      "Agua destilada o agua purificada de garrafón",
+      "pHmetro o medidor de pH tipo lapicero, calibrado; si no hay, tiras de pH universal (1 a 14)",
+      "Dos jeringas de 10 mL sin aguja (de farmacia) o una bureta de 25 mL",
+      "Balanza de 0.01 g (o glicina ya pesada por el docente), una probeta o jeringa de 20 mL y un frasco rotulado de 100 mL",
+      "Dos vasos de precipitados de 100 mL o vasos plásticos transparentes, rotulados «vaso 1» y «vaso 2»",
+      "Varilla de vidrio o cuchara plástica para agitar",
+      "Computadora del CRA, tableta o celular con hoja de cálculo",
+      "Gafas de seguridad y guantes para cada estudiante"
+     ],
+     "procedimiento": [
+      "1. Antes de la clase, el docente prepara HCl 0.1 mol/L y NaOH 0.1 mol/L a partir de los reactivos del laboratorio (siempre agregando el reactivo al agua, nunca al revés) y rotula cada frasco.",
+      "2. Cada grupo disuelve 0.75 g de glicina en agua destilada y completa 100 mL: queda una disolución 0.1 mol/L (la masa molar de la glicina, C2H5NO2, es 75 g/mol).",
+      "3. Calibren el pHmetro con las disoluciones patrón del equipo. Si usan tiras, preparen la tabla para anotar el color y el pH leído en cada paso.",
+      "4. Midan 20 mL de la disolución de glicina en el vaso 1 y otros 20 mL en el vaso 2. Midan y anoten el pH inicial de cada vaso (debe ser el mismo).",
+      "5. Vaso 1: agreguen HCl 0.1 mol/L de 2 mL en 2 mL, agiten 10 segundos después de cada adición y anoten el pH, hasta completar 30 mL.",
+      "6. Vaso 2: repitan el paso 5 con NaOH 0.1 mol/L, también hasta 30 mL.",
+      "7. En la hoja de cálculo, conviertan cada volumen en equivalentes: mL agregados ÷ 20 mL (20 mL de titulante 0.1 mol/L tienen los mismos moles que la glicina del vaso).",
+      "8. Unan las dos series en una sola curva que parte de la forma totalmente protonada: para el vaso 1 usen x = 1 − (equivalentes de HCl) y para el vaso 2, x = 1 + (equivalentes de NaOH). Grafiquen el pH (eje vertical) contra x (eje horizontal, de −0.5 a 2.5).",
+      "9. Marquen los tramos donde el pH casi no cambia (mesetas) y el tramo donde cambia de golpe. Lean el pH en x = 0.5 y en x = 1.5: son sus estimaciones de pKa1 y pKa2.",
+      "10. Calculen el pI como el promedio de los dos pKa estimados y anótenlo junto al valor de la tabla de referencia que indique el docente.",
+      "11. Mezclen el contenido de los vasos 1 y 2 (se neutralizan entre sí), comprueben con una tira que el pH quede entre 5 y 8 y desechen por el desagüe con abundante agua."
+     ],
+     "seguridad": [
+      "Gafas y guantes durante toda la práctica: el HCl y el NaOH, aun a 0.1 mol/L, irritan ojos y piel. Si salpica, lavar con abundante agua durante 15 minutos y avisar al docente.",
+      "Solo el docente maneja los reactivos concentrados y prepara las diluciones, en un lugar ventilado. No se usan en el aula ácido muriático ni soda cáustica de ferretería.",
+      "No pipetear con la boca: medir con jeringas sin aguja o con bureta. No probar ni oler las disoluciones, aunque la glicina sea comestible.",
+      "Revisar que los vasos de vidrio no estén astillados; si algo se quiebra, el docente lo recoge con escoba y recogedor, nunca con las manos.",
+      "Desechos: neutralizar y diluir antes de verter al desagüe (paso 11). En esta práctica no se calienta nada."
+     ],
+     "datos_esperados": "La disolución de glicina recién preparada tiene un pH ligeramente ácido, cercano a su pI (valor de la tabla de referencia), porque casi toda está como ion dipolar. La curva completa tiene forma de doble S: dos mesetas (zonas de amortiguación) separadas por un salto brusco. La primera meseta está a pH ácido y su centro, en x = 0.5, da pKa1 (valor de la tabla de referencia): ahí hay iguales cantidades de catión (–NH3+ y –COOH) y de ion dipolar. La segunda está a pH básico y su centro, en x = 1.5, da pKa2 (valor de la tabla de referencia): ahí hay iguales cantidades de ion dipolar y de anión (–NH2 y –COO−). El salto está en x = 1, que corresponde al pI, el promedio de pKa1 y pKa2. En el lado ácido no aparece un salto final marcado, porque pKa1 está cerca del pH del propio HCl diluido; en el lado básico, desde x = 2 el pH ronda 11 y con el exceso de NaOH sube a 12 o más. Con pHmetro, los pKa estimados suelen quedar a pocas décimas de los tabulados; con tiras, a una unidad, y cada meseta se ve como varias lecturas seguidas con el mismo color.",
+     "analisis": [
+      "Señalen en la gráfica las dos zonas de amortiguación y el salto. ¿Qué dos formas iónicas coexisten en cada meseta y en qué proporción están en su punto medio?",
+      "Con sus pKa estimados, calculen el pI y compárenlo con el valor de la tabla de referencia. ¿Qué pudo causar la diferencia (calibración, lectura de las tiras, concentración real, temperatura)?",
+      "Dibujen la forma de la glicina que predomina a pH 1, en su pI y a pH 12, con la carga de cada grupo y la carga neta.",
+      "¿Por qué el pH inicial de la disolución de glicina no es 7, aunque su carga neta sea cero?",
+      "En una electroforesis, ¿hacia qué electrodo migraría la glicina a pH 2 y a pH 11? Justifiquen con la carga neta.",
+      "Predigan la curva del ácido glutámico, que tiene un segundo grupo carboxilo en la cadena lateral: ¿cuántas zonas de amortiguación esperan y qué dos pKa promediarían para su pI?",
+      "Agreguen a la hoja de cálculo una columna con un condicional que, dado un pH, indique si la carga neta de la glicina es positiva, cero o negativa, y pruébenla con tres valores de pH."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin glicina: usen glutamato monosódico, el sazonador que se vende en supermercados y mercados (unos 1.9 g en 100 mL si es monohidrato, 187 g/mol), y lleven el vaso 1 hasta 50 mL de HCl. Su pH inicial es cercano al neutro; hacia el lado ácido aparece una meseta ancha que corresponde a los dos grupos carboxilo, y hacia el básico, la meseta del grupo amino; el pI queda a pH ácido, promedio de los pKa de los dos carboxilos (valores de la tabla de referencia). Sin pHmetro ni tiras: extracto de repollo morado como indicador; solo distingue intervalos de color, pero las mesetas se ven como tramos donde el color no cambia. Sin laboratorio: en la hoja de cálculo, con los pKa de la tabla de referencia y la ecuación de Henderson-Hasselbalch, calculen el pH para cada valor de x y grafiquen la curva simulada; repasen la amortiguación de un ácido débil con la simulación PhET «Soluciones ácido-base».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-QUI-U12-12.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-QUI-U12-12.1/1",
+     "decision": "aprobar",
+     "justificacion": "Química correcta: 0.75 g de glicina en 100 mL dan 0.1 mol/L; 30 mL de titulante son 1.5 equivalentes; x = 1 ∓ equivalentes reconstruye la curva; mezclar los vasos neutraliza exactamente (pH ≈ 6). Constantes remitidas a la tabla y seguridad adecuada. Fuera de lo editable: la simulación PhET «Soluciones ácido-base» de las variantes no modela amortiguadores, y el glutamato pide 50 mL de HCl.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1 (Matriz Bachillerato Química, hoja «Química 11.°», fila 65)",
+       "cita": "El indicador pide calcular el pI con los pKa y predecir la carga neta a distintos pH.",
+       "cita_literal": "Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "A x = 0.5 el pH supera a pKa1 en ≈ 0.1 por el H+ libre; a x = 1.5, pH ≈ pKa2; a x = 2, pH ≈ 11."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Vasos 1 + 2: 4 mmol de glicina + 3 mmol de HCl + 3 mmol de NaOH → NaCl y glicina dipolar."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/fuerza-elastica-ley-hooke/G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/fuerza-elastica-ley-hooke/G11",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/fuerza-elastica-ley-hooke",
+     "grados": [
+      11
+     ],
+     "titulo": "Ley de Hooke: la pendiente que mide la rigidez",
+     "explicacion": "Al colgar algo de un resorte, este se estira hasta que su fuerza equilibra el peso. Mientras no se pase del límite elástico, la fuerza es proporcional al alargamiento: F = kx, donde x es cuánto cambió la longitud respecto de la natural, no la longitud total, y k, en N/m, mide la rigidez. En la gráfica fuerza-alargamiento los puntos forman una recta por el origen y k es su pendiente; con ella se predice x = F/k. La fuerza del resorte apunta siempre hacia su longitud natural; por eso se escribe F = −kx.",
+     "ejemplo": "La pesa de gancho del mercado tiene un resorte: si 1 kg de tomates lo alarga 2 cm, 2 kg lo alargan 4 cm, y por eso las marcas de su escala están igual de separadas.",
+     "practica": "ACT:fisica/fuerza-elastica-ley-hooke/practica-G11",
+     "comprobacion": "ACT:fisica/fuerza-elastica-ley-hooke/comprobacion-G11",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: predice el sentido y el tamaño de la fuerza de un resorte estirado y comprimido, en una situación que no aparece en la explicación.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/fuerza-elastica-ley-hooke",
+      "TEMA:G11-FIS-U1-1.2"
+     ],
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-elastica-ley-hooke",
+     "nombre": "Fuerza elástica y ley de Hooke",
+     "definicion": "La fuerza de un resorte es proporcional a su deformación y se opone a ella: F = −kx.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:fisica/fuerza-elastica-ley-hooke/G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/fuerza-elastica-ley-hooke/G11",
+     "decision": "aprobar",
+     "justificacion": "Exacta: distingue alargamiento de longitud, da k en N/m como pendiente, declara el límite elástico y explica el signo de F = −kx. El ejemplo de la pesa de gancho del mercado es cercano y correcto (escala uniforme por proporcionalidad). Práctica y comprobación evalúan el concepto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U1-1.2",
+       "cita": "Constante elástica por la pendiente y predicción de elongaciones.",
+       "cita_literal": "Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Una balanza de resorte tiene marcas equidistantes porque x ∝ F."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/movimiento-armonico-simple/G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/movimiento-armonico-simple/G11",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/movimiento-armonico-simple",
+     "grados": [
+      11
+     ],
+     "titulo": "Por qué un resorte oscila con ritmo fijo",
+     "explicacion": "Fuera del equilibrio, la fuerza neta sobre la masa apunta hacia él y es proporcional al desplazamiento: F = −kx. La masa acelera hacia el centro, lo cruza con rapidez máxima (fuerza neta cero), se frena y se detiene en el extremo opuesto, donde la aceleración es máxima. El movimiento se repite: x = A cos(ωt + φ), con ω = 2π/T = √(k/m). La rapidez máxima es ωA y la aceleración máxima, ω²A. Con el doble de amplitud la fuerza también se duplica, así que el período no cambia: solo depende de m y k.",
+     "ejemplo": "Una regla sujeta al borde del pupitre vibra al golpearla: la vibración se va apagando, pero su ritmo no cambia, porque el período no depende de la amplitud.",
+     "practica": "ACT:fisica/movimiento-armonico-simple/practica-G11",
+     "comprobacion": "ACT:fisica/movimiento-armonico-simple/comprobacion-G11",
+     "duracion_min": 12,
+     "criterio": "Calcula correctamente la comprobación: la rapidez máxima de un juguete que oscila a partir de su amplitud y su frecuencia (ω = 2πf y vmax = ωA).",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/movimiento-armonico-simple",
+      "TEMA:G11-FIS-U1-1.2"
+     ],
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-armonico-simple",
+     "nombre": "Movimiento armónico simple",
+     "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:fisica/movimiento-armonico-simple/G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/movimiento-armonico-simple/G11",
+     "decision": "corregir",
+     "justificacion": "Fórmulas correctas (ω = √(k/m), vmax = ωA, amax = ω²A, isocronía). Se corrige la primera frase: «el resorte tira hacia el equilibrio» es falso si está comprimido (empuja) y, colgado, en el extremo superior el resorte jala hacia arriba, lejos del equilibrio: lo que apunta al equilibrio es la fuerza neta. Evita reforzar la idea de que el resorte solo jala.",
+     "evidencia": [
+      {
+       "fuente": "ACT:fisica/fuerza-elastica-ley-hooke/comprobacion-G11",
+       "cita": "Su distractor D es «un resorte siempre jala hacia donde está fijo»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Con masa colgada, resorte más peso dan −kx medido desde el nuevo equilibrio."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Fuera del equilibrio, la fuerza neta sobre la masa apunta hacia él y es proporcional al desplazamiento: F = −kx. La masa acelera hacia el centro, lo cruza con rapidez máxima (fuerza neta cero), se frena y se detiene en el extremo opuesto, donde la aceleración es máxima. El movimiento se repite: x = A cos(ωt + φ), con ω = 2π/T = √(k/m). La rapidez máxima es ωA y la aceleración máxima, ω²A. Con el doble de amplitud la fuerza también se duplica, así que el período no cambia: solo depende de m y k."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/segunda-ley-newton/G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/segunda-ley-newton/G11",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/segunda-ley-newton",
+     "grados": [
+      11
+     ],
+     "titulo": "La fuerza neta cambia la velocidad, no la mantiene",
+     "explicacion": "Cuando un microbús arranca o frena, lo que sientes es el cambio de velocidad, no la velocidad. La segunda ley dice que la fuerza neta, la suma de todas las fuerzas con su sentido, produce una aceleración en su mismo sentido: ΣF = ma. La fuerza neta no indica hacia dónde se mueve el cuerpo, sino hacia dónde cambia su velocidad. Un cuerpo puede avanzar con la fuerza neta hacia atrás (va frenando) o estar quieto un instante con fuerza neta distinta de cero, como un columpio en su punto más alto.",
+     "ejemplo": "Un microbús de 3000 kg pasa de 0 a 6.0 m/s en 4.0 s: su aceleración es 1.5 m/s² y la fuerza neta sobre él es 3000 kg · 1.5 m/s² = 4500 N, hacia adelante.",
+     "practica": "ACT:fisica/segunda-ley-newton/practica-G11",
+     "comprobacion": "ACT:fisica/segunda-ley-newton/comprobacion-G11",
+     "duracion_min": 10,
+     "criterio": "Calcula correctamente la comprobación: suma las fuerzas con su sentido para hallar la tensión de una cuerda que acelera una carga hacia arriba.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/segunda-ley-newton",
+      "TEMA:G11-FIS-U1-1.2"
+     ],
+     "origen": "redactor-actividades (G11-FIS-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U1-1.2",
+     "grado": 11,
+     "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+     "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:fisica/segunda-ley-newton/G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:fisica/segunda-ley-newton/G11",
+     "decision": "aprobar",
+     "justificacion": "Exacta y bien dirigida a la idea aristotélica: la fuerza neta apunta hacia donde cambia la velocidad, no hacia donde se mueve el cuerpo; el columpio en su punto más alto tiene fuerza neta no nula. Ejemplo correcto: a = 6.0/4.0 = 1.5 m/s² y F = 4500 N. Contexto cercano (microbús).",
+     "evidencia": [
+      {
+       "fuente": "Clement (1982), Am. J. Phys. 50(1)",
+       "cita": "Preconcepción de fuerza en el sentido del movimiento."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "3000 kg · 1.5 m/s² = 4500 N."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/aminoacidos-y-proteinas/G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/aminoacidos-y-proteinas/G11",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/aminoacidos-y-proteinas",
+     "grados": [
+      11
+     ],
+     "titulo": "Aminoácidos: ácido y base a la vez",
+     "explicacion": "Un aminoácido tiene un grupo amino, que acepta H+, y un carboxilo, que lo cede. En agua el carboxilo cede su H+ al amino: queda un ion dipolar (–NH3+ y –COO−), con dos cargas pero carga neta cero. Si el pH baja, el –COO− toma H+ y la carga neta es positiva; si sube, el –NH3+ lo pierde y es negativa. El punto isoeléctrico (pI) es el pH de carga neta promedio cero: el promedio de los dos pKa que rodean la forma de carga cero. En la curva de titulación, cada pKa es el centro de una zona amortiguadora.",
+     "ejemplo": "Al echar jugo de limón en leche tibia se forman grumos: la leche «se corta». La caseína, proteína de la leche, al pH normal de la leche tiene carga neta negativa y sus moléculas se repelen. El ácido baja el pH hasta cerca de su pI: la carga neta se acerca a cero, las moléculas dejan de repelerse y se agrupan.",
+     "practica": "ACT:quimica/aminoacidos-y-proteinas/practica-G11",
+     "comprobacion": "ACT:quimica/aminoacidos-y-proteinas/comprobacion-G11",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación, que pide interpretar las mesetas de una curva nueva como zonas amortiguadoras y ubicar el pI en el salto, sin confundir carga neta cero con ausencia de cargas.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/aminoacidos-y-proteinas",
+      "TEMA:G11-QUI-U12-12.1"
+     ],
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/aminoacidos-y-proteinas/G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/aminoacidos-y-proteinas/G11",
+     "decision": "corregir",
+     "cambios": {
+      "explicacion": "Un aminoácido tiene un grupo amino, que acepta H+, y un carboxilo, que lo cede. En agua el carboxilo cede su H+ al amino: queda un ion dipolar (–NH3+ y –COO−), con dos cargas pero carga neta cero. Si el pH baja, el –COO− toma H+ y la carga neta es positiva; si sube, el –NH3+ lo pierde y es negativa. El punto isoeléctrico (pI) es el pH de carga neta promedio cero: el promedio de los dos pKa que rodean la forma de carga cero. En la curva de titulación, cada pKa es el centro de una zona amortiguadora."
+     },
+     "justificacion": "Química correcta en lo demás y buen ejemplo (la caseína se agrega cerca de su pI al cortar la leche). Pero define el pI como el pH «donde predomina la forma de carga cero», y el ion dipolar de la glicina predomina en un intervalo amplio, aproximadamente entre pKa1 y pKa2. El pI es el pH de carga neta promedio cero. Se corrige esa frase dentro de las 100 palabras.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1 (Matriz Bachillerato Química, hoja «Química 11.°», fila 65)",
+       "cita": "El indicador pide calcular el pI con los pKa y predecir la carga neta a distintos pH.",
+       "cita_literal": "Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Glicina: el ion dipolar es mayoritario de pH ≈ 2.4 a ≈ 9.6; el pI es un único valor, ≈ 6.0."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/fuerzas-intermoleculares/G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/fuerzas-intermoleculares/G11",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/fuerzas-intermoleculares",
+     "grados": [
+      11
+     ],
+     "titulo": "Fuerzas entre moléculas, no dentro de ellas",
+     "explicacion": "En una molécula, los átomos se unen por enlaces covalentes, fuertes. Entre moléculas actúan atracciones más débiles: las fuerzas intermoleculares. La dispersión de London existe en todas y crece con el tamaño y la superficie de contacto; la dipolo-dipolo aparece entre moléculas polares; y el puente de hidrógeno, la más fuerte de las tres, se forma cuando un H unido a O, N o F atrae un O, N o F de otra molécula. Hervir, evaporar o disolver sustancias moleculares vence estas atracciones sin romper enlaces covalentes. En las proteínas, estas atracciones entre partes de la cadena sostienen el plegamiento.",
+     "ejemplo": "El propano que sale del cilindro de gas de la cocina es gas a temperatura ambiente, aunque su molécula (C3H8) pesa más del doble que la del agua (H2O), que es líquida. El propano solo tiene fuerzas de London; el agua forma puentes de hidrógeno que mantienen juntas sus moléculas.",
+     "practica": "ACT:quimica/fuerzas-intermoleculares/practica-G11",
+     "comprobacion": "ACT:quimica/fuerzas-intermoleculares/comprobacion-G11",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación: explica que al cocer la clara se vencen atracciones débiles y se despliegan las proteínas, sin romper los enlaces peptídicos.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/fuerzas-intermoleculares",
+      "TEMA:G11-QUI-U12-12.1"
+     ],
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fuerzas-intermoleculares",
+     "nombre": "Fuerzas intermoleculares",
+     "definicion": "Atracciones entre moléculas: dispersión de London, dipolo-dipolo y puentes de hidrógeno, cuya intensidad depende de geometría y polaridad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/fuerzas-intermoleculares/G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/fuerzas-intermoleculares/G11",
+     "decision": "corregir",
+     "cambios": {
+      "explicacion": "En una molécula, los átomos se unen por enlaces covalentes, fuertes. Entre moléculas actúan atracciones más débiles: las fuerzas intermoleculares. La dispersión de London existe en todas y crece con el tamaño y la superficie de contacto; la dipolo-dipolo aparece entre moléculas polares; y el puente de hidrógeno, la más fuerte de las tres, se forma cuando un H unido a O, N o F atrae un O, N o F de otra molécula. Hervir, evaporar o disolver sustancias moleculares vence estas atracciones sin romper enlaces covalentes. En las proteínas, estas atracciones entre partes de la cadena sostienen el plegamiento."
+     },
+     "justificacion": "Explicación y ejemplo correctos en lo esencial (el propano, de 44 g/mol, es gas; el agua, líquida por sus puentes de hidrógeno). Dos precisiones: «disolver» sin romper enlaces covalentes vale para sustancias moleculares, no para el HCl que se ioniza; y en las proteínas esas atracciones actúan entre partes de la misma cadena, coherente con la corrección de la dificultad 1.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "HCl(g) + H2O → H3O+ + Cl−: al disolverse sí se rompe el enlace covalente H–Cl."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El plegamiento proteico se sostiene con puentes de hidrógeno intracatenarios."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/polimerizacion/G11",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/polimerizacion/G11",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/polimerizacion",
+     "grados": [
+      11
+     ],
+     "titulo": "Dos formas de hacer cadenas: adición y condensación",
+     "explicacion": "Una bolsa plástica y una proteína son polímeros: cadenas muy largas de unidades que se repiten, los monómeros. En la polimerización por adición, como la del polietileno, cada monómero tiene un doble enlace C=C que se abre para unirse al siguiente, y todos sus átomos quedan en la cadena. En la condensación, dos grupos funcionales reaccionan (por ejemplo, –COOH con –NH2 o con –OH) y en cada unión sale una molécula pequeña, casi siempre agua. Las proteínas se forman así: cada enlace peptídico libera un H2O. La reacción inversa, que separa los monómeros, es la hidrólisis.",
+     "ejemplo": "Las botellas de PET se fabrican uniendo ácido tereftálico (con dos –COOH) y etilenglicol (con dos –OH): cada unión forma un enlace éster y libera una molécula de agua, así que la cadena pesa menos que la suma de sus monómeros.",
+     "practica": "ACT:quimica/polimerizacion/practica-G11",
+     "comprobacion": "ACT:quimica/polimerizacion/comprobacion-G11",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación, que pide aplicar la condensación al revés: contar el agua que consume la hidrólisis de un péptido.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/polimerizacion",
+      "TEMA:G11-QUI-U12-12.1"
+     ],
+     "origen": "redactor-actividades (G11-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.1",
+     "grado": 11,
+     "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+     "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/polimerizacion/G11",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/polimerizacion/G11",
+     "decision": "aprobar",
+     "justificacion": "Explicación correcta: en la adición se abre el C=C sin pérdida de átomos; en la condensación sale una molécula pequeña (agua en los péptidos y en el PET hecho con ácido tereftálico y etilenglicol); la hidrólisis es la inversa. «Casi siempre agua» es una generalización aceptable (otras rutas liberan HCl o metanol). Práctica y comprobación coherentes con el texto.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "PET por esterificación directa: ácido tereftálico + etilenglicol → poliéster + H2O."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  }
+ ]
+}

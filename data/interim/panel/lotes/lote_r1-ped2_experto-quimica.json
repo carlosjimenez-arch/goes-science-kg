@@ -1,0 +1,1801 @@
+{
+ "lote": "r1-ped2_experto-quimica",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En un video, el litio burbujea despacio sobre el agua, el sodio se funde en una bolita que corre por la superficie y el potasio se inflama al instante con llama lila. El rubidio está debajo del potasio en el grupo 1. ¿Cómo esperas que reaccione el rubidio con el agua y por qué?",
+     "opciones": {
+      "A": "Igual que el potasio, porque los elementos de un mismo grupo comparten sus propiedades y reaccionan igual",
+      "B": "Menos violento que el potasio, porque su núcleo tiene más protones y sujeta más fuerte su electrón externo",
+      "C": "Más violento que el potasio, porque su electrón externo está más lejos del núcleo y quitarlo cuesta menos",
+      "D": "Más violento que el potasio, porque tiene más electrones de valencia que el potasio para cederle al agua"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/tabla-periodica/1",
+      "B": "DIF:quimica/propiedades-periodicas/2",
+      "D": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El rubidio tiene una capa más que el potasio: su único electrón de valencia está más lejos del núcleo y más apantallado por las capas internas, así que su energía de ionización es menor y lo cede con más facilidad. Los protones de más no lo compensan: por eso reacciona con más violencia que el potasio.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Observaciones de ejemplo, como las de un video de esta práctica: a una disolución incolora de una sal de potasio se le agrega agua con un halógeno disuelto. Agua de cloro + bromuro: se pone naranja (aparece bromo). Agua de cloro + yoduro: se pone café (aparece yodo). Agua de bromo + yoduro: se pone café (aparece yodo). Agua de bromo + cloruro: sigue naranja, como el agua de bromo sola. Agua de yodo + cloruro o bromuro: sigue café. ¿Qué orden de reactividad muestran y qué lo explica?",
+     "opciones": {
+      "A": "Br > Cl > I, porque el agua de bromo quedó naranja con el cloruro, señal de que sí reaccionó con él",
+      "B": "I > Br > Cl, porque, como en los metales alcalinos, la reactividad de un grupo aumenta hacia abajo",
+      "C": "I > Br > Cl, porque el yodo tiene más protones y su núcleo atrae con más fuerza un electrón extra",
+      "D": "Cl > Br > I, porque al bajar en el grupo baja la electronegatividad y atraen menos un electrón extra"
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/propiedades-periodicas/1",
+      "C": "DIF:quimica/propiedades-periodicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un halógeno más reactivo saca al menos reactivo de su sal: el cloro desplazó al bromo y al yodo, y el bromo solo al yodo; el agua de bromo con cloruro solo conservó su propio color. Al bajar en el grupo, el electrón que se gana queda más lejos del núcleo y más apantallado, baja la electronegatividad y el halógeno reacciona menos.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Pregunta guía de la unidad: «¿Por qué el potasio reacciona violentamente con el agua mientras el magnesio apenas lo hace?». Respóndela en 2 o 3 oraciones usando la posición de cada elemento en la tabla periódica y la energía de ionización.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Reacciona más el metal al que le cuesta menos energía ceder sus electrones de valencia. El potasio cede uno solo, de la cuarta capa, lejos del núcleo y apantallado; el magnesio debe ceder dos, de la tercera capa y con más carga nuclear efectiva, y quitar el segundo cuesta aún más.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El potasio (grupo 1, período 4) solo tiene que ceder un electrón, que está en la cuarta capa, lejos del núcleo y apantallado por tres capas internas; por eso su energía de ionización es baja y lo cede con facilidad. El magnesio (grupo 2, período 3) tiene que ceder dos electrones de la tercera capa, más cerca del núcleo y con mayor carga nuclear efectiva, y quitar el segundo cuesta todavía más energía. Como al potasio le cuesta mucho menos ceder su electrón, reacciona mucho más rápido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la reactividad del metal con la facilidad para ceder sus electrones de valencia, es decir, con una energía de ionización baja (menor energía de ionización, más reactivo).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la estructura por qué al potasio le cuesta menos: su electrón de valencia está en una capa más externa (más lejos del núcleo o más apantallado) que los del magnesio, o el magnesio tiene mayor carga nuclear efectiva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Menciona que el magnesio debe ceder dos electrones y que quitar el segundo requiere todavía más energía.",
+        "obligatorio": false
+       },
+       {
+        "id": "c4",
+        "descripcion": "Ubica a los dos elementos en la tabla (grupo y período) para apoyar la explicación.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Explica con el total de electrones o de protones, no con la capa externa ni con la energía.",
+        "ejemplo": "El potasio tiene 19 electrones y el magnesio 12; como tiene más electrones, tiene más para ceder y reacciona más.",
+        "dificultad": "DIF:quimica/distribucion-electronica-por-niveles/1"
+       },
+       {
+        "descripcion": "Cree que perder el electrón libera energía porque el átomo «queda estable» con el octeto.",
+        "ejemplo": "El potasio quiere perder su electrón para quedar con ocho y ser estable, y al perderlo libera mucha energía; el magnesio no lo necesita tanto.",
+        "dificultad": "DIF:quimica/propiedades-periodicas/4"
+       },
+       {
+        "descripcion": "Describe la posición sin explicarla: no usa energía de ionización ni estructura.",
+        "ejemplo": "Porque el potasio es del grupo 1 y el magnesio del grupo 2, y los del grupo 1 son los más reactivos.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un átomo tiene 20 electrones. ¿Cuál es su distribución por capas y qué ion tiende a formar al reaccionar?",
+     "opciones": {
+      "A": "2, 8, 10: cede los diez electrones de su capa externa y forma un ion 10+",
+      "B": "2, 8, 8, 2: cede los dos electrones de su capa externa y forma un ion 2+",
+      "C": "2, 8, 8, 2: gana seis electrones para tener ocho afuera y forma un ion 6−",
+      "D": "2, 8, 8, 2: cede un electrón por cada una de sus cuatro capas: un ion 4+"
+     },
+     "correcta": "B",
+     "distractores": {
+      "D": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con 20 electrones (es el calcio), la tercera capa llega a 8 y los dos últimos pasan a la cuarta: 2, 8, 8, 2. Ceder esos dos cuesta mucho menos que ganar seis, así que forma el ion Ca2+, como los demás metales del grupo 2.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Dos compañeros dibujaron el átomo de aluminio, que tiene 13 electrones. Uno puso 2, 8 y 3 electrones en tres capas; el otro, 2 y 11 en dos capas. ¿Qué dibujo es correcto y qué indica sobre la posición del aluminio?",
+     "opciones": {
+      "A": "El de 2, 11: la segunda capa admite los electrones que falten, así que está en el período 2",
+      "B": "El de 2, 8, 3: sus tres electrones externos indican el período 3, y sus tres capas, el grupo 13",
+      "C": "El de 2, 8, 3: sus 13 electrones son de valencia y puede ceder cualquiera de ellos al reaccionar",
+      "D": "El de 2, 8, 3: sus tres capas indican el período 3, y sus tres electrones externos, el grupo 13"
+     },
+     "correcta": "D",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La segunda capa se llena con 8, así que el aluminio queda 2, 8, 3. El número de capas (3) da el período, y los tres electrones de valencia lo ubican en el grupo 13: son esos tres los que cede al reaccionar.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "El litio, el sodio y el potasio están en la misma columna (grupo 1) de la tabla periódica. ¿Qué tienen en común sus distribuciones de electrones por capas?",
+     "opciones": {
+      "A": "Los tres tienen un electrón en la capa externa, que es distinta en cada uno",
+      "B": "Los tres tienen el mismo número de capas de electrones alrededor de su núcleo",
+      "C": "Al bajar, cada uno tiene un electrón externo más que el anterior: uno, dos y tres",
+      "D": "Los tres tienen la capa externa llena con ocho electrones, como los gases nobles"
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Li (2, 1), Na (2, 8, 1) y K (2, 8, 8, 1) tienen un electrón en la capa externa; lo que cambia al bajar es el número de capas. Por eso comparten grupo y reaccionan de forma parecida.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Distribución por capas de cuatro elementos. Elemento 1: 2, 8, 1. Elemento 2: 2, 8, 7. Elemento 3: 2, 8, 8, 1. Elemento 4: 2, 8, 8, 2. ¿Qué par está en el mismo grupo y por qué?",
+     "opciones": {
+      "A": "El 1 y el 2, porque los dos tienen tres capas de electrones alrededor del núcleo",
+      "B": "El 1 y el 3, porque los dos tienen un solo electrón en su capa más externa",
+      "C": "El 1 y el 4, porque al bajar en un grupo se suma un electrón a la capa externa",
+      "D": "El 3 y el 4, porque los dos tienen ocho electrones en la segunda y la tercera capa"
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El grupo lo da el número de electrones de la capa externa: el 1 y el 3 tienen uno (son el sodio y el potasio). El número de capas indica el período: el 1 y el 2 comparten el período 3, y el 3 y el 4, el período 4.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Sin consultar datos, ordena de mayor a menor reactividad, como no metales, al flúor (grupo 17, período 2), al cloro (grupo 17, período 3) y al azufre (grupo 16, período 3).",
+     "opciones": {
+      "A": "S > Cl > F, porque, como en los metales, la reactividad crece hacia abajo y hacia la izquierda",
+      "B": "Cl > F > S, porque el cloro tiene más protones que el flúor y atrae con más fuerza un electrón",
+      "C": "F > Cl > S, porque el núcleo atrae más a un electrón extra hacia arriba y hacia la derecha",
+      "D": "F > S > Cl, porque el radio crece hacia la derecha y el azufre, más pequeño, atrae mejor un electrón"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/propiedades-periodicas/1",
+      "B": "DIF:quimica/propiedades-periodicas/2",
+      "D": "DIF:quimica/propiedades-periodicas/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un no metal reacciona ganando electrones, y lo hace mejor cuanto más atrae su núcleo a un electrón extra (mayor electronegatividad). Eso crece hacia la derecha en un período (el cloro más que el azufre) y hacia arriba en un grupo (el flúor más que el cloro): F > Cl > S.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/propiedades-periodicas"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/propiedades-periodicas/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/propiedades-periodicas/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/propiedades-periodicas/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una gráfica de la tabla de referencia muestra la primera energía de ionización contra el número atómico, del 1 al 20. Hay picos en He, Ne y Ar y valles en Li, Na y K. Dentro de cada período la curva, en general, sube, y cada valle es más bajo que el anterior. ¿Cuáles son los metales más reactivos de la gráfica y por qué?",
+     "opciones": {
+      "A": "Los de los valles, sobre todo el potasio, porque quitarle su electrón externo requiere menos energía",
+      "B": "Los de los picos, sobre todo el helio, porque sus átomos tienen más energía guardada para reaccionar",
+      "C": "Los de los valles, todos por igual, porque están en el mismo grupo y la curva repite su forma",
+      "D": "Los de los valles, sobre todo el litio, porque el potasio tiene más protones y sujeta más su electrón"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/propiedades-periodicas/4",
+      "C": "DIF:quimica/tabla-periodica/1",
+      "D": "DIF:quimica/propiedades-periodicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La energía de ionización es la que hay que dar para quitar un electrón. Los valles son los metales alcalinos, a los que cuesta poco quitarles su único electrón de valencia, y el del potasio es el más bajo porque ese electrón está en la cuarta capa. Los picos son gases nobles, que casi no reaccionan.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/propiedades-periodicas"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/propiedades-periodicas/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En el período 3, del sodio al cloro, el número de electrones aumenta de 11 a 17. ¿Cómo cambia el radio atómico a lo largo del período y por qué?",
+     "opciones": {
+      "A": "Aumenta, porque cada elemento tiene más electrones y esos electrones ocupan más espacio",
+      "B": "Disminuye, porque crece la carga nuclear efectiva y atrae más a los electrones de la misma capa",
+      "C": "Se mantiene igual, porque todos los elementos del período tienen tres capas de electrones",
+      "D": "Disminuye, porque los elementos de la derecha tienen menos capas de electrones que los de la izquierda"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/propiedades-periodicas/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Del sodio al cloro, los electrones nuevos entran en la misma tercera capa mientras el núcleo gana un protón cada vez; el apantallamiento casi no cambia, así que la carga nuclear efectiva crece y acerca la capa externa al núcleo: el radio disminuye.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/propiedades-periodicas"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "El silicio, que se usa en los chips de los celulares, está en el grupo 14 y el período 3, junto a la línea escalonada que separa los metales de los no metales. ¿Qué propiedades esperas que tenga?",
+     "opciones": {
+      "A": "Las de un metal típico: brilla, se dobla sin romperse y conduce muy bien la electricidad",
+      "B": "Las de un no metal gaseoso, como el cloro, que está en su mismo período de la tabla",
+      "C": "Idénticas a las del carbono, porque los elementos de un grupo comparten todas sus propiedades",
+      "D": "Intermedias: tiene brillo metálico, pero es quebradizo y conduce poco la electricidad"
+     },
+     "correcta": "D",
+     "distractores": {
+      "C": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los elementos junto a la línea escalonada son metaloides: el silicio tiene brillo metálico, pero es quebradizo y conduce la electricidad mucho menos que un metal, por eso sirve como semiconductor en los chips. Comparte grupo con el carbono, pero no todas sus propiedades.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Elemento 1: metal brillante y blando que reacciona con el agua y forma iones 2+. Elemento 2: gas amarillo verdoso que forma iones 1−. ¿En qué zona de la tabla periódica ubicarías cada uno?",
+     "opciones": {
+      "A": "El 1, en el período 2 a la izquierda; el 2, en el período 1 arriba, por la carga de sus iones",
+      "B": "El 1, en el grupo 2 a la izquierda; el 2, en el grupo 17 a la derecha, entre los no metales",
+      "C": "El 1, en el grupo 2 a la izquierda; el 2, en el grupo 18, junto a los demás elementos gaseosos",
+      "D": "El 1, en el centro, con el hierro y el cobre; el 2, en el grupo 17 a la derecha, con los no metales"
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un metal que reacciona con el agua y forma iones 2+ tiene dos electrones de valencia: grupo 2, a la izquierda. Un gas que forma iones 1− gana un electrón: grupo 17, a la derecha, entre los no metales. La carga del ion se relaciona con el grupo, no con el período, y los gases del grupo 18 casi no forman iones.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un compañero afirma: «El sodio y el potasio están en el mismo grupo, así que reaccionan con el agua exactamente igual». ¿Qué le responderías?",
+     "opciones": {
+      "A": "Que tiene razón, porque los elementos de un mismo grupo tienen propiedades idénticas",
+      "B": "Que no, porque el sodio y el potasio están en el mismo período y no en el mismo grupo",
+      "C": "Que no: reaccionan de forma parecida, pero la intensidad cambia al bajar en el grupo",
+      "D": "Que tiene razón, porque los dos son metales y todos los metales reaccionan igual con agua"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un grupo comparte el tipo de comportamiento (los dos ceden un electrón y con el agua forman un hidróxido e hidrógeno), pero no la intensidad: el potasio, más abajo, reacciona con más violencia que el sodio.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo, tomados de un video con trozos de metales del grupo 2 en agua fría. Magnesio: casi sin burbujas en 10 minutos. Calcio: burbujeo constante y el agua se enturbia. Estroncio: burbujeo rápido y el trozo se consume en pocos minutos. ¿Qué concluyes sobre los elementos de un mismo grupo?",
+     "opciones": {
+      "A": "Reaccionan de forma parecida, y la intensidad de la reacción crece al bajar en el grupo",
+      "B": "Reaccionan igual; las diferencias se deben al tamaño o a la limpieza de cada trozo",
+      "C": "No se parecen en nada, así que el grupo no dice nada sobre cómo reacciona un elemento",
+      "D": "Reaccionan de forma parecida porque los tres tienen el mismo número de capas de electrones"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los tres burbujean en agua porque comparten dos electrones de valencia, pero la intensidad cambia de forma gradual: aumenta del magnesio al estroncio, al bajar en el grupo. Las diferencias son demasiado grandes para atribuirlas al tamaño de los trozos.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/distribucion-electronica-por-niveles/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/distribucion-electronica-por-niveles/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/distribucion-electronica-por-niveles",
+     "descripcion": "Confunde los electrones de valencia con el total de electrones o con el número de capas: cree que al bajar en un grupo aumentan los electrones externos (que el litio, el sodio y el potasio tienen uno, dos y tres) o que todos los electrones del átomo pueden cederse al reaccionar. No ve que bajar en el grupo agrega una capa y conserva el número de electrones externos.",
+     "senales": "Explica que el potasio es más reactivo «porque tiene más electrones para ceder» (19 contra 11); asigna a un elemento tantos electrones de valencia como capas o como su número de período; agrupa elementos cuyo número de electrones externos sube de uno en uno; predice iones con carga igual al número de capas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error común al pasar del modelo de capas a la tabla periódica.",
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/distribucion-electronica-por-niveles/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/propiedades-periodicas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/propiedades-periodicas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/propiedades-periodicas",
+     "descripcion": "Generaliza a los no metales la tendencia de los metales: cree que en todo grupo la reactividad aumenta hacia abajo (y hacia la izquierda), así que espera que el yodo sea más reactivo que el cloro o el flúor. No distingue que un metal reacciona cediendo electrones y un no metal ganándolos, de modo que la misma causa (electrones externos más lejos y más apantallados) produce tendencias opuestas.",
+     "senales": "Ordena los halógenos como I > Br > Cl > F; predice que el agua de yodo desplaza al cloro o al bromo de sus sales; dice «más abajo, más reactivo» sin preguntar si el elemento es metal o no metal; señala como no metal más reactivo uno de la parte de abajo a la derecha de la tabla.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al pasar de los metales alcalinos a los halógenos.",
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/propiedades-periodicas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/propiedades-periodicas/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/propiedades-periodicas/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/propiedades-periodicas",
+     "descripcion": "Considera solo el número de protones: cree que un núcleo con más protones siempre retiene con más fuerza a los electrones externos, sin tomar en cuenta la distancia ni el apantallamiento de las capas internas. Por eso piensa que al bajar en un grupo la energía de ionización aumenta, que el potasio retiene su electrón mejor que el sodio o que el yodo atrae un electrón extra con más fuerza que el cloro.",
+     "senales": "Justifica con «tiene más protones, atrae más» una comparación entre elementos de distinto período; predice que el rubidio es menos reactivo que el potasio; usa el número atómico como si fuera la carga nuclear efectiva; no menciona capas internas ni distancia al núcleo; ignora en una gráfica que el valle del potasio es más bajo que el del litio.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión común entre número atómico y carga nuclear efectiva.",
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/propiedades-periodicas/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/propiedades-periodicas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/propiedades-periodicas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/propiedades-periodicas",
+     "descripcion": "Cree que el radio atómico aumenta de izquierda a derecha en un período porque cada elemento «tiene más electrones» y más partículas ocuparían más espacio. No considera que los electrones nuevos entran en la misma capa mientras crece la carga nuclear efectiva, que contrae el átomo; con esa idea explica al revés la reactividad a lo largo del período.",
+     "senales": "Dice que el cloro es más grande que el sodio; dibuja los átomos del período 3 cada vez mayores; justifica que el azufre atrae electrones mejor que el cloro «por ser más pequeño»; relaciona el tamaño con el número de electrones y no con el número de capas y la carga nuclear efectiva.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa común: más electrones significa un átomo más grande.",
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/propiedades-periodicas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/propiedades-periodicas/4",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/propiedades-periodicas/4",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/propiedades-periodicas",
+     "descripcion": "Interpreta la energía de ionización como energía que el átomo tiene o que libera al reaccionar, y no como la energía que hay que darle para quitarle un electrón. Con esa idea cree que un valor alto vuelve más reactivo al elemento, o que el sodio pierde su electrón «porque quiere quedar estable con ocho» y que al perderlo libera energía.",
+     "senales": "Afirma que los gases nobles reaccionan mucho «porque tienen la energía de ionización más alta»; elige los picos y no los valles de la gráfica como los metales más reactivos; dice que ionizar al sodio libera energía; explica la reactividad con «el átomo quiere completar el octeto» sin mencionar ningún costo de energía.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Malentendido frecuente del significado de la energía de ionización.",
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/propiedades-periodicas/4",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tabla-periodica/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tabla-periodica/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tabla-periodica",
+     "descripcion": "Entiende «los elementos de un grupo comparten propiedades» como «tienen propiedades idénticas»: espera que todos los de una columna reaccionen con la misma intensidad y atribuye las diferencias observadas a errores del experimento (tamaño o limpieza de la pieza), en vez de reconocer una variación gradual dentro del grupo.",
+     "senales": "Dice que el sodio y el potasio reaccionan «igual porque están en el mismo grupo»; predice que el rubidio reacciona igual que el potasio; explica las diferencias entre videos de un mismo grupo con «el trozo era más grande» o «estaba sucio»; supone que el silicio es idéntico al carbono.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Generalización frecuente de lo aprendido en primaria sobre los grupos.",
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tabla-periodica/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.8/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.8/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Reactividad de metales comunes: tabla de observaciones con orden justificado",
+     "proposito": "Comparar cómo reaccionan el magnesio, el aluminio, el hierro y el cobre con vinagre y con agua salada; completar la tabla con la demostración del docente (magnesio en ácido clorhídrico diluido) y con videos de metales alcalinos en agua y de halógenos; ordenar la reactividad observada y justificarla con la energía de ionización (metales) y la electronegatividad (no metales). Se discuten las diferencias entre lo observado y lo esperado y se cierra con una propuesta de disposición segura de baterías de litio.",
+     "materiales": [
+      "Cinta de magnesio del laboratorio: 2 trozos de 2 cm por equipo (si no hay, ver variantes)",
+      "Papel aluminio de cocina: 2 tiras de 2 cm × 5 cm por equipo",
+      "Clavos de hierro sin galvanizar, de ferretería: 2 por equipo y 1 más como testigo al aire",
+      "Alambre de cobre de un cable eléctrico pelado: 2 trozos de 5 cm por equipo (los corta y pela el docente)",
+      "Lija fina para limpiar la cinta, el clavo y el alambre",
+      "Vinagre blanco de cocina: unos 250 mL por equipo",
+      "Agua salada: 1 cucharada de sal de mesa en 250 mL de agua de chorro, por equipo",
+      "8 vasos plásticos transparentes o frascos de vidrio de compota por equipo, rotulados con cinta adhesiva y marcador",
+      "Jeringa de 60 mL sin aguja, probeta o taza medidora de cocina",
+      "Celular para cronometrar y tomar fotos; lupa (opcional)",
+      "Para la demostración del docente: ácido clorhídrico diluido del laboratorio (no más de 1 mol/L), un tubo de ensayo en su gradilla, pinzas y bicarbonato de sodio para neutralizar",
+      "Proyector, televisor o celular con dos videos que el docente revisó antes: metales alcalinos (litio, sodio, potasio) en agua y halógenos que se desplazan de sus sales",
+      "Gafas de seguridad para cada estudiante y guantes para quien maneje desechos",
+      "Tabla de observaciones en el cuaderno o impresa (metal, líquido, minuto 0 a 15, día 5)"
+     ],
+     "procedimiento": [
+      "1. Antes de la clase, el docente revisa los dos videos, prepara el ácido clorhídrico diluido si hará la demostración y deja listo un recipiente con bicarbonato para los desechos.",
+      "2. Formen equipos de cuatro con roles: observador, cronometrista, registrador y encargado de seguridad y materiales.",
+      "3. Predicción: ubiquen el magnesio, el aluminio, el hierro y el cobre en la tabla periódica y escriban el orden de reactividad que esperan, con una razón para cada lugar.",
+      "4. Lijen cada trozo de metal hasta que brille y usen piezas del tamaño indicado en los materiales, para que la comparación sea justa.",
+      "5. Rotulen ocho vasos: cuatro «vinagre» y cuatro «agua salada», cada uno con el nombre de un metal. Pongan 50 mL del líquido correspondiente en cada vaso.",
+      "6. Coloquen cada metal en su vaso al mismo tiempo, inicien el cronómetro y observen 15 minutos. Cada 3 minutos anoten: burbujas (ninguna, pocas o muchas), cambios en el metal (brillo, color, tamaño) y cambios en el líquido.",
+      "7. Demostración del docente: con pinzas coloca 1 cm de cinta de magnesio en 5 mL de ácido clorhídrico diluido dentro de un tubo de ensayo, en un lugar ventilado y lejos de llamas. Anoten lo que ven y compárenlo con el magnesio en vinagre.",
+      "8. Vean el video de los metales alcalinos en agua y anoten en la misma tabla qué tan rápido reaccionan el litio, el sodio y el potasio y qué se observa en cada caso.",
+      "9. Vean el video de los halógenos (agua de cloro, de bromo y de yodo con sales de los otros dos) y anoten qué mezclas cambian de color y qué halógeno aparece.",
+      "10. Cubran los vasos con papel, sin sellarlos, rotúlenlos con el nombre del equipo y déjenlos 5 días en un lugar seguro junto al clavo testigo al aire. Si pueden, tomen una foto cada día.",
+      "11. Segunda sesión: observen los vasos, completen la columna del día 5 y consensúen en equipo el orden de reactividad de mayor a menor, con la observación que justifica cada lugar.",
+      "12. Respondan las preguntas de análisis y redacten la propuesta de disposición segura de baterías de litio.",
+      "13. Desechos: el docente neutraliza el ácido de la demostración con bicarbonato hasta que deje de burbujear y lo vierte al desagüe con abundante agua. El vinagre y el agua salada se vierten diluidos al desagüe; los trozos de metal se enjuagan, se secan y van a la basura sólida, nunca al lavamanos."
+     ],
+     "seguridad": [
+      "Gafas durante toda la práctica: el vinagre y el agua salada irritan los ojos. Si salpica, lavar con abundante agua y avisar al docente.",
+      "Solo el docente maneja el ácido clorhídrico diluido, con gafas y guantes. No se usa ácido muriático de ferretería en el aula.",
+      "El sodio, el potasio y los demás metales alcalinos no se manipulan en el aula: solo se observan en video, porque reaccionan con violencia con el agua y pueden inflamarse.",
+      "Las reacciones producen hidrógeno, un gas inflamable: no hay llamas ni fósforos cerca y los vasos no se tapan herméticamente.",
+      "La cinta de magnesio no se quema: su luz es tan intensa que daña la vista.",
+      "El docente corta y pela el alambre; cuidado con las puntas del alambre y de los clavos. Si se quiebra un frasco, lo recoge el docente con escoba y recogedor, nunca con las manos.",
+      "No probar ni oler los líquidos; lavarse las manos al terminar cada sesión.",
+      "En esta práctica no se abren, perforan ni mojan pilas o baterías: la propuesta de disposición se hace por escrito.",
+      "Desechos según el paso 13: el ácido se neutraliza antes de verterlo y nada sólido va al desagüe."
+     ],
+     "datos_esperados": "En vinagre, el magnesio burbujea desde el primer minuto y en 15 minutos se reduce buena parte de la cinta; el hierro casi no muestra burbujas en clase y a los 5 días el líquido toma un tono amarillento o anaranjado; el aluminio apenas cambia, porque una capa delgada de óxido lo protege; el cobre no burbujea (con los días puede aparecer un leve tono verde azulado por el aire). En agua salada, a los 5 días el clavo muestra herrumbre anaranjada y sedimento, más que el testigo al aire; el aluminio puede verse opaco o con puntos blancos, el magnesio burbujea lentamente y el cobre casi no cambia. En la demostración, el magnesio en ácido clorhídrico diluido burbujea con mucha más fuerza que en vinagre y se consume en uno o dos minutos, porque ese ácido aporta muchos más iones hidrógeno. Orden observado esperable: Mg > Fe > Al > Cu o Mg > Al > Fe > Cu, según cuánto ceda la capa de óxido del aluminio; el orden de la serie de actividad es Mg > Al > Fe > Cu. Que el magnesio supere al aluminio (mismo período) concuerda con la mayor carga nuclear efectiva del aluminio: quitarle sus tres electrones de valencia cuesta, en total, más energía que quitarle al magnesio sus dos (sumas de energías de ionización: valor de la tabla de referencia). El hierro y el cobre son de transición: se comparan con la serie de actividad, no con una tendencia simple de grupo o período. En los videos, la reactividad crece del litio al potasio y, en los halógenos, el cloro desplaza al bromo y al yodo, y el bromo solo al yodo: Cl > Br > I.",
+     "analisis": [
+      "Escriban el orden de reactividad de los cuatro metales que consensuó su equipo y justifiquen cada lugar con una observación concreta de la tabla (burbujas, cambio del metal o del líquido, tiempo).",
+      "Comparen su orden con la predicción del paso 3 y con la serie de actividad de la tabla de referencia. Si el aluminio pareció menos reactivo que el hierro, ¿qué explica la diferencia y cómo podrían comprobarlo?",
+      "El magnesio y el aluminio están en el período 3. Con las energías de ionización de la tabla de referencia, expliquen por qué el magnesio es más reactivo aunque la primera energía de ionización del aluminio sea algo menor (piensen en cuántos electrones cede cada uno y cuánto cuesta quitarlos todos).",
+      "¿Por qué el magnesio reaccionó más rápido en el ácido clorhídrico que en el vinagre? ¿Qué variable cambió y por qué no es justo comparar un metal en vinagre con otro en ácido clorhídrico?",
+      "Con el video de los metales alcalinos: ¿cómo cambia la reactividad al bajar en el grupo 1? Explíquenlo con la distancia del electrón de valencia al núcleo, el apantallamiento y la energía de ionización.",
+      "Con el video de los halógenos: ¿qué orden de reactividad muestran? ¿Por qué en los no metales la tendencia del grupo es la contraria a la de los metales? Usen la electronegatividad.",
+      "Propuesta de disposición segura: las pilas de botón de litio (relojes, calculadoras) tienen litio metálico, del grupo 1, y las baterías de iones de litio de los celulares pueden calentarse e incendiarse si se perforan, se aplastan o hacen cortocircuito. Propongan cómo guardarlas en casa y dónde entregarlas en su comunidad, en lugar de tirarlas a la basura o al fuego, y justifiquen cada medida con lo aprendido."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin cinta de magnesio: la comparación en vasos se hace con aluminio, hierro y cobre, y el magnesio se observa solo en la demostración o en un video. Sin ácido clorhídrico: la demostración se reemplaza por un video de magnesio en ácido diluido. Sin vasos de laboratorio: frascos de compota o vasos plásticos transparentes. Versión de casa (como la actividad digital de la unidad): tres clavos (en agua, en agua con sal y al aire) y una tira de aluminio en agua con sal durante 5 días, con una foto diaria. Sin proyector: el docente lee o entrega impresa una ficha con las observaciones de los videos.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.8/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/distribucion-electronica-por-niveles/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/distribucion-electronica-por-niveles/G10",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/distribucion-electronica-por-niveles",
+     "grados": [
+      10
+     ],
+     "titulo": "La capa externa decide",
+     "explicacion": "En el modelo de capas, los electrones ocupan niveles: hasta 2 en el primero y 8 en el segundo. Hasta el calcio, la tercera capa se cierra con 8 y los siguientes pasan a la cuarta. La última capa ocupada es la de valencia: sus electrones se ceden, se ganan o se comparten al reaccionar. El número de capas indica el período, y los electrones de valencia, el grupo. Al bajar en un grupo se agrega una capa, pero la externa conserva el mismo número de electrones: por eso los de un mismo grupo reaccionan de forma parecida.",
+     "ejemplo": "Los letreros luminosos de neón brillan con un gas que no reacciona: el neón (2, 8) tiene su capa externa completa. El sodio (2, 8, 1), con un solo electrón externo, reacciona tan rápido con el agua y el aire que se guarda bajo aceite.",
+     "practica": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "comprobacion": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación: escribe la distribución de un átomo de 20 electrones y deduce que cede los dos de su capa externa.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/distribucion-electronica-por-niveles",
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/distribucion-electronica-por-niveles/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/propiedades-periodicas/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/propiedades-periodicas/G10",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/propiedades-periodicas",
+     "grados": [
+      10
+     ],
+     "titulo": "Por qué la reactividad cambia en la tabla",
+     "explicacion": "El cobre de los cables dura años al aire; el potasio se guarda bajo aceite. Depende de cuánto atrae el núcleo a los electrones externos. Un metal reacciona cediéndolos: si su energía de ionización es baja, es más reactivo. Un no metal reacciona ganando uno: si su electronegatividad es alta, es más reactivo. Al bajar en un grupo se agrega una capa y los electrones externos quedan más lejos y apantallados: los metales ganan reactividad y los no metales la pierden. En un período crece la carga nuclear efectiva: los metales pierden reactividad y los no metales la ganan.",
+     "ejemplo": "La sal de las salineras de la costa salvadoreña es cloruro de sodio. El sodio, con energía de ionización baja, cede con facilidad su electrón, y el cloro, muy electronegativo, lo gana con facilidad. Por ser tan reactivos, en la naturaleza no se encuentran libres, sino combinados, como en la sal.",
+     "practica": "ACT:quimica/propiedades-periodicas/practica-G10",
+     "comprobacion": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación, que pide ordenar tres no metales que no aparecen en la práctica usando la tendencia de los no metales, no la de los metales.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/propiedades-periodicas",
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/propiedades-periodicas/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/tabla-periodica/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/tabla-periodica/G10",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/tabla-periodica",
+     "grados": [
+      10
+     ],
+     "titulo": "Filas, columnas y zonas de la tabla",
+     "explicacion": "La tabla periódica ordena los elementos por número atómico. Cada fila es un período: sus elementos tienen el mismo número de capas. Cada columna es un grupo: sus elementos tienen los mismos electrones de valencia y por eso un comportamiento químico parecido, aunque no idéntico, porque sus propiedades cambian de forma gradual al bajar. Una línea escalonada separa los metales, a la izquierda y al centro, de los no metales, arriba a la derecha; junto a ella están los metaloides, con propiedades intermedias. El grupo 18, el de los gases nobles, casi no reacciona.",
+     "ejemplo": "El oxígeno del aire y el azufre de los ausoles de Ahuachapán están en el grupo 16. Los dos se unen al hidrógeno en la misma proporción: H2O y H2S. Pero no son idénticos: el agua es líquida, y el H2S es el gas que huele a huevo podrido en los ausoles.",
+     "practica": "ACT:quimica/tabla-periodica/practica-G10",
+     "comprobacion": "ACT:quimica/tabla-periodica/comprobacion-G10",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación: predice propiedades intermedias para un elemento junto a la línea escalonada y no supone que es idéntico a su vecino de grupo.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/tabla-periodica",
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/tabla-periodica/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  }
+ ]
+}

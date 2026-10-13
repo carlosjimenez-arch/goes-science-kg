@@ -435,11 +435,15 @@ def preparar(ronda: int, tipos: list[str] | None = None, serie: str = "", prefij
     la ronda 2, cada expediente lleva los dictámenes anteriores (deliberación) o la versión vigente del elemento
     (contenido). `serie` separa los lotes de un grupo de tipos que corre aparte (p. ej. «inc»). Devuelve las rutas."""
     estado = cargar_estado()
-    # Un expediente que ya está en un lote de OTRA serie de esta ronda no se vuelve a preparar (se dictaminaría dos
-    # veces); los lotes de la misma serie sí se rehacen.
-    otra_serie = {e["id"] for p in _dir_lotes().glob(f"lote_r{ronda}[-_]*.json")
-                  if not p.stem.startswith(f"lote_r{ronda}{'-' + serie if serie else ''}_")
-                  for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]}
+    # Un expediente que está en un lote EN CURSO de otra serie (de cualquier ronda, todavía sin su dictamen de esa
+    # ronda) no se vuelve a preparar: se dictaminaría dos veces. Los lotes de la misma serie y ronda sí se rehacen.
+    otra_serie: set[str] = set()
+    for p in _dir_lotes().glob("lote_r*.json"):
+        if p.stem.startswith(f"lote_r{ronda}{'-' + serie if serie else ''}_"):
+            continue
+        lote = json.loads(p.read_text(encoding="utf-8"))
+        otra_serie |= {e["id"] for e in lote["expedientes"] if e["id"] in estado
+                       and not any(d["ronda"] == lote["ronda"] for d in estado[e["id"]]["dictamenes"])}
     por_rol: dict[str, list[dict]] = defaultdict(list)
     for i, x in sorted(estado.items()):
         if (tipos is not None and x["tipo"] not in tipos) or not i.startswith(prefijo) or i in otra_serie:

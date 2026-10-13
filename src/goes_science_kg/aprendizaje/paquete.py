@@ -205,8 +205,15 @@ def paquete(tema: str) -> dict:
 
 def _markdown(p: dict) -> str:
     t = p["tema"]
-    md = [f"# Paquete de clase: {t['id']} ({t['grado']}.°, {t['asignatura']})", "", f"> {p['aviso']}", "",
-          "## Completitud", "", "| Hueco | Estado |", "|---|---|"]
+    md = [f"# Paquete de clase: {t['id']} ({t['grado']}.°, {t['asignatura']})", "", f"> {p['aviso']}", ""]
+    if r := p.get("reemplazo"):
+        md += [f"> **Reemplaza a {r['pedido']}, que la V3 quitó.** "
+               + ("Enseña lo mismo en lo esencial" if r["equivalente"] else
+                  "**No es equivalente:** es el tema vecino más cercano")
+               + f" ({int(r['coincidencia_conceptos'] * 100)} % de los conceptos y "
+               f"{int(r['contencion_texto'] * 100)} % del texto del pedido). Elegir otro tema es decisión de quien "
+               "genera las clases.", ""]
+    md += ["## Completitud", "", "| Hueco | Estado |", "|---|---|"]
     md += [f"| {k.replace('_', ' ')} | {v} |" for k, v in p["completitud"].items()]
     md += ["", "## Tema (malla V3, texto crudo)", "",
            f"- **Ubicación:** {t['archivo']}, hoja «{t['hoja']}», fila {t['fila']}",
@@ -266,10 +273,13 @@ def vecinos(tema_v2: str, k: int = 3) -> list[dict]:
     if i not in v2 or not cs:
         return []
     salida = []
+    from goes_science_kg.aprendizaje.pedagogia import navegador_compartido
+
+    nav = navegador_compartido()   # los conceptos del grafo: con las revisiones de etiquetas aplicadas
     for t in extraer():
         if t.grado != v2[i].grado:
             continue
-        c3 = (etq.get(t.id) or {}).get("conceptos", [])
+        c3 = nav.conceptos_de_tema(f"TEMA:{t.id}") if f"TEMA:{t.id}" in nav.por_id else []
         comunes = [c for c in cs if c in c3]
         texto = _contencion(v2[i], _raices(" ".join([t.procedimental, t.subcontenido, t.contenido, t.indicador])))
         if not comunes and texto < 0.3:
@@ -295,20 +305,33 @@ def escribir(temas: list[str]) -> list:
             continue
         p = paquete(elegido or original)
         if elegido:
+            vs = vecinos(original, k=10)
+            usado = next((v for v in vs if v["id"] == p["tema"]["id"]), None)
             p["reemplazo"] = {"pedido": original, "tema_usado": p["tema"]["id"],
                               "motivo": "la V3 quitó el tema pedido; este es el que se eligió en su lugar",
-                              "vecinos_por_concepto": vecinos(original)}
+                              "coincidencia_conceptos": usado["coincidencia"] if usado else 0.0,
+                              "contencion_texto": usado["contencion_texto"] if usado else 0.0,
+                              "equivalente": bool(usado and max(usado["coincidencia"], usado["contencion_texto"])
+                                                  >= 0.6),
+                              "vecinos": vs[:3]}
         i = p["tema"]["id"]
         (d / f"{i}.json").write_text(json.dumps(p, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         (d / f"{i}.md").write_text(_markdown(p), encoding="utf-8")
         escritos += [d / f"{i}.json", d / f"{i}.md"]
-        filas.append((original, i, p["completitud"], bool(elegido)))
+        filas.append((original, i, p["completitud"], p.get("reemplazo")))
     claves = list(filas[0][2]) if filas else []
     md = ["# Paquetes de clase", "", AVISO, "", "| Pedido | Tema vigente | " + " | ".join(c.replace("_", " ")
                                                                                          for c in claves) + " |",
           "|---|---|" + "---|" * len(claves)]
-    md += [f"| {pedido} | [{i}]({i}.md){' (reemplazo)' if reemplazo else ''} | " + " | ".join(c[k] for k in claves)
-           + " |" for pedido, i, c, reemplazo in filas]
+    def nota(r: dict | None) -> str:
+        if not r:
+            return ""
+        tipo = "reemplazo" if r["equivalente"] else "VECINO, no equivalente"
+        return (f" ({tipo}: {int(r['coincidencia_conceptos'] * 100)} % de los conceptos y "
+                f"{int(r['contencion_texto'] * 100)} % del texto del pedido)")
+
+    md += [f"| {pedido} | [{i}]({i}.md){nota(r)} | " + " | ".join(c[k] for k in claves) + " |"
+           for pedido, i, c, r in filas]
     if sin_tema:
         md += ["", "## Pedidos que la V3 quitó y no tienen reemplazo elegido", "",
                "Ningún tema de la V3 los enseña. Estos vecinos comparten parte de sus conceptos; elegir uno es "

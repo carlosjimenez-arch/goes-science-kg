@@ -1,0 +1,1713 @@
+{
+ "lote": "r1-ped2_experto-fisica",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U6-6.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U6-6.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un microbús toma una curva plana (sin peralte) de 50 m de radio con el pavimento mojado. Supón que el coeficiente de fricción estática entre las llantas y ese pavimento es 0.40 (dato del problema) y usa g = 9.8 m/s². Identifica qué fuerza real mantiene al microbús en la curva y calcula la rapidez máxima, en m/s, a la que puede tomarla sin derrapar. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 14.0,
+     "tolerancia": 0.3,
+     "unidad": "m/s",
+     "retroalimentacion": "La fuerza que apunta al centro es la fricción estática lateral de las llantas, y su valor máximo es μmg. Al igualarla con mv²/r la masa se cancela: v = √(μgr) = √(0.40 · 9.8 · 50) = 14 m/s, unos 50 km/h; más rápido, la fricción ya no alcanza y el vehículo se sale por la tangente.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U6-6.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U6-6.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U6-6.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de tres satélites en órbita circular alrededor de la Tierra (valores aproximados, redondeados para el ejercicio). Satélite 1 (Estación Espacial Internacional): masa 420 000 kg, altura 400 km, período 92 min. Satélite 2: masa 100 kg, altura 400 km, período 92 min. Satélite 3 (de navegación GPS): masa 2000 kg, altura 20 200 km, período 718 min. ¿Qué conclusión apoyan mejor los datos?",
+     "opciones": {
+      "A": "La masa sí influye en el período, porque el satélite 3, más pesado que el 2, tarda mucho más.",
+      "B": "El satélite 3 es el más rápido, porque en cada vuelta recorre una circunferencia mucho mayor.",
+      "C": "La masa no influye en el período, porque los satélites 1 y 2 difieren en masa y tardan igual.",
+      "D": "La gravedad casi no actúa a 400 km de altura, porque los satélites 1 y 2 flotan allí sin caer."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/aceleracion-fuerza-centripeta/4",
+      "D": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los satélites 1 y 2 están a la misma altura, sus masas difieren unas 4200 veces y tardan lo mismo: al igualar GMm/r² con mv²/r la masa del satélite se cancela, y v y T dependen solo del radio de la órbita. El satélite 3 tarda más porque su órbita es mayor, y además va más lento (unos 3.9 km/s frente a 7.7 km/s).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U6-6.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U6-6.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U6-6.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un bus toma una curva de la carretera de Los Chorros con una rapidez constante de 40 km/h. Un pasajero dice: «Como el velocímetro no cambia, el bus no acelera; lo que me empuja contra la ventana es la fuerza centrífuga». En 2 o 3 oraciones, explica qué está mal en lo que dice y qué fuerza real mantiene al bus en la curva.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aunque la rapidez no cambie, la velocidad es tangente a la curva y cambia de dirección: hay aceleración hacia el centro, v²/r. Esa aceleración la produce una fuerza real, la fricción lateral de las llantas con el pavimento; el pasajero no es empujado hacia afuera: por inercia tiende a seguir recto y la pared del bus lo empuja hacia el centro.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U6-6.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El bus sí acelera: aunque la rapidez es constante, la velocidad es tangente a la curva y cambia de dirección a cada instante, y ese cambio es una aceleración dirigida hacia el centro de la curva (v²/r). Por la segunda ley hace falta una fuerza neta hacia el centro, y la da una fuerza real: la fricción lateral entre las llantas y el pavimento (más una parte de la normal si la curva tiene peralte). No hay fuerza centrífuga: el pasajero, por inercia, tiende a seguir en línea recta, y la pared del bus lo empuja hacia el centro para que también dé la curva.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Afirma que el bus sí acelera porque cambia la dirección de la velocidad (tangente a la curva), aunque la rapidez sea constante.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra una fuerza real que apunta hacia el centro de la curva y la mantiene: la fricción lateral entre llantas y pavimento (o, si menciona peralte, la componente de la normal hacia el centro).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica la sensación del pasajero sin fuerza centrífuga: por inercia tiende a seguir recto y la pared o el asiento lo empuja hacia el centro.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Escribe la aceleración como v²/r o la fuerza como mv²/r, o relaciona la fuerza neta hacia el centro con la segunda ley.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que no hay aceleración porque la rapidez no cambia.",
+        "ejemplo": "Tiene razón en que no acelera, porque va siempre a 40 km/h; solo se equivoca en el nombre de la fuerza.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/3"
+       },
+       {
+        "descripcion": "Mantiene la fuerza centrífuga como una fuerza real que equilibra a la centrípeta.",
+        "ejemplo": "La centrípeta jala al bus hacia adentro y la centrífuga lo empuja hacia afuera; como se equilibran, el bus no se sale de la curva.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+       },
+       {
+        "descripcion": "Nombra la «fuerza centrípeta» como si fuera el agente, sin identificar la fuerza real.",
+        "ejemplo": "Lo que mantiene al bus en la curva es la fuerza centrípeta, que aparece cuando el bus gira.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U6-6.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una curva peraltada de una carretera está diseñada para que, a 50 km/h, un vehículo la tome sin necesitar fricción. Un día de lluvia, con el pavimento muy liso, un carro de 1000 kg y un camión de 10 000 kg la toman a 50 km/h. Tratándolos como partículas, ¿qué ocurre?",
+     "opciones": {
+      "A": "Solo el carro la toma bien, porque el camión necesita diez veces más fuerza hacia el centro.",
+      "B": "Los dos se salen hacia afuera, porque sin fricción nada aporta la fuerza hacia el centro de la curva.",
+      "C": "Los dos se salen hacia afuera, porque la fuerza centrífuga ya no tiene quién la compense en la curva.",
+      "D": "Los dos la toman bien, porque la normal inclinada da la fuerza al centro y crece con la masa."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:fisica/aceleracion-fuerza-centripeta/4",
+      "B": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+      "C": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el peralte la normal está inclinada y su componente horizontal apunta al centro. A la rapidez de diseño cumple N sen θ = mv²/r y N cos θ = mg, de donde tan θ = v²/(rg): la masa se cancela, así que los dos toman la curva sin necesitar fricción.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/aceleracion-fuerza-centripeta"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo hace girar un tapón atado a un dinamómetro en un círculo horizontal de 0.50 m de radio, sobre una mesa lisa, y graba la lectura a tres rapideces (datos de un grupo de ejemplo): a 2.0 m/s, 0.21 N; a 4.0 m/s, 0.78 N; a 6.0 m/s, 1.83 N. Busca cómo cambia la tensión cuando la rapidez se duplica y estima qué tensión marcaría el dinamómetro a 8.0 m/s, con el mismo radio. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 3.2,
+     "tolerancia": 0.2,
+     "unidad": "N",
+     "retroalimentacion": "De 2.0 a 4.0 m/s la rapidez se duplica y la tensión casi se cuadruplica (0.21 → 0.78 N): la fuerza crece con v², como pide F = mv²/r. De 4.0 a 8.0 m/s se duplica otra vez, así que la tensión será unas 4 × 0.78 ≈ 3.2 N. El hilo da toda la fuerza centrípeta.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/aceleracion-fuerza-centripeta"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un tapón atado a un hilo gira con rapidez constante sobre una mesa horizontal muy lisa; el otro extremo del hilo está amarrado a un clavo en el centro. Si solo cuentas las fuerzas horizontales, ¿cuáles actúan sobre el tapón?",
+     "opciones": {
+      "A": "La tensión hacia el centro y otra fuerza hacia adelante, en el sentido en que avanza.",
+      "B": "Solo la tensión del hilo, que apunta hacia el clavo, en el centro del círculo.",
+      "C": "La tensión hacia el centro y una fuerza centrífuga igual que apunta hacia afuera.",
+      "D": "La tensión del hilo y además la fuerza centrípeta, las dos hacia el centro."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:fisica/segunda-ley-newton/1",
+      "C": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+      "D": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Sobre la mesa lisa, lo único horizontal que toca al tapón es el hilo: la tensión, hacia el centro, es la fuerza centrípeta. No hay fuerza hacia afuera ni hacia adelante: el tapón avanza por inercia y la tensión solo le cambia la dirección.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/aceleracion-fuerza-centripeta"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una bicicleta está volteada y su rueda trasera gira en el aire dando 2.0 vueltas por segundo. Si se giran los pedales más rápido y la rueda pasa a dar 4.0 vueltas por segundo, ¿qué ocurre con el período de la rueda y con la rapidez de la válvula, que está en el borde?",
+     "opciones": {
+      "A": "El período se duplica y la rapidez de la válvula también se duplica.",
+      "B": "El período baja a la mitad y la rapidez de la válvula se duplica.",
+      "C": "El período se reduce a la mitad y la rapidez de la válvula no cambia.",
+      "D": "El período queda igual y la rapidez de la válvula se duplica."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Período y frecuencia son inversos: con el doble de vueltas por segundo, cada vuelta dura la mitad (de 0.50 s a 0.25 s). La válvula recorre la misma circunferencia en la mitad del tiempo, así que v = 2πr/T se duplica.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Para medir el giro de un ventilador de techo, un grupo pegó una cinta en la punta de un aspa, a 0.60 m del eje, y con un video en cámara lenta contó 30 vueltas en 20 s de tiempo real (datos de un grupo de ejemplo). Calcula el período y luego la rapidez tangencial de la cinta, en m/s. Escribe solo el número de la rapidez.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 5.65,
+     "tolerancia": 0.15,
+     "unidad": "m/s",
+     "retroalimentacion": "El período es T = 20 s / 30 ≈ 0.67 s (frecuencia 1.5 Hz). En cada vuelta la cinta recorre 2π · 0.60 m ≈ 3.77 m, así que v = 3.77 m / 0.67 s ≈ 5.7 m/s; con ω = 2πf ≈ 9.4 rad/s, v = ωr da lo mismo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una niña hace girar sobre su cabeza una pelota atada a una pita, en un círculo horizontal. Vista desde arriba, la pelota gira en sentido contrario a las agujas del reloj. Si la pita se rompe justo cuando la pelota pasa por el punto más al norte del círculo, ¿hacia dónde sale la pelota, vista desde arriba?",
+     "opciones": {
+      "A": "Hacia el oeste en línea recta, por la tangente al círculo en ese punto.",
+      "B": "Hacia el norte en línea recta, alejándose del centro por el radio.",
+      "C": "Hacia el oeste, pero curvándose poco a poco como si siguiera girando.",
+      "D": "Hacia el noroeste en línea recta, a medio camino entre la tangente y el radio."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+      "C": "DIF:fisica/movimiento-circular-uniforme/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En cada punto la velocidad es tangente al círculo; en el punto norte, girando en sentido contrario a las agujas del reloj, apunta al oeste. Al romperse la pita ya nada la desvía, así que sigue en línea recta hacia el oeste (y va cayendo por la gravedad).",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En el carrusel de una feria, dos amigos toman datos (datos de un grupo de ejemplo): Ana va sentada a 2.0 m del eje y tarda 8.0 s en dar una vuelta; Beto va a 4.0 m del eje y también tarda 8.0 s. ¿Qué afirmación apoyan los datos?",
+     "opciones": {
+      "A": "Tienen igual rapidez tangencial, porque los dos tardan 8.0 s en completar la vuelta.",
+      "B": "Beto tiene el doble de velocidad angular, porque recorre el doble de distancia por vuelta.",
+      "C": "Ana tiene mayor rapidez tangencial, porque su vuelta es más cerrada y gira más.",
+      "D": "Igual velocidad angular, y Beto el doble de rapidez, porque recorre el doble en 8.0 s."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los dos giran una vuelta (2π rad) en 8.0 s: tienen la misma velocidad angular, ω ≈ 0.79 rad/s. Pero v = 2πr/T: Ana va a unos 1.6 m/s y Beto a unos 3.1 m/s, porque en el mismo tiempo recorre una circunferencia del doble.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una niña de 30 kg (con el asiento) se mece en un columpio. Al pasar por el punto más bajo, su rapidez es máxima y no está cambiando; en ese instante las cadenas tiran de ella hacia arriba con 429 N y su peso es 294 N. ¿Cuál es su aceleración en ese instante?",
+     "opciones": {
+      "A": "4.5 m/s² hacia arriba, porque la fuerza neta de 135 N apunta hacia arriba.",
+      "B": "0 m/s², porque en el punto más bajo su rapidez es máxima y no está cambiando.",
+      "C": "4.5 m/s² hacia adelante, porque la aceleración va en el sentido en que se mueve.",
+      "D": "14.3 m/s² hacia arriba, porque las cadenas tiran con 429 N de los 30 kg."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/aceleracion-fuerza-centripeta/3",
+      "C": "DIF:fisica/segunda-ley-newton/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La fuerza neta es la suma con sentido: 429 N − 294 N = 135 N hacia arriba, así que a = 135 N / 30 kg = 4.5 m/s² hacia arriba, hacia donde cuelgan las cadenas. Aunque la rapidez no cambie en ese instante, la dirección de la velocidad sí: esa aceleración es centrípeta.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo jala un carrito con un dinamómetro sobre una superficie con fricción despreciable y mide la aceleración con un celular (datos de un grupo de ejemplo): con 0.50 N, 0.24 m/s²; con 1.00 N, 0.51 m/s²; con 1.50 N, 0.74 m/s²; con 2.00 N, 1.01 m/s². Grafica o compara F y a, y calcula la masa del carrito, en kg. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 2.0,
+     "tolerancia": 0.1,
+     "unidad": "kg",
+     "retroalimentacion": "La aceleración crece en proporción a la fuerza: al duplicar F, a casi se duplica. El cociente F/a es casi el mismo en cada fila (2.08, 1.96, 2.03 y 1.98 kg) y es la masa: m = ΣF/a ≈ 2.0 kg, la pendiente de la recta F contra a.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un carro avanza por un tramo recto y plano de la carretera con una rapidez constante de 60 km/h. ¿Cómo es la fuerza neta sobre el carro?",
+     "opciones": {
+      "A": "Hacia adelante, porque el carro avanza y necesita una fuerza neta para seguir moviéndose.",
+      "B": "Hacia atrás, porque el aire y la rodadura frenan al carro durante todo el recorrido.",
+      "C": "Cero, porque la velocidad no cambia: el empuje hacia adelante iguala a lo que se opone.",
+      "D": "Hacia adelante y de valor m·v, porque depende de la masa y de la rapidez del carro."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/segunda-ley-newton/1",
+      "D": "DIF:fisica/segunda-ley-newton/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Si la velocidad no cambia (ni en rapidez ni en dirección), la aceleración es cero y, por la segunda ley, la fuerza neta también: el empuje del pavimento sobre las llantas iguala a la resistencia del aire y a la de rodadura. Hace falta fuerza neta para cambiar la velocidad, no para mantenerla.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una estudiante arrastra por el piso una caja de 25 kg con una cuerda horizontal que tira con 80 N; la fricción del piso sobre la caja es de 30 N, en sentido contrario. ¿Cuál es la aceleración de la caja, en m/s²? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 2.0,
+     "tolerancia": 0.05,
+     "unidad": "m/s²",
+     "retroalimentacion": "La fuerza neta es la suma con sentido: 80 N − 30 N = 50 N hacia adelante. Entonces a = ΣF/m = 50 N / 25 kg = 2.0 m/s². Si dividiste 80 N entre 25 kg, faltó restar la fricción.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "descripcion": "Cree que sobre un cuerpo que gira actúa una fuerza real hacia afuera, la «fuerza centrífuga», que equilibra a la centrípeta. Toma como fuerza la sensación de ser lanzado hacia afuera en un bus o un carrusel, que en realidad es la inercia: el cuerpo tiende a seguir recto y algo (el asiento, la pared, el hilo) lo empuja hacia el centro.",
+     "senales": "Dibuja en el diagrama de cuerpo libre una flecha hacia afuera rotulada «centrífuga»; dice que el tapón o el bus está «en equilibrio» porque la fuerza hacia adentro y la de hacia afuera se anulan; explica que la Estación Espacial no cae porque la centrífuga compensa la gravedad; predice que, si el hilo se rompe, el objeto sale disparado por el radio, alejándose del centro.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa muy extendida, reforzada por el habla cotidiana y la sensación en vehículos.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "descripcion": "Trata la fuerza centrípeta como una fuerza más, que aparece sola cuando algo gira, en lugar de entenderla como el papel que cumple la resultante hacia el centro de fuerzas reales con un agente (tensión, fricción, normal o gravedad). Por eso no identifica quién la ejerce en cada situación ni reconoce que una fuerza distinta de la fricción, como la normal inclinada, puede cumplir ese papel.",
+     "senales": "Agrega al diagrama de cuerpo libre una flecha «Fc» además de la tensión o la fricción; escribe ΣF = T + mv²/r; ante «¿quién ejerce esa fuerza?» responde «el giro» o «la curva»; en una curva peraltada sin fricción dice que nada puede mantener al carro en la curva; afirma que un satélite no cae porque «en el espacio no hay gravedad».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error típico al construir diagramas de cuerpo libre en movimiento circular.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aceleracion-fuerza-centripeta/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aceleracion-fuerza-centripeta/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "descripcion": "Cree que si la rapidez es constante no hay aceleración ni fuerza neta: confunde rapidez con velocidad y solo reconoce aceleración cuando cambia la lectura del velocímetro, sin ver que el cambio de dirección de la velocidad también es aceleración.",
+     "senales": "Escribe a = 0 o ΣF = 0 para un movimiento circular uniforme; dice que la velocidad es constante «porque siempre va a 40 km/h»; dibuja la aceleración tangente, en el sentido del movimiento; calcula la aceleración como cambio de rapidez entre tiempo y obtiene cero.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión rapidez-velocidad frecuente; el indicador pide justificar la velocidad variable.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aceleracion-fuerza-centripeta/4",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aceleracion-fuerza-centripeta/4",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "descripcion": "Cree que la rapidez máxima en una curva o la rapidez de un satélite dependen de su masa: que un vehículo más pesado debe ir más despacio porque «necesita más fuerza centrípeta», o que un satélite más grande debe ir más rápido para no caer. No ve que la fuerza disponible (la fricción máxima μmg, la normal, la gravedad GMm/r²) crece con la masa igual que la fuerza necesaria, mv²/r, y que la masa se cancela. Vale en el modelo de partícula: los límites menores para camiones responden a otras causas, como el vuelco o el frenado.",
+     "senales": "Deja m en la fórmula final de la rapidez máxima o de la rapidez orbital, o pide la masa como dato que falta; predice que en la misma curva el camión derrapa antes que el carro, o al revés, «porque su peso lo aprieta contra el piso»; dice que la Estación Espacial, por ser enorme, tiene otro período que un satélite pequeño a la misma altura.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Intuición «más pesado, distinto» frecuente; el indicador pide justificar la independencia de la masa.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/4",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-circular-uniforme/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-circular-uniforme/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-circular-uniforme",
+     "descripcion": "No reconoce que la velocidad en el movimiento circular es tangente a la trayectoria: la imagina dirigida hacia el centro o «curvada», y cree que un objeto que se suelta conserva un tiempo el giro y sigue una trayectoria curva, en lugar de seguir en línea recta por la tangente en el punto donde se soltó.",
+     "senales": "Dibuja el vector velocidad apuntando hacia el centro o como un arco; predice que la pelota que se suelta de la pita o la canica que sale del borde del plato sigue curvándose y luego se endereza; no puede explicar por qué el agua sale tangente de una llanta o de un paraguas que gira.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea de «impulso circular» común al predecir trayectorias tras soltar un objeto.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-circular-uniforme/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U6-6.5/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U6-6.5/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "El tapón que gira: qué fuerza real lo mantiene en el círculo y qué cambia en una curva",
+     "proposito": "Con un aparato casero (un objeto que gira atado a un hilo que pasa por un tubo y sostiene unas arandelas colgadas), identificar la tensión como la fuerza real que actúa como centrípeta y comprobar con datos que la fuerza necesaria crece con el cuadrado de la rapidez a radio constante (F = mv²/r), comparándola con el peso de las arandelas. Luego observar que un cuerpo que deja de recibir fuerza hacia el centro sale por la tangente, y modelar las curvas de carretera: la curva plana, donde la fricción estática da la fuerza hacia el centro, y la peraltada, donde la da parte de la normal. El producto es la hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta, que pide la malla como evidencia.",
+     "materiales": [
+      "Un tubo rígido de 12 a 15 cm: el cuerpo de un lapicero sin carga o un trozo de tubo PVC delgado, con los dos extremos lijados o forrados con cinta adhesiva",
+      "1.5 m de hilo de nylon (de pescar) o de pita delgada y resistente",
+      "Un objeto blando de 20 a 40 g para hacer girar: un tapón de hule, una pelota de esponja con dos o tres monedas adentro, o una tapa de botella rellena de plastilina y forrada con cinta",
+      "Arandelas o tuercas (o bolsitas cerradas con arena) para colgar, unos 150 g en total en tres juegos iguales, y un clip grande para colgarlas",
+      "Una pinza de ropa pequeña o un clip para marcar el hilo",
+      "Balanza de cocina o de laboratorio, cinta métrica y cronómetro o celular",
+      "Yeso o cinta para marcar en el patio un círculo de seguridad de unos 3 m de radio",
+      "Un plato desechable de cartón o plástico, tijeras, un pliego de papel y una canica",
+      "Una palangana o un tazón grande de paredes curvas, y otra canica",
+      "Un cuaderno de pasta dura o un trozo de cartón grueso, una goma de borrar y una regla (plano inclinado)",
+      "Papel milimetrado o computadora con hoja de cálculo, y calculadora con funciones trigonométricas"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1) Pesen el objeto que va a girar (masa m) y cada juego de arandelas (masa M); anoten las masas en kilogramos.",
+      "2. Aten el objeto a un extremo del hilo con doble nudo, pasen el hilo por el tubo y aten en el otro extremo el clip con un juego de arandelas (M).",
+      "3. Midan L = 0.50 m de hilo desde el borde superior del tubo hasta el centro del objeto y pongan la pinza en el hilo justo debajo del extremo inferior del tubo. La pinza es la marca del radio: si durante el giro se mantiene a 1 cm del tubo, L no cambia.",
+      "4. En el patio, dentro del círculo de seguridad, quien gira sostiene el tubo vertical un poco por encima de la cabeza y hace girar el objeto en un círculo casi horizontal, con movimientos pequeños de la muñeca, hasta que la pinza quede quieta cerca del tubo. Los demás se quedan fuera del círculo.",
+      "5. Otro estudiante mide el tiempo de 20 vueltas; repitan tres veces y promedien. Calculen el período T = t/20, la rapidez v = 2πL/T y la fuerza que pide el modelo, F = mv²/L. Anoten también el peso de las arandelas, Mg, con g = 9.8 m/s².",
+      "6. Repitan los pasos 4 y 5 con dos y con tres juegos de arandelas (2M y 3M), sin cambiar L.",
+      "7. Hagan la tabla (M, Mg, tiempo de 20 vueltas, T, v, v², mv²/L) y grafiquen Mg contra v².",
+      "8. Con un solo juego de arandelas, predigan el período si L fuera 0.25 m y compruébenlo moviendo la pinza. Nota para el docente: si el hilo baja un poco respecto de la horizontal, el radio real es algo menor que L, pero la cuenta con L da justo la tensión del hilo, mω²L; por eso se usa L.",
+      "9. Dibujen el diagrama de cuerpo libre del objeto visto de lado (peso y tensión) y visto desde arriba, y marquen qué fuerza real cumple el papel de fuerza centrípeta.",
+      "10. (Sesión 2) Recorten un cuarto del borde del plato desechable y pónganlo sobre el pliego de papel. Hagan rodar la canica pegada al borde interior para que salga por el tramo recortado y marquen con lápiz por dónde pasa. Repitan cinco veces, en los dos sentidos de giro, y tracen con regla la tangente al borde en el punto de salida.",
+      "11. Curva plana. Pongan la goma sobre el cuaderno y levanten un extremo despacio hasta que la goma empiece a deslizar. Midan la altura h y la base b de la rampa en ese instante: el coeficiente de fricción estática es μs ≈ h/b. Repitan cinco veces y promedien. Ese valor es el de su goma y su cuaderno; para una llanta en el pavimento se usa el valor de la tabla de referencia.",
+      "12. Dibujen el diagrama de cuerpo libre de un carro en una curva plana visto de frente (peso, normal y fricción estática hacia el centro) y calculen la rapidez máxima en una curva de 50 m de radio, v = √(μs g r), con el coeficiente llanta–pavimento seco y mojado (valor de la tabla de referencia).",
+      "13. Peralte. Pongan la canica dentro de la palangana y, moviendo la palangana en círculos pequeños sobre la mesa, háganla girar pegada a la pared. Observen a qué altura de la pared gira cuando va despacio y cuando va rápido, y anótenlo.",
+      "14. Dibujen el diagrama de cuerpo libre de un carro en una curva peraltada sin fricción (peso y normal inclinada) y calculen la rapidez de diseño de una curva de 50 m de radio con 10° de peralte: v = √(r g tan θ). Compárenla con la rapidez máxima de la curva plana mojada del paso 12.",
+      "15. Completen la hoja de diagramas de cuerpo libre de tres situaciones (el objeto con hilo, el carro en la curva plana o peraltada y la Luna alrededor de la Tierra) y calculen en cada una la fuerza centrípeta con mv²/r. Para la Luna usen masa 7.35 × 10²² kg, radio de la órbita 3.84 × 10⁸ m y período 27.3 días."
+     ],
+     "seguridad": [
+      "La Parte 1 se hace en el patio, con el círculo de seguridad marcado: solo quien gira está adentro, y nadie cruza mientras el objeto da vueltas.",
+      "Solo se hace girar un objeto blando y liviano; nada de piedras, tuercas sueltas ni vidrio en el extremo que gira. Revisen los nudos y el hilo antes de cada serie y cámbienlo si está deshilachado.",
+      "Giren por encima de la cabeza y nunca a la altura de la cara de otra persona; no suelten el hilo a propósito (la salida por la tangente se observa sin riesgo con la canica del plato).",
+      "Forren con cinta los extremos del tubo para que no corten el hilo ni la mano, y túrnense para no cansar el brazo.",
+      "Recojan las canicas del piso para que nadie resbale; las tijeras las usa una persona a la vez."
+     ],
+     "datos_esperados": "Parte 1: con un objeto de unos 30 g, L = 0.50 m y juegos de arandelas de 50, 100 y 150 g, los períodos salen entre unos 0.6 y 1.1 s (20 vueltas en 12 a 22 s), las rapideces entre unos 3 y 5 m/s y los pesos Mg entre 0.5 y 1.5 N. Al duplicar M la rapidez no se duplica: lo que se duplica es v² (v crece unas 1.4 veces). La gráfica de Mg contra v² es casi una recta que pasa cerca del origen, con pendiente cercana a m/L (unos 0.06 kg/m en este ejemplo). Es normal que mv²/L y Mg difieran del orden de un 10 a 20 %, por la fricción del hilo en el tubo, el pequeño círculo que describe la mano y el error al contar vueltas. Con L = 0.25 m y las mismas arandelas, el período baja a unas 0.7 veces (1/√2) el anterior. Parte 2: la canica sale siempre en línea recta por la tangente al borde en el punto donde lo deja; no sale por el radio ni sigue curvándose. El μs de la goma es un número sin unidad, propio de esa goma y ese cuaderno. Con el valor de la tabla de referencia, la rapidez máxima en la curva plana sale menor con pavimento mojado que seco, porque crece con √μ, y no depende de la masa del vehículo. La rapidez de diseño de la curva de 50 m con 10° de peralte es √(50 · 9.8 · tan 10°) ≈ 9.3 m/s (unos 33 km/h), sin fricción y sin depender de la masa. En la palangana, a más rapidez la canica gira más arriba, donde la pared está más inclinada. La fuerza centrípeta sobre la Luna sale del orden de 2 × 10²⁰ N y es la atracción gravitatoria de la Tierra.",
+     "analisis": [
+      "¿La gráfica de Mg contra v² es casi una recta que pasa por el origen? Calculen su pendiente y compárenla con m/L. Si la rapidez se duplica, ¿cuántas veces más fuerza hace falta?",
+      "¿Qué fuerza real actúa como fuerza centrípeta sobre el objeto que gira? Al girar, sienten que el hilo jala el tubo y la mano hacia el objeto, hacia afuera: ¿sobre qué cuerpo actúa ese jalón y por qué no aparece una «fuerza centrífuga» en el diagrama del objeto?",
+      "¿Se cumplió su predicción del período con L = 0.25 m? Justifiquen con F = m(2π/T)²L.",
+      "¿Por dónde salió la canica del plato? ¿Qué dice eso sobre la dirección de la velocidad en el movimiento circular y sobre lo que pasa cuando deja de actuar la fuerza hacia el centro?",
+      "En la curva plana, ¿por qué la fricción estática apunta hacia el centro y no hacia atrás? Con sus cálculos, justifiquen la recomendación de bajar la velocidad cuando llueve. ¿Un camión cargado tiene, según este modelo, otra rapidez máxima? ¿Qué otras causas (vuelco, frenado) explican que las señales le pidan ir más despacio?",
+      "¿Por qué la canica sube por la pared de la palangana cuando va más rápido? Relacionen esa observación con la rapidez de diseño de la curva peraltada y expliquen por qué el peralte reduce la dependencia de la fricción.",
+      "Para profundizar: con fricción, la rapidez máxima en la curva peraltada es v = √(r g (sen θ + μ cos θ) / (cos θ − μ sen θ)). Calcúlenla con el mismo μ de la tabla de referencia y compárenla con la de la curva plana.",
+      "¿Qué fuentes de error explican la diferencia entre Mg y mv²/L? ¿Cómo la reducirían?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Con dinamómetro (actividad de la malla): fíjenlo con cinta en el centro de una mesa lisa, aten el hilo a su gancho y hagan girar sobre la mesa un carrito o un disco liviano con radio fijo; graben la lectura con el celular en cámara lenta para tres rapideces y comprueben que la tensión crece con v². Con celular: la app gratuita phyphox (experimento «Aceleración centrípeta») mide la velocidad angular con el giroscopio y la aceleración con el acelerómetro; con el celular bien sujeto con cinta al asiento de una silla giratoria que el docente hace girar despacio, se grafica a contra ω² y la pendiente da el radio. Sin patio ni materiales: en la simulación PhET «Gravedad y órbitas» se puede quitar la gravedad y ver que el cuerpo sigue en línea recta por la tangente, y medir el período de órbitas de distinto radio.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U6-6.5/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/aceleracion-fuerza-centripeta/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/aceleracion-fuerza-centripeta/G10",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "grados": [
+      10
+     ],
+     "titulo": "Girar es acelerar: qué fuerza real jala hacia el centro",
+     "explicacion": "En un redondel, aunque el velocímetro no cambie, la dirección de la velocidad cambia: eso es aceleración. Apunta al centro y vale a = v²/r. Por la segunda ley hace falta una fuerza neta hacia el centro, F = mv²/r. La fuerza centrípeta no es una fuerza nueva: es el papel que cumple una fuerza real. En un tapón con hilo es la tensión; en una curva plana, la fricción de las llantas; en una peraltada, parte de la normal; en un satélite, la gravedad. Lo que sientes hacia afuera en el bus es inercia, no una fuerza.",
+     "ejemplo": "Un carro de 1000 kg da la vuelta a un redondel plano de 20 m de radio a 10 m/s (36 km/h): necesita 1000 · 10² / 20 = 5000 N hacia el centro, y esa fuerza la pone la fricción entre las llantas y el pavimento.",
+     "practica": "ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+     "comprobacion": "ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+     "duracion_min": 12,
+     "criterio": "Responde correctamente la comprobación: en una curva peraltada sin fricción, una situación que no aparece en la explicación, reconoce que la normal inclinada aporta la fuerza hacia el centro y que el resultado no depende de la masa.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/aceleracion-fuerza-centripeta",
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:fisica/aceleracion-fuerza-centripeta/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/movimiento-circular-uniforme/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/movimiento-circular-uniforme/G10",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/movimiento-circular-uniforme",
+     "grados": [
+      10
+     ],
+     "titulo": "Período, frecuencia y una velocidad que siempre es tangente",
+     "explicacion": "Una rueda de Chicago gira con ritmo constante. El período T es el tiempo de una vuelta, y la frecuencia, f = 1/T, las vueltas por segundo. Todos sus puntos giran el mismo ángulo en el mismo tiempo: comparten la velocidad angular, ω = 2π/T. Pero un punto más alejado del eje recorre una circunferencia mayor, así que su rapidez tangencial, v = 2πr/T = ωr, es mayor. La velocidad apunta siempre tangente a la circunferencia: si nada jalara hacia el centro, el cuerpo seguiría en línea recta por esa tangente.",
+     "ejemplo": "La rueda de Chicago de unas fiestas patronales tarda 20 s en dar una vuelta. Una canasta a 8.0 m del eje recorre 2π · 8.0 m ≈ 50 m por vuelta, así que va a unos 2.5 m/s; en lo más alto, su velocidad es horizontal.",
+     "practica": "ACT:fisica/movimiento-circular-uniforme/practica-G10",
+     "comprobacion": "ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: predice cómo cambian el período y la rapidez tangencial cuando se duplica la frecuencia de giro, en una situación distinta de la explicación.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/movimiento-circular-uniforme",
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:fisica/movimiento-circular-uniforme/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:fisica/segunda-ley-newton/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:fisica/segunda-ley-newton/G10",
+     "tipo": "microtema",
+     "concepto": "CON:fisica/segunda-ley-newton",
+     "grados": [
+      10
+     ],
+     "titulo": "La fuerza neta decide hacia dónde cambia la velocidad",
+     "explicacion": "Una carreta de mercado vacía arranca fácil; llena, cuesta más: la misma fuerza neta acelera menos a más masa. La segunda ley lo resume: ΣF = ma, donde ΣF es la suma de todas las fuerzas con su dirección y sentido, y la aceleración apunta hacia donde apunta ΣF. La fuerza neta no dice hacia dónde se mueve el cuerpo, sino hacia dónde cambia su velocidad: es cero si la velocidad es constante en rapidez y dirección, apunta hacia atrás si frena y hacia el centro si da una curva.",
+     "ejemplo": "Un bus de 10 000 kg arranca en la parada: el pavimento lo empuja hacia adelante con 18 000 N y el aire y la rodadura se oponen con 3000 N. La fuerza neta es 15 000 N hacia adelante y a = 15 000 N / 10 000 kg = 1.5 m/s².",
+     "practica": "ACT:fisica/segunda-ley-newton/practica-G10",
+     "comprobacion": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+     "duracion_min": 10,
+     "criterio": "Responde correctamente la comprobación: suma fuerzas con su sentido para hallar la aceleración de una niña en el punto más bajo de un columpio, donde la rapidez no cambia pero la aceleración no es cero.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:fisica/segunda-ley-newton",
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:fisica/segunda-ley-newton/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  }
+ ]
+}
