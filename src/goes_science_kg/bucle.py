@@ -216,7 +216,8 @@ VECINAS = (0, -1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8)
 PAISES = {"ENG": "inglaterra", "SG": "singapur", "EE": "estonia", "AU": "australia", "UY": "uruguay",
           "TW": "taiwan", "ON": "ontario", "CO": "colombia", "HK": "hong_kong", "KR": "corea", "JP": "japon"}
 
-_RE_TEMA = re.compile(r"\bG\d\d-[A-Z]{3}-U\d+-(?:f\d+|\d+\.\d+(?:-f\d+)?(?:\s*(?:/|y|,)\s*\d+\.\d+)*)")
+# Ids de tema, también los nuevos de la V3 («…-v3», spec 15): sin el sufijo se leería OTRO tema de la V2.
+_RE_TEMA = re.compile(r"\bG\d\d-[A-Z]{3}-U\d+-(?:f\d+|\d+\.\d+(?:-f\d+)?(?:-v3)?(?:\s*(?:/|y|,)\s*\d+\.\d+)*)")
 _RE_ID_PAIS = re.compile(r"\b[A-Z]{2,3}-[\w-]*\w")                  # candidato a id de objetivo de un país
 _RE_FORMA_OBJ = re.compile(r"-(?:p\d{3}|[A-Z]+\d+)-\d{2}$")         # forma de id de objetivo (si no existe: inventado)
 _RE_CODIGO = re.compile(r"\b(AC9S[FU\d]*[UHI]\d{2}|ACS(?:CH|BL|PH|ES)\d{3}|PISA-[A-Z]{1,2}\d+|"

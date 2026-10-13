@@ -312,3 +312,9 @@ def test_la_vuelta_2_de_una_serie_solo_toma_sus_cambios():
     assert bucle._a_impugnar(x, 2, None, "inc9") and not bucle._a_impugnar(x, 2, None)
     assert not bucle._a_impugnar(otra, 2, None, "inc9") and bucle._a_impugnar(otra, 2, None)
     assert not bucle._a_impugnar(hecha, 2, None)
+
+
+def test_el_verificador_reconoce_los_ids_nuevos_de_la_v3():
+    """Sin el sufijo «-v3», TEMA:G03-CIE-U5-5.11-v3 se leía como G03-CIE-U5-5.11 (otro tema de la V2)."""
+    r = bucle.verificar("TEMA:G03-CIE-U5-5.11-v3", "Estrategias que favorecen la supervivencia de la desce")
+    assert r["refs"] == ["G03-CIE-U5-5.11-v3"] and r["estado"] == "anclada"
