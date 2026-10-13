@@ -148,6 +148,18 @@ revisión técnica interina mientras no haya un equipo del MINED.
 Corrigió hallazgos (efecto invernadero, potencia eléctrica, leyes de los gases, fuerzas intermoleculares) y siete
 errores del contenido de 7.° y 9.°. Snapshots por ciencia en `panel/bucle/`.
 
+## Fase 9 · Entrega V3 del MINED y refuerzo por tema (spec 15)
+Decisiones del responsable (2026-10-13): la V3 es la malla vigente, el refuerzo va en copias de las matrices del MINED
+con filas «Propuesta GOES» y se inyectan correcciones, recomendaciones del panel, hallazgos del contraste y lo que la
+V3 quitó.
+- [ ] 15.0 Ingesta de la V3 y correspondencia V2 → V3
+- [ ] 15.1 Migración de las capas por la correspondencia
+- [ ] 15.2 Etiquetado de los temas nuevos y parecidos (Vertex con aprobación)
+- [ ] 15.3 Grafo y contraste recalculados sobre la V3; inciertas nuevas al panel y al bucle
+- [ ] 15.4 Catálogo de refuerzos por tema
+- [ ] 15.5 Redacción (`redactor-refuerzos`) y revisión del panel y del bucle
+- [ ] 15.6 Matrices reforzadas y resumen por grado
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).
