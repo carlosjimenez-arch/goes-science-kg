@@ -390,3 +390,19 @@ def test_barajar_conserva_la_clave_y_el_diagnostico(ped):
         assert barajar(act, estudiante) == (m, a_original)                 # determinista
         claves.add(m["correcta"])
     assert len(claves) > 1                                                 # la clave no queda siempre en la misma letra
+
+
+def test_el_paquete_de_clase_trae_texto_crudo_y_dice_lo_que_falta():
+    """Paquete de clase (insumo para generar clases): fila completa, texto ORIGINAL de los países con página,
+    ideas previas, actividades y una completitud honesta (los datos de referencia no se inventan)."""
+    from goes_science_kg.aprendizaje.paquete import paquete
+
+    p = paquete("TEMA:G09-CIE-U2-2.4")
+    assert p["tema"]["texto_completo_de_la_fila"] and p["fuentes"]["marcos"]
+    assert all(f["texto_original"] and f["documento"] and f["pagina"] for f in p["fuentes"]["paises"])
+    assert p["ideas_previas"] and all(d["senales"] for d in p["ideas_previas"])
+    assert set(p["completitud"]) == {"texto_crudo", "ideas_previas", "experimentos", "capa_pedagogica",
+                                     "datos_de_referencia", "revision_del_panel"}
+    if not p["datos_de_referencia"]["valores"]:
+        assert p["completitud"]["datos_de_referencia"] == "pendiente_de_fuente"
+    assert paquete("TEMA:G09-CIE-U3-3.6")["tema"]["id"] == "G09-CIE-U3-3.3"   # absorbido por la V3

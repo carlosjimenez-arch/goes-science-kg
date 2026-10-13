@@ -529,6 +529,16 @@ def tutor_evaluar(actividad: str, respuesta: str,
     typer.echo(json.dumps(asdict(Evaluador(modelo).evaluar(act, respuesta)), ensure_ascii=False, indent=1))
 
 
+@tutor_app.command("paquete")
+def tutor_paquete(temas: Annotated[list[str], typer.Argument(help="ids de tema (TEMA:… o sin prefijo)")]) -> None:
+    """Paquete de clase por tema (texto crudo, ideas previas, actividades, experimentos, datos y completitud) →
+    entregas/paquetes_clase/."""
+    from goes_science_kg.aprendizaje.paquete import escribir
+
+    for p in escribir(temas):
+        typer.echo(f"→ {relativa(p)}")
+
+
 @tutor_app.command("preparar-actividades")
 def tutor_preparar_actividades(temas: list[str]) -> None:
     """Lotes para el subagente redactor-actividades (uno por objetivo) → data/pedagogia/lotes/."""

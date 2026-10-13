@@ -248,3 +248,37 @@ con objetivos, aislamiento de las capas compartidas y determinismo).
 - cómo se informa al docente;
 - qué grados y asignaturas entran al piloto;
 - si los huecos de secuencia que detecta el tutor se llevan a la revisión de la malla.
+
+## 11. Paquete de clase por tema (2026-10-13)
+Quien genera clases señaló que el snapshot del refuerzo (spec 15) no le sirve: revisa la malla, pero no trae lo que
+necesita para una clase. Le faltaban cuatro cosas:
+1. **texto crudo**;
+2. **datos de referencia** (p. ej. pKa);
+3. **ideas previas erróneas**;
+4. **experimentos con procedimiento**.
+
+Además, 10.° y 11.° no tenían capa pedagógica.
+
+`uv run gskg tutor paquete <tema>…` escribe en `entregas/paquetes_clase/` un `<tema>.json`, un `<tema>.md` y un índice:
+- **Texto crudo:**
+  - la fila completa de la malla V3, con todas sus celdas, y lo que absorbió de la V2;
+  - hasta 3 objetivos por país que enseñan sus conceptos, con su texto ORIGINAL, documento y página;
+  - los objetivos de los marcos.
+- **Conceptos y bases:** con si la malla enseña cada base antes del tema.
+- **Ideas previas erróneas:** las dificultades de la capa (DIF:), con su señal en una respuesta.
+- **Capa pedagógica:** actividades, microtemas y **experimentos** (EXP:, elemento nuevo). Cada experimento trae
+  propósito, materiales de escuela salvadoreña, procedimiento numerado, seguridad, datos esperados, análisis y
+  duración de 1 a 2 sesiones de 55 minutos. El panel lo revisa como el resto.
+- **Datos de referencia:** solo de `data/interim/datos_referencia.json`, extraídos de una tabla citable en
+  `data/fuentes/` con su página. Cada valor trae `magnitud`, `sustancia`, `valor`, `unidad`, `condiciones`, `fuente`,
+  `pagina` y `conceptos`. Si no hay tabla, el paquete lo dice y lista dónde hace falta un dato. Nunca se inventan
+  valores.
+- **Refuerzo de la malla:** lo que toca el tema, marcado como propuesta GOES y no del MINED.
+- **`completitud`:** el estado de cada hueco y de la revisión del panel. Para que nadie use un paquete creyéndolo
+  completo, se lee antes que todo lo demás.
+
+Temas del piloto del generador de clases (con la V3):
+- 9.° 2.4 y 11.° QUI 12.1 siguen iguales;
+- 9.° 3.6 está ahora en 3.3 y 11.° FIS 1.3, en 1.2;
+- 10.° FIS 6.4 y 10.° QUI 13.8 se quitaron. Sus temas más cercanos son 6.5 y 5.12, con poca coincidencia; elegir
+  otro tema le corresponde a quien genera las clases.
