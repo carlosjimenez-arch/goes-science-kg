@@ -1,0 +1,2663 @@
+{
+ "lote": "b1-inc9_refutador_quimica_1",
+ "vuelta": 1,
+ "rol": "refutador",
+ "disciplina": "quimica",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-quimica.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "INC:9_11:CON:quimica/autoionizacion-del-agua-y-ph",
+   "tipo": "clase_incierta",
+   "titulo": "Autoionización del agua, Kw y cálculo de pH (CON:quimica/autoionizacion-del-agua-y-ph, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/autoionizacion-del-agua-y-ph",
+     "nombre": "Autoionización del agua, Kw y cálculo de pH",
+     "definicion": "Kw relaciona [H+] y [OH-]; el pH y pOH son escalas logarítmicas calculadas a partir de esas concentraciones.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 9,
+     "estricto": 9
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G09-CIE-U3-3.11 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 13): Equilibrio ácido base. 3.11. Calcula el valor del pH de una solución.",
+     "G09-CIE-U3-3.12 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 14): Equilibrio ácido base. 3.12. Clasificación de soluciones en neutras, ácidas y básicas.",
+     "G09-CIE-U4-4.17 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 19): Biología marina. 4.17. Explica la acidificación del océano a partir de mediciones repetidas del pH de agua expuesta a CO2 y de su efecto sobre materiales de carbonato de calcio.",
+     "G11-QUI-U4-4.12 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 49): Lluvia ácida. 4.12. Explica con ecuaciones la formación de la lluvia ácida a partir de SO₂ y NOₓ, calcula el pH de la lluvia natural con CO₂ y evalúa con datos reales sus efectos en el territorio.",
+     "G11-QUI-U4-4.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 39): Equilibrios ácido-base. 4.2. Calcula [H₃O⁺] y [OH⁻] a partir de Kw y explica por qué el pH de la neutralidad cambia con la temperatura.",
+     "G11-QUI-U4-4.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 40): Equilibrios ácido-base. 4.3. Calcula el pH y el pOH de disoluciones de ácidos y bases fuertes y de sus diluciones, y contrasta el cálculo con mediciones experimentales."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p004-15 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 4, SV 11–11, especializacion]: Usar representaciones matemáticas para resolver problemas, incluyendo el cálculo de potenciales de celda, uso del mol en análisis volumétrico y cálculo de pH."
+     },
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym_ele-p036-07 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 36, SV 10–11, especializacion]: Calcula el pH de soluciones de ácidos y bases fuertes y débiles; prepara soluciones de concentración específica y determina su pH."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p022-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 22, SV 8–9, nucleo]: Describir la neutralidad, acidez y alcalinidad relativas según el efecto de la concentración de iones de hidrógeno en el valor numérico del pH."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p033-25 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 33, SV 9–11, especializacion]: Conocer la fórmula del pH como el logaritmo negativo de la concentración de iones hidrógeno acuosos."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_45-p116-11 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 116, SV 9–10, nucleo_parcial]: Relacionar la fuerza de ácidos y bases con su ionización, la concentración de iones hidrógeno con el pH, y describir las sales de neutralización."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_hwahak-p131-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 131, SV 10–10, especializacion]: Comprender la autoionización del agua y su constante de ionización, y expresar la concentración de iones de hidrógeno como pH."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p117-07 [ON_Science_Grades11-12_2008.pdf p. 117, SV 11–11, especializacion]: Identificar constantes de equilibrio comunes, incluyendo Keq, Ksp, Kw, Ka, Kb y Kp, y escribir las expresiones matemáticas para cada una."
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p013-07 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 13, SV 11–11, nucleo_parcial]: Calcular la concentración de iones hidrógeno [H+(aq)] y los valores de pH para ácidos y bases fuertes."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p031-18 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8, nucleo]: Describir la relación entre los iones hidrógeno y los iones hidroxilo en soluciones acuosas."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/autoionizacion-del-agua-y-ph",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es un artefacto de no contar JP 化学基礎 ni SG H1 (núcleo parcial): la relación entre [H⁺] y pH está en el núcleo de ENG Combined y de TW (secundaria baja), y JP la trata en 化学基礎. La V2 calcula pH = −log[H⁺] en 9.°, sobre la mediana (9,0). Matiz: Kw y su cálculo (11.°) son de electiva en AU, EE, HK, KR y ON.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.11 (fila 13)",
+       "cita": "En 9.° aplica la definición logarítmica para calcular el pH.",
+       "cita_literal": "para calcular el pH de distintas soluciones"
+      },
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 22",
+       "cita": "Núcleo de ENG: el pH baja una unidad cuando [H⁺] se multiplica por diez.",
+       "cita_literal": "as hydrogen ion concentration increases by a factor of ten the pH value"
+      },
+      {
+       "fuente": "JP-QUI-jp_45-p116-11",
+       "cita": "化学基礎 (núcleo parcial): concentración de H⁺ y pH.",
+       "cita_literal": "酸や塩基の強弱と電離度の大小との関係も扱うこと"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p031-18",
+       "cita": "TW, secundaria baja: relación entre H⁺ y OH⁻ en disolución.",
+       "cita_literal": "水溶液中氫離子與氫氧根離子的關係"
+      },
+      {
+       "fuente": "KR-QUI-kr_hwahak-p131-02",
+       "cita": "Kw y pH en KR están en la electiva 화학."
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 4,
+    "ubicada": 1,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/cambios-fisicos-y-quimicos",
+   "tipo": "clase_incierta",
+   "titulo": "Cambios físicos y químicos (CON:quimica/cambios-fisicos-y-quimicos, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/cambios-fisicos-y-quimicos",
+     "nombre": "Cambios físicos y químicos",
+     "definicion": "Los cambios físicos no producen materiales nuevos; los químicos (combustión, descomposición, oxidación) sí producen sustancias nuevas.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "no_retomado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 2
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 7.5,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G02-CIE-U1-1.7 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 9): Transformaciones de la materia.. Efectúa un experimento que muestra una o más propiedades químicas de la materia.",
+     "G02-CIE-U1-1.6 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 8): Transformaciones de la materia.. Reconoce las propiedades químicas de materiales o sustancias comunes en su entorno.",
+     "G03-CIE-U2-2.1 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 3): Cambios físicos y químicos.. 2.1. Identifica cambios físicos y químicos.",
+     "G03-CIE-U2-2.2 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 4): Cambios físicos y químicos.. 2.2. Identifica cambios físicos y químicos reversibles e irreversibles mediante la experimentación.",
+     "G06-CIE-U4-4.9 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 11): Reacciones químicas.. 4.9. Identifica evidencias de reacciones químicas a partir de experimentos.",
+     "G08-CIE-U7-7.11 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 13): Sistemas digestivos. 7.11. Efectúa un experimento para simular los procesos químicos o mecánicos que intervienen en la digestión."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-23 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Reconocer que todas las reacciones químicas implican la creación de nuevas sustancias y transformaciones de energía, observables como cambios de temperatura o e"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p026-16 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 26, SV 7–9, nucleo]: Conocer las condiciones para que ocurran reacciones químicas y reconocer una reacción química por sus características."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p020-10 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 20, SV 8–9, nucleo]: Recordar y explicar las características principales del modelo de partículas respecto a los estados de la materia y sus cambios, distinguiendo entre cambios fís"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p052-17 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 52, SV 9–11, especializacion]: Reconocer que el craqueo permite obtener moléculas más pequeñas, incluyendo alcanos y alquenos."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-QUI-jp_45-p115-04 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 115, SV 9–10, nucleo_parcial]: Indagar sobre los cambios de la materia y su uso mediante observaciones y experimentos, descubriendo y expresando regularidades y relaciones."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jung-p060-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 60, SV 6–8, nucleo]: Conocer el significado de los cambios físicos y químicos, y observar que se forman nuevas sustancias en los cambios químicos."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_snc1w-p051-05 [ON_Science_Grade9_SNC1W_2022.pdf p. 51, SV 8–8, nucleo]: Investigar las propiedades, cambios e interacciones de la materia que son importantes para el equilibrio dinámico y la sostenibilidad de los ecosistemas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p022-01 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 22, SV 11–11, nucleo_parcial]: Aplicar el conocimiento de la estructura tridimensional para interpretar fenómenos reales como calentar claras de huevo o añadir vinagre a la leche."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p027-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8, nucleo]: Describir las propiedades físicas y químicas de la materia."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "retomado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/cambios-fisicos-y-quimicos",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "retomado",
+     "justificacion": "La V2 sí lo retoma en 9.°–11.°: Química 10.° (9.3) pide distinguir cambios físicos de químicos y evaluar si disolver azúcar o un cambio de estado podrían confundirse con una reacción. «No retomado» venía de no contar esa fila, donde el concepto está en el nivel cognitivo y las microhabilidades. Introducido en 2.°–3.°, es una espiral normal.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.3 (fila 79)",
+       "cita": "10.°: el razonamiento pedido es distinguir cambio físico de químico.",
+       "cita_literal": "Razonar: distinguir cambios físicos de químicos"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.3 (fila 79)",
+       "cita": "Pregunta guía de la fila.",
+       "cita_literal": "nos permiten afirmar que ocurrió una reacción química y no solo un cambio físico"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U2-2.1 (fila 3)",
+       "cita": "Introducción en 3.°.",
+       "cita_literal": "Identifica cambios físicos y químicos"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 3,
+    "anclada": 3,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/catalizadores",
+   "tipo": "clase_incierta",
+   "titulo": "Catalizadores (CON:quimica/catalizadores, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/catalizadores",
+     "nombre": "Catalizadores",
+     "definicion": "Sustancias que ofrecen una ruta de menor energía de activación sin consumirse; incluye catálisis homogénea, heterogénea y enzimática.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.75,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 4): Biomoléculas.. 5.2. Explica el funcionamiento general de la actividad enzimática a partir de un experimento.",
+     "G10-QUI-U12-12.14 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 105): Equilibrio y termodinámica. 12.14. Justifica la presión, temperatura y catalizador del proceso Haber integrando Le Châtelier, K y cinética, y valora su impacto en la agricultura y el ambiente.",
+     "G10-QUI-U12-12.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 98): Factores que modifican la velocidad. 12.7. Explica cómo un catalizador modifica el mecanismo y la energía de activación sin alterar ΔH, y clasifica catálisis homogéneas, heterogéneas y enzimáticas.",
+     "G11-QUI-U7-7.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 67): Industria química de base. 7.2. Justifica las condiciones de presión, temperatura y catalizador del proceso de contacto con el principio de Le Châtelier y relaciona el amoníaco del proceso Haber con la p"
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-34 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Comprender cómo controlar las velocidades de las reacciones químicas, incluyendo el uso de una variedad de catalizadores."
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym-p018-18 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 18, SV 10–11, nucleo]: Investigar y justificar el efecto de los factores que influyen en la velocidad de reacción y explicar su alteración cotidiana."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p023-10 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 23, SV 8–9, nucleo]: Describir las características de los catalizadores y su efecto en las velocidades de reacción."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p051-07 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 51, SV 9–11, especializacion]: Describir el uso de convertidores catalíticos en sistemas de escape para minimizar contaminantes atmosféricos."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p119-17 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 119, SV 10–11, especializacion]: Tratar reacciones simples y los factores que las afectan, como la concentración, la temperatura y la presencia de catalizadores."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jinro_qui-p191-19 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 191, SV 10–11, especializacion]: Identificar y explicar los factores que afectan la velocidad de una reacción química."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p115-08 [ON_Science_Grades11-12_2008.pdf p. 115, SV 11–11, especializacion]: Explicar, usando la teoría de colisiones y diagramas de energía potencial, cómo factores como temperatura, área superficial, catalizadores y concentración contr"
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p017-04 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 17, SV 11–11, nucleo_parcial]: Explicar y usar términos como velocidad de reacción, ecuación de velocidad, orden, constante, vida media, energía de activación y catálisis."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p031-22 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8, nucleo]: Reconocer experimentalmente la velocidad de reacción y los factores que la afectan, como naturaleza, temperatura, concentración, área de contacto y catalizadore"
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "retomado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/catalizadores",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "retomado",
+     "justificacion": "«Solo especialización» no se sostiene: el núcleo de ENG Combined describe los catalizadores y su efecto, y los enlaza con las enzimas (pp. 23–24); TW los incluye en secundaria baja. La V2 introduce la idea con enzimas que aceleran reacciones (6.°), nombra el catalizador como factor de rapidez en 9.° y lo formaliza en 10.° (energía de activación, catálisis enzimática).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.2 (fila 4)",
+       "cita": "6.°: las enzimas como catalizadores biológicos.",
+       "cita_literal": "Reconoce las enzimas como proteínas que aceleran reacciones en los seres vivos"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.2 (fila 4)",
+       "cita": "9.°: el catalizador entre los factores de la rapidez.",
+       "cita_literal": "temperatura, concentración, superficie de contacto y catalizador"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.7 (fila 98)",
+       "cita": "10.°: formalización.",
+       "cita_literal": "Explica cómo un catalizador modifica el mecanismo y la energía de activación"
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p023-10",
+       "cita": "Núcleo de ENG Combined.",
+       "cita_literal": "describe the characteristics of catalysts and their effect on rates"
+      },
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 24",
+       "cita": "ENG enlaza enzimas y catalizadores.",
+       "cita_literal": "recall that enzymes act as catalysts in biological systems"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 5,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/celdas-galvanicas",
+   "tipo": "clase_incierta",
+   "titulo": "Celdas galvánicas (CON:quimica/celdas-galvanicas, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 4,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G11-QUI-U6-6.11 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 65): Celdas electroquímicas y potenciales redox. 6.11. Explica la corrosión del hierro como un proceso electroquímico y argumenta el método de protección más adecuado para un metal expuesto al ambiente coste",
+     "G11-QUI-U6-6.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 59): Electrolitos y celdas galvánicas. 6.5. Construye una celda galvánica con implementos cotidianos.",
+     "G11-QUI-U6-6.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 60): Electrolitos y celdas galvánicas. 6.6. Evalúa una secuencia de instrucciones para la construcción de una celda electroquímica.",
+     "G11-QUI-U6-6.9 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 63): Celdas electroquímicas y potenciales redox. 6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos.",
+     "G04-CIE-U1-1.8 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Máquinas y energía», fila 10): Tecnología en el entorno.. 1.8. Identifica las fuentes de energía de objetos tecnológicos de uso diario.",
+     "G11-QUI-U6-6.4 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 58): Electrolitos y celdas galvánicas. 6.4. Compara la conductividad eléctrica de electrolitos a diferentes concentraciones."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p004-01 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 4, SV 11–11, especializacion]: Comprender cómo se modelan las reacciones redox y las celdas galvánicas y electrolíticas en términos de transferencia de electrones."
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym-p019-14 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 19, SV 10–11, nucleo]: Analiza los principios generales de los procesos redox relacionados con metales en la electrólisis, la corrosión y las fuentes de corriente química."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p010-16 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 10, SV 10–11, especializacion]: Comprender los potenciales de electrodo y sus aplicaciones."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p043-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 43, SV 9–11, especializacion]: Distinguir entre celdas primarias y secundarias."
+     },
+     "JP": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_45-p116-07 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 116, SV 9–10, nucleo_parcial]: Identificar agentes oxidantes y reductores representativos, y explicar la tendencia a la ionización de los metales y la reacción de la pila de Daniell."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jinro_qui-p205-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 205, SV 10–11, especializacion]: Construir una celda utilizando placas metálicas y electrolitos, y explorar las condiciones necesarias para que la celda sea eficiente."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p106-02 [ON_Science_Grades11-12_2008.pdf p. 106, SV 11–11, especializacion]: Las tecnologías que transforman la energía pueden tener costos y beneficios sociales y ambientales."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h2_qui-p011-05 [SG_ALevel_H2_Chemistry_9476_2027.pdf p. 11, SV 11–11, especializacion]: Describir el funcionamiento y las aplicaciones de baterías y celdas de combustible."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p027-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8, nucleo]: Reconocer que las baterías son dispositivos que transforman energía química en energía eléctrica."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/celdas-galvanicas",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Solo especialización» falla: JP enseña la pila (energía química a eléctrica) en el núcleo de 中3, TW en secundaria baja y EE en el gimnasio común; el conteo automático no suma el antecedente de JP. «Retomado» tampoco: antes de 9.° la V2 solo usa pilas como fuente en circuitos. La introduce en Química 11.°; sin consenso de 5 países no se afirma tardío.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.5 (fila 59)",
+       "cita": "11.°: primera vez que la V2 explica la pila como redox.",
+       "cita_literal": "convierten energía química en eléctrica mediante reacciones redox espontáneas"
+      },
+      {
+       "fuente": "JP-8361233612200000",
+       "cita": "JP 中学 3.° (2017), núcleo: pila y conversión de energía.",
+       "cita_literal": "化学エネルギーが電気エネルギーに変換されていることを知ること"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p027-03",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "電池是化學能轉變成電能的裝置"
+      },
+      {
+       "fuente": "EE-QUI-ee_gym-p019-14",
+       "cita": "EE, gimnasio común: fuentes químicas de corriente.",
+       "cita_literal": "elektrolüüsi, korrosiooni ja keemilise vooluallika korral"
+      },
+      {
+       "fuente": "TEMA:G02-CIE-U2-2.8 (fila 11)",
+       "cita": "2.°: la pila solo como eslabón de una cadena de energía.",
+       "cita_literal": "Ordena y explica la secuencia pila"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 5,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/composicion-porcentual-y-formulas",
+   "tipo": "clase_incierta",
+   "titulo": "Composición porcentual y fórmulas empírica y molecular (CON:quimica/composicion-porcentual-y-formulas, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/composicion-porcentual-y-formulas",
+     "nombre": "Composición porcentual y fórmulas empírica y molecular",
+     "definicion": "Porcentaje en masa de cada elemento en un compuesto y su uso para deducir la fórmula empírica y la molecular.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.75,
+     "n_paises": 2
+    },
+    "temas_v2": [
+     "G10-QUI-U2-2.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 21): La cantidad de sustancia. 2.5. Determina la fórmula empírica y la fórmula molecular de un compuesto a partir de su composición centesimal y de su masa molar.",
+     "G10-QUI-U2-2.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22): La cantidad de sustancia. 2.6. Deduce la fórmula molecular de un compuesto orgánico a partir de datos de su análisis elemental y reconoce isómeros con propiedades distintas.",
+     "G06-CIE-U4-4.4 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 6): Enlace covalente.. 4.4. Explica el concepto de molécula y enlace covalente.",
+     "G10-BIO-U1-1.1 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 3): Carbohidratos. 1.1. Identifica la función carbohidrato y sus estructuras.",
+     "G10-QUI-U2-2.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 17): Leyes de la combinación química. 2.1. Comprueba la conservación de la masa en un sistema cerrado y aplica las leyes de las proporciones definidas y múltiples a datos de composición de compuestos.",
+     "G10-QUI-U2-2.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 19): Leyes de la combinación química. 2.3. Aplica la ley de los volúmenes de combinación y la hipótesis de Avogadro para deducir la fórmula de gases y la existencia de moléculas diatómicas."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p001-14 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 1, SV 10–10, especializacion]: Seleccionar y usar representaciones matemáticas para resolver problemas y predecir, incluyendo el cálculo de composición porcentual y el uso del concepto de mol"
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p021-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 21, SV 8–9, nucleo]: Deducir la fórmula empírica de un compuesto a partir del número relativo de átomos presentes, o de un modelo o diagrama, y viceversa."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p018-04 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 18, SV 9–11, especializacion]: Realizar cálculos relacionados con fórmulas químicas, sentando las bases para los cálculos de moles."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch3u-p100-03 [ON_Science_Grades11-12_2008.pdf p. 100, SV 10–10, especializacion]: Realizar una indagación para calcular la composición porcentual de un compuesto, como por ejemplo un hidrato."
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p016-01 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 16, SV 11–11, nucleo_parcial]: Calcular fórmulas empíricas y moleculares utilizando datos de combustión o composición por masa."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "solo_especializacion",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/composicion-porcentual-y-formulas",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "solo_especializacion",
+     "justificacion": "«Retomado» se apoya en una etiqueta espuria (6.°, molécula y enlace covalente): la V2 introduce composición centesimal y fórmulas empírica y molecular en Química 10.°. En los países es de electiva (AU, ON SCH3U, HK; SG H1 como núcleo parcial). El único núcleo pleno, ENG Combined, deduce la fórmula empírica de proporciones de átomos, sin datos de masa. Ninguna clase sin desajuste tiene respaldo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U2-2.5 (fila 21)",
+       "cita": "10.°: el contenido completo.",
+       "cita_literal": "Determina la fórmula empírica y la fórmula molecular de un compuesto a partir de su composición centesimal"
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U4-4.4 (fila 6)",
+       "cita": "La fila de 6.° no trata composición ni fórmulas empíricas.",
+       "cita_literal": "Explica el concepto de molécula y enlace covalente"
+      },
+      {
+       "fuente": "ON-QUI-on_sch3u-p100-03",
+       "cita": "ON, electiva SCH3U.",
+       "cita_literal": "calculate the percentage composition of a compound"
+      },
+      {
+       "fuente": "SG-QUI-sg_h1_qui-p016-01",
+       "cita": "SG H1, núcleo parcial.",
+       "cita_literal": "calculate empirical and molecular formulae"
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p021-04",
+       "cita": "ENG Combined: solo desde el número relativo de átomos.",
+       "cita_literal": "deduce the empirical formula of a compound from the relative"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 5,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/cromatografia",
+   "tipo": "clase_incierta",
+   "titulo": "Cromatografía (CON:quimica/cromatografia, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/cromatografia",
+     "nombre": "Cromatografía",
+     "definicion": "Técnica que separa componentes por su interacción diferencial con una fase móvil y una estacionaria; determina composición y pureza.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G10-QUI-U1-1.14 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 16): La materia y sus propiedades. 1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "G10-BIO-U2-2.14 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 27): Fotosíntesis. 2.14. Efectúa un experimento de extracción y separación de pigmentos fotosintéticos."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p003-05 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 3, SV 10–10, especializacion]: Usar datos de técnicas de cromatografía para determinar la composición y pureza de sustancias, basándose en la variación de las interacciones en las fases móvil"
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p024-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 24, SV 8–9, nucleo]: Interpretar cromatogramas, incluyendo la medición de los valores de Rf."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p090-08 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 90, SV 9–11, especializacion]: Saber que la extracción líquido-líquido y los métodos cromatográficos pueden utilizarse para separar una mezcla de sustancias."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-QUI-jp_45-p116-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 116, SV 9–10, nucleo_parcial]: Comprender y aplicar métodos de separación de mezclas, incluyendo filtración, destilación, extracción, recristalización y cromatografía."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_k326_k328-p027-04 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 27, SV 9–10, nucleo_parcial]: Describir métodos de separación y purificación de mezclas: uso de disolventes, filtración, cristalización, evaporación, destilación simple y fraccionada, y crom"
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p027-08 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8, nucleo]: Separar mezclas experimentalmente utilizando métodos como la cristalización, la filtración y la cromatografía en papel simple."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "retomado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/cromatografia",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "retomado",
+     "justificacion": "Ninguna lectura vio la fila de 6.°: la V2 separa pigmentos con cromatografía en papel e interpreta el cromatograma en 6.°, y la retoma en 10.° con el cálculo del factor de retención (Química y Biología). Hay referentes en el núcleo (ENG Combined mide Rf; TW hace cromatografía en papel en secundaria baja), así que «sin referente» es falso.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.16 (fila 18)",
+       "cita": "6.°: técnica e interpretación.",
+       "cita_literal": "Separa pigmentos con cromatografía en papel"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U1-1.14 (fila 16)",
+       "cita": "10.°: cálculo de Rf.",
+       "cita_literal": "calcula el factor de retención en una cromatografía en papel"
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p024-04",
+       "cita": "Núcleo de ENG Combined.",
+       "cita_literal": "interpret chromatograms, including measuring Rf values"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p027-08",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "結晶法、過濾法及簡易濾紙色層分析法"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/diagramas-de-fases",
+   "tipo": "clase_incierta",
+   "titulo": "Diagramas de fases (CON:quimica/diagramas-de-fases, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/diagramas-de-fases",
+     "nombre": "Diagramas de fases",
+     "definicion": "Gráfico presión-temperatura que muestra las condiciones de equilibrio entre fases, con punto triple y punto crítico.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "sin_referente"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-FIS-U12-12.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 92): Fases de la materia. 12.9. Interpreta diagramas de fase para predecir el estado de una sustancia y la temperatura de ebullición según la presión.",
+     "G10-QUI-U7-7.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 66): Diagramas de fases. 7.5. Predice el estado de agregación del agua y del CO₂ a una presión y temperatura dadas usando su diagrama de fases.",
+     "G06-CIE-U3-3.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Electricidad y magne», fila 3): Magnitudes basicas de la electricidad.. 3.1. Mide voltaje y corriente eléctrica empleando un multímetro.",
+     "G08-CIE-U8-8.4 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 6): El sistema Sol-Tierra-Luna. 8.4. Modela las fases de la Luna y los eclipses a partir de las posiciones relativas del Sol, la Tierra y la Luna.",
+     "G10-BIO-U7-7.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 64): Anabolismo fotosintético. 7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato.",
+     "G10-FIS-U12-12.1 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 84): Temperatura y su medición. 12.1. Deduce y aplica las relaciones lineales de conversión entre las escalas Celsius, Fahrenheit y Kelvin."
+    ],
+    "paises": {
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p117-11 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 117, SV 10–11, especializacion]: Comprender los puntos de ebullición y fusión según las fuerzas intermoleculares y enlaces, y la relación entre energía, equilibrio de fases, temperatura y presi"
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_req_contenido-p040-07 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 40, SV 9–10, nucleo]: Interpretar diagramas de fases de la materia."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "sin_referente",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/diagramas-de-fases",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "sin_referente",
+     "justificacion": "«Retomado» es falso: sus temas previos coinciden solo por la palabra «fases» (fases de la Luna) o son ajenos (multímetro). La V2 introduce el diagrama P–T con punto triple y crítico en 10.°, dos veces (Física 12.9 y Química 7.5). Solo TW lo tiene en el núcleo y JP en la electiva 化学: no hay referentes para fechar. Recomiendo coordinar ambas asignaturas para no duplicarlo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U7-7.5 (fila 66)",
+       "cita": "Química 10.°.",
+       "cita_literal": "usando su diagrama de fases"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U12-12.9 (fila 92)",
+       "cita": "Física 10.°: el mismo contenido.",
+       "cita_literal": "Interpreta diagramas de fase"
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U8-8.4 (fila 6)",
+       "cita": "Coincidencia espuria de la lectura amplia.",
+       "cita_literal": "Modela las fases de la Luna"
+      },
+      {
+       "fuente": "TW-QUI-tw_req_contenido-p040-07",
+       "cita": "TW 必修: único núcleo con el concepto.",
+       "cita_literal": "CAb-Vc-3 物質的三相圖"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+   "tipo": "clase_incierta",
+   "titulo": "Mezclas de gases, difusión y gases reales (CON:quimica/difusion-efusion-y-gases-reales, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/difusion-efusion-y-gases-reales",
+     "nombre": "Mezclas de gases, difusión y gases reales",
+     "definicion": "Ley de Dalton de presiones parciales, ley de Graham de difusión y desviaciones de los gases reales (van der Waals).",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-QUI-U12-12.9 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 100): Equilibrio químico. 12.9. Calcula Kp a partir de presiones parciales o fracciones molares y aplica Kp = Kc(RT)^Δn y las reglas de transformación de K al modificar la ecuación.",
+     "G10-QUI-U6-6.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 58): Mezclas de gases. 6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total.",
+     "G10-QUI-U6-6.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 60): Difusión y efusión. 6.6. Calcula la relación de velocidades de efusión de dos gases con la ley de Graham y la relaciona con sus masas molares.",
+     "G10-QUI-U6-6.7 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 61): Gases reales. 6.7. Explica las desviaciones del comportamiento ideal de un gas real a altas presiones y bajas temperaturas usando el factor de compresibilidad.",
+     "G08-CIE-U10-10.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 10 - Sistemas terrestres», fila 3): Ciclo del carbono. 10.1. Representa el ciclo del carbono entre la atmósfera, los océanos, la biosfera y la geosfera.",
+     "G08-CIE-U4-4.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 3): Unidades físicas de concentración. 4.1. Identifica las unidades físicas de concentración en sustancias de uso cotidiano."
+    ],
+    "paises": {
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p119-06 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 119, SV 10–11, especializacion]: Tratar la ley de Boyle-Charles, ecuación de gases ideales, medición de peso molecular, mezcla de gases, presiones parciales, gases reales y distribución de ener"
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jung-p049-10 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 49, SV 6–8, nucleo]: Inferir que las partículas de la materia están en movimiento a partir de la observación de los fenómenos de difusión y evaporación."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch3u-p105-05 [ON_Science_Grades11-12_2008.pdf p. 105, SV 10–10, especializacion]: Explicar las leyes de presiones parciales de Dalton, Boyle, Charles, Gay-Lussac, la ley combinada de los gases y la ley del gas ideal."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h2_qui-p015-03 [SG_ALevel_H2_Chemistry_9476_2027.pdf p. 15, SV 11–11, especializacion]: Explicar cualitativamente las limitaciones de la idealidad a presiones muy altas y temperaturas muy bajas."
+     },
+     "TW": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_ele-p053-23 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 53, SV 10–11, especializacion]: Aplicar la ley de las presiones parciales de Dalton."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "solo_especializacion",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "solo_especializacion",
+     "justificacion": "«Retomado» se apoya en etiquetas espurias de 8.° (ciclo del carbono, unidades de concentración). La V2 introduce Dalton, Graham y gases reales en Química 10.°. En los países son de electiva: JP 化学, ON SCH3U, SG H2, TW 選修 y KR 화학. El único núcleo (KR, secundaria baja) es la difusión cualitativa como evidencia del movimiento de partículas, que es otro concepto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.6 (fila 60)",
+       "cita": "10.°: ley de Graham.",
+       "cita_literal": "Calcula la relación de velocidades de efusión de dos gases con la ley de Graham"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.7 (fila 61)",
+       "cita": "10.°: gases reales.",
+       "cita_literal": "usando el factor de compresibilidad"
+      },
+      {
+       "fuente": "ON-QUI-on_sch3u-p105-05",
+       "cita": "ON, electiva.",
+       "cita_literal": "law of partial pressures, Boyle"
+      },
+      {
+       "fuente": "SG-QUI-sg_h2_qui-p015-03",
+       "cita": "SG H2, electiva.",
+       "cita_literal": "the limitations of ideality at very high pressures and very low temperatures"
+      },
+      {
+       "fuente": "KR-QUI-kr_jinro_qui-p192-02",
+       "cita": "KR, electiva.",
+       "cita_literal": "혼합 기체의 부분 압력과 몰 분율의 관계를 알고"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 5,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/energia-de-enlace",
+   "tipo": "clase_incierta",
+   "titulo": "Energía de enlace (CON:quimica/energia-de-enlace, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/energia-de-enlace",
+     "nombre": "Energía de enlace",
+     "definicion": "Romper enlaces absorbe energía y formarlos la libera; el balance entre ambos determina si una reacción es exotérmica o endotérmica.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G10-QUI-U11-11.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 87): Energía en las reacciones químicas. 11.3. Estima la entalpía de reacción con entalpías medias de enlace y explica por qué el resultado difiere del obtenido con entalpías de formación.",
+     "G10-QUI-U5-5.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 41): Naturaleza del enlace químico. 5.1. Explica la formación de un enlace a partir del mínimo de energía de la curva energía-distancia internuclear.",
+     "G10-BIO-U2-2.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 18): Energía biológicamente útil. 2.5. Reconoce los tipos de energía biológicamente útil.",
+     "G11-FIS-U20-20.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 121): El núcleo atómico. 20.1. Calcula el radio y la densidad de distintos núcleos y explica por qué la densidad nuclear es prácticamente constante.",
+     "G11-FIS-U20-20.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 123): Energía nuclear. 20.3. Calcula la energía de enlace por nucleón a partir del defecto de masa e interpreta la curva para identificar los núcleos más estables.",
+     "G11-FIS-U23-23.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 140): Teoría de la relatividad especial. 23.1. Identifica las métricas del espacio relativista y no relativista, y sus invarianzas."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-22 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Explicar las reacciones endotérmicas y exotérmicas mediante la Ley de Conservación de la Energía y la ruptura y formación de enlaces, representándolas en ecuaci"
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym-p018-17 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 18, SV 10–11, nucleo]: Investigar los efectos térmicos de las reacciones químicas y explicarlos basándose en los cambios de energía al formar/romper enlaces."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p020-12 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 20, SV 8–9, nucleo]: Usar ideas sobre transferencias de energía, fuerza de enlaces químicos y fuerzas intermoleculares para explicar las diferentes temperaturas a las que ocurren lo"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p057-04 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 57, SV 9–11, especializacion]: Comprender las reacciones endotérmicas y exotérmicas y su relación con la ruptura y formación de enlaces."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p117-04 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 117, SV 10–11, especializacion]: Experimentar con reacciones químicas y calor/luz, comprendiendo que su emisión o absorción resulta de la diferencia de energía química entre reactivos y product"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p115-02 [ON_Science_Grades11-12_2008.pdf p. 115, SV 11–11, especializacion]: Comparar el cambio de energía al formar o romper enlaces, y explicar estos cambios en términos de reacciones endotérmicas y exotérmicas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p013-01 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 13, SV 11–11, nucleo_parcial]: Comparar las reactividades de los enlaces covalentes en función de la energía, longitud y polaridad del enlace."
+     },
+     "TW": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_ele-p053-29 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 53, SV 10–11, especializacion]: Explicar que las reacciones químicas implican la recombinación de átomos y obedecen a la conservación de masa, átomos, carga y energía."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/energia-de-enlace",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: el núcleo de ENG Combined pide calcular el cambio de energía con energías de ruptura y formación de enlaces (p. 23) y EE, en el gimnasio común, explica el efecto térmico de las reacciones por los enlaces; SG H1 lo trae como núcleo parcial. La V2 lo introduce en Química 10.°, junto a la mediana (9,5).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U11-11.3 (fila 87)",
+       "cita": "10.°.",
+       "cita_literal": "Estima la entalpía de reacción con entalpías medias de enlace"
+      },
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 23",
+       "cita": "Núcleo de ENG Combined.",
+       "cita_literal": "calculate energy changes in a chemical reaction by considering bond making"
+      },
+      {
+       "fuente": "EE-QUI-ee_gym-p018-17",
+       "cita": "EE, gimnasio común.",
+       "cita_literal": "keemiliste sidemete tekkimisel ja lagunemisel esinevatest energiamuutustest"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 3,
+    "anclada": 3,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/espectrometria-de-masas",
+   "tipo": "clase_incierta",
+   "titulo": "Espectrometría de masas (CON:quimica/espectrometria-de-masas, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/espectrometria-de-masas",
+     "nombre": "Espectrometría de masas",
+     "definicion": "Técnica que ioniza y separa partículas por su relación masa/carga para determinar composición isotópica y estructura molecular.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "solo_especializacion",
+     "estricta": "no_aplica"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": null
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G11-FIS-U10-10.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 59): Fuerza magnética sobre cargas. 10.1. Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales.",
+     "G11-FIS-U10-10.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 61): Fuerza magnética sobre cargas. 10.3. Calcula la relación masa-carga de un ion a partir del radio de su trayectoria en un espectrómetro de masas y explica sus aplicaciones científicas."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-01 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Analizar espectros generados por espectrometría de masas, que implica la ionización de sustancias, para determinar la composición isotópica de los elementos."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p009-04 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 9, SV 10–11, especializacion]: Comprender iones e isótopos; usar espectrometría de masas para determinar la masa atómica relativa y abundancia isotópica."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p090-03 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 90, SV 9–11, especializacion]: Comprender métodos instrumentales básicos: colorimetría para cuantificar sustancias, espectroscopía IR para identificar grupos funcionales y espectrometría de m"
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "solo_especializacion",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/espectrometria-de-masas",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "solo_especializacion",
+     "justificacion": "La V2 sí la enseña, aunque en Física 11.°: la fila 10.3 interpreta el espectrómetro de masas, calcula la relación masa-carga para identificar isótopos y trata sus aplicaciones en análisis químico. No es una mención lateral: es el contenido central de la fila. Ningún país la tiene en el núcleo; AU, ENG (A level) y HK la ponen en electivas de Química. Conviene que Física lo confirme.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.3 (fila 61)",
+       "cita": "Física 11.°, obligatoria.",
+       "cita_literal": "Interpretación del funcionamiento del espectrómetro de masas y de sus aplicaciones en el análisis químico"
+      },
+      {
+       "fuente": "AU-QUI-au_ss_qui-p002-01",
+       "cita": "AU, electiva.",
+       "cita_literal": "Mass spectrometry involves the ionisation of substances"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p009-04",
+       "cita": "ENG A level, electiva.",
+       "cita_literal": "use of mass spectrometry in determining relative atomic mass and relative abundance of isotopes"
+      },
+      {
+       "fuente": "HK-QUI-hk_qui-p090-03",
+       "cita": "HK, electiva.",
+       "cita_literal": "mass spectrometry for determining molecular structures"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/espectroscopia-y-estructura-organica",
+   "tipo": "clase_incierta",
+   "titulo": "Técnicas para determinar estructuras orgánicas (CON:quimica/espectroscopia-y-estructura-organica, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/espectroscopia-y-estructura-organica",
+     "nombre": "Técnicas para determinar estructuras orgánicas",
+     "definicion": "Espectroscopía infrarroja, espectrometría de masas y cristalografía de rayos X se combinan para determinar la estructura de moléculas.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "solo_especializacion",
+     "estricta": "no_aplica"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": null
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G11-FIS-U18-18.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 109): Interferencia. 18.1. Calcula la longitud de onda de la luz a partir de la separación entre franjas de un patrón de doble rendija con d·sen θ = mλ.",
+     "G11-FIS-U18-18.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 115): Difracción de rayos X. 18.7. Calcula la separación entre planos de un cristal con la ley de Bragg 2d·sen θ = mλ a partir de datos de difracción."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p001-09 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 1, SV 11–11, especializacion]: Seleccionar, construir y usar representaciones (modelos, fórmulas, ecuaciones, nomenclatura IUPAC y espectros) para comunicar comprensión, resolver problemas y "
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p011-14 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 11, SV 10–11, especializacion]: Utilizar espectrometría de masas, espectroscopía infrarroja, resonancia magnética nuclear y cromatografía en el análisis, incluyendo técnicas para la elucidació"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p090-03 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 90, SV 9–11, especializacion]: Comprender métodos instrumentales básicos: colorimetría para cuantificar sustancias, espectroscopía IR para identificar grupos funcionales y espectrometría de m"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p112-01 [ON_Science_Grades11-12_2008.pdf p. 112, SV 11–11, especializacion]: Evaluar los beneficios sociales de tecnologías basadas en principios de estructuras atómicas y moleculares, como la resonancia magnética, cristalografía de rayo"
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "no_aplica",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/espectroscopia-y-estructura-organica",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "no_aplica",
+     "justificacion": "La V2 no enseña a determinar estructuras orgánicas combinando IR, espectrometría de masas y difracción. La lectura amplia encontró Física 11.°: la doble rendija (espuria) y la ley de Bragg para planos cristalinos (18.7), física de la difracción que solo ilustra con proteínas. Es una mención lateral para este concepto: gana la clase sin desajuste. Bragg en 11.° conviene revisarlo en Física.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U18-18.7 (fila 115)",
+       "cita": "Física 11.°: difracción de rayos X, no análisis orgánico.",
+       "cita_literal": "Calcula la separación entre planos de un cristal con la ley de Bragg"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U18-18.1 (fila 109)",
+       "cita": "Coincidencia espuria.",
+       "cita_literal": "Calcula la longitud de onda de la luz a partir de la separación entre franjas"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p011-14",
+       "cita": "En los países, el análisis combinado es de electiva (A level).",
+       "cita_literal": "the use of mass spectrometry, infrared spectroscopy, nuclear magnetic resonance spectroscopy"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El concepto es la elucidación estructural con espectros (IR para grupos funcionales, fragmentos de masas); la V2 de Química no tiene ningún tema de espectros moleculares."
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 3,
+    "anclada": 3,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 1,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/esterificacion-e-hidrolisis",
+   "tipo": "clase_incierta",
+   "titulo": "Esterificación e hidrólisis (CON:quimica/esterificacion-e-hidrolisis, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 10.5,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G11-QUI-U10-10.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 85): Reacciones de polimerización. 10.2. Representa la formación de un poliéster y una poliamida a partir de monómeros bifuncionales e identifica la molécula pequeña que se libera en cada unión.",
+     "G11-QUI-U11-11.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 94): Química de los lípidos. 11.6. Escribe la ecuación de saponificación de un triacilglicerol, calcula la masa de hidróxido de sodio necesaria y explica la acción limpiadora del jabón con su estructura anf",
+     "G11-QUI-U9-9.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 81): Reacciones de compuestos oxigenados. 9.5. Escribe las ecuaciones de esterificación e hidrólisis de ésteres, nombra los productos y explica por qué la esterificación es una reacción reversible.",
+     "G11-QUI-U9-9.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 82): Compuestos nitrogenados. 9.6. Explica la basicidad de las aminas y escribe las reacciones de formación e hidrólisis de amidas, relacionándolas con el enlace peptídico.",
+     "G11-QUI-U10-10.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 84): Reacciones de polimerización. 10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polím"
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p002-07 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 2, SV 11–11, especializacion]: Identificar que los combustibles pueden sintetizarse a partir de fuentes orgánicas o inorgánicas usando diversas reacciones químicas, incluyendo adición, oxidac"
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_gym-p019-02 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 19, SV 10–11, nucleo]: Compara las reacciones de formación e hidrólisis de ésteres, formula las ecuaciones químicas correspondientes y prepara un éster simple."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p011-09 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 11, SV 10–11, especializacion]: Clasificar reacciones orgánicas como adición, eliminación, sustitución, oxidación, reducción, hidrólisis, polimerización por adición y polimerización por conden"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p064-08 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 64, SV 9–11, especializacion]: Seleccionar y explicar la idoneidad de diferentes técnicas para seguir el progreso de reacciones químicas, como hidrólisis de ésteres o reacciones con ácidos."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p111-05 [ON_Science_Grades11-12_2008.pdf p. 111, SV 11–11, especializacion]: Explicar los cambios químicos que ocurren durante varios tipos de reacciones químicas orgánicas, incluyendo sustitución, adición, eliminación, oxidación, esteri"
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p019-06 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 19, SV 11–11, nucleo_parcial]: Conocer la formación de ésteres a partir de ácidos carboxílicos, ejemplificados por el ácido etanoico."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p032-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8, nucleo]: Describir las reacciones de esterificación y saponificación."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/esterificacion-e-hidrolisis",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: TW enseña esterificación y saponificación en el núcleo de secundaria baja, y EE compara la formación y la hidrólisis de ésteres en el gimnasio común; SG H1 lo trae como núcleo parcial. La V2 lo introduce en Química 11.° (9.5, 9.6, 11.6), cerca de la mediana (10,5).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.5 (fila 81)",
+       "cita": "11.°.",
+       "cita_literal": "Escribe las ecuaciones de esterificación e hidrólisis de ésteres"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p032-01",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "有機酸及酯類。 酯化與皂化反應"
+      },
+      {
+       "fuente": "EE-QUI-ee_gym-p019-02",
+       "cita": "EE, gimnasio común.",
+       "cita_literal": "võrdleb estrite tekke- ja hüdrolüüsireaktsioone"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 3,
+    "anclada": 3,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/fundamentos-de-reactividad-organica",
+   "tipo": "clase_incierta",
+   "titulo": "Fundamentos de la reactividad orgánica (CON:quimica/fundamentos-de-reactividad-organica, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 11.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G11-QUI-U9-9.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 77): Fundamentos de la reactividad orgánica. 9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electróni",
+     "G11-QUI-U10-10.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 84): Reacciones de polimerización. 10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polím",
+     "G05-CIE-U3-3.3 (grado 5, Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 5): Teoría atómica.. 3.3. Construye un modelo atómico, identificando sus partes.",
+     "G10-QUI-U3-3.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25): Evolución de los modelos atómicos. 3.3. Compara la carga, la masa y la ubicación de protones, neutrones y electrones, y explica por qué el neutrón fue la última partícula en descubrirse.",
+     "G11-FIS-U19-19.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 116): Postulados de la relatividad especial. 19.1. Explica por qué la invariancia de la rapidez de la luz obliga a abandonar el tiempo absoluto de la mecánica clásica.",
+     "G11-FIS-U23-23.8 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 147): Física nuclear. 23.8. Representa el proceso general de transformación de un combustible nuclear en energía eléctrica."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym_ele-p038-06 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 38, SV 10–11, especializacion]: Explicar las reacciones de adición de alquenos y compuestos carbonílicos basándose en los conceptos de electrofilia y nucleofilia."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p011-08 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 11, SV 10–11, especializacion]: Clasificar mecanismos de reacción como sustitución radicalaria, adición electrofílica, sustitución nucleofílica, sustitución electrofílica y adición nucleofílic"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p076-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 76, SV 9–11, especializacion]: Comprender que la estabilidad del carbocatión aumenta con el número de grupos alquilo adyacentes."
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p019-19 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 19, SV 11–11, nucleo_parcial]: Conocer los términos comunes para las reacciones orgánicas."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "solo_especializacion",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/fundamentos-de-reactividad-organica",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "solo_especializacion",
+     "justificacion": "«Retomado» se apoya en una etiqueta espuria (5.°, construir un modelo atómico). La V2 introduce ruptura homolítica y heterolítica, nucleófilos, electrófilos, radicales y carbocationes en Química 11.° (9.1). Es contenido de electiva: curso optativo de EE, ENG A level, HK y SG H1 (núcleo parcial). Ningún país lo tiene en el núcleo pleno.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.1 (fila 77)",
+       "cita": "11.°.",
+       "cita_literal": "Diferencia la ruptura homolítica de la heterolítica"
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U3-3.3 (fila 5)",
+       "cita": "Etiqueta espuria de la lectura amplia.",
+       "cita_literal": "Construye un modelo atómico"
+      },
+      {
+       "fuente": "EE-QUI-ee_gym_ele-p038-06",
+       "cita": "EE, curso optativo.",
+       "cita_literal": "lähtudes elektrofiilsuse ja nukleofiilsuse mõistest"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p011-08",
+       "cita": "ENG A level.",
+       "cita_literal": "mechanisms classified as radical substitution, electrophilic addition, nucleophilic substitution"
+      },
+      {
+       "fuente": "HK-QUI-hk_qui-p076-01",
+       "cita": "HK, electiva.",
+       "cita_literal": "carbocation stability increases with the number of adjacent alkyl groups"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 5,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/grupos-funcionales",
+   "tipo": "clase_incierta",
+   "titulo": "Grupos funcionales (CON:quimica/grupos-funcionales, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/grupos-funcionales",
+     "nombre": "Grupos funcionales",
+     "definicion": "Agrupaciones de átomos (alcohol, aldehído, cetona, ácido carboxílico, éster, amina, amida, haluro) que determinan propiedades y reacciones características.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 9,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-QUI-U10-10.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 85): Reacciones de polimerización. 10.2. Representa la formación de un poliéster y una poliamida a partir de monómeros bifuncionales e identifica la molécula pequeña que se libera en cada unión.",
+     "G11-QUI-U11-11.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 89): Química de los carbohidratos. 11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "G11-QUI-U3-3.10 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 33): Otros compuestos orgánicos. 3.10. Reconoce las funciones tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "G11-QUI-U3-3.11 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 34): Otros compuestos orgánicos. 3.11. Identifica las propiedades físicas y químicas de tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "G11-QUI-U3-3.12 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 35): Otros compuestos orgánicos. 3.12. Emplea nomenclatura IUPAC para nombrar tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "G11-QUI-U3-3.4 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 27): Compuestos orgánicos oxigenados. 3.4. Reconoce las funciones alcohol, fenol y éter."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p001-01 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 1, SV 11–11, especializacion]: Identificar la clase de compuesto orgánico mediante sus propiedades químicas y reacciones específicas (incluyendo ácido-base y oxidación) basadas en los grupos "
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_basic-p028-05 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 28, SV 7–9, nucleo]: Distinguir entre hidrocarburos, alcoholes y ácidos carboxílicos a partir de su fórmula estructural."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p021-10 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 21, SV 8–9, nucleo]: Explicar que la gran variedad de compuestos orgánicos naturales y sintéticos se debe a la capacidad del carbono para formar familias de compuestos similares, ca"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p041-04 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 41, SV 9–11, especializacion]: Comparar los puntos de ebullición del propano, metoximetano y etanol en función de las fuerzas de van der Waals y enlaces de hidrógeno."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p118-08 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 118, SV 10–11, especializacion]: Explorar compuestos orgánicos y macromoleculares mediante experimentos, descubriendo y expresando regularidades y relaciones en sus propiedades."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jinro_qui-p206-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 206, SV 10–11, especializacion]: Buscar ejemplos de reacciones de compuestos de carbono simples y explicarlos mediante cambios en los grupos funcionales (alcoholes, aldehídos, ácidos carboxílic"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p106-09 [ON_Science_Grades11-12_2008.pdf p. 106, SV 11–11, especializacion]: Los compuestos orgánicos tienen propiedades químicas y físicas predecibles determinadas por sus respectivas estructuras."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p012-11 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 12, SV 11–11, nucleo_parcial]: Describir los enlaces de hidrógeno, usando amoníaco y agua como ejemplos de moléculas que contienen grupos –NH y –OH."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p032-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8, nucleo]: Describir las reacciones de esterificación y saponificación."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/grupos-funcionales",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: EE distingue hidrocarburos, alcoholes y ácidos carboxílicos por su fórmula estructural en el núcleo (7.°–9.°) y TW trata alcanos, alcoholes, ácidos orgánicos y ésteres en secundaria baja. La V2 los usa en Biología 10.° (carbohidratos) y los sistematiza en Química 11.°. Llega después que esos países, pero sin consenso de 5 no se afirma tardío.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.4 (fila 27)",
+       "cita": "Química 11.°.",
+       "cita_literal": "Reconoce las funciones alcohol, fenol y éter"
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U1-1.1 (fila 3)",
+       "cita": "Biología 10.°.",
+       "cita_literal": "como los grupos funcionales definen a un carbohidrato"
+      },
+      {
+       "fuente": "EE-QUI-ee_basic-p028-05",
+       "cita": "EE, núcleo.",
+       "cita_literal": "distinguishes between hydrocarbons, alcohols and carboxylic acids based on the structural formula"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p032-03",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "生活中常見的烷類、醇類、有機酸及酯類"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/hidrocarburos-alifaticos",
+   "tipo": "clase_incierta",
+   "titulo": "Hidrocarburos: alcanos, alquenos y alquinos (CON:quimica/hidrocarburos-alifaticos, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-QUI-U2-2.10 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 21): Alquinos. 2.10. Reconoce la función alquino.",
+     "G11-QUI-U2-2.11 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 22): Alquinos. 2.11. Identifica las propiedades físicas y químicas de los alquinos.",
+     "G11-QUI-U2-2.12 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 23): Alquinos. 2.12. Emplea nomenclatura IUPAC para nombrar alquinos.",
+     "G11-QUI-U2-2.4 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 15): Alcanos. 2.4. Reconoce la función alcano en sustancias de uso común.",
+     "G11-QUI-U2-2.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 16): Alcanos. 2.5. Identifica las propiedades físicas y químicas de los alcanos.",
+     "G11-QUI-U2-2.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 17): Alcanos. 2.6. Emplea nomenclatura IUPAC para nombrar alcanos."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-10 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Identificar que el carbono forma compuestos hidrocarbonados, como alcanos y alquenos, con distintas propiedades químicas influenciadas por la naturaleza de los "
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_basic-p028-04 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 28, SV 7–9, nucleo]: Describir las formas en que los hidrocarburos se presentan en la naturaleza y explicar sus usos."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p021-10 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 21, SV 8–9, nucleo]: Explicar que la gran variedad de compuestos orgánicos naturales y sintéticos se debe a la capacidad del carbono para formar familias de compuestos similares, ca"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p050-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 50, SV 9–11, especializacion]: Comprender conceptos básicos de química orgánica: serie homóloga, grupo funcional, fórmula general y fórmula estructural."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p118-07 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 118, SV 10–11, especializacion]: Comprender las propiedades y reacciones de los hidrocarburos alifáticos, relacionándolas con su estructura molecular."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch3u-p099-01 [ON_Science_Grades11-12_2008.pdf p. 99, SV 10–10, especializacion]: Explicar la diferencia entre una reacción de combustión completa y una reacción de combustión incompleta, como en los combustibles de hidrocarburos."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p019-16 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 19, SV 11–11, nucleo_parcial]: Conocer las reacciones de combustión y adición de los alquenos, ejemplificados por el eteno."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p032-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8, nucleo]: Identificar alcanos, alcoholes, ácidos orgánicos y ésteres comunes en la vida diaria."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/hidrocarburos-alifaticos",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: ENG Combined (petróleo como fuente de hidrocarburos), EE (núcleo, 7.°–9.°) y TW (alcanos en secundaria baja) lo tienen en el núcleo; SG H1, como núcleo parcial. La V2 lo introduce en Química 11.°, unos tres grados después de esos países; sin consenso de 5 no se afirma tardío. Persiste el problema de secuencia ya registrado: isómeros en 10.° antes que hidrocarburos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.4 (fila 15)",
+       "cita": "11.°.",
+       "cita_literal": "Reconoce la función alcano en sustancias de uso común"
+      },
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 23",
+       "cita": "Núcleo de ENG Combined.",
+       "cita_literal": "recall that crude oil is a main source of hydrocarb"
+      },
+      {
+       "fuente": "EE-QUI-ee_basic-p028-04",
+       "cita": "EE, núcleo.",
+       "cita_literal": "describe the forms of occurrence of hydrocarbons in nature"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p032-03",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "生活中常見的烷類、醇類、有機酸及酯類"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/isomeria-estructural",
+   "tipo": "clase_incierta",
+   "titulo": "Isomería estructural (CON:quimica/isomeria-estructural, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/isomeria-estructural",
+     "nombre": "Isomería estructural",
+     "definicion": "Compuestos con la misma fórmula molecular y distinta conectividad: isómeros de cadena, posición y función.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G10-QUI-U2-2.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22): La cantidad de sustancia. 2.6. Deduce la fórmula molecular de un compuesto orgánico a partir de datos de su análisis elemental y reconoce isómeros con propiedades distintas.",
+     "G11-QUI-U3-3.14 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 37): Estereoquímica. 3.14. Construye modelos de isómeros constitucionales y estereoisómeros."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p001-19 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 1, SV 11–11, especializacion]: Comprender cómo la presencia de grupos funcionales y la estructura molecular de los compuestos orgánicos se relacionan con sus propiedades."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_basic-p028-06 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 28, SV 7–9, nucleo]: Elaborar fórmulas estructurales y modelos moleculares de compuestos de carbono (C, H, O) y distinguir entre cadenas de carbono lineales, ramificadas y cíclicas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p011-13 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 11, SV 10–11, especializacion]: Identificar grupos funcionales, isómeros estructurales y estereoisómeros, incluyendo isomería geométrica (E-Z) por rotación restringida e isomería óptica por qu"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p073-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 73, SV 9–11, especializacion]: Conocer los conceptos básicos de isomería, incluyendo isomería estructural, cis-trans y enantiomerismo."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p118-07 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 118, SV 10–11, especializacion]: Comprender las propiedades y reacciones de los hidrocarburos alifáticos, relacionándolas con su estructura molecular."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p106-09 [ON_Science_Grades11-12_2008.pdf p. 106, SV 11–11, especializacion]: Los compuestos orgánicos tienen propiedades químicas y físicas predecibles determinadas por sus respectivas estructuras."
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p019-04 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 19, SV 11–11, nucleo_parcial]: Comprender la isomería constitucional (estructural) y cis-trans."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p028-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8, nucleo]: Comprender que sustancias con la misma fórmula molecular pueden ser diferentes debido a la distinta disposición de sus átomos."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/isomeria-estructural",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: TW enseña en el núcleo de secundaria baja que una misma fórmula molecular con otra disposición de átomos da sustancias distintas; EE construye fórmulas estructurales de compuestos de carbono y SG H1 (núcleo parcial) trata la isomería constitucional. La V2 la introduce en Química 10.° (2.6) y la amplía en 11.°: no hay desajuste que afirmar.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U2-2.6 (fila 22)",
+       "cita": "10.°.",
+       "cita_literal": "reconoce isómeros con propiedades distintas"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p028-01",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "分子式相同會因原子排列方式不同而形成不同的物質"
+      },
+      {
+       "fuente": "EE-QUI-ee_basic-p028-06",
+       "cita": "EE, núcleo.",
+       "cita_literal": "compile structural formulas and molecular models of carbon compounds"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 3,
+    "anclada": 3,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/oxidacion-y-corrosion-de-metales",
+   "tipo": "clase_incierta",
+   "titulo": "Oxidación y corrosión de los metales (CON:quimica/oxidacion-y-corrosion-de-metales, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+     "nombre": "Oxidación y corrosión de los metales",
+     "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 9.25,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G07-CIE-U1-1.1 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 3): Compuestos inorgánicos binarios. 1.1. Identifica a los óxidos en fenómenos o aplicaciones cotidianas.",
+     "G11-QUI-U6-6.11 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 65): Celdas electroquímicas y potenciales redox. 6.11. Explica la corrosión del hierro como un proceso electroquímico y argumenta el método de protección más adecuado para un metal expuesto al ambiente coste",
+     "G11-QUI-U6-6.9 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 63): Celdas electroquímicas y potenciales redox. 6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p005-13 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 5, SV 10–11, especializacion]: Modelar diversas reacciones (desplazamiento, combustión, corrosión y procesos electroquímicos) como reacciones redox que implican la oxidación de una sustancia "
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_gym-p019-14 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 19, SV 10–11, nucleo]: Analiza los principios generales de los procesos redox relacionados con metales en la electrólisis, la corrosión y las fuentes de corriente química."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_triple-p025-11 [ENG_GCSE_SingleScience_BioChemPhys_SubjectContent_2015.pdf p. 25, SV 8–9, especializacion]: Explicar la reducción y oxidación como pérdida o ganancia de oxígeno, identificando qué especies se oxidan y cuáles se reducen."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p023-09 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 23, SV 9–11, especializacion]: Comparar apariencia, dureza, punto de fusión y resistencia a la corrosión de aleaciones y metales puros como latón, cobre, acero, hierro, soldadura, estaño y or"
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-QUI-jp_15-p107-01 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 107, SV 9–10, nucleo_parcial]: Describir metales y plásticos representativos, incluyendo refinación, corrosión, diferencias de composición, estructura química y seguridad. Mencionar el vidrio"
+     },
+     "KR": {
+      "primer_grado_nucleo": 9.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-QUI-kr_tonghap-p089-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 89, SV 9–9, nucleo]: Analizar cambios cotidianos mediante características de oxidación-reducción (explicadas por movimiento de oxígeno y electrones, sin números de oxidación), ident"
+     },
+     "ON": {
+      "primer_grado_nucleo": 9.0,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_snc2d-p078-02 [ON_Science_Grades9-10_2008.pdf p. 78, SV 9–9, nucleo]: Analizar, mediante investigación, problemas de seguridad y ambientales asociados con reacciones químicas, sus reactivos y productos (ej. cianuro en minería, cor"
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_k326_k328-p033-05 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 33, SV 9–10, nucleo_parcial]: Describir las condiciones esenciales para la corrosión del hierro (oxígeno y agua) y los métodos de prevención mediante barreras como pintura, grasa o revestimi"
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p031-13 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8, nucleo]: Identificar reacciones de oxidación-reducción comunes y sus aplicaciones en la vida diaria."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "retomado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/oxidacion-y-corrosion-de-metales",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "retomado",
+     "justificacion": "«Tardío» es falso: la V2 trata la corrosión en 7.° (por qué la lámina costera se oxida antes y si conviene pintura o galvanizado), la retoma en Química 10.° (oxidación del hierro en la costa) y la formaliza en 11.° como proceso electroquímico. Además, el consenso de 6 países solo existía contando dos núcleos parciales (JP, SG).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.1 (fila 3)",
+       "cita": "7.°: corrosión y protección.",
+       "cita_literal": "Justifica qué protección conviene a un techo de lámina en la costa (pintura o galvanizado)"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2 (fila 78)",
+       "cita": "10.°.",
+       "cita_literal": "la oxidación del hierro en la costa"
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.11 (fila 65)",
+       "cita": "11.°.",
+       "cita_literal": "Explica la corrosión del hierro como un proceso electroquímico"
+      },
+      {
+       "fuente": "SG-QUI-sg_k326_k328-p033-05",
+       "cita": "SG Combined (núcleo parcial).",
+       "cita_literal": "describe the essential conditions for the corrosion (rusting) of iron"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/oxidacion-y-reduccion",
+   "tipo": "clase_incierta",
+   "titulo": "Oxidación y reducción (CON:quimica/oxidacion-y-reduccion, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-reduccion",
+     "nombre": "Oxidación y reducción",
+     "definicion": "Oxidación es pérdida y reducción ganancia de electrones; ocurren juntas y se representan y balancean con semiecuaciones.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": 9,
+     "mediana": 7.5,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G10-BIO-U2-2.10 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 23): Respiración celular. 2.10. Ejemplifica los procesos oxidativos que suceden en la respiración celular.",
+     "G11-QUI-U6-6.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 55): Balanceo redox. 6.1. Reconoce que las ecuaciones de oxidación-reducción se deben balancear en masa y carga.",
+     "G11-QUI-U6-6.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 56): Balanceo redox. 6.2. Identifica cuándo aplicar el método del ion-electrón para balancear ecuaciones de oxidación-reducción.",
+     "G11-QUI-U6-6.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 57): Balanceo redox. 6.3. Aplica el método del ion-electrón para balancear ecuaciones químicas.",
+     "G11-QUI-U6-6.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 59): Electrolitos y celdas galvánicas. 6.5. Construye una celda galvánica con implementos cotidianos.",
+     "G11-QUI-U6-6.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 61): Celdas electroquímicas y potenciales redox. 6.7. Construye una celda electrolítica para la descomposición del agua."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p004-01 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 4, SV 11–11, especializacion]: Comprender cómo se modelan las reacciones redox y las celdas galvánicas y electrolíticas en términos de transferencia de electrones."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_basic-p027-10 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27, SV 7–9, nucleo]: Asociar reacciones redox con cambios en estados de oxidación, y conocer el comportamiento de metales como reductores y oxígeno como oxidante."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p021-07 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 21, SV 8–9, nucleo]: Usar nombres y símbolos de elementos y compuestos comunes y el principio de conservación de la masa para escribir fórmulas y ecuaciones químicas balanceadas y s"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p025-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 25, SV 9–11, especializacion]: Comprender que la extracción de metales implica la reducción de sus minerales."
+     },
+     "JP": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_45-p115-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 115, SV 9–10, nucleo_parcial]: Comprender que la oxidación y la reducción se producen por la transferencia de electrones."
+     },
+     "KR": {
+      "primer_grado_nucleo": 9.0,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_tonghap-p088-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 88, SV 9–9, nucleo]: Reconocer que las reacciones químicas en la historia de la Tierra y la vida incluyen oxidación-reducción y ácido-base, con transferencia de energía."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p106-04 [ON_Science_Grades11-12_2008.pdf p. 106, SV 11–11, especializacion]: El control y las aplicaciones de las reacciones redox tienen implicaciones significativas para la industria, la salud, la seguridad y el medio ambiente."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p016-03 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 16, SV 11–11, nucleo_parcial]: Construir ecuaciones redox utilizando las semiecuaciones relevantes."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p027-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 27, SV 6–8, nucleo]: Reconocer que las baterías son dispositivos que transforman energía química en energía eléctrica."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/oxidacion-y-reduccion",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "La V2 no la introduce en 11.°: en Química 10.° predice desplazamientos metálicos con la serie de actividad (13.3) y ordena el poder oxidante de los halógenos por desplazamiento (13.7), que son reacciones redox; 11.° la formaliza con el método del ion-electrón. Frente al consenso de 9.°, 10.° queda a menos de 2 grados. Matiz: en 10.° la transferencia de electrones queda implícita.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U13-13.3 (fila 108)",
+       "cita": "10.°: desplazamientos.",
+       "cita_literal": "predice reacciones de desplazamiento con base en su actividad relativa"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U13-13.7 (fila 112)",
+       "cita": "10.°: poder oxidante.",
+       "cita_literal": "Explica la variación del poder oxidante de los halógenos en el grupo"
+      },
+      {
+       "fuente": "KR-QUI-kr_tonghap-p089-01",
+       "cita": "KR 통합과학, núcleo.",
+       "cita_literal": "산화와 환원을 이해하고"
+      },
+      {
+       "fuente": "EE-QUI-ee_basic-p027-10",
+       "cita": "EE, núcleo.",
+       "cita_literal": "associate redox reactions with changes in the oxidation states"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/polimeros-y-ambiente",
+   "tipo": "clase_incierta",
+   "titulo": "Polímeros y ambiente (CON:quimica/polimeros-y-ambiente, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G11-QUI-U1-1.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 8): Polímeros y materiales compuestos. 1.6. Describe la estructura, clasificación y formas de reciclaje de los materiales compuestos.",
+     "G11-QUI-U10-10.4 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 87): Polímeros y ambiente. 10.4. Clasifica plásticos según su código de identificación y su capacidad de degradación, y evalúa críticamente las ventajas y limitaciones de los polímeros biodegradables y del ",
+     "G11-QUI-U10-10.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 88): Polímeros y ambiente. 10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "G11-BIO-U1-1.7 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 9): Problemática ambiental global. 1.7. Reconoce la sobreexplotación de recursos y la generación de residuos de distintos tipos como problemáticas con repercusión mundial."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p002-01 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 2, SV 11–11, especializacion]: Explicar propiedades de materiales orgánicos (proteínas, carbohidratos, polímeros sintéticos), como resistencia, densidad y biodegradabilidad, considerando sus "
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_basic-p028-12 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 28, SV 7–9, nucleo]: Caracterizar materiales poliméricos conocidos (fibras, plásticos), analizando sus propiedades principales, su potencial de uso y los problemas ambientales asoci"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p047-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 47, SV 9–11, especializacion]: Buscar y presentar información sobre el reciclaje de baterías recargables."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p106-08 [ON_Science_Grades11-12_2008.pdf p. 106, SV 11–11, especializacion]: Las reacciones químicas orgánicas y sus aplicaciones tienen implicaciones significativas para la sociedad, la salud humana y el medio ambiente."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_h1_qui-p022-05 [SG_ALevel_H1_Chemistry_8873_2027.pdf p. 22, SV 11–11, nucleo_parcial]: Clasificar y explicar la diferencia entre polímeros termoplásticos y termoestables según su estructura, enlaces y comportamiento de ablandamiento (reciclabilida"
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_jh-p032-04 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8, nucleo]: Identificar los plásticos comunes."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/polimeros-y-ambiente",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: EE caracteriza plásticos y fibras y sus problemas ambientales en el núcleo (7.°–9.°) y TW trata los plásticos comunes en secundaria baja; SG H1 (núcleo parcial) relaciona estructura y reciclabilidad. La V2 tiene antecedentes (degradación de residuos en 3.°, plásticos oceánicos en 9.°) y el tema químico en 11.°. Sin consenso de 5, no se afirma tardío.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.4 (fila 87)",
+       "cita": "11.°.",
+       "cita_literal": "Clasifica plásticos según su código de identificación y su capacidad de degradación"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U4-4.7",
+       "cita": "9.°: plásticos en el océano.",
+       "cita_literal": "gran acumulación de plásticos del Pacífico Norte"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.7 (fila 9)",
+       "cita": "3.°: biodegradabilidad elemental.",
+       "cita_literal": "Predice qué se degradará primero: cáscara, papel o plástico"
+      },
+      {
+       "fuente": "EE-QUI-ee_basic-p028-12",
+       "cita": "EE, núcleo.",
+       "cita_literal": "characterise the best-known polymeric materials based on carbon compounds (fibres, plastics)"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/quimica-de-los-lipidos",
+   "tipo": "clase_incierta",
+   "titulo": "Química de los lípidos (CON:quimica/quimica-de-los-lipidos, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-lipidos",
+     "nombre": "Química de los lípidos",
+     "definicion": "Ácidos grasos saturados e insaturados, triglicéridos, saponificación, terpenos y esteroides como el colesterol.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 3): Biomoléculas.. 5.1. Identifica los principales grupos de biomoléculas por sus características.",
+     "G10-BIO-U1-1.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 6): Lípidos. 1.4. Reconoce la función lípidos y su clasificación general.",
+     "G10-BIO-U1-1.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 7): Lípidos. 1.5. Realiza una extracción de lípidos.",
+     "G10-BIO-U1-1.6 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 8): Lípidos. 1.6. Describe el proceso general del me- tabolismo de los lípidos.",
+     "G11-QUI-U11-11.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 93): Química de los lípidos. 11.5. Explica las diferencias en la temperatura de fusión de ácidos grasos según su longitud, insaturación e isomería, y los nombra en forma sistemática, común y abreviada.",
+     "G11-QUI-U11-11.6 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 94): Química de los lípidos. 11.6. Escribe la ecuación de saponificación de un triacilglicerol, calcula la masa de hidróxido de sodio necesaria y explica la acción limpiadora del jabón con su estructura anf"
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_gym-p020-01 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 20, SV 10–11, nucleo]: Explica la estructura de ácidos grasos, grasas, sacáridos, aminoácidos y proteínas, e investiga sus propiedades."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p077-01 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 77, SV 9–11, especializacion]: Relacionar las reacciones típicas de los grupos funcionales con aplicaciones industriales como el endurecimiento de grasas insaturadas, saponificación y síntesi"
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_15-p107-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 107, SV 9–10, nucleo_parcial]: Relacionar las propiedades de fibras naturales y sintéticas para ropa, y de carbohidratos, proteínas y lípidos en alimentos, con su respectiva estructura químic"
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_k326_k328-p035-09 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 35, SV 9–10, nucleo_parcial]: Describir la fabricación de margarina mediante la adición de hidrógeno a aceites vegetales insaturados para formar un producto sólido."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "retomado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/quimica-de-los-lipidos",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "retomado",
+     "justificacion": "La V2 introduce los lípidos en 6.° (reconoce los grupos de biomoléculas y detecta grasa con la mancha en papel) y los retoma en Biología 10.° y Química 11.°: espiral real, no etiqueta suelta. «Solo especialización» dependía de no contar JP y SG (núcleo parcial) y tiene a EE común. Matiz: la nomenclatura abreviada y el cálculo de saponificación de 11.° son de nivel electivo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G06-CIE-U5-5.1 (fila 3)",
+       "cita": "6.°.",
+       "cita_literal": "Reconoce carbohidratos, lípidos, proteínas y ácidos nucleicos"
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U11-11.6 (fila 94)",
+       "cita": "11.°.",
+       "cita_literal": "Escribe la ecuación de saponificación de un triacilglicerol"
+      },
+      {
+       "fuente": "EE-QUI-ee_gym-p020-01",
+       "cita": "EE, gimnasio común: ácidos grasos y grasas.",
+       "cita_literal": "selgitab rasvhapete, rasvade"
+      },
+      {
+       "fuente": "HK-QUI-hk_qui-p077-01",
+       "cita": "HK, electiva: saponificación aplicada.",
+       "cita_literal": "relate the typical reactions of functional groups to applications"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  }
+ ]
+}

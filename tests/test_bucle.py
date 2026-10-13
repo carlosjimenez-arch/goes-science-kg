@@ -277,3 +277,25 @@ def test_una_ausencia_no_se_afirma_si_el_concepto_esta_en_el_texto_de_la_fila():
     assert filas[0]["clase"] == "incierto" and filas[0]["clase_v1"] == "no_retomado"
     assert any(t.startswith(("G10-", "G11-")) for t in filas[0]["alertas"]["ausencia_con_texto"])
     assert filas[1]["clase"] == "alineado"
+
+
+def test_una_serie_corre_aparte_sobre_expedientes_nuevos(aislado):
+    """Los expedientes nuevos pasan por el bucle en una serie propia (lotes b1-<serie>, r11-<serie>) sin tocar los de
+    la corrida anterior."""
+    roles = ["experto-fisica"]
+    viejo = _resuelto("hallazgo", roles, "respaldar")
+    viejo["bucle"] = {"vueltas": [{"vuelta": 1, "impugnacion": {"veredicto": "se_sostiene"}, "resultado": "sostenida"}]}
+    panel._guardar_estado({"V": viejo, "N": _resuelto("hallazgo", roles, "respaldar")})
+    lotes = bucle.impugnar(1, serie="inc9")
+    assert [p.split("/")[-1] for p in lotes] == ["lote_b1-inc9_refutador_fisica.json"]
+    d_b = aislado / bucle.DIR / "lotes"
+    lote = json.loads((d_b / "lote_b1-inc9_refutador_fisica.json").read_text(encoding="utf-8"))
+    assert [x["id"] for x in lote["expedientes"]] == ["N"]
+    contra = [{"fuente": HK, "cita_literal": HK_CITA, "dice": "x"}]
+    _escribir(d_b, "salida_b1-inc9_refutador_fisica.json",
+              [_ver("N", "refutada", contraevidencia=contra, patron="otro", propuesta="matizar")])
+    bucle.cerrar_impugnacion(1, serie="inc9")
+    e = panel.cargar_estado()
+    assert e["N"]["bucle"]["vueltas"][0]["serie"] == "inc9" and "serie" not in e["V"]["bucle"]["vueltas"][0]
+    assert [p.split("/")[-1] for p in bucle.replicar(1, 1, serie="inc9")] == ["lote_r11-inc9_experto-fisica.json"]
+    assert bucle.replicar(1, 1) == []   # la serie principal no tiene nada pendiente

@@ -685,11 +685,12 @@ def bucle_anclar(tipos: str = typer.Option(None, help="separados por coma")) -> 
 
 
 @bucle_app.command("impugnar")
-def bucle_impugnar(vuelta: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma")) -> None:
+def bucle_impugnar(vuelta: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma"),
+                   serie: str = typer.Option("", help="corrida aparte sobre expedientes nuevos (p. ej. inc9)")) -> None:
     """Lotes del refutador (revisor adversarial) → data/interim/panel/bucle/lotes/."""
     from goes_science_kg import bucle
 
-    for p in bucle.impugnar(vuelta, _tipos_opcion(tipos)):
+    for p in bucle.impugnar(vuelta, _tipos_opcion(tipos), serie):
         typer.echo(f"→ {p}")
 
 
@@ -704,28 +705,29 @@ def bucle_sonda(vuelta: int = typer.Option(...), n: int = typer.Option(None), se
 
 
 @bucle_app.command("cerrar-impugnacion")
-def bucle_cerrar_impugnacion(vuelta: int = typer.Option(...)) -> None:
+def bucle_cerrar_impugnacion(vuelta: int = typer.Option(...), serie: str = typer.Option("")) -> None:
     """Verifica las citas por código y decide qué se sostiene y qué va a la réplica."""
     from goes_science_kg import bucle
 
-    typer.echo(json.dumps(bucle.cerrar_impugnacion(vuelta), ensure_ascii=False, indent=1))
+    typer.echo(json.dumps(bucle.cerrar_impugnacion(vuelta, serie), ensure_ascii=False, indent=1))
 
 
 @bucle_app.command("replicar")
-def bucle_replicar(vuelta: int = typer.Option(...), paso: int = typer.Option(1)) -> None:
+def bucle_replicar(vuelta: int = typer.Option(...), paso: int = typer.Option(1), serie: str = typer.Option("")) -> None:
     """Lotes de la réplica para los roles del panel (ronda 10·vuelta + paso)."""
     from goes_science_kg import bucle
 
-    for p in bucle.replicar(vuelta, paso):
+    for p in bucle.replicar(vuelta, paso, serie):
         typer.echo(f"→ {p}")
 
 
 @bucle_app.command("cerrar-replica")
-def bucle_cerrar_replica(vuelta: int = typer.Option(...), paso: int = typer.Option(1)) -> None:
+def bucle_cerrar_replica(vuelta: int = typer.Option(...), paso: int = typer.Option(1),
+                         serie: str = typer.Option("")) -> None:
     """Mantiene o cambia cada resolución impugnada (unanimidad, deliberación o «sin consenso»)."""
     from goes_science_kg import bucle
 
-    typer.echo(json.dumps(bucle.cerrar_replica(vuelta, paso), ensure_ascii=False, indent=1))
+    typer.echo(json.dumps(bucle.cerrar_replica(vuelta, paso, serie), ensure_ascii=False, indent=1))
 
 
 @bucle_app.command("solidez")

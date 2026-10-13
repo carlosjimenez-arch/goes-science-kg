@@ -1,0 +1,570 @@
+{
+ "lote": "b1-inc9_refutador_quimica_2",
+ "vuelta": 1,
+ "rol": "refutador",
+ "disciplina": "quimica",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-quimica.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "INC:9_11:CON:quimica/quimica-verde",
+   "tipo": "clase_incierta",
+   "titulo": "Química verde y economía atómica (CON:quimica/quimica-verde, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/quimica-verde",
+     "nombre": "Química verde y economía atómica",
+     "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-QUI-U7-7.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 72): Hacia una industria sostenible. 7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "G11-QUI-U7-7.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 66): Del laboratorio a la planta. 7.1. Resuelve balances de materia en un diagrama de bloques e identifica las operaciones unitarias que intervienen en un proceso industrial."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-17 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Identificar que los nanomateriales poseen propiedades físicas y químicas especiales que los hacen útiles para productos ecológicos, como materiales duraderos, r"
+     },
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym_ele-p027-01 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 27, SV 10–11, especializacion]: Comprende las interacciones entre naturaleza, tecnología y sociedad, y entiende su impacto en el medio ambiente y el desarrollo sostenible."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p025-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 25, SV 8–9, nucleo]: Describir los principios básicos para llevar a cabo una evaluación del ciclo de vida de un material o producto."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p030-04 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 30, SV 9–11, especializacion]: Reconocer que se aplican nuevas tecnologías para aumentar la eficiencia de la extracción de metales y limitar su impacto ambiental."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jinro_qui-p205-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 205, SV 10–11, especializacion]: Diseñar baterías del futuro orientadas al desarrollo sostenible."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_snc1w-p050-02 [ON_Science_Grade9_SNC1W_2022.pdf p. 50, SV 8–8, nucleo]: Evaluar los impactos sociales, ambientales y económicos del ciclo de vida de productos de consumo, considerando sus elementos y compuestos, y sugerir formas de "
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_k326_k328-p034-01 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 34, SV 9–10, nucleo_parcial]: Describir cómo los biocombustibles son más sostenibles ambientalmente que los combustibles fósiles debido a la compensación de emisiones de dióxido de carbono d"
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_req_contenido-p041-11 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 41, SV 9–10, nucleo]: Aplicar los conceptos de desarrollo sostenible en la vida cotidiana."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/quimica-verde",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "Caso de umbral: la lectura laxa se apoya en conceptos vecinos del núcleo (ciclo de vida en ENG Combined y ON, desarrollo sostenible en TW, biocombustibles en SG), no en los principios de la química verde. Con la regla, gana la clase sin desajuste. Matiz: la economía atómica de 11.° (7.7) es de electiva en ENG (A level) y HK; una persona puede querer anotarlo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U7-7.7 (fila 72)",
+       "cita": "11.°.",
+       "cita_literal": "Calcula la economía atómica de dos rutas de síntesis"
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p025-05",
+       "cita": "Vecino en el núcleo de ENG.",
+       "cita_literal": "describe the basic principles in carrying out a life-cycle assessment of a material"
+      },
+      {
+       "fuente": "ON-QUI-on_snc1w-p050-02",
+       "cita": "Vecino en el núcleo de ON.",
+       "cita_literal": "assess social, environmental, and economic impacts of processes associated with the life cycle"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p009-06",
+       "cita": "La economía atómica, en la electiva.",
+       "cita_literal": "per cent yields and atom economies"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+   "tipo": "clase_incierta",
+   "titulo": "Reacciones de precipitación e identificación de iones (CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+     "nombre": "Reacciones de precipitación e identificación de iones",
+     "definicion": "Formación de sólidos insolubles al mezclar disoluciones iónicas, usada para identificar y separar iones (marcha analítica).",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 9,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": 10,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G09-CIE-U4-4.17 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 19): Biología marina. 4.17. Explica la acidificación del océano a partir de mediciones repetidas del pH de agua expuesta a CO2 y de su efecto sobre materiales de carbonato de calcio.",
+     "G10-QUI-U9-9.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 79): Evidencias de las reacciones químicas. 9.3. Relaciona cada evidencia observada en el laboratorio (cambio de color, gas, precipitado o variación de temperatura) con la reacción química que la produce.",
+     "G11-QUI-U5-5.2 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 51): Equilibrio de solubilidad. 5.2. Predice si se forma un precipitado al mezclar dos disoluciones comparando el producto iónico con el Kps de la sal correspondiente.",
+     "G11-QUI-U5-5.4 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 53): Precipitación selectiva. 5.4. Calcula la concentración mínima de un reactivo precipitante para separar selectivamente dos iones presentes en la misma disolución.",
+     "G11-QUI-U5-5.5 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 54): Precipitación selectiva. 5.5. Identifica los cationes presentes en una muestra problema interpretando los precipitados que se forman en una marcha analítica.",
+     "G11-QUI-U5-5.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 50): Equilibrio de solubilidad. 5.1. Calcula la solubilidad molar de una sal poco soluble a partir de su Kps y compara la solubilidad de sales con distinta estequiometría."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p003-24 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 3, SV 10–10, especializacion]: Identificar la presencia de iones específicos en soluciones utilizando técnicas analíticas basadas en reacciones químicas, como la precipitación y las reaccione"
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-QUI-ee_gym-p018-16 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 18, SV 10–11, nucleo]: Investigar las reacciones entre iones en disoluciones y formular las ecuaciones de estas reacciones en forma molecular e iónica."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p011-04 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 11, SV 10–11, especializacion]: Ilustrar los metales de transición mediante la formación de iones coloreados en solución y sus reacciones de precipitación simples."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p033-15 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 33, SV 9–11, especializacion]: Conocer los métodos de preparación de sales solubles e insolubles."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-QUI-jp_45-p116-09 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 116, SV 9–10, nucleo_parcial]: Identificar sustancias mediante el estudio de reacciones a la llama y reacciones de precipitación."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch3u-p098-03 [ON_Science_Grades11-12_2008.pdf p. 98, SV 10–10, especializacion]: Utilizar la terminología adecuada relacionada con las reacciones químicas, incluyendo términos como neutralización, precipitado, ácido y básico."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_k326_k328-p031-01 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 31, SV 9–10, nucleo_parcial]: Describir el uso de hidróxido de sodio o amoníaco acuosos para identificar cationes (aluminio, amonio, calcio, cobre(II), hierro(II), hierro(III), zinc) mediant"
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_jh-p031-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 31, SV 6–8, nucleo]: Identificar que diferentes iones en solución acuosa pueden experimentar reacciones de precipitación, neutralización ácido-base y oxidación-reducción."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Sin referente» es falso: TW (secundaria baja) y EE (gimnasio común) lo tienen en el núcleo pleno, y JP 化学基礎 y SG Combined como núcleo parcial; con ellos hay consenso en 10.°. La V2 predice precipitados en reacciones de doble sustitución en Química 10.° (9.2) y profundiza con Kps y marcha analítica en 11.°: el momento coincide.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2 (fila 78)",
+       "cita": "10.°.",
+       "cita_literal": "justifica si se formará o no un precipitado"
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U5-5.5 (fila 54)",
+       "cita": "11.°.",
+       "cita_literal": "Identifica los cationes presentes en una muestra problema"
+      },
+      {
+       "fuente": "TW-QUI-tw_jh-p031-03",
+       "cita": "TW, secundaria baja.",
+       "cita_literal": "不同的離子在水溶液中可能會發生沉澱"
+      },
+      {
+       "fuente": "EE-QUI-ee_gym-p018-16",
+       "cita": "EE, gimnasio común.",
+       "cita_literal": "uurib ioonidevahelisi reaktsioone lahustes"
+      },
+      {
+       "fuente": "SG-QUI-sg_k326_k328-p031-01",
+       "cita": "SG Combined (núcleo parcial).",
+       "cita_literal": "describe the use of aqueous sodium hydroxide and/or aqueous ammonia to identify"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 5,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/rendimiento-de-reaccion",
+   "tipo": "clase_incierta",
+   "titulo": "Rendimiento de una reacción (CON:quimica/rendimiento-de-reaccion, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 10.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-QUI-U10-10.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 81): Relaciones estequiométricas. 10.1. Calcula masas, cantidades de sustancia y volúmenes de disolución de reactivos y productos incorporando la pureza y la concentración en sus cálculos.",
+     "G10-QUI-U10-10.3 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 83): Eficiencia de las reacciones. 10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "G10-QUI-U10-10.4 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 84): Eficiencia de las reacciones. 10.4. Obtiene la ecuación neta de un proceso de varias etapas y calcula el rendimiento global a partir del rendimiento de cada etapa.",
+     "G11-QUI-U7-7.3 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 68): Agroindustria salvadoreña. 7.3. Describe las etapas de extracción, clarificación, evaporación y cristalización del azúcar y calcula el rendimiento teórico de etanol en la fermentación de la melaza.",
+     "G11-QUI-U7-7.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 72): Hacia una industria sostenible. 7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "G08-CIE-U4-4.8 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 10): Relaciones estequiométricas. 4.8. Interpreta resultados de cálculos estequiométricos."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p001-10 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 1, SV 11–11, especializacion]: Usar representaciones matemáticas para resolver problemas y predecir, incluyendo el concepto de mol para calcular cantidades en reacciones de múltiples pasos y "
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym-p018-03 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 18, SV 10–11, nucleo]: Realizar cálculos químicos y evaluar la correspondencia de los resultados de los cálculos con la realidad."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p009-06 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 9, SV 10–11, especializacion]: Calcular masas de reacción, concentraciones molares, volúmenes de gases, rendimientos porcentuales y economía atómica."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p069-13 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 69, SV 9–11, especializacion]: Explicar cómo los procesos industriales implican un compromiso entre velocidad, rendimiento y consideraciones económicas, ejemplificado por el proceso de Haber."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch3u-p092-01 [ON_Science_Grades11-12_2008.pdf p. 92, SV 10–10, especializacion]: La eficiencia de las reacciones químicas puede determinarse y optimizarse aplicando la comprensión de sus relaciones cuantitativas."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-QUI-sg_k324-p015-02 [SG_SEC_G3_Chemistry_K324_2027.pdf p. 15, SV 9–10, especializacion]: Calcular el porcentaje de rendimiento y el porcentaje de pureza."
+     },
+     "TW": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_ele-p053-28 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 53, SV 10–11, especializacion]: Calcular y analizar el rendimiento de las reacciones químicas y los procesos químicos."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "retomado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/rendimiento-de-reaccion",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "retomado",
+     "justificacion": "La V2 introduce el rendimiento en 8.°: reconoce el reactivo limitante y los rendimientos teórico y porcentual, y lo calcula (4.8). Lo retoma en Química 10.° (10.3, 10.4). «Solo especialización» solo juzga lo que la V2 introduce en 9.°–11.°. Aviso aparte: en los países es de electiva (SG Chemistry, ENG A level, ON SCH3U, TW 選修), así que 8.° es temprano.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G08-CIE-U4-4.8 (fila 10)",
+       "cita": "8.°.",
+       "cita_literal": "Reconoce el reactivo limitante, el rendimiento teórico y el rendimiento porcentual"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.3 (fila 83)",
+       "cita": "10.°.",
+       "cita_literal": "Calcula el rendimiento porcentual de una reacción"
+      },
+      {
+       "fuente": "SG-QUI-sg_k324-p015-02",
+       "cita": "SG Chemistry (electiva).",
+       "cita_literal": "calculate % yield and % purity"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p009-06",
+       "cita": "ENG A level.",
+       "cita_literal": "per cent yields and atom economies"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/semivida-y-series-de-desintegracion",
+   "tipo": "clase_incierta",
+   "titulo": "Semivida, series de desintegración y residuos radiactivos (CON:quimica/semivida-y-series-de-desintegracion, 9.°–11.°)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G10-BIO-U5-5.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 50): Evidencias de la evolución. 5.3. Calcula la edad aproximada de un fósil a partir de la vida media de un isótopo y del orden de los estratos.",
+     "G11-FIS-U20-20.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 124): Partículas subatómicas. 20.4. Explica cómo el espectro continuo de la desintegración beta llevó a postular el neutrino y describe cómo se detecta.",
+     "G11-FIS-U21-21.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 127): Desintegración radiactiva. 21.1. Escribe ecuaciones balanceadas de desintegración alfa, beta y gamma, e identifica el núcleo hijo a partir de la conservación de A y Z.",
+     "G11-FIS-U21-21.2 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 128): Ley de desintegración. 21.2. Aplica N = N₀e^(−λt) y A = λN para calcular el número de núcleos, la actividad y la vida media de una muestra.",
+     "G11-FIS-U21-21.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 129): Aplicaciones de la ley de desintegración. 21.3. Calcula la edad de una muestra por radiocarbono a partir de la fracción de carbono-14 remanente y valora la incertidumbre del resultado.",
+     "G11-FIS-U23-23.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 143): Interacción de la radiación y la materia. 23.4. Reconoce los tipos de radiación ionizante y sus principales efectos en las células."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p001-11 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 1, SV 10–10, especializacion]: Seleccionar, construir y usar representaciones (textos, gráficos, diagramas de flujo, ecuaciones nucleares y circuitos) para comunicar comprensión, resolver pro"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_basic-p021-02 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 21, SV 7–9, nucleo]: Caracterizar y comparar la radiación alfa, beta y gamma."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p033-09 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 33, SV 8–9, nucleo]: Recordar que los cambios en átomos y núcleos pueden generar y absorber radiaciones en un amplio rango de frecuencias."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p058-02 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 58, SV 9–11, especializacion]: Describir el origen y la naturaleza de las radiaciones alfa, beta y gamma."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_25-p110-03 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 110, SV 9–10, nucleo_parcial]: Tratar la conversión a energía eléctrica y la fisión nuclear, incluyendo tipos y propiedades de radiación, sustancias radiactivas y el uso de la energía nuclear"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p191-01 [ON_Science_Grades11-12_2008.pdf p. 191, SV 10–10, especializacion]: Comparar características (masa, carga, velocidad, poder de penetración) y precauciones de seguridad de partículas alfa, beta y rayos gamma."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p018-03 [SG_ALevel_H1_Physics_8867_2027.pdf p. 18, SV 11–11, nucleo_parcial]: Comprender el origen y la importancia de la radiación de fondo."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_req_contenido-p040-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 40, SV 9–10, nucleo]: Describir cómo un neutrón aislado decae espontáneamente en un protón y otras partículas mediante la interacción débil."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "INC:9_11:CON:quimica/semivida-y-series-de-desintegracion",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "«Tardío» es falso: la V2 calcula edades con la vida media de un isótopo en Biología 10.° (5.3) y trata la datación con carbono-14 en Química 10.°, antes de la física radiactiva de 11.°. Además, el consenso de 5 países usaba vecinos (tipos de radiación) y núcleos parciales; la vida media explícita en núcleo pleno solo está en ENG Combined.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U5-5.3 (fila 50)",
+       "cita": "Biología 10.°.",
+       "cita_literal": "Calcula la edad aproximada de un fósil a partir de la vida media de un isótopo"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U3-3.4",
+       "cita": "Química 10.°.",
+       "cita_literal": "la datación con carbono-14"
+      },
+      {
+       "fuente": "ENG-FIS-eng_gcse_comb-p036-04",
+       "cita": "Núcleo de ENG Combined.",
+       "cita_literal": "explain the concept of half-life and how this is related"
+      },
+      {
+       "fuente": "EE-FIS-ee_basic-p021-02",
+       "cita": "EE, núcleo: tipos de radiación (vecino).",
+       "cita_literal": "characterise and compare"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 4,
+    "ubicada": 0,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  }
+ ]
+}

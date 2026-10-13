@@ -463,7 +463,12 @@ def _a_impugnar(x: dict, k: int, tipos: list[str] | None) -> bool:
     return bool(previa) and previa.get("replica") == "cambiada"
 
 
-def impugnar(k: int, tipos: list[str] | None = None) -> list[str]:
+def _s(serie: str) -> str:
+    """Sufijo de los lotes de una serie (una corrida aparte del bucle sobre expedientes nuevos: p. ej. «inc9»)."""
+    return f"-{serie}" if serie else ""
+
+
+def impugnar(k: int, tipos: list[str] | None = None, serie: str = "") -> list[str]:
     """Lotes del refutador de la vuelta k: en la 1, todo lo resuelto en alcance; después, solo lo que la réplica de la
     vuelta anterior cambió. Un lote por disciplina (partido por peso)."""
     if k > config()["vueltas_max"]:
@@ -488,7 +493,8 @@ def impugnar(k: int, tipos: list[str] | None = None) -> list[str]:
                 "instrucciones": ["prompts/bucle_refutar.md", ".claude/agents/refutador.md",
                                   f".claude/agents/experto-{disciplina}.md (solo «Tus criterios»)"]}
 
-    return _escribir_lotes(_dir_lotes(), f"b{k}_refutador", por_disciplina, cabecera, PESO, PESO_MAX_LOTE)
+    return _escribir_lotes(_dir_lotes(), f"b{k}{_s(serie)}_refutador", por_disciplina, cabecera, PESO,
+                           PESO_MAX_LOTE)
 
 
 # Lo que una sonda ciega no puede leer: todo lo que deja ver lo que decidió el panel. La primera sonda (vuelta 1)
@@ -616,7 +622,7 @@ def _misma(d: dict, resolucion: dict) -> bool:
         d["decision"] != "cambiar" or sorted(d.get("asignado_a") or []) == sorted(resolucion.get("asignado_a") or []))
 
 
-def cerrar_impugnacion(k: int) -> dict:
+def cerrar_impugnacion(k: int, serie: str = "") -> dict:
     """Lee las salidas del refutador y de la sonda de la vuelta k (todas válidas o nada) y decide, por código:
     - impugnada: el refutador debilita o refuta con confianza media o alta y con contraevidencia anclada (en contenido,
       con un error y su corrección válida), o la sonda ciega no coincide con la resolución;
@@ -624,10 +630,12 @@ def cerrar_impugnacion(k: int) -> dict:
     Lo impugnado queda «pendiente_paso_1» de la réplica. Devuelve los conteos."""
     estado = panel.cargar_estado()
     hoy = date.today().isoformat()
-    for lote, salida in _leer_pares(_dir_lotes(), f"lote_b{k}_refutador_*.json", errores_lote):
+    for lote, salida in _leer_pares(_dir_lotes(), f"lote_b{k}{_s(serie)}_refutador_*.json", errores_lote):
         for d in salida:
             x = estado[d["id"]]
             v = _vuelta(x, k)
+            if serie:
+                v["serie"] = serie
             v["impugnacion"] = {**{c: d[c] for c in ("veredicto", "argumento", "confianza", "propuesta", "cambios",
                                                       "patron") if d.get(c)},
                                 "contraevidencia": [{**c, "donde": verificar(c["fuente"], c["cita_literal"])["donde"]}
@@ -645,7 +653,7 @@ def cerrar_impugnacion(k: int) -> dict:
             else:
                 impugnada = fuerte and d["veredicto"] != "se_sostiene" and bool(_citas(d, "contraevidencia"))
             v["resultado"] = "impugnada" if impugnada else "sostenida"
-    sonda_pares = _leer_pares(panel._dir_lotes(), f"lote_c{k}_*.json", panel.errores_lote)
+    sonda_pares = _leer_pares(panel._dir_lotes(), f"lote_c{k}{_s(serie)}_*.json", panel.errores_lote)
     ciegos: dict[str, list[dict]] = defaultdict(list)
     for lote, salida in sonda_pares:
         ciegos_rol = [{**_resumen_dictamen(d), "rol": lote["rol"]} for d in salida]
@@ -673,11 +681,11 @@ PREGUNTA_REPLICA = ("Un revisor adversarial o una sonda ciega impugnó la resolu
                     "opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.")
 
 
-def _pendientes(estado: dict, k: int, paso: int) -> list[tuple[str, dict, dict]]:
+def _pendientes(estado: dict, k: int, paso: int, serie: str = "") -> list[tuple[str, dict, dict]]:
     salida = []
     for i, x in sorted(estado.items()):
         v = next((v for v in (x.get("bucle") or {}).get("vueltas", []) if v["vuelta"] == k), None)
-        if v and v.get("replica") == f"pendiente_paso_{paso}":
+        if v and v.get("replica") == f"pendiente_paso_{paso}" and v.get("serie", "") == serie:
             salida.append((i, x, v))
     return salida
 
@@ -688,14 +696,14 @@ def _quienes_replica(x: dict, paso: int) -> list[str]:
     return [x["etapas"][0][0]] if paso in (1, 3) else ["psicopedagogo"]
 
 
-def replicar(k: int, paso: int) -> list[str]:
+def replicar(k: int, paso: int, serie: str = "") -> list[str]:
     """Lotes de la réplica (ronda 10k + paso del estado del panel) para los roles de cada expediente impugnado.
     Paso 1: todos los roles (en contenido, el experto). Paso 2: deliberación con las réplicas de los demás (en
     contenido, el psicopedagogo revisa la corrección). Paso 3: solo contenido, visto bueno del experto."""
     estado = panel.cargar_estado()
     ronda = 10 * k + paso
     por_rol: dict[str, list[dict]] = defaultdict(list)
-    for i, x, v in _pendientes(estado, k, paso):
+    for i, x, v in _pendientes(estado, k, paso, serie):
         imp = {"impugnacion": v.get("impugnacion") if (v.get("impugnacion") or {}).get("veredicto") != "se_sostiene"
                else None,
                "sonda_ciega": v.get("sonda") if (v.get("sonda") or {}).get("acuerdo") is False else None}
@@ -720,7 +728,8 @@ def replicar(k: int, paso: int) -> list[str]:
                 "instrucciones": ["prompts/panel_dictaminar.md", f".claude/agents/{rol}.md",
                                   "prompts/bucle_refutar.md (sección «Réplica»)"]}
 
-    return _escribir_lotes(panel._dir_lotes(), f"r{ronda}", por_rol, cabecera, panel.PESO, panel.PESO_MAX_LOTE)
+    return _escribir_lotes(panel._dir_lotes(), f"r{ronda}{_s(serie)}", por_rol, cabecera, panel.PESO,
+                           panel.PESO_MAX_LOTE)
 
 
 def _cambiar_resolucion(x: dict, nueva: dict, k: int) -> None:
@@ -729,7 +738,7 @@ def _cambiar_resolucion(x: dict, nueva: dict, k: int) -> None:
     x["aplicado"] = None
 
 
-def cerrar_replica(k: int, paso: int) -> dict:
+def cerrar_replica(k: int, paso: int, serie: str = "") -> dict:
     """Consolida la réplica (todas las salidas válidas o nada) con las reglas del panel:
     - confianza baja de cualquier rol → «sin consenso» (una persona decide);
     - en paralelo: unanimidad → mantiene o cambia la resolución; si no, deliberación (paso 2) y, si sigue sin
@@ -740,7 +749,7 @@ def cerrar_replica(k: int, paso: int) -> dict:
     ronda = 10 * k + paso
     hoy = date.today().isoformat()
     nuevos = []
-    for lote, salida in _leer_pares(panel._dir_lotes(), f"lote_r{ronda}_*.json", panel.errores_lote):
+    for lote, salida in _leer_pares(panel._dir_lotes(), f"lote_r{ronda}{_s(serie)}_*.json", panel.errores_lote):
         nuevos += [{**d, "ronda": ronda, "rol": lote["rol"], "fecha": hoy, "bucle": k} for d in salida]
     for d in nuevos:
         x = estado[d["id"]]
