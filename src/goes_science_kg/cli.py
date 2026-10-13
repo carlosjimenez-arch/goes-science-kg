@@ -57,11 +57,13 @@ def refuerzo_candidatos() -> None:
 
 
 @refuerzo_app.command("preparar")
-def refuerzo_preparar() -> None:
-    """Lotes del subagente redactor-refuerzos → data/interim/refuerzo_v3/lotes/."""
+def refuerzo_preparar(serie: str = typer.Option("a"),
+                      asignaturas: str = typer.Option(None, help="separadas por coma (vacío = todas)"),
+                      tramo: str = typer.Option(None, help="2_8 o 9_11 (vacío = los dos)")) -> None:
+    """Lotes del subagente redactor-refuerzos → data/interim/refuerzo_v3/lotes/ (sin reescribir los existentes)."""
     from goes_science_kg.refuerzo import preparar_lotes
 
-    for p in preparar_lotes():
+    for p in preparar_lotes(serie, tuple(asignaturas.split(",")) if asignaturas else None, tramo):
         typer.echo(f"→ {p}")
 
 

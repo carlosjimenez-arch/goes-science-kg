@@ -34,6 +34,7 @@ def _lote():
         {"id": "REF-1", "tipo": "corregir"}, {"id": "REF-2", "tipo": "recuperar"}, {"id": "REF-3", "tipo": "acotar"}]}
 
 
+
 def test_el_validador_del_redactor():
     fila = {"contenido": "c", "procedimental": "5.12a. Descripción de algo.", "indicador": "5.12a. Describe algo.",
             "evidencia_aprendizaje": "e"}

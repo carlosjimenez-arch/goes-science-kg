@@ -177,3 +177,17 @@ def test_las_clases_que_citan_temas_quitados_por_la_v3_vuelven_al_panel():
     # 7.° 2.15 (resistencia bacteriana) se movió a 9.°; 9.° 3.1 sigue en la malla
     assert panel.temas_perdidos_en_v3({"justificacion": "ver G07-CIE-U2-2.15 y G09-CIE-U3-3.1."}) == \
         ["G07-CIE-U2-2.15"]
+
+
+def test_un_refuerzo_corregido_por_el_panel_sigue_las_reglas_del_redactor():
+    """Spec 15: el panel puede corregir un refuerzo o convertirlo en descarte, pero no romper las reglas."""
+    r = {"id": "REF:error_malla:ERR-01", "tipo": "corregir", "decision": "inyectar", "forma": "nota_en_tema",
+         "tema_ancla": "G05-CIE-U6-6.7", "refuerzo": "Usar «transformantes».", "evidencia": [{"fuente": "x"}],
+         "confianza": "alta"}
+    campos = panel.config()["campos_editables"]["refuerzo"]
+    assert panel.errores_elemento_corregido(r, {"refuerzo": "Bordes convergentes, divergentes y transformantes."},
+                                            campos) == []
+    assert panel.errores_elemento_corregido(r, {"decision": "descartar", "motivo": "La V3 ya lo corrige."},
+                                            campos) == []
+    assert panel.errores_elemento_corregido(r, {"forma": "fila_nueva"}, campos)   # una corrección no es fila nueva
+    assert panel.errores_elemento_corregido(r, {"id": "otro"}, campos)            # campo no editable

@@ -232,6 +232,39 @@ def _exp_contenido() -> dict[str, dict]:
     return salida
 
 
+def _exp_refuerzos() -> dict[str, dict]:
+    """Refuerzos de la malla V3 redactados y todavía sin revisar (spec 15): experto de la disciplina → psicopedagogo →
+    experto, como la capa pedagógica. Se pueden aprobar, corregir o convertir en descarte."""
+    from goes_science_kg.aprendizaje.pedagogia import palabras_max, registro
+    from goes_science_kg.ingesta.mallas import extraer
+
+    p = ruta("data/interim/refuerzo_v3/refuerzos.json")
+    if not p.exists():
+        return {}
+    temas = {t.id: t for t in extraer()}
+    salida = {}
+    for r in json.loads(p.read_text(encoding="utf-8")):
+        if r.get("estado") != "propuesta_pendiente":
+            continue
+        rol = _rol(r.get("asignatura") or "quimica")
+        t = temas.get(r.get("tema_ancla") or "")
+        grado = t.grado if t else max(r.get("grados_destino") or [9])
+        salida[f"RFZ:{r['id']}"] = {
+            "tipo": "contenido", "titulo": f"{r['id']} ({r['tipo']}, {grado}.°)", "elemento": "refuerzo",
+            "etapas": [[rol], ["psicopedagogo"], [rol]], "roles": [rol, "psicopedagogo"],
+            "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y "
+                        "evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte "
+                        "(decision «descartar» con motivo).",
+            "datos": {"elemento": {k: r.get(k) for k in ("id", "tipo", "decision", "motivo", "forma", "tema_ancla",
+                                                         "refuerzo", "fila", "evidencia", "confianza")},
+                      "candidato": {k: r.get(k) for k in ("origen", "problema", "texto_base", "conceptos",
+                                                          "temas_ancla", "solidez")},
+                      "tema_ancla": {"id": t.id, "grado": t.grado, "unidad": t.unidad, "contenido": t.contenido,
+                                     "procedimental": t.procedimental, "indicador": t.indicador} if t else None,
+                      "adaptacion": {"palabras_max": palabras_max(grado), "registro": registro(grado)}}}
+    return salida
+
+
 def _exp_piloto() -> dict[str, dict]:
     return {f"PIL:{d['id']}": {"tipo": "piloto", "titulo": d["pregunta"], "roles": ["psicopedagogo"],
                                "pregunta": d["pregunta"],
@@ -350,7 +383,7 @@ def expedientes() -> dict[str, dict]:
     """Todos los expedientes que el panel puede dictaminar, por id."""
     return {**_exp_decisiones(), **_exp_asignaciones(), **_exp_cambios_asignatura(), **_exp_contenido(),
             **_exp_hallazgos(), **_exp_propuestas(), **_exp_piloto(), **_exp_inciertos(),
-            **_exp_revision_v3()}
+            **_exp_revision_v3(), **_exp_refuerzos()}
 
 
 # -- estado ---------------------------------------------------------------------------------------------------------
@@ -454,6 +487,10 @@ def errores_elemento_corregido(original: dict, cambios: dict, campos: list[str])
     if e:
         return e
     nuevo = {**copy.deepcopy(original), **cambios}
+    if str(original.get("id", "")).startswith("REF:"):   # un refuerzo de la malla V3: las reglas del redactor
+        from goes_science_kg import refuerzo
+
+        return refuerzo.errores_lote({"candidatos": [{"id": original["id"], "tipo": original["tipo"]}]}, [nuevo])
     ped = Pedagogia.cargar()
     return errores_elemento(nuevo, _nav(), ped.con([nuevo]))
 
@@ -609,6 +646,9 @@ def aplicar() -> dict:
 
     capa_ped = {t: {e["id"]: e for e in json.loads((directorio() / a).read_text(encoding="utf-8"))}
                 for t, a in ARCHIVOS.items()}
+    p_refuerzos = ruta("data/interim/refuerzo_v3/refuerzos.json")   # refuerzos de la malla V3 (spec 15)
+    if p_refuerzos.exists():
+        capa_ped["refuerzo"] = {e["id"]: e for e in json.loads(p_refuerzos.read_text(encoding="utf-8"))}
     revs_por_tramo = {"2_8": capas["clase_internacional_2_8"], "9_11": capas["clase_internacional"]}
     clases_panel: list[dict] = []
     for i, x in sorted(estado.items()):
@@ -664,7 +704,7 @@ def aplicar() -> dict:
             r.setdefault("dictamenes_panel", []).append(reg)
             _observacion_del_panel(r, reg)
         elif x["tipo"] == "contenido":
-            e = capa_ped[x["elemento"]][i.removeprefix("PED:")]
+            e = capa_ped[x["elemento"]][i.split(":", 1)[1]]
             nueva = x.get("version_vigente") or e
             anteriores = {k: e.get(k) for k in nueva if k in config()["campos_editables"][x["elemento"]]
                           and nueva.get(k) != e.get(k)}
@@ -706,6 +746,9 @@ def aplicar() -> dict:
     for t, archivo in ARCHIVOS.items():
         (directorio() / archivo).write_text(json.dumps(sorted(capa_ped[t].values(), key=lambda e: e["id"]),
                                                        ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    if "refuerzo" in capa_ped:
+        p_refuerzos.write_text(json.dumps(sorted(capa_ped["refuerzo"].values(), key=lambda e: e["id"]),
+                                          ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     _guardar_estado(estado)
     return dict(hechos)
 
@@ -727,7 +770,7 @@ def _registro_en_capa(i: str, x: dict, claves: dict, coherencia: dict, capa_ped:
         r = next((e for e in coherencia.get(ruta(x["archivo"]), []) if e["id"] == i.removeprefix("ASI:")), {})
         regs = r.get("dictamenes_panel") or [None]
     elif x["tipo"] == "contenido":
-        regs = [capa_ped[x["elemento"]].get(i.removeprefix("PED:"), {}).get("revision_panel")]
+        regs = [capa_ped[x["elemento"]].get(i.split(":", 1)[1], {}).get("revision_panel")]
     else:   # clase_incierta
         r = next((r for r in revs if r["concepto"] == x["datos"]["concepto"]["id"]), {})
         regs = r.get("dictamenes_panel") or [None]

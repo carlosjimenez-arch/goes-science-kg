@@ -241,10 +241,11 @@ def _candidatos_quitado() -> list[dict]:
 
 
 def candidatos() -> list[dict]:
-    """Todos los candidatos a refuerzo, con id estable por origen y orden determinista."""
+    """Todos los candidatos a refuerzo, con id estable («REF:<origen>:<referencia>»: no cambia al regenerar el
+    catálogo) y orden determinista."""
     filas = [*_candidatos_errores(), *_candidatos_panel(), *_candidatos_contraste(), *_candidatos_quitado()]
     filas.sort(key=lambda f: (f["origen"], f["referencia"]))
-    return [{"id": f"REF-{n:03d}", "version": VERSION, **f} for n, f in enumerate(filas, start=1)]
+    return [{"id": f"REF:{f['origen']}:{f['referencia']}", "version": VERSION, **f} for f in filas]
 
 
 def escribir_candidatos() -> dict:
@@ -288,36 +289,52 @@ def _asignatura_de_temas() -> dict[str, str]:
     return {n.id.removeprefix("TEMA:"): n.asignatura for n in cargar()[0] if n.tipo.value == "Tema" and n.asignatura}
 
 
-def preparar_lotes() -> list[str]:
+def _conceptos_en_re_decision() -> set[str]:
+    """Conceptos con un expediente de la serie v3 del panel todavía sin resolver: su clase puede cambiar."""
+    from goes_science_kg import panel
+
+    ids = {e["id"] for p in sorted(ruta(f"{panel.DIR}/lotes").glob("lote_r1-v3_*.json"))
+           for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]}
+    estado = panel.cargar_estado()
+    return {estado[i]["datos"]["concepto"]["id"] for i in ids if i in estado and estado[i]["estado"] != "resuelta"}
+
+
+def preparar_lotes(serie: str = "a", asignaturas: tuple[str, ...] | None = None,
+                   tramo: str | None = None) -> list[str]:
     """Lotes por asignatura y tramo con los candidatos (candidatos.json), sus temas ancla y los temas de cada grado
-    destino. Reescribe los lotes: no hay que correrlo después de unir."""
+    destino, en una serie («lote_<asig>_<tramo>_<serie>»). No reescribe lotes: deja fuera los candidatos que ya están
+    en un lote y los del contraste cuyo concepto el panel todavía re-decide (serie v3)."""
     from goes_science_kg.config import relativa
     from goes_science_kg.ingesta.mallas import extraer
 
     temas = {t.id: t for t in extraer()}
     asig_de = _asignatura_de_temas()
-    filas = json.loads(ruta(f"{DIR}/candidatos.json").read_text(encoding="utf-8"))
+    d = ruta(f"{DIR}/lotes")
+    d.mkdir(parents=True, exist_ok=True)
+    ya = {c["id"] for p in d.glob("lote_*.json") for c in json.loads(p.read_text(encoding="utf-8"))["candidatos"]}
+    pendientes = _conceptos_en_re_decision()
+    filas = [f for f in json.loads(ruta(f"{DIR}/candidatos.json").read_text(encoding="utf-8"))
+             if f["id"] not in ya and not (f["origen"] in ("contraste", "quitado_v3") and set(f["conceptos"]) &
+                                           pendientes)]
     grupos: dict[tuple[str, str], list[dict]] = {}
     for f in filas:
         anclas = [t for t in f["temas_v3"] if t in temas]
         asig = f.get("asignatura") or next((asig_de[t] for t in anclas if t in asig_de), None) or "ciencias"
         asig = {"tierra_espacio": "ciencias_tierra_espacio"}.get(asig, asig)
         grados = grados_destino(f, {i: t.grado for i, t in temas.items()})
-        tramo = "2_8" if grados and min(grados) <= 8 else "9_11"
+        su_tramo = "2_8" if grados and min(grados) <= 8 else "9_11"
+        if (asignaturas and asig not in asignaturas) or (tramo and su_tramo != tramo):
+            continue
         f = {**f, "asignatura": asig, "grados_destino": grados,
              "temas_ancla": [{"id": t, "grado": temas[t].grado, "unidad": temas[t].unidad,
                               "contenido": temas[t].contenido, "procedimental": temas[t].procedimental,
                               "indicador": temas[t].indicador} for t in anclas[:4]]}
-        grupos.setdefault((asig, tramo), []).append(f)
-    d = ruta(f"{DIR}/lotes")
-    d.mkdir(parents=True, exist_ok=True)
-    for p in d.glob("lote_*.json"):
-        p.unlink()
+        grupos.setdefault((asig, su_tramo), []).append(f)
     escritos = []
-    for (asig, tramo), cands in sorted(grupos.items()):
+    for (asig, su_tramo), cands in sorted(grupos.items()):
         partes = [cands[i:i + TAMANO_LOTE] for i in range(0, len(cands), TAMANO_LOTE)]
         for k, parte in enumerate(partes, start=1):
-            nombre = f"{asig}_{tramo}" + (f"_{k}" if len(partes) > 1 else "")
+            nombre = f"{asig}_{su_tramo}_{serie}" + (f"_{k}" if len(partes) > 1 else "")
             claves = sorted({(g, asig) for c in parte for g in c["grados_destino"]})
             del_grado = {f"{g}:{a}": [f"{t.id} | {t.procedimental[:110]}" for t in temas.values()
                                        if t.grado == g and (asig_de.get(t.id) == a or t.asignatura == a)]
