@@ -59,14 +59,25 @@ def _objetivos_por_concepto() -> dict[str, list[dict]]:
     return por
 
 
-def _fuentes_paises(conceptos: list[str], grado: int) -> list[dict]:
-    """Hasta POR_PAIS objetivos por país que enseñan los conceptos del tema: primero el núcleo, el concepto
-    principal y el grado más cercano al del tema."""
+def _raices(texto: str) -> set[str]:
+    import re
+    import unicodedata
+
+    t = "".join(c for c in unicodedata.normalize("NFKD", (texto or "").lower()) if not unicodedata.combining(c))
+    return {w[:6] for w in re.findall(r"[a-zñ]{4,}", t)}
+
+
+def _fuentes_paises(conceptos: list[str], grado: int, texto_tema: str) -> list[dict]:
+    """Hasta POR_PAIS objetivos por país que enseñan los conceptos del tema, los más cercanos primero: los que más
+    comparten el texto del tema (procedimental, indicador y contenido), los del núcleo, los del concepto principal
+    y los del grado más cercano. Así no entran por delante objetivos de un concepto vecino."""
+    tema = _raices(texto_tema)
     candidatos = {}
     for k, c in enumerate(conceptos):
         for o in _objetivos_por_concepto().get(c, []):
             g = (float(o.get("grado_sv_min") or 0) + float(o.get("grado_sv_max") or 0)) / 2
-            orden = (o.get("nivel") != "nucleo", k, -o["_peso"], abs(g - grado), o["id"])
+            cerca = len(tema & _raices(o.get("texto", "")))
+            orden = (-cerca, o.get("nivel") != "nucleo", k, -o["_peso"], abs(g - grado), o["id"])
             if o["id"] not in candidatos or orden < candidatos[o["id"]][0]:
                 candidatos[o["id"]] = (orden, c, o)
     por_pais: dict[str, list[dict]] = defaultdict(list)
@@ -89,6 +100,32 @@ def _datos_referencia(conceptos: list[str]) -> list[dict]:
 
 def _hace_falta_un_dato(texto: object) -> bool:
     return "tabla de referencia" in json.dumps(texto, ensure_ascii=False).lower()
+
+
+MAGNITUD = (r"\b(pKa\d?|pKb|pI|Ka|Kb|Kc|Kp|Kw|Kps|densidad|calor específico|presión atmosférica|"
+            r"punto isoeléctrico|constante de [a-záéíóúñ]+|masa molar|solubilidad|entalpía)\b"
+            r"(?:\s+(?:de|del)\s+(?:la\s+|el\s+|los\s+|las\s+)?([a-záéíóúñ\-]+(?:\s+[a-záéíóúñ\-]+)?))?")
+
+
+def _datos_que_faltan(elementos: list[dict]) -> list[dict]:
+    """Qué datos de referencia piden los elementos: en cada oración que dice «tabla de referencia», las magnitudes
+    que nombra (pKa, pI, Kc, densidad…) con su sustancia cuando la dice."""
+    import re
+
+    salida: list[dict] = []
+    for e in elementos:
+        texto = " ".join(str(v) for v in e.values() if isinstance(v, str | list))
+        for oracion in re.split(r"(?<=[.;:])\s+", texto):
+            if "tabla de referencia" not in oracion.lower():
+                continue
+            for m in re.finditer(MAGNITUD, oracion, re.IGNORECASE):
+                sustancia = m.group(2) or ""
+                dato = m.group(1) + (f" de {sustancia}" if sustancia and not sustancia.lower().startswith(
+                    ("la", "tabla", "referencia", "valor")) else "")
+                if not any(x["dato"].lower() == dato.lower() for x in salida):
+                    salida.append({"dato": dato, "elemento": e["id"],
+                                   "contexto": e.get("titulo") or (e.get("enunciado") or "")[:90]})
+    return salida
 
 
 def paquete(tema: str) -> dict:
@@ -126,7 +163,8 @@ def paquete(tema: str) -> dict:
                      for r in json.loads(p_ref.read_text(encoding="utf-8")) if r.get("tema_ancla") == i]
     datos = _datos_referencia(todos)
     faltan_datos = [e["id"] for e in [*actividades, *experimentos, *microtemas] if _hace_falta_un_dato(e)]
-    fuentes = _fuentes_paises(principales + [c for c in todos if c not in principales], t.grado)
+    texto_tema = f"{t.contenido} {t.subcontenido} {t.procedimental} {t.indicador}"
+    fuentes = _fuentes_paises(principales + [c for c in todos if c not in principales], t.grado, texto_tema)
     elementos = [*actividades, *dificultades, *microtemas, *experimentos]
     sin_revisar = sorted(e["id"] for e in elementos if e.get("estado") == "propuesta_pendiente")
     completitud = {
@@ -156,6 +194,7 @@ def paquete(tema: str) -> dict:
                           for d in dificultades],
         "actividades": actividades, "microtemas": microtemas, "experimentos": experimentos,
         "datos_de_referencia": {"valores": datos, "hacen_falta_en": faltan_datos,
+                                "datos_que_faltan": _datos_que_faltan([*actividades, *experimentos, *microtemas]),
                                 "fuente_esperada": "tabla de referencia citable en data/fuentes/ (pendiente)"
                                 if not datos else None},
         "refuerzo_de_la_malla": refuerzos,
@@ -201,8 +240,9 @@ def _markdown(p: dict) -> str:
            f"{a.get('enunciado', '')[:220]}" for a in p["actividades"]]
     md += ["", "## Datos de referencia", ""]
     d = p["datos_de_referencia"]
-    md += ([f"- {v}" for v in d["valores"]] or [f"- **Pendiente de fuente.** Hacen falta en: "
-                                                 f"{', '.join(d['hacen_falta_en']) or '—'}."])
+    md += ([f"- {v}" for v in d["valores"]] or [
+        "- **Pendiente de fuente** (tabla citable en data/fuentes/). Datos que piden los elementos:",
+        *[f"  - {x['dato']} — en «{x['contexto']}» ({x['elemento']})" for x in d.get("datos_que_faltan", [])]])
     if p["refuerzo_de_la_malla"]:
         md += ["", "## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)", ""]
         md += [f"- {r['id']} ({r['estado']}): {r['refuerzo']}" for r in p["refuerzo_de_la_malla"]]

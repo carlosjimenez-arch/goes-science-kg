@@ -5,10 +5,10 @@
 **Qué muestra:** Refuerzo PREVIO por la secuencia de la malla (no es un déficit del estudiante). Su comprobación falla, el diagnóstico baja a profundidad 2 (kelvin), se refuerza y se vuelve en orden: base → objetivo.
 
 ## Objetivo curricular (malla V2, sin cambios)
-- **G09-CIE-U2-2.4** (9.°, fisica): 2.4. Experimentación con procesos termodinámicos en un gas ideal.
+- **G09-CIE-U2-2.4** (9.°, fisica): 2.3. Experimentación con procesos termodinámicos en un gas ideal.
 - Indicador de logro: 2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.
 - Evidencia de aprendizaje: Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado
-- Fuentes: malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 2 - Calor y temperatura» fila 6; PISA25 PISA-F1 (principal): Estructura y propiedades de la materia (modelo de partículas, enlaces, cambios de estado,  · pisa25final p. 38; PISA25 PISA-F4 (secundario): La energía y su transferencia (conservación, disipación, reacciones químicas) · pisa25final p. 38; T8_27 T8_27-P1.1 (principal): Movimiento de partículas en sólidos, líquidos y gases · timss27 p. 40
+- Fuentes: malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx hoja «Unidad 2 - Calor y temperatura» fila 5; PISA25 PISA-F1 (principal): Estructura y propiedades de la materia (modelo de partículas, enlaces, cambios de estado,  · pisa25final p. 38; PISA25 PISA-F4 (secundario): La energía y su transferencia (conservación, disipación, reacciones químicas) · pisa25final p. 38; T8_27 T8_27-P1.1 (principal): Movimiento de partículas en sólidos, líquidos y gases · timss27 p. 40
 
 ## Bases: «¿qué necesita comprender?»
 
@@ -16,8 +16,8 @@
 |---|---|---|---|---|---|
 | 1 | Primera ley de la termodinámica | G09-CIE-U2-2.7 | **no** | alta | propuesta_ia_pendiente |
 | 1 | Relaciones presión-volumen-temperatura en gases | G09-CIE-U2-2.4 | **no** | alta | propuesta_ia_pendiente |
-| 2 | Calor como energía en tránsito | G10-FIS-U12-12.6 | **no** | alta | propuesta_ia_pendiente |
-| 2 | Conservación de la energía | G10-FIS-U7-7.8 | **no** | alta | propuesta_ia_pendiente |
+| 2 | Calor como energía en tránsito | G10-FIS-U12-12.8 | **no** | alta | propuesta_ia_pendiente |
+| 2 | Conservación de la energía | G10-FIS-U7-7.7 | **no** | alta | propuesta_ia_pendiente |
 | 2 | Presión | G06-CIE-U1-1.3 | sí | alta | propuesta_ia_pendiente |
 | 2 | Temperatura y escalas termométricas | G03-CIE-U1-1.8 | sí | alta | propuesta_ia_pendiente |
 | 2 | Modelo de partículas de la materia | G06-CIE-U2-2.1 | sí | media | propuesta_ia_pendiente |
@@ -83,27 +83,26 @@ Desvío de la sesión: 2 refuerzos, 18 min (límites: 3 y 25 min).
 
 | Distancia | Grado | Tema | Por el concepto |
 |---|---|---|---|
-| 1 | 9 | G09-CIE-U2-2.4 2.4. Experimentación con procesos termodinámicos en un gas ideal. | Procesos termodinámicos |
-| 1 | 9 | G09-CIE-U2-2.5 2.5. Resolución de problemas a partir de gráficas de procesos termodin | Procesos termodinámicos |
-| 1 | 10 | G10-FIS-U14-14.1 14.1. Aplicación de la ecuación de estado del gas ideal a problemas co | Gas ideal y teoría cinética |
-| 1 | 10 | G10-FIS-U14-14.2 14.2. Deducción de la relación entre la energía cinética media de las  | Gas ideal y teoría cinética |
-| 1 | 10 | G10-FIS-U15-15.4 15.4. Representación de procesos termodinámicos en diagramas p-V y cál | Procesos termodinámicos |
-| 1 | 10 | G10-FIS-U15-15.5 15.5. Cálculo del trabajo y del cambio de energía interna en expansion | Procesos termodinámicos |
+| 1 | 9 | G09-CIE-U2-2.4 2.3. Experimentación con procesos termodinámicos en un gas ideal. | Procesos termodinámicos |
+| 1 | 9 | G09-CIE-U2-2.5 2.4. Resolución de problemas a partir de gráficas de procesos termodin | Procesos termodinámicos |
+| 1 | 10 | G10-FIS-U14-14.1 6.4. Aplicación de la ecuación de estado del gas ideal y relación de l | Gas ideal y teoría cinética |
 | 1 | 10 | G10-QUI-U6-6.1 6.1. Medición de la presión atmosférica y análisis de su variación con | Gas ideal y teoría cinética |
-| 2 | 9 | G09-CIE-U2-2.10 2.10. Resolución de problemas acerca de la máxima eficiencia posible e | Segunda ley de la termodinámica |
+| 2 | 9 | G09-CIE-U2-2.10 2.9. Resolución de problemas acerca de la máxima eficiencia posible en | Segunda ley de la termodinámica |
+| 2 | 9 | G09-CIE-U2-2.9 2.8. Experimentación con un proceso irreversible de extracción de calo | Segunda ley de la termodinámica |
+| 2 | 10 | G10-FIS-U15-15.10 6.6. Análisis de la segunda ley y cálculo de la eficiencia de máquinas | Segunda ley de la termodinámica |
 
 **Temperatura y escalas termométricas** apoya, en 9.°–11.°:
 
 | Distancia | Grado | Tema | Por el concepto |
 |---|---|---|---|
-| 0 | 10 | G10-FIS-U12-12.1 12.1. Deducción de las ecuaciones de conversión entre escalas de tempe | Temperatura y escalas termométricas |
-| 0 | 10 | G10-FIS-U12-12.2 12.2. Extrapolación de datos de presión y temperatura de un gas a volu | Temperatura y escalas termométricas |
-| 0 | 10 | G10-FIS-U12-12.3 12.3. Calibración de un sensor de temperatura mediante dos puntos fijo | Temperatura y escalas termométricas |
-| 0 | 10 | G10-FIS-U15-15.12 15.12. Investigación documental sobre la tercera ley y los métodos par | Temperatura y escalas termométricas |
-| 1 | 9 | G09-CIE-U2-2.6 2.6. Indagación del concepto de equilibrio térmico entre dos cuerpos. | Equilibrio térmico y ley cero |
-| 1 | 10 | G10-FIS-U12-12.4 12.4. Cálculo de la variación de longitud de materiales sometidos a ca | Dilatación térmica |
-| 1 | 10 | G10-FIS-U12-12.5 12.5. Construcción e interpretación de gráficas volumen-temperatura pa | Dilatación térmica |
-| 1 | 10 | G10-FIS-U15-15.2 15.2. Análisis de curvas de aproximación al equilibrio térmico entre d | Equilibrio térmico y ley cero |
+| 0 | 10 | G10-FIS-U12-12.2 6.1. Conversión entre escalas de temperatura, estimación del cero abso | Temperatura y escalas termométricas |
+| 1 | 9 | G09-CIE-U2-2.6 2.5. Indagación del concepto de equilibrio térmico entre dos cuerpos. | Equilibrio térmico y ley cero |
+| 1 | 10 | G10-QUI-U6-6.2 6.2. Comprobación experimental de la ley de Boyle-Mariotte y análisis  | Leyes de los gases |
+| 2 | 9 | G09-CIE-U2-2.4 2.3. Experimentación con procesos termodinámicos en un gas ideal. | Procesos termodinámicos |
+| 2 | 9 | G09-CIE-U2-2.5 2.4. Resolución de problemas a partir de gráficas de procesos termodin | Procesos termodinámicos |
+| 2 | 10 | G10-FIS-U14-14.1 6.4. Aplicación de la ecuación de estado del gas ideal y relación de l | Gas ideal y teoría cinética |
+| 2 | 10 | G10-QUI-U6-6.1 6.1. Medición de la presión atmosférica y análisis de su variación con | Gas ideal y teoría cinética |
+| 2 | 10 | G10-QUI-U6-6.3 6.3. Cálculo de cantidades de gases producidos o consumidos en reaccio | Ecuación de los gases ideales y volumen molar |
 
 ## Contexto inyectado al tutor (primer paso, recortado)
 
@@ -114,7 +113,7 @@ La referencia internacional entra como comparación para el docente, no como pre
  "objetivo": {
   "id": "TEMA:G09-CIE-U2-2.4",
   "grado": 9,
-  "procedimental": "2.4. Experimentación con procesos termodinámicos en un gas ideal.",
+  "procedimental": "2.3. Experimentación con procesos termodinámicos en un gas ideal.",
   "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
   "evidencia_de_logro": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
  },
@@ -126,7 +125,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "estado_microtema": "revisado_panel"
  },
  "fuentes": [
-  "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 2 - Calor y temperatura» fila 6",
+  "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx hoja «Unidad 2 - Calor y temperatura» fila 5",
   "PISA25 PISA-F1 (principal): Estructura y propiedades de la materia (modelo de partículas, enlaces, cambios de estado,  · pisa25final p. 38",
   "PISA25 PISA-F4 (secundario): La energía y su transferencia (conservación, disipación, reacciones químicas) · pisa25final p. 38",
   "T8_27 T8_27-P1.1 (principal): Movimiento de partículas en sólidos, líquidos y gases · timss27 p. 40"

@@ -5,10 +5,10 @@
 **Qué muestra:** El mismo ciclo en primaria, con lenguaje de 5.° (60 palabras). El tutor (simulado) presenta cada refuerzo; su primer turno es demasiado largo, la guarda lo rechaza y el segundo pasa. El refuerzo de suelo (10 min) supera el límite de primaria (8 min, decisión del piloto): no se hace y queda una nota al docente. La reevaluación es una respuesta abierta que califica el evaluador (simulado).
 
 ## Objetivo curricular (malla V2, sin cambios)
-- **G05-CIE-U6-6.14** (5.°, ciencias_tierra_espacio): 6.14. Identificación de los procesos químicos que ocurren en el suelo.
+- **G05-CIE-U6-6.14** (5.°, ciencias_tierra_espacio): 6.17. Identificación de los procesos químicos que ocurren en el suelo.
 - Indicador de logro: 6.14. Identifica los principales procesos químicos que ocurren en el suelo.
 - Evidencia de aprendizaje: Registro de reacciones en muestras de suelo
-- Fuentes: malla: MALLA:Matriz_Ciencias_5to_Grado_U1_U6.xlsx hoja «Unidad 6 - Ciencias de la Tierr» fila 16; T8_27 T8_27-C3.1 (principal): Características de las reacciones químicas · timss27 p. 39; T8_27 T8_27-E1.2 (secundario): Procesos geológicos · timss27 p. 43
+- Fuentes: malla: MALLA:Matriz_Ciencias_5to_Grado_U1_U6 V2.xlsx hoja «Unidad 6 - Ciencias de la Tierr» fila 19; T8_27 T8_27-C3.1 (principal): Características de las reacciones químicas · timss27 p. 39; T8_27 T8_27-E1.2 (secundario): Procesos geológicos · timss27 p. 43
 
 ## Bases: «¿qué necesita comprender?»
 
@@ -77,14 +77,14 @@ Desvío de la sesión: 1 refuerzos, 8 min (límites: 3 y 25 min).
 
 | Distancia | Grado | Tema | Por el concepto |
 |---|---|---|---|
-| 1 | 5 | G05-CIE-U6-6.14 6.14. Identificación de los procesos químicos que ocurren en el suelo. | Suelo: formación, componentes y tipos |
-| 1 | 5 | G05-CIE-U6-6.15 6.15. Indagación de la estructura del suelo y concepto de meteorizació | Suelo: formación, componentes y tipos |
-| 1 | 5 | G05-CIE-U6-6.16 6.16. Caracterización física de los suelos: clases y tipos. | Suelo: formación, componentes y tipos |
-| 1 | 5 | G05-CIE-U6-6.17 6.17. Demostración de la erosión ocasionada por la acción del agua y e | Erosión, transporte y sedimentación |
-| 1 | 5 | G05-CIE-U6-6.19 6.19. Descripción de los principales suelos de El Salvador. | Suelo: formación, componentes y tipos |
-| 2 | 5 | G05-CIE-U6-6.18 6.18. Indagación de los efectos de la actividad humana en la degradaci | Uso del suelo y su degradación |
-| 2 | 5 | G05-CIE-U6-6.2 6.2. Modelación del proceso de formación de fósiles. | Fósiles y su formación |
-| 2 | 5 | G05-CIE-U6-6.20 6.20. Observación de los usos actuales del suelo en la comunidad. | Uso del suelo y su degradación |
+| 1 | 5 | G05-CIE-U6-6.14 6.17. Identificación de los procesos químicos que ocurren en el suelo. | Suelo: formación, componentes y tipos |
+| 1 | 5 | G05-CIE-U6-6.15 6.18. Indagación de la estructura del suelo y concepto de meteorizació | Suelo: formación, componentes y tipos |
+| 1 | 5 | G05-CIE-U6-6.16 6.19. Caracterización física de los suelos: clases y tipos. | Suelo: formación, componentes y tipos |
+| 1 | 5 | G05-CIE-U6-6.17 6.20. Demostración de la erosión ocasionada por la acción del agua y e | Erosión, transporte y sedimentación |
+| 1 | 5 | G05-CIE-U6-6.19 6.22. Descripción de los principales suelos de El Salvador. | Suelo: formación, componentes y tipos |
+| 2 | 5 | G05-CIE-U6-6.18 6.21. Indagación de los efectos de la actividad humana en la degradaci | Uso del suelo y su degradación |
+| 2 | 5 | G05-CIE-U6-6.2 6.5. Modelación del proceso de formación de fósiles. | Fósiles y su formación |
+| 2 | 5 | G05-CIE-U6-6.20 6.23. Observación de los usos actuales del suelo en la comunidad. | Uso del suelo y su degradación |
 
 ## Contexto inyectado al tutor (primer paso, recortado)
 
@@ -95,7 +95,7 @@ La referencia internacional entra como comparación para el docente, no como pre
  "objetivo": {
   "id": "TEMA:G05-CIE-U6-6.14",
   "grado": 5,
-  "procedimental": "6.14. Identificación de los procesos químicos que ocurren en el suelo.",
+  "procedimental": "6.17. Identificación de los procesos químicos que ocurren en el suelo.",
   "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
   "evidencia_de_logro": "Registro de reacciones en muestras de suelo"
  },
@@ -107,7 +107,7 @@ La referencia internacional entra como comparación para el docente, no como pre
   "estado_microtema": "revisado_panel"
  },
  "fuentes": [
-  "malla: MALLA:Matriz_Ciencias_5to_Grado_U1_U6.xlsx hoja «Unidad 6 - Ciencias de la Tierr» fila 16",
+  "malla: MALLA:Matriz_Ciencias_5to_Grado_U1_U6 V2.xlsx hoja «Unidad 6 - Ciencias de la Tierr» fila 19",
   "T8_27 T8_27-C3.1 (principal): Características de las reacciones químicas · timss27 p. 39",
   "T8_27 T8_27-E1.2 (secundario): Procesos geológicos · timss27 p. 43"
  ],

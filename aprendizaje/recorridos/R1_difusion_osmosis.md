@@ -8,7 +8,7 @@
 - **G09-CIE-U8-8.2** (9.°, biologia): 8.2. Experimentación con difusión y ósmosis a través de la membrana celular en tejidos vegetales.
 - Indicador de logro: 8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.
 - Evidencia de aprendizaje: Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas
-- Fuentes: malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 8 - La célula» fila 4; PISA25 PISA-PR1 (elemento): Variables dependientes, independientes y de control · pisa25final p. 40; PISA25 PISA-PR5 (elemento): Formas de representar datos en tablas, gráficos y diagramas, y su uso adecuado · pisa25final p. 40; PISA25 PISA-V3 (principal): Células: estructura y función, energía, respiración, fotosíntesis, crecimiento · pisa25final p. 38; T8_27 T8_27-B2.1 (principal): Estructura y funciones de la célula · timss27 p. 34; T8_27 T8_27-B7.1 (secundario): Rasgos y equipo de una investigación biológica · timss27 p. 37
+- Fuentes: malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx hoja «Unidad 8 - La célula» fila 4; PISA25 PISA-PR1 (elemento): Variables dependientes, independientes y de control · pisa25final p. 40; PISA25 PISA-PR5 (elemento): Formas de representar datos en tablas, gráficos y diagramas, y su uso adecuado · pisa25final p. 40; PISA25 PISA-V3 (principal): Células: estructura y función, energía, respiración, fotosíntesis, crecimiento · pisa25final p. 38; T8_27 T8_27-B2.1 (principal): Estructura y funciones de la célula · timss27 p. 34; T8_27 T8_27-B7.1 (secundario): Rasgos y equipo de una investigación biológica · timss27 p. 37
 
 ## Bases: «¿qué necesita comprender?»
 
@@ -17,7 +17,7 @@
 | 1 | Membrana celular | G06-CIE-U5-5.8 | sí | alta | propuesta_ia_pendiente |
 | 1 | Soluto, disolvente y concentración | G03-CIE-U3-3.10 | sí | media | propuesta_ia_pendiente |
 | 2 | Biomoléculas | G06-CIE-U5-5.1 | sí | alta | propuesta_ia_pendiente |
-| 2 | Estructuras celulares básicas | G06-CIE-U5-5.9 | sí | alta | propuesta_ia_pendiente |
+| 2 | Estructuras celulares básicas | — | **no** | alta | propuesta_ia_pendiente |
 | 2 | Disolución y rapidez de disolución | G03-CIE-U3-3.10 | sí | alta | propuesta_ia_pendiente |
 
 ## Recorrido paso a paso
@@ -73,14 +73,14 @@ Desvío de la sesión: 1 refuerzos, 10 min (límites: 3 y 25 min).
 
 | Distancia | Grado | Tema | Por el concepto |
 |---|---|---|---|
-| 1 | 9 | G09-CIE-U3-3.2 3.2. Identificación experimental de los factores que afecta la rapidez | Factores que afectan la rapidez de reacción |
+| 1 | 9 | G09-CIE-U3-3.2 3.2. Identificación experimental de los factores que afectan la rapide | Factores que afectan la rapidez de reacción |
 | 1 | 9 | G09-CIE-U4-4.14 4.14. Demostración experimental de las variables que influyen en la es | El océano: propiedades del agua de mar y zonas |
 | 1 | 9 | G09-CIE-U4-4.2 4.2. Exploración de las características y las propiedades físicas y qu | El océano: propiedades del agua de mar y zonas |
 | 1 | 9 | G09-CIE-U4-4.3 4.3. Descripción de la topografía y la zonificación del ambiente marin | El océano: propiedades del agua de mar y zonas |
 | 1 | 9 | G09-CIE-U8-8.2 8.2. Experimentación con difusión y ósmosis a través de la membrana ce | Difusión y ósmosis |
-| 1 | 10 | G10-QUI-U8-8.3 8.3. Cálculo de la concentración de disoluciones en molaridad, molalid | Molaridad y unidades químicas de concentración |
-| 1 | 10 | G10-QUI-U8-8.4 8.4. Preparación de disoluciones de concentración conocida a partir de | Molaridad y unidades químicas de concentración |
-| 1 | 10 | G10-QUI-U8-8.5 8.5. Resolución de problemas de conversión de unidades de concentració | Molaridad y unidades químicas de concentración |
+| 1 | 10 | G10-QUI-U8-8.3 8.2. Cálculo de la concentración de disoluciones en molaridad, molalid | Molaridad y unidades químicas de concentración |
+| 1 | 10 | G10-QUI-U8-8.4 8.3. Preparación de disoluciones de concentración conocida a partir de | Molaridad y unidades químicas de concentración |
+| 1 | 10 | G10-QUI-U8-8.5 8.4. Resolución de problemas de conversión de unidades de concentració | Molaridad y unidades químicas de concentración |
 
 ## Contexto inyectado al tutor (primer paso, recortado)
 
@@ -103,14 +103,14 @@ La referencia internacional entra como comparación para el docente, no como pre
   "estado_microtema": "revisado_panel"
  },
  "fuentes": [
-  "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12.xlsx hoja «Unidad 8 - La célula» fila 4",
+  "malla: MALLA:Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx hoja «Unidad 8 - La célula» fila 4",
   "PISA25 PISA-PR1 (elemento): Variables dependientes, independientes y de control · pisa25final p. 40",
   "PISA25 PISA-PR5 (elemento): Formas de representar datos en tablas, gráficos y diagramas, y su uso adecuado · pisa25final p. 40",
   "PISA25 PISA-V3 (principal): Células: estructura y función, energía, respiración, fotosíntesis, crecimiento · pisa25final p. 38",
   "T8_27 T8_27-B2.1 (principal): Estructura y funciones de la célula · timss27 p. 34",
   "T8_27 T8_27-B7.1 (secundario): Rasgos y equipo de una investigación biológica · timss27 p. 37"
  ],
- "referencia_internacional": "4 países lo tienen en el núcleo (EE, ENG, KR, SG); 4 solo en especialización (AU, HK, ON, TW). Referencia comparativa: no indica que sea prerrequisito ni que deba agregarse.",
+ "referencia_internacional": "5 países lo tienen en el núcleo (EE, ENG, KR, ON, SG); 3 solo en especialización (AU, HK, TW). Referencia comparativa: no indica que sea prerrequisito ni que deba agregarse.",
  "estudiante": {
   "grado": 9,
   "dominio": {},
@@ -130,7 +130,7 @@ La referencia internacional entra como comparación para el docente, no como pre
 - **Evidencia verificada:** el objetivo, su fila de la malla V2 y los objetivos de marco que cubre.
 - **Inferencia de IA pendiente de revisión:** las relaciones de prerrequisito (ninguna revisada por una persona) y la clasificación del objetivo frente a los marcos.
 - **Propuesta pedagógica pendiente:** todas las actividades, dificultades y microtemas usados.
-- **Referencia comparativa:** 4 países lo tienen en el núcleo (EE, ENG, KR, SG); 4 solo en especialización (AU, HK, ON, TW). Referencia comparativa: no indica que sea prerrequisito ni que deba agregarse.
+- **Referencia comparativa:** 5 países lo tienen en el núcleo (EE, ENG, KR, ON, SG); 3 solo en especialización (AU, HK, TW). Referencia comparativa: no indica que sea prerrequisito ni que deba agregarse.
 - **Hipótesis de diseño:** los parámetros de config/aprendizaje.yaml (previas, desliz, umbrales, límites).
 
 ## Notas para el docente y propuestas a revisión
