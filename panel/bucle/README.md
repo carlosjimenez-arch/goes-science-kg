@@ -95,8 +95,16 @@ en el historial de git.
 
 **Pendiente en el método del contraste (decisión del responsable):**
 - **Singapur K326–K328** se cuenta como núcleo, pero el estudiante elige dos de tres ciencias (afecta a 9.°–11.°).
-- **Hong Kong S1–3:** los objetivos sacados del resumen de la unidad («Teachers may further guide…») y las
-  actividades sugeridas cuentan como núcleo; la detección por cursiva no los alcanza.
+- ~~**Hong Kong S1–3:** los objetivos sacados del resumen de la unidad cuentan como núcleo~~ **Corregido el
+  2026-10-13:** `corregir-metadatos` marca como ampliación lo que sigue a una frase opcional («Teachers may further
+  guide…»). Era un solo objetivo (HK-FIS-hk_s1_3-p062-22, gases) y ninguna clase final cambió. Las actividades
+  sugeridas no se extraen como objetivos.
+- **Singapur K326–K328: verificado, pendiente de decisión.** En la p. 6 dice «two of Papers 2, 3 and 4»: cada
+  estudiante cursa dos de las tres ciencias. Contarlo como especialización cambiaría la regla de qué es «núcleo», y
+  por coherencia habría que aplicarlo también a Japón (3 de 4 asignaturas 基礎). Afectaría buena parte del contraste
+  de 9.°–11.°. **Recomendación:** introducir un nivel «núcleo parcial» (lo cursa la mayoría, pero no todos) y
+  contarlo como núcleo en la lectura amplia y como especialización en la estricta. Así el método de doble lectura
+  decide.
 - **Ontario Grades 1–2** no se extrajeron: empuja hacia «adelantado» algunas clases tempranas.
 - **Etiquetado:** objetivos asignados a un concepto vecino (calidad del aire y composición del aire; transmisión de
   patógenos y epidemiología) y conceptos casi duplicados.

@@ -351,12 +351,28 @@ def _texto_en_cursiva(archivo: str, pagina: int) -> str:
     return _norma_cita(" ".join(trozos))
 
 
+# Frases con que un documento presenta algo opcional, no un resultado de aprendizaje del núcleo: lo que sigue a ellas en
+# el resumen de una unidad es una sugerencia al docente (revisión crítica del bucle, 2026-10-13: HK S1–3 p. 62).
+FRASES_OPCIONALES = ("teachersmayfurther", "teachersmayalso", "teachersmay", "mayfurtherguide", "optional")
+
+
+def _sugerido_al_docente(archivo: str, pagina: int, cita: str) -> bool:
+    """La cita aparece en la página justo después de una frase opcional («Teachers may further guide students to…»)."""
+    from pypdf import PdfReader
+
+    texto = _norma_cita(PdfReader(ruta(archivo)).pages[pagina - 1].extract_text() or "")
+    i = texto.find(_norma_cita(cita)[:40])
+    return i > 0 and any(f in texto[max(0, i - 60):i] for f in FRASES_OPCIONALES)
+
+
 def corregir_metadatos() -> dict:
     """Corrige, sin llamar a Vertex, los metadatos de los objetivos ya extraídos del tramo activo (los ids no cambian):
     - grados SV con grados_sv() y el catálogo vigente (la verificación de 2.°–8.° encontró las etapas de Estonia y los
       «P5 Foundation» de Singapur con el rango del documento entero);
     - nivel «especializacion» para lo que un documento de `extension_en_cursiva` (config del tramo) imprime en
-      cursiva: la Extension Part de HK S1–3 es ampliación, no núcleo («blue italics», p. 27 del documento).
+      cursiva: la Extension Part de HK S1–3 es ampliación, no núcleo («blue italics», p. 27 del documento);
+    - y, en esos mismos documentos, para lo que el resumen de la unidad presenta como sugerencia opcional al docente
+      («Teachers may further guide students to…»)
     Devuelve los cambios por documento."""
     cfg = cargar(tramo.actual().config)
     docs = {d["id"]: d for d in cfg["documentos"]}
@@ -379,6 +395,8 @@ def corregir_metadatos() -> dict:
                     cursiva[clave] = _texto_en_cursiva(*clave)
                 if _norma_cita(o["cita"])[:60] in cursiva[clave]:
                     o["nivel"], o["nota_nivel"] = "especializacion", "Extension Part (en cursiva en el documento)"
+                elif _sugerido_al_docente(d["archivo"], o["pagina"], o["cita"]):
+                    o["nivel"], o["nota_nivel"] = "especializacion", "sugerencia opcional al docente («Teachers may…»)"
             if (o["grado_sv_min"], o["grado_sv_max"], o["nivel"]) != antes:
                 cambios[o["documento"]] = cambios.get(o["documento"], 0) + 1
         f.write_text(json.dumps(objs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

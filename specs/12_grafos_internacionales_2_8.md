@@ -25,6 +25,9 @@ antes de 9.°; no es un problema, solo ubica el concepto.
 El etiquetado de la V2 en primaria es irregular (etiquetas secundarias sueltas, conceptos que solo están en columnas
 que no se etiquetan) y los países también tienen etiquetas sueltas. La regla de clases es la misma de la spec 11, pero
 se aplica con dos lecturas y solo se afirma lo que coincide (`Tramo.lectura_doble`, `contraste._clasificar_doble`):
+- **Lo opcional no es núcleo:** la Extension Part en cursiva de HK S1–3 y, desde el 2026-10-13, lo que el resumen de
+  una unidad presenta como sugerencia al docente («Teachers may further guide…») van como especialización
+  (`extraer.corregir_metadatos`).
 - **amplia** (favorable a la V2): la V2 con cualquier etiqueta de sus dos etiquetados (Vertex `malla_v2_*` y el del
   grafo principal, **con sus revisiones** de `data/interim/revisiones/`; hasta el 2026-10-13 se leía el etiquetado
   sin revisar, y las correcciones del panel y las delegadas no llegaban al contraste) o con el concepto nombrado como
