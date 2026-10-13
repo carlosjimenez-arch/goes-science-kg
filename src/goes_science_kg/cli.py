@@ -736,6 +736,15 @@ def bucle_solidez() -> None:
     typer.echo(json.dumps({"solidez": bucle.solidez(), "metricas": bucle.metricas()}, ensure_ascii=False, indent=1))
 
 
+@bucle_app.command("snapshot")
+def bucle_snapshot(etapa: str = typer.Option(..., help="p. ej. «vuelta 2, réplica en curso»")) -> None:
+    """panel/bucle/<ciencia>.md y RESUMEN.md: el estado del reforzamiento por ciencia (se versiona en cada etapa)."""
+    from goes_science_kg import bucle
+
+    for p in bucle.snapshot(etapa):
+        typer.echo(f"→ {p}")
+
+
 @bucle_app.command("cita")
 def bucle_cita(fuente: str, cita: str) -> None:
     """¿Está la cita, literal, en esa fuente? (lo mismo que verifica el código al cerrar la impugnación)."""

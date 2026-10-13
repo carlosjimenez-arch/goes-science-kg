@@ -922,3 +922,114 @@ def seccion_informe(estado: dict) -> list[str]:
         md += [f"- {panel._celda(x['titulo'], 110)}: {panel._celda(x['bucle']['motivo_solidez'], 160)}"
                for _i, x in frageles]
     return md
+
+
+# -- snapshots por ciencia --------------------------------------------------------------------------------------------
+CIENCIAS = {"biologia": "Biología", "fisica": "Física", "quimica": "Química",
+            "tierra-espacio": "Ciencias de la Tierra y del Espacio"}
+TIPOS = {"decision": "decisiones de contenido", "asignacion": "asignaciones de concepto",
+         "cambio_asignatura": "asignatura de temas", "hallazgo": "hallazgos del contraste",
+         "propuesta": "propuestas curriculares", "clase_incierta": "clases del contraste de 2.°–8.°",
+         "contenido": "capa pedagógica"}
+
+
+def _ultima(x: dict) -> dict:
+    vueltas = (x.get("bucle") or {}).get("vueltas") or [{}]
+    return max(vueltas, key=lambda v: v.get("vuelta", 0))
+
+
+def _cambios_del_bucle(x: dict) -> tuple[str, str] | None:
+    """(antes, ahora) si el bucle cambió la resolución o el contenido del expediente."""
+    hist = [h for h in x.get("historial_resoluciones", []) if h.get("reemplazada_por_bucle")]
+    if not hist:
+        return None
+    antes, ahora = hist[0]["decision"], x["resolucion"]["decision"]
+    return antes, ahora if ahora != antes else f"{ahora} (nueva versión)"
+
+
+def snapshot(etapa: str) -> list[str]:
+    """panel/bucle/<ciencia>.md y panel/bucle/RESUMEN.md: el estado del reforzamiento por ciencia en esta etapa. Se
+    regeneran en cada etapa y se versionan: el historial de git guarda cada corte."""
+    estado = panel.cargar_estado()
+    for x in estado.values():   # solidez al día
+        if x["estado"] in ("resuelta", "sin_consenso") and x["tipo"] != "piloto":
+            s, motivo = _solidez(x)
+            x.setdefault("bucle", {}).update({"solidez": s, "motivo_solidez": motivo})
+    hoy = date.today().isoformat()
+    d = ruta("panel/bucle")
+    d.mkdir(parents=True, exist_ok=True)
+    por_ciencia: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+    for i, x in sorted(estado.items()):
+        if x["tipo"] != "piloto" and (x.get("bucle") or {}).get("vueltas"):
+            por_ciencia[_disciplina(x)].append((i, x))
+    escritos, filas_resumen = [], []
+    for clave, nombre in CIENCIAS.items():
+        exps = por_ciencia.get(clave, [])
+        c: Counter = Counter()
+        for _i, x in exps:
+            v = _ultima(x)
+            c["expedientes"] += 1
+            c["anclas"] += len((x.get("bucle") or {}).get("anclas", []))
+            c[f"solidez_{x['bucle'].get('solidez')}"] += 1
+            for w in x["bucle"]["vueltas"]:
+                c["impugnados"] += w.get("resultado") == "impugnada"
+                c["cambiados"] += w.get("replica") == "cambiada"
+                c["mantenidos"] += w.get("replica") == "mantenida"
+                if (s := w.get("sonda")) and "acuerdo" in s:
+                    c["sonda"] += 1
+                    c["sonda_acuerdo"] += bool(s["acuerdo"])
+            c["en_bucle"] += str(v.get("replica", "")).startswith("pendiente")
+        md = [f"# Reforzamiento de {nombre}: snapshot", "",
+              f"> Generado por `uv run gskg bucle snapshot` el {hoy}, etapa: **{etapa}**. Bucle de fortalecimiento de "
+              "los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no "
+              "confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.", "",
+              "| Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales "
+              "nuevas | Sonda ciega (coinciden) | En el bucle |", "|---|---|---|---|---|---|---|",
+              f"| {c['expedientes']} | {c['impugnados']} | {c['cambiados']} | {c['mantenidos']} | {c['anclas']} | "
+              f"{c['sonda_acuerdo']}/{c['sonda']} | {c['en_bucle']} |", "",
+              "## Solidez por tipo", "", "| Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |",
+              "|---|---|---|---|---|---|"]
+        por_tipo: dict[str, Counter] = defaultdict(Counter)
+        for _i, x in exps:
+            por_tipo[x["tipo"]][x["bucle"].get("solidez")] += 1
+        md += [f"| {TIPOS.get(t, t)} | {k['solido']} | {k['respaldado']} | {k['fragil']} | {k['sin_consenso']} | "
+               f"{k['en_bucle']} |" for t, k in sorted(por_tipo.items())]
+        cambios = [(i, x, ch) for i, x in exps if (ch := _cambios_del_bucle(x))]
+        if cambios:
+            md += ["", "## Lo que el bucle cambió", "",
+                   "| Expediente | Antes | Ahora | Por qué (revisor adversarial) |", "|---|---|---|---|"]
+            for _i, x, (antes, ahora) in cambios:
+                imp = next((w.get("impugnacion") for w in x["bucle"]["vueltas"] if w.get("resultado") == "impugnada"
+                            and (w.get("impugnacion") or {}).get("veredicto") != "se_sostiene"), None) or {}
+                por = imp.get("argumento") or "discrepancia de la sonda ciega"
+                md.append(f"| {panel._celda(x['titulo'], 80)} | {antes} | {ahora} | {panel._celda(por, 260)} |")
+        contestados = [(i, x) for i, x in exps if x["bucle"].get("solidez") == "respaldado"
+                       and "contraevidencia" in x["bucle"].get("motivo_solidez", "")]
+        if contestados:
+            md += ["", "## Mantenidos frente a contraevidencia anclada (la réplica la ponderó)", ""]
+            md += [f"- {panel._celda(x['titulo'], 100)}" for _i, x in contestados]
+        frageles = [(i, x) for i, x in exps if x["bucle"].get("solidez") in ("fragil", "sin_consenso")]
+        if frageles:
+            md += ["", "## Frágiles o sin consenso (necesitan una fuente primaria o una persona)", ""]
+            md += [f"- {panel._celda(x['titulo'], 100)}: {panel._celda(x['bucle'].get('motivo_solidez'), 160)}"
+                   for _i, x in frageles]
+        pat = Counter((w.get("impugnacion") or {}).get("patron") for _i, x in exps for w in x["bucle"]["vueltas"]
+                      if w.get("resultado") == "impugnada" and (w.get("impugnacion") or {}).get("patron"))
+        if pat:
+            md += ["", "**Patrones de error de lo impugnado:** " + ", ".join(f"{p} {n}" for p, n in pat.most_common())
+                   + "."]
+        p = d / f"{clave}.md"
+        p.write_text("\n".join(md) + "\n", encoding="utf-8")
+        escritos.append(relativa(p))
+        filas_resumen.append(f"| [{nombre}]({clave}.md) | {c['expedientes']} | {c['impugnados']} | {c['cambiados']} | "
+                             f"{c['solidez_solido']} | {c['solidez_respaldado']} | {c['solidez_fragil']} | "
+                             f"{c['solidez_sin_consenso']} | {c['en_bucle']} |")
+    resumen = ["# Reforzamiento por ciencia: resumen del snapshot", "",
+               f"> Generado por `uv run gskg bucle snapshot` el {hoy}, etapa: **{etapa}**. Diseño y reglas: "
+               "`specs/14_panel_expertos.md`, sección 7; narrativa: `panel/bucle/README.md`.", "",
+               "| Ciencia | Expedientes | Impugnados | Cambiados | Sólidos | Respaldados | Frágiles | Sin consenso | "
+               "En el bucle |", "|---|---|---|---|---|---|---|---|---|", *filas_resumen]
+    p = d / "RESUMEN.md"
+    p.write_text("\n".join(resumen) + "\n", encoding="utf-8")
+    panel._guardar_estado(estado)
+    return [relativa(p), *escritos]
