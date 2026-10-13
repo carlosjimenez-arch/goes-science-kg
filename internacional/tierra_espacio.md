@@ -13,26 +13,25 @@
 | Llegan tarde | 0 | La V2 lo introduce en 9.°–11.°, dos o más grados después de que el núcleo alcanza el consenso. |
 | Nivel de especialización en un curso obligatorio | 0 | La V2 lo introduce en 9.°–11.°, pero los países solo lo enseñan en cursos electivos. |
 | Adelantados | 0 | La V2 lo introduce en 9.°–11.°, 1,5 grados o más antes que la mediana del núcleo de los países. |
-| Sin referente | 2 | La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: no hay referente para fecharlo. |
+| Sin referente | 3 | La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: no hay referente para fecharlo. |
 | Alineados | 1 | La V2 lo introduce en 9.°–11.° con un momento coherente con el consenso (± 1,5 grados). |
-| Retomados | 40 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
+| Retomados | 43 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
 | Solo antes de 9.° | 28 | La V2 lo ve antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°. |
-| Inciertos (a revisión) | 5 | La lectura amplia y la estricta del etiquetado dan clases distintas: no se afirma nada hasta revisarlo (revision_clases.csv). |
+| Inciertos (a revisión) | 0 | La lectura amplia y la estricta del etiquetado dan clases distintas: no se afirma nada hasta revisarlo (revision_clases.csv). |
 
 Países con núcleo común por grado SV (denominador del consenso): 9.°: AU, EE, ENG, JP, KR, ON, SG, TW; 10.°: AU, EE, ENG, JP, KR, ON, SG, TW; 11.°: AU, EE, ENG, JP, KR, ON, SG, TW
 
 Sensibilidad: con 4 países en lugar de 5, 4 conceptos más pasarían de «solo antes de 9.°» a «no retomados».
 
-Revisión experta: 2 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Capas de la atmósfera y variación con la altitud (incierto → retomado); Efecto invernadero (incierto → retomado).
+Revisión experta: 7 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Convección del manto y energía interna de la Tierra (incierto → no_aplica); Calentamiento global (incierto → retomado); Capas de la atmósfera y variación con la altitud (incierto → retomado); La atmósfera y su composición (incierto → retomado); Efecto invernadero (incierto → retomado); Oleaje, dinámica costera y sedimentación marina (incierto → retomado); Acidificación del océano (incierto → sin_referente).
 
-Inciertos: 5 conceptos tienen clases distintas en la lectura amplia y en la estricta; no se afirma nada de ellos hasta revisarlos (`revision_clases.csv`, con las dos clases).
-
-## Sin referente (2)
+## Sin referente (3)
 
 La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: no hay referente para fecharlo.
 
 | Concepto | Grados SV (V2) | Consenso del núcleo | Países (grado de 1.ª aparición; esp. = solo electiva) | Evidencia |
 |---|---|---|---|---|
+| Acidificación del océano | 7.°–10.° | mediana 10.5; 1 con núcleo en 9.°–11.° | EE 10.5 | SV: G07-CIE-U6-6.15 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 17)<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Analiza los cambios ocurridos en el océano mundial, relacionándolos con el cambio climático y la actividad humana.»<br>Revisión experta: El «retomado» solo se apoya en una etiqueta secundaria suelta sobre la fila de 7.° (6.15), que no nombra el océano ni la acidificación: no hay mención lateral. La V2 la introduce en 9.° (4.17) y la retoma en 10.° Química. En los países solo es explícita en SG H1 (núcleo parcial, 11.°) y en electivas (AU, SG H2): menos de 3 núcleos. No es un exceso que retirar. |
 | Geología y geomorfología de El Salvador | 5.°–10.° | —; 0 con núcleo en 9.°–11.° |  | SV: G05-CIE-U6-6.19 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ciencias de la Tierr», fila 21) |
 | Vulcanismo de El Salvador | 4.°–10.° | —; 0 con núcleo en 9.°–11.° |  | SV: G04-CIE-U3-3.14 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Naturaleza y sus int», fila 16) |
 

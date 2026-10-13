@@ -11,9 +11,20 @@
 > - **lecturas sin desajuste:** si ninguna lectura afirma un desajuste, gana la estricta;
 > - **ausencias verificadas:** ninguna ausencia se afirma sin buscar en la fila completa.
 >
-> **Resultado:** 57 conceptos quedan **inciertos** hasta que el panel los revise, porque una lectura afirma un
-> desajuste y la otra no. Los hallazgos de abajo se verificaron con el método anterior; los que dependen de esos 57
-> se marcan al cerrar la revisión.
+> **Resultado:** 57 conceptos quedaron inciertos porque una lectura afirmaba un desajuste y la otra no. El panel
+> resolvió 55, verificando en la fuente con citas literales; los 2 sin consenso (ley de Ohm y eutrofización) se
+> resolvieron por decisión delegada. Clases finales del tramo: 301 retomados, 86 alineados, 52 solo de
+> especialización, 50 previos, 18 sin referente y 6 fuera del contraste.
+>
+> **Qué corrigió el panel:**
+> - **Clases que afirmaban un desajuste falso:** salían de coincidencias de texto espurias («fases» de la Luna para
+>   los diagramas de fases; «sedimentación» del ciclo de las rocas para los ciclos del fósforo) o de filas que sí
+>   enseñan el concepto y no se contaban (cromatografía en 6.°, catalizador en 9.°).
+> - **Solo de especialización en la V2 obligatoria:** capacitancia, cuantización de Planck, modelo estándar,
+>   reflexión interna total, fases de la fotosíntesis y espectrometría de masas. Coincide con el hallazgo de la
+>   profundidad de 10.°–11.°.
+>
+> Estos 55 dictámenes aún no pasan por el bucle de fortalecimiento («sin bucle» en `panel/bucle/`).
 
 ## Qué hay aquí
 - **9 países**: SG, JP, KR, ENG, AU, HK, TW, EE y ON. Son 62 documentos oficiales (3 de antecedente: secundaria

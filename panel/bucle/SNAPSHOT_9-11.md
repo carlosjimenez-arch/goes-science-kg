@@ -1,19 +1,19 @@
 # Reforzamiento de 11.° a 9.°: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Ontario Grades 1–2 en el contraste de 2.°–8.° (2026-10-13)**. Cada dictamen se ubica en el grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **9.°–11.° con doble lectura y núcleo parcial; 57 clases revisadas por el panel (2026-10-13)**. Cada dictamen se ubica en el grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».
 
 **Cómo leer la solidez.** «Sólido» quiere decir que el dictamen sobrevivió a un revisor adversarial y que una cita literal de una fuente primaria lo apoya; no prueba que la interpretación sea la correcta. La estabilidad solo se midió en la muestra de la sonda ciega (63 de 486). Todos son dictámenes del panel de expertos IA, **no confirmaciones del MINED**.
 
-| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Delegados | Sin consenso |
-|---|---|---|---|---|---|---|---|
-| [11.°](#11-grado) | 14 | 2 | 11 | 3 | 0 | 0 | 0 |
-| [10.°](#10-grado) | 31 | 3 | 29 | 2 | 0 | 0 | 0 |
-| [9.°](#9-grado) | 101 | 5 | 100 | 1 | 0 | 0 | 0 |
-| [Del tramo](#del-tramo-sin-grado-de-la-malla) | 63 | 1 | 62 | 1 | 0 | 0 | 0 |
+| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Delegados | Sin consenso | Sin bucle |
+|---|---|---|---|---|---|---|---|---|
+| [11.°](#11-grado) | 21 | 2 | 10 | 3 | 0 | 0 | 0 | 8 |
+| [10.°](#10-grado) | 38 | 3 | 28 | 2 | 0 | 0 | 0 | 8 |
+| [9.°](#9-grado) | 112 | 5 | 102 | 1 | 0 | 1 | 0 | 8 |
+| [Del tramo](#del-tramo-sin-grado-de-la-malla) | 63 | 1 | 62 | 1 | 0 | 0 | 0 | 0 |
 
 ## 11.° grado
 
-14 dictámenes: 2 cambiados por el bucle; 11 sólidos, 3 respaldados, 0 frágiles, 0 delegados y 0 sin consenso.
+21 dictámenes: 2 cambiados por el bucle; 10 sólidos, 3 respaldados, 0 frágiles, 0 delegados, 0 sin consenso y 8 que aún no pasan por el bucle.
 
 ### Lo que el bucle cambió
 
@@ -33,7 +33,14 @@
 
 | Tipo | Expediente | Resolución | Solidez | Apoyo: qué dice la cita literal verificada y dónde |
 |---|---|---|---|---|
-| decisiones de contenido | Clase de «Superposición e interferencia de ondas» en el contraste: solo_especializacion → alin… | aceptar (clase vigente: alineado) | sólido | TW bachillerato obligatorio: interferencia y difracción de la luz — «光除了反射和折射現象外，也有干涉及繞射現象» (TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 39) |
+| clases del contraste de 2.°–8.° | Espectrometría de masas (CON:quimica/espectrometria-de-masas, 9.°–11.°) | solo_especializacion | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Esterificación e hidrólisis (CON:quimica/esterificacion-e-hidrolisis, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Hidrocarburos: alcanos, alquenos y alquinos (CON:quimica/hidrocarburos-alifaticos, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Ondas de radio y telecomunicaciones (CON:fisica/ondas-radio-telecomunicaciones, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Polímeros y ambiente (CON:quimica/polimeros-y-ambiente, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Química verde y economía atómica (CON:quimica/quimica-verde, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Radiación ionizante: detección, efectos y aplicaciones (CON:fisica/radiacion-ionizante-aplicac… | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Técnicas para determinar estructuras orgánicas (CON:quimica/espectroscopia-y-estructura-organi… | no_aplica | sin bucle | sin cita del revisor; no pasó por el bucle |
 | hallazgos del contraste | Big Bang en 8.° sin el corrimiento al rojo | matizar | sólido | 8.° ya trabaja espectros en la unidad del Big Bang — «Nucleosíntesis y origen de los elementos químicos Espectros de luz» (G08-CIE-U8-8.3 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 5)) |
 | hallazgos del contraste | El efecto invernadero no se retoma en 9.°–11.° | no_respaldar | sólido | El efecto invernadero se introduce en 7.° — «Simulación de los fenómenos de efecto invernadero y lluvia ácida» (G07-CIE-U6-6.13 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15)) |
 | hallazgos del contraste | Las adaptaciones no se retoman entre 3.° y 10.° | matizar | sólido | la V2 relaciona rasgos y ambiente en 2.° — «Relaciona las características físicas de un animal con su alimentación y el lugar donde vi» (G02-CIE-U4-4.8 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 14)) |
@@ -50,7 +57,7 @@
 
 ## 10.° grado
 
-31 dictámenes: 3 cambiados por el bucle; 29 sólidos, 2 respaldados, 0 frágiles, 0 delegados y 0 sin consenso.
+38 dictámenes: 3 cambiados por el bucle; 28 sólidos, 2 respaldados, 0 frágiles, 0 delegados, 0 sin consenso y 8 que aún no pasan por el bucle.
 
 ### Lo que el bucle cambió
 
@@ -74,13 +81,20 @@
 | asignaciones de concepto | [malla v2] G10-QUI-U3-3.9 → CON:quimica/configuracion-electronica | aceptar | sólido | Orbitales y subniveles explícitos en 10.° — «Describe la forma de los orbitales s, p y d y ordena los subniveles por energía creciente» (G10-QUI-U3-3.9 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 31)) |
 | asignaciones de concepto | [malla v1] G10-QUI-U4-4.3 → CON:quimica/distribucion-electronica-por-niveles, CON:quimica/conf… | aceptar | sólido | Bloques s, p, d y f: orbitales — «identifica los bloques s, p, d y f y los electrones de valencia» (G10-QUI-U4-4.3 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 35)) |
 | asignaciones de concepto | [malla v2] G10-QUI-U4-4.3 → CON:quimica/distribucion-electronica-por-niveles, CON:quimica/conf… | aceptar | sólido | Capa de valencia y bloques por subnivel en el mismo tema — «Electrones de valencia Bloques s, p, d y f Configuración de cationes y aniones» (G10-QUI-U4-4.3 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 35)) |
+| clases del contraste de 2.°–8.° | Convección del manto y energía interna de la Tierra (CON:ciencias_tierra_espacio/conveccion-de… | no_aplica | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Cromatografía (CON:quimica/cromatografia, 9.°–11.°) | retomado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Desintegración radiactiva (CON:fisica/desintegracion-radiactiva, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Energía de enlace (CON:quimica/energia-de-enlace, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | clases del contraste de 2.°–8.° | Espejos esféricos (CON:fisica/espejos-esfericos) | posterior | sólido | EE solo trabaja lentes — «construct the course of rays in a convex and concave lens, distinguish between real and vi» (EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 19) |
+| clases del contraste de 2.°–8.° | Isomería estructural (CON:quimica/isomeria-estructural, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | clases del contraste de 2.°–8.° | Metales, cerámicas y materiales compuestos (CON:quimica/ciencia-de-materiales) | posterior | sólido | ENG KS3 trata cerámicas y compuestos solo de forma cualitativa — «properties of ceramics, polymers and composites (qualitative)» (ENG_NC_Science_KS3_2013.pdf p. 9) |
 | clases del contraste de 2.°–8.° | Ondas electromagnéticas y espectro (CON:fisica/ondas-electromagneticas-espectro) | posterior | sólido | En HK S1-3, el espectro electromagnético es de extensión, no núcleo — «Extension Part … 12.5 Electromagnetic spectrum» (HK_Science_S1-3_CurriculumFramework_2025.pdf p. 76) |
+| clases del contraste de 2.°–8.° | Oxidación y reducción (CON:quimica/oxidacion-y-reduccion, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | clases del contraste de 2.°–8.° | Relación superficie-volumen (CON:biologia/relacion-superficie-volumen) | posterior | sólido | KR secundaria baja infiere la división celular por la relación superficie-volumen. — «개체의 생장에 세포분열이 필요한 이유를 세포의 표면적과 부피의 관계로 추론할 수 있다» (KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65) |
+| clases del contraste de 2.°–8.° | Relación superficie-volumen (CON:biologia/relacion-superficie-volumen, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Semivida, series de desintegración y residuos radiactivos (CON:quimica/semivida-y-series-de-de… | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | decisiones de contenido | Clase de «Agentes oxidantes y reductores» en el contraste de 2.°–8.°: incierto → tardio | rechazar (clase vigente: posterior) | sólido | HK solo pide métodos de extracción, sin agentes ni serie de actividad — «be aware of the methods for extraction of metals from their ores (e.g. physical method, he» (HK_Science_S1-3_CurriculumFramework_2025.pdf p. 80) |
-| decisiones de contenido | Clase de «Equilibrio y rapidez en procesos industriales» en el contraste: solo_especializacion… | aceptar (clase vigente: alineado) | sólido | SG H1 trata el equilibrio y el proceso Haber — «factors affecting chemical equilibria … equilibrium constants … the Haber process» (SG_ALevel_H1_Chemistry_8873_2027.pdf p. 18) |
-| decisiones de contenido | Clase de «Relaciones presión-volumen-temperatura en gases» en el contraste: solo_especializaci… | aceptar (clase vigente: alineado) | sólido | GCSE Combined pide la relación presión-temperatura, cualitativa — «explain the relation between the temperature of a gas and its pressure at constant volume » (ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 35) |
+| decisiones de contenido | Clase de «Superposición e interferencia de ondas» en el contraste: solo_especializacion → alin… | aceptar (clase vigente: alineado) | sólido | TW bachillerato obligatorio: interferencia y difracción de la luz — «光除了反射和折射現象外，也有干涉及繞射現象» (TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 39) |
 | hallazgos del contraste | El efecto invernadero no se retoma en 9.°–11.° | no_respaldar | sólido | El efecto invernadero se introduce en 7.° — «Simulación de los fenómenos de efecto invernadero y lluvia ácida» (G07-CIE-U6-6.13 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15)) |
 | hallazgos del contraste | Imágenes en espejos planos llegan tarde (V2 en 10.°) | respaldar | sólido | HK P6: características de la imagen en espejo plano — «認識平面鏡形成的像的特徵» (HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 38) |
 | hallazgos del contraste | Las adaptaciones no se retoman entre 3.° y 10.° | matizar | sólido | la V2 relaciona rasgos y ambiente en 2.° — «Relaciona las características físicas de un animal con su alimentación y el lugar donde vi» (G02-CIE-U4-4.8 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 14)) |
@@ -98,7 +112,7 @@
 
 ## 9.° grado
 
-101 dictámenes: 5 cambiados por el bucle; 100 sólidos, 1 respaldado, 0 frágiles, 0 delegados y 0 sin consenso.
+112 dictámenes: 5 cambiados por el bucle; 102 sólidos, 1 respaldado, 0 frágiles, 1 delegado, 0 sin consenso y 8 que aún no pasan por el bucle.
 
 ### Lo que el bucle cambió
 
@@ -116,6 +130,12 @@
 |---|---|---|---|---|
 | decisiones de contenido | Clase de «Neutralización y reacciones de los ácidos» en el contraste de 2.°–8.°: tardio → alin… | rechazar (clase vigente: tardio) | respaldado | El recuento del panel es correcto (HK 8.4 es núcleo), pero la V2 no empieza en 9.°: en 7.° identifica oxácidos e hidróxidos con i… → **experto-quimica:** Mantener «tardío» (consenso en 7.° con HK 8.4 en el núcleo; la V2 en 9.°). Matiz para el MINED: la brecha… |
 
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
+
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
+|---|---|---|---|---|
+| clases del contraste de 2.°–8.° | Ley de Ohm (CON:fisica/ley-ohm, 9.°–11.°) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar). La relación entre voltaje y corriente aparece en 6.° (G06-CIE-U3-3.1, indicador avanzado) y la ley se aplica en 11.° (G1… |
+
 ### Detalle: todos los dictámenes
 
 | Tipo | Expediente | Resolución | Solidez | Apoyo: qué dice la cita literal verificada y dónde |
@@ -127,8 +147,17 @@
 | asignatura de temas | G09-CIE-U4-4.17: quimica → ciencias_tierra_espacio | aceptar | sólido | El tema pertenece a la unidad de Oceanografía — «4. Oceanografía Biología marina Acidificación del océano» (G09-CIE-U4-4.17 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 19)) |
 | asignatura de temas | G09-CIE-U4-4.8: fisica → ciencias_tierra_espacio | aceptar | sólido | La malla ubica el oleaje en oceanografía física — «4. Oceanografía Oceanografía física Oleaje 4.8. Indagación del fenómeno de oleaje» (G09-CIE-U4-4.8 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 10)) |
 | asignatura de temas | G09-CIE-U4-4.9: fisica → ciencias_tierra_espacio | aceptar | sólido | El indicador es oceanográfico: generación y propagación de olas — «Describe los procesos asociados a la generación y la propagación de olas» (G09-CIE-U4-4.9 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 11)) |
+| clases del contraste de 2.°–8.° | Autoionización del agua, Kw y cálculo de pH (CON:quimica/autoionizacion-del-agua-y-ph, 9.°–11.… | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Ciclo del nitrógeno (CON:biologia/ciclo-del-nitrogeno, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Fisión y fusión nuclear (CON:fisica/fision-fusion-nuclear, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Grupos funcionales (CON:quimica/grupos-funcionales, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Ley de Ohm (CON:fisica/ley-ohm, 9.°–11.°) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar) |
+| clases del contraste de 2.°–8.° | Primera ley de la termodinámica (CON:fisica/primera-ley-termodinamica, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | clases del contraste de 2.°–8.° | Propagación de enfermedades y control de brotes (CON:biologia/epidemiologia-y-control-de-brote… | posterior | sólido | en 3.° la prevención es personal, sin brotes ni población — «Explica cómo las vacunas y la higiene evitan contagios» (G03-CIE-U6-6.1 (Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 6 - Los microorganismos», fila 3)) |
+| clases del contraste de 2.°–8.° | Propagación de enfermedades y control de brotes (CON:biologia/epidemiologia-y-control-de-brote… | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
+| clases del contraste de 2.°–8.° | Reacciones de precipitación e identificación de iones (CON:quimica/reacciones-de-precipitacion… | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | clases del contraste de 2.°–8.° | Relaciones presión-volumen-temperatura en gases (CON:fisica/relaciones-presion-volumen-tempera… | alineado | sólido | ON grado 8 (SV 7) sí lo tiene en el núcleo: uno de los cuatro países — «explain in qualitative terms the relationship between pressure, volume, and temperature wh» (ON_ScienceTechnology_Grades1-8_2022.pdf p. 175) |
+| clases del contraste de 2.°–8.° | Virus (CON:biologia/virus, 9.°–11.°) | alineado | sin bucle | sin cita del revisor; no pasó por el bucle |
 | capa pedagógica | ACT:G09-CIE-U2-2.4/obj-1 | aprobar | sólido | La malla pide reconocer estos procesos en 9.° — «Reconoce los procesos isotérmico, isobárico, isocórico y adiabático en un gas ideal» (G09-CIE-U2-2.4 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 6)) |
 | capa pedagógica | ACT:G09-CIE-U2-2.4/obj-2 | corregir | sólido | La jeringa sellada es el montaje que propone la malla — «Experimenta con jeringas selladas y globos en agua tibia y fría servida por la docente» (G09-CIE-U2-2.4 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 6)) |
 | capa pedagógica | ACT:G09-CIE-U2-2.4/obj-abierta | aprobar | sólido | sin cita del revisor; el revisor adversarial no encontró errores |
@@ -213,11 +242,13 @@
 | capa pedagógica | MT:quimica/constante-de-equilibrio/G09 | corregir | sólido | 3.6 pide interpretar la magnitud de K — «Interpreta valores grandes y pequeños de K» (G09-CIE-U3-3.6 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila 8)) |
 | capa pedagógica | MT:quimica/equilibrio-dinamico/G09 | corregir | sólido | La propia malla usa la gaseosa cerrada como entrada al equilibrio — «Plantea una hipótesis sobre por qué en una botella cerrada de agua carbonatada la cantidad» (G09-CIE-U3-3.1 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 3 - Equilibrio químico», fila… |
 | capa pedagógica | MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09 | aprobar | sólido | La molaridad se introduce en 8.°: es prerrequisito disponible en 9.° — «Reconoce la molaridad, la molalidad, la normalidad y la fracción molar» (G08-CIE-U4-4.9 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 11)) |
+| decisiones de contenido | Clase de «Equilibrio y rapidez en procesos industriales» en el contraste: solo_especializacion… | aceptar (clase vigente: alineado) | sólido | SG H1 trata el equilibrio y el proceso Haber — «factors affecting chemical equilibria … equilibrium constants … the Haber process» (SG_ALevel_H1_Chemistry_8873_2027.pdf p. 18) |
 | decisiones de contenido | Clase de «Fuerza sobre corrientes y motor eléctrico» en el contraste de 2.°–8.°: incierto → al… | aceptar (clase vigente: alineado) | sólido | Taiwán: fuerza sobre conductor con corriente y principio del motor — «載流導線在磁場會受力，並簡介電動機的運作原理» (TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32) |
 | decisiones de contenido | Clase de «Indicadores ácido-base» en el contraste de 2.°–8.°: tardio → alineado | aceptar (clase vigente: alineado) | sólido | La V2 usa indicadores y pH en 7.° — «Tabla de muestras con el color del indicador y el valor de pH» (G07-CIE-U1-1.7 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 1 - Compuestos inorgánic», fila 9)) |
 | decisiones de contenido | Clase de «Inmunidad adaptativa» en el contraste: solo_especializacion → alineado | aceptar (clase vigente: alineado) | sólido | la V2 enseña inmunidad adaptativa en 9.° — «Respuesta inmune innata y adaptativa Anticuerpos y memoria inmunológica» (G09-CIE-U9-9.1 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 9 - Salud humana», fila 3)) |
 | decisiones de contenido | Clase de «Inmunidad innata» en el contraste: solo_especializacion → alineado | aceptar (clase vigente: alineado) | sólido | ENG enseña la inmunidad innata en el núcleo de GCSE — «describe the non-specific defence systems of the human body against pathogens» (ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 12) |
 | decisiones de contenido | Clase de «Neutralización y reacciones de los ácidos» en el contraste de 2.°–8.°: tardio → alin… | rechazar (clase vigente: tardio) | respaldado | sin cita del revisor; hay contraevidencia anclada; la réplica la ponderó y mantuvo la decisión |
+| decisiones de contenido | Clase de «Relaciones presión-volumen-temperatura en gases» en el contraste: solo_especializaci… | aceptar (clase vigente: alineado) | sólido | GCSE Combined pide la relación presión-temperatura, cualitativa — «explain the relation between the temperature of a gas and its pressure at constant volume » (ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 35) |
 | hallazgos del contraste | El efecto invernadero no se retoma en 9.°–11.° | no_respaldar | sólido | El efecto invernadero se introduce en 7.° — «Simulación de los fenómenos de efecto invernadero y lluvia ácida» (G07-CIE-U6-6.13 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15)) |
 | hallazgos del contraste | Química de 9.° con contenido de electiva (K, Ka, amortiguadoras) | matizar | sólido | TW: definición y cálculo de la constante de equilibrio, en la electiva de bachillerato — «平衡常數的定義與計算» (TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 54) |
 | hallazgos del contraste | Secuencias por ordenar en 9.°–11.° | matizar | sólido | procesos termodinámicos en 9.° — «Interpreta gráficas P-V de procesos isotérmicos, isobáricos e isocóricos» (G09-CIE-U2-2.5 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 7)) |
@@ -226,7 +257,7 @@
 
 Objetivos de otros países asignados a una versión de un concepto, y hallazgos de todo el tramo.
 
-63 dictámenes: 1 cambiado por el bucle; 62 sólidos, 1 respaldado, 0 frágiles, 0 delegados y 0 sin consenso.
+63 dictámenes: 1 cambiado por el bucle; 62 sólidos, 1 respaldado, 0 frágiles, 0 delegados, 0 sin consenso y 0 que aún no pasan por el bucle.
 
 ### Lo que el bucle cambió
 

@@ -1,17 +1,17 @@
 # Reforzamiento de Física: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Ontario Grades 1–2 en el contraste de 2.°–8.° (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **9.°–11.° con doble lectura y núcleo parcial; 57 clases revisadas por el panel (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 152 | 9 | 5 | 4 | 250 | 19/22 | 0 |
+| 170 | 9 | 5 | 4 | 250 | 19/22 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
 |---|---|---|---|---|---|---|
 | asignatura de temas | 17 | 0 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 5 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 6 | 0 | 0 |
 | capa pedagógica | 58 | 0 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 12 | 0 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 4 | 2 | 0 | 0 | 0 | 0 |
@@ -34,6 +34,7 @@
 
 ## Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
+- Ley de Ohm (CON:fisica/ley-ohm, 9.°–11.°): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
 - Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
 - Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: posterior (pendiente de confirmar)
 - Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)

@@ -75,7 +75,9 @@ def _tema(t: dict) -> str:
 def _grados_sv(f: dict, r: dict) -> str:
     if not f["sv_primer_grado"]:
         return "no está"
-    gs = sorted({r["temas"][t]["grado"] for t in f["sv_temas"]})
+    # Con doble lectura, el primer grado puede salir solo de la búsqueda de texto (sv_temas vacío, sv_temas_texto no).
+    ts = [*f.get("sv_temas", []), *f.get("sv_temas_texto", [])]
+    gs = sorted({r["temas"][t]["grado"] for t in ts if t in r["temas"]}) or [f["sv_primer_grado"]]
     return f"{gs[0]}.°" if len(gs) == 1 else f"{gs[0]}.°–{gs[-1]}.°"
 
 

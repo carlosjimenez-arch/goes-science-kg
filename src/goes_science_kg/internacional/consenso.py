@@ -265,6 +265,9 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             g = previo[c].get(a["pais"])
             previo[c][a["pais"]] = a["grado"] if g is None else min(g, a["grado"])
             puntos[c][a["pais"]].append((a["grado"], a["puntos"]))
+            # El núcleo sólido (n_nucleo_foco) cuenta la secundaria baja, como dice la regla de «solo especialización»
+            # (contraste.py). Antes no la sumaba (lo encontró el panel el 2026-10-13: la pila de Daniell de JP 中3).
+            foco[c][a["pais"]] += a["puntos"]
     salida = []
     for c in sorted(set(por) | set(previo)):
         if c not in voc:

@@ -1,10 +1,10 @@
 # Reforzamiento de Ciencias de la Tierra y del Espacio: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Ontario Grades 1–2 en el contraste de 2.°–8.° (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **9.°–11.° con doble lectura y núcleo parcial; 57 clases revisadas por el panel (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 55 | 7 | 5 | 2 | 82 | 3/4 | 0 |
+| 60 | 7 | 5 | 2 | 82 | 3/4 | 0 |
 
 ## Solidez por tipo
 

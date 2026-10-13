@@ -973,7 +973,7 @@ def snapshot(etapa: str) -> list[str]:
     d.mkdir(parents=True, exist_ok=True)
     por_ciencia: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for i, x in sorted(estado.items()):
-        if x["tipo"] != "piloto" and ((x.get("bucle") or {}).get("vueltas") or x["estado"] == "sin_consenso"):
+        if x["tipo"] != "piloto" and x["estado"] in ("resuelta", "sin_consenso"):   # también lo que aún no pasó
             por_ciencia[_disciplina(x)].append((i, x))
     escritos, filas_resumen = [], []
     for clave, nombre in CIENCIAS.items():
@@ -1039,12 +1039,12 @@ def snapshot(etapa: str) -> list[str]:
         escritos.append(relativa(p))
         filas_resumen.append(f"| [{nombre}]({clave}.md) | {c['expedientes']} | {c['impugnados']} | {c['cambiados']} | "
                              f"{c['solidez_solido']} | {c['solidez_respaldado']} | {c['solidez_fragil']} | "
-                             f"{c['solidez_delegada']} | {c['solidez_sin_consenso']} | {c['en_bucle']} |")
+                             f"{c['solidez_delegada']} | {c['solidez_sin_consenso']} | {c['solidez_sin_bucle']} |")
     resumen = ["# Reforzamiento por ciencia: resumen del snapshot", "",
                f"> Generado por `uv run gskg bucle snapshot` el {hoy}, etapa: **{etapa}**. Diseño y reglas: "
                "`specs/14_panel_expertos.md`, sección 7; narrativa: `panel/bucle/README.md`.", "",
                "| Ciencia | Expedientes | Impugnados | Cambiados | Sólidos | Respaldados | Frágiles | Delegadas | "
-               "Sin consenso | En el bucle |", "|---|---|---|---|---|---|---|---|---|---|", *filas_resumen]
+               "Sin consenso | Sin bucle |", "|---|---|---|---|---|---|---|---|---|---|", *filas_resumen]
     p = d / "RESUMEN.md"
     p.write_text("\n".join(resumen) + "\n", encoding="utf-8")
     panel._guardar_estado(estado)
@@ -1141,7 +1141,7 @@ def snapshot_grados(etapa: str) -> list[str]:
     del_tramo: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     transversales, total = [], 0
     for i, x in sorted(estado.items()):
-        if x["tipo"] == "piloto" or not ((x.get("bucle") or {}).get("vueltas") or x["estado"] == "sin_consenso"):
+        if x["tipo"] == "piloto" or x["estado"] not in ("resuelta", "sin_consenso"):
             continue
         total += 1
         if gs := grados_de(i, x):
@@ -1219,19 +1219,20 @@ def snapshot_grados(etapa: str) -> list[str]:
         c, cambiados = conteo(exps)
         return (f"{_n(len(exps), 'dictamen', 'dictámenes')}: {_n(cambiados, 'cambiado', 'cambiados')} por el bucle; "
                 f"{_n(c['solido'], 'sólido', 'sólidos')}, {_n(c['respaldado'], 'respaldado', 'respaldados')}, "
-                f"{_n(c['fragil'], 'frágil', 'frágiles')}, {_n(c['delegada'], 'delegado', 'delegados')} y "
-                f"{c['sin_consenso']} sin consenso.")
+                f"{_n(c['fragil'], 'frágil', 'frágiles')}, {_n(c['delegada'], 'delegado', 'delegados')}, "
+                f"{c['sin_consenso']} sin consenso y {c['sin_bucle']} que aún no pasan por el bucle.")
 
     def fila_resumen(etiqueta: str, exps: list[tuple[str, dict]]) -> str:
         c, cambiados = conteo(exps)
         return (f"| {etiqueta} | {len(exps)} | {cambiados} | {c['solido']} | {c['respaldado']} | {c['fragil']} | "
-                f"{c['delegada']} | {c['sin_consenso']} |")
+                f"{c['delegada']} | {c['sin_consenso']} | {c['sin_bucle']} |")
 
     aviso = (f"> Generado por `uv run gskg bucle snapshot` el {hoy}, etapa: **{etapa}**. Cada dictamen se ubica en el "
              "grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en "
              "el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros "
              "países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».")
-    encabezado = "| {} | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Delegados | Sin consenso |"
+    encabezado = ("| {} | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Delegados | Sin consenso | "
+                  "Sin bucle |")
     escritos = []
     for g in sorted(por_grado, reverse=True):
         md = [f"# Reforzamiento por grado: {g}.°", "", aviso, "", NOTA_SOLIDEZ, "", linea(por_grado[g]), "",
@@ -1240,7 +1241,7 @@ def snapshot_grados(etapa: str) -> list[str]:
         p.write_text("\n".join(md) + "\n", encoding="utf-8")
         escritos.append(relativa(p))
     resumen = ["# Reforzamiento por grado: resumen", "", aviso, "", NOTA_SOLIDEZ, "",
-               encabezado.format("Grado"), "|---|---|---|---|---|---|---|---|"]
+               encabezado.format("Grado"), "|---|---|---|---|---|---|---|---|---|"]
     resumen += [fila_resumen(f"[{g}.°](G{g:02d}.md)", por_grado[g]) for g in sorted(por_grado, reverse=True)]
     resumen += [fila_resumen(f"Del tramo {t.replace('-', '.°–')}.° (sin grado de la malla)", del_tramo[t])
                 for t in SNAPSHOTS_POR_TRAMO if del_tramo.get(t)]
@@ -1253,7 +1254,7 @@ def snapshot_grados(etapa: str) -> list[str]:
     for nombre, grados in SNAPSHOTS_POR_TRAMO.items():   # un documento por tramo, del grado mayor al menor
         presentes = [g for g in grados if g in por_grado]
         junto = [f"# Reforzamiento de {grados[0]}.° a {grados[-1]}.°: snapshot", "", aviso, "", NOTA_SOLIDEZ, "",
-                 encabezado.format("Grado"), "|---|---|---|---|---|---|---|---|"]
+                 encabezado.format("Grado"), "|---|---|---|---|---|---|---|---|---|"]
         junto += [fila_resumen(f"[{g}.°](#{g}-grado)", por_grado[g]) for g in presentes]
         if del_tramo.get(nombre):
             junto.append(fila_resumen("[Del tramo](#del-tramo-sin-grado-de-la-malla)", del_tramo[nombre]))

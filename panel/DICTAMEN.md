@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | asignacion | 85 | 85 | 0 | aceptar 78, cambiar 6, rechazar 1 |
 | cambio_asignatura | 44 | 43 | 1 | aceptar 40, rechazar 3 |
-| clase_incierta | 150 | 135 | 15 | adelantado 14, alineado 63, posterior 35, sin_referente 19, tardio 4 |
+| clase_incierta | 207 | 190 | 17 | adelantado 14, alineado 85, no_aplica 2, posterior 35, retomado 18, sin_referente 22, solo_especializacion 10, tardio 4 |
 | contenido | 138 | 138 | 0 | aprobar 65, corregir 73 |
 | decision | 35 | 35 | 0 | aceptar 32, rechazar 3 |
 | hallazgo | 25 | 24 | 1 | matizar 18, no_respaldar 1, respaldar 5 |
@@ -148,10 +148,12 @@
 
 ## Conceptos inciertos del contraste de 2.°–8.°
 
-135 resueltos; 0 con cambios o rechazo (abajo); el resto se aceptó o aprobó tal cual.
+190 resueltos; 0 con cambios o rechazo (abajo); el resto se aceptó o aprobó tal cual.
 
-**Sin consenso (15), para una decisión humana:**
+**Sin consenso (17), para una decisión humana:**
 
+- Eutrofización (CON:biologia/eutrofizacion, 9.°–11.°): confianza baja de experto-biologia **Decisión delegada:** sin_referente: La V2 la explica en 10.° (G10-BIO-U8-8.6, cianobacterias de Ilopango y Coatepeque); en los países solo HK la tiene, en electiva. La mención de 7.° (G07-CIE-U1-1.10) es contexto de las oxisales, no aprendizaje: coherente con «posterior» en 2.°–8.°. Contenido p…
+- Ley de Ohm (CON:fisica/ley-ohm, 9.°–11.°): confianza baja de experto-fisica **Decisión delegada:** alineado: La relación entre voltaje y corriente aparece en 6.° (G06-CIE-U3-3.1, indicador avanzado) y la ley se aplica en 11.° (G11-FIS-U9-9.13). Que la ley se nombre tarde ya es el hallazgo de 2.°–8.° (nombrar R = V/I en 6.°): aquí no se cuenta dos veces.
 - Especies clave (CON:biologia/especies-clave): confianza baja de experto-biologia **Decisión delegada:** no_aplica: La V2 no enseña especies clave en 2.°–11.°: la presencia en 7.° es un falso positivo (G07-CIE-U3-3.8 trata claves dicotómicas). Solo ON Grade 4 tiene algo cercano. Queda fuera del contraste.
 - Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): confianza baja de experto-biologia **Decisión delegada:** alineado: En el umbral: la V2 caracteriza los niveles en 4.° (G04-CIE-U3-3.3); los países dan la jerarquía hacia SV 5,5–6,5 y sus componentes antes (KR, HK P4). No se presenta como hallazgo; en 4.°, ordenar los niveles sin definiciones formales.
 - Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): confianza baja de experto-biologia **Decisión delegada:** alineado: La V2 lo enseña en 2.° (G02-CIE-U4-4.6, 4.10); ON Grade 3, TW etapa II y KR 3–4 a la misma edad. La lectura «adelantado» dependía de contar la cría selectiva de ENG GCSE, otro concepto.
@@ -269,7 +271,7 @@ Cada dictamen resuelto pasó por un revisor adversarial que buscó en las fuente
 |---|---|---|---|---|---|
 | asignacion | 84 | 1 | 0 | 0 | 0 |
 | cambio_asignatura | 42 | 1 | 0 | 1 | 0 |
-| clase_incierta | 129 | 5 | 1 | 15 | 0 |
+| clase_incierta | 129 | 5 | 1 | 17 | 0 |
 | contenido | 138 | 0 | 0 | 0 | 0 |
 | decision | 33 | 2 | 0 | 0 | 0 |
 | hallazgo | 20 | 4 | 0 | 1 | 0 |

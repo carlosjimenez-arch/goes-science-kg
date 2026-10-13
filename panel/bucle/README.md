@@ -99,7 +99,24 @@ en el historial de git.
   2026-10-13:** `corregir-metadatos` marca como ampliación lo que sigue a una frase opcional («Teachers may further
   guide…»). Era un solo objetivo (HK-FIS-hk_s1_3-p062-22, gases) y ninguna clase final cambió. Las actividades
   sugeridas no se extraen como objetivos.
-- **Singapur K326–K328: verificado, pendiente de decisión.** En la p. 6 dice «two of Papers 2, 3 and 4»: cada
+- ~~**Singapur K326–K328: pendiente de decisión**~~ **Resuelto el 2026-10-13 (decisión del responsable: núcleo
+  parcial).** SG Combined, JP 基礎 y SG H1 cuentan como núcleo en la presencia laxa de los países y como
+  especialización en la sólida. 9.°–11.° pasó a la doble lectura; el panel revisó los 57 inciertos que resultaron.
+  Al hacerlo se encontró y corrigió un bug: el núcleo sólido no contaba la secundaria baja de ENG, AU y JP.
+- **Frases del vocabulario que dan falsos positivos en la búsqueda de texto** (las vieron los expertos al revisar
+  9.°–11.°; pendientes de ajustar):
+  - «reacción en cadena» encuentra la PCR;
+  - «ángulo crítico» encuentra el pensamiento crítico;
+  - «interacciones fundamentales» encuentra el material genético;
+  - «energía potencial» encuentra la energía mecánica (para el potencial eléctrico);
+  - «constante de tiempo» encuentra el movimiento circular;
+  - «cuantificación de energía» encuentra los impactos ambientales;
+  - «sedimentación» encuentra el ciclo de las rocas (para los ciclos sedimentarios);
+  - «fases» encuentra las fases de la Luna (para los diagramas de fases);
+  - falta el sinónimo «virus» para el concepto virus.
+- **Criterio para todo el panel** (propuesto por Tierra y Espacio): una etiqueta secundaria de la IA sin texto en la
+  fila no cuenta como «mención lateral» en la regla del umbral; una palabra del contenido oficial sí cuenta.
+- **Singapur K326–K328 (nota original):** En la p. 6 dice «two of Papers 2, 3 and 4»: cada
   estudiante cursa dos de las tres ciencias. Contarlo como especialización cambiaría la regla de qué es «núcleo», y
   por coherencia habría que aplicarlo también a Japón (3 de 4 asignaturas 基礎). Afectaría buena parte del contraste
   de 9.°–11.°. **Recomendación:** introducir un nivel «núcleo parcial» (lo cursa la mayoría, pero no todos) y

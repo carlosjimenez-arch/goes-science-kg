@@ -1,17 +1,17 @@
 # Reforzamiento de Biología: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Ontario Grades 1–2 en el contraste de 2.°–8.° (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **9.°–11.° con doble lectura y núcleo parcial; 57 clases revisadas por el panel (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 115 | 11 | 7 | 4 | 207 | 8/8 | 0 |
+| 125 | 11 | 7 | 4 | 207 | 8/8 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
 |---|---|---|---|---|---|---|
 | asignatura de temas | 16 | 1 | 0 | 1 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 3 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 4 | 0 | 0 |
 | capa pedagógica | 34 | 0 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 11 | 0 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 1 | 1 | 0 | 0 | 0 | 0 |
@@ -39,6 +39,7 @@
 ## Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
 - G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio: el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: rechazar (pendiente de confirmar)
+- Eutrofización (CON:biologia/eutrofizacion, 9.°–11.°): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: sin_referente (pendiente de confirmar)
 - Especies clave (CON:biologia/especies-clave): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: no_aplica (pendiente de confirmar)
 - Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar)
 - Organelos de la célula eucariota (CON:biologia/organelos-de-la-celula-eucariota): cita una fuente que no existe: ENG_NC_Science_KS3_2013.pdf p. 172
