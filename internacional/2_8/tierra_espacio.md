@@ -115,7 +115,7 @@ El prerrequisito llega después que el concepto que lo necesita (grafo de prerre
 | Tectónica de placas (4.°) | Deriva continental y expansión del fondo oceánico (5.°) | alta | G04-CIE-U3-3.13 |
 | Clima: diferencia con el tiempo, tipos y factores (4.°) | Calentamiento desigual de la Tierra y circulación atmosférica (8.°) | media | G04-CIE-U3-3.11 |
 | Origen del universo: el Big Bang (5.°) | Efecto Doppler (8.°) | media | G05-CIE-U5-5.1 |
-| Ciclo de vida de las estrellas (5.°) | Fisión y fusión nuclear (9.°) | alta | G05-CIE-U5-5.5 |
+| Ciclo de vida de las estrellas (5.°) | Fisión y fusión nuclear (11.°) | alta | G05-CIE-U5-5.5 |
 | Tiempo geológico y datación (5.°) | Desintegración radiactiva (10.°) | media | G05-CIE-U6-6.1 |
 
 ## Profundidad: demanda cognitiva en 2.°–8.°

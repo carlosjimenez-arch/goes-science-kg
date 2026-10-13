@@ -250,15 +250,33 @@ def _raices(texto: str) -> list[str]:
             for w in re.findall(r"[a-z0-9]+", s) if w not in _VACIAS and len(w) > 2]
 
 
+# Ajustes de la búsqueda de texto por concepto (revisión del panel de 9.°–11.°, 2026-10-13). «excluir»: frases que
+# en la malla encuentran otra cosa (la PCR para «reacción en cadena», el pensamiento crítico para «ángulo crítico»…);
+# los temas que de verdad enseñan el concepto ya están etiquetados. «agregar»: frases de búsqueda que faltan. Solo
+# afectan la búsqueda del contraste; el vocabulario (etiquetado, RAG) no cambia.
+AJUSTES_BUSQUEDA: dict[str, dict[str, list[str]]] = {
+    "CON:biologia/ciclos-del-fosforo-y-azufre": {"excluir": ["ciclos sedimentarios"]},   # el ciclo de las rocas
+    "CON:biologia/virus": {"agregar": ["virus infecciosos"]},   # «Asocia a los virus como agentes infecciosos» (3.°)
+    "CON:fisica/capacitancia": {"excluir": ["constante de tiempo"]},   # movimiento circular en 5.°
+    "CON:fisica/cuantizacion-energia-planck": {"excluir": ["cuantización de la energía"]},   # «cuantificación»
+    "CON:fisica/fision-fusion-nuclear": {"excluir": ["reacción en cadena"]},   # la PCR en 9.°
+    "CON:fisica/modelo-estandar-particulas": {"excluir": ["interacciones fundamentales"]},   # material genético
+    "CON:fisica/reflexion-interna-total": {"excluir": ["ángulo crítico"]},   # pensamiento crítico
+    "CON:quimica/diagramas-de-fases": {"excluir": ["diagramas de fases", "punto crítico"]},   # fases de la Luna
+}
+
+
 def frases(concepto: dict) -> list[tuple[str, ...]]:
     """Frases de búsqueda de un concepto: la cabeza de su nombre (lo que va antes de «:» o «(») y cada sinónimo, como
     raíces de sus palabras («Sustancias puras: elementos y compuestos» → (sustan, pura)). Solo frases de dos raíces o
     más (de 3 letras o más): una palabra suelta («pila», «suelo») es una mención, no la enseñanza del concepto."""
     cabeza = re.split(r"[:(]", concepto["nombre"])[0]
+    ajuste = AJUSTES_BUSQUEDA.get(concepto.get("id", ""), {})
+    excluidas = {tuple(x for x in _raices(f) if len(x) >= 3) for f in ajuste.get("excluir", [])}
     salida = []
-    for f in [cabeza, *(concepto.get("sinonimos") or [])]:
+    for f in [cabeza, *(concepto.get("sinonimos") or []), *ajuste.get("agregar", [])]:
         r = tuple(x for x in _raices(f) if len(x) >= 3)
-        if len(r) >= 2 and r not in salida:
+        if len(r) >= 2 and r not in salida and r not in excluidas:
             salida.append(r)
     return salida
 

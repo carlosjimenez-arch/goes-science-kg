@@ -360,3 +360,15 @@ def test_metadatos_de_2_8_ya_corregidos():
                 assert (o["grado_sv_min"], o["grado_sv_max"]) == extraer.grados_sv(docs[o["documento"]],
                                                                                     o.get("grado_pais", "")), o["id"]
     assert "hk_s1_3" in cargar(t.config)["extension_en_cursiva"]
+
+
+def test_ajustes_de_busqueda_quitan_falsos_positivos_y_agregan_frases():
+    """Revisión del panel de 9.°–11.°: «reacción en cadena» encontraba la PCR y «ángulo crítico», el pensamiento
+    crítico; al concepto virus le faltaba una frase. Los ajustes solo afectan la búsqueda del contraste."""
+    from goes_science_kg import conceptos
+
+    voc = conceptos.vocabulario()
+    assert ("reacci", "cadena") not in contraste.frases(voc["CON:fisica/fision-fusion-nuclear"])
+    assert ("angulo", "critic") not in contraste.frases(voc["CON:fisica/reflexion-interna-total"])
+    assert ("viru", "infecc") in contraste.frases(voc["CON:biologia/virus"])
+    assert ("reacci", "cadena") in contraste.frases({"nombre": "x", "sinonimos": ["reacción en cadena"]})

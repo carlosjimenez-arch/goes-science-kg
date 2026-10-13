@@ -103,8 +103,13 @@ en el historial de git.
   parcial).** SG Combined, JP 基礎 y SG H1 cuentan como núcleo en la presencia laxa de los países y como
   especialización en la sólida. 9.°–11.° pasó a la doble lectura; el panel revisó los 57 inciertos que resultaron.
   Al hacerlo se encontró y corrigió un bug: el núcleo sólido no contaba la secundaria baja de ENG, AU y JP.
-- **Frases del vocabulario que dan falsos positivos en la búsqueda de texto** (las vieron los expertos al revisar
-  9.°–11.°; pendientes de ajustar):
+- ~~**Frases que dan falsos positivos en la búsqueda de texto**~~ **Corregido el 2026-10-13**
+  (`contraste.AJUSTES_BUSQUEDA`, solo para la búsqueda del contraste; el vocabulario no cambia). Efectos:
+  - en 9.°–11.°, la clase automática de 7 conceptos pasó a coincidir con la que decidió el panel a mano;
+  - en 2.°–8.°, 5 conceptos que solo entraban por coincidencias falsas salen del contraste;
+  - virus quedó incierto y se resolvió como «posterior» por decisión delegada.
+
+  Las frases eran:
   - «reacción en cadena» encuentra la PCR;
   - «ángulo crítico» encuentra el pensamiento crítico;
   - «interacciones fundamentales» encuentra el material genético;
