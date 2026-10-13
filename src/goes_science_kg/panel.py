@@ -568,15 +568,20 @@ def aplicar() -> dict:
             div.setdefault("dictamenes_panel_asignaciones", {})[f"{conjunto}::{item}"] = reg
             antes = div["asignaciones"][conjunto][item]
             # «cambiar» reasigna; «aceptar» deja la asignación original (deshace un cambio anterior del panel);
-            # «rechazar» (ninguna versión corresponde) no reasigna: queda como observación para una persona.
+            # «rechazar» (ninguna versión corresponde) no reasigna: queda como observación del elemento (no de toda la
+            # división) para una persona.
             destino = {"cambiar": x["resolucion"].get("asignado_a"), "aceptar": x["datos"]["asignado_a"]}.get(
                 reg["decision"], antes)
-            if reg["decision"] == "rechazar" and not any(o.get("elemento") == f"{conjunto}::{item}"
-                                                         for o in div.get("observaciones", [])):
-                div.setdefault("observaciones", []).append(
-                    {"fecha": reg["fecha"], "revisado_por": "panel de expertos IA", "elemento": f"{conjunto}::{item}",
-                     "comentario": "Ninguna versión del concepto corresponde: retirar la etiqueta. "
-                                   + " ".join(reg["justificaciones"].values())[:300]})
+            obs = div.setdefault("observaciones_asignaciones", {})
+            if reg["decision"] == "rechazar":
+                obs.setdefault(f"{conjunto}::{item}", {
+                    "fecha": reg["fecha"], "revisado_por": "panel de expertos IA",
+                    "comentario": "Ninguna versión del concepto corresponde: retirar la etiqueta. "
+                                  + " ".join(reg["justificaciones"].values())[:300]})
+            else:
+                obs.pop(f"{conjunto}::{item}", None)
+            if not obs:
+                del div["observaciones_asignaciones"]
             if sorted(antes) != sorted(destino):
                 div["asignaciones"][conjunto][item] = destino
                 div.setdefault("historial_asignaciones", []).append(

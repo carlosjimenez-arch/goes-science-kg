@@ -36,7 +36,7 @@ ARCHIVOS = {
     "clase_internacional_2_8": "data/interim/internacional_2_8/revisiones.json",
 }
 ENCABEZADO = ["clave", "tipo", "decision_tomada", "justificacion", "decidido_por", "estado", *COLUMNAS_DECISION]
-ENCABEZADO_ASIGNACIONES = ["clave", "concepto_dividido", "conjunto", "elemento", "texto", "asignado_a",
+ENCABEZADO_ASIGNACIONES = ["clave", "concepto_dividido", "conjunto", "elemento", "texto", "asignado_a", "estado",
                            *COLUMNAS_DECISION]
 
 
@@ -88,6 +88,15 @@ DESCRIPCION: dict[str, tuple[Callable[[dict], str], Callable[[dict], str], str, 
 }
 
 
+def _estado_asignacion(d: dict, clave: str) -> str:
+    """Estado de una asignación de la división: observada por el panel, con dictamen del panel o pendiente."""
+    if obs := (d.get("observaciones_asignaciones") or {}).get(clave):
+        return f"observada (pide nueva decisión): {obs['comentario'][:160]}"
+    if reg := (d.get("dictamenes_panel_asignaciones") or {}).get(clave):
+        return _estado({"dictamenes_panel": [reg]})
+    return "pendiente de confirmar"
+
+
 def _estado(r: dict) -> str:
     if r.get("observaciones"):
         return "observada (pide nueva decisión)"
@@ -129,7 +138,8 @@ def exportar_decisiones(fecha: str | None = None) -> list[str]:
             for item, ids in sorted(items.items()):
                 asignaciones.append([f"{d['concepto']}::{conjunto}::{item}", _nombre(d["concepto"]), conjunto, item,
                                      textos.get(conjunto, {}).get(item, "")[:300],
-                                     " + ".join(_nombre(i) for i in ids), "", "", "", ""])
+                                     " + ".join(_nombre(i) for i in ids), _estado_asignacion(d, f"{conjunto}::{item}"),
+                                     "", "", "", ""])
     p1, p2 = _libre(ruta(DIR) / f"{fecha}_decisiones.csv"), _libre(ruta(DIR) / f"{fecha}_asignaciones_division.csv")
     _escribir(p1, ENCABEZADO, filas)
     _escribir(p2, ENCABEZADO_ASIGNACIONES, asignaciones)

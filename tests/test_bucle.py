@@ -196,3 +196,13 @@ def test_una_resolucion_posterior_supera_la_observacion_del_panel():
     panel._observacion_del_panel(r, {"decision": "aceptar", "fecha": "2026-10-13"})
     assert r["observaciones"] == [{"revisado_por": "MINED", "comentario": "humana"}]   # la humana no se toca
     assert r["observaciones_superadas"][0]["superada"] == "2026-10-13"
+
+
+def test_rechazar_una_asignacion_la_observa_sin_observar_toda_la_division():
+    from goes_science_kg import revision_decisiones as rd
+
+    d = {"asignaciones": {"internacional": {"OBJ-1": ["CON:x"]}},
+         "observaciones_asignaciones": {"internacional::OBJ-1": {"comentario": "retirar la etiqueta"}},
+         "dictamenes_panel": [{"decision": "aceptar", "solidez": "solido"}]}
+    assert rd._estado_asignacion(d, "internacional::OBJ-1").startswith("observada")
+    assert rd._estado(d) == "dictamen del panel: aceptar, sólido (pendiente de confirmar)"   # la división, no
