@@ -297,11 +297,12 @@ def _ranuras_de_base(cid: str, grado: int, rol_base: str) -> list[dict]:
     ]
 
 
-def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None) -> list[str]:
+def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None, ideas_previas: int = 1) -> list[str]:
     """Un lote por objetivo con las ranuras que faltan: dos actividades del objetivo (habilidades distintas), el
     concepto principal y sus bases de profundidad 1, y las de profundidad 2 (confianza alta) cuando la base de
     profundidad 1 no se enseña antes en la malla. Una ranura ya llenada (en la capa o en un lote anterior) no se
-    repite. Devuelve las rutas escritas."""
+    repite. Con `ideas_previas` > 1, el concepto principal pide esa cantidad de ideas previas erróneas distintas
+    (DIF:<concepto>/1…n; paquete de clase). Devuelve las rutas escritas."""
     ped = ped or Pedagogia.cargar()
     hechos = set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas) | set(ped.experimentos)
     d = directorio() / "lotes"
@@ -328,6 +329,10 @@ def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None
                                      "salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos "
                                      "esperados y preguntas de análisis; dura una o dos sesiones de 55 min"})
         ranuras += _ranuras_de_base(principal, grado, "objetivo")
+        ranuras += [{"id": f"DIF:{_slug(principal)}/{k}", "tipo": "dificultad", "concepto": principal,
+                     "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta "
+                                  f"de las de /1 a /{k - 1} (con su señal en una respuesta); no inventes fuentes"}
+                    for k in range(2, ideas_previas + 1)]
         for b in elegidas:
             ranuras += _ranuras_de_base(b.concepto, grado, "base")
         ranuras = [r for r in ranuras if r["id"] not in hechos]
