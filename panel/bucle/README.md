@@ -105,7 +105,9 @@ en el historial de git.
   de 9.°–11.°. **Recomendación:** introducir un nivel «núcleo parcial» (lo cursa la mayoría, pero no todos) y
   contarlo como núcleo en la lectura amplia y como especialización en la estricta. Así el método de doble lectura
   decide.
-- **Ontario Grades 1–2** no se extrajeron: empuja hacia «adelantado» algunas clases tempranas.
+- **Ontario Grades 1–2: catálogo listo, falta extraer.** Están en `config/internacional_2_8.yaml` (pp. 92–113,
+  llevados a SV 2 como HK P1–P3). La extracción requiere **24 llamadas a Vertex**, más el etiquetado de los
+  objetivos nuevos, y la aprobación del gasto. Mientras tanto, el contraste no cambia.
 - **Etiquetado:** objetivos asignados a un concepto vecino (calidad del aire y composición del aire; transmisión de
   patógenos y epidemiología) y conceptos casi duplicados.
 - **Comparar nivel con nivel:** el primer grado mezcla el nivel cualitativo con el formal (flotación, potencia,
