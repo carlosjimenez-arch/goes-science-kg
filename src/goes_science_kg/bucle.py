@@ -960,7 +960,7 @@ def snapshot(etapa: str) -> list[str]:
     d.mkdir(parents=True, exist_ok=True)
     por_ciencia: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for i, x in sorted(estado.items()):
-        if x["tipo"] != "piloto" and (x.get("bucle") or {}).get("vueltas"):
+        if x["tipo"] != "piloto" and ((x.get("bucle") or {}).get("vueltas") or x["estado"] == "sin_consenso"):
             por_ciencia[_disciplina(x)].append((i, x))
     escritos, filas_resumen = [], []
     for clave, nombre in CIENCIAS.items():
@@ -971,7 +971,7 @@ def snapshot(etapa: str) -> list[str]:
             c["expedientes"] += 1
             c["anclas"] += len((x.get("bucle") or {}).get("anclas", []))
             c[f"solidez_{x['bucle'].get('solidez')}"] += 1
-            for w in x["bucle"]["vueltas"]:
+            for w in x["bucle"].get("vueltas", []):
                 c["impugnados"] += w.get("resultado") == "impugnada"
                 c["cambiados"] += w.get("replica") == "cambiada"
                 c["mantenidos"] += w.get("replica") == "mantenida"
@@ -999,7 +999,8 @@ def snapshot(etapa: str) -> list[str]:
             md += ["", "## Lo que el bucle cambió", "",
                    "| Expediente | Antes | Ahora | Por qué (revisor adversarial) |", "|---|---|---|---|"]
             for _i, x, (antes, ahora) in cambios:
-                imp = next((w.get("impugnacion") for w in x["bucle"]["vueltas"] if w.get("resultado") == "impugnada"
+                imp = next((w.get("impugnacion") for w in x["bucle"].get("vueltas", [])
+                            if w.get("resultado") == "impugnada"
                             and (w.get("impugnacion") or {}).get("veredicto") != "se_sostiene"), None) or {}
                 por = imp.get("argumento") or "discrepancia de la sonda ciega"
                 md.append(f"| {panel._celda(x['titulo'], 80)} | {antes} | {ahora} | {panel._celda(por, 260)} |")
@@ -1013,7 +1014,8 @@ def snapshot(etapa: str) -> list[str]:
             md += ["", "## Frágiles o sin consenso (necesitan una fuente primaria o una persona)", ""]
             md += [f"- {panel._celda(x['titulo'], 100)}: {panel._celda(x['bucle'].get('motivo_solidez'), 160)}"
                    for _i, x in frageles]
-        pat = Counter((w.get("impugnacion") or {}).get("patron") for _i, x in exps for w in x["bucle"]["vueltas"]
+        pat = Counter((w.get("impugnacion") or {}).get("patron") for _i, x in exps
+                      for w in x["bucle"].get("vueltas", [])
                       if w.get("resultado") == "impugnada" and (w.get("impugnacion") or {}).get("patron"))
         if pat:
             md += ["", "**Patrones de error de lo impugnado:** " + ", ".join(f"{p} {n}" for p, n in pat.most_common())
@@ -1091,7 +1093,7 @@ def snapshot_grados(etapa: str) -> list[str]:
     por_grado: dict[int, list[tuple[str, dict]]] = defaultdict(list)
     transversales = []
     for i, x in sorted(estado.items()):
-        if x["tipo"] == "piloto" or not (x.get("bucle") or {}).get("vueltas"):
+        if x["tipo"] == "piloto" or not ((x.get("bucle") or {}).get("vueltas") or x["estado"] == "sin_consenso"):
             continue
         gs = grados_de(i, x)
         for g in gs:
@@ -1122,11 +1124,11 @@ def snapshot_grados(etapa: str) -> list[str]:
                    for _i, x in cambiados]
             md.append("")
         mantenidos = [(i, x) for i, x in orden if not _cambios_del_bucle(x)
-                      and any(v.get("replica") == "mantenida" for v in x["bucle"]["vueltas"])]
+                      and any(v.get("replica") == "mantenida" for v in x["bucle"].get("vueltas", []))]
         if mantenidos:
             md += ["### Reabiertos y mantenidos por la réplica", "", cab[0].format("Impugnación"), cab[1]]
             md += [fila(x, next(((v.get("impugnacion") or {}).get("argumento") or "discrepancia de la sonda ciega"
-                                 for v in x["bucle"]["vueltas"] if v.get("replica") == "mantenida"), ""))
+                                 for v in x["bucle"].get("vueltas", []) if v.get("replica") == "mantenida"), ""))
                    for _i, x in mantenidos]
             md.append("")
         debiles = [(i, x) for i, x in orden if x["bucle"].get("solidez") in ("fragil", "sin_consenso")]
@@ -1170,11 +1172,24 @@ def snapshot_grados(etapa: str) -> list[str]:
     p = d / "RESUMEN.md"
     p.write_text("\n".join(resumen) + "\n", encoding="utf-8")
     escritos.insert(0, relativa(p))
-    junto = ["# Reforzamiento de 11.° a 9.°: snapshot", "", aviso, ""]
-    for g in (11, 10, 9):
-        if g in por_grado:
+    for nombre, grados in SNAPSHOTS_POR_TRAMO.items():   # un documento por tramo, del grado mayor al menor
+        presentes = [g for g in grados if g in por_grado]
+        junto = [f"# Reforzamiento de {grados[0]}.° a {grados[-1]}.°: snapshot", "", aviso, "",
+                 "| Grado | Dictámenes | Cambiados por el bucle | Sólidos | Respaldados | Frágiles | Sin consenso |",
+                 "|---|---|---|---|---|---|---|"]
+        for g in presentes:
+            c = Counter(x["bucle"].get("solidez") for _i, x in por_grado[g])
+            junto.append(f"| [{g}.°](#{g}-grado) | {len(por_grado[g])} | "
+                         f"{sum(bool(_cambios_del_bucle(x)) for _i, x in por_grado[g])} | {c['solido']} | "
+                         f"{c['respaldado']} | {c['fragil']} | {c['sin_consenso']} |")
+        junto.append("")
+        for g in presentes:
             junto += [*cabecera(g, por_grado[g]), *secciones(por_grado[g]), ""]
-    p = ruta("panel/bucle/SNAPSHOT_9-11.md")
-    p.write_text("\n".join(junto) + "\n", encoding="utf-8")
-    escritos.insert(0, relativa(p))
+        p = ruta(f"panel/bucle/SNAPSHOT_{nombre}.md")
+        p.write_text("\n".join(junto) + "\n", encoding="utf-8")
+        escritos.insert(0, relativa(p))
     return escritos
+
+
+# Documentos que reúnen varios grados: los tramos del contraste internacional (specs 11 y 12).
+SNAPSHOTS_POR_TRAMO = {"9-11": (11, 10, 9), "2-8": (8, 7, 6, 5, 4, 3, 2)}

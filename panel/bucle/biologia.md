@@ -4,14 +4,14 @@
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 111 | 11 | 7 | 4 | 207 | 8/8 | 0 |
+| 115 | 11 | 7 | 4 | 207 | 8/8 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
 |---|---|---|---|---|---|
-| asignatura de temas | 16 | 1 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 0 | 0 |
+| asignatura de temas | 16 | 1 | 0 | 1 | 0 |
+| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 3 | 0 |
 | capa pedagógica | 34 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 11 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 1 | 1 | 0 | 0 | 0 |
@@ -38,6 +38,10 @@
 
 ## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
 
+- G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio: confianza baja de experto-tierra-espacio
+- Especies clave (CON:biologia/especies-clave): confianza baja de experto-biologia
+- Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): confianza baja de experto-biologia
 - Organelos de la célula eucariota (CON:biologia/organelos-de-la-celula-eucariota): cita una fuente que no existe: ENG_NC_Science_KS3_2013.pdf p. 172
+- Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): confianza baja de experto-biologia
 
 **Patrones de error de lo impugnado:** error_cientifico 3, fuente_mal_leida 2, etiqueta_suelta 2, item_defectuoso 2, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.

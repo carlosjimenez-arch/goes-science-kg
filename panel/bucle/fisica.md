@@ -4,14 +4,14 @@
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 147 | 9 | 5 | 4 | 250 | 19/22 | 0 |
+| 152 | 9 | 5 | 4 | 250 | 19/22 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
 |---|---|---|---|---|---|
 | asignatura de temas | 17 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 5 | 0 |
 | capa pedagógica | 58 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 12 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 4 | 2 | 0 | 0 | 0 |
@@ -31,5 +31,13 @@
 
 - Física nuclear tardía
 - 1.8. Experimentación con la fricción y la resistencia del aire que frenan el movimiento.
+
+## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+
+- Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento): confianza baja de experto-fisica
+- Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion): confianza baja de experto-fisica
+- Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra): confianza baja de experto-fisica
+- Péndulo simple (CON:fisica/pendulo-simple): confianza baja de experto-fisica
+- Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton): confianza baja de experto-fisica
 
 **Patrones de error de lo impugnado:** otra_asignatura_o_nombre 2, progresion 1, etiqueta_suelta 1, electiva_como_nucleo 1, item_defectuoso 1, otro 1, conteo_de_paises 1.

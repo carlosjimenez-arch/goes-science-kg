@@ -10,6 +10,7 @@ en el historial de git.
 | [`RESUMEN.md`](RESUMEN.md) | totales por ciencia: impugnados, cambiados y solidez |
 | [`biologia.md`](biologia.md), [`fisica.md`](fisica.md), [`quimica.md`](quimica.md), [`tierra-espacio.md`](tierra-espacio.md) | por ciencia: solidez por tipo, lo que el bucle cambió y por qué, lo mantenido frente a contraevidencia, lo frágil y los patrones de error |
 | [`SNAPSHOT_9-11.md`](SNAPSHOT_9-11.md) | **de 11.° a 9.°** en un solo documento: por grado, lo que el bucle cambió, lo reabierto y mantenido, lo frágil y el detalle de cada dictamen con su cita literal verificada |
+| [`SNAPSHOT_2-8.md`](SNAPSHOT_2-8.md) | **de 8.° a 2.°** en un solo documento, con la misma estructura e incluidos los dictámenes sin consenso, que decide una persona |
 | [`grados/`](grados/RESUMEN.md) | un archivo por grado, de 11.° a 2.° (`G11.md` … `G02.md`), con la misma estructura, y un resumen por grado |
 
 **Cómo leer la solidez:**

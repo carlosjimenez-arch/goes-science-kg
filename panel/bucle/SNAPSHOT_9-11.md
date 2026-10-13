@@ -2,6 +2,12 @@
 
 > Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas**. Cada dictamen se ubica en el grado de la malla al que corresponde (tema, objetivo del contenido o primer grado de la V2 en el contraste); un dictamen puede aparecer en más de un grado. Son dictámenes del panel de expertos IA, **no confirmaciones del MINED**.
 
+| Grado | Dictámenes | Cambiados por el bucle | Sólidos | Respaldados | Frágiles | Sin consenso |
+|---|---|---|---|---|---|---|
+| [11.°](#11-grado) | 58 | 4 | 53 | 5 | 0 | 0 |
+| [10.°](#10-grado) | 65 | 3 | 61 | 4 | 0 | 0 |
+| [9.°](#9-grado) | 134 | 4 | 132 | 2 | 0 | 0 |
+
 ## 11.° grado
 
 58 dictámenes: 4 cambiados por el bucle; 53 sólidos, 5 respaldados, 0 frágiles, 0 sin consenso.

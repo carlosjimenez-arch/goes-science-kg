@@ -4,7 +4,7 @@
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 179 | 11 | 7 | 4 | 322 | 26/29 | 0 |
+| 181 | 11 | 7 | 4 | 322 | 26/29 | 0 |
 
 ## Solidez por tipo
 
@@ -12,7 +12,7 @@
 |---|---|---|---|---|---|
 | asignaciones de concepto | 83 | 2 | 0 | 0 | 0 |
 | asignatura de temas | 8 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 28 | 0 | 0 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 28 | 0 | 0 | 2 | 0 |
 | capa pedagógica | 26 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 10 | 1 | 0 | 0 | 0 |
 | hallazgos del contraste | 7 | 1 | 0 | 0 | 0 |
@@ -36,5 +36,10 @@
 - Clase de «Neutralización y reacciones de los ácidos» en el contraste de 2.°–8.°: tardio → alineado
 - 9.8. Comparación de combustibles fósiles y biocombustibles según la energía liberada, su idoneidad …
 - 12.15. Explicación de la reversibilidad y del equilibrio dinámico con la teoría de colisiones y las…
+
+## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+
+- Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica): confianza baja de experto-quimica
+- Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades): confianza baja de experto-quimica
 
 **Patrones de error de lo impugnado:** otra_asignatura_o_nombre 4, error_cientifico 2, conteo_de_paises 1, fuente_mal_leida 1, etiqueta_suelta 1.

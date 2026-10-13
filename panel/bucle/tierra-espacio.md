@@ -4,17 +4,17 @@
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 49 | 7 | 5 | 2 | 82 | 3/4 | 0 |
+| 55 | 7 | 5 | 2 | 82 | 3/4 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
 |---|---|---|---|---|---|
 | asignatura de temas | 1 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 15 | 3 | 0 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 15 | 3 | 0 | 5 | 0 |
 | capa pedagógica | 20 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 1 | 0 | 0 | 0 | 0 |
-| hallazgos del contraste | 8 | 0 | 0 | 0 | 0 |
+| hallazgos del contraste | 8 | 0 | 0 | 1 | 0 |
 | propuestas curriculares | 1 | 0 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
@@ -31,5 +31,14 @@
 
 - Acidificación del océano (CON:ciencias_tierra_espacio/acidificacion-del-oceano)
 - Abastecimiento y conservación del agua dulce (CON:ciencias_tierra_espacio/conservacion-del-agua)
+
+## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+
+- Ciclo de vida de las estrellas en 5.° y 8.°, sin referente: sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar
+- Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-superficia…: confianza baja de experto-tierra-espacio
+- Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/glacia…: confianza baja de experto-tierra-espacio
+- Mareas (CON:ciencias_tierra_espacio/mareas): confianza baja de experto-tierra-espacio
+- Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico): confianza baja de experto-tierra-espacio
+- Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-y-sus…: confianza baja de experto-tierra-espacio
 
 **Patrones de error de lo impugnado:** fuente_mal_leida 3, conteo_de_paises 1, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.
