@@ -1,17 +1,17 @@
 # Reforzamiento de Ciencias de la Tierra y del Espacio: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-12, etapa: **vuelta 2: impugnación cerrada; réplica final en curso (3 expedientes)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 49 | 7 | 5 | 1 | 82 | 3/4 | 1 |
+| 49 | 7 | 5 | 2 | 82 | 3/4 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
 |---|---|---|---|---|---|
 | asignatura de temas | 1 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 15 | 2 | 0 | 0 | 1 |
+| clases del contraste de 2.°–8.° | 15 | 3 | 0 | 0 | 0 |
 | capa pedagógica | 20 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 1 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 8 | 0 | 0 | 0 | 0 |
@@ -30,5 +30,6 @@
 ## Mantenidos frente a contraevidencia anclada (la réplica la ponderó)
 
 - Acidificación del océano (CON:ciencias_tierra_espacio/acidificacion-del-oceano)
+- Abastecimiento y conservación del agua dulce (CON:ciencias_tierra_espacio/conservacion-del-agua)
 
 **Patrones de error de lo impugnado:** fuente_mal_leida 3, conteo_de_paises 1, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.

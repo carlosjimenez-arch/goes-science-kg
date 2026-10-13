@@ -1,17 +1,17 @@
 # Reforzamiento de Biología: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-12, etapa: **vuelta 2: impugnación cerrada; réplica final en curso (3 expedientes)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 111 | 11 | 7 | 3 | 207 | 8/8 | 1 |
+| 111 | 11 | 7 | 4 | 207 | 8/8 | 0 |
 
 ## Solidez por tipo
 
 | Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
 |---|---|---|---|---|---|
 | asignatura de temas | 16 | 1 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 38 | 0 | 1 | 0 | 1 |
+| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 0 | 0 |
 | capa pedagógica | 34 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 11 | 0 | 0 | 0 | 0 |
 | hallazgos del contraste | 1 | 1 | 0 | 0 | 0 |
@@ -33,6 +33,7 @@
 
 - G05-CIE-U6-6.3: biologia → ciencias_tierra_espacio
 - Enfermedades infecciosas y no infecciosas en 3.°, adelantadas frente a la mediana
+- Mitosis y ciclo celular (CON:biologia/mitosis-y-ciclo-celular)
 - 4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, …
 
 ## Frágiles o sin consenso (necesitan una fuente primaria o una persona)

@@ -203,3 +203,18 @@ uv run gskg bucle fuente "<fuente>"            # el texto en que se busca
 - **Las traducciones no se anclan.** Hay que citar en el idioma de la fuente. Las afirmaciones de ausencia («no
   aparece en todo el marco») tampoco se anclan: quedan como paráfrasis ubicada.
 - **La sonda es una muestra.** Su acuerdo estima la estabilidad por tipo; no garantiza cada expediente.
+
+### 7.7 Primera corrida (2026-10-12 y 13)
+- **Vuelta 1:**
+  - el refutador revisó 486 dictámenes y aportó 820 anclas literales;
+  - se reabrieron 35;
+  - la sonda coincidió en 56 de 63;
+  - la réplica cambió 24 y mantuvo 11, todos por unanimidad.
+- **Vuelta 2:** de los 24 cambios, 21 se sostuvieron; 3 se reabrieron y la réplica los mantuvo. Con eso convergió.
+- **Solidez:** 466 de 486 quedan sólidos o respaldados; 1 es frágil (cita a una página inexistente) y 17 siguen sin
+  consenso.
+- **Bucle externo:** siete correcciones al verificador y al circuito salieron de agentes que no pudieron anclar
+  evidencia legítima (`panel/bucle/README.md`). Quedan seis problemas de método del contraste para el responsable.
+- **Costo y robustez:** unos 50 subagentes de Claude, sin Vertex. Hubo tres cortes por límites de uso o de sesión;
+  el bucle se retomó sin perder trabajo, porque cada salida se valida y se consolida por lote. Desde entonces corre en
+  olas de 6 y con commits por etapa.

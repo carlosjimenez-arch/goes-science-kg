@@ -139,6 +139,15 @@ revisión técnica interina mientras no haya un equipo del MINED.
   - límites de refuerzo para primaria;
   - el verificador de fidelidad, obligatorio.
 
+## Fase 8.1 · Bucle de fortalecimiento del panel (spec 14, sección 7) ✅ (2026-10-13)
+`bucle.py`, `gskg bucle …`, el subagente `refutador` y su validación de citas por código. Convergió en 2 vueltas:
+- 24 dictámenes corregidos;
+- 820 anclas literales;
+- 466 de 486 dictámenes sólidos o respaldados.
+
+Corrigió hallazgos (efecto invernadero, potencia eléctrica, leyes de los gases, fuerzas intermoleculares) y siete
+errores del contenido de 7.° y 9.°. Snapshots por ciencia en `panel/bucle/`.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

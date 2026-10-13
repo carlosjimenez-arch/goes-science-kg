@@ -1,10 +1,10 @@
 # Reforzamiento de Química: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-12, etapa: **vuelta 2: impugnación cerrada; réplica final en curso (3 expedientes)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
-| 179 | 11 | 7 | 3 | 322 | 26/29 | 1 |
+| 179 | 11 | 7 | 4 | 322 | 26/29 | 0 |
 
 ## Solidez por tipo
 
@@ -16,7 +16,7 @@
 | capa pedagógica | 26 | 0 | 0 | 0 | 0 |
 | decisiones de contenido | 10 | 1 | 0 | 0 | 0 |
 | hallazgos del contraste | 7 | 1 | 0 | 0 | 0 |
-| propuestas curriculares | 10 | 2 | 0 | 0 | 1 |
+| propuestas curriculares | 10 | 3 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
 
@@ -35,5 +35,6 @@
 - G05-CIE-U4-4.3 → CON:quimica/distribucion-electronica-por-niveles
 - Clase de «Neutralización y reacciones de los ácidos» en el contraste de 2.°–8.°: tardio → alineado
 - 9.8. Comparación de combustibles fósiles y biocombustibles según la energía liberada, su idoneidad …
+- 12.15. Explicación de la reversibilidad y del equilibrio dinámico con la teoría de colisiones y las…
 
 **Patrones de error de lo impugnado:** otra_asignatura_o_nombre 4, error_cientifico 2, conteo_de_paises 1, fuente_mal_leida 1, etiqueta_suelta 1.

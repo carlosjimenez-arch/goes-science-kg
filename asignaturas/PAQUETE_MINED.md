@@ -1,4 +1,4 @@
-# Paquete para el equipo de Ciencias del MINED (actualizado el 2026-10-12)
+# Paquete para el equipo de Ciencias del MINED (actualizado el 2026-10-13)
 
 Esto es lo que el equipo GOES necesita que el MINED revise, en orden de prioridad. Todo es **borrador con evidencia**:
 nada cambia la malla sin una decisión del MINED. Cada archivo indica qué columnas llenar (`decision`, `comentario` y
@@ -10,13 +10,26 @@ nada cambia la malla sin una decisión del MINED. Cada archivo indica qué colum
 > consenso están en [`panel/README.md`](../panel/README.md) y [`panel/DICTAMEN.md`](../panel/DICTAMEN.md). Sus
 > dictámenes **no son confirmaciones del MINED**: en los CSV aparecen como «dictamen del panel: … (pendiente de
 > confirmar)», para que el MINED los confirme o los revierta.
+>
+> **Bucle de fortalecimiento (2026-10-12 y 13).** Después, cada dictamen pasó por un revisor adversarial que buscó en las
+> fuentes la prueba en contra, con citas literales verificadas por código, y por una sonda ciega. El estado de cada
+> fila dice su **solidez**:
+> - **sólido:** sobrevivió y tiene cita literal en la fuente;
+> - **respaldado:** sobrevivió con una fuente parafraseada, o la réplica lo mantuvo frente a contraevidencia;
+> - **frágil:** conviene revisarlo primero.
+>
+> Detalle por ciencia en [`panel/bucle/`](../panel/bucle/README.md).
 
 ## 1. Confirmar decisiones de contenido: 170 decisiones y 85 asignaciones
 El grafo ya aplica estas decisiones, pero falta la confirmación del MINED.
 
-**[`decisiones/2026-10-12_decisiones-2.csv`](decisiones/2026-10-12_decisiones-2.csv)** (reemplaza a los anteriores). Trae
-168 con dictamen del panel y 2 decisiones nuevas tomadas tras sus observaciones: la neutralización pasa a «tardío» y
-los agentes oxidantes, a «posterior». Las 35 originales:
+**[`decisiones/2026-10-13_decisiones.csv`](decisiones/2026-10-13_decisiones.csv)** (reemplaza a los anteriores). Trae
+167 con dictamen del panel y su solidez, y 3 decisiones nuevas tomadas tras sus observaciones:
+- la neutralización pasa a «tardío» (el bucle lo confirmó);
+- los agentes oxidantes, a «posterior»;
+- las fuerzas intermoleculares, a «sin referente» (solo ENG GCSE las tiene en el núcleo).
+
+Las 35 originales:
 - 2 equivalencias retiradas.
 - 1 prerrequisito rechazado.
 - 1 división de concepto: «configuración electrónica» por orbitales en Bachillerato y por capas en secundaria.
@@ -28,9 +41,10 @@ los agentes oxidantes, a «posterior». Las 35 originales:
 Además, **135 clases del contraste de 2.°–8.°** que la doble lectura había dejado inciertas, ahora clasificadas por el
 panel con evidencia en la fila de la V2 y en la página de cada país.
 
-**[`decisiones/2026-10-12_asignaciones_division-2.csv`](decisiones/2026-10-12_asignaciones_division-2.csv):** a qué
-versión de «configuración electrónica» se asignó cada tema u objetivo. El panel respaldó 78 y reasignó 7; por
-ejemplo, G05-CIE-U3-3.11 queda con las dos versiones, porque 5.° ya usa la notación por subniveles.
+**[`decisiones/2026-10-13_asignaciones_division.csv`](decisiones/2026-10-13_asignaciones_division.csv):** a qué
+versión de «configuración electrónica» se asignó cada tema u objetivo, con su estado. El panel respaldó 78 y
+reasignó 7; por ejemplo, G05-CIE-U3-3.11 queda con las dos versiones, porque 5.° ya usa la notación por subniveles.
+Hay una observada, JP-QUI-jp_55-p119-18: ninguna versión corresponde, y la propuesta es retirar la etiqueta.
 
 En `decision` se escribe: aceptar, cambiar (solo en asignaciones) o rechazar. Un rechazo no revierte nada: pide una
 nueva decisión.
@@ -54,7 +68,8 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
 - **Química de 9.°–11.° incluye contenido de electiva** en los países: K, Ka y amortiguadoras en 9.°; Gibbs y
   orbitales moleculares en 10.°–11.°.
 - **Física pide poco razonamiento:** 10 % frente a 31 %.
-- **El efecto invernadero no se retoma** en 9.°–11.°.
+- ~~El efecto invernadero no se retoma en 9.°–11.°~~: **falso**, lo corrigió el bucle. Está en las microhabilidades
+  de 10.° y 11.° (G10-FIS-U13-13.3, G11-BIO-U1-1.8, G11-FIS-U22-22.4). Solo falta que el indicador de 13.3 lo nombre.
 - **Secuencias por ordenar:** gases antes de procesos termodinámicos, superposición antes de interferencia,
   mitocondria antes del metabolismo.
 
@@ -65,20 +80,21 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
   - formación de imágenes en espejos planos: 10.° frente a 5.°–8.°;
   - lentes e imágenes: 10.°–11.° frente a 7.°–8.°;
   - reacciones exotérmicas y endotérmicas: 10.° frente a 7.°;
-  - ley de Ohm como relación explícita: 11.°, aunque 6.° ya usa la relación sin nombrarla;
+  - ley de Ohm como relación explícita: 11.°, aunque 6.° ya usa la relación sin nombrarla. Recomendación: nombrar
+    R = V/I en 6.° y formalizar la ley en 9.°;
   - neutralización: 9.° frente a 7.° (corregido por el panel).
 - **Llegan tarde según el panel** (clasificados con evidencia, sin una segunda verificación):
   - masa y peso: 10.° frente a 6.°–7.°;
-  - potencia eléctrica: 9.° frente a 7.°;
   - refracción: 7.° frente a 5.°;
   - el ojo y los instrumentos ópticos: 11.° frente a 6.°–8.°;
-  - relaciones de los gases: 9.° frente a 7.°;
   - recursos renovables: 7.° frente a 5.°.
 - **Van antes que todos los países:**
   - **números cuánticos en 5.°**, con su formalismo; ningún país los enseña antes de bachillerato;
   - enlace iónico en 5.°–6.°;
   - iones en 5.°;
-  - fuerzas intermoleculares en 6.°;
+  - fuerzas intermoleculares en 6.° (sin referente: solo ENG GCSE);
+  - etapas de la mitosis en 6.° (en el límite; la idea de división sí coincide con TW);
+  - capas de la atmósfera en 3.°;
   - ciclo de vida de las estrellas en 5.°;
   - eclipses en 4.°.
 
@@ -90,7 +106,16 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
   - precursores y monitoreo de sismos y erupciones en 5.°, por el riesgo local;
   - formación de la Tierra en 5.°.
 - **Hueco de profundización:** las adaptaciones de los seres vivos no se retoman entre 3.° y 10.°.
-- **Error en la malla:** G05-CIE-U6-6.7 dice bordes de placa «pasivos»; lo correcto es «transformantes».
+- **Errores en la malla:**
+  - G05-CIE-U6-6.7 dice bordes de placa «pasivos»; lo correcto es «transformantes»;
+  - G10-FIS-U16-16.1 atribuye la reflexión y la refracción al modelo corpuscular;
+  - G06-CIE-U2-2.6 explica la diferencia entre costa y montaña por el agua, cuando es la altitud;
+  - G06-CIE-U5-5.12 pone la energía como producto de la respiración.
+
+  También hay problemas de progresión, como el corrimiento al rojo en 8.° sin Doppler o «recordar V = IR» en 11.°:
+  ver [`panel/bucle/README.md`](../panel/bucle/README.md).
+- **Retirados por el bucle:** la potencia eléctrica y las leyes de los gases ya no son tardías (8.° calcula kWh; el
+  objetivo de HK sobre gases es Extension Part).
 - **Límite del método:** las clases automáticas de 2.°–8.° tenían 46 % de falsos. El método se corrigió el 2026-10-12
   y se probó con una muestra nueva: bajó a 25 %. Por eso solo se presentan los hallazgos verificados. El panel
   clasificó 135 de los 150 conceptos inciertos; quedan 15 para una persona.

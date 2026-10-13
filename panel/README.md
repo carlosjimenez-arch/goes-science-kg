@@ -40,6 +40,21 @@ Las 150 clases inciertas del contraste de 2.°–8.° fueron en una serie aparte
 Además, la clave era la opción más larga en 57 de 84 ítems y la A en 34 de 84. Por eso ahora las opciones se barajan
 (`sesion.barajar`) y el redactor tiene reglas nuevas (`prompts/redactar_actividades.md`).
 
+## Bucle de fortalecimiento (2026-10-12 y 13)
+Los 486 dictámenes resueltos pasaron por un revisor adversarial que buscó en las fuentes la prueba en contra, con
+citas literales que el código verifica, y por una sonda ciega de 63 expedientes. Lo reabierto volvió a la réplica del
+panel. El bucle convergió en 2 vueltas:
+- **24 dictámenes cambiaron**, todos por unanimidad, y la vuelta 2 confirmó 21 de esos 24 cambios;
+- **820 citas literales nuevas** dejan anclada la mayoría de los dictámenes;
+- **solidez final:** 466 sólidos o respaldados, 1 frágil y 17 sin consenso (del panel original).
+
+Detalle por ciencia, errores de la malla y lo que aprendió el método: [`bucle/README.md`](bucle/README.md) y los
+snapshots en [`bucle/`](bucle/). La columna «Solidez» de [`DICTAMEN.md`](DICTAMEN.md) y el estado del CSV para el MINED
+la muestran por dictamen.
+
+**Decisión delegada tras el bucle:** las fuerzas intermoleculares pasan a «sin referente». Solo ENG GCSE (p. 20) las
+tiene en el núcleo; HK p. 81 es Extension Part.
+
 ## Lo que decidió el responsable del proyecto después del panel
 Por delegación, con evidencia verificada en la fuente:
 1. **Neutralización:** la clase pasa a «tardío». El panel mostró que HK S1–3 p. 60 (8.4) es núcleo y no Extension;
@@ -60,6 +75,8 @@ Por delegación, con evidencia verificada en la fuente:
 ## Para el MINED, cuando haya equipo
 - **Error en la malla:** G05-CIE-U6-6.7 dice bordes de placa «pasivos»; lo correcto es «transformantes». La propia V2
   lo escribe bien en 9.° (G09-CIE-U5-5.12).
+- **Más errores y problemas de la malla** que encontró el bucle (corpuscular en G10-FIS-U16-16.1, costa y montaña en
+  G06-CIE-U2-2.6, la energía como producto en G06-CIE-U5-5.12 y otros): [`bucle/README.md`](bucle/README.md).
 - **La química de 5.° debe decidirse en bloque:** números cuánticos, orbitales, iones, propiedades periódicas y
   enlace iónico, junto con la nomenclatura de 7.° que depende de ellos. Si se mueve una sola pieza, la secuencia se
   rompe.
