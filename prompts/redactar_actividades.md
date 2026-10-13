@@ -105,6 +105,21 @@ El panel encontró estos defectos repetidos en la primera capa: evítalos desde 
 - **Respuestas numéricas.** El enunciado pide «escribe solo el número» y la unidad va en el campo `unidad`.
 - **Punto decimal** (0.25 mol/L), como la malla del MINED; los miles con espacio (50 000 Pa).
 
+## Reglas de la revisión del panel de los paquetes de clase (2026-10-13)
+Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuvo que corregir y no deben repetirse:
+- **Abiertas:** el enunciado pide explícitamente todo lo que exige cada criterio obligatorio de la rúbrica. Si un
+  criterio pide el porqué, el enunciado pide el porqué.
+- **Numéricas:** el enunciado dice la unidad de la respuesta («en m/s») y desde dónde se mide.
+- **Sin pistas:** el enunciado no descarta opciones ni apunta a la clave (p. ej. «según el modelo de…» cuando solo
+  una opción habla de ese modelo).
+- **Notación de estados:** (s), (l), (g) y (ac), como la malla del MINED; no (aq).
+- **Personajes:** alterna nombres y géneros; «alguien del grupo» mejor que «un compañero».
+- **Experimentos:** el procedimiento cabe en el tiempo de las sesiones. Las preguntas de análisis que no caben se
+  marcan como tarea. Los materiales alcanzan para todos los pasos (cuenta vasos y volúmenes). Una simulación que se
+  nombre en `variantes` debe mostrar de verdad lo que se pide.
+- **Exactitud:** la retroalimentación no simplifica hasta decir algo falso (p. ej. «el resorte siempre jala», «los
+  elementos junto a la línea escalonada son metaloides»). Si una regla tiene excepciones en el grado, dilo.
+
 ## Reglas
 - Español claro. Parafrasea: no copies párrafos de documentos ni de la malla.
 - Contenido científicamente correcto y adecuado al grado. Nada peligroso en actividades experimentales.

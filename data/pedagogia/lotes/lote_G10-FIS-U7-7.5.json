@@ -1,0 +1,108 @@
+{
+ "lote": "G10-FIS-U7-7.5",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 10,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G10-FIS-U7-7.5",
+  "procedimental": "4.2. Aplicación de la conservación de la energía mecánica con energía potencial gravitatoria y elástica, y cálculo del trabajo de las fuerzas no conservativas.",
+  "indicador": "4.2. • Resuelve problemas de conservación de la energía mecánica en sistemas con resortes y cambios de altura usando diagramas de barras de energía. • Calcula el trabajo del peso a lo largo de trayectorias distintas y demuestra que solo depende del cambio de altura. • Diferencia fuerzas conservativas de no conservativas con base en el trabajo que realizan en una trayectoria cerrada. • Calcula la energía mecánica disipada por la fricción en situaciones reales.",
+  "evidencia": "Diagramas de barras de energía y comparación entre altura calculada y altura medida del carrito",
+  "unidad": "4. Trabajo, energía y momento",
+  "principal": {
+   "id": "CON:fisica/conservacion-energia-mecanica",
+   "nombre": "Conservación de la energía mecánica",
+   "definicion": "Sin fuerzas no conservativas, la suma de energía cinética y potencial de un sistema permanece constante."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/energia-cinetica",
+   "nombre": "Energía cinética",
+   "definicion": "Energía asociada al movimiento de un cuerpo, ½mv², que depende de su masa y su rapidez.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.12",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/energia-potencial-gravitatoria",
+   "nombre": "Energía potencial gravitatoria y elástica",
+   "definicion": "Energía almacenada por la posición en un campo gravitatorio (mgh) o por la deformación de un cuerpo elástico (½kx²).",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.13",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G10-FIS-U7-7.5/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G10-FIS-U7-7.5/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G10-FIS-U7-7.5/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G10-FIS-U7-7.5/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

@@ -297,12 +297,15 @@ def _ranuras_de_base(cid: str, grado: int, rol_base: str) -> list[dict]:
     ]
 
 
-def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None, ideas_previas: int = 1) -> list[str]:
+def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None, ideas_previas: int = 1,
+                  ligero: bool = False) -> list[str]:
     """Un lote por objetivo con las ranuras que faltan: dos actividades del objetivo (habilidades distintas), el
     concepto principal y sus bases de profundidad 1, y las de profundidad 2 (confianza alta) cuando la base de
     profundidad 1 no se enseña antes en la malla. Una ranura ya llenada (en la capa o en un lote anterior) no se
     repite. Con `ideas_previas` > 1, el concepto principal pide esa cantidad de ideas previas erróneas distintas
-    (DIF:<concepto>/1…n; paquete de clase). Devuelve las rutas escritas."""
+    (DIF:<concepto>/1…n; paquete de clase). Con `ligero`, solo lo del objetivo (dos actividades, la abierta y el
+    experimento) y las ideas previas del concepto principal: sin sondeos, prácticas ni microtemas de las bases.
+    Devuelve las rutas escritas."""
     ped = ped or Pedagogia.cargar()
     hechos = set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas) | set(ped.experimentos)
     d = directorio() / "lotes"
@@ -311,7 +314,9 @@ def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None
     for tid in temas:
         t = nav.por_id[tid]
         grado = t.grado or 0
-        principal = nav.conceptos_de_tema(tid, ("principal",))[0]
+        if not (principales := nav.conceptos_de_tema(tid, ("principal",))):
+            continue   # un tema solo de prácticas (p. ej. formular preguntas investigables): sin concepto que reforzar
+        principal = principales[0]
         bases = nav.bases(tid)
         huecos = {b.concepto for b in bases if b.profundidad == 1 and not b.antes_del_objetivo}
         elegidas = [b for b in bases if b.profundidad == 1
@@ -328,12 +333,17 @@ def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None
                         "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela "
                                      "salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos "
                                      "esperados y preguntas de análisis; dura una o dos sesiones de 55 min"})
-        ranuras += _ranuras_de_base(principal, grado, "objetivo")
+        if ligero:
+            ranuras.append({"id": f"DIF:{_slug(principal)}/1", "tipo": "dificultad", "concepto": principal,
+                            "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con "
+                                         "su señal en una respuesta; no inventes fuentes"})
+        else:
+            ranuras += _ranuras_de_base(principal, grado, "objetivo")
         ranuras += [{"id": f"DIF:{_slug(principal)}/{k}", "tipo": "dificultad", "concepto": principal,
                      "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta "
                                   f"de las de /1 a /{k - 1} (con su señal en una respuesta); no inventes fuentes"}
                     for k in range(2, ideas_previas + 1)]
-        for b in elegidas:
+        for b in [] if ligero else elegidas:
             ranuras += _ranuras_de_base(b.concepto, grado, "base")
         ranuras = [r for r in ranuras if r["id"] not in hechos]
         if not ranuras:

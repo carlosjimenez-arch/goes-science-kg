@@ -1,0 +1,90 @@
+{
+ "lote": "G10-FIS-U11-11.10",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 10,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G10-FIS-U11-11.10",
+  "procedimental": "5.3. Aplicación de la ecuación de continuidad y de la ecuación de Bernoulli a problemas tecnológicos de tuberías, riego, tubos de Venturi y alas.",
+  "indicador": "5.3. • Resuelve problemas de tubos de Venturi, sustentación de alas y redes de agua potable combinando la ecuación de Bernoulli con la de continuidad. • Aplica la ecuación de continuidad para calcular la rapidez del agua en tramos de distinto diámetro de una tubería o un sistema de riego. • Deduce la ecuación de Bernoulli a partir del teorema del trabajo y la energía e interpreta cada término como energía por unidad de volumen.",
+  "evidencia": "Informe técnico con cálculo de la presión necesaria para abastecer un edificio y análisis de un tubo de Venturi",
+  "unidad": "5. Mecánica de fluidos",
+  "principal": {
+   "id": "CON:fisica/principio-bernoulli",
+   "nombre": "Hidrodinámica: continuidad y Bernoulli",
+   "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/conservacion-energia-mecanica",
+   "nombre": "Conservación de la energía mecánica",
+   "definicion": "Sin fuerzas no conservativas, la suma de energía cinética y potencial de un sistema permanece constante.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/principio-bernoulli"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.15",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/presion-hidrostatica",
+   "nombre": "Presión hidrostática y atmosférica",
+   "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/principio-bernoulli"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G06-CIE-U1-1.3",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G10-FIS-U11-11.10/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.10/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.10/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G10-FIS-U11-11.10/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  }
+ ]
+}

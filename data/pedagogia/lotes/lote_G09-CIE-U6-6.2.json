@@ -1,0 +1,109 @@
+{
+ "lote": "G09-CIE-U6-6.2",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 9,
+ "adaptacion": {
+  "palabras_max": 80,
+  "registro": "modelos y datos simples"
+ },
+ "objetivo": {
+  "id": "TEMA:G09-CIE-U6-6.2",
+  "procedimental": "6.2. Experimentación con las características del campo y la fuerza eléctrica.",
+  "indicador": "6.2. Efectúa un experimento para evidenciar las características del campo y la fuerza eléctrica.",
+  "evidencia": "Registro de la desviación según la distancia con variables identificadas y líneas de campo dibujadas",
+  "unidad": "6. Electricidad",
+  "principal": {
+   "id": "CON:fisica/campo-electrico",
+   "nombre": "Campo eléctrico",
+   "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/ley-coulomb",
+   "nombre": "Ley de Coulomb",
+   "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/campo-electrico"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": "TEMA:G09-CIE-U6-6.2",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/carga-electrica-electrizacion",
+   "nombre": "Carga eléctrica y electrización",
+   "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada.",
+   "profundidad": 2,
+   "via": [
+    "CON:fisica/campo-electrico",
+    "CON:fisica/ley-coulomb"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U3-3.7",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G09-CIE-U6-6.2/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G09-CIE-U6-6.2",
+    "CON:fisica/campo-electrico"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G09-CIE-U6-6.2/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G09-CIE-U6-6.2",
+    "CON:fisica/campo-electrico"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G09-CIE-U6-6.2/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G09-CIE-U6-6.2",
+    "CON:fisica/campo-electrico"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G09-CIE-U6-6.2/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G09-CIE-U6-6.2",
+    "CON:fisica/campo-electrico"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/campo-electrico/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/campo-electrico",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/campo-electrico/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/campo-electrico",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/campo-electrico/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/campo-electrico",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

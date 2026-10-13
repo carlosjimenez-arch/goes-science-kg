@@ -172,6 +172,7 @@ def paquete(tema: str) -> dict:
         "ideas_previas": "completo" if len(dificultades) >= 2 else "parcial" if dificultades else "falta",
         "experimentos": "completo" if experimentos else "falta",
         "capa_pedagogica": "completo" if sum(a.get("rol") == "objetivo" for a in actividades) >= 2 and microtemas
+        else "ligera" if sum(a.get("rol") == "objetivo" for a in actividades) >= 2
         else "parcial" if actividades or microtemas else "falta",
         "datos_de_referencia": "completo" if datos and not faltan_datos else
         ("pendiente_de_fuente" if faltan_datos or not datos else "parcial"),

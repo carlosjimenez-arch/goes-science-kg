@@ -1,0 +1,102 @@
+{
+ "lote": "G10-FIS-U5-5.4",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 10,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G10-FIS-U5-5.4",
+  "procedimental": "3.2. Comprobación experimental de la segunda ley de Newton y su aplicación por componentes a cuerpos sometidos a fuerzas en direcciones arbitrarias.",
+  "indicador": "3.2. • Comprueba experimentalmente que la aceleración es directamente proporcional a la fuerza neta e inversamente proporcional a la masa, a partir de gráficas linealizadas. • Aplica la segunda ley de Newton por componentes para calcular la aceleración de un cuerpo sometido a varias fuerzas con ángulos arbitrarios.",
+  "evidencia": "Informe con gráficas a contra F y a contra 1/m, ecuaciones de ajuste y conclusión sobre la segunda ley",
+  "unidad": "3. Dinámica: leyes de Newton, movimiento circular y equilibrio",
+  "principal": {
+   "id": "CON:fisica/segunda-ley-newton",
+   "nombre": "Segunda ley de Newton",
+   "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/aceleracion",
+   "nombre": "Aceleración",
+   "definicion": "Cambio de la velocidad por unidad de tiempo; puede aumentar o disminuir la rapidez o cambiar la dirección.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.9",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/primera-ley-newton",
+   "nombre": "Primera ley de Newton: inercia",
+   "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.8",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G10-FIS-U5-5.4/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.4",
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G10-FIS-U5-5.4/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.4",
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G10-FIS-U5-5.4/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.4",
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G10-FIS-U5-5.4/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.4",
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/segunda-ley-newton/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/segunda-ley-newton/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

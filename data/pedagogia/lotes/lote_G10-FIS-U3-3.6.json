@@ -1,0 +1,108 @@
+{
+ "lote": "G10-FIS-U3-3.6",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 10,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G10-FIS-U3-3.6",
+  "procedimental": "2.3. Determinación experimental de la aceleración de la gravedad y aplicación de las ecuaciones de la cinemática a la caída libre y al lanzamiento vertical.",
+  "indicador": "2.3. Determina experimentalmente la aceleración de la gravedad y aplica las ecuaciones de la cinemática a la caída libre y al lanzamiento vertical.",
+  "evidencia": "Gráfica h contra t² con ajuste lineal, valor experimental de g y comparación con el valor aceptado",
+  "unidad": "2. Cinemática en una y dos dimensiones",
+  "principal": {
+   "id": "CON:fisica/caida-libre",
+   "nombre": "Caída libre",
+   "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/movimiento-uniformemente-acelerado",
+   "nombre": "Movimiento con aceleración constante",
+   "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/caida-libre"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G08-CIE-U1-1.8",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/gravedad-atrae-hacia-tierra",
+   "nombre": "Gravedad: atracción hacia la Tierra",
+   "definicion": "La gravedad es la fuerza que atrae los objetos hacia el centro de la Tierra y los hace caer.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/caida-libre"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": null,
+   "confianza_prerrequisito": "media"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G10-FIS-U3-3.6/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U3-3.6",
+    "CON:fisica/caida-libre"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G10-FIS-U3-3.6/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U3-3.6",
+    "CON:fisica/caida-libre"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G10-FIS-U3-3.6/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G10-FIS-U3-3.6",
+    "CON:fisica/caida-libre"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G10-FIS-U3-3.6/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G10-FIS-U3-3.6",
+    "CON:fisica/caida-libre"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/caida-libre/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/caida-libre",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/caida-libre/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/caida-libre",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/caida-libre/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/caida-libre",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

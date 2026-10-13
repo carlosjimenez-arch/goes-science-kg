@@ -1,0 +1,108 @@
+{
+ "lote": "G10-FIS-U4-4.1",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 10,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G10-FIS-U4-4.1",
+  "procedimental": "2.4. Aplicación de las ecuaciones de la cinemática por componentes al movimiento en el plano y modelación del lanzamiento oblicuo de proyectiles, con validación en un lanzador de bajo riesgo.",
+  "indicador": "2.4. • Predice el alcance, la altura máxima y el tiempo de vuelo de un proyectil lanzado con cualquier ángulo y contrasta la predicción con mediciones de un lanzador construido en el aula. • Calcula con vectores unitarios el desplazamiento, la velocidad media y la aceleración media de un móvil en el plano, y explica por qué un móvil que cambia de dirección con rapidez constante está acelerado. • Aplica las ecuaciones de la cinemática por separado en cada eje para resolver movimientos en el plano con aceleración constante.",
+  "evidencia": "Lanzador construido, tabla de alcance contra ángulo y gráfica comparativa de valores medidos y predichos",
+  "unidad": "2. Cinemática en una y dos dimensiones",
+  "principal": {
+   "id": "CON:fisica/movimiento-proyectiles",
+   "nombre": "Cinemática en dos dimensiones y proyectiles",
+   "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/caida-libre",
+   "nombre": "Caída libre",
+   "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/movimiento-proyectiles"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G10-FIS-U3-3.6",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/suma-vectores-componentes",
+   "nombre": "Suma de vectores y componentes rectangulares",
+   "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/movimiento-proyectiles"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G08-CIE-U1-1.4",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G10-FIS-U4-4.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U4-4.1",
+    "CON:fisica/movimiento-proyectiles"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G10-FIS-U4-4.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-FIS-U4-4.1",
+    "CON:fisica/movimiento-proyectiles"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G10-FIS-U4-4.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G10-FIS-U4-4.1",
+    "CON:fisica/movimiento-proyectiles"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G10-FIS-U4-4.1/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G10-FIS-U4-4.1",
+    "CON:fisica/movimiento-proyectiles"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/movimiento-proyectiles/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/movimiento-proyectiles",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/movimiento-proyectiles/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/movimiento-proyectiles",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/movimiento-proyectiles/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/movimiento-proyectiles",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

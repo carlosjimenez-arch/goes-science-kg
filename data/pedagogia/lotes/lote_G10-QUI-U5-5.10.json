@@ -1,0 +1,121 @@
+{
+ "lote": "G10-QUI-U5-5.10",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 10,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G10-QUI-U5-5.10",
+  "procedimental": "5.6. Descripción de las etapas de formación de un compuesto iónico y de los tipos de redes cristalinas.",
+  "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+  "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios",
+  "unidad": "5. Los enlaces químicos",
+  "principal": {
+   "id": "CON:quimica/enlace-ionico",
+   "nombre": "Enlace iónico",
+   "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:quimica/enlace-quimico",
+   "nombre": "Enlace químico",
+   "definicion": "Atracción electrostática entre átomos por transferencia o compartición de electrones que mantiene unidas a las sustancias.",
+   "profundidad": 1,
+   "via": [
+    "CON:quimica/enlace-ionico"
+   ],
+   "antes_del_objetivo": false,
+   "primer_tema": null,
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:quimica/iones",
+   "nombre": "Iones",
+   "definicion": "Átomos o grupos de átomos con carga por ganar o perder electrones; cationes y aniones se representan con fórmulas que indican carga.",
+   "profundidad": 1,
+   "via": [
+    "CON:quimica/enlace-ionico"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U3-3.7",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:quimica/electrones-de-valencia-y-regla-del-octeto",
+   "nombre": "Electrones de valencia y regla del octeto",
+   "definicion": "Los electrones de la capa externa determinan la valencia; los átomos tienden a alcanzar una capa de valencia estable al enlazarse.",
+   "profundidad": 2,
+   "via": [
+    "CON:quimica/enlace-ionico",
+    "CON:quimica/enlace-quimico"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G06-CIE-U4-4.1",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G10-QUI-U5-5.10/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-QUI-U5-5.10",
+    "CON:quimica/enlace-ionico"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G10-QUI-U5-5.10/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G10-QUI-U5-5.10",
+    "CON:quimica/enlace-ionico"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G10-QUI-U5-5.10/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G10-QUI-U5-5.10",
+    "CON:quimica/enlace-ionico"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G10-QUI-U5-5.10/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G10-QUI-U5-5.10",
+    "CON:quimica/enlace-ionico"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:quimica/enlace-ionico/1",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/enlace-ionico",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:quimica/enlace-ionico/2",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/enlace-ionico",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:quimica/enlace-ionico/3",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/enlace-ionico",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

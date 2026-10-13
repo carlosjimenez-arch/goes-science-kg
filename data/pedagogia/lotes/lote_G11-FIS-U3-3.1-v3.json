@@ -1,0 +1,96 @@
+{
+ "lote": "G11-FIS-U3-3.1-v3",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 11,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G11-FIS-U3-3.1-v3",
+  "procedimental": "3.1. Análisis de la fuerza electromotriz y la corriente, construcción de curvas voltaje-corriente y determinación de la resistividad de un material.",
+  "indicador": "3.1. • Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico. • Calcula la carga que circula y la energía que entrega una fuente a partir de su fuerza electromotriz, la corriente y el tiempo de funcionamiento. • Calcula la resistividad de un material a partir de mediciones de resistencia, longitud y área, y la compara con valores de referencia.",
+  "evidencia": "Informe de laboratorio con curvas voltaje-corriente del resistor y del LED y cálculo de la resistencia por pendiente",
+  "unidad": "3. Circuitos de corriente continua",
+  "principal": {
+   "id": "CON:fisica/ley-ohm",
+   "nombre": "Ley de Ohm",
+   "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/corriente-voltaje-resistencia",
+   "nombre": "Corriente, voltaje y resistencia",
+   "definicion": "Magnitudes básicas de un circuito: flujo de carga, diferencia de potencial que lo impulsa y oposición al paso.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/ley-ohm"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G06-CIE-U3-3.1",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G11-FIS-U3-3.1-v3/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U3-3.1-v3",
+    "CON:fisica/ley-ohm"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G11-FIS-U3-3.1-v3/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U3-3.1-v3",
+    "CON:fisica/ley-ohm"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G11-FIS-U3-3.1-v3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G11-FIS-U3-3.1-v3",
+    "CON:fisica/ley-ohm"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G11-FIS-U3-3.1-v3/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G11-FIS-U3-3.1-v3",
+    "CON:fisica/ley-ohm"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/ley-ohm/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/ley-ohm",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/ley-ohm/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/ley-ohm",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/ley-ohm/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/ley-ohm",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "lote": "G11-FIS-U18-18.1",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 11,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G11-FIS-U18-18.1",
+  "procedimental": "5.2. Medición de la longitud de onda de un láser con doble rendija y de dimensiones microscópicas a partir de patrones de difracción y de redes como CD y DVD.",
+  "indicador": "5.2. • Calcula la longitud de onda de la luz a partir de la separación entre franjas de un patrón de doble rendija • Calcula el ancho de una rendija o el grosor de un cabello a partir de la posición de los mínimos • Calcula la separación entre líneas de una red o entre pistas de un disco óptico a partir de los ángulos de los máximos",
+  "evidencia": "Informe de laboratorio con fotografía del patrón, tabla de posiciones de franjas y cálculo de λ con su incertidumbre",
+  "unidad": "5. Óptica e instrumentos",
+  "principal": {
+   "id": "CON:fisica/interferencia-luz",
+   "nombre": "Interferencia de la luz",
+   "definicion": "Superposición de ondas luminosas coherentes: experimento de Young, películas delgadas e interferómetros."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/ondas-electromagneticas-espectro",
+   "nombre": "Ondas electromagnéticas y espectro",
+   "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/interferencia-luz"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G10-FIS-U16-16.1",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/superposicion-interferencia",
+   "nombre": "Superposición e interferencia de ondas",
+   "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/interferencia-luz"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G11-FIS-U5-5.4",
+   "confianza_prerrequisito": "alta"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G11-FIS-U18-18.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G11-FIS-U18-18.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G11-FIS-U18-18.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G11-FIS-U18-18.1/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  }
+ ]
+}

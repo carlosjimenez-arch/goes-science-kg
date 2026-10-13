@@ -1,0 +1,108 @@
+{
+ "lote": "G11-FIS-U9-9.8",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 11,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G11-FIS-U9-9.8",
+  "procedimental": "3.3. Determinación de la fuerza electromotriz y la resistencia interna de una pila y aplicación de las reglas de Kirchhoff a circuitos de dos mallas.",
+  "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+  "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje",
+  "unidad": "3. Circuitos de corriente continua",
+  "principal": {
+   "id": "CON:fisica/leyes-kirchhoff",
+   "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+   "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/resistencia-equivalente",
+   "nombre": "Resistencia equivalente",
+   "definicion": "Reducción de resistencias en serie, paralelo y circuitos mixtos a una sola equivalente.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/leyes-kirchhoff"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G06-CIE-U3-3.5",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/potencial-electrico",
+   "nombre": "Energía potencial y potencial eléctrico",
+   "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/leyes-kirchhoff"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G11-FIS-U8-8.4",
+   "confianza_prerrequisito": "media"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G11-FIS-U9-9.8/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.8",
+    "CON:fisica/leyes-kirchhoff"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.8/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.8",
+    "CON:fisica/leyes-kirchhoff"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.8/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.8",
+    "CON:fisica/leyes-kirchhoff"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G11-FIS-U9-9.8/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.8",
+    "CON:fisica/leyes-kirchhoff"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "DIF:fisica/leyes-kirchhoff/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/leyes-kirchhoff",
+   "requisito": "idea previa errónea frecuente de los estudiantes sobre este concepto, con su señal en una respuesta; no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/leyes-kirchhoff/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/leyes-kirchhoff",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /1 (con su señal en una respuesta); no inventes fuentes"
+  },
+  {
+   "id": "DIF:fisica/leyes-kirchhoff/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/leyes-kirchhoff",
+   "requisito": "OTRA idea previa errónea frecuente de los estudiantes sobre este concepto, distinta de las de /1 a /2 (con su señal en una respuesta); no inventes fuentes"
+  }
+ ]
+}

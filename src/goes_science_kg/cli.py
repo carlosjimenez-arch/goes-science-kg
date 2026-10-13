@@ -541,13 +541,15 @@ def tutor_paquete(temas: Annotated[list[str], typer.Argument(help="ids de tema (
 
 @tutor_app.command("preparar-actividades")
 def tutor_preparar_actividades(temas: list[str],
-                               ideas_previas: int = typer.Option(1, help="ideas previas del concepto principal")
+                               ideas_previas: int = typer.Option(1, help="ideas previas del concepto principal"),
+                               ligero: bool = typer.Option(False, help="solo el objetivo, el experimento y las "
+                                                                       "ideas previas (paquete de clase ligero)")
                                ) -> None:
     """Lotes para el subagente redactor-actividades (uno por objetivo) → data/pedagogia/lotes/."""
     from goes_science_kg.aprendizaje.pedagogia import preparar_lote
 
     for p in preparar_lote([t if t.startswith("TEMA:") else f"TEMA:{t}" for t in temas], _nav(),
-                           ideas_previas=ideas_previas):
+                           ideas_previas=ideas_previas, ligero=ligero):
         typer.echo(f"→ {p}")
 
 
