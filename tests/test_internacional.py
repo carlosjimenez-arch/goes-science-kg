@@ -372,3 +372,25 @@ def test_ajustes_de_busqueda_quitan_falsos_positivos_y_agregan_frases():
     assert ("angulo", "critic") not in contraste.frases(voc["CON:fisica/reflexion-interna-total"])
     assert ("viru", "infecc") in contraste.frases(voc["CON:biologia/virus"])
     assert ("reacci", "cadena") in contraste.frases({"nombre": "x", "sinonimos": ["reacción en cadena"]})
+
+
+def test_el_antecedente_de_9_11_suma_el_nucleo_de_2_8_sin_duplicar():
+    """La secundaria baja de HK, SG y la primaria de los demás países (tramo 2.°–8.°) fechan la primera aparición en
+    9.°–11.°: solo el núcleo (sin la Extension Part de HK) y sin los documentos que el tramo ya tiene (kr_jung)."""
+    from goes_science_kg.internacional import consenso, tramo
+
+    tramo.usar("9_11")
+    try:
+        filas = consenso._antecedente_2_8()
+        objetivos = {f["objetivo"] for f in filas}
+        assert {f["pais"] for f in filas} <= set(consenso.ANTECEDENTE_2_8)
+        assert all(f["grado"] <= 8.5 for f in filas)
+        assert not any("-kr_jung-" in o or "-tw_jh-" in o or "-on_snc1w-" in o for o in objetivos)
+        assert {"pais": "HK", "concepto": "CON:fisica/reflexion-interna-total", "grado": 7.0,
+                "objetivo": "HK-FIS-hk_s1_3-p074-04", "puntos": 2} in filas
+        tramo.usar("2_8")
+        extension = {o["id"] for o in consenso.objetivos() if o["documento"] == "hk_s1_3" and o["nivel"] != "nucleo"}
+        assert extension and not extension & objetivos
+        assert consenso._antecedente_2_8() == []
+    finally:
+        tramo.usar("9_11")

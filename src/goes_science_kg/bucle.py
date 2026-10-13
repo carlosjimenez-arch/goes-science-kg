@@ -453,14 +453,16 @@ def _vuelta(x: dict, k: int) -> dict:
     return v
 
 
-def _a_impugnar(x: dict, k: int, tipos: list[str] | None) -> bool:
+def _a_impugnar(x: dict, k: int, tipos: list[str] | None, serie: str = "") -> bool:
     if not _en_alcance(x, tipos) or x["estado"] != "resuelta":
         return False
     vueltas = (x.get("bucle") or {}).get("vueltas", [])
     if k == 1:
         return not any(v.get("impugnacion") for v in vueltas)
     previa = next((v for v in vueltas if v["vuelta"] == k - 1), None)
-    return bool(previa) and previa.get("replica") == "cambiada"
+    ya = any(v["vuelta"] == k and v.get("impugnacion") for v in vueltas)
+    # Solo lo que cambió en la vuelta anterior DE ESTA SERIE y aún no se impugnó en esta vuelta.
+    return bool(previa) and previa.get("replica") == "cambiada" and previa.get("serie", "") == serie and not ya
 
 
 def _s(serie: str) -> str:
@@ -476,7 +478,7 @@ def impugnar(k: int, tipos: list[str] | None = None, serie: str = "") -> list[st
     estado = panel.cargar_estado()
     por_disciplina: dict[str, list[dict]] = defaultdict(list)
     for i, x in sorted(estado.items()):
-        if not _a_impugnar(x, k, tipos):
+        if not _a_impugnar(x, k, tipos, serie):
             continue
         exp = {"id": i, "tipo": x["tipo"], "titulo": x["titulo"], "opciones": panel.config()["tipos"][x["tipo"]][
             "opciones"], "datos": x["datos"], "resolucion": x["resolucion"],

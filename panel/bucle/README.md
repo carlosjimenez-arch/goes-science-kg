@@ -54,6 +54,12 @@ en el historial de git.
   calorífica del agua; confunde el efecto de la altitud con el del agua (comparar costa e interior a altitud
   parecida).
 - G06-CIE-U5-5.12 (microhabilidad): «glucosa + oxígeno → energía + CO₂ + agua» pone la energía como un producto más.
+- G10-FIS-U16-16.6 (evidencia E1): pide explicar la fibra óptica «a partir de la dispersión y la descomposición de la
+  luz». La fibra óptica funciona por reflexión interna total; el espectroscopio sí se explica por la dispersión.
+  (Serie inc9, refutador de Física.)
+- G03-CIE-U5-5.3: llama taxismo a la respuesta de las cochinillas a la humedad, que es una cinesis. En lo seco se mueven
+  más y giran más, y en lo húmedo se detienen; no se orientan hacia el estímulo. Una variante que sí muestra un taxismo
+  es la respuesta a una luz lateral (fototaxismo negativo). En 3.° basta con hablar de «respuesta a la humedad».
 
 **Progresión y profundidad:**
 - G08-CIE-U8-8.1 pide argumentar con el corrimiento al rojo, pero el efecto Doppler llega en 11.°.

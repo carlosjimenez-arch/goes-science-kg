@@ -299,3 +299,16 @@ def test_una_serie_corre_aparte_sobre_expedientes_nuevos(aislado):
     assert e["N"]["bucle"]["vueltas"][0]["serie"] == "inc9" and "serie" not in e["V"]["bucle"]["vueltas"][0]
     assert [p.split("/")[-1] for p in bucle.replicar(1, 1, serie="inc9")] == ["lote_r11-inc9_experto-fisica.json"]
     assert bucle.replicar(1, 1) == []   # la serie principal no tiene nada pendiente
+
+
+def test_la_vuelta_2_de_una_serie_solo_toma_sus_cambios():
+    """La vuelta 2 de una serie reimpugna lo que cambió en la vuelta 1 de esa serie, no lo de otra corrida ni lo que ya
+    se impugnó en la vuelta 2."""
+    cambiado = {"vuelta": 1, "impugnacion": {"veredicto": "refutada"}, "replica": "cambiada"}
+    x = {"tipo": "hallazgo", "estado": "resuelta", "bucle": {"vueltas": [{**cambiado, "serie": "inc9"}]}}
+    otra = {"tipo": "hallazgo", "estado": "resuelta", "bucle": {"vueltas": [cambiado]}}
+    hecha = {"tipo": "hallazgo", "estado": "resuelta",
+             "bucle": {"vueltas": [cambiado, {"vuelta": 2, "impugnacion": {"veredicto": "se_sostiene"}}]}}
+    assert bucle._a_impugnar(x, 2, None, "inc9") and not bucle._a_impugnar(x, 2, None)
+    assert not bucle._a_impugnar(otra, 2, None, "inc9") and bucle._a_impugnar(otra, 2, None)
+    assert not bucle._a_impugnar(hecha, 2, None)

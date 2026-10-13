@@ -10,10 +10,11 @@ Doble lectura (tramos con `lectura_doble`, spec 12): además del primer grado de
 objetivo con el concepto como principal y 1 como secundario, acumulados por grado hasta llegar a 2. Ahí también se
 aplican las relaciones «parte de» (conceptos.partes()), además de las equivalencias.
 
-Antecedente: los objetivos de grados ≤ 8 de Inglaterra, Australia y Japón, que ya están en el grafo principal
-(data/interim/paises + etiquetado_paises), solo sirven para fechar la primera aparición de un concepto. Así, algo
-que esos países enseñan en 7.° no aparece como «nuevo en 10.°». Los demás países no tienen antecedente cargado y
-eso se declara en el informe.
+Antecedente: los objetivos de grados ≤ 8 solo sirven para fechar la primera aparición de un concepto. Así, algo que
+un país enseña en 7.° no aparece como «nuevo en 10.°». Son los de Inglaterra, Australia y Japón del grafo principal
+(data/interim/paises + etiquetado_paises) y, desde el 2026-10-13, los del núcleo de los demás países en el tramo
+2.°–8.° (spec 12), ya extraídos y etiquetados: primaria y secundaria baja de HK, SG y EE, y primaria de KR, TW y ON
+(su secundaria baja ya está en el tramo 9.°–11.° como documento de antecedente).
 """
 
 from __future__ import annotations
@@ -32,6 +33,8 @@ from goes_science_kg.prerrequisitos import cargar_prerrequisitos
 
 VERSION = "grafo-internacional-v1"
 ANTECEDENTE = {"ENG": "inglaterra", "AU": "australia", "JP": "japon"}
+# Países cuyo antecedente sale del tramo 2.°–8.° (ENG, AU y JP ya lo traen del grafo principal).
+ANTECEDENTE_2_8 = ("EE", "HK", "KR", "ON", "SG", "TW")
 ASIG_SV = {"fisica": "fisica", "quimica": "quimica", "biologia": "biologia",
            "ciencias_tierra_espacio": "tierra_espacio"}
 
@@ -160,6 +163,29 @@ def _antecedente() -> list[dict]:
                 continue
             filas.extend({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"], "puntos": 2 if i == 0 else 1}
                          for i, c in enumerate(etq[o["id"]]["conceptos"]))
+    return filas + _antecedente_2_8()
+
+
+def _antecedente_2_8() -> list[dict]:
+    """Lo mismo con los objetivos del NÚCLEO del tramo 2.°–8.° de los demás países (spec 12; sin la Extension Part de
+    HK ni otra especialización), salvo los documentos que el tramo activo ya tiene (kr_jung, tw_jh, on_snc1w). Lo
+    encontró el bucle el 2026-10-13: la reflexión interna total, núcleo de HK S1–3 (p. 74), salía como especialización
+    porque la secundaria baja de HK no contaba."""
+    t28 = tramo.TRAMOS["2_8"]
+    if tramo.actual().clave == t28.clave:
+        return []
+    etq = dict(kv for _, e in etiquetar._leer_etiquetados("pais_", t28.etiquetado) for kv in e.items())
+    propios = {o["documento"] for o in objetivos()}
+    limite = tramo.actual().grados[0] - 0.5
+    filas = []
+    for p in ANTECEDENTE_2_8:
+        archivo = ruta(t28.objetivos) / f"{p}.json"
+        for o in json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else []:
+            e = etq.get(o["id"])
+            if not e or o["nivel"] != "nucleo" or o["documento"] in propios or _grado(o) > limite:
+                continue
+            filas.extend({"pais": p, "concepto": c, "grado": _grado(o), "objetivo": o["id"],
+                          "puntos": 2 if c in e["principales"] else 1} for c in ensenados(e))
     return filas
 
 

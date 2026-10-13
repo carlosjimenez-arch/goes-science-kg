@@ -121,7 +121,9 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
   - G05-CIE-U6-6.7 dice bordes de placa «pasivos»; lo correcto es «transformantes»;
   - G10-FIS-U16-16.1 atribuye la reflexión y la refracción al modelo corpuscular;
   - G06-CIE-U2-2.6 explica la diferencia entre costa y montaña por el agua, cuando es la altitud;
-  - G06-CIE-U5-5.12 pone la energía como producto de la respiración.
+  - G06-CIE-U5-5.12 pone la energía como producto de la respiración;
+  - G10-FIS-U16-16.6 explica la fibra óptica por la dispersión de la luz, cuando funciona por reflexión interna total;
+  - G03-CIE-U5-5.3 llama taxismo a la respuesta de las cochinillas a la humedad, que es una cinesis.
 
   También hay problemas de progresión, como el corrimiento al rojo en 8.° sin Doppler o «recordar V = IR» en 11.°:
   ver [`panel/bucle/README.md`](../panel/bucle/README.md).

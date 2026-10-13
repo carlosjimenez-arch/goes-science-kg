@@ -1,0 +1,440 @@
+{
+ "lote": "r11-inc9_experto-quimica",
+ "ronda": 11,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "replica_del_bucle": 1,
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md",
+  "prompts/bucle_refutar.md (sección «Réplica»)"
+ ],
+ "expedientes": [
+  {
+   "id": "INC:9_11:CON:quimica/diagramas-de-fases",
+   "tipo": "clase_incierta",
+   "titulo": "Diagramas de fases (CON:quimica/diagramas-de-fases, 9.°–11.°)",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/diagramas-de-fases",
+     "nombre": "Diagramas de fases",
+     "definicion": "Gráfico presión-temperatura que muestra las condiciones de equilibrio entre fases, con punto triple y punto crítico.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "sin_referente"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-FIS-U12-12.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 92): Fases de la materia. 12.9. Interpreta diagramas de fase para predecir el estado de una sustancia y la temperatura de ebullición según la presión.",
+     "G10-QUI-U7-7.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 66): Diagramas de fases. 7.5. Predice el estado de agregación del agua y del CO₂ a una presión y temperatura dadas usando su diagrama de fases.",
+     "G06-CIE-U3-3.1 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Electricidad y magne», fila 3): Magnitudes basicas de la electricidad.. 3.1. Mide voltaje y corriente eléctrica empleando un multímetro.",
+     "G08-CIE-U8-8.4 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 6): El sistema Sol-Tierra-Luna. 8.4. Modela las fases de la Luna y los eclipses a partir de las posiciones relativas del Sol, la Tierra y la Luna.",
+     "G10-BIO-U7-7.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 64): Anabolismo fotosintético. 7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato.",
+     "G10-FIS-U12-12.1 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 84): Temperatura y su medición. 12.1. Deduce y aplica las relaciones lineales de conversión entre las escalas Celsius, Fahrenheit y Kelvin."
+    ],
+    "paises": {
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-QUI-jp_55-p117-11 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 117, SV 10–11, especializacion]: Comprender los puntos de ebullición y fusión según las fuerzas intermoleculares y enlaces, y la relación entre energía, equilibrio de fases, temperatura y presi"
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-QUI-tw_req_contenido-p040-07 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 40, SV 9–10, nucleo]: Interpretar diagramas de fases de la materia."
+     }
+    }
+   },
+   "resolucion_vigente": {
+    "decision": "sin_referente",
+    "ronda": 1
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "INC:9_11:CON:quimica/diagramas-de-fases",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "sin_referente",
+     "justificacion": "«Retomado» es falso: sus temas previos coinciden solo por la palabra «fases» (fases de la Luna) o son ajenos (multímetro). La V2 introduce el diagrama P–T con punto triple y crítico en 10.°, dos veces (Física 12.9 y Química 7.5). Solo TW lo tiene en el núcleo y JP en la electiva 化学: no hay referentes para fechar. Recomiendo coordinar ambas asignaturas para no duplicarlo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U7-7.5 (fila 66)",
+       "cita": "Química 10.°.",
+       "cita_literal": "usando su diagrama de fases"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U12-12.9 (fila 92)",
+       "cita": "Física 10.°: el mismo contenido.",
+       "cita_literal": "Interpreta diagramas de fase"
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U8-8.4 (fila 6)",
+       "cita": "Coincidencia espuria de la lectura amplia.",
+       "cita_literal": "Modela las fases de la Luna"
+      },
+      {
+       "fuente": "TW-QUI-tw_req_contenido-p040-07",
+       "cita": "TW 必修: único núcleo con el concepto.",
+       "cita_literal": "CAb-Vc-3 物質的三相圖"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "debilitada",
+    "argumento": "El panel dice que solo TW lo tiene en el núcleo. Falso: EE lo enseña en el curso obligatorio V de física del gimnasio, con el diagrama de fases. Con TW y EE (SV 9,5 y 10,5) son 2 países, menos de los 3 que exige la mediana: la clase se mantiene por regla, pero significa «pocos referentes», ambos en el grado de la V2, no ausencia.",
+    "confianza": "media",
+    "patron": "conteo_de_paises",
+    "contraevidencia": [
+     {
+      "fuente": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 12",
+      "cita_literal": "kirjeldab aine olekuid, kasutades faasi ja faasisiirde mõistet, ning analüüsib faasidiagrammi toel faasisiirdeid erinevatel rõhkudel ja temperatuuridel",
+      "dice": "EE, física del gimnasio: transiciones de fase con el diagrama de fases.",
+      "donde": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 12"
+     },
+     {
+      "fuente": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 10",
+      "cita_literal": "Valikkursus „Teistsugune füüsika“ süvendab kohustuslikku kursust „Mikro- ja megamaailma füüsika“",
+      "dice": "El curso V («Mikro- ja megamaailma füüsika») es obligatorio.",
+      "donde": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 10"
+     }
+    ],
+    "lote": "b1-inc9_refutador_quimica_1",
+    "fecha": "2026-10-13"
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/espectroscopia-y-estructura-organica",
+   "tipo": "clase_incierta",
+   "titulo": "Técnicas para determinar estructuras orgánicas (CON:quimica/espectroscopia-y-estructura-organica, 9.°–11.°)",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/espectroscopia-y-estructura-organica",
+     "nombre": "Técnicas para determinar estructuras orgánicas",
+     "definicion": "Espectroscopía infrarroja, espectrometría de masas y cristalografía de rayos X se combinan para determinar la estructura de moléculas.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "solo_especializacion",
+     "estricta": "no_aplica"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": null
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G11-FIS-U18-18.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 109): Interferencia. 18.1. Calcula la longitud de onda de la luz a partir de la separación entre franjas de un patrón de doble rendija con d·sen θ = mλ.",
+     "G11-FIS-U18-18.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 115): Difracción de rayos X. 18.7. Calcula la separación entre planos de un cristal con la ley de Bragg 2d·sen θ = mλ a partir de datos de difracción."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui4-p001-09 [AU_SeniorSecondary_Chemistry_v8.4_U4.html p. 1, SV 11–11, especializacion]: Seleccionar, construir y usar representaciones (modelos, fórmulas, ecuaciones, nomenclatura IUPAC y espectros) para comunicar comprensión, resolver problemas y "
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_alevel-p011-14 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 11, SV 10–11, especializacion]: Utilizar espectrometría de masas, espectroscopía infrarroja, resonancia magnética nuclear y cromatografía en el análisis, incluyendo técnicas para la elucidació"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p090-03 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 90, SV 9–11, especializacion]: Comprender métodos instrumentales básicos: colorimetría para cuantificar sustancias, espectroscopía IR para identificar grupos funcionales y espectrometría de m"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_sch4u-p112-01 [ON_Science_Grades11-12_2008.pdf p. 112, SV 11–11, especializacion]: Evaluar los beneficios sociales de tecnologías basadas en principios de estructuras atómicas y moleculares, como la resonancia magnética, cristalografía de rayo"
+     }
+    }
+   },
+   "resolucion_vigente": {
+    "decision": "no_aplica",
+    "ronda": 1
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "INC:9_11:CON:quimica/espectroscopia-y-estructura-organica",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "no_aplica",
+     "justificacion": "La V2 no enseña a determinar estructuras orgánicas combinando IR, espectrometría de masas y difracción. La lectura amplia encontró Física 11.°: la doble rendija (espuria) y la ley de Bragg para planos cristalinos (18.7), física de la difracción que solo ilustra con proteínas. Es una mención lateral para este concepto: gana la clase sin desajuste. Bragg en 11.° conviene revisarlo en Física.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U18-18.7 (fila 115)",
+       "cita": "Física 11.°: difracción de rayos X, no análisis orgánico.",
+       "cita_literal": "Calcula la separación entre planos de un cristal con la ley de Bragg"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U18-18.1 (fila 109)",
+       "cita": "Coincidencia espuria.",
+       "cita_literal": "Calcula la longitud de onda de la luz a partir de la separación entre franjas"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p011-14",
+       "cita": "En los países, el análisis combinado es de electiva (A level).",
+       "cita_literal": "the use of mass spectrometry, infrared spectroscopy, nuclear magnetic resonance spectroscopy"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El concepto es la elucidación estructural con espectros (IR para grupos funcionales, fragmentos de masas); la V2 de Química no tiene ningún tema de espectros moleculares."
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La fila 18.7 de Física 11.° (obligatoria) no solo ilustra con proteínas: su contenido es «Cristalografía de rayos X» y su producto exige explicar cómo se determinó la estructura de una proteína; 10.3 añade la espectrometría de masas. Son dos de las tres técnicas de la definición. En ON (SCH4U), TW, ENG, AU y HK es electiva. Es la lógica que el panel aplicó a espectrometría de masas.",
+    "confianza": "media",
+    "propuesta": "solo_especializacion",
+    "patron": "otra_asignatura_o_nombre",
+    "contraevidencia": [
+     {
+      "fuente": "TEMA:G11-FIS-U18-18.7",
+      "cita_literal": "Presenta a la clase la ficha de una proteína del Protein Data Bank explicando con claridad cómo se determinó su estructura",
+      "dice": "Física 11.°: determinar una estructura molecular por cristalografía.",
+      "donde": "G11-FIS-U18-18.7 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 115)"
+     },
+     {
+      "fuente": "TEMA:G11-FIS-U18-18.7",
+      "cita_literal": "Justifica la importancia de la cristalografía de rayos X para el desarrollo de medicamentos",
+      "dice": "La cristalografía es contenido, no ejemplo.",
+      "donde": "G11-FIS-U18-18.7 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 115)"
+     },
+     {
+      "fuente": "ON_Science_Grades11-12_2008.pdf p. 112",
+      "cita_literal": "How has the use of X-ray crystallography and mass spectrometry advanced our understanding of atomic and molecular structure?",
+      "dice": "ON SCH4U (electiva) pide lo mismo.",
+      "donde": "ON_Science_Grades11-12_2008.pdf p. 112"
+     },
+     {
+      "fuente": "TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 201",
+      "cita_literal": "介紹晶體的X 射線繞射並簡介 X 射線的應用",
+      "dice": "TW: difracción de rayos X en física electiva (Va).",
+      "donde": "TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 201"
+     }
+    ],
+    "lote": "b1-inc9_refutador_quimica_1",
+    "fecha": "2026-10-13"
+   }
+  },
+  {
+   "id": "INC:9_11:CON:quimica/quimica-verde",
+   "tipo": "clase_incierta",
+   "titulo": "Química verde y economía atómica (CON:quimica/quimica-verde, 9.°–11.°)",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado",
+    "no_aplica",
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion"
+   ],
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:quimica/quimica-verde",
+     "nombre": "Química verde y economía atómica",
+     "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos.",
+     "asignatura": "quimica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-QUI-U7-7.7 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 72): Hacia una industria sostenible. 7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "G11-QUI-U7-7.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 66): Del laboratorio a la planta. 7.1. Resuelve balances de materia en un diagrama de bloques e identifica las operaciones unitarias que intervienen en un proceso industrial."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-QUI-au_ss_qui-p002-17 [AU_SeniorSecondary_Chemistry_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: Identificar que los nanomateriales poseen propiedades físicas y químicas especiales que los hacen útiles para productos ecológicos, como materiales duraderos, r"
+     },
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-QUI-ee_gym_ele-p027-01 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 27, SV 10–11, especializacion]: Comprende las interacciones entre naturaleza, tecnología y sociedad, y entiende su impacto en el medio ambiente y el desarrollo sostenible."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-QUI-eng_gcse_comb-p025-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 25, SV 8–9, nucleo]: Describir los principios básicos para llevar a cabo una evaluación del ciclo de vida de un material o producto."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-QUI-hk_qui-p030-04 [HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 30, SV 9–11, especializacion]: Reconocer que se aplican nuevas tecnologías para aumentar la eficiencia de la extracción de metales y limitar su impacto ambiental."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-QUI-kr_jinro_qui-p205-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 205, SV 10–11, especializacion]: Diseñar baterías del futuro orientadas al desarrollo sostenible."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "ON-QUI-on_snc1w-p050-02 [ON_Science_Grade9_SNC1W_2022.pdf p. 50, SV 8–8, nucleo]: Evaluar los impactos sociales, ambientales y económicos del ciclo de vida de productos de consumo, considerando sus elementos y compuestos, y sugerir formas de "
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-QUI-sg_k326_k328-p034-01 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 34, SV 9–10, nucleo_parcial]: Describir cómo los biocombustibles son más sostenibles ambientalmente que los combustibles fósiles debido a la compensación de emisiones de dióxido de carbono d"
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-QUI-tw_req_contenido-p041-11 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 41, SV 9–10, nucleo]: Aplicar los conceptos de desarrollo sostenible en la vida cotidiana."
+     }
+    }
+   },
+   "resolucion_vigente": {
+    "decision": "alineado",
+    "ronda": 1
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "INC:9_11:CON:quimica/quimica-verde",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "alineado",
+     "justificacion": "Caso de umbral: la lectura laxa se apoya en conceptos vecinos del núcleo (ciclo de vida en ENG Combined y ON, desarrollo sostenible en TW, biocombustibles en SG), no en los principios de la química verde. Con la regla, gana la clase sin desajuste. Matiz: la economía atómica de 11.° (7.7) es de electiva en ENG (A level) y HK; una persona puede querer anotarlo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U7-7.7 (fila 72)",
+       "cita": "11.°.",
+       "cita_literal": "Calcula la economía atómica de dos rutas de síntesis"
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p025-05",
+       "cita": "Vecino en el núcleo de ENG.",
+       "cita_literal": "describe the basic principles in carrying out a life-cycle assessment of a material"
+      },
+      {
+       "fuente": "ON-QUI-on_snc1w-p050-02",
+       "cita": "Vecino en el núcleo de ON.",
+       "cita_literal": "assess social, environmental, and economic impacts of processes associated with the life cycle"
+      },
+      {
+       "fuente": "ENG-QUI-eng_alevel-p009-06",
+       "cita": "La economía atómica, en la electiva.",
+       "cita_literal": "per cent yields and atom economies"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La economía atómica y los principios de química verde de 7.7 (Química 11.°, obligatoria) solo están en electivas: HK Chemistry S4–6, AU Unit 4, ENG A level y TW 選修. El núcleo sólido (ENG, TW) es vecino: ciclo de vida y desarrollo sostenible, como admite el dictamen. Con 0 núcleos y 4 electivas, la clase es «solo especialización». «Sin referente» no está en SIN_DESAJUSTE: la regla no daba «alineado».",
+    "confianza": "alta",
+    "propuesta": "solo_especializacion",
+    "patron": "etiqueta_suelta",
+    "contraevidencia": [
+     {
+      "fuente": "HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 69",
+      "cita_literal": "describe the principles of green chemistry … calculate the atom economy of a chemical reaction",
+      "dice": "HK enseña los principios y la economía atómica en Chemistry S4–6",
+      "donde": "HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 69"
+     },
+     {
+      "fuente": "HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 4",
+      "cita_literal": "Chemistry, along with Physics and Biology, is offered as an elective subject",
+      "dice": "En HK, Chemistry S4–6 es una asignatura electiva",
+      "donde": "HK_Chemistry_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 4"
+     },
+     {
+      "fuente": "AU-QUI-au_ss_qui4-p002-04",
+      "cita_literal": "Green chemistry principles include the design of chemical synthesis processes that use renewable raw materials",
+      "dice": "AU lo tiene en Senior Secondary Chemistry Unit 4, electiva",
+      "donde": "AU-QUI-au_ss_qui4-p002-04"
+     },
+     {
+      "fuente": "TW-QUI-tw_ele-p054-27",
+      "cita_literal": "建立綠色化學與永續發展的概念",
+      "dice": "TW pone la química verde en el 化學 加深加廣選修 (electiva)",
+      "donde": "TW-QUI-tw_ele-p054-27"
+     },
+     {
+      "fuente": "TW-QUI-tw_req_contenido-p041-11",
+      "cita_literal": "將永續發展的理念應用於生活中",
+      "dice": "El núcleo de TW solo habla de desarrollo sostenible, no de química verde",
+      "donde": "TW-QUI-tw_req_contenido-p041-11"
+     }
+    ],
+    "lote": "b1-inc9_refutador_quimica_2",
+    "fecha": "2026-10-13"
+   }
+  }
+ ]
+}
