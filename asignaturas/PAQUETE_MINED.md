@@ -24,10 +24,16 @@ nada cambia la malla sin una decisión del MINED. Cada archivo indica qué colum
 El grafo ya aplica estas decisiones, pero falta la confirmación del MINED.
 
 **[`decisiones/2026-10-13_decisiones.csv`](decisiones/2026-10-13_decisiones.csv)** (reemplaza a los anteriores). Trae
-167 con dictamen del panel y su solidez, y 3 decisiones nuevas tomadas tras sus observaciones:
-- la neutralización pasa a «tardío» (el bucle lo confirmó);
-- los agentes oxidantes, a «posterior»;
-- las fuerzas intermoleculares, a «sin referente» (solo ENG GCSE las tiene en el núcleo).
+175 decisiones: 167 con dictamen del panel y su solidez, y 8 delegadas, verificadas en la fuente y pendientes de
+confirmar.
+- **Tras las observaciones del panel:**
+  - la neutralización pasa a «tardío» (el bucle lo confirmó);
+  - los agentes oxidantes, a «posterior»;
+  - las fuerzas intermoleculares, a «sin referente» (solo ENG GCSE las tiene en el núcleo).
+- **De la revisión crítica del bucle:**
+  - catalizadores queda «sin referente», porque G06-CIE-U5-5.2 trata la catálisis enzimática;
+  - las 4 clases «no retomado» de 9.°–11.° pasan a «retomado»: efecto invernadero (dos conceptos), capas de la
+    atmósfera y usos de la energía. Aparecen en 10.° y 11.° en columnas que el método no leía.
 
 Las 35 originales:
 - 2 equivalencias retiradas.
@@ -70,6 +76,8 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
 - **Física pide poco razonamiento:** 10 % frente a 31 %.
 - ~~El efecto invernadero no se retoma en 9.°–11.°~~: **falso**, lo corrigió el bucle. Está en las microhabilidades
   de 10.° y 11.° (G10-FIS-U13-13.3, G11-BIO-U1-1.8, G11-FIS-U22-22.4). Solo falta que el indicador de 13.3 lo nombre.
+- **La atmósfera se retoma en parte:** composición, presión con la altitud y capa de ozono en 10.°. Falta la
+  estratificación en capas.
 - **Secuencias por ordenar:** gases antes de procesos termodinámicos, superposición antes de interferencia,
   mitocondria antes del metabolismo.
 

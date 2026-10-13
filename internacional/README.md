@@ -139,15 +139,29 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
   La verificación de 2026-10-08 solo leyó los indicadores. Lo que falta es que el indicador de 13.3 lo nombre, si
   el MINED quiere evaluarlo. Los países lo tienen en el núcleo: JP 地学基礎 «温室効果», p. 128; KR [10통과2-02-03],
   p. 90; TW ENb-Vc, p. 43; ON SNC2D, p. 73.
-- **Atmósfera (capas y composición) no retomada:** la V2 la tiene en 3.° y en 7.° (capas: G07-CIE-U5-5.11), y 5
-  países la tienen en el núcleo de 9.°–11.°. El efecto invernadero se simula en 7.° (G07-CIE-U6-6.13); lo que falta
-  en 9.°–11.° es su mecanismo físico (corrección del panel de expertos, 2026-10-12).
+- **Atmósfera: se retoma en parte** (corregido en la revisión crítica del bucle, 2026-10-13). Este README decía
+  «capas y composición no retomadas», y la fila completa de la V2 lo desmiente:
+  - la composición del aire está en Química 10.° (G10-QUI-U6-6.5);
+  - la presión con la altitud, en Física 10.° (G10-FIS-U11-11.3) y Química 10.° (6.1, Torricelli);
+  - la capa de ozono, en Química 10.° y 11.° (G10-QUI-U5-5.4, 13.6; G11-QUI-U9-9.7);
+  - la interacción del océano con la atmósfera, en 9.° (G09-CIE-U4-4.4 y 4.5).
+
+  Lo único que no se nombra en 9.°–11.° es la estratificación (troposfera, estratosfera…), que 5 países tienen en el
+  núcleo. El efecto invernadero se simula en 7.° (G07-CIE-U6-6.13) y su mecanismo está en G10-FIS-U13-13.3.
+- **Ninguna clase «no retomado» quedó en pie.** Había 4: el efecto invernadero (dos conceptos), las capas de la
+  atmósfera y los usos de la energía. Las cuatro aparecen en 10.° y 11.° en columnas que el método v1 no lee
+  (microhabilidades, valores, subcontenidos). Pasaron a «retomado» con su cita literal
+  (`data/interim/internacional/revisiones.json`). **Límite del método v1 de 9.°–11.°:** una clase de ausencia exige
+  buscar en la fila completa (`mallas.textos_completos`), como ya hace el método v2 de 2.°–8.°.
 - **Contextualización sin referente:** Geología y Vulcanismo de El Salvador (9.°) no tienen equivalente en otros
   países, y es esperable que así sea: es un acierto de pertinencia local, no un problema.
 
 ## Recomendaciones (para decidir con el MINED; ninguna quita temas)
-1. **Química de 9.°:** dejar el equilibrio **cualitativo** (reversibilidad y Le Châtelier) y **reubicar** K, Ka y
-   amortiguadoras en 11.°, o en una profundización optativa si se crea.
+1. **Química de 9.°:** dejar el equilibrio **cualitativo**: reversibilidad, equilibrio dinámico y Le Châtelier (3.1,
+   3.4, 3.5 y 3.18). **Reubicar los cálculos** de K y Ka (3.6, 3.7 y 3.14), sin duplicar lo que 10.° ya trae (K, Q y
+   tablas ICE en G10-QUI-U12-12.8 a 12.12) ni lo de 11.° (Ka, Kb y amortiguadoras en G11-QUI-U4). Las amortiguadoras
+   pueden quedarse en 9.° como fenómeno observado, sin Ka (3.16 y 3.17). Es el matiz del panel, sostenido por el
+   bucle.
 2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 21 + 12 conceptos de especialización, para
    que el núcleo obligatorio se parezca al de JP, TW y EE. Otra opción es tratarlos de forma cualitativa, como
    hace TW con la física moderna.
@@ -159,8 +173,9 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
    redox (formal antes de sus aplicaciones), retomar la mitocondria antes del metabolismo e hidrocarburos antes de
    isomería.
    Hay que coordinar Física y Química de 10.° para no repetir las leyes de los gases.
-5. **Tierra y Espacio en Bachillerato:** retomar la atmósfera. El efecto invernadero ya está en la Física de 10.°
-   (G10-FIS-U13-13.3); basta con que su indicador lo nombre. JP y TW muestran
+5. **Tierra y Espacio en Bachillerato:** nombrar la estratificación de la atmósfera junto a la composición, la presión
+   con la altitud y la capa de ozono, que ya están en Física y Química de 10.°. El efecto invernadero ya está en la Física de 10.° (G10-FIS-U13-13.3); basta con
+   que su indicador lo nombre. JP y TW muestran
    que se puede tener una Tierra y Espacio común breve (2–4 créditos).
 6. **Demanda en Física y Tierra y Espacio:** reescribir indicadores de *aplicar* como *razonar* (predecir,
    justificar con modelos, diseñar y evaluar investigaciones), sin agregar contenido.

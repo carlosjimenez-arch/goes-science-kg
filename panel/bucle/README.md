@@ -87,6 +87,11 @@ en el historial de git.
   - el primer grado del ciclo del carbono y de los electrones de valencia se corrige, sin que cambie su clase;
   - catalizadores quedaba incierto y se resolvió con la fila: G06-CIE-U5-5.2 «Reconoce las enzimas como proteínas
     que aceleran reacciones…». Sigue «sin referente».
+- **Las 4 clases «no retomado» de 9.°–11.° eran falsas o parciales.** El método v1 de ese tramo no busca en la fila
+  completa: el efecto invernadero (dos conceptos), las capas de la atmósfera (presión y altitud en Física 10.°; capa
+  de ozono en Química 10.°–11.°) y los usos de la energía aparecen en 10.° y 11.°. Pasaron a «retomado» con su cita
+  literal. El README de 9.°–11.° se corrigió: la atmósfera se retoma en parte, y la recomendación del equilibrio en 9.°
+  ahora sigue el matiz del panel (reubicar los cálculos, no las amortiguadoras como fenómeno).
 
 **Pendiente en el método del contraste (decisión del responsable):**
 - **Singapur K326–K328** se cuenta como núcleo, pero el estudiante elige dos de tres ciencias (afecta a 9.°–11.°).

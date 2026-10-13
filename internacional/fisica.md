@@ -9,29 +9,20 @@
 | Clase | Conceptos | Qué significa |
 |---|---|---|
 | Faltantes del núcleo común | 0 | El consenso (≥ 5 países) lo enseña a todos los estudiantes hasta ese grado; la V2 no lo tiene en 2.°–11.°. |
-| No retomados en 9.°–11.° | 2 | La V2 solo lo ve antes de 9.°; al menos 5 países lo profundizan en su núcleo de 9.°–11.°. |
+| No retomados en 9.°–11.° | 0 | La V2 solo lo ve antes de 9.°; al menos 5 países lo profundizan en su núcleo de 9.°–11.°. |
 | Llegan tarde | 2 | La V2 lo introduce en 9.°–11.°, dos o más grados después de que el núcleo alcanza el consenso. |
 | Nivel de especialización en un curso obligatorio | 12 | La V2 lo introduce en 9.°–11.°, pero los países solo lo enseñan en cursos electivos. |
 | Adelantados | 0 | La V2 lo introduce en 9.°–11.°, 1,5 grados o más antes que la mediana del núcleo de los países. |
 | Sin referente | 1 | La V2 lo enseña en 9.°–11.° y ninguno de los 9 países lo tiene. |
 | Alineados | 35 | La V2 lo introduce en 9.°–11.° con un momento coherente con el consenso (± 1,5 grados). |
-| Retomados | 86 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
+| Retomados | 88 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
 | Solo antes de 9.° | 3 | La V2 lo ve antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°. |
 
 Países con núcleo común por grado SV (denominador del consenso): 9.°: AU, EE, ENG, JP, KR, ON, SG, TW; 10.°: AU, EE, ENG, JP, KR, ON, SG, TW; 11.°: AU, EE, ENG, JP, KR, ON, SG, TW
 
 Sensibilidad: con 4 países en lugar de 5, 0 conceptos más pasarían de «solo antes de 9.°» a «no retomados».
 
-Revisión experta: 2 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Relaciones presión-volumen-temperatura en gases (solo_especializacion → alineado); Superposición e interferencia de ondas (solo_especializacion → alineado).
-
-## No retomados en 9.°–11.° (2)
-
-La V2 solo lo ve antes de 9.°; al menos 5 países lo profundizan en su núcleo de 9.°–11.°.
-
-| Concepto | Grados SV (V2) | Consenso del núcleo | Países (grado de 1.ª aparición; esp. = solo electiva) | Evidencia |
-|---|---|---|---|---|
-| Absorción de radiación y efecto invernadero | 7.°–8.° | 9.° (75% de los países con núcleo); 8 con núcleo en 9.°–11.° | AU 9, EE 10.5, ENG 8.5, HK esp., JP 10, KR 9, ON 9, SG 9.5, TW 7 | SV: G07-CIE-U6-6.13 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15)<br>AU · Science Year 10 (v9) [núcleo] (au_710_v9, AC9S10U04): «Usar modelos del flujo de energía entre geosfera, biosfera, hidrosfera y atmósfera para explicar patrones del cambio climático global.»<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Conoce los factores que causan el cambio climático.» |
-| La energía y sus usos | 2.°–4.° | 9.° (75% de los países con núcleo); 5 con núcleo en 9.°–11.° | EE 8, ENG 2, HK esp., JP 5, KR 7, ON esp., SG 9.5, TW 7 | SV: G02-CIE-U2-2.1-f3 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 2 - Energía», fila 3)<br>EE · Escuela básica, III etapa (grados 7–9) [núcleo] (ee_basic, p. 24): «Analizar el consumo de energía a nivel familiar y social, valorar el consumo sostenible y proponer soluciones.»<br>ENG · GCSE Combined Science [núcleo] (eng_gcse_comb, p. 29): «Describir, con ejemplos, la relación entre la potencia nominal de los electrodomésticos y los cambios en la energía almacenada durante su uso.» |
+Revisión experta: 4 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Relaciones presión-volumen-temperatura en gases (solo_especializacion → alineado); Superposición e interferencia de ondas (solo_especializacion → alineado); Absorción de radiación y efecto invernadero (no_retomado → retomado); La energía y sus usos (no_retomado → retomado).
 
 ## Llegan tarde (2)
 
