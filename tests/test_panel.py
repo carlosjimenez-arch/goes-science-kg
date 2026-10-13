@@ -164,3 +164,16 @@ def test_cada_clase_incierta_busca_su_registro_en_su_tramo():
         revs = panel._revisiones_del_tramo(x, por_tramo)
         assert panel._registro_en_capa("INC", x, {}, {}, {}, revs)["decision"] == esperada
     assert panel._revisiones_del_tramo({"tipo": "hallazgo", "datos": {}}, por_tramo) == []
+
+
+def test_las_clases_que_citan_temas_quitados_por_la_v3_vuelven_al_panel():
+    """Spec 15: una clase decidida con la V2 cuya evidencia cita temas que la V3 quitó o movió de grado vuelve al
+    panel («V3:<tramo>:<concepto>») con la decisión anterior y los temas perdidos a la vista."""
+    v3 = panel._exp_revision_v3()
+    assert v3 and all(i.startswith(("V3:2_8:", "V3:9_11:")) for i in v3)
+    for x in v3.values():
+        assert x["datos"]["temas_que_la_v3_quito_o_movio"]
+        assert x["datos"]["decision_anterior"]["clase"] in x["opciones"]
+    # 7.° 2.15 (resistencia bacteriana) se movió a 9.°; 9.° 3.1 sigue en la malla
+    assert panel.temas_perdidos_en_v3({"justificacion": "ver G07-CIE-U2-2.15 y G09-CIE-U3-3.1."}) == \
+        ["G07-CIE-U2-2.15"]

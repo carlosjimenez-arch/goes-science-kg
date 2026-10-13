@@ -241,64 +241,116 @@ def _exp_piloto() -> dict[str, dict]:
             for d in config()["piloto"]}
 
 
+OPCIONES_CLASE = {
+    "2_8": ("INC:", "internacional/2_8/README.md y specs/12, sección «Método v2»",
+            ["faltante", "tardio", "posterior", "adelantado", "sin_referente", "alineado", "no_aplica"]),
+    "9_11": ("INC:9_11:", "specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)",
+             ["retomado", "no_retomado", "previo", "solo_especializacion", "alineado", "tardio", "adelantado",
+              "sin_referente", "faltante", "no_aplica"]),
+}
+ID_TEMA = r"G\d\d-[A-Z]{3}-U\d+-\d+(?:\.\d+)+(?:-f\d+|-v3)?"
+
+
+def _objetivos_del_tramo(clave: str) -> dict[str, dict]:
+    from goes_science_kg.internacional import tramo
+    from goes_science_kg.internacional.consenso import objetivos
+
+    anterior = tramo.actual().clave
+    tramo.usar(clave)
+    try:
+        return {o["id"]: o for o in objetivos()}
+    finally:
+        tramo.usar(anterior)
+
+
+def _datos_clase(clave: str, c: str, f: dict, objs: dict, temas: dict) -> dict:
+    """Los datos de un expediente de clase del contraste: lecturas, grados, consenso, temas de la malla y un ejemplo
+    de objetivo por país."""
+    paises = {}
+    for p, d in sorted(f["paises"].items()):
+        o = next((objs[i] for i in d["objetivos"] if i in objs), None)
+        paises[p] = {"primer_grado_nucleo": d["primer_grado_nucleo"], "en_especializacion": d["en_especializacion"],
+                     **({"ejemplo": f"{o['id']} [{o['archivo'].split('/')[-1]} p. {o.get('pagina')}, SV "
+                                    f"{o['grado_sv_min']}–{o['grado_sv_max']}, {o['nivel']}]: "
+                                    f"{o['texto'][:160]}"} if o else {})}
+    ids = [*f["sv_temas"], *f.get("sv_temas_texto", [])]
+    sv = [f"{t} (grado {temas[t].grado}, {temas[t].ruta}, hoja «{temas[t].hoja}», fila {temas[t].fila}): "
+          f"{temas[t].contenido}. {temas[t].indicador}"[:300] for t in ids if t in temas][:6]
+    return {"tramo": clave, "concepto": _concepto(c), "lecturas": f["lecturas"], "alertas": f.get("alertas"),
+            "v2_primer_grado": {"amplio": f["sv_primer_grado"], "estricto": f["sv_primer_grado_solido"]},
+            "consenso": {"grado_amplio": f["grado_consenso"], "grado_estricto": f["grado_consenso_solido"],
+                         "mediana": f["mediana_primer_grado_nucleo"], "n_paises": f["n_nucleo"]},
+            "temas_v2": sv, "paises": paises}   # «temas_v2»: los temas de la malla VIGENTE (el nombre es histórico)
+
+
 def _exp_inciertos() -> dict[str, dict]:
     """Conceptos «inciertos» del contraste (las dos lecturas dan clases distintas y una afirma un desajuste) sin
     revisión experta, de los dos tramos: 2.°–8.° (ids «INC:<concepto>») y, desde el 2026-10-13, 9.°–11.°
     («INC:9_11:<concepto>»)."""
     from goes_science_kg.ingesta.mallas import extraer
-    from goes_science_kg.internacional import tramo
-    from goes_science_kg.internacional.consenso import objetivos
 
     temas = {t.id: t for t in extraer()}
     salida = {}
-    for clave, prefijo, spec, opciones in (
-            ("2_8", "INC:", "internacional/2_8/README.md y specs/12, sección «Método v2»",
-             ["faltante", "tardio", "posterior", "adelantado", "sin_referente", "alineado", "no_aplica"]),
-            ("9_11", "INC:9_11:",
-             "specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)",
-             ["retomado", "no_retomado", "previo", "solo_especializacion", "alineado", "tardio", "adelantado",
-              "sin_referente", "faltante", "no_aplica"])):
-        anterior = tramo.actual().clave
-        tramo.usar(clave)
-        try:
-            objs = {o["id"]: o for o in objetivos()}
-        finally:
-            tramo.usar(anterior)
+    for clave, (prefijo, spec, opciones) in OPCIONES_CLASE.items():
+        objs = _objetivos_del_tramo(clave)
         for c, f in sorted(_contraste(clave).items()):
             if f["clase"] != "incierto" or f.get("revision"):
                 continue
-            paises = {}
-            for p, d in sorted(f["paises"].items()):
-                o = next((objs[i] for i in d["objetivos"] if i in objs), None)
-                paises[p] = {"primer_grado_nucleo": d["primer_grado_nucleo"],
-                             "en_especializacion": d["en_especializacion"],
-                             **({"ejemplo": f"{o['id']} [{o['archivo'].split('/')[-1]} p. {o.get('pagina')}, SV "
-                                            f"{o['grado_sv_min']}–{o['grado_sv_max']}, {o['nivel']}]: "
-                                            f"{o['texto'][:160]}"} if o else {})}
-            ids = [*f["sv_temas"], *f.get("sv_temas_texto", [])]
-            sv = [f"{t} (grado {temas[t].grado}, {temas[t].archivo}, hoja «{temas[t].hoja}», fila {temas[t].fila}): "
-                  f"{temas[t].contenido}. {temas[t].indicador}"[:300] for t in ids if t in temas][:6]
             salida[f"{prefijo}{c}"] = {
                 "tipo": "clase_incierta", "titulo": f"{f['nombre']} ({c}, {clave.replace('_', '.°–')}.°)",
                 "roles": [_rol(c)], "opciones": opciones,
                 "pregunta": f"Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y "
                             f"decide la clase con la regla del tramo {clave.replace('_', '.°–')}.° ({spec}). En el "
                             "umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
-                "datos": {"tramo": clave, "concepto": _concepto(c), "lecturas": f["lecturas"],
-                          "alertas": f.get("alertas"),
-                          "v2_primer_grado": {"amplio": f["sv_primer_grado"],
-                                              "estricto": f["sv_primer_grado_solido"]},
-                          "consenso": {"grado_amplio": f["grado_consenso"],
-                                       "grado_estricto": f["grado_consenso_solido"],
-                                       "mediana": f["mediana_primer_grado_nucleo"], "n_paises": f["n_nucleo"]},
-                          "temas_v2": sv, "paises": paises}}
+                "datos": _datos_clase(clave, c, f, objs, temas)}
+    return salida
+
+
+def temas_perdidos_en_v3(r: dict) -> list[str]:
+    """Temas que cita una revisión del contraste (justificación y evidencia) y que la malla vigente quitó o movió
+    de grado (spec 15)."""
+    from goes_science_kg.ingesta.mallas import vigente_de
+
+    texto = json.dumps({k: r.get(k) for k in ("justificacion", "evidencia")}, ensure_ascii=False)
+    return sorted(i for i in set(re.findall(ID_TEMA, texto)) if vigente_de(i) is None)
+
+
+def _exp_revision_v3() -> dict[str, dict]:
+    """Clases del contraste ya decididas (por el panel o por delegación, no confirmadas por el MINED) cuya evidencia
+    cita temas que la V3 quitó o movió de grado: vuelven al panel con la decisión anterior a la vista
+    («V3:<tramo>:<concepto>», spec 15)."""
+    from goes_science_kg import revision_decisiones as rd
+    from goes_science_kg.ingesta.mallas import extraer
+
+    temas = {t.id: t for t in extraer()}
+    salida = {}
+    for clave, (_, spec, opciones) in OPCIONES_CLASE.items():
+        objs, contraste = _objetivos_del_tramo(clave), _contraste(clave)
+        tipo = "clase_internacional_2_8" if clave == "2_8" else "clase_internacional"
+        for r in rd._leer(tipo):
+            if r.get("confirmaciones") or not (perdidos := temas_perdidos_en_v3(r)) or r["concepto"] not in contraste:
+                continue
+            c, f = r["concepto"], contraste[r["concepto"]]
+            salida[f"V3:{clave}:{c}"] = {
+                "tipo": "clase_incierta", "titulo": f"{f['nombre']} ({c}, {clave.replace('_', '.°–')}.°, malla V3)",
+                "roles": [_rol(c)], "opciones": opciones,
+                "pregunta": f"La clase «{r['clase']}» se decidió con la malla V2 y su evidencia cita temas que la V3 "
+                            f"quitó o movió de grado ({', '.join(perdidos)}). Verifica en la fuente con la malla V3 y "
+                            f"decide la clase con la regla del tramo {clave.replace('_', '.°–')}.° ({spec}): mantenla "
+                            "si sigue valiendo o cámbiala.",
+                "datos": {**_datos_clase(clave, c, f, objs, temas),
+                          "clase_automatica_v3": f.get("clase_ia", f["clase"]),
+                          "decision_anterior": {"clase": r["clase"], "justificacion": r.get("justificacion"),
+                                                "revisado_por": r.get("revisado_por")},
+                          "temas_que_la_v3_quito_o_movio": perdidos}}
     return salida
 
 
 def expedientes() -> dict[str, dict]:
     """Todos los expedientes que el panel puede dictaminar, por id."""
     return {**_exp_decisiones(), **_exp_asignaciones(), **_exp_cambios_asignatura(), **_exp_contenido(),
-            **_exp_hallazgos(), **_exp_propuestas(), **_exp_piloto(), **_exp_inciertos()}
+            **_exp_hallazgos(), **_exp_propuestas(), **_exp_piloto(), **_exp_inciertos(),
+            **_exp_revision_v3()}
 
 
 # -- estado ---------------------------------------------------------------------------------------------------------
@@ -572,7 +624,7 @@ def aplicar() -> dict:
                 hechos["solidez"] += 1
             continue
         if x["tipo"] == "clase_incierta":
-            clases_panel.append(x)
+            clases_panel.append((i, x))
             x["aplicado"] = date.today().isoformat()
             hechos[x["tipo"]] += 1
             continue
@@ -623,7 +675,7 @@ def aplicar() -> dict:
             e["revision_panel"] = {**reg, **({"valores_anteriores": anteriores} if anteriores else {})}
         x["aplicado"] = reg["fecha"]
         hechos[x["tipo"]] += 1
-    for x in clases_panel:   # clases del contraste: entran como revisión experta del panel (ganan sobre la regla)
+    for i, x in clases_panel:   # clases del contraste: entran como revisión experta del panel (ganan sobre la regla)
         revs = _revisiones_del_tramo(x, revs_por_tramo)
         ya = {r["concepto"]: r for r in revs}
         c = x["datos"]["concepto"]["id"]
@@ -636,6 +688,16 @@ def aplicar() -> dict:
             revs.append({**nuevo, "dictamenes_panel": [_registro(x)]})
         elif str(ya[c].get("revisado_por", "")).startswith("panel de expertos IA"):   # lo humano no se toca
             ya[c].update({**nuevo, "dictamenes_panel": [*ya[c].get("dictamenes_panel", []), _registro(x)]})
+        elif i.startswith("V3:") and not ya[c].get("confirmaciones"):
+            # Una decisión delegada (no confirmada por el MINED) que la V3 dejó sin parte de su evidencia: el dictamen
+            # del panel entra como nueva decisión delegada y la anterior queda en el historial (reversible).
+            anterior = {k: ya[c].get(k) for k in ("clase", "justificacion", "revisado_por")}
+            ya[c].update({**nuevo, "revisado_por": "decisión delegada del responsable por la malla V3 (spec 15), con "
+                                                   f"el {nuevo['revisado_por']}",
+                          "dictamenes_panel": [*ya[c].get("dictamenes_panel", []), _registro(x)],
+                          "historial": [*ya[c].get("historial", []),
+                                        {**anterior, "reemplazada": d["fecha"],
+                                         "motivo": "la V3 quitó o movió temas que la sostenían"}]})
     for t, registros in capas.items():
         if registros:
             rd._guardar(t, registros)
