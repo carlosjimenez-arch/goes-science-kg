@@ -423,7 +423,8 @@ def _dir_lotes() -> Path:
 def iniciar(tipos: list[str] | None = None) -> int:
     """Agrega al estado los expedientes que todavía no tiene (de los tipos pedidos). Devuelve cuántos agregó."""
     estado = cargar_estado()
-    nuevos = {i: {**x, "dictamenes": [], "estado": "pendiente", "version": VERSION}
+    malla = cargar("mallas").get("version", "V2")   # sobre qué malla se dictamina (spec 15: el bucle lo usa)
+    nuevos = {i: {**x, "dictamenes": [], "estado": "pendiente", "version": VERSION, "malla": malla}
               for i, x in expedientes().items() if (tipos is None or x["tipo"] in tipos) and i not in estado}
     _guardar_estado({**estado, **nuevos})
     return len(nuevos)

@@ -318,3 +318,15 @@ def test_el_verificador_reconoce_los_ids_nuevos_de_la_v3():
     """Sin el sufijo «-v3», TEMA:G03-CIE-U5-5.11-v3 se leía como G03-CIE-U5-5.11 (otro tema de la V2)."""
     r = bucle.verificar("TEMA:G03-CIE-U5-5.11-v3", "Estrategias que favorecen la supervivencia de la desce")
     assert r["refs"] == ["G03-CIE-U5-5.11-v3"] and r["estado"] == "anclada"
+
+
+def test_una_cita_que_solo_esta_en_la_v2_no_ancla_un_dictamen_sobre_la_v3():
+    """El verificador dice en qué versión de la malla está la cita; para un expediente dictaminado sobre la V3, una
+    cita que solo está en la V2 cuenta como ubicada, no como anclada (lo encontró el refutador de la serie v3)."""
+    v2 = bucle.verificar("TEMA:G03-CIE-U4-4.6", "Clasificación de los grupos de plantas terrestres por su anatomía")
+    v3 = bucle.verificar("TEMA:G03-CIE-U4-4.6", "Clasificación de los grupos de vasculares por su anatomía")
+    assert (v2["estado"], v2["version"]) == ("anclada", "anterior") and v3["version"] == "vigente"
+    d = {"evidencia": [{"fuente": "TEMA:G03-CIE-U4-4.6",
+                        "cita_literal": "Clasificación de los grupos de plantas terrestres por su anatomía"}]}
+    assert bucle.anclaje({"dictamenes": [d]})["nivel"] == "anclado"
+    assert bucle.anclaje({"dictamenes": [d], "malla": "V3"})["nivel"] == "ubicado"

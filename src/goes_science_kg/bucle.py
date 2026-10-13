@@ -154,23 +154,46 @@ def _temas() -> dict[str, TemaMalla]:
     return temas
 
 
+VIGENTE = "mallas"
+ANTERIOR = " · versión anterior de la malla (no está en la vigente)"   # marca de una cita que solo está en la V2/V1
+
+
 @cache
-def _filas_completas() -> dict[str, str]:
+def _filas_completas(version: str = VIGENTE) -> dict[str, str]:
     """Id del tema → texto de todas las celdas de su fila (también microhabilidades PISA e indicador avanzado)."""
     from goes_science_kg.ingesta.mallas import textos_completos
 
-    # Un id que cambió de texto entre versiones (un tema «parecido» de la V3) se busca en los dos textos: las citas
-    # anteriores a la V3 siguen ancladas en lo que decía la V2.
-    salida: dict[str, str] = {}
-    for version in ("mallas_v1", "mallas_v2", "mallas"):
-        for i, texto in textos_completos(version).items():
-            salida[i] = texto if salida.get(i) in (None, texto) else f"{texto} ‖ {salida[i]}"
+    return textos_completos(version)
+
+
+@cache
+def _ids_de(version: str) -> frozenset[str]:
+    from goes_science_kg.ingesta.mallas import extraer
+
+    return frozenset(t.id for t in extraer(version))
+
+
+def _ids_vigentes() -> frozenset[str]:
+    return _ids_de(VIGENTE)
+
+
+@cache
+def _temas_anteriores() -> dict[str, TemaMalla]:
+    """Temas de la V2 (y la V1) cuyo id sigue en la vigente con OTRO texto, o que la vigente ya no tiene."""
+    from goes_science_kg.ingesta.mallas import extraer
+
+    vigentes = {t.id: _texto_tema(t) for t in extraer()}
+    salida: dict[str, TemaMalla] = {}
+    for version in ("mallas_v1", "mallas_v2"):
+        for t in extraer(version):
+            if vigentes.get(t.id) != _texto_tema(t, version):
+                salida[t.id] = t
     return salida
 
 
-def _texto_tema(t: TemaMalla) -> str:
+def _texto_tema(t: TemaMalla, version: str = VIGENTE) -> str:
     return " ".join([t.unidad, t.contenido, t.subcontenido, t.procedimental, t.indicador, t.evidencia,
-                     t.habilidad_timss, _filas_completas().get(t.id, "")])
+                     t.habilidad_timss, _filas_completas(version).get(t.id, "")])
 
 
 @cache
@@ -264,7 +287,13 @@ def _candidatos(fuente: str) -> tuple[list[tuple[str, str]], list[str], list[str
             refs.append(tid)
             if tid in temas:
                 t = temas[tid]
-                textos.append((f"{tid} ({t.archivo}, hoja «{t.hoja}», fila {t.fila})", _texto_tema(t)))
+                vigente = tid in _ids_vigentes()
+                if vigente:
+                    textos.append((f"{tid} ({t.ruta}, hoja «{t.hoja}», fila {t.fila})", _texto_tema(t)))
+                if (a := _temas_anteriores().get(tid)) is not None:
+                    version = "mallas_v2" if a.id in _ids_de("mallas_v2") else "mallas_v1"
+                    textos.append((f"{tid} ({a.ruta}, hoja «{a.hoja}», fila {a.fila}){ANTERIOR}",
+                                   _texto_tema(a, version)))
             else:
                 malas.append(tid)
     for oid in _RE_ID_PAIS.findall(_RE_TEMA.sub(" ", fuente)):
@@ -344,7 +373,9 @@ def verificar(fuente: str, cita: str) -> dict:
     if refs:
         donde = next((d for d, t in textos if t and cita_en(cita, t)), None)
         estado = "anclada" if donde else "ubicada" if textos else "inexistente"
-        return {"tipo": "primaria", "estado": estado, "refs": refs, "inexistentes": malas, "donde": donde}
+        # «version»: la cita está en la malla vigente o solo en una anterior (la V2 o la V1).
+        return {"tipo": "primaria", "estado": estado, "refs": refs, "inexistentes": malas, "donde": donde,
+                "version": "anterior" if donde and donde.endswith(ANTERIOR) else "vigente" if donde else None}
     if re.search(r"(?i)criterio", fuente):
         tipo = "argumento"
     elif _RE_INTERNA.search(fuente):
@@ -369,12 +400,13 @@ def anclaje(x: dict) -> dict:
     """Anclaje de un expediente: toda la evidencia de sus dictámenes y las anclas verificadas del bucle."""
     c: Counter = Counter()
     inexistentes: list[str] = []
+    sobre_v3 = x.get("malla") == "V3"   # un dictamen hecho sobre la V3 no se ancla en texto que la V3 ya no tiene
     for d in x.get("dictamenes", []):
         for v in d.get("evidencia") or []:
             r = verificar(v.get("fuente", ""), v.get("cita_literal") or v.get("cita", ""))
             c[r["tipo"]] += 1
             if r["estado"]:
-                c[r["estado"]] += 1
+                c["ubicada" if sobre_v3 and r.get("version") == "anterior" else r["estado"]] += 1
             inexistentes += r["inexistentes"]
     c["anclada"] += len((x.get("bucle") or {}).get("anclas", []))
     c["primaria"] += len((x.get("bucle") or {}).get("anclas", []))
