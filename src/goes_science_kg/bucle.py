@@ -1077,7 +1077,7 @@ def _contraste_vigente() -> dict[tuple[str, str], dict]:
 def _concepto_y_tramo(x: dict) -> tuple[str, str] | None:
     d = x.get("datos") or {}
     if x["tipo"] == "clase_incierta":
-        return "2_8", d["concepto"]["id"]
+        return d.get("tramo", "2_8"), d["concepto"]["id"]
     if x.get("subtipo") in ("clase_internacional", "clase_internacional_2_8"):
         return ("9_11" if x["subtipo"] == "clase_internacional" else "2_8"), d["conceptos"][0]["id"]
     return None

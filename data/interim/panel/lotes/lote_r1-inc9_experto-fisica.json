@@ -1,0 +1,1526 @@
+{
+ "lote": "r1-inc9_experto-fisica",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Aplicaciones de las leyes de Newton (CON:fisica/aplicaciones-leyes-newton, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/aplicaciones-leyes-newton",
+     "nombre": "Aplicaciones de las leyes de Newton",
+     "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 4,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G08-CIE-U1-1.7 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 1 - Mecánica», fila 9): Movimiento en una y dos dimensiones. 1.7. Resuelve problemas empleando las leyes del movimiento de Newton.",
+     "G10-FIS-U5-5.10 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 36): Fuerzas de contacto. 5.10. Calcula la tensión de un cable que sostiene un ascensor cuando sube o baja con aceleración y la relaciona con el par de fuerzas de la tercera ley.",
+     "G10-FIS-U5-5.12 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 38): Aplicaciones de las leyes de Newton. 5.12. Resuelve problemas de sistemas de cuerpos conectados, con o sin rozamiento y en planos inclinados, determinando la aceleración común y las tensiones.",
+     "G10-FIS-U5-5.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 35): Fuerzas de contacto. 5.9. Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza.",
+     "G10-FIS-U6-6.4 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 42): Dinámica del movimiento circular. 6.4. Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción.",
+     "G04-CIE-U1-1.2 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Máquinas y energía», fila 4): Máquinas simples.. 1.2. Clasifica las máquinas simples, a partir de sus definiciones clásicas."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p005-07 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 5, SV 10–11, especializacion]: Explicar que un objeto experimentará movimiento circular uniforme (en plano horizontal o pista peraltada) si recibe una fuerza neta constante perpendicular a su"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p029-01 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 29, SV 9–11, especializacion]: Aplicar las Leyes de Newton para resolver problemas que involucren movimiento en una dimensión."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jinro_fis-p168-09 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 168, SV 10–11, especializacion]: Predecir cuantitativamente el movimiento calculando la fuerza resultante en un plano 2D (fricción, tensión, fuerza normal) mediante la suma de vectores."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p182-10 [ON_Science_Grades11-12_2008.pdf p. 182, SV 10–10, especializacion]: Las aplicaciones de las leyes del movimiento de Newton han generado desarrollos tecnológicos con impacto socioambiental."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/aplicaciones-leyes-newton",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Observación astronómica en distintas longitudes de onda (CON:fisica/astronomia-multionda, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/astronomia-multionda",
+     "nombre": "Observación astronómica en distintas longitudes de onda",
+     "definicion": "Telescopios y detectores captan radiación electromagnética de radio a gamma para estudiar el universo.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "sin_referente"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": null,
+     "n_paises": 0
+    },
+    "temas_v2": [
+     "G11-FIS-U22-22.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 134): Tecnologías para la observación espacial. 22.4. Relaciona la temperatura de un objeto astronómico con el tipo de radiación que emite.",
+     "G11-FIS-U22-22.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 136): Tecnologías para la observación espacial. 22.6. Ejemplifica tipos de detectores de imágenes empleados en los observatorios astronómicos terrestres y espaciales.",
+     "G11-FIS-U22-22.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 137): Sistemas planetarios. 22.7. Explica un método empleado para detectar o caracterizar un exoplaneta.",
+     "G11-FIS-U22-22.9 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 139): Sistemas planetarios. 22.9. Argumenta cuáles son las condiciones que permiten el desarrollo de la vida en un planeta.",
+     "G11-FIS-U22-22.5 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 135): Tecnologías para la observación espacial. 22.5. Reconoce las ventajas y desventajas en el uso de telescopios de refracción y reflexión.",
+     "G11-FIS-U22-22.8 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 138): Sistemas planetarios. 22.8. Ejemplifica las propiedades deducibles de los exoplanetas."
+    ],
+    "paises": {
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p044-16 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 44, SV 9–11, especializacion]: Recibir señales de radio/microondas de objetos artificiales y naturales para un análisis de datos simple."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/astronomia-multionda",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Capacitancia y condensadores (CON:fisica/capacitancia, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 5,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 10.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G09-CIE-U6-6.6 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 6 - Electricidad», fila 8): Dispositivos electrónicos. 6.6. Explica el funcionamiento de algunos componentes electrónicos.",
+     "G11-FIS-U13-13.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 79): Elementos reactivos. 13.3. Calcula la reactancia capacitiva de un condensador a distintas frecuencias e interpreta el adelanto de la corriente respecto del voltaje.",
+     "G11-FIS-U8-8.5 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 44): Condensadores. 8.5. Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas.",
+     "G11-FIS-U9-9.11 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 56): Condensadores en circuitos. 9.11. Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo.",
+     "G11-FIS-U9-9.12 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 57): Condensadores en circuitos. 9.12. Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "G11-FIS-U13-13.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 82): Circuitos RLC. 13.6. Calcula la frecuencia de resonancia de un circuito RLC y explica cómo la resistencia modifica la agudeza de la curva de resonancia."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_gym-p011-19 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11, SV 10–11, nucleo]: Explica las posibilidades de almacenamiento de energía en campos eléctricos y magnéticos."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_alevel-p014-05 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 14, SV 10–11, especializacion]: Comprender y calcular la energía almacenada en un condensador."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p112-08 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 112, SV 10–11, especializacion]: Comprender las propiedades de los condensadores y relacionar la capacidad eléctrica con el campo eléctrico y la diferencia de potencial, incluyendo su conexión."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jinro_fis-p180-08 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 180, SV 10–11, especializacion]: Identificar dispositivos que utilizan resistencias, condensadores e inductores, y explicarlos cualitativamente desde la perspectiva de la energía."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h2_fis-p010-02 [SG_ALevel_H2_Physics_9478_2027.pdf p. 10, SV 11–11, especializacion]: Analizar el almacenamiento de carga en capacitores para comprender mejor sus aplicaciones en la electrónica."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/capacitancia",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Centro de gravedad y estabilidad (CON:fisica/centro-gravedad-estabilidad, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/centro-gravedad-estabilidad",
+     "nombre": "Centro de gravedad y estabilidad",
+     "definicion": "Punto donde actúa el peso de un cuerpo; su posición respecto a la base de apoyo determina la estabilidad.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G02-CIE-U5-5.4 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 5 - Objetos técnicos», fila 6): Estructuras.. Registra cuánta carga soporta su estructura y compara sus resultados con los de otros grupos.",
+     "G10-FIS-U10-10.3 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 69): Centro de gravedad y estabilidad. 10.3. Calcula el centro de gravedad de cuerpos compuestos y predice el ángulo de inclinación al que un objeto se vuelca.",
+     "G02-CIE-U5-5.3 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 5 - Objetos técnicos», fila 5): Estructuras.. Construye una estructura sencilla y reconoce qué formas la hacen más firme.",
+     "G10-FIS-U10-10.1 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 67): Torque y equilibrio. 10.1. Calcula la magnitud, la dirección y el sentido del torque de una fuerza aplicada con cualquier ángulo respecto del brazo de palanca."
+    ],
+    "paises": {
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p029-07 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 29, SV 9–11, especializacion]: Interpretar el centro de gravedad y determinarlo experimentalmente."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p110-08 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 110, SV 10–11, especializacion]: Realizar experimentos sobre el equilibrio de objetos extensos para descubrir y comprender las condiciones de equilibrio de los cuerpos rígidos."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_mulli-p116-07 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 116, SV 10–10, especializacion]: Saber que hay equilibrio si la fuerza neta y el torque son cero, y analizar la estabilidad de estructuras cotidianas simples (excluyendo situaciones dinámicas o"
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p011-02 [SG_ALevel_H1_Physics_8867_2027.pdf p. 11, SV 11–11, nucleo_parcial]: Comprender que el peso de un cuerpo puede considerarse actuando en un único punto llamado centro de gravedad."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/centro-gravedad-estabilidad",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Cuantización de la energía (CON:fisica/cuantizacion-energia-planck, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/cuantizacion-energia-planck",
+     "nombre": "Cuantización de la energía",
+     "definicion": "La energía de la radiación se emite en paquetes discretos E = hf, idea de Planck para el cuerpo negro.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G11-FIS-U15-15.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 89): Cuantización de la energía. 15.3. Aplica la ley de Wien y la relación E = hf para estimar la temperatura de un emisor y la energía de sus cuantos de radiación.",
+     "G11-FIS-U15-15.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 90): Cuantización de la energía. 15.4. Calcula la energía cinética máxima de los fotoelectrones y la frecuencia umbral de un metal con la ecuación Kmáx = hf − W₀.",
+     "G07-CIE-U6-6.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 14): Impacto ambiental. 6.12. Desarrolla un ejercicio hipotético de estimación de impactos ambientales.",
+     "G09-CIE-U7-7.1 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 7 - Magnetismo aplicado», fila 3): Magnetismo terrestre. 7.1. Reconoce las aplicaciones del campo magnético en fenómenos terrestres.",
+     "G10-QUI-U11-11.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 85): Energía en las reacciones químicas. 11.1. Determina experimentalmente la entalpía de una reacción en un calorímetro de vasos y la representa en un diagrama de entalpía exotérmico o endotérmico.",
+     "G10-QUI-U3-3.1 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 23): Evolución de los modelos atómicos. 3.1. Explica cómo la desviación de los rayos catódicos en campos eléctricos y magnéticos llevó a Thomson a proponer el electrón y su modelo atómico."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis4-p001-17 [AU_SeniorSecondary_Physics_v8.4_U4.html p. 1, SV 11–11, especializacion]: Comprender cómo la teoría cuántica explica la radiación de cuerpo negro, el efecto fotoeléctrico y los espectros atómicos de emisión y absorción."
+     },
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_gym_ele-p045-01 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 45, SV 10–11, especializacion]: Aplicar la ecuación de Einstein para el efecto fotoeléctrico, comprender los parámetros del fotón y conocer sus aplicaciones en células solares y elementos CCD."
+     },
+     "ENG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_alevel-p014-11 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 14, SV 10–11, especializacion]: Utilizar el modelo de fotones para explicar fenómenos observables."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p066-01 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 66, SV 9–11, especializacion]: Aplicar E=hf y la ecuación fotoeléctrica de Einstein para resolver problemas."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p114-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 114, SV 10–11, especializacion]: Estudiar la estructura del átomo de hidrógeno y relacionarla con los espectros atómicos."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_mulli-p115-04 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 115, SV 10–10, especializacion]: Entender que los electrones tienen niveles de energía cuantizados, propiedad aplicada en semiconductores que revolucionaron la civilización y la industria."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph4u-p208-03 [ON_Science_Grades11-12_2008.pdf p. 208, SV 11–11, especializacion]: Utilizar la terminología adecuada relacionada con la mecánica cuántica y la relatividad especial, incluyendo teoría cuántica, efecto fotoeléctrico, ondas de mat"
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h2_fis-p028-10 [SG_ALevel_H2_Physics_9478_2027.pdf p. 28, SV 11–11, especializacion]: Indicar que un fotón es un cuanto de radiación y usar la ecuación E = hf para resolver problemas de energía."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_req_contenido-p039-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 39, SV 9–10, nucleo]: Aplicar la relación de proporcionalidad entre la energía del fotón y su frecuencia (E=hν), reconociendo la naturaleza corpuscular de la luz."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/cuantizacion-energia-planck",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Desintegración radiactiva (CON:fisica/desintegracion-radiactiva, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/desintegracion-radiactiva",
+     "nombre": "Desintegración radiactiva",
+     "definicion": "Núcleos inestables emiten radiación alfa, beta o gamma; su número decae exponencialmente con una vida media.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 10,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G10-BIO-U5-5.3 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 50): Evidencias de la evolución. 5.3. Calcula la edad aproximada de un fósil a partir de la vida media de un isótopo y del orden de los estratos.",
+     "G11-FIS-U20-20.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 124): Partículas subatómicas. 20.4. Explica cómo el espectro continuo de la desintegración beta llevó a postular el neutrino y describe cómo se detecta.",
+     "G11-FIS-U21-21.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 127): Desintegración radiactiva. 21.1. Escribe ecuaciones balanceadas de desintegración alfa, beta y gamma, e identifica el núcleo hijo a partir de la conservación de A y Z.",
+     "G11-FIS-U21-21.2 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 128): Ley de desintegración. 21.2. Aplica N = N₀e^(−λt) y A = λN para calcular el número de núcleos, la actividad y la vida media de una muestra.",
+     "G11-FIS-U21-21.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 129): Aplicaciones de la ley de desintegración. 21.3. Calcula la edad de una muestra por radiocarbono a partir de la fracción de carbono-14 remanente y valora la incertidumbre del resultado.",
+     "G11-FIS-U23-23.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 143): Interacción de la radiación y la materia. 23.4. Reconoce los tipos de radiación ionizante y sus principales efectos en las células."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p001-11 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 1, SV 10–10, especializacion]: Seleccionar, construir y usar representaciones (textos, gráficos, diagramas de flujo, ecuaciones nucleares y circuitos) para comunicar comprensión, resolver pro"
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_basic-p021-02 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 21, SV 7–9, nucleo]: Caracterizar y comparar la radiación alfa, beta y gamma."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p033-09 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 33, SV 8–9, nucleo]: Recordar que los cambios en átomos y núcleos pueden generar y absorber radiaciones en un amplio rango de frecuencias."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p058-02 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 58, SV 9–11, especializacion]: Describir el origen y la naturaleza de las radiaciones alfa, beta y gamma."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_25-p110-03 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 110, SV 9–10, nucleo_parcial]: Tratar la conversión a energía eléctrica y la fisión nuclear, incluyendo tipos y propiedades de radiación, sustancias radiactivas y el uso de la energía nuclear"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p191-01 [ON_Science_Grades11-12_2008.pdf p. 191, SV 10–10, especializacion]: Comparar características (masa, carga, velocidad, poder de penetración) y precauciones de seguridad de partículas alfa, beta y rayos gamma."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p018-03 [SG_ALevel_H1_Physics_8867_2027.pdf p. 18, SV 11–11, nucleo_parcial]: Comprender el origen y la importancia de la radiación de fondo."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_req_contenido-p040-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 40, SV 9–10, nucleo]: Describir cómo un neutrón aislado decae espontáneamente en un protón y otras partículas mediante la interacción débil."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/desintegracion-radiactiva",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Efecto Doppler (CON:fisica/efecto-doppler, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/efecto-doppler",
+     "nombre": "Efecto Doppler",
+     "definicion": "Cambio de la frecuencia percibida cuando la fuente o el observador se mueven; aplica a sonido y luz.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G11-FIS-U14-14.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 84): Efecto Doppler electromagnético. 14.1. Calcula la rapidez de acercamiento o alejamiento de una fuente a partir del corrimiento Doppler de su radiación electromagnética.",
+     "G11-FIS-U22-22.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 137): Sistemas planetarios. 22.7. Explica un método empleado para detectar o caracterizar un exoplaneta.",
+     "G11-FIS-U4-4.5 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 20): Sonido en movimiento. 4.5. Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda.",
+     "G11-FIS-U4-4.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 21): Sonido en movimiento. 4.6. Explica cómo la reflexión de ultrasonido y el efecto Doppler permiten obtener imágenes y medir el flujo sanguíneo en el diagnóstico médico.",
+     "G08-CIE-U8-8.1 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 3): Origen del universo. 8.1. Argumenta el origen del universo según la teoría del Big Bang a partir de sus evidencias.",
+     "G11-FIS-U4-4.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 16): El sonido como onda. 4.1. Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido."
+    ],
+    "paises": {
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p072-05 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 72, SV 9–11, especializacion]: Describir el efecto Doppler y aplicar su ecuación para determinar la velocidad de los cuerpos celestes."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p111-07 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 111, SV 10–11, especializacion]: Comprender el efecto Doppler del sonido."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jinro_fis-p165-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 165, SV 10–11, especializacion]: Comprender la propagación de energía, transmisión y reflexión de ondas, y aplicar la interferencia del sonido, el efecto Doppler y los principios de los instrum"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p193-07 [ON_Science_Grades11-12_2008.pdf p. 193, SV 10–10, especializacion]: Analizar la relación entre una fuente de sonido en movimiento y el cambio de frecuencia percibido por un observador estacionario (efecto Doppler)."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-FIS-tw_req_contenido-p039-18 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 39, SV 9–10, nucleo]: Describir cualitativamente el efecto Doppler y sus aplicaciones."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/efecto-doppler",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Fisión y fusión nuclear (CON:fisica/fision-fusion-nuclear, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/fision-fusion-nuclear",
+     "nombre": "Fisión y fusión nuclear",
+     "definicion": "Reacciones en que núcleos pesados se dividen o ligeros se unen liberando energía; base de reactores y estrellas.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 9,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 8.75,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G11-FIS-U23-23.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 146): Física nuclear. 23.7. Reconoce las características fundamentales de las reacciones de fisión y fusión nuclear.",
+     "G11-FIS-U23-23.8 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 147): Física nuclear. 23.8. Representa el proceso general de transformación de un combustible nuclear en energía eléctrica.",
+     "G11-FIS-U20-20.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 126): Cosmología. 20.6. Explica las evidencias de la teoría del Big Bang y relaciona la nucleosíntesis primordial con la abundancia de hidrógeno y helio del universo.",
+     "G09-CIE-U10-10.2 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 10 - Genética y biotecno», fila 4): Biotecnología. 10.2. Argumenta una posición sobre aplicaciones de la biotecnología considerando sus beneficios, sus riesgos, sus implicaciones éticas y quién financia la investigación."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p001-21 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 1, SV 10–10, especializacion]: Comprender cómo el modelo nuclear del átomo explica la radiactividad, la fisión, la fusión y las propiedades de los nucleidos radiactivos."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_basic-p021-04 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 21, SV 7–9, nucleo]: Explicar el valor práctico de la fusión y fisión nucleares."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_alevel-p015-08 [ENG_GCE_ASAL_Science_BioChemPhys_SubjectContent_2014.pdf p. 15, SV 10–11, especializacion]: Aplicar la ecuación E = mc² a los procesos nucleares."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p060-01 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 60, SV 9–11, especializacion]: Aplicar la ecuación ΔE = Δmc² para determinar la energía liberada en reacciones nucleares."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_25-p109-06 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 109, SV 9–10, nucleo_parcial]: Comprender desde una perspectiva física las características y usos de fuentes de energía como la hidroeléctrica, combustibles fósiles, nuclear y solar."
+     },
+     "KR": {
+      "primer_grado_nucleo": 9.0,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_tonghap-p091-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 91, SV 9–9, nucleo]: Abordar cualitativamente que la energía solar se produce debido a la pérdida de masa durante el proceso de fusión nuclear del hidrógeno en helio en el Sol."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p190-08 [ON_Science_Grades11-12_2008.pdf p. 190, SV 10–10, especializacion]: Evaluar, basándose en investigación, cómo las tecnologías de energía nuclear, térmica o geotérmica afectan a la sociedad y al medio ambiente."
+     },
+     "SG": {
+      "primer_grado_nucleo": 11.0,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p018-10 [SG_ALevel_H1_Physics_8867_2027.pdf p. 18, SV 11–11, nucleo_parcial]: Esbozar la variación de la energía de enlace por nucleón con el número de nucleones."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-FIS-tw_jh-p034-06 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 34, SV 6–8, nucleo]: Identificar el desarrollo de nuevas energías, como la eólica, solar, fusión nuclear, cogeneración, bioenergía y pilas de combustible."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/fision-fusion-nuclear",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/gravedad-atrae-hacia-tierra",
+     "nombre": "Gravedad: atracción hacia la Tierra",
+     "definicion": "La gravedad es la fuerza que atrae los objetos hacia el centro de la Tierra y los hace caer.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 7
+    },
+    "temas_v2": [
+     "G03-CIE-U1-1.4 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 1 - Medidas y fuerzas», fila 6): Tipos de fuerza.. 1.4. Evidencia la acción de fuerzas a distancia mediante un experimento.",
+     "G10-FIS-U5-5.7 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 33): Tipos de fuerzas. 5.7. Calcula el módulo de la fuerza gravitatoria entre dos cuerpos con la ley de gravitación universal y explica el peso como la atracción que la Tierra ejerce sobre un cuerpo.",
+     "G11-FIS-U1-1.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 6): El péndulo simple. 1.4. Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos peque",
+     "G10-FIS-U11-11.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 81): Ecuación de Bernoulli. 11.9. Deduce la ecuación de Bernoulli a partir del teorema del trabajo y la energía e interpreta cada término como energía por unidad de volumen."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p003-16 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 3, SV 10–10, especializacion]: Analizar el movimiento vertical asumiendo que la aceleración debida a la gravedad es constante cerca de la superficie de la Tierra."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-FIS-ee_basic-p019-13 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 19, SV 7–9, nucleo]: Comparar la fuerza de gravedad que actúa sobre diferentes cuerpos y relacionarla con su masa."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p030-02 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 30, SV 8–9, nucleo]: Definir el peso, describir cómo se mide y explicar la relación entre el peso de un cuerpo y la intensidad del campo gravitatorio."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p028-01 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 28, SV 9–11, especializacion]: Describir el efecto de la resistencia del aire en el movimiento de objetos que caen bajo la gravedad."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-FIS-jp_25-p108-06 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 108, SV 9–10, nucleo_parcial]: Comprender las características del movimiento de caída de los objetos y la relación entre la fuerza aplicada y el movimiento."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-FIS-kr_jung-p050-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 50, SV 6–8, nucleo]: Comprender la gravedad, fuerza elástica, fricción y flotabilidad, y explicar las características de cada fuerza en términos de magnitud y dirección."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p189-02 [ON_Science_Grades11-12_2008.pdf p. 189, SV 10–10, especializacion]: Analizar y resolver problemas sobre la relación entre la fuerza de gravedad y la aceleración en objetos en caída libre."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p014-09 [SG_ALevel_H1_Physics_8867_2027.pdf p. 14, SV 11–11, nucleo_parcial]: Describir y utilizar el concepto de peso como la fuerza que experimenta una masa en un campo gravitatorio."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_jh-p032-09 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8, nucleo]: Diferenciar entre masa y peso, entendiendo que el peso resulta de la atracción gravitacional de cuerpos celestes como la Tierra o la Luna."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/gravedad-atrae-hacia-tierra",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Ley de Ohm (CON:fisica/ley-ohm, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/ley-ohm",
+     "nombre": "Ley de Ohm",
+     "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": {
+     "vecinos": [
+      "CON:fisica/corriente-voltaje-resistencia"
+     ]
+    },
+    "v2_primer_grado": {
+     "amplio": 9,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": 9,
+     "mediana": 7.0,
+     "n_paises": 7
+    },
+    "temas_v2": [
+     "G09-CIE-U6-6.8 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 6 - Electricidad», fila 10): Circuito eléctrico del hogar. 6.8. Relaciona las especificaciones de un electrodoméstico con su funcionamiento.",
+     "G11-FIS-U9-9.13 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 58): Seguridad eléctrica. 9.13. Estima con la ley de Ohm la corriente que atravesaría el cuerpo humano en distintas condiciones y justifica las medidas de seguridad eléctrica.",
+     "G11-FIS-U9-9.2 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 47): Corriente y fuerza electromotriz. 9.2. Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico.",
+     "G11-FIS-U9-9.5 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 50): Combinación de resistencias. 9.5. Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones.",
+     "G11-FIS-U9-9.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 51): Combinación de resistencias. 9.6. Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma.",
+     "G11-FIS-U9-9.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 52): Combinación de resistencias. 9.7. Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p002-06 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: La resistencia para componentes óhmicos y no óhmicos se define como la proporción entre la diferencia de potencial a través del componente y la corriente en él."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_basic-p020-01 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 20, SV 7–9, nucleo]: Aplicar fórmulas de la ley de Ohm, circuitos en serie y paralelo, resistencia, trabajo, potencia y calor de Joule."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p033-01 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 33, SV 8–9, nucleo]: Aplicar la relación entre corriente, resistencia y voltaje. Explicar cómo varía la resistencia y diseñar circuitos para explorar estos efectos en diversos compo"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p047-03 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 47, SV 9–11, especializacion]: Comparar experimentalmente la f.e.m. y el voltaje terminal de una fuente, relacionando la diferencia con su resistencia interna."
+     },
+     "JP": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_25-p109-05 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 109, SV 9–10, nucleo_parcial]: Realizar experimentos y comprender que la resistencia eléctrica varía según la longitud y sección en un mismo material, y que la resistividad depende del materi"
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jung-p058-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 58, SV 6–8, nucleo]: Explicar la corriente en circuitos mediante modelos y deducir experimentalmente la relación entre resistencia, corriente y voltaje."
+     },
+     "ON": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_snc1w-p053-01 [ON_Science_Grade9_SNC1W_2022.pdf p. 53, SV 8–8, nucleo]: Aplicar un modelo matemático para calcular la corriente eléctrica, la diferencia de potencial y la resistencia en situaciones del mundo real."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p016-01 [SG_ALevel_H1_Physics_8867_2027.pdf p. 16, SV 11–11, nucleo_parcial]: Definir la resistencia como la razón entre diferencia de potencial y corriente, y resolver problemas usando V = IR."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_jh-p032-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 32, SV 6–8, nucleo]: Aplicar la ley de Ohm: la corriente es proporcional a la diferencia de voltaje, y su relación define la resistencia eléctrica."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/ley-ohm",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Leyes de Kepler (CON:fisica/leyes-kepler, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/leyes-kepler",
+     "nombre": "Leyes de Kepler",
+     "definicion": "Del modelo geocéntrico al heliocéntrico: los planetas describen elipses, barren áreas iguales y T² es proporcional a a³.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 4,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G04-CIE-U4-4.1 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 3): El Sol.. 4.1. Describe diferentes modelos del sistema solar.",
+     "G11-FIS-U22-22.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 131): Sistema solar. 22.1. Explica el razonamiento que llevó al planteamiento de los sistemas geocéntrico y heliocéntrico.",
+     "G11-FIS-U22-22.2 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 132): Sistema solar. 22.2. Identifica los parámetros orbitales de los sistemas planetarios descritos por las leyes de Kepler.",
+     "G11-FIS-U22-22.8 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 138): Sistemas planetarios. 22.8. Ejemplifica las propiedades deducibles de los exoplanetas.",
+     "G04-CIE-U4-4.10 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 12): Satélites y asteroides.. 4.10. Explica los conceptos de satélite natural, satélite artificial y asteroides.",
+     "G04-CIE-U4-4.11 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 13): Satélites y asteroides.. 4.11. Reconoce algunos satélites naturales del sistema solar."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p005-08 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 5, SV 10–11, especializacion]: Usar la Ley de Gravitación Universal de Newton para explicar las leyes de Kepler y describir el movimiento de planetas y satélites como movimiento circular unif"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p057-01 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 57, SV 9–11, especializacion]: Simular los movimientos orbitales de los cuerpos celestes."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p111-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 111, SV 10–11, especializacion]: Comprender la ley de gravitación universal y el movimiento de los objetos debido a esta fuerza."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jinro_fis-p165-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 165, SV 10–11, especializacion]: Analizar el movimiento de objetos, satélites y planetas desde la perspectiva de la gravedad, y comprender los fenómenos de curvatura del espacio-tiempo causados"
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_req_contenido-p039-15 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 39, SV 9–10, nucleo]: Explicar las leyes del movimiento planetario de Kepler combinando las leyes del movimiento de Newton con la ley de gravitación universal."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/leyes-kepler",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Modelo estándar de partículas (CON:fisica/modelo-estandar-particulas, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/modelo-estandar-particulas",
+     "nombre": "Modelo estándar de partículas",
+     "definicion": "Clasificación de las partículas elementales en quarks, leptones y bosones mediadores de las interacciones fundamentales.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-FIS-U5-5.6 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 32): Tipos de fuerzas. 5.6. Clasifica las fuerzas que intervienen en situaciones reales según su tipo y las relaciona con la interacción fundamental de la que provienen.",
+     "G11-FIS-U20-20.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 124): Partículas subatómicas. 20.4. Explica cómo el espectro continuo de la desintegración beta llevó a postular el neutrino y describe cómo se detecta.",
+     "G11-FIS-U20-20.5 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 125): Partículas elementales. 20.5. Clasifica partículas en quarks, leptones y bosones, y describe la composición en quarks de protones y neutrones.",
+     "G07-CIE-U2-2.1 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 3): Material genético. 2.1. Reconoce las funciones del material genético.",
+     "G11-FIS-U20-20.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 121): El núcleo atómico. 20.1. Calcula el radio y la densidad de distintos núcleos y explica por qué la densidad nuclear es prácticamente constante.",
+     "G11-QUI-U9-9.1 (grado 11, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 11.°», fila 77): Fundamentos de la reactividad orgánica. 9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electróni"
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis4-p001-16 [AU_SeniorSecondary_Physics_v8.4_U4.html p. 1, SV 11–11, especializacion]: Comprender cómo el Modelo Estándar explica la naturaleza y la interacción entre las partículas fundamentales que forman la materia."
+     },
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_gym_ele-p044-06 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 44, SV 10–11, especializacion]: Comprender la importancia heurística de la física de partículas y la cosmología para la humanidad y su relación con otras ciencias."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p070-08 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 70, SV 9–11, especializacion]: Estudiar el modelo estándar de la física de partículas para explicar cómo interactúan los bloques básicos de la materia gobernados por cuatro fuerzas fundamenta"
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p113-03 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 113, SV 10–11, especializacion]: Conocer la existencia de las partículas elementales."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph4u-p203-07 [ON_Science_Grades11-12_2008.pdf p. 203, SV 11–11, especializacion]: Explicar cómo se utilizaron las leyes de conservación de la energía y de la cantidad de movimiento para predecir la existencia y propiedades del neutrino."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h2_fis-p029-01 [SG_ALevel_H2_Physics_9478_2027.pdf p. 29, SV 11–11, especializacion]: Comprender cómo las leyes de conservación de energía y momento en la desintegración beta predijeron la existencia del neutrino o antineutrino."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-FIS-tw_req_contenido-p040-05 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 40, SV 9–10, nucleo]: Describir cómo un neutrón aislado decae espontáneamente en un protón y otras partículas mediante la interacción débil."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/modelo-estandar-particulas",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Ondas de radio y telecomunicaciones (CON:fisica/ondas-radio-telecomunicaciones, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-FIS-U12-12.7 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 74): Telecomunicaciones. 12.7. Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica.",
+     "G11-FIS-U12-12.8 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 75): Telecomunicaciones. 12.8. Construye un sistema de radiotelecomunicación funcional.",
+     "G11-FIS-U12-12.9 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 76): Telecomunicaciones. 12.9. Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "G11-FIS-U14-14.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 86): Radiación no ionizante en la vida diaria. 14.3. Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "G11-FIS-U14-14.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 84): Efecto Doppler electromagnético. 14.1. Calcula la rapidez de acercamiento o alejamiento de una fuente a partir del corrimiento Doppler de su radiación electromagnética.",
+     "G11-FIS-U21-21.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 127): Desintegración radiactiva. 21.1. Escribe ecuaciones balanceadas de desintegración alfa, beta y gamma, e identifica el núcleo hijo a partir de la conservación de A y Z."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_gym_ele-p032-11 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 32, SV 10–11, especializacion]: Explicar oscilaciones y ondas electromagnéticas, el espectro electromagnético, propagación de ondas de radio, radiolocalización, GPS y comunicaciones modernas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p032-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 32, SV 8–9, nucleo]: Recordar que las ondas de radio pueden ser producidas por oscilaciones en circuitos eléctricos o inducirlas."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p043-04 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 43, SV 9–11, especializacion]: Discutir las aplicaciones cotidianas de la luz y las ondas electromagnéticas utilizando las propiedades de las ondas."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-FIS-jp_15-p105-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 105, SV 9–10, nucleo_parcial]: Realizar observaciones y experimentos para comprender las propiedades y usos de las ondas electromagnéticas, especialmente la luz, en la vida diaria."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph4u-p206-03 [ON_Science_Grades11-12_2008.pdf p. 206, SV 11–11, especializacion]: Evaluar el impacto social y ambiental de tecnologías basadas en la naturaleza ondulatoria de la luz, como DVD, lentes polarizadas o redes inalámbricas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_k326_k328-p018-04 [SG_SEC_G3_Science_PhysChem_K326_2027.pdf p. 18, SV 9–10, nucleo_parcial]: Mencionar ejemplos de usos típicos de las regiones del espectro electromagnético: radio, microondas, infrarrojo, luz visible, ultravioleta, rayos X y gamma."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-FIS-tw_req_contenido-p038-04 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 38, SV 9–10, nucleo]: Reconocer que los campos eléctricos y magnéticos tienen energía, ejemplificado por los teléfonos móviles que transmiten ondas electromagnéticas."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/ondas-radio-telecomunicaciones",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Energía potencial y potencial eléctrico (CON:fisica/potencial-electrico, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/potencial-electrico",
+     "nombre": "Energía potencial y potencial eléctrico",
+     "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G11-FIS-U8-8.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 40): Energía potencial eléctrica. 8.1. Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias.",
+     "G11-FIS-U8-8.2 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 41): Energía potencial eléctrica. 8.2. Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos.",
+     "G11-FIS-U8-8.3 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 42): Potencial de cargas puntuales. 8.3. Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición.",
+     "G11-FIS-U8-8.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 43): Potencial de cargas puntuales. 8.4. Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas.",
+     "G11-FIS-U8-8.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 45): Aplicaciones biomédicas. 8.6. Explica cómo el electrocardiograma registra diferencias de potencial del corazón e interpreta los valores típicos de un trazo.",
+     "G08-CIE-U2-2.6 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 2 - Energía», fila 8): Tipos de energía mecánica. 2.6. Diferencia las energías cinética y potencial de la energía total de objetos que se trasladan y rotan."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p001-22 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 1, SV 10–10, especializacion]: Comprender cómo la carga eléctrica participa en la transferencia y transformación de energía en los circuitos eléctricos."
+     },
+     "EE": {
+      "primer_grado_nucleo": 10.5,
+      "en_especializacion": false,
+      "ejemplo": "EE-FIS-ee_gym-p011-17 [EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11, SV 10–11, nucleo]: Explica el concepto de voltaje y aplica la relación entre voltaje e intensidad de campo al resolver problemas."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p033-04 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 33, SV 8–9, nucleo]: Recordar las funciones y diferencias de potencial de los cables de red. Explicar los peligros de un cable de fase y su conexión a tierra."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p046-02 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 46, SV 9–11, especializacion]: Definir la diferencia de potencial eléctrico (voltaje) como la energía potencial eléctrica convertida a otras formas por unidad de carga."
+     },
+     "JP": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_35-p112-07 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 112, SV 10–11, especializacion]: Comprender la relación entre el campo eléctrico y el potencial eléctrico, vinculándola con la energía potencial debida a la fuerza electrostática."
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jinro_fis-p180-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 180, SV 10–11, especializacion]: Calcular cuantitativamente el campo eléctrico alrededor de una carga e inferir su intensidad y dirección interpretando diagramas dados de líneas de campo y supe"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph4u-p204-04 [ON_Science_Grades11-12_2008.pdf p. 204, SV 11–11, especializacion]: Analizar y resolver problemas sobre fuerza eléctrica, intensidad de campo, energía potencial y potencial en campos eléctricos uniformes y no uniformes."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p013-04 [SG_ALevel_H1_Physics_8867_2027.pdf p. 13, SV 11–11, nucleo_parcial]: Comprender que la fuerza en un campo actúa a lo largo de las líneas de campo y que el trabajo realizado equivale al negativo del cambio de energía potencial."
+     },
+     "TW": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_ele-p051-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 51, SV 10–11, especializacion]: Comprender que la fuerza de Coulomb es una fuerza conservativa y está asociada a una energía potencial."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/potencial-electrico",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Primera ley de la termodinámica (CON:fisica/primera-ley-termodinamica, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/primera-ley-termodinamica",
+     "nombre": "Primera ley de la termodinámica",
+     "definicion": "El cambio de energía interna es igual al calor recibido menos el trabajo realizado: ΔU = Q − W.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 9,
+     "estricto": 9
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.0,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G09-CIE-U2-2.7 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 9): Primera ley de la termodinámica. 2.7. Elabora un dispositivo transformador del calor en trabajo mecánico.",
+     "G09-CIE-U2-2.8 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 10): Primera ley de la termodinámica. 2.8. Resuelve problemas empleando la primera ley de la termodinámica.",
+     "G09-CIE-U2-2.5 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 7): Procesos termodinámicos. 2.5. Resuelve problemas a partir de gráficas de procesos termodinámicos.",
+     "G09-CIE-U2-2.9 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 11): Segunda ley de la termodinámica. 2.9. Explica un proceso irreversible de extracción de calor por medio de trabajo mecánico.",
+     "G10-FIS-U15-15.1 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 100): Fundamentos de la termodinámica. 15.1. Caracteriza sistemas termodinámicos reales según su intercambio de materia y energía y sus variables de estado.",
+     "G10-FIS-U15-15.3 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 102): Primera ley de la termodinámica. 15.3. Determina el cambio de energía interna de un sistema en procesos donde intervienen simultáneamente calor y trabajo con la convención de signos adecuada."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p001-20 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 1, SV 10–10, especializacion]: Comprender cómo el modelo cinético de partículas y los conceptos de termodinámica describen y explican los procesos de calentamiento."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_basic-p020-20 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 20, SV 7–9, nucleo]: Explicar el cambio en la energía interna del cuerpo durante la fusión, solidificación, evaporación y condensación."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p029-03 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 29, SV 8–9, nucleo]: Describir y calcular los cambios de energía al calentar un sistema (cambio de temperatura y calor específico), por trabajo de fuerzas y por flujo de corriente."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "JP-FIS-jp_15-p107-02 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 107, SV 9–10, nucleo_parcial]: Describir la conservación del calor, su generación por trabajo o corriente, conversión de energía, historia de motores térmicos y la irreversibilidad del calor "
+     },
+     "KR": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "KR-FIS-kr_jinro_fis-p165-01 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 165, SV 10–11, especializacion]: Estudiar los fenómenos térmicos y las características de los motores térmicos basándose en el concepto de energía, y aplicar las leyes de la termodinámica."
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p191-08 [ON_Science_Grades11-12_2008.pdf p. 191, SV 10–10, especializacion]: Explicar las transformaciones de energía en una central nuclear, referenciando las leyes de la termodinámica."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h2_fis-p022-05 [SG_ALevel_H2_Physics_9478_2027.pdf p. 22, SV 11–11, especializacion]: Diferenciar entre el trabajo realizado por o sobre un gas, y calcular el trabajo de un gas al expandirse contra una presión externa constante: W = p∆V."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_req_contenido-p038-08 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 38, SV 9–10, nucleo]: Explicar mediante experimentos que el trabajo se convierte fácilmente en calor, pero el calor no se convierte totalmente en trabajo."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/primera-ley-termodinamica",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Principio de Pascal (CON:fisica/principio-pascal, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/principio-pascal",
+     "nombre": "Principio de Pascal",
+     "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "sin_referente"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 9
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.5,
+     "n_paises": 2
+    },
+    "temas_v2": [
+     "G06-CIE-U1-1.3 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Fluidos», fila 5): Fluidos estáticos.. 1.3. Efectúa experimentos donde se evidencien los efectos de la presión en sólidos, gases y líquidos.",
+     "G09-CIE-U1-1.4 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 1 - Mecánica de fluidos», fila 6): Principio de Pascal. 1.4. Comprueba experimentalmente el principio de Pascal a partir de datos de variación de presión en una prensa hidráulica.",
+     "G09-CIE-U1-1.5 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 1 - Mecánica de fluidos», fila 7): Principio de Pascal. 1.5. Explica el efecto del principio de multiplicación de fuerzas a partir de las áreas de los pistones de la prensa hidráulica",
+     "G09-CIE-U1-1.12 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 1 - Mecánica de fluidos», fila 14): Ley de Stokes. 1.12. Resuelve problemas teóricos sobre hidrodinámica.",
+     "G09-CIE-U1-1.6 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 1 - Mecánica de fluidos», fila 8): Teorema fundamental de la hidrostática. 1.6. Resuelve problemas empleando las leyes de la hidrostática.",
+     "G10-FIS-U11-11.5 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 77): Transmisión de la presión. 11.5. Calcula la fuerza, el desplazamiento de los émbolos y el trabajo en sistemas hidráulicos, y demuestra que la ventaja mecánica no multiplica la energía."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-FIS-ee_basic-p019-17 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 19, SV 7–9, nucleo]: Describir la transmisión de presión en fluidos (ley de Pascal), realizar un experimento sobre flotabilidad y explicar sus resultados."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_k323-p013-10 [SG_SEC_G3_Physics_K323_2027.pdf p. 13, SV 9–10, especializacion]: Describir y explicar la transmisión de presión en sistemas hidráulicos, con especial referencia a la prensa hidráulica."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-FIS-tw_jh-p029-02 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 29, SV 6–8, nucleo]: Conocer la definición de presión y el principio de Pascal."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/principio-pascal",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Radiación ionizante: detección, efectos y aplicaciones (CON:fisica/radiacion-ionizante-aplicaciones, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/radiacion-ionizante-aplicaciones",
+     "nombre": "Radiación ionizante: detección, efectos y aplicaciones",
+     "definicion": "Radiación capaz de ionizar la materia; se detecta con contadores y se usa en medicina con protección radiológica.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "alineado",
+     "estricta": "tardio"
+    },
+    "alertas": {
+     "vecinos": [
+      "CON:fisica/desintegracion-radiactiva",
+      "CON:quimica/semivida-y-series-de-desintegracion"
+     ]
+    },
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": 11
+    },
+    "consenso": {
+     "grado_amplio": 9,
+     "grado_estricto": null,
+     "mediana": 9.5,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G11-FIS-U21-21.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 130): Medición de la radiación. 21.4. Explica cómo el contador Geiger-Müller, el detector de centelleo y la cámara de niebla registran partículas y fotones.",
+     "G11-FIS-U23-23.4 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 143): Interacción de la radiación y la materia. 23.4. Reconoce los tipos de radiación ionizante y sus principales efectos en las células.",
+     "G11-FIS-U23-23.5 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 144): Interacción de la radiación y la materia. 23.5. Diferencia la radiación de partículas de la radiación electromagnética por sus interacciones con la materia.",
+     "G11-FIS-U23-23.6 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 145): Interacción de la radiación y la materia. 23.6. Ejemplifica aplicaciones médicas de la radiación ionizante según su tipo.",
+     "G11-FIS-U23-23.9 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 148): Física nuclear. 23.9. Ejemplifica aplicaciones tecnológcas nucleares no eléctricas.",
+     "G11-FIS-U14-14.1 (grado 11, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 84): Efecto Doppler electromagnético. 14.1. Calcula la rapidez de acercamiento o alejamiento de una fuente a partir del corrimiento Doppler de su radiación electromagnética."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "AU-FIS-au_ss_fis-p002-17 [AU_SeniorSecondary_Physics_v8.4_U1-3.html p. 2, SV 10–11, especializacion]: La radiación alfa, beta y gamma posee suficiente energía para ionizar átomos."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_basic-p021-05 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 21, SV 7–9, nucleo]: Identificar las fuentes de radiación ionizante natural y explicar los peligros asociados a ella."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": true,
+      "ejemplo": "ENG-FIS-eng_gcse_comb-p033-08 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 33, SV 8–9, nucleo]: Dar ejemplos de usos prácticos de ondas electromagnéticas y describir los efectos peligrosos de las ondas ultravioleta, rayos X y rayos gamma en tejidos humanos"
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p045-14 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 45, SV 9–11, especializacion]: Investigar el uso médico relacionado con principios físicos, como el endoscopio, el transductor, el escaneo de rayos X y la tomografía computarizada."
+     },
+     "JP": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": false,
+      "ejemplo": "JP-FIS-jp_25-p110-03 [JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 110, SV 9–10, nucleo_parcial]: Tratar la conversión a energía eléctrica y la fisión nuclear, incluyendo tipos y propiedades de radiación, sustancias radiactivas y el uso de la energía nuclear"
+     },
+     "ON": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "ON-FIS-on_sph3u-p191-01 [ON_Science_Grades11-12_2008.pdf p. 191, SV 10–10, especializacion]: Comparar características (masa, carga, velocidad, poder de penetración) y precauciones de seguridad de partículas alfa, beta y rayos gamma."
+     },
+     "SG": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_h1_fis-p018-03 [SG_ALevel_H1_Physics_8867_2027.pdf p. 18, SV 11–11, nucleo_parcial]: Comprender el origen y la importancia de la radiación de fondo."
+     },
+     "TW": {
+      "primer_grado_nucleo": 9.5,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_req_contenido-p039-11 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 39, SV 9–10, nucleo]: Identificar las aplicaciones cotidianas de las ondas electromagnéticas, desde ondas de radio de baja frecuencia hasta rayos gamma de alta frecuencia."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/radiacion-ionizante-aplicaciones",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  },
+  {
+   "tipo": "clase_incierta",
+   "titulo": "Reflexión interna total (CON:fisica/reflexion-interna-total, 9.°–11.°)",
+   "pregunta": "Las dos lecturas dan clases distintas y una afirma un desajuste. Verifica en la fuente y decide la clase con la regla del tramo 9.°–11.° (specs/11 («Cómo leer las clases» de internacional/README.md) y specs/12 («Método v2»)). En el umbral, gana la clase que no afirma un desajuste («solo se afirma lo que coincide»).",
+   "datos": {
+    "tramo": "9_11",
+    "concepto": {
+     "id": "CON:fisica/reflexion-interna-total",
+     "nombre": "Reflexión interna total",
+     "definicion": "Si la luz pasa a un medio menos refringente con ángulo mayor al crítico, se refleja totalmente; base de la fibra óptica.",
+     "asignatura": "fisica"
+    },
+    "lecturas": {
+     "amplia": "retomado",
+     "estricta": "solo_especializacion"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 8,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 9.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G10-FIS-U16-16.8 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 119): Óptica geométrica. 16.8. Mide directamente los ángulos de incidencia, refracción y reflexión.",
+     "G10-FIS-U16-16.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 120): Óptica geométrica. 16.9. Resuelve problemas que involucran reflexión, refracción y reflexión interna total.",
+     "G08-CIE-U1-1.9 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 1 - Mecánica», fila 11): Movimiento en una y dos dimensiones. 1.9. Resuelve problemas acerca del movimiento parabólico empleando interpretación de gráficas.",
+     "G10-FIS-U16-16.11 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 122): Óptica geométrica. 16.11. Determina la posición y el tamaño de una imagen formada por refracción y reflexión.",
+     "G10-FIS-U16-16.12 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 123): Óptica geométrica. 16.12. Describe aplicaciones tecnológicas de las propiedades de las imágenes.",
+     "G10-FIS-U16-16.6 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 117): Óptica física. 16.6. Describe las aplicaciones tecnológicas de la dispersión y descomposición de la luz."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "EE-FIS-ee_gym_ele-p032-08 [EE_Gumnaasium_Lisa8_Valikkursused_2023_et.pdf p. 32, SV 10–11, especializacion]: Comprender dispositivos ópticos, propagación de la luz, reflexión total, guías de luz, resolución de sistemas ópticos y luz polarizada."
+     },
+     "HK": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "HK-FIS-hk_fis-p042-10 [HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf p. 42, SV 9–11, especializacion]: Reconocer la ocurrencia de la reflexión interna total de la luz y sus aplicaciones cotidianas."
+     },
+     "ON": {
+      "primer_grado_nucleo": 9.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-FIS-on_snc2d-p083-06 [ON_Science_Grades9-10_2008.pdf p. 83, SV 9–9, nucleo]: Explicar las condiciones para la reflexión/refracción parcial y la reflexión interna total en lentes, y describirlas usando diagramas de rayos etiquetados."
+     },
+     "SG": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "SG-FIS-sg_k323-p020-01 [SG_SEC_G3_Physics_K323_2027.pdf p. 20, SV 9–10, especializacion]: Aplicar la reflexión interna total al uso de fibras ópticas en telecomunicaciones y medicina, indicando sus ventajas."
+     },
+     "TW": {
+      "primer_grado_nucleo": null,
+      "en_especializacion": true,
+      "ejemplo": "TW-FIS-tw_ele-p051-14 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 51, SV 10–11, especializacion]: Aplicar la ley de Snell para la refracción y explicar la reflexión total interna cuando la luz pasa a un medio menos denso superando el ángulo crítico."
+     }
+    }
+   },
+   "id": "INC:9_11:CON:fisica/reflexion-interna-total",
+   "opciones": [
+    "retomado",
+    "no_retomado",
+    "previo",
+    "solo_especializacion",
+    "alineado",
+    "tardio",
+    "adelantado",
+    "sin_referente",
+    "faltante",
+    "no_aplica"
+   ]
+  }
+ ]
+}

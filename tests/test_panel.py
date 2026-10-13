@@ -143,7 +143,11 @@ def test_los_inciertos_son_expedientes_del_experto_de_la_disciplina():
     """Cada concepto incierto sin revisión es un expediente del experto de su disciplina (puede no haber ninguno: desde
     el 2026-10-13 todos están resueltos por el panel o por decisión delegada)."""
     inc = panel._exp_inciertos()
-    pendientes = [c for c, f in panel._contraste("2_8").items() if f["clase"] == "incierto" and not f.get("revision")]
-    assert sorted(i.removeprefix("INC:") for i in inc) == sorted(pendientes)
+    pendientes = [f"INC:{c}" for c, f in panel._contraste("2_8").items()
+                  if f["clase"] == "incierto" and not f.get("revision")]
+    pendientes += [f"INC:9_11:{c}" for c, f in panel._contraste("9_11").items()
+                   if f["clase"] == "incierto" and not f.get("revision")]
+    assert sorted(inc) == sorted(pendientes)
+    assert all(x["datos"]["tramo"] == ("9_11" if i.startswith("INC:9_11:") else "2_8") for i, x in inc.items())
     assert all(len(x["roles"]) == 1 and x["roles"][0].startswith("experto-") for x in inc.values())
     assert all(x["datos"]["lecturas"]["amplia"] != x["datos"]["lecturas"]["estricta"] for x in inc.values())
