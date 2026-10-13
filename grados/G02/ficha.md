@@ -6,34 +6,34 @@
 
 | Asignatura | Temas |
 |---|---|
-| Biología | 27 |
+| Biología | 26 |
 | Ciencias de la Tierra y del Espacio | 11 |
-| Física | 20 |
-| Química | 9 |
+| Física | 19 |
+| Química | 10 |
 
-- **68 conceptos**: 67 nuevos en este grado, 0 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
-- Objetivos de marco cubiertos: T4_27 25.
-- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 163.
+- **69 conceptos**: 68 nuevos en este grado, 0 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- Objetivos de marco cubiertos: T4_27 24.
+- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 157.
 
 ## Conceptos más trabajados
 
 | Concepto | Asignatura | Temas |
 |---|---|---|
 | Plantas y animales útiles al ser humano | Biología | 5 |
-| Hábitat y ecosistemas comunes | Biología | 4 |
 | Necesidades de los seres vivos | Biología | 4 |
 | La energía y sus usos | Física | 4 |
 | Propiedades físicas de los materiales | Química | 4 |
 | Clasificación de seres vivos por sus rasgos | Biología | 3 |
 | Contagio y prevención de enfermedades | Biología | 3 |
+| Hábitat y ecosistemas comunes | Biología | 3 |
 | Sostenibilidad de la biosfera | Biología | 3 |
 | Conservación de recursos, residuos y sostenibilidad | Ciencias de la Tierra y del Espacio | 3 |
 | Formas de energía | Física | 3 |
 | Medición de magnitudes con instrumentos | Física | 3 |
 | Movimiento, reposo y tipos de trayectoria | Física | 3 |
-| Transformaciones de la energía | Física | 3 |
-| Adaptaciones estructurales | Biología | 2 |
 | Hábitos de vida saludable | Biología | 2 |
+| Impacto humano en los ecosistemas | Biología | 2 |
+| Amenazas naturales geológicas e hidrometeorológicas | Ciencias de la Tierra y del Espacio | 2 |
 
 ## Bloques temáticos del grado
 
@@ -41,13 +41,13 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Seres vivos, su entorno y su cuidado | 13 | 17 | Biología | 4. Seres vivos.; 5. Objetos técnicos.; 6. Ambiente y salud. |
-| Materiales, sus propiedades y transformaciones | 10 | 9 | Química | 1. Materia. |
+| Seres vivos, su entorno y su cuidado | 14 | 16 | Biología | 4. Seres vivos.; 5. Objetos técnicos.; 6. Ambiente y salud. |
+| Materiales, sus propiedades y transformaciones | 10 | 10 | Química | 1. Materia.; 1.Materia |
 | Clasificar seres vivos por sus características | 8 | 7 | Biología | 4. Seres vivos. |
 | Luz, sombras, día, noche y estaciones | 8 | 9 | Ciencias de la Tierra y del Espacio, Física | 3. El movimiento; 2. Energía. |
 | La energía en la vida cotidiana | 7 | 6 | Física, Ciencias de la Tierra y del Espacio | 2. Energía. |
 | Higiene, alimentos y prevención de enfermedades | 4 | 3 | Biología | 6. Ambiente y salud. |
-| Transformaciones y fuentes de energía | 4 | 4 | Física, Ciencias de la Tierra y del Espacio | 2. Energía.; 5. Objetos técnicos. |
+| Transformaciones y fuentes de energía | 4 | 3 | Física, Ciencias de la Tierra y del Espacio | 5. Objetos técnicos.; 2. Energía. |
 | Medir magnitudes y resistencia de estructuras | 4 | 4 | Física | 1. Materia.; 5. Objetos técnicos. |
 | Recursos, residuos y cuidado del ambiente | 3 | 3 | Ciencias de la Tierra y del Espacio, Biología | 6. Ambiente y salud.; 2. Energía. |
 | Amenazas naturales y prevención | 3 | 3 | Ciencias de la Tierra y del Espacio | 6. Ambiente y salud. |
@@ -77,8 +77,8 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Diseñar y evaluar soluciones | 5 |
 | Trabajar con seguridad y ética | 5 |
 | Medir con instrumentos y unidades | 4 |
-| Desarrollar y usar modelos | 2 |
 | Formular hipótesis y predicciones | 2 |
+| Desarrollar y usar modelos | 1 |
 | Evaluar implicaciones y tomar decisiones informadas | 1 |
 | Interpretar datos y sacar conclusiones | 1 |
 
@@ -90,6 +90,8 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 |---|---|---|---|---|
 | Energía geotérmica | Convección del manto y energía interna de la Tierra | ausente | — | alta |
 | Masa y peso | Gravedad: atracción hacia la Tierra | ausente | — | alta |
+| Agricultura y seguridad alimentaria | Biotecnología vegetal y agroindustria | posterior | 6 | media |
+| Agricultura y seguridad alimentaria | Uso del suelo y su degradación | posterior | 4 | media |
 | Inmunidad activa, pasiva y vacunas | Sistema inmunitario | posterior | 9 | alta |
 | Amenazas naturales geológicas e hidrometeorológicas | Ciclones tropicales y tormentas | posterior | 4 | media |
 | Sismos y fallas geológicas | Límites de placas: convergentes, divergentes y transformantes | posterior | 5 | media |
@@ -103,7 +105,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Rapidez y velocidad | Posición, desplazamiento y trayectoria | posterior | 5 | alta |
 | Reacción química y sus evidencias | Cambios físicos y químicos | posterior | 3 | alta |
 
-Además, 54 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 55 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 

@@ -50,7 +50,7 @@ def test_alineacion_preparar_y_unir(tmp_path, monkeypatch):
     from goes_science_kg import alineacion
 
     monkeypatch.setattr(alineacion, "DIR", str(tmp_path))
-    lotes = alineacion.preparar_bachillerato(_catalogo(), "prueba")
+    lotes = alineacion.preparar_bachillerato(_catalogo(), "prueba", solo_pendientes=False)
     assert lotes
     for p in sorted((tmp_path / "lotes").glob("lote_*.json")):
         lote = json.loads(p.read_text(encoding="utf-8"))
@@ -66,7 +66,7 @@ def test_alineacion_rechaza_codigos_inventados(tmp_path, monkeypatch):
     from goes_science_kg import alineacion
 
     monkeypatch.setattr(alineacion, "DIR", str(tmp_path))
-    alineacion.preparar_bachillerato(_catalogo(), "prueba")
+    alineacion.preparar_bachillerato(_catalogo(), "prueba", solo_pendientes=False)
     for p in (tmp_path / "lotes").glob("lote_*.json"):
         items = json.loads(p.read_text(encoding="utf-8"))["items"]
         salida = [{"id": i["id"], "obj1": "INVENTADO", "confianza": "alta", "justificacion": "x"} for i in items]

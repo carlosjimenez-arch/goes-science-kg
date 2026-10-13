@@ -46,7 +46,8 @@ def test_exportar_lista_todas_las_decisiones(copias):
     assert tipos == set(rd.ARCHIVOS)
     # ninguna está confirmada por el MINED: pendientes o con dictamen del panel de expertos IA (spec 14)
     assert all(r["estado"] == "pendiente de confirmar" or r["estado"].startswith("dictamen del panel") for r in filas)
-    assert len(list(csv.DictReader(open(asignaciones, encoding="utf-8-sig")))) == 85
+    # 86: 85 de la V2 + G05-CIE-U3-3.10 en el etiquetado de la V3 (spec 15)
+    assert len(list(csv.DictReader(open(asignaciones, encoding="utf-8-sig")))) == 86
 
 
 def test_importar_aceptar_rechazar_y_cambiar(copias):

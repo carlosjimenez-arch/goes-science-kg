@@ -1,26 +1,34 @@
-# Mallas curriculares del MINED vigentes: Versión 2 («Mallas sugeridas/Versión 2», entregada el 2026-10-07).
-# Fuente única: data/fuentes/mined/Mallas sugeridas v2/  (SOLO LECTURA)
+# Mallas curriculares del MINED vigentes: Versión 3 (entregada el 2026-10-13; spec 15).
+# Fuente única: data/fuentes/mined/Mallas sugeridas v3/  (SOLO LECTURA)
 #
-# La V2 contiene los 1.260 temas de la V1 con el mismo id, hoja, fila y texto (contenido, procedimental e
-# indicador; lo verifica tests/test_mallas.py) y agrega 47 temas en 2.°–9.°. Solo cambian las columnas de
-# clasificación TIMSS/PISA que llena el MINED. La V1 se conserva en config/mallas_v1.yaml como referencia.
+# Frente a la V2, la V3 tiene 819 temas idénticos, 21 parecidos, 75 ampliados (fusionan o amplían uno de la V2) y 20
+# nuevos; absorbe 136 temas de la V2 en otros y mueve 5 de grado. En 10.°–11.° consolida los temas en clases. La V2
+# queda en config/mallas_v2.yaml como referencia (y la V1 en config/mallas_v1.yaml).
 #
-# El archivo de cada malla se fija AQUÍ de forma explícita. No se elige por fecha de
-# modificación: git no conserva esas fechas y, tras un clone, la elección sería arbitraria.
-# `legado`: nombre del mismo libro en la V1. Las clasificaciones previas (reportes/cobertura_curricular) usan
-# ese nombre como llave (archivo, hoja, fila); ingesta/legado.py las traduce al nombre vigente.
-directorio: data/fuentes/mined/Mallas sugeridas v2
+# Ids estables: un tema de la V3 idéntico o parecido a uno de la V2 conserva el id de la V2 (así las etiquetas,
+# revisiones, la capa pedagógica, los dictámenes y las citas siguen apuntando al mismo tema). Un tema nuevo toma su id
+# por posición y, si ese id ya existió en la V2 para otro tema, lleva el sufijo «-v3». La correspondencia la escribe
+# `gskg malla-correspondencia` en `correspondencia` (determinista, versionada) y la lee `extraer()`.
+#
+# El archivo de cada malla se fija AQUÍ de forma explícita (no por fecha de modificación).
+directorio: data/fuentes/mined/Mallas sugeridas v3
+anterior: mallas_v2
+version: V3   # prefijo de la llave de los temas nuevos («V3/<archivo>»), que no chocan con las de la V2
+correspondencia: data/interim/mallas/v2_a_v3.json
+similitud_minima: 0.75   # «parecido»: procedimental con al menos esta similitud con un tema de la V2 del mismo grado
+contencion_minima: 0.8   # «ampliado» y «absorbido»: parte de las raíces del tema de la V2 que están en el de la V3
 
 archivos:
-  - {archivo: Matriz_Ciencias_2do_Grado_U1_U6.xlsx, legado: Matriz_Ciencias_2do_Grado_U1_U6_3.xlsx, grado: 2, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_3er_Grado_U1_U6.xlsx, grado: 3, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_4to_Grado_U1_U6.xlsx, grado: 4, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_5to_Grado_U1_U6.xlsx, grado: 5, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_6to_Grado_U1_U6.xlsx, grado: 6, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, grado: 7, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, legado: Matriz_Ciencias_8vo_Grado_U1_U7.xlsx, grado: 8, asignatura: ciencias}
-  - {archivo: Matriz_Ciencias_9no_Grado_U1_U12.xlsx, legado: Matriz_Ciencias_9no_Grado_U1_U7.xlsx, grado: 9, asignatura: ciencias}
-  # Bachillerato: un libro por asignatura; el grado sale del nombre de la hoja («Física 10.°»).
+  - {archivo: "Matriz_Ciencias_2do_Grado_U1_U6 - V2.xlsx", grado: 2, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_3er_Grado_U1_U6 V2.xlsx, grado: 3, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_4to_Grado_U1_U6 V2.xlsx, grado: 4, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_5to_Grado_U1_U6 V2.xlsx, grado: 5, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_6to_Grado_U1_U6 V2.xlsx, grado: 6, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_7mo_Grado_U1_U6 V2.xlsx, grado: 7, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_8vo_Grado_U1_U10 V2.xlsx, grado: 8, asignatura: ciencias}
+  - {archivo: "Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx", grado: 9, asignatura: ciencias}
+  # Bachillerato: un libro por asignatura; el grado sale del nombre de la hoja («Física 10.°»). Química trae además la
+  # columna «N° Clase».
   - {archivo: Matriz_Bachillerato_Fisica_10_11.xlsx, asignatura: fisica}
   - {archivo: Matriz_Bachillerato_Quimica_10_11.xlsx, asignatura: quimica}
   - {archivo: Matriz_Bachillerato_Biologia_10_11.xlsx, asignatura: biologia}

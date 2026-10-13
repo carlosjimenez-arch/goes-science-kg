@@ -1,44 +1,78 @@
 {
  "grado": 9,
- "temas": 102,
+ "temas": 93,
  "temas_por_asignatura": {
-  "fisica": 37,
-  "biologia": 19,
-  "quimica": 20,
+  "fisica": 32,
+  "biologia": 23,
+  "quimica": 12,
   "ciencias_tierra_espacio": 26
  },
- "conceptos": 111,
- "conceptos_nuevos": 45,
- "conceptos_retomados": 65,
+ "conceptos": 119,
+ "conceptos_nuevos": 48,
+ "conceptos_retomados": 70,
  "conceptos_anticipados": 1,
  "practicas": {
+  "PRAC:interpretar-datos-y-concluir": 13,
   "PRAC:usar-matematicas-en-ciencias": 11,
-  "PRAC:interpretar-datos-y-concluir": 9,
-  "PRAC:desarrollar-y-usar-modelos": 7,
+  "PRAC:desarrollar-y-usar-modelos": 8,
   "PRAC:construir-explicaciones-con-evidencia": 6,
-  "PRAC:controlar-variables": 5,
+  "PRAC:medir-con-instrumentos": 5,
+  "PRAC:controlar-variables": 4,
   "PRAC:disenar-y-evaluar-soluciones": 4,
   "PRAC:evaluar-fuentes-de-informacion": 4,
-  "PRAC:medir-con-instrumentos": 4,
+  "PRAC:observar-y-registrar": 4,
   "PRAC:transformar-representaciones": 4,
   "PRAC:argumentar-con-evidencia": 3,
   "PRAC:repetir-mediciones-y-estimar-error": 3,
-  "PRAC:evaluar-afirmaciones-y-argumentos": 2,
-  "PRAC:evaluar-implicaciones-y-decidir": 2,
-  "PRAC:formular-hipotesis-y-predicciones": 2,
-  "PRAC:observar-y-registrar": 2,
   "PRAC:planificar-investigaciones": 2,
-  "PRAC:trabajar-con-seguridad-y-etica": 2,
   "PRAC:comunicar-resultados": 1,
+  "PRAC:evaluar-afirmaciones-y-argumentos": 1,
+  "PRAC:formular-hipotesis-y-predicciones": 1,
   "PRAC:limites-de-la-ciencia": 1,
   "PRAC:representar-datos": 1,
+  "PRAC:trabajar-con-seguridad-y-etica": 1,
   "PRAC:usar-pensamiento-computacional-y-simulaciones": 1
  },
  "objetivos_marco": {
-  "PISA25": 37,
+  "PISA25": 35,
   "T8_27": 34
  },
  "anclajes": [
+  {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/adn-y-cromosomas",
+   "estado": "ausente",
+   "primer_grado_sv": null,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/reproduccion-de-plantas-con-flor",
+   "concepto": "CON:biologia/biotecnologia-vegetal",
+   "estado": "ausente",
+   "primer_grado_sv": null,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/celula-animal-y-vegetal",
+   "estado": "ausente",
+   "primer_grado_sv": null,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/celula-procariota-y-eucariota",
+   "estado": "ausente",
+   "primer_grado_sv": null,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+   "concepto": "CON:biologia/membrana-celular",
+   "estado": "ausente",
+   "primer_grado_sv": null,
+   "confianza": "alta"
+  },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
    "concepto": "CON:ciencias_tierra_espacio/tectonica-de-placas",
@@ -61,8 +95,36 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/mutaciones",
+   "concepto": "CON:biologia/genetica-humana-y-enfermedades-hereditarias",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/sistema-inmunitario",
    "concepto": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/mutaciones",
+   "concepto": "CON:biologia/mecanismos-de-microevolucion",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/seleccion-natural",
+   "concepto": "CON:biologia/mecanismos-de-microevolucion",
+   "estado": "mismo_grado",
+   "primer_grado_sv": 9,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/seleccion-natural",
+   "concepto": "CON:biologia/resistencia-a-antibioticos",
    "estado": "mismo_grado",
    "primer_grado_sv": 9,
    "confianza": "alta"
@@ -201,10 +263,24 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:quimica/neutralizacion",
-   "concepto": "CON:quimica/valoracion-acido-base",
-   "estado": "mismo_grado",
-   "primer_grado_sv": 9,
+   "prerrequisito": "CON:biologia/herencia-de-rasgos",
+   "concepto": "CON:biologia/adn-y-cromosomas",
+   "estado": "posterior",
+   "primer_grado_sv": 10,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/ingenieria-genetica",
+   "concepto": "CON:biologia/biotecnologia-vegetal",
+   "estado": "posterior",
+   "primer_grado_sv": 11,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/requerimientos-de-la-celula",
+   "concepto": "CON:biologia/respiracion-celular",
+   "estado": "posterior",
+   "primer_grado_sv": 10,
    "confianza": "alta"
   },
   {
@@ -247,20 +323,6 @@
    "concepto": "CON:fisica/primera-ley-termodinamica",
    "estado": "posterior",
    "primer_grado_sv": 10,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
-   "concepto": "CON:biologia/celula-animal-y-vegetal",
-   "estado": "previo",
-   "primer_grado_sv": 6,
-   "confianza": "alta"
-  },
-  {
-   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
-   "concepto": "CON:biologia/celula-procariota-y-eucariota",
-   "estado": "previo",
-   "primer_grado_sv": 6,
    "confianza": "alta"
   },
   {
@@ -418,6 +480,20 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/adn-y-cromosomas",
+   "concepto": "CON:biologia/genes-y-alelos",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/herencia-mendeliana",
+   "concepto": "CON:biologia/genetica-humana-y-enfermedades-hereditarias",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/genes-y-alelos",
    "concepto": "CON:biologia/genotipo-y-fenotipo",
    "estado": "previo",
@@ -432,11 +508,18 @@
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:biologia/grupos-de-alimentos-y-dieta-balanceada",
-   "concepto": "CON:biologia/habitos-de-vida-saludable",
+   "prerrequisito": "CON:biologia/genotipo-y-fenotipo",
+   "concepto": "CON:biologia/herencia-mendeliana",
    "estado": "previo",
-   "primer_grado_sv": 2,
-   "confianza": "media"
+   "primer_grado_sv": 7,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/meiosis",
+   "concepto": "CON:biologia/herencia-mendeliana",
+   "estado": "previo",
+   "primer_grado_sv": 6,
+   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:biologia/sistema-nervioso",
@@ -453,18 +536,18 @@
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:biologia/sintesis-de-proteinas",
-   "concepto": "CON:biologia/ingenieria-genetica",
-   "estado": "previo",
-   "primer_grado_sv": 7,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:biologia/contagio-y-prevencion-de-enfermedades",
    "concepto": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/acervo-genico-y-frecuencias-alelicas",
+   "concepto": "CON:biologia/mecanismos-de-microevolucion",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:biologia/mitosis-y-ciclo-celular",
@@ -488,18 +571,18 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
-   "concepto": "CON:biologia/membrana-celular",
-   "estado": "previo",
-   "primer_grado_sv": 6,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:biologia/adn-y-cromosomas",
    "concepto": "CON:biologia/mitosis-y-ciclo-celular",
    "estado": "previo",
    "primer_grado_sv": 6,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/sintesis-de-proteinas",
+   "concepto": "CON:biologia/mutaciones",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:biologia/replicacion-del-adn",
@@ -523,25 +606,25 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:biologia/ciclo-de-vida-de-los-animales",
-   "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
+   "prerrequisito": "CON:biologia/enzimas",
+   "concepto": "CON:biologia/replicacion-del-adn",
    "estado": "previo",
-   "primer_grado_sv": 3,
+   "primer_grado_sv": 6,
    "confianza": "media"
   },
   {
-   "prerrequisito": "CON:biologia/estructuras-del-cuerpo-y-su-funcion",
-   "concepto": "CON:biologia/reproduccion-humana-y-pubertad",
-   "estado": "previo",
-   "primer_grado_sv": 2,
-   "confianza": "media"
-  },
-  {
-   "prerrequisito": "CON:biologia/requerimientos-de-la-celula",
-   "concepto": "CON:biologia/respiracion-celular",
+   "prerrequisito": "CON:biologia/estructura-del-adn",
+   "concepto": "CON:biologia/replicacion-del-adn",
    "estado": "previo",
    "primer_grado_sv": 6,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/tipos-de-patogenos",
+   "concepto": "CON:biologia/resistencia-a-antibioticos",
+   "estado": "previo",
+   "primer_grado_sv": 3,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:quimica/reaccion-quimica-y-evidencias",
@@ -549,6 +632,34 @@
    "estado": "previo",
    "primer_grado_sv": 2,
    "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/variacion-genetica",
+   "concepto": "CON:biologia/seleccion-artificial",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/adaptaciones-estructurales",
+   "concepto": "CON:biologia/seleccion-natural",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/competencia-por-recursos",
+   "concepto": "CON:biologia/seleccion-natural",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/variacion-genetica",
+   "concepto": "CON:biologia/seleccion-natural",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
   },
   {
    "prerrequisito": "CON:biologia/estructura-del-adn",
@@ -1291,6 +1402,13 @@
    "estado": "previo",
    "primer_grado_sv": 8,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/neutralizacion",
+   "concepto": "CON:quimica/valoracion-acido-base",
+   "estado": "previo",
+   "primer_grado_sv": 7,
+   "confianza": "alta"
   }
  ],
  "faltantes_por_edad": [
@@ -1305,7 +1423,7 @@
   },
   {
    "concepto": "CON:biologia/adaptaciones-conductuales",
-   "sv": 11,
+   "sv": null,
    "paises": {
     "AU": 4.0,
     "CO": 2,
@@ -1333,12 +1451,33 @@
    }
   },
   {
+   "concepto": "CON:biologia/reproduccion-de-plantas-con-flor",
+   "sv": null,
+   "paises": {
+    "AU": 8.0,
+    "ENG": 2,
+    "JP": 4.0,
+    "SG": 5.0,
+    "UY": 3.0
+   }
+  },
+  {
    "concepto": "CON:fisica/calor-vs-temperatura",
    "sv": 10,
    "paises": {
     "ENG": 6.0,
     "SG": 4.0,
     "UY": 3.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/herencia-de-rasgos",
+   "sv": 10,
+   "paises": {
+    "CO": 2,
+    "ENG": 4.0,
+    "JP": 8.0,
+    "SG": 5.0
    }
   },
   {
@@ -1366,6 +1505,16 @@
     "ENG": 8.5,
     "JP": 5.0,
     "SG": 5.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/estructuras-celulares-basicas",
+   "sv": null,
+   "paises": {
+    "AU": 7.0,
+    "CO": 6.0,
+    "ENG": 6.0,
+    "UY": 6.0
    }
   },
   {
@@ -1463,7 +1612,7 @@
   },
   {
    "concepto": "CON:quimica/enlace-quimico",
-   "sv": 10,
+   "sv": null,
    "paises": {
     "CO": 6.5,
     "UY": 9.0
@@ -1491,7 +1640,7 @@
   },
   {
    "concepto": "CON:quimica/electrolisis",
-   "sv": 10,
+   "sv": 11,
    "paises": {
     "ENG": 8.5,
     "JP": 8.0,
@@ -1512,6 +1661,15 @@
    "paises": {
     "CO": 8.5,
     "ENG": 8.5
+   }
+  },
+  {
+   "concepto": "CON:biologia/ingenieria-genetica",
+   "sv": 11,
+   "paises": {
+    "CO": 8.5,
+    "ENG": 8.5,
+    "UY": 6.0
    }
   },
   {
@@ -1547,7 +1705,7 @@
    }
   }
  ],
- "referentes_paises": 191,
+ "referentes_paises": 187,
  "top_conceptos": [
   [
    "CON:ciencias_tierra_espacio/propiedades-del-agua-de-mar",
@@ -1562,23 +1720,7 @@
    4
   ],
   [
-   "CON:fisica/campo-magnetico",
-   4
-  ],
-  [
-   "CON:fisica/principio-bernoulli",
-   4
-  ],
-  [
    "CON:fisica/segunda-ley-maquinas-termicas",
-   4
-  ],
-  [
-   "CON:quimica/acidos-y-bases-propiedades",
-   4
-  ],
-  [
-   "CON:quimica/constante-de-equilibrio",
    4
   ],
   [
@@ -1590,6 +1732,10 @@
    3
   ],
   [
+   "CON:fisica/campo-magnetico",
+   3
+  ],
+  [
    "CON:fisica/fuerza-sobre-corrientes-motor",
    3
   ],
@@ -1598,7 +1744,7 @@
    3
   ],
   [
-   "CON:fisica/principio-pascal",
+   "CON:fisica/principio-bernoulli",
    3
   ],
   [
@@ -1606,7 +1752,19 @@
    3
   ],
   [
-   "CON:fisica/viscosidad-regimen-flujo",
+   "CON:quimica/acidos-y-bases-propiedades",
+   3
+  ],
+  [
+   "CON:quimica/constante-de-equilibrio",
+   3
+  ],
+  [
+   "CON:quimica/equilibrio-dinamico",
+   3
+  ],
+  [
+   "CON:quimica/escala-de-ph",
    3
   ]
  ]

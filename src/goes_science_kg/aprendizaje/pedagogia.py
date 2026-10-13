@@ -57,16 +57,26 @@ class Pedagogia:
     actividades: dict[str, dict] = field(default_factory=dict)
     dificultades: dict[str, dict] = field(default_factory=dict)
     microtemas: dict[str, dict] = field(default_factory=dict)
+    historico: dict[str, dict] = field(default_factory=dict)   # actividades cuyo objetivo ya no está en la malla
 
     @classmethod
-    def cargar(cls, base: Path | None = None) -> Pedagogia:
+    def cargar(cls, base: Path | None = None, vigente: bool = True) -> Pedagogia:
+        """La capa leída de sus archivos. Con `vigente` (lo que usa el tutor), los objetivos de cada actividad se
+        traducen a la malla vigente (spec 15: un tema que la V3 fusionó se lee en el que lo absorbió) y las
+        actividades sin ningún objetivo vigente pasan a `historico`. Sin `vigente`, tal cual (para reescribirla)."""
         d = base or directorio()
 
         def leer(nombre: str) -> dict[str, dict]:
             p = d / nombre
             return {x["id"]: x for x in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
-        return cls(leer(ARCHIVOS["actividad"]), leer(ARCHIVOS["dificultad"]), leer(ARCHIVOS["microtema"]))
+        actividades = leer(ARCHIVOS["actividad"])
+        historico: dict[str, dict] = {}
+        if vigente:
+            traducidas = {i: _a_la_malla_vigente(a) for i, a in actividades.items()}
+            actividades = {i: a for i, a in traducidas.items() if a["objetivos"]}
+            historico = {i: a for i, a in traducidas.items() if not a["objetivos"]}
+        return cls(actividades, leer(ARCHIVOS["dificultad"]), leer(ARCHIVOS["microtema"]), historico)
 
     def con(self, elementos: list[dict]) -> Pedagogia:
         """Una copia con elementos agregados (para validar una salida antes de unirla)."""
@@ -96,18 +106,35 @@ class Pedagogia:
         return self.dificultades.get(dif) if dif else None
 
 
+def _a_la_malla_vigente(a: dict) -> dict:
+    """La actividad con sus temas (objetivos y «evalua») en la malla vigente; guarda los originales si cambian."""
+    from goes_science_kg.ingesta.mallas import vigente_de
+
+    def traducir(ids: list[str]) -> list[str]:
+        return list(dict.fromkeys(v for x in ids if (v := vigente_de(x) if x.startswith("TEMA:") else x)))
+
+    objetivos, evalua = traducir(a.get("objetivos") or []), traducir(a.get("evalua") or [])
+    if objetivos == a.get("objetivos") and evalua == a.get("evalua"):
+        return a
+    return {**a, "objetivos": objetivos, "evalua": evalua, "objetivos_originales": a.get("objetivos")}
+
+
 # -- validación ---------------------------------------------------------------------------------------------------
 def _palabras(texto: str | None) -> int:
     return len((texto or "").split())
 
 
 def _errores_actividad(a: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
+    from goes_science_kg.ingesta.mallas import vigente_de
+
     e = []
     if not a["id"].startswith("ACT:"):
         e.append("id sin prefijo ACT:")
-    if not a.get("objetivos") or any(t not in nav.por_id for t in a["objetivos"]):
+    # Los objetivos se leen en la malla vigente: un tema que la V3 fusionó vale por el que lo absorbió (spec 15).
+    if not a.get("objetivos") or any(vigente_de(t) not in nav.por_id for t in a["objetivos"]):
         e.append("toda actividad sirve a ≥1 objetivo curricular existente (TEMA:…)")
-    if not a.get("evalua") or any(x not in nav.por_id for x in a["evalua"]):
+    if not a.get("evalua") or any((vigente_de(x) if x.startswith("TEMA:") else x) not in nav.por_id
+                                  for x in a["evalua"]):
         e.append(f"evalua con ids inexistentes {a.get('evalua')}")
     for campo, validos in (("rol", ROLES), ("habilidad", HABILIDADES), ("formato", FORMATOS), ("estado", ESTADOS)):
         if a.get(campo) not in validos:
@@ -347,7 +374,7 @@ def unir(base: Path | None = None) -> dict:
     """Valida cada salida de lote y agrega sus elementos a la capa (sin sobrescribir los existentes). Lanza ValueError
     si hay errores; devuelve los conteos por tipo."""
     d = base or directorio()
-    ped = Pedagogia.cargar(d)
+    ped = Pedagogia.cargar(d, vigente=False)   # se reescribe tal cual: no se traduce ni se pierde el histórico
     nuevos, errores = [], []
     for p_lote in sorted((d / "lotes").glob("lote_*.json")):
         p_sal = p_lote.with_name(p_lote.name.replace("lote_", "salida_", 1))

@@ -27,6 +27,14 @@ def temas() -> None:
     typer.echo(f"{len(ts)} temas → {relativa(out)}")
 
 
+@app.command("malla-correspondencia")
+def malla_correspondencia() -> None:
+    """Empareja la malla vigente (V3) con la anterior (V2) → data/interim/mallas/v2_a_v3.json (spec 15)."""
+    from goes_science_kg.ingesta.mallas import escribir_correspondencia
+
+    typer.echo(json.dumps(escribir_correspondencia(), ensure_ascii=False, indent=1))
+
+
 @grafo_app.command("construir")
 def grafo_construir() -> None:
     """Construye el grafo desde las fuentes y lo guarda en data/grafo/."""
@@ -97,12 +105,14 @@ def catalogo_acara() -> None:
 
 
 @alinear_app.command("preparar-bachillerato")
-def alinear_preparar(version: str = "auss-v1") -> None:
+def alinear_preparar(version: str = "auss-v1",
+                     todos: bool = typer.Option(False, "--todos", help="Rehace todos (si no, solo los pendientes)")
+                     ) -> None:
     """Lotes de Biología y Química 10.°–11.° contra AUSS (uno por asignatura y grado)."""
     from goes_science_kg.alineacion import preparar_bachillerato
     from goes_science_kg.ingesta.legado import catalogo_acara_senior
 
-    for p in preparar_bachillerato(catalogo_acara_senior(), version):
+    for p in preparar_bachillerato(catalogo_acara_senior(), version, solo_pendientes=not todos):
         typer.echo(f"→ {p}")
 
 
@@ -160,12 +170,16 @@ def conceptos_consolidar() -> None:
 @conceptos_app.command("preparar-etiquetado")
 def conceptos_preparar_etiquetado(
         todos: bool = typer.Option(False, "--todos", help="Rehace todos los lotes (si no, solo los temas pendientes)"),
+        v3: bool = typer.Option(False, "--v3", help="Re-etiqueta los temas nuevos, parecidos y ampliados de la V3"),
 ) -> None:
     """Lotes por asignatura y grado para etiquetar temas con conceptos y prácticas."""
     from goes_science_kg.conceptos import preparar_etiquetado
     from goes_science_kg.grafo.almacen import cargar
+    from goes_science_kg.ingesta.mallas import extraer
 
-    escritos = preparar_etiquetado(cargar()[0], solo_pendientes=not todos)
+    reetiquetar = frozenset(t.id for t in extraer() if t.origen in ("nuevo", "parecido", "ampliado")) if v3 else \
+        frozenset()
+    escritos = preparar_etiquetado(cargar()[0], solo_pendientes=not todos, reetiquetar=reetiquetar)
     for p in escritos:
         typer.echo(f"→ {p}")
     if not escritos:

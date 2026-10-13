@@ -126,8 +126,7 @@ class Constructor:
         objetivos de TIMSS, ACARA y PISA."""
         ct, cp, ca = legado.clasificacion_timss(), legado.clasificacion_pisa(), legado.clasificacion_auss()
         for t in temas:
-            llave = (t.archivo, t.hoja, t.fila)
-            timss, pisa, auss = ct.get(llave), cp.get(llave), ca.get(llave)
+            timss, pisa, auss = ct.get(t.llave), cp.get(t.llave), ca.get(t.llave)
             manual = asignacion_manual().get(t.id)
             asig, metodo = asignatura_de_tema(t.asignatura, timss, pisa, manual)
             revision = revisiones_temas().get(t.id, {})

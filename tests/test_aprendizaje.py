@@ -52,14 +52,16 @@ def test_bases_distinguen_lo_que_la_malla_ensena_despues(nav):
     assert pvt.profundidad == 1 and not pvt.antes_del_objetivo            # la malla la trabaja en el mismo tema
     assert por["CON:fisica/temperatura-medicion-escalas"].antes_del_objetivo
     assert all(b.estado_relacion == "propuesta_ia_pendiente" for b in por.values())   # nada se da por revisado
-    eq = {b.concepto: b for b in nav.bases("TEMA:G09-CIE-U3-3.6")}["CON:quimica/equilibrio-dinamico"]
+    # 9.° 3.5 de la V3 (id estable G09-CIE-U3-3.7: resolver problemas de la constante de equilibrio)
+    eq = {b.concepto: b for b in nav.bases("TEMA:G09-CIE-U3-3.7")}["CON:quimica/equilibrio-dinamico"]
     assert eq.antes_del_objetivo and eq.primer_tema == "TEMA:G09-CIE-U3-3.1"   # mismo grado, tema anterior
 
 
 def test_orden_de_la_malla():
-    assert antes_en_la_malla("TEMA:G09-CIE-U3-3.1", "TEMA:G09-CIE-U3-3.6")
+    assert antes_en_la_malla("TEMA:G09-CIE-U3-3.1", "TEMA:G09-CIE-U3-3.7")
     assert not antes_en_la_malla("TEMA:G09-CIE-U2-2.7", "TEMA:G09-CIE-U2-2.4")
-    assert not antes_en_la_malla("TEMA:G10-QUI-U1-1.1", "TEMA:G10-FIS-U2-2.1")   # asignaturas en paralelo
+    assert not antes_en_la_malla("TEMA:G10-QUI-U1-1.1", "TEMA:G10-FIS-U5-5.2")   # asignaturas en paralelo
+    assert not antes_en_la_malla("TEMA:G09-CIE-U3-3.1", "TEMA:G10-FIS-U1-1.1")   # ya no está en la malla (V3)
 
 
 def test_apoya_es_el_recorrido_inverso_de_bases(nav):

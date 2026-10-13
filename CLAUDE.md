@@ -20,7 +20,8 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
   `ficha.md`, `brechas/` y `propuesta/` se generan.
 - `config/`: reglas en YAML (mallas, asignaturas, marcos, referentes). Se cambian aquí, no en el código.
 - `src/goes_science_kg/`: el paquete (ver la tabla de módulos en la spec 01).
-- `data/fuentes/`: mallas del MINED y PDF externos. **SOLO LECTURA.**
+- `data/fuentes/`: mallas del MINED y PDF externos. **SOLO LECTURA.** La malla vigente es la V3 (2026-10-13, spec 15),
+  con ids estables: un tema que ya estaba en la V2 conserva su id.
 - `data/interim/`: intermedios, como lotes de IA y objetivos de países.
 - `data/grafo/`: el grafo (`nodos.jsonl`, `aristas.jsonl`, `manifest.json`). Se versiona.
 - `reportes/cobertura_curricular/`: trabajo previo, autocontenido. **No se modifica.** Sus `input/`,
@@ -73,6 +74,7 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 ## Comandos
 ```bash
 uv sync --extra dev --extra pdf --extra rag --extra api
+uv run gskg malla-correspondencia # malla vigente (V3) frente a la V2 → data/interim/mallas/v2_a_v3.json (spec 15)
 uv run gskg temas                 # mallas → data/interim/temas.json
 uv run gskg grafo construir       # grafo → data/grafo/ (falla si hay errores)
 uv run gskg grafo validar         # invariantes + avisos + métricas

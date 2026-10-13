@@ -16,7 +16,7 @@ from collections import Counter
 
 from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.ingesta import legado
-from goes_science_kg.ingesta.mallas import TemaMalla, extraer
+from goes_science_kg.ingesta.mallas import TemaMalla, extraer, por_id_con_anteriores
 
 DIR = "data/interim/alineaciones"
 CONFIANZAS = {"alta", "media", "baja"}
@@ -33,17 +33,32 @@ AREAS = {"Salud y enfermedad", "Recursos naturales", "Impactos ambientales y cam
 DEMANDAS = {"Baja", "Media", "Alta"}
 
 
-def preparar_bachillerato(catalogo: list[dict], version: str) -> list[str]:
-    """Un lote por asignatura y grado (Biología y Química de 10.° y 11.°)."""
+def _nombre_libre(d, base: str) -> str:
+    """El nombre del lote: el base, o «<base>_V3» (la versión de la malla vigente) si el base ya tiene salida, para no
+    reescribir un lote ya unido (spec 15)."""
+    if not (d / f"salida_{base}.json").exists():
+        return base
+    return f"{base}_{cargar('mallas').get('version', 'nueva')}"
+
+
+def preparar_bachillerato(catalogo: list[dict], version: str, solo_pendientes: bool = True) -> list[str]:
+    """Un lote por asignatura y grado (Biología y Química de 10.° y 11.°). Con solo_pendientes, únicamente los temas
+    sin clasificación ACARA (p. ej. los nuevos de la V3), en lotes que no reescriben los ya unidos."""
+    from goes_science_kg.ingesta.legado import clasificacion_auss
+
     d = ruta(DIR) / "lotes"
     d.mkdir(parents=True, exist_ok=True)
     escritos = []
     temas = [t for t in extraer() if t.asignatura in ("biologia", "quimica")]
+    if solo_pendientes:
+        hechas = clasificacion_auss()
+        temas = [t for t in temas if t.llave not in hechas]
     for (asig, grado) in sorted({(t.asignatura, t.grado) for t in temas}):
         objs = [{k: o[k] for k in ("codigo", "unidad", "eje", "tema", "objetivo")}
                 for o in catalogo if o["asignatura"] == asig]
         lote = {
-            "lote": f"AUSS_{asig}_G{grado}", "version": version, "marco": "AUSS",
+            "lote": _nombre_libre(d, f"AUSS_{asig}_G{grado}") if solo_pendientes else f"AUSS_{asig}_G{grado}",
+            "version": version, "marco": "AUSS",
             "instrucciones": "prompts/alinear_bachillerato_auss.md",
             "catalogo": objs,
             "items": [{k: getattr(t, k) for k in CAMPOS_TEMA} for t in temas
@@ -59,7 +74,7 @@ def unir(prefijo_lote: str, destino: str, catalogo: list[dict]) -> dict:
     """Valida y une las salidas de los subagentes. Lanza ValueError ante cualquier problema. Los códigos válidos son
     los del catálogo de cada lote (`catalogo` se conserva por compatibilidad de la CLI)."""
     d = ruta(DIR) / "lotes"
-    por_tema: dict[str, TemaMalla] = {t.id: t for t in extraer()}
+    por_tema: dict[str, TemaMalla] = por_id_con_anteriores()   # lotes ya unidos citan temas de la V2 (spec 15)
     filas, errores = [], []
     for p_lote in sorted(d.glob(f"lote_{prefijo_lote}*.json")):
         lote = json.loads(p_lote.read_text(encoding="utf-8"))
@@ -74,7 +89,7 @@ def unir(prefijo_lote: str, destino: str, catalogo: list[dict]) -> dict:
             s = salida[i]
             obj1, obj2 = s.get("obj1") or "", s.get("obj2") or ""
             t = por_tema[i]
-            filas.append({"id": i, "archivo": t.archivo, "hoja": t.hoja, "fila": t.fila,
+            filas.append({"id": i, "archivo": t.llave[0], "hoja": t.llave[1], "fila": t.llave[2],
                           "procedimental": t.procedimental, "obj1": obj1,
                           "obj2": "" if obj2 == "FUERA" else obj2, "confianza": s.get("confianza"),
                           "justificacion": s.get("justificacion"), "version": lote["version"],
@@ -89,15 +104,16 @@ def unir(prefijo_lote: str, destino: str, catalogo: list[dict]) -> dict:
 
 # -- temas de 2.°–9.° sin clasificación previa (los que agregó la V2) ---------------------------------------------
 def _llave(t: TemaMalla) -> tuple[str, str, int]:
-    return (t.archivo, t.hoja, t.fila)
+    return t.llave
 
 
 def pendientes() -> dict[str, list[TemaMalla]]:
-    """Temas de 2.°–9.° sin clasificación TIMSS 2027 y de 7.°–9.° sin clasificación PISA 2025."""
+    """Temas de 2.°–9.° sin clasificación TIMSS 2027, de Física de Bachillerato sin TIMSS Advanced y de 7.°–9.° sin
+    clasificación PISA 2025."""
     ct, cp = legado.clasificacion_timss(), legado.clasificacion_pisa()
-    temas = [t for t in extraer() if t.asignatura == "ciencias"]
+    temas = [t for t in extraer() if t.asignatura in ("ciencias", "fisica")]
     return {"timss": [t for t in temas if _llave(t) not in ct],
-            "pisa": [t for t in temas if 7 <= t.grado <= 9 and _llave(t) not in cp]}
+            "pisa": [t for t in temas if t.asignatura == "ciencias" and 7 <= t.grado <= 9 and _llave(t) not in cp]}
 
 
 def _catalogo_timss(marco: str) -> list[dict]:
@@ -105,6 +121,12 @@ def _catalogo_timss(marco: str) -> list[dict]:
              "es_investigacion": o.get("es_investigacion", False),
              "subitems": [s["texto"] if isinstance(s, dict) else s for s in o.get("subitems", [])]}
             for o in legado.catalogo_timss2027() if o["marco"] == marco]
+
+
+def _catalogo_ta() -> list[dict]:
+    """TIMSS Advanced 2015 Física (la clasificación previa de Física de Bachillerato)."""
+    return [{"codigo": o["codigo"], "dominio": o["dominio"], "area": o["area"], "objetivo": o["objetivo"]}
+            for o in legado.catalogo_timss_v1() if o["marco"] == "TA"]
 
 
 def _catalogo_pisa() -> list[dict]:
@@ -120,13 +142,17 @@ def preparar_temas_nuevos() -> list[str]:
     pend = pendientes()
     grupos = (("TN_T4_27", "T4_27", VERSION_TIMSS_NUEVOS, [t for t in pend["timss"] if t.grado <= 4],
                _catalogo_timss("T4_27"), PROMPTS["T"]),
-              ("TN_T8_27", "T8_27", VERSION_TIMSS_NUEVOS, [t for t in pend["timss"] if t.grado >= 5],
+              ("TN_T8_27", "T8_27", VERSION_TIMSS_NUEVOS,
+               [t for t in pend["timss"] if 5 <= t.grado <= 9 and t.asignatura == "ciencias"],
                _catalogo_timss("T8_27"), PROMPTS["T"]),
+              ("TN_TA15", "TA15", VERSION_TIMSS_NUEVOS, [t for t in pend["timss"] if t.asignatura == "fisica"],
+               _catalogo_ta(), PROMPTS["T"]),
               ("TN_PISA25", "PISA25", VERSION_PISA_NUEVOS, pend["pisa"], _catalogo_pisa(), PROMPTS["PISA"]))
     escritos = []
-    for nombre, marco, version, temas, catalogo, prompt in grupos:
+    for base, marco, version, temas, catalogo, prompt in grupos:
         if not temas:
             continue
+        nombre = _nombre_libre(d, base)
         lote = {"lote": nombre, "marco": marco, "version": version, "instrucciones": prompt,
                 "salida": f"salida_{nombre}.json: un objeto por tema, con su «id» y los campos que pide el prompt",
                 "catalogo": catalogo,
@@ -217,7 +243,7 @@ def unir_temas_nuevos() -> dict:
     (`timss2027_temas_nuevos`, `pisa2025_temas_nuevos`) con la forma de las clasificaciones previas.
     Lanza ValueError ante cualquier problema; devuelve los conteos."""
     d = ruta(DIR) / "lotes"
-    por_tema = {t.id: t for t in extraer()}
+    por_tema = por_id_con_anteriores()   # los lotes de la V2 citan temas que la V3 ya no tiene (spec 15)
     clasif = cargar("marcos")["clasificaciones"]
     errores, capas = [], {}
     for prefijo, destino, campos in (("TN_T", "timss2027_temas_nuevos", ("obj1", "obj2")),
@@ -238,7 +264,7 @@ def unir_temas_nuevos() -> dict:
                 if not (s := salida.get(item["id"])):
                     continue
                 t = por_tema[item["id"]]
-                filas.append({"id": t.id, "archivo": t.archivo, "hoja": t.hoja, "fila": t.fila,
+                filas.append({"id": t.id, "archivo": t.llave[0], "hoja": t.llave[1], "fila": t.llave[2],
                               "procedimental": t.procedimental, **{c: s.get(c, "") for c in campos},
                               "confianza": s.get("confianza"), "justificacion": s.get("justificacion"),
                               "version": lote["version"], "revisado_por": ""})

@@ -45,9 +45,12 @@ def equivalencias_timss() -> list[dict]:
 
 
 def _por_llave(filas: list[dict]) -> dict[tuple[str, str, int], dict]:
-    """Por (archivo, hoja, fila) con el nombre de archivo de la malla vigente: las clasificaciones previas usan el
-    nombre del libro en la V1 (`legado` en config/mallas.yaml); hoja y fila no cambiaron entre versiones."""
-    vigente = {i["legado"]: i["archivo"] for i in cargar("mallas")["archivos"] if "legado" in i}
+    """Por (archivo, hoja, fila), la llave de los temas (`TemaMalla.llave`): las clasificaciones previas usan el
+    nombre del libro en la V1 (`legado`), que se traduce al de la versión que fija las llaves. Con la V3 vigente es
+    la V2 (`anterior` en config/mallas.yaml): sus temas idénticos o parecidos heredan la llave de la V2 y los nuevos
+    llevan una propia («V3/<archivo>»)."""
+    cfg = cargar("mallas")
+    vigente = {i["legado"]: i["archivo"] for i in cargar(cfg.get("anterior", "mallas"))["archivos"] if "legado" in i}
     return {(vigente.get(c["archivo"], c["archivo"]), c["hoja"], int(c["fila"])): c for c in filas}
 
 

@@ -9,9 +9,9 @@ pasaría a ser dos relaciones distintas, no una arista duplicada. Solo `equivale
 
 from __future__ import annotations
 
-import re
 from collections import defaultdict
 from dataclasses import dataclass, field
+from functools import cache
 
 from goes_science_kg.modelos import Arista, Nodo, TipoArista
 from goes_science_kg.prerrequisitos import evidencia_orden
@@ -51,18 +51,26 @@ RELACIONES = {r.nombre: r for r in (
 CONFIANZA_ORDEN = {"baja": 0, "media": 1, "alta": 2}
 
 
-def orden_tema(tema: str) -> tuple:
-    """Posición de un tema en la malla: (grado, asignatura de la malla, unidad, código del procedimental)."""
-    m = re.match(r"TEMA:G(\d+)-(\w+)-U(\d+)-([\d.]+)", tema)
-    if not m:
-        return (99, "", 0, ())
-    return (int(m.group(1)), m.group(2), int(m.group(3)), tuple(int(x) for x in m.group(4).split(".") if x))
+@cache
+def _posiciones() -> dict[str, tuple[int, str, int]]:
+    from goes_science_kg.ingesta.mallas import CODIGO_ASIG, extraer
+
+    return {f"TEMA:{t.id}": (t.grado, CODIGO_ASIG[t.asignatura], i) for i, t in enumerate(extraer())}
+
+
+def orden_tema(tema: str) -> tuple[int, str, int] | None:
+    """Posición de un tema en la malla vigente: (grado, asignatura de la malla, orden de lectura). Sale de la
+    posición real y no del id: con ids estables (spec 15) un tema de la V3 conserva el id de la V2 aunque cambie de
+    unidad. Un id que ya no está en la malla no tiene posición (None)."""
+    return _posiciones().get(tema)
 
 
 def antes_en_la_malla(tema_a: str, tema_b: str) -> bool:
     """Si la malla enseña `tema_a` antes que `tema_b`: un grado anterior, o el mismo grado y la misma asignatura de
     la malla con una unidad o un código anterior. Asignaturas distintas del mismo grado van en paralelo: no cuenta."""
     a, b = orden_tema(tema_a), orden_tema(tema_b)
+    if a is None or b is None:   # un tema que ya no está en la malla vigente no ordena nada
+        return False
     return a[0] < b[0] or (a[0] == b[0] and a[1] == b[1] and a[2:] < b[2:])
 
 
@@ -139,7 +147,7 @@ class Navegador:
         alta o media; la misma regla que el primer grado en prerrequisitos.evidencia_orden)."""
         temas = [a.origen for c in self.equivalentes(concepto) for a in self._entrantes[(c, TipoArista.TRABAJA)]
                  if a.origen.startswith("TEMA:") and (a.rol == "principal" or confianza(a) in ("alta", "media"))]
-        return min(temas, key=orden_tema, default=None)
+        return min(temas, key=lambda t: orden_tema(t) or (99, "", 0), default=None)
 
     def primer_grado_sv(self, concepto: str) -> float | None:
         """Primer grado en que la malla trabaja el concepto (regla de prerrequisitos.evidencia_orden)."""

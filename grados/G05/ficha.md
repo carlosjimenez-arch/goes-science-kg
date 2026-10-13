@@ -6,14 +6,14 @@
 
 | Asignatura | Temas |
 |---|---|
-| Biología | 1 |
+| Biología | 4 |
 | Ciencias de la Tierra y del Espacio | 29 |
-| Física | 24 |
-| Química | 17 |
+| Física | 23 |
+| Química | 15 |
 
-- **64 conceptos**: 51 nuevos en este grado, 13 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
-- Objetivos de marco cubiertos: T8_27 18.
-- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 132.
+- **70 conceptos**: 52 nuevos en este grado, 18 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- Objetivos de marco cubiertos: T8_27 20.
+- Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 143.
 
 ## Conceptos más trabajados
 
@@ -41,30 +41,29 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Movimiento, fuerzas y energía mecánica | 11 | 12 | Física | 2. Mecánica. |
-| Átomo y partículas subatómicas · Distribución electrónica por niveles (modelo de capas) · Configuración electrónica por orbitales | 11 | 14 | Química, Física | 3. Estructura atómica.; 4. Tabla periódica. |
 | Universo, sistema solar y Tierra primitiva | 10 | 9 | Ciencias de la Tierra y del Espacio, Física | 5. Ciencias del espacio.; 6. Ciencias de la Tierra. |
+| Aceleración · Sistema Internacional de Unidades · Magnitudes escalares y vectoriales | 10 | 18 | Física | 2. Mecánica.; 1. Magnitudes físicas. |
 | Tectónica, sismos y volcanes en El Salvador | 9 | 7 | Ciencias de la Tierra y del Espacio | 6. Ciencias de la Tierra. |
+| Átomo y partículas subatómicas · Distribución electrónica por niveles (modelo de capas) · Configuración electrónica por orbitales | 9 | 11 | Química | 3. Estructura atómica.; 4. Tabla periódica. |
 | El suelo: formación, erosión y uso | 7 | 8 | Ciencias de la Tierra y del Espacio, Química | 6. Ciencias de la Tierra. |
+| Simbiosis: mutualismo, comensalismo y parasitismo · Competencia por recursos · Factores bióticos y abióticos | 6 | 2 | Biología | 6. Ciencias de la Tierra. |
+| Iones · Moléculas y fórmulas químicas · Enlace iónico | 6 | 4 | Química, Física | 4. Tabla periódica.; 3. Estructura atómica. |
 | Tiempo geológico y fósiles | 5 | 6 | Ciencias de la Tierra y del Espacio, Biología | 6. Ciencias de la Tierra.; 5. Ciencias del espacio. |
-| Moléculas y fórmulas químicas · Enlace iónico · Iones | 5 | 4 | Química | 4. Tabla periódica.; 3. Estructura atómica. |
-| Medición, unidades y magnitudes físicas | 4 | 10 | Física | 1. Magnitudes físicas.; 2. Mecánica. |
+| Conservación de la energía mecánica · Energía potencial gravitatoria y elástica · Fuerza elástica y ley de Hooke | 5 | 4 | Física | 2. Mecánica. |
 
 ### Qué se aprende en cada bloque
 
-- **Movimiento, fuerzas y energía mecánica.** Los estudiantes describen posición, desplazamiento y trayectoria, diferencian rapidez y velocidad, experimentan la inercia y la aceleración por una fuerza neta, y relacionan el movimiento con la energía cinética y potencial. El bloque está bien encadenado de la cinemática a la energía, pero concentra muchos conceptos formales de física en quinto grado.
 - **Universo, sistema solar y Tierra primitiva.** Los estudiantes exploran el Big Bang, las escalas astronómicas, tipos de galaxias, nebulosas y evolución estelar, y modelan la formación del sistema solar y de la corteza terrestre. Incluyen el campo magnético y la deriva continental. Observación curricular: hilo narrativo claro del universo a la Tierra, aunque la deriva continental quedaría mejor junto a la tectónica de placas.
 - **Tectónica, sismos y volcanes en El Salvador.** Los estudiantes identifican las placas que afectan el istmo centroamericano, relacionan la tectónica con sismos y vulcanismo, distinguen magnitud e intensidad y conocen el monitoreo volcánico y las acciones ante una erupción. Observación curricular: bloque coherente y muy pertinente al país; retoma la gestión de riesgo de segundo grado con mayor profundidad explicativa.
 - **El suelo: formación, erosión y uso.** Los estudiantes indagan la estructura del suelo, la meteorización y sus procesos químicos, demuestran la erosión por agua y viento y analizan los suelos de El Salvador, su uso y su degradación por la actividad humana. Observación curricular: bloque bien integrado que conecta ciencia y contexto local; los procesos químicos del suelo requieren bases de química aún incipientes.
 - **Tiempo geológico y fósiles.** Los estudiantes categorizan eones, eras y períodos, modelan la formación de fósiles, explican su datación, reconocen fósiles de El Salvador y los grandes eventos de diversificación y extinción. Observación curricular: buen puente entre ciencias de la Tierra y biología que prepara la evolución; la datación conviene tratarla de forma conceptual.
-- **Medición, unidades y magnitudes físicas.** Los estudiantes miden magnitudes en unidades del Sistema Internacional, convierten unidades, comparan precisión y exactitud, identifican fuentes de error y distinguen magnitudes escalares y vectoriales; también aplican la idea de torque. La medición es la base del bloque; la propagación del error y el torque parecen avanzados para el grado y podrían reubicarse.
 
 ## Prácticas científicas
 
 | Práctica | Temas |
 |---|---|
 | Desarrollar y usar modelos | 6 |
-| Usar matemáticas para resolver problemas científicos | 6 |
+| Usar matemáticas para resolver problemas científicos | 5 |
 | Medir con instrumentos y unidades | 4 |
 | Usar y transformar representaciones | 4 |
 | Repetir mediciones y estimar el error | 3 |
@@ -73,7 +72,6 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Comunicar resultados científicos | 1 |
 | Construir explicaciones basadas en evidencia | 1 |
 | Buscar y evaluar fuentes de información | 1 |
-| Evaluar modelos y sus limitaciones | 1 |
 | Interpretar datos y sacar conclusiones | 1 |
 | Reconocer el carácter provisional del conocimiento | 1 |
 | Planificar investigaciones | 1 |
@@ -86,6 +84,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Concepto del grado | Prerrequisito | Estado | Primer grado SV | Confianza |
 |---|---|---|---|---|
 | Tectónica de placas | Convección del manto y energía interna de la Tierra | ausente | — | alta |
+| Enlace iónico | Enlace químico | ausente | — | alta |
 | Origen del universo: el Big Bang | Efecto Doppler | posterior | 11 | media |
 | Ciclo de vida de las estrellas | Gravedad y órbitas | posterior | 8 | media |
 | Ciclo de vida de las estrellas | Fisión y fusión nuclear | posterior | 11 | alta |
@@ -96,13 +95,12 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Energía cinética | Trabajo mecánico | posterior | 8 | media |
 | Primera ley de Newton: inercia | Fuerza neta y diagrama de cuerpo libre | posterior | 8 | alta |
 | Átomo y partículas subatómicas | Modelo de partículas de la materia | posterior | 6 | alta |
-| Enlace iónico | Enlace químico | posterior | 10 | alta |
 | Iones | Electrones de valencia y regla del octeto | posterior | 6 | media |
 | Moléculas y fórmulas químicas | Sustancias puras: elementos y compuestos | posterior | 8 | alta |
 | Número de oxidación | Electronegatividad y polaridad de enlace | posterior | 6 | media |
 | Números cuánticos | Modelo mecanocuántico y orbitales atómicos | posterior | 10 | alta |
 
-Además, 46 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 45 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -110,21 +108,22 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Depredación | 7 | CO 3.0, ENG 2, JP 5.0 |
 | Ciclo del agua | 7 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 |
 | Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
-| Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
+| Adaptaciones conductuales | nunca | AU 4.0, CO 2, JP 3.0, SG 6.0 |
+| Biomas y clasificación de ambientes | 7 | CO 4.0, UY 3.0 |
 | Corriente, voltaje y resistencia | 6 | ENG 4.0, JP 3.0 |
 | Dilatación térmica | 6 | ENG 6.0, JP 3.0, SG 4.0, UY 3.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
 | Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
 | Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
-| Reproducción sexual de las plantas con flor | 6 | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
+| Reproducción sexual de las plantas con flor | nunca | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
 | Transporte en plantas: xilema y floema | 8 | ENG 2, JP 5.0, SG 5.0, UY 3.0 |
 | Minerales y sus propiedades | 8 | AU 2, ENG 6.0 |
 | Calor como energía en tránsito | 10 | ENG 6.0, SG 4.0, UY 3.0 |
 | Ventaja mecánica | 9 | CO 4.0, ENG 3.0, JP 5.0 |
 | Flotación y hundimiento | 6 | CO 4.5, ENG 6.0, SG 3.0, UY 4.0 |
+| Herencia de rasgos | 10 | CO 2, ENG 4.0, JP 8.0, SG 5.0 |
 | Relaciones intraespecíficas | 7 | CO 3.0, UY 6.0 |
 | Electroimanes y efecto magnético de la corriente | 6 | ENG 6.0, JP 4.0, SG 3.0, UY 5.0 |
 | Equilibrio térmico y ley cero | 9 | AU 2, ENG 6.0, SG 4.0, UY 5.0 |

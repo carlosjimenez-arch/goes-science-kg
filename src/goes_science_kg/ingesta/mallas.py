@@ -7,12 +7,21 @@ Migrado de reportes/cobertura_curricular/scripts/extract_temas.py con dos cambio
 
 Hojas de unidad: las que empiezan con «Unidad» (2.°–9.°) o contienen «N.°» (Bachillerato).
 Nunca se modifican los archivos de origen.
+
+Versiones (spec 15): si la config tiene `anterior` (la V3 frente a la V2), los ids no son de posición. Un tema idéntico
+o parecido a uno de la versión anterior conserva su id y su llave de clasificación (archivo, hoja, fila de la
+anterior); uno nuevo toma su id de posición, con el sufijo «-v3» si ese id existió antes para otro tema. La
+correspondencia la calcula `correspondencia()` y se guarda versionada.
 """
 
 from __future__ import annotations
 
+import json
 import re
+import unicodedata
+from collections import Counter, defaultdict
 from dataclasses import asdict, dataclass, field
+from difflib import SequenceMatcher
 from functools import cache
 from typing import TYPE_CHECKING
 
@@ -46,6 +55,9 @@ class TemaMalla:
     habilidad_timss: str
     competencia_pisa: str
     micro_pisa: dict[str, list[str]] = field(default_factory=dict)
+    llave: tuple[str, str, int] | tuple[()] = ()   # llave de las clasificaciones previas (ver el docstring)
+    origen: str = ""          # frente a la versión anterior: identico | parecido | nuevo («» si no hay anterior)
+    id_posicional: str = ""   # el id que daría la posición del tema en ESTA versión
 
     def dict(self) -> dict:
         """Los campos del tema como diccionario."""
@@ -73,11 +85,20 @@ def _columnas(ws: ReadOnlyWorksheet) -> list[str]:
 
 @cache
 def extraer(nombre_config: str = "mallas") -> tuple[TemaMalla, ...]:
-    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la vigente, Versión 2; «mallas_v1», la V1).
+    """Lee las mallas que fija config/<nombre_config>.yaml (por defecto la vigente, Versión 3; «mallas_v2» y
+    «mallas_v1», las anteriores). Con `anterior` en la config, aplica la correspondencia (ids estables).
 
     Con caché: leer los Excel es lo más lento del proceso y varios pasos piden la misma malla en una corrida.
     """
     cfg = cargar(nombre_config)
+    temas = _leer(cfg)
+    if cfg.get("anterior"):
+        _aplicar_correspondencia(temas, cfg)
+    return tuple(temas)
+
+
+def _leer(cfg: dict) -> list[TemaMalla]:
+    """Los temas de una config con ids de posición y su propia ubicación como llave."""
     base = ruta(cfg["directorio"])
     fases = cfg["fases_pisa"]
     temas: list[TemaMalla] = []
@@ -114,7 +135,184 @@ def extraer(nombre_config: str = "mallas") -> tuple[TemaMalla, ...]:
                 ))
         wb.close()
     _asignar_ids(temas)
-    return tuple(temas)
+    for t in temas:
+        t.id_posicional, t.llave = t.id, (t.archivo, t.hoja, t.fila)
+    return temas
+
+
+# Verbos y palabras de la redacción de la malla que no dicen QUÉ se enseña (raíces de 6 letras sin tilde).
+_GENERICAS = frozenset({"identi", "recono", "experi", "aplica", "analis", "explic", "descri", "indaga", "compro",
+                        "partir", "median", "traves", "funcio", "relaci", "utiliz", "determ", "repres", "cotidi",
+                        "situac", "concep", "caract", "fenome"})
+
+
+def _raices(texto: str) -> set[str]:
+    """Raíces (6 letras, sin tildes) de las palabras de 4 letras o más que dicen qué se enseña."""
+    t = "".join(c for c in unicodedata.normalize("NFKD", texto.lower()) if not unicodedata.combining(c))
+    return {w[:6] for w in re.findall(r"[a-zñ]{4,}", t)} - _GENERICAS
+
+
+def _contencion(previo: TemaMalla, raices_nuevo: set[str]) -> float:
+    """Qué parte del tema de la versión anterior (procedimental y subcontenido) está en el texto de un tema nuevo."""
+    a = _raices(f"{previo.procedimental} {previo.subcontenido}")
+    return round(len(a & raices_nuevo) / len(a), 3) if a else 0.0
+
+
+def _norma(texto: str) -> str:
+    """Procedimental sin su código («5.3.») ni puntuación, en minúsculas: lo que se compara entre versiones."""
+    return re.sub(r"\W+", " ", re.sub(r"^\s*\d+(?:\.\d+)+\.?\s*", "", texto.lower())).strip()
+
+
+def correspondencia(nombre_config: str = "mallas") -> dict:
+    """Empareja cada tema de la versión de `nombre_config` con uno de su `anterior`, en el mismo grado y la misma
+    asignatura de la malla (determinista):
+    1. idéntico: el mismo procedimental (normalizado);
+    2. parecido: similitud del procedimental ≥ `similitud_minima`, de mayor a menor;
+    3. ampliado: un tema todavía sin par que contiene (≥ `contencion_minima` de sus raíces, en procedimental,
+       subcontenido, contenido e indicador) a un tema de la anterior sin par: la V3 lo fusionó o lo amplió.
+    Los temas de la anterior que quedan sin par llevan `absorbido_por` (el tema que los contiene, si lo hay) y su
+    `contencion`; los demás son candidatos a «quitado», que se juzga por concepto (spec 15)."""
+    cfg = cargar(nombre_config)
+    nuevos, previos = _leer(cfg), extraer(cfg["anterior"])
+    umbral = cfg.get("similitud_minima", 0.75)
+    par: dict[str, tuple[TemaMalla, str, float]] = {}
+    usados: set[str] = set()
+    por_texto: dict[tuple, list[TemaMalla]] = defaultdict(list)
+    for p in previos:
+        por_texto[(p.grado, p.asignatura, _norma(p.procedimental))].append(p)
+    for t in nuevos:
+        for p in por_texto.get((t.grado, t.asignatura, _norma(t.procedimental)), []):
+            if p.id not in usados:
+                par[t.id_posicional] = (p, "identico", 1.0)
+                usados.add(p.id)
+                break
+    candidatos = []
+    for t in nuevos:
+        if t.id_posicional in par:
+            continue
+        a = _norma(t.procedimental)
+        for p in previos:
+            if p.id in usados or (p.grado, p.asignatura) != (t.grado, t.asignatura):
+                continue
+            m = SequenceMatcher(None, a, _norma(p.procedimental))
+            if m.quick_ratio() >= umbral and (r := m.ratio()) >= umbral:
+                candidatos.append((-round(r, 3), t.id_posicional, p.id, t, p))
+    for r, _, _, t, p in sorted(candidatos, key=lambda c: c[:3]):
+        if t.id_posicional not in par and p.id not in usados:
+            par[t.id_posicional] = (p, "parecido", -r)
+            usados.add(p.id)
+    contencion = cfg.get("contencion_minima", 0.8)
+    raices = {t.id_posicional: _raices(" ".join([t.procedimental, t.subcontenido, t.contenido, t.indicador]))
+              for t in nuevos}
+    candidatos = []
+    for t in nuevos:
+        if t.id_posicional in par:
+            continue
+        for p in previos:
+            if p.id not in usados and (p.grado, p.asignatura) == (t.grado, t.asignatura) and \
+                    (c := _contencion(p, raices[t.id_posicional])) >= contencion:
+                candidatos.append((-c, t.id_posicional, p.id, t, p))
+    for c, _, _, t, p in sorted(candidatos, key=lambda x: x[:3]):
+        if t.id_posicional not in par and p.id not in usados:
+            par[t.id_posicional] = (p, "ampliado", -c)
+            usados.add(p.id)
+    ids_previos = {p.id for p in previos}
+    filas = []
+    for t in nuevos:
+        base = {"ruta": t.ruta, "hoja": t.hoja, "fila": t.fila, "grado": t.grado, "asignatura": t.asignatura,
+                "id_posicional": t.id_posicional}
+        if t.id_posicional in par:
+            p, estado, sim = par[t.id_posicional]
+            filas.append({**base, "id": p.id, "estado": estado, "similitud": sim, "llave": [p.archivo, p.hoja, p.fila]})
+        else:
+            sufijo = "-v3" if t.id_posicional in ids_previos else ""
+            filas.append({**base, "id": t.id_posicional + sufijo, "estado": "nuevo",
+                          "llave": [f"{cfg.get('version', 'nueva')}/{t.archivo}", t.hoja, t.fila]})
+    ids = [f["id"] for f in filas]
+    if len(set(ids)) != len(ids):
+        raise ValueError(f"ids repetidos en la correspondencia: {[i for i, n in Counter(ids).items() if n > 1][:5]}")
+    id_de = {f["id_posicional"]: f["id"] for f in filas}
+    # Un tema que reaparece idéntico en OTRO grado se movió (no se quitó). No hereda el id: el id dice el grado.
+    por_texto_nuevo: dict[str, list[TemaMalla]] = defaultdict(list)
+    for t in nuevos:
+        por_texto_nuevo[_norma(t.procedimental)].append(t)
+    sin_par = []
+    for p in previos:
+        if p.id in usados:
+            continue
+        mismos = [t for t in nuevos if (t.grado, t.asignatura) == (p.grado, p.asignatura)]
+        mejor = max(mismos, key=lambda t: _contencion(p, raices[t.id_posicional]), default=None)
+        c = _contencion(p, raices[mejor.id_posicional]) if mejor else 0.0
+        movido = next((t for t in por_texto_nuevo.get(_norma(p.procedimental), []) if t.grado != p.grado), None)
+        sin_par.append({"id": p.id, "grado": p.grado, "asignatura": p.asignatura, "procedimental": p.procedimental,
+                        "absorbido_por": id_de[mejor.id_posicional] if mejor and c >= contencion else None,
+                        "mas_cercano": id_de[mejor.id_posicional] if mejor else None, "contencion": c,
+                        "movido_a": id_de[movido.id_posicional] if movido else None})
+    return {"version": "correspondencia-v1", "anterior": cfg["anterior"], "similitud_minima": umbral,
+            "resumen": {**Counter(f["estado"] for f in filas), "sin_par_en_la_anterior": len(sin_par),
+                        "absorbidos": sum(bool(x["absorbido_por"]) for x in sin_par),
+                        "movidos_de_grado": sum(bool(x["movido_a"]) for x in sin_par)},
+            "temas": filas, "sin_par": sin_par}
+
+
+def escribir_correspondencia(nombre_config: str = "mallas") -> dict:
+    """Escribe la correspondencia en la ruta de `correspondencia` de la config y devuelve su resumen."""
+    cfg = cargar(nombre_config)
+    datos = correspondencia(nombre_config)
+    p = ruta(cfg["correspondencia"])
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    extraer.cache_clear()
+    textos_completos.cache_clear()
+    absorbidos.cache_clear()
+    return datos["resumen"]
+
+
+@cache
+def absorbidos() -> dict[str, str]:
+    """Id de un tema de la versión anterior que la vigente fusionó → id del tema de la vigente que lo contiene."""
+    cfg = cargar("mallas")
+    if not cfg.get("correspondencia") or not (p := ruta(cfg["correspondencia"])).exists():
+        return {}
+    return {x["id"]: x["absorbido_por"] for x in json.loads(p.read_text(encoding="utf-8"))["sin_par"]
+            if x["absorbido_por"]}
+
+
+@cache
+def por_id_con_anteriores() -> dict[str, TemaMalla]:
+    """Temas de la vigente y de sus versiones anteriores por id (la vigente gana): para unir o validar capas que
+    todavía citan temas que la vigente ya no tiene."""
+    salida: dict[str, TemaMalla] = {}
+    cfg, versiones = cargar("mallas"), ["mallas"]
+    while (anterior := cfg.get("anterior")) and anterior not in versiones:
+        versiones.append(anterior)
+        cfg = cargar(anterior)
+    for version in reversed(versiones):
+        salida.update({t.id: t for t in extraer(version)})
+    return salida
+
+
+def vigente_de(id_tema: str) -> str | None:
+    """El id del tema de la malla vigente que corresponde a un id (con o sin «TEMA:»): el mismo si sigue en la malla,
+    el tema que lo absorbió si la V3 lo fusionó, o None si ya no está. Para leer capas anteriores a la V3."""
+    pref = "TEMA:" if id_tema.startswith("TEMA:") else ""
+    i = id_tema.removeprefix("TEMA:")
+    if i in {t.id for t in extraer()}:
+        return id_tema
+    return f"{pref}{a}" if (a := absorbidos().get(i)) else None
+
+
+def _aplicar_correspondencia(temas: list[TemaMalla], cfg: dict) -> None:
+    p = ruta(cfg["correspondencia"])
+    if not p.exists():
+        raise FileNotFoundError(f"falta {cfg['correspondencia']}: córrelo con `uv run gskg malla-correspondencia`")
+    por_fila = {(f["ruta"], f["hoja"], f["fila"]): f for f in json.loads(p.read_text(encoding="utf-8"))["temas"]}
+    for t in temas:
+        f = por_fila.get((t.ruta, t.hoja, t.fila))
+        if not f or f["id_posicional"] != t.id_posicional:
+            raise ValueError(f"la correspondencia no corresponde a la malla ({t.ruta}, {t.hoja}, fila {t.fila}): "
+                             "córrela de nuevo con `uv run gskg malla-correspondencia`")
+        t.id, t.llave, t.origen = f["id"], tuple(f["llave"]), f["estado"]
 
 
 @cache

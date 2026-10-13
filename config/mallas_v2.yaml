@@ -1,0 +1,33 @@
+# Mallas curriculares del MINED, Versión 2 («Mallas sugeridas/Versión 2», entregada el 2026-10-07). Fue la vigente
+# hasta el 2026-10-13; desde entonces es la REFERENCIA de la V3 (config/mallas.yaml): sus ids y sus llaves
+# (archivo, hoja, fila) son los que heredan los temas idénticos o parecidos de la V3.
+# Fuente única: data/fuentes/mined/Mallas sugeridas v2/  (SOLO LECTURA)
+#
+# La V2 contiene los 1.260 temas de la V1 con el mismo id, hoja, fila y texto (contenido, procedimental e
+# indicador; lo verifica tests/test_mallas.py) y agrega 47 temas en 2.°–9.°. Solo cambian las columnas de
+# clasificación TIMSS/PISA que llena el MINED. La V1 se conserva en config/mallas_v1.yaml como referencia.
+#
+# El archivo de cada malla se fija AQUÍ de forma explícita. No se elige por fecha de
+# modificación: git no conserva esas fechas y, tras un clone, la elección sería arbitraria.
+# `legado`: nombre del mismo libro en la V1. Las clasificaciones previas (reportes/cobertura_curricular) usan
+# ese nombre como llave (archivo, hoja, fila); ingesta/legado.py las traduce al nombre vigente.
+directorio: data/fuentes/mined/Mallas sugeridas v2
+
+archivos:
+  - {archivo: Matriz_Ciencias_2do_Grado_U1_U6.xlsx, legado: Matriz_Ciencias_2do_Grado_U1_U6_3.xlsx, grado: 2, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_3er_Grado_U1_U6.xlsx, grado: 3, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_4to_Grado_U1_U6.xlsx, grado: 4, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_5to_Grado_U1_U6.xlsx, grado: 5, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_6to_Grado_U1_U6.xlsx, grado: 6, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, grado: 7, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, legado: Matriz_Ciencias_8vo_Grado_U1_U7.xlsx, grado: 8, asignatura: ciencias}
+  - {archivo: Matriz_Ciencias_9no_Grado_U1_U12.xlsx, legado: Matriz_Ciencias_9no_Grado_U1_U7.xlsx, grado: 9, asignatura: ciencias}
+  # Bachillerato: un libro por asignatura; el grado sale del nombre de la hoja («Física 10.°»).
+  - {archivo: Matriz_Bachillerato_Fisica_10_11.xlsx, asignatura: fisica}
+  - {archivo: Matriz_Bachillerato_Quimica_10_11.xlsx, asignatura: quimica}
+  - {archivo: Matriz_Bachillerato_Biologia_10_11.xlsx, asignatura: biologia}
+
+# Columnas de las hojas de unidad. Encabezados en las filas 1 y 2; datos desde la fila 3.
+# «Unidad» y «Contenido» vienen en celdas combinadas y se arrastran hacia abajo.
+fila_datos: 3
+fases_pisa: ["1. Aproximar", "2. Explorar", "3. Explicar", "4. Indagar", "5. Reforzar"]

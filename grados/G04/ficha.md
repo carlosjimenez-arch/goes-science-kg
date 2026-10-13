@@ -6,11 +6,11 @@
 
 | Asignatura | Temas |
 |---|---|
-| Biología | 40 |
+| Biología | 29 |
 | Ciencias de la Tierra y del Espacio | 20 |
 | Física | 15 |
 
-- **63 conceptos**: 36 nuevos en este grado, 27 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **62 conceptos**: 34 nuevos en este grado, 28 que se retoman de grados anteriores y 0 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: T4_27 21.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 124.
 
@@ -18,21 +18,21 @@
 
 | Concepto | Asignatura | Temas |
 |---|---|---|
-| Grupos de alimentos y dieta balanceada | Biología | 6 |
 | Máquinas simples | Física | 6 |
-| Energía de los alimentos y balance energético | Biología | 5 |
-| Nutrientes y sus funciones | Biología | 5 |
-| Sistema locomotor | Biología | 5 |
+| Hábitos de vida saludable | Biología | 5 |
 | Amenazas naturales geológicas e hidrometeorológicas | Ciencias de la Tierra y del Espacio | 5 |
-| Hábitos de vida saludable | Biología | 4 |
-| Sistema circulatorio | Biología | 3 |
+| Energía de los alimentos y balance energético | Biología | 4 |
+| Grupos de alimentos y dieta balanceada | Biología | 4 |
+| Nutrientes y sus funciones | Biología | 3 |
+| Sistema locomotor | Biología | 3 |
 | La Luna: características y origen | Ciencias de la Tierra y del Espacio | 3 |
 | Satélites, asteroides y cometas | Ciencias de la Tierra y del Espacio | 3 |
+| Formas de energía | Física | 3 |
 | Agricultura y seguridad alimentaria | Biología | 2 |
 | Factores bióticos y abióticos | Biología | 2 |
 | Hábitat y ecosistemas comunes | Biología | 2 |
 | Necesidades de los seres vivos | Biología | 2 |
-| Niveles de organización de los seres vivos | Biología | 2 |
+| Reproducción humana y pubertad | Biología | 2 |
 
 ## Bloques temáticos del grado
 
@@ -40,20 +40,22 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
-| Hábitat y ecosistemas comunes · Necesidades de los seres vivos · Agricultura y seguridad alimentaria | 13 | 10 | Biología, Ciencias de la Tierra y del Espacio | 3. Naturaleza y sus interacciones.; 2. Nutrición. |
-| Nutrición, alimentación y salud del cuerpo | 7 | 14 | Biología | 2. Nutrición.; 6. Cuerpo humano: movimiento e interacciones.; 1. Máquinas y energía. |
-| Sistemas del cuerpo humano | 7 | 13 | Biología | 5. Cuerpo humano: materia y energía.; 6. Cuerpo humano: movimiento e interacciones.; 3. Naturaleza y sus interacciones. |
+| Ecosistemas, interacciones y cadenas alimentarias | 10 | 7 | Biología | 3. Naturaleza y sus interacciones. |
+| Nutrición, alimentación y salud del cuerpo | 8 | 12 | Biología | 2. Nutrición.; 6. Cuerpo humano: movimiento e interacciones.; 1. Máquinas y energía. |
+| Sistemas del cuerpo humano | 7 | 8 | Biología | 5. Cuerpo humano: materia y energía.; 6. Cuerpo humano: movimiento e interacciones.; 3. Naturaleza y sus interacciones. |
 | Fenómenos naturales y riesgo en El Salvador | 7 | 7 | Ciencias de la Tierra y del Espacio | 3. Naturaleza y sus interacciones. |
 | El sistema solar y la Luna | 7 | 8 | Ciencias de la Tierra y del Espacio | 4. Sistema solar. |
-| Competencia por recursos · Productores, consumidores y descomponedores · Redes tróficas | 5 | 2 | Biología | 3. Naturaleza y sus interacciones. |
 | Luz, sombras, fases lunares y eclipses | 5 | 3 | Física, Ciencias de la Tierra y del Espacio | 4. Sistema solar.; 1. Máquinas y energía. |
-| Energía en los aparatos cotidianos | 3 | 3 | Física | 1. Máquinas y energía. |
+| Agricultura y seguridad alimentaria · Necesidades de los seres vivos · Partes de la planta y sus funciones | 4 | 3 | Biología, Ciencias de la Tierra y del Espacio | 2. Nutrición.; 3. Naturaleza y sus interacciones. |
+| Energía en los aparatos cotidianos | 3 | 4 | Física | 1. Máquinas y energía. |
+| Patrones estacionales: época seca y lluviosa · Clima: diferencia con el tiempo, tipos y factores | 2 | 1 | Ciencias de la Tierra y del Espacio | 3. Naturaleza y sus interacciones. |
 | Transferencia de calor y aislantes térmicos | 2 | 1 | Física | 1. Máquinas y energía. |
 | Circuitos eléctricos sencillos | 2 | 2 | Física | 1. Máquinas y energía. |
-| El sonido: vibraciones, tono y eco | 2 | 2 | Física | 1. Máquinas y energía. |
+| El sonido: vibraciones, tono y eco | 2 | 1 | Física | 1. Máquinas y energía. |
 
 ### Qué se aprende en cada bloque
 
+- **Ecosistemas, interacciones y cadenas alimentarias.** Los estudiantes distinguen factores bióticos y abióticos, describen niveles de organización ecológica, hábitat y nicho, y representan cadenas y redes tróficas con productores, consumidores y descomponedores. También reconocen formaciones vegetales y climas tropicales de El Salvador. Es un bloque denso, con trece conceptos; algunos, como exclusión competitiva o simbiosis, podrían exceder la profundidad esperada en 4.°.
 - **Nutrición, alimentación y salud del cuerpo.** Los estudiantes distinguen alimento y nutriente, clasifican nutrientes y grupos de alimentos, comparan valores nutritivos, elaboran menús y miden variables del estado nutricional. También estudian la estructura y cuidado del sistema reproductor. El núcleo de nutrición es sólido y aplicado, pero el bloque mezcla reproducción y energía en aparatos, temas que conviene separar.
 - **Sistemas del cuerpo humano.** Los estudiantes describen funciones y cuidados de los sistemas digestivo, respiratorio, circulatorio, excretor y nervioso, construyen modelos y experimentan con los sentidos. El sistema circulatorio se presenta como enlace entre los demás. Observación curricular: el enfoque integrador es una fortaleza; incluye además un tema de niveles de organización ecológica que encaja mejor en el bloque de ecosistemas.
 - **Fenómenos naturales y riesgo en El Salvador.** Los estudiantes indagan fenómenos hidrometeorológicos y geológicos, explican ciclones y tormentas, simulan fenómenos geológicos y recopilan eventos históricos con impacto en el país. Todo se orienta a reconocer riesgos y amenazas locales. Observación curricular: retoma y profundiza el bloque de amenazas de segundo grado, mostrando una progresión coherente y muy pertinente al contexto nacional.
@@ -68,10 +70,9 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 | Práctica | Temas |
 |---|---|
-| Desarrollar y usar modelos | 11 |
-| Observar y registrar sistemáticamente | 4 |
-| Usar matemáticas para resolver problemas científicos | 4 |
-| Usar y transformar representaciones | 3 |
+| Desarrollar y usar modelos | 8 |
+| Observar y registrar sistemáticamente | 6 |
+| Usar matemáticas para resolver problemas científicos | 3 |
 | Usar pensamiento computacional y simulaciones | 3 |
 | Diseñar y evaluar soluciones | 2 |
 | Buscar y evaluar fuentes de información | 2 |
@@ -81,6 +82,7 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Medir con instrumentos y unidades | 1 |
 | Planificar investigaciones | 1 |
 | Representar datos en tablas y gráficos | 1 |
+| Usar y transformar representaciones | 1 |
 
 ## Prerrequisitos que no llegan a tiempo
 
@@ -102,7 +104,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Volcanes: estructura, tipos y productos | Origen del magma y vulcanismo | posterior | 5 | media |
 | Conducción, convección y radiación | Modelo de partículas de la materia | posterior | 6 | media |
 
-Además, 23 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 21 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 
@@ -110,18 +112,19 @@ Conceptos que la mediana de al menos dos países trabaja en este grado o antes, 
 
 | Concepto | Primer grado SV | Países (primer grado) |
 |---|---|---|
-| Depredación | 7 | CO 3.0, ENG 2, JP 5.0 |
+| Depredación | 5 | CO 3.0, ENG 2, JP 5.0 |
 | Ciclo del agua | 7 | AU 3.0, ENG 2, JP 3.0, SG 5.0, UY 3.0 |
 | Suelo: formación, componentes y tipos | 5 | AU 2, CO 6.5, ENG 2, JP 3.0, UY 3.0 |
 | Fricción y resistencia del aire | 10 | AU 3.0, ENG 2, SG 6.0 |
 | Sistema Internacional de Unidades | 5 | CO 2, ENG 6.0, UY 3.0 |
-| Adaptaciones conductuales | 11 | AU 4.0, CO 2, JP 3.0, SG 6.0 |
+| Adaptaciones conductuales | nunca | AU 4.0, CO 2, JP 3.0, SG 6.0 |
+| Biomas y clasificación de ambientes | 7 | CO 4.0, UY 3.0 |
 | Corriente, voltaje y resistencia | 6 | ENG 4.0, JP 3.0 |
 | Dilatación térmica | 6 | ENG 6.0, JP 3.0, SG 4.0, UY 3.0 |
 | Gravedad: atracción hacia la Tierra | nunca | AU 3.0, ENG 3.0, SG 6.0, UY 4.0 |
 | Digestión química y absorción de nutrientes | 8 | ENG 4.0, JP 5.0, SG 4.0, UY 4.0 |
 | Nutrición mineral de las plantas | 11 | CO 6.5, ENG 2, JP 4.0 |
-| Reproducción sexual de las plantas con flor | 6 | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
+| Reproducción sexual de las plantas con flor | nunca | AU 8.0, ENG 2, JP 4.0, SG 5.0, UY 3.0 |
 | Transporte en plantas: xilema y floema | 8 | ENG 2, JP 5.0, SG 5.0, UY 3.0 |
 | Erosión, transporte y sedimentación | 5 | AU 4.0, CO 4.5, JP 4.0, UY 3.0 |
 | Minerales y sus propiedades | 8 | AU 2, ENG 6.0 |

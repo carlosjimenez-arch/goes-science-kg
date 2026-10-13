@@ -51,7 +51,7 @@ def test_conciliacion_con_la_v2_completa_y_valida():
     from goes_science_kg.propuesta import ESTADOS_ADOPCION, adopcion_v2
 
     adopcion = adopcion_v2()
-    nuevos_v2 = {t.id for t in extraer()} - {t.id for t in extraer("mallas_v1")}
+    nuevos_v2 = {t.id for t in extraer("mallas_v2")} - {t.id for t in extraer("mallas_v1")}
     for p in sorted(ruta("asignaturas").glob("*/propuesta/propuesta_G*.json")):
         asig, ciclo = p.parent.parent.name, p.stem.removeprefix("propuesta_")
         for a in json.loads(p.read_text(encoding="utf-8"))["acciones"]:

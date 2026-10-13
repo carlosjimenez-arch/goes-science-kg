@@ -152,9 +152,9 @@ errores del contenido de 7.° y 9.°. Snapshots por ciencia en `panel/bucle/`.
 Decisiones del responsable (2026-10-13): la V3 es la malla vigente, el refuerzo va en copias de las matrices del MINED
 con filas «Propuesta GOES» y se inyectan correcciones, recomendaciones del panel, hallazgos del contraste y lo que la
 V3 quitó.
-- [ ] 15.0 Ingesta de la V3 y correspondencia V2 → V3
-- [ ] 15.1 Migración de las capas por la correspondencia
-- [ ] 15.2 Etiquetado de los temas nuevos y parecidos (Vertex con aprobación)
+- [x] 15.0 Ingesta de la V3 y correspondencia V2 → V3 ✅
+- [x] 15.1 Migración de las capas por la correspondencia ✅
+- [x] 15.2 Etiquetado de los temas nuevos y parecidos (Vertex con aprobación) ✅
 - [ ] 15.3 Grafo y contraste recalculados sobre la V3; inciertas nuevas al panel y al bucle
 - [ ] 15.4 Catálogo de refuerzos por tema
 - [ ] 15.5 Redacción (`redactor-refuerzos`) y revisión del panel y del bucle

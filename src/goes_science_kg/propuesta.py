@@ -310,7 +310,7 @@ def _temas_nuevos_v2() -> dict:
     from goes_science_kg.ingesta.mallas import extraer
 
     v1 = {t.id for t in extraer("mallas_v1")}
-    return {t.id: t for t in extraer() if t.id not in v1}
+    return {t.id: t for t in extraer("mallas_v2") if t.id not in v1}   # la conciliación es con la V2 (spec 15)
 
 
 def _conceptos_de_tema(tid: str) -> list[str]:

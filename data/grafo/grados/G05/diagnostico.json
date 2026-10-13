@@ -2,18 +2,18 @@
  "grado": 5,
  "temas": 71,
  "temas_por_asignatura": {
-  "fisica": 24,
-  "quimica": 17,
+  "fisica": 23,
+  "quimica": 15,
   "ciencias_tierra_espacio": 29,
-  "biologia": 1
+  "biologia": 4
  },
- "conceptos": 64,
- "conceptos_nuevos": 51,
- "conceptos_retomados": 13,
+ "conceptos": 70,
+ "conceptos_nuevos": 52,
+ "conceptos_retomados": 18,
  "conceptos_anticipados": 0,
  "practicas": {
   "PRAC:desarrollar-y-usar-modelos": 6,
-  "PRAC:usar-matematicas-en-ciencias": 6,
+  "PRAC:usar-matematicas-en-ciencias": 5,
   "PRAC:medir-con-instrumentos": 4,
   "PRAC:transformar-representaciones": 4,
   "PRAC:repetir-mediciones-y-estimar-error": 3,
@@ -22,19 +22,25 @@
   "PRAC:comunicar-resultados": 1,
   "PRAC:construir-explicaciones-con-evidencia": 1,
   "PRAC:evaluar-fuentes-de-informacion": 1,
-  "PRAC:evaluar-modelos-y-limitaciones": 1,
   "PRAC:interpretar-datos-y-concluir": 1,
   "PRAC:naturaleza-provisional-del-conocimiento": 1,
   "PRAC:planificar-investigaciones": 1,
   "PRAC:trabajar-con-seguridad-y-etica": 1
  },
  "objetivos_marco": {
-  "T8_27": 18
+  "T8_27": 20
  },
  "anclajes": [
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
    "concepto": "CON:ciencias_tierra_espacio/tectonica-de-placas",
+   "estado": "ausente",
+   "primer_grado_sv": null,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:quimica/enlace-quimico",
+   "concepto": "CON:quimica/enlace-ionico",
    "estado": "ausente",
    "primer_grado_sv": null,
    "confianza": "alta"
@@ -299,13 +305,6 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:quimica/isotopos",
-   "concepto": "CON:quimica/masa-atomica-relativa",
-   "estado": "mismo_grado",
-   "primer_grado_sv": 5,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:quimica/atomo-y-particulas-subatomicas",
    "concepto": "CON:quimica/modelos-atomicos-historicos",
    "estado": "mismo_grado",
@@ -432,13 +431,6 @@
    "confianza": "alta"
   },
   {
-   "prerrequisito": "CON:quimica/enlace-quimico",
-   "concepto": "CON:quimica/enlace-ionico",
-   "estado": "posterior",
-   "primer_grado_sv": 10,
-   "confianza": "alta"
-  },
-  {
    "prerrequisito": "CON:quimica/electrones-de-valencia-y-regla-del-octeto",
    "concepto": "CON:quimica/iones",
    "estado": "posterior",
@@ -467,6 +459,27 @@
    "confianza": "alta"
   },
   {
+   "prerrequisito": "CON:biologia/clasificacion-de-seres-vivos-por-rasgos",
+   "concepto": "CON:biologia/biodiversidad",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/habitat-y-ecosistemas-comunes",
+   "concepto": "CON:biologia/biodiversidad",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "baja"
+  },
+  {
+   "prerrequisito": "CON:biologia/cadena-alimentaria",
+   "concepto": "CON:biologia/depredacion",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "alta"
+  },
+  {
    "prerrequisito": "CON:biologia/amenazas-a-la-biodiversidad",
    "concepto": "CON:biologia/extincion-de-especies",
    "estado": "previo",
@@ -481,11 +494,60 @@
    "confianza": "media"
   },
   {
+   "prerrequisito": "CON:biologia/habitat-y-ecosistemas-comunes",
+   "concepto": "CON:biologia/factores-bioticos-y-abioticos",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/redes-troficas",
+   "concepto": "CON:biologia/flujo-de-energia-y-piramides",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:fisica/transformaciones-energia",
+   "concepto": "CON:biologia/flujo-de-energia-y-piramides",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
    "prerrequisito": "CON:biologia/fosiles",
    "concepto": "CON:biologia/historia-de-la-vida-en-la-tierra",
    "estado": "previo",
    "primer_grado_sv": 3,
    "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/cadena-alimentaria",
+   "concepto": "CON:biologia/productores-consumidores-descomponedores",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "alta"
+  },
+  {
+   "prerrequisito": "CON:biologia/microorganismos",
+   "concepto": "CON:biologia/productores-consumidores-descomponedores",
+   "estado": "previo",
+   "primer_grado_sv": 2,
+   "confianza": "media"
+  },
+  {
+   "prerrequisito": "CON:biologia/competencia-por-recursos",
+   "concepto": "CON:biologia/simbiosis",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "baja"
+  },
+  {
+   "prerrequisito": "CON:biologia/factores-bioticos-y-abioticos",
+   "concepto": "CON:biologia/simbiosis",
+   "estado": "previo",
+   "primer_grado_sv": 4,
+   "confianza": "media"
   },
   {
    "prerrequisito": "CON:ciencias_tierra_espacio/capas-internas-de-la-tierra",
@@ -735,15 +797,6 @@
  ],
  "faltantes_por_edad": [
   {
-   "concepto": "CON:biologia/depredacion",
-   "sv": 7,
-   "paises": {
-    "CO": 3.0,
-    "ENG": 2,
-    "JP": 5.0
-   }
-  },
-  {
    "concepto": "CON:ciencias_tierra_espacio/ciclo-del-agua",
    "sv": 7,
    "paises": {
@@ -765,12 +818,20 @@
   },
   {
    "concepto": "CON:biologia/adaptaciones-conductuales",
-   "sv": 11,
+   "sv": null,
    "paises": {
     "AU": 4.0,
     "CO": 2,
     "JP": 3.0,
     "SG": 6.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/biomas-y-tipos-de-ambientes",
+   "sv": 7,
+   "paises": {
+    "CO": 4.0,
+    "UY": 3.0
    }
   },
   {
@@ -822,7 +883,7 @@
   },
   {
    "concepto": "CON:biologia/reproduccion-de-plantas-con-flor",
-   "sv": 6,
+   "sv": null,
    "paises": {
     "AU": 8.0,
     "ENG": 2,
@@ -875,6 +936,16 @@
     "ENG": 6.0,
     "SG": 3.0,
     "UY": 4.0
+   }
+  },
+  {
+   "concepto": "CON:biologia/herencia-de-rasgos",
+   "sv": 10,
+   "paises": {
+    "CO": 2,
+    "ENG": 4.0,
+    "JP": 8.0,
+    "SG": 5.0
    }
   },
   {
@@ -977,7 +1048,7 @@
    }
   }
  ],
- "referentes_paises": 132,
+ "referentes_paises": 143,
  "top_conceptos": [
   [
    "CON:fisica/medicion-magnitudes-instrumentos",

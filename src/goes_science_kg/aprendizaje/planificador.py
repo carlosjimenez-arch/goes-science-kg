@@ -60,7 +60,7 @@ class Presupuesto:
 def bases_previas(nav: Navegador, objetivo: str) -> list[Base]:
     """Bases de profundidad 1 que la malla no enseña antes del objetivo, la más cercana al objetivo primero."""
     huecos = [b for b in nav.bases(objetivo, profundidad=1) if not b.antes_del_objetivo]
-    return sorted(huecos, key=lambda b: (-CONFIANZA_ORDEN[b.confianza], orden_tema(b.primer_tema or "TEMA:G99"),
+    return sorted(huecos, key=lambda b: (-CONFIANZA_ORDEN[b.confianza], orden_tema(b.primer_tema or "") or (99, "", 0),
                                          b.concepto))[:config()["refuerzo"]["max_previos"]]
 
 

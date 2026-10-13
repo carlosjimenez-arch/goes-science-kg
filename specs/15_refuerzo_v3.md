@@ -34,8 +34,31 @@ marca sus propuestas. Es una propuesta con evidencia, no una decisión: el MINED
 - **Hoja nueva «Herramientas IA»** en Bachillerato (actividades con herramientas de IA). Queda fuera del alcance de
   ciencias y se enlaza con `goes-techonoly-kg`.
 
+**Correspondencia final** (`data/interim/mallas/v2_a_v3.json`, 2026-10-13). Además de idénticos y parecidos, la V3:
+- **amplía o fusiona** temas: 75 temas de la V3 contienen casi entero (≥ 80 % de sus raíces) un tema de la V2 sin
+  par, y heredan su id;
+- **absorbe** temas: 136 temas de la V2 están dentro de otro tema de la V3 que ya tiene par;
+- **mueve de grado** temas: 5, sobre todo genética y evolución, que pasa de 7.° a 9.°.
+
+| Tema de la V3 | Cantidad |
+|---|---|
+| Idéntico a la V2 | 819 |
+| Parecido | 21 |
+| Ampliado | 75 |
+| Nuevo | 20 |
+
+Quedan 251 temas de la V2 sin rastro en el texto de la V3. Se juzgan por concepto en 15.4.
+
+**Lo que ya se sabe para el refuerzo:**
+- 10 de los 11 errores y problemas de progresión registrados siguen literales en la V3. Solo se corrigió la fibra
+  óptica de 10.°. El «recordar V = IR» se movió a un tema nuevo de 11.°.
+- Al pasar la resistencia bacteriana de 7.° a 9.°, el ciclo 5.°–8.° deja sin cubrir el objetivo de TIMSS 8.° B6.1
+  (causas, transmisión, prevención y resistencia a enfermedades).
+- Posible error nuevo de la V3: en 9.° 8.4, el procedimental habla de producir oxígeno y el indicador mide CO₂ (y
+  repite el número 8.3).
+
 ## Fases
-### 15.0 · Ingesta de la V3
+### 15.0 · Ingesta de la V3 ✅ (2026-10-13)
 - El responsable copia los archivos a `data/fuentes/mined/Mallas sugeridas v3/`. La guarda impide que lo haga Claude.
 - `config/mallas.yaml` apunta a la V3, con el nombre explícito de cada archivo. `config/mallas_v2.yaml` conserva la
   V2.
@@ -43,7 +66,7 @@ marca sus propuestas. Es una propuesta con evidencia, no una decisión: el MINED
   (con su par y su similitud) o `nuevo`. Cada tema de la V2 sin par queda `sin_par`. Es determinista y tiene prueba.
 - Pruebas: la V3 se lee completa por hoja, los ids son únicos y la correspondencia cubre los dos lados.
 
-### 15.1 · Migración de las capas por la correspondencia
+### 15.1 · Migración de las capas por la correspondencia ✅ (2026-10-13)
 Todo lo que está atado a un id de tema de la V2 pasa al id de la V3 de su par idéntico:
 - etiquetado de conceptos del grafo principal;
 - revisiones de etiquetas y de coherencia;
@@ -54,10 +77,26 @@ Todo lo que está atado a un id de tema de la V2 pasa al id de la V3 de su par i
 Lo de un par «parecido» se copia marcado para verificar. Lo de un tema «sin par» se conserva como histórico y no se
 borra. El script valida que ninguna referencia quede apuntando a un id que no existe.
 
-### 15.2 · Etiquetado de los temas nuevos y parecidos
+**Cómo quedó** (sin reescribir capas: los ids estables hacen casi todo el trabajo):
+- `mallas.vigente_de(id)` traduce un id de la V2 al tema de la V3 que lo contiene. Lo usan la capa pedagógica (las
+  actividades sin objetivo vigente pasan a `historico`) y su validación;
+- el etiquetado de conceptos suma, como secundarios, los conceptos de lo absorbido al tema que lo absorbe;
+- las clasificaciones TIMSS, PISA y ACARA llegan por `TemaMalla.llave`, la llave de la V2 de su par;
+- el orden de la malla sale de la posición real del tema y no del id;
+- el verificador del bucle busca una cita en el texto de la V1, la V2 y la V3;
+- la conciliación de propuestas sigue siendo con la V2.
+
+### 15.2 · Etiquetado de los temas nuevos y parecidos ✅ (2026-10-13)
 - **Grafo principal:** subagentes `etiquetador-conceptos` sobre los 116 temas, sin costo de Vertex.
 - **Contraste:** el etiquetado `malla_v2` se hace con Vertex. Primero se estima sin `--confirmar` y se pide la
   aprobación por número de llamadas, con margen.
+
+**Hecho el 2026-10-13:**
+- `alineador-marcos` clasificó 30 temas: TIMSS 4.° y 8.°, PISA, TIMSS Advanced y ACARA. Los lotes llevan el sufijo
+  `_V3` para no pisar los ya unidos;
+- cuatro `etiquetador-conceptos` re-etiquetaron los 116 temas nuevos, parecidos y ampliados (`preparar-etiquetado
+  --v3`). Su etiqueta gana sobre la heredada;
+- Vertex etiquetó la malla para el contraste: 67 llamadas, aprobadas hasta 84.
 
 ### 15.3 · Recalcular sobre la V3
 - Se reconstruyen el grafo, los grados, las fichas y el contraste de los dos tramos.

@@ -14,7 +14,7 @@ def test_grafo_sin_errores(grafo):
 def test_conteos(grafo):
     nodos, aristas = grafo
     n = Counter(x.tipo for x in nodos)
-    assert n[TipoNodo.TEMA] == 1307
+    assert n[TipoNodo.TEMA] == 935   # malla V3 (spec 15)
     assert n[TipoNodo.ASIGNATURA] == 4
     # 506 objetivos heredados (UY, CO, SG) + los países nuevos de data/interim/paises/ (ENG 270, AU 152).
     assert n[TipoNodo.OBJETIVO_PAIS] >= 506

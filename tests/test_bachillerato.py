@@ -7,7 +7,7 @@ def test_bachillerato_bio_quim_alineado_a_auss(grafo):
     nodos, aristas = grafo
     temas = {n.id for n in nodos if n.tipo == TipoNodo.TEMA and n.grado >= 10
              and n.asignatura in ("biologia", "quimica")}
-    assert len(temas) == 371
+    assert len(temas) == 253   # V3 (spec 15): Bachillerato consolidado en clases
     auss = {a.origen for a in aristas if a.tipo == TipoArista.CUBRE and a.destino.startswith("OBJ:ACS")}
     # Todo tema de Biología/Química de Bachillerato está alineado (o marcado FUERA en la clasificación).
     from goes_science_kg.ingesta.legado import clasificacion_auss

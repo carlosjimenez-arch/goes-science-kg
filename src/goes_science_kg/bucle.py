@@ -149,7 +149,8 @@ def _temas() -> dict[str, TemaMalla]:
     from goes_science_kg.ingesta.mallas import extraer
 
     temas = {t.id: t for t in extraer("mallas_v1")}
-    temas.update({t.id: t for t in extraer()})   # la V2 gana si el id existe en las dos
+    temas.update({t.id: t for t in extraer("mallas_v2")})
+    temas.update({t.id: t for t in extraer()})   # la vigente (V3) gana si el id existe en varias
     return temas
 
 
@@ -158,7 +159,13 @@ def _filas_completas() -> dict[str, str]:
     """Id del tema → texto de todas las celdas de su fila (también microhabilidades PISA e indicador avanzado)."""
     from goes_science_kg.ingesta.mallas import textos_completos
 
-    return {**textos_completos("mallas_v1"), **textos_completos()}
+    # Un id que cambió de texto entre versiones (un tema «parecido» de la V3) se busca en los dos textos: las citas
+    # anteriores a la V3 siguen ancladas en lo que decía la V2.
+    salida: dict[str, str] = {}
+    for version in ("mallas_v1", "mallas_v2", "mallas"):
+        for i, texto in textos_completos(version).items():
+            salida[i] = texto if salida.get(i) in (None, texto) else f"{texto} ‖ {salida[i]}"
+    return salida
 
 
 def _texto_tema(t: TemaMalla) -> str:

@@ -210,24 +210,33 @@ def consolidar_vocabulario() -> dict:
 
 
 # -- 2. etiquetado ------------------------------------------------------------------------------
-def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True) -> list[str]:
+def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True,
+                        reetiquetar: frozenset[str] = frozenset()) -> list[str]:
     """Un lote por asignatura y grado con los temas y el vocabulario de ESA asignatura + prácticas.
 
     Con solo_pendientes, únicamente los temas sin etiquetar que tampoco están ya en un lote (p. ej. los que agregó
     la V2), en lotes `<asig>_G<gg>_<n>` numerados tras los existentes; así no se reescriben lotes que ya tienen
-    salida y correrlo dos veces es seguro. Sin él, se rehacen los lotes base `<asig>_G<gg>`."""
+    salida y correrlo dos veces es seguro. Sin él, se rehacen los lotes base `<asig>_G<gg>`.
+
+    `reetiquetar` (spec 15): ids que se vuelven a etiquetar aunque ya tengan etiqueta (los temas de la V3 que
+    cambiaron), en lotes `<asig>_G<gg>_V3[_<n>]`; como se unen después de los anteriores, su etiqueta gana."""
 
     voc, prac = vocabulario(), practicas()
     escritos = []
     temas = [n for n in nodos if n.tipo == TipoNodo.TEMA and n.asignatura]
     existentes = sorted(ruta(f"{DIR}/lotes").glob("lote_*.json"))
     if solo_pendientes:
-        hechos = set(etiquetado()) | {i["id"] for p in existentes
-                                      for i in json.loads(p.read_text(encoding="utf-8"))["items"]}
-        temas = [t for t in temas if t.id.removeprefix("TEMA:") not in hechos]
+        en_lote = {p.stem: {i["id"] for i in json.loads(p.read_text(encoding="utf-8"))["items"]} for p in existentes}
+        hechos = set(etiquetado()) | set().union(*en_lote.values())
+        en_v3 = set().union(*(ids for n, ids in en_lote.items() if "_V3" in n))
+        temas = [t for t in temas if (i := t.id.removeprefix("TEMA:")) not in hechos
+                 or (i in reetiquetar and i not in en_v3)]
     for asig, grado in sorted({(t.asignatura, t.grado) for t in temas}):
         nombre = f"{asig}_G{grado:02d}"
-        if solo_pendientes:
+        if solo_pendientes and reetiquetar:
+            previos = sum(1 for p in existentes if p.stem.startswith(f"lote_{nombre}_V3"))
+            nombre += "_V3" + (f"_{previos + 1}" if previos else "")
+        elif solo_pendientes:
             nombre += f"_{sum(1 for p in existentes if p.stem.startswith(f'lote_{nombre}')) + 1}"
         lote = {
             "lote": nombre, "version": VERSION_ETIQUETADO,
@@ -236,8 +245,8 @@ def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True) -> list
                             if c["asignatura"] == asig],
             "practicas": [{k: p[k] for k in ("id", "nombre")} for p in prac.values()],
             "items": [{"id": t.id.removeprefix("TEMA:"), "unidad": t.props.get("unidad"),
-                       "contenido": t.props.get("contenido"), "procedimental": t.etiqueta,
-                       "indicador": t.props.get("indicador")}
+                       "contenido": t.props.get("contenido"), "subcontenido": t.props.get("subcontenido"),
+                       "procedimental": t.etiqueta, "indicador": t.props.get("indicador")}
                       for t in sorted(temas, key=lambda x: x.id) if t.asignatura == asig and t.grado == grado],
         }
         escritos.append(relativa(_escribir(f"{DIR}/lotes/lote_{lote['lote']}.json", lote)))
@@ -268,7 +277,8 @@ def errores_lote_temas(lote: dict, salida: list[dict]) -> list[str]:
 def unir_etiquetado() -> dict:
     """Valida las salidas del subagente contra sus lotes y escribe etiquetado_temas.json y conceptos_propuestos.json
     (nombres nuevos por frecuencia). Lanza ValueError si hay errores; devuelve los conteos."""
-    filas, errores, nuevos = [], [], Counter()
+    filas: dict[str, dict] = {}   # un id etiquetado en varios lotes: gana el último (los «_V3» van después)
+    errores, nuevos = [], Counter()
     for p_lote in sorted(ruta(f"{DIR}/lotes").glob("lote_*.json")):
         lote = json.loads(p_lote.read_text(encoding="utf-8"))
         p_sal = p_lote.with_name(p_lote.name.replace("lote_", "salida_", 1))
@@ -284,15 +294,16 @@ def unir_etiquetado() -> dict:
                 continue
             for n in s.get("nuevos", []):
                 nuevos[n] += 1
-            filas.append({"id": item["id"], "conceptos": s.get("conceptos", []), "practicas": s.get("practicas", []),
-                          "nuevos": s.get("nuevos", []), "confianza": s.get("confianza"),
-                          "justificacion": s.get("justificacion"), "version": lote["version"]})
+            filas[item["id"]] = {"id": item["id"], "conceptos": s.get("conceptos", []),
+                                 "practicas": s.get("practicas", []), "nuevos": s.get("nuevos", []),
+                                 "confianza": s.get("confianza"), "justificacion": s.get("justificacion"),
+                                 "version": lote["version"]}
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
-    _escribir(f"{DIR}/etiquetado_temas.json", sorted(filas, key=lambda f: f["id"]))
+    _escribir(f"{DIR}/etiquetado_temas.json", sorted(filas.values(), key=lambda f: f["id"]))
     _escribir(f"{DIR}/conceptos_propuestos.json", sorted(nuevos.items(), key=lambda x: (-x[1], x[0])))
     etiquetado.cache_clear()
-    return {"temas": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas)),
+    return {"temas": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas.values())),
             "conceptos_propuestos": len(nuevos)}
 
 
@@ -308,6 +319,15 @@ def etiquetado() -> dict[str, dict]:
         if extra:
             f["conceptos"] = f["conceptos"] + sorted(set(extra), key=extra.index)
             f["conceptos_triaje"] = sorted(set(extra))
+    # Spec 15: un tema de la V2 que la V3 fusionó en otro le suma sus conceptos, como secundarios, al que lo contiene.
+    from goes_science_kg.ingesta.mallas import absorbidos
+
+    for previo, absorbe in sorted(absorbidos().items()):
+        if previo in filas and absorbe in filas:
+            f = filas[absorbe]
+            if extra := [c for c in filas[previo]["conceptos"] if c not in f["conceptos"]]:
+                f["conceptos"] = f["conceptos"] + extra
+                f["conceptos_absorbidos"] = sorted({*f.get("conceptos_absorbidos", []), *extra})
     return filas
 
 

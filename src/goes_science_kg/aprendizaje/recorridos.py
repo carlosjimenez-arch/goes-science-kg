@@ -50,7 +50,7 @@ RECORRIDOS = [
                "ACT:fisica/temperatura-medicion-escalas/sondeo-1-G09": "distractor",
                "ACT:fisica/temperatura-medicion-escalas/sondeo-2-G09": "incorrecta"}},
     {"id": "R3", "archivo": "R3_constante_equilibrio.md", "estudiante": "EST-DEMO-3", "grado": 9,
-     "objetivo": "TEMA:G09-CIE-U3-3.6",
+     "objetivo": "TEMA:G09-CIE-U3-3.3",   # la V3 fusionó 3.6 (representar la constante) en 3.3 (spec 15)
      "titulo": "Constante de equilibrio (Química, 9.°): las bases están; la dificultad es del objetivo",
      "muestra": "Los sondeos DESCARTAN las dos bases (equilibrio dinámico y molaridad) y confirman la dificultad "
                 "en el concepto del objetivo: se refuerza el objetivo, no sus prerrequisitos. Luego, "
@@ -67,7 +67,7 @@ RECORRIDOS = [
      "tutor": True, "evaluador": True,
      "guion": {"ACT:G05-CIE-U6-6.14/obj-1": "distractor"}},
     {"id": "R5", "archivo": "R5_respuesta_abierta_a_revision.md", "estudiante": "EST-DEMO-5", "grado": 9,
-     "objetivo": "TEMA:G09-CIE-U3-3.6",
+     "objetivo": "TEMA:G09-CIE-U3-3.3",
      "titulo": "Constante de equilibrio (9.°): una respuesta abierta que no se califica sola",
      "muestra": "La respuesta abierta intenta darle instrucciones al evaluador. La guarda la detecta, no llama al "
                 "modelo y la manda a revisión docente: el estado del objetivo no cambia hasta que el docente decida.",
