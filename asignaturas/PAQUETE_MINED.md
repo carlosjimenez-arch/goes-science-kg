@@ -24,12 +24,15 @@ nada cambia la malla sin una decisión del MINED. Cada archivo indica qué colum
 El grafo ya aplica estas decisiones, pero falta la confirmación del MINED.
 
 **[`decisiones/2026-10-13_decisiones.csv`](decisiones/2026-10-13_decisiones.csv)** (reemplaza a los anteriores). Trae
-175 decisiones: 167 con dictamen del panel y su solidez, y 8 delegadas, verificadas en la fuente y pendientes de
+190 decisiones: 167 con dictamen del panel y su solidez, y 23 delegadas, verificadas en la fuente y pendientes de
 confirmar.
 - **Tras las observaciones del panel:**
   - la neutralización pasa a «tardío» (el bucle lo confirmó);
   - los agentes oxidantes, a «posterior»;
   - las fuerzas intermoleculares, a «sin referente» (solo ENG GCSE las tiene en el núcleo).
+- **De lo que el panel dejó sin consenso:** 15 clases de 2.°–8.°, casi todas de umbral. Se resolvieron con la
+  regla «solo se afirma lo que coincide»: 10 alineadas, 3 posteriores y 2 fuera del contraste. El contraste de
+  2.°–8.° ya no tiene conceptos inciertos.
 - **De la revisión crítica del bucle:**
   - catalizadores queda «sin referente», porque G06-CIE-U5-5.2 trata la catálisis enzimática;
   - las 4 clases «no retomado» de 9.°–11.° pasan a «retomado»: efecto invernadero (dos conceptos), capas de la
@@ -126,7 +129,7 @@ Solo se incluyen hallazgos comprobados contra la fila de la malla V2 y la págin
   objetivo de HK sobre gases es Extension Part).
 - **Límite del método:** las clases automáticas de 2.°–8.° tenían 46 % de falsos. El método se corrigió el 2026-10-12
   y se probó con una muestra nueva: bajó a 25 %. Por eso solo se presentan los hallazgos verificados. El panel
-  clasificó 135 de los 150 conceptos inciertos; quedan 15 para una persona.
+  clasificó 135 de los 150 conceptos inciertos, y los 15 restantes se resolvieron por delegación.
 
 ## 3. Propuestas curriculares y lo que la V2 ya incorporó
 [`PROPUESTAS.md`](PROPUESTAS.md) tiene 11 borradores por ciclo, simulados sobre la V2. Los errores de secuencia de

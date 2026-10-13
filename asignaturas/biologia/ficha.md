@@ -11,13 +11,13 @@
 | 4.° | 40 | 2. Nutrición.; 6. Cuerpo humano: movimiento e interacciones.; 5. Cuerpo humano: materia y energía.; 3. Naturaleza y sus interacciones. |
 | 5.° | 1 | 6. Ciencias de la Tierra. |
 | 6.° | 34 | 5. Célula.; 6. Biología del desarrollo. |
-| 7.° | 44 | 2. Genética y evolución; 3. Biodiversidad; 4. Ecología; 6. Ambiente y energía |
+| 7.° | 45 | 2. Genética y evolución; 3. Biodiversidad; 4. Ecología; 6. Ambiente y energía |
 | 8.° | 27 | 7. Anatomía y Fisiología Animal; 6. Anatomía y fisiología vegetal |
 | 9.° | 19 | 9. Salud humana.; 8. La célula.; 10. Genética y biotecnología.; 4. Oceanografía |
 | 10.° | 70 | 2. Biología celular; 3. Anatomía y fisiología humana; 1. Biomoléculas; 5. Evolución |
 | 11.° | 92 | 3. Biotecnología vegetal y agroindustria; 2. Biotecnología microbiana y los virus; 4. Bases genéticas de la evolución; 1. Ecología y ambiente |
 
-Total: **387 temas**. Asignados por: ia 8, malla 162, pisa 1, revision 13, timss 203.
+Total: **388 temas**. Asignados por: ia 8, malla 162, pisa 1, revision 14, timss 203.
 
 ## Cobertura de los marcos internacionales
 

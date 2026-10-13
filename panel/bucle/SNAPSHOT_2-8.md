@@ -1,23 +1,23 @@
 # Reforzamiento de 8.° a 2.°: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Cada dictamen se ubica en el grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Cada dictamen se ubica en el grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».
 
 **Cómo leer la solidez.** «Sólido» quiere decir que el dictamen sobrevivió a un revisor adversarial y que una cita literal de una fuente primaria lo apoya; no prueba que la interpretación sea la correcta. La estabilidad solo se midió en la muestra de la sonda ciega (63 de 486). Todos son dictámenes del panel de expertos IA, **no confirmaciones del MINED**.
 
-| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Sin consenso |
-|---|---|---|---|---|---|---|
-| [8.°](#8-grado) | 23 | 1 | 20 | 0 | 0 | 3 |
-| [7.°](#7-grado) | 50 | 6 | 46 | 2 | 0 | 2 |
-| [6.°](#6-grado) | 40 | 2 | 36 | 2 | 1 | 1 |
-| [5.°](#5-grado) | 73 | 1 | 67 | 3 | 0 | 3 |
-| [4.°](#4-grado) | 24 | 1 | 21 | 0 | 0 | 3 |
-| [3.°](#3-grado) | 50 | 4 | 43 | 5 | 0 | 2 |
-| [2.°](#2-grado) | 35 | 2 | 30 | 1 | 0 | 4 |
-| [Del tramo](#del-tramo-sin-grado-de-la-malla) | 10 | 0 | 10 | 0 | 0 | 0 |
+| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Delegados | Sin consenso |
+|---|---|---|---|---|---|---|---|
+| [8.°](#8-grado) | 23 | 1 | 20 | 0 | 0 | 3 | 0 |
+| [7.°](#7-grado) | 50 | 6 | 46 | 2 | 0 | 2 | 0 |
+| [6.°](#6-grado) | 40 | 2 | 36 | 2 | 1 | 1 | 0 |
+| [5.°](#5-grado) | 73 | 1 | 67 | 3 | 0 | 3 | 0 |
+| [4.°](#4-grado) | 24 | 1 | 21 | 0 | 0 | 3 | 0 |
+| [3.°](#3-grado) | 50 | 4 | 43 | 5 | 0 | 2 | 0 |
+| [2.°](#2-grado) | 35 | 2 | 30 | 1 | 0 | 4 | 0 |
+| [Del tramo](#del-tramo-sin-grado-de-la-malla) | 10 | 0 | 10 | 0 | 0 | 0 | 0 |
 
 ## 8.° grado
 
-23 dictámenes: 1 cambiado por el bucle; 20 sólidos, 0 respaldados, 0 frágiles y 3 sin consenso.
+23 dictámenes: 1 cambiado por el bucle; 20 sólidos, 0 respaldados, 0 frágiles, 3 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -25,13 +25,13 @@
 |---|---|---|---|---|
 | propuestas curriculares | 5.7. Relación entre la estructura y las propiedades de metales, cerámicas y materiales compues… | adaptar | sólido | adoptar → adaptar. **experto-quimica:** 8.°, unidad 5, después de 5.6 (renumerar: ya existe un 5.7). Tema: Relación cualitativa entre la estructura y las propiedades de metales, cerámicas y materiales compuestos. Indicador: compara con pruebas sencillas (raya… |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| clases del contraste de 2.°–8.° | Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica) | sin consenso | sin consenso | confianza baja de experto-quimica |
-| clases del contraste de 2.°–8.° | Péndulo simple (CON:fisica/pendulo-simple) | sin consenso | sin consenso | confianza baja de experto-fisica |
-| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | sin consenso | sin consenso | sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar |
+| clases del contraste de 2.°–8.° | Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica) | delegada: posterior | delegada | el panel no llegó a consenso (confianza baja de experto-quimica); decidió el responsable por delegación: posterior (pendiente de confirmar). En 2.°–8.° la V2 solo da contexto industrial (G08-CIE-U4-4.11); balances y operaciones unitarias empiezan en 11.° (G11… |
+| clases del contraste de 2.°–8.° | Péndulo simple (CON:fisica/pendulo-simple) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar). La V2 trata el péndulo en 8.° (G08-CIE-U3-3.4); JP en SV 4, y KR, TW y EE entre 7.° y 8.°: mediana cerca de 7,5. El pénd… |
+| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | delegada: matizar | delegada | el panel no llegó a consenso (sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar); decidió el responsable por delegación: matizar (pendiente de confirmar). Se adopta el matiz del experto (el psicopedagogo coincide en … |
 
 ### Detalle: todos los dictámenes
 
@@ -49,21 +49,21 @@
 | clases del contraste de 2.°–8.° | Mezclas de gases, difusión y gases reales (CON:quimica/difusion-efusion-y-gases-reales) | posterior | sólido | La ley de Graham entra en 10.° — «Calcula la relación de velocidades de efusión de dos gases con la ley de Graham» (G10-QUI-U6-6.6 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 60)) |
 | clases del contraste de 2.°–8.° | Minerales: composición y estructura cristalina (CON:quimica/minerales) | alineado | sólido | 8.° enseña la estructura cristalina de los minerales — «Reconoce las estructuras cristalinas de los minerales» (G08-CIE-U5-5.6 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 5 - Minerales», fila 8)) |
 | clases del contraste de 2.°–8.° | Movimiento con aceleración constante (CON:fisica/movimiento-uniformemente-acelerado) | alineado | sólido | La V2 introduce el MRUV en 8.° — «Interpreta gráficas de posición-tiempo y velocidad-tiempo del MRU y del MRUV» (G08-CIE-U1-1.8 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 1 - Mecánica», fila 10)) |
-| clases del contraste de 2.°–8.° | Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-quimica |
-| clases del contraste de 2.°–8.° | Péndulo simple (CON:fisica/pendulo-simple) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-fisica |
+| clases del contraste de 2.°–8.° | Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica) | delegada: posterior | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-quimica); decidió el responsable por delegación: posterior (pendiente de confirmar) |
+| clases del contraste de 2.°–8.° | Péndulo simple (CON:fisica/pendulo-simple) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Reflexión interna total (CON:fisica/reflexion-interna-total) | posterior | sólido | La V2 trabaja la reflexión interna total en 10.° — «Resuelve problemas que involucran reflexión, refracción y reflexión interna total» (G10-FIS-U16-16.9 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 120)) |
 | clases del contraste de 2.°–8.° | Rendimiento de una reacción (CON:quimica/rendimiento-de-reaccion) | sin_referente | sólido | La V2 enseña el rendimiento en 8.° — «Reconoce el reactivo limitante, el rendimiento teórico y el rendimiento porcentual» (G08-CIE-U4-4.8 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 10)) |
 | clases del contraste de 2.°–8.° | Teoría cinética de los gases (CON:quimica/teoria-cinetica-de-los-gases) | posterior | sólido | La teoría cinética de los gases de la V2 está en 10.° — «Calcula la energía cinética media y la rapidez cuadrática media de las moléculas de un gas» (G10-FIS-U14-14.2 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 99)) |
 | clases del contraste de 2.°–8.° | Órbitas y satélites (CON:fisica/orbitas-satelites) | sin_referente | sólido | La V2 lo enseña en 8.° — «Explica el papel de la gravedad en las órbitas de planetas y satélites» (G08-CIE-U8-8.8 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 10)) |
 | hallazgos del contraste | Big Bang en 8.° sin el corrimiento al rojo | matizar | sólido | 8.° ya trabaja espectros en la unidad del Big Bang — «Nucleosíntesis y origen de los elementos químicos Espectros de luz» (G08-CIE-U8-8.3 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 8 - La Tierra en el univ», fila 5)) |
-| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | sin consenso | sin consenso | sin cita del revisor; sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar |
+| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | delegada: matizar | delegada | sin cita del revisor; el panel no llegó a consenso (sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar); decidió el responsable por delegación: matizar (pendiente de confirmar) |
 | hallazgos del contraste | Las adaptaciones no se retoman entre 3.° y 10.° | matizar | sólido | la V2 relaciona rasgos y ambiente en 2.° — «Relaciona las características físicas de un animal con su alimentación y el lugar donde vi» (G02-CIE-U4-4.8 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 14)) |
 | hallazgos del contraste | Tipos de rocas (3.°) antes que minerales (8.°) | respaldar | sólido | Ontario Grade 4 (SV 3) trabaja rocas y minerales juntos — «classify different rocks and minerals» (ON_ScienceTechnology_Grades1-8_2022.pdf p. 135) |
 | propuestas curriculares | 5.7. Relación entre la estructura y las propiedades de metales, cerámicas y materiales compues… | adaptar | sólido | Inglaterra lo pide solo de forma cualitativa — «properties of ceramics, polymers and composites (qualitative)» (ENG_NC_Science_KS3_2013.pdf p. 9) |
 
 ## 7.° grado
 
-50 dictámenes: 6 cambiados por el bucle; 46 sólidos, 2 respaldados, 0 frágiles y 2 sin consenso.
+50 dictámenes: 6 cambiados por el bucle; 46 sólidos, 2 respaldados, 0 frágiles, 2 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -82,12 +82,12 @@
 |---|---|---|---|---|
 | clases del contraste de 2.°–8.° | Acidificación del océano (CON:ciencias_tierra_espacio/acidificacion-del-oceano) | posterior | respaldado | El dictamen afirma que Corea solo trata la acidificación en general, no la del océano. Falso: la guía del mismo estándar [6과09-04… → **experto-tierra-espacio:** Mantengo «posterior». Acepto la corrección: Corea también nombra la acidificación oceánica, como e… |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| asignatura de temas | G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio | sin consenso | sin consenso | confianza baja de experto-tierra-espacio |
-| clases del contraste de 2.°–8.° | Especies clave (CON:biologia/especies-clave) | sin consenso | sin consenso | confianza baja de experto-biologia |
+| asignatura de temas | G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio | delegada: rechazar | delegada | el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: rechazar (pendiente de confirmar). Se mantiene Biología con impacto humano en los ecosistemas como principal (coherencia con 6.10 y 6.11): la alter… |
+| clases del contraste de 2.°–8.° | Especies clave (CON:biologia/especies-clave) | delegada: no_aplica | delegada | el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: no_aplica (pendiente de confirmar). La V2 no enseña especies clave en 2.°–11.°: la presencia en 7.° es un falso positivo (G07-CIE-U3-3.8 trata claves dic… |
 
 ### Detalle: todos los dictámenes
 
@@ -100,7 +100,7 @@
 | asignatura de temas | G07-CIE-U5-5.9: quimica → quimica (revisión de conceptos) | aceptar | sólido | Medición de parámetros químicos del agua — «Determina valores de algunos parámetros fisicoquímicos de calidad de agua» (G07-CIE-U5-5.9 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 11)) |
 | asignatura de temas | G07-CIE-U6-6.10: biologia → biologia (revisión de conceptos) | aceptar | sólido | el indicador trata efectos sobre ecosistemas — «Lista posibles perturbaciones ecosistémicas derivadas de la explotación energética» (G07-CIE-U6-6.10 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 12)) |
 | asignatura de temas | G07-CIE-U6-6.11: biologia → biologia (revisión de conceptos) | aceptar | sólido | el indicador es impacto humano en ecosistemas — «Explica con sus palabras cuáles son las principales actividades humanas que impactan los e» (G07-CIE-U6-6.11 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 13)) |
-| asignatura de temas | G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-tierra-espacio |
+| asignatura de temas | G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio | delegada: rechazar | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: rechazar (pendiente de confirmar) |
 | asignatura de temas | G07-CIE-U6-6.5: fisica → fisica (revisión de conceptos) | aceptar | sólido | El tema es aprovechar energía por combustión — «Elabora un dispositivo de combustión para el aprovechamiento de energías no renovables» (G07-CIE-U6-6.5 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 7)) |
 | asignatura de temas | G07-CIE-U6-6.6: fisica → fisica (revisión de conceptos) | rechazar | sólido | El tema pide un esquema, no explicar el generador — «Esquematiza el proceso general de transformación de combustibles en energía eléctrica. Esq» (G07-CIE-U6-6.6 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 8)) |
 | clases del contraste de 2.°–8.° | Acidificación del océano (CON:ciencias_tierra_espacio/acidificacion-del-oceano) | posterior | respaldado | La V2 la enseña por primera vez en 9.° — «Explica la acidificación del océano» (G09-CIE-U4-4.17 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 4 - Oceanografía», fila 19)) |
@@ -110,7 +110,7 @@
 | clases del contraste de 2.°–8.° | Combustión (CON:quimica/combustion) | alineado | sólido | 6.° enseña la combustión como tipo de reacción — «Reconoce las reacciones de síntesis, descomposición, sustitución y combustión» (G06-CIE-U4-4.10 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 12)) |
 | clases del contraste de 2.°–8.° | Cuantización de la energía (CON:fisica/cuantizacion-energia-planck) | posterior | sólido | en 9.° solo es un símbolo de la lista — «h: Constante de Planck, en joule por segundo» (G09-CIE-U7-7.1 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 7 - Magnetismo aplicado», fila 3)) |
 | clases del contraste de 2.°–8.° | Diversidad genética de poblaciones (CON:biologia/diversidad-genetica-de-poblaciones) | alineado | sólido | ON (SV 5): la diversidad intraespecífica y la supervivencia — «describe ways in which biodiversity within species is essential for their survival» (ON_ScienceTechnology_Grades1-8_2022.pdf p. 151) |
-| clases del contraste de 2.°–8.° | Especies clave (CON:biologia/especies-clave) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-biologia |
+| clases del contraste de 2.°–8.° | Especies clave (CON:biologia/especies-clave) | delegada: no_aplica | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: no_aplica (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Factores limitantes de las poblaciones (CON:biologia/factores-limitantes-de-poblaciones) | alineado | sólido | la V2 lo enseña en 7.° — «Describe la estructura y dinámica elemental de una población utilizando datos experimental» (G07-CIE-U4-4.4 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 4 - Ecología», fila 6)) |
 | clases del contraste de 2.°–8.° | Herencia ligada al sexo, alelos múltiples y poligénica (CON:biologia/herencia-no-mendeliana) | alineado | sólido | La competencia de la unidad de 7.° incluye cruces no mendelianos. — «Plantea la ocurrencia de cruces con patrones de herencia no mendeliana» (G07-CIE-U2-2.1 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 3)) |
 | clases del contraste de 2.°–8.° | Modelo estándar de partículas (CON:fisica/modelo-estandar-particulas) | posterior | sólido | La V2 lo enseña en 11.° — «Clasifica partículas en quarks, leptones y bosones» (G11-FIS-U20-20.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 125)) |
@@ -146,7 +146,7 @@
 
 ## 6.° grado
 
-40 dictámenes: 2 cambiados por el bucle; 36 sólidos, 2 respaldados, 1 frágil y 1 sin consenso.
+40 dictámenes: 2 cambiados por el bucle; 36 sólidos, 2 respaldados, 1 frágil, 1 delegado y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -161,12 +161,12 @@
 |---|---|---|---|---|
 | hallazgos del contraste | Ley de Ohm como relación explícita llega tarde (V2 la nombra en 11.°; parcial) | matizar | respaldado | Matizar se sostiene, pero el matiz (9.°) no resuelve el hallazgo: con consenso 7, la regla exige menos de dos grados y 9.° sigue … → **experto-fisica:** La lectura se sostiene: 6.° mide voltaje, corriente y resistencias y ya predice la corriente a partir de l… |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| clases del contraste de 2.°–8.° | Organelos de la célula eucariota (CON:biologia/organelos-de-la-celula-eucariota) | sin_referente | frágil | cita una fuente que no existe: ENG_NC_Science_KS3_2013.pdf p. 172 |
-| clases del contraste de 2.°–8.° | Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades) | sin consenso | sin consenso | confianza baja de experto-quimica |
+| clases del contraste de 2.°–8.° | Organelos de la célula eucariota (CON:biologia/organelos-de-la-celula-eucariota) | sin_referente | frágil | cita una fuente que no existe: ENG_NC_Science_KS3_2013.pdf p. 172. |
+| clases del contraste de 2.°–8.° | Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-quimica); decidió el responsable por delegación: alineado (pendiente de confirmar). En el umbral: la V2 relaciona propiedades y enlace en 6.° (G06-CIE-U4-4.2); ENG GCSE, EE y TW hacia SV 8, y HK y ENG KS… |
 
 ### Detalle: todos los dictámenes
 
@@ -202,7 +202,7 @@
 | clases del contraste de 2.°–8.° | Química de los carbohidratos (CON:quimica/quimica-de-los-carbohidratos) | posterior | sólido | En 6.° solo se reconocen los grupos de biomoléculas — «Reconoce carbohidratos, lípidos, proteínas y ácidos nucleicos y sus funciones» (G06-CIE-U5-5.1 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 3)) |
 | clases del contraste de 2.°–8.° | Requerimientos de materia y energía de la célula (CON:biologia/requerimientos-de-la-celula) | alineado | sólido | La V2 lo enseña en 6.°. — «Explica el mecanismo general de la respiración celular eucariota» (G06-CIE-U5-5.12 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 14)) |
 | clases del contraste de 2.°–8.° | Resistencia equivalente (CON:fisica/resistencia-equivalente) | adelantado | sólido | La V2 calcula la resistencia equivalente en 6.° — «Calcula la resistencia equivalente y continuidad de la corriente eléctrica en un circuito » (G06-CIE-U3-3.5 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Electricidad y magne», fila 7)) |
-| clases del contraste de 2.°–8.° | Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-quimica |
+| clases del contraste de 2.°–8.° | Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-quimica); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | decisiones de contenido | Clase de «Química de los lípidos» en el contraste de 2.°–8.°: sin_referente → posterior | aceptar (clase vigente: posterior) | sólido | En 6.° solo se reconocen grupos de biomoléculas — «Conocer: reconocer los grupos de biomoléculas» (G06-CIE-U5-5.1 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 3)) |
 | hallazgos del contraste | Enlace iónico en 5.°–6.°, sin referente | matizar | sólido | Lo observable del compuesto iónico en 6.° — «Razonar: interpretar por qué solo conduce la sal disuelta» (G06-CIE-U4-4.2 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 4)) |
 | hallazgos del contraste | Fuerzas intermoleculares en 6.°, adelantadas | respaldar | sólido | Van der Waals explícito en 6.° — «Fuerzas intermoleculares. Fuerzas de Van der Waals» (G06-CIE-U4-4.7 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 9)) |
@@ -215,7 +215,7 @@
 
 ## 5.° grado
 
-73 dictámenes: 1 cambiado por el bucle; 67 sólidos, 3 respaldados, 0 frágiles y 3 sin consenso.
+73 dictámenes: 1 cambiado por el bucle; 67 sólidos, 3 respaldados, 0 frágiles, 3 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -231,13 +231,13 @@
 | asignatura de temas | G05-CIE-U6-6.3: biologia → ciencias_tierra_espacio | aceptar | respaldado | La asignatura (Tierra y Espacio) se sostiene. Pero los dos expertos recomiendan que en 5.° la datación «debe quedarse en lo relat… → **experto-biologia:** Mantengo aceptar: el tema está en el bloque «Tiempo geológico» y sus conceptos (tiempo geológico, fósile… |
 | clases del contraste de 2.°–8.° | Suma de vectores y componentes rectangulares (CON:fisica/suma-vectores-componentes) | sin_referente | respaldado | Busqué vectores, resultante y descomposición en los objetivos de los nueve países hasta SV 8: solo JP 中3 (p. 57) y ENG GCSE (p. 3… → **experto-fisica:** Mantengo sin referente. La sonda cuenta como suma de vectores la fuerza neta en una dimensión de ENG KS3, … |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| clases del contraste de 2.°–8.° | Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton) | sin consenso | sin consenso | confianza baja de experto-fisica |
-| clases del contraste de 2.°–8.° | Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico) | sin consenso | sin consenso | confianza baja de experto-tierra-espacio |
-| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | sin consenso | sin consenso | sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar |
+| clases del contraste de 2.°–8.° | Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar). En el umbral: la V2 identifica pares de acción y reacción en 5.° (G05-CIE-U2-2.10); HK la enseña en P5 (SV 4), antes que… |
+| clases del contraste de 2.°–8.° | Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar). En el umbral: la V2 categoriza eones, eras y períodos en 5.° (G05-CIE-U6-6.1); JP 6 y TW 7, y AU solo con una et… |
+| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | delegada: matizar | delegada | el panel no llegó a consenso (sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar); decidió el responsable por delegación: matizar (pendiente de confirmar). Se adopta el matiz del experto (el psicopedagogo coincide en … |
 
 ### Detalle: todos los dictámenes
 
@@ -274,8 +274,8 @@
 | clases del contraste de 2.°–8.° | Segunda ley de la termodinámica (CON:fisica/segunda-ley-maquinas-termicas) | posterior | sólido | La V2 trabaja la eficiencia de las máquinas térmicas en 9.° — «Resuelve problemas acerca de la máxima eficiencia posible en una reversión parcial con máq» (G09-CIE-U2-2.10 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 12)) |
 | clases del contraste de 2.°–8.° | Sistema Internacional de Unidades (CON:fisica/sistema-internacional-unidades) | adelantado | sólido | La V2 trabaja conversiones del SI en 5.° — «Transforma unidades de medida mediante factores de conversión» (G05-CIE-U1-1.6 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Magnitudes físicas», fila 8)) |
 | clases del contraste de 2.°–8.° | Suma de vectores y componentes rectangulares (CON:fisica/suma-vectores-componentes) | sin_referente | respaldado | La V2 suma vectores por componentes en 8.° — «Suma y resta dos vectores por el método de las componentes rectangulares» (G08-CIE-U1-1.5 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 1 - Mecánica», fila 7)) |
-| clases del contraste de 2.°–8.° | Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-fisica |
-| clases del contraste de 2.°–8.° | Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-tierra-espacio |
+| clases del contraste de 2.°–8.° | Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar) |
+| clases del contraste de 2.°–8.° | Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | capa pedagógica | ACT:G05-CIE-U6-6.14/obj-1 | corregir | sólido | El indicador de 5.° pide oxidación, disolución y descomposición. — «Reconoce procesos químicos del suelo: oxidación, disolución de minerales y descomposición» (G05-CIE-U6-6.14 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ciencias de la Tierr», fila… |
 | capa pedagógica | ACT:G05-CIE-U6-6.14/obj-2 | corregir | sólido | La malla pide la prueba de vinagre en muestras de suelo. — «Agrega vinagre a muestras de suelo para detectar carbonatos» (G05-CIE-U6-6.14 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ciencias de la Tierr», fila 16)) |
 | capa pedagógica | ACT:G05-CIE-U6-6.14/obj-abierta | corregir | sólido | El indicador de 5.° pide oxidación, disolución y descomposición. — «Reconoce procesos químicos del suelo: oxidación, disolución de minerales y descomposición» (G05-CIE-U6-6.14 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ciencias de la Tierr», fila… |
@@ -305,7 +305,7 @@
 | decisiones de contenido | Clase de «Campo magnético terrestre» en el contraste de 2.°–8.°: tardio → alineado | aceptar (clase vigente: alineado) | sólido | Taiwán enseña el campo terrestre y la brújula en primaria alta (SV 4–5) — «地球有磁場，會使指北針指向固定方向» (TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 23) |
 | decisiones de contenido | Clase de «Conservación de la energía» en el contraste de 2.°–8.°: tardio → alineado | aceptar (clase vigente: alineado) | sólido | Ontario 5.° enuncia la ley de conservación, no solo el ahorro — «demonstrate an understanding of the law of conservation of energy, including how energy ca» (ON_ScienceTechnology_Grades1-8_2022.pdf p. 146) |
 | decisiones de contenido | Clase de «Sustancias puras: elementos y compuestos» en el contraste de 2.°–8.°: tardio → aline… | aceptar (clase vigente: alineado) | sólido | En 5.° se leen fórmulas de elementos y compuestos — «Aplicar: interpretar cuántos átomos indica una fórmula» (G05-CIE-U4-4.5 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Tabla periódica», fila 7)) |
-| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | sin consenso | sin consenso | sin cita del revisor; sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar |
+| hallazgos del contraste | Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | delegada: matizar | delegada | sin cita del revisor; el panel no llegó a consenso (sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar); decidió el responsable por delegación: matizar (pendiente de confirmar) |
 | hallazgos del contraste | Enlace iónico en 5.°–6.°, sin referente | matizar | sólido | Lo observable del compuesto iónico en 6.° — «Razonar: interpretar por qué solo conduce la sal disuelta» (G06-CIE-U4-4.2 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Interacciones químic», fila 4)) |
 | hallazgos del contraste | Formación de la Tierra en 5.°, sin referente | matizar | sólido | El indicador ya pide discutir los límites del modelo de cera — «Razonar: evaluar qué muestra y qué no muestra el modelo» (G05-CIE-U5-5.8 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Ciencias del espacio», fila 10)) |
 | hallazgos del contraste | Iones en 5.°, adelantados | matizar | sólido | Formación de iones en 5.° — «Razonar: deducir la carga de un ion a partir de los electrones ganados o perdidos» (G05-CIE-U3-3.7 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 9)) |
@@ -319,7 +319,7 @@
 
 ## 4.° grado
 
-24 dictámenes: 1 cambiado por el bucle; 21 sólidos, 0 respaldados, 0 frágiles y 3 sin consenso.
+24 dictámenes: 1 cambiado por el bucle; 21 sólidos, 0 respaldados, 0 frágiles, 3 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -327,13 +327,13 @@
 |---|---|---|---|---|
 | clases del contraste de 2.°–8.° | Satélites, asteroides y cometas (CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas) | alineado | sólido | sin_referente → alineado. **experto-tierra-espacio:** Cambio a «alineado». El concepto incluye las lunas que orbitan planetas, y Hong Kong P5 (SV 4, núcleo) pide el número de satélites descubiertos de cada planeta, lo mismo que G04-CIE-U4-4.11: excluirlo fue … |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| clases del contraste de 2.°–8.° | Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-… | sin consenso | sin consenso | confianza baja de experto-tierra-espacio |
-| clases del contraste de 2.°–8.° | Mareas (CON:ciencias_tierra_espacio/mareas) | sin consenso | sin consenso | confianza baja de experto-tierra-espacio |
-| clases del contraste de 2.°–8.° | Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica) | sin consenso | sin consenso | confianza baja de experto-biologia |
+| clases del contraste de 2.°–8.° | Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-… | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar). En el umbral: la V2 introduce el clima en 4.° (G04-CIE-U3-3.11); EE y HK lo hacen antes (SV 2,5–3) y JP, KR y TW… |
+| clases del contraste de 2.°–8.° | Mareas (CON:ciencias_tierra_espacio/mareas) | delegada: posterior | delegada | el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: posterior (pendiente de confirmar). La V2 explica las mareas en 9.° (G09-CIE-U4-4.10); en 4.° solo las menciona dentro de la Luna (4.3). Cuatro paí… |
+| clases del contraste de 2.°–8.° | Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar). En el umbral: la V2 caracteriza los niveles en 4.° (G04-CIE-U3-3.3); los países dan la jerarquía hacia SV 5,5–6,5 y su… |
 
 ### Detalle: todos los dictámenes
 
@@ -342,12 +342,12 @@
 | asignatura de temas | G04-CIE-U1-1.15: quimica → fisica | aceptar | sólido | El tema clasifica materiales con un circuito — «Clasifica materiales en conductores y aislantes eléctricos mediante un circuito de prueba » (G04-CIE-U1-1.15 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Máquinas y energía», fila 17)) |
 | asignatura de temas | G04-CIE-U2-2.12: ciencias_tierra_espacio → biologia | rechazar | sólido | el indicador es agrícola, no biotecnológico — «Clasifica algunos tipos de cultivos vegetales según su propósito e intensidad» (G04-CIE-U2-2.12 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Nutrición», fila 14)) |
 | clases del contraste de 2.°–8.° | Aplicaciones de las leyes de Newton (CON:fisica/aplicaciones-leyes-newton) | posterior | sólido | el concepto entra en 10.° — «Resuelve problemas de sistemas de cuerpos conectados, con o sin rozamiento y en planos inc» (G10-FIS-U5-5.12 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 38)) |
-| clases del contraste de 2.°–8.° | Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-… | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-tierra-espacio |
+| clases del contraste de 2.°–8.° | Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-… | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Energía de los alimentos y balance energético (CON:biologia/energia-de-los-alimentos-y-balance… | adelantado | sólido | ENG lo enseña en KS3 (SV 5–7) — «calculations of energy requirements in a healthy daily diet» (ENG_NC_Science_KS3_2013.pdf p. 5) |
 | clases del contraste de 2.°–8.° | Inducción electromagnética: Faraday y Lenz (CON:fisica/induccion-electromagnetica) | posterior | sólido | La V2 nombra la inducción en 9.° — «Explica en términos sencillos el electroimán, la inducción y la resonancia magnética» (G09-CIE-U7-7.4 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 7 - Magnetismo aplicado», fila 6)) |
-| clases del contraste de 2.°–8.° | Mareas (CON:ciencias_tierra_espacio/mareas) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-tierra-espacio |
+| clases del contraste de 2.°–8.° | Mareas (CON:ciencias_tierra_espacio/mareas) | delegada: posterior | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: posterior (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Niveles de organización de los seres vivos (CON:biologia/niveles-de-organizacion) | alineado | sólido | La V2 introduce los niveles en 6.°. — «Reconoce los niveles de organización biológica presentes en un sistema vivo» (G06-CIE-U5-5.6 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 8)) |
-| clases del contraste de 2.°–8.° | Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-biologia |
+| clases del contraste de 2.°–8.° | Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Oleaje, dinámica costera y sedimentación marina (CON:ciencias_tierra_espacio/oleaje-y-dinamica… | posterior | sólido | En 4.° el oleaje solo aparece como manifestación de los ciclones. — «Ciclones y sus manifestaciones (viento, oleaje, lluvia)» (G04-CIE-U3-3.10 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Naturaleza y sus int», fila 12)) |
 | clases del contraste de 2.°–8.° | Planetas: tipos y comparación (CON:ciencias_tierra_espacio/planetas-y-su-comparacion) | alineado | sólido | La V2 compara los planetas en 4.°. — «Organiza en una tabla la distancia al Sol (en UA), el tamaño y la composición» (G04-CIE-U4-4.9 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 11)) |
 | clases del contraste de 2.°–8.° | Reproducción humana y pubertad (CON:biologia/reproduccion-humana-y-pubertad) | alineado | sólido | La V2 lo introduce en 4.°. — «Describe la estructura del sistema reproductor femenino y masculino» (G04-CIE-U6-6.9 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 6 - C. humano movimiento», fila 11)) |
@@ -366,7 +366,7 @@
 
 ## 3.° grado
 
-50 dictámenes: 4 cambiados por el bucle; 43 sólidos, 5 respaldados, 0 frágiles y 2 sin consenso.
+50 dictámenes: 4 cambiados por el bucle; 43 sólidos, 5 respaldados, 0 frágiles, 2 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -385,12 +385,12 @@
 | propuestas curriculares | 1.8. Experimentación con la fricción y la resistencia del aire que frenan el movimiento. | adaptar | respaldado | La fricción ya está en 3.° 1.3, como dice el panel. Pero lo único nuevo que conserva, la resistencia del aire en 3.°, solo lo res… → **experto-fisica:** Sin tema nuevo en 3.°. (1) En 1.3, hacer explícita en el indicador la fricción (roce) como fuerza de conta… |
 | propuestas curriculares | 4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y fru… | adaptar | respaldado | El panel ubica un 4.10 «después de 4.2» sin ver que 3.° ya tiene el subcontenido «Flor, fruto y semilla» (4.3), cuyo indicador so… → **experto-biologia:** Se adapta sin crear un tema nuevo. 3.° ya tiene el subcontenido «Flor, fruto y semilla» (G03-CIE-U4-4.3)… |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| clases del contraste de 2.°–8.° | Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/g… | sin consenso | sin consenso | confianza baja de experto-tierra-espacio |
-| clases del contraste de 2.°–8.° | Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra) | sin consenso | sin consenso | confianza baja de experto-fisica |
+| clases del contraste de 2.°–8.° | Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/g… | delegada: no_aplica | delegada | el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: no_aplica (pendiente de confirmar). Ni la V2 ni los países enseñan glaciaciones ni impactos de asteroides: la V2 trata glaciares actuales en 3.° (G… |
+| clases del contraste de 2.°–8.° | Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar). La V2 nombra la gravedad en 3.° (G03-CIE-U1-1.4) y la retoma en 5.° y 8.°; HK, ENG Year 5 y AU Year 4 la dan en SV 2–3. … |
 
 ### Detalle: todos los dictámenes
 
@@ -413,8 +413,8 @@
 | clases del contraste de 2.°–8.° | El ojo y los instrumentos ópticos (CON:fisica/ojo-instrumentos-opticos) | tardio | sólido | ENG KS3 (SV 5–7) enseña la lente convexa y el ojo — «action of convex lens in focusing (qualitative); the human eye» (ENG_NC_Science_KS3_2013.pdf p. 12) |
 | clases del contraste de 2.°–8.° | Equilibrio térmico y ley cero (CON:fisica/equilibrio-termico) | alineado | sólido | el fenómeno en 3.° — «describe cómo se acercan las dos temperaturas» (G03-CIE-U1-1.8 (Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 1 - Medidas y fuerzas», fila 10)) |
 | clases del contraste de 2.°–8.° | Estrategias reproductivas y supervivencia de la descendencia (CON:biologia/estrategias-reprodu… | sin_referente | sólido | HK 小四 (SV 3): aumentar la descendencia y su supervivencia — «認識生物增加後代數量及其生存機會的不同方法» (HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 30) |
-| clases del contraste de 2.°–8.° | Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/g… | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-tierra-espacio |
-| clases del contraste de 2.°–8.° | Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-fisica |
+| clases del contraste de 2.°–8.° | Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/g… | delegada: no_aplica | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: no_aplica (pendiente de confirmar) |
+| clases del contraste de 2.°–8.° | Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Hidrosfera: distribución del agua dulce y salada (CON:ciencias_tierra_espacio/hidrosfera-distr… | alineado | sólido | Hong Kong P3 (SV 2): agua salada y dulce — «3EA1 知道鹹水和淡水的來源︐及其在日常生活的用途» (HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 40) |
 | clases del contraste de 2.°–8.° | La célula como unidad de la vida (CON:biologia/la-celula-unidad-de-la-vida) | alineado | sólido | La V2 introduce la teoría celular en 6.°. — «Reconoce los principales eventos del desarrollo de la teoría celular» (G06-CIE-U5-5.3 (Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 5)) |
 | clases del contraste de 2.°–8.° | Papel de los seres vivos en el ciclo del agua (CON:biologia/ciclo-del-agua-y-seres-vivos) | alineado | sólido | 3.° no trata el ciclo del agua — «Emplea un modelo para observar condiciones de sequía» (G03-CIE-U3-3.6 (Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 3 - El agua», fila 8)) |
@@ -449,7 +449,7 @@
 
 ## 2.° grado
 
-35 dictámenes: 2 cambiados por el bucle; 30 sólidos, 1 respaldado, 0 frágiles y 4 sin consenso.
+35 dictámenes: 2 cambiados por el bucle; 30 sólidos, 1 respaldado, 0 frágiles, 4 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -458,14 +458,14 @@
 | clases del contraste de 2.°–8.° | Flotación y hundimiento (CON:fisica/flotacion-hundimiento) | alineado | sólido | adelantado → alineado. **experto-fisica:** Cambio a alineado. La impugnación tiene razón: verifiqué que ON (Grade 2), HK (P3 y P6) y SG (P3) enseñan en primaria si un objeto flota o se hunde, sin densidad, a la edad de 2.°. Mi mediana mezclaba ese nivel con e… |
 | clases del contraste de 2.°–8.° | Potencia eléctrica y efecto Joule (CON:fisica/potencia-electrica-joule) | alineado | respaldado | tardio → alineado. **experto-fisica:** Cambio a alineado: «tardío» cae. Verifiqué que 8.° ya calcula el consumo de aparatos en kWh con la factura de la casa (G08-2.11, rotulado «potencia mecánica»), lo que fecha a SG y ENG KS3; con consenso en 7, 8.° no es ta… |
 
-### Frágiles o sin consenso (los decide una persona)
+### Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-| Tipo | Expediente | Resolución | Solidez | Motivo |
+| Tipo | Expediente | Resolución | Solidez | Motivo y decisión |
 |---|---|---|---|---|
-| clases del contraste de 2.°–8.° | Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento) | sin consenso | sin consenso | confianza baja de experto-fisica |
-| clases del contraste de 2.°–8.° | Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-super… | sin consenso | sin consenso | confianza baja de experto-tierra-espacio |
-| clases del contraste de 2.°–8.° | Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion) | sin consenso | sin consenso | confianza baja de experto-fisica |
-| clases del contraste de 2.°–8.° | Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano) | sin consenso | sin consenso | confianza baja de experto-biologia |
+| clases del contraste de 2.°–8.° | Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar). La V2 lo trabaja en 3.° (G03-CIE-U1-1.8); AU lo da en SV 2–3, SG y KR en SV 4–4,5: la mediana queda en el umbral de 1,5 … |
+| clases del contraste de 2.°–8.° | Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-super… | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar). Ríos en 3.° (G03-CIE-U3-3.3) y cuenca en 7.° (G07-CIE-U5-5.2), como ON Grade 8 (cuenca) y JP, KR, TW (aguas supe… |
+| clases del contraste de 2.°–8.° | Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion) | delegada: posterior | delegada | el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: posterior (pendiente de confirmar). La V2 enseña esfuerzo, deformación y módulo de Young en 11.° (G11-FIS-U2-2.1). La carga del puente de 2.° (G02-CIE-U5-5… |
+| clases del contraste de 2.°–8.° | Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano) | delegada: alineado | delegada | el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar). La V2 lo enseña en 2.° (G02-CIE-U4-4.6, 4.10); ON Grade 3, TW etapa II y KR 3–4 a la misma edad. La lectura «adelantad… |
 
 ### Detalle: todos los dictámenes
 
@@ -478,14 +478,14 @@
 | asignatura de temas | G02-CIE-U3-3.1: fisica → fisica (revisión de conceptos) | aceptar | sólido | Movimiento como cambio de posición, idea base del concepto — «Reconoce que un objeto se mueve cuando cambia de lugar» (G02-CIE-U3-3.1 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 3 - Movimiento», fila 3)) |
 | asignatura de temas | G02-CIE-U3-3.2: fisica → fisica (revisión de conceptos) | aceptar | sólido | El indicador pide rapidez y dirección de forma cualitativa — «Compara movimientos según su rapidez (rápido o lento) y su dirección» (G02-CIE-U3-3.2 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 3 - Movimiento», fila 4)) |
 | asignatura de temas | G02-CIE-U3-3.3: fisica → fisica (revisión de conceptos) | aceptar | sólido | Trayectorias, parte del concepto de movimiento — «Clasifica movimientos en recto, circular, de vaivén o en zigzag a partir de ejemplos cotid» (G02-CIE-U3-3.3 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 3 - Movimiento», fila 5)) |
-| clases del contraste de 2.°–8.° | Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-fisica |
+| clases del contraste de 2.°–8.° | Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Calor como energía en tránsito (CON:fisica/calor-vs-temperatura) | alineado | sólido | la V2 trata el calor como transferencia en 4.° — «Reconoce que el calor pasa del objeto más caliente al más frío hasta que ambos quedan igua» (G04-CIE-U1-1.12 (Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 1 - Máquinas y energía», fila 14)) |
 | clases del contraste de 2.°–8.° | Centro de gravedad y estabilidad (CON:fisica/centro-gravedad-estabilidad) | posterior | sólido | ON Grade 7: único país con el concepto — «describe ways in which the centre of gravity of a structure affects the structure's stabil» (ON_ScienceTechnology_Grades1-8_2022.pdf p. 166) |
 | clases del contraste de 2.°–8.° | Contaminación y sus efectos en los seres vivos (CON:biologia/contaminacion-y-seres-vivos) | alineado | sólido | HK 小二 (SV 2): efectos de la contaminación en seres vivos — «列舉污染影響動物和植物生存的一些例子» (HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 31) |
-| clases del contraste de 2.°–8.° | Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-super… | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-tierra-espacio |
+| clases del contraste de 2.°–8.° | Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-super… | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Distribución electrónica por niveles (modelo de capas) (CON:quimica/distribucion-electronica-p… | adelantado | sólido | 5.° trabaja los niveles de energía de Bohr — «Recuerda el modelo de Bohr y sus niveles de energía alrededor del núcleo» (G05-CIE-U3-3.10 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 3 - Estructura atómica», fila 12)) |
 | clases del contraste de 2.°–8.° | Energía geotérmica (CON:ciencias_tierra_espacio/energia-geotermica) | sin_referente | sólido | La V2 la introduce en 2.° — «la electricidad se obtiene de fuentes naturales como el agua, el Sol y el calor de la tier» (G02-CIE-U2-2.3 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 2 - Energía», fila 6)) |
-| clases del contraste de 2.°–8.° | Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-fisica |
+| clases del contraste de 2.°–8.° | Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion) | delegada: posterior | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: posterior (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Flotación y hundimiento (CON:fisica/flotacion-hundimiento) | alineado | sólido | la V2 en 2.° — «Predice y comprueba qué objetos flotan o se hunden» (G02-CIE-U1-1.10 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 12)) |
 | clases del contraste de 2.°–8.° | Grupos de alimentos y dieta balanceada (CON:biologia/grupos-de-alimentos-y-dieta-balanceada) | alineado | sólido | HK 小三 (SV 2): alimentos de una dieta equilibrada — «知道均衡飲食中常見的食物種類» (HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 27) |
 | clases del contraste de 2.°–8.° | Impacto humano en los ecosistemas (CON:biologia/impacto-humano-en-los-ecosistemas) | alineado | sólido | La V2 lo enseña en 2.°. — «Identifica amenazas para los animales y propone formas de protegerlos» (G02-CIE-U4-4.12 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 18)) |
@@ -495,7 +495,7 @@
 | clases del contraste de 2.°–8.° | Materiales opacos, transparentes y translúcidos (CON:fisica/materiales-opacos-transparentes) | alineado | sólido | La V2 lo enseña en 2.° — «Clasifica materiales en opacos, transparentes y translúcidos» (G02-CIE-U2-2.11 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 2 - Energía», fila 14)) |
 | clases del contraste de 2.°–8.° | Nutrición autótrofa y heterótrofa (CON:biologia/nutricion-autotrofa-y-heterotrofa) | alineado | sólido | La V2 lo enseña en 2.°. — «Las plantas fabrican su alimento con luz, agua y aire» (G02-CIE-U4-4.3 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 9)) |
 | clases del contraste de 2.°–8.° | Ondas mecánicas transversales y longitudinales (CON:fisica/ondas-mecanicas-tipos) | alineado | sólido | La V2 lo enseña en 8.° — «Genera ondas transversales y longitudinales con un resorte largo e identifica cada tipo» (G08-CIE-U3-3.7 (Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 3 - Ondas mecánicas», fila 9)) |
-| clases del contraste de 2.°–8.° | Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano) | sin consenso | sin consenso | sin cita del revisor; confianza baja de experto-biologia |
+| clases del contraste de 2.°–8.° | Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano) | delegada: alineado | delegada | sin cita del revisor; el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar) |
 | clases del contraste de 2.°–8.° | Potencia eléctrica y efecto Joule (CON:fisica/potencia-electrica-joule) | alineado | respaldado | ENG KS3 (SV 6) cuenta como núcleo lo mismo que la V2 hace en 4.° y 8.° — «comparing power ratings of appliances in watts (W, kW)» (ENG_NC_Science_KS3_2013.pdf p. 9) |
 | clases del contraste de 2.°–8.° | Propiedades físicas y químicas (CON:quimica/propiedades-fisicas-y-quimicas) | alineado | sólido | En 2.° la propiedad química se trabaja como cambio irreversible — «Pregunta a su familia y a la docente si el pan tostado puede volver a ser blando» (G02-CIE-U1-1.6 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 1 - Materia», fila 8)) |
 | clases del contraste de 2.°–8.° | Rapidez y velocidad (CON:fisica/rapidez-velocidad) | alineado | sólido | La V2 lo enseña en 5.° — «Distingue la rapidez, que es escalar, de la velocidad, que además indica dirección» (G05-CIE-U2-2.5 (Matriz_Ciencias_5to_Grado_U1_U6.xlsx, hoja «Unidad 2 - Mecánica», fila 7)) |
@@ -511,7 +511,7 @@
 
 Objetivos de otros países asignados a una versión de un concepto, y hallazgos de todo el tramo.
 
-10 dictámenes: 0 cambiados por el bucle; 10 sólidos, 0 respaldados, 0 frágiles y 0 sin consenso.
+10 dictámenes: 0 cambiados por el bucle; 10 sólidos, 0 respaldados, 0 frágiles, 0 delegados y 0 sin consenso.
 
 ### Detalle: todos los dictámenes
 

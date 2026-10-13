@@ -1,6 +1,6 @@
 # Reforzamiento de Química: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
@@ -8,15 +8,15 @@
 
 ## Solidez por tipo
 
-| Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
-|---|---|---|---|---|---|
-| asignaciones de concepto | 84 | 1 | 0 | 0 | 0 |
-| asignatura de temas | 8 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 28 | 0 | 0 | 2 | 0 |
-| capa pedagógica | 26 | 0 | 0 | 0 | 0 |
-| decisiones de contenido | 9 | 2 | 0 | 0 | 0 |
-| hallazgos del contraste | 7 | 1 | 0 | 0 | 0 |
-| propuestas curriculares | 11 | 2 | 0 | 0 | 0 |
+| Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
+|---|---|---|---|---|---|---|
+| asignaciones de concepto | 84 | 1 | 0 | 0 | 0 | 0 |
+| asignatura de temas | 8 | 0 | 0 | 0 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 28 | 0 | 0 | 2 | 0 | 0 |
+| capa pedagógica | 26 | 0 | 0 | 0 | 0 | 0 |
+| decisiones de contenido | 9 | 2 | 0 | 0 | 0 | 0 |
+| hallazgos del contraste | 7 | 1 | 0 | 0 | 0 | 0 |
+| propuestas curriculares | 11 | 2 | 0 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
 
@@ -37,9 +37,9 @@
 - 9.8. Comparación de combustibles fósiles y biocombustibles según la energía liberada, su idoneidad …
 - 12.15. Explicación de la reversibilidad y del equilibrio dinámico con la teoría de colisiones y las…
 
-## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+## Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-- Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica): confianza baja de experto-quimica
-- Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades): confianza baja de experto-quimica
+- Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica): el panel no llegó a consenso (confianza baja de experto-quimica); decidió el responsable por delegación: posterior (pendiente de confirmar)
+- Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades): el panel no llegó a consenso (confianza baja de experto-quimica); decidió el responsable por delegación: alineado (pendiente de confirmar)
 
 **Patrones de error de lo impugnado:** otra_asignatura_o_nombre 4, error_cientifico 2, conteo_de_paises 1, fuente_mal_leida 1, etiqueta_suelta 1.

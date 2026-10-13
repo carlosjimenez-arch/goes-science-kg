@@ -1,6 +1,6 @@
 # Reforzamiento de Biología: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
@@ -8,14 +8,14 @@
 
 ## Solidez por tipo
 
-| Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
-|---|---|---|---|---|---|
-| asignatura de temas | 16 | 1 | 0 | 1 | 0 |
-| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 3 | 0 |
-| capa pedagógica | 34 | 0 | 0 | 0 | 0 |
-| decisiones de contenido | 11 | 0 | 0 | 0 | 0 |
-| hallazgos del contraste | 1 | 1 | 0 | 0 | 0 |
-| propuestas curriculares | 6 | 1 | 0 | 0 | 0 |
+| Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
+|---|---|---|---|---|---|---|
+| asignatura de temas | 16 | 1 | 0 | 1 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 38 | 1 | 1 | 3 | 0 | 0 |
+| capa pedagógica | 34 | 0 | 0 | 0 | 0 | 0 |
+| decisiones de contenido | 11 | 0 | 0 | 0 | 0 | 0 |
+| hallazgos del contraste | 1 | 1 | 0 | 0 | 0 | 0 |
+| propuestas curriculares | 6 | 1 | 0 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
 
@@ -36,12 +36,12 @@
 - Mitosis y ciclo celular (CON:biologia/mitosis-y-ciclo-celular)
 - 4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, …
 
-## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+## Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-- G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio: confianza baja de experto-tierra-espacio
-- Especies clave (CON:biologia/especies-clave): confianza baja de experto-biologia
-- Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): confianza baja de experto-biologia
+- G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio: el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: rechazar (pendiente de confirmar)
+- Especies clave (CON:biologia/especies-clave): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: no_aplica (pendiente de confirmar)
+- Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar)
 - Organelos de la célula eucariota (CON:biologia/organelos-de-la-celula-eucariota): cita una fuente que no existe: ENG_NC_Science_KS3_2013.pdf p. 172
-- Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): confianza baja de experto-biologia
+- Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): el panel no llegó a consenso (confianza baja de experto-biologia); decidió el responsable por delegación: alineado (pendiente de confirmar)
 
 **Patrones de error de lo impugnado:** error_cientifico 3, fuente_mal_leida 2, etiqueta_suelta 2, item_defectuoso 2, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.

@@ -252,3 +252,12 @@ def test_el_contraste_usa_las_etiquetas_revisadas():
 
     temas = {t.id: {"grado": t.grado} for t in extraer()}
     assert "G09-CIE-U9-9.1" in puntos_sv(temas)["CON:biologia/epidemiologia-y-control-de-brotes"]
+
+
+def test_lo_sin_consenso_decidido_por_delegacion_queda_como_delegado():
+    x = {**_resuelto("clase_incierta", ["experto-fisica"], "alineado"), "estado": "sin_consenso",
+         "motivo": "confianza baja de experto-fisica"}
+    assert bucle._solidez(x)[0] == "sin_consenso"
+    x["decision_delegada"] = {"decision": "alineado", "justificacion": "regla del umbral", "evidencia": []}
+    s, motivo = bucle._solidez(x)
+    assert s == "delegada" and "pendiente de confirmar" in motivo

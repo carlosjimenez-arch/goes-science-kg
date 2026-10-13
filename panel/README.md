@@ -91,10 +91,16 @@ Por delegación, con evidencia verificada en la fuente:
   trae en otras columnas (fricción, eficiencia, pH). El panel lo corrigió en sus dictámenes.
 
 ## Lo que queda para una persona
-- **17 expedientes sin consenso** (lista en `DICTAMEN.md`). Por ejemplo:
-  - G07-CIE-U6-6.12: los dos expertos proponen la misma alternativa, pero uno con confianza baja;
-  - el enlace iónico en 6.°;
-  - 15 clases del contraste, con dos lecturas válidas.
+- **Los 17 expedientes sin consenso ya tienen una decisión delegada** (2026-10-13), con evidencia verificada en la
+  fuente y pendiente de confirmar (lista en `DICTAMEN.md`, solidez «delegada»):
+  - **15 clases del contraste de 2.°–8.°:** casi todas son casos de umbral. Se aplicó la regla «solo se afirma lo
+    que coincide»: en el umbral gana la clase que no afirma un desajuste. Resultado: 10 alineadas, 3 posteriores
+    (mareas, elasticidad e industria química, que la V2 desarrolla en 9.° y 11.°) y 2 fuera del contraste (especies
+    clave y glaciaciones);
+  - **G07-CIE-U6-6.12:** vuelve a Biología, la alternativa que propusieron los dos expertos;
+  - **el ciclo de vida de las estrellas:** se matiza con el texto del experto (5.° cualitativo; masa y fusión en 8.°).
+
+  El contraste de 2.°–8.° ya no tiene conceptos inciertos.
 - **Las referencias de literatura** que algunos miembros citaron de memoria (Biología, Tierra y Espacio) no están
   verificadas. Valen como argumento, no como prueba.
 - **Mejora del método del contraste:** la búsqueda de texto confunde raíces cercanas, por ejemplo «potencia» con

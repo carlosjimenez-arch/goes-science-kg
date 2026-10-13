@@ -6,8 +6,8 @@
 
 | Asignatura | Temas |
 |---|---|
-| Biología | 44 |
-| Ciencias de la Tierra y del Espacio | 31 |
+| Biología | 45 |
+| Ciencias de la Tierra y del Espacio | 30 |
 | Física | 3 |
 | Química | 13 |
 

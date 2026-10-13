@@ -1,19 +1,19 @@
 # Reforzamiento de 11.° a 9.°: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Cada dictamen se ubica en el grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Cada dictamen se ubica en el grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».
 
 **Cómo leer la solidez.** «Sólido» quiere decir que el dictamen sobrevivió a un revisor adversarial y que una cita literal de una fuente primaria lo apoya; no prueba que la interpretación sea la correcta. La estabilidad solo se midió en la muestra de la sonda ciega (63 de 486). Todos son dictámenes del panel de expertos IA, **no confirmaciones del MINED**.
 
-| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Sin consenso |
-|---|---|---|---|---|---|---|
-| [11.°](#11-grado) | 14 | 2 | 11 | 3 | 0 | 0 |
-| [10.°](#10-grado) | 31 | 3 | 29 | 2 | 0 | 0 |
-| [9.°](#9-grado) | 101 | 5 | 100 | 1 | 0 | 0 |
-| [Del tramo](#del-tramo-sin-grado-de-la-malla) | 63 | 1 | 62 | 1 | 0 | 0 |
+| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Delegados | Sin consenso |
+|---|---|---|---|---|---|---|---|
+| [11.°](#11-grado) | 14 | 2 | 11 | 3 | 0 | 0 | 0 |
+| [10.°](#10-grado) | 31 | 3 | 29 | 2 | 0 | 0 | 0 |
+| [9.°](#9-grado) | 101 | 5 | 100 | 1 | 0 | 0 | 0 |
+| [Del tramo](#del-tramo-sin-grado-de-la-malla) | 63 | 1 | 62 | 1 | 0 | 0 | 0 |
 
 ## 11.° grado
 
-14 dictámenes: 2 cambiados por el bucle; 11 sólidos, 3 respaldados, 0 frágiles y 0 sin consenso.
+14 dictámenes: 2 cambiados por el bucle; 11 sólidos, 3 respaldados, 0 frágiles, 0 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -50,7 +50,7 @@
 
 ## 10.° grado
 
-31 dictámenes: 3 cambiados por el bucle; 29 sólidos, 2 respaldados, 0 frágiles y 0 sin consenso.
+31 dictámenes: 3 cambiados por el bucle; 29 sólidos, 2 respaldados, 0 frágiles, 0 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -98,7 +98,7 @@
 
 ## 9.° grado
 
-101 dictámenes: 5 cambiados por el bucle; 100 sólidos, 1 respaldado, 0 frágiles y 0 sin consenso.
+101 dictámenes: 5 cambiados por el bucle; 100 sólidos, 1 respaldado, 0 frágiles, 0 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 
@@ -226,7 +226,7 @@
 
 Objetivos de otros países asignados a una versión de un concepto, y hallazgos de todo el tramo.
 
-63 dictámenes: 1 cambiado por el bucle; 62 sólidos, 1 respaldado, 0 frágiles y 0 sin consenso.
+63 dictámenes: 1 cambiado por el bucle; 62 sólidos, 1 respaldado, 0 frágiles, 0 delegados y 0 sin consenso.
 
 ### Lo que el bucle cambió
 

@@ -1,6 +1,6 @@
 # Reforzamiento de Física: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
@@ -8,14 +8,14 @@
 
 ## Solidez por tipo
 
-| Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
-|---|---|---|---|---|---|
-| asignatura de temas | 17 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 5 | 0 |
-| capa pedagógica | 58 | 0 | 0 | 0 | 0 |
-| decisiones de contenido | 12 | 0 | 0 | 0 | 0 |
-| hallazgos del contraste | 4 | 2 | 0 | 0 | 0 |
-| propuestas curriculares | 4 | 1 | 0 | 0 | 0 |
+| Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
+|---|---|---|---|---|---|---|
+| asignatura de temas | 17 | 0 | 0 | 0 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 47 | 2 | 0 | 5 | 0 | 0 |
+| capa pedagógica | 58 | 0 | 0 | 0 | 0 | 0 |
+| decisiones de contenido | 12 | 0 | 0 | 0 | 0 | 0 |
+| hallazgos del contraste | 4 | 2 | 0 | 0 | 0 | 0 |
+| propuestas curriculares | 4 | 1 | 0 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
 
@@ -32,12 +32,12 @@
 - Física nuclear tardía
 - 1.8. Experimentación con la fricción y la resistencia del aire que frenan el movimiento.
 
-## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+## Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-- Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento): confianza baja de experto-fisica
-- Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion): confianza baja de experto-fisica
-- Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra): confianza baja de experto-fisica
-- Péndulo simple (CON:fisica/pendulo-simple): confianza baja de experto-fisica
-- Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton): confianza baja de experto-fisica
+- Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
+- Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: posterior (pendiente de confirmar)
+- Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
+- Péndulo simple (CON:fisica/pendulo-simple): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
+- Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton): el panel no llegó a consenso (confianza baja de experto-fisica); decidió el responsable por delegación: alineado (pendiente de confirmar)
 
 **Patrones de error de lo impugnado:** otra_asignatura_o_nombre 2, progresion 1, etiqueta_suelta 1, electiva_como_nucleo 1, item_defectuoso 1, otro 1, conteo_de_paises 1.

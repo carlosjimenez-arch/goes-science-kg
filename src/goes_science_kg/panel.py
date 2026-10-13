@@ -729,7 +729,10 @@ def informe() -> str:
         pendientes = [(i, x) for i, x in filas if x["estado"] == "sin_consenso"]
         if pendientes:
             md += ["", f"**Sin consenso ({len(pendientes)}), para una decisión humana:**", ""]
-            md += [f"- {_celda(x['titulo'], 120)}: {_celda(x.get('motivo', ''), 200)}" for _, x in pendientes]
+            md += [f"- {_celda(x['titulo'], 120)}: {_celda(x.get('motivo', ''), 200)}"
+                   + (f" **Decisión delegada:** {x['decision_delegada']['decision']}: "
+                      f"{_celda(x['decision_delegada']['justificacion'], 260)}" if x.get("decision_delegada") else "")
+                   for _, x in pendientes]
     from goes_science_kg import bucle
 
     md += bucle.seccion_informe(estado)

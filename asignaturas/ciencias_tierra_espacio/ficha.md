@@ -10,11 +10,11 @@
 | 3.° | 18 | 2. Interacciones terrestres.; 3. El agua. |
 | 4.° | 20 | 4. Sistema solar.; 3. Naturaleza y sus interacciones. |
 | 5.° | 29 | 6. Ciencias de la Tierra.; 5. Ciencias del espacio. |
-| 7.° | 31 | 5. Recurso hídrico; 6. Ambiente y energía |
+| 7.° | 30 | 5. Recurso hídrico; 6. Ambiente y energía |
 | 8.° | 19 | 8. La Tierra en el universo.; 5. Minerales; 10. Sistemas terrestres y cambio global.; 9. Historia de la Tierra. |
 | 9.° | 26 | 4. Oceanografía; 5. Geología de El Salvador |
 
-Total: **154 temas**. Asignados por: ia 20, pisa 4, revision 14, timss 116.
+Total: **153 temas**. Asignados por: ia 20, pisa 4, revision 13, timss 116.
 
 ## Cobertura de los marcos internacionales
 

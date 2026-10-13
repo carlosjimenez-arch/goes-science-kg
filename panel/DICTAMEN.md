@@ -65,7 +65,7 @@
 
 **Sin consenso (1), para una decisión humana:**
 
-- G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio: confianza baja de experto-tierra-espacio
+- G07-CIE-U6-6.12: biologia → ciencias_tierra_espacio: confianza baja de experto-tierra-espacio **Decisión delegada:** rechazar: Se mantiene Biología con impacto humano en los ecosistemas como principal (coherencia con 6.10 y 6.11): la alternativa que propusieron los dos expertos.
 
 ## Asignaciones de la división de «configuración electrónica»
 
@@ -91,7 +91,7 @@
 | Eclipses en 4.°, adelantados | matizar | sólido | **experto-tierra-espacio:** En 4.°, tratar el eclipse solo como un modelo cualitativo de alineación y sombra (lámpara y dos esferas) y contrastarlo de forma explícita con las fases: en las fases vemos distintas partes de la mitad iluminada de la Luna, y en el eclipse la sombra cae sobre un astro. Dejar para G08-CIE-U8-8.4 por qué no hay eclipses cada mes (l… |
 | Enfermedades infecciosas y no infecciosas en 3.°, adelantadas frente a la mediana | matizar | respaldado | **experto-biologia:** El título es correcto: en 3.° la V2 trata la infección, la enfermedad, el contagio y su prevención como indicador de logro (G03-CIE-U6-6.1 y 6.3), y en la misma fila 6.1 nombra las enfermedades no transmisibles como indicador avanzado («Cuestiona sobre las enfermedades no transmisibles»); las desarrolla después, en 7.° (enfermedades ge… |
 | Imágenes en espejos planos llegan tarde (V2 en 10.°) | respaldar | sólido | **experto-fisica:** Verificado: reflexión en 4.° y rayos en 7.°, pero la imagen solo en 10.°–11.°; HK P6, KR 중학교 y SG Lower Secondary la dan en SV 5–8. Es cualitativa (virtual, mismo tamaño, misma distancia, inversión lateral) y se construye con la ley de reflexión que G07-CIE-U6-6.21 ya usa: ese es su lugar natural. El cálculo de 11.° se conserva. **psicop… |
-| Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | sin_consenso | sin consenso | **experto-tierra-espacio:** En 5.°, nivel descriptivo: el Sol es una estrella de tamaño mediano; las estrellas difieren en color, tamaño y brillo; nacen en nebulosas, brillan durante muchísimo tiempo y al final devuelven al espacio material que forma nuevas nebulosas (G05-CIE-U5-5.5). En G05-CIE-U5-5.6 basta identificar y ordenar en imágenes etapas como neb… |
+| Ciclo de vida de las estrellas en 5.° y 8.°, sin referente | sin_consenso | delegada | **experto-tierra-espacio:** En 5.°, nivel descriptivo: el Sol es una estrella de tamaño mediano; las estrellas difieren en color, tamaño y brillo; nacen en nebulosas, brillan durante muchísimo tiempo y al final devuelven al espacio material que forma nuevas nebulosas (G05-CIE-U5-5.5). En G05-CIE-U5-5.6 basta identificar y ordenar en imágenes etapas como neb… |
 | Reacciones exotérmicas y endotérmicas llegan tarde (V2 en 10.°) | respaldar | sólido | **experto-quimica:** Además de los países, hay un argumento interno: el Le Châtelier de 9.° (G09-CIE-U3-3.4/3.5, cambios de color y condiciones de un proceso industrial) exige saber si la reacción libera o absorbe calor para predecir el efecto de la temperatura, y la V2 lo nombra recién en 10.°. Nombrarlo en 7.°–8.° de forma cualitativa resuelve ambas cosas… |
 | Fuerzas intermoleculares en 6.°, adelantadas | respaldar | sólido | **experto-quimica:** En 6.° basta la idea cualitativa de que las partículas se atraen con distinta intensidad, que explica la evaporación del experimento de 4.7. Nombrar tipos (Van der Waals) exige polaridad y electronegatividad; por eso conviene revisar a la vez el momento dipolar de 6.° (4.6), que tiene el mismo problema. **psicopedagogo:** La demostració… |
 | Formación de la Tierra en 5.°, sin referente | matizar | sólido | **experto-tierra-espacio:** Mantener el nivel descriptivo y precisar el alcance: G05-CIE-U5-5.8 trata la formación de la corteza. El modelo de cera muestra una Tierra joven muy caliente, con los materiales más densos hundidos hacia el centro y una superficie que se enfrió y solidificó como corteza. En el paso de evaluar qué no muestra el modelo, el docente … |
@@ -113,7 +113,7 @@
 
 **Sin consenso (1), para una decisión humana:**
 
-- Ciclo de vida de las estrellas en 5.° y 8.°, sin referente: sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar
+- Ciclo de vida de las estrellas en 5.° y 8.°, sin referente: sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar **Decisión delegada:** matizar: Se adopta el matiz del experto (el psicopedagogo coincide en el fondo): en 5.°, identificar y ordenar etapas en imágenes; inferir la etapa por la masa y la fusión queda para 8.° (G08-CIE-U8-8.3); aclarar que no todas las estrellas siguen el mismo camino.
 
 ## Acciones de las propuestas que la V2 no adoptó
 
@@ -152,21 +152,21 @@
 
 **Sin consenso (15), para una decisión humana:**
 
-- Especies clave (CON:biologia/especies-clave): confianza baja de experto-biologia
-- Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): confianza baja de experto-biologia
-- Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): confianza baja de experto-biologia
-- Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-superficiales): confianza baja de experto-tierra-espacio
-- Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/glaciaciones): confianza baja de experto-tierra-espacio
-- Mareas (CON:ciencias_tierra_espacio/mareas): confianza baja de experto-tierra-espacio
-- Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico): confianza baja de experto-tierra-espacio
-- Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores): confianza baja de experto-tierra-espacio
-- Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento): confianza baja de experto-fisica
-- Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion): confianza baja de experto-fisica
-- Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra): confianza baja de experto-fisica
-- Péndulo simple (CON:fisica/pendulo-simple): confianza baja de experto-fisica
-- Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton): confianza baja de experto-fisica
-- Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica): confianza baja de experto-quimica
-- Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades): confianza baja de experto-quimica
+- Especies clave (CON:biologia/especies-clave): confianza baja de experto-biologia **Decisión delegada:** no_aplica: La V2 no enseña especies clave en 2.°–11.°: la presencia en 7.° es un falso positivo (G07-CIE-U3-3.8 trata claves dicotómicas). Solo ON Grade 4 tiene algo cercano. Queda fuera del contraste.
+- Niveles de organización ecológica (CON:biologia/niveles-de-organizacion-ecologica): confianza baja de experto-biologia **Decisión delegada:** alineado: En el umbral: la V2 caracteriza los niveles en 4.° (G04-CIE-U3-3.3); los países dan la jerarquía hacia SV 5,5–6,5 y sus componentes antes (KR, HK P4). No se presenta como hallazgo; en 4.°, ordenar los niveles sin definiciones formales.
+- Plantas y animales útiles al ser humano (CON:biologia/plantas-y-animales-utiles-al-ser-humano): confianza baja de experto-biologia **Decisión delegada:** alineado: La V2 lo enseña en 2.° (G02-CIE-U4-4.6, 4.10); ON Grade 3, TW etapa II y KR 3–4 a la misma edad. La lectura «adelantado» dependía de contar la cría selectiva de ENG GCSE, otro concepto.
+- Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-superficiales): confianza baja de experto-tierra-espacio **Decisión delegada:** alineado: Ríos en 3.° (G03-CIE-U3-3.3) y cuenca en 7.° (G07-CIE-U5-5.2), como ON Grade 8 (cuenca) y JP, KR, TW (aguas superficiales, SV 2,5–4,5). En el umbral solo si se cuenta el mapa de EE.
+- Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/glaciaciones): confianza baja de experto-tierra-espacio **Decisión delegada:** no_aplica: Ni la V2 ni los países enseñan glaciaciones ni impactos de asteroides: la V2 trata glaciares actuales en 3.° (G03-CIE-U3-3.4) y extinciones sin sus causas. Queda fuera del contraste.
+- Mareas (CON:ciencias_tierra_espacio/mareas): confianza baja de experto-tierra-espacio **Decisión delegada:** posterior: La V2 explica las mareas en 9.° (G09-CIE-U4-4.10); en 4.° solo las menciona dentro de la Luna (4.3). Cuatro países las tienen antes (KR, HK, AU, TW), sin consenso de 5.
+- Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico): confianza baja de experto-tierra-espacio **Decisión delegada:** alineado: En el umbral: la V2 categoriza eones, eras y períodos en 5.° (G05-CIE-U6-6.1); JP 6 y TW 7, y AU solo con una etiqueta lateral (escalas del ciclo de las rocas). No se presenta como hallazgo; revisar la profundidad de la datación absoluta en 5.°.
+- Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores): confianza baja de experto-tierra-espacio **Decisión delegada:** alineado: En el umbral: la V2 introduce el clima en 4.° (G04-CIE-U3-3.11); EE y HK lo hacen antes (SV 2,5–3) y JP, KR y TW tratan después sus factores. No se presenta como hallazgo.
+- Calentamiento y enfriamiento (CON:fisica/calentamiento-enfriamiento): confianza baja de experto-fisica **Decisión delegada:** alineado: La V2 lo trabaja en 3.° (G03-CIE-U1-1.8); AU lo da en SV 2–3, SG y KR en SV 4–4,5: la mediana queda en el umbral de 1,5 grados.
+- Esfuerzo, deformación y módulo de Young (CON:fisica/elasticidad-esfuerzo-deformacion): confianza baja de experto-fisica **Decisión delegada:** posterior: La V2 enseña esfuerzo, deformación y módulo de Young en 11.° (G11-FIS-U2-2.1). La carga del puente de 2.° (G02-CIE-U5-5.4) es resistencia de estructuras, no deformación del material.
+- Gravedad: atracción hacia la Tierra (CON:fisica/gravedad-atrae-hacia-tierra): confianza baja de experto-fisica **Decisión delegada:** alineado: La V2 nombra la gravedad en 3.° (G03-CIE-U1-1.4) y la retoma en 5.° y 8.°; HK, ENG Year 5 y AU Year 4 la dan en SV 2–3. No es un adelanto.
+- Péndulo simple (CON:fisica/pendulo-simple): confianza baja de experto-fisica **Decisión delegada:** alineado: La V2 trata el péndulo en 8.° (G08-CIE-U3-3.4); JP en SV 4, y KR, TW y EE entre 7.° y 8.°: mediana cerca de 7,5. El péndulo de 5.° es solo contexto de energía.
+- Tercera ley de Newton: acción y reacción (CON:fisica/tercera-ley-newton): confianza baja de experto-fisica **Decisión delegada:** alineado: En el umbral: la V2 identifica pares de acción y reacción en 5.° (G05-CIE-U2-2.10); HK la enseña en P5 (SV 4), antes que la V2, y ENG KS3 trata la interacción entre dos objetos en SV 6. No se presenta como hallazgo.
+- Procesos de la industria química (CON:quimica/procesos-de-la-industria-quimica): confianza baja de experto-quimica **Decisión delegada:** posterior: En 2.°–8.° la V2 solo da contexto industrial (G08-CIE-U4-4.11); balances y operaciones unitarias empiezan en 11.° (G11-QUI-U7-7.1). Los países también solo dan contexto.
+- Tipo de enlace y propiedades de las sustancias (CON:quimica/tipo-de-enlace-y-propiedades): confianza baja de experto-quimica **Decisión delegada:** alineado: En el umbral: la V2 relaciona propiedades y enlace en 6.° (G06-CIE-U4-4.2); ENG GCSE, EE y TW hacia SV 8, y HK y ENG KS3 comparan propiedades antes. No se presenta como hallazgo.
 
 ## Capa pedagógica
 
@@ -263,16 +263,17 @@
 ## Bucle de fortalecimiento (spec 14, sección 7)
 
 Cada dictamen resuelto pasó por un revisor adversarial que buscó en las fuentes la prueba en contra; una muestra se volvió a dictaminar a ciegas. Solo la contraevidencia que el código encuentra literal en la fuente reabre un expediente. **Sólido:** sobrevivió y tiene una cita literal verificada en una fuente primaria. **Respaldado:** sobrevivió, pero su fuente solo está ubicada (paráfrasis o traducción). **Frágil:** sin fuente primaria verificable, con una fuente inexistente o cambiado sin nueva impugnación.
+**Delegada:** el panel no llegó a consenso y decidió el responsable con evidencia (pendiente de confirmar).
 
-| Tipo | Sólido | Respaldado | Frágil | Sin consenso |
-|---|---|---|---|---|
-| asignacion | 84 | 1 | 0 | 0 |
-| cambio_asignatura | 42 | 1 | 0 | 1 |
-| clase_incierta | 129 | 5 | 1 | 15 |
-| contenido | 138 | 0 | 0 | 0 |
-| decision | 33 | 2 | 0 | 0 |
-| hallazgo | 20 | 4 | 0 | 1 |
-| propuesta | 22 | 4 | 0 | 0 |
+| Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso |
+|---|---|---|---|---|---|
+| asignacion | 84 | 1 | 0 | 0 | 0 |
+| cambio_asignatura | 42 | 1 | 0 | 1 | 0 |
+| clase_incierta | 129 | 5 | 1 | 15 | 0 |
+| contenido | 138 | 0 | 0 | 0 | 0 |
+| decision | 33 | 2 | 0 | 0 | 0 |
+| hallazgo | 20 | 4 | 0 | 1 | 0 |
+| propuesta | 22 | 4 | 0 | 0 | 0 |
 
 | Vuelta | Impugnados | Sostenidos | Réplica: mantenidos | Réplica: cambiados | Réplica: sin consenso |
 |---|---|---|---|---|---|

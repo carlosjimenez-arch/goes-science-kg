@@ -1,6 +1,6 @@
 # Reforzamiento de Ciencias de la Tierra y del Espacio: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
@@ -8,14 +8,14 @@
 
 ## Solidez por tipo
 
-| Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
-|---|---|---|---|---|---|
-| asignatura de temas | 1 | 0 | 0 | 0 | 0 |
-| clases del contraste de 2.°–8.° | 16 | 2 | 0 | 5 | 0 |
-| capa pedagógica | 20 | 0 | 0 | 0 | 0 |
-| decisiones de contenido | 1 | 0 | 0 | 0 | 0 |
-| hallazgos del contraste | 8 | 0 | 0 | 1 | 0 |
-| propuestas curriculares | 1 | 0 | 0 | 0 | 0 |
+| Tipo | Sólido | Respaldado | Frágil | Delegada | Sin consenso | En el bucle |
+|---|---|---|---|---|---|---|
+| asignatura de temas | 1 | 0 | 0 | 0 | 0 | 0 |
+| clases del contraste de 2.°–8.° | 16 | 2 | 0 | 5 | 0 | 0 |
+| capa pedagógica | 20 | 0 | 0 | 0 | 0 | 0 |
+| decisiones de contenido | 1 | 0 | 0 | 0 | 0 | 0 |
+| hallazgos del contraste | 8 | 0 | 0 | 1 | 0 | 0 |
+| propuestas curriculares | 1 | 0 | 0 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
 
@@ -32,13 +32,13 @@
 - Acidificación del océano (CON:ciencias_tierra_espacio/acidificacion-del-oceano)
 - Abastecimiento y conservación del agua dulce (CON:ciencias_tierra_espacio/conservacion-del-agua)
 
-## Frágiles o sin consenso (necesitan una fuente primaria o una persona)
+## Frágiles, sin consenso o decididos por delegación (pendientes de confirmar)
 
-- Ciclo de vida de las estrellas en 5.° y 8.°, sin referente: sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar
-- Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-superficia…: confianza baja de experto-tierra-espacio
-- Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/glacia…: confianza baja de experto-tierra-espacio
-- Mareas (CON:ciencias_tierra_espacio/mareas): confianza baja de experto-tierra-espacio
-- Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico): confianza baja de experto-tierra-espacio
-- Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-y-sus…: confianza baja de experto-tierra-espacio
+- Ciclo de vida de las estrellas en 5.° y 8.°, sin referente: el panel no llegó a consenso (sin unanimidad tras la deliberación: experto-tierra-espacio matizar; psicopedagogo respaldar); decidió el responsable por delegac…
+- Cuencas hidrográficas y aguas superficiales (CON:ciencias_tierra_espacio/cuencas-y-aguas-superficia…: el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar)
+- Grandes cambios globales: glaciaciones e impactos de asteroides (CON:ciencias_tierra_espacio/glacia…: el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: no_aplica (pendiente de confirmar)
+- Mareas (CON:ciencias_tierra_espacio/mareas): el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: posterior (pendiente de confirmar)
+- Tiempo geológico y datación (CON:ciencias_tierra_espacio/tiempo-geologico): el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar)
+- Clima: diferencia con el tiempo, tipos y factores (CON:ciencias_tierra_espacio/tipos-de-clima-y-sus…: el panel no llegó a consenso (confianza baja de experto-tierra-espacio); decidió el responsable por delegación: alineado (pendiente de confirmar)
 
 **Patrones de error de lo impugnado:** fuente_mal_leida 3, conteo_de_paises 1, grado_mal_mapeado 1, otra_asignatura_o_nombre 1.
