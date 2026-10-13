@@ -30,7 +30,11 @@ FORMATOS = ("opcion_multiple", "numerica", "abierta")   # «abierta» la calific
 # espera el aval humano; verificado: la aprobó una persona (revisado_por).
 ESTADOS = ("propuesta_pendiente", "revisado_panel", "verificado")
 VERSION = "pedagogia-v1"
-ARCHIVOS = {"actividad": "actividades.json", "dificultad": "dificultades.json", "microtema": "microtemas.json"}
+ARCHIVOS = {"actividad": "actividades.json", "dificultad": "dificultades.json", "microtema": "microtemas.json",
+            "experimento": "experimentos.json"}
+ATRIBUTO = {"actividad": "actividades", "dificultad": "dificultades", "microtema": "microtemas",
+            "experimento": "experimentos"}
+DURACION_MAX_EXPERIMENTO = 110   # dos sesiones de 55 minutos
 
 
 def config() -> dict:
@@ -58,6 +62,7 @@ class Pedagogia:
     dificultades: dict[str, dict] = field(default_factory=dict)
     microtemas: dict[str, dict] = field(default_factory=dict)
     historico: dict[str, dict] = field(default_factory=dict)   # actividades cuyo objetivo ya no está en la malla
+    experimentos: dict[str, dict] = field(default_factory=dict)   # prácticas con procedimiento (paquete de clase)
 
     @classmethod
     def cargar(cls, base: Path | None = None, vigente: bool = True) -> Pedagogia:
@@ -76,14 +81,15 @@ class Pedagogia:
             traducidas = {i: _a_la_malla_vigente(a) for i, a in actividades.items()}
             actividades = {i: a for i, a in traducidas.items() if a["objetivos"]}
             historico = {i: a for i, a in traducidas.items() if not a["objetivos"]}
-        return cls(actividades, leer(ARCHIVOS["dificultad"]), leer(ARCHIVOS["microtema"]), historico)
+        return cls(actividades, leer(ARCHIVOS["dificultad"]), leer(ARCHIVOS["microtema"]), historico,
+                   leer(ARCHIVOS["experimento"]))
 
     def con(self, elementos: list[dict]) -> Pedagogia:
         """Una copia con elementos agregados (para validar una salida antes de unirla)."""
-        nueva = Pedagogia(dict(self.actividades), dict(self.dificultades), dict(self.microtemas))
+        nueva = Pedagogia(dict(self.actividades), dict(self.dificultades), dict(self.microtemas),
+                          dict(self.historico), dict(self.experimentos))
         for e in elementos:
-            getattr(nueva, {"actividad": "actividades", "dificultad": "dificultades",
-                            "microtema": "microtemas"}[e["tipo"]])[e["id"]] = e
+            getattr(nueva, ATRIBUTO[e["tipo"]])[e["id"]] = e
         return nueva
 
     # «evalua» leída desde el concepto u objetivo: es_evaluado_por
@@ -211,11 +217,37 @@ def _errores_microtema(m: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
     return [f"{m['id']}: {x}" for x in e]
 
 
+def _errores_experimento(x: dict, nav: Navegador) -> list[str]:
+    """Una práctica con procedimiento: materiales, pasos, seguridad, datos esperados y análisis (paquete de clase)."""
+    from goes_science_kg.ingesta.mallas import vigente_de
+
+    e = []
+    if not x["id"].startswith("EXP:"):
+        e.append("id EXP:")
+    if not x.get("objetivos") or any(vigente_de(t) not in nav.por_id for t in x["objetivos"]):
+        e.append("sirve a ≥1 objetivo curricular existente (TEMA:…)")
+    if not x.get("evalua") or any((vigente_de(i) if i.startswith("TEMA:") else i) not in nav.por_id
+                                  for i in x["evalua"]):
+        e.append(f"evalua con ids inexistentes {x.get('evalua')}")
+    for campo, minimo in (("materiales", 2), ("procedimiento", 3), ("seguridad", 1), ("analisis", 2)):
+        if not isinstance(x.get(campo), list) or len(x[campo]) < minimo:
+            e.append(f"«{campo}» es una lista de al menos {minimo}")
+    for campo in ("titulo", "proposito", "datos_esperados"):
+        if not x.get(campo):
+            e.append(f"falta «{campo}»")
+    if not 10 <= int(x.get("duracion_min") or 0) <= DURACION_MAX_EXPERIMENTO:
+        e.append(f"duración entre 10 y {DURACION_MAX_EXPERIMENTO} min (sesiones de 55)")
+    if not x.get("grados") or x.get("estado") not in ESTADOS:
+        e.append("grados y estado válido")
+    return [f"{x['id']}: {m}" for m in e]
+
+
 def errores_elemento(e: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
-    """Errores de un elemento de la capa (actividad, dificultad o microtema), con la capa `ped` como contexto."""
+    """Errores de un elemento de la capa (actividad, dificultad, microtema o experimento), con la capa `ped`."""
     errores = {"actividad": lambda: _errores_actividad(e, nav, ped),
                "dificultad": lambda: _errores_dificultad(e, nav),
-               "microtema": lambda: _errores_microtema(e, nav, ped)}[e["tipo"]]()
+               "microtema": lambda: _errores_microtema(e, nav, ped),
+               "experimento": lambda: _errores_experimento(e, nav)}[e["tipo"]]()
     if e.get("estado") == "revisado_panel" and not e.get("revision_panel"):
         errores.append(f"{e['id']}: «revisado_panel» exige revision_panel (dictámenes del panel)")
     return errores
@@ -223,7 +255,8 @@ def errores_elemento(e: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
 
 def errores_capa(ped: Pedagogia, nav: Navegador) -> list[str]:
     """Integridad de la capa pedagógica: cada elemento vinculado a ids existentes y a un objetivo curricular."""
-    return [x for e in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values()]
+    return [x for e in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values(),
+                        *ped.experimentos.values()]
             for x in errores_elemento(e, nav, ped)]
 
 
@@ -270,7 +303,7 @@ def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None
     profundidad 1 no se enseña antes en la malla. Una ranura ya llenada (en la capa o en un lote anterior) no se
     repite. Devuelve las rutas escritas."""
     ped = ped or Pedagogia.cargar()
-    hechos = set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas)
+    hechos = set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas) | set(ped.experimentos)
     d = directorio() / "lotes"
     d.mkdir(parents=True, exist_ok=True)
     escritos = []
@@ -290,6 +323,10 @@ def preparar_lote(temas: list[str], nav: Navegador, ped: Pedagogia | None = None
                         "formato": "abierta", "evalua": [tid, principal],
                         "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, "
                                      "criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"})
+        ranuras.append({"id": f"EXP:{_slug(tid)}/1", "tipo": "experimento", "evalua": [tid, principal],
+                        "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela "
+                                     "salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos "
+                                     "esperados y preguntas de análisis; dura una o dos sesiones de 55 min"})
         ranuras += _ranuras_de_base(principal, grado, "objetivo")
         for b in elegidas:
             ranuras += _ranuras_de_base(b.concepto, grado, "base")
@@ -348,14 +385,15 @@ def errores_lote(lote: dict, salida: list[dict], nav: Navegador | None = None,
             errores.append(f"{e['id']}: concepto debe ser {r['concepto']}")
         if e.get("estado") != "propuesta_pendiente":
             errores.append(f"{e['id']}: lo que redacta un subagente nace «propuesta_pendiente»")
-        if e.get("tipo") == "actividad" and lote["grado"] not in (e.get("grados") or []):
+        if e.get("tipo") in ("actividad", "experimento") and lote["grado"] not in (e.get("grados") or []):
             errores.append(f"{e['id']}: grados debe incluir {lote['grado']}")
     obj = {e["id"].rsplit("/", 1)[-1]: e for e in salida if e.get("rol") == "objetivo" and e.get("id")}
     if {"obj-1", "obj-2"} <= obj.keys() and obj["obj-1"].get("habilidad") == obj["obj-2"].get("habilidad"):
         errores.append("obj-1 y obj-2 deben usar habilidades distintas")
     validar = {"actividad": lambda x: _errores_actividad(x, nav, ped),
                "dificultad": lambda x: _errores_dificultad(x, nav),
-               "microtema": lambda x: _errores_microtema(x, nav, ped)}
+               "microtema": lambda x: _errores_microtema(x, nav, ped),
+               "experimento": lambda x: _errores_experimento(x, nav)}
     for e in salida:
         if e.get("tipo") in validar and e.get("id") in ranuras:
             errores += validar[e["tipo"]](e)
@@ -390,9 +428,8 @@ def unir(base: Path | None = None) -> dict:
     ped = ped.con([e for e in nuevos if e["id"] not in
                    set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas)])
     for tipo, archivo in ARCHIVOS.items():
-        elementos = getattr(ped, {"actividad": "actividades", "dificultad": "dificultades",
-                                  "microtema": "microtemas"}[tipo])
+        elementos = getattr(ped, ATRIBUTO[tipo])
         (d / archivo).write_text(json.dumps(sorted(elementos.values(), key=lambda x: x["id"]), ensure_ascii=False,
                                             indent=1) + "\n", encoding="utf-8")
     return {"actividades": len(ped.actividades), "dificultades": len(ped.dificultades),
-            "microtemas": len(ped.microtemas)}
+            "microtemas": len(ped.microtemas), "experimentos": len(ped.experimentos)}

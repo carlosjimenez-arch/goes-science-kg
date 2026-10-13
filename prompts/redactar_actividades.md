@@ -59,6 +59,23 @@ Eres especialista en enseñanza de las ciencias para primaria y secundaria. Reci
   `senales`: cómo se nota en una respuesta. **No inventes referencias bibliográficas**: deja `fuente` en null; la
   revisión humana la completará o descartará la dificultad.
 
+**experimento** (práctica con procedimiento para la clase; paquete de clase, spec 13):
+```json
+{"id": "EXP:.../1", "tipo": "experimento", "objetivos": ["TEMA:..."], "evalua": ["TEMA:...", "CON:..."],
+ "grados": [g], "titulo": "...", "proposito": "qué se quiere observar o medir y por qué",
+ "materiales": ["...", "..."], "procedimiento": ["1. ...", "2. ...", "3. ..."],
+ "seguridad": ["..."], "datos_esperados": "qué valores o tendencia deberían salir y por qué",
+ "analisis": ["pregunta 1", "pregunta 2"], "duracion_min": 55, "variantes": "opcional: sin laboratorio",
+ "estado": "propuesta_pendiente", "fuente": null}
+```
+- Materiales que tiene o consigue una escuela pública salvadoreña. Si hace falta algo de laboratorio, da una
+  variante casera o una simulación (`variantes`).
+- Procedimiento numerado y reproducible. La seguridad va explícita (reactivos, calor, vidrio, desechos).
+- `datos_esperados` con órdenes de magnitud o tendencias razonables. **No inventes constantes** (pKa, Ka, calores
+  específicos): si el análisis las necesita, escribe «valor de la tabla de referencia» y la revisión docente lo
+  completa con su fuente.
+- Una o dos sesiones de 55 minutos (`duracion_min` entre 10 y 110).
+
 **microtema** (refuerzo breve de un concepto para el grado):
 ```json
 {"id": "MT:...", "tipo": "microtema", "concepto": "CON:...", "grados": [g], "titulo": "...",

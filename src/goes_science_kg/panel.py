@@ -211,7 +211,8 @@ def _exp_contenido() -> dict[str, dict]:
 
     ped, nav, notas = Pedagogia.cargar(), navegador_compartido(), _notas_revision()
     salida = {}
-    for e in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values()]:
+    for e in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values(),
+              *ped.experimentos.values()]:
         if e.get("estado") != "propuesta_pendiente":
             continue
         obj = _objetivo_de(e)
