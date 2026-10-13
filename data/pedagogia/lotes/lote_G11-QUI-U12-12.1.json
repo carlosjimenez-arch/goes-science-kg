@@ -1,0 +1,225 @@
+{
+ "lote": "G11-QUI-U12-12.1",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 11,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G11-QUI-U12-12.1",
+  "procedimental": "12.1. Interpretación de la curva de titulación de un aminoácido para identificar sus formas iónicas y calcular su punto isoeléctrico.",
+  "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH.",
+  "evidencia": "Hoja de cálculo del punto isoeléctrico de cinco aminoácidos con las formas iónicas y la predicción de migración",
+  "unidad": "12. Proteínas y ácidos nucleicos",
+  "principal": {
+   "id": "CON:quimica/aminoacidos-y-proteinas",
+   "nombre": "Aminoácidos y estructura de las proteínas",
+   "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:quimica/fuerzas-intermoleculares",
+   "nombre": "Fuerzas intermoleculares",
+   "definicion": "Atracciones entre moléculas: dispersión de London, dipolo-dipolo y puentes de hidrógeno, cuya intensidad depende de geometría y polaridad.",
+   "profundidad": 1,
+   "via": [
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G06-CIE-U4-4.7",
+   "confianza_prerrequisito": "media"
+  },
+  {
+   "id": "CON:quimica/polimerizacion",
+   "nombre": "Polimerización por adición y por condensación",
+   "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+   "profundidad": 1,
+   "via": [
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G11-QUI-U1-1.4",
+   "confianza_prerrequisito": "media"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G11-QUI-U12-12.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-QUI-U12-12.1",
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G11-QUI-U12-12.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-QUI-U12-12.1",
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G11-QUI-U12-12.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G11-QUI-U12-12.1",
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G11-QUI-U12-12.1/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G11-QUI-U12-12.1",
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "ACT:quimica/aminoacidos-y-proteinas/sondeo-1-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:quimica/aminoacidos-y-proteinas/practica-G11",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:quimica/aminoacidos-y-proteinas/comprobacion-G11",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:quimica/aminoacidos-y-proteinas"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:quimica/aminoacidos-y-proteinas/G11",
+   "tipo": "microtema",
+   "concepto": "CON:quimica/aminoacidos-y-proteinas",
+   "requisito": "explicación ≤100 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:quimica/aminoacidos-y-proteinas/1",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/aminoacidos-y-proteinas",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:quimica/fuerzas-intermoleculares/sondeo-1-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:quimica/fuerzas-intermoleculares"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:quimica/fuerzas-intermoleculares/sondeo-2-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:quimica/fuerzas-intermoleculares"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:quimica/fuerzas-intermoleculares/practica-G11",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:quimica/fuerzas-intermoleculares"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:quimica/fuerzas-intermoleculares/comprobacion-G11",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:quimica/fuerzas-intermoleculares"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:quimica/fuerzas-intermoleculares/G11",
+   "tipo": "microtema",
+   "concepto": "CON:quimica/fuerzas-intermoleculares",
+   "requisito": "explicación ≤100 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:quimica/fuerzas-intermoleculares/1",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/fuerzas-intermoleculares",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:quimica/polimerizacion/sondeo-1-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:quimica/polimerizacion"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:quimica/polimerizacion/sondeo-2-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:quimica/polimerizacion"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:quimica/polimerizacion/practica-G11",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:quimica/polimerizacion"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:quimica/polimerizacion/comprobacion-G11",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:quimica/polimerizacion"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:quimica/polimerizacion/G11",
+   "tipo": "microtema",
+   "concepto": "CON:quimica/polimerizacion",
+   "requisito": "explicación ≤100 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:quimica/polimerizacion/1",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/polimerizacion",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  }
+ ]
+}

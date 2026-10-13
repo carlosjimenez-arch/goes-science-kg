@@ -15,17 +15,15 @@
 | Adelantados | 0 | La V2 lo introduce en 9.°–11.°, 1,5 grados o más antes que la mediana del núcleo de los países. |
 | Sin referente | 3 | La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: no hay referente para fecharlo. |
 | Alineados | 3 | La V2 lo introduce en 9.°–11.° con un momento coherente con el consenso (± 1,5 grados). |
-| Retomados | 35 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
+| Retomados | 37 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
 | Solo antes de 9.° | 32 | La V2 lo ve antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°. |
-| Inciertos (a revisión) | 2 | La lectura amplia y la estricta del etiquetado dan clases distintas: no se afirma nada hasta revisarlo (revision_clases.csv). |
+| Inciertos (a revisión) | 0 | La lectura amplia y la estricta del etiquetado dan clases distintas: no se afirma nada hasta revisarlo (revision_clases.csv). |
 
 Países con núcleo común por grado SV (denominador del consenso): 9.°: AU, EE, ENG, JP, KR, ON, SG, TW; 10.°: AU, EE, ENG, JP, KR, ON, SG, TW; 11.°: AU, EE, ENG, JP, KR, ON, SG, TW
 
 Sensibilidad: con 4 países en lugar de 5, 4 conceptos más pasarían de «solo antes de 9.°» a «no retomados».
 
-Revisión experta: 7 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Convección del manto y energía interna de la Tierra (no_aplica → no_aplica); Calentamiento global (incierto → retomado); Capas de la atmósfera y variación con la altitud (incierto → retomado); La atmósfera y su composición (incierto → retomado); Efecto invernadero (incierto → retomado); Acidificación del océano (sin_referente → sin_referente); Oleaje, dinámica costera y sedimentación marina (alineado → sin_referente).
-
-Inciertos: 2 conceptos tienen clases distintas en la lectura amplia y en la estricta; no se afirma nada de ellos hasta revisarlos (`revision_clases.csv`, con las dos clases).
+Revisión experta: 9 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Convección del manto y energía interna de la Tierra (no_aplica → no_aplica); Calentamiento global (incierto → retomado); Capas de la atmósfera y variación con la altitud (incierto → retomado); Combustibles fósiles: formación y uso (incierto → retomado); La atmósfera y su composición (incierto → retomado); Efecto invernadero (incierto → retomado); Fuentes de energía renovables y no renovables (incierto → retomado); Acidificación del océano (sin_referente → sin_referente); Oleaje, dinámica costera y sedimentación marina (alineado → sin_referente).
 
 ## Sin referente (3)
 
@@ -33,7 +31,7 @@ La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: n
 
 | Concepto | Grados SV (V2) | Consenso del núcleo | Países (grado de 1.ª aparición; esp. = solo electiva) | Evidencia |
 |---|---|---|---|---|
-| Acidificación del océano | 9.° | mediana 8.75; 1 con núcleo en 9.°–11.° | EE 10.5, HK 7 | SV: G09-CIE-U4-4.16 (Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx, hoja «Unidad 4 - Oceanografía», fila 18)<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Analiza los cambios ocurridos en el océano mundial, relacionándolos con el cambio climático y la actividad humana.»<br>Revisión experta: El «retomado» solo se apoya en una etiqueta secundaria suelta sobre la fila de 7.° (6.15), que no nombra el océano ni la acidificación: no hay mención lateral. La V2 la introduce en 9.° (4.17) y la retoma en 10.° Química. En los países solo es explícita en SG H1 (núcleo parcial, 11.°) y en electivas (AU, SG H2): menos de 3 núcleos. No es un exceso que retirar. |
+| Acidificación del océano | 9.° | mediana 8.75; 1 con núcleo en 9.°–11.° | EE 10.5, HK 7 | SV: G09-CIE-U4-4.16 (Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx, hoja «Unidad 4 - Oceanografía», fila 18)<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Analiza los cambios ocurridos en el océano mundial, relacionándolos con el cambio climático y la actividad humana.»<br>Revisión experta: La clase no dependía de 10.° Química 12.12, que la V3 quitó: esa fila solo era una retoma. La V3 conserva la introducción en 9.° (4.17, idéntica), dentro del tramo, y en los países sigue habiendo menos de tres núcleos con el concepto explícito (EE gümnaasium lo trata en general; HK, en S1–3). Sin mediana, «sin referente». Se pierde la química del sistema carbonato en 10.°. |
 | Oleaje, dinámica costera y sedimentación marina | 4.°–9.° | mediana 4.5; 2 con núcleo en 9.°–11.° | EE 10.5, ENG esp., JP esp., KR 2.5, TW 4.5 | SV: G04-CIE-U3-3.10 (Matriz_Ciencias_4to_Grado_U1_U6 V2.xlsx, hoja «Unidad 3 - Naturaleza y sus int», fila 11)<br>EE · Gymnasium, cursos obligatorios [núcleo] (ee_gym, p. 16): «Explica los procesos costeros y analiza el impacto de la actividad humana en la costa con un ejemplo regional.»<br>ENG · A level Geology [esp.] (eng_alevel_geo, p. 6): «Explicar mediante modelos científicos los procesos sedimentarios infrecuentes o difíciles de observar, como las corrientes de turbidez, aplicando el uniformismo.»<br>Revisión experta: Cambio a sin_referente. En 4.° «oleaje» solo figura en la lista de manifestaciones del ciclón; indicador, producto y actividades tratan su formación y la alerta, sin trabajar olas ni costa. La mención lateral sirve para no afirmar ausencias, no para declarar una espiral: 9.° 4.8 lo introduce desde la definición. Con solo EE y TW en núcleo no hay referente para fecharlo; 9.° queda entre ambos. |
 | Vulcanismo de El Salvador | 4.°–9.° | —; 0 con núcleo en 9.°–11.° |  | SV: G04-CIE-U3-3.14 (Matriz_Ciencias_4to_Grado_U1_U6 V2.xlsx, hoja «Unidad 3 - Naturaleza y sus int», fila 15) |
 

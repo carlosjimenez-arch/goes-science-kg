@@ -1,0 +1,225 @@
+{
+ "lote": "G11-FIS-U1-1.2",
+ "version": "pedagogia-v1",
+ "instrucciones": "prompts/redactar_actividades.md",
+ "grado": 11,
+ "adaptacion": {
+  "palabras_max": 100,
+  "registro": "modelos formales y cuantitativos"
+ },
+ "objetivo": {
+  "id": "TEMA:G11-FIS-U1-1.2",
+  "procedimental": "1.1. Determinación experimental de la constante elástica de un resorte, representación del MAS como proyección de un movimiento circular uniforme y cálculo de las energías del oscilador armónico.",
+  "indicador": "1.1. • Calcula la energía potencial elástica y la energía cinética de un oscilador en cualquier posición y verifica que su suma se conserva. • Calcula la constante elástica de un resorte a partir de la pendiente de la gráfica fuerza-elongación y la usa para predecir elongaciones. • Representa gráficamente la posición, la velocidad y la aceleración de un oscilador armónico en función del tiempo a partir del círculo de referencia.",
+  "evidencia": "Tabla y gráfica de energías cinética, potencial y total en función de la posición con análisis escrito",
+  "unidad": "1. Oscilaciones, ondas mecánicas y sonido",
+  "principal": {
+   "id": "CON:fisica/movimiento-armonico-simple",
+   "nombre": "Movimiento armónico simple",
+   "definicion": "Oscilación producida por una fuerza restauradora proporcional al desplazamiento, con período, frecuencia, amplitud y fase."
+  }
+ },
+ "bases": [
+  {
+   "id": "CON:fisica/fuerza-elastica-ley-hooke",
+   "nombre": "Fuerza elástica y ley de Hooke",
+   "definicion": "La fuerza de un resorte es proporcional a su deformación y se opone a ella: F = −kx.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.13",
+   "confianza_prerrequisito": "alta"
+  },
+  {
+   "id": "CON:fisica/segunda-ley-newton",
+   "nombre": "Segunda ley de Newton",
+   "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+   "profundidad": 1,
+   "via": [
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "antes_del_objetivo": true,
+   "primer_tema": "TEMA:G05-CIE-U2-2.9",
+   "confianza_prerrequisito": "media"
+  }
+ ],
+ "ranuras": [
+  {
+   "id": "ACT:G11-FIS-U1-1.2/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U1-1.2",
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "evaluación inicial del objetivo (indicador de logro)"
+  },
+  {
+   "id": "ACT:G11-FIS-U1-1.2/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "evalua": [
+    "TEMA:G11-FIS-U1-1.2",
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "reevaluación con OTRA habilidad que obj-1 (p. ej. interpretar datos)"
+  },
+  {
+   "id": "ACT:G11-FIS-U1-1.2/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "formato": "abierta",
+   "evalua": [
+    "TEMA:G11-FIS-U1-1.2",
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "respuesta abierta breve (explicar o razonar) con rúbrica: respuesta modelo, criterios y errores típicos con ejemplo; la califica el evaluador, no el tutor"
+  },
+  {
+   "id": "EXP:G11-FIS-U1-1.2/1",
+   "tipo": "experimento",
+   "evalua": [
+    "TEMA:G11-FIS-U1-1.2",
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "práctica de laboratorio o de campo con materiales que tiene una escuela salvadoreña: propósito, materiales, procedimiento numerado, seguridad, datos esperados y preguntas de análisis; dura una o dos sesiones de 55 min"
+  },
+  {
+   "id": "ACT:fisica/movimiento-armonico-simple/sondeo-1-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/movimiento-armonico-simple/practica-G11",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/movimiento-armonico-simple/comprobacion-G11",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/movimiento-armonico-simple"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/movimiento-armonico-simple/G11",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/movimiento-armonico-simple",
+   "requisito": "explicación ≤100 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/movimiento-armonico-simple/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/movimiento-armonico-simple",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/fuerza-elastica-ley-hooke/sondeo-1-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/fuerza-elastica-ley-hooke"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/fuerza-elastica-ley-hooke/sondeo-2-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/fuerza-elastica-ley-hooke"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/fuerza-elastica-ley-hooke/practica-G11",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/fuerza-elastica-ley-hooke"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/fuerza-elastica-ley-hooke/comprobacion-G11",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/fuerza-elastica-ley-hooke"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/fuerza-elastica-ley-hooke/G11",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/fuerza-elastica-ley-hooke",
+   "requisito": "explicación ≤100 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/fuerza-elastica-ley-hooke/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/fuerza-elastica-ley-hooke",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  },
+  {
+   "id": "ACT:fisica/segunda-ley-newton/sondeo-1-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "pregunta breve (≤3 min) que detecta si falta esta base; un distractor por dificultad"
+  },
+  {
+   "id": "ACT:fisica/segunda-ley-newton/sondeo-2-G11",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "evalua": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "otra habilidad que sondeo-1, para confirmar o descartar la hipótesis"
+  },
+  {
+   "id": "ACT:fisica/segunda-ley-newton/practica-G11",
+   "tipo": "actividad",
+   "rol": "practica",
+   "evalua": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "actividad guiada del microtema: observar, explicar o interpretar datos, no solo recordar"
+  },
+  {
+   "id": "ACT:fisica/segunda-ley-newton/comprobacion-G11",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "evalua": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "requisito": "comprueba la comprensión con una situación distinta de la práctica y de los sondeos"
+  },
+  {
+   "id": "MT:fisica/segunda-ley-newton/G11",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "requisito": "explicación ≤100 palabras, un ejemplo, práctica y comprobación de arriba"
+  },
+  {
+   "id": "DIF:fisica/segunda-ley-newton/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "requisito": "dificultad frecuente y conocida al aprender este concepto; no inventes fuentes"
+  }
+ ]
+}
