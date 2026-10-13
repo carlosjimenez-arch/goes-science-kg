@@ -23,11 +23,15 @@ paises:
   EE: {nombre: Estonia, nucleo_post16: true, nota: "Gymnasium: 15 cursos obligatorios de ciencias"}
   "ON": {nombre: Ontario, nucleo_post16: false, nota: "OSSD exige 2 créditos de ciencias (Grade 9 y 10). Fuente de Grade 9 aceptada por el usuario"}
 
+# nivel «nucleo_parcial» (2026-10-13): lo cursa la mayoría, pero no todos (SG: dos de tres ciencias, «two of
+# Papers 2, 3 and 4», p. 6; JP: 科学と人間生活 + un 基礎, o tres 基礎). Cuenta como núcleo en la presencia laxa de
+# los países y como especialización en la sólida (doble lectura, spec 11). SG H1 (A-level) también: la spec 11
+# pone A-level en especialización y el estudiante elige sus asignaturas.
 documentos:
   # ── Singapur ───────────────────────────────────────────────────────────────────────────────────────────
   - {id: sg_k326_k328, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_SEC_G3_Science_PhysChem_K326_2027.pdf,
      titulo: "SEC G3 Science (secciones de Física, Química y Biología)", curso: "SEC G3 Science (Combined)",
-     asignatura: ciencias_integradas, nivel: nucleo, paginas: [9, 54], grado_sv: [9, 10],
+     asignatura: ciencias_integradas, nivel: nucleo_parcial, paginas: [9, 54], grado_sv: [9, 10],
      grados_pais: {"Sec 3": 9, "Sec 4": 10}}
   - {id: sg_k323, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_SEC_G3_Physics_K323_2027.pdf,
      titulo: "SEC G3 Physics (K323)", curso: "SEC G3 Physics", asignatura: fisica, nivel: especializacion,
@@ -39,13 +43,13 @@ documentos:
      titulo: "SEC G3 Biology (K325)", curso: "SEC G3 Biology", asignatura: biologia, nivel: especializacion,
      paginas: [8, 24], grado_sv: [9, 10]}
   - {id: sg_h1_fis, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H1_Physics_8867_2027.pdf,
-     titulo: "GCE A-Level H1 Physics (8867)", curso: "A-Level H1 Physics", asignatura: fisica, nivel: nucleo,
+     titulo: "GCE A-Level H1 Physics (8867)", curso: "A-Level H1 Physics", asignatura: fisica, nivel: nucleo_parcial,
      paginas: [8, 18], grado_sv: [11, 11]}
   - {id: sg_h1_qui, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H1_Chemistry_8873_2027.pdf,
-     titulo: "GCE A-Level H1 Chemistry (8873)", curso: "A-Level H1 Chemistry", asignatura: quimica, nivel: nucleo,
+     titulo: "GCE A-Level H1 Chemistry (8873)", curso: "A-Level H1 Chemistry", asignatura: quimica, nivel: nucleo_parcial,
      paginas: [9, 22], grado_sv: [11, 11]}
   - {id: sg_h1_bio, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H1_Biology_8876_2027.pdf,
-     titulo: "GCE A-Level H1 Biology (8876)", curso: "A-Level H1 Biology", asignatura: biologia, nivel: nucleo,
+     titulo: "GCE A-Level H1 Biology (8876)", curso: "A-Level H1 Biology", asignatura: biologia, nivel: nucleo_parcial,
      paginas: [8, 18], grado_sv: [11, 11]}
   - {id: sg_h2_fis, pais: SG, archivo: data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H2_Physics_9478_2027.pdf,
      titulo: "GCE A-Level H2 Physics (9478)", curso: "A-Level H2 Physics", asignatura: fisica, nivel: especializacion,
@@ -60,19 +64,19 @@ documentos:
   # ── Japón: 高等学校学習指導要領 (2018), capítulo 理科 ────────────────────────────────────────────────────
   - {id: jp_15, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
      titulo: "高等学校学習指導要領 (2018) 理科", curso: "科学と人間生活 (Ciencia y vida humana)",
-     asignatura: ciencias_integradas, nivel: nucleo, paginas: [105, 107], grado_sv: [9, 10]}
+     asignatura: ciencias_integradas, nivel: nucleo_parcial, paginas: [105, 107], grado_sv: [9, 10]}
   - {id: jp_25, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
-     titulo: "高等学校学習指導要領 (2018) 理科", curso: "物理基礎 (Física Básica)", asignatura: fisica, nivel: nucleo,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "物理基礎 (Física Básica)", asignatura: fisica, nivel: nucleo_parcial,
      paginas: [107, 110], grado_sv: [9, 10]}
   - {id: jp_45, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
-     titulo: "高等学校学習指導要領 (2018) 理科", curso: "化学基礎 (Química Básica)", asignatura: quimica, nivel: nucleo,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "化学基礎 (Química Básica)", asignatura: quimica, nivel: nucleo_parcial,
      paginas: [114, 116], grado_sv: [9, 10]}
   - {id: jp_65, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
-     titulo: "高等学校学習指導要領 (2018) 理科", curso: "生物基礎 (Biología Básica)", asignatura: biologia, nivel: nucleo,
+     titulo: "高等学校学習指導要領 (2018) 理科", curso: "生物基礎 (Biología Básica)", asignatura: biologia, nivel: nucleo_parcial,
      paginas: [119, 122], grado_sv: [9, 10]}
   - {id: jp_85, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
      titulo: "高等学校学習指導要領 (2018) 理科", curso: "地学基礎 (Ciencias de la Tierra Básica)", asignatura: tierra_espacio,
-     nivel: nucleo, paginas: [126, 128], grado_sv: [9, 11]}
+     nivel: nucleo_parcial, paginas: [126, 128], grado_sv: [9, 11]}
   - {id: jp_35, pais: JP, archivo: data/fuentes/externos/paises/japon/bachillerato/JP_COS_Koko_2018_Gakushushidoyoryo.pdf,
      titulo: "高等学校学習指導要領 (2018) 理科", curso: "物理 (Física)", asignatura: fisica, nivel: especializacion,
      paginas: [110, 114], grado_sv: [10, 11]}

@@ -13,10 +13,11 @@
 | Llegan tarde | 0 | La V2 lo introduce en 9.°–11.°, dos o más grados después de que el núcleo alcanza el consenso. |
 | Nivel de especialización en un curso obligatorio | 0 | La V2 lo introduce en 9.°–11.°, pero los países solo lo enseñan en cursos electivos. |
 | Adelantados | 0 | La V2 lo introduce en 9.°–11.°, 1,5 grados o más antes que la mediana del núcleo de los países. |
-| Sin referente | 2 | La V2 lo enseña en 9.°–11.° y ninguno de los 9 países lo tiene. |
+| Sin referente | 2 | La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: no hay referente para fecharlo. |
 | Alineados | 1 | La V2 lo introduce en 9.°–11.° con un momento coherente con el consenso (± 1,5 grados). |
-| Retomados | 51 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
-| Solo antes de 9.° | 22 | La V2 lo ve antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°. |
+| Retomados | 40 | La V2 lo introduce antes de 9.° y lo vuelve a trabajar en 9.°–11.° (espiral). |
+| Solo antes de 9.° | 28 | La V2 lo ve antes de 9.° y el núcleo internacional no lo exige en 9.°–11.°. |
+| Inciertos (a revisión) | 5 | La lectura amplia y la estricta del etiquetado dan clases distintas: no se afirma nada hasta revisarlo (revision_clases.csv). |
 
 Países con núcleo común por grado SV (denominador del consenso): 9.°: AU, EE, ENG, JP, KR, ON, SG, TW; 10.°: AU, EE, ENG, JP, KR, ON, SG, TW; 11.°: AU, EE, ENG, JP, KR, ON, SG, TW
 
@@ -24,9 +25,11 @@ Sensibilidad: con 4 países en lugar de 5, 4 conceptos más pasarían de «solo 
 
 Revisión experta: 2 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Capas de la atmósfera y variación con la altitud (incierto → retomado); Efecto invernadero (incierto → retomado).
 
+Inciertos: 5 conceptos tienen clases distintas en la lectura amplia y en la estricta; no se afirma nada de ellos hasta revisarlos (`revision_clases.csv`, con las dos clases).
+
 ## Sin referente (2)
 
-La V2 lo enseña en 9.°–11.° y ninguno de los 9 países lo tiene.
+La V2 lo enseña en 9.°–11.° y menos de 3 países lo tienen en su núcleo: no hay referente para fecharlo.
 
 | Concepto | Grados SV (V2) | Consenso del núcleo | Países (grado de 1.ª aparición; esp. = solo electiva) | Evidencia |
 |---|---|---|---|---|
@@ -35,17 +38,15 @@ La V2 lo enseña en 9.°–11.° y ninguno de los 9 países lo tiene.
 
 ## Profundidad: demanda cognitiva en 9.°–11.°
 
-Mismo clasificador por verbos (escala TIMSS) para la V2 y para el núcleo de cada país; los enunciados sin verbo reconocible no entran en el porcentaje. Coincidencia del clasificador con la etiqueta de Gemini: 67% (la diferencia principal: TIMSS pone «explicar» en aplicar).
+Mismo clasificador por verbos (escala TIMSS) para la V2 y para el núcleo de cada país; los enunciados sin verbo reconocible no entran en el porcentaje. Coincidencia del clasificador con la etiqueta de Gemini: 65% (la diferencia principal: TIMSS pone «explicar» en aplicar).
 
 | Currículo | Enunciados | Recordar | Aplicar | Razonar | Sin verbo |
 |---|---|---|---|---|---|
 | **El Salvador (V2)** | 27 | 58% | 42% | 0% | 1 |
 | EE | 107 | 10% | 45% | 46% | 15 |
 | ENG | 5 | 60% | 20% | 20% | 0 |
-| JP | 31 | 31% | 50% | 19% | 15 |
 | KR | 19 | 9% | 18% | 73% | 8 |
 | ON | 23 | 30% | 25% | 45% | 3 |
-| SG | 3 | 100% | 0% | 0% | 0 |
 | TW | 42 | 53% | 33% | 14% | 6 |
 
 ## Prácticas científicas en 9.°–11.°
@@ -57,10 +58,8 @@ La V2 trae una columna procedimental en cada fila y los países separan práctic
 | **El Salvador (V2)** | 10 | 6 | 14 | 1 | 13 |
 | EE | 23 | 15 | 62 | 22 | 20 |
 | ENG | 1 | 0 | 5 | 1 | 6 |
-| JP | 15 | 0 | 7 | 1 | 6 |
 | KR | 5 | 1 | 9 | 3 | 11 |
 | ON | 6 | 6 | 7 | 3 | 14 |
-| SG | 0 | 0 | 3 | 0 | 1 |
 | TW | 7 | 1 | 12 | 2 | 8 |
 
 Prácticas que exige el núcleo de ≥ 5 países y la V2 no nombra en 9.°–11.°: ninguna.

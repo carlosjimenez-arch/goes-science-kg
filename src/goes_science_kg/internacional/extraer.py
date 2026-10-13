@@ -389,6 +389,11 @@ def corregir_metadatos() -> dict:
                 continue   # importados del grafo principal: traen su grado y su nivel
             antes = (o["grado_sv_min"], o["grado_sv_max"], o["nivel"])
             o["grado_sv_min"], o["grado_sv_max"] = grados_sv(d, o.get("grado_pais", ""))
+            if d.get("nivel") == "nucleo_parcial" and o["nivel"] == "nucleo":   # lo cursa la mayoría, no todos
+                o["nivel"], o["nota_nivel"] = "nucleo_parcial", "núcleo parcial: el estudiante elige entre ciencias"
+            elif d.get("nivel") == "nucleo" and o["nivel"] == "nucleo_parcial":
+                o["nivel"] = "nucleo"
+                o.pop("nota_nivel", None)
             if d["id"] in extension and len(_norma_cita(o["cita"])) >= 15:
                 clave = (d["archivo"], o["pagina"])
                 if clave not in cursiva:

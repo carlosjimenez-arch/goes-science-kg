@@ -4,6 +4,17 @@
 > equipo; `<asignatura>.md`, `Contraste_<asignatura>.xlsx`, `contraste.json` y `revision_humana.csv` se generan con
 > `uv run gskg internacional construir`.
 
+> **Cambio de método (2026-10-13): doble lectura y núcleo parcial.** Este tramo pasó al método de 2.°–8.°: una clase
+> solo se afirma si sale igual con la lectura amplia y con la estricta. Además:
+> - **núcleo parcial:** SG Combined (dos de tres ciencias), las asignaturas 基礎 de Japón y SG H1 son núcleo en la
+>   presencia laxa de los países y especialización en la sólida;
+> - **lecturas sin desajuste:** si ninguna lectura afirma un desajuste, gana la estricta;
+> - **ausencias verificadas:** ninguna ausencia se afirma sin buscar en la fila completa.
+>
+> **Resultado:** 57 conceptos quedan **inciertos** hasta que el panel los revise, porque una lectura afirma un
+> desajuste y la otra no. Los hallazgos de abajo se verificaron con el método anterior; los que dependen de esos 57
+> se marcan al cerrar la revisión.
+
 ## Qué hay aquí
 - **9 países**: SG, JP, KR, ENG, AU, HK, TW, EE y ON. Son 62 documentos oficiales (3 de antecedente: secundaria
   baja de KR, TW y ON) y **9.040 objetivos** validados:

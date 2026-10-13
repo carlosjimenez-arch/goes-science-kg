@@ -234,12 +234,17 @@ def construir() -> dict:
     return manifest
 
 
+NIVELES_NUCLEO = ("nucleo", "nucleo_parcial")
+
+
 def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
     grados, doble = tramo.actual().grados, tramo.actual().lectura_doble
     # Denominador del consenso: países con un núcleo común (para todos) que llega hasta el grado g o antes.
     # Pregunta: ¿qué proporción de los currículos comunes ya enseñó el concepto a esa edad? Hong Kong, sin núcleo
     # en S4–S6, no entra en el denominador (sí en la especialización).
-    con_nucleo = {g: sorted({o["pais"] for o in objs if o["nivel"] == "nucleo" and o["grado_sv_min"] <= g})
+    # «nucleo_parcial» (lo cursa la mayoría, no todos: SG Combined, JP 基礎) cuenta como núcleo en la presencia laxa de
+    # los países y como especialización en la sólida (los puntos solo suman con el núcleo pleno).
+    con_nucleo = {g: sorted({o["pais"] for o in objs if o["nivel"] in NIVELES_NUCLEO and o["grado_sv_min"] <= g})
                   for g in grados}
     por: dict[str, dict[str, dict]] = defaultdict(lambda: defaultdict(lambda: {"nucleo": [], "especializacion": []}))
     # Evidencia del núcleo por país: 2 puntos por objetivo con el concepto como principal, 1 como secundario.
@@ -249,7 +254,8 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
     for o in objs:
         principales = set(expandir(etq[o["id"]]["principales"]))
         for c in expandir(ensenados(etq[o["id"]])):
-            por[c][o["pais"]][o["nivel"]].append((_grado(o), o["id"], o["grado_sv_max"]))
+            nivel = "nucleo" if o["nivel"] in NIVELES_NUCLEO else o["nivel"]
+            por[c][o["pais"]][nivel].append((_grado(o), o["id"], o["grado_sv_max"]))
             if o["nivel"] == "nucleo":
                 foco[c][o["pais"]] += 2 if c in principales else 1
                 puntos[c][o["pais"]].append((_grado(o), 2 if c in principales else 1))

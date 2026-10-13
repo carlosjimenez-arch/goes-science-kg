@@ -21,7 +21,7 @@ def test_config_internacional_valida(clave):
     for d in cfg["documentos"]:
         assert d["pais"] in cfg["paises"], d["id"]
         assert ruta(d["archivo"]).is_file(), d["archivo"]
-        assert d["nivel"] in ("nucleo", "especializacion"), d["id"]
+        assert d["nivel"] in ("nucleo", "nucleo_parcial", "especializacion"), d["id"]
         assert d["asignatura"] in extraer.CODIGO_ASIG, d["id"]
         g0, g1 = d["grado_sv"]
         assert 2 <= g0 <= g1 <= 11 and (t.contiene(g0, g1) or d.get("antecedente")), d["id"]
@@ -212,10 +212,52 @@ def test_no_se_gasta_con_otra_cuenta(monkeypatch, cuenta):
 
 
 # -- Doble lectura de 2.°–8.° (spec 12, método v2) ----------------------------------------------------------------
-def test_solo_2_8_usa_doble_lectura():
+def test_los_dos_tramos_usan_doble_lectura():
+    """Desde el 2026-10-13 también 9.°–11.° (núcleo parcial y ausencias verificadas en el texto de la fila)."""
     from goes_science_kg.internacional import tramo
 
-    assert tramo.TRAMOS["2_8"].lectura_doble and not tramo.TRAMOS["9_11"].lectura_doble
+    assert tramo.TRAMOS["2_8"].lectura_doble and tramo.TRAMOS["9_11"].lectura_doble
+
+
+def test_nucleo_parcial_cuenta_en_la_presencia_laxa_y_no_en_la_solida():
+    """SG Combined y JP 基礎 (el estudiante elige entre ciencias) cuentan como núcleo en la presencia laxa de los
+    países y no en la sólida: los puntos de presencia sólida solo suman con el núcleo pleno."""
+    from goes_science_kg.internacional import consenso
+
+    voc = {"CON:x": {"nombre": "x", "asignatura": "fisica"}}
+    objs = [{"id": f"o{i}", "pais": "SG", "nivel": "nucleo_parcial", "grado_sv_min": 9, "grado_sv_max": 10}
+            for i in range(3)]
+    etq = {o["id"]: {"principales": ["CON:x"], "secundarios": [], "confianza": "alta"} for o in objs}
+    from goes_science_kg.internacional import tramo
+
+    anterior = tramo.actual().clave
+    tramo.usar("9_11")
+    try:
+        r = consenso._consenso(objs, etq, voc)
+    finally:
+        tramo.usar(anterior)
+    fila = r["conceptos"][0]["paises"]["SG"]
+    assert fila["primer_grado_nucleo"] is not None and fila["primer_grado_nucleo_solido"] is None
+    assert "SG" in r["paises_con_nucleo_por_grado"][9]
+
+
+def test_lecturas_sin_desajuste_no_quedan_inciertas(monkeypatch):
+    from goes_science_kg.internacional import contraste
+
+    p = {"amplio": 5, "amplio_en_tramo": 9, "estricto": 9, "estricto_en_tramo": 9}
+    c = {"paises": {}, "n_nucleo_en_tramo": 6, "n_nucleo_foco": 6, "n_nucleo": 6, "n_nucleo_solido": 6,
+         "mediana_primer_grado_nucleo": 9.0, "mediana_primer_grado_nucleo_solido": 9.0,
+         "nucleo_hasta_grado": {}, "nucleo_solido_hasta_grado": {}}
+    clase, lect = contraste.clase_doble(p, None, (9, 10, 11))
+    assert clase == lect["amplia"] == lect["estricta"]
+    # Dos lecturas distintas que no afirman desajuste: gana la estricta y se marca.
+    monkeypatch.setattr(contraste, "clase_de", lambda *a, **k: "retomado" if a[0] == 5 else "alineado")
+    monkeypatch.setattr(contraste, "_g_cons", lambda *a, **k: None)
+    clase, lect = contraste.clase_doble(p, c, (9, 10, 11))
+    assert clase == "alineado" and lect.get("sin_desajuste")
+    # Si una lectura afirma un desajuste, sigue incierto.
+    monkeypatch.setattr(contraste, "clase_de", lambda *a, **k: "retomado" if a[0] == 5 else "tardio")
+    assert contraste.clase_doble(p, c, (9, 10, 11))[0] == "incierto"
 
 
 def test_presencia_solida():

@@ -42,7 +42,8 @@ class Tramo:
 TRAMOS = {
     "9_11": Tramo("9_11", (9, 10, 11), "internacional", "data/interim/internacional/objetivos",
                   "data/interim/internacional/etiquetado", "data/grafo/internacional", "internacional",
-                  "data/interim/internacional/revisiones.json", "specs/11_grafos_internacionales_9_11.md"),
+                  "data/interim/internacional/revisiones.json", "specs/11_grafos_internacionales_9_11.md",
+                  lectura_doble=True),   # desde el 2026-10-13: núcleo parcial y ausencias verificadas en el texto
     "2_8": Tramo("2_8", (2, 3, 4, 5, 6, 7, 8), "internacional_2_8", "data/interim/internacional_2_8/objetivos",
                  "data/interim/internacional_2_8/etiquetado", "data/grafo/internacional_2_8", "internacional/2_8",
                  "data/interim/internacional_2_8/revisiones.json", "specs/12_grafos_internacionales_2_8.md",

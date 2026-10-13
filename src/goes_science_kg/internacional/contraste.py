@@ -84,6 +84,10 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
 
 
 CLASES_DE_AUSENCIA = ("no_retomado", "faltante")
+# Clases que no afirman un desajuste. Si las dos lecturas difieren pero ambas están aquí, la diferencia es descriptiva
+# (dónde empieza la V2) y no hay hallazgo que proteger: gana la lectura estricta, que es donde la V2 lo enseña con
+# presencia sólida (2026-10-13, al pasar 9.°–11.° a la doble lectura). Si una lectura afirma un desajuste, «incierto».
+SIN_DESAJUSTE = frozenset({"alineado", "retomado", "previo", "posterior", "no_aplica"})
 
 
 def ausencias_con_texto(filas: list[dict], voc: dict, temas: dict[str, dict], grados: tuple[int, ...]) -> list[str]:
@@ -346,7 +350,11 @@ def clase_doble(p: dict, c: dict | None, grados: tuple[int, ...]) -> tuple[str, 
                                  c["n_nucleo_en_tramo"], c["mediana_primer_grado_nucleo"], c["n_nucleo_foco"], n_esp,
                                  grados, n_mediana=c["n_nucleo"]),
         }
-    return (lect["amplia"] if lect["amplia"] == lect["estricta"] else "incierto"), lect
+    if lect["amplia"] == lect["estricta"]:
+        return lect["amplia"], lect
+    if set(lect.values()) <= SIN_DESAJUSTE:   # ninguna lectura afirma un desajuste: no hay hallazgo que proteger
+        return lect["estricta"], {**lect, "sin_desajuste": True}
+    return "incierto", lect
 
 
 def _clasificar_doble() -> dict:

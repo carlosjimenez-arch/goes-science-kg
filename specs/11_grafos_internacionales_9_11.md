@@ -90,6 +90,11 @@ La primera corrida produjo artefactos que la revisión manual detectó. El detal
 - **Presencia en la V2:** es la unión de dos etiquetados de 9.°–11.° (vocabulario de la asignatura y vocabulario
   completo) más las equivalencias revisadas entre asignaturas. Así, un hueco de El Salvador tiene que resistir el
   ruido de la IA.
+- **Doble lectura y núcleo parcial (2026-10-13):** el tramo usa la doble lectura de la spec 12
+  (`Tramo.lectura_doble`). Los cursos que cursa la mayoría pero no todos (SG Combined: «two of Papers 2, 3 and 4»,
+  p. 6; JP 科学と人間生活 y 基礎; SG H1) tienen nivel `nucleo_parcial`: cuentan como núcleo en la presencia laxa de los
+  países y como especialización en la sólida (`consenso.NIVELES_NUCLEO`). Si las dos lecturas difieren pero ninguna
+  afirma un desajuste, gana la estricta (`contraste.SIN_DESAJUSTE`). El primer corte dejó 57 inciertos para el panel.
 - **Salvaguarda de las ausencias (2026-10-13):** una clase de ausencia («no retomado» o «faltante») solo se afirma
   si el concepto tampoco aparece como frase en el texto completo de la fila. Ese texto incluye microhabilidades,
   valores e indicador avanzado (`contraste.ausencias_con_texto`). Si aparece, la clase pasa a «incierto», con los

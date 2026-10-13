@@ -34,7 +34,7 @@ se aplica con dos lecturas y solo se afirma lo que coincide (`Tramo.lectura_dobl
   frase en el texto de cualquier columna de la fila
   (`mallas.textos_completos`); los países con presencia sólida (principal, o secundaria en dos objetivos).
 - **estricta** (desfavorable): la V2 con presencia sólida (2 puntos acumulados); los países con la regla de presencia.
-- Si difieren: **incierto** (`revision_clases.csv`). «adelantado» exige ≥ 3 países detrás de la mediana (con menos,
+- Si difieren: **incierto** (`revision_clases.csv`), salvo que ninguna de las dos afirme un desajuste (alineado, retomado, previo, posterior o no aplica): entonces gana la estricta (2026-10-13, `contraste.SIN_DESAJUSTE`). «adelantado» exige ≥ 3 países detrás de la mediana (con menos,
   «sin referente»). Las relaciones «parte de» (`conceptos/partes.json`) cuentan en los dos lados. Una secuencia exige
   el concepto como principal y el prerrequisito ausente también del texto.
 - **Metadatos:** `gskg internacional --tramo 2_8 corregir-metadatos` recalcula los grados con el catálogo (mayúsculas,
