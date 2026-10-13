@@ -1,0 +1,379 @@
+{
+ "lote": "b1_refutador_tierra-espacio_3",
+ "vuelta": 1,
+ "rol": "refutador",
+ "disciplina": "tierra-espacio",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-tierra-espacio.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "nombre": "Suelo: formación, componentes y tipos",
+     "definicion": "Capa superficial formada por meteorización de rocas y materia orgánica, con horizontes, textura y fertilidad que varían según clima y roca madre.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+     "rol": "experto-tierra-espacio",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Exacto: componentes del suelo, formación lenta por meteorización y descomposición en humus, y clases texturales básicas. El perfil del corte de camino es una idealización aceptable de los horizontes; en El Salvador el material de origen suele ser ceniza volcánica, lo que no lo contradice. «Según el tamaño de sus granos» simplifica la proporción de arena, limo y arcilla; 6.16 lo retoma. 60 palabras, en el límite.",
+     "evidencia": [
+      {
+       "fuente": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+       "cita": "meteorización de rocas y materia orgánica; horizontes y textura que varían"
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U6-6.16 (fila 18)",
+       "cita": "caracterización física de los suelos: clases y tipos, después de 6.14"
+      },
+      {
+       "fuente": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05",
+       "cita": "el criterio (humus en el terreno con bosque) coincide con la comprobación"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Cuatro ideas en 60 palabras es lo más que admite 5.°, y la última oración suma tres términos sin definir («limoso» es poco conocido). Defino cada tipo por el tamaño de sus granos, que es lo que el estudiante ve en el frasco de la práctica, y mantengo las 60 palabras. El contenido no cambia.",
+     "evidencia": [
+      {
+       "fuente": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/practica-G05 (enunciado)",
+       "cita": "abajo piedrecitas y arena; encima limo; arriba una capa de arcilla muy fina"
+      },
+      {
+       "fuente": "config/aprendizaje.yaml (adaptacion.primaria_alta)",
+       "cita": "palabras_max 60; registro: concreto con primeras representaciones"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Toma un puñado de suelo de la milpa: verás granitos de roca, pedacitos de hojas y raíces, y quizá una lombriz. El suelo se forma muy despacio: las rocas se quiebran y cambian, y los restos de seres vivos se descomponen en humus. También guarda agua y aire. Según sus granos, puede ser arenoso (gruesos), limoso (medianos) o arcilloso (finos)."
+     }
+    },
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+     "rol": "experto-tierra-espacio",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Añadir «gruesos, medianos, finos» mantiene el criterio de tamaño de grano y el orden real (arena > limo > arcilla). Persiste la simplificación que ya aprobé: los tipos dependen de qué granos predominan en la mezcla, no de un solo tamaño; no es un error y 6.16 la retoma. El resto del texto no cambió y sigue en 60 palabras.",
+     "evidencia": [
+      {
+       "fuente": "revisión psicopedagogo r2",
+       "cita": "«Según sus granos, puede ser arenoso (gruesos), limoso (medianos) o arcilloso (finos).»"
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U6-6.16 (fila 18)",
+       "cita": "caracterización física de los suelos: clases y tipos, después de 6.14"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:ciencias_tierra_espacio/suelo-formacion-y-tipos/G05",
+    "tipo": "microtema",
+    "concepto": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+    "grados": [
+     5
+    ],
+    "titulo": "¿De qué está hecho el suelo?",
+    "explicacion": "Toma un puñado de suelo de la milpa: verás granitos de roca, pedacitos de hojas y raíces, y quizá una lombriz. El suelo se forma muy despacio: las rocas se quiebran y cambian, y los restos de seres vivos se descomponen en humus. También guarda agua y aire. Según sus granos, puede ser arenoso (gruesos), limoso (medianos) o arcilloso (finos).",
+    "ejemplo": "En el corte de un camino en una ladera se ven capas: arriba, suelo oscuro con raíces; más abajo, suelo más claro con piedras; al fondo, la roca de la que se formó.",
+    "practica": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/practica-G05",
+    "comprobacion": "ACT:ciencias_tierra_espacio/suelo-formacion-y-tipos/comprobacion-G05",
+    "duracion_min": 10,
+    "criterio": "Responde correctamente la comprobación: predice en cuál de dos terrenos con la misma roca hay un suelo más oscuro y fértil, y lo explica por la formación de humus.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+     "TEMA:G05-CIE-U6-6.14"
+    ],
+    "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+   "tipo": "contenido",
+   "titulo": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "nombre": "Tipos de rocas: ígneas, sedimentarias y metamórficas",
+     "definicion": "Las rocas son agregados de minerales y se clasifican según su origen: enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+     "rol": "experto-tierra-espacio",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Correcto para 5.°: clasifica por origen, distingue metamorfismo de fusión («sin derretirla») y usa ejemplos verificables: coladas de lava del volcán de San Salvador (como la de 1917) y la caliza, en su mayoría formada por conchas y esqueletos marinos. Son simplificaciones coherentes con lo que viene después (calizas químicas, tobas piroclásticas). El criterio coincide con la comprobación. 59 palabras.",
+     "evidencia": [
+      {
+       "fuente": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+       "cita": "enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "el volcán de San Salvador tiene coladas de lava, entre ellas la de la erupción de 1917"
+      },
+      {
+       "fuente": "ACT:ciencias_tierra_espacio/tipos-de-rocas/comprobacion-G05",
+       "cita": "dos rocas del mismo color con orígenes distintos: coincide con el criterio"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Clasificar por origen es adecuado en 5.°, pero «magma» no se define, y el contraste con las metamórficas («sin derretirla») depende de saber que las ígneas vienen de roca derretida. Defino magma y lava como roca derretida para que el contraste sea explícito. Quedan 60 palabras (máximo 60). La ciencia no cambia.",
+     "evidencia": [
+      {
+       "fuente": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05 (explicación)",
+       "cita": "«al enfriarse el magma o la lava» … «transforman otra roca sin derretirla»"
+      },
+      {
+       "fuente": "config/aprendizaje.yaml (adaptacion.primaria_alta)",
+       "cita": "palabras_max 60"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "Dos piedras pueden verse iguales y haberse formado distinto: las rocas se agrupan por su origen. Las ígneas se forman al enfriarse la roca derretida (magma o lava), como en nuestros volcanes. Las sedimentarias, cuando pedacitos de rocas o conchas se acumulan en capas y se pegan. Las metamórficas, cuando el calor y la presión transforman otra roca sin derretirla."
+     }
+    },
+    {
+     "id": "PED:MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+     "rol": "experto-tierra-espacio",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Definir el magma y la lava como «roca derretida» es una simplificación correcta y hace explícito el contraste con las metamórficas, que se transforman «sin derretirla». La clasificación por origen, el ejemplo de las coladas del volcán de San Salvador y el de la caliza no cambiaron. Quedan 60 palabras, dentro del límite.",
+     "evidencia": [
+      {
+       "fuente": "revisión psicopedagogo r2",
+       "cita": "«Las ígneas se forman al enfriarse la roca derretida (magma o lava)»"
+      },
+      {
+       "fuente": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+       "cita": "enfriamiento de magma, acumulación de sedimentos o transformación por presión y calor"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:ciencias_tierra_espacio/tipos-de-rocas/G05",
+    "tipo": "microtema",
+    "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+    "grados": [
+     5
+    ],
+    "titulo": "Las rocas se agrupan por cómo se formaron",
+    "explicacion": "Dos piedras pueden verse iguales y haberse formado distinto: las rocas se agrupan por su origen. Las ígneas se forman al enfriarse la roca derretida (magma o lava), como en nuestros volcanes. Las sedimentarias, cuando pedacitos de rocas o conchas se acumulan en capas y se pegan. Las metamórficas, cuando el calor y la presión transforman otra roca sin derretirla.",
+    "ejemplo": "La piedra de las coladas de lava del volcán de San Salvador es ígnea; la caliza, que se forma con restos de conchas acumulados en el fondo del mar, es sedimentaria.",
+    "practica": "ACT:ciencias_tierra_espacio/tipos-de-rocas/practica-G05",
+    "comprobacion": "ACT:ciencias_tierra_espacio/tipos-de-rocas/comprobacion-G05",
+    "duracion_min": 8,
+    "criterio": "Responde correctamente la comprobación: decide que dos rocas del mismo color son de tipos distintos porque se formaron de manera distinta.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:ciencias_tierra_espacio/tipos-de-rocas",
+     "TEMA:G05-CIE-U6-6.14"
+    ],
+    "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PRO:ciencias_tierra_espacio:G02-G04#2",
+   "tipo": "propuesta",
+   "titulo": "3.2. Representación del ciclo del agua: evaporación, condensación, precipitación, escorrentía e infiltración.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "ciencias_tierra_espacio",
+    "ciclo": "G02-G04",
+    "accion": "nuevo",
+    "grado_propuesto": 3,
+    "unidad_propuesta": "3. El agua. (después de 3.1 y antes de 3.2)",
+    "tema_propuesto": "3.2. Representación del ciclo del agua: evaporación, condensación, precipitación, escorrentía e infiltración.",
+    "indicador_logro": "Arma un modelo del ciclo del agua (por ejemplo, en un recipiente cerrado al sol) y explica con un esquema cómo el agua de océanos, ríos, lagos y acuíferos se conecta en el ciclo.",
+    "conceptos": [
+     "Ciclo del agua"
+    ],
+    "evidencia": [
+     "AU 3, ENG 2, JP 3, SG 5, UY 3 (Ciclo del agua; hoy en 7.°, G07-CIE-U5-5.1)",
+     "prerrequisito: Hidrosfera: distribución del agua dulce y salada (3.°, G03-3.1, va antes)",
+     "prerrequisito: Ciclo del agua (hoy en 7.°) de Aguas subterráneas y acuíferos y de Cuencas hidrográficas y aguas superficiales (3.°), confianza alta, brecha 4"
+    ],
+    "justificacion": "Australia, Japón y Uruguay lo enseñan en 3.° e Inglaterra en 2.°; El Salvador, en 7.°. Va en 3.°, después de 3.1 (hidrosfera, su bloqueo) y antes de lagos, ríos y acuíferos. Se paga con la fusión 1.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega el ciclo del agua en primaria."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:ciencias_tierra_espacio:G02-G04#2",
+     "rol": "experto-tierra-espacio",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "La evidencia es sólida: núcleo en AU (Year 4), ENG (Year 4), JP (4.° de primaria) y UY (3.°), y TIMSS de 4.° pide evaporación y condensación. Hoy 3.° estudia océanos, ríos, acuíferos y sequía, y 4.° nubes y lluvia, sin el modelo que los une hasta 7.°. Se adapta el orden (los cambios de estado de 3.15 antes del ciclo) y se fija una profundidad cualitativa.",
+     "evidencia": [
+      {
+       "fuente": "OP:AU-AC9S4U02 (AU F-6 v9, Year 4 = SV 3.°)",
+       "cita": "fuentes de agua y procesos clave del ciclo: precipitación, evaporación, condensación"
+      },
+      {
+       "fuente": "ENG_NC_Science_KS1-2_2013.pdf p. 21 (Year 4, States of matter)",
+       "cita": "papel de la evaporación y la condensación en el ciclo del agua; obligatorio, tras cambios de estado"
+      },
+      {
+       "fuente": "jp_cos_826 pp. 53, 61 y 62 (小4 = SV 3.°)",
+       "cita": "cambios de estado, infiltración según el tamaño de partículas y evaporación y condensación del agua"
+      },
+      {
+       "fuente": "UY_EBI_TierraEspacio_Tramo3_3-4grado.pdf pp. 12-13",
+       "cita": "3.°: circulación del agua y aguas superficiales; 4.°: acuíferos e infiltración"
+      },
+      {
+       "fuente": "OBJ:T4_27-P1.1 (timss27 p. 29)",
+       "cita": "describir fusión, congelación, evaporación y condensación del agua en 4.° grado"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U3-3.15 (fila 17), TEMA:G04-CIE-U3-3.9 (fila 11), TEMA:G07-CIE-U5-5.1 (fila 3)",
+       "cita": "cambios de estado al final de la unidad de 3.°; nubes y precipitación en 4.°; ciclo hidrológico en 7.°"
+      },
+      {
+       "fuente": "data/interim/propuestas/salida_adopcion_v2.json",
+       "cita": "acción 2 no adoptada: la V2 no agrega el ciclo del agua en primaria"
+      },
+      {
+       "fuente": "Ben-Zvi Assaraf y Orion, 2005, Journal of Research in Science Teaching 42(5)",
+       "cita": "los estudiantes ven el ciclo del agua como un círculo simple y omiten su parte subterránea"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Tema nuevo en 3.°, unidad 3 (El agua): «Representación del ciclo del agua: evaporación, condensación, precipitación, escorrentía e infiltración». Orden recomendado: 3.1 océanos → cambios de estado del agua (hoy 3.15, que conviene adelantar) → ciclo del agua → lagos, ríos, glaciares, acuíferos y sequía (3.2 a 3.6). Indicador: arma un modelo del ciclo (recipiente cerrado al sol para la evaporación y la condensación, y una bandeja con suelo en pendiente para la escorrentía y la infiltración) y explica con un esquema que el calor del Sol impulsa la evaporación y cómo se conectan océanos, ríos, lagos, acuíferos y la lluvia. Profundidad cualitativa, sin balance hídrico. Atender ideas previas: las nubes son gotitas de agua o hielo, no vapor; el agua se evapora sin hervir; el ciclo no es un solo círculo y pasa también por el subsuelo. 7.° (5.1) lo retoma con cuencas y la intervención humana, sin repetir lo de 3.°. Costo: la fusión 1 (2.12 y 2.13) o lo que decida el MINED; no se quita ningún tema."
+    },
+    {
+     "id": "PRO:ciencias_tierra_espacio:G02-G04#2",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "El ciclo del agua con un modelo cerrado es adecuado para 3.°, pero evaporar y condensar son cambios de estado, y la V2 los trabaja al final de la unidad (3.15). Ponerlo antes de 3.2 obliga a usar procesos aún no vistos; a esa edad es común creer que el agua evaporada desaparece. Propongo ubicarlo después de 3.15, como cierre que une todos los cuerpos de agua.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U3-3.15 (fila 17)",
+       "cita": "Cambios de estado del agua con la temperatura: último tema de la unidad 3."
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U3-3.1 (fila 3)",
+       "cita": "La unidad abre con los océanos; la acción iría justo después."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "El ciclo se apoya en el cambio de estado; sin él, el vapor invisible se interpreta como desaparición."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "Después de 3.15, como cierre de la unidad 3: «Representación del ciclo del agua». Indicador: arma un modelo del ciclo (agua en una bolsa o frasco cerrado al sol) y explica con un dibujo cómo el agua de océanos, lagos, ríos, glaciares y acuíferos se evapora, se condensa, cae, corre por el suelo (escorrentía) y se mete en la tierra (infiltración)."
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 7,
+    "anclada": 0,
+    "ubicada": 7,
+    "inexistente": 0,
+    "interna": 1,
+    "argumento": 1,
+    "literatura": 1,
+    "otra": 1,
+    "inexistentes": []
+   }
+  }
+ ]
+}

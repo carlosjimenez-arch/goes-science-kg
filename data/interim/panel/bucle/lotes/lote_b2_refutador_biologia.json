@@ -1,0 +1,1259 @@
+{
+ "lote": "b2_refutador_biologia",
+ "vuelta": 2,
+ "rol": "refutador",
+ "disciplina": "biologia",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-biologia.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "INC:CON:biologia/epidemiologia-y-control-de-brotes",
+   "tipo": "clase_incierta",
+   "titulo": "Propagación de enfermedades y control de brotes (CON:biologia/epidemiologia-y-control-de-brotes)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/epidemiologia-y-control-de-brotes",
+     "nombre": "Propagación de enfermedades y control de brotes",
+     "definicion": "Persistencia del patógeno, transmisión, movilidad e inmunidad poblacional explican epidemias y permiten evaluar estrategias de control.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "posterior",
+     "estricta": "no_aplica"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 11,
+     "estricto": null
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 5.25,
+     "n_paises": 4
+    },
+    "temas_v2": [
+     "G11-BIO-U2-2.10 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 24): Aplicaciones en medicina y farmacología. 2.10. Reconoce las vacunas y las pruebas de detección clínica como tecnologías médicas para la prevención y diagnóstico de enfermedades de origen microbiano."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p012-03 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 12, SV 8–9]: Explicar cómo se propagan las enfermedades transmisibles (causadas por virus, bacterias, protistas y hongos) en animales y plantas."
+     },
+     "HK": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_primaria-p028-10 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 28, SV 3–3]: Identificar las vías de transmisión de enfermedades infecciosas (gotitas, vectores, contacto, alimentos, sangre) y su prevención."
+     },
+     "KR": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_primaria_34-p024-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 24, SV 2–3]: Interesarse por una sociedad segura frente a infecciones y explicar la relación entre hábitos de vida y brotes epidémicos mediante procesos de infección."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p051-09 [SG_LowerSec_Science_G2G3_2024.pdf p. 51, SV 7–8]: Sugerir razones para el crecimiento de la población humana mundial, como los avances en medicina y la mejora del saneamiento."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "posterior",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "INC:CON:biologia/epidemiologia-y-control-de-brotes",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "posterior",
+     "justificacion": "Cambio a posterior: la impugnación tiene razón. En 3.° (6.1) la V2 enseña infección, contagio y su prevención en la persona (el concepto vecino «contagio y prevención»), no epidemias, movilidad ni inmunidad poblacional, que entran en 9.° (inmunidad colectiva, casos de dengue por semana). Solo 4 países lo tienen en el núcleo, sin consenso de 5. Además, «alineado» no cabía: 3.° frente a una mediana de 5,25 habría sido adelantado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.1",
+       "cita": "El indicador de 3.° es individual: infección frente a enfermedad.",
+       "cita_literal": "Explica con sus palabras los conceptos de infección y enfermedad"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U6-6.1",
+       "cita": "La prevención en 3.° es la de cada persona: vacunas e higiene.",
+       "cita_literal": "Explica cómo las vacunas y la higiene evitan contagios"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U9-9.1",
+       "cita": "La inmunidad poblacional aparece en 9.°, después del tramo 2.°–8.°.",
+       "cita_literal": "Vacunas e inmunidad colectiva"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U9-9.2",
+       "cita": "El seguimiento de un brote (dengue) con datos semanales está en 9.°.",
+       "cita_literal": "gráfico de casos de dengue por semana con medidas de prevención justificadas"
+      },
+      {
+       "fuente": "src/goes_science_kg/internacional/contraste.py (clase_de) y datos.consenso",
+       "cita": "Posterior: la V2 lo enseña solo después del tramo y el núcleo no llega a 5 países (aquí 4, uno de ellos SG con una etiqueta sobre crecimiento de la población)."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 4,
+    "anclada": 0,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:CON:biologia/mitosis-y-ciclo-celular",
+   "tipo": "clase_incierta",
+   "titulo": "Mitosis y ciclo celular (CON:biologia/mitosis-y-ciclo-celular)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/mitosis-y-ciclo-celular",
+     "nombre": "Mitosis y ciclo celular",
+     "definicion": "División del núcleo que produce dos células hijas genéticamente idénticas; permite el crecimiento, la reparación y la reproducción asexual.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 7
+    },
+    "temas_v2": [
+     "G06-CIE-U6-6.2 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 4): Ciclo celular.. 6.2. Describe las etapas de la mitosis a partir de micrografías, muestras o esquemas.",
+     "G06-CIE-U6-6.4 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 6): Ciclo celular.. 6.4. Identifica estructuras anatómicas asociadas con la apoptosis y senescencia celular.",
+     "G06-CIE-U6-6.8 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 10): Desarrollo Vegetal.. 6.8. Describe el proceso de fecundación y planos de división celular en plantas.",
+     "G06-CIE-U5-5.22 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 24): Matriz extracelular.. 5.22. Expone las implicaciones de la matriz extracelular en las lesiones.",
+     "G06-CIE-U6-6.5 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 7): Reproducción Asexual y Sexual.. 6.5. Ejemplifica mecanismos básicos de reproducción de las formas de vida unicelulares.",
+     "G07-CIE-U2-2.4 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 6): Replicación. 2.4. Identifica sucesos cotidianos que involucran la replicación del ADN."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p010-01 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 10, SV 8–9]: Describir el cáncer como resultado de cambios celulares que provocan un crecimiento y división descontrolados."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p039-13 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39, SV 6–8]: Reconocer que las células pueden dividirse, crecer y diferenciarse en distintos tipos celulares."
+     },
+     "JP": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8362233511100000 [jp_cos_836 p. 104, SV 8–8]: Observar la división celular (mitosis), descubrir su secuencia y relacionarla con el crecimiento de los organismos."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p065-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65, SV 6–8]: Comprender la relación entre cromosomas y genes, e interpretar las características de la mitosis y meiosis centrándose en el comportamiento cromosómico."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g8-p172-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 172, SV 7–7]: Demostrar comprensión de la estructura y función básicas de las células vegetales y animales y de los procesos celulares."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p049-04 [SG_LowerSec_Science_G2G3_2024.pdf p. 49, SV 7–8]: Indicar que los productos finales de la digestión se usan en procesos celulares como respiración, crecimiento y reparación."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Comprender que las células se dividen y que los cromosomas experimentan cambios durante este proceso de división."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "adelantado",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "INC:CON:biologia/mitosis-y-ciclo-celular",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "adelantado",
+     "justificacion": "Cambio a adelantado. Ontario Grade 8 y Singapur no tratan la división celular, y HK S1–3 solo pide reconocer que las células se dividen. La mitosis la enseñan KR y TW (SV 6–8, fechados en 7, ambos sin memorizar fases), JP 中3 (SV 8) y ENG GCSE (SV 8–9): mediana 7,5. La V2 pide describir sus etapas en 6.°, 1,5 grados antes y con más detalle. Caso límite.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.2",
+       "cita": "La V2 pide las etapas de la mitosis en 6.°.",
+       "cita_literal": "Describe las etapas de la mitosis a partir de micrografías, muestras o esquemas"
+      },
+      {
+       "fuente": "TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 134",
+       "cita": "TW: los cromosomas se copian y se reparten por igual, sin el proceso de división.",
+       "cita_literal": "在細胞分裂過程中染色體會有變化，如複製、平均分配等，不涉及染色體的構造及細胞分裂的過程"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 65",
+       "cita": "KR 중 1–3: mitosis centrada en los cromosomas, simple y sin memorizar el proceso.",
+       "cita_literal": "체세포분열과 생식 세포 형성 과정은 염색체의 행동을 중심으로 간단하게 다루며, 분열 과정의 단순한 암기보다 분열의 생물학적 의미를 이해하는 데 중점을"
+      },
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 10",
+       "cita": "ENG enseña el proceso de mitosis en GCSE (SV 8–9).",
+       "cita_literal": "describe the process of mitosis in growth, including the cell cycle"
+      },
+      {
+       "fuente": "HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39",
+       "cita": "HK solo pide reconocer que las células se dividen: es la idea previa, no la mitosis.",
+       "cita_literal": "recognise that cells can divide, grow and differentiate into different types of cells"
+      },
+      {
+       "fuente": "ON_ScienceTechnology_Grades1-8_2022.pdf p. 173",
+       "cita": "Las expectativas de células de Grade 8 (B2.1–B2.6) no nombran la división celular.",
+       "cita_literal": "describe the organization of cells into tissues, organs, and systems"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 4,
+    "anclada": 0,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 1,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/adn-y-cromosomas/practica-G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/adn-y-cromosomas",
+     "nombre": "ADN y cromosomas",
+     "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 12
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "El modelo y la clave son correctos (carrete con hilo = cromosoma, tramo rojo = gen, par = dos copias). La retroalimentación afirma sin matiz que los cromosomas van en pares, pero los gametos tienen una sola copia. Se agrega «en las células del cuerpo» para que la simplificación no tenga que desaprenderse.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "óvulos, espermatozoides y granos de polen llevan un solo juego de cromosomas"
+      },
+      {
+       "fuente": "notas_de_los_redactores (G07-CIE-U2-2.7, nota 3)",
+       "cita": "«dos copias de cada gen» tiene excepciones"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de cada gen, que pueden ser versiones distintas: los alelos."
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Modelo y clave correctos. Corrijo dos detalles de forma: el enunciado decía «Observa» sin que haya imagen, lo que confunde a quien la busca; y la clave A era la única que hablaba del par, que la pregunta no pide, y la más larga (23 frente a 12–17 palabras). Acorto A; el par y las dos copias ya los explica la retroalimentación.",
+     "evidencia": [
+      {
+       "fuente": "enunciado del ítem",
+       "cita": "«Observa el modelo de Daniela», descrito solo con texto"
+      },
+      {
+       "fuente": "opciones del ítem",
+       "cita": "A: 23 palabras e incluye el par; B: 17; C: 16; D: 12"
+      },
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "los cromosomas van en pares, uno de la madre y otro del padre: dos copias de cada gen"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Daniela hizo un modelo: enrolló un hilo de lana muy largo alrededor de un carrete y pintó de rojo un tramo corto del hilo. Luego armó otro carrete igual, con el tramo rojo en el mismo lugar, y explicó que los dos carretes forman un par, uno de la madre y otro del padre. Si el hilo representa el ADN, ¿qué representan cada carrete con su hilo enrollado y el tramo rojo?",
+      "opciones": {
+       "A": "Cada carrete con su hilo es un cromosoma, y el tramo rojo es un gen.",
+       "B": "Cada carrete es un gen y el tramo rojo es un cromosoma que está dentro del gen.",
+       "C": "El carrete es el núcleo y el tramo rojo es todo el ADN de la célula.",
+       "D": "Cada carrete es una célula y el tramo rojo es su núcleo."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "La clave A acortada sigue siendo exacta: el carrete con su hilo es un cromosoma y el tramo rojo, un gen. Quitar el «par» de la opción no siembra ningún error, porque el enunciado y la retroalimentación lo explican (mismo lugar, uno de cada progenitor). La retroalimentación conserva el matiz de la etapa 1: «en las células del cuerpo».",
+     "evidencia": [
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "en las células del cuerpo los cromosomas van en pares"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "tramo rojo en el mismo lugar de ambos carretes = mismo locus en homólogos"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto la impugnación: «dos copias de cada gen» es falso para los genes del X y del Y en los varones, y la V2 enseña en 10.° la herencia ligada al X. El microtema de ADN ya dice «casi todos los genes»; la práctica debe decir lo mismo para no sembrar una idea que habrá que desaprender. Cambio solo esa frase; el modelo y la clave A siguen correctos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.3",
+       "cita": "En 10.° se explica la herencia ligada al X: los varones tienen una sola copia.",
+       "cita_literal": "Explica por qué los rasgos recesivos ligados al cromosoma X se manifiestan con mayor frecuencia en varones que en mujeres"
+      },
+      {
+       "fuente": "data/pedagogia/microtemas.json (MT:biologia/adn-y-cromosomas/G07, explicación)",
+       "cita": "El microtema dice «por eso hay dos copias de casi todos los genes»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Fuera de las regiones pseudoautosómicas, los genes del X y del Y están en una sola copia en los varones."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de casi todos los genes, que pueden ser versiones distintas: los alelos."
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "aprobar",
+     "justificacion": "La réplica del experto solo cambia «cada gen» por «casi todos los genes»: así coincide con el microtema, se entiende en 7.° y no suma carga. La retroalimentación (53 de 80 palabras) explica sin regañar. Se mantiene lo que corregí antes: el enunciado ya no pide «observar» una imagen que no existe y la clave A (15 palabras, frente a 12–17) no se delata por el largo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.3 (fila 43)",
+       "cita": "En 10.° se enseña la herencia ligada al X: «casi todos» evita desaprender.",
+       "cita_literal": "Explica por qué los rasgos recesivos ligados al cromosoma X se manifiestan con mayor frecuencia en varones que en mujeres"
+      },
+      {
+       "fuente": "ACT:biologia/adn-y-cromosomas/practica-G07 (retroalimentación y opciones vigentes)",
+       "cita": "«dos copias de casi todos los genes»; 53 palabras; opciones A 15, B 17, C 16, D 12"
+      },
+      {
+       "fuente": "datos.adaptacion (config/aprendizaje.yaml, secundaria)",
+       "cita": "7.°: máximo 80 palabras; registro de modelos y datos simples"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:biologia/adn-y-cromosomas/practica-G07",
+    "tipo": "actividad",
+    "rol": "practica",
+    "objetivos": [
+     "TEMA:G07-CIE-U2-2.7"
+    ],
+    "evalua": [
+     "CON:biologia/adn-y-cromosomas"
+    ],
+    "habilidad": "observar",
+    "formato": "opcion_multiple",
+    "grados": [
+     7
+    ],
+    "enunciado": "Daniela hizo un modelo: enrolló un hilo de lana muy largo alrededor de un carrete y pintó de rojo un tramo corto del hilo. Luego armó otro carrete igual, con el tramo rojo en el mismo lugar, y explicó que los dos carretes forman un par, uno de la madre y otro del padre. Si el hilo representa el ADN, ¿qué representan cada carrete con su hilo enrollado y el tramo rojo?",
+    "opciones": {
+     "A": "Cada carrete con su hilo es un cromosoma, y el tramo rojo es un gen.",
+     "B": "Cada carrete es un gen y el tramo rojo es un cromosoma que está dentro del gen.",
+     "C": "El carrete es el núcleo y el tramo rojo es todo el ADN de la célula.",
+     "D": "Cada carrete es una célula y el tramo rojo es su núcleo."
+    },
+    "correcta": "A",
+    "distractores": {
+     "B": "DIF:biologia/adn-y-cromosomas/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de casi todos los genes, que pueden ser versiones distintas: los alelos.",
+    "duracion_min": 6,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:biologia/adn-y-cromosomas"
+    },
+    "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/adn-y-cromosomas",
+     "nombre": "ADN y cromosomas",
+     "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 12
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Las cifras son correctas: unos 2 m de ADN por célula humana (unos 6400 millones de pares de bases a 0,34 nm cada uno) y un núcleo de unas 6 µm. B es la explicación correcta y A refleja la dificultad registrada. La retroalimentación dice «casi todas las células», lo que respeta excepciones como los glóbulos rojos.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "6,4 × 10⁹ pb × 0,34 nm ≈ 2,2 m; núcleo típico de 5 a 10 µm"
+      },
+      {
+       "fuente": "DIF:biologia/adn-y-cromosomas/1",
+       "cita": "dice que los genes están sueltos en el núcleo, fuera de los cromosomas"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Usable en 7.°: una pregunta intrigante con cifras concretas, que despierta curiosidad sin exigir cálculos. La clave B es la más corta (13 palabras frente a 17–18), así que no se delata por el largo, y los distractores son ideas previas plausibles. La retroalimentación (38 palabras) cabe en el límite y explica sin regañar. Como sondeo, orienta el refuerzo y no califica.",
+     "evidencia": [
+      {
+       "fuente": "opciones del ítem",
+       "cita": "B: 13 palabras; A: 17; C: 17; D: 18"
+      },
+      {
+       "fuente": "DIF:biologia/adn-y-cromosomas/1",
+       "cita": "dice que los genes están sueltos en el núcleo, fuera de los cromosomas"
+      },
+      {
+       "fuente": "datos.adaptacion",
+       "cita": "7.°: 80 palabras; modelos y datos simples"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto la impugnación: «El ADN es un hilo larguísimo» y «cada paquete enrollado es un cromosoma» sugieren un solo hilo dividido en paquetes, y cada cromosoma es una molécula de ADN distinta (46 en una célula del cuerpo humano). El microtema ya dice «son varios hilos». Corrijo solo la retroalimentación; las cifras (unos 2 m de ADN, núcleo de unas 6 µm) y la clave B siguen correctas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10",
+       "cita": "En 7.° se observa un cariotipo: cromosomas separados, no un solo hilo.",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "data/pedagogia/microtemas.json (MT:biologia/adn-y-cromosomas/G07, explicación)",
+       "cita": "El microtema dice «son varios hilos muy largos… cada hilo enrollado es un cromosoma»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Cada cromosoma nuclear es una sola molécula de ADN lineal; los 2 m son la suma de las 46 moléculas."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El ADN de la célula está formado por varios hilos larguísimos: cada uno se enrolla una y otra vez con proteínas y forma un cromosoma, y los genes son tramos de esos hilos. Casi todas las células guardan el ADN completo."
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "aprobar",
+     "justificacion": "La nueva retroalimentación («varios hilos larguísimos», cada uno un cromosoma) es clara en 7.°, una idea por oración, y prepara el cariotipo que 2.10 hace observar. Tiene 41 palabras (límite 80) y no regaña. Las opciones no cambian: la clave B sigue siendo la más corta (13 frente a 17–18), sin pista de largo. Como sondeo, orienta el refuerzo y no califica.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10 (fila 12)",
+       "cita": "En 7.° se observa un cariotipo: cromosomas separados, coherente con «varios hilos».",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "ACT:biologia/adn-y-cromosomas/sondeo-1-G07 (retroalimentación y opciones vigentes)",
+       "cita": "41 palabras; opciones B 13, A 17, C 17, D 18"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "imagen de un solo hilo contradiría lo que verán en el cariotipo; la corrección evita ese choque"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+    "tipo": "actividad",
+    "rol": "sondeo",
+    "objetivos": [
+     "TEMA:G07-CIE-U2-2.7"
+    ],
+    "evalua": [
+     "CON:biologia/adn-y-cromosomas"
+    ],
+    "habilidad": "explicar",
+    "formato": "opcion_multiple",
+    "grados": [
+     7
+    ],
+    "enunciado": "El ADN de una sola célula de tu cuerpo, si se estirara, mediría cerca de 2 metros, pero el núcleo donde se guarda mide unas 6 milésimas de milímetro. ¿Cómo cabe?",
+    "opciones": {
+     "A": "Porque el ADN está cortado en genes sueltos que flotan separados en el núcleo, sin formar cromosomas.",
+     "B": "Porque está muy enrollado y empacado con proteínas, y así forma los cromosomas.",
+     "C": "Porque la mayor parte del ADN se guarda fuera del núcleo, en el resto de la célula.",
+     "D": "Porque cada célula guarda solo un pedacito del ADN, y entre todas las células suman los 2 metros."
+    },
+    "correcta": "B",
+    "distractores": {
+     "A": "DIF:biologia/adn-y-cromosomas/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "El ADN de la célula está formado por varios hilos larguísimos: cada uno se enrolla una y otra vez con proteínas y forma un cromosoma, y los genes son tramos de esos hilos. Casi todas las células guardan el ADN completo.",
+    "duracion_min": 3,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:biologia/adn-y-cromosomas"
+    },
+    "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 12
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Clave B correcta: si el rojo domina, las 17 plantas amarillas tienen dos alelos amarillos, así que ese alelo es el más frecuente (al menos 34 de 40). En el tomate el fruto rojo sí domina sobre el amarillo. A recoge la confusión real «dominante = más común», sin ranura de dificultad propia; C, la de gen frente a alelo. «Dominante» queda definido en el enunciado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "la dominancia describe el fenotipo del heterocigoto, no la frecuencia del alelo en la población"
+      },
+      {
+       "fuente": "notas_de_los_redactores (punto 4)",
+       "cita": "seguir «dominante = más común» como dificultad aparte requiere otra ranura"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Usable: define «dominante» en el propio enunciado, el contexto (huerto escolar) es cercano y el cálculo es accesible en 7.°. La clave B es algo más larga (28 frente a 19), sin llegar a delatarse. Aviso para la persona que revise: mide sobre todo dominancia frente a frecuencia, idea de Mendel; los redactores ya lo señalan.",
+     "evidencia": [
+      {
+       "fuente": "elemento: enunciado",
+       "cita": "el alelo de fruto rojo es dominante: basta una copia para que el tomate sea rojo"
+      },
+      {
+       "fuente": "notas de los redactores, punto 1",
+       "cita": "«dominante» puede corresponder a un tema posterior de Mendel"
+      }
+     ],
+     "confianza": "media"
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto acortar B. La ciencia era correcta, pero la clave tenía 28 palabras frente a 13–19 y era la única que añadía la conclusión («abunda el alelo amarillo»): una pista de forma en la comprobación que decide el dominio. B acortada (21 palabras) sigue exacta: dominancia no es frecuencia. La retroalimentación ya explica por qué el amarillo es el más frecuente. No cambio nada más.",
+     "evidencia": [
+      {
+       "fuente": "opciones del ítem (versión vigente)",
+       "cita": "B: 28 palabras; A: 19; C: 18; D: 13; B acortada: 21."
+      },
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "«17 plantas tienen dos alelos amarillos, así que ese alelo es el más frecuente en el huerto»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La dominancia describe el fenotipo del heterocigoto, no la frecuencia del alelo en la población."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "opciones": {
+       "A": "Pedro tiene razón: si el alelo rojo es dominante, la mayoría de las plantas tendría que dar tomates rojos.",
+       "B": "Los datos son posibles: dominante significa que una copia basta para que se note, no que sea el alelo más común.",
+       "C": "Las 17 plantas de tomate amarillo no tienen el gen del color del fruto; solo las rojas lo tienen.",
+       "D": "Los datos son posibles porque el alelo dominante es siempre el menos común."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "aprobar",
+     "justificacion": "Con B acortada, las opciones quedan en 13–21 palabras: B supera a A y C por dos y ya no añade la conclusión, así que no se delata. A y B usan «dominante»; elegir exige separar dominancia de frecuencia, que es lo que pide el criterio del microtema. Defecto menor: «siempre» hace fácil descartar D; no lo toco porque cambiaría la afirmación. Sigue el aviso: «dominante» quizá es de Mendel.",
+     "evidencia": [
+      {
+       "fuente": "ACT:biologia/genes-y-alelos/comprobacion-G07 (opciones vigentes)",
+       "cita": "B 21 palabras; A 19; C 19; D 13; B y D empiezan igual («Los datos son posibles»)"
+      },
+      {
+       "fuente": "MT:biologia/genes-y-alelos/G07 (criterio)",
+       "cita": "interpretar un conteo nuevo sin confundir dominante con más frecuente"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido; evitar determinantes absolutos como «siempre» o «nunca»"
+      },
+      {
+       "fuente": "notas_de_los_redactores (punto 1)",
+       "cita": "«dominante» puede corresponder a un tema posterior de Mendel"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+    "tipo": "actividad",
+    "rol": "comprobacion",
+    "objetivos": [
+     "TEMA:G07-CIE-U2-2.7"
+    ],
+    "evalua": [
+     "CON:biologia/genes-y-alelos"
+    ],
+    "habilidad": "interpretar_datos",
+    "formato": "opcion_multiple",
+    "grados": [
+     7
+    ],
+    "enunciado": "En el huerto escolar hay 20 plantas de tomate: 17 dan tomates amarillos y 3 dan tomates rojos. En estas plantas, el alelo de fruto rojo es dominante: basta una copia para que el tomate sea rojo. Pedro dice que esos datos son imposibles. ¿Qué le responderías?",
+    "opciones": {
+     "A": "Pedro tiene razón: si el alelo rojo es dominante, la mayoría de las plantas tendría que dar tomates rojos.",
+     "B": "Los datos son posibles: dominante significa que una copia basta para que se note, no que sea el alelo más común.",
+     "C": "Las 17 plantas de tomate amarillo no tienen el gen del color del fruto; solo las rojas lo tienen.",
+     "D": "Los datos son posibles porque el alelo dominante es siempre el menos común."
+    },
+    "correcta": "B",
+    "distractores": {
+     "C": "DIF:biologia/genes-y-alelos/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "Ser dominante describe cómo se nota un alelo en una planta, no cuántas plantas lo llevan. Aquí 17 plantas tienen dos alelos amarillos, así que ese alelo es el más frecuente en el huerto, aunque sea el que no domina.",
+    "duracion_min": 4,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:biologia/genes-y-alelos"
+    },
+    "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/genes-y-alelos/practica-G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 13
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Clave B correcta: dos cuadritos en la misma posición de dos cromosomas homólogos son dos alelos del mismo gen. En la arveja de Mendel la planta alta domina sobre la enana, así que la retroalimentación es exacta y corrige la herencia por mezcla (D). A (dos genes distintos) y C (gen confundido con cromosoma) están bien mapeadas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "DIF:biologia/adn-y-cromosomas/1",
+       "cita": "llama gen a un cromosoma completo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en Pisum sativum el alelo de tallo alto es dominante sobre el enano; el heterocigoto es alto"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "El modelo de tiras de papel es manipulable y está descrito por completo en el texto, así que sirve aunque no se vea. Una idea por paso: qué representan dos cuadritos en el mismo lugar. B es algo más larga, pero es práctica con retroalimentación inmediata. La retroalimentación (52 de 80 palabras) corrige la herencia por mezcla sin regañar.",
+     "evidencia": [
+      {
+       "fuente": "elemento: enunciado",
+       "cita": "dos tiras de papel representan un par de cromosomas; a la misma altura hay un cuadrito"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "representación concreta de una entidad no observable, adecuada en 7.°"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto acortar B. La clave tenía 21 palabras frente a 9–13 y repetía el enunciado («a la misma altura», «en el mismo lugar»): una pista de forma, el mismo defecto que el panel corrigió en la práctica de ADN. B acortada sigue exacta y responde lo que se pregunta; la retroalimentación ya explica que los cuadritos están en el mismo lugar de los dos cromosomas del par.",
+     "evidencia": [
+      {
+       "fuente": "opciones del ítem (versión vigente)",
+       "cita": "B: 21 palabras; A: 13; C: 9; D: 13; B acortada: 13."
+      },
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "«Los cuadritos están en el mismo lugar de los dos cromosomas del par: es el mismo gen en dos versiones»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Dos alelos son versiones de un gen en el mismo locus de cromosomas homólogos."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "opciones": {
+       "A": "Dos genes distintos: uno de la planta alta y otro de la planta enana.",
+       "B": "Dos alelos del mismo gen: dos versiones de la información sobre la altura.",
+       "C": "Dos cromosomas completos: cada cuadrito es un cromosoma.",
+       "D": "Dos alturas que se mezclan: la planta crecerá mediana, entre alta y enana."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "corregir",
+     "justificacion": "Respaldo acortar B: las opciones quedan en 8–14 palabras. Corrijo el enunciado: «Observa el modelo de la maestra» supone una imagen o un modelo que no existe en el tutor ni en todas las aulas, y da el papel a una mujer sin necesidad. Pido imaginarlo o armarlo con papel. Cambio «A la misma altura» por «En el mismo lugar»: no se confunde con la altura de la planta.",
+     "evidencia": [
+      {
+       "fuente": "ACT:biologia/genes-y-alelos/practica-G07 (enunciado vigente)",
+       "cita": "«Observa el modelo de la maestra» sin imagen; «a la misma altura» junto a «gen de la altura»"
+      },
+      {
+       "fuente": "ACT:biologia/genes-y-alelos/practica-G07 (retroalimentación)",
+       "cita": "«Los cuadritos están en el mismo lugar de los dos cromosomas del par»"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10 (fila 12)",
+       "cita": "El modelo de tiras anticipa el esquema de cromosomas con alelos de 2.10.",
+       "cita_literal": "Esquema de cromosomas con alelos"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "DUA: modelo descrito en texto y manipulable con papel; sin recursos ni roles de género supuestos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Imagina este modelo, o ármalo con papel: dos tiras representan un par de cromosomas de una planta de arveja, uno heredado de cada progenitor. En el mismo lugar de las dos tiras hay un cuadrito del gen de la altura de la planta: en una tira el cuadrito dice «planta alta» y en la otra dice «planta enana». ¿Qué representan los dos cuadritos?"
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 13,
+     "decision": "aprobar",
+     "justificacion": "Apruebo la versión del psicopedagogo. «En el mismo lugar de las dos tiras» representa bien el locus en cromosomas homólogos y evita confundir posición con altura de la planta; coincide con la retroalimentación y anticipa 2.10. «Imagina este modelo, o ármalo con papel» no toca la ciencia. B acortada sigue exacta y es la clave; A y C siguen mapeadas a confusiones reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10 (fila 12)",
+       "cita": "En 7.° se ubican locus y alelo en un cromosoma: «el mismo lugar» de las tiras es el locus.",
+       "cita_literal": "identificar locus y alelo en un cromosoma"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7 (fila 9)",
+       "cita": "El ítem sirve al indicador: el alelo explicado con una planta.",
+       "cita_literal": "Explica el concepto de alelo empleando fenómenos cotidianos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Dos alelos ocupan el mismo locus de cromosomas homólogos; en la arveja el alelo de tallo alto domina y el heterocigoto es alto, no intermedio."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:biologia/genes-y-alelos/practica-G07",
+    "tipo": "actividad",
+    "rol": "practica",
+    "objetivos": [
+     "TEMA:G07-CIE-U2-2.7"
+    ],
+    "evalua": [
+     "CON:biologia/genes-y-alelos"
+    ],
+    "habilidad": "observar",
+    "formato": "opcion_multiple",
+    "grados": [
+     7
+    ],
+    "enunciado": "Imagina este modelo, o ármalo con papel: dos tiras representan un par de cromosomas de una planta de arveja, uno heredado de cada progenitor. En el mismo lugar de las dos tiras hay un cuadrito del gen de la altura de la planta: en una tira el cuadrito dice «planta alta» y en la otra dice «planta enana». ¿Qué representan los dos cuadritos?",
+    "opciones": {
+     "A": "Dos genes distintos: uno de la planta alta y otro de la planta enana.",
+     "B": "Dos alelos del mismo gen: dos versiones de la información sobre la altura.",
+     "C": "Dos cromosomas completos: cada cuadrito es un cromosoma.",
+     "D": "Dos alturas que se mezclan: la planta crecerá mediana, entre alta y enana."
+    },
+    "correcta": "B",
+    "distractores": {
+     "A": "DIF:biologia/genes-y-alelos/1",
+     "C": "DIF:biologia/adn-y-cromosomas/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "Los cuadritos están en el mismo lugar de los dos cromosomas del par: es el mismo gen en dos versiones, o sea, dos alelos. En la arveja, una planta con un alelo de planta alta y uno de enana crece alta, porque el alelo de planta alta es dominante; no sale mediana.",
+    "duracion_min": 7,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:biologia/genes-y-alelos"
+    },
+    "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:MT:biologia/genes-y-alelos/G07",
+   "tipo": "contenido",
+   "titulo": "MT:biologia/genes-y-alelos/G07",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 13
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Lo central es exacto: un gen con varias versiones y dominante no significa más común. Dos precisiones: «las plantas y los animales tienen dos copias de cada gen» falla en los genes de X e Y de los varones y en muchas plantas cultivadas poliploides, y el gen ABO tiene más de tres alelos. Limito la afirmación a los organismos de los ejemplos y digo «tres alelos principales».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "notas_de_los_redactores (puntos 3 y 4)",
+       "cita": "«dos copias de cada gen» no se cumple en X e Y ni en haploides"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "maíz y arveja son diploides; el ABO tiene muchas variantes agrupadas en A, B y O"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una mazorca puede haber granos amarillos y blancos. Todos tienen el mismo gen para el color del grano, pero ese gen existe en versiones distintas: cada versión se llama alelo. El maíz, la arveja y las personas tienen dos copias de casi todos sus genes, una de cada progenitor, y pueden ser alelos iguales o distintos. Si un alelo se nota con una sola copia, se llama dominante; eso no quiere decir que sea el más común.",
+      "ejemplo": "El grupo sanguíneo depende de un solo gen con tres alelos principales: A, B y O. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen."
+     }
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "La explicación es clara y adecuada a 7.°. Pero el ejemplo dice «tres alelos» justo después de que la explicación afirma «dos copias», y sin aclarar un estudiante puede ver una contradicción. Agrego que cada persona lleva solo dos de esos alelos. No cambia la ciencia y hace visible la diferencia entre los alelos que existen y los que lleva una persona.",
+     "evidencia": [
+      {
+       "fuente": "MT:biologia/genes-y-alelos/G07 (explicación)",
+       "cita": "«tienen dos copias de casi todos sus genes»"
+      },
+      {
+       "fuente": "MT:biologia/genes-y-alelos/G07 (ejemplo)",
+       "cita": "«un solo gen con tres alelos principales: A, B y O»"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "un ejemplo que parece contradecir la explicación aumenta la carga y siembra dudas; se aclara en el mismo texto"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "ejemplo": "El grupo sanguíneo depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen."
+     }
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Agregar «aunque cada persona lleva solo dos» es correcto: el gen ABO está en un autosoma y cada persona tiene dos copias, que pueden ser iguales (OO) o distintas (AB). Esto refuerza la diferencia entre los alelos que existen en la población y los que lleva un individuo. Se conservan las precisiones de la etapa 1 («casi todos sus genes», «tres alelos principales»).",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ABO: varios alelos en la población, dos copias por persona (cromosoma 9)"
+      },
+      {
+       "fuente": "ejemplo del microtema",
+       "cita": "una persona con sangre tipo O lleva dos alelos O"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto la impugnación y la amplío. «El grupo sanguíneo depende de un solo gen» es inexacto: el grupo del carné (p. ej., O+) junta ABO y Rh, que depende de otro gen; la V2 lo enseña en 10.° y en 7.° hace mirar ese carné (2.10). Precisar «A, B, AB u O» y decir que el signo + o − depende de otro gen evita desaprenderlo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.2",
+       "cita": "En 10.° el Rh se hereda aparte del gen ABO.",
+       "cita_literal": "relación de dominancia entre los alelos I^A, I^B e i y la herencia independiente del factor Rh"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10",
+       "cita": "En 7.° los estudiantes miran el grupo sanguíneo de un carné, que trae el signo Rh.",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ABO (gen ABO, cromosoma 9) y Rh (sobre todo el gen RHD, cromosoma 1) son genes distintos."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "ejemplo": "El grupo sanguíneo A, B, AB u O depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen. El signo + o − del carné depende de otro gen."
+     }
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "corregir",
+     "justificacion": "Respaldo la precisión: sin ella, el grupo del carné (O+) parece de un solo gen. Pero en 7.° «el signo + o −» leído en voz alta suena «más o menos», y «del carné» supone un documento que se mira después (2.10). Lo digo como se dice en casa: «el positivo o negativo que va junto al grupo, como en O positivo (O+)». Ciencia intacta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10 (fila 12)",
+       "cita": "El carné se mira en 2.10, después del microtema de 2.7.",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.2 (fila 42)",
+       "cita": "El Rh se hereda aparte del gen ABO: la precisión del experto evita desaprender.",
+       "cita_literal": "la herencia independiente del factor Rh"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "lectura en voz alta: «+ o −» se lee «más o menos», que en español significa «aproximadamente»"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "ejemplo": "El grupo sanguíneo A, B, AB u O depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen. El positivo o negativo que va junto al grupo, como en O positivo (O+), depende de otro gen."
+     }
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 13,
+     "decision": "aprobar",
+     "justificacion": "Apruebo. «El positivo o negativo que va junto al grupo, como en O positivo (O+), depende de otro gen» conserva el sentido: el Rh lo determina otro gen, distinto del ABO, como enseña 10.° (4.2). Evitar «+ o −» y «del carné» es solo forma. Lo demás sigue exacto: «A, B, AB u O», tres alelos principales y dos copias por persona; el ejemplo tiene 71 palabras.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.2 (fila 42)",
+       "cita": "10.° enseña que el Rh se hereda aparte del ABO; la frase de 7.° lo anticipa sin contradecirlo.",
+       "cita_literal": "relación de dominancia entre los alelos I^A, I^B e i y la herencia independiente del factor Rh"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10 (fila 12)",
+       "cita": "En 7.° se mira el grupo anotado (p. ej., O+): la precisión evita leerlo como un solo gen.",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ABO (cromosoma 9) y RhD (gen RHD, cromosoma 1) son genes distintos; «un solo gen» para A, B, AB u O es simplificación aceptable (el fenotipo Bombay, del gen FUT1, es muy raro)."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:biologia/genes-y-alelos/G07",
+    "tipo": "microtema",
+    "concepto": "CON:biologia/genes-y-alelos",
+    "grados": [
+     7
+    ],
+    "titulo": "Un mismo gen, distintas versiones",
+    "explicacion": "En una mazorca puede haber granos amarillos y blancos. Todos tienen el mismo gen para el color del grano, pero ese gen existe en versiones distintas: cada versión se llama alelo. El maíz, la arveja y las personas tienen dos copias de casi todos sus genes, una de cada progenitor, y pueden ser alelos iguales o distintos. Si un alelo se nota con una sola copia, se llama dominante; eso no quiere decir que sea el más común.",
+    "ejemplo": "El grupo sanguíneo A, B, AB u O depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen. El positivo o negativo que va junto al grupo, como en O positivo (O+), depende de otro gen.",
+    "practica": "ACT:biologia/genes-y-alelos/practica-G07",
+    "comprobacion": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+    "duracion_min": 12,
+    "criterio": "Responde bien la comprobación, que pide interpretar un conteo nuevo de plantas de tomate sin confundir alelo con gen ni dominante con más frecuente.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:biologia/genes-y-alelos",
+     "TEMA:G07-CIE-U2-2.7"
+    ],
+    "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  }
+ ]
+}

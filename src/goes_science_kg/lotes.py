@@ -27,7 +27,7 @@ class TipoLote:
 
 
 def _tipos() -> dict[str, list[TipoLote]]:
-    from goes_science_kg import alineacion, comunidades, conceptos, panel, prerrequisitos, propuesta
+    from goes_science_kg import alineacion, bucle, comunidades, conceptos, panel, prerrequisitos, propuesta
     from goes_science_kg.aprendizaje import pedagogia
 
     return {
@@ -44,7 +44,10 @@ def _tipos() -> dict[str, list[TipoLote]]:
         "adopcion": [TipoLote("data/interim/propuestas", propuesta.errores_adopcion,
                               "gskg propuesta unir-adopcion")],
         "pedagogia": [TipoLote("data/pedagogia/lotes", pedagogia.errores_lote, "gskg tutor unir-actividades")],
-        "panel": [TipoLote("data/interim/panel/lotes", panel.errores_lote, "gskg panel consolidar --ronda <n>")],
+        "panel": [TipoLote("data/interim/panel/lotes", panel.errores_lote,
+                           "gskg panel consolidar --ronda <n> | gskg bucle cerrar-impugnacion | cerrar-replica")],
+        "bucle": [TipoLote("data/interim/panel/bucle/lotes", bucle.errores_lote,
+                           "gskg bucle cerrar-impugnacion --vuelta <k>")],
     }
 
 
@@ -61,6 +64,7 @@ AGENTES = {
     "experto-quimica": "panel",
     "experto-tierra-espacio": "panel",
     "psicopedagogo": "panel",
+    "refutador": "bucle",
 }
 
 

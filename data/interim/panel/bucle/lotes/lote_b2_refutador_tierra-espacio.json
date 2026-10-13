@@ -1,0 +1,594 @@
+{
+ "lote": "b2_refutador_tierra-espacio",
+ "vuelta": 2,
+ "rol": "refutador",
+ "disciplina": "tierra-espacio",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-tierra-espacio.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "HAL:H911-invernadero",
+   "tipo": "hallazgo",
+   "titulo": "El efecto invernadero no se retoma en 9.°–11.°",
+   "opciones": [
+    "respaldar",
+    "matizar",
+    "no_respaldar"
+   ],
+   "datos": {
+    "id": "H911-invernadero",
+    "tramo": "9_11",
+    "asignatura": "tierra_espacio",
+    "titulo": "El efecto invernadero no se retoma en 9.°–11.°",
+    "evidencia": "internacional/README.md.",
+    "recomendacion": "Incluir efecto invernadero y atmósfera en Física 10.° (radiación) junto al cambio climático de Biología 11.°.",
+    "fuente": "internacional/README.md"
+   },
+   "resolucion": {
+    "decision": "no_respaldar",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "HAL:H911-invernadero",
+     "rol": "experto-tierra-espacio",
+     "ronda": 11,
+     "decision": "no_respaldar",
+     "justificacion": "Cambio a no_respaldar. Verifiqué la fila completa: G10-FIS-U13-13.3 pide explicar cómo los gases de efecto invernadero alteran el balance de radiación (el mecanismo físico), G11-BIO-U1-1.8 retoma el efecto natural y G11-FIS-U22-22.4 lo liga a la emisión infrarroja terrestre. «No se retoma en 9.°–11.°» es falso; el README miró indicadores, no microhabilidades. Mi matiz anterior recomendaba lo que la V2 ya tiene.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U13-13.3",
+       "cita": "Física 10.° ya pide el mecanismo: gases y balance de radiación.",
+       "cita_literal": "Explica cómo el aumento de gases de efecto invernadero altera el balance de radiación de la Tierra"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U13-13.3",
+       "cita": "El indicador solo nombra Stefan-Boltzmann y Wien: el efecto no se evalúa.",
+       "cita_literal": "Aplica la ley de Stefan-Boltzmann para calcular la potencia radiada por un cuerpo"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.8",
+       "cita": "Biología 11.° retoma el efecto invernadero natural.",
+       "cita_literal": "Recuerda lo visto sobre el efecto invernadero natural y lo aplica a la temperatura media de la Tierra"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U22-22.4",
+       "cita": "Física 11.° lo relaciona con la emisión infrarroja de la Tierra.",
+       "cita_literal": "Relaciona la emisión infrarroja de la Tierra con el efecto invernadero"
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U10-10.3",
+       "cita": "Antecedente de 8.°: balance energético con radiación emitida.",
+       "cita_literal": "Representa el balance energético de la Tierra con la radiación que entra, la reflejada por el albedo y la emitida"
+      }
+     ],
+     "confianza": "alta",
+     "alternativa": "Corregir el hallazgo y su fila en internacional/README.md: la V2 sí retoma el efecto invernadero en 10.°–11.°, con su mecanismo (G10-FIS-U13-13.3, microhabilidad E6), con el efecto natural en el cambio climático (G11-BIO-U1-1.8) y con la emisión infrarroja de la Tierra (G11-FIS-U22-22.4), sobre la base de 7.° (G07-CIE-U6-6.13) y del balance energético de 8.° (G08-CIE-U10-10.3). No hace falta un tema nuevo. Solo se recomienda al MINED que la evidencia o el indicador de 13.3 lo nombren, porque hoy está en una microhabilidad y no se evalúa; las capas de la atmósfera ya están en 3.° y 7.°."
+    },
+    {
+     "id": "HAL:H911-invernadero",
+     "rol": "psicopedagogo",
+     "ronda": 11,
+     "decision": "no_respaldar",
+     "justificacion": "Cambio a no respaldar: la impugnación lo derriba en la fuente. El efecto invernadero sí se retoma en 9.°–11.°: Física 10.° (13.3) pide explicar cómo los gases de efecto invernadero alteran el balance de radiación, Biología 11.° (1.8) lo recuerda y lo aplica, y Física 11.° (22.4) lo relaciona con la emisión infrarroja. El hallazgo venía solo del README. Lo útil es hacerlo visible en el indicador de 13.3.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U13-13.3 (fila 96)",
+       "cita": "Física 10.° ya trabaja el mecanismo del efecto invernadero.",
+       "cita_literal": "Explica cómo el aumento de gases de efecto invernadero altera el balance de radiación de la Tierra"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.8 (fila 10)",
+       "cita": "Biología 11.° lo retoma junto al cambio climático.",
+       "cita_literal": "Recuerda lo visto sobre el efecto invernadero natural y lo aplica a la temperatura media de la Tierra"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U22-22.4 (fila 134)",
+       "cita": "Física 11.° lo vuelve a relacionar con la emisión infrarroja.",
+       "cita_literal": "Relaciona la emisión infrarroja de la Tierra con el efecto invernadero"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U6-6.13",
+       "cita": "Se introduce en 7.°.",
+       "cita_literal": "Representa los fenómenos de efecto invernadero y lluvia ácida"
+      }
+     ],
+     "confianza": "alta",
+     "alternativa": "No agregar contenido: la V2 ya retoma el efecto invernadero en G10-FIS-U13-13.3, G11-BIO-U1-1.8 y G11-FIS-U22-22.4, después de introducirlo en 7.° (G07-CIE-U6-6.13). Hoy está en la secuencia de actividades y no en el indicador; si el MINED quiere que se evalúe, subirlo al indicador de 13.3 («explica, con la emisión infrarroja de la Tierra, cómo el aumento de gases de efecto invernadero altera su balance de radiación»). En clase: un diagrama de flujos de energía antes de las ecuaciones, distinguir el efecto natural del reforzado y no confundirlo con el agujero de ozono (G11-QUI-U9-9.7). Corregir el hallazgo en internacional/README.md."
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 14,
+    "anclada": 0,
+    "ubicada": 14,
+    "inexistente": 0,
+    "interna": 2,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:CON:ciencias_tierra_espacio/calidad-del-aire",
+   "tipo": "clase_incierta",
+   "titulo": "Calidad del aire y contaminación atmosférica (CON:ciencias_tierra_espacio/calidad-del-aire)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/calidad-del-aire",
+     "nombre": "Calidad del aire y contaminación atmosférica",
+     "definicion": "Concentración de contaminantes como partículas, ozono troposférico y óxidos que afectan la salud y los ecosistemas; se mide con índices.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G07-CIE-U5-5.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 14): Atmósfera. 5.12. Reconoce los principales parámetros que inciden en la calidad del aire.",
+     "G07-CIE-U5-5.13 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 15): Atmósfera. 5.13. Explica la clasificación de la calidad del aire según el Índice Centroamericano de Calidad del Aire (ICCA).",
+     "G07-CIE-U6-6.13 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 15): Cambio climático. 6.13. Representa los fenómenos de efecto invernadero y lluvia ácida.",
+     "G08-CIE-U4-4.3 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 4 - Estequiometría y dis», fila 5): Unidades físicas de concentración. 4.3. Reconoce las aplicaciones cotidianas, industriales y ambientales de las unidades físicas de concentración.",
+     "G10-QUI-U6-6.5 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 59): El aire. 6.5. Interpreta datos de composición del aire, humedad relativa y concentración de contaminantes para valorar la calidad del aire local.",
+     "G03-CIE-U2-2.14 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 16): Atmósfera terrestre.. 2.14. Explica la importancia de la atmósfera para la vida en la Tierra."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-TYE-ee_basic-p025-04 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 25, SV 7–9]: Caracterizar el sistema de transporte estonio, analizar las ventajas y desventajas de los modos de transporte y su impacto ambiental."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-TYE-hk_s1_3-p049-02 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 49, SV 6–8]: Aprender sobre la contaminación del agua y del aire."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-TYE-tw_jh-p034-03 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 34, SV 6–8]: Identificar la calidad del aire, los tipos y fuentes de contaminación atmosférica, y sus métodos generales de prevención."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "INC:CON:ciencias_tierra_espacio/calidad-del-aire",
+     "rol": "experto-tierra-espacio",
+     "ronda": 11,
+     "decision": "alineado",
+     "justificacion": "Cambio a «alineado». La impugnación se sostiene: Inglaterra GCSE Combined (SV 8, núcleo) enseña las fuentes de CO, SO2, NOx y partículas y sus problemas; es este concepto, aunque el etiquetado lo puso en el vecino de Química. Con Hong Kong y Taiwán (SV 6–8) son tres países, mediana 7, y la V2 lo enseña en 7.° (5.12–5.13). En 3.° solo hay una acción contra las quemas.",
+     "evidencia": [
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 27",
+       "cita": "Inglaterra, Year 10–11 (SV 8–9), núcleo.",
+       "cita_literal": "describe the major sources of carbon monoxide, sulfur dioxide, oxides of nitrogen and particulates in the atmosphere"
+      },
+      {
+       "fuente": "HK_Science_S1-3_CurriculumFramework_2025.pdf p. 79",
+       "cita": "Hong Kong S1–3 (SV 6–8), núcleo.",
+       "cita_literal": "be aware of the kinds and sources of common air pollutants"
+      },
+      {
+       "fuente": "TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 34",
+       "cita": "Taiwán etapa IV (SV 6–8): calidad del aire y contaminantes.",
+       "cita_literal": "空氣品質與空氣汙染的種類、來源及一般防治方法"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U5-5.12",
+       "cita": "La V2 enseña el concepto en 7.°: contaminantes, fuentes y efectos.",
+       "cita_literal": "Reconoce parámetros de calidad del aire: material particulado, monóxido de carbono, dióxido de nitrógeno y ozono"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U2-2.14",
+       "cita": "En 3.° solo una acción de cuidado, como los países en su primaria.",
+       "cita_literal": "Propone y justifica acciones para no contaminar el aire (evitar quemas)"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 5,
+    "anclada": 0,
+    "ubicada": 5,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
+   "tipo": "clase_incierta",
+   "titulo": "Capas de la atmósfera y variación con la altitud (CON:ciencias_tierra_espacio/capas-de-la-atmosfera)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
+     "nombre": "Capas de la atmósfera y variación con la altitud",
+     "definicion": "La atmósfera se estratifica en troposfera, estratosfera, mesosfera y termosfera; la presión disminuye y la temperatura varía con la altitud.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "adelantado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 3
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G03-CIE-U2-2.15 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 2 - Interacciones terres», fila 17): Atmósfera terrestre.. 2.15. Describe las características de las capas atmosféricas de la Tierra.",
+     "G07-CIE-U5-5.11 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 13): Atmósfera. 5.11. Identifica las características físicas de las capas atmosféricas.",
+     "G09-CIE-U2-2.9 (grado 9, Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 11): Segunda ley de la termodinámica. 2.9. Explica un proceso irreversible de extracción de calor por medio de trabajo mecánico.",
+     "G10-FIS-U11-11.3 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 75): Hidrostática cuantitativa. 11.3. Calcula la presión absoluta y manométrica a distintas profundidades de un líquido considerando la presión atmosférica del lugar.",
+     "G10-FIS-U12-12.9 (grado 10, Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 92): Fases de la materia. 12.9. Interpreta diagramas de fase para predecir el estado de una sustancia y la temperatura de ebullición según la presión.",
+     "G10-QUI-U13-13.6 (grado 10, Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 111): Elementos no metálicos. 13.6. Describe las propiedades físicas y químicas de los anfígenos y explica la formación de SO₂, H₂S y lluvia ácida a partir del azufre volcánico."
+    ],
+    "paises": {
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-FIS-KS3-23 [ENG_NC_Science_KS3_2013.pdf p. 11, SV 5–7]: La presión atmosférica disminuye con la altura porque disminuye el peso del aire encima."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-TYE-kr_jung-p061-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 61, SV 6–8]: Dividir la atmósfera terrestre en cuatro zonas y explicar el efecto invernadero y el calentamiento global desde la perspectiva del equilibrio radiativo."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-TYE-tw_jh-p029-07 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 29, SV 6–8]: La atmósfera puede dividirse en capas según los cambios de temperatura."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "adelantado",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "INC:CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
+     "rol": "experto-tierra-espacio",
+     "ronda": 11,
+     "decision": "adelantado",
+     "justificacion": "Cambio a «adelantado», como la sonda ciega. Excluir a Inglaterra fue un error: el concepto incluye la variación de la presión con la altitud, y KS3 (SV 5–7) la enseña. Con Corea y Taiwán (capas según la temperatura, SV 6–8) son tres países, mediana 7. La V2 rotula las capas en 3.°, cuatro grados antes; en primaria, Hong Kong y Corea solo dicen que la Tierra está rodeada de aire.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G03-CIE-U2-2.15",
+       "cita": "La V2 introduce las capas en 3.° con un modelo rotulado.",
+       "cita_literal": "Construye una columna con las capas de la atmósfera en papel de colores"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U5-5.11",
+       "cita": "En 7.° las retoma con el perfil de temperatura, a la altura de los países.",
+       "cita_literal": "Lee un gráfico de temperatura contra altitud"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 61",
+       "cita": "Corea, secundaria baja (SV 6–8): cuatro capas.",
+       "cita_literal": "지구 대기권을 4개 권역으로 구분하며"
+      },
+      {
+       "fuente": "TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 29",
+       "cita": "Taiwán, etapa IV (SV 6–8): capas según la temperatura.",
+       "cita_literal": "大氣可由溫度變化分層"
+      },
+      {
+       "fuente": "ENG_NC_Science_KS3_2013.pdf p. 11",
+       "cita": "Inglaterra KS3 (SV 5–7): la presión baja con la altura, parte del concepto.",
+       "cita_literal": "atmospheric pressure, decreases with increase of height as weight of air above decreases with height"
+      },
+      {
+       "fuente": "HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 40",
+       "cita": "Hong Kong primaria: solo la envoltura de aire, sin capas.",
+       "cita_literal": "1EA2 知道地球表面被大氣（氣體）包圍"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 1,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:CON:ciencias_tierra_espacio/conservacion-del-agua",
+   "tipo": "clase_incierta",
+   "titulo": "Abastecimiento y conservación del agua dulce (CON:ciencias_tierra_espacio/conservacion-del-agua)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/conservacion-del-agua",
+     "nombre": "Abastecimiento y conservación del agua dulce",
+     "definicion": "El agua dulce disponible es limitada y desigual; su conservación exige uso eficiente, protección de zonas de recarga y evitar la contaminación.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": 7,
+     "mediana": 5.0,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G03-CIE-U3-3.14 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 3 - El agua», fila 16): Tratamiento del agua.. 3.14. Reconoce la importancia de brindar tratamiento a las aguas residuales.",
+     "G07-CIE-U5-5.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 5 - Recurso hídrico», fila 12): Calidad del agua. 5.10. Reconoce los usos potenciales del agua de acuerdo con su índice de calidad (ICA).",
+     "G07-CIE-U6-6.20 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 6 - Ambiente y energía», fila 22): Introducción al desarrollo sostenible. 6.20. Identifica prácticas comunes que promueven la sostenibilidad ambiental.",
+     "G11-BIO-U1-1.8 (grado 11, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 10): Problemática ambiental global. 1.8. Explica las principales causas y consecuencias del cambio climático antropogénico."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-TYE-ee_basic-p023-07 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 23, SV 7–9]: Analizar el ciclo del agua en distintas regiones de la Tierra y correlacionarlo con el clima, la disponibilidad de agua y la actividad humana."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-TYE-hk_primaria-p040-03 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 40, SV 2–2]: Conocer las fuentes de agua salada y dulce, y sus usos en la vida diaria."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-TYE-kr_jung-p062-03 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 62, SV 6–8]: Investigar la distribución y uso de agua de mar, dulce y glaciares, y debatir el valor del agua como recurso, incluyendo aguas subterráneas y uso sostenible."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-TYE-on_st_g8-p178-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 178, SV 7–7]: Demostrar comprensión de los conocimientos y valores de las Primeras Naciones, Métis e Inuit sobre el agua y sus formas de gestión sostenible."
+     },
+     "SG": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-TYE-sg_primaria-p050-02 [SG_Primary_Science_2023.pdf p. 50, SV 5–5]: Mostrar preocupación por el agua como recurso natural limitado y ser responsable en su conservación."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-TYE-tw_jh-p034-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 34, SV 6–8]: Analizar el impacto de las aguas residuales domésticas y aplicar métodos para su reutilización."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "INC:CON:ciencias_tierra_espacio/conservacion-del-agua",
+     "rol": "experto-tierra-espacio",
+     "ronda": 11,
+     "decision": "alineado",
+     "justificacion": "Cambio a «alineado». La impugnación baja la mediana, y la fuente da más: Ontario Grade 2 (SV 1, no extraído) pide evaluar el uso doméstico del agua y planear su uso responsable. Con Ontario ≤ 2, Hong Kong 2, Taiwán 2,5, Corea 4,5, Estonia 5 y Singapur 5, la mediana es 3,5 y la V2 en 3.° coincide. Sin Ontario, «adelantado» pasaba por 0,25 grados.",
+     "evidencia": [
+      {
+       "fuente": "ON_ScienceTechnology_Grades1-8_2022.pdf p. 112",
+       "cita": "Ontario Grade 2 (SV 1): plan de uso responsable del agua.",
+       "cita_literal": "assess their personal and household uses of water, and create a plan to use water responsibly"
+      },
+      {
+       "fuente": "HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 40",
+       "cita": "Hong Kong P3 (SV 2): plan personal de ahorro de agua.",
+       "cita_literal": "訂定節約用水的個人行動計劃"
+      },
+      {
+       "fuente": "TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 24",
+       "cita": "Taiwán INg-Ⅱ-2 (SV 2–3): ahorro de agua en la vida diaria.",
+       "cita_literal": "地球資源永續可結合日常生活中低碳與節水方法做起"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 38",
+       "cita": "Corea 5.°–6.° (SV 4–5): uso eficiente del agua.",
+       "cita_literal": "효율적인 자원의 이용 방법에서 물 자원과 산림 자원, 광물 자원을 종합적으로 다루며"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U3-3.6",
+       "cita": "La V2 lo enseña en 3.°: ahorro de agua en la época seca.",
+       "cita_literal": "Propone y justifica acciones para ahorrar agua en la época seca"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U3-3.1",
+       "cita": "En 3.° también el agua dulce como fracción pequeña del total.",
+       "cita_literal": "Compara con un modelo de 100 vasos cuánta agua del planeta es salada y cuánta es dulce"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 5,
+    "anclada": 0,
+    "ubicada": 5,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "INC:CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas",
+   "tipo": "clase_incierta",
+   "titulo": "Satélites, asteroides y cometas (CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas)",
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas",
+     "nombre": "Satélites, asteroides y cometas",
+     "definicion": "Cuerpos menores del sistema solar: lunas que orbitan planetas, asteroides del cinturón principal y cometas de hielo y polvo.",
+     "asignatura": "ciencias_tierra_espacio"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 4,
+     "estricto": 4
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 5.0,
+     "n_paises": 3
+    },
+    "temas_v2": [
+     "G04-CIE-U4-4.10 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 12): Satélites y asteroides.. 4.10. Explica los conceptos de satélite natural, satélite artificial y asteroides.",
+     "G04-CIE-U4-4.11 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 13): Satélites y asteroides.. 4.11. Reconoce algunos satélites naturales del sistema solar.",
+     "G04-CIE-U4-4.12 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 4 - Sistema solar», fila 14): Satélites y asteroides.. 4.12. Caracteriza distintos objetos astronómicos del sistema solar."
+    ],
+    "paises": {
+     "HK": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-TYE-hk_primaria-p046-04 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 46, SV 5–5]: Reconocer la historia de la exploración espacial humana (incluyendo satélites, alunizajes, estación espacial, vuelos tripulados)."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-TYE-kr_jung-p052-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 52, SV 6–8]: Conocer las características de los cuerpos celestes del sistema solar y clasificar los planetas en terrestres y jovianos."
+     },
+     "ON": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-TYE-on_snc1w-p055-03 [ON_Science_Grade9_SNC1W_2022.pdf p. 55, SV 8–8]: Describir los componentes principales del sistema solar y del universo, y comparar sus características."
+     }
+    }
+   },
+   "resolucion": {
+    "decision": "alineado",
+    "ronda": 11
+   },
+   "fundamentos": [
+    {
+     "id": "INC:CON:ciencias_tierra_espacio/satelites-asteroides-y-cometas",
+     "rol": "experto-tierra-espacio",
+     "ronda": 11,
+     "decision": "alineado",
+     "justificacion": "Cambio a «alineado». El concepto incluye las lunas que orbitan planetas, y Hong Kong P5 (SV 4, núcleo) pide el número de satélites descubiertos de cada planeta, lo mismo que G04-CIE-U4-4.11: excluirlo fue un error. Con Ontario Grade 6 (SV 5: satélites, cometas y asteroides) y Corea (SV 6–8) son tres países, mediana 5, y la V2 en 4.° queda dentro de ±1,5 grados.",
+     "evidencia": [
+      {
+       "fuente": "HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 42",
+       "cita": "Hong Kong 5EC3 (P5, SV 4): satélites de cada planeta.",
+       "cita_literal": "認識太陽系的八大行星及其基本特點（例如︰直徑*︑已 發現的衞星數目"
+      },
+      {
+       "fuente": "ON_ScienceTechnology_Grades1-8_2022.pdf p. 157",
+       "cita": "Ontario Grade 6 (SV 5): el concepto completo.",
+       "cita_literal": "identify components of the solar system, including the Sun, Earth and other planets, natural satellites, comets, asteroids, and meteoroids"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 52",
+       "cita": "Corea [9과07-01] (SV 6–8): asteroides, satélites y cometas.",
+       "cita_literal": "태양계를 구성하는 천체인 태양, 행성, 왜소행성, 소행성, 위성, 혜성을 개괄"
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U4-4.11",
+       "cita": "La V2 4.° trabaja lo mismo que Hong Kong 5EC3.",
+       "cita_literal": "Compara el número de satélites de los planetas"
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U4-4.12",
+       "cita": "La V2 4.° caracteriza cometas y asteroides.",
+       "cita_literal": "Conocer: caracterizar cometas y asteroides"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 4,
+    "anclada": 0,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  }
+ ]
+}

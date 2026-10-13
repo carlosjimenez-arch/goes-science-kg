@@ -1,0 +1,924 @@
+"""Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7).
+
+El panel resuelve por unanimidad, pero sus miembros son el mismo tipo de modelo: pueden equivocarse juntos, citar de
+memoria o apoyarse en los informes del propio proyecto. El bucle somete cada dictamen resuelto a tres pruebas y solo
+lo da por «sólido» si las pasa:
+
+1. **Anclaje** (código, sin IA). Cada evidencia se clasifica:
+   - primaria: fila de la malla, objetivo de un país o página de un documento fuente;
+   - interna: README, contraste, vocabulario u otro dictamen (circular: el proyecto citándose a sí mismo);
+   - argumento («criterio disciplinar»);
+   - literatura no verificada.
+   En las primarias el código busca la cita en el texto de la fuente: «anclada» si está literal, «ubicada» si la
+   fuente existe pero la cita es paráfrasis o traducción, «inexistente» si el id o la página no existen.
+2. **Impugnación** (IA adversarial). El subagente `refutador` busca en las fuentes la prueba más fuerte contra cada
+   dictamen y, si no la encuentra, aporta anclas literales a favor. Solo una contraevidencia anclada (el código la
+   encuentra en la fuente) reabre un expediente; en la capa pedagógica basta un error con su corrección válida.
+3. **Sonda ciega** (IA, muestra). Una instancia nueva del mismo rol dictamina una muestra sin ver la resolución. El
+   acuerdo por tipo mide la estabilidad, y una discrepancia también reabre el expediente.
+
+Lo reabierto va a la **réplica**: los roles del panel ven la impugnación y mantienen o cambian su decisión, con las
+reglas del panel (unanimidad, una deliberación y, si no, «sin consenso» para una persona). Lo que cambió se impugna
+otra vez en la vuelta siguiente; el bucle se detiene cuando una vuelta no cambia nada o al llegar a `vueltas_max`.
+
+Circuito de la vuelta k (las rondas de réplica en el estado del panel son 10k + paso):
+  anclar()                → estado[x]["bucle"]["anclaje"]
+  impugnar(k)             → data/interim/panel/bucle/lotes/lote_b<k>_refutador_<disciplina>[_n].json
+  sonda(k, n)             → data/interim/panel/lotes/lote_c<k>_<rol>[_n].json (formato del panel, a ciegas)
+  cerrar_impugnacion(k)   → verifica las citas por código; lo impugnado queda «pendiente_paso_1»
+  replicar(k, paso)       → data/interim/panel/lotes/lote_r<10k+paso>_<rol>[_n].json
+  cerrar_replica(k, paso) → mantiene o cambia la resolución (y deja `aplicado` en blanco para volver a aplicarla)
+  solidez() / seccion_informe() → «sólido», «respaldado», «frágil», «sin consenso»
+"""
+
+from __future__ import annotations
+
+import json
+import random
+import re
+import unicodedata
+import zipfile
+from collections import Counter, defaultdict
+from collections.abc import Callable
+from datetime import date
+from functools import cache
+from pathlib import Path
+from typing import TYPE_CHECKING
+
+from goes_science_kg import panel
+from goes_science_kg.config import relativa, ruta
+
+if TYPE_CHECKING:
+    from goes_science_kg.ingesta.mallas import TemaMalla
+
+DIR = "data/interim/panel/bucle"
+VERSION = "bucle-v1"
+VEREDICTOS = ("se_sostiene", "debilitada", "refutada")
+PESO = {"asignacion": 0.4, "cambio_asignatura": 0.6, "decision": 1.2, "hallazgo": 1.5, "propuesta": 1.2,
+        "contenido": 1.0, "clase_incierta": 1.5}
+PESO_MAX_LOTE = 30
+SOLIDECES = ("solido", "respaldado", "fragil", "sin_consenso", "en_bucle", "sin_bucle")
+
+
+def config() -> dict:
+    return panel.config()["bucle"]
+
+
+# -- texto de las fuentes ---------------------------------------------------------------------------------------------
+def norma(s: str) -> str:
+    """Solo letras y dígitos, sin acentos ni espacios: la cita se compara con el texto de la fuente sin depender de
+    saltos de línea, guiones de corte, comillas o mayúsculas. Conserva los caracteres chinos, japoneses y coreanos."""
+    s = unicodedata.normalize("NFKD", unicodedata.normalize("NFKC", s or "").lower())
+    return "".join(c for c in s if c.isalnum() and not unicodedata.combining(c))
+
+
+def _es_cjk(s: str) -> bool:
+    return sum(ord(c) > 0x2E80 for c in s) * 2 >= len(s) > 0
+
+
+def _largo_minimo(n: str) -> int:
+    return config()["cita_minima"]["cjk" if _es_cjk(n) else "latin"]
+
+
+def cita_en(cita: str, texto: str) -> bool:
+    """La cita está literal en el texto (por tramos si trae «…»): cada tramo largo está, en orden, y en total la cita
+    alcanza el largo mínimo."""
+    tramos = [norma(t) for t in re.split(r"…|\.\.\.|\[…\]", cita or "")]
+    tramos = [t for t in tramos if t]
+    if not tramos or sum(map(len, tramos)) < _largo_minimo("".join(tramos)):
+        return False
+    t, pos = norma(texto), 0
+    for tramo in tramos:
+        if len(tramo) < 4:
+            continue
+        i = t.find(tramo, pos)
+        if i < 0:
+            return False
+        pos = i + len(tramo)
+    return True
+
+
+@cache
+def _indice_fuentes() -> dict[str, str]:
+    """Nombre de archivo → ruta relativa, de todo data/fuentes (solo lectura)."""
+    base = ruta("data/fuentes")
+    return {p.name: relativa(p) for p in sorted(base.rglob("*")) if p.is_file()}
+
+
+@cache
+def _lector(archivo: str):
+    import logging
+
+    from pypdf import PdfReader
+
+    logging.getLogger("pypdf").setLevel(logging.ERROR)   # avisos de fuentes CFF sin fontTools: no afectan al texto
+    try:
+        return PdfReader(ruta(archivo))
+    except Exception:  # noqa: BLE001 — un PDF ilegible no ancla nada
+        return None
+
+
+@cache
+def texto_pagina(archivo: str, pagina: int) -> str | None:
+    """Texto de una página de un PDF (posición en el archivo, desde 1); None si no existe."""
+    lector = _lector(archivo)
+    if lector is None or not 1 <= pagina <= len(lector.pages):
+        return None
+    return lector.pages[pagina - 1].extract_text() or ""
+
+
+@cache
+def texto_documento(archivo: str) -> str | None:
+    """Texto completo de un documento que no se cita por página (docx, html, json); None para un PDF."""
+    p = ruta(archivo)
+    if p.suffix == ".docx":
+        with zipfile.ZipFile(p) as z:
+            xml = z.read("word/document.xml").decode("utf-8", errors="replace")
+        return re.sub(r"<[^>]+>", " ", re.sub(r"</w:p>", "\n", xml))
+    if p.suffix in (".html", ".htm"):
+        from goes_science_kg.internacional.extraer import _texto_html
+
+        return _texto_html(p.read_text(encoding="utf-8", errors="replace"))
+    if p.suffix in (".json", ".ttl"):   # .ttl: el Course of Study de Japón (texto UTF-8)
+        return p.read_text(encoding="utf-8")
+    return None
+
+
+@cache
+def _temas() -> dict[str, TemaMalla]:
+    from goes_science_kg.ingesta.mallas import extraer
+
+    temas = {t.id: t for t in extraer("mallas_v1")}
+    temas.update({t.id: t for t in extraer()})   # la V2 gana si el id existe en las dos
+    return temas
+
+
+@cache
+def _filas_completas() -> dict[str, str]:
+    """Id del tema → texto de todas las celdas de su fila (también microhabilidades PISA e indicador avanzado)."""
+    from goes_science_kg.ingesta.mallas import textos_completos
+
+    return {**textos_completos("mallas_v1"), **textos_completos()}
+
+
+def _texto_tema(t: TemaMalla) -> str:
+    return " ".join([t.unidad, t.contenido, t.subcontenido, t.procedimental, t.indicador, t.evidencia,
+                     t.habilidad_timss, _filas_completas().get(t.id, "")])
+
+
+@cache
+def _objetivos() -> dict[str, dict]:
+    """Objetivos de los países de los dos tramos y de los países de antecedente, por id."""
+    from goes_science_kg.internacional import tramo
+
+    objs: dict[str, dict] = {}
+    for t in tramo.TRAMOS.values():
+        for p in sorted(ruta(t.objetivos).glob("*.json")):
+            if not p.stem.endswith("_descartados"):
+                objs.update({o["id"]: o for o in json.loads(p.read_text(encoding="utf-8"))})
+    from goes_science_kg.ingesta import legado
+
+    for o in [*legado.alineacion_paises(), *legado.paises_nuevos()]:   # UY, CO, SG y países de antecedente
+        archivo = _indice_fuentes().get(o.get("documento") or "")
+        objs.setdefault(o["id"], {**o, "archivo": archivo, "cita": ""})
+    return objs
+
+
+@cache
+def _prefijos_objetivos() -> frozenset[str]:
+    return frozenset(i.split("-", 1)[0] for i in _objetivos())
+
+
+@cache
+def _nodos_obj() -> dict[str, str]:
+    """Objetivos de los marcos y de ACARA Senior Secondary en el grafo (OBJ:<código>) → su texto."""
+    p = ruta("data/grafo/nodos.jsonl")
+    salida = {}
+    for linea in p.read_text(encoding="utf-8").splitlines():
+        n = json.loads(linea)
+        if n["id"].startswith("OBJ:"):
+            salida[n["id"].removeprefix("OBJ:")] = n.get("etiqueta", "") + " " + json.dumps(n.get("props", {}),
+                                                                                            ensure_ascii=False)
+    return salida
+
+
+# Páginas vecinas en que se busca una cita: los documentos imprimen una numeración distinta de la posición en el PDF
+# (KR y TW, de 4 a 6 páginas). La cita debe ser literal, así que la ventana no ancla nada que no esté.
+VECINAS = (0, -1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8)
+
+PAISES = {"ENG": "inglaterra", "SG": "singapur", "EE": "estonia", "AU": "australia", "UY": "uruguay",
+          "TW": "taiwan", "ON": "ontario", "CO": "colombia", "HK": "hong_kong", "KR": "corea", "JP": "japon"}
+
+_RE_TEMA = re.compile(r"\bG\d\d-[A-Z]{3}-U\d+-(?:f\d+|\d+\.\d+(?:-f\d+)?(?:\s*(?:/|y|,)\s*\d+\.\d+)*)")
+_RE_ID_PAIS = re.compile(r"\b[A-Z]{2,3}-[\w-]*\w")                  # candidato a id de objetivo de un país
+_RE_FORMA_OBJ = re.compile(r"-(?:p\d{3}|[A-Z]+\d+)-\d{2}$")         # forma de id de objetivo (si no existe: inventado)
+_RE_CODIGO = re.compile(r"\b(AC9S[FU\d]*[UHI]\d{2}|ACS(?:CH|BL|PH|ES)\d{3}|PISA-[A-Z]{1,2}\d+|"
+                        r"T(?:4|8|A)(?:_27)?-[A-Z]\d(?:\.\d+)?)\b")
+_RE_ARCHIVO = re.compile(r"(?:[\w.-]+/)*[\w.-]+\.(?:pdf|docx|html|xlsx|json|ttl)\b")
+_RE_PAGINAS = re.compile(r"\bpp?\.\s*(\d+)(?:\s*[–-]\s*(\d+))?")
+_RE_PAIS = re.compile(r"\b(" + "|".join(PAISES) + r")\b")
+_RE_FILA = re.compile(r"\bfilas?\s*(\d+)")
+_RE_INTERNA = re.compile(r"(?i)(readme|\.md\b|\.json\b|contraste|dictamen|internacional/|asignaturas/|data/|panel/|"
+                         r"\bCON:|vocabulario|grafo|objetivos de los|búsqueda en los)")
+_RE_LITERATURA = re.compile(r"\b[A-ZÁÉÍÓÚ][a-záéíóúñ'-]+(?:\s+et al\.?|\s+(?:y|and|&)\s+[A-ZÁÉÍÓÚ][a-záéíóúñ'-]+)?"
+                            r"(?:,?\s*\((?:19|20)\d\d[a-z]?\)|,\s*(?:19|20)\d\d\b)")
+
+
+@cache
+def _rutas_fuentes() -> tuple[str, ...]:
+    return tuple(sorted(relativa(p) for p in ruta("data/fuentes").rglob("*") if p.is_file()))
+
+
+def _resolver(m: str) -> list[str]:
+    """Rutas de data/fuentes que corresponden a un nombre o a una ruta parcial («836/2235720000000.ttl»): todas las
+    que terminan así (los .ttl de Japón repiten nombres entre carpetas)."""
+    return [a for a in _rutas_fuentes() if a == m or a.endswith("/" + m)]
+
+
+def _paginas(fuente: str) -> list[int]:
+    pags = []
+    for a, b in _RE_PAGINAS.findall(fuente):
+        a, b = int(a), int(b or a)
+        pags += list(range(a, min(b, a + 15) + 1))
+    return pags
+
+
+def _candidatos(fuente: str) -> tuple[list[tuple[str, str]], list[str], list[str]]:
+    """(textos candidatos [(dónde, texto)], referencias encontradas, referencias inexistentes) de una fuente."""
+    textos: list[tuple[str, str]] = []
+    refs: list[str] = []
+    malas: list[str] = []
+    temas, objs = _temas(), _objetivos()
+    for m in _RE_TEMA.finditer(fuente):
+        base, *extra = re.split(r"\s*(?:/|y|,)\s*", m.group(0))
+        prefijo = base.rsplit("-", 1)[0]
+        for tid in [base, *[f"{prefijo}-{e}" for e in extra]]:
+            refs.append(tid)
+            if tid in temas:
+                t = temas[tid]
+                textos.append((f"{tid} ({t.archivo}, hoja «{t.hoja}», fila {t.fila})", _texto_tema(t)))
+            else:
+                malas.append(tid)
+    for oid in _RE_ID_PAIS.findall(_RE_TEMA.sub(" ", fuente)):
+        if oid not in objs and not (oid.split("-", 1)[0] in _prefijos_objetivos() and _RE_FORMA_OBJ.search(oid)):
+            continue
+        refs.append(oid)
+        if o := objs.get(oid):
+            # Solo el original ancla: la cita literal extraída, la página del documento o, en Japón, el .ttl del Course
+            # of Study. El «texto» del objetivo es la paráfrasis del proyecto: citarlo sería circular.
+            textos.append((oid, o.get("cita", "")))
+            if (m := re.fullmatch(r"JP-(\d{3})(\d{13})", oid)) and (ttl := _resolver(f"{m[1]}/{m[2]}.ttl")):
+                textos.append((ttl[0].split("japon/")[-1], texto_documento(ttl[0]) or ""))
+            if o.get("archivo") and o.get("pagina"):
+                for p in (o["pagina"] + d for d in VECINAS):
+                    if (t := texto_pagina(o["archivo"], p)) is not None:
+                        textos.append((f"{o['archivo'].split('/')[-1]} p. {p}", t))
+        else:
+            malas.append(oid)
+    for cod in _RE_CODIGO.findall(fuente):
+        refs.append(cod)
+        hallados = [(oid, o.get("cita", "")) for oid, o in objs.items()
+                    if oid.endswith(cod) or o.get("localizador") == cod]
+        if cod in _nodos_obj():
+            hallados.append((f"OBJ:{cod}", _nodos_obj()[cod]))
+        if cod.startswith("AC9S"):   # el tramo del docx de ese código: descripción (antes) y elaboraciones (después)
+            for nombre in ("AU_Science_F-6_v9_contenido.docx", "AU_Science_7-10_v9_contenido.docx"):
+                if (a := _indice_fuentes().get(nombre)) and (i := (t := texto_documento(a) or "").find(cod)) >= 0:
+                    hallados.append((f"{nombre} ({cod})", re.sub(r"\s+", " ", t[max(0, i - 800):i + 3000])))
+        textos += hallados
+        if not hallados:
+            malas.append(cod)
+    paginas = _paginas(fuente)
+    archivos = [(m, a) for m in _RE_ARCHIVO.findall(fuente) for a in _resolver(m)]
+    for m, a in archivos:
+        nombre = a.split("/")[-1]
+        refs.append(m)
+        if nombre.endswith(".xlsx"):
+            filas = [int(f) for f in _RE_FILA.findall(fuente)]
+            ts = [t for t in temas.values() if t.archivo == nombre and (not filas or t.fila in filas)]
+            textos += [(f"{nombre} fila {t.fila}", _texto_tema(t)) for t in ts]
+        elif nombre.endswith(".pdf"):
+            if not paginas:
+                textos.append((nombre, ""))   # existe, pero sin página no se puede anclar una cita
+            for p in paginas:
+                for q in (p + d for d in VECINAS):
+                    if (t := texto_pagina(a, q)) is not None:
+                        textos.append((f"{nombre} p. {q}", t))
+                if texto_pagina(a, p) is None:
+                    malas.append(f"{nombre} p. {p}")
+        else:
+            textos.append((nombre, texto_documento(a) or ""))
+    if not archivos and paginas:   # «HK p. 60», «KR (p. 55)»: todas las fuentes de ese país en esa página
+        for pais in dict.fromkeys(_RE_PAIS.findall(fuente)):
+            docs = [a for n, a in _indice_fuentes().items() if f"/paises/{PAISES[pais]}/" in a and n.endswith(".pdf")]
+            refs.append(f"{pais} p. {', '.join(map(str, paginas))}")
+            antes = len(textos)
+            for a in docs:
+                for p in paginas:
+                    for q in (p + d for d in VECINAS):
+                        if (t := texto_pagina(a, q)) is not None:
+                            textos.append((f"{a.split('/')[-1]} p. {q}", t))
+            if len(textos) == antes:   # sin PDF con esa página: los documentos sin páginas del país (docx, html)
+                otros = [a for n, a in _indice_fuentes().items() if f"/paises/{PAISES[pais]}/" in a
+                         and n.endswith((".docx", ".html"))]
+                textos += [(a.split("/")[-1], texto_documento(a) or "") for a in otros]
+                if not otros:
+                    malas.append(f"{pais} p. {paginas[0]}")
+    return textos, refs, malas
+
+
+def verificar(fuente: str, cita: str) -> dict:
+    """Clasifica una evidencia y, si cita una fuente primaria, busca la cita en ella.
+    → {"tipo": primaria|interna|argumento|literatura|otra, "estado": anclada|ubicada|inexistente|None,
+       "refs": [...], "inexistentes": [...], "donde": dónde se encontró la cita}"""
+    fuente = fuente or ""
+    textos, refs, malas = _candidatos(fuente)
+    if refs:
+        donde = next((d for d, t in textos if t and cita_en(cita, t)), None)
+        estado = "anclada" if donde else "ubicada" if textos else "inexistente"
+        return {"tipo": "primaria", "estado": estado, "refs": refs, "inexistentes": malas, "donde": donde}
+    if re.search(r"(?i)criterio", fuente):
+        tipo = "argumento"
+    elif _RE_INTERNA.search(fuente):
+        tipo = "interna"
+    elif _RE_LITERATURA.search(fuente):
+        tipo = "literatura"
+    else:
+        tipo = "otra"
+    return {"tipo": tipo, "estado": None, "refs": [], "inexistentes": [], "donde": None}
+
+
+def textos_de_fuente(texto: str) -> list[tuple[str, str]]:
+    """Los textos en que el código busca una cita de esa fuente (para el comando `gskg bucle fuente`), más la
+    paráfrasis en español de los objetivos citados, como orientación: esa no ancla."""
+    objs = _objetivos()
+    parafrasis = [(f"{oid} · paráfrasis del proyecto (no ancla)", objs[oid].get("texto", ""))
+                  for oid in _candidatos(texto)[1] if oid in objs]
+    return parafrasis + [(d, t) for d, t in _candidatos(texto)[0] if t]
+
+
+def anclaje(x: dict) -> dict:
+    """Anclaje de un expediente: toda la evidencia de sus dictámenes y las anclas verificadas del bucle."""
+    c: Counter = Counter()
+    inexistentes: list[str] = []
+    for d in x.get("dictamenes", []):
+        for v in d.get("evidencia") or []:
+            r = verificar(v.get("fuente", ""), v.get("cita_literal") or v.get("cita", ""))
+            c[r["tipo"]] += 1
+            if r["estado"]:
+                c[r["estado"]] += 1
+            inexistentes += r["inexistentes"]
+    c["anclada"] += len((x.get("bucle") or {}).get("anclas", []))
+    c["primaria"] += len((x.get("bucle") or {}).get("anclas", []))
+    nivel = "anclado" if c["anclada"] else "ubicado" if c["ubicada"] else "sin_fuente_primaria"
+    return {"nivel": nivel, **{k: c[k] for k in ("primaria", "anclada", "ubicada", "inexistente", "interna",
+                                                 "argumento", "literatura", "otra")},
+            "inexistentes": sorted(set(inexistentes))}
+
+
+def _en_alcance(x: dict, tipos: list[str] | None = None) -> bool:
+    return x["tipo"] in (tipos or config()["tipos"]) and x["tipo"] != "piloto"
+
+
+def anclar(tipos: list[str] | None = None) -> dict:
+    """Mide el anclaje de los expedientes en alcance (resueltos o sin consenso). Devuelve conteos por tipo y nivel."""
+    estado = panel.cargar_estado()
+    conteo: dict[str, Counter] = defaultdict(Counter)
+    for x in estado.values():
+        if not _en_alcance(x, tipos) or x["estado"] not in ("resuelta", "sin_consenso") or x["tipo"] == "contenido":
+            continue
+        a = anclaje(x)
+        x.setdefault("bucle", {})["anclaje"] = a
+        conteo[x["tipo"]][a["nivel"]] += 1
+        conteo[x["tipo"]]["con_inexistentes"] += bool(a["inexistentes"])
+    panel._guardar_estado(estado)
+    return {k: dict(v) for k, v in sorted(conteo.items())}
+
+
+# -- lotes ------------------------------------------------------------------------------------------------------------
+def _dir_lotes() -> Path:
+    return ruta(f"{DIR}/lotes")
+
+
+def _partir(exps: list[dict], peso: dict[str, float], maximo: float) -> list[list[dict]]:
+    partes: list[list[dict]] = [[]]
+    for e in exps:
+        if partes[-1] and sum(peso[x["tipo"]] for x in partes[-1]) + peso[e["tipo"]] > maximo:
+            partes.append([])
+        partes[-1].append(e)
+    return [p for p in partes if p]
+
+
+def _escribir_lotes(carpeta: Path, prefijo: str, grupos: dict[str, list[dict]], cabecera: Callable[[str], dict],
+                    peso: dict[str, float], maximo: float) -> list[str]:
+    carpeta.mkdir(parents=True, exist_ok=True)
+    escritos = []
+    for clave, exps in sorted(grupos.items()):
+        partes = _partir(exps, peso, maximo)
+        for k, parte in enumerate(partes, start=1):
+            nombre = f"{prefijo}_{clave}" + (f"_{k}" if len(partes) > 1 else "")
+            lote = {"lote": nombre, **cabecera(clave), "expedientes": parte}
+            p = carpeta / f"lote_{nombre}.json"
+            p.write_text(json.dumps(lote, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            escritos.append(relativa(p))
+    return escritos
+
+
+def _disciplina(x: dict) -> str:
+    expertos = [r for r in (x.get("etapas", [[None]])[0] if x["tipo"] == "contenido" else x["roles"])
+                if r and r != "psicopedagogo"]
+    return (expertos[0] if expertos else "experto-quimica").removeprefix("experto-")
+
+
+def _finales(x: dict) -> list[dict]:
+    """Los dictámenes que sostienen la resolución vigente (los de su ronda; en contenido, todas las etapas)."""
+    if x["tipo"] == "contenido":
+        return x["dictamenes"]
+    r = (x.get("resolucion") or {}).get("ronda")
+    return [d for d in x["dictamenes"] if d["ronda"] == r] or x["dictamenes"][-1:]
+
+
+def _resumen_dictamen(d: dict) -> dict:
+    return {k: d[k] for k in ("id", "rol", "ronda", "decision", "justificacion", "evidencia", "confianza", "texto",
+                              "alternativa", "asignado_a", "cambios") if k in d}
+
+
+def _vuelta(x: dict, k: int) -> dict:
+    """El registro de la vuelta k del expediente (lo crea si no existe)."""
+    vueltas = x.setdefault("bucle", {}).setdefault("vueltas", [])
+    v = next((v for v in vueltas if v["vuelta"] == k), None)
+    if v is None:
+        v = {"vuelta": k}
+        vueltas.append(v)
+    return v
+
+
+def _a_impugnar(x: dict, k: int, tipos: list[str] | None) -> bool:
+    if not _en_alcance(x, tipos) or x["estado"] != "resuelta":
+        return False
+    vueltas = (x.get("bucle") or {}).get("vueltas", [])
+    if k == 1:
+        return not any(v.get("impugnacion") for v in vueltas)
+    previa = next((v for v in vueltas if v["vuelta"] == k - 1), None)
+    return bool(previa) and previa.get("replica") == "cambiada"
+
+
+def impugnar(k: int, tipos: list[str] | None = None) -> list[str]:
+    """Lotes del refutador de la vuelta k: en la 1, todo lo resuelto en alcance; después, solo lo que la réplica de la
+    vuelta anterior cambió. Un lote por disciplina (partido por peso)."""
+    if k > config()["vueltas_max"]:
+        raise ValueError(f"el bucle llega a {config()['vueltas_max']} vueltas (config/panel.yaml, bucle.vueltas_max)")
+    estado = panel.cargar_estado()
+    por_disciplina: dict[str, list[dict]] = defaultdict(list)
+    for i, x in sorted(estado.items()):
+        if not _a_impugnar(x, k, tipos):
+            continue
+        exp = {"id": i, "tipo": x["tipo"], "titulo": x["titulo"], "opciones": panel.config()["tipos"][x["tipo"]][
+            "opciones"], "datos": x["datos"], "resolucion": x["resolucion"],
+            "fundamentos": [_resumen_dictamen(d) for d in _finales(x)],
+            "anclaje": (x.get("bucle") or {}).get("anclaje")}
+        if x["tipo"] == "contenido":
+            exp["elemento_vigente"] = x.get("version_vigente") or x["datos"]["elemento"]
+            exp["campos_editables"] = panel.config()["campos_editables"][x["elemento"]]
+            exp["datos"] = {k2: v for k2, v in x["datos"].items() if k2 != "elemento"}
+        por_disciplina[_disciplina(x)].append(exp)
+
+    def cabecera(disciplina: str) -> dict:
+        return {"vuelta": k, "rol": "refutador", "disciplina": disciplina, "version": VERSION,
+                "instrucciones": ["prompts/bucle_refutar.md", ".claude/agents/refutador.md",
+                                  f".claude/agents/experto-{disciplina}.md (solo «Tus criterios»)"]}
+
+    return _escribir_lotes(_dir_lotes(), f"b{k}_refutador", por_disciplina, cabecera, PESO, PESO_MAX_LOTE)
+
+
+# Lo que una sonda ciega no puede leer: todo lo que deja ver lo que decidió el panel. La primera sonda (vuelta 1)
+# avisó de dos fugas: los campos `revision` del contraste y los conteos de los README.
+NO_LEER_SONDA = ["data/interim/panel/estado.json", "data/interim/panel/bucle/", "data/interim/panel/lotes/salida_*",
+                 "panel/", "internacional/*/README.md y internacional/README.md",
+                 "el campo «revision» de internacional/*/contraste.json",
+                 "data/interim/internacional*/revisiones.json", "asignaturas/decisiones/"]
+
+
+def sonda(k: int, n: int | None = None, semilla: int | None = None, tipos: list[str] | None = None) -> list[str]:
+    """Muestra ciega de la vuelta k: n expedientes resueltos (estratificados por tipo, sin contenido), que los mismos
+    roles del panel dictaminan otra vez sin ver la resolución ni los dictámenes. Lotes en formato del panel."""
+    cfg = config()["sonda"]
+    n, semilla = n or cfg["n"], cfg["semilla"] if semilla is None else semilla
+    estado = panel.cargar_estado()
+    por_tipo: dict[str, list[str]] = defaultdict(list)
+    for i, x in sorted(estado.items()):
+        if _en_alcance(x, tipos) and x["estado"] == "resuelta" and x["tipo"] != "contenido":
+            por_tipo[x["tipo"]].append(i)
+    total = sum(map(len, por_tipo.values())) or 1
+    rng = random.Random(semilla)
+    elegidos = []
+    for _t, ids in sorted(por_tipo.items()):
+        m = min(len(ids), max(cfg["minimo_por_tipo"], round(n * len(ids) / total)))
+        elegidos += rng.sample(ids, m)
+    por_rol: dict[str, list[dict]] = defaultdict(list)
+    for i in sorted(elegidos):
+        x = estado[i]
+        _vuelta(x, k)["sonda"] = {"pendiente": True}
+        for rol in x["roles"]:
+            por_rol[rol].append({"id": i, "tipo": x["tipo"], "titulo": x["titulo"], "pregunta": x["pregunta"],
+                                 "datos": x["datos"], "opciones": panel.config()["tipos"][x["tipo"]]["opciones"]})
+    panel._guardar_estado(estado)
+
+    def cabecera(rol: str) -> dict:
+        return {"ronda": f"c{k}", "rol": rol, "version": panel.VERSION, "ciega": True,
+                "instrucciones": ["prompts/panel_dictaminar.md", f".claude/agents/{rol}.md"],
+                "no_leer": NO_LEER_SONDA}
+
+    return _escribir_lotes(panel._dir_lotes(), f"c{k}", por_rol, cabecera, panel.PESO, panel.PESO_MAX_LOTE)
+
+
+# -- validación de la salida del refutador ---------------------------------------------------------------------------
+def _citas(d: dict, campo: str) -> list[dict]:
+    v = d.get(campo) or []
+    return v if isinstance(v, list) else []
+
+
+def errores_cita(v: dict) -> str | None:
+    if not isinstance(v, dict) or not all((v.get(k) or "").strip() for k in ("fuente", "cita_literal", "dice")):
+        return "cada cita es {fuente, cita_literal, dice}"
+    r = verificar(v["fuente"], v["cita_literal"])
+    if r["tipo"] != "primaria":
+        return f"«{v['fuente'][:60]}» no es una fuente primaria (fila de la malla, objetivo o página de un documento)"
+    if r["estado"] != "anclada":
+        return (f"la cita «{v['cita_literal'][:50]}» no aparece en «{v['fuente'][:60]}»"
+                + (f" (no existen: {', '.join(r['inexistentes'][:3])})" if r["inexistentes"] else "")
+                + "; cópiala literal, en el idioma de la fuente, o quítala "
+                  "(compruébala con `uv run gskg bucle cita \"<fuente>\" \"<cita>\"`)")
+    return None
+
+
+def errores_lote(lote: dict, salida: list[dict]) -> list[str]:
+    """Errores de la salida del refutador: un veredicto por expediente, argumento breve, citas literales que el código
+    encuentra en la fuente, contraevidencia anclada para debilitar o refutar, propuesta válida y patrón del error."""
+    exps = {x["id"]: x for x in lote["expedientes"]}
+    ids = Counter(d.get("id") for d in salida)
+    errores = [f"expediente sin veredicto {i}" for i in sorted(exps.keys() - ids.keys())]
+    errores += [f"id fuera del lote {i}" for i in sorted(k for k in ids.keys() - exps.keys() if k)]
+    errores += [f"id repetido {i}" for i, n in ids.items() if n > 1]
+    maximo = panel.config()["palabras_justificacion"]
+    for d in salida:
+        x = exps.get(d.get("id"))
+        if not x:
+            continue
+        pre = f"{d['id']}: "
+        if d.get("veredicto") not in VEREDICTOS:
+            errores.append(pre + f"veredicto {d.get('veredicto')!r} fuera de {list(VEREDICTOS)}")
+            continue
+        if not d.get("argumento") or panel._palabras(d["argumento"]) > maximo:
+            errores.append(pre + f"argumento de 1 a {maximo} palabras")
+        if d.get("confianza") not in panel.CONFIANZAS:
+            errores.append(pre + "confianza alta, media o baja")
+        for campo in ("contraevidencia", "anclas"):
+            errores += [pre + f"{campo}: {e}" for v in _citas(d, campo) if (e := errores_cita(v))]
+        impugna = d["veredicto"] != "se_sostiene"
+        if impugna and d.get("patron") not in config()["patrones"]:
+            errores.append(pre + f"patrón del error en {config()['patrones']}")
+        if x["tipo"] == "contenido":
+            cambios = d.get("cambios") or {}
+            if d["veredicto"] == "refutada" and not cambios:
+                errores.append(pre + "«refutada» en contenido exige «cambios» (campo → valor corregido)")
+            if cambios and not impugna:
+                errores.append(pre + "«se_sostiene» no lleva cambios")
+            if cambios:
+                errores += [pre + e for e in panel.errores_elemento_corregido(x["elemento_vigente"], cambios,
+                                                                              x["campos_editables"])]
+            continue
+        if impugna and not _citas(d, "contraevidencia"):
+            errores.append(pre + f"«{d['veredicto']}» exige contraevidencia anclada en una fuente primaria")
+        if d["veredicto"] == "refutada":
+            prop = d.get("propuesta")
+            if prop not in x["opciones"] or prop == x["resolucion"]["decision"] and x["tipo"] != "asignacion":
+                errores.append(pre + f"«refutada» exige «propuesta» en {x['opciones']} distinta de la resolución")
+    return errores
+
+
+# -- cierre de la impugnación -----------------------------------------------------------------------------------------
+def _leer_pares(carpeta: Path, patron: str, validar) -> list[tuple[dict, list[dict]]]:
+    pares = []
+    for p_lote in sorted(carpeta.glob(patron)):
+        p_sal = p_lote.with_name(p_lote.name.replace("lote_", "salida_", 1))
+        if not p_sal.exists():
+            raise ValueError(f"falta {p_sal.name}")
+        lote, salida = (json.loads(x.read_text(encoding="utf-8")) for x in (p_lote, p_sal))
+        if errs := validar(lote, salida):
+            raise ValueError(f"{p_sal.name}: {len(errs)} errores: " + "; ".join(errs[:10]))
+        pares.append((lote, salida))
+    return pares
+
+
+def _misma(d: dict, resolucion: dict) -> bool:
+    return d["decision"] == resolucion["decision"] and (
+        d["decision"] != "cambiar" or sorted(d.get("asignado_a") or []) == sorted(resolucion.get("asignado_a") or []))
+
+
+def cerrar_impugnacion(k: int) -> dict:
+    """Lee las salidas del refutador y de la sonda de la vuelta k (todas válidas o nada) y decide, por código:
+    - impugnada: el refutador debilita o refuta con confianza media o alta y con contraevidencia anclada (en contenido,
+      con un error y su corrección válida), o la sonda ciega no coincide con la resolución;
+    - sostenida: lo demás. Las anclas verificadas se suman al expediente.
+    Lo impugnado queda «pendiente_paso_1» de la réplica. Devuelve los conteos."""
+    estado = panel.cargar_estado()
+    hoy = date.today().isoformat()
+    for lote, salida in _leer_pares(_dir_lotes(), f"lote_b{k}_refutador_*.json", errores_lote):
+        for d in salida:
+            x = estado[d["id"]]
+            v = _vuelta(x, k)
+            v["impugnacion"] = {**{c: d[c] for c in ("veredicto", "argumento", "confianza", "propuesta", "cambios",
+                                                      "patron") if d.get(c)},
+                                "contraevidencia": [{**c, "donde": verificar(c["fuente"], c["cita_literal"])["donde"]}
+                                                    for c in _citas(d, "contraevidencia")],
+                                "lote": lote["lote"], "fecha": hoy}
+            anclas = [{**a, "donde": verificar(a["fuente"], a["cita_literal"])["donde"], "vuelta": k}
+                      for a in _citas(d, "anclas")]
+            if anclas:
+                b = x.setdefault("bucle", {})
+                b["anclas"] = [a for a in b.get("anclas", []) if a.get("vuelta") != k] + anclas
+            fuerte = d["confianza"] != "baja"
+            if x["tipo"] == "contenido":
+                impugnada = fuerte and d["veredicto"] == "refutada" or d["veredicto"] == "debilitada" and \
+                    fuerte and bool(d.get("cambios"))
+            else:
+                impugnada = fuerte and d["veredicto"] != "se_sostiene" and bool(_citas(d, "contraevidencia"))
+            v["resultado"] = "impugnada" if impugnada else "sostenida"
+    sonda_pares = _leer_pares(panel._dir_lotes(), f"lote_c{k}_*.json", panel.errores_lote)
+    ciegos: dict[str, list[dict]] = defaultdict(list)
+    for lote, salida in sonda_pares:
+        ciegos_rol = [{**_resumen_dictamen(d), "rol": lote["rol"]} for d in salida]
+        for d in ciegos_rol:
+            ciegos[d["id"]].append(d)
+    for i, ds in ciegos.items():
+        x = estado[i]
+        v = _vuelta(x, k)
+        acuerdo = all(_misma(d, x["resolucion"]) for d in ds) and {d["rol"] for d in ds} == set(x["roles"])
+        v["sonda"] = {"acuerdo": acuerdo, "dictamenes": ds}
+        if not acuerdo:
+            v["resultado"] = "impugnada"
+        v.setdefault("resultado", "sostenida")
+    for x in estado.values():
+        for v in (x.get("bucle") or {}).get("vueltas", []):
+            if v["vuelta"] == k and v.get("resultado") == "impugnada" and "replica" not in v:
+                v["replica"] = "pendiente_paso_1"
+    panel._guardar_estado(estado)
+    return metricas(k)
+
+
+# -- réplica ----------------------------------------------------------------------------------------------------------
+PREGUNTA_REPLICA = ("Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia "
+                    "verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma "
+                    "opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.")
+
+
+def _pendientes(estado: dict, k: int, paso: int) -> list[tuple[str, dict, dict]]:
+    salida = []
+    for i, x in sorted(estado.items()):
+        v = next((v for v in (x.get("bucle") or {}).get("vueltas", []) if v["vuelta"] == k), None)
+        if v and v.get("replica") == f"pendiente_paso_{paso}":
+            salida.append((i, x, v))
+    return salida
+
+
+def _quienes_replica(x: dict, paso: int) -> list[str]:
+    if x["tipo"] != "contenido":
+        return x["roles"]
+    return [x["etapas"][0][0]] if paso in (1, 3) else ["psicopedagogo"]
+
+
+def replicar(k: int, paso: int) -> list[str]:
+    """Lotes de la réplica (ronda 10k + paso del estado del panel) para los roles de cada expediente impugnado.
+    Paso 1: todos los roles (en contenido, el experto). Paso 2: deliberación con las réplicas de los demás (en
+    contenido, el psicopedagogo revisa la corrección). Paso 3: solo contenido, visto bueno del experto."""
+    estado = panel.cargar_estado()
+    ronda = 10 * k + paso
+    por_rol: dict[str, list[dict]] = defaultdict(list)
+    for i, x, v in _pendientes(estado, k, paso):
+        imp = {"impugnacion": v.get("impugnacion") if (v.get("impugnacion") or {}).get("veredicto") != "se_sostiene"
+               else None,
+               "sonda_ciega": v.get("sonda") if (v.get("sonda") or {}).get("acuerdo") is False else None}
+        for rol in _quienes_replica(x, paso):
+            exp = {"id": i, "tipo": x["tipo"], "titulo": x["titulo"], "pregunta": PREGUNTA_REPLICA,
+                   "opciones": panel.config()["tipos"][x["tipo"]]["opciones"], "datos": x["datos"],
+                   "resolucion_vigente": x["resolucion"],
+                   "dictamenes_anteriores": [_resumen_dictamen(d) for d in _finales(x) if d["ronda"] < 10 * k],
+                   **{c: val for c, val in imp.items() if val}}
+            if paso > 1:
+                exp["replicas_de_esta_vuelta"] = [_resumen_dictamen(d) for d in x["dictamenes"]
+                                                  if 10 * k < d["ronda"] < ronda]
+            if x["tipo"] == "contenido":
+                exp["datos"] = {**x["datos"], "elemento": x.get("version_vigente") or x["datos"]["elemento"]}
+                exp["campos_editables"] = panel.config()["campos_editables"][x["elemento"]]
+                exp["etapa"] = {1: "réplica: exactitud científica (experto)", 2: "réplica: revisión psicopedagógica",
+                                3: "réplica: visto bueno final del experto"}[paso]
+            por_rol[rol].append(exp)
+
+    def cabecera(rol: str) -> dict:
+        return {"ronda": ronda, "rol": rol, "version": panel.VERSION, "replica_del_bucle": k,
+                "instrucciones": ["prompts/panel_dictaminar.md", f".claude/agents/{rol}.md",
+                                  "prompts/bucle_refutar.md (sección «Réplica»)"]}
+
+    return _escribir_lotes(panel._dir_lotes(), f"r{ronda}", por_rol, cabecera, panel.PESO, panel.PESO_MAX_LOTE)
+
+
+def _cambiar_resolucion(x: dict, nueva: dict, k: int) -> None:
+    x.setdefault("historial_resoluciones", []).append({**x["resolucion"], "reemplazada_por_bucle": k})
+    x["resolucion"] = nueva
+    x["aplicado"] = None
+
+
+def cerrar_replica(k: int, paso: int) -> dict:
+    """Consolida la réplica (todas las salidas válidas o nada) con las reglas del panel:
+    - confianza baja de cualquier rol → «sin consenso» (una persona decide);
+    - en paralelo: unanimidad → mantiene o cambia la resolución; si no, deliberación (paso 2) y, si sigue sin
+      unanimidad, «sin consenso»;
+    - contenido: experto → psicopedagogo (si el experto corrigió) → experto (si el psicopedagogo corrigió).
+    Devuelve los conteos de la vuelta."""
+    estado = panel.cargar_estado()
+    ronda = 10 * k + paso
+    hoy = date.today().isoformat()
+    nuevos = []
+    for lote, salida in _leer_pares(panel._dir_lotes(), f"lote_r{ronda}_*.json", panel.errores_lote):
+        nuevos += [{**d, "ronda": ronda, "rol": lote["rol"], "fecha": hoy, "bucle": k} for d in salida]
+    for d in nuevos:
+        x = estado[d["id"]]
+        x["dictamenes"] = [v for v in x["dictamenes"] if not (v["ronda"] == ronda and v["rol"] == d["rol"])] + [d]
+    for i in sorted({d["id"] for d in nuevos}):
+        x = estado[i]
+        v = _vuelta(x, k)
+        de_paso = [d for d in x["dictamenes"] if d["ronda"] == ronda]
+        if any(d["confianza"] == "baja" for d in de_paso):
+            x["estado"], v["replica"] = "sin_consenso", "sin_consenso"
+            x["motivo"] = f"réplica del bucle {k}: confianza baja de " + ", ".join(
+                d["rol"] for d in de_paso if d["confianza"] == "baja")
+            continue
+        if x["tipo"] == "contenido":
+            d = de_paso[0]
+            if d["decision"] == "corregir":
+                x["version_vigente"] = {**(x.get("version_vigente") or x["datos"]["elemento"]), **d["cambios"]}
+                v["corregida"] = True
+            fin = d["decision"] == "aprobar" or paso == 3
+            if not fin:
+                v["replica"] = f"pendiente_paso_{paso + 1}"
+            elif v.get("corregida"):
+                v["replica"] = "cambiada"
+                _cambiar_resolucion(x, {"decision": "corregir", "ronda": ronda}, k)
+            else:
+                v["replica"] = "mantenida"
+            continue
+        if {d["rol"] for d in de_paso} != set(x["roles"]):
+            continue
+        claves = {panel._clave_decision(d) for d in de_paso}
+        if len(claves) == 1:
+            nueva = {"decision": de_paso[0]["decision"], "ronda": ronda,
+                     **({"asignado_a": de_paso[0]["asignado_a"]} if de_paso[0].get("asignado_a") else {})}
+            if _misma(de_paso[0], x["resolucion"]):
+                v["replica"] = "mantenida"
+                x["resolucion"]["mantenida_en_bucle"] = k
+            else:
+                v["replica"] = "cambiada"
+                _cambiar_resolucion(x, nueva, k)
+        elif paso == 1:
+            v["replica"] = "pendiente_paso_2"
+        else:
+            x["estado"], v["replica"] = "sin_consenso", "sin_consenso"
+            x["motivo"] = f"réplica del bucle {k} sin unanimidad: " + "; ".join(
+                f"{d['rol']} {d['decision']}" for d in de_paso)
+    for x in estado.values():
+        if x["estado"] in ("resuelta", "sin_consenso") and x["tipo"] != "piloto":
+            x.setdefault("bucle", {})["solidez"], x["bucle"]["motivo_solidez"] = _solidez(x)
+    panel._guardar_estado(estado)
+    return metricas(k)
+
+
+# -- solidez y métricas -----------------------------------------------------------------------------------------------
+def _solidez(x: dict) -> tuple[str, str]:
+    """(etiqueta, motivo). Sólido: sobrevivió a la impugnación y tiene una fuente primaria anclada; respaldado: la
+    sobrevivió, pero la fuente solo está ubicada (paráfrasis); frágil: sin fuente primaria verificable, con una fuente
+    inexistente, inestable en la sonda o cambiado en la última vuelta sin nueva impugnación."""
+    if x["estado"] == "sin_consenso":
+        return "sin_consenso", x.get("motivo", "")
+    b = x.get("bucle") or {}
+    vueltas = sorted(b.get("vueltas", []), key=lambda v: v["vuelta"])
+    if not vueltas or not any(v.get("resultado") for v in vueltas):
+        return "sin_bucle", "no pasó por el bucle"
+    ult = vueltas[-1]
+    if str(ult.get("replica", "")).startswith("pendiente") or (ult.get("resultado") is None and ult.get("sonda")):
+        return "en_bucle", "réplica pendiente"
+    if ult.get("replica") == "cambiada":
+        return "fragil", f"cambió en la vuelta {ult['vuelta']} y no se volvió a impugnar"
+    inestable = any(v.get("sonda", {}).get("acuerdo") is False for v in vueltas)
+    if x["tipo"] == "contenido":
+        return ("respaldado", "la mantuvo la réplica tras una impugnación") if ult.get("replica") == "mantenida" \
+            else ("solido", "el revisor adversarial no encontró errores")
+    a = anclaje(x)
+    b["anclaje"] = a
+    contestada = any(v.get("replica") == "mantenida" and v.get("impugnacion", {}).get("veredicto") != "se_sostiene"
+                     for v in vueltas)
+    if a["inexistentes"]:
+        return "fragil", "cita una fuente que no existe: " + ", ".join(a["inexistentes"][:3])
+    if a["nivel"] == "sin_fuente_primaria":
+        return "fragil", "sin fuente primaria verificable (solo argumentos o fuentes internas)"
+    if inestable:
+        return "respaldado", "la sonda ciega discrepó y la réplica la mantuvo"
+    if contestada:
+        return "respaldado", "hay contraevidencia anclada; la réplica la ponderó y mantuvo la decisión"
+    if a["nivel"] == "anclado":
+        return "solido", "sobrevivió a la impugnación, con cita literal verificada en la fuente"
+    return "respaldado", "sobrevivió a la impugnación; la fuente existe, pero la cita no es literal"
+
+
+def solidez() -> dict:
+    """Recalcula la solidez de todo lo que pasó por el panel (salvo el piloto). Devuelve conteos por tipo."""
+    estado = panel.cargar_estado()
+    conteo: dict[str, Counter] = defaultdict(Counter)
+    for x in estado.values():
+        if x["estado"] in ("resuelta", "sin_consenso") and x["tipo"] != "piloto":
+            s, motivo = _solidez(x)
+            x.setdefault("bucle", {}).update({"solidez": s, "motivo_solidez": motivo})
+            conteo[x["tipo"]][s] += 1
+    panel._guardar_estado(estado)
+    return {t: dict(c) for t, c in sorted(conteo.items())}
+
+
+def metricas(k: int | None = None) -> dict:
+    """Métricas del bucle (de la vuelta k o de todas): impugnados, sostenidos, mantenidos, cambiados, sin consenso,
+    acuerdo de la sonda ciega por tipo y patrones de error."""
+    estado = panel.cargar_estado()
+    m: Counter = Counter()
+    sonda_tipo: dict[str, Counter] = defaultdict(Counter)
+    patrones: Counter = Counter()
+    for x in estado.values():
+        for v in (x.get("bucle") or {}).get("vueltas", []):
+            if k is not None and v["vuelta"] != k:
+                continue
+            if imp := v.get("impugnacion"):
+                m[f"refutador_{imp['veredicto']}"] += 1
+                if v.get("resultado") == "impugnada" and imp["veredicto"] != "se_sostiene":
+                    patrones[imp.get("patron", "otro")] += 1
+            if v.get("resultado"):
+                m[v["resultado"]] += 1
+            if v.get("replica"):
+                m[f"replica_{v['replica']}"] += 1
+            if (s := v.get("sonda")) and "acuerdo" in s:
+                sonda_tipo[x["tipo"]]["acuerdo" if s["acuerdo"] else "discrepa"] += 1
+    return {"vuelta": k, **dict(sorted(m.items())),
+            "sonda": {t: dict(c) for t, c in sorted(sonda_tipo.items())}, "patrones": dict(patrones.most_common())}
+
+
+# -- informe ----------------------------------------------------------------------------------------------------------
+ETIQUETA = {"solido": "sólido", "respaldado": "respaldado", "fragil": "frágil", "sin_consenso": "sin consenso",
+            "en_bucle": "en el bucle", "sin_bucle": "sin bucle"}
+
+
+def seccion_informe(estado: dict) -> list[str]:
+    """Sección «Bucle de fortalecimiento» de panel/DICTAMEN.md (vacía si el bucle no ha corrido)."""
+    if not any((x.get("bucle") or {}).get("vueltas") for x in estado.values()):
+        return []
+    md = ["", "## Bucle de fortalecimiento (spec 14, sección 7)", "",
+          "Cada dictamen resuelto pasó por un revisor adversarial que buscó en las fuentes la prueba en contra; una "
+          "muestra se volvió a dictaminar a ciegas. Solo la contraevidencia que el código encuentra literal en la "
+          "fuente reabre un expediente. **Sólido:** sobrevivió y tiene una cita literal verificada en una fuente "
+          "primaria. **Respaldado:** sobrevivió, pero su fuente solo está ubicada (paráfrasis o traducción). "
+          "**Frágil:** sin fuente primaria verificable, con una fuente inexistente o cambiado sin nueva impugnación.",
+          "", "| Tipo | Sólido | Respaldado | Frágil | Sin consenso |", "|---|---|---|---|---|"]
+    por_tipo: dict[str, Counter] = defaultdict(Counter)
+    for x in estado.values():
+        if s := (x.get("bucle") or {}).get("solidez"):
+            por_tipo[x["tipo"]][s] += 1
+    for t, c in sorted(por_tipo.items()):
+        md.append(f"| {t} | {c['solido']} | {c['respaldado']} | {c['fragil']} | {c['sin_consenso']} |")
+    vueltas = sorted({v["vuelta"] for x in estado.values() for v in (x.get("bucle") or {}).get("vueltas", [])})
+    md += ["", "| Vuelta | Impugnados | Sostenidos | Réplica: mantenidos | Réplica: cambiados | "
+               "Réplica: sin consenso |", "|---|---|---|---|---|---|"]
+    for k in vueltas:
+        m = metricas(k)
+        md.append(f"| {k} | {m.get('impugnada', 0)} | {m.get('sostenida', 0)} | {m.get('replica_mantenida', 0)} | "
+                  f"{m.get('replica_cambiada', 0)} | {m.get('replica_sin_consenso', 0)} |")
+    total = metricas()
+    if total["sonda"]:
+        md += ["", "**Sonda ciega** (el mismo rol, sin ver la resolución): " + "; ".join(
+            f"{t} {c.get('acuerdo', 0)}/{c.get('acuerdo', 0) + c.get('discrepa', 0)}"
+            for t, c in total["sonda"].items()) + " coinciden."]
+    if total["patrones"]:
+        md += ["", "**Patrones de error de lo impugnado:** " + ", ".join(
+            f"{p} {n}" for p, n in total["patrones"].items()) + "."]
+    cambios = [(i, x) for i, x in sorted(estado.items()) if x.get("historial_resoluciones")]
+    if cambios:
+        md += ["", "**Lo que el bucle cambió:**", "", "| Expediente | Antes | Ahora | Por qué |", "|---|---|---|---|"]
+        for _i, x in cambios:
+            antes = x["historial_resoluciones"][-1]["decision"]
+            v = max(x["bucle"]["vueltas"], key=lambda v: v["vuelta"])
+            por = (v.get("impugnacion") or {}).get("argumento") or "discrepancia de la sonda ciega"
+            md.append(f"| {panel._celda(x['titulo'], 90)} | {antes} | {x['resolucion']['decision']} | "
+                      f"{panel._celda(panel._texto_final(x) or por, 300)} |")
+    frageles = [(i, x) for i, x in sorted(estado.items()) if (x.get("bucle") or {}).get("solidez") == "fragil"
+                and x["tipo"] in ("hallazgo", "decision", "clase_incierta", "propuesta")]
+    if frageles:
+        md += ["", f"**Frágiles en hallazgos, decisiones, clases y propuestas ({len(frageles)}):** necesitan una "
+                   "fuente primaria antes de llevarse al MINED como recomendación.", ""]
+        md += [f"- {panel._celda(x['titulo'], 110)}: {panel._celda(x['bucle']['motivo_solidez'], 160)}"
+               for _i, x in frageles]
+    return md

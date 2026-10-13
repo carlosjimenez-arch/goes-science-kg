@@ -1,0 +1,2774 @@
+{
+ "lote": "b1_refutador_quimica_5",
+ "vuelta": 1,
+ "rol": "refutador",
+ "disciplina": "quimica",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-quimica.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "PED:ACT:quimica/equilibrio-dinamico/sondeo-2-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/equilibrio-dinamico/sondeo-2-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:quimica/equilibrio-dinamico/sondeo-2-G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Los datos de rapidez son idealizados pero coherentes (la directa baja, la inversa sube y se igualan en 5). La clave C es exacta; A mapea la dificultad 1 y D recoge la idea previa real de que en el equilibrio hay cantidades iguales. La retroalimentación lo aclara.",
+     "evidencia": [
+      {
+       "fuente": "DIF:quimica/equilibrio-dinamico/1",
+       "cita": "interpreta concentraciones constantes como rapidez cero"
+      },
+      {
+       "fuente": "CON:quimica/equilibrio-dinamico",
+       "cita": "velocidades directa e inversa iguales y concentraciones constantes"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:quimica/equilibrio-dinamico/sondeo-2-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Datos simples ordenados por minuto; la pregunta pide leerlos, como corresponde a interpretar datos. Opciones paralelas y plausibles; la clave no destaca por largo. La retroalimentación separa rapideces iguales de cantidades iguales. «Unidades arbitrarias» quizá no se conozca, pero no impide responder.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/equilibrio-dinamico/sondeo-2-G09 (opciones)",
+       "cita": "A 12, B 10, C 16 y D 14 palabras"
+      },
+      {
+       "fuente": "revisión experto-quimica, ronda 1",
+       "cita": "Los datos de rapidez son idealizados pero coherentes (la directa baja, la inversa sube y se igualan en 5). La clave C es exacta; A mapea la dificultad 1 y D rec"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:quimica/equilibrio-dinamico/sondeo-2-G09",
+    "tipo": "actividad",
+    "rol": "sondeo",
+    "objetivos": [
+     "TEMA:G09-CIE-U3-3.6"
+    ],
+    "evalua": [
+     "CON:quimica/equilibrio-dinamico"
+    ],
+    "habilidad": "interpretar_datos",
+    "formato": "opcion_multiple",
+    "grados": [
+     9
+    ],
+    "enunciado": "En una reacción reversible dentro de un recipiente cerrado se midió la rapidez de la reacción directa y de la inversa (unidades arbitrarias). Minuto 0: directa 10, inversa 0. Minuto 2: directa 6, inversa 3. Minuto 4: directa 5, inversa 5. Minuto 6: directa 5, inversa 5. Minuto 8: directa 5, inversa 5. ¿Qué ocurre desde el minuto 4?",
+    "opciones": {
+     "A": "La reacción se detuvo, porque los valores de rapidez ya no cambian.",
+     "B": "Solo ocurre la reacción inversa, porque alcanzó a la directa.",
+     "C": "Las dos reacciones siguen ocurriendo con la misma rapidez, así que las concentraciones ya no cambian.",
+     "D": "Hay la misma cantidad de reactivos que de productos, porque las rapideces son iguales."
+    },
+    "correcta": "C",
+    "distractores": {
+     "A": "DIF:quimica/equilibrio-dinamico/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "Desde el minuto 4 las dos rapideces valen 5, no cero: la reacción continúa en ambos sentidos y por eso las concentraciones no cambian. Lo que se iguala son las rapideces, no necesariamente las cantidades.",
+    "duracion_min": 3,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:quimica/equilibrio-dinamico"
+    },
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "0,60 mol / 2,0 L = 0,30 mol/L: valor, tolerancia y unidad correctos. Detecta el error real de escribir moles en lugar de concentración dentro de los corchetes de K, que la dificultad 1 de molaridad ya describe.",
+     "evidencia": [
+      {
+       "fuente": "cálculo propio",
+       "cita": "0,60 / 2,0 = 0,30 mol/L"
+      },
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "escribe los moles en lugar de mol/L dentro de los corchetes"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Una sola operación con propósito claro: qué valor va dentro de los corchetes de K. La unidad se indica en el enunciado y la retroalimentación nombra el error (moles en lugar de concentración) sin culpar. Adecuado para 9.°.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09 (enunciado)",
+       "cita": "«¿Qué valor debes escribir en [NO₂]…? Responde en mol/L»"
+      },
+      {
+       "fuente": "revisión experto-quimica, ronda 1",
+       "cita": "0,60 mol / 2,0 L = 0,30 mol/L: valor, tolerancia y unidad correctos. Detecta el error real de escribir moles en lugar de concentración dentro de los corchetes d"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+    "tipo": "actividad",
+    "rol": "comprobacion",
+    "objetivos": [
+     "TEMA:G09-CIE-U3-3.6"
+    ],
+    "evalua": [
+     "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    ],
+    "habilidad": "razonar",
+    "formato": "numerica",
+    "grados": [
+     9
+    ],
+    "enunciado": "En un recipiente cerrado de 2,0 L hay, en el equilibrio, 0,60 mol de NO₂. ¿Qué valor debes escribir en [NO₂] al sustituir en la expresión de K? Responde en mol/L.",
+    "opciones": null,
+    "correcta": null,
+    "distractores": {},
+    "valor": 0.3,
+    "tolerancia": 0.01,
+    "unidad": "mol/L",
+    "retroalimentacion": "[NO₂] es una molaridad: 0,60 mol / 2,0 L = 0,30 mol/L. Escribir 0,60 sería usar los moles en lugar de la concentración.",
+    "duracion_min": 3,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    },
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Cálculo correcto: el vaso tiene 0,05 mol en 0,100 L, 0,50 mol/L, igual que la jarra. La clave C es la única correcta. A (creer que la porción diluye) y B (moles por molaridad) son errores reales y ambos caben en la dificultad 1, cuyas señales los describen; que compartan dificultad no es un error. D queda sin mapear, lo que es válido.",
+     "evidencia": [
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "Sus señales incluyen creer que al servir una porción la concentración baja y escribir moles en lugar de mol/L."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,25 mol / 0,500 L = 0,50 mol/L; 0,05 mol / 0,100 L = 0,50 mol/L: la concentración es intensiva."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "La clave C (22 palabras) es mucho más larga que las otras (11 a 14) y cierra con «la proporción es la misma», que la delata. La acorto con el mismo argumento. Además, «500 mL de agua con azúcar» puede leerse como volumen de agua; aclaro que son 500 mL de disolución, como en los ítems de concentración. Clave y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09 (opciones)",
+       "cita": "A 13, B 11, C 22 y D 14 palabras"
+      },
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/comprobacion-G09 (enunciado)",
+       "cita": "«hasta completar 200 mL de disolución»"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Disuelves 0,25 mol de azúcar en agua hasta tener 500 mL de disolución. Luego sirves un vaso de 100 mL de esa disolución. ¿Qué molaridad tiene el vaso y por qué?",
+      "opciones": {
+       "A": "0,10 mol/L, porque el vaso tiene solo la quinta parte de la mezcla.",
+       "B": "0,05 mol/L, porque en el vaso hay 0,05 mol de azúcar.",
+       "C": "0,50 mol/L, porque tiene la quinta parte del azúcar en la quinta parte del volumen.",
+       "D": "2,5 mol/L, porque se dividen los 0,25 mol entre los 0,100 L del vaso."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+     "rol": "experto-quimica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Aclarar «500 mL de disolución» mejora la exactitud: la molaridad se define por volumen de disolución. La clave C acortada conserva el argumento correcto (un quinto del soluto en un quinto del volumen: 0,05 / 0,100 = 0,50 mol/L) y los distractores no cambiaron de sentido ni de mapeo.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,25 mol / 0,500 L = 0,50 mol/L = 0,05 mol / 0,100 L: la concentración es intensiva"
+      },
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "creer que al servir una porción baja la concentración; escribir moles en lugar de mol/L"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+    "tipo": "actividad",
+    "rol": "practica",
+    "objetivos": [
+     "TEMA:G09-CIE-U3-3.6"
+    ],
+    "evalua": [
+     "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    ],
+    "habilidad": "explicar",
+    "formato": "opcion_multiple",
+    "grados": [
+     9
+    ],
+    "enunciado": "Disuelves 0,25 mol de azúcar en agua hasta tener 500 mL de disolución. Luego sirves un vaso de 100 mL de esa disolución. ¿Qué molaridad tiene el vaso y por qué?",
+    "opciones": {
+     "A": "0,10 mol/L, porque el vaso tiene solo la quinta parte de la mezcla.",
+     "B": "0,05 mol/L, porque en el vaso hay 0,05 mol de azúcar.",
+     "C": "0,50 mol/L, porque tiene la quinta parte del azúcar en la quinta parte del volumen.",
+     "D": "2,5 mol/L, porque se dividen los 0,25 mol entre los 0,100 L del vaso."
+    },
+    "correcta": "C",
+    "distractores": {
+     "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+     "B": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "La mezcla es homogénea: el vaso tiene 0,05 mol en 0,100 L, y 0,05 / 0,100 = 0,50 mol/L, igual que la mezcla completa. Servir una porción cambia la cantidad de soluto, no la concentración.",
+    "duracion_min": 6,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    },
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Valores correctos: A = 0,25 mol/L y B = 0,60 mol/L; la clave B es la única correcta. El distractor A (más moles, más concentrada) corresponde a la dificultad 1 y es una confusión real entre cantidad de soluto y concentración. C y D son plausibles sin mapear. El dato de B es un fresco muy dulce pero posible.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,50 / 2,0 = 0,25 mol/L; 0,15 / 0,25 = 0,60 mol/L."
+      },
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "Cree que la disolución con más soluto es la más concentrada, sin dividir entre el volumen."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Tres trampas de forma: «con el mismo azúcar» puede leerse como la misma cantidad; quien viene del ítem del fresco servido puede creer que el vaso salió de la jarra; y «jarra A» y «vaso B» se confunden con las letras de las opciones. Aclaro que son dos frescos preparados por separado y quito las letras. Datos, clave y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09 (enunciado)",
+       "cita": "«dos frescos de tamarindo con el mismo azúcar. La jarra A… el vaso B»"
+      },
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/sondeo-2-G09",
+       "cita": "el vaso servido de la jarra tiene la misma concentración"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment, Applied Measurement in Education 15(3)",
+       "cita": "opciones de largo parecido y homogéneas; evitar pistas a la clave y enunciados negativos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Preparaste dos frescos de tamarindo por separado, con el mismo tipo de azúcar: uno en una jarra y otro en un vaso. La jarra tiene 0,50 mol de azúcar en 2,0 L de fresco, y el vaso, 0,15 mol de azúcar en 0,25 L. ¿Cuál fresco está más concentrado?",
+      "opciones": {
+       "A": "El de la jarra, porque tiene más moles de azúcar.",
+       "B": "El del vaso, porque tiene más azúcar por cada litro de fresco.",
+       "C": "Están igual de concentrados, porque los dos tienen azúcar disuelta en agua.",
+       "D": "El de la jarra, porque tiene más volumen de fresco."
+      },
+      "retroalimentacion": "Hay que dividir los moles entre el volumen: la jarra tiene 0,50 / 2,0 = 0,25 mol/L y el vaso, 0,15 / 0,25 = 0,60 mol/L. El vaso tiene menos azúcar en total, pero más por cada litro."
+     }
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+     "rol": "experto-quimica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Preparar los frescos por separado y quitar las letras A y B no toca los datos: jarra 0,50 / 2,0 = 0,25 mol/L y vaso 0,15 / 0,25 = 0,60 mol/L. La clave B sigue siendo la única correcta y el distractor A sigue mapeando la dificultad 1. «El mismo tipo de azúcar» es químicamente preciso.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,50 / 2,0 = 0,25 mol/L; 0,15 / 0,25 = 0,60 mol/L"
+      },
+      {
+       "fuente": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+       "cita": "cree que la disolución con más soluto es la más concentrada"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-1-G09",
+    "tipo": "actividad",
+    "rol": "sondeo",
+    "objetivos": [
+     "TEMA:G09-CIE-U3-3.6"
+    ],
+    "evalua": [
+     "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    ],
+    "habilidad": "razonar",
+    "formato": "opcion_multiple",
+    "grados": [
+     9
+    ],
+    "enunciado": "Preparaste dos frescos de tamarindo por separado, con el mismo tipo de azúcar: uno en una jarra y otro en un vaso. La jarra tiene 0,50 mol de azúcar en 2,0 L de fresco, y el vaso, 0,15 mol de azúcar en 0,25 L. ¿Cuál fresco está más concentrado?",
+    "opciones": {
+     "A": "El de la jarra, porque tiene más moles de azúcar.",
+     "B": "El del vaso, porque tiene más azúcar por cada litro de fresco.",
+     "C": "Están igual de concentrados, porque los dos tienen azúcar disuelta en agua.",
+     "D": "El de la jarra, porque tiene más volumen de fresco."
+    },
+    "correcta": "B",
+    "distractores": {
+     "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "Hay que dividir los moles entre el volumen: la jarra tiene 0,50 / 2,0 = 0,25 mol/L y el vaso, 0,15 / 0,25 = 0,60 mol/L. El vaso tiene menos azúcar en total, pero más por cada litro.",
+    "duracion_min": 3,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    },
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "fundamentos": [
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "P = 0,20, Q = 0,20, R = 0,40 y S = 0,80 mol/L: solo P y Q coinciden, así que la clave C es única. El distractor A (mismos moles) mapea bien a la dificultad 1. Cambia la habilidad respecto del sondeo 1, como pide la ranura. Detalle de redacción, no de ciencia: dice «una tabla» y los datos van en el texto.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,10/0,50 = 0,20; 0,20/1,0 = 0,20; 0,10/0,25 = 0,40; 0,40/0,50 = 0,80 mol/L."
+      },
+      {
+       "fuente": "src/goes_science_kg/aprendizaje/pedagogia.py (_ranuras_de_base)",
+       "cita": "El sondeo 2 debe usar otra habilidad que el sondeo 1 para confirmar la hipótesis."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "El enunciado dice «una tabla registra», pero no hay tabla: los datos van en el texto. Un estudiante con lectura lenta o con lector de pantalla puede buscar una tabla que no existe. Cambio solo esa frase. Las opciones son breves y homogéneas; datos, clave y mapeo intactos.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09 (enunciado)",
+       "cita": "«Una tabla registra cuatro disoluciones…» seguido de los datos en línea"
+      },
+      {
+       "fuente": "revisión experto-quimica, ronda 1",
+       "cita": "P = 0,20, Q = 0,20, R = 0,40 y S = 0,80 mol/L: solo P y Q coinciden, así que la clave C es única. El distractor A (mismos moles) mapea bien a la dificultad 1. C"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Se prepararon cuatro disoluciones de sal (NaCl). P: 0,10 mol en 0,50 L. Q: 0,20 mol en 1,0 L. R: 0,10 mol en 0,25 L. S: 0,40 mol en 0,50 L. ¿Qué dos disoluciones tienen la misma molaridad?"
+     }
+    },
+    {
+     "id": "PED:ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+     "rol": "experto-quimica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Solo se quitó la mención a una tabla inexistente. Datos y clave intactos: P = 0,20, Q = 0,20, R = 0,40 y S = 0,80 mol/L, así que solo P y Q coinciden (C). La retroalimentación sigue explicando bien por qué los mismos moles (P y R) no bastan.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,10/0,50 = 0,20; 0,20/1,0 = 0,20; 0,10/0,25 = 0,40; 0,40/0,50 = 0,80 mol/L"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/sondeo-2-G09",
+    "tipo": "actividad",
+    "rol": "sondeo",
+    "objetivos": [
+     "TEMA:G09-CIE-U3-3.6"
+    ],
+    "evalua": [
+     "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    ],
+    "habilidad": "interpretar_datos",
+    "formato": "opcion_multiple",
+    "grados": [
+     9
+    ],
+    "enunciado": "Se prepararon cuatro disoluciones de sal (NaCl). P: 0,10 mol en 0,50 L. Q: 0,20 mol en 1,0 L. R: 0,10 mol en 0,25 L. S: 0,40 mol en 0,50 L. ¿Qué dos disoluciones tienen la misma molaridad?",
+    "opciones": {
+     "A": "P y R",
+     "B": "P y S",
+     "C": "P y Q",
+     "D": "Q y S"
+    },
+    "correcta": "C",
+    "distractores": {
+     "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+    },
+    "valor": null,
+    "tolerancia": null,
+    "unidad": null,
+    "retroalimentacion": "P tiene 0,10 / 0,50 = 0,20 mol/L y Q tiene 0,20 / 1,0 = 0,20 mol/L. Tener los mismos moles, como P y R, no basta: también importa el volumen.",
+    "duracion_min": 3,
+    "estado": "propuesta_pendiente",
+    "fuente": {
+     "tipo": "concepto",
+     "ref": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+    },
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:DIF:quimica/concentracion-de-disoluciones/1",
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/concentracion-de-disoluciones/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/concentracion-de-disoluciones",
+     "nombre": "Soluto, disolvente y concentración",
+     "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:DIF:quimica/concentracion-de-disoluciones/1",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Describe una confusión real y frecuente: tratar la concentración como si dependiera de la cantidad total de soluto y no de la razón soluto/volumen (propiedad intensiva frente a extensiva). Las señales son observables y coherentes con las actividades. La justificación la vincula bien con la lectura del experimento de ósmosis de 8.2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2",
+       "cita": "Explica la ósmosis por el cambio de masa de tejidos en soluciones de distinta concentración."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Confundir cantidad de soluto con concentración es un error conocido al comparar disoluciones."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:DIF:quimica/concentracion-de-disoluciones/1",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Describe la confusión con conductas observables y sin etiquetar al estudiante. Las señales (elegir la disolución por los gramos; creer que una porción cambia la concentración) corresponden a los distractores A y B de la práctica, así que dos docentes la reconocerían igual. La justificación la conecta con el experimento de 8.2.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/practica-G09 (distractores A y B)",
+       "cita": "«La 3 es la más concentrada, porque tiene más sal»; «La 1 es la menos concentrada, porque tiene menos sal»"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4)",
+       "cita": "cambio de masa de tejidos en soluciones de distinta concentración"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "DIF:quimica/concentracion-de-disoluciones/1",
+    "tipo": "dificultad",
+    "concepto": "CON:quimica/concentracion-de-disoluciones",
+    "descripcion": "Confunde la cantidad de soluto con la concentración: juzga qué tan concentrada está una disolución por los gramos de soluto (o por la cantidad de agua) sin relacionarlos con el volumen de disolución.",
+    "senales": "Elige como más concentrada la disolución con más gramos aunque tenga mucho más volumen, o cree que al servir una porción su concentración baja o sube.",
+    "estado": "propuesta_pendiente",
+    "fuente": null,
+    "justificacion": "Error frecuente al comparar disoluciones; altera la lectura de los experimentos de ósmosis.",
+    "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "id": "PED:DIF:quimica/constante-de-equilibrio/1",
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/constante-de-equilibrio/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:DIF:quimica/constante-de-equilibrio/1",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Es un error real y típico al pasar de la ecuación balanceada a la expresión de K: usar el coeficiente como factor y no como exponente. La descripción es exacta y las señales permiten detectarlo en respuestas escritas y en opciones. Sirve directamente al indicador 3.6.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.6",
+       "cita": "Representa la constante de equilibrio a partir de ecuaciones de reacción química."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En K = [NH₃]²/([N₂][H₂]³) los coeficientes son exponentes."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:DIF:quimica/constante-de-equilibrio/1",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Clara y precisa para el docente: el ejemplo 2[NH₃] frente a [NH₃]² muestra el error sin explicaciones largas. Las señales son observables por escrito y por la opción elegida, y la retroalimentación de la comprobación las usa para explicar el error sin regañar.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/constante-de-equilibrio/practica-G09 (distractor C)",
+       "cita": "«[HI]² es otra forma de escribir 2[HI]»"
+      },
+      {
+       "fuente": "ACT:quimica/constante-de-equilibrio/comprobacion-G09 (retroalimentación)",
+       "cita": "«Si obtuviste 20, usaste los coeficientes como factores en lugar de exponentes»"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "DIF:quimica/constante-de-equilibrio/1",
+    "tipo": "dificultad",
+    "concepto": "CON:quimica/constante-de-equilibrio",
+    "descripcion": "Usa los coeficientes estequiométricos como factores que multiplican la concentración (2[NH₃]) en lugar de exponentes ([NH₃]²) al escribir o calcular K.",
+    "senales": "Escribe un número delante de los corchetes, como 2[CO] o 3[H₂]; al calcular multiplica por el coeficiente y obtiene un K distinto; elige opciones con coeficientes como factores.",
+    "estado": "propuesta_pendiente",
+    "fuente": null,
+    "justificacion": "Error frecuente al pasar de la ecuación balanceada a la ley de acción de masas.",
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "id": "PED:DIF:quimica/equilibrio-dinamico/1",
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/equilibrio-dinamico/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:DIF:quimica/equilibrio-dinamico/1",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Recoge la idea previa más conocida sobre el equilibrio: creer que la reacción se detiene porque las concentraciones ya no cambian. Descripción exacta; las señales, incluida la de partículas marcadas, son observables y coinciden con la comprobación del microtema.",
+     "evidencia": [
+      {
+       "fuente": "CON:quimica/equilibrio-dinamico",
+       "cita": "Velocidades directa e inversa iguales y concentraciones constantes en sistema cerrado."
+      },
+      {
+       "fuente": "MT:quimica/equilibrio-dinamico/G09",
+       "cita": "Su comprobación pide predecir qué pasa con partículas marcadas en un sistema en equilibrio."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:DIF:quimica/equilibrio-dinamico/1",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Nombra la concepción alternativa en palabras del estudiante («la reacción terminó», «ya no pasa nada»), lo que ayuda al docente a reconocerla en clase. Las tres señales son observables y corresponden a los distractores A de la práctica con frijoles y de la comprobación con átomos marcados.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/equilibrio-dinamico/practica-G09 (distractor A)",
+       "cita": "«Ya no se mueven frijoles: el sistema se detuvo porque las cajas no cambian»"
+      },
+      {
+       "fuente": "ACT:quimica/equilibrio-dinamico/comprobacion-G09 (distractor A)",
+       "cita": "«la sal ya no se disolvía porque el proceso se había detenido»"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "DIF:quimica/equilibrio-dinamico/1",
+    "tipo": "dificultad",
+    "concepto": "CON:quimica/equilibrio-dinamico",
+    "descripcion": "Cree que al llegar al equilibrio la reacción se detiene: como las concentraciones ya no cambian, supone que reactivos y productos dejaron de transformarse.",
+    "senales": "Dice que «la reacción terminó» o «ya no pasa nada»; interpreta concentraciones o color constantes como rapidez cero; no espera que partículas marcadas pasen al otro lado de la reacción.",
+    "estado": "propuesta_pendiente",
+    "fuente": null,
+    "justificacion": "Concepción alternativa frecuente: confundir concentraciones constantes con reacción detenida.",
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "id": "PED:DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Error real: comparar disoluciones por la cantidad de soluto sin dividir entre el volumen. Las señales cubren las tres formas en que aparece en este objetivo (comparar, servir una porción y escribir moles dentro de los corchetes). Se solapa con la dificultad de concentración en g/L, pero en otro concepto y otra unidad; es aceptable.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+       "cita": "Los distractores A y B se mapean a esta dificultad."
+      },
+      {
+       "fuente": "DIF:quimica/concentracion-de-disoluciones/1",
+       "cita": "Misma confusión expresada en gramos por litro, para 8.2."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Clara y observable: comparar solo por moles o gramos, creer que una porción baja la concentración y escribir moles dentro de los corchetes se ven en una respuesta. Coincide con los distractores A y B de la práctica y con la retroalimentación de la comprobación. El solapamiento con la dificultad de g/L ayuda a transferir.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09 (distractores A y B)",
+       "cita": "«0,10 mol/L, porque el vaso tiene solo la quinta parte»; «0,05 mol/L, porque en el vaso hay 0,05 mol»"
+      },
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09 (retroalimentación)",
+       "cita": "«Escribir 0,60 sería usar los moles en lugar de la concentración»"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
+    "tipo": "dificultad",
+    "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+    "descripcion": "Confunde la cantidad de soluto (moles o gramos) con la concentración: cree que la disolución con más soluto es la más concentrada, sin dividir entre el volumen.",
+    "senales": "Compara disoluciones solo por los moles o los gramos; cree que al servir una porción la concentración baja; escribe los moles en lugar de mol/L dentro de los corchetes.",
+    "estado": "propuesta_pendiente",
+    "fuente": null,
+    "justificacion": "Error frecuente: comparar disoluciones por cantidad de soluto e ignorar el volumen.",
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "id": "PED:MT:quimica/concentracion-de-disoluciones/G09",
+   "tipo": "contenido",
+   "titulo": "MT:quimica/concentracion-de-disoluciones/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/concentracion-de-disoluciones",
+     "nombre": "Soluto, disolvente y concentración",
+     "definicion": "Cantidad de soluto en cierta cantidad de disolución, expresada cualitativamente o en porcentaje, g/L o ppm.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U8-8.2",
+     "grado": 9,
+     "indicador": "8.2. Explica la difusión y la ósmosis a partir del cambio de masa de tejidos vegetales colocados en soluciones de distinta concentración.",
+     "evidencia": "Tabla y gráfico del cambio porcentual de masa según la concentración, con la identificación de las variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Los datos de cambio de masa de la papa en `obj-2` (de +15 % a −14 % según la sacarosa; equilibrio cerca de 9 %)\n   son verosímiles pero no salen de un experimento. Contrastarlos con uno de aula.\n2. El sondeo 2 de membrana usa una bolsa de celofán con almidón y yodo: confirmar material disponible y que el lugol\n   diluido es aceptable en 9.°.\n3. La comprobación de membrana con remolacha supone que el docente calienta los trozos (está escrita como\n   predicción, no como procedimiento).\n4. Hay distractores cruzados entre conceptos (sondeo 1 de ósmosis → dificultad de membrana; práctica de membrana →\n   dificultad de ósmosis): confirmar que el diagnóstico debe leerlos así.\n5. La práctica y el sondeo 1 de concentración se parecen, y la explicación del microtema adelanta la idea que pide su\n   comprobación.\n6. La dificultad de ósmosis junta dos ideas (invertir el sentido; atribuir el cambio al soluto): podría dividirse.\n\n7. **Abierta (2026-10-12):** el frijol regado con agua de pozo salada. La rúbrica pide 3 criterios obligatorios (más\n   exigente que las otras). Además, «la sal casi no pasa la membrana» simplifica: la raíz sí absorbe algo de sodio."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:quimica/concentracion-de-disoluciones/G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Contenido exacto: definición de concentración como masa de soluto entre volumen de disolución, cálculos correctos (50, 20 y 100 g/L) y la idea clave de que una porción conserva la concentración. 74 palabras, dentro del límite. Que la explicación adelante la idea de la comprobación es una decisión didáctica para el psicopedagogo, no un error científico.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "5 g/0,1 L = 50 g/L; 20 g/1 L = 20 g/L; 20 g/0,2 L = 100 g/L."
+      },
+      {
+       "fuente": "notas_de_los_redactores (TEMA:G09-CIE-U8-8.2), punto 5",
+       "cita": "La explicación del microtema adelanta la idea que pide su comprobación."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:MT:quimica/concentracion-de-disoluciones/G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Respondo la pregunta del experto: que la explicación diga que una porción conserva la concentración es un texto de refutación, útil frente a esta concepción alternativa, y la comprobación igual exige aplicarlo con otros números (4 g en 200 mL, pasar a litros). Contexto cercano (el fresco) y 74 palabras.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/concentracion-de-disoluciones/comprobacion-G09 (enunciado)",
+       "cita": "4 g de sal en 200 mL; se toman 50 mL; ¿concentración en g/L?"
+      },
+      {
+       "fuente": "PED:MT:quimica/concentracion-de-disoluciones/G09 (dictamen del experto-quimica, ronda 1)",
+       "cita": "que la explicación adelante la comprobación es una decisión didáctica para el psicopedagogo"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:quimica/concentracion-de-disoluciones/G09",
+    "tipo": "microtema",
+    "concepto": "CON:quimica/concentracion-de-disoluciones",
+    "grados": [
+     9
+    ],
+    "titulo": "Cantidad de soluto no es lo mismo que concentración",
+    "explicacion": "Un fresco puede saber más dulce que otro aunque lleve menos azúcar: depende de cuánto fresco se preparó. La concentración indica cuánto soluto hay en cierta cantidad de disolución, por ejemplo en gramos por litro (g/L): masa de soluto entre volumen de disolución. Así, 5 g en 100 mL (50 g/L) es más concentrado que 20 g en 1 L (20 g/L). Una porción de una disolución tiene menos soluto, pero la misma concentración.",
+    "ejemplo": "Para el experimento con papa, 20 g de sal en 200 mL de disolución dan 100 g/L; los mismos 20 g en 1 L dan solo 20 g/L.",
+    "practica": "ACT:quimica/concentracion-de-disoluciones/practica-G09",
+    "comprobacion": "ACT:quimica/concentracion-de-disoluciones/comprobacion-G09",
+    "duracion_min": 10,
+    "criterio": "Responde correctamente la comprobación, que pide la concentración de una porción tomada de una disolución sin confundirla con la cantidad de sal que contiene.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:quimica/concentracion-de-disoluciones",
+     "TEMA:G09-CIE-U8-8.2"
+    ],
+    "origen": "redactor-actividades (G09-CIE-U8-8.2)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+   "tipo": "contenido",
+   "titulo": "MT:quimica/constante-de-equilibrio/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Decir que «el agua líquida no se escribe» siembra una regla que habrá que desaprender: el agua se omite cuando es disolvente o líquido puro, no siempre (en la esterificación sí entra en K). Se generaliza a sólidos y líquidos puros, como hace 12.12 en 10.°, y se aclara que K usa concentraciones de equilibrio. Se cambia «un estado que ya no cambia», que refuerza la idea de equilibrio estático.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.12",
+       "cita": "Escribe la constante de equilibrios heterogéneos excluyendo sólidos y líquidos puros."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En ácido + alcohol ⇌ éster + agua, el agua es producto y se incluye en Kc."
+      },
+      {
+       "fuente": "DIF:quimica/equilibrio-dinamico/1",
+       "cita": "Creer que en el equilibrio ya no pasa nada es la idea previa que se quiere evitar."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio, y K lo resume: concentraciones de equilibrio de productos arriba y de reactivos abajo, cada una elevada a su coeficiente (es exponente, no multiplica). Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos."
+     }
+    },
+    {
+     "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Exacta tras la revisión del experto, pero la segunda oración tiene 37 palabras con tres ideas anidadas, y «(es exponente, no multiplica)» no dice cuál es el sujeto. La divido en tres oraciones cortas y digo «cada una lleva su coeficiente como exponente, no como factor». Las reglas son las mismas; quedan 80 palabras.",
+     "evidencia": [
+      {
+       "fuente": "MT:quimica/constante-de-equilibrio/G09 (explicación)",
+       "cita": "«y K lo resume: concentraciones de equilibrio de productos arriba y de reactivos abajo, cada una elevada a su coeficiente (es exponente, no multiplica)»"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "una idea por oración baja la carga cognitiva al aprender una notación nueva"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio; K lo resume. Arriba van las concentraciones de equilibrio de productos; abajo, las de reactivos. Cada una lleva su coeficiente como exponente, no como factor. Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos."
+     }
+    },
+    {
+     "id": "PED:MT:quimica/constante-de-equilibrio/G09",
+     "rol": "experto-quimica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Dividir la oración no cambia las reglas que fijé en la etapa 1: concentraciones de equilibrio, productos arriba y reactivos abajo, coeficientes como exponentes, y se excluyen sólidos y líquidos puros (el agua como disolvente), no el agua siempre. «Como exponente, no como factor» es exacto y ataca la dificultad 1 de K. Los ejemplos siguen correctos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.12",
+       "cita": "constante de equilibrios heterogéneos sin sólidos ni líquidos puros"
+      },
+      {
+       "fuente": "DIF:quimica/constante-de-equilibrio/1",
+       "cita": "usa el coeficiente como factor y no como exponente"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "K = [NH₃]²/([N₂][H₂]³); para CaCO₃ ⇌ CaO + CO₂, K = [CO₂]"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:quimica/constante-de-equilibrio/G09",
+    "tipo": "microtema",
+    "concepto": "CON:quimica/constante-de-equilibrio",
+    "grados": [
+     9
+    ],
+    "titulo": "Cómo se escribe la constante de equilibrio",
+    "explicacion": "En una gaseosa cerrada, gas y líquido llegan a un estado en que las cantidades ya no cambian. Una reacción reversible en un recipiente cerrado también llega al equilibrio; K lo resume. Arriba van las concentraciones de equilibrio de productos; abajo, las de reactivos. Cada una lleva su coeficiente como exponente, no como factor. Los sólidos y los líquidos puros, como el agua que hace de disolvente, no se escriben. Si K es mucho mayor que 1, predominan los productos.",
+    "ejemplo": "Para N₂(g) + 3H₂(g) ⇌ 2NH₃(g): K = [NH₃]² / ([N₂][H₂]³). Para CaCO₃(s) ⇌ CaO(s) + CO₂(g): K = [CO₂], porque los sólidos no se escriben.",
+    "practica": "ACT:quimica/constante-de-equilibrio/practica-G09",
+    "comprobacion": "ACT:quimica/constante-de-equilibrio/comprobacion-G09",
+    "duracion_min": 10,
+    "criterio": "Responde bien la comprobación: escribe K para una ecuación nueva, con los coeficientes como exponentes, y obtiene su valor.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:quimica/constante-de-equilibrio",
+     "TEMA:G09-CIE-U3-3.6"
+    ],
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:MT:quimica/equilibrio-dinamico/G09",
+   "tipo": "contenido",
+   "titulo": "MT:quimica/equilibrio-dinamico/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:quimica/equilibrio-dinamico/G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Dos imprecisiones. El ejemplo omite la temperatura: hidrógeno y yodo apenas reaccionan a temperatura ambiente, y el equilibrio con HI se estudia a unos 400 °C. «Al principio domina la directa» solo vale si se parte de reactivos; el equilibrio también se alcanza desde los productos. Se corrige sin pasar de 80 palabras. Lo demás, incluida la gaseosa, es correcto.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "H₂(g) + I₂(g) ⇌ 2HI(g) es el ejemplo clásico a temperatura alta; a 25 °C es lentísima."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Partiendo de HI puro se llega al mismo tipo de equilibrio: domina primero la inversa."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una gaseosa cerrada, la cantidad de gas ya no cambia, pero el CO₂ sigue saliendo del líquido y volviendo a disolverse al mismo ritmo. En una reacción reversible dentro de un recipiente cerrado pasa lo mismo: los reactivos forman productos y los productos vuelven a formar reactivos. Si se parte de reactivos, al principio domina la reacción directa; luego las dos rapideces se igualan. Desde ahí las concentraciones quedan constantes, pero ambas reacciones siguen: es un equilibrio dinámico.",
+      "ejemplo": "En un recipiente cerrado y caliente (unos 400 °C) con hidrógeno y vapor de yodo (violeta) se forma HI y el color se aclara hasta que deja de cambiar; desde ese momento se forman y se descomponen moléculas de HI con la misma rapidez."
+     }
+    },
+    {
+     "id": "PED:MT:quimica/equilibrio-dinamico/G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Usa la gaseosa como analogía cotidiana y una secuencia temporal clara (al principio, luego, desde ahí). Tiene 79 palabras. El ejemplo a 400 °C solo se describe y no se pide hacerlo. La práctica con frijoles es manipulable y barata, y la comprobación con átomos marcados pide transferir la idea a otro sistema.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/equilibrio-dinamico/practica-G09 (enunciado)",
+       "cita": "simulación con 60 frijoles en dos cajas"
+      },
+      {
+       "fuente": "config/aprendizaje.yaml (adaptacion.secundaria)",
+       "cita": "palabras_max 80"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:quimica/equilibrio-dinamico/G09",
+    "tipo": "microtema",
+    "concepto": "CON:quimica/equilibrio-dinamico",
+    "grados": [
+     9
+    ],
+    "titulo": "El equilibrio no es una reacción detenida",
+    "explicacion": "En una gaseosa cerrada, la cantidad de gas ya no cambia, pero el CO₂ sigue saliendo del líquido y volviendo a disolverse al mismo ritmo. En una reacción reversible dentro de un recipiente cerrado pasa lo mismo: los reactivos forman productos y los productos vuelven a formar reactivos. Si se parte de reactivos, al principio domina la reacción directa; luego las dos rapideces se igualan. Desde ahí las concentraciones quedan constantes, pero ambas reacciones siguen: es un equilibrio dinámico.",
+    "ejemplo": "En un recipiente cerrado y caliente (unos 400 °C) con hidrógeno y vapor de yodo (violeta) se forma HI y el color se aclara hasta que deja de cambiar; desde ese momento se forman y se descomponen moléculas de HI con la misma rapidez.",
+    "practica": "ACT:quimica/equilibrio-dinamico/practica-G09",
+    "comprobacion": "ACT:quimica/equilibrio-dinamico/comprobacion-G09",
+    "duracion_min": 10,
+    "criterio": "Responde bien la comprobación, que pide predecir qué pasa con partículas marcadas en un sistema que ya está en equilibrio.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:quimica/equilibrio-dinamico",
+     "TEMA:G09-CIE-U3-3.1"
+    ],
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PED:MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+   "tipo": "contenido",
+   "titulo": "MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.6",
+     "grado": 9,
+     "indicador": "3.6. Representa la constante de equilibrio a partir de ecuaciones de reacción química.",
+     "evidencia": "Representación e interpretación de constantes"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).\n2. La comprobación pide K = 40 sin unidades, aunque Kc las tiene, y el cálculo se adelanta un poco al tema 3.7.\n3. Los datos de N₂O₄/NO₂ de `obj-2` están idealizados (K = 0,010 «a cierta temperatura»).\n4. El sondeo con Ca(OH)₂ es un equilibrio de solubilidad: puede adelantarse a lo visto en el aula.\n5. La gaseosa y la sal saturada son equilibrios físicos: decidir si se prefieren solo ejemplos químicos.\n6. En la práctica de molaridad dos distractores apuntan a la misma dificultad.\n7. **Abierta (2026-10-12):** los valores de K de N₂ + O₂ ⇌ 2NO (≈ 4×10⁻³¹ a 25 °C; ≈ 1×10⁻³ a unos 2000 °C) los\n   calculó el redactor con datos termodinámicos estándar y no tienen fuente en el repositorio. Confirmar que en 9.° se\n   maneja la notación científica con exponentes negativos. «A 25 °C no ocurre» no se penaliza a propósito: en la\n   práctica es cierto porque la reacción es lentísima."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Exacto: molaridad como moles de soluto por litro de disolución (no de disolvente), M = n/V en mol/L, la porción conserva la concentración y los corchetes de K expresan mol/L. El ejemplo y la conversión de mL a L son correctos. 76 palabras. El criterio se alinea con el uso de la molaridad dentro de K que pide 3.6.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0,40 mol / 2,0 L = 0,20 mol/L; 500 mL = 0,500 L."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.6",
+       "cita": "Representa la constante de equilibrio a partir de ecuaciones de reacción química."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Contexto cercano (el fresco), fórmula con unidades y un puente explícito hacia los corchetes de K. Tiene 76 palabras. El ejemplo trabajado (0,40 mol en 2,0 L) y el paso de mL a L preparan la comprobación, que usa otro contexto (NO₂). Los símbolos n y V se entienden por el orden de la frase que los precede.",
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09 (enunciado)",
+       "cita": "0,60 mol de NO₂ en 2,0 L; ¿qué valor va en [NO₂]?"
+      },
+      {
+       "fuente": "config/aprendizaje.yaml (adaptacion.secundaria)",
+       "cita": "palabras_max 80"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:quimica/molaridad-y-unidades-quimicas-de-concentracion/G09",
+    "tipo": "microtema",
+    "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+    "grados": [
+     9
+    ],
+    "titulo": "Molaridad: cuánto soluto hay en cada litro",
+    "explicacion": "Dos vasos de fresco pueden tener la misma cantidad de azúcar y no ser igual de dulces: importa en cuánto líquido está. La molaridad mide la concentración como moles de soluto por litro de disolución: M = n / V, en mol/L. Si sirves una porción, la concentración no cambia: tiene menos soluto, pero también menos volumen. En la constante de equilibrio, los corchetes [ ] significan molaridad, así que primero conviertes los moles a mol/L.",
+    "ejemplo": "0,40 mol de azúcar en 2,0 L de fresco: M = 0,40 mol / 2,0 L = 0,20 mol/L. Si el volumen está en mililitros, primero se pasa a litros (500 mL = 0,500 L).",
+    "practica": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/practica-G09",
+    "comprobacion": "ACT:quimica/molaridad-y-unidades-quimicas-de-concentracion/comprobacion-G09",
+    "duracion_min": 8,
+    "criterio": "Responde bien la comprobación: convierte moles a mol/L para escribir una concentración dentro de K.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "TEMA:G08-CIE-U4-4.9"
+    ],
+    "origen": "redactor-actividades (G09-CIE-U3-3.6)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PRO:quimica:G05-G08#1",
+   "tipo": "propuesta",
+   "titulo": "3.12. Representación de la materia con el modelo de partículas.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 5,
+    "unidad_propuesta": "3. Estructura atómica. (al inicio de la unidad, antes de 3.2)",
+    "tema_propuesto": "3.12. Representación de la materia con el modelo de partículas.",
+    "indicador_logro": "Explica con dibujos de partículas qué ocurre al disolver azúcar, al comprimir aire o al calentar agua, y usa el modelo para justificar por qué la materia ocupa espacio y tiene masa.",
+    "conceptos": [
+     "Modelo de partículas de la materia"
+    ],
+    "evidencia": [
+     "prerrequisito: Modelo de partículas de la materia (hoy en 6.°) de Átomo y partículas subatómicas (5.°), confianza alta",
+     "bloqueo: Modelo de partículas de la materia (6.°) de Sustancias puras: elementos y compuestos (destino 6.°)"
+    ],
+    "justificacion": "El átomo y sus partículas (3.2 a 3.5) se enseñan en 5.° antes del modelo de partículas, que hoy llega en 6.° (4.8). Un tema introductorio al inicio de la unidad ordena la secuencia. Se paga con la fusión 12.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega el modelo de partículas de la materia."
+   },
+   "resolucion": {
+    "decision": "adoptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#1",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "En 5.° la malla enseña el átomo, sus partículas y hasta números cuánticos sin haber construido antes que la materia está hecha de partículas; el modelo llega en 6.° (Física 2.1; Química 4.8). Un tema cualitativo al abrir la unidad 3 es prerrequisito lógico y cae dentro del rango internacional: Australia lo trabaja en el equivalente a 4.° e Inglaterra en KS3.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G05-CIE-U3-3.10",
+       "cita": "Representa la estructura atómica con su conjunto de números cuánticos (5.°)."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U2-2.1",
+       "cita": "Primer tema que trabaja el movimiento de partículas (6.°)."
+      },
+      {
+       "fuente": "data/interim/paises/australia.json AU-AC9S5U04 (grado SV 4)",
+       "cita": "Explicar propiedades de sólidos, líquidos y gases modelando sus partículas."
+      },
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-QUI-KS3-01, p. 8",
+       "cita": "Estados de la materia según el modelo de partículas."
+      },
+      {
+       "fuente": "data/grafo/aristas.jsonl PRERREQUISITO_DE",
+       "cita": "modelo-de-particulas → atomo-y-particulas-subatomicas, confianza alta."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PRO:quimica:G05-G08#1",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "Es la acción más importante del lote para el desarrollo: la V2 pide en 5.° modelo atómico, números cuánticos y configuraciones (3.2 a 3.11) sin un modelo de partículas previo, el puente entre lo que se observa y lo que no. Disolver azúcar, comprimir aire en una jeringa y calentar agua, con dibujos de partículas, son tareas concretas y alcanzables a los 10–11 años.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G05-CIE-U3-3.10 (fila 12) y G05-CIE-U3-3.11 (fila 13)",
+       "cita": "Números cuánticos y configuraciones electrónicas en 5.°."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U2-2.1 (fila 3)",
+       "cita": "El movimiento de partículas llega en 6.°, después del átomo."
+      },
+      {
+       "fuente": "Johnstone, A. H. (1991). Why is science difficult to learn? Things are seldom what they seem. Journal of Computer Assisted Learning, 7(2), 75–83",
+       "cita": "Pasar de lo macroscópico a lo submicroscópico y lo simbólico es una fuente central de dificultad."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 6,
+    "anclada": 0,
+    "ubicada": 6,
+    "inexistente": 0,
+    "interna": 1,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 1,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#10",
+   "tipo": "propuesta",
+   "titulo": "5.10. Identificación de ácidos y bases con indicadores y análisis de su neutralización.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 7,
+    "unidad_propuesta": "5. Recurso hídrico (después de 5.9)",
+    "tema_propuesto": "5.10. Identificación de ácidos y bases con indicadores y análisis de su neutralización.",
+    "indicador_logro": "Usa un indicador natural (col morada) y papel pH para clasificar productos del hogar en ácidos, neutros o básicos, y comprueba que al mezclar un ácido con una base el pH se acerca a 7.",
+    "conceptos": [
+     "Indicadores ácido-base",
+     "Neutralización y reacciones de los ácidos",
+     "Escala de pH"
+    ],
+    "evidencia": [
+     "ENG 6, JP 5 (Indicadores ácido-base); mover_antes: destino 6.°, hoy en 9.°; bloqueo Escala de pH (7.°)",
+     "ENG 6, JP 8 (Neutralización y reacciones de los ácidos); mover_antes: destino 7.°, hoy en 9.°; bloqueos Ácidos y bases: propiedades y Ecuación química y su balanceo (7.°, unidad 1)"
+    ],
+    "justificacion": "Dos candidatos con dos países de alto desempeño cada uno. Va en 7.° y no en 6.° porque la escala de pH llega en 7.° (5.9). G09 3.10 queda como profundización. Se paga con la fusión 19.",
+    "conciliacion_v2": "4.17 aplica el pH a la acidificación oceánica; no enseña indicadores ni neutralización."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#10",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Respaldado: Japón distingue soluciones ácidas, neutras y alcalinas en el equivalente a 5.° e Inglaterra trata indicadores, pH y neutralización en KS3; en 7.° la malla ya mide pH (5.9) y nombra ácidos e hidróxidos (1.7). Ajusto dos cosas: «el pH se acerca a 7» induce la idea errónea de que neutralizar siempre deja la mezcla neutra, y faltan reglas de seguridad con productos del hogar.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/paises/japon.json JP-8260263121100000, p. 84 (grado SV 5)",
+       "cita": "Hay soluciones acuosas ácidas, alcalinas y neutras."
+      },
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-QUI-KS3-15, -16 y -18, p. 8",
+       "cita": "Ácidos y álcalis por neutralización; escala de pH e indicadores; ácido con álcali da sal y agua."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U5-5.9",
+       "cita": "Medición experimental de parámetros fisicoquímicos de calidad del agua."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.10",
+       "cita": "Extracción de un indicador natural: se repetiría si no se redefine como profundización."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Ácido débil con base fuerte en cantidades equivalentes da pH mayor que 7."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "5.10. Identificación de ácidos y bases con indicadores y análisis de su neutralización. Indicador: «Usa un indicador natural (col morada) y papel pH para clasificar productos seguros del hogar (vinagre, limón, bicarbonato, jabón) en ácidos, neutros o básicos; observa que al agregar poco a poco una base a un ácido el color cambia y el pH sube, y reconoce que la mezcla no siempre queda neutra: depende de las cantidades». Seguridad: no usar lejía, destapacañerías ni ácido muriático. En 9.°, el tema 3.10 se retoma como profundización (zona de viraje y elección del indicador para la titulación de 3.19), sin repetir la col morada."
+    },
+    {
+     "id": "PRO:quimica:G05-G08#10",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Los indicadores de col morada son concretos y baratos, adecuados para 7.°. Pero la V2 ya usa indicador y pH con productos cotidianos en 1.7: lo nuevo es la neutralización. Además, «productos del hogar» incluye cloro y destapacañerías, corrosivos, y el cloro con vinagre libera un gas tóxico. Propongo centrarlo en la neutralización con productos seguros y el papel pH como opcional.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.7 (fila 9)",
+       "cita": "Tabla de muestras con el color del indicador y el valor de pH."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U3-3.19 (fila 21)",
+       "cita": "Punto de equivalencia por titulación en 9.°."
+      },
+      {
+       "fuente": "criterio de seguridad",
+       "cita": "La lejía (hipoclorito) mezclada con un ácido como el vinagre libera cloro gaseoso."
+      }
+     ],
+     "confianza": "media",
+     "texto": "Identificación de la neutralización con un indicador natural (después de 1.9, o de 5.9 como se propuso). Indicador: con col morada, y papel pH si la escuela lo tiene, observa cómo cambia el color al agregar poco a poco una base suave (bicarbonato o agua jabonosa) a un ácido suave (vinagre o limón) hasta acercarse a neutro. Solo productos seguros: nunca cloro, lejía ni destapacañerías."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 6,
+    "anclada": 2,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#11",
+   "tipo": "propuesta",
+   "titulo": "5.7. Relación entre la estructura y las propiedades de metales, cerámicas y materiales compuestos.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 8,
+    "unidad_propuesta": "5. Minerales (después de 5.5)",
+    "tema_propuesto": "5.7. Relación entre la estructura y las propiedades de metales, cerámicas y materiales compuestos.",
+    "indicador_logro": "Compara la dureza, fragilidad y conductividad de un metal, una cerámica y un material compuesto de uso cotidiano y relaciona cada propiedad con su estructura y con un uso.",
+    "conceptos": [
+     "Metales, cerámicas y materiales compuestos",
+     "Sólidos cristalinos y amorfos"
+    ],
+    "evidencia": [
+     "ENG 6, JP 8 (Metales, cerámicas y materiales compuestos); mover_antes: destino 7.°, hoy en 10.°",
+     "bloqueo: Sólidos cristalinos y amorfos (8.°, G08 5.4 a 5.6): por eso va en 8.° y no en 7.°"
+    ],
+    "justificacion": "Inglaterra y Japón lo enseñan en 6.° y 8.°; El Salvador, en 10.° y 11.°. No puede ir en 7.° porque los sólidos cristalinos llegan en 8.°; se ubica tras ellos. Se paga con la fusión 17.",
+    "conciliacion_v2": "El único candidato trata gravedad; nada sobre metales, cerámicas ni compuestos."
+   },
+   "resolucion": {
+    "decision": "adoptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#11",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "Inglaterra pide en KS3 las propiedades de cerámicas, polímeros y compuestos, de forma cualitativa; la etiqueta de Japón es amplia (uso de materiales en el equivalente a 8.°). En 8.° ya se conocen los enlaces (6.°) y los cristales (5.4 a 5.6), y la fusión 17 libera el espacio en la misma unidad. Recomiendo tratarlo cualitativo, con materiales locales: barro cocido, adobe o bahareque.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-QUI-KS3-30, p. 9",
+       "cita": "Propiedades de cerámicas, polímeros y materiales compuestos (cualitativo)."
+      },
+      {
+       "fuente": "data/interim/paises/japon.json JP-8361233711200000, p. 70",
+       "cita": "Diversos materiales se usan en la vida diaria; etiqueta general, evidencia débil."
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U5-5.4",
+       "cita": "Formación de cristales: base del bloqueo que lo ubica en 8.°."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.1",
+       "cita": "Hoy los materiales se tratan a fondo recién en 11.°."
+      }
+     ],
+     "confianza": "media"
+    },
+    {
+     "id": "PRO:quimica:G05-G08#11",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "Adecuado para 8.°: compara propiedades que se prueban con objetos cotidianos (rayar, doblar, conducir) y las relaciona con la estructura que el estudiante acaba de ver en los cristales (5.4 a 5.6). Trabaja con datos y modelos, lo esperable en 7.°–9.°, y prepara los materiales de 11.° (1.3). Para la fragilidad, mejor observar que romper piezas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G08-CIE-U5-5.4 (fila 6)",
+       "cita": "Formación de cristales a partir de un experimento."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.3 (fila 5)",
+       "cita": "Aplicaciones tecnológicas y médicas de cerámicas y metales en 11.°."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 6,
+    "anclada": 2,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#3",
+   "tipo": "propuesta",
+   "titulo": "6.15. Identificación de los componentes del aire y de los principales contaminantes atmosféricos.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 5,
+    "unidad_propuesta": "6. Ciencias de la Tierra. (unidad compartida con Ciencias de la Tierra y del Espacio)",
+    "tema_propuesto": "6.15. Identificación de los componentes del aire y de los principales contaminantes atmosféricos.",
+    "indicador_logro": "Representa en un gráfico la proporción de nitrógeno, oxígeno, argón, dióxido de carbono y vapor de agua en el aire, y relaciona al menos tres contaminantes con fuentes de su comunidad.",
+    "conceptos": [
+     "La atmósfera y su composición",
+     "Composición del aire y contaminantes atmosféricos"
+    ],
+    "evidencia": [
+     "CO 4.5, JP 5, SG 5, UY 5 (Composición del aire y contaminantes atmosféricos); mover_antes: destino 5.°, hoy en 7.°, sin bloqueos"
+    ],
+    "justificacion": "Japón y Singapur (alto desempeño), con Colombia y Uruguay, lo enseñan entre 4.° y 5.°; El Salvador, en 7.° sin tema de química. Abre con la composición de la atmósfera. Se paga con la fusión 13.",
+    "conciliacion_v2": "Ningún candidato trata composición del aire ni contaminantes atmosféricos."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#3",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Adelantar la composición del aire está respaldado: Japón la trabaja al estudiar la combustión (equivalente a 5.°) e Inglaterra en KS3. Pero el indicador da al vapor de agua una proporción fija, cuando varía, y los contaminantes por nombre químico llegan en Inglaterra en KS4 y en El Salvador en 7.° (5.12). Acoto: aire seco con datos dados y fuentes de contaminación locales.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/paises/japon.json JP-8260263111100000, p. 82 (grado SV 5)",
+       "cita": "Al arder materia vegetal se consume oxígeno del aire y se produce dióxido de carbono."
+      },
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-TIE-KS3-06, p. 9",
+       "cita": "Composición de la atmósfera."
+      },
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-QUI-KS4-36, p. 13 (grados SV 8–9)",
+       "cita": "Contaminantes atmosféricos comunes (SO₂, óxidos de nitrógeno, partículas) y sus fuentes."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U5-5.12",
+       "cita": "Parámetros que inciden en la calidad del aire (7.°)."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El vapor de agua varía entre casi 0 % y cerca de 4 %; la composición fija se da para aire seco."
+      }
+     ],
+     "confianza": "media",
+     "texto": "6.15. Identificación de los componentes del aire y de las fuentes de contaminación del aire en la comunidad. Indicador: «Representa en un gráfico, con datos dados, la composición del aire seco (nitrógeno cerca de 78 %, oxígeno cerca de 21 %, argón y una fracción muy pequeña de dióxido de carbono), reconoce que el vapor de agua varía según el lugar y el día, y relaciona al menos tres fuentes de contaminación del aire de su comunidad (quemas, vehículos, cocinas de leña, gases volcánicos) con lo que emiten (humo, polvo y gases)». Ubicarlo junto a 6.12 (gases que se monitorean en los volcanes). La identificación química de los contaminantes y el ICCA siguen en 7.° (5.12 y 5.13)."
+    },
+    {
+     "id": "PRO:quimica:G05-G08#3",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "La composición del aire es alcanzable en 5.° si la proporción se representa con algo concreto: en un gráfico circular el 0,04 % de CO₂ no se ve. Nombrar contaminantes (SO₂, óxidos de nitrógeno, partículas) carga vocabulario que 7.° trabaja en 5.12, y la unidad 6 de 5.° ya tiene 21 temas. Propongo una cuadrícula de 100 y fuentes locales, sin culpar a quien cocina con leña.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U5-5.12 (fila 14)",
+       "cita": "Cuadro de contaminantes del aire con fuentes y efectos en 7.°."
+      },
+      {
+       "fuente": "data/interim/temas.json (5.°, unidad 6)",
+       "cita": "La unidad 6 de 5.° tiene 21 temas, del 6.1 al 6.21."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una cuadrícula de 100 es concreta para 10–11 años; porcentajes menores que 1 no lo son."
+      }
+     ],
+     "confianza": "media",
+     "texto": "6.15. Identificación de los componentes del aire y de fuentes de contaminación en la comunidad. Indicador: representa en una cuadrícula de 100 cuadros cuántas partes del aire son nitrógeno y oxígeno, reconoce que el dióxido de carbono y el vapor de agua son una parte muy pequeña, e identifica fuentes de humo y polvo de su comunidad y una forma de reducirlas. Los nombres de contaminantes quedan para 7.° (5.12)."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 2,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 1,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#5",
+   "tipo": "propuesta",
+   "titulo": "4.11. Clasificación de la materia en sustancias puras (elementos y compuestos) y mezclas.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 6,
+    "unidad_propuesta": "4. Interacciones químicas. (al inicio de la unidad, antes de 4.1)",
+    "tema_propuesto": "4.11. Clasificación de la materia en sustancias puras (elementos y compuestos) y mezclas.",
+    "indicador_logro": "Clasifica muestras cotidianas (agua destilada, sal, aire, cobre, agua con sal) en elementos, compuestos y mezclas y justifica la clasificación con dibujos de partículas.",
+    "conceptos": [
+     "Sustancias puras: elementos y compuestos"
+    ],
+    "evidencia": [
+     "AU 6, CO 6, ENG 6, JP 7, UY 5 (Sustancias puras: elementos y compuestos); mover_antes: destino 6.°, hoy en 8.° (solo dentro de Minerales, G08 5.3)",
+     "bloqueo: Modelo de partículas de la materia (5.° con la acción 1)"
+    ],
+    "justificacion": "Tres países de alto desempeño (AU, ENG, JP) lo enseñan en 6.° o 7.°; El Salvador, de pasada en 8.° (minerales). Es prerrequisito de fórmulas y moléculas. Se paga con la fusión 14.",
+    "conciliacion_v2": "Ningún candidato clasifica la materia en elementos, compuestos y mezclas."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#5",
+     "rol": "experto-quimica",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Mantengo adaptar. Coincido con el psicopedagogo en el grado (6.°), pero la propia propuesta mueve 4.5 y 4.6 detrás de este tema (acción 4) porque las fórmulas no deben preceder a la noción de compuesto, y Australia clasifica antes o junto con las fórmulas. Sin ese movimiento, adoptarlo tal cual lo deja como repaso tardío. Y el indicador debe evitar dibujar la sal como moléculas sueltas.",
+     "evidencia": [
+      {
+       "fuente": "asignaturas/quimica/propuesta/propuesta_G05-G08.json, acción 4",
+       "cita": "Mueve 4.5 y 4.6 a 6.°: hoy se enseñan antes de saber qué es un compuesto y qué es un enlace."
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U4-4.5 (fila 7) y G05-CIE-U4-4.6 (fila 8)",
+       "cita": "Fórmulas con el número de átomos de cada elemento y con tarjetas de iones, en 5.°."
+      },
+      {
+       "fuente": "data/interim/paises/australia.json AU-AC9S7U06 (SV 6) y AU-AC9S8U06 (SV 7)",
+       "cita": "Modelo de partículas para sustancias puras y mezclas; luego clasificar en elementos, compuestos o mezclas junto con símbolos y fórmulas."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El cloruro de sodio es una red iónica; el O2 y el N2 del aire son moléculas de elementos, no compuestos."
+      }
+     ],
+     "confianza": "media",
+     "texto": "4.11. Clasificación de la materia en sustancias puras (elementos y compuestos) y mezclas. Ubicación: al inicio de la unidad 4 de 6.°, con la acción 4 (4.5 y 4.6 pasan detrás de este tema); si la formulación se queda en 5.°, el tema va en 5.°, antes de 4.5 y después del modelo de partículas (acción 1). Indicador: «Clasifica muestras cotidianas (agua destilada, cobre, sal de mesa, aire, agua con sal) en elementos, compuestos y mezclas y justifica la clasificación con dibujos de partículas; reconoce que el oxígeno y el nitrógeno del aire forman moléculas de un solo elemento y representa la sal como una red ordenada de dos tipos de partículas en proporción fija, no como moléculas sueltas»."
+    },
+    {
+     "id": "PRO:quimica:G05-G08#5",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Cambio de adoptar a adaptar: verifiqué que 4.5 y 4.6 siguen en 5.°. Con el tema en 6.°, el estudiante escribe fórmulas un año antes de saber qué es un compuesto y tiende a memorizar símbolos sin significado. El tema debe ir justo antes de la formulación. En 5.° es viable: la unidad 3 ya trabaja átomos y dibujar partículas es más concreto que las propiedades periódicas de ese grado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G05-CIE-U4-4.5 (fila 7) y G05-CIE-U4-4.6 (fila 8)",
+       "cita": "Formulación química y fórmulas con iones en 5.°; la V2 no las movió a 6.°."
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U3-3.3 (fila 5)",
+       "cita": "Construcción de un modelo atómico en 5.°, antes de la unidad 4."
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U2-2.3 (fila 5) y G03-CIE-U2-2.5 (fila 7)",
+       "cita": "Mezclas y su separación en 3.°: base observable para distinguir mezcla de sustancia pura."
+      },
+      {
+       "fuente": "asignaturas/quimica/propuesta/propuesta_G05-G08.json, acción 4",
+       "cita": "Propone mover 4.5 y 4.6 a 6.° después del tema nuevo; la adopción V2 no lo registra."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "El concepto da sentido a la notación: primero distinguir con muestras y dibujos, después simbolizar."
+      }
+     ],
+     "confianza": "media",
+     "texto": "4.11. Clasificación de la materia en sustancias puras (elementos y compuestos) y mezclas. Ubicación: justo antes de la formulación química. Si se aplica la acción 4, al inicio de la unidad 4 de 6.°; si 4.5 y 4.6 se quedan en 5.°, en la unidad 4 de 5.°, antes de 4.5 (los átomos de la unidad 3 bastan como base aunque no se adopte la acción 1). Secuencia de una idea por paso: (a) mezcla o sustancia pura, retomando la separación de mezclas de 3.°; (b) elemento o compuesto, con dibujos de partículas. Indicador: «Clasifica muestras cotidianas (agua destilada, cobre, sal de mesa, aire, agua con sal), reales o en tarjetas con imagen, en elementos, compuestos y mezclas, y justifica la clasificación con dibujos de partículas; representa la sal como una red ordenada de dos tipos de partículas en proporción fija, no como moléculas sueltas»."
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 10,
+    "anclada": 0,
+    "ubicada": 10,
+    "inexistente": 0,
+    "interna": 3,
+    "argumento": 3,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#7",
+   "tipo": "propuesta",
+   "titulo": "4.14. Comprobación experimental de la conservación de la masa en las reacciones químicas.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 6,
+    "unidad_propuesta": "4. Interacciones químicas. (después de 4.9)",
+    "tema_propuesto": "4.14. Comprobación experimental de la conservación de la masa en las reacciones químicas.",
+    "indicador_logro": "Mide la masa antes y después de una reacción en sistema cerrado (vinagre y bicarbonato en botella con globo) y explica el resultado con el reordenamiento de átomos.",
+    "conceptos": [
+     "Conservación de la masa",
+     "Reacción química y sus evidencias"
+    ],
+    "evidencia": [
+     "AU 8, CO 8, ENG 6, JP 2, UY 9 (Conservación de la masa); mover_antes: destino 8.°, hoy en 10.°",
+     "prerrequisito: Conservación de la masa (hoy en 10.°) de Ecuación química y su balanceo (7.°), brecha 3, confianza alta"
+    ],
+    "justificacion": "En 7.° se balancean ecuaciones sin la ley que da sentido al balanceo. Japón la inicia en primaria e Inglaterra en 6.°; el destino sugerido (8.°) llegaría después del balanceo. Se paga con la fusión 15.",
+    "conciliacion_v2": "El único candidato compara fotosíntesis y respiración; no conservación de la masa."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#7",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Es el prerrequisito del balanceo que empieza en 7.° (1.2): Japón la enseña en el equivalente a 7.°, Inglaterra en KS3 y Australia en el equivalente a 8.°. El «JP 2» de la evidencia es conservar el peso al cambiar de forma, no en reacciones. Y el montaje con globo falla: al inflarse aumenta el empuje del aire, la balanza marca menos y parece refutar la ley.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.2",
+       "cita": "Formula y balancea ecuaciones para la obtención de óxidos (7.°)."
+      },
+      {
+       "fuente": "data/interim/paises/japon.json JP-8361223413100000, p. 54 (grado SV 7)",
+       "cita": "En una reacción química la masa total de reactivos es igual a la de productos."
+      },
+      {
+       "fuente": "data/interim/paises/japon.json JP-8260233111100000, p. 36 (grado SV 2)",
+       "cita": "Un objeto conserva su peso aunque cambie de forma."
+      },
+      {
+       "fuente": "data/interim/paises/australia.json AU-AC9S9U07 (grado SV 8)",
+       "cita": "Modelar la reorganización de átomos con ecuaciones balanceadas y demostrar la conservación."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Un globo que desplaza 1 L de aire recibe un empuje de cerca de 1,1 a 1,2 gramos-fuerza."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "4.14. Comprobación experimental de la conservación de la masa en las reacciones químicas. Indicador: «Mide la masa antes y después de una reacción en un recipiente abierto y en uno cerrado y rígido (o con una reacción que forma un sólido sin desprender gas, como cloruro de calcio con carbonato de sodio); explica por qué en el abierto la masa parece disminuir y justifica con el reordenamiento de átomos que en el cerrado se conserva». Seguridad y método: en el recipiente cerrado, poca cantidad de reactivos para no acumular presión; no usar un globo como sistema cerrado para medir, porque al inflarse aumenta el empuje del aire y la balanza marca menos."
+    },
+    {
+     "id": "PRO:quimica:G05-G08#7",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Una prueba concreta de que la masa se conserva, antes de balancear, es adecuada para 6.°. Pero la V2 ya la toca en 7.° 1.2 (lana de acero), y el montaje con globo puede engañar: al inflarse, el empuje del aire baja la lectura de la balanza y confirma la idea de que la masa «se pierde». Propongo recipiente rígido cerrado y comparación con uno abierto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.2 (fila 4)",
+       "cita": "Cuadro que separa observación, hipótesis, ley y modelo en el experimento de la lana de acero."
+      },
+      {
+       "fuente": "specs/13_apoyo_al_aprendizaje.md §10",
+       "cita": "La conservación de la masa en 7.° no la reconoce el grafo en G07-CIE-U1-1.2."
+      },
+      {
+       "fuente": "criterio disciplinar (a confirmar por el experto de Química)",
+       "cita": "El empuje del aire sobre un globo inflado es de cerca de 1,2 g por litro: lo detecta una balanza escolar."
+      }
+     ],
+     "confianza": "media",
+     "texto": "4.14 (después de 4.9). Comprobación de que la masa se conserva en una reacción. Indicador: mide la masa de vinagre y una pizca de bicarbonato en una botella plástica de gaseosa bien tapada antes y después de mezclarlos, la compara con el mismo ensayo en un vaso abierto y explica la diferencia con modelos de partículas que se reordenan; 7.° 1.2 lo retoma al balancear."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 2,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 1,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#8",
+   "tipo": "propuesta",
+   "titulo": "1.14. Clasificación experimental de reacciones exotérmicas y endotérmicas según el cambio de temperatura.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 7,
+    "unidad_propuesta": "1. Compuestos inorgánicos (al final de la unidad, después de 1.12)",
+    "tema_propuesto": "1.14. Clasificación experimental de reacciones exotérmicas y endotérmicas según el cambio de temperatura.",
+    "indicador_logro": "Mide la temperatura antes y después de dos reacciones (vinagre y bicarbonato; agua y cloruro de calcio) y clasifica cada una como exotérmica o endotérmica, explicando hacia dónde se transfiere el calor.",
+    "conceptos": [
+     "Reacciones exotérmicas y endotérmicas",
+     "Calor como energía en tránsito",
+     "Clasificación de las reacciones químicas"
+    ],
+    "evidencia": [
+     "AU 7, ENG 6, JP 7 (Reacciones exotérmicas y endotérmicas); mover_antes: destino 7.°, hoy en 10.°",
+     "bloqueo: Calor como energía en tránsito (hoy en 10.°; la unidad 2 de 6.°, de Física, lo trabaja y se retoma de forma explícita en el mismo tema)"
+    ],
+    "justificacion": "Ajustada: pasa de 6.° a 7.°. Con Japón, tres países de alto desempeño la enseñan y la mediana es 7.°. Cierra la unidad de reacciones de 7.°. Se paga con la fusión 16.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega reacciones exotérmicas ni endotérmicas."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#8",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "El adelanto a 7.° está respaldado (Inglaterra en KS3, cualitativo; Australia en el equivalente a 7.°) y el calor ya se trabaja en Física de 6.°. Pero el indicador llama reacción a disolver cloruro de calcio en agua: es una disolución, un cambio físico, y confundirlo refuerza el error de cambio físico frente a químico. Se sustituye por una reacción exotérmica segura.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-QUI-KS3-21, p. 8",
+       "cita": "Reacciones químicas exotérmicas y endotérmicas (cualitativo)."
+      },
+      {
+       "fuente": "data/interim/paises/australia.json AU-AC9S8U07 (grado SV 7)",
+       "cita": "Comparar cambios físicos y químicos e identificar indicadores de cambio de energía."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U2-2.5",
+       "cita": "Propagación del calor: la unidad de Física de 6.° ya trabaja el calor."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Disolver CaCl₂ libera calor, pero no forma sustancias nuevas."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "1.14. Clasificación experimental de reacciones exotérmicas y endotérmicas según el cambio de temperatura. Indicador: «Mide la temperatura antes y después de dos reacciones químicas seguras (vinagre con bicarbonato, que se enfría; levadura con agua oxigenada al 3 % o lana de acero con vinagre, que se calientan), clasifica cada una como endotérmica o exotérmica y explica hacia dónde se transfiere el calor; compara con la disolución de cloruro de calcio, que también libera calor pero es un cambio físico». Uso de lentes de protección."
+    },
+    {
+     "id": "PRO:quimica:G05-G08#8",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Clasificar por el cambio de temperatura es concreto y adecuado para 7.°. Pero agua con cloruro de calcio es una disolución, no una reacción: como ejemplo puede confundir cambio físico y químico, que se trabaja desde 3.°, y el cloruro de calcio no está en todas las escuelas. Propongo una reacción exotérmica con material conocido: la lana de acero con vinagre de 1.2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.2 (fila 4)",
+       "cita": "La unidad ya usa el experimento de la lana de acero."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U4-4.9 (fila 11)",
+       "cita": "Evidencias de reacción química frente a un cambio físico, en 6.°."
+      },
+      {
+       "fuente": "criterio disciplinar (a confirmar por el experto de Química)",
+       "cita": "Disolver cloruro de calcio libera calor, pero es un proceso de disolución, no una reacción."
+      }
+     ],
+     "confianza": "media",
+     "texto": "1.14. Clasificación experimental de reacciones exotérmicas y endotérmicas según el cambio de temperatura. Indicador: mide la temperatura antes y después de dos reacciones (vinagre con bicarbonato, que se enfría, y lana de acero humedecida con vinagre, que se calienta al oxidarse) y explica hacia dónde se transfiere la energía en cada caso."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 2,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G05-G08#9",
+   "tipo": "propuesta",
+   "titulo": "1.13. Identificación de reacciones de oxidación y reducción en fenómenos cotidianos.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 7,
+    "unidad_propuesta": "1. Compuestos inorgánicos (después de 1.3, al cerrar los óxidos)",
+    "tema_propuesto": "1.13. Identificación de reacciones de oxidación y reducción en fenómenos cotidianos.",
+    "indicador_logro": "Reconoce en la oxidación de un clavo, la combustión de una vela y la obtención de un metal a partir de su óxido la ganancia o pérdida de oxígeno, y nombra la sustancia que se oxida y la que se reduce.",
+    "conceptos": [
+     "Oxidación y reducción",
+     "Número de oxidación"
+    ],
+    "evidencia": [
+     "ENG 6, JP 7 (Oxidación y reducción); mover_antes: destino 7.°, hoy en 11.°, sin bloqueos",
+     "prerrequisito disponible: Número de oxidación (G05 4.7)"
+    ],
+    "justificacion": "Inglaterra y Japón enseñan oxidación y reducción en 6.° y 7.°; El Salvador, en 11.°. Encaja tras la formación de óxidos y se trata a nivel cualitativo. Se paga con la fusión 18.",
+    "conciliacion_v2": "El único candidato trata fosilización y datación; nada sobre oxidación y reducción."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G05-G08#9",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Japón trata en el equivalente a 7.° la oxidación y la reducción como ganancia y pérdida de oxígeno, y la malla ya forma óxidos en 7.° (1.1 a 1.3). Pero con esa definición, en el clavo y la vela nada pierde oxígeno: pedir ahí «la sustancia que se reduce» exige electrones o números de oxidación. La reducción se pide solo al obtener el metal.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/paises/japon.json JP-8361223412200000, p. 53 (grado SV 7)",
+       "cita": "La oxidación y la reducción son reacciones en las que interviene el oxígeno."
+      },
+      {
+       "fuente": "data/interim/paises/inglaterra.json ENG-QUI-KS3-29, p. 9",
+       "cita": "Uso del carbono para obtener metales a partir de sus óxidos."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.1",
+       "cita": "La malla trata oxidación y reducción formalmente en 11.°."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En Fe + O₂ y en la combustión, el O₂ se reduce solo según electrones o números de oxidación."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "1.13. Identificación de reacciones de oxidación y reducción en fenómenos cotidianos. Indicador: «Reconoce en la oxidación de un clavo, la combustión de una vela y la obtención de un metal a partir de su óxido (óxido de cobre con carbón, como demostración del docente, o el hierro en el alto horno) qué sustancia gana oxígeno (se oxida) y, en la obtención del metal, qué sustancia lo pierde (se reduce); distingue el uso cotidiano de «oxidarse» (herrumbre) del significado químico». La definición por transferencia de electrones queda para 11.° (unidad 6)."
+    },
+    {
+     "id": "PRO:quimica:G05-G08#9",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Definir por ganancia o pérdida de oxígeno es concreto y adecuado para 7.°, y continúa los óxidos de 1.1 y 1.2. Pero listar el número de oxidación como concepto invita a formalizar con reglas abstractas, y obtener un metal de su óxido no es viable en el aula: debe ser un caso descrito. Propongo nivel cualitativo, sin números de oxidación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.1 (fila 3) y G07-CIE-U1-1.2 (fila 4)",
+       "cita": "Óxidos en fenómenos cotidianos y su obtención con la lana de acero."
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U4-4.7 (fila 9)",
+       "cita": "Ejercicios de números de oxidación desde 5.°."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una definición observable antes de la regla formal; el formalismo, en 10.°–11.°."
+      }
+     ],
+     "confianza": "media",
+     "texto": "1.13. Identificación de oxidación y reducción en fenómenos cotidianos, a nivel cualitativo (ganancia o pérdida de oxígeno). Indicador: en la oxidación de un clavo o de la lana de acero y en la combustión de una vela, señala qué sustancia gana oxígeno; con imágenes o un video de cómo se obtiene hierro de su mineral, señala cuál lo pierde. Sin números de oxidación."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 2,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G10-G11#10",
+   "tipo": "propuesta",
+   "titulo": "3.15. Determinación de la estructura de compuestos orgánicos combinando espectros infrarrojos y de masas.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "3. Compuestos orgánicos (después de 3.12)",
+    "tema_propuesto": "3.15. Determinación de la estructura de compuestos orgánicos combinando espectros infrarrojos y de masas.",
+    "indicador_logro": "Propone la estructura de un compuesto orgánico sencillo a partir de su ion molecular en el espectro de masas y de las bandas del grupo funcional en el espectro infrarrojo, y justifica la elección con ambas evidencias.",
+    "conceptos": [
+     "Técnicas para determinar estructuras orgánicas",
+     "Espectrometría de masas",
+     "Grupos funcionales"
+    ],
+    "evidencia": [
+     "ACSCH130 Determinación de estructuras orgánicas (reforzar: 1 tema, débil)",
+     "prerrequisito: Grupos funcionales (G11 3.4 a 3.12) y Espectrometría de masas (acción 3, 10.°)"
+    ],
+    "justificacion": "ACSCH130 solo aparece de paso en el cálculo de fórmulas de 10.°. Va al cierre de la unidad, cuando ya se conocen los grupos funcionales, y retoma la espectrometría de 10.°. Se paga con la fusión 7.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega espectroscopía para estructuras orgánicas."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G10-G11#10",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "ACSCH130 pide combinar técnicas para determinar estructuras; en 11.° es razonable si se acota a elegir entre candidatas con una tabla de bandas. La ubicación tras 3.12 es mejorable: combinar espectros sirve sobre todo para distinguir isómeros de igual masa molar, y los isómeros llegan en 3.14. Depende de la acción 3 para leer el espectro de masas.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/u4_en.json ACSCH130",
+       "cita": "Datos de espectrometría de masas, cristalografía e infrarrojo para determinar estructuras orgánicas."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.14",
+       "cita": "Construye modelos de isómeros constitucionales y estereoisómeros."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Ácido propanoico y etanoato de metilo (C₃H₆O₂, M = 74) se distinguen por la banda O–H."
+      }
+     ],
+     "confianza": "media",
+     "texto": "3.15. Determinación de la estructura de compuestos orgánicos combinando espectros infrarrojos y de masas. Ubicación: al final de la unidad 3, después de 3.14 (isómeros). Indicador: «Elige entre dos o tres estructuras candidatas de la misma fórmula molecular (por ejemplo, ácido propanoico y etanoato de metilo, o propan-1-ol y metoxietano) usando el pico del ion molecular del espectro de masas y una o dos bandas características del infrarrojo (O–H ancha entre 3200 y 3550 cm⁻¹; C=O entre 1680 y 1750 cm⁻¹), con una tabla de bandas dada, y justifica la elección con ambas evidencias». Si no se adopta la acción 3 (espectrometría de masas en 10.°), este tema introduce la lectura del ion molecular."
+    },
+    {
+     "id": "PRO:quimica:G10-G11#10",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Coordinar dos espectros para inferir una estructura tiene mucha carga representacional; en 11.° es alcanzable con ejemplos resueltos y espectros simplificados, sin equipo de laboratorio. Depende de leer espectros de masas (acción 3), que la V2 no adoptó. Propongo acotarlo: bandas de pocos grupos funcionales y el ion molecular como masa molar, en moléculas pequeñas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.7 (fila 30)",
+       "cita": "Identificación práctica de aldehídos, cetonas, ácidos carboxílicos y derivados."
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.3 (fila 61)",
+       "cita": "Funcionamiento del espectrómetro de masas en Física de 11.°."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Ejemplos resueltos y pocas opciones bajan la carga al coordinar dos representaciones."
+      }
+     ],
+     "confianza": "media",
+     "texto": "3.15. Identificación de compuestos orgánicos sencillos con espectros infrarrojo y de masas simplificados. Indicador: tras ejemplos resueltos, reconoce en el infrarrojo la banda de un grupo O–H o C=O, toma del espectro de masas la masa molar (ion molecular) y elige entre dos o tres estructuras candidatas de hasta cuatro carbonos, justificando con ambas evidencias."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 1,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G10-G11#11",
+   "tipo": "propuesta",
+   "titulo": "9.8. Comparación de combustibles fósiles y biocombustibles según la energía liberada, su idoneidad de uso y sus productos de combustión.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "9. Compuestos del carbono (después de 9.3)",
+    "tema_propuesto": "9.8. Comparación de combustibles fósiles y biocombustibles según la energía liberada, su idoneidad de uso y sus productos de combustión.",
+    "indicador_logro": "Mide o calcula con datos la energía liberada por gramo de propano, gasolina, etanol y biodiésel, compara sus productos de combustión (CO2, CO, hollín, SO2) y recomienda un combustible para un uso local justificando su elección.",
+    "conceptos": [
+     "Combustibles fósiles y biocombustibles",
+     "Combustión",
+     "Entalpía de reacción y ecuaciones termoquímicas"
+    ],
+    "evidencia": [
+     "ACSCH038 Combustibles fósiles y biocombustibles (reforzar: sin cobertura)",
+     "ACSCH137 Síntesis de combustibles (reforzar: 1 tema, débil; G11 7.3)",
+     "prerrequisito: Combustión e Hidrocarburos (G11 9.3 y unidad 2)"
+    ],
+    "justificacion": "ACARA lo pide en la unidad 1, pero la combustión y los hidrocarburos llegan en 11.°; por eso va después de 9.3. Retoma la entalpía de 10.° y el etanol de caña de 7.3. Se paga con la fusión 8.",
+    "conciliacion_v2": "Sin candidatos; la V2 no compara combustibles fósiles y biocombustibles."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G10-G11#11",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "ACSCH038 respalda el tema y su ubicación tras la combustión (9.3) es correcta; retoma la entalpía de 10.° y el etanol de caña (7.3). Pero «medir» la energía del propano, la gasolina y el biodiésel no es seguro en un laboratorio escolar: los vapores de gasolina son muy inflamables. Se mide solo con etanol o parafina y el resto se calcula con datos tabulados.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/quimica_en_u1-3.json ACSCH038",
+       "cita": "Comparar combustibles fósiles y biocombustibles por energía, idoneidad y productos de combustión."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.3",
+       "cita": "Escribe y balancea reacciones de combustión de hidrocarburos."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U7-7.3",
+       "cita": "Producción de azúcar y etanol a partir de la caña."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La lámpara de alcohol y la vela son las fuentes de calorimetría habituales en la escuela."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "9.8. Comparación de combustibles fósiles y biocombustibles según la energía liberada, su idoneidad de uso y sus productos de combustión. Indicador: «Mide en el laboratorio la energía liberada por gramo de etanol (lámpara de alcohol) o de una vela; calcula con datos tabulados la del gas propano, la gasolina y el biodiésel; compara los productos de la combustión completa e incompleta (CO₂, CO, hollín) y el SO₂ de los combustibles que contienen azufre, y recomienda un combustible para un uso local justificando su elección, sin suponer que un biocombustible es neutro en carbono por sí mismo». No se queman gasolina, diésel ni gas en el aula."
+    },
+    {
+     "id": "PRO:quimica:G10-G11#11",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Comparar combustibles para un uso local es motivador y adecuado para 11.°. Pero 10.° 11.2 ya pide una tabla de combustibles con energía por gramo y CO₂: el tema debe partir de ella y aportar lo que falta (biocombustibles, otros productos de combustión, decisión argumentada). Quemar gasolina o propano en el aula no es seguro: medir solo con etanol.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U11-11.2 (fila 86)",
+       "cita": "Tabla comparativa de combustibles con energía por gramo y CO₂ emitido."
+      },
+      {
+       "fuente": "criterio de seguridad",
+       "cita": "Gasolina y propano son inflamables y volátiles; el etanol en mechero es habitual."
+      }
+     ],
+     "confianza": "media",
+     "texto": "9.8. Comparación de combustibles fósiles y biocombustibles para un uso local. Indicador: a partir de la tabla de energía por gramo de 10.° (11.2), agrega etanol y biodiésel, compara sus productos de combustión (CO₂, CO, hollín, SO₂) y recomienda con argumentos un combustible para un uso local; mide solo con un mechero de alcohol y usa datos tabulados para gasolina y propano."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 4,
+    "anclada": 2,
+    "ubicada": 2,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G10-G11#12",
+   "tipo": "propuesta",
+   "titulo": "9.9. Diseño de una ruta de síntesis para obtener un producto con propiedades específicas, con selección de reactivos y condiciones.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "9. Compuestos del carbono (después de 9.6)",
+    "tema_propuesto": "9.9. Diseño de una ruta de síntesis para obtener un producto con propiedades específicas, con selección de reactivos y condiciones.",
+    "indicador_logro": "Propone una ruta de una o dos reacciones para obtener un éster aromatizante, un jabón o un fármaco sencillo (ácido acetilsalicílico), justifica reactivos, condiciones y catalizador para maximizar rendimiento y pureza, y calcula el rendimiento esperado.",
+    "conceptos": [
+     "Síntesis química y rutas de reacción",
+     "Reacciones orgánicas características",
+     "Rendimiento de una reacción",
+     "Química verde y economía atómica"
+    ],
+    "evidencia": [
+     "ACSCH131 Síntesis química (reforzar: sin cobertura)",
+     "ACSCH133 Selección de reactivos y condiciones (reforzar: 1 tema, débil)",
+     "prerrequisito: Reacciones orgánicas características (G11 9.2 a 9.6) y Rendimiento de una reacción (G10 10.3)"
+    ],
+    "justificacion": "La malla trabaja cada reacción orgánica por separado, pero no pide combinarlas para obtener un producto. Es el cierre natural de la unidad 9 y aplica la química verde de 7.7. Se paga con la fusión 9.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega diseño de rutas de síntesis."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G10-G11#12",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "ACSCH131 y ACSCH133 lo respaldan y cierra bien la unidad 9 tras la esterificación (9.5), con el rendimiento de 10.3. Ajusto: «rendimiento esperado» es ambiguo (teórico o porcentual); sintetizar aspirina en el aula no es viable (anhídrido acético, corrosivo y precursor controlado); y 7.7 ya compara rutas por economía atómica, así que el tema debe centrarse en elegir reacciones y condiciones.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/u4_en.json ACSCH131 y ACSCH133",
+       "cita": "Seleccionar reactivos y condiciones para obtener un producto con rendimiento y pureza máximos."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U7-7.7",
+       "cita": "Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.5",
+       "cita": "Esterificación e hidrólisis de ésteres."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El anhídrido acético es corrosivo y figura entre los precursores sometidos a fiscalización internacional."
+      }
+     ],
+     "confianza": "media",
+     "texto": "9.9. Diseño de una ruta de síntesis para obtener un producto con propiedades específicas, con selección de reactivos y condiciones. Indicador: «Diseña en papel una ruta de una o dos reacciones ya estudiadas para obtener un producto (un éster aromatizante como caso central; un jabón como segundo caso), justifica reactivos, condiciones y catalizador para aumentar el rendimiento y la pureza (por ejemplo, exceso de un reactivo o retirar el agua en la esterificación) y calcula el rendimiento teórico y, con un dato experimental dado, el porcentual». El ácido acetilsalicílico se trata solo en papel. Aplica, sin repetirla, la economía atómica de 7.7."
+    },
+    {
+     "id": "PRO:quimica:G10-G11#12",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Diseñar una ruta de síntesis exige integrar varias reacciones: es una tarea de creación alcanzable en 11.° solo con andamiaje. La V2 ya compara dos rutas con economía atómica (7.7) y analiza el rendimiento de la esterificación (9.5). Propongo un caso guiado como cierre de la unidad 9, con productos viables en el aula; el ácido acetilsalicílico, solo como caso en papel.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U7-7.7 (fila 72)",
+       "cita": "Cálculo de la economía atómica de dos rutas de síntesis."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.5 (fila 81)",
+       "cita": "Esterificación con análisis del rendimiento de la síntesis."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una tarea de diseño con andamiaje (caso guiado, opciones acotadas) evita la sobrecarga."
+      }
+     ],
+     "confianza": "media",
+     "texto": "9.9. Propuesta guiada de una ruta de síntesis como cierre de la unidad 9. Indicador: con las reacciones de 9.2 a 9.6, propone una ruta de una o dos etapas para un éster aromatizante o un jabón, justifica reactivos, condiciones y catalizador, calcula el rendimiento esperado y la compara con otra ruta usando la economía atómica de 7.7. Otros productos, solo como caso en papel."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 2,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G10-G11#3",
+   "tipo": "propuesta",
+   "titulo": "3.11. Interpretación de espectros de masas para determinar la composición isotópica y la masa atómica relativa de un elemento.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "3. Modelos atómicos y estructura (después de 3.4)",
+    "tema_propuesto": "3.11. Interpretación de espectros de masas para determinar la composición isotópica y la masa atómica relativa de un elemento.",
+    "indicador_logro": "Lee en un espectro de masas (de cloro, magnesio o boro) la masa y la abundancia de cada isótopo, calcula la masa atómica relativa y describe las etapas del espectrómetro: ionización, aceleración, desviación y detección.",
+    "conceptos": [
+     "Espectrometría de masas",
+     "Isótopos",
+     "Masa atómica relativa",
+     "Iones"
+    ],
+    "evidencia": [
+     "ACSCH023 Espectrometría de masas (reforzar: sin cobertura)",
+     "ACSCH024 Masa atómica relativa (reforzar: 1 tema, débil)",
+     "prerrequisito: Isótopos, Iones y Masa atómica relativa (G10 3.4, mismo grado)"
+    ],
+    "justificacion": "ACARA lo ubica en la unidad 1 (≈ 10.°) y la malla no lo trabaja. Va después de 3.4, que da isótopos, iones y masa atómica promedio. Se paga con la fusión 4.",
+    "conciliacion_v2": "El único candidato trata fosilización; nada sobre espectrometría de masas."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G10-G11#3",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "ACSCH023 pide analizar espectros de masas para obtener la composición isotópica, y 3.4 ya calcula la masa atómica promedio con abundancias dadas: el tema muestra de dónde salen esos datos. Ajusto el indicador: ACARA no pide las etapas de un espectrómetro concreto, que dependen del tipo de aparato y aportan poco memorizadas; basta saber que ioniza y separa iones por masa/carga.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/quimica_en_u1-3.json ACSCH023",
+       "cita": "La espectrometría de masas ioniza sustancias y da espectros para determinar la composición isotópica."
+      },
+      {
+       "fuente": "data/interim/acara/quimica_en_u1-3.json ACSCH024",
+       "cita": "Masa atómica relativa como promedio ponderado frente a 1/12 del carbono-12."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U3-3.4",
+       "cita": "Calcula la masa atómica promedio a partir de la masa y la abundancia de los isótopos."
+      }
+     ],
+     "confianza": "media",
+     "texto": "3.11. Interpretación de espectros de masas para determinar la composición isotópica y la masa atómica relativa de un elemento. Indicador: «Lee en el espectro de masas de un elemento (magnesio o boro) la masa y la abundancia relativa de cada isótopo, calcula la masa atómica relativa y explica por qué no es un número entero; describe en términos generales que el aparato ioniza la muestra y separa los iones según su relación masa/carga». Si se usa el cloro, mostrar solo los picos de los átomos (35 y 37), no los de la molécula Cl₂."
+    },
+    {
+     "id": "PRO:quimica:G10-G11#3",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Leer un espectro de masas como un gráfico de barras y calcular la masa atómica relativa es adecuado para 10.° y da datos reales al cálculo de 3.4. Pero explicar ionización, aceleración, desviación y detección antes de que Física (11.° 10.3) enseñe la desviación magnética lleva a memorizar pasos sin comprenderlos. Propongo leer el espectro en 10.° y dejar el instrumento a Física.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U3-3.4 (fila 26)",
+       "cita": "Masa atómica promedio a partir de la masa y la abundancia de los isótopos."
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.3 (fila 61)",
+       "cita": "Relación masa-carga a partir del radio de la trayectoria en el espectrómetro."
+      }
+     ],
+     "confianza": "media",
+     "texto": "3.11. Interpretación de espectros de masas para obtener la composición isotópica y la masa atómica relativa. Indicador: lee en el espectro de masas de un elemento (cloro, magnesio o boro) la masa y la abundancia de cada isótopo y calcula su masa atómica relativa. El funcionamiento del espectrómetro queda para Física de 11.° (10.3)."
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 5,
+    "anclada": 0,
+    "ubicada": 5,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 0,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:quimica:G10-G11#5",
+   "tipo": "propuesta",
+   "titulo": "12.15. Explicación de la reversibilidad y del equilibrio dinámico con la teoría de colisiones y las energías de activación directa e inversa.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "quimica",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "12. Cinética y equilibrio químico (después de 12.4 y 12.7, antes de 12.8)",
+    "tema_propuesto": "12.15. Explicación de la reversibilidad y del equilibrio dinámico con la teoría de colisiones y las energías de activación directa e inversa.",
+    "indicador_logro": "Dibuja el perfil energético de una reacción reversible, señala las energías de activación directa e inversa y predice, con la frecuencia de colisiones, cómo cambian ambas velocidades al variar la concentración o la presión en un sistema cerrado.",
+    "conceptos": [
+     "Equilibrio químico dinámico",
+     "Teoría de colisiones",
+     "Energía de activación y perfil energético"
+    ],
+    "evidencia": [
+     "ACSCH092 Reversibilidad por energías de activación (reforzar: sin cobertura)",
+     "ACSCH094 Concentración y presión con teoría de colisiones (reforzar: sin cobertura)",
+     "ACSCH090 Reversibilidad (reforzar: 1 tema, débil)",
+     "prerrequisito: Teoría de colisiones (G10 12.4) → Equilibrio químico dinámico (G10 12.8)"
+    ],
+    "justificacion": "La unidad pasa de la cinética al cálculo de K sin explicar por qué una reacción es reversible. Este tema une las dos mitades antes de 12.8. Se paga con la fusión 6.",
+    "conciliacion_v2": "Sin candidatos; la V2 solo agrega temas en 2.°–9.°, no equilibrio químico."
+   },
+   "resolucion": {
+    "decision": "adoptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:quimica:G10-G11#5",
+     "rol": "experto-quimica",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "La unidad 12 pasa de la teoría de colisiones (12.4) a deducir Kc (12.8) y comparar Q con K (12.11) sin explicar cualitativamente por qué una reacción es reversible ni cómo cambian ambas velocidades al perturbar el sistema; eso piden ACSCH092 y ACSCH094. El indicador es correcto, ataca la idea de que en el equilibrio la reacción se detiene y está bien ubicado antes de 12.8.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/quimica_en_u1-3.json ACSCH092",
+       "cita": "La reversibilidad se explica con las energías de activación directa e inversa."
+      },
+      {
+       "fuente": "data/interim/acara/quimica_en_u1-3.json ACSCH094",
+       "cita": "Efecto de concentración y presión explicado con la teoría de colisiones en ambos sentidos."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.8",
+       "cita": "Deduce Kc de la igualdad de velocidades en reacciones elementales."
+      },
+      {
+       "fuente": "DIF:quimica/equilibrio-dinamico/1",
+       "cita": "Creer que al llegar al equilibrio la reacción se detiene."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PRO:quimica:G10-G11#5",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "Es un puente conceptual entre la cinética (12.4) y la deducción formal de K (12.8): explicar de forma cualitativa por qué una reacción es reversible antes del formalismo reduce la carga y enfrenta la idea de que en el equilibrio la reacción se detiene. Es adecuado para 10.° con el perfil energético. Debe retomar 12.4 y dejar el modelo de probetas a 12.8.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.4 (fila 95)",
+       "cita": "Teoría de colisiones con diagrama de energía potencial."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.8 (fila 99)",
+       "cita": "Deducción de Kc con el modelo de probetas y las leyes de velocidad."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Lo cualitativo antes del formalismo; una idea por paso."
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 5,
+    "anclada": 0,
+    "ubicada": 5,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 1,
+    "literatura": 0,
+    "otra": 1,
+    "inexistentes": []
+   }
+  }
+ ]
+}

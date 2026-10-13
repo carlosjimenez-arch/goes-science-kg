@@ -65,6 +65,10 @@ currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricul
 - **Panel de expertos IA** (spec 14): `experto-biologia`, `experto-fisica`, `experto-quimica`, `experto-tierra-espacio` y
   `psicopedagogo` dictaminan las decisiones que esperaban al MINED (`gskg panel preparar|consolidar|aplicar|informe`).
   Sus dictámenes no son confirmaciones del MINED: quedan como «dictamen del panel», con evidencia, y son reversibles.
+- **Bucle de fortalecimiento** (spec 14, sección 7). El subagente `refutador` impugna cada dictamen con citas literales,
+  y el código verifica esas citas en la fuente. Una sonda ciega mide la estabilidad, y lo impugnado vuelve a la réplica
+  del panel. Cada dictamen queda «sólido», «respaldado», «frágil» o «sin consenso»; lo frágil no se lleva al MINED como
+  recomendación sin una fuente primaria.
 
 ## Comandos
 ```bash
@@ -91,6 +95,8 @@ uv run gskg tutor turno <tema> --grado g | evaluar <actividad> "<respuesta>"   #
 uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
 uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirmar con el MINED las decisiones de contenido
 uv run gskg panel preparar --ronda n | consolidar --ronda n | aplicar | informe | resumen   # panel de expertos IA (spec 14)
+uv run gskg bucle anclar | impugnar --vuelta k | sonda --vuelta k | cerrar-impugnacion --vuelta k   # bucle (spec 14 §7)
+uv run gskg bucle replicar --vuelta k --paso p | cerrar-replica --vuelta k --paso p | solidez | cita "<fuente>" "<cita>"
 uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
 uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
 uv run gskg internacional --tramo 2_8 corregir-metadatos   # grados y Extension Part de los países, sin Vertex (spec 12)

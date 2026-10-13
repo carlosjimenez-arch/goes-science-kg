@@ -1,0 +1,285 @@
+{
+ "lote": "r13_experto-fisica",
+ "ronda": 13,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "replica_del_bucle": 1,
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md",
+  "prompts/bucle_refutar.md (sección «Réplica»)"
+ ],
+ "expedientes": [
+  {
+   "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "evalua": [
+      "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+     ],
+     "habilidad": "observar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella, sin apretarla, 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua fría, con hielo si hay. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+     "opciones": {
+      "A": "Se infla un poco en agua tibia y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+      "B": "Se infla en agua tibia porque el vapor del agua entra a la botella y empuja la bolsa.",
+      "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+      "D": "Se infla más en agua fría que en agua tibia, porque el aire frío ocupa más espacio."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/relaciones-presion-volumen-temperatura-gases/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La variable que cambias es la temperatura. La bolsa floja no se estira, así que la presión queda casi igual a la de afuera y el volumen del aire sube y baja con la temperatura. El vapor del agua no entra a la botella.",
+     "duracion_min": 12,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+     },
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+     "nombre": "Relaciones presión-volumen-temperatura en gases",
+     "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "resolucion_vigente": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Con un globo de hule que se estira, la presión interna sube y el proceso deja de ser casi isobárico, lo que contradice la conclusión que se premia (nota abierta de los redactores). Una bolsa plástica delgada y floja mantiene la presión igual a la de afuera, como ya hace la actividad abierta del mismo objetivo. Además, el agua caliente del chorro es rara en las escuelas salvadoreñas.",
+     "evidencia": [
+      {
+       "fuente": "data/pedagogia/REVISION_PENDIENTE.md (G09-CIE-U2-2.4, nota 6)",
+       "cita": "isobárica solo si la bolsa queda floja; con un globo de hule la presión sube"
+      },
+      {
+       "fuente": "ACT:G09-CIE-U2-2.4/obj-abierta",
+       "cita": "usa una bolsa plástica delgada que se infla un poco y queda floja"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "una membrana sin tensión no añade presión; el hule estirado sí (algunos kPa)"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "enunciado": "Con ayuda de tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella de plástico vacía. Pon la botella 3 minutos en un recipiente con agua caliente que prepare tu docente (no hirviendo) y luego 3 minutos en agua con hielo. Anota qué le pasa a la bolsa en cada caso, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "opciones": {
+       "A": "En agua caliente la bolsa se infla un poco y en agua fría se desinfla: como la bolsa floja no se estira, la presión queda casi igual a la de afuera y el volumen del aire aumenta al subir la temperatura y disminuye al bajarla.",
+       "B": "La bolsa se infla porque el vapor del agua caliente entra a la botella.",
+       "C": "La bolsa no cambia, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+       "D": "En agua fría la bolsa se infla más, porque el aire frío ocupa más espacio."
+      },
+      "retroalimentacion": "La variable que cambias es la temperatura. La bolsa floja no se estira, así que la presión queda casi igual a la de afuera y el volumen del aire sube y baja con la temperatura. El vapor del agua no entra a la botella."
+     }
+    },
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Suma 167 palabras y la clave tenía 45 frente a 14 a 18: carga alta y pista de largo. Se numeran los pasos, como en las otras prácticas, y se acorta la clave conservando la presión casi constante (la bolsa floja que no se estira sigue explicada en la retroalimentación). B y D se alargan sin cambiar su error. Seguridad intacta: agua caliente que prepara el docente.",
+     "evidencia": [
+      {
+       "fuente": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09 (opciones)",
+       "cita": "A 45 palabras; B 14, C 18, D 15"
+      },
+      {
+       "fuente": "data/pedagogia/REVISION_PENDIENTE.md (G09-CIE-U2-2.4, nota 6)",
+       "cita": "isobárica solo si la bolsa queda floja"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment",
+       "cita": "mantener las opciones de largo parecido"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica vacía. Paso 2: pon la botella 3 minutos en agua caliente que prepare tu docente (no hirviendo). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "opciones": {
+       "A": "Se infla un poco en agua caliente y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+       "B": "Se infla en agua caliente porque el vapor del agua entra a la botella y empuja la bolsa.",
+       "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+       "D": "Se infla más en agua fría que en agua caliente, porque el aire frío ocupa más espacio."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Se conserva mi corrección de la etapa 1: la bolsa delgada y floja en lugar del globo. Que la clave abreviada diga «a presión casi constante» es exacto, y la razón (la bolsa floja no se estira) quedó en la retroalimentación. Los pasos numerados y el agua caliente que prepara el docente mantienen la seguridad. Distractores falsos y mapeo intactos. Correcto.",
+     "evidencia": [
+      {
+       "fuente": "revisión experto-fisica, ronda 1",
+       "cita": "bolsa floja: la presión interna queda igual a la exterior, proceso casi isobárico"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a presión constante, V es proporcional a T absoluta"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La física de la bolsa floja es correcta, pero el montaje pide «agua caliente… (no hirviendo)», que admite 70 a 90 °C, y la malla de 9.° prescribe agua tibia servida por la docente. La botella con aire flota: hay que sostenerla 3 minutos dentro del agua, y el PET se ablanda cerca de 70 °C. Con agua tibia y botella grande el efecto se ve.",
+    "confianza": "media",
+    "cambios": {
+     "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+     "opciones": {
+      "A": "Se infla un poco en agua tibia y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+      "B": "Se infla en agua tibia porque el vapor del agua entra a la botella y empuja la bolsa.",
+      "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+      "D": "Se infla más en agua fría que en agua tibia, porque el aire frío ocupa más espacio."
+     }
+    },
+    "patron": "otro",
+    "contraevidencia": [
+     {
+      "fuente": "TEMA:G09-CIE-U2-2.4",
+      "cita_literal": "Experimenta con jeringas selladas y globos en agua tibia y fría servida por la docente",
+      "dice": "la malla prescribe agua tibia y fría, servida por la docente",
+      "donde": "G09-CIE-U2-2.4 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 6)"
+     },
+     {
+      "fuente": "TEMA:G09-CIE-U2-2.1",
+      "cita_literal": "El calor lo maneja la docente",
+      "dice": "en la misma unidad de 9.° la fuente de calor la maneja la docente",
+      "donde": "G09-CIE-U2-2.1 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 3)"
+     }
+    ],
+    "lote": "b1_refutador_fisica_5",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Cambio a corregir. Verifiqué que la malla de 9.° pide agua tibia y fría servida por la docente; «caliente, no hirviendo» admite 70–90 °C, con riesgo de quemadura al sostener tres minutos una botella que flota, y el PET se ablanda cerca de 70 °C. Con agua tibia y botella grande el efecto se ve (≈ 5 % de volumen). Agrego «sin apretarla»: apretar inflaría la bolsa por otra causa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (fila 6)",
+       "cita": "La malla prescribe agua tibia y fría servida por la docente.",
+       "cita_literal": "Experimenta con jeringas selladas y globos en agua tibia y fría servida por la docente"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.1 (fila 3)",
+       "cita": "En la misma unidad la fuente de calor la maneja la docente.",
+       "cita_literal": "El calor lo maneja la docente"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a presión constante V es proporcional a T absoluta: de unos 28 °C a 43 °C, ΔV/V ≈ 15/301 ≈ 5 %, unos 100 mL en una botella de 2 L, visibles en una bolsa delgada"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "apretar la botella reduce su volumen y empuja aire a la bolsa: variable no controlada que imita el efecto"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella, sin apretarla, 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "opciones": {
+       "A": "Se infla un poco en agua tibia y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+       "B": "Se infla en agua tibia porque el vapor del agua entra a la botella y empuja la bolsa.",
+       "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+       "D": "Se infla más en agua fría que en agua tibia, porque el aire frío ocupa más espacio."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "corregir",
+     "justificacion": "Respaldo el agua tibia que sirve la docente y el «sin apretarla»: más seguro y fiel a la malla. Dos ajustes de forma: no todas las escuelas tienen hielo y la malla dice agua «tibia y fría», así que el paso 3 pide agua fría, con hielo si hay; y 8 minutos no alcanzan para armar, sumergir 3 + 3, anotar y responder: subo a 12 (máximo 15).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (fila 6)",
+       "cita": "La malla pide agua tibia y fría servida por la docente; no exige hielo.",
+       "cita_literal": "Experimenta con jeringas selladas y globos en agua tibia y fría servida por la docente"
+      },
+      {
+       "fuente": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09 (enunciado vigente)",
+       "cita": "pasos de 3 y 3 minutos más armado y registro, con duracion_min 8"
+      },
+      {
+       "fuente": "config/aprendizaje.yaml (refuerzo)",
+       "cita": "minutos_max_por_refuerzo: 15"
+      },
+      {
+       "fuente": "criterio disciplinar (para que lo confirme el experto)",
+       "cita": "de unos 43 °C a agua del chorro (≈ 25 °C) el volumen baja ≈ 6 %: la bolsa se desinfla igual"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella, sin apretarla, 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua fría, con hielo si hay. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "duracion_min": 12
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: visto bueno final del experto"
+  }
+ ]
+}

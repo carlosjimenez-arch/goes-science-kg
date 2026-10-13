@@ -27,6 +27,8 @@ Cada tarea de IA por lotes tiene su subagente, con su prompt, sus reglas duras y
 | `redactor-bloques` | título y resumen de bloques temáticos | `data/interim/comunidades/` | `gskg grados resumenes` |
 | `conciliador-propuestas` | propuestas frente a una malla nueva del MINED | `data/interim/propuestas/` | `gskg propuesta unir-adopcion` |
 | `redactor-actividades` | actividades, dificultades y microtemas de un objetivo (nacen «propuesta_pendiente») | `data/pedagogia/lotes/` | `gskg tutor unir-actividades` |
+| `experto-biologia`, `experto-fisica`, `experto-quimica`, `experto-tierra-espacio`, `psicopedagogo` | panel de expertos IA: dictámenes, réplicas del bucle y sonda ciega (spec 14) | `data/interim/panel/lotes/` | `gskg panel consolidar` · `gskg bucle cerrar-*` |
+| `refutador` | revisor adversarial del bucle de fortalecimiento: impugna cada dictamen con citas literales que el código verifica en la fuente (spec 14, sección 7) | `data/interim/panel/bucle/lotes/` | `gskg bucle cerrar-impugnacion` |
 | `verificador-hallazgos` | verifica hallazgos contra las fuentes (solo lectura) | — | — |
 
 Las reglas de validación viven en el código: `src/goes_science_kg/lotes.py` reúne, por tipo de lote, la misma función

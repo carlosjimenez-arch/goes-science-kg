@@ -130,9 +130,15 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
   Equilibrio químico.
 
 ### Ciencias de la Tierra y del Espacio
-- **Efecto invernadero no retomado:** la V2 no lo menciona en 9.°–11.°, y los 8 países con núcleo lo tienen (JP
-  地学基礎 «温室効果», p. 128; KR [10통과2-02-03], p. 90; TW ENb-Vc, p. 43; ON SNC2D, p. 73). La V2 trata las
-  causas del cambio climático en Biología 11.° (G11-BIO-U1-1.8) **sin el mecanismo físico** que lo explica.
+- **Efecto invernadero: sí se retoma, pero sin evaluarse** (corregido por el bucle de fortalecimiento,
+  2026-10-12). Este README decía que la V2 no lo menciona en 9.°–11.°, y es falso. Lo trae en las microhabilidades:
+  - G10-FIS-U13-13.3 (E6) pide explicar cómo los gases de efecto invernadero alteran el balance de radiación;
+  - G11-BIO-U1-1.8 retoma el efecto natural;
+  - G11-FIS-U22-22.4 lo liga a la emisión infrarroja.
+
+  La verificación de 2026-10-08 solo leyó los indicadores. Lo que falta es que el indicador de 13.3 lo nombre, si
+  el MINED quiere evaluarlo. Los países lo tienen en el núcleo: JP 地学基礎 «温室効果», p. 128; KR [10통과2-02-03],
+  p. 90; TW ENb-Vc, p. 43; ON SNC2D, p. 73.
 - **Atmósfera (capas y composición) no retomada:** la V2 la tiene en 3.° y en 7.° (capas: G07-CIE-U5-5.11), y 5
   países la tienen en el núcleo de 9.°–11.°. El efecto invernadero se simula en 7.° (G07-CIE-U6-6.13); lo que falta
   en 9.°–11.° es su mecanismo físico (corrección del panel de expertos, 2026-10-12).
@@ -145,13 +151,16 @@ Formato de la evidencia: archivo de la V2, hoja y fila; país, documento y pági
 2. **Química y Física de 10.°–11.°:** marcar como *profundización* los 21 + 12 conceptos de especialización, para
    que el núcleo obligatorio se parezca al de JP, TW y EE. Otra opción es tratarlos de forma cualitativa, como
    hace TW con la física moderna.
-3. **Física nuclear** (fisión, fusión y radiación ionizante): adelantarla a 9.° o 10.°.
+3. **Física nuclear:** coordinar 10.° en lugar de agregar contenido en 9.°. La V2 ya compara α, β y γ en Química
+   10.° (G10-QUI-U3-3.2) y usa la ley de desintegración en Biología 10.° (G10-BIO-U5-5.3) antes de que Física 11.°
+   la formalice. Lo que llega tarde es la fisión, la fusión y los efectos de la radiación ionizante: tratarlos de
+   forma cualitativa en 10.° (dictamen del panel tras el bucle, 2026-10-12).
 4. **Secuencias:** gases (leyes antes de procesos termodinámicos), ondas (superposición antes de interferencia),
    redox (formal antes de sus aplicaciones), retomar la mitocondria antes del metabolismo e hidrocarburos antes de
    isomería.
    Hay que coordinar Física y Química de 10.° para no repetir las leyes de los gases.
-5. **Tierra y Espacio en Bachillerato:** incluir el efecto invernadero y la atmósfera, por ejemplo en la
-   Física 10.° de transferencia de calor y radiación, junto al cambio climático de Biología 11.°. JP y TW muestran
+5. **Tierra y Espacio en Bachillerato:** retomar la atmósfera. El efecto invernadero ya está en la Física de 10.°
+   (G10-FIS-U13-13.3); basta con que su indicador lo nombre. JP y TW muestran
    que se puede tener una Tierra y Espacio común breve (2–4 créditos).
 6. **Demanda en Física y Tierra y Espacio:** reescribir indicadores de *aplicar* como *razonar* (predecir,
    justificar con modelos, diseñar y evaluar investigaciones), sin agregar contenido.
@@ -173,7 +182,7 @@ resto en ambiente y recursos) y ON extrae las «Big Ideas» de los cursos.
 | 5 | Desintegración radiactiva tardía | ❌ Falso (G10-QUI-U3-3.2, G10-BIO-U5-5.3). Corregido: unión de etiquetados |
 | 6 | Primera ley de Newton no retomada | ❌ Falso (G10-FIS-U5-5.2). Corregido: ids mal escritos y unión |
 | 7 | Fisión y fusión tardías | ✅ Confirmado frente a JP, TW y EE (p. 110, p. 40, p. 21); ⚠️ SG y ENG Combined no tienen fisión: el conteo automático la sobreestima |
-| 8 | Efecto invernadero no retomado | ✅ Confirmado (sin mención en V2 9.°–11.°; JP p. 128; KR p. 90; TW p. 43) |
+| 8 | Efecto invernadero no retomado | ❌ Falso (bucle de fortalecimiento, 2026-10-12): está en las microhabilidades de G10-FIS-U13-13.3, G11-BIO-U1-1.8 y G11-FIS-U22-22.4; esta verificación solo leyó los indicadores |
 | 9 | Organelos no retomados | ⚠️ Parcial: falta la mitocondria (SG p. 43) |
 | 10 | Física moderna en el núcleo de TW | ✅ Confirmado (p. 39; código Ⅴc, p. 15) |
 | 11 | Radiactividad en el núcleo de SG y ENG | ✅ Confirmado (SG sección 16; ENG p. 36) |

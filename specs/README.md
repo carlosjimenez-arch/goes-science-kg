@@ -18,5 +18,6 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 11 | [grafos_internacionales_9_11](11_grafos_internacionales_9_11.md) | 9 países frente a la malla V2 en 9.°–11.° |
 | 12 | [grafos_internacionales_2_8](12_grafos_internacionales_2_8.md) | El mismo contraste en 2.°–8.° |
 | 13 | [apoyo_al_aprendizaje](13_apoyo_al_aprendizaje.md) | Tutor que complementa la malla sobre el grafo (diseño y prototipo) |
+| 14 | [panel_expertos](14_panel_expertos.md) | Panel de expertos IA y su bucle de fortalecimiento (revisión interina) |
 
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.

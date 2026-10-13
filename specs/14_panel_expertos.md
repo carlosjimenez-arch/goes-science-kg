@@ -97,7 +97,109 @@ uv run gskg panel consolidar --ronda 1 --serie inc
 
 ## 6. Riesgos
 - **Sesgo compartido.** Los roles son el mismo tipo de modelo y pueden compartir sesgos. La unanimidad no equivale a
-  una validación independiente; por eso todo queda con evidencia y es reversible.
+  una validación independiente; por eso todo queda con evidencia y es reversible, y pasa por el bucle de la
+  sección 7.
 - **Referencias inventadas.** Están prohibidas y se pide verificar en la fuente. Aun así, lo que el panel cite fuera
   del repositorio debe tomarse como argumento, no como prueba.
 - **Costo.** Es una ronda por tipo de expediente con subagentes de Claude, sin Vertex.
+
+## 7. Bucle de fortalecimiento (`src/goes_science_kg/bucle.py`, `gskg bucle …`)
+> Agregado el 2026-10-12, a pedido del responsable del proyecto: fortalecer los hallazgos del panel con un diseño de
+> bucles agénticos antes de llevarlos al MINED o a un estudiante.
+
+### 7.1 Por qué
+La unanimidad del panel no basta: los cinco roles son el mismo tipo de modelo. Antes del bucle, el código midió la
+evidencia de los 360 dictámenes resueltos que afirman algo sobre las fuentes (todo menos el contenido y el piloto):
+- solo 91 (25 %) traían una cita que está literal en una fuente primaria;
+- 263 citaban una fuente que existe, pero con una paráfrasis o una traducción que no se puede comprobar;
+- 6 decisiones no tenían ninguna fuente primaria (solo criterio o informes del proyecto);
+- 2 citaban algo que no existe: una página fuera del documento y un tema que no está en la malla;
+- 165 evidencias eran circulares: el README del contraste, el propio contraste u otro dictamen.
+
+### 7.2 Diseño: tres bucles anidados
+**Bucle interno: agente ↔ validador, segundos.** El revisor adversarial (`refutador`) escribe su salida, y el hook
+SubagentStop la devuelve a corregir si una cita literal no aparece en la fuente que nombra (hasta 3 veces). El
+agente se corrige solo antes de terminar, con `gskg bucle cita "<fuente>" "<cita>"`.
+
+**Bucle medio: impugnación ↔ réplica, una vuelta por corrida.**
+```
+         resuelto por el panel
+                  │
+   anclaje (código) ──► nivel: anclado · ubicado · sin fuente primaria · fuente inexistente
+                  │
+   ┌──────────────┴───────────────┐
+   impugnación (refutador)        sonda ciega (muestra, mismos roles, sin ver la resolución)
+   └──────────────┬───────────────┘
+   el código verifica las citas: solo la contraevidencia anclada reabre; una discrepancia de la sonda también
+                  │
+     sostenida ◄──┴──► impugnada ──► réplica del panel (unanimidad → mantiene o cambia;
+                                       sin unanimidad tras deliberar o confianza baja → una persona)
+                                             │
+                               cambiada ─────┴──► vuelta siguiente: solo lo que cambió se vuelve a impugnar
+```
+**Bucle externo: de los errores a las reglas, entre corridas.** Cada impugnación lleva un `patron` del error
+(`config/panel.yaml`, `bucle.patrones`). Un patrón que se repite se convierte en una regla del código o del prompt,
+como pasó antes con la «Extension Part» en cursiva de HK (spec 12) o con la clave más larga de los ítems (spec 13).
+
+### 7.3 Reglas de diseño
+1. **El modelo propone y el código decide.** Toda cita del bucle es literal, en el idioma de la fuente, y el código
+   la busca en la fila de la malla, el objetivo del país o la página del PDF. Es la misma idea del evaluador y del
+   verificador de fidelidad (spec 13). El texto se normaliza (sin acentos, espacios ni mayúsculas), se aceptan
+   tramos separados por «…» y se miran hasta 8 páginas vecinas, porque la numeración impresa no es la posición en el
+   PDF.
+2. **Asimetría de la prueba.** Para reabrir un expediente hace falta contraevidencia anclada, con confianza media o
+   alta. En el contenido basta un error concreto con su corrección válida. Para sostenerlo hay que haber buscado: el
+   refutador aporta anclas literales a favor, y lo que no tiene ninguna queda frágil.
+3. **Independencia por postura.** El refutador no es miembro del panel y se le mide por los errores reales que
+   encuentra. La sonda es ciega: no ve la resolución, ni los dictámenes, ni el informe.
+4. **Convergencia acotada.** Una vuelta impugna, replica y aplica. La siguiente solo vuelve a impugnar lo que cambió.
+   El bucle se detiene si una vuelta no cambia nada o al llegar a `vueltas_max` (2). Lo que cambió en la última
+   vuelta queda frágil: no se volvió a probar.
+5. **Escalamiento a una persona**, como en el panel: una réplica sin unanimidad tras deliberar, o con confianza baja,
+   queda «sin consenso».
+6. **Trazable y reversible.** Todo queda en `data/interim/panel/estado.json`:
+   - por expediente: `bucle.anclaje`, `bucle.vueltas[]` (impugnación, sonda y réplica), `bucle.anclas`, `bucle.solidez`;
+   - por resolución reemplazada: `historial_resoluciones`.
+
+   `gskg panel aplicar` vuelve a aplicar lo que cambió:
+   - retira la observación del panel si ya no rechaza;
+   - devuelve una asignación a su versión original;
+   - actualiza la clase del contraste.
+
+   Lo humano no se toca. Las capas guardan la solidez en el registro del panel, y el CSV para el MINED la muestra en
+   el estado («dictamen del panel: aceptar, sólido»).
+
+### 7.4 Solidez
+| Etiqueta | Significa |
+|---|---|
+| **sólido** | sobrevivió a la impugnación sin contraevidencia anclada y tiene al menos una cita literal verificada en una fuente primaria (en contenido: el revisor adversarial no encontró errores) |
+| **respaldado** | sobrevivió, pero su fuente solo está ubicada (paráfrasis o traducción), o la réplica lo mantuvo frente a contraevidencia anclada o a una discrepancia de la sonda |
+| **frágil** | sin fuente primaria verificable, con una fuente inexistente, o cambiado en la última vuelta sin volver a impugnarse |
+| **sin consenso** | lo decide una persona |
+
+Antes de llevar un hallazgo al MINED como recomendación, lo frágil necesita una fuente primaria.
+
+### 7.5 Circuito
+```bash
+uv run gskg bucle anclar                       # sin IA: nivel de anclaje de cada dictamen
+uv run gskg bucle impugnar --vuelta 1          # lotes del refutador → data/interim/panel/bucle/lotes/
+uv run gskg bucle sonda --vuelta 1             # muestra ciega (63 de 360 con la semilla 2026) → lotes c1 del panel
+# subagentes: refutador (lote_b1_*) y roles del panel (lote_c1_*)
+uv run gskg bucle cerrar-impugnacion --vuelta 1
+uv run gskg bucle replicar --vuelta 1 --paso 1 # réplica (ronda 11); paso 2: deliberación o psicopedagogo; paso 3: experto
+uv run gskg bucle cerrar-replica --vuelta 1 --paso 1
+uv run gskg bucle impugnar --vuelta 2          # solo lo que cambió
+uv run gskg panel aplicar && uv run gskg panel informe   # reaplica lo cambiado; DICTAMEN.md con la solidez
+uv run gskg bucle cita "<fuente>" "<cita>"     # ¿está literal? (lo usan los agentes)
+uv run gskg bucle fuente "<fuente>"            # el texto en que se busca
+```
+
+### 7.6 Límites
+- **El refutador también es un modelo del mismo tipo.** La independencia es de postura y de información (ciega), no de
+  modelo. Un segundo proveedor de modelo como refutador sería más fuerte, pero gasta fuera de Claude y hay que
+  aprobarlo.
+- **Una cita literal prueba que la fuente dice eso**, no que la lectura del panel sea la correcta. Por eso la réplica
+  la pondera y lo contestado queda «respaldado», no «sólido».
+- **Las traducciones no se anclan.** Hay que citar en el idioma de la fuente. Las afirmaciones de ausencia («no
+  aparece en todo el marco») tampoco se anclan: quedan como paráfrasis ubicada.
+- **La sonda es una muestra.** Su acuerdo estima la estabilidad por tipo; no garantiza cada expediente.

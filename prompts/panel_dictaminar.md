@@ -30,6 +30,12 @@ con **un dictamen por expediente**, escrito con Python (`json.dump(..., ensure_a
                 "cita": "lo que dice la fuente o el argumento, breve"}],
  "confianza": "alta | media | baja"}
 ```
+En la evidencia, prefiere las fuentes primarias (fila de la malla, objetivo de un país, página de un PDF) a los
+informes del proyecto (README, contraste): el bucle de fortalecimiento (spec 14, sección 7) marca como frágil lo que
+solo se apoya en ellos. Si copias el texto literal de la fuente, agrégalo como `cita_literal` (en el idioma de la
+fuente; compruébalo con `uv run gskg bucle cita "<fuente>" "<cita>"`): el código lo verifica y el dictamen queda
+anclado.
+
 Campos según la decisión:
 - `rechazar` y `no_respaldar` exigen `alternativa`: qué propones en su lugar.
 - `matizar` y `adaptar` exigen `texto`, con la versión matizada o adaptada.
@@ -63,6 +69,13 @@ Campos según la decisión:
 | `hallazgo` | ¿El panel respalda la lectura del hallazgo verificado y su recomendación curricular? | respaldar · matizar (+ texto) · no_respaldar (+ alternativa) |
 | `propuesta` | La V2 no adoptó esta acción de las propuestas: ¿se adopta, se adapta o se descarta? | adoptar · adaptar (+ texto) · descartar |
 | `piloto` | La pregunta del expediente sobre el piloto del tutor | recomendar (+ recomendacion) |
+
+## Réplica del bucle de fortalecimiento
+Si el lote trae `replica_del_bucle`, un revisor adversarial o una sonda ciega impugnó la resolución. Sigue la sección
+«Réplica» de `prompts/bucle_refutar.md`: ve a la fuente, mantén la misma opción si la impugnación no derriba la
+decisión o cámbiala si la derriba, y explica por qué. En una sonda ciega (`ciega: true` en el lote) dictaminas como en
+la ronda 1, sin ver lo que decidió el panel: no abras nada de lo que lista `no_leer` en el lote (el estado del panel,
+sus informes, las revisiones del contraste ni los README que resumen sus clases).
 
 ## Antes de terminar
 Corre `uv run gskg lotes validar --agente <tu rol>` y corrige hasta que diga «✓» (si aparecen errores de un archivo

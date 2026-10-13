@@ -44,11 +44,11 @@ Puntos que señalaron los propios redactores:
 2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).
 3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta
    −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.
-4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.
+4. Seguridad: globo o bolsa en botella con agua **tibia** que sirve el docente (que se pueda tocar sin quemarse) y agua fría, con hielo si hay; lápiz de punta roma. Corregido por el bucle de fortalecimiento (2026-10-12): «agua caliente, no hirviendo» admitía 70–90 °C, con riesgo de quemadura, y el PET se ablanda; la malla pide agua tibia (G09-CIE-U2-2.4).
 5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).
 
 6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda
-   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir.
+   floja (con un globo de hule la presión sube). Usar bolsa delgada, agua tibia y botella grande, sin apretarla.
 
 ## G09-CIE-U3-3.6 · constante de equilibrio
 1. Falta una segunda dificultad: «incluye sólidos o líquidos puros en K» (sus distractores hoy no se mapean).

@@ -1,0 +1,818 @@
+{
+ "lote": "b1_refutador_biologia_5",
+ "vuelta": 1,
+ "rol": "refutador",
+ "disciplina": "biologia",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-biologia.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "PED:MT:biologia/productores-consumidores-descomponedores/G05",
+   "tipo": "contenido",
+   "titulo": "MT:biologia/productores-consumidores-descomponedores/G05",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/productores-consumidores-descomponedores",
+     "nombre": "Productores, consumidores y descomponedores",
+     "definicion": "Papeles de los organismos en un ecosistema: producir materia orgánica, consumirla o descomponerla devolviendo nutrientes al suelo.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G05-CIE-U6-6.14",
+     "grado": 5,
+     "indicador": "6.14. Identifica los principales procesos químicos que ocurren en el suelo.",
+     "evidencia": "Registro de reacciones en muestras de suelo"
+    },
+    "adaptacion": {
+     "palabras_max": 60,
+     "registro": "concreto con primeras representaciones"
+    },
+    "notas_de_los_redactores": "1. El objetivo pide «procesos químicos del suelo» y el concepto principal es «formación, componentes y tipos». El\n   redactor tomó como procesos químicos el humus, la oxidación del hierro y la caliza con vinagre: confirmar que es lo\n   que pide el MINED en 5.°.\n2. `obj-2` pone 0 burbujas con agua en las cuatro muestras; el suelo seco suelta algo de aire al mojarse.\n3. Lombrices agrupadas con los descomponedores (en rigor, detritívoros).\n4. Meteorización por cambios de temperatura entre el día y la noche (sondeo 2): válida, pero su peso real se discute.\n5. Afirmaciones locales por verificar: el color rojizo de muchos suelos salvadoreños por óxidos de hierro, la pómez de\n   Ilopango como roca ígnea, coladas del volcán de San Salvador, la caliza formada con conchas (regla general).\n6. La malla introduce la meteorización en este mismo tema: fallar sus sondeos es esperable, no una base que falte.\n7. «Productores, consumidores y descomponedores» es prerrequisito con confianza media.\n8. Un error de la rúbrica abierta («la lluvia se lleva la tierra») no tiene dificultad asociada."
+   },
+   "resolucion": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PED:MT:biologia/productores-consumidores-descomponedores/G05",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Exacto para 5.°: productor, consumidores y descomponedores bien ejemplificados en la milpa, con el retorno de nutrientes que el maíz reutiliza. «Fabrica su alimento con la luz del sol» es una simplificación aceptable que no contradice la fotosíntesis posterior. El ejemplo del tronco es correcto y el criterio coincide con la comprobación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G05-CIE-U6-6.14",
+       "cita": "Identifica los principales procesos químicos del suelo; el concepto es base (prerrequisito)"
+      },
+      {
+       "fuente": "ACT:biologia/productores-consumidores-descomponedores/comprobacion-G05",
+       "cita": "predecir qué pasa con los restos y los nutrientes del suelo sin descomponedores"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "la descomposición devuelve nutrientes minerales que las plantas absorben"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:MT:biologia/productores-consumidores-descomponedores/G05",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Adecuado a 5.°: un contexto conocido (la milpa), cada rol con un ejemplo concreto y 57 palabras (máximo 60). La práctica de la abonera presenta el humus como abono oscuro, lo que completa el término. La comprobación pide predecir un caso nuevo (sin descomponedores en Montecristo), no repetir la explicación.",
+     "evidencia": [
+      {
+       "fuente": "config/aprendizaje.yaml (adaptacion.primaria_alta)",
+       "cita": "palabras_max 60; registro: concreto con primeras representaciones"
+      },
+      {
+       "fuente": "ACT:biologia/productores-consumidores-descomponedores/practica-G05 (opción C)",
+       "cita": "«lo que queda es abono oscuro (humus) con nutrientes»"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "MT:biologia/productores-consumidores-descomponedores/G05",
+    "tipo": "microtema",
+    "concepto": "CON:biologia/productores-consumidores-descomponedores",
+    "grados": [
+     5
+    ],
+    "titulo": "¿Quién recicla los restos?",
+    "explicacion": "En la milpa, el maíz es productor: fabrica su alimento con la luz del sol. El gusano que come sus hojas y el pájaro que come al gusano son consumidores. Cuando caen hojas o muere un animal, los descomponedores, como hongos y bacterias, transforman esos restos en humus, rico en nutrientes que el maíz vuelve a usar.",
+    "ejemplo": "Un tronco caído en el bosque se ablanda, se llena de hongos y, con los años, termina siendo parte del suelo.",
+    "practica": "ACT:biologia/productores-consumidores-descomponedores/practica-G05",
+    "comprobacion": "ACT:biologia/productores-consumidores-descomponedores/comprobacion-G05",
+    "duracion_min": 8,
+    "criterio": "Responde correctamente la comprobación: predice qué pasaría con los restos y los nutrientes del suelo si faltaran los descomponedores.",
+    "estado": "propuesta_pendiente",
+    "fuentes": [
+     "CON:biologia/productores-consumidores-descomponedores",
+     "TEMA:G05-CIE-U6-6.14"
+    ],
+    "origen": "redactor-actividades (G05-CIE-U6-6.14)",
+    "version": "pedagogia-v1",
+    "revisado_por": ""
+   },
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ]
+  },
+  {
+   "id": "PRO:biologia:G02-G04#1",
+   "tipo": "propuesta",
+   "titulo": "4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, y propagación por esquejes o tubérculos.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G02-G04",
+    "accion": "nuevo",
+    "grado_propuesto": 3,
+    "unidad_propuesta": "4. Las plantas. (después de 4.2)",
+    "tema_propuesto": "4.10. Descripción de cómo se reproducen las plantas: polinización, formación de semillas y frutos, y propagación por esquejes o tubérculos.",
+    "indicador_logro": "Señala en una flor real las partes que intervienen en la polinización, relaciona la flor con el fruto y la semilla, y compara una planta que nace de semilla con otra que nace de un esqueje.",
+    "conceptos": [
+     "Reproducción sexual de las plantas con flor",
+     "Reproducción sexual y asexual",
+     "Ciclo de vida de las plantas"
+    ],
+    "evidencia": [
+     "ENG 2, UY 3, JP 4, SG 5, AU 8 (Reproducción sexual de las plantas con flor; hoy en 6.°, destino 4)",
+     "bloqueo: Reproducción sexual y asexual (hoy en 6.°; este tema la introduce)"
+    ],
+    "justificacion": "Inglaterra (2.°), Uruguay (3.°) y Japón (4.°) enseñan flor, semilla y fruto antes que El Salvador (6.°). Se ubica en 3.° porque ahí está la unidad de plantas. Introduce su bloqueo. Se paga con la fusión 2.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega reproducción de plantas ni propagación vegetativa."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G02-G04#1",
+     "rol": "experto-biologia",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Cambio a adaptar: me convence el psicopedagogo, y corrijo mi premisa: 2.° ya presenta las etapas semilla, planta, flor y fruto (G02-CIE-U4-1.10), así que en 3.° el tema es un retorno que agrega para qué sirve la flor y la propagación por esquejes. Conviene sin los rótulos «sexual» y «asexual», que la V2 formaliza en 6.° (6.8 y 6.9), y con la polinización tratada de forma cualitativa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G02-CIE-U4-1.10 (Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 5)",
+       "cita": "Representa con dibujos las etapas semilla, planta, flor y fruto; registro del crecimiento de un frijol."
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.8 (fila 10) y G06-CIE-U6-6.9 (fila 11)",
+       "cita": "Fecundación con flor disecada y técnicas de propagación asexual en 6.°."
+      },
+      {
+       "fuente": "data/grafo/internacional_2_8/consenso.json (CON:biologia/reproduccion-de-plantas-con-flor)",
+       "cita": "Núcleo en ENG, HK y ON desde 2.°, JP en 4.°, AU y EE en 8.°: referencia moderada, no obligación."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Frutos que no se comen como fruta (tomate, chile, vaina de frijol) corrigen la idea de que fruto es solo lo dulce."
+      }
+     ],
+     "confianza": "media",
+     "texto": "4.10. Observación de cómo se originan plantas nuevas: de la flor al fruto y la semilla, y de un pedazo de la planta (esqueje o tubérculo). Indicador: señala en una flor real dónde se produce el polen y dónde se forman las semillas; explica con sus palabras que el polen que llega al centro de la flor (de la misma flor o de otra, llevado por insectos, colibríes o el viento) es necesario para que se formen semillas; ordena con dibujos el paso de flor a fruto, incluyendo frutos que no se comen como fruta (tomate, chile, vaina de frijol), y registra durante varias semanas una planta que nace de semilla y otra de un esqueje. «Sexual» y «asexual» quedan para 6.°."
+    },
+    {
+     "id": "PRO:biologia:G02-G04#1",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Mantengo adaptar. Comparto con el experto que el tema es concreto y llena el salto entre 3.° y 6.°. Lo que adapto es la forma: el tema y sus conceptos traen a 3.° los rótulos «sexual» y «asexual» que la V2 trabaja en 6.° (6.8, 6.9). Propongo observar y registrar, sin esos rótulos; el contenido es el mismo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G02-CIE-U4-1.10 (fila 5)",
+       "cita": "representa con dibujos las etapas semilla, planta, flor y fruto"
+      },
+      {
+       "fuente": "TEMA:G06-CIE-U6-6.8 (fila 10) y G06-CIE-U6-6.9 (fila 11)",
+       "cita": "fecundación en plantas y propagación vegetal asexual se trabajan en 6.°"
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U4-4.2 (fila 4)",
+       "cita": "relaciona los órganos vegetales con sus funciones"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "en 3.°, lo observable y manipulable, una idea por paso; los rótulos abstractos llegan después"
+      }
+     ],
+     "confianza": "alta",
+     "texto": "4.10. Observación de cómo nacen plantas nuevas: de la flor al fruto y la semilla, y de un pedazo de la planta (esqueje o tubérculo). Indicador: señala en una flor real dónde está el polen y dónde se forman las semillas, ordena con dibujos el paso de flor a fruto y registra durante varias semanas una planta que nace de semilla y otra que nace de un esqueje. Los rótulos «reproducción sexual» y «asexual» quedan para 6.° (6.8, 6.9). El tiempo de clase lo define el MINED, porque la fusión que lo pagaba no se hizo."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 9,
+    "anclada": 2,
+    "ubicada": 7,
+    "inexistente": 0,
+    "interna": 3,
+    "argumento": 3,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:biologia:G05-G08#19",
+   "tipo": "propuesta",
+   "titulo": "9.4. Identificación de adaptaciones conductuales de los animales a su ambiente.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G05-G08",
+    "accion": "nuevo",
+    "grado_propuesto": 5,
+    "unidad_propuesta": "9. Interacciones en los ecosistemas (después de 9.3)",
+    "tema_propuesto": "9.4. Identificación de adaptaciones conductuales de los animales a su ambiente.",
+    "indicador_logro": "Explica con ejemplos locales o de la región (migración de aves, hibernación, vida en grupo, actividad nocturna) cómo una conducta ayuda a un animal a sobrevivir en su ambiente.",
+    "conceptos": [
+     "Adaptaciones conductuales"
+    ],
+    "evidencia": [
+     "AU 4, CO 2, JP 3, SG 6 (Adaptaciones conductuales)",
+     "prerrequisito: Hábitat y ecosistemas comunes (2.°)"
+    ],
+    "justificacion": "Con Japón (3.°), tres países de alto desempeño la enseñan entre 3.° y 6.°; El Salvador, en 11.°. Es el mayor atraso del archivo de candidatos. Se paga con la fusión 10.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega adaptaciones conductuales de animales."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G05-G08#19",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "La brecha es sólida: los ocho países la enseñan en el núcleo (mediana 4.°) y la V2 solo vuelve a las adaptaciones en 11.° (8.5), como confirma el hallazgo H28. Pero la unidad 9 de 5.° y la fusión 10 que suponía la propuesta no existen en la V2. La ubico en la unidad de ecosistemas de 4.°, con ejemplos locales en lugar de la hibernación y sin lenguaje teleológico.",
+     "evidencia": [
+      {
+       "fuente": "data/grafo/internacional_2_8/consenso.json (CON:biologia/adaptaciones-conductuales)",
+       "cita": "8 de 8 países en el núcleo; mediana del primer grado 4; núcleo sólido en 7"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U8-8.5",
+       "cita": "adaptaciones morfológicas, fisiológicas y conductuales de especies salvadoreñas"
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.8",
+       "cita": "Explica con sus palabras los conceptos de hábitat y nicho"
+      },
+      {
+       "fuente": "Bishop y Anderson (1990), J. Res. Sci. Teach. 27(5)",
+       "cita": "los estudiantes ven la adaptación como un cambio intencional del individuo"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Incluir las adaptaciones conductuales de los animales en 4.°, unidad 3 (Naturaleza y sus interacciones), después de 3.8 (hábitat y nicho), como tema nuevo o ampliando su indicador. Indicador: explica con ejemplos salvadoreños (aves migratorias que pasan aquí el invierno del norte, murciélagos y tacuacines nocturnos, vida en grupo de zompopos o pericos) cómo una conducta favorece la supervivencia, y la relaciona con las características físicas vistas en 2.° (4.8). Evitar el lenguaje teleológico: el animal no decide adaptarse."
+    },
+    {
+     "id": "PRO:biologia:G05-G08#19",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "La conducta que ayuda a sobrevivir es observable y adecuada a 9–11 años. Pero la V2 no tiene unidad de Biología en 5.°: la ubicación propuesta no existe. Encaja en 4.°, tras hábitat y nicho (3.8), retomando taxismos y cuidado de crías de 3.° (5.3, 5.14). La hibernación no es un ejemplo local; conviene sustituirla.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/temas.json (unidades de 5.° en la V2)",
+       "cita": "Magnitudes, mecánica, estructura atómica, tabla periódica, espacio y Tierra: ninguna de Biología."
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.8 (fila 10)",
+       "cita": "Hábitat y nicho de tres animales salvadoreños."
+      },
+      {
+       "fuente": "TEMA:G03-CIE-U5-5.3 (fila 5) y G03-CIE-U5-5.14 (fila 16)",
+       "cita": "Taxismos con cochinillas y estrategias que favorecen la supervivencia de las crías."
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U8-8.5 (fila 92)",
+       "cita": "Las adaptaciones conductuales se clasifican en 11.°; falta la base temprana."
+      }
+     ],
+     "confianza": "media",
+     "texto": "4.°, unidad 3, después de 3.8: «Identificación de conductas que ayudan a los animales a sobrevivir en su ambiente». Indicador: explica con ejemplos de El Salvador (aves migratorias que pasan por el país, murciélagos que salen de noche, zompopos que trabajan en grupo, tortugas que vuelven a desovar a la playa) cómo una conducta ayuda a sobrevivir; retoma los taxismos de 3.° (5.3)."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 2,
+    "ubicada": 3,
+    "inexistente": 0,
+    "interna": 2,
+    "argumento": 0,
+    "literatura": 1,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:biologia:G10-G11#10",
+   "tipo": "propuesta",
+   "titulo": "3.13. Explicación de la respuesta inmunitaria innata: barreras, inflamación, fagocitos, defensinas y sistema del complemento.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "3. Anatomía y fisiología humana (después de 3.10)",
+    "tema_propuesto": "3.13. Explicación de la respuesta inmunitaria innata: barreras, inflamación, fagocitos, defensinas y sistema del complemento.",
+    "indicador_logro": "Describe en un esquema secuencial cómo un patógeno o su toxina altera un tejido y desencadena la inflamación, la fagocitosis y la acción del complemento.",
+    "conceptos": [
+     "Inmunidad innata",
+     "Sistema inmunitario"
+    ],
+    "evidencia": [
+     "ACSBL119 y ACSBL121 (0 temas)",
+     "AUSS unidad 4",
+     "prerrequisito: Sistema inmunitario (3.10, mismo grado)"
+    ],
+    "justificacion": "Hoy la inmunidad innata solo aparece dentro de un tema general (3.10). ACARA pide la inflamación y sus agentes. Va tras 3.10 y antes de las enfermedades (3.12). Se paga con la fusión 9.",
+    "conciliacion_v2": "9.1 trata sistema inmunitario y vacunas en general; no la respuesta innata detallada."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G10-G11#10",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "ACARA, pivote de Bachillerato, pide la inflamación, los fagocitos, las defensinas y el complemento (ACSBL119 y ACSBL121), y el 3.10 de la V2 solo pide explicar brevemente las líneas de defensa: la brecha es real. Pero la fusión 9 que lo pagaba no se hizo y la cascada del complemento en detalle excede 10.°. Propongo centrarlo en la secuencia de la inflamación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U3-3.10",
+       "cita": "Explica brevemente los componentes y líneas de defensa en relación con la respuesta innata y adaptativa"
+      },
+      {
+       "fuente": "data/interim/acara/u4_en.json (ACSBL121)",
+       "cita": "respuesta innata: inflamación con fagocitos, defensinas y sistema del complemento"
+      },
+      {
+       "fuente": "data/interim/acara/u4_en.json (ACSBL119)",
+       "cita": "cambios físicos o químicos causados por el patógeno estimulan la respuesta inmunitaria"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Profundizar la respuesta innata en 10.° después de 3.10, como tema propio o ampliando su indicador: secuencia de una infección local (barreras; daño o sustancias del patógeno; inflamación con vasodilatación, calor, enrojecimiento e hinchazón; llegada de fagocitos y fagocitosis; fiebre como respuesta general). Defensinas y complemento se describen por su función (dañar o marcar microbios y atraer fagocitos), sin el detalle molecular de la cascada."
+    },
+    {
+     "id": "PRO:biologia:G10-G11#10",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "El nivel es alcanzable en 10.°, pero la V2 ya trabaja las líneas de defensa innata y adaptativa en 3.10 (y en 9.° 9.1). Un tema con cinco nombres técnicos repetiría parte de 3.10 y sumaría vocabulario sin anclaje. Propongo centrarlo en la inflamación como proceso, desde una herida que el estudiante conoce, y nombrar defensinas y complemento como apoyo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U3-3.10 (fila 38)",
+       "cita": "Componentes y líneas de defensa del sistema inmunitario, respuesta innata y adaptativa."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U9-9.1 (fila 3)",
+       "cita": "Funcionamiento del sistema inmunológico y papel de las vacunas."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Partir de signos vividos (una herida inflamada) reduce la carga de un esquema con muchos agentes."
+      }
+     ],
+     "confianza": "media",
+     "texto": "3.13. Explicación de la inflamación y la fagocitosis como respuesta innata ante una herida o una infección. Indicador: describe en un esquema secuencial, a partir de una herida cotidiana, cómo actúan las barreras, la inflamación (enrojecimiento, calor, hinchazón, dolor) y los fagocitos, y ubica las defensinas y el complemento como moléculas que ayudan; retoma 3.10 sin repetirlo."
+    }
+   ],
+   "anclaje": {
+    "nivel": "ubicado",
+    "primaria": 5,
+    "anclada": 0,
+    "ubicada": 5,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 1,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:biologia:G10-G11#17",
+   "tipo": "propuesta",
+   "titulo": "1.13. Descripción y clasificación de los ecosistemas de El Salvador por sus especies, sus interacciones y sus factores abióticos.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "1. Ecología y ambiente (al inicio de la unidad)",
+    "tema_propuesto": "1.13. Descripción y clasificación de los ecosistemas de El Salvador por sus especies, sus interacciones y sus factores abióticos.",
+    "indicador_logro": "Compara dos ecosistemas salvadoreños (por ejemplo, manglar y bosque nebuloso) con datos de clima, sustrato, especies e interacciones, y los clasifica.",
+    "conceptos": [
+     "Factores bióticos y abióticos",
+     "Ecosistemas naturales, rurales y urbanos",
+     "Biodiversidad"
+    ],
+    "evidencia": [
+     "ACSBL019 (0 temas)",
+     "ACSBL021 (1 tema, débil: G11-3.9)",
+     "AUSS unidad 1"
+    ],
+    "justificacion": "La unidad de ecología empieza por productividad sin describir ecosistemas. ACARA abre con su diversidad y clasificación. Usa ejemplos locales. Se paga con la fusión 16.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega ecosistemas salvadoreños ni su clasificación."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G10-G11#17",
+     "rol": "experto-biologia",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Mantengo adaptar. El psicopedagogo tiene razón en que el indicador ya pide datos y clasificación, y coincidimos en retomar sin repetir 4.° y 7.°. La diferencia está en el enunciado: «Descripción y clasificación de los ecosistemas» repite el nivel de 4.° (3.4–3.5) y 7.° (4.8, 4.11); el título debe anunciar la comparación con datos. La fusión 16 que lo pagaba no se hizo: el espacio lo decide el MINED.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/biologia_es_u1-3.json (ACSBL019, ACSBL021)",
+       "cita": "Ecosistemas descritos por especies, interacciones y factores abióticos; clima y sustrato para clasificar ambientes."
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.4 y 3.5",
+       "cita": "Reconoce tipos de ecosistemas y formaciones vegetales de El Salvador (4.°)."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U4-4.8 y 4.11",
+       "cita": "Estructura y funciones de los ecosistemas; criterios para clasificar biomas (7.°)."
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.1 (Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 11.°», fila 3)",
+       "cita": "La unidad 1 de 11.° abre con productividad y DBO."
+      }
+     ],
+     "confianza": "media",
+     "texto": "Al inicio de la unidad 1 de 11.°: comparación con datos de dos ecosistemas salvadoreños (p. ej., el manglar de la bahía de Jiquilisco y el bosque nebuloso de Montecristo) por clima, sustrato, especies e interacciones, y su clasificación con criterios explícitos. Indicador: compara los dos ecosistemas con datos de clima, sustrato, especies e interacciones, y justifica su clasificación. Retoma 4.° (3.4–3.5) y 7.° (4.8, 4.11) sin repetirlos y prepara la productividad (1.1) y la similitud entre comunidades (5.8)."
+    },
+    {
+     "id": "PRO:biologia:G10-G11#17",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Cambio a adaptar porque me convence el experto. El título dice «descripción», nivel que ya se trabajó en 4.° y 7.°, mientras el indicador pide comparar con datos y clasificar; con ese título se enseñaría como repaso. Acepto su texto y agrego que los datos se entreguen en tablas, para no depender de salidas de campo que muchas escuelas no pueden hacer.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.4 (fila 6) y G04-CIE-U3-3.5 (fila 7)",
+       "cita": "reconoce tipos de ecosistemas y formaciones vegetales de El Salvador"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U4-4.8 (fila 10) y G07-CIE-U4-4.11 (fila 13)",
+       "cita": "estructura de los ecosistemas y criterios para clasificar biomas"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U1-1.1 (fila 3)",
+       "cita": "la unidad 1 de 11.° empieza con productividad y DBO"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "DUA: no presuponer recursos (transporte, salidas de campo) que la escuela no tiene"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Abrir la unidad 1 de 11.° con un tema de datos y no de descripción: comparar dos ecosistemas salvadoreños (por ejemplo, el manglar de la bahía de Jiquilisco y el bosque nebuloso de Montecristo) con datos de clima, sustrato, especies e interacciones, y clasificarlos con criterios explícitos. Los datos se entregan en tablas o fichas, sin exigir salidas de campo; si hay un ecosistema cercano, puede sumarse. Retoma 4.° (3.4, 3.5) y 7.° (4.8, 4.11) sin repetirlos y prepara la productividad (1.1)."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 14,
+    "anclada": 2,
+    "ubicada": 12,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 1,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:biologia:G10-G11#19",
+   "tipo": "propuesta",
+   "titulo": "7.8. Análisis del papel de las especies clave y del nicho ecológico en la estructura de las comunidades.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 11,
+    "unidad_propuesta": "7. Dinámica de poblaciones (después de 7.6)",
+    "tema_propuesto": "7.8. Análisis del papel de las especies clave y del nicho ecológico en la estructura de las comunidades.",
+    "indicador_logro": "Predice con datos de un caso (nutria marina y erizos, o murciélagos polinizadores) cómo cambia una comunidad al desaparecer una especie clave y explica por qué el efecto supera su abundancia.",
+    "conceptos": [
+     "Especies clave",
+     "Nicho ecológico y exclusión competitiva",
+     "Depredación"
+    ],
+    "evidencia": [
+     "ACSBL024 (0 temas)",
+     "ACSBL023 (1 tema, débil: G11-5.9)",
+     "prerrequisito: Redes tróficas y Nicho ecológico (4.°)"
+    ],
+    "justificacion": "Las especies clave no aparecen en ningún grado. Tras el modelo depredador-presa, el caso muestra efectos en cascada y refuerza el nicho. Se paga con la fusión 18.",
+    "conciliacion_v2": "El único candidato trata gravedad y órbitas; nada sobre especies clave ni nicho."
+   },
+   "resolucion": {
+    "decision": "adoptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G10-G11#19",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "Las especies clave no aparecen en ningún grado de la V2 y ACARA las pide (ACSBL024). El lugar es lógico: después de Lotka-Volterra (7.6), un caso real muestra un efecto en cascada mayor que la abundancia de la especie y retoma el nicho de 4.° (3.8). Conviene sumar un caso regional a la nutria marina, como prevé el indicador. La fusión 18 no se hizo: el MINED decide el espacio.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/biologia_en_u1-3.json (ACSBL024)",
+       "cita": "el impacto de perder una especie clave supera lo esperable por su abundancia o biomasa"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U7-7.6",
+       "cita": "oscilaciones acopladas de presas y depredadores con el modelo de Lotka-Volterra"
+      },
+      {
+       "fuente": "TEMA:G11-BIO-U5-5.9",
+       "cita": "Explica la importancia de la biodiversidad funcional (nichos)"
+      },
+      {
+       "fuente": "Estes y Palmisano (1974), Science 185",
+       "cita": "las nutrias marinas estructuran las comunidades costeras al controlar a los erizos"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PRO:biologia:G10-G11#19",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adoptar",
+     "justificacion": "Adecuado para 11.°: predecir con datos un efecto en cascada exige razonar con varias variables y relaciones indirectas, propio del nivel formal, y se apoya en el modelo depredador-presa de 7.6 y en el nicho de 4.°. El caso de los murciélagos polinizadores es más cercano que el de la nutria marina; los dos sirven si se trabajan con datos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-BIO-U7-7.6 (fila 86)",
+       "cita": "Modelo de Lotka-Volterra comparado con datos históricos."
+      },
+      {
+       "fuente": "TEMA:G04-CIE-U3-3.8 (fila 10)",
+       "cita": "Hábitat y nicho en 4.°."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Razonar efectos indirectos a partir de datos es alcanzable en 10.°–11.°."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 1,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 1,
+    "literatura": 1,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:biologia:G10-G11#3",
+   "tipo": "propuesta",
+   "titulo": "9.2. Explicación de la estructura de la membrana celular y de su papel como límite que regula el intercambio con el entorno.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "9. La célula: estructura, membranas e intercambio (nueva en 10.°; ubicar entre las unidades 1 y 2)",
+    "tema_propuesto": "9.2. Explicación de la estructura de la membrana celular y de su papel como límite que regula el intercambio con el entorno.",
+    "indicador_logro": "Representa con un modelo de mosaico fluido la bicapa de fosfolípidos y sus proteínas y explica cómo regula la entrada y salida de gases, nutrientes y desechos.",
+    "conceptos": [
+     "Membrana celular"
+    ],
+    "evidencia": [
+     "ACSBL045 (0 temas en 10.°–11.°)",
+     "AUSS unidad 2 (≈ 10.°)",
+     "prerrequisito: Biomoléculas (unidad 1 de 10.°) y Estructuras celulares básicas (6.°)"
+    ],
+    "justificacion": "La membrana solo se trabaja en 6.°. Es la base del transporte y del intercambio que ACARA desarrolla en la unidad 2. Va después de lípidos y proteínas. Se paga con la fusión 2.",
+    "conciliacion_v2": "8.2 trata difusión y ósmosis; no enseña estructura de membrana ni mosaico fluido."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 2
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G10-G11#3",
+     "rol": "experto-biologia",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Mantengo adaptar e incorporo el argumento del psicopedagogo: 2.12 (cadena de transporte de electrones) y 2.15 (membrana tilacoidal) usan membranas cuya estructura no se enseña. Coincidimos en el fondo; adapto porque la unidad 9 nueva y la fusión 2 no existen en la V2, y la premisa «la membrana solo se trabaja en 6.°» quedó desactualizada con 9.° 8.2. Lo ubico al cierre de la unidad 1.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (Matriz 9.° grado, Unidad 8, fila 4)",
+       "cita": "Difusión y ósmosis a través de la membrana en tejidos vegetales."
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U2-2.12 (fila 25) y G10-BIO-U2-2.15 (fila 28), Matriz_Bachillerato_Biologia_10_11.xlsx",
+       "cita": "Cadena de transporte de electrones y fotofosforilación con esquema de la membrana tilacoidal."
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U1-1.4 a 1.11",
+       "cita": "La unidad 1 de 10.° trata lípidos, proteínas y ácidos nucleicos: base química de la bicapa."
+      },
+      {
+       "fuente": "data/interim/acara/biologia_es_u1-3.json (ACSBL045, ACSBL046)",
+       "cita": "Membrana que regula el intercambio; transporte por difusión, ósmosis, transporte activo y endocitosis."
+      }
+     ],
+     "confianza": "alta",
+     "texto": "Tema de 10.° al cierre de la unidad 1 (después de lípidos y proteínas; antes de 2.12 y 2.15): estructura de la membrana (bicapa de fosfolípidos con proteínas, modelo de mosaico fluido) y cómo esa estructura explica qué la cruza por difusión simple (gases como O2 y CO2), qué necesita proteínas de transporte (iones, glucosa; el agua también por acuaporinas) y qué requiere energía (transporte activo, endocitosis y exocitosis). Retoma la ósmosis de 9.° (8.2), en la que el agua pasa hacia el lado con más soluto, y las membranas de 6.° (5.8), sin repetir sus experimentos."
+    },
+    {
+     "id": "PRO:biologia:G10-G11#3",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "adaptar",
+     "justificacion": "Cambio a adaptar: el experto tiene razón en que adoptar tal cual crea una unidad 9 que no existe en la V2, y mi dictamen ya pedía otra ubicación. Al cierre de la unidad 1, después de lípidos y proteínas, llega antes de 2.12 y 2.15, que usan membranas. Para cuidar la carga: primero la estructura con un modelo físico; el transporte activo y la endocitosis, de forma cualitativa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U1-1.4 a 1.9",
+       "cita": "lípidos (1.4–1.6) y proteínas (1.7–1.9) en la unidad 1 de 10.°"
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U2-2.12 y G10-BIO-U2-2.15 (fila 28)",
+       "cita": "cadena de transporte de electrones y fotofosforilación, procesos que ocurren en membranas"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U8-8.2 (fila 4) y G06-CIE-U5-5.8 (fila 10)",
+       "cita": "ósmosis en 9.° y propiedades de una membrana en 6.°"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "entidades no observables: modelo físico o dibujo antes del formalismo, una idea por paso"
+      }
+     ],
+     "confianza": "alta",
+     "texto": "Tema de 10.° al cierre de la unidad 1 (después de lípidos y proteínas, antes de 2.12 y 2.15): estructura de la membrana (doble capa de fosfolípidos con proteínas, modelo de mosaico fluido), representada primero con un modelo físico o un dibujo, y cómo esa estructura explica qué la cruza por difusión, qué necesita proteínas de transporte y qué requiere energía (transporte activo; endocitosis y exocitosis, de forma cualitativa). Retoma 6.° (5.8) y 9.° (8.2) sin repetir sus experimentos."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 13,
+    "anclada": 2,
+    "ubicada": 11,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 1,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  },
+  {
+   "id": "PRO:biologia:G10-G11#8",
+   "tipo": "propuesta",
+   "titulo": "9.5. Relación de la estructura de alvéolos, vellosidades intestinales, nefronas y estomas con el intercambio de sustancias.",
+   "opciones": [
+    "adoptar",
+    "adaptar",
+    "descartar"
+   ],
+   "datos": {
+    "asignatura": "biologia",
+    "ciclo": "G10-G11",
+    "accion": "nuevo",
+    "grado_propuesto": 10,
+    "unidad_propuesta": "9. La célula: estructura, membranas e intercambio (nueva en 10.°; ubicar entre las unidades 1 y 2)",
+    "tema_propuesto": "9.5. Relación de la estructura de alvéolos, vellosidades intestinales, nefronas y estomas con el intercambio de sustancias.",
+    "indicador_logro": "Explica con esquemas o preparaciones cómo la superficie, el grosor y la irrigación de alvéolos, vellosidades, nefronas y estomas facilitan el intercambio y lo relaciona con la relación superficie-volumen.",
+    "conceptos": [
+     "Intercambio de gases en animales",
+     "Intercambio de gases en plantas",
+     "Sistema digestivo",
+     "Sistema excretor",
+     "Relación superficie-volumen"
+    ],
+    "evidencia": [
+     "ACSBL057 y ACSBL059 (0 temas)",
+     "ACSBL056 (1 tema, débil)",
+     "AUSS unidad 2 (≈ 10.°)",
+     "prerrequisito: Difusión y ósmosis (acción 5) y organización en tejidos (acción 1)"
+    ],
+    "justificacion": "Bachillerato no trabaja el intercambio a nivel de tejidos. Un tema integrador cierra la unidad 9 con los cuatro ejemplos de ACARA. Se paga con la fusión 7.",
+    "conciliacion_v2": "Sin candidatos; la V2 no agrega superficies de intercambio en organismos."
+   },
+   "resolucion": {
+    "decision": "adaptar",
+    "ronda": 1
+   },
+   "fundamentos": [
+    {
+     "id": "PRO:biologia:G10-G11#8",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "La brecha es real: ACARA pide el intercambio a nivel de células y tejidos (ACSBL056, 057 y 059) y la V2 trata los sistemas solo en 8.°. Pero el indicador aplica «irrigación» a los estomas y sugiere que todo es difusión, cuando la reabsorción en la nefrona es en buena parte transporte activo. Preciso eso y los prerrequisitos: la unidad 9 y la acción 1 no existen en la V2.",
+     "evidencia": [
+      {
+       "fuente": "data/interim/acara/biologia_en_u1-3.json (ACSBL057, ACSBL059)",
+       "cita": "vellosidades y nefronas en animales; en plantas, gases por estomas y difusión sin el sistema de transporte"
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U7-7.7",
+       "cita": "Explica cómo se relacionan el intercambio de gases y la circulación"
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U7-7.14",
+       "cita": "Explica las funciones principales de los riñones"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en el túbulo proximal la reabsorción de glucosa y sodio es transporte activo"
+      }
+     ],
+     "confianza": "media",
+     "texto": "Tema integrador de 10.°, después del de membrana (acción 3): relacionar la estructura de alvéolos, vellosidades intestinales, nefronas y hojas con el intercambio. En animales: superficie, grosor de la barrera e irrigación; en la nefrona, distinguir filtración y reabsorción, que en buena parte es transporte activo. En plantas: estomas y espacios de aire, donde los gases se mueven por difusión sin el sistema de transporte. Cierra con la relación superficie-volumen. Prerrequisitos en la V2: tejidos y sistemas de 8.° y 8.2 de 9.°."
+    },
+    {
+     "id": "PRO:biologia:G10-G11#8",
+     "rol": "psicopedagogo",
+     "ronda": 1,
+     "decision": "adaptar",
+     "justificacion": "Integrar cuatro estructuras de dos reinos y la relación superficie-volumen en un tema es mucha carga simultánea, aunque el razonamiento proporcional es alcanzable en 10.°. Propongo una idea por paso: primero construir la relación con cubos que se miden y luego aplicarla, empezando por alvéolos y vellosidades. La V2 solo usa esa relación después (10.° 6.4).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U6-6.4 (fila 59)",
+       "cita": "Masa corporal y tasa metabólica con gráficas logarítmicas: la relación aparece después."
+      },
+      {
+       "fuente": "TEMA:G08-CIE-U7-7.13 (fila 15) y G08-CIE-U6-6.11 (fila 13)",
+       "cita": "Excreción y transpiración en 8.°, base de los ejemplos."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Un principio común construido antes de cuatro casos reduce la carga de integrarlos."
+      }
+     ],
+     "confianza": "media",
+     "texto": "9.5. Relación superficie-volumen y su papel en las superficies de intercambio de animales y plantas. Indicador: calcula con cubos de distinto tamaño (papel, plastilina o gelatina) cómo cambia la relación superficie-volumen y la usa para explicar con esquemas cómo la superficie, el grosor y la irrigación de alvéolos y vellosidades facilitan el intercambio; extiende la idea a estomas y nefronas."
+    }
+   ],
+   "anclaje": {
+    "nivel": "anclado",
+    "primaria": 5,
+    "anclada": 1,
+    "ubicada": 4,
+    "inexistente": 0,
+    "interna": 0,
+    "argumento": 2,
+    "literatura": 0,
+    "otra": 0,
+    "inexistentes": []
+   }
+  }
+ ]
+}

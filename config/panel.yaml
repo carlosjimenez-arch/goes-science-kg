@@ -40,3 +40,25 @@ piloto:
   - {id: fidelidad_tutor, pregunta: "Una prueba mostró que el tutor puede decir algo científicamente impreciso que las guardas no detectan. ¿Qué control exigen antes de usarlo con estudiantes?"}
   - {id: evaluacion_piloto, pregunta: "¿Qué medidas y criterios de éxito o de detención recomiendan?"}
   - {id: aprobacion_contenido, pregunta: "Mientras no haya revisión del MINED, ¿qué estado mínimo debe tener el contenido para usarse con estudiantes?"}
+
+# Bucle de fortalecimiento (spec 14, sección 7; src/goes_science_kg/bucle.py): anclaje de la evidencia por código,
+# impugnación por un revisor adversarial (subagente `refutador`), sonda ciega y réplica del panel.
+bucle:
+  tipos: [decision, asignacion, cambio_asignatura, hallazgo, propuesta, clase_incierta, contenido]
+  vueltas_max: 2            # una vuelta sin cambios detiene el bucle antes
+  sonda: {n: 60, semilla: 2026, minimo_por_tipo: 6}
+  cita_minima: {latin: 20, cjk: 8}   # caracteres (letras y dígitos) para contar una cita como literal
+  # Patrón del error que el refutador encontró: alimenta el bucle externo (de los errores a las reglas del método).
+  patrones:
+    - electiva_como_nucleo        # se contó como núcleo un objetivo de un curso electivo o de ampliación
+    - otra_asignatura_o_nombre    # la V2 lo enseña en otra asignatura, otro grado o con otro nombre
+    - etiqueta_suelta             # una etiqueta secundaria que no representa el contenido del objetivo
+    - grado_mal_mapeado           # el grado del país o su equivalencia SV no es el que se usó
+    - fuente_mal_leida            # la página o el documento no dicen lo que se afirma
+    - evidencia_circular          # la decisión se apoya en un informe del propio proyecto, no en la fuente
+    - conteo_de_paises            # el número de países o el consenso no alcanza para la clase
+    - error_cientifico            # algo falso o engañoso en el contenido o en la decisión
+    - item_defectuoso             # clave discutible, distractor correcto, ambigüedad, pista en la forma
+    - lenguaje_o_carga            # inadecuado para la edad: lenguaje, longitud, carga cognitiva
+    - progresion                  # rompe un prerrequisito o la secuencia de la V2
+    - otro

@@ -1,0 +1,510 @@
+{
+ "lote": "c1_experto-biologia",
+ "ronda": "c1",
+ "rol": "experto-biologia",
+ "version": "panel-v1",
+ "ciega": true,
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-biologia.md"
+ ],
+ "expedientes": [
+  {
+   "id": "ASI:G07-CIE-U5-5.8",
+   "tipo": "cambio_asignatura",
+   "titulo": "G07-CIE-U5-5.8: biologia → biologia (revisión de conceptos)",
+   "pregunta": "¿Son correctos la asignatura y los conceptos que la revisión asignó al tema?",
+   "datos": {
+    "tema": "G07-CIE-U5-5.8",
+    "antes": "biologia",
+    "ahora": "biologia",
+    "justificacion": "Bioindicadores de calidad del agua: biología.",
+    "conceptos": [
+     {
+      "id": "CON:biologia/contaminacion-y-seres-vivos",
+      "nombre": "Contaminación y sus efectos en los seres vivos",
+      "definicion": "Sustancias o desechos en aire, agua y suelo que dañan la salud de personas, plantas y animales.",
+      "asignatura": "biologia"
+     },
+     {
+      "id": "CON:biologia/ecosistemas-acuaticos-y-marinos",
+      "nombre": "Ecosistemas acuáticos y marinos",
+      "definicion": "Ríos, lagos, manglares, arrecifes y océano, con zonas y organismos determinados por luz, salinidad, profundidad y corrientes.",
+      "asignatura": "biologia"
+     },
+     {
+      "id": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
+      "nombre": "Calidad y tratamiento del agua",
+      "definicion": "La calidad del agua se evalúa con indicadores; se potabiliza, se desaliniza o se depura el agua residual dentro del ciclo urbano del agua.",
+      "asignatura": "ciencias_tierra_espacio"
+     }
+    ],
+    "texto": "5. Recurso hídrico · Calidad del agua. 5.8. Reconocimiento de parámetros biológicos de calidad del agua. Indicador: 5.8. Identifica parámetros biológicos de calidad del agua."
+   },
+   "opciones": [
+    "aceptar",
+    "rechazar"
+   ]
+  },
+  {
+   "id": "ASI:G09-CIE-U4-4.16",
+   "tipo": "cambio_asignatura",
+   "titulo": "G09-CIE-U4-4.16: biologia → biologia (revisión de conceptos)",
+   "pregunta": "¿Son correctos la asignatura y los conceptos que la revisión asignó al tema?",
+   "datos": {
+    "tema": "G09-CIE-U4-4.16",
+    "antes": "biologia",
+    "ahora": "biologia",
+    "justificacion": "Problemática oceánica centrada en ecosistemas marinos.",
+    "conceptos": [
+     {
+      "id": "CON:biologia/impacto-humano-en-los-ecosistemas",
+      "nombre": "Impacto humano en los ecosistemas",
+      "definicion": "Acciones humanas que perjudican o benefician las poblaciones de un ecosistema, como deforestación, reforestación o protección de especies.",
+      "asignatura": "biologia"
+     },
+     {
+      "id": "CON:biologia/contaminacion-y-seres-vivos",
+      "nombre": "Contaminación y sus efectos en los seres vivos",
+      "definicion": "Sustancias o desechos en aire, agua y suelo que dañan la salud de personas, plantas y animales.",
+      "asignatura": "biologia"
+     },
+     {
+      "id": "CON:ciencias_tierra_espacio/acidificacion-del-oceano",
+      "nombre": "Acidificación del océano",
+      "definicion": "Disminución del pH del agua de mar al disolverse el CO2 atmosférico adicional, que afecta a corales y organismos con conchas.",
+      "asignatura": "ciencias_tierra_espacio"
+     }
+    ],
+    "texto": "4. Oceanografía · Biología marina. 4.16. Interpretación de la problemática ambiental oceánica. Indicador: 4.16. Argumenta cuáles son las principales causas de la problemática ambiental oceánica."
+   },
+   "opciones": [
+    "aceptar",
+    "rechazar"
+   ]
+  },
+  {
+   "id": "DEC:clase_internacional:CON:biologia/inmunidad-innata",
+   "tipo": "decision",
+   "titulo": "Clase de «Inmunidad innata» en el contraste: solo_especializacion → alineado",
+   "pregunta": "¿El panel respalda esta decisión del equipo GOES con criterio técnico? Si la rechaza, propone la alternativa.",
+   "datos": {
+    "decision_tomada": "Clase de «Inmunidad innata» en el contraste: solo_especializacion → alineado",
+    "justificacion": "Defensas inespecíficas en el núcleo: ENG GCSE Combined p. 12, JP 生物基礎 p. 120, TW 國中 p. 28 (piel como primera barrera).",
+    "decidido_por": "sesión 2026-10-08 (revisión experta; pendiente de confirmar con el MINED)",
+    "conceptos": [
+     {
+      "id": "CON:biologia/inmunidad-innata",
+      "nombre": "Inmunidad innata",
+      "definicion": "Defensas generales de plantas y animales, como barreras, inflamación, fagocitos, defensinas y complemento, que actúan ante cualquier patógeno.",
+      "asignatura": "biologia"
+     }
+    ],
+    "contraste": {
+     "clase_automatica": "solo_especializacion",
+     "lecturas": null,
+     "sv_primer_grado": 9,
+     "sv_temas": [
+      "G09-CIE-U9-9.1",
+      "G10-BIO-U3-3.10"
+     ],
+     "grado_consenso": null,
+     "mediana_paises": 8.5,
+     "paises_nucleo": {
+      "AU": null,
+      "ENG": 8.5,
+      "HK": null,
+      "JP": 9.5,
+      "KR": null,
+      "SG": null,
+      "TW": 7.0
+     }
+    }
+   },
+   "opciones": [
+    "aceptar",
+    "rechazar"
+   ]
+  },
+  {
+   "id": "INC:CON:biologia/clasificacion-jerarquica",
+   "tipo": "clase_incierta",
+   "titulo": "Clasificación jerárquica y nomenclatura (CON:biologia/clasificacion-jerarquica)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/clasificacion-jerarquica",
+     "nombre": "Clasificación jerárquica y nomenclatura",
+     "definicion": "Sistema de categorías anidadas, de dominio a especie, basado en semejanzas de rasgos y secuencias, con nombre científico binomial.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 7,
+     "estricto": 7
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 6
+    },
+    "temas_v2": [
+     "G07-CIE-U3-3.10 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 12): Sistemática y cladística. 3.10. Explica el concepto de cladística en relación con los agrupamientos.",
+     "G07-CIE-U3-3.12 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 14): Sistema de los tres dominios. 3.12. Describe los principales grupos taxonómicos del sistema de los tres dominios.",
+     "G07-CIE-U3-3.4 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 6): Agrupamiento de especies. 3.4. Clasifica grupos de seres vivos empleando un sistema de clasificación.",
+     "G07-CIE-U3-3.7 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 9): Taxonomía. 3.7. Reconoce la composición y usos de los nombres científicos.",
+     "G07-CIE-U3-3.8 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 10): Taxonomía. 3.8. Identifica criterios taxonómicos empleados en las claves dicotómicas.",
+     "G07-CIE-U3-3.9 (grado 7, Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 3 - Biodiversidad», fila 11): Taxonomía. 3.9. Utiliza plataformas de biodiversidad para obtener información taxonómica o ecológica."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basica_12-p010-12 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 10, SV 4–6]: Usar claves de identificación para aprender sobre las especies."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p017-05 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 17, SV 8–9]: Describir el impacto de los avances en biología sobre los sistemas de clasificación."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_s1_3-p039-06 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39, SV 6–8]: Indicar que los científicos agrupan a los seres vivos en diferentes categorías según sus características principales."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p047-02 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 47, SV 6–8]: Comprender el concepto de especie y el sistema de clasificación, y clasificar a los seres vivos a nivel de reino."
+     },
+     "ON": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g6-p150-04 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 150, SV 5–5]: Describir las características distintivas de diferentes grupos de organismos y utilizarlas para clasificarlos mediante un sistema de clasificación."
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p030-01 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 30, SV 6–8]: Clasificar a los seres vivos según las características de su morfología y estructura."
+     }
+    }
+   },
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "id": "INC:CON:biologia/diferenciacion-y-especializacion-celular",
+   "tipo": "clase_incierta",
+   "titulo": "Diferenciación y especialización celular (CON:biologia/diferenciacion-y-especializacion-celular)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/diferenciacion-y-especializacion-celular",
+     "nombre": "Diferenciación y especialización celular",
+     "definicion": "Proceso por el que células con el mismo genoma adquieren estructuras y funciones distintas para formar tejidos especializados.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 6
+    },
+    "consenso": {
+     "grado_amplio": 7,
+     "grado_estricto": null,
+     "mediana": 7.0,
+     "n_paises": 5
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.19 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 21): Matriz extracelular.. 5.19. Describe la estructura general y funciones de la matriz extracelular.",
+     "G06-CIE-U5-5.20 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 22): Matriz extracelular.. 5.20. Reconoce las funciones de la matriz extracelular en tejidos secretores.",
+     "G06-CIE-U5-5.22 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 24): Matriz extracelular.. 5.22. Expone las implicaciones de la matriz extracelular en las lesiones.",
+     "G06-CIE-U5-5.6 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 8): Niveles de organización de los seres vivos.. 5.6. Reconoce los niveles de organización biológica presentes en un sistema vivo.",
+     "G06-CIE-U5-5.7 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 9): Niveles de organización de los seres vivos.. 5.7. Reconoce las características distintivas de una muestra de tejido, órgano y sistema.",
+     "G06-CIE-U6-6.11 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 6 - Biología del desarro», fila 13): Desarrollo Animal.. 6.11. Compara las etapas de desarrollo entre vertebrados e invertebrados."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S8U02 [AU_Science_7-10_v9_contenido.docx p. None, SV 7–7]: Analizar la relación estructura-función de células, tejidos y órganos en un sistema de órganos vegetal y uno animal, y cómo permiten la supervivencia del indivi"
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p010-03 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 10, SV 8–9]: Describir la función de las células madre en animales embrionarios y adultos, y de los meristemos en las plantas."
+     },
+     "HK": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_s1_3-p039-13 [HK_Science_S1-3_CurriculumFramework_2025.pdf p. 39, SV 6–8]: Reconocer que las células pueden dividirse, crecer y diferenciarse en distintos tipos celulares."
+     },
+     "ON": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g8-p173-02 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 173, SV 7–7]: Describir la organización de las células en tejidos, órganos y sistemas."
+     },
+     "SG": {
+      "primer_grado_nucleo": 7.5,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_secundaria_baja-p038-02 [SG_LowerSec_Science_G2G3_2024.pdf p. 38, SV 7–8]: Comprender que las células vegetales y animales típicas son modelos utilizados para representar sus diversas formas."
+     }
+    }
+   },
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "id": "INC:CON:biologia/fases-de-la-fotosintesis",
+   "tipo": "clase_incierta",
+   "titulo": "Fases de la fotosíntesis y ciclo de Calvin (CON:biologia/fases-de-la-fotosintesis)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/fases-de-la-fotosintesis",
+     "nombre": "Fases de la fotosíntesis y ciclo de Calvin",
+     "definicion": "Fase luminosa en tilacoides que produce ATP y NADPH, y ciclo de Calvin en el estroma que fija CO2 en azúcares.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "sin_referente",
+     "estricta": "posterior"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 6,
+     "estricto": 10
+    },
+    "consenso": {
+     "grado_amplio": null,
+     "grado_estricto": null,
+     "mediana": 8.0,
+     "n_paises": 1
+    },
+    "temas_v2": [
+     "G06-CIE-U5-5.16 (grado 6, Matriz_Ciencias_6to_Grado_U1_U6.xlsx, hoja «Unidad 5 - Célula», fila 18): Fotosíntesis y cloroplasto.. 5.16. Efectúa un experimento para extraer pigmentos fotosintéticos.",
+     "G10-BIO-U2-2.14 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 27): Fotosíntesis. 2.14. Efectúa un experimento de extracción y separación de pigmentos fotosintéticos.",
+     "G10-BIO-U2-2.15 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 28): Fotosíntesis. 2.15. Explica los procesos de fotofosforilación de la fotosíntesis.",
+     "G10-BIO-U7-7.4 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 64): Anabolismo fotosintético. 7.4. Explica las tres fases del ciclo de Calvin y el costo en ATP y NADPH de sintetizar una molécula de gliceraldehído-3-fosfato.",
+     "G10-BIO-U7-7.5 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 65): Anabolismo fotosintético. 7.5. Relaciona las adaptaciones C4 y CAM con la eficiencia en el uso del agua de la caña de azúcar, el maíz, la piña y las cactáceas.",
+     "G10-BIO-U7-7.6 (grado 10, Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 66): Integración del metabolismo. 7.6. Explica cómo se integran y regulan el catabolismo y el anabolismo a partir de un mapa metabólico con sus puntos de control."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p015-06 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 15, SV 7–9]: Preparar y analizar diagramas de los precursores, productos finales y condiciones que afectan el proceso de fotosíntesis."
+     }
+    }
+   },
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "id": "INC:CON:biologia/respuesta-a-estimulos",
+   "tipo": "clase_incierta",
+   "titulo": "Respuesta de los seres vivos a estímulos (CON:biologia/respuesta-a-estimulos)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/respuesta-a-estimulos",
+     "nombre": "Respuesta de los seres vivos a estímulos",
+     "definicion": "Los seres vivos detectan cambios externos como temperatura, luz o peligro y responden con conductas o cambios corporales.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 2,
+     "estricto": 2
+    },
+    "consenso": {
+     "grado_amplio": 3,
+     "grado_estricto": 6,
+     "mediana": 3.0,
+     "n_paises": 9
+    },
+    "temas_v2": [
+     "G02-CIE-U4-1.9 (grado 2, Matriz_Ciencias_2do_Grado_U1_U6.xlsx, hoja «Unidad 4 - Seres vivos», fila 4): Características de los seres vivos.. Reconoce que los seres vivos responden a lo que pasa a su alrededor (luz, tacto, calor).",
+     "G03-CIE-U4-4.7 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 4 - Las plantas», fila 9): Tropismos y nastias.. 4.7. Explica con sus palabras los conceptos de tropismo y nastia.",
+     "G03-CIE-U4-4.9 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 4 - Las plantas», fila 11): Tropismos y nastias.. 4.9. Efectúa un experimento donde se evidencie una o más nastias.",
+     "G03-CIE-U5-5.3 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 5 - Los animales», fila 5): Características de los animales.. 5.3. Explica un tipo de taxismo evidenciado mediante la observación.",
+     "G03-CIE-U4-4.8 (grado 3, Matriz_Ciencias_3er_Grado_U1_U6.xlsx, hoja «Unidad 4 - Las plantas», fila 10): Tropismos y nastias.. 4.8. Efectúa un experimento donde se evidencie uno o más tropismos.",
+     "G04-CIE-U6-6.6 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 6 - C. humano movimiento», fila 8): Sistemas sensorial y nervioso.. 6.6. Desarrolla un experimento para evidenciar la percepción sensorial del cuerpo humano."
+    ],
+    "paises": {
+     "AU": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "AU-IMP-AU-AC9S9U01 [AU_Science_7-10_v9_contenido.docx p. None, SV 8–8]: Comparar el papel de los sistemas corporales en regular y coordinar la respuesta a un estímulo y describir un mecanismo de retroalimentación negativa."
+     },
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p014-04 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 14, SV 7–9]: Analizar la importancia de las adaptaciones de los sentidos de los vertebrados según su hábitat y estilo de vida."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 8.5,
+      "en_especializacion": false,
+      "ejemplo": "ENG-BIO-eng_gcse_comb-p013-03 [ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 13, SV 8–9]: Explicar cómo la estructura del sistema nervioso (incluyendo el SNC, neuronas sensoriales y motoras, y receptores sensoriales) se adapta a sus funciones."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "HK-BIO-hk_primaria-p028-01 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 28, SV 2–2]: Conocer la diferencia entre seres vivos y materia inerte (ej. los seres vivos se reproducen, crecen y reaccionan a estímulos)."
+     },
+     "JP": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260243221100000 [jp_cos_826 p. 59, SV 3–3]: La actividad de los animales varía según la estación, cálida o fría."
+     },
+     "KR": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p064-08 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 64, SV 6–8]: Realizar un experimento sobre los reflejos incondicionados y las respuestas conscientes."
+     },
+     "ON": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g3-p117-02 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 117, SV 2–2]: Demostrar comprensión de las características y usos de las plantas, así como de sus respuestas al entorno natural."
+     },
+     "SG": {
+      "primer_grado_nucleo": 3.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p039-02 [SG_Primary_Science_2023.pdf p. 39, SV 3–3]: Describir las características de los seres vivos: necesitan agua, alimento y aire para sobrevivir; crecen, responden a estímulos y se reproducen."
+     },
+     "TW": {
+      "primer_grado_nucleo": 2.5,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-15 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Explorar mediante observación o alteración de variables cómo los organismos detectan cambios ambientales y reaccionan para mantener la homeostasis."
+     }
+    }
+   },
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  },
+  {
+   "id": "INC:CON:biologia/sistema-respiratorio",
+   "tipo": "clase_incierta",
+   "titulo": "Sistema respiratorio (CON:biologia/sistema-respiratorio)",
+   "pregunta": "Las dos lecturas del etiquetado dan clases distintas. Verifica en la fuente y decide la clase (regla de clases: internacional/2_8/README.md y specs/12, sección «Método v2»).",
+   "datos": {
+    "concepto": {
+     "id": "CON:biologia/sistema-respiratorio",
+     "nombre": "Sistema respiratorio",
+     "definicion": "Órganos que llevan aire a los pulmones, donde el oxígeno pasa a la sangre y se expulsa dióxido de carbono.",
+     "asignatura": "biologia"
+    },
+    "lecturas": {
+     "amplia": "adelantado",
+     "estricta": "alineado"
+    },
+    "alertas": null,
+    "v2_primer_grado": {
+     "amplio": 3,
+     "estricto": 4
+    },
+    "consenso": {
+     "grado_amplio": 5,
+     "grado_estricto": 6,
+     "mediana": 4.75,
+     "n_paises": 8
+    },
+    "temas_v2": [
+     "G04-CIE-U5-5.3 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 5 - C. humano materia y », fila 5): Sistema respiratorio.. 5.3. Describe las funciones, la importancia y los cuidados del sistema respiratorio.",
+     "G04-CIE-U5-5.4 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 5 - C. humano materia y », fila 6): Sistema respiratorio.. 5.4. Construye un modelo del sistema respiratorio.",
+     "G04-CIE-U5-5.7 (grado 4, Matriz_Ciencias_4to_Grado_U1_U6.xlsx, hoja «Unidad 5 - C. humano materia y », fila 9): Sistema circulatorio.. 5.7. Explica los vínculos del sistema circulatorio con los demás sistemas del cuerpo humano.",
+     "G08-CIE-U7-7.7 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 9): Sistemas respiratorio y circulatorio. 7.7. Explica con sus palabras cómo se relaciona el intercambio de gases y la circulación.",
+     "G08-CIE-U7-7.8 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 10): Sistemas respiratrio y circulatorio. 7.8. Reconoce las principales características y funciones de las estructuras respiratorias y circulatorias en vertebrados.",
+     "G08-CIE-U7-7.9 (grado 8, Matriz_Ciencias_8vo_Grado_U1_U10.xlsx, hoja «Unidad 7 - Anatomía y Fisiologí», fila 11): Sistemas respiratrio y circulatorio. 7.9. Elabora un modelo de una estructura respiratoria."
+    ],
+    "paises": {
+     "EE": {
+      "primer_grado_nucleo": 8.0,
+      "en_especializacion": false,
+      "ejemplo": "EE-BIO-ee_basic-p014-13 [EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 14, SV 7–9]: Relacionar las particularidades de los sistemas respiratorio y circulatorio de los vertebrados con ser de sangre caliente o fría."
+     },
+     "ENG": {
+      "primer_grado_nucleo": 6.0,
+      "en_especializacion": false,
+      "ejemplo": "ENG-IMP-ENG-BIO-KS3-16 [ENG_NC_Science_KS3_2013.pdf p. 6, SV 5–7]: Estructura y funciones del sistema de intercambio gaseoso humano, incluidas sus adaptaciones."
+     },
+     "HK": {
+      "primer_grado_nucleo": 2.0,
+      "en_especializacion": true,
+      "ejemplo": "HK-BIO-hk_primaria-p029-03 [HK_Science_P1-6_CurriculumGuide_2025_zh.pdf p. 29, SV 2–2]: Conocer las estructuras principales (esqueleto, músculos, pulmones, corazón, estómago) y sus funciones, usando mamíferos como ejemplo."
+     },
+     "JP": {
+      "primer_grado_nucleo": 5.0,
+      "en_especializacion": false,
+      "ejemplo": "JP-IMP-JP-8260263211100000 [jp_cos_826 p. 89, SV 5–5]: El cuerpo incorpora oxígeno y expulsa dióxido de carbono, entre otras sustancias."
+     },
+     "KR": {
+      "primer_grado_nucleo": 4.5,
+      "en_especializacion": false,
+      "ejemplo": "KR-BIO-kr_jung-p057-04 [KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 57, SV 6–8]: Comprender la estructura y función del sistema respiratorio y crear un modelo que represente los principios de los movimientos respiratorios."
+     },
+     "ON": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "ON-BIO-on_st_g5-p140-01 [ON_ScienceTechnology_Grades1-8_2022.pdf p. 140, SV 4–4]: Describir la estructura y función básica de los órganos vitales en los diversos sistemas del cuerpo humano."
+     },
+     "SG": {
+      "primer_grado_nucleo": 4.0,
+      "en_especializacion": false,
+      "ejemplo": "SG-BIO-sg_primaria-p054-02 [SG_Primary_Science_2023.pdf p. 54, SV 4–4]: Identificar los sistemas del cuerpo humano (digestivo, respiratorio, circulatorio, esquelético y muscular) y sus funciones generales, sin requerir detalles de l"
+     },
+     "TW": {
+      "primer_grado_nucleo": 7.0,
+      "en_especializacion": false,
+      "ejemplo": "TW-BIO-tw_jh-p028-12 [TW_12YBE_Ciencias_Naturales_2018_zh.pdf p. 28, SV 6–8]: Reconocer que los animales intercambian gases con el exterior a través del sistema respiratorio."
+     }
+    }
+   },
+   "opciones": [
+    "faltante",
+    "tardio",
+    "posterior",
+    "adelantado",
+    "sin_referente",
+    "alineado"
+   ]
+  }
+ ]
+}

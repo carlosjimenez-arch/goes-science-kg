@@ -513,6 +513,9 @@ def _registro(x: dict) -> dict:
             "rondas": sorted({d["ronda"] for d in x["dictamenes"]}),
             "justificaciones": {d["rol"]: d["justificacion"] for d in finales},
             **{k: v for d in finales for k in ("alternativa", "texto") if (v := d.get(k))},
+            **({"solidez": s} if (s := (x.get("bucle") or {}).get("solidez")) else {}),
+            **({"bucle": max(v["vuelta"] for v in x["bucle"]["vueltas"])} if (x.get("bucle") or {}).get("vueltas")
+               else {}),
             "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"}
 
 
@@ -522,7 +525,10 @@ def aplicar() -> dict:
       decisión, como un rechazo del MINED);
     - asignaciones de una división: «cambiar» reasigna el elemento y deja el historial en la división;
     - capa pedagógica: la versión revisada, con estado «revisado_panel», `revision_panel` y los valores anteriores.
-    Hallazgos, propuestas y piloto no tocan capas: van al informe. Devuelve los conteos por tipo."""
+    Hallazgos, propuestas y piloto no tocan capas: van al informe. Devuelve los conteos por tipo.
+    Si el bucle de fortalecimiento (bucle.py) cambió una resolución ya aplicada, deja `aplicado` en blanco y esta
+    función la vuelve a aplicar: agrega el nuevo registro, retira la observación del panel si ya no rechaza, devuelve
+    una asignación a su versión original si el panel deja de cambiarla y actualiza la clase del contraste."""
     from goes_science_kg import revision_decisiones as rd
 
     estado = cargar_estado()
@@ -535,9 +541,16 @@ def aplicar() -> dict:
 
     capa_ped = {t: {e["id"]: e for e in json.loads((directorio() / a).read_text(encoding="utf-8"))}
                 for t, a in ARCHIVOS.items()}
+    revs = capas["clase_internacional_2_8"]   # el mismo archivo que las clases inciertas resueltas por el panel
     clases_panel: list[dict] = []
     for i, x in sorted(estado.items()):
-        if x["estado"] != "resuelta" or x.get("aplicado") or x["tipo"] in ("hallazgo", "propuesta", "piloto"):
+        if x["estado"] != "resuelta" or x["tipo"] in ("hallazgo", "propuesta", "piloto"):
+            continue
+        if x.get("aplicado"):   # ya aplicado: solo se actualiza la solidez que midió el bucle
+            if (s := (x.get("bucle") or {}).get("solidez")) and (reg := _registro_en_capa(
+                    i, x, claves, coherencia, capa_ped, revs)) is not None and reg.get("solidez") != s:
+                reg["solidez"] = s
+                hechos["solidez"] += 1
             continue
         if x["tipo"] == "clase_incierta":
             clases_panel.append(x)
@@ -548,26 +561,32 @@ def aplicar() -> dict:
         if x["tipo"] == "decision":
             r = claves[x["subtipo"]][i.split(":", 2)[2]]
             r.setdefault("dictamenes_panel", []).append(reg)
-            if reg["decision"] == "rechazar":
-                r.setdefault("observaciones", []).append({"fecha": reg["fecha"], "revisado_por": "panel de expertos IA",
-                                                          "comentario": reg.get("alternativa", "")})
+            _observacion_del_panel(r, reg)
         elif x["tipo"] == "asignacion":
             concepto, conjunto, item = i.removeprefix("ASG:").split("::")
             div = claves["division"][concepto]
             div.setdefault("dictamenes_panel_asignaciones", {})[f"{conjunto}::{item}"] = reg
-            if reg["decision"] == "cambiar":
-                antes = div["asignaciones"][conjunto][item]
-                div["asignaciones"][conjunto][item] = x["resolucion"]["asignado_a"]
+            antes = div["asignaciones"][conjunto][item]
+            # «cambiar» reasigna; «aceptar» deja la asignación original (deshace un cambio anterior del panel);
+            # «rechazar» (ninguna versión corresponde) no reasigna: queda como observación para una persona.
+            destino = {"cambiar": x["resolucion"].get("asignado_a"), "aceptar": x["datos"]["asignado_a"]}.get(
+                reg["decision"], antes)
+            if reg["decision"] == "rechazar" and not any(o.get("elemento") == f"{conjunto}::{item}"
+                                                         for o in div.get("observaciones", [])):
+                div.setdefault("observaciones", []).append(
+                    {"fecha": reg["fecha"], "revisado_por": "panel de expertos IA", "elemento": f"{conjunto}::{item}",
+                     "comentario": "Ninguna versión del concepto corresponde: retirar la etiqueta. "
+                                   + " ".join(reg["justificaciones"].values())[:300]})
+            if sorted(antes) != sorted(destino):
+                div["asignaciones"][conjunto][item] = destino
                 div.setdefault("historial_asignaciones", []).append(
-                    {"elemento": f"{conjunto}::{item}", "antes": antes, "despues": x["resolucion"]["asignado_a"],
+                    {"elemento": f"{conjunto}::{item}", "antes": antes, "despues": destino,
                      "por": "panel de expertos IA", "fecha": reg["fecha"]})
         elif x["tipo"] == "cambio_asignatura":
             p = ruta(x["archivo"])
             r = next(e for e in coherencia[p] if e["id"] == i.removeprefix("ASI:"))
             r.setdefault("dictamenes_panel", []).append(reg)
-            if reg["decision"] == "rechazar":
-                r.setdefault("observaciones", []).append({"fecha": reg["fecha"], "revisado_por": "panel de expertos IA",
-                                                          "comentario": reg.get("alternativa", "")})
+            _observacion_del_panel(r, reg)
         elif x["tipo"] == "contenido":
             e = capa_ped[x["elemento"]][i.removeprefix("PED:")]
             nueva = x.get("version_vigente") or e
@@ -575,30 +594,30 @@ def aplicar() -> dict:
                           and nueva.get(k) != e.get(k)}
             e.update({k: nueva[k] for k in anteriores})
             e["estado"] = "revisado_panel"
+            if e.get("revision_panel"):   # una revisión anterior del panel (el bucle la reemplazó)
+                e.setdefault("historial_revision_panel", []).append(e["revision_panel"])
             e["revision_panel"] = {**reg, **({"valores_anteriores": anteriores} if anteriores else {})}
         x["aplicado"] = reg["fecha"]
         hechos[x["tipo"]] += 1
+    if clases_panel:   # clases del contraste de 2.°–8.°: entran como revisión experta del panel (ganan sobre la regla)
+        ya = {r["concepto"]: r for r in revs}
+        for x in clases_panel:
+            c = x["datos"]["concepto"]["id"]
+            d = x["dictamenes"][-1]
+            nuevo = {"concepto": c, "nombre": x["datos"]["concepto"]["nombre"],
+                     "clase": x["resolucion"]["decision"], "clase_ia": "incierto",
+                     "justificacion": d["justificacion"], "evidencia": d["evidencia"],
+                     "revisado_por": f"panel de expertos IA ({d['rol']}, {d['fecha']}; dictamen, pendiente de "
+                                     "confirmar)"}
+            if c not in ya:
+                revs.append({**nuevo, "dictamenes_panel": [_registro(x)]})
+            elif str(ya[c].get("revisado_por", "")).startswith("panel de expertos IA"):   # lo humano no se toca
+                ya[c].update({**nuevo, "dictamenes_panel": [*ya[c].get("dictamenes_panel", []), _registro(x)]})
     for t, registros in capas.items():
         if registros:
             rd._guardar(t, registros)
     for p, datos in coherencia.items():
         p.write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    if clases_panel:   # clases del contraste de 2.°–8.°: entran como revisión experta del panel (ganan sobre la regla)
-        p = ruta("data/interim/internacional_2_8/revisiones.json")
-        revs = json.loads(p.read_text(encoding="utf-8"))
-        ya = {r["concepto"] for r in revs}
-        for x in clases_panel:
-            c = x["datos"]["concepto"]["id"]
-            if c in ya:
-                continue
-            d = x["dictamenes"][-1]
-            revs.append({"concepto": c, "nombre": x["datos"]["concepto"]["nombre"],
-                         "clase": x["resolucion"]["decision"], "clase_ia": "incierto",
-                         "justificacion": d["justificacion"],
-                         "evidencia": d["evidencia"], "dictamenes_panel": [_registro(x)],
-                         "revisado_por": f"panel de expertos IA ({d['rol']}, {d['fecha']}; dictamen, pendiente de "
-                                         "confirmar)"})
-        p.write_text(json.dumps(revs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     for t, archivo in ARCHIVOS.items():
         (directorio() / archivo).write_text(json.dumps(sorted(capa_ped[t].values(), key=lambda e: e["id"]),
                                                        ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -606,10 +625,50 @@ def aplicar() -> dict:
     return dict(hechos)
 
 
+def _registro_en_capa(i: str, x: dict, claves: dict, coherencia: dict, capa_ped: dict, revs: list[dict]) -> dict | None:
+    """El último registro del panel que dejó `aplicar` en la capa del expediente (None si no está)."""
+    if x["tipo"] == "decision":
+        regs = claves[x["subtipo"]].get(i.split(":", 2)[2], {}).get("dictamenes_panel") or [None]
+    elif x["tipo"] == "asignacion":
+        concepto, conjunto, item = i.removeprefix("ASG:").split("::")
+        regs = [claves["division"][concepto].get("dictamenes_panel_asignaciones", {}).get(f"{conjunto}::{item}")]
+    elif x["tipo"] == "cambio_asignatura":
+        r = next((e for e in coherencia.get(ruta(x["archivo"]), []) if e["id"] == i.removeprefix("ASI:")), {})
+        regs = r.get("dictamenes_panel") or [None]
+    elif x["tipo"] == "contenido":
+        regs = [capa_ped[x["elemento"]].get(i.removeprefix("PED:"), {}).get("revision_panel")]
+    else:   # clase_incierta
+        r = next((r for r in revs if r["concepto"] == x["datos"]["concepto"]["id"]), {})
+        regs = r.get("dictamenes_panel") or [None]
+    return regs[-1]
+
+
+def _observacion_del_panel(r: dict, reg: dict) -> None:
+    """Un rechazo del panel va a `observaciones` (pide una nueva decisión); si una resolución posterior del panel ya no
+    rechaza, su observación pasa a `observaciones_superadas`. Las observaciones humanas no se tocan."""
+    del_panel = [o for o in r.get("observaciones", []) if o.get("revisado_por") == "panel de expertos IA"]
+    if reg["decision"] == "rechazar":
+        if not del_panel:
+            r.setdefault("observaciones", []).append({"fecha": reg["fecha"], "revisado_por": "panel de expertos IA",
+                                                      "comentario": reg.get("alternativa", "")})
+    elif del_panel:
+        r["observaciones"] = [o for o in r["observaciones"] if o not in del_panel]
+        r.setdefault("observaciones_superadas", []).extend({**o, "superada": reg["fecha"]} for o in del_panel)
+        if not r["observaciones"]:
+            del r["observaciones"]
+
+
 # -- informe ----------------------------------------------------------------------------------------------------------
 def _celda(s: str | None, n: int = 260) -> str:
     s = re.sub(r"\s+", " ", s or "").replace("|", "/").strip()
     return s if len(s) <= n else s[:n - 1] + "…"
+
+
+def _solidez(x: dict) -> str:
+    """Solidez que midió el bucle de fortalecimiento (bucle.py), o «—» si no pasó por él."""
+    from goes_science_kg.bucle import ETIQUETA
+
+    return ETIQUETA.get((x.get("bucle") or {}).get("solidez"), "—")
 
 
 def _texto_final(x: dict) -> str:
@@ -654,18 +713,21 @@ def informe() -> str:
             md.append(f"{sum(x['estado'] == 'resuelta' for _, x in filas)} resueltos; {len(cambios)} con cambios o "
                       "rechazo (abajo); el resto se aceptó o aprobó tal cual.")
             if cambios:
-                md += ["", "| Expediente | Decisión | Fundamento |", "|---|---|---|"]
-                md += [f"| {_celda(x['titulo'], 90)} | {x['resolucion']['decision']} | {_celda(_texto_final(x))} |"
-                       for _, x in cambios]
+                md += ["", "| Expediente | Decisión | Solidez | Fundamento |", "|---|---|---|---|"]
+                md += [f"| {_celda(x['titulo'], 90)} | {x['resolucion']['decision']} | {_solidez(x)} | "
+                       f"{_celda(_texto_final(x))} |" for _, x in cambios]
         else:
-            md += ["| Expediente | Dictamen | Fundamento |", "|---|---|---|"]
+            md += ["| Expediente | Dictamen | Solidez | Fundamento |", "|---|---|---|---|"]
             md += [f"| {_celda(x['titulo'], 120)} | "
-                   f"{x['resolucion']['decision'] if x['estado'] == 'resuelta' else x['estado']} "
+                   f"{x['resolucion']['decision'] if x['estado'] == 'resuelta' else x['estado']} | {_solidez(x)} "
                    f"| {_celda(_texto_final(x), 600 if t == 'piloto' else 360)} |" for _, x in filas]
         pendientes = [(i, x) for i, x in filas if x["estado"] == "sin_consenso"]
         if pendientes:
             md += ["", f"**Sin consenso ({len(pendientes)}), para una decisión humana:**", ""]
             md += [f"- {_celda(x['titulo'], 120)}: {_celda(x.get('motivo', ''), 200)}" for _, x in pendientes]
+    from goes_science_kg import bucle
+
+    md += bucle.seccion_informe(estado)
     p = ruta("panel/DICTAMEN.md")
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text("\n".join(md) + "\n", encoding="utf-8")

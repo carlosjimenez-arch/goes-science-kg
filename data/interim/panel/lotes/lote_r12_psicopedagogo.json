@@ -1,0 +1,1361 @@
+{
+ "lote": "r12_psicopedagogo",
+ "ronda": 12,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "replica_del_bucle": 1,
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md",
+  "prompts/bucle_refutar.md (sección «Réplica»)"
+ ],
+ "expedientes": [
+  {
+   "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/adn-y-cromosomas/practica-G07",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:biologia/adn-y-cromosomas/practica-G07",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G07-CIE-U2-2.7"
+     ],
+     "evalua": [
+      "CON:biologia/adn-y-cromosomas"
+     ],
+     "habilidad": "observar",
+     "formato": "opcion_multiple",
+     "grados": [
+      7
+     ],
+     "enunciado": "Daniela hizo un modelo: enrolló un hilo de lana muy largo alrededor de un carrete y pintó de rojo un tramo corto del hilo. Luego armó otro carrete igual, con el tramo rojo en el mismo lugar, y explicó que los dos carretes forman un par, uno de la madre y otro del padre. Si el hilo representa el ADN, ¿qué representan cada carrete con su hilo enrollado y el tramo rojo?",
+     "opciones": {
+      "A": "Cada carrete con su hilo es un cromosoma, y el tramo rojo es un gen.",
+      "B": "Cada carrete es un gen y el tramo rojo es un cromosoma que está dentro del gen.",
+      "C": "El carrete es el núcleo y el tramo rojo es todo el ADN de la célula.",
+      "D": "Cada carrete es una célula y el tramo rojo es su núcleo."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:biologia/adn-y-cromosomas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de casi todos los genes, que pueden ser versiones distintas: los alelos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:biologia/adn-y-cromosomas"
+     },
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/adn-y-cromosomas",
+     "nombre": "ADN y cromosomas",
+     "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion_vigente": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "El modelo y la clave son correctos (carrete con hilo = cromosoma, tramo rojo = gen, par = dos copias). La retroalimentación afirma sin matiz que los cromosomas van en pares, pero los gametos tienen una sola copia. Se agrega «en las células del cuerpo» para que la simplificación no tenga que desaprenderse.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "óvulos, espermatozoides y granos de polen llevan un solo juego de cromosomas"
+      },
+      {
+       "fuente": "notas_de_los_redactores (G07-CIE-U2-2.7, nota 3)",
+       "cita": "«dos copias de cada gen» tiene excepciones"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de cada gen, que pueden ser versiones distintas: los alelos."
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Modelo y clave correctos. Corrijo dos detalles de forma: el enunciado decía «Observa» sin que haya imagen, lo que confunde a quien la busca; y la clave A era la única que hablaba del par, que la pregunta no pide, y la más larga (23 frente a 12–17 palabras). Acorto A; el par y las dos copias ya los explica la retroalimentación.",
+     "evidencia": [
+      {
+       "fuente": "enunciado del ítem",
+       "cita": "«Observa el modelo de Daniela», descrito solo con texto"
+      },
+      {
+       "fuente": "opciones del ítem",
+       "cita": "A: 23 palabras e incluye el par; B: 17; C: 16; D: 12"
+      },
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "los cromosomas van en pares, uno de la madre y otro del padre: dos copias de cada gen"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Daniela hizo un modelo: enrolló un hilo de lana muy largo alrededor de un carrete y pintó de rojo un tramo corto del hilo. Luego armó otro carrete igual, con el tramo rojo en el mismo lugar, y explicó que los dos carretes forman un par, uno de la madre y otro del padre. Si el hilo representa el ADN, ¿qué representan cada carrete con su hilo enrollado y el tramo rojo?",
+      "opciones": {
+       "A": "Cada carrete con su hilo es un cromosoma, y el tramo rojo es un gen.",
+       "B": "Cada carrete es un gen y el tramo rojo es un cromosoma que está dentro del gen.",
+       "C": "El carrete es el núcleo y el tramo rojo es todo el ADN de la célula.",
+       "D": "Cada carrete es una célula y el tramo rojo es su núcleo."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "La clave A acortada sigue siendo exacta: el carrete con su hilo es un cromosoma y el tramo rojo, un gen. Quitar el «par» de la opción no siembra ningún error, porque el enunciado y la retroalimentación lo explican (mismo lugar, uno de cada progenitor). La retroalimentación conserva el matiz de la etapa 1: «en las células del cuerpo».",
+     "evidencia": [
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "en las células del cuerpo los cromosomas van en pares"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "tramo rojo en el mismo lugar de ambos carretes = mismo locus en homólogos"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La retroalimentación dice «hay dos copias de cada gen». El propio experto corrigió esa frase en los microtemas de ADN y de alelos («casi todos»), porque los varones tienen una sola copia de los genes del X, que la V2 enseña en 10.°. Dejarla aquí contradice al microtema y siembra una idea que habrá que desaprender. Cambio «cada gen» por «casi todos los genes».",
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de casi todos los genes, que pueden ser versiones distintas: los alelos."
+    },
+    "patron": "error_cientifico",
+    "contraevidencia": [
+     {
+      "fuente": "TEMA:G10-BIO-U4-4.3",
+      "cita_literal": "Explica por qué los rasgos recesivos ligados al cromosoma X se manifiestan con mayor frecuencia en varones que en mujeres",
+      "dice": "10.° enseña que los varones tienen una sola copia de los genes del X",
+      "donde": "G10-BIO-U4-4.3 (Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 43)"
+     }
+    ],
+    "lote": "b1_refutador_biologia_4",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto la impugnación: «dos copias de cada gen» es falso para los genes del X y del Y en los varones, y la V2 enseña en 10.° la herencia ligada al X. El microtema de ADN ya dice «casi todos los genes»; la práctica debe decir lo mismo para no sembrar una idea que habrá que desaprender. Cambio solo esa frase; el modelo y la clave A siguen correctos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.3",
+       "cita": "En 10.° se explica la herencia ligada al X: los varones tienen una sola copia.",
+       "cita_literal": "Explica por qué los rasgos recesivos ligados al cromosoma X se manifiestan con mayor frecuencia en varones que en mujeres"
+      },
+      {
+       "fuente": "data/pedagogia/microtemas.json (MT:biologia/adn-y-cromosomas/G07, explicación)",
+       "cita": "El microtema dice «por eso hay dos copias de casi todos los genes»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Fuera de las regiones pseudoautosómicas, los genes del X y del Y están en una sola copia en los varones."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El ADN enrollado con proteínas forma un cromosoma, y un gen es solo un tramo de ese ADN. En las células del cuerpo los cromosomas van en pares, uno de la madre y otro del padre; por eso hay dos copias de casi todos los genes, que pueden ser versiones distintas: los alelos."
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  },
+  {
+   "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G07-CIE-U2-2.7"
+     ],
+     "evalua": [
+      "CON:biologia/adn-y-cromosomas"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      7
+     ],
+     "enunciado": "El ADN de una sola célula de tu cuerpo, si se estirara, mediría cerca de 2 metros, pero el núcleo donde se guarda mide unas 6 milésimas de milímetro. ¿Cómo cabe?",
+     "opciones": {
+      "A": "Porque el ADN está cortado en genes sueltos que flotan separados en el núcleo, sin formar cromosomas.",
+      "B": "Porque está muy enrollado y empacado con proteínas, y así forma los cromosomas.",
+      "C": "Porque la mayor parte del ADN se guarda fuera del núcleo, en el resto de la célula.",
+      "D": "Porque cada célula guarda solo un pedacito del ADN, y entre todas las células suman los 2 metros."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:biologia/adn-y-cromosomas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El ADN de la célula está formado por varios hilos larguísimos: cada uno se enrolla una y otra vez con proteínas y forma un cromosoma, y los genes son tramos de esos hilos. Casi todas las células guardan el ADN completo.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:biologia/adn-y-cromosomas"
+     },
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/adn-y-cromosomas",
+     "nombre": "ADN y cromosomas",
+     "definicion": "Los rasgos están codificados en el ADN, organizado con proteínas en cromosomas del núcleo; en procariotas el ADN es circular.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion_vigente": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Las cifras son correctas: unos 2 m de ADN por célula humana (unos 6400 millones de pares de bases a 0,34 nm cada uno) y un núcleo de unas 6 µm. B es la explicación correcta y A refleja la dificultad registrada. La retroalimentación dice «casi todas las células», lo que respeta excepciones como los glóbulos rojos.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "6,4 × 10⁹ pb × 0,34 nm ≈ 2,2 m; núcleo típico de 5 a 10 µm"
+      },
+      {
+       "fuente": "DIF:biologia/adn-y-cromosomas/1",
+       "cita": "dice que los genes están sueltos en el núcleo, fuera de los cromosomas"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Usable en 7.°: una pregunta intrigante con cifras concretas, que despierta curiosidad sin exigir cálculos. La clave B es la más corta (13 palabras frente a 17–18), así que no se delata por el largo, y los distractores son ideas previas plausibles. La retroalimentación (38 palabras) cabe en el límite y explica sin regañar. Como sondeo, orienta el refuerzo y no califica.",
+     "evidencia": [
+      {
+       "fuente": "opciones del ítem",
+       "cita": "B: 13 palabras; A: 17; C: 17; D: 18"
+      },
+      {
+       "fuente": "DIF:biologia/adn-y-cromosomas/1",
+       "cita": "dice que los genes están sueltos en el núcleo, fuera de los cromosomas"
+      },
+      {
+       "fuente": "datos.adaptacion",
+       "cita": "7.°: 80 palabras; modelos y datos simples"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La retroalimentación dice que el ADN «es un hilo larguísimo», que cada «paquete» es un cromosoma y que los genes son «tramos de ese mismo hilo»: sugiere un solo hilo continuo para todos los cromosomas. Es falso: cada cromosoma es una molécula de ADN distinta. El experto corrigió esa misma imagen en el microtema de ADN («son varios hilos») pero la dejó aquí. Corrijo solo la retroalimentación.",
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "El ADN de la célula está formado por varios hilos larguísimos: cada uno se enrolla una y otra vez con proteínas y forma un cromosoma, y los genes son tramos de esos hilos. Casi todas las células guardan el ADN completo."
+    },
+    "patron": "error_cientifico",
+    "contraevidencia": [
+     {
+      "fuente": "TEMA:G07-CIE-U2-2.10",
+      "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano",
+      "dice": "En 7.° se mira un cariotipo (cromosomas separados) y el grupo del carné",
+      "donde": "G07-CIE-U2-2.10 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 12)"
+     }
+    ],
+    "lote": "b1_refutador_biologia_4",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:biologia/adn-y-cromosomas/sondeo-1-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto la impugnación: «El ADN es un hilo larguísimo» y «cada paquete enrollado es un cromosoma» sugieren un solo hilo dividido en paquetes, y cada cromosoma es una molécula de ADN distinta (46 en una célula del cuerpo humano). El microtema ya dice «son varios hilos». Corrijo solo la retroalimentación; las cifras (unos 2 m de ADN, núcleo de unas 6 µm) y la clave B siguen correctas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10",
+       "cita": "En 7.° se observa un cariotipo: cromosomas separados, no un solo hilo.",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "data/pedagogia/microtemas.json (MT:biologia/adn-y-cromosomas/G07, explicación)",
+       "cita": "El microtema dice «son varios hilos muy largos… cada hilo enrollado es un cromosoma»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Cada cromosoma nuclear es una sola molécula de ADN lineal; los 2 m son la suma de las 46 moléculas."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El ADN de la célula está formado por varios hilos larguísimos: cada uno se enrolla una y otra vez con proteínas y forma un cromosoma, y los genes son tramos de esos hilos. Casi todas las células guardan el ADN completo."
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  },
+  {
+   "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G07-CIE-U2-2.7"
+     ],
+     "evalua": [
+      "CON:biologia/genes-y-alelos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      7
+     ],
+     "enunciado": "En el huerto escolar hay 20 plantas de tomate: 17 dan tomates amarillos y 3 dan tomates rojos. En estas plantas, el alelo de fruto rojo es dominante: basta una copia para que el tomate sea rojo. Pedro dice que esos datos son imposibles. ¿Qué le responderías?",
+     "opciones": {
+      "A": "Pedro tiene razón: si el alelo rojo es dominante, la mayoría de las plantas tendría que dar tomates rojos.",
+      "B": "Los datos son posibles: dominante significa que una copia basta para que se note, no que sea el alelo más común.",
+      "C": "Las 17 plantas de tomate amarillo no tienen el gen del color del fruto; solo las rojas lo tienen.",
+      "D": "Los datos son posibles porque el alelo dominante es siempre el menos común."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:biologia/genes-y-alelos/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Ser dominante describe cómo se nota un alelo en una planta, no cuántas plantas lo llevan. Aquí 17 plantas tienen dos alelos amarillos, así que ese alelo es el más frecuente en el huerto, aunque sea el que no domina.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:biologia/genes-y-alelos"
+     },
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion_vigente": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Clave B correcta: si el rojo domina, las 17 plantas amarillas tienen dos alelos amarillos, así que ese alelo es el más frecuente (al menos 34 de 40). En el tomate el fruto rojo sí domina sobre el amarillo. A recoge la confusión real «dominante = más común», sin ranura de dificultad propia; C, la de gen frente a alelo. «Dominante» queda definido en el enunciado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "la dominancia describe el fenotipo del heterocigoto, no la frecuencia del alelo en la población"
+      },
+      {
+       "fuente": "notas_de_los_redactores (punto 4)",
+       "cita": "seguir «dominante = más común» como dificultad aparte requiere otra ranura"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Usable: define «dominante» en el propio enunciado, el contexto (huerto escolar) es cercano y el cálculo es accesible en 7.°. La clave B es algo más larga (28 frente a 19), sin llegar a delatarse. Aviso para la persona que revise: mide sobre todo dominancia frente a frecuencia, idea de Mendel; los redactores ya lo señalan.",
+     "evidencia": [
+      {
+       "fuente": "elemento: enunciado",
+       "cita": "el alelo de fruto rojo es dominante: basta una copia para que el tomate sea rojo"
+      },
+      {
+       "fuente": "notas de los redactores, punto 1",
+       "cita": "«dominante» puede corresponder a un tema posterior de Mendel"
+      }
+     ],
+     "confianza": "media"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La ciencia es correcta (el rojo domina en el tomate; el amarillo suma al menos 34 de 40 alelos). Pero la clave B tiene 28 palabras frente a 13–19 y es la única que añade la conclusión del razonamiento («en este huerto abunda el alelo amarillo»). El panel corrigió por lo mismo la práctica de ADN (23 frente a 12–17). En la comprobación que decide el dominio, acorto B.",
+    "confianza": "media",
+    "cambios": {
+     "opciones": {
+      "A": "Pedro tiene razón: si el alelo rojo es dominante, la mayoría de las plantas tendría que dar tomates rojos.",
+      "B": "Los datos son posibles: dominante significa que una copia basta para que se note, no que sea el alelo más común.",
+      "C": "Las 17 plantas de tomate amarillo no tienen el gen del color del fruto; solo las rojas lo tienen.",
+      "D": "Los datos son posibles porque el alelo dominante es siempre el menos común."
+     }
+    },
+    "patron": "item_defectuoso",
+    "contraevidencia": [],
+    "lote": "b1_refutador_biologia_4",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto acortar B. La ciencia era correcta, pero la clave tenía 28 palabras frente a 13–19 y era la única que añadía la conclusión («abunda el alelo amarillo»): una pista de forma en la comprobación que decide el dominio. B acortada (21 palabras) sigue exacta: dominancia no es frecuencia. La retroalimentación ya explica por qué el amarillo es el más frecuente. No cambio nada más.",
+     "evidencia": [
+      {
+       "fuente": "opciones del ítem (versión vigente)",
+       "cita": "B: 28 palabras; A: 19; C: 18; D: 13; B acortada: 21."
+      },
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "«17 plantas tienen dos alelos amarillos, así que ese alelo es el más frecuente en el huerto»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La dominancia describe el fenotipo del heterocigoto, no la frecuencia del alelo en la población."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "opciones": {
+       "A": "Pedro tiene razón: si el alelo rojo es dominante, la mayoría de las plantas tendría que dar tomates rojos.",
+       "B": "Los datos son posibles: dominante significa que una copia basta para que se note, no que sea el alelo más común.",
+       "C": "Las 17 plantas de tomate amarillo no tienen el gen del color del fruto; solo las rojas lo tienen.",
+       "D": "Los datos son posibles porque el alelo dominante es siempre el menos común."
+      }
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  },
+  {
+   "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+   "tipo": "contenido",
+   "titulo": "ACT:biologia/genes-y-alelos/practica-G07",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:biologia/genes-y-alelos/practica-G07",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G07-CIE-U2-2.7"
+     ],
+     "evalua": [
+      "CON:biologia/genes-y-alelos"
+     ],
+     "habilidad": "observar",
+     "formato": "opcion_multiple",
+     "grados": [
+      7
+     ],
+     "enunciado": "Observa el modelo de la maestra: dos tiras de papel representan un par de cromosomas de una planta de arveja, uno heredado de cada progenitor. A la misma altura de las dos tiras hay un cuadrito del gen de la altura de la planta: en una tira el cuadrito dice «planta alta» y en la otra dice «planta enana». ¿Qué representan los dos cuadritos?",
+     "opciones": {
+      "A": "Dos genes distintos: uno de la planta alta y otro de la planta enana.",
+      "B": "Dos alelos del mismo gen: dos versiones de la información sobre la altura.",
+      "C": "Dos cromosomas completos: cada cuadrito es un cromosoma.",
+      "D": "Dos alturas que se mezclan: la planta crecerá mediana, entre alta y enana."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:biologia/genes-y-alelos/1",
+      "C": "DIF:biologia/adn-y-cromosomas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los cuadritos están en el mismo lugar de los dos cromosomas del par: es el mismo gen en dos versiones, o sea, dos alelos. En la arveja, una planta con un alelo de planta alta y uno de enana crece alta, porque el alelo de planta alta es dominante; no sale mediana.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:biologia/genes-y-alelos"
+     },
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion_vigente": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Clave B correcta: dos cuadritos en la misma posición de dos cromosomas homólogos son dos alelos del mismo gen. En la arveja de Mendel la planta alta domina sobre la enana, así que la retroalimentación es exacta y corrige la herencia por mezcla (D). A (dos genes distintos) y C (gen confundido con cromosoma) están bien mapeadas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "DIF:biologia/adn-y-cromosomas/1",
+       "cita": "llama gen a un cromosoma completo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en Pisum sativum el alelo de tallo alto es dominante sobre el enano; el heterocigoto es alto"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "El modelo de tiras de papel es manipulable y está descrito por completo en el texto, así que sirve aunque no se vea. Una idea por paso: qué representan dos cuadritos en el mismo lugar. B es algo más larga, pero es práctica con retroalimentación inmediata. La retroalimentación (52 de 80 palabras) corrige la herencia por mezcla sin regañar.",
+     "evidencia": [
+      {
+       "fuente": "elemento: enunciado",
+       "cita": "dos tiras de papel representan un par de cromosomas; a la misma altura hay un cuadrito"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "representación concreta de una entidad no observable, adecuada en 7.°"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "Clave y ciencia correctas. Pero B tiene 22 palabras frente a 8–14, es la única que añade lo que la pregunta no pide («en el mismo lugar de cada cromosoma del par») y repite palabras del enunciado. Es el mismo defecto por el que el panel corrigió la práctica de ADN (23 frente a 12–17, «la única que hablaba del par»). Acorto B; la retroalimentación ya explica el lugar.",
+    "confianza": "media",
+    "cambios": {
+     "opciones": {
+      "A": "Dos genes distintos: uno de la planta alta y otro de la planta enana.",
+      "B": "Dos alelos del mismo gen: dos versiones de la información sobre la altura.",
+      "C": "Dos cromosomas completos: cada cuadrito es un cromosoma.",
+      "D": "Dos alturas que se mezclan: la planta crecerá mediana, entre alta y enana."
+     }
+    },
+    "patron": "item_defectuoso",
+    "contraevidencia": [],
+    "lote": "b1_refutador_biologia_4",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:biologia/genes-y-alelos/practica-G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto acortar B. La clave tenía 21 palabras frente a 9–13 y repetía el enunciado («a la misma altura», «en el mismo lugar»): una pista de forma, el mismo defecto que el panel corrigió en la práctica de ADN. B acortada sigue exacta y responde lo que se pregunta; la retroalimentación ya explica que los cuadritos están en el mismo lugar de los dos cromosomas del par.",
+     "evidencia": [
+      {
+       "fuente": "opciones del ítem (versión vigente)",
+       "cita": "B: 21 palabras; A: 13; C: 9; D: 13; B acortada: 13."
+      },
+      {
+       "fuente": "retroalimentación del ítem",
+       "cita": "«Los cuadritos están en el mismo lugar de los dos cromosomas del par: es el mismo gen en dos versiones»."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Dos alelos son versiones de un gen en el mismo locus de cromosomas homólogos."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "opciones": {
+       "A": "Dos genes distintos: uno de la planta alta y otro de la planta enana.",
+       "B": "Dos alelos del mismo gen: dos versiones de la información sobre la altura.",
+       "C": "Dos cromosomas completos: cada cuadrito es un cromosoma.",
+       "D": "Dos alturas que se mezclan: la planta crecerá mediana, entre alta y enana."
+      }
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  },
+  {
+   "id": "PED:ACT:fisica/procesos-termodinamicos/practica-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/procesos-termodinamicos/practica-G09",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/procesos-termodinamicos/practica-G09",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "evalua": [
+      "CON:fisica/procesos-termodinamicos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Un grupo hizo tres experimentos con aire y anotó qué pasó con cada variable. 1) Frasco rígido tapado, puesto en agua caliente: la presión sube, el volumen queda igual, la temperatura sube. 2) Jeringa tapada con el émbolo libre, puesta en agua con hielo: la presión queda igual, el volumen baja, la temperatura baja. 3) Jeringa tapada dentro de agua a temperatura ambiente, empujando el émbolo despacio: la presión sube, el volumen baja, la temperatura queda igual. Paso 1: en cada experimento busca la variable que no cambia. Paso 2: nombra el proceso. ¿Qué opción es correcta?",
+     "opciones": {
+      "A": "1 isocórico, 2 isobárico, 3 isotérmico.",
+      "B": "1 isobárico, 2 isocórico, 3 isotérmico.",
+      "C": "1 isocórico, 2 isobárico, 3 adiabático.",
+      "D": "1 isobárico, 2 isocórico, 3 adiabático."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/procesos-termodinamicos/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Volumen constante es isocórico, presión constante es isobárico y temperatura constante es isotérmico. En el tercero el gas sí intercambia calor con el agua; por eso no es adiabático.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/procesos-termodinamicos"
+     },
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/procesos-termodinamicos",
+     "nombre": "Procesos termodinámicos",
+     "definicion": "Procesos isobárico, isocórico, isotérmico y adiabático; el trabajo es el área bajo la curva en el diagrama p-V.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "resolucion_vigente": {
+    "decision": "aprobar",
+    "ronda": 2
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:fisica/procesos-termodinamicos/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 1,
+     "decision": "aprobar",
+     "justificacion": "Los tres montajes están bien identificados: frasco rígido (isocórico), émbolo libre (isobárico, idealizando su fricción) y compresión lenta dentro de agua (isotérmico). C coincide con la dificultad mapeada y la retroalimentación explica por qué el tercero no es adiabático. Responde a la evidencia de 2.4.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (fila 6)",
+       "cita": "registro con la variable cambiada, las controladas y el proceso identificado"
+      },
+      {
+       "fuente": "DIF:fisica/procesos-termodinamicos/1",
+       "cita": "confundir isotérmico con adiabático (opción C)"
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "PED:ACT:fisica/procesos-termodinamicos/practica-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "aprobar",
+     "justificacion": "Tres experimentos descritos con las tres variables, en el formato de registro que pide la evidencia del indicador 2.4, y dos pasos explícitos (buscar lo que no cambia y nombrar el proceso), como enseña el microtema. Opciones paralelas de seis palabras: sin pistas de largo. El largo (97 palabras) se justifica por los datos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (evidencia)",
+       "cita": "registro con la variable cambiada, las controladas y el proceso identificado"
+      },
+      {
+       "fuente": "MT:fisica/procesos-termodinamicos/G09 (explicación)",
+       "cita": "para nombrar el proceso, busca lo que no cambia"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La física es correcta, pero hay pista de convergencia: en cada posición la clave toma la etiqueta más repetida (isocórico 2 de 4, isobárico 3 de 4, isotérmico 3 de 4), así que se acierta votando por mayoría sin saber nada. Cambio solo D para un diseño cruzado 2 × 2: cada posición queda empatada y se conservan la clave A y el distractor mapeado C.",
+    "confianza": "media",
+    "cambios": {
+     "opciones": {
+      "A": "1 isocórico, 2 isobárico, 3 isotérmico.",
+      "B": "1 isobárico, 2 isocórico, 3 isotérmico.",
+      "C": "1 isocórico, 2 isobárico, 3 adiabático.",
+      "D": "1 isobárico, 2 isocórico, 3 adiabático."
+     }
+    },
+    "patron": "item_defectuoso",
+    "contraevidencia": [],
+    "lote": "b1_refutador_fisica_5",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:fisica/procesos-termodinamicos/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Cambio a corregir. La física es correcta, pero la pista de convergencia es real: en cada experimento la etiqueta de la clave es la más repetida entre las opciones (isocórico 2, isobárico 3, isotérmico 3 de 4), y votar por mayoría da A sin saber física. Cambiar solo D deja cada posición empatada 2 a 2 y conserva la clave, el distractor mapeado C y la retroalimentación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (fila 6)",
+       "cita": "El indicador pide reconocer los cuatro procesos.",
+       "cita_literal": "Reconoce los procesos isotérmico, isobárico, isocórico y adiabático en un gas ideal"
+      },
+      {
+       "fuente": "ACT:fisica/procesos-termodinamicos/practica-G09 (opciones vigentes)",
+       "cita": "posición 1: isocórico en A y C; posición 2: isobárico en A, C y D; posición 3: isotérmico en A, B y D"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "la nueva D (1 isobárico, 2 isocórico, 3 adiabático) es falsa en los tres y combina las confusiones de B y C"
+      },
+      {
+       "fuente": "DIF:fisica/procesos-termodinamicos/1",
+       "cita": "C sigue mapeada a confundir isotérmico con adiabático"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "1 isocórico, 2 isobárico, 3 isotérmico.",
+       "B": "1 isobárico, 2 isocórico, 3 isotérmico.",
+       "C": "1 isocórico, 2 isobárico, 3 adiabático.",
+       "D": "1 isobárico, 2 isocórico, 3 adiabático."
+      }
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  },
+  {
+   "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G09-CIE-U2-2.4"
+     ],
+     "evalua": [
+      "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+     ],
+     "habilidad": "observar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella, sin apretarla, 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+     "opciones": {
+      "A": "Se infla un poco en agua tibia y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+      "B": "Se infla en agua tibia porque el vapor del agua entra a la botella y empuja la bolsa.",
+      "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+      "D": "Se infla más en agua fría que en agua tibia, porque el aire frío ocupa más espacio."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/relaciones-presion-volumen-temperatura-gases/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La variable que cambias es la temperatura. La bolsa floja no se estira, así que la presión queda casi igual a la de afuera y el volumen del aire sube y baja con la temperatura. El vapor del agua no entra a la botella.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/relaciones-presion-volumen-temperatura-gases"
+     },
+     "origen": "redactor-actividades (G09-CIE-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+     "nombre": "Relaciones presión-volumen-temperatura en gases",
+     "definicion": "En un gas, al variar la temperatura cambian presión o volumen de forma predecible (leyes de los gases).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U2-2.4",
+     "grado": 9,
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal.",
+     "evidencia": "Registro de experimentos con la variable cambiada, las variables controladas y el proceso identificado"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. Convención de signos ΔU = Q − W (W = trabajo del gas). Si los materiales del MINED usan otra, ajustar la práctica y\n   la comprobación de la primera ley (que pide +150 con tolerancia 0).\n2. Tres dificultades juntan dos manifestaciones (presión-volumen-temperatura, calor-temperatura, primera ley).\n3. Supuestos simplificados: compresión casi adiabática en la bomba de bicicleta; extrapolación de la recta hasta\n   −273 °C (un gas real se licúa antes); 273 en lugar de 273,15.\n4. Seguridad: globo en botella con agua caliente del chorro (no hirviendo, con el docente); lápiz de punta roma.\n5. Algunos distractores no están mapeados a una dificultad (p. ej. la comprobación de procesos).\n\n6. **Abierta (2026-10-12):** la botella con una bolsa floja en agua caliente es isobárica solo si la bolsa queda\n   floja (con un globo de hule la presión sube). Usar bolsa delgada y agua caliente sin hervir."
+   },
+   "resolucion_vigente": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Con un globo de hule que se estira, la presión interna sube y el proceso deja de ser casi isobárico, lo que contradice la conclusión que se premia (nota abierta de los redactores). Una bolsa plástica delgada y floja mantiene la presión igual a la de afuera, como ya hace la actividad abierta del mismo objetivo. Además, el agua caliente del chorro es rara en las escuelas salvadoreñas.",
+     "evidencia": [
+      {
+       "fuente": "data/pedagogia/REVISION_PENDIENTE.md (G09-CIE-U2-2.4, nota 6)",
+       "cita": "isobárica solo si la bolsa queda floja; con un globo de hule la presión sube"
+      },
+      {
+       "fuente": "ACT:G09-CIE-U2-2.4/obj-abierta",
+       "cita": "usa una bolsa plástica delgada que se infla un poco y queda floja"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "una membrana sin tensión no añade presión; el hule estirado sí (algunos kPa)"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "enunciado": "Con ayuda de tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella de plástico vacía. Pon la botella 3 minutos en un recipiente con agua caliente que prepare tu docente (no hirviendo) y luego 3 minutos en agua con hielo. Anota qué le pasa a la bolsa en cada caso, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "opciones": {
+       "A": "En agua caliente la bolsa se infla un poco y en agua fría se desinfla: como la bolsa floja no se estira, la presión queda casi igual a la de afuera y el volumen del aire aumenta al subir la temperatura y disminuye al bajarla.",
+       "B": "La bolsa se infla porque el vapor del agua caliente entra a la botella.",
+       "C": "La bolsa no cambia, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+       "D": "En agua fría la bolsa se infla más, porque el aire frío ocupa más espacio."
+      },
+      "retroalimentacion": "La variable que cambias es la temperatura. La bolsa floja no se estira, así que la presión queda casi igual a la de afuera y el volumen del aire sube y baja con la temperatura. El vapor del agua no entra a la botella."
+     }
+    },
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "Suma 167 palabras y la clave tenía 45 frente a 14 a 18: carga alta y pista de largo. Se numeran los pasos, como en las otras prácticas, y se acorta la clave conservando la presión casi constante (la bolsa floja que no se estira sigue explicada en la retroalimentación). B y D se alargan sin cambiar su error. Seguridad intacta: agua caliente que prepara el docente.",
+     "evidencia": [
+      {
+       "fuente": "ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09 (opciones)",
+       "cita": "A 45 palabras; B 14, C 18, D 15"
+      },
+      {
+       "fuente": "data/pedagogia/REVISION_PENDIENTE.md (G09-CIE-U2-2.4, nota 6)",
+       "cita": "isobárica solo si la bolsa queda floja"
+      },
+      {
+       "fuente": "Haladyna, Downing y Rodriguez (2002), A review of multiple-choice item-writing guidelines for classroom assessment",
+       "cita": "mantener las opciones de largo parecido"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica vacía. Paso 2: pon la botella 3 minutos en agua caliente que prepare tu docente (no hirviendo). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "opciones": {
+       "A": "Se infla un poco en agua caliente y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+       "B": "Se infla en agua caliente porque el vapor del agua entra a la botella y empuja la bolsa.",
+       "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+       "D": "Se infla más en agua fría que en agua caliente, porque el aire frío ocupa más espacio."
+      }
+     }
+    },
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Se conserva mi corrección de la etapa 1: la bolsa delgada y floja en lugar del globo. Que la clave abreviada diga «a presión casi constante» es exacto, y la razón (la bolsa floja no se estira) quedó en la retroalimentación. Los pasos numerados y el agua caliente que prepara el docente mantienen la seguridad. Distractores falsos y mapeo intactos. Correcto.",
+     "evidencia": [
+      {
+       "fuente": "revisión experto-fisica, ronda 1",
+       "cita": "bolsa floja: la presión interna queda igual a la exterior, proceso casi isobárico"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a presión constante, V es proporcional a T absoluta"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "La física de la bolsa floja es correcta, pero el montaje pide «agua caliente… (no hirviendo)», que admite 70 a 90 °C, y la malla de 9.° prescribe agua tibia servida por la docente. La botella con aire flota: hay que sostenerla 3 minutos dentro del agua, y el PET se ablanda cerca de 70 °C. Con agua tibia y botella grande el efecto se ve.",
+    "confianza": "media",
+    "cambios": {
+     "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+     "opciones": {
+      "A": "Se infla un poco en agua tibia y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+      "B": "Se infla en agua tibia porque el vapor del agua entra a la botella y empuja la bolsa.",
+      "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+      "D": "Se infla más en agua fría que en agua tibia, porque el aire frío ocupa más espacio."
+     }
+    },
+    "patron": "otro",
+    "contraevidencia": [
+     {
+      "fuente": "TEMA:G09-CIE-U2-2.4",
+      "cita_literal": "Experimenta con jeringas selladas y globos en agua tibia y fría servida por la docente",
+      "dice": "la malla prescribe agua tibia y fría, servida por la docente",
+      "donde": "G09-CIE-U2-2.4 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 6)"
+     },
+     {
+      "fuente": "TEMA:G09-CIE-U2-2.1",
+      "cita_literal": "El calor lo maneja la docente",
+      "dice": "en la misma unidad de 9.° la fuente de calor la maneja la docente",
+      "donde": "G09-CIE-U2-2.1 (Matriz_Ciencias_9no_Grado_U1_U12.xlsx, hoja «Unidad 2 - Calor y temperatura», fila 3)"
+     }
+    ],
+    "lote": "b1_refutador_fisica_5",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:ACT:fisica/relaciones-presion-volumen-temperatura-gases/practica-G09",
+     "rol": "experto-fisica",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Cambio a corregir. Verifiqué que la malla de 9.° pide agua tibia y fría servida por la docente; «caliente, no hirviendo» admite 70–90 °C, con riesgo de quemadura al sostener tres minutos una botella que flota, y el PET se ablanda cerca de 70 °C. Con agua tibia y botella grande el efecto se ve (≈ 5 % de volumen). Agrego «sin apretarla»: apretar inflaría la bolsa por otra causa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (fila 6)",
+       "cita": "La malla prescribe agua tibia y fría servida por la docente.",
+       "cita_literal": "Experimenta con jeringas selladas y globos en agua tibia y fría servida por la docente"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.1 (fila 3)",
+       "cita": "En la misma unidad la fuente de calor la maneja la docente.",
+       "cita_literal": "El calor lo maneja la docente"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a presión constante V es proporcional a T absoluta: de unos 28 °C a 43 °C, ΔV/V ≈ 15/301 ≈ 5 %, unos 100 mL en una botella de 2 L, visibles en una bolsa delgada"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "apretar la botella reduce su volumen y empuja aire a la bolsa: variable no controlada que imita el efecto"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Paso 1: con tu docente, amarra con una liga una bolsa plástica delgada, vacía y floja a la boca de una botella plástica grande y vacía. Paso 2: sostén la botella, sin apretarla, 3 minutos dentro de agua tibia que sirva tu docente (que se pueda tocar sin quemarse). Paso 3: pásala 3 minutos a agua con hielo. Anota qué le pasa a la bolsa, qué variable cambiaste y cuál se mantuvo casi igual. ¿Qué observación y conclusión son correctas?",
+      "opciones": {
+       "A": "Se infla un poco en agua tibia y se desinfla en la fría: a presión casi constante, el volumen del aire sube y baja con la temperatura.",
+       "B": "Se infla en agua tibia porque el vapor del agua entra a la botella y empuja la bolsa.",
+       "C": "La bolsa no cambia en ningún caso, porque la botella está cerrada por la bolsa y el aire no puede salir.",
+       "D": "Se infla más en agua fría que en agua tibia, porque el aire frío ocupa más espacio."
+      }
+     }
+    }
+   ],
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  },
+  {
+   "id": "PED:MT:biologia/genes-y-alelos/G07",
+   "tipo": "contenido",
+   "titulo": "MT:biologia/genes-y-alelos/G07",
+   "pregunta": "Un revisor adversarial o una sonda ciega impugnó la resolución del panel (abajo, con su evidencia verificada en la fuente). Revísala contra la fuente: mantén la decisión vigente (elige la misma opción) si la impugnación no la derriba, o cámbiala. Explica por qué en la justificación.",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "elemento": {
+     "id": "MT:biologia/genes-y-alelos/G07",
+     "tipo": "microtema",
+     "concepto": "CON:biologia/genes-y-alelos",
+     "grados": [
+      7
+     ],
+     "titulo": "Un mismo gen, distintas versiones",
+     "explicacion": "En una mazorca puede haber granos amarillos y blancos. Todos tienen el mismo gen para el color del grano, pero ese gen existe en versiones distintas: cada versión se llama alelo. El maíz, la arveja y las personas tienen dos copias de casi todos sus genes, una de cada progenitor, y pueden ser alelos iguales o distintos. Si un alelo se nota con una sola copia, se llama dominante; eso no quiere decir que sea el más común.",
+     "ejemplo": "El grupo sanguíneo A, B, AB u O depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen. El signo + o − del carné depende de otro gen.",
+     "practica": "ACT:biologia/genes-y-alelos/practica-G07",
+     "comprobacion": "ACT:biologia/genes-y-alelos/comprobacion-G07",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación, que pide interpretar un conteo nuevo de plantas de tomate sin confundir alelo con gen ni dominante con más frecuente.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:biologia/genes-y-alelos",
+      "TEMA:G07-CIE-U2-2.7"
+     ],
+     "origen": "redactor-actividades (G07-CIE-U2-2.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:biologia/genes-y-alelos",
+     "nombre": "Genes y alelos",
+     "definicion": "Un gen es un segmento de ADN, codificante o no, que porta información; los alelos son sus versiones alternativas.",
+     "asignatura": "biologia"
+    },
+    "objetivo": {
+     "id": "TEMA:G07-CIE-U2-2.7",
+     "grado": 7,
+     "indicador": "2.7. Explica el concepto de alelo empleando fenómenos cotidianos.",
+     "evidencia": "Explicación del concepto de alelo con ejemplos de plantas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": "1. `obj-2`, la práctica y la comprobación usan «dominante» (definido en el enunciado): puede corresponder a un tema\n   posterior de Mendel.\n2. Rasgos de un gen elegidos a propósito: flor y altura de la arveja, grano de maíz amarillo o blanco, tomate rojo o\n   amarillo («en estas plantas»). Se evitaron el color de ojos y el lóbulo de la oreja. Confirmar las simplificaciones.\n3. «Dos copias de cada gen» no se cumple en los genes de X e Y de los varones ni en organismos haploides.\n4. Opciones marcadas incorrectas con algo de verdad (`obj-2` D; práctica de genes D). Si se quiere seguir «dominante =\n   más común» como dificultad aparte, hace falta otra ranura.\n5. Cifras aproximadas: unos 2 m de ADN por célula y un núcleo de unas 6 milésimas de milímetro. Los datos de Mendel\n   (705 y 224) son los de su experimento."
+   },
+   "resolucion_vigente": {
+    "decision": "corregir",
+    "ronda": 3
+   },
+   "dictamenes_anteriores": [
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Lo central es exacto: un gen con varias versiones y dominante no significa más común. Dos precisiones: «las plantas y los animales tienen dos copias de cada gen» falla en los genes de X e Y de los varones y en muchas plantas cultivadas poliploides, y el gen ABO tiene más de tres alelos. Limito la afirmación a los organismos de los ejemplos y digo «tres alelos principales».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.7",
+       "cita": "Explica el concepto de alelo con fenómenos cotidianos y ejemplos de plantas"
+      },
+      {
+       "fuente": "notas_de_los_redactores (puntos 3 y 4)",
+       "cita": "«dos copias de cada gen» no se cumple en X e Y ni en haploides"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "maíz y arveja son diploides; el ABO tiene muchas variantes agrupadas en A, B y O"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "En una mazorca puede haber granos amarillos y blancos. Todos tienen el mismo gen para el color del grano, pero ese gen existe en versiones distintas: cada versión se llama alelo. El maíz, la arveja y las personas tienen dos copias de casi todos sus genes, una de cada progenitor, y pueden ser alelos iguales o distintos. Si un alelo se nota con una sola copia, se llama dominante; eso no quiere decir que sea el más común.",
+      "ejemplo": "El grupo sanguíneo depende de un solo gen con tres alelos principales: A, B y O. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen."
+     }
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "La explicación es clara y adecuada a 7.°. Pero el ejemplo dice «tres alelos» justo después de que la explicación afirma «dos copias», y sin aclarar un estudiante puede ver una contradicción. Agrego que cada persona lleva solo dos de esos alelos. No cambia la ciencia y hace visible la diferencia entre los alelos que existen y los que lleva una persona.",
+     "evidencia": [
+      {
+       "fuente": "MT:biologia/genes-y-alelos/G07 (explicación)",
+       "cita": "«tienen dos copias de casi todos sus genes»"
+      },
+      {
+       "fuente": "MT:biologia/genes-y-alelos/G07 (ejemplo)",
+       "cita": "«un solo gen con tres alelos principales: A, B y O»"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "un ejemplo que parece contradecir la explicación aumenta la carga y siembra dudas; se aclara en el mismo texto"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "ejemplo": "El grupo sanguíneo depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen."
+     }
+    },
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "Agregar «aunque cada persona lleva solo dos» es correcto: el gen ABO está en un autosoma y cada persona tiene dos copias, que pueden ser iguales (OO) o distintas (AB). Esto refuerza la diferencia entre los alelos que existen en la población y los que lleva un individuo. Se conservan las precisiones de la etapa 1 («casi todos sus genes», «tres alelos principales»).",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ABO: varios alelos en la población, dos copias por persona (cromosoma 9)"
+      },
+      {
+       "fuente": "ejemplo del microtema",
+       "cita": "una persona con sangre tipo O lleva dos alelos O"
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "impugnacion": {
+    "veredicto": "refutada",
+    "argumento": "El ejemplo afirma que «el grupo sanguíneo depende de un solo gen». El grupo que los estudiantes ven en su carné lleva además el Rh (O+, A−), que depende de otro gen: la V2 enseña en 10.° la herencia independiente del factor Rh, y en 7.° (2.10) hace mirar el grupo del carné. Precisar «A, B, AB u O», como ya hace el sondeo 1, evita desaprenderlo.",
+    "confianza": "media",
+    "cambios": {
+     "ejemplo": "El grupo sanguíneo A, B, AB u O depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen."
+    },
+    "patron": "error_cientifico",
+    "contraevidencia": [
+     {
+      "fuente": "TEMA:G10-BIO-U4-4.2",
+      "cita_literal": "relación de dominancia entre los alelos I^A, I^B e i y la herencia independiente del factor Rh",
+      "dice": "10.° enseña que el Rh se hereda aparte del gen ABO",
+      "donde": "G10-BIO-U4-4.2 (Matriz_Bachillerato_Biologia_10_11.xlsx, hoja «Biología 10.°», fila 42)"
+     },
+     {
+      "fuente": "TEMA:G07-CIE-U2-2.10",
+      "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano",
+      "dice": "En 7.° se mira un cariotipo (cromosomas separados) y el grupo del carné",
+      "donde": "G07-CIE-U2-2.10 (Matriz_Ciencias_7mo_Grado_U1_U6.xlsx, hoja «Unidad 2 - Genética y evolución», fila 12)"
+     }
+    ],
+    "lote": "b1_refutador_biologia_4",
+    "fecha": "2026-10-12"
+   },
+   "replicas_de_esta_vuelta": [
+    {
+     "id": "PED:MT:biologia/genes-y-alelos/G07",
+     "rol": "experto-biologia",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "Acepto la impugnación y la amplío. «El grupo sanguíneo depende de un solo gen» es inexacto: el grupo del carné (p. ej., O+) junta ABO y Rh, que depende de otro gen; la V2 lo enseña en 10.° y en 7.° hace mirar ese carné (2.10). Precisar «A, B, AB u O» y decir que el signo + o − depende de otro gen evita desaprenderlo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-BIO-U4-4.2",
+       "cita": "En 10.° el Rh se hereda aparte del gen ABO.",
+       "cita_literal": "relación de dominancia entre los alelos I^A, I^B e i y la herencia independiente del factor Rh"
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U2-2.10",
+       "cita": "En 7.° los estudiantes miran el grupo sanguíneo de un carné, que trae el signo Rh.",
+       "cita_literal": "Observa el grupo sanguíneo anotado en un carné de salud familiar (con permiso) y un cariotipo humano"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ABO (gen ABO, cromosoma 9) y Rh (sobre todo el gen RHD, cromosoma 1) son genes distintos."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "ejemplo": "El grupo sanguíneo A, B, AB u O depende de un solo gen con tres alelos principales: A, B y O, aunque cada persona lleva solo dos. Una persona con sangre tipo O lleva dos alelos O; una con tipo AB lleva un alelo A y uno B. Todas tienen el mismo gen. El signo + o − del carné depende de otro gen."
+     }
+    }
+   ],
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "etapa": "réplica: revisión psicopedagógica"
+  }
+ ]
+}
