@@ -1,6 +1,6 @@
 # Reforzamiento por ciencia: resumen del snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **decisiones delegadas de lo sin consenso (2026-10-13)**. Diseño y reglas: `specs/14_panel_expertos.md`, sección 7; narrativa: `panel/bucle/README.md`.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **Ontario Grades 1–2 en el contraste de 2.°–8.° (2026-10-13)**. Diseño y reglas: `specs/14_panel_expertos.md`, sección 7; narrativa: `panel/bucle/README.md`.
 
 | Ciencia | Expedientes | Impugnados | Cambiados | Sólidos | Respaldados | Frágiles | Delegadas | Sin consenso | En el bucle |
 |---|---|---|---|---|---|---|---|---|---|

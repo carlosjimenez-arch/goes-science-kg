@@ -24,8 +24,8 @@ nada cambia la malla sin una decisión del MINED. Cada archivo indica qué colum
 El grafo ya aplica estas decisiones, pero falta la confirmación del MINED.
 
 **[`decisiones/2026-10-13_decisiones.csv`](decisiones/2026-10-13_decisiones.csv)** (reemplaza a los anteriores). Trae
-190 decisiones: 167 con dictamen del panel y su solidez, y 23 delegadas, verificadas en la fuente y pendientes de
-confirmar.
+193 decisiones: 167 con dictamen del panel y su solidez, y 26 delegadas, verificadas en la fuente y pendientes de
+confirmar. Desde el 2026-10-13, el contraste de 2.°–8.° incluye Ontario Grades 1–2 (85 objetivos).
 - **Tras las observaciones del panel:**
   - la neutralización pasa a «tardío» (el bucle lo confirmó);
   - los agentes oxidantes, a «posterior»;

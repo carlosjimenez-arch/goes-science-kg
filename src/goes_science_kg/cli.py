@@ -787,8 +787,11 @@ CONFIRMAR = Annotated[bool, typer.Option("--confirmar", help="Pagar las llamadas
 
 
 def _frenar_si_hay_costo(pendientes: int, confirmar: bool) -> None:
-    """Sin --confirmar, no se gasta: informa cuántas llamadas pagaría y sale con código 1."""
-    typer.echo(f"Llamadas a Vertex fuera de la caché: {pendientes}")
+    """Sin --confirmar, no se gasta: informa cuántas llamadas pagaría y sale con código 1. La cifra es una cota
+    inferior (los reintentos y la validación de completitud suman: Ontario 1–2 estimó 24 y usó 29)."""
+    techo = pendientes + -(-pendientes // 4)   # +25 %, redondeado hacia arriba
+    typer.echo(f"Llamadas a Vertex fuera de la caché: {pendientes} (al menos; pide aprobación para unas {techo})"
+               if pendientes else "Llamadas a Vertex fuera de la caché: 0")
     if pendientes and not confirmar:
         typer.echo("No se llamó a Vertex. Repite con --confirmar para pagarlas.", err=True)
         raise typer.Exit(1)
@@ -812,6 +815,9 @@ def internacional_extraer(paises: Annotated[list[str] | None, typer.Argument(hel
     _frenar_si_hay_costo(sum(extraer.llamadas_pendientes(p) for p in elegidos), confirmar)
     for p in elegidos:
         typer.echo(extraer.extraer_pais(p))
+    # La extracción reescribe los objetivos desde la caché: sin esto se pierden las correcciones de metadatos (grados,
+    # Extension Part en cursiva, sugerencias opcionales al docente). Pasó el 2026-10-13 con HK S1–3.
+    typer.echo(f"metadatos corregidos: {extraer.corregir_metadatos()}")
 
 
 @internacional_app.command("etiquetar")
