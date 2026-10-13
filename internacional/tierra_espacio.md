@@ -22,7 +22,7 @@ Países con núcleo común por grado SV (denominador del consenso): 9.°: AU, EE
 
 Sensibilidad: con 4 países en lugar de 5, 4 conceptos más pasarían de «solo antes de 9.°» a «no retomados».
 
-Revisión experta: 2 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Capas de la atmósfera y variación con la altitud (no_retomado → retomado); Efecto invernadero (no_retomado → retomado).
+Revisión experta: 2 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Capas de la atmósfera y variación con la altitud (incierto → retomado); Efecto invernadero (incierto → retomado).
 
 ## Sin referente (2)
 

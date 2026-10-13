@@ -90,6 +90,11 @@ La primera corrida produjo artefactos que la revisión manual detectó. El detal
 - **Presencia en la V2:** es la unión de dos etiquetados de 9.°–11.° (vocabulario de la asignatura y vocabulario
   completo) más las equivalencias revisadas entre asignaturas. Así, un hueco de El Salvador tiene que resistir el
   ruido de la IA.
+- **Salvaguarda de las ausencias (2026-10-13):** una clase de ausencia («no retomado» o «faltante») solo se afirma
+  si el concepto tampoco aparece como frase en el texto completo de la fila. Ese texto incluye microhabilidades,
+  valores e indicador avanzado (`contraste.ausencias_con_texto`). Si aparece, la clase pasa a «incierto», con los
+  temas en la alerta. Las 4 «no retomado» que había eran falsas o parciales por esa razón: efecto invernadero, capas
+  de la atmósfera y usos de la energía. Las corrigió la revisión crítica del bucle de fortalecimiento (spec 14 §7).
 - **Puntos 5 y 6:** la demanda se mide con un mismo clasificador por verbos (escala TIMSS) en los dos lados, y las
   prácticas por cobertura del catálogo.
 - **Secuencia:** los errores automáticos son candidatos (2 de 4 falsos en la muestra) y solo se afirman los

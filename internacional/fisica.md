@@ -22,7 +22,7 @@ Países con núcleo común por grado SV (denominador del consenso): 9.°: AU, EE
 
 Sensibilidad: con 4 países en lugar de 5, 0 conceptos más pasarían de «solo antes de 9.°» a «no retomados».
 
-Revisión experta: 4 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Relaciones presión-volumen-temperatura en gases (solo_especializacion → alineado); Superposición e interferencia de ondas (solo_especializacion → alineado); Absorción de radiación y efecto invernadero (no_retomado → retomado); La energía y sus usos (no_retomado → retomado).
+Revisión experta: 4 conceptos cambiaron de clase frente a la regla automática (`data/interim/internacional/revisiones.json`): Relaciones presión-volumen-temperatura en gases (solo_especializacion → alineado); Superposición e interferencia de ondas (solo_especializacion → alineado); Absorción de radiación y efecto invernadero (incierto → retomado); La energía y sus usos (incierto → retomado).
 
 ## Llegan tarde (2)
 

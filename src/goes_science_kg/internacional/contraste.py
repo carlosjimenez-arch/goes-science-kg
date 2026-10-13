@@ -83,6 +83,31 @@ def _sv() -> tuple[dict[str, list[tuple[int, str]]], dict[str, dict]]:
     return {c: sorted(v) for c, v in por.items()}, temas
 
 
+CLASES_DE_AUSENCIA = ("no_retomado", "faltante")
+
+
+def ausencias_con_texto(filas: list[dict], voc: dict, temas: dict[str, dict], grados: tuple[int, ...]) -> list[str]:
+    """Salvaguarda del método v1 (revisión crítica del bucle, 2026-10-13): una clase de ausencia («no retomado»:
+    la V2 no lo retoma en el tramo; «faltante»: no lo enseña) solo se afirma si el concepto tampoco aparece como frase
+    en el texto completo de la fila (microhabilidades, valores, indicador avanzado). Si aparece, la clase pasa a
+    «incierto» con la alerta de los temas donde aparece, para revisión. Las 4 «no retomado» de 9.°–11.° eran falsas o
+    parciales por eso. Modifica `filas` y devuelve los conceptos afectados."""
+    if not any(f["clase"] in CLASES_DE_AUSENCIA for f in filas):
+        return []
+    texto = presencia_por_texto(voc, textos_completos())
+    afectados = []
+    for f in filas:
+        if f["clase"] not in CLASES_DE_AUSENCIA:
+            continue
+        donde = sorted(tid for tid in texto.get(f["concepto"], ()) if tid in temas
+                       and (f["clase"] == "faltante" or temas[tid]["grado"] in grados))
+        if donde:
+            f["clase_v1"], f["clase"] = f["clase"], "incierto"
+            f.setdefault("alertas", {})["ausencia_con_texto"] = donde[:6]
+            afectados.append(f["concepto"])
+    return afectados
+
+
 def clase_de(sv_primer: int | None, sv_en_tramo: int | None, g_cons: int | None, n_nucleo_en_tramo: int,
              mediana_nucleo: float | None, n_nucleo_foco: int, n_esp: int,
              grados: tuple[int, ...] | None = None, n_mediana: int | None = None) -> str:
@@ -154,6 +179,7 @@ def clasificar() -> dict:
                       "n_especializacion": 0, "sv_en_tramo": min(g for g, _ in gs if g in t.grados),
                       "grado_consenso": None, "proporcion_nucleo": {}, "sv_primer_grado": gs[0][0],
                       "sv_temas": [t for _, t in gs][:8], "paises": {}, "clase": "sin_referente"})
+    ausencias_con_texto(filas, voc, temas, t.grados)
     revisiones = revisiones_expertas()
     for f in filas:
         if rv := revisiones.get(f["concepto"]):

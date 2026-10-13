@@ -261,3 +261,19 @@ def test_lo_sin_consenso_decidido_por_delegacion_queda_como_delegado():
     x["decision_delegada"] = {"decision": "alineado", "justificacion": "regla del umbral", "evidencia": []}
     s, motivo = bucle._solidez(x)
     assert s == "delegada" and "pendiente de confirmar" in motivo
+
+
+def test_una_ausencia_no_se_afirma_si_el_concepto_esta_en_el_texto_de_la_fila():
+    """Salvaguarda del método v1 de 9.°–11.°: las 4 «no retomado» eran falsas porque el concepto estaba en columnas
+    que el etiquetado no lee. Sin la revisión experta, la clase de ausencia pasa a «incierto»."""
+    from goes_science_kg import conceptos
+    from goes_science_kg.ingesta.mallas import extraer
+    from goes_science_kg.internacional.contraste import ausencias_con_texto
+
+    temas = {t.id: t.dict() for t in extraer()}
+    filas = [{"concepto": "CON:ciencias_tierra_espacio/efecto-invernadero", "clase": "no_retomado"},
+             {"concepto": "CON:biologia/especies-clave", "clase": "alineado"}]
+    assert ausencias_con_texto(filas, conceptos.vocabulario(), temas, (9, 10, 11)) == [filas[0]["concepto"]]
+    assert filas[0]["clase"] == "incierto" and filas[0]["clase_v1"] == "no_retomado"
+    assert any(t.startswith(("G10-", "G11-")) for t in filas[0]["alertas"]["ausencia_con_texto"])
+    assert filas[1]["clase"] == "alineado"
