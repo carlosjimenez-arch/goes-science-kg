@@ -173,7 +173,7 @@ como pasó antes con la «Extension Part» en cursiva de HK (spec 12) o con la c
 | Etiqueta | Significa |
 |---|---|
 | **sólido** | sobrevivió a la impugnación sin contraevidencia anclada y tiene al menos una cita literal verificada en una fuente primaria (en contenido: el revisor adversarial no encontró errores) |
-| **respaldado** | sobrevivió, pero su fuente solo está ubicada (paráfrasis o traducción), o la réplica lo mantuvo frente a contraevidencia anclada o a una discrepancia de la sonda |
+| **respaldado** | sobrevivió, pero su fuente solo está ubicada (paráfrasis o traducción), o la réplica lo mantuvo frente a contraevidencia anclada, o la sonda ciega dictaminó otra opción que la resolución **vigente** (inestable). Si la réplica corrigió el dictamen y llegó a lo mismo que la sonda, eso corrobora |
 | **frágil** | sin fuente primaria verificable, con una fuente inexistente, o cambiado en la última vuelta sin volver a impugnarse |
 | **sin consenso** | lo decide una persona |
 
@@ -211,10 +211,14 @@ uv run gskg bucle fuente "<fuente>"            # el texto en que se busca
   - la sonda coincidió en 56 de 63;
   - la réplica cambió 24 y mantuvo 11, todos por unanimidad.
 - **Vuelta 2:** de los 24 cambios, 21 se sostuvieron; 3 se reabrieron y la réplica los mantuvo. Con eso convergió.
-- **Solidez:** 466 de 486 quedan sólidos o respaldados; 1 es frágil (cita a una página inexistente) y 17 siguen sin
-  consenso.
-- **Bucle externo:** siete correcciones al verificador y al circuito salieron de agentes que no pudieron anclar
+- **Solidez:** de los 486 resueltos, 468 quedan sólidos, 17 respaldados y 1 frágil (cita a una página inexistente);
+  17 siguen sin consenso desde el panel original.
+- **Bucle externo:** ocho correcciones al verificador y al circuito salieron de agentes que no pudieron anclar
   evidencia legítima (`panel/bucle/README.md`). Quedan seis problemas de método del contraste para el responsable.
-- **Costo y robustez:** unos 50 subagentes de Claude, sin Vertex. Hubo tres cortes por límites de uso o de sesión;
-  el bucle se retomó sin perder trabajo, porque cada salida se valida y se consolida por lote. Desde entonces corre en
-  olas de 6 y con commits por etapa.
+- **Costo y robustez:** 40 subagentes de Claude completados, más unos 30 intentos cortados, sin Vertex. Hubo tres
+  cortes por límites de uso o de sesión. El bucle se retomó sin perder trabajo, porque cada salida se valida y se
+  consolida por lote. Desde entonces corre en olas de 6 y con commits por etapa.
+- **Revisión crítica (2026-10-13):** la sonda se comparaba con la resolución original y no con la vigente, así que
+  marcaba como inestables 3 casos en que la réplica había llegado a lo mismo que la sonda. Además, los snapshots por
+  grado contaban tres veces los objetivos de otros países. Las dos cosas están corregidas y probadas, y los totales
+  publicados («466») se corrigieron.

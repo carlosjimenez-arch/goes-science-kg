@@ -143,7 +143,7 @@ revisión técnica interina mientras no haya un equipo del MINED.
 `bucle.py`, `gskg bucle …`, el subagente `refutador` y su validación de citas por código. Convergió en 2 vueltas:
 - 24 dictámenes corregidos;
 - 820 anclas literales;
-- 466 de 486 dictámenes sólidos o respaldados.
+- de 486 dictámenes resueltos, 468 sólidos, 17 respaldados y 1 frágil (más 17 sin consenso del panel original).
 
 Corrigió hallazgos (efecto invernadero, potencia eléctrica, leyes de los gases, fuerzas intermoleculares) y siete
 errores del contenido de 7.° y 9.°. Snapshots por ciencia en `panel/bucle/`.

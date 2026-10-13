@@ -175,9 +175,13 @@ def puntos_sv(temas: dict[str, dict]) -> dict[str, dict[str, int]]:
         for tid, e in etiquetas.items():
             if tid in temas:
                 lecturas[tid].append((e["principales"], e["secundarios"]))
+    from goes_science_kg.revisiones import revisiones_temas
+
+    revisadas = revisiones_temas()   # el grafo principal con sus revisiones (panel, decisiones delegadas, MINED)
     for tid, e in conceptos.etiquetado().items():
-        if tid in temas and e["conceptos"]:
-            lecturas[tid].append((e["conceptos"][:1], e["conceptos"][1:]))
+        cs = revisadas.get(tid, {}).get("conceptos", e["conceptos"])
+        if tid in temas and cs:
+            lecturas[tid].append((cs[:1], cs[1:]))
     puntos: dict[str, dict[str, int]] = defaultdict(dict)
     for tid, ls in sorted(lecturas.items()):
         vistos = [(set(ampliar(pr)), set(ampliar([*pr, *sec]))) for pr, sec in ls]

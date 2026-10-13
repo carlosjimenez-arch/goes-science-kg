@@ -67,7 +67,7 @@ Resumen de los grafos por grado: lo que conviene revisar primero. Detalle en `G<
 
 ## 9.° grado
 
-102 temas · 110 conceptos (44 nuevos) · [ficha](G09/ficha.md) · [visor](G09/grafo.html)
+102 temas · 111 conceptos (45 nuevos) · [ficha](G09/ficha.md) · [visor](G09/grafo.html)
 
 **Secuencia:** Tectónica de placas necesita Convección del manto y energía interna de la Tierra (nunca); Capacidad calorífica y calor específico necesita Calor como energía en tránsito (10.°); Capacitancia y condensadores necesita Energía potencial y potencial eléctrico (11.°); Corriente alterna y transformador necesita Inducción electromagnética: Faraday y Lenz (11.°); Primera ley de la termodinámica necesita Calor como energía en tránsito (10.°); Primera ley de la termodinámica necesita Conservación de la energía (10.°).
 

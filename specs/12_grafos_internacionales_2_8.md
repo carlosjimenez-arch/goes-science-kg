@@ -26,7 +26,9 @@ El etiquetado de la V2 en primaria es irregular (etiquetas secundarias sueltas, 
 que no se etiquetan) y los países también tienen etiquetas sueltas. La regla de clases es la misma de la spec 11, pero
 se aplica con dos lecturas y solo se afirma lo que coincide (`Tramo.lectura_doble`, `contraste._clasificar_doble`):
 - **amplia** (favorable a la V2): la V2 con cualquier etiqueta de sus dos etiquetados (Vertex `malla_v2_*` y el del
-  grafo principal) o con el concepto nombrado como frase en el texto de cualquier columna de la fila
+  grafo principal, **con sus revisiones** de `data/interim/revisiones/`; hasta el 2026-10-13 se leía el etiquetado
+  sin revisar, y las correcciones del panel y las delegadas no llegaban al contraste) o con el concepto nombrado como
+  frase en el texto de cualquier columna de la fila
   (`mallas.textos_completos`); los países con presencia sólida (principal, o secundaria en dos objetivos).
 - **estricta** (desfavorable): la V2 con presencia sólida (2 puntos acumulados); los países con la regla de presencia.
 - Si difieren: **incierto** (`revision_clases.csv`). «adelantado» exige ≥ 3 países detrás de la mediana (con menos,

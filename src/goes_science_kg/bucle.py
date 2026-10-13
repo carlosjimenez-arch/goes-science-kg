@@ -809,7 +809,12 @@ def _solidez(x: dict) -> tuple[str, str]:
         return "en_bucle", "réplica pendiente"
     if ult.get("replica") == "cambiada":
         return "fragil", f"cambió en la vuelta {ult['vuelta']} y no se volvió a impugnar"
-    inestable = any(v.get("sonda", {}).get("acuerdo") is False for v in vueltas)
+    # La sonda se compara con la resolución VIGENTE: si la réplica corrigió el dictamen y llegó a lo mismo que la sonda
+    # dictaminó a ciegas, eso corrobora; solo es inestable si la sonda discrepa de lo que quedó.
+    ciega = next((v["sonda"]["dictamenes"] for v in vueltas if (v.get("sonda") or {}).get("dictamenes")), None)
+    inestable = ciega is not None and not all(_misma(d, x["resolucion"]) for d in ciega)
+    corroborada = ciega is not None and not inestable and any((v.get("sonda") or {}).get("acuerdo") is False
+                                                                for v in vueltas)
     if x["tipo"] == "contenido":
         return ("respaldado", "la mantuvo la réplica tras una impugnación") if ult.get("replica") == "mantenida" \
             else ("solido", "el revisor adversarial no encontró errores")
@@ -822,10 +827,13 @@ def _solidez(x: dict) -> tuple[str, str]:
     if a["nivel"] == "sin_fuente_primaria":
         return "fragil", "sin fuente primaria verificable (solo argumentos o fuentes internas)"
     if inestable:
-        return "respaldado", "la sonda ciega discrepó y la réplica la mantuvo"
+        return "respaldado", "inestable: la sonda ciega dictaminó otra opción que la resolución vigente"
     if contestada:
         return "respaldado", "hay contraevidencia anclada; la réplica la ponderó y mantuvo la decisión"
     if a["nivel"] == "anclado":
+        if corroborada:
+            return "solido", ("la réplica corrigió el dictamen y llegó a lo mismo que la sonda ciega; cita literal "
+                              "verificada en la fuente")
         return "solido", "sobrevivió a la impugnación, con cita literal verificada en la fuente"
     return "respaldado", "sobrevivió a la impugnación; la fuente existe, pero la cita no es literal"
 
@@ -1039,157 +1047,214 @@ def snapshot(etapa: str) -> list[str]:
 
 # -- snapshot por grado ------------------------------------------------------------------------------------------------
 _RE_GRADO_TEMA = re.compile(r"\bG(\d\d)-[A-Z]{3}-U\d+")
-_RE_GRADO_TEXTO = re.compile(r"(\d{1,2})\.°")
+_RE_GRADO_TEXTO = re.compile(r"(\d{1,2})\.°(?:\s*[–-]\s*(\d{1,2})\.°)?")
+# Documentos que reúnen varios grados: los tramos del contraste internacional (specs 11 y 12).
+SNAPSHOTS_POR_TRAMO = {"9-11": (11, 10, 9), "2-8": (8, 7, 6, 5, 4, 3, 2)}
+NOTA_SOLIDEZ = ("**Cómo leer la solidez.** «Sólido» quiere decir que el dictamen sobrevivió a un revisor adversarial "
+                "y que una cita literal de una fuente primaria lo apoya; no prueba que la interpretación sea la "
+                "correcta. La estabilidad solo se midió en la muestra de la sonda ciega (63 de 486). Todos son "
+                "dictámenes del panel de expertos IA, **no confirmaciones del MINED**.")
 
 
 @cache
-def _primer_grado_contraste() -> dict[tuple[str, str], int | None]:
-    """(tramo, concepto) → primer grado de la V2 en el contraste vigente."""
+def _contraste_vigente() -> dict[tuple[str, str], dict]:
+    """(tramo, concepto) → fila del contraste vigente (primer grado de la V2 y clase)."""
     salida = {}
     for tramo, archivo in (("9_11", "internacional/contraste.json"), ("2_8", "internacional/2_8/contraste.json")):
         p = ruta(archivo)
         if p.exists():
             for f in json.loads(p.read_text(encoding="utf-8"))["filas"]:
-                g = f.get("sv_primer_grado")
-                salida[(tramo, f["concepto"])] = int(g) if isinstance(g, (int, float)) else None
+                salida[(tramo, f["concepto"])] = f
     return salida
 
 
+def _concepto_y_tramo(x: dict) -> tuple[str, str] | None:
+    d = x.get("datos") or {}
+    if x["tipo"] == "clase_incierta":
+        return "2_8", d["concepto"]["id"]
+    if x.get("subtipo") in ("clase_internacional", "clase_internacional_2_8"):
+        return ("9_11" if x["subtipo"] == "clase_internacional" else "2_8"), d["conceptos"][0]["id"]
+    return None
+
+
+def _grados_texto(texto: str) -> set[int]:
+    grados = set()
+    for a, b in _RE_GRADO_TEXTO.findall(texto):
+        a, b = int(a), int(b or a)
+        grados |= {g for g in range(a, b + 1) if 2 <= g <= 11}
+    return grados
+
+
 def grados_de(i: str, x: dict) -> list[int]:
-    """Grados de la malla a los que corresponde un expediente (vacío: transversal, sin grado)."""
+    """Grados de la malla a los que corresponde un expediente. Vacío si no tiene uno: un concepto transversal, un
+    objetivo de otro país o un hallazgo de todo un tramo (ver tramo_de)."""
     d = x.get("datos") or {}
     if x["tipo"] == "contenido":
         return [g] if (g := (d.get("objetivo") or {}).get("grado")) else []
     if x["tipo"] in ("cambio_asignatura", "asignacion"):
-        if m := _RE_GRADO_TEMA.search(i):
-            return [int(m[1])]
-        o = _objetivos().get(i.rsplit("::", 1)[-1], {})
-        lo, hi = o.get("grado_sv_min") or o.get("grado_min"), o.get("grado_sv_max") or o.get("grado_max")
-        return list(range(int(lo), int(hi) + 1)) if lo and hi else []
+        m = _RE_GRADO_TEMA.search(i.rsplit("::", 1)[-1])   # solo los temas de la malla tienen grado propio
+        return [int(m[1])] if m else []
     if x["tipo"] == "propuesta":
         return [g] if (g := d.get("grado_propuesto")) else []
-    if x["tipo"] == "clase_incierta" or x.get("subtipo") in ("clase_internacional", "clase_internacional_2_8"):
-        tramo = "9_11" if x.get("subtipo") == "clase_internacional" else "2_8"
-        concepto = (d.get("concepto") or {}).get("id") or next((c["id"] for c in d.get("conceptos", [])), "")
-        g = _primer_grado_contraste().get((tramo, concepto))
-        return [g] if g else []
+    if ct := _concepto_y_tramo(x):
+        g = (_contraste_vigente().get(ct) or {}).get("sv_primer_grado")
+        return [int(g)] if isinstance(g, (int, float)) else []
     if x["tipo"] == "hallazgo":
-        texto = " ".join(str(d.get(k, "")) for k in ("titulo", "evidencia", "recomendacion"))
-        grados = {int(m) for m in _RE_GRADO_TEMA.findall(texto)}
-        grados |= {int(m) for m in _RE_GRADO_TEXTO.findall(d.get("titulo", "")) if 2 <= int(m) <= 11}
-        if not grados:
-            grados = {9, 10, 11} if d.get("tramo") == "9_11" else set()
+        texto = " ".join(str(d.get(k, "")) for k in ("evidencia", "recomendacion"))
+        grados = {int(m) for m in _RE_GRADO_TEMA.findall(texto)} | _grados_texto(d.get("titulo", ""))
         return sorted(grados)
     return []
 
 
+def tramo_de(i: str, x: dict) -> str | None:
+    """Tramo («9-11» o «2-8») de lo que no tiene grado de la malla: objetivos de países y hallazgos de todo un tramo."""
+    if grados_de(i, x):
+        return None
+    if x["tipo"] == "asignacion":
+        o = _objetivos().get(i.rsplit("::", 1)[-1], {})
+        lo = o.get("grado_sv_min") or o.get("grado_min")
+        return ("9-11" if int(lo) >= 9 else "2-8") if lo else None
+    if x["tipo"] == "hallazgo":
+        return {"9_11": "9-11", "2_8": "2-8"}.get((x.get("datos") or {}).get("tramo"))
+    return None
+
+
+def _n(n: int, singular: str, plural: str) -> str:
+    return f"{n} {singular if n == 1 else plural}"
+
+
 def snapshot_grados(etapa: str) -> list[str]:
-    """panel/bucle/grados/G<gg>.md (de 11.° a 2.°), RESUMEN.md y panel/bucle/SNAPSHOT_9-11.md: lo que el bucle revisó,
-    cambió y dejó en cada grado de la malla."""
+    """panel/bucle/grados/G<gg>.md (de 11.° a 2.°) y RESUMEN.md, y panel/bucle/SNAPSHOT_<tramo>.md: lo que el bucle
+    revisó, cambió y dejó en cada grado de la malla. Los objetivos de otros países y los hallazgos de todo un tramo no
+    tienen grado de la malla: van una sola vez, en la sección «Del tramo» del documento del tramo."""
     estado = panel.cargar_estado()
     hoy = date.today().isoformat()
     d = ruta("panel/bucle/grados")
     d.mkdir(parents=True, exist_ok=True)
     por_grado: dict[int, list[tuple[str, dict]]] = defaultdict(list)
-    transversales = []
+    del_tramo: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+    transversales, total = [], 0
     for i, x in sorted(estado.items()):
         if x["tipo"] == "piloto" or not ((x.get("bucle") or {}).get("vueltas") or x["estado"] == "sin_consenso"):
             continue
-        gs = grados_de(i, x)
-        for g in gs:
-            por_grado[g].append((i, x))
-        if not gs:
+        total += 1
+        if gs := grados_de(i, x):
+            for g in gs:
+                por_grado[g].append((i, x))
+        elif t := tramo_de(i, x):
+            del_tramo[t].append((i, x))
+        else:
             transversales.append((i, x))
 
+    def titulo(i: str, x: dict) -> str:
+        t = x["titulo"]
+        if x["tipo"] == "asignacion":
+            t = f"[{i.split('::')[1].replace('_', ' ')}] {t}"
+        return t
+
+    def resolucion(x: dict) -> str:
+        if x["estado"] != "resuelta":
+            return x["estado"].replace("_", " ")
+        r = x["resolucion"]["decision"]
+        if (ct := _concepto_y_tramo(x)) and x["tipo"] == "decision":
+            clase = (_contraste_vigente().get(ct) or {}).get("clase")
+            return f"{r} (clase vigente: {clase})" if clase else r
+        return r
+
     def apoyo(x: dict) -> str:
-        """La primera ancla literal del bucle (qué dice y dónde) o, si no hay, el motivo de la solidez."""
         b = x["bucle"]
         if a := (b.get("anclas") or [None])[0]:
-            return f"{a.get('dice', '')} ({a.get('donde') or a.get('fuente')})"
-        return b.get("motivo_solidez", "")
+            return f"{a.get('dice', '')} — «{a.get('cita_literal', '')[:90]}» ({a.get('donde') or a.get('fuente')})"
+        return f"sin cita del revisor; {b.get('motivo_solidez', '')}"
 
-    def fila(x: dict, extra: str) -> str:
-        res = x["resolucion"]["decision"] if x["estado"] == "resuelta" else x["estado"]
-        return (f"| {TIPOS.get(x['tipo'], x['tipo'])} | {panel._celda(x['titulo'], 90)} | {res} | "
-                f"{ETIQUETA.get(x['bucle'].get('solidez'), '—')} | {panel._celda(extra, 240)} |")
+    def fila(i: str, x: dict, extra: str) -> str:
+        return (f"| {TIPOS.get(x['tipo'], x['tipo'])} | {panel._celda(titulo(i, x), 95)} | {resolucion(x)} | "
+                f"{ETIQUETA.get(x['bucle'].get('solidez'), '—')} | {panel._celda(extra, 260)} |")
 
-    def secciones(exps: list[tuple[str, dict]]) -> list[str]:
+    def secciones(exps: list[tuple[str, dict]], nivel: str = "###") -> list[str]:
         orden = sorted(exps, key=lambda e: (e[1]["tipo"], e[1]["titulo"]))
-        cab = ["| Tipo | Expediente | Resolución | Solidez | {} |", "|---|---|---|---|---|"]
+        cab = "| Tipo | Expediente | Resolución | Solidez | {} |"
+        sep = "|---|---|---|---|---|"
         md = []
         cambiados = [(i, x) for i, x in orden if _cambios_del_bucle(x)]
         if cambiados:
-            md += ["### Lo que el bucle cambió", "", cab[0].format("Antes → ahora y por qué"), cab[1]]
-            md += [fila(x, f"{_cambios_del_bucle(x)[0]} → {_cambios_del_bucle(x)[1]}. {panel._texto_final(x)}")
-                   for _i, x in cambiados]
+            md += [f"{nivel} Lo que el bucle cambió", "", cab.format("Antes → ahora y por qué (réplica del panel)"),
+                   sep]
+            md += [fila(i, x, f"{_cambios_del_bucle(x)[0]} → {_cambios_del_bucle(x)[1]}. {panel._texto_final(x)}")
+                   for i, x in cambiados]
             md.append("")
         mantenidos = [(i, x) for i, x in orden if not _cambios_del_bucle(x)
                       and any(v.get("replica") == "mantenida" for v in x["bucle"].get("vueltas", []))]
         if mantenidos:
-            md += ["### Reabiertos y mantenidos por la réplica", "", cab[0].format("Impugnación"), cab[1]]
-            md += [fila(x, next(((v.get("impugnacion") or {}).get("argumento") or "discrepancia de la sonda ciega"
-                                 for v in x["bucle"].get("vueltas", []) if v.get("replica") == "mantenida"), ""))
-                   for _i, x in mantenidos]
+            md += [f"{nivel} Reabiertos y mantenidos por la réplica", "",
+                   cab.format("Impugnación → respuesta del panel"), sep]
+            for i, x in mantenidos:
+                imp = next(((v.get("impugnacion") or {}).get("argumento") or "discrepancia de la sonda ciega"
+                            for v in x["bucle"]["vueltas"] if v.get("replica") == "mantenida"), "")
+                md.append(fila(i, x, f"{panel._celda(imp, 130)} → {panel._texto_final(x)}"))
             md.append("")
         debiles = [(i, x) for i, x in orden if x["bucle"].get("solidez") in ("fragil", "sin_consenso")]
         if debiles:
-            md += ["### Frágiles o sin consenso", "", cab[0].format("Motivo"), cab[1]]
-            md += [fila(x, x["bucle"].get("motivo_solidez", "")) for _i, x in debiles]
+            md += [f"{nivel} Frágiles o sin consenso (los decide una persona)", "", cab.format("Motivo"), sep]
+            md += [fila(i, x, x["bucle"].get("motivo_solidez", "")) for i, x in debiles]
             md.append("")
-        md += ["### Detalle: todos los dictámenes del grado", "", cab[0].format("Apoyo (cita literal verificada)"),
-               cab[1]]
-        md += [fila(x, apoyo(x)) for _i, x in orden]
+        md += [f"{nivel} Detalle: todos los dictámenes", "",
+               cab.format("Apoyo: qué dice la cita literal verificada y dónde"), sep]
+        md += [fila(i, x, apoyo(x)) for i, x in orden]
         return md
 
-    def cabecera(g: int, exps: list[tuple[str, dict]]) -> list[str]:
-        c = Counter(x["bucle"].get("solidez") for _i, x in exps)
-        cambiados = sum(bool(_cambios_del_bucle(x)) for _i, x in exps)
-        return [f"## {g}.° grado", "",
-                f"{len(exps)} dictámenes: {cambiados} cambiados por el bucle; {c['solido']} sólidos, "
-                f"{c['respaldado']} respaldados, {c['fragil']} frágiles, {c['sin_consenso']} sin consenso.", ""]
+    def conteo(exps: list[tuple[str, dict]]) -> tuple[Counter, int]:
+        return Counter(x["bucle"].get("solidez") for _i, x in exps), sum(bool(_cambios_del_bucle(x)) for _i, x in exps)
+
+    def linea(exps: list[tuple[str, dict]]) -> str:
+        c, cambiados = conteo(exps)
+        return (f"{_n(len(exps), 'dictamen', 'dictámenes')}: {_n(cambiados, 'cambiado', 'cambiados')} por el bucle; "
+                f"{_n(c['solido'], 'sólido', 'sólidos')}, {_n(c['respaldado'], 'respaldado', 'respaldados')}, "
+                f"{_n(c['fragil'], 'frágil', 'frágiles')} y {c['sin_consenso']} sin consenso.")
+
+    def fila_resumen(etiqueta: str, exps: list[tuple[str, dict]]) -> str:
+        c, cambiados = conteo(exps)
+        return (f"| {etiqueta} | {len(exps)} | {cambiados} | {c['solido']} | {c['respaldado']} | {c['fragil']} | "
+                f"{c['sin_consenso']} |")
 
     aviso = (f"> Generado por `uv run gskg bucle snapshot` el {hoy}, etapa: **{etapa}**. Cada dictamen se ubica en el "
-             "grado de la malla al que corresponde (tema, objetivo del contenido o primer grado de la V2 en el "
-             "contraste); un dictamen puede aparecer en más de un grado. Son dictámenes del panel de expertos IA, "
-             "**no confirmaciones del MINED**.")
+             "grado de la malla al que corresponde: el tema, el objetivo del contenido o el primer grado de la V2 en "
+             "el contraste vigente. Un hallazgo que menciona varios grados aparece en cada uno; los objetivos de otros "
+             "países y los hallazgos de todo un tramo van una sola vez, en la sección «Del tramo».")
+    encabezado = "| {} | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Sin consenso |"
     escritos = []
     for g in sorted(por_grado, reverse=True):
-        md = [f"# Reforzamiento por grado: {g}.°", "", aviso, "", *cabecera(g, por_grado[g])[2:],
-              *secciones(por_grado[g])]
+        md = [f"# Reforzamiento por grado: {g}.°", "", aviso, "", NOTA_SOLIDEZ, "", linea(por_grado[g]), "",
+              *secciones(por_grado[g], "##")]
         p = d / f"G{g:02d}.md"
         p.write_text("\n".join(md) + "\n", encoding="utf-8")
         escritos.append(relativa(p))
-    resumen = ["# Reforzamiento por grado: resumen", "", aviso, "",
-               "| Grado | Dictámenes | Cambiados | Sólidos | Respaldados | Frágiles | Sin consenso |",
-               "|---|---|---|---|---|---|---|"]
-    for g in sorted(por_grado, reverse=True):
-        exps = por_grado[g]
-        c = Counter(x["bucle"].get("solidez") for _i, x in exps)
-        resumen.append(f"| [{g}.°](G{g:02d}.md) | {len(exps)} | {sum(bool(_cambios_del_bucle(x)) for _i, x in exps)} "
-                       f"| {c['solido']} | {c['respaldado']} | {c['fragil']} | {c['sin_consenso']} |")
-    resumen += ["", f"**Transversales (sin grado):** {len(transversales)} dictámenes sobre conceptos (equivalencias, "
-                    "prerrequisitos, divisiones y relaciones «parte de»)."]
+    resumen = ["# Reforzamiento por grado: resumen", "", aviso, "", NOTA_SOLIDEZ, "",
+               encabezado.format("Grado"), "|---|---|---|---|---|---|---|"]
+    resumen += [fila_resumen(f"[{g}.°](G{g:02d}.md)", por_grado[g]) for g in sorted(por_grado, reverse=True)]
+    resumen += [fila_resumen(f"Del tramo {t.replace('-', '.°–')}.° (sin grado de la malla)", del_tramo[t])
+                for t in SNAPSHOTS_POR_TRAMO if del_tramo.get(t)]
+    resumen += [fila_resumen("Transversales (conceptos, sin grado)", transversales), "",
+                f"**Total sin duplicar:** {total} dictámenes. La suma de las filas es mayor porque un hallazgo puede "
+                "estar en varios grados."]
     p = d / "RESUMEN.md"
     p.write_text("\n".join(resumen) + "\n", encoding="utf-8")
     escritos.insert(0, relativa(p))
     for nombre, grados in SNAPSHOTS_POR_TRAMO.items():   # un documento por tramo, del grado mayor al menor
         presentes = [g for g in grados if g in por_grado]
-        junto = [f"# Reforzamiento de {grados[0]}.° a {grados[-1]}.°: snapshot", "", aviso, "",
-                 "| Grado | Dictámenes | Cambiados por el bucle | Sólidos | Respaldados | Frágiles | Sin consenso |",
-                 "|---|---|---|---|---|---|---|"]
-        for g in presentes:
-            c = Counter(x["bucle"].get("solidez") for _i, x in por_grado[g])
-            junto.append(f"| [{g}.°](#{g}-grado) | {len(por_grado[g])} | "
-                         f"{sum(bool(_cambios_del_bucle(x)) for _i, x in por_grado[g])} | {c['solido']} | "
-                         f"{c['respaldado']} | {c['fragil']} | {c['sin_consenso']} |")
+        junto = [f"# Reforzamiento de {grados[0]}.° a {grados[-1]}.°: snapshot", "", aviso, "", NOTA_SOLIDEZ, "",
+                 encabezado.format("Grado"), "|---|---|---|---|---|---|---|"]
+        junto += [fila_resumen(f"[{g}.°](#{g}-grado)", por_grado[g]) for g in presentes]
+        if del_tramo.get(nombre):
+            junto.append(fila_resumen("[Del tramo](#del-tramo-sin-grado-de-la-malla)", del_tramo[nombre]))
         junto.append("")
         for g in presentes:
-            junto += [*cabecera(g, por_grado[g]), *secciones(por_grado[g]), ""]
+            junto += [f"## {g}.° grado", "", linea(por_grado[g]), "", *secciones(por_grado[g]), ""]
+        if del_tramo.get(nombre):
+            junto += ["## Del tramo (sin grado de la malla)", "",
+                      "Objetivos de otros países asignados a una versión de un concepto, y hallazgos de todo el tramo.",
+                      "", linea(del_tramo[nombre]), "", *secciones(del_tramo[nombre]), ""]
         p = ruta(f"panel/bucle/SNAPSHOT_{nombre}.md")
         p.write_text("\n".join(junto) + "\n", encoding="utf-8")
         escritos.insert(0, relativa(p))
     return escritos
-
-
-# Documentos que reúnen varios grados: los tramos del contraste internacional (specs 11 y 12).
-SNAPSHOTS_POR_TRAMO = {"9-11": (11, 10, 9), "2-8": (8, 7, 6, 5, 4, 3, 2)}

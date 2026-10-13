@@ -32,7 +32,7 @@ en el historial de git.
 | Vuelta 1: sonda ciega | 56 de 63 coinciden sin ver la resolución (89 %) |
 | Vuelta 1: réplica | 24 cambiados y 11 mantenidos, todos por unanimidad |
 | Vuelta 2 | de los 24 cambios, 21 se sostienen; 3 se reabren y la réplica los mantiene: el bucle se detiene |
-| Solidez final (486) | 466 sólidos o respaldados, 1 frágil (organelos: el panel citó una página que no existe), 17 sin consenso del panel original |
+| Solidez final | de los 486 resueltos: 468 sólidos, 17 respaldados y 1 frágil (organelos: el panel citó una página que no existe); además, 17 sin consenso del panel original (503 en total) |
 
 **Lo que cambió y llega al MINED o al estudiante:**
 - **Hallazgos:** el efecto invernadero **sí** se retoma en 9.°–11.° (microhabilidades de 10.° y 11.°); potencia eléctrica
@@ -69,6 +69,24 @@ en el historial de git.
 - `gskg bucle fuente` ya no recorta la fila (el recorte escondió el efecto invernadero);
 - una asignación rechazada queda como observación del elemento, no de toda la división;
 - la sonda ciega lista lo que no puede leer (dos sondas vieron de paso resultados del panel en los README).
+
+**Corregido en la revisión crítica (2026-10-13):**
+- **Sonda ciega:** se comparaba con la resolución *original*. En 3 casos la réplica corrigió el dictamen y llegó a
+  lo mismo que la sonda (asignación de Japón, capas de la atmósfera y propuesta #11), y aun así se marcaban
+  «la sonda discrepó». Ahora se compara con la resolución vigente: coincidir corrobora y discrepar es inestable.
+- **Snapshots por grado:** las asignaciones de objetivos de otros países (SV 9–11) se contaban en 9.°, 10.° y 11.°
+  sin ser temas de la malla. Ahora van una sola vez, en «Del tramo». También se leen los rangos «9.°–11.°» y se
+  muestra la clase vigente de las decisiones.
+- **Totales publicados:** se había escrito «466 sólidos o respaldados». Lo correcto es 485 de 486, que son 468
+  sólidos y 17 respaldados.
+- **El contraste no veía las revisiones de etiquetas:** leía el etiquetado de la malla sin las revisiones de
+  `data/interim/revisiones/`. Por eso las correcciones del panel (y las humanas, cuando lleguen) no llegaban a las
+  clases. Ahora las lee. Efectos:
+  - epidemiología pasa a 9.°: la etiqueta se agregó a G09-CIE-U9-9.1 y 9.2 («inmunidad colectiva», «boletín
+    epidemiológico del MINSAL»), como señalaron el revisor y el experto de Biología;
+  - el primer grado del ciclo del carbono y de los electrones de valencia se corrige, sin que cambie su clase;
+  - catalizadores quedaba incierto y se resolvió con la fila: G06-CIE-U5-5.2 «Reconoce las enzimas como proteínas
+    que aceleran reacciones…». Sigue «sin referente».
 
 **Pendiente en el método del contraste (decisión del responsable):**
 - **Singapur K326–K328** se cuenta como núcleo, pero el estudiante elige dos de tres ciencias (afecta a 9.°–11.°).

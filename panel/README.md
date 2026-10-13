@@ -44,9 +44,11 @@ Además, la clave era la opción más larga en 57 de 84 ítems y la A en 34 de 8
 Los 486 dictámenes resueltos pasaron por un revisor adversarial que buscó en las fuentes la prueba en contra, con
 citas literales que el código verifica, y por una sonda ciega de 63 expedientes. Lo reabierto volvió a la réplica del
 panel. El bucle convergió en 2 vueltas:
-- **24 dictámenes cambiaron**, todos por unanimidad, y la vuelta 2 confirmó 21 de esos 24 cambios;
+- **24 dictámenes cambiaron**, todos por unanimidad. La vuelta 2 volvió a impugnarlos: 21 se sostuvieron y 3 se
+  reabrieron, y la réplica los mantuvo, así que los 24 cambios quedan en pie;
 - **820 citas literales nuevas** dejan anclada la mayoría de los dictámenes;
-- **solidez final:** 466 sólidos o respaldados, 1 frágil y 17 sin consenso (del panel original).
+- **solidez final:** de los 486 dictámenes resueltos, 468 son sólidos, 17 respaldados y 1 frágil. Otros 17 siguen
+  sin consenso desde el panel original (503 en total).
 
 Detalle por ciencia, errores de la malla y lo que aprendió el método: [`bucle/README.md`](bucle/README.md) y los
 snapshots en [`bucle/`](bucle/). La columna «Solidez» de [`DICTAMEN.md`](DICTAMEN.md) y el estado del CSV para el MINED

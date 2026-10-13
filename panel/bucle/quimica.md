@@ -1,6 +1,6 @@
 # Reforzamiento de Química: snapshot
 
-> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
+> Generado por `uv run gskg bucle snapshot` el 2026-10-13, etapa: **final: el bucle convergió en 2 vueltas (revisado)**. Bucle de fortalecimiento de los dictámenes del panel de expertos IA (spec 14, sección 7). Estos son dictámenes del panel, **no confirmaciones del MINED**. Cada corte queda en el historial de git de este archivo.
 
 | Expedientes | Impugnados (reabiertos) | Cambiados por la réplica | Mantenidos | Anclas literales nuevas | Sonda ciega (coinciden) | En el bucle |
 |---|---|---|---|---|---|---|
@@ -10,13 +10,13 @@
 
 | Tipo | Sólido | Respaldado | Frágil | Sin consenso | En el bucle |
 |---|---|---|---|---|---|
-| asignaciones de concepto | 83 | 2 | 0 | 0 | 0 |
+| asignaciones de concepto | 84 | 1 | 0 | 0 | 0 |
 | asignatura de temas | 8 | 0 | 0 | 0 | 0 |
 | clases del contraste de 2.°–8.° | 28 | 0 | 0 | 2 | 0 |
 | capa pedagógica | 26 | 0 | 0 | 0 | 0 |
-| decisiones de contenido | 10 | 1 | 0 | 0 | 0 |
+| decisiones de contenido | 9 | 2 | 0 | 0 | 0 |
 | hallazgos del contraste | 7 | 1 | 0 | 0 | 0 |
-| propuestas curriculares | 10 | 3 | 0 | 0 | 0 |
+| propuestas curriculares | 11 | 2 | 0 | 0 | 0 |
 
 ## Lo que el bucle cambió
 

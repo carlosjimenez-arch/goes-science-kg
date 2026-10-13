@@ -14,7 +14,7 @@ la ficha del grafo de ese grado (`ficha.md`) y un visor interactivo (`grafo.html
 | [6.°](G06/ficha.md) · [visor](G06/grafo.html) | 68 | 65 | 48 | 12 | 35 | 403 | 1286 |
 | [7.°](G07/ficha.md) · [visor](G07/grafo.html) | 91 | 81 | 40 | 8 | 40 | 414 | 1670 |
 | [8.°](G08/ficha.md) · [visor](G08/grafo.html) | 108 | 101 | 40 | 10 | 36 | 539 | 2127 |
-| [9.°](G09/ficha.md) · [visor](G09/grafo.html) | 102 | 110 | 44 | 7 | 29 | 564 | 2165 |
+| [9.°](G09/ficha.md) · [visor](G09/grafo.html) | 102 | 111 | 45 | 7 | 29 | 565 | 2170 |
 | [10.°](G10/ficha.md) · [visor](G10/grafo.html) | 303 | 241 | 79 | 21 | 8 | 763 | 3279 |
 | [11.°](G11/ficha.md) · [visor](G11/grafo.html) | 335 | 219 | 51 | 0 | 3 | 808 | 3420 |
 

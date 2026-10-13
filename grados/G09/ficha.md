@@ -11,7 +11,7 @@
 | Física | 37 |
 | Química | 20 |
 
-- **110 conceptos**: 44 nuevos en este grado, 65 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
+- **111 conceptos**: 45 nuevos en este grado, 65 que se retoman de grados anteriores y 1 que solo se mencionan aquí y se enseñan de lleno más adelante.
 - Objetivos de marco cubiertos: PISA25 37, T8_27 34.
 - Objetivos de países de referencia del mismo grado que comparten objetivo de marco: 191.
 
@@ -42,16 +42,15 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 | Bloque | Conceptos | Temas | Asignaturas | Unidades |
 |---|---|---|---|---|
 | Termodinámica, electricidad y magnetismo aplicados | 20 | 21 | Física, Ciencias de la Tierra y del Espacio | 6. Electricidad; 7. Magnetismo aplicado; 2. Calor y temperatura |
-| Célula, expresión génica y salud humana | 16 | 7 | Biología | 10. Genética y biotecnología.; 9. Salud humana.; 8. La célula. |
+| Célula, expresión génica y salud humana | 17 | 7 | Biología | 10. Genética y biotecnología.; 9. Salud humana.; 8. La célula. |
+| Rocas, sismos, oleaje y ondas mecánicas | 12 | 11 | Ciencias de la Tierra y del Espacio, Biología, Física | 5. Geología de El Salvador; 4. Oceanografía; 11. Evolución. |
 | Tectónica de placas y vulcanismo salvadoreño | 9 | 7 | Ciencias de la Tierra y del Espacio | 5. Geología de El Salvador; 4. Oceanografía |
-| Rocas, sismos, oleaje y ondas mecánicas | 9 | 10 | Ciencias de la Tierra y del Espacio, Física | 5. Geología de El Salvador; 4. Oceanografía |
 | Ciclos biogeoquímicos y sostenibilidad de la biosfera | 8 | 5 | Biología, Ciencias de la Tierra y del Espacio | 12. Biosfera y sostenibilidad global.; 4. Oceanografía; 8. La célula. |
 | El océano: propiedades, corrientes y ecosistemas | 8 | 10 | Ciencias de la Tierra y del Espacio, Biología | 4. Oceanografía |
 | Mecánica de fluidos: hidrostática e hidrodinámica | 8 | 13 | Física | 1. Mecánica de fluidos; 4. Oceanografía |
 | Ácidos, bases y pH | 7 | 8 | Química | 3. Equilibrio químico; 4. Oceanografía |
 | Equilibrio químico y disoluciones amortiguadoras | 7 | 13 | Química | 3. Equilibrio químico |
 | Homeostasis, reproducción y hábitos saludables | 6 | 3 | Biología | 9. Salud humana. |
-| Evidencias de la evolución | 3 | 1 | Biología | 11. Evolución. |
 | Cambios de estado y calor | 3 | 3 | Física | 2. Calor y temperatura |
 | Membrana celular: difusión y ósmosis | 2 | 1 | Biología | 8. La célula. |
 | Mitosis, meiosis y ciclo celular | 2 | 1 | Biología | 8. La célula. |
@@ -60,15 +59,14 @@ Comunidades de conceptos (Louvain sobre co-ocurrencia en temas y prerrequisitos)
 
 - **Termodinámica, electricidad y magnetismo aplicados.** Los estudiantes experimentan con procesos termodinámicos en gases y máquinas térmicas, estudian la carga, el campo y la fuerza eléctrica, arman circuitos y construyen un motor de corriente directa. La transformación de la energía en trabajo une calor, electricidad y magnetismo. Es un bloque amplio y muy aplicado; la inducción, la corriente alterna y los condensadores figuran como conceptos sin un tema que los trabaje explícitamente.
 - **Célula, expresión génica y salud humana.** Los estudiantes comparan tipos de células, modelan el paso del ADN a la proteína y analizan usos de la biotecnología como transgénicos, PCR y vacunas, además de la inmunidad, las enfermedades transmisibles y la nutrición. Virus, bacterias y vacunas enlazan la genética con la salud. El bloque cruza tres unidades y aporta debate ético; la nutrición se conecta solo mediante las enfermedades no transmisibles.
-- **Tectónica de placas y vulcanismo salvadoreño.** Se estudian las estructuras y causas del vulcanismo salvadoreño, su historial eruptivo, los sistemas de alerta temprana y las evidencias de la tectónica de placas y sus límites. La expansión del fondo oceánico enlaza el relieve marino con la geología, y el vulcanismo se compara con el de otros planetas. La tectónica aparece al final de la unidad (5.12); convendría adelantarla, porque es el marco que explica volcanes y sismos.
 - **Rocas, sismos, oleaje y ondas mecánicas.** Los estudiantes clasifican las rocas, reconocen el relieve de El Salvador, identifican fallas y zonas sísmicas, simulan ondas sísmicas y experimentan con la formación de olas, la dinámica costera y la sedimentación marina. Las ondas mecánicas de Física son la base común para explicar sismos y oleaje. Es un buen puente entre disciplinas; conviene asegurar que las ondas se estudien en Física antes o en paralelo.
+- **Tectónica de placas y vulcanismo salvadoreño.** Se estudian las estructuras y causas del vulcanismo salvadoreño, su historial eruptivo, los sistemas de alerta temprana y las evidencias de la tectónica de placas y sus límites. La expansión del fondo oceánico enlaza el relieve marino con la geología, y el vulcanismo se compara con el de otros planetas. La tectónica aparece al final de la unidad (5.12); convendría adelantarla, porque es el marco que explica volcanes y sismos.
 - **Ciclos biogeoquímicos y sostenibilidad de la biosfera.** Se analizan los ciclos del carbono y del nitrógeno a escala global, los límites planetarios, los servicios ecosistémicos y los problemas ambientales del océano. Fotosíntesis y respiración, comparadas con indicadores de CO2, explican el intercambio de carbono, y la disolución de CO2 en agua lleva a la acidificación oceánica. Integra Biología y Ciencias de la Tierra; ese experimento también figura en Química, por lo que conviene coordinarlo.
 - **El océano: propiedades, corrientes y ecosistemas.** Los estudiantes exploran las propiedades físicas y químicas del océano, su zonificación, las corrientes y los ecosistemas marinos, y miden magnitudes de fluidos considerando el error. La densidad, el viento y el calor explican la circulación oceánica y la estratificación. El bloque integra Tierra, Biología y Física de forma natural; es un buen modelo de enfoque interdisciplinario.
 - **Mecánica de fluidos: hidrostática e hidrodinámica.** Los estudiantes miden empuje y peso aparente, construyen una prensa hidráulica, comprueban Torricelli y Stokes, calculan viscosidad y resuelven problemas de hidrostática e hidrodinámica, considerando el error de medida. Retoma y profundiza los fluidos de 6.°, buena progresión en espiral; conviene asegurar que no repita sin avanzar en lo cuantitativo.
 - **Ácidos, bases y pH.** Los estudiantes caracterizan ácidos y bases según las teorías de Arrhenius, Brønsted-Lowry y Lewis, calculan el pH, clasifican soluciones, extraen un indicador natural, detectan el punto de equivalencia en una titulación y aprenden su manejo seguro. La acidificación del océano aplica estos conceptos a un problema ambiental. Es un bloque disciplinar sólido; incluir la teoría de Lewis y el producto iónico del agua en noveno exige precisar la profundidad esperada.
 - **Equilibrio químico y disoluciones amortiguadoras.** Se estudian la rapidez de reacción, el equilibrio químico y su constante, el principio de Le Châtelier, la fuerza de ácidos y bases y las soluciones buffer. Bloque coherente pero de alta exigencia conceptual y matemática; depende del bloque de ácidos y bases, por lo que conviene ubicarlo después.
 - **Homeostasis, reproducción y hábitos saludables.** Se experimenta con la coordinación nerviosa y hormonal que mantiene la homeostasis, se explica la reproducción humana junto con prácticas de salud sexual y se investigan los efectos del tabaco, el alcohol y otras drogas en el cuerpo. El modelo estímulo-respuesta y la retroalimentación negativa articulan los temas. Es un bloque breve, ligado a la salud adolescente; conviene precisar el alcance de cada sistema para evitar un tratamiento superficial.
-- **Evidencias de la evolución.** Los estudiantes analizan las evidencias de la evolución, como el registro fósil, la anatomía comparada y las secuencias de ADN, y las usan para inferir el parentesco entre especies. Fósiles y filogenia permiten reconstruir la historia de la vida. La unidad descansa en un solo tema; para que la evolución funcione como eje de la Biología convendría darle más espacio y vincularla con la genética de la unidad 10.
 - **Cambios de estado y calor.** Los estudiantes experimentan cambios de fase, construyen gráficos de temperatura contra tiempo y calculan calor latente y calor específico. Los tres conceptos se conectan en la curva de calentamiento. Es un bloque pequeño y coherente, con buen equilibrio entre experimentación y cálculo; sirve de base para la termodinámica del mismo grado.
 - **Membrana celular: difusión y ósmosis.** Los estudiantes experimentan con difusión y ósmosis en tejidos vegetales para comprender cómo la membrana celular regula el paso de agua y sustancias. Ambos procesos muestran el movimiento de partículas según diferencias de concentración. Es un bloque pequeño y experimental; conviene enlazarlo de forma explícita con la homeostasis y con la célula vegetal, para que no quede como una práctica aislada.
 - **Mitosis, meiosis y ciclo celular.** Los estudiantes modelan la división celular por mitosis y meiosis y la relacionan con el crecimiento y la reproducción. Comparar ambos procesos permite distinguir la división que sostiene el crecimiento de la que interviene en la reproducción sexual. Al ser un solo tema, conviene enlazarlo con la genética y la reproducción humana, que se trabajan en otras unidades de noveno, para dar sentido a la meiosis.
@@ -113,7 +111,7 @@ Conceptos de este grado cuyo prerrequisito la malla trabaja **después** o **nun
 | Primera ley de la termodinámica | Calor como energía en tránsito | posterior | 10 | alta |
 | Primera ley de la termodinámica | Conservación de la energía | posterior | 10 | alta |
 
-Además, 22 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
+Además, 23 prerrequisitos se enseñan en este mismo grado: hay que cuidar el orden de las unidades.
 
 ## Lo que los países de referencia ya enseñan a esta altura
 

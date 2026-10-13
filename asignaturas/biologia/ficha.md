@@ -17,7 +17,7 @@
 | 10.° | 70 | 2. Biología celular; 3. Anatomía y fisiología humana; 1. Biomoléculas; 5. Evolución |
 | 11.° | 92 | 3. Biotecnología vegetal y agroindustria; 2. Biotecnología microbiana y los virus; 4. Bases genéticas de la evolución; 1. Ecología y ambiente |
 
-Total: **387 temas**. Asignados por: ia 8, malla 162, pisa 1, revision 11, timss 205.
+Total: **387 temas**. Asignados por: ia 8, malla 162, pisa 1, revision 13, timss 203.
 
 ## Cobertura de los marcos internacionales
 

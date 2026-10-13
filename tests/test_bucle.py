@@ -206,3 +206,49 @@ def test_rechazar_una_asignacion_la_observa_sin_observar_toda_la_division():
          "dictamenes_panel": [{"decision": "aceptar", "solidez": "solido"}]}
     assert rd._estado_asignacion(d, "internacional::OBJ-1").startswith("observada")
     assert rd._estado(d) == "dictamen del panel: aceptar, sólido (pendiente de confirmar)"   # la división, no
+
+
+def test_la_sonda_se_compara_con_la_resolucion_vigente():
+    """Si la réplica corrige el dictamen y llega a lo que la sonda dictaminó a ciegas, eso corrobora (no es inestable);
+    si la sonda discrepa de lo que quedó, el dictamen es inestable."""
+    ancla = {"fuente": HK, "cita_literal": HK_CITA, "dice": "x", "vuelta": 1}
+
+    def exp(final, ciega):
+        x = _resuelto("clase_incierta", ["experto-fisica"], final)
+        x["dictamenes"] = [{**_dic("?", final, "experto-fisica", ronda=11), "evidencia": [
+            {"fuente": HK, "cita": HK_CITA}]}]
+        x["resolucion"] = {"decision": final, "ronda": 11}
+        x["bucle"] = {"anclas": [ancla], "vueltas": [
+            {"vuelta": 1, "resultado": "impugnada", "replica": "cambiada",
+             "impugnacion": {"veredicto": "se_sostiene"},
+             "sonda": {"acuerdo": False, "dictamenes": [{"decision": ciega, "rol": "experto-fisica"}]}},
+            {"vuelta": 2, "resultado": "sostenida", "impugnacion": {"veredicto": "se_sostiene"}}]}
+        return x
+
+    s, motivo = bucle._solidez(exp("adelantado", "adelantado"))
+    assert s == "solido" and "sonda ciega" in motivo
+    s, motivo = bucle._solidez(exp("alineado", "adelantado"))
+    assert s == "respaldado" and motivo.startswith("inestable")
+
+
+def test_los_objetivos_de_otros_paises_no_se_cuentan_en_los_grados_de_la_malla():
+    x = _resuelto("asignacion", ["experto-quimica"], "aceptar")
+    i_pais = "ASG:CON:quimica/configuracion-electronica::internacional::HK-QUI-hk_qui-p019-02"
+    i_malla = "ASG:CON:quimica/configuracion-electronica::malla_v2::G10-QUI-U13-13.1"
+    assert bucle.grados_de(i_pais, x) == [] and bucle.tramo_de(i_pais, x) == "9-11"
+    assert bucle.grados_de(i_malla, x) == [10]
+    h = _resuelto("hallazgo", ["experto-fisica"], "matizar",
+                  datos={"titulo": "El efecto invernadero no se retoma en 9.°–11.°", "evidencia": "", "tramo": "9_11"})
+    assert bucle.grados_de("HAL:x", h) == [9, 10, 11]
+    h["datos"]["titulo"] = "Física nuclear tardía"
+    assert bucle.grados_de("HAL:x", h) == [] and bucle.tramo_de("HAL:x", h) == "9-11"
+
+
+def test_el_contraste_usa_las_etiquetas_revisadas():
+    """El contraste lee el grafo principal con sus revisiones (data/interim/revisiones/), no el etiquetado crudo: la
+    corrección del bucle que agrega epidemiología a 9.° (inmunidad colectiva, boletín del MINSAL) llega al contraste."""
+    from goes_science_kg.ingesta.mallas import extraer
+    from goes_science_kg.internacional.contraste import puntos_sv
+
+    temas = {t.id: {"grado": t.grado} for t in extraer()}
+    assert "G09-CIE-U9-9.1" in puntos_sv(temas)["CON:biologia/epidemiologia-y-control-de-brotes"]
