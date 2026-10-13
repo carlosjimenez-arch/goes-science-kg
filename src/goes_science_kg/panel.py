@@ -429,14 +429,19 @@ def iniciar(tipos: list[str] | None = None) -> int:
     return len(nuevos)
 
 
-def preparar(ronda: int, tipos: list[str] | None = None, serie: str = "") -> list[str]:
+def preparar(ronda: int, tipos: list[str] | None = None, serie: str = "", prefijo: str = "") -> list[str]:
     """Escribe los lotes de la ronda con los expedientes del estado (por rol, partidos por peso: PESO_MAX_LOTE). Desde
     la ronda 2, cada expediente lleva los dictámenes anteriores (deliberación) o la versión vigente del elemento
     (contenido). `serie` separa los lotes de un grupo de tipos que corre aparte (p. ej. «inc»). Devuelve las rutas."""
     estado = cargar_estado()
+    # Un expediente que ya está en un lote de OTRA serie de esta ronda no se vuelve a preparar (se dictaminaría dos
+    # veces); los lotes de la misma serie sí se rehacen.
+    otra_serie = {e["id"] for p in _dir_lotes().glob(f"lote_r{ronda}[-_]*.json")
+                  if not p.stem.startswith(f"lote_r{ronda}{'-' + serie if serie else ''}_")
+                  for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]}
     por_rol: dict[str, list[dict]] = defaultdict(list)
     for i, x in sorted(estado.items()):
-        if tipos is not None and x["tipo"] not in tipos:
+        if (tipos is not None and x["tipo"] not in tipos) or not i.startswith(prefijo) or i in otra_serie:
             continue
         for rol in _quienes(x, ronda):
             exp = {k: x[k] for k in ("tipo", "titulo", "pregunta", "datos") if k in x}

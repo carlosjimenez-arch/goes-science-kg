@@ -1,0 +1,643 @@
+{
+ "lote": "r1-rfz2_experto-quimica",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:2_8:CON:quimica/radiactividad (agregar_precursor, 10.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:2_8:CON:quimica/radiactividad",
+     "tipo": "agregar_precursor",
+     "decision": "descartar",
+     "motivo": "No hay desajuste: «posterior» solo ubica el concepto (spec 12). La V3 adelantó las radiaciones alfa, beta y gamma a Química 10.° (G10-QUI-U3-3.2), alineado en el contraste 9.°–11.°; antes de 9.° solo AU, EE y ENG las enseñan, sin consenso.",
+     "forma": null,
+     "tema_ancla": "G10-QUI-U3-3.2",
+     "refuerzo": null,
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U3-3.2",
+       "cita_literal": "Compara la carga, la masa y el poder de penetración de las radiaciones alfa, beta y gamma",
+       "cita": "La V3 introduce las emisiones en Química 10.°, un grado antes que la V2 (11.°)."
+      },
+      {
+       "fuente": "TEMA:G05-CIE-U3-3.8",
+       "cita_literal": "evaluar información sobre la radiación según su fuente",
+       "cita": "5.°: isótopos, sus aplicaciones y mitos sobre la radiación: el antecedente ya existe."
+      },
+      {
+       "fuente": "ENG_GCSE_CombinedScience_SubjectContent_2015.pdf p. 36",
+       "cita_literal": "recall that some nuclei are unstable and may emit alpha particles, beta particles",
+       "cita": "ENG Combined, núcleo (≈ 8.°–9.°)."
+      },
+      {
+       "fuente": "AU-IMP-AU-AC9S9U06",
+       "cita_literal": "describe how natural radioactive decay results in stable atoms",
+       "cita": "AU Year 9 (≈ 8.°). Con EE son tres países: sin consenso; el contraste 9.°–11.° (dictamen del panel, 2026-10-13) da la V3 por alineada."
+      }
+     ],
+     "confianza": "alta"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Radiactividad y emisiones nucleares: posterior",
+     "texto_base": "En 5.° la V2 enseña isótopos y sus aplicaciones y contrasta mitos sobre la radiación (G05-CIE-U3-3.8, fila 10), pero no la desintegración alfa, beta y gamma, que llega en 11.° (G11-QUI-U8-8.1, fila 73). En el núcleo de 2.°–8.° la tienen AU (AC9S9U06), EE (p. 21) y ENG (GCSE p. 36), hacia 8.°–9.°: sin consenso de cinco. Posterior.",
+     "conceptos": [
+      "CON:quimica/radiactividad"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G10-QUI-U3-3.2",
+       "grado": 10,
+       "unidad": "3. Modelos atómicos y estructura",
+       "contenido": "Evolución de los modelos atómicos",
+       "procedimental": "3.2. Interpretación del experimento de Geiger y Marsden y de las propiedades de las radiaciones alfa, beta y gamma mediante un simulador.",
+       "indicador": "3.2. Deduce la existencia de un núcleo pequeño, denso y positivo a partir de los resultados de la dispersión de partículas alfa en una lámina de oro."
+      },
+      {
+       "id": "G11-QUI-U8-8.1",
+       "grado": 11,
+       "unidad": "8. Reacciones nucleares",
+       "contenido": "Radiactividad",
+       "procedimental": "8.1. Reconstrucción histórica del descubrimiento de la radiactividad y aplicación de las leyes del desplazamiento de Soddy y Fajans.",
+       "indicador": "8.1. Relaciona los experimentos de Becquerel y de Marie y Pierre Curie con el descubrimiento de elementos radiactivos y aplica las leyes del desplazamiento para ubicar el producto en la tabla periódica."
+      },
+      {
+       "id": "G11-QUI-U8-8.2",
+       "grado": 11,
+       "unidad": "8. Reacciones nucleares",
+       "contenido": "Ecuaciones nucleares",
+       "procedimental": "8.2. Balanceo de ecuaciones nucleares de desintegración y de transmutación mediante la conservación del número másico y del número atómico.",
+       "indicador": "8.2. Balancea ecuaciones nucleares de desintegración y de transmutación artificial identificando la partícula o el núclido faltante mediante la conservación de A y Z."
+      },
+      {
+       "id": "G11-QUI-U8-8.3",
+       "grado": 11,
+       "unidad": "8. Reacciones nucleares",
+       "contenido": "Ecuaciones nucleares",
+       "procedimental": "8.3. Reconstrucción de una serie de desintegración radiactiva natural a partir de la secuencia de emisiones alfa y beta.",
+       "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G10-QUI-U3-3.2",
+     "grado": 10,
+     "unidad": "3. Modelos atómicos y estructura",
+     "contenido": "Evolución de los modelos atómicos",
+     "procedimental": "3.2. Interpretación del experimento de Geiger y Marsden y de las propiedades de las radiaciones alfa, beta y gamma mediante un simulador.",
+     "indicador": "3.2. Deduce la existencia de un núcleo pequeño, denso y positivo a partir de los resultados de la dispersión de partículas alfa en una lámina de oro."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:2_8:CON:quimica/radiactividad",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales (acotar, 10.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G10-QUI-U6-6.4",
+     "refuerzo": "La competencia de la unidad aún nombra gases reales y ley de Graham, quitados por la V3 y electivos fuera. Basta atenderla en 6.4 con el modelo cinético, de forma cualitativa: los gases ligeros se difunden más rápido y los reales se apartan del ideal a alta presión y baja temperatura, sin factor Z ni van der Waals.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.1",
+       "cita_literal": "Explica las desviaciones del comportamiento ideal de los gases reales y la velocidad relativa de difusión y efusión con la ley de Graham",
+       "cita": "Competencia de la unidad 6 de 10.°, que sigue nombrando lo que la V3 quitó (V2 6.6 y 6.7)."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.4",
+       "cita_literal": "Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total",
+       "cita": "Lo que queda en la V3: ley de Dalton."
+      },
+      {
+       "fuente": "ACSCH060",
+       "cita_literal": "The behaviour of gases, including the qualitative relationships between pressure, temperature and volume, can be explained using kinetic theory",
+       "cita": "Pivote ACARA SS, unidad 2: gases de forma cualitativa."
+      },
+      {
+       "fuente": "TW-QUI-tw_ele-p053-23",
+       "cita_literal": "道耳頓分壓定律。理想氣體與真實氣體",
+       "cita": "TW 選修 (electiva): presiones parciales y gases reales."
+      },
+      {
+       "fuente": "ON-QUI-on_sch3u-p105-05",
+       "cita_literal": "explain Dalton’s law of partial pressures",
+       "cita": "ON SCH3U (electiva)."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Mezclas de gases, difusión y gases reales: solo_especializacion",
+     "texto_base": "La V3 quitó la ley de Graham y los gases reales (V2 G10-QUI-U6-6.6 y 6.7), pero Química 10.°, obligatoria, mantiene la ley de Dalton y las presiones parciales (G10-QUI-U6-6.4). Fuera, las presiones parciales son de electiva: JP 化学, ON SCH3U, TW 選修 y SG H2. El único núcleo (KR) es la difusión cualitativa, otro concepto. Sigue solo especialización; la V3 ya quitó la parte más exigente.",
+     "conceptos": [
+      "CON:quimica/difusion-efusion-y-gases-reales"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G10-QUI-U6-6.4",
+       "grado": 10,
+       "unidad": "6. Los gases",
+       "contenido": "Mezclas de gases",
+       "procedimental": "6.4. Cálculo de presiones parciales y fracciones molares en mezclas de gases, incluida la recolección de gases sobre agua.",
+       "indicador": "6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total."
+      },
+      {
+       "id": "G08-CIE-U4-4.1",
+       "grado": 8,
+       "unidad": "4. Estequiometría y dispersiones",
+       "contenido": "Unidades físicas de concentración",
+       "procedimental": "4.1. Identificación de las unidades físicas de concentración en sustancias de uso cotidiano y exploración de sus aplicaciones cotidianas, industriales y ambientales.",
+       "indicador": "4.1. Identifica las unidades físicas de concentración en sustancias de uso cotidiano y reconoce sus aplicaciones cotidianas, industriales y ambientales."
+      },
+      {
+       "id": "G08-CIE-U4-4.10",
+       "grado": 8,
+       "unidad": "4. Estequiometría y dispersiones",
+       "contenido": "Unidades químicas de concentración",
+       "procedimental": "4.9. Cálculo de concentraciones, gramos y moles de soluto empleando unidades químicas de concentración.",
+       "indicador": "4.10. Ejecuta cálculos de concentración, gramos y moles de soluto empleando unidades químicas de concentración."
+      },
+      {
+       "id": "G08-CIE-U4-4.9",
+       "grado": 8,
+       "unidad": "4. Estequiometría y dispersiones",
+       "contenido": "Unidades químicas de concentración",
+       "procedimental": "4.8. Identificación de las unidades químicas de concentración en sustancias de uso cotidiano.",
+       "indicador": "4.9. Identifica las unidades químicas de concentración en sustancias de uso cotidiano."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G10-QUI-U6-6.4",
+     "grado": 10,
+     "unidad": "6. Los gases",
+     "contenido": "Mezclas de gases",
+     "procedimental": "6.4. Cálculo de presiones parciales y fracciones molares en mezclas de gases, incluida la recolección de gases sobre agua.",
+     "indicador": "6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/enlace-de-valencia-y-orbitales-moleculares (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/enlace-de-valencia-y-orbitales-moleculares",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-QUI-U2-2.2",
+     "refuerzo": "Tratar la hibridación de forma cualitativa, al servicio de la geometría orgánica: desde la TRPECV de 10.° (5.4), asociar cuatro, tres o dos dominios del carbono con sp³, sp² o sp y con enlaces simples, dobles o triples (σ y π). Explicar cómo se forman los híbridos queda como profundización: el pivote ACARA SS solo usa la TRPECV.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.2",
+       "cita_literal": "Explica la formación de los orbitales híbridos sp³, sp² y sp del carbono",
+       "cita": "11.°: formación de los orbitales híbridos y enlaces sigma y pi."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U5-5.6",
+       "cita_literal": "Predice la geometría y los ángulos de enlace de moléculas con hasta seis dominios electrónicos aplicando la TRPECV",
+       "cita": "10.°: la TRPECV ya da las geometrías."
+      },
+      {
+       "fuente": "ACSCH056",
+       "cita_literal": "The shapes of molecules can be explained and predicted using three-dimensional representations of electrons as charge clouds and using valence shell electron pair repulsion (VSEPR) theory",
+       "cita": "Pivote ACARA SS, unidad 2: geometría con TRPECV, sin hibridación."
+      },
+      {
+       "fuente": "TW-QUI-tw_ele-p053-12",
+       "cita_literal": "混成軌域與價鍵理論",
+       "cita": "TW 選修 (electiva)."
+      },
+      {
+       "fuente": "EE-QUI-ee_gym_ele-p040-02",
+       "cita_literal": "eristab σ- ja π-sidet; seostab molekulide ruumilist kuju hübriidsete orbitaalide",
+       "cita": "EE: curso electivo del gimnasio."
+      },
+      {
+       "fuente": "SG-QUI-sg_h1_qui-p012-06",
+       "cita_literal": "describe covalent bonding in terms of orbital overlap",
+       "cita": "SG H1: núcleo parcial."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Teorías del enlace de valencia y de orbitales moleculares: solo_especializacion",
+     "texto_base": "La V3 quitó los orbitales moleculares y la hibridación general de 10.° (V2 5.3 y 5.7), pero Química 11.°, obligatoria, mantiene orbitales híbridos y enlaces sigma y pi del carbono (G11-QUI-U2-2.2 y 2.10). Fuera es electivo: EE, TW 選修 y SG H2; SG H1 es núcleo parcial y ningún país lo pone en el núcleo pleno. Conviene tratarlo de forma cualitativa, al servicio de la geometría orgánica.",
+     "conceptos": [
+      "CON:quimica/enlace-de-valencia-y-orbitales-moleculares"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G11-QUI-U2-2.10",
+       "grado": 11,
+       "unidad": "2. Introducción a la química orgánica",
+       "contenido": "Alquinos",
+       "procedimental": "2.10. Identificación de la función alquino a partir de sus aplicaciones.",
+       "indicador": "2.10. Reconoce la función alquino."
+      },
+      {
+       "id": "G11-QUI-U2-2.2",
+       "grado": 11,
+       "unidad": "2. Introducción a la química orgánica",
+       "contenido": "Propiedades de los compuestos orgánicos",
+       "procedimental": "2.2. Representación de orbitales híbridos a través de modelos tridimensionales.",
+       "indicador": "2.2. Describe orbitales híbridos empleando modelos tridimensionales."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-QUI-U2-2.2",
+     "grado": 11,
+     "unidad": "2. Introducción a la química orgánica",
+     "contenido": "Propiedades de los compuestos orgánicos",
+     "procedimental": "2.2. Representación de orbitales híbridos a través de modelos tridimensionales.",
+     "indicador": "2.2. Describe orbitales híbridos empleando modelos tridimensionales."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/enlace-de-valencia-y-orbitales-moleculares",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-QUI-U10-10.1",
+     "refuerzo": "Mantener cualitativa la relación estructura–propiedad, al nivel del pivote (ACSCH129): cadenas lineales o ramificadas frente a entrecruzadas, y fuerzas entre cadenas, explican termoplásticos y termoestables (retoma la clase 1.3). La cristalinidad que aún nombra la unidad basta describirla como zonas ordenadas que dan rigidez; la tacticidad no se trata: la V3 quitó esa clase y fuera es electiva.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita_literal": "su estructura espacial determina propiedades como la rigidez, la cristalinidad y la resistencia a la degradación",
+       "cita": "Texto de la unidad 10 de 11.°, que sigue nombrando lo que la V3 quitó (V2 10.3)."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.4",
+       "cita_literal": "Predice qué envases del aula serán termoplásticos y cuáles termoestables",
+       "cita": "11.°, unidad 1: la predicción se apoya en el moldeado y la rigidez, no en la estructura."
+      },
+      {
+       "fuente": "ACSCH129",
+       "cita_literal": "synthetic polymers display properties including strength, density and biodegradability that can be explained by considering the primary, secondary or tertiary structures of the material",
+       "cita": "Pivote ACARA SS, unidad 4."
+      },
+      {
+       "fuente": "HK-QUI-hk_qui-p050-11",
+       "cita_literal": "uses of some common addition polymers can be related",
+       "cita": "HKDSE Chemistry (electiva)."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Estructura y propiedades de los polímeros: solo_especializacion",
+     "texto_base": "La V3 quitó cristalinidad y tacticidad (V2 G11-QUI-U10-10.3), pero Química 11.° sigue pidiendo la relación estructura–propiedad: predecir termoplásticos y termoestables (1.4) y relacionar el monómero con las propiedades del polímero (10.1). Fuera, esa relación es de electiva (HK, JP 化学, AU U4, ENG triple); SG H1 y JP 基礎 son núcleo parcial y el «tardío» se apoya en etiquetas de materiales. Sigue solo especialización, ya acotado.",
+     "conceptos": [
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G11-QUI-U1-1.4",
+       "grado": 11,
+       "unidad": "1. Ciencia de materiales",
+       "contenido": "Polímeros y materiales compuestos",
+       "procedimental": "1.3. Reconocimiento de la diversidad de polímeros sintéticos en el entorno.",
+       "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común."
+      },
+      {
+       "id": "G11-QUI-U10-10.1",
+       "grado": 11,
+       "unidad": "10. Polímeros y macromoléculas",
+       "contenido": "Reacciones de polimerización",
+       "procedimental": "10.1. Representación de las etapas de la polimerización por adición por radicales libres y relación de las propiedades de los polímeros de adición con sus usos.",
+       "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-QUI-U10-10.1",
+     "grado": 11,
+     "unidad": "10. Polímeros y macromoléculas",
+     "contenido": "Reacciones de polimerización",
+     "procedimental": "10.1. Representación de las etapas de la polimerización por adición por radicales libres y relación de las propiedades de los polímeros de adición con sus usos.",
+     "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-QUI-U12-12.2",
+     "refuerzo": "La competencia de la unidad pide las interacciones que estabilizan proteínas y ácidos nucleicos, pero la V3 quitó la clase de ácidos nucleicos. Cerrar 12.2 comparando, sin fórmulas nuevas, las fuerzas de la proteína con el esqueleto azúcar-fosfato y los puentes de hidrógeno entre bases del modelo de Biología 10.° (1.10). Formular el enlace fosfodiéster queda como profundización.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1",
+       "cita_literal": "las interacciones químicas que estabilizan la estructura de proteínas y ácidos nucleicos",
+       "cita": "Competencia de la unidad 12 de 11.°: ninguna clase de la V3 trata los ácidos nucleicos."
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U1-1.11",
+       "cita_literal": "Construye un modelo tridimensional de ADN respetando el apareamiento A-T y G-C",
+       "cita": "Biología 10.° ya trata la estructura de forma cualitativa."
+      },
+      {
+       "fuente": "ACSBL077",
+       "cita_literal": "including nucleotide composition and pairing and the weak bonds between strands of DNA",
+       "cita": "Pivote ACARA SS de Biología, unidad 3: composición y apareamiento, sin enlace fosfodiéster."
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_triple-p027-06",
+       "cita_literal": "recall that DNA is a polymer made from four different monomers called nucleotides",
+       "cita": "ENG: GCSE de química separada (electiva)."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Química de los ácidos nucleicos: solo_especializacion",
+     "texto_base": "En 6.° los ácidos nucleicos solo se nombran en la lista de biomoléculas y 7.° modela la doble hélice, que es estructura del ADN (concepto de Biología): no es «retomado». La química aparece en Biología 10.° (componentes químicos y apareamiento; G10-BIO-U1-1.11). Fuera, nucleótidos y enlaces son de electiva (ENG triple, HK, JP 化学, KR). La V3 ya quitó la fila más exigente (V2 G11-QUI-U12-12.4); basta mantener 1.11 cualitativo.",
+     "conceptos": [
+      "CON:quimica/quimica-de-los-acidos-nucleicos"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G06-CIE-U5-5.1",
+       "grado": 6,
+       "unidad": "5. Célula.",
+       "contenido": "Biomoléculas.",
+       "procedimental": "5.1. Identificación experimental de los grupos de biomoléculas.",
+       "indicador": "5.1. Identifica los principales grupos de biomoléculas por sus características."
+      },
+      {
+       "id": "G10-BIO-U1-1.10",
+       "grado": 10,
+       "unidad": "1. Biomoléculas",
+       "contenido": "Ácidos nucleicos",
+       "procedimental": "1.9. Identificación de las funciones de los nucleótidos libres.",
+       "indicador": "1.10. Identifica las funciones de los nucleótidos libres."
+      },
+      {
+       "id": "G10-BIO-U1-1.11",
+       "grado": 10,
+       "unidad": "1. Biomoléculas",
+       "contenido": "Ácidos nucleicos",
+       "procedimental": "1.10. Interpretación de la estructura química de los ácidos nucleicos.",
+       "indicador": "1.11. Elabora modelos tridimensionales de las estructuras químicas de los ácidos nucleicos."
+      },
+      {
+       "id": "G11-QUI-U12-12.1",
+       "grado": 11,
+       "unidad": "12. Proteínas y ácidos nucleicos",
+       "contenido": "Química de los aminoácidos",
+       "procedimental": "12.1. Interpretación de la curva de titulación de un aminoácido para identificar sus formas iónicas y calcular su punto isoeléctrico.",
+       "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-QUI-U12-12.2",
+     "grado": 11,
+     "unidad": "12. Proteínas y ácidos nucleicos",
+     "contenido": "Estructura de las proteínas",
+     "procedimental": "12.2. Análisis de las fuerzas químicas que estabilizan cada nivel estructural de las proteínas.",
+     "indicador": "12.2. Relaciona cada nivel estructural de una proteína con el enlace o la interacción química que lo estabiliza: peptídico, puentes de hidrógeno, iónico, disulfuro o hidrofóbico."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores (recuperar, 10.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
+     "tipo": "recuperar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G10-QUI-U9-9.2",
+     "refuerzo": "Sumar la mirada redox a la clasificación: con los números de oxidación de 7.° (1.1), reconocer como redox la síntesis con oxígeno, la sustitución simple y la combustión, e identificar qué especie se oxida, cuál se reduce, el agente oxidante y el reductor. En 11.°, 6.5 puede comparar su fuerza con los potenciales estándar (ACSCH106).",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita_literal": "Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión",
+       "cita": "10.°: clasificación sin criterio redox."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.1-v3",
+       "cita_literal": "Calcula el número de oxidación de cada elemento en compuestos cotidianos",
+       "cita": "7.°: números de oxidación, el prerrequisito."
+      },
+      {
+       "fuente": "ACSCH106",
+       "cita_literal": "The relative strength of oxidising and reducing agents can be determined by comparing standard electrode potentials",
+       "cita": "Pivote ACARA SS, unidad 3: los agentes en el núcleo del pivote."
+      },
+      {
+       "fuente": "ACSCH103",
+       "cita_literal": "displacement reactions of metals, combustion, corrosion, and electrochemical processes, can be modelled as redox reactions",
+       "cita": "Pivote ACARA SS, unidad 3."
+      },
+      {
+       "fuente": "TW-QUI-tw_req_contenido-p041-23",
+       "cita_literal": "氧化劑與還原劑的定義及常見氧化劑與還原劑",
+       "cita": "TW, núcleo: definición y ejemplos de oxidantes y reductores."
+      },
+      {
+       "fuente": "EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27",
+       "cita_literal": "know the behaviour of metals in chemical reactions as a reducing agent",
+       "cita": "EE, núcleo de la escuela básica."
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p022-11",
+       "cita_literal": "explain reduction and oxidation in terms of gain or loss",
+       "cita": "ENG Combined, núcleo."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "quitado_v3",
+     "problema": "Agentes oxidantes y reductores: la V2 lo enseñaba en 10.° y la V3 ya no lo enseña en 9.°–11.° (en ningún grado)",
+     "texto_base": "",
+     "conceptos": [
+      "CON:quimica/agentes-oxidantes-y-reductores"
+     ],
+     "temas_ancla": [],
+     "solidez": "calculada"
+    },
+    "tema_ancla": {
+     "id": "G10-QUI-U9-9.2",
+     "grado": 10,
+     "unidad": "9. Reacciones químicas",
+     "contenido": "Clasificación de las reacciones químicas",
+     "procedimental": "9.2. Clasificación de reacciones químicas cotidianas e industriales según la reorganización de sus reactivos y productos.",
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  }
+ ]
+}

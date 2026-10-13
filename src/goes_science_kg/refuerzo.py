@@ -414,8 +414,13 @@ def unir() -> dict:
                   for s in salida if s.get("id") in cands]
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
+    # Lo que ya revisó el panel no se pisa: volver a unir solo agrega o actualiza lo que sigue pendiente.
+    p = ruta(f"{DIR}/refuerzos.json")
+    previos = {r["id"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
+    filas = [previos[f["id"]] if previos.get(f["id"], {}).get("estado", "propuesta_pendiente") != "propuesta_pendiente"
+             else f for f in filas]
     filas.sort(key=lambda f: f["id"])
-    ruta(f"{DIR}/refuerzos.json").write_text(json.dumps(filas, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    p.write_text(json.dumps(filas, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return {"refuerzos": len(filas), "decision": dict(Counter(f["decision"] for f in filas)),
             "forma": dict(Counter(f.get("forma") for f in filas if f["decision"] == "inyectar"))}
 

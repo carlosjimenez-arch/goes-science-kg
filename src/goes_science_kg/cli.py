@@ -701,14 +701,15 @@ app.add_typer(panel_app, name="panel")
 
 @panel_app.command("preparar")
 def panel_preparar(ronda: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma"),
-                   serie: str = typer.Option("", help="lotes aparte para un grupo de tipos")) -> None:
+                   serie: str = typer.Option("", help="lotes aparte para un grupo de tipos"),
+                   prefijo: str = typer.Option("", help="solo expedientes cuyo id empieza así (p. ej. PED:)")) -> None:
     """Lotes de la ronda para cada rol del panel → data/interim/panel/lotes/."""
     from goes_science_kg import panel
 
     lista = tipos.split(",") if tipos else None
     if ronda == 1:
         typer.echo(f"{panel.iniciar(lista)} expedientes nuevos en el estado")
-    for p in panel.preparar(ronda, lista, serie):
+    for p in panel.preparar(ronda, lista, serie, prefijo):
         typer.echo(f"→ {p}")
 
 
