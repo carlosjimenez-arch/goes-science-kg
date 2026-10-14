@@ -111,6 +111,10 @@ Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuest
 | TEMA:G10-QUI-U5-5.12 | [G10-QUI-U5-5.12](G10-QUI-U5-5.12.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U5-5.13 | [G10-QUI-U5-5.13](G10-QUI-U5-5.13.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U5-5.14 | [G10-QUI-U5-5.14](G10-QUI-U5-5.14.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U6-6.1 | [G10-QUI-U6-6.1](G10-QUI-U6-6.1.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U6-6.2 | [G10-QUI-U6-6.2](G10-QUI-U6-6.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U6-6.3 | [G10-QUI-U6-6.3](G10-QUI-U6-6.3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U6-6.4 | [G10-QUI-U6-6.4](G10-QUI-U6-6.4.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | TEMA:G11-FIS-U1-1.2 | [G11-FIS-U1-1.2](G11-FIS-U1-1.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | TEMA:G11-FIS-U2-2.3 | [G11-FIS-U2-2.3](G11-FIS-U2-2.3.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | TEMA:G11-FIS-U3-3.1-v3 | [G11-FIS-U3-3.1-v3](G11-FIS-U3-3.1-v3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
