@@ -41,3 +41,19 @@ bajar en un grupo se suma una capa sin cambiar el número de electrones externos
 ## Cómo aplicar la decisión
 Quien decida registra la versión aceptada en `data/interim/revisiones/` con `revisado_por` y se rehace el paquete con
 `uv run gskg tutor paquete "G10-QUI-U13-13.8=G10-QUI-U4-4.8"`.
+
+## 3. `TEMA:G10-FIS-U16-16.10`: las tres actividades evalúan espejos esféricos
+
+**Problema** (lo señaló el experto de Física, con la cita de la fila 34 de la V3 anclada): la fila vigente pide
+espejos planos (posición y tamaño de la imagen), la altura mínima de un espejo de pared y la profundidad aparente. Las
+actividades `obj-1`, `obj-2` y `obj-abierta` son correctas en física, pero evalúan espejos esféricos (espejo de
+maquillaje, ecuación del espejo, espejo convexo de seguridad), que no aparecen en ninguna fila vigente de 10.° ni de
+11.°. El experimento ya se rehízo para la fila (espejo plano, altura mínima y profundidad aparente) y quedó revisado;
+el espejo cóncavo pasó a extensión.
+
+**Causa:** el concepto principal que el grafo asignó al tema es `CON:fisica/espejos-esfericos`.
+
+**Opciones:**
+- reasignar el concepto del tema (espejos planos o formación de imágenes por reflexión y refracción) y redactar tres
+  actividades nuevas para la fila; o
+- aceptar los espejos esféricos como extensión de «imagen formada por reflexión» y dejar las actividades como están.
