@@ -136,6 +136,10 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
   montaje.
 - **Gases inflamables:** calcula el volumen de gas que se produce; nunca una mezcla con aire en el rango explosivo cerca
   de una llama. Si la malla propone algo así, usa un video o una demostración segura y dilo.
+- **Simuladores:** no atribuyas a un simulador (PhET u otro) funciones concretas que no puedas asegurar; describe lo
+  que el estudiante debe hacer con él en términos generales o usa un modelo de ejemplo impreso.
+- **Volúmenes de gas y datos esperados:** calcula el volumen que produce la reacción y compáralo con el recipiente;
+  los datos esperados deben salir del montaje tal como está descrito.
 - **Claves repartidas:** en las opciones múltiples de un mismo tema la clave no va siempre en la misma letra.
 - **Análisis con tiempo:** cada pregunta de `analisis` se responde en un paso del procedimiento que tiene minutos
   asignados, o empieza con «Tarea:». Los pasos de cada sesión suman exactamente su duración (55 min por sesión).

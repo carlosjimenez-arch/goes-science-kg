@@ -1,0 +1,390 @@
+{
+ "lote": "r2-q11a_psicopedagogo_6",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.6/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.6/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.6",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el laboratorio, un dipéptido se calienta varias horas con ácido clorhídrico concentrado, HCl(ac), para hidrolizar su enlace peptídico (R₁–CO–NH–R₂). ¿Qué productos se obtienen al finalizar la hidrólisis ácida de ese enlace amida?",
+     "opciones": {
+      "A": "Un grupo ácido carboxílico (R₁–COOH) y un grupo alquilamonio protonado (R₂–NH₃⁺), porque el medio ácido protona la amina liberada e impulsa la reacción.",
+      "B": "Un ion carboxilato (R₁–COO⁻) y una amina neutra (R₂–NH₂), porque el agua cede un protón al nitrógeno y deja el grupo carboxilo desprotonado.",
+      "C": "Un alcohol primario (R₁–CH₂OH) y una amida protonada (R₂–CONH₃⁺), porque el ácido clorhídrico reduce el grupo carbonilo del enlace peptídico.",
+      "D": "Ningún producto nuevo después de unos minutos, porque al alcanzarse el equilibrio dinámico las reacciones directa e inversa se detienen por completo."
+     },
+     "correcta": "A",
+     "distractores": {
+      "D": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la hidrólisis ácida de una amida, el agua rompe el enlace C–N para formar el ácido carboxílico (R₁–COOH) y la amina, que se protona de inmediato en el medio ácido formando el ion alquilamonio (R₂–NH₃⁺). Como ese ion ya no puede atacar al ácido, la hidrólisis se completa. En el estómago la misma ruptura la cataliza la enzima pepsina.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.6",
+     "grado": 11,
+     "indicador": "9.6. Explica la basicidad de las aminas y escribe las reacciones de formación e hidrólisis de amidas, relacionándolas con el enlace peptídico.",
+     "evidencia": "Hoja de ejercicios con reacciones de amidas, estructuras de resonancia y análisis de valores de pKb"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.6/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.6/obj-1",
+     "decision": "corregir",
+     "justificacion": "Clave A correcta, pero el enunciado se contradice: llama «reversible» a la hidrólisis ácida, que se completa porque la amina queda protonada (lo dice la propia clave). Además, en el estómago el HCl solo no hidroliza péptidos: lo cataliza la pepsina. Se usa el contexto de laboratorio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.6",
+       "cita": "Escribe las reacciones de formación e hidrólisis de amidas."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La hidrólisis ácida de amidas es prácticamente irreversible: el producto amino queda como ion amonio."
+      }
+     ],
+     "cambios": {
+      "enunciado": "En el laboratorio, un dipéptido se calienta varias horas con ácido clorhídrico concentrado, HCl(ac), para hidrolizar su enlace peptídico (R₁–CO–NH–R₂). ¿Qué productos se obtienen al finalizar la hidrólisis ácida de ese enlace amida?",
+      "retroalimentacion": "En la hidrólisis ácida de una amida, el agua rompe el enlace C–N para formar el ácido carboxílico (R₁–COOH) y la amina, que se protona de inmediato en el medio ácido formando el ion alquilamonio (R₂–NH₃⁺). Como ese ion ya no puede atacar al ácido, la hidrólisis se completa. En el estómago la misma ruptura la cataliza la enzima pepsina."
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.6/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.6/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.6",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo consulta datos de referencia a 25 °C en disolución acuosa y registra: Compuesto 1 (etanamina, CH₃CH₂NH₂), pKb = 3.25; Compuesto 2 (etanamida, CH₃CONH₂), pKb = 14.5. Recuerda que a menor pKb, mayor es la basicidad en agua. ¿Qué conclusión explica correctamente la diferencia entre ambos valores?",
+     "opciones": {
+      "A": "La etanamina es mucho menos básica porque el grupo etilo atrae por inducción el par de electrones libres del átomo de nitrógeno.",
+      "B": "La etanamida es mucho más básica porque el oxígeno del grupo carbonilo cede densidad electrónica por resonancia hacia el nitrógeno.",
+      "C": "La etanamida es prácticamente neutra porque el par libre del nitrógeno se deslocaliza por resonancia con el carbonilo y no capta protones.",
+      "D": "Ambos compuestos tienen igual fuerza básica al inicio, porque el equilibrio ácido-base se turna entre la reacción directa y la inversa."
+     },
+     "correcta": "C",
+     "distractores": {
+      "D": "DIF:quimica/equilibrio-dinamico/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un pKb de 14.5 indica una basicidad extremadamente baja en agua: en la etanamida, el par de electrones libres del nitrógeno está deslocalizado por resonancia hacia el grupo carbonilo (C=O), por lo que no está disponible para aceptar un protón como en la etanamina (pKb = 3.25).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.6",
+     "grado": 11,
+     "indicador": "9.6. Explica la basicidad de las aminas y escribe las reacciones de formación e hidrólisis de amidas, relacionándolas con el enlace peptídico.",
+     "evidencia": "Hoja de ejercicios con reacciones de amidas, estructuras de resonancia y análisis de valores de pKb"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.6/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.6/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Valores verificados: pKb de la etilamina ≈ 3.25 (pKa del ion 10.75) y de la acetamida ≈ 14.5 (pKa del ácido conjugado ≈ −0.5). Clave C correcta: el par libre se deslocaliza hacia el carbonilo. Distractores falsos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.6",
+       "cita": "Explica la basicidad de las aminas."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La resonancia N–C=O reduce la disponibilidad del par libre del N."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.6",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En 1 a 3 oraciones: (1) explica por qué las aminas son mucho más básicas en agua que las amidas usando el papel del par de electrones libres del nitrógeno y la resonancia con el grupo carbonilo, y (2) escribe o describe la reacción de condensación entre un ácido carboxílico y una amina para formar una amida (enlace peptídico) indicando qué molécula pequeña se libera.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En las aminas, el par de electrones libres del nitrógeno está localizado y disponible para aceptar un protón (H⁺) del agua, mientras que en las amidas ese par se deslocaliza por resonancia hacia el grupo carbonilo (C=O) y casi no actúa como base. Una amida (o enlace peptídico en proteínas) se forma por condensación entre el grupo carboxilo (–COOH) de un ácido carboxílico y el grupo amino (–NH₂) de una amina, liberando una molécula de agua (H₂O): R–COOH + R'–NH₂ → R–CO–NH–R' + H₂O. Al mezclarlos en frío primero forman una sal (la amina, como base, capta el H⁺ del ácido); la amida se obtiene calentando o, en la célula, con ayuda del ribosoma.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que en las aminas el par de electrones libres del nitrógeno acepta protones (base de Brønsted-Lowry), mientras que en las amidas está deslocalizado por resonancia con el grupo carbonilo (C=O).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Describe o escribe la reacción de condensación entre un ácido carboxílico (–COOH) y una amina (–NH₂) para formar el grupo amida (–CO–NH–) y nombra la liberación de una molécula de agua (H₂O).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el grupo amida formado entre aminoácidos con el enlace peptídico de las proteínas.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que las amidas son más básicas que las aminas porque tienen un átomo de oxígeno adicional que atrae protones.",
+        "ejemplo": "Las amidas son más básicas porque tienen nitrógeno y además el oxígeno del carbonilo que también capta H⁺.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confunde la formación de amidas con la esterificación de alcoholes o no identifica el agua como subproducto de la condensación.",
+        "ejemplo": "El ácido carboxílico reacciona con la amina para dar un éster y desprender gas hidrógeno.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Las aminas son básicas porque el par libre del nitrógeno capta H⁺; en las amidas, la resonancia con el grupo C=O deslocaliza ese par. Además, al condensarse un ácido carboxílico con una amina se forma el enlace amida (peptídico) y se libera H₂O.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.6",
+     "grado": 11,
+     "indicador": "9.6. Explica la basicidad de las aminas y escribe las reacciones de formación e hidrólisis de amidas, relacionándolas con el enlace peptídico.",
+     "evidencia": "Hoja de ejercicios con reacciones de amidas, estructuras de resonancia y análisis de valores de pKb"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.6/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Enfoque correcto (resonancia del par libre; condensación con pérdida de agua). Se matiza la respuesta modelo: ácido y amina en frío dan primero una sal por la basicidad de la amina, justo lo que pide el indicador; la amida exige calor o activación. Así la simplificación no siembra una idea que luego haya que desaprender.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.6",
+       "cita": "Explica la basicidad de las aminas y la formación de amidas."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "RCOOH + R'NH2 → RCOO⁻ R'NH3⁺ a temperatura ambiente; la amida se forma al calentar."
+      }
+     ],
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "En las aminas, el par de electrones libres del nitrógeno está localizado y disponible para aceptar un protón (H⁺) del agua, mientras que en las amidas ese par se deslocaliza por resonancia hacia el grupo carbonilo (C=O) y casi no actúa como base. Una amida (o enlace peptídico en proteínas) se forma por condensación entre el grupo carboxilo (–COOH) de un ácido carboxílico y el grupo amino (–NH₂) de una amina, liberando una molécula de agua (H₂O): R–COOH + R'–NH₂ → R–CO–NH–R' + H₂O. Al mezclarlos en frío primero forman una sal (la amina, como base, capta el H⁺ del ácido); la amida se obtiene calentando o, en la célula, con ayuda del ribosoma.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Explica que en las aminas el par de electrones libres del nitrógeno acepta protones (base de Brønsted-Lowry), mientras que en las amidas está deslocalizado por resonancia con el grupo carbonilo (C=O).",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Describe o escribe la reacción de condensación entre un ácido carboxílico (–COOH) y una amina (–NH₂) para formar el grupo amida (–CO–NH–) y nombra la liberación de una molécula de agua (H₂O).",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Relaciona el grupo amida formado entre aminoácidos con el enlace peptídico de las proteínas.",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Afirma que las amidas son más básicas que las aminas porque tienen un átomo de oxígeno adicional que atrae protones.",
+         "ejemplo": "Las amidas son más básicas porque tienen nitrógeno y además el oxígeno del carbonilo que también capta H⁺.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Confunde la formación de amidas con la esterificación de alcoholes o no identifica el agua como subproducto de la condensación.",
+         "ejemplo": "El ácido carboxílico reacciona con la amina para dar un éster y desprender gas hidrógeno.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}
