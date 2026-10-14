@@ -11179,7 +11179,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Datos de un grupo de ejemplo. Una regla de 1 m (0.15 kg) se apoya en el borde de una mesa (el pivote) y queda horizontal sostenida por un hilo atado a 0.90 m del pivote, que sube inclinado 30° hacia un dinamómetro. Una carga de 0.15 kg (peso de unos 1.5 N) se cuelga a distintas distancias x del pivote. Lecturas: x = 0.20 m, T = 2.2 N; x = 0.40 m, T = 2.8 N; x = 0.60 m, T = 3.5 N; x = 0.80 m, T = 4.1 N. ¿Qué conclusión apoyan estos datos?",
+  "enunciado": "Datos de un grupo de ejemplo. Una regla de 1 m (0.15 kg) gira sobre un clavo fijo que la atraviesa en la marca de 5 cm (el pivote, sujeto a un soporte con una prensa). Queda horizontal sostenida por un hilo atado a 0.90 m del pivote, que sube inclinado 30° hacia un dinamómetro. Una carga de 0.15 kg (peso de unos 1.5 N) se cuelga a distintas distancias x del pivote. Lecturas: x = 0.20 m, T = 2.2 N; x = 0.40 m, T = 2.8 N; x = 0.60 m, T = 3.5 N; x = 0.80 m, T = 4.1 N. ¿Qué conclusión apoyan estos datos?",
   "opciones": {
    "A": "La tensión es proporcional a x, porque al duplicar la distancia de la carga se duplica la tensión.",
    "B": "La tensión crece en línea recta con x sin llegar a cero, porque el hilo también equilibra a la regla.",
@@ -11194,16 +11194,38 @@
   "valor": null,
   "tolerancia": null,
   "unidad": null,
-  "retroalimentacion": "Al pasar de 0.20 a 0.40 m la tensión no se duplica (2.2 → 2.8 N), pero sube unos 0.65 N por cada 0.20 m: es una recta que no pasa por el origen. Con Στ = 0 respecto del pivote, T · 0.90 · sen 30° = (peso de la carga)·x + (peso de la regla)·0.45 m. El segundo término no depende de x y explica los unos 1.5 N que quedarían con x = 0. El peso de la carga no cambia: cambia su brazo de palanca.",
+  "retroalimentacion": "Al pasar de 0.20 a 0.40 m la tensión no se duplica (2.2 → 2.8 N), pero sube unos 0.65 N por cada 0.20 m: es una recta que no pasa por el origen. Con Στ = 0 respecto del pivote, T · 0.90 · sen 30° = (peso de la carga)·x + (peso de la regla)·0.45 m. El segundo término no depende de x: explica que, con x = 0, la tensión aún sería de cerca de 1.5 N. El peso de la carga no cambia: cambia su brazo de palanca.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U10-10.1"
   },
   "origen": "redactor-actividades (G10-FIS-U10-10.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "La retroalimentación reescrita conserva la física: Στ = 0 respecto del pivote da T·0.45 = 1.47x + 0.66, recta de pendiente 0.65 N por 0.20 m y ordenada cercana a 1.5 N. El pivote fijo que se fijó en la ronda 1 sigue en el enunciado y B sigue siendo la única clave."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Datos de un grupo de ejemplo. Una regla de 1 m (0.15 kg) se apoya en el borde de una mesa (el pivote) y queda horizontal sostenida por un hilo atado a 0.90 m del pivote, que sube inclinado 30° hacia un dinamómetro. Una carga de 0.15 kg (peso de unos 1.5 N) se cuelga a distintas distancias x del pivote. Lecturas: x = 0.20 m, T = 2.2 N; x = 0.40 m, T = 2.8 N; x = 0.60 m, T = 3.5 N; x = 0.80 m, T = 4.1 N. ¿Qué conclusión apoyan estos datos?",
+    "retroalimentacion": "Al pasar de 0.20 a 0.40 m la tensión no se duplica (2.2 → 2.8 N), pero sube unos 0.65 N por cada 0.20 m: es una recta que no pasa por el origen. Con Στ = 0 respecto del pivote, T · 0.90 · sen 30° = (peso de la carga)·x + (peso de la regla)·0.45 m. El segundo término no depende de x y explica los unos 1.5 N que quedarían con x = 0. El peso de la carga no cambia: cambia su brazo de palanca."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U10-10.1/obj-abierta",
@@ -11562,10 +11584,10 @@
   ],
   "enunciado": "Datos de un grupo de ejemplo. Por un tubo de Venturi horizontal pasa agua: tramo 1 de 2.0 cm de diámetro, tramo 2 angosto de 1.0 cm y tramo 3 otra vez de 2.0 cm. Un tubito vertical abierto en cada tramo muestra columnas de agua de 30 cm (tubito 1), 18 cm (tubito 2) y 29 cm (tubito 3). ¿Qué conclusión sobre el tramo angosto apoyan estos datos?",
   "opciones": {
-   "A": "Su rapidez es 4 veces mayor y su presión es menor, porque se conserva la energía por volumen.",
-   "B": "Su rapidez es 2 veces mayor y su presión es menor, porque la rapidez sigue al diámetro.",
-   "C": "Su rapidez es menor y su presión es menor, porque el agua se frena al entrar en lo angosto.",
-   "D": "Su rapidez es 4 veces mayor y su presión es mayor, porque el agua rápida empuja más."
+   "A": "Su rapidez es 4 veces mayor, porque el área es un cuarto, y su presión es menor, porque aumenta su energía cinética por volumen.",
+   "B": "Su rapidez es 2 veces mayor, porque el diámetro es la mitad, y su presión es menor, porque aumenta su energía cinética por volumen.",
+   "C": "Su rapidez es menor, porque el agua se frena al entrar en lo angosto, y su presión es menor, porque el agua pierde empuje.",
+   "D": "Su rapidez es 4 veces mayor, porque el área es un cuarto, y su presión es mayor, porque el agua más rápida empuja más."
   },
   "correcta": "A",
   "distractores": {
@@ -11575,16 +11597,43 @@
   "valor": null,
   "tolerancia": null,
   "unidad": null,
-  "retroalimentacion": "La columna más baja en el tubito 2 indica menor presión allí. Por continuidad, con la mitad del diámetro el área es un cuarto y la rapidez es 4 veces mayor. Bernoulli lo explica: al subir la energía cinética por volumen, ½ ρ v², baja la presión. Con 12 cm de diferencia, v₁ = √(2 g · 0.12 / 15) ≈ 0.40 m/s. El tubito 3 marca 1 cm menos que el 1 por la fricción.",
+  "retroalimentacion": "La columna más baja en el tubito 2 indica menor presión allí. Por continuidad, con la mitad del diámetro el área es un cuarto y la rapidez es 4 veces mayor. Bernoulli lo explica: al subir la energía cinética por volumen, ½ ρ v², baja la presión. Con 12 cm de diferencia, ρ g (0.12 m) = ½ ρ (v₂² − v₁²), y como v₂ = 4 v₁ queda v₁ = √(2 g · 0.12 / 15) ≈ 0.40 m/s. El tubito 3 marca 1 cm menos que el 1 por la fricción.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U11-11.10"
   },
   "origen": "redactor-actividades (G10-FIS-U11-11.10)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Opciones paralelas sin cambio de contenido: A (factor 4 por área un cuarto; menor presión al subir ½ρv²) es la única correcta; B (factor 2), C (más lenta) y D (más presión) siguen siendo falsas. La retroalimentación ρg·0.12 = ½ρ(v₂² − v₁²) = ½ρ·15v₁² da v₁ ≈ 0.40 m/s: correcto."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "opciones": {
+     "A": "Su rapidez es 4 veces mayor y su presión es menor, porque se conserva la energía por volumen.",
+     "B": "Su rapidez es 2 veces mayor y su presión es menor, porque la rapidez sigue al diámetro.",
+     "C": "Su rapidez es menor y su presión es menor, porque el agua se frena al entrar en lo angosto.",
+     "D": "Su rapidez es 4 veces mayor y su presión es mayor, porque el agua rápida empuja más."
+    },
+    "retroalimentacion": "La columna más baja en el tubito 2 indica menor presión allí. Por continuidad, con la mitad del diámetro el área es un cuarto y la rapidez es 4 veces mayor. Bernoulli lo explica: al subir la energía cinética por volumen, ½ ρ v², baja la presión. Con 12 cm de diferencia, v₁ = √(2 g · 0.12 / 15) ≈ 0.40 m/s. El tubito 3 marca 1 cm menos que el 1 por la fricción."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U11-11.10/obj-abierta",
@@ -11602,7 +11651,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Rosa propone poner una tubería más delgada para subir el agua al cuarto piso de un edificio, a 12 m sobre la tubería de la calle, porque «en el tubo delgado el agua se aprieta y llega con más presión». En 2 o 3 oraciones explica: (a) qué pasa con la rapidez del agua en el tramo delgado y por qué; (b) qué pasa con su presión según Bernoulli y si Rosa tiene razón; (c) qué presión manométrica mínima hace falta en la tubería de la calle para que el agua llegue a 12 m (usa ρ ≈ 1000 kg/m³ y g ≈ 9.8 m/s², valores aproximados de la tabla de referencia).",
+  "enunciado": "Rosa propone poner una tubería más delgada para subir el agua al cuarto piso de un edificio, a 12 m sobre la tubería de la calle, porque «en el tubo delgado el agua se aprieta y llega con más presión». En 3 o 4 oraciones explica: (a) qué pasa con la rapidez del agua en el tramo delgado y por qué; (b) qué pasa con su presión según Bernoulli y si Rosa tiene razón; (c) qué presión manométrica mínima hace falta en la tubería de la calle para que el agua llegue a 12 m (usa ρ ≈ 1000 kg/m³ y g ≈ 9.8 m/s², valores aproximados de la tabla de referencia).",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -11611,7 +11660,7 @@
   "unidad": null,
   "retroalimentacion": "Con el mismo caudal, en el tubo delgado el agua va más rápido (A₁ v₁ = A₂ v₂). Por Bernoulli, a la misma altura, donde la rapidez aumenta la presión baja: el tubo delgado no da más presión, y en una tubería real pierde además más por fricción. Para subir 12 m hace falta al menos ρ g h ≈ 118 kPa de presión manométrica en la calle, y algo más para que el agua salga con rapidez.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U11-11.10"
@@ -11660,7 +11709,28 @@
   },
   "origen": "redactor-actividades (G10-FIS-U11-11.10)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Solo cambia la extensión a 3 o 4 oraciones; la física (continuidad, Bernoulli a igual altura, ρgh ≈ 118 kPa como mínimo) y la rúbrica quedan como se aprobaron."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Rosa propone poner una tubería más delgada para subir el agua al cuarto piso de un edificio, a 12 m sobre la tubería de la calle, porque «en el tubo delgado el agua se aprieta y llega con más presión». En 2 o 3 oraciones explica: (a) qué pasa con la rapidez del agua en el tramo delgado y por qué; (b) qué pasa con su presión según Bernoulli y si Rosa tiene razón; (c) qué presión manométrica mínima hace falta en la tubería de la calle para que el agua llegue a 12 m (usa ρ ≈ 1000 kg/m³ y g ≈ 9.8 m/s², valores aproximados de la tabla de referencia)."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U11-11.6/obj-1",
@@ -11798,7 +11868,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Mauricio dice que un gato hidráulico «crea energía», porque con una fuerza pequeña en el émbolo chico levanta un carro en el émbolo grande. En 2 o 3 oraciones, explica si tiene razón comparando entre los dos émbolos: (a) la presión y la fuerza; (b) la distancia que recorre cada uno y por qué; (c) el trabajo de entrada y el de salida.",
+  "enunciado": "Mauricio dice que un gato hidráulico «crea energía», porque con una fuerza pequeña en el émbolo chico levanta un carro en el émbolo grande. En 3 o 4 oraciones, explica si tiene razón comparando entre los dos émbolos: (a) la presión y la fuerza; (b) la distancia que recorre cada uno y por qué; (c) el trabajo de entrada y el de salida.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -11806,8 +11876,8 @@
   "tolerancia": null,
   "unidad": null,
   "retroalimentacion": "La presión que se aplica en el émbolo chico se transmite a todo el líquido, así que es la misma en los dos émbolos y la fuerza crece en proporción al área. Pero el volumen que sale del cilindro chico es el que entra al grande, y por eso el émbolo grande sube mucho menos de lo que baja el chico. El trabajo de salida, F₂ d₂, es a lo sumo igual al de entrada, F₁ d₁: el gato multiplica la fuerza, no la energía.",
-  "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "duracion_min": 6,
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U11-11.6"
@@ -11856,7 +11926,29 @@
   },
   "origen": "redactor-actividades (G10-FIS-U11-11.6)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Cambian la extensión y la duración (6 min); presión igual en los émbolos, A₁d₁ = A₂d₂ y trabajo de salida no mayor que el de entrada siguen intactos."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Mauricio dice que un gato hidráulico «crea energía», porque con una fuerza pequeña en el émbolo chico levanta un carro en el émbolo grande. En 2 o 3 oraciones, explica si tiene razón comparando entre los dos émbolos: (a) la presión y la fuerza; (b) la distancia que recorre cada uno y por qué; (c) el trabajo de entrada y el de salida.",
+    "duracion_min": 5
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U12-12.2/obj-1",
@@ -11881,16 +11973,37 @@
   "valor": 27,
   "tolerancia": 0.2,
   "unidad": "°F",
-  "retroalimentacion": "Lo que se convierte es una diferencia: el aumento fue de 15 °C. Entre los puntos fijos del agua hay 100 °C y 180 °F, así que cada grado Celsius equivale a 1.8 °F: 15 · 1.8 = 27 °F. El 32 de °F = 1.8 · °C + 32 solo sirve para convertir una temperatura, porque las escalas tienen ceros distintos; en una diferencia se cancela (64.4 °F → 91.4 °F).",
+  "retroalimentacion": "Lo que se convierte es una diferencia: el aumento fue de 15 °C. Entre los puntos fijos del agua hay 100 °C y 180 °F, así que cada grado Celsius equivale a 1.8 °F: 15 · 1.8 = 27 °F. El «+ 32» de la fórmula °F = 1.8 · °C + 32 solo sirve para convertir una temperatura, porque las escalas tienen ceros distintos; en una diferencia se cancela (64.4 °F → 91.4 °F).",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U12-12.2"
   },
   "origen": "redactor-actividades (G10-FIS-U12-12.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "La aclaración del «+ 32» es correcta: se cancela en una diferencia. Valor 27 °F, comprobación 64.4 → 91.4 °F, sin cambios."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "retroalimentacion": "Lo que se convierte es una diferencia: el aumento fue de 15 °C. Entre los puntos fijos del agua hay 100 °C y 180 °F, así que cada grado Celsius equivale a 1.8 °F: 15 · 1.8 = 27 °F. El 32 de °F = 1.8 · °C + 32 solo sirve para convertir una temperatura, porque las escalas tienen ceros distintos; en una diferencia se cancela (64.4 °F → 91.4 °F)."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U12-12.2/obj-2",
@@ -11911,7 +12024,7 @@
   "enunciado": "Datos de un grupo de ejemplo con un termómetro de gas a volumen constante: 20 °C, 99.6 kPa; 40 °C, 106.4 kPa; 60 °C, 113.2 kPa; 80 °C, 120.0 kPa. Los puntos quedan en una recta. Si se extrapola la recta hacia temperaturas más bajas, ¿a qué temperatura se anularía la presión, y qué pasaría al repetir el experimento con otro gas o con otra cantidad de gas?",
   "opciones": {
    "A": "Cerca de −273 °C, y con otro gas u otra cantidad de gas la recta cortaría casi en el mismo punto.",
-   "B": "Cerca de 0 °C, porque a esa temperatura el gas ya no tiene temperatura con la cual empujar.",
+   "B": "Cerca de 0 °C, porque a 0 °C el gas ya no tiene temperatura y deja de empujar.",
    "C": "Cerca de −273 °C, pero con otro gas u otra cantidad de gas la recta cortaría en otro punto.",
    "D": "Cerca de −293 °C, porque 99.6 kPa divididos entre 0.34 kPa por grado dan unos 293 grados."
   },
@@ -11924,14 +12037,40 @@
   "unidad": null,
   "retroalimentacion": "La recta sube 6.8 kPa cada 20 °C, o sea 0.34 kPa por grado, y a 0 °C marcaría 99.6 − 6.8 = 92.8 kPa. Para bajar esos 92.8 kPa hacen falta 92.8/0.34 ≈ 273 grados más: la presión se anularía cerca de −273 °C. Con gases a baja presión, cualquier gas y cualquier cantidad dan rectas de distinta pendiente que cortan casi en el mismo punto: por eso ese punto se toma como el cero de la escala Kelvin.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U12-12.2"
   },
   "origen": "redactor-actividades (G10-FIS-U12-12.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "La opción B reescrita mantiene la idea previa (0 °C como ausencia de temperatura) y sigue siendo falsa; A continúa siendo la única clave (cero cerca de −273 °C, común a gases diluidos)."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "opciones": {
+     "A": "Cerca de −273 °C, y con otro gas u otra cantidad de gas la recta cortaría casi en el mismo punto.",
+     "B": "Cerca de 0 °C, porque a esa temperatura el gas ya no tiene temperatura con la cual empujar.",
+     "C": "Cerca de −273 °C, pero con otro gas u otra cantidad de gas la recta cortaría en otro punto.",
+     "D": "Cerca de −293 °C, porque 99.6 kPa divididos entre 0.34 kPa por grado dan unos 293 grados."
+    }
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U12-12.2/obj-abierta",
@@ -11949,7 +12088,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Josué dice: «Si caliento un gas a volumen constante de 20 °C a 40 °C, su presión se duplica, porque la temperatura se duplicó». En 2 o 3 oraciones: (a) explica qué significa físicamente el cero absoluto; (b) explica por qué en la relación entre presión y temperatura de un gas hay que usar kelvin y no grados Celsius; (c) calcula por qué factor se multiplica realmente la presión.",
+  "enunciado": "Josué dice: «Si caliento un gas a volumen constante de 20 °C a 40 °C, su presión se duplica, porque la temperatura se duplicó». En 3 o 4 oraciones: (a) explica qué significa físicamente el cero absoluto; (b) explica por qué en la relación entre presión y temperatura de un gas hay que usar kelvin y no grados Celsius; (c) calcula por qué factor se multiplica realmente la presión.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -11957,8 +12096,8 @@
   "tolerancia": null,
   "unidad": null,
   "retroalimentacion": "El cero absoluto (0 K, unos −273 °C) es el límite inferior de temperatura: allí la presión de un gas a volumen constante se anularía según la extrapolación, y la agitación de las partículas sería la mínima posible. La presión es proporcional a la temperatura contada desde ese cero, en kelvin; 0 °C es solo la fusión del hielo. De 293 K a 313 K el factor es 313/293 ≈ 1.07: la presión sube un 7 %, no el doble.",
-  "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "duracion_min": 6,
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U12-12.2"
@@ -12002,7 +12141,29 @@
   },
   "origen": "redactor-actividades (G10-FIS-U12-12.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Solo extensión y 6 min; el factor 313/293 ≈ 1.07 y la agitación «mínima posible» en el cero absoluto quedan como se aprobaron."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Josué dice: «Si caliento un gas a volumen constante de 20 °C a 40 °C, su presión se duplica, porque la temperatura se duplicó». En 2 o 3 oraciones: (a) explica qué significa físicamente el cero absoluto; (b) explica por qué en la relación entre presión y temperatura de un gas hay que usar kelvin y no grados Celsius; (c) calcula por qué factor se multiplica realmente la presión.",
+    "duracion_min": 5
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U12-12.8/obj-1",
@@ -16637,7 +16798,7 @@
    "A": "La bomba 2 es más eficiente, porque entrega más potencia útil y termina el trabajo antes.",
    "B": "La bomba 1 es más eficiente, porque aprovecha como trabajo útil una parte mayor de lo recibido.",
    "C": "Las dos tienen igual eficiencia, porque hacen el mismo trabajo útil con la misma agua.",
-   "D": "La bomba 1 es más eficiente, porque recibir menos potencia indica siempre más eficiencia."
+   "D": "La bomba 1 es más eficiente, porque recibe menos potencia eléctrica que la bomba 2."
   },
   "correcta": "B",
   "distractores": {
@@ -16649,14 +16810,40 @@
   "unidad": null,
   "retroalimentacion": "El trabajo útil es el mismo en las dos: mgh = 300 × 9.8 × 10 ≈ 29 400 J. Bomba 1: potencia útil ≈ 29 400/60 ≈ 490 W, eficiencia ≈ 490/750 ≈ 65 %. Bomba 2: potencia útil ≈ 735 W, eficiencia ≈ 735/1 500 ≈ 49 %. La bomba 2 es más rápida (más potencia útil), pero desperdicia una fracción mayor de lo que recibe. La potencia por sí sola no dice qué tan eficiente es una máquina: hay que comparar lo útil con lo recibido.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U7-7.7"
   },
   "origen": "redactor-actividades (G10-FIS-U7-7.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "D sin «siempre» sigue siendo falsa: afirma que recibir menos potencia hace más eficiente, lo que ignora la potencia útil (confusión real potencia-eficiencia). B sigue siendo la única con la razón correcta (65 % frente a 49 %)."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "opciones": {
+     "A": "La bomba 2 es más eficiente, porque entrega más potencia útil y termina el trabajo antes.",
+     "B": "La bomba 1 es más eficiente, porque aprovecha como trabajo útil una parte mayor de lo recibido.",
+     "C": "Las dos tienen igual eficiencia, porque hacen el mismo trabajo útil con la misma agua.",
+     "D": "La bomba 1 es más eficiente, porque recibir menos potencia indica siempre más eficiencia."
+    }
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U7-7.7/obj-2",
@@ -16725,7 +16912,7 @@
   "grados": [
    10
   ],
-  "enunciado": "En una visita a la central geotérmica de Berlín, en Usulután, el grupo aprende que solo una parte de la energía del vapor sale de la central como electricidad. Carlos concluye que el resto de la energía se destruye dentro de la central. En 3 o 4 oraciones: di si Carlos tiene razón y por qué; nombra al menos dos lugares o formas a donde va la energía que no llega a la red, y explica cómo se calcula la eficiencia global de la cadena vapor-turbina-generador-red a partir de la eficiencia de cada etapa.",
+  "enunciado": "En clase, el grupo lee que en la central geotérmica de Berlín, en Usulután, solo una parte de la energía del vapor sale de la central como electricidad. Carlos concluye que el resto de la energía se destruye dentro de la central. En 3 o 4 oraciones: di si Carlos tiene razón y por qué; nombra al menos dos lugares o formas a donde va la energía que no llega a la red, y explica cómo se calcula la eficiencia global de la cadena vapor-turbina-generador-red a partir de la eficiencia de cada etapa.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -16734,7 +16921,7 @@
   "unidad": null,
   "retroalimentacion": "La energía no se destruye: se transforma y se transfiere, y la energía útil más la no útil suman lo que entregó el vapor. Lo que no llega a la red sale sobre todo como calor al agua y al aire de enfriamiento, en el fluido que se reinyecta aún caliente y como calentamiento por fricción y por corriente en turbina, generador, cables y transformadores. La eficiencia global es el producto de las eficiencias de las etapas, y siempre es menor que la de la etapa menos eficiente.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U7-7.7"
@@ -16783,7 +16970,28 @@
   },
   "origen": "redactor-actividades (G10-FIS-U7-7.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Pasar de visita a lectura en clase no altera la física: conservación de la energía, destinos de la energía no útil y eficiencia global como producto de etapas."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "En una visita a la central geotérmica de Berlín, en Usulután, el grupo aprende que solo una parte de la energía del vapor sale de la central como electricidad. Carlos concluye que el resto de la energía se destruye dentro de la central. En 3 o 4 oraciones: di si Carlos tiene razón y por qué; nombra al menos dos lugares o formas a donde va la energía que no llega a la red, y explica cómo se calcula la eficiencia global de la cadena vapor-turbina-generador-red a partir de la eficiencia de cada etapa."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U7-7.9/obj-1",
@@ -16910,7 +17118,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Andrea estira 0.10 m el resorte de un aparato para ejercitar el brazo. La fuerza que hace crece en proporción al estiramiento, desde 0 al empezar hasta 40 N al final. Diego calcula el trabajo de Andrea así: 40 N × 0.10 m = 4.0 J. En 2 o 3 oraciones: di si el cálculo de Diego es correcto; explica por qué usando la gráfica fuerza-posición (qué figura forma y qué representa su área), y da el valor correcto del trabajo, en joules.",
+  "enunciado": "Andrea estira 0.10 m el resorte de un aparato para ejercitar el brazo. La fuerza que hace crece en proporción al estiramiento, desde 0 al empezar hasta 40 N al final. Diego calcula el trabajo de Andrea así: 40 N × 0.10 m = 4.0 J. En 3 o 4 oraciones: di si el cálculo de Diego es correcto; explica por qué usando la gráfica fuerza-posición (qué figura forma y qué representa su área), y da el valor correcto del trabajo, en joules.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -16919,7 +17127,7 @@
   "unidad": null,
   "retroalimentacion": "La fuerza no fue 40 N todo el tiempo: empezó en 0 y creció. En la gráfica fuerza-posición forma una recta desde el origen hasta (0.10 m, 40 N), y el trabajo es el área bajo esa recta, un triángulo: ½ × 0.10 m × 40 N = 2.0 J. Es lo mismo que usar la fuerza media, 20 N, o ½kx² con k = 400 N/m. Diego calculó el área de un rectángulo, el doble del trabajo real.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U7-7.9"
@@ -16968,7 +17176,28 @@
   },
   "origen": "redactor-actividades (G10-FIS-U7-7.9)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Solo cambia la extensión; el área del triángulo ½ × 0.10 × 40 = 2.0 J y ½kx² con k = 400 N/m siguen correctos."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Andrea estira 0.10 m el resorte de un aparato para ejercitar el brazo. La fuerza que hace crece en proporción al estiramiento, desde 0 al empezar hasta 40 N al final. Diego calcula el trabajo de Andrea así: 40 N × 0.10 m = 4.0 J. En 2 o 3 oraciones: di si el cálculo de Diego es correcto; explica por qué usando la gráfica fuerza-posición (qué figura forma y qué representa su área), y da el valor correcto del trabajo, en joules."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U8-8.1/obj-1",
