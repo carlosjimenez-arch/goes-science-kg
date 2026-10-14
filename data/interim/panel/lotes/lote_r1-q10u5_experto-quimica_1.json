@@ -1,0 +1,2735 @@
+{
+ "lote": "r1-q10u5_experto-quimica_1",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.10/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.10/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.10"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.10",
+      "CON:quimica/enlace-ionico"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Valores aproximados de una tabla de referencia: quitarle un electrón a un átomo de Na(g) cuesta unos 496 kJ/mol, y un átomo de Cl(g) libera unos 349 kJ/mol al ganarlo. Formar los dos iones separados cuesta, entonces, unos 147 kJ/mol. ¿Por qué, aun así, el NaCl(s) se forma y es estable?",
+     "opciones": {
+      "A": "Porque el sodio quiere ceder su electrón y el cloro quiere ganarlo, y así el intercambio no cuesta energía",
+      "B": "Porque los iones de carga opuesta se atraen y se ordenan en la red, y eso libera más energía de la que costó",
+      "C": "Porque cada par de iones Na⁺ y Cl⁻ forma una molécula, y su enlace libera la energía que hacía falta",
+      "D": "Porque el sodio y el cloro completan su octeto, y alcanzar el octeto libera la energía que hacía falta"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/enlace-ionico/1",
+      "C": "DIF:quimica/enlace-ionico/2",
+      "D": "DIF:quimica/enlace-ionico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Formar los iones aislados cuesta energía, aunque ambos queden con configuración de gas noble: el octeto por sí solo no libera energía. La energía la aporta la atracción eléctrica entre muchos iones de carga opuesta al acercarse y ordenarse en la red cristalina (energía de red, varias veces mayor que esos 147 kJ/mol). En el sólido no hay moléculas de NaCl, sino una red con iones en proporción 1:1.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.10"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-ionico",
+     "nombre": "Enlace iónico",
+     "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.10",
+     "grado": 10,
+     "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+     "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.10/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.10/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.10/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.10"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.10",
+      "CON:quimica/enlace-ionico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Radios iónicos aproximados (tabla de referencia): Na⁺ 102 pm, K⁺ 138 pm, Cs⁺ 174 pm, Cl⁻ 181 pm. La regla de la razón de radios (radio del catión entre radio del anión) predice índice de coordinación 6 entre 0.41 y 0.73, y 8 entre 0.73 y 1. Índices observados: NaCl, 6; KCl, 6; CsCl, 8. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "A mayor razón de radios, menor índice, porque un catión más grande deja menos espacio a su alrededor",
+      "B": "La regla nunca falla, así que el índice 6 del KCl tiene que ser un error de la tabla de datos observados",
+      "C": "La regla acierta en el NaCl y el CsCl pero falla en el KCl: orienta la predicción, aunque no la asegura",
+      "D": "El índice lo fija la carga: los tres tienen iones 1+ y 1−, así que las diferencias son errores de medida"
+     },
+     "correcta": "C",
+     "distractores": {
+      "D": "DIF:quimica/enlace-ionico/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las razones son 0.56 (NaCl), 0.76 (KCl) y 0.96 (CsCl). La regla predice 6, 8 y 8; se observa 6, 6 y 8. Acierta en dos casos y falla en el KCl, que está cerca del límite: la regla supone iones como esferas rígidas y es una guía aproximada. Un catión más grande admite más aniones alrededor, no menos, y el índice no lo fija la carga.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.10"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-ionico",
+     "nombre": "Enlace iónico",
+     "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.10",
+     "grado": 10,
+     "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+     "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.10/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.10/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.10/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.10"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.10",
+      "CON:quimica/enlace-ionico"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Valeria dice: «En la sal, cada Na⁺ está unido solo al Cl⁻ que recibió su electrón; los demás Cl⁻ vecinos casi no lo atraen». En 2 o 3 oraciones usa la red del NaCl para decir si tiene razón: indica cuántos Cl⁻ rodean a cada Na⁺ y explica por qué la atracción no depende de cuál átomo recibió el electrón. Si puedes, di qué significa la fórmula NaCl en un cristal.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Valeria no tiene razón. Cada Na⁺ está rodeado por seis Cl⁻ a la misma distancia (índice de coordinación 6) y los atrae a todos por igual, porque la atracción eléctrica actúa en todas direcciones y solo depende de las cargas y la distancia. Un ion no conserva memoria de dónde vino su electrón. La fórmula NaCl indica la proporción 1:1 de iones en la red, no una molécula.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.10"
+     },
+     "rubrica": {
+      "respuesta_modelo": "No tiene razón. En la red del NaCl cada Na⁺ tiene seis Cl⁻ alrededor, a la misma distancia, y los atrae a todos igual. La atracción entre iones es eléctrica: va en todas las direcciones y depende de la carga y la distancia, no de qué átomo recibió el electrón. Por eso NaCl no es una molécula; solo dice que hay un Na⁺ por cada Cl⁻.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Valeria no tiene razón y que cada Na⁺ está rodeado por seis Cl⁻ (índice de coordinación 6).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica que la atracción es eléctrica y en todas las direcciones, y que depende de las cargas y la distancia, no del origen del electrón.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que la fórmula NaCl indica la proporción 1:1 de iones en la red y no una molécula.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que cada ion forma tantos enlaces como electrones cedió o ganó.",
+        "ejemplo": "Tiene razón: el sodio solo dio un electrón, así que solo puede formar un enlace con un cloro.",
+        "dificultad": "DIF:quimica/enlace-ionico/3"
+       },
+       {
+        "descripcion": "Describe el sólido como moléculas Na–Cl separadas.",
+        "ejemplo": "Tiene razón porque la sal está hecha de moléculas de NaCl, cada una con un sodio y un cloro.",
+        "dificultad": "DIF:quimica/enlace-ionico/2"
+       },
+       {
+        "descripcion": "Da un índice de coordinación equivocado al contar los vecinos del modelo.",
+        "ejemplo": "No tiene razón: cada Na⁺ está rodeado por ocho Cl⁻, uno en cada esquina del cubo.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-ionico",
+     "nombre": "Enlace iónico",
+     "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.10",
+     "grado": 10,
+     "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+     "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.10/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.12/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.12/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.12",
+      "CON:quimica/tipo-de-enlace-y-propiedades"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Valeria arma un circuito con una pila de 9 V y un LED. Al tocar un cristal grande de sal común (NaCl) con los dos electrodos, el LED no enciende; al meter los electrodos en agua purificada con esa misma sal disuelta, el LED enciende. ¿Qué explica mejor el cambio?",
+     "opciones": {
+      "A": "En el cristal no hay iones, solo moléculas de NaCl; el agua rompe esas moléculas y forma los iones que conducen.",
+      "B": "En el cristal los iones Na⁺ y Cl⁻ están fijos en la red; disueltos quedan separados y se mueven hacia los electrodos.",
+      "C": "Lo que conduce es el agua; la sal disuelta solo ayuda a que el agua haga mejor contacto con los dos electrodos.",
+      "D": "Al disolverse, la sal suelta electrones libres que viajan por el agua de un electrodo al otro, como en un cable."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/tipo-de-enlace-y-propiedades/1",
+      "C": "DIF:quimica/tipo-de-enlace-y-propiedades/2",
+      "D": "DIF:quimica/tipo-de-enlace-y-propiedades/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El cristal ya está hecho de iones Na⁺ y Cl⁻, pero en la red cada ion queda fijo en su sitio: no puede desplazarse y no transporta carga. Al disolverse, los iones se separan, rodeados de moléculas de agua, y se mueven: los positivos hacia el electrodo negativo y los negativos hacia el positivo. La corriente en la disolución es de iones, no de electrones, y el agua purificada sola casi no conduce.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.12"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipo-de-enlace-y-propiedades",
+     "nombre": "Tipo de enlace y propiedades de las sustancias",
+     "definicion": "El tipo de enlace explica punto de fusión, conductividad, dureza y fragilidad de sustancias iónicas, metálicas, moleculares y de red covalente.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.12",
+     "grado": 10,
+     "indicador": "5.12. Explica por qué los compuestos iónicos conducen la corriente eléctrica disueltos en agua pero no en estado sólido.",
+     "evidencia": "Informe de laboratorio con diseño del circuito, tabla de conductividad y explicación con el modelo de red"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.12/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.12/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.12/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.12",
+      "CON:quimica/tipo-de-enlace-y-propiedades"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Con una pila de 9 V, una resistencia y un LED, probaron cinco muestras con los electrodos a 1 cm: sal sólida, no enciende; agua purificada, no enciende; azúcar disuelta en agua purificada, no enciende; sal disuelta en agua purificada, enciende con brillo. Además, en un video, la sal fundida (a unos 800 °C, valor aproximado) conduce. ¿Qué conclusión es coherente con todos los datos?",
+     "opciones": {
+      "A": "Conduce lo que tiene iones que pueden moverse: la sal disuelta o fundida, pero no la sal sólida ni el azúcar.",
+      "B": "Conduce toda sustancia disuelta en agua, porque el agua lleva la corriente y lo disuelto la vuelve más fuerte.",
+      "C": "La sal sólida no tiene iones; los forma el agua o el calor, y por eso solo conduce disuelta o fundida.",
+      "D": "Conduce lo que tiene electrones libres: la sal los suelta al disolverse o fundirse y el azúcar los retiene."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/tipo-de-enlace-y-propiedades/2",
+      "C": "DIF:quimica/tipo-de-enlace-y-propiedades/1",
+      "D": "DIF:quimica/tipo-de-enlace-y-propiedades/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El agua purificada y el azúcar disuelta no encienden el LED: el agua sola casi no conduce y el azúcar se disuelve como moléculas neutras. La sal fundida conduce sin agua, así que no es el agua la que forma los iones: el sólido ya los tiene, pero fijos en la red. Conduce la sal cuando sus iones quedan libres para desplazarse.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.12"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipo-de-enlace-y-propiedades",
+     "nombre": "Tipo de enlace y propiedades de las sustancias",
+     "definicion": "El tipo de enlace explica punto de fusión, conductividad, dureza y fragilidad de sustancias iónicas, metálicas, moleculares y de red covalente.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.12",
+     "grado": 10,
+     "indicador": "5.12. Explica por qué los compuestos iónicos conducen la corriente eléctrica disueltos en agua pero no en estado sólido.",
+     "evidencia": "Informe de laboratorio con diseño del circuito, tabla de conductividad y explicación con el modelo de red"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.12/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.12/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.12/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.12",
+      "CON:quimica/tipo-de-enlace-y-propiedades"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Mauricio afirma: «La sal sólida no conduce porque no tiene iones; los iones aparecen cuando el agua la disuelve». En 2 o 3 oraciones: di si tiene razón, explica con el modelo de red iónica por qué la sal sólida no conduce y por qué la disuelta sí, y usa el dato de que la sal fundida, sin agua, también conduce.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Mauricio no tiene razón: el cristal de NaCl ya está formado por iones Na⁺ y Cl⁻, pero en la red están fijos. Disueltos o fundidos, los iones se desplazan hacia los electrodos de carga opuesta y transportan la carga. Como la sal fundida conduce sin agua, el agua no es la que crea los iones.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.12"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Mauricio no tiene razón: la sal sólida ya está formada por iones Na⁺ y Cl⁻ ordenados en una red cristalina. En el sólido cada ion está fijo en su lugar y no puede desplazarse, así que no lleva carga de un electrodo al otro. Al disolverse, los iones se separan y se mueven hacia el electrodo de carga opuesta, y eso es la corriente. La sal fundida también conduce sin agua, lo que muestra que los iones ya estaban en el sólido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Mauricio no tiene razón porque la sal sólida ya está formada por iones (Na⁺ y Cl⁻) en una red.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que en el sólido los iones están fijos y no pueden desplazarse, por eso no transportan carga.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que disueltos los iones se separan y se mueven hacia los electrodos, y que ese movimiento de iones es la corriente.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Usa la sal fundida para justificar que el agua no crea los iones (basta con que puedan moverse).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que el sólido no tiene iones y que el agua los produce.",
+        "ejemplo": "Sí tiene razón: el agua separa las moléculas de NaCl en iones y por eso la disolución conduce.",
+        "dificultad": "DIF:quimica/tipo-de-enlace-y-propiedades/1"
+       },
+       {
+        "descripcion": "Atribuye la conducción a electrones libres que viajan por la disolución.",
+        "ejemplo": "La sal disuelta conduce porque suelta electrones que corren por el agua; en el sólido están atrapados.",
+        "dificultad": "DIF:quimica/tipo-de-enlace-y-propiedades/3"
+       },
+       {
+        "descripcion": "Atribuye la conducción al agua misma.",
+        "ejemplo": "La sal sólida no conduce porque está seca; el agua es la que conduce la electricidad.",
+        "dificultad": "DIF:quimica/tipo-de-enlace-y-propiedades/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipo-de-enlace-y-propiedades",
+     "nombre": "Tipo de enlace y propiedades de las sustancias",
+     "definicion": "El tipo de enlace explica punto de fusión, conductividad, dureza y fragilidad de sustancias iónicas, metálicas, moleculares y de red covalente.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.12",
+     "grado": 10,
+     "indicador": "5.12. Explica por qué los compuestos iónicos conducen la corriente eléctrica disueltos en agua pero no en estado sólido.",
+     "evidencia": "Informe de laboratorio con diseño del circuito, tabla de conductividad y explicación con el modelo de red"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.12/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.13/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.13/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.13",
+      "CON:quimica/enlace-metalico"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "A temperatura ambiente, el cobre de un cable conduce muy bien la electricidad, el silicio de un panel solar conduce poco y el vidrio de una ventana casi nada. ¿Qué explica mejor la diferencia?",
+     "opciones": {
+      "A": "El cobre tiene más electrones por átomo que el silicio y que el vidrio, así que le sobran electrones para conducir.",
+      "B": "En el cobre hay estados vacíos junto a los ocupados; el silicio tiene una brecha pequeña y el vidrio una brecha grande.",
+      "C": "El silicio es medio conductor y deja pasar la mitad de sus electrones; el vidrio no tiene electrones en sus bandas.",
+      "D": "En el vidrio los átomos están más separados, y la brecha es el espacio vacío entre ellos que los electrones no cruzan."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/enlace-metalico/2",
+      "C": "DIF:quimica/enlace-metalico/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En un metal como el cobre, la banda de valencia está parcialmente llena (en otros metales se traslapa con la de conducción): con muy poca energía los electrones pasan a estados vacíos y se mueven. En el silicio, la brecha entre la banda de valencia llena y la de conducción es pequeña y pocos electrones la saltan a temperatura ambiente; en el vidrio es tan grande que casi ninguno lo logra. La brecha es una diferencia de energía, no un espacio entre átomos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.13"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.13",
+     "grado": 10,
+     "indicador": "5.13. Explica la diferencia entre conductores, semiconductores y aislantes a partir de la teoría de bandas.",
+     "evidencia": "Diagrama de bandas comparativo de conductor, semiconductor y aislante con explicación escrita"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.13/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.13/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.13/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.13",
+      "CON:quimica/enlace-metalico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Midieron la resistencia de tres muestras del mismo tamaño a 20 °C y a 80 °C. Muestra 1: 0.50 Ω y 0.62 Ω. Muestra 2: 2000 Ω y 150 Ω. Muestra 3: más de 10¹² Ω en las dos temperaturas. ¿Qué interpretación es coherente con los datos y con la teoría de bandas?",
+     "opciones": {
+      "A": "1 metal, 2 semiconductor, 3 aislante: al calentar 2, más electrones saltan su brecha pequeña y la resistencia baja.",
+      "B": "1 semiconductor, 2 metal, 3 aislante: un metal conduce cada vez mejor al calentarlo, como pasa con la muestra 2.",
+      "C": "1 metal, 2 semiconductor, 3 aislante: al calentar 2, el material se dilata y abre espacio para que pasen los electrones.",
+      "D": "1 metal, 2 aislante, 3 semiconductor: la muestra 2 empieza con mucha resistencia, así que es aislante y el calor la daña."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/enlace-metalico/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La muestra 1 conduce muy bien y su resistencia sube un poco al calentarla, como en un metal: la red vibra más y desvía a los electrones. La muestra 2 baja mucho su resistencia al calentarla: la energía térmica hace que más electrones salten una brecha pequeña, típico de un semiconductor. La muestra 3 casi no conduce: su brecha es grande. La dilatación no explica el cambio de la muestra 2, que es de más de diez veces.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.13"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.13",
+     "grado": 10,
+     "indicador": "5.13. Explica la diferencia entre conductores, semiconductores y aislantes a partir de la teoría de bandas.",
+     "evidencia": "Diagrama de bandas comparativo de conductor, semiconductor y aislante con explicación escrita"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.13/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.13/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.13/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.13",
+      "CON:quimica/enlace-metalico"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Piensa en los diagramas de bandas del cobre, del silicio y del vidrio. En 2 o 3 oraciones: compara los tres materiales usando la banda de valencia, la banda de conducción y la brecha de energía, y explica por qué una celda solar de silicio produce corriente cuando le llega luz.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el cobre los electrones disponen de estados vacíos muy cerca en energía, sin brecha. El silicio tiene una brecha pequeña y el vidrio una grande. La luz da a los electrones del silicio la energía que necesitan para saltar a la banda de conducción, donde pueden moverse; así aparece la corriente.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.13"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En el cobre la banda de valencia está parcialmente llena, así que los electrones pasan a estados vacíos con muy poca energía y conducen bien. En el silicio hay una brecha pequeña entre la banda de valencia llena y la de conducción, y en el vidrio la brecha es muy grande, por eso casi no conduce. En la celda solar, la luz le da a electrones del silicio la energía para saltar la brecha a la banda de conducción, donde se pueden mover y forman la corriente.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que en el cobre no hay brecha: la banda de valencia está parcialmente llena o se traslapa con la de conducción, y los electrones se mueven con muy poca energía.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Compara las brechas: pequeña en el silicio y grande en el vidrio, y lo relaciona con que conduzcan poco o casi nada.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la luz con la energía que permite a los electrones del silicio saltar la brecha hacia la banda de conducción, donde pueden moverse.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que el electrón deja un hueco en la banda de valencia que también contribuye a conducir.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Explica la conducción por la cantidad de electrones y no por la brecha.",
+        "ejemplo": "El cobre conduce porque tiene muchos electrones y el vidrio no porque tiene pocos.",
+        "dificultad": "DIF:quimica/enlace-metalico/2"
+       },
+       {
+        "descripcion": "Trata la brecha como un espacio físico entre átomos.",
+        "ejemplo": "En el vidrio la brecha es más ancha porque los átomos están más lejos y los electrones no alcanzan a pasar.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Describe el silicio como un conductor a medias sin explicar el papel de la luz.",
+        "ejemplo": "El silicio es semiconductor porque conduce la mitad, y la luz lo calienta para que conduzca como el cobre.",
+        "dificultad": "DIF:quimica/enlace-metalico/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.13",
+     "grado": 10,
+     "indicador": "5.13. Explica la diferencia entre conductores, semiconductores y aislantes a partir de la teoría de bandas.",
+     "evidencia": "Diagrama de bandas comparativo de conductor, semiconductor y aislante con explicación escrita"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.13/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.14/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.14/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.14",
+      "CON:quimica/enlace-metalico"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Josué pone un clavo de hierro y un cristal grande de sal común sobre una tabla y le da a cada uno un golpe con un martillo. ¿Qué predicción y qué justificación son correctas?",
+     "opciones": {
+      "A": "El clavo se dobla o se aplana y la sal se quiebra: las capas del metal se deslizan unidas por los electrones deslocalizados; en la sal quedan iones de igual carga enfrentados.",
+      "B": "El clavo se dobla o se aplana y la sal se quiebra: los átomos de hierro son blandos y se deforman con el golpe, mientras que los iones de la sal son duros, rígidos y no se doblan.",
+      "C": "El clavo no cambia y la sal se quiebra: el enlace metálico es mucho más fuerte que el iónico, que es un enlace débil y se rompe en cuanto recibe un golpe con el martillo.",
+      "D": "El clavo se dobla o se aplana y la sal se quiebra: los electrones libres del hierro absorben toda la energía del golpe, y la sal no tiene electrones que puedan absorberla."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/modelo-de-particulas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el metal, los cationes forman capas rodeadas por electrones deslocalizados que no pertenecen a un átomo fijo: si una capa se corre, la atracción con los electrones se mantiene y el metal se deforma sin romperse. En la sal, al correrse una capa, quedan iones de igual carga uno frente a otro, se repelen y el cristal se parte en planos. El enlace iónico no es débil: la sal funde a una temperatura muy alta.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.14"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.14",
+     "grado": 10,
+     "indicador": "5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos.",
+     "evidencia": "Infografía sobre propiedades de metales y beneficios del reciclaje con datos de conductividad y densidad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.14/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.14/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.14/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.14",
+      "CON:quimica/enlace-metalico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Las líneas de alta tensión usan cables de aluminio (con un alma de acero) en lugar de cobre. Valores aproximados de una tabla de referencia: conductividad eléctrica relativa, cobre 100 y aluminio 61; densidad, cobre 8.96 g/cm³ y aluminio 2.70 g/cm³. Para dos cables del mismo largo y la misma resistencia, ¿qué conclusión es coherente con los datos?",
+     "opciones": {
+      "A": "El de aluminio necesita unas 1.6 veces el área del de cobre, pero pesa cerca de la mitad.",
+      "B": "El de aluminio puede ser más delgado que el de cobre, porque un metal más liviano conduce mejor.",
+      "C": "Los dos tienen la misma área, y el de aluminio pesa cerca de la tercera parte del de cobre.",
+      "D": "El de aluminio debe ser más grueso y pesa más que el de cobre; solo se elige por su precio."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El aluminio conduce el 61 % de lo que conduce el cobre, así que su cable necesita 100/61, unas 1.6 veces, el área para tener la misma resistencia. Aun así, como su densidad es casi un tercio de la del cobre, su masa es 1.6 × 2.70/8.96, cerca de la mitad. En una línea entre torres, un cable más liviano exige torres menos robustas; el alma de acero le da la resistencia mecánica.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.14"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.14",
+     "grado": 10,
+     "indicador": "5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos.",
+     "evidencia": "Infografía sobre propiedades de metales y beneficios del reciclaje con datos de conductividad y densidad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.14/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.14/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.14/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.14",
+      "CON:quimica/enlace-metalico"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "El cobre puro se estira en alambres finos y conduce muy bien; el bronce, una aleación de cobre con estaño, es más duro y se usaba para herramientas y campanas. En 2 o 3 oraciones, explica con el modelo de enlace metálico: por qué el cobre se puede estirar sin romperse, por qué conduce la electricidad y por qué agregar estaño lo vuelve más duro.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el cobre, las capas de cationes se deslizan y los electrones deslocalizados las mantienen unidas; esos mismos electrones se mueven al aplicar un voltaje. Los átomos de estaño, de otro tamaño, desordenan las capas del bronce y frenan el deslizamiento: por eso es más duro.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.14"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El cobre es una red de cationes rodeados de electrones deslocalizados; al estirarlo, las capas de cationes se deslizan unas sobre otras y los electrones las siguen uniendo, así que no se rompe. Conduce porque esos electrones se pueden mover por toda la red cuando se aplica un voltaje. En el bronce, los átomos de estaño tienen otro tamaño, deforman las capas y hacen que no se deslicen con facilidad, por eso es más duro.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica la ductilidad: las capas de cationes se deslizan y los electrones deslocalizados las mantienen unidas.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica la conductividad por el movimiento de los electrones deslocalizados al aplicar un voltaje.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica la dureza del bronce: los átomos de estaño, de distinto tamaño, desordenan las capas y dificultan que se deslicen.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Relaciona alguna de las propiedades con un uso cotidiano (cables, campanas, herramientas).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Atribuye las propiedades del metal a cada átomo.",
+        "ejemplo": "El cobre se estira porque sus átomos son blandos y flexibles, y el estaño tiene átomos más duros.",
+        "dificultad": "DIF:quimica/modelo-de-particulas/1"
+       },
+       {
+        "descripcion": "Trata la aleación como un compuesto con un enlace nuevo.",
+        "ejemplo": "El cobre y el estaño forman un enlace iónico más fuerte, y por eso el bronce es más duro.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la ductilidad con enlaces que se rompen y se vuelven a formar al azar, sin electrones deslocalizados.",
+        "ejemplo": "Al estirar el cobre sus enlaces se rompen, pero se vuelven a pegar porque es el mismo elemento.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-metalico",
+     "nombre": "Enlace metálico",
+     "definicion": "Red de cationes unida por electrones deslocalizados, que explica maleabilidad, brillo y conductividad de los metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.14",
+     "grado": 10,
+     "indicador": "5.14. Relaciona la maleabilidad, la ductilidad y la conductividad de los metales con el modelo de enlace metálico y sus usos cotidianos.",
+     "evidencia": "Infografía sobre propiedades de metales y beneficios del reciclaje con datos de conductividad y densidad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.14/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.2",
+      "CON:quimica/estructuras-de-lewis"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Andrea dibuja el BF₃ con tres enlaces simples B–F y tres pares libres en cada flúor, y usa los 24 electrones de valencia. Alguien del grupo dice que está mal porque el boro no completa el octeto. ¿Quién tiene razón y por qué?",
+     "opciones": {
+      "A": "Quien la corrige: el boro debe formar un doble enlace con un flúor, porque todo átomo central cumple el octeto",
+      "B": "Andrea: el boro aporta solo 3 electrones de valencia y en esa estructura queda con 6, un caso de hipovalencia",
+      "C": "Quien la corrige: hay que agregar un par libre al boro para que llegue a ocho, aunque sobren dos electrones",
+      "D": "Andrea, pero solo porque el boro es un metal, y los átomos de los metales nunca siguen la regla del octeto"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/estructuras-de-lewis/1",
+      "C": "DIF:quimica/estructuras-de-lewis/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La estructura de Andrea usa los 24 electrones y deja al boro con 6: es hipovalente, una excepción conocida del boro y del berilio. Agregar un par libre rompería el conteo. Un doble enlace B=F completaría el octeto, pero dejaría carga formal +1 en un flúor, el átomo más electronegativo; por eso se prefiere la de enlaces simples. El boro es un metaloide, no un metal.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.2"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructuras-de-lewis",
+     "nombre": "Notación y estructuras de Lewis",
+     "definicion": "Representación de electrones de valencia como puntos y de pares compartidos como líneas para modelar enlaces y pares libres.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.2",
+     "grado": 10,
+     "indicador": "5.2. Representa estructuras de Lewis de moléculas e iones poliatómicos y reconoce casos de hipovalencia e hipervalencia.",
+     "evidencia": "Hoja de trabajo con seis estructuras de Lewis, cargas formales y clasificación según la regla del octeto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.2",
+      "CON:quimica/estructuras-de-lewis"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Hoja de trabajo de un grupo de ejemplo (especie: electrones de valencia en total; electrones alrededor del átomo central en su estructura de Lewis). CH₄: 8; 8. CCl₄: 32; 8. BF₃: 24; 6. BeCl₂ (gas): 16; 4. ClF₃: 28; 10. PCl₅: 40; 10. SF₆: 48; 12. ¿Qué conclusión apoyan estos datos?",
+     "opciones": {
+      "A": "BF₃ y BeCl₂ son hipervalentes y ClF₃, PCl₅ y SF₆ hipovalentes, según cuánto se alejan de ocho electrones",
+      "B": "Pasan de ocho las especies con más electrones en total, porque muchos electrones obligan a exceder el octeto",
+      "C": "BF₃ y BeCl₂ quedan con menos de ocho; ClF₃, PCl₅ y SF₆ con más, y sus átomos centrales son del período 3",
+      "D": "Todas deberían tener ocho, así que los valores distintos de ocho son errores de conteo del grupo de ejemplo"
+     },
+     "correcta": "C",
+     "distractores": {
+      "D": "DIF:quimica/estructuras-de-lewis/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con menos de ocho electrones alrededor del central (boro y berilio) hay hipovalencia; con más de ocho, hipervalencia, y en los datos solo aparece en centrales del período 3 o siguientes (P, S, Cl), que son más grandes. El total de electrones no lo decide: el ClF₃ tiene 28 y pasa de ocho, mientras que el CCl₄ tiene 32 y cumple el octeto.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.2"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructuras-de-lewis",
+     "nombre": "Notación y estructuras de Lewis",
+     "definicion": "Representación de electrones de valencia como puntos y de pares compartidos como líneas para modelar enlaces y pares libres.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.2",
+     "grado": 10,
+     "indicador": "5.2. Representa estructuras de Lewis de moléculas e iones poliatómicos y reconoce casos de hipovalencia e hipervalencia.",
+     "evidencia": "Hoja de trabajo con seis estructuras de Lewis, cargas formales y clasificación según la regla del octeto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.2",
+      "CON:quimica/estructuras-de-lewis"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Mario afirma: «Todas las moléculas cumplen la regla del octeto». En 2 o 3 oraciones, usa el BF₃ y el PCl₅ para decir si tiene razón: indica cuántos electrones rodean al átomo central en la estructura de Lewis de cada uno y qué tipo de excepción es cada caso. Si puedes, explica por qué el fósforo puede rodearse de más de ocho electrones y el nitrógeno no.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Mario no tiene razón. En el BF₃ el boro queda con 6 electrones (hipovalencia) y en el PCl₅ el fósforo queda con 10 (hipervalencia). La regla del octeto es una guía útil para C, N, O y F, pero tiene excepciones; la hipervalencia aparece en átomos centrales del período 3 en adelante, que son más grandes y caben más vecinos a su alrededor.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.2"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Mario no tiene razón. En el BF₃ el boro forma tres enlaces simples y queda con 6 electrones, que es hipovalencia. En el PCl₅ el fósforo forma cinco enlaces y queda con 10 electrones, que es hipervalencia. El fósforo es del período 3 y es más grande, así que caben cinco átomos a su alrededor; el nitrógeno es pequeño y no.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Indica 6 electrones alrededor del boro en el BF₃ y 10 alrededor del fósforo en el PCl₅ (o 3 y 5 enlaces, respectivamente).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra el BF₃ como hipovalencia (octeto incompleto) y el PCl₅ como hipervalencia (octeto expandido) y concluye que la regla del octeto tiene excepciones.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la hipervalencia con un átomo central del período 3 o siguientes, más grande que el nitrógeno.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Defiende la regla como absoluta y fuerza el octeto con enlaces que no corresponden.",
+        "ejemplo": "Sí tiene razón, porque el boro forma un doble enlace con un flúor y así llega a ocho.",
+        "dificultad": "DIF:quimica/estructuras-de-lewis/1"
+       },
+       {
+        "descripcion": "Intercambia los nombres de las excepciones.",
+        "ejemplo": "No tiene razón: el BF₃ es hipervalente porque tiene 6 y el PCl₅ es hipovalente porque tiene 10.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cuenta mal los electrones del átomo central, sumando los pares libres de los átomos de los extremos.",
+        "ejemplo": "No tiene razón, porque en el PCl₅ el fósforo tiene 40 electrones alrededor.",
+        "dificultad": "DIF:quimica/estructuras-de-lewis/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructuras-de-lewis",
+     "nombre": "Notación y estructuras de Lewis",
+     "definicion": "Representación de electrones de valencia como puntos y de pares compartidos como líneas para modelar enlaces y pares libres.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.2",
+     "grado": 10,
+     "indicador": "5.2. Representa estructuras de Lewis de moléculas e iones poliatómicos y reconoce casos de hipovalencia e hipervalencia.",
+     "evidencia": "Hoja de trabajo con seis estructuras de Lewis, cargas formales y clasificación según la regla del octeto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.4",
+      "CON:quimica/resonancia-y-carga-formal"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Para el ion carbonato, CO₃²⁻, se pueden dibujar tres estructuras de Lewis que solo difieren en qué oxígeno tiene el doble enlace. Las mediciones muestran que los tres enlaces C–O miden lo mismo. ¿Qué explica mejor ese dato?",
+     "opciones": {
+      "A": "El doble enlace cambia de oxígeno muy rápido, y en promedio en el tiempo los tres enlaces miden lo mismo",
+      "B": "La muestra mezcla tres clases de ion carbonato, cada una con el doble enlace en un oxígeno distinto",
+      "C": "Los tres enlaces son dobles, porque el carbono comparte dos pares de electrones con cada uno de los oxígenos",
+      "D": "Un par de electrones está repartido entre los tres enlaces, y cada uno queda entre un simple y un doble"
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/resonancia-y-carga-formal/1",
+      "B": "DIF:quimica/resonancia-y-carga-formal/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Ninguna de las tres estructuras describe sola al ion. El ion real es el híbrido de resonancia: el par del doble enlace está deslocalizado sobre los tres enlaces, que quedan iguales, con orden de enlace de 1⅓, y la carga 2− se reparte entre los tres oxígenos. El ion no cambia de una estructura a otra: las estructuras resonantes son dibujos, no moléculas distintas. Tres dobles enlaces dejarían al carbono con 12 electrones.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.4"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/resonancia-y-carga-formal",
+     "nombre": "Resonancia y carga formal",
+     "definicion": "Cuando una sola estructura de Lewis no describe la molécula se usan formas resonantes; la carga formal elige la estructura más estable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.4",
+     "grado": 10,
+     "indicador": "5.4. Representa las estructuras resonantes del ozono y del ion carbonato y explica por qué sus enlaces tienen la misma longitud.",
+     "evidencia": "Mural colectivo con estructuras resonantes, híbridos y tabla de longitudes de enlace"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.4",
+      "CON:quimica/resonancia-y-carga-formal"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Longitudes de enlace aproximadas, de una tabla de referencia (1 pm = 10⁻¹² m): C–O en el metanol, 143 pm; C=O en el formaldehído, 121 pm; cada uno de los tres enlaces C–O del ion carbonato en la calcita, 129 pm. ¿Qué conclusión apoyan estos datos?",
+     "opciones": {
+      "A": "Hay un C=O y dos C–O, y el valor de 129 pm solo es el promedio que da el aparato de medida",
+      "B": "Los tres enlaces son iguales y quedan entre simple y doble, como describe el híbrido de resonancia",
+      "C": "Los tres enlaces son dobles, porque los 129 pm quedan más cerca de 121 pm que de los 143 pm",
+      "D": "El doble enlace salta de un oxígeno a otro, y por eso la medición da un único valor intermedio"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/resonancia-y-carga-formal/2",
+      "D": "DIF:quimica/resonancia-y-carga-formal/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Si el carbonato tuviera un enlace doble y dos simples, se medirían dos longitudes distintas, cerca de 121 pm y de 143 pm. Se mide una sola, 129 pm, entre las dos: los tres enlaces son iguales e intermedios, como predice el híbrido. Que quede más cerca de 121 pm no los vuelve dobles: la longitud también depende de la molécula y no cambia en línea recta con el orden de enlace.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.4"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/resonancia-y-carga-formal",
+     "nombre": "Resonancia y carga formal",
+     "definicion": "Cuando una sola estructura de Lewis no describe la molécula se usan formas resonantes; la carga formal elige la estructura más estable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.4",
+     "grado": 10,
+     "indicador": "5.4. Representa las estructuras resonantes del ozono y del ion carbonato y explica por qué sus enlaces tienen la misma longitud.",
+     "evidencia": "Mural colectivo con estructuras resonantes, híbridos y tabla de longitudes de enlace"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.4",
+      "CON:quimica/resonancia-y-carga-formal"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Longitudes aproximadas (tabla de referencia): O–O simple en el H₂O₂, 148 pm; O=O doble en el O₂, 121 pm; los dos enlaces del ozono, O₃, 128 pm cada uno. En 2 o 3 oraciones explica por qué los dos enlaces del ozono miden lo mismo, compara su longitud con la del enlace simple y la del doble, y di si la molécula de ozono alterna entre sus dos estructuras resonantes.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Ninguna de las dos estructuras resonantes describe sola al ozono: el par de electrones que forma el segundo enlace está repartido entre los dos enlaces O–O. Por eso son iguales, con orden de enlace 1.5, y su longitud (128 pm) queda entre la del simple (148 pm) y la del doble (121 pm). La molécula no alterna: el híbrido es la única estructura real.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Los dos enlaces miden lo mismo porque ninguna de las dos estructuras de Lewis es la real: el segundo par de electrones del doble enlace está repartido entre los dos enlaces, así que los dos son iguales. Por eso miden 128 pm, menos que un enlace simple de 148 pm y más que un doble de 121 pm: son intermedios. La molécula no salta de una estructura a otra; siempre es el híbrido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que ninguna estructura sola describe la molécula y que un par de electrones está repartido (deslocalizado) entre los dos enlaces, que por eso son iguales.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Compara con los datos: 128 pm está entre la longitud del enlace simple (148 pm) y la del doble (121 pm), o dice que son enlaces intermedios (orden 1.5).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que la molécula no alterna entre las estructuras: el híbrido es la estructura real y las resonantes son representaciones.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Explica la igualdad con un cambio rápido entre las dos estructuras.",
+        "ejemplo": "Miden lo mismo porque el doble enlace se cambia de lado tan rápido que en promedio quedan iguales.",
+        "dificultad": "DIF:quimica/resonancia-y-carga-formal/1"
+       },
+       {
+        "descripcion": "Toma una sola estructura de Lewis como la real y atribuye el dato a un error de medición.",
+        "ejemplo": "Un enlace es doble y el otro simple; si miden 128 pm los dos, la medida está mal hecha.",
+        "dificultad": "DIF:quimica/resonancia-y-carga-formal/2"
+       },
+       {
+        "descripcion": "Compara mal los datos y concluye que los dos enlaces son dobles.",
+        "ejemplo": "Los dos son dobles porque 128 pm está muy cerca de 121 pm.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/resonancia-y-carga-formal",
+     "nombre": "Resonancia y carga formal",
+     "definicion": "Cuando una sola estructura de Lewis no describe la molécula se usan formas resonantes; la carga formal elige la estructura más estable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.4",
+     "grado": 10,
+     "indicador": "5.4. Representa las estructuras resonantes del ozono y del ion carbonato y explica por qué sus enlaces tienen la misma longitud.",
+     "evidencia": "Mural colectivo con estructuras resonantes, híbridos y tabla de longitudes de enlace"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.5",
+      "CON:quimica/electronegatividad-y-polaridad-de-enlace"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "El CO₂ (de la respiración) y el SO₂ (de los gases de un volcán) tienen enlaces entre átomos con casi la misma diferencia de electronegatividad: Δχ ≈ 0.9 en C=O y en S=O. En el CO₂ el carbono no tiene pares libres; en el SO₂ el azufre tiene un par libre. ¿Cuál de las dos moléculas es polar y por qué?",
+     "opciones": {
+      "A": "Solo el SO₂, porque su par libre lo hace angular y sus dipolos de enlace no se anulan.",
+      "B": "Las dos, porque ambas tienen enlaces polares con la misma diferencia de electronegatividad.",
+      "C": "Ninguna, porque una Δχ de 0.9 es pequeña y los enlaces de las dos son apolares.",
+      "D": "Solo el CO₂, porque tiene dos oxígenos iguales que jalan los electrones lejos del carbono."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con Δχ ≈ 0.9 los enlaces de las dos moléculas son covalentes polares. La polaridad de la molécula depende además de su forma: el CO₂ es lineal y sus dos dipolos de enlace, iguales y opuestos, se anulan (momento dipolar cero); el par libre del azufre hace angular al SO₂, y sus dipolos de enlace se suman en una dirección, así que es polar.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.5"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+     "nombre": "Electronegatividad y polaridad de enlace",
+     "definicion": "La diferencia de electronegatividad entre átomos enlazados genera enlaces no polares, polares o iónicos con momento dipolar de enlace.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.5",
+     "grado": 10,
+     "indicador": "5.5. Clasifica enlaces como apolares, polares o iónicos según la diferencia de electronegatividad y determina si una molécula es polar.",
+     "evidencia": "Tabla de clasificación de ocho moléculas con Δχ, geometría, momento dipolar y conclusión"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.5",
+      "CON:quimica/electronegatividad-y-polaridad-de-enlace"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo reunió estos valores aproximados de una tabla de referencia (molécula: Δχ de sus enlaces; forma; momento dipolar en debyes, D). HCl: 1.0; lineal; 1.1 D. H₂O: 1.2; angular; 1.9 D. NH₃: 0.8; piramidal; 1.5 D. CH₄: 0.35; tetraédrica; 0 D. CF₄: 1.4; tetraédrica; 0 D. BCl₃: 1.1; trigonal plana; 0 D. ¿Qué conclusión apoyan estos datos?",
+     "opciones": {
+      "A": "Las moléculas que contienen hidrógeno son polares y las que no lo contienen son apolares.",
+      "B": "Cuanto mayor es la Δχ de los enlaces, mayor es el momento dipolar de toda la molécula.",
+      "C": "Una molécula es polar si tiene enlaces polares y una forma en que sus dipolos no se anulan.",
+      "D": "Las moléculas con más átomos tienen mayor momento dipolar, porque suman más dipolos."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El CF₄ tiene los enlaces más polares de la tabla (Δχ = 1.4) y su momento dipolar es cero: en el tetraedro los cuatro dipolos iguales se anulan, igual que los tres del BCl₃ en el triángulo. El CH₄ contiene hidrógeno y tampoco es polar. HCl, H₂O y NH₃ tienen enlaces polares y formas sin esa simetría, por eso su momento dipolar no es cero.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.5"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+     "nombre": "Electronegatividad y polaridad de enlace",
+     "definicion": "La diferencia de electronegatividad entre átomos enlazados genera enlaces no polares, polares o iónicos con momento dipolar de enlace.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.5",
+     "grado": 10,
+     "indicador": "5.5. Clasifica enlaces como apolares, polares o iónicos según la diferencia de electronegatividad y determina si una molécula es polar.",
+     "evidencia": "Tabla de clasificación de ocho moléculas con Δχ, geometría, momento dipolar y conclusión"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.5",
+      "CON:quimica/electronegatividad-y-polaridad-de-enlace"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Mateo dice: «El CCl₄ tiene cuatro enlaces C–Cl polares, así que la molécula tiene que ser polar». Datos aproximados: Δχ(C–Cl) ≈ 0.6 y Δχ(C–H) ≈ 0.35. El CCl₄ es tetraédrico y su momento dipolar es 0 D; el clorometano, CH₃Cl, también es tetraédrico y su momento dipolar es de unos 1.9 D. En 2 o 3 oraciones: di si Mateo tiene razón, explica con la forma y los dipolos de enlace por qué el CCl₄ tiene momento dipolar cero y explica por qué el CH₃Cl sí es polar.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Tener enlaces polares no basta. En el CCl₄ los cuatro dipolos C–Cl son iguales y apuntan a los vértices de un tetraedro, así que se anulan. En el CH₃Cl un enlace C–Cl es distinto de los tres C–H, los dipolos no se compensan y queda un momento dipolar neto.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Mateo no tiene razón: los enlaces C–Cl sí son polares, pero eso no basta para que la molécula sea polar. En el CCl₄ los cuatro dipolos C–Cl son iguales y apuntan hacia los vértices del tetraedro, así que se anulan y el momento dipolar es cero. En el CH₃Cl hay un enlace C–Cl y tres C–H, que son distintos (Δχ 0.6 frente a 0.35); sus dipolos no se compensan y la molécula queda con un lado más negativo, el del cloro, por eso es polar.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Mateo no tiene razón: tener enlaces polares no basta para que la molécula sea polar.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que en el CCl₄ los cuatro dipolos C–Cl son iguales y, por la forma tetraédrica simétrica, se anulan (su suma es cero).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que en el CH₃Cl los enlaces no son todos iguales (un C–Cl y tres C–H), así que sus dipolos no se compensan y queda un momento dipolar neto.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Usa la idea de suma de vectores o señala hacia dónde queda el extremo negativo del CH₃Cl (hacia el cloro).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Clasifica el enlace C–Cl como apolar para explicar el momento dipolar cero, sin usar la geometría.",
+        "ejemplo": "Mateo se equivoca porque una diferencia de 0.6 es muy pequeña: los enlaces C–Cl son apolares y por eso el CCl₄ es apolar.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Acepta que enlaces polares siempre dan una molécula polar y descarta el dato medido.",
+        "ejemplo": "Mateo tiene razón, el cloro es muy electronegativo y los cuatro cloros hacen polar al CCl₄; el cero debe ser un error.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confunde el momento dipolar con una carga neta de la molécula.",
+        "ejemplo": "El CH₃Cl es polar porque el cloro le quita un electrón al carbono y la molécula queda con carga negativa.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+     "nombre": "Electronegatividad y polaridad de enlace",
+     "definicion": "La diferencia de electronegatividad entre átomos enlazados genera enlaces no polares, polares o iónicos con momento dipolar de enlace.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.5",
+     "grado": 10,
+     "indicador": "5.5. Clasifica enlaces como apolares, polares o iónicos según la diferencia de electronegatividad y determina si una molécula es polar.",
+     "evidencia": "Tabla de clasificación de ocho moléculas con Δχ, geometría, momento dipolar y conclusión"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.6/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.6/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.6",
+      "CON:quimica/geometria-molecular-rpecv"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En la estructura de Lewis del tricloruro de fósforo, PCl₃, el fósforo central tiene tres enlaces simples con cloro y un par libre. ¿Qué geometría molecular y qué ángulo Cl–P–Cl predice la TRPECV?",
+     "opciones": {
+      "A": "Tetraédrica, con los tres ángulos Cl–P–Cl de 109.5°.",
+      "B": "Piramidal trigonal, con ángulos algo menores que 109.5°.",
+      "C": "Trigonal plana, con los tres ángulos Cl–P–Cl de 120°.",
+      "D": "Plana en forma de T, con ángulos Cl–P–Cl de 90°."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/geometria-molecular-rpecv/1",
+      "C": "DIF:quimica/geometria-molecular-rpecv/2",
+      "D": "DIF:quimica/geometria-molecular-rpecv/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El fósforo tiene cuatro dominios (tres pares enlazantes y un par libre), que se reparten hacia los vértices de un tetraedro. La forma molecular la dan solo los átomos: un fósforo con tres cloros forma una pirámide de base triangular. El par libre repele más que los pares enlazantes y cierra los ángulos por debajo de 109.5° (el valor medido ronda los 100°).",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.6"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/geometria-molecular-rpecv",
+     "nombre": "Geometría molecular (RPECV)",
+     "definicion": "La repulsión entre pares electrónicos de valencia, enlazantes y libres, determina la forma tridimensional y los ángulos de enlace de una molécula.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.6",
+     "grado": 10,
+     "indicador": "5.6. Predice la geometría y los ángulos de enlace de moléculas con hasta seis dominios electrónicos aplicando la TRPECV.",
+     "evidencia": "Colección de seis modelos moleculares con ficha de geometría, ángulo predicho y ángulo experimental"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.6/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.6/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.6/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.6",
+      "CON:quimica/geometria-molecular-rpecv"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Tabla con valores aproximados de una tabla de referencia (molécula: dominios del átomo central; pares libres; ángulo H–X–H medido). CH₄: 4; 0; 109.5°. NH₃: 4; 1; 107°. H₂O: 4; 2; 104.5°. ¿Qué explicación es coherente con estos datos y con la TRPECV?",
+     "opciones": {
+      "A": "El ángulo baja porque los pares libres no son dominios y con menos enlaces estos se juntan más.",
+      "B": "El ángulo baja por error de medición: las tres moléculas son tetraédricas y miden 109.5°.",
+      "C": "El ángulo baja porque el átomo central tiene más protones y atrae a los hidrógenos hacia sí.",
+      "D": "El ángulo baja porque cada par libre repele más que un par enlazante y cierra los enlaces."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/geometria-molecular-rpecv/2",
+      "B": "DIF:quimica/geometria-molecular-rpecv/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las tres moléculas tienen cuatro dominios, así que la referencia es 109.5°. A un par libre lo atrae un solo núcleo, así que ocupa más espacio que un par enlazante, por eso repele más y empuja a los enlaces a juntarse: con un par libre el ángulo baja a unos 107°, y con dos a unos 104.5°.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.6"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/geometria-molecular-rpecv",
+     "nombre": "Geometría molecular (RPECV)",
+     "definicion": "La repulsión entre pares electrónicos de valencia, enlazantes y libres, determina la forma tridimensional y los ángulos de enlace de una molécula.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.6",
+     "grado": 10,
+     "indicador": "5.6. Predice la geometría y los ángulos de enlace de moléculas con hasta seis dominios electrónicos aplicando la TRPECV.",
+     "evidencia": "Colección de seis modelos moleculares con ficha de geometría, ángulo predicho y ángulo experimental"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.6/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.6",
+      "CON:quimica/geometria-molecular-rpecv"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Los volcanes de El Salvador emiten CO₂ y SO₂. En la estructura de Lewis del CO₂, el carbono tiene dos enlaces dobles con oxígeno y ningún par libre; en la del SO₂, el azufre tiene dos enlaces con oxígeno (dibujados como dobles) y un par libre. En 2 o 3 oraciones: di cuántos dominios electrónicos tiene el átomo central de cada molécula, predice la geometría molecular y el ángulo aproximado de cada una, y explica por qué una es lineal y la otra angular.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un enlace doble cuenta como un solo dominio. El carbono del CO₂ tiene dos dominios, que se alejan al máximo a 180°: lineal. El azufre del SO₂ tiene tres (dos enlaces y un par libre), repartidos en un triángulo; como el par libre no es un átomo, la molécula se ve angular, con un ángulo cercano a 120° y algo menor.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.6"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El carbono del CO₂ tiene dos dominios, porque cada enlace doble cuenta como uno, y el azufre del SO₂ tiene tres: dos enlaces y un par libre. Los dominios se repelen y se alejan lo más posible, así que en el CO₂ quedan a 180° y la molécula es lineal. En el SO₂ los tres dominios forman un triángulo, pero uno es el par libre, que no es un átomo: la molécula es angular, con un ángulo O–S–O cercano a 120°, un poco menor porque el par libre repele más.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Cuenta dos dominios en el carbono del CO₂ y tres en el azufre del SO₂, tomando cada enlace doble como un dominio y el par libre como otro.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Predice CO₂ lineal con 180° y SO₂ angular con un ángulo cercano a 120° (se acepta «unos 120°» o «algo menor que 120°»).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica la diferencia con la repulsión de los dominios, que se alejan al máximo, y con que el par libre del azufre ocupa un lugar pero no cuenta en la forma de la molécula.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Explica que el ángulo del SO₂ queda algo por debajo de 120° porque el par libre repele más que los pares enlazantes.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cuenta los dos pares de cada enlace doble como dominios separados.",
+        "ejemplo": "El carbono del CO₂ tiene cuatro pares de electrones alrededor, así que el CO₂ es tetraédrico o angular, como el agua.",
+        "dificultad": "DIF:quimica/geometria-molecular-rpecv/3"
+       },
+       {
+        "descripcion": "Ignora el par libre del azufre y reparte solo los dos oxígenos.",
+        "ejemplo": "Las dos son lineales a 180° porque cada una tiene dos oxígenos unidos al átomo central.",
+        "dificultad": "DIF:quimica/geometria-molecular-rpecv/2"
+       },
+       {
+        "descripcion": "Nombra la forma del SO₂ por la disposición de sus tres dominios.",
+        "ejemplo": "El CO₂ es lineal y el SO₂ es trigonal plano con ángulos de 120°, porque tiene tres dominios.",
+        "dificultad": "DIF:quimica/geometria-molecular-rpecv/1"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/geometria-molecular-rpecv",
+     "nombre": "Geometría molecular (RPECV)",
+     "definicion": "La repulsión entre pares electrónicos de valencia, enlazantes y libres, determina la forma tridimensional y los ángulos de enlace de una molécula.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.6",
+     "grado": 10,
+     "indicador": "5.6. Predice la geometría y los ángulos de enlace de moléculas con hasta seis dominios electrónicos aplicando la TRPECV.",
+     "evidencia": "Colección de seis modelos moleculares con ficha de geometría, ángulo predicho y ángulo experimental"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.8",
+      "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "A 1 atm, el agua (H₂O, 18 g/mol) hierve a 100 °C y el sulfuro de hidrógeno (H₂S, 34 g/mol), el gas con olor a huevo podrido de los ausoles, hierve a unos −60 °C. ¿Qué explica mejor esta diferencia?",
+     "opciones": {
+      "A": "Al hervir el agua se rompen sus enlaces O–H, que son más fuertes que los enlaces S–H del H₂S.",
+      "B": "Las moléculas de H₂S son apolares y entre ellas no hay ninguna atracción que deba vencerse.",
+      "C": "Entre las moléculas de agua hay enlaces de hidrógeno, más fuertes que las atracciones del H₂S.",
+      "D": "Las dos forman enlaces de hidrógeno, pero los del H₂S se rompen fácil porque el S es más grande."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/fuerzas-intermoleculares/1",
+      "B": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/3",
+      "D": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al hervir, las moléculas se separan unas de otras, pero no se rompen sus enlaces covalentes. En el agua, el H unido al O, pequeño y muy electronegativo, se atrae con un par libre del O de otra molécula: es un enlace de hidrógeno. El H₂S es algo polar, pero solo tiene atracciones dipolo-dipolo y de dispersión, más débiles, aunque su masa molar sea mayor.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas",
+     "nombre": "Fuerzas intermoleculares y propiedades físicas",
+     "definicion": "La intensidad de las fuerzas intermoleculares explica puntos de fusión y ebullición, presión de vapor, viscosidad y solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.8",
+     "grado": 10,
+     "indicador": "5.8. Explica las diferencias en los puntos de ebullición de sustancias moleculares según sus fuerzas de dispersión, dipolo-dipolo y enlaces de hidrógeno.",
+     "evidencia": "Gráfica de puntos de ebullición de hidruros con interpretación escrita de las anomalías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.8",
+      "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Puntos de ebullición a 1 atm, valores aproximados de una tabla de referencia. Grupo 14: CH₄ −162 °C, SiH₄ −112 °C, GeH₄ −88 °C, SnH₄ −52 °C. Grupo 16: H₂O 100 °C, H₂S −60 °C, H₂Se −41 °C, H₂Te −2 °C. En cada grupo la masa molar aumenta de izquierda a derecha. ¿Qué conclusión es coherente con los datos?",
+     "opciones": {
+      "A": "En los dos grupos el punto sube solo con la masa molar; el valor del agua es un error de la tabla.",
+      "B": "En el grupo 14 sube con la masa por la dispersión; en el 16 el agua se sale por sus enlaces de H.",
+      "C": "Los hidruros del grupo 14 hierven más bajo porque son apolares y no hay fuerzas entre sus moléculas.",
+      "D": "En el grupo 16 los cuatro forman enlaces de hidrógeno, por eso hierven más alto que los del grupo 14."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/1",
+      "C": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/3",
+      "D": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los hidruros del grupo 14 son apolares y solo tienen fuerzas de dispersión, que crecen con el tamaño de la molécula: su punto de ebullición sube con regularidad. En el grupo 16, H₂S, H₂Se y H₂Te siguen esa tendencia; el agua, la más liviana, hierve muy por encima porque solo ella forma enlaces de hidrógeno. Si siguiera la tendencia, hervería muy por debajo de 0 °C.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas",
+     "nombre": "Fuerzas intermoleculares y propiedades físicas",
+     "definicion": "La intensidad de las fuerzas intermoleculares explica puntos de fusión y ebullición, presión de vapor, viscosidad y solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.8",
+     "grado": 10,
+     "indicador": "5.8. Explica las diferencias en los puntos de ebullición de sustancias moleculares según sus fuerzas de dispersión, dipolo-dipolo y enlaces de hidrógeno.",
+     "evidencia": "Gráfica de puntos de ebullición de hidruros con interpretación escrita de las anomalías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U5-5.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U5-5.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U5-5.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U5-5.8",
+      "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Tres sustancias moleculares: metano (CH₄, 16 g/mol, apolar), acetona (CH₃COCH₃, 58 g/mol, polar, con un oxígeno unido solo al carbono) y etanol (CH₃CH₂OH, 46 g/mol, con un grupo O–H). En 2 o 3 oraciones: ordénalas de menor a mayor punto de ebullición, di qué fuerza intermolecular domina en cada una y explica por qué el etanol hierve más alto que la acetona aunque sus moléculas son más livianas.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Orden: metano (unos −162 °C) < acetona (unos 56 °C) < etanol (unos 78 °C). El metano solo tiene dispersión; la acetona agrega atracciones dipolo-dipolo; el etanol forma enlaces de hidrógeno por su H unido al O. La acetona tiene O, pero sus H están unidos al C, así que no forma enlaces de hidrógeno entre sus moléculas.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U5-5.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "De menor a mayor: metano, acetona y etanol. En el metano, que es apolar, solo hay fuerzas de dispersión; en la acetona, que es polar, dominan las atracciones dipolo-dipolo; en el etanol, los enlaces de hidrógeno, porque tiene un H unido al O. El etanol hierve más alto que la acetona aunque pesa menos porque sus enlaces de hidrógeno son más fuertes que las atracciones dipolo-dipolo de la acetona, cuyos H están unidos al carbono y no forman enlaces de hidrógeno.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Ordena de menor a mayor: metano, acetona, etanol.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra la fuerza que domina en cada sustancia: dispersión en el metano, dipolo-dipolo en la acetona y enlaces de hidrógeno en el etanol.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que los enlaces de hidrógeno del etanol pesan más que la mayor masa molar de la acetona (son atracciones más fuertes que las dipolo-dipolo).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Justifica que la acetona no forma enlaces de hidrógeno entre sus moléculas porque sus H están unidos al carbono y no al oxígeno.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Ordena solo por masa molar.",
+        "ejemplo": "Metano, etanol y acetona, porque la acetona tiene la molécula más pesada y le cuesta más pasar a gas.",
+        "dificultad": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/1"
+       },
+       {
+        "descripcion": "Atribuye enlaces de hidrógeno a la acetona por tener H y O en su fórmula.",
+        "ejemplo": "La acetona y el etanol forman enlaces de hidrógeno porque los dos tienen hidrógeno y oxígeno; la acetona hierve más alto porque pesa más.",
+        "dificultad": "DIF:quimica/fuerzas-intermoleculares-y-propiedades-fisicas/2"
+       },
+       {
+        "descripcion": "Explica la ebullición como ruptura de enlaces covalentes dentro de la molécula.",
+        "ejemplo": "El etanol hierve más alto porque para hervirlo hay que romper su enlace O–H, que es muy fuerte.",
+        "dificultad": "DIF:quimica/fuerzas-intermoleculares/1"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U5-5.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fuerzas-intermoleculares-y-propiedades-fisicas",
+     "nombre": "Fuerzas intermoleculares y propiedades físicas",
+     "definicion": "La intensidad de las fuerzas intermoleculares explica puntos de fusión y ebullición, presión de vapor, viscosidad y solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.8",
+     "grado": 10,
+     "indicador": "5.8. Explica las diferencias en los puntos de ebullición de sustancias moleculares según sus fuerzas de dispersión, dipolo-dipolo y enlaces de hidrógeno.",
+     "evidencia": "Gráfica de puntos de ebullición de hidruros con interpretación escrita de las anomalías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U5-5.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/enlace-ionico/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/enlace-ionico/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/enlace-ionico",
+     "descripcion": "Explica la formación del compuesto iónico con el deseo de los átomos de completar el octeto: cree que el sodio «quiere» ceder su electrón, que formar los iones libera energía y que alcanzar la configuración de gas noble es lo que hace estable al compuesto, sin tomar en cuenta la atracción entre los iones en la red.",
+     "senales": "Dice que el Na⁺ se forma «porque así queda estable» o que perder el electrón «libera energía»; no menciona la atracción entre iones de carga opuesta ni la energía de red; se sorprende de que la suma de energía de ionización y afinidad electrónica dé un costo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "El lenguaje antropomórfico del octeto reemplaza el balance de energía.",
+     "origen": "redactor-actividades (G10-QUI-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-ionico",
+     "nombre": "Enlace iónico",
+     "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.10",
+     "grado": 10,
+     "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+     "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/enlace-ionico/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/enlace-ionico/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/enlace-ionico/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/enlace-ionico",
+     "descripcion": "Imagina el compuesto iónico sólido como un conjunto de moléculas NaCl separadas, cada una formada por un par de iones unidos, en lugar de una red continua de iones donde la fórmula solo indica la proporción.",
+     "senales": "Habla de «una molécula de sal» o dibuja pares Na–Cl separados entre sí; cree que al disolver la sal se separan moléculas NaCl; cuenta un enlace por cada fórmula.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La fórmula escrita como en las moléculas sugiere unidades separadas.",
+     "origen": "redactor-actividades (G10-QUI-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-ionico",
+     "nombre": "Enlace iónico",
+     "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.10",
+     "grado": 10,
+     "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+     "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/enlace-ionico/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/enlace-ionico/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/enlace-ionico/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/enlace-ionico",
+     "descripcion": "Cree que cada ion solo está unido a tantos iones como electrones cedió o ganó: el Na⁺ estaría unido solo al Cl⁻ que recibió su electrón y con los demás vecinos tendría una atracción débil o ninguna.",
+     "senales": "Dice que en la sal cada sodio forma un enlace porque cedió un electrón; da índice de coordinación 1 o lo iguala a la carga del ion; distingue entre el cloro «propio» del sodio y los demás vecinos.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se traslada al enlace iónico el conteo de enlaces del covalente.",
+     "origen": "redactor-actividades (G10-QUI-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/enlace-ionico",
+     "nombre": "Enlace iónico",
+     "definicion": "Atracción entre iones de carga opuesta formados por transferencia de electrones, que se organizan en una red cristalina.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U5-5.10",
+     "grado": 10,
+     "indicador": "5.10. Describe la formación de un compuesto iónico por transferencia de electrones y reconoce el índice de coordinación en redes como la del NaCl y la del CsCl.",
+     "evidencia": "Modelo tridimensional de la red de NaCl con ficha de índice de coordinación y relación de radios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/enlace-ionico/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  }
+ ]
+}
