@@ -1,0 +1,2105 @@
+{
+ "lote": "r1-q10u1_experto-quimica",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.11/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.11",
+      "CON:quimica/modelo-de-particulas"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.11"
+     },
+     "id": "ACT:G10-QUI-U1-1.11/obj-1",
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "enunciado": "Una botella de vidrio vacía tiene un globo desinflado en la boca. Al ponerla en un recipiente con agua caliente, el globo se levanta y se infla un poco; nada entra ni sale de la botella. ¿Cuál explicación con partículas es correcta?",
+     "opciones": {
+      "A": "Las partículas del aire se mueven más rápido y chocan más fuerte y más seguido contra el globo.",
+      "B": "Las partículas del aire se dilatan con el calor y cada una ocupa más espacio dentro de la botella.",
+      "C": "El vidrio deja pasar partículas de vapor del agua caliente y aumenta el número de partículas.",
+      "D": "El aire que hay entre las partículas se calienta, se expande y empuja el globo hacia arriba."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/modelo-de-particulas/1",
+      "D": "DIF:quimica/modelo-de-particulas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El número de partículas no cambia, porque nada entra ni sale. Al calentarse, las partículas del aire se mueven en promedio más rápido y golpean las paredes y el globo con más fuerza y frecuencia; la presión adentro sube y el globo se estira hasta que se equilibra. Las partículas no crecen: aumenta la separación media entre ellas. Y entre las partículas no hay otro aire: hay vacío.",
+     "duracion_min": 5,
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.11/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.11/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.11",
+      "CON:quimica/modelo-de-particulas"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.11"
+     },
+     "id": "ACT:G10-QUI-U1-1.11/obj-2",
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "enunciado": "Datos de un grupo de ejemplo: pusieron 200 g de agua a 60 °C en tres recipientes y midieron después de 30 min. Recipiente 1, olla sin tapa: 194 g y 40 °C. Recipiente 2, frasco de vidrio con tapa de rosca: 200 g y 42 °C. Recipiente 3, termo cerrado: 200 g y 57 °C. ¿Qué clasificación concuerda con los datos?",
+     "opciones": {
+      "A": "1 abierto, 2 aislado y 3 cerrado",
+      "B": "1 abierto, 2 abierto y 3 aislado",
+      "C": "1 abierto, 2 cerrado y 3 casi aislado",
+      "D": "1 cerrado, 2 cerrado y 3 casi aislado"
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La olla perdió 6 g: partículas de agua escaparon al aire como vapor, así que intercambia materia y energía y es un sistema abierto. El frasco conservó la masa pero se enfrió: intercambia energía y no materia, es cerrado. El termo casi no cambió ni masa ni temperatura: es casi aislado, porque ningún recipiente real impide del todo el paso de energía.",
+     "duracion_min": 6,
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.11/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.11/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.11",
+      "CON:quimica/modelo-de-particulas"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.11"
+     },
+     "id": "ACT:G10-QUI-U1-1.11/obj-abierta",
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "enunciado": "En la época seca, un charco se seca en unas horas aunque el agua nunca llega a 100 °C. En 2 o 3 oraciones y con el modelo de partículas: (a) explica cómo puede pasar agua líquida a vapor sin hervir; (b) explica por qué el charco se seca más rápido en un día de sol que en un día nublado.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las partículas del agua líquida se mueven todo el tiempo y no todas con la misma rapidez. Las más rápidas que están en la superficie vencen la atracción de sus vecinas y pasan al aire como vapor: es la evaporación, que ocurre a cualquier temperatura. El sol calienta el agua, aumenta la rapidez promedio de las partículas y más de ellas logran escapar por minuto.",
+     "duracion_min": 5,
+     "rubrica": {
+      "respuesta_modelo": "Las partículas del agua se mueven todo el tiempo y no todas igual de rápido; las más rápidas que están en la superficie logran vencer la atracción de las otras y escapan al aire como vapor, aunque el agua no hierva. En un día de sol el agua se calienta, sus partículas se mueven más rápido en promedio y escapan más por minuto, por eso el charco se seca antes.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que las partículas del líquido están en movimiento y que no todas tienen la misma rapidez o energía.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que algunas partículas de la superficie escapan al aire (vencen la atracción entre partículas) y forman vapor sin que el agua hierva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el sol o la temperatura más alta con una mayor rapidez promedio de las partículas y con más partículas que escapan por unidad de tiempo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona otro factor que influye en la evaporación, como el viento, la humedad del aire o el área del charco.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Dice que las partículas cambian de tamaño o de peso al calentarse.",
+        "ejemplo": "El sol calienta las partículas, se hacen más livianas y grandes y suben al cielo.",
+        "dificultad": "DIF:quimica/modelo-de-particulas/1"
+       },
+       {
+        "descripcion": "Cree que las partículas solo se mueven lo suficiente para evaporarse al llegar a 100 °C y explica el charco sin evaporación.",
+        "ejemplo": "El agua no se evapora porque no hirvió; el charco se seca porque la tierra se traga el agua.",
+        "dificultad": "DIF:quimica/modelo-de-particulas/3"
+       },
+       {
+        "descripcion": "Describe lo que se ve sin usar partículas.",
+        "ejemplo": "El sol calienta el charco y el agua se va secando poco a poco.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.11/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.12/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.12/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.12",
+      "CON:quimica/densidad-y-flotacion"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Diego tiene dos piezas metálicas de forma y tamaño distintos. Pieza 1: masa 27 g y volumen 10 cm³. Pieza 2: masa 81 g y volumen 30 cm³. ¿Qué conclusión sobre su material está bien justificada?",
+     "opciones": {
+      "A": "Pueden ser del mismo material, porque el cociente masa/volumen es igual en las dos",
+      "B": "Son de materiales distintos, porque la pieza 2 tiene más masa y por eso es más densa",
+      "C": "Son de materiales distintos, porque la pieza 2 ocupa más volumen y por eso es menos densa",
+      "D": "Pueden ser del mismo material, porque las dos piezas son metálicas y brillan igual"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/densidad-y-flotacion/1",
+      "C": "DIF:quimica/densidad-y-flotacion/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las dos tienen 2.7 g/cm³: la masa y el volumen crecen en la misma proporción, así que la densidad no depende del tamaño de la muestra (es intensiva). Por eso sirve para identificar un material. Una densidad igual hace posible que sea el mismo material, pero no lo asegura: conviene comparar con la tabla de referencia y con otras propiedades.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.12"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.12/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.12/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.12/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.12",
+      "CON:quimica/densidad-y-flotacion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: una pieza metálica tiene una masa de 54.2 g. En una probeta con agua, el nivel sube de 50.0 mL a 70.0 mL al sumergir la pieza por completo. Calcula la densidad de la pieza en g/cm³ (1 mL = 1 cm³). Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": {},
+     "valor": 2.71,
+     "tolerancia": 0.03,
+     "unidad": "g/cm³",
+     "retroalimentacion": "El volumen de la pieza es el agua que desplaza: 70.0 − 50.0 = 20.0 cm³. Entonces d = 54.2 g / 20.0 cm³ = 2.71 g/cm³. Si dividiste entre 70.0 mL, usaste el volumen de agua más pieza. Este valor se compara con la tabla de referencia (el aluminio ronda 2.7 g/cm³, valor aproximado) calculando el error relativo.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.12"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.12/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.12/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.12/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.12",
+      "CON:quimica/densidad-y-flotacion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En la orilla de un lago volcánico, Sofía encuentra una piedra pómez que flota en el agua; una piedra de basalto del mismo tamaño se hunde. En 2 o 3 oraciones: (1) explica por qué una flota y la otra se hunde, comparando la densidad de cada roca con la del agua, y (2) di qué tiene la pómez en su estructura que hace que su densidad sea tan baja.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "La pómez flota porque su densidad es menor que la del agua, y el basalto se hunde porque su densidad es mayor. La pómez está llena de poros con gas que quedaron cuando la lava se enfrió: esos huecos aumentan mucho su volumen sin agregar casi masa, así que su masa entre su volumen es pequeña. Si los poros se llenan de agua, puede terminar hundiéndose.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "compara la densidad de cada roca con la del agua: la pómez menor y el basalto mayor",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "relaciona la baja densidad de la pómez con sus poros o burbujas de gas, que aumentan el volumen sin aumentar casi la masa",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "menciona que si los poros se llenan de agua la pómez puede hundirse",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "explica la flotación por el peso de cada roca y no por su densidad frente a la del agua",
+        "ejemplo": "La pómez flota porque es liviana y el basalto se hunde porque es pesado.",
+        "dificultad": "DIF:quimica/densidad-y-flotacion/1"
+       },
+       {
+        "descripcion": "atribuye la flotación a que tiene aire, sin relacionarlo con la densidad ni con el líquido",
+        "ejemplo": "La pómez flota porque tiene aire adentro y el aire siempre flota.",
+        "dificultad": "DIF:quimica/densidad-y-flotacion/3"
+       },
+       {
+        "descripcion": "da un origen o un nombre en lugar de una explicación",
+        "ejemplo": "Flota porque es una piedra volcánica y esas piedras no se hunden.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Un objeto flota en un líquido si su densidad es menor que la del líquido. Los poros llenos de gas de la pómez agrandan su volumen casi sin sumar masa, por eso su densidad queda por debajo de la del agua; el basalto, compacto, queda por encima.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.12"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.12/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.13/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.13/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.13",
+      "CON:quimica/sustancias-puras-elementos-y-compuestos"
+     ],
+     "habilidad": "observar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En el aula a oscuras, Marta hace pasar de lado el haz de un puntero láser de baja potencia por tres vasos transparentes: vaso 1, agua con sal disuelta; vaso 2, agua con unas gotas de leche; vaso 3, agua con azúcar disuelta. Solo en el vaso 2 se ve el trayecto del haz como una línea brillante. ¿Qué conclusión es correcta?",
+     "opciones": {
+      "A": "El vaso 2 es un coloide, porque sus partículas dispersas son grandes y desvían la luz",
+      "B": "Los vasos 1 y 3 son sustancias puras, porque son transparentes y el haz no se ve",
+      "C": "El vaso 2 es una mezcla heterogénea, porque el haz visible prueba que sus partículas se asientan",
+      "D": "El vaso 1 es una sustancia pura, porque la sal disuelta deja de existir dentro del agua"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El haz se ve en la leche diluida porque sus partículas dispersas (gotitas de grasa y proteínas) son lo bastante grandes para desviar la luz: es el efecto Tyndall de un coloide. Los vasos 1 y 3 son disoluciones, mezclas homogéneas: el soluto sigue ahí, aunque sus partículas sean tan pequeñas que no desvían la luz. Un coloide no se asienta al reposar.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.13"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.13/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.13/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.13/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.13",
+      "CON:quimica/sustancias-puras-elementos-y-compuestos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo sobre cuatro líquidos. Muestra 1: transparente, no muestra el haz láser, no se asienta, al evaporarse deja un sólido blanco. Muestra 2: transparente, no muestra el haz, no se asienta, hierve a temperatura constante y no deja residuo. Muestra 3: blanca y turbia, muestra el haz, no se asienta. Muestra 4: turbia, muestra el haz, en 10 minutos se forma un sedimento. ¿Cuál es una sustancia pura?",
+     "opciones": {
+      "A": "La muestra 1, porque es transparente y el haz de luz no se ve en ella",
+      "B": "La muestra 2, porque hierve a temperatura constante y no deja residuo",
+      "C": "La muestra 3, porque se ve igual en todo el vaso y no se asienta",
+      "D": "Las muestras 1 y 2, porque ninguna muestra el haz ni se asienta"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2",
+      "C": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2",
+      "D": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Una sustancia pura tiene composición fija: hierve a una temperatura constante y, al evaporarse, no deja otro componente. La muestra 1 deja un sólido, así que tenía algo disuelto: es una mezcla homogénea. La 3 es un coloide y la 4 una mezcla heterogénea (suspensión). Verse uniforme o transparente no basta para decir que algo es puro.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.13"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.13/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.13/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.13/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.13",
+      "CON:quimica/sustancias-puras-elementos-y-compuestos"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Alguien del grupo afirma: «El agua de manantial embotellada es una sustancia pura, porque es natural y transparente». En 2 o 3 oraciones: (1) di si estás de acuerdo y cómo la clasificarías, (2) justifícalo con la definición de sustancia pura y (3) propón una prueba observable que permita decidirlo.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "No estoy de acuerdo: es una mezcla homogénea (una disolución). Una sustancia pura tiene una sola composición fija, y el agua de manantial lleva sales disueltas en cantidades que cambian de un manantial a otro; que sea natural o transparente no la hace pura. Si evaporo unas gotas sobre un vidrio limpio, queda una marca blanca de sales, y el agua destilada no deja nada.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "clasifica el agua de manantial como mezcla homogénea o disolución, no como sustancia pura",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "justifica con la definición: una sustancia pura tiene composición fija o un solo componente, y esta agua contiene sales u otras sustancias disueltas",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "propone una prueba observable que distingue mezcla de sustancia pura (residuo al evaporar, temperatura de ebullición que no es constante)",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "aclara que ser natural o transparente no es criterio de pureza química",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "usa «puro» en sentido cotidiano: natural, limpio o sin químicos",
+        "ejemplo": "Sí es pura, porque viene de la naturaleza y no tiene químicos agregados.",
+        "dificultad": "DIF:quimica/sustancias-puras-elementos-y-compuestos/1"
+       },
+       {
+        "descripcion": "toma la apariencia uniforme o transparente como prueba de pureza",
+        "ejemplo": "Es pura porque se ve igual en todas partes y es transparente.",
+        "dificultad": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2"
+       },
+       {
+        "descripcion": "propone el efecto Tyndall para distinguir agua pura de una disolución, que no lo muestra ninguna",
+        "ejemplo": "Es una mezcla; para probarlo le paso un láser y si no se ve el haz, es mezcla.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "En química, «pura» significa un solo componente con composición fija, no «natural» ni «limpia». El agua de manantial lleva sales disueltas: es una disolución. Evaporar unas gotas y ver si queda residuo, o medir si hierve a temperatura constante, permite decidirlo; el láser no sirve aquí, porque ni el agua pura ni la disolución muestran el haz.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.13"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.13/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.14/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.14/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.14",
+      "CON:quimica/separacion-de-mezclas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Josué tiene una mezcla de arena, sal y limaduras de hierro. Ya retiró el hierro con un imán. ¿Qué secuencia le permite recuperar por separado la arena y la sal, y por qué funciona?",
+     "opciones": {
+      "A": "Agregar agua, filtrar y evaporar el líquido filtrado, porque solo la sal se disuelve en agua",
+      "B": "Agregar agua y filtrar, porque el papel de filtro retiene los granos de arena y también los de sal",
+      "C": "Agregar agua y decantar, porque la sal es más densa que el agua y se queda en el fondo del vaso",
+      "D": "Agregar agua y evaporar sin filtrar, porque al evaporarse el agua los dos sólidos quedan separados"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/separacion-de-mezclas/1",
+      "C": "DIF:quimica/separacion-de-mezclas/1",
+      "D": "DIF:quimica/separacion-de-mezclas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La propiedad que distingue a la sal de la arena es la solubilidad en agua. Al disolverla, la sal pasa por el filtro junto con el agua (sus partículas son mucho más pequeñas que los poros) y la arena queda retenida; luego, al evaporar el filtrado, la sal se recupera como cristales. Decantar no separa un sólido disuelto, y evaporar sin filtrar deja la sal y la arena juntas.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.14"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.14/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.14/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.14/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.14",
+      "CON:quimica/separacion-de-mezclas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo en una cromatografía en papel con agua. Todas las medidas se tomaron desde el borde inferior de la tira: la línea de partida (donde se puso la tinta) está a 1.5 cm, el frente del agua llegó a 9.5 cm y el centro de la mancha azul quedó a 7.5 cm. Calcula el factor de retención (Rf) de la mancha azul. Rf no tiene unidad: escribe solo el número, con dos decimales.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": {},
+     "valor": 0.75,
+     "tolerancia": 0.02,
+     "unidad": "adimensional (sin unidad)",
+     "retroalimentacion": "Las dos distancias se miden desde la línea de partida: la mancha recorrió 7.5 − 1.5 = 6.0 cm y el agua 9.5 − 1.5 = 8.0 cm. Rf = 6.0 / 8.0 = 0.75. Si obtuviste 0.79, mediste desde el borde del papel. El Rf siempre está entre 0 y 1 y, con el mismo papel y el mismo disolvente, ayuda a reconocer un componente.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.14"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.14/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.14/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U1-1.14/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.14",
+      "CON:quimica/separacion-de-mezclas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En las salineras de la costa salvadoreña se obtiene sal dejando agua de mar en estanques poco profundos al sol. En 2 o 3 oraciones: (1) nombra el método de separación y la propiedad de los componentes en que se basa, y (2) explica por qué la sal no se podría obtener filtrando el agua de mar.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Es una evaporación que termina en cristalización: el agua se evapora con el calor del sol y la sal no, porque la sal tiene un punto de ebullición muchísimo más alto; al irse el agua, la sal forma cristales. Filtrando no sale, porque la sal está disuelta: sus partículas son tan pequeñas que atraviesan los poros del filtro junto con el agua. Con este método el agua se pierde; para recuperarla habría que destilar.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "nombra evaporación o cristalización como el método",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "relaciona el método con una diferencia de propiedades: el agua se evapora y la sal no (volatilidad o punto de ebullición distintos)",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "explica que la filtración no sirve porque la sal está disuelta y sus partículas pasan por los poros del filtro",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "menciona que el agua se pierde y que la destilación permitiría recuperarla",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "cree que un filtro suficientemente fino retiene la sal disuelta",
+        "ejemplo": "Con un filtro muy fino, como tela doble, sí se quedaría la sal.",
+        "dificultad": "DIF:quimica/separacion-de-mezclas/1"
+       },
+       {
+        "descripcion": "presenta la separación como si el sol creara la sal o la transformara",
+        "ejemplo": "El sol calienta el agua de mar y la convierte en sal.",
+        "dificultad": "DIF:quimica/separacion-de-mezclas/3"
+       },
+       {
+        "descripcion": "nombra el método sin la propiedad en que se basa",
+        "ejemplo": "Se usa evaporación porque así se hace en la playa, y filtrar no sirve.",
+        "dificultad": "DIF:quimica/separacion-de-mezclas/2"
+       }
+      ]
+     },
+     "retroalimentacion": "Las salineras aprovechan que el agua se evapora a temperatura ambiente y la sal no: al irse el agua, la sal disuelta cristaliza. Filtrar solo separa sólidos no disueltos, porque las partículas de sal disuelta pasan por los poros del filtro junto con el agua.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.14"
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.14/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/densidad-y-flotacion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/densidad-y-flotacion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/densidad-y-flotacion",
+     "descripcion": "Confunde densidad con masa o peso: cree que los objetos pesados se hunden y los livianos flotan, sin considerar el volumen ni compararlo con el líquido.",
+     "senales": "Dice que un tronco grande se hunde «porque pesa mucho» o que una pieza con más masa es «más densa» aunque tenga también más volumen; explica la flotación con «es liviano» o «es pesado».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión masa-densidad muy frecuente al explicar flotación.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/densidad-y-flotacion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/densidad-y-flotacion/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/densidad-y-flotacion/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/densidad-y-flotacion",
+     "descripcion": "No reconoce la densidad como propiedad intensiva: cree que cambia con el tamaño o la cantidad de muestra (que la mitad de un bloque tiene la mitad de la densidad, o que lo grande es menos denso).",
+     "senales": "Predice que al cortar una pieza su densidad baja a la mitad; concluye que dos piezas de distinto tamaño son de materiales distintos sin calcular masa entre volumen.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Clave para usar la densidad como criterio de identificación.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/densidad-y-flotacion/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/densidad-y-flotacion/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/densidad-y-flotacion/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/densidad-y-flotacion",
+     "descripcion": "Explica la flotación con una cualidad del objeto (tener aire, ser hueco, su forma o su material) y no con la comparación entre su densidad y la del líquido; por eso cree que lo que flota en agua flota en cualquier líquido.",
+     "senales": "Responde «flota porque tiene aire» sin mencionar el líquido; predice que una vela que flota en agua también flotará en alcohol, donde en realidad se hunde.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Flotar depende del par objeto-líquido, no solo del objeto.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/densidad-y-flotacion/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/modelo-de-particulas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/modelo-de-particulas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/modelo-de-particulas",
+     "descripcion": "Atribuye a cada partícula las propiedades del material que se ven a simple vista: cree que al calentar las partículas se dilatan o se hacen más grandes, que en el hielo están frías o duras y que al fundir «se derriten», en lugar de explicar los cambios por el movimiento y la separación de partículas que no cambian.",
+     "senales": "Escribe que «las moléculas se expanden con el calor», que «las partículas del hielo se derriten» o dibuja partículas más grandes en el gas que en el líquido.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Traslada propiedades macroscópicas al nivel de partículas; error muy extendido en secundaria.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/modelo-de-particulas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/modelo-de-particulas/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/modelo-de-particulas/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/modelo-de-particulas",
+     "descripcion": "No acepta que entre las partículas haya vacío: cree que el espacio entre ellas está lleno de aire, de vapor u otra sustancia, y usa ese «aire de en medio» para explicar la expansión o la compresión de un gas.",
+     "senales": "Dice que «entre las moléculas de agua hay aire», que un gas se comprime «porque se saca el aire que hay entre las partículas» o colorea el espacio entre partículas en sus diagramas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La idea de vacío entre partículas es contraintuitiva y se sustituye por aire.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/modelo-de-particulas/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/modelo-de-particulas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/modelo-de-particulas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/modelo-de-particulas",
+     "descripcion": "Cree que en un sólido las partículas están completamente quietas y que el movimiento aparece solo al fundirse o al calentarse; tampoco considera que en un líquido o un gas a la misma temperatura las partículas tengan rapideces distintas.",
+     "senales": "Dibuja el sólido sin marcas de vibración y escribe «en el sólido no se mueven»; explica la evaporación diciendo que el agua debe llegar a 100 °C para que las partículas se muevan lo suficiente.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La quietud aparente del sólido se traslada a sus partículas.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/modelo-de-particulas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/separacion-de-mezclas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/separacion-de-mezclas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/separacion-de-mezclas",
+     "descripcion": "Cree que los métodos mecánicos (filtrar, decantar, tamizar) pueden separar un sólido disuelto, como si la sal siguiera en granos dentro del agua.",
+     "senales": "Propone filtrar el agua de mar para obtener la sal; dice que el agua filtrada «ya no tiene sal» o que basta un filtro más fino; espera que la sal disuelta se asiente si se deja reposar.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "No ve la disolución a nivel de partículas; elige mal el método.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/separacion-de-mezclas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/separacion-de-mezclas/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/separacion-de-mezclas/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/separacion-de-mezclas",
+     "descripcion": "Elige el método por el aspecto o el estado de la mezcla, o por memoria, y no por la propiedad física en que difieren los componentes (tamaño de partícula, solubilidad, magnetismo, densidad, volatilidad).",
+     "senales": "Justifica con «se decanta porque es líquido» o «se filtra porque tiene arena» sin nombrar la propiedad; no sabe decir qué componente queda en cada lado ni por qué el orden de los pasos importa.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se memorizan métodos sin la propiedad que los justifica.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/separacion-de-mezclas/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/separacion-de-mezclas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/separacion-de-mezclas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/separacion-de-mezclas",
+     "descripcion": "Cree que separar es un cambio químico: que los componentes aparecen, desaparecen o se transforman durante la separación, en lugar de estar ya presentes en la mezcla.",
+     "senales": "Dice que en la cromatografía el agua «convierte» la tinta negra en colores, que el sol «forma» la sal en las salineras o que al evaporar el agua «se destruye».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde cambio físico de separación con transformación de sustancias.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/separacion-de-mezclas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/sustancias-puras-elementos-y-compuestos/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/sustancias-puras-elementos-y-compuestos/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "descripcion": "Usa «puro» en sentido cotidiano (natural, limpio, sin aditivos o sin «químicos») en lugar del sentido químico: una sola sustancia con composición y propiedades fijas.",
+     "senales": "Clasifica como sustancias puras el agua de manantial, un jugo «100 % natural», la miel o el «aire puro» del campo; justifica con «no tiene químicos» o «viene de la naturaleza».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "El uso comercial de «puro» choca con el significado químico.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/sustancias-puras-elementos-y-compuestos/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/sustancias-puras-elementos-y-compuestos/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "descripcion": "Toma la apariencia uniforme o transparente como prueba de que algo es una sustancia pura, y no distingue una sustancia pura de una mezcla homogénea (disolución) ni de un coloide.",
+     "senales": "Dice que el agua con sal, el vinagre o el alcohol para heridas son sustancias puras «porque se ven de una sola fase» o «porque son transparentes»; clasifica la leche como pura porque se ve igual en todo el vaso.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Homogéneo y puro se confunden; la composición no se ve.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/sustancias-puras-elementos-y-compuestos/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/sustancias-puras-elementos-y-compuestos/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/sustancias-puras-elementos-y-compuestos/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "descripcion": "Confunde compuesto con mezcla: cree que un compuesto es una mezcla de sus elementos, que conserva las propiedades de ellos o que se separa en ellos con métodos físicos.",
+     "senales": "Afirma que el agua es «una mezcla de hidrógeno y oxígeno», que al disolver o evaporar la sal se separan el sodio y el cloro, o que el dióxido de carbono tiene las propiedades del carbono.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Elemento, compuesto y mezcla se confunden al pasar al nivel atómico.",
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/sustancias-puras-elementos-y-compuestos/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U1-1.11/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U1-1.11/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.11",
+      "CON:quimica/modelo-de-particulas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Partículas en movimiento: un globo que se infla, un colorante que se mezcla y tres recipientes con agua caliente",
+     "proposito": "Explicar con el modelo cinético-molecular tres observaciones: un gas encerrado que se expande al calentarse, un colorante que se mezcla más rápido en agua caliente y la pérdida de masa y de temperatura de agua caliente en recipientes distintos. Con los datos de masa y temperatura se clasifican los recipientes en sistemas abiertos, cerrados o casi aislados, y se dibujan diagramas de partículas, como pide la evidencia de logro.",
+     "materiales": [
+      "Por equipo: una botella de vidrio pequeña (250 a 355 mL) vacía y seca y un globo",
+      "Dos recipientes anchos de 1.5 L o más: uno para agua caliente y otro para agua con hielo (unos 750 mL de agua y hielo)",
+      "Dos vasos transparentes de 250 mL y colorante vegetal líquido con gotero",
+      "Para los sistemas: una olla pequeña o plato hondo sin tapa, un frasco de vidrio con tapa de rosca y un termo con tapa (puede traerse de casa)",
+      "Agua caliente a unos 60 °C, que prepara y sirve la docente: unos 2 L por equipo (750 mL para el baño de la botella, 200 mL para un vaso y 600 mL para los tres recipientes, más un poco de reserva)",
+      "Agua del grifo a temperatura ambiente (200 mL por equipo) y hielo",
+      "Termómetro de alcohol de 0 a 100 °C (no de mercurio), balanza (de 0.1 g en 0.1 g si es posible) y un reloj o celular"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Pregunta guía: ¿por qué un gas ocupa todo el recipiente en el que está? Cada estudiante escribe una hipótesis sobre cómo se mueven las partículas.",
+      "2. (8 min) La docente sirve 200 g de agua caliente en la olla sin tapa, en el frasco y en el termo. El equipo mide la temperatura inicial de cada uno, tapa el frasco y el termo, pesa los tres recipientes con su agua y anota la hora.",
+      "3. (10 min) Coloquen el globo en la boca de la botella, que está a temperatura ambiente. Pónganla de pie en el recipiente con agua caliente durante 3 min y observen el globo. Luego pásenla al recipiente con agua y hielo durante 3 min. Anoten lo que ocurre en cada caso.",
+      "4. (10 min) Llenen un vaso con 200 mL de agua del grifo y el otro con 200 mL de agua caliente. Dejen que se quieten 1 min, pongan al mismo tiempo una gota de colorante en cada vaso, sin agitar, y observen 5 min. Dibujen cada vaso al minuto 1 y al minuto 5.",
+      "5. (7 min) Dibujen diagramas de partículas del agua sólida, líquida y en vapor, y del aire de la botella en frío y en caliente. Marquen con flechas el movimiento.",
+      "6. (8 min) Unos 25 a 30 min después del paso 2, pesen de nuevo los tres recipientes (el frasco y el termo, todavía tapados) y luego mídanles la temperatura. Anoten la masa y la temperatura finales.",
+      "7. (7 min) Respondan las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "El agua caliente la prepara y la sirve la docente, a no más de 60 °C. Los recipientes con agua caliente se colocan estables en el centro de la mesa y se mueven sujetándolos con un paño.",
+      "Usen termómetro de alcohol, nunca de mercurio. La botella y el frasco son de vidrio: no los pongan directamente del agua caliente al hielo sin esperar; si algo se quiebra, avisen a la docente y no recojan el vidrio con la mano.",
+      "El colorante mancha la ropa. El agua con colorante y la de los recipientes se desechan en el lavadero; nada se bebe."
+     ],
+     "datos_esperados": "En agua caliente el globo se levanta y se infla un poco en uno o dos minutos; en agua con hielo se desinfla y puede meterse un poco en el cuello de la botella. En el agua caliente el colorante se reparte casi por todo el vaso en uno o dos minutos; en el agua del grifo forma una columna que baja lentamente y tarda varios minutos más. Después de unos 30 min, la olla sin tapa pierde algunos gramos de agua (del orden de 2 a 10 g, más si es ancha) y baja a unos 35–45 °C; el frasco conserva su masa (dentro de 0.1 o 1 g, según la balanza) y se enfría de manera parecida; el termo conserva la masa y baja solo unos pocos grados. Las cantidades varían con la temperatura del aula y el tamaño de los recipientes.",
+     "analisis": [
+      "(Paso 7) ¿Por qué se infló el globo en el agua caliente y se desinfló en la fría? Expliquen con la rapidez de las partículas y sus choques contra las paredes, y digan si cambió el número de partículas dentro de la botella.",
+      "(Paso 7) Con los datos de masa y temperatura del paso 6, clasifiquen la olla, el frasco y el termo como sistema abierto, cerrado o casi aislado, y justifiquen cada uno con lo que intercambió (materia, energía o casi nada).",
+      "Tarea: Clasifiquen dos sistemas más de su entorno, como una laguna y un refrigerador cerrado, para completar cinco sistemas, y expliquen con partículas por qué el colorante se mezcló más rápido en el agua caliente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin botella de vidrio: una botella plástica pequeña con agua tibia (no más de 45 °C, para que no se deforme). Sin termo: un frasco con tapa envuelto en varias capas de tela o papel periódico dentro de una caja, que funciona como sistema casi aislado. Sin balanza ni termómetro, o sin laboratorio ni internet: hagan los pasos 3 y 4 y usen estos datos de un grupo de ejemplo para los sistemas: 200 g de agua a 60 °C; después de 30 min, olla sin tapa 194 g y 40 °C, frasco tapado 200 g y 42 °C, termo 200 g y 57 °C. También pueden dramatizar los tres estados con estudiantes como partículas. Con internet: el simulador PhET «Estados de la materia: Intro» muestra las partículas de varias sustancias en los tres estados y permite calentarlas y enfriarlas para ver cómo cambia su movimiento; no simula sistemas abiertos o cerrados.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-de-particulas",
+     "nombre": "Modelo de partículas de la materia",
+     "definicion": "La materia está formada por partículas en movimiento con espacios entre ellas; su arreglo y movimiento explican estados y cambios de estado.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.11",
+     "grado": 10,
+     "indicador": "1.11. Explica con el modelo cinético-molecular el comportamiento de sólidos, líquidos y gases en sistemas materiales abiertos, cerrados y aislados.",
+     "evidencia": "Diagramas de partículas de los tres estados y clasificación argumentada de cinco sistemas materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U1-1.11/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U1-1.12/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U1-1.12/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.12",
+      "CON:quimica/densidad-y-flotacion"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "¿De qué está hecha la pieza? Densidad de sólidos y líquidos",
+     "proposito": "Medir la masa y el volumen de varios sólidos (por desplazamiento de agua) y de tres líquidos, calcular su densidad y usarla, con su error relativo frente a la tabla de referencia, para identificar el material de una muestra desconocida. Responde a la pregunta: ¿se puede identificar un metal midiendo solo su masa y su volumen?",
+     "materiales": [
+      "Balanza (de laboratorio o de cocina digital, de preferencia con resolución de 0.1 g; sirve la de 1 g)",
+      "Probeta de 100 mL o vaso medidor transparente con marcas de 1 mL",
+      "Jeringa de 60 mL sin aguja para medir los líquidos",
+      "Tres vasos plásticos rotulados «agua», «agua salada» y «aceite»",
+      "Agua de la llave, unos 300 mL; una taza de agua con 3 cucharadas de sal disuelta; unos 60 mL de aceite de cocina",
+      "Muestras: unos 10 tornillos o clavos de acero, 4 o 5 canicas de vidrio, un trozo de vela de unos 3 cm y una muestra desconocida que prepara la docente (trozos de perfil de aluminio de ventana o de cable de cobre grueso pelado), cada grupo en su bolsa rotulada",
+      "Un palillo de dientes para sumergir la vela, papel toalla, calculadora",
+      "Tabla de referencia de densidades del libro de texto o la que entregue la docente",
+      "Un frasco con tapa para recoger el aceite usado"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) La docente plantea la pregunta guía. Cada grupo copia la tabla: muestra, masa (g), volumen inicial (mL), volumen final (mL), volumen de la muestra (cm³), densidad (g/cm³), valor de la tabla de referencia y error relativo (%).",
+      "2. (10 min) Densidad de líquidos: pongan un vaso vacío en la balanza y llévenla a cero (tara). Midan 50.0 mL de agua con la jeringa, viértanlos en el vaso y anoten la masa. Repitan con el agua salada (enjuaguen la jeringa con agua antes) y al final con el aceite, cada líquido en su vaso.",
+      "3. (15 min) Densidad de sólidos: pesen juntas todas las piezas de una muestra. Pongan 50.0 mL de agua en la probeta, inclínenla y dejen resbalar las piezas sin salpicar; lean el nuevo nivel a la altura de los ojos, por la parte baja del menisco. Hagan esto con los tornillos, las canicas y la muestra desconocida, secando las piezas y regresando el agua a 50.0 mL entre una muestra y otra.",
+      "4. (5 min) Pesen el trozo de vela. Como flota, empújenlo con la punta del palillo hasta que quede justo bajo el agua y lean el nivel (el volumen del palillo sumergido es despreciable).",
+      "5. (10 min) Calculen cada densidad (masa entre volumen) y el error relativo: |medido − tabla| / tabla × 100. Busquen en la tabla de referencia el material cuya densidad es más cercana a la de la muestra desconocida.",
+      "6. (10 min) En grupo, respondan las preguntas de análisis 1 y 2 y entreguen la tabla."
+     ],
+     "seguridad": [
+      "La probeta de vidrio se rompe con facilidad: dejen resbalar las piezas por la pared inclinada, nunca las dejen caer de golpe. Si se quiebra, avisen a la docente y no recojan los vidrios con la mano.",
+      "Limpien de inmediato el agua o el aceite derramados para evitar resbalones.",
+      "Desechos: el aceite usado va al frasco con tapa (no al desagüe); el agua salada puede ir al desagüe con abundante agua. Las piezas se secan y se devuelven a su bolsa."
+     ],
+     "datos_esperados": "Agua cerca de 1.0 g/mL y aceite algo menor, alrededor de 0.9 g/mL; el agua salada da entre 1.1 y 1.2 g/mL según cuánta sal se disolvió. El acero de tornillos sale cerca de 7.8 g/cm³, el vidrio de las canicas cerca de 2.5, la vela cerca de 0.9; el aluminio cerca de 2.7 y el cobre cerca de 8.9 (todos valores aproximados, que se confirman con la tabla de referencia). Con balanza de 1 g y probeta de 1 mL, los errores relativos suelen quedar entre 3 % y 10 %, mayores en las muestras de poco volumen: un error de lectura de 1 mL pesa más en 5 mL que en 15 mL. Ojo: aluminio y vidrio difieren menos del 10 %, así que un error grande puede impedir distinguirlos.",
+     "analisis": [
+      "(Paso 6) ¿De qué material es la muestra desconocida? Justifíquenlo con su densidad medida y con el error relativo frente al valor de la tabla de referencia; digan si otro material de la tabla también quedaría dentro de su error.",
+      "(Paso 6) ¿Qué medición aportó más incertidumbre a la densidad, la masa o el volumen? Propongan un cambio concreto en el procedimiento para reducirla.",
+      "Tarea: Con sus densidades de agua, agua salada y aceite, predigan el orden de las capas si se vierten con cuidado en un mismo vaso, y expliquen por qué el aceite queda arriba aunque se ponga más aceite que agua."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin probeta: una jeringa de 60 mL sin aguja o un vaso medidor de cocina sirven para el desplazamiento de piezas pequeñas (el error de lectura será mayor). Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo. Agua: 50.0 mL y 50 g; agua salada: 50.0 mL y 57 g; aceite: 50.0 mL y 46 g. Tornillos: 79 g, de 50.0 a 60.0 mL. Canicas: 27 g, de 50.0 a 61.0 mL. Vela: 9 g, de 50.0 a 60.0 mL. Muestra desconocida: 35 g, de 50.0 a 63.0 mL. Con internet: el simulador PhET «Densidad», pantalla «Misterio», tiene bloques de material desconocido, una balanza, una piscina que muestra el volumen desplazado y una tabla de densidades para identificarlos (conviene que la docente lo revise antes).",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/densidad-y-flotacion",
+     "nombre": "Densidad y flotación",
+     "definicion": "La densidad relaciona masa y volumen de un material; determina si un objeto flota o se hunde en un líquido.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.12",
+     "grado": 10,
+     "indicador": "1.12. Determina experimentalmente la densidad de sólidos y líquidos y la utiliza como propiedad intensiva para identificar sustancias.",
+     "evidencia": "Informe con tabla de masas, volúmenes y densidades, error relativo e identificación justificada del material"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U1-1.12/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U1-1.13/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U1-1.13/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.13"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.13",
+      "CON:quimica/sustancias-puras-elementos-y-compuestos"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "¿Pura, disolución, coloide o mezcla heterogénea? Clasificar con el efecto Tyndall y la evaporación",
+     "proposito": "Clasificar seis muestras como sustancia pura, mezcla homogénea, coloide o mezcla heterogénea con tres criterios observables: si se separan fases al reposar, si muestran el haz de luz (efecto Tyndall) y si dejan residuo al evaporarse. Así se comprueba que la apariencia no basta para decidir si algo es una sustancia pura.",
+     "materiales": [
+      "Seis vasos transparentes lisos (vidrio o plástico) de unos 250 mL, rotulados del 1 al 6 con cinta",
+      "Vaso 1: 200 mL de agua destilada (de farmacia o ferretería). Vaso 2: 200 mL de agua con 1 cucharadita de sal disuelta. Vaso 3: 200 mL de agua con 1 cucharadita de leche. Vaso 4: 200 mL de gelatina sin sabor diluida, que la docente prepara la víspera (1 sobre por litro) y que sigue líquida. Vaso 5: 200 mL de agua con 1 cucharada de tierra. Vaso 6: 200 mL de agua con 1 cucharada de aceite",
+      "Unos 20 mL de agua de la llave en un vaso pequeño, para la prueba de evaporación",
+      "Puntero láser rojo de baja potencia (clase 2) o, si no hay, la linterna de un celular y una cartulina negra con un agujero de 3 mm",
+      "Cartulina negra como fondo",
+      "Un azulejo, una tapa o un plato oscuro y liso para las gotas; una pajilla como gotero",
+      "Cuchara, marcador y cinta de papel",
+      "Recipiente con tapa para recoger el aceite y bolsa para la tierra"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) La docente muestra los seis vasos y pregunta cuáles son sustancias puras. Cada grupo anota su predicción para cada vaso en una tabla con columnas: aspecto, ¿se separa al reposar?, ¿se ve el haz?, ¿deja residuo?, clasificación.",
+      "2. (5 min) Con la pajilla, pongan 3 gotas de agua destilada, 3 de agua de la llave y 3 del vaso 2 en tres puntos rotulados del azulejo oscuro, y déjenlo al sol o junto a una ventana.",
+      "3. (10 min) Agiten con la cuchara los vasos 5 y 6 (lávenla entre uno y otro). Dejen reposar los seis vasos 5 minutos y anoten si aparecen capas, sedimento o gotas que suben.",
+      "4. (12 min) Con el aula en penumbra y la cartulina negra detrás, una persona del grupo hace pasar el haz de lado por cada vaso, a la altura de la mesa; las demás miran desde arriba o de frente al vaso, nunca a lo largo del haz. Anoten si se ve una línea continua de luz dentro del líquido.",
+      "5. (5 min) Revisen las gotas: ¿quedó una marca o un polvo blanco en cada punto? Si alguna sigue húmeda, anoten cuál y revísenla al final del día.",
+      "6. (10 min) Completen la tabla, clasifiquen cada vaso y armen el organizador gráfico: materia → sustancias puras (elementos, compuestos) y mezclas (homogéneas, coloides, heterogéneas), con un ejemplo de la práctica en cada casilla.",
+      "7. (8 min) En grupo, respondan las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "Láser: no lo dirijan nunca a los ojos de nadie ni a espejos o ventanas; lo maneja una sola persona por grupo y se apaga entre una observación y otra. Usen solo punteros de baja potencia (clase 2 o menor); si no hay, usen la linterna del celular.",
+      "La gelatina la prepara la docente con agua caliente el día anterior; en clase se usa fría.",
+      "No prueben ninguna muestra. El vidrio roto lo recoge la docente.",
+      "Desechos: el aceite va al recipiente con tapa y la tierra a la bolsa, no al desagüe; los demás líquidos pueden ir al desagüe."
+     ],
+     "datos_esperados": "Vasos 1 y 2: transparentes, no se separan y el haz casi no se ve (quizás algunos puntitos de polvo, no una línea continua). Vasos 3 y 4: no se separan en 5 minutos, pero el haz se ve como una línea clara: son coloides. Vaso 5: el haz se ve con fuerza y la tierra se asienta: mezcla heterogénea (suspensión). Vaso 6: al agitar se enturbia y muestra el haz, pero en pocos minutos el aceite sube y forma una capa: emulsión inestable, mezcla heterogénea. Gotas: el agua destilada no deja marca o casi ninguna; el agua salada deja una costra blanca de cristales; el agua de la llave suele dejar un anillo tenue, señal de que también es una mezcla. Al sol, unas gotas se secan en 15 a 30 minutos; a la sombra pueden tardar más.",
+     "analisis": [
+      "(Paso 7) ¿Qué vasos son coloides y qué observación lo justifica? ¿Por qué el efecto Tyndall no basta para distinguir el agua destilada del agua con sal, y qué prueba de la práctica sí lo permitió?",
+      "(Paso 7) Según la prueba de las gotas, ¿el agua de la llave es una sustancia pura? Justifíquenlo con la definición de sustancia pura.",
+      "Tarea: Ubiquen en su organizador gráfico la horchata, el agua de coco, el aire y la sal de mesa, y justifiquen cada ubicación con un criterio observable o con la composición."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin puntero láser: con el aula oscura, cubran la linterna del celular con la cartulina perforada y pasen el haz de lado por los vasos; el efecto se ve más débil pero se distingue en la leche y la gelatina. Sin agua destilada: agua de lluvia recogida en un recipiente limpio, advirtiendo que puede traer algo de polvo. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo. Agua destilada: transparente, no se separa, sin haz, sin residuo. Agua con sal: transparente, no se separa, sin haz, costra blanca. Leche diluida: blanca turbia, no se separa, haz visible, sin dato de residuo. Gelatina diluida: casi transparente, no se separa, haz visible. Agua con tierra: café, sedimento en 5 minutos, haz visible. Agua con aceite: turbia al agitar, capa de aceite en 3 minutos, haz visible. Agua de la llave: anillo tenue al evaporarse.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U1-1.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+     "nombre": "Sustancias puras: elementos y compuestos",
+     "definicion": "Una sustancia pura tiene composición y propiedades fijas; los elementos tienen un solo tipo de átomo y los compuestos varios en proporción definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.13",
+     "grado": 10,
+     "indicador": "1.13. Clasifica muestras de materia según su composición y justifica la clasificación con criterios observables como el efecto Tyndall.",
+     "evidencia": "Organizador gráfico de la clasificación de la materia y tabla de observaciones del efecto Tyndall"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U1-1.13/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U1-1.14/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U1-1.14/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.14"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.14",
+      "CON:quimica/separacion-de-mezclas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Separar arena, sal y hierro, y leer una tinta con cromatografía en papel",
+     "proposito": "Diseñar y ejecutar una secuencia de separación para una mezcla de arena, sal y limaduras de hierro, nombrando la propiedad física que aprovecha cada paso (magnetismo, solubilidad, tamaño de partícula, volatilidad), y separar los colorantes de tintas negras con una cromatografía en papel para calcular el factor de retención (Rf) de cada mancha.",
+     "materiales": [
+      "Por grupo, una mezcla preparada por la docente en un vaso: 2 cucharadas de arena, 1 cucharada de sal y 1 cucharadita de limaduras de hierro (de un taller de soldadura o cerrajería)",
+      "Un imán y una bolsa plástica pequeña para envolverlo",
+      "Tres vasos transparentes: vaso 1 para disolver, vaso 2 para recibir el filtrado y vaso 3 para la cromatografía",
+      "Embudo o la parte superior de una botella plástica cortada, y dos filtros de café (uno para filtrar y otro para cortar tiras)",
+      "Agua de la llave (unos 150 mL), cuchara y vaso medidor",
+      "Un plato o una tapa oscura para evaporar el filtrado",
+      "Tres tiras de filtro de café de 2 cm × 12 cm, lápiz de grafito, regla, dos plumones negros lavables (a base de agua) de marcas distintas y un plumón lavable de color",
+      "Un palillo de pincho o un lápiz para colgar las tiras, cinta adhesiva y papel toalla",
+      "Bolsa para la arena y las limaduras usadas"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (7 min) La docente plantea la pregunta guía: ¿qué propiedad de cada componente permite separar la mezcla? El grupo reparte tareas y dibuja su diagrama de separación, con la propiedad que aprovecha cada paso.",
+      "2. (10 min) Pasen el imán envuelto en la bolsa sobre la mezcla y sepárenlo sobre un papel para soltar las limaduras. Agreguen 100 mL de agua al vaso 1, agiten 2 minutos y filtren hacia el vaso 2 con el embudo y el filtro de café.",
+      "3. (5 min) Viertan unos 20 mL del filtrado en el plato oscuro, rotúlenlo y déjenlo al sol o junto a una ventana para revisarlo la clase siguiente. Dejen secar el filtro con la arena sobre papel toalla.",
+      "4. (5 min) En cada tira tracen con lápiz una línea a 1.5 cm del borde inferior y pongan sobre ella un punto pequeño y cargado de tinta: una tira por cada plumón. Pongan agua en el vaso 3 hasta 1 cm de altura.",
+      "5. (12 min) Cuelguen las tiras del palillo con cinta, de modo que el borde toque el agua pero la línea de tinta quede por encima, sin que las tiras se toquen entre sí ni toquen la pared. Mientras el agua sube, terminen el diagrama de separación.",
+      "6. (5 min) Cuando el frente del agua esté a 1 o 2 cm del extremo superior, saquen las tiras, marquen el frente con lápiz y déjenlas secar sobre papel toalla.",
+      "7. (6 min) Midan desde la línea de partida la distancia que recorrió el agua y la que recorrió el centro de cada mancha, y calculen el Rf de cada una.",
+      "8. (5 min) En grupo, respondan las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "Las limaduras de hierro irritan los ojos y pueden cortar: tómenlas solo con el imán envuelto en la bolsa, no se froten los ojos y lávense las manos al terminar.",
+      "No prueben la sal ni el filtrado. Si se rompe un vaso de vidrio, avisen a la docente.",
+      "Desechos: la arena y las limaduras van a la bolsa, no al desagüe ni al suelo; el agua con tinta en poca cantidad puede ir al desagüe con agua abundante; las tiras secas se pegan en el informe.",
+      "Si se hace la demostración de destilación, la realiza solo la docente con el equipo de calentamiento."
+     ],
+     "datos_esperados": "El imán retira casi todo el hierro, aunque algunos granos quedan atrapados en la arena. La arena queda en el filtro y el filtrado sale transparente o apenas turbio. En 1 a 3 días al sol, el plato muestra cristales blancos de sal, a menudo con forma de cubos pequeños. En la cromatografía, la tinta negra lavable se separa en 2 a 4 manchas de colores (azul, violeta, amarillo o rosado) y las dos marcas dan patrones distintos; el agua sube unos 8 a 9 cm en 10 a 12 minutos. Los Rf quedan entre 0.1 y 1 y, para un mismo colorante en el mismo papel, se repiten con diferencias de unas pocas centésimas. Un plumón permanente casi no avanza con agua porque sus colorantes no son solubles en ella.",
+     "analisis": [
+      "(Paso 8) Presenten su diagrama de separación y escriban junto a cada paso la propiedad física que aprovecha. ¿Por qué el imán va primero y la evaporación al final?",
+      "(Paso 8) Comparen los Rf de las manchas de las dos tintas negras: ¿comparten algún colorante? Expliquen por qué unos colorantes avanzan más que otros, en términos de su solubilidad en el agua y de cuánto se adhieren al papel.",
+      "Tarea: En la clase siguiente, observen el plato del filtrado: describan los cristales y expliquen en qué se parece este proceso al de las salineras de la costa.",
+      "Tarea: ¿Qué método usaría una planta potabilizadora para quitar del agua de un río la arena y el lodo, las hojas y las sales disueltas? Justifiquen cada uno con una propiedad."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin limaduras: lana de acero fina cortada en trocitos con tijera por la docente. Sin embudo: la parte superior de una botella plástica invertida. Sin filtros de café: papel toalla de buena calidad (el agua sube más lento y las manchas salen más difusas). La destilación se presenta como demostración de la docente o con un video, porque requiere calentar. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo. El agua recorrió 8.0 cm desde la línea de partida. Tinta negra de la marca 1: mancha azul a 3.2 cm y amarilla a 7.4 cm. Tinta negra de la marca 2: violeta a 2.0 cm, azul a 3.2 cm y rosada a 5.6 cm.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U1-1.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/separacion-de-mezclas",
+     "nombre": "Métodos físicos de separación de mezclas",
+     "definicion": "Tamizado, filtración, decantación, evaporación, imantación, destilación y cristalización aprovechan diferencias de propiedades físicas entre componentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.14",
+     "grado": 10,
+     "indicador": "1.14. Selecciona y aplica el método de separación adecuado para una mezcla, y calcula el factor de retención en una cromatografía en papel.",
+     "evidencia": "Diagrama de separación de una mezcla, cromatograma rotulado y cálculo del factor de retención"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U1-1.14/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,757 @@
+{
+ "lote": "r1-q10u1_experto-fisica",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.7",
+      "CON:fisica/sistema-internacional-unidades"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.7"
+     },
+     "id": "ACT:G10-QUI-U1-1.7/obj-1",
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "enunciado": "La masa de una molécula de agua es de 3.0 × 10⁻²³ g (valor aproximado). Una cucharada de agua tiene una masa de 15 g. Primero estima el orden de magnitud y luego calcula: ¿cuántas moléculas de agua hay en la cucharada?",
+     "opciones": {
+      "A": "5.0 × 10²³ moléculas",
+      "B": "5.0 × 10⁻²³ moléculas",
+      "C": "4.5 × 10⁻²² moléculas",
+      "D": "5.0 × 10²⁵ moléculas"
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/sistema-internacional-unidades/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Se divide la masa total entre la masa de una molécula: 15 g ÷ (3.0 × 10⁻²³ g) = 5.0 × 10²³. Al dividir, el exponente del divisor cambia de signo: 10⁰ ÷ 10⁻²³ = 10²³. La estimación lo confirma: una cantidad visible de agua debe tener un número enorme de moléculas, no uno menor que 1. Si multiplicas, las unidades quedan en g² y el resultado no tiene sentido; y 0.5 × 10²⁴ se escribe 5 × 10²³, no 5 × 10²⁵.",
+     "duracion_min": 6,
+     "origen": "redactor-actividades (G10-QUI-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.7",
+     "grado": 10,
+     "indicador": "1.7. Opera en notación científica con cantidades químicas y estima órdenes de magnitud de masas, volúmenes y números de partículas.",
+     "evidencia": "Hoja de ejercicios resueltos en notación científica con estimación previa y verificación de cada resultado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.7/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.7",
+      "CON:fisica/sistema-internacional-unidades"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.7"
+     },
+     "id": "ACT:G10-QUI-U1-1.7/obj-2",
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "enunciado": "Datos de ejemplo de un análisis del agua de un pozo, con límites también de ejemplo. Arsénico: medido 1.5 × 10⁻² mg/L, límite 0.010 mg/L. Plomo: medido 4.0 × 10⁻³ mg/L, límite 0.010 mg/L. Nitrato: medido 4.5 × 10¹ mg/L, límite 50 mg/L. Mercurio: medido 8.0 × 10⁻⁴ mg/L, límite 0.006 mg/L. ¿Cuál sustancia supera su límite?",
+     "opciones": {
+      "A": "El plomo",
+      "B": "El nitrato",
+      "C": "El arsénico",
+      "D": "El mercurio"
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Conviene escribir todo con la misma notación. Arsénico: 1.5 × 10⁻² = 0.015 mg/L, mayor que 0.010: supera el límite. Plomo: 4.0 × 10⁻³ = 0.004 mg/L, menor (10⁻³ es más pequeño que 10⁻²). Nitrato: 4.5 × 10¹ = 45 mg/L, menor que 50. Mercurio: 8.0 × 10⁻⁴ = 0.0008 mg/L, menor que 0.006. Comparar solo los coeficientes (8 frente a 6) engaña si los exponentes son distintos.",
+     "duracion_min": 6,
+     "origen": "redactor-actividades (G10-QUI-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.7",
+     "grado": 10,
+     "indicador": "1.7. Opera en notación científica con cantidades químicas y estima órdenes de magnitud de masas, volúmenes y números de partículas.",
+     "evidencia": "Hoja de ejercicios resueltos en notación científica con estimación previa y verificación de cada resultado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.7/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.7/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.7",
+      "CON:fisica/sistema-internacional-unidades"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.7"
+     },
+     "id": "ACT:G10-QUI-U1-1.7/obj-abierta",
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "enunciado": "Una pila de 2 m³ está llena de agua. Mateo calculó que el agua tiene una masa de 2 × 10⁴ g. Usa que 1 L de agua tiene una masa aproximada de 1 kg. En 2 o 3 oraciones: (a) estima el orden de magnitud de la masa en gramos y muestra la equivalencia entre m³ y L que usaste; (b) explica si el resultado de Mateo es razonable comparando los órdenes de magnitud; (c) di qué error pudo cometer.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Como 1 m³ = 1000 L, la pila tiene 2000 L, unos 2000 kg, es decir, 2 × 10⁶ g. El resultado de Mateo es 100 veces menor (dos órdenes de magnitud), así que no es razonable. Probablemente usó 1 m³ = 10 L, el factor de la longitud (1 m = 10 dm) sin elevarlo al cubo.",
+     "duracion_min": 5,
+     "rubrica": {
+      "respuesta_modelo": "Como 1 m³ = 1000 L, la pila tiene 2000 L, que pesan unos 2000 kg, o sea 2 × 10⁶ g, del orden de 10⁶ g. Mateo obtuvo 2 × 10⁴ g, que es 100 veces menos, así que su resultado no es razonable. Seguramente usó que 1 m³ son 10 L, sin elevar al cubo el factor 1 m = 10 dm.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Estima la masa del orden de 10⁶ g (o 2 × 10⁶ g, o 2000 kg) usando que 1 m³ = 1000 L.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Concluye que el resultado de Mateo no es razonable porque difiere en dos órdenes de magnitud (es 100 veces menor).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Señala como error probable usar 1 m³ = 10 L (no elevar al cubo el factor de longitud) u otro error de conversión concreto.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta el resultado porque usa 1 m³ = 10 L o 1 m³ = 100 L.",
+        "ejemplo": "Sí es razonable: 2 m³ son 20 L, o sea 20 kg, que son 2 × 10⁴ g.",
+        "dificultad": "DIF:fisica/sistema-internacional-unidades/1"
+       },
+       {
+        "descripcion": "Convierte bien el volumen pero confunde kg con g y no compara órdenes de magnitud.",
+        "ejemplo": "Son 2000 L, o sea 2000 g, así que Mateo exageró.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Dice que no es razonable sin estimar ningún valor ni comparar exponentes.",
+        "ejemplo": "No es razonable porque es mucha agua y el número es raro.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.7",
+     "grado": 10,
+     "indicador": "1.7. Opera en notación científica con cantidades químicas y estima órdenes de magnitud de masas, volúmenes y números de partículas.",
+     "evidencia": "Hoja de ejercicios resueltos en notación científica con estimación previa y verificación de cada resultado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.7/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.8",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.8"
+     },
+     "id": "ACT:G10-QUI-U1-1.8/obj-1",
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "enunciado": "Una balanza digital marca 0.3 g cuando no tiene nada encima, y nadie la puso en cero. Daniela pesa cinco veces la misma muestra y obtiene valores que casi coinciden entre sí. ¿Qué se puede decir de su resultado?",
+     "opciones": {
+      "A": "Es preciso pero no exacto, porque el error del cero se suma a cada medida.",
+      "B": "Es exacto y preciso, porque las cinco medidas casi coinciden entre sí.",
+      "C": "Será exacto si repite más veces, porque el promedio corrige el error del cero.",
+      "D": "Es exacto, porque una balanza digital muestra más cifras que una de aguja."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/medicion-magnitudes-instrumentos/3",
+      "C": "DIF:fisica/medicion-magnitudes-instrumentos/1",
+      "D": "DIF:fisica/medicion-magnitudes-instrumentos/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las medidas casi iguales muestran poca dispersión: el resultado es preciso. Pero la balanza suma 0.3 g a todas, un error sistemático, así que el promedio queda corrido y no es exacto. Repetir reduce el efecto de los errores aleatorios, no el de uno sistemático, y más cifras en la pantalla tampoco lo corrigen. Se arregla poniendo la balanza en cero (tara) o restando 0.3 g.",
+     "duracion_min": 5,
+     "origen": "redactor-actividades (G10-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.8",
+     "grado": 10,
+     "indicador": "1.8. Diferencia exactitud y precisión calculando el error relativo y la dispersión de series de mediciones de volumen.",
+     "evidencia": "Tabla de mediciones con promedio, desviación estándar, error relativo y gráfica con barras de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.8",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.8"
+     },
+     "id": "ACT:G10-QUI-U1-1.8/obj-2",
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "enunciado": "Datos de un grupo de ejemplo: midieron cinco veces 25.0 mL de agua con un vaso de precipitados y pesaron cada volumen: 26.0 g, 25.6 g, 26.4 g, 25.8 g y 26.2 g. Tomen 25.0 g como masa de referencia aproximada de 25.0 mL de agua. Calcula el error relativo del promedio respecto a ese valor de referencia, en porcentaje. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 4.0,
+     "tolerancia": 0.2,
+     "unidad": "%",
+     "retroalimentacion": "El promedio es (26.0 + 25.6 + 26.4 + 25.8 + 26.2) ÷ 5 = 26.0 g. El error absoluto es 26.0 − 25.0 = 1.0 g y el error relativo es 1.0 ÷ 25.0 = 0.040, es decir, 4.0 %. Se divide entre el valor de referencia, no entre el promedio ni entre una sola medida.",
+     "duracion_min": 6,
+     "origen": "redactor-actividades (G10-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.8",
+     "grado": 10,
+     "indicador": "1.8. Diferencia exactitud y precisión calculando el error relativo y la dispersión de series de mediciones de volumen.",
+     "evidencia": "Tabla de mediciones con promedio, desviación estándar, error relativo y gráfica con barras de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U1-1.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.8",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U1-1.8"
+     },
+     "id": "ACT:G10-QUI-U1-1.8/obj-abierta",
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "enunciado": "Datos de ejemplo: un equipo midió cinco veces 25.0 mL de agua con dos instrumentos y pesó cada volumen; la masa de referencia aproximada es 25.0 g. Probeta: promedio 24.4 g, desviación estándar 0.1 g. Vaso de precipitados: promedio 25.1 g, desviación estándar 0.9 g. En 2 o 3 oraciones: (a) di cuál serie es más exacta y justifícalo con un dato; (b) di cuál es más precisa y justifícalo con un dato; (c) explica por qué una sola medida con el vaso no es confiable aunque su promedio esté cerca de 25.0 g.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La exactitud se ve en la cercanía del promedio al valor de referencia: el vaso (25.1 g, error de 0.4 %) es más exacto que la probeta (24.4 g, error de 2.4 %). La precisión se ve en la dispersión: la probeta (0.1 g) es más precisa que el vaso (0.9 g). Una sola medida con el vaso puede alejarse cerca de 1 g del valor de referencia; la probeta tiene un error sistemático que se puede corregir, por ejemplo leyendo bien el menisco.",
+     "duracion_min": 6,
+     "rubrica": {
+      "respuesta_modelo": "El vaso es más exacto, porque su promedio, 25.1 g, está a solo 0.1 g de 25.0 g, mientras que el de la probeta se aleja 0.6 g. La probeta es más precisa, porque su desviación estándar es 0.1 g y la del vaso es 0.9 g. Con el vaso, una sola medida puede salir casi 1 g arriba o abajo; solo el promedio de varias se acerca al valor de referencia.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que el vaso es más exacto y lo justifica con la cercanía de su promedio al valor de referencia (diferencia o error relativo).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que la probeta es más precisa y lo justifica con su menor desviación estándar (0.1 g frente a 0.9 g).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que la gran dispersión del vaso hace que una medida individual pueda alejarse cerca de 1 g del valor de referencia.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Da a la probeta como más exacta porque sus medidas casi no cambian.",
+        "ejemplo": "La probeta es más exacta y más precisa porque sus medidas casi no varían.",
+        "dificultad": "DIF:fisica/medicion-magnitudes-instrumentos/3"
+       },
+       {
+        "descripcion": "Descarta los dos instrumentos porque ninguna medida dio exactamente el valor de referencia.",
+        "ejemplo": "Ninguno sirve, porque ninguno dio 25.0 g; hay que repetir hasta que salga exacto.",
+        "dificultad": "DIF:fisica/medicion-magnitudes-instrumentos/1"
+       },
+       {
+        "descripcion": "Usa un solo criterio para todo y no distingue exactitud de precisión.",
+        "ejemplo": "El vaso es mejor en todo porque su promedio da casi 25.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.8",
+     "grado": 10,
+     "indicador": "1.8. Diferencia exactitud y precisión calculando el error relativo y la dispersión de series de mediciones de volumen.",
+     "evidencia": "Tabla de mediciones con promedio, desviación estándar, error relativo y gráfica con barras de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U1-1.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U1-1.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U1-1.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.7",
+      "CON:fisica/sistema-internacional-unidades"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Granos de arroz y gotas de agua: estimar, medir y operar en notación científica",
+     "proposito": "Estimar primero y medir después la masa de un grano de arroz y el volumen de una gota de agua, y con esos datos calcular en notación científica cuántos granos tiene un quintal y cuántas moléculas tiene una gota. Se comparan las estimaciones con los resultados por su orden de magnitud, como pide la evidencia de logro: estimación previa y verificación de cada resultado.",
+     "materiales": [
+      "Una bolsa de 100 g de arroz crudo por equipo (no se come después)",
+      "Balanza de cocina o de laboratorio (mejor si mide de 0.1 g en 0.1 g)",
+      "Un plato o una hoja de papel para contar granos",
+      "Un gotero (o una pajilla) y una jeringa de 5 mL sin aguja, o una probeta de 10 mL",
+      "Un vaso con unos 100 mL de agua y toallas de papel",
+      "Calculadora científica y la hoja de registro"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Cada estudiante escribe, sin medir, el orden de magnitud de: la masa de un grano de arroz en gramos, los granos de un quintal (100 lb, unos 45 kg, valor aproximado), el volumen de una gota en mL y las moléculas de agua de una gota.",
+      "2. (10 min) Pesen 5 g de arroz (o 10 g si la balanza mide de 1 g en 1 g). Repártanlo entre los integrantes, cuenten los granos y sumen. Anoten la masa y el número de granos.",
+      "3. (10 min) Llenen la jeringa o la probeta hasta 5 mL y cuenten cuántas gotas del gotero hacen falta para completar 5 mL en otra jeringa o probeta vacía. Hagan dos intentos y usen el promedio.",
+      "4. (15 min) En notación científica, calculen: la masa de un grano en g y en kg; los granos de un quintal; el volumen de una gota en mL y en m³ (1 mL = 1 cm³ = 1 × 10⁻⁶ m³); y las moléculas de una gota, con la densidad del agua y la masa de una molécula de agua de la tabla de referencia (aproximadas: 1 g/mL y 3.0 × 10⁻²³ g).",
+      "5. (10 min) Comparen cada resultado con su estimación del paso 1, cuenten en cuántos órdenes de magnitud se alejó y respondan las preguntas de análisis 1 y 2.",
+      "6. (5 min) Puesta en común: cada equipo escribe en la pizarra sus cuatro resultados en notación científica y se comparan los órdenes de magnitud."
+     ],
+     "seguridad": [
+      "La jeringa se usa sin aguja. Sequen el agua derramada para evitar resbalones y para no mojar la balanza.",
+      "El arroz manipulado no se come; se guarda para otras prácticas o se desecha en la basura orgánica.",
+      "Si usan probeta de vidrio, manéjenla con cuidado y avisen a la docente si se quiebra; no recojan el vidrio con la mano."
+     ],
+     "datos_esperados": "Un grano de arroz tiene una masa del orden de 10⁻² g (entre 1.5 × 10⁻² y 3 × 10⁻² g según la variedad), así que 5 g son unos 200 a 330 granos y un quintal tiene del orden de 10⁶ granos (alrededor de 2 × 10⁶). Una gota de gotero tiene del orden de 10⁻² mL (entre 3 × 10⁻² y 6 × 10⁻² mL), es decir, del orden de 10⁻⁸ m³, y contiene del orden de 10²¹ moléculas (unas 1 × 10²¹ a 2 × 10²¹). Las estimaciones previas suelen fallar por varios órdenes de magnitud en las moléculas y por uno o ninguno en el arroz.",
+     "analisis": [
+      "(Paso 5) ¿En cuántos órdenes de magnitud se alejó su estimación de cada resultado? ¿Cuál cantidad fue más difícil de estimar y por qué?",
+      "(Paso 5) ¿Por qué conviene escribir el número de moléculas de una gota en notación científica y no en forma decimal? ¿Cómo les ayudó el orden de magnitud a revisar si su cálculo era razonable?",
+      "Tarea: ¿En qué situación basta conocer el orden de magnitud de los granos de un quintal y en cuál se necesita el valor exacto? Den un ejemplo de cada una."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin balanza: usen los datos de ejemplo del arroz que siguen y midan solo las gotas; sin gotero, una pajilla tapada con el dedo sirve para soltar gotas. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: 5.0 g de arroz contienen 238 granos; 5.0 mL de agua son 112 gotas. Con computadora o celular: en una hoja de cálculo, el formato de número científico (0.00E+00) muestra cada resultado en notación científica y sirve para verificar los exponentes calculados a mano.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.7",
+     "grado": 10,
+     "indicador": "1.7. Opera en notación científica con cantidades químicas y estima órdenes de magnitud de masas, volúmenes y números de partículas.",
+     "evidencia": "Hoja de ejercicios resueltos en notación científica con estimación previa y verificación de cada resultado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U1-1.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U1-1.8/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U1-1.8/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U1-1.8",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "¿Qué instrumento mide mejor 20 mL de agua? Exactitud y precisión de tres instrumentos",
+     "proposito": "Medir cinco veces 20.0 mL de agua con un vaso de precipitados, una probeta y una jeringa, pesar cada volumen y comparar los instrumentos: la exactitud con el error relativo del promedio frente a la masa esperada, y la precisión con la desviación estándar. Es la tabla con promedio, desviación, error relativo y gráfica con barras de error que pide la evidencia de logro.",
+     "materiales": [
+      "Por equipo: un vaso de precipitados de 50 o 100 mL con marca de 20 mL",
+      "Una probeta de 25 o 50 mL",
+      "Una jeringa de 20 mL sin aguja (de farmacia)",
+      "Un vaso plástico de al menos 250 mL como vaso receptor",
+      "Un recipiente con unos 500 mL de agua del grifo (alcanza para las 15 medidas, que usan 300 mL)",
+      "Balanza que mida de 0.1 g en 0.1 g, con función de tara",
+      "Termómetro de alcohol (no de mercurio)",
+      "Tabla de referencia de la densidad del agua según la temperatura",
+      "Toallas de papel, calculadora (o hoja de cálculo), papel milimetrado y regla"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Pregunta guía: ¿qué instrumento mide con mayor exactitud 20 mL de agua? Cada estudiante escribe su predicción y dibuja una diana para cada combinación: exacto y preciso, preciso pero no exacto, exacto pero no preciso, ni exacto ni preciso.",
+      "2. (5 min) Midan la temperatura del agua, busquen su densidad en la tabla de referencia y calculen la masa esperada de 20.0 mL (aproximadamente 19.9 g a la temperatura de un aula).",
+      "3. (8 min) Vaso de precipitados: pongan el vaso receptor en la balanza y presionen tara. Llenen el vaso de precipitados hasta la marca de 20 mL, viértanlo en el receptor y anoten la masa. Presionen tara de nuevo y repitan hasta tener cinco medidas. Vacíen el receptor.",
+      "4. (8 min) Probeta: repitan el paso 3 midiendo 20.0 mL con la probeta, con la vista a la altura de la parte baja del menisco.",
+      "5. (8 min) Jeringa: repitan el paso 3 midiendo 20.0 mL con la jeringa, sin burbujas de aire.",
+      "6. (12 min) Para cada instrumento calculen el promedio, la desviación estándar y el error relativo del promedio respecto a la masa esperada del paso 2. Anótenlos en la tabla.",
+      "7. (9 min) Hagan una gráfica de barras con el promedio de cada instrumento y una barra de error de ± una desviación estándar; tracen una línea horizontal en la masa esperada. Respondan las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "El vaso de precipitados y la probeta son de vidrio: manéjenlos sobre la mesa, lejos del borde. Si algo se quiebra, avisen a la docente y no recojan el vidrio con la mano.",
+      "La jeringa se usa sin aguja.",
+      "Sequen de inmediato el agua derramada, sobre todo cerca de la balanza, para no dañarla ni resbalar. El agua usada se puede regar en las plantas."
+     ],
+     "datos_esperados": "La masa esperada de 20.0 mL de agua a 25–30 °C es de unos 19.9 g. La jeringa y la probeta suelen dar desviaciones de 0.05 a 0.3 g y errores relativos de 0.5 a 2 %. El vaso de precipitados suele dar desviaciones de 0.5 a 1.5 g y errores relativos de 2 a 8 %, porque sus marcas son aproximadas y su boca es ancha. Algunos instrumentos pueden dar un promedio corrido en la misma dirección en todas las medidas, por ejemplo por leer mal el menisco o por el agua que queda pegada al verter: es un error sistemático. Lo esperado es que el vaso salga el menos preciso; cuál es el más exacto puede variar entre equipos.",
+     "analisis": [
+      "(Paso 7) Ordenen los tres instrumentos por exactitud y por precisión usando su tabla. ¿Coincide el orden con su predicción del paso 1? ¿Hubo algún instrumento preciso pero poco exacto?",
+      "(Paso 7) ¿Qué medidas de su tabla podrían deberse a errores aleatorios y cuáles a un error sistemático? Propongan cómo reducir cada tipo.",
+      "Tarea: Hagan un cartel con la tabla, la gráfica con barras de error y una conclusión de tres oraciones que use correctamente las palabras exactitud y precisión. Registren los datos tal como los midieron, sin ajustarlos al valor esperado."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin material de laboratorio: midan cinco veces 20 mL con una jeringa de farmacia y cinco veces con una cuchara de cocina, pesando cada medida en una balanza de cocina (si mide de 1 g en 1 g, midan 60 mL con tres llenados de jeringa o cuatro cucharadas para que se note la dispersión). Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo (masas en g de 20.0 mL; masa esperada aproximada 19.9 g): vaso 20.6, 19.4, 21.0, 20.2, 19.6; probeta 19.7, 19.8, 19.6, 19.7, 19.8; jeringa 19.9, 19.8, 19.9, 20.0, 19.9. Con computadora: en una hoja de cálculo compartida, las funciones PROMEDIO y DESVEST calculan el promedio y la desviación estándar de cada serie.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U1-1.8",
+     "grado": 10,
+     "indicador": "1.8. Diferencia exactitud y precisión calculando el error relativo y la dispersión de series de mediciones de volumen.",
+     "evidencia": "Tabla de mediciones con promedio, desviación estándar, error relativo y gráfica con barras de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U1-1.8/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}

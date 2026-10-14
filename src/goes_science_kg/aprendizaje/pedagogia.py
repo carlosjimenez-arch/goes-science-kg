@@ -280,11 +280,33 @@ def errores_elemento(e: dict, nav: Navegador, ped: Pedagogia) -> list[str]:
     return errores
 
 
+# Campos que lee la docente o el estudiante (los de ids, como objetivos o distractores, quedan fuera)
+CAMPOS_DE_TEXTO = ("enunciado", "opciones", "retroalimentacion", "titulo", "proposito", "materiales", "procedimiento",
+                   "seguridad", "datos_esperados", "analisis", "variantes", "explicacion", "ejemplo", "criterio",
+                   "descripcion", "senales")
+
+
+def _ids_internos(e: dict) -> list[str]:
+    """Ids internos que aparecen en el texto que lee una persona: «obj-2», «DIF:…», «TEMA:…»."""
+    import re
+
+    texto = " ".join(json.dumps(e.get(c), ensure_ascii=False) for c in CAMPOS_DE_TEXTO if e.get(c))
+    return sorted(set(re.findall(r"\bobj-(?:\d+|abierta)\b|\b(?:DIF|ACT|TEMA|EXP|MT|CON):[\w/.-]+", texto)))
+
+
 def errores_capa(ped: Pedagogia, nav: Navegador) -> list[str]:
     """Integridad de la capa pedagógica: cada elemento vinculado a ids existentes y a un objetivo curricular."""
     return [x for e in [*ped.actividades.values(), *ped.dificultades.values(), *ped.microtemas.values(),
                         *ped.experimentos.values()]
-            for x in errores_elemento(e, nav, ped)]
+            for x in errores_elemento(e, nav, ped) + _errores_ids_internos(e)]
+
+
+def _errores_ids_internos(e: dict, pendiente_tambien: bool = False) -> list[str]:
+    """El texto que lee una persona no nombra ids internos. Lo que sigue en revisión del panel se corrige al aplicar
+    sus dictámenes, así que en la capa solo se exige a lo ya revisado; a una salida nueva, siempre."""
+    if e.get("estado") == "propuesta_pendiente" and not pendiente_tambien:
+        return []
+    return [f"{e['id']}: el texto nombra un id interno ({m}); descríbelo para la docente" for m in _ids_internos(e)]
 
 
 # -- cola de propuestas (lo único que una sesión puede escribir en lo compartido) ------------------------------------
@@ -406,7 +428,9 @@ def errores_lote(lote: dict, salida: list[dict], nav: Navegador | None = None,
     """Errores de una salida de redactor-actividades: cubre cada ranura una vez, respeta su tipo, rol y concepto, y
     cada elemento pasa la validación de la capa (con la capa vigente más esta salida)."""
     nav = nav or navegador_compartido()
-    ped = (ped or Pedagogia.cargar()).con([e for e in salida if e.get("tipo") in ARCHIVOS])
+    base = ped or Pedagogia.cargar()
+    ya_unidos = set(base.actividades) | set(base.dificultades) | set(base.microtemas) | set(base.experimentos)
+    ped = base.con([e for e in salida if e.get("tipo") in ARCHIVOS])
     ranuras = {r["id"]: r for r in lote["ranuras"]}
     ids = Counter(e.get("id") for e in salida)
     errores = [f"ranura sin llenar {i}" for i in sorted(ranuras.keys() - ids.keys())]
@@ -429,6 +453,8 @@ def errores_lote(lote: dict, salida: list[dict], nav: Navegador | None = None,
             errores.append(f"{e['id']}: lo que redacta un subagente nace «propuesta_pendiente»")
         if e.get("tipo") in ("actividad", "experimento") and lote["grado"] not in (e.get("grados") or []):
             errores.append(f"{e['id']}: grados debe incluir {lote['grado']}")
+    errores += [x for e in salida if e.get("id") and e["id"] not in ya_unidos
+                for x in _errores_ids_internos(e, pendiente_tambien=True)]
     obj = {e["id"].rsplit("/", 1)[-1]: e for e in salida if e.get("rol") == "objetivo" and e.get("id")}
     if {"obj-1", "obj-2"} <= obj.keys() and obj["obj-1"].get("habilidad") == obj["obj-2"].get("habilidad"):
         errores.append("obj-1 y obj-2 deben usar habilidades distintas")

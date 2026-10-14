@@ -469,3 +469,12 @@ def test_pasos_repetidos_o_sesion_excedida():
     mal = ["Sesión 1 (55 min)", "1. (30 min) a", "2. (30 min) b", "2. (5 min) b"]
     errores = " | ".join(_errores_pasos(mal))
     assert "el paso 2 está repetido" in errores and "suman 65 min" in errores
+
+
+def test_ids_internos_en_el_texto():
+    from goes_science_kg.aprendizaje.pedagogia import _ids_internos
+
+    e = {"id": "EXP:x/1", "objetivos": ["TEMA:G10-FIS-U2-2.1"], "variantes": ["Usen la tabla de obj-2."],
+         "analisis": ["Compara con DIF:fisica/x/1."]}
+    assert _ids_internos(e) == ["DIF:fisica/x/1.", "obj-2"] or _ids_internos(e) == ["DIF:fisica/x/1", "obj-2"]
+    assert _ids_internos({"id": "EXP:x/1", "objetivos": ["TEMA:G10-FIS-U2-2.1"]}) == []
