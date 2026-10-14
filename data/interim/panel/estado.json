@@ -110431,8 +110431,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U3-3.10/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Fe [Ar]3d⁶4s² pierde los 4s: Fe²⁺ [Ar]3d⁶, cuatro desapareados (alto espín, el caso de las sales hidratadas comunes), paramagnético. B mide DIF/2 y C la paridad (DIF/3); C comparte la configuración correcta, así que la clave exige el conteo de Hund y no solo el dato.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "predecir el comportamiento magnético a partir del diagrama",
+      "cita_literal": "predice el comportamiento magnético de la sustancia"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "3d⁶ en cinco orbitales: uno doble y cuatro sencillos → 4 desapareados"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -110516,10 +110537,75 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U3-3.10/obj-2",
+    "decision": "corregir",
+    "justificacion": "Datos coherentes: 3, 8, 24, 35 mg siguen n(n+2) de 1, 2, 4, 5 desapareados, y Ni²⁺ (26 e⁻) refuta la paridad. Pero el montaje no funciona: un imán bajo el platillo queda tapado por el cuerpo de la balanza y atrae sus piezas. Se usa el montaje conocido: imán sobre la balanza y muestra encima; la atracción reduce la lectura. Se fija igual número de moles.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "evidencia: predicción del comportamiento magnético",
+      "cita_literal": "Paramagnetismo y diamagnetismo"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "momento de solo espín: χ ∝ n(n+2) → 3, 8, 24, 35 para n = 1, 2, 4, 5"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "enunciado": "Un grupo de ejemplo pone un imán potente sobre un vaso de plástico invertido en el platillo de una balanza que aprecia miligramos. Luego sostiene encima del imán, siempre a la misma distancia, un frasco cerrado con la misma cantidad de sustancia (igual número de moles) de cada una de cinco sales. Si la sal atrae al imán, este tira hacia arriba y la balanza marca menos. Disminución de la lectura (datos de ejemplo): sal de Zn²⁺ [Ar] 3d¹⁰, 0 mg; Cu²⁺ [Ar] 3d⁹, 3 mg; Ni²⁺ [Ar] 3d⁸, 8 mg; Fe²⁺ [Ar] 3d⁶, 24 mg; Mn²⁺ [Ar] 3d⁵, 35 mg. ¿Qué conclusión apoyan estos datos?"
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U3-3.10/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U3-3.10"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U3-3.10",
+    "CON:quimica/configuracion-electronica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Un grupo de ejemplo pone un imán potente sobre un vaso de plástico invertido en el platillo de una balanza que aprecia miligramos. Luego sostiene encima del imán, siempre a la misma distancia, un frasco cerrado con la misma cantidad de sustancia (igual número de moles) de cada una de cinco sales. Si la sal atrae al imán, este tira hacia arriba y la balanza marca menos. Disminución de la lectura (datos de ejemplo): sal de Zn²⁺ [Ar] 3d¹⁰, 0 mg; Cu²⁺ [Ar] 3d⁹, 3 mg; Ni²⁺ [Ar] 3d⁸, 8 mg; Fe²⁺ [Ar] 3d⁶, 24 mg; Mn²⁺ [Ar] 3d⁵, 35 mg. ¿Qué conclusión apoyan estos datos?",
+   "opciones": {
+    "A": "La atracción crece con los electrones desapareados en 3d, que por Hund son 0, 1, 2, 4 y 5",
+    "B": "La atracción aparece cuando el total de electrones del ion es impar, sin importar el subnivel",
+    "C": "La atracción crece con el número de electrones 3d: el ion con más electrones d se atrae más",
+    "D": "La atracción no depende del ion, porque todos son 2+; las diferencias son errores de medición"
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/configuracion-electronica/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Por la regla de Hund, los electrones 3d ocupan los cinco orbitales de uno en uno antes de aparearse: 3d⁵ deja cinco desapareados, 3d⁶ cuatro, 3d⁸ dos, 3d⁹ uno y 3d¹⁰ ninguno, y la atracción sigue ese orden. No sigue la paridad del total (el Ni²⁺, con 26 electrones, sí se atrae) ni el número de electrones d (el Zn²⁺ tiene diez y no se atrae). Diferencias de 0 a 35 mg son demasiado grandes para ser error de medición.",
+   "duracion_min": 8,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U3-3.10"
+   },
+   "origen": "redactor-actividades (G10-QUI-U3-3.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U3-3.10/obj-abierta": {
   "tipo": "contenido",
@@ -110636,10 +110722,110 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U3-3.10/obj-abierta",
+    "decision": "corregir",
+    "justificacion": "Química correcta: Cu²⁺ [Ar]3d⁹ (1 desapareado) y Zn²⁺ [Ar]3d¹⁰ (0); el CuSO₄·5H₂O sí se desvía con neodimio (fuerza ≈10 % del peso junto al imán). Los tres criterios obligatorios responden a lo que pide el enunciado. Solo se cambia la «pizca colgada» por una cápsula sellada, por seguridad y coherencia con el experimento del tema.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "átomos e iones, incluidos los de transición",
+      "cita_literal": "Escritura de configuraciones electrónicas y diagramas de orbitales de átomos e iones, incluidos los elementos de transición"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "χ(masa) CuSO₄·5H₂O ≈ 7×10⁻⁸ m³/kg; F/mg = χB(dB/dz)/(μ₀g) ≈ 0.1 cerca de un imán de NdFeB"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "enunciado": "Con un imán de neodimio muy potente, una cápsula sellada con sulfato de cobre(II), colgada de un hilo, se acerca un poco al imán, y otra igual con sulfato de zinc no se mueve. El cobre tiene Z = 29 y su átomo es [Ar] 3d¹⁰ 4s¹ (una de las excepciones al orden de llenado); el zinc tiene Z = 30. En 2 o 3 oraciones: escribe la configuración de los iones Cu²⁺ y Zn²⁺, di cuántos electrones desapareados tiene cada uno según su diagrama de orbitales 3d y explica por qué uno es atraído por el imán y el otro no."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U3-3.10/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U3-3.10"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U3-3.10",
+    "CON:quimica/configuracion-electronica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Con un imán de neodimio muy potente, una cápsula sellada con sulfato de cobre(II), colgada de un hilo, se acerca un poco al imán, y otra igual con sulfato de zinc no se mueve. El cobre tiene Z = 29 y su átomo es [Ar] 3d¹⁰ 4s¹ (una de las excepciones al orden de llenado); el zinc tiene Z = 30. En 2 o 3 oraciones: escribe la configuración de los iones Cu²⁺ y Zn²⁺, di cuántos electrones desapareados tiene cada uno según su diagrama de orbitales 3d y explica por qué uno es atraído por el imán y el otro no.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Los iones pierden primero los electrones 4s: Cu²⁺ es [Ar] 3d⁹ y Zn²⁺ es [Ar] 3d¹⁰. En cinco orbitales 3d caben diez electrones, dos por orbital con espines opuestos: con nueve queda un orbital con un electrón solo, y con diez todos están apareados. Un electrón desapareado hace al Cu²⁺ paramagnético; el Zn²⁺ es diamagnético.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U3-3.10"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Al formar el ion se pierden primero los electrones 4s, que son los del nivel más externo: Cu²⁺ queda [Ar] 3d⁹ y Zn²⁺ queda [Ar] 3d¹⁰. En el diagrama de los cinco orbitales 3d, el Cu²⁺ tiene cuatro orbitales con dos electrones de espín opuesto y uno con un electrón solo, o sea, un electrón desapareado; el Zn²⁺ tiene los cinco orbitales llenos y ninguno desapareado. Por ese electrón desapareado el sulfato de cobre(II) es paramagnético y el imán lo atrae; el sulfato de zinc, con todos sus electrones apareados, es diamagnético y no se mueve.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Escribe Cu²⁺ como [Ar] 3d⁹ y Zn²⁺ como [Ar] 3d¹⁰ (o con la configuración completa equivalente), sin electrones 4s.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Indica, con el diagrama o con el reparto de electrones en los cinco orbitales 3d, que el Cu²⁺ tiene un electrón desapareado y el Zn²⁺ ninguno.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Relaciona los electrones desapareados con la atracción por el imán (paramagnético) y los electrones todos apareados con no ser atraído (diamagnético).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Justifica que se pierden primero los 4s porque son los del nivel más externo, o menciona el principio de exclusión de Pauli (dos electrones por orbital con espines opuestos).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Quita al ion los electrones 3d, los últimos que se escriben, en vez de los 4s.",
+      "ejemplo": "El Cu²⁺ es [Ar] 3d⁸ 4s¹ y el Zn²⁺ es [Ar] 3d⁸ 4s²; los dos tienen electrones desapareados en 3d.",
+      "dificultad": "DIF:quimica/configuracion-electronica/2"
+     },
+     {
+      "descripcion": "Decide el magnetismo por la paridad del total de electrones, sin usar el diagrama de orbitales.",
+      "ejemplo": "El Cu²⁺ tiene 27 electrones, un número impar, así que sobra uno y es atraído; el Zn²⁺ tiene 28, par, y no es atraído.",
+      "dificultad": "DIF:quimica/configuracion-electronica/3"
+     },
+     {
+      "descripcion": "Explica con una propiedad del metal en general, no con la configuración del ion.",
+      "ejemplo": "El cobre es un metal magnético como el hierro y el zinc no lo es, por eso solo el cobre se pega.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-QUI-U3-3.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U3-3.2/obj-1": {
   "tipo": "contenido",
@@ -113837,10 +114023,75 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.2/obj-1",
+    "decision": "corregir",
+    "justificacion": "Clave correcta: Te (52) antes que I (53) pese a 127.6 > 126.9. C es falsa (¹³⁰Te tiene 78 neutrones; ¹²⁷I, 74), buen distractor. Solo se marcan las masas como aproximadas de la tabla de referencia, según la regla de datos.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (fila 23)",
+      "cita": "explicar por qué se ordena por número atómico",
+      "cita_literal": "Explica por qué la tabla actual se ordena por número atómico"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Ar(Te) = 127.60; Ar(I) = 126.90"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "enunciado": "En la tabla periódica actual, el telurio (Z = 52, masa atómica aproximada 127.6, según la tabla de referencia) va antes que el yodo (Z = 53, masa atómica aproximada 126.9). Así el yodo queda en la columna del cloro y del bromo, con los que comparte propiedades. ¿Por qué esa posición del telurio y el yodo es la correcta?"
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U4-4.2/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.2"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.2",
+    "CON:quimica/tabla-periodica"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "En la tabla periódica actual, el telurio (Z = 52, masa atómica aproximada 127.6, según la tabla de referencia) va antes que el yodo (Z = 53, masa atómica aproximada 126.9). Así el yodo queda en la columna del cloro y del bromo, con los que comparte propiedades. ¿Por qué esa posición del telurio y el yodo es la correcta?",
+   "opciones": {
+    "A": "Porque la tabla actual ordena por número atómico, y el telurio tiene un protón menos que el yodo",
+    "B": "Porque la tabla actual ordena por masa atómica, pero admite excepciones si un elemento no encaja",
+    "C": "Porque la tabla actual ordena por número de neutrones, y el telurio tiene menos que el yodo",
+    "D": "Porque los grupos se arman por propiedades y el orden en un período no sigue ninguna regla"
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/tabla-periodica/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La ley periódica actual ordena los elementos por número atómico, el número de protones del núcleo, que identifica a cada elemento. El telurio tiene 52 y el yodo 53, así que el telurio va primero aunque su masa sea mayor. La masa depende también de los neutrones y de la mezcla de isótopos, por eso no siempre sigue el mismo orden; con el número atómico no hace falta ninguna excepción.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U4-4.2"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U4-4.2/obj-2": {
   "tipo": "contenido",
@@ -113923,8 +114174,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.2/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Z 12, 14, 16 y 18 son Mg, Si, S y Ar, todos del período 3; las propiedades descritas son las reales (el Si brilla, conduce poco y es quebradizo: metaloide). B y D miden la confusión grupo/período (DIF tabla/3) y C el «brillo = metal». Clave única y correcta.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (fila 23)",
+      "cita": "ubicar por grupo, periodo y carácter metálico",
+      "cita_literal": "ubica a los elementos según su grupo, periodo y carácter metálico"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Mg, Si, S, Ar: configuraciones [Ne]3s²…3p⁶, n = 3"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114043,10 +114315,110 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.2/obj-abierta",
+    "decision": "corregir",
+    "justificacion": "Contenido exacto: Moseley halló que la frecuencia de los rayos X crece regularmente con la carga nuclear; la inversión Co/Ni de c4 es real (58.93 > 58.69). Los criterios obligatorios corresponden a las tres partes pedidas. Solo se marcan las masas como aproximadas de la tabla de referencia.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (fila 23)",
+      "cita": "ley periódica de Moseley",
+      "cita_literal": "Ley periódica de Moseley"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "√f ∝ (Z − 1) en las líneas Kα (Moseley, 1913); Ar 39.95, K 39.10"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "enunciado": "Si los elementos se ordenaran por masa atómica (valores aproximados de la tabla de referencia), el potasio (39.1) iría antes que el argón (39.9). Así el potasio, un metal muy reactivo, caería en la columna de los gases nobles. En 2 o 3 oraciones explica qué descubrió Moseley, por qué el número atómico es mejor criterio que la masa para ordenar la tabla y cómo eso resuelve el caso del argón y el potasio."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U4-4.2/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.2"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.2",
+    "CON:quimica/tabla-periodica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Si los elementos se ordenaran por masa atómica (valores aproximados de la tabla de referencia), el potasio (39.1) iría antes que el argón (39.9). Así el potasio, un metal muy reactivo, caería en la columna de los gases nobles. En 2 o 3 oraciones explica qué descubrió Moseley, por qué el número atómico es mejor criterio que la masa para ordenar la tabla y cómo eso resuelve el caso del argón y el potasio.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Moseley encontró con los rayos X de cada elemento un número entero que aumenta de uno en uno: la carga del núcleo, o número de protones. Ese número identifica al elemento y fija sus electrones, de los que dependen sus propiedades; la masa depende además de los neutrones. Por eso el argón (18) va antes que el potasio (19), aunque pese más.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U4-4.2"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Moseley midió los rayos X que emite cada elemento y encontró que su frecuencia crece de forma regular con un número entero, la carga del núcleo, que es el número atómico o número de protones. El número atómico es mejor criterio porque identifica al elemento y determina cuántos electrones tiene, y de ellos dependen sus propiedades; la masa también depende de los neutrones y de los isótopos, por eso a veces sale en otro orden. Ordenados por número atómico, el argón (18) va antes que el potasio (19): el argón queda con los gases nobles y el potasio con los metales alcalinos, aunque el argón tenga más masa.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Nombra que Moseley relacionó una propiedad medida de cada elemento (sus rayos X) con la carga del núcleo, es decir, con el número atómico o número de protones.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica que el número atómico es mejor criterio porque identifica al elemento o determina su número de electrones y sus propiedades, mientras que la masa depende también de los neutrones o los isótopos.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Aplica el criterio al caso: el argón (Z = 18) va antes que el potasio (Z = 19), de modo que cada uno queda en el grupo de propiedades que le corresponde, aunque el argón tenga mayor masa.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona otro caso de inversión de la tabla de Mendeléiev, como el telurio y el yodo o el cobalto y el níquel.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Sostiene que la tabla actual se ordena por masa y trata el caso como una excepción o un error.",
+      "ejemplo": "La tabla se ordena por masa, pero el argón se dejó antes porque es un gas y tenía que ir con los gases nobles; es una excepción.",
+      "dificultad": "DIF:quimica/tabla-periodica/2"
+     },
+     {
+      "descripcion": "Atribuye a Moseley el descubrimiento de los neutrones o de la masa, no de la carga nuclear.",
+      "ejemplo": "Moseley descubrió que el potasio tiene menos neutrones que el argón, y por eso se ordena por neutrones.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Describe la posición del argón y el potasio sin decir qué descubrió Moseley ni por qué el número atómico es mejor criterio.",
+      "ejemplo": "El argón es un gas noble y el potasio un metal alcalino, así que cada uno va en su grupo.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U4-4.3/obj-1": {
   "tipo": "contenido",
@@ -114126,8 +114498,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.3/obj-1",
+    "decision": "aprobar",
+    "justificacion": "[Ar]4s²3d¹⁰4p⁵ es el bromo: período 4, bloque p, grupo 17 (10 + 7). B recoge la confusión real con la numeración antigua (VIIA) y C/D, tomar el 3d¹⁰ lleno como bloque o período. Clave única y explicación correcta.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.3 (fila 24)",
+      "cita": "deducir grupo, periodo y bloque desde la configuración",
+      "cita_literal": "Deduce el grupo, el periodo y el bloque de un elemento a partir de su configuración electrónica"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "grupo (bloque p) = 10 + electrones de valencia ns+np"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114211,8 +114604,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.3/obj-2",
+    "decision": "aprobar",
+    "justificacion": "1 = S, 2 = Ca, 3 = Se, 4 = Mg. S y Se (ns²np⁴) son del grupo 16 y forman X²⁻; C confunde el 3d¹⁰ lleno con el bloque; D mide «mismo grupo = misma intensidad» (DIF tabla/1) y es falsa: el Ca reacciona más que el Mg con agua.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.3 (fila 24)",
+      "cita": "configuración de iones comunes",
+      "cita_literal": "escribe la configuración de sus iones más comunes"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Ca + 2H₂O reacciona en frío; Mg apenas, en agua caliente"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114331,10 +114745,151 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.3/obj-abierta",
+    "decision": "corregir",
+    "justificacion": "Química correcta: Fe²⁺ [Ar]3d⁶ y Cl⁻ [Ne]3s²3p⁶; «los 4s son los más externos» es la simplificación estándar del grado. Los criterios obligatorios cubren lo pedido. Corrijo la rúbrica: el error «quita los 3d» es exactamente DIF configuración/2 y quedaba sin mapear, lo que impide al tutor diagnosticarlo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.3 (fila 24)",
+      "cita": "configuración de cationes y aniones",
+      "cita_literal": "Configuración de cationes y aniones"
+     },
+     {
+      "fuente": "DIF:quimica/configuracion-electronica/2",
+      "cita": "quitar los últimos electrones escritos (3d) en vez de los 4s"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "rubrica": {
+      "respuesta_modelo": "El Fe²⁺ es [Ar] 3d⁶, porque el hierro pierde sus dos electrones 4s, y el Cl⁻ es [Ne] 3s² 3p⁶ (igual que el argón), porque el electrón que gana entra al subnivel 3p. El hierro pierde primero los 4s porque son los del nivel más externo, n = 4, los más alejados del núcleo; el orden en que se llenan los subniveles no es el orden en que se pierden los electrones.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe Fe²⁺ como [Ar] 3d⁶ (sin electrones 4s).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Escribe Cl⁻ como [Ne] 3s² 3p⁶ o indica que queda con la configuración del argón, con el electrón ganado en el subnivel 3p.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que los electrones 4s salen primero porque pertenecen al nivel más externo (n = 4) o están más lejos del núcleo, y distingue el orden de llenado del orden de pérdida.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Relaciona la carga de cada ion con su posición: el cloro, del grupo 17, gana un electrón; el hierro, del bloque d, puede perder dos (o tres, en Fe³⁺).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Quita al hierro los electrones 3d, los últimos que se escriben, en lugar de los 4s.",
+        "ejemplo": "El Fe²⁺ es [Ar] 3d⁴ 4s², porque los últimos electrones que entraron fueron los 3d y son los primeros que salen.",
+        "dificultad": "DIF:quimica/configuracion-electronica/2"
+       },
+       {
+        "descripcion": "Confunde el signo de la carga: trata al anión como si perdiera electrones.",
+        "ejemplo": "El Cl⁻ es [Ne] 3s² 3p⁴, porque al formar el ion pierde un electrón del 3p.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Escribe bien las configuraciones pero justifica con el octeto, sin decir por qué salen los 4s.",
+        "ejemplo": "Fe²⁺ es [Ar] 3d⁶ y Cl⁻ es [Ar]; el hierro pierde los 4s porque así queda más estable y el cloro completa su octeto.",
+        "dificultad": null
+       }
+      ]
+     }
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U4-4.3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.3"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.3",
+    "CON:quimica/tabla-periodica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "El hierro (Z = 26) es [Ar] 3d⁶ 4s² y el cloro (Z = 17) es [Ne] 3s² 3p⁵. En 2 o 3 oraciones: escribe la configuración abreviada del ion Fe²⁺ y la del ion Cl⁻, di de qué subnivel salen o a qué subnivel llegan los electrones en cada caso y explica por qué el hierro pierde primero los electrones 4s aunque el 4s se llena antes que el 3d.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El Fe²⁺ es [Ar] 3d⁶: pierde los dos electrones 4s, que son los del nivel más externo (n = 4) y los más alejados del núcleo, aunque al construir el átomo el 4s se ocupe antes que el 3d. El Cl⁻ es [Ne] 3s² 3p⁶: el electrón ganado entra al subnivel 3p y el ion queda con la configuración del argón.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U4-4.3"
+   },
+   "rubrica": {
+    "respuesta_modelo": "El Fe²⁺ es [Ar] 3d⁶, porque el hierro pierde sus dos electrones 4s, y el Cl⁻ es [Ne] 3s² 3p⁶ (igual que el argón), porque el electrón que gana entra al subnivel 3p. El hierro pierde primero los 4s porque son los del nivel más externo, n = 4, los más alejados del núcleo; el orden en que se llenan los subniveles no es el orden en que se pierden los electrones.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Escribe Fe²⁺ como [Ar] 3d⁶ (sin electrones 4s).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Escribe Cl⁻ como [Ne] 3s² 3p⁶ o indica que queda con la configuración del argón, con el electrón ganado en el subnivel 3p.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que los electrones 4s salen primero porque pertenecen al nivel más externo (n = 4) o están más lejos del núcleo, y distingue el orden de llenado del orden de pérdida.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Relaciona la carga de cada ion con su posición: el cloro, del grupo 17, gana un electrón; el hierro, del bloque d, puede perder dos (o tres, en Fe³⁺).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Quita al hierro los electrones 3d, los últimos que se escriben, en lugar de los 4s.",
+      "ejemplo": "El Fe²⁺ es [Ar] 3d⁴ 4s², porque los últimos electrones que entraron fueron los 3d y son los primeros que salen.",
+      "dificultad": "DIF:quimica/configuracion-electronica/2"
+     },
+     {
+      "descripcion": "Confunde el signo de la carga: trata al anión como si perdiera electrones.",
+      "ejemplo": "El Cl⁻ es [Ne] 3s² 3p⁴, porque al formar el ion pierde un electrón del 3p.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Escribe bien las configuraciones pero justifica con el octeto, sin decir por qué salen los 4s.",
+      "ejemplo": "Fe²⁺ es [Ar] 3d⁶ y Cl⁻ es [Ar]; el hierro pierde los 4s porque así queda más estable y el cloro completa su octeto.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U4-4.4/obj-1": {
   "tipo": "contenido",
@@ -114414,8 +114969,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.4/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Na⁺ (2,8) pierde una capa y es menor que Na; Cl⁻ (18 e⁻, 17 p⁺) es mayor que Cl. D recoge la idea real de que «ionizarse encoge»; B invierte. Explicación con capas y repulsión adecuada al grado.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (fila 25)",
+      "cita": "comparar átomos con sus iones",
+      "cita_literal": "compara el tamaño de átomos con el de sus iones"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "r(Na) 186 > r(Na⁺) 102 pm; r(Cl) 99 < r(Cl⁻) 181 pm"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114500,8 +115076,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.4/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Los radios coinciden con la tabla de radios covalentes de Cordero et al. (2008) y van como aproximados de la tabla de referencia. La clave A describe bien la tendencia y su causa; C atribuye la baja a perder capas, B y D mapean a DIF reales. Retroalimentación correcta.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (fila 25)",
+      "cita": "radio en grupos y periodos con carga nuclear efectiva",
+      "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "radios covalentes: Li 128 … F 57; Na 166 … Cl 102; K 203 pm"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114615,8 +115212,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.4/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Pide capas y apantallamiento, y los dos criterios obligatorios exigen eso. «La carga nuclear efectiva cambia poco» es la lectura con Slater (Li 1.3, Na 2.2, K 2.2); con valores de Clementi sube algo, pero la conclusión (domina la distancia) se mantiene: simplificación aceptable en 10.°.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (fila 25)",
+      "cita": "aumento del radio en un grupo",
+      "cita_literal": "explicar la disminución del radio en un periodo y su aumento en un grupo"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Z_ef (Slater) ≈ 1.3, 2.2, 2.2 para el electrón externo de Li, Na, K"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114702,8 +115320,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.5/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Mg: EI 738, 1451 y 7733 kJ/mol; el salto (×5.3) llega con el tercer electrón, de la capa 2. Clave C correcta; A, B y D mapean a dificultades reales (EI como «estabilidad», valencia = período, solo protones).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.5 (fila 26)",
+      "cita": "deducir electrones de valencia del salto",
+      "cita_literal": "Deduce el número de electrones de valencia de un elemento a partir del salto en sus energías de ionización sucesivas"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "EI₃/EI₂ (Mg) = 7733/1451 ≈ 5.3"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114787,10 +115426,75 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.5/obj-2",
+    "decision": "corregir",
+    "justificacion": "Datos del aluminio correctos (578, 1817, 2745, 11577, 14842; 11577/2745 = 4.2) y clave B correcta. Pero la retroalimentación atribuye todo el aumento EI₁→EI₂ al paso de 3p a 3s: la causa principal es que cada electrón sale de un ion más positivo (EI₂/EI₁ ≈ 2 aun sin cambio de subnivel, como en Si). Se corrige sin dejar la idea a desaprender.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.5 (fila 26)",
+      "cita": "saltos y anomalías",
+      "cita_literal": "Gráficas de energías de ionización sucesivas y periódicas con interpretación escrita de saltos y anomalías"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Si: EI₁ 787, EI₂ 1577 kJ/mol, ambos 3p; Mg: 738 y 1451, ambos 3s"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "El salto mayor está entre la tercera y la cuarta energía: el valor se multiplica por más de cuatro porque el cuarto electrón ya sale de la capa 2, más cerca del núcleo y menos apantallada. Tiene tres electrones de valencia y está en el grupo 13 (es el aluminio). Que cada energía supere a la anterior es lo normal: cada electrón sale de un ion cada vez más positivo, y de la primera a la segunda no se cambia de capa. Quitar electrones siempre absorbe energía."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U4-4.5/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.5"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.5",
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Valores aproximados de una tabla de referencia para un elemento del período 3. Energías de ionización sucesivas, de la primera a la quinta, en kJ/mol: 578, 1 817, 2 745, 11 577 y 14 842. ¿Cuántos electrones de valencia tiene el elemento, en qué grupo está y qué dato lo muestra?",
+   "opciones": {
+    "A": "Uno, grupo 1: la segunda energía ya triplica a la primera, y ese es el salto que buscamos",
+    "B": "Tres, grupo 13: la cuarta energía es más de cuatro veces la tercera y abre una capa interna",
+    "C": "Cuatro, grupo 14: el salto grande aparece en la cuarta energía, así que hay cuatro externos",
+    "D": "Tres, grupo 13: al perder el tercer electrón el átomo libera energía y queda estable con ocho"
+   },
+   "correcta": "B",
+   "distractores": {
+    "D": "DIF:quimica/propiedades-periodicas/4"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El salto mayor está entre la tercera y la cuarta energía: el valor se multiplica por más de cuatro porque el cuarto electrón ya sale de la capa 2, más cerca del núcleo y menos apantallada. Tiene tres electrones de valencia y está en el grupo 13 (es el aluminio). Que cada energía supere a la anterior es lo normal: cada electrón sale de un ion cada vez más positivo, y de la primera a la segunda no se cambia de capa. Quitar electrones siempre absorbe energía.",
+   "duracion_min": 8,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U4-4.5"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U4-4.5/obj-abierta": {
   "tipo": "contenido",
@@ -114902,8 +115606,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.5/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "N 1402 y O 1314 kJ/mol, como aproximados de la tabla de referencia. La explicación por repulsión del par en un orbital 2p es la aceptada; los criterios obligatorios corresponden a lo pedido. Los errores son reales, y el del «semilleno más estable» se marca bien como explicación incompleta, no como falsa.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.5 (fila 26)",
+      "cita": "explicar anomalías",
+      "cita_literal": "Razonar: deducir electrones de valencia y explicar anomalías"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "O 2p⁴: un orbital con par; la repulsión baja EI₁ respecto del N 2p³"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -114987,8 +115712,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.6/obj-1",
+    "decision": "aprobar",
+    "justificacion": "El F libera energía (≈ −328 kJ/mol) y el Ne la absorbería (anión inestable). C y D eligen el flúor, así que la clave evalúa el porqué: D toma el octeto como fuente de energía, idea real. Retroalimentación correcta.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.6 (fila 27)",
+      "cita": "signo como exotérmico o endotérmico",
+      "cita_literal": "Interpreta el signo de la afinidad electrónica como proceso exotérmico o endotérmico"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Ne⁻ no es un anión estable; la afinidad del Ne se estima positiva"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -115072,8 +115818,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.6/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Valores correctos (Li −60, O −141, F −328, Na −53, S −200, Cl −349; Be, Mg, Ne, Ar sin anión estable) y la convención de signo queda definida en el enunciado. A queda refutada por Be y Mg; C usa un hecho cierto (Cl > F) con la causa falsa; la explicación del F por repulsión en la capa 2 es la estándar.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.6 (fila 27)",
+      "cita": "halógenos con los valores más favorables",
+      "cita_literal": "explica por qué los halógenos tienen los valores más favorables"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "ΔE(Cl) = −349 y ΔE(F) = −328 kJ/mol"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -115187,8 +115954,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.6/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "La segunda afinidad del oxígeno es endotérmica (≈ +750 a +840 kJ/mol) por la repulsión del O⁻; el O²⁻ existe en sólidos gracias a la energía reticular. Los criterios obligatorios son los dos que pide el enunciado; el tercero es optativo («si puedes»). Los errores son reales.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.6 (fila 27)",
+      "cita": "procesos exotérmicos y endotérmicos",
+      "cita_literal": "Procesos exotérmicos y endotérmicos"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "O⁻(g) + e⁻ → O²⁻(g): ΔE > 0; lo compensa la energía reticular del MgO"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -115272,8 +116060,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.7/obj-1",
+    "decision": "aprobar",
+    "justificacion": "La causa correcta es la carga nuclear efectiva creciente en la misma capa con radio menor (B). C mide la confusión con la afinidad electrónica (DIF EN/1) y la retroalimentación las distingue bien. No contradice la capa del tema 4.8.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (fila 28)",
+      "cita": "variación de la electronegatividad",
+      "cita_literal": "Explica la variación de la electronegatividad en la tabla periódica"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Pauling: Li 0.98 → F 3.98 en el período 2"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -115358,8 +116167,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.7/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Valores de Pauling correctos y Δχ recalculadas: C–H 0.35, N–H 0.84, Mg–Cl 1.85. La retroalimentación trata la frontera 1.7 como convención aproximada con transición gradual, como debe. A y D mapean a dificultades reales.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (fila 28)",
+      "cita": "diferencia de electronegatividad y polaridad",
+      "cita_literal": "usa la diferencia de electronegatividad para predecir la polaridad de un enlace"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "3.16−1.31 = 1.85; 3.04−2.20 = 0.84; 2.55−2.20 = 0.35"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -115473,8 +116303,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.7/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "P 2.19, Cl 3.16, Br 2.96: Δχ H–Cl 0.96 y H–Br 0.76, con δ− en el halógeno. Los tres criterios obligatorios corresponden a las tres partes pedidas; la explicación por carga efectiva y por capa es correcta.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (fila 28)",
+      "cita": "variación periódica de la electronegatividad",
+      "cita_literal": "Variación periódica de la electronegatividad"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "3.16 − 2.20 = 0.96; 2.96 − 2.20 = 0.76"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -165039,8 +165890,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/configuracion-electronica/1",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real: llenar por número de nivel (como capas de 2n² completas) en lugar del orden de Madelung (diagrama de Möller), con señales verificables (K como 3d¹, Sc). Mencionar las excepciones Cr y Cu es coherente con la malla.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "orden del diagrama de Möller y excepciones",
+      "cita_literal": "Recuerda el orden de llenado del diagrama de Möller"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "K [Ar]4s¹, no [Ne]3s²3p⁶3d¹; Sc [Ar]3d¹4s²"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -165096,8 +165968,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/configuracion-electronica/2",
+    "decision": "aprobar",
+    "justificacion": "Error real y muy documentado en iones de transición: «último en entrar, primero en salir». Las señales (Fe²⁺ 3d⁴4s², Cu²⁺ 3d⁸4s¹, Zn²⁺ con desapareados) son consecuencias exactas de esa idea.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "iones de transición: salen primero los 4s",
+      "cita_literal": "el orden en que salen los electrones al formar iones (primero los 4s)"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Fe²⁺ [Ar]3d⁶; Cu²⁺ [Ar]3d⁹"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -165153,10 +166046,47 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/configuracion-electronica/3",
+    "decision": "corregir",
+    "justificacion": "La descripción marca como error toda la regla de paridad, pero su mitad «impar → paramagnético» es cierta: con número impar siempre queda un desapareado. El error es solo «par → diamagnético». Se precisa para que el tutor no corrija como falso un razonamiento válido (p. ej., Cu²⁺ con 27 electrones).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "predecir magnetismo con el diagrama",
+      "cita_literal": "Predice si el oxígeno o el nitrógeno tiene más electrones desapareados y cuál sería atraído por un imán"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "impar ⇒ al menos un e⁻ desapareado; par no implica todos apareados (O, O₂, Fe²⁺, Ni²⁺)"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "descripcion": "Cree que el comportamiento magnético se decide por la paridad del número total de electrones (impar, paramagnético; par, diamagnético) y no por los electrones desapareados del diagrama de orbitales. La mitad «impar» es cierta: con un número impar siempre queda al menos un electrón desapareado. El error está en la otra mitad: un número par no garantiza que todos estén apareados (el O, el Fe²⁺ y el Ni²⁺ tienen número par y son paramagnéticos). Suele ir junto con aparear electrones en un subnivel antes de ocupar cada orbital, sin aplicar la regla de Hund."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "DIF:quimica/configuracion-electronica/3",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/configuracion-electronica",
+   "descripcion": "Cree que el comportamiento magnético se decide por la paridad del número total de electrones (impar, paramagnético; par, diamagnético) y no por los electrones desapareados del diagrama de orbitales. La mitad «impar» es cierta: con un número impar siempre queda al menos un electrón desapareado. El error está en la otra mitad: un número par no garantiza que todos estén apareados (el O, el Fe²⁺ y el Ni²⁺ tienen número par y son paramagnéticos). Suele ir junto con aparear electrones en un subnivel antes de ocupar cada orbital, sin aplicar la regla de Hund.",
+   "senales": "Dice que el oxígeno atómico o el Fe²⁺ son diamagnéticos «porque tienen un número par de electrones»; dibuja 2p⁴ como dos orbitales llenos y uno vacío; cuenta electrones desapareados sin dibujar el diagrama; acierta con Cu²⁺ (27 electrones) pero falla con Ni²⁺ (26 electrones, dos desapareados).",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "justificacion": "Atajo frecuente que esquiva la regla de Hund al predecir magnetismo.",
+   "origen": "redactor-actividades (G10-QUI-U3-3.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:quimica/conservacion-de-la-masa/1": {
   "tipo": "contenido",
@@ -166663,10 +167593,47 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/electronegatividad-y-polaridad-de-enlace/1",
+    "decision": "corregir",
+    "justificacion": "La confusión EN/afinidad es real y las señales son buenas (el Cl tiene mayor afinidad que el F y menor EN). Pero la malla pide relacionar la escala de Mulliken con la EI y la afinidad: la descripción debe aclarar que relacionarlas no es el error, sino tomarlas como la misma magnitud o esperar el mismo orden.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (fila 28)",
+      "cita": "Mulliken relacionada con EI y afinidad",
+      "cita_literal": "relaciona esta última con la energía de ionización y la afinidad electrónica"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "χ(Mulliken) ∝ (EI + AE)/2; AE(Cl) > AE(F) pero χ(F) > χ(Cl)"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "descripcion": "Confunde la electronegatividad con la afinidad electrónica (o con la energía de ionización): cree que es la energía que libera un átomo aislado al ganar un electrón, y no la capacidad de un átomo de atraer los electrones que comparte en un enlace. Son propiedades distintas aunque relacionadas: la escala de Mulliken calcula la electronegatividad combinando la energía de ionización y la afinidad electrónica. Relacionarlas así no es un error; sí lo es tomarlas como la misma magnitud o esperar que sigan el mismo orden."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "DIF:quimica/electronegatividad-y-polaridad-de-enlace/1",
+   "tipo": "dificultad",
+   "concepto": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+   "descripcion": "Confunde la electronegatividad con la afinidad electrónica (o con la energía de ionización): cree que es la energía que libera un átomo aislado al ganar un electrón, y no la capacidad de un átomo de atraer los electrones que comparte en un enlace. Son propiedades distintas aunque relacionadas: la escala de Mulliken calcula la electronegatividad combinando la energía de ionización y la afinidad electrónica. Relacionarlas así no es un error; sí lo es tomarlas como la misma magnitud o esperar que sigan el mismo orden.",
+   "senales": "Explica que el flúor es el más electronegativo «porque libera más energía al ganar un electrón»; usa las dos palabras como sinónimos o espera que el orden de una propiedad sea idéntico al de la otra (por ejemplo, que el cloro sea más electronegativo que el flúor porque su afinidad electrónica es mayor).",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "justificacion": "Nombres parecidos y tendencias semejantes llevan a fusionar dos propiedades distintas.",
+   "origen": "redactor-actividades (G10-QUI-U4-4.7)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:quimica/electronegatividad-y-polaridad-de-enlace/2": {
   "tipo": "contenido",
@@ -166720,8 +167687,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/electronegatividad-y-polaridad-de-enlace/2",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real: la regla «metal + no metal = iónico» usada como criterio único y el enlace visto en cajas. El ejemplo del H–F (Δχ 1.78, covalente polar) es exacto y muestra que la frontera de 1.7 no es absoluta.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (fila 28)",
+      "cita": "anticipar el tipo de enlace con Δχ",
+      "cita_literal": "uso de la diferencia de electronegatividad para anticipar el tipo de enlace"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "H–F: 3.98 − 2.20 = 1.78, molécula covalente polar"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -166777,8 +167765,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/electronegatividad-y-polaridad-de-enlace/3",
+    "decision": "aprobar",
+    "justificacion": "Error real: juzgar la polaridad por el valor de un átomo y no por la diferencia. Las señales (Cl–Cl, O=O o F–F «polares») son exactamente lo que produce esa idea; los tres enlaces son apolares (Δχ = 0).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (fila 28)",
+      "cita": "argumentar si Cl₂ es apolar",
+      "cita_literal": "Argumenta con diferencias de electronegatividad si los enlaces de NaCl, HCl, H₂O y Cl₂ son iónicos, covalentes polares o apolares"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "enlace homonuclear: Δχ = 0, apolar"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -172703,8 +173712,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/tabla-periodica/2",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real, reforzada por la historia de Mendeléiev y el término «peso atómico». Las inversiones Ar/K y Te/I son correctas y se presentan como prueba del criterio de Moseley, no como excepciones.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (fila 23)",
+      "cita": "Mendeléiev y ley de Moseley",
+      "cita_literal": "Tabla de Mendeléiev Ley periódica de Moseley"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Ar 39.95 > K 39.10; Te 127.60 > I 126.90"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -172760,8 +173790,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/tabla-periodica/3",
+    "decision": "aprobar",
+    "justificacion": "Confusión real de vocabulario grupo/período. La descripción es exacta: la fila comparte número de capas ocupadas y la columna los electrones de valencia y propiedades parecidas. Señales verificables.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (fila 23)",
+      "cita": "identificar grupos y periodos",
+      "cita_literal": "Conocer: identificar grupos y periodos"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "período = n máximo ocupado; grupo = configuración de valencia"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -193213,10 +194264,114 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U3-3.10/1",
+    "decision": "corregir",
+    "justificacion": "La física funciona: la balanza de torsión de pajilla detecta incluso la repulsión diamagnética del agua, y el CuSO₄·5H₂O (χ ≈ +7×10⁻⁸ m³/kg) y el FeSO₄·7H₂O (≈7 veces más por gramo) son atraídos en el orden predicho; tiempos y seguridad están bien. Corrijo: 1 g de sulfato no cabe en 3 cm de pajilla fina, la pajilla cargada puede girar sin imán, y el NaCl puede repelerse algo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (fila 22)",
+      "cita": "paramagnetismo y diamagnetismo",
+      "cita_literal": "Paramagnetismo y diamagnetismo"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "χ_mol FeSO₄·7H₂O ≈ 1.1×10⁻² y CuSO₄·5H₂O ≈ 1.5×10⁻³ cm³/mol (cgs); NaCl diamagnético"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "pajilla de 6 mm × 3 cm ≈ 0.85 cm³; 1 g de sal hidratada en polvo ocupa ≈ 0.8–1 cm³"
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "materiales": [
+      "Un imán de neodimio de unos 2 cm por equipo (de ferretería o de un disco duro viejo); los imanes de refrigeradora no bastan",
+      "Una pajilla plástica recta de 20 cm por equipo y cuatro tramos de pajilla gruesa (de batido) de 3 cm para hacer cápsulas",
+      "40 cm de hilo de coser, un lápiz y dos pilas de libros por equipo",
+      "Una caja de cartón grande, abierta por un lado, para proteger la balanza de las corrientes de aire",
+      "Cinta adhesiva, plastilina como contrapeso y una regla",
+      "Cápsulas selladas que prepara el docente, cuatro por equipo: una vacía (control), una con unos 0.5 g de sal de mesa, una con unos 0.5 g de sulfato de cobre(II) pentahidratado (del laboratorio o de un agroservicio) y una con unos 0.5 g de sulfato ferroso (del laboratorio, de un agroservicio o tabletas de farmacia trituradas por el docente)",
+      "Guantes, gafas, cucharita y embudo de papel para el docente al llenar las cápsulas",
+      "Tabla de datos en el cuaderno: muestra, ion, configuración, electrones desapareados predichos, distancia a la que gira la pajilla (tres intentos)"
+     ],
+     "procedimiento": [
+      "Antes de la clase (docente): con guantes y gafas llena y sella con cinta las cápsulas de 3 cm, las rotula con números del 1 al 4 y anota aparte qué contiene cada número.",
+      "Sesión 1 (55 min)",
+      "1. (10 min) Predicción: en equipo escriban la configuración abreviada y el diagrama de orbitales de Fe²⁺ (Z = 26), Cu²⁺ (Z = 29; su átomo es [Ar] 3d¹⁰ 4s¹), Na⁺ y Cl⁻. Cuenten los electrones desapareados de cada ion y ordenen las muestras de la que debería ser más atraída a la menos atraída.",
+      "2. (10 min) Montaje: cuelguen la pajilla de 20 cm del hilo, atado al lápiz que descansa entre las dos pilas de libros, dentro de la caja. Peguen una cápsula en un extremo y equilibren con plastilina en el otro hasta que la pajilla quede horizontal y quieta. Retiren relojes, clips y celulares de la mesa.",
+      "3. (5 min) Control: con la cápsula vacía, acerquen el imán despacio, a la altura de la cápsula y de lado, desde 10 cm hasta casi tocarla. Anoten si la pajilla gira hacia el imán. Si gira, la pajilla está cargada por frotamiento (también giraría hacia un dedo): pásenle un dedo húmedo, esperen un minuto y repitan hasta que el control no gire.",
+      "4. (15 min) Cambien la cápsula por las de sal, sulfato de cobre y sulfato ferroso, reequilibrando cada vez. Para cada una acerquen el imán de la misma forma y midan con la regla la distancia a la que la pajilla empieza a girar hacia él. Hagan tres intentos por muestra y esperen a que la pajilla quede quieta antes de cada uno.",
+      "5. (5 min) Copien en el pizarrón la distancia promedio de cada muestra y comparen con los demás equipos.",
+      "6. (10 min) Respondan en equipo las dos primeras preguntas de análisis y devuelvan las cápsulas cerradas al docente."
+     ],
+     "datos_esperados": "La cápsula vacía y la de sal de mesa no hacen girar la pajilla: en el NaCl los iones Na⁺ ([Ne]) y Cl⁻ ([Ar]) tienen todos sus electrones apareados (son diamagnéticos: no hay atracción; con un imán muy fuerte la sal podría alejarse apenas, el mismo efecto débil que repele al agua). El sulfato ferroso hace girar la pajilla con claridad, con el imán a uno o pocos centímetros, porque el Fe²⁺ ([Ar] 3d⁶) tiene cuatro electrones desapareados (si parte se oxidó a Fe³⁺, con cinco, la atracción es parecida o mayor). El sulfato de cobre(II) gira poco y solo con el imán casi tocando la cápsula, porque el Cu²⁺ ([Ar] 3d⁹) tiene un solo electrón desapareado; con un imán pequeño puede no verse, y eso también es un dato. El orden esperado es sulfato ferroso > sulfato de cobre > sal = control, el mismo que el de los electrones desapareados predichos. Las distancias exactas cambian con el imán y con la cantidad de muestra; lo que debe repetirse entre equipos es el orden."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U3-3.10/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U3-3.10"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U3-3.10",
+    "CON:quimica/configuracion-electronica"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "¿Lo atrae el imán? Electrones desapareados en sales comunes",
+   "proposito": "Predecir con la configuración electrónica y el diagrama de orbitales si una sal tiene electrones desapareados, y comprobarlo con una balanza de torsión hecha con una pajilla y un imán de neodimio: las sustancias paramagnéticas (con electrones desapareados) son atraídas por el imán y las diamagnéticas (todos apareados) no muestran atracción visible.",
+   "materiales": [
+    "Un imán de neodimio de unos 2 cm por equipo (de ferretería o de un disco duro viejo); los imanes de refrigeradora no bastan",
+    "Una pajilla plástica recta de 20 cm por equipo y cuatro tramos de pajilla gruesa (de batido) de 3 cm para hacer cápsulas",
+    "40 cm de hilo de coser, un lápiz y dos pilas de libros por equipo",
+    "Una caja de cartón grande, abierta por un lado, para proteger la balanza de las corrientes de aire",
+    "Cinta adhesiva, plastilina como contrapeso y una regla",
+    "Cápsulas selladas que prepara el docente, cuatro por equipo: una vacía (control), una con unos 0.5 g de sal de mesa, una con unos 0.5 g de sulfato de cobre(II) pentahidratado (del laboratorio o de un agroservicio) y una con unos 0.5 g de sulfato ferroso (del laboratorio, de un agroservicio o tabletas de farmacia trituradas por el docente)",
+    "Guantes, gafas, cucharita y embudo de papel para el docente al llenar las cápsulas",
+    "Tabla de datos en el cuaderno: muestra, ion, configuración, electrones desapareados predichos, distancia a la que gira la pajilla (tres intentos)"
+   ],
+   "procedimiento": [
+    "Antes de la clase (docente): con guantes y gafas llena y sella con cinta las cápsulas de 3 cm, las rotula con números del 1 al 4 y anota aparte qué contiene cada número.",
+    "Sesión 1 (55 min)",
+    "1. (10 min) Predicción: en equipo escriban la configuración abreviada y el diagrama de orbitales de Fe²⁺ (Z = 26), Cu²⁺ (Z = 29; su átomo es [Ar] 3d¹⁰ 4s¹), Na⁺ y Cl⁻. Cuenten los electrones desapareados de cada ion y ordenen las muestras de la que debería ser más atraída a la menos atraída.",
+    "2. (10 min) Montaje: cuelguen la pajilla de 20 cm del hilo, atado al lápiz que descansa entre las dos pilas de libros, dentro de la caja. Peguen una cápsula en un extremo y equilibren con plastilina en el otro hasta que la pajilla quede horizontal y quieta. Retiren relojes, clips y celulares de la mesa.",
+    "3. (5 min) Control: con la cápsula vacía, acerquen el imán despacio, a la altura de la cápsula y de lado, desde 10 cm hasta casi tocarla. Anoten si la pajilla gira hacia el imán. Si gira, la pajilla está cargada por frotamiento (también giraría hacia un dedo): pásenle un dedo húmedo, esperen un minuto y repitan hasta que el control no gire.",
+    "4. (15 min) Cambien la cápsula por las de sal, sulfato de cobre y sulfato ferroso, reequilibrando cada vez. Para cada una acerquen el imán de la misma forma y midan con la regla la distancia a la que la pajilla empieza a girar hacia él. Hagan tres intentos por muestra y esperen a que la pajilla quede quieta antes de cada uno.",
+    "5. (5 min) Copien en el pizarrón la distancia promedio de cada muestra y comparen con los demás equipos.",
+    "6. (10 min) Respondan en equipo las dos primeras preguntas de análisis y devuelvan las cápsulas cerradas al docente."
+   ],
+   "seguridad": [
+    "Los imanes de neodimio se atraen con mucha fuerza: pueden pellizcar la piel y romperse si chocan. Manténganlos separados y lejos de celulares, tarjetas y de cualquier persona con marcapasos.",
+    "Solo el docente maneja los sólidos, con guantes y gafas, al llenar las cápsulas. Los estudiantes trabajan con las cápsulas selladas; si una se abre, avisan y no tocan el polvo.",
+    "El sulfato de cobre(II) es nocivo si se ingiere e irrita la piel y los ojos; el sulfato ferroso y las tabletas de hierro son tóxicos si los ingiere un niño. No se prueba ni se huele nada y se cuentan las tabletas al terminar.",
+    "Lavarse las manos al terminar. El sulfato de cobre no se tira al desagüe ni a la tierra porque daña a los peces y a las plantas: se guarda en su frasco rotulado para reutilizarlo."
+   ],
+   "datos_esperados": "La cápsula vacía y la de sal de mesa no hacen girar la pajilla: en el NaCl los iones Na⁺ ([Ne]) y Cl⁻ ([Ar]) tienen todos sus electrones apareados (son diamagnéticos: no hay atracción; con un imán muy fuerte la sal podría alejarse apenas, el mismo efecto débil que repele al agua). El sulfato ferroso hace girar la pajilla con claridad, con el imán a uno o pocos centímetros, porque el Fe²⁺ ([Ar] 3d⁶) tiene cuatro electrones desapareados (si parte se oxidó a Fe³⁺, con cinco, la atracción es parecida o mayor). El sulfato de cobre(II) gira poco y solo con el imán casi tocando la cápsula, porque el Cu²⁺ ([Ar] 3d⁹) tiene un solo electrón desapareado; con un imán pequeño puede no verse, y eso también es un dato. El orden esperado es sulfato ferroso > sulfato de cobre > sal = control, el mismo que el de los electrones desapareados predichos. Las distancias exactas cambian con el imán y con la cantidad de muestra; lo que debe repetirse entre equipos es el orden.",
+   "analisis": [
+    "(Paso 6) Ordenen las muestras según la distancia a la que la pajilla empezó a girar y comparen ese orden con el número de electrones desapareados que predijeron en el paso 1. ¿Coinciden?",
+    "(Paso 6) ¿Para qué sirvió la cápsula vacía? Si el sulfato de cobre solo se movió con el imán casi tocándolo, ¿cómo pueden saber que no fue una corriente de aire o un roce? Propongan una forma de comprobarlo.",
+    "Tarea: Alguien del grupo dice que el Fe²⁺ debería ser diamagnético porque tiene 24 electrones, un número par. Respóndanle con el diagrama de los orbitales 3d y la regla de Hund.",
+    "Tarea: Escriban la configuración del Zn²⁺ (Z = 30) y predigan si una sal de zinc haría girar la pajilla. Luego escriban la configuración del átomo de cromo (Z = 24) y expliquen por qué es una excepción al orden de llenado."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin sulfato ferroso de laboratorio: tabletas de sulfato ferroso de farmacia trituradas por el docente (traen almidón y otros rellenos, así que la atracción es algo menor). Sin imán de neodimio: no se hace la medición; el docente muestra un video, revisado antes, de una sal de hierro o de manganeso atraída por un imán de neodimio, y los equipos hacen las predicciones y el análisis. Sin laboratorio ni internet: el docente entrega los datos de un grupo de ejemplo (cápsula vacía y sal: la pajilla no gira; sulfato de cobre(II): gira con el imán a 0.5 cm; sulfato ferroso: gira desde 2.5 cm) y los equipos hacen el paso 1 y el análisis con ellos.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U3-3.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U3-3.2/1": {
   "tipo": "contenido",
@@ -194912,10 +196067,113 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.2/1",
+    "decision": "corregir",
+    "justificacion": "Química correcta: K (39.1) antes que Ar (39.9) por masa; Co/Ni y Te/I son inversiones reales; circuito de 3 V, LED y 100 Ω da unos 10 mA. Falla el montaje: un clavo no se dobla con la mano y suele venir galvanizado, así que contradice el dato esperado. Se usa alambre de amarre sin galvanizar y se indica cómo probar el azufre en polvo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2",
+      "cita": "Explica por qué la tabla se ordena por número atómico y ubica por grupo, periodo y carácter metálico."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Masas atómicas estándar: Ar 39.95, K 39.10; Co 58.93, Ni 58.69; Te 127.60, I 126.90: las tres parejas invierten el orden."
+     },
+     {
+      "fuente": "EXP:G10-QUI-U4-4.8/1 (revisado por el panel)",
+      "cita": "El piloto pide clavos de hierro sin galvanizar y lija; se mantiene coherencia con hierro sin recubrimiento."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "materiales": [
+      "Un juego de 20 tarjetas por equipo, preparadas por el docente con el libro de texto o la tabla de referencia: nombre del elemento, masa atómica, estado a temperatura ambiente, fórmula de su compuesto con cloro (o «no forma») y, tapado con un papel adhesivo, el número atómico",
+      "Un circuito de prueba por equipo: dos pilas AA en su portapilas, un LED, una resistencia de 100 Ω y tres cables con pinzas de caimán",
+      "Muestras por equipo: 10 cm de alambre de cobre pelado (lo pela el docente), una tira de papel aluminio de 2 cm × 10 cm, 10 cm de alambre de amarre de hierro sin galvanizar (negro o recocido, de ferretería) lijado en las puntas, una mina de portaminas de grafito y una cucharadita de azufre en polvo de agroservicio en una tapa plástica",
+      "Lupa (opcional), un trozo de lija fina y una cucharita para apretar el azufre en la tapa",
+      "Pliego de papel con una tabla periódica de 18 columnas y 7 filas dibujada, marcadores de tres colores y cinta adhesiva para el mural",
+      "Gafas para quien manipule el azufre y para el docente"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Formen equipos de cuatro y repartan los roles: lector de tarjetas, ordenador, registrador y responsable de materiales. Sin destapar el número atómico, revisen las tarjetas.",
+      "2. (12 min) Ordenen las tarjetas por masa atómica creciente. Acomódenlas en filas de modo que los elementos con fórmulas de cloruro parecidas (por ejemplo, XCl, XCl₂ o «no forma») queden en la misma columna. Anoten en qué lugar una tarjeta no encaja con su columna.",
+      "3. (5 min) Destapen los números atómicos, ordenen de nuevo por número atómico y anoten qué tarjetas cambiaron de lugar y si las columnas quedaron coherentes.",
+      "4. (15 min) Pruebas de materiales: observen el brillo de cada muestra (lijen un poco el hierro si está opaco), intenten doblarla con cuidado (el azufre solo se aprieta con la cucharita) y conéctenla entre las dos pinzas del circuito; en el azufre, apoyen las dos puntas de las pinzas sobre el polvo apretado, a 1 cm una de otra. Anoten si el LED enciende fuerte, débil o nada. Desconecten el circuito después de cada prueba.",
+      "5. (8 min) Con sus resultados y la tabla periódica, peguen la ficha de cada material en su casilla del mural y coloreen las zonas de metales, no metales y metaloides que indica la tabla de referencia.",
+      "6. (10 min) Respondan en equipo las dos primeras preguntas de análisis, guarden las muestras y lávense las manos."
+     ],
+     "seguridad": [
+      "El azufre en polvo irrita los ojos y las vías respiratorias: no se sopla ni se huele, se usa con gafas y nunca se calienta ni se acerca a una llama, porque al arder produce un gas tóxico.",
+      "El circuito usa solo dos pilas AA, que no producen descargas peligrosas, pero las pinzas no se dejan unidas entre sí ni conectadas mucho tiempo, porque las pilas se calientan.",
+      "El docente corta y pela el alambre; cuidado con las puntas de los alambres y con el borde del papel aluminio.",
+      "Lavarse las manos al terminar. El azufre sobrante se devuelve a su bolsa cerrada; los alambres y el aluminio se reutilizan o van a la basura sólida."
+     ],
+     "datos_esperados": "Al ordenar por masa, casi todo encaja hasta el final: el potasio (masa algo menor que la del argón; valores de la tabla de referencia) queda en la columna del helio y el neón, aunque forma KCl como el sodio, y el argón, que no forma compuestos, cae bajo el sodio. Al ordenar por número atómico (argón 18, potasio 19) cada uno vuelve a la columna de sus semejantes. En las pruebas, el cobre, el aluminio y el alambre de hierro son brillantes (el hierro, al lijarlo), se doblan y encienden el LED con fuerza: son metales. El grafito brilla y enciende el LED (a veces algo más débil), pero se quiebra: el carbono es un no metal y el grafito es una forma suya que conduce, un caso que muestra que una sola propiedad no basta para clasificar. El azufre es amarillo, opaco, se desmorona y no enciende el LED: no metal."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.2/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.2"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.2",
+    "CON:quimica/tabla-periodica"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "De la masa al número atómico: tarjetas, pruebas de materiales y tabla mural",
+   "proposito": "Reconstruir la tabla de los primeros 20 elementos con tarjetas de datos, primero por masa atómica, como Mendeléiev, y luego por número atómico, para ver dónde falla el orden por masa y por qué la ley periódica actual usa el número atómico. Después, probar el aspecto, la flexibilidad y la conductividad de cinco elementos para ubicarlos como metales o no metales en una tabla mural del grupo.",
+   "materiales": [
+    "Un juego de 20 tarjetas por equipo, preparadas por el docente con el libro de texto o la tabla de referencia: nombre del elemento, masa atómica, estado a temperatura ambiente, fórmula de su compuesto con cloro (o «no forma») y, tapado con un papel adhesivo, el número atómico",
+    "Un circuito de prueba por equipo: dos pilas AA en su portapilas, un LED, una resistencia de 100 Ω y tres cables con pinzas de caimán",
+    "Muestras por equipo: 10 cm de alambre de cobre pelado (lo pela el docente), una tira de papel aluminio de 2 cm × 10 cm, 10 cm de alambre de amarre de hierro sin galvanizar (negro o recocido, de ferretería) lijado en las puntas, una mina de portaminas de grafito y una cucharadita de azufre en polvo de agroservicio en una tapa plástica",
+    "Lupa (opcional), un trozo de lija fina y una cucharita para apretar el azufre en la tapa",
+    "Pliego de papel con una tabla periódica de 18 columnas y 7 filas dibujada, marcadores de tres colores y cinta adhesiva para el mural",
+    "Gafas para quien manipule el azufre y para el docente"
+   ],
+   "procedimiento": [
+    "Sesión 1 (55 min)",
+    "1. (5 min) Formen equipos de cuatro y repartan los roles: lector de tarjetas, ordenador, registrador y responsable de materiales. Sin destapar el número atómico, revisen las tarjetas.",
+    "2. (12 min) Ordenen las tarjetas por masa atómica creciente. Acomódenlas en filas de modo que los elementos con fórmulas de cloruro parecidas (por ejemplo, XCl, XCl₂ o «no forma») queden en la misma columna. Anoten en qué lugar una tarjeta no encaja con su columna.",
+    "3. (5 min) Destapen los números atómicos, ordenen de nuevo por número atómico y anoten qué tarjetas cambiaron de lugar y si las columnas quedaron coherentes.",
+    "4. (15 min) Pruebas de materiales: observen el brillo de cada muestra (lijen un poco el hierro si está opaco), intenten doblarla con cuidado (el azufre solo se aprieta con la cucharita) y conéctenla entre las dos pinzas del circuito; en el azufre, apoyen las dos puntas de las pinzas sobre el polvo apretado, a 1 cm una de otra. Anoten si el LED enciende fuerte, débil o nada. Desconecten el circuito después de cada prueba.",
+    "5. (8 min) Con sus resultados y la tabla periódica, peguen la ficha de cada material en su casilla del mural y coloreen las zonas de metales, no metales y metaloides que indica la tabla de referencia.",
+    "6. (10 min) Respondan en equipo las dos primeras preguntas de análisis, guarden las muestras y lávense las manos."
+   ],
+   "seguridad": [
+    "El azufre en polvo irrita los ojos y las vías respiratorias: no se sopla ni se huele, se usa con gafas y nunca se calienta ni se acerca a una llama, porque al arder produce un gas tóxico.",
+    "El circuito usa solo dos pilas AA, que no producen descargas peligrosas, pero las pinzas no se dejan unidas entre sí ni conectadas mucho tiempo, porque las pilas se calientan.",
+    "El docente corta y pela el alambre; cuidado con las puntas de los alambres y con el borde del papel aluminio.",
+    "Lavarse las manos al terminar. El azufre sobrante se devuelve a su bolsa cerrada; los alambres y el aluminio se reutilizan o van a la basura sólida."
+   ],
+   "datos_esperados": "Al ordenar por masa, casi todo encaja hasta el final: el potasio (masa algo menor que la del argón; valores de la tabla de referencia) queda en la columna del helio y el neón, aunque forma KCl como el sodio, y el argón, que no forma compuestos, cae bajo el sodio. Al ordenar por número atómico (argón 18, potasio 19) cada uno vuelve a la columna de sus semejantes. En las pruebas, el cobre, el aluminio y el alambre de hierro son brillantes (el hierro, al lijarlo), se doblan y encienden el LED con fuerza: son metales. El grafito brilla y enciende el LED (a veces algo más débil), pero se quiebra: el carbono es un no metal y el grafito es una forma suya que conduce, un caso que muestra que una sola propiedad no basta para clasificar. El azufre es amarillo, opaco, se desmorona y no enciende el LED: no metal.",
+   "analisis": [
+    "(Paso 6) ¿En qué lugar dejó de funcionar el orden por masa y cómo lo notaron en las tarjetas? ¿Qué cambió al ordenar por número atómico y por qué esa es la base de la ley periódica actual?",
+    "(Paso 6) ¿Qué material no se comportó como esperaban por su lugar en la tabla? Expliquen por qué para clasificar un elemento como metal, no metal o metaloide se usan varias propiedades y no solo el brillo o la conductividad.",
+    "Tarea: Con la tabla de referencia, comprueben si el cobalto y el níquel, o el telurio y el yodo, tienen el mismo problema que el argón y el potasio, y escriban la ley periódica actual con sus palabras.",
+    "Tarea: Preparen para el mural la ficha de un elemento que se use en El Salvador (por ejemplo, el aluminio de las latas, el calcio de la cal o el azufre de los fungicidas agrícolas) con su grupo, su período, su tipo y un uso, citando de dónde tomaron los datos."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin LED ni resistencia: un multímetro en la escala de resistencia o un foco de linterna de 1.5 V con una pila (con el foco, el grafito puede no encenderlo; anótenlo como conducción débil). Sin azufre: se reemplaza por un trozo de carbón vegetal y se discute que su conductividad varía según cómo se fabricó. Sin laboratorio ni internet: las tarjetas se copian del libro de texto y el docente entrega los resultados de un grupo de ejemplo (cobre, aluminio y hierro: brillantes, se doblan, LED fuerte; grafito: brillante, se quiebra, LED encendido; azufre: amarillo, opaco, se desmorona, LED apagado).",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.3/1": {
   "tipo": "contenido",
@@ -195011,10 +196269,102 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.3/1",
+    "decision": "corregir",
+    "justificacion": "Configuraciones, iones, bloque y grupo correctos; las pruebas (carbonatos de Mg y Ca poco solubles, jabón que forma grumos con agua dura) funcionan. Riesgo: con 3 cucharaditas por 250 mL el NaCl y el KCl quedan cerca de 1 mol/L y esa sal reduce la espuma del jabón, lo que oculta el contraste grupo 1/grupo 2. Se baja a 1 cucharadita y se prevé la turbidez lenta del magnesio.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.3",
+      "cita": "Deduce grupo, periodo y bloque desde la configuración y escribe la de sus iones más comunes."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Unos 15 g de NaCl en 250 mL ≈ 1 mol/L; la sal en exceso disminuye la solubilidad del jabón de sodio (efecto usado para salar el jabón)."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Con 1 cucharadita, Mg²⁺ y Ca²⁺ siguen muy por encima de la dureza del agua y precipitan con el carbonato."
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "materiales": [
+      "Disoluciones que prepara el docente con agua purificada de garrafón, 250 mL de cada una en botellas rotuladas: sal de mesa (cloruro de sodio), sal baja en sodio o cloruro de potasio de laboratorio, sal de Epsom de farmacia (sulfato de magnesio) y cloruro de calcio de laboratorio o de tienda de insumos para quesos; 1 cucharadita rasa de cada sal por botella (más sal no mejora la prueba: con mucho cloruro de sodio o de potasio el jabón hace menos espuma aunque no haya calcio ni magnesio)",
+      "250 mL de disolución de carbonato de sodio (3 cucharaditas en agua purificada), del laboratorio o hecho por el docente al hornear bicarbonato de sodio",
+      "250 mL de agua jabonosa: 1 cucharada de jabón de barra rallado (no detergente) disuelto en agua purificada tibia",
+      "8 vasos plásticos transparentes pequeños por equipo, rotulados con cinta adhesiva y marcador",
+      "Una jeringa de 10 mL sin aguja por disolución o una cucharita medidora",
+      "Fondo oscuro (cartulina negra) para ver la turbidez",
+      "Gafas para cada estudiante",
+      "Tabla periódica y una tabla de datos en el cuaderno: sal, ion, configuración del ion, grupo, con carbonato, con jabón"
+     ],
+     "datos_esperados": "Con carbonato, los vasos de magnesio y de calcio se ponen blancos y turbios: se forman carbonatos poco solubles. El de calcio aparece de inmediato; el de magnesio puede tardar un poco más o verse más tenue, porque su carbonato es algo más soluble; si a los 3 minutos no hay turbidez, se deja reposar hasta el final de la clase. Los de sodio y potasio quedan transparentes. Con jabón, el sodio y el potasio dan espuma abundante y un líquido uniforme; el magnesio y el calcio dan poca espuma y grumos o nata, como el agua dura. Las configuraciones muestran el porqué del agrupamiento: Na [Ne] 3s¹ y K [Ar] 4s¹ (grupo 1, bloque s) pierden un electrón y quedan Na⁺ [Ne] y K⁺ [Ar]; Mg [Ne] 3s² y Ca [Ar] 4s² (grupo 2, bloque s) pierden dos y quedan Mg²⁺ [Ne] y Ca²⁺ [Ar]. El Na⁺ y el Mg²⁺ tienen la misma configuración, pero se comportan distinto: la carga del ion, que depende del grupo, pesa más que tener la misma configuración."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.3/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.3"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.3",
+    "CON:quimica/tabla-periodica"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Familias del bloque s: iones 1+ y 2+ en la cocina",
+   "proposito": "Relacionar la configuración de valencia ns¹ o ns² con el grupo y con la carga del ion, y comprobar que los elementos de un mismo grupo forman compuestos parecidos: las sales de magnesio y de calcio (grupo 2, iones 2+) forman sólidos blancos con el carbonato y grumos con el jabón, y las de sodio y potasio (grupo 1, iones 1+) no.",
+   "materiales": [
+    "Disoluciones que prepara el docente con agua purificada de garrafón, 250 mL de cada una en botellas rotuladas: sal de mesa (cloruro de sodio), sal baja en sodio o cloruro de potasio de laboratorio, sal de Epsom de farmacia (sulfato de magnesio) y cloruro de calcio de laboratorio o de tienda de insumos para quesos; 1 cucharadita rasa de cada sal por botella (más sal no mejora la prueba: con mucho cloruro de sodio o de potasio el jabón hace menos espuma aunque no haya calcio ni magnesio)",
+    "250 mL de disolución de carbonato de sodio (3 cucharaditas en agua purificada), del laboratorio o hecho por el docente al hornear bicarbonato de sodio",
+    "250 mL de agua jabonosa: 1 cucharada de jabón de barra rallado (no detergente) disuelto en agua purificada tibia",
+    "8 vasos plásticos transparentes pequeños por equipo, rotulados con cinta adhesiva y marcador",
+    "Una jeringa de 10 mL sin aguja por disolución o una cucharita medidora",
+    "Fondo oscuro (cartulina negra) para ver la turbidez",
+    "Gafas para cada estudiante",
+    "Tabla periódica y una tabla de datos en el cuaderno: sal, ion, configuración del ion, grupo, con carbonato, con jabón"
+   ],
+   "procedimiento": [
+    "Sesión 1 (55 min)",
+    "1. (10 min) En equipo escriban la configuración abreviada del Na, K, Mg y Ca y la de sus iones Na⁺, K⁺, Mg²⁺ y Ca²⁺. Indiquen el bloque, el grupo y el período de cada elemento y predigan qué sales se comportarán de forma parecida.",
+    "2. (5 min) Rotulen los ocho vasos: cuatro «carbonato» y cuatro «jabón», cada uno con el nombre de una sal. Pongan 10 mL de la disolución de cada sal en los dos vasos que le corresponden.",
+    "3. (10 min) Prueba con carbonato: agreguen 5 mL de disolución de carbonato de sodio a cada vaso «carbonato», sobre el fondo oscuro. Observen 3 minutos y anoten si aparece turbidez o un sólido blanco y qué tan pronto.",
+    "4. (10 min) Prueba con jabón: agreguen 5 mL de agua jabonosa a cada vaso «jabón», cúbranlo con la mano limpia o una tapa y agítenlo 10 segundos. Anoten cuánta espuma se forma y si aparecen grumos o una nata en la superficie.",
+    "5. (5 min) Copien sus resultados en la tabla del pizarrón y compárenlos con los de los demás equipos.",
+    "6. (15 min) Respondan en equipo las dos primeras preguntas de análisis. Al final, viertan el contenido de los vasos al desagüe con abundante agua y enjuaguen los vasos."
+   ],
+   "seguridad": [
+    "Gafas durante toda la práctica: el carbonato de sodio y el cloruro de calcio irritan los ojos y la piel. Si salpica, lavar con abundante agua y avisar al docente.",
+    "El docente prepara las disoluciones: el cloruro de calcio se calienta al disolverse, así que se agrega poco a poco al agua.",
+    "No se prueba ninguna disolución, aunque sean sales de cocina o de farmacia; lavarse las manos al terminar.",
+    "Desechos: las cantidades son pequeñas y las sales no son tóxicas en estas concentraciones; se vierten al desagüe con abundante agua."
+   ],
+   "datos_esperados": "Con carbonato, los vasos de magnesio y de calcio se ponen blancos y turbios: se forman carbonatos poco solubles. El de calcio aparece de inmediato; el de magnesio puede tardar un poco más o verse más tenue, porque su carbonato es algo más soluble; si a los 3 minutos no hay turbidez, se deja reposar hasta el final de la clase. Los de sodio y potasio quedan transparentes. Con jabón, el sodio y el potasio dan espuma abundante y un líquido uniforme; el magnesio y el calcio dan poca espuma y grumos o nata, como el agua dura. Las configuraciones muestran el porqué del agrupamiento: Na [Ne] 3s¹ y K [Ar] 4s¹ (grupo 1, bloque s) pierden un electrón y quedan Na⁺ [Ne] y K⁺ [Ar]; Mg [Ne] 3s² y Ca [Ar] 4s² (grupo 2, bloque s) pierden dos y quedan Mg²⁺ [Ne] y Ca²⁺ [Ar]. El Na⁺ y el Mg²⁺ tienen la misma configuración, pero se comportan distinto: la carga del ion, que depende del grupo, pesa más que tener la misma configuración.",
+   "analisis": [
+    "(Paso 6) ¿Qué sales se comportaron igual en las dos pruebas? Relaciónenlo con su configuración de valencia (ns¹ o ns²), su grupo y la carga de su ion.",
+    "(Paso 6) El Na⁺ y el Mg²⁺ tienen la misma configuración, [Ne], pero no se comportaron igual. ¿Qué diferencia entre los dos iones explica sus resultados?",
+    "Tarea: El estroncio tiene la configuración [Kr] 5s². Deduzcan su período, su grupo y su bloque, escriban la configuración de su ion más común y predigan qué pasaría con una de sus sales en la prueba del carbonato.",
+    "Tarea: El agua de algunos pozos de El Salvador hace poca espuma con el jabón y deja sarro en las ollas. ¿Qué iones esperan que tenga, según esta práctica? Escriban la configuración de esos iones."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin cloruro de calcio: agua de cal clara (cal de ferretería con agua, reposada y filtrada por el docente, con gafas porque es corrosiva para los ojos) da el mismo sólido blanco con el carbonato. Sin carbonato de sodio de laboratorio: el docente hornea en casa bicarbonato de sodio en una bandeja a unos 200 °C durante una hora, con lo que se convierte en carbonato. Sin cloruro de potasio: la sal baja en sodio mezcla cloruro de potasio y de sodio, que se comportan igual en las dos pruebas. Sin laboratorio ni internet: el docente entrega los resultados de un grupo de ejemplo (calcio y magnesio: turbidez blanca con carbonato y grumos con jabón; sodio y potasio: transparentes con carbonato y espuma abundante con jabón) y los equipos hacen el paso 1 y el análisis.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.4/1": {
   "tipo": "contenido",
@@ -195104,10 +196454,82 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.4/1",
+    "decision": "corregir",
+    "justificacion": "El diseño es correcto: diente de sierra, Zef y apantallamiento, cationes menores y aniones mayores, serie isoelectrónica O²⁻ > Na⁺ > Mg²⁺, y la advertencia de usar una sola fuente. Solo se ajusta la proporción: con radios covalentes usuales Li→F queda en 0.45-0.53 y Na→Cl en 0.61-0.64, así que «la mitad o algo más» no describe el período 3.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4",
+      "cita": "Explica el radio atómico con la carga nuclear efectiva y compara átomos con sus iones."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Radios covalentes aproximados (Cordero y col., 2008): Li 128, F 57, Na 166, Cl 102 pm; otras tablas: Li 134, F 71, Na 154, Cl 99 pm."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "datos_esperados": "La gráfica forma un diente de sierra: dentro de cada período el radio baja mucho (del Li al F, a cerca de la mitad; del Na al Cl, a cerca de dos tercios; la proporción exacta depende de la tabla de referencia) y al empezar un período sube de golpe (del F al Na y del Cl al K). El potasio y el calcio quedan por encima de todos los anteriores. Dentro de un período los electrones entran en la misma capa mientras crece la carga nuclear efectiva, que los atrae más; al empezar un período aparece una capa nueva, más lejos y apantallada por las internas. En el modelo a escala, el Na⁺ y el Mg²⁺ salen claramente más pequeños que sus átomos (pierden su capa externa), y el Cl⁻ y el O²⁻ claramente más grandes que los suyos (los electrones ganados aumentan la repulsión). Los valores exactos son los de la tabla de referencia; distintas tablas miden el radio de distinta forma, porque el átomo no tiene un borde definido, por eso todos los datos se toman de la misma fuente."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.4/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.4"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.4",
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Gráfica de radios atómicos y modelo a escala de átomos e iones",
+   "proposito": "Graficar el radio atómico contra el número atómico de los elementos del litio al calcio con datos de una tabla de referencia, describir el patrón periódico y explicarlo con la carga nuclear efectiva y el apantallamiento; luego construir círculos a escala de átomos y de sus iones para comparar sus tamaños.",
+   "materiales": [
+    "Una hoja impresa o copiada en la pizarra con los radios covalentes de Z = 3 a 20 y los radios iónicos de Na⁺, Mg²⁺, Cl⁻ y O²⁻, todos de la misma tabla de referencia (el docente anota la fuente)",
+    "Papel milimetrado o cuadriculado, regla y lápices de dos colores por estudiante",
+    "Cartulina de colores, compás y tijeras por equipo",
+    "Pegamento y un pliego de papel para pegar los círculos por equipo",
+    "Calculadora (o la del celular)"
+   ],
+   "procedimiento": [
+    "Sesión 1 (55 min)",
+    "1. (5 min) Pregunta guía: «¿Por qué el sodio es más grande que el cloro si el cloro tiene más protones y electrones?». Cada estudiante escribe su predicción en una oración.",
+    "2. (15 min) Cada estudiante grafica el radio covalente (eje vertical, en pm) contra el número atómico (eje horizontal) de Z = 3 a 20. Se omiten el neón y el argón, porque muchas tablas no dan su radio covalente o lo miden de otra forma. Unan con una línea los puntos de cada período.",
+    "3. (10 min) Marquen con un color los inicios de período (Li, Na, K) y con otro los finales (F, Cl). Escriban bajo la gráfica cómo cambia el radio dentro de un período y al pasar de un período al siguiente.",
+    "4. (15 min) En equipo, con la escala 1 cm = 20 pm, calculen el radio en centímetros del Na, Na⁺, Cl, Cl⁻, Mg, Mg²⁺, O y O²⁻, recorten círculos de cartulina de ese radio con el compás y péguenlos por parejas átomo–ion en el pliego.",
+    "5. (10 min) Respondan en equipo las dos primeras preguntas de análisis y revisen su predicción del paso 1."
+   ],
+   "seguridad": [
+    "Cuidado con la punta del compás y con las tijeras: se pasan cerradas y con la punta hacia abajo.",
+    "Los recortes de cartulina se recogen al terminar para reciclarlos."
+   ],
+   "datos_esperados": "La gráfica forma un diente de sierra: dentro de cada período el radio baja mucho (del Li al F, a cerca de la mitad; del Na al Cl, a cerca de dos tercios; la proporción exacta depende de la tabla de referencia) y al empezar un período sube de golpe (del F al Na y del Cl al K). El potasio y el calcio quedan por encima de todos los anteriores. Dentro de un período los electrones entran en la misma capa mientras crece la carga nuclear efectiva, que los atrae más; al empezar un período aparece una capa nueva, más lejos y apantallada por las internas. En el modelo a escala, el Na⁺ y el Mg²⁺ salen claramente más pequeños que sus átomos (pierden su capa externa), y el Cl⁻ y el O²⁻ claramente más grandes que los suyos (los electrones ganados aumentan la repulsión). Los valores exactos son los de la tabla de referencia; distintas tablas miden el radio de distinta forma, porque el átomo no tiene un borde definido, por eso todos los datos se toman de la misma fuente.",
+   "analisis": [
+    "(Paso 5) Describan el patrón de la gráfica dentro de un período y entre períodos, y explíquenlo con la carga nuclear efectiva y el apantallamiento.",
+    "(Paso 5) Con el modelo a escala, comparen cada átomo con su ion. ¿Por qué los cationes son más pequeños y los aniones más grandes que sus átomos?",
+    "Tarea: El Na⁺, el Mg²⁺ y el O²⁻ tienen 10 electrones cada uno. Ordénenlos por tamaño con los datos de la tabla de referencia y expliquen el orden con el número de protones de cada uno.",
+    "Tarea: ¿Por qué es importante tomar todos los radios de una misma fuente? Busquen el radio del sodio en dos tablas distintas y anoten la diferencia y la definición de radio que usa cada una."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin papel milimetrado: hoja cuadriculada con 1 cuadro = 10 pm. Sin compás: un hilo amarrado a un lápiz y fijado con el dedo en el centro. Sin hoja de datos impresa ni internet: el docente copia en la pizarra los radios del libro de texto o de su tabla de referencia, anotando de dónde los tomó. Con computadora: la gráfica se hace en una hoja de cálculo con los mismos datos.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.5/1": {
   "tipo": "contenido",
@@ -195200,10 +196622,92 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.5/1",
+    "decision": "corregir",
+    "justificacion": "Los 20 valores de primera energía y las sucesivas de Mg y Al coinciden con NIST; los cocientes (Mg 5.3 entre 2.ª y 3.ª; Al 4.2 entre 3.ª y 4.ª, y 3.1 entre 1.ª y 2.ª) y las explicaciones de B y O son correctos. Falta un dato: la tarea pide justificar Na⁺ con la hoja, que no trae las energías sucesivas del sodio. Se agregan.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.5",
+      "cita": "Deduce los electrones de valencia por el salto de las energías sucesivas y explica su variación periódica."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "NIST: Na 495.8, 4562, 6910 kJ/mol aprox.; Mg 737.7, 1450.7, 7732.7; Al 577.5, 1816.7, 2744.8, 11577."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "materiales": [
+      "Hoja de datos impresa, una por pareja (valores aproximados en kJ/mol tomados de una tabla de referencia como la del NIST; la o el docente los verifica antes de imprimir). Primera energía de ionización de Z = 1 a 20: H 1 312, He 2 372, Li 520, Be 900, B 801, C 1 086, N 1 402, O 1 314, F 1 681, Ne 2 081, Na 496, Mg 738, Al 578, Si 787, P 1 012, S 1 000, Cl 1 251, Ar 1 521, K 419, Ca 590. Energías sucesivas, de la primera a la quinta: Mg 738, 1 451, 7 733, 10 543, 13 630; Al 578, 1 817, 2 745, 11 577, 14 842. Para la tarea, energías sucesivas del sodio, de la primera a la tercera: Na 496, 4 562, 6 910",
+      "Dos hojas de papel milimetrado o cuadriculado por estudiante, regla y lápices de dos colores",
+      "Calculadora (la del celular sirve)",
+      "Tabla periódica del aula o del libro",
+      "Opcional: computadora del CRA con hoja de cálculo para hacer las gráficas con eje lineal y logarítmico"
+     ],
+     "datos_esperados": "Magnesio: el cociente mayor está entre la segunda y la tercera energía (alrededor de 5), así que tiene dos electrones de valencia (grupo 2). Aluminio: el cociente mayor está entre la tercera y la cuarta (alrededor de 4), así que tiene tres (grupo 13); su segunda energía también es unas tres veces la primera, porque el primer electrón sale del 3p y el segundo del 3s, pero ese salto es menor que el de pasar a la capa 2. En escala lineal los saltos se ven, pero los primeros valores quedan aplastados; en escala logarítmica se comparan mejor. En la gráfica de la primera energía contra Z aparecen picos en He, Ne y Ar y mínimos en Li, Na y K: dentro de un período la energía tiende a aumentar con la carga nuclear efectiva y, al empezar un período, cae porque el electrón está en una capa nueva, más lejana y apantallada. La tendencia tiene excepciones: cae de Be a B y de Mg a Al (el electrón p tiene más energía y está apantallado por el s) y de N a O y de P a S (el electrón que sale comparte orbital y lo repele su pareja). Para la tarea: la segunda energía del sodio es unas nueve veces la primera y la tercera del magnesio unas cinco veces la segunda; por eso se forman Na⁺ y Mg²⁺ y no Na²⁺ ni Mg³⁺."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.5/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.5"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.5",
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Saltos y picos: graficar energías de ionización con datos reales",
+   "proposito": "Ninguna escuela puede medir energías de ionización, pero sí analizar datos medidos por otros. Las parejas grafican las energías de ionización sucesivas del magnesio y del aluminio para deducir sus electrones de valencia a partir del primer salto grande, y la primera energía de ionización de los elementos 1 a 20 para explicar la tendencia en períodos y grupos, los máximos de los gases nobles y las caídas del boro y del oxígeno con los subniveles.",
+   "materiales": [
+    "Hoja de datos impresa, una por pareja (valores aproximados en kJ/mol tomados de una tabla de referencia como la del NIST; la o el docente los verifica antes de imprimir). Primera energía de ionización de Z = 1 a 20: H 1 312, He 2 372, Li 520, Be 900, B 801, C 1 086, N 1 402, O 1 314, F 1 681, Ne 2 081, Na 496, Mg 738, Al 578, Si 787, P 1 012, S 1 000, Cl 1 251, Ar 1 521, K 419, Ca 590. Energías sucesivas, de la primera a la quinta: Mg 738, 1 451, 7 733, 10 543, 13 630; Al 578, 1 817, 2 745, 11 577, 14 842. Para la tarea, energías sucesivas del sodio, de la primera a la tercera: Na 496, 4 562, 6 910",
+    "Dos hojas de papel milimetrado o cuadriculado por estudiante, regla y lápices de dos colores",
+    "Calculadora (la del celular sirve)",
+    "Tabla periódica del aula o del libro",
+    "Opcional: computadora del CRA con hoja de cálculo para hacer las gráficas con eje lineal y logarítmico"
+   ],
+   "procedimiento": [
+    "Antes de la clase (docente): verifica los valores de la hoja de datos con su tabla de referencia, los imprime o los copia en un pliego para el pizarrón.",
+    "Sesión 1 (55 min)",
+    "1. (5 min) Predicción individual: con la configuración del magnesio (1s² 2s² 2p⁶ 3s²) escriban después de cuántos electrones esperan el primer salto grande de energía y por qué. Hagan lo mismo con el aluminio (1s² 2s² 2p⁶ 3s² 3p¹).",
+    "2. (12 min) En una hoja, grafiquen la energía de ionización (eje vertical, kJ/mol) contra el número de electrón quitado (1 a 5) para el magnesio y el aluminio, con un color cada uno. Si usan hoja de cálculo, hagan la gráfica con eje vertical lineal y luego logarítmico, y comparen.",
+    "3. (8 min) Calculen el cociente entre cada energía y la anterior (segunda entre primera, tercera entre segunda, y así). Marquen el cociente mayor de cada elemento, deduzcan sus electrones de valencia y compárenlos con su grupo y con la predicción del paso 1.",
+    "4. (12 min) En otra hoja, grafiquen la primera energía de ionización contra el número atómico, de 1 a 20, y unan los puntos. Marquen con un color los gases nobles y con otro los metales alcalinos.",
+    "5. (8 min) Rodeen los puntos donde la línea baja dentro de un mismo período (Be a B, N a O, Mg a Al, P a S) y escriban en pareja una explicación con los subniveles y los diagramas de orbitales.",
+    "6. (10 min) Puesta en común: cada pareja presenta una caída o un máximo y el grupo responde las tres primeras preguntas de análisis."
+   ],
+   "seguridad": [
+    "Práctica de análisis de datos: no se usan reactivos, calor ni vidrio.",
+    "Si se usan computadoras del CRA, los cables y regletas quedan lejos de las botellas de agua y del paso de las personas."
+   ],
+   "datos_esperados": "Magnesio: el cociente mayor está entre la segunda y la tercera energía (alrededor de 5), así que tiene dos electrones de valencia (grupo 2). Aluminio: el cociente mayor está entre la tercera y la cuarta (alrededor de 4), así que tiene tres (grupo 13); su segunda energía también es unas tres veces la primera, porque el primer electrón sale del 3p y el segundo del 3s, pero ese salto es menor que el de pasar a la capa 2. En escala lineal los saltos se ven, pero los primeros valores quedan aplastados; en escala logarítmica se comparan mejor. En la gráfica de la primera energía contra Z aparecen picos en He, Ne y Ar y mínimos en Li, Na y K: dentro de un período la energía tiende a aumentar con la carga nuclear efectiva y, al empezar un período, cae porque el electrón está en una capa nueva, más lejana y apantallada. La tendencia tiene excepciones: cae de Be a B y de Mg a Al (el electrón p tiene más energía y está apantallado por el s) y de N a O y de P a S (el electrón que sale comparte orbital y lo repele su pareja). Para la tarea: la segunda energía del sodio es unas nueve veces la primera y la tercera del magnesio unas cinco veces la segunda; por eso se forman Na⁺ y Mg²⁺ y no Na²⁺ ni Mg³⁺.",
+   "analisis": [
+    "(Paso 3) ¿Cuántos electrones de valencia tienen el magnesio y el aluminio según sus datos? ¿Por qué el aumento de la primera a la segunda energía del aluminio no indica que tenga un solo electrón de valencia?",
+    "(Paso 5) Expliquen con los diagramas de orbitales por qué la primera energía de ionización baja del berilio al boro y del nitrógeno al oxígeno. ¿Estas caídas contradicen la tendencia del período o se explican con los subniveles?",
+    "(Paso 6) ¿Por qué los gases nobles ocupan los picos de la gráfica y los metales alcalinos los mínimos? ¿Cómo cambia la primera energía de ionización al bajar en el grupo 1 y por qué?",
+    "Tarea: con los datos de la hoja, justifiquen por qué el sodio forma iones 1+ y el magnesio iones 2+, y no iones 2+ y 3+.",
+    "Tarea: obtener aluminio metálico de su mineral exige devolverle tres electrones a cada ion Al³⁺, y eso se logra con mucha energía eléctrica. Escriban dos razones para reciclar las latas en lugar de tirarlas."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin papel milimetrado: hoja cuadriculada con una escala acordada por el grupo. Sin computadora ni internet: toda la práctica se hace en papel con la hoja de datos impresa o copiada del pizarrón. Con hoja de cálculo: además de las gráficas, la pareja puede calcular los cocientes con una fórmula y comparar la gráfica lineal con la logarítmica.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.6/1": {
   "tipo": "contenido",
@@ -195295,10 +196799,101 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.6/1",
+    "decision": "corregir",
+    "justificacion": "Los valores coinciden con tablas usuales (Cl −349, F −328, S −200, Ca −2). Tres fallas: la escala deja el Ca (−2) en amarillo aunque el dato esperado lo pone en azul; el rojo no cubre el grupo 16 (O es −141, anaranjado); y «más negativa hacia arriba» es falso para O/S y F/Cl. Se añade el aviso de signo, porque muchos libros dan la afinidad como energía liberada.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.6",
+      "cita": "Interpreta el signo de la afinidad electrónica como proceso exotérmico o endotérmico; halógenos con los valores más favorables."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Afinidades aproximadas: O −141 < S −200; F −328 < Cl −349; C −122, Si −134, P −72: el período 2 libera menos que el 3."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "materiales": [
+      "Hoja de datos impresa, una por pareja: afinidad electrónica como ΔE del proceso X(g) + e⁻ → X⁻(g), en kJ/mol (valores aproximados de una tabla de referencia; la o el docente los verifica antes de imprimir). H −73, He positivo, Li −60, Be positivo, B −27, C −122, N cercano a cero, O −141, F −328, Ne positivo, Na −53, Mg positivo, Al −42, Si −134, P −72, S −200, Cl −349, Ar positivo, K −48, Ca −2, Br −325, I −295. «Positivo» significa que el anión no es estable en fase gaseosa: el proceso absorbe energía. Ojo: muchos libros dan la afinidad electrónica como energía liberada, con el signo contrario (cloro +349); antes de comparar, revisen qué convención usa su libro",
+      "Una tabla periódica en blanco impresa o dibujada en hoja cuadriculada por pareja, con las casillas de los elementos 1 a 20 más el bromo y el yodo",
+      "Lápices de colores: rojo, anaranjado, amarillo y azul (o gris)",
+      "Pliego de papel y marcadores para el mapa del grupo",
+      "Opcional: computadora del CRA con hoja de cálculo para hacer el mapa con formato condicional"
+     ],
+     "procedimiento": [
+      "Antes de la clase (docente): verifica los valores con su tabla de referencia, imprime la hoja de datos y dibuja en el pliego la tabla en blanco para el mapa del grupo.",
+      "Sesión 1 (55 min)",
+      "1. (5 min) Predicción individual: ordenen F, Cl, O, N y Ne de mayor a menor energía liberada al captar un electrón y escriban si cada proceso será exotérmico o endotérmico.",
+      "2. (8 min) Con la convención de la hoja (ΔE negativo: se libera energía), clasifiquen cada valor como exotérmico o endotérmico y anoten la clasificación junto al símbolo.",
+      "3. (15 min) Coloreen el mapa con esta escala: rojo, −200 kJ/mol o menos; anaranjado, de −199 a −100; amarillo, de −99 a −10; azul o gris, de −9 a cero o positivo (cercano a cero). Escriban el valor dentro de cada casilla.",
+      "4. (10 min) Busquen las tendencias: ¿hacia dónde se concentra el rojo? Marquen con una estrella las casillas que rompen la tendencia de su período o de su grupo.",
+      "5. (10 min) En pareja escriban una explicación para los halógenos y otra para cada excepción marcada, con la configuración electrónica y la carga nuclear efectiva.",
+      "6. (7 min) Puesta en común: cada pareja pasa al pliego los colores de una fila de la tabla; el grupo compara el mapa con las predicciones del paso 1."
+     ],
+     "datos_esperados": "El rojo queda en el grupo 17 (cloro, bromo, flúor y yodo) y en el azufre; el oxígeno queda en anaranjado, junto con el carbono y el silicio. Los halógenos liberan más energía porque el electrón completa su capa externa y siente una carga nuclear efectiva alta. Al bajar en el grupo 17, del cloro al yodo, el valor se hace menos negativo porque el electrón queda más lejos y más apantallado. En azul o gris quedan los grupos 2 y 18 (el electrón iría a un subnivel p vacío o a una capa nueva; el calcio, con unos −2, libera casi nada) y el nitrógeno, cercano a cero, porque el electrón tendría que aparearse en un subnivel 2p semilleno; el fósforo, por lo mismo, libera menos que el silicio y el azufre. El flúor libera menos que el cloro, y el oxígeno menos que el azufre, porque la capa 2 es muy pequeña y la repulsión entre electrones es mayor. La tendencia general es: más negativa hacia la derecha, hasta el grupo 17, y menos negativa al bajar en un grupo a partir del período 3; los elementos del período 2 y los grupos 2, 15 y 18 son excepciones."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.6/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.6"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.6",
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Mapa de calor de la afinidad electrónica: tendencias y excepciones a color",
+   "proposito": "Interpretar el signo de la afinidad electrónica como proceso exotérmico o endotérmico y hacer visibles sus tendencias en la tabla periódica coloreando un mapa de calor con datos de referencia. Con el mapa, las parejas explican por qué los halógenos liberan más energía al captar un electrón y por qué los grupos 2, 15 y 18 y el flúor se salen de la tendencia.",
+   "materiales": [
+    "Hoja de datos impresa, una por pareja: afinidad electrónica como ΔE del proceso X(g) + e⁻ → X⁻(g), en kJ/mol (valores aproximados de una tabla de referencia; la o el docente los verifica antes de imprimir). H −73, He positivo, Li −60, Be positivo, B −27, C −122, N cercano a cero, O −141, F −328, Ne positivo, Na −53, Mg positivo, Al −42, Si −134, P −72, S −200, Cl −349, Ar positivo, K −48, Ca −2, Br −325, I −295. «Positivo» significa que el anión no es estable en fase gaseosa: el proceso absorbe energía. Ojo: muchos libros dan la afinidad electrónica como energía liberada, con el signo contrario (cloro +349); antes de comparar, revisen qué convención usa su libro",
+    "Una tabla periódica en blanco impresa o dibujada en hoja cuadriculada por pareja, con las casillas de los elementos 1 a 20 más el bromo y el yodo",
+    "Lápices de colores: rojo, anaranjado, amarillo y azul (o gris)",
+    "Pliego de papel y marcadores para el mapa del grupo",
+    "Opcional: computadora del CRA con hoja de cálculo para hacer el mapa con formato condicional"
+   ],
+   "procedimiento": [
+    "Antes de la clase (docente): verifica los valores con su tabla de referencia, imprime la hoja de datos y dibuja en el pliego la tabla en blanco para el mapa del grupo.",
+    "Sesión 1 (55 min)",
+    "1. (5 min) Predicción individual: ordenen F, Cl, O, N y Ne de mayor a menor energía liberada al captar un electrón y escriban si cada proceso será exotérmico o endotérmico.",
+    "2. (8 min) Con la convención de la hoja (ΔE negativo: se libera energía), clasifiquen cada valor como exotérmico o endotérmico y anoten la clasificación junto al símbolo.",
+    "3. (15 min) Coloreen el mapa con esta escala: rojo, −200 kJ/mol o menos; anaranjado, de −199 a −100; amarillo, de −99 a −10; azul o gris, de −9 a cero o positivo (cercano a cero). Escriban el valor dentro de cada casilla.",
+    "4. (10 min) Busquen las tendencias: ¿hacia dónde se concentra el rojo? Marquen con una estrella las casillas que rompen la tendencia de su período o de su grupo.",
+    "5. (10 min) En pareja escriban una explicación para los halógenos y otra para cada excepción marcada, con la configuración electrónica y la carga nuclear efectiva.",
+    "6. (7 min) Puesta en común: cada pareja pasa al pliego los colores de una fila de la tabla; el grupo compara el mapa con las predicciones del paso 1."
+   ],
+   "seguridad": [
+    "Práctica de análisis de datos: no se usan reactivos, calor ni vidrio.",
+    "Si se usan computadoras del CRA, los cables y regletas quedan lejos de las botellas de agua y del paso de las personas."
+   ],
+   "datos_esperados": "El rojo queda en el grupo 17 (cloro, bromo, flúor y yodo) y en el azufre; el oxígeno queda en anaranjado, junto con el carbono y el silicio. Los halógenos liberan más energía porque el electrón completa su capa externa y siente una carga nuclear efectiva alta. Al bajar en el grupo 17, del cloro al yodo, el valor se hace menos negativo porque el electrón queda más lejos y más apantallado. En azul o gris quedan los grupos 2 y 18 (el electrón iría a un subnivel p vacío o a una capa nueva; el calcio, con unos −2, libera casi nada) y el nitrógeno, cercano a cero, porque el electrón tendría que aparearse en un subnivel 2p semilleno; el fósforo, por lo mismo, libera menos que el silicio y el azufre. El flúor libera menos que el cloro, y el oxígeno menos que el azufre, porque la capa 2 es muy pequeña y la repulsión entre electrones es mayor. La tendencia general es: más negativa hacia la derecha, hasta el grupo 17, y menos negativa al bajar en un grupo a partir del período 3; los elementos del período 2 y los grupos 2, 15 y 18 son excepciones.",
+   "analisis": [
+    "(Paso 4) ¿Qué grupo tiene los valores más negativos y qué significa eso en términos de energía liberada? ¿Coincide con su predicción del paso 1?",
+    "(Paso 5) ¿Por qué el berilio, el magnesio y los gases nobles tienen valores positivos? Usen la configuración de cada uno para decir dónde tendría que entrar el electrón.",
+    "(Paso 5) Si el flúor está más arriba que el cloro, ¿por qué el cloro libera más energía al captar un electrón?",
+    "Tarea: expliquen por qué el carbono (−122 kJ/mol) libera energía al captar un electrón y el nitrógeno, a su lado, casi no, con los diagramas de orbitales 2p de los dos átomos."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin impresora: la tabla en blanco se dibuja en hoja cuadriculada y los valores se copian del pizarrón. Sin lápices de colores: se usa una escala de sombreado con lápiz (más oscuro, más negativo). Sin computadora ni internet la práctica completa se hace en papel. Con hoja de cálculo: el mapa se hace con formato condicional de escala de color, y antes la pareja busca en un tutorial cómo aplicarlo.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.6)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.7/1": {
   "tipo": "contenido",
@@ -195391,10 +196986,104 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.7/1",
+    "decision": "corregir",
+    "justificacion": "Los Δχ de Pauling son correctos (Na–Cl 2.23, O–H 1.24, C–O 0.89, C–H 0.35, HF 1.78) y la frontera de 1.7 se presenta como convención, igual que la actividad 4.7. El probador de 9 V con 470 Ω-1 kΩ funciona. Falta la mitad del indicador, la variación periódica de la electronegatividad: se añade una tarea con HCl y Cl₂. Se avisa de la electrólisis en las puntas.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7",
+      "cita": "Explica la variación de la electronegatividad y usa Δχ para predecir la polaridad; ejemplos NaCl, HCl, H₂O y Cl₂."
+     },
+     {
+      "fuente": "ACT:G10-QUI-U4-4.7/obj-2",
+      "cita": "Frontera cerca de 1.7, aproximada, con transición gradual entre covalente polar e iónico."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Con electrodos de grafito y 9 V, la disolución de NaCl se electroliza: H₂ en el cátodo y algo de Cl₂ en el ánodo."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "seguridad": [
+      "Se usa solo la batería de 9 V: el probador nunca se conecta a un tomacorriente.",
+      "No se unen los dos bornes de la batería sin el LED y la resistencia de por medio, porque se calienta.",
+      "En la sal y el bicarbonato disueltos pueden verse burbujitas en las puntas de los lápices: la corriente descompone un poco el agua y la sal (en la sal sale una pizca de cloro). Cada prueba dura unos segundos, el aula se mantiene ventilada y no se huelen los vasos.",
+      "No se prueba ni se bebe ninguna disolución, aunque sean de la cocina. Si el vinagre cae en los ojos, se lavan con abundante agua y se avisa a la o el docente.",
+      "Los vasos de vidrio, si se usan, se manejan sobre la mesa y lejos del borde; el líquido derramado se seca de inmediato."
+     ],
+     "analisis": [
+      "(Paso 6) ¿Se cumplieron sus predicciones del paso 1? ¿Qué sustancia con enlaces solo covalentes encendió el LED y cómo se explica?",
+      "(Paso 6) ¿Por qué la sal seca no encendió el LED si su enlace es iónico? ¿Qué cambia al disolverla?",
+      "Tarea: Ubiquen H, C, O, Na y Cl en la tabla y describan cómo cambia la electronegatividad a lo largo de un período y al bajar en el grupo 17 (F 3.98 y Cl 3.16, valores aproximados de la tabla de referencia); explíquenlo con la carga nuclear efectiva y la distancia al núcleo. Luego calculen Δχ de HCl y de Cl₂ y clasifiquen sus enlaces.",
+      "Tarea: El HF tiene Δχ ≈ 1.8 y es covalente polar, no iónico. Expliquen con este caso por qué la frontera de 1.7 es una convención aproximada.",
+      "Tarea: Dibujen un diagrama de flechas que vaya de Δχ al tipo de enlace (apolar, polar, iónico), con un ejemplo de la práctica en cada caso."
+     ]
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-14"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.7/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.7"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.7",
+    "CON:quimica/electronegatividad-y-polaridad-de-enlace"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Δχ en papel y un LED en el vaso: ¿qué sustancias forman iones?",
+   "proposito": "Calcular la diferencia de electronegatividad (Δχ) de los enlaces de sustancias de la casa, predecir cuáles son iónicas y poner a prueba la predicción con un probador de conductividad de LED. Se busca ver que un Δχ grande anticipa un compuesto iónico, que sus iones solo conducen si pueden moverse (disueltos) y que la frontera entre polar e iónico no es una línea exacta.",
+   "materiales": [
+    "Tabla impresa de electronegatividades de Pauling, valores aproximados (verificar con la tabla de referencia): H 2.20, C 2.55, O 3.44, Na 0.93, Cl 3.16",
+    "Ficha con las sustancias y sus enlaces: sal de mesa (Na–Cl), azúcar de mesa o sacarosa (C–H, C–C, C–O, O–H), ácido acético del vinagre (C–H, C–C, C=O, C–O, O–H), bicarbonato de sodio (ion Na⁺ y el ion HCO₃⁻ con enlaces C–O y O–H) y agua (O–H)",
+    "Por equipo, para el probador: una batería de 9 V, un LED rojo, una resistencia de 470 Ω a 1 kΩ, tres cables con caimanes y dos lápices de grafito con punta en ambos extremos (los electrodos)",
+    "Por equipo: 6 vasos transparentes de unos 150 mL rotulados del 1 al 6, 600 mL de agua purificada embotellada, una cucharadita de sal, una de azúcar, una de bicarbonato, 100 mL de vinagre blanco y un plato pequeño",
+    "Un clip metálico, cinta adhesiva, una cucharita y papel toalla"
+   ],
+   "procedimiento": [
+    "Sesión 1 (55 min)",
+    "1. (10 min) En equipo calculen Δχ para cada enlace de la ficha y clasifíquenlo con la convención de la clase: menor que 0.4, covalente apolar; de 0.4 a 1.7, covalente polar; mayor que 1.7, iónico. Escriban qué sustancias creen que forman iones al disolverse y encenderán el LED.",
+    "2. (5 min) Armen el probador: batería, resistencia y LED en serie, y un caimán en cada lápiz. Toquen las puntas de los lápices con el clip: si el LED enciende, el circuito funciona.",
+    "3. (5 min) Preparen los vasos con 100 mL de líquido cada uno: vaso 1, agua purificada; vaso 2, agua purificada con una cucharadita de sal; vaso 3, agua purificada con una cucharadita de azúcar; vaso 4, vinagre; vaso 5, agua purificada con una cucharadita de bicarbonato; vaso 6, agua purificada para enjuagar. Agiten hasta disolver. Pongan en el plato un montoncito de sal seca.",
+    "4. (15 min) Introduzcan las puntas de los lápices en cada vaso, a la misma profundidad (unos 2 cm) y separadas unos 2 cm; anoten si el LED enciende fuerte, débil o nada. Enjuaguen las puntas en el vaso 6 y séquenlas entre una prueba y otra. Al final, claven las puntas en la sal seca, separadas 1 cm, y anoten.",
+    "5. (5 min) Copien sus resultados en la tabla del pizarrón y compárenlos con los de los otros equipos.",
+    "6. (15 min) Respondan en equipo las dos primeras preguntas de análisis. Desarmen el probador y viertan los líquidos al desagüe con agua."
+   ],
+   "seguridad": [
+    "Se usa solo la batería de 9 V: el probador nunca se conecta a un tomacorriente.",
+    "No se unen los dos bornes de la batería sin el LED y la resistencia de por medio, porque se calienta.",
+    "En la sal y el bicarbonato disueltos pueden verse burbujitas en las puntas de los lápices: la corriente descompone un poco el agua y la sal (en la sal sale una pizca de cloro). Cada prueba dura unos segundos, el aula se mantiene ventilada y no se huelen los vasos.",
+    "No se prueba ni se bebe ninguna disolución, aunque sean de la cocina. Si el vinagre cae en los ojos, se lavan con abundante agua y se avisa a la o el docente.",
+    "Los vasos de vidrio, si se usan, se manejan sobre la mesa y lejos del borde; el líquido derramado se seca de inmediato."
+   ],
+   "datos_esperados": "Δχ aproximados: Na–Cl 2.23 (iónico); O–H 1.24, C–O y C=O 0.89 (covalentes polares); C–H 0.35 y C–C 0 (apolares). En el bicarbonato, el enlace entre el Na⁺ y los oxígenos del HCO₃⁻ tiene Δχ de unos 2.5 (iónico). Resultados: el LED enciende fuerte con la sal y con el bicarbonato disueltos; débil o apenas visible con el vinagre; nada (o un brillo casi nulo) con el agua purificada y con el agua azucarada; nada con la sal seca. Lectura: los compuestos iónicos liberan iones que se mueven en el agua; en el sólido los iones están fijos y no conducen. El azúcar es covalente polar: se disuelve sin formar iones. El ácido acético es una molécula covalente polar que, al disolverse, se ioniza en una fracción pequeña: Δχ anticipa la tendencia del enlace, pero lo que pasa en el agua depende también de la reacción con el agua. El brillo del LED es una comparación cualitativa; varía con la separación de los lápices y la cantidad disuelta.",
+   "analisis": [
+    "(Paso 6) ¿Se cumplieron sus predicciones del paso 1? ¿Qué sustancia con enlaces solo covalentes encendió el LED y cómo se explica?",
+    "(Paso 6) ¿Por qué la sal seca no encendió el LED si su enlace es iónico? ¿Qué cambia al disolverla?",
+    "Tarea: Ubiquen H, C, O, Na y Cl en la tabla y describan cómo cambia la electronegatividad a lo largo de un período y al bajar en el grupo 17 (F 3.98 y Cl 3.16, valores aproximados de la tabla de referencia); explíquenlo con la carga nuclear efectiva y la distancia al núcleo. Luego calculen Δχ de HCl y de Cl₂ y clasifiquen sus enlaces.",
+    "Tarea: El HF tiene Δχ ≈ 1.8 y es covalente polar, no iónico. Expliquen con este caso por qué la frontera de 1.7 es una convención aproximada.",
+    "Tarea: Dibujen un diagrama de flechas que vaya de Δχ al tipo de enlace (apolar, polar, iónico), con un ejemplo de la práctica en cada caso."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin batería de 9 V ni resistencia: dos baterías AA en serie, una resistencia de 100 Ω y un LED rojo funcionan, con brillo más débil; si hay multímetro, se mide la corriente en miliamperios y se ordenan las disoluciones con números. Sin laboratorio ni internet: los pasos 1 y 6 se hacen en papel y la o el docente comparte estos resultados de un grupo de ejemplo: sal y bicarbonato disueltos, LED fuerte; vinagre, débil; agua purificada y agua con azúcar, nada; sal seca, nada.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.7)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.8/1": {
   "tipo": "contenido",
