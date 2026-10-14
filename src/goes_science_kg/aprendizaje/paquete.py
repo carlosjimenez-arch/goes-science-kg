@@ -19,6 +19,7 @@ from __future__ import annotations
 import json
 from collections import defaultdict
 from functools import cache
+from pathlib import Path
 
 from goes_science_kg.config import ruta
 
@@ -341,6 +342,7 @@ def escribir(temas: list[str]) -> list:
         (d / f"{i}.md").write_text(_markdown(p), encoding="utf-8")
         escritos += [d / f"{i}.json", d / f"{i}.md"]
         filas.append((original, i, p["completitud"], p.get("reemplazo")))
+    filas = _filas_del_indice(d)   # el índice lista todos los paquetes de la carpeta, no solo los de esta llamada
     claves = list(filas[0][2]) if filas else []
     md = ["# Paquetes de clase", "", AVISO, "", "| Pedido | Tema vigente | " + " | ".join(c.replace("_", " ")
                                                                                          for c in claves) + " |",
@@ -363,5 +365,24 @@ def escribir(temas: list[str]) -> list:
                                                         f"{int(v['contencion_texto'] * 100)} % de su texto) "
                                                         f"{v['procedimental'][:80]}" for v in vs)
                                              or "sin vecinos por concepto"))
+    if (d / "REVISION_HUMANA.md").exists():
+        md += ["", "> Hay elementos que esperan una decisión humana: ver [REVISION_HUMANA.md](REVISION_HUMANA.md)."]
     (d / "README.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return escritos
+
+
+def _filas_del_indice(d: Path) -> list[tuple]:
+    """(pedido, tema, completitud, reemplazo) de cada paquete escrito en `d`, en el orden de grado, unidad y tema."""
+    import re
+
+    def orden(i: str) -> list:
+        return [int(x) if x.isdigit() else x for x in re.split(r"(\d+)", i)]
+
+    filas = []
+    for f in d.glob("*.json"):
+        p = json.loads(f.read_text(encoding="utf-8"))
+        if "tema" not in p or "completitud" not in p:
+            continue
+        r = p.get("reemplazo")
+        filas.append(((r or {}).get("pedido") or f"TEMA:{p['tema']['id']}", p["tema"]["id"], p["completitud"], r))
+    return sorted(filas, key=lambda x: orden(x[1]))
