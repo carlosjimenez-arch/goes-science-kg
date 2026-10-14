@@ -11127,9 +11127,9 @@
   ],
   "enunciado": "Para un problema de tránsito, Valeria escribe la ecuación x = v₀·t + a·t, donde x es una distancia (m), v₀ una rapidez (m/s), a una aceleración (m/s²) y t un tiempo (s). ¿Qué concluye el análisis dimensional de esa ecuación?",
   "opciones": {
-   "A": "Es imposible, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
+   "A": "Está mal planteada, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
    "B": "Es correcta, porque a·t tiene dimensión de rapidez, la misma que tiene v₀.",
-   "C": "Es imposible, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
+   "C": "Está mal planteada, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
    "D": "Es correcta si se agrega ½ antes de a·t, porque ese factor ajusta sus dimensiones."
   },
   "correcta": "A",
@@ -11139,16 +11139,43 @@
   "valor": null,
   "tolerancia": null,
   "unidad": null,
-  "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación es imposible. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las derivadas), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término.",
+  "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación está mal planteada. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las unidades derivadas, como m/s o N), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U2-2.1"
   },
   "origen": "redactor-actividades (G10-FIS-U2-2.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "«Está mal planteada» conserva el sentido de mi corrección: a·t tiene [L][T]⁻¹ y no puede sumarse a x. Clave A intacta; D sigue mapeado a la dificultad del factor ½."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "opciones": {
+     "A": "Es imposible, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
+     "B": "Es correcta, porque a·t tiene dimensión de rapidez, la misma que tiene v₀.",
+     "C": "Es imposible, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
+     "D": "Es correcta si se agrega ½ antes de a·t, porque ese factor ajusta sus dimensiones."
+    },
+    "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación es imposible. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las derivadas), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U2-2.1/obj-2",
@@ -11175,14 +11202,31 @@
   "unidad": "m³/día",
   "retroalimentacion": "La tabla muestra 600 L cada 5 min, o sea 120 L/min. La cadena es 120 L/min × (1 m³ / 1000 L) × (60 min / 1 h) × (24 h / 1 día) = 172.8 m³/día. Si en cada factor la unidad que se quiere eliminar queda una vez arriba y una vez abajo, se cancela y el resultado sale en m³/día.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U2-2.1"
   },
   "origen": "redactor-actividades (G10-FIS-U2-2.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto rural cercano (riego en Usulután), datos de ejemplo que no exigen laboratorio, unidad de respuesta explícita y retroalimentación de 64 palabras que modela la cancelación de unidades. Carga cognitiva adecuada para 10.°."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U2-2.1/obj-abierta",
@@ -11200,7 +11244,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 2 o 3 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y explica cómo una estimación previa del orden de magnitud le habría avisado del error.",
+  "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 3 o 4 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y compara 324 m/s con una rapidez conocida para explicar cómo una estimación previa le habría avisado del error.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -11209,7 +11253,7 @@
   "unidad": null,
   "retroalimentacion": "Kevin usó el factor al revés: para pasar de km/h a m/s se divide entre 3.6, porque 1 km/h = 1000 m / 3600 s. La cadena 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) da 25 m/s. Estimar antes ayuda: 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U2-2.1"
@@ -11258,7 +11302,28 @@
   },
   "origen": "redactor-actividades (G10-FIS-U2-2.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "El enunciado ahora pide la comparación que exige c3; la física no cambia: 90/3.6 = 25 m/s y 324 m/s ≈ 1166 km/h, rapidez de avión."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 2 o 3 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y explica cómo una estimación previa del orden de magnitud le habría avisado del error."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U2-2.4/obj-1",
@@ -11293,14 +11358,31 @@
   "unidad": null,
   "retroalimentacion": "La resultante del viaje es 600 î + 800 ĵ m, de módulo √(600² + 800²) = 1000 m. Para volver, el dron recorre el vector opuesto, −600 î − 800 ĵ m: 1000 m hacia el suroeste. El rumbo se mide desde el sur hacia el oeste con tan θ = 600/800, que da unos 37°: S 37° O. La suma de distancias (1 400 m) es lo que recorrió, no la distancia a la base.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U2-2.4"
   },
   "origen": "redactor-actividades (G10-FIS-U2-2.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto cercano (dron de Protección Civil), opciones de longitud pareja; A, B y D son errores reales y dos comparten 1000 m, así que el número no delata la clave. Retroalimentación de 77 palabras, clara y sin regaño."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U2-2.4/obj-2",
@@ -11335,14 +11417,31 @@
   "unidad": null,
   "retroalimentacion": "Un vector a 120° está en el segundo cuadrante: apunta hacia el noroeste, así que su componente x es negativa: 3.0 cos 120° = −1.50 km. Comprobar que x² + y² da el módulo al cuadrado no detecta errores de signo. En el tramo 3 las dos componentes negativas son correctas, porque a 250° el vector apunta al suroeste; y en el tramo 1, con el ángulo medido desde el este, x usa el coseno.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U2-2.4"
   },
   "origen": "redactor-actividades (G10-FIS-U2-2.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Tabla de componentes breve y leíble, ángulo de referencia declarado. Opciones parejas y plausibles; la D enseña que x² + y² no detecta errores de signo. Retroalimentación de 75 palabras, dentro del límite."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U2-2.4/obj-abierta",
@@ -11360,7 +11459,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Una brigada de rescate sale del campamento y camina 6.0 km hacia el este, luego 2.0 km hacia el norte y luego 2.0 km hacia el oeste. Daniela dice: «Quedamos a 10 km del campamento». En 2 o 3 oraciones: explica por qué su razonamiento falla; calcula la resultante con î y ĵ y su módulo; y di qué distancia y en qué dirección debe caminar la brigada para regresar.",
+  "enunciado": "Una brigada de rescate sale del campamento y camina 6.0 km hacia el este, luego 2.0 km hacia el norte y luego 2.0 km hacia el oeste. Daniela dice: «Quedamos a 10 km del campamento». En 2 o 3 oraciones: explica por qué su razonamiento falla; calcula la resultante con î y ĵ y su módulo; y di qué distancia y con qué rumbo (dirección y ángulo) debe caminar la brigada para regresar.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -11369,7 +11468,7 @@
   "unidad": null,
   "retroalimentacion": "Los desplazamientos se suman por componentes: x = 6.0 − 2.0 = 4.0 km y y = 2.0 km, así que R = 4.0 î + 2.0 ĵ km, de unos 4.5 km. Los 10 km son la distancia caminada, que es escalar. Para regresar, la brigada recorre −R: unos 4.5 km hacia el suroeste, con rumbo S 63° O (unos 207° medidos desde el este).",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U2-2.4"
@@ -11418,7 +11517,28 @@
   },
   "origen": "redactor-actividades (G10-FIS-U2-2.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Pedir el rumbo con ángulo alinea el enunciado con c3. Cifras intactas: R = 4.0 î + 2.0 ĵ km, |R| ≈ 4.47 km, regreso S 63° O ≈ 207° desde el este."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Una brigada de rescate sale del campamento y camina 6.0 km hacia el este, luego 2.0 km hacia el norte y luego 2.0 km hacia el oeste. Daniela dice: «Quedamos a 10 km del campamento». En 2 o 3 oraciones: explica por qué su razonamiento falla; calcula la resultante con î y ĵ y su módulo; y di qué distancia y en qué dirección debe caminar la brigada para regresar."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.5/obj-1",
@@ -11452,14 +11572,31 @@
   "unidad": null,
   "retroalimentacion": "Con desaceleración constante, v² = v₀² + 2aΔx y v = 0 dan Δx = v₀²/(2a): la distancia crece con el cuadrado de la rapidez. Al doble de rapidez, cuatro veces la distancia: 36 m. El tiempo de frenado, t = v₀/a, solo se duplica; la distancia se cuadruplica porque se avanza el doble de tiempo y con el doble de rapidez media.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.5"
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.5)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto de seguridad vial con sentido para jóvenes de 15–16 años. B y D comparten 36 m y obligan a elegir el porqué: buen diseño sin pistas. Retroalimentación de 63 palabras, sin regaño."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.5/obj-2",
@@ -11486,14 +11623,31 @@
   "unidad": "m",
   "retroalimentacion": "Hasta 0.8 s la velocidad no cambia: es el tiempo de reacción, en el que el carro avanza 15.0 m/s × 0.8 s = 12 m. Después frena con aceleración constante de −5.0 m/s² durante 3.0 s; el área del triángulo bajo la gráfica v-t es ½ × 15.0 m/s × 3.0 s = 22.5 m. En total, 34.5 m: la distancia de detención incluye la de reacción.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.5"
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.5)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Datos de ejemplo de video, sin requerir equipo. Unidad y desde dónde se mide declarados. La retroalimentación (68 palabras) separa reacción y frenado: una idea por paso. Personaje adulto al volante, adecuado."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.5/obj-abierta",
@@ -11520,7 +11674,7 @@
   "unidad": null,
   "retroalimentacion": "El signo de la aceleración solo indica su sentido respecto del eje elegido. Aquí v y a tienen el mismo signo, apuntan los dos hacia el oeste, así que la rapidez aumenta: v = −12 m/s + (−2.0 m/s²)(3.0 s) = −18 m/s, es decir, 18 m/s hacia el oeste. Un móvil frena cuando v y a tienen signos opuestos.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.5"
@@ -11569,7 +11723,24 @@
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.5)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "El enunciado pide lo que exigen los tres criterios obligatorios (conclusión, signos y cálculo con unidad). Mario se equivoca y la retroalimentación (60 palabras) corrige la idea sin avergonzar."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.6/obj-1",
@@ -11587,7 +11758,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Andrea lanza una pelota de golf verticalmente hacia arriba en el patio. Si se desprecia la resistencia del aire, ¿cómo es la aceleración de la pelota en el instante en que alcanza el punto más alto?",
+  "enunciado": "Andrea lanza una pelota pequeña de hule verticalmente hacia arriba en el patio. Si se desprecia la resistencia del aire, ¿cómo es la aceleración de la pelota en el instante en que alcanza el punto más alto?",
   "opciones": {
    "A": "Es g hacia abajo, igual que al subir y al bajar, porque el peso actúa todo el tiempo.",
    "B": "Es cero, porque en ese instante la velocidad es cero y la pelota no se está moviendo.",
@@ -11604,14 +11775,35 @@
   "unidad": null,
   "retroalimentacion": "En el punto más alto la velocidad es cero solo un instante, pero la velocidad sigue cambiando: un instante antes apuntaba hacia arriba y un instante después hacia abajo. La única fuerza es el peso, que no se apaga, así que la aceleración vale g y apunta hacia abajo al subir, en el punto más alto y al bajar.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.6"
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.6)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Cambiar la pelota de golf por una de hule no altera nada: con la resistencia del aire despreciada, la aceleración es g hacia abajo en todo el vuelo. Clave A y distractores intactos."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Andrea lanza una pelota de golf verticalmente hacia arriba en el patio. Si se desprecia la resistencia del aire, ¿cómo es la aceleración de la pelota en el instante en que alcanza el punto más alto?"
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.6/obj-2",
@@ -11638,14 +11830,31 @@
   "unidad": "m/s²",
   "retroalimentacion": "Para una caída desde el reposo, h = ½ g t²: la gráfica de h contra t² es una recta cuya pendiente es g/2. La pendiente es (2.00 − 0.50) m / (0.412 − 0.104) s² ≈ 4.87 m/s², así que g ≈ 2 × 4.87 ≈ 9.7 m/s². Un error frecuente es reportar la pendiente como si fuera g. Después se compara con el valor de la tabla de referencia.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.6"
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.6)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Datos de ejemplo linealizados, unidad declarada, constante remitida a la tabla de referencia. La retroalimentación (71 palabras) nombra el error frecuente de reportar la pendiente como g. Carga adecuada para 10.°."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.6/obj-abierta",
@@ -11672,7 +11881,7 @@
   "unidad": null,
   "retroalimentacion": "Arrugar la hoja no cambia su masa ni su peso. Lo que cambia es la resistencia del aire: la hoja extendida presenta mucha área y el aire la frena mucho, mientras que en la bola esa fuerza es pequeña comparada con el peso y cae casi en caída libre. Sin aire, las dos caerían con la misma aceleración g y llegarían juntas.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.6"
@@ -11721,7 +11930,24 @@
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.6)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Experiencia que cualquier escuela puede repetir con dos hojas de papel, sin laboratorio. Las tres partes del enunciado coinciden con los tres criterios obligatorios. Retroalimentación de 62 palabras."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.7/obj-1",
@@ -11755,14 +11981,31 @@
   "unidad": null,
   "retroalimentacion": "La pendiente de la gráfica x-t es la velocidad. Entre 10 y 12 s la velocidad sigue siendo positiva, así que la posición sigue aumentando, pero cada vez menos: la curva sube y se va aplanando hasta quedar horizontal en 12 s, cuando v = 0. Que la v-t baje no significa que la posición baje: el carrito frena, pero sigue avanzando.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.7"
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Gráfica descrita con palabras, accesible sin imagen. Opciones parejas y plausibles; A recoge la lectura de v-t como x-t. Retroalimentación de 62 palabras, clara."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.7/obj-2",
@@ -11789,14 +12032,31 @@
   "unidad": "m",
   "retroalimentacion": "El desplazamiento es el área bajo la gráfica v-t, con signo: 4.0 m/s × 5 s = 20 m; el triángulo de 5 a 7 s da ½ × 4.0 m/s × 2 s = 4 m; de 7 a 10 s, −2.0 m/s × 3 s = −6 m. En total, 20 + 4 − 6 = 18 m hacia el norte. La distancia recorrida es 30 m, porque ahí los 6 m de regreso se suman.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.7"
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Tramos descritos con palabras, signo y unidad explícitos. La retroalimentación (78 palabras) distingue desplazamiento y distancia recorrida. Adecuado para 10.°."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U3-3.7/obj-abierta",
@@ -11823,7 +12083,7 @@
   "unidad": null,
   "retroalimentacion": "Para el grupo 2, cada posición es 50 m menor: la ciclista pasa de −40 m a 20 m. Los dos grupos obtienen Δx = 60 m: 70 − 10 = 60 m y 20 − (−40) = 60 m. El desplazamiento es una diferencia de posiciones, y mover el origen resta la misma cantidad a las dos, así que la diferencia no cambia.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U3-3.7"
@@ -11872,7 +12132,24 @@
   },
   "origen": "redactor-actividades (G10-FIS-U3-3.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto escolar cercano. Las tres partes del enunciado corresponden a los tres criterios obligatorios. El enunciado es largo, pero cada dato se usa. Retroalimentación de 64 palabras."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U4-4.1/obj-1",
@@ -11899,14 +12176,31 @@
   "unidad": "m",
   "retroalimentacion": "Separa la velocidad en componentes: vx = 15 cos 30° ≈ 13.0 m/s y vy = 15 sen 30° = 7.5 m/s. En el eje vertical la pelota sube y baja con aceleración g: tarda t = 2vy/g ≈ 1.53 s. En el eje horizontal no hay aceleración, así que avanza x = vx · t ≈ 19.9 m. Es lo mismo que da R = v₀² sen(2θ)/g.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U4-4.1"
   },
   "origen": "redactor-actividades (G10-FIS-U4-4.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto deportivo cercano, idealización declarada, g remitida a la tabla con «aproximado» y unidad pedida. Retroalimentación de 68 palabras con una idea por paso (componentes, tiempo, alcance)."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U4-4.1/obj-2",
@@ -11940,14 +12234,31 @@
   "unidad": null,
   "retroalimentacion": "Los pares 15°–75° y 30°–60° dan alcances casi iguales y el máximo está cerca de 45°. A 60° la pelota dura más en el aire, pero su componente horizontal es menor; a 30° pasa lo contrario, y el producto vx · t sale casi igual. Ninguna fuerza del lanzamiento acompaña a la pelota en el aire: solo actúa el peso (y algo de aire).",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U4-4.1"
   },
   "origen": "redactor-actividades (G10-FIS-U4-4.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Lanzador de liga hecho en el aula: viable sin laboratorio. B y C comparten la observación y obligan a elegir el porqué; sin pistas gramaticales. Retroalimentación de 64 palabras."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U4-4.1/obj-abierta",
@@ -11965,7 +12276,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Desde el borde de una mesa de 0.80 m de alto, Marcos empuja una canica que sale disparada en horizontal y, en el mismo instante, Daniela suelta otra canica igual desde el mismo borde. En 2 o 3 oraciones: di cuál llega primero al piso (o si llegan juntas), explica por qué usando lo que pasa en el eje vertical de cada canica, y explica por qué la de Marcos cae más lejos.",
+  "enunciado": "Desde el borde de una mesa de 0.80 m de alto, Marcos empuja una canica que sale disparada en horizontal y, en el instante en que esa canica deja el borde, Daniela suelta otra canica igual desde el mismo borde. En 2 o 3 oraciones: di cuál llega primero al piso (o si llegan juntas), explica por qué usando lo que pasa en el eje vertical de cada canica, y explica por qué la de Marcos cae más lejos.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -11974,7 +12285,7 @@
   "unidad": null,
   "retroalimentacion": "Llegan juntas: en el eje vertical las dos parten con velocidad vertical cero, desde la misma altura y con la misma aceleración g, así que tardan lo mismo. El movimiento horizontal no cambia el vertical. La de Marcos cae más lejos porque, durante ese mismo tiempo, avanza con su velocidad horizontal, que se mantiene casi constante.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U4-4.1"
@@ -12023,7 +12334,27 @@
   },
   "origen": "redactor-actividades (G10-FIS-U4-4.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Se mantiene la precisión del experto sobre la simultaneidad. Experiencia con canicas y una mesa, viable en cualquier escuela. El enunciado pide lo que exigen los tres criterios obligatorios. Retroalimentación de 56 palabras."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Desde el borde de una mesa de 0.80 m de alto, Marcos empuja una canica que sale disparada en horizontal y, en el mismo instante, Daniela suelta otra canica igual desde el mismo borde. En 2 o 3 oraciones: di cuál llega primero al piso (o si llegan juntas), explica por qué usando lo que pasa en el eje vertical de cada canica, y explica por qué la de Marcos cae más lejos."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.10/obj-1",
@@ -12050,14 +12381,31 @@
   "unidad": "N",
   "retroalimentacion": "Con las dos ecuaciones, 0.60g − T = 0.60a y T − 0.40g = 0.40a, la aceleración común es a = (0.60 − 0.40)g/(1.00) ≈ 1.96 m/s². Para la bolsa liviana, T = 0.40(g + a) ≈ 4.70 N. La tensión queda entre los dos pesos (3.92 N y 5.88 N): si fuera igual al peso de la bolsa pesada, esta no podría bajar acelerando.",
   "duracion_min": 8,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.10"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.10)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Idealizaciones declaradas, g aproximada de la tabla, unidad pedida y andamiaje explícito (diagrama de cuerpo libre y segunda ley para cada bolsa). Retroalimentación de 65 palabras. 8 min es realista."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.10/obj-2",
@@ -12085,6 +12433,7 @@
   "correcta": "C",
   "distractores": {
    "A": "DIF:fisica/aplicaciones-leyes-newton/2",
+   "B": "DIF:fisica/primera-ley-newton/1",
    "D": "DIF:fisica/aplicaciones-leyes-newton/3"
   },
   "valor": null,
@@ -12092,14 +12441,37 @@
   "unidad": null,
   "retroalimentacion": "La balanza mide la normal, no el peso. Si N > mg, la fuerza neta apunta hacia arriba y la aceleración también: tramo 2, el ascensor arranca hacia arriba (a ≈ 0.1g). En el tramo 3 sube a velocidad constante y N = mg. En el tramo 4 la aceleración apunta hacia abajo mientras sigue subiendo: está frenando. El peso de Diego, mg, no cambia en todo el viaje.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.10"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.10)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Situación cotidiana (balanza en un ascensor), datos de ejemplo. Se mantiene el enlace de B que fijó el experto. Opciones parejas; la retroalimentación (69 palabras) explica sin regañar y aclara que el peso no cambia."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "distractores": {
+     "A": "DIF:fisica/aplicaciones-leyes-newton/2",
+     "D": "DIF:fisica/aplicaciones-leyes-newton/3"
+    }
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.10/obj-abierta",
@@ -12117,7 +12489,7 @@
   "grados": [
    10
   ],
-  "enunciado": "En los videos de la Estación Espacial Internacional, que orbita a unos 400 km de altura, las astronautas flotan dentro de la nave. Fernanda dice que flotan porque allá arriba ya no hay gravedad. El radio de la Tierra es de unos 6 400 km (valor aproximado de la tabla de referencia). En 2 o 3 oraciones: di si a esa altura la gravedad es nula o, si no, aproximadamente qué fracción es de la del suelo; y explica por qué las astronautas flotan y no quedan apretadas contra el piso de la nave.",
+  "enunciado": "En los videos de la Estación Espacial Internacional, que orbita a unos 400 km de altura, las astronautas flotan dentro de la nave. Fernanda dice que flotan porque allá arriba ya no hay gravedad. El radio de la Tierra es de unos 6 400 km (valor aproximado de la tabla de referencia). En 2 o 3 oraciones: di si a esa altura la gravedad es nula o, si no, aproximadamente qué fracción es de la del suelo; y explica por qué las astronautas flotan y por qué el piso de la nave no tiene que empujarlas.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -12126,7 +12498,7 @@
   "unidad": null,
   "retroalimentacion": "A 400 km la gravedad sigue siendo cerca del 90 % de la del suelo: g cambia con (R/(R + h))² ≈ (6400/6800)² ≈ 0.89. Las astronautas flotan porque ellas y la nave caen libremente juntas, con la misma aceleración, mientras avanzan tan rápido de lado que nunca llegan al suelo: el piso no tiene que empujarlas, la normal es cero y su peso aparente también.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.10"
@@ -12175,7 +12547,28 @@
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.10)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Pedir por qué el piso no las empuja alinea el enunciado con c3 (normal cero). Física intacta: (6400/6800)² ≈ 0.886 y caída libre continua."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "En los videos de la Estación Espacial Internacional, que orbita a unos 400 km de altura, las astronautas flotan dentro de la nave. Fernanda dice que flotan porque allá arriba ya no hay gravedad. El radio de la Tierra es de unos 6 400 km (valor aproximado de la tabla de referencia). En 2 o 3 oraciones: di si a esa altura la gravedad es nula o, si no, aproximadamente qué fracción es de la del suelo; y explica por qué las astronautas flotan y no quedan apretadas contra el piso de la nave."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.2/obj-1",
@@ -12210,14 +12603,31 @@
   "unidad": null,
   "retroalimentacion": "Desde la acera nada empuja a la pasajera hacia adelante: por la primera ley su cuerpo tiende a conservar la velocidad que traía. El bus sí recibe una gran fuerza hacia atrás (los frenos y el pavimento), pero a ella solo la frena la fricción del piso en sus pies, que es pequeña; por eso el bus se detiene antes que ella y parece que «sale» hacia adelante.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.2"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto de seguridad vial salvadoreño (microbús). Opciones de longitud pareja y plausibles; B y D son ideas previas reales. Retroalimentación de 68 palabras, exacta (nombra la fricción pequeña de los pies)."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.2/obj-2",
@@ -12252,14 +12662,31 @@
   "unidad": null,
   "retroalimentacion": "Un sistema de referencia es inercial si no acelera: allí se cumple la primera ley y la plomada, sin fuerza neta horizontal, cuelga vertical. Eso pasa detenido y a velocidad constante en línea recta (tramos 1 y 3). Al arrancar, al frenar y en la curva el bus acelera (en la curva cambia la dirección de la velocidad), y la plomada se inclina.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.2"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Plomada de tuerca e hilo: material de bajo costo; los datos son de ejemplo. Opciones parejas. La retroalimentación (63 palabras) aclara que en la curva hay aceleración aunque la rapidez sea constante."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.2/obj-abierta",
@@ -12284,9 +12711,9 @@
   "valor": null,
   "tolerancia": null,
   "unidad": null,
-  "retroalimentacion": "Al frenar, el pick-up recibe una fuerza hacia atrás, pero los jóvenes y la caja no: por inercia siguen moviéndose hacia adelante con la velocidad que traían y chocan con la cabina o salen despedidos. Para detenerlos junto con el vehículo hace falta una fuerza hacia atrás sobre ellos, como la de un cinturón o una amarra; por eso las personas deben viajar en asientos con cinturón y la carga, amarrada.",
+  "retroalimentacion": "Al frenar, el pick-up recibe una gran fuerza hacia atrás; sobre los jóvenes y la caja solo actúa la fricción con la paila, demasiado pequeña. Por inercia siguen moviéndose hacia adelante con la velocidad que traían y chocan con la cabina o salen despedidos. Para detenerlos junto con el vehículo hace falta una fuerza mayor hacia atrás sobre ellos, como la de un cinturón o una amarra; por eso las personas deben viajar en asientos con cinturón y la carga, amarrada.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.2"
@@ -12335,7 +12762,27 @@
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Contexto real y relevante para la seguridad de jóvenes (viajar en la paila). Los criterios obligatorios c1, c3 y c4 están pedidos en el enunciado. Retroalimentación corregida por el experto: 81 palabras, dentro del límite."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "retroalimentacion": "Al frenar, el pick-up recibe una fuerza hacia atrás, pero los jóvenes y la caja no: por inercia siguen moviéndose hacia adelante con la velocidad que traían y chocan con la cabina o salen despedidos. Para detenerlos junto con el vehículo hace falta una fuerza hacia atrás sobre ellos, como la de un cinturón o una amarra; por eso las personas deben viajar en asientos con cinturón y la carga, amarrada."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.4/obj-1",
@@ -12362,14 +12809,31 @@
   "unidad": "m/s²",
   "retroalimentacion": "Solo la componente horizontal de la cuerda, 50 cos 30° ≈ 43.3 N, actúa a lo largo del piso; la fricción, 20 N, va en sentido contrario. La fuerza neta horizontal es 43.3 − 20 = 23.3 N y a = 23.3 N / 12 kg ≈ 1.94 m/s². La componente vertical de la cuerda no acelera la caja: reduce la normal, y en el eje vertical ΣFy = 0.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.4"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Datos del problema completos (fricción dada), unidad pedida y andamiaje explícito (diagrama y ΣFx). Retroalimentación de 70 palabras, una idea por paso."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.4/obj-2",
@@ -12403,14 +12867,31 @@
   "unidad": null,
   "retroalimentacion": "Con la fricción, la segunda ley da a = (F − f)/m = F/m − f/m. La pendiente, 2.0 (m/s²)/N, es 1/m, así que m ≈ 0.50 kg; la recta corta el eje de la fuerza (a = 0) en F = 0.15 N, que es la fricción. La aceleración es proporcional a la fuerza neta, F − 0.15 N, y no a F sola: por eso de 0.20 a 0.40 N no se duplica.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.4"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Montaje de arandelas y polea con datos de ejemplo, sin exigir laboratorio. Opciones parejas; B recoge la conclusión «la ley falla». Retroalimentación de 75 palabras. Adecuado para 10.°."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.4/obj-abierta",
@@ -12437,7 +12918,7 @@
   "unidad": null,
   "retroalimentacion": "La fuerza neta y la aceleración apuntan al sur mientras el carro frena. Por la segunda ley, la aceleración tiene siempre la dirección de la fuerza neta; la velocidad dice hacia dónde se mueve el carro, y la aceleración, hacia dónde cambia esa velocidad: si apunta al revés, el carro se frena. Con el doble de masa y la misma fuerza neta, la aceleración sería la mitad.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.4"
@@ -12486,7 +12967,24 @@
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Fuerza neta asociada a la aceleración y no al movimiento, como exige la regla del panel. Las tres partes del enunciado coinciden con los criterios obligatorios. Retroalimentación de 67 palabras."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.7/obj-1",
@@ -12504,7 +13002,7 @@
   "grados": [
    10
   ],
-  "enunciado": "La Tierra atrae a la Luna con la fuerza gravitatoria. Usa la ley de gravitación universal con estos valores aproximados de la tabla de referencia: G = 6.674 × 10⁻¹¹ N·m²/kg² (el que da la malla), masa de la Tierra 5.97 × 10²⁴ kg, masa de la Luna 7.35 × 10²² kg y distancia entre sus centros 3.84 × 10⁸ m. ¿Con qué fuerza atrae la Luna a la Tierra? Responde en unidades de 10²⁰ N (por ejemplo, si obtienes 3.5 × 10²⁰ N, escribe 3.5); escribe solo el número.",
+  "enunciado": "La Tierra atrae a la Luna con la fuerza gravitatoria. Usa la ley de gravitación universal con estos valores aproximados de la tabla de referencia: G = 6.674 × 10⁻¹¹ N·m²/kg², masa de la Tierra 5.97 × 10²⁴ kg, masa de la Luna 7.35 × 10²² kg y distancia entre sus centros 3.84 × 10⁸ m. ¿Con qué fuerza atrae la Luna a la Tierra? Responde en unidades de 10²⁰ N (por ejemplo, si obtienes 3.5 × 10²⁰ N, escribe 3.5); escribe solo el número.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -12513,14 +13011,34 @@
   "unidad": "× 10²⁰ N",
   "retroalimentacion": "F = G·M·m/r² = 6.674 × 10⁻¹¹ · 5.97 × 10²⁴ · 7.35 × 10²² / (3.84 × 10⁸)² ≈ 1.99 × 10²⁰ N. Es el mismo valor con que la Tierra atrae a la Luna: las dos fuerzas forman un par de acción y reacción, de igual módulo, sentidos opuestos y aplicadas en cuerpos distintos. La Tierra se acelera mucho menos porque su masa es unas 81 veces mayor.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.7"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Se mantiene la corrección del experto (sin la nota de la malla). Constantes rotuladas como aproximadas de la tabla de referencia; el formato de respuesta en 10²⁰ N trae ejemplo. Retroalimentación de 70 palabras."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "La Tierra atrae a la Luna con la fuerza gravitatoria. Usa la ley de gravitación universal con estos valores aproximados de la tabla de referencia: G = 6.674 × 10⁻¹¹ N·m²/kg² (el que da la malla), masa de la Tierra 5.97 × 10²⁴ kg, masa de la Luna 7.35 × 10²² kg y distancia entre sus centros 3.84 × 10⁸ m. ¿Con qué fuerza atrae la Luna a la Tierra? Responde en unidades de 10²⁰ N (por ejemplo, si obtienes 3.5 × 10²⁰ N, escribe 3.5); escribe solo el número."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.7/obj-2",
@@ -12538,7 +13056,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Kevin camina hacia atrás y arrastra a Ana, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
+  "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Ana camina hacia atrás y arrastra a Kevin, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
   "opciones": {
    "A": "Marcan igual solo si nadie se mueve, porque al avanzar quien arrastra hace más fuerza que la otra.",
    "B": "Marcan igual siempre: cada uno mide la fuerza que le hace el otro, y esas dos forman un par.",
@@ -12553,16 +13071,38 @@
   "valor": null,
   "tolerancia": null,
   "unidad": null,
-  "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Kevin arrastra a Ana: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: Ana se mueve porque la fuerza neta sobre ella no es cero.",
+  "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Ana arrastra a Kevin: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: para saber si Kevin se acelera solo se suman las fuerzas sobre él, la del dinamómetro y la fricción de las rueditas.",
   "duracion_min": 6,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.7"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Invertir quién arrastra no cambia la física: las lecturas siguen iguales y la retroalimentación conserva mi corrección (la aceleración de Kevin depende solo de las fuerzas sobre él: dinamómetro y fricción). Clave B intacta."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Kevin camina hacia atrás y arrastra a Ana, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
+    "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Kevin arrastra a Ana: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: Ana se mueve porque la fuerza neta sobre ella no es cero."
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.7/obj-abierta",
@@ -12580,22 +13120,22 @@
   "grados": [
    10
   ],
-  "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par y por qué el bote sí avanza.",
+  "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par; y, comparando las fuerzas que actúan sobre el bote (incluida la resistencia del agua), explica por qué el bote sí puede arrancar y ganar rapidez.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
   "valor": null,
   "tolerancia": null,
   "unidad": null,
-  "retroalimentacion": "El remo empuja el agua hacia atrás (fuerza sobre el agua) y el agua empuja el remo, y con él al bote y a Sofía, hacia adelante (fuerza sobre el bote). Como actúan sobre cuerpos distintos, no se suman ni se anulan. Sobre el bote, la fuerza del agua hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta lo acelera.",
+  "retroalimentacion": "El remo empuja el agua hacia atrás (fuerza sobre el agua) y el agua empuja el remo, y con él al bote y a Sofía, hacia adelante (fuerza sobre el bote). Como actúan sobre cuerpos distintos, no se suman ni se anulan. Al arrancar, la fuerza del agua hacia adelante sobre el bote es mayor que la resistencia del agua, así que la fuerza neta lo acelera; ya a rapidez constante, esas dos fuerzas se equilibran.",
   "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.7"
   },
   "rubrica": {
-   "respuesta_modelo": "El error es sumar dos fuerzas que actúan sobre cuerpos distintos. El remo empuja el agua hacia atrás, y esa fuerza actúa sobre el agua; el agua empuja el remo hacia adelante, y esa fuerza actúa sobre el remo, el bote y Sofía. Para saber si el bote avanza solo cuentan las fuerzas sobre el bote: la del agua en el remo hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta sobre el bote apunta hacia adelante.",
+   "respuesta_modelo": "El error es sumar dos fuerzas que actúan sobre cuerpos distintos. El remo empuja el agua hacia atrás, y esa fuerza actúa sobre el agua; el agua empuja el remo hacia adelante, y esa fuerza actúa sobre el remo, el bote y Sofía. Para saber qué pasa con el bote solo cuentan las fuerzas sobre el bote: al arrancar, la del agua en el remo hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta lo acelera hacia adelante.",
    "criterios": [
     {
      "id": "c1",
@@ -12609,7 +13149,7 @@
     },
     {
      "id": "c3",
-     "descripcion": "Explica que el bote avanza porque la fuerza neta sobre el bote apunta hacia adelante (la del agua sobre el remo supera a la resistencia).",
+     "descripcion": "Explica con las fuerzas sobre el bote por qué arranca: la del agua sobre el remo hacia adelante supera a la resistencia y la fuerza neta lo acelera (se acepta añadir que, a rapidez constante, esas fuerzas se equilibran).",
      "obligatorio": true
     },
     {
@@ -12638,7 +13178,71 @@
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "El enunciado conserva «arrancar y ganar rapidez» y ahora pide comparar con la resistencia, como exige c3. No reintroduce la idea de que avanzar requiere fuerza neta."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par y por qué el bote sí avanza.",
+    "retroalimentacion": "El remo empuja el agua hacia atrás (fuerza sobre el agua) y el agua empuja el remo, y con él al bote y a Sofía, hacia adelante (fuerza sobre el bote). Como actúan sobre cuerpos distintos, no se suman ni se anulan. Sobre el bote, la fuerza del agua hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta lo acelera.",
+    "rubrica": {
+     "respuesta_modelo": "El error es sumar dos fuerzas que actúan sobre cuerpos distintos. El remo empuja el agua hacia atrás, y esa fuerza actúa sobre el agua; el agua empuja el remo hacia adelante, y esa fuerza actúa sobre el remo, el bote y Sofía. Para saber si el bote avanza solo cuentan las fuerzas sobre el bote: la del agua en el remo hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta sobre el bote apunta hacia adelante.",
+     "criterios": [
+      {
+       "id": "c1",
+       "descripcion": "Identifica el par: el remo empuja el agua hacia atrás y el agua empuja el remo (o el bote) hacia adelante.",
+       "obligatorio": true
+      },
+      {
+       "id": "c2",
+       "descripcion": "Afirma que las dos fuerzas del par actúan sobre cuerpos distintos (agua y remo-bote) y por eso no se anulan entre sí.",
+       "obligatorio": true
+      },
+      {
+       "id": "c3",
+       "descripcion": "Explica que el bote avanza porque la fuerza neta sobre el bote apunta hacia adelante (la del agua sobre el remo supera a la resistencia).",
+       "obligatorio": true
+      },
+      {
+       "id": "c4",
+       "descripcion": "Usa un diagrama o un ejemplo análogo (caminar, nadar, un cohete).",
+       "obligatorio": false
+      }
+     ],
+     "errores": [
+      {
+       "descripcion": "Acepta que el par se anula y busca otra fuerza que mueva al bote.",
+       "ejemplo": "Sí se anulan, pero el bote avanza porque Sofía rema con más fuerza de la que regresa el agua.",
+       "dificultad": "DIF:fisica/tercera-ley-newton/2"
+      },
+      {
+       "descripcion": "Cree que la acción es mayor que la reacción.",
+       "ejemplo": "El remo empuja más fuerte al agua que el agua al remo, y esa diferencia mueve el bote.",
+       "dificultad": "DIF:fisica/tercera-ley-newton/1"
+      },
+      {
+       "descripcion": "Nombra fuerzas sin decir sobre qué cuerpo actúa cada una.",
+       "ejemplo": "El bote avanza por la reacción del agua, que es la tercera ley.",
+       "dificultad": null
+      }
+     ]
+    }
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.9/obj-1",
@@ -12665,14 +13269,31 @@
   "unidad": "N",
   "retroalimentacion": "En el eje vertical actúan el peso, 20 · 9.8 = 196 N hacia abajo, la normal hacia arriba y la componente vertical de la cuerda, 80 sen 30° = 40 N hacia arriba. Como el costal no se acelera verticalmente, N + 40 − 196 = 0 y N = 156 N. La normal no siempre es igual al peso: aquí la cuerda carga una parte, y por eso también baja la fricción.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.9"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.9)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Enunciado claro y en registro de 10.°: andamia con «plantea ΣFy = 0», dice la unidad y remite g a la tabla de referencia como aproximado. Retroalimentación de 74 palabras (límite 100), explica sin regañar y conecta con el porqué que pide el indicador. Contexto cotidiano (costal en el patio) y 7 min realistas."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.9/obj-2",
@@ -12706,14 +13327,31 @@
   "unidad": null,
   "retroalimentacion": "En el ángulo crítico μs = tan θ: cartón ≈ 0.40, madera ≈ 0.51 y caucho ≈ 0.84. A 30° un objeto queda quieto solo si μs ≥ tan 30° ≈ 0.58, es decir, si su ángulo crítico es mayor que 30°: solo el caucho. La masa no importa, porque el peso a lo largo de la tabla y la fricción máxima crecen igual con ella; y la fricción estática tiene un máximo, μs·N.",
   "duracion_min": 7,
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.9"
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.9)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Datos rotulados como de ejemplo, situación concreta y manipulable. Opciones de longitud pareja; A y B dan ambas un cálculo, así que el número no delata la clave; C y D recogen ideas previas plausibles. Retroalimentación de 74 palabras, explica la regla μs = tan θ y por qué la masa no importa. 7 min suficientes."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "ACT:G10-FIS-U5-5.9/obj-abierta",
@@ -12731,7 +13369,7 @@
   "grados": [
    10
   ],
-  "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 2 o 3 oraciones, explica las dos observaciones: por qué cuesta más arrancar, y qué le pasa a la fuerza normal y a la fricción cuando jala inclinado.",
+  "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 3 o 4 oraciones, explica: 1) por qué cuesta más arrancar que mantenerla deslizándose; 2) qué le pasa a la fuerza normal cuando jala inclinado, y por qué; 3) qué le pasa entonces a la fricción.",
   "opciones": null,
   "correcta": null,
   "distractores": null,
@@ -12739,8 +13377,8 @@
   "tolerancia": null,
   "unidad": null,
   "retroalimentacion": "Para arrancar hay que superar la fricción estática máxima, μs·N, que es mayor que la cinética, μk·N, porque en general μs > μk. Al jalar inclinado, la componente vertical de la cuerda carga parte del peso: la normal baja (N = mg − F sen θ) y con ella baja la fricción, que es proporcional a N.",
-  "duracion_min": 5,
-  "estado": "propuesta_pendiente",
+  "duracion_min": 6,
+  "estado": "revisado_panel",
   "fuente": {
    "tipo": "malla",
    "ref": "TEMA:G10-FIS-U5-5.9"
@@ -12789,7 +13427,29 @@
   },
   "origen": "redactor-actividades (G10-FIS-U5-5.9)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "Las tres partes del enunciado corresponden a c1–c3; física intacta: μs > μk y N = mg − F sen θ."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 2 o 3 oraciones, explica las dos observaciones: por qué cuesta más arrancar, y qué le pasa a la fuerza normal y a la fricción cuando jala inclinado.",
+    "duracion_min": 5
+   }
+  }
  },
  {
   "id": "ACT:G10-FIS-U6-6.5/obj-1",

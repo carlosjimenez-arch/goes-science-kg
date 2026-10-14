@@ -48,6 +48,17 @@ Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuest
 | TEMA:G09-CIE-U7-7.5 | [G09-CIE-U7-7.5](G09-CIE-U7-7.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G09-CIE-U7-7.6 | [G09-CIE-U7-7.6](G09-CIE-U7-7.6.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G09-CIE-U7-7.7 | [G09-CIE-U7-7.7](G09-CIE-U7-7.7.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U2-2.1 | [G10-FIS-U2-2.1](G10-FIS-U2-2.1.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U2-2.4 | [G10-FIS-U2-2.4](G10-FIS-U2-2.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U3-3.5 | [G10-FIS-U3-3.5](G10-FIS-U3-3.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U3-3.6 | [G10-FIS-U3-3.6](G10-FIS-U3-3.6.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U3-3.7 | [G10-FIS-U3-3.7](G10-FIS-U3-3.7.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U4-4.1 | [G10-FIS-U4-4.1](G10-FIS-U4-4.1.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U5-5.2 | [G10-FIS-U5-5.2](G10-FIS-U5-5.2.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U5-5.4 | [G10-FIS-U5-5.4](G10-FIS-U5-5.4.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U5-5.7 | [G10-FIS-U5-5.7](G10-FIS-U5-5.7.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U5-5.9 | [G10-FIS-U5-5.9](G10-FIS-U5-5.9.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G10-FIS-U5-5.10 | [G10-FIS-U5-5.10](G10-FIS-U5-5.10.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | G10-FIS-U6-6.4 | [G10-FIS-U6-6.5](G10-FIS-U6-6.5.md) (reemplazo: 100 % de los conceptos y 70 % del texto del pedido) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | G10-QUI-U13-13.8 | [G10-QUI-U4-4.8](G10-QUI-U4-4.8.md) (VECINO, no equivalente: 25 % de los conceptos y 22 % del texto del pedido) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
 | TEMA:G11-FIS-U1-1.2 | [G11-FIS-U1-1.2](G11-FIS-U1-1.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |

@@ -1,0 +1,126 @@
+# Paquete de clase: G10-FIS-U4-4.1 (10.°, fisica)
+
+> Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuestas del equipo GOES con revisión del panel de expertos IA cuando se indica. No son confirmaciones del MINED y nada llega al estudiante sin la firma del docente.
+
+## Completitud
+
+| Hueco | Estado |
+|---|---|
+| texto crudo | completo |
+| ideas previas | completo |
+| experimentos | completo |
+| capa pedagogica | ligera |
+| datos de referencia | pendiente_de_fuente |
+| revision del panel | completa |
+
+## Tema (malla V3, texto crudo)
+
+- **Ubicación:** Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 10.°», fila 10
+- **Contenido:** Movimiento en el plano y proyectiles — Lanzamiento oblicuo Alcance, altura máxima y tiempo de vuelo Dependencia del alcance con el ángulo Vector posición y desplazamiento en dos dimensiones Velocidad media vectorial Aceleración media vectorial Independencia de los movimientos Ecuaciones cinemáticas por componentes Aceleración constante en el plano
+- **Procedimental:** 2.4. Aplicación de las ecuaciones de la cinemática por componentes al movimiento en el plano y modelación del lanzamiento oblicuo de proyectiles, con validación en un lanzador de bajo riesgo.
+- **Indicador:** 2.4. • Predice el alcance, la altura máxima y el tiempo de vuelo de un proyectil lanzado con cualquier ángulo y contrasta la predicción con mediciones de un lanzador construido en el aula. • Calcula con vectores unitarios el desplazamiento, la velocidad media y la aceleración media de un móvil en el plano, y explica por qué un móvil que cambia de dirección con rapidez constante está acelerado. • Aplica las ecuaciones de la cinemática por separado en cada eje para resolver movimientos en el plano con aceleración constante.
+- **Evidencia:** Lanzador construido, tabla de alcance contra ángulo y gráfica comparativa de valores medidos y predichos
+- **Absorbe de la V2:** G10-FIS-U4-4.2 (4.2. Aplicación de las ecuaciones de la cinemática por componentes a movimientos en el plano con aceleración constante.); G10-FIS-U4-4.3 (4.3. Modelación del lanzamiento oblicuo de proyectiles y validación con un lanzador construido con materiales de bajo riesgo.)
+
+## Conceptos y bases
+
+- **Cinemática en dos dimensiones y proyectiles** (principal): Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia.
+- **Aceleración** (secundario): Cambio de la velocidad por unidad de tiempo; puede aumentar o disminuir la rapidez o cambiar la dirección.
+- **Movimiento con aceleración constante** (secundario): Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.
+- **Posición, desplazamiento y trayectoria** (secundario): La posición se mide respecto a un sistema de referencia; el desplazamiento es el cambio vectorial de posición.
+- **Rapidez y velocidad** (secundario): Rapidez es distancia recorrida por unidad de tiempo; velocidad es desplazamiento por unidad de tiempo, con dirección.
+- Base: Caída libre (profundidad 1; la malla la enseña antes)
+- Base: Suma de vectores y componentes rectangulares (profundidad 1; la malla la enseña antes)
+- Base: Movimiento con aceleración constante (profundidad 2; la malla la enseña antes)
+- Base: Gravedad: atracción hacia la Tierra (profundidad 2; NO la enseña antes)
+- Base: Magnitudes escalares y vectoriales (profundidad 2; la malla la enseña antes)
+
+## Fuentes de los países (texto original)
+
+| País | Nivel | SV | Documento, página | Texto original | Paráfrasis |
+|---|---|---|---|---|---|
+| AU | especializacion | 10–10 | AU_SeniorSecondary_Physics_v8.4_U1-3.html, p. 3 | Uniformly accelerated motion is described in terms of relationships between measurable scalar and vector quantities | Describir el movimiento uniformemente acelerado en términos de relaciones entre cantidades escalares y vectoriales medibles, incluyendo desplazamiento, rapidez, velocidad y aceleración. |
+| AU | especializacion | 10–11 | AU_SeniorSecondary_Physics_v8.4_U1-3.html, p. 5 | Projectile motion can be analysed quantitatively by treating the horizontal and vertical components of the motion independently | Analizar cuantitativamente el movimiento de proyectiles tratando las componentes horizontal y vertical del movimiento de forma independiente. |
+| AU | especializacion | 10–10 | AU_SeniorSecondary_Physics_v8.4_U1-3.html, p. 3 | Representations, including graphs and vectors, and/or equations of motion, can be used qualitatively and quantitatively | Utilizar representaciones, como gráficos, vectores y ecuaciones de movimiento, de forma cualitativa y cuantitativa para describir y predecir el movimiento lineal. |
+| EE | nucleo | 10–11 | EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf, p. 10 | selgitab füüsikaliste suuruste (kiirus, kiirendus, teepikkus ja nihe) tähendusi | Explicar el significado de magnitudes físicas como velocidad, aceleración, distancia y desplazamiento, así como los métodos para medirlas. |
+| EE | nucleo | 7–9 | EE_Basic_Annex4_Natural_Science_2023_en.pdf, p. 12 | measure or calculate the area of a shape, the volume | Medir o calcular el área de una forma, el volumen de un cuerpo, la velocidad de movimiento y la densidad. |
+| EE | nucleo | 10–11 | EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf, p. 10 | analüüsib teepikkuse, kiiruse ja kiirenduse graafikuid; | Analizar gráficos de distancia, velocidad y aceleración. |
+| ENG | nucleo | 8–9 | ENG_GCSE_CombinedScience_SubjectContent_2015.pdf, p. 32 | apply formulae relating distance, time and speed, for uniform motion, and for motion with uniform acceleration | Aplicar fórmulas de distancia, tiempo y rapidez para movimiento uniforme y uniformemente acelerado, y calcular la rapidez media en movimiento no uniforme. |
+| ENG | especializacion | 8–9 | ENG_GCSE_SingleScience_BioChemPhys_SubjectContent_2015.pdf, p. 37 | apply formulae relating distance, time and speed, for uniform motion, and for motion with uniform acceleration | Aplicar fórmulas de distancia, tiempo y rapidez para movimiento uniforme y uniformemente acelerado, y calcular la rapidez media. |
+| ENG | nucleo | 8–9 | ENG_GCSE_CombinedScience_SubjectContent_2015.pdf, p. 31 | apply Newton’s First Law to explain the motion of objects moving with uniform velocity | Aplicar la primera ley de Newton para explicar el movimiento de objetos con velocidad uniforme o con cambios de rapidez o dirección. |
+| HK | nucleo | 6–8 | HK_Science_S1-3_CurriculumFramework_2025.pdf, p. 63 | use formula (speed = distance / time) to calculate | Usar la fórmula de rapidez (distancia/tiempo) para calcular la rapidez media de un objeto en movimiento. |
+| HK | especializacion | 9–11 | HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf, p. 27 | apply equations of uniformly accelerated motion to solve problems | Aplicar las ecuaciones del movimiento uniformemente acelerado (v = u + at, s = 1/2(u + v)t) para resolver problemas. |
+| HK | especializacion | 9–11 | HK_Physics_UpdatedFramework_S4-6_ConsultDraft_2026.pdf, p. 29 | apply Newton’s Laws of motion to solve problems | Aplicar las Leyes de Newton para resolver problemas que involucren movimiento en una dimensión. |
+| JP | nucleo_parcial | 9–10 | JP_COS_Koko_2018_Gakushushidoyoryo.pdf, p. 108 | 速度が変化する物体の直線運動に関する実験などを行い | Realizar experimentos de movimiento rectilíneo con velocidad variable para deducir la relación velocidad-tiempo y comprender la aceleración. |
+| JP | especializacion | 10–11 | JP_COS_Koko_2018_Gakushushidoyoryo.pdf, p. 110 | 平面内を運動する物体の運動について理解すること。 | Comprender el movimiento de los objetos que se desplazan en un plano bidimensional. |
+| JP | especializacion | 10–11 | JP_COS_Koko_2018_Gakushushidoyoryo.pdf, p. 110 | 水平投射及び斜方投射された物体の運動を直線運動と関連付けて理解すること。 | Comprender el movimiento de objetos proyectados horizontal y oblicuamente, relacionándolo con el movimiento rectilíneo. |
+| KR | nucleo | 6–8 | KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf, p. 63 | [9과19-02] 자유 낙하하는 물체의 운동에서 시간에 따른 속력의 변화가 일정함을 | Analizar que el cambio de velocidad en caída libre es constante (9.8 m/s por unidad de tiempo), independientemente de la masa o el tipo de objeto. |
+| KR | nucleo | 6–8 | KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf, p. 63 | [9과19-01] 직선상에서 움직이는 물체의 운동을 그래프로 나타내고 해석할 수 있다. | Representar e interpretar el movimiento rectilíneo de un objeto mediante gráficos, utilizando gráficos de tiempo-velocidad para analizar movimientos con velocidad variable. |
+| KR | nucleo | 4–5 | KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf, p. 39 | [6과10-01] 운동하는 물체는 시간에 따라 위치가 변화함을 알고 그 변화를 표현할 수 있다. | Comprender que la posición de un objeto en movimiento cambia con el tiempo y expresar dicho cambio. |
+| ON | especializacion | 10–10 | ON_Science_Grades11-12_2008.pdf, p. 186 | use a velocity–time graph for constant acceleration to derive the equation for average velocity | Derivar ecuaciones de velocidad media y desplazamiento usando gráficos de velocidad-tiempo para aceleración constante, y resolver problemas unidimensionales. |
+| ON | especializacion | 10–10 | ON_Science_Grades11-12_2008.pdf, p. 187 | use kinematic equations to solve problems related to the horizontal and vertical components | Utilizar ecuaciones cinemáticas para resolver problemas relacionados con las componentes horizontales y verticales del movimiento de un proyectil. |
+| ON | especializacion | 10–10 | ON_Science_Grades11-12_2008.pdf, p. 186 | use appropriate terminology related to kinematics, including, but not limited to: time, distance, position | Utilizar terminología adecuada relacionada con la cinemática, incluyendo tiempo, distancia, posición, desplazamiento, rapidez, velocidad y aceleración. |
+| SG | especializacion | 9–10 | SG_SEC_G3_Physics_K323_2027.pdf, p. 11 | calculate the area under a velocity-time graph to determine the displacement | Calcular el área bajo una gráfica velocidad-tiempo para determinar el desplazamiento en movimientos con velocidad o aceleración uniforme. |
+| SG | nucleo_parcial | 9–10 | SG_SEC_G3_Science_PhysChem_K326_2027.pdf, p. 11 | calculate the area under a speed-time graph to determine the distance | Calcular el área bajo una gráfica rapidez-tiempo para determinar la distancia recorrida en movimiento unidireccional con rapidez o aceleración uniforme. |
+| SG | especializacion | 9–10 | SG_SEC_G3_Physics_K323_2027.pdf, p. 11 | plot and interpret a displacement-time graph and a velocity-time graph | Trazar e interpretar gráficas de desplazamiento-tiempo y velocidad-tiempo para el movimiento en una dimensión. |
+| TW | especializacion | 10–11 | TW_12YBE_Ciencias_Naturales_2018_zh.pdf, p. 50 | 質點作等速圓周運動時其速率及角速度不變，但有向心加速度，因此速度的方向會改變。 | Explicar que en el movimiento circular uniforme la rapidez y velocidad angular son constantes, pero la aceleración centrípeta cambia la dirección de la velocidad. |
+| TW | especializacion | 10–11 | TW_12YBE_Ciencias_Naturales_2018_zh.pdf, p. 50 | 質點如在一平面上運動，則其位移、速度、加速度有兩個獨立的分量。 | Identificar que una partícula en movimiento bidimensional tiene componentes independientes para el desplazamiento, la velocidad y la aceleración. |
+| TW | especializacion | 10–11 | TW_12YBE_Ciencias_Naturales_2018_zh.pdf, p. 50 | 質點如在一平面上運動，則其位移、速度、加速度有兩個分量，應用向量表示，例如：拋體運動 | Aplicar la representación vectorial a los componentes del movimiento bidimensional, como en el movimiento de proyectiles cuya trayectoria es una parábola. |
+
+## Marcos
+
+- TA15 TA-M1.1: Cinemática y leyes de Newton
+
+## Ideas previas erróneas
+
+- **DIF:fisica/caida-libre/1** (revisado_panel): Cree que los cuerpos más pesados caen con mayor aceleración también cuando el aire es despreciable, por ejemplo una piedra y una canica soltadas desde 1 m. (Con aire, entre cuerpos de igual forma, el más pesado sí puede llegar antes; el error es extenderlo a la caída libre.) *Señal:* Predice que la piedra llega claramente antes que la canica; explica que una hoja arrugada cae antes que una hoja lisa igual porque «pesa más»; usa la masa en las ecuaciones de la caída libre.
+- **DIF:fisica/caida-libre/2** (revisado_panel): Cree que en el punto más alto de un lanzamiento vertical la aceleración es cero, porque la velocidad es cero en ese instante. *Señal:* Escribe a = 0 en la altura máxima o dice que «ahí la gravedad deja de actuar un instante»; confunde velocidad nula con aceleración nula.
+- **DIF:fisica/caida-libre/3** (revisado_panel): Cree que la aceleración apunta en el sentido del movimiento: hacia arriba mientras la pelota sube y hacia abajo solo cuando baja. *Señal:* Dibuja la aceleración hacia arriba en la subida; usa +g al subir y −g al bajar con el mismo eje; dice que la pelota «lleva una fuerza hacia arriba» que se agota.
+- **DIF:fisica/movimiento-proyectiles/1** (revisado_panel): En un lanzamiento oblicuo cree que en el punto más alto la pelota se detiene por completo (velocidad cero) o que allí la gravedad deja de actuar (aceleración cero). En ese punto solo la componente vertical de la velocidad vale cero: la horizontal sigue igual, y la aceleración es g hacia abajo durante todo el vuelo. (En un lanzamiento vertical sí es cierto que la velocidad es cero arriba, pero la aceleración tampoco se anula.) *Señal:* Escribe v = 0 o a = 0 en la altura máxima; dibuja la trayectoria con un «pico» o una pausa arriba; usa t = v₀/g en lugar de t = v₀ sen θ/g; dice que arriba «flota un instante» o que «la gravedad gana después».
+- **DIF:fisica/movimiento-proyectiles/2** (revisado_panel): No reconoce la independencia de los movimientos: cree que la velocidad horizontal cambia el tiempo de caída, de modo que un objeto lanzado en horizontal tarda más en llegar al suelo que otro que se suelta a la misma altura en el mismo instante. En el modelo sin resistencia del aire tardan exactamente lo mismo, y con objetos densos y lentos la diferencia no se nota. *Señal:* Predice que la canica soltada llega primero; usa la distancia recorrida en la trayectoria curva para calcular el tiempo de caída; mezcla componentes en una misma ecuación (por ejemplo, usa v₀ completo en la ecuación vertical); dice que «la bala disparada en horizontal se mantiene más tiempo en el aire».
+- **DIF:fisica/movimiento-proyectiles/3** (revisado_panel): Cree que el lanzamiento le deja al proyectil una fuerza que lo acompaña en la dirección del movimiento y se va gastando («ímpetu»): mientras le dura sigue avanzando y subiendo, y cuando se acaba, cae. En el aire solo actúan el peso y la resistencia del aire; ninguna fuerza empuja al proyectil hacia adelante. *Señal:* Dibuja en el diagrama de cuerpo libre una flecha tangente a la trayectoria o hacia adelante; dibuja trayectorias que siguen rectas y luego caen casi vertical; explica el menor alcance a 75° porque «la fuerza se gastó subiendo»; dice que la pelota cae «cuando se le acaba la fuerza».
+- **DIF:fisica/movimiento-uniformemente-acelerado/1** (revisado_panel): Cree que una aceleración negativa siempre significa frenar y una positiva siempre aumentar la rapidez, sin compararla con el signo de la velocidad. *Señal:* Dice que un móvil con v = −12 m/s y a = −2 m/s² está frenando, o que uno con v negativa y a positiva acelera; llama «desaceleración» a cualquier aceleración negativa.
+- **DIF:fisica/movimiento-uniformemente-acelerado/2** (revisado_panel): Cree que la distancia de frenado es proporcional a la rapidez: que al duplicar la rapidez se duplica la distancia, en lugar de cuadruplicarse cuando la desaceleración es la misma. *Señal:* Si un carro frena en 9 m a cierta rapidez, predice 18 m al doble de rapidez cuando corresponden 36 m; dibuja la distancia de frenado contra la rapidez como una recta.
+- **DIF:fisica/movimiento-uniformemente-acelerado/3** (revisado_panel): Calcula la distancia de detención solo con la fase de frenado: olvida que durante el tiempo de reacción el vehículo sigue a la misma rapidez, o cree que empieza a frenar en el instante en que el conductor ve el peligro. *Señal:* Su distancia total coincide con v²/(2a); en una gráfica v-t ignora el tramo horizontal inicial o empieza el triángulo desde t = 0.
+- **DIF:fisica/suma-vectores-componentes/1** (revisado_panel): Suma los módulos como si fueran escalares: cree que la resultante de varios desplazamientos o fuerzas mide la suma de sus módulos, sin importar sus direcciones. *Señal:* Responde que 3 km al este y 4 km al norte dan una resultante de 7 km (en lugar de 5 km), o que para volver al punto de partida hay que recorrer en línea recta lo mismo que todo el camino de ida; no dibuja los vectores ni separa componentes.
+- **DIF:fisica/suma-vectores-componentes/2** (revisado_panel): Asigna los signos de las componentes sin mirar el cuadrante: las escribe todas positivas, cree que una componente negativa es un error porque el módulo es positivo, o acepta el ángulo de la calculadora con arctan sin corregir el cuadrante. *Señal:* Componentes x positivas para vectores que apuntan al oeste o y positivas hacia el sur; una resultante en el primer cuadrante cuando el dibujo la muestra en el tercero.
+- **DIF:fisica/suma-vectores-componentes/3** (revisado_panel): Usa siempre el coseno para x y el seno para y, aunque el ángulo esté medido desde el eje vertical o sea un rumbo desde el norte (N 30° E), o mide el ángulo de la resultante desde el eje equivocado. *Señal:* Para un rumbo N 30° E escribe x = d cos 30°; da un rumbo S 53° O donde corresponde S 37° O; intercambia las componentes de un vector.
+
+## Experimentos con procedimiento
+
+### Lanzador de liga: predecir y medir el alcance según el ángulo (EXP:G10-FIS-U4-4.1/1, 110 min, revisado_panel)
+
+**Propósito:** Construir un lanzador de bajo riesgo con un tubo, una varilla y ligas; medir su rapidez de salida con un tiro horizontal desde una mesa; con ese dato predecir con el modelo por componentes el alcance para cinco ángulos, y contrastar la predicción con el alcance medido. El producto es la tabla de alcance contra ángulo y la gráfica de valores medidos y predichos que pide la malla como evidencia.
+
+**Materiales:** Un tubo de PVC de 1/2 pulgada y unos 25 cm de largo, o el tubo de cartón de un rollo de papel toalla reforzado con cinta adhesiva; Una varilla de madera de unos 25 cm, del mismo largo que el tubo (un pincho grueso sin punta o un palito), que corra holgada dentro del tubo, con una tapita de botella pegada en el extremo de atrás como tope; así, al soltarla, la punta llega justo a la boca y no sobresale; Dos ligas iguales y cinta adhesiva; Pelotas de espuma pequeñas o bolitas de papel periódico forradas con cinta (unos 2 cm, que pasen holgadas por el tubo); tres por grupo; Transportador, plastilina y dos o tres libros para fijar el ángulo del tubo; Cinta métrica de 3 m o más y cinta de papel o yeso para marcar el piso; Un hilo con una tuerca (plomada) para marcar en el piso el punto bajo el borde de la mesa; Una hoja de papel con papel carbón encima (o un poco de harina en una bandeja) para marcar dónde cae la pelota; Gafas de protección o lentes de seguridad para quien lanza y para quien mide; Calculadora con funciones trigonométricas y papel milimetrado u hoja de cálculo
+
+**Procedimiento:**
+1. (Sesión 1, 10 min) Armen el lanzador: peguen las ligas con cinta por fuera, en el extremo delantero del tubo, y engánchenlas a la tapita de la varilla, que entra por atrás. Al jalar la varilla hacia atrás las ligas se estiran; al soltarla, la varilla empuja la pelota y la tapita se detiene contra el tubo.
+2. (5 min) Marquen en la varilla una línea de jalón (por ejemplo, a 8 cm) y prueben tres tiros: siempre se jala hasta la misma marca para que la rapidez de salida sea parecida. Antes de seguir, cada estudiante escribe qué ángulo cree que dará el mayor alcance y por qué.
+3. (12 min) Calibración: fijen el tubo horizontal sobre el borde de la mesa con plastilina y midan la altura h de la boca del tubo sobre el piso. Marquen con la plomada el punto del piso bajo la boca. Hagan 5 tiros y midan la distancia horizontal x desde ese punto hasta donde cae la pelota.
+4. (25 min) En un pasillo o en el patio, apoyen la boca del tubo sobre la marca de salida en el piso y levanten la parte de atrás con libros y plastilina hasta el ángulo, para que la pelota salga casi al nivel del piso, como supone el modelo. Con el transportador fijen el tubo a 15°, 30°, 45°, 60° y 75°, y hagan 5 tiros en cada ángulo. Midan el alcance desde la boca del tubo hasta la marca de caída y anoten todo en la tabla.
+5. (3 min) Recojan pelotas, ligas y marcas del piso.
+6. (Sesión 2, 10 min) Con los datos del paso 3 calculen el tiempo de caída t = √(2h/g), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia), y la rapidez de salida v₀ = x promedio / t.
+7. (10 min) Con ese v₀ calculen el alcance predicho para cada ángulo, R = v₀² sen(2θ)/g, y también la altura máxima y el tiempo de vuelo predichos para 45°.
+8. (15 min) Completen la tabla ángulo – alcance medido (promedio) – alcance predicho y hagan en una misma gráfica las dos curvas, medida y predicha, contra el ángulo.
+9. (15 min) En grupo, respondan las tres primeras preguntas de análisis con su tabla y su gráfica.
+10. (5 min) Puesta en común: cada grupo dice su ángulo de alcance máximo y su mayor diferencia entre medido y predicho.
+
+**Seguridad:** Usen gafas de protección quien lanza y quien mide. Solo se lanzan pelotas de espuma o bolitas de papel; nunca piedras, canicas, lápices ni objetos con punta.; Nunca apunten el lanzador hacia una persona. Marquen la zona de caída y nadie entra en ella hasta que el lanzador esté descargado.; Jalen la varilla solo hasta la marca: estirar de más puede romper la liga y golpear la mano.; En el paso 3 la mesa debe estar firme y nadie se sube a ella.
+
+**Datos esperados:** Con un lanzador de liga la rapidez de salida suele estar entre unos 3 y 5 m/s; desde una mesa de unos 0.80 m la pelota cae en unos 0.4 s y avanza entre 1.2 y 2 m. El alcance medido crece de 15° a 45° y baja de 45° a 75°; los pares 15°–75° y 30°–60° dan alcances parecidos, y el máximo queda entre unos 40° y 45° (con pelotas livianas, el aire lo corre un poco por debajo de 45°). Los alcances medidos suelen salir algo menores que los predichos, del orden de un 5 a 20 %, por el aire y la variación de la rapidez de salida. Si la boca queda elevada sobre el piso, el efecto es el contrario: el alcance crece, sobre todo a ángulos bajos (con v₀ = 4 m/s y la boca a 6 cm, el tiro a 15° llega cerca de un 20 % más lejos), y la simetría 15°–75° se pierde. Para 45° la altura máxima predicha es v₀²/(4g), del orden de 0.2 a 0.6 m.
+
+**Análisis:** (Paso 9) ¿Para qué ángulo fue mayor el alcance medido? ¿Coincide con lo que predijeron al inicio y con el que da el modelo? | (Paso 9) ¿Qué pares de ángulos dieron alcances parecidos? Expliquen con las componentes vx y vy por qué el modelo predice eso. | (Paso 9) ¿Los alcances medidos quedaron por encima o por debajo de los predichos? ¿Qué supuestos del modelo (sin aire, salida al nivel del piso, misma rapidez en todos los tiros) explican la diferencia? | Tarea: Propongan una mejora al lanzador para que la rapidez de salida sea más repetible o el ángulo se mida con más precisión, y expliquen cómo comprobarían que funciona. | Tarea: Las zonas de exclusión del volcán de San Miguel consideran hasta dónde llegan las rocas que lanza. ¿Por qué el modelo sin aire sirve solo como una estimación de ese alcance?
+
+## Actividades
+
+- **ACT:G10-FIS-U3-3.5/obj-1** (objetivo, razonar, opcion_multiple): Datos de ejemplo: en pavimento seco, un carro que va a 40 km/h recorre 9 m desde que se pisa el freno hasta detenerse. Si el mismo carro va a 80 km/h y frena con la misma desaceleración constante, ¿qué distancia recorre 
+- **ACT:G10-FIS-U3-3.5/obj-2** (objetivo, interpretar_datos, numerica): Datos de un grupo de ejemplo, tomados de un video: Karla maneja por una calle recta y en t = 0 s ve un obstáculo. Su velocidad fue: 0 s, 15.0 m/s; 0.4 s, 15.0 m/s; 0.8 s, 15.0 m/s; 1.8 s, 10.0 m/s; 2.8 s, 5.0 m/s; 3.8 s,
+- **ACT:G10-FIS-U3-3.5/obj-abierta** (objetivo, explicar, abierta): Se toma como positivo el sentido hacia el este. Un bus va hacia el oeste con velocidad v = −12 m/s y tiene una aceleración constante a = −2.0 m/s². Mario dice: «Como la aceleración es negativa, el bus está frenando». En 
+- **ACT:G10-FIS-U4-4.1/obj-1** (objetivo, razonar, numerica): Daniela patea una pelota desde el suelo de una cancha plana con una rapidez de 15 m/s y un ángulo de 30° sobre la horizontal. Desprecia la resistencia del aire y usa g ≈ 9.8 m/s² (valor aproximado de la tabla de referenc
+- **ACT:G10-FIS-U4-4.1/obj-2** (objetivo, interpretar_datos, opcion_multiple): Un grupo midió con su lanzador de liga el alcance promedio de 5 tiros para cinco ángulos, siempre con la misma marca de jalón (datos de un grupo de ejemplo): 15°: 1.20 m; 30°: 2.05 m; 45°: 2.38 m; 60°: 2.03 m; 75°: 1.17 
+- **ACT:G10-FIS-U4-4.1/obj-abierta** (objetivo, explicar, abierta): Desde el borde de una mesa de 0.80 m de alto, Marcos empuja una canica que sale disparada en horizontal y, en el instante en que esa canica deja el borde, Daniela suelta otra canica igual desde el mismo borde. En 2 o 3 o
+
+## Datos de referencia
+
+- **Pendiente de fuente** (tabla citable en data/fuentes/). Datos que piden los elementos:
