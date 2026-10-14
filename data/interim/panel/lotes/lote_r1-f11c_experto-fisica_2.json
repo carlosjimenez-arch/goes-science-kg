@@ -1,0 +1,208 @@
+{
+ "lote": "r1-f11c_experto-fisica_2",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U12-12.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U12-12.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.7"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.7",
+      "CON:fisica/ondas-radio-telecomunicaciones"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Radio de galena, chispas de Hertz y la tabla de las tecnologías inalámbricas",
+     "proposito": "Construir un receptor de radio AM sin pilas (radio de galena) para entender sintonía, antena y demodulación; repetir con una pila y un radio la idea de Hertz de producir ondas de radio con chispas y ver cómo bajan con la distancia y con un blindaje metálico; y elaborar la tabla comparativa de tecnologías inalámbricas con el esquema del GPS.",
+     "materiales": [
+      "Por grupo: 12 m de alambre esmaltado calibre 24 a 26, un tubo de PVC de 2 pulgadas y 15 cm de largo, cinta y lija fina",
+      "Un diodo de germanio (1N34A o 1N60, de tienda de electrónica)",
+      "Un capacitor variable nuevo de unos 365 pF, de tienda de electrónica (o sintonía por cursor: lijar una franja del esmalte a lo largo de la bobina y deslizar un caimán sobre ella)",
+      "Un auricular piezoeléctrico de alta impedancia, o un disco piezoeléctrico pasivo con un resistor de 47 kΩ en paralelo",
+      "Antena: 15 a 20 m de cable forrado con aisladores de plástico (o botellas) en las puntas; tierra: una varilla metálica clavada en suelo húmedo",
+      "Cables con caimanes y una protoboard pequeña (opcional)",
+      "Para toda la clase: un radio AM portátil de pilas, una pila de 9 V nueva, una moneda o un trozo de alambre, una lata metálica de galletas con tapa y una cinta métrica",
+      "Hojas con la tabla comparativa y los datos de cada tecnología"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente explica con un esquema la onda portadora, la modulación de amplitud y cómo el diodo recupera la señal de audio, y repasa las reglas de seguridad de la antena.",
+      "2. (20 min) Cada grupo enrolla unas 60 vueltas juntas sobre el tubo, fija las puntas con cinta y las lija. Arman el circuito: la bobina y el capacitor variable en paralelo; de un extremo, el diodo y luego el auricular hasta el otro extremo.",
+      "3. (15 min) En el patio, la docente tiende la antena en un lugar alto y despejado, lejos de las líneas eléctricas, y clava la varilla de tierra. Por turnos, cada grupo conecta la antena arriba de la bobina y la tierra abajo, gira el capacitor (o desliza el cursor) y escucha.",
+      "4. (10 min) Anoten si oyeron emisoras, cuántas y con qué volumen, y respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "5. (15 min) Chispas de Hertz: con el radio AM de pilas sintonizado entre dos emisoras, a 0.5 m, la docente toca y separa rápidamente los dos bornes de la pila de 9 V con la moneda, sin dejarla en contacto. Escuchen el chasquido. Repitan a 1, 2, 4 y 8 m, y luego con la pila y la moneda dentro de la lata cerrada a 0.5 m. Anoten hasta dónde se oye.",
+      "6. (20 min) Con los datos de la hoja, completen la tabla comparativa: radio AM, radio FM, telefonía móvil, wifi, bluetooth y GPS, con frecuencia, longitud de onda calculada con c = λf, alcance típico y qué limita ese alcance.",
+      "7. (10 min) Dibujen el esquema del GPS: satélites que envían su hora, tiempo de viaje, distancia, intersección de esferas y el cuarto satélite para corregir el reloj del receptor.",
+      "8. (10 min) Ordenen en una línea de tiempo los hitos: predicción de las ondas por Maxwell, experimentos de Hertz, enlace transatlántico de Marconi, radio AM y FM comerciales, satélites, GPS, telefonía móvil, wifi y bluetooth. Respondan la pregunta de análisis 2."
+     ],
+     "seguridad": [
+      "La antena nunca se tiende con lluvia, con truenos o con el cielo cargado (algo frecuente en la época lluviosa): se desconecta y se recoge. Se tiende lejos de líneas eléctricas, sin subirse a techos ni árboles, y la tierra es una varilla en el suelo, nunca la tierra de un tomacorriente.",
+      "El radio de galena no usa pilas ni se conecta a la red. El radio AM es de pilas.",
+      "La pila de 9 V se cortocircuita solo un instante con la moneda; si se calienta, se deja enfriar. Nunca se hace con baterías de celular o de litio.",
+      "Las puntas del alambre esmaltado pinchan: lijen con cuidado y doblen las sobrantes."
+     ],
+     "datos_esperados": "Radio de galena: donde hay emisoras AM potentes a unas decenas de kilómetros, con una antena de 15 a 20 m se oyen una o dos, débiles pero claras, y se cambia de una a otra al girar el capacitor. Lejos de las emisoras, o con una antena corta, puede no oírse nada aunque el montaje esté bien: no hay pila que amplifique, y toda la energía del sonido sale de la onda captada. Chispas: el chasquido se oye claro a menos de 1 m, más débil a 2 o 4 m y casi nada a 8 m, porque la intensidad baja con la distancia; dentro de la lata cerrada casi desaparece. Tabla: la AM tiene λ de cientos de metros, la FM de unos 3 m, la telefonía y el GPS de unas decenas de centímetros, y el wifi y el bluetooth de 6 a 12 cm; el alcance depende sobre todo de la potencia, de los obstáculos y de si la onda sigue la curvatura de la Tierra o necesita línea de vista.",
+     "analisis": [
+      "(Paso 4) ¿Qué hace el capacitor variable al girarlo, y qué hace el diodo? ¿De dónde sale la energía que mueve el auricular si el radio no tiene pilas?",
+      "(Paso 8) ¿Qué relación hay entre el experimento de las chispas y los de Hertz? ¿Por qué la lata cerrada bloquea el chasquido?",
+      "Tarea: Con la tabla comparativa, expliquen por qué el bluetooth alcanza unos metros y la radio AM cientos de kilómetros, y por qué el wifi de 5 GHz atraviesa peor las paredes que el de 2.4 GHz.",
+      "Tarea: Revisen qué aplicaciones del celular tienen permiso para usar el GPS y el bluetooth, y desactiven los que no necesiten. Si no tienen celular propio, describan los pasos con el de la docente."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin diodo de germanio ni auricular piezoeléctrico: un kit de radio AM o FM de pilas para armar, que la docente suelda antes de la clase. Si no se capta nada: comprueben con el radio AM de pilas, en el mismo lugar, si llegan emisoras AM; si tampoco las capta, el resultado nulo es esperado y se discute por qué. Sin laboratorio ni internet: datos de un grupo de ejemplo. Radio de galena en San Salvador con 18 m de antena: dos emisoras, una clara y otra débil. Chispas: a 0.5 m, chasquido fuerte; a 1 m, claro; a 2 m, débil; a 4 m, apenas; a 8 m, nada; dentro de la lata a 0.5 m, nada. Tabla: AM 640 kHz, unos 470 m, cientos de km; FM 96.1 MHz, 3.1 m, unos 50 a 100 km con línea de vista; telefonía 850 MHz, 35 cm, unos km por antena; GPS 1575 MHz, 19 cm, desde satélites a unos 20 000 km; wifi 2.4 GHz, 12.5 cm, decenas de metros; bluetooth 2.4 GHz, 12.5 cm, unos 10 m.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U12-12.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U13-13.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U13-13.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U13-13.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U13-13.1",
+      "CON:fisica/corriente-alterna-transformador"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Un alternador de lápiz, una línea de transmisión con pilas y el transformador",
+     "proposito": "Ver que un imán que gira junto a una bobina produce un voltaje que cambia de signo (corriente alterna) y relacionar su período y su valor máximo con los de la red de 120 V y 60 Hz; comprobar con un modelo de línea alimentado con pilas que, para entregar la misma potencia, un voltaje mayor y una corriente menor reducen la pérdida I²R en los cables; y relacionar el número de vueltas de un transformador con sus voltajes.",
+     "materiales": [
+      "Por grupo, una bobina de 300 a 500 vueltas de alambre esmaltado calibre 28 o 30 sobre un tubo o carrete (la prepara la docente o se usa la de la clase de inducción)",
+      "Un lápiz y dos imanes de neodimio de disco de 1 a 2 cm, uno a cada lado del lápiz, que se sujetan solos al atraerse a través de él (así un lado muestra el polo norte y el otro el sur)",
+      "Un multímetro digital y cables con caimanes",
+      "Cinco pilas AA nuevas, un portapilas para una y otro para cuatro",
+      "Resistores de 1/2 W: dos de 1.0 Ω (los cables de la línea), uno de 4.7 Ω y uno de 150 Ω (las «casas»)",
+      "Si la escuela lo tiene: un transformador desmontable de laboratorio con bobinas de distinto número de vueltas y una fuente de corriente alterna de baja tensión (12 V o menos); si no, una computadora con el simulador PhET «Laboratorio electromagnético de Faraday» (pestaña Transformador)",
+      "Cronómetro del celular, calculadora y papel milimetrado"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente presenta la corriente alterna: valor máximo, valor eficaz V_ef = V_máx/√2, período y frecuencia, y los datos de la red de El Salvador (120 V eficaces, 60 Hz). Recalca que la red solo se observa desde fuera.",
+      "2. (20 min) Coloquen los imanes a los lados del lápiz y la bobina, conectada al multímetro en voltaje de corriente continua, escala de 200 mV, con su cara a 1 cm del lápiz. Giren el lápiz despacio, una vuelta cada dos segundos, y anoten el valor más positivo y el más negativo. Cuenten cuántas veces cambia de signo la lectura en cinco vueltas. Repitan con una vuelta por segundo.",
+      "3. (15 min) Con la gráfica de ejemplo de una fuente de corriente alterna de laboratorio (crestas de 8.5 V, 16.7 ms entre una cresta y la siguiente), calculen el valor eficaz, el período y la frecuencia. Luego, para la red de 120 V y 60 Hz, calculen el valor máximo y el período.",
+      "4. (10 min) Respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "5. (10 min) La docente presenta el transformador ideal, V₂/V₁ = N₂/N₁ e I₁V₁ = I₂V₂, y la pérdida I²R en las líneas.",
+      "6. (20 min) Modelo de línea. Caso 1: una pila, un resistor de 1.0 Ω (cable de ida), el de 4.7 Ω (la casa) y el otro de 1.0 Ω (cable de vuelta). Midan con el multímetro en voltaje de corriente continua (escala de 2 V) el voltaje de la pila, el de cada resistor de 1.0 Ω y el de la casa. Caso 2: cuatro pilas, la casa de 150 Ω y la misma línea; midan igual, con la escala de 200 mV en los resistores de 1.0 Ω y la de 20 V en el resto. En cada caso, la corriente es el voltaje de un resistor de 1.0 Ω dividido entre 1.0 Ω; calculen la potencia en la casa y la perdida en los dos cables.",
+      "7. (15 min) Transformador: con la fuente de baja tensión en 6 V de corriente alterna y la bobina primaria de 400 vueltas, midan el voltaje del secundario (multímetro en voltaje alterno, escala de 20 V) con bobinas de 200 y 800 vueltas. Luego conecten la primaria a cuatro pilas y midan el secundario. Sin equipo, hagan lo mismo en el simulador: cambien el número de espiras y pasen de la fuente alterna a la batería mirando el voltímetro.",
+      "8. (10 min) Con datos de ejemplo de una línea que lleva 20 MW y tiene 10 Ω de resistencia, calculen la corriente y la pérdida a 115 kV y a 13.2 kV. Respondan la pregunta de análisis 2."
+     ],
+     "seguridad": [
+      "Nada se conecta a un tomacorriente: el alternador no usa fuente, el modelo de línea usa pilas y la fuente de corriente alterna, si se usa, es la de laboratorio de 12 V o menos y la enciende la docente.",
+      "La red eléctrica, los postes, los transformadores y las subestaciones solo se observan desde lejos: nunca se tocan, no se abren cajas ni medidores y no se trepan postes.",
+      "Los imanes de neodimio pellizcan los dedos y se quiebran si chocan; se mantienen lejos de celulares, tarjetas y personas con marcapasos.",
+      "En el modelo de línea, el multímetro se usa como voltímetro, en paralelo; no se cortocircuitan las pilas. Las pilas usadas van a un punto de acopio."
+     ],
+     "datos_esperados": "Alternador: al girar despacio, la lectura sube a unos pocos milivoltios, baja, pasa por cero y llega a valores negativos parecidos: cambia de signo dos veces por vuelta (diez en cinco vueltas). Al girar el doble de rápido, los máximos crecen y los cambios son el doble de frecuentes; el multímetro se actualiza pocas veces por segundo, así que no conviene girar más rápido. Gráfica de ejemplo: V_ef ≈ 6.0 V, T = 16.7 ms y f ≈ 60 Hz. Red: V_máx ≈ 170 V y T ≈ 16.7 ms. Modelo de línea, caso 1: corriente cerca de 0.21 A, unos 0.21 V en cada cable, alrededor de 1.0 V en la casa, unos 0.2 W en la casa y casi 0.1 W perdidos (cerca de un tercio). Caso 2: unos 0.039 A, unos 39 mV en cada cable, casi 6 V en la casa, también unos 0.2 W en la casa y apenas unas milésimas de watt perdidas (cerca del 1 %). La corriente baja unas cinco veces y la pérdida unas 30 veces, cerca del cuadrado de esa razón. Transformador: con 6 V en 400 vueltas, unos 3 V con 200 y unos 12 V con 800 (un poco menos por las pérdidas); con pilas el secundario marca cero salvo un salto al conectar o desconectar. Línea de 20 MW: a 115 kV, unos 174 A y 0.30 MW perdidos (1.5 %); a 13.2 kV, unos 1 500 A y más de 20 MW, imposible.",
+     "analisis": [
+      "(Paso 4) ¿Por qué el voltaje del alternador cambia de signo dos veces por vuelta? ¿Qué cambiaría si el lápiz girara 60 veces por segundo? Con la red de 120 V, ¿cuál es el voltaje máximo y cuántas veces por segundo cambia de sentido la corriente?",
+      "(Paso 8) En el modelo de línea, ¿qué fracción de la energía se perdió en los cables en cada caso, y cómo explica la diferencia la pérdida I²R? ¿Qué papel cumplen los transformadores de la central y del poste, y por qué no funcionan con las pilas?",
+      "Tarea: Elaboren la infografía del recorrido de la energía desde una central de El Salvador hasta una casa, con el voltaje de cada etapa y los cálculos de transformación y de pérdidas de la clase. Pueden observar los transformadores de los postes de su colonia desde la calle, sin acercarse; quien no pueda, usa la descripción de la docente."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin transformador desmontable ni fuente de corriente alterna: el simulador PhET «Laboratorio electromagnético de Faraday», en la pestaña Transformador, permite cambiar el número de espiras y pasar de fuente alterna a batería mirando el voltímetro o el foco. Sin laboratorio ni internet: datos de un grupo de ejemplo. Alternador, una vuelta cada 2 s: +6 mV y −5 mV, 10 cambios de signo en 5 vueltas; una vuelta por segundo: +11 mV y −10 mV. Modelo de línea, caso 1: pila 1.45 V, cables 0.20 V y 0.21 V, casa 0.99 V. Caso 2: pilas 5.95 V, cables 38 mV y 39 mV, casa 5.86 V. Transformador con 6.0 V en 400 vueltas: 2.9 V con 200 vueltas, 11.4 V con 800 vueltas, 0 V con pilas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U13-13.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}

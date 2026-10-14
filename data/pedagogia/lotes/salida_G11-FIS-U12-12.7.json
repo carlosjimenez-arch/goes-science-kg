@@ -1,0 +1,230 @@
+[
+ {
+  "id": "ACT:G11-FIS-U12-12.7/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.7"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.7",
+   "CON:fisica/ondas-radio-telecomunicaciones"
+  ],
+  "habilidad": "explicar",
+  "formato": "opcion_multiple",
+  "grados": [
+   11
+  ],
+  "enunciado": "Los audífonos bluetooth de Sofía pierden la señal a unos 10 m del celular, pero una emisora de radio AM se escucha a cientos de kilómetros. ¿Qué explica mejor esa diferencia de alcance?",
+  "opciones": {
+   "A": "Porque la emisora AM transmite con miles de watts y sus ondas largas siguen la curvatura terrestre.",
+   "B": "Porque las ondas de la AM viajan más rápido que las del bluetooth y llegan lejos antes de apagarse.",
+   "C": "Porque la radio AM envía ondas de sonido, que viajan lejos por el aire, y el bluetooth solo datos.",
+   "D": "Porque el bluetooth tiene mayor frecuencia y más energía por fotón, que se gasta rápido en el aire."
+  },
+  "correcta": "A",
+  "distractores": {
+   "B": "DIF:fisica/ondas-radio-telecomunicaciones/2",
+   "C": "DIF:fisica/ondas-radio-telecomunicaciones/1"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Todas estas ondas son electromagnéticas y viajan a la misma rapidez. Una emisora AM transmite con kilowatts y usa ondas de cientos de metros de longitud, que siguen la curvatura de la Tierra y de noche se reflejan en la ionosfera. El bluetooth usa milésimas de watt a 2.4 GHz, ondas de 12 cm que paredes y cuerpos atenúan: está diseñado para alcance corto.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U12-12.7"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U12-12.7/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.7"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.7",
+   "CON:fisica/ondas-radio-telecomunicaciones"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   11
+  ],
+  "enunciado": "En la tabla comparativa de su grupo, Diego anotó las frecuencias de cuatro servicios (datos de ejemplo): radio AM, 640 kHz; radio FM, 96.1 MHz; GPS, 1575 MHz; wifi, 2.4 GHz. Una antena sencilla de cuarto de onda mide λ/4. Con c de la tabla de referencia (aproximado 3.00 × 10⁸ m/s), ¿cuánto debe medir una antena de cuarto de onda para la emisora de FM, en centímetros (cm)? Escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 78.0,
+  "tolerancia": 2.0,
+  "unidad": "cm",
+  "retroalimentacion": "Para la FM, λ = c/f = 3.00 × 10⁸ / 96.1 × 10⁶ ≈ 3.12 m, y λ/4 ≈ 0.78 m = 78 cm, parecido a la antena telescópica de un radio. Para la AM de 640 kHz, λ ≈ 469 m: por eso las antenas de AM son torres y los receptores usan bobinas, y en el wifi λ/4 mide unos 3 cm y cabe dentro del router.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U12-12.7"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U12-12.7/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.7"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.7",
+   "CON:fisica/ondas-radio-telecomunicaciones"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   11
+  ],
+  "enunciado": "Ximena activa el GPS del celular en el campo, sin datos móviles ni wifi, y aun así ve su ubicación en un mapa que había descargado. En 2 o 3 oraciones explica cómo calcula el receptor la distancia a cada satélite, por qué necesita las señales de al menos cuatro satélites y si el celular le envía algo a los satélites.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Cada satélite emite una señal con la hora exacta de envío; el receptor calcula la distancia multiplicando c por el tiempo de viaje. Con tres distancias se ubica el punto donde se cruzan las esferas, y el cuarto satélite corrige el error del reloj del celular, que no es tan exacto. El celular solo recibe: no transmite a los satélites.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U12-12.7"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Cada satélite manda una señal con la hora exacta en que salió, y el celular calcula la distancia multiplicando la rapidez de la luz por el tiempo que tardó en llegar. Con tres distancias su posición es donde se cruzan tres esferas, y hace falta un cuarto satélite porque el reloj del celular no es exacto y hay que corregir su error. El celular solo recibe señales, no le envía nada a los satélites.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Explica que la distancia se obtiene con la rapidez de la luz (o de la onda) multiplicada por el tiempo de viaje de la señal, cuya hora de salida va en la señal.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Justifica el cuarto satélite con la corrección del reloj del receptor (tres distancias dan la posición; la cuarta, el error de tiempo).",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Afirma que el receptor solo recibe y no transmite a los satélites.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Menciona la intersección de esferas (trilateración) o que un error de un microsegundo equivale a unos 300 m.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Cree que el celular envía su posición al satélite y que el satélite lo localiza.",
+     "ejemplo": "El celular manda una señal al satélite y el satélite le contesta dónde está.",
+     "dificultad": "DIF:fisica/ondas-radio-telecomunicaciones/3"
+    },
+    {
+     "descripcion": "Justifica los cuatro satélites solo como «para tener más precisión» o «por si falla uno», sin el reloj.",
+     "ejemplo": "Se usan cuatro para que sea más exacto, por si uno se equivoca.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Calcula la distancia con la rapidez del sonido o sin el tiempo de viaje.",
+     "ejemplo": "El satélite mide qué tan fuerte llega la señal y con eso sabe la distancia.",
+     "dificultad": null
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP:G11-FIS-U12-12.7/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.7"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.7",
+   "CON:fisica/ondas-radio-telecomunicaciones"
+  ],
+  "grados": [
+   11
+  ],
+  "titulo": "Radio de galena, chispas de Hertz y la tabla de las tecnologías inalámbricas",
+  "proposito": "Construir un receptor de radio AM sin pilas (radio de galena) para entender sintonía, antena y demodulación; repetir con una pila y un radio la idea de Hertz de producir ondas de radio con chispas y ver cómo bajan con la distancia y con un blindaje metálico; y elaborar la tabla comparativa de tecnologías inalámbricas con el esquema del GPS.",
+  "materiales": [
+   "Por grupo: 12 m de alambre esmaltado calibre 24 a 26, un tubo de PVC de 2 pulgadas y 15 cm de largo, cinta y lija fina",
+   "Un diodo de germanio (1N34A o 1N60, de tienda de electrónica)",
+   "Un capacitor variable nuevo de unos 365 pF, de tienda de electrónica (o sintonía por cursor: lijar una franja del esmalte a lo largo de la bobina y deslizar un caimán sobre ella)",
+   "Un auricular piezoeléctrico de alta impedancia, o un disco piezoeléctrico pasivo con un resistor de 47 kΩ en paralelo",
+   "Antena: 15 a 20 m de cable forrado con aisladores de plástico (o botellas) en las puntas; tierra: una varilla metálica clavada en suelo húmedo",
+   "Cables con caimanes y una protoboard pequeña (opcional)",
+   "Para toda la clase: un radio AM portátil de pilas, una pila de 9 V nueva, una moneda o un trozo de alambre, una lata metálica de galletas con tapa y una cinta métrica",
+   "Hojas con la tabla comparativa y los datos de cada tecnología"
+  ],
+  "procedimiento": [
+   "Sesión 1 (55 min)",
+   "1. (10 min) La docente explica con un esquema la onda portadora, la modulación de amplitud y cómo el diodo recupera la señal de audio, y repasa las reglas de seguridad de la antena.",
+   "2. (20 min) Cada grupo enrolla unas 60 vueltas juntas sobre el tubo, fija las puntas con cinta y las lija. Arman el circuito: la bobina y el capacitor variable en paralelo; de un extremo, el diodo y luego el auricular hasta el otro extremo.",
+   "3. (15 min) En el patio, la docente tiende la antena en un lugar alto y despejado, lejos de las líneas eléctricas, y clava la varilla de tierra. Por turnos, cada grupo conecta la antena arriba de la bobina y la tierra abajo, gira el capacitor (o desliza el cursor) y escucha.",
+   "4. (10 min) Anoten si oyeron emisoras, cuántas y con qué volumen, y respondan la pregunta de análisis 1.",
+   "Sesión 2 (55 min)",
+   "5. (15 min) Chispas de Hertz: con el radio AM de pilas sintonizado entre dos emisoras, a 0.5 m, la docente toca y separa rápidamente los dos bornes de la pila de 9 V con la moneda, sin dejarla en contacto. Escuchen el chasquido. Repitan a 1, 2, 4 y 8 m, y luego con la pila y la moneda dentro de la lata cerrada a 0.5 m. Anoten hasta dónde se oye.",
+   "6. (20 min) Con los datos de la hoja, completen la tabla comparativa: radio AM, radio FM, telefonía móvil, wifi, bluetooth y GPS, con frecuencia, longitud de onda calculada con c = λf, alcance típico y qué limita ese alcance.",
+   "7. (10 min) Dibujen el esquema del GPS: satélites que envían su hora, tiempo de viaje, distancia, intersección de esferas y el cuarto satélite para corregir el reloj del receptor.",
+   "8. (10 min) Ordenen en una línea de tiempo los hitos: predicción de las ondas por Maxwell, experimentos de Hertz, enlace transatlántico de Marconi, radio AM y FM comerciales, satélites, GPS, telefonía móvil, wifi y bluetooth. Respondan la pregunta de análisis 2."
+  ],
+  "seguridad": [
+   "La antena nunca se tiende con lluvia, con truenos o con el cielo cargado (algo frecuente en la época lluviosa): se desconecta y se recoge. Se tiende lejos de líneas eléctricas, sin subirse a techos ni árboles, y la tierra es una varilla en el suelo, nunca la tierra de un tomacorriente.",
+   "El radio de galena no usa pilas ni se conecta a la red. El radio AM es de pilas.",
+   "La pila de 9 V se cortocircuita solo un instante con la moneda; si se calienta, se deja enfriar. Nunca se hace con baterías de celular o de litio.",
+   "Las puntas del alambre esmaltado pinchan: lijen con cuidado y doblen las sobrantes."
+  ],
+  "datos_esperados": "Radio de galena: donde hay emisoras AM potentes a unas decenas de kilómetros, con una antena de 15 a 20 m se oyen una o dos, débiles pero claras, y se cambia de una a otra al girar el capacitor. Lejos de las emisoras, o con una antena corta, puede no oírse nada aunque el montaje esté bien: no hay pila que amplifique, y toda la energía del sonido sale de la onda captada. Chispas: el chasquido se oye claro a menos de 1 m, más débil a 2 o 4 m y casi nada a 8 m, porque la intensidad baja con la distancia; dentro de la lata cerrada casi desaparece. Tabla: la AM tiene λ de cientos de metros, la FM de unos 3 m, la telefonía y el GPS de unas decenas de centímetros, y el wifi y el bluetooth de 6 a 12 cm; el alcance depende sobre todo de la potencia, de los obstáculos y de si la onda sigue la curvatura de la Tierra o necesita línea de vista.",
+  "analisis": [
+   "(Paso 4) ¿Qué hace el capacitor variable al girarlo, y qué hace el diodo? ¿De dónde sale la energía que mueve el auricular si el radio no tiene pilas?",
+   "(Paso 8) ¿Qué relación hay entre el experimento de las chispas y los de Hertz? ¿Por qué la lata cerrada bloquea el chasquido?",
+   "Tarea: Con la tabla comparativa, expliquen por qué el bluetooth alcanza unos metros y la radio AM cientos de kilómetros, y por qué el wifi de 5 GHz atraviesa peor las paredes que el de 2.4 GHz.",
+   "Tarea: Revisen qué aplicaciones del celular tienen permiso para usar el GPS y el bluetooth, y desactiven los que no necesiten. Si no tienen celular propio, describan los pasos con el de la docente."
+  ],
+  "duracion_min": 110,
+  "variantes": "Sin diodo de germanio ni auricular piezoeléctrico: un kit de radio AM o FM de pilas para armar, que la docente suelda antes de la clase. Si no se capta nada: comprueben con el radio AM de pilas, en el mismo lugar, si llegan emisoras AM; si tampoco las capta, el resultado nulo es esperado y se discute por qué. Sin laboratorio ni internet: datos de un grupo de ejemplo. Radio de galena en San Salvador con 18 m de antena: dos emisoras, una clara y otra débil. Chispas: a 0.5 m, chasquido fuerte; a 1 m, claro; a 2 m, débil; a 4 m, apenas; a 8 m, nada; dentro de la lata a 0.5 m, nada. Tabla: AM 640 kHz, unos 470 m, cientos de km; FM 96.1 MHz, 3.1 m, unos 50 a 100 km con línea de vista; telefonía 850 MHz, 35 cm, unos km por antena; GPS 1575 MHz, 19 cm, desde satélites a unos 20 000 km; wifi 2.4 GHz, 12.5 cm, decenas de metros; bluetooth 2.4 GHz, 12.5 cm, unos 10 m.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ },
+ {
+  "id": "DIF:fisica/ondas-radio-telecomunicaciones/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
+  "descripcion": "Cree que la radio transmite el sonido mismo por el aire, o que la onda de radio es una onda sonora muy fuerte, sin distinguir la onda portadora electromagnética de la señal de audio que va codificada en ella y que el receptor convierte de nuevo en sonido.",
+  "senales": "Dice que la antena «capta el sonido»; cree que la frecuencia de la emisora (por ejemplo 96.1 MHz) es el tono de la música; espera que una pared gruesa bloquee la radio igual que bloquea la voz.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "No separa la portadora de la información que transporta."
+ },
+ {
+  "id": "DIF:fisica/ondas-radio-telecomunicaciones/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
+  "descripcion": "Atribuye las diferencias de alcance o de velocidad de datos entre tecnologías (bluetooth, wifi, 4G, AM) a que unas ondas viajan más rápido que otras, en lugar de reconocer que todas viajan a la rapidez de la luz y que el alcance depende de la potencia, la frecuencia y los obstáculos, y la velocidad de datos del ancho de banda.",
+  "senales": "Dice que el wifi de 5 GHz o el 5G «son más rápidos porque la onda va más rápido»; explica el poco alcance del bluetooth con una onda «lenta»; usa c distinta para cada servicio al calcular λ.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunde rapidez de propagación con tasa de datos y alcance."
+ },
+ {
+  "id": "DIF:fisica/ondas-radio-telecomunicaciones/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
+  "descripcion": "Cree que el receptor GPS del celular envía su ubicación a los satélites, o que los satélites lo «ven» y le dicen dónde está, o que sin datos móviles el GPS no puede calcular la posición; no reconoce que el receptor solo recibe señales con la hora de envío y calcula él mismo su posición.",
+  "senales": "Teme que el satélite lo rastree al activar el GPS; dice que sin saldo de datos el GPS no funciona; explica la ubicación como una respuesta que el satélite envía al teléfono.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunde el GPS, que solo recibe, con servicios que transmiten."
+ }
+]

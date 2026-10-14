@@ -1,0 +1,2285 @@
+{
+ "lote": "r1-f11c_experto-fisica_1",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U11-11.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U11-11.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U11-11.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U11-11.3",
+      "CON:fisica/campo-magnetico"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para deducir con la ley de Ampère el campo magnético dentro de un solenoide largo, Daniela elige como trayectoria cerrada un rectángulo: un lado largo dentro de la bobina, paralelo a su eje, el lado opuesto por fuera y dos lados cortos que atraviesan las espiras. ¿Por qué esa trayectoria permite despejar B?",
+     "opciones": {
+      "A": "Porque B vale lo mismo dentro y fuera de la bobina, y así los dos lados largos aportan igual.",
+      "B": "Porque los lados cortos siguen las líneas del campo, y son los únicos que aportan a la suma.",
+      "C": "Porque dentro B es uniforme y paralelo a ese lado y fuera es casi nulo: solo aporta B·L.",
+      "D": "Porque encierra la corriente de una sola espira, y el campo no depende del número de vueltas."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Dentro de un solenoide largo el campo es casi uniforme y paralelo al eje, y fuera es casi nulo. En los lados cortos el campo interior es perpendicular al recorrido y no aporta. Así la circulación queda B·L y, con la corriente encerrada N·I, sale B = μ₀NI/L: el campo sí depende del número de vueltas por unidad de largo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U11-11.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U11-11.3",
+     "grado": 11,
+     "indicador": "4.1. • Calcula el campo magnético de un conductor rectilíneo largo y verifica experimentalmente su dependencia inversa con la distancia. • Representa las líneas de campo magnético de imanes y de la Tierra, e interpreta la declinación magnética en su localidad. • Aplica la ley de Ampère para deducir el campo magnético en el interior de un solenoide y lo compara con el medido en un electroimán de pilas. • Clasifica materiales en ferromagnéticos, paramagnéticos y diamagnéticos según su permeabilidad y explica aplicaciones como el disco duro y la detección de huellas dactilares.",
+     "evidencia": "Gráfica B en función de 1/r con datos del magnetómetro y comparación con el valor teórico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U11-11.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U11-11.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U11-11.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U11-11.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U11-11.3",
+      "CON:fisica/campo-magnetico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Josué tendió un cable recto y largo sobre la mesa y midió con el magnetómetro del celular el campo del cable a varias distancias r, ya descontado el campo de la Tierra (datos de un grupo de ejemplo): r = 1.0 cm, B = 39.6 μT; r = 2.0 cm, B = 20.3 μT; r = 4.0 cm, B = 10.1 μT; r = 5.0 cm, B = 7.9 μT. Al graficar B contra 1/r obtuvo una recta que pasa por el origen. Con B = μ₀I/(2πr) y μ₀ de la tabla de referencia (aproximado 4π × 10⁻⁷ T·m/A), ¿qué corriente llevaba el cable, en amperios (A)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 2.0,
+     "tolerancia": 0.15,
+     "unidad": "A",
+     "retroalimentacion": "El producto B·r es casi constante, cerca de 4.0 × 10⁻⁷ T·m, y es la pendiente de B contra 1/r. Como la pendiente vale μ₀I/(2π) = 2 × 10⁻⁷ T·m/A × I, la corriente es I ≈ 4.0 × 10⁻⁷ / 2 × 10⁻⁷ ≈ 2.0 A. Que la recta pase por el origen confirma que B es inversamente proporcional a r.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U11-11.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U11-11.3",
+     "grado": 11,
+     "indicador": "4.1. • Calcula el campo magnético de un conductor rectilíneo largo y verifica experimentalmente su dependencia inversa con la distancia. • Representa las líneas de campo magnético de imanes y de la Tierra, e interpreta la declinación magnética en su localidad. • Aplica la ley de Ampère para deducir el campo magnético en el interior de un solenoide y lo compara con el medido en un electroimán de pilas. • Clasifica materiales en ferromagnéticos, paramagnéticos y diamagnéticos según su permeabilidad y explica aplicaciones como el disco duro y la detección de huellas dactilares.",
+     "evidencia": "Gráfica B en función de 1/r con datos del magnetómetro y comparación con el valor teórico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U11-11.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U11-11.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U11-11.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U11-11.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U11-11.3",
+      "CON:fisica/campo-magnetico"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Valeria va a medir con la aplicación phyphox el campo de un cable recto con corriente. Antes de conectar la pila, el celular ya marca unos 40 μT, y la lectura cambia si lo acerca a la pata de hierro de la mesa. En 2 o 3 oraciones explica de dónde sale la lectura que aparece sin corriente, cómo debe corregir sus datos para quedarse solo con el campo del cable y por qué conviene medir lejos de la pata de hierro.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Sin corriente, el sensor mide el campo de la Tierra más el de objetos de hierro cercanos. Si mide la misma componente con la corriente apagada y encendida (o con la corriente en un sentido y luego en el otro) y resta, se queda con el campo del cable. El hierro concentra y desvía el campo, y eso cambiaría la medición de un punto a otro.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U11-11.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Sin corriente el celular mide el campo magnético de la Tierra, sumado al de cosas de hierro cercanas. Para quedarme solo con el campo del cable, mido la misma componente sin corriente y con corriente (o con la corriente en un sentido y en el otro) y saco la diferencia. Hay que alejarse de la pata de hierro porque el hierro se magnetiza y desvía el campo, así que cambia la lectura según dónde mida.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Atribuye la lectura sin corriente al campo magnético de la Tierra (puede sumar el de objetos de hierro o aparatos cercanos).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Propone medir con y sin corriente, o con la corriente invertida, y restar las lecturas de la misma componente para obtener el campo del cable.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que el hierro se magnetiza o concentra el campo y altera la lectura cerca de él.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que la resta debe hacerse componente por componente o con el celular siempre en la misma orientación.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el celular mide solo el campo de la Tierra y que la diferencia junto a la mesa se debe a que allí el campo terrestre es más fuerte.",
+        "ejemplo": "Cerca de la pata el campo de la Tierra es más fuerte, por eso sube; hay que medir donde el campo de la Tierra sea más débil.",
+        "dificultad": "DIF:fisica/campo-magnetico/2"
+       },
+       {
+        "descripcion": "Cree que cualquier metal altera el campo, también el cobre del propio cable o el aluminio.",
+        "ejemplo": "Hay que alejar todo lo metálico, hasta el cable de cobre, porque los metales desvían el campo.",
+        "dificultad": "DIF:fisica/campo-magnetico/3"
+       },
+       {
+        "descripcion": "Propone restar las magnitudes totales sin cuidar la orientación, o calibrar a cero sin explicar qué se quita.",
+        "ejemplo": "Pongo el celular en cero y listo, así ya no cuenta el error del sensor.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U11-11.3",
+     "grado": 11,
+     "indicador": "4.1. • Calcula el campo magnético de un conductor rectilíneo largo y verifica experimentalmente su dependencia inversa con la distancia. • Representa las líneas de campo magnético de imanes y de la Tierra, e interpreta la declinación magnética en su localidad. • Aplica la ley de Ampère para deducir el campo magnético en el interior de un solenoide y lo compara con el medido en un electroimán de pilas. • Clasifica materiales en ferromagnéticos, paramagnéticos y diamagnéticos según su permeabilidad y explica aplicaciones como el disco duro y la detección de huellas dactilares.",
+     "evidencia": "Gráfica B en función de 1/r con datos del magnetómetro y comparación con el valor teórico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U11-11.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.1",
+      "CON:fisica/induccion-electromagnetica"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Kevin deja caer un imán, con el polo norte hacia abajo, a través de una bobina vertical conectada a un sensor de voltaje. Mientras el imán entra por arriba, el sensor registra un pulso positivo. ¿Qué registra mientras el imán sale por abajo, y por qué?",
+     "opciones": {
+      "A": "Un pulso positivo, porque el imán sigue moviéndose hacia abajo, igual que cuando entró.",
+      "B": "Un pulso negativo, porque ahora el flujo disminuye y la fem se opone a esa disminución.",
+      "C": "Un pulso positivo, porque la corriente inducida siempre crea un campo opuesto al del imán.",
+      "D": "Ningún pulso, porque solo se induce voltaje cuando el imán se acerca, no cuando se aleja."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:fisica/induccion-electromagnetica/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al entrar, el flujo hacia abajo dentro de la bobina aumenta; al salir, disminuye. La fem inducida se opone al cambio del flujo, no al campo del imán, así que al invertirse el cambio se invierte el signo: pulso negativo. Ese pulso suele ser algo más alto y breve, porque el imán ya cae más rápido y el flujo cambia más deprisa.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.1"
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.1",
+      "CON:fisica/induccion-electromagnetica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Gabriela mete un imán en una bobina de 150 vueltas y 4.0 cm² de sección, siempre desde la misma posición de partida hasta el mismo punto del interior, pero cada vez más rápido. Midió el tiempo Δt de cada movimiento y la fem media inducida (datos de un grupo de ejemplo): Δt = 0.40 s, 7.6 mV; Δt = 0.20 s, 15.0 mV; Δt = 0.10 s, 30.4 mV; Δt = 0.05 s, 59.8 mV. Con la ley de Faraday, ¿cuánto cambia el campo magnético medio dentro de la bobina en cada movimiento, en teslas (T)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 0.05,
+     "tolerancia": 0.005,
+     "unidad": "T",
+     "retroalimentacion": "La fem media por Δt da casi siempre 3.0 × 10⁻³ V·s, que es NΔΦ: el cambio de flujo es el mismo y solo cambia la rapidez. ΔΦ = 3.0 × 10⁻³ / 150 = 2.0 × 10⁻⁵ Wb, y con A = 4.0 × 10⁻⁴ m², ΔB = 2.0 × 10⁻⁵ / 4.0 × 10⁻⁴ = 0.050 T. Al mover el imán el doble de rápido, la fem se duplica.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.1"
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.1",
+      "CON:fisica/induccion-electromagnetica"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mauricio deja un imán potente quieto dentro de una bobina conectada a un voltímetro, y el voltímetro marca cero. Andrea dice que eso no puede ser, porque dentro de la bobina hay mucho campo magnético. En 2 o 3 oraciones explica con la ley de Faraday quién tiene razón y por qué, y propone una forma de obtener más voltaje con la misma bobina y el mismo imán, diciendo por qué funciona.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Tiene razón Mauricio: la fem depende de la rapidez con que cambia el flujo, ε = −NΔΦ/Δt, no de cuánto campo hay. Con el imán quieto el flujo es grande pero no cambia, y la fem es cero. Mover el imán más rápido, o sacarlo y meterlo del todo en menos tiempo, aumenta ΔΦ/Δt y con ello el voltaje.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Tiene razón Mauricio. Según Faraday, el voltaje inducido depende de qué tan rápido cambia el flujo magnético en la bobina (ε = −NΔΦ/Δt), no de cuánto campo hay; con el imán quieto el flujo es grande pero constante, así que no se induce nada. Para tener más voltaje movería el imán más rápido al meterlo y sacarlo, porque el mismo cambio de flujo ocurre en menos tiempo.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Afirma que la fem depende del cambio del flujo en el tiempo (ΔΦ/Δt) y no del valor del campo o del flujo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Concluye que con el imán quieto el flujo no cambia y la fem es cero, dando la razón a Mauricio.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Propone una forma válida de aumentar ΔΦ/Δt (mover el imán más rápido, hacerlo entrar y salir por completo en menos tiempo, girarlo más rápido) y la justifica con ese cambio.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Escribe la ley de Faraday con el número de vueltas o menciona Φ = BA cos θ.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que basta con que haya campo dentro de la bobina para que haya voltaje.",
+        "ejemplo": "Andrea tiene razón; el voltímetro debe estar malo, porque con el imán adentro tiene que haber corriente.",
+        "dificultad": "DIF:fisica/induccion-electromagnetica/1"
+       },
+       {
+        "descripcion": "Relaciona la fem con el valor del flujo y propone aumentar el campo sin movimiento.",
+        "ejemplo": "Hay que meter el imán más adentro y dejarlo ahí, donde el flujo es máximo, para que dé más voltaje.",
+        "dificultad": "DIF:fisica/induccion-electromagnetica/3"
+       },
+       {
+        "descripcion": "Propone algo que cambia la bobina o el imán, en contra de lo que pide la pregunta.",
+        "ejemplo": "Pondría una bobina con más vueltas y un imán más fuerte.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.4",
+      "CON:fisica/ondas-electromagneticas-espectro"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "La luz ultravioleta del sol puede dañar el ADN de las células de la piel. Las microondas de un router wifi, que también son ondas electromagnéticas, no pueden hacerlo. La ultravioleta tiene una frecuencia cientos de miles de veces mayor. ¿Por qué esa diferencia de frecuencia explica la diferencia de efectos?",
+     "opciones": {
+      "A": "Porque a mayor frecuencia la onda viaja más rápido, y la ultravioleta choca con más fuerza.",
+      "B": "Porque a mayor frecuencia la onda calienta más, y el ADN se daña con ese calor extra.",
+      "C": "Porque a mayor frecuencia la onda es siempre más intensa, y la ultravioleta lleva más potencia.",
+      "D": "Porque a mayor frecuencia cada fotón tiene más energía, y el ultravioleta puede romper enlaces."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:fisica/ondas-electromagneticas-espectro/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La energía de cada fotón es proporcional a la frecuencia (E = hf). Un fotón ultravioleta tiene energía suficiente para romper enlaces químicos, como los del ADN; uno de microondas, con cientos de miles de veces menos energía, no la tiene, por intensa que sea la onda. En el vacío todas las ondas electromagnéticas viajan a la misma rapidez, y el calentamiento no es lo que daña el ADN en este caso.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.4",
+      "CON:fisica/ondas-electromagneticas-espectro"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una gráfica muestra el campo eléctrico de una onda electromagnética que viaja en el aire, en un instante dado: las crestas están en x = 0, x = 12.2 cm y x = 24.4 cm, con amplitud de 30 V/m. El campo magnético, perpendicular al eléctrico, tiene sus crestas en las mismas posiciones. Con c de la tabla de referencia (aproximado 3.00 × 10⁸ m/s), ¿cuál es la frecuencia de la onda, en gigahertz (GHz)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 2.46,
+     "tolerancia": 0.03,
+     "unidad": "GHz",
+     "retroalimentacion": "La distancia entre dos crestas seguidas es la longitud de onda: λ = 12.2 cm = 0.122 m. Con c = λf, f = 3.00 × 10⁸ / 0.122 ≈ 2.46 × 10⁹ Hz = 2.46 GHz, en la banda de los hornos de microondas y del wifi de 2.4 GHz. La amplitud no interviene en la frecuencia; sirve para calcular la del campo magnético, E/c = 1.0 × 10⁻⁷ T.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.4",
+      "CON:fisica/ondas-electromagneticas-espectro"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un mensaje en redes sociales afirma que el router wifi del aula «emite radiación como la de los rayos X» y daña el ADN. Datos de ejemplo: el router emite unos 0.1 W en la banda de 2.4 GHz; a 1 m la densidad de potencia es de unos 0.008 W/m², y el límite de referencia para el público en esa banda es de 10 W/m² (valor de ejemplo de las guías internacionales, que la docente verifica). En 2 o 3 oraciones evalúa la afirmación: di si la radiación del wifi es ionizante y por qué, y compara la densidad de potencia a 1 m con el límite.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Es falsa. El wifi es radiación no ionizante: su frecuencia es millones de veces menor que la de los rayos X y cada fotón no tiene energía para romper enlaces del ADN. Además, a 1 m llega más de mil veces menos potencia por metro cuadrado que el límite, que se fija para evitar el calentamiento, el único efecto comprobado a alta intensidad.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "La afirmación es falsa. El wifi es radiación no ionizante: su frecuencia es mucho menor que la de los rayos X, así que cada fotón tiene muy poca energía y no puede romper enlaces del ADN. Además, a 1 m la densidad de potencia es 0.008 W/m², más de mil veces menor que el límite de 10 W/m², que se pone para evitar que los tejidos se calienten.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que la radiación del wifi no es ionizante y lo justifica con su frecuencia mucho menor que la de los rayos X, o con la poca energía de cada fotón.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Compara 0.008 W/m² con 10 W/m² y concluye que la exposición es más de mil veces menor que el límite (acepta «unas 1 250 veces»).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Concluye que la afirmación no está respaldada por los datos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que el efecto comprobado de las radiofrecuencias intensas es el calentamiento, o que la densidad de potencia baja con el cuadrado de la distancia.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Trata toda radiación como igual de dañina, sin distinguir ionizante de no ionizante.",
+        "ejemplo": "Sí es peligroso, porque toda radiación daña las células, solo que el wifi lo hace más despacio.",
+        "dificultad": "DIF:fisica/ondas-electromagneticas-espectro/3"
+       },
+       {
+        "descripcion": "Usa la capacidad de atravesar paredes como prueba de que es ionizante.",
+        "ejemplo": "Es como los rayos X porque atraviesa las paredes, entonces también atraviesa el cuerpo y daña el ADN.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Compara los números al revés o sin calcular la razón.",
+        "ejemplo": "0.008 es casi cero y 10 es poco, así que están parecidos y hay que tener cuidado.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.7/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.7"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.7",
+      "CON:fisica/ondas-radio-telecomunicaciones"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Los audífonos bluetooth de Sofía pierden la señal a unos 10 m del celular, pero una emisora de radio AM se escucha a cientos de kilómetros. ¿Qué explica mejor esa diferencia de alcance?",
+     "opciones": {
+      "A": "Porque la emisora AM transmite con miles de watts y sus ondas largas siguen la curvatura terrestre.",
+      "B": "Porque las ondas de la AM viajan más rápido que las del bluetooth y llegan lejos antes de apagarse.",
+      "C": "Porque la radio AM envía ondas de sonido, que viajan lejos por el aire, y el bluetooth solo datos.",
+      "D": "Porque el bluetooth tiene mayor frecuencia y más energía por fotón, que se gasta rápido en el aire."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/ondas-radio-telecomunicaciones/2",
+      "C": "DIF:fisica/ondas-radio-telecomunicaciones/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Todas estas ondas son electromagnéticas y viajan a la misma rapidez. Una emisora AM transmite con kilowatts y usa ondas de cientos de metros de longitud, que siguen la curvatura de la Tierra y de noche se reflejan en la ionosfera. El bluetooth usa milésimas de watt a 2.4 GHz, ondas de 12 cm que paredes y cuerpos atenúan: está diseñado para alcance corto.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.7"
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.7/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.7/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.7"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.7",
+      "CON:fisica/ondas-radio-telecomunicaciones"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la tabla comparativa de su grupo, Diego anotó las frecuencias de cuatro servicios (datos de ejemplo): radio AM, 640 kHz; radio FM, 96.1 MHz; GPS, 1575 MHz; wifi, 2.4 GHz. Una antena sencilla de cuarto de onda mide λ/4. Con c de la tabla de referencia (aproximado 3.00 × 10⁸ m/s), ¿cuánto debe medir una antena de cuarto de onda para la emisora de FM, en centímetros (cm)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 78.0,
+     "tolerancia": 2.0,
+     "unidad": "cm",
+     "retroalimentacion": "Para la FM, λ = c/f = 3.00 × 10⁸ / 96.1 × 10⁶ ≈ 3.12 m, y λ/4 ≈ 0.78 m = 78 cm, parecido a la antena telescópica de un radio. Para la AM de 640 kHz, λ ≈ 469 m: por eso las antenas de AM son torres y los receptores usan bobinas, y en el wifi λ/4 mide unos 3 cm y cabe dentro del router.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.7"
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.7/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U12-12.7/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U12-12.7/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.7"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.7",
+      "CON:fisica/ondas-radio-telecomunicaciones"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Ximena activa el GPS del celular en el campo, sin datos móviles ni wifi, y aun así ve su ubicación en un mapa que había descargado. En 2 o 3 oraciones explica cómo calcula el receptor la distancia a cada satélite, por qué necesita las señales de al menos cuatro satélites y si el celular le envía algo a los satélites.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cada satélite emite una señal con la hora exacta de envío; el receptor calcula la distancia multiplicando c por el tiempo de viaje. Con tres distancias se ubica el punto donde se cruzan las esferas, y el cuarto satélite corrige el error del reloj del celular, que no es tan exacto. El celular solo recibe: no transmite a los satélites.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U12-12.7"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Cada satélite manda una señal con la hora exacta en que salió, y el celular calcula la distancia multiplicando la rapidez de la luz por el tiempo que tardó en llegar. Con tres distancias su posición es donde se cruzan tres esferas, y hace falta un cuarto satélite porque el reloj del celular no es exacto y hay que corregir su error. El celular solo recibe señales, no le envía nada a los satélites.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que la distancia se obtiene con la rapidez de la luz (o de la onda) multiplicada por el tiempo de viaje de la señal, cuya hora de salida va en la señal.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica el cuarto satélite con la corrección del reloj del receptor (tres distancias dan la posición; la cuarta, el error de tiempo).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Afirma que el receptor solo recibe y no transmite a los satélites.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona la intersección de esferas (trilateración) o que un error de un microsegundo equivale a unos 300 m.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el celular envía su posición al satélite y que el satélite lo localiza.",
+        "ejemplo": "El celular manda una señal al satélite y el satélite le contesta dónde está.",
+        "dificultad": "DIF:fisica/ondas-radio-telecomunicaciones/3"
+       },
+       {
+        "descripcion": "Justifica los cuatro satélites solo como «para tener más precisión» o «por si falla uno», sin el reloj.",
+        "ejemplo": "Se usan cuatro para que sea más exacto, por si uno se equivoca.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Calcula la distancia con la rapidez del sonido o sin el tiempo de viaje.",
+        "ejemplo": "El satélite mide qué tan fuerte llega la señal y con eso sabe la distancia.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U12-12.7/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U13-13.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U13-13.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U13-13.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U13-13.1",
+      "CON:fisica/corriente-alterna-transformador"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una central entrega 10 MW a una línea de transmisión. Se compara enviar esa potencia por la misma línea a 115 kV o a 23 kV. ¿Qué pasa con la potencia que se pierde como calor en los cables al usar 115 kV en lugar de 23 kV?",
+     "opciones": {
+      "A": "Aumenta 25 veces, porque la pérdida va como V²/R y el voltaje es cinco veces mayor.",
+      "B": "Baja a 1/25, porque la corriente es cinco veces menor y la pérdida va como I²R.",
+      "C": "Baja a 1/5, porque la corriente es cinco veces menor y la pérdida es proporcional a ella.",
+      "D": "No cambia, porque la central entrega la misma potencia en los dos casos."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:fisica/corriente-alterna-transformador/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con la misma potencia, P = VI: a un voltaje cinco veces mayor la corriente es cinco veces menor. La pérdida en los cables es I²R, con la corriente de la línea y la resistencia de los cables, así que baja 5² = 25 veces. V²/R solo sirve con la caída de voltaje en los propios cables, no con el voltaje de la línea.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U13-13.1"
+     },
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U13-13.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U13-13.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U13-13.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U13-13.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U13-13.1",
+      "CON:fisica/corriente-alterna-transformador"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Rebeca observa en un osciloscopio la señal de una fuente de corriente alterna de baja tensión (datos de ejemplo): hay una cresta de 8.5 V en t = 2.08 ms y el valle siguiente, de −8.5 V, en t = 10.41 ms. ¿Cuál es la frecuencia de la señal, en hertz (Hz)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 60.0,
+     "tolerancia": 1.0,
+     "unidad": "Hz",
+     "retroalimentacion": "De una cresta al valle siguiente pasa medio período: 10.41 − 2.08 = 8.33 ms. El período es T = 16.66 ms y la frecuencia f = 1/T ≈ 60 Hz, la misma de la red de El Salvador. Si se toma 8.33 ms como período completo, sale el doble, 120 Hz. El valor eficaz de esta señal es 8.5/√2 ≈ 6.0 V.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U13-13.1"
+     },
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U13-13.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U13-13.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U13-13.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U13-13.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U13-13.1",
+      "CON:fisica/corriente-alterna-transformador"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "La energía de la geotérmica de Berlín viaja por las líneas de transmisión a 115 kV, y un transformador en un poste de la colonia la baja antes de llegar a las casas, que usan 120 V. En 2 o 3 oraciones explica por qué conviene transportar la energía a alto voltaje y no a 120 V, usando la relación entre potencia, voltaje y corriente y la pérdida en los cables, y por qué se baja el voltaje antes de entrar a las casas.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Para la misma potencia, P = VI, a alto voltaje la corriente es pequeña, y como la pérdida en los cables es I²R, baja muchísimo: a 120 V la corriente sería casi mil veces mayor y casi toda la energía se perdería como calor. En las casas se baja a 120 V porque es más seguro y los aparatos están hechos para ese voltaje.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U13-13.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Con la misma potencia, como P = VI, al subir el voltaje la corriente en los cables es mucho menor. La pérdida en los cables es I²R, así que con poca corriente se pierde muy poca energía como calor; a 120 V la corriente sería enorme y casi todo se perdería. Antes de las casas el transformador baja el voltaje a 120 V porque 115 kV sería muy peligroso y los aparatos funcionan con 120 V.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona, para la misma potencia (P = VI), un voltaje mayor con una corriente menor en la línea.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la pérdida I²R (o con que la pérdida crece con el cuadrado de la corriente) que a alto voltaje se pierde mucho menos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que se baja a 120 V por seguridad o porque los aparatos de las casas están hechos para ese voltaje.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Estima cuánto cambia la corriente o la pérdida (por ejemplo, unas mil veces menos corriente).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa V²/R con el voltaje de la línea y concluye que a alto voltaje se pierde más, o que el alto voltaje se usa «para que llegue con más fuerza».",
+        "ejemplo": "Se usa alto voltaje para empujar la electricidad hasta lejos, aunque se pierde más porque la pérdida es V²/R.",
+        "dificultad": "DIF:fisica/corriente-alterna-transformador/1"
+       },
+       {
+        "descripcion": "Cree que el transformador que sube el voltaje también aumenta la energía o la potencia.",
+        "ejemplo": "El transformador de la central le sube el voltaje y así la energía llega con más potencia.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Menciona la seguridad pero no explica la ventaja del alto voltaje en la línea.",
+        "ejemplo": "Se baja porque 115 kV es peligroso; en la línea no importa porque nadie toca los cables.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U13-13.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/corriente-alterna-transformador/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/corriente-alterna-transformador/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/corriente-alterna-transformador",
+     "descripcion": "Cree que transportar la energía a alto voltaje aumenta las pérdidas en los cables, o que el alto voltaje sirve para «empujar» la electricidad más lejos, porque calcula la pérdida con V²/R usando el voltaje de la línea en lugar de la corriente de la línea (I²R) o de la caída de voltaje en los propios cables.",
+     "senales": "Concluye que a 115 kV se pierde más que a 23 kV; usa V²/R con el voltaje de la línea; explica el alto voltaje con la «fuerza» para llegar lejos, sin mencionar la corriente.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Aplica V²/R con un voltaje que no es el de los cables.",
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/corriente-alterna-transformador/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/corriente-alterna-transformador/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/corriente-alterna-transformador/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/corriente-alterna-transformador",
+     "descripcion": "Cree que un transformador funciona con corriente continua, por ejemplo con una pila o una batería de carro, sin reconocer que solo induce voltaje en el secundario si el flujo magnético del núcleo cambia, lo que exige corriente alterna o variable en el primario.",
+     "senales": "Propone subir el voltaje de una pila con un transformador; espera una lectura constante en el secundario con corriente continua; no relaciona el transformador con la ley de Faraday.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "No conecta el transformador con la inducción de Faraday.",
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/corriente-alterna-transformador/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/corriente-alterna-transformador/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/corriente-alterna-transformador/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/corriente-alterna-transformador",
+     "descripcion": "Cree que los 120 V de la red son un voltaje constante o el valor máximo de la señal, sin reconocer que es el valor eficaz de un voltaje que cambia de signo 120 veces por segundo y cuyo máximo es cerca de 170 V; o cree que con la corriente alterna los electrones viajan desde la central hasta la casa.",
+     "senales": "Calcula el voltaje máximo de la red como 120 V; dibuja la corriente alterna como una línea recta; dice que la electricidad «llega» a la casa con los electrones que salieron de la central.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde valor eficaz, valor máximo y voltaje constante.",
+     "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/corriente-alterna-transformador",
+     "nombre": "Corriente alterna y transformador",
+     "definicion": "Corriente sinusoidal con valores eficaces; transformador, reactancia, impedancia y resonancia en circuitos RLC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U13-13.1",
+     "grado": 11,
+     "indicador": "4.4. • Calcula el voltaje y la corriente en el secundario de un transformador ideal y justifica por qué la energía se transporta a alto voltaje para reducir pérdidas. • Calcula el voltaje máximo, el valor eficaz y el período de una señal alterna, y los aplica a la red eléctrica salvadoreña de 120 V y 60 Hz.",
+     "evidencia": "Infografía del recorrido de la energía eléctrica en El Salvador con cálculos de transformación y pérdidas en las líneas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/corriente-alterna-transformador/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/induccion-electromagnetica/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/induccion-electromagnetica/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/induccion-electromagnetica",
+     "descripcion": "Cree que basta con que haya un imán o un campo magnético dentro de la bobina para que se induzca voltaje o corriente, aunque nada se mueva ni cambie, en lugar de reconocer que la fem aparece solo mientras el flujo magnético cambia.",
+     "senales": "Predice que el voltímetro marcará algo con el imán quieto dentro de la bobina; cree que un imán guardado junto a un cable «carga» el circuito; si la lectura es cero, supone que el aparato falla.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Asocia la causa con el campo presente, no con su cambio.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/induccion-electromagnetica/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/induccion-electromagnetica/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/induccion-electromagnetica/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/induccion-electromagnetica",
+     "descripcion": "Interpreta la ley de Lenz como si la corriente inducida siempre creara un campo opuesto al campo del imán, o siempre repeliera al imán, en lugar de oponerse al cambio del flujo: cuando el flujo disminuye, el campo inducido tiene el mismo sentido que el del imán y tiende a retenerlo.",
+     "senales": "Dice que al alejar el imán la bobina lo empuja; dibuja el campo inducido siempre contrario al del imán; predice el mismo signo de voltaje al meter y al sacar el imán.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde oponerse al campo con oponerse a su cambio.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/induccion-electromagnetica/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/induccion-electromagnetica/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/induccion-electromagnetica/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/induccion-electromagnetica",
+     "descripcion": "Cree que la fem inducida es mayor cuanto mayor es el flujo magnético, y no cuanto más rápido cambia: confunde Φ con ΔΦ/Δt y espera la fem máxima de un generador cuando por la espira pasa el máximo flujo.",
+     "senales": "Propone dejar el imán en el punto de mayor campo para tener más voltaje; ubica el pico de fem de una espira que gira cuando su plano es perpendicular al campo; no usa el tiempo al calcular la fem.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde una magnitud con su rapidez de cambio.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/induccion-electromagnetica/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-electromagneticas-espectro/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-electromagneticas-espectro/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+     "descripcion": "Cree que las ondas de radio, de wifi o de telefonía son ondas de sonido, o que como el sonido necesitan aire u otro medio para viajar, sin reconocer que son ondas electromagnéticas, como la luz, que viajan también en el vacío.",
+     "senales": "Dice que la radio «manda el sonido por el aire»; afirma que en el espacio no puede haber ondas de radio; confunde la frecuencia de la emisora (en megahertz) con el tono de la música.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se transfiere el modelo de onda sonora a la radio.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-electromagneticas-espectro/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-electromagneticas-espectro/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-electromagneticas-espectro/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+     "descripcion": "Cree que en el vacío las ondas electromagnéticas viajan a distinta rapidez según su región del espectro (que los rayos X o la ultravioleta son más rápidos que las ondas de radio), en lugar de reconocer que todas viajan a c y que difieren en frecuencia y longitud de onda.",
+     "senales": "Explica que los rayos X atraviesan el cuerpo porque son más rápidos; al usar c = λf cambia c según la onda; dice que la luz azul llega antes que la roja desde el sol.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Asocia más frecuencia o más energía con más rapidez.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-electromagneticas-espectro/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-electromagneticas-espectro/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-electromagneticas-espectro/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+     "descripcion": "Cree que toda «radiación» es igual de dañina y que las ondas de radio, wifi o microondas dañan el ADN como los rayos X, sin distinguir la radiación ionizante (alta frecuencia, fotones capaces de romper enlaces) de la no ionizante, cuyo efecto comprobado a alta intensidad es el calentamiento.",
+     "senales": "Teme que el celular o la antena cercana causen cáncer como una radiografía; usa «radiación» como sinónimo de «radiactividad»; no considera la frecuencia ni la densidad de potencia al juzgar el riesgo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Mezcla radiación ionizante y no ionizante en una sola categoría.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-electromagneticas-espectro/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-radio-telecomunicaciones/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-radio-telecomunicaciones/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
+     "descripcion": "Cree que la radio transmite el sonido mismo por el aire, o que la onda de radio es una onda sonora muy fuerte, sin distinguir la onda portadora electromagnética de la señal de audio que va codificada en ella y que el receptor convierte de nuevo en sonido.",
+     "senales": "Dice que la antena «capta el sonido»; cree que la frecuencia de la emisora (por ejemplo 96.1 MHz) es el tono de la música; espera que una pared gruesa bloquee la radio igual que bloquea la voz.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "No separa la portadora de la información que transporta.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-radio-telecomunicaciones/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-radio-telecomunicaciones/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-radio-telecomunicaciones/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
+     "descripcion": "Atribuye las diferencias de alcance o de velocidad de datos entre tecnologías (bluetooth, wifi, 4G, AM) a que unas ondas viajan más rápido que otras, en lugar de reconocer que todas viajan a la rapidez de la luz y que el alcance depende de la potencia, la frecuencia y los obstáculos, y la velocidad de datos del ancho de banda.",
+     "senales": "Dice que el wifi de 5 GHz o el 5G «son más rápidos porque la onda va más rápido»; explica el poco alcance del bluetooth con una onda «lenta»; usa c distinta para cada servicio al calcular λ.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde rapidez de propagación con tasa de datos y alcance.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-radio-telecomunicaciones/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-radio-telecomunicaciones/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-radio-telecomunicaciones/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
+     "descripcion": "Cree que el receptor GPS del celular envía su ubicación a los satélites, o que los satélites lo «ven» y le dicen dónde está, o que sin datos móviles el GPS no puede calcular la posición; no reconoce que el receptor solo recibe señales con la hora de envío y calcula él mismo su posición.",
+     "senales": "Teme que el satélite lo rastree al activar el GPS; dice que sin saldo de datos el GPS no funciona; explica la ubicación como una respuesta que el satélite envía al teléfono.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde el GPS, que solo recibe, con servicios que transmiten.",
+     "origen": "redactor-actividades (G11-FIS-U12-12.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-radio-telecomunicaciones",
+     "nombre": "Ondas de radio y telecomunicaciones",
+     "definicion": "Uso del espectro radioeléctrico para transmitir información; radiación no ionizante y sus límites de exposición.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.7",
+     "grado": 11,
+     "indicador": "4.6. • Explica el funcionamiento básico de diferentes tecnologías de comunicación inalámbrica. • Construye un sistema de radiotelecomunicación funcional. • Explica los principales hitos en el desarrollo de las tecnologías de radiocomunicación.",
+     "evidencia": "Tabla comparativa de tecnologías inalámbricas con esquema del funcionamiento del GPS"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-radio-telecomunicaciones/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U11-11.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U11-11.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U11-11.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U11-11.3",
+      "CON:fisica/campo-magnetico"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "El campo de un cable recto y el de un solenoide de caja, medidos con el celular",
+     "proposito": "Medir con el magnetómetro de un celular el campo magnético de un cable recto largo a varias distancias y verificar con la gráfica de B contra 1/r que B = μ₀I/(2πr); después medir el campo dentro de un solenoide hecho sobre una caja y compararlo con el que da la ley de Ampère, B = μ₀NI/L, y ver qué materiales cambian la lectura.",
+     "materiales": [
+      "Un celular por grupo con magnetómetro y la aplicación gratuita phyphox (experimento «Magnetómetro»)",
+      "Dos pilas AA alcalinas nuevas en un portapilas para dos, y un resistor de cemento de 2.2 Ω y 5 W",
+      "Un pulsador o interruptor y cuatro cables con caimanes",
+      "3 m de cable flexible de cobre forrado (calibre 18 a 22) para el cable recto",
+      "17 m de alambre de cobre esmaltado calibre 22 o 24 (para unas 30 vueltas) y una caja de cartón de unos 30 cm de largo en la que quepa el celular acostado (una caja de zapatos)",
+      "Un multímetro digital",
+      "Regla de 30 cm, cinta adhesiva, papel milimetrado y lija fina",
+      "Un imán pequeño de refrigerador (no de neodimio)",
+      "Objetos de prueba: un clavo o tornillo de hierro, una lata de aluminio, un trozo de cable de cobre, una regla de plástico y un borrador"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente presenta B = μ₀I/(2πr) y el plan. Los grupos tienden el cable de 3 m en forma de rectángulo sobre una mesa de madera o en el piso, lejos de patas y estructuras de hierro: un lado recto de 1 m pegado con cinta, y el resto del cable, las pilas y el resistor a 40 cm o más de ese lado. El circuito es: pilas, pulsador, resistor, cable y regreso a las pilas.",
+      "2. (8 min) Con phyphox abierto y el celular acostado, acerquen el imán de refrigerador por los bordes del celular y busquen el punto donde la lectura sube más: ahí está el sensor. Márquenlo con un trocito de cinta en la carcasa y alejen el imán de la mesa.",
+      "3. (7 min) Con el multímetro como amperímetro (corriente continua, escala de 10 A, punta roja en la entrada de 10 A, en serie) midan la corriente pulsando 3 s. Con ese valor y μ₀ de la tabla de referencia (aproximado 4π × 10⁻⁷ T·m/A) calculen el campo que esperan a 2, 3, 4, 6, 8 y 10 cm del cable.",
+      "4. (20 min) Coloquen el celular junto al lado recto con la marca del sensor a 2 cm del cable, medidos con la regla. Sin mover el celular, lean la componente z (perpendicular a la mesa) con la corriente en un sentido (pulso de no más de 5 s) y luego con el cable invertido en las pilas. Repitan a 3, 4, 6, 8 y 10 cm. El campo del cable es la mitad de la diferencia entre las dos lecturas.",
+      "5. (10 min) Completen la tabla, grafiquen B contra 1/r en papel milimetrado, tracen la recta que mejor se ajuste y calculen su pendiente. Respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "6. (10 min) La docente deduce con la ley de Ampère el campo de un solenoide largo, B = μ₀NI/L, y explica por qué se elige un rectángulo con un lado dentro y otro fuera de la bobina.",
+      "7. (15 min) Enrollen 30 vueltas de alambre esmaltado alrededor de la caja, repartidas con cuidado a lo largo de 30 cm (una vuelta por centímetro) y fijadas con cinta. Lijen 1 cm de cada punta y conéctenlas al circuito de la sesión anterior en lugar del cable recto.",
+      "8. (12 min) Midan la corriente. Coloquen el celular dentro de la caja, en el centro, con su eje largo paralelo al eje del solenoide. Lean la componente del campo a lo largo del eje con la corriente en un sentido y en el otro y saquen la mitad de la diferencia. Repitan con el celular en un extremo de la caja. Calculen μ₀NI/L y respondan la pregunta de análisis 2.",
+      "9. (10 min) Con la corriente apagada y el celular en el centro de la caja, acerquen al sensor uno por uno el clavo de hierro, la lata de aluminio, el cable de cobre, la regla y el borrador, y anoten si la lectura cambia. Repitan con la corriente encendida.",
+      "10. (8 min) Clasifiquen los materiales y respondan la pregunta de análisis 3. Desarmen el circuito y recojan las pilas."
+     ],
+     "seguridad": [
+      "Solo se usan dos pilas AA (3 V). Nada se conecta a un tomacorriente.",
+      "El resistor y el cable se calientan con la corriente: pulsen como máximo 5 s y esperen unos segundos entre lecturas. No toquen el resistor mientras está conectado. El amperímetro va siempre en serie con el resistor, nunca directo entre los bornes de las pilas.",
+      "Las puntas del alambre esmaltado pinchan: lijen con cuidado y doblen las puntas sobrantes.",
+      "No usen imanes de neodimio cerca de los celulares; el imán de refrigerador se mantiene lejos de la mesa mientras se mide.",
+      "Las pilas usadas se llevan a un punto de acopio de residuos electrónicos."
+     ],
+     "datos_esperados": "Con dos pilas y 2.2 Ω la corriente ronda 1.1 A. El campo del cable recto es del orden de 10 μT a 2 cm y de 2 μT a 10 cm, menor que el de la Tierra (unas decenas de microteslas), por eso hay que invertir la corriente y restar. B·r debe salir casi constante, cerca de 2 × 10⁻⁷ T·m/A por la corriente, y la gráfica de B contra 1/r, una recta que pasa cerca del origen. Las diferencias de 10 a 20 % son normales: el sensor no está exactamente donde se marcó (eso pesa más a 2 cm) y el resto del rectángulo aporta un poco de campo. Solenoide: con 30 vueltas en 30 cm y unos 0.8 A, μ₀NI/L da cerca de 100 μT; en el centro se mide un poco menos (alrededor de 10 % menos, porque la caja no es mucho más larga que ancha) y en el extremo cerca de la mitad. Materiales: solo el hierro cambia la lectura de forma notable; el aluminio, el cobre, el plástico y el borrador no la cambian dentro de lo que el celular puede medir, aunque son paramagnéticos o diamagnéticos muy débiles.",
+     "analisis": [
+      "(Paso 5) ¿Es B·r casi constante en su tabla? ¿Qué corriente da la pendiente de su gráfica y qué tan lejos queda de la que midió el amperímetro? ¿A qué distancia es mayor la diferencia y por qué?",
+      "(Paso 8) ¿El campo en el centro de la caja coincide con μ₀NI/L? ¿Por qué en el extremo se mide cerca de la mitad, y qué supuesto de la ley de Ampère no cumple del todo su solenoide?",
+      "(Paso 10) ¿Qué materiales son ferromagnéticos según sus datos? ¿Por qué el celular no distingue un material paramagnético de uno diamagnético, y cómo usa un disco duro la capacidad del hierro y sus aleaciones de quedar magnetizados?",
+      "Tarea: Dibujen las líneas del campo magnético de la Tierra y marquen dónde está el polo sur magnético. Con la brújula del celular y el norte geográfico (al mediodía solar, la sombra de un palo vertical marca la línea norte-sur; según la época del año apunta al norte o al sur), estimen la declinación magnética de su localidad y compárenla con el valor de un modelo oficial que la docente consulte."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin celular con magnetómetro: usen una brújula bajo el cable recto, con el cable orientado norte-sur. La aguja se desvía un ángulo θ con tan θ = B del cable / B horizontal de la Tierra; midan θ con el transportador a varias alturas del cable sobre la brújula y grafiquen tan θ contra 1/r, que también debe ser una recta. Sin laboratorio ni internet: datos de un grupo de ejemplo. Cable recto con I = 1.12 A: r = 2 cm, 11.6 μT; 3 cm, 7.4 μT; 4 cm, 5.7 μT; 6 cm, 3.8 μT; 8 cm, 2.7 μT; 10 cm, 2.3 μT. Solenoide de caja con 30 vueltas en 30 cm e I = 0.78 A: centro, 89 μT; extremo, 47 μT. Materiales: el clavo de hierro cambia la lectura en decenas de microteslas; los demás, en menos de 0.5 μT.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U11-11.3",
+     "grado": 11,
+     "indicador": "4.1. • Calcula el campo magnético de un conductor rectilíneo largo y verifica experimentalmente su dependencia inversa con la distancia. • Representa las líneas de campo magnético de imanes y de la Tierra, e interpreta la declinación magnética en su localidad. • Aplica la ley de Ampère para deducir el campo magnético en el interior de un solenoide y lo compara con el medido en un electroimán de pilas. • Clasifica materiales en ferromagnéticos, paramagnéticos y diamagnéticos según su permeabilidad y explica aplicaciones como el disco duro y la detección de huellas dactilares.",
+     "evidencia": "Gráfica B en función de 1/r con datos del magnetómetro y comparación con el valor teórico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U11-11.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U12-12.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U12-12.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.1",
+      "CON:fisica/induccion-electromagnetica"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Imán, bobina y tubo de cobre: el voltaje inducido y la ley de Lenz",
+     "proposito": "Construir la tabla de voltajes inducidos según la rapidez y el sentido del movimiento de un imán en una bobina, comprobar que un imán quieto no induce nada, ver la ley de Lenz como un freno en un tubo de cobre y relacionar lo observado con las ecuaciones de Maxwell y con los generadores de las geotérmicas.",
+     "materiales": [
+      "Por grupo, una bobina de 300 a 500 vueltas de alambre esmaltado calibre 28 o 30 enrollada sobre un tubo de cartón o PVC de 2 a 3 cm de diámetro (la prepara la docente antes de la clase o se usa una del laboratorio)",
+      "Dos imanes de neodimio cilíndricos de unos 12 mm de diámetro que pasen holgados por el tubo de la bobina",
+      "Un multímetro digital (o, mejor, un galvanómetro de cero central del laboratorio) y dos cables con caimanes",
+      "Una brújula y un metrónomo o cronómetro del celular",
+      "Para toda la clase: un tubo de cobre de 1/2 pulgada y 50 cm (de ferretería) y un tubo de PVC del mismo diámetro y largo; un imán cilíndrico de neodimio que pase por ambos sin tocar las paredes; un trapo para recibirlo",
+      "Un imán de barra o de refrigerador que se pueda partir (o dos trozos de uno ya partido)",
+      "Hojas para la tabla y papel milimetrado"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente recuerda el experimento de Oersted y la pregunta guía: ¿por qué aparece voltaje solo mientras el imán se mueve? Cada grupo identifica con la brújula el polo norte de su imán y conecta la bobina al multímetro en voltaje de corriente continua, escala de 200 mV (o al galvanómetro).",
+      "2. (5 min) Dejen el imán quieto dentro de la bobina durante 10 s y anoten la lectura. Luego sáquenlo.",
+      "3. (20 min) Metan el imán con el polo norte por delante, despacio, en unos 2 s (cuenten «mil uno, mil dos»), y anoten el signo y el valor más alto que alcanza a mostrar el multímetro. Sáquenlo igual de despacio. Repitan con el polo sur por delante. Hagan lo mismo en 1 s y en medio segundo. Cada caso se repite tres veces.",
+      "4. (10 min) Peguen los dos imanes y repitan solo el caso de 1 s, metiendo y sacando. Anoten si el voltaje cambia.",
+      "5. (10 min) Ordenen la tabla (polo, sentido, tiempo, signo y valor) y respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "6. (10 min) La docente presenta Φ = BA cos θ y ε = −NΔΦ/Δt, y la ley de Lenz como «la corriente inducida se opone al cambio que la produce».",
+      "7. (12 min) Demostración con toda la clase: dejen caer el imán de neodimio por el tubo de PVC vertical y luego por el de cobre, sobre el trapo. Tres estudiantes miden el tiempo de caída en cada tubo, tres veces. Comprueben con otro imán que el cobre no se pega a un imán.",
+      "8. (15 min) En grupo, expliquen con la ley de Lenz por qué el imán cae lento en el cobre, y apliquen la ley de Faraday a los datos de la tabla: calculen ΔΦ con ε × Δt / N para dos de sus filas. Respondan la pregunta de análisis 2.",
+      "9. (10 min) Con lo visto en la unidad, completen una tabla de cuatro filas que una cada ecuación de Maxwell con un experimento: cargas que se atraen o repelen (ley de Gauss del campo eléctrico); un imán partido que sigue teniendo dos polos (ley de Gauss del campo magnético); la bobina y el imán (ley de Faraday); la brújula junto a un cable con corriente (ley de Ampère y Maxwell). Partan el imán o usen los trozos ya partidos para comprobar la segunda fila.",
+      "10. (8 min) Respondan la pregunta de análisis 3 y devuelvan los imanes separados."
+     ],
+     "seguridad": [
+      "No hay pilas ni conexión a la red: el único circuito es la bobina con el multímetro.",
+      "Los imanes de neodimio pellizcan los dedos y se quiebran si chocan: se separan deslizándolos, se mantienen lejos de celulares, tarjetas y personas con marcapasos, y nunca se llevan a la boca.",
+      "Si el imán de barra se parte, lo hace la docente envuelto en un trapo, con gafas, porque saltan astillas.",
+      "En la caída por los tubos, el imán se recibe en el trapo, no con la mano."
+     ],
+     "datos_esperados": "Imán quieto: 0 mV. Metiendo el imán en unos 2 s el multímetro muestra unos pocos milivoltios y, en medio segundo, de 10 a varias decenas de milivoltios; el voltaje crece al aumentar la rapidez. El signo cambia al sacar en vez de meter, y al usar el otro polo; meter el polo sur da el mismo signo que sacar el polo norte. Con dos imanes el voltaje es mayor. Un multímetro se actualiza unas pocas veces por segundo y no alcanza a mostrar el pico de los movimientos rápidos: los valores de medio segundo son una cota baja y el galvanómetro los muestra mejor. Tubos: en el PVC la caída de 50 cm dura unas tres décimas de segundo, como una caída libre; en el cobre dura varios segundos, aunque el cobre no se pega al imán. ε × Δt / N debe dar casi lo mismo en filas con distinta rapidez.",
+     "analisis": [
+      "(Paso 5) Según su tabla, ¿qué hace falta para que haya voltaje inducido? ¿Cómo cambian el valor y el signo al mover el imán más rápido, al sacarlo en lugar de meterlo y al usar el otro polo?",
+      "(Paso 8) ¿Por qué el imán cae tan lento en el tubo de cobre si el cobre no es magnético? ¿De dónde sale la energía que se disipa en el tubo?",
+      "(Paso 10) Los generadores de las geotérmicas de Ahuachapán y Berlín hacen girar bobinas o imanes con vapor. ¿Qué ley de su tabla explica la electricidad que producen, y por qué cuesta más girar el generador cuando la red le pide más corriente?",
+      "Tarea: En el simulador PhET «Laboratorio electromagnético de Faraday», muevan el imán a través de la bobina con distinto número de espiras y comparen la lectura del voltímetro con sus datos."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin tubo de cobre: un perfil o tubo cuadrado de aluminio de ventanería, o una placa de aluminio de 3 mm o más inclinada, por la que el imán resbala más lento que por una tabla de madera. Sin multímetro ni galvanómetro: el simulador PhET «Laboratorio electromagnético de Faraday» tiene una bobina con voltímetro y permite mover el imán con distinta rapidez y en los dos sentidos. Sin laboratorio ni internet: datos de un grupo de ejemplo con una bobina de 400 vueltas. Imán quieto, 0 mV. Polo norte entrando: en 2 s, +4 mV; en 1 s, +9 mV; en 0.5 s, +21 mV. Polo norte saliendo: en 1 s, −8 mV. Polo sur entrando: en 1 s, −9 mV. Dos imanes entrando en 1 s: +15 mV. Caída de 50 cm: PVC, 0.33 s; cobre, 4.1 s.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/induccion-electromagnetica",
+     "nombre": "Inducción electromagnética: Faraday y Lenz",
+     "definicion": "Un flujo magnético variable induce una fem opuesta al cambio (Faraday, Lenz); así funcionan los generadores eléctricos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.1",
+     "grado": 11,
+     "indicador": "4.3. • Explica el fenómeno de la inducción de voltaje. • Reconoce a partir de un experimento los principios físicos descritos por las ecuaciones de Maxwell. • Calcula magnitudes físicas en dispositivos electromagnéticos.",
+     "evidencia": "Tabla de voltajes inducidos según la rapidez y el sentido del imán, con explicación basada en las leyes de Faraday y Lenz"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U12-12.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U12-12.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U12-12.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U12-12.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U12-12.4",
+      "CON:fisica/ondas-electromagneticas-espectro"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Estaciones del espectro: infrarrojo invisible, luz polarizada, jaula de Faraday y microondas en el chocolate",
+     "proposito": "Describir propiedades de las ondas electromagnéticas con cuatro observaciones sencillas: el infrarrojo de un control remoto existe aunque el ojo no lo vea y se refleja y se bloquea como la luz; la luz de una pantalla está polarizada, lo que muestra que la onda es transversal; un recipiente metálico cerrado bloquea las ondas de radio del celular; y en un horno de microondas la distancia entre puntos calientes permite estimar la longitud de onda y la rapidez c = λf.",
+     "materiales": [
+      "Dos o tres controles remotos de televisor o aire acondicionado con pilas",
+      "Celulares con cámara (la de atrás suele ver mejor el infrarrojo)",
+      "Un espejo, una hoja de papel, un trozo de cartón, una bolsa plástica transparente y un vaso de vidrio",
+      "Lentes de sol polarizados (o una lámina polarizadora del laboratorio) y una pantalla LCD: calculadora, monitor o celular",
+      "Una lata metálica de galletas con tapa, papel aluminio y un recipiente plástico con tapa",
+      "Para la demostración de la docente: un horno de microondas de la escuela o de la cafetería en buen estado, una barra plana de chocolate (o una capa de queso rallado o de malvaviscos) sobre un plato, y la etiqueta del horno con su frecuencia (normalmente 2450 MHz)",
+      "Regla de 30 cm y hojas de registro"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (8 min) La docente repasa las regiones del espectro y c = λf, y organiza cuatro estaciones.",
+      "2. (12 min) Estación infrarrojo: apunten el control remoto a la cámara del celular y presionen un botón; comparen con lo que ve el ojo. Busquen si el destello se ve reflejado en el espejo y si atraviesa papel, cartón, la bolsa plástica y el vaso de vidrio. Anoten qué materiales lo dejan pasar.",
+      "3. (10 min) Estación polarización: miren la pantalla LCD a través de los lentes polarizados y gírenlos lentamente una vuelta. Anoten en qué ángulos la pantalla se oscurece. Repitan mirando la luz de una ventana.",
+      "4. (10 min) Estación jaula de Faraday: con permiso, metan un celular encendido en el recipiente plástico cerrado y llámenlo desde otro; repitan con el celular dentro de la lata cerrada, o envuelto en tres capas de papel aluminio sin aberturas. Anoten en qué casos entra la llamada.",
+      "5. (10 min) Demostración de la docente: retira el plato giratorio del horno, coloca el chocolate sobre un plato invertido para que no gire y calienta unos 20 s a máxima potencia. Saca el plato con un guante y los grupos miden con la regla la distancia entre los centros de dos puntos derretidos vecinos. Esa distancia es media longitud de onda.",
+      "6. (5 min) Cada grupo calcula λ y c = λf con la frecuencia de la etiqueta y responde la pregunta de análisis 1."
+     ],
+     "seguridad": [
+      "El horno de microondas solo lo opera la docente, tal como se usa en una cocina: no se abre, no se enciende vacío, no se le mete metal y no se manipula su cable ni su enchufe. Si el horno tiene daños en la puerta o el sello, la demostración no se hace y se usan los datos de ejemplo.",
+      "El chocolate derretido puede estar muy caliente: el plato lo saca la docente con un guante y los estudiantes miden sin tocar. El chocolate de la prueba no se come si se usaron reglas u otros objetos sobre él.",
+      "Los controles remotos solo emiten infrarrojo de baja potencia, inofensivo. No se mira al sol a través de los lentes ni de ningún otro objeto.",
+      "Los celulares de los estudiantes se usan con permiso de sus dueños; si nadie puede prestar uno, la docente hace la estación de la jaula con el suyo."
+     ],
+     "datos_esperados": "Infrarrojo: el ojo no ve nada, pero la cámara muestra un destello violáceo; se refleja en el espejo, atraviesa la bolsa plástica y en parte el vidrio, y lo bloquean el cartón y casi siempre el papel grueso. Polarización: la pantalla LCD se oscurece casi por completo en dos posiciones separadas 180°, y se ve clara a 90° de ellas; la luz de la ventana cambia poco o nada. Jaula: la llamada entra con el recipiente plástico y no entra, o entra con mucha dificultad, con la lata bien cerrada o el aluminio sin huecos. Microondas: los puntos derretidos quedan separados unos 6 cm (media longitud de onda para 2450 MHz), λ ≈ 12 cm y c ≈ 3 × 10⁸ m/s, con diferencias de 10 a 20 % porque el patrón dentro del horno no es perfectamente regular.",
+     "analisis": [
+      "(Paso 6) ¿Qué valor de c obtuvieron con el chocolate? ¿Qué tan lejos queda de 3.00 × 10⁸ m/s y qué fuentes de error explican la diferencia?",
+      "Tarea: Con sus observaciones de las estaciones de infrarrojo y polarización, expliquen qué propiedades comparten la luz visible y el infrarrojo, y por qué la polarización muestra que las ondas electromagnéticas son transversales.",
+      "Tarea: ¿Por qué el metal cerrado bloquea las ondas de radio del celular? Relaciónenlo con la rejilla metálica de la puerta del horno, cuyos agujeros son mucho menores que 12 cm.",
+      "Tarea: Elaboren el espectro electromagnético en escala logarítmica de frecuencia y de longitud de onda, con un ejemplo de uso en El Salvador para cada región (radio AM y FM, telefonía, wifi, infrarrojo, visible, ultravioleta, rayos X en hospitales, rayos gamma), calculando λ o f de cada ejemplo."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin horno de microondas o si no está en buen estado: usen los datos de ejemplo. Sin lentes polarizados: dos láminas polarizadoras del laboratorio, una fija frente a una lámpara y la otra girando delante de ella; si no hay, usen los datos de ejemplo. Sin laboratorio ni internet: datos de un grupo de ejemplo. Infrarrojo: visible en la cámara, se refleja en el espejo, pasa la bolsa y el vidrio, no pasa el cartón. Pantalla LCD vista con lentes polarizados: oscura a 0° y 180°, clara a 90° y 270°. Llamada: entra en el recipiente plástico, no entra en la lata. Chocolate: centros de puntos derretidos a 0, 6.3 y 12.0 cm con un horno de 2450 MHz.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-electromagneticas-espectro",
+     "nombre": "Ondas electromagnéticas y espectro",
+     "definicion": "La luz es una onda electromagnética; el espectro va de ondas de radio a rayos gamma según su frecuencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U12-12.4",
+     "grado": 11,
+     "indicador": "4.5. • Ejemplifica los tipos de ondas que se encuentran en el espectro electromagnético. • Describe las propiedades de las ondas electromagnéticas a partir de un experimento. • Resuelve problemas teóricos a partir de las gráficas de los campos eléctrico y magnético de una onda electromagnética. • Argumenta con datos de densidad de potencia y fuentes confiables la validez de afirmaciones sobre radiación no ionizante y salud.",
+     "evidencia": "Espectro electromagnético ilustrado a escala logarítmica con ejemplos, cálculos de λ y f y usos en El Salvador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U12-12.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}

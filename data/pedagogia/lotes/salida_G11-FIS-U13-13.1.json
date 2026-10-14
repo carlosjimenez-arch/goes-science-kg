@@ -1,0 +1,227 @@
+[
+ {
+  "id": "ACT:G11-FIS-U13-13.1/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U13-13.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U13-13.1",
+   "CON:fisica/corriente-alterna-transformador"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   11
+  ],
+  "enunciado": "Una central entrega 10 MW a una línea de transmisión. Se compara enviar esa potencia por la misma línea a 115 kV o a 23 kV. ¿Qué pasa con la potencia que se pierde como calor en los cables al usar 115 kV en lugar de 23 kV?",
+  "opciones": {
+   "A": "Aumenta 25 veces, porque la pérdida va como V²/R y el voltaje es cinco veces mayor.",
+   "B": "Baja a 1/25, porque la corriente es cinco veces menor y la pérdida va como I²R.",
+   "C": "Baja a 1/5, porque la corriente es cinco veces menor y la pérdida es proporcional a ella.",
+   "D": "No cambia, porque la central entrega la misma potencia en los dos casos."
+  },
+  "correcta": "B",
+  "distractores": {
+   "A": "DIF:fisica/corriente-alterna-transformador/1"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Con la misma potencia, P = VI: a un voltaje cinco veces mayor la corriente es cinco veces menor. La pérdida en los cables es I²R, con la corriente de la línea y la resistencia de los cables, así que baja 5² = 25 veces. V²/R solo sirve con la caída de voltaje en los propios cables, no con el voltaje de la línea.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U13-13.1"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U13-13.1/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U13-13.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U13-13.1",
+   "CON:fisica/corriente-alterna-transformador"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   11
+  ],
+  "enunciado": "Rebeca observa en un osciloscopio la señal de una fuente de corriente alterna de baja tensión (datos de ejemplo): hay una cresta de 8.5 V en t = 2.08 ms y el valle siguiente, de −8.5 V, en t = 10.41 ms. ¿Cuál es la frecuencia de la señal, en hertz (Hz)? Escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 60.0,
+  "tolerancia": 1.0,
+  "unidad": "Hz",
+  "retroalimentacion": "De una cresta al valle siguiente pasa medio período: 10.41 − 2.08 = 8.33 ms. El período es T = 16.66 ms y la frecuencia f = 1/T ≈ 60 Hz, la misma de la red de El Salvador. Si se toma 8.33 ms como período completo, sale el doble, 120 Hz. El valor eficaz de esta señal es 8.5/√2 ≈ 6.0 V.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U13-13.1"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U13-13.1/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U13-13.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U13-13.1",
+   "CON:fisica/corriente-alterna-transformador"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   11
+  ],
+  "enunciado": "La energía de la geotérmica de Berlín viaja por las líneas de transmisión a 115 kV, y un transformador en un poste de la colonia la baja antes de llegar a las casas, que usan 120 V. En 2 o 3 oraciones explica por qué conviene transportar la energía a alto voltaje y no a 120 V, usando la relación entre potencia, voltaje y corriente y la pérdida en los cables, y por qué se baja el voltaje antes de entrar a las casas.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Para la misma potencia, P = VI, a alto voltaje la corriente es pequeña, y como la pérdida en los cables es I²R, baja muchísimo: a 120 V la corriente sería casi mil veces mayor y casi toda la energía se perdería como calor. En las casas se baja a 120 V porque es más seguro y los aparatos están hechos para ese voltaje.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U13-13.1"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Con la misma potencia, como P = VI, al subir el voltaje la corriente en los cables es mucho menor. La pérdida en los cables es I²R, así que con poca corriente se pierde muy poca energía como calor; a 120 V la corriente sería enorme y casi todo se perdería. Antes de las casas el transformador baja el voltaje a 120 V porque 115 kV sería muy peligroso y los aparatos funcionan con 120 V.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Relaciona, para la misma potencia (P = VI), un voltaje mayor con una corriente menor en la línea.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Justifica con la pérdida I²R (o con que la pérdida crece con el cuadrado de la corriente) que a alto voltaje se pierde mucho menos.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Explica que se baja a 120 V por seguridad o porque los aparatos de las casas están hechos para ese voltaje.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Estima cuánto cambia la corriente o la pérdida (por ejemplo, unas mil veces menos corriente).",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Usa V²/R con el voltaje de la línea y concluye que a alto voltaje se pierde más, o que el alto voltaje se usa «para que llegue con más fuerza».",
+     "ejemplo": "Se usa alto voltaje para empujar la electricidad hasta lejos, aunque se pierde más porque la pérdida es V²/R.",
+     "dificultad": "DIF:fisica/corriente-alterna-transformador/1"
+    },
+    {
+     "descripcion": "Cree que el transformador que sube el voltaje también aumenta la energía o la potencia.",
+     "ejemplo": "El transformador de la central le sube el voltaje y así la energía llega con más potencia.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Menciona la seguridad pero no explica la ventaja del alto voltaje en la línea.",
+     "ejemplo": "Se baja porque 115 kV es peligroso; en la línea no importa porque nadie toca los cables.",
+     "dificultad": null
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP:G11-FIS-U13-13.1/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G11-FIS-U13-13.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U13-13.1",
+   "CON:fisica/corriente-alterna-transformador"
+  ],
+  "grados": [
+   11
+  ],
+  "titulo": "Un alternador de lápiz, una línea de transmisión con pilas y el transformador",
+  "proposito": "Ver que un imán que gira junto a una bobina produce un voltaje que cambia de signo (corriente alterna) y relacionar su período y su valor máximo con los de la red de 120 V y 60 Hz; comprobar con un modelo de línea alimentado con pilas que, para entregar la misma potencia, un voltaje mayor y una corriente menor reducen la pérdida I²R en los cables; y relacionar el número de vueltas de un transformador con sus voltajes.",
+  "materiales": [
+   "Por grupo, una bobina de 300 a 500 vueltas de alambre esmaltado calibre 28 o 30 sobre un tubo o carrete (la prepara la docente o se usa la de la clase de inducción)",
+   "Un lápiz y dos imanes de neodimio de disco de 1 a 2 cm, uno a cada lado del lápiz, que se sujetan solos al atraerse a través de él (así un lado muestra el polo norte y el otro el sur)",
+   "Un multímetro digital y cables con caimanes",
+   "Cinco pilas AA nuevas, un portapilas para una y otro para cuatro",
+   "Resistores de 1/2 W: dos de 1.0 Ω (los cables de la línea), uno de 4.7 Ω y uno de 150 Ω (las «casas»)",
+   "Si la escuela lo tiene: un transformador desmontable de laboratorio con bobinas de distinto número de vueltas y una fuente de corriente alterna de baja tensión (12 V o menos); si no, una computadora con el simulador PhET «Laboratorio electromagnético de Faraday» (pestaña Transformador)",
+   "Cronómetro del celular, calculadora y papel milimetrado"
+  ],
+  "procedimiento": [
+   "Sesión 1 (55 min)",
+   "1. (10 min) La docente presenta la corriente alterna: valor máximo, valor eficaz V_ef = V_máx/√2, período y frecuencia, y los datos de la red de El Salvador (120 V eficaces, 60 Hz). Recalca que la red solo se observa desde fuera.",
+   "2. (20 min) Coloquen los imanes a los lados del lápiz y la bobina, conectada al multímetro en voltaje de corriente continua, escala de 200 mV, con su cara a 1 cm del lápiz. Giren el lápiz despacio, una vuelta cada dos segundos, y anoten el valor más positivo y el más negativo. Cuenten cuántas veces cambia de signo la lectura en cinco vueltas. Repitan con una vuelta por segundo.",
+   "3. (15 min) Con la gráfica de ejemplo de una fuente de corriente alterna de laboratorio (crestas de 8.5 V, 16.7 ms entre una cresta y la siguiente), calculen el valor eficaz, el período y la frecuencia. Luego, para la red de 120 V y 60 Hz, calculen el valor máximo y el período.",
+   "4. (10 min) Respondan la pregunta de análisis 1.",
+   "Sesión 2 (55 min)",
+   "5. (10 min) La docente presenta el transformador ideal, V₂/V₁ = N₂/N₁ e I₁V₁ = I₂V₂, y la pérdida I²R en las líneas.",
+   "6. (20 min) Modelo de línea. Caso 1: una pila, un resistor de 1.0 Ω (cable de ida), el de 4.7 Ω (la casa) y el otro de 1.0 Ω (cable de vuelta). Midan con el multímetro en voltaje de corriente continua (escala de 2 V) el voltaje de la pila, el de cada resistor de 1.0 Ω y el de la casa. Caso 2: cuatro pilas, la casa de 150 Ω y la misma línea; midan igual, con la escala de 200 mV en los resistores de 1.0 Ω y la de 20 V en el resto. En cada caso, la corriente es el voltaje de un resistor de 1.0 Ω dividido entre 1.0 Ω; calculen la potencia en la casa y la perdida en los dos cables.",
+   "7. (15 min) Transformador: con la fuente de baja tensión en 6 V de corriente alterna y la bobina primaria de 400 vueltas, midan el voltaje del secundario (multímetro en voltaje alterno, escala de 20 V) con bobinas de 200 y 800 vueltas. Luego conecten la primaria a cuatro pilas y midan el secundario. Sin equipo, hagan lo mismo en el simulador: cambien el número de espiras y pasen de la fuente alterna a la batería mirando el voltímetro.",
+   "8. (10 min) Con datos de ejemplo de una línea que lleva 20 MW y tiene 10 Ω de resistencia, calculen la corriente y la pérdida a 115 kV y a 13.2 kV. Respondan la pregunta de análisis 2."
+  ],
+  "seguridad": [
+   "Nada se conecta a un tomacorriente: el alternador no usa fuente, el modelo de línea usa pilas y la fuente de corriente alterna, si se usa, es la de laboratorio de 12 V o menos y la enciende la docente.",
+   "La red eléctrica, los postes, los transformadores y las subestaciones solo se observan desde lejos: nunca se tocan, no se abren cajas ni medidores y no se trepan postes.",
+   "Los imanes de neodimio pellizcan los dedos y se quiebran si chocan; se mantienen lejos de celulares, tarjetas y personas con marcapasos.",
+   "En el modelo de línea, el multímetro se usa como voltímetro, en paralelo; no se cortocircuitan las pilas. Las pilas usadas van a un punto de acopio."
+  ],
+  "datos_esperados": "Alternador: al girar despacio, la lectura sube a unos pocos milivoltios, baja, pasa por cero y llega a valores negativos parecidos: cambia de signo dos veces por vuelta (diez en cinco vueltas). Al girar el doble de rápido, los máximos crecen y los cambios son el doble de frecuentes; el multímetro se actualiza pocas veces por segundo, así que no conviene girar más rápido. Gráfica de ejemplo: V_ef ≈ 6.0 V, T = 16.7 ms y f ≈ 60 Hz. Red: V_máx ≈ 170 V y T ≈ 16.7 ms. Modelo de línea, caso 1: corriente cerca de 0.21 A, unos 0.21 V en cada cable, alrededor de 1.0 V en la casa, unos 0.2 W en la casa y casi 0.1 W perdidos (cerca de un tercio). Caso 2: unos 0.039 A, unos 39 mV en cada cable, casi 6 V en la casa, también unos 0.2 W en la casa y apenas unas milésimas de watt perdidas (cerca del 1 %). La corriente baja unas cinco veces y la pérdida unas 30 veces, cerca del cuadrado de esa razón. Transformador: con 6 V en 400 vueltas, unos 3 V con 200 y unos 12 V con 800 (un poco menos por las pérdidas); con pilas el secundario marca cero salvo un salto al conectar o desconectar. Línea de 20 MW: a 115 kV, unos 174 A y 0.30 MW perdidos (1.5 %); a 13.2 kV, unos 1 500 A y más de 20 MW, imposible.",
+  "analisis": [
+   "(Paso 4) ¿Por qué el voltaje del alternador cambia de signo dos veces por vuelta? ¿Qué cambiaría si el lápiz girara 60 veces por segundo? Con la red de 120 V, ¿cuál es el voltaje máximo y cuántas veces por segundo cambia de sentido la corriente?",
+   "(Paso 8) En el modelo de línea, ¿qué fracción de la energía se perdió en los cables en cada caso, y cómo explica la diferencia la pérdida I²R? ¿Qué papel cumplen los transformadores de la central y del poste, y por qué no funcionan con las pilas?",
+   "Tarea: Elaboren la infografía del recorrido de la energía desde una central de El Salvador hasta una casa, con el voltaje de cada etapa y los cálculos de transformación y de pérdidas de la clase. Pueden observar los transformadores de los postes de su colonia desde la calle, sin acercarse; quien no pueda, usa la descripción de la docente."
+  ],
+  "duracion_min": 110,
+  "variantes": "Sin transformador desmontable ni fuente de corriente alterna: el simulador PhET «Laboratorio electromagnético de Faraday», en la pestaña Transformador, permite cambiar el número de espiras y pasar de fuente alterna a batería mirando el voltímetro o el foco. Sin laboratorio ni internet: datos de un grupo de ejemplo. Alternador, una vuelta cada 2 s: +6 mV y −5 mV, 10 cambios de signo en 5 vueltas; una vuelta por segundo: +11 mV y −10 mV. Modelo de línea, caso 1: pila 1.45 V, cables 0.20 V y 0.21 V, casa 0.99 V. Caso 2: pilas 5.95 V, cables 38 mV y 39 mV, casa 5.86 V. Transformador con 6.0 V en 400 vueltas: 2.9 V con 200 vueltas, 11.4 V con 800 vueltas, 0 V con pilas.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ },
+ {
+  "id": "DIF:fisica/corriente-alterna-transformador/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/corriente-alterna-transformador",
+  "descripcion": "Cree que transportar la energía a alto voltaje aumenta las pérdidas en los cables, o que el alto voltaje sirve para «empujar» la electricidad más lejos, porque calcula la pérdida con V²/R usando el voltaje de la línea en lugar de la corriente de la línea (I²R) o de la caída de voltaje en los propios cables.",
+  "senales": "Concluye que a 115 kV se pierde más que a 23 kV; usa V²/R con el voltaje de la línea; explica el alto voltaje con la «fuerza» para llegar lejos, sin mencionar la corriente.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Aplica V²/R con un voltaje que no es el de los cables."
+ },
+ {
+  "id": "DIF:fisica/corriente-alterna-transformador/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/corriente-alterna-transformador",
+  "descripcion": "Cree que un transformador funciona con corriente continua, por ejemplo con una pila o una batería de carro, sin reconocer que solo induce voltaje en el secundario si el flujo magnético del núcleo cambia, lo que exige corriente alterna o variable en el primario.",
+  "senales": "Propone subir el voltaje de una pila con un transformador; espera una lectura constante en el secundario con corriente continua; no relaciona el transformador con la ley de Faraday.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "No conecta el transformador con la inducción de Faraday."
+ },
+ {
+  "id": "DIF:fisica/corriente-alterna-transformador/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/corriente-alterna-transformador",
+  "descripcion": "Cree que los 120 V de la red son un voltaje constante o el valor máximo de la señal, sin reconocer que es el valor eficaz de un voltaje que cambia de signo 120 veces por segundo y cuyo máximo es cerca de 170 V; o cree que con la corriente alterna los electrones viajan desde la central hasta la casa.",
+  "senales": "Calcula el voltaje máximo de la red como 120 V; dibuja la corriente alterna como una línea recta; dice que la electricidad «llega» a la casa con los electrones que salieron de la central.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunde valor eficaz, valor máximo y voltaje constante."
+ }
+]
