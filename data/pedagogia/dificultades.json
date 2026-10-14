@@ -470,6 +470,45 @@
   }
  },
  {
+  "id": "DIF:fisica/astronomia-multionda/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/astronomia-multionda",
+  "descripcion": "Cree que la función principal de un telescopio es aumentar el tamaño de los objetos y que el mejor es el de más aumentos, sin reconocer que su diámetro sirve sobre todo para captar más luz y distinguir más detalle.",
+  "senales": "Compara telescopios por los aumentos, dice que un espejo grande sirve «para agrandar más» o espera ver las estrellas como discos grandes.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "La publicidad de telescopios destaca los aumentos y no la abertura.",
+  "origen": "redactor-actividades (G11-FIS-U22-22.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/astronomia-multionda/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/astronomia-multionda",
+  "descripcion": "Cree que los telescopios espaciales se ponen en órbita para estar más cerca de lo que observan, y no porque la atmósfera absorbe parte del espectro y su turbulencia empeora las imágenes.",
+  "senales": "Explica que el Hubble o el James Webb ven mejor «porque están más cerca de las estrellas».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "No dimensionan las distancias astronómicas frente a la altura de una órbita.",
+  "origen": "redactor-actividades (G11-FIS-U22-22.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/astronomia-multionda/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/astronomia-multionda",
+  "descripcion": "Asocia el rojo con lo más caliente (por el fuego o los grifos de agua caliente) y cree que una estrella roja es más caliente que una azul, al revés de lo que indica la ley de Wien.",
+  "senales": "Afirma que Betelgeuse es más caliente que Rigel por ser roja, o que una estrella blanco-azulada es «fría» por su color.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Los códigos de color cotidianos usan rojo para caliente y azul para frío.",
+  "origen": "redactor-actividades (G11-FIS-U22-22.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
   "id": "DIF:fisica/caida-libre/1",
   "tipo": "dificultad",
   "concepto": "CON:fisica/caida-libre",
@@ -1636,12 +1675,29 @@
   "concepto": "CON:fisica/corriente-alterna-transformador",
   "descripcion": "Cree que transportar la energía a alto voltaje aumenta las pérdidas en los cables, o que el alto voltaje sirve para «empujar» la electricidad más lejos, porque calcula la pérdida con V²/R usando el voltaje de la línea en lugar de la corriente de la línea (I²R) o de la caída de voltaje en los propios cables.",
   "senales": "Concluye que a 115 kV se pierde más que a 23 kV; usa V²/R con el voltaje de la línea; explica el alto voltaje con la «fuerza» para llegar lejos, sin mencionar la corriente.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Aplica V²/R con un voltaje que no es el de los cables.",
   "origen": "redactor-actividades (G11-FIS-U13-13.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Descripción para la docente clara y señales observables en lo que dice o calcula el estudiante (115 kV frente a 23 kV, V²/R, «fuerza»). Coherente con el distractor A de 13.1/obj-1."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/corriente-alterna-transformador/2",
@@ -1649,12 +1705,29 @@
   "concepto": "CON:fisica/corriente-alterna-transformador",
   "descripcion": "Cree que un transformador funciona con corriente continua, por ejemplo con una pila o una batería de carro, sin reconocer que solo induce voltaje en el secundario si el flujo magnético del núcleo cambia, lo que exige corriente alterna o variable en el primario.",
   "senales": "Propone subir el voltaje de una pila con un transformador; espera una lectura constante en el secundario con corriente continua; no relaciona el transformador con la ley de Faraday.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "No conecta el transformador con la inducción de Faraday.",
   "origen": "redactor-actividades (G11-FIS-U13-13.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Idea previa formulada sin tecnicismos innecesarios y con ejemplos cercanos (pila, batería de carro). Las tres señales son observables en clase."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/corriente-alterna-transformador/3",
@@ -1662,10 +1735,105 @@
   "concepto": "CON:fisica/corriente-alterna-transformador",
   "descripcion": "Cree que los 120 V de la red son un voltaje constante o el valor máximo de la señal, sin reconocer que es el valor eficaz de un voltaje que cambia de signo 120 veces por segundo y cuyo máximo es cerca de 170 V; o cree que con la corriente alterna los electrones viajan desde la central hasta la casa.",
   "senales": "Calcula el voltaje máximo de la red como 120 V; dibuja la corriente alterna como una línea recta; dice que la electricidad «llega» a la casa con los electrones que salieron de la central.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Confunde valor eficaz, valor máximo y voltaje constante.",
   "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Señales concretas y observables (dibujo de línea recta, 120 V como máximo). Describe dos ideas previas cercanas en una sola ficha, aceptable porque ambas surgen al hablar de la red de 120 V."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
+ },
+ {
+  "id": "DIF:fisica/cosmologia-big-bang/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/cosmologia-big-bang",
+  "descripcion": "Imagina el Big Bang como una explosión ocurrida en un punto de un espacio vacío que ya existía, desde la cual las galaxias salieron disparadas; por eso cree que el universo tiene un centro y que podemos ubicarlo.",
+  "senales": "Habla del «lugar donde explotó», dice que las galaxias se alejan «del centro» o concluye que estamos cerca del centro porque todo se aleja de nosotros.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Las imágenes de explosión en la divulgación sugieren un centro y un espacio previo.",
+  "origen": "redactor-actividades (G11-FIS-U20-20.6)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/cosmologia-big-bang/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/cosmologia-big-bang",
+  "descripcion": "Cree que la expansión del universo agranda todo lo que contiene, incluidos los átomos, las personas, la Tierra, el sistema solar y la Vía Láctea, sin reconocer que los sistemas unidos por la gravedad o por fuerzas eléctricas no se expanden.",
+  "senales": "Afirma que el sistema solar o la distancia Tierra-Sol crecen cada año por la expansión, o que nosotros también nos estiramos.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Generalizan «el espacio se expande» a toda escala, sin considerar sistemas ligados.",
+  "origen": "redactor-actividades (G11-FIS-U20-20.6)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/cosmologia-big-bang/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/cosmologia-big-bang",
+  "descripcion": "Cree que en el Big Bang se formaron todos los elementos químicos, incluidos el carbono, el oxígeno y el hierro, sin saber que la nucleosíntesis primordial solo produjo hidrógeno, helio y trazas de litio, y que los elementos más pesados se fabricaron después en las estrellas.",
+  "senales": "Dice que el hierro de la sangre o el carbono de los seres vivos «vienen directamente del Big Bang», o no relaciona la abundancia de hidrógeno y helio con los primeros minutos.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocian «origen del universo» con origen de toda la materia actual.",
+  "origen": "redactor-actividades (G11-FIS-U20-20.6)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/desintegracion-radiactiva/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/desintegracion-radiactiva",
+  "descripcion": "Cree que la desintegración es lineal: si en una vida media se desintegra la mitad de la muestra, en la siguiente se desintegra la otra mitad y ya no queda nada.",
+  "senales": "Responde que tras dos vidas medias la muestra se acabó, o dibuja la cantidad restante como una recta que corta el eje del tiempo.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Extienden la idea de «la mitad» a una resta fija por intervalo.",
+  "origen": "redactor-actividades (G11-FIS-U21-21.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/desintegracion-radiactiva/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/desintegracion-radiactiva",
+  "descripcion": "Cree que cada núcleo «envejece» y que los que quedan después de mucho tiempo están más cerca de desintegrarse, o que se puede predecir cuándo se desintegrará un núcleo concreto.",
+  "senales": "Dice que los núcleos que quedan se desintegrarán pronto porque ya son viejos, o que un dado que no ha salido en seis «ya le toca».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Trasladan la idea de desgaste de los objetos a un proceso aleatorio.",
+  "origen": "redactor-actividades (G11-FIS-U21-21.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/desintegracion-radiactiva/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/desintegracion-radiactiva",
+  "descripcion": "En la desintegración beta menos cree que el electrón emitido sale de la corteza del átomo, de modo que el núcleo no cambia, o aplica al revés la conservación de la carga y baja el número atómico.",
+  "senales": "Escribe el mismo elemento como núcleo hijo de una beta menos, o resta 1 a Z en lugar de sumarlo.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocian «electrón» con la corteza y no con un neutrón que se transforma.",
+  "origen": "redactor-actividades (G11-FIS-U21-21.1)",
   "version": "pedagogia-v1",
   "revisado_por": ""
  },
@@ -1926,6 +2094,45 @@
    },
    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
   }
+ },
+ {
+  "id": "DIF:fisica/fision-fusion-nuclear/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/fision-fusion-nuclear",
+  "descripcion": "Cree que una central nuclear puede estallar como una bomba atómica si falla, sin saber que su combustible tiene muy poco uranio-235 para sostener una explosión nuclear; los accidentes reales fueron explosiones de vapor o de hidrógeno y fugas de material radiactivo.",
+  "senales": "Dice que un accidente de reactor «es como una bomba atómica» o que Chernóbil y Fukushima fueron explosiones nucleares.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "La palabra «nuclear» une en el imaginario bombas y centrales.",
+  "origen": "redactor-actividades (G11-FIS-U23-23.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/fision-fusion-nuclear/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/fision-fusion-nuclear",
+  "descripcion": "Cree que dividir cualquier núcleo o unir cualquier par de núcleos libera energía, sin relacionar la fisión con los núcleos pesados y la fusión con los ligeros mediante la curva de energía de enlace por nucleón.",
+  "senales": "Propone que dividir hierro o unir uranio liberaría energía, o dice que la fusión «une núcleos pesados».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Aprenden fisión y fusión como recetas sin la curva que las explica.",
+  "origen": "redactor-actividades (G11-FIS-U23-23.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/fision-fusion-nuclear/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/fision-fusion-nuclear",
+  "descripcion": "Cree que en una central nuclear la reacción produce la electricidad de manera directa, sin reconocer que la fisión solo es la fuente de calor que hierve agua para mover una turbina y un generador, como en una central térmica.",
+  "senales": "Escribe que «el uranio suelta electrones que forman la corriente» o que «la radiación mueve la turbina».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocian lo nuclear con una tecnología distinta de las térmicas conocidas.",
+  "origen": "redactor-actividades (G11-FIS-U23-23.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
  },
  {
   "id": "DIF:fisica/friccion-resistencia-aire/1",
@@ -2385,12 +2592,29 @@
   "concepto": "CON:fisica/induccion-electromagnetica",
   "descripcion": "Cree que basta con que haya un imán o un campo magnético dentro de la bobina para que se induzca voltaje o corriente, aunque nada se mueva ni cambie, en lugar de reconocer que la fem aparece solo mientras el flujo magnético cambia.",
   "senales": "Predice que el voltímetro marcará algo con el imán quieto dentro de la bobina; cree que un imán guardado junto a un cable «carga» el circuito; si la lectura es cero, supone que el aparato falla.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Asocia la causa con el campo presente, no con su cambio.",
   "origen": "redactor-actividades (G11-FIS-U12-12.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Descripción breve y señales observables; la tercera (suponer que el aparato falla) es especialmente útil para que la docente la reconozca en el experimento del imán quieto."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/induccion-electromagnetica/2",
@@ -2398,12 +2622,29 @@
   "concepto": "CON:fisica/induccion-electromagnetica",
   "descripcion": "Interpreta la ley de Lenz como si la corriente inducida siempre creara un campo opuesto al campo del imán, o siempre repeliera al imán, en lugar de oponerse al cambio del flujo: cuando el flujo disminuye, el campo inducido tiene el mismo sentido que el del imán y tiende a retenerlo.",
   "senales": "Dice que al alejar el imán la bobina lo empuja; dibuja el campo inducido siempre contrario al del imán; predice el mismo signo de voltaje al meter y al sacar el imán.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Confunde oponerse al campo con oponerse a su cambio.",
   "origen": "redactor-actividades (G11-FIS-U12-12.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Lenguaje claro para la docente; las señales (empuje al alejar, mismo signo al meter y sacar) se observan en el experimento y en el ítem de opción múltiple de 12.1."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/induccion-electromagnetica/3",
@@ -2411,12 +2652,29 @@
   "concepto": "CON:fisica/induccion-electromagnetica",
   "descripcion": "Cree que la fem inducida es mayor cuanto mayor es el flujo magnético, y no cuanto más rápido cambia: confunde Φ con ΔΦ/Δt y espera la fem máxima de un generador cuando por la espira pasa el máximo flujo.",
   "senales": "Propone dejar el imán en el punto de mayor campo para tener más voltaje; ubica el pico de fem de una espira que gira cuando su plano es perpendicular al campo; no usa el tiempo al calcular la fem.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Confunde una magnitud con su rapidez de cambio.",
   "origen": "redactor-actividades (G11-FIS-U12-12.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Formulación breve; las señales son observables en predicciones, dibujos y cálculos. Bien conectada con el error de la abierta de 12.1."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/interferencia-luz/1",
@@ -2732,6 +2990,45 @@
     "descripcion": "Pensar que una pila entrega siempre la misma corriente, sin importar lo que se le conecte, en lugar de un voltaje (fuerza electromotriz) casi fijo cuya corriente depende de la resistencia del circuito."
    }
   }
+ },
+ {
+  "id": "DIF:fisica/leyes-kepler/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/leyes-kepler",
+  "descripcion": "Cree que la órbita de la Tierra es una elipse muy alargada, como en los dibujos en perspectiva de los libros, y que por eso hay estaciones: verano cuando estamos cerca del Sol e invierno cuando estamos lejos.",
+  "senales": "Explica las estaciones por la distancia al Sol o dibuja la órbita terrestre muy achatada con el Sol en un extremo.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Los diagramas exageran la excentricidad y la distancia parece explicar el calor.",
+  "origen": "redactor-actividades (G11-FIS-U22-22.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/leyes-kepler/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/leyes-kepler",
+  "descripcion": "Cree que un planeta o un cometa recorre su órbita con rapidez constante, o que va más rápido lejos del Sol, sin relacionar la ley de las áreas con la mayor rapidez cerca del Sol.",
+  "senales": "Dice que en el vacío «nada cambia su rapidez», o que en el afelio va más rápido porque la atracción es menor.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Trasladan el movimiento circular uniforme a toda órbita y confunden fuerza con rapidez.",
+  "origen": "redactor-actividades (G11-FIS-U22-22.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/leyes-kepler/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/leyes-kepler",
+  "descripcion": "Cree que el periodo de un planeta depende de su propia masa o tamaño (los planetas grandes tardan más), y no de su distancia media al Sol y de la masa del Sol.",
+  "senales": "Explica que Júpiter tarda 12 años «porque es el más grande», o predice que un asteroide pequeño a la distancia de Júpiter daría la vuelta más rápido.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocian masa con lentitud o con mayor dificultad para moverse.",
+  "origen": "redactor-actividades (G11-FIS-U22-22.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
  },
  {
   "id": "DIF:fisica/leyes-kirchhoff/1",
@@ -3432,12 +3729,29 @@
   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
   "descripcion": "Cree que las ondas de radio, de wifi o de telefonía son ondas de sonido, o que como el sonido necesitan aire u otro medio para viajar, sin reconocer que son ondas electromagnéticas, como la luz, que viajan también en el vacío.",
   "senales": "Dice que la radio «manda el sonido por el aire»; afirma que en el espacio no puede haber ondas de radio; confunde la frecuencia de la emisora (en megahertz) con el tono de la música.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Se transfiere el modelo de onda sonora a la radio.",
   "origen": "redactor-actividades (G11-FIS-U12-12.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Idea previa frecuente, descrita con ejemplos cotidianos (radio, wifi). La señal sobre MHz y tono es concreta y fácil de reconocer."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/ondas-electromagneticas-espectro/2",
@@ -3445,25 +3759,63 @@
   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
   "descripcion": "Cree que en el vacío las ondas electromagnéticas viajan a distinta rapidez según su región del espectro (que los rayos X o la ultravioleta son más rápidos que las ondas de radio), en lugar de reconocer que todas viajan a c y que difieren en frecuencia y longitud de onda.",
   "senales": "Explica que los rayos X atraviesan el cuerpo porque son más rápidos; al usar c = λf cambia c según la onda; dice que la luz azul llega antes que la roja desde el sol.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Asocia más frecuencia o más energía con más rapidez.",
   "origen": "redactor-actividades (G11-FIS-U12-12.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Descripción clara y señales observables, incluida una de cálculo (cambiar c en c = λf) que la docente puede detectar en el cuaderno."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/ondas-electromagneticas-espectro/3",
   "tipo": "dificultad",
   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
-  "descripcion": "Cree que toda «radiación» es igual de dañina y que las ondas de radio, wifi o microondas dañan el ADN como los rayos X, sin distinguir la radiación ionizante (alta frecuencia, fotones capaces de romper enlaces) de la no ionizante, cuyo efecto comprobado a alta intensidad es el calentamiento.",
+  "descripcion": "Cree que toda «radiación» es igual de dañina y que las ondas de radio, wifi o microondas dañan el ADN como los rayos X. No distingue la radiación de alta frecuencia (rayos X, gamma y la ultravioleta), cuyos fotones tienen energía para ionizar átomos o romper enlaces del ADN, de las ondas de radio, wifi y microondas: sus fotones tienen al menos cientos de miles de veces menos energía y su único efecto comprobado a alta intensidad es el calentamiento.",
   "senales": "Teme que el celular o la antena cercana causen cáncer como una radiografía; usa «radiación» como sinónimo de «radiactividad»; no considera la frecuencia ni la densidad de potencia al juzgar el riesgo.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Mezcla radiación ionizante y no ionizante en una sola categoría.",
   "origen": "redactor-actividades (G11-FIS-U12-12.4)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "La partición en dos oraciones conserva lo que fijé. Pero al releer, «millones de veces menos energía» exagera para ultravioleta frente a wifi o microondas (razón ≈ 2 × 10⁵ a 10⁶) y contradice «cientos de miles» de 12.4/obj-1. Lo cambio a «al menos cientos de miles»; lo demás queda igual."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "descripcion": "Cree que toda «radiación» es igual de dañina y que las ondas de radio, wifi o microondas dañan el ADN como los rayos X, sin distinguir la radiación ionizante (alta frecuencia, fotones capaces de romper enlaces) de la no ionizante, cuyo efecto comprobado a alta intensidad es el calentamiento."
+   }
+  }
  },
  {
   "id": "DIF:fisica/ondas-estacionarias/1",
@@ -3662,12 +4014,29 @@
   "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
   "descripcion": "Cree que la radio transmite el sonido mismo por el aire, o que la onda de radio es una onda sonora muy fuerte, sin distinguir la onda portadora electromagnética de la señal de audio que va codificada en ella y que el receptor convierte de nuevo en sonido.",
   "senales": "Dice que la antena «capta el sonido»; cree que la frecuencia de la emisora (por ejemplo 96.1 MHz) es el tono de la música; espera que una pared gruesa bloquee la radio igual que bloquea la voz.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "No separa la portadora de la información que transporta.",
   "origen": "redactor-actividades (G11-FIS-U12-12.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Señales concretas con ejemplo local (96.1 MHz). Descripción comprensible para la docente sin formación en telecomunicaciones."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/ondas-radio-telecomunicaciones/2",
@@ -3675,12 +4044,29 @@
   "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
   "descripcion": "Atribuye las diferencias de alcance o de velocidad de datos entre tecnologías (bluetooth, wifi, 4G, AM) a que unas ondas viajan más rápido que otras, en lugar de reconocer que todas viajan a la rapidez de la luz y que el alcance depende de la potencia, la frecuencia y los obstáculos, y la velocidad de datos del ancho de banda.",
   "senales": "Dice que el wifi de 5 GHz o el 5G «son más rápidos porque la onda va más rápido»; explica el poco alcance del bluetooth con una onda «lenta»; usa c distinta para cada servicio al calcular λ.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Confunde rapidez de propagación con tasa de datos y alcance.",
   "origen": "redactor-actividades (G11-FIS-U12-12.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Ejemplos de tecnologías que usan los estudiantes (bluetooth, wifi, 5G); señales observables, incluida la de cálculo."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/ondas-radio-telecomunicaciones/3",
@@ -3688,12 +4074,29 @@
   "concepto": "CON:fisica/ondas-radio-telecomunicaciones",
   "descripcion": "Cree que el receptor GPS del celular envía su ubicación a los satélites, o que los satélites lo «ven» y le dicen dónde está, o que sin datos móviles el GPS no puede calcular la posición; no reconoce que el receptor solo recibe señales con la hora de envío y calcula él mismo su posición.",
   "senales": "Teme que el satélite lo rastree al activar el GPS; dice que sin saldo de datos el GPS no funciona; explica la ubicación como una respuesta que el satélite envía al teléfono.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Confunde el GPS, que solo recibe, con servicios que transmiten.",
   "origen": "redactor-actividades (G11-FIS-U12-12.7)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Recoge un temor real (rastreo) y lo convierte en señal reconocible; la descripción no ridiculiza la idea. Señales observables."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:fisica/pendulo-simple/1",
@@ -4825,6 +5228,45 @@
    },
    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
   }
+ },
+ {
+  "id": "DIF:fisica/radiacion-ionizante-aplicaciones/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/radiacion-ionizante-aplicaciones",
+  "descripcion": "Cree que un objeto, un alimento o una persona que recibe radiación externa (una radiografía, la esterilización de instrumental o de alimentos con rayos gamma) queda radiactivo y emite radiación después.",
+  "senales": "Dice que no se deben comer alimentos irradiados porque «son radiactivos» o que hay que alejarse de alguien que acaba de tomarse una radiografía.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunden recibir radiación con contener material radiactivo.",
+  "origen": "redactor-actividades (G11-FIS-U21-21.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/radiacion-ionizante-aplicaciones/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/radiacion-ionizante-aplicaciones",
+  "descripcion": "Confunde el poder de penetración con el poder de ionización: cree que la radiación que más atraviesa la materia es la que más ioniza a lo largo de su camino, cuando suele ser al revés (la alfa ioniza mucho y se detiene enseguida).",
+  "senales": "Afirma que la gamma «ioniza más porque atraviesa el plomo», o que la alfa es inofensiva en cualquier caso porque la detiene una hoja de papel.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocian «atravesar más» con «tener más fuerza» y causar más daño.",
+  "origen": "redactor-actividades (G11-FIS-U21-21.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:fisica/radiacion-ionizante-aplicaciones/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/radiacion-ionizante-aplicaciones",
+  "descripcion": "Cree que la radiación ionizante solo proviene de actividades humanas (centrales, bombas, hospitales) y no reconoce la radiación natural de fondo de las rocas, del radón, de los rayos cósmicos y del potasio-40 de los alimentos y del propio cuerpo.",
+  "senales": "Predice que un contador Geiger en el aula marcaría cero, o interpreta cualquier cuenta como señal de contaminación.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "La información pública sobre radiación suele hablar solo de fuentes artificiales.",
+  "origen": "redactor-actividades (G11-FIS-U21-21.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
  },
  {
   "id": "DIF:fisica/refraccion-luz/1",
@@ -6548,6 +6990,45 @@
   }
  },
  {
+  "id": "DIF:quimica/ciencia-de-materiales/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/ciencia-de-materiales",
+  "descripcion": "Cree que el oro es el mejor conductor eléctrico y que por eso se usa en contactos y conectores. Confunde el valor o la nobleza del metal con su conductividad: no sabe que la plata y el cobre conducen más que el oro, que se elige por no oxidarse.",
+  "senales": "Responde «se usa oro porque conduce mejor» o ordena la conductividad según el precio del metal (oro > plata > cobre).",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Idea extendida por la publicidad de cables y conectores dorados.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/ciencia-de-materiales/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/ciencia-de-materiales",
+  "descripcion": "Cree que una aleación tiene propiedades intermedias, como un promedio de las de sus metales, o que es un compuesto con fórmula fija. No reconoce que una aleación puede fundir por debajo de todos sus componentes (como la soldadura) y ser más dura y peor conductora que el metal puro.",
+  "senales": "Calcula o predice la temperatura de fusión de una soldadura como promedio de las de sus metales, o escribe una fórmula química para el bronce o la soldadura.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Generaliza el razonamiento de mezclas a propiedades que no son aditivas.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/ciencia-de-materiales/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/ciencia-de-materiales",
+  "descripcion": "Confunde dureza con tenacidad: cree que un material que se quiebra al caer, como un azulejo o una cerámica, es blando, y que el material más duro es el que mejor resiste los golpes. No distingue resistencia al rayado de capacidad de deformarse sin romperse.",
+  "senales": "Dice «el azulejo es más blando que el clavo porque se quiebra» o elige un cerámico frágil para una pieza que recibe golpes porque «es muy duro».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "En el lenguaje cotidiano «duro» significa difícil de romper, no de rayar.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
   "id": "DIF:quimica/composicion-porcentual-y-formulas/1",
   "tipo": "dificultad",
   "concepto": "CON:quimica/composicion-porcentual-y-formulas",
@@ -7080,38 +7561,95 @@
   "concepto": "CON:quimica/diagramas-de-fases",
   "descripcion": "Confunde el punto triple con el punto crítico: cree que en el punto crítico conviven sólido, líquido y gas, o que el punto triple es el final de la curva líquido-gas. No reconoce que el punto triple es la única condición en que coexisten las tres fases y que el punto crítico marca el final de la curva líquido-gas, más allá del cual no se distingue líquido de gas.",
   "senales": "Rotula como punto triple el extremo superior de la curva líquido-gas; dice que a 374 °C el agua es «a la vez hielo, agua y vapor»; ubica el punto crítico en el cruce de las tres curvas.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Confusión frecuente al rotular diagramas de fases.",
   "origen": "redactor-actividades (G10-QUI-U7-7.5)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Descripción para la docente clara y con señales observables (rótulos en el diagrama, frase sobre 374 °C). Lenguaje técnico adecuado a quien enseña 10.°; ayuda a diagnosticar sin etiquetar al estudiante."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:quimica/diagramas-de-fases/2",
   "tipo": "dificultad",
   "concepto": "CON:quimica/diagramas-de-fases",
   "descripcion": "Cree que las temperaturas de fusión y de ebullición son fijas (0 °C y 100 °C para el agua) y no dependen de la presión. Lee el diagrama con una sola coordenada: usa la temperatura e ignora la presión, o toma un valor válido a 1 atm como si sirviera a cualquier presión.",
-  "senales": "Dice que el agua hierve a 100 °C en la cumbre de un volcán o dentro de una olla de presión; afirma que un hielo a −1 °C no puede fundirse; llama «temperatura de fusión» del CO₂ al punto de −78 °C de la curva sólido-gas.",
-  "estado": "propuesta_pendiente",
+  "senales": "Dice que el agua hierve a 100 °C en la cumbre de un volcán o dentro de una olla de presión; afirma que un hielo a −1 °C no puede fundirse aunque se le aplique una presión muy alta (de cientos de atmósferas); llama «temperatura de fusión» del CO₂ al punto de −78 °C de la curva sólido-gas.",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Los valores a 1 atm se memorizan como constantes.",
   "origen": "redactor-actividades (G10-QUI-U7-7.5)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Con la señal corregida por el experto (el hielo a −1 °C no se funde a 1 atm, sí a cientos de atm), las señales son observables y coinciden con los ítems de 7.5. Redacción clara para la docente."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "senales": "Dice que el agua hierve a 100 °C en la cumbre de un volcán o dentro de una olla de presión; afirma que un hielo a −1 °C no puede fundirse; llama «temperatura de fusión» del CO₂ al punto de −78 °C de la curva sólido-gas."
+   }
+  }
  },
  {
   "id": "DIF:quimica/diagramas-de-fases/3",
   "tipo": "dificultad",
   "concepto": "CON:quimica/diagramas-de-fases",
-  "descripcion": "Cree que sublimar es una propiedad fija de ciertas sustancias (el hielo seco «siempre» sublima y el agua «nunca»), y no un resultado de la presión y la temperatura. No reconoce que el hielo sublima cuando la presión del vapor de agua a su alrededor es menor que la de su punto triple (hielo viejo del congelador, café liofilizado) ni que el CO₂ puede ser líquido a más de 5.1 atm.",
+  "descripcion": "Cree que sublimar es una propiedad fija de ciertas sustancias (el hielo seco «siempre» sublima y el agua «nunca»), y no un resultado de la presión y la temperatura. No reconoce que el hielo sublima cuando la presión del vapor de agua a su alrededor es menor que la presión de vapor del hielo a esa temperatura (hielo viejo del congelador, café liofilizado), ni que el CO₂ puede ser líquido a más de 5.1 atm y entre −57 °C y 31 °C.",
   "senales": "Explica la sublimación del hielo seco con «así es el CO₂» sin mencionar la presión; niega que el hielo del congelador pueda sublimar; se sorprende de que un extintor contenga CO₂ líquido.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Se generalizan ejemplos aislados como propiedades de la sustancia.",
   "origen": "redactor-actividades (G10-QUI-U7-7.5)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Descripción técnica (presión de vapor del hielo) pero dirigida a la docente, no al estudiante; señales observables y cercanas (congelador, extintor). Sin cambios de forma necesarios."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "descripcion": "Cree que sublimar es una propiedad fija de ciertas sustancias (el hielo seco «siempre» sublima y el agua «nunca»), y no un resultado de la presión y la temperatura. No reconoce que el hielo sublima cuando la presión del vapor de agua a su alrededor es menor que la de su punto triple (hielo viejo del congelador, café liofilizado) ni que el CO₂ puede ser líquido a más de 5.1 atm."
+   }
+  }
  },
  {
   "id": "DIF:quimica/difusion-efusion-y-gases-reales/1",
@@ -7297,6 +7835,45 @@
   }
  },
  {
+  "id": "DIF:quimica/disoluciones-coloides-y-suspensiones/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/disoluciones-coloides-y-suspensiones",
+  "descripcion": "Clasifica las dispersiones por su aspecto a simple vista y no por el tamaño de partícula: llama suspensión a todo lo turbio (como la leche) y disolución a todo lo que se ve claro o no se asienta (como un coloide casi transparente). No usa el efecto Tyndall ni la sedimentación como criterio.",
+  "senales": "Dice «la leche es una suspensión porque es turbia» o «es disolución porque se ve clara»; justifica la clasificación solo con el color o la transparencia, sin hablar del tamaño de las partículas.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se juzga por el aspecto en lugar del tamaño de partícula.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/disoluciones-coloides-y-suspensiones/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/disoluciones-coloides-y-suspensiones",
+  "descripcion": "Cree que el papel filtro retiene las partículas de cualquier mezcla turbia, también las de un coloide, y que todo lo que pasa el filtro es una disolución. No reconoce que las partículas coloidales son más pequeñas que los poros del papel filtro.",
+  "senales": "Propone filtrar la leche o el agua con arcilla fina para aclararlas; concluye que una muestra es disolución porque «pasó el filtro»; se sorprende de que el filtrado de la leche siga blanco.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se extiende la filtración a partículas menores que los poros.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/disoluciones-coloides-y-suspensiones/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/disoluciones-coloides-y-suspensiones",
+  "descripcion": "Confunde «transparente» con «incoloro»: cree que una disolución con color (agua con colorante vegetal o una bebida de color que se ve a través) no es disolución sino coloide o suspensión porque «no está clara», y que todo líquido incoloro es agua pura.",
+  "senales": "Clasifica el agua con colorante como suspensión o coloide por su color; dice que el agua con sal «ya es agua pura» porque no tiene color; usa «turbio» y «de color» como sinónimos.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se mezclan las ideas de color y de turbidez.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
   "id": "DIF:quimica/distribucion-electronica-por-niveles/1",
   "tipo": "dificultad",
   "concepto": "CON:quimica/distribucion-electronica-por-niveles",
@@ -7415,6 +7992,45 @@
    },
    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
   }
+ },
+ {
+  "id": "DIF:quimica/ecuacion-quimica-y-balanceo/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+  "descripcion": "Confunde coeficientes con subíndices: al balancear cambia los subíndices de las fórmulas (escribe H₂O₂ para igualar oxígenos en lugar de 2H₂O) o cree que un coeficiente cambia la composición de la sustancia.",
+  "senales": "Balancea 2H₂ + O₂ → H₂O₂ o dice que «5O₂» es una molécula con cinco o diez átomos de oxígeno.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se busca igualar átomos sin reconocer que la fórmula identifica la sustancia.",
+  "origen": "redactor-actividades (G10-QUI-U9-9.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/ecuacion-quimica-y-balanceo/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+  "descripcion": "Interpreta los coeficientes como masas: cree que una ecuación balanceada dice cuántos gramos de cada sustancia reaccionan, en lugar de cuántas partículas o moles.",
+  "senales": "Lee 2H₂ + O₂ → 2H₂O como «2 g de hidrógeno con 1 g de oxígeno dan 2 g de agua» y concluye que la masa no se conserva.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Los números de la ecuación se asocian con cantidades medibles en la balanza.",
+  "origen": "redactor-actividades (G10-QUI-U9-9.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/ecuacion-quimica-y-balanceo/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+  "descripcion": "Confunde o ignora los símbolos de estado: usa (l) para una sustancia disuelta, (ac) para un líquido puro, o los omite, y por eso no usa la ecuación para predecir qué escapa como gas o qué queda disuelto.",
+  "senales": "Escribe NaCl(l) para sal disuelta en agua o H₂O(ac), o predice que la masa de un vaso abierto no cambia aunque un producto sea (g).",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Los estados se ven como adornos, no como información de la reacción.",
+  "origen": "redactor-actividades (G10-QUI-U9-9.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
  },
  {
   "id": "DIF:quimica/electronegatividad-y-polaridad-de-enlace/1",
@@ -7889,13 +8505,33 @@
   "tipo": "dificultad",
   "concepto": "CON:quimica/estados-de-la-materia",
   "descripcion": "Representa las partículas de un líquido muy separadas, a medio camino entre el sólido y el gas, como si un líquido tuviera mucho espacio vacío. Por eso predice que los líquidos se comprimen casi como los gases.",
-  "senales": "En sus diagramas, el líquido tiene partículas tan separadas como en el gas o con grandes huecos; dice que el agua «se puede apretar un poco» o que fluye porque sus partículas están lejos.",
-  "estado": "propuesta_pendiente",
+  "senales": "En sus diagramas, el líquido tiene partículas tan separadas como en el gas o con grandes huecos; predice que el agua de una jeringa tapada se comprime de forma apreciable, casi como el aire, o que fluye porque sus partículas están lejos.",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Asocia fluidez con separación grande entre partículas.",
   "origen": "redactor-actividades (G10-QUI-U7-7.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Señales observables en diagramas y en la predicción con la jeringa, ya ajustadas por el experto a «de forma apreciable». Clara y útil para diagnosticar."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "senales": "En sus diagramas, el líquido tiene partículas tan separadas como en el gas o con grandes huecos; dice que el agua «se puede apretar un poco» o que fluye porque sus partículas están lejos."
+   }
+  }
  },
  {
   "id": "DIF:quimica/estados-de-la-materia/2",
@@ -7903,12 +8539,29 @@
   "concepto": "CON:quimica/estados-de-la-materia",
   "descripcion": "Clasifica como líquidos los sólidos en polvo o en granos (arena, azúcar, harina) porque se vierten y toman la forma del recipiente. No distingue el comportamiento del conjunto de granos del de cada grano, que conserva su forma.",
   "senales": "Dice que la arena o el azúcar son líquidos o «casi líquidos»; usa «toma la forma del recipiente» como única prueba de que algo es líquido.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Aplica la regla de la forma sin mirar cada grano.",
   "origen": "redactor-actividades (G10-QUI-U7-7.1)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Breve, con ejemplos cotidianos (arena, azúcar, harina) y señales verificables en el aula. Coherente con el ítem y el experimento de la arena."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:quimica/estados-de-la-materia/3",
@@ -7916,10 +8569,66 @@
   "concepto": "CON:quimica/estados-de-la-materia",
   "descripcion": "Cree que un gas ocupa solo una parte del recipiente (se queda arriba, en un rincón o donde se soltó) y no todo el volumen disponible. Por eso no reconoce que el gas no tiene volumen propio.",
   "senales": "Dibuja las partículas de un gas amontonadas en una parte del frasco; dice que el olor «se queda arriba» o que el aire de un globo está solo en el centro.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Imagina el gas como una sustancia que se acumula como un líquido.",
   "origen": "redactor-actividades (G10-QUI-U7-7.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Señales concretas (dibujos amontonados, «el olor se queda arriba») que la docente puede reconocer sin instrumentos. Redacción clara."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
+ },
+ {
+  "id": "DIF:quimica/estructura-y-propiedades-de-polimeros/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/estructura-y-propiedades-de-polimeros",
+  "descripcion": "Cree que «plástico» es una sola sustancia y que los envases difieren solo en color, grosor o forma. No reconoce que son polímeros distintos, con monómeros y estructuras diferentes (PET, PEAD, PP, PS), y por eso con densidades, temperaturas de ablandamiento y usos distintos.",
+  "senales": "Propone un solo contenedor para todos los plásticos, explica que una tapa flota y la botella se hunde «porque la tapa es más delgada», o dice que todo plástico se funde y recicla junto.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "En el habla cotidiana «plástico» nombra a todos los polímeros sintéticos por igual.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/estructura-y-propiedades-de-polimeros/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/estructura-y-propiedades-de-polimeros",
+  "descripcion": "Cree que el número del triángulo de flechas indica cuántas veces se puede reciclar el envase, su porcentaje de material reciclado, su calidad o su toxicidad, o que todo envase con el triángulo se recicla. No sabe que el código solo identifica el tipo de polímero.",
+  "senales": "Responde «el 1 es el más reciclable», «se recicló seis veces» o «tiene el símbolo, así que es reciclable».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "El símbolo de flechas se asocia con reciclaje y el número con una escala.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/estructura-y-propiedades-de-polimeros/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/estructura-y-propiedades-de-polimeros",
+  "descripcion": "Cree que se puede saber si un polímero es termoplástico o termoestable por su rigidez: que los plásticos duros son termoestables y los flexibles termoplásticos. No relaciona el comportamiento al calentar con la estructura: cadenas separadas (termoplástico) o entrecruzadas por enlaces covalentes (termoestable).",
+  "senales": "Clasifica un vaso rígido de poliestireno o una botella de PET como termoestable «porque es duro», o una pieza flexible como termoplástica solo por doblarse.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "La rigidez es la propiedad más visible y se confunde con el comportamiento térmico.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.4)",
   "version": "pedagogia-v1",
   "revisado_por": ""
  },
@@ -8912,6 +9621,71 @@
   }
  },
  {
+  "id": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+  "descripcion": "Confunde la molalidad con la molaridad: divide los moles de soluto entre los litros de disolución o entre la masa de toda la disolución, en lugar de los kilogramos de disolvente. También supone que el volumen de la disolución es igual al del agua que se usó.",
+  "senales": "Escribe la molalidad en mol/L; usa la masa de la disolución (soluto más agua) como si fuera la del disolvente; calcula la molaridad dividiendo entre los mililitros de agua agregados.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Las dos unidades se nombran y escriben de forma parecida.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.3)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+  "descripcion": "Cree que ninguna unidad de concentración cambia con la temperatura o, al revés, que todas cambian. No reconoce que las que usan volumen (molaridad, g/L, mg/L) cambian un poco cuando la disolución se dilata, mientras que las que usan masas o moles (molalidad, fracción molar, ppm en masa) no cambian.",
+  "senales": "Dice que calentar una disolución tapada no cambia su molaridad «porque no se agregó nada», o que también cambia su molalidad «porque se diluye»; elige molaridad para un trabajo a temperatura variable.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "No se separan las unidades por volumen de las de masa.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.3)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/nanomateriales/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/nanomateriales",
+  "descripcion": "Confunde la escala microscópica con la nanométrica: cree que todo lo que no se ve a simple vista (una bacteria, una célula, un grano de polvo) es «nano», o que un nanómetro es del tamaño de un átomo. No ubica que 1 nm está entre el tamaño de un átomo (unas décimas de nanómetro) y el de un virus (decenas a cientos de nanómetros).",
+  "senales": "Clasifica una bacteria o un grano de harina como nanomaterial «porque es microscópico», o equivale 1 nm con un átomo.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Las escalas por debajo de lo visible se perciben como una sola categoría.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/nanomateriales/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/nanomateriales",
+  "descripcion": "Cree que las propiedades de una sustancia no dependen del tamaño de sus partículas: que una nanopartícula de oro es igual a un trozo de oro, solo que más pequeña. No reconoce que a escala nanométrica cambian el color, la temperatura de fusión o la reactividad.",
+  "senales": "Afirma que las nanopartículas de oro son doradas o que funden a la misma temperatura que el oro macizo, o que si un nanomaterial reacciona distinto «debe ser otra sustancia».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "En la vida diaria las propiedades de un material no cambian al partirlo.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/nanomateriales/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/nanomateriales",
+  "descripcion": "Cree que al dividir un material la superficie total se conserva y solo se reparte, o que la relación superficie-volumen disminuye al hacer las partículas más pequeñas. No ve que cada corte expone caras nuevas.",
+  "senales": "Responde que 8 cubitos tienen la misma superficie total que el cubo original, o que una partícula pequeña tiene «menos superficie» y por eso reacciona menos.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunde la superficie de cada partícula con la superficie total del conjunto.",
+  "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
   "id": "DIF:quimica/numeros-cuanticos/1",
   "tipo": "dificultad",
   "concepto": "CON:quimica/numeros-cuanticos",
@@ -9120,6 +9894,45 @@
    },
    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
   }
+ },
+ {
+  "id": "DIF:quimica/propiedades-coligativas/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/propiedades-coligativas",
+  "descripcion": "Cree que las propiedades coligativas dependen de la identidad o de la masa del soluto y no del número de partículas disueltas: no considera que un compuesto iónico como el NaCl se separa en iones.",
+  "senales": "Predice que dos disoluciones de igual molalidad de sal y de azúcar se congelan igual, o que la que tiene más gramos de soluto baja más; olvida el factor i en los cálculos.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se razona con gramos o con «la fuerza» de la sustancia, no con partículas.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.8)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/propiedades-coligativas/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/propiedades-coligativas",
+  "descripcion": "Confunde la temperatura de ebullición con la rapidez de calentamiento: cree que agregar sal al agua hace que hierva antes o a menor temperatura.",
+  "senales": "Dice que «la sal hace hervir el agua más rápido» o que el agua salada hierve a menor temperatura que el agua pura en el mismo lugar, y toma el burbujeo que se ve al echar sal como prueba de que hirvió.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "El burbujeo al echar sal en agua caliente se interpreta como ebullición.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.8)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/propiedades-coligativas/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/propiedades-coligativas",
+  "descripcion": "Cree que en la ósmosis lo que atraviesa la membrana es el soluto (la sal o el azúcar) y no el agua, o que el agua va del lado más concentrado al más diluido.",
+  "senales": "Explica que la papa en agua salada se ablanda «porque le entró sal» o que en la ósmosis inversa «se empuja la sal» hacia el otro lado.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se asocia el cambio con la sustancia visible, no con el agua.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.8)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
  },
  {
   "id": "DIF:quimica/propiedades-periodicas/1",
@@ -9523,12 +10336,29 @@
   "concepto": "CON:quimica/solidos-cristalinos-y-amorfos",
   "descripcion": "Cree que los compuestos iónicos como la sal están formados por moléculas (moléculas de NaCl) y que al fundirlos o disolverlos se separan esas moléculas, como en el hielo. No reconoce la red de iones ni que fundir un sólido iónico obliga a vencer atracciones entre iones de toda la red.",
   "senales": "Escribe «moléculas de NaCl»; dibuja la sal como pares Na–Cl separados; explica el alto punto de fusión de la sal por «moléculas pesadas» o «enlaces dentro de la molécula».",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "La fórmula NaCl se lee como si fuera una molécula.",
   "origen": "redactor-actividades (G10-QUI-U7-7.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Señales observables en la escritura y los dibujos del estudiante («moléculas de NaCl», pares Na–Cl). Coherente con los distractores de 7.2."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:quimica/solidos-cristalinos-y-amorfos/2",
@@ -9536,12 +10366,29 @@
   "concepto": "CON:quimica/solidos-cristalinos-y-amorfos",
   "descripcion": "Cree que hay un orden fijo de puntos de fusión por tipo de sólido, por ejemplo que todo metal funde más alto que todo sólido iónico. No reconoce que los metales abarcan un intervalo muy amplio (del mercurio, líquido a temperatura ambiente, y el sodio, a 98 °C, al tungsteno) y que los intervalos de los tipos se traslapan.",
   "senales": "Clasifica un sólido solo por su punto de fusión; dice que el sodio «no puede ser metal» porque funde bajo; ordena tipos de sólido como si fueran escalones sin traslape.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Se enseña el orden por tipo como regla, no como tendencia.",
   "origen": "redactor-actividades (G10-QUI-U7-7.2)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Describe la confusión como regla frente a tendencia con ejemplos concretos (sodio, mercurio, tungsteno). Señales verificables en clase."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
  },
  {
   "id": "DIF:quimica/solidos-cristalinos-y-amorfos/3",
@@ -9549,10 +10396,66 @@
   "concepto": "CON:quimica/solidos-cristalinos-y-amorfos",
   "descripcion": "Cree que todo sólido tiene un punto de fusión definido y que todo sólido es cristalino. No reconoce los sólidos amorfos (vidrio, muchos plásticos), sin orden de largo alcance, que se ablandan en un intervalo de temperaturas; tampoco que las mezclas, como la parafina, funden en un intervalo.",
   "senales": "Busca «el punto de fusión del vidrio» o del plástico como un valor único; dice que el vidrio es cristalino porque es duro o transparente.",
-  "estado": "propuesta_pendiente",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Generaliza a todos los sólidos lo visto con el hielo.",
   "origen": "redactor-actividades (G10-QUI-U7-7.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "aprobar",
+   "roles": [
+    "experto-quimica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2
+   ],
+   "justificaciones": {
+    "psicopedagogo": "Clara, separa amorfos de mezclas como la parafina, coherente con lo que fijó el experto. Señales observables."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+  }
+ },
+ {
+  "id": "DIF:quimica/solubilidad/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/solubilidad",
+  "descripcion": "Generaliza que la solubilidad de cualquier sustancia aumenta con la temperatura, también la de los gases: cree que el agua caliente puede tener más oxígeno o CO₂ disuelto que la fría.",
+  "senales": "Dice que una bebida caliente «guarda más gas», que un río caliente tiene más oxígeno para los peces o que «con calor todo se disuelve mejor».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Extiende a los gases lo que observa con el azúcar y la sal.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/solubilidad/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/solubilidad",
+  "descripcion": "Confunde la rapidez de disolución con la solubilidad: cree que agitar, moler el sólido o esperar más tiempo aumenta la cantidad máxima de soluto que se disuelve a una temperatura dada.",
+  "senales": "Propone «agitar más fuerte para que quepa más sal» en una disolución saturada o afirma que el azúcar en polvo es más soluble que el granulado.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Agitar acelera la disolución y parece que también aumenta cuánto se disuelve.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/solubilidad/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/solubilidad",
+  "descripcion": "Cree que «saturada» significa «muy concentrada»: no relaciona la saturación con la solubilidad de esa sustancia a esa temperatura y piensa que una disolución con poco soluto no puede estar saturada.",
+  "senales": "Afirma que el agua de un río no puede estar saturada de oxígeno porque tiene «muy poquito», o que una disolución diluida de una sal poco soluble está insaturada solo por ser diluida.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocia saturación con mucha cantidad, no con el máximo que admite.",
+  "origen": "redactor-actividades (G10-QUI-U8-8.7)",
   "version": "pedagogia-v1",
   "revisado_por": ""
  },
@@ -10008,6 +10911,45 @@
    },
    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
   }
+ },
+ {
+  "id": "DIF:quimica/tipos-de-reacciones-quimicas/1",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/tipos-de-reacciones-quimicas",
+  "descripcion": "Clasifica la reacción por una evidencia que ve y no por la reorganización de reactivos y productos: llama combustión a todo lo que tiene fuego, descomposición a todo lo que suelta gas y síntesis a todo lo que forma un sólido.",
+  "senales": "Justifica el tipo con «porque salió gas», «porque hubo llama» o «porque se formó polvo», sin mencionar qué sustancias se unen, se separan o se intercambian en la ecuación.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "La evidencia visible sustituye al criterio de la ecuación.",
+  "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/tipos-de-reacciones-quimicas/2",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/tipos-de-reacciones-quimicas",
+  "descripcion": "Cree que cada reacción pertenece a uno solo de los cinco tipos, como una etiqueta única, y no acepta que una reacción cumpla dos criterios (la combustión del magnesio también es síntesis).",
+  "senales": "Discute cuál es «el» tipo correcto de una reacción y descarta el otro, o dice que algo «no puede ser síntesis si ya es combustión».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Las categorías escolares se perciben como excluyentes.",
+  "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "DIF:quimica/tipos-de-reacciones-quimicas/3",
+  "tipo": "dificultad",
+  "concepto": "CON:quimica/tipos-de-reacciones-quimicas",
+  "descripcion": "Confunde sustitución simple con doble sustitución: clasifica por la cantidad de reactivos y productos (dos y dos es «doble») en lugar de fijarse si un elemento libre desplaza a otro o si dos compuestos intercambian iones.",
+  "senales": "Llama doble sustitución a Zn + 2HCl → ZnCl₂ + H₂ porque «hay dos y dos», o no identifica qué sustancia de los reactivos es un elemento libre.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se interpreta «doble» como cantidad de sustancias, no de intercambios.",
+  "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
  },
  {
   "id": "DIF:quimica/valoracion-acido-base/1",

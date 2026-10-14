@@ -11,7 +11,7 @@
 | experimentos | completo |
 | capa pedagogica | ligera |
 | datos de referencia | pendiente_de_fuente |
-| revision del panel | pendiente |
+| revision del panel | completa |
 
 ## Tema (malla V3, texto crudo)
 
@@ -67,9 +67,9 @@
 - **DIF:quimica/enlace-ionico/1** (revisado_panel): Explica la formación del compuesto iónico con el deseo de los átomos de completar el octeto: cree que el sodio «quiere» ceder su electrón, que formar los iones libera energía y que alcanzar la configuración de gas noble es lo que hace estable al compuesto, sin tomar en cuenta la atracción entre los iones en la red. *Señal:* Dice que el Na⁺ se forma «porque así queda estable» o que perder el electrón «libera energía»; no menciona la atracción entre iones de carga opuesta ni la energía de red; se sorprende de que la suma de energía de ionización y afinidad electrónica dé un costo.
 - **DIF:quimica/enlace-ionico/2** (revisado_panel): Imagina el compuesto iónico sólido como un conjunto de moléculas NaCl separadas, cada una formada por un par de iones unidos, en lugar de una red continua de iones donde la fórmula solo indica la proporción. *Señal:* Habla de «una molécula de sal» o dibuja pares Na–Cl separados entre sí; cree que al disolver la sal se separan moléculas NaCl; cuenta un enlace por cada fórmula.
 - **DIF:quimica/enlace-ionico/3** (revisado_panel): Cree que cada ion solo está unido a tantos iones como electrones cedió o ganó: el Na⁺ estaría unido solo al Cl⁻ que recibió su electrón y con los demás vecinos tendría una atracción débil o ninguna. *Señal:* Dice que en la sal cada sodio forma un enlace porque cedió un electrón; da índice de coordinación 1 o lo iguala a la carga del ion; distingue entre el cloro «propio» del sodio y los demás vecinos.
-- **DIF:quimica/solidos-cristalinos-y-amorfos/1** (propuesta_pendiente): Cree que los compuestos iónicos como la sal están formados por moléculas (moléculas de NaCl) y que al fundirlos o disolverlos se separan esas moléculas, como en el hielo. No reconoce la red de iones ni que fundir un sólido iónico obliga a vencer atracciones entre iones de toda la red. *Señal:* Escribe «moléculas de NaCl»; dibuja la sal como pares Na–Cl separados; explica el alto punto de fusión de la sal por «moléculas pesadas» o «enlaces dentro de la molécula».
-- **DIF:quimica/solidos-cristalinos-y-amorfos/2** (propuesta_pendiente): Cree que hay un orden fijo de puntos de fusión por tipo de sólido, por ejemplo que todo metal funde más alto que todo sólido iónico. No reconoce que los metales abarcan un intervalo muy amplio (del mercurio, líquido a temperatura ambiente, y el sodio, a 98 °C, al tungsteno) y que los intervalos de los tipos se traslapan. *Señal:* Clasifica un sólido solo por su punto de fusión; dice que el sodio «no puede ser metal» porque funde bajo; ordena tipos de sólido como si fueran escalones sin traslape.
-- **DIF:quimica/solidos-cristalinos-y-amorfos/3** (propuesta_pendiente): Cree que todo sólido tiene un punto de fusión definido y que todo sólido es cristalino. No reconoce los sólidos amorfos (vidrio, muchos plásticos), sin orden de largo alcance, que se ablandan en un intervalo de temperaturas; tampoco que las mezclas, como la parafina, funden en un intervalo. *Señal:* Busca «el punto de fusión del vidrio» o del plástico como un valor único; dice que el vidrio es cristalino porque es duro o transparente.
+- **DIF:quimica/solidos-cristalinos-y-amorfos/1** (revisado_panel): Cree que los compuestos iónicos como la sal están formados por moléculas (moléculas de NaCl) y que al fundirlos o disolverlos se separan esas moléculas, como en el hielo. No reconoce la red de iones ni que fundir un sólido iónico obliga a vencer atracciones entre iones de toda la red. *Señal:* Escribe «moléculas de NaCl»; dibuja la sal como pares Na–Cl separados; explica el alto punto de fusión de la sal por «moléculas pesadas» o «enlaces dentro de la molécula».
+- **DIF:quimica/solidos-cristalinos-y-amorfos/2** (revisado_panel): Cree que hay un orden fijo de puntos de fusión por tipo de sólido, por ejemplo que todo metal funde más alto que todo sólido iónico. No reconoce que los metales abarcan un intervalo muy amplio (del mercurio, líquido a temperatura ambiente, y el sodio, a 98 °C, al tungsteno) y que los intervalos de los tipos se traslapan. *Señal:* Clasifica un sólido solo por su punto de fusión; dice que el sodio «no puede ser metal» porque funde bajo; ordena tipos de sólido como si fueran escalones sin traslape.
+- **DIF:quimica/solidos-cristalinos-y-amorfos/3** (revisado_panel): Cree que todo sólido tiene un punto de fusión definido y que todo sólido es cristalino. No reconoce los sólidos amorfos (vidrio, muchos plásticos), sin orden de largo alcance, que se ablandan en un intervalo de temperaturas; tampoco que las mezclas, como la parafina, funden en un intervalo. *Señal:* Busca «el punto de fusión del vidrio» o del plástico como un valor único; dice que el vidrio es cristalino porque es duro o transparente.
 
 ## Experimentos con procedimiento
 
@@ -109,5 +109,3 @@
 ## Datos de referencia
 
 - **Pendiente de fuente** (tabla citable en data/fuentes/). Datos que piden los elementos:
-
-*Sin revisión del panel todavía: 9 elementos.*

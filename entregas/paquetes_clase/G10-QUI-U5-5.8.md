@@ -11,7 +11,7 @@
 | experimentos | completo |
 | capa pedagogica | completo |
 | datos de referencia | pendiente_de_fuente |
-| revision del panel | pendiente |
+| revision del panel | completa |
 
 ## Tema (malla V3, texto crudo)
 
@@ -102,7 +102,7 @@
 - **ACT:G10-QUI-U5-5.8/obj-abierta** (objetivo, razonar, abierta): Tres sustancias moleculares: metano (CH₄, 16 g/mol, apolar), acetona (CH₃COCH₃, 58 g/mol, polar, con un oxígeno unido solo al carbono) y etanol (CH₃CH₂OH, 46 g/mol, con un grupo O–H). En 2 o 3 oraciones: ordénalas de men
 - **ACT:G10-QUI-U7-7.3/obj-1** (objetivo, explicar, opcion_multiple): Si se llena un vaso con agua gota a gota, el agua sobresale un poco del borde formando una pequeña cúpula antes de derramarse. Con etanol, el líquido se derrama mucho antes, casi sin formar cúpula. ¿Qué explica mejor est
 - **ACT:G10-QUI-U7-7.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Valores aproximados a 20 °C de una tabla de referencia. Acetona: tensión superficial 23 mN/m, viscosidad 0.3 mPa·s, presión de vapor 25 kPa. Etanol: 22 mN/m, 1.2 mPa·s, 5.9 kPa. Agua: 73 mN/m, 1.0 mPa·s, 2.3 kPa. Gliceri
-- **ACT:G10-QUI-U7-7.3/obj-abierta** (objetivo, razonar, abierta): Daniela razona: «El aceite de cocina es mucho más viscoso que el agua, así que sus fuerzas intermoleculares deben ser más fuertes; por eso también debe tener mayor tensión superficial que el agua». Datos aproximados a 20
+- **ACT:G10-QUI-U7-7.3/obj-abierta** (objetivo, razonar, abierta): Óscar razona: «El aceite de cocina es mucho más viscoso que el agua, así que sus fuerzas intermoleculares deben ser más fuertes; por eso también debe tener mayor tensión superficial que el agua». Datos aproximados a 20 °
 - **ACT:quimica/fuerzas-intermoleculares/comprobacion-G11** (comprobacion, razonar, opcion_multiple): Al freír un huevo, la clara pasa de transparente y líquida a blanca y firme. ¿Qué les pasa a las proteínas de la clara con el calor?
 - **ACT:quimica/fuerzas-intermoleculares/practica-G11** (practica, explicar, opcion_multiple): El etanol se mezcla con agua en cualquier proporción, pero el aceite de cocina forma una capa aparte aunque se agite con fuerza. ¿Qué explica esa diferencia?
 - **ACT:quimica/fuerzas-intermoleculares/sondeo-1-G11** (sondeo, explicar, opcion_multiple): Cuando el agua hierve en una olla, se forman burbujas grandes que suben y escapan. ¿Qué les ocurre a las moléculas de agua cuando se forman esas burbujas?
@@ -111,5 +111,3 @@
 ## Datos de referencia
 
 - **Pendiente de fuente** (tabla citable en data/fuentes/). Datos que piden los elementos:
-
-*Sin revisión del panel todavía: 3 elementos.*
