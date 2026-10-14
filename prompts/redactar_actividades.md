@@ -129,6 +129,14 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
   nadie mueve un mechero encendido.
 - **Condiciones de El Salvador:** los datos de ejemplo suponen un aula de 25–30 °C (rapidez del sonido ≈ 346–349
   m/s, no 340), la presión de la altitud de la escuela y la humedad de la época lluviosa cuando afecta (electrostática).
+- **Cuentas que cierran:** suma las piezas, átomos, palillos, volúmenes y masas de cada modelo o montaje y compáralas
+  con los materiales; un compuesto con su fórmula correcta (cuenta los carbonos).
+- **Efectos medibles:** no describas como observable un efecto menor que el error del instrumento (ángulos con
+  transportador, diferencias de densidad de pocas centésimas, cambios lentos en 1–2 min); si es así, dilo o cambia el
+  montaje.
+- **Gases inflamables:** calcula el volumen de gas que se produce; nunca una mezcla con aire en el rango explosivo cerca
+  de una llama. Si la malla propone algo así, usa un video o una demostración segura y dilo.
+- **Claves repartidas:** en las opciones múltiples de un mismo tema la clave no va siempre en la misma letra.
 - **Análisis con tiempo:** cada pregunta de `analisis` se responde en un paso del procedimiento que tiene minutos
   asignados, o empieza con «Tarea:». Los pasos de cada sesión suman exactamente su duración (55 min por sesión).
 - **Constantes:** también g, la densidad del agua y la presión atmosférica remiten a la «tabla de referencia»; si un

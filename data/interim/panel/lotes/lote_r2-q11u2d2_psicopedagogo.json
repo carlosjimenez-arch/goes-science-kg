@@ -1,0 +1,229 @@
+{
+ "lote": "r2-q11u2d2_psicopedagogo",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/hidrocarburos-alifaticos/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/hidrocarburos-alifaticos/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/hidrocarburos-alifaticos",
+     "descripcion": "Clasifica como alcano a cualquier compuesto orgánico que contenga carbono e hidrógeno o enlaces simples, sin verificar que esté formado exclusivamente por C y H, que todos sus enlaces carbono–carbono sean simples y, si es de cadena abierta, que cumpla la fórmula CₙH₂ₙ₊₂ que lo distingue de alquenos, alquinos y compuestos oxigenados (los cicloalcanos, también saturados, siguen CₙH₂ₙ).",
+     "senales": "Marca el etino (C₂H₂), el eteno (C₂H₄) o el etanol (C₂H₆O) como alcanos; afirma que toda sustancia combustible de carbono e hidrógeno es un alcano sin comprobar la fórmula CₙH₂ₙ₊₂.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Impide distinguir la función alcano de otros hidrocarburos y funciones oxigenadas.",
+     "origen": "redactor-actividades (G11-QUI-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.4",
+     "grado": 11,
+     "indicador": "2.4. Reconoce la función alcano en sustancias de uso común.",
+     "evidencia": "Ficha de cinco alcanos de uso común con fórmula, estado físico, uso y análisis crítico de un mensaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/hidrocarburos-alifaticos/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/hidrocarburos-alifaticos/1",
+     "decision": "corregir",
+     "justificacion": "Idea previa real y señales correctas (etino, eteno y etanol no son alcanos). Pero la descripción hace de CₙH₂ₙ₊₂ la prueba decisiva sin aclarar que solo vale para alcanos de cadena abierta; los cicloalcanos (CₙH₂ₙ), que entran en 2.6, son saturados y un docente podría marcar el ciclohexano como error. Se precisa el criterio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.4 (fila 11)",
+       "cita": "Identifica la función alcano por su fórmula general CnH2n+2, enlaces simples e hibridación sp3."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.6 (fila 13)",
+       "cita": "La evidencia incluye nomenclatura de alcanos y cicloalcanos."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "IUPAC define alcano como hidrocarburo acíclico saturado CnH2n+2; el ciclohexano C6H12 es cicloalcano saturado."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "descripcion": "Clasifica como alcano a cualquier compuesto orgánico que contenga carbono e hidrógeno o enlaces simples, sin verificar que esté formado exclusivamente por C y H, que todos sus enlaces carbono–carbono sean simples y, si es de cadena abierta, que cumpla la fórmula CₙH₂ₙ₊₂ que lo distingue de alquenos, alquinos y compuestos oxigenados (los cicloalcanos, también saturados, siguen CₙH₂ₙ)."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/hidrocarburos-alifaticos/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/hidrocarburos-alifaticos/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/hidrocarburos-alifaticos",
+     "descripcion": "Asume que todos los alcanos son gases a temperatura ambiente por asociarlos únicamente con el gas de cocina, o cree que el propano y el butano son líquidos a 1 atm porque se escuchan líquidos dentro del cilindro presurizado.",
+     "senales": "Descarta que sólidos como la parafina de las velas (mezcla de alcanos de unos 20 a 40 carbonos, como el C₂₀H₄₂) o semisólidos como la vaselina sean alcanos; afirma que el butano es líquido a temperatura y presión ambiente fuera del cilindro.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Dificulta relacionar la longitud de la cadena carbonada con el estado físico.",
+     "origen": "redactor-actividades (G11-QUI-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.4",
+     "grado": 11,
+     "indicador": "2.4. Reconoce la función alcano en sustancias de uso común.",
+     "evidencia": "Ficha de cinco alcanos de uso común con fórmula, estado físico, uso y análisis crítico de un mensaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/hidrocarburos-alifaticos/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/hidrocarburos-alifaticos/2",
+     "decision": "corregir",
+     "justificacion": "Ideas previas reales y física correcta: el butano hierve cerca de 0 °C y el propano a −42 °C, así que a 1 atm y temperatura ambiente son gases; en el cilindro están líquidos por la presión. Pero la señal presenta la parafina como si fuera C₂₀H₄₂: es una mezcla de alcanos de unos 20 a 40 carbonos, y la vaselina también es mezcla.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.4 (fila 11)",
+       "cita": "Predice el estado físico de alcanos de 1, 4, 8 y 20 carbonos y reconoce alcanos en gas, parafina y vaselina."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La cera de parafina es una mezcla de alcanos de unos C20 a C40; el eicosano C20H42 es sólido a 25 °C."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "senales": "Descarta que sólidos como la parafina de las velas (mezcla de alcanos de unos 20 a 40 carbonos, como el C₂₀H₄₂) o semisólidos como la vaselina sean alcanos; afirma que el butano es líquido a temperatura y presión ambiente fuera del cilindro."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/hidrocarburos-alifaticos/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/hidrocarburos-alifaticos/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/hidrocarburos-alifaticos",
+     "descripcion": "Considera que el término «sustancia química» aplica solo a compuestos sintéticos, tóxicos o de laboratorio, creyendo que productos cotidianos como la vaselina o la cera de parafina pueden ser «libres de químicos».",
+     "senales": "Da por válido un anuncio que dice «sin químicos» porque el producto no hace daño a la piel; separa las sustancias de uso común de los compuestos con fórmula química.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Obstaculiza el análisis crítico de mensajes publicitarios sobre compuestos orgánicos cotidianos.",
+     "origen": "redactor-actividades (G11-QUI-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.4",
+     "grado": 11,
+     "indicador": "2.4. Reconoce la función alcano en sustancias de uso común.",
+     "evidencia": "Ficha de cinco alcanos de uso común con fórmula, estado físico, uso y análisis crítico de un mensaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/hidrocarburos-alifaticos/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/hidrocarburos-alifaticos/3",
+     "decision": "aprobar",
+     "justificacion": "Idea previa real (quimiofobia: «químico» como sinónimo de sintético o tóxico) y central en el indicador, que pide analizar un mensaje de que la vaselina «no tiene químicos». Descripción y señales son correctas: toda materia está formada por sustancias químicas y la vaselina es una mezcla de alcanos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.4 (fila 11)",
+       "cita": "Analiza críticamente un mensaje que afirma que la vaselina «no tiene químicos» y lo corrige."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La inocuidad de un producto no depende de que «no tenga químicos»; todo producto es químico."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}
