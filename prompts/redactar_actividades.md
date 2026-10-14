@@ -117,6 +117,8 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
 - **Experimentos:** el procedimiento cabe en el tiempo de las sesiones. Las preguntas de análisis que no caben se
   marcan como tarea. Los materiales alcanzan para todos los pasos (cuenta vasos y volúmenes). Una simulación que se
   nombre en `variantes` debe mostrar de verdad lo que se pide.
+- **Datos del hogar:** una tarea que pida datos de la familia (recibos, aparatos, consumos, fotos de la casa) trae
+  siempre una alternativa con datos de ejemplo, y esos datos no se comparan entre familias.
 - **Análisis con tiempo:** cada pregunta de `analisis` se responde en un paso del procedimiento que tiene minutos
   asignados, o empieza con «Tarea:». Los pasos de cada sesión suman exactamente su duración (55 min por sesión).
 - **Constantes:** también g, la densidad del agua y la presión atmosférica remiten a la «tabla de referencia»; si un
