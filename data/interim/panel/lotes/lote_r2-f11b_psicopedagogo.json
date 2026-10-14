@@ -1,0 +1,3054 @@
+{
+ "lote": "r2-f11b_psicopedagogo",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U10-10.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U10-10.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U10-10.5",
+      "CON:fisica/fuerza-lorentz"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un electrón se mueve horizontalmente hacia el este dentro de un campo magnético uniforme y vertical que apunta hacia arriba. ¿Hacia dónde apunta la fuerza magnética sobre el electrón en ese instante, y por qué?",
+     "opciones": {
+      "A": "Hacia el norte, porque la mano derecha da el sur y la carga del electrón es negativa.",
+      "B": "Hacia el sur, porque la mano derecha con la velocidad y el campo da directamente el sur.",
+      "C": "Hacia arriba, porque la fuerza magnética apunta en la misma dirección que el campo.",
+      "D": "Hacia el este, porque el campo empuja al electrón en el sentido en que ya se mueve."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/fuerza-lorentz/1",
+      "D": "DIF:fisica/fuerza-lorentz/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "F = qv × B es perpendicular a la velocidad y al campo. Con la mano derecha, este × arriba da el sur, que sería la fuerza sobre una carga positiva; como la carga del electrón es negativa, la fuerza apunta al norte. Al ser perpendicular a la velocidad, esta fuerza no cambia la rapidez del electrón, solo curva su trayectoria.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U10-10.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U10-10.5/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: este × arriba = sur para carga positiva; el electrón, negativo, va al norte. Clave A correcta y única; B es el error real de olvidar el signo; C y D mapean a dificultades vigentes.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.5 (fila 19)",
+       "cita": "Determina la dirección de la fuerza magnética con la regla de la mano derecha en 3D"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "x̂ × ẑ = −ŷ; con q < 0 la fuerza se invierte"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U10-10.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U10-10.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U10-10.5",
+      "CON:fisica/fuerza-lorentz"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una bobina rectangular de 50 vueltas, de 4.0 cm × 2.5 cm, lleva 0.50 A dentro de un campo magnético uniforme. Para distintos ángulos θ entre la normal al plano de la bobina y el campo, se obtuvo el par (datos de un grupo de ejemplo): 0°, 0 N·m; 30°, 1.24 × 10⁻³ N·m; 60°, 2.18 × 10⁻³ N·m; 90°, 2.51 × 10⁻³ N·m. Con τ = NIAB sen θ, ¿cuál es la magnitud del campo magnético, en teslas (T)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 0.1,
+     "tolerancia": 0.01,
+     "unidad": "T",
+     "retroalimentacion": "El área es 0.040 m × 0.025 m = 1.0 × 10⁻³ m². El par máximo, a 90°, es NIAB: B = 2.51 × 10⁻³ / (50 × 0.50 × 1.0 × 10⁻³) ≈ 0.10 T. Los otros datos lo confirman: a 30°, sen θ = 0.5 y el par es casi la mitad del máximo. El par es nulo cuando el plano de la bobina queda perpendicular al campo.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U10-10.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U10-10.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "NIA = 50 × 0.50 × 1.0e-3 = 0.025 A·m²; B = 2.51e-3/0.025 = 0.100 T. Los datos a 30° (1.25e-3) y 60° (2.17e-3) son coherentes con ruido de medida. Tolerancia de 10 % adecuada; par nulo con el plano perpendicular al campo, correcto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.5 (fila 19)",
+       "cita": "Calcula el par de torsión sobre una bobina; evidencia: gráfica par-ángulo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "τ = NIAB sen θ, θ entre normal y campo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U10-10.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U10-10.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U10-10.5",
+      "CON:fisica/fuerza-lorentz"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Andrés pone una espira con corriente entre los polos de un imán, sin conmutador. La empuja con el dedo: gira un poco, oscila de un lado a otro y se detiene. En 2 o 3 oraciones explica, con el par τ = NIAB sen θ, por qué la espira no sigue girando, y qué hace el conmutador de un motor de corriente continua para que el giro sea continuo.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El par se anula cuando el plano de la espira queda perpendicular al campo y, al pasar esa posición, cambia de sentido y la frena: por eso oscila y el roce la detiene. El conmutador invierte la corriente en la espira cada media vuelta, justo en esa posición, así que el par siempre empuja en el mismo sentido de giro; a rapidez constante, ese par equilibra el roce y la carga del motor.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U10-10.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Con la corriente siempre en el mismo sentido, el par NIAB sen θ es nulo cuando el plano de la espira queda perpendicular al campo, y al pasarse de esa posición sen θ cambia de signo: el par la frena y la devuelve, así que oscila alrededor de esa posición hasta que el roce la detiene. El conmutador invierte el sentido de la corriente en la espira cada media vuelta, justo al pasar por esa posición, y así el par vuelve a empujar en el mismo sentido de giro.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que el par se anula en la posición en que el plano de la espira es perpendicular al campo y que, al pasarla, cambia de sentido y la frena o la regresa.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que el conmutador invierte el sentido de la corriente en la espira cada media vuelta, en esa posición, para que el par mantenga el mismo sentido de giro.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Menciona que la inercia lleva la espira más allá de la posición de par nulo o que el roce amortigua la oscilación.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que las fuerzas sobre los lados de la espira apuntan en la dirección del campo.",
+        "ejemplo": "La fuerza sobre la espira va hacia el polo sur del imán, por eso la jala hacia allá y ahí se queda pegada.",
+        "dificultad": "DIF:fisica/fuerza-lorentz/1"
+       },
+       {
+        "descripcion": "Cree que el conmutador aumenta la corriente o la fuerza, en lugar de invertir su sentido.",
+        "ejemplo": "El conmutador le da más corriente a la espira para que tenga fuerza y no se detenga.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica que la espira se detiene porque se acabó el empujón, como si el movimiento necesitara una fuerza constante.",
+        "ejemplo": "Se detiene porque el dedo ya no la empuja; para girar siempre necesita que algo la empuje.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U10-10.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U10-10.5/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Física correcta: sin conmutador la espira con corriente tiene un equilibrio estable donde su plano es perpendicular a B y oscila alrededor de él; el conmutador invierte la corriente cada media vuelta. El enunciado pide lo que exigen c1 y c2; el error aristotélico está bien incluido.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.5 (fila 19)",
+       "cita": "explica el papel del conmutador en el giro continuo de un motor"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "τ ∝ sen θ cambia de signo al pasar θ = 0: par restaurador"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.11/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.11/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.11"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.11",
+      "CON:fisica/capacitancia"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Laura conecta un condensador de placas paralelas (dos láminas metálicas separadas por aire) a una pila de 9 V y, sin desconectarlo, separa las placas hasta el doble de la distancia inicial. ¿Qué pasa con la capacitancia y con la carga de cada placa?",
+     "opciones": {
+      "A": "La capacitancia baja a la mitad y la carga también, porque el voltaje lo sigue fijando la pila.",
+      "B": "La capacitancia no cambia y la carga tampoco, porque la capacitancia depende de la carga guardada.",
+      "C": "La capacitancia se duplica y la carga también, porque al separar las placas hay más espacio para carga.",
+      "D": "La capacitancia baja a la mitad y la carga no cambia, porque la carga no tiene por dónde escapar."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/capacitancia/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La capacitancia depende de la geometría y del material: C = κε₀A/d, así que al duplicar d se reduce a la mitad. Como el condensador sigue conectado, la pila mantiene el voltaje en 9 V y Q = CV también se reduce a la mitad: parte de la carga regresa a la pila. Si lo hubiera desconectado antes, la carga se conservaría y lo que cambiaría sería el voltaje.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.11"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.11/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.11/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Con la pila conectada V es fijo: C = κε₀A/d se reduce a la mitad y Q = CV también. Clave A correcta; D es la respuesta del caso desconectado, confusión real; B mapea a capacitancia/2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+       "cita": "capacitancia de placas paralelas y efecto de la separación"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V constante ⇒ Q ∝ C ∝ 1/d"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.11/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.11/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.11"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.11",
+      "CON:fisica/capacitancia"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un condensador electrolítico de 1000 µF nominales, cargado a 6.0 V, se descarga a través de un resistor de 47 kΩ. Un grupo leyó el voltaje del condensador cada 20 s (datos de un grupo de ejemplo): 0 s, 6.00 V; 20 s, 4.02 V; 40 s, 2.69 V; 60 s, 1.80 V; 80 s, 1.20 V; 100 s, 0.81 V. Determina la constante de tiempo (el tiempo en que el voltaje baja al 37 % del inicial) y con ella calcula la capacitancia real del condensador, en microfaradios (µF). Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 1060,
+     "tolerancia": 60,
+     "unidad": "µF",
+     "retroalimentacion": "El 37 % de 6.00 V son unos 2.21 V, que se alcanzan cerca de los 50 s, entre las lecturas de 40 s y 60 s. Con τ = RC, C = τ/R ≈ 50 s / 47 000 Ω ≈ 1.06 × 10⁻³ F ≈ 1060 µF. Es algo más que lo nominal, dentro de la tolerancia habitual de los electrolíticos (±20 %). Una gráfica de ln V contra t da una recta de pendiente −1/τ y aprovecha todos los datos.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.11"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.11/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.11/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculé ln(V/6) en los cinco tiempos: τ ≈ 49.7–49.9 s; C = 50/47 000 ≈ 1064 µF. La interpolación lineal entre 40 y 60 s da ≈ 50.8 s (1081 µF), dentro de 1060 ± 60. El voltímetro de 10 MΩ altera τ menos del 1 %.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+       "cita": "constante de tiempo de un circuito RC"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V = V₀e^(−t/RC); 0.37 V₀ ≈ 2.21 V"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.11/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.11/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.11"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.11",
+      "CON:fisica/capacitancia"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Fernando tiene dos condensadores, de 10 µF y de 30 µF, y necesita la mayor capacitancia posible. En 2 o 3 oraciones: calcula la capacitancia equivalente si los conecta en paralelo y si los conecta en serie, di cuál conexión le conviene y explica por qué una suma las capacitancias y la otra da menos que la menor, diciendo qué es igual en los dos condensadores en cada caso (la carga o el voltaje).",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En paralelo, C = 10 + 30 = 40 µF; en serie, 1/C = 1/10 + 1/30, así que C = 7.5 µF: le conviene el paralelo. En paralelo los dos tienen el mismo voltaje y sus cargas se suman, como si se sumara área. En serie los dos guardan la misma carga y sus voltajes se suman, así que con la misma carga se necesita más voltaje, como si la separación creciera. Son las reglas de los resistores, al revés.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.11"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En paralelo la capacitancia es 10 + 30 = 40 µF y en serie es 1/(1/10 + 1/30) = 7.5 µF, así que le conviene el paralelo. En paralelo los dos condensadores tienen el mismo voltaje y la carga total es la suma de sus cargas, por eso las capacitancias se suman. En serie los dos tienen la misma carga y el voltaje total es la suma de sus voltajes, así que para la misma carga hace falta más voltaje y Q/V queda menor que la del más pequeño.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula 40 µF en paralelo y 7.5 µF en serie, y elige la conexión en paralelo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica el paralelo con que los dos tienen el mismo voltaje y sus cargas se suman (o con que equivale a aumentar el área).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica la serie con que los dos tienen la misma carga y sus voltajes se suman, de modo que Q/V es menor (o con que equivale a aumentar la separación).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que las reglas son las inversas de las de los resistores.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa las reglas de los resistores: suma en serie y recíprocos en paralelo.",
+        "ejemplo": "En serie da 40 µF, porque uno va tras otro y se suman, y en paralelo da 7.5 µF; le conviene la serie.",
+        "dificultad": "DIF:fisica/capacitancia/3"
+       },
+       {
+        "descripcion": "Cree que la capacitancia equivalente depende del voltaje de carga y no de la conexión.",
+        "ejemplo": "Depende de con cuánto voltaje los cargue: con más voltaje cualquier conexión tiene más capacitancia.",
+        "dificultad": "DIF:fisica/capacitancia/2"
+       },
+       {
+        "descripcion": "Calcula bien, pero explica la serie diciendo que cada condensador recibe más carga o que las cargas se suman, en lugar de que tienen la misma carga y se suman los voltajes.",
+        "ejemplo": "En serie da 7.5 µF porque la carga pasa por los dos y cada uno guarda la carga dos veces.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.11/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.11/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "En paralelo la capacitancia es 10 + 30 = 40 µF y en serie es 1/(1/10 + 1/30) = 7.5 µF, así que le conviene el paralelo. En paralelo los dos condensadores tienen el mismo voltaje y la carga total es la suma de sus cargas, por eso las capacitancias se suman. En serie los dos tienen la misma carga y el voltaje total es la suma de sus voltajes, así que para la misma carga hace falta más voltaje y Q/V queda menor que la del más pequeño.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Calcula 40 µF en paralelo y 7.5 µF en serie, y elige la conexión en paralelo.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Justifica el paralelo con que los dos tienen el mismo voltaje y sus cargas se suman (o con que equivale a aumentar el área).",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Justifica la serie con que los dos tienen la misma carga y sus voltajes se suman, de modo que Q/V es menor (o con que equivale a aumentar la separación).",
+         "obligatorio": true
+        },
+        {
+         "id": "c4",
+         "descripcion": "Señala que las reglas son las inversas de las de los resistores.",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Usa las reglas de los resistores: suma en serie y recíprocos en paralelo.",
+         "ejemplo": "En serie da 40 µF, porque uno va tras otro y se suman, y en paralelo da 7.5 µF; le conviene la serie.",
+         "dificultad": "DIF:fisica/capacitancia/3"
+        },
+        {
+         "descripcion": "Cree que la capacitancia equivalente depende del voltaje de carga y no de la conexión.",
+         "ejemplo": "Depende de con cuánto voltaje los cargue: con más voltaje cualquier conexión tiene más capacitancia.",
+         "dificultad": "DIF:fisica/capacitancia/2"
+        },
+        {
+         "descripcion": "Calcula bien, pero explica la serie diciendo que cada condensador recibe más carga o que las cargas se suman, en lugar de que tienen la misma carga y se suman los voltajes.",
+         "ejemplo": "En serie da 7.5 µF porque la carga pasa por los dos y cada uno guarda la carga dos veces.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "justificacion": "Cálculos correctos (40 µF y 7.5 µF). El tercer error marcaba como incorrecto que «en paralelo la carga se reparte», que es cierto: la carga total se divide entre los dos. Lo reescribo para que el error sea solo la idea falsa sobre la serie.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+       "cita": "combinaciones de condensadores en serie y en paralelo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Paralelo: Q_total = Q₁ + Q₂ con V común; serie: Q común, V = V₁ + V₂"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.4",
+      "CON:fisica/potencia-electrica-joule"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mónica conecta por separado un resistor de 22 Ω y otro de 220 Ω, los dos de 2 W para que soporten el calor, a la misma batería de 4.5 V (tres pilas en serie; supón que su voltaje no cambia). ¿Cuál de los dos disipa más potencia como calor, cuántas veces más, aproximadamente, y por qué?",
+     "opciones": {
+      "A": "El de 220 Ω, unas 10 veces más, porque según P = I²R la potencia crece con la resistencia.",
+      "B": "El de 22 Ω, unas 10 veces más, porque con el mismo voltaje le pasa 10 veces más corriente.",
+      "C": "Los dos igual, porque están en la misma pila de 4.5 V y es el voltaje el que fija la potencia.",
+      "D": "El de 22 Ω, unas 100 veces más, porque la potencia depende del cuadrado de la corriente."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:fisica/potencia-electrica-joule/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con el mismo voltaje conviene P = V²/R: 4.5²/22 ≈ 0.92 W y 4.5²/220 ≈ 0.092 W. Por el de 22 Ω pasa 10 veces más corriente; aunque su resistencia es 10 veces menor, I²R da 100/10 = 10 veces más potencia. La regla «más resistencia, más calor» de P = I²R solo vale cuando la corriente es la misma, como en un circuito en serie.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencia-electrica-joule",
+     "nombre": "Potencia eléctrica y efecto Joule",
+     "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.4",
+     "grado": 11,
+     "indicador": "3.4. • Calcula la potencia disipada en un resistor y el consumo mensual de energía de aparatos domésticos en kilowatt hora. • Estima con la ley de Ohm la corriente que atravesaría el cuerpo humano en distintas condiciones y justifica las medidas de seguridad eléctrica.",
+     "evidencia": "Tabla de consumo mensual por aparato del hogar con cálculos de potencia y energía en kilowatt hora"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.4/obj-1",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Mónica conecta por separado un resistor de 22 Ω y otro de 220 Ω, los dos de 2 W para que soporten el calor, a la misma batería de 4.5 V (tres pilas en serie; supón que su voltaje no cambia). ¿Cuál de los dos disipa más potencia como calor, cuántas veces más, aproximadamente, y por qué?"
+     },
+     "justificacion": "Física y clave correctas: 4.5²/22 ≈ 0.92 W y 4.5²/220 ≈ 0.092 W. Pero 0.92 W supera mucho a un resistor común de 1/4 W, que humea y quema si alguien reproduce el montaje. Declaro resistores de 2 W en el enunciado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.4 (fila 17)",
+       "cita": "Aplica P = VI = I²R = V²/R a un resistor alimentado con una pila"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "P = V²/R = 0.92 W > 0.25 W nominal de un resistor común"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.4",
+      "CON:fisica/potencia-electrica-joule"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Tabla de consumo de una familia (datos de ejemplo), para un mes de 30 días: refrigeradora de 150 W cuyo compresor funciona en promedio 10 h al día; cinco focos LED de 9 W cada uno, encendidos 6 h al día; televisor de 80 W, 5 h al día; plancha de 1000 W, 4 h en todo el mes. Calcula la energía total que consumen estos aparatos en el mes, en kilowatt hora (kWh). Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 69.1,
+     "tolerancia": 0.5,
+     "unidad": "kWh",
+     "retroalimentacion": "Energía = potencia en kW × horas: refrigeradora 0.150 × 10 × 30 = 45 kWh; focos 5 × 0.009 × 6 × 30 = 8.1 kWh; televisor 0.080 × 5 × 30 = 12 kWh; plancha 1.0 × 4 = 4 kWh. Total ≈ 69.1 kWh. La plancha tiene la mayor potencia, pero la refrigeradora consume más de la mitad de la energía porque funciona muchas más horas.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencia-electrica-joule",
+     "nombre": "Potencia eléctrica y efecto Joule",
+     "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.4",
+     "grado": 11,
+     "indicador": "3.4. • Calcula la potencia disipada en un resistor y el consumo mensual de energía de aparatos domésticos en kilowatt hora. • Estima con la ley de Ohm la corriente que atravesaría el cuerpo humano en distintas condiciones y justifica las medidas de seguridad eléctrica.",
+     "evidencia": "Tabla de consumo mensual por aparato del hogar con cálculos de potencia y energía en kilowatt hora"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.4/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: 45 + 8.1 + 12 + 4 = 69.1 kWh; la refrigeradora es el 65 % del total. Tolerancia de 0.5 kWh adecuada. Atiende el indicador de consumo mensual y la dificultad de potencia frente a energía.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.4 (fila 17)",
+       "cita": "Calcula el consumo mensual de aparatos domésticos en kilowatt hora"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "E (kWh) = P (kW) × t (h)"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.4",
+      "CON:fisica/potencia-electrica-joule"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Natalia lee que, de una mano a la otra, la resistencia del cuerpo es de unos 100 000 Ω con la piel seca y de unos 1 000 Ω con la piel mojada (valores aproximados; varían mucho entre personas). Como referencia aproximada, una corriente de unos 1 mA se siente, desde unos 10 mA puede impedir soltar el cable y desde unos 50 mA puede detener el ritmo normal del corazón (fibrilación). Es solo un cálculo: nunca se prueba. En 2 o 3 oraciones: calcula con la ley de Ohm la corriente que pasaría por el cuerpo al tocar los 120 V de un tomacorriente en cada caso, di cuál es peligrosa y por qué, y justifica con esos resultados una medida de protección.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con 120 V, I = V/R da unos 1.2 mA con la piel seca y unos 120 mA con la piel mojada. Lo que daña es la corriente: al bajar la resistencia, sube por encima del nivel de fibrilación. El caso seco tampoco es seguro: el sudor, una herida o un contacto firme bajan mucho la resistencia. Por eso no se tocan aparatos con las manos mojadas y se usan tomacorrientes con protección contra falla a tierra, que cortan con pocos miliamperios; el disyuntor común solo protege los cables.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Con la piel seca, I = 120/100 000 = 0.0012 A, unos 1.2 mA, que ya se siente; aun así no es un caso seguro, porque el sudor, una herida o un contacto firme bajan mucho esa resistencia. Con la piel mojada, I = 120/1 000 = 0.12 A, unos 120 mA, más que los 50 mA que pueden causar fibrilación: el voltaje es el mismo, pero la resistencia es 100 veces menor y la corriente 100 veces mayor. Por eso no se tocan aparatos ni cables con las manos mojadas, y en baños y cocinas conviene un tomacorriente con protección contra falla a tierra, que corta en cuanto parte de la corriente se desvía por el cuerpo.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula con I = V/R las dos corrientes: cerca de 1.2 mA con la piel seca y cerca de 120 mA con la piel mojada.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Concluye que el caso de la piel mojada es el más peligroso y lo justifica comparando su corriente con los umbrales dados (o diciendo que el daño depende de la corriente, que crece al bajar la resistencia). No se penaliza que agregue que el caso seco tampoco es seguro.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Propone una medida de protección y la relaciona con sus cálculos: evitar que baje la resistencia (manos secas, calzado aislante) o cortar el circuito ante una fuga (protección contra falla a tierra, conexión a tierra, desconectar antes de reparar).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que el fusible o el disyuntor común no protege a la persona, porque se dispara con corrientes de varios amperios.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el peligro lo da solo el voltaje y que los dos casos son iguales.",
+        "ejemplo": "Los dos son igual de peligrosos, porque en ambos casos son 120 V.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Aplica «más resistencia, más calor» y elige la piel seca como el caso peligroso.",
+        "ejemplo": "Con la piel seca es peor, porque hay más resistencia y se produce más calor en el cuerpo.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confía en el disyuntor de la casa como protección de la persona.",
+        "ejemplo": "No hay peligro, porque si pasa mucha corriente el breaker de la casa la corta.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencia-electrica-joule",
+     "nombre": "Potencia eléctrica y efecto Joule",
+     "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.4",
+     "grado": 11,
+     "indicador": "3.4. • Calcula la potencia disipada en un resistor y el consumo mensual de energía de aparatos domésticos en kilowatt hora. • Estima con la ley de Ohm la corriente que atravesaría el cuerpo humano en distintas condiciones y justifica las medidas de seguridad eléctrica.",
+     "evidencia": "Tabla de consumo mensual por aparato del hogar con cálculos de potencia y energía en kilowatt hora"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.4/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "retroalimentacion": "Con 120 V, I = V/R da unos 1.2 mA con la piel seca y unos 120 mA con la piel mojada. Lo que daña es la corriente: al bajar la resistencia, sube por encima del nivel de fibrilación. El caso seco tampoco es seguro: el sudor, una herida o un contacto firme bajan mucho la resistencia. Por eso no se tocan aparatos con las manos mojadas y se usan tomacorrientes con protección contra falla a tierra, que cortan con pocos miliamperios; el disyuntor común solo protege los cables.",
+      "rubrica": {
+       "respuesta_modelo": "Con la piel seca, I = 120/100 000 = 0.0012 A, unos 1.2 mA, que ya se siente; aun así no es un caso seguro, porque el sudor, una herida o un contacto firme bajan mucho esa resistencia. Con la piel mojada, I = 120/1 000 = 0.12 A, unos 120 mA, más que los 50 mA que pueden causar fibrilación: el voltaje es el mismo, pero la resistencia es 100 veces menor y la corriente 100 veces mayor. Por eso no se tocan aparatos ni cables con las manos mojadas, y en baños y cocinas conviene un tomacorriente con protección contra falla a tierra, que corta en cuanto parte de la corriente se desvía por el cuerpo.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Calcula con I = V/R las dos corrientes: cerca de 1.2 mA con la piel seca y cerca de 120 mA con la piel mojada.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Concluye que el caso de la piel mojada es el más peligroso y lo justifica comparando su corriente con los umbrales dados (o diciendo que el daño depende de la corriente, que crece al bajar la resistencia). No se penaliza que agregue que el caso seco tampoco es seguro.",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Propone una medida de protección y la relaciona con sus cálculos: evitar que baje la resistencia (manos secas, calzado aislante) o cortar el circuito ante una fuga (protección contra falla a tierra, conexión a tierra, desconectar antes de reparar).",
+         "obligatorio": true
+        },
+        {
+         "id": "c4",
+         "descripcion": "Señala que el fusible o el disyuntor común no protege a la persona, porque se dispara con corrientes de varios amperios.",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Cree que el peligro lo da solo el voltaje y que los dos casos son iguales.",
+         "ejemplo": "Los dos son igual de peligrosos, porque en ambos casos son 120 V.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Aplica «más resistencia, más calor» y elige la piel seca como el caso peligroso.",
+         "ejemplo": "Con la piel seca es peor, porque hay más resistencia y se produce más calor en el cuerpo.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Confía en el disyuntor de la casa como protección de la persona.",
+         "ejemplo": "No hay peligro, porque si pasa mucha corriente el breaker de la casa la corta.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "justificacion": "Cálculos correctos (1.2 mA y 120 mA) y datos declarados como aproximados. Pero la respuesta modelo decía que 1.2 mA «apenas se siente» sin advertir que la resistencia seca es variable: transmite que tocar 120 V con piel seca es seguro. Agrego esa salvedad y hablo del caso «más» peligroso.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.4 (fila 17)",
+       "cita": "Estima la corriente por el cuerpo humano en distintas condiciones y justifica las medidas de seguridad"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La resistencia de la piel varía en órdenes de magnitud con humedad, área de contacto y voltaje"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.5",
+      "CON:fisica/circuitos-serie-paralelo"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Diego conecta dos focos iguales en paralelo a una pila. Supón que la pila es ideal: su voltaje no cambia al conectar más focos. Luego agrega un tercer foco igual en otra rama en paralelo. ¿Qué pasa con el brillo de los dos primeros focos y con la corriente que sale de la pila?",
+     "opciones": {
+      "A": "Brillan menos, y la corriente de la pila no cambia, porque su voltaje se reparte entre tres focos.",
+      "B": "Brillan menos, y la corriente de la pila no cambia, porque esa corriente se reparte entre tres ramas.",
+      "C": "Brillan igual, y la corriente de la pila sube un 50 %, porque cada rama recibe el voltaje de la pila.",
+      "D": "Brillan más, y la corriente de la pila sube un 50 %, porque baja la resistencia equivalente total."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/circuitos-serie-paralelo/2",
+      "B": "DIF:fisica/circuitos-serie-paralelo/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cada rama en paralelo queda conectada directamente a los bornes de la pila, así que cada foco recibe el voltaje completo y lleva la misma corriente que antes: su brillo no cambia. La corriente de la pila es la suma de las ramas y pasa de 2I a 3I, un 50 % más. Con una pila real, su resistencia interna haría que el brillo bajara un poco.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/circuitos-serie-paralelo",
+     "nombre": "Circuitos en serie y en paralelo",
+     "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.5",
+     "grado": 11,
+     "indicador": "3.2. • Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias. • Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones. • Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma. • Conecta correctamente un amperímetro y un voltímetro en un circuito y explica cómo su resistencia interna afecta la medición.",
+     "evidencia": "Hoja de resolución paso a paso de un circuito mixto con tabla de corriente, voltaje y potencia por resistencia"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.5/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Fuente ideal declarada: cada rama recibe el voltaje completo, el brillo no cambia y la corriente pasa de 2I a 3I. Clave C correcta; A y B mapean a serie-paralelo/2 y /3, ideas previas reales. La retroalimentación menciona la resistencia interna real.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.5 (fila 15)",
+       "cita": "Calcula la corriente en cada rama de un circuito en paralelo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "I_total = Σ V/R_i con V fijo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.5",
+      "CON:fisica/circuitos-serie-paralelo"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un circuito mixto tiene una fuente de 6.0 V y un resistor R1 = 100 Ω en serie con dos ramas en paralelo: en una rama está R2 = 200 Ω y en la otra, R3 = 100 Ω y R4 = 100 Ω en serie. Un grupo midió con el voltímetro (datos de un grupo de ejemplo): 3.0 V en R1 y 1.5 V en R3. Con esos datos, ¿qué potencia disipa R2, en milivatios (mW)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 45,
+     "tolerancia": 2,
+     "unidad": "mW",
+     "retroalimentacion": "R1 y el grupo en paralelo están en serie, así que el voltaje en el paralelo es 6.0 − 3.0 = 3.0 V (coincide con 1.5 V + 1.5 V en la rama de R3 y R4). R2 tiene esos 3.0 V, así que P = V²/R = 9.0/200 = 0.045 W = 45 mW. Comprobación: por R1 pasan 30 mA, que se dividen en 15 mA por cada rama.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/circuitos-serie-paralelo",
+     "nombre": "Circuitos en serie y en paralelo",
+     "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.5",
+     "grado": 11,
+     "indicador": "3.2. • Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias. • Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones. • Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma. • Conecta correctamente un amperímetro y un voltímetro en un circuito y explica cómo su resistencia interna afecta la medición.",
+     "evidencia": "Hoja de resolución paso a paso de un circuito mixto con tabla de corriente, voltaje y potencia por resistencia"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: R3+R4 = 200 Ω en paralelo con 200 Ω da 100 Ω; total 200 Ω, 30 mA, 3.0 V en R1 y en el paralelo; P(R2) = 9/200 = 45 mW. Los datos medidos son coherentes (1.5 V en R3).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.5 (fila 15)",
+       "cita": "Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "P = V²/R"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.5",
+      "CON:fisica/circuitos-serie-paralelo"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Lucía quiere medir el voltaje en el foco de una linterna alimentada con dos pilas (3 V), pero por error conecta el voltímetro en serie con el foco. El foco no enciende y el voltímetro marca casi 3 V. En 2 o 3 oraciones explica, usando la resistencia interna del voltímetro, por qué el foco no enciende y por qué la lectura es casi el voltaje de las pilas, y di cómo debió conectar el voltímetro.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un voltímetro digital tiene una resistencia interna enorme (unos 10 MΩ). En serie, limita la corriente a menos de un microamperio y el foco no enciende. Como la resistencia del foco es pequeñísima en comparación, casi todo el voltaje de las pilas cae en el voltímetro, que es lo que marca. Para medir el voltaje del foco se conecta en paralelo con él.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El voltímetro tiene una resistencia interna muy grande, de millones de ohmios, así que en serie deja pasar una corriente diminuta (3 V / 10 MΩ ≈ 0.3 µA) y el foco no enciende. Como el foco tiene apenas unos ohmios, en ese divisor de voltaje casi todo el voltaje de las pilas cae en el voltímetro y por eso marca casi 3 V. Debió conectarlo en paralelo con el foco, tocando sus dos terminales.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que la resistencia interna del voltímetro es muy grande y que por eso la corriente en serie es tan pequeña que el foco no enciende.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica la lectura: casi todo el voltaje de las pilas cae en el voltímetro porque su resistencia es mucho mayor que la del foco (divisor de voltaje o V = IR en cada elemento).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Indica que el voltímetro se conecta en paralelo con el foco.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Contrasta con el amperímetro, que tiene resistencia muy pequeña y se conecta en serie, o estima la corriente con I = V/R.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el voltímetro consume la corriente y no deja nada para el foco.",
+        "ejemplo": "El voltímetro se gasta toda la corriente y ya no llega nada al foco.",
+        "dificultad": "DIF:fisica/circuito-electrico-simple/2"
+       },
+       {
+        "descripcion": "Razona en secuencia: el voltímetro mide lo que llega antes del foco.",
+        "ejemplo": "Marca 3 V porque está antes del foco y mide el voltaje que sale de la pila antes de pasar por el foco.",
+        "dificultad": "DIF:fisica/circuito-electrico-simple/3"
+       },
+       {
+        "descripcion": "Atribuye el apagado a una falla y no explica la lectura.",
+        "ejemplo": "El foco se quemó al conectar mal el aparato, por eso no enciende.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/circuitos-serie-paralelo",
+     "nombre": "Circuitos en serie y en paralelo",
+     "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.5",
+     "grado": 11,
+     "indicador": "3.2. • Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias. • Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones. • Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma. • Conecta correctamente un amperímetro y un voltímetro en un circuito y explica cómo su resistencia interna afecta la medición.",
+     "evidencia": "Hoja de resolución paso a paso de un circuito mixto con tabla de corriente, voltaje y potencia por resistencia"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.5/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: 3 V/10 MΩ ≈ 0.3 µA; en el divisor casi todo el voltaje cae en el voltímetro. Responde al indicador sobre la resistencia interna de los instrumentos; los criterios obligatorios coinciden con lo que pide el enunciado y los errores mapean a ideas previas reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.5 (fila 15)",
+       "cita": "Conecta correctamente un voltímetro y explica cómo su resistencia interna afecta la medición"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V_med = ε·R_V/(R_V + R_foco) ≈ ε"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.8"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.8",
+      "CON:fisica/leyes-kirchhoff"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un circuito tiene dos nudos, arriba y abajo, unidos por tres ramas: la izquierda con una fuente de 6.0 V y un resistor de 10 Ω; la central con un resistor de 20 Ω; la derecha con una fuente de 3.0 V y un resistor de 10 Ω. Las fuentes son ideales y las dos tienen su borne positivo hacia el nudo de arriba. Con las reglas de Kirchhoff, ¿cuánta corriente pasa por la rama derecha y en qué sentido?",
+     "opciones": {
+      "A": "0.06 A, y entra a la fuente de 3.0 V por su borne positivo, porque el nudo de arriba está a 3.6 V.",
+      "B": "0.45 A, y sale de la fuente de 3.0 V por su borne positivo, porque en la malla las fem se suman.",
+      "C": "0.06 A, y sale de la fuente de 3.0 V por su borne positivo, porque el signo menos es un error.",
+      "D": "0.30 A, y sale de la fuente de 3.0 V por su borne positivo, porque alimenta sola su propia rama."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/leyes-kirchhoff/3",
+      "C": "DIF:fisica/leyes-kirchhoff/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con V como el potencial del nudo de arriba respecto al de abajo, la regla de los nudos con la de las mallas da (6.0 − V)/10 + (3.0 − V)/10 = V/20, así que V = 3.6 V. En la rama derecha, (3.0 − 3.6)/10 = −0.06 A: el signo menos solo dice que la corriente va al revés de lo supuesto y entra a la fuente de 3.0 V por su borne positivo. Comprobación: 0.24 A − 0.06 A = 0.18 A por el resistor central.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.8"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.8/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Recalculado por nudos: (6−V)/10 + (3−V)/10 = V/20 ⇒ V = 3.6 V; rama derecha −0.06 A (entra por el borne positivo), izquierda 0.24 A, central 0.18 A. Clave A única; B, C y D corresponden a errores de signo reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.8 (fila 16)",
+       "cita": "Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Σ I = 0 en el nudo superior"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.8"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.8",
+      "CON:fisica/leyes-kirchhoff"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mariela conecta una pila AA usada a distintas resistencias de carga y mide la corriente y el voltaje entre los bornes de la pila (datos de un grupo de ejemplo): 0.10 A y 1.47 V; 0.20 A y 1.43 V; 0.30 A y 1.37 V; 0.40 A y 1.32 V. Con la pendiente de la recta V contra I (puedes usar el primer y el último punto), ¿cuál es la resistencia interna de la pila, en ohmios (Ω)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 0.5,
+     "tolerancia": 0.05,
+     "unidad": "Ω",
+     "retroalimentacion": "El modelo de fuente real es V = ε − Ir: la gráfica V contra I es una recta de pendiente −r. Con el primer y el último punto, r = (1.47 − 1.32)/(0.40 − 0.10) = 0.15/0.30 = 0.50 Ω. Al prolongar la recta hasta I = 0, la fem queda cerca de 1.52 V: es lo que marcaría el voltímetro sin carga.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.8"
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.8/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Pendiente con extremos: 0.15/0.30 = 0.50 Ω; el ajuste por mínimos cuadrados da 0.51 Ω y fem ≈ 1.52 V. Valor y tolerancia correctos; r de 0.5 Ω es plausible para una AA usada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.8 (fila 16)",
+       "cita": "Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V = ε − Ir"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U9-9.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U9-9.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.8"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.8",
+      "CON:fisica/leyes-kirchhoff"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Al dar arranque a un carro, las luces encendidas se atenúan un momento. Supón una batería con fem de 12.6 V y resistencia interna de 0.020 Ω, y un motor de arranque que toma 150 A (valores aproximados de un ejemplo). En 2 o 3 oraciones: estima el voltaje entre los bornes durante el arranque; explica por qué baja aunque la fem no cambie y por qué eso atenúa las luces; y estima cuánto sería con una batería vieja de 0.050 Ω de resistencia interna, suponiendo la misma corriente.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con V = ε − Ir, la batería en buen estado da 12.6 − 150 × 0.020 = 9.6 V y la vieja, 12.6 − 150 × 0.050 = 5.1 V. La fem no cambia: la corriente enorme del motor produce una caída grande dentro de la batería. Las luces están en paralelo con los bornes, así que reciben ese voltaje menor y brillan menos. Con 0.050 Ω, la caída es más del doble.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U9-9.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Con V = ε − Ir, durante el arranque los bornes quedan en 12.6 − 150 × 0.020 = 9.6 V. La fem sigue siendo 12.6 V, pero la corriente del motor es tan grande que pierde 3 V en la resistencia interna de la batería. Las luces están conectadas en paralelo a esos bornes, así que reciben 9.6 V en lugar de casi 12.6 V y brillan menos. Con la batería vieja, 12.6 − 150 × 0.050 = 5.1 V: quizá ni alcance para mover el motor.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula con V = ε − Ir el voltaje en los bornes: cerca de 9.6 V con la batería en buen estado y cerca de 5.1 V con la vieja.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que la caída se debe a la corriente grande del motor a través de la resistencia interna, y no a que cambie la fem.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el brillo menor de las luces con que están conectadas a los mismos bornes (en paralelo) y reciben el voltaje menor.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Concluye que con la batería vieja el voltaje puede no alcanzar para el arranque o para el resto del sistema eléctrico.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el voltaje en los bornes siempre es la fem y que baja porque la batería se descarga en ese instante.",
+        "ejemplo": "El voltaje baja porque el motor de arranque descarga la batería y ya no tiene 12.6 V.",
+        "dificultad": "DIF:fisica/leyes-kirchhoff/1"
+       },
+       {
+        "descripcion": "Explica la atenuación con una corriente fija que se reparte entre el motor y las luces.",
+        "ejemplo": "La batería da siempre la misma corriente y el motor se lleva casi toda, por eso a las luces les llega menos.",
+        "dificultad": "DIF:fisica/circuitos-serie-paralelo/3"
+       },
+       {
+        "descripcion": "Resta la corriente de la fem sin multiplicar por la resistencia interna.",
+        "ejemplo": "El voltaje es 12.6 − 0.020 = 12.58 V, así que casi no cambia.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U9-9.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U9-9.8/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: 12.6 − 3.0 = 9.6 V y 12.6 − 7.5 = 5.1 V; la suposición de corriente igual está declarada. Distingue fem de voltaje en bornes y explica las luces por estar en paralelo con los bornes; criterios alineados con el enunciado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.8 (fila 16)",
+       "cita": "resistencia interna de una pila y voltaje en sus bornes"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V_bornes = ε − Ir"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/capacitancia/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/capacitancia/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/capacitancia",
+     "descripcion": "Cree que un condensador cargado guarda carga neta (que «se llena de electrones» o de carga positiva), en lugar de reconocer que sus placas tienen cargas iguales y opuestas, con carga total cero, y que lo que almacena es energía en el campo eléctrico entre ellas.",
+     "senales": "Dice que el condensador cargado atraería papelitos como un globo frotado; suma las cargas de las dos placas como si guardara el doble; cree que al descargarse la carga sale del condensador y se gasta en el circuito, en lugar de pasar por el circuito de una placa a la otra hasta neutralizarse.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La palabra «carga» sugiere que el condensador acumula carga neta.",
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/capacitancia/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/capacitancia/1",
+     "decision": "corregir",
+     "cambios": {
+      "senales": "Dice que el condensador cargado atraería papelitos como un globo frotado; suma las cargas de las dos placas como si guardara el doble; cree que al descargarse la carga sale del condensador y se gasta en el circuito, en lugar de pasar por el circuito de una placa a la otra hasta neutralizarse."
+     },
+     "justificacion": "La descripción es correcta. Una señal marcaba como error que las cargas «salen» hacia el circuito, lo cual es en parte cierto (los electrones salen de la placa negativa y recorren el circuito). Precisé que la idea errónea es que la carga se gasta en vez de ir de una placa a la otra.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+       "cita": "capacitancia y descarga de un condensador"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En la descarga circula carga de una placa a la otra; la carga neta sigue siendo cero"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/capacitancia/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/capacitancia/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/capacitancia",
+     "descripcion": "Lee C = Q/V como si la capacitancia la causaran la carga o el voltaje: cree que con más voltaje o más carga un condensador tiene más capacitancia, en lugar de entender que depende del área, la separación y el dieléctrico.",
+     "senales": "Afirma que un condensador «tiene más faradios» al cargarlo con más voltaje; al cambiar la separación de las placas dice que la capacitancia no cambia porque la carga es la misma.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Una definición operacional se interpreta como causa.",
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/capacitancia/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/capacitancia/2",
+     "decision": "aprobar",
+     "justificacion": "Idea previa real y bien descrita: tomar C = Q/V como causa. La capacitancia depende del área, la separación y el dieléctrico; las señales son observables.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "C = κε₀A/d es independiente de Q y V"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/capacitancia/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/capacitancia/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/capacitancia",
+     "descripcion": "Aplica a los condensadores las reglas de combinación de los resistores: suma directa en serie y suma de recíprocos en paralelo, sin razonar qué es igual en cada caso (la carga en serie, el voltaje en paralelo).",
+     "senales": "Obtiene para dos condensadores en serie una capacitancia mayor que la de cada uno; elige la conexión en serie para «juntar más capacitancia».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se transfieren de memoria las reglas aprendidas con resistores.",
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/capacitancia/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/capacitancia/3",
+     "decision": "aprobar",
+     "justificacion": "Correcta y frecuente: aplicar a condensadores las reglas de resistores. Bien señalado qué es igual en cada conexión (carga en serie, voltaje en paralelo).",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "1/C_serie = Σ 1/C_i; C_paralelo = Σ C_i"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/fuerza-lorentz/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/fuerza-lorentz/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/fuerza-lorentz",
+     "descripcion": "Cree que la fuerza magnética sobre una carga en movimiento o sobre un conductor apunta en la dirección del campo (hacia un polo del imán), como la fuerza eléctrica, en lugar de ser perpendicular a la vez al campo y a la velocidad o a la corriente.",
+     "senales": "Dibuja la fuerza a lo largo de las líneas de campo; dice que la carga «sigue las líneas de campo» o que el alambre es atraído hacia el polo del imán.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se transfiere el modelo de la fuerza eléctrica al magnético.",
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/fuerza-lorentz/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/fuerza-lorentz/1",
+     "decision": "aprobar",
+     "justificacion": "Idea previa conocida: transferir el modelo de la fuerza eléctrica al campo magnético. La descripción de la fuerza perpendicular a v y a B es correcta, y la señal del alambre atraído al polo es real (el cobre no es ferromagnético).",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "F = qv × B ⊥ v y ⊥ B"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/fuerza-lorentz/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/fuerza-lorentz/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/fuerza-lorentz",
+     "descripcion": "Cree que un campo magnético ejerce fuerza sobre cualquier carga, aunque esté en reposo o se mueva paralela al campo, sin reconocer que la fuerza depende de la componente de la velocidad perpendicular al campo (qvB sen θ).",
+     "senales": "Predice que una carga quieta entre los polos se mueve hacia uno de ellos; calcula qvB sin el seno del ángulo; espera fuerza sobre un alambre paralelo al campo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se asocia todo campo con una fuerza sobre la carga.",
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/fuerza-lorentz/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/fuerza-lorentz/2",
+     "decision": "aprobar",
+     "justificacion": "Correcta: sin componente de la velocidad perpendicular al campo no hay fuerza magnética; las señales (carga quieta, alambre paralelo, olvido del seno) son errores reales.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "|F| = qvB sen θ"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/fuerza-lorentz/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/fuerza-lorentz/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/fuerza-lorentz",
+     "descripcion": "Cree que la fuerza magnética puede aumentar o disminuir la rapidez de una partícula (que hace trabajo sobre ella), en lugar de reconocer que, al ser siempre perpendicular a la velocidad, solo cambia su dirección.",
+     "senales": "Dice que en un ciclotrón el campo magnético acelera las partículas hasta mayor rapidez; calcula un trabajo de la fuerza magnética; espera que el radio de la órbita se achique porque la partícula «pierde energía» por el campo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se asocia fuerza con cambio de rapidez, no de dirección.",
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/fuerza-lorentz/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/fuerza-lorentz/3",
+     "decision": "aprobar",
+     "justificacion": "Correcta: la fuerza magnética sobre una carga puntual es perpendicular a v y no hace trabajo. La señal del ciclotrón es exacta (lo que acelera es el campo eléctrico entre las «D»).",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "P = F·v = 0 para F ⊥ v"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/leyes-kirchhoff/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/leyes-kirchhoff/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/leyes-kirchhoff",
+     "descripcion": "No distingue la fuerza electromotriz del voltaje entre los bornes: cree que una pila o batería entrega siempre su voltaje nominal sin importar la corriente, o que si el voltaje baja al conectar una carga es porque se descargó en ese momento, sin reconocer la caída Ir en su resistencia interna.",
+     "senales": "Usa la fem como voltaje en los bornes en cualquier circuito; atribuye la lectura menor con carga a una pila «gastada» o a un multímetro dañado; no espera que el voltaje se recupere al quitar la carga.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "El modelo de fuente ideal se aplica a fuentes reales.",
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/leyes-kirchhoff/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/leyes-kirchhoff/1",
+     "decision": "aprobar",
+     "justificacion": "Idea previa real: confundir la fem con el voltaje en los bornes. Explica bien la caída Ir y su recuperación al quitar la carga.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.8 (fila 16)",
+       "cita": "voltaje en los bornes en función de la corriente entregada"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V = ε − Ir"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/leyes-kirchhoff/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/leyes-kirchhoff/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/leyes-kirchhoff",
+     "descripcion": "Cree que una corriente negativa en la solución del sistema indica un error de planteamiento o una corriente que no existe, en lugar de entender que tiene ese valor y circula en sentido contrario al supuesto.",
+     "senales": "Borra el resultado y cambia signos hasta que todo salga positivo; dice que «esa rama no lleva corriente»; invierte el sentido de una flecha sin cambiar las ecuaciones.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "El sentido supuesto se confunde con el sentido real.",
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/leyes-kirchhoff/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/leyes-kirchhoff/2",
+     "decision": "aprobar",
+     "justificacion": "Correcta y frecuente: interpretar una corriente negativa como error en vez de sentido contrario al supuesto. Señales observables.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El signo de la solución indica el sentido respecto del supuesto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/leyes-kirchhoff/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/leyes-kirchhoff/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/leyes-kirchhoff",
+     "descripcion": "Aplica la regla de las mallas con signos fijos: suma todas las fem como positivas sin mirar si el recorrido atraviesa cada fuente de menos a más o al revés, o escribe cada caída IR con el mismo signo aunque el recorrido vaya en contra de la corriente supuesta.",
+     "senales": "Con dos fuentes opuestas en una malla escribe ε1 + ε2; todas las caídas IR de la ecuación llevan el mismo signo; sus resultados no cumplen la regla de los nudos.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Los signos se asignan por memoria, no por energía.",
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/leyes-kirchhoff/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/leyes-kirchhoff/3",
+     "decision": "aprobar",
+     "justificacion": "Correcta: asignar signos fijos a fem y caídas IR sin seguir el recorrido de la malla. Se justifica por energía, como corresponde.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Σ ΔV = 0 en la malla con el signo según el sentido del recorrido"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U10-10.5/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U10-10.5/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U10-10.5",
+      "CON:fisica/fuerza-lorentz"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "El columpio de alambre, el parlante y el motor de juguete: fuerza magnética sobre una corriente",
+     "proposito": "Comprobar la dirección de la fuerza magnética sobre un conductor con corriente con la regla de la mano derecha en un montaje tridimensional y ver que crece con la corriente; explicar con ella el movimiento del cono de un parlante; y en un motor pequeño de corriente continua relacionar el par, la corriente, el voltaje y la rapidez de giro, con el conmutador como pieza clave.",
+     "materiales": [
+      "Cuatro pilas AA y portapilas sencillos que se puedan conectar en serie (para usar 1, 2 o 3 pilas)",
+      "Tres o cuatro imanes de neodimio en forma de disco de 1 a 2 cm, apilados (o el imán de un parlante viejo)",
+      "Una brújula",
+      "30 cm de alambre de cobre desnudo calibre 20 o 22 (o esmaltado, con las puntas lijadas) y dos clips grandes desdoblados en forma de gancho, fijados con plastilina y cinta a dos libros como soportes",
+      "Un resistor de cemento de 2.2 Ω y 5 W para limitar la corriente",
+      "Un multímetro digital y cuatro cables con caimanes",
+      "Un parlante pequeño (unos 8 Ω) de un juguete o radio de pilas en desuso, con sus dos cables",
+      "Un motor pequeño de juguete de 1.5 a 3 V y, para la docente, uno desarmado que muestre el conmutador y las escobillas",
+      "Una tira de cartulina de 1 × 3 cm pegada al eje del motor y una tarjeta de cartulina fija que la tira golpee al girar",
+      "Un celular con la aplicación gratuita phyphox (experimento «Autocorrelación de audio» o «Espectro de audio»)",
+      "Regla, transportador, papel milimetrado y gafas de seguridad"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente arma el columpio: el alambre doblado en forma de U cuelga de los dos ganchos, con el tramo de abajo (unos 4 cm) horizontal y a unos 3 mm sobre la pila de imanes. El circuito es: pilas, resistor de 2.2 Ω, un gancho, el columpio y el otro gancho. Con la brújula, acercada lentamente y sin bajar de unos 10 cm (el neodimio puede invertir de forma permanente la aguja de una brújula barata), identifican el polo de la cara de arriba del imán (el extremo norte de la aguja apunta hacia el polo sur del imán) y repasan la regla de la mano derecha para F = IL × B.",
+      "2. (10 min) Cada grupo dibuja en perspectiva su montaje con el sentido de la corriente en el tramo horizontal y el del campo sobre el imán, y predice hacia dónde se moverá el columpio.",
+      "3. (15 min) Con dos pilas, cierren el circuito en pulsos de no más de 3 s y observen hacia dónde se desvía el columpio. Inviertan la corriente; luego den vuelta la pila de imanes; luego inviertan las dos cosas. Comparen cada caso con su predicción.",
+      "4. (10 min) Con el amperímetro en serie (corriente directa, escala de 10 A, punta roja en la entrada de 10 A), midan la corriente con una y con dos pilas, y con la regla detrás del columpio midan cuánto se desplaza el tramo horizontal en cada caso.",
+      "5. (10 min) Conecten el parlante a una pila durante menos de 1 s y observen si el cono sale o entra; inviertan la conexión y repitan. Respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "6. (10 min) La docente muestra el motor desarmado (bobinas, imanes, conmutador y escobillas) y explica que el par sobre una bobina es τ = NIAB sen θ.",
+      "7. (12 min) En el cuaderno, calculen el par cada 30° desde 0° hasta 360° para una bobina de 100 vueltas, 2.0 cm² de área y 0.20 A en un campo de 0.050 T (valores de ejemplo), primero sin conmutador y luego con conmutador, y grafiquen par contra ángulo. Respondan la pregunta de análisis 2.",
+      "8. (20 min) Peguen la tira de cartulina al eje y fijen la tarjeta para que la tira la golpee una vez por vuelta. Con 1, 2 y 3 pilas, midan el voltaje en el motor, la corriente (escala de 10 A) y la frecuencia del golpeteo con phyphox, que es el número de vueltas por segundo. Luego, con 2 pilas, acerquen un poco la tarjeta para que la tira roce más (más carga) y vuelvan a medir corriente y frecuencia.",
+      "9. (13 min) Hagan una tabla de vueltas por segundo y de corriente contra voltaje, con y sin carga, y respondan la pregunta de análisis 3."
+     ],
+     "seguridad": [
+      "Solo se usan pilas (4.5 V como máximo). Nada se conecta a un tomacorriente, y el parlante y el motor salen de juguetes o radios de pilas, nunca de aparatos que se conectan a la red.",
+      "El columpio y el resistor se calientan: la corriente se aplica en pulsos de no más de 3 s, y el resistor no se toca mientras está conectado. El amperímetro siempre va en serie con el resistor o el motor, nunca directo entre los bornes de las pilas.",
+      "Los imanes de neodimio pellizcan los dedos al juntarse y se quiebran si chocan: se separan deslizándolos. Se mantienen lejos de celulares, tarjetas y de personas con marcapasos, y nunca se llevan a la boca.",
+      "Con el motor girando, usen gafas, recojan el cabello y no acerquen los dedos a la tira de cartulina.",
+      "Las pilas usadas y las piezas que no sirvan se llevan a un punto de acopio de residuos electrónicos."
+     ],
+     "datos_esperados": "Columpio: con dos pilas y 2.2 Ω, la corriente es de alrededor de 1 A; el campo junto a la cara de los imanes de neodimio es de unas décimas de tesla y baja rápido con la distancia, así que la fuerza sobre el tramo horizontal es de unos pocos milinewtons y el columpio se desvía visiblemente, de algunos milímetros a uno o dos centímetros. El sentido de la desviación coincide con F = IL × B, se invierte al invertir la corriente o el imán y no cambia al invertir los dos. Con una pila, la corriente y el desplazamiento son cerca de la mitad. Parlante: el cono se mueve un poco hacia afuera o hacia adentro y se invierte al invertir la conexión. Par contra ángulo: sin conmutador, una curva seno de máximo 2.0 × 10⁻⁴ N·m que cambia de signo cada media vuelta; con conmutador, el par nunca cambia de signo. Motor sin carga: del orden de 50 a 100 vueltas por segundo con una pila, y cerca del doble y del triple con dos y tres pilas; la corriente sin carga es pequeña (unas décimas de amperio) y cambia poco con el voltaje. Con carga, la corriente sube y la rapidez baja. Si phyphox marca una frecuencia de dos a seis veces la esperada, probablemente capta el zumbido del conmutador, que suena varias veces por vuelta: comparen la lectura con la tarjeta y sin ella y usen la frecuencia que aparece solo con la tarjeta. La rapidez de giro la fija sobre todo el voltaje; la corriente crece cuando el motor necesita más par. Esto se explica con la fuerza contraelectromotriz que se estudia en la inducción.",
+     "analisis": [
+      "(Paso 5) ¿Coincidió la dirección de la desviación del columpio con la regla de la mano derecha en los cuatro casos? ¿Qué pasó con el desplazamiento al duplicar la corriente? ¿Cómo explica la misma fuerza el movimiento del cono del parlante?",
+      "(Paso 7) En su gráfica sin conmutador, ¿en qué ángulos el par es nulo y en cuáles cambia de sentido? ¿Qué cambia en la gráfica con conmutador y por qué eso permite el giro continuo?",
+      "(Paso 9) Con su tabla, ¿la rapidez de giro depende más del voltaje o de la corriente? ¿Por qué sube la corriente cuando el motor tiene que vencer más roce?",
+      "Tarea: Expliquen con F = qv × B por qué un campo magnético no cambia la rapidez de una partícula cargada, mientras que un campo eléctrico sí puede hacerlo, y den un ejemplo de cada uno."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin imanes de neodimio: el imán de un parlante viejo sirve, pero su campo es menor; usen tres pilas y alarguen el tramo horizontal. Sin phyphox: comparen la rapidez por el tono del golpeteo (más agudo, más vueltas por segundo); con un motor con caja reductora, las vueltas del eje de salida se pueden contar en un video. Sin laboratorio ni internet: datos de un grupo de ejemplo. Columpio: con una pila, 0.55 A y 4 mm de desplazamiento; con dos pilas, 1.08 A y 8 mm. Motor sin carga: con una pila, 1.45 V, 0.18 A y 62 vueltas por segundo; con dos pilas, 2.85 V, 0.21 A y 128 vueltas por segundo; con tres pilas, 4.20 V, 0.24 A y 190 vueltas por segundo. Motor con dos pilas y más carga: 2.70 V, 0.55 A y 70 vueltas por segundo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-lorentz",
+     "nombre": "Fuerza magnética sobre cargas en movimiento",
+     "definicion": "Fuerza de Lorentz F = qv×B; produce trayectorias circulares (ciclotrón, espectrómetro de masas).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U10-10.5",
+     "grado": 11,
+     "indicador": "4.2. • Calcula el par de torsión sobre una bobina en un campo magnético y explica el papel del conmutador en el giro continuo de un motor. • Calcula la fuerza magnética sobre una carga en movimiento y determina su dirección con la regla de la mano derecha en situaciones tridimensionales. • Calcula el radio y el período de la trayectoria circular de una partícula cargada en un campo magnético y los compara con el movimiento en un campo eléctrico. • Calcula la fuerza magnética sobre un conductor rectilíneo con corriente y explica con ella el funcionamiento de un altavoz.",
+     "evidencia": "Gráfica par-ángulo de una espira y tabla de velocidad de giro del motor según el número de pilas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U10-10.5/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U10-10.5/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (10 min) La docente arma el columpio: el alambre doblado en forma de U cuelga de los dos ganchos, con el tramo de abajo (unos 4 cm) horizontal y a unos 3 mm sobre la pila de imanes. El circuito es: pilas, resistor de 2.2 Ω, un gancho, el columpio y el otro gancho. Con la brújula, acercada lentamente y sin bajar de unos 10 cm (el neodimio puede invertir de forma permanente la aguja de una brújula barata), identifican el polo de la cara de arriba del imán (el extremo norte de la aguja apunta hacia el polo sur del imán) y repasan la regla de la mano derecha para F = IL × B.",
+       "2. (10 min) Cada grupo dibuja en perspectiva su montaje con el sentido de la corriente en el tramo horizontal y el del campo sobre el imán, y predice hacia dónde se moverá el columpio.",
+       "3. (15 min) Con dos pilas, cierren el circuito en pulsos de no más de 3 s y observen hacia dónde se desvía el columpio. Inviertan la corriente; luego den vuelta la pila de imanes; luego inviertan las dos cosas. Comparen cada caso con su predicción.",
+       "4. (10 min) Con el amperímetro en serie (corriente directa, escala de 10 A, punta roja en la entrada de 10 A), midan la corriente con una y con dos pilas, y con la regla detrás del columpio midan cuánto se desplaza el tramo horizontal en cada caso.",
+       "5. (10 min) Conecten el parlante a una pila durante menos de 1 s y observen si el cono sale o entra; inviertan la conexión y repitan. Respondan la pregunta de análisis 1.",
+       "Sesión 2 (55 min)",
+       "6. (10 min) La docente muestra el motor desarmado (bobinas, imanes, conmutador y escobillas) y explica que el par sobre una bobina es τ = NIAB sen θ.",
+       "7. (12 min) En el cuaderno, calculen el par cada 30° desde 0° hasta 360° para una bobina de 100 vueltas, 2.0 cm² de área y 0.20 A en un campo de 0.050 T (valores de ejemplo), primero sin conmutador y luego con conmutador, y grafiquen par contra ángulo. Respondan la pregunta de análisis 2.",
+       "8. (20 min) Peguen la tira de cartulina al eje y fijen la tarjeta para que la tira la golpee una vez por vuelta. Con 1, 2 y 3 pilas, midan el voltaje en el motor, la corriente (escala de 10 A) y la frecuencia del golpeteo con phyphox, que es el número de vueltas por segundo. Luego, con 2 pilas, acerquen un poco la tarjeta para que la tira roce más (más carga) y vuelvan a medir corriente y frecuencia.",
+       "9. (13 min) Hagan una tabla de vueltas por segundo y de corriente contra voltaje, con y sin carga, y respondan la pregunta de análisis 3."
+      ],
+      "datos_esperados": "Columpio: con dos pilas y 2.2 Ω, la corriente es de alrededor de 1 A; el campo junto a la cara de los imanes de neodimio es de unas décimas de tesla y baja rápido con la distancia, así que la fuerza sobre el tramo horizontal es de unos pocos milinewtons y el columpio se desvía visiblemente, de algunos milímetros a uno o dos centímetros. El sentido de la desviación coincide con F = IL × B, se invierte al invertir la corriente o el imán y no cambia al invertir los dos. Con una pila, la corriente y el desplazamiento son cerca de la mitad. Parlante: el cono se mueve un poco hacia afuera o hacia adentro y se invierte al invertir la conexión. Par contra ángulo: sin conmutador, una curva seno de máximo 2.0 × 10⁻⁴ N·m que cambia de signo cada media vuelta; con conmutador, el par nunca cambia de signo. Motor sin carga: del orden de 50 a 100 vueltas por segundo con una pila, y cerca del doble y del triple con dos y tres pilas; la corriente sin carga es pequeña (unas décimas de amperio) y cambia poco con el voltaje. Con carga, la corriente sube y la rapidez baja. Si phyphox marca una frecuencia de dos a seis veces la esperada, probablemente capta el zumbido del conmutador, que suena varias veces por vuelta: comparen la lectura con la tarjeta y sin ella y usen la frecuencia que aparece solo con la tarjeta. La rapidez de giro la fija sobre todo el voltaje; la corriente crece cuando el motor necesita más par. Esto se explica con la fuerza contraelectromotriz que se estudia en la inducción."
+     },
+     "justificacion": "Números verificados: 2 pilas con 2.2 Ω dan ≈ 1.1 A (2.7 W, bajo los 5 W); fuerza de unos mN; par máximo 100 × 0.20 × 2e-4 × 0.05 = 2.0e-4 N·m; datos del motor coherentes con V = kω + IR (R ≈ 2.5 Ω). Sesiones de 55 min. Agrego dos fallos reales: el neodimio invierte brújulas y phyphox puede medir el armónico del conmutador.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U10-10.5 (fila 19)",
+       "cita": "Evidencia: gráfica par-ángulo y tabla de velocidad de giro según el número de pilas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Motor de imán permanente: ω ≈ (V − IR)/k; la corriente crece con el par de carga"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U9-9.11/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U9-9.11/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.11"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.11",
+      "CON:fisica/capacitancia"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Un condensador de papel aluminio y la descarga de un circuito RC",
+     "proposito": "Construir un condensador de placas paralelas con papel aluminio, medir cómo cambia su capacitancia con la separación y estimar la constante dieléctrica del papel y de un plástico; medir la curva de descarga de un circuito RC, obtener su constante de tiempo y compararla con el producto RC; y comprobar las reglas de combinación en serie y en paralelo.",
+     "materiales": [
+      "Dos láminas de papel aluminio de 20 × 20 cm, cada una con una lengüeta de 2 × 4 cm para el caimán (se pueden pegar sobre cartulina con pegamento en barra)",
+      "Hojas de papel bond tamaño carta y un protector plástico de hojas (o láminas de acetato), cortado en láminas sencillas",
+      "Un libro grueso y pesado para prensar las láminas",
+      "Un multímetro digital con función de capacitancia (capacímetro) y otro, o el mismo, para medir voltaje",
+      "Una regla o un vernier para medir el grosor de un paquete de 100 hojas",
+      "Un condensador electrolítico de 1000 µF y 16 V o más, uno de 47 µF y otro de 100 µF (de 16 V o más)",
+      "Resistores de 100 Ω, 22 kΩ y 47 kΩ (1/4 W)",
+      "Cuatro pilas AA y un portapilas para cuatro, cables con caimanes y el cronómetro de un celular",
+      "Gafas de seguridad para la sesión 2, papel milimetrado o computadora con hoja de cálculo"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente muestra el capacímetro y cómo descargar un condensador antes de medirlo (tocando sus terminales con un resistor de 100 Ω). Cada grupo mide el grosor de un paquete de 100 hojas de papel y de 10 láminas de plástico, y calcula el grosor de una.",
+      "2. (10 min) Armen el condensador: una lámina de aluminio, una hoja de papel que sobresalga por todos los lados y la otra lámina encima, con las lengüetas hacia lados opuestos, y el libro encima para prensar. Midan primero la lectura del capacímetro con los cables sueltos (capacitancia de los cables), para restarla.",
+      "3. (15 min) Midan la capacitancia con 1, 2, 3 y 4 hojas de papel entre las láminas, siempre con el libro encima, y anoten la separación d en cada caso.",
+      "4. (10 min) Repitan con 1 y 2 láminas de plástico.",
+      "5. (10 min) Grafiquen C contra 1/d para el papel, obtengan la pendiente y calculen la constante dieléctrica con κ = pendiente/(ε₀A), con ε₀ de la tabla de referencia (aproximado 8.85 × 10⁻¹² F/m). Estimen también la del plástico y respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "6. (10 min) La docente muestra la polaridad del electrolítico (la franja con el signo menos va al negativo de las pilas) y el montaje: el condensador de 1000 µF se carga con las cuatro pilas a través del resistor de 100 Ω durante 5 s; luego se retiran las pilas y quedan conectados al condensador el resistor de descarga y el voltímetro (corriente directa, escala de 20 V).",
+      "7. (20 min) Ensayo con 47 kΩ: carguen, retiren las pilas, arranquen el cronómetro y anoten el voltaje cada 10 s durante 150 s (una persona lee, otra marca el tiempo, otra escribe; también pueden grabar en video la pantalla junto al cronómetro). Repitan con 22 kΩ, leyendo cada 5 s durante 70 s.",
+      "8. (15 min) Grafiquen V contra t y ln V contra t para los dos ensayos, obtengan τ con la pendiente de la recta (−1/τ) y compárenlo con RC. Calculen la capacitancia real del condensador y respondan la pregunta de análisis 2.",
+      "9. (10 min) Con el capacímetro midan los condensadores de 47 µF y de 100 µF, luego conectados en paralelo y luego en serie (el negativo de uno unido al positivo del otro), siempre con la punta roja en el terminal positivo. Comparen con lo calculado y respondan la pregunta de análisis 3."
+     ],
+     "seguridad": [
+      "Solo se usan pilas (6 V como máximo). Los electrolíticos deben ser de 16 V o más y conectarse con la polaridad correcta: invertidos pueden calentarse, inflarse o reventar. Usen gafas en la sesión 2.",
+      "No usen condensadores sacados de aparatos (televisores, microondas, fuentes de computadora, flash de cámaras): pueden guardar una carga peligrosa aunque estén desconectados. Nadie abre aparatos para sacar piezas.",
+      "Descarguen cada condensador con el resistor de 100 Ω antes de medirlo o guardarlo; no unan sus terminales con un cable directo.",
+      "Los bordes del papel aluminio cortan: manipúlenlo con cuidado. El condensador casero no se conecta a pilas ni a ninguna fuente: solo al capacímetro.",
+      "Pilas y componentes dañados se guardan para un punto de acopio de residuos electrónicos."
+     ],
+     "datos_esperados": "Sesión 1: con una hoja de papel bond (unos 0.1 mm) y 0.04 m² de área, la capacitancia es de unos pocos nanofaradios (del orden de 5 a 10 nF) y baja aproximadamente como 1/d al agregar hojas: con 4 hojas, cerca de la cuarta parte. La capacitancia de los cables suele ser de decenas de picofaradios. La constante dieléctrica estimada suele salir menor que la de la tabla de referencia, porque entre las láminas queda aire atrapado y la presión no es uniforme; el papel y el plástico dan constantes distintas, y esa diferencia es la que se discute. Sesión 2: con 47 kΩ, τ ≈ 47 s si la capacitancia fuera exactamente 1000 µF; como los electrolíticos tienen una tolerancia de alrededor de ±20 %, un τ entre 38 y 56 s es razonable. El voltaje baja al 37 % del inicial en un tiempo τ y la gráfica de ln V contra t es una recta. Con 22 kΩ, τ es cerca de la mitad. El voltímetro, con unos 10 MΩ, cambia τ en menos del 1 %. Combinaciones: en paralelo ≈ 147 µF y en serie ≈ 32 µF, dentro de la tolerancia de los condensadores.",
+     "analisis": [
+      "(Paso 5) ¿La gráfica de C contra 1/d es una recta? ¿Qué constante dieléctrica estiman para el papel y para el plástico, cómo se comparan con la tabla de referencia y qué fuentes de error explican la diferencia?",
+      "(Paso 8) ¿Cuánto vale τ en cada ensayo y cómo se compara con RC? ¿Por qué la gráfica de ln V contra t es una recta?",
+      "(Paso 9) ¿Coinciden las capacitancias equivalentes medidas con las calculadas? ¿En qué se diferencian estas reglas de las de los resistores?",
+      "Tarea: Con sus datos, ¿qué dieléctrico elegirían para un condensador compacto de alta capacitancia y por qué?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin capacímetro: la sesión 1 se trabaja con los datos de ejemplo de abajo, y las combinaciones de la sesión 2 se comprueban con el mismo método RC usando dos condensadores de 1000 µF y el resistor de 47 kΩ: en paralelo, τ se duplica; en serie, se reduce a la mitad. Sin laboratorio ni internet: datos de un grupo de ejemplo, con láminas de 0.040 m². Papel de 0.10 mm por hoja: 6.2 nF con 1 hoja, 3.2 nF con 2, 2.1 nF con 3 y 1.6 nF con 4. Plástico de 0.09 mm por lámina: 9.6 nF con 1 y 5.0 nF con 2. Descarga de un condensador de 1000 µF nominales con 47 kΩ, cada 10 s desde 0 s: 6.00, 4.80, 3.83, 3.06, 2.45, 1.96, 1.57, 1.25, 1.00, 0.80, 0.64, 0.51 y 0.41 V. Con internet: la simulación gratuita «Laboratorio de capacitores: básico» de PhET permite cambiar el área y la separación de las placas y ver la capacitancia y la carga; no incluye dieléctricos, así que la constante dieléctrica se trabaja con los datos de ejemplo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/capacitancia",
+     "nombre": "Capacitancia y condensadores",
+     "definicion": "Capacidad de un condensador para almacenar carga y energía; combinaciones y carga y descarga en circuitos RC.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.11",
+     "grado": 11,
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC.",
+     "evidencia": "Informe de laboratorio con tabla de capacitancias medidas y constantes dieléctricas estimadas para dos materiales"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U9-9.11/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U9-9.11/1",
+     "decision": "aprobar",
+     "justificacion": "Verificado: 0.04 m² y 0.1 mm dan κ × 3.5 nF; los datos de ejemplo (6.2 nF) implican κ efectivo ≈ 1.8, menor que la tabla por aire atrapado, como se advierte; el plástico ≈ 2.4. La descarga de ejemplo da τ ≈ 44.7 s (≈ 950 µF, dentro de ±20 %). El capacímetro solo mide nF y ≤ 147 µF; ε₀ remite a la tabla. Sesiones de 55 min.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+       "cita": "capacitancia, dieléctricos, circuito RC y combinaciones"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "C = κε₀A/d; 47·100/147 ≈ 32 µF"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U9-9.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U9-9.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.4",
+      "CON:fisica/potencia-electrica-joule"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Efecto Joule en un vaso con agua: potencia eléctrica, calor y kilowatt hora",
+     "proposito": "Medir la potencia que disipa un resistor alimentado con pilas (P = VI) y compararla con el calor que gana el agua donde está sumergido; comprobar que, a igual resistencia, la potencia crece con el cuadrado del voltaje; y pasar la energía de joules a kilowatt hora para conectar el cálculo con el consumo de los aparatos del hogar.",
+     "materiales": [
+      "Cuatro pilas AA alcalinas nuevas y un portapilas para cuatro (o portapilas sencillos conectados en serie, para poder usar tres o cuatro)",
+      "Un resistor de cemento (cerámico) de 10 Ω y 5 W, de tienda de electrónica",
+      "Dos multímetros digitales (uno como voltímetro y otro como amperímetro); si solo hay uno, se mide por turnos",
+      "Cuatro cables con caimanes",
+      "Un vaso de duroport con tapa perforada (o un vaso plástico dentro de otro con papel arrugado entre ambos)",
+      "100 mL de agua purificada a temperatura ambiente por grupo y una jeringa de 60 mL o una probeta para medirla",
+      "Termómetro digital de cocina o de laboratorio de alcohol (no de mercurio)",
+      "Cronómetro del celular y calculadora"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente muestra el montaje y las escalas del multímetro: voltaje en corriente directa, escala de 20 V, con el voltímetro en paralelo con el resistor; corriente en corriente directa, escala de 10 A, con la punta roja en la entrada de 10 A y el amperímetro en serie (la corriente, cerca de 0.5 A, supera la escala de 200 mA). Cada grupo predice con P = V²/R la potencia con 6.0 V y con 4.5 V.",
+      "2. (5 min) Midan 50 mL de agua con la jeringa (su masa es de casi 50 g, con la densidad del agua de la tabla de referencia, aproximada 1 g/mL), pónganla en el vaso, sumerjan por completo el resistor con sus cables hacia afuera y anoten la temperatura inicial.",
+      "3. (14 min) Ensayo 1: conecten las cuatro pilas y arranquen el cronómetro. Durante 10 min revuelvan suavemente con el termómetro, anoten la temperatura cada 2 min y el voltaje y la corriente en los minutos 1, 5 y 9. Desconecten al minuto 10 y anoten la temperatura más alta que alcanza el agua en el minuto siguiente.",
+      "4. (14 min) Ensayo 2: con el circuito desconectado, saquen el resistor tomándolo por los cables, cambien el agua por 50 mL nuevos a temperatura ambiente, esperen 1 min a que el resistor tome esa temperatura y repitan el ensayo con tres pilas.",
+      "5. (12 min) Para cada ensayo calculen P = VI con los valores promedio, la energía eléctrica E = Pt en joules y en kWh (1 kWh = 3 600 000 J) y el calor que ganó el agua, Q = mcΔT, con el calor específico del agua de la tabla de referencia (aproximado 4.18 J/(g·°C)). Respondan en grupo las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "Solo se usan pilas (6 V como máximo). Nada de este montaje se conecta a un tomacorriente: un resistor o un calentador sumergido conectado a 120 V puede electrocutar.",
+      "El resistor nunca se conecta fuera del agua: con unos 3 W se calienta en segundos y puede quemar. Se desconecta antes de sacarlo y se toma por los cables.",
+      "El amperímetro va en la escala de 10 A y siempre en serie con el resistor; nunca se conecta directo entre los bornes de las pilas.",
+      "Si las pilas se calientan mucho, desconecten. El agua se mantiene lejos de los multímetros; lo derramado se seca de inmediato.",
+      "Las pilas usadas se guardan para un punto de reciclaje; no se tiran a la basura común ni se queman."
+     ],
+     "datos_esperados": "Ensayo 1: con cuatro pilas nuevas, el voltaje en el resistor queda entre unos 5.0 y 5.6 V (las pilas bajan su voltaje al entregar corriente) y la corriente entre 0.50 y 0.56 A, así que P ≈ 2.5 a 3 W. En 600 s se entregan unos 1500 a 1800 J (cerca de 0.0005 kWh) y el agua sube unos 6 a 8 °C. Ensayo 2: con tres pilas, unos 4 V y 0.4 A, P ≈ 1.6 W y una subida de unos 3 a 5 °C. La razón entre las potencias se acerca a (V₁/V₂)², cerca de 1.7 a 1.9. El calor que gana el agua es del orden del 75 al 90 % de la energía eléctrica: en el resistor toda la energía eléctrica se convierte en calor, pero una parte calienta el vaso, el propio resistor y el aire. El voltaje baja unos pocos por ciento durante cada ensayo.",
+     "analisis": [
+      "(Paso 5) ¿Coincide la razón entre las potencias de los dos ensayos con (V₁/V₂)²? ¿Por qué el calor que ganó el agua es algo menor que la energía eléctrica, si en el resistor toda esa energía se convierte en calor?",
+      "(Paso 5) Expresen en kWh la energía del ensayo 1. ¿Cuántas horas tendría que funcionar este resistor para consumir 1 kWh? ¿Y una plancha de 1000 W?",
+      "Tarea: Armen una tabla de consumo mensual de cinco aparatos del hogar (potencia de la etiqueta, horas de uso al día y kWh al mes) y propongan dos cambios de hábito que reduzcan el consumo. Si no pueden o no desean usar datos de su casa, usen esta tabla de ejemplo: refrigeradora de 200 W con el compresor funcionando 8 h al día, televisor de 100 W 4 h al día, ventilador de 50 W 8 h al día, cinco focos LED de 10 W 5 h al día y licuadora de 400 W 10 min al día. Las tablas no se comparan entre familias."
+     ],
+     "duracion_min": 55,
+     "variantes": "Con un solo multímetro: midan primero el voltaje y luego la corriente en cada ensayo, sin desarmar el resto del circuito. Sin resistor de 5 W: dos resistores de 22 Ω y 2 W en paralelo (unos 11 Ω) dan un resultado parecido. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo, con 50 g de agua: ensayo 1, V = 5.4 V, I = 0.53 A y temperatura de 26.0 °C a 32.8 °C en 10 min; ensayo 2, V = 4.1 V, I = 0.40 A y temperatura de 26.0 °C a 29.9 °C en 10 min.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencia-electrica-joule",
+     "nombre": "Potencia eléctrica y efecto Joule",
+     "definicion": "Energía eléctrica transformada por unidad de tiempo, P = VI; parte se disipa como calor; consumo en kWh.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.4",
+     "grado": 11,
+     "indicador": "3.4. • Calcula la potencia disipada en un resistor y el consumo mensual de energía de aparatos domésticos en kilowatt hora. • Estima con la ley de Ohm la corriente que atravesaría el cuerpo humano en distintas condiciones y justifica las medidas de seguridad eléctrica.",
+     "evidencia": "Tabla de consumo mensual por aparato del hogar con cálculos de potencia y energía en kilowatt hora"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U9-9.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U9-9.4/1",
+     "decision": "aprobar",
+     "justificacion": "Verificado con los datos de ejemplo: 5.4 × 0.53 = 2.86 W, 1717 J; el agua (50 g, ΔT 6.8 °C) gana 1421 J, el 83 %; ensayo 2 también 83 %; la razón de potencias 1.75 coincide con (5.4/4.1)² = 1.73. El efecto (4–7 °C) supera la resolución del termómetro. Solo pilas, resistor de 5 W a ≈ 3 W, constantes remitidas a la tabla. Suma 55 min.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.4 (fila 17)",
+       "cita": "Calcula la potencia disipada en un resistor y la energía en kilowatt hora"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Q = mcΔT; E = VIt"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U9-9.5/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U9-9.5/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.5",
+      "CON:fisica/circuitos-serie-paralelo"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Circuito mixto de cuatro resistores: cálculo contra medición y el voltímetro que cambia lo que mide",
+     "proposito": "Resolver por reducción un circuito mixto de cuatro resistores, medir con el multímetro la corriente, el voltaje y la potencia de cada uno y contrastar lo calculado con lo medido; y comprobar el efecto de carga del instrumento: un voltímetro con resistencia interna finita cambia el voltaje que mide cuando el circuito tiene resistencias muy grandes.",
+     "materiales": [
+      "Cuatro pilas AA nuevas y un portapilas para cuatro",
+      "Resistores de 1/4 W: dos de 100 Ω, uno de 150 Ω y uno de 220 Ω",
+      "Dos resistores de 10 MΩ (1/4 W)",
+      "Uno o dos multímetros digitales (con el manual o la ficha que indique su resistencia de entrada como voltímetro)",
+      "Una protoboard pequeña o seis cables con caimanes",
+      "Calculadora o computadora con hoja de cálculo"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (8 min) La docente muestra las escalas: voltaje en corriente directa, escala de 20 V, con el voltímetro en paralelo con el elemento; corriente en corriente directa, escala de 200 mA, con la punta roja en la entrada de mA y el amperímetro en serie (se abre el circuito para intercalarlo). El amperímetro nunca se conecta entre los bornes de las pilas. Lean en el manual la resistencia de entrada del voltímetro (en la mayoría de multímetros digitales es de unos 10 MΩ).",
+      "2. (12 min) Dibujen el circuito: R1 = 100 Ω en serie con dos ramas en paralelo, una con R2 = 220 Ω y otra con R3 = 100 Ω y R4 = 150 Ω en serie. Antes de calcular, cada persona escribe cuál resistor cree que disipará más potencia. Midan el voltaje de las pilas sin carga y, repartiendo el trabajo en el grupo, calculen la resistencia equivalente, la corriente total y el voltaje, la corriente y la potencia de cada resistor.",
+      "3. (20 min) Armen el circuito. Midan el voltaje en cada resistor y en las pilas, y la corriente total, la de la rama de R2 y la de la rama de R3 y R4. Anoten todo en una tabla junto a lo calculado y obtengan la potencia medida de cada resistor con P = VI.",
+      "4. (8 min) Efecto de carga: desarmen el circuito y conecten a las pilas los dos resistores de 10 MΩ en serie. Midan el voltaje en las pilas, en uno de los resistores y luego en el otro, con las puntas fijas con caimanes y sin tocar con los dedos las terminales: el cuerpo, de cientos de kiloohmios a unos megaohmios, queda en paralelo y cambia la lectura.",
+      "5. (7 min) Calculen la diferencia porcentual entre lo calculado y lo medido en cada resistor y respondan en grupo las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "Solo se usan pilas (6 V como máximo). Nunca se conectan cables, resistores ni el multímetro a un tomacorriente.",
+      "El amperímetro siempre va en serie con al menos un resistor: si se conecta directo a las pilas, se quema su fusible y los cables se calientan.",
+      "Si un resistor se calienta o huele a quemado, hay un error de conexión: desconecten las pilas antes de tocarlo.",
+      "Las pilas usadas se guardan para un punto de reciclaje; no se tiran a la basura común ni se queman."
+     ],
+     "datos_esperados": "Con 6.0 V: resistencia equivalente ≈ 217 Ω y corriente total ≈ 27.6 mA; R1 tiene ≈ 2.76 V y el grupo en paralelo ≈ 3.24 V; por R2 pasan ≈ 14.7 mA y por la rama de R3 y R4 ≈ 12.9 mA (R3 ≈ 1.29 V, R4 ≈ 1.94 V). Potencias: R1 ≈ 76 mW (la mayor, porque por ella pasa toda la corriente), R2 ≈ 48 mW, R4 ≈ 25 mW y R3 ≈ 17 mW. Con pilas nuevas el voltaje suele ser algo mayor, cerca de 6.2 V, y todo escala en proporción. Lo medido debe quedar dentro de un 5 % de lo calculado con el voltaje medido de las pilas (los resistores tienen ±5 % de tolerancia y el amperímetro agrega unos pocos ohmios). La corriente total es la suma de las corrientes de las ramas y V(R1) + V(paralelo) da el voltaje de las pilas. Divisor de 10 MΩ: aunque cada resistor debería tener la mitad del voltaje de las pilas (≈ 3 V), el voltímetro marca cerca de 2 V en cada uno, porque sus 10 MΩ quedan en paralelo con el resistor y forman 5 MΩ; las dos lecturas suman unos 4 V, no 6 V. En el circuito de cientos de ohmios ese efecto es menor que una parte en diez mil.",
+     "analisis": [
+      "(Paso 5) ¿Qué tan cerca están lo calculado y lo medido en cada resistor? ¿Se cumple que la corriente total es la suma de las corrientes de las ramas y que los voltajes de R1 y del paralelo suman el de las pilas? ¿Acertaron en cuál resistor disipa más potencia?",
+      "(Paso 5) En el divisor de 10 MΩ, ¿por qué el voltímetro marca cerca de 2 V y no 3 V, y por qué las dos lecturas no suman el voltaje de las pilas? Calculen la resistencia de 10 MΩ en paralelo con el voltímetro y expliquen por qué ese efecto no se notó en el circuito mixto.",
+      "Tarea: Predigan con cálculos cómo cambia la potencia de R1, R3 y R4 si se desconecta R2, y expliquen por qué los aparatos de una casa se conectan en paralelo y no en serie."
+     ],
+     "duracion_min": 55,
+     "variantes": "Con un solo multímetro: midan los voltajes primero y las corrientes después, abriendo una rama a la vez. Sin resistores de 10 MΩ: con dos de 1 MΩ el voltímetro marca cerca de 2.86 V en lugar de 3 V; el efecto (unos 5 %) se parece a la tolerancia de los resistores, así que conviene pedir resistores de 1 % o usar los datos de ejemplo. Sin laboratorio ni internet: datos de un grupo de ejemplo con pilas de 6.2 V: R1, 2.83 V; R2, 3.33 V; R3, 1.33 V; R4, 2.00 V; corriente total 28.4 mA, rama de R2 15.1 mA y rama de R3 y R4 13.3 mA; divisor de 10 MΩ, 2.07 V en cada resistor. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET permite armar el circuito mixto con voltímetro y amperímetro y verificar los cálculos; sus instrumentos son ideales, así que el efecto de carga se trabaja con el montaje real o con los datos de ejemplo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/circuitos-serie-paralelo",
+     "nombre": "Circuitos en serie y en paralelo",
+     "definicion": "Formas de conectar componentes: un solo camino (serie) o varias ramas (paralelo), con diagramas y efectos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.5",
+     "grado": 11,
+     "indicador": "3.2. • Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias. • Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones. • Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma. • Conecta correctamente un amperímetro y un voltímetro en un circuito y explica cómo su resistencia interna afecta la medición.",
+     "evidencia": "Hoja de resolución paso a paso de un circuito mixto con tabla de corriente, voltaje y potencia por resistencia"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U9-9.5/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U9-9.5/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (8 min) La docente muestra las escalas: voltaje en corriente directa, escala de 20 V, con el voltímetro en paralelo con el elemento; corriente en corriente directa, escala de 200 mA, con la punta roja en la entrada de mA y el amperímetro en serie (se abre el circuito para intercalarlo). El amperímetro nunca se conecta entre los bornes de las pilas. Lean en el manual la resistencia de entrada del voltímetro (en la mayoría de multímetros digitales es de unos 10 MΩ).",
+       "2. (12 min) Dibujen el circuito: R1 = 100 Ω en serie con dos ramas en paralelo, una con R2 = 220 Ω y otra con R3 = 100 Ω y R4 = 150 Ω en serie. Antes de calcular, cada persona escribe cuál resistor cree que disipará más potencia. Midan el voltaje de las pilas sin carga y, repartiendo el trabajo en el grupo, calculen la resistencia equivalente, la corriente total y el voltaje, la corriente y la potencia de cada resistor.",
+       "3. (20 min) Armen el circuito. Midan el voltaje en cada resistor y en las pilas, y la corriente total, la de la rama de R2 y la de la rama de R3 y R4. Anoten todo en una tabla junto a lo calculado y obtengan la potencia medida de cada resistor con P = VI.",
+       "4. (8 min) Efecto de carga: desarmen el circuito y conecten a las pilas los dos resistores de 10 MΩ en serie. Midan el voltaje en las pilas, en uno de los resistores y luego en el otro, con las puntas fijas con caimanes y sin tocar con los dedos las terminales: el cuerpo, de cientos de kiloohmios a unos megaohmios, queda en paralelo y cambia la lectura.",
+       "5. (7 min) Calculen la diferencia porcentual entre lo calculado y lo medido en cada resistor y respondan en grupo las preguntas de análisis 1 y 2."
+      ]
+     },
+     "justificacion": "Recalculado: R_eq ≈ 217 Ω, 27.6 mA, potencias 76, 48, 25 y 17 mW; divisor 10 MΩ ∥ 10 MΩ da 2.0 V por resistor y 2.86 V con 1 MΩ. Datos de ejemplo coherentes a 6.2 V. Agrego un fallo real: tocar las terminales de 10 MΩ con los dedos pone el cuerpo en paralelo y falsea el efecto que se quiere medir.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.5 (fila 15)",
+       "cita": "explica cómo su resistencia interna afecta la medición"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "10 MΩ ∥ 10 MΩ = 5 MΩ ⇒ V = 6 × 5/15 = 2 V"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U9-9.8/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U9-9.8/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U9-9.8"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U9-9.8",
+      "CON:fisica/leyes-kirchhoff"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "La caja con pilas: fem y resistencia interna de una fuente real, y un circuito de dos mallas resuelto y medido",
+     "proposito": "Obtener la fuerza electromotriz y la resistencia interna de una fuente real a partir de la gráfica del voltaje en sus bornes contra la corriente; y plantear con las reglas de los nudos y de las mallas un circuito de dos mallas con dos fuentes, resolver el sistema de ecuaciones y verificar las corrientes en el montaje, también al invertir una de las fuentes.",
+     "materiales": [
+      "Ocho pilas AA nuevas (dos van dentro de la caja de la docente), un portapilas para cuatro y uno para dos",
+      "Una «fuente real» por grupo, preparada por la docente: un portapilas para dos pilas con un resistor de 10 Ω (1/2 W) en serie, dentro de una cajita de cartón de la que solo salen dos cables con caimanes",
+      "Resistores de 1/2 W: 22 Ω, 47 Ω, 100 Ω y dos de 220 Ω",
+      "Uno o dos multímetros digitales",
+      "Seis cables con caimanes o una protoboard pequeña",
+      "Papel milimetrado o computadora con hoja de cálculo, y calculadora o GeoGebra (vista CAS) para el sistema de ecuaciones"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente presenta el modelo de fuente real, V = ε − Ir, y las escalas: voltaje en corriente directa, escala de 20 V, en paralelo con los bornes; corriente en corriente directa, escala de 200 mA, con la punta roja en la entrada de mA y en serie con la carga. Entrega a cada grupo una caja cerrada.",
+      "2. (5 min) Midan el voltaje entre los caimanes de la caja sin nada conectado y anótenlo.",
+      "3. (20 min) Conecten a la caja, una por una, las cargas de 220 Ω, 100 Ω, 47 Ω y 22 Ω, en serie con el amperímetro. En cada caso midan la corriente y el voltaje entre los caimanes de la caja, y desconecten en menos de 30 s. Al final repitan la medición sin carga.",
+      "4. (12 min) Grafiquen V contra I, tracen la recta que mejor se ajusta y obtengan la resistencia interna con la pendiente y la fem con el corte en el eje del voltaje. Respondan la pregunta de análisis 1.",
+      "5. (8 min) Midan una sola pila AA nueva en la escala de 2 V, sin carga y con la carga de 22 Ω, y estimen su resistencia interna. Abran la caja, comparen su resultado con el resistor de 10 Ω que estaba escondido y comenten por qué se usó la caja.",
+      "Sesión 2 (55 min)",
+      "6. (10 min) Midan la fem del portapilas de cuatro y del de dos. Dibujen el circuito: dos nudos, arriba y abajo, unidos por tres ramas (izquierda: cuatro pilas y 220 Ω; centro: 100 Ω; derecha: dos pilas y 220 Ω), con el borne positivo de los dos portapilas hacia el nudo de arriba. Marquen un sentido supuesto para cada corriente y escriban la ecuación del nudo y las de las dos mallas.",
+      "7. (10 min) Resuelvan el sistema con las fem medidas para obtener las tres corrientes y el voltaje entre los nudos.",
+      "8. (15 min) Armen el circuito, midan la corriente de cada rama (intercalando el amperímetro en una rama a la vez) y el voltaje entre los nudos, y compárenlos con lo calculado.",
+      "9. (10 min) Escriban de nuevo las ecuaciones con el portapilas de dos pilas invertido (borne positivo hacia el nudo de abajo) y predigan las corrientes. Luego inviértanlo en el montaje y midan.",
+      "10. (10 min) Comparen predicciones y mediciones de los dos montajes y respondan en grupo las preguntas de análisis 2 y 3."
+     ],
+     "seguridad": [
+      "Solo se usan pilas (6 V como máximo). Nunca se conecta nada a un tomacorriente.",
+      "El amperímetro siempre va en serie con una carga o un resistor; nunca entre los bornes de las pilas ni de la caja.",
+      "Las cargas se conectan a la caja solo el tiempo de la lectura: los resistores pequeños se calientan si quedan conectados.",
+      "Los dos montajes del circuito de dos mallas están elegidos para que ninguna pila reciba corriente en sentido contrario. No cambien los valores de los resistores sin consultar: una pila forzada a recibir corriente puede calentarse o derramarse.",
+      "Las pilas usadas se guardan para un punto de reciclaje; no se tiran a la basura común ni se queman."
+     ],
+     "datos_esperados": "Caja: sin carga marca la fem de las dos pilas, cerca de 3.1 a 3.2 V. Con 220 Ω, unos 14 mA y 2.97 V; con 100 Ω, 28 mA y 2.82 V; con 47 Ω, 54 mA y 2.55 V; con 22 Ω, 96 mA y 2.12 V. Los puntos caen sobre una recta de pendiente cercana a −10.3 Ω (los 10 Ω del resistor escondido más unas décimas de ohmio de las pilas) y corte cerca de la fem. Pila AA nueva sola: su resistencia interna es de unas décimas de ohmio, así que con 22 Ω (unos 70 mA) su voltaje baja apenas una o dos centésimas de voltio, del mismo orden que la deriva de la lectura mientras la pila se recupera, así que la estimación es muy incierta; por eso se usó la caja. Circuito de dos mallas con fem de 6.0 V y 3.0 V: voltaje entre nudos ≈ 2.14 V; rama izquierda ≈ 17.5 mA, rama derecha ≈ 3.9 mA (las dos fuentes entregan corriente) y rama central ≈ 21.4 mA, que es la suma. Con el portapilas de dos pilas invertido: voltaje entre nudos ≈ 0.71 V; rama izquierda ≈ 24.0 mA; en la rama derecha ≈ 16.9 mA, que ahora va de arriba hacia abajo (sale negativa con el sentido supuesto); rama central ≈ 7.1 mA. Con las fem medidas, las diferencias entre cálculo y medición deben quedar en un 5 %.",
+     "analisis": [
+      "(Paso 4) ¿Qué representan la pendiente y el corte con el eje del voltaje en la recta V contra I? ¿Qué fem y qué resistencia interna tiene su caja?",
+      "(Paso 10) ¿Cuánto difieren las corrientes medidas de las calculadas? ¿Se cumple la regla de los nudos con los valores medidos?",
+      "(Paso 10) Al invertir la fuente de dos pilas, ¿qué corriente cambió de signo respecto del sentido supuesto y por qué? ¿Qué significa ese signo menos?",
+      "Tarea: Con su recta, calculen (sin probarlo) la corriente que entregaría la caja si se unieran sus caimanes con un cable (ε/r); no se prueba porque el resistor de 1/2 W disiparía casi 1 W y se sobrecalentaría. Expliquen por qué esa prueba sería aún más peligrosa con una batería de automóvil."
+     ],
+     "duracion_min": 110,
+     "variantes": "Con un solo multímetro: midan primero el voltaje y luego la corriente en cada carga. Sin laboratorio ni internet: datos de un grupo de ejemplo. Caja: sin carga, 3.11 V; 220 Ω, 13.6 mA y 2.97 V; 100 Ω, 27.9 mA y 2.82 V; 47 Ω, 53.8 mA y 2.55 V; 22 Ω, 95.5 mA y 2.12 V. Dos mallas, con fem medidas de 6.25 V y 3.12 V: rama izquierda 18.1 mA, rama derecha 4.0 mA, rama central 22.1 mA y 2.22 V entre los nudos; con la fuente de dos pilas invertida: rama izquierda 24.8 mA, rama derecha 17.5 mA de arriba hacia abajo, rama central 7.3 mA y 0.74 V entre los nudos. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET permite armar el circuito de dos mallas con dos pilas, invertir una y medir las corrientes con el amperímetro.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U9-9.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/leyes-kirchhoff",
+     "nombre": "Fuerza electromotriz y leyes de Kirchhoff",
+     "definicion": "Conservación de la carga en nudos y de la energía en mallas; fem y resistencia interna de fuentes reales.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U9-9.8",
+     "grado": 11,
+     "indicador": "3.3. • Resuelve circuitos de dos mallas con dos fuentes aplicando las reglas de los nudos y de las mallas mediante un sistema de ecuaciones. • Calcula la resistencia interna de una pila a partir de la gráfica del voltaje en sus bornes en función de la corriente entregada.",
+     "evidencia": "Resolución completa de un circuito de dos mallas con diagrama de corrientes, sistema de ecuaciones y verificación en el montaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U9-9.8/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U9-9.8/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Ocho pilas AA nuevas (dos van dentro de la caja de la docente), un portapilas para cuatro y uno para dos",
+       "Una «fuente real» por grupo, preparada por la docente: un portapilas para dos pilas con un resistor de 10 Ω (1/2 W) en serie, dentro de una cajita de cartón de la que solo salen dos cables con caimanes",
+       "Resistores de 1/2 W: 22 Ω, 47 Ω, 100 Ω y dos de 220 Ω",
+       "Uno o dos multímetros digitales",
+       "Seis cables con caimanes o una protoboard pequeña",
+       "Papel milimetrado o computadora con hoja de cálculo, y calculadora o GeoGebra (vista CAS) para el sistema de ecuaciones"
+      ],
+      "datos_esperados": "Caja: sin carga marca la fem de las dos pilas, cerca de 3.1 a 3.2 V. Con 220 Ω, unos 14 mA y 2.97 V; con 100 Ω, 28 mA y 2.82 V; con 47 Ω, 54 mA y 2.55 V; con 22 Ω, 96 mA y 2.12 V. Los puntos caen sobre una recta de pendiente cercana a −10.3 Ω (los 10 Ω del resistor escondido más unas décimas de ohmio de las pilas) y corte cerca de la fem. Pila AA nueva sola: su resistencia interna es de unas décimas de ohmio, así que con 22 Ω (unos 70 mA) su voltaje baja apenas una o dos centésimas de voltio, del mismo orden que la deriva de la lectura mientras la pila se recupera, así que la estimación es muy incierta; por eso se usó la caja. Circuito de dos mallas con fem de 6.0 V y 3.0 V: voltaje entre nudos ≈ 2.14 V; rama izquierda ≈ 17.5 mA, rama derecha ≈ 3.9 mA (las dos fuentes entregan corriente) y rama central ≈ 21.4 mA, que es la suma. Con el portapilas de dos pilas invertido: voltaje entre nudos ≈ 0.71 V; rama izquierda ≈ 24.0 mA; en la rama derecha ≈ 16.9 mA, que ahora va de arriba hacia abajo (sale negativa con el sentido supuesto); rama central ≈ 7.1 mA. Con las fem medidas, las diferencias entre cálculo y medición deben quedar en un 5 %.",
+      "analisis": [
+       "(Paso 4) ¿Qué representan la pendiente y el corte con el eje del voltaje en la recta V contra I? ¿Qué fem y qué resistencia interna tiene su caja?",
+       "(Paso 10) ¿Cuánto difieren las corrientes medidas de las calculadas? ¿Se cumple la regla de los nudos con los valores medidos?",
+       "(Paso 10) Al invertir la fuente de dos pilas, ¿qué corriente cambió de signo respecto del sentido supuesto y por qué? ¿Qué significa ese signo menos?",
+       "Tarea: Con su recta, calculen (sin probarlo) la corriente que entregaría la caja si se unieran sus caimanes con un cable (ε/r); no se prueba porque el resistor de 1/2 W disiparía casi 1 W y se sobrecalentaría. Expliquen por qué esa prueba sería aún más peligrosa con una batería de automóvil."
+      ]
+     },
+     "justificacion": "Recalculado: caja con 10.3 Ω da 2.97, 2.82, 2.55 y 2.12 V; dos mallas: 2.14 V y 17.5/3.9/21.4 mA; invertida: 0.71 V y 24.0/16.9/7.1 mA, y ninguna pila recibe corriente inversa. Corrijo: faltaban dos pilas para la caja, la AA sola cae 14 mV (no es la resolución, es la deriva) y la tarea podía invitar a cortocircuitar la caja.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.8 (fila 16)",
+       "cita": "Resuelve circuitos de dos mallas con dos fuentes y calcula la resistencia interna de una pila"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "V_nudo = (ε₁/R₁ + ε₂/R₂)/(1/R₁ + 1/R₂ + 1/R_c)"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}

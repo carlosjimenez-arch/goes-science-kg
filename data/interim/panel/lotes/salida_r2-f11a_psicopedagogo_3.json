@@ -1,0 +1,64 @@
+[
+ {
+  "id": "PED:EXP:G11-FIS-U8-8.4/1",
+  "decision": "corregir",
+  "justificacion": "Ciencia fijada por el experto intacta. Corrijo forma: el paso 5 (dos mapas, gráfica y pendiente) no cabía en 8 min; reparto 10/10 con cuatro puntos por valor. Agrego aviso de cortocircuito, conversión cm→m, unidad del potencial, materiales por grupo, mapa de ejemplo descrito (no solo nombrado), estrategia con pocos multímetros y simulación descargable sin internet. Sesión suma 55 min.",
+  "evidencia": [
+   {
+    "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+    "cita": "Pasos que suman 55 min; materiales que alcanzan; una tabla de ejemplo se describe o se incluye; numéricas con unidad."
+   },
+   {
+    "fuente": "TEMA:G11-FIS-U8-8.4 (indicador 2.4)",
+    "cita": "Pide trazar superficies equipotenciales a partir de mediciones y justificar la perpendicularidad del campo."
+   },
+   {
+    "fuente": "criterio psicopedagógico",
+    "cita": "En 8 min no se unen dos mapas, se grafica y se calcula la pendiente; la prisa vuelve mecánico el trazo que es el núcleo del objetivo."
+   },
+   {
+    "fuente": "criterio psicopedagógico (DUA)",
+    "cita": "Escuelas con un solo multímetro o sin internet necesitan una ruta explícita para que todos tracen su propio mapa."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Mapa de ejemplo tomado de los datos ya dados: 2.0, 2.9 y 3.8 V en x = 3, 5 y 7 cm."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "materiales": [
+    "Por grupo de 4 o 5 estudiantes:",
+    "Una bandeja plástica transparente de unos 25 × 20 cm (o la tapa de un recipiente grande) con agua del grifo hasta 1 cm de profundidad",
+    "Dos hojas de papel cuadriculado de 1 cm: una debajo de la bandeja y una copia para anotar",
+    "Dos trozos rectos de alambre de cobre desnudo de 12 cm (de cable eléctrico pelado) y dos tornillos o clavos grandes",
+    "Cuatro pilas AA en un portapilas (6 V en total) o una batería de 9 V",
+    "Un multímetro digital con sus puntas y cuatro cables con caimanes",
+    "Plastilina para sostener los electrodos de pie y una regla"
+   ],
+   "procedimiento": [
+    "Sesión 1 (55 min)",
+    "1. (8 min) Pongan la bandeja sobre la hoja cuadriculada y agreguen el agua. Doblen hacia arriba 2 cm de un extremo de cada alambre de cobre y fíjenlos con plastilina acostados en el fondo, paralelos y a 10 cm uno del otro, con el extremo doblado fuera del agua. Conecten los caimanes solo a esos extremos secos: un alambre al polo negativo y el otro al positivo del portapilas.",
+    "2. (5 min) Pongan el multímetro en la escala de 20 V de corriente continua (símbolo V con línea recta, «DCV»). La punta negra (COM) va fija al electrodo negativo; la roja será la sonda. Toquen con la roja el electrodo positivo, lean el voltaje entre los dos electrodos y anótenlo.",
+    "3. (12 min) Introduzcan la punta roja en el agua, en vertical, y midan el potencial cada 1 cm sobre la línea central entre los electrodos; hagan la tabla V contra x. Luego busquen tres puntos más para cada uno de tres valores (más o menos a un cuarto, la mitad y tres cuartos del voltaje del paso 2; por ejemplo 1.5, 3 y 4.5 V con pilas AA) y márquenlos en la hoja de anotación.",
+    "4. (10 min) Cambien los alambres por los dos tornillos de pie, a 10 cm uno del otro, con los caimanes por encima del agua, y repitan la búsqueda: cuatro puntos para cada uno de tres valores de potencial. Márquenlos en otra parte de la hoja.",
+    "5. (10 min) Unan los puntos de igual potencial con curvas suaves y dibujen líneas de campo que las corten en ángulo recto, de mayor a menor potencial. Grafiquen V contra x de la línea central y calculen la pendiente (pasen x de centímetros a metros).",
+    "6. (10 min) En grupo, respondan las dos primeras preguntas de análisis. Al terminar, desconecten las pilas y desechen el agua en el lavadero."
+   ],
+   "seguridad": [
+    "Usen solo pilas o una batería de 9 V; nunca conecten nada a un tomacorriente de 120 V.",
+    "Eviten que los dos caimanes o los dos electrodos se toquen entre sí: eso pone las pilas en cortocircuito y las calienta.",
+    "No agreguen sal al agua: con corriente puede liberar algo de cloro. Si las lecturas son muy inestables, el docente puede agregar una pizca de bicarbonato.",
+    "Mantengan el multímetro y el portapilas secos, fuera de la bandeja, y no dejen las pilas conectadas al terminar: se descargan y los electrodos se corroen.",
+    "Sequen el agua derramada para evitar resbalones."
+   ],
+   "analisis": [
+    "(Paso 6) ¿La gráfica V contra x de los electrodos paralelos es una recta? ¿Qué campo eléctrico obtienen de su pendiente, en V/m, y hacia dónde apunta?",
+    "(Paso 6) ¿Por qué las líneas de campo cortan las equipotenciales en ángulo recto? Justifiquen con el trabajo que hace el campo al mover una carga sobre una equipotencial.",
+    "Tarea: Imaginen dos placas en el vacío con la misma diferencia de potencial que midieron en el paso 2. ¿Cuánta energía cinética, en electronvolts, gana un electrón que parte del reposo en la placa negativa y llega a la positiva? ¿Y un ion positivo de carga e que hace el camino contrario? (En el agua de la bandeja la corriente la llevan iones que chocan sin parar, así que esa energía se disipa como calor.)",
+    "Tarea: Una carga de +2.0 nC y otra de −2.0 nC están a 10 cm. Calculen el potencial total en el punto medio, en volts, con V = kq/r para cada carga (k: valor de la tabla de referencia, aproximado 9.0 × 10⁹ N·m²/C²). ¿Es cero el campo en ese punto? ¿Qué muestra eso sobre el potencial como magnitud escalar?"
+   ],
+   "variantes": "Sin bandeja: una hoja de papel con una zona rellena con mina de lápiz blando (6B) muy oscura y pareja, con electrodos de papel aluminio sujetos con clips; no burbujea ni cambia con el tiempo como el agua, pero el trazo desigual deforma las curvas. Sin multímetro ni laboratorio, y sin internet: el docente entrega las lecturas de un grupo de ejemplo sobre la línea central (x = 2, 3, 4, 5, 6, 7 y 8 cm; V = 1.6, 2.0, 2.4, 2.9, 3.3, 3.8 y 4.2 V; pendiente cercana a 43 V/m) y un mapa de puntos para unirlos: con los alambres, los puntos de 2.0, 2.9 y 3.8 V forman rectas paralelas a los electrodos en x = 3, 5 y 7 cm; con los tornillos, curvas cerradas alrededor de cada tornillo que se abren al alejarse, y la del valor medio, casi recta en la mitad. Si hay pocos multímetros, un grupo mide frente a la clase y dicta las lecturas; los demás las anotan y trazan su propio mapa. Simulación: en PhET «Cargas y campos», dos filas paralelas de cargas positivas y negativas imitan placas; el sensor de voltaje da el potencial en cada punto y puede trazar la equipotencial que pasa por él, y la cinta métrica permite hacer la gráfica de potencial contra distancia. El docente comprueba antes en la versión que use que esas herramientas están disponibles; si no hay internet en el aula, puede descargar la simulación antes para usarla sin conexión."
+  }
+ }
+]
