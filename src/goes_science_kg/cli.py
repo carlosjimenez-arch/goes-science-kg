@@ -619,6 +619,36 @@ def lotes_validar(
                f"{comando_union(tipo) if tipo else 'el «unir» de cada tipo'}")
 
 
+@lotes_app.command("vertex")
+def lotes_vertex(
+    lotes: Annotated[list[str], typer.Argument(help="Rutas de lote_*.json")],
+    agente: Annotated[str, typer.Option(help="redactor-actividades, experto-<asignatura> o psicopedagogo")],
+    modelo: Annotated[str, typer.Option(help="Modelo de Vertex")] = "gemini-4-argon",
+    confirmar: Annotated[bool, typer.Option("--confirmar", help="Pagar las llamadas a Vertex que no están en caché")]
+    = False,
+) -> None:
+    """Corre lotes de un agente en Vertex (Gemini) con las mismas validaciones del hook; sin --confirmar solo estima."""
+    from pathlib import Path
+
+    from goes_science_kg import agentes_vertex
+    from goes_science_kg.internacional import vertex
+
+    rutas = [Path(x) for x in lotes]
+    typer.echo(json.dumps(agentes_vertex.estimar(rutas, agente, modelo), ensure_ascii=False))
+    if not confirmar:
+        typer.echo("Sin --confirmar no se gasta. Agrega --confirmar para correr.")
+        return
+    vertex.verificar_cuenta()
+    fallidos = 0
+    for p in rutas:
+        errores = agentes_vertex.correr(p, agente, modelo)
+        fallidos += bool(errores)
+        typer.echo(f"{'✓' if not errores else '✗'} {p.name}" + (f": {len(errores)} errores" if errores else ""))
+        for e in errores[:5]:
+            typer.echo(f"    - {e}")
+    typer.echo(f"Llamadas pagadas: {vertex.llamadas()}; lotes fallidos: {fallidos}")
+
+
 revision_app = typer.Typer(help="Revisión humana con el equipo de Ciencias del MINED", no_args_is_help=True)
 app.add_typer(revision_app, name="revision")
 

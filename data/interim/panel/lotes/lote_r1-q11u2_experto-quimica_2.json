@@ -1,0 +1,558 @@
+{
+ "lote": "r1-q11u2_experto-quimica_2",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U2-2.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U2-2.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U2-2.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U2-2.8",
+      "CON:quimica/hidrocarburos-alifaticos"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una práctica se agregan gotas de agua de bromo, Br₂(ac) de color pardo rojizo, a dos tubos de ensayo: el tubo 1 contiene hexano, C₆H₁₄(l), y el tubo 2 contiene 1-hexeno, C₆H₁₂(l). Ambos se agitan a temperatura ambiente y sin luz directa. ¿Qué cambio se observa y qué reacción lo explica?",
+     "opciones": {
+      "A": "El tubo 1 se decolora de inmediato, porque el hexano sufre una adición en sus enlaces simples C–C.",
+      "B": "El tubo 2 se decolora de inmediato, porque el 1-hexeno adiciona bromo en su doble enlace C=C formando 1,2-dibromohexano.",
+      "C": "Ambos tubos se decoloran al mismo tiempo, porque los dos hidrocarburos son apolares y disuelven el bromo sin reaccionar.",
+      "D": "El tubo 2 libera gas hidrógeno al reaccionar, porque el bromo sustituye un átomo de hidrógeno del doble enlace C=C."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El enlace π del doble enlace C=C del 1-hexeno se rompe con facilidad a temperatura ambiente y permite la adición electrofílica de Br₂, formando 1,2-dibromohexano incoloro. El hexano solo tiene enlaces simples σ y no reacciona en esas condiciones.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U2-2.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U2-2.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.8",
+     "grado": 11,
+     "indicador": "2.8. Identifica las propiedades físicas y químicas de los alquenos.",
+     "evidencia": "Registro fotográfico y tabla de maduración de frutas con ecuaciones de adición de alquenos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U2-2.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U2-2.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U2-2.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U2-2.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U2-2.8",
+      "CON:quimica/hidrocarburos-alifaticos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo midió la maduración de aguacates verdes (escala de color de 1 = verde brillante a 5 = negro maduro) y realizó una prueba de insaturación haciendo burbujear el gas de cada bolsa en KMnO₄(ac) diluido (prueba de Baeyer). Registraron estos datos al cuarto día:\n- Bolsa 1 (abierta, solo aguacate): color 1; el KMnO₄ sigue violeta.\n- Bolsa 2 (cerrada, solo aguacate): color 3; el KMnO₄ forma poco precipitado café.\n- Bolsa 3 (cerrada, aguacate con guineo maduro): color 5; el KMnO₄ se decolora y forma abundante precipitado café de MnO₂(s).\n¿Qué conclusión se deduce directamente de los datos?",
+     "opciones": {
+      "A": "El guineo maduro libera un gas con doble enlace C=C que acelera la maduración y reacciona con el KMnO₄(ac).",
+      "B": "El oxígeno del aire en la bolsa 1 oxida al KMnO₄(ac) e impide que el aguacate produzca compuestos orgánicos.",
+      "C": "El aguacate absorbe el KMnO₄(ac) de la bolsa 3 porque los alcanos gaseosos reaccionan formando un precipitado café.",
+      "D": "La bolsa cerrada convierte el almidón del aguacate en metano gaseoso, el cual reduce al KMnO₄(ac) a MnO₂(s)."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La prueba de Baeyer (decoloración del ion permanganato violeta a dióxido de manganeso café) es positiva para enlaces dobles C=C. Los datos muestran que la bolsa con guineo maduro acumula mayor cantidad de eteno (CH₂=CH₂), el alqueno gaseoso que acelera la maduración.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U2-2.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U2-2.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.8",
+     "grado": 11,
+     "indicador": "2.8. Identifica las propiedades físicas y químicas de los alquenos.",
+     "evidencia": "Registro fotográfico y tabla de maduración de frutas con ecuaciones de adición de alquenos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U2-2.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U2-2.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U2-2.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U2-2.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U2-2.8",
+      "CON:quimica/hidrocarburos-alifaticos"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "El eteno, CH₂=CH₂(g), es la hormona vegetal que acelera la maduración de frutas como el guineo y el aguacate. Explica por qué el eteno es insoluble en agua a temperatura ambiente, pero sí reacciona con agua en presencia de un catalizador ácido, H₂SO₄(ac), para formar etanol. En tu respuesta nombra el tipo de reacción química, escribe la ecuación química con fórmulas semidesarrolladas y explica qué ocurre con el doble enlace C=C.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "El eteno es una molécula apolar porque solo tiene enlaces C–H y C=C simétricos, por lo que es insoluble en un solvente polar como el agua pura. Sin embargo, con un catalizador ácido ocurre una reacción de adición (hidratación): se rompe el enlace pi (π) del doble enlace C=C y un átomo de carbono se une a un –H mientras el otro se une a un grupo –OH del agua, quedando un enlace simple C–C. La ecuación es: CH₂=CH₂(g) + H₂O(l) → CH₃–CH₂–OH(ac) (en medio ácido).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que la insolubilidad del eteno en agua se debe a que es una molécula apolar mientras que el agua es polar.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra la reacción como adición (o hidratación de alquenos) y explica que el doble enlace C=C se rompe (pasa a enlace simple C–C) al incorporarse H y OH.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Escribe correctamente la ecuación química con fórmulas semidesarrolladas: CH₂=CH₂ + H₂O → CH₃–CH₂–OH.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde la reacción de adición con una de sustitución y escribe que se desprende hidrógeno gaseoso (H₂) al formarse el alcohol.",
+        "ejemplo": "El OH del agua sustituye a un H del eteno y sale H₂: CH₂=CH₂ + H₂O → CH₂=CHOH + H₂.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Mantiene el doble enlace C=C en el producto (etanol) violando la tetravalencia del carbono.",
+        "ejemplo": "El agua se suma al eteno y queda CH₃=CH₂–OH con el doble enlace intacto.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Como todo hidrocarburo, el eteno es apolar e insoluble en agua; pero su enlace π es reactivo y, con un catalizador ácido, experimenta una reacción de adición de agua (hidratación) que convierte el enlace doble C=C en uno simple: CH₂=CH₂(g) + H₂O(l) → CH₃–CH₂–OH(ac).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U2-2.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U2-2.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.8",
+     "grado": 11,
+     "indicador": "2.8. Identifica las propiedades físicas y químicas de los alquenos.",
+     "evidencia": "Registro fotográfico y tabla de maduración de frutas con ecuaciones de adición de alquenos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U2-2.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U2-2.9/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U2-2.9/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U2-2.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U2-2.9",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Sofía analiza un alqueno ramificado cuya fórmula condensada es CH₃–CH(CH₃)–CH₂–CH=CH–CH₃. Para nombrarlo según las reglas de la IUPAC, debe elegir el sentido de numeración de la cadena principal de seis carbonos. ¿Cuál es el nombre IUPAC correcto de este compuesto y por qué?",
+     "opciones": {
+      "A": "2-metilhex-4-eno, porque el sustituyente metilo recibe el localizador más bajo posible en la cadena.",
+      "B": "5-metilhex-2-eno, porque el doble enlace tiene prioridad sobre el metilo para recibir el menor localizador.",
+      "C": "5-metilhex-3-eno, porque se cuenta el número total de enlaces simples antes de ubicar la insaturación.",
+      "D": "1,1-dimetilpent-3-eno, porque el extremo ramificado se toma como un grupo unido a una cadena de cinco carbonos."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En los alquenos, el doble enlace es el grupo funcional principal y tiene prioridad sobre los sustituyentes alquilo al numerar la cadena. Numerando desde la derecha, el doble enlace queda entre los carbonos 2 y 3 (localizador 2) y el grupo metilo queda en el carbono 5, dando 5-metilhex-2-eno.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U2-2.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U2-2.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.9",
+     "grado": 11,
+     "indicador": "2.9. Emplea nomenclatura IUPAC para nombrar alquenos.",
+     "evidencia": "Ejercicios resueltos de nomenclatura IUPAC de diez alquenos y dienos con estructuras de esqueleto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U2-2.9/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U2-2.9/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U2-2.9/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U2-2.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U2-2.9",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo registró en una tabla de ejemplo tres estructuras y el nombre que propuso para cada una: estructura 1: CH₂=CH–CH₂–CH=CH₂ (nombre propuesto: penta-1,4-dieno); estructura 2: CH₃–CH₂–C(=CH₂)–CH₂–CH₂–CH₃ (nombre propuesto: 3-metilenohexano); estructura 3: CH₃–CH=CH–CH(CH₃)₂ (nombre propuesto: 2-metilpent-3-eno). Según las reglas IUPAC vigentes, ¿qué estructuras tienen un nombre incorrecto en la tabla y cómo deben corregirse?",
+     "opciones": {
+      "A": "Las estructuras 2 y 3, que deben corregirse a 2-etilpent-1-eno y 4-metilpent-2-eno respectivamente.",
+      "B": "Las estructuras 1 y 2, que deben corregirse a pent-1,4-eno y 3-propilbut-1-eno respectivamente.",
+      "C": "Las estructuras 1 y 3, que deben corregirse a penta-1,5-dieno y 4,4-dimetilbut-2-eno respectivamente.",
+      "D": "Las estructuras 1, 2 y 3, que deben corregirse a pentadieno, hex-3-eno y 2-metilpent-2-eno respectivamente."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La estructura 1 está bien nombrada como penta-1,4-dieno. En la estructura 2, la cadena principal debe incluir los dos carbonos del doble enlace (cinco carbonos, con un etilo en C-2: 2-etilpent-1-eno). En la estructura 3, se numera desde la izquierda para dar localizador 2 al doble enlace: 4-metilpent-2-eno.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U2-2.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U2-2.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.9",
+     "grado": 11,
+     "indicador": "2.9. Emplea nomenclatura IUPAC para nombrar alquenos.",
+     "evidencia": "Ejercicios resueltos de nomenclatura IUPAC de diez alquenos y dienos con estructuras de esqueleto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U2-2.9/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U2-2.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U2-2.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U2-2.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U2-2.9",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo nombró el compuesto CH₃–CH₂–CH=CH–CH₂–CH₃ como «hexeno», sin escribir ningún número localizador, argumentando que al ser simétrico no hace falta indicar la posición del doble enlace. Explica en dos o tres oraciones por qué es necesario incluir el localizador en el nombre IUPAC de este compuesto, escribe su nombre IUPAC correcto y menciona el nombre de otro isómero de posición de cadena lineal con la misma fórmula molecular (C₆H₁₂) del que debe diferenciarse.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Es necesario incluir el localizador porque en una cadena de seis carbonos el doble enlace puede ubicarse en distintas posiciones, lo que genera isómeros con propiedades diferentes. El nombre IUPAC correcto de la molécula dada es hex-3-eno (o 3-hexeno), y el localizador permite distinguirla de sus isómeros de posición de cadena lineal, como el hex-1-eno o el hex-2-eno.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que el localizador es necesario porque en cadenas de cuatro o más carbonos el doble enlace puede ocupar distintas posiciones dando compuestos diferentes (isómeros de posición).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra correctamente el compuesto del enunciado como hex-3-eno (o 3-hexeno).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Menciona al menos un isómero de posición de cadena lineal con el que se confundiría si no llevara número, como hex-1-eno (1-hexeno) o hex-2-eno (2-hexeno).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Asigna al doble enlace el número del segundo carbono que lo forma en lugar del menor de los dos carbonos.",
+        "ejemplo": "El compuesto se llama hex-4-eno porque el doble enlace termina en el carbono 4.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Afirma que la simetría evita usar localizador y solo propone un cicloalcano o un alcano como comparación.",
+        "ejemplo": "Como está justo a la mitad solo se llama hexeno y se diferencia del hexano.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "A partir de cuatro carbonos existen isómeros de posición del doble enlace. Por eso la IUPAC exige indicar el menor número de los dos carbonos del doble enlace: el compuesto es hex-3-eno, distinto del hex-1-eno y del hex-2-eno.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U2-2.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U2-2.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.9",
+     "grado": 11,
+     "indicador": "2.9. Emplea nomenclatura IUPAC para nombrar alquenos.",
+     "evidencia": "Ejercicios resueltos de nomenclatura IUPAC de diez alquenos y dienos con estructuras de esqueleto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U2-2.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  }
+ ]
+}
