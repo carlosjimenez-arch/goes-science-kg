@@ -1,0 +1,188 @@
+[
+ {
+  "id": "ACT:G09-CIE-U2-2.10/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G09-CIE-U2-2.10"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U2-2.10",
+   "CON:fisica/segunda-ley-maquinas-termicas"
+  ],
+  "habilidad": "razonar",
+  "formato": "numerica",
+  "grados": [
+   9
+  ],
+  "enunciado": "Una máquina térmica toma calor de un horno a 527 °C y expulsa parte de ese calor al aire, que está a 27 °C. ¿Cuál es la eficiencia máxima posible (de Carnot) de esa máquina? Escribe solo el número, en porcentaje (%).",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 62.5,
+  "tolerancia": 0.5,
+  "unidad": "%",
+  "retroalimentacion": "La eficiencia de Carnot usa temperaturas absolutas: 527 °C = 800 K y 27 °C = 300 K, así que e = 1 − 300/800 = 0.625, es decir, 62.5 %. Si obtuviste cerca de 95 %, usaste grados Celsius. Una máquina real entre esos focos tendría menos de 62.5 %.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G09-CIE-U2-2.10"
+  }
+ },
+ {
+  "id": "ACT:G09-CIE-U2-2.10/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G09-CIE-U2-2.10"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U2-2.10",
+   "CON:fisica/segunda-ley-maquinas-termicas"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   9
+  ],
+  "enunciado": "Datos de ejemplo de cuatro anuncios de motores. Cada uno recibe 1000 J de calor por ciclo. Motor 1: entrega 300 J de trabajo, entre 600 K y 300 K. Motor 2: entrega 200 J, entre 400 K y 300 K. Motor 3: entrega 450 J, entre 800 K y 400 K. Motor 4: entrega 450 J, entre 500 K y 300 K. ¿Qué anuncio es imposible y por qué?",
+  "opciones": {
+   "A": "Ninguno, porque todos entregan menos trabajo que los 1000 J de calor que reciben.",
+   "B": "El motor 1, porque pierde 700 J por ciclo y la energía no puede desaparecer así.",
+   "C": "El motor 2, porque su eficiencia de 20 % es muy baja para un motor que funciona.",
+   "D": "El motor 4, porque su 45 % supera el 40 % que permiten sus temperaturas."
+  },
+  "correcta": "D",
+  "distractores": {
+   "B": "DIF:fisica/conservacion-energia/1"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "El motor 4 tendría e = 450/1000 = 45 %, pero su máximo es 1 − 300/500 = 40 %: ninguna máquina supera a la de Carnot entre las mismas temperaturas. Los otros están por debajo de su máximo (50 %, 25 % y 50 %), y los 700 J del motor 1 no desaparecen: salen como calor al foco frío.",
+  "duracion_min": 8,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G09-CIE-U2-2.10"
+  }
+ },
+ {
+  "id": "ACT:G09-CIE-U2-2.10/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "formato": "abierta",
+  "objetivos": [
+   "TEMA:G09-CIE-U2-2.10"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U2-2.10",
+   "CON:fisica/segunda-ley-maquinas-termicas"
+  ],
+  "habilidad": "razonar",
+  "grados": [
+   9
+  ],
+  "enunciado": "Un video viral muestra un «generador de energía libre»: dice que recibe 500 J de calor de una fogata y entrega 520 J de electricidad, sin expulsar calor a ningún lugar. En 2 o 3 oraciones: (1) explica por qué es imposible entregar 520 J; (2) explica por qué, aunque entregara solo 500 J, seguiría siendo imposible; (3) di qué evidencia pedirías antes de creerle.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "rubrica": {
+   "respuesta_modelo": "Entregar 520 J con 500 J de calor sería una eficiencia mayor que 100 %: crearía energía de la nada y eso viola la conservación de la energía (primera ley). Aun con 500 J sería imposible, porque la segunda ley dice que una máquina térmica siempre debe soltar parte del calor a un lugar más frío, así que su eficiencia es menor que la de Carnot y nunca llega a 100 %. Pediría mediciones de la energía que entra y sale hechas por otras personas, y que el aparato se revise y se repita en un laboratorio independiente.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "relaciona los 520 J con una eficiencia mayor que 100 % o con crear energía, y lo declara contrario a la conservación de la energía (primera ley)",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "justifica que ni el 100 % es posible porque toda máquina térmica expulsa calor a un foco frío (segunda ley o límite de Carnot)",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "propone evidencia verificable: mediciones de entrada y salida de energía, repetición independiente o revisión por otros científicos",
+     "obligatorio": true
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "acepta el anuncio porque la tecnología nueva podría lograrlo",
+     "ejemplo": "Puede ser real, con una tecnología nueva y mejor se podría sacar más energía.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "explica el límite como energía que se gasta o se acaba, no como calor que se transfiere al foco frío",
+     "ejemplo": "No llega a 100 % porque la energía se va gastando mientras funciona.",
+     "dificultad": "DIF:fisica/conservacion-energia/1"
+    },
+    {
+     "descripcion": "solo ve el problema de los 520 J y cree que un 100 % sí sería posible",
+     "ejemplo": "Es falso porque da más de lo que recibe; si diera 500 J sería una máquina perfecta pero real.",
+     "dificultad": null
+    }
+   ]
+  },
+  "retroalimentacion": "La primera ley prohíbe sacar más energía de la que entra, y la segunda prohíbe convertir todo el calor en trabajo: siempre se expulsa calor a un foco frío. Por eso la comunidad científica pide mediciones independientes antes de aceptar un aparato así.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G09-CIE-U2-2.10"
+  }
+ },
+ {
+  "id": "EXP:G09-CIE-U2-2.10/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G09-CIE-U2-2.10"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U2-2.10",
+   "CON:fisica/segunda-ley-maquinas-termicas"
+  ],
+  "grados": [
+   9
+  ],
+  "titulo": "Agua caliente, agua con hielo: el techo de eficiencia de una máquina",
+  "proposito": "Medir las temperaturas de focos caliente y frío que hay en el aula, calcular la eficiencia máxima de Carnot de una máquina que trabajara entre ellos, y usar una hoja de cálculo para decidir qué anuncios de motores son posibles.",
+  "materiales": [
+   "1 termo con unos 1.5 L de agua caliente (entre 60 y 75 °C), que maneja solo el docente",
+   "hielo y agua del grifo",
+   "3 vasos de duroport o de plástico grueso de 250 mL por grupo (caliente, del grifo, con hielo)",
+   "1 termómetro de −10 a 110 °C por grupo (digital o de alcohol, sin mercurio)",
+   "calculadora; computadora con hoja de cálculo si la hay",
+   "tabla impresa con datos de ejemplo (cada uno recibe 1000 J de calor por ciclo): motor de pick-up, entrega 250 J entre 900 K y 300 K; central de vapor, entrega 350 J entre 800 K y 300 K; anuncio «Turbo-Max», entrega 400 J entre 450 K y 300 K"
+  ],
+  "procedimiento": [
+   "1. (5 min) El docente sirve unos 200 mL de agua caliente en el vaso 1 de cada grupo, sobre la mesa. El grupo llena el vaso 2 con 200 mL de agua del grifo y el vaso 3 con hielo y agua hasta 200 mL.",
+   "2. (10 min) Midan la temperatura de cada vaso: metan el termómetro, esperen a que la lectura no cambie y anoten. Limpien el termómetro entre vasos y midan el vaso con hielo al final.",
+   "3. (5 min) Conviertan cada temperatura a kelvin sumando 273.",
+   "4. (10 min) Calculen la eficiencia máxima e = 1 − Tfría/Tcaliente para tres máquinas imaginarias: vaso 1 con vaso 3, vaso 1 con vaso 2 y vaso 2 con vaso 3. Escríbanlas en porcentaje.",
+   "5. (15 min) En la hoja de cálculo (o en el cuaderno), copien los datos de la tabla impresa y agreguen una columna con la eficiencia real = trabajo/calor recibido, otra con la de Carnot y otra que diga «posible» si la real es menor que la de Carnot.",
+   "6. (10 min) Comparen resultados entre grupos y respondan en el cuaderno las dos primeras preguntas de análisis."
+  ],
+  "seguridad": [
+   "El agua caliente la sirve solo el docente; no se calienta agua en el aula ni se usa fuego.",
+   "Los vasos van sobre la mesa, lejos del borde; no se levanta ni se pasa de mano en mano el vaso caliente.",
+   "Si se derrama agua caliente, avisen y alejen las manos; sequen el piso para evitar resbalones.",
+   "No se usan termómetros de mercurio; si uno de vidrio se rompe, no recojan los trozos con las manos."
+  ],
+  "datos_esperados": "Agua caliente entre 60 y 75 °C (unos 333 a 348 K), del grifo entre 24 y 28 °C (unos 297 a 301 K) y con hielo entre 0 y 3 °C (unos 273 a 276 K). Con 70 °C, 26 °C y 0 °C salen eficiencias máximas de cerca de 20 % (caliente con hielo), 13 % (caliente con grifo) y 9 % (grifo con hielo). La tendencia: a mayor diferencia de temperatura, mayor eficiencia máxima, y siempre lejos de 100 %. En la tabla impresa, el pick-up (25 % frente a 67 %) y la central (35 % frente a 62.5 %) son posibles; el «Turbo-Max» (40 % frente a 33 %) es imposible.",
+  "analisis": [
+   "¿Qué par de vasos daría la mayor eficiencia máxima y por qué?",
+   "¿Por qué la eficiencia sale muy distinta si se usan grados Celsius en lugar de kelvin?",
+   "¿Qué tendría que pasar con el foco frío para que la eficiencia máxima fuera 100 %? ¿Es posible?",
+   "Tarea: busca un anuncio o video de «energía libre» y critica sus afirmaciones con lo que calculaste."
+  ],
+  "duracion_min": 55,
+  "variantes": "Sin computadora, la tabla del paso 5 se hace en el cuaderno con calculadora. Si no hay termo, el docente puede usar agua de un grifo de agua caliente o tomar como dato una temperatura medida antes.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ }
+]

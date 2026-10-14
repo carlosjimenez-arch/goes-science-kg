@@ -554,11 +554,13 @@ def tutor_preparar_actividades(temas: list[str],
 
 
 @tutor_app.command("unir-actividades")
-def tutor_unir_actividades() -> None:
+def tutor_unir_actividades(
+    prefijo: Annotated[list[str] | None, typer.Option(help="Solo los lotes que empiezan así (G09-CIE-U1-)")] = None,
+) -> None:
     """Valida las salidas de redactor-actividades y las agrega a data/pedagogia/ (nacen «propuesta_pendiente»)."""
     from goes_science_kg.aprendizaje.pedagogia import unir
 
-    typer.echo(json.dumps(unir(), ensure_ascii=False))
+    typer.echo(json.dumps(unir(prefijos=prefijo or None), ensure_ascii=False))
 
 
 @tutor_app.command("validar")

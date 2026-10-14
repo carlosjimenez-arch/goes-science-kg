@@ -423,13 +423,19 @@ def navegador_compartido() -> Navegador:
     return Navegador(*cargar_grafo())
 
 
-def unir(base: Path | None = None) -> dict:
+def unir(base: Path | None = None, prefijos: list[str] | None = None) -> dict:
     """Valida cada salida de lote y agrega sus elementos a la capa (sin sobrescribir los existentes). Lanza ValueError
-    si hay errores; devuelve los conteos por tipo."""
+    si hay errores; devuelve los conteos por tipo. Con `prefijos` solo une los lotes cuyo nombre empieza por alguno
+    (p. ej. «G09-CIE-U1-»): así se une por unidad mientras el resto de los lotes sigue en redacción."""
     d = base or directorio()
     ped = Pedagogia.cargar(d, vigente=False)   # se reescribe tal cual: no se traduce ni se pierde el histórico
     nuevos, errores = [], []
-    for p_lote in sorted((d / "lotes").glob("lote_*.json")):
+    lotes = sorted((d / "lotes").glob("lote_*.json"))
+    if prefijos:
+        lotes = [p for p in lotes if p.name.removeprefix("lote_").startswith(tuple(prefijos))]
+        if not lotes:
+            raise ValueError(f"ningún lote empieza por {prefijos}")
+    for p_lote in lotes:
         p_sal = p_lote.with_name(p_lote.name.replace("lote_", "salida_", 1))
         if not p_sal.exists():
             errores.append(f"falta {p_sal.name}")

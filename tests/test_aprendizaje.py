@@ -419,3 +419,21 @@ def test_datos_que_faltan_sin_ruido():
     datos = [d["dato"] for d in _datos_que_faltan([e])]
     assert datos == ["energía de ionización de aluminio", "energía de ionización",
                      "coeficiente de fricción estática (μs)"], datos
+
+
+def test_unir_por_prefijo_ignora_lotes_en_redaccion(tmp_path):
+    """Con --prefijo se une una unidad aunque otros lotes aún no tengan salida; sin él, faltan salidas y falla."""
+    import shutil
+
+    import pytest
+
+    from goes_science_kg.aprendizaje.pedagogia import ARCHIVOS, directorio, unir
+
+    for archivo in ARCHIVOS.values():
+        shutil.copy(directorio() / archivo, tmp_path / archivo)
+    (tmp_path / "lotes").mkdir()
+    (tmp_path / "lotes" / "lote_G99-X-U1-1.1.json").write_text("{}", encoding="utf-8")   # sin salida
+    with pytest.raises(ValueError, match="falta salida_G99"):
+        unir(tmp_path)
+    with pytest.raises(ValueError, match="ningún lote"):
+        unir(tmp_path, prefijos=["G98-"])

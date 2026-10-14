@@ -1,0 +1,2710 @@
+{
+ "lote": "r1-f9u1_experto-fisica_1",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.1",
+      "CON:fisica/principio-arquimedes"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Un cilindro de metal cuelga de un dinamómetro. Primero se sumerge por completo en agua dulce y después, también por completo, en agua muy salada, sin tocar el fondo. ¿Cómo es el empuje en el agua salada comparado con el empuje en el agua dulce?",
+     "opciones": {
+      "A": "Igual en los dos, porque el cilindro y su peso no cambian.",
+      "B": "Cero en los dos, porque el cilindro es de metal y se hunde.",
+      "C": "Mayor en la salada, porque el agua que desaloja pesa más.",
+      "D": "Mayor en la dulce, porque en ella el cilindro baja más hondo."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/principio-arquimedes/1",
+      "B": "DIF:fisica/principio-arquimedes/3",
+      "D": "DIF:fisica/principio-arquimedes/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El cilindro desaloja el mismo volumen en los dos líquidos, pero ese volumen de agua salada tiene más masa y pesa más; como el empuje es igual al peso del líquido desalojado, es mayor en el agua salada.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.1"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-arquimedes",
+     "nombre": "Principio de Arquímedes: empuje",
+     "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.1",
+     "grado": 9,
+     "indicador": "1.1 Determina las propiedades de un fluido para calcular el empuje.",
+     "evidencia": "Tabla del empuje en líquidos de distinta densidad con las variables independiente, dependiente y de control identificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.1",
+      "CON:fisica/principio-arquimedes"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Un mismo objeto pesa 2.00 N en el aire. Lo sumergen por completo en tres líquidos y anotan lo que marca el dinamómetro: líquido 1, agua dulce (1000 kg/m³): 1.20 N; líquido 2, agua con poca sal (1050 kg/m³): 1.16 N; líquido 3, agua con mucha sal (1100 kg/m³): 1.12 N. ¿Qué conclusión respaldan estos datos?",
+     "opciones": {
+      "A": "No se puede saber el empuje, porque falta medir el volumen del objeto.",
+      "B": "El empuje aumenta con la densidad del líquido: va de 0.80 N a 0.88 N.",
+      "C": "El empuje disminuye con la densidad del líquido: va de 1.20 N a 1.12 N.",
+      "D": "El empuje es igual en los tres, porque el objeto siempre pesa 2.00 N."
+     },
+     "correcta": "B",
+     "distractores": {
+      "D": "DIF:fisica/principio-arquimedes/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El empuje es el peso en el aire menos lo que marca el dinamómetro dentro del líquido: 0.80 N, 0.84 N y 0.88 N. Crece con la densidad del líquido; lo que baja es la lectura del dinamómetro, no el empuje.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.1"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-arquimedes",
+     "nombre": "Principio de Arquímedes: empuje",
+     "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.1",
+     "grado": 9,
+     "indicador": "1.1 Determina las propiedades de un fluido para calcular el empuje.",
+     "evidencia": "Tabla del empuje en líquidos de distinta densidad con las variables independiente, dependiente y de control identificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.1",
+      "CON:fisica/principio-arquimedes"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "Don Rigoberto maneja una lancha de pasajeros en el Golfo de Fonseca. La carga en el mar abierto, donde el agua es más salada, y luego entra a un estero de agua salobre, que es menos densa. En 2 o 3 oraciones: (1) predice si la lancha, con la misma carga, quedará más hundida, menos hundida o igual en el estero; (2) explica por qué, usando el empuje y la densidad del agua, y (3) di qué significa eso para la carga segura en el estero.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al flotar, el empuje siempre iguala el peso de la lancha. En el agua menos densa del estero, para lograr ese mismo empuje debe desalojar más volumen, así que se hunde más; por eso en el estero la carga segura es menor que en el mar abierto.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En el estero la lancha queda más hundida. Como flota, el empuje tiene que ser igual a su peso, y el agua del estero es menos densa, así que necesita desalojar más volumen de agua para lograr el mismo empuje. Por eso en el estero le queda menos borde fuera del agua y debería llevar menos carga que en el mar.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "predice que la lancha queda más hundida en el estero",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "justifica con que el agua menos densa debe desalojarse en mayor volumen para dar un empuje igual al peso de la lancha",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "concluye que en el estero la carga segura es menor (o que queda menos borde libre sobre el agua)",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "aclara que el empuje sobre la lancha que flota es el mismo en los dos lugares, porque iguala su peso",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "cree que el hundimiento no cambia porque la lancha pesa lo mismo, sin considerar el líquido",
+        "ejemplo": "Queda igual, porque la lancha y la carga pesan lo mismo en el mar y en el estero.",
+        "dificultad": "DIF:fisica/principio-arquimedes/1"
+       },
+       {
+        "descripcion": "relaciona el empuje con la profundidad del agua y no con su densidad",
+        "ejemplo": "En el estero se hunde menos, porque el agua es poco profunda y el fondo la empuja más.",
+        "dificultad": "DIF:fisica/principio-arquimedes/2"
+       },
+       {
+        "descripcion": "acierta la predicción pero la justifica con el peso del agua en general, no con el volumen desalojado",
+        "ejemplo": "Se hunde más porque el agua del estero es más pesada que la del mar.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-arquimedes",
+     "nombre": "Principio de Arquímedes: empuje",
+     "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.1",
+     "grado": 9,
+     "indicador": "1.1 Determina las propiedades de un fluido para calcular el empuje.",
+     "evidencia": "Tabla del empuje en líquidos de distinta densidad con las variables independiente, dependiente y de control identificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.11/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.11/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.11",
+      "CON:fisica/viscosidad-regimen-flujo"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Para calcular la viscosidad de la glicerina con la ley de Stokes, Daniela deja caer un balín de acero en una probeta llena y mide el tiempo que tarda en pasar entre dos marcas. Su profesora le pide poner la marca de arriba varios centímetros por debajo de la superficie. ¿Por qué?",
+     "opciones": {
+      "A": "Para medir el tramo en que el balín sigue acelerando, que es el que depende de la viscosidad.",
+      "B": "Para que el empuje de la glicerina deje de actuar y sobre el balín solo quede su propio peso.",
+      "C": "Para que el balín ya caiga con rapidez constante, la velocidad terminal que usa la ley de Stokes.",
+      "D": "Porque arriba la glicerina es menos densa y, por eso, menos viscosa que en el fondo de la probeta."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/viscosidad-regimen-flujo/2",
+      "D": "DIF:fisica/viscosidad-regimen-flujo/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al soltarlo, el balín acelera; el rozamiento viscoso crece con la rapidez hasta equilibrar el peso menos el empuje, y desde ahí cae con rapidez constante: la velocidad terminal, que es la que usa la ley de Stokes. El empuje actúa todo el tiempo, y a la misma temperatura la glicerina es igual de viscosa arriba y abajo.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.11"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/viscosidad-regimen-flujo",
+     "nombre": "Viscosidad y régimen de flujo",
+     "definicion": "Resistencia interna de un fluido a fluir; el número de Reynolds distingue flujo laminar y turbulento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.11",
+     "grado": 9,
+     "indicador": "1.10. Mide las magnitudes físicas requeridas para calcular la viscosidad de un fluido y compara sus resultados con la teoria de la ley de Stokes",
+     "evidencia": "Tabla de tiempos de caída repetidos en distintos fluidos con promedio y comentarios sobre la precisión Comparación entre resultados experimentales y teóricos con una conclusión que expresa su grado de certeza"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.11/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.11/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.11/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.11",
+      "CON:fisica/viscosidad-regimen-flujo"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: tiempo que tarda un mismo balín en recorrer 20.0 cm entre dos marcas, medido cinco veces con cronómetro de mano en cada líquido. Agua: 0.2, 0.5, 0.3, 0.4, 0.3 s. Champú: 4.1, 4.3, 4.0, 4.4, 4.2 s. Miel: 19.5, 21.0, 20.0, 22.5, 20.5 s. ¿En qué líquido la medición del tiempo es menos confiable y por qué?",
+     "opciones": {
+      "A": "En la miel, porque sus tiempos difieren hasta en 3 s, mucho más que en los otros dos líquidos.",
+      "B": "En el agua, porque la diferencia entre sus tiempos es casi tan grande como el tiempo medido.",
+      "C": "En ninguno, porque al promediar cinco mediciones el error del cronómetro desaparece.",
+      "D": "En el champú, porque es una mezcla y su viscosidad cambia de una caída a la siguiente."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Lo que importa es la variación comparada con el tiempo medido: en el agua es de 0.3 s sobre unos 0.3 s, casi el 100 %, porque el tiempo de reacción al usar el cronómetro (del orden de 0.2 s) pesa tanto como la caída; en la miel, 3 s sobre unos 21 s es cerca del 15 %. Promediar reduce el error al azar, pero no lo elimina. Además, en el agua el balín cae tan rápido que el número de Reynolds es alto y la ley de Stokes ya no se aplica.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.11"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/viscosidad-regimen-flujo",
+     "nombre": "Viscosidad y régimen de flujo",
+     "definicion": "Resistencia interna de un fluido a fluir; el número de Reynolds distingue flujo laminar y turbulento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.11",
+     "grado": 9,
+     "indicador": "1.10. Mide las magnitudes físicas requeridas para calcular la viscosidad de un fluido y compara sus resultados con la teoria de la ley de Stokes",
+     "evidencia": "Tabla de tiempos de caída repetidos en distintos fluidos con promedio y comentarios sobre la precisión Comparación entre resultados experimentales y teóricos con una conclusión que expresa su grado de certeza"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.11/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.11/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.11/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.11"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.11",
+      "CON:fisica/viscosidad-regimen-flujo"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "El grupo de Valeria y Andrés midió la velocidad terminal de un balín de acero en glicerina y, con la ley de Stokes, calculó una viscosidad 12 % mayor que el valor de la tabla de referencia. Andrés escribe como conclusión: «Se demostró que la ley de Stokes es exacta». En 2 o 3 oraciones: (1) di si esa conclusión está justificada y por qué, (2) nombra una causa concreta que pueda explicar la diferencia, y (3) escribe una conclusión mejor que diga con qué grado de certeza se cumple la ley.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un 12 % de diferencia muestra que los datos concuerdan con la ley solo de forma aproximada; ningún experimento demuestra que una ley sea exacta. Las paredes cercanas del frasco, una marca de arriba mal ubicada o el tiempo de reacción explican diferencias así, y la conclusión debe decir cuánta confianza dan los datos y en qué condiciones vale la ley.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.11"
+     },
+     "rubrica": {
+      "respuesta_modelo": "No está justificada: con un 12 % de diferencia los datos concuerdan con la ley solo de forma aproximada, y un experimento no demuestra que una ley sea exacta. Una causa puede ser que el frasco era angosto y sus paredes frenaban más al balín, o que la primera marca estaba muy arriba y el balín aún no tenía velocidad terminal. Mejor: «Nuestros datos concuerdan con la ley de Stokes con una diferencia de 12 %, que puede deberse a las paredes y al error al medir el tiempo; la ley vale para esferas pequeñas que caen lento».",
+      "criterios": [
+       {
+        "id": "c1",
+        "obligatorio": true,
+        "descripcion": "Afirma que la conclusión no está justificada, porque una diferencia de 12 % muestra un acuerdo solo aproximado (un experimento con incertidumbre no demuestra que una ley sea exacta)."
+       },
+       {
+        "id": "c2",
+        "obligatorio": true,
+        "descripcion": "Nombra una causa concreta de la diferencia: paredes del recipiente cerca del balín, balín que aún no alcanzaba la velocidad terminal, error por el tiempo de reacción, diámetro mal medido u otra causa concreta del montaje o de la medición."
+       },
+       {
+        "id": "c3",
+        "obligatorio": true,
+        "descripcion": "Escribe una conclusión que expresa el grado de certeza: los datos concuerdan con la ley dentro de cierta diferencia o incertidumbre, sin afirmar que la ley es exacta ni que es falsa."
+       },
+       {
+        "id": "c4",
+        "obligatorio": false,
+        "descripcion": "Menciona las condiciones de validez de la ley: esfera pequeña, caída lenta o número de Reynolds bajo."
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta la conclusión porque el resultado «salió parecido».",
+        "ejemplo": "Sí está bien, porque 12 % es poco y entonces la ley se cumple exactamente.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Concluye que la ley es falsa porque no coincidió con la tabla.",
+        "ejemplo": "La conclusión está mal porque la ley de Stokes no funcionó: el valor no dio igual al de la tabla.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la diferencia confundiendo viscosidad con densidad.",
+        "ejemplo": "La viscosidad salió mayor porque la glicerina es más densa que el agua, y lo más denso es más viscoso.",
+        "dificultad": "DIF:fisica/viscosidad-regimen-flujo/1"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/viscosidad-regimen-flujo",
+     "nombre": "Viscosidad y régimen de flujo",
+     "definicion": "Resistencia interna de un fluido a fluir; el número de Reynolds distingue flujo laminar y turbulento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.11",
+     "grado": 9,
+     "indicador": "1.10. Mide las magnitudes físicas requeridas para calcular la viscosidad de un fluido y compara sus resultados con la teoria de la ley de Stokes",
+     "evidencia": "Tabla de tiempos de caída repetidos en distintos fluidos con promedio y comentarios sobre la precisión Comparación entre resultados experimentales y teóricos con una conclusión que expresa su grado de certeza"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.11/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.12/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.12/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.12",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      9
+     ],
+     "enunciado": "En una colonia, la tubería que sube por la calle tiene el mismo diámetro en todo el tramo. Un manómetro en la llave de una casa de la parte baja marca 200 000 Pa (presión sobre la atmosférica). Otra casa está 12.0 m más arriba y el agua corre por la tubería con la misma rapidez en las dos casas. Supón que el agua es un fluido ideal, con densidad 1000 kg/m³ y g = 9.8 m/s². ¿Qué presión marcaría el manómetro en la casa de arriba, en pascales (Pa)? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 82400,
+     "tolerancia": 600,
+     "unidad": "Pa",
+     "retroalimentacion": "Como el tubo tiene el mismo diámetro, la rapidez es la misma (continuidad) y Bernoulli se reduce a la parte de la altura: subir 12.0 m resta ρgh = 1000 × 9.8 × 12.0 = 117 600 Pa, así que quedan 82 400 Pa. Es razonable que sea menor: la casa de arriba recibe el agua con menos presión.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.12"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.12",
+     "grado": 9,
+     "indicador": "1.12. Resuelve problemas teóricos sobre hidrodinámica.",
+     "evidencia": "Problemas resueltos de hidrodinámica"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.12/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.12/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.12/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.12",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un ejemplo calculado para la red de agua de una colonia en pendiente. Se midió la presión sobre la atmosférica en tres casas conectadas a la misma tubería, de noche (casi nadie usa agua) y al mediodía (mucho consumo). Casa 1, a 0 m: noche 300 kPa, mediodía 240 kPa. Casa 2, 10 m más arriba: noche 202 kPa, mediodía 130 kPa. Casa 3, 20 m más arriba: noche 104 kPa, mediodía 20 kPa. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "La presión baja en proporción a la altura: en ambos horarios la casa 3 tiene la mitad que la casa 2.",
+      "B": "La altura no influye: de noche, sin consumo, las tres casas tendrían la misma presión en la red.",
+      "C": "Subir 10 m resta unos 98 kPa en ambos horarios; de día la presión baja más y la casa 3 queda casi sin agua.",
+      "D": "La casa 3 tiene poca presión porque le llega menos caudal; un tubo más angosto se la subiría."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "De noche, con el agua casi quieta, cada 10 m de subida restan ρgh ≈ 98 kPa, y de día se pierde más presión porque el agua corre más rápido y roza con la tubería. Por eso la casa más alta solo recibe agua con fuerza de noche; la caída de presión no es proporcional a la altura, sino una resta fija por cada metro.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.12"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.12",
+     "grado": 9,
+     "indicador": "1.12. Resuelve problemas teóricos sobre hidrodinámica.",
+     "evidencia": "Problemas resueltos de hidrodinámica"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.12/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.12/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.12/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.12"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.12",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "En la colonia de Marta, la superficie del agua del tanque de distribución está 20 m por encima de la calle principal, y la casa de Julio está 25 m por encima de esa calle. A Julio casi nunca le llega agua. Un vecino propone: «Cambien el último tramo por un tubo más angosto: el agua correrá más rápido y llegará con más fuerza». En 2 o 3 oraciones: (1) explica, comparando alturas, por qué no le llega agua a Julio; (2) di si la propuesta del vecino aumenta la presión en la casa y por qué; y (3) propone un cambio que sí funcione y justifícalo con un cálculo (densidad del agua 1000 kg/m³, g = 9.8 m/s²).",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La superficie del tanque está más abajo que la casa, así que el agua no puede subir hasta ella sin una bomba. Un tubo angosto aumenta la rapidez, pero según Bernoulli donde el agua corre más rápido la presión es menor, y el caudal no aumenta. Lo que sirve es subir el nivel del agua (tanque más alto o bomba con cisterna elevada): para tener unos 100 000 Pa en la casa, el agua debe estar unos 10 m por encima de ella.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.12"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El agua del tanque está a 20 m y la casa de Julio a 25 m, o sea 5 m más arriba que la superficie del agua, y el agua sola no sube por encima de su nivel. El tubo angosto no ayuda: el agua iría más rápido, pero donde va más rápido la presión es menor y por el tubo seguiría pasando la misma agua por segundo. Habría que poner un tanque o una bomba que suba el agua más arriba que la casa: para tener 100 000 Pa, h = P/(ρg) = 100 000/(1000 × 9.8) ≈ 10 m, así que el nivel del agua debería estar a unos 35 m sobre la calle.",
+      "criterios": [
+       {
+        "id": "c1",
+        "obligatorio": true,
+        "descripcion": "Compara las alturas: dice que la superficie del agua del tanque (20 m) está por debajo de la casa (25 m) y que por eso el agua no llega o llega sin presión."
+       },
+       {
+        "id": "c2",
+        "obligatorio": true,
+        "descripcion": "Rechaza la propuesta del tubo angosto y lo justifica con que mayor rapidez implica menor presión (Bernoulli) o con que el caudal no aumenta (continuidad)."
+       },
+       {
+        "id": "c3",
+        "obligatorio": true,
+        "descripcion": "Propone elevar el nivel del agua por encima de la casa (tanque más alto, bomba o cisterna elevada) y lo apoya con un cálculo de ρgh o de la altura necesaria."
+       },
+       {
+        "id": "c4",
+        "obligatorio": false,
+        "descripcion": "Revisa que su resultado sea razonable (por ejemplo, que la altura calculada sea de unos metros y no de kilómetros) o menciona el rozamiento en la tubería."
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta el tubo angosto porque cree que el agua más rápida empuja más.",
+        "ejemplo": "Sí funciona, porque si el agua va más rápido llega con más presión a la casa.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que estrechar el tubo hace pasar más agua por segundo.",
+        "ejemplo": "Con el tubo angosto el agua sale con más fuerza, como cuando uno tapa la manguera con el dedo, y así le llega más agua a Julio.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la falta de agua solo por la distancia al tanque o por el consumo, sin comparar alturas.",
+        "ejemplo": "No le llega porque vive lejos del tanque y los vecinos de abajo gastan toda el agua.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.12",
+     "grado": 9,
+     "indicador": "1.12. Resuelve problemas teóricos sobre hidrodinámica.",
+     "evidencia": "Problemas resueltos de hidrodinámica"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.12/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.2"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.2",
+      "CON:fisica/principio-arquimedes"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Una piedra cuelga de un dinamómetro que marca 6.0 N en el aire. Sin soltarla del dinamómetro, la sumergen por completo en una cubeta con agua, sin que toque el fondo. ¿Qué marcará ahora el dinamómetro y por qué?",
+     "opciones": {
+      "A": "Más de 6.0 N, porque el agua de encima empuja la piedra hacia abajo.",
+      "B": "Los mismos 6.0 N, porque la masa de la piedra no cambia en el agua.",
+      "C": "Menos de 6.0 N, porque dentro del agua la gravedad atrae menos a la piedra.",
+      "D": "Menos de 6.0 N, porque el agua empuja la piedra hacia arriba con otra fuerza."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El peso de la piedra sigue siendo 6.0 N, pero el agua la empuja hacia arriba; el dinamómetro solo tiene que sostener la diferencia entre el peso y el empuje, que es el peso aparente.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.2"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-arquimedes",
+     "nombre": "Principio de Arquímedes: empuje",
+     "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.2",
+     "grado": 9,
+     "indicador": "1.2 Calcula el peso aparente de un objeto sumergido en un líquido a partir del empuje.",
+     "evidencia": "Cálculo y medición del peso aparente con diagrama de cuerpo libre"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.2"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.2",
+      "CON:fisica/principio-arquimedes"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Un cilindro de aluminio colgado de un dinamómetro marca 2.65 N en el aire. Al sumergirlo por completo en agua, desaloja 100 mL de agua, que tienen una masa de 0.100 kg. Usa g = 9.8 m/s². Primero calcula el empuje y después el peso aparente: lo que debería marcar el dinamómetro con el cilindro sumergido. Escribe solo el número del peso aparente, en newtons (N).",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 1.67,
+     "tolerancia": 0.03,
+     "unidad": "N",
+     "retroalimentacion": "El empuje es el peso del agua desalojada: 0.100 kg × 9.8 m/s² = 0.98 N. El peso aparente es el peso menos el empuje: 2.65 N − 0.98 N = 1.67 N.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.2"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-arquimedes",
+     "nombre": "Principio de Arquímedes: empuje",
+     "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.2",
+     "grado": 9,
+     "indicador": "1.2 Calcula el peso aparente de un objeto sumergido en un líquido a partir del empuje.",
+     "evidencia": "Cálculo y medición del peso aparente con diagrama de cuerpo libre"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.2"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.2",
+      "CON:fisica/principio-arquimedes"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "Ana Lucía se recupera de una lesión de rodilla haciendo ejercicios de pie en una piscina, con el agua hasta el pecho. En 2 o 3 oraciones: (1) nombra las fuerzas verticales que actúan sobre su cuerpo y di hacia dónde apunta cada una, y (2) explica por qué sus rodillas cargan menos que cuando está fuera del agua.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Sobre Ana Lucía actúan su peso hacia abajo, el empuje del agua hacia arriba y la fuerza del fondo sobre sus pies, también hacia arriba. Como el empuje sostiene parte del peso, el fondo y las piernas solo deben aguantar el peso aparente (peso menos empuje); su peso no cambia.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.2"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Sobre ella actúan su peso, hacia abajo, el empuje del agua, hacia arriba, y la fuerza del piso de la piscina sobre sus pies, también hacia arriba. El empuje sostiene una parte de su peso, así que el piso y sus rodillas solo tienen que aguantar el peso menos el empuje, que es el peso aparente. Su peso es el mismo, pero sus rodillas cargan menos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "nombra el peso hacia abajo y el empuje del agua hacia arriba",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "explica que las piernas o el fondo solo sostienen la diferencia entre el peso y el empuje (peso aparente)",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "nombra la fuerza del fondo de la piscina sobre los pies, hacia arriba",
+        "obligatorio": false
+       },
+       {
+        "id": "c4",
+        "descripcion": "aclara que el peso (o la masa) de Ana Lucía no cambia dentro del agua",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "atribuye la reducción a una gravedad menor dentro del agua",
+        "ejemplo": "En el agua la gravedad es más débil, por eso pesa menos y le duelen menos las rodillas.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "cree que el cuerpo pierde peso o masa en el agua, sin nombrar el empuje",
+        "ejemplo": "En la piscina su cuerpo pesa menos porque el agua le quita peso.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "nombra el empuje pero lo dibuja o describe hacia abajo, junto con el peso",
+        "ejemplo": "Actúan el peso y la presión del agua, que la empujan hacia abajo y la hacen flotar.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-arquimedes",
+     "nombre": "Principio de Arquímedes: empuje",
+     "definicion": "Un cuerpo sumergido recibe un empuje vertical igual al peso del fluido desalojado; explica la flotación.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.2",
+     "grado": 9,
+     "indicador": "1.2 Calcula el peso aparente de un objeto sumergido en un líquido a partir del empuje.",
+     "evidencia": "Cálculo y medición del peso aparente con diagrama de cuerpo libre"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.3"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.3",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Marta se pesa tres veces seguidas en la báscula de la unidad de salud y obtiene 52.3 kg, 52.5 kg y 52.4 kg. ¿Cuál es la mejor explicación de que los valores no coincidan?",
+     "opciones": {
+      "A": "Es normal: toda medida varía un poco por la postura, la lectura y el instrumento.",
+      "B": "Su masa cambió de verdad entre una pesada y otra, porque se movió al subirse.",
+      "C": "La báscula está dañada, porque un instrumento en buen estado da siempre igual.",
+      "D": "Hubo errores en dos pesadas; hay que repetir hasta que salgan tres iguales."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/medicion-magnitudes-instrumentos/1",
+      "D": "DIF:fisica/medicion-magnitudes-instrumentos/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Toda medición tiene una incertidumbre: pequeños cambios en la postura, en cómo se lee y en el propio instrumento hacen variar el resultado. Por eso se repite la medida y se reporta el promedio con su incertidumbre, aquí unos 52.4 ± 0.1 kg.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.3"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.3",
+     "grado": 9,
+     "indicador": "1.3. Presenta resultados experimentales considerando el error de la medida.",
+     "evidencia": "Informe breve de laboratorio con mediciones repetidas, promedio, incertidumbre y cifras significativas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.3"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.3",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Midieron cinco veces el empuje sobre una botella con un dinamómetro que marca de 0.1 en 0.1 N y obtuvieron 2.4 N, 2.5 N, 2.6 N, 2.6 N y 2.6 N. La calculadora da un promedio de 2.54 N. ¿Cómo deben reportar el resultado en su informe?",
+     "opciones": {
+      "A": "2.54 N, porque el promedio ya corrige el error y no hace falta más.",
+      "B": "2.6 N, porque es el valor que más veces se repitió en las medidas.",
+      "C": "2.5 ± 0.1 N, porque el promedio se redondea a la precisión del aparato.",
+      "D": "2.540 ± 0.100 N, porque con más cifras la medida queda más precisa."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/medicion-magnitudes-instrumentos/1",
+      "D": "DIF:fisica/medicion-magnitudes-instrumentos/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las medidas van de 2.4 N a 2.6 N: la mitad de ese rango, 0.1 N, coincide con la resolución del dinamómetro y sirve como incertidumbre. El promedio se escribe con los mismos decimales que la incertidumbre: 2.5 ± 0.1 N.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.3"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.3",
+     "grado": 9,
+     "indicador": "1.3. Presenta resultados experimentales considerando el error de la medida.",
+     "evidencia": "Informe breve de laboratorio con mediciones repetidas, promedio, incertidumbre y cifras significativas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.3"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.3",
+      "CON:fisica/medicion-magnitudes-instrumentos"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "Kevin escribió en su informe: «El empuje sobre la botella fue 2.5371 N». Midió una sola vez, con un dinamómetro que marca de 0.1 en 0.1 N, y copió el número de la calculadora. En 2 o 3 oraciones: (1) explica qué información le falta a ese resultado, (2) explica qué le sobra y por qué, y (3) describe cómo mejorarías la medición y la forma de reportarla.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Le falta la incertidumbre: con una sola medida no se sabe cuánto puede variar. Le sobran cifras, porque el dinamómetro solo distingue décimas de newton. Conviene repetir la medida varias veces, promediar y reportar algo como 2.5 ± 0.1 N.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Le falta la incertidumbre: no dice cuánto puede variar el valor, y con una sola medida no se puede saber. Le sobran decimales, porque el dinamómetro solo marca décimas de newton y los otros números no son confiables. Yo mediría cinco veces, sacaría el promedio y lo escribiría con un decimal y su incertidumbre, por ejemplo 2.5 ± 0.1 N.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "señala que falta la incertidumbre (cuánto puede variar el valor)",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "señala que sobran cifras y lo justifica con la resolución de 0.1 N del dinamómetro",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "propone repetir la medición varias veces y promediar",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "escribe un ejemplo de reporte con un decimal y su incertidumbre (como 2.5 ± 0.1 N)",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "cree que más decimales hacen más precisa la medida",
+        "ejemplo": "El resultado está bien porque tiene muchos decimales y eso lo hace más exacto.",
+        "dificultad": "DIF:fisica/medicion-magnitudes-instrumentos/2"
+       },
+       {
+        "descripcion": "cree que la medida correcta no tiene error y que repetir sirve solo para obtener el mismo número",
+        "ejemplo": "Debe medir otra vez hasta que le salga 2.5371 N de nuevo; así sabe que no se equivocó.",
+        "dificultad": "DIF:fisica/medicion-magnitudes-instrumentos/1"
+       },
+       {
+        "descripcion": "propone mejorar solo cambiando el instrumento, sin repetir ni reportar la incertidumbre",
+        "ejemplo": "Le falta usar un dinamómetro más caro; con uno bueno no hay error.",
+        "dificultad": "DIF:fisica/medicion-magnitudes-instrumentos/1"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.3",
+     "grado": 9,
+     "indicador": "1.3. Presenta resultados experimentales considerando el error de la medida.",
+     "evidencia": "Informe breve de laboratorio con mediciones repetidas, promedio, incertidumbre y cifras significativas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.5"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.5",
+      "CON:fisica/principio-pascal"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Un modelo de prensa hidráulica tiene una jeringa delgada, con émbolo de 2.0 cm², unida por una manguera llena de agua a una jeringa gruesa, con émbolo de 10 cm². Ambos émbolos están a la misma altura. Valeria empuja el émbolo delgado con 6.0 N. Si no hubiera fricción, ¿qué fuerza haría el agua sobre el émbolo grueso y por qué?",
+     "opciones": {
+      "A": "6.0 N, porque la manguera llena de agua transmite la misma fuerza de un émbolo al otro.",
+      "B": "30 N, porque la presión del agua es igual en ambos émbolos y el grueso tiene cinco veces más área.",
+      "C": "30 N, porque el agua multiplica la presión y el émbolo grueso recibe cinco veces más presión.",
+      "D": "1.2 N, porque la fuerza de Valeria se reparte en un émbolo cinco veces más ancho y se debilita."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:fisica/principio-pascal/1",
+      "D": "DIF:fisica/principio-pascal/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La presión que hace Valeria es 6.0 N ÷ 2.0 cm² = 3.0 N/cm², y el agua la transmite igual a todo el líquido; sobre 10 cm² esa presión produce 3.0 N/cm² × 10 cm² = 30 N. Lo que se multiplica es la fuerza, no la presión.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.5"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-pascal",
+     "nombre": "Principio de Pascal",
+     "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.5",
+     "grado": 9,
+     "indicador": "1.4. Comprueba experimentalmente el principio de Pascal a partir de datos de variación de presión en una prensa hidráulica y explica el efecto del principio de multiplicación de fuerzas",
+     "evidencia": "Prensa hidráulica construida con registro de pruebas Tabla de fuerzas y áreas con el porcentaje de diferencia respecto al cálculo y las fuentes de error identificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.5"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.5",
+      "CON:fisica/principio-pascal"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: en su prensa de jeringas, el émbolo grande tiene 4 veces el área del pequeño. Pusieron cargas sobre el émbolo grande y midieron la fuerza mínima en el pequeño para empezar a subirlas. Carga 4.0 N: medida 1.3 N, calculada 1.0 N. Carga 8.0 N: medida 2.3 N, calculada 2.0 N. Carga 12.0 N: medida 3.3 N, calculada 3.0 N. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "Contradicen el principio de Pascal, porque ninguna fuerza medida coincide con la calculada.",
+      "B": "Apoyan el principio, porque la medida supera a la calculada siempre en 0.3 N, como haría la fricción.",
+      "C": "Muestran que la presión se pierde en la manguera, porque en el émbolo pequeño falta empujar más.",
+      "D": "Indican que conviene usar cargas pequeñas, porque con ellas la diferencia porcentual es menor."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:fisica/principio-pascal/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La diferencia es la misma, 0.3 N, con cualquier carga: es un error sistemático, como la fricción de los émbolos, que se opone a que empiecen a moverse. En porcentaje pesa más con cargas pequeñas (30 % con 4.0 N y 10 % con 12.0 N), así que las cargas grandes dan una comprobación más exacta.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.5"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-pascal",
+     "nombre": "Principio de Pascal",
+     "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.5",
+     "grado": 9,
+     "indicador": "1.4. Comprueba experimentalmente el principio de Pascal a partir de datos de variación de presión en una prensa hidráulica y explica el efecto del principio de multiplicación de fuerzas",
+     "evidencia": "Prensa hidráulica construida con registro de pruebas Tabla de fuerzas y áreas con el porcentaje de diferencia respecto al cálculo y las fuentes de error identificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.5"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.5",
+      "CON:fisica/principio-pascal"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "En los frenos hidráulicos de un bus, el pedal empuja un émbolo pequeño; el líquido de frenos llena unos tubos que llegan a émbolos más grandes en cada una de las ruedas, que aprietan las pastillas. En 2 o 3 oraciones: (1) explica con el principio de Pascal por qué el pie del motorista, con una fuerza moderada, produce fuerzas grandes en todas las ruedas, y (2) explica por qué una fuga del líquido de frenos es peligrosa.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La presión que crea el pedal se transmite igual a todo el líquido, también a las ruedas más lejanas, y como los émbolos de las ruedas tienen más área, la fuerza en ellos es mayor (F = P · A). Si el líquido se fuga, el pedal lo empuja hacia afuera en vez de presionarlo y la presión no llega a las ruedas.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Al pisar el pedal se crea una presión en el líquido, y por el principio de Pascal esa misma presión llega a todos los émbolos de las ruedas, aunque estén lejos. Como esos émbolos tienen más área que el del pedal, la fuerza sobre ellos es mayor, porque la fuerza es la presión por el área. Si hay una fuga, al pisar el líquido se escapa en lugar de quedar encerrado, la presión no sube y las ruedas no frenan.",
+      "criterios": [
+       {
+        "id": "c1",
+        "obligatorio": true,
+        "descripcion": "Dice que la presión (no la fuerza) se transmite por igual a todo el líquido y llega a todas las ruedas."
+       },
+       {
+        "id": "c2",
+        "obligatorio": true,
+        "descripcion": "Relaciona la fuerza mayor en las ruedas con el área mayor de sus émbolos (F = P · A o en palabras)."
+       },
+       {
+        "id": "c3",
+        "obligatorio": true,
+        "descripcion": "Explica la fuga: el líquido deja de estar encerrado o se escapa, la presión no se forma o no llega, y el bus no frena o frena menos."
+       },
+       {
+        "id": "c4",
+        "obligatorio": false,
+        "descripcion": "Menciona que el émbolo del pedal recorre más distancia que los de las ruedas, o que el aire que entra por una fuga se comprime y el pedal se siente «esponjoso»."
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Dice que el líquido aumenta la presión al pasar a los émbolos grandes.",
+        "ejemplo": "El líquido de frenos multiplica la presión, por eso en las ruedas hay más presión que en el pedal.",
+        "dificultad": "DIF:fisica/principio-pascal/1"
+       },
+       {
+        "descripcion": "Cree que la presión se debilita en los tubos largos o con la distancia.",
+        "ejemplo": "Las ruedas de atrás frenan menos porque la presión llega más débil por el tubo largo.",
+        "dificultad": "DIF:fisica/principio-pascal/2"
+       },
+       {
+        "descripcion": "Explica la fuga por el peso o la cantidad del líquido, sin hablar de presión.",
+        "ejemplo": "Con la fuga queda menos líquido y pesa menos, por eso no aprieta las ruedas.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-pascal",
+     "nombre": "Principio de Pascal",
+     "definicion": "Un cambio de presión en un fluido encerrado se transmite íntegramente; base de la prensa hidráulica.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.5",
+     "grado": 9,
+     "indicador": "1.4. Comprueba experimentalmente el principio de Pascal a partir de datos de variación de presión en una prensa hidráulica y explica el efecto del principio de multiplicación de fuerzas",
+     "evidencia": "Prensa hidráulica construida con registro de pruebas Tabla de fuerzas y áreas con el porcentaje de diferencia respecto al cálculo y las fuentes de error identificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.6/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.6/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.6"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.6",
+      "CON:fisica/presion-hidrostatica"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      9
+     ],
+     "enunciado": "Andrea bucea en el lago de Coatepeque, en un punto donde el fondo está a 40 m de la superficie. Ella está 12 m por debajo de la superficie del agua. Con ρ = 1000 kg/m³ para el agua y g = 9.8 m/s², ¿cuál es la presión que ejerce solo el agua sobre Andrea (sin sumar la presión atmosférica), en kPa? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 117.6,
+     "tolerancia": 0.6,
+     "unidad": "kPa",
+     "retroalimentacion": "La profundidad se mide desde la superficie hasta Andrea, no desde el fondo: P = ρ · g · h = 1000 kg/m³ × 9.8 m/s² × 12 m = 117 600 Pa, es decir, 117.6 kPa. Lo profundo que sea el lago debajo de ella no cambia la presión que siente.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.6"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/presion-hidrostatica",
+     "nombre": "Presión hidrostática y atmosférica",
+     "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.6",
+     "grado": 9,
+     "indicador": "1.6. Resuelve problemas empleando las leyes de la hidrostática.",
+     "evidencia": "Problemas resueltos de hidrostática"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.6/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.6/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.6/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.6"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.6",
+      "CON:fisica/presion-hidrostatica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: bajaron un sensor en dos tanques llenos con líquidos distintos. El tanque 1 es angosto y el tanque 2 es mucho más ancho. Presión debida al líquido (sin la atmosférica): a 0.5 m, tanque 1: 4.9 kPa y tanque 2: 5.4 kPa; a 1.0 m, 9.8 kPa y 10.8 kPa; a 1.5 m, 14.7 kPa y 16.2 kPa. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "En ambos la presión es proporcional a la profundidad, y el líquido 2 es más denso que el 1.",
+      "B": "En ambos la presión es proporcional a la profundidad, y el tanque 2 tiene más presión por ser ancho.",
+      "C": "En ambos la presión crece cada vez más rápido, porque el líquido de arriba se va acumulando.",
+      "D": "La diferencia entre tanques es fija, y se debe a que el aire empuja más sobre el tanque ancho."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/presion-hidrostatica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En cada tanque, al duplicar o triplicar la profundidad la presión se duplica o triplica. A igual profundidad el tanque 2 marca unas 1.1 veces más (10.8 ÷ 9.8), y como P = ρ · g · h no depende del ancho del tanque, eso indica un líquido unas 1.1 veces más denso. La diferencia no es fija: crece de 0.5 a 1.5 kPa.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.6"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/presion-hidrostatica",
+     "nombre": "Presión hidrostática y atmosférica",
+     "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.6",
+     "grado": 9,
+     "indicador": "1.6. Resuelve problemas empleando las leyes de la hidrostática.",
+     "evidencia": "Problemas resueltos de hidrostática"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.6/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.6"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.6",
+      "CON:fisica/presion-hidrostatica"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "Supón que, junto al muro de la presa del embalse Cerrón Grande, el agua llega 30 m por encima de la base del muro. Usa ρ = 1000 kg/m³ y g = 9.8 m/s². En 2 o 3 oraciones: (1) calcula la presión del agua, en kPa, a 10 m de profundidad y en la base del muro; (2) explica con esos resultados por qué el muro es más grueso en la base que arriba, y (3) di qué podría pasar si todo el muro tuviera el grosor de la parte de arriba.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "A 10 m la presión del agua es 98 kPa y en la base, a 30 m, 294 kPa: el triple. Cada metro cuadrado del muro recibe más empuje cuanto más abajo está, por eso la base se hace más gruesa; un muro delgado en la base podría agrietarse o ceder justo donde el empuje es mayor.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.6"
+     },
+     "rubrica": {
+      "respuesta_modelo": "A 10 m la presión es 1000 × 9.8 × 10 = 98 000 Pa, unos 98 kPa, y en la base es 1000 × 9.8 × 30 = 294 000 Pa, unos 294 kPa, el triple. Como la presión crece con la profundidad, el agua empuja con más fuerza cada metro cuadrado de la parte baja del muro, y por eso se construye más grueso abajo. Si todo el muro fuera tan delgado como arriba, la base podría agrietarse o romperse por el empuje del agua.",
+      "criterios": [
+       {
+        "id": "c1",
+        "obligatorio": true,
+        "descripcion": "Calcula las dos presiones: unos 98 kPa a 10 m y unos 294 kPa en la base (se aceptan 98 000 Pa y 294 000 Pa)."
+       },
+       {
+        "id": "c2",
+        "obligatorio": true,
+        "descripcion": "Relaciona la mayor presión en la base (por la mayor profundidad) con un mayor empuje sobre el muro y con la necesidad de más grosor abajo."
+       },
+       {
+        "id": "c3",
+        "obligatorio": true,
+        "descripcion": "Dice una consecuencia plausible de un muro delgado uniforme: la base se agrieta, cede o se rompe donde la presión es mayor."
+       },
+       {
+        "id": "c4",
+        "obligatorio": false,
+        "descripcion": "Aclara que lo que importa es la profundidad del agua junto al muro, no cuánta agua tiene el embalse ni qué tan largo es."
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Atribuye la presión en la base a la cantidad total de agua del embalse.",
+        "ejemplo": "El muro es grueso abajo porque el embalse tiene millones de litros y todo ese peso cae sobre la base.",
+        "dificultad": "DIF:fisica/presion-hidrostatica/1"
+       },
+       {
+        "descripcion": "Piensa que el agua solo empuja hacia abajo y no contra el muro.",
+        "ejemplo": "El agua empuja hacia el fondo, así que el muro es grueso abajo para aguantar su propio peso.",
+        "dificultad": "DIF:fisica/presion-hidrostatica/2"
+       },
+       {
+        "descripcion": "Mide la profundidad desde la base hacia arriba y obtiene la presión mayor arriba.",
+        "ejemplo": "A 10 m de la base hay 98 kPa y arriba, a 30 m, 294 kPa, así que arriba empuja más.",
+        "dificultad": "DIF:fisica/presion-hidrostatica/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/presion-hidrostatica",
+     "nombre": "Presión hidrostática y atmosférica",
+     "definicion": "La presión en un fluido aumenta con profundidad y densidad (P = P₀ + ρgh); la atmosférica disminuye con la altitud.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.6",
+     "grado": 9,
+     "indicador": "1.6. Resuelve problemas empleando las leyes de la hidrostática.",
+     "evidencia": "Problemas resueltos de hidrostática"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.7/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.7",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Mariela cuelga dos hojas de papel paralelas, separadas unos 4 cm, y le pide a Óscar que sople con fuerza entre ellas, de arriba hacia abajo. Antes de que él sople, ¿qué predices que harán las hojas y por qué?",
+     "opciones": {
+      "A": "Se separan, porque el aire rápido entre ellas empuja cada hoja hacia afuera con más presión.",
+      "B": "Se juntan, porque entre ellas el aire va más rápido y su presión queda menor que la de afuera.",
+      "C": "Quedan quietas, porque el aire baja en línea recta entre ellas y no empuja hacia los lados.",
+      "D": "Se separan, porque el aire que sopla las empuja y el aire quieto de afuera no hace presión."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:fisica/principio-bernoulli/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al soplar, el aire entre las hojas se mueve rápido y su presión baja; el aire quieto de afuera sigue a la presión atmosférica, que es mayor, y empuja las hojas una contra la otra. El aire quieto también ejerce presión: es justo la que actúa desde afuera.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.7"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.7",
+     "grado": 9,
+     "indicador": "1.7. Reconoce la relación inversa entre presión y rapidez en un fluido ideal a partir de casos concretos.",
+     "evidencia": "Análisis de tres casos con el principio de Bernoulli y crítica escrita de una explicación divulgativa del vuelo"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.7/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.7/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.7",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un ejemplo calculado para un fluido ideal: agua que corre por un tubo horizontal que se angosta y luego se ensancha un poco. Sección 1: área 20 cm², rapidez 2.0 m/s, presión 130 000 Pa. Sección 2: área 5 cm², rapidez 8.0 m/s, presión 100 000 Pa. Sección 3: área 10 cm², rapidez 4.0 m/s, presión 124 000 Pa. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "Donde la rapidez es mayor la presión también es mayor, porque el agua rápida empuja más.",
+      "B": "La presión baja a lo largo del tubo, porque el agua pierde energía a medida que avanza.",
+      "C": "En la sección angosta pasa menos agua cada segundo; por eso allí la presión es la menor.",
+      "D": "Donde la rapidez es mayor la presión es menor, y el caudal es el mismo en las tres secciones."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:fisica/principio-bernoulli/2",
+      "C": "DIF:fisica/principio-bernoulli/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Área por rapidez da lo mismo en las tres secciones (20 × 2.0 = 5 × 8.0 = 10 × 4.0): pasa la misma agua por segundo, y donde el tubo es angosto va más rápido. La presión es menor justo donde la rapidez es mayor y vuelve a subir en la sección 3, así que no baja simplemente a lo largo del tubo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.7"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.7",
+     "grado": 9,
+     "indicador": "1.7. Reconoce la relación inversa entre presión y rapidez en un fluido ideal a partir de casos concretos.",
+     "evidencia": "Análisis de tres casos con el principio de Bernoulli y crítica escrita de una explicación divulgativa del vuelo"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.7/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.7/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.7/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.7"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.7",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "Andrea ve un video que explica el vuelo así: «El ala es más curva por arriba, así que el aire de arriba recorre más camino; como tiene que llegar al borde de atrás al mismo tiempo que el aire de abajo, va más rápido, y por eso el avión sube». En 2 o 3 oraciones: (1) señala qué afirma el video sin demostrarlo y por qué esa afirmación es dudosa, y (2) explica, con la relación entre la rapidez y la presión del aire, de dónde sale la fuerza hacia arriba sobre el ala.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Nada obliga al aire de arriba a reunirse con el de abajo: medido en túneles de viento, llega antes. Lo que sí se mide es que sobre el ala el aire va más rápido y su presión es menor que abajo; esa diferencia de presión da la fuerza hacia arriba.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.7"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El video da por hecho, sin demostrarlo, que el aire de arriba tiene que llegar al mismo tiempo que el de abajo; nada lo obliga a reunirse, y en los túneles de viento se ve que el de arriba llega antes. Lo que sí se mide es que el aire pasa más rápido por arriba del ala; donde va más rápido su presión es menor, así que abajo la presión es mayor y esa diferencia empuja el ala hacia arriba.",
+      "criterios": [
+       {
+        "id": "c1",
+        "obligatorio": true,
+        "descripcion": "Señala como no demostrada la idea de que el aire de arriba y el de abajo deben llegar al mismo tiempo, y da una razón: nada obliga a que se reúnan, las mediciones muestran que el de arriba llega antes, o vuelan aviones de alas planas o boca abajo."
+       },
+       {
+        "id": "c2",
+        "obligatorio": true,
+        "descripcion": "Relaciona la mayor rapidez del aire sobre el ala con una presión menor arriba que abajo."
+       },
+       {
+        "id": "c3",
+        "obligatorio": true,
+        "descripcion": "Concluye que la diferencia de presión (mayor abajo que arriba) produce la fuerza neta hacia arriba sobre el ala."
+       },
+       {
+        "id": "c4",
+        "obligatorio": false,
+        "descripcion": "Agrega que el ala inclinada desvía aire hacia abajo, o que el video llega a una idea cierta (aire más rápido arriba) con una razón falsa."
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta el «tiempo igual» como causa de la rapidez y del vuelo.",
+        "ejemplo": "El video está bien explicado: el aire de arriba recorre más camino y debe llegar junto con el de abajo, por eso va más rápido y el avión sube.",
+        "dificultad": "DIF:fisica/principio-bernoulli/1"
+       },
+       {
+        "descripcion": "Invierte la relación: cree que el aire más rápido empuja con más presión.",
+        "ejemplo": "El aire que choca rápido contra la parte de abajo del ala tiene más presión y la empuja hacia arriba.",
+        "dificultad": "DIF:fisica/principio-bernoulli/2"
+       },
+       {
+        "descripcion": "Critica el video sin usar la presión del aire: atribuye la subida solo al motor.",
+        "ejemplo": "El video está mal porque lo que hace subir al avión es la fuerza del motor que lo empuja.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.7",
+     "grado": 9,
+     "indicador": "1.7. Reconoce la relación inversa entre presión y rapidez en un fluido ideal a partir de casos concretos.",
+     "evidencia": "Análisis de tres casos con el principio de Bernoulli y crítica escrita de una explicación divulgativa del vuelo"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.7/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.9/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.9/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.9",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      9
+     ],
+     "enunciado": "La superficie del agua del tanque elevado de una escuela está 5.0 m por encima de una llave abierta por completo (la altura se mide desde la llave hasta la superficie del agua). Supón que el agua es un fluido ideal y que el tanque es tan ancho que su nivel casi no baja. Con g = 9.8 m/s² y el teorema de Torricelli, ¿con qué rapidez sale el agua por la llave, en m/s? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 9.9,
+     "tolerancia": 0.1,
+     "unidad": "m/s",
+     "retroalimentacion": "Torricelli dice que el agua sale con la rapidez que tendría si cayera libremente desde la superficie del tanque: v = √(2gh) = √(2 × 9.8 × 5.0) ≈ 9.9 m/s. En una llave real sale más despacio, porque el rozamiento en la tubería, los codos y la propia llave consumen parte de esa energía.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.9"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.9",
+     "grado": 9,
+     "indicador": "1.8. Comprueba experimentalmente el teorema de Torricelli a partir del caudal de salida de un líquido en un recipiente, y lo compara con el valor calculado teoricamente",
+     "evidencia": "Tabla y gráfica del alcance del chorro según la altura del agua, con ejes, unidades y escala Cálculo de rapidez de salida comparado con la medición"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.9/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.9/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.9/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.9",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: una botella perforada está sobre un pupitre, con el agujero a 75 cm del piso, y el chorro cae al piso. Midieron la altura del agua sobre el agujero y el alcance del chorro (distancia horizontal desde el punto del piso que está bajo el agujero hasta donde cae el agua). Altura 5 cm: alcance 37 cm. Altura 10 cm: alcance 52 cm. Altura 15 cm: alcance 64 cm. Altura 20 cm: alcance 74 cm. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "El alcance es proporcional a la altura: al duplicar la altura del agua, el alcance se duplica.",
+      "B": "El alcance crece lo mismo en cada paso: cada 5 cm más de agua suman unos 12 cm de alcance.",
+      "C": "El alcance crece cada vez más rápido: el último paso de 5 cm suma más que el primero.",
+      "D": "El alcance crece con la altura, pero cada vez menos: al cuadruplicar la altura, se duplica."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "De 5 a 20 cm la altura se multiplica por 4 y el alcance pasa de 37 a 74 cm, el doble; de 5 a 10 cm la altura se duplica y el alcance crece solo unas 1.4 veces. Así se comporta algo que depende de la raíz cuadrada de la altura, como la rapidez de salida en el teorema de Torricelli, v = √(2gh): como el agua siempre cae desde la misma altura, el alcance es proporcional a esa rapidez.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.9"
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.9",
+     "grado": 9,
+     "indicador": "1.8. Comprueba experimentalmente el teorema de Torricelli a partir del caudal de salida de un líquido en un recipiente, y lo compara con el valor calculado teoricamente",
+     "evidencia": "Tabla y gráfica del alcance del chorro según la altura del agua, con ejes, unidades y escala Cálculo de rapidez de salida comparado con la medición"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.9/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U1-1.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U1-1.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U1-1.9",
+      "CON:fisica/principio-bernoulli"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "El grupo de Sofía y Rodrigo midió el alcance del chorro de una botella cuando el agua estaba 20.0 cm por encima del agujero y, a partir de él, obtuvo una rapidez de salida de 1.85 m/s. Con el teorema de Torricelli y g = 9.8 m/s², la rapidez esperada es 1.98 m/s. Rodrigo concluye: «El teorema no sirve, porque no dio igual». En 2 o 3 oraciones: (1) calcula la diferencia como porcentaje del valor teórico, (2) da una razón física o de medición por la que el valor medido sale menor, y (3) di si los datos apoyan o no el teorema y por qué.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La diferencia es de 0.13 m/s, unos 7 % del valor teórico. El agua real roza con el borde del agujero y el alcance se marca a ojo, así que se espera que el valor medido salga algo menor; una diferencia pequeña y con causas conocidas apoya el teorema, no lo refuta.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U1-1.9"
+     },
+     "rubrica": {
+      "respuesta_modelo": "La diferencia es de 0.13 m/s, unos 7 % del valor teórico. El medido sale menor porque el agua real roza con el borde del agujero y pierde algo de energía, mientras que el teorema supone un fluido ideal; además el alcance se marca a ojo. Los datos sí apoyan el teorema: la diferencia es pequeña y tiene causas conocidas, y un modelo ideal no tiene que coincidir exactamente con la medición.",
+      "criterios": [
+       {
+        "id": "c1",
+        "obligatorio": true,
+        "descripcion": "Calcula la diferencia como porcentaje del valor teórico: entre 6 % y 7 % (0.13 m/s entre 1.98 m/s)."
+       },
+       {
+        "id": "c2",
+        "obligatorio": true,
+        "descripcion": "Da al menos una causa concreta de que el valor medido sea menor: rozamiento o viscosidad del agua real en el agujero (el teorema supone un fluido ideal), o un error al medir el alcance o la altura."
+       },
+       {
+        "id": "c3",
+        "obligatorio": true,
+        "descripcion": "Concluye que los datos apoyan el teorema (aunque sea de forma aproximada) y lo justifica con que la diferencia es pequeña y explicable."
+       },
+       {
+        "id": "c4",
+        "obligatorio": false,
+        "descripcion": "Propone cómo reducir la diferencia: repetir mediciones, grabar el chorro en cámara lenta o usar un agujero de borde liso."
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Rechaza el modelo por cualquier diferencia con la medición.",
+        "ejemplo": "Rodrigo tiene razón: si la fórmula fuera correcta, tendría que dar exactamente 1.98 m/s.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Da la diferencia sin porcentaje y sin compararla con el valor teórico.",
+        "ejemplo": "La diferencia es 0.13, casi nada, por eso el teorema se cumple.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Atribuye la diferencia a algo que no cambia la rapidez según el teorema, como la masa o el peso del agua.",
+        "ejemplo": "Salió menor porque el agua pesa y su peso la frena al salir por el agujero.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/principio-bernoulli",
+     "nombre": "Hidrodinámica: continuidad y Bernoulli",
+     "definicion": "Caudal y continuidad (A₁v₁ = A₂v₂); en un fluido ideal, donde aumenta la rapidez disminuye la presión.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.9",
+     "grado": 9,
+     "indicador": "1.8. Comprueba experimentalmente el teorema de Torricelli a partir del caudal de salida de un líquido en un recipiente, y lo compara con el valor calculado teoricamente",
+     "evidencia": "Tabla y gráfica del alcance del chorro según la altura del agua, con ejes, unidades y escala Cálculo de rapidez de salida comparado con la medición"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U1-1.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/medicion-magnitudes-instrumentos/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/medicion-magnitudes-instrumentos/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/medicion-magnitudes-instrumentos",
+     "descripcion": "Cree que una medición bien hecha no tiene incertidumbre: si al repetirla salen valores distintos, piensa que alguien se equivocó o que el instrumento está malo, y que el «error» se elimina repitiendo hasta obtener valores iguales o con un instrumento mejor.",
+     "senales": "Propone descartar las medidas que no coinciden, repetir hasta que salgan iguales o comprar un aparato «que no tenga error»; reporta un solo valor sin ±.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde incertidumbre de la medida con equivocación de quien mide.",
+     "origen": "redactor-actividades (G09-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.3",
+     "grado": 9,
+     "indicador": "1.3. Presenta resultados experimentales considerando el error de la medida.",
+     "evidencia": "Informe breve de laboratorio con mediciones repetidas, promedio, incertidumbre y cifras significativas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/medicion-magnitudes-instrumentos/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/medicion-magnitudes-instrumentos/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/medicion-magnitudes-instrumentos/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/medicion-magnitudes-instrumentos",
+     "descripcion": "Cree que un resultado con más decimales es más preciso o más exacto, y copia todas las cifras de la calculadora sin tomar en cuenta la resolución del instrumento ni la incertidumbre.",
+     "senales": "Reporta valores como 2.5371 N medidos con un dinamómetro de 0.1 N, o escribe la incertidumbre con más decimales que los que el instrumento permite leer.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Asocia número de decimales con calidad de la medida.",
+     "origen": "redactor-actividades (G09-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.3",
+     "grado": 9,
+     "indicador": "1.3. Presenta resultados experimentales considerando el error de la medida.",
+     "evidencia": "Informe breve de laboratorio con mediciones repetidas, promedio, incertidumbre y cifras significativas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/medicion-magnitudes-instrumentos/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/medicion-magnitudes-instrumentos/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/medicion-magnitudes-instrumentos/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/medicion-magnitudes-instrumentos",
+     "descripcion": "Confunde precisión con exactitud: cree que si las medidas repetidas coinciden mucho entre sí el resultado es correcto, sin considerar un error sistemático como un instrumento que no estaba en cero o mal calibrado.",
+     "senales": "Afirma que un resultado es exacto «porque las cinco medidas dieron casi lo mismo», aunque quede lejos del valor de referencia, o no revisa el cero del instrumento.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Distinción precisión–exactitud es difícil; se omite el error sistemático.",
+     "origen": "redactor-actividades (G09-CIE-U1-1.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/medicion-magnitudes-instrumentos",
+     "nombre": "Medición de magnitudes con instrumentos",
+     "definicion": "Comparar una magnitud con una unidad mediante instrumentos; toda medida tiene una incertidumbre (precisión y exactitud).",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U1-1.3",
+     "grado": 9,
+     "indicador": "1.3. Presenta resultados experimentales considerando el error de la medida.",
+     "evidencia": "Informe breve de laboratorio con mediciones repetidas, promedio, incertidumbre y cifras significativas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/medicion-magnitudes-instrumentos/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  }
+ ]
+}
