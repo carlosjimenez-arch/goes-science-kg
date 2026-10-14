@@ -1,0 +1,898 @@
+{
+ "lote": "r3-ped2_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Pregunta guía de la unidad: «¿Por qué el potasio reacciona violentamente con el agua mientras el magnesio apenas lo hace?». Respóndela en 3 o 4 oraciones: relaciona la reactividad de cada metal con su energía de ionización y explica, con la capa en que están sus electrones de valencia y la atracción del núcleo, a cuál de los dos le cuesta menos cederlos y por qué. Puedes apoyarte en la posición de cada uno en la tabla periódica.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Reacciona más el metal al que le cuesta menos energía ceder sus electrones de valencia. El potasio cede uno solo, de la cuarta capa, lejos del núcleo y apantallado; el magnesio debe ceder dos, de la tercera capa y con más carga nuclear efectiva, y quitar el segundo cuesta aún más.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El potasio (grupo 1, período 4) solo tiene que ceder un electrón, que está en la cuarta capa, lejos del núcleo y apantallado por tres capas internas; por eso su energía de ionización es baja y lo cede con facilidad. El magnesio (grupo 2, período 3) tiene que ceder dos electrones de la tercera capa, más cerca del núcleo y con mayor carga nuclear efectiva, y quitar el segundo cuesta todavía más energía. Como al potasio le cuesta mucho menos ceder su electrón, reacciona mucho más rápido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la reactividad del metal con la facilidad para ceder sus electrones de valencia, es decir, con una energía de ionización baja (menor energía de ionización, más reactivo).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la estructura por qué al potasio le cuesta menos: su electrón de valencia está en una capa más externa (más lejos del núcleo o más apantallado) que los del magnesio, o el magnesio tiene mayor carga nuclear efectiva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Menciona que el magnesio debe ceder dos electrones y que quitar el segundo requiere todavía más energía.",
+        "obligatorio": false
+       },
+       {
+        "id": "c4",
+        "descripcion": "Ubica a los dos elementos en la tabla (grupo y período) para apoyar la explicación.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Explica con el total de electrones o de protones, no con la capa externa ni con la energía.",
+        "ejemplo": "El potasio tiene 19 electrones y el magnesio 12; como tiene más electrones, tiene más para ceder y reacciona más.",
+        "dificultad": "DIF:quimica/distribucion-electronica-por-niveles/1"
+       },
+       {
+        "descripcion": "Cree que perder el electrón libera energía porque el átomo «queda estable» con el octeto.",
+        "ejemplo": "El potasio quiere perder su electrón para quedar con ocho y ser estable, y al perderlo libera mucha energía; el magnesio no lo necesita tanto.",
+        "dificultad": "DIF:quimica/propiedades-periodicas/4"
+       },
+       {
+        "descripcion": "Describe la posición sin explicarla: no usa energía de ionización ni estructura.",
+        "ejemplo": "Porque el potasio es del grupo 1 y el magnesio del grupo 2, y los del grupo 1 son los más reactivos.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Respuesta modelo correcta: el potasio cede un electrón de la cuarta capa; el magnesio, dos de la tercera con mayor carga nuclear efectiva, y el segundo cuesta más. Reacción casi nula del magnesio en agua fría es real. La rúbrica exige energía de ionización y estructura, como pide 4.8, y sus errores típicos remiten a ideas previas existentes.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+       "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+       "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El magnesio apenas reacciona con agua fría; el potasio reacciona con violencia."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Pregunta guía de la unidad: «¿Por qué el potasio reacciona violentamente con el agua mientras el magnesio apenas lo hace?». Respóndela en 3 o 4 oraciones: relaciona la reactividad de cada metal con su energía de ionización y explica, con la capa en que están sus electrones de valencia y la atracción del núcleo, a cuál de los dos le cuesta menos cederlos y por qué. Puedes apoyarte en la posición de cada uno en la tabla periódica.",
+      "duracion_min": 6
+     },
+     "justificacion": "El criterio obligatorio c2 exige justificar con la estructura (capa externa, distancia, apantallamiento o carga nuclear efectiva), pero el enunciado no lo pedía. En cambio, exigía la posición en la tabla, que es c4 y es opcional. Ahora pide c1 y c2 sin anticipar la respuesta y deja la posición como apoyo. Cambio a 3 o 4 oraciones y 6 minutos. La química queda igual.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "El enunciado pide lo que la rúbrica califica como obligatorio, y no exige lo opcional."
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "Si un criterio pide el porqué, el enunciado pide el porqué."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Dos estudiantes dibujaron el átomo de aluminio, que tiene 13 electrones. Karla puso 2, 8 y 3 electrones en tres capas; Mauricio, 2 y 11 en dos capas. ¿Qué dibujo es correcto y qué indica sobre la posición del aluminio?",
+     "opciones": {
+      "A": "El de 2, 11: la segunda capa admite los electrones que falten, así que está en el período 2",
+      "B": "El de 2, 8, 3: sus tres electrones externos indican el período 3, y sus tres capas, el grupo 13",
+      "C": "El de 2, 8, 3: sus 13 electrones son de valencia y puede ceder cualquiera de ellos al reaccionar",
+      "D": "El de 2, 8, 3: sus tres capas indican el período 3, y sus tres electrones externos, el grupo 13"
+     },
+     "correcta": "D",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La segunda capa se llena con 8, así que el aluminio queda 2, 8, 3. El número de capas (3) da el período, y los tres electrones de valencia lo ubican en el grupo 13: son esos tres los que cede al reaccionar.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "decision": "aprobar",
+     "justificacion": "Aluminio 2, 8, 3 correcto; la clave D asigna bien capas al período y electrones externos al grupo 13. B invierte la relación (buen distractor) y C remite a la idea previa de ceder todos los electrones. Coherente con la configuración por orbitales que el grupo ya estudió (3.10).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U3-3.10 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22)",
+       "cita": "Antes de 4.8 el grupo ya escribe configuraciones por orbitales (Aufbau).",
+       "cita_literal": "Escribe configuraciones electrónicas y diagramas de orbitales aplicando el principio de Aufbau"
+      },
+      {
+       "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+       "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Dos estudiantes dibujaron el átomo de aluminio, que tiene 13 electrones. Karla puso 2, 8 y 3 electrones en tres capas; Mauricio, 2 y 11 en dos capas. ¿Qué dibujo es correcto y qué indica sobre la posición del aluminio?"
+     },
+     "justificacion": "«Dos compañeros» deja a los personajes solo en masculino. Les pongo nombre a una estudiante y a un estudiante, como piden las reglas del panel, y el ítem se lee mejor. Las opciones, la clave D y la química quedan igual. B y D, con la relación invertida, discriminan bien.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Personajes con nombres y géneros alternados."
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "Personajes: alterna nombres y géneros."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Alguien de tu grupo afirma: «El sodio y el potasio están en el mismo grupo, así que reaccionan con el agua exactamente igual». ¿Qué le responderías?",
+     "opciones": {
+      "A": "Que tiene razón, porque los elementos de un mismo grupo tienen propiedades idénticas",
+      "B": "Que no, porque el sodio y el potasio están en el mismo período y no en el mismo grupo",
+      "C": "Que no: reaccionan de forma parecida, pero la intensidad cambia al bajar en el grupo",
+      "D": "Que tiene razón, porque los dos son metales y todos los metales reaccionan igual con agua"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un grupo comparte el tipo de comportamiento (los dos ceden un electrón y con el agua forman un hidróxido e hidrógeno), pero no la intensidad: el potasio, más abajo, reacciona con más violencia que el sodio.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Correcto: sodio y potasio forman hidróxido e hidrógeno con agua y el potasio reacciona con más violencia. La clave C distingue comportamiento compartido de intensidad gradual; A mapea la idea previa de propiedades idénticas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Na y K con agua: hidróxido e hidrógeno; K más vigoroso."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Alguien de tu grupo afirma: «El sodio y el potasio están en el mismo grupo, así que reaccionan con el agua exactamente igual». ¿Qué le responderías?"
+     },
+     "justificacion": "«Un compañero» deja al personaje solo en masculino. Las reglas del panel prefieren «alguien del grupo», que es neutro e inclusivo. Las opciones, la clave C y la retroalimentación quedan igual. El ítem es breve y sondea bien la idea de las propiedades idénticas.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«Alguien del grupo» mejor que «un compañero»."
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "«alguien del grupo» mejor que «un compañero»."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.8/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.8/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Reactividad de metales comunes: tabla de observaciones con orden justificado",
+     "proposito": "Comparar cómo reaccionan el magnesio, el aluminio, el hierro y el cobre con vinagre y con agua salada; completar la tabla con la demostración del docente (magnesio en ácido clorhídrico diluido) y con videos de metales alcalinos en agua y de halógenos, y ordenar la reactividad observada con su justificación. Los vasos dan un orden de la serie de actividad: de él, solo la comparación magnesio-aluminio (período 3) se explica con la energía de ionización, porque el hierro y el cobre son de transición. Las tendencias de grupo (energía de ionización en los metales, electronegatividad en los no metales) se apoyan en los videos. Se cierra con una propuesta de disposición segura de baterías de litio.",
+     "materiales": [
+      "Cinta de magnesio del laboratorio: 2 trozos de 2 cm por equipo (si no hay, ver variantes)",
+      "Papel aluminio de cocina: 2 tiras de 2 cm × 5 cm por equipo",
+      "Clavos de hierro sin galvanizar, de ferretería: 2 por equipo y 1 más como testigo al aire",
+      "Alambre de cobre de un cable eléctrico pelado: 2 trozos de 5 cm por equipo (los corta y pela el docente)",
+      "Lija fina para limpiar la cinta, el clavo y el alambre",
+      "Vinagre blanco de cocina: unos 250 mL por equipo",
+      "Agua salada: 1 cucharada de sal de mesa en 250 mL de agua de chorro, por equipo",
+      "8 vasos plásticos transparentes o frascos de vidrio de compota por equipo, rotulados con cinta adhesiva y marcador",
+      "Jeringa de 60 mL sin aguja, probeta o taza medidora de cocina",
+      "Celular para cronometrar y tomar fotos; lupa (opcional)",
+      "Para la demostración del docente: ácido clorhídrico diluido del laboratorio (no más de 1 mol/L), un tubo de ensayo en su gradilla, pinzas y bicarbonato de sodio para neutralizar",
+      "Proyector, televisor o celular con dos videos que el docente revisó antes: metales alcalinos (litio, sodio, potasio) en agua y halógenos que se desplazan de sus sales",
+      "Gafas de seguridad para cada estudiante y guantes para quien maneje desechos",
+      "Tabla de observaciones en el cuaderno o impresa (metal, líquido, minuto 0 a 15, día 5)"
+     ],
+     "procedimiento": [
+      "1. Antes de la clase, el docente revisa los dos videos y deja listo un recipiente con bicarbonato para los desechos. Si hará la demostración, prepara el ácido clorhídrico diluido (no más de 1 mol/L) con gafas y guantes, en un lugar ventilado: agrega siempre el ácido al agua, nunca el agua al ácido.",
+      "2. Formen equipos de cuatro y repártanse los roles: observación, cronómetro, registro, y seguridad y materiales. En la segunda sesión cambien de rol.",
+      "3. Predicción: ubiquen el magnesio, el aluminio, el hierro y el cobre en la tabla periódica y escriban el orden de reactividad que esperan, con una razón para cada lugar.",
+      "4. Lijen la cinta de magnesio, el clavo y el alambre hasta que brillen. El papel aluminio no se lija (se rompe) y conserva su capa delgada de óxido: anótenlo. Usen las piezas indicadas y anoten su tamaño; como no tienen la misma superficie, comparen sobre todo diferencias grandes (muchas burbujas frente a ninguna).",
+      "5. Rotulen ocho vasos: cuatro «vinagre» y cuatro «agua salada», cada uno con el nombre de un metal. Pongan 50 mL del líquido correspondiente en cada vaso.",
+      "6. Coloquen cada metal en su vaso al mismo tiempo, inicien el cronómetro y observen 15 minutos. Cada 3 minutos anoten: burbujas (ninguna, pocas o muchas), cambios en el metal (brillo, color, tamaño) y cambios en el líquido. Mientras corre el tiempo, quien lleva el cronómetro avisa cada 3 minutos; el docente puede hacer en ese lapso la demostración del paso 7.",
+      "7. Demostración del docente: con pinzas coloca 1 cm de cinta de magnesio en 5 mL de ácido clorhídrico diluido dentro de un tubo de ensayo en su gradilla, sin taparlo, en un lugar ventilado y lejos de llamas; el tubo se calienta y no se toca. Anoten lo que ven y compárenlo con el magnesio en vinagre.",
+      "8. Vean el video de los metales alcalinos en agua y anoten en la misma tabla qué tan rápido reaccionan el litio, el sodio y el potasio y qué se observa en cada caso.",
+      "9. Vean el video de los halógenos (agua de cloro, de bromo y de yodo con sales de los otros dos) y anoten qué mezclas cambian de color y qué halógeno aparece.",
+      "10. Cubran los vasos con papel, sin sellarlos, rotúlenlos con el nombre del equipo y déjenlos 5 días en un lugar seguro junto al clavo testigo al aire. Si pueden, tomen una foto cada día.",
+      "11. Segunda sesión: observen los vasos, completen la columna del día 5 y consensúen en equipo el orden de reactividad de mayor a menor, con la observación que justifica cada lugar.",
+      "12. Respondan en clase las preguntas de análisis 1 a 7. La propuesta de disposición segura de baterías de litio (pregunta 8) se empieza en equipo y, si no alcanza el tiempo, se termina como tarea.",
+      "13. Desechos: el docente neutraliza el ácido de la demostración con bicarbonato hasta que deje de burbujear y lo vierte al desagüe con abundante agua. El vinagre y el agua salada se vierten diluidos al desagüe; los trozos de metal se enjuagan, se secan y van a la basura sólida, nunca al lavamanos."
+     ],
+     "seguridad": [
+      "Gafas durante toda la práctica: el vinagre y el agua salada irritan los ojos. Si salpica, lavar con abundante agua y avisar al docente.",
+      "Solo el docente maneja el ácido clorhídrico diluido (no más de 1 mol/L), con gafas y guantes; al diluirlo, agrega el ácido al agua. No se usa ácido muriático de ferretería en el aula.",
+      "El sodio, el potasio y los demás metales alcalinos no se manipulan en el aula: solo se observan en video, porque reaccionan con violencia con el agua y pueden inflamarse.",
+      "Las reacciones producen hidrógeno, un gas inflamable: no hay llamas ni fósforos cerca y los vasos no se tapan herméticamente.",
+      "El agua de cloro y el agua de bromo son tóxicas: solo se ven en video. Nunca se mezcla lejía (cloro de uso doméstico) con vinagre ni con ácido para «hacer agua de cloro»: libera cloro gaseoso tóxico.",
+      "La cinta de magnesio no se quema: su luz es tan intensa que daña la vista.",
+      "El docente corta y pela el alambre; cuidado con las puntas del alambre y de los clavos. Si se quiebra un frasco, lo recoge el docente con escoba y recogedor, nunca con las manos.",
+      "No probar ni oler los líquidos; lavarse las manos al terminar cada sesión.",
+      "En esta práctica no se abren, perforan ni mojan pilas o baterías: la propuesta de disposición se hace por escrito.",
+      "Desechos según el paso 13: el ácido se neutraliza antes de verterlo y nada sólido va al desagüe."
+     ],
+     "datos_esperados": "En vinagre, el magnesio burbujea desde el primer minuto y en 15 minutos se reduce buena parte de la cinta; el hierro casi no muestra burbujas en clase y a los 5 días el líquido toma un tono amarillento o anaranjado; el aluminio apenas cambia, porque una capa delgada de óxido lo protege; el cobre no burbujea (con los días puede aparecer un leve tono verde azulado por el aire). En agua salada, a los 5 días el clavo muestra herrumbre anaranjada y sedimento, más que el testigo al aire (la herrumbre necesita también el oxígeno disuelto); el aluminio puede verse opaco o con puntos blancos, el magnesio burbujea lentamente y el cobre casi no cambia. En la demostración, el magnesio en ácido clorhídrico diluido burbujea con mucha más fuerza que en vinagre y se consume en uno o dos minutos, porque ese ácido aporta muchos más iones hidrógeno. Orden observado esperable: Mg > Fe > Al > Cu o Mg > Al > Fe > Cu, según cuánto ceda la capa de óxido del aluminio; el orden de la serie de actividad es Mg > Al > Fe > Cu. Qué respalda cada parte: en los vasos, solo la comparación magnesio-aluminio (mismo período) ilustra una tendencia periódica, y la capa de óxido exagera la diferencia. Que el magnesio supere al aluminio concuerda con la mayor carga nuclear efectiva del aluminio: quitarle sus tres electrones de valencia cuesta, en total, más energía que quitarle al magnesio sus dos (sumas de energías de ionización: valor de la tabla de referencia), aunque la primera del aluminio sea algo menor porque su electrón externo está en el subnivel 3p. El hierro y el cobre son de transición: su lugar se compara con la serie de actividad, y este experimento no respalda para ellos ninguna tendencia de grupo o período. Las tendencias de grupo se apoyan en los videos: la reactividad crece del litio al potasio y, en los halógenos, el cloro desplaza al bromo y al yodo, y el bromo solo al yodo: Cl > Br > I.",
+     "analisis": [
+      "Escriban el orden de reactividad de los cuatro metales que consensuó su equipo y justifiquen cada lugar con una observación concreta de la tabla (burbujas, cambio del metal o del líquido, tiempo).",
+      "Comparen su orden con la predicción del paso 3 y con la serie de actividad de la tabla de referencia. Si el aluminio pareció menos reactivo que el hierro, ¿qué explica la diferencia y cómo podrían comprobarlo?",
+      "El magnesio y el aluminio están en el período 3. Con las energías de ionización de la tabla de referencia, expliquen por qué el magnesio es más reactivo aunque la primera energía de ionización del aluminio sea algo menor (piensen en cuántos electrones cede cada uno, cuánto cuesta quitarlos todos y en qué subnivel está el electrón externo del aluminio).",
+      "El hierro y el cobre son metales de transición. ¿Su lugar en el orden se puede predecir con una tendencia de grupo o de período? ¿Qué parte de esta práctica respalda una tendencia periódica y qué parte solo muestra la serie de actividad?",
+      "¿Por qué el magnesio reaccionó más rápido en el ácido clorhídrico que en el vinagre? ¿Qué variable cambió y por qué no es justo comparar un metal en vinagre con otro en ácido clorhídrico?",
+      "Con el video de los metales alcalinos: ¿cómo cambia la reactividad al bajar en el grupo 1? Explíquenlo con la distancia del electrón de valencia al núcleo, el apantallamiento y la energía de ionización.",
+      "Con el video de los halógenos: ¿qué orden de reactividad muestran? ¿Por qué en los no metales la tendencia del grupo es la contraria a la de los metales? Usen la electronegatividad.",
+      "(Puede terminarse como tarea) Propuesta de disposición segura: las pilas de botón de litio (relojes, calculadoras) tienen litio metálico, del grupo 1; las baterías de iones de litio de los celulares no llevan litio metálico, pero pueden calentarse e incendiarse si se perforan, se aplastan o hacen cortocircuito. Propongan cómo guardarlas en casa (lejos de los niños pequeños, que pueden tragarse las pilas de botón) y dónde entregarlas en su comunidad, en lugar de tirarlas a la basura o al fuego, y justifiquen cada medida con lo aprendido."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin cinta de magnesio: la comparación en vasos se hace con aluminio, hierro y cobre, y el magnesio se observa solo en la demostración o en un video. Sin ácido clorhídrico: la demostración se reemplaza por un video de magnesio en ácido diluido. Sin vasos de laboratorio: frascos de compota o vasos plásticos transparentes. Versión de casa (como la actividad digital de la unidad): tres clavos (en agua, en agua con sal y al aire) y una tira de aluminio en agua con sal durante 5 días, con una foto diaria. Sin proyector: el docente lee o entrega impresa una ficha con las observaciones de los videos. Con calcio en granallas en el laboratorio: el docente agrega una demostración de un grano pequeño de calcio y de un trozo de magnesio en agua fría, en vasos abiertos y lejos de llamas; el calcio burbujea de forma constante y enturbia el agua, y el magnesio casi no reacciona. Así una tendencia del grupo 2 se observa con materiales reales; el líquido queda básico y se diluye antes de verterlo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.8/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-QUI-U4-4.8/1",
+     "decision": "corregir",
+     "justificacion": "Observaciones correctas y seguridad básica bien (HCl ≤ 1 mol/L solo del docente, hidrógeno, alcalinos en video, baterías sin abrir). Pero los vasos solo respaldan la serie de actividad y una comparación Mg-Al; hierro y cobre son de transición. Se dice en propósito y análisis, se aclara la superficie desigual, se agregan dilución del ácido, riesgo de «agua de cloro» casera y una variante con calcio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "La evidencia de logro es una tabla de observaciones con orden justificado.",
+       "cita_literal": "Tabla de observaciones de reactividad con orden justificado"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Hierro y cobre (bloque d) no siguen una tendencia simple de grupo o período en reactividad."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Lejía mezclada con ácido libera cloro gaseoso; el ácido se agrega al agua al diluir."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "proposito": "Comparar cómo reaccionan el magnesio, el aluminio, el hierro y el cobre con vinagre y con agua salada; completar la tabla con la demostración del docente (magnesio en ácido clorhídrico diluido) y con videos de metales alcalinos en agua y de halógenos, y ordenar la reactividad observada con su justificación. Los vasos dan un orden de la serie de actividad: de él, solo la comparación magnesio-aluminio (período 3) se explica con la energía de ionización, porque el hierro y el cobre son de transición. Las tendencias de grupo (energía de ionización en los metales, electronegatividad en los no metales) se apoyan en los videos. Se cierra con una propuesta de disposición segura de baterías de litio.",
+      "procedimiento": [
+       "1. Antes de la clase, el docente revisa los dos videos y deja listo un recipiente con bicarbonato para los desechos. Si hará la demostración, prepara el ácido clorhídrico diluido (no más de 1 mol/L) con gafas y guantes, en un lugar ventilado: agrega siempre el ácido al agua, nunca el agua al ácido.",
+       "2. Formen equipos de cuatro con roles: observador, cronometrista, registrador y encargado de seguridad y materiales.",
+       "3. Predicción: ubiquen el magnesio, el aluminio, el hierro y el cobre en la tabla periódica y escriban el orden de reactividad que esperan, con una razón para cada lugar.",
+       "4. Lijen la cinta de magnesio, el clavo y el alambre hasta que brillen. El papel aluminio no se lija (se rompe) y conserva su capa delgada de óxido: anótenlo. Usen las piezas indicadas y anoten su tamaño; como no tienen la misma superficie, comparen sobre todo diferencias grandes (muchas burbujas frente a ninguna).",
+       "5. Rotulen ocho vasos: cuatro «vinagre» y cuatro «agua salada», cada uno con el nombre de un metal. Pongan 50 mL del líquido correspondiente en cada vaso.",
+       "6. Coloquen cada metal en su vaso al mismo tiempo, inicien el cronómetro y observen 15 minutos. Cada 3 minutos anoten: burbujas (ninguna, pocas o muchas), cambios en el metal (brillo, color, tamaño) y cambios en el líquido.",
+       "7. Demostración del docente: con pinzas coloca 1 cm de cinta de magnesio en 5 mL de ácido clorhídrico diluido dentro de un tubo de ensayo en su gradilla, sin taparlo, en un lugar ventilado y lejos de llamas; el tubo se calienta y no se toca. Anoten lo que ven y compárenlo con el magnesio en vinagre.",
+       "8. Vean el video de los metales alcalinos en agua y anoten en la misma tabla qué tan rápido reaccionan el litio, el sodio y el potasio y qué se observa en cada caso.",
+       "9. Vean el video de los halógenos (agua de cloro, de bromo y de yodo con sales de los otros dos) y anoten qué mezclas cambian de color y qué halógeno aparece.",
+       "10. Cubran los vasos con papel, sin sellarlos, rotúlenlos con el nombre del equipo y déjenlos 5 días en un lugar seguro junto al clavo testigo al aire. Si pueden, tomen una foto cada día.",
+       "11. Segunda sesión: observen los vasos, completen la columna del día 5 y consensúen en equipo el orden de reactividad de mayor a menor, con la observación que justifica cada lugar.",
+       "12. Respondan las preguntas de análisis y redacten la propuesta de disposición segura de baterías de litio.",
+       "13. Desechos: el docente neutraliza el ácido de la demostración con bicarbonato hasta que deje de burbujear y lo vierte al desagüe con abundante agua. El vinagre y el agua salada se vierten diluidos al desagüe; los trozos de metal se enjuagan, se secan y van a la basura sólida, nunca al lavamanos."
+      ],
+      "seguridad": [
+       "Gafas durante toda la práctica: el vinagre y el agua salada irritan los ojos. Si salpica, lavar con abundante agua y avisar al docente.",
+       "Solo el docente maneja el ácido clorhídrico diluido (no más de 1 mol/L), con gafas y guantes; al diluirlo, agrega el ácido al agua. No se usa ácido muriático de ferretería en el aula.",
+       "El sodio, el potasio y los demás metales alcalinos no se manipulan en el aula: solo se observan en video, porque reaccionan con violencia con el agua y pueden inflamarse.",
+       "Las reacciones producen hidrógeno, un gas inflamable: no hay llamas ni fósforos cerca y los vasos no se tapan herméticamente.",
+       "El agua de cloro y el agua de bromo son tóxicas: solo se ven en video. Nunca se mezcla lejía (cloro de uso doméstico) con vinagre ni con ácido para «hacer agua de cloro»: libera cloro gaseoso tóxico.",
+       "La cinta de magnesio no se quema: su luz es tan intensa que daña la vista.",
+       "El docente corta y pela el alambre; cuidado con las puntas del alambre y de los clavos. Si se quiebra un frasco, lo recoge el docente con escoba y recogedor, nunca con las manos.",
+       "No probar ni oler los líquidos; lavarse las manos al terminar cada sesión.",
+       "En esta práctica no se abren, perforan ni mojan pilas o baterías: la propuesta de disposición se hace por escrito.",
+       "Desechos según el paso 13: el ácido se neutraliza antes de verterlo y nada sólido va al desagüe."
+      ],
+      "datos_esperados": "En vinagre, el magnesio burbujea desde el primer minuto y en 15 minutos se reduce buena parte de la cinta; el hierro casi no muestra burbujas en clase y a los 5 días el líquido toma un tono amarillento o anaranjado; el aluminio apenas cambia, porque una capa delgada de óxido lo protege; el cobre no burbujea (con los días puede aparecer un leve tono verde azulado por el aire). En agua salada, a los 5 días el clavo muestra herrumbre anaranjada y sedimento, más que el testigo al aire (la herrumbre necesita también el oxígeno disuelto); el aluminio puede verse opaco o con puntos blancos, el magnesio burbujea lentamente y el cobre casi no cambia. En la demostración, el magnesio en ácido clorhídrico diluido burbujea con mucha más fuerza que en vinagre y se consume en uno o dos minutos, porque ese ácido aporta muchos más iones hidrógeno. Orden observado esperable: Mg > Fe > Al > Cu o Mg > Al > Fe > Cu, según cuánto ceda la capa de óxido del aluminio; el orden de la serie de actividad es Mg > Al > Fe > Cu. Qué respalda cada parte: en los vasos, solo la comparación magnesio-aluminio (mismo período) ilustra una tendencia periódica, y la capa de óxido exagera la diferencia. Que el magnesio supere al aluminio concuerda con la mayor carga nuclear efectiva del aluminio: quitarle sus tres electrones de valencia cuesta, en total, más energía que quitarle al magnesio sus dos (sumas de energías de ionización: valor de la tabla de referencia), aunque la primera del aluminio sea algo menor porque su electrón externo está en el subnivel 3p. El hierro y el cobre son de transición: su lugar se compara con la serie de actividad, y este experimento no respalda para ellos ninguna tendencia de grupo o período. Las tendencias de grupo se apoyan en los videos: la reactividad crece del litio al potasio y, en los halógenos, el cloro desplaza al bromo y al yodo, y el bromo solo al yodo: Cl > Br > I.",
+      "analisis": [
+       "Escriban el orden de reactividad de los cuatro metales que consensuó su equipo y justifiquen cada lugar con una observación concreta de la tabla (burbujas, cambio del metal o del líquido, tiempo).",
+       "Comparen su orden con la predicción del paso 3 y con la serie de actividad de la tabla de referencia. Si el aluminio pareció menos reactivo que el hierro, ¿qué explica la diferencia y cómo podrían comprobarlo?",
+       "El magnesio y el aluminio están en el período 3. Con las energías de ionización de la tabla de referencia, expliquen por qué el magnesio es más reactivo aunque la primera energía de ionización del aluminio sea algo menor (piensen en cuántos electrones cede cada uno, cuánto cuesta quitarlos todos y en qué subnivel está el electrón externo del aluminio).",
+       "El hierro y el cobre son metales de transición. ¿Su lugar en el orden se puede predecir con una tendencia de grupo o de período? ¿Qué parte de esta práctica respalda una tendencia periódica y qué parte solo muestra la serie de actividad?",
+       "¿Por qué el magnesio reaccionó más rápido en el ácido clorhídrico que en el vinagre? ¿Qué variable cambió y por qué no es justo comparar un metal en vinagre con otro en ácido clorhídrico?",
+       "Con el video de los metales alcalinos: ¿cómo cambia la reactividad al bajar en el grupo 1? Explíquenlo con la distancia del electrón de valencia al núcleo, el apantallamiento y la energía de ionización.",
+       "Con el video de los halógenos: ¿qué orden de reactividad muestran? ¿Por qué en los no metales la tendencia del grupo es la contraria a la de los metales? Usen la electronegatividad.",
+       "Propuesta de disposición segura: las pilas de botón de litio (relojes, calculadoras) tienen litio metálico, del grupo 1; las baterías de iones de litio de los celulares no llevan litio metálico, pero pueden calentarse e incendiarse si se perforan, se aplastan o hacen cortocircuito. Propongan cómo guardarlas en casa (lejos de los niños pequeños, que pueden tragarse las pilas de botón) y dónde entregarlas en su comunidad, en lugar de tirarlas a la basura o al fuego, y justifiquen cada medida con lo aprendido."
+      ],
+      "variantes": "Sin cinta de magnesio: la comparación en vasos se hace con aluminio, hierro y cobre, y el magnesio se observa solo en la demostración o en un video. Sin ácido clorhídrico: la demostración se reemplaza por un video de magnesio en ácido diluido. Sin vasos de laboratorio: frascos de compota o vasos plásticos transparentes. Versión de casa (como la actividad digital de la unidad): tres clavos (en agua, en agua con sal y al aire) y una tira de aluminio en agua con sal durante 5 días, con una foto diaria. Sin proyector: el docente lee o entrega impresa una ficha con las observaciones de los videos. Con calcio en granallas en el laboratorio: el docente agrega una demostración de un grano pequeño de calcio y de un trozo de magnesio en agua fría, en vasos abiertos y lejos de llamas; el calcio burbujea de forma constante y enturbia el agua, y el magnesio casi no reacciona. Así una tendencia del grupo 2 se observa con materiales reales; el líquido queda básico y se diluye antes de verterlo."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "PED:EXP:G10-QUI-U4-4.8/1",
+     "decision": "corregir",
+     "justificacion": "Seguro, con materiales de casa y alternativas para escuelas sin magnesio, ácido o proyector (DUA). Ajusto solo la forma y el tiempo: roles rotativos con nombres neutros en género, la demostración del docente dentro de los 15 minutos de observación y la propuesta de baterías marcada como tarea si no cabe. Se respeta que hierro y cobre son de transición. Volúmenes verificados: 4 × 50 mL ≤ 250 mL.",
+     "cambios": {
+      "procedimiento": [
+       "1. Antes de la clase, el docente revisa los dos videos y deja listo un recipiente con bicarbonato para los desechos. Si hará la demostración, prepara el ácido clorhídrico diluido (no más de 1 mol/L) con gafas y guantes, en un lugar ventilado: agrega siempre el ácido al agua, nunca el agua al ácido.",
+       "2. Formen equipos de cuatro y repártanse los roles: observación, cronómetro, registro, y seguridad y materiales. En la segunda sesión cambien de rol.",
+       "3. Predicción: ubiquen el magnesio, el aluminio, el hierro y el cobre en la tabla periódica y escriban el orden de reactividad que esperan, con una razón para cada lugar.",
+       "4. Lijen la cinta de magnesio, el clavo y el alambre hasta que brillen. El papel aluminio no se lija (se rompe) y conserva su capa delgada de óxido: anótenlo. Usen las piezas indicadas y anoten su tamaño; como no tienen la misma superficie, comparen sobre todo diferencias grandes (muchas burbujas frente a ninguna).",
+       "5. Rotulen ocho vasos: cuatro «vinagre» y cuatro «agua salada», cada uno con el nombre de un metal. Pongan 50 mL del líquido correspondiente en cada vaso.",
+       "6. Coloquen cada metal en su vaso al mismo tiempo, inicien el cronómetro y observen 15 minutos. Cada 3 minutos anoten: burbujas (ninguna, pocas o muchas), cambios en el metal (brillo, color, tamaño) y cambios en el líquido. Mientras corre el tiempo, quien lleva el cronómetro avisa cada 3 minutos; el docente puede hacer en ese lapso la demostración del paso 7.",
+       "7. Demostración del docente: con pinzas coloca 1 cm de cinta de magnesio en 5 mL de ácido clorhídrico diluido dentro de un tubo de ensayo en su gradilla, sin taparlo, en un lugar ventilado y lejos de llamas; el tubo se calienta y no se toca. Anoten lo que ven y compárenlo con el magnesio en vinagre.",
+       "8. Vean el video de los metales alcalinos en agua y anoten en la misma tabla qué tan rápido reaccionan el litio, el sodio y el potasio y qué se observa en cada caso.",
+       "9. Vean el video de los halógenos (agua de cloro, de bromo y de yodo con sales de los otros dos) y anoten qué mezclas cambian de color y qué halógeno aparece.",
+       "10. Cubran los vasos con papel, sin sellarlos, rotúlenlos con el nombre del equipo y déjenlos 5 días en un lugar seguro junto al clavo testigo al aire. Si pueden, tomen una foto cada día.",
+       "11. Segunda sesión: observen los vasos, completen la columna del día 5 y consensúen en equipo el orden de reactividad de mayor a menor, con la observación que justifica cada lugar.",
+       "12. Respondan en clase las preguntas de análisis 1 a 7. La propuesta de disposición segura de baterías de litio (pregunta 8) se empieza en equipo y, si no alcanza el tiempo, se termina como tarea.",
+       "13. Desechos: el docente neutraliza el ácido de la demostración con bicarbonato hasta que deje de burbujear y lo vierte al desagüe con abundante agua. El vinagre y el agua salada se vierten diluidos al desagüe; los trozos de metal se enjuagan, se secan y van a la basura sólida, nunca al lavamanos."
+      ],
+      "analisis": [
+       "Escriban el orden de reactividad de los cuatro metales que consensuó su equipo y justifiquen cada lugar con una observación concreta de la tabla (burbujas, cambio del metal o del líquido, tiempo).",
+       "Comparen su orden con la predicción del paso 3 y con la serie de actividad de la tabla de referencia. Si el aluminio pareció menos reactivo que el hierro, ¿qué explica la diferencia y cómo podrían comprobarlo?",
+       "El magnesio y el aluminio están en el período 3. Con las energías de ionización de la tabla de referencia, expliquen por qué el magnesio es más reactivo aunque la primera energía de ionización del aluminio sea algo menor (piensen en cuántos electrones cede cada uno, cuánto cuesta quitarlos todos y en qué subnivel está el electrón externo del aluminio).",
+       "El hierro y el cobre son metales de transición. ¿Su lugar en el orden se puede predecir con una tendencia de grupo o de período? ¿Qué parte de esta práctica respalda una tendencia periódica y qué parte solo muestra la serie de actividad?",
+       "¿Por qué el magnesio reaccionó más rápido en el ácido clorhídrico que en el vinagre? ¿Qué variable cambió y por qué no es justo comparar un metal en vinagre con otro en ácido clorhídrico?",
+       "Con el video de los metales alcalinos: ¿cómo cambia la reactividad al bajar en el grupo 1? Explíquenlo con la distancia del electrón de valencia al núcleo, el apantallamiento y la energía de ionización.",
+       "Con el video de los halógenos: ¿qué orden de reactividad muestran? ¿Por qué en los no metales la tendencia del grupo es la contraria a la de los metales? Usen la electronegatividad.",
+       "(Puede terminarse como tarea) Propuesta de disposición segura: las pilas de botón de litio (relojes, calculadoras) tienen litio metálico, del grupo 1; las baterías de iones de litio de los celulares no llevan litio metálico, pero pueden calentarse e incendiarse si se perforan, se aplastan o hacen cortocircuito. Propongan cómo guardarlas en casa (lejos de los niños pequeños, que pueden tragarse las pilas de botón) y dónde entregarlas en su comunidad, en lugar de tirarlas a la basura o al fuego, y justifiquen cada medida con lo aprendido."
+      ]
+     },
+     "evidencia": [
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "procedimiento dentro del tiempo; materiales que alcanzan; personajes de ambos géneros"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8",
+       "cita": "la evidencia incluye la propuesta de disposición de baterías, que puede terminarse en casa",
+       "cita_literal": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "rotar los roles evita que siempre manipulen los mismos estudiantes"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/propiedades-periodicas/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/propiedades-periodicas/G10",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/propiedades-periodicas",
+     "grados": [
+      10
+     ],
+     "titulo": "Por qué la reactividad cambia en la tabla",
+     "explicacion": "El potasio se guarda bajo aceite; el magnesio apenas reacciona con agua fría. Depende de cuánto atrae el núcleo a los electrones externos. Un metal reacciona cediéndolos: a menor energía de ionización, más reactivo. Un no metal reacciona ganando electrones: a mayor electronegatividad, más reactivo. Al bajar en un grupo se agrega una capa y los electrones externos quedan más lejos y apantallados: los metales ganan reactividad y los no metales la pierden. En un período crece la carga nuclear efectiva: los metales pierden reactividad y los no metales la ganan. No vale para los metales de transición.",
+     "ejemplo": "La sal de las salineras de la costa salvadoreña es cloruro de sodio. El sodio, con energía de ionización baja, cede con facilidad su electrón, y el cloro, muy electronegativo, lo gana con facilidad. Por ser tan reactivos, en la naturaleza no se encuentran libres, sino combinados, como en la sal.",
+     "practica": "ACT:quimica/propiedades-periodicas/practica-G10",
+     "comprobacion": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+     "duracion_min": 12,
+     "criterio": "Responde bien la comprobación, que pide ordenar tres no metales que no aparecen en la práctica usando la tendencia de los no metales, no la de los metales.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/propiedades-periodicas",
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/propiedades-periodicas/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/propiedades-periodicas/G10",
+     "decision": "corregir",
+     "justificacion": "El gancho comparaba cobre y potasio, pero el cobre es de transición: su baja reactividad no se explica con la tendencia de los grupos principales (su primera energía de ionización se parece a la del magnesio). Se cambia por magnesio frente a potasio, se acota la tendencia a los grupos principales y «ganando uno» pasa a «ganando electrones» (el oxígeno gana dos).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Primera energía de ionización del cobre parecida a la del magnesio; reactividad muy distinta."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "El potasio se guarda bajo aceite; el magnesio apenas reacciona con agua fría. Depende de cuánto atrae el núcleo a los electrones externos. Un metal reacciona cediéndolos: a menor energía de ionización, más reactivo. Un no metal reacciona ganando electrones: a mayor electronegatividad, más reactivo. Al bajar en un grupo se agrega una capa y los electrones externos quedan más lejos y apantallados: los metales ganan reactividad y los no metales la pierden. En un período crece la carga nuclear efectiva: los metales la pierden y los no metales la ganan. No vale para los metales de transición."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "PED:MT:quimica/propiedades-periodicas/G10",
+     "decision": "corregir",
+     "justificacion": "Contenido del experto intacto (electronegatividad para no metales, aviso de transición). Solo corrijo un pronombre ambiguo: en «los metales la pierden», «la» podía leerse como la carga nuclear efectiva y no como la reactividad. Ejemplo local (salineras) y criterio de transferencia adecuados.",
+     "cambios": {
+      "explicacion": "El potasio se guarda bajo aceite; el magnesio apenas reacciona con agua fría. Depende de cuánto atrae el núcleo a los electrones externos. Un metal reacciona cediéndolos: a menor energía de ionización, más reactivo. Un no metal reacciona ganando electrones: a mayor electronegatividad, más reactivo. Al bajar en un grupo se agrega una capa y los electrones externos quedan más lejos y apantallados: los metales ganan reactividad y los no metales la pierden. En un período crece la carga nuclear efectiva: los metales pierden reactividad y los no metales la ganan. No vale para los metales de transición."
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8",
+       "cita": "el indicador relaciona la reactividad con energía de ionización y electronegatividad",
+       "cita_literal": "relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "referentes pronominales inequívocos en textos con dos sustantivos femeninos"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "MT:quimica/tabla-periodica/G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "MT:quimica/tabla-periodica/G10",
+     "tipo": "microtema",
+     "concepto": "CON:quimica/tabla-periodica",
+     "grados": [
+      10
+     ],
+     "titulo": "Filas, columnas y zonas de la tabla",
+     "explicacion": "La tabla periódica ordena los elementos por número atómico. Cada fila es un período: sus elementos tienen el mismo número de capas. Cada columna es un grupo: sus elementos tienen el mismo número de electrones de valencia y por eso un comportamiento químico parecido, aunque no idéntico, porque sus propiedades cambian de forma gradual al bajar. Una línea escalonada separa los metales, a la izquierda y al centro, de los no metales, arriba a la derecha (salvo el hidrógeno); junto a ella están los metaloides, con propiedades intermedias. El grupo 18, el de los gases nobles, casi no reacciona.",
+     "ejemplo": "El oxígeno del aire y el azufre de los ausoles de Ahuachapán están en el grupo 16. Los dos se unen al hidrógeno en la misma proporción: H₂O y H₂S. Pero no son idénticos: el agua es líquida, y el H₂S es el gas que huele a huevo podrido en los ausoles.",
+     "practica": "ACT:quimica/tabla-periodica/practica-G10",
+     "comprobacion": "ACT:quimica/tabla-periodica/comprobacion-G10",
+     "duracion_min": 10,
+     "criterio": "Responde bien la comprobación: predice propiedades intermedias para el silicio, un metaloide junto a la línea escalonada, y no supone que es idéntico a su vecino de grupo.",
+     "estado": "propuesta_pendiente",
+     "fuentes": [
+      "CON:quimica/tabla-periodica",
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:MT:quimica/tabla-periodica/G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "explicacion",
+    "ejemplo",
+    "criterio",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:MT:quimica/tabla-periodica/G10",
+     "decision": "corregir",
+     "justificacion": "Contenido correcto y ejemplo local exacto (azufre de los ausoles, H₂S). Tres precisiones: un grupo comparte el número de electrones de valencia, no «los mismos electrones»; el hidrógeno es no metal aunque está a la izquierda; y las fórmulas van con subíndices (H₂O, H₂S), como en el resto de la capa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.2 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 23)",
+       "cita": "Ubicar por grupo, período y carácter metálico.",
+       "cita_literal": "ubica a los elementos según su grupo, periodo y carácter metálico"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El hidrógeno, arriba a la izquierda, es un no metal."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "explicacion": "La tabla periódica ordena los elementos por número atómico. Cada fila es un período: sus elementos tienen el mismo número de capas. Cada columna es un grupo: sus elementos tienen el mismo número de electrones de valencia y por eso un comportamiento químico parecido, aunque no idéntico, porque sus propiedades cambian de forma gradual al bajar. Una línea escalonada separa los metales, a la izquierda y al centro, de los no metales, arriba a la derecha (salvo el hidrógeno); junto a ella están los metaloides, con propiedades intermedias. El grupo 18, el de los gases nobles, casi no reacciona.",
+      "ejemplo": "El oxígeno del aire y el azufre de los ausoles de Ahuachapán están en el grupo 16. Los dos se unen al hidrógeno en la misma proporción: H₂O y H₂S. Pero no son idénticos: el agua es líquida, y el H₂S es el gas que huele a huevo podrido en los ausoles."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "PED:MT:quimica/tabla-periodica/G10",
+     "decision": "corregir",
+     "justificacion": "Explicación y ejemplo claros (ausoles de Ahuachapán). El criterio decía «un elemento junto a la línea escalonada», como si todo vecino de la línea fuera metaloide (el aluminio no lo es); lo acoto al silicio, que es lo que pide la comprobación. Aviso: la retroalimentación de esa comprobación, fuera de este lote, repite la generalización falsa y debería corregirse.",
+     "cambios": {
+      "criterio": "Responde bien la comprobación: predice propiedades intermedias para el silicio, un metaloide junto a la línea escalonada, y no supone que es idéntico a su vecino de grupo."
+     },
+     "evidencia": [
+      {
+       "fuente": "ACT:quimica/tabla-periodica/comprobacion-G10 (data/pedagogia/actividades.json)",
+       "cita": "la retroalimentación afirma que los elementos junto a la línea escalonada son metaloides"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "no simplificar hasta decir algo falso; ejemplo: los elementos junto a la línea escalonada son metaloides"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  }
+ ]
+}
