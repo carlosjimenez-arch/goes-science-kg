@@ -112,6 +112,21 @@ Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuest
 | TEMA:G10-QUI-U5-5.13 | [G10-QUI-U5-5.13](G10-QUI-U5-5.13.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U5-5.14 | [G10-QUI-U5-5.14](G10-QUI-U5-5.14.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G11-FIS-U1-1.2 | [G11-FIS-U1-1.2](G11-FIS-U1-1.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U2-2.3 | [G11-FIS-U2-2.3](G11-FIS-U2-2.3.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U3-3.1-v3 | [G11-FIS-U3-3.1-v3](G11-FIS-U3-3.1-v3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U3-3.2 | [G11-FIS-U3-3.2](G11-FIS-U3-3.2.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U4-4.3 | [G11-FIS-U4-4.3](G11-FIS-U4-4.3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U5-5.4 | [G11-FIS-U5-5.4](G11-FIS-U5-5.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U5-5.6 | [G11-FIS-U5-5.6](G11-FIS-U5-5.6.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U6-6.1 | [G11-FIS-U6-6.1](G11-FIS-U6-6.1.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U6-6.5 | [G11-FIS-U6-6.5](G11-FIS-U6-6.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U7-7.3 | [G11-FIS-U7-7.3](G11-FIS-U7-7.3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U8-8.4 | [G11-FIS-U8-8.4](G11-FIS-U8-8.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U9-9.4 | [G11-FIS-U9-9.4](G11-FIS-U9-9.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U9-9.5 | [G11-FIS-U9-9.5](G11-FIS-U9-9.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U9-9.8 | [G11-FIS-U9-9.8](G11-FIS-U9-9.8.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U9-9.11 | [G11-FIS-U9-9.11](G11-FIS-U9-9.11.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-FIS-U10-10.5 | [G11-FIS-U10-10.5](G11-FIS-U10-10.5.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | TEMA:G11-QUI-U12-12.1 | [G11-QUI-U12-12.1](G11-QUI-U12-12.1.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 
 > Hay elementos que esperan una decisión humana: ver [REVISION_HUMANA.md](REVISION_HUMANA.md).
