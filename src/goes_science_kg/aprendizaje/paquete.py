@@ -106,7 +106,8 @@ MAGNITUD = (r"\b(pKa\d?|pKb|pI|Ka|Kb|Kc|Kp|Kw|Kps|densidad|calor específico|cal
             r"punto isoeléctrico|constante de [a-záéíóúñ]+|masa molar|solubilidad|entalpía|"
             r"coeficientes? de (?:fricción|rozamiento)|μs?|energías? de ionización|electronegatividad(?:es)?|"
             r"radios? atómicos?|índices? de refracción|resistividad|conductividad|punto de (?:fusión|ebullición)|"
-            r"módulo de Young|potencial(?:es)? estándar)\b"
+            r"módulo de Young|potencial(?:es)? estándar|viscosidad(?:es)?|tensión superficial|"
+            r"calores? de (?:fusión|vaporización))\b"
             r"(?:\s+(?:de|del)\s+(?:la\s+|el\s+|los\s+|las\s+)?([a-záéíóúñ\-]+(?:\s+[a-záéíóúñ\-]+)?))?")
 
 

@@ -1,0 +1,1125 @@
+{
+ "lote": "r1-q9u3_experto-quimica_3",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/valoracion-acido-base/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/valoracion-acido-base/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/valoracion-acido-base",
+     "descripcion": "Cree que en el punto de equivalencia se igualan los volúmenes o las concentraciones del ácido y la base, en lugar de las cantidades en mol según la ecuación.",
+     "senales": "Predice que 10 mL de ácido necesitan 10 mL de base, o calcula la concentración sin multiplicar por el volumen.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Mezclan volumen, concentración y cantidad de sustancia al usar c = n/V.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.19)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/valoracion-acido-base",
+     "nombre": "Valoración ácido-base",
+     "definicion": "Análisis volumétrico que determina una concentración identificando el punto de equivalencia con indicadores o curvas de pH.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.19",
+     "grado": 9,
+     "indicador": "3.19. Detecta el punto de equivalencia a partir de un experimento de titulación ácido-base.",
+     "evidencia": "Curva de titulación y tabla de tres repeticiones con promedio e incertidumbre"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/valoracion-acido-base/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/valoracion-acido-base/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/valoracion-acido-base/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/valoracion-acido-base",
+     "descripcion": "Cree que una sola titulación da el valor exacto y que las diferencias entre repeticiones son errores que se eliminan escogiendo el valor «correcto»; juzga un resultado solo por su promedio y no por su dispersión.",
+     "senales": "Descarta repeticiones sin criterio, elige el valor más cercano a la etiqueta o no reporta la incertidumbre.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La malla pide repetir, promediar y evaluar la dispersión de los resultados.",
+     "origen": "redactor-actividades (G09-CIE-U3-3.19)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/valoracion-acido-base",
+     "nombre": "Valoración ácido-base",
+     "definicion": "Análisis volumétrico que determina una concentración identificando el punto de equivalencia con indicadores o curvas de pH.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.19",
+     "grado": 9,
+     "indicador": "3.19. Detecta el punto de equivalencia a partir de un experimento de titulación ácido-base.",
+     "evidencia": "Curva de titulación y tabla de tres repeticiones con promedio e incertidumbre"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/valoracion-acido-base/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.1"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.1",
+      "CON:quimica/equilibrio-dinamico"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Dos pajillas y dos vasos: un modelo del equilibrio dinámico y sus límites",
+     "proposito": "Modelar con agua cómo un proceso directo y uno inverso que ocurren a la vez llegan a un estado en que las cantidades no cambian aunque el intercambio continúa; comprobar que se llega al mismo estado empezando desde cualquiera de los dos lados; y discutir qué representa bien el modelo del equilibrio químico y qué no.",
+     "materiales": [
+      "2 vasos plásticos transparentes iguales, de paredes rectas, de unos 250 mL, rotulados «vaso 1 (reactivo)» y «vaso 2 (producto)» (por grupo)",
+      "2 pajillas transparentes de distinto grosor: una gruesa (de batido, unos 8 mm) y una delgada (común, unos 5 mm), del mismo largo (por grupo)",
+      "Regla de 30 cm o tira de papel milimetrado pegada en cada vaso para medir la altura del agua en cm",
+      "Jeringa de 20 mL sin aguja o vaso medidor de cocina para medir 100 mL",
+      "200 mL de agua del chorro con unas gotas de colorante de alimentos (alcanza para los dos ensayos; se reutiliza)",
+      "Hoja de registro, lápiz y una bandeja o toalla para derrames"
+     ],
+     "procedimiento": [
+      "1. (5 min) En grupos de 4 personas, repartan los papeles: quien maneja la pajilla gruesa, quien maneja la delgada, quien mide y quien anota. Peguen la regla o el papel milimetrado en cada vaso desde el fondo.",
+      "2. (3 min) Ensayo 1: pongan 100 mL de agua coloreada en el vaso 1 y dejen vacío el vaso 2. Anoten la altura inicial de cada vaso (ronda 0).",
+      "3. (12 min) Cada ronda, al mismo tiempo: una persona mete la pajilla gruesa hasta el fondo del vaso 1, tapa el extremo de arriba con el dedo y pasa el agua atrapada al vaso 2; otra hace lo mismo con la pajilla delgada del vaso 2 al vaso 1. Nadie sopla ni sorbe. La pajilla siempre toca el fondo, aunque quede poca agua.",
+      "4. Después de cada dos rondas, midan y anoten la altura del agua en cada vaso. Sigan hasta 20 rondas o hasta que las alturas no cambien en tres mediciones seguidas.",
+      "5. (10 min) Ensayo 2: devuelvan toda el agua al vaso 2 (vaso 1 vacío) y repitan los pasos 3 y 4 con las mismas pajillas en los mismos vasos.",
+      "6. (10 min) Comparen las alturas finales de los dos ensayos. En la pizarra, cada grupo escribe sus alturas finales para ver si todos los grupos obtienen algo parecido.",
+      "7. (10 min) Discusión en clase con las preguntas de análisis 1 a 3. La gráfica de altura contra número de ronda y la pregunta 4 quedan de tarea."
+     ],
+     "seguridad": [
+      "El agua coloreada no se bebe; nadie se lleva la pajilla a la boca: el agua se atrapa tapando la pajilla con el dedo.",
+      "Cada grupo usa sus propias pajillas; al final se tiran a la basura de plásticos.",
+      "Secar de inmediato los derrames para evitar resbalones; el agua coloreada se desecha en el lavamanos."
+     ],
+     "datos_esperados": "En el ensayo 1 el vaso 1 baja rápido al principio y luego cada vez menos; en el ensayo 2 ocurre lo contrario. En unas 10 a 20 rondas las alturas dejan de cambiar (con variaciones de unos pocos milímetros) aunque las pajillas siguen pasando agua. Las alturas finales no son iguales: el vaso que recibe con la pajilla gruesa y entrega con la delgada (vaso 2) queda con más agua, unas dos a tres veces la del vaso 1. Los dos ensayos terminan en alturas parecidas, porque el estado final depende de las pajillas, no del lado por el que se empezó.",
+     "analisis": [
+      "1. Cuando las alturas ya no cambiaban, ¿seguía pasando agua de un vaso al otro? ¿Por qué entonces no cambiaban las alturas?",
+      "2. ¿Qué representan en una reacción química la pajilla gruesa y la delgada? ¿Por qué al final los vasos no tienen la misma cantidad de agua?",
+      "3. ¿Llegaron al mismo estado en el ensayo 1 y en el ensayo 2? ¿Qué dice eso del equilibrio químico?",
+      "4. (Tarea) Escribe dos cosas del equilibrio químico que el modelo representa bien y dos que no representa (por ejemplo: en la reacción no hay rondas ni personas que deciden y el agua no se convierte en otra sustancia). Con eso, escribe tu propia definición de equilibrio químico."
+     ],
+     "duracion_min": 55,
+     "variantes": "Si la escuela tiene dos probetas de 100 mL, úsenlas en lugar de los vasos: se lee el volumen directamente y las diferencias se notan mejor. Sin pajillas de dos grosores: usar dos cucharas de distinto tamaño (siempre llenas hasta donde alcance el agua) o dos jeringas sin aguja de distinto volumen. Como apoyo, la simulación «Reacciones y velocidades» (Reactions & Rates) de PhET, pestaña de muchas colisiones, muestra con partículas cómo una reacción reversible llega a cantidades constantes mientras las colisiones continúan.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.1",
+     "grado": 9,
+     "indicador": "3.1. Define con sus palabras el concepto de equilibrio químico.",
+     "evidencia": "Definición propia de equilibrio químico con el modelo y una lista de sus límites"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.10/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.10/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.10"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.10",
+      "CON:quimica/indicadores-acido-base"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Un indicador de repollo morado: escala de colores y clasificación de soluciones de casa",
+     "proposito": "Extraer el indicador del repollo morado, construir una escala de colores con soluciones de pH conocido y usarla para clasificar soluciones cotidianas en ácidas, neutras y básicas, comparando lo que el indicador permite afirmar con lo que da una tira de pH.",
+     "materiales": [
+      "Por grupo de 4 o 5 personas: 1/8 de repollo morado, 2 frascos de vidrio o plástico de 500 mL (uno para remojar y otro para el extracto colado), un colador y una cuchara",
+      "Agua caliente que sirve la docente: 250 mL por grupo",
+      "Por grupo: 11 vasos plásticos pequeños transparentes rotulados con los números 1 a 11, una jeringa sin aguja o una taza medidora para medir 15 mL y 10 mL, hoja blanca de fondo y hoja de registro",
+      "Soluciones de referencia preparadas por la docente y medidas antes con tiras de pH (100 mL de cada una para 8 grupos, rotuladas con su pH): 1) jugo de limón, 2) vinagre blanco, 3) agua de la llave, 4) agua con bicarbonato, 5) agua con jabón de lavar ropa, 6) agua de cal (la sirve la docente)",
+      "Muestras para clasificar (150 mL de cada una para 8 grupos): 7) gaseosa clara, 8) leche, 9) champú diluido, 10) pasta dental disuelta en agua, 11) agua de botella «alcalina» o, si no hay, agua de pozo o de lluvia",
+      "Para la segunda sesión: 5 tiras de pH universal por grupo y un dispositivo con el simulador «Escala de pH» de PhET, si lo hay",
+      "Gafas de seguridad para cada estudiante y celular para fotografiar la escala"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 5 min) Seguridad y predicción: cada estudiante escribe qué color espera del extracto en vinagre y en bicarbonato, y por qué.",
+      "2. (Sesión 1, 5 min) Deshojen el repollo y rásguenlo con las manos en trozos pequeños dentro del frasco de remojo.",
+      "3. (Sesión 1, 12 min) La docente sirve 250 mL de agua caliente en cada frasco. Revuelvan de vez en cuando; mientras tanto rotulen los vasos 1 a 11 y copien la tabla de registro.",
+      "4. (Sesión 1, 3 min) Cuelen el extracto al segundo frasco cuando esté tibio (salen unos 200 mL).",
+      "5. (Sesión 1, 15 min) Escala: pongan 15 mL de extracto en los vasos 1 a 6 y agreguen 10 mL de la solución de referencia con el mismo número (la docente sirve el agua de cal en el vaso 6). Anoten el color de cada vaso junto a su pH y fotografíen la fila sobre la hoja blanca.",
+      "6. (Sesión 1, 12 min) Clasificación: pongan 15 mL de extracto en los vasos 7 a 11 y agreguen 10 mL de la muestra con el mismo número. Comparen con la escala y anoten para cada muestra: ácida, neutra o básica, y el intervalo de pH aproximado.",
+      "7. (Sesión 1, 3 min) Desechen en el lavadero con abundante agua y lleven el repollo usado al compost.",
+      "8. (Sesión 2, 12 min) La docente reparte 5 mL de cada muestra 7 a 11 en los vasos 7 a 11 ya enjuagados. Cada grupo mide su pH con una tira y lo compara con el intervalo que dio el indicador.",
+      "9. (Sesión 2, 13 min) Con la foto de la escala, respondan: ¿qué color esperan para una solución con [H⁺] = 0.001 mol/L (pH 3) y para una con pH 11? Si hay simulador «Escala de pH», comprueben en él que esa concentración de H⁺ corresponde a pH 3 (el simulador da el número, no el color del repollo).",
+      "10. (Sesión 2, 30 min) Analicen en grupo una publicación de redes que dice que el «agua alcalina» cura enfermedades: qué midieron ustedes, qué se puede afirmar con esa medición y qué haría falta para confiar en la promesa de salud."
+     ],
+     "seguridad": [
+      "El agua caliente y el agua de cal las maneja solo la docente; el agua de cal irrita la piel y los ojos.",
+      "Gafas durante toda la práctica. No se prueban las muestras, aunque sean de cocina: ya están mezcladas con el extracto y se manipulan en el aula de ciencias.",
+      "El repollo se rasga con las manos: no se usan cuchillos."
+     ],
+     "datos_esperados": "Escala aproximada del repollo: jugo de limón (pH 2) rojo; vinagre (pH 3) rojo rosado; agua de la llave (pH 6 a 7) morado; bicarbonato (pH 8) azul; jabón de lavar ropa (pH 9 a 10) verde azulado; agua de cal (pH 12) verde o verde amarillento. Gaseosa clara: rojo rosado (ácida, pH 3 a 4); leche: morado (pH 6 a 7); champú: morado o morado azulado (pH 5 a 7, según la marca); pasta dental: morado a azul (pH 7 a 9); agua «alcalina»: morado o azul, según la marca. Las tiras de pH caen dentro del intervalo del indicador, pero dan un número que el color del repollo no permite leer. Los colores básicos se van volviendo amarillentos con las horas, por eso la escala se fotografía.",
+     "analisis": [
+      "¿Qué muestras pudieron clasificar con seguridad y cuáles quedaron en la frontera entre dos colores?",
+      "¿En qué se diferencia el resultado del indicador del de la tira de pH? ¿Cuándo basta con el indicador?",
+      "¿Por qué una medición de pH del agua «alcalina» no demuestra que cure enfermedades? ¿Qué tipo de estudio, revisado por otros científicos, haría falta?",
+      "Tarea: investiga qué otro vegetal cultivado en El Salvador cambia de color con la acidez y propón cómo probarlo con tu escala."
+     ],
+     "duracion_min": 110,
+     "variantes": "Si no hay repollo morado, usar flor de Jamaica remojada en agua: también cambia de color con la acidez. Si no hay tiras de pH, la docente usa el simulador «Escala de pH» de PhET para mostrar el valor numérico de líquidos de uso doméstico y compararlo con la escala de colores.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/indicadores-acido-base",
+     "nombre": "Indicadores ácido-base",
+     "definicion": "Ácidos o bases débiles cuyas formas ácida y básica tienen colores distintos, con un intervalo de viraje característico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.10",
+     "grado": 9,
+     "indicador": "3.10. Extrae un indicador natural para la identificación cualitativa de ácidos y bases, y clasifica soluciones en neutras, ácidas y básicas.",
+     "evidencia": "Escala de colores del indicador natural, clasificación de soluciones por su pH y análisis crítico de una afirmación publicitaria de salud"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.10/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.11/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.11/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.11"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.11",
+      "CON:quimica/autoionizacion-del-agua-y-ph"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Del pH a la concentración: diluciones y muestras de la casa",
+     "proposito": "Medir el pH de disoluciones de un ácido fuerte diluidas de 10 en 10 y de muestras cotidianas, para comprobar que cada factor de 10 en [H⁺] cambia el pH en una unidad y calcular [H⁺] y [OH⁻] con Kw en una hoja de cálculo.",
+     "materiales": [
+      "Para la demostración docente: 50 mL de ácido clorhídrico 0.10 mol/L del laboratorio, 300 mL de agua destilada o purificada de garrafón (no del grifo: sus sales cambian el pH de las disoluciones muy diluidas), 4 vasos de 150 mL rotulados vaso 1 a vaso 4, jeringa de 10 mL, gafas y guantes",
+      "Tiras de pH de 1 a 14: una caja de 100 alcanza para 8 grupos (5 tiras por grupo) y las 4 de la demostración",
+      "Por grupo de 4 o 5 personas: 5 vasitos de 30 mL rotulados muestra 1 a muestra 5, con unos 20 mL de: agua del grifo, vinagre blanco, jugo de limón colado, agua con bicarbonato (1 cucharadita en 100 mL) y agua con jabón de barra",
+      "Por grupo: hoja blanca, servilletas, hoja de registro y una computadora o celular con hoja de cálculo (o calculadora científica)"
+     ],
+     "procedimiento": [
+      "1. (5 min) La docente presenta la pregunta: si [H⁺] se hace 10 veces menor, ¿cuánto cambia el pH? Cada estudiante anota su predicción.",
+      "2. (12 min) Demostración docente: coloca 50 mL de HCl 0.10 mol/L en el vaso 1. Pasa 10 mL del vaso 1 al vaso 2 y agrega 90 mL de agua destilada (0.010 mol/L). Repite del vaso 2 al vaso 3 (0.0010 mol/L) y del vaso 3 al vaso 4 (0.00010 mol/L). Moja una tira en cada vaso y la muestra junto a la escala de colores; los grupos anotan el pH.",
+      "3. (13 min) Cada grupo moja una tira en cada muestra, la compara con la escala de colores sobre la hoja blanca y anota el pH en la tabla.",
+      "4. (15 min) En la hoja de cálculo, cada grupo calcula para la demostración el pH esperado con =-LOG10(c) y lo compara con el medido; para sus muestras calcula [H⁺] con =10^(-pH) y [OH⁻] con =1E-14/[H⁺] (Kw a 25 °C).",
+      "5. (10 min) Puesta en común: cada grupo ubica sus muestras en una escala de pH dibujada en la pizarra y responde las preguntas 1 y 2 del análisis."
+     ],
+     "seguridad": [
+      "El ácido clorhídrico, aun diluido, irrita la piel y los ojos: solo lo manipula la docente, con gafas y guantes, y no se lleva a los grupos.",
+      "Las muestras de los grupos no se prueban ni se huelen de cerca; si salpican, se lava con abundante agua.",
+      "Desecho: las diluciones de HCl se vierten despacio en el lavadero con abundante agua corriente; el resto de las muestras también. Las tiras usadas van a la basura común."
+     ],
+     "datos_esperados": "Demostración: pH cercano a 1, 2, 3 y 4 en los vasos 1 a 4 (las tiras tienen una resolución de una unidad; el vaso 4 puede leer 4 o 5). Muestras: limón entre 2 y 3, vinagre entre 2 y 3, agua del grifo entre 6.5 y 8, bicarbonato cerca de 8, jabón entre 9 y 10. En la hoja de cálculo, [H⁺] del vinagre resulta del orden de 10⁻³ mol/L y [OH⁻] del orden de 10⁻¹¹ mol/L; el producto de ambas siempre da 1 × 10⁻¹⁴.",
+     "analisis": [
+      "1. ¿Cuánto cambió el pH cada vez que la docente diluyó 10 veces el ácido? ¿Coincide con tu predicción del paso 1?",
+      "2. ¿Cuántas veces mayor es [H⁺] en el jugo de limón que en el agua con bicarbonato, según tus datos?",
+      "3. (Tarea) Si en una muestra básica [H⁺] es muy pequeña, ¿por qué no es cero? Usa Kw en tu respuesta.",
+      "4. (Tarea) Inventa un problema de pH con el agua de un río o pozo de tu comunidad y resuélvelo."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin ácido del laboratorio: el simulador «Escala de pH» de PhET muestra [H₃O⁺], [OH⁻] y el pH de cada líquido y cómo cambian al agregar agua. Sin tiras: extracto de repollo morado con una escala de colores, aceptando una resolución menor.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/autoionizacion-del-agua-y-ph",
+     "nombre": "Autoionización del agua, Kw y cálculo de pH",
+     "definicion": "Kw relaciona [H+] y [OH-]; el pH y pOH son escalas logarítmicas calculadas a partir de esas concentraciones.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.11",
+     "grado": 9,
+     "indicador": "3.11. Calcula el valor del pH de una solución.",
+     "evidencia": "Cálculos de pH"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.11/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.13/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.13/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.13"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.13",
+      "CON:quimica/fuerza-de-acidos-y-bases"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Igual concentración, distinta ionización: conductividad y pH de ácidos fuertes y débiles",
+     "proposito": "Comparar la conductividad eléctrica y el pH de un ácido fuerte y uno débil con la misma concentración, para concluir que difieren en cuánto se ionizan y expresar esa diferencia con ecuaciones de ionización y con Ka y Kb.",
+     "materiales": [
+      "Preparadas por la docente antes de la clase (500 mL de cada una, alcanzan para 8 grupos): vinagre diluido 0.10 mol/L (60 mL de vinagre blanco al 5 % completados con agua hasta 500 mL), agua con sal 0.10 mol/L (2.9 g de sal de mesa en 500 mL) y agua con azúcar 0.10 mol/L (17 g de azúcar en 500 mL)",
+      "Para la demostración docente: 50 mL de ácido clorhídrico 0.10 mol/L del laboratorio en un vaso de 100 mL, gafas y guantes",
+      "Por grupo de 4 o 5 personas: 4 vasos de 100 mL rotulados vaso 1 a vaso 4, con 50 mL de vinagre diluido, agua con sal, agua con azúcar y agua del grifo",
+      "Por grupo: probador de conductividad (pila de 9 V, LED con resistencia de 330 Ω, 2 cables con caimanes y 2 minas de lápiz como electrodos), 4 tiras de pH, un vaso con agua para enjuagar los electrodos, servilletas y hoja de registro",
+      "Tarjetas con cinco sustancias para escribir ecuaciones: ácido acético, ácido fluorhídrico, ácido carbónico (primera ionización), ácido hipocloroso y amoníaco"
+     ],
+     "procedimiento": [
+      "1. (5 min) Cada estudiante predice: si dos ácidos tienen la misma concentración, ¿encenderán el LED con el mismo brillo? Anota su hipótesis.",
+      "2. (8 min) Demostración docente: introduce los electrodos en el HCl 0.10 mol/L y luego, tras enjuagarlos, en el vinagre diluido 0.10 mol/L. Mide el pH de ambos con una tira. Los grupos anotan brillo y pH.",
+      "3. (12 min) Cada grupo prueba la conductividad de sus vasos 1 a 4, enjuagando y secando los electrodos entre uno y otro, y clasifica el brillo como nulo, tenue o intenso. Mide el pH de cada vaso con una tira.",
+      "4. (5 min) Cada grupo ordena los vasos y la demostración de mayor a menor brillo y compara con su hipótesis.",
+      "5. (15 min) Con las tarjetas, cada grupo clasifica el HCl como ácido fuerte y escribe, para las cinco sustancias débiles, la ecuación de ionización con ⇌ y la expresión de Ka o Kb (sin incluir el agua).",
+      "6. (10 min) Puesta en común de las preguntas 1 y 2 del análisis."
+     ],
+     "seguridad": [
+      "El ácido clorhídrico solo lo manipula la docente, con gafas y guantes; no se reparte a los grupos.",
+      "El probador usa solo una pila de 9 V: nunca se conecta a un tomacorriente. Se desconecta la pila antes de enjuagar o cambiar los electrodos.",
+      "No se prueban las disoluciones. Al final se vierten en el lavadero con abundante agua y las pilas se guardan para reciclaje."
+     ],
+     "datos_esperados": "HCl 0.10 mol/L: LED intenso y pH cercano a 1. Vinagre 0.10 mol/L: LED tenue y pH entre 2.5 y 3.5, porque solo alrededor de 1 de cada 100 moléculas de ácido acético se ioniza. Agua con sal: LED intenso (la sal se disocia por completo) y pH cercano a 7. Agua con azúcar y agua del grifo: LED apagado o casi apagado. El brillo depende de cuántos iones hay, no de cuánta sustancia se disolvió.",
+     "analisis": [
+      "1. Si el HCl y el vinagre diluido tienen la misma concentración, ¿por qué el LED brilla distinto y el pH es diferente?",
+      "2. ¿Por qué el agua con sal conduce y el agua con azúcar no, si las dos tienen 0.10 mol/L?",
+      "3. Con valores de Ka a 25 °C tomados del libro de texto (cerca de 6.8 × 10⁻⁴ para el fluorhídrico, 1.8 × 10⁻⁵ para el acético, 4.3 × 10⁻⁷ para el carbónico y 3.0 × 10⁻⁸ para el hipocloroso), ordena los cuatro ácidos del más débil al más fuerte y explica tu criterio.",
+      "4. (Tarea) El agua de lluvia es ligeramente ácida por el ácido carbónico. Escribe su primera ionización y explica por qué, aunque es débil, desgasta las rocas con los años."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin probador ni ácido del laboratorio: el simulador «Soluciones ácido-base» de PhET compara un ácido fuerte y uno débil de igual concentración con un medidor de pH, un probador de conductividad con bombilla y la vista de moléculas e iones.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.13)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fuerza-de-acidos-y-bases",
+     "nombre": "Fuerza de ácidos y bases: Ka y Kb",
+     "definicion": "Grado de ionización en equilibrio cuantificado por Ka, Kb y pKa; los ácidos polipróticos tienen ionizaciones sucesivas.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.13",
+     "grado": 9,
+     "indicador": "3.13. Reconoce ácidos y bases fuertes y débiles de acuerdo con su disociación en agua, y expresa sus constantes de ionización.",
+     "evidencia": "Clasificación de ácidos y bases fuertes y débiles con las expresiones de Ka y Kb de cinco sustancias"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.13/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.15/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.15/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.15"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.15",
+      "CON:quimica/disoluciones-amortiguadoras"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "¿Quién resiste el vinagre? Agua purificada frente a un amortiguador de bicarbonato",
+     "proposito": "Comprobar el efecto amortiguador comparando cuánto cambia el pH del agua purificada (control) y de una disolución de bicarbonato al agregar el mismo volumen de vinagre, y observar que el amortiguador tiene un límite.",
+     "materiales": [
+      "Por grupo de 4 o 5 personas: 2 vasos transparentes de 200 mL rotulados «vaso 1 (control)» y «vaso 2», 100 mL de agua purificada en el vaso 1 y 100 mL de agua con bicarbonato en el vaso 2 (1/4 de cucharadita, cerca de 1 g, disuelto en 100 mL de agua purificada)",
+      "Por grupo: 1 vaso con 40 mL de vinagre blanco, jeringa de 5 mL sin aguja para medirlo y una cuchara para revolver",
+      "Tiras de pH de 1 a 14: 14 por grupo (12 mediciones y 2 de repuesto); 2 cajas de 100 alcanzan para 8 grupos",
+      "Por grupo: hoja blanca, servilletas, gafas y hoja de registro con una tabla de volumen de vinagre frente a pH para cada vaso"
+     ],
+     "procedimiento": [
+      "1. (5 min) Cada estudiante predice qué pasará con el pH de cada vaso al agregar vinagre y escribe por qué.",
+      "2. (5 min) Cada grupo mide con una tira el pH inicial de ambos vasos y lo anota.",
+      "3. (15 min) Agrega 2 mL de vinagre al vaso 1, revuelve y mide el pH; luego agrega 2 mL al vaso 2, revuelve y mide. Repite hasta llevar 8 mL en cada vaso (4 mediciones más por vaso). Anota si aparecen burbujas.",
+      "4. (5 min) Agrega al vaso 2 otros 12 mL de vinagre en dos porciones de 6 mL (20 mL en total), revolviendo, y mide el pH después de cada porción.",
+      "5. (10 min) Cada grupo grafica el pH frente al volumen de vinagre de ambos vasos en la misma gráfica.",
+      "6. (15 min) Cada grupo escribe la ecuación de lo que le pasa al H⁺ en el vaso 2, responde las preguntas 1 a 3 del análisis y redacta una conclusión que use el control."
+     ],
+     "seguridad": [
+      "Se usan gafas: el vinagre irrita los ojos. Si salpica, se lava con abundante agua.",
+      "No se prueba ninguna mezcla aunque sea de la cocina.",
+      "Desecho: las mezclas se vierten en el lavadero con abundante agua; las tiras usadas van a la basura común."
+     ],
+     "datos_esperados": "Vaso 1: el pH pasa de 6 o 7 (el agua purificada puede leer 6 por el CO₂ del aire) a cerca de 3 con los primeros 2 mL y se queda en 3 o menos. Vaso 2: empieza cerca de 8 y con 8 mL de vinagre baja solo a 7 o 6, con burbujas de CO₂. Con 20 mL en total el bicarbonato se agota y el pH del vaso 2 baja a cerca de 5: el amortiguador tiene una capacidad limitada. Las tiras tienen una resolución de una unidad de pH.",
+     "analisis": [
+      "1. Con 8 mL de vinagre, ¿cuántas unidades bajó el pH en cada vaso? ¿Qué te dice esa diferencia?",
+      "2. ¿Por qué hacía falta el vaso 1? ¿Qué no podrías concluir sin él?",
+      "3. ¿Qué pasó con el pH del vaso 2 al llegar a 20 mL de vinagre y por qué?",
+      "4. (Tarea) Busca en dos fuentes confiables qué le pasa al pH del océano al absorber CO₂ y elabora la ficha de aplicación: compara cómo lo comunican un informe científico, una nota de prensa y una publicación en redes, citando cada fuente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin tiras de pH: extracto de repollo morado (unos 10 mL en cada vaso) y una escala de colores; el cambio se registra como color. Para la explicación con el sistema de la sangre o del océano basta el mismo par HCO₃⁻/H₂CO₃ del experimento.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.15)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/disoluciones-amortiguadoras",
+     "nombre": "Hidrólisis de sales y disoluciones amortiguadoras",
+     "definicion": "Sales que generan pH ácido o básico al reaccionar con agua; mezclas ácido débil-base conjugada resisten cambios de pH.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.15",
+     "grado": 9,
+     "indicador": "3.15. Explica la función de las soluciones buffer, comprueba su efecto amortiguador de pH y ejemplifica sus aplicaciones y ocurrencia natural.",
+     "evidencia": "Explicación de la función de los buffers, registro del cambio de pH en agua pura (control) y en buffer con una conclusión justificada, y ficha de aplicación con la comparación de tres formas de comunicar la acidificación del océano"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.15/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.18/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.18/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.18"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.18",
+      "CON:quimica/principio-de-le-chatelier"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "El indicador de repollo responde: desplazamientos del equilibrio ácido-base",
+     "proposito": "Predecir y luego observar cómo cambia el color de un indicador natural al agregar ácido y base en pasos, y explicar cada cambio como un desplazamiento del equilibrio según el principio de Le Châtelier.",
+     "materiales": [
+      "Extracto de repollo morado preparado por la docente antes de la clase: 1/4 de repollo picado en 1 L de agua caliente, 15 min de reposo y colado (alcanza para 8 grupos con 100 mL cada uno)",
+      "Por grupo de 4 o 5 personas: 2 vasos transparentes de 200 mL rotulados «vaso 1 (testigo)» y «vaso 2», cada uno con 40 mL de extracto",
+      "Por grupo: 1 vaso con 30 mL de vinagre blanco y 1 vaso con 50 mL de agua con bicarbonato (1 cucharadita en 100 mL)",
+      "Por grupo: 2 goteros o pajillas usadas como gotero (uno para el vinagre y otro para el bicarbonato), una cuchara, hoja blanca de fondo y hoja de registro",
+      "Para la demostración docente: 50 mL de agua de cal (hidróxido de calcio saturado y filtrado), 1 vaso con 100 mL de extracto, gotero, gafas y guantes",
+      "Tarjetas con cinco casos para predecir (ver paso 1)"
+     ],
+     "procedimiento": [
+      "1. (10 min) Cada estudiante predice por escrito, con su justificación, hacia dónde se desplaza el equilibrio en cinco casos: agregar vinagre al indicador; agregar bicarbonato; agregar vinagre después del bicarbonato; aumentar la presión en N₂(g) + 3H₂(g) ⇌ 2NH₃(g); agregar cal a un suelo ácido.",
+      "2. (5 min) Cada grupo coloca el vaso 1 y el vaso 2 sobre la hoja blanca. El vaso 1 no se toca: sirve para comparar colores.",
+      "3. (5 min) Agrega 5 gotas de vinagre al vaso 2, revuelve con la cuchara y anota el color comparándolo con el vaso 1.",
+      "4. (8 min) Agrega al vaso 2 agua con bicarbonato de 5 en 5 gotas, revolviendo, hasta que el color vuelva a parecerse al del vaso 1. Anota cuántas gotas usaste. Luego agrega 10 gotas más y anota el color.",
+      "5. (5 min) Agrega de nuevo 5 gotas de vinagre al vaso 2 y anota el color y si aparecen burbujas.",
+      "6. (7 min) Demostración docente: agrega agua de cal gota a gota a un vaso con extracto hasta que se vea verde y luego vinagre en pasos hasta regresar al morado. Los grupos anotan los colores.",
+      "7. (15 min) Cada grupo compara sus predicciones con lo observado y escribe, para cada paso, qué se agregó, qué especie aumentó o se consumió y hacia dónde se desplazó el equilibrio HIn ⇌ H⁺ + In⁻."
+     ],
+     "seguridad": [
+      "El agua de cal irrita la piel y los ojos: solo la manipula la docente, con gafas y guantes.",
+      "El agua caliente para el extracto la maneja solo la docente, antes de la clase.",
+      "No se prueban las soluciones. Al terminar, se desechan en el lavadero con abundante agua y el repollo usado va al compost."
+     ],
+     "datos_esperados": "Paso 3: el extracto pasa de morado a rosado o rojo (más HIn). Paso 4: con unas 10 a 20 gotas de bicarbonato vuelve al morado, y con más gotas se pone azul o azul verdoso (el bicarbonato consume H⁺ y se forma más In⁻). Paso 5: vuelve hacia morado o rosado y salen burbujas de CO₂, porque el vinagre reacciona con el bicarbonato que sobró. Demostración: el agua de cal, más básica, lleva el extracto a verde o verde amarillento. El número de gotas varía con la concentración del extracto; lo importante es que los cambios son reversibles y siguen el sentido que predice el principio.",
+     "analisis": [
+      "¿Por qué el bicarbonato cambia el color si no contiene la forma In⁻? Explícalo con el H⁺ que consume.",
+      "En el paso 4, ¿por qué el color no se quedó en el morado del inicio al seguir agregando bicarbonato?",
+      "¿Cuántas de tus cinco predicciones coincidieron con lo observado o con lo que dice el principio? Corrige las que fallaron.",
+      "Tarea: explica con el mismo razonamiento por qué la cal reduce la acidez de un suelo de cafetal y qué pasaría si se agrega demasiada."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin repollo morado: usar agua de flor de Jamaica o de remolacha como indicador. Si no hay agua de cal, la docente muestra el cambio a verde con agua jabonosa concentrada o con un video de la misma demostración.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.18)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/principio-de-le-chatelier",
+     "nombre": "Principio de Le Chatelier",
+     "definicion": "Un sistema en equilibrio perturbado por cambios de concentración, presión o temperatura se desplaza para contrarrestar la perturbación.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.18",
+     "grado": 9,
+     "indicador": "3.5. Predice el sentido del desplazamiento de la reacción aplicando el principio de Le Châtelier, y lo aplica en el equilibrio ácido base.",
+     "evidencia": "Predicciones justificadas en cinco casos y registro de desplazamientos observados"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.18/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.19/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.19/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.19"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.19",
+      "CON:quimica/valoracion-acido-base"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "¿Cuánto ácido tiene el vinagre? Titulación con bicarbonato e indicador de repollo",
+     "proposito": "Detectar el punto de equivalencia de la titulación de vinagre con bicarbonato de concentración conocida, construir la curva de pH y calcular la concentración del vinagre con su promedio e incertidumbre a partir de tres repeticiones.",
+     "materiales": [
+      "Preparado por la docente: 600 mL de bicarbonato de sodio 0.50 mol/L (25.2 g de bicarbonato pesados en balanza, disueltos y completados con agua hasta 600 mL); alcanza para 8 grupos con 70 mL cada uno",
+      "Preparado por la docente: 100 mL de extracto de repollo morado (hojas picadas en agua caliente, 15 min de reposo, colado)",
+      "Por grupo de 4 o 5 personas: 30 mL de vinagre blanco en un vaso, 70 mL de bicarbonato 0.50 mol/L en otro vaso, 10 mL de extracto de repollo, 2 vasos transparentes de 100 mL para titular, 1 botella con 150 mL de agua",
+      "Por grupo: jeringa de 5 mL sin aguja (vinagre), jeringa de 20 mL sin aguja (bicarbonato), gotero, cuchara o palillo para revolver, 8 tiras de pH, hoja blanca, gafas y servilletas",
+      "Etiqueta o foto de una botella de vinagre que indique su porcentaje de acidez; computadora o celular con hoja de cálculo"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente muestra la etiqueta del vinagre y plantea la pregunta: ¿cómo sabemos cuánto ácido tiene el vinagre y qué tan seguros estamos? Se reparten los roles: quien mide, quien agrega, quien observa y quien registra.",
+      "2. (10 min) Curva de pH, preparación: en un vaso, 5.0 mL de vinagre y 20 mL de agua, sin indicador. Llenen la jeringa de 20 mL con bicarbonato hasta 20 mL.",
+      "3. (25 min) Agreguen bicarbonato de 2 en 2 mL hasta 12 mL, revolviendo hasta que bajen las burbujas. Antes de empezar y después de cada adición, toquen una tira de pH con una gota de la mezcla y anoten volumen y pH (7 puntos).",
+      "4. (10 min) Grafiquen pH frente a volumen y marquen la zona donde el pH sube más: allí está el punto de equivalencia. Laven los vasos con agua.",
+      "Sesión 2 (55 min)",
+      "5. (25 min) Tres repeticiones: en un vaso limpio, 5.0 mL de vinagre, 20 mL de agua y 1 mL de extracto (rosado). Agreguen bicarbonato de 1 en 1 mL y, al acercarse al volumen de la curva, de gota en gota, revolviendo, hasta que el color pase a morado azulado y no regrese tras 30 s de revolver. Anoten el volumen gastado. Laven y repitan dos veces más.",
+      "6. (20 min) En la hoja de cálculo: promedio de los tres volúmenes, incertidumbre como la mitad del rango (máximo menos mínimo, entre 2), moles de bicarbonato, concentración del vinagre en mol/L y en gramos por litro (masa molar del ácido acético: 60 g/mol).",
+      "7. (10 min) Puesta en común: cada grupo escribe su resultado como promedio ± incertidumbre y lo compara con la etiqueta y con los demás grupos."
+     ],
+     "seguridad": [
+      "Gafas durante toda la práctica: el vinagre irrita los ojos; si salpica, lavar con abundante agua.",
+      "Jeringas sin aguja. El agua caliente del extracto la maneja solo la docente, antes de la clase.",
+      "No se prueban las mezclas. Desecho: todo se vierte en el lavadero con abundante agua; el repollo usado va al compost."
+     ],
+     "datos_esperados": "Con vinagre al 5 % (cerca de 0.83 mol/L), el punto de equivalencia se alcanza hacia 8 a 9 mL de bicarbonato 0.50 mol/L. Curva: el pH empieza cerca de 3, sube despacio entre 4 y 6 mientras queda ácido acético, y sube más rápido hacia 7 u 8 alrededor de 8 a 10 mL; con bicarbonato la subida es más suave que con una base fuerte. Las repeticiones de un grupo cuidadoso difieren 0.5 mL o menos. La concentración resulta cerca de 0.8 mol/L, unos 50 g/L, coherente con el 5 % de la etiqueta.",
+     "analisis": [
+      "1. ¿En qué volumen ubicaron el punto de equivalencia en la curva y coincide con el cambio de color de las repeticiones?",
+      "2. Escriban su resultado como promedio ± incertidumbre. ¿El valor de la etiqueta cae dentro de ese intervalo?",
+      "3. ¿Qué errores al azar pudieron hacer que las repeticiones no coincidieran exactamente?",
+      "4. (Tarea) ¿Por qué un laboratorio de control de calidad de una fábrica de alimentos repite cada titulación en lugar de hacerla una sola vez?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Si el laboratorio tiene hidróxido de sodio 0.10 mol/L y fenolftaleína, la docente puede hacer una titulación demostrativa con bureta, con un cambio de color más nítido; el NaOH solo lo manipula ella. Sin materiales: el laboratorio virtual de ChemCollective permite titular vinagre con NaOH, leer el pH en cada volumen y construir la curva.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.19)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/valoracion-acido-base",
+     "nombre": "Valoración ácido-base",
+     "definicion": "Análisis volumétrico que determina una concentración identificando el punto de equivalencia con indicadores o curvas de pH.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.19",
+     "grado": 9,
+     "indicador": "3.19. Detecta el punto de equivalencia a partir de un experimento de titulación ácido-base.",
+     "evidencia": "Curva de titulación y tabla de tres repeticiones con promedio e incertidumbre"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.19/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.2/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.2/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.2"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.2",
+      "CON:quimica/rapidez-de-reaccion-factores"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Pruebas justas con pastillas efervescentes y el color que cambia con la temperatura",
+     "proposito": "Medir cómo cambian el tiempo de reacción de una pastilla efervescente la superficie de contacto (entera o triturada) y la temperatura del agua, cambiando un solo factor a la vez; y observar, en una demostración docente o un video, cómo el color de una disolución de cloruro de cobalto cambia al calentarla y enfriarla, como evidencia de que la temperatura desplaza un equilibrio.",
+     "materiales": [
+      "4 pastillas efervescentes iguales (antiácido o vitamina C) por grupo, partidas a la mitad con cuchillo de mesa por la docente: 8 mitades para 4 pruebas con 2 repeticiones",
+      "4 vasos plásticos transparentes iguales de 250 mL (rotulados vaso 1, vaso 2, vaso 3 y vaso 4) por grupo; se enjuagan y se reutilizan en la repetición",
+      "1.2 L de agua por grupo: 600 mL a temperatura ambiente y 600 mL tibia (unos 45 °C), que sirve la docente desde un termo o una olla",
+      "Jeringa de 20 mL sin aguja o vaso medidor para medir 150 mL",
+      "Termómetro de cocina o de laboratorio (uno por grupo si hay; si no, uno que mide la docente)",
+      "Cuchara y una hoja de papel doblada para triturar las mitades",
+      "Cronómetro (celular o tableta)",
+      "Tabla de registro con columnas: prueba, factor que cambia, factores que se mantienen, tiempo 1, tiempo 2, promedio",
+      "Para la demostración: video de la disolución de cloruro de cobalto en agua caliente y en agua con hielo, o la docente con el material en tubo cerrado"
+     ],
+     "procedimiento": [
+      "1. (5 min) Leer el propósito. Cada grupo predice por escrito qué prueba será la más rápida y la más lenta y por qué.",
+      "2. (5 min) Completar en la tabla, para cada prueba, el factor que cambia y los factores que se mantienen: prueba 1 entera con agua ambiente, prueba 2 triturada con agua ambiente, prueba 3 entera con agua tibia, prueba 4 triturada con agua tibia. Siempre media pastilla y 150 mL de agua.",
+      "3. (3 min) Triturar dos mitades dentro del papel doblado, presionando con la cuchara, sin perder polvo.",
+      "4. (12 min) Poner 150 mL de agua ambiente en los vasos 1 y 2. La docente sirve 150 mL de agua tibia en los vasos 3 y 4; medir y anotar la temperatura del agua. Hacer una prueba a la vez: echar la mitad (o el polvo) en el vaso, iniciar el cronómetro y detenerlo cuando ya no salgan burbujas. Anotar el tiempo.",
+      "5. (8 min) Vaciar y enjuagar los vasos y triturar otras dos mitades y repetir las cuatro pruebas con las cuatro mitades restantes (la docente sirve otra vez el agua tibia). Calcular el promedio de cada prueba.",
+      "6. (7 min) Demostración docente o video: la disolución de cloruro de cobalto es rosada en agua con hielo y azul en agua caliente; al volver al hielo regresa a rosado. Anotar los colores y en qué condición aparece cada uno.",
+      "7. (15 min) Responder en grupo las preguntas de análisis 1 a 3 y compartir con la clase. Las preguntas 4 y 5 quedan de tarea."
+     ],
+     "seguridad": [
+      "Nada se prueba ni se bebe, aunque las pastillas sean de uso doméstico.",
+      "El agua tibia (no hirviendo) la sirve y la maneja solo la docente.",
+      "El cloruro de cobalto es tóxico y no se usa en el pupitre: solo video o demostración docente con guantes, lentes y tubo cerrado; ese material no se tira al desagüe y se guarda para su disposición como residuo químico.",
+      "Las disoluciones de las pastillas se desechan en el lavamanos con abundante agua; secar los derrames de inmediato."
+     ],
+     "datos_esperados": "Tendencias, no valores exactos (dependen de la marca de la pastilla): la mitad entera en agua ambiente es la más lenta (del orden de un minuto); triturarla reduce el tiempo a menos de la mitad; el agua tibia también reduce el tiempo a cerca de la mitad; triturada en agua tibia es la más rápida (del orden de 10 a 20 s). Las dos repeticiones de una misma prueba deberían diferir en pocos segundos. La cantidad de gas no cambia de forma visible entre pruebas: cambia el tiempo en que se libera. En la demostración, el calor favorece el color azul y el frío el rosado, y el cambio es reversible: la temperatura desplaza el equilibrio.",
+     "analisis": [
+      "1. ¿Qué par de pruebas muestra el efecto de triturar? ¿Y el de la temperatura? ¿Qué factores se mantuvieron iguales en cada par?",
+      "2. ¿Se cumplió la predicción de tu grupo? Usa los promedios para justificarlo.",
+      "3. En la demostración, ¿qué color aparece al calentar y cuál al enfriar? ¿Por qué decimos que la temperatura desplazó un equilibrio y no que se formó una sustancia nueva que ya no regresa?",
+      "4. (Tarea) Revisa el diseño de otro grupo que comparó «entera en agua ambiente» con «triturada en agua tibia» y concluyó que triturar acelera la reacción. ¿Es válida su conclusión? Explica.",
+      "5. (Tarea) Los empaques de algunos medicamentos y aparatos traen tarjetas que cambian de azul a rosado con la humedad. Relaciona ese cambio con el equilibrio que viste en la demostración."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin pastillas efervescentes: bicarbonato de sodio con vinagre, comparando vinagre a temperatura ambiente y tibio, o bicarbonato en polvo y en una pastilla prensada en casa; se mide el tiempo hasta que deja de burbujear. Si no hay termómetro, se comparan solo agua del chorro y agua tibia servida por la docente, anotando la condición.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/rapidez-de-reaccion-factores",
+     "nombre": "Factores que afectan la rapidez de reacción",
+     "definicion": "La rapidez aumenta con mayor temperatura, concentración, superficie de contacto o presencia de catalizador.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.2",
+     "grado": 9,
+     "indicador": "3.2. Identifica los factores que afectan la rapidez de reacción y el equilibrio químico.",
+     "evidencia": "Tabla de tiempos de reacción con el factor cambiado y los factores controlados en cada prueba, y registro de cambios de color con su interpretación"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.2/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.20/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.20/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.20"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.20",
+      "CON:quimica/acidos-y-bases-propiedades"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Protocolo de manejo seguro: etiquetas, indicadores y simulacro de derrame",
+     "proposito": "Reconocer pictogramas y propiedades de ácidos y bases de uso doméstico, comprobar con un indicador cómo se neutraliza un derrame ácido sobre una superficie y redactar un protocolo de manejo seguro de productos corrosivos.",
+     "materiales": [
+      "Fotos impresas de etiquetas de productos de la casa: ácido muriático, lejía, destapacaños, vinagre y bicarbonato (no se llevan los productos corrosivos al aula)",
+      "Preparado por la docente: 500 mL de extracto de repollo morado (hojas picadas en agua caliente, 15 min de reposo, colado); alcanza para 8 grupos con 45 mL cada uno",
+      "Por grupo de 4 o 5 personas: 4 frascos con 15 mL de vinagre blanco, jugo de limón colado, agua con bicarbonato (1 cucharadita en 100 mL) y agua con jabón de barra, rotulados muestra 1 a muestra 4",
+      "Por grupo: 4 vasitos transparentes rotulados vaso 1 a vaso 4 con 10 mL de extracto cada uno, gotero, cuchara",
+      "Para el simulacro, por grupo: bandeja plástica, 30 mL de vinagre con 5 mL de extracto (derrame simulado), 2 cucharadas de bicarbonato en polvo, papel toalla, guantes de cocina y gafas",
+      "Hoja de registro y cartulina para el protocolo"
+     ],
+     "procedimiento": [
+      "1. (10 min) Cada grupo identifica en las fotos el pictograma de peligro, la frase de advertencia y las instrucciones de primeros auxilios de cada producto, y anota cuáles son ácidos y cuáles bases.",
+      "2. (12 min) Con el gotero, agrega 10 gotas de cada muestra a su vaso (muestra 1 al vaso 1, y así), anota el color y clasifica cada muestra como ácida, neutra o básica con la escala del repollo.",
+      "3. (13 min) Simulacro de derrame: con gafas y guantes, vierte en la bandeja el vinagre con extracto (rojo). Espolvorea bicarbonato poco a poco desde el borde hacia el centro hasta que ya no haya burbujas y el color pase a morado o azul. Absorbe con papel toalla y anota qué te indicó que el derrame quedó neutralizado.",
+      "4. (15 min) Cada grupo redacta en la cartulina un protocolo con cinco medidas: protección personal, uso, almacenamiento, respuesta a derrames sobre superficies y primeros auxilios en piel u ojos.",
+      "5. (5 min) Cada grupo lee una medida de su protocolo y la justifica con una propiedad de ácidos o bases."
+     ],
+     "seguridad": [
+      "No se llevan al aula ácido muriático, lejía ni destapacaños: solo fotos de sus etiquetas.",
+      "En el simulacro se usan gafas y guantes, aunque el vinagre y el bicarbonato son de uso doméstico; si algo salpica, se lava con abundante agua.",
+      "La neutralización con bicarbonato se practica solo para derrames sobre superficies: en la piel o los ojos siempre se lava con abundante agua.",
+      "Nada se prueba. Desecho: las mezclas se vierten en el lavadero con abundante agua y el papel va a la basura común."
+     ],
+     "datos_esperados": "Con el repollo, el vinagre y el limón se ven rojos o rosados (ácidos), el bicarbonato azul o verde azulado (básico) y el agua con jabón verde (básica). En el simulacro, el bicarbonato produce burbujas de CO₂ y el derrame pasa de rojo a morado y luego a azul cuando ya no queda ácido. Las fotos muestran el pictograma de corrosión en el muriático, la lejía y el destapacaños.",
+     "analisis": [
+      "1. ¿Qué observaciones del simulacro indicaron que el derrame ya no era ácido?",
+      "2. ¿Por qué el bicarbonato sirve para un derrame sobre una mesa pero no se usa sobre la piel?",
+      "3. (Tarea) Revisa los productos de limpieza de tu casa con una persona adulta y escribe qué medidas de almacenamiento y desecho debe aplicar tu familia, justificándolas con la etiqueta o una ficha de seguridad oficial."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin repollo: tiras de pH para las muestras y para comprobar el derrame neutralizado. Sin impresora: la docente proyecta las fotos de las etiquetas o las describe en la pizarra.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.20)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/acidos-y-bases-propiedades",
+     "nombre": "Ácidos y bases: propiedades",
+     "definicion": "Sustancias cotidianas reconocibles por su sabor, efecto sobre indicadores y reactividad; los ácidos tienen pH menor que 7 y las bases mayor.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.20",
+     "grado": 9,
+     "indicador": "3.20. Ejemplifica medidas para el manejo y tratamiento de ácidos y bases.",
+     "evidencia": "Protocolo de manejo seguro de productos corrosivos"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.20/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.7"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.7",
+      "CON:quimica/constante-de-equilibrio"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Laboratorio de datos: ¿qué cociente se mantiene constante en el equilibrio del NO₂?",
+     "proposito": "Observar en video cómo cambia el color de una mezcla de NO₂ (café) y N₂O₄ (incoloro) con la temperatura y, con una tabla de concentraciones de equilibrio a una misma temperatura, descubrir con una hoja de cálculo qué cociente se mantiene constante (la expresión de Kc con exponentes), calcular Kc, interpretarlo y usarlo para resolver un problema nuevo.",
+     "materiales": [
+      "Video de una demostración con tubos sellados de NO₂/N₂O₄ en agua caliente y en agua con hielo (la docente lo elige de un repositorio educativo) y proyector o televisor",
+      "Computadoras o tabletas con hoja de cálculo (una por pareja); si no hay, calculadora por pareja",
+      "Hoja impresa con la tabla de datos de ejemplo, a la misma temperatura: mezcla 1 [NO₂] = 0.010 y [N₂O₄] = 0.010; mezcla 2 [NO₂] = 0.030 y [N₂O₄] = 0.090; mezcla 3 [NO₂] = 0.050 y [N₂O₄] = 0.25; mezcla 4 [NO₂] = 0.0050 y [N₂O₄] = 0.0025 (todas en mol/L)",
+      "Cuaderno y lápiz"
+     ],
+     "procedimiento": [
+      "1. (8 min) Ver el video. Anotar de qué color es la mezcla en agua caliente y en agua con hielo, y qué gas predomina en cada caso. Recordar que el NO₂ sale de los escapes de los vehículos.",
+      "2. (5 min) Escribir la ecuación 2NO₂(g) ⇌ N₂O₄(g). Antes de calcular, predecir por escrito si Kc será mayor o menor que 1 mirando la tabla, y por qué.",
+      "3. (15 min) En la hoja de cálculo, copiar la tabla en las columnas A (mezcla), B ([NO₂]) y C ([N₂O₄]). Crear tres columnas con fórmulas: D = C/B, E = C/(2*B) y F = C/B^2. Si se usa calculadora, completar la tabla a mano.",
+      "4. (10 min) Comparar las columnas D, E y F: ¿cuál da el mismo valor en las cuatro mezclas? Escribir la expresión de Kc que corresponde a esa columna y su valor.",
+      "5. (10 min) Problema nuevo: a la misma temperatura, otra mezcla tiene [NO₂] = 0.060 mol/L en el equilibrio. Usar el Kc obtenido para calcular [N₂O₄] y verificar que el resultado sea coherente con la predicción del paso 2.",
+      "6. (7 min) Puesta en común de las preguntas de análisis 1 y 2. Las preguntas 3 y 4 quedan de tarea."
+     ],
+     "seguridad": [
+      "El NO₂ es un gas tóxico: la demostración se ve solo en video; no se prepara en la escuela.",
+      "Cuidar los cables y el equipo eléctrico; no comer ni beber junto a las computadoras o tabletas."
+     ],
+     "datos_esperados": "En el video la mezcla se ve más café en agua caliente (predomina NO₂) y más clara en agua con hielo (predomina N₂O₄). En la tabla, la columna D da 1, 3, 5 y 0.5; la E da 0.5, 1.5, 2.5 y 0.25; solo la F da el mismo valor en las cuatro mezclas: Kc = [N₂O₄] / [NO₂]² = 100 (datos de ejemplo, no un valor medido). Como Kc es mayor que 1, predomina el producto. En el problema nuevo, [N₂O₄] = 100 × (0.060)² = 0.36 mol/L.",
+     "analisis": [
+      "1. ¿Por qué la columna F, y no la D ni la E, representa la constante de equilibrio? ¿Qué papel tiene el coeficiente 2 del NO₂?",
+      "2. ¿Qué indica el valor de Kc sobre el reactivo y el producto en el equilibrio? ¿Se cumplió tu predicción del paso 2?",
+      "3. (Tarea) Según el video, el color cambia con la temperatura. ¿Por qué todos los datos de la tabla tienen que ser de la misma temperatura para calcular un solo Kc?",
+      "4. (Tarea) Escribe un problema parecido con otra concentración de NO₂, resuélvelo y explica cómo comprobaste que tu resultado es coherente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin video ni proyector: la docente describe con imágenes impresas los tubos en agua caliente y fría. Sin computadoras: la tabla se completa con calculadora; las fórmulas de la hoja de cálculo quedan como tarea en el centro de cómputo si la escuela lo tiene.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.7",
+     "grado": 9,
+     "indicador": "3.7. Determina la constante de equilibrio químico de una reacción.",
+     "evidencia": "Problemas resueltos de constante de equilibrio"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U3-3.8/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U3-3.8/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U3-3.8"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U3-3.8",
+      "CON:quimica/teorias-acido-base"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Ácidos y bases de la casa: color, número y teoría",
+     "proposito": "Clasificar sustancias cotidianas con un resultado cualitativo (papel tornasol) y uno cuantitativo (tira de pH), y decidir qué teoría ácido-base explica cada caso, en especial las bases que no tienen OH.",
+     "materiales": [
+      "Muestras diluidas preparadas por la docente antes de la clase, 160 mL de cada una para 8 grupos: 1) vinagre blanco, 2) jugo de limón colado, 3) agua de la llave, 4) agua con bicarbonato (1 cucharadita en 200 mL), 5) agua jabonosa (jabón de baño), 6) limpiador con amoníaco diluido (1 parte en 20 de agua)",
+      "Por grupo de 4 o 5 personas: 6 vasos plásticos pequeños transparentes rotulados con los números 1 a 6, con 20 mL de cada muestra",
+      "Por grupo: 6 tiras de papel tornasol azul, 6 de papel tornasol rojo y 6 tiras de pH universal con su escala de colores",
+      "Por grupo: 6 palillos de madera (uno por vaso), toallas de papel, hoja de registro y lápiz",
+      "Gafas de seguridad y guantes para cada estudiante",
+      "En la pizarra: la sustancia activa de cada muestra (ácido acético CH₃COOH, ácido cítrico, agua, NaHCO₃, sal de ácido graso del jabón, NH₃)"
+     ],
+     "procedimiento": [
+      "1. (5 min) La docente repasa la seguridad: no se prueban, no se huelen de cerca y no se mezclan las muestras. Cada grupo escribe su predicción: ¿ácida, básica o neutra?",
+      "2. (5 min) Cada grupo recibe sus seis vasos rotulados del 1 al 6 y los coloca sobre una toalla de papel.",
+      "3. (12 min) Con un palillo distinto para cada vaso, moja una punta de papel tornasol azul y otra de tornasol rojo. Anota el color final de cada tira (resultado cualitativo).",
+      "4. (10 min) Con el mismo palillo de cada vaso, moja una tira de pH, espera 15 segundos y compárala con la escala del empaque. Anota el número (resultado cuantitativo).",
+      "5. (8 min) Clasifica cada muestra como ácida, neutra o básica y ordénalas de menor a mayor pH.",
+      "6. (10 min) Con la sustancia activa escrita en la pizarra, completa un cuadro: ¿la explica Arrhenius (libera H⁺ o tiene OH⁻ que libera)? ¿la explica Brønsted-Lowry (cede o acepta H⁺)?",
+      "7. (5 min) Las muestras se juntan en un balde con mucha agua, se desechan en el lavadero y se limpian las mesas."
+     ],
+     "seguridad": [
+      "Las muestras las diluye la docente; el limpiador con amoníaco se diluye en un lugar ventilado y nunca se mezcla con lejía ni otros productos con cloro.",
+      "Gafas y guantes durante toda la práctica; si una muestra salpica la piel o los ojos, lavar con abundante agua.",
+      "Las etiquetas de lejía y desatorador solo se leen en clase: esos productos no se usan en la práctica."
+     ],
+     "datos_esperados": "Vinagre y limón: tornasol azul pasa a rojo; pH 2 a 3. Agua de la llave: ningún tornasol cambia claramente; pH 6 a 8 según la fuente. Bicarbonato: tornasol rojo pasa a azul; pH cercano a 8. Agua jabonosa: azul; pH 9 a 10. Amoníaco diluido: azul; pH 10 a 11. El tornasol solo separa ácido de básico; la tira da un número aproximado. Arrhenius explica el vinagre y el limón (liberan H⁺), pero no el NH₃, el bicarbonato ni el jabón, que no tienen OH⁻ propios y se explican porque aceptan H⁺ del agua (Brønsted-Lowry).",
+     "analisis": [
+      "¿Qué información dio la tira de pH que no dio el papel tornasol? ¿En qué caso basta con el tornasol?",
+      "¿Qué muestras básicas no tienen OH en su sustancia activa? ¿Qué teoría explica que sean bases?",
+      "Tarea: en la reacción NH₃ + H⁺ → NH₄⁺, el nitrógeno usa un par de electrones propio para unirse al H⁺. Explica por qué la teoría de Lewis incluye a todas las bases de Brønsted-Lowry y haz una línea de tiempo con las tres teorías."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin papel tornasol ni tiras de pH: usar extracto de repollo morado como indicador (rojo en ácidos, morado cerca de neutro, verde en bases) y comparar el pH con el simulador «Escala de pH» de PhET, que da el valor numérico de líquidos de uso doméstico.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U3-3.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/teorias-acido-base",
+     "nombre": "Teorías ácido-base (Arrhenius, Brønsted-Lowry, Lewis)",
+     "definicion": "Los ácidos donan protones y las bases los aceptan formando pares conjugados; Lewis amplía a aceptores y donadores de pares electrónicos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U3-3.8",
+     "grado": 9,
+     "indicador": "3.8. Distingue por sus características entre sustancias ácidas y básicas, y las identifica según las teorías de Arrhenius, Bronsted-Lowry y Lewis.",
+     "evidencia": "Clasificación de sustancias cotidianas con resultados cualitativos y cuantitativos comparados, y cuadro comparativo de las tres teorías con una línea de tiempo de cómo evolucionó la definición"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U3-3.8/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}

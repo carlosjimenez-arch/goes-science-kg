@@ -1,0 +1,532 @@
+[
+ {
+  "id": "PED:DIF:fisica/presion-hidrostatica/1",
+  "decision": "corregir",
+  "justificacion": "Idea previa real y bien descrita, pero «la presión solo depende de la profundidad y la densidad» es falso para la presión total, que incluye la atmosférica (P = P₀ + ρgh). Se precisa que es la presión que agrega el líquido.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.6 (fila 7)",
+    "cita": "La malla pide P = ρ·g·h en un líquido en equilibrio."
+   },
+   {
+    "fuente": "CON:fisica/presion-hidrostatica",
+    "cita": "La definición del concepto es P = P₀ + ρgh."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "descripcion": "Cree que la presión en un punto del líquido depende de la cantidad total de líquido o de la forma y el ancho del recipiente. En un líquido en reposo, la presión que agrega el líquido depende solo de la profundidad del punto bajo la superficie libre y de la densidad: a igual profundidad, un tubo angosto y un lago dan la misma presión."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/presion-hidrostatica/2",
+  "decision": "aprobar",
+  "justificacion": "Idea previa documentada (la presión como peso que solo apunta hacia abajo). La explicación correcta es exacta: en un punto la presión tiene el mismo valor en todas direcciones; las señales (cápsula girada, agujero lateral) son observables en el experimento 1.6.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.6 (fila 7)",
+    "cita": "La malla usa la botella perforada y la presa como contextos."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Presión isótropa en un fluido en reposo; la fuerza es perpendicular a cada superficie."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/presion-hidrostatica/3",
+  "decision": "corregir",
+  "justificacion": "Correcto el contenido. La señal «cien veces mayores o menores» es imprecisa: dejar h en cm da resultados cien veces mayores. Se añade el error real y frecuente de usar la densidad en g/cm³ (mil veces menor).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.6 (fila 7)",
+    "cita": "Verifica que las unidades resulten en pascales."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "1 g/cm³ = 1000 kg/m³; 1 cm = 0.01 m."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "senales": "Obtiene más presión arriba que abajo; para un buzo usa la profundidad del lago en lugar de la suya; da resultados cien veces mayores por dejar h en centímetros, o mil veces menores por usar la densidad en g/cm³."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/principio-arquimedes/1",
+  "decision": "corregir",
+  "justificacion": "Error científico en la señal: un corcho del mismo tamaño FLOTA y desaloja solo parte de su volumen, así que la piedra hundida sí recibe más empuje. La señal premiaría como error una afirmación correcta. Se acota a cuerpos totalmente sumergidos; en un cuerpo que flota el empuje sí iguala su peso.",
+  "evidencia": [
+   {
+    "fuente": "CON:fisica/principio-arquimedes",
+    "cita": "Empuje igual al peso del fluido desalojado."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Flotando: E = peso del corcho; hundida: E = ρ·g·V de la piedra entera."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "descripcion": "Cree que el empuje depende del objeto (de su peso, su material o su densidad) y no del volumen de líquido que desaloja ni de la densidad del líquido: piensa que, sumergido por completo, un objeto más pesado recibe más empuje que otro del mismo volumen, o que el empuje sobre un mismo objeto no cambia al cambiar de líquido.",
+   "senales": "Dice que el empuje sobre un objeto totalmente sumergido es igual en agua dulce y en agua salada «porque el objeto es el mismo», o que, sumergidas por completo, una bola de acero recibe más empuje que una de plástico del mismo tamaño «porque pesa más»."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/principio-arquimedes/2",
+  "decision": "aprobar",
+  "justificacion": "Idea previa real y descrita con exactitud: para un líquido prácticamente incompresible el empuje sobre un cuerpo totalmente sumergido no depende de la profundidad, aunque la presión sí. Las señales son verificables con el dinamómetro del experimento 1.1/1.2.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.1 (fila 3)",
+    "cita": "Relaciona el empuje con la densidad del fluido y el volumen sumergido."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "E = ρ·g·V: la diferencia de presiones entre caras no cambia con la profundidad."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/principio-arquimedes/3",
+  "decision": "aprobar",
+  "justificacion": "Idea previa frecuente (empuje solo al flotar). La descripción es correcta y coincide con lo que la malla afirma: todo objeto sumergido en un líquido o gas recibe empuje; la flotación depende de comparar densidades.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.1 (fila 3)",
+    "cita": "Cualquier objeto sumergido en un líquido o gas experimenta un empuje.",
+    "cita_literal": "cualquier objeto sumergido en un líquido o gas experimenta un empuje"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/principio-bernoulli/1",
+  "decision": "corregir",
+  "justificacion": "Bien identificada la falacia del «tiempo igual», pero el texto puede llevar a creer que el aire de arriba no va más rápido o que Bernoulli no explica nada. Se aclara que la mayor rapidez y menor presión arriba son reales y que su causa es la inclinación y curvatura del ala que desvían el aire hacia abajo.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.7 (fila 8)",
+    "cita": "Crítica escrita de una explicación divulgativa del vuelo."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Sustentación: diferencia de presión real; el tránsito igual es falso, no la relación presión-rapidez."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "descripcion": "Acepta la explicación del «tiempo igual» para el vuelo: cree que el aire que pasa por arriba del ala debe reunirse en el borde de atrás con el que pasa por abajo y que por eso va más rápido. Nada obliga a ese encuentro: el aire de arriba llega antes. Sí es cierto que arriba va más rápido y la presión es menor, pero la causa es que la inclinación y la curvatura del ala desvían el aire hacia abajo."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/principio-bernoulli/2",
+  "decision": "aprobar",
+  "justificacion": "Idea previa clásica (más rapidez, más presión) y bien explicada: distingue el golpe de un chorro que frena contra un objeto de la presión de un flujo paralelo a la superficie. Las señales corresponden a los casos del experimento 1.7 y al techo de lámina que pide la malla.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.7 (fila 8)",
+    "cita": "Reconoce la relación inversa entre presión y rapidez en un fluido ideal."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Presión de estancamiento frente a presión estática."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/principio-bernoulli/3",
+  "decision": "aprobar",
+  "justificacion": "Correcto: en un tubo lleno el caudal es el mismo en cada sección y la rapidez es mayor donde el área es menor. Tapar la salida no da más agua (el caudal baja o se mantiene) aunque el chorro salga más rápido; la idea previa está bien planteada.",
+  "evidencia": [
+   {
+    "fuente": "CON:fisica/principio-bernoulli",
+    "cita": "A₁v₁ = A₂v₂."
+   },
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.12 (fila 11)",
+    "cita": "Integra la ecuación de continuidad para resolver problemas."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/principio-pascal/1",
+  "decision": "aprobar",
+  "justificacion": "Idea previa real y exacta: la prensa no multiplica la presión, multiplica la fuerza porque la misma presión actúa sobre más área. La matización «a igual altura» es correcta.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.5 (fila 6)",
+    "cita": "Explica el efecto del principio de multiplicación de fuerzas."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "F₂/F₁ = A₂/A₁ con P igual en ambos émbolos."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/principio-pascal/2",
+  "decision": "corregir",
+  "justificacion": "La señal «una manguera larga pierde presión» no es un error cuando el líquido corre: hay pérdida real por rozamiento viscoso. Pascal vale para el fluido encerrado en reposo. Se acota la descripción y la señal al líquido en reposo (frenos), para no marcar como idea previa algo físicamente cierto.",
+  "evidencia": [
+   {
+    "fuente": "CON:fisica/principio-pascal",
+    "cita": "Un cambio de presión en un fluido encerrado se transmite íntegramente."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En flujo por tuberías la presión cae con la longitud (pérdidas por fricción)."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "descripcion": "Cree que la presión se debilita al viajar por un líquido encerrado y en reposo (con la distancia, en tubos largos o al repartirse en un recipiente ancho) o que solo actúa en la dirección en que se empuja. El principio de Pascal dice que un cambio de presión llega igual a todos los puntos del líquido encerrado y empuja en todas direcciones. Cuando el líquido corre por una manguera sí hay pérdidas por rozamiento, pero ese ya no es el caso de Pascal.",
+   "senales": "Predice que la rueda más lejana frena menos o que a un freno con tubo más largo le llega menos presión; dice que la fuerza «se reparte» y por eso el émbolo grande recibe menos; espera que en un globo con agujeros el agua solo salga por el lado opuesto al que se aprieta."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/principio-pascal/3",
+  "decision": "aprobar",
+  "justificacion": "Correcto y valioso: en la prensa ideal el trabajo de entrada iguala al de salida (F₁d₁ = F₂d₂) y con fricción el de salida es menor; «no es menor» lo dice bien. Señales observables en la prueba de transmisión del experimento 1.5.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.5 (fila 6)",
+    "cita": "Prensa hidráulica construida con registro de pruebas."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Conservación del volumen: A₁d₁ = A₂d₂."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/viscosidad-regimen-flujo/1",
+  "decision": "aprobar",
+  "justificacion": "Confusión real entre viscosidad y densidad; el contraejemplo del aceite (más viscoso y menos denso que el agua) es correcto y accesible.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.11 (fila 10)",
+    "cita": "Calcula la viscosidad y la compara con la ley de Stokes."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Aceite ~0.92 g/mL y viscosidad decenas de veces la del agua."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/viscosidad-regimen-flujo/2",
+  "decision": "aprobar",
+  "justificacion": "Exacto: la fuerza viscosa crece con la rapidez hasta equilibrar peso menos empuje y desde ahí la velocidad es constante. Es justo lo que hay que entender para medir la velocidad terminal entre marcas.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.11 (fila 10)",
+    "cita": "Tabla de tiempos de caída repetidos en distintos fluidos."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "6πηrv = (ρ_s − ρ_f)·g·V en régimen terminal."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/viscosidad-regimen-flujo/3",
+  "decision": "aprobar",
+  "justificacion": "Correcto: el aire tiene viscosidad y la ley de Stokes vale para gases a Re bajo. Una partícula de 10 µm cae a menos de 1 cm/s en aire, de modo que desde kilómetros de altura tarda días; el viento la puede mantener más.",
+  "evidencia": [
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "v = 2r²ρg/(9η) con η_aire ≈ 1.8×10⁻⁵ Pa·s da ~0.8 cm/s para r = 5 µm."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.1/1",
+  "decision": "corregir",
+  "justificacion": "Física y números correctos (≈4 N; empuje 2.5→2.7→2.9 N; salmueras ≈1.06 y ≈1.14 g/mL). Tres ajustes: en una botella de 3 L, 1.5 L de agua no cubre la botella de arena; medir 100 mL con taza da ±5 %, comparable a la diferencia entre líquidos; y E/ρ no es un volumen sin dividir también entre g.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.1 (fila 3)",
+    "cita": "Mide con dinamómetro el empuje en agua dulce y con distintas cantidades de sal."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "E/(ρg) = V; 150 g y 350 g de NaCl en 1.5 L dan ≈1.06 y ≈1.14 g/mL."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "materiales": [
+    "Por grupo: un dinamómetro de 0 a 10 N (con divisiones de 0.1 N si es posible)",
+    "Por grupo: una botella plástica de 250 mL llena de arena, bien tapada y con un hilo de 40 cm atado al cuello",
+    "Por grupo: una botella de 2 L con la parte de arriba cortada (bordes cubiertos con cinta adhesiva) y 1.5 L de agua. Antes de empezar, comprueben que la botella de arena colgada queda cubierta con al menos 1 cm de agua y sin tocar el fondo; si no, agreguen agua (cada grupo mide de todos modos su densidad). En una botella de 3 L hacen falta unos 2 L",
+    "Por grupo: 350 g de sal de cocina separados en dos porciones, una de 150 g y otra de 200 g, y una cuchara larga para disolver",
+    "Por grupo o para compartir: una balanza de cocina (resolución de 1 g), una taza medidora de 250 mL y un vaso plástico",
+    "Marcador, hoja de registro, calculadora o computadora con hoja de cálculo y trapos para secar"
+   ],
+   "procedimiento": [
+    "1. (5 min) Escriban la pregunta «¿Cómo cambia el empuje sobre un mismo objeto cuando cambia la densidad del líquido?» y anoten cuál es la variable independiente, cuál la dependiente y cuáles mantendrán fijas.",
+    "2. (5 min) Ajusten el dinamómetro a cero. Cuelguen la botella de arena y anoten su peso en el aire. Marquen en el hilo, con el marcador, hasta dónde llegará la superficie del agua para sumergir siempre la botella igual.",
+    "3. (8 min) Líquido 1, agua dulce: llenen la taza medidora hasta la marca de 250 mL, pasen el agua al vaso y pésenla en la balanza (resten la masa del vaso vacío); la densidad es la masa en gramos entre 250 mL, en g/mL. Usen 250 mL y no 100 mL: el error de leer la taza pesa menos. Devuelvan el agua al recipiente. Sumerjan por completo la botella de arena, sin tocar fondo ni paredes, y anoten la lectura del dinamómetro.",
+    "4. (10 min) Líquido 2: agreguen los 150 g de sal al recipiente, agiten hasta que se disuelva y repitan el paso 3 (densidad y lectura).",
+    "5. (10 min) Líquido 3: agreguen los otros 200 g de sal, agiten hasta disolver la mayor parte y repitan el paso 3.",
+    "6. (10 min) Calculen el empuje en cada líquido (peso en el aire menos lectura dentro del líquido), completen la tabla densidad–empuje con sus unidades y hagan una gráfica del empuje (eje vertical) contra la densidad.",
+    "7. (7 min) Comparen la tabla con la de otro grupo y respondan las dos primeras preguntas de análisis."
+   ],
+   "analisis": [
+    "¿Qué variable cambiaron, cuál midieron y cuáles mantuvieron fijas? ¿Por qué era importante sumergir la botella siempre hasta la misma marca?",
+    "Según la tabla y la gráfica, ¿cómo cambia el empuje cuando aumenta la densidad del líquido? Expliquen el resultado con el principio de Arquímedes.",
+    "Tarea: dividan el empuje entre el producto de la densidad (en kg/m³) por g = 9.8 m/s² en cada líquido. ¿Sale casi el mismo valor? ¿Qué magnitud es y en qué unidades está? Compárenlo con el volumen de la botella.",
+    "Tarea: evalúen su diseño. ¿Qué variable pudo cambiar sin que lo quisieran (por ejemplo, sal sin disolver o la botella tocando la pared) y cómo mejorarían la medición? Relacionen el resultado con las lanchas que pasan del mar abierto a los esteros del Golfo de Fonseca."
+   ]
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.11/1",
+  "decision": "corregir",
+  "justificacion": "Stokes, Reynolds y valores esperados verificados (glicerina, balín de 3.5 mm: v≈5 cm/s, Re≈0.2). Pero una botella de 600 mL cortada solo admite unos 15 cm de líquido y el montaje pedía 22 cm (15 + 4 + 3): no cabe. Se reduce la separación a 10 cm y se desaconsejan probetas angostas por el efecto de pared.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.11 (fila 10)",
+    "cita": "Tabla de tiempos de caída repetidos en distintos fluidos con promedio."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Botella de 600 mL: ~6.5 cm de diámetro; corrección de pared ~20 % con d/D ≈ 0.09."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "materiales": [
+    "3 botellas plásticas transparentes de 600 mL, lisas y del mismo ancho, una por líquido, con la parte de arriba recortada (evitar probetas angostas: las paredes frenan mucho al balín y alteran la viscosidad)",
+    "Unos 600 mL de agua, 600 mL de aceite de cocina y 600 mL de un líquido espeso y transparente: glicerina de farmacia o miel de una cooperativa local (se recuperan al final para otras prácticas)",
+    "Balines de acero de dos tamaños, unos 5 de cada uno: de 3 a 4 mm y de 5 a 6 mm de diámetro (bolitas de rodamiento de talleres de bicicletas o ferreterías)",
+    "Un imán para recuperar los balines",
+    "Cinta adhesiva de papel, plumón, regla y cinta métrica",
+    "Calibrador (vernier) si hay; si no, la regla para medir 10 balines alineados",
+    "Balanza de cocina o de laboratorio y un vaso medidor de 100 mL o más",
+    "Cronómetro o celular con cámara lenta, y un termómetro para anotar la temperatura de los líquidos",
+    "Calculadora o computadora con hoja de cálculo",
+    "Papel periódico para cubrir la mesa, papel toalla, una botella con tapa para guardar el aceite y bolsas para la basura"
+   ],
+   "procedimiento": [
+    "1. (Sesión 1, 5 min) Cubran la mesa con periódico. Llenen cada botella con su líquido hasta unos 2 cm del borde y peguen dos tiras de cinta horizontales separadas 10.0 cm: la de arriba al menos 3 cm por debajo de la superficie y la de abajo al menos 2 cm por encima del fondo. Si el líquido no alcanza 15 cm de altura, acorten la separación y anoten la distancia real.",
+    "2. (5 min) Midan el diámetro de cada tamaño de balín: con el calibrador o alineando 10 balines contra la regla y dividiendo entre 10. Anoten la temperatura de cada líquido.",
+    "3. (10 min) Midan la densidad de cada líquido: pongan el vaso medidor sobre la balanza, llévenla a cero, viertan 100 mL del líquido y dividan la masa entre el volumen.",
+    "4. (20 min) Suelten un balín pequeño justo en la superficie, en el centro de la botella, y midan el tiempo que tarda en pasar de una marca a la otra. Repitan cinco veces en cada líquido. Para recuperar el balín, súbanlo arrastrando el imán por fuera de la botella. En agua y aceite, si pueden, graben en cámara lenta y midan el tiempo cuadro por cuadro.",
+    "5. (5 min) Repitan el paso 4 con el balín grande, solo en el líquido espeso.",
+    "6. (10 min) Anoten en la tabla los cinco tiempos de cada caso, el promedio y la diferencia entre el mayor y el menor. Junto a cada fila escriban un comentario sobre la precisión: qué tan grande es esa diferencia comparada con el promedio.",
+    "7. (Sesión 2, 10 min) Calculen la velocidad terminal, v = distancia / tiempo promedio, en m/s.",
+    "8. (15 min) Para el líquido espeso, calculen la viscosidad con la ley de Stokes despejada, η = 2r²(ρ_balín − ρ_líquido)g / (9v), con r en metros, g = 9.8 m/s² y la densidad del acero (valor de la tabla de referencia). Háganlo con los dos tamaños de balín.",
+    "9. (10 min) Comprueben si la ley era aplicable con el número de Reynolds, Re = ρ_líquido · v · d / η, donde d es el diámetro del balín: la ley de Stokes funciona bien si Re es menor que 1. Para el agua y el aceite usen la viscosidad de la tabla de referencia.",
+    "10. (10 min) Comparen: ¿los dos balines dan una viscosidad parecida? Si usaron glicerina, calculen la diferencia en porcentaje con el valor de la tabla de referencia a la temperatura que midieron.",
+    "11. (10 min) Escriban una conclusión de tres oraciones: si sus datos apoyan la ley de Stokes, con qué grado de certeza y en qué condiciones. Recuperen los líquidos y limpien."
+   ],
+   "datos_esperados": "En el agua y en el aceite el balín recorre los 10 cm en una fracción de segundo: con cronómetro de mano, la variación entre repeticiones es casi tan grande como el propio tiempo, y el número de Reynolds sale de decenas a miles, así que la ley de Stokes no se aplica. En el líquido espeso el balín cae con rapidez visiblemente constante: en glicerina, de uno a pocos segundos para 10 cm; en miel, de varios segundos a más de un minuto, según su contenido de agua y la temperatura. Allí los tiempos repetidos varían alrededor de 5 % a 15 % y Re sale menor que 1 con los balines pequeños. Si la ley vale, la velocidad terminal crece con el cuadrado del radio (un balín de doble diámetro cae unas cuatro veces más rápido) y la viscosidad calculada con los dos tamaños sale parecida; diferencias de 10 % a 30 % son normales. En una botella angosta las paredes frenan al balín, sobre todo al grande, y la viscosidad calculada sale mayor que la de la tabla."
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.12/1",
+  "decision": "corregir",
+  "justificacion": "Física correcta (caudal limitado por fricción, Q entre √h y h, boquilla no aumenta el caudal). Error de montaje: con el nivel del agua a unos 95 cm del piso, el extremo no puede quedar 100 cm por debajo. Se usan 70-25 cm, 20 s por medida (volúmenes legibles con marcas de 50 mL), boquilla realmente angosta y se evita vaciar el sifón antes de la boquilla.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.12 (fila 11)",
+    "cita": "Comprueba que sus resultados sean físicamente razonables."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Manguera 5-6 mm, 2.5 m, h = 0.7 m: v ≈ 0.8 m/s (Blasius), Q ≈ 15-20 mL/s; ideal ≈ 3.7 m/s."
+   }
+  ],
+  "confianza": "media",
+  "cambios": {
+   "materiales": [
+    "Un balde de 10 L por grupo, con unos 8 L de agua, sobre una mesa firme (el fondo del balde queda a unos 75 cm del piso)",
+    "2.5 m de manguera transparente de pecera (unos 5 a 6 mm de diámetro interior) por grupo",
+    "Una pinza de ropa para cerrar la manguera y una regla o palito de unos 30 cm para sujetar el extremo",
+    "El cuerpo de un gotero sin la pera o una pajilla delgada de café, que entre ajustado en el extremo de la manguera y deje una abertura de 2 a 3 mm, claramente más angosta que la manguera (boquilla angosta)",
+    "Un vaso medidor o una botella de 600 mL marcada cada 50 mL, y un segundo balde vacío para recibir el agua",
+    "Cinta métrica, cinta adhesiva de papel y plumón",
+    "Cronómetro o celular",
+    "Calculadora, papel cuadriculado y un trapo para secar"
+   ],
+   "procedimiento": [
+    "1. (8 min) Pongan el balde lleno sobre la mesa. Marquen con cinta en la pared del balde el nivel del agua y mantengan ese nivel durante las mediciones, devolviendo al balde el agua que recojan.",
+    "2. (5 min) Llenen la manguera sumergiéndola entera en el balde (nunca succionando con la boca), ciérrenla con la pinza por un extremo y saquen ese extremo del balde mientras el otro queda en el fondo.",
+    "3. (15 min) Sujeten el extremo libre a la regla y colóquenlo, en este orden, 70, 55, 40 y 25 cm por debajo del nivel del agua del balde (midan la distancia vertical con la cinta; con el balde sobre una mesa de 75 cm no se puede bajar mucho más sin llegar al piso). En cada altura abran la pinza, recojan el agua durante 20 s en el vaso medidor, anoten el volumen y devuelvan el agua al balde. Repitan una vez cada altura.",
+    "4. (8 min) Con el extremo 55 cm bajo el nivel, pongan la boquilla angosta. Observen si el chorro sale más rápido (apúntenlo horizontal y miren su alcance) y midan el volumen recogido en 20 s. Compárenlo con el de la misma altura sin boquilla.",
+    "5. (4 min) Quiten la boquilla y suban despacio el extremo hasta que deje de salir agua; anoten a qué altura ocurre respecto del nivel del balde. Si lo suben más, la manguera se vacía y habría que llenarla otra vez como en el paso 2.",
+    "6. (10 min) Calculen el caudal en mL/s de cada medición y hagan la tabla y la gráfica de caudal contra altura bajo el nivel. Midan el diámetro interior de la manguera para el análisis.",
+    "7. (5 min) Devuelvan el agua a un recipiente para regar plantas, enrollen la manguera y sequen la mesa y el piso."
+   ],
+   "datos_esperados": "El caudal crece cuanto más abajo del nivel del balde está el extremo, y se anula cuando el extremo llega al nivel del agua: es lo que pasa con las casas que quedan a la altura del tanque o por encima. Con unos 2.5 m de manguera de pecera y 70 cm de desnivel se recogen del orden de 10 a 25 mL por segundo, bastante menos que los 70 a 100 mL/s que predice Torricelli para un fluido ideal, porque el rozamiento en una manguera larga y angosta consume buena parte de la energía; por la misma razón el caudal suele crecer más que √h y menos que h. Con la boquilla el chorro sale más rápido y llega más lejos, pero el volumen recogido en 20 s es igual o menor que sin ella: estrechar la salida no aumenta el caudal.",
+   "analisis": [
+    "¿Qué pasa con el caudal al subir la «casa» hacia el nivel del agua del balde? Usen sus datos para explicar por qué en la parte alta de una colonia el agua llega con poca presión.",
+    "Con la boquilla, ¿aumentó la rapidez del chorro, el caudal o ambos? Justifiquen con la ecuación de continuidad (A₁v₁ = A₂v₂).",
+    "Para 70 cm de desnivel calculen la rapidez ideal de salida, v = √(2gh), y el caudal ideal Q = A·v con el área interior de la manguera. Compárenlo con el medido: ¿es razonable que el medido salga menor? ¿Por qué?",
+    "Tarea: inventen para otro grupo un problema de la red de agua de su comunidad, resuélvanlo y digan qué cambio (tanque más alto, bomba, tubería más ancha) mejoraría la presión en la parte alta, con un cálculo."
+   ],
+   "variantes": "Sin mesa alta: pongan el balde sobre un pupitre y trabajen con desniveles de 20 a 70 cm, midiendo durante 20 s para tener volúmenes que se lean bien. Si no hay manguera de pecera, sirve un equipo de venoclisis nuevo y sin aguja, pedido a la unidad de salud (más angosto: el caudal será menor). Sin materiales: la pestaña «Flujo» del simulador «Presión del fluido y flujo» de PhET muestra un tubo cuya sección y altura se pueden cambiar, con medidores de rapidez y de presión, y permite ver que en la parte angosta o más alta la presión es menor (el docente lo revisa antes de la clase)."
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.2/1",
+  "decision": "corregir",
+  "justificacion": "Física, DCL y números correctos (1 g ≈ 0.01 N; 600 − 420 = 180 N; el PhET «Flotabilidad» lo pide la malla). Pero un candado o tuerca de 1 N desaloja ~13 mL: empuje ≈ 0.13 N, del orden de la resolución del dinamómetro, y el candado atrapa aire. Se piden objetos de al menos 100 mL.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.2 (fila 4)",
+    "cita": "Comprobar con el simulador «Flotabilidad» (PhET).",
+    "cita_literal": "Comprobar con el simulador «Flotabilidad» (PhET)"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Acero ~7.8 g/mL: 100 g desalojan 13 mL."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "materiales": [
+    "Por grupo: un dinamómetro de 0 a 10 N",
+    "Por grupo: tres objetos que se hundan, no absorban agua ni atrapen aire, de al menos 100 mL de volumen y de 1 a 8 N de peso (por ejemplo, una piedra lisa del tamaño de un puño, un frasco pequeño de vidrio con tapa lleno de arena y una botella de 250 mL llena de arena), cada uno con un hilo de 40 cm. Con objetos más pequeños el empuje queda por debajo de lo que lee el dinamómetro",
+    "Por grupo: un recipiente plástico de unos 2 L (botella cortada con bordes cubiertos con cinta o un pichel) con 1.5 L de agua; comprueben antes que cada objeto queda cubierto sin tocar el fondo",
+    "Por grupo: una balanza de cocina digital (resolución de 1 g) que soporte al menos 3 kg",
+    "Regla, hoja de registro, calculadora y trapos para secar"
+   ]
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.3/1",
+  "decision": "corregir",
+  "justificacion": "Tratamiento del error adecuado para 9.° (promedio, semirrango, redondeo, precisión frente a exactitud). Pero la exactitud se juzga contra una única referencia: solo vale si todas las botellas tienen el mismo volumen. Se pide medir la referencia de cada botella (o usar el mismo modelo) y comprobar que el agua la cubra.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.3 (fila 5)",
+    "cita": "Informe breve con mediciones repetidas, promedio, incertidumbre y cifras significativas."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "El empuje depende del volumen de cada botella; la balanza resuelve 0.01 N."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "materiales": [
+    "Por grupo: un dinamómetro de 0 a 10 N y la botella de 250 mL con arena del tema 1.1 (o un objeto que se hunda), con su hilo",
+    "Por grupo: una botella de 2 L cortada (bordes con cinta adhesiva) con 1.5 L de agua dulce, que cubra la botella de arena sin que toque el fondo",
+    "Una balanza de cocina (resolución de 1 g) para todo el grado, para medir el empuje de referencia",
+    "Hoja de registro, calculadora o computadora con hoja de cálculo, pizarra para la tabla del grado y trapos"
+   ],
+   "procedimiento": [
+    "1. (5 min) Comenten por qué al pesarse varias veces en la báscula de la unidad de salud no siempre sale el mismo valor y escriban la pregunta: «¿Qué valor reportamos cuando repetimos una medición y obtenemos números distintos?».",
+    "2. (15 min) Hagan cinco mediciones independientes del empuje: cada vez descuelguen la botella, revisen que el dinamómetro esté en cero, anoten el peso en el aire, sumerjan la botella por completo sin tocar fondo ni paredes y anoten la lectura. Que lea una persona distinta del grupo en cada medición. Calculen el empuje de cada una (peso en el aire menos lectura).",
+    "3. (10 min) Calculen el promedio de los cinco empujes y la incertidumbre como la mitad de la diferencia entre el mayor y el menor; si sale menor que la resolución del dinamómetro, usen la resolución. Escriban el resultado como promedio ± incertidumbre, redondeando el promedio a los mismos decimales que la incertidumbre.",
+    "4. (10 min) Cada grupo escribe su resultado en la tabla de la pizarra. Mientras tanto, el docente mide una vez con la balanza el empuje de referencia de la botella de cada grupo (o de una sola, si todas son del mismo modelo): recipiente con agua sobre la balanza en cero, se sumerge la botella colgada y el aumento en gramos, pasado a kg y multiplicado por 9.8 m/s², da el empuje.",
+    "5. (10 min) Comparen los resultados del grado: ¿qué grupos tienen medidas más parecidas entre sí (más precisas)? ¿Cuáles quedaron más cerca del valor de referencia (más exactas)? ¿Los intervalos se traslapan?",
+    "6. (5 min) Empiecen el informe breve: tabla con las cinco medidas y sus unidades, promedio, incertidumbre y resultado final. El resto del informe queda de tarea."
+   ]
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.5/1",
+  "decision": "corregir",
+  "justificacion": "Relación de áreas (3-4) y cargas (75-100 g para 300 g) verificadas. El indicador pide comprobar Pascal «a partir de datos de variación de presión», y el diseño solo calculaba fuerzas: se añade P = F/A en cada émbolo. Además, la fricción de émbolos de jeringa puede rondar 1 N, comparable a la carga; se agrega una prueba previa.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.5 (fila 6)",
+    "cita": "Comprueba experimentalmente el principio de Pascal a partir de datos de variación de presión."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "2.94 N / 6 cm² ≈ 4.9 kPa; 0.83 N / 1.7 cm² ≈ 4.9 kPa."
+   }
+  ],
+  "confianza": "media",
+  "cambios": {
+   "procedimiento": [
+    "1. (Sesión 1, 10 min) Midan con la regla la longitud de la escala de cada jeringa, desde 0 hasta su volumen máximo, y calculen el área del émbolo: área = volumen ÷ longitud (por ejemplo, 60 cm³ ÷ 9.5 cm). Calculen la relación de áreas A grande ÷ A pequeña.",
+    "2. (10 min) Sobre la bandeja, llenen de agua la jeringa grande y la manguera, y conéctenlas a la pequeña con el émbolo hundido. Muevan los émbolos varias veces con las puntas hacia arriba para sacar las burbujas. Pongan una gota de aceite en el borde de cada émbolo.",
+    "3. (10 min) Prueba de transmisión: empujen el émbolo pequeño y observen el grande; luego al revés. Midan con la regla cuánto baja uno y cuánto sube el otro en tres pruebas y anótenlo.",
+    "4. (10 min) Fijen las dos jeringas verticales con los ladrillos y la cinta, con los émbolos hacia arriba y a la misma altura. Comprueben que, sin carga, cada émbolo se mueve con un empujón suave; si se traba, pongan más aceite. Peguen un vaso sobre cada émbolo. Si hay balanza, pesen antes cada émbolo con su vaso y anoten la masa.",
+    "5. (10 min) Discutan y anoten qué parte de una prensa real representa cada pieza del modelo y su predicción: ¿qué carga hará falta en el vaso pequeño para levantar 300 g en el grande? Fin de la sesión 1.",
+    "6. (Sesión 2, 20 min) Pongan 300 mL de agua en el vaso grande (300 g de carga). Agreguen agua al vaso pequeño de 5 mL en 5 mL hasta que el émbolo grande empiece a subir y anoten esa masa. Luego quiten agua del pequeño poco a poco hasta que el grande empiece a bajar y anoten esa masa. Repitan tres veces.",
+    "7. (10 min) Repitan el paso 6 con 450 mL de agua en el vaso grande. Si se mojan los vasos o entra aire, sequen y vuelvan a sacar las burbujas.",
+    "8. (15 min) Para cada carga, promedien las masas de «empieza a subir» y «empieza a bajar», calculen la multiplicación medida (carga grande ÷ carga pequeña promedio) y el porcentaje de diferencia con la relación de áreas. Completen la tabla de fuerzas (F = m · 9.8 N/kg) y áreas, y calculen la presión en cada émbolo, P = F ÷ A, en pascales: si se cumple el principio de Pascal, las dos presiones deben salir casi iguales.",
+    "9. (10 min) Comparen en plenaria los resultados de los grupos, vacíen el agua en una planta y guarden las jeringas limpias para reutilizarlas."
+   ],
+   "datos_esperados": "Con jeringas comunes la relación de áreas sale entre 3 y 4 (el área del émbolo de 60 mL ronda 6 a 7 cm² y la del de 10 mL, 1.5 a 2 cm²; dependen de la marca). En la prueba de transmisión el émbolo grande se mueve unas 3 a 4 veces menos que el pequeño, porque el volumen de agua que sale de una jeringa entra en la otra. Para levantar 300 g en el vaso grande hacen falta entre 75 y 100 g ideales en el pequeño; la masa de «empieza a subir» sale mayor y la de «empieza a bajar» menor, por la fricción de los émbolos, y su promedio suele quedar a menos de 15 % a 20 % del cálculo. Las diferencias mayores suelen venir de burbujas, de émbolos a distinta altura o de no contar la masa del émbolo y el vaso. Con 300 g en el émbolo grande la presión ronda 4 a 5 kPa y con 450 g, 7 kPa, casi la misma en los dos émbolos. Si la fricción de los émbolos es comparable a la carga, la diferencia entre «sube» y «baja» será grande: ahí el promedio es indispensable."
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.6/1",
+  "decision": "corregir",
+  "justificacion": "Física y cálculos correctos (98 Pa por cm; 2 450 Pa a 25 cm; 30 m ≈ 294 kPa; PhET mencionado en la malla). Dos fallos: «el globo absorbe parte del empuje» usa «empuje» (Arquímedes) por presión, justo en la unidad que los distingue; y 300 g de sal en 2 L no caben en una botella de 2 L cortada. 150 g/L da ≈1.10 g/mL.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.6 (fila 7)",
+    "cita": "Comprobar con el simulador «Presión del fluido y flujo» (PhET).",
+    "cita_literal": "Comprobar con el simulador «Presión del fluido y flujo» (PhET)"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "NaCl al ~13 % en masa: densidad ≈ 1.09-1.10 g/mL."
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "materiales": [
+    "Por grupo: 1.5 m de manguera transparente delgada (la de nivel de albañil, de 6 a 8 mm de diámetro)",
+    "Por grupo: un embudo pequeño de plástico, un globo y una liga para cubrir la boca del embudo",
+    "Por grupo: un cartón o tabla de unos 60 cm de alto, cinta adhesiva y una regla de 30 cm pegada en el centro, para formar la U del manómetro",
+    "Por grupo: un balde o garrafón cortado que permita al menos 30 cm de agua (unos 10 a 12 L) y una botella de 2 L con la parte de arriba cortada (recipiente angosto)",
+    "Agua con unas gotas de colorante de comida para el manómetro (unos 50 mL) y una regla o cinta métrica para medir la profundidad",
+    "Para la parte con agua salada (una por grado o por cada dos grupos): 225 g de sal de cocina disuelta en 1.5 L de agua, en una segunda botella de 2 L cortada (2 L más la sal desbordarían la botella)",
+    "Balanza de cocina y vaso medidor (opcional), trapos, papel cuadriculado y calculadora"
+   ],
+   "datos_esperados": "En el balde, Δh crece casi en proporción con la profundidad y resulta igual o algo menor que ella (por ejemplo, de 4 a 5 cm a 5 cm de profundidad y de 22 a 25 cm a 25 cm), porque parte de la presión se gasta en estirar el globo, que se hunde un poco dentro del embudo. Como 1 cm de agua equivale a unos 98 Pa, a 25 cm la presión ronda 2 450 Pa. Al girar la cápsula a igual profundidad, Δh casi no cambia, y en la botella angosta da lo mismo que en el balde ancho: la presión depende de la profundidad, no del ancho del recipiente. Con unos 150 g de sal por litro, el agua salada (densidad cercana a 1.10 g/mL) da Δh entre 7 % y 10 % mayor que el agua a igual profundidad."
+  }
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.7/1",
+  "decision": "aprobar",
+  "justificacion": "Los cuatro casos dan los resultados descritos y la nota a la docente declara con honestidad el límite de Bernoulli en chorros libres (efecto de la curvatura y del arrastre). Material, tiempos (55 min) e higiene de pajillas adecuados; el simulador PhET es el que pide la malla.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.7 (fila 8)",
+    "cita": "Usar el simulador «Presión del fluido y flujo» (PhET).",
+    "cita_literal": "Usar el simulador «Presión del fluido y flujo» (PhET)"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Soplo de ~15 m/s: ½ρv² ≈ 130 Pa ≈ 1.3 cm de agua, suficiente para el atomizador de 1 cm."
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:EXP:G09-CIE-U1-1.9/1",
+  "decision": "aprobar",
+  "justificacion": "Números verificados: x = 2√(hy) da 0.39 m (5 cm) y 0.77 m (20 cm) con y = 0.75 m; v teórica 0.99-1.98 m/s; vaciado de 20 a 5 cm en 2-3 min con agujero de 3 mm; 6 m da 10.8 m/s y el doble exige 24 m. La variante de caudal explica bien la vena contracta.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G09-CIE-U1-1.9 (fila 9)",
+    "cita": "Tabla y gráfica del alcance del chorro según la altura del agua."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "t = (A/a)(√(2h₁) − √(2h₂))/√g ≈ 2 min ideal; ≈3 min con Cd ≈ 0.6."
+   }
+  ],
+  "confianza": "alta"
+ }
+]

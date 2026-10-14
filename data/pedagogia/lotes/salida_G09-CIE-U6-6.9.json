@@ -1,0 +1,197 @@
+[
+ {
+  "id": "ACT:G09-CIE-U6-6.9/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G09-CIE-U6-6.9"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U6-6.9",
+   "CON:fisica/semiconductores-dispositivos"
+  ],
+  "habilidad": "explicar",
+  "formato": "opcion_multiple",
+  "grados": [
+   9
+  ],
+  "enunciado": "La etiqueta del cargador del celular de Melvin dice: «Entrada: 100-240 V ~ 60 Hz» y «Salida: 5 V ⎓ 2 A». El símbolo ~ indica corriente alterna y ⎓ indica corriente directa. Dentro del cargador hay un rectificador hecho con diodos. ¿Para qué sirve el rectificador?",
+  "opciones": {
+   "A": "Convierte la corriente de la red, que cambia de sentido, en corriente de un solo sentido.",
+   "B": "Baja los 120 V de la red hasta los 5 V que necesita la batería del celular para cargar.",
+   "C": "Deja pasar la corriente en los dos sentidos, pero la vuelve más pareja y sin variaciones.",
+   "D": "Repone la corriente que se pierde en los cables antes de que llegue hasta el celular."
+  },
+  "correcta": "A",
+  "distractores": {},
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "La red entrega corriente alterna: cambia de sentido 60 veces por segundo. La batería solo se carga con corriente de un solo sentido, y los diodos del rectificador dejan pasar la corriente en un sentido. Bajar el voltaje es otra tarea del cargador, que hacen otras partes de su circuito; reducir el voltaje no cambia el sentido de la corriente.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G09-CIE-U6-6.9"
+  }
+ },
+ {
+  "id": "ACT:G09-CIE-U6-6.9/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G09-CIE-U6-6.9"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U6-6.9",
+   "CON:fisica/semiconductores-dispositivos"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   9
+  ],
+  "enunciado": "En un simulador, una fuente alterna lenta (completa un ciclo cada 1 s) alimenta un foco a través de un diodo. El simulador marca el voltaje de la fuente y el del foco cada 0.25 s:\n- 0 s: fuente 0 V, foco 0 V\n- 0.25 s: fuente +6 V, foco +5.3 V\n- 0.50 s: fuente 0 V, foco 0 V\n- 0.75 s: fuente −6 V, foco 0 V\n- 1.00 s: fuente 0 V, foco 0 V\n- 1.25 s: fuente +6 V, foco +5.3 V\n¿Qué conclusión apoyan estos datos?",
+  "opciones": {
+   "A": "El diodo deja pasar una mitad de cada ciclo: el foco recibe pulsos en un solo sentido.",
+   "B": "El diodo vuelve positiva toda la onda: el foco recibe un voltaje parejo y sin cortes.",
+   "C": "El diodo deja pasar los dos sentidos: solo le baja un poco el voltaje que llega al foco.",
+   "D": "El diodo invierte la corriente: el foco recibe solo la parte negativa de cada ciclo."
+  },
+  "correcta": "A",
+  "distractores": {},
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Cuando la fuente es positiva, el foco recibe casi todo su voltaje (el diodo toma unos 0.7 V); cuando es negativa, el foco queda en 0 V. Es un rectificador de media onda: la corriente va en un solo sentido, pero a pulsos con huecos. Para aprovechar las dos mitades se usa un puente de cuatro diodos, y un capacitor suaviza los pulsos.",
+  "duracion_min": 8,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G09-CIE-U6-6.9"
+  }
+ },
+ {
+  "id": "ACT:G09-CIE-U6-6.9/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G09-CIE-U6-6.9"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U6-6.9",
+   "CON:fisica/semiconductores-dispositivos"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   9
+  ],
+  "enunciado": "Para el esquema del rectificador, Fátima dibuja por bloques lo que pasa dentro de un cargador: tomacorriente → reductor de voltaje → puente de cuatro diodos → capacitor → batería del celular. En 2 o 3 oraciones explica: (1) qué tipo de corriente sale del tomacorriente y qué tipo necesita la batería; (2) qué hace el puente de diodos con la corriente y cómo queda la forma de onda; y (3) para qué sirve el capacitor que va después.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Del tomacorriente sale corriente alterna, que cambia de sentido; la batería necesita corriente directa, de un solo sentido. El puente de diodos hace que las dos mitades de cada ciclo salgan en el mismo sentido: la onda queda como una fila de jorobas, todas del mismo lado. El capacitor se carga en cada joroba y se descarga en los huecos, así el voltaje queda casi parejo.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G09-CIE-U6-6.9"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Del tomacorriente sale corriente alterna, que cambia de sentido muchas veces por segundo, y la batería necesita corriente directa, que va en un solo sentido. El puente de diodos deja pasar la corriente siempre en el mismo sentido, así que la onda queda como jorobas todas hacia arriba, pero todavía sube y baja. El capacitor se carga en cada joroba y suelta carga entre ellas, y así el voltaje queda casi parejo para cargar la batería.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Dice que del tomacorriente sale corriente alterna (cambia de sentido) y que la batería necesita corriente directa (un solo sentido).",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Explica que los diodos dejan pasar la corriente en un solo sentido y que la onda queda toda de un mismo lado (pulsos o jorobas), pero no pareja.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Dice que el capacitor suaviza o rellena los huecos entre pulsos porque se carga y se descarga.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Distingue la función del rectificador de la del reductor de voltaje, o menciona por qué no se debe usar un cargador dañado.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Cree que los diodos dejan pasar la corriente en ambos sentidos y solo la «arreglan».",
+     "ejemplo": "Los diodos dejan pasar toda la corriente, pero la ordenan para que no llegue tan fuerte.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Confunde rectificar con bajar el voltaje.",
+     "ejemplo": "El puente de diodos baja los 120 V a 5 V para que no se queme el celular.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Cree que el capacitor es una batería de respaldo para cuando se va la luz.",
+     "ejemplo": "El capacitor guarda electricidad para seguir cargando el celular si se va la luz.",
+     "dificultad": null
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP:G09-CIE-U6-6.9/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G09-CIE-U6-6.9"
+  ],
+  "evalua": [
+   "TEMA:G09-CIE-U6-6.9",
+   "CON:fisica/semiconductores-dispositivos"
+  ],
+  "grados": [
+   9
+  ],
+  "titulo": "Corriente que cambia de sentido: un rectificador de puente con una batería, diodos y LED",
+  "proposito": "Simular a mano una corriente que cambia de sentido invirtiendo una batería, observar con LED indicadores qué hace un diodo (media onda) y un puente de cuatro diodos (onda completa), y comprobar en un simulador la forma de onda rectificada y el efecto del capacitor, para dibujar el esquema del rectificador de un cargador.",
+  "materiales": [
+   "Por grupo de 4: 1 batería de 9 V con su conector de broche, 1 protoboard pequeña y 10 cables puente",
+   "Por grupo: 4 diodos rectificadores 1N4007 (la franja gris marca el cátodo)",
+   "Por grupo: 1 LED rojo y 1 LED verde de 5 mm, y 2 resistencias de 470 Ω",
+   "Un cargador de celular viejo o en desuso, solo para leer su etiqueta (no se conecta ni se abre)",
+   "Computadoras, tabletas o un proyector con el simulador de circuitos de Falstad (en línea)",
+   "Una hoja con el esquema del puente de diodos que dibuja la docente en la pizarra"
+  ],
+  "procedimiento": [
+   "1. (5 min) Lean la etiqueta del cargador: entrada con «~» (alterna) y salida con «⎓» (directa). Anoten la pregunta: ¿por qué el cargador transforma la corriente antes de que llegue al celular?",
+   "2. (8 min) Indicador de sentido. Con la batería desconectada, conecten el LED rojo y el LED verde en paralelo pero en sentidos opuestos, y en serie con una resistencia de 470 Ω. Toquen los cables del broche a los extremos en un sentido y luego en el otro: anoten qué LED enciende en cada caso.",
+   "3. (5 min) «Alterna a mano». Inviertan la batería cada segundo, varias veces: el indicador muestra una corriente que cambia de sentido, como la de la red pero muchísimo más lenta.",
+   "4. (10 min) Media onda. Agreguen un diodo 1N4007 en serie con el indicador. Vuelvan a invertir la batería cada segundo y anoten qué pasa en cada mitad del «ciclo».",
+   "5. (12 min) Onda completa. Con la batería desconectada, armen el puente de cuatro diodos según el esquema. Conecten a su salida la segunda resistencia de 470 Ω y el LED verde solo. Inviertan la batería en la entrada del puente: anoten si el LED enciende con los dos sentidos y por qué no se apaga.",
+   "6. (10 min) Simulador. Abran en el simulador de Falstad los ejemplos de rectificador de media onda y de onda completa, miren la gráfica de voltaje en la carga y agreguen o quiten el capacitor de filtro. Dibujen las tres formas de onda: sin rectificar, media onda y onda completa con capacitor.",
+   "7. (5 min) Dibujen el esquema por bloques del cargador (entrada alterna, reductor de voltaje, puente, capacitor, salida directa), desconecten la batería y guarden el material. Las preguntas de análisis que no alcancen quedan de tarea."
+  ],
+  "seguridad": [
+   "Solo se usa una batería de 9 V; ningún circuito se conecta a un tomacorriente y el cargador no se enchufa ni se abre: por dentro tiene partes con el voltaje de la red y capacitores que pueden quedar cargados.",
+   "Un cargador con el cable pelado, roto o que se calienta no se usa: se desecha en un punto de reciclaje de aparatos electrónicos.",
+   "No conectar un LED a la batería de 9 V sin su resistencia: se daña al instante.",
+   "No unir con un cable los dos polos de la batería: se calienta."
+  ],
+  "datos_esperados": "Indicador: con un sentido enciende un LED y con el otro, el otro LED. Media onda: con el diodo en serie solo enciende uno de los dos LED, en un sentido de la batería; en el otro sentido no enciende ninguno. Puente: el LED de la salida enciende con los dos sentidos de la batería, algo menos brillante porque la corriente pasa por dos diodos que toman en total cerca de 1.4 V. En el simulador, la media onda muestra jorobas separadas por huecos; la onda completa, jorobas seguidas todas del mismo lado; con el capacitor, un voltaje casi parejo con un pequeño rizado.",
+  "analisis": [
+   "¿Qué mostró el indicador de dos LED sobre el sentido de la corriente al invertir la batería?",
+   "¿Por qué con un solo diodo se pierde la mitad del ciclo y con el puente no?",
+   "¿Para qué necesita el cargador el capacitor después del puente, según lo que vieron en el simulador?",
+   "Tarea: expliquen a alguien de su familia por qué un cargador dañado o que se calienta no debe seguir usándose, y qué información de seguridad trae su etiqueta."
+  ],
+  "duracion_min": 55,
+  "variantes": "Si no hay diodos o protoboard, toda la práctica se hace en el simulador de Falstad, que permite armar el indicador con dos LED, una fuente alterna de baja frecuencia, un diodo, el puente de cuatro diodos y el capacitor, y muestra la gráfica del voltaje en cada componente.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ }
+]
