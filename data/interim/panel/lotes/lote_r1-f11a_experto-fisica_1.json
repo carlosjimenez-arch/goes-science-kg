@@ -1,0 +1,2813 @@
+{
+ "lote": "r1-f11a_experto-fisica_1",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U2-2.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U2-2.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U2-2.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U2-2.3",
+      "CON:fisica/pendulo-simple"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un sismo sacude el suelo con un período dominante de 0.5 s. En la misma calle hay tres edificios con distinta altura y estructura; sus períodos naturales de oscilación son: edificio 1, 0.2 s; edificio 2, 0.5 s; edificio 3, 1.5 s. Las sacudidas en la base tienen la misma amplitud para los tres. ¿Qué edificio oscila con mayor amplitud y por qué?",
+     "opciones": {
+      "A": "El edificio 2, porque su período natural coincide con el del sismo y cada sacudida le suma energía.",
+      "B": "El edificio 2, porque un período de 0.5 s es el más dañino para cualquier tipo de construcción.",
+      "C": "El edificio 3, porque al tener el período más largo es el más flexible y el que más se balancea.",
+      "D": "Los tres por igual, porque el suelo les aplica la misma sacudida y la misma fuerza máxima."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/pendulo-simple/3",
+      "D": "DIF:fisica/pendulo-simple/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El edificio 2 entra en resonancia: cada sacudida le llega en el momento adecuado de su propia oscilación y le suma energía ciclo tras ciclo. En los otros, las sacudidas a veces ayudan y a veces frenan el movimiento, así que la energía no se acumula. No hay un período «peligroso» para todos: importa que coincidan el del sismo y el natural.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U2-2.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U2-2.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/pendulo-simple",
+     "nombre": "Péndulo simple",
+     "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U2-2.3",
+     "grado": 11,
+     "indicador": "1.2. • Explica la resonancia como la transferencia máxima de energía cuando la frecuencia de la fuerza impulsora coincide con la frecuencia natural del sistema. • Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos pequeños. • Compara el movimiento armónico simple con el amortiguado a partir de gráficas de amplitud en función del tiempo y estima la constante de amortiguamiento. • Argumenta, con valores de módulo de Young y esfuerzo de ruptura, por qué el concreto reforzado con acero es adecuado para construcciones sismorresistentes en El Salvador.",
+     "evidencia": "Ficha de análisis de un caso real de resonancia con curva de amplitud y fuentes citadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U2-2.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U2-2.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U2-2.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U2-2.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U2-2.3",
+      "CON:fisica/pendulo-simple"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo midió el período de un péndulo simple con oscilaciones de unos 10° para cuatro longitudes, medidas desde el punto de suspensión hasta el centro de la masa (datos de un grupo de ejemplo). L = 0.40 m: T² = 1.62 s²; L = 0.60 m: T² = 2.41 s²; L = 0.80 m: T² = 3.23 s²; L = 1.00 m: T² = 4.03 s². Con la pendiente de la recta T² contra L (puedes usar el primer y el último punto) y la relación T² = (4π²/g)·L, calcula la aceleración de la gravedad. Escribe solo el número, en m/s².",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 9.8,
+     "tolerancia": 0.2,
+     "unidad": "m/s²",
+     "retroalimentacion": "La pendiente es (4.03 − 1.62)/(1.00 − 0.40) ≈ 4.02 s²/m, y g = 4π²/pendiente ≈ 39.5/4.02 ≈ 9.8 m/s². Se grafica T² y no T porque T crece con √L: así la relación queda como una recta que pasa por el origen.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U2-2.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U2-2.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/pendulo-simple",
+     "nombre": "Péndulo simple",
+     "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U2-2.3",
+     "grado": 11,
+     "indicador": "1.2. • Explica la resonancia como la transferencia máxima de energía cuando la frecuencia de la fuerza impulsora coincide con la frecuencia natural del sistema. • Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos pequeños. • Compara el movimiento armónico simple con el amortiguado a partir de gráficas de amplitud en función del tiempo y estima la constante de amortiguamiento. • Argumenta, con valores de módulo de Young y esfuerzo de ruptura, por qué el concreto reforzado con acero es adecuado para construcciones sismorresistentes en El Salvador.",
+     "evidencia": "Ficha de análisis de un caso real de resonancia con curva de amplitud y fuentes citadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U2-2.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U2-2.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U2-2.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U2-2.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U2-2.3",
+      "CON:fisica/pendulo-simple"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mónica empuja a su hermano en un columpio con empujones pequeños. Responde en 2 o 3 oraciones: (a) ¿por qué la amplitud crece mucho si da un empujón por oscilación, justo cuando el columpio empieza a alejarse de ella, y casi no crece si empuja a un ritmo distinto del columpio? (b) Muchos edificios sismorresistentes llevan disipadores que amortiguan la oscilación: ¿qué le hacen a la amplitud máxima en resonancia y por qué?",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Empujar al ritmo natural del columpio y a favor de su movimiento le suma energía en cada ciclo: eso es la resonancia. A otro ritmo, unos empujones van a favor y otros en contra, y la energía no se acumula. Los disipadores convierten parte de la energía en calor en cada ciclo, así que la amplitud deja de crecer antes.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U2-2.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Si Mónica empuja una vez por oscilación y a favor del movimiento, la frecuencia de sus empujones coincide con la frecuencia natural del columpio y cada empujón le suma energía, así que la amplitud crece: es resonancia. Si empuja a otro ritmo, algunos empujones llegan cuando el columpio viene hacia ella y le quitan energía, y en promedio casi no la acumula. Los disipadores convierten energía de la oscilación en calor en cada ciclo; la amplitud crece solo hasta que la energía que se pierde por ciclo iguala la que entra, y por eso la amplitud máxima en resonancia es mucho menor.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona el crecimiento de la amplitud con que la frecuencia de los empujones coincide con la frecuencia natural del columpio (resonancia), con empujones a favor del movimiento que le suman energía en cada ciclo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que a otro ritmo parte de los empujones van en contra del movimiento (quitan energía) y la energía no se acumula.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que el amortiguamiento disipa energía en cada ciclo (en calor) y que por eso la amplitud máxima en resonancia es menor.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que la frecuencia natural depende del sistema (en el columpio, de su longitud y de g) y no de la fuerza de los empujones.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Atribuye la amplitud a la fuerza del empujón y no al ritmo.",
+        "ejemplo": "Crece porque cada empujón es más fuerte; si empuja más duro a cualquier ritmo también sube más.",
+        "dificultad": "DIF:fisica/pendulo-simple/3"
+       },
+       {
+        "descripcion": "Cree que el amortiguador cambia la frecuencia natural para evitar la resonancia, sin mencionar la disipación de energía.",
+        "ejemplo": "El disipador hace que el edificio tenga otra frecuencia y así nunca resuena.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que el período del columpio depende de quién va sentado (de la masa).",
+        "ejemplo": "Si el hermano pesa más, el columpio va más lento y hay que empujar más despacio.",
+        "dificultad": "DIF:fisica/pendulo-simple/1"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U2-2.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/pendulo-simple",
+     "nombre": "Péndulo simple",
+     "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U2-2.3",
+     "grado": 11,
+     "indicador": "1.2. • Explica la resonancia como la transferencia máxima de energía cuando la frecuencia de la fuerza impulsora coincide con la frecuencia natural del sistema. • Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos pequeños. • Compara el movimiento armónico simple con el amortiguado a partir de gráficas de amplitud en función del tiempo y estima la constante de amortiguamiento. • Argumenta, con valores de módulo de Young y esfuerzo de ruptura, por qué el concreto reforzado con acero es adecuado para construcciones sismorresistentes en El Salvador.",
+     "evidencia": "Ficha de análisis de un caso real de resonancia con curva de amplitud y fuentes citadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U2-2.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.1-v3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.1-v3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.1-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.1-v3",
+      "CON:fisica/ley-ohm"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Ernesto aplica 2.0 V a un resistor y mide 20 mA. Luego aplica 2.0 V a un LED rojo, conectado en el sentido en que enciende, y también mide 20 mA. Si ahora aplica 1.0 V a cada uno, ¿qué corrientes espera medir y por qué?",
+     "opciones": {
+      "A": "Resistor ≈ 10 mA y LED ≈ 10 mA, porque los dos tienen 100 Ω, pues V/I dio igual en ambos.",
+      "B": "Resistor ≈ 10 mA y LED casi 0 mA, porque bajo cierto voltaje el LED casi no deja pasar corriente.",
+      "C": "Resistor ≈ 20 mA y LED ≈ 20 mA, porque la fuente entrega la misma corriente con cualquier voltaje.",
+      "D": "Resistor ≈ 5 mA y LED casi 0 mA, porque la resistencia de los dos aumenta cuando baja el voltaje."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:fisica/ley-ohm/1",
+      "C": "DIF:fisica/ley-ohm/3",
+      "D": "DIF:fisica/ley-ohm/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El resistor es óhmico: su corriente es proporcional al voltaje, así que con la mitad del voltaje pasa la mitad de la corriente. El LED no lo es: por debajo de un voltaje umbral (cerca de 1.7 V en uno rojo) casi no conduce. Que V/I dé 100 Ω en un punto no significa que el LED tenga una resistencia fija.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.1-v3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.1-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-ohm",
+     "nombre": "Ley de Ohm",
+     "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.1-v3",
+     "grado": 11,
+     "indicador": "3.1. • Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico. • Calcula la carga que circula y la energía que entrega una fuente a partir de su fuerza electromotriz, la corriente y el tiempo de funcionamiento. • Calcula la resistividad de un material a partir de mediciones de resistencia, longitud y área, y la compara con valores de referencia.",
+     "evidencia": "Informe de laboratorio con curvas voltaje-corriente del resistor y del LED y cálculo de la resistencia por pendiente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.1-v3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.1-v3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.1-v3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.1-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.1-v3",
+      "CON:fisica/ley-ohm"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo midió el voltaje y la corriente en 0.50 m de alambre de nicromo cuya sección transversal tiene un área de 1.26 × 10⁻⁷ m² (datos de un grupo de ejemplo): I = 0.10 A, V = 0.44 V; I = 0.20 A, V = 0.87 V; I = 0.30 A, V = 1.32 V; I = 0.40 A, V = 1.75 V. Obtén la resistencia con la pendiente de la recta V contra I (puedes usar el primer y el último punto) y con ella calcula la resistividad del nicromo. Escribe solo el número que multiplica a 10⁻⁶, con la resistividad en Ω·m (por ejemplo, para 2.5 × 10⁻⁶ Ω·m escribe 2.5).",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 1.1,
+     "tolerancia": 0.1,
+     "unidad": "× 10⁻⁶ Ω·m",
+     "retroalimentacion": "La pendiente es (1.75 − 0.44)/(0.40 − 0.10) ≈ 4.37 Ω. Como R = ρL/A, ρ = R·A/L = 4.37 × 1.26 × 10⁻⁷ / 0.50 ≈ 1.1 × 10⁻⁶ Ω·m. Usar la pendiente y no un solo cociente V/I reparte el error de todas las mediciones.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.1-v3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.1-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-ohm",
+     "nombre": "Ley de Ohm",
+     "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.1-v3",
+     "grado": 11,
+     "indicador": "3.1. • Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico. • Calcula la carga que circula y la energía que entrega una fuente a partir de su fuerza electromotriz, la corriente y el tiempo de funcionamiento. • Calcula la resistividad de un material a partir de mediciones de resistencia, longitud y área, y la compara con valores de referencia.",
+     "evidencia": "Informe de laboratorio con curvas voltaje-corriente del resistor y del LED y cálculo de la resistencia por pendiente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.1-v3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.1-v3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.1-v3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.1-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.1-v3",
+      "CON:fisica/ley-ohm"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Andrea mide el foco de una linterna (datos de un grupo de ejemplo): con 0.5 V pasan 0.10 A; con 1.0 V, 0.15 A; con 2.0 V, 0.21 A; y con 3.0 V, 0.26 A. En 2 o 3 oraciones: ¿el foco es un conductor óhmico? Justifica con cálculos hechos con al menos dos de los datos y explica qué le ocurre al filamento que causa ese comportamiento.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "V/I pasa de 5.0 Ω a 0.5 V a unos 11.5 Ω a 3.0 V: la resistencia no es constante y la gráfica V–I no es una recta, así que el foco no es óhmico. Con más corriente, el filamento se calienta y la resistencia del metal aumenta con la temperatura.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.1-v3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "No es óhmico. Con 0.5 V la resistencia es V/I = 0.5/0.10 = 5.0 Ω y con 3.0 V es 3.0/0.26 ≈ 11.5 Ω, así que no es constante y la gráfica V–I se curva. Al aumentar la corriente, el filamento se calienta mucho, y en un metal más caliente los electrones chocan más con los átomos que vibran, por lo que la resistencia aumenta.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Concluye que el foco no es un conductor óhmico.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con cálculos de V/I en al menos dos datos que dan valores distintos (o con la pendiente que cambia), no solo con que la corriente aumenta.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Atribuye el cambio de resistencia al calentamiento del filamento (la resistencia del metal aumenta con la temperatura).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Da un mecanismo microscópico: más vibración de los átomos del metal y más choques de los electrones.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Concluye que es óhmico porque la corriente aumenta con el voltaje.",
+        "ejemplo": "Sí es óhmico, porque cuando sube el voltaje también sube la corriente.",
+        "dificultad": "DIF:fisica/ley-ohm/1"
+       },
+       {
+        "descripcion": "Atribuye el aumento de la resistencia al voltaje mismo y no a la temperatura.",
+        "ejemplo": "La resistencia sube porque le aplicamos más voltaje, como dice R = V/I.",
+        "dificultad": "DIF:fisica/ley-ohm/2"
+       },
+       {
+        "descripcion": "Calcula bien V/I pero no explica la causa física.",
+        "ejemplo": "No es óhmico, porque V/I da 5.0 Ω y luego 11.5 Ω.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.1-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-ohm",
+     "nombre": "Ley de Ohm",
+     "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.1-v3",
+     "grado": 11,
+     "indicador": "3.1. • Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico. • Calcula la carga que circula y la energía que entrega una fuente a partir de su fuerza electromotriz, la corriente y el tiempo de funcionamiento. • Calcula la resistividad de un material a partir de mediciones de resistencia, longitud y área, y la compara con valores de referencia.",
+     "evidencia": "Informe de laboratorio con curvas voltaje-corriente del resistor y del LED y cálculo de la resistencia por pendiente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.1-v3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.2"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.2",
+      "CON:fisica/ondas-mecanicas-tipos"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Karla estira un resorte largo de juguete sobre el piso, pega una cinta de color en una espira del centro y empuja y jala un extremo a lo largo del resorte, una y otra vez. Por el resorte viajan zonas de espiras juntas y separadas. ¿Qué hace la cinta mientras pasa la onda, y por qué?",
+     "opciones": {
+      "A": "Avanza con la onda hasta el otro extremo, porque la onda arrastra consigo a las espiras.",
+      "B": "Va y viene a lo largo del resorte y regresa a su sitio, porque viaja la energía y no las espiras.",
+      "C": "Sube y baja de lado y regresa a su sitio, porque las ondas en un resorte siempre son transversales.",
+      "D": "Va y viene a lo largo del resorte y avanza un poco cada vez, porque la onda empuja más de lo que jala."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:fisica/ondas-mecanicas-tipos/1",
+      "D": "DIF:fisica/ondas-mecanicas-tipos/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Es una onda longitudinal: cada espira oscila a lo largo del resorte alrededor de su posición y vuelve a ella. Lo que viaja de un extremo al otro es la perturbación y su energía, que pasa de una espira a la siguiente; no hay transporte neto de materia.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.2"
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-mecanicas-tipos",
+     "nombre": "Ondas mecánicas transversales y longitudinales",
+     "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.2",
+     "grado": 11,
+     "indicador": "1.3. • Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con el teorico • Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia. • Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación teorica de la velocidad de onda armonica para calcular magnitudes de la onda. • Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido. • Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio.",
+     "evidencia": "Informe con tabla de tensiones, densidades y velocidades medidas y teóricas, y porcentaje de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.2"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.2",
+      "CON:fisica/ondas-mecanicas-tipos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo tensó una cuerda de densidad lineal 0.060 kg/m con un dinamómetro que marcaba 30 N. Grabaron un pulso que pasó por una marca, llegó al extremo fijo, a 10.0 m de la marca, se reflejó y volvió a pasar por la marca 0.94 s después (datos de un grupo de ejemplo). Calcula la rapidez medida y la que predice v = √(T/μ), y luego el porcentaje de error de la medida respecto de la predicción. Escribe solo el número, en %.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 4.8,
+     "tolerancia": 0.4,
+     "unidad": "%",
+     "retroalimentacion": "El pulso recorrió 20.0 m (ida y vuelta) en 0.94 s: 21.3 m/s. El modelo da √(30/0.060) = √500 ≈ 22.4 m/s. El error es (22.4 − 21.3)/22.4 × 100 ≈ 4.8 %. Olvidar la vuelta daría la mitad de la rapidez y un error de más de 50 %.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.2"
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-mecanicas-tipos",
+     "nombre": "Ondas mecánicas transversales y longitudinales",
+     "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.2",
+     "grado": 11,
+     "indicador": "1.3. • Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con el teorico • Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia. • Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación teorica de la velocidad de onda armonica para calcular magnitudes de la onda. • Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido. • Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio.",
+     "evidencia": "Informe con tabla de tensiones, densidades y velocidades medidas y teóricas, y porcentaje de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.2"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.2",
+      "CON:fisica/ondas-mecanicas-tipos"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Diego golpea con una piedra un extremo de una tubería de hierro de 50 m que corre a lo largo de una cerca. Valeria, en el otro extremo, apoya el oído en la tubería. Valores aproximados: el sonido viaja a unos 340 m/s en el aire y a unos 5000 m/s en el hierro. En 2 o 3 oraciones: (a) ¿cuántos golpes oye Valeria y cuál llega primero?; (b) calcula cuánto tiempo los separa; (c) explica por qué el sonido es más rápido en el hierro aunque el hierro sea mucho más denso que el aire.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Oye dos golpes: primero el que viaja por el hierro (unos 0.01 s) y después el del aire (unos 0.15 s), separados por unos 0.14 s. La rapidez del sonido depende de la rigidez del medio frente a su densidad: el hierro es mucho más denso, pero muchísimo más rígido, y cada parte empuja a la siguiente con mucha más fuerza.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.2"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Valeria oye dos golpes: primero el que llega por el hierro y después el que llega por el aire. Por el hierro tarda 50/5000 = 0.01 s y por el aire 50/340 ≈ 0.15 s, así que los separa cerca de 0.14 s. La rapidez del sonido depende de cuán rígido es el medio comparado con su densidad: el hierro es más denso, lo que la frena, pero es muchísimo más rígido, así que cada capa empuja enseguida a la siguiente y la compresión viaja más rápido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que oye dos golpes y que primero llega el que viaja por el hierro.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Calcula una separación de unos 0.13 a 0.15 s a partir de los tiempos en cada medio.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la rapidez con la rigidez (elasticidad) del medio comparada con su densidad, y explica que en el hierro la rigidez mucho mayor compensa su densidad.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Describe el sonido como compresiones que cada parte del medio transmite a la siguiente (onda longitudinal).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el sonido es más lento en sólidos porque sus partículas están más juntas y lo estorban.",
+        "ejemplo": "Primero llega el del aire, porque en el hierro las partículas están apretadas y le cuesta pasar.",
+        "dificultad": "DIF:fisica/ondas-mecanicas-tipos/3"
+       },
+       {
+        "descripcion": "Explica la diferencia por la fuerza del golpe y no por el medio.",
+        "ejemplo": "Por el tubo llega antes porque el golpe se dio directo en el metal y es más fuerte.",
+        "dificultad": "DIF:fisica/ondas-mecanicas-tipos/2"
+       },
+       {
+        "descripcion": "Dice que el sonido viaja más rápido en el hierro porque es más denso.",
+        "ejemplo": "Llega primero por el hierro porque es más denso y el sonido corre más en lo denso.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-mecanicas-tipos",
+     "nombre": "Ondas mecánicas transversales y longitudinales",
+     "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.2",
+     "grado": 11,
+     "indicador": "1.3. • Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con el teorico • Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia. • Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación teorica de la velocidad de onda armonica para calcular magnitudes de la onda. • Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido. • Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio.",
+     "evidencia": "Informe con tabla de tensiones, densidades y velocidades medidas y teóricas, y porcentaje de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U4-4.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U4-4.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U4-4.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U4-4.3",
+      "CON:fisica/tono-volumen-sonido"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una ambulancia con la sirena en un tono fijo de 700 Hz viaja a rapidez constante por una calle recta. Rosa está en la acera: la ambulancia se acerca, pasa a su lado y se aleja. ¿Qué frecuencia percibe Rosa en cada tramo y por qué?",
+     "opciones": {
+      "A": "Más de 700 Hz fija al acercarse y menos de 700 Hz al alejarse, porque los frentes le llegan más juntos y luego más separados.",
+      "B": "Una frecuencia que sube poco a poco al acercarse y baja al alejarse, porque cuanto más cerca está la sirena, más aguda se oye.",
+      "C": "Siempre 700 Hz, más fuerte al acercarse y más débil al alejarse, porque la sirena no cambia su frecuencia al moverse.",
+      "D": "Menos de 700 Hz al acercarse y más de 700 Hz al alejarse, porque el aire de adelante frena las ondas y las estira."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/tono-volumen-sonido/2",
+      "B": "DIF:fisica/tono-volumen-sonido/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Mientras la fuente se acerca, cada frente de onda sale más cerca del anterior en la dirección de Rosa: llegan más juntos y percibe un tono más agudo, que no cambia mientras la rapidez sea constante. Al alejarse, los frentes llegan más separados y el tono es más grave. El volumen sí crece al acercarse, pero eso es la intensidad, no el tono.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U4-4.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U4-4.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tono-volumen-sonido",
+     "nombre": "Características del sonido: tono, intensidad y eco",
+     "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U4-4.3",
+     "grado": 11,
+     "indicador": "1.4. • Calcula niveles de intensidad sonora con β = 10 log(I/I₀) y compara intensidades de fuentes que difieren en un número dado de decibelios. • Calcula la intensidad sonora a distintas distancias de una fuente con I = P/(4πr²) y la compara con el umbral de audición y el umbral de dolor. • Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda. • Interpreta las curvas de Fletcher-Munson para explicar la diferente sensibilidad del oído según la frecuencia y argumenta medidas de protección auditiva.",
+     "evidencia": "Mapa de niveles sonoros de la escuela con cálculos en decibelios y propuestas de reducción de ruido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U4-4.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U4-4.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U4-4.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U4-4.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U4-4.3",
+      "CON:fisica/tono-volumen-sonido"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una cancha abierta, un sonómetro marca 70 dB a 2.0 m de un parlante pequeño (datos de un grupo de ejemplo). Supón que el parlante emite igual en todas direcciones y que no hay reflexiones. ¿Qué nivel de intensidad sonora marcará el sonómetro a 8.0 m del parlante? Escribe solo el número, en dB.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 58,
+     "tolerancia": 1,
+     "unidad": "dB",
+     "retroalimentacion": "A cuatro veces la distancia, la intensidad es 4² = 16 veces menor (I = P/4πr²). En decibelios eso resta 10·log(16) ≈ 12 dB: 70 − 12 = 58 dB. No baja a la cuarta parte de los decibelios: la escala es logarítmica.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U4-4.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U4-4.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tono-volumen-sonido",
+     "nombre": "Características del sonido: tono, intensidad y eco",
+     "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U4-4.3",
+     "grado": 11,
+     "indicador": "1.4. • Calcula niveles de intensidad sonora con β = 10 log(I/I₀) y compara intensidades de fuentes que difieren en un número dado de decibelios. • Calcula la intensidad sonora a distintas distancias de una fuente con I = P/(4πr²) y la compara con el umbral de audición y el umbral de dolor. • Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda. • Interpreta las curvas de Fletcher-Munson para explicar la diferente sensibilidad del oído según la frecuencia y argumenta medidas de protección auditiva.",
+     "evidencia": "Mapa de niveles sonoros de la escuela con cálculos en decibelios y propuestas de reducción de ruido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U4-4.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U4-4.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U4-4.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U4-4.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U4-4.3",
+      "CON:fisica/tono-volumen-sonido"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una fiesta, el sonómetro de un celular marca 95 dB donde baila Andrés y 75 dB junto a la puerta. En 2 o 3 oraciones: (a) ¿cuántas veces mayor es la intensidad sonora donde baila Andrés que junto a la puerta? Justifica con la definición del nivel de intensidad en decibelios. (b) Propón una medida para proteger su audición y explica con la física del sonido por qué funciona.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cada 10 dB más la intensidad se multiplica por 10, así que 20 dB más son 100 veces la intensidad. Alejarse del parlante funciona porque la intensidad baja con el cuadrado de la distancia; los tapones reducen la intensidad que llega al oído; y menos tiempo de exposición reduce la energía total que recibe.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U4-4.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "La diferencia es de 20 dB. Como β = 10·log(I/I₀), cada 10 dB más la intensidad se multiplica por 10, así que 20 dB más equivalen a 10 × 10 = 100 veces la intensidad. Andrés debería alejarse de los parlantes: la intensidad baja con el cuadrado de la distancia, así que al duplicarla baja a la cuarta parte, unos 6 dB menos. También puede usar tapones, que absorben parte de la energía antes de que llegue al oído.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Concluye que la intensidad es 100 veces mayor.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la escala logarítmica: cada 10 dB equivalen a multiplicar la intensidad por 10 (o calcula 10^(20/10)).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Propone una medida (alejarse, usar tapones, bajar el volumen o reducir el tiempo de exposición) y la justifica con una idea física: inverso del cuadrado de la distancia, menos energía que llega al oído o menos potencia de la fuente.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Distingue la intensidad física de la sonoridad que se percibe (100 veces la intensidad no se oye 100 veces más fuerte).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Trata los decibelios como una escala lineal.",
+        "ejemplo": "95 dB es un poco más que 75 dB: unas 1.3 veces la intensidad, o 20 veces más.",
+        "dificultad": "DIF:fisica/tono-volumen-sonido/1"
+       },
+       {
+        "descripcion": "Usa una disminución proporcional a la distancia para justificar alejarse.",
+        "ejemplo": "Si se aleja al doble de distancia, el sonido baja a la mitad.",
+        "dificultad": "DIF:fisica/tono-volumen-sonido/3"
+       },
+       {
+        "descripcion": "Propone una medida sin explicar por qué funciona.",
+        "ejemplo": "Es 100 veces mayor; debe usar tapones porque es lo recomendado.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U4-4.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tono-volumen-sonido",
+     "nombre": "Características del sonido: tono, intensidad y eco",
+     "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U4-4.3",
+     "grado": 11,
+     "indicador": "1.4. • Calcula niveles de intensidad sonora con β = 10 log(I/I₀) y compara intensidades de fuentes que difieren en un número dado de decibelios. • Calcula la intensidad sonora a distintas distancias de una fuente con I = P/(4πr²) y la compara con el umbral de audición y el umbral de dolor. • Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda. • Interpreta las curvas de Fletcher-Munson para explicar la diferente sensibilidad del oído según la frecuencia y argumenta medidas de protección auditiva.",
+     "evidencia": "Mapa de niveles sonoros de la escuela con cálculos en decibelios y propuestas de reducción de ruido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U4-4.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U5-5.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U5-5.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.4",
+      "CON:fisica/superposicion-interferencia"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Dos parlantes conectados al mismo amplificador emiten en fase un tono cuya longitud de onda en el aire es 0.50 m. Un punto P está a 3.00 m del parlante 1 y a 3.75 m del parlante 2. Sin reflexiones, ¿qué se registra en P y por qué?",
+     "opciones": {
+      "A": "Un mínimo, porque la diferencia de camino es 1.5 longitudes de onda y las ondas llegan en oposición.",
+      "B": "Un máximo, porque las dos ondas tienen la misma frecuencia y en todo punto se refuerzan entre sí.",
+      "C": "Un máximo, porque la diferencia de camino, 0.75 m, es mayor que una longitud de onda completa.",
+      "D": "Un mínimo, porque la onda del parlante 2 recorre más camino y llega a P casi sin energía."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/superposicion-interferencia/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La diferencia de camino es 3.75 − 3.00 = 0.75 m, es decir, 1.5 longitudes de onda: las ondas llegan en oposición (una con compresión cuando la otra trae rarefacción) y se cancelan en gran parte. Lo que decide es la diferencia de camino medida en longitudes de onda, no la distancia a cada parlante.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U5-5.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/superposicion-interferencia",
+     "nombre": "Superposición e interferencia de ondas",
+     "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.4",
+     "grado": 11,
+     "indicador": "1.5. • Determina las condiciones de interferencia constructiva y destructiva de dos fuentes sonoras coherentes a partir de la diferencia de camino y la longitud de onda. • Construye gráficamente la forma resultante de dos pulsos superpuestos en distintos instantes aplicando el principio de superposición lineal. • Explica cómo la relación entre la longitud de onda y el tamaño de la abertura determina si una onda mecánica se difracta de forma estrecha o ancha. • Calcula la frecuencia de pulsación entre dos tonos cercanos con y explica su uso en la afinación de instrumentos musicales.",
+     "evidencia": "Esquema del montaje con posiciones de máximos y mínimos medidas y cálculo de la longitud de onda"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U5-5.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U5-5.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U5-5.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.4",
+      "CON:fisica/superposicion-interferencia"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para afinar su guitarra, Lucía toca una cuerda junto con un diapasón de 440 Hz y graba el sonido: cuenta 12 pulsaciones (subidas y bajadas del volumen) en 4.0 s (datos de un grupo de ejemplo). Después tensa un poco la cuerda y las pulsaciones se hacen más lentas. ¿Cuál era la frecuencia de la cuerda antes de tensarla? Escribe solo el número, en Hz.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 437,
+     "tolerancia": 0.5,
+     "unidad": "Hz",
+     "retroalimentacion": "La frecuencia de pulsación es 12/4.0 = 3.0 Hz, la diferencia entre las dos frecuencias: la cuerda daba 437 Hz o 443 Hz. Al tensarla su frecuencia sube, y si las pulsaciones se hacen más lentas es porque se acerca a 440 Hz: estaba por debajo, en 437 Hz.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U5-5.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/superposicion-interferencia",
+     "nombre": "Superposición e interferencia de ondas",
+     "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.4",
+     "grado": 11,
+     "indicador": "1.5. • Determina las condiciones de interferencia constructiva y destructiva de dos fuentes sonoras coherentes a partir de la diferencia de camino y la longitud de onda. • Construye gráficamente la forma resultante de dos pulsos superpuestos en distintos instantes aplicando el principio de superposición lineal. • Explica cómo la relación entre la longitud de onda y el tamaño de la abertura determina si una onda mecánica se difracta de forma estrecha o ancha. • Calcula la frecuencia de pulsación entre dos tonos cercanos con y explica su uso en la afinación de instrumentos musicales.",
+     "evidencia": "Esquema del montaje con posiciones de máximos y mínimos medidas y cálculo de la longitud de onda"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U5-5.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U5-5.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U5-5.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.4",
+      "CON:fisica/superposicion-interferencia"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Unos audífonos con cancelación activa de ruido tienen un micrófono que capta el ruido del motor de un bus y, en fracciones de segundo, el audífono emite su propio sonido. En 2 o 3 oraciones: (a) ¿cómo debe ser la onda que emite el audífono comparada con la del ruido (frecuencia, amplitud y fase)? (b) ¿Por qué esa onda reduce lo que se oye, según el principio de superposición? Si puedes, (c) explica por qué funciona mejor con ruidos graves y constantes.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El audífono emite una onda de la misma frecuencia y amplitud que el ruido, pero invertida: donde el ruido trae una compresión, ella trae una rarefacción. Las presiones se suman en cada punto y, junto al oído, la resultante queda casi en cero: es interferencia destructiva. Con ruidos graves y constantes es más fácil, porque son predecibles y su longitud de onda es larga, así que un pequeño retraso apenas desfasa las ondas.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U5-5.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El audífono emite una onda con la misma frecuencia y casi la misma amplitud que el ruido, pero en oposición de fase: donde el ruido tiene una compresión, la onda del audífono tiene una rarefacción. Según el principio de superposición, en cada punto las variaciones de presión se suman, y junto al oído la suma queda casi en cero, así que el ruido se oye mucho menos. Funciona mejor con ruidos graves y constantes porque se pueden predecir y su longitud de onda es larga, de modo que un pequeño retraso del circuito casi no cambia la fase.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que la onda del audífono tiene la misma frecuencia y amplitud (o casi) que el ruido, invertida o en oposición de fase (desfasada media longitud de onda).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica con la superposición que las perturbaciones (presiones o desplazamientos) se suman en cada punto y la resultante junto al oído es casi cero: interferencia destructiva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica por qué funciona mejor con ruidos graves y constantes: son predecibles o su longitud de onda larga tolera pequeños retrasos.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que las ondas se destruyen para siempre al encontrarse.",
+        "ejemplo": "El sonido del audífono choca con el ruido y lo destruye, y ya no existe más.",
+        "dificultad": "DIF:fisica/superposicion-interferencia/1"
+       },
+       {
+        "descripcion": "Cree que el audífono tapa el ruido con un sonido más fuerte (enmascaramiento) y no menciona la oposición de fase.",
+        "ejemplo": "El audífono hace un sonido más fuerte que el motor y así ya no se oye el ruido.",
+        "dificultad": "DIF:fisica/superposicion-interferencia/2"
+       },
+       {
+        "descripcion": "Pide una onda de distinta frecuencia o en fase con el ruido.",
+        "ejemplo": "Emite una onda igual al ruido, en fase, y así se cancelan.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/superposicion-interferencia",
+     "nombre": "Superposición e interferencia de ondas",
+     "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.4",
+     "grado": 11,
+     "indicador": "1.5. • Determina las condiciones de interferencia constructiva y destructiva de dos fuentes sonoras coherentes a partir de la diferencia de camino y la longitud de onda. • Construye gráficamente la forma resultante de dos pulsos superpuestos en distintos instantes aplicando el principio de superposición lineal. • Explica cómo la relación entre la longitud de onda y el tamaño de la abertura determina si una onda mecánica se difracta de forma estrecha o ancha. • Calcula la frecuencia de pulsación entre dos tonos cercanos con y explica su uso en la afinación de instrumentos musicales.",
+     "evidencia": "Esquema del montaje con posiciones de máximos y mínimos medidas y cálculo de la longitud de onda"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U5-5.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U5-5.6/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U5-5.6/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.6",
+      "CON:fisica/ondas-estacionarias"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Andrea tiene un tubo de PVC de 0.50 m tapado en un extremo y abierto en el otro. Acerca a la boca abierta un parlante que da tonos de frecuencia ajustable y busca las frecuencias en las que el tubo suena más fuerte. Con v ≈ 343 m/s (valor aproximado de la tabla de referencia) y sin tomar en cuenta el efecto del borde, ¿qué serie de resonancias encuentra y por qué?",
+     "opciones": {
+      "A": "172, 515 y 858 Hz, porque el extremo tapado es un nodo y el abierto un antinodo, y solo caben cuartos de onda impares.",
+      "B": "343, 686 y 1029 Hz, porque en los dos extremos hay nodos, como en una cuerda fija, y caben medias ondas enteras.",
+      "C": "172, 343 y 515 Hz, porque tapar un extremo baja la fundamental a la mitad y luego aparecen todos sus múltiplos.",
+      "D": "172, 515 y 858 Hz, porque el aire del extremo tapado no vibra y el tapón absorbe los armónicos pares del tubo."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/ondas-estacionarias/1",
+      "C": "DIF:fisica/ondas-estacionarias/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el extremo tapado el aire no puede desplazarse (nodo) y en el abierto se mueve al máximo (antinodo). Entre un nodo y un antinodo caben 1, 3, 5… cuartos de onda, nunca un número par: L = nλ/4 con n impar, así que f = n·v/4L = 172, 515, 858 Hz… Un tubo abierto en los dos extremos tendría antinodos en ambos y todos los múltiplos de v/2L. El tapón no absorbe armónicos: los pares no caben.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U5-5.6"
+     },
+     "origen": "redactor-actividades (G11-FIS-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-estacionarias",
+     "nombre": "Ondas estacionarias y armónicos",
+     "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.6",
+     "grado": 11,
+     "indicador": "1.6. • Calcula las frecuencias de resonancia de tubos abiertos y cerrados y explica por qué los tubos cerrados solo producen armónicos impares. • Calcula las frecuencias de los armónicos de una cuerda tensa fija en sus extremos y localiza sus nodos y antinodos. • Interpreta el espectro de frecuencias de un sonido complejo para explicar el timbre de un instrumento a partir de la amplitud de sus armónicos.",
+     "evidencia": "Tabla de alturas de columna de aire y frecuencias medidas con gráfica y cálculo de la velocidad del sonido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U5-5.6/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U5-5.6/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U5-5.6/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.6",
+      "CON:fisica/ondas-estacionarias"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Un tubo con agua en el fondo funciona como tubo cerrado. Para cada frecuencia, el grupo midió la altura L de la columna de aire de la primera resonancia, desde la boca del tubo hasta la superficie del agua (ya corregida por el efecto del borde): 256 Hz, 0.333 m; 320 Hz, 0.266 m; 384 Hz, 0.221 m; 512 Hz, 0.166 m. Con estos datos, ¿cuál es la rapidez del sonido en el aire del aula, en m/s? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": {},
+     "valor": 340,
+     "tolerancia": 8,
+     "unidad": "m/s",
+     "retroalimentacion": "En la primera resonancia de un tubo cerrado la columna mide un cuarto de onda: L = λ/4, así que v = fλ = 4fL. Con cada fila sale entre 339 y 341 m/s; el promedio es unos 340 m/s. También es la pendiente de L contra 1/f multiplicada por 4. Si usaste λ = 2L, como en una cuerda fija, obtuviste la mitad, unos 170 m/s.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U5-5.6"
+     },
+     "origen": "redactor-actividades (G11-FIS-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-estacionarias",
+     "nombre": "Ondas estacionarias y armónicos",
+     "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.6",
+     "grado": 11,
+     "indicador": "1.6. • Calcula las frecuencias de resonancia de tubos abiertos y cerrados y explica por qué los tubos cerrados solo producen armónicos impares. • Calcula las frecuencias de los armónicos de una cuerda tensa fija en sus extremos y localiza sus nodos y antinodos. • Interpreta el espectro de frecuencias de un sonido complejo para explicar el timbre de un instrumento a partir de la amplitud de sus armónicos.",
+     "evidencia": "Tabla de alturas de columna de aire y frecuencias medidas con gráfica y cálculo de la velocidad del sonido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U5-5.6/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U5-5.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U5-5.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.6",
+      "CON:fisica/ondas-estacionarias"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un analizador de espectro registra la nota La de 440 Hz tocada por una guitarra y por una flauta (datos de ejemplo, amplitudes relativas a la fundamental). Guitarra: 440 Hz, 1; 880 Hz, 0.8; 1320 Hz, 0.6; 1760 Hz, 0.4. Flauta: 440 Hz, 1; 880 Hz, 0.2; 1320 Hz, 0.05. Usando estos datos, explica por qué oímos la misma nota en los dos instrumentos y por qué, aun así, suenan distinto.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los dos tienen la misma fundamental, 440 Hz, y por eso oímos la misma nota. Los demás picos son armónicos (múltiplos de 440 Hz), y cada instrumento los produce con amplitudes relativas distintas: la guitarra tiene armónicos fuertes y la flauta casi solo la fundamental. Esa mezcla es el timbre, no el volumen.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U5-5.6"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Oímos la misma nota porque en los dos espectros la frecuencia más baja, la fundamental, es 440 Hz. Los otros picos son armónicos, múltiplos enteros de 440 Hz. Suenan distinto porque la mezcla de armónicos cambia: en la guitarra el de 880 Hz tiene 0.8 de la amplitud de la fundamental y el de 1760 Hz todavía 0.4, mientras que en la flauta el de 880 Hz solo llega a 0.2 y casi no hay más. Esa distribución de amplitudes es el timbre.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la misma nota con la misma frecuencia fundamental, 440 Hz, en los dos espectros.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Atribuye la diferencia de sonido (timbre) a las amplitudes relativas de los armónicos y cita al menos un dato de las amplitudes para comparar los instrumentos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Señala que los picos son armónicos, múltiplos enteros de la fundamental.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Atribuye la diferencia al volumen y no a la mezcla de armónicos.",
+        "ejemplo": "Suenan distinto porque la guitarra suena más fuerte que la flauta.",
+        "dificultad": "DIF:fisica/ondas-estacionarias/2"
+       },
+       {
+        "descripcion": "Cree que suenan distinto porque tienen otra frecuencia fundamental.",
+        "ejemplo": "La flauta da una frecuencia más aguda, por eso no suena igual que la guitarra.",
+        "dificultad": "DIF:fisica/ondas-estacionarias/2"
+       },
+       {
+        "descripcion": "Explica la nota con el número de picos o con el material, sin la fundamental.",
+        "ejemplo": "Es la misma nota porque los dos tienen picos y suenan distinto porque uno es de madera.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-estacionarias",
+     "nombre": "Ondas estacionarias y armónicos",
+     "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.6",
+     "grado": 11,
+     "indicador": "1.6. • Calcula las frecuencias de resonancia de tubos abiertos y cerrados y explica por qué los tubos cerrados solo producen armónicos impares. • Calcula las frecuencias de los armónicos de una cuerda tensa fija en sus extremos y localiza sus nodos y antinodos. • Interpreta el espectro de frecuencias de un sonido complejo para explicar el timbre de un instrumento a partir de la amplitud de sus armónicos.",
+     "evidencia": "Tabla de alturas de columna de aire y frecuencias medidas con gráfica y cálculo de la velocidad del sonido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U5-5.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.1",
+      "CON:fisica/carga-electrica-electrizacion"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una esfera metálica neutra está sobre un soporte aislante. Mauricio le acerca una barra de PVC con carga negativa, sin tocarla. Con la barra todavía cerca, toca la esfera con un dedo, luego retira el dedo y, por último, aleja la barra. ¿Con qué carga queda la esfera y por qué?",
+     "opciones": {
+      "A": "Negativa, porque la barra le pasa a la esfera parte de sus electrones a través del aire.",
+      "B": "Positiva, porque los electrones repelidos por la barra se van a tierra por el dedo.",
+      "C": "Positiva, porque la barra atrae protones de la tierra que suben por el dedo a la esfera.",
+      "D": "Neutra, porque al alejar la barra las cargas separadas vuelven a juntarse en la esfera."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:fisica/carga-electrica-electrizacion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La barra negativa repele electrones de la esfera; al tocarla, el cuerpo los conduce a tierra. Al retirar el dedo antes que la barra, esos electrones ya no pueden volver, y la esfera queda positiva: perdió electrones. Los protones no se mueven, están en los núcleos. Si se alejara la barra antes de retirar el dedo, los electrones regresarían y la esfera quedaría neutra.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.1"
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/carga-electrica-electrizacion",
+     "nombre": "Carga eléctrica y electrización",
+     "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.1",
+     "grado": 11,
+     "indicador": "2.1. • Explica con diagramas de distribución de cargas la diferencia entre la carga por contacto y la carga por inducción, incluido el signo de la carga resultante. • Explica el origen de la carga eléctrica a partir de la estructura atómica y calcula el número de electrones transferidos a partir de una carga dada. • Aplica la conservación de la carga para determinar la carga final de objetos que interactúan y explica aplicaciones de la fuerza electrostática. • Clasifica materiales en conductores y aislantes a partir de un experimento con electroscopio y explica la diferencia con base en la movilidad de los electrones.",
+     "evidencia": "Secuencia de diagramas de carga por contacto e inducción validada con el experimento de las latas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.1",
+      "CON:fisica/carga-electrica-electrizacion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Cargan un electroscopio (hojas separadas) y tocan su esfera con distintos objetos sostenidos con la mano: clavo de hierro, las hojas se juntan al instante; mina de grafito de portaminas, se juntan al instante; lápiz de madera seca, se juntan poco a poco en unos 20 s; regla de plástico, siguen separadas después de 1 min. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "El hierro y el grafito son conductores, porque en ellos los electrones se mueven con libertad por el material.",
+      "B": "Solo el hierro es conductor, porque los metales son los únicos materiales con electrones que se mueven.",
+      "C": "El plástico conduce mejor, porque guardó la carga del electroscopio y las hojas siguieron separadas.",
+      "D": "El hierro y el grafito son aislantes, porque al tocarlos la carga del electroscopio desapareció."
+     },
+     "correcta": "A",
+     "distractores": {
+      "D": "DIF:fisica/carga-electrica-electrizacion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las hojas se juntan cuando la carga sale del electroscopio por el objeto y por el cuerpo hacia tierra. En el hierro y el grafito hay electrones que se mueven con libertad, así que son conductores; aunque el grafito no es un metal, conduce. En el plástico los electrones están ligados a sus átomos: es aislante. La madera seca conduce muy poco. La carga no se destruye: se reparte.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.1"
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/carga-electrica-electrizacion",
+     "nombre": "Carga eléctrica y electrización",
+     "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.1",
+     "grado": 11,
+     "indicador": "2.1. • Explica con diagramas de distribución de cargas la diferencia entre la carga por contacto y la carga por inducción, incluido el signo de la carga resultante. • Explica el origen de la carga eléctrica a partir de la estructura atómica y calcula el número de electrones transferidos a partir de una carga dada. • Aplica la conservación de la carga para determinar la carga final de objetos que interactúan y explica aplicaciones de la fuerza electrostática. • Clasifica materiales en conductores y aislantes a partir de un experimento con electroscopio y explica la diferencia con base en la movilidad de los electrones.",
+     "evidencia": "Secuencia de diagramas de carga por contacto e inducción validada con el experimento de las latas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.1"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.1",
+      "CON:fisica/carga-electrica-electrizacion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Daniela frota una barra de PVC, que queda con carga negativa, y la usa para cargar dos esferas metálicas neutras sobre soportes aislantes: la esfera 1 tocándola con la barra, y la esfera 2 por inducción, conectándola a tierra con un dedo mientras la barra está cerca. Explica qué signo de carga queda en cada esfera y por qué, diciendo hacia dónde se mueven los electrones en cada caso.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Por contacto, la esfera queda con el mismo signo que la barra, porque recibe electrones de ella. Por inducción, queda con el signo contrario, porque sus propios electrones, repelidos por la barra, se van a tierra. En ningún caso se mueven protones ni se crea carga: solo se trasladan electrones.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "La esfera 1 queda negativa: al tocarla, parte de los electrones de sobra de la barra pasa a la esfera. La esfera 2 queda positiva: la barra negativa repele los electrones de la esfera hacia el dedo y se van a tierra; al retirar el dedo con la barra todavía cerca, a la esfera le faltan electrones. En la inducción la barra no pierde carga, porque no toca la esfera.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que la esfera 1 queda negativa porque recibe electrones de la barra al tocarla.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que la esfera 2 queda positiva porque pierde electrones, que se van a tierra repelidos por la barra.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Indica que solo se mueven electrones (no protones) o que la carga total se conserva.",
+        "obligatorio": false
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que el dedo debe retirarse antes de alejar la barra, o que la barra no pierde carga en la inducción.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Explica la carga positiva con protones que llegan o se crean.",
+        "ejemplo": "La esfera 2 queda positiva porque le suben protones desde la tierra por el dedo.",
+        "dificultad": "DIF:fisica/carga-electrica-electrizacion/1"
+       },
+       {
+        "descripcion": "Cree que toda carga transferida desde la barra da el mismo signo, también por inducción.",
+        "ejemplo": "Las dos quedan negativas porque la barra es negativa y les pasa sus electrones.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confunde la inducción con una atracción magnética.",
+        "ejemplo": "La barra imanta la esfera 2 y por eso queda cargada al revés.",
+        "dificultad": "DIF:fisica/carga-electrica-electrizacion/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/carga-electrica-electrizacion",
+     "nombre": "Carga eléctrica y electrización",
+     "definicion": "Los cuerpos se cargan por frotamiento, contacto o inducción; la carga se conserva y está cuantizada.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.1",
+     "grado": 11,
+     "indicador": "2.1. • Explica con diagramas de distribución de cargas la diferencia entre la carga por contacto y la carga por inducción, incluido el signo de la carga resultante. • Explica el origen de la carga eléctrica a partir de la estructura atómica y calcula el número de electrones transferidos a partir de una carga dada. • Aplica la conservación de la carga para determinar la carga final de objetos que interactúan y explica aplicaciones de la fuerza electrostática. • Clasifica materiales en conductores y aislantes a partir de un experimento con electroscopio y explica la diferencia con base en la movilidad de los electrones.",
+     "evidencia": "Secuencia de diagramas de carga por contacto e inducción validada con el experimento de las latas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.5",
+      "CON:fisica/ley-coulomb"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Tres cargas puntuales forman un triángulo equilátero. En la base, q1 = +2 µC a la izquierda y q2 = −2 µC a la derecha; en el vértice superior está q3 = +1 µC. Sin calcular, ¿hacia dónde apunta la fuerza eléctrica neta sobre q3 y por qué?",
+     "opciones": {
+      "A": "Hacia la derecha, paralela a la base, porque las componentes verticales de las dos fuerzas se anulan.",
+      "B": "Hacia arriba, lejos de la base, porque las dos cargas de la base empujan a q3 hacia afuera.",
+      "C": "Hacia la derecha y abajo, hacia q2, porque la atracción es más intensa que la repulsión.",
+      "D": "No hay fuerza neta, porque una carga positiva y una negativa del mismo valor se cancelan."
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:fisica/ley-coulomb/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "q1 repele a q3 en la dirección de q1 hacia q3 (arriba a la derecha) y q2 la atrae hacia q2 (abajo a la derecha). Las dos fuerzas tienen el mismo tamaño, porque las cargas y las distancias son iguales: el signo cambia el sentido, no la magnitud. Sus componentes verticales se anulan y las horizontales se suman: la neta apunta hacia la derecha, paralela a la base.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-coulomb",
+     "nombre": "Ley de Coulomb",
+     "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.5",
+     "grado": 11,
+     "indicador": "2.2. • Calcula la magnitud y la dirección de la fuerza eléctrica neta sobre una carga debida a dos o tres cargas puntuales ubicadas en un plano, aplicando la superposición de componentes. • Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales y lo usa para determinar la fuerza sobre una carga de prueba.",
+     "evidencia": "Problemas resueltos de fuerza neta en dos dimensiones con diagramas de cuerpo libre y componentes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.5",
+      "CON:fisica/ley-coulomb"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un problema de la hoja del equipo da las cargas y sus posiciones en un plano (x, y), en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total en P por componentes y úsalo para hallar la magnitud de la fuerza sobre q0. Usa k ≈ 9.0 × 10⁹ N·m²/C² (valor aproximado de la tabla de referencia). Escribe solo el número, en µN.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": {},
+     "valor": 1.5,
+     "tolerancia": 0.05,
+     "unidad": "µN",
+     "retroalimentacion": "q1 está a 0.40 m de P: E1 = 450 N/C en +x (se aleja de la carga positiva). q2 está a 0.30 m, justo arriba de P: E2 = 600 N/C en +y (apunta hacia la carga negativa). El campo total mide √(450² + 600²) = 750 N/C. La fuerza sobre q0 mide |q0|·E = 2.0 × 10⁻⁹ × 750 = 1.5 × 10⁻⁶ N = 1.5 µN, en sentido contrario al campo porque q0 es negativa.",
+     "duracion_min": 9,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-coulomb",
+     "nombre": "Ley de Coulomb",
+     "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.5",
+     "grado": 11,
+     "indicador": "2.2. • Calcula la magnitud y la dirección de la fuerza eléctrica neta sobre una carga debida a dos o tres cargas puntuales ubicadas en un plano, aplicando la superposición de componentes. • Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales y lo usa para determinar la fuerza sobre una carga de prueba.",
+     "evidencia": "Problemas resueltos de fuerza neta en dos dimensiones con diagramas de cuerpo libre y componentes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.5",
+      "CON:fisica/ley-coulomb"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Sobre una recta están q1 = +4.0 µC en x = 0 y q2 = +1.0 µC en x = 0.60 m. Josué busca el punto donde una carga de prueba no siente fuerza neta. Indica si ese punto está entre las cargas o fuera de ellas y por qué, calcula su posición en metros desde q1, y di si la respuesta cambia cuando la carga de prueba es negativa.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Entre las cargas las dos fuerzas tienen sentidos opuestos; fuera, tienen el mismo sentido y no se anulan. Igualando kq1/x² = kq2/(0.60 − x)² sale x = 0.40 m, más cerca de la carga pequeña. Como las dos fuerzas dependen igual de la carga de prueba, ni su valor ni su signo cambian el punto.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Tiene que estar entre las cargas, porque ahí q1 empuja hacia la derecha y q2 hacia la izquierda; afuera las dos empujan hacia el mismo lado. Igualo k·4.0/x² = k·1.0/(0.60 − x)², saco raíz: 2/x = 1/(0.60 − x), y queda x = 0.40 m de q1, más cerca de q2 porque es la carga menor. Si la carga de prueba es negativa, las dos fuerzas cambian de sentido a la vez y siguen igualándose en el mismo punto.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Ubica el punto entre las cargas y lo justifica con el sentido de las dos fuerzas (opuestas entre las cargas, iguales afuera).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Plantea la igualdad de las dos fuerzas con el inverso del cuadrado de la distancia y obtiene x = 0.40 m desde q1 (o 0.20 m desde q2).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Afirma que el punto no cambia con el signo (ni con el valor) de la carga de prueba y lo justifica.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa la distancia sin elevar al cuadrado.",
+        "ejemplo": "4/x = 1/(0.60 − x), así que x = 0.48 m.",
+        "dificultad": "DIF:fisica/ley-coulomb/1"
+       },
+       {
+        "descripcion": "Pone el punto en el medio sin considerar el valor de las cargas.",
+        "ejemplo": "En x = 0.30 m, porque ahí está a la misma distancia de las dos.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que una carga de prueba negativa mueve el punto o lo saca de entre las cargas.",
+        "ejemplo": "Si la carga es negativa, las dos la atraen y el punto queda afuera, a la derecha de q2.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-coulomb",
+     "nombre": "Ley de Coulomb",
+     "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.5",
+     "grado": 11,
+     "indicador": "2.2. • Calcula la magnitud y la dirección de la fuerza eléctrica neta sobre una carga debida a dos o tres cargas puntuales ubicadas en un plano, aplicando la superposición de componentes. • Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales y lo usa para determinar la fuerza sobre una carga de prueba.",
+     "evidencia": "Problemas resueltos de fuerza neta en dos dimensiones con diagramas de cuerpo libre y componentes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U7-7.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U7-7.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U7-7.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U7-7.3",
+      "CON:fisica/campo-electrico"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Karla dibuja el mapa de líneas de campo de dos cargas puntuales positivas iguales. Las líneas salen de cada carga, se curvan alejándose de la otra y ninguna pasa por el punto medio entre ambas. ¿Qué se puede afirmar del campo eléctrico en ese punto medio?",
+     "opciones": {
+      "A": "Es nulo, porque los campos de las dos cargas tienen ahí igual tamaño y sentidos opuestos.",
+      "B": "Es máximo, porque ahí se juntan y se cruzan las líneas que salen de las dos cargas.",
+      "C": "Va de una carga a la otra, porque las líneas siempre unen dos cargas cercanas.",
+      "D": "Es nulo, porque no pasa ninguna línea, igual que en todo espacio en blanco del mapa."
+     },
+     "correcta": "A",
+     "distractores": {
+      "D": "DIF:fisica/campo-electrico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el punto medio, cada carga produce un campo del mismo tamaño y de sentido opuesto, así que el campo total es cero: por eso ninguna línea pasa por ahí. Pero un espacio en blanco del dibujo no significa campo nulo: las líneas son una muestra y el campo existe en todo el espacio; su intensidad se lee en la densidad de líneas. Las líneas nunca se cruzan, porque el campo tiene una sola dirección en cada punto.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U7-7.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U7-7.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-electrico",
+     "nombre": "Campo eléctrico",
+     "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U7-7.3",
+     "grado": 11,
+     "indicador": "2.3. • Dibuja las líneas de campo de un dipolo y de dos cargas positivas aplicando sus propiedades, e infiere la intensidad del campo a partir de su densidad. • Explica por qué el campo eléctrico es nulo dentro de un conductor en equilibrio y lo relaciona con el blindaje de circuitos y la protección en vehículos. • Explica las etapas de la xerografía en términos de carga, fotoconductividad y campo eléctrico, y compara el funcionamiento de impresoras láser y de inyección de tinta.",
+     "evidencia": "Mapas de líneas de campo de tres configuraciones con explicación de sus propiedades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U7-7.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U7-7.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U7-7.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U7-7.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U7-7.3",
+      "CON:fisica/campo-electrico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Acercaron despacio un globo cargado a un electroscopio y midieron la distancia a la que las hojas empezaban a separarse. Electroscopio descubierto: 35 cm. Tapado con una caja de cartón: 30 cm. Tapado con un recipiente plástico: 32 cm. Tapado con un colador metálico: las hojas no se movieron ni con el globo a 2 cm del colador. ¿Qué conclusión apoyan los datos?",
+     "opciones": {
+      "A": "El metal anula el campo en su interior, porque sus electrones libres se reacomodan y cancelan el campo externo.",
+      "B": "El colador atrapa las líneas de campo como una red, porque las líneas son hilos que no atraviesan el metal.",
+      "C": "El metal frena el campo más que el cartón, porque es un material más denso y más grueso que el cartón.",
+      "D": "El metal protege porque es aislante y no deja pasar la electricidad, igual que el plástico de un cable."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/campo-electrico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el metal hay electrones libres. El campo del globo los desplaza hacia un lado del colador, y esa carga separada produce un campo que, en el interior, cancela el externo: dentro del conductor en equilibrio y en su hueco el campo es cero. El cartón y el plástico, que son aislantes, casi no cambian nada. No es cuestión de grosor: el colador es delgado y tiene agujeros.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U7-7.3"
+     },
+     "origen": "redactor-actividades (G11-FIS-U7-7.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-electrico",
+     "nombre": "Campo eléctrico",
+     "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U7-7.3",
+     "grado": 11,
+     "indicador": "2.3. • Dibuja las líneas de campo de un dipolo y de dos cargas positivas aplicando sus propiedades, e infiere la intensidad del campo a partir de su densidad. • Explica por qué el campo eléctrico es nulo dentro de un conductor en equilibrio y lo relaciona con el blindaje de circuitos y la protección en vehículos. • Explica las etapas de la xerografía en términos de carga, fotoconductividad y campo eléctrico, y compara el funcionamiento de impresoras láser y de inyección de tinta.",
+     "evidencia": "Mapas de líneas de campo de tres configuraciones con explicación de sus propiedades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U7-7.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U7-7.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U7-7.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U7-7.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U7-7.3",
+      "CON:fisica/campo-electrico"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una fotocopiadora, un tambor de material fotoconductor se carga positivo en la oscuridad y luego se ilumina con la luz que refleja la hoja original: el fondo blanco refleja mucha luz y las letras negras casi nada. Después se espolvorea tóner con carga negativa. Explica qué le hace la luz a la carga del tambor y por qué el tóner se pega solo donde estaban las letras.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Donde llega luz, el fotoconductor se vuelve conductor y su carga se escapa; donde no llega (las letras) sigue siendo aislante y conserva la carga positiva. El campo eléctrico de esas zonas atrae al tóner negativo, que forma la imagen. Después el papel, con carga positiva mayor, atrae el tóner y el calor lo funde.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U7-7.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El tambor es fotoconductor: en la oscuridad es aislante y guarda la carga, pero donde le llega luz se vuelve conductor y pierde su carga. La luz del fondo blanco descarga esas zonas; las zonas de las letras, que casi no reciben luz, siguen positivas. El tóner negativo es atraído por el campo eléctrico de las zonas positivas y solo se pega ahí, con la forma de las letras.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que la luz vuelve conductor al tambor en las zonas iluminadas (fondo blanco) y que ahí se pierde la carga.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que las zonas de las letras, que reciben poca luz, conservan su carga positiva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la adherencia del tóner negativo con la atracción eléctrica (o el campo) de las zonas positivas.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Describe un paso posterior (paso al papel cargado, fijado con calor) o compara con la impresora de inyección de tinta, que lanza gotas sin tambor cargado.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que la luz carga el tambor en lugar de descargarlo.",
+        "ejemplo": "La luz le da carga al fondo blanco y por eso el tóner se pega en el fondo.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la adherencia por el color o el calor, sin cargas.",
+        "ejemplo": "El tóner negro se pega a las letras negras porque la luz calienta el tambor donde hay letras.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Supone que la fuerza sobre el tóner va en el sentido del campo aunque sea negativo.",
+        "ejemplo": "El campo de las zonas positivas empuja el tóner lejos de las letras, hacia el fondo.",
+        "dificultad": "DIF:fisica/campo-electrico/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U7-7.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-electrico",
+     "nombre": "Campo eléctrico",
+     "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U7-7.3",
+     "grado": 11,
+     "indicador": "2.3. • Dibuja las líneas de campo de un dipolo y de dos cargas positivas aplicando sus propiedades, e infiere la intensidad del campo a partir de su densidad. • Explica por qué el campo eléctrico es nulo dentro de un conductor en equilibrio y lo relaciona con el blindaje de circuitos y la protección en vehículos. • Explica las etapas de la xerografía en términos de carga, fotoconductividad y campo eléctrico, y compara el funcionamiento de impresoras láser y de inyección de tinta.",
+     "evidencia": "Mapas de líneas de campo de tres configuraciones con explicación de sus propiedades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U7-7.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U8-8.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U8-8.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U8-8.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U8-8.4",
+      "CON:fisica/potencial-electrico"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el cañón de un tubo de rayos catódicos, un electrón parte del reposo junto a la placa negativa y llega a la placa positiva; entre las placas hay una diferencia de potencial de 5 000 V. ¿Qué energía cinética tiene al llegar y qué le pasa a su energía potencial eléctrica?",
+     "opciones": {
+      "A": "5 000 eV, porque su energía potencial disminuye 5 000 eV al llegar a la placa de mayor potencial.",
+      "B": "5 000 eV, porque su energía potencial aumenta al llegar a mayor potencial y la cinética crece con ella.",
+      "C": "8.0 × 10⁻¹⁶ eV, porque la energía es la carga del electrón multiplicada por la diferencia de potencial.",
+      "D": "Ninguna, porque el electrón avanza contra el campo y el campo hace un trabajo negativo sobre él."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/potencial-electrico/1",
+      "D": "DIF:fisica/campo-electrico/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El electrón tiene carga negativa: la fuerza eléctrica lo empuja en sentido contrario al campo, hacia la placa positiva, y hace trabajo positivo sobre él. Al pasar a un punto de mayor potencial, su energía potencial disminuye q·ΔV = 5 000 eV (unos 8.0 × 10⁻¹⁶ J), y esa energía se convierte en energía cinética. Un electronvolt es la energía que gana una carga e al atravesar 1 V.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U8-8.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U8-8.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencial-electrico",
+     "nombre": "Energía potencial y potencial eléctrico",
+     "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U8-8.4",
+     "grado": 11,
+     "indicador": "2.4. • Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos. • Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias. • Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición. • Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas.",
+     "evidencia": "Hoja de problemas resueltos con cálculo de ΔV, trabajo y energía en electronvolts, más gráfica ΔV-distancia del simulador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U8-8.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U8-8.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U8-8.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U8-8.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U8-8.4",
+      "CON:fisica/potencial-electrico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo con un simulador de placas paralelas separadas 5.0 cm. Midieron el potencial a distintas distancias x de la placa negativa (que está a 0 V): x = 0 cm, 0 V; 1.0 cm, 2.1 V; 2.0 cm, 3.9 V; 3.0 cm, 6.1 V; 4.0 cm, 8.0 V; 5.0 cm, 10.0 V. ¿Cuál es la magnitud del campo eléctrico entre las placas, en V/m? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": {},
+     "valor": 200,
+     "tolerancia": 10,
+     "unidad": "V/m",
+     "retroalimentacion": "El potencial crece casi en línea recta con la distancia, como corresponde a un campo uniforme. La magnitud del campo es la pendiente: E = ΔV/Δx = 10.0 V / 0.050 m = 200 V/m. El campo apunta de la placa positiva a la negativa, hacia donde baja el potencial. Cuidado con las unidades: 10 V / 5 cm da 2 V/cm, que son 200 V/m.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U8-8.4"
+     },
+     "origen": "redactor-actividades (G11-FIS-U8-8.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencial-electrico",
+     "nombre": "Energía potencial y potencial eléctrico",
+     "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U8-8.4",
+     "grado": 11,
+     "indicador": "2.4. • Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos. • Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias. • Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición. • Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas.",
+     "evidencia": "Hoja de problemas resueltos con cálculo de ΔV, trabajo y energía en electronvolts, más gráfica ΔV-distancia del simulador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U8-8.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U8-8.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U8-8.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U8-8.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U8-8.4",
+      "CON:fisica/potencial-electrico"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Compara la energía potencial eléctrica de una carga entre dos placas paralelas con la energía potencial gravitatoria de una piedra cerca del suelo. Escribe una semejanza y una diferencia entre las dos y, usando esa diferencia, explica hacia qué placa se acelera un electrón que se suelta en reposo entre ellas y qué pasa con su energía potencial.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Semejanza: las dos dependen de la posición en un campo uniforme, y al moverse libremente el cuerpo pierde energía potencial y gana cinética. Diferencia: la masa siempre es positiva y la gravedad solo atrae; la carga puede ser negativa. Por eso el electrón «cae» hacia la placa positiva, la de mayor potencial, y aun así su energía potencial disminuye.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U8-8.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Se parecen en que las dos dependen de la posición dentro de un campo uniforme (mgh y qEd) y en que, si el cuerpo se suelta, pierde energía potencial y gana la misma cantidad de energía cinética. La diferencia es que la masa siempre es positiva, pero la carga puede ser positiva o negativa. Por eso el electrón no va hacia la placa de menor potencial como una piedra que cae: se acelera hacia la placa positiva, de mayor potencial, y su energía potencial disminuye.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe una semejanza correcta: dependencia de la posición en un campo uniforme (mgh y qEd o qV), conversión de energía potencial en cinética, o trabajo que no depende del camino.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Escribe una diferencia correcta ligada al signo: la carga puede ser positiva o negativa y la masa no (o la fuerza eléctrica puede repeler y la gravitatoria solo atrae).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Concluye que el electrón se acelera hacia la placa positiva (de mayor potencial) y que su energía potencial disminuye.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Trata al electrón como una piedra que baja de potencial.",
+        "ejemplo": "Como la piedra cae de arriba abajo, el electrón va del potencial alto al bajo, hacia la placa negativa.",
+        "dificultad": "DIF:fisica/potencial-electrico/1"
+       },
+       {
+        "descripcion": "Dice que la energía potencial del electrón aumenta porque llega a mayor potencial.",
+        "ejemplo": "El electrón va a la placa positiva y gana energía potencial, porque ahí el potencial es mayor.",
+        "dificultad": "DIF:fisica/potencial-electrico/1"
+       },
+       {
+        "descripcion": "Propone como diferencia algo falso sobre la energía.",
+        "ejemplo": "La diferencia es que la energía gravitatoria es un vector y la eléctrica no.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U8-8.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencial-electrico",
+     "nombre": "Energía potencial y potencial eléctrico",
+     "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U8-8.4",
+     "grado": 11,
+     "indicador": "2.4. • Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos. • Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias. • Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición. • Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas.",
+     "evidencia": "Hoja de problemas resueltos con cálculo de ΔV, trabajo y energía en electronvolts, más gráfica ΔV-distancia del simulador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U8-8.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  }
+ ]
+}
