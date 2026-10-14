@@ -4,7 +4,7 @@ Diseño completo: [`specs/13_apoyo_al_aprendizaje.md`](../specs/13_apoyo_al_apre
 `src/goes_science_kg/aprendizaje/`. Parámetros: `config/aprendizaje.yaml`.
 
 ## Qué es
-Un tutor que **complementa** la malla V2 del MINED sin modificarla. Para un objetivo de la malla:
+Un tutor que **complementa** la malla vigente V3 del MINED sin modificarla. Para un objetivo de la malla:
 1. revisa sus bases en el grafo («¿qué necesita comprender?»);
 2. si la malla enseña una base después del objetivo, ofrece una activación breve (**previo**);
 3. evalúa el objetivo; si la respuesta es incorrecta, abre **hipótesis** y las comprueba con preguntas breves;
@@ -50,7 +50,7 @@ uv run gskg tutor turno G09-CIE-U8-8.2 --grado 9          # sin --confirmar: res
 uv run gskg tutor evaluar ACT:G05-CIE-U6-6.14/obj-abierta "…"   # sin --confirmar: muestra la rúbrica
 ```
 
-## Estado del contenido pedagógico (`data/pedagogia/`)
+## Estado inicial del contenido pedagógico (2026-10-12, `data/pedagogia/`)
 - **96 actividades, 21 dificultades y 21 microtemas** para 6 objetivos:
   - **3.°:** G03-CIE-U1-1.3, fuerzas de contacto;
   - **5.°:** G05-CIE-U6-6.14, suelo;

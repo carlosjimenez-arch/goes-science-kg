@@ -1,0 +1,4221 @@
+{
+ "lote": "r3-q10a_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U10-10.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U10-10.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U10-10.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U10-10.1",
+      "CON:quimica/estequiometria"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "La docente neutraliza con ácido una tableta antiácida cuyo único componente básico es carbonato de calcio. Reacción: CaCO₃(s) + 2HCl(ac) → CaCl₂(ac) + H₂O(l) + CO₂(g).\nDatos de ejemplo:\n- Masa de la tableta: 1.50 g.\n- Masa molar del CaCO₃: 100.0 g/mol.\n- HCl(ac) consumido: 24.0 mL (0.0240 L) de concentración 1.00 mol/L.\n¿Cuál es el porcentaje de pureza de CaCO₃ en la tableta?",
+     "opciones": {
+      "A": "100.0 %, porque se asume que toda la masa de la tableta es principio activo.",
+      "B": "50.0 %, porque se relaciona directamente el volumen de ácido con la masa inicial.",
+      "C": "80.0 %, porque reaccionan 0.0120 mol equivalentes a 1.20 g de carbonato puro.",
+      "D": "160.0 %, porque los 0.0240 mol de ácido igualan los moles de carbonato puro."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/estequiometria/1",
+      "B": "DIF:quimica/estequiometria/3",
+      "D": "DIF:quimica/ecuacion-quimica-y-balanceo/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En 0.0240 L de HCl 1.00 mol/L hay 0.0240 mol de HCl. Como la relación molar es 1 mol de CaCO₃ por cada 2 mol de HCl, reaccionaron 0.0120 mol de CaCO₃, que pesan 1.20 g; divididos entre 1.50 g de tableta dan 80.0 % de pureza.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U10-10.1"
+     },
+     "origen": "redactor-actividades (G10-QUI-U10-10.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estequiometria",
+     "nombre": "Estequiometría",
+     "definicion": "Cálculo de cantidades de reactivos y productos a partir de los coeficientes de la ecuación balanceada y el mol.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.1",
+     "grado": 10,
+     "indicador": "10.1. Calcula masas, cantidades de sustancia y volúmenes de disolución de reactivos y productos incorporando la pureza y la concentración en sus cálculos.",
+     "evidencia": "Serie de problemas resueltos con diagrama de factores de conversión y análisis de pureza de una muestra"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U10-10.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "0.0240 L×1.00 mol/L=0.0240 mol HCl; relación 1:2 → 0.0120 mol CaCO₃=1.20 g; 1.20/1.50=80.0 %. Clave correcta; D (160 %) refleja ignorar el coeficiente. El distractor B es poco derivable, pero no es correcto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.1",
+       "cita": "Incorpora pureza y concentración en los cálculos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.0120 mol × 100.0 g/mol = 1.20 g; 2.40 g/1.50 g = 160 %"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.1",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "La docente neutraliza con ácido una tableta antiácida cuyo único componente básico es carbonato de calcio. Reacción: CaCO₃(s) + 2HCl(ac) → CaCl₂(ac) + H₂O(l) + CO₂(g).\nDatos de ejemplo:\n- Masa de la tableta: 1.50 g.\n- Masa molar del CaCO₃: 100.0 g/mol.\n- HCl(ac) consumido: 24.0 mL (0.0240 L) de concentración 1.00 mol/L.\n¿Cuál es el porcentaje de pureza de CaCO₃ en la tableta?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U10-10.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U10-10.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U10-10.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U10-10.2",
+      "CON:quimica/reactivo-limitante"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En un recipiente cerrado se mezclan hidrógeno y oxígeno para producir agua según 2 H₂(g) + O₂(g) → 2 H₂O(l).\nDatos:\n- H₂(g): 10.0 g (masa molar 2.0 g/mol).\n- O₂(g): 32.0 g (masa molar 32.0 g/mol).\n- Masa molar del H₂O: 18.0 g/mol.\nAl completarse la reacción, ¿cuál es el reactivo limitante, cuánto sobra del reactivo en exceso y qué masa máxima de agua se forma?",
+     "opciones": {
+      "A": "El H₂ es el limitante; sobran 22.0 g de O₂ y se forman 42.0 g de H₂O.",
+      "B": "El O₂ es el limitante; sobran 6.0 g de H₂ y se forman 36.0 g de H₂O.",
+      "C": "El O₂ es el limitante; sobran 8.0 g de H₂ y se forman 18.0 g de H₂O.",
+      "D": "El H₂ es el limitante; sobran 16.0 g de O₂ y se forman 90.0 g de H₂O."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/reactivo-limitante/1",
+      "C": "DIF:quimica/reactivo-limitante/2",
+      "D": "DIF:quimica/reactivo-limitante/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Hay 5.0 mol de H₂ y 1.0 mol de O₂. Como 1.0 mol de O₂ reacciona exactamente con 2.0 mol de H₂ para formar 2.0 mol de H₂O (36.0 g), el O₂ se agota primero y sobran 3.0 mol de H₂ (6.0 g).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U10-10.2"
+     },
+     "origen": "redactor-actividades (G10-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reactivo-limitante",
+     "nombre": "Reactivo limitante y en exceso",
+     "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.2",
+     "grado": 10,
+     "indicador": "10.2. Determina el reactivo limitante y la cantidad sobrante del reactivo en exceso, y calcula a partir de ellos la cantidad máxima de producto.",
+     "evidencia": "Gráfica de volumen de gas contra volumen de vinagre con identificación del punto estequiométrico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U10-10.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.2/obj-1",
+     "decision": "aprobar",
+     "justificacion": "5.0 mol H₂ y 1.0 mol O₂; el O₂ limita, forma 2.0 mol H₂O (36.0 g) y sobran 3.0 mol H₂ (6.0 g). Masa conservada: 42.0 g = 36.0 + 6.0. Es un cálculo en papel, sin montaje peligroso.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.2",
+       "cita": "Determina el reactivo limitante y el sobrante"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "10.0+32.0 = 36.0+6.0 g, conservación verificada"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.2/obj-1",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.2",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En un recipiente cerrado se mezclan hidrógeno y oxígeno para producir agua según 2 H₂(g) + O₂(g) → 2 H₂O(l).\nDatos:\n- H₂(g): 10.0 g (masa molar 2.0 g/mol).\n- O₂(g): 32.0 g (masa molar 32.0 g/mol).\n- Masa molar del H₂O: 18.0 g/mol.\nAl completarse la reacción, ¿cuál es el reactivo limitante, cuánto sobra del reactivo en exceso y qué masa máxima de agua se forma?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U10-10.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U10-10.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U10-10.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U10-10.2",
+      "CON:quimica/reactivo-limitante"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo pone 2.0 g de bicarbonato de sodio en cada uno de cuatro matraces, agrega volúmenes crecientes de vinagre y mide el gas recogido. Datos de ejemplo:\n- 15 mL de vinagre → 280 mL de gas.\n- 30 mL de vinagre → 560 mL de gas.\n- 45 mL de vinagre → 560 mL de gas.\n- 60 mL de vinagre → 560 mL de gas.\n¿Qué indican estos datos sobre el punto estequiométrico y los reactivos?",
+     "opciones": {
+      "A": "El punto estequiométrico se alcanza en 15 mL; desde ahí el bicarbonato queda en exceso.",
+      "B": "El punto estequiométrico se alcanza en 60 mL; en todas las pruebas el vinagre es el limitante.",
+      "C": "El punto estequiométrico se alcanza en 30 mL; con 45 mL y 60 mL el bicarbonato es el limitante.",
+      "D": "El punto estequiométrico se alcanza en 45 mL; con 15 mL y 30 mL el vinagre queda en exceso."
+     },
+     "correcta": "C",
+     "distractores": {
+      "B": "DIF:quimica/reactivo-limitante/3",
+      "D": "DIF:quimica/reactivo-limitante/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El volumen de gas crece de forma proporcional hasta 30 mL de vinagre y luego se mantiene fijo en 560 mL. Eso indica que en 30 mL se consumen por completo los 2.0 g de bicarbonato (punto estequiométrico) y que, al agregar más vinagre, el bicarbonato limita la reacción.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U10-10.2"
+     },
+     "origen": "redactor-actividades (G10-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reactivo-limitante",
+     "nombre": "Reactivo limitante y en exceso",
+     "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.2",
+     "grado": 10,
+     "indicador": "10.2. Determina el reactivo limitante y la cantidad sobrante del reactivo en exceso, y calcula a partir de ellos la cantidad máxima de producto.",
+     "evidencia": "Gráfica de volumen de gas contra volumen de vinagre con identificación del punto estequiométrico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U10-10.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.2/obj-2",
+     "decision": "corregir",
+     "justificacion": "Los datos son verosímiles (2.0 g NaHCO₃ ≈ 0.024 mol → unos 0.57 L de CO₂; 30 mL de vinagre al 5 % ≈ 0.025 mol de ácido) y la clave es correcta, pero el enunciado anuncia cinco matraces y reporta cuatro: la cuenta no cierra.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.2",
+       "cita": "Determina el reactivo limitante y el sobrante"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Se listan 15, 30, 45 y 60 mL: cuatro pruebas, no cinco"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo agrega volúmenes crecientes de vinagre a cuatro matraces que contienen 2.0 g de bicarbonato de sodio cada uno y mide el volumen de gas recogido (datos de un grupo de ejemplo): con 15 mL recoge 280 mL de gas; con 30 mL recoge 560 mL; con 45 mL recoge 560 mL; y con 60 mL recoge 560 mL. ¿Qué indican estos datos sobre el punto estequiométrico y los reactivos?"
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.2/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.2",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo pone 2.0 g de bicarbonato de sodio en cada uno de cuatro matraces, agrega volúmenes crecientes de vinagre y mide el gas recogido. Datos de ejemplo:\n- 15 mL de vinagre → 280 mL de gas.\n- 30 mL de vinagre → 560 mL de gas.\n- 45 mL de vinagre → 560 mL de gas.\n- 60 mL de vinagre → 560 mL de gas.\n¿Qué indican estos datos sobre el punto estequiométrico y los reactivos?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U10-10.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U10-10.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U10-10.3"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U10-10.3",
+      "CON:quimica/rendimiento-de-reaccion"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En una práctica de laboratorio, Valeria y Mateo mezclan disoluciones de cloruro de calcio, CaCl₂(ac), y carbonato de sodio, Na₂CO₃(ac), en exceso. Según su cálculo estequiométrico, el rendimiento teórico del precipitado de carbonato de calcio, CaCO₃(s), es de 2.50 g. Después de filtrar y secar el sólido, obtienen una masa experimental de 2.15 g. ¿Cuál es el rendimiento porcentual de la reacción y una causa experimental que explica la diferencia?",
+     "opciones": {
+      "A": "35.0 %, porque se resta la masa experimental de la teórica debido al sólido retenido en el vaso.",
+      "B": "116.3 %, porque se divide el valor teórico entre el experimental al perderse sólido en el filtro.",
+      "C": "86.0 %, porque los átomos de calcio pierden masa al transformarse en un precipitado sólido.",
+      "D": "86.0 %, porque parte del precipitado fino atraviesa el papel de filtro o queda adherida al vaso."
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/rendimiento-de-reaccion/1",
+      "C": "DIF:quimica/rendimiento-de-reaccion/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El rendimiento porcentual es (rendimiento real / rendimiento teórico) × 100 = (2.15 g / 2.50 g) × 100 = 86.0 %. La masa total se conserva en la reacción, pero se recupera menos CaCO₃(s) porque parte del sólido queda en las paredes del vaso o pasa a través de los poros del filtro.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U10-10.3"
+     },
+     "origen": "redactor-actividades (G10-QUI-U10-10.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.3",
+     "grado": 10,
+     "indicador": "10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "evidencia": "Informe de laboratorio con cálculo del rendimiento porcentual del precipitado y análisis de pérdidas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U10-10.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.3/obj-1",
+     "decision": "aprobar",
+     "justificacion": "2.15/2.50×100=86.0 %. La causa del filtro y del vaso es correcta; los distractores invierten la razón (116.3 %), atribuyen la pérdida a átomos que pierden masa (idea previa registrada) o restan (35.0 %).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.3",
+       "cita": "Calcula el rendimiento porcentual y explica las pérdidas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "2.50/2.15 = 116.3 %; 2.50 − 2.15 = 0.35"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.3/obj-1",
+     "decision": "corregir",
+     "justificacion": "Las dos opciones múltiples del tema tenían la clave en la misma letra. Intercambio la clave con la opción del 35.0 % para repartirlas; textos, distractores y retroalimentación quedan iguales. El ítem es claro, corto y la retroalimentación no nombra letras.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.3",
+       "cita": "clave en la misma letra en las dos opciones múltiples del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "claves repartidas A–D dentro del tema"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "35.0 %, porque se resta la masa experimental de la teórica debido al sólido retenido en el vaso.",
+       "B": "116.3 %, porque se divide el valor teórico entre el experimental al perderse sólido en el filtro.",
+       "C": "86.0 %, porque los átomos de calcio pierden masa al transformarse en un precipitado sólido.",
+       "D": "86.0 %, porque parte del precipitado fino atraviesa el papel de filtro o queda adherida al vaso."
+      },
+      "correcta": "D"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U10-10.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U10-10.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U10-10.3"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U10-10.3",
+      "CON:quimica/rendimiento-de-reaccion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Tres equipos hacen la reacción CaCl₂(ac) + Na₂CO₃(ac) → CaCO₃(s) + 2 NaCl(ac). El rendimiento teórico es 2.00 g de CaCO₃(s). Datos de ejemplo:\n- Equipo 1: filtro vacío, 0.85 g; filtro con sólido seco, 2.65 g. El líquido filtrado salió algo turbio.\n- Equipo 2: filtro vacío, 0.82 g; filtro con sólido, 3.12 g, pesado húmedo, recién filtrado.\n- Equipo 3: filtro vacío, 0.80 g; filtro con sólido seco, 2.50 g. Su CaCl₂ tenía 90 % de pureza.\n¿Qué interpretación de los datos es correcta?",
+     "opciones": {
+      "A": "El Equipo 1 obtuvo 1.80 g de CaCO₃(s) (90.0 %) y el Equipo 2 pesó 2.30 g por el agua retenida.",
+      "B": "El Equipo 2 logró un rendimiento real de 115.0 % porque su reacción produjo más moles de CaCO₃(s) que el límite teórico.",
+      "C": "El Equipo 1 obtuvo un rendimiento de 132.5 % porque la masa del papel de filtro forma parte del producto recuperado.",
+      "D": "El Equipo 3 obtuvo 85.0 % de rendimiento porque todos los gramos de impurezas se transformaron en cloruro de sodio."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/rendimiento-de-reaccion/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el Equipo 1, la masa neta del precipitado seco es 2.65 g − 0.85 g = 1.80 g, lo que corresponde a (1.80 g / 2.00 g) × 100 = 90.0 %; el filtrado turbio evidencia pérdida de partículas finas. En el Equipo 2, la masa neta (2.30 g) supera el valor teórico de 2.00 g únicamente porque incluye la masa del agua que no se evaporó.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U10-10.3"
+     },
+     "origen": "redactor-actividades (G10-QUI-U10-10.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.3",
+     "grado": 10,
+     "indicador": "10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "evidencia": "Informe de laboratorio con cálculo del rendimiento porcentual del precipitado y análisis de pérdidas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U10-10.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.3/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Equipo 1: 2.65−0.85=1.80 g (90.0 %); Equipo 2: 3.12−0.82=2.30 g con agua retenida; Equipo 3: 1.70 g (85.0 %) con una razón falsa. Clave A correcta; C (132.5 %) incluye el papel. Cuentas verificadas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.3",
+       "cita": "Explica causas químicas y experimentales de las pérdidas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "2.65/2.00 = 132.5 %; 1.70/2.00 = 85.0 %"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U10-10.3/obj-2",
+     "decision": "corregir",
+     "justificacion": "Superaba el límite de 100 palabras (110) y la clave era la opción más larga y la única que cubría dos equipos. Paso los datos a lista y acorto la clave sin cambiar sus valores (1.80 g, 90.0 %, 2.30 g con agua retenida).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U10-10.3",
+       "cita": "enunciado de 110 palabras; palabras_max = 100"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la clave no debe destacar por su longitud"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Tres equipos hacen la reacción CaCl₂(ac) + Na₂CO₃(ac) → CaCO₃(s) + 2 NaCl(ac). El rendimiento teórico es 2.00 g de CaCO₃(s). Datos de ejemplo:\n- Equipo 1: filtro vacío, 0.85 g; filtro con sólido seco, 2.65 g. El líquido filtrado salió algo turbio.\n- Equipo 2: filtro vacío, 0.82 g; filtro con sólido, 3.12 g, pesado húmedo, recién filtrado.\n- Equipo 3: filtro vacío, 0.80 g; filtro con sólido seco, 2.50 g. Su CaCl₂ tenía 90 % de pureza.\n¿Qué interpretación de los datos es correcta?",
+      "opciones": {
+       "A": "El Equipo 1 obtuvo 1.80 g de CaCO₃(s) (90.0 %) y el Equipo 2 pesó 2.30 g por el agua retenida.",
+       "B": "El Equipo 2 logró un rendimiento real de 115.0 % porque su reacción produjo más moles de CaCO₃(s) que el límite teórico.",
+       "C": "El Equipo 1 obtuvo un rendimiento de 132.5 % porque la masa del papel de filtro forma parte del producto recuperado.",
+       "D": "El Equipo 3 obtuvo 85.0 % de rendimiento porque todos los gramos de impurezas se transformaron en cloruro de sodio."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U11-11.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U11-11.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U11-11.1",
+      "CON:quimica/entalpia-de-reaccion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Mateo mezcla en un calorímetro de vasos 50.0 mL de HCl(ac) 1.0 mol/L con 50.0 mL de NaOH(ac) 1.0 mol/L. Datos de ejemplo:\n- Reaccionan 0.050 mol de cada reactivo y se forman 0.050 mol de agua.\n- Temperatura inicial de ambos reactivos: 26.0 °C; temperatura máxima: 32.5 °C.\n- Masa de la disolución final: 100.0 g; calor específico aproximado: 4.18 J/(g·°C).\n- Valor de referencia aproximado de la tabla: cerca de −57 kJ/mol.\n¿Qué ΔH de neutralización obtiene por mol de agua formada y por qué es más o menos negativo que el valor de referencia?",
+     "opciones": {
+      "A": "Obtiene +54.3 kJ/mol, de signo opuesto al tabulado porque la temperatura de la mezcla subió en el vaso.",
+      "B": "Obtiene −54.3 kJ/mol, menos negativo que el tabulado porque parte del calor escapó al vaso y al aire.",
+      "C": "Obtiene −2.72 kJ/mol, menos negativo que el tabulado porque solo reaccionó una fracción pequeña del ácido.",
+      "D": "Obtiene −54.3 kJ/mol, más negativo que el tabulado porque el termómetro absorbió energía de la mezcla."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/entalpia-de-reaccion/1",
+      "C": "DIF:quimica/entalpia-de-reaccion/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La disolución absorbe q = (100.0 g)(4.18 J/(g·°C))(6.5 °C) = 2717 J = 2.72 kJ, por lo que la reacción libera q_rxn = −2.72 kJ; al dividir entre 0.050 mol de H₂O formada resulta ΔH = −54.3 kJ/mol. Se libera un poco menos de calor útil hacia el agua que el valor de referencia (cerca de −57 kJ/mol) porque el calorímetro y el entorno absorben una pequeña parte.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G10-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/entalpia-de-reaccion",
+     "nombre": "Entalpía de reacción y ecuaciones termoquímicas",
+     "definicion": "Calor intercambiado a presión constante en una reacción (ΔH), representado en ecuaciones termoquímicas y diagramas de entalpía.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U11-11.1",
+     "grado": 10,
+     "indicador": "11.1. Determina experimentalmente la entalpía de una reacción en un calorímetro de vasos, la representa en un diagrama de entalpía exotérmico o endotérmico y la contrasta con la calculada mediante la ley de Hess o las entalpías estándar de formación.",
+     "evidencia": "Informe de calorimetría con curva temperatura-tiempo, cálculo de ΔH y diagrama de entalpía, que compara el valor experimental con el calculado por la ley de Hess, más una tabla comparativa de combustibles con energía por gramo y CO₂ emitido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U11-11.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U11-11.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Cálculo correcto: 100.0×4.18×6.5=2717 J; /0.050 mol=−54.3 kJ/mol. Pero el valor de referencia se presenta como fijo (−57.1); según la fuente y la temperatura las tablas dan de −55.8 a −57.3 kJ/mol. Se remite a la tabla de referencia como aproximado; la clave no cambia.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U11-11.1",
+       "cita": "Determina experimentalmente la entalpía en un calorímetro de vasos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Las tablas reportan entre −55.8 y −57.3 kJ/mol según la fuente"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "enunciado": "En un grupo de ejemplo, Mateo mezcla en un calorímetro de vasos 50.0 mL de HCl(ac) 1.0 mol/L con 50.0 mL de NaOH(ac) 1.0 mol/L (0.050 mol de cada uno). Ambos reactivos estaban a 26.0 °C y la temperatura máxima alcanzada por los 100.0 g de disolución final fue de 32.5 °C. Usando un calor específico aproximado de la disolución de 4.18 J/(g·°C), ¿qué valor experimental obtiene para ΔH de neutralización por mol de agua formada y por qué se ubica por encima o por debajo del valor de referencia aproximado de la tabla (cerca de −57 kJ/mol)?",
+      "retroalimentacion": "La disolución absorbe q = (100.0 g)(4.18 J/(g·°C))(6.5 °C) = 2717 J = 2.72 kJ, por lo que la reacción libera q_rxn = −2.72 kJ; al dividir entre 0.050 mol de H₂O formada resulta ΔH = −54.3 kJ/mol. Se libera un poco menos de calor útil hacia el agua que el valor de referencia (cerca de −57 kJ/mol) porque el calorímetro y el entorno absorben una pequeña parte."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U11-11.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U11-11.1",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Mateo mezcla en un calorímetro de vasos 50.0 mL de HCl(ac) 1.0 mol/L con 50.0 mL de NaOH(ac) 1.0 mol/L. Datos de ejemplo:\n- Reaccionan 0.050 mol de cada reactivo y se forman 0.050 mol de agua.\n- Temperatura inicial de ambos reactivos: 26.0 °C; temperatura máxima: 32.5 °C.\n- Masa de la disolución final: 100.0 g; calor específico aproximado: 4.18 J/(g·°C).\n- Valor de referencia aproximado de la tabla: cerca de −57 kJ/mol.\n¿Qué ΔH de neutralización obtiene por mol de agua formada y por qué es más o menos negativo que el valor de referencia?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U11-11.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U11-11.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U11-11.1",
+      "CON:quimica/entalpia-de-reaccion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En un calorímetro de vasos a presión constante, Valeria agrega bicarbonato de sodio sólido a 100 mL de vinagre y observa que la temperatura de la disolución baja de 27.0 °C a 22.5 °C. Explica en un párrafo de 4 a 6 oraciones: 1) qué signo tiene el calor de la disolución (q_disol) y qué signo tiene la entalpía de la reacción (ΔH), justificando por qué son opuestos, y 2) cómo se ubican las entalpías de reactivos y productos en el diagrama de entalpía de esta reacción y por qué.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Como la temperatura de la disolución baja, la disolución pierde calor hacia la reacción (q_disol es negativo) y el sistema químico absorbe esa misma energía a presión constante, por lo que la reacción es endotérmica y tiene ΔH positivo (q_reacción = −q_disol). En el diagrama de entalpía, el nivel de los productos se dibuja arriba del nivel de los reactivos porque al absorber energía los productos quedan con mayor entalpía que los reactivos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Indica que q_disol es negativo y que ΔH de la reacción es positivo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica los signos opuestos explicando que la energía que pierde la disolución (el entorno inmediato) es la que absorbe la reacción química (sistema).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Ubica a los productos por encima de los reactivos en el diagrama de entalpía porque el proceso absorbe energía y aumenta la entalpía del sistema.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Asigna signo negativo a ΔH porque la temperatura bajó (iguala el signo de ΔH con el de ΔT del termómetro).",
+        "ejemplo": "Como la temperatura baja 4.5 °C, ΔT es negativo y por lo tanto ΔH también es negativo y los productos van abajo.",
+        "dificultad": "DIF:quimica/entalpia-de-reaccion/1"
+       },
+       {
+        "descripcion": "Dice que la reacción es endotérmica con ΔH positivo, pero dibuja los productos debajo de los reactivos.",
+        "ejemplo": "La reacción absorbe calor (ΔH positivo), así que en el diagrama los productos quedan en un escalón más bajo que los reactivos.",
+        "dificultad": "DIF:quimica/entalpia-de-reaccion/2"
+       }
+      ]
+     },
+     "retroalimentacion": "El termómetro mide la temperatura de la disolución (entorno inmediato): si se enfría, q_disol < 0 porque cedió energía a la reacción, de modo que ΔH > 0 (endotérmica) y los productos quedan en un nivel de entalpía superior al de los reactivos.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G10-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/entalpia-de-reaccion",
+     "nombre": "Entalpía de reacción y ecuaciones termoquímicas",
+     "definicion": "Calor intercambiado a presión constante en una reacción (ΔH), representado en ecuaciones termoquímicas y diagramas de entalpía.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U11-11.1",
+     "grado": 10,
+     "indicador": "11.1. Determina experimentalmente la entalpía de una reacción en un calorímetro de vasos, la representa en un diagrama de entalpía exotérmico o endotérmico y la contrasta con la calculada mediante la ley de Hess o las entalpías estándar de formación.",
+     "evidencia": "Informe de calorimetría con curva temperatura-tiempo, cálculo de ΔH y diagrama de entalpía, que compara el valor experimental con el calculado por la ley de Hess, más una tabla comparativa de combustibles con energía por gramo y CO₂ emitido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U11-11.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U11-11.1/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "La reacción de NaHCO₃ con vinagre es endotérmica (la mezcla se enfría): q_disol<0, ΔH>0 y productos arriba. La rúbrica distingue sistema y entorno, y sus errores corresponden a ideas previas registradas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U11-11.1",
+       "cita": "Representa la entalpía en un diagrama endotérmico"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "q_reacción = −q_disol; ΔT negativo implica ΔH positivo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U11-11.1/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U11-11.1",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En un calorímetro de vasos a presión constante, Valeria agrega bicarbonato de sodio sólido a 100 mL de vinagre y observa que la temperatura de la disolución baja de 27.0 °C a 22.5 °C. Explica en un párrafo de 4 a 6 oraciones: 1) qué signo tiene el calor de la disolución (q_disol) y qué signo tiene la entalpía de la reacción (ΔH), justificando por qué son opuestos, y 2) cómo se ubican las entalpías de reactivos y productos en el diagrama de entalpía de esta reacción y por qué."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.1",
+      "CON:quimica/velocidad-de-reaccion-medicion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo midió la concentración de un reactivo R a lo largo del tiempo. Datos de ejemplo:\n- t = 0 s: [R] = 0.80 mol/L.\n- t = 20 s: [R] = 0.50 mol/L.\n- t = 60 s: [R] = 0.20 mol/L.\n- La recta tangente a la curva en t = 20 s pasa por (0 s, 0.70 mol/L) y (50 s, 0.20 mol/L).\n¿Cuáles son la velocidad media de consumo de R entre 20 s y 60 s y su velocidad instantánea en t = 20 s?",
+     "opciones": {
+      "A": "La velocidad media es 0.0100 mol/(L·s) y la instantánea en 20 s es 0.0250 mol/(L·s).",
+      "B": "La velocidad media es 0.0075 mol/(L·s) y la instantánea en 20 s es 0.0100 mol/(L·s).",
+      "C": "La velocidad media es −0.0075 mol/(L·s) y la instantánea en 20 s es −0.0100 mol/(L·s).",
+      "D": "La velocidad media es 0.0033 mol/(L·s) y la instantánea en 20 s es 0.0250 mol/(L·s)."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/velocidad-de-reaccion-medicion/1",
+      "C": "DIF:quimica/velocidad-de-reaccion-medicion/3",
+      "D": "DIF:quimica/velocidad-de-reaccion-medicion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La velocidad media entre 20 s y 60 s es −(0.20 − 0.50) mol/L / (60 − 20) s = 0.0075 mol/(L·s). La velocidad instantánea en t = 20 s es el valor absoluto de la pendiente de la tangente: (0.70 − 0.20) mol/L / (50 − 0) s = 0.0100 mol/(L·s).",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.1"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/velocidad-de-reaccion-medicion",
+     "nombre": "Medición de la velocidad de reacción",
+     "definicion": "Velocidad expresada como cambio de concentración de reactivos o productos por unidad de tiempo, media o instantánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.1",
+     "grado": 10,
+     "indicador": "12.1. Calcula la velocidad media e instantánea de una reacción a partir de una curva experimental y la expresa en función de cualquier reactivo o producto.",
+     "evidencia": "Gráfica masa-tiempo con cálculo de velocidades medias por intervalo y velocidad instantánea por tangente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Media 20–60 s: 0.30/40=0.0075; tangente: 0.50/50=0.0100, y a t=20 s la tangente vale 0.50 mol/L, coherente con [R]. La curva es convexa (0.015 → 0.010 → 0.0075). Distractores derivables (c/t, signo).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.1",
+       "cita": "Calcula la velocidad media e instantánea a partir de una curva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.70 − 0.0100×20 = 0.50 mol/L, coincide con [R] a 20 s"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.1",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo midió la concentración de un reactivo R a lo largo del tiempo. Datos de ejemplo:\n- t = 0 s: [R] = 0.80 mol/L.\n- t = 20 s: [R] = 0.50 mol/L.\n- t = 60 s: [R] = 0.20 mol/L.\n- La recta tangente a la curva en t = 20 s pasa por (0 s, 0.70 mol/L) y (50 s, 0.20 mol/L).\n¿Cuáles son la velocidad media de consumo de R entre 20 s y 60 s y su velocidad instantánea en t = 20 s?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.10/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.10/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.10"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.10",
+      "CON:quimica/constante-de-equilibrio"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo estudia la disociación N₂O₄(g) ⇌ 2 NO₂(g) a temperatura constante. Su tabla ICE (en mol/L):\n- Inicial: [N₂O₄] = 0.200; [NO₂] = 0.\n- Cambio: −x y +2x.\n- Equilibrio: 0.200 − x y 2x.\nEn el equilibrio miden [NO₂] = 0.060 mol/L (dato de ejemplo). Calcula el grado de disociación α del N₂O₄, como fracción decimal y sin porcentaje. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 0.15,
+     "tolerancia": 0.01,
+     "unidad": "adimensional",
+     "retroalimentacion": "Como en el equilibrio [NO₂] = 2x = 0.060 mol/L, el cambio es x = 0.030 mol/L. El grado de disociación es la fracción disociada del reactivo inicial: α = x / [N₂O₄]₀ = 0.030 / 0.200 = 0.15.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.10"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.10",
+     "grado": 10,
+     "indicador": "12.10. Calcula concentraciones en el equilibrio y el grado de disociación con tablas ICE, e interpreta la magnitud de K para predecir la extensión de la reacción.",
+     "evidencia": "Colección de problemas ICE resueltos con cálculo de α y verificación de la aproximación de x pequeña"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.10/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.10/obj-2",
+     "decision": "aprobar",
+     "justificacion": "2x=0.060 → x=0.030; α=0.030/0.200=0.15, tolerancia 0.01 razonable, unidad adimensional correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.10",
+       "cita": "Calcula el grado de disociación con tablas ICE"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "α = x/[N₂O₄]₀ = 0.150"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.10/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.10",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo estudia la disociación N₂O₄(g) ⇌ 2 NO₂(g) a temperatura constante. Su tabla ICE (en mol/L):\n- Inicial: [N₂O₄] = 0.200; [NO₂] = 0.\n- Cambio: −x y +2x.\n- Equilibrio: 0.200 − x y 2x.\nEn el equilibrio miden [NO₂] = 0.060 mol/L (dato de ejemplo). Calcula el grado de disociación α del N₂O₄, como fracción decimal y sin porcentaje. Escribe solo el número."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.10/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.10/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.10"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.10",
+      "CON:quimica/constante-de-equilibrio"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Para una reacción HA(ac) ⇌ H⁺(ac) + A⁻(ac) con concentración inicial [HA]₀ = 0.10 mol/L, explica en un párrafo de 4 a 6 oraciones cómo cambia la expresión algebraica de Kc = x² / (0.10 − x) al aplicar la aproximación de x pequeña, por qué esta aproximación es válida cuando Kc = 1.0 × 10⁻⁵ (según el criterio del 5 % del grado de disociación) y por qué falla si Kc = 1.0 × 10⁻¹.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Al aplicar la aproximación de x pequeña se asume que 0.10 − x ≈ 0.10, por lo que la expresión se simplifica a Kc ≈ x² / 0.10. Cuando Kc = 1.0 × 10⁻⁵, al despejar resulta x ≈ 1.0 × 10⁻³ mol/L, que equivale a un grado de disociación α = 1.0 % (menor que el límite del 5 %), así que restar x apenas cambia a 0.10. En cambio, si Kc = 1.0 × 10⁻¹ la disociación es grande (α supera por mucho el 5 %), de modo que 0.10 − x es muy distinto de 0.10 y hay que usar la ecuación cuadrática.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra o escribe la simplificación en el denominador de la tabla ICE (0.10 − x ≈ 0.10, quedando Kc ≈ x² / 0.10).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la validez de la aproximación en Kc = 1.0 × 10⁻⁵ con un grado de disociación pequeño (menor al 5 % de la concentración inicial).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que con Kc = 1.0 × 10⁻¹ la aproximación falla porque x ya no es despreciable frente a 0.10 mol/L y se requiere resolver la ecuación cuadrática.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde la magnitud de Kc con la rapidez de la reacción en vez de relacionarla con el cambio x en el equilibrio.",
+        "ejemplo": "Con Kc = 10⁻⁵ se puede despreciar x porque la reacción es tan lenta que casi no avanza en el tiempo del experimento.",
+        "dificultad": "DIF:quimica/constante-de-equilibrio/3"
+       },
+       {
+        "descripcion": "Desprecia la x también en el numerador o iguala concentraciones de reactivos y productos en el equilibrio.",
+        "ejemplo": "Como x es pequeña se quita de toda la fórmula y en el equilibrio queda la misma cantidad de HA y de iones.",
+        "dificultad": "DIF:quimica/constante-de-equilibrio/4"
+       }
+      ]
+     },
+     "retroalimentacion": "La aproximación 0.10 − x ≈ 0.10 simplifica el denominador cuando x es menor que el 5 % de la concentración inicial (como ocurre con Kc = 1.0 × 10⁻⁵, donde x ≈ 0.0010 mol/L y α ≈ 1 %). Si Kc = 1.0 × 10⁻¹, la fracción disociada supera el 5 % y debe resolverse la ecuación cuadrática completa.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.10"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.10",
+     "grado": 10,
+     "indicador": "12.10. Calcula concentraciones en el equilibrio y el grado de disociación con tablas ICE, e interpreta la magnitud de K para predecir la extensión de la reacción.",
+     "evidencia": "Colección de problemas ICE resueltos con cálculo de α y verificación de la aproximación de x pequeña"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.10/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.10/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Con Kc=1.0×10⁻⁵: x≈1.0×10⁻³ mol/L, α=1 %<5 %. Con Kc=0.10 la cuadrática da x≈0.062 (α≈62 %): la aproximación falla. Rúbrica correcta y los errores corresponden a dificultades registradas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.10",
+       "cita": "Calcula concentraciones con tablas ICE"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "x² + 0.10x − 0.010 = 0 → x = 0.062 mol/L"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.10/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.10",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Para una reacción HA(ac) ⇌ H⁺(ac) + A⁻(ac) con concentración inicial [HA]₀ = 0.10 mol/L, explica en un párrafo de 4 a 6 oraciones cómo cambia la expresión algebraica de Kc = x² / (0.10 − x) al aplicar la aproximación de x pequeña, por qué esta aproximación es válida cuando Kc = 1.0 × 10⁻⁵ (según el criterio del 5 % del grado de disociación) y por qué falla si Kc = 1.0 × 10⁻¹."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.11/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.11/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.11"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.11",
+      "CON:quimica/constante-de-equilibrio"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un equipo estudia la isomerización A(ac) ⇌ B(ac), con Kc = 4.00 a 25 °C. Datos de ejemplo, sin cambio de volumen ni de temperatura:\n- Equilibrio inicial: [A] = 0.20 mol/L; [B] = 0.80 mol/L.\n- Justo después de agregar reactivo A: [A] = 0.70 mol/L; [B] = 0.80 mol/L.\n¿Cuál será la nueva concentración de B cuando el sistema recupere el equilibrio? Escribe solo el número, en mol/L.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 1.2,
+     "tolerancia": 0.02,
+     "unidad": "mol/L",
+     "retroalimentacion": "Tras agregar A, Qc = 0.80 / 0.70 = 1.14 < Kc, por lo que la reacción avanza hacia B. Al plantear (0.80 + x) / (0.70 − x) = 4.00 se obtiene 0.80 + x = 2.80 − 4.00x, de donde 5.00x = 2.00 y x = 0.40 mol/L. La nueva concentración en equilibrio es [B] = 0.80 + 0.40 = 1.20 mol/L.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.11"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/constante-de-equilibrio",
+     "nombre": "Constante de equilibrio",
+     "definicion": "K, por la ley de acción de masas, indica la posición del equilibrio; comparada con Q predice el sentido del cambio.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.11",
+     "grado": 10,
+     "indicador": "12.11. Predice el sentido de desplazamiento de un sistema perturbado comparando Q con K y calcula la nueva composición de equilibrio.",
+     "evidencia": "Informe experimental con cálculo de Q antes y después de la perturbación y registro fotográfico de colores"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.11/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.11/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Qc=0.80/0.70=1.14<4.00; (0.80+x)/(0.70−x)=4.00 → x=0.40; [B]=1.20 y [A]=0.30, que da 4.00. Valor, tolerancia y unidad correctos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.11",
+       "cita": "Calcula la nueva composición de equilibrio"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "1.20/0.30 = 4.00"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.11/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.11",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un equipo estudia la isomerización A(ac) ⇌ B(ac), con Kc = 4.00 a 25 °C. Datos de ejemplo, sin cambio de volumen ni de temperatura:\n- Equilibrio inicial: [A] = 0.20 mol/L; [B] = 0.80 mol/L.\n- Justo después de agregar reactivo A: [A] = 0.70 mol/L; [B] = 0.80 mol/L.\n¿Cuál será la nueva concentración de B cuando el sistema recupere el equilibrio? Escribe solo el número, en mol/L."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.4",
+      "CON:quimica/teoria-de-colisiones"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En un recipiente a 298 K ocurren miles de millones de colisiones por segundo entre moléculas de NO₂(g) y CO(g), pero la formación de NO(g) y CO₂(g) es muy lenta. Según su diagrama de energía potencial, la barrera de energía de activación es alta. ¿Por qué solo una fracción mínima de los choques produce reacción?",
+     "opciones": {
+      "A": "Porque cualquier choque rompe los enlaces de los reactivos, pero los átomos sueltos vuelven a unirse como estaban.",
+      "B": "Porque a esa temperatura la mayoría de los choques ocurre con la orientación geométrica exacta, sin barrera energética.",
+      "C": "Porque solo reaccionan las moléculas que chocan con energía cinética igual o mayor a la de activación y orientación adecuada.",
+      "D": "Porque al subir la energía potencial se reduce el tamaño de las moléculas y casi no logran chocar entre sí."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/teoria-de-colisiones/1",
+      "B": "DIF:quimica/teoria-de-colisiones/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Para superar la barrera del complejo activado, las moléculas deben colisionar con energía cinética suficiente (igual o superior a la energía de activación) y con la orientación espacial que permita romper y formar los enlaces correctos.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.4"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/teoria-de-colisiones",
+     "nombre": "Teoría de colisiones",
+     "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.4",
+     "grado": 10,
+     "indicador": "12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "evidencia": "Diagrama de energía potencial rotulado y reporte de la simulación con variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.4/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Clave correcta: energía ≥ Ea y orientación adecuada. NO₂ + CO tiene una Ea alta y es lenta a 298 K. Los distractores corresponden a ideas previas reales (todo choque reacciona; solo importa la energía).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.4",
+       "cita": "Explica por qué solo una fracción de los choques produce reacción"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Dos condiciones: energía suficiente y orientación"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.4/obj-1",
+     "decision": "corregir",
+     "justificacion": "La opción que representa «todo choque reacciona» se contradecía sola (rompe enlaces, pero las moléculas rebotan antes de tocarse) y ningún estudiante la elegiría. La reescribo para que sea plausible y siga representando esa idea previa. La clave y la ciencia no cambian.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.4",
+       "cita": "distractor que se contradice a sí mismo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "distractores plausibles"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "Porque cualquier choque rompe los enlaces de los reactivos, pero los átomos sueltos vuelven a unirse como estaban.",
+       "B": "Porque a esa temperatura la mayoría de los choques ocurre con la orientación geométrica exacta, sin barrera energética.",
+       "C": "Porque solo reaccionan las moléculas que chocan con energía cinética igual o mayor a la de activación y orientación adecuada.",
+       "D": "Porque al subir la energía potencial se reduce el tamaño de las moléculas y casi no logran chocar entre sí."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.4",
+      "CON:quimica/teoria-de-colisiones"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo usa un modelo de colisiones para A + BC → AB + C. Diagrama de energía potencial: reactivos, 20 kJ/mol; cima del complejo activado, 65 kJ/mol; productos, 35 kJ/mol.\nCada prueba son 50 lanzamientos (datos de ejemplo):\n- Prueba 1: energía inicial total 45 kJ/mol; A choca contra el extremo B → 0 reacciones.\n- Prueba 2: 75 kJ/mol; A choca contra el extremo C → 0 reacciones.\n- Prueba 3: 75 kJ/mol; A choca contra el extremo B, con pequeñas desviaciones de ángulo → 38 reacciones.\n¿Qué concluyes al relacionar las pruebas con el diagrama?",
+     "opciones": {
+      "A": "La energía de activación es de 65 kJ/mol y basta con superarla en cualquier ángulo para formar productos.",
+      "B": "La energía de activación es de 45 kJ/mol y además de superarla se requiere que A choque alineado con B.",
+      "C": "La energía de activación es de 15 kJ/mol y la prueba 1 falla porque la entalpía de los productos es mayor.",
+      "D": "La energía de activación es de 45 kJ/mol y al elevar la energía inicial a 75 kJ/mol disminuye esa barrera."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/teoria-de-colisiones/2",
+      "C": "DIF:quimica/teoria-de-colisiones/3",
+      "D": "DIF:quimica/teoria-de-colisiones/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La energía de activación es la diferencia entre el complejo activado y los reactivos (65 kJ/mol − 20 kJ/mol = 45 kJ/mol). En la prueba 1 la energía inicial total es de 45 kJ/mol (solo 25 kJ/mol cinéticos sobre los 20 kJ/mol de los reactivos), y en la prueba 2 se supera la cima (65 kJ/mol) pero falla la orientación.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.4"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/teoria-de-colisiones",
+     "nombre": "Teoría de colisiones",
+     "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.4",
+     "grado": 10,
+     "indicador": "12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "evidencia": "Diagrama de energía potencial rotulado y reporte de la simulación con variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.4/obj-2",
+     "decision": "corregir",
+     "justificacion": "Física correcta: Ea=65−20=45 kJ/mol; clave B. Pero atribuye al simulador PhET valores en kJ/mol y 50 colisiones por prueba como si fueran funciones suyas, y llama «de lado» al choque A–C, que no es lateral. Se presenta como modelo de ejemplo y se precisa la dirección del choque.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.4",
+       "cita": "Interpreta un diagrama de energía potencial y una simulación"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El simulador muestra la energía en un gráfico; los kJ/mol son datos del ejemplo"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo usa un modelo de colisiones (como la pestaña de un solo choque del simulador PhET «Reacciones y velocidades») para la reacción A + BC → AB + C. En el modelo, la energía potencial de los reactivos es 20 kJ/mol, la de la cima del complejo activado es 65 kJ/mol y la de los productos es 35 kJ/mol. En tres pruebas repiten 50 lanzamientos controlando la energía inicial total y la dirección del choque:\n- Prueba 1: 45 kJ/mol, A choca contra el extremo B → 0 reacciones.\n- Prueba 2: 75 kJ/mol, A choca contra el extremo C → 0 reacciones.\n- Prueba 3: 75 kJ/mol, A choca contra el extremo B (con pequeñas desviaciones de ángulo) → 38 reacciones.\n¿Qué concluyes al relacionar los datos de las pruebas con el diagrama de energía?"
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.4/obj-2",
+     "decision": "corregir",
+     "justificacion": "Superaba el límite de 100 palabras (139). Paso los datos a lista y quito la mención a PhET: la regla de simuladores pide no atribuirle funciones concretas (lanzamientos, kJ/mol) y el modelo ya se presenta como datos de ejemplo. Energías, pruebas y clave sin cambio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.4",
+       "cita": "enunciado de 139 palabras; palabras_max = 100"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "simulador: describir la tarea en términos generales"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo usa un modelo de colisiones para A + BC → AB + C. Diagrama de energía potencial: reactivos, 20 kJ/mol; cima del complejo activado, 65 kJ/mol; productos, 35 kJ/mol.\nCada prueba son 50 lanzamientos (datos de ejemplo):\n- Prueba 1: energía inicial total 45 kJ/mol; A choca contra el extremo B → 0 reacciones.\n- Prueba 2: 75 kJ/mol; A choca contra el extremo C → 0 reacciones.\n- Prueba 3: 75 kJ/mol; A choca contra el extremo B, con pequeñas desviaciones de ángulo → 38 reacciones.\n¿Qué concluyes al relacionar las pruebas con el diagrama?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U12-12.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U12-12.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U12-12.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U12-12.8",
+      "CON:quimica/equilibrio-dinamico"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo modela la reacción elemental R(ac) ⇌ P(ac), con vd = kd[R] y vi = ki[P]. Datos de ejemplo:\n- t = 0 s: vd = 0.042 mol/(L·s); vi = 0.000 mol/(L·s); [R] = 0.40 mol/L; [P] = 0.00 mol/L.\n- t = 20 s: vd = 0.014 mol/(L·s); vi = 0.012 mol/(L·s).\n- t = 40 s y t = 60 s: vd = 0.013 mol/(L·s); vi = 0.013 mol/(L·s); [R] = 0.12 mol/L; [P] = 0.28 mol/L.\n¿En qué instante se alcanza el equilibrio y cuánto vale Kc = kd/ki?",
+     "opciones": {
+      "A": "A los 20 s, porque ambas reacciones ya ocurren, y Kc vale 1.17.",
+      "B": "A los 40 s, porque se igualan vd y vi, y Kc vale 1.00.",
+      "C": "A los 40 s, porque se igualan vd y vi, y Kc vale 2.33.",
+      "D": "En ningún instante, porque vd y vi no llegan a cero, y Kc vale 0.43."
+     },
+     "correcta": "C",
+     "distractores": {
+      "D": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Dentro de la precisión de los datos, el equilibrio se alcanza hacia los 40 s, cuando las velocidades directa e inversa se igualan en 0.013 mol/(L·s) y las concentraciones dejan de cambiar. Al igualar kd[R] = ki[P] se deduce Kc = kd/ki = [P]/[R] = 0.28 / 0.12 = 2.33.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U12-12.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U12-12.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-dinamico",
+     "nombre": "Equilibrio químico dinámico",
+     "definicion": "En sistemas cerrados, cambios reversibles alcanzan un estado con velocidades directa e inversa iguales y concentraciones constantes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.8",
+     "grado": 10,
+     "indicador": "12.8. Deduce la expresión de Kc a partir de la igualdad de las velocidades directa e inversa en reacciones elementales y la relaciona con la ley de acción de masas.",
+     "evidencia": "Gráfica del modelo de probetas y deducción escrita de Kc a partir de las leyes de velocidad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U12-12.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.8/obj-2",
+     "decision": "corregir",
+     "justificacion": "Los datos no cierran: con vd(0)=0.080 y [R]=0.40, kd=0.20 s⁻¹ y ki=0.086 s⁻¹, el sistema llegaría al equilibrio en pocos segundos y a 20 s vi sería 0.019, no 0.022. Se recalculan con kd=0.105 s⁻¹ y ki=0.045 s⁻¹ (cinética de primer orden) y se ajusta A. Kc=2.33 sigue igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.8",
+       "cita": "Deduce Kc de la igualdad de velocidades en reacciones elementales"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "[R](t) = 0.12 + 0.28·e^(−0.15 t): a 20 s, [R] = 0.134 → vd = 0.014, vi = 0.012; a 40 s, vd ≈ vi ≈ 0.013"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo modela la reacción elemental R(ac) ⇌ P(ac) (con vd = kd[R] y vi = ki[P]). Sus datos de ejemplo son: en t = 0 s, vd = 0.042 mol/(L·s), vi = 0.000 mol/(L·s), [R] = 0.40 mol/L y [P] = 0.00 mol/L; en t = 20 s, vd = 0.014 mol/(L·s) y vi = 0.012 mol/(L·s); en t = 40 s y t = 60 s, vd = 0.013 mol/(L·s), vi = 0.013 mol/(L·s), [R] = 0.12 mol/L y [P] = 0.28 mol/L. ¿En qué instante se alcanza el equilibrio y cuánto vale Kc = kd/ki?",
+      "opciones": {
+       "A": "A los 20 s, porque ambas reacciones ya ocurren, y Kc vale 1.17.",
+       "B": "A los 40 s, porque se igualan vd y vi, y Kc vale 1.00.",
+       "C": "A los 40 s, porque se igualan vd y vi, y Kc vale 2.33.",
+       "D": "En ningún instante, porque vd y vi no llegan a cero, y Kc vale 0.43."
+      },
+      "retroalimentacion": "Dentro de la precisión de los datos, el equilibrio se alcanza hacia los 40 s, cuando las velocidades directa e inversa se igualan en 0.013 mol/(L·s) y las concentraciones dejan de cambiar. Al igualar kd[R] = ki[P] se deduce Kc = kd/ki = [P]/[R] = 0.28 / 0.12 = 2.33."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U12-12.8/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U12-12.8",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo modela la reacción elemental R(ac) ⇌ P(ac), con vd = kd[R] y vi = ki[P]. Datos de ejemplo:\n- t = 0 s: vd = 0.042 mol/(L·s); vi = 0.000 mol/(L·s); [R] = 0.40 mol/L; [P] = 0.00 mol/L.\n- t = 20 s: vd = 0.014 mol/(L·s); vi = 0.012 mol/(L·s).\n- t = 40 s y t = 60 s: vd = 0.013 mol/(L·s); vi = 0.013 mol/(L·s); [R] = 0.12 mol/L; [P] = 0.28 mol/L.\n¿En qué instante se alcanza el equilibrio y cuánto vale Kc = kd/ki?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.1",
+      "CON:quimica/disoluciones-coloides-y-suspensiones"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Cuatro muestras recién agitadas (datos de ejemplo):\n- Muestra 1: se asienta en 30 min y deja residuo en el filtro; el haz de una linterna se ve, pero la luz casi no la atraviesa.\n- Muestra 2: no se asienta, no deja residuo y el haz no se ve.\n- Muestra 3: no se asienta, no deja residuo, sale del filtro igual de turbia y el haz se ve.\n- Muestra 4: no se asienta, no deja residuo, se ve casi transparente y el haz se ve.\n¿Qué clasificación es coherente con los datos?",
+     "opciones": {
+      "A": "1 suspensión, 2 disolución, 3 coloide y 4 disolución",
+      "B": "1 suspensión, 2 disolución, 3 suspensión y 4 disolución",
+      "C": "1 suspensión, 2 disolución, 3 coloide y 4 coloide",
+      "D": "1 coloide, 2 disolución, 3 suspensión y 4 coloide"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/disoluciones-coloides-y-suspensiones/1",
+      "B": "DIF:quimica/disoluciones-coloides-y-suspensiones/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Lo que distingue a un coloide de una disolución es el efecto Tyndall: las muestras 3 y 4 no se asientan ni dejan residuo, como una disolución, pero desvían la luz, así que son coloides, aunque la 4 parezca transparente. La muestra 1 se asienta y el filtro la retiene: es una suspensión. La 2 no muestra ninguna de esas señales: es una disolución. El aspecto turbio o claro no basta para clasificar.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.1"
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/disoluciones-coloides-y-suspensiones",
+     "nombre": "Disoluciones, coloides y suspensiones",
+     "definicion": "Dispersiones que se distinguen por el tamaño de partícula dispersa: las disoluciones son homogéneas; coloides muestran efecto Tyndall; suspensiones sedimentan.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.1",
+     "grado": 10,
+     "indicador": "8.1. Clasifica dispersiones en disoluciones, coloides y suspensiones según el tamaño de partícula y justifica sus propiedades observables.",
+     "evidencia": "Cuadro de clasificación de seis dispersiones con resultados de sedimentación y filtración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Clasificación coherente: 1 suspensión (se asienta, la retiene el filtro), 2 disolución, 3 y 4 coloides (Tyndall, sin sedimentar ni quedar en el filtro). Los distractores clasifican por el aspecto, que es una idea previa registrada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.1",
+       "cita": "Clasifica dispersiones y justifica sus propiedades observables"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Muestra 4: casi transparente pero con Tyndall → coloide"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.1",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Cuatro muestras recién agitadas (datos de ejemplo):\n- Muestra 1: se asienta en 30 min y deja residuo en el filtro; el haz de una linterna se ve, pero la luz casi no la atraviesa.\n- Muestra 2: no se asienta, no deja residuo y el haz no se ve.\n- Muestra 3: no se asienta, no deja residuo, sale del filtro igual de turbia y el haz se ve.\n- Muestra 4: no se asienta, no deja residuo, se ve casi transparente y el haz se ve.\n¿Qué clasificación es coherente con los datos?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.1",
+      "CON:quimica/disoluciones-coloides-y-suspensiones"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "El agua turbia del río Lempa en invierno se aclara bastante al reposar, mientras que el agua con sal nunca se separa sola. Aun así, el agua del río puede seguir algo turbia después de días de reposo. En un párrafo de 4 a 6 oraciones explica, con el tamaño de las partículas: por qué la tierra se asienta; por qué la sal disuelta no se asienta ni se separa con un filtro; y qué tipo de dispersión forman las partículas que dejan el agua turbia por días y cómo lo comprobarías con una linterna.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La arena y el limo son partículas grandes que la gravedad lleva al fondo: forman una suspensión. La sal está como iones de menos de 1 nm, repartidos por el movimiento de las moléculas de agua, que no se asientan ni los retiene un filtro. La arcilla más fina tiene tamaño coloidal: no se asienta en días ni la retiene el papel filtro, y el haz de una linterna se ve al atravesar esa agua (efecto Tyndall).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "La tierra se asienta porque sus granos son grandes y pesados, y la gravedad los lleva al fondo: es una suspensión. La sal está disuelta como iones mucho menores que 1 nm, repartidos entre las moléculas de agua, por eso no se asientan ni los detiene un filtro. Lo que queda turbio son partículas finas de arcilla de tamaño coloidal: forman un coloide, y si lo ilumino con una linterna en la oscuridad se ve el camino del haz.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona el asentamiento de la tierra con partículas grandes (suspensión) que la gravedad lleva al fondo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que la sal está disuelta como iones o partículas muy pequeñas (menos de 1 nm) repartidas en el agua, que no se asientan y que el filtro no retiene.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Identifica la turbidez que persiste como un coloide (partículas finas, como arcilla, de tamaño intermedio) y dice que se comprueba porque el haz de la linterna se ve en el agua (efecto Tyndall).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que en la potabilización se agregan sustancias que agrupan esas partículas finas para que se asienten.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que la sal se separaría esperando más tiempo o con un filtro más fino.",
+        "ejemplo": "Si dejamos el agua salada varios días o usamos un filtro más fino, la sal también se queda abajo.",
+        "dificultad": "DIF:quimica/separacion-de-mezclas/1"
+       },
+       {
+        "descripcion": "Clasifica por el aspecto: llama disolución a lo que sigue turbio pero no se asienta.",
+        "ejemplo": "Si después de días sigue turbia y no se asienta, entonces la tierra ya se disolvió en el agua.",
+        "dificultad": "DIF:quimica/disoluciones-coloides-y-suspensiones/1"
+       },
+       {
+        "descripcion": "Cree que el papel filtro retiene la turbidez coloidal.",
+        "ejemplo": "Lo que queda turbio se quita pasándolo por un filtro de papel, y así se comprueba que es suspensión.",
+        "dificultad": "DIF:quimica/disoluciones-coloides-y-suspensiones/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/disoluciones-coloides-y-suspensiones",
+     "nombre": "Disoluciones, coloides y suspensiones",
+     "definicion": "Dispersiones que se distinguen por el tamaño de partícula dispersa: las disoluciones son homogéneas; coloides muestran efecto Tyndall; suspensiones sedimentan.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.1",
+     "grado": 10,
+     "indicador": "8.1. Clasifica dispersiones en disoluciones, coloides y suspensiones según el tamaño de partícula y justifica sus propiedades observables.",
+     "evidencia": "Cuadro de clasificación de seis dispersiones con resultados de sedimentación y filtración"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.1/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Arena y limo forman una suspensión; los iones de la sal miden menos de 1 nm; la arcilla fina es coloidal y muestra Tyndall. Ciencia correcta y contexto local pertinente; los errores corresponden a dificultades registradas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.1",
+       "cita": "Clasifica dispersiones según el tamaño de partícula"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La arcilla fina (<1 µm) permanece dispersa días y pasa el papel filtro"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.1/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.1",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "El agua turbia del río Lempa en invierno se aclara bastante al reposar, mientras que el agua con sal nunca se separa sola. Aun así, el agua del río puede seguir algo turbia después de días de reposo. En un párrafo de 4 a 6 oraciones explica, con el tamaño de las partículas: por qué la tierra se asienta; por qué la sal disuelta no se asienta ni se separa con un filtro; y qué tipo de dispersión forman las partículas que dejan el agua turbia por días y cómo lo comprobarías con una linterna."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.4",
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Protocolo de un equipo (datos de ejemplo). Disolución madre: NaCl 0.80 mol/L.\n- Disolución 1: tomaron 25.0 mL de la madre y la llevaron hasta 100.0 mL en un matraz aforado. Rótulo: «0.20 mol/L».\n- Disolución 2: tomaron 10.0 mL de la disolución 1 y la llevaron hasta 50.0 mL. Rótulo: «0.040 mol/L».\n- Disolución 3: tomaron 5.0 mL de la disolución 2 y la llevaron hasta 50.0 mL. Rótulo: «0.0080 mol/L».\n¿Qué rótulo está mal y por qué?",
+     "opciones": {
+      "A": "El de la disolución 1: debió decir 0.80 mol/L, porque al diluir se conserva la cantidad de sal que se tomó de la madre.",
+      "B": "El de la disolución 3: debió decir 0.0040 mol/L, porque al llevar 5.0 mL hasta 50.0 mL la concentración baja diez veces.",
+      "C": "El de la disolución 2: debió decir 0.033 mol/L, porque a los 10.0 mL se les agregaron 50.0 mL y en total son 60.0 mL.",
+      "D": "El de la disolución 1: debió decir 3.2 mol/L, porque en la fórmula se multiplica 0.80 por 100.0 y se divide entre 25.0."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cada dilución conserva los moles que se tomaron, pero los reparte en el volumen final: disolución 1, 0.80 × 25.0 / 100.0 = 0.20 mol/L; disolución 2, 0.20 × 10.0 / 50.0 = 0.040 mol/L; disolución 3, 0.040 × 5.0 / 50.0 = 0.0040 mol/L. «Llevar hasta 50.0 mL» significa que el volumen total es 50.0 mL, no que se agregan 50.0 mL de agua. Diluir siempre baja la concentración.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.4"
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.4",
+     "grado": 10,
+     "indicador": "8.4. Prepara disoluciones de concentración conocida pesando un soluto sólido y diluyendo una disolución madre con material volumétrico.",
+     "evidencia": "Disoluciones rotuladas con su concentración y protocolo escrito con cálculos y análisis de errores"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.4/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: D1 = 0.20, D2 = 0.040, D3 = 0.0040 mol/L; el rótulo erróneo es el de D3 (clave B). C (10/60) y D (fórmula invertida) son errores plausibles y falsos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.4",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.040 × 5.0/50.0 = 0.0040 mol/L, no 0.0080."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.4/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.4",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Protocolo de un equipo (datos de ejemplo). Disolución madre: NaCl 0.80 mol/L.\n- Disolución 1: tomaron 25.0 mL de la madre y la llevaron hasta 100.0 mL en un matraz aforado. Rótulo: «0.20 mol/L».\n- Disolución 2: tomaron 10.0 mL de la disolución 1 y la llevaron hasta 50.0 mL. Rótulo: «0.040 mol/L».\n- Disolución 3: tomaron 5.0 mL de la disolución 2 y la llevaron hasta 50.0 mL. Rótulo: «0.0080 mol/L».\n¿Qué rótulo está mal y por qué?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.4",
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Para preparar 100 mL de disolución 0.10 mol/L a partir de una madre de 1.0 mol/L, Ernesto mide 10.0 mL de la madre con una pipeta, los pone en un vaso y les agrega 100 mL de agua medidos con una probeta. En un párrafo de 4 a 6 oraciones: di si la concentración que obtiene es mayor, menor o igual que 0.10 mol/L y estima su valor; explica por qué; y describe cómo debió hacerlo con un matraz aforado.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Su disolución queda más diluida, cerca de 0.091 mol/L: los 0.010 mol que tomó de la madre quedan en unos 110 mL y no en 100 mL. El procedimiento correcto es poner los 10.0 mL de madre en un matraz aforado de 100 mL, agregar agua hasta cerca de la marca, completar gota a gota hasta que el menisco toque la marca (a la altura de los ojos) y tapar e invertir para mezclar.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Le queda menor, cerca de 0.091 mol/L, porque los 0.010 mol de sal que tomó de la madre quedan repartidos en unos 110 mL y no en 100 mL. Debió poner los 10.0 mL de madre en un matraz aforado de 100 mL, agregar agua hasta cerca de la marca, completar gota a gota hasta que el menisco toque la marca y luego tapar e invertir el matraz para mezclar.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que la concentración queda menor que 0.10 mol/L y la estima cerca de 0.09 mol/L (se acepta de 0.09 a 0.092 mol/L).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Lo explica porque la misma cantidad de soluto (los moles tomados de la madre) queda en un volumen total mayor que 100 mL, de unos 110 mL.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Describe el procedimiento correcto: completar con agua hasta la marca de un matraz aforado de 100 mL (no agregar 100 mL de agua) y mezclar.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona un detalle de buena práctica: completar gota a gota, leer el menisco a la altura de los ojos o invertir el matraz tapado.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que la concentración no cambia porque la cantidad de soluto es la misma.",
+        "ejemplo": "Queda igual, 0.10 mol/L, porque los 10 mL de madre tienen la misma sal y no se perdió nada.",
+        "dificultad": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+       },
+       {
+        "descripcion": "Usa los 100 mL de agua agregada como si fueran el volumen de la disolución.",
+        "ejemplo": "Está bien, porque 1.0 × 10 = 0.10 × 100, así que con 100 mL de agua queda justo en 0.10 mol/L.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Propone corregir con material que no es volumétrico.",
+        "ejemplo": "Debió medir el agua en el vaso de precipitado, que tiene las marcas más claras que la probeta.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.4",
+     "grado": 10,
+     "indicador": "8.4. Prepara disoluciones de concentración conocida pesando un soluto sólido y diluyendo una disolución madre con material volumétrico.",
+     "evidencia": "Disoluciones rotuladas con su concentración y protocolo escrito con cálculos y análisis de errores"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.4/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: 0.010 mol en ~110 mL = 0.091 mol/L (volúmenes casi aditivos en dilución acuosa). Procedimiento con matraz aforado correcto; rúbrica coherente.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.4",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.0100 mol / 0.110 L = 0.0909 mol/L."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.4/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.4",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Para preparar 100 mL de disolución 0.10 mol/L a partir de una madre de 1.0 mol/L, Ernesto mide 10.0 mL de la madre con una pipeta, los pone en un vaso y les agrega 100 mL de agua medidos con una probeta. En un párrafo de 4 a 6 oraciones: di si la concentración que obtiene es mayor, menor o igual que 0.10 mol/L y estima su valor; explica por qué; y describe cómo debió hacerlo con un matraz aforado."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.5",
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un laboratorio midió el arsénico disuelto en el agua de tres pozos de una comunidad. Datos de ejemplo:\n- Pozo 1: 0.8 × 10⁻⁷ mol/L.\n- Pozo 2: 2.0 × 10⁻⁷ mol/L.\n- Pozo 3: 1.2 × 10⁻⁷ mol/L.\n- Masa molar del arsénico (valor aproximado de la tabla de referencia): 74.9 g/mol.\nCalcula la concentración de arsénico del pozo que tiene más, en microgramos por litro (µg/L). Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 15,
+     "tolerancia": 0.5,
+     "unidad": "µg/L",
+     "retroalimentacion": "El pozo 2 tiene 2.0 × 10⁻⁷ mol/L × 74.9 g/mol = 1.5 × 10⁻⁵ g/L, es decir, 15 µg/L (1 g = 10⁶ µg). Los pozos 1 y 3 dan unos 6 y 9 µg/L. Para decidir si un pozo cumple la norma salvadoreña de agua potable, compara con el valor máximo de arsénico de la tabla de referencia (aproximado: 10 µg/L).",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.5"
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.5",
+     "grado": 10,
+     "indicador": "8.5. Resuelve problemas que combinan conversión de unidades de concentración, mezcla de disoluciones y estequiometría en disolución.",
+     "evidencia": "Informe de problemas resueltos con análisis de una muestra de agua comparada con la norma nacional"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: 2.0×10⁻⁷ × 74.9 = 1.50×10⁻⁵ g/L = 15 µg/L; pozos 1 y 3 dan 6.0 y 9.0 µg/L. El límite remite a la tabla de referencia como aproximado (10 µg/L, coherente con la norma de agua potable).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.5",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "mol/L × g/mol × 10⁶ µg/g = µg/L."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.5/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.5",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un laboratorio midió el arsénico disuelto en el agua de tres pozos de una comunidad. Datos de ejemplo:\n- Pozo 1: 0.8 × 10⁻⁷ mol/L.\n- Pozo 2: 2.0 × 10⁻⁷ mol/L.\n- Pozo 3: 1.2 × 10⁻⁷ mol/L.\n- Masa molar del arsénico (valor aproximado de la tabla de referencia): 74.9 g/mol.\nCalcula la concentración de arsénico del pozo que tiene más, en microgramos por litro (µg/L). Escribe solo el número."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.5",
+      "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una bolsa de suero glucosado de 500 mL dice «glucosa 5.0 % m/v». Masa molar de la glucosa, valor aproximado de la tabla de referencia: 180 g/mol. En un párrafo de 4 a 6 oraciones: calcula la molaridad de la glucosa en el suero mostrando la conversión; di si una muestra de 10 mL tomada de la bolsa tiene mayor, menor o igual molaridad que la bolsa entera; y explica por qué.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "5.0 % m/v son 5.0 g en 100 mL, o 50 g/L, y 50 g/L ÷ 180 g/mol ≈ 0.28 mol/L. La muestra de 10 mL tiene la misma molaridad: tiene menos glucosa (unos 0.0028 mol), pero también menos volumen, en la misma proporción. Por eso la concentración es una magnitud intensiva.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "5.0 % m/v son 5.0 g de glucosa en 100 mL, o sea 50 g/L; 50 g/L ÷ 180 g/mol ≈ 0.28 mol/L. La muestra de 10 mL tiene la misma molaridad, 0.28 mol/L, porque al tomar menos volumen también se toma menos glucosa en la misma proporción (solo 0.0028 mol), y el cociente moles entre litros no cambia.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula una molaridad de 0.27 a 0.28 mol/L y muestra el paso de % m/v a g/L (o a g en 1 L) y la división entre la masa molar.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que la muestra de 10 mL tiene la misma molaridad que la bolsa entera.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Lo justifica con que la cantidad de glucosa y el volumen disminuyen en la misma proporción, así que su cociente no cambia (o nombra la concentración como magnitud intensiva y explica qué significa).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Calcula los moles de glucosa de la muestra de 10 mL (cerca de 2.8 × 10⁻³ mol).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que la muestra pequeña está menos concentrada porque tiene menos glucosa.",
+        "ejemplo": "La muestra de 10 mL tiene menor molaridad, porque solo trae un poquito de la glucosa de la bolsa.",
+        "dificultad": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+       },
+       {
+        "descripcion": "Toma los moles que hay en 100 mL como si estuvieran en 1 L (no divide entre 0.100 L) y obtiene un valor diez veces menor.",
+        "ejemplo": "5.0 g ÷ 180 g/mol = 0.028 mol en 100 mL, así que la molaridad es 0.028 mol/L.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Toma el porcentaje como si fuera la molaridad.",
+        "ejemplo": "Al 5.0 % la molaridad es 5.0 mol/L, y la muestra tiene lo mismo porque es el mismo suero.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
+     "nombre": "Molaridad y unidades químicas de concentración",
+     "definicion": "Concentración en mol/L, molalidad o fracción molar; usada para preparar y diluir disoluciones conservando los moles de soluto.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.5",
+     "grado": 10,
+     "indicador": "8.5. Resuelve problemas que combinan conversión de unidades de concentración, mezcla de disoluciones y estequiometría en disolución.",
+     "evidencia": "Informe de problemas resueltos con análisis de una muestra de agua comparada con la norma nacional"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.5/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Cálculos correctos (50 g/L ÷ 180 = 0.28 mol/L; 2.8×10⁻³ mol en 10 mL). Pero el segundo error típico se describe como «divide entre 100 mL sin pasar a litros», lo que daría 0.00028, mientras su ejemplo (0.028) muestra no dividir entre el volumen. Se corrige la descripción para que coincida con el ejemplo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.5",
+       "cita": "indicador: conversión de unidades de concentración"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.0278 mol / 0.100 L = 0.278 mol/L; 0.0278 «por litro» = 0.028, diez veces menos"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "5.0 % m/v son 5.0 g de glucosa en 100 mL, o sea 50 g/L; 50 g/L ÷ 180 g/mol ≈ 0.28 mol/L. La muestra de 10 mL tiene la misma molaridad, 0.28 mol/L, porque al tomar menos volumen también se toma menos glucosa en la misma proporción (solo 0.0028 mol), y el cociente moles entre litros no cambia.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Calcula una molaridad de 0.27 a 0.28 mol/L y muestra el paso de % m/v a g/L (o a g en 1 L) y la división entre la masa molar.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Dice que la muestra de 10 mL tiene la misma molaridad que la bolsa entera.",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Lo justifica con que la cantidad de glucosa y el volumen disminuyen en la misma proporción, así que su cociente no cambia (o nombra la concentración como magnitud intensiva y explica qué significa).",
+         "obligatorio": true
+        },
+        {
+         "id": "c4",
+         "descripcion": "Calcula los moles de glucosa de la muestra de 10 mL (cerca de 2.8 × 10⁻³ mol).",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Cree que la muestra pequeña está menos concentrada porque tiene menos glucosa.",
+         "ejemplo": "La muestra de 10 mL tiene menor molaridad, porque solo trae un poquito de la glucosa de la bolsa.",
+         "dificultad": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1"
+        },
+        {
+         "descripcion": "Toma los moles que hay en 100 mL como si estuvieran en 1 L (no divide entre 0.100 L) y obtiene un valor diez veces menor.",
+         "ejemplo": "5.0 g ÷ 180 g/mol = 0.028 mol en 100 mL, así que la molaridad es 0.028 mol/L.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Toma el porcentaje como si fuera la molaridad.",
+         "ejemplo": "Al 5.0 % la molaridad es 5.0 mol/L, y la muestra tiene lo mismo porque es el mismo suero.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.5/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.5",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Una bolsa de suero glucosado de 500 mL dice «glucosa 5.0 % m/v». Masa molar de la glucosa, valor aproximado de la tabla de referencia: 180 g/mol. En un párrafo de 4 a 6 oraciones: calcula la molaridad de la glucosa en el suero mostrando la conversión; di si una muestra de 10 mL tomada de la bolsa tiene mayor, menor o igual molaridad que la bolsa entera; y explica por qué."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.7/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.7",
+      "CON:quimica/solubilidad"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Solubilidad del nitrato de potasio (KNO₃), en gramos por cada 100 g de agua (valores aproximados de la tabla de referencia):\n- a 20 °C: 32 g;\n- a 40 °C: 64 g;\n- a 60 °C: 110 g.\nDaniela prepara a 60 °C una disolución saturada de KNO₃ con 50 g de agua y la enfría hasta 20 °C sin que se evapore agua. ¿Qué masa de KNO₃ cristaliza? Escribe solo el número, en gramos.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 39,
+     "tolerancia": 1,
+     "unidad": "g",
+     "retroalimentacion": "En 50 g de agua caben la mitad de los valores de la tabla: 55 g a 60 °C y 16 g a 20 °C. Al enfriar, lo que ya no cabe se separa como cristales: 55 g − 16 g = 39 g. No cristaliza todo el soluto, sino la diferencia entre las dos solubilidades; la disolución que queda a 20 °C sigue saturada.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.7"
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/solubilidad",
+     "nombre": "Solubilidad y disoluciones saturadas",
+     "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.7",
+     "grado": 10,
+     "indicador": "8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura.",
+     "evidencia": "Curva de solubilidad del KNO₃ con cálculos de cristalización y análisis del oxígeno disuelto en agua"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.7/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Valores de KNO₃ coherentes con tablas (31.6, 63.9, 110 g/100 g). En 50 g de agua: 55 − 16 = 39 g. Tolerancia de 1 g adecuada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.7",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Masa que cristaliza = s(60 °C) − s(20 °C), escaladas a 50 g de agua."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.7/obj-1",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.7",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Solubilidad del nitrato de potasio (KNO₃), en gramos por cada 100 g de agua (valores aproximados de la tabla de referencia):\n- a 20 °C: 32 g;\n- a 40 °C: 64 g;\n- a 60 °C: 110 g.\nDaniela prepara a 60 °C una disolución saturada de KNO₃ con 50 g de agua y la enfría hasta 20 °C sin que se evapore agua. ¿Qué masa de KNO₃ cristaliza? Escribe solo el número, en gramos."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.7/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.7/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.7",
+      "CON:quimica/solubilidad"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Mario deja destapadas dos latas iguales de la misma bebida gaseosa: una recién sacada de la refrigeradora y otra que estuvo al sol. En un párrafo de 4 a 6 oraciones: predice cuál pierde más gas (CO₂) en los primeros minutos; explica por qué con la idea de solubilidad; y di si la solubilidad del azúcar disuelta en la bebida cambia con la temperatura en el mismo sentido que la del gas.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Pierde más gas la lata que estuvo al sol: la solubilidad del CO₂ baja al aumentar la temperatura, así que en la bebida caliente cabe menos gas disuelto y el que sobra escapa. El azúcar se comporta al revés: como la mayoría de los sólidos, su solubilidad aumenta con la temperatura.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.7"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Pierde más gas la lata que estuvo al sol. La solubilidad del CO₂ en agua disminuye cuando sube la temperatura: las moléculas de gas tienen más energía y escapan con más facilidad, así que en la bebida caliente queda menos CO₂ disuelto. Con el azúcar pasa lo contrario: su solubilidad aumenta con la temperatura, como la de la mayoría de los sólidos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Predice que la lata que estuvo al sol (la más caliente) pierde más gas.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que la solubilidad del gas en agua disminuye al aumentar la temperatura (cabe menos CO₂ disuelto o las moléculas escapan con más facilidad).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que la solubilidad del azúcar cambia en sentido contrario: aumenta con la temperatura.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Aclara que la mayoría de los sólidos, no todos, aumentan su solubilidad con la temperatura, o menciona que al abrir la lata baja la presión y también escapa gas.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el calor también aumenta la solubilidad del gas.",
+        "ejemplo": "La lata caliente guarda más gas, porque con calor todo se disuelve mejor, igual que el azúcar.",
+        "dificultad": "DIF:quimica/solubilidad/1"
+       },
+       {
+        "descripcion": "Explica la pérdida de gas por agitación o rapidez y no por cuánto gas cabe disuelto.",
+        "ejemplo": "Pierde más la caliente porque el gas se disuelve más rápido y por eso sale más rápido.",
+        "dificultad": "DIF:quimica/solubilidad/2"
+       },
+       {
+        "descripcion": "Cree que el azúcar se escapa o se evapora como el gas.",
+        "ejemplo": "La caliente pierde más gas y también más azúcar, porque con el calor todo se evapora.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/solubilidad",
+     "nombre": "Solubilidad y disoluciones saturadas",
+     "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.7",
+     "grado": 10,
+     "indicador": "8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura.",
+     "evidencia": "Curva de solubilidad del KNO₃ con cálculos de cristalización y análisis del oxígeno disuelto en agua"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.7/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.7/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: la bebida caliente pierde más CO₂; la sacarosa aumenta su solubilidad con T. El criterio opcional matiza «la mayoría de los sólidos, no todos». Errores típicos bien mapeados (solubilidad/1 y /2).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.7",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "CO₂ y sacarosa varían con T en sentidos opuestos."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.7/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.7",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Mario deja destapadas dos latas iguales de la misma bebida gaseosa: una recién sacada de la refrigeradora y otra que estuvo al sol. En un párrafo de 4 a 6 oraciones: predice cuál pierde más gas (CO₂) en los primeros minutos; explica por qué con la idea de solubilidad; y di si la solubilidad del azúcar disuelta en la bebida cambia con la temperatura en el mismo sentido que la del gas."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.8",
+      "CON:quimica/propiedades-coligativas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo midió temperaturas de congelación en un baño de hielo con sal, siempre con el mismo termómetro. Datos de ejemplo:\n- Agua pura: −0.2 °C.\n- Disolución de NaCl 1.00 mol/kg: −3.6 °C.\n- Disolución de sacarosa 1.00 mol/kg: −2.1 °C.\nCalcula el descenso crioscópico (ΔTc) de la disolución de NaCl, medido respecto del agua pura con ese termómetro, en °C. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 3.4,
+     "tolerancia": 0.1,
+     "unidad": "°C",
+     "retroalimentacion": "ΔTc = −0.2 °C − (−3.6 °C) = 3.4 °C: se mide respecto del agua pura del mismo termómetro, que marca 0.2 °C de menos. Con i = 2 y la constante crioscópica del agua de la tabla de referencia (aproximada: 1.86 °C·kg/mol) se esperarían unos 3.7 °C; el valor medido es algo menor porque los iones se atraen y el factor i real es menor que 2.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-coligativas",
+     "nombre": "Propiedades coligativas",
+     "definicion": "Propiedades que dependen del número de partículas de soluto: descenso de presión de vapor, aumento ebulloscópico, descenso crioscópico y presión osmótica.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.8",
+     "grado": 10,
+     "indicador": "8.8. Calcula el aumento del punto de ebullición, el descenso del punto de congelación y la presión osmótica de disoluciones y explica la ósmosis inversa.",
+     "evidencia": "Informe con cálculos de propiedades coligativas, datos de congelación medidos y esquema de ósmosis inversa"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.8/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: −0.2 − (−3.6) = 3.4 °C; esperado 2 × 1.86 × 1.00 = 3.72 °C; el valor medido es coherente con i real ≈ 1.8 para NaCl 1 mol/kg. Kc remite a la tabla de referencia como aproximada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.8",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ΔTc medido respecto del agua pura del mismo termómetro."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.8/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.8",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo midió temperaturas de congelación en un baño de hielo con sal, siempre con el mismo termómetro. Datos de ejemplo:\n- Agua pura: −0.2 °C.\n- Disolución de NaCl 1.00 mol/kg: −3.6 °C.\n- Disolución de sacarosa 1.00 mol/kg: −2.1 °C.\nCalcula el descenso crioscópico (ΔTc) de la disolución de NaCl, medido respecto del agua pura con ese termómetro, en °C. Escribe solo el número."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U8-8.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U8-8.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U8-8.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U8-8.8",
+      "CON:quimica/propiedades-coligativas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En un municipio costero con poca agua dulce se propone una planta desalinizadora por ósmosis inversa. En un párrafo de 4 a 6 oraciones: explica qué atraviesa la membrana en la ósmosis normal y hacia qué lado se mueve; explica qué hace la ósmosis inversa y por qué necesita aplicar al agua de mar una presión mayor que su presión osmótica; y di qué pasa con la sal.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la ósmosis el agua atraviesa la membrana semipermeable desde el lado diluido hacia el más concentrado. En la ósmosis inversa se empuja el agua de mar con una presión mayor que su presión osmótica, así el agua pasa al revés, hacia el lado del agua dulce. La sal no atraviesa la membrana y queda en una salmuera más concentrada.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U8-8.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En la ósmosis normal, el agua (no la sal) atraviesa la membrana semipermeable desde el lado del agua dulce hacia el agua de mar, que está más concentrada. En la ósmosis inversa se aplica al agua de mar una presión mayor que su presión osmótica, y eso invierte el flujo: el agua pasa del lado salado al lado del agua dulce. La sal queda retenida y sale como una salmuera más concentrada.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que en la ósmosis lo que atraviesa la membrana es el agua (el disolvente) y que va del lado diluido al lado más concentrado.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que en la ósmosis inversa se aplica una presión mayor que la presión osmótica y que por eso el agua pasa en sentido contrario, del agua de mar al lado del agua dulce.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que la sal (los iones) no atraviesa la membrana y queda del lado del agua de mar, cada vez más concentrada.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que la presión necesaria crece con la concentración de partículas (π = i·c·R·T) o que hay que disponer de la salmuera y gastar energía.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que en la ósmosis se mueve la sal y no el agua.",
+        "ejemplo": "En la ósmosis la sal del mar pasa por la membrana hacia el agua dulce, y en la inversa se la regresa con presión.",
+        "dificultad": "DIF:quimica/propiedades-coligativas/3"
+       },
+       {
+        "descripcion": "Describe la membrana como un colador que deja pasar el agua sin necesidad de presión.",
+        "ejemplo": "La membrana tiene huecos muy pequeños y el agua de mar se cuela sola dejando la sal.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Invierte el sentido del flujo de la ósmosis normal.",
+        "ejemplo": "En la ósmosis el agua sale del lado salado hacia el dulce, y la presión solo lo hace más rápido.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U8-8.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-coligativas",
+     "nombre": "Propiedades coligativas",
+     "definicion": "Propiedades que dependen del número de partículas de soluto: descenso de presión de vapor, aumento ebulloscópico, descenso crioscópico y presión osmótica.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.8",
+     "grado": 10,
+     "indicador": "8.8. Calcula el aumento del punto de ebullición, el descenso del punto de congelación y la presión osmótica de disoluciones y explica la ósmosis inversa.",
+     "evidencia": "Informe con cálculos de propiedades coligativas, datos de congelación medidos y esquema de ósmosis inversa"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U8-8.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.8/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: en ósmosis el disolvente pasa al lado concentrado; en la inversa una presión mayor que la osmótica invierte el flujo y la sal queda en la salmuera. Errores típicos reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.8",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "π = i·c·R·T; ósmosis inversa requiere P > π."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U8-8.8/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U8-8.8",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En un municipio costero con poca agua dulce se propone una planta desalinizadora por ósmosis inversa. En un párrafo de 4 a 6 oraciones: explica qué atraviesa la membrana en la ósmosis normal y hacia qué lado se mueve; explica qué hace la ósmosis inversa y por qué necesita aplicar al agua de mar una presión mayor que su presión osmótica; y di qué pasa con la sal."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U9-9.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U9-9.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U9-9.1",
+      "CON:quimica/ecuacion-quimica-y-balanceo"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo hace reaccionar vinagre con 1.0 g de bicarbonato: NaHCO₃(s) + CH₃COOH(ac) → CH₃COONa(ac) + H₂O(l) + CO₂(g). Datos de ejemplo:\n- Sistema 1, botella de plástico tapada: 98.62 g antes y 98.61 g después de reaccionar.\n- Sistema 2, vaso abierto con los mismos reactivos: 97.85 g antes y 97.38 g después.\n¿Qué conclusión apoyan los datos y la ecuación?",
+     "opciones": {
+      "A": "La masa se conserva solo en la botella; en el vaso se destruyen 0.47 g de materia",
+      "B": "En el vaso la masa baja porque hay más moléculas de productos que de reactivos",
+      "C": "La masa se conserva en ambos; en el vaso escapan al aire 0.47 g de CO₂ gaseoso",
+      "D": "En la botella el bicarbonato no llegó a reaccionar; por eso su masa no cambió"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/conservacion-de-la-masa/1",
+      "B": "DIF:quimica/conservacion-de-la-masa/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La masa se conserva en los dos sistemas: en la botella tapada la diferencia de 0.01 g está dentro del error de la balanza. En el vaso abierto faltan 0.47 g porque el producto CO₂(g) es un gas y escapa al aire; sus átomos no desaparecen, solo salen del sistema que se pesa.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U9-9.1"
+     },
+     "origen": "redactor-actividades (G10-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ecuacion-quimica-y-balanceo",
+     "nombre": "Ecuación química y su balanceo",
+     "definicion": "Representación simbólica de una reacción con reactivos, productos, estados y coeficientes que igualan los átomos de cada elemento.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.1",
+     "grado": 10,
+     "indicador": "9.1. Interpreta la información cualitativa y cuantitativa que aporta una ecuación química balanceada, incluidos estados de agregación y condiciones de reacción.",
+     "evidencia": "Ficha con cinco ecuaciones balanceadas anotadas y registro de masas del sistema cerrado y abierto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U9-9.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Datos plausibles: 1.0 g de NaHCO₃ (0.0119 mol) da como máximo 0.52 g de CO₂; perder 0.47 g en vaso abierto es realista (parte queda disuelta). Clave C correcta; 0.01 g en la botella está dentro del error.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.1",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "1.0/84.0 × 44.0 = 0.52 g de CO₂."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.1",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo hace reaccionar vinagre con 1.0 g de bicarbonato: NaHCO₃(s) + CH₃COOH(ac) → CH₃COONa(ac) + H₂O(l) + CO₂(g). Datos de ejemplo:\n- Sistema 1, botella de plástico tapada: 98.62 g antes y 98.61 g después de reaccionar.\n- Sistema 2, vaso abierto con los mismos reactivos: 97.85 g antes y 97.38 g después.\n¿Qué conclusión apoyan los datos y la ecuación?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U9-9.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U9-9.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U9-9.1",
+      "CON:quimica/ecuacion-quimica-y-balanceo"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En los hornos de cal se calienta piedra caliza (carbonato de calcio, sólido) a unos 900 °C; se obtiene cal viva (óxido de calcio, sólido) y se desprende dióxido de carbono. En un párrafo de 4 a 6 oraciones: escribe la ecuación balanceada con los estados y la condición de reacción; predice si la masa del sólido que sale del horno es mayor, menor o igual que la de la piedra que entró; y explica por qué con la ecuación.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "CaCO₃(s) → CaO(s) + CO₂(g), con «900 °C» o «calor» sobre la flecha. El sólido que sale pesa menos porque el CO₂ es un gas que escapa del horno; la masa total sí se conserva: la del CaO más la del CO₂ es igual a la del CaCO₃ (de cada 100 g de piedra pura salen unos 56 g de cal y 44 g de CO₂).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U9-9.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "CaCO₃(s) → CaO(s) + CO₂(g), con 900 °C escrito sobre la flecha. El sólido que sale del horno pesa menos que la piedra, porque el CO₂ se forma como gas (g) y escapa. Los átomos no se destruyen: la masa de la cal más la del CO₂ que salió es igual a la masa de la piedra.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe CaCO₃(s) → CaO(s) + CO₂(g) con los tres estados correctos y la condición (temperatura o calor) sobre la flecha o junto a ella.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Predice que la masa del sólido que sale es menor que la de la piedra.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Lo justifica con que el CO₂ es un producto gaseoso que escapa y con que la masa total se conserva (cal más CO₂ igual a la piedra).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Estima con masas molares que el sólido pierde cerca del 44 % de su masa.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el calor destruye parte de la materia de la piedra.",
+        "ejemplo": "La cal pesa menos porque el fuego quema y consume parte de la piedra.",
+        "dificultad": "DIF:quimica/conservacion-de-la-masa/1"
+       },
+       {
+        "descripcion": "Cree que el gas casi no tiene masa y predice que la masa casi no cambia.",
+        "ejemplo": "Pesa casi igual, porque lo único que sale es un gas y los gases casi no pesan.",
+        "dificultad": "DIF:quimica/conservacion-de-la-masa/2"
+       },
+       {
+        "descripcion": "Escribe estados equivocados y no usa el (g) para razonar.",
+        "ejemplo": "CaCO₃(s) → CaO(l) + CO₂(ac); la masa queda igual porque todo se queda en el horno.",
+        "dificultad": "DIF:quimica/ecuacion-quimica-y-balanceo/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ecuacion-quimica-y-balanceo",
+     "nombre": "Ecuación química y su balanceo",
+     "definicion": "Representación simbólica de una reacción con reactivos, productos, estados y coeficientes que igualan los átomos de cada elemento.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.1",
+     "grado": 10,
+     "indicador": "9.1. Interpreta la información cualitativa y cuantitativa que aporta una ecuación química balanceada, incluidos estados de agregación y condiciones de reacción.",
+     "evidencia": "Ficha con cinco ecuaciones balanceadas anotadas y registro de masas del sistema cerrado y abierto"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U9-9.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.1/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Ecuación y estados correctos; 100 g de CaCO₃ dan 56 g de CaO y 44 g de CO₂. Rúbrica coherente con conservación de la masa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.1",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "M(CaCO₃) 100.1, M(CaO) 56.1, M(CO₂) 44.0 g/mol."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.1/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.1",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En los hornos de cal se calienta piedra caliza (carbonato de calcio, sólido) a unos 900 °C; se obtiene cal viva (óxido de calcio, sólido) y se desprende dióxido de carbono. En un párrafo de 4 a 6 oraciones: escribe la ecuación balanceada con los estados y la condición de reacción; predice si la masa del sólido que sale del horno es mayor, menor o igual que la de la piedra que entró; y explica por qué con la ecuación."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U9-9.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U9-9.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U9-9.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U9-9.2",
+      "CON:quimica/tipos-de-reacciones-quimicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Cuadro de clasificación de un equipo (ejemplo):\n- Fila 1: CaO(s) + H₂O(l) → Ca(OH)₂(s), síntesis.\n- Fila 2: CaCO₃(s) → CaO(s) + CO₂(g), descomposición.\n- Fila 3: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g), combustión.\n- Fila 4: NaOH(ac) + HCl(ac) → NaCl(ac) + H₂O(l), sustitución simple.\n¿Qué fila está mal clasificada y por qué?",
+     "opciones": {
+      "A": "La fila 3, porque en la ecuación no aparece fuego y no puede ser combustión",
+      "B": "La fila 4, porque los dos compuestos intercambian sus iones: es doble sustitución",
+      "C": "La fila 2, porque el CO₂ que se libera indica que la piedra se quemó",
+      "D": "La fila 1, porque una síntesis solo puede ocurrir entre dos elementos libres"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/tipos-de-reacciones-quimicas/1",
+      "C": "DIF:quimica/tipos-de-reacciones-quimicas/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La fila 4: los dos reactivos son compuestos que intercambian sus iones (el Na⁺ pasa con el Cl⁻ y el H⁺ con el OH⁻), así que es una doble sustitución; también se llama neutralización. En una sustitución simple reacciona un elemento libre con un compuesto. Las otras tres filas están bien: la combustión se reconoce por la reacción con O₂ en la ecuación, no por ver fuego.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U9-9.2"
+     },
+     "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipos-de-reacciones-quimicas",
+     "nombre": "Clasificación de las reacciones químicas",
+     "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.2",
+     "grado": 10,
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación.",
+     "evidencia": "Cuadro de clasificación de diez reacciones con ecuación, tipo y justificación del criterio usado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U9-9.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.2/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Filas 1–3 bien clasificadas y ecuaciones balanceadas; la fila 4 (neutralización) es doble sustitución. Clave B correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "NaOH + HCl → NaCl + H₂O: intercambio de iones."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.2/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ciencia verificada por el experto; no la toco. Por carga cognitiva paso los datos del párrafo a una lista: un dato por línea, misma información y misma clave.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita": "enunciado con varios datos numéricos en un mismo párrafo"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, un dato por línea; menos carga de memoria de trabajo"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Cuadro de clasificación de un equipo (ejemplo):\n- Fila 1: CaO(s) + H₂O(l) → Ca(OH)₂(s), síntesis.\n- Fila 2: CaCO₃(s) → CaO(s) + CO₂(g), descomposición.\n- Fila 3: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g), combustión.\n- Fila 4: NaOH(ac) + HCl(ac) → NaCl(ac) + H₂O(l), sustitución simple.\n¿Qué fila está mal clasificada y por qué?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U9-9.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U9-9.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U9-9.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U9-9.2",
+      "CON:quimica/tipos-de-reacciones-quimicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En una demostración, la docente quema una cinta de magnesio, que arde con una luz blanca intensa y deja un polvo blanco: 2Mg(s) + O₂(g) → 2MgO(s). Paola dice que es una síntesis; Mauricio, que es una combustión. En un párrafo de 4 a 6 oraciones: di si la ecuación cumple el criterio de síntesis y por qué; di si cumple el de combustión y por qué; y decide quién tiene razón.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cumple el criterio de síntesis porque dos sustancias, Mg y O₂, forman un solo producto, MgO. También cumple el de combustión porque el magnesio reacciona con el oxígeno liberando mucha energía como luz y calor. Los dos tienen razón: los tipos no se excluyen y una reacción puede pertenecer a dos categorías.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U9-9.2"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Es síntesis porque dos reactivos, Mg y O₂, forman un solo producto, el MgO. También es combustión porque el magnesio reacciona rápidamente con el oxígeno y libera mucha energía en forma de luz y calor. Los dos tienen razón, porque una misma reacción puede cumplir los criterios de dos tipos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que cumple el criterio de síntesis y lo justifica con la ecuación: dos sustancias forman un solo producto.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que cumple el criterio de combustión y lo justifica: reacciona con el O₂ y libera energía como luz y calor.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Concluye que los dos tienen razón porque una reacción puede pertenecer a más de un tipo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Aclara que la combustión de un metal da un óxido y no CO₂ y agua como la de un combustible con carbono e hidrógeno.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta un solo tipo por reacción.",
+        "ejemplo": "Tiene razón Mauricio, porque hay fuego; no puede ser síntesis si ya es combustión.",
+        "dificultad": "DIF:quimica/tipos-de-reacciones-quimicas/2"
+       },
+       {
+        "descripcion": "Clasifica por la apariencia del producto y no por la ecuación.",
+        "ejemplo": "Ninguno: es descomposición, porque la cinta se deshace en un polvo blanco.",
+        "dificultad": "DIF:quimica/tipos-de-reacciones-quimicas/1"
+       },
+       {
+        "descripcion": "Cree que solo los combustibles con carbono pueden tener combustión.",
+        "ejemplo": "Es síntesis y no combustión, porque no se forma CO₂ ni agua.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipos-de-reacciones-quimicas",
+     "nombre": "Clasificación de las reacciones químicas",
+     "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.2",
+     "grado": 10,
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación.",
+     "evidencia": "Cuadro de clasificación de diez reacciones con ecuación, tipo y justificación del criterio usado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U9-9.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.2/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: 2Mg + O₂ → 2MgO cumple síntesis y combustión; los tipos no son excluyentes. Rúbrica premia la idea correcta y mapea la dificultad 2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Una reacción puede satisfacer dos criterios de clasificación."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.2/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En una demostración, la docente quema una cinta de magnesio, que arde con una luz blanca intensa y deja un polvo blanco: 2Mg(s) + O₂(g) → 2MgO(s). Paola dice que es una síntesis; Mauricio, que es una combustión. En un párrafo de 4 a 6 oraciones: di si la ecuación cumple el criterio de síntesis y por qué; di si cumple el de combustión y por qué; y decide quién tiene razón."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U9-9.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U9-9.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U9-9.3",
+      "CON:quimica/reaccion-quimica-y-evidencias"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de ejemplo de cuatro vasos que empiezan a 26.0 °C:\n- Vaso 1: 5 g de NaCl(s) en 50 mL de H₂O(l): queda incoloro, sin residuo; final, 24.9 °C.\n- Vaso 2: 20 mL de Na₂CO₃(ac) + 20 mL de CaCl₂(ac): aparece un sólido blanco; final, 26.0 °C.\n- Vaso 3: 5 g de NaHCO₃(s) + 30 mL de CH₃COOH(ac): burbujeo intenso; final, 21.5 °C.\n- Vaso 4: la docente calienta 50 mL de H₂O(l) en una plancha: burbujas en el fondo a 98.5 °C.\n¿En qué vasos hay evidencia de una reacción química y por qué?",
+     "opciones": {
+      "A": "En los vasos 1 y 2, porque en ambos cambia la apariencia del sólido al mezclarse con el líquido.",
+      "B": "En los vasos 2, 3 y 4, porque en los tres aparecen burbujas o un sólido nuevo durante el proceso.",
+      "C": "En los vasos 2 y 3: en el 2 aparece un sólido nuevo y en el 3, un gas nuevo.",
+      "D": "En los vasos 3 y 4, porque en ambos se desprende un gas y cambia de forma notable la temperatura."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/reaccion-quimica-y-evidencias/1",
+      "B": "DIF:quimica/reaccion-quimica-y-evidencias/3",
+      "D": "DIF:quimica/reaccion-quimica-y-evidencias/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el vaso 2 dos disoluciones producen un sólido insoluble nuevo, CaCO₃(s). En el vaso 3 el bicarbonato y el ácido acético forman CO₂(g) y la mezcla se enfría 4.5 °C. En el vaso 1 solo se disuelve la sal: su leve enfriamiento es propio de la disolución y no indica una sustancia nueva. En el vaso 4 el agua hierve, H₂O(l) → H₂O(g). Los vasos 1 y 4 son cambios físicos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G10-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reaccion-quimica-y-evidencias",
+     "nombre": "Reacción química y sus evidencias",
+     "definicion": "Proceso en que se forman sustancias nuevas, evidenciado por gas, precipitado, cambio de color, calor o luz.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.3",
+     "grado": 10,
+     "indicador": "9.3. Relaciona cada evidencia observada en el laboratorio (cambio de color, gas, precipitado o variación de temperatura) con la reacción química que la produce.",
+     "evidencia": "Tabla de observaciones de cuatro estaciones con evidencia, ecuación propuesta y fotografías rotuladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U9-9.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.3/obj-2",
+     "decision": "corregir",
+     "justificacion": "Clave C correcta, pero los datos del vaso 1 subestiman el enfriamiento: disolver 5 g de NaCl (ΔHdis ≈ +3.9 kJ/mol) en 50 mL baja cerca de 1 °C, no 0.2 °C; y la precipitación de CaCO₃ no calienta. Se ajustan los datos y la retroalimentación aclara que un cambio de temperatura sin sustancia nueva no prueba reacción.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.3",
+       "cita": "indicador: relacionar evidencia (incluida la variación de temperatura) con la reacción"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.086 mol × 3.9 kJ/mol ≈ 0.33 kJ; /(≈230 J/°C) ≈ 1.4 °C ideal, ~1 °C en vaso"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo registró en cuatro vasos (temperatura inicial de 26.0 °C en todos) lo ocurrido al mezclar distintas sustancias con agua o entre sí:\n- Vaso 1: 5 g de NaCl(s) + 50 mL de H₂O(l) → mezcla incolora sin residuo; temperatura final 24.9 °C.\n- Vaso 2: 20 mL de Na₂CO₃(ac) + 20 mL de CaCl₂(ac) → aparece un sólido blanco; temperatura final 26.0 °C.\n- Vaso 3: 5 g de NaHCO₃(s) + 30 mL de CH₃COOH(ac) → burbujeo intenso; temperatura final 21.5 °C.\n- Vaso 4: 50 mL de H₂O(l) calentados en plancha → burbujas en el fondo a 98.5 °C.\n¿En cuáles vasos los datos muestran evidencias de una reacción química y por qué?",
+      "retroalimentacion": "En el vaso 2 dos disoluciones producen un sólido insoluble nuevo, CaCO₃(s). En el vaso 3 el bicarbonato y el ácido acético forman CO₂(g) y la mezcla se enfría 4.5 °C. En el vaso 1 solo se disuelve la sal: su leve enfriamiento es propio de la disolución y no indica una sustancia nueva. En el vaso 4 el agua hierve, H₂O(l) → H₂O(g). Los vasos 1 y 4 son cambios físicos."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.3/obj-2",
+     "decision": "corregir",
+     "justificacion": "Superaba el límite de 100 palabras (119) y la clave era la opción más larga. Paso los datos a lista, dejo que la docente caliente el agua del vaso 4 (agua > 50 °C solo docente) y acorto la clave. Datos fijados por el experto, sin cambio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.3",
+       "cita": "enunciado de 119 palabras; palabras_max = 100"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "agua por encima de 50 °C la maneja solo la docente"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Datos de ejemplo de cuatro vasos que empiezan a 26.0 °C:\n- Vaso 1: 5 g de NaCl(s) en 50 mL de H₂O(l): queda incoloro, sin residuo; final, 24.9 °C.\n- Vaso 2: 20 mL de Na₂CO₃(ac) + 20 mL de CaCl₂(ac): aparece un sólido blanco; final, 26.0 °C.\n- Vaso 3: 5 g de NaHCO₃(s) + 30 mL de CH₃COOH(ac): burbujeo intenso; final, 21.5 °C.\n- Vaso 4: la docente calienta 50 mL de H₂O(l) en una plancha: burbujas en el fondo a 98.5 °C.\n¿En qué vasos hay evidencia de una reacción química y por qué?",
+      "opciones": {
+       "A": "En los vasos 1 y 2, porque en ambos cambia la apariencia del sólido al mezclarse con el líquido.",
+       "B": "En los vasos 2, 3 y 4, porque en los tres aparecen burbujas o un sólido nuevo durante el proceso.",
+       "C": "En los vasos 2 y 3: en el 2 aparece un sólido nuevo y en el 3, un gas nuevo.",
+       "D": "En los vasos 3 y 4, porque en ambos se desprende un gas y cambia de forma notable la temperatura."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U9-9.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U9-9.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U9-9.3",
+      "CON:quimica/reaccion-quimica-y-evidencias"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "En dos vasos se observan burbujas: en el vaso 1 se calienta agua líquida hasta que hierve, y en el vaso 2 se mezcla bicarbonato de sodio, NaHCO₃(s), con vinagre, CH₃COOH(ac), a temperatura ambiente. En un párrafo de 4 a 6 oraciones: (1) indica en cuál vaso ocurre una reacción química y en cuál un cambio físico, (2) identifica la fórmula o el nombre del gas que forma las burbujas en cada vaso y (3) explica por qué la presencia de burbujas por sí sola no basta para asegurar que hubo reacción química.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En el vaso 1 ocurre un cambio físico (ebullición) y las burbujas son de vapor de agua, H₂O(g), que es la misma sustancia inicial. En el vaso 2 ocurre una reacción química porque el bicarbonato y el ácido acético producen una sustancia nueva gaseosa, dióxido de carbono, CO₂(g), además de absorber calor. Por eso ver burbujas no basta: hay que verificar si el gas es una sustancia nueva o solo un cambio de estado o gas disuelto que escapa.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Clasifica correctamente el vaso 1 como cambio físico y el vaso 2 como reacción (o cambio) química.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra o escribe la fórmula del gas en cada caso: vapor de agua / H₂O(g) en el vaso 1 y dióxido de carbono / CO₂(g) en el vaso 2.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que las burbujas solo son evidencia de reacción química cuando corresponden a la formación de una sustancia nueva y no a un cambio de estado.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que en ambos vasos hay reacción química porque en los dos se desprende un gas.",
+        "ejemplo": "En los dos vasos hay reacción química porque el calor del vaso 1 rompe el agua en gases y en el vaso 2 sale gas del bicarbonato.",
+        "dificultad": "DIF:quimica/reaccion-quimica-y-evidencias/3"
+       },
+       {
+        "descripcion": "Dice que al hervir el agua se descompone en hidrógeno y oxígeno gaseosos.",
+        "ejemplo": "En el vaso 1 el agua hierve y libera burbujas de H₂ y O₂, por lo que también es un cambio químico.",
+        "dificultad": "DIF:quimica/reaccion-quimica-y-evidencias/3"
+       },
+       {
+        "descripcion": "Confunde la efervescencia del bicarbonato con vinagre con una simple disolución o escape de aire atrapado.",
+        "ejemplo": "En el vaso 2 solo es un cambio físico porque el bicarbonato se disuelve en el vinagre y suelta el aire que tenía adentro.",
+        "dificultad": "DIF:quimica/reaccion-quimica-y-evidencias/1"
+       }
+      ]
+     },
+     "retroalimentacion": "Un cambio químico produce sustancias nuevas: en el vaso 2 se forma CO₂(g) a partir de NaHCO₃(s) y CH₃COOH(ac). En el vaso 1 el agua líquida pasa a vapor, H₂O(l) → H₂O(g), sin cambiar su composición química. Las burbujas solas no bastan: también aparecen cuando una sustancia solo cambia de estado.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G10-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reaccion-quimica-y-evidencias",
+     "nombre": "Reacción química y sus evidencias",
+     "definicion": "Proceso en que se forman sustancias nuevas, evidenciado por gas, precipitado, cambio de color, calor o luz.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.3",
+     "grado": 10,
+     "indicador": "9.3. Relaciona cada evidencia observada en el laboratorio (cambio de color, gas, precipitado o variación de temperatura) con la reacción química que la produce.",
+     "evidencia": "Tabla de observaciones de cuatro estaciones con evidencia, ecuación propuesta y fotografías rotuladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U9-9.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.3/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: la ebullición produce H₂O(g) sin cambio de composición; bicarbonato con vinagre produce CO₂. La rúbrica premia el criterio de sustancia nueva y mapea errores reales (dificultades 1 y 3).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.3",
+       "cita": "indicador de logro que sirve el elemento"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Burbujas solas no prueban cambio químico."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G10-QUI-U9-9.3/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Ciencia correcta. El enunciado pide tres tareas que exigen tres criterios obligatorios, pero limita la respuesta a «2 o 3 oraciones», que no alcanza para cumplirlas con justificación. Cambio solo esa extensión a 4 a 6 oraciones; el resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.3",
+       "cita": "abierta con tres criterios obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "«2 o 3 oraciones» no alcanza para tres tareas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En dos vasos se observan burbujas: en el vaso 1 se calienta agua líquida hasta que hierve, y en el vaso 2 se mezcla bicarbonato de sodio, NaHCO₃(s), con vinagre, CH₃COOH(ac), a temperatura ambiente. En un párrafo de 4 a 6 oraciones: (1) indica en cuál vaso ocurre una reacción química y en cuál un cambio físico, (2) identifica la fórmula o el nombre del gas que forma las burbujas en cada vaso y (3) explica por qué la presencia de burbujas por sí sola no basta para asegurar que hubo reacción química.",
+      "retroalimentacion": "Un cambio químico produce sustancias nuevas: en el vaso 2 se forma CO₂(g) a partir de NaHCO₃(s) y CH₃COOH(ac). En el vaso 1 el agua líquida pasa a vapor, H₂O(l) → H₂O(g), sin cambiar su composición química. Las burbujas solas no bastan: también aparecen cuando una sustancia solo cambia de estado."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}
