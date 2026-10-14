@@ -141,6 +141,18 @@ Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuest
 | TEMA:G11-FIS-U12-12.4 | [G11-FIS-U12-12.4](G11-FIS-U12-12.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G11-FIS-U12-12.7 | [G11-FIS-U12-12.7](G11-FIS-U12-12.7.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G11-FIS-U13-13.1 | [G11-FIS-U13-13.1](G11-FIS-U13-13.1.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.1 | [G11-QUI-U2-2.1](G11-QUI-U2-2.1.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.2 | [G11-QUI-U2-2.2](G11-QUI-U2-2.2.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.3 | [G11-QUI-U2-2.3](G11-QUI-U2-2.3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.4 | [G11-QUI-U2-2.4](G11-QUI-U2-2.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.5 | [G11-QUI-U2-2.5](G11-QUI-U2-2.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.6 | [G11-QUI-U2-2.6](G11-QUI-U2-2.6.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.7 | [G11-QUI-U2-2.7](G11-QUI-U2-2.7.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.8 | [G11-QUI-U2-2.8](G11-QUI-U2-2.8.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.9 | [G11-QUI-U2-2.9](G11-QUI-U2-2.9.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.10 | [G11-QUI-U2-2.10](G11-QUI-U2-2.10.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.11 | [G11-QUI-U2-2.11](G11-QUI-U2-2.11.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G11-QUI-U2-2.12 | [G11-QUI-U2-2.12](G11-QUI-U2-2.12.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G11-QUI-U12-12.1 | [G11-QUI-U12-12.1](G11-QUI-U12-12.1.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 
 > Hay elementos que esperan una decisión humana: ver [REVISION_HUMANA.md](REVISION_HUMANA.md).
