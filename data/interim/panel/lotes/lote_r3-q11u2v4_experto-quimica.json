@@ -1,0 +1,103 @@
+{
+ "lote": "r3-q11u2v4_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/hidrocarburos-alifaticos/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/hidrocarburos-alifaticos/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/hidrocarburos-alifaticos",
+     "descripcion": "Considera que el término «sustancia química» aplica solo a compuestos sintéticos, tóxicos o de laboratorio, creyendo que productos cotidianos como la vaselina o la cera de parafina pueden ser «libres de químicos».",
+     "senales": "Da por válido un anuncio que dice «sin químicos» porque el producto no daña la piel, o afirma que la vaselina o la cera de parafina no tienen fórmula química porque son productos de uso diario.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Obstaculiza el análisis crítico de mensajes publicitarios sobre compuestos orgánicos cotidianos.",
+     "origen": "redactor-actividades (G11-QUI-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-alifaticos",
+     "nombre": "Hidrocarburos: alcanos, alquenos y alquinos",
+     "definicion": "Compuestos de carbono e hidrógeno con enlaces simples, dobles o triples cuyo tipo determina sus propiedades y reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.4",
+     "grado": 11,
+     "indicador": "2.4. Reconoce la función alcano en sustancias de uso común.",
+     "evidencia": "Ficha de cinco alcanos de uso común con fórmula, estado físico, uso y análisis crítico de un mensaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/hidrocarburos-alifaticos/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/hidrocarburos-alifaticos/3",
+     "decision": "aprobar",
+     "justificacion": "Idea previa real (quimiofobia: «químico» como sinónimo de sintético o tóxico) y central en el indicador, que pide analizar un mensaje de que la vaselina «no tiene químicos». Descripción y señales son correctas: toda materia está formada por sustancias químicas y la vaselina es una mezcla de alcanos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.4 (fila 11)",
+       "cita": "Analiza críticamente un mensaje que afirma que la vaselina «no tiene químicos» y lo corrige."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La inocuidad de un producto no depende de que «no tenga químicos»; todo producto es químico."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:DIF:quimica/hidrocarburos-alifaticos/3",
+     "decision": "corregir",
+     "justificacion": "Idea previa relevante y bien descrita. La segunda señal («separa las sustancias de uso común de los compuestos con fórmula») no es una conducta que la docente pueda observar; se reescribe como una afirmación concreta sobre vaselina y parafina, sin cambiar la química.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.4",
+       "cita": "La evidencia incluye el análisis crítico de un mensaje sobre un producto."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una señal útil dice qué dice o hace el estudiante."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "senales": "Da por válido un anuncio que dice «sin químicos» porque el producto no daña la piel, o afirma que la vaselina o la cera de parafina no tienen fórmula química porque son productos de uso diario."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}

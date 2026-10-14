@@ -1,0 +1,106 @@
+{
+ "lote": "r3-q11u2v3_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/hibridacion-de-orbitales/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/hibridacion-de-orbitales/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/hibridacion-de-orbitales",
+     "descripcion": "Interpreta el superíndice de p en la notación spⁿ como el número total de orbitales híbridos o de dominios electrónicos (cree que sp³ son 3 dominios, sp² son 2 dominios y sp es 1 dominio), o bien asigna la hibridación contando solo los átomos de hidrógeno unidos al carbono.",
+     "senales": "Dice que un carbono con tres dominios electrónicos (trigonal plano) es sp³ porque «tiene el número 3», que un carbono lineal con dos dominios es sp², o que el carbono central del propino (CH≡C–CH₃), que no tiene hidrógenos, no es sp.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Lleva a asignar mal la hibridación y la geometría, porque olvida que el orbital s también se combina (1 s + n p dan n + 1 híbridos).",
+     "origen": "redactor-actividades (G11-QUI-U2-2.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hibridacion-de-orbitales",
+     "nombre": "Hibridación de orbitales",
+     "definicion": "Combinación de orbitales atómicos en orbitales híbridos sp, sp2 y sp3 que explica geometrías y la tetravalencia del carbono.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.2",
+     "grado": 11,
+     "indicador": "2.2. Describe orbitales híbridos empleando modelos tridimensionales.",
+     "evidencia": "Modelos tridimensionales de las tres hibridaciones del carbono con ángulos de enlace medidos y rotulados"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/hibridacion-de-orbitales/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/hibridacion-de-orbitales/2",
+     "decision": "corregir",
+     "justificacion": "Descripción y justificación correctas (1 s + n p = n+1 híbridos). La señal usa un carbono C≡N, de un nitrilo, que está fuera de esta unidad de hidrocarburos y mezcla otro grupo funcional. Se sustituye por el carbono central del propino, sin hidrógenos y sp, molécula que la malla usa en el tema.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.2 (fila 9)",
+       "cita": "La malla usa propeno y propino (CH≡C–CH3) para justificar la hibridación de cada carbono."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En CH≡C–CH3 el carbono central no tiene H y es sp; el número de H no determina la hibridación."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "senales": "Dice que un carbono con tres dominios electrónicos (trigonal plano) es sp³ porque «tiene el número 3», que un carbono lineal con dos dominios es sp², o que el carbono central del propino (CH≡C–CH₃), que no tiene hidrógenos, no es sp."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:DIF:quimica/hibridacion-de-orbitales/2",
+     "decision": "corregir",
+     "justificacion": "Descripción y señales correctas y observables. La justificación explica la causa del error, no por qué importa como las demás; se reescribe para decir su consecuencia y conservar la regla que fijó el experto (1 s + n p = n + 1 híbridos).",
+     "evidencia": [
+      {
+       "fuente": "revisión del experto-quimica (ronda 1)",
+       "cita": "Descripción y justificación correctas (1 s + n p = n+1 híbridos)."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "La justificación orienta a la docente sobre el efecto de la dificultad en el aprendizaje."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "justificacion": "Lleva a asignar mal la hibridación y la geometría, porque olvida que el orbital s también se combina (1 s + n p dan n + 1 híbridos)."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}

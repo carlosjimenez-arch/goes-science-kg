@@ -1,0 +1,105 @@
+{
+ "lote": "r3-q11u2v2_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/el-carbono-y-las-moleculas-organicas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/el-carbono-y-las-moleculas-organicas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/el-carbono-y-las-moleculas-organicas",
+     "descripcion": "Reúne dos dificultades distintas que conviene diagnosticar por separado. (a) Usa la solubilidad como regla: cree que ningún compuesto orgánico se disuelve en agua. (b) No aplica la tetravalencia del carbono al representar esqueletos hidrocarbonados y les asigna un número incorrecto de enlaces covalentes (tres o cinco).",
+     "senales": "(a) Clasifica el azúcar (sacarosa), el etanol o el ácido acético como inorgánicos porque se disuelven en agua. (b) Dibuja cadenas carbonadas en las que un átomo de carbono forma tres o cinco enlaces.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "(a) Impide reconocer compuestos orgánicos polares cotidianos; (b) impide construir estructuras moleculares válidas del carbono.",
+     "origen": "redactor-actividades (G11-QUI-U2-2.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/el-carbono-y-las-moleculas-organicas",
+     "nombre": "El carbono y las moléculas orgánicas",
+     "definicion": "El carbono forma cuatro enlaces y cadenas con hidrógeno y otros átomos, generando esqueletos hidrocarbonados de gran diversidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U2-2.1",
+     "grado": 11,
+     "indicador": "2.1. Ejemplifica sustancias de uso común que contienen compuestos orgánicos.",
+     "evidencia": "Cuadro de clasificación de sustancias de uso común en orgánicas e inorgánicas con criterios justificados"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/el-carbono-y-las-moleculas-organicas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:quimica/el-carbono-y-las-moleculas-organicas/3",
+     "decision": "aprobar",
+     "justificacion": "Ambas ideas son reales y sus señales correctas: sacarosa, etanol y ácido acético son orgánicos y solubles en agua; un carbono con tres o cinco enlaces en una molécula neutra estable es un error de representación frecuente. Advierte bien contra usar la solubilidad, criterio que la malla lista, como regla absoluta. Junta dos dificultades distintas; conviene que el psicopedagogo valore separarlas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U2-2.1 (fila 8)",
+       "cita": "La malla diferencia orgánicos e inorgánicos por composición, enlace, solubilidad y comportamiento frente al calor."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La solubilidad depende de la polaridad y los puentes de hidrógeno, no de ser orgánico."
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:DIF:quimica/el-carbono-y-las-moleculas-organicas/3",
+     "decision": "corregir",
+     "justificacion": "Junta dos dificultades sin relación (solubilidad como criterio y tetravalencia): diagnosticadas juntas, la docente no sabe cuál atender. Se separan en (a) y (b) en los tres campos, sin cambiar la química. Lo ideal es crear una segunda dificultad para la tetravalencia; eso exige un id nuevo y lo decide una persona.",
+     "evidencia": [
+      {
+       "fuente": "revisión del experto-quimica (ronda 1)",
+       "cita": "Junta dos dificultades distintas; conviene que el psicopedagogo valore separarlas."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una dificultad por señal permite elegir la intervención adecuada."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "descripcion": "Reúne dos dificultades distintas que conviene diagnosticar por separado. (a) Usa la solubilidad como regla: cree que ningún compuesto orgánico se disuelve en agua. (b) No aplica la tetravalencia del carbono al representar esqueletos hidrocarbonados y les asigna un número incorrecto de enlaces covalentes (tres o cinco).",
+      "senales": "(a) Clasifica el azúcar (sacarosa), el etanol o el ácido acético como inorgánicos porque se disuelven en agua. (b) Dibuja cadenas carbonadas en las que un átomo de carbono forma tres o cinco enlaces.",
+      "justificacion": "(a) Impide reconocer compuestos orgánicos polares cotidianos; (b) impide construir estructuras moleculares válidas del carbono."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}
