@@ -11110,6 +11110,1688 @@
   }
  },
  {
+  "id": "ACT:G10-FIS-U2-2.1/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Para un problema de tránsito, Valeria escribe la ecuación x = v₀·t + a·t, donde x es una distancia (m), v₀ una rapidez (m/s), a una aceleración (m/s²) y t un tiempo (s). ¿Qué concluye el análisis dimensional de esa ecuación?",
+  "opciones": {
+   "A": "Es imposible, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
+   "B": "Es correcta, porque a·t tiene dimensión de rapidez, la misma que tiene v₀.",
+   "C": "Es imposible, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
+   "D": "Es correcta si se agrega ½ antes de a·t, porque ese factor ajusta sus dimensiones."
+  },
+  "correcta": "A",
+  "distractores": {
+   "D": "DIF:fisica/sistema-internacional-unidades/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación es imposible. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las derivadas), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.1"
+  },
+  "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.1/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Datos de un grupo de ejemplo: en una finca de Usulután, un tubo de riego llena un tanque. Anotaron el volumen acumulado: a los 0 min, 0 L; a los 5 min, 600 L; a los 10 min, 1 200 L; a los 15 min, 1 800 L. Si el caudal se mantiene igual todo el día, ¿cuántos metros cúbicos entrega el tubo en un día (24 h)? Usa una cadena de factores de conversión y escribe solo el número, en m³/día.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 172.8,
+  "tolerancia": 0.5,
+  "unidad": "m³/día",
+  "retroalimentacion": "La tabla muestra 600 L cada 5 min, o sea 120 L/min. La cadena es 120 L/min × (1 m³ / 1000 L) × (60 min / 1 h) × (24 h / 1 día) = 172.8 m³/día. Si en cada factor la unidad que se quiere eliminar queda una vez arriba y una vez abajo, se cancela y el resultado sale en m³/día.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.1"
+  },
+  "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.1/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 2 o 3 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y explica cómo una estimación previa del orden de magnitud le habría avisado del error.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Kevin usó el factor al revés: para pasar de km/h a m/s se divide entre 3.6, porque 1 km/h = 1000 m / 3600 s. La cadena 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) da 25 m/s. Estimar antes ayuda: 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.1"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Kevin multiplicó por 3.6 cuando debía dividir: usó el factor al revés y por eso las unidades no se cancelan. Lo correcto es 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) = 25 m/s, donde se cancelan km con km y h con h. Si hubiera estimado antes, habría visto que 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro en carretera, así que el resultado no era razonable.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Identifica el error: multiplicó por 3.6 en lugar de dividir (usó el factor invertido), y por eso las unidades no se cancelan.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Escribe una cadena de factores con unidades (km a m y h a s, o el factor 1 m/s = 3.6 km/h escrito como fracción) en la que se cancelan km y h, y obtiene 25 m/s.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Justifica que 324 m/s no es razonable comparándolo con una rapidez conocida (más de 1 000 km/h, rapidez de avión, o varias veces la de un carro en carretera).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Menciona que la unidad del resultado sale de la cancelación de unidades y sirve para comprobarlo.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Corrige el número sin explicar el factor invertido ni mostrar la cancelación de unidades.",
+     "ejemplo": "Se equivocó en la multiplicación; la respuesta correcta es 25 m/s.",
+     "dificultad": "DIF:fisica/sistema-internacional-unidades/2"
+    },
+    {
+     "descripcion": "Usa un factor de conversión incompleto (convierte solo los km o solo las horas).",
+     "ejemplo": "90 km/h × 1000 m/km = 90 000 m/h, y eso ya está en metros, así que la respuesta es 90 000 m/s.",
+     "dificultad": "DIF:fisica/sistema-internacional-unidades/2"
+    },
+    {
+     "descripcion": "No ve problema en el orden de magnitud y acepta el resultado.",
+     "ejemplo": "No hay error, porque 3.6 es el factor entre km/h y m/s y el resultado ya está en m/s.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.4/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.4"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.4",
+   "CON:fisica/suma-vectores-componentes"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un dron de Protección Civil revisa una ladera: desde la base vuela 600 m hacia el este y luego 800 m hacia el norte, en línea recta. Para volver a la base en un solo tramo recto, ¿qué distancia y qué rumbo debe volar?",
+  "opciones": {
+   "A": "1 400 m con rumbo S 37° O, porque la distancia de regreso es la suma de los dos tramos.",
+   "B": "1 000 m con rumbo N 37° E, porque el regreso sigue la dirección de la resultante del viaje.",
+   "C": "1 000 m con rumbo S 37° O, porque debe recorrer el vector opuesto a la suma de los tramos.",
+   "D": "1 000 m con rumbo S 53° O, porque el ángulo sale de tan θ = 800/600 medido desde el sur."
+  },
+  "correcta": "C",
+  "distractores": {
+   "A": "DIF:fisica/suma-vectores-componentes/1",
+   "D": "DIF:fisica/suma-vectores-componentes/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "La resultante del viaje es 600 î + 800 ĵ m, de módulo √(600² + 800²) = 1000 m. Para volver, el dron recorre el vector opuesto, −600 î − 800 ĵ m: 1000 m hacia el suroeste. El rumbo se mide desde el sur hacia el oeste con tan θ = 600/800, que da unos 37°: S 37° O. La suma de distancias (1 400 m) es lo que recorrió, no la distancia a la base.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.4"
+  },
+  "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.4/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.4"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.4",
+   "CON:fisica/suma-vectores-componentes"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Mariela planea tres tramos de un repartidor en su municipio. Los ángulos se miden desde el este, en sentido antihorario. Su tabla de componentes (en km) es: tramo 1, 5.0 km a 30°: x = 4.33, y = 2.50; tramo 2, 3.0 km a 120°: x = 1.50, y = 2.60; tramo 3, 4.0 km a 250°: x = −1.37, y = −3.76. Antes de sumar las columnas, revisa si hay un error. ¿Qué concluye?",
+  "opciones": {
+   "A": "Tramo 1: con 30° la componente x se calcula con el seno y debería ser 2.50 km.",
+   "B": "Tramo 2: a 120° el vector apunta hacia el oeste y su componente x es negativa.",
+   "C": "Tramo 3: una componente no puede ser negativa si el módulo del vector es positivo.",
+   "D": "Ninguno: en los tres tramos x² + y² da el cuadrado del módulo de cada vector."
+  },
+  "correcta": "B",
+  "distractores": {
+   "A": "DIF:fisica/suma-vectores-componentes/3",
+   "C": "DIF:fisica/suma-vectores-componentes/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Un vector a 120° está en el segundo cuadrante: apunta hacia el noroeste, así que su componente x es negativa: 3.0 cos 120° = −1.50 km. Comprobar que x² + y² da el módulo al cuadrado no detecta errores de signo. En el tramo 3 las dos componentes negativas son correctas, porque a 250° el vector apunta al suroeste; y en el tramo 1, con el ángulo medido desde el este, x usa el coseno.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.4"
+  },
+  "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.4/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.4"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.4",
+   "CON:fisica/suma-vectores-componentes"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Una brigada de rescate sale del campamento y camina 6.0 km hacia el este, luego 2.0 km hacia el norte y luego 2.0 km hacia el oeste. Daniela dice: «Quedamos a 10 km del campamento». En 2 o 3 oraciones: explica por qué su razonamiento falla; calcula la resultante con î y ĵ y su módulo; y di qué distancia y en qué dirección debe caminar la brigada para regresar.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Los desplazamientos se suman por componentes: x = 6.0 − 2.0 = 4.0 km y y = 2.0 km, así que R = 4.0 î + 2.0 ĵ km, de unos 4.5 km. Los 10 km son la distancia caminada, que es escalar. Para regresar, la brigada recorre −R: unos 4.5 km hacia el suroeste, con rumbo S 63° O (unos 207° medidos desde el este).",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.4"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Daniela sumó las distancias como números, pero los desplazamientos tienen dirección y se suman por componentes: los 2.0 km al oeste restan en x. La resultante es R = (6.0 − 2.0) î + 2.0 ĵ = 4.0 î + 2.0 ĵ km, con módulo √(4.0² + 2.0²) ≈ 4.5 km. Para regresar deben caminar unos 4.5 km en sentido opuesto, hacia el suroeste, con rumbo S 63° O, porque tan θ = 4.0/2.0 medido desde el sur.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Explica que los desplazamientos son vectores y se suman según su dirección (por componentes), no sumando sus módulos; o que 10 km es la distancia recorrida y no el desplazamiento.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Escribe R = 4.0 î + 2.0 ĵ km (o componentes x = 4.0 km, y = 2.0 km) y un módulo entre 4.4 y 4.5 km.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Da la dirección de regreso opuesta a la resultante: hacia el suroeste, con rumbo S 63° O, unos 27° al sur del oeste o unos 207° desde el este (se aceptan ±2°).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Muestra cómo obtuvo el ángulo (tan θ con las componentes) o un diagrama de los tramos.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Suma los módulos o acepta los 10 km como distancia al campamento.",
+     "ejemplo": "Daniela tiene razón: 6 + 2 + 2 = 10 km, así que deben caminar 10 km de regreso.",
+     "dificultad": "DIF:fisica/suma-vectores-componentes/1"
+    },
+    {
+     "descripcion": "Da como regreso la dirección de la resultante y no la opuesta.",
+     "ejemplo": "R = 4.0 î + 2.0 ĵ km, unos 4.5 km; deben caminar 4.5 km hacia el noreste.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Toma positiva la componente x del tramo hacia el oeste.",
+     "ejemplo": "R = 8.0 î + 2.0 ĵ km, unos 8.2 km, porque las componentes x de los tramos se suman: 6.0 + 2.0.",
+     "dificultad": "DIF:fisica/suma-vectores-componentes/2"
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.5/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.5"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.5",
+   "CON:fisica/movimiento-uniformemente-acelerado"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Datos de ejemplo: en pavimento seco, un carro que va a 40 km/h recorre 9 m desde que se pisa el freno hasta detenerse. Si el mismo carro va a 80 km/h y frena con la misma desaceleración constante, ¿qué distancia recorre desde que se pisa el freno hasta detenerse? (Solo la fase de frenado, sin el tiempo de reacción.)",
+  "opciones": {
+   "A": "18 m, porque la distancia de frenado crece en la misma proporción que la rapidez.",
+   "B": "36 m, porque al doble de rapidez el carro tarda el cuádruple de tiempo en detenerse.",
+   "C": "9 m, porque la desaceleración es la misma y es la que fija la distancia de frenado.",
+   "D": "36 m, porque al frenar igual, la distancia crece con el cuadrado de la rapidez."
+  },
+  "correcta": "D",
+  "distractores": {
+   "A": "DIF:fisica/movimiento-uniformemente-acelerado/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Con desaceleración constante, v² = v₀² + 2aΔx y v = 0 dan Δx = v₀²/(2a): la distancia crece con el cuadrado de la rapidez. Al doble de rapidez, cuatro veces la distancia: 36 m. El tiempo de frenado, t = v₀/a, solo se duplica; la distancia se cuadruplica porque se avanza el doble de tiempo y con el doble de rapidez media.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.5"
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.5/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.5"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.5",
+   "CON:fisica/movimiento-uniformemente-acelerado"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Datos de un grupo de ejemplo, tomados de un video: Karla maneja por una calle recta y en t = 0 s ve un obstáculo. Su velocidad fue: 0 s, 15.0 m/s; 0.4 s, 15.0 m/s; 0.8 s, 15.0 m/s; 1.8 s, 10.0 m/s; 2.8 s, 5.0 m/s; 3.8 s, 0.0 m/s. ¿Qué distancia recorrió el carro desde el instante en que Karla vio el obstáculo hasta detenerse? Escribe solo el número, en metros.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 34.5,
+  "tolerancia": 0.5,
+  "unidad": "m",
+  "retroalimentacion": "Hasta 0.8 s la velocidad no cambia: es el tiempo de reacción, en el que el carro avanza 15.0 m/s × 0.8 s = 12 m. Después frena con aceleración constante de −5.0 m/s² durante 3.0 s; el área del triángulo bajo la gráfica v-t es ½ × 15.0 m/s × 3.0 s = 22.5 m. En total, 34.5 m: la distancia de detención incluye la de reacción.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.5"
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.5/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.5"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.5",
+   "CON:fisica/movimiento-uniformemente-acelerado"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Se toma como positivo el sentido hacia el este. Un bus va hacia el oeste con velocidad v = −12 m/s y tiene una aceleración constante a = −2.0 m/s². Mario dice: «Como la aceleración es negativa, el bus está frenando». En 2 o 3 oraciones: di si el bus frena o aumenta su rapidez y justifícalo con los signos de v y de a; y calcula su velocidad 3.0 s después, con su unidad.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "El signo de la aceleración solo indica su sentido respecto del eje elegido. Aquí v y a tienen el mismo signo, apuntan los dos hacia el oeste, así que la rapidez aumenta: v = −12 m/s + (−2.0 m/s²)(3.0 s) = −18 m/s, es decir, 18 m/s hacia el oeste. Un móvil frena cuando v y a tienen signos opuestos.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.5"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Mario se equivoca: el bus aumenta su rapidez. La velocidad y la aceleración son negativas, o sea que las dos apuntan hacia el oeste, y cuando tienen el mismo signo la rapidez crece; frenaría si tuvieran signos opuestos. A los 3.0 s, v = −12 m/s + (−2.0 m/s²)(3.0 s) = −18 m/s: va a 18 m/s hacia el oeste.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Concluye que el bus aumenta su rapidez (no frena).",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Justifica con los signos: v y a tienen el mismo signo (o apuntan en el mismo sentido), y eso hace crecer la rapidez; o dice que frenar exige signos opuestos.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Calcula v = −18 m/s a los 3.0 s (o 18 m/s hacia el oeste), con unidad.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Aclara que el signo negativo depende del sentido que se eligió como positivo.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Acepta que una aceleración negativa siempre significa frenar.",
+     "ejemplo": "Sí frena, porque la aceleración es negativa; a los 3 s va a −6 m/s.",
+     "dificultad": "DIF:fisica/movimiento-uniformemente-acelerado/1"
+    },
+    {
+     "descripcion": "Concluye bien pero resta las magnitudes al calcular la velocidad.",
+     "ejemplo": "Acelera porque los dos son negativos; v = −12 + 2(3) = −6 m/s.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Trata el signo de la velocidad como si la rapidez fuera negativa.",
+     "ejemplo": "La rapidez a los 3 s es −18 m/s, o sea que el bus va más lento que antes.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.6/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.6"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.6",
+   "CON:fisica/caida-libre"
+  ],
+  "habilidad": "explicar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Andrea lanza una pelota de golf verticalmente hacia arriba en el patio. Si se desprecia la resistencia del aire, ¿cómo es la aceleración de la pelota en el instante en que alcanza el punto más alto?",
+  "opciones": {
+   "A": "Es g hacia abajo, igual que al subir y al bajar, porque el peso actúa todo el tiempo.",
+   "B": "Es cero, porque en ese instante la velocidad es cero y la pelota no se está moviendo.",
+   "C": "Pasa de g hacia arriba a g hacia abajo, porque la aceleración sigue el sentido del movimiento.",
+   "D": "Es mayor que g, porque en ese punto la pelota cambia de sentido de golpe y frena en seco."
+  },
+  "correcta": "A",
+  "distractores": {
+   "B": "DIF:fisica/caida-libre/2",
+   "C": "DIF:fisica/caida-libre/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "En el punto más alto la velocidad es cero solo un instante, pero la velocidad sigue cambiando: un instante antes apuntaba hacia arriba y un instante después hacia abajo. La única fuerza es el peso, que no se apaga, así que la aceleración vale g y apunta hacia abajo al subir, en el punto más alto y al bajar.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.6"
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.6/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.6"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.6",
+   "CON:fisica/caida-libre"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Datos de un grupo de ejemplo: soltaron desde el reposo una pelota pequeña y densa desde varias alturas h y midieron con video el tiempo t de caída. h = 0.50 m: t = 0.322 s (t² = 0.104 s²); h = 1.00 m: t = 0.454 s (t² = 0.206 s²); h = 1.50 m: t = 0.557 s (t² = 0.310 s²); h = 2.00 m: t = 0.642 s (t² = 0.412 s²). La gráfica de h contra t² es una recta que pasa por el origen. Con su pendiente, ¿qué valor experimental de g obtuvieron? Escribe solo el número, en m/s².",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 9.7,
+  "tolerancia": 0.2,
+  "unidad": "m/s²",
+  "retroalimentacion": "Para una caída desde el reposo, h = ½ g t²: la gráfica de h contra t² es una recta cuya pendiente es g/2. La pendiente es (2.00 − 0.50) m / (0.412 − 0.104) s² ≈ 4.87 m/s², así que g ≈ 2 × 4.87 ≈ 9.7 m/s². Un error frecuente es reportar la pendiente como si fuera g. Después se compara con el valor de la tabla de referencia.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.6"
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.6/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.6"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.6",
+   "CON:fisica/caida-libre"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Sofía suelta al mismo tiempo, desde 1.5 m, una hoja de papel extendida y otra hoja igual hecha una bola apretada. La bola llega primero al suelo y Sofía dice: «Al arrugarla, la hoja se volvió más pesada, y lo más pesado cae más rápido». En 2 o 3 oraciones: di si la masa de la hoja cambió al arrugarla; explica por qué la bola llega antes; y predice qué pasaría si las dos se soltaran en un lugar sin aire.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Arrugar la hoja no cambia su masa ni su peso. Lo que cambia es la resistencia del aire: la hoja extendida presenta mucha área y el aire la frena mucho, mientras que en la bola esa fuerza es pequeña comparada con el peso y cae casi en caída libre. Sin aire, las dos caerían con la misma aceleración g y llegarían juntas.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.6"
+  },
+  "rubrica": {
+   "respuesta_modelo": "La masa no cambió: es la misma hoja, solo que más compacta. La bola llega antes porque la hoja extendida tiene mucha área y el aire la frena mucho, mientras que en la bola la resistencia del aire es pequeña comparada con su peso. Sin aire, las dos caerían con la misma aceleración g y llegarían al suelo al mismo tiempo.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Afirma que la masa (o el peso) de la hoja no cambió al arrugarla.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Atribuye la diferencia a la resistencia del aire, mayor sobre la hoja extendida por su forma o su área.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Predice que sin aire las dos caerían juntas, con la misma aceleración (g).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Compara la resistencia del aire con el peso para explicar por qué la bola cae casi en caída libre.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Acepta que la bola tiene más peso o que lo más pesado cae más rápido aun sin aire.",
+     "ejemplo": "La bola cae primero porque al apretarla concentra más peso, y sin aire también llegaría antes.",
+     "dificultad": "DIF:fisica/caida-libre/1"
+    },
+    {
+     "descripcion": "Cree que sin aire los objetos no caerían o flotarían.",
+     "ejemplo": "Sin aire las hojas se quedarían flotando, porque la gravedad necesita el aire para empujarlas.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Nombra el aire pero no responde si cambió la masa ni qué pasaría sin aire.",
+     "ejemplo": "La bola llega antes por la resistencia del aire.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.7/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.7"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.7",
+   "CON:fisica/graficas-movimiento"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "La gráfica velocidad-tiempo de un carrito en una pista recta tiene tres tramos: de 0 a 4 s la velocidad aumenta de manera uniforme de 0 a 8 m/s; de 4 a 10 s se mantiene en 8 m/s; de 10 a 12 s baja de manera uniforme hasta 0. ¿Cómo es la gráfica posición-tiempo del carrito entre 10 s y 12 s?",
+  "opciones": {
+   "A": "Una recta que baja hasta el eje del tiempo, porque la velocidad baja hasta cero.",
+   "B": "Una recta horizontal, porque en ese tramo el carrito está frenando y ya no avanza.",
+   "C": "Una curva que sigue subiendo, cada vez menos inclinada, porque su pendiente es v.",
+   "D": "Una recta que sigue subiendo con la misma inclinación, porque el carrito aún avanza."
+  },
+  "correcta": "C",
+  "distractores": {
+   "A": "DIF:fisica/graficas-movimiento/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "La pendiente de la gráfica x-t es la velocidad. Entre 10 y 12 s la velocidad sigue siendo positiva, así que la posición sigue aumentando, pero cada vez menos: la curva sube y se va aplanando hasta quedar horizontal en 12 s, cuando v = 0. Que la v-t baje no significa que la posición baje: el carrito frena, pero sigue avanzando.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.7"
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.7/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.7"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.7",
+   "CON:fisica/graficas-movimiento"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Una ciclista se mueve por una calle recta; el sentido positivo es hacia el norte. Su gráfica velocidad-tiempo tiene tres tramos: de 0 a 5 s, v = 4.0 m/s constante; de 5 a 7 s, la velocidad baja de manera uniforme de 4.0 m/s a 0; de 7 a 10 s, v = −2.0 m/s constante. ¿Cuál es su desplazamiento entre 0 y 10 s, con su signo? Escribe solo el número, en metros (positivo si es hacia el norte).",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 18,
+  "tolerancia": 0.5,
+  "unidad": "m",
+  "retroalimentacion": "El desplazamiento es el área bajo la gráfica v-t, con signo: 4.0 m/s × 5 s = 20 m; el triángulo de 5 a 7 s da ½ × 4.0 m/s × 2 s = 4 m; de 7 a 10 s, −2.0 m/s × 3 s = −6 m. En total, 20 + 4 − 6 = 18 m hacia el norte. La distancia recorrida es 30 m, porque ahí los 6 m de regreso se suman.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.7"
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U3-3.7/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U3-3.7"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U3-3.7",
+   "CON:fisica/graficas-movimiento"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Dos grupos registran el recorrido recto de una ciclista por la misma calle, con el sentido positivo hacia el norte. El grupo 1 pone el origen en la esquina de la escuela y anota que la ciclista pasa de x = 10 m a x = 70 m. El grupo 2 pone el origen en una parada de bus que está 50 m al norte de la esquina. Rodrigo dice: «Como las posiciones de los dos grupos son distintas, sus desplazamientos también lo serán». En 2 o 3 oraciones: escribe las posiciones inicial y final que anota el grupo 2; calcula el desplazamiento de cada grupo; y explica por qué cambiar el origen cambia las posiciones pero no el desplazamiento.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Para el grupo 2, cada posición es 50 m menor: la ciclista pasa de −40 m a 20 m. Los dos grupos obtienen Δx = 60 m: 70 − 10 = 60 m y 20 − (−40) = 60 m. El desplazamiento es una diferencia de posiciones, y mover el origen resta la misma cantidad a las dos, así que la diferencia no cambia.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U3-3.7"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Para el grupo 2 la ciclista va de x = −40 m a x = 20 m, porque su origen está 50 m más al norte. El grupo 1 obtiene Δx = 70 − 10 = 60 m y el grupo 2, Δx = 20 − (−40) = 60 m: es el mismo desplazamiento. Cambiar el origen resta 50 m a las dos posiciones, pero el desplazamiento es la diferencia entre ellas, y esa resta se cancela.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Escribe las posiciones del grupo 2: −40 m (inicial) y 20 m (final).",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Calcula Δx = 60 m (hacia el norte o positivo) para los dos grupos.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Explica que el desplazamiento es la diferencia entre la posición final y la inicial, y que cambiar el origen modifica las dos en la misma cantidad, por lo que la diferencia no cambia.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Menciona que la forma de la gráfica x-t solo se desplaza hacia abajo y la velocidad (pendiente) no cambia.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Suma la distancia entre orígenes en vez de restarla.",
+     "ejemplo": "Para el grupo 2 la ciclista va de 60 m a 120 m.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Confunde posición con desplazamiento y acepta que el desplazamiento depende del origen.",
+     "ejemplo": "Rodrigo tiene razón: el grupo 1 mide 70 m y el grupo 2 mide 20 m, porque cada uno mide desde su origen.",
+     "dificultad": null
+    },
+    {
+     "descripcion": "Escribe bien los números pero no explica por qué el desplazamiento no cambia.",
+     "ejemplo": "Grupo 2: de −40 a 20 m. Los dos dan 60 m.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U4-4.1/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U4-4.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U4-4.1",
+   "CON:fisica/movimiento-proyectiles"
+  ],
+  "habilidad": "razonar",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Daniela patea una pelota desde el suelo de una cancha plana con una rapidez de 15 m/s y un ángulo de 30° sobre la horizontal. Desprecia la resistencia del aire y usa g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Trabaja por componentes: ¿a qué distancia horizontal del punto de la patada vuelve a tocar el suelo la pelota? Responde en metros; escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 19.9,
+  "tolerancia": 0.3,
+  "unidad": "m",
+  "retroalimentacion": "Separa la velocidad en componentes: vx = 15 cos 30° ≈ 13.0 m/s y vy = 15 sen 30° = 7.5 m/s. En el eje vertical la pelota sube y baja con aceleración g: tarda t = 2vy/g ≈ 1.53 s. En el eje horizontal no hay aceleración, así que avanza x = vx · t ≈ 19.9 m. Es lo mismo que da R = v₀² sen(2θ)/g.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U4-4.1"
+  },
+  "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U4-4.1/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U4-4.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U4-4.1",
+   "CON:fisica/movimiento-proyectiles"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un grupo midió con su lanzador de liga el alcance promedio de 5 tiros para cinco ángulos, siempre con la misma marca de jalón (datos de un grupo de ejemplo): 15°: 1.20 m; 30°: 2.05 m; 45°: 2.38 m; 60°: 2.03 m; 75°: 1.17 m. ¿Qué conclusión apoyan mejor los datos?",
+  "opciones": {
+   "A": "Un ángulo mayor da siempre más alcance, porque la pelota sube más y pasa más tiempo en el aire.",
+   "B": "Ángulos que suman 90° dan casi el mismo alcance: uno gana tiempo de vuelo y el otro rapidez horizontal.",
+   "C": "Ángulos que suman 90° dan casi el mismo alcance, porque en los dos la pelota dura igual en el aire.",
+   "D": "A 75° la pelota llega menos lejos, porque la fuerza del lanzamiento se gasta toda en la subida."
+  },
+  "correcta": "B",
+  "distractores": {
+   "D": "DIF:fisica/movimiento-proyectiles/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Los pares 15°–75° y 30°–60° dan alcances casi iguales y el máximo está cerca de 45°. A 60° la pelota dura más en el aire, pero su componente horizontal es menor; a 30° pasa lo contrario, y el producto vx · t sale casi igual. Ninguna fuerza del lanzamiento acompaña a la pelota en el aire: solo actúa el peso (y algo de aire).",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U4-4.1"
+  },
+  "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U4-4.1/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U4-4.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U4-4.1",
+   "CON:fisica/movimiento-proyectiles"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Desde el borde de una mesa de 0.80 m de alto, Marcos empuja una canica que sale disparada en horizontal y, en el mismo instante, Daniela suelta otra canica igual desde el mismo borde. En 2 o 3 oraciones: di cuál llega primero al piso (o si llegan juntas), explica por qué usando lo que pasa en el eje vertical de cada canica, y explica por qué la de Marcos cae más lejos.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Llegan juntas: en el eje vertical las dos parten con velocidad vertical cero, desde la misma altura y con la misma aceleración g, así que tardan lo mismo. El movimiento horizontal no cambia el vertical. La de Marcos cae más lejos porque, durante ese mismo tiempo, avanza con su velocidad horizontal, que se mantiene casi constante.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U4-4.1"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Las dos canicas llegan al piso al mismo tiempo. En el eje vertical las dos empiezan con velocidad vertical cero, caen desde 0.80 m y tienen la misma aceleración g, así que tardan lo mismo; la velocidad horizontal de la canica de Marcos no cambia su caída. La de Marcos cae más lejos porque, mientras cae, también avanza con una velocidad horizontal casi constante: x = vx · t.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Afirma que las dos canicas llegan al piso al mismo tiempo.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Justifica con el eje vertical: misma altura, velocidad vertical inicial cero y misma aceleración g en las dos (o dice que el movimiento horizontal no afecta al vertical).",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Explica que la de Marcos cae más lejos porque avanza con velocidad horizontal (casi constante) durante el mismo tiempo de caída.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Escribe una relación cuantitativa, como x = vx · t o t = √(2h/g).",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Cree que el movimiento horizontal retrasa la caída.",
+     "ejemplo": "La de Daniela llega primero, porque la de Marcos tiene que recorrer un camino más largo en el aire.",
+     "dificultad": "DIF:fisica/movimiento-proyectiles/2"
+    },
+    {
+     "descripcion": "Atribuye a la canica lanzada una fuerza del empujón que la sostiene un rato.",
+     "ejemplo": "La de Marcos se mantiene más tiempo arriba porque todavía lleva la fuerza del empujón y solo cae cuando se le acaba.",
+     "dificultad": "DIF:fisica/movimiento-proyectiles/3"
+    },
+    {
+     "descripcion": "Dice que llegan juntas sin justificar con el eje vertical, o lo atribuye a que tienen la misma masa.",
+     "ejemplo": "Llegan juntas porque las dos canicas pesan lo mismo.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.10/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.10"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.10",
+   "CON:fisica/aplicaciones-leyes-newton"
+  ],
+  "habilidad": "razonar",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "En una máquina de Atwood cuelgan dos bolsas de 0.60 kg y 0.40 kg de los extremos de una cuerda que pasa por una polea; la cuerda y la polea son ideales (sin masa ni fricción). Se sueltan desde el reposo. Usa g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia), dibuja un diagrama de cuerpo libre para cada bolsa y plantea la segunda ley para cada una. ¿Cuánto vale la tensión de la cuerda mientras se mueven, en N? Escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 4.7,
+  "tolerancia": 0.05,
+  "unidad": "N",
+  "retroalimentacion": "Con las dos ecuaciones, 0.60g − T = 0.60a y T − 0.40g = 0.40a, la aceleración común es a = (0.60 − 0.40)g/(1.00) ≈ 1.96 m/s². Para la bolsa liviana, T = 0.40(g + a) ≈ 4.70 N. La tensión queda entre los dos pesos (3.92 N y 5.88 N): si fuera igual al peso de la bolsa pesada, esta no podría bajar acelerando.",
+  "duracion_min": 8,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.10"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.10/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.10"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.10",
+   "CON:fisica/aplicaciones-leyes-newton"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Diego, de 60 kg, se para sobre una balanza de baño dentro de un ascensor que sube del piso 1 al piso 8 de un edificio de San Salvador. Lecturas de la balanza (datos de ejemplo): tramo 1, 60 kg; tramo 2, 66 kg; tramo 3, 60 kg; tramo 4, 54 kg; tramo 5, ya en el piso 8, 60 kg. ¿Qué interpretación es correcta?",
+  "opciones": {
+   "A": "En el tramo 2 sube y en el 4 baja, porque la balanza marca más al subir y menos al bajar.",
+   "B": "En el tramo 3 está detenido, porque solo con el ascensor quieto la balanza marca 60 kg.",
+   "C": "En el tramo 2 arranca hacia arriba y en el 4 frena, porque la lectura sigue a la aceleración.",
+   "D": "En el tramo 4 la Tierra atrae a Diego con menos fuerza, porque el ascensor lo deja caer un poco."
+  },
+  "correcta": "C",
+  "distractores": {
+   "A": "DIF:fisica/aplicaciones-leyes-newton/2",
+   "D": "DIF:fisica/aplicaciones-leyes-newton/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "La balanza mide la normal, no el peso. Si N > mg, la fuerza neta apunta hacia arriba y la aceleración también: tramo 2, el ascensor arranca hacia arriba (a ≈ 0.1g). En el tramo 3 sube a velocidad constante y N = mg. En el tramo 4 la aceleración apunta hacia abajo mientras sigue subiendo: está frenando. El peso de Diego, mg, no cambia en todo el viaje.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.10"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.10/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.10"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.10",
+   "CON:fisica/aplicaciones-leyes-newton"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "En los videos de la Estación Espacial Internacional, que orbita a unos 400 km de altura, las astronautas flotan dentro de la nave. Fernanda dice que flotan porque allá arriba ya no hay gravedad. El radio de la Tierra es de unos 6 400 km (valor aproximado de la tabla de referencia). En 2 o 3 oraciones: di si a esa altura la gravedad es nula o, si no, aproximadamente qué fracción es de la del suelo; y explica por qué las astronautas flotan y no quedan apretadas contra el piso de la nave.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "A 400 km la gravedad sigue siendo cerca del 90 % de la del suelo: g cambia con (R/(R + h))² ≈ (6400/6800)² ≈ 0.89. Las astronautas flotan porque ellas y la nave caen libremente juntas, con la misma aceleración, mientras avanzan tan rápido de lado que nunca llegan al suelo: el piso no tiene que empujarlas, la normal es cero y su peso aparente también.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.10"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Fernanda se equivoca: a 400 km la gravedad todavía es cerca del 90 % de la del suelo, porque (6400/6800)² ≈ 0.89. Las astronautas flotan porque ellas y la estación están en caída libre continua: caen hacia la Tierra con la misma aceleración, pero avanzan de lado tan rápido que dan la vuelta sin llegar al suelo. Como caen juntas, el piso no necesita empujarlas, la normal es cero y no sienten su peso, igual que en un ascensor cuyo cable se rompiera.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Afirma que a esa altura la gravedad no es nula y da una fracción cercana al 90 % (entre 0.85 y 0.92) o la calcula con (R/(R + h))².",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Explica que las astronautas y la nave caen libremente juntas, con la misma aceleración (caída libre continua u órbita como caída).",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Relaciona esa caída común con que el piso no las empuja: normal cero o peso aparente nulo.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Menciona la gran velocidad horizontal que impide que lleguen al suelo o compara con un ascensor en caída libre.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Acepta que en órbita no hay gravedad.",
+     "ejemplo": "Flotan porque a 400 km ya salieron de la gravedad de la Tierra.",
+     "dificultad": "DIF:fisica/aplicaciones-leyes-newton/3"
+    },
+    {
+     "descripcion": "Explica la flotación con una fuerza centrífuga real que equilibra la gravedad.",
+     "ejemplo": "La gravedad las jala hacia abajo pero la fuerza centrífuga las jala hacia afuera y quedan en equilibrio.",
+     "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+    },
+    {
+     "descripcion": "Atribuye la flotación a la falta de aire.",
+     "ejemplo": "Flotan porque en el espacio no hay aire que las empuje hacia abajo.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.2/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.2"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.2",
+   "CON:fisica/primera-ley-newton"
+  ],
+  "habilidad": "explicar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un microbús va a 40 km/h por una calle recta y frena de golpe. Una pasajera que va de pie y sin agarrarse se va hacia adelante. Visto desde la acera, ¿qué explica mejor lo que le pasa?",
+  "opciones": {
+   "A": "Su cuerpo tiende a seguir a 40 km/h, porque las fuerzas sobre ella no alcanzan a frenarla como al bus.",
+   "B": "Una fuerza de inercia la empuja hacia adelante, porque el frenado la produce en todo lo que va adentro.",
+   "C": "El piso la empuja hacia adelante, porque al frenar el bus le pasa por contacto su impulso al frente.",
+   "D": "Conserva la fuerza que le dio el motor, porque esa fuerza se le va gastando poco a poco al frenar."
+  },
+  "correcta": "A",
+  "distractores": {
+   "B": "DIF:fisica/primera-ley-newton/2",
+   "D": "DIF:fisica/fuerza-empuje-tiron/1"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Desde la acera nada empuja a la pasajera hacia adelante: por la primera ley su cuerpo tiende a conservar la velocidad que traía. El bus sí recibe una gran fuerza hacia atrás (los frenos y el pavimento), pero a ella solo la frena la fricción del piso en sus pies, que es pequeña; por eso el bus se detiene antes que ella y parece que «sale» hacia adelante.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.2"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.2/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.2"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.2",
+   "CON:fisica/primera-ley-newton"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Andrea cuelga una plomada (una tuerca atada a un hilo) del techo de un bus y anota su inclinación durante un viaje (datos de ejemplo). Tramo 1, detenido en la parada: vertical. Tramo 2, arrancando: 4° hacia atrás. Tramo 3, a 50 km/h constantes en una recta: vertical. Tramo 4, frenando: 6° hacia adelante. Tramo 5, en una curva a 30 km/h constantes: 5° hacia afuera de la curva. ¿En qué tramos el bus se comporta como un sistema de referencia inercial?",
+  "opciones": {
+   "A": "Solo en el tramo 1, porque únicamente con el bus detenido la plomada cuelga sin inclinarse.",
+   "B": "En los tramos 2 y 4, porque en ellos la plomada se inclina y deja ver qué fuerzas actúan.",
+   "C": "En los tramos 1 y 3, porque la plomada cuelga vertical y el bus no acelera respecto del suelo.",
+   "D": "En los tramos 1, 3 y 5, porque en la curva el velocímetro marca lo mismo todo el tiempo."
+  },
+  "correcta": "C",
+  "distractores": {
+   "A": "DIF:fisica/primera-ley-newton/1",
+   "D": "DIF:fisica/aceleracion-fuerza-centripeta/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Un sistema de referencia es inercial si no acelera: allí se cumple la primera ley y la plomada, sin fuerza neta horizontal, cuelga vertical. Eso pasa detenido y a velocidad constante en línea recta (tramos 1 y 3). Al arrancar, al frenar y en la curva el bus acelera (en la curva cambia la dirección de la velocidad), y la plomada se inclina.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.2"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.2/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.2"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.2",
+   "CON:fisica/primera-ley-newton"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un pick-up lleva en la paila a tres jóvenes sentados sin sujetarse y una caja de herramientas suelta. El conductor frena de golpe. En 2 o 3 oraciones, usando la primera ley de Newton: explica qué les pasa a los jóvenes y a la caja y por qué, aunque nadie los empuje; di qué fuerza haría falta para que se detuvieran junto con el vehículo; y propón una norma de seguridad justificada con esa idea.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Al frenar, el pick-up recibe una fuerza hacia atrás, pero los jóvenes y la caja no: por inercia siguen moviéndose hacia adelante con la velocidad que traían y chocan con la cabina o salen despedidos. Para detenerlos junto con el vehículo hace falta una fuerza hacia atrás sobre ellos, como la de un cinturón o una amarra; por eso las personas deben viajar en asientos con cinturón y la carga, amarrada.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.2"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Cuando el pick-up frena, los frenos y el pavimento lo detienen a él, pero sobre los jóvenes y la caja no actúa una fuerza hacia atrás suficiente, así que por la primera ley siguen moviéndose hacia adelante con la velocidad que traían y chocan contra la cabina o salen despedidos. Para que se detuvieran con el vehículo, algo tendría que hacerles una fuerza hacia atrás, como un cinturón o una amarra. Por eso propongo que nadie viaje en la paila y que la carga vaya amarrada: el cinturón y la amarra dan esa fuerza.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Dice que los jóvenes y la caja siguen moviéndose hacia adelante con la velocidad que traían (por inercia) cuando el vehículo frena.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Afirma que no hay una fuerza que los empuje hacia adelante, o que la inercia no es una fuerza.",
+     "obligatorio": false
+    },
+    {
+     "id": "c3",
+     "descripcion": "Identifica que para detenerlos hace falta una fuerza hacia atrás sobre ellos (cinturón, amarra, asiento, cabina).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Propone una norma de seguridad (no viajar en la paila, usar cinturón, amarrar la carga) y la justifica con la fuerza que debe actuar sobre el cuerpo o la carga.",
+     "obligatorio": true
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Trata la inercia como una fuerza que los lanza hacia adelante.",
+     "ejemplo": "Al frenar, la fuerza de la inercia los empuja hacia adelante y por eso salen volando.",
+     "dificultad": "DIF:fisica/primera-ley-newton/2"
+    },
+    {
+     "descripcion": "Cree que lo que los mueve es una fuerza que traían del vehículo y se va gastando.",
+     "ejemplo": "Todavía llevan la fuerza del pick-up y siguen hasta que se les acaba.",
+     "dificultad": "DIF:fisica/fuerza-empuje-tiron/1"
+    },
+    {
+     "descripcion": "Cree que la caja liviana no es peligrosa porque «casi no pesa», confundiendo la inercia con el peso.",
+     "ejemplo": "Solo es peligrosa si la caja es pesada; una caja liviana no tiene casi inercia.",
+     "dificultad": "DIF:fisica/primera-ley-newton/3"
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.4/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.4"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.4",
+   "CON:fisica/segunda-ley-newton"
+  ],
+  "habilidad": "razonar",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Marta jala una caja de 12 kg por un piso horizontal con una cuerda que forma 30° sobre la horizontal y ejerce una fuerza de 50 N. La caja se desliza y la fricción cinética sobre ella vale 20 N (dato del problema). Dibuja el diagrama de cuerpo libre y plantea ΣFx = m·ax. ¿Cuál es la aceleración de la caja en la dirección horizontal del movimiento, en m/s²? Escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 1.94,
+  "tolerancia": 0.05,
+  "unidad": "m/s²",
+  "retroalimentacion": "Solo la componente horizontal de la cuerda, 50 cos 30° ≈ 43.3 N, actúa a lo largo del piso; la fricción, 20 N, va en sentido contrario. La fuerza neta horizontal es 43.3 − 20 = 23.3 N y a = 23.3 N / 12 kg ≈ 1.94 m/s². La componente vertical de la cuerda no acelera la caja: reduce la normal, y en el eje vertical ΣFy = 0.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.4"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.4/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.4"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.4",
+   "CON:fisica/segunda-ley-newton"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un grupo jala un carrito con arandelas que cuelgan de un hilo que pasa por una polea; pasa arandelas del carrito al hilo para que la masa total no cambie. F es el peso de las arandelas que cuelgan (datos de un grupo de ejemplo): F = 0.20, 0.40, 0.60, 0.80 y 1.00 N; a = 0.10, 0.50, 0.90, 1.30 y 1.70 m/s². La recta de ajuste es a = 2.0·F − 0.30. ¿Qué conclusión apoyan los datos?",
+  "opciones": {
+   "A": "La masa acelerada es de unos 2.0 kg y la fricción de unos 0.15 N, porque la pendiente 2.0 es la masa.",
+   "B": "a no es proporcional a F: de 0.20 a 0.40 N la fuerza se duplica y a se quintuplica, así que la ley falla.",
+   "C": "La fricción es de unos 2.0 N, porque la pendiente dice cuánta fuerza se pierde por cada m/s² de a.",
+   "D": "La masa acelerada es de unos 0.50 kg y la fricción de unos 0.15 N: es donde la recta corta el eje F."
+  },
+  "correcta": "D",
+  "distractores": {
+   "B": "DIF:fisica/segunda-ley-newton/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Con la fricción, la segunda ley da a = (F − f)/m = F/m − f/m. La pendiente, 2.0 (m/s²)/N, es 1/m, así que m ≈ 0.50 kg; la recta corta el eje de la fuerza (a = 0) en F = 0.15 N, que es la fricción. La aceleración es proporcional a la fuerza neta, F − 0.15 N, y no a F sola: por eso de 0.20 a 0.40 N no se duplica.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.4"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.4/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.4"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.4",
+   "CON:fisica/segunda-ley-newton"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un carro viaja hacia el norte y frena con una fuerza de frenado constante hasta detenerse. Laura dice: «Mientras frena, la fuerza neta sobre el carro apunta al norte, porque el carro sigue avanzando al norte». En 2 o 3 oraciones: di hacia dónde apuntan la fuerza neta y la aceleración mientras frena; justifica con la segunda ley por qué no tienen que apuntar hacia donde se mueve el carro; y di cómo cambiaría la aceleración si el carro tuviera el doble de masa con la misma fuerza neta de frenado.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "La fuerza neta y la aceleración apuntan al sur mientras el carro frena. Por la segunda ley, la aceleración tiene siempre la dirección de la fuerza neta; la velocidad dice hacia dónde se mueve el carro, y la aceleración, hacia dónde cambia esa velocidad: si apunta al revés, el carro se frena. Con el doble de masa y la misma fuerza neta, la aceleración sería la mitad.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.4"
+  },
+  "rubrica": {
+   "respuesta_modelo": "La fuerza neta y la aceleración apuntan al sur, al revés del movimiento. Según la segunda ley, ΣF = m·a, la aceleración tiene la dirección de la fuerza neta, no la de la velocidad: la velocidad apunta al norte, pero va disminuyendo, y por eso el cambio de velocidad apunta al sur. Si el carro tuviera el doble de masa con la misma fuerza neta, la aceleración sería la mitad y tardaría más en detenerse.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Dice que la fuerza neta y la aceleración apuntan al sur (en sentido contrario al movimiento).",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Justifica con la segunda ley que la aceleración tiene la dirección de la fuerza neta y que la velocidad no la determina (la aceleración indica cómo cambia la velocidad).",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Afirma que con el doble de masa y la misma fuerza neta la aceleración sería la mitad.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Agrega una consecuencia o un ejemplo correcto (tardaría más en detenerse; una pelota que sube tiene aceleración hacia abajo).",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Da la razón a Laura: la fuerza neta apunta hacia donde se mueve el carro.",
+     "ejemplo": "La fuerza neta va al norte porque el carro todavía avanza; solo cuando se detiene la fuerza se vuelve cero.",
+     "dificultad": "DIF:fisica/segunda-ley-newton/1"
+    },
+    {
+     "descripcion": "Confunde masa con peso y cree que más masa da más aceleración.",
+     "ejemplo": "Con el doble de masa la aceleración sería el doble, porque pesa el doble y empuja más.",
+     "dificultad": "DIF:fisica/segunda-ley-newton/3"
+    },
+    {
+     "descripcion": "Dice que la aceleración es cero o negativa sin dar su dirección.",
+     "ejemplo": "La aceleración es negativa porque frena, y la fuerza neta es cero porque no hay motor.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.4)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.7/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.7"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.7",
+   "CON:fisica/tercera-ley-newton"
+  ],
+  "habilidad": "razonar",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "La Tierra atrae a la Luna con la fuerza gravitatoria. Usa la ley de gravitación universal con estos valores aproximados de la tabla de referencia: G = 6.674 × 10⁻¹¹ N·m²/kg² (el que da la malla), masa de la Tierra 5.97 × 10²⁴ kg, masa de la Luna 7.35 × 10²² kg y distancia entre sus centros 3.84 × 10⁸ m. ¿Con qué fuerza atrae la Luna a la Tierra? Responde en unidades de 10²⁰ N (por ejemplo, si obtienes 3.5 × 10²⁰ N, escribe 3.5); escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 1.99,
+  "tolerancia": 0.05,
+  "unidad": "× 10²⁰ N",
+  "retroalimentacion": "F = G·M·m/r² = 6.674 × 10⁻¹¹ · 5.97 × 10²⁴ · 7.35 × 10²² / (3.84 × 10⁸)² ≈ 1.99 × 10²⁰ N. Es el mismo valor con que la Tierra atrae a la Luna: las dos fuerzas forman un par de acción y reacción, de igual módulo, sentidos opuestos y aplicadas en cuerpos distintos. La Tierra se acelera mucho menos porque su masa es unas 81 veces mayor.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.7"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.7/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.7"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.7",
+   "CON:fisica/tercera-ley-newton"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Kevin camina hacia atrás y arrastra a Ana, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
+  "opciones": {
+   "A": "Marcan igual solo si nadie se mueve, porque al avanzar quien arrastra hace más fuerza que la otra.",
+   "B": "Marcan igual siempre: cada uno mide la fuerza que le hace el otro, y esas dos forman un par.",
+   "C": "Marcan igual porque las dos fuerzas se anulan, y por eso ninguna persona podría mover a la otra.",
+   "D": "Marcan igual porque el resorte reparte por mitades la fuerza que hace la persona que más jala."
+  },
+  "correcta": "B",
+  "distractores": {
+   "A": "DIF:fisica/tercera-ley-newton/1",
+   "C": "DIF:fisica/tercera-ley-newton/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Kevin arrastra a Ana: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: Ana se mueve porque la fuerza neta sobre ella no es cero.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.7"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.7/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.7"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.7",
+   "CON:fisica/tercera-ley-newton"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par y por qué el bote sí avanza.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "El remo empuja el agua hacia atrás (fuerza sobre el agua) y el agua empuja el remo, y con él al bote y a Sofía, hacia adelante (fuerza sobre el bote). Como actúan sobre cuerpos distintos, no se suman ni se anulan. Sobre el bote, la fuerza del agua hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta lo acelera.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.7"
+  },
+  "rubrica": {
+   "respuesta_modelo": "El error es sumar dos fuerzas que actúan sobre cuerpos distintos. El remo empuja el agua hacia atrás, y esa fuerza actúa sobre el agua; el agua empuja el remo hacia adelante, y esa fuerza actúa sobre el remo, el bote y Sofía. Para saber si el bote avanza solo cuentan las fuerzas sobre el bote: la del agua en el remo hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta sobre el bote apunta hacia adelante.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Identifica el par: el remo empuja el agua hacia atrás y el agua empuja el remo (o el bote) hacia adelante.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Afirma que las dos fuerzas del par actúan sobre cuerpos distintos (agua y remo-bote) y por eso no se anulan entre sí.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Explica que el bote avanza porque la fuerza neta sobre el bote apunta hacia adelante (la del agua sobre el remo supera a la resistencia).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Usa un diagrama o un ejemplo análogo (caminar, nadar, un cohete).",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Acepta que el par se anula y busca otra fuerza que mueva al bote.",
+     "ejemplo": "Sí se anulan, pero el bote avanza porque Sofía rema con más fuerza de la que regresa el agua.",
+     "dificultad": "DIF:fisica/tercera-ley-newton/2"
+    },
+    {
+     "descripcion": "Cree que la acción es mayor que la reacción.",
+     "ejemplo": "El remo empuja más fuerte al agua que el agua al remo, y esa diferencia mueve el bote.",
+     "dificultad": "DIF:fisica/tercera-ley-newton/1"
+    },
+    {
+     "descripcion": "Nombra fuerzas sin decir sobre qué cuerpo actúa cada una.",
+     "ejemplo": "El bote avanza por la reacción del agua, que es la tercera ley.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.9/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.9"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.9",
+   "CON:fisica/friccion-resistencia-aire"
+  ],
+  "habilidad": "razonar",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "José jala un costal de 20 kg por el piso horizontal del patio con una cuerda inclinada 30° sobre la horizontal, con una fuerza de 80 N. Usa g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Plantea ΣFy = 0 en el eje vertical: ¿cuánto vale la fuerza normal que el piso ejerce sobre el costal, en N? Escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 156,
+  "tolerancia": 2,
+  "unidad": "N",
+  "retroalimentacion": "En el eje vertical actúan el peso, 20 · 9.8 = 196 N hacia abajo, la normal hacia arriba y la componente vertical de la cuerda, 80 sen 30° = 40 N hacia arriba. Como el costal no se acelera verticalmente, N + 40 − 196 = 0 y N = 156 N. La normal no siempre es igual al peso: aquí la cuerda carga una parte, y por eso también baja la fricción.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.9"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.9/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.9"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.9",
+   "CON:fisica/friccion-resistencia-aire"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Un grupo inclinó despacio una misma tabla y midió el ángulo al que empezó a deslizar cada objeto (promedio de 5 intentos, datos de un grupo de ejemplo): caja de cartón de 0.10 kg, 22°; bloque de madera de 0.30 kg, 27°; goma de caucho de 0.05 kg, 40°. Luego fijan la tabla a 30° y ponen cada objeto en reposo sobre ella. ¿Qué pasará?",
+  "opciones": {
+   "A": "Solo la goma de caucho queda en reposo, porque su μs ≈ 0.84 supera a tan 30° ≈ 0.58.",
+   "B": "Quedan en reposo la madera y el caucho, porque sus μs superan a sen 30° = 0.50.",
+   "C": "Solo el cartón se desliza, porque es el más liviano y lo sujeta menos fricción.",
+   "D": "Los tres quedan en reposo, porque la fricción estática crece lo que haga falta."
+  },
+  "correcta": "A",
+  "distractores": {
+   "D": "DIF:fisica/friccion-resistencia-aire/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "En el ángulo crítico μs = tan θ: cartón ≈ 0.40, madera ≈ 0.51 y caucho ≈ 0.84. A 30° un objeto queda quieto solo si μs ≥ tan 30° ≈ 0.58, es decir, si su ángulo crítico es mayor que 30°: solo el caucho. La masa no importa, porque el peso a lo largo de la tabla y la fricción máxima crecen igual con ella; y la fricción estática tiene un máximo, μs·N.",
+  "duracion_min": 7,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.9"
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
+  "id": "ACT:G10-FIS-U5-5.9/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U5-5.9"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U5-5.9",
+   "CON:fisica/friccion-resistencia-aire"
+  ],
+  "habilidad": "explicar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 2 o 3 oraciones, explica las dos observaciones: por qué cuesta más arrancar, y qué le pasa a la fuerza normal y a la fricción cuando jala inclinado.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Para arrancar hay que superar la fricción estática máxima, μs·N, que es mayor que la cinética, μk·N, porque en general μs > μk. Al jalar inclinado, la componente vertical de la cuerda carga parte del peso: la normal baja (N = mg − F sen θ) y con ella baja la fricción, que es proporcional a N.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U5-5.9"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Cuesta más arrancar porque, para que la caja empiece a moverse, la fuerza debe superar la fricción estática máxima, μs·N, y el coeficiente estático es mayor que el cinético; ya en movimiento solo hay que igualar μk·N, que es menor. Al jalar inclinado, la componente vertical de la cuerda sostiene parte del peso, así que el piso empuja menos: la normal es menor que el peso (N = mg − F sen θ) y la fricción, que es proporcional a N, también baja.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Explica que para arrancar se debe superar la fricción estática máxima, mayor que la cinética (μs > μk).",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Dice que al jalar inclinado la normal disminuye porque la componente vertical de la cuerda sostiene parte del peso.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Relaciona la menor normal con una menor fricción (f = μ·N).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Escribe N = mg − F sen θ o menciona que, si el ángulo es muy grande, la componente horizontal útil se reduce demasiado.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Supone que la normal es siempre igual al peso.",
+     "ejemplo": "Jalar inclinado no cambia la normal, que siempre es mg; solo se siente más fácil por la postura.",
+     "dificultad": "DIF:fisica/friccion-resistencia-aire/1"
+    },
+    {
+     "descripcion": "Cree que la fricción estática vale siempre su máximo.",
+     "ejemplo": "Cuando la caja está quieta la fricción es μs·mg aunque nadie la empuje, y por eso cuesta más arrancar.",
+     "dificultad": "DIF:fisica/friccion-resistencia-aire/2"
+    },
+    {
+     "descripcion": "Explica la diferencia por el peso o la inercia sin hablar de los coeficientes.",
+     "ejemplo": "Cuesta más arrancar porque quieta la caja pesa más.",
+     "dificultad": null
+    }
+   ]
+  },
+  "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+  "version": "pedagogia-v1",
+  "revisado_por": ""
+ },
+ {
   "id": "ACT:G10-FIS-U6-6.5/obj-1",
   "tipo": "actividad",
   "rol": "objetivo",

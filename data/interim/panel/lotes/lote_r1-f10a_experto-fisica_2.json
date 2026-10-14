@@ -1,0 +1,1588 @@
+{
+ "lote": "r1-f10a_experto-fisica_2",
+ "ronda": 1,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U5-5.9/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U5-5.9/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.9"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.9",
+      "CON:fisica/friccion-resistencia-aire"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "José jala un costal de 20 kg por el piso horizontal del patio con una cuerda inclinada 30° sobre la horizontal, con una fuerza de 80 N. Usa g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Plantea ΣFy = 0 en el eje vertical: ¿cuánto vale la fuerza normal que el piso ejerce sobre el costal, en N? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 156,
+     "tolerancia": 2,
+     "unidad": "N",
+     "retroalimentacion": "En el eje vertical actúan el peso, 20 · 9.8 = 196 N hacia abajo, la normal hacia arriba y la componente vertical de la cuerda, 80 sen 30° = 40 N hacia arriba. Como el costal no se acelera verticalmente, N + 40 − 196 = 0 y N = 156 N. La normal no siempre es igual al peso: aquí la cuerda carga una parte, y por eso también baja la fricción.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U5-5.9"
+     },
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U5-5.9/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U5-5.9/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U5-5.9/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.9"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.9",
+      "CON:fisica/friccion-resistencia-aire"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo inclinó despacio una misma tabla y midió el ángulo al que empezó a deslizar cada objeto (promedio de 5 intentos, datos de un grupo de ejemplo): caja de cartón de 0.10 kg, 22°; bloque de madera de 0.30 kg, 27°; goma de caucho de 0.05 kg, 40°. Luego fijan la tabla a 30° y ponen cada objeto en reposo sobre ella. ¿Qué pasará?",
+     "opciones": {
+      "A": "Solo la goma de caucho queda en reposo, porque su μs ≈ 0.84 supera a tan 30° ≈ 0.58.",
+      "B": "Quedan en reposo la madera y el caucho, porque sus μs superan a sen 30° = 0.50.",
+      "C": "Solo el cartón se desliza, porque es el más liviano y lo sujeta menos fricción.",
+      "D": "Los tres quedan en reposo, porque la fricción estática crece lo que haga falta."
+     },
+     "correcta": "A",
+     "distractores": {
+      "D": "DIF:fisica/friccion-resistencia-aire/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el ángulo crítico μs = tan θ: cartón ≈ 0.40, madera ≈ 0.51 y caucho ≈ 0.84. A 30° un objeto queda quieto solo si μs ≥ tan 30° ≈ 0.58, es decir, si su ángulo crítico es mayor que 30°: solo el caucho. La masa no importa, porque el peso a lo largo de la tabla y la fricción máxima crecen igual con ella; y la fricción estática tiene un máximo, μs·N.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U5-5.9"
+     },
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U5-5.9/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U5-5.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U5-5.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.9"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.9",
+      "CON:fisica/friccion-resistencia-aire"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 2 o 3 oraciones, explica las dos observaciones: por qué cuesta más arrancar, y qué le pasa a la fuerza normal y a la fricción cuando jala inclinado.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Para arrancar hay que superar la fricción estática máxima, μs·N, que es mayor que la cinética, μk·N, porque en general μs > μk. Al jalar inclinado, la componente vertical de la cuerda carga parte del peso: la normal baja (N = mg − F sen θ) y con ella baja la fricción, que es proporcional a N.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U5-5.9"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Cuesta más arrancar porque, para que la caja empiece a moverse, la fuerza debe superar la fricción estática máxima, μs·N, y el coeficiente estático es mayor que el cinético; ya en movimiento solo hay que igualar μk·N, que es menor. Al jalar inclinado, la componente vertical de la cuerda sostiene parte del peso, así que el piso empuja menos: la normal es menor que el peso (N = mg − F sen θ) y la fricción, que es proporcional a N, también baja.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que para arrancar se debe superar la fricción estática máxima, mayor que la cinética (μs > μk).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Dice que al jalar inclinado la normal disminuye porque la componente vertical de la cuerda sostiene parte del peso.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la menor normal con una menor fricción (f = μ·N).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Escribe N = mg − F sen θ o menciona que, si el ángulo es muy grande, la componente horizontal útil se reduce demasiado.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Supone que la normal es siempre igual al peso.",
+        "ejemplo": "Jalar inclinado no cambia la normal, que siempre es mg; solo se siente más fácil por la postura.",
+        "dificultad": "DIF:fisica/friccion-resistencia-aire/1"
+       },
+       {
+        "descripcion": "Cree que la fricción estática vale siempre su máximo.",
+        "ejemplo": "Cuando la caja está quieta la fricción es μs·mg aunque nadie la empuje, y por eso cuesta más arrancar.",
+        "dificultad": "DIF:fisica/friccion-resistencia-aire/2"
+       },
+       {
+        "descripcion": "Explica la diferencia por el peso o la inercia sin hablar de los coeficientes.",
+        "ejemplo": "Cuesta más arrancar porque quieta la caja pesa más.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U5-5.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aplicaciones-leyes-newton/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aplicaciones-leyes-newton/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aplicaciones-leyes-newton",
+     "descripcion": "Cree que la tensión de la cuerda es igual al peso del cuerpo que cuelga aunque el sistema acelere: en una máquina de Atwood la toma igual al peso de la masa pesada (o de la liviana), y en un carrito jalado por una masa colgante usa el peso colgante como la fuerza sobre el carrito. Solo es igual al peso cuando el cuerpo colgado está en reposo o se mueve a velocidad constante.",
+     "senales": "Escribe T = m₁g en un sistema que acelera; obtiene en el cálculo una aceleración demasiado grande; no dibuja diagramas separados para cada cuerpo; usa una sola ecuación para todo el sistema y luego no puede calcular la tensión.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al resolver cuerpos conectados; la malla pide diagramas separados.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aplicaciones-leyes-newton",
+     "nombre": "Aplicaciones de las leyes de Newton",
+     "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.10",
+     "grado": 10,
+     "indicador": "3.5. • Resuelve problemas de sistemas de cuerpos conectados, con o sin rozamiento y en planos inclinados, determinando la aceleración común y las tensiones. • Calcula la tensión de un cable que sostiene un ascensor cuando sube o baja con aceleración y la relaciona con el par de fuerzas de la tercera ley. • Resuelve problemas de equilibrio de traslación planteando ΣFx = 0 y ΣFy = 0, como el de un semáforo suspendido de dos cables o un bloque en reposo sobre un plano inclinado. • Explica la ingravidez aparente como caída libre continua y calcula la rapidez de giro necesaria para producir gravedad artificial.",
+     "evidencia": "Resolución de problemas de cuerpos conectados con diagramas separados y comparación con los datos de la máquina de Atwood"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aplicaciones-leyes-newton/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aplicaciones-leyes-newton/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aplicaciones-leyes-newton/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aplicaciones-leyes-newton",
+     "descripcion": "Cree que el peso aparente en un ascensor (o la tensión del cable) depende del sentido de la velocidad: que la balanza marca más siempre que sube y menos siempre que baja. Depende del sentido de la aceleración: marca más al arrancar hacia arriba y al frenar bajando, menos al arrancar hacia abajo y al frenar subiendo, e igual que en reposo a velocidad constante.",
+     "senales": "Dice que subiendo a velocidad constante pesa más; interpreta una lectura menor como «el ascensor está bajando»; usa T = m(g + a) para cualquier subida sin mirar el sentido de a; no relaciona la lectura de la balanza con la normal.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión velocidad-aceleración que reaparece en el problema del ascensor.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aplicaciones-leyes-newton",
+     "nombre": "Aplicaciones de las leyes de Newton",
+     "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.10",
+     "grado": 10,
+     "indicador": "3.5. • Resuelve problemas de sistemas de cuerpos conectados, con o sin rozamiento y en planos inclinados, determinando la aceleración común y las tensiones. • Calcula la tensión de un cable que sostiene un ascensor cuando sube o baja con aceleración y la relaciona con el par de fuerzas de la tercera ley. • Resuelve problemas de equilibrio de traslación planteando ΣFx = 0 y ΣFy = 0, como el de un semáforo suspendido de dos cables o un bloque en reposo sobre un plano inclinado. • Explica la ingravidez aparente como caída libre continua y calcula la rapidez de giro necesaria para producir gravedad artificial.",
+     "evidencia": "Resolución de problemas de cuerpos conectados con diagramas separados y comparación con los datos de la máquina de Atwood"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aplicaciones-leyes-newton/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aplicaciones-leyes-newton/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aplicaciones-leyes-newton/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aplicaciones-leyes-newton",
+     "descripcion": "Confunde el peso aparente con la fuerza de gravedad: cree que cuando la balanza marca menos o cuando un cuerpo «flota» (en un ascensor que baja acelerando, en una caída o en órbita) la Tierra lo atrae menos o deja de atraerlo, y que en la Estación Espacial no hay gravedad. La gravedad casi no cambia; lo que cambia es la normal, que llega a cero en caída libre.",
+     "senales": "Explica la ingravidez de los astronautas por la falta de gravedad o de aire; dice que en el tramo de frenado del ascensor «la gravedad baja»; no puede decir qué fuerza mantiene a la estación en órbita; iguala peso con lectura de la balanza.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa muy extendida sobre la ingravidez; el indicador la pide explicar.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aplicaciones-leyes-newton",
+     "nombre": "Aplicaciones de las leyes de Newton",
+     "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.10",
+     "grado": 10,
+     "indicador": "3.5. • Resuelve problemas de sistemas de cuerpos conectados, con o sin rozamiento y en planos inclinados, determinando la aceleración común y las tensiones. • Calcula la tensión de un cable que sostiene un ascensor cuando sube o baja con aceleración y la relaciona con el par de fuerzas de la tercera ley. • Resuelve problemas de equilibrio de traslación planteando ΣFx = 0 y ΣFy = 0, como el de un semáforo suspendido de dos cables o un bloque en reposo sobre un plano inclinado. • Explica la ingravidez aparente como caída libre continua y calcula la rapidez de giro necesaria para producir gravedad artificial.",
+     "evidencia": "Resolución de problemas de cuerpos conectados con diagramas separados y comparación con los datos de la máquina de Atwood"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aplicaciones-leyes-newton/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/caida-libre/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/caida-libre/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/caida-libre",
+     "descripcion": "Cree que los cuerpos más pesados caen con mayor aceleración también cuando el aire es despreciable, por ejemplo una piedra y una canica soltadas desde 1 m. (Con aire, entre cuerpos de igual forma, el más pesado sí puede llegar antes; el error es extenderlo a la caída libre.)",
+     "senales": "Predice que la piedra llega claramente antes que la canica; explica que la hoja arrugada cae antes porque «pesa más»; usa la masa en las ecuaciones de la caída libre.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea aristotélica muy extendida sobre la caída de los cuerpos.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/caida-libre",
+     "nombre": "Caída libre",
+     "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.6",
+     "grado": 10,
+     "indicador": "2.3. Determina experimentalmente la aceleración de la gravedad y aplica las ecuaciones de la cinemática a la caída libre y al lanzamiento vertical.",
+     "evidencia": "Gráfica h contra t² con ajuste lineal, valor experimental de g y comparación con el valor aceptado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/caida-libre/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/caida-libre/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/caida-libre/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/caida-libre",
+     "descripcion": "Cree que en el punto más alto de un lanzamiento vertical la aceleración es cero, porque la velocidad es cero en ese instante.",
+     "senales": "Escribe a = 0 en la altura máxima o dice que «ahí la gravedad deja de actuar un instante»; confunde velocidad nula con aceleración nula.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión frecuente entre velocidad y aceleración en el punto más alto.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/caida-libre",
+     "nombre": "Caída libre",
+     "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.6",
+     "grado": 10,
+     "indicador": "2.3. Determina experimentalmente la aceleración de la gravedad y aplica las ecuaciones de la cinemática a la caída libre y al lanzamiento vertical.",
+     "evidencia": "Gráfica h contra t² con ajuste lineal, valor experimental de g y comparación con el valor aceptado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/caida-libre/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/caida-libre/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/caida-libre/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/caida-libre",
+     "descripcion": "Cree que la aceleración apunta en el sentido del movimiento: hacia arriba mientras la pelota sube y hacia abajo solo cuando baja.",
+     "senales": "Dibuja la aceleración hacia arriba en la subida; usa +g al subir y −g al bajar con el mismo eje; dice que la pelota «lleva una fuerza hacia arriba» que se agota.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se asocia aceleración y fuerza con el sentido de la velocidad.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/caida-libre",
+     "nombre": "Caída libre",
+     "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.6",
+     "grado": 10,
+     "indicador": "2.3. Determina experimentalmente la aceleración de la gravedad y aplica las ecuaciones de la cinemática a la caída libre y al lanzamiento vertical.",
+     "evidencia": "Gráfica h contra t² con ajuste lineal, valor experimental de g y comparación con el valor aceptado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/caida-libre/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/friccion-resistencia-aire/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/friccion-resistencia-aire/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/friccion-resistencia-aire",
+     "descripcion": "Cree que la fuerza normal es siempre igual al peso (N = mg), también en un plano inclinado, cuando una cuerda jala hacia arriba o una persona empuja hacia abajo, o en un ascensor que acelera. Solo vale cuando la superficie es horizontal, las únicas fuerzas verticales son el peso y la normal y no hay aceleración vertical.",
+     "senales": "Escribe N = mg en un plano inclinado en lugar de mg cos θ; calcula la fricción con μ·mg cuando hay una fuerza inclinada; dice que la normal es «la reacción del peso»; no cambia N al agregar una fuerza vertical en el diagrama de cuerpo libre.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error muy frecuente; el indicador pide explicar por qué N no siempre es el peso.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/friccion-resistencia-aire/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/friccion-resistencia-aire/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/friccion-resistencia-aire/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/friccion-resistencia-aire",
+     "descripcion": "No maneja que la fricción estática se ajusta: o la toma siempre igual a su valor máximo μs·N (incluso con un empujón pequeño o sin empujar), o cree que puede crecer sin límite y sostener a cualquier objeto en cualquier inclinación. La fricción estática vale lo necesario para impedir el deslizamiento, hasta el máximo μs·N.",
+     "senales": "Calcula f = μs·N para una caja quieta en el piso horizontal sin fuerzas aplicadas; dice que un empujón de 5 N recibe una fricción de 30 N «y la caja se va para atrás»; predice que nada se desliza en la tabla inclinada porque «la fricción lo sostiene».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión común entre f ≤ μs·N y f = μs·N.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/friccion-resistencia-aire/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/friccion-resistencia-aire/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/friccion-resistencia-aire/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/friccion-resistencia-aire",
+     "descripcion": "Cree que la fricción siempre se opone al movimiento del cuerpo y solo sirve para frenar. La fricción se opone al deslizamiento relativo entre las superficies: a menudo frena, pero también puede apuntar en el sentido del movimiento, como en el pie al caminar, en las llantas que impulsan un carro o en una caja que arranca junto con la paila de un pick-up.",
+     "senales": "Dibuja la fricción sobre el pie hacia atrás al caminar; dice que sin fricción sería más fácil caminar o arrancar un carro; no puede explicar qué fuerza acelera a la caja que va sobre un pick-up que arranca.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea frecuente al pasar de la fricción que frena a la que impulsa.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/friccion-resistencia-aire/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/graficas-movimiento/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/graficas-movimiento/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/graficas-movimiento",
+     "descripcion": "Lee la gráfica de movimiento como un dibujo del camino: cree que una x-t que sube muestra a alguien subiendo una cuesta o que una curva en la gráfica significa que el móvil dobló.",
+     "senales": "Describe una x-t creciente como «va subiendo una loma»; dibuja la x-t de un recorrido copiando la forma del mapa o de la trayectoria.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión gráfica-imagen muy reportada en cinemática escolar.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/graficas-movimiento",
+     "nombre": "Gráficas del movimiento",
+     "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.7",
+     "grado": 10,
+     "indicador": "2.1. • Construye, a partir de una de ellas, las otras dos gráficas del movimiento (x-t, v-t, a-t) para un móvil con varios tramos, usando pendientes y áreas. • Calcula el desplazamiento de un móvil en varios tramos rectilíneos con signo, y explica cómo cambian las posiciones, pero no el desplazamiento, al cambiar el origen del sistema de referencia. • Diferencia la rapidez media de la velocidad media en recorridos reales y estima la velocidad instantánea con la pendiente de la tangente en una gráfica posición-tiempo.",
+     "evidencia": "Conjunto de tres gráficas coherentes x-t, v-t y a-t de un movimiento por tramos con cálculos de áreas y pendientes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/graficas-movimiento/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/graficas-movimiento/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/graficas-movimiento/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/graficas-movimiento",
+     "descripcion": "Confunde el valor de la gráfica con su pendiente: cree que donde la x-t está más alta el móvil va más rápido, o que en el punto donde se cruzan dos rectas x-t los móviles tienen la misma velocidad.",
+     "senales": "Elige el instante con mayor x como el de mayor rapidez; dice que dos ciclistas «van igual de rápido» donde sus x-t se cruzan, cuando ahí solo están en la misma posición.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se lee la altura del punto en lugar de la inclinación.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/graficas-movimiento",
+     "nombre": "Gráficas del movimiento",
+     "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.7",
+     "grado": 10,
+     "indicador": "2.1. • Construye, a partir de una de ellas, las otras dos gráficas del movimiento (x-t, v-t, a-t) para un móvil con varios tramos, usando pendientes y áreas. • Calcula el desplazamiento de un móvil en varios tramos rectilíneos con signo, y explica cómo cambian las posiciones, pero no el desplazamiento, al cambiar el origen del sistema de referencia. • Diferencia la rapidez media de la velocidad media en recorridos reales y estima la velocidad instantánea con la pendiente de la tangente en una gráfica posición-tiempo.",
+     "evidencia": "Conjunto de tres gráficas coherentes x-t, v-t y a-t de un movimiento por tramos con cálculos de áreas y pendientes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/graficas-movimiento/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/graficas-movimiento/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/graficas-movimiento/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/graficas-movimiento",
+     "descripcion": "Lee una gráfica v-t como si fuera x-t: interpreta un tramo horizontal de la v-t como móvil detenido y un tramo que baja hasta el eje como regreso al punto de partida.",
+     "senales": "Dice que el móvil «está quieto» cuando la v-t es horizontal y distinta de cero; al construir la x-t a partir de la v-t, copia la misma forma.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se transfiere la lectura de una gráfica a la otra.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/graficas-movimiento",
+     "nombre": "Gráficas del movimiento",
+     "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.7",
+     "grado": 10,
+     "indicador": "2.1. • Construye, a partir de una de ellas, las otras dos gráficas del movimiento (x-t, v-t, a-t) para un móvil con varios tramos, usando pendientes y áreas. • Calcula el desplazamiento de un móvil en varios tramos rectilíneos con signo, y explica cómo cambian las posiciones, pero no el desplazamiento, al cambiar el origen del sistema de referencia. • Diferencia la rapidez media de la velocidad media en recorridos reales y estima la velocidad instantánea con la pendiente de la tangente en una gráfica posición-tiempo.",
+     "evidencia": "Conjunto de tres gráficas coherentes x-t, v-t y a-t de un movimiento por tramos con cálculos de áreas y pendientes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/graficas-movimiento/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-proyectiles/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-proyectiles/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-proyectiles",
+     "descripcion": "En un lanzamiento oblicuo cree que en el punto más alto la pelota se detiene por completo (velocidad cero) o que allí la gravedad deja de actuar (aceleración cero). En ese punto solo la componente vertical de la velocidad vale cero: la horizontal sigue igual, y la aceleración es g hacia abajo durante todo el vuelo. (En un lanzamiento vertical sí es cierto que la velocidad es cero arriba, pero la aceleración tampoco se anula.)",
+     "senales": "Escribe v = 0 o a = 0 en la altura máxima; dibuja la trayectoria con un «pico» o una pausa arriba; usa t = v₀/g en lugar de t = v₀ sen θ/g; dice que arriba «flota un instante» o que «la gravedad gana después».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa extendida en tiro vertical y parabólico; confunde velocidad y aceleración.",
+     "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-proyectiles",
+     "nombre": "Cinemática en dos dimensiones y proyectiles",
+     "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U4-4.1",
+     "grado": 10,
+     "indicador": "2.4. • Predice el alcance, la altura máxima y el tiempo de vuelo de un proyectil lanzado con cualquier ángulo y contrasta la predicción con mediciones de un lanzador construido en el aula. • Calcula con vectores unitarios el desplazamiento, la velocidad media y la aceleración media de un móvil en el plano, y explica por qué un móvil que cambia de dirección con rapidez constante está acelerado. • Aplica las ecuaciones de la cinemática por separado en cada eje para resolver movimientos en el plano con aceleración constante.",
+     "evidencia": "Lanzador construido, tabla de alcance contra ángulo y gráfica comparativa de valores medidos y predichos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-proyectiles/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-proyectiles/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-proyectiles/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-proyectiles",
+     "descripcion": "No reconoce la independencia de los movimientos: cree que la velocidad horizontal cambia el tiempo de caída, de modo que un objeto lanzado en horizontal tarda más en llegar al suelo que otro que se suelta a la misma altura en el mismo instante. En el modelo sin resistencia del aire tardan exactamente lo mismo, y con objetos densos y lentos la diferencia no se nota.",
+     "senales": "Predice que la canica soltada llega primero; usa la distancia recorrida en la trayectoria curva para calcular el tiempo de caída; mezcla componentes en una misma ecuación (por ejemplo, usa v₀ completo en la ecuación vertical); dice que «la bala disparada en horizontal se mantiene más tiempo en el aire».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error clásico ante la demostración de dos objetos soltado y lanzado.",
+     "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-proyectiles",
+     "nombre": "Cinemática en dos dimensiones y proyectiles",
+     "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U4-4.1",
+     "grado": 10,
+     "indicador": "2.4. • Predice el alcance, la altura máxima y el tiempo de vuelo de un proyectil lanzado con cualquier ángulo y contrasta la predicción con mediciones de un lanzador construido en el aula. • Calcula con vectores unitarios el desplazamiento, la velocidad media y la aceleración media de un móvil en el plano, y explica por qué un móvil que cambia de dirección con rapidez constante está acelerado. • Aplica las ecuaciones de la cinemática por separado en cada eje para resolver movimientos en el plano con aceleración constante.",
+     "evidencia": "Lanzador construido, tabla de alcance contra ángulo y gráfica comparativa de valores medidos y predichos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-proyectiles/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-proyectiles/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-proyectiles/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-proyectiles",
+     "descripcion": "Cree que el lanzamiento le deja al proyectil una fuerza que lo acompaña en la dirección del movimiento y se va gastando («ímpetu»): mientras le dura sigue avanzando y subiendo, y cuando se acaba, cae. En el aire solo actúan el peso y la resistencia del aire; ninguna fuerza empuja al proyectil hacia adelante.",
+     "senales": "Dibuja en el diagrama de cuerpo libre una flecha tangente a la trayectoria o hacia adelante; dibuja trayectorias que siguen rectas y luego caen casi vertical; explica el menor alcance a 75° porque «la fuerza se gastó subiendo»; dice que la pelota cae «cuando se le acaba la fuerza».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea de ímpetu muy documentada en mecánica intuitiva de adolescentes.",
+     "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-proyectiles",
+     "nombre": "Cinemática en dos dimensiones y proyectiles",
+     "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U4-4.1",
+     "grado": 10,
+     "indicador": "2.4. • Predice el alcance, la altura máxima y el tiempo de vuelo de un proyectil lanzado con cualquier ángulo y contrasta la predicción con mediciones de un lanzador construido en el aula. • Calcula con vectores unitarios el desplazamiento, la velocidad media y la aceleración media de un móvil en el plano, y explica por qué un móvil que cambia de dirección con rapidez constante está acelerado. • Aplica las ecuaciones de la cinemática por separado en cada eje para resolver movimientos en el plano con aceleración constante.",
+     "evidencia": "Lanzador construido, tabla de alcance contra ángulo y gráfica comparativa de valores medidos y predichos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-proyectiles/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-uniformemente-acelerado/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-uniformemente-acelerado/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-uniformemente-acelerado",
+     "descripcion": "Cree que una aceleración negativa siempre significa frenar y una positiva siempre aumentar la rapidez, sin compararla con el signo de la velocidad.",
+     "senales": "Dice que un móvil con v = −12 m/s y a = −2 m/s² está frenando, o que uno con v negativa y a positiva acelera; llama «desaceleración» a cualquier aceleración negativa.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se confunde el signo, que da el sentido, con frenar.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-uniformemente-acelerado",
+     "nombre": "Movimiento con aceleración constante",
+     "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.5",
+     "grado": 10,
+     "indicador": "2.2. • Resuelve problemas de varias etapas con las ecuaciones de la cinemática, como la distancia total de detención de un vehículo o el tiempo de encuentro entre dos móviles. • Calcula la aceleración media de un móvil a partir de datos experimentales y determina, según los signos de velocidad y aceleración, si el móvil acelera o frena. • Deduce las ecuaciones del movimiento rectilíneo uniformemente acelerado a partir de la pendiente y el área de la gráfica velocidad-tiempo, e identifica la ecuación adecuada según las variables conocidas.",
+     "evidencia": "Tabla y gráfica de distancia de detención contra rapidez con argumentación sobre distancias de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-uniformemente-acelerado/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-uniformemente-acelerado/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-uniformemente-acelerado",
+     "descripcion": "Cree que la distancia de frenado es proporcional a la rapidez: que al duplicar la rapidez se duplica la distancia, en lugar de cuadruplicarse cuando la desaceleración es la misma.",
+     "senales": "Predice 18 m donde corresponden 36 m; dibuja la distancia de frenado contra la rapidez como una recta.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se extiende la proporcionalidad del movimiento uniforme al frenado.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-uniformemente-acelerado",
+     "nombre": "Movimiento con aceleración constante",
+     "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.5",
+     "grado": 10,
+     "indicador": "2.2. • Resuelve problemas de varias etapas con las ecuaciones de la cinemática, como la distancia total de detención de un vehículo o el tiempo de encuentro entre dos móviles. • Calcula la aceleración media de un móvil a partir de datos experimentales y determina, según los signos de velocidad y aceleración, si el móvil acelera o frena. • Deduce las ecuaciones del movimiento rectilíneo uniformemente acelerado a partir de la pendiente y el área de la gráfica velocidad-tiempo, e identifica la ecuación adecuada según las variables conocidas.",
+     "evidencia": "Tabla y gráfica de distancia de detención contra rapidez con argumentación sobre distancias de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/movimiento-uniformemente-acelerado/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/movimiento-uniformemente-acelerado/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/movimiento-uniformemente-acelerado",
+     "descripcion": "Calcula la distancia de detención solo con la fase de frenado: olvida que durante el tiempo de reacción el vehículo sigue a la misma rapidez, o cree que empieza a frenar en el instante en que el conductor ve el peligro.",
+     "senales": "Su distancia total coincide con v²/(2a); en una gráfica v-t ignora el tramo horizontal inicial o empieza el triángulo desde t = 0.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Problema de varias etapas resuelto como si tuviera una sola.",
+     "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-uniformemente-acelerado",
+     "nombre": "Movimiento con aceleración constante",
+     "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.5",
+     "grado": 10,
+     "indicador": "2.2. • Resuelve problemas de varias etapas con las ecuaciones de la cinemática, como la distancia total de detención de un vehículo o el tiempo de encuentro entre dos móviles. • Calcula la aceleración media de un móvil a partir de datos experimentales y determina, según los signos de velocidad y aceleración, si el móvil acelera o frena. • Deduce las ecuaciones del movimiento rectilíneo uniformemente acelerado a partir de la pendiente y el área de la gráfica velocidad-tiempo, e identifica la ecuación adecuada según las variables conocidas.",
+     "evidencia": "Tabla y gráfica de distancia de detención contra rapidez con argumentación sobre distancias de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/primera-ley-newton/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/primera-ley-newton/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/primera-ley-newton",
+     "descripcion": "Cree que un cuerpo necesita una fuerza neta en la dirección de su movimiento para seguir moviéndose, y que sin ella se detiene solo; por eso asocia velocidad constante con «fuerza constante hacia adelante» y reposo con «ninguna fuerza». En la vida diaria sí hace falta empujar para compensar la fricción, pero entonces la fuerza neta es cero: no distingue la fuerza aplicada de la fuerza neta.",
+     "senales": "Dibuja una flecha hacia adelante, mayor que la fricción, en un carro a velocidad constante; dice que la pelota se detiene «porque se le acabó la fuerza»; afirma que solo un sistema en reposo cumple la primera ley o que un bus a velocidad constante no es un sistema de referencia inercial.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea aristotélica persistente; la malla pide contrastar Aristóteles con Newton.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/primera-ley-newton",
+     "nombre": "Primera ley de Newton: inercia",
+     "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.2",
+     "grado": 10,
+     "indicador": "3.1. • Explica con la primera ley de Newton situaciones de seguridad vial y reconoce cuándo un sistema de referencia no es inercial. • Distingue la masa inercial del peso y explica cómo cambió la idea de fuerza desde Aristóteles hasta Newton a partir de fuentes históricas.",
+     "evidencia": "Explicación escrita de tres situaciones de tránsito con la primera ley y propuesta argumentada de una norma de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/primera-ley-newton/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/primera-ley-newton/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/primera-ley-newton/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/primera-ley-newton",
+     "descripcion": "Trata la inercia como una fuerza que actúa sobre el cuerpo: dice que «la fuerza de la inercia» lo lanza hacia adelante al frenar o hacia atrás al arrancar. Visto desde el suelo (sistema inercial) no hay ninguna fuerza hacia adelante: el cuerpo solo conserva su velocidad. Dentro del vehículo que frena, que no es inercial, esa sensación se describe con una fuerza ficticia sin agente, que no es una interacción entre cuerpos.",
+     "senales": "Escribe «fuerza de inercia» en un diagrama de cuerpo libre hecho desde la acera; no puede decir qué cuerpo ejerce esa fuerza; explica el cinturón como algo que «vence a la fuerza de inercia» en lugar de como la fuerza que frena al pasajero; mezcla el punto de vista del pasajero con el de la acera.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Expresión cotidiana («la inercia me lanzó») que la malla pide analizar críticamente.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/primera-ley-newton",
+     "nombre": "Primera ley de Newton: inercia",
+     "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.2",
+     "grado": 10,
+     "indicador": "3.1. • Explica con la primera ley de Newton situaciones de seguridad vial y reconoce cuándo un sistema de referencia no es inercial. • Distingue la masa inercial del peso y explica cómo cambió la idea de fuerza desde Aristóteles hasta Newton a partir de fuentes históricas.",
+     "evidencia": "Explicación escrita de tres situaciones de tránsito con la primera ley y propuesta argumentada de una norma de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/primera-ley-newton/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/primera-ley-newton/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/primera-ley-newton/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/primera-ley-newton",
+     "descripcion": "Confunde la masa inercial con el peso: cree que la inercia depende de la gravedad, de modo que un objeto colgado, apoyado o en el espacio, donde «no pesa», no costaría nada acelerarlo o detenerlo; o que un objeto liviano no tiene inercia. La masa mide la resistencia a cambiar la velocidad y es la misma en cualquier lugar; el peso es la fuerza con que la Tierra lo atrae.",
+     "senales": "Dice que un astronauta podría detener con un dedo un satélite grande «porque allá no pesa»; predice que las dos botellas colgadas se moverán igual porque el hilo sostiene su peso; usa «masa» y «peso» como sinónimos o da la masa en newtons; afirma que una caja liviana suelta en un bus no es peligrosa porque «no tiene inercia».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión masa-peso muy frecuente; el indicador pide distinguir masa inercial de peso.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/primera-ley-newton",
+     "nombre": "Primera ley de Newton: inercia",
+     "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.2",
+     "grado": 10,
+     "indicador": "3.1. • Explica con la primera ley de Newton situaciones de seguridad vial y reconoce cuándo un sistema de referencia no es inercial. • Distingue la masa inercial del peso y explica cómo cambió la idea de fuerza desde Aristóteles hasta Newton a partir de fuentes históricas.",
+     "evidencia": "Explicación escrita de tres situaciones de tránsito con la primera ley y propuesta argumentada de una norma de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/primera-ley-newton/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/segunda-ley-newton/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/segunda-ley-newton/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/segunda-ley-newton",
+     "descripcion": "Usa en ΣF = m·a una sola fuerza, la aplicada o la mayor, en lugar de la fuerza neta: deja fuera la fricción u otras fuerzas, o usa la fuerza completa de una cuerda inclinada en lugar de su componente en la dirección del movimiento. Por eso concluye que la ley «falla» cuando los datos no son proporcionales a la fuerza aplicada.",
+     "senales": "Calcula a = F/m con la fuerza de la cuerda sin descomponerla ni restar la fricción; espera que la gráfica a contra F pase por el origen y dice que el experimento salió mal si no pasa; no dibuja diagrama de cuerpo libre antes de escribir la ecuación; suma magnitudes de fuerzas con ángulos distintos como si fueran paralelas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al pasar de una dimensión a fuerzas con ángulos.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.4",
+     "grado": 10,
+     "indicador": "3.2. • Comprueba experimentalmente que la aceleración es directamente proporcional a la fuerza neta e inversamente proporcional a la masa, a partir de gráficas linealizadas. • Aplica la segunda ley de Newton por componentes para calcular la aceleración de un cuerpo sometido a varias fuerzas con ángulos arbitrarios.",
+     "evidencia": "Informe con gráficas a contra F y a contra 1/m, ecuaciones de ajuste y conclusión sobre la segunda ley"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/segunda-ley-newton/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/segunda-ley-newton/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/segunda-ley-newton/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/segunda-ley-newton",
+     "descripcion": "Confunde masa con peso al aplicar la segunda ley: pone el peso en newtons donde va la masa (a = F/peso), usa la masa en kilogramos como si fuera una fuerza, o cree que un cuerpo de más masa acelera más con la misma fuerza neta porque «pesa más y empuja más».",
+     "senales": "Escribe a = F/(m·g) o F = m sin multiplicar por g; obtiene aceleraciones unas diez veces menores o mayores que las medidas; predice que al agregar masa al carrito con la misma fuerza neta la aceleración aumenta; escribe unidades como «kg» para el peso o «N» para la masa.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión masa-peso frecuente al usar ΣF = m·a con pesos colgantes.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.4",
+     "grado": 10,
+     "indicador": "3.2. • Comprueba experimentalmente que la aceleración es directamente proporcional a la fuerza neta e inversamente proporcional a la masa, a partir de gráficas linealizadas. • Aplica la segunda ley de Newton por componentes para calcular la aceleración de un cuerpo sometido a varias fuerzas con ángulos arbitrarios.",
+     "evidencia": "Informe con gráficas a contra F y a contra 1/m, ecuaciones de ajuste y conclusión sobre la segunda ley"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/segunda-ley-newton/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/sistema-internacional-unidades/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/sistema-internacional-unidades/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/sistema-internacional-unidades",
+     "descripcion": "Al convertir unidades de área o de volumen usa el factor de la longitud sin elevarlo al cuadrado o al cubo: cree que 1 m² son 100 cm² o que 1 m³ son 100 L o 1 000 cm³.",
+     "senales": "Escribe 2 m³ = 200 L o 1 m³ = 1 000 cm³; al calcular el volumen de un tanque obtiene un valor mil o un millón de veces menor de lo razonable.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al convertir unidades elevadas a una potencia.",
+     "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.1",
+     "grado": 10,
+     "indicador": "1.3. • Resuelve problemas en contexto que requieren varias conversiones encadenadas de unidades y verifica la coherencia de las unidades del resultado. • Comprueba la homogeneidad dimensional de una ecuación física y detecta ecuaciones mal planteadas por sus dimensiones.",
+     "evidencia": "Resolución escrita de tres problemas contextualizados con cadena de factores de conversión y comprobación de unidades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/sistema-internacional-unidades/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/sistema-internacional-unidades/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/sistema-internacional-unidades/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/sistema-internacional-unidades",
+     "descripcion": "Escribe los factores de conversión sin unidades o los usa invertidos: multiplica cuando debía dividir (por ejemplo, 90 km/h × 3.6) porque no comprueba que la unidad que quiere eliminar quede arriba y abajo.",
+     "senales": "Resultados de un orden de magnitud absurdo (un carro a 324 m/s) o con unidades que no se cancelan, como km²/h o h²; números sin unidad en los pasos intermedios.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Típico al aplicar factores de memoria sin cancelar unidades.",
+     "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.1",
+     "grado": 10,
+     "indicador": "1.3. • Resuelve problemas en contexto que requieren varias conversiones encadenadas de unidades y verifica la coherencia de las unidades del resultado. • Comprueba la homogeneidad dimensional de una ecuación física y detecta ecuaciones mal planteadas por sus dimensiones.",
+     "evidencia": "Resolución escrita de tres problemas contextualizados con cadena de factores de conversión y comprobación de unidades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/sistema-internacional-unidades/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/sistema-internacional-unidades/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/sistema-internacional-unidades/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/sistema-internacional-unidades",
+     "descripcion": "Confunde lo que el análisis dimensional puede decir: cree que un factor numérico como ½ o 2π cambia las dimensiones y puede arreglar un término mal planteado, o que una ecuación con dimensiones homogéneas ya es correcta.",
+     "senales": "Propone «agregar ½» para corregir una ecuación con dimensiones distintas, o afirma que x = a·t² es correcta para la caída solo porque las dimensiones coinciden.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se atribuye al análisis dimensional más alcance del que tiene.",
+     "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.1",
+     "grado": 10,
+     "indicador": "1.3. • Resuelve problemas en contexto que requieren varias conversiones encadenadas de unidades y verifica la coherencia de las unidades del resultado. • Comprueba la homogeneidad dimensional de una ecuación física y detecta ecuaciones mal planteadas por sus dimensiones.",
+     "evidencia": "Resolución escrita de tres problemas contextualizados con cadena de factores de conversión y comprobación de unidades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/sistema-internacional-unidades/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/suma-vectores-componentes/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/suma-vectores-componentes/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/suma-vectores-componentes",
+     "descripcion": "Suma los módulos como si fueran escalares: cree que la resultante de varios desplazamientos o fuerzas mide la suma de sus módulos, sin importar sus direcciones.",
+     "senales": "Responde que 3 km al este y 4 km al norte dan 7 km, o que el regreso mide lo mismo que todo el recorrido; no dibuja los vectores ni separa componentes.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confusión clásica entre distancia recorrida y desplazamiento resultante.",
+     "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/suma-vectores-componentes",
+     "nombre": "Suma de vectores y componentes rectangulares",
+     "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.4",
+     "grado": 10,
+     "indicador": "1.4. • Resuelve problemas en contexto con tres o más vectores en direcciones arbitrarias, obteniendo la resultante por componentes y expresándola en forma polar. • Representa magnitudes vectoriales con escala, notación polar y rumbo geográfico, y las distingue de las escalares. • Obtiene el módulo y la dirección de la suma y la resta de dos vectores con ángulos arbitrarios aplicando las leyes del seno y del coseno. • Calcula las componentes de vectores en cualquier cuadrante y reconstruye su módulo y dirección a partir de las componentes, expresándolos con vectores unitarios.",
+     "evidencia": "Solución de un problema de rescate con tabla de componentes, resultante en notación î, ĵ y rumbo de regreso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/suma-vectores-componentes/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  }
+ ]
+}
