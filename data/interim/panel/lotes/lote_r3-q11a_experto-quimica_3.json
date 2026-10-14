@@ -1,0 +1,1182 @@
+{
+ "lote": "r3-q11a_experto-quimica_3",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.1",
+      "CON:quimica/fundamentos-de-reactividad-organica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo de ejemplo clasifica cuatro especies según los electrones de valencia del átomo central y su carga neta:\n- Especie 1: ion hidróxido, OH⁻ (oxígeno con octeto completo y pares libres; carga −1)\n- Especie 2: catión metilo, CH₃⁺ (carbono con 6 electrones de valencia; carga +1)\n- Especie 3: átomo de cloro, Cl· (7 electrones de valencia; carga 0)\n- Especie 4: agua, H₂O (oxígeno con octeto completo y dos pares libres; carga 0)\n¿Qué opción clasifica correctamente las cuatro especies?",
+     "opciones": {
+      "A": "Especie 1: electrófilo; Especie 2: nucleófilo; Especie 3: radical libre; Especie 4: nucleófilo por sus pares libres.",
+      "B": "Especie 1: nucleófilo; Especie 2: radical libre; Especie 3: electrófilo; Especie 4: nucleófilo por sus pares libres.",
+      "C": "Especie 1: nucleófilo; Especie 2: electrófilo; Especie 3: radical libre; Especie 4: inactiva por no tener carga neta.",
+      "D": "Especie 1: nucleófilo; Especie 2: electrófilo; Especie 3: radical libre; Especie 4: nucleófilo por sus pares libres."
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/fundamentos-de-reactividad-organica/1",
+      "C": "DIF:quimica/fundamentos-de-reactividad-organica/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El OH⁻ y el H2O poseen pares de electrones libres disponibles para donar, por lo que son nucleófilos. El CH3⁺ tiene un octeto incompleto (6 electrones) y carga positiva, así que es un electrófilo; el Cl· tiene un electrón desapareado y es un radical.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.1",
+     "grado": 11,
+     "indicador": "9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electrónica.",
+     "evidencia": "Esquema conceptual de rupturas y reactivos con la clasificación justificada de doce especies"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "OH⁻ y H₂O nucleófilos, CH₃⁺ electrófilo (seis electrones de valencia), Cl· radical. Clave D correcta y distractores falsos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.1",
+       "cita": "Clasifica reactivos según su distribución electrónica."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El catión metilo tiene octeto incompleto."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Las cuatro especies venían en un párrafo de 84 palabras con paréntesis anidados. Se pasan a lista, una especie por línea, con subíndices y signo menos tipográficos (CH₃⁺, H₂O, −1). Clasificaciones, opciones y clave sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un equipo de ejemplo clasifica cuatro especies según los electrones de valencia del átomo central y su carga neta:\n- Especie 1: ion hidróxido, OH⁻ (oxígeno con octeto completo y pares libres; carga −1)\n- Especie 2: catión metilo, CH₃⁺ (carbono con 6 electrones de valencia; carga +1)\n- Especie 3: átomo de cloro, Cl· (7 electrones de valencia; carga 0)\n- Especie 4: agua, H₂O (oxígeno con octeto completo y dos pares libres; carga 0)\n¿Qué opción clasifica correctamente las cuatro especies?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.1",
+      "CON:quimica/fundamentos-de-reactividad-organica"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Compara dos rupturas de enlace: la del Cl–Cl bajo luz ultravioleta y la del C–Br en el 2-bromopropano disuelto en un solvente polar. En un párrafo de 4 a 6 oraciones, indica para cada caso:\na) qué tipo de ruptura ocurre y cómo se reparten los electrones del enlace;\nb) qué especies intermedias se forman (radical, carbocatión o carbanión);\nc) si son nucleófilos, electrófilos o radicales, justificando con su distribución electrónica.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En la molécula de Cl–Cl ocurre una ruptura homolítica porque ambos átomos tienen igual electronegatividad y cada uno se queda con un electrón del enlace, formando dos radicales de cloro (Cl·) que tienen un electrón desapareado. En cambio, en el enlace C–Br ocurre una ruptura heterolítica porque el bromo es más electronegativo y se lleva el par completo de electrones. Esto produce un ion bromuro (Br⁻, nucleófilo con pares libres) y un carbocatión (electrófilo con carga positiva y octeto incompleto en el carbono).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Identifica la ruptura de Cl–Cl como homolítica (reparto equitativo de un electrón para cada átomo) y la de C–Br como heterolítica (el bromo se lleva el par de electrones).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra los intermediarios formados: radicales de cloro en el primer caso y un carbocatión (más el ion bromuro) en el segundo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Clasifica el carbocatión como electrófilo por su deficiencia electrónica (octeto incompleto o carga positiva) y los átomos de cloro como radicales por su electrón desapareado.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde ruptura homolítica con heterolítica o afirma que el enlace C–Br forma radicales en un solvente polar e iones en Cl–Cl.",
+        "ejemplo": "El Cl–Cl se rompe en Cl⁺ y Cl⁻ de forma homolítica, mientras que el C–Br reparte un electrón a cada átomo.",
+        "dificultad": "DIF:quimica/fundamentos-de-reactividad-organica/1"
+       },
+       {
+        "descripcion": "Asigna la carga negativa al carbono y la positiva al bromo tras la ruptura heterolítica del enlace C–Br.",
+        "ejemplo": "Al romperse el enlace C–Br se forma un carbanión con carga negativa y un catión Br⁺ porque el carbono retiene el par de electrones.",
+        "dificultad": "DIF:quimica/fundamentos-de-reactividad-organica/3"
+       }
+      ]
+     },
+     "retroalimentacion": "En el enlace apolar Cl–Cl la luz provoca una ruptura homolítica que deja un electrón desapareado en cada átomo (radicales). En el enlace polar C–Br el bromo es más electronegativo, atrae el par compartido en una ruptura heterolítica y deja un carbocatión deficiente en electrones (electrófilo).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.1",
+     "grado": 11,
+     "indicador": "9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electrónica.",
+     "evidencia": "Esquema conceptual de rupturas y reactivos con la clasificación justificada de doce especies"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.1/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Homólisis del Cl–Cl por luz UV y heterólisis del C–Br en disolvente polar (carbocatión secundario) son correctas; la rúbrica clasifica bien radicales, carbocatión y bromuro.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.1",
+       "cita": "Diferencia la ruptura homolítica de la heterolítica."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Un disolvente polar estabiliza los iones de la heterólisis."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.1/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Pedía «2 o 3 oraciones» para cinco tareas en dos casos: la respuesta modelo tiene cuatro oraciones largas. Se pide un párrafo de 4 a 6 oraciones y se separan las tareas en a), b) y c), alineadas con los tres criterios obligatorios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Compara dos rupturas de enlace: la del Cl–Cl bajo luz ultravioleta y la del C–Br en el 2-bromopropano disuelto en un solvente polar. En un párrafo de 4 a 6 oraciones, indica para cada caso:\na) qué tipo de ruptura ocurre y cómo se reparten los electrones del enlace;\nb) qué especies intermedias se forman (radical, carbocatión o carbanión);\nc) si son nucleófilos, electrófilos o radicales, justificando con su distribución electrónica."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.3",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo escribe dos ecuaciones balanceadas, con coeficientes enteros mínimos, para la combustión del propano, C₃H₈(g):\n- Reacción 1 (completa): los únicos productos son CO₂(g) y H₂O(g).\n- Reacción 2 (incompleta): los únicos productos son CO(g) y H₂O(g).\n¿Qué opción da correctamente el O₂(g) de cada ecuación y los compara bien?",
+     "opciones": {
+      "A": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 7 O₂(g) por 1 C₃H₈(g). La incompleta consume más oxígeno por mol de propano.",
+      "B": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 7 O₂(g) por 2 C₃H₈(g). La incompleta consume menos oxígeno por mol de propano.",
+      "C": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 5 O₂(g) por 1 C₃H₈(g). El hidrógeno determina todo el oxígeno consumido.",
+      "D": "Reacción 1: 3 O₂(g) por 1 C₃H₈(g); reacción 2: 4 O₂(g) por 1 C₃H₈(g). Solo el carbono se combina con el oxígeno."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La combustión completa balanceada es C3H8(g) + 5 O2(g) → 3 CO2(g) + 4 H2O(g) (5 mol de O2 por mol de propano). La incompleta a monóxido de carbono es 2 C3H8(g) + 7 O2(g) → 6 CO(g) + 8 H2O(g) (3.5 mol de O2 por mol de propano), porque ocurre con deficiencia de oxígeno.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.3",
+     "grado": 11,
+     "indicador": "9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno.",
+     "evidencia": "Hoja de ecuaciones balanceadas de combustión, halogenación y adición con conclusiones del video"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.3/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Balances verificados: C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O; 2 C₃H₈ + 7 O₂ → 6 CO + 8 H₂O (3.5 O₂ por mol). Clave B correcta; los demás coeficientes o razonamientos son falsos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.3",
+       "cita": "Escribe y balancea reacciones de combustión."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Combustión incompleta consume menos O₂ por mol de propano."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.3/obj-1",
+     "decision": "corregir",
+     "justificacion": "La clave tenía 35 palabras frente a unas 20 de los demás y era la única que precisaba moles de propano: pista de forma. Se reescriben las cuatro opciones con la misma estructura (O₂ por moles de propano en cada reacción, y una comparación). Coeficientes y clave B sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo escribe dos ecuaciones balanceadas, con coeficientes enteros mínimos, para la combustión del propano, C₃H₈(g):\n- Reacción 1 (completa): los únicos productos son CO₂(g) y H₂O(g).\n- Reacción 2 (incompleta): los únicos productos son CO(g) y H₂O(g).\n¿Qué opción da correctamente el O₂(g) de cada ecuación y los compara bien?",
+      "opciones": {
+       "A": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 7 O₂(g) por 1 C₃H₈(g). La incompleta consume más oxígeno por mol de propano.",
+       "B": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 7 O₂(g) por 2 C₃H₈(g). La incompleta consume menos oxígeno por mol de propano.",
+       "C": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 5 O₂(g) por 1 C₃H₈(g). El hidrógeno determina todo el oxígeno consumido.",
+       "D": "Reacción 1: 3 O₂(g) por 1 C₃H₈(g); reacción 2: 4 O₂(g) por 1 C₃H₈(g). Solo el carbono se combina con el oxígeno."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.3",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un video de laboratorio (datos de un grupo de ejemplo) se agregan gotas de bromo, Br₂, disuelto en un disolvente orgánico inerte (color pardo-rojizo) a tres hidrocarburos:\n- Tubo 1, hexano (C₆H₁₄): en oscuridad sigue pardo; con luz ultravioleta se decolora en 5 min y desprende HBr(g), que enrojece un papel tornasol azul húmedo.\n- Tubo 2, 1-hexeno (C₆H₁₂): en oscuridad se decolora en menos de 5 s, sin vapores ácidos.\n- Tubo 3, benceno (C₆H₆): en oscuridad y sin catalizador sigue pardo tras 10 min.\n¿Qué conclusión explica estos datos?",
+     "opciones": {
+      "A": "Tubo 1: adición al enlace C–C simple; tubo 2: sustitución por radicales, que consumió el HBr(g) formado; tubo 3: no reaccionó porque el benceno es saturado.",
+      "B": "Tubos 1 y 2: halogenación por radicales libres en ambos; tubo 3: no reaccionó porque el benceno carece de enlaces pi.",
+      "C": "Tubo 1: sustitución por radicales (C₆H₁₃Br y HBr); tubo 2: adición al doble enlace (C₆H₁₂Br₂); tubo 3: sin adición por su estabilidad aromática.",
+      "D": "Tubo 1: sustitución por radicales (C₆H₁₃Br y HBr); tubo 2: sustitución más rápida (C₆H₁₁Br y HBr); tubo 3: no reaccionó porque el benceno es saturado."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El alcano (tubo 1) solo reacciona con luz UV, por sustitución por radicales libres: C6H14 + Br2 → C6H13Br + HBr(g) (mezcla de isómeros). El alqueno (tubo 2) sufre adición rápida al doble enlace C=C sin subproducto ácido: C6H12 + Br2 → C6H12Br2 (1,2-dibromohexano). El benceno (tubo 3) no adiciona porque perdería la deslocalización aromática; sin catalizador tampoco hay sustitución.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.3",
+     "grado": 11,
+     "indicador": "9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno.",
+     "evidencia": "Hoja de ecuaciones balanceadas de combustión, halogenación y adición con conclusiones del video"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.3/obj-2",
+     "decision": "corregir",
+     "justificacion": "Clave C correcta, pero los datos no son verosímiles: con agua de bromo el HBr se disuelve y no desprende vapores; el alqueno da sobre todo bromohidrina, no C₆H₁₂Br₂; y el benceno con bromo bajo luz UV intensa sí adiciona por radicales. Se usa bromo en disolvente inerte y el benceno solo en oscuridad sin catalizador.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.3",
+       "cita": "Halogenación por radicales, adición a alquenos y diferente reactividad del benceno."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El HBr es muy soluble en agua; en agua de bromo el alqueno forma mayoritariamente 2-bromoalcohol."
+      }
+     ],
+     "cambios": {
+      "enunciado": "En un video de laboratorio (datos de un grupo de ejemplo) se agregan gotas de una disolución de bromo, Br2, de color pardo-rojizo en un disolvente orgánico inerte, a tres tubos con los hidrocarburos 1, 2 y 3:\n- Tubo 1 (hexano, C6H14): en oscuridad permanece pardo; bajo luz ultravioleta se decolora tras 5 min y desprende vapores de HBr(g) que enrojecen un papel tornasol azul húmedo.\n- Tubo 2 (1-hexeno, C6H12): en oscuridad se decolora en menos de 5 s sin desprender vapores ácidos.\n- Tubo 3 (benceno, C6H6): en oscuridad y sin catalizador permanece pardo sin cambio tras 10 min.\n¿Qué conclusión relaciona correctamente los datos con las reacciones ocurridas?",
+      "retroalimentacion": "El alcano (tubo 1) solo reacciona con luz UV, por sustitución por radicales libres: C6H14 + Br2 → C6H13Br + HBr(g) (mezcla de isómeros). El alqueno (tubo 2) sufre adición rápida al doble enlace C=C sin subproducto ácido: C6H12 + Br2 → C6H12Br2 (1,2-dibromohexano). El benceno (tubo 3) no adiciona porque perdería la deslocalización aromática; sin catalizador tampoco hay sustitución."
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.3/obj-2",
+     "decision": "corregir",
+     "justificacion": "El enunciado tenía 112 palabras (límite 100); se acorta a 92 sin tocar los datos. La clave era la más larga y la única con fórmulas; las opciones pasan a un formato paralelo por tubo y el distractor inverosímil (isomerización a benceno) se cambia por uno plausible que los datos refutan. Clave C intacta.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En un video de laboratorio (datos de un grupo de ejemplo) se agregan gotas de bromo, Br₂, disuelto en un disolvente orgánico inerte (color pardo-rojizo) a tres hidrocarburos:\n- Tubo 1, hexano (C₆H₁₄): en oscuridad sigue pardo; con luz ultravioleta se decolora en 5 min y desprende HBr(g), que enrojece un papel tornasol azul húmedo.\n- Tubo 2, 1-hexeno (C₆H₁₂): en oscuridad se decolora en menos de 5 s, sin vapores ácidos.\n- Tubo 3, benceno (C₆H₆): en oscuridad y sin catalizador sigue pardo tras 10 min.\n¿Qué conclusión explica estos datos?",
+      "opciones": {
+       "A": "Tubo 1: adición al enlace C–C simple; tubo 2: sustitución por radicales, que consumió el HBr(g) formado; tubo 3: no reaccionó porque el benceno es saturado.",
+       "B": "Tubos 1 y 2: halogenación por radicales libres en ambos; tubo 3: no reaccionó porque el benceno carece de enlaces pi.",
+       "C": "Tubo 1: sustitución por radicales (C₆H₁₃Br y HBr); tubo 2: adición al doble enlace (C₆H₁₂Br₂); tubo 3: sin adición por su estabilidad aromática.",
+       "D": "Tubo 1: sustitución por radicales (C₆H₁₃Br y HBr); tubo 2: sustitución más rápida (C₆H₁₁Br y HBr); tubo 3: no reaccionó porque el benceno es saturado."
+      }
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.4",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo analiza tres líquidos desconocidos (muestras 1, 2 y 3). Son, sin orden, 2-propanol, propanal y propanona. Resultados:\n- Con K₂Cr₂O₇(ac)/H⁺, en tibio: las muestras 1 y 2 pasan de naranja a verde azulado; la muestra 3 sigue naranja.\n- Con reactivo de Fehling, en baño María: solo la muestra 1 forma un precipitado rojo ladrillo de Cu₂O(s).\n¿Qué compuesto contiene cada muestra?",
+     "opciones": {
+      "A": "La muestra 1 es 2-propanol, la muestra 2 es propanal y la muestra 3 es propanona, porque solo los alcoholes reducen al ion cúprico en caliente.",
+      "B": "La muestra 1 es propanona, la muestra 2 es 2-propanol y la muestra 3 es propanal, porque las cetonas dan precipitado rojo con el reactivo de Fehling.",
+      "C": "La muestra 1 es propanal, la muestra 2 es propanona y la muestra 3 es 2-propanol, porque los alcoholes secundarios no reaccionan con dicromato ácido.",
+      "D": "La muestra 1 es propanal, la muestra 2 es 2-propanol y la muestra 3 es propanona, porque el aldehído se oxida con ambos reactivos y la cetona con ninguno."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El propanal (aldehído) se oxida fácilmente a ácido propanoico tanto con dicromato ácido como con oxidantes suaves como el reactivo de Fehling (muestra 1). El 2-propanol (alcohol secundario) se oxida a propanona con dicromato ácido pero no reacciona con Fehling (muestra 2), y la propanona (cetona) no se oxida con ninguno de los dos reactivos (muestra 3).",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.4",
+     "grado": 11,
+     "indicador": "9.4. Predice si la oxidación de un alcohol produce un aldehído, una cetona o un ácido carboxílico y diferencia aldehídos de cetonas por su comportamiento frente a oxidantes.",
+     "evidencia": "Historieta científica y hoja de ecuaciones de oxidación de alcoholes con interpretación de las pruebas de Tollens y Fehling"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.4/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Dicromato: el aldehído y el alcohol secundario lo reducen (verde), la cetona no; Fehling solo con el aldehído. Asignación D correcta y única.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.4",
+       "cita": "Diferencia aldehídos de cetonas por su comportamiento frente a oxidantes."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Fehling oxida aldehídos, no cetonas ni alcoholes secundarios."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.4/obj-2",
+     "decision": "corregir",
+     "justificacion": "Mencionaba «la tabla de resultados» sin mostrarla y metía dos ensayos en una sola oración larga. Se presentan como lista, un reactivo por línea. Resultados, opciones y clave D sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo analiza tres líquidos desconocidos (muestras 1, 2 y 3). Son, sin orden, 2-propanol, propanal y propanona. Resultados:\n- Con K₂Cr₂O₇(ac)/H⁺, en tibio: las muestras 1 y 2 pasan de naranja a verde azulado; la muestra 3 sigue naranja.\n- Con reactivo de Fehling, en baño María: solo la muestra 1 forma un precipitado rojo ladrillo de Cu₂O(s).\n¿Qué compuesto contiene cada muestra?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.4",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Cuando una botella de vino queda destapada varios días, el etanol, CH₃CH₂OH(ac), se oxida en dos etapas hasta convertirse en vinagre. Responde en un párrafo:\na) Nombra el compuesto intermedio y el producto orgánico final, con la familia (grupo funcional) de cada uno.\nb) Explica por qué la estructura del etanol le permite oxidarse dos veces.\nc) Explica cómo diferenciarías el compuesto intermedio de una cetona como la propanona con el reactivo de Tollens o el de Fehling, y por qué.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "El etanol es un alcohol primario porque el carbono unido al grupo –OH tiene dos hidrógenos unidos; por eso puede perder el hidrógeno del –OH y uno de los hidrógenos de ese carbono para oxidarse primero a etanal (acetaldehído), que es un aldehído, y luego oxidarse de nuevo a ácido etanoico (ácido acético), que es un ácido carboxílico. El etanal se diferencia de la propanona porque el aldehído tiene un hidrógeno unido al carbono carbonílico (–CHO) y se oxida con el reactivo de Tollens formando un espejo de plata, Ag(s), o con el de Fehling dando un precipitado rojo ladrillo de Cu₂O(s), mientras que la cetona no reacciona.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra el intermedio como etanal (o acetaldehído, familia de los aldehídos) y el producto final como ácido etanoico (o ácido acético, familia de los ácidos carboxílicos).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la doble oxidación con que el etanol es un alcohol primario cuyo carbono con el grupo –OH posee dos átomos de hidrógeno.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que el etanal da prueba positiva con Tollens (espejo de plata) o Fehling (precipitado rojo ladrillo) porque los aldehídos se oxidan a carboxilato y las cetonas como la propanona no reaccionan.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde la oxidación de un alcohol primario con la de uno secundario y afirma que el etanol forma una cetona.",
+        "ejemplo": "El etanol primero se oxida a propanona o etanona, que es una cetona, y después se vuelve ácido acético.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Atribuye prueba positiva de Tollens o Fehling tanto a aldehídos como a cetonas por tener ambos el grupo carbonilo.",
+        "ejemplo": "Tanto el etanal como la propanona forman el espejo de plata con Tollens porque los dos tienen el enlace doble C=O.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Por ser un alcohol primario, el etanol se oxida primero al aldehído etanal y luego al ácido carboxílico ácido etanoico. A diferencia de las cetonas, el etanal posee un hidrógeno unido al carbono carbonílico y se oxida frente a los reactivos de Tollens o de Fehling.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.4",
+     "grado": 11,
+     "indicador": "9.4. Predice si la oxidación de un alcohol produce un aldehído, una cetona o un ácido carboxílico y diferencia aldehídos de cetonas por su comportamiento frente a oxidantes.",
+     "evidencia": "Historieta científica y hoja de ecuaciones de oxidación de alcoholes con interpretación de las pruebas de Tollens y Fehling"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.4/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Química correcta (etanol → etanal → ácido etanoico; Tollens y Fehling distinguen el aldehído). Solo se precisa la respuesta modelo: en la oxidación a aldehído se pierden dos hidrógenos (el del –OH y uno del carbono), no uno.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.4",
+       "cita": "Predice el producto de la oxidación de un alcohol."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "CH3CH2OH → CH3CHO + 2 H (formalmente): se eliminan H del O y H del C."
+      }
+     ],
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "El etanol es un alcohol primario porque el carbono unido al grupo –OH tiene dos hidrógenos unidos; por eso puede perder el hidrógeno del –OH y uno de los hidrógenos de ese carbono para oxidarse primero a etanal (acetaldehído), que es un aldehído, y luego oxidarse de nuevo a ácido etanoico (ácido acético), que es un ácido carboxílico. El etanal se diferencia de la propanona porque el aldehído tiene un hidrógeno unido al carbono carbonílico (–CHO) y se oxida con el reactivo de Tollens formando un espejo de plata, Ag(s), o con el de Fehling dando un precipitado rojo ladrillo de Cu₂O(s), mientras que la cetona no reacciona.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Nombra el intermedio como etanal (o acetaldehído, familia de los aldehídos) y el producto final como ácido etanoico (o ácido acético, familia de los ácidos carboxílicos).",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Relaciona la doble oxidación con que el etanol es un alcohol primario cuyo carbono con el grupo –OH posee dos átomos de hidrógeno.",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Justifica que el etanal da prueba positiva con Tollens (espejo de plata) o Fehling (precipitado rojo ladrillo) porque los aldehídos se oxidan a carboxilato y las cetonas como la propanona no reaccionan.",
+         "obligatorio": true
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Confunde la oxidación de un alcohol primario con la de uno secundario y afirma que el etanol forma una cetona.",
+         "ejemplo": "El etanol primero se oxida a propanona o etanona, que es una cetona, y después se vuelve ácido acético.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Atribuye prueba positiva de Tollens o Fehling tanto a aldehídos como a cetonas por tener ambos el grupo carbonilo.",
+         "ejemplo": "Tanto el etanal como la propanona forman el espejo de plata con Tollens porque los dos tienen el enlace doble C=O.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.4/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Cuatro tareas encadenadas en una sola oración de 74 palabras. Se separan en a), b) y c), alineadas con los tres criterios obligatorios; c) pide además el porqué, como exige c3. Rúbrica y química sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Cuando una botella de vino queda destapada varios días, el etanol, CH₃CH₂OH(ac), se oxida en dos etapas hasta convertirse en vinagre. Responde en un párrafo:\na) Nombra el compuesto intermedio y el producto orgánico final, con la familia (grupo funcional) de cada uno.\nb) Explica por qué la estructura del etanol le permite oxidarse dos veces.\nc) Explica cómo diferenciarías el compuesto intermedio de una cetona como la propanona con el reactivo de Tollens o el de Fehling, y por qué."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.5",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo prepara etanoato de etilo a temperatura constante en tres matraces cerrados y anota los moles de éster:\n- Matraz 1: 1.0 mol de ácido etanoico + 1.0 mol de etanol, con H₂SO₄. En el equilibrio: 0.67 mol.\n- Matraz 2: 1.0 mol de ácido etanoico + 3.0 mol de etanol, con H₂SO₄. En el equilibrio: 0.90 mol.\n- Matraz 3: 1.0 mol de ácido etanoico + 1.0 mol de etanol, sin H₂SO₄. Tras 2 horas: 0.05 mol.\n¿Qué conclusión se deduce de estos datos?",
+     "opciones": {
+      "A": "El exceso de etanol desplaza la constante de equilibrio a un valor tres veces mayor que en el primer matraz.",
+      "B": "El ácido sulfúrico se consume como reactivo estequiométrico para atrapar los protones y formar más éster.",
+      "C": "El exceso de etanol desplaza el equilibrio hacia los productos y el ácido sulfúrico acelera la llegada al equilibrio.",
+      "D": "Sin ácido sulfúrico la reacción es irreversible, pero alcanza un rendimiento máximo de apenas cinco por ciento."
+     },
+     "correcta": "C",
+     "distractores": {
+      "B": "DIF:quimica/esterificacion-e-hidrolisis/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aumentar la concentración de uno de los reactivos (etanol en el matraz 2) desplaza la posición de equilibrio hacia la formación de más éster y agua, sin cambiar la constante de equilibrio. El ácido sulfúrico actúa como catalizador: disminuye la energía de activación para alcanzar rápido el equilibrio, como se ve al comparar los matraces 1 y 3.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.5",
+     "grado": 11,
+     "indicador": "9.5. Escribe las ecuaciones de esterificación e hidrólisis de ésteres, nombra los productos y explica por qué la esterificación es una reacción reversible.",
+     "evidencia": "Informe técnico con ecuaciones de esterificación e hidrólisis y análisis del rendimiento de la síntesis observada"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Datos coherentes con K ≈ 4: 0.67²/0.33² = 4.1 y 0.90²/(0.10·2.10) = 3.9; sin catalizador la reacción es lenta. Clave C correcta; la retroalimentación aclara que K no cambia.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.5",
+       "cita": "Explica por qué la esterificación es reversible."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "K de la esterificación del ácido acético con etanol ≈ 4."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.5/obj-2",
+     "decision": "corregir",
+     "justificacion": "El enunciado tenía 111 palabras (límite 100). Se acorta a 88 manteniendo la lista de los tres matraces y todos los datos del experto. Opciones y clave C sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo prepara etanoato de etilo a temperatura constante en tres matraces cerrados y anota los moles de éster:\n- Matraz 1: 1.0 mol de ácido etanoico + 1.0 mol de etanol, con H₂SO₄. En el equilibrio: 0.67 mol.\n- Matraz 2: 1.0 mol de ácido etanoico + 3.0 mol de etanol, con H₂SO₄. En el equilibrio: 0.90 mol.\n- Matraz 3: 1.0 mol de ácido etanoico + 1.0 mol de etanol, sin H₂SO₄. Tras 2 horas: 0.05 mol.\n¿Qué conclusión se deduce de estos datos?"
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.6",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Responde en un párrafo de 4 a 6 oraciones:\na) Explica por qué las aminas son mucho más básicas en agua que las amidas. Usa el par de electrones libres del nitrógeno y la resonancia con el grupo carbonilo.\nb) Escribe o describe la reacción de condensación entre un ácido carboxílico y una amina para formar una amida (enlace peptídico), e indica qué molécula pequeña se libera.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En las aminas, el par de electrones libres del nitrógeno está localizado y disponible para aceptar un protón (H⁺) del agua, mientras que en las amidas ese par se deslocaliza por resonancia hacia el grupo carbonilo (C=O) y casi no actúa como base. Una amida (o enlace peptídico en proteínas) se forma por condensación entre el grupo carboxilo (–COOH) de un ácido carboxílico y el grupo amino (–NH₂) de una amina, liberando una molécula de agua (H₂O): R–COOH + R'–NH₂ → R–CO–NH–R' + H₂O. Al mezclarlos en frío primero forman una sal (la amina, como base, capta el H⁺ del ácido); la amida se obtiene calentando o, en la célula, con ayuda del ribosoma.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que en las aminas el par de electrones libres del nitrógeno acepta protones (base de Brønsted-Lowry), mientras que en las amidas está deslocalizado por resonancia con el grupo carbonilo (C=O).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Describe o escribe la reacción de condensación entre un ácido carboxílico (–COOH) y una amina (–NH₂) para formar el grupo amida (–CO–NH–) y nombra la liberación de una molécula de agua (H₂O).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el grupo amida formado entre aminoácidos con el enlace peptídico de las proteínas.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que las amidas son más básicas que las aminas porque tienen un átomo de oxígeno adicional que atrae protones.",
+        "ejemplo": "Las amidas son más básicas porque tienen nitrógeno y además el oxígeno del carbonilo que también capta H⁺.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confunde la formación de amidas con la esterificación de alcoholes o no identifica el agua como subproducto de la condensación.",
+        "ejemplo": "El ácido carboxílico reacciona con la amina para dar un éster y desprender gas hidrógeno.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Las aminas son básicas porque el par libre del nitrógeno capta H⁺; en las amidas, la resonancia con el grupo C=O deslocaliza ese par. Además, al condensarse un ácido carboxílico con una amina se forma el enlace amida (peptídico) y se libera H₂O.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.6",
+     "grado": 11,
+     "indicador": "9.6. Explica la basicidad de las aminas y escribe las reacciones de formación e hidrólisis de amidas, relacionándolas con el enlace peptídico.",
+     "evidencia": "Hoja de ejercicios con reacciones de amidas, estructuras de resonancia y análisis de valores de pKb"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.6/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Enfoque correcto (resonancia del par libre; condensación con pérdida de agua). Se matiza la respuesta modelo: ácido y amina en frío dan primero una sal por la basicidad de la amina, justo lo que pide el indicador; la amida exige calor o activación. Así la simplificación no siembra una idea que luego haya que desaprender.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U9-9.6",
+       "cita": "Explica la basicidad de las aminas y la formación de amidas."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "RCOOH + R'NH2 → RCOO⁻ R'NH3⁺ a temperatura ambiente; la amida se forma al calentar."
+      }
+     ],
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "En las aminas, el par de electrones libres del nitrógeno está localizado y disponible para aceptar un protón (H⁺) del agua, mientras que en las amidas ese par se deslocaliza por resonancia hacia el grupo carbonilo (C=O) y casi no actúa como base. Una amida (o enlace peptídico en proteínas) se forma por condensación entre el grupo carboxilo (–COOH) de un ácido carboxílico y el grupo amino (–NH₂) de una amina, liberando una molécula de agua (H₂O): R–COOH + R'–NH₂ → R–CO–NH–R' + H₂O. Al mezclarlos en frío primero forman una sal (la amina, como base, capta el H⁺ del ácido); la amida se obtiene calentando o, en la célula, con ayuda del ribosoma.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Explica que en las aminas el par de electrones libres del nitrógeno acepta protones (base de Brønsted-Lowry), mientras que en las amidas está deslocalizado por resonancia con el grupo carbonilo (C=O).",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Describe o escribe la reacción de condensación entre un ácido carboxílico (–COOH) y una amina (–NH₂) para formar el grupo amida (–CO–NH–) y nombra la liberación de una molécula de agua (H₂O).",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Relaciona el grupo amida formado entre aminoácidos con el enlace peptídico de las proteínas.",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Afirma que las amidas son más básicas que las aminas porque tienen un átomo de oxígeno adicional que atrae protones.",
+         "ejemplo": "Las amidas son más básicas porque tienen nitrógeno y además el oxígeno del carbonilo que también capta H⁺.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Confunde la formación de amidas con la esterificación de alcoholes o no identifica el agua como subproducto de la condensación.",
+         "ejemplo": "El ácido carboxílico reacciona con la amina para dar un éster y desprender gas hidrógeno.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U9-9.6/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Pedía «1 a 3 oraciones» para dos tareas, y la respuesta modelo del experto ocupa cuatro oraciones. Se pide un párrafo de 4 a 6 oraciones y las tareas se separan en a) y b), alineadas con c1 y c2. Rúbrica sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva, opciones parejas sin pistas y abiertas alineadas con la rúbrica"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "claves repartidas, el enunciado pide lo que exige cada criterio, límite de palabras del grado"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "Responde en un párrafo de 4 a 6 oraciones:\na) Explica por qué las aminas son mucho más básicas en agua que las amidas. Usa el par de electrones libres del nitrógeno y la resonancia con el grupo carbonilo.\nb) Escribe o describe la reacción de condensación entre un ácido carboxílico y una amina para formar una amida (enlace peptídico), e indica qué molécula pequeña se libera."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}

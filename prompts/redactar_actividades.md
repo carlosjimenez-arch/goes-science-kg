@@ -30,7 +30,7 @@ Eres especialista en enseñanza de las ciencias para primaria y secundaria. Reci
   real. Si un distractor es la respuesta típica de una dificultad que escribiste en este lote, mapéalo en
   `distractores` a ese `DIF:`. No todos los distractores necesitan mapeo.
 - **Numérica:** `valor`, `tolerancia` y `unidad`; `opciones`, `correcta` y `distractores` van en null o vacíos.
-- **Abierta** (solo en la ranura `obj-abierta`, que trae `"formato": "abierta"`): el estudiante escribe 1–3 oraciones
+- **Abierta** (solo en la ranura `obj-abierta`, que trae `"formato": "abierta"`): el estudiante escribe 1–3 oraciones (en 10.° y 11.°, si la abierta tiene tres o más tareas obligatorias, de 3 a 6 oraciones: la extensión debe alcanzar para cada criterio obligatorio)
   (habilidad `explicar` o `razonar`). `opciones`, `correcta` y `distractores` van en null; agrega `rubrica`:
   ```json
   "rubrica": {"respuesta_modelo": "...",
@@ -46,7 +46,7 @@ Eres especialista en enseñanza de las ciencias para primaria y secundaria. Reci
   delata una dificultad de este lote o de la capa, pon su `DIF:` (si no, `null`). La rúbrica la usa un evaluador
   separado del tutor: escríbela para que dos docentes distintos califiquen igual.
 - `retroalimentacion`: una o dos oraciones que expliquen la respuesta correcta sin regañar.
-- `duracion_min`: 2–4 para sondeos y comprobaciones, 5–10 para prácticas y objetivos (3–6 para la abierta).
+- `duracion_min`: 2–4 para sondeos y comprobaciones, 5–10 para prácticas y objetivos (3–6 para la abierta; hasta 8 en 10.° y 11.° cuando pide más de 3 oraciones).
 - `sondeo-1` y `sondeo-2` de un mismo concepto deben ser situaciones distintas (si uno es explicar, el otro
   interpretar datos o razonar). La `comprobacion` debe ser distinta de la práctica y de los sondeos.
 

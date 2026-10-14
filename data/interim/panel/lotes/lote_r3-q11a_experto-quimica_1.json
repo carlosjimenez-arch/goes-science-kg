@@ -1,0 +1,4265 @@
+{
+ "lote": "r3-q11a_experto-quimica_1",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.1",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una ficha técnica da estas temperaturas de fusión (valores aproximados de la tabla de referencia):\n• estaño: 232 °C\n• plata: 962 °C\n• cobre: 1085 °C\n• soldadura sin plomo (96.5 % de estaño, 3 % de plata y 0.5 % de cobre): de 217 °C a 220 °C\n¿Qué conclusión respaldan estos datos?",
+     "opciones": {
+      "A": "La soldadura funde a una temperatura intermedia, cercana al promedio de sus tres metales.",
+      "B": "La soldadura funde por debajo del estaño puro, aunque la plata y el cobre funden mucho más alto.",
+      "C": "La soldadura funde igual que el estaño puro, porque casi toda la aleación es estaño.",
+      "D": "La soldadura funde por encima del estaño, porque la plata y el cobre la hacen más resistente."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/ciencia-de-materiales/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los datos muestran que la aleación funde entre 217 °C y 220 °C, por debajo de los 232 °C del estaño y muy lejos de un promedio. Una aleación no hereda el promedio de las propiedades de sus metales; esa temperatura baja es justo lo que permite soldar componentes sin dañarlos con el calor.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.1",
+     "grado": 11,
+     "indicador": "1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "evidencia": "Tabla comparativa de propiedades de cuatro metales y aleaciones de la industria electrónica con justificación de su uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Datos correctos y marcados como aproximados: Sn 232 °C, Ag 962 °C, Cu 1085 °C; la soldadura SAC305 funde entre 217 y 220 °C (cerca del eutéctico). La clave B se deduce de los datos y la retroalimentación desmonta la idea del promedio.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.1",
+       "cita": "tabla comparativa de propiedades de metales y aleaciones"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Sn-Ag-Cu cercano al eutéctico funde por debajo del estaño puro."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ítem válido y clave B correcta; las cuatro temperaturas venían en un párrafo largo. Se pasan a lista para bajar la carga de lectura, sin cambiar ningún valor ni la pregunta.",
+     "cambios": {
+      "enunciado": "Una ficha técnica da estas temperaturas de fusión (valores aproximados de la tabla de referencia):\n• estaño: 232 °C\n• plata: 962 °C\n• cobre: 1085 °C\n• soldadura sin plomo (96.5 % de estaño, 3 % de plata y 0.5 % de cobre): de 217 °C a 220 °C\n¿Qué conclusión respaldan estos datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.1",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el aire húmedo de El Salvador, ¿qué problema aparecería si los contactos de un cargador se fabricaran de hierro en lugar de cobre cubierto de oro? En 3 o 4 oraciones: nombra el problema, explica por qué afecta la carga del teléfono y explica por qué no ocurre con el oro.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El hierro se oxida con el oxígeno y la humedad, y la herrumbre que cubre el contacto conduce muy mal: la resistencia sube, la carga se vuelve lenta o se interrumpe y el contacto se calienta. El oro no se oxida, así que su superficie sigue conduciendo. Además, el hierro conduce varias veces menos que el cobre.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Los contactos de hierro se oxidarían con la humedad y se cubrirían de herrumbre. Esa capa de óxido conduce muy mal, así que la resistencia del contacto sube y el teléfono cargaría lento, de forma intermitente o el conector se calentaría. Con el oro no pasa porque no reacciona con el oxígeno ni con la humedad, y su superficie sigue limpia y conductora. Además, el hierro conduce varias veces menos que el cobre.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra la oxidación o corrosión del hierro (herrumbre) por el oxígeno y la humedad como el problema.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la capa de óxido con un mal contacto eléctrico (más resistencia) y una consecuencia en la carga: lenta, intermitente o con calentamiento.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que el oro no se oxida ni se corroe con el aire húmedo, por lo que su superficie sigue conduciendo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Agrega que el hierro conduce la electricidad bastante menos que el cobre.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el hierro no conduce la electricidad.",
+        "ejemplo": "No cargaría nada porque el hierro no es conductor, solo el cobre y el oro lo son.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Atribuye la ventaja del oro a que sería el mejor conductor y no menciona la corrosión.",
+        "ejemplo": "Con hierro cargaría más lento, porque el oro es el metal que mejor conduce la electricidad.",
+        "dificultad": "DIF:quimica/ciencia-de-materiales/1"
+       },
+       {
+        "descripcion": "Explica el problema por fusión o desgaste y no por corrosión.",
+        "ejemplo": "El hierro se derretiría con el calor de la carga y el contacto se deformaría.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.1",
+     "grado": 11,
+     "indicador": "1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "evidencia": "Tabla comparativa de propiedades de cuatro metales y aleaciones de la industria electrónica con justificación de su uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.1/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Química correcta: el hierro se oxida con humedad y la herrumbre eleva la resistencia de contacto; el oro no se oxida. La conductividad del hierro es unas seis veces menor que la del cobre, así que «varias veces menos» es exacto. Rúbrica y errores corresponden a confusiones reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.1",
+       "cita": "justificación del uso de metales en la industria electrónica"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "σ(Fe) ≈ 1×10⁷ S/m frente a σ(Cu) ≈ 6×10⁷ S/m."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.1/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "El enunciado pide tres tareas que corresponden a tres criterios obligatorios, pero limita a «2 o 3 oraciones», que no alcanza y castiga al que cumple todo. Se amplía a 3 o 4 oraciones; la química y la rúbrica no cambian.",
+     "cambios": {
+      "enunciado": "En el aire húmedo de El Salvador, ¿qué problema aparecería si los contactos de un cargador se fabricaran de hierro en lugar de cobre cubierto de oro? En 3 o 4 oraciones: nombra el problema, explica por qué afecta la carga del teléfono y explica por qué no ocurre con el oro."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1, c2 y c3 obligatorios: problema, efecto en la carga y por qué no ocurre con el oro"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.2-v3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.2-v3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.2-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.2-v3",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo:\n• Rayado con la punta de un clavo de acero: el aluminio y la teja de barro quedan rayados; el azulejo esmaltado no (el trazo gris se borra con el dedo).\n• Golpe suave con martillo: el aluminio y el alambre de hierro se aplanan; la teja y el azulejo se quiebran.\n• Circuito con LED: enciende con los dos metales y no con los dos cerámicos.\n¿Qué material respaldan los datos para cubrir una mesa de trabajo que no debe rayarse ni conducir la corriente?",
+     "opciones": {
+      "A": "El azulejo esmaltado, porque el clavo no lo raya y no deja pasar la corriente.",
+      "B": "El alambre de hierro, porque se aplana con el golpe en lugar de quebrarse.",
+      "C": "La teja de barro, porque no deja pasar la corriente del circuito con LED.",
+      "D": "El aluminio, porque es liviano y se deforma sin romperse con un golpe."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La mesa pide dos propiedades: resistir el rayado y no conducir. Solo el azulejo cumple las dos: el clavo no lo raya (el trazo gris es metal del clavo que se borra) y el LED no enciende. La teja tampoco conduce, pero se raya; los metales no se quiebran, pero conducen, y el aluminio además se raya.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.2-v3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.2-v3",
+     "grado": 11,
+     "indicador": "1.2. Relaciona las propiedades de los metales y los cerámicos con sus aplicaciones en la construcción, la industria y la vida cotidiana.",
+     "evidencia": "Organizador gráfico de aplicaciones de metales y cerámicos con los resultados de las pruebas de rayado, maleabilidad y conductividad que justifican cada uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-2",
+     "decision": "corregir",
+     "justificacion": "Clave correcta y datos coherentes. La retroalimentación dice que los metales «se rayan», pero los datos solo muestran rayado del aluminio: el alambre de hierro no se probó. Se ajusta para que la conclusión no exceda los datos.",
+     "cambios": {
+      "retroalimentacion": "La mesa pide dos propiedades: resistir el rayado y no conducir. Solo el azulejo cumple las dos: el clavo no lo raya (el trazo gris es metal del clavo que se borra) y el LED no enciende. La teja tampoco conduce, pero se raya; los metales no se quiebran, pero conducen, y el aluminio además se raya."
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.2-v3",
+       "cita": "pruebas de rayado, maleabilidad y conductividad que justifican cada uso"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Una conclusión no debe afirmar lo que los datos no midieron."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-2",
+     "decision": "corregir",
+     "justificacion": "Datos bien construidos y clave A deducible, pero las tres pruebas venían en un solo párrafo de 89 palabras. Se separan en una lista por prueba, con el mismo texto, para que el estudiante cruce las dos condiciones con menos carga.",
+     "cambios": {
+      "enunciado": "Datos de un grupo de ejemplo:\n• Rayado con la punta de un clavo de acero: el aluminio y la teja de barro quedan rayados; el azulejo esmaltado no (el trazo gris se borra con el dedo).\n• Golpe suave con martillo: el aluminio y el alambre de hierro se aplanan; la teja y el azulejo se quiebran.\n• Circuito con LED: enciende con los dos metales y no con los dos cerámicos.\n¿Qué material respaldan los datos para cubrir una mesa de trabajo que no debe rayarse ni conducir la corriente?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.2-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.2-v3",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Gabriela dice: «El azulejo es blando, porque se quiebra cuando cae al piso; el clavo es duro, porque no se quiebra». En la prueba de rayado el clavo no rayó el esmalte del azulejo. En 4 o 5 oraciones: di si Gabriela tiene razón usando ese resultado, explica la diferencia entre dureza y fragilidad, y explica con la forma en que están unidas sus partículas por qué el metal se deforma y el cerámico se quiebra.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El esmalte es más duro que el clavo, porque resiste el rayado, pero es frágil: se rompe sin deformarse. En el metal, las capas de átomos se deslizan y el enlace metálico se mantiene; en el cerámico, los enlaces iónicos y covalentes son rígidos y, al desplazar las capas, se rompen o se enfrentan iones de igual carga, y aparece una grieta.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.2-v3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Gabriela no tiene razón: el esmalte del azulejo es más duro que el clavo, porque el clavo no logra rayarlo. Dureza es resistir el rayado y fragilidad es romperse sin deformarse; el azulejo es duro pero frágil. En el metal las capas de cationes se deslizan y siguen unidas por los electrones deslocalizados del enlace metálico, así que se dobla; en el cerámico los enlaces iónicos y covalentes no permiten ese deslizamiento, al mover una capa se rompen enlaces o se repelen iones de igual carga, y el material se agrieta.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Gabriela no tiene razón y usa el resultado del rayado: el esmalte del azulejo es más duro que el clavo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Distingue dureza (resistencia al rayado) de fragilidad (romperse sin deformarse) o de tenacidad.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que en el metal las capas de átomos se deslizan sin que se pierda el enlace metálico.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Explica que en el cerámico los enlaces iónicos o covalentes no admiten el deslizamiento: se rompen o se enfrentan iones de igual carga.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que lo que se quiebra es blando.",
+        "ejemplo": "Sí tiene razón: el azulejo es más blando porque se rompió y el clavo no.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Toma el trazo gris del clavo como una raya en el azulejo.",
+        "ejemplo": "El clavo sí rayó el azulejo porque quedó una línea gris, así que el clavo es más duro.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la diferencia por el peso o el grosor y no por el enlace.",
+        "ejemplo": "El clavo no se quiebra porque es más pesado y grueso que el azulejo.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.2-v3",
+     "grado": 11,
+     "indicador": "1.2. Relaciona las propiedades de los metales y los cerámicos con sus aplicaciones en la construcción, la industria y la vida cotidiana.",
+     "evidencia": "Organizador gráfico de aplicaciones de metales y cerámicos con los resultados de las pruebas de rayado, maleabilidad y conductividad que justifican cada uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "La ciencia es correcta, pero la respuesta modelo explica el enlace metálico con «electrones compartidos», expresión propia del enlace covalente que confunde los dos modelos. Se cambia por electrones deslocalizados. Además, lo que no se rayó fue el esmalte, no todo el azulejo (el cuerpo de barro es más blando).",
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "Gabriela no tiene razón: el esmalte del azulejo es más duro que el clavo, porque el clavo no logra rayarlo. Dureza es resistir el rayado y fragilidad es romperse sin deformarse; el azulejo es duro pero frágil. En el metal las capas de cationes se deslizan y siguen unidas por los electrones deslocalizados del enlace metálico, así que se dobla; en el cerámico los enlaces iónicos y covalentes no permiten ese deslizamiento, al mover una capa se rompen enlaces o se repelen iones de igual carga, y el material se agrieta.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Dice que Gabriela no tiene razón y usa el resultado del rayado: el esmalte del azulejo es más duro que el clavo.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Distingue dureza (resistencia al rayado) de fragilidad (romperse sin deformarse) o de tenacidad.",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Explica que en el metal las capas de átomos se deslizan sin que se pierda el enlace metálico.",
+         "obligatorio": true
+        },
+        {
+         "id": "c4",
+         "descripcion": "Explica que en el cerámico los enlaces iónicos o covalentes no admiten el deslizamiento: se rompen o se enfrentan iones de igual carga.",
+         "obligatorio": true
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Acepta que lo que se quiebra es blando.",
+         "ejemplo": "Sí tiene razón: el azulejo es más blando porque se rompió y el clavo no.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Toma el trazo gris del clavo como una raya en el azulejo.",
+         "ejemplo": "El clavo sí rayó el azulejo porque quedó una línea gris, así que el clavo es más duro.",
+         "dificultad": null
+        },
+        {
+         "descripcion": "Explica la diferencia por el peso o el grosor y no por el enlace.",
+         "ejemplo": "El clavo no se quiebra porque es más pesado y grueso que el azulejo.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.2-v3",
+       "cita": "rayado, maleabilidad y conductividad que justifican cada uso"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Enlace metálico: cationes en un mar de electrones deslocalizados, no pares compartidos."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "La rúbrica tiene cuatro criterios obligatorios (refutar con el rayado, dureza frente a fragilidad, metal, cerámico) y el enunciado pedía «2 o 3 oraciones». Se amplía a 4 o 5 oraciones; la respuesta modelo ya ocupa cuatro. No cambia la ciencia.",
+     "cambios": {
+      "enunciado": "Gabriela dice: «El azulejo es blando, porque se quiebra cuando cae al piso; el clavo es duro, porque no se quiebra». En la prueba de rayado el clavo no rayó el esmalte del azulejo. En 4 o 5 oraciones: di si Gabriela tiene razón usando ese resultado, explica la diferencia entre dureza y fragilidad, y explica con la forma en que están unidas sus partículas por qué el metal se deforma y el cerámico se quiebra."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1 a c4 obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.4",
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: inventario de 100 envases del cafetín de la escuela, por código de resina.\n• 1 (PET): 42\n• 2 (PEAD): 12\n• 3 (PVC): 0\n• 4 (PEBD): 8\n• 5 (PP): 20\n• 6 (PS): 15\n• 7 (otros): 3\n¿Qué conclusión respaldan los datos?",
+     "opciones": {
+      "A": "Los del código 7 son los más fáciles de reciclar, porque son los envases menos frecuentes.",
+      "B": "Como todos los envases son de plástico, basta un contenedor para los 100 envases.",
+      "C": "El PP es el más frecuente, porque casi todos los envases del cafetín llevan una tapa.",
+      "D": "El PET es el más frecuente; separar solo el código 1 recupera casi la mitad de los envases."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/estructura-y-propiedades-de-polimeros/2",
+      "B": "DIF:quimica/estructura-y-propiedades-de-polimeros/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El PET (código 1) suma 42 de 100 envases, más del doble que el PP (20), así que un contenedor solo para el código 1 recoge casi la mitad. Mezclar todo en un contenedor dificulta el reciclaje, porque cada polímero funde y se procesa distinto. El código no dice qué tan reciclable es un plástico.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+     "nombre": "Estructura y propiedades de los polímeros",
+     "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.4",
+     "grado": 11,
+     "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común.",
+     "evidencia": "Inventario clasificado de envases del entorno escolar por código de resina con gráfica de frecuencias"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.4/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Los datos suman 100 envases (42+12+0+8+20+15+3). La clave D se deduce: PET con 42 es el más frecuente. Los distractores contradicen los datos o la química (mezclar polímeros dificulta su reciclaje). Retroalimentación correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.4",
+       "cita": "gráfica de frecuencias por código de resina"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Verificación aritmética de la suma y del orden de frecuencias."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.4/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ítem válido; el inventario de siete códigos venía en un párrafo y obliga a buscar cada número. Se presenta en lista, con los mismos valores, para que la tarea sea interpretar y no descifrar el texto.",
+     "cambios": {
+      "enunciado": "Datos de un grupo de ejemplo: inventario de 100 envases del cafetín de la escuela, por código de resina.\n• 1 (PET): 42\n• 2 (PEAD): 12\n• 3 (PVC): 0\n• 4 (PEBD): 8\n• 5 (PP): 20\n• 6 (PS): 15\n• 7 (otros): 3\n¿Qué conclusión respaldan los datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.4",
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Óscar dice: «El vaso desechable de poliestireno es termoestable, porque es rígido». En 3 o 4 oraciones: di si Óscar tiene razón, explica qué diferencia hay entre las cadenas de un termoplástico y las de un termoestable y qué le pasa a cada uno al calentarlo, y da un ejemplo de objeto termoestable.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El poliestireno es termoplástico aunque sea rígido: sus cadenas están separadas y unidas solo por fuerzas intermoleculares, que se debilitan al calentar, así que se ablanda y se puede volver a moldear. En un termoestable las cadenas están unidas entre sí por enlaces covalentes (entrecruzadas): no se ablanda, se descompone. Ejemplos: mangos de ollas de baquelita y platos de melamina.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Óscar no tiene razón: el poliestireno es un termoplástico aunque sea rígido. En un termoplástico las cadenas están separadas y se atraen solo por fuerzas intermoleculares; al calentarlo esas fuerzas se vencen, se ablanda y se puede remoldear. En un termoestable las cadenas están unidas entre sí por enlaces covalentes formando una red; al calentarlo no se ablanda, sino que se quema o se descompone, como el mango de baquelita de una olla.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Óscar no tiene razón: el poliestireno es termoplástico y la rigidez no decide si un polímero es termoplástico o termoestable.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que en el termoplástico las cadenas están separadas, unidas por fuerzas intermoleculares, y que al calentarlo se ablanda y se puede remoldear.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que en el termoestable las cadenas están entrecruzadas por enlaces covalentes y que al calentarlo no se ablanda, sino que se descompone.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Da un ejemplo correcto de termoestable (baquelita, melamina, resina epóxica, caucho vulcanizado).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa la rigidez como criterio para clasificar.",
+        "ejemplo": "Sí, es termoestable porque es duro; las bolsas son termoplásticas porque son blandas.",
+        "dificultad": "DIF:quimica/estructura-y-propiedades-de-polimeros/3"
+       },
+       {
+        "descripcion": "Cree que al ablandar un termoplástico se rompen los enlaces de la cadena.",
+        "ejemplo": "Es termoplástico porque al calentarlo se rompen los enlaces entre los carbonos de la cadena y se derrite.",
+        "dificultad": "DIF:quimica/fuerzas-intermoleculares/1"
+       },
+       {
+        "descripcion": "Da como ejemplo de termoestable un envase con código de resina.",
+        "ejemplo": "No tiene razón; un termoestable es la botella de PET, que aguanta el calor.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+     "nombre": "Estructura y propiedades de los polímeros",
+     "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.4",
+     "grado": 11,
+     "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común.",
+     "evidencia": "Inventario clasificado de envases del entorno escolar por código de resina con gráfica de frecuencias"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.4/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: el poliestireno es termoplástico pese a ser rígido; termoplástico con cadenas separadas por fuerzas intermoleculares, termoestable con entrecruzamiento covalente que se descompone sin ablandarse. Baquelita y melamina son termoestables. Los errores de la rúbrica son ideas previas reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.4",
+       "cita": "reconoce tipos de polímeros sintéticos de uso común"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "PS es termoplástico amorfo; baquelita y melamina-formaldehído son termoestables."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.4/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Pide cuatro cosas (si Óscar tiene razón, diferencia de cadenas, qué pasa al calentar cada uno, ejemplo) con tres criterios obligatorios, en «2 o 3 oraciones». Se amplía a 3 o 4 oraciones; la respuesta modelo usa cuatro. Química sin cambios.",
+     "cambios": {
+      "enunciado": "Óscar dice: «El vaso desechable de poliestireno es termoestable, porque es rígido». En 3 o 4 oraciones: di si Óscar tiene razón, explica qué diferencia hay entre las cadenas de un termoplástico y las de un termoestable y qué le pasa a cada uno al calentarlo, y da un ejemplo de objeto termoestable."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1, c2 y c3 obligatorios; c4 opcional"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.8",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de la hoja de cálculo de un grupo de ejemplo: un cubo se divide en cubitos iguales y se calcula la relación superficie-volumen (S/V) de cada cubito.\n• Arista 1 cm: S/V = 6 cm⁻¹\n• Arista 1 mm (0.1 cm): S/V = 60 cm⁻¹\n• Arista 1 µm (0.0001 cm): S/V = 60 000 cm⁻¹\nSiguiendo la misma tendencia, ¿cuál es la S/V, en cm⁻¹, de cubitos de 10 nm (0.000001 cm) de arista? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 6000000,
+     "tolerancia": 0,
+     "unidad": "cm⁻¹",
+     "retroalimentacion": "En la tabla, cada vez que la arista se divide entre 10, la S/V se multiplica por 10: es inversamente proporcional a la arista (S/V = 6/a). De 1 µm a 10 nm la arista se divide entre 100, así que la S/V pasa de 60 000 cm⁻¹ a 6 000 000 cm⁻¹ (6 × 10⁶ cm⁻¹).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.8",
+     "grado": 11,
+     "indicador": "1.8. Explica el concepto de nanomaterial en función del tamaño de su partícula o estructura.",
+     "evidencia": "Escala comparativa de tamaños en notación científica con cálculo de la relación superficie-volumen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.8/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: para un cubo S/V = 6/a; con a = 1×10⁻⁶ cm resulta 6×10⁶ cm⁻¹, igual al valor clave. Los datos de la tabla (6, 60 y 60 000 cm⁻¹) son correctos y la retroalimentación explica la proporcionalidad inversa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.8",
+       "cita": "cálculo de la relación superficie-volumen"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "S/V = 6a²/a³ = 6/a."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.8/obj-2",
+     "decision": "corregir",
+     "justificacion": "Numérica bien planteada: da la unidad (cm⁻¹) y pide solo el número. Los tres datos de la tabla venían en párrafo; se pasan a lista con los mismos valores para que la tendencia se vea de un golpe.",
+     "cambios": {
+      "enunciado": "Datos de la hoja de cálculo de un grupo de ejemplo: un cubo se divide en cubitos iguales y se calcula la relación superficie-volumen (S/V) de cada cubito.\n• Arista 1 cm: S/V = 6 cm⁻¹\n• Arista 1 mm (0.1 cm): S/V = 60 cm⁻¹\n• Arista 1 µm (0.0001 cm): S/V = 60 000 cm⁻¹\nSiguiendo la misma tendencia, ¿cuál es la S/V, en cm⁻¹, de cubitos de 10 nm (0.000001 cm) de arista? Escribe solo el número."
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.8",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un anillo de oro no reacciona con el aire, pero nanopartículas de oro de unos 3 nm aceleran la reacción del monóxido de carbono con el oxígeno. En 3 o 4 oraciones, explica esta diferencia: compara qué fracción de los átomos de oro está en la superficie en cada caso, explica por qué importa que un átomo esté en la superficie y di si el oro cambió de sustancia.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al reducir el tamaño crece la relación superficie-volumen: en el anillo casi todos los átomos están en el interior, y en una partícula de 3 nm una parte grande está en la superficie. Esos átomos tienen menos vecinos, quedan expuestos y pueden interactuar con otras moléculas. Sigue siendo oro: lo que cambia con el tamaño son sus propiedades.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En el anillo casi todos los átomos de oro están en el interior y muy pocos en la superficie, mientras que en una partícula de 3 nm una fracción grande de los átomos queda en la superficie, porque la relación superficie-volumen es enorme. Los átomos de la superficie tienen menos vecinos y quedan expuestos, así que pueden unirse a las moléculas de CO y O₂ y ayudar a que reaccionen. El oro sigue siendo el mismo elemento; lo que cambia con el tamaño son sus propiedades.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Compara la fracción de átomos en la superficie: muy pequeña en el anillo y grande en la nanopartícula (o lo relaciona con una relación superficie-volumen mucho mayor).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que los átomos de la superficie están expuestos o tienen menos vecinos y por eso pueden interactuar con las moléculas que reaccionan.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que el oro no cambió de sustancia ni de elemento: cambian sus propiedades con el tamaño.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que a esa escala también cambian otras propiedades, como el color o la estructura electrónica.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el tamaño no cambia las propiedades y busca otra causa.",
+        "ejemplo": "El oro nano debe estar mezclado con otra sustancia que es la que reacciona, porque el oro siempre es igual.",
+        "dificultad": "DIF:quimica/nanomateriales/2"
+       },
+       {
+        "descripcion": "Cree que al dividir el material la superficie total no cambia.",
+        "ejemplo": "Hay la misma cantidad de oro y la misma superficie, solo que repartida en partículas pequeñas.",
+        "dificultad": "DIF:quimica/nanomateriales/3"
+       },
+       {
+        "descripcion": "Cree que a escala nano el oro se vuelve otra sustancia.",
+        "ejemplo": "A ese tamaño el oro ya no es oro, se convierte en un compuesto reactivo.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.8",
+     "grado": 11,
+     "indicador": "1.8. Explica el concepto de nanomaterial en función del tamaño de su partícula o estructura.",
+     "evidencia": "Escala comparativa de tamaños en notación científica con cálculo de la relación superficie-volumen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.8/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: las nanopartículas de oro de pocos nanómetros catalizan la oxidación de CO, y la explicación por la fracción de átomos superficiales es la adecuada al grado; el criterio opcional deja espacio a los efectos electrónicos. Distingue bien cambio de propiedades frente a cambio de sustancia.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.8",
+       "cita": "nanomaterial en función del tamaño de partícula"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Oro nanométrico (<5 nm) cataliza CO + O₂; el oro macizo es inerte."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.8/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Tres tareas con tres criterios obligatorios en «2 o 3 oraciones»: no alcanza. Se amplía a 3 o 4 oraciones; lo demás queda igual.",
+     "cambios": {
+      "enunciado": "Un anillo de oro no reacciona con el aire, pero nanopartículas de oro de unos 3 nm aceleran la reacción del monóxido de carbono con el oxígeno. En 3 o 4 oraciones, explica esta diferencia: compara qué fracción de los átomos de oro está en la superficie en cada caso, explica por qué importa que un átomo esté en la superficie y di si el oro cambió de sustancia."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1, c2 y c3 obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.9/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.9/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.9",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un ensayo de ejemplo con agua de un pozo.\nBacterias coliformes por cada 100 mL:\n• agua sin filtrar: 1 200\n• después de un filtro de cerámica sin plata: 60\n• después de un filtro de cerámica con nanopartículas de plata: no se detectan\nPlata en el agua filtrada:\n• filtro sin plata: no se detecta\n• filtro con nanopartículas: 20 µg/L\n¿Qué conclusión respaldan los datos?",
+     "opciones": {
+      "A": "La nanoplata elimina todas las bacterias, así que la cerámica del filtro no aporta nada al resultado.",
+      "B": "Los dos filtros reducen las bacterias, solo el de nanoplata llega a no detectarlas y libera algo de plata.",
+      "C": "El filtro de nanoplata no tiene riesgos, porque la plata es un metal noble que no pasa al agua filtrada.",
+      "D": "Los dos filtros funcionan igual de bien, porque pasar de 1 200 a 60 o a cero bacterias es casi lo mismo."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La cerámica sola retiene el 95 % de las bacterias (de 1 200 a 60) y la plata elimina las que quedan, pero 60 coliformes por 100 mL todavía hacen el agua insegura para beber. A la vez, el filtro con nanoplata libera plata al agua (20 µg/L): es un beneficio con un costo que hay que vigilar.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.9",
+     "grado": 11,
+     "indicador": "1.9. Ejemplifica las principales aplicaciones de los nanomateriales.",
+     "evidencia": "Texto divulgativo sobre una aplicación de los nanomateriales con análisis de beneficios y riesgos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.9/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.9/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Cuenta correcta: de 1200 a 60 es una reducción del 95 %. La clave B integra beneficio y costo, y los distractores sobregeneralizan o niegan la liberación de plata. Que 60 coliformes por 100 mL hacen el agua no potable es correcto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.9",
+       "cita": "análisis de beneficios y riesgos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "(1200 − 60)/1200 = 0.95."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.9/obj-2",
+     "decision": "corregir",
+     "justificacion": "Buen ítem de beneficio y costo, pertinente para comunidades con agua de pozo. Los dos bloques de datos venían mezclados en un párrafo; se separan en lista con los mismos valores.",
+     "cambios": {
+      "enunciado": "Datos de un ensayo de ejemplo con agua de un pozo.\nBacterias coliformes por cada 100 mL:\n• agua sin filtrar: 1 200\n• después de un filtro de cerámica sin plata: 60\n• después de un filtro de cerámica con nanopartículas de plata: no se detectan\nPlata en el agua filtrada:\n• filtro sin plata: no se detecta\n• filtro con nanopartículas: 20 µg/L\n¿Qué conclusión respaldan los datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.9",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una alcaldía piensa repartir filtros de cerámica con nanopartículas de plata en un cantón que toma agua de pozo. En 4 o 5 oraciones: di si recomiendas usarlos, explica un beneficio con la razón química de por qué la plata a escala nano funciona, nombra un riesgo o una limitación, y propone una medida para reducirlo.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los filtros pueden recomendarse con condiciones: la nanoplata libera iones de plata que dañan a las bacterias y, por su gran superficie, los libera con más eficacia que un trozo de plata. Riesgos y límites: la plata pasa al agua y al ambiente, el filtro pierde efecto con el tiempo y no quita contaminantes disueltos como el arsénico. Medidas: análisis periódicos y reemplazo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.9"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Sí los recomiendo, con condiciones. Las nanopartículas de plata tienen mucha superficie expuesta y liberan iones de plata que dañan a las bacterias que la cerámica no retuvo, así que el agua sale con muchas menos bacterias. El riesgo es que algo de plata pasa al agua y al ambiente, y con el uso el filtro pierde plata y eficacia; además no elimina contaminantes disueltos como el arsénico. Propongo analizar el agua filtrada cada cierto tiempo y cambiar los filtros cuando lo indique el fabricante, recogiendo los usados.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Da una recomendación clara (sí, no o sí con condiciones) coherente con lo que argumenta.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica el beneficio con química: la plata libera iones que dañan a las bacterias, y la gran superficie de las nanopartículas lo favorece.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Nombra un riesgo o una limitación concreta: liberación de plata al agua o al ambiente, pérdida de eficacia con el tiempo, o que no elimina contaminantes disueltos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Propone una medida concreta y relacionada con el riesgo nombrado (análisis del agua, reemplazo de filtros, recolección de los usados).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que no hay riesgos porque la plata es un metal noble.",
+        "ejemplo": "Sí, sin problema: la plata no se oxida ni se disuelve, así que no pasa nada al agua.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Rechaza la tecnología solo porque es nano, sin argumento químico.",
+        "ejemplo": "No, porque todo lo que es nanotecnología es tóxico y peligroso para la salud.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que el filtro funciona porque sus poros son nanométricos y atrapan todo.",
+        "ejemplo": "Sí, porque los poros son de nanómetros y no dejan pasar bacterias, virus ni químicos.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.9",
+     "grado": 11,
+     "indicador": "1.9. Ejemplifica las principales aplicaciones de los nanomateriales.",
+     "evidencia": "Texto divulgativo sobre una aplicación de los nanomateriales con análisis de beneficios y riesgos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.9/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Química correcta: la acción antibacteriana proviene de iones Ag⁺ liberados, favorecida por la gran superficie; los filtros no retiran contaminantes disueltos como el arsénico. La rúbrica exige recomendación, mecanismo, riesgo y medida, en línea con el análisis de beneficios y riesgos que pide la malla.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.9",
+       "cita": "texto divulgativo con análisis de beneficios y riesgos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Nanoplata: liberación de Ag⁺; cerámica retiene por tamaño de poro."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U1-1.9/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Cuatro criterios obligatorios (recomendación, beneficio con química, riesgo, medida) en «2 o 3 oraciones»: no alcanza. Se amplía a 4 o 5 oraciones. Contexto local pertinente y sin sesgo; la química no cambia.",
+     "cambios": {
+      "enunciado": "Una alcaldía piensa repartir filtros de cerámica con nanopartículas de plata en un cantón que toma agua de pozo. En 4 o 5 oraciones: di si recomiendas usarlos, explica un beneficio con la razón química de por qué la plata a escala nano funciona, nombra un riesgo o una limitación, y propone una medida para reducirlo."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1 a c4 obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.1",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo compara tres polímeros vinílicos de fórmula general -[CH₂-CHX]ₙ- y su temperatura de transición vítrea (Tg, valores aproximados de la tabla de referencia):\n• polietileno (X = -H): Tg ≈ -120 °C\n• policloruro de vinilo sin plastificante (X = -Cl): Tg ≈ 82 °C\n• poliestireno (X = -C₆H₅): Tg ≈ 100 °C\n¿Qué afirmación relaciona correctamente el sustituyente X con la Tg?",
+     "opciones": {
+      "A": "Los tres deberían tener la misma Tg, porque provienen de monómeros vinílicos por adición y comparten el mismo esqueleto de carbonos.",
+      "B": "En el polietileno, el sustituyente -H es tan pequeño que las cadenas conservan enlaces dobles, y eso le da la Tg más baja.",
+      "C": "En el poliestireno, el anillo bencénico forma puentes de hidrógeno entre las cadenas, y por eso tiene la Tg más alta.",
+      "D": "En el PVC, el enlace polar C-Cl suma atracciones dipolo-dipolo entre cadenas que frenan su movimiento y elevan la Tg."
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/polimerizacion/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La Tg sube cuando el sustituyente frena el movimiento de las cadenas: el -Cl polar añade atracciones dipolo-dipolo (PVC, ≈82 °C) y el fenilo voluminoso dificulta el giro (PS, ≈100 °C); con -H las cadenas se mueven con libertad. Por eso el PVC sin plastificante es rígido a temperatura ambiente y sirve para tuberías. El poliestireno no forma puentes de hidrógeno: no tiene H unido a O, N o F. Ningún polímero de adición conserva el doble enlace en la cadena.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.1",
+     "grado": 11,
+     "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido.",
+     "evidencia": "Modelo físico de polimerización con ecuaciones de las tres etapas y tabla monómero-polímero-uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Error de razonamiento: el dato de Tg no distingue al PVC del poliestireno (ambos con Tg sobre 28 °C), y la Tg sola no decide la rigidez del polietileno, que es semicristalino. Además el distractor C mezcla dos ideas. Se reformula la pregunta a la relación sustituyente-Tg, que sí se deduce de los datos, y se marcan los valores como aproximados.",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo compara tres polímeros vinílicos de fórmula general -[CH₂-CHX]ₙ- con su temperatura de transición vítrea (Tg, valores aproximados de la tabla de referencia): polietileno (X = -H, Tg ≈ -120 °C), policloruro de vinilo sin plastificante (X = -Cl, Tg ≈ 82 °C) y poliestireno (X = -C₆H₅, Tg ≈ 100 °C). ¿Qué afirmación relaciona correctamente el sustituyente X con la Tg?",
+      "opciones": {
+       "A": "En el PVC, el enlace polar C-Cl suma atracciones dipolo-dipolo entre cadenas que frenan su movimiento y elevan la Tg muy por encima de la del polietileno.",
+       "B": "En el polietileno, el sustituyente -H es tan pequeño que las cadenas conservan enlaces dobles, y eso le da la Tg más baja.",
+       "C": "En el poliestireno, el anillo bencénico forma puentes de hidrógeno entre las cadenas, y por eso tiene la Tg más alta.",
+       "D": "Los tres deberían tener la misma Tg, porque provienen de monómeros vinílicos por adición y comparten el mismo esqueleto de carbonos."
+      },
+      "correcta": "A",
+      "distractores": {
+       "B": "DIF:quimica/polimerizacion/2"
+      },
+      "retroalimentacion": "La Tg sube cuando el sustituyente frena el movimiento de las cadenas: el -Cl polar añade atracciones dipolo-dipolo (PVC, ≈82 °C) y el fenilo voluminoso dificulta el giro (PS, ≈100 °C); con -H las cadenas se mueven con libertad. Por eso el PVC sin plastificante es rígido a temperatura ambiente y sirve para tuberías. El poliestireno no forma puentes de hidrógeno: no tiene H unido a O, N o F. Ningún polímero de adición conserva el doble enlace en la cadena."
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita": "relaciona el monómero con las propiedades del polímero obtenido"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "HDPE es semicristalino: su rigidez depende de la cristalinidad, no solo de la Tg."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Las dos opciones múltiples del tema tenían clave A, y aquí la clave era la más larga (27 palabras). Se intercambian A y D y se acorta la clave quitando una comparación redundante; los datos van en lista. La relación sustituyente-Tg del experto no cambia.",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo compara tres polímeros vinílicos de fórmula general -[CH₂-CHX]ₙ- y su temperatura de transición vítrea (Tg, valores aproximados de la tabla de referencia):\n• polietileno (X = -H): Tg ≈ -120 °C\n• policloruro de vinilo sin plastificante (X = -Cl): Tg ≈ 82 °C\n• poliestireno (X = -C₆H₅): Tg ≈ 100 °C\n¿Qué afirmación relaciona correctamente el sustituyente X con la Tg?",
+      "opciones": {
+       "A": "Los tres deberían tener la misma Tg, porque provienen de monómeros vinílicos por adición y comparten el mismo esqueleto de carbonos.",
+       "B": "En el polietileno, el sustituyente -H es tan pequeño que las cadenas conservan enlaces dobles, y eso le da la Tg más baja.",
+       "C": "En el poliestireno, el anillo bencénico forma puentes de hidrógeno entre las cadenas, y por eso tiene la Tg más alta.",
+       "D": "En el PVC, el enlace polar C-Cl suma atracciones dipolo-dipolo entre cadenas que frenan su movimiento y elevan la Tg."
+      },
+      "correcta": "D",
+      "distractores": {
+       "B": "DIF:quimica/polimerizacion/2"
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "claves repartidas A–D dentro del tema y del paquete"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la clave no debe ser la opción más larga"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.2",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un intento de sintetizar un poliéster, alguien del grupo mezcla ácido etanoico (CH₃–COOH) con etanol (CH₃–CH₂–OH) en presencia de un catalizador ácido, en lugar de usar un diácido y un dialcohol. En 3 o 4 oraciones: di si se formará un polímero de cadena larga, nombra qué tipo de compuesto se forma y qué molécula pequeña se libera en la unión, y explica por qué los monómeros de una polimerización por condensación deben ser bifuncionales.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "No se formará un polímero de cadena larga, sino únicamente una molécula pequeña de éster (etanoato de etilo) y una molécula de agua (H₂O) liberada por condensación. Como el ácido etanoico solo tiene un grupo carboxilo (–COOH) y el etanol solo tiene un grupo hidroxilo (–OH), al unirse se agotan los grupos reactivos y la reacción se detiene. Para formar un poliéster por condensación, ambos monómeros deben ser bifuncionales (tener dos grupos funcionales cada uno) para que los extremos libres sigan reaccionando y alarguen la cadena.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Indica que no se forma un polímero sino un éster simple (molécula pequeña) y nombra el agua (H₂O) como la molécula pequeña que se libera.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la detención del crecimiento de la cadena con que los reactivos son monofuncionales (solo tienen un grupo –COOH o –OH) y justifica que se requieren monómeros bifuncionales para que la cadena continúe creciendo por ambos extremos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Nombra correctamente el producto formado (etanoato de etilo o acetato de etilo) o contrasta con el caso del ácido tereftálico y etilenglicol en el PET.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que los monómeros se suman directamente formando una cadena larga sin perder átomos ni liberar agua.",
+        "ejemplo": "Sí se forma un polímero porque muchas moléculas de ácido etanoico y etanol se van sumando una tras otra sin perder nada.",
+        "dificultad": "DIF:quimica/polimerizacion/1"
+       },
+       {
+        "descripcion": "Cree que basta con tener muchas moléculas de reactivo en el vaso para que se forme una macromolécula, sin importar cuántos grupos funcionales tenga cada una.",
+        "ejemplo": "Como hay muchos moles de ácido y alcohol en la mezcla, se unen todos formando un poliéster largo y liberando agua.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Un ácido y un alcohol monofuncionales solo pueden reaccionar una vez entre sí para dar un éster simple y agua; para que la condensación continúe en ambos extremos y forme un poliéster como el PET, se necesitan monómeros bifuncionales (un diácido y un dialcohol).",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.2",
+     "grado": 11,
+     "indicador": "10.2. Representa la formación de un poliéster y una poliamida a partir de monómeros bifuncionales e identifica la molécula pequeña que se libera en cada unión.",
+     "evidencia": "Cuadro comparativo de polimerización por adición y condensación con las ecuaciones del PET y del nailon"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.2/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: ácido etanoico y etanol monofuncionales solo dan etanoato de etilo y agua; la bifuncionalidad es lo que permite crecer la cadena. Rúbrica y errores bien construidos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.2",
+       "cita": "monómeros bifuncionales y molécula pequeña que se libera"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.2/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Pide cuatro cosas en «2 o 3 oraciones» y la frase «qué tipo de compuesto e interacción ocurre» es ambigua. Se reordena la consigna en pasos claros que coinciden con c1 y c2 y se amplía a 3 o 4 oraciones. La química no cambia.",
+     "cambios": {
+      "enunciado": "En un intento de sintetizar un poliéster, alguien del grupo mezcla ácido etanoico (CH₃–COOH) con etanol (CH₃–CH₂–OH) en presencia de un catalizador ácido, en lugar de usar un diácido y un dialcohol. En 3 o 4 oraciones: di si se formará un polímero de cadena larga, nombra qué tipo de compuesto se forma y qué molécula pequeña se libera en la unión, y explica por qué los monómeros de una polimerización por condensación deben ser bifuncionales."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1: éster simple y agua; c2: monofuncionales frente a bifuncionales"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "una consigna por tarea, sin términos ambiguos"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.4",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un chalet escolar de San Salvador sustituyen los vasos de polietileno (código 4, PEBD) por vasos de ácido poliláctico (código 7, PLA), rotulados como «compostables». Si ambos vasos terminan enterrados en un botadero común a 28 °C y con poca humedad, ¿qué ocurrirá con su degradación?",
+     "opciones": {
+      "A": "El vaso de PLA se biodegradará en pocas semanas, porque sus enlaces éster se rompen rápido en cualquier suelo.",
+      "B": "El vaso de PLA persistirá años, porque la hidrólisis rápida de sus enlaces éster requiere el compostaje industrial.",
+      "C": "El vaso de PEBD se degradará antes en dióxido de carbono y agua, porque la presión del suelo fragmenta sus cadenas.",
+      "D": "Ambos vasos pueden fundirse juntos en el reciclaje mecánico, porque los dos llevan el triángulo de identificación."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/polimeros-y-ambiente/1",
+      "C": "DIF:quimica/polimeros-y-ambiente/2",
+      "D": "DIF:quimica/polimeros-y-ambiente/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aunque el ácido poliláctico (PLA) tiene grupos éster hidrolizables, su biodegradación rápida requiere condiciones de compostaje industrial (cerca de 58 °C, humedad controlada y microorganismos). En un botadero común a temperatura ambiente, esa hidrólisis es muy lenta y el envase persiste durante años.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.4",
+     "grado": 11,
+     "indicador": "10.4. Clasifica plásticos según su código de identificación y su capacidad de degradación, y evalúa críticamente las ventajas y limitaciones de los polímeros biodegradables y del reciclaje.",
+     "evidencia": "Inventario escolar de plásticos por código de resina y propuesta justificada de separación y reciclaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.4/obj-1",
+     "decision": "corregir",
+     "justificacion": "Química correcta en lo esencial, pero la clave B dice que el PLA tardará «casi como el PEBD», lo cual exagera: el PLA persiste años en un botadero seco, pero el PEBD persiste mucho más y no se hidroliza. Se reescribe la clave sin esa comparación.",
+     "cambios": {
+      "opciones": {
+       "A": "El vaso de PLA se biodegradará en pocas semanas, porque sus enlaces éster se rompen rápido en cualquier suelo.",
+       "B": "El vaso de PLA persistirá durante años, porque la hidrólisis rápida de sus enlaces éster requiere el calor y la humedad del compostaje industrial.",
+       "C": "El vaso de PEBD se degradará antes en dióxido de carbono y agua, porque la presión del suelo fragmenta sus cadenas.",
+       "D": "Ambos vasos pueden fundirse juntos en el reciclaje mecánico, porque los dos llevan el triángulo de identificación."
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.4",
+       "cita": "ventajas y limitaciones de los polímeros biodegradables"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "PLA: hidrólisis lenta bajo su Tg (≈60 °C); compostaje industrial ≈58 °C."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.4/obj-1",
+     "decision": "corregir",
+     "justificacion": "Buen contexto escolar salvadoreño y distractores bien mapeados, pero la clave B era la opción más larga (24 palabras), una pista de forma. Se acorta sin cambiar la idea que fijó el experto: el PLA persiste años porque su hidrólisis rápida requiere el compostaje industrial.",
+     "cambios": {
+      "opciones": {
+       "A": "El vaso de PLA se biodegradará en pocas semanas, porque sus enlaces éster se rompen rápido en cualquier suelo.",
+       "B": "El vaso de PLA persistirá años, porque la hidrólisis rápida de sus enlaces éster requiere el compostaje industrial.",
+       "C": "El vaso de PEBD se degradará antes en dióxido de carbono y agua, porque la presión del suelo fragmenta sus cadenas.",
+       "D": "Ambos vasos pueden fundirse juntos en el reciclaje mecánico, porque los dos llevan el triángulo de identificación."
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la clave no debe ser la opción más larga; se conserva su contenido"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.4",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo pesó los residuos plásticos de su instituto en una semana:\n• código 1 (PET, botellas): 14.0 kg\n• código 2 (PEAD, galones): 4.5 kg\n• código 5 (PP, tapones): 2.5 kg\n• código 6 (PS espumado, platos con grasa): 3.0 kg\n• código 7 (empaques multicapa y PLA): 1.0 kg\nUn centro de acopio local compra PET, PEAD y PP limpios y separados. ¿Qué propuesta aprovecha mejor estos datos?",
+     "opciones": {
+      "A": "Mezclar los 25.0 kg de plásticos en un solo contenedor para fundirlos juntos, ya que todos tienen código de resina.",
+      "B": "Enterrar el código 7 en el huerto escolar y entregar los códigos 1, 2, 5 y 6 revueltos al centro de acopio.",
+      "C": "Compactar los códigos 1 y 6 en una misma paca para reunir 17.0 kg y desechar los códigos 2 y 5 por su menor masa.",
+      "D": "Separar limpios los códigos 1, 2 y 5 para recuperar 21.0 kg reciclables y sustituir en el cafetín los platos de código 6."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/polimeros-y-ambiente/3",
+      "B": "DIF:quimica/polimeros-y-ambiente/1",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Separar por código los polímeros 1 (PET), 2 (PEAD) y 5 (PP) permite el reciclaje mecánico de 21.0 kg (84 % de la masa total) sin que se contaminen entre sí al fundirse. El poliestireno espumado sucio (código 6) y los multicapa (código 7) tienen baja viabilidad de reciclaje local, por lo que conviene reducir su uso en origen.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.4",
+     "grado": 11,
+     "indicador": "10.4. Clasifica plásticos según su código de identificación y su capacidad de degradación, y evalúa críticamente las ventajas y limitaciones de los polímeros biodegradables y del reciclaje.",
+     "evidencia": "Inventario escolar de plásticos por código de resina y propuesta justificada de separación y reciclaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.4/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Masas verificadas: total 25.0 kg; códigos 1, 2 y 5 suman 21.0 kg (84 %); 1 + 6 = 17.0 kg. La clave D se deduce de los datos y del centro de acopio; los distractores mezclan polímeros o confían en enterrar el PLA. Química correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.4",
+       "cita": "clasifica plásticos por código y evalúa el reciclaje"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "14.0 + 4.5 + 2.5 = 21.0; 21.0/25.0 = 0.84."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.4/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ítem auténtico (residuos del instituto) y clave D deducible; las cinco masas venían en un párrafo. Se pasan a lista con los mismos valores para que el estudiante sume y compare con menos carga.",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo pesó los residuos plásticos de su instituto en una semana:\n• código 1 (PET, botellas): 14.0 kg\n• código 2 (PEAD, galones): 4.5 kg\n• código 5 (PP, tapones): 2.5 kg\n• código 6 (PS espumado, platos con grasa): 3.0 kg\n• código 7 (empaques multicapa y PLA): 1.0 kg\nUn centro de acopio local compra PET, PEAD y PP limpios y separados. ¿Qué propuesta aprovecha mejor estos datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.5",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Lucía analiza una muestra de arena de la bahía de Jiquilisco. Densidades aproximadas, en g/cm³:\n• granos de cuarzo: 2.65\n• polietileno de alta densidad: 0.95\n• polipropileno: 0.90\n• poliestireno: 1.05\n• tereftalato de polietileno: 1.38\n• disolución saturada de cloruro de sodio: 1.20\nMezcla la arena con la disolución saturada, agita y deja reposar. ¿Qué resultado obtendrá en la superficie del líquido?",
+     "opciones": {
+      "A": "Flotarán el polietileno, el polipropileno y el poliestireno, mientras el tereftalato de polietileno se hundirá con la arena.",
+      "B": "Flotarán los cuatro polímeros por igual, porque todos los plásticos tienen la misma densidad menor que el agua salada.",
+      "C": "Flotarán solo el polietileno y el polipropileno, porque el poliestireno es rígido y los plásticos duros siempre se hunden.",
+      "D": "Se hundirán los cuatro polímeros junto con el cuarzo, porque la sal disuelta se adhiere a las cadenas poliméricas."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/estructura-y-propiedades-de-polimeros/1",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una salmuera de 1.20 g/cm³ flotan los polímeros con densidad menor que la del líquido (polietileno, polipropileno y poliestireno), mientras que el tereftalato de polietileno (1.38 g/cm³) y el cuarzo (2.65 g/cm³) se depositan en el fondo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.5",
+     "grado": 11,
+     "indicador": "10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "evidencia": "Informe de muestreo con conteo de microplásticos por tipo, fotografías y conclusión sobre su origen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.5/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Densidades correctas (PEAD ≈0.95, PP ≈0.90, PS ≈1.05, PET ≈1.38, salmuera saturada ≈1.20 g/cm³, cuarzo 2.65). Flotan PEAD, PP y PS; se hunden PET y cuarzo: clave A correcta. Montaje seguro.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.5",
+       "cita": "separación por densidad de microplásticos en arena"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "NaCl saturada a 25 °C: ρ ≈ 1.20 g/cm³."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.5/obj-1",
+     "decision": "corregir",
+     "justificacion": "Contexto local valioso (Jiquilisco) y clave A correcta, pero seis densidades en un párrafo de 72 palabras exigen retener demasiados datos. Se presentan en lista con los mismos valores.",
+     "cambios": {
+      "enunciado": "Lucía analiza una muestra de arena de la bahía de Jiquilisco. Densidades aproximadas, en g/cm³:\n• granos de cuarzo: 2.65\n• polietileno de alta densidad: 0.95\n• polipropileno: 0.90\n• poliestireno: 1.05\n• tereftalato de polietileno: 1.38\n• disolución saturada de cloruro de sodio: 1.20\nMezcla la arena con la disolución saturada, agita y deja reposar. ¿Qué resultado obtendrá en la superficie del líquido?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.5",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo separó con salmuera y observó con lupa los microplásticos de 500 g de sedimento seco de dos sitios del río Acelhuate:\n• Sitio 1, cerca de desagües domésticos: 42 fibras flexibles, 8 fragmentos rígidos y 2 películas.\n• Sitio 2, junto a un botadero de envases y bolsas: 9 fibras, 38 fragmentos de bordes irregulares y 25 películas.\n¿Qué conclusión respaldan estos datos sobre el origen y el efecto de estas partículas?",
+     "opciones": {
+      "A": "Ambos sitios reciben microplásticos primarios idénticos, los cuales se biodegradan rápido en el estómago de los peces de río.",
+      "B": "El sitio 1 recibe sobre todo fibras del lavado de ropa y el sitio 2, fragmentos de envases degradados; la fauna acuática puede ingerirlos.",
+      "C": "El sitio 2 tiene más fragmentos porque el código de resina de los envases indica cuántas veces se dividen en el agua del río.",
+      "D": "El sitio 1 tiene menos fragmentos rígidos porque la luz solar convierte los envases duros en fibras textiles dentro del agua."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/estructura-y-propiedades-de-polimeros/1",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El predominio de fibras en el sitio 1 apunta a aguas grises de lavado de ropa sintética, mientras que los fragmentos y películas del sitio 2 provienen de la fragmentación de envases y bolsas (microplásticos secundarios); al persistir en el agua, ambos tipos son ingeridos por peces y moluscos.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.5",
+     "grado": 11,
+     "indicador": "10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "evidencia": "Informe de muestreo con conteo de microplásticos por tipo, fotografías y conclusión sobre su origen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Inferencia correcta: fibras asociadas a aguas de lavado textil y fragmentos y películas a la fragmentación de envases y bolsas (microplásticos secundarios). Los distractores son falsos. Química correcta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.5",
+       "cita": "efectos de los microplásticos en ecosistemas acuáticos"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Fibras sintéticas desde lavado; fragmentos secundarios desde envases."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.5/obj-2",
+     "decision": "corregir",
+     "justificacion": "La clave B era la más larga (27 palabras) y los conteos de los dos sitios venían en un párrafo. Se acorta la clave sin cambiar su contenido (origen textil y de envases, ingestión por la fauna) y se pasan los datos a lista.",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo separó con salmuera y observó con lupa los microplásticos de 500 g de sedimento seco de dos sitios del río Acelhuate:\n• Sitio 1, cerca de desagües domésticos: 42 fibras flexibles, 8 fragmentos rígidos y 2 películas.\n• Sitio 2, junto a un botadero de envases y bolsas: 9 fibras, 38 fragmentos de bordes irregulares y 25 películas.\n¿Qué conclusión respaldan estos datos sobre el origen y el efecto de estas partículas?",
+      "opciones": {
+       "A": "Ambos sitios reciben microplásticos primarios idénticos, los cuales se biodegradan rápido en el estómago de los peces de río.",
+       "B": "El sitio 1 recibe sobre todo fibras del lavado de ropa y el sitio 2, fragmentos de envases degradados; la fauna acuática puede ingerirlos.",
+       "C": "El sitio 2 tiene más fragmentos porque el código de resina de los envases indica cuántas veces se dividen en el agua del río.",
+       "D": "El sitio 1 tiene menos fragmentos rígidos porque la luz solar convierte los envases duros en fibras textiles dentro del agua."
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la clave no debe ser la opción más larga"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.5",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Durante un muestreo en el estero de Jaltepeque, Mateo separa partículas de la arena usando una disolución saturada de sal y observa con lupa fragmentos irregulares de polietileno. En 3 o 4 oraciones: (1) explica por qué la salmuera permite separar estos microplásticos de la arena en función de la densidad, (2) explica cómo se originan estos microplásticos secundarios a partir de envases desechados y (3) describe un efecto que causan al ser ingeridos por moluscos o peces del estero.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "La salmuera saturada tiene una densidad cercana a 1.20 g/cm³, que es mayor que la del polietileno (aproximadamente 0.92–0.96 g/cm³) pero menor que la de los granos de arena, por lo que los fragmentos plásticos flotan y la arena se hunde. Estos microplásticos secundarios se forman cuando la radiación solar (fotodegradación) y el roce mecánico del agua y la arena rompen las cadenas poliméricas de bolsas o botellas grandes en fragmentos cada vez más pequeños y persistentes. En el estero, moluscos como los curiles y los peces los confunden con alimento, lo que les provoca obstrucción digestiva, falsa saciedad y transferencia de contaminantes en la red trófica.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la flotación de los fragmentos de polietileno y el hundimiento de la arena con la diferencia de densidades respecto a la salmuera.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que los microplásticos secundarios se originan por la fragmentación física y degradación por luz solar de objetos plásticos más grandes.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Describe al menos un efecto dañino en la fauna acuática (ingestión por peces o moluscos, bloqueo del tracto digestivo, falsa saciedad o bioacumulación).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que todos los tipos de plástico tienen exactamente la misma densidad y flotan por igual sin importar su estructura química.",
+        "ejemplo": "Todos los plásticos flotan en el agua salada porque el plástico es una sola sustancia liviana que nunca se hunde.",
+        "dificultad": "DIF:quimica/estructura-y-propiedades-de-polimeros/1"
+       },
+       {
+        "descripcion": "Confunde la fragmentación en microplásticos con una biodegradación completa e inocua en el agua.",
+        "ejemplo": "El sol deshace las botellas en pedacitos que se disuelven en el agua y sirven de nutrientes a los peces.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "La separación aprovecha que el polietileno es menos denso que la salmuera saturada mientras que los silicatos de la arena son más densos; esos fragmentos provienen de plásticos mayores quebrados por el sol y el oleaje, y al no biodegradarse obstruyen el sistema digestivo de peces y moluscos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.5",
+     "grado": 11,
+     "indicador": "10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "evidencia": "Informe de muestreo con conteo de microplásticos por tipo, fotografías y conclusión sobre su origen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.5/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Correcto: salmuera de ≈1.20 g/cm³ separa el polietileno (0.92-0.96) de la arena; la fotodegradación y la abrasión fragmentan el plástico; los efectos (obstrucción, falsa saciedad, transferencia de contaminantes) están documentados. El curil es un molusco propio de esos esteros.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.5",
+       "cita": "separación por densidad y efectos en ecosistemas acuáticos del país"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Fotooxidación UV y abrasión producen microplásticos secundarios."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U10-10.5/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Tres tareas numeradas con tres criterios obligatorios en «2 o 3 oraciones»: no alcanza. Se amplía a 3 o 4 oraciones. Contexto local (Jaltepeque, curiles) pertinente; la química no cambia.",
+     "cambios": {
+      "enunciado": "Durante un muestreo en el estero de Jaltepeque, Mateo separa partículas de la arena usando una disolución saturada de sal y observa con lupa fragmentos irregulares de polietileno. En 3 o 4 oraciones: (1) explica por qué la salmuera permite separar estos microplásticos de la arena en función de la densidad, (2) explica cómo se originan estos microplásticos secundarios a partir de envases desechados y (3) describe un efecto que causan al ser ingeridos por moluscos o peces del estero."
+     },
+     "evidencia": [
+      {
+       "fuente": "rúbrica del elemento",
+       "cita": "c1, c2 y c3 obligatorios"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U11-11.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U11-11.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U11-11.1",
+      "CON:quimica/quimica-de-los-carbohidratos"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la proyección de Fischer de la D-galactosa (una aldohexosa), los grupos hidroxilo (–OH) de los carbonos quirales se orientan así:\n• C2: a la derecha\n• C3: a la izquierda\n• C4: a la izquierda\n• C5: a la derecha\nLa molécula se cicla y forma la α-D-galactopiranosa en proyección de Haworth estándar (con el grupo –CH₂OH de C6 hacia arriba). ¿Cuál es la orientación de los grupos –OH en los carbonos C1, C2, C3 y C4, respectivamente?",
+     "opciones": {
+      "A": "C1 abajo, C2 arriba, C3 abajo y C4 abajo, con el carbono anomérico en C1.",
+      "B": "C1 arriba, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C1.",
+      "C": "C1 abajo, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C1.",
+      "D": "C1 abajo, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C5."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/quimica-de-los-carbohidratos/1",
+      "B": "DIF:quimica/quimica-de-los-carbohidratos/2",
+      "D": "DIF:quimica/quimica-de-los-carbohidratos/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la conversión de Fischer a Haworth, los grupos a la derecha (C2) quedan hacia abajo y los que están a la izquierda (C3 y C4) quedan hacia arriba. El carbono anomérico es C1 (el antiguo carbonilo) y en el anómero α de un azúcar D su grupo –OH se ubica hacia abajo, en posición trans respecto al –CH₂OH de C6.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-carbohidratos",
+     "nombre": "Química de los carbohidratos",
+     "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U11-11.1",
+     "grado": 11,
+     "indicador": "11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "evidencia": "Hoja de proyecciones de Fischer y Haworth de tres monosacáridos y modelo molecular de la ciclación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U11-11.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U11-11.1/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Verificado: la D-galactosa tiene en Fischer OH en C2 derecha, C3 izquierda, C4 izquierda y C5 derecha; en Haworth C2 abajo, C3 arriba, C4 arriba, y en el anómero α el OH de C1 abajo. Clave A correcta; los distractores mapean las tres confusiones reales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U11-11.1",
+       "cita": "Fischer a Haworth, carbono anomérico y formas α y β"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Regla: derecha en Fischer → abajo en Haworth (serie D)."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U11-11.1/obj-1",
+     "decision": "corregir",
+     "justificacion": "Las dos opciones múltiples del tema tenían clave A. Se intercambian A y C (la clave pasa a C, con sus distractores remapeados) y las orientaciones de Fischer se presentan en lista. Contenido verificado por el experto sin cambios.",
+     "cambios": {
+      "enunciado": "En la proyección de Fischer de la D-galactosa (una aldohexosa), los grupos hidroxilo (–OH) de los carbonos quirales se orientan así:\n• C2: a la derecha\n• C3: a la izquierda\n• C4: a la izquierda\n• C5: a la derecha\nLa molécula se cicla y forma la α-D-galactopiranosa en proyección de Haworth estándar (con el grupo –CH₂OH de C6 hacia arriba). ¿Cuál es la orientación de los grupos –OH en los carbonos C1, C2, C3 y C4, respectivamente?",
+      "opciones": {
+       "A": "C1 abajo, C2 arriba, C3 abajo y C4 abajo, con el carbono anomérico en C1.",
+       "B": "C1 arriba, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C1.",
+       "C": "C1 abajo, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C1.",
+       "D": "C1 abajo, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C5."
+      },
+      "correcta": "C",
+      "distractores": {
+       "A": "DIF:quimica/quimica-de-los-carbohidratos/1",
+       "B": "DIF:quimica/quimica-de-los-carbohidratos/2",
+       "D": "DIF:quimica/quimica-de-los-carbohidratos/3"
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "claves repartidas A–D dentro del tema y del paquete"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U11-11.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U11-11.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U11-11.1",
+      "CON:quimica/quimica-de-los-carbohidratos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo consulta datos de rotación específica [α] en agua a 25 °C:\n• α-D-glucopiranosa pura, recién disuelta: [α] = +112.2°\n• β-D-glucopiranosa pura, recién disuelta: [α] = +18.7°\n• cualquiera de las dos después de un tiempo en reposo: la rotación cambia hasta estabilizarse en +52.7° (aproximadamente 36 % del isómero α, 64 % del β y menos de 0.02 % de la cadena abierta)\n¿Qué proceso químico a nivel molecular explica estos datos?",
+     "opciones": {
+      "A": "La apertura reversible del hemiacetal en C1 permite rotar el enlace C1–C2 antes de volver a cerrar el anillo.",
+      "B": "El giro directo del grupo –OH unido a C1 sin abrir el anillo convierte un anómero en el otro hasta el equilibrio.",
+      "C": "La migración del grupo –OH desde C5 hacia C1 desplaza el oxígeno del anillo y cambia el ángulo de rotación óptica.",
+      "D": "La inversión simultánea de los grupos –OH en C2, C3 y C4 transforma toda la molécula en su imagen especular opuesta."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/quimica-de-los-carbohidratos/3",
+      "C": "DIF:quimica/quimica-de-los-carbohidratos/3",
+      "D": "DIF:quimica/quimica-de-los-carbohidratos/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La mutarrotación ocurre porque la formación del hemiacetal es reversible en disolución acuosa: el anillo se abre brevemente a la forma de aldehído plano en C1 y, al volver a cerrarse por el ataque del –OH de C5, puede hacerlo por cualquiera de las dos caras del carbonilo, generando una mezcla en equilibrio de los anómeros α y β.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-carbohidratos",
+     "nombre": "Química de los carbohidratos",
+     "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U11-11.1",
+     "grado": 11,
+     "indicador": "11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "evidencia": "Hoja de proyecciones de Fischer y Haworth de tres monosacáridos y modelo molecular de la ciclación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U11-11.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U11-11.1/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Datos de mutarrotación correctos (+112.2°, +18.7°, +52.7°; ≈36 % α y 64 % β; cadena abierta <0.02 %). La clave A describe bien el mecanismo: al abrirse el anillo, el giro en C1–C2 expone una u otra cara del carbonilo. Distractores falsos y bien mapeados.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U11-11.1",
+       "cita": "carbono anomérico y formas α y β"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "0.36(112.2) + 0.64(18.7) ≈ 52.4°."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U11-11.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Ítem válido, opciones parejas; los tres valores de rotación y la composición del equilibrio venían en un párrafo de 79 palabras. Se pasan a lista con los mismos datos. Mantiene la clave A, ya que la del otro ítem del tema pasa a C.",
+     "cambios": {
+      "enunciado": "Un grupo de ejemplo consulta datos de rotación específica [α] en agua a 25 °C:\n• α-D-glucopiranosa pura, recién disuelta: [α] = +112.2°\n• β-D-glucopiranosa pura, recién disuelta: [α] = +18.7°\n• cualquiera de las dos después de un tiempo en reposo: la rotación cambia hasta estabilizarse en +52.7° (aproximadamente 36 % del isómero α, 64 % del β y menos de 0.02 % de la cadena abierta)\n¿Qué proceso químico a nivel molecular explica estos datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: los datos van en lista, no en párrafo; se conservan todos los valores del experto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U12-12.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U12-12.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U12-12.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U12-12.2",
+      "CON:quimica/aminoacidos-y-proteinas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo estudia la imagen de una enzima formada por dos cadenas polipeptídicas y anota cuatro regiones:\n- Región 1: unión amida C–N entre residuos consecutivos.\n- Región 2: atracción N–H···O=C repetida cada cuatro residuos del esqueleto.\n- Región 3: enlace covalente S–S entre dos cisteínas de la misma cadena.\n- Región 4: agrupamiento de leucinas y valinas en la zona de contacto entre ambas cadenas.\n¿Qué relación nivel-interacción es correcta?",
+     "opciones": {
+      "A": "Región 1: secundaria (puente de hidrógeno); Región 2: primaria (enlace peptídico); Región 3: terciaria (iónica); Región 4: cuaternaria (disulfuro).",
+      "B": "Región 1: primaria (enlace peptídico); Región 2: terciaria (hidrofóbica); Región 3: secundaria (puente disulfuro); Región 4: cuaternaria (iónica).",
+      "C": "Región 1: primaria (enlace peptídico); Región 2: secundaria (puente de hidrógeno); Región 3: terciaria (puente disulfuro); Región 4: cuaternaria (hidrofóbica).",
+      "D": "Región 1: cuaternaria (enlace peptídico); Región 2: secundaria (iónica); Región 3: terciaria (hidrofóbica); Región 4: primaria (puente disulfuro)."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El enlace peptídico (amida C–N) define la secuencia primaria; los puentes de hidrógeno del esqueleto cada cuatro residuos forman la hélice alfa secundaria; el puente disulfuro S–S fija el plegamiento terciario de una cadena y el efecto hidrofóbico entre leucinas y valinas une subunidades en la estructura cuaternaria.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U12-12.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U12-12.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/aminoacidos-y-proteinas",
+     "nombre": "Aminoácidos y estructura de las proteínas",
+     "definicion": "Aminoácidos unidos por enlace peptídico forman estructuras primaria, secundaria y terciaria que explican propiedades y desnaturalización.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U12-12.2",
+     "grado": 11,
+     "indicador": "12.2. Relaciona cada nivel estructural de una proteína con el enlace o la interacción química que lo estabiliza: peptídico, puentes de hidrógeno, iónico, disulfuro o hidrofóbico.",
+     "evidencia": "Modelo físico de una proteína con rótulos de las interacciones que estabilizan cada nivel estructural"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U12-12.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U12-12.2/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Asignaciones correctas: amida C–N primaria; N–H···O=C entre residuos i e i+4, hélice alfa (secundaria); S–S intracadena, terciaria; contacto hidrofóbico entre cadenas distintas, cuaternaria. Clave C única correcta; los distractores mezclan niveles e interacciones.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.2",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Puente de hidrógeno i→i+4 en la hélice alfa; disulfuro intracadena estabiliza el plegamiento."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U12-12.2/obj-2",
+     "decision": "corregir",
+     "justificacion": "Las cuatro regiones venían en un párrafo de 70 palabras: se pasan a lista para bajar la carga. Se quita «datos de un grupo de ejemplo», que confunde, y el visor molecular (presupone dispositivos) se cambia por una imagen. No se toca el contenido de las regiones, opciones ni clave.",
+     "cambios": {
+      "enunciado": "Mateo estudia la imagen de una enzima formada por dos cadenas polipeptídicas y anota cuatro regiones:\n- Región 1: unión amida C–N entre residuos consecutivos.\n- Región 2: atracción N–H···O=C repetida cada cuatro residuos del esqueleto.\n- Región 3: enlace covalente S–S entre dos cisteínas de la misma cadena.\n- Región 4: agrupamiento de leucinas y valinas en la zona de contacto entre ambas cadenas.\n¿Qué relación nivel-interacción es correcta?"
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.2",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, no en párrafo; no presuponer dispositivos"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.1",
+      "CON:quimica/hidrocarburos-aromaticos"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Elena clasifica cuatro hidrocarburos cíclicos en su hoja de trabajo:\n- Compuesto 1: ciclohexano (C₆H₁₂), solo enlaces simples.\n- Compuesto 2: 1,3-ciclohexadieno (C₆H₈), dos enlaces dobles conjugados y dos carbonos con hibridación sp³.\n- Compuesto 3: tolueno (C₇H₈), un anillo bencénico unido a un grupo –CH₃.\n- Compuesto 4: ciclooctatetraeno (C₈H₈), anillo no plano con cuatro enlaces dobles alternados.\n¿Cuál de los cuatro es un hidrocarburo aromático y por qué?",
+     "opciones": {
+      "A": "El compuesto 1, porque tiene un anillo cerrado de seis carbonos muy estable sin enlaces dobles reactivos.",
+      "B": "El compuesto 2, porque posee un anillo de seis carbonos con enlaces dobles conjugados dentro del ciclo.",
+      "C": "El compuesto 3, porque su anillo es plano y conjugado, con 6 electrones pi deslocalizados.",
+      "D": "El compuesto 4, porque presenta enlaces simples y dobles alternados a lo largo de todo el anillo cerrado."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/hidrocarburos-aromaticos/1",
+      "B": "DIF:quimica/hidrocarburos-aromaticos/1",
+      "D": "DIF:quimica/hidrocarburos-aromaticos/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El tolueno (compuesto 3) contiene un anillo bencénico plano y completamente conjugado con 6 electrones pi deslocalizados, cumpliendo la regla de Hückel (4n + 2 con n = 1). El ciclohexano y el 1,3-ciclohexadieno tienen carbonos sp³ que interrumpen la conjugación, y el ciclooctatetraeno tiene 8 electrones pi (4n) y adopta una forma no plana.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-aromaticos",
+     "nombre": "Hidrocarburos aromáticos",
+     "definicion": "Compuestos con anillos bencénicos de electrones deslocalizados, de estabilidad especial y reacciones de sustitución.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.1",
+     "grado": 11,
+     "indicador": "3.1. Reconoce la función hidrocarburos aromáticos.",
+     "evidencia": "Hoja de análisis de diez estructuras clasificadas como aromáticas o no aromáticas con justificación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.1/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Clave C correcta: el tolueno tiene un anillo plano conjugado con 6 electrones pi (Hückel n = 1). El ciclohexano y el ciclohexadieno no tienen conjugación cíclica completa; el ciclooctatetraeno no es plano y tiene 8 electrones pi. Distractores mapeados a ideas previas pertinentes.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.1",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Criterios de aromaticidad: ciclo, planaridad, conjugación completa y 4n+2 electrones pi."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.1/obj-1",
+     "decision": "corregir",
+     "justificacion": "Cuatro compuestos con sus rasgos en un párrafo de 78 palabras: se pasan a lista. La clave era la más larga y la única con la regla 4n + 2 entre paréntesis, una pista de forma; se acorta sin cambiar su contenido (anillo plano, conjugado, 6 electrones pi). La retroalimentación conserva Hückel.",
+     "cambios": {
+      "enunciado": "Elena clasifica cuatro hidrocarburos cíclicos en su hoja de trabajo:\n- Compuesto 1: ciclohexano (C₆H₁₂), solo enlaces simples.\n- Compuesto 2: 1,3-ciclohexadieno (C₆H₈), dos enlaces dobles conjugados y dos carbonos con hibridación sp³.\n- Compuesto 3: tolueno (C₇H₈), un anillo bencénico unido a un grupo –CH₃.\n- Compuesto 4: ciclooctatetraeno (C₈H₈), anillo no plano con cuatro enlaces dobles alternados.\n¿Cuál de los cuatro es un hidrocarburo aromático y por qué?",
+      "opciones": {
+       "A": "El compuesto 1, porque tiene un anillo cerrado de seis carbonos muy estable sin enlaces dobles reactivos.",
+       "B": "El compuesto 2, porque posee un anillo de seis carbonos con enlaces dobles conjugados dentro del ciclo.",
+       "C": "El compuesto 3, porque su anillo es plano y conjugado, con 6 electrones pi deslocalizados.",
+       "D": "El compuesto 4, porque presenta enlaces simples y dobles alternados a lo largo de todo el anillo cerrado."
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.1",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la clave no es la más larga ni la única con el dato técnico"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.1",
+      "CON:quimica/hidrocarburos-aromaticos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una tabla de referencia da la longitud del enlace carbono-carbono y lo que ocurre con agua de bromo, Br₂(ac), sin catalizador:\n- Etano: enlace C—C de 154 pm; no reacciona.\n- Eteno: enlace C=C de 134 pm; decolora el bromo de inmediato por adición.\n- Benceno (C₆H₆): todos los enlaces carbono-carbono miden 140 pm; no decolora el agua de bromo.\n¿Qué conclusión sobre la estructura del benceno se sostiene con estos datos?",
+     "opciones": {
+      "A": "Sus seis electrones pi están deslocalizados por igual en el anillo, lo que le da estabilidad especial frente a la adición.",
+      "B": "Sus tres enlaces dobles y tres simples se alternan tan rápido que el bromo no alcanza a adicionarse a ninguno.",
+      "C": "Sus enlaces son todos simples de longitud corta porque el anillo cerrado comprime los átomos de carbono entre sí.",
+      "D": "Sus tres enlaces dobles fijos miden 140 pm porque la tensión del anillo de seis carbonos alarga cada enlace doble."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/resonancia-y-carga-formal/1",
+      "D": "DIF:quimica/hidrocarburos-aromaticos/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La longitud única de 140 pm, intermedia entre la de un enlace simple (154 pm) y la de uno doble (134 pm), junto con la falta de adición con Br₂(ac), indica que el benceno es un híbrido de resonancia con 6 electrones pi deslocalizados sobre todo el anillo, y no una molécula con dobles enlaces fijos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/hidrocarburos-aromaticos",
+     "nombre": "Hidrocarburos aromáticos",
+     "definicion": "Compuestos con anillos bencénicos de electrones deslocalizados, de estabilidad especial y reacciones de sustitución.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.1",
+     "grado": 11,
+     "indicador": "3.1. Reconoce la función hidrocarburos aromáticos.",
+     "evidencia": "Hoja de análisis de diez estructuras clasificadas como aromáticas o no aromáticas con justificación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Datos correctos (C–C 154, C=C 134, benceno ~140 pm; sin adición de Br2 sin catalizador) y clave A correcta. El distractor C (todos los enlaces simples y comprimidos) no corresponde a la dificultad asignada (aromático = olor o anillo de seis carbonos); se quita ese mapeo. «Demuestra» se matiza a «indica».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.1",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Mapear un distractor a una dificultad que no expresa distorsiona el diagnóstico."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "distractores": {
+       "B": "DIF:quimica/resonancia-y-carga-formal/1",
+       "D": "DIF:quimica/hidrocarburos-aromaticos/2"
+      },
+      "retroalimentacion": "La longitud única de 140 pm, intermedia entre la de un enlace simple (154 pm) y la de uno doble (134 pm), junto con la falta de adición con Br₂(ac), indica que el benceno es un híbrido de resonancia con 6 electrones pi deslocalizados sobre todo el anillo, y no una molécula con dobles enlaces fijos."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.1/obj-2",
+     "decision": "corregir",
+     "justificacion": "Datos de tres sustancias en un párrafo de 82 palabras: se pasan a lista para que comparen longitud y reacción de un vistazo. Mismos valores, misma clave y la retroalimentación ya corregida por el experto. Opciones parejas.",
+     "cambios": {
+      "enunciado": "Una tabla de referencia da la longitud del enlace carbono-carbono y lo que ocurre con agua de bromo, Br₂(ac), sin catalizador:\n- Etano: enlace C—C de 154 pm; no reacciona.\n- Eteno: enlace C=C de 134 pm; decolora el bromo de inmediato por adición.\n- Benceno (C₆H₆): todos los enlaces carbono-carbono miden 140 pm; no decolora el agua de bromo.\n¿Qué conclusión sobre la estructura del benceno se sostiene con estos datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.1",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, no en párrafo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.10/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.10/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.10"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.10",
+      "CON:quimica/grupos-funcionales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de estudiantes anotó tres sustancias con uno de sus usos:\n- Sustancia 1: CH₃CH₂NHCH₃, se usa para fabricar fármacos.\n- Sustancia 2: CH₃CH₂Cl, anestésico local en aerosol.\n- Sustancia 3: C₆H₄Cl₂, antipolillas y desodorante sólido.\nSegún sus fórmulas, ¿qué opción identifica correctamente el grupo funcional de las sustancias 1, 2 y 3?",
+     "opciones": {
+      "A": "Sustancia 1: amina primaria; Sustancia 2: haluro de arilo; Sustancia 3: haluro de alquilo.",
+      "B": "Sustancia 1: amida secundaria; Sustancia 2: tiol clorado; Sustancia 3: hidrocarburo aromático.",
+      "C": "Sustancia 1: amina terciaria; Sustancia 2: haluro de alquilo; Sustancia 3: tioéter aromático.",
+      "D": "Sustancia 1: amina secundaria; Sustancia 2: haluro de alquilo; Sustancia 3: haluro de arilo."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En CH₃CH₂NHCH₃ el nitrógeno se une a dos grupos alquilo y a un hidrógeno, por lo que es una amina secundaria. En CH₃CH₂Cl el cloro se enlaza a una cadena alifática saturada (haluro de alquilo), mientras que en C₆H₄Cl₂ los átomos de cloro están unidos a un anillo bencénico (haluro de arilo).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.10"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/grupos-funcionales",
+     "nombre": "Grupos funcionales",
+     "definicion": "Agrupaciones de átomos (alcohol, aldehído, cetona, ácido carboxílico, éster, amina, amida, haluro) que determinan propiedades y reacciones características.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.10",
+     "grado": 11,
+     "indicador": "3.10. Reconoce las funciones tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "evidencia": "Tabla de compuestos azufrados, nitrogenados y halogenados con grupo funcional, uso y riesgo asociado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.10/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.10/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Clave D correcta: CH3CH2NHCH3 es amina secundaria, cloroetano es haluro de alquilo (gas inflamable usado como anestésico tópico en aerosol) y C6H4Cl2 (diclorobenceno, usado como antipolillas y desodorante) es haluro de arilo. Los distractores son falsos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.10",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Cloroetano hierve hacia 12 °C; p-diclorobenceno es un sólido que sublima, usado como antipolillas."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.10/obj-2",
+     "decision": "corregir",
+     "justificacion": "Las tres sustancias iban en un párrafo con datos de riesgo y persistencia que no se usan para responder: se pasan a lista y se deja un uso breve de cada una. «Un grupo de ejemplo» se cambia por «un grupo de estudiantes» y «fila» por «opción». Fórmulas, opciones y clave intactas.",
+     "cambios": {
+      "enunciado": "Un grupo de estudiantes anotó tres sustancias con uno de sus usos:\n- Sustancia 1: CH₃CH₂NHCH₃, se usa para fabricar fármacos.\n- Sustancia 2: CH₃CH₂Cl, anestésico local en aerosol.\n- Sustancia 3: C₆H₄Cl₂, antipolillas y desodorante sólido.\nSegún sus fórmulas, ¿qué opción identifica correctamente el grupo funcional de las sustancias 1, 2 y 3?"
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.10",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "sin información irrelevante; datos en lista"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.12/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.12/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.12"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.12",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Alejandra analiza la molécula CH₃-CH(Br)-CH₂-CH(CH₃)-SH y quiere asignarle su nombre IUPAC sistemático. ¿Cuál es el nombre IUPAC correcto y por qué?",
+     "opciones": {
+      "A": "4-bromopentano-2-tiol, porque la cadena con el carbono del –SH tiene cinco carbonos y el –SH recibe el localizador más bajo.",
+      "B": "3-bromo-1-metilbutano-1-tiol, porque la cadena principal es la de cuatro carbonos que aparece escrita en línea horizontal.",
+      "C": "2-bromopentano-4-tiol, porque la cadena se numera desde el extremo izquierdo, en el orden en que se lee la fórmula.",
+      "D": "2-bromo-4-sulfanilpentano, porque el bromo es el grupo principal y por eso el –SH se nombra como prefijo."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/nomenclatura-organica/1",
+      "C": "DIF:quimica/nomenclatura-organica/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El CH₃ escrito entre paréntesis forma parte de la cadena más larga: CH₃–CH(SH)–CH₂–CH(Br)–CH₃ tiene cinco carbonos (pentano). El tiol es el grupo principal (sufijo -tiol) y debe recibir el localizador más bajo, así que se numera desde el extremo más cercano al –SH: queda en el carbono 2 y el bromo en el 4. Nombre: 4-bromopentano-2-tiol.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.12"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.12",
+     "grado": 11,
+     "indicador": "3.12. Emplea nomenclatura IUPAC para nombrar tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "evidencia": "Ejercicios resueltos de nomenclatura de quince tioles, tioéteres, aminas y haluros con estructuras"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.12/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.12/obj-1",
+     "decision": "corregir",
+     "justificacion": "Error grave de clave: en CH3-CH(Br)-CH2-CH(CH3)-SH la cadena más larga con el carbono del –SH tiene cinco carbonos (incluye el CH3 entre paréntesis). El nombre es 4-bromopentano-2-tiol; ninguna opción lo era y la clave B (4-bromo-2-metilbutano-1-tiol) describe otra molécula. Se rehacen opciones, clave y retroalimentación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.12",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Recuento de la cadena: CH3–CH(SH)–CH2–CH(Br)–CH3, cinco carbonos; –SH en C2 y Br en C4."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "4-bromopentano-2-tiol, porque la cadena más larga que contiene el carbono del –SH tiene cinco carbonos y se numera dando al –SH el localizador más bajo.",
+       "B": "3-bromo-1-metilbutano-1-tiol, porque la cadena principal es la de cuatro carbonos escrita en línea horizontal.",
+       "C": "2-bromopentano-4-tiol, porque se numera desde el extremo izquierdo, como se lee la fórmula.",
+       "D": "2-bromo-4-sulfanilpentano, porque el bromo es el grupo principal y el –SH se nombra como prefijo."
+      },
+      "correcta": "A",
+      "distractores": {
+       "B": "DIF:quimica/nomenclatura-organica/1",
+       "C": "DIF:quimica/nomenclatura-organica/2"
+      },
+      "retroalimentacion": "El CH₃ escrito entre paréntesis forma parte de la cadena más larga: CH₃–CH(SH)–CH₂–CH(Br)–CH₃ tiene cinco carbonos (pentano). El tiol es el grupo principal (sufijo -tiol) y debe recibir el localizador más bajo, así que se numera desde el extremo más cercano al –SH: queda en el carbono 2 y el bromo en el 4. Nombre: 4-bromopentano-2-tiol."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.12/obj-1",
+     "decision": "corregir",
+     "justificacion": "La clave A medía 25 palabras frente a 13-15 de las demás (pista de longitud) y el enunciado afirmaba que el tiol es el grupo principal, lo que descartaba D. Se quita esa frase y se igualan longitudes sin cambiar nombres ni razones científicas. Clave A; el tema queda A y D.",
+     "cambios": {
+      "enunciado": "Alejandra analiza la molécula CH₃-CH(Br)-CH₂-CH(CH₃)-SH y quiere asignarle su nombre IUPAC sistemático. ¿Cuál es el nombre IUPAC correcto y por qué?",
+      "opciones": {
+       "A": "4-bromopentano-2-tiol, porque la cadena con el carbono del –SH tiene cinco carbonos y el –SH recibe el localizador más bajo.",
+       "B": "3-bromo-1-metilbutano-1-tiol, porque la cadena principal es la de cuatro carbonos que aparece escrita en línea horizontal.",
+       "C": "2-bromopentano-4-tiol, porque la cadena se numera desde el extremo izquierdo, en el orden en que se lee la fórmula.",
+       "D": "2-bromo-4-sulfanilpentano, porque el bromo es el grupo principal y por eso el –SH se nombra como prefijo."
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.12",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "el enunciado no descarta opciones; la clave no es la más larga"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.12/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.12/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.12"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.12",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo revisa una tabla con tres compuestos orgánicos:\n- Compuesto 1: CH₃-S-CH₂-CH₃ (tioéter)\n- Compuesto 2: CH₃-CH₂-NH-CH₃ (amina secundaria)\n- Compuesto 3: Cl-C₆H₄-CH₃, con los grupos en los carbonos 1 y 4 del anillo bencénico (haluro de arilo)\n¿Qué opción relaciona correctamente los compuestos 1, 2 y 3 con sus nombres IUPAC?",
+     "opciones": {
+      "A": "1: etilmetiltiol; 2: propilamina; 3: 4-clorometilbenceno.",
+      "B": "1: metiltioetano; 2: 2-aza-butano; 3: 1-metil-4-clorobenceno.",
+      "C": "1: etilmetilsulfano; 2: N-metiletilamina; 3: 1-cloro-2-metilbenceno.",
+      "D": "1: (metiltio)etano; 2: N-metiletanamina; 3: 1-cloro-4-metilbenceno."
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/nomenclatura-organica/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El tioéter CH₃-S-CH₂-CH₃ toma la cadena más larga (etano) y el grupo CH₃–S– como prefijo: (metilsulfanil)etano, nombre preferido actual; (metiltio)etano es la forma tradicional. En la amina secundaria la cadena mayor es etanamina y el metilo unido al nitrógeno lleva el localizador N-. En el anillo con sustituyentes en 1 y 4, el orden alfabético da 1-cloro-4-metilbenceno.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.12"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.12)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.12",
+     "grado": 11,
+     "indicador": "3.12. Emplea nomenclatura IUPAC para nombrar tioles, tioéteres, aminas, haluros de alquilo y arilo.",
+     "evidencia": "Ejercicios resueltos de nomenclatura de quince tioles, tioéteres, aminas y haluros con estructuras"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.12/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.12/obj-2",
+     "decision": "corregir",
+     "justificacion": "Clave D correcta. Matiz: el nombre IUPAC preferido actual de CH3–S–CH2–CH3 usa el prefijo «metilsulfanil»; «(metiltio)etano» es la forma tradicional que aún aparece en textos. La retroalimentación lo aclara para no presentar la forma antigua como la única válida.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.12",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Recomendaciones IUPAC 2013: el prefijo alquilsulfanilo sustituye a alquiltio en los nombres preferidos."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "retroalimentacion": "El tioéter CH₃-S-CH₂-CH₃ toma la cadena más larga (etano) y el grupo CH₃–S– como prefijo: (metilsulfanil)etano, nombre preferido actual; (metiltio)etano es la forma tradicional. En la amina secundaria la cadena mayor es etanamina y el metilo unido al nitrógeno lleva el localizador N-. En el anillo con sustituyentes en 1 y 4, el orden alfabético da 1-cloro-4-metilbenceno."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.12/obj-2",
+     "decision": "corregir",
+     "justificacion": "El compuesto 4 aparecía en la tabla pero la pregunta no lo usa: es información que distrae. Se quita, junto con «de un grupo de ejemplo», y la lista pasa al formato de guiones. Fórmulas, rótulos, opciones, clave y la retroalimentación del experto no cambian.",
+     "cambios": {
+      "enunciado": "Mateo revisa una tabla con tres compuestos orgánicos:\n- Compuesto 1: CH₃-S-CH₂-CH₃ (tioéter)\n- Compuesto 2: CH₃-CH₂-NH-CH₃ (amina secundaria)\n- Compuesto 3: Cl-C₆H₄-CH₃, con los grupos en los carbonos 1 y 4 del anillo bencénico (haluro de arilo)\n¿Qué opción relaciona correctamente los compuestos 1, 2 y 3 con sus nombres IUPAC?"
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.12",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "sin información irrelevante que distraiga"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.14/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.14/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.14"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.14",
+      "CON:quimica/isomeria-estructural"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo consulta una tabla de referencia con la temperatura de ebullición, a 1 atm, de cuatro líquidos de fórmula C₄H₁₀O:\n- Muestra 1: CH₃–CH₂–CH₂–CH₂–OH, 117.7 °C\n- Muestra 2: CH₃–CH(CH₃)–CH₂–OH, 107.9 °C\n- Muestra 3: CH₃–CH₂–O–CH₂–CH₃, 34.6 °C\n- Muestra 4: CH₃–O–CH₂–CH₂–CH₃, 38.8 °C\n¿Qué conclusión sobre el tipo de isomería y las propiedades físicas respaldan estos datos?",
+     "opciones": {
+      "A": "Los isómeros de cadena (1 y 2) presentan diferencias de punto de ebullición mayores que los de función (1 y 3).",
+      "B": "Todos los isómeros constitucionales de fórmula C₄H₁₀O forman puentes de hidrógeno entre sí con igual intensidad.",
+      "C": "Las muestras 3 y 4 son estereoisómeros cis-trans y por eso hierven a temperaturas menores que las muestras 1 y 2.",
+      "D": "Los isómeros de función (alcoholes 1 y 2 frente a éteres 3 y 4) difieren mucho más en ebullición que los de cadena."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/isomeria-estructural/2",
+      "C": "DIF:quimica/isomeria-estructural/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Entre los alcoholes 1 y 2 (isómeros de cadena) la ebullición cambia unos 10 °C, y entre los éteres 3 y 4 unos 4 °C. En cambio, entre alcoholes y éteres (isómeros de función) la diferencia es de unos 70 a 83 °C, porque los alcoholes forman puentes de hidrógeno entre sus moléculas y los éteres no.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.14"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/isomeria-estructural",
+     "nombre": "Isomería estructural",
+     "definicion": "Compuestos con la misma fórmula molecular y distinta conectividad: isómeros de cadena, posición y función.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.14",
+     "grado": 11,
+     "indicador": "3.14. Construye modelos de isómeros constitucionales y estereoisómeros.",
+     "evidencia": "Colección de modelos de isómeros rotulados y esquema de clasificación de la isomería"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.14/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.14/obj-2",
+     "decision": "corregir",
+     "justificacion": "Puntos de ebullición correctos y clave D correcta. La retroalimentación dice que la diferencia entre alcoholes y éteres «supera los 70 °C», pero entre 2-metilpropan-1-ol (107.9) y 1-metoxipropano (38.8) es 69.1 °C. Se corrige a «entre unos 70 y 83 °C».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.14",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Diferencias: 117.7−34.6 = 83.1; 107.9−38.8 = 69.1 °C."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "Entre los alcoholes 1 y 2 (isómeros de cadena) la ebullición cambia unos 10 °C, y entre los éteres 3 y 4 unos 4 °C. En cambio, entre alcoholes y éteres (isómeros de función) la diferencia es de unos 70 a 83 °C, porque los alcoholes forman puentes de hidrógeno entre sus moléculas y los éteres no."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.14/obj-2",
+     "decision": "corregir",
+     "justificacion": "Cuatro fórmulas con temperaturas en un párrafo: se pasan a lista para comparar valores de un vistazo. Mismos datos, opciones, clave y retroalimentación corregida por el experto.",
+     "cambios": {
+      "enunciado": "Un grupo consulta una tabla de referencia con la temperatura de ebullición, a 1 atm, de cuatro líquidos de fórmula C₄H₁₀O:\n- Muestra 1: CH₃–CH₂–CH₂–CH₂–OH, 117.7 °C\n- Muestra 2: CH₃–CH(CH₃)–CH₂–OH, 107.9 °C\n- Muestra 3: CH₃–CH₂–O–CH₂–CH₃, 34.6 °C\n- Muestra 4: CH₃–O–CH₂–CH₂–CH₃, 38.8 °C\n¿Qué conclusión sobre el tipo de isomería y las propiedades físicas respaldan estos datos?"
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.14",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "datos en lista, no en párrafo"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.14/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.14/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.14"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.14",
+      "CON:quimica/isomeria-estructural"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Con modelos moleculares se construyen el but-1-eno (CH₂=CH–CH₂–CH₃) y el but-2-eno (CH₃–CH=CH–CH₃). En 3 o 4 oraciones: (1) indica qué tipo de isomería constitucional hay entre ellos y por qué; (2) explica por qué el but-2-eno puede presentar estereoisómeros geométricos cis-trans, y (3) explica por qué el but-1-eno no puede.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "El but-1-eno y el but-2-eno son isómeros constitucionales de posición porque tienen la misma fórmula molecular (C₄H₈) y una cadena lineal de cuatro carbonos, pero el doble enlace C=C cambia del carbono 1 al carbono 2. El but-2-eno presenta isómeros geométricos cis-trans porque el doble enlace impide la libre rotación y cada carbono del doble enlace está unido a dos grupos diferentes (–H y –CH₃), mientras que en el but-1-eno el carbono 1 tiene dos hidrógenos iguales (CH₂=).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Identifica que el but-1-eno y el but-2-eno son isómeros constitucionales (o estructurales) de posición y justifica por el cambio de ubicación del doble enlace C=C en la misma cadena de cuatro carbonos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que el but-2-eno tiene isómeros cis-trans porque el doble enlace restringe la rotación y cada carbono del doble enlace está unido a dos átomos o grupos distintos (un –H y un –CH₃).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que el but-1-eno no tiene isómeros cis-trans porque uno de los carbonos del doble enlace (C1) está unido a dos átomos iguales (dos hidrógenos).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Clasifica al but-1-eno y al but-2-eno como isómeros de cadena o como estereoisómeros cis-trans entre sí.",
+        "ejemplo": "Son isómeros cis y trans porque en uno el doble enlace está en la orilla y en el otro en medio.",
+        "dificultad": "DIF:quimica/isomeria-estructural/3"
+       },
+       {
+        "descripcion": "Afirma que el enlace doble C=C gira libremente o que cualquier alqueno tiene isómeros cis-trans solo por tener doble enlace.",
+        "ejemplo": "El but-2-eno tiene cis y trans porque los grupos giran en el doble enlace, y el but-1-eno no porque está al inicio.",
+        "dificultad": "DIF:quimica/isomeria-estructural/2"
+       }
+      ]
+     },
+     "retroalimentacion": "Los dos son isómeros de posición: tienen la misma cadena de cuatro carbonos y el doble enlace cambia de lugar. El doble enlace no gira, así que hay cis y trans solo si cada carbono del doble enlace lleva dos grupos distintos, como en el but-2-eno (–H y –CH₃). En el but-1-eno, el carbono 1 tiene dos hidrógenos iguales.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.14"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.14)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/isomeria-estructural",
+     "nombre": "Isomería estructural",
+     "definicion": "Compuestos con la misma fórmula molecular y distinta conectividad: isómeros de cadena, posición y función.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.14",
+     "grado": 11,
+     "indicador": "3.14. Construye modelos de isómeros constitucionales y estereoisómeros.",
+     "evidencia": "Colección de modelos de isómeros rotulados y esquema de clasificación de la isomería"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.14/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.14/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "But-1-eno y but-2-eno son isómeros de posición (C4H8). Solo el but-2-eno tiene isómeros cis-trans porque cada carbono del doble enlace lleva dos grupos distintos; en el but-1-eno el C1 tiene dos hidrógenos. Respuesta modelo y criterios correctos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.14",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Condición de isomería cis-trans en alquenos."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.14/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Pedía «1 a 3 oraciones» para tres criterios obligatorios (isomería de posición, cis-trans en but-2-eno y su ausencia en but-1-eno): no alcanza. Se pide 3 o 4 oraciones y se separa la tercera tarea. La retroalimentación solo daba un consejo; ahora explica, con el mismo contenido de la respuesta modelo.",
+     "cambios": {
+      "enunciado": "Con modelos moleculares se construyen el but-1-eno (CH₂=CH–CH₂–CH₃) y el but-2-eno (CH₃–CH=CH–CH₃). En 3 o 4 oraciones: (1) indica qué tipo de isomería constitucional hay entre ellos y por qué; (2) explica por qué el but-2-eno puede presentar estereoisómeros geométricos cis-trans, y (3) explica por qué el but-1-eno no puede.",
+      "retroalimentacion": "Los dos son isómeros de posición: tienen la misma cadena de cuatro carbonos y el doble enlace cambia de lugar. El doble enlace no gira, así que hay cis y trans solo si cada carbono del doble enlace lleva dos grupos distintos, como en el but-2-eno (–H y –CH₃). En el but-1-eno, el carbono 1 tiene dos hidrógenos iguales."
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.14",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe alcanzar para cada criterio obligatorio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.3",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Daniela dibuja un anillo de benceno unido a tres grupos sustituyentes: un grupo etilo en el vértice superior, un átomo de cloro en el vértice inmediatamente contiguo a la derecha y un segundo átomo de cloro separado por un vértice libre respecto al primero, en el mismo sentido horario. ¿Cuál es el nombre sistemático IUPAC correcto de este compuesto aromático y por qué?",
+     "opciones": {
+      "A": "1-etil-2,4-diclorobenceno, porque el sustituyente que lleva el localizador 1 se escribe primero.",
+      "B": "4-etil-1,3-diclorobenceno, porque el sentido antihorario da (1,3,4) y la «d» de dicloro va después de la «e».",
+      "C": "1,3-dicloro-4-etilbenceno, porque la numeración debe empezar en uno de los cloros, que son dos.",
+      "D": "2,4-dicloro-1-etilbenceno, porque (1,2,4) es el conjunto de localizadores más bajo y «cloro» precede a «etil»."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/nomenclatura-organica/3",
+      "B": "DIF:quimica/nomenclatura-organica/3",
+      "C": "DIF:quimica/nomenclatura-organica/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Primero se busca el conjunto de localizadores más bajo: empezando en el etilo y avanzando hacia el cloro contiguo, los sustituyentes quedan en 1, 2 y 4; cualquier otro inicio da 1,2,5, 1,3,4, 1,3,6 o 1,4,5, que son mayores en la primera diferencia. Después se citan los prefijos en orden alfabético sin contar «di-»: cloro antes que etil. Nombre: 2,4-dicloro-1-etilbenceno.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.3",
+     "grado": 11,
+     "indicador": "3.3. Emplea nomenclatura IUPAC para nombrar hidrocarburos aromáticos.",
+     "evidencia": "Ejercicios resueltos de nomenclatura de doce compuestos aromáticos con numeración y prefijos orto, meta y para"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.3/obj-1",
+     "decision": "corregir",
+     "justificacion": "Error grave de clave. Con etilo en un vértice, cloro contiguo y el otro cloro a dos vértices, el conjunto más bajo es (1,2,4): etilo en 1 y cloros en 2 y 4; (1,3,4) es mayor. El nombre es 2,4-dicloro-1-etilbenceno (opción B), no la clave C. La retroalimentación lo reconocía y se contradecía. Se corrigen clave, razones, mapeo y retroalimentación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.3",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Conjuntos posibles: 1,2,4; 1,2,5; 1,3,4; 1,3,6; 1,4,5. El más bajo en la primera diferencia es 1,2,4."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "1-etil-2,4-diclorobenceno, porque el sustituyente que lleva el localizador 1 se escribe primero.",
+       "B": "2,4-dicloro-1-etilbenceno, porque (1,2,4) es el conjunto de localizadores más bajo y «cloro» va antes que «etil» en orden alfabético.",
+       "C": "1,3-dicloro-4-etilbenceno, porque la numeración debe empezar en uno de los cloros, que son dos.",
+       "D": "4-etil-1,3-diclorobenceno, porque el sentido antihorario da (1,3,4) y la «d» de dicloro va después de la «e»."
+      },
+      "correcta": "B",
+      "distractores": {
+       "A": "DIF:quimica/nomenclatura-organica/3",
+       "C": "DIF:quimica/nomenclatura-organica/2",
+       "D": "DIF:quimica/nomenclatura-organica/3"
+      },
+      "retroalimentacion": "Primero se busca el conjunto de localizadores más bajo: empezando en el etilo y avanzando hacia el cloro contiguo, los sustituyentes quedan en 1, 2 y 4; cualquier otro inicio da 1,2,5, 1,3,4, 1,3,6 o 1,4,5, que son mayores en la primera diferencia. Después se citan los prefijos en orden alfabético sin contar «di-»: cloro antes que etil. Nombre: 2,4-dicloro-1-etilbenceno."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.3/obj-1",
+     "decision": "corregir",
+     "justificacion": "La clave (19 palabras) era la más larga. Se acorta su razón sin cambiar el contenido y se intercambia con la opción D para descargar la letra B, que concentra 7 de las 10 claves de obj-1 del paquete. Se ajusta el mapeo de distractores; la retroalimentación no nombra letras y sigue válida.",
+     "cambios": {
+      "opciones": {
+       "A": "1-etil-2,4-diclorobenceno, porque el sustituyente que lleva el localizador 1 se escribe primero.",
+       "B": "4-etil-1,3-diclorobenceno, porque el sentido antihorario da (1,3,4) y la «d» de dicloro va después de la «e».",
+       "C": "1,3-dicloro-4-etilbenceno, porque la numeración debe empezar en uno de los cloros, que son dos.",
+       "D": "2,4-dicloro-1-etilbenceno, porque (1,2,4) es el conjunto de localizadores más bajo y «cloro» precede a «etil»."
+      },
+      "correcta": "D",
+      "distractores": {
+       "A": "DIF:quimica/nomenclatura-organica/3",
+       "B": "DIF:quimica/nomenclatura-organica/3",
+       "C": "DIF:quimica/nomenclatura-organica/2"
+      }
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.3",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la clave no es la más larga; claves repartidas en el paquete"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.8",
+      "CON:quimica/grupos-funcionales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo hizo dos pruebas a tres muestras líquidas. Se sabe que son una cetona, un aldehído y un ácido carboxílico, en algún orden. Resultados:\n- Muestra 1: con NaHCO₃(ac) libera gas; con reactivo de Fehling en baño de agua caliente sigue azul.\n- Muestra 2: con NaHCO₃(ac) no libera gas; con reactivo de Fehling en baño de agua caliente forma un precipitado rojo ladrillo.\n- Muestra 3: con NaHCO₃(ac) no libera gas; con reactivo de Fehling en baño de agua caliente sigue azul.\n¿Qué función orgánica corresponde a cada muestra?",
+     "opciones": {
+      "A": "Muestra 1: aldehído; muestra 2: ácido carboxílico; muestra 3: cetona.",
+      "B": "Muestra 1: cetona; muestra 2: aldehído; muestra 3: ácido carboxílico.",
+      "C": "Muestra 1: ácido carboxílico; muestra 2: cetona; muestra 3: aldehído.",
+      "D": "Muestra 1: ácido carboxílico; muestra 2: aldehído; muestra 3: cetona."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La muestra 1 reacciona con el bicarbonato liberando CO₂(g), propiedad característica de la acidez del grupo carboxilo (ácido carboxílico). Entre los dos compuestos carbonílicos neutros, el aldehído (muestra 2) se oxida frente al ion Cu²⁺ del reactivo de Fehling formando Cu₂O(s) rojo ladrillo, mientras que la cetona (muestra 3) no se oxida en esas condiciones.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/grupos-funcionales",
+     "nombre": "Grupos funcionales",
+     "definicion": "Agrupaciones de átomos (alcohol, aldehído, cetona, ácido carboxílico, éster, amina, amida, haluro) que determinan propiedades y reacciones características.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.8",
+     "grado": 11,
+     "indicador": "3.8. Identifica las propiedades físicas y químicas de aldehídos, cetonas, ácidos carboxílicos y sus derivados.",
+     "evidencia": "Informe de laboratorio con volumen de CO₂ medido, ecuaciones de neutralización y resultado de la prueba de Fehling"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.8/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Lógica correcta: solo el ácido libera CO2 con NaHCO3 y solo el aldehído reduce el Cu(II) de Fehling a Cu2O rojo. Clave D única. El calentamiento en baño de agua es la forma segura de este ensayo. El volumen de gas es un dato irrelevante pero no erróneo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.8",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Ensayo de Fehling positivo para aldehídos alifáticos; cetonas negativas."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.8/obj-2",
+     "decision": "corregir",
+     "justificacion": "El enunciado tenía 113 palabras, sobre el límite de 100. Se recorta lo que no sirve para responder (85 mL medidos, «incoloras», «de ejemplo») y se adelanta qué funciones son posibles. Mismos resultados de las pruebas, opciones y clave.",
+     "cambios": {
+      "enunciado": "Un equipo hizo dos pruebas a tres muestras líquidas. Se sabe que son una cetona, un aldehído y un ácido carboxílico, en algún orden. Resultados:\n- Muestra 1: con NaHCO₃(ac) libera gas; con reactivo de Fehling en baño de agua caliente sigue azul.\n- Muestra 2: con NaHCO₃(ac) no libera gas; con reactivo de Fehling en baño de agua caliente forma un precipitado rojo ladrillo.\n- Muestra 3: con NaHCO₃(ac) no libera gas; con reactivo de Fehling en baño de agua caliente sigue azul.\n¿Qué función orgánica corresponde a cada muestra?"
+     },
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.8",
+       "cita": "indicador de logro del tema"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "límite de 100 palabras del grado; sin datos irrelevantes"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U3-3.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U3-3.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U3-3.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U3-3.9",
+      "CON:quimica/nomenclatura-organica"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un sitio web aparece el nombre «propan-1-ona» para el compuesto CH₃–CH₂–CHO y el nombre «ácido 2-metil-4-oxopentan-5-oico» para HOOC–CH₂–CH(CH₃)–CHO. En 4 a 6 oraciones: (1) explica por qué no puede existir una «propan-1-ona» según la posición del grupo carbonilo y escribe el nombre IUPAC correcto del primer compuesto, y (2) corrige el nombre del segundo compuesto justificando cómo la prioridad entre grupos funcionales determina la numeración y los prefijos o sufijos.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "No puede existir la «propan-1-ona» porque las cetonas tienen el grupo carbonilo unido a dos átomos de carbono (posición interna), mientras que si el carbonilo está en el carbono 1 terminal unido a un hidrógeno es un aldehído y se llama propanal. En el segundo compuesto, el ácido carboxílico tiene mayor prioridad que el aldehído, por lo que el carbono carboxílico recibe el localizador 1 (sufijo «-oico») y el grupo formilo en C4 se nombra con el prefijo «oxo»: su nombre correcto es ácido 3-metil-4-oxobutanoico.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que una cetona requiere el carbonilo en un carbono interno (entre dos carbonos) y que en C1 terminal corresponde a un aldehído, nombrándolo propanal.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica que el grupo carboxilo tiene prioridad sobre el aldehído para recibir el localizador C1 y definir el sufijo ácido …-oico.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Escribe el nombre IUPAC corregido del segundo compuesto con la numeración desde el carboxilo: ácido 3-metil-4-oxobutanoico (la cadena incluye el carbono del aldehído, que se nombra con el prefijo «oxo»).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Mantiene la numeración de izquierda a derecha desde el extremo aldehído o metilo sin dar C1 al grupo ácido carboxílico prioritario.",
+        "ejemplo": "Se llama ácido 2-metil-1-oxobutanoico porque se empieza a contar desde el CHO.",
+        "dificultad": "DIF:quimica/nomenclatura-organica/2"
+       },
+       {
+        "descripcion": "Confunde el grupo funcional aldehído con una cetona o con un alcohol al corregir el primer compuesto.",
+        "ejemplo": "No es propan-1-ona porque el oxígeno está en la orilla, así que se llama propan-1-ol.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Un carbonilo en el carbono terminal (C1) es un aldehído (propanal), pues una cetona exige dos carbonos unidos al carbonilo. En compuestos polifuncionales, el ácido carboxílico tiene prioridad sobre el aldehído y fija el C1.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U3-3.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U3-3.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nomenclatura-organica",
+     "nombre": "Nomenclatura orgánica IUPAC",
+     "definicion": "Reglas para nombrar compuestos orgánicos según cadena principal, grupo funcional y sustituyentes.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U3-3.9",
+     "grado": 11,
+     "indicador": "3.9. Emplea nomenclatura IUPAC para nombrar aldehídos, cetonas, ácidos carboxílicos y sus derivados.",
+     "evidencia": "Ejercicios resueltos de nomenclatura de veinte compuestos carbonílicos y derivados con correcciones argumentadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U3-3.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.9/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "El nombre correcto es ácido 3-metil-4-oxobutanoico. La rúbrica acepta además «ácido 3-formilbutanoico», que elige una cadena con menos sustituyentes y no es el nombre IUPAC; se retira esa alternativa del modelo y del criterio c3.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.9",
+       "cita": "3.9. Emplea nomenclatura IUPAC para nombrar aldehídos, cetonas, ácidos carboxílicos y sus derivados."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Entre cadenas de igual longitud, la principal es la que lleva más sustituyentes (metilo y oxo frente a formilo)."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "No puede existir la «propan-1-ona» porque las cetonas tienen el grupo carbonilo unido a dos átomos de carbono (posición interna), mientras que si el carbonilo está en el carbono 1 terminal unido a un hidrógeno es un aldehído y se llama propanal. En el segundo compuesto, el ácido carboxílico tiene mayor prioridad que el aldehído, por lo que el carbono carboxílico recibe el localizador 1 (sufijo «-oico») y el grupo formilo en C4 se nombra con el prefijo «oxo»: su nombre correcto es ácido 3-metil-4-oxobutanoico.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Explica que una cetona requiere el carbonilo en un carbono interno (entre dos carbonos) y que en C1 terminal corresponde a un aldehído, nombrándolo propanal.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Justifica que el grupo carboxilo tiene prioridad sobre el aldehído para recibir el localizador C1 y definir el sufijo ácido …-oico.",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Escribe el nombre IUPAC corregido del segundo compuesto con la numeración desde el carboxilo: ácido 3-metil-4-oxobutanoico (la cadena incluye el carbono del aldehído, que se nombra con el prefijo «oxo»).",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Mantiene la numeración de izquierda a derecha desde el extremo aldehído o metilo sin dar C1 al grupo ácido carboxílico prioritario.",
+         "ejemplo": "Se llama ácido 2-metil-1-oxobutanoico porque se empieza a contar desde el CHO.",
+         "dificultad": "DIF:quimica/nomenclatura-organica/2"
+        },
+        {
+         "descripcion": "Confunde el grupo funcional aldehído con una cetona o con un alcohol al corregir el primer compuesto.",
+         "ejemplo": "No es propan-1-ona porque el oxígeno está en la orilla, así que se llama propan-1-ol.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-QUI-U3-3.9/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "El enunciado pide cuatro tareas (explicar, nombrar, corregir, justificar prioridad) en «2 a 3 oraciones», extensión que no alcanza para los criterios obligatorios. Se amplía a 4–6 oraciones y la duración a 8 min. La rúbrica del experto no cambia.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U3-3.9",
+       "cita": "3.9. Emplea nomenclatura IUPAC para nombrar aldehídos, cetonas, ácidos carboxílicos y sus derivados."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Extensión pedida acorde al número de tareas que exige la rúbrica."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En un sitio web aparece el nombre «propan-1-ona» para el compuesto CH₃–CH₂–CHO y el nombre «ácido 2-metil-4-oxopentan-5-oico» para HOOC–CH₂–CH(CH₃)–CHO. En 4 a 6 oraciones: (1) explica por qué no puede existir una «propan-1-ona» según la posición del grupo carbonilo y escribe el nombre IUPAC correcto del primer compuesto, y (2) corrige el nombre del segundo compuesto justificando cómo la prioridad entre grupos funcionales determina la numeración y los prefijos o sufijos.",
+      "duracion_min": 8
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}
