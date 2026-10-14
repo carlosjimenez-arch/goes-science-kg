@@ -1,0 +1,234 @@
+[
+ {
+  "id": "ACT:G11-FIS-U3-3.1-v3/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U3-3.1-v3"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U3-3.1-v3",
+   "CON:fisica/ley-ohm"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   11
+  ],
+  "enunciado": "Ernesto aplica 2.0 V a un resistor y mide 20 mA. Luego aplica 2.0 V a un LED rojo, conectado en el sentido en que enciende, y también mide 20 mA. Si ahora aplica 1.0 V a cada uno, ¿qué corrientes espera medir y por qué?",
+  "opciones": {
+   "A": "Resistor ≈ 10 mA y LED ≈ 10 mA, porque los dos tienen 100 Ω, pues V/I dio igual en ambos.",
+   "B": "Resistor ≈ 10 mA y LED casi 0 mA, porque bajo cierto voltaje el LED casi no deja pasar corriente.",
+   "C": "Resistor ≈ 20 mA y LED ≈ 20 mA, porque la fuente entrega la misma corriente con cualquier voltaje.",
+   "D": "Resistor ≈ 5 mA y LED casi 0 mA, porque la resistencia de los dos aumenta cuando baja el voltaje."
+  },
+  "correcta": "B",
+  "distractores": {
+   "A": "DIF:fisica/ley-ohm/1",
+   "C": "DIF:fisica/ley-ohm/3",
+   "D": "DIF:fisica/ley-ohm/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "El resistor es óhmico: su corriente es proporcional al voltaje, así que con la mitad del voltaje pasa la mitad de la corriente. El LED no lo es: por debajo de un voltaje umbral (cerca de 1.7 V en uno rojo) casi no conduce. Que V/I dé 100 Ω en un punto no significa que el LED tenga una resistencia fija.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U3-3.1-v3"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U3-3.1-v3/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U3-3.1-v3"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U3-3.1-v3",
+   "CON:fisica/ley-ohm"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   11
+  ],
+  "enunciado": "Un grupo midió el voltaje y la corriente en 0.50 m de alambre de nicromo cuya sección transversal tiene un área de 1.26 × 10⁻⁷ m² (datos de un grupo de ejemplo): I = 0.10 A, V = 0.44 V; I = 0.20 A, V = 0.87 V; I = 0.30 A, V = 1.32 V; I = 0.40 A, V = 1.75 V. Obtén la resistencia con la pendiente de la recta V contra I (puedes usar el primer y el último punto) y con ella calcula la resistividad del nicromo. Escribe solo el número que multiplica a 10⁻⁶, con la resistividad en Ω·m (por ejemplo, para 2.5 × 10⁻⁶ Ω·m escribe 2.5).",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 1.1,
+  "tolerancia": 0.1,
+  "unidad": "× 10⁻⁶ Ω·m",
+  "retroalimentacion": "La pendiente es (1.75 − 0.44)/(0.40 − 0.10) ≈ 4.37 Ω. Como R = ρL/A, ρ = R·A/L = 4.37 × 1.26 × 10⁻⁷ / 0.50 ≈ 1.1 × 10⁻⁶ Ω·m. Usar la pendiente y no un solo cociente V/I reparte el error de todas las mediciones.",
+  "duracion_min": 8,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U3-3.1-v3"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U3-3.1-v3/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U3-3.1-v3"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U3-3.1-v3",
+   "CON:fisica/ley-ohm"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   11
+  ],
+  "enunciado": "Andrea mide el foco de una linterna (datos de un grupo de ejemplo): con 0.5 V pasan 0.10 A; con 1.0 V, 0.15 A; con 2.0 V, 0.21 A; y con 3.0 V, 0.26 A. En 2 o 3 oraciones: ¿el foco es un conductor óhmico? Justifica con cálculos hechos con al menos dos de los datos y explica qué le ocurre al filamento que causa ese comportamiento.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "V/I pasa de 5.0 Ω a 0.5 V a unos 11.5 Ω a 3.0 V: la resistencia no es constante y la gráfica V–I no es una recta, así que el foco no es óhmico. Con más corriente, el filamento se calienta y la resistencia del metal aumenta con la temperatura.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U3-3.1-v3"
+  },
+  "rubrica": {
+   "respuesta_modelo": "No es óhmico. Con 0.5 V la resistencia es V/I = 0.5/0.10 = 5.0 Ω y con 3.0 V es 3.0/0.26 ≈ 11.5 Ω, así que no es constante y la gráfica V–I se curva. Al aumentar la corriente, el filamento se calienta mucho, y en un metal más caliente los electrones chocan más con los átomos que vibran, por lo que la resistencia aumenta.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Concluye que el foco no es un conductor óhmico.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Justifica con cálculos de V/I en al menos dos datos que dan valores distintos (o con la pendiente que cambia), no solo con que la corriente aumenta.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Atribuye el cambio de resistencia al calentamiento del filamento (la resistencia del metal aumenta con la temperatura).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Da un mecanismo microscópico: más vibración de los átomos del metal y más choques de los electrones.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Concluye que es óhmico porque la corriente aumenta con el voltaje.",
+     "ejemplo": "Sí es óhmico, porque cuando sube el voltaje también sube la corriente.",
+     "dificultad": "DIF:fisica/ley-ohm/1"
+    },
+    {
+     "descripcion": "Atribuye el aumento de la resistencia al voltaje mismo y no a la temperatura.",
+     "ejemplo": "La resistencia sube porque le aplicamos más voltaje, como dice R = V/I.",
+     "dificultad": "DIF:fisica/ley-ohm/2"
+    },
+    {
+     "descripcion": "Calcula bien V/I pero no explica la causa física.",
+     "ejemplo": "No es óhmico, porque V/I da 5.0 Ω y luego 11.5 Ω.",
+     "dificultad": null
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP:G11-FIS-U3-3.1-v3/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G11-FIS-U3-3.1-v3"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U3-3.1-v3",
+   "CON:fisica/ley-ohm"
+  ],
+  "grados": [
+   11
+  ],
+  "titulo": "Curvas voltaje-corriente de un resistor y de un LED, y resistividad de un alambre",
+  "proposito": "Construir con pilas y un multímetro las curvas voltaje-corriente de un resistor y de un LED, obtener la resistencia del resistor con la pendiente y decidir con evidencia cuál es óhmico; calcular la carga y la energía que entrega una pila; y medir la resistividad de un alambre a partir de su resistencia, su longitud y su área.",
+  "materiales": [
+   "Cuatro pilas AA de 1.5 V nuevas y un portapilas para cuatro con salidas intermedias, o cuatro portapilas sencillos conectados en serie",
+   "Dos multímetros digitales (uno como voltímetro y otro como amperímetro); si solo hay uno, se mide primero V y luego I",
+   "Un resistor de 330 Ω de 1/4 W o más",
+   "Un LED rojo de 5 mm",
+   "Resistores de 100 Ω, 220 Ω, 470 Ω, 1 kΩ y 10 kΩ (1/4 W) para limitar la corriente del LED",
+   "Cables con caimanes (unos seis) o una protoboard pequeña",
+   "1.2 m de alambre de nicromo de unos 0.3 mm de diámetro (tienda de electrónica), pegado recto sobre una regla de 1 m con cinta",
+   "Un lápiz o un clavo grueso para enrollar el alambre y medir su diámetro",
+   "Papel milimetrado o computadora con hoja de cálculo, y calculadora científica"
+  ],
+  "procedimiento": [
+   "Sesión 1 (55 min)",
+   "1. (10 min) La docente muestra las escalas del multímetro: voltaje en corriente directa, escala de 20 V; corriente en corriente directa, escala de 200 mA (y de 2000 µA para corrientes muy pequeñas), con la punta roja en la entrada de mA. El voltímetro va en paralelo con el componente y el amperímetro en serie; el amperímetro nunca se conecta directo a las pilas.",
+   "2. (15 min) Conecten el resistor de 330 Ω en serie con el amperímetro a una, dos, tres y cuatro pilas. En cada caso midan el voltaje en los extremos del resistor y la corriente, y anótenlos en una tabla.",
+   "3. (20 min) Conecten el LED (la pata larga hacia el lado positivo) en serie con uno de los resistores limitadores y con el amperímetro, alimentados con dos pilas. Usen uno por uno los resistores de 10 kΩ, 1 kΩ, 470 Ω, 220 Ω y 100 Ω, y midan cada vez el voltaje en los extremos del LED y la corriente. Agreguen dos puntos más: el LED con una sola pila y 100 Ω, y el LED invertido con dos pilas y 100 Ω.",
+   "4. (10 min) Grafiquen I contra V (o V contra I) para el resistor y para el LED en los mismos ejes. Calculen la resistencia del resistor con la pendiente y comparen con su valor nominal. Respondan la pregunta de análisis 1.",
+   "Sesión 2 (55 min)",
+   "5. (10 min) Enrollen unas 40 vueltas juntas de un trozo sobrante del alambre en el lápiz, midan el ancho total con la regla y divídanlo entre el número de vueltas para obtener el diámetro d. Calculen el área A = πd²/4.",
+   "6. (15 min) Pongan el multímetro como ohmímetro en la escala de 200 Ω. Junten las puntas y anoten la resistencia de los cables (hay que restarla). Midan la resistencia del alambre entre la punta y marcas a 0.20, 0.40, 0.60, 0.80 y 1.00 m, apretando bien los caimanes.",
+   "7. (10 min) Midan con el voltímetro el voltaje de las dos pilas sin carga (es casi su fuerza electromotriz) y la corriente del circuito del LED con 100 Ω. Calculen la carga que circularía en 1 h y la energía que entregarían las pilas en ese tiempo si la corriente no cambiara (Q = It, E = εQ).",
+   "8. (20 min) Grafiquen R contra L, calculen la pendiente y la resistividad ρ = pendiente × A, y compárenla con el valor del nicromo de la tabla de referencia. Respondan en grupo las preguntas de análisis 2, 3 y 4."
+  ],
+  "seguridad": [
+   "Solo se usan pilas (6 V como máximo). Nunca conecten cables, el multímetro ni el alambre a un tomacorriente de la red.",
+   "El amperímetro siempre va en serie con un resistor o con el LED y su resistor: si se conecta directo a las pilas, se quema su fusible y los cables se calientan.",
+   "No conecten el LED a las pilas sin un resistor limitador: se daña. No usen como limitador un resistor de menos de 100 Ω.",
+   "En el ohmímetro, el alambre se mide sin pilas conectadas. Las puntas del nicromo pinchan: doblen sus extremos o cúbranlos con cinta.",
+   "Las pilas usadas se guardan para llevarlas a un punto de reciclaje; no se tiran a la basura común ni se queman."
+  ],
+  "datos_esperados": "Paso 2: los puntos del resistor forman una recta que pasa por el origen, con corrientes de unos 4.5 a 18 mA; la pendiente V/I da un valor cercano a 330 Ω, dentro de la tolerancia que indican sus bandas de colores (por ejemplo ±5 %). El voltaje de las pilas en serie no es exactamente 1.5, 3.0, 4.5 y 6.0 V, por eso se mide en el resistor. Paso 3: con una sola pila o con el LED invertido la corriente es casi cero (centésimas de mA o menos). Con dos pilas, el voltaje del LED queda entre cerca de 1.7 V (con 10 kΩ, unas décimas de mA) y cerca de 2.0 V (con 100 Ω, unos 10 mA): la corriente crece muchísimo con un cambio pequeño de voltaje y la curva no es una recta. Paso 6: un alambre de nicromo de 0.3 mm tiene unas decenas de ohmios por metro (del orden de 15 Ω/m); R crece en proporción a L. La resistencia de los cables del multímetro suele estar entre 0.1 y 0.5 Ω. Medir el diámetro con 40 vueltas y una regla da un error de alrededor de 4 % en d y del doble en el área, así que una resistividad dentro de un 10 % del valor de referencia es un buen resultado. Paso 7: la fuerza electromotriz de dos pilas nuevas en serie es algo más de 3 V; con unos 10 mA, en 1 h circulan unos 36 C y se entregan cerca de 100 J.",
+  "analisis": [
+   "(Paso 4) ¿Cuál de los dos componentes cumple la ley de Ohm? Justifiquen con la forma de las gráficas y con el cociente V/I en dos puntos de cada uno. ¿Qué tanto se parece la pendiente del resistor a su valor nominal?",
+   "(Paso 8) ¿Por qué se resta la resistencia de los cables del ohmímetro? ¿La gráfica R contra L pasa por el origen después de restarla?",
+   "(Paso 8) ¿Qué tanto difiere su resistividad del valor de referencia del nicromo? ¿Qué medición aporta más error y por qué el área pesa el doble que el diámetro?",
+   "(Paso 8) Con la carga y la energía del paso 7, expliquen la diferencia entre la fuerza electromotriz de la fuente y la energía que entrega, y por qué en la práctica la corriente no se mantiene igual durante horas.",
+   "Tarea: Redacten el informe con las curvas V–I del resistor y del LED y el cálculo de la resistencia por la pendiente."
+  ],
+  "duracion_min": 110,
+  "variantes": "Sin nicromo: usen una mina de grafito de 0.7 mm de portaminas, de unos 6 cm, con caimanes en distintos puntos; su resistencia es de unos pocos a decenas de ohmios y la mina no es grafito puro (tiene arcilla), así que su resistividad sale mayor que la del grafito de tablas, lo que da una buena discusión. Con un solo multímetro: midan V e I por turnos sin desarmar el resto del circuito. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo. Resistor: 1.49 V y 4.5 mA; 2.97 V y 9.0 mA; 4.45 V y 13.4 mA; 5.90 V y 17.9 mA. LED: 1.20 V y 0.00 mA; 1.71 V y 0.13 mA; 1.80 V y 1.2 mA; 1.85 V y 2.4 mA; 1.90 V y 4.9 mA; 1.95 V y 9.7 mA. Nicromo de 0.30 mm: 3.1, 6.2, 9.3, 12.4 y 15.5 Ω a 0.20, 0.40, 0.60, 0.80 y 1.00 m, ya restados los cables. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET tiene pilas, resistores, voltímetro y amperímetro: sirve para practicar las conexiones y armar la tabla V–I de un resistor; no incluye LED ni dibuja la gráfica, así que la curva del LED se hace con los datos de ejemplo.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ },
+ {
+  "id": "DIF:fisica/ley-ohm/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/ley-ohm",
+  "descripcion": "Creer que la ley de Ohm vale para todo componente: que un LED, un foco o un diodo tienen una resistencia fija y que su curva voltaje-corriente es una recta, o que basta con que la corriente aumente con el voltaje para que sea óhmico.",
+  "senales": "Calcula V/I en un solo punto de un LED y lo usa para predecir la corriente con otro voltaje; dice «es óhmico porque a más voltaje, más corriente».",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se generaliza V = IR fuera de los conductores óhmicos."
+ },
+ {
+  "id": "DIF:fisica/ley-ohm/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/ley-ohm",
+  "descripcion": "Leer R = V/I como si la resistencia de un conductor óhmico la causaran el voltaje o la corriente: que al duplicar el voltaje se duplica la resistencia, o que sin corriente no hay resistencia.",
+  "senales": "Afirma que un resistor «tiene más ohmios» cuando se le aplica más voltaje; al cambiar el voltaje recalcula una R distinta en vez de una corriente distinta.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se interpreta una definición operacional como relación causal."
+ },
+ {
+  "id": "DIF:fisica/ley-ohm/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/ley-ohm",
+  "descripcion": "Pensar que una pila entrega siempre la misma corriente, sin importar lo que se le conecte, en lugar de un voltaje (fuerza electromotriz) casi fijo cuya corriente depende de la resistencia del circuito.",
+  "senales": "Dice que «la pila da 0.5 A» y aplica ese valor a cualquier circuito; espera la misma corriente al cambiar el resistor.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Modelo de fuente de corriente constante, muy extendido en circuitos."
+ }
+]

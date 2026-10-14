@@ -1,0 +1,570 @@
+{
+ "lote": "r1-q10u4_experto-quimica_2",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.2/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.2/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.2"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.2",
+      "CON:quimica/tabla-periodica"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "De la masa al número atómico: tarjetas, pruebas de materiales y tabla mural",
+     "proposito": "Reconstruir la tabla de los primeros 20 elementos con tarjetas de datos, primero por masa atómica, como Mendeléiev, y luego por número atómico, para ver dónde falla el orden por masa y por qué la ley periódica actual usa el número atómico. Después, probar el aspecto, la flexibilidad y la conductividad de cinco elementos para ubicarlos como metales o no metales en una tabla mural del grupo.",
+     "materiales": [
+      "Un juego de 20 tarjetas por equipo, preparadas por el docente con el libro de texto o la tabla de referencia: nombre del elemento, masa atómica, estado a temperatura ambiente, fórmula de su compuesto con cloro (o «no forma») y, tapado con un papel adhesivo, el número atómico",
+      "Un circuito de prueba por equipo: dos pilas AA en su portapilas, un LED, una resistencia de 100 Ω y tres cables con pinzas de caimán",
+      "Muestras por equipo: 10 cm de alambre de cobre pelado (lo pela el docente), una tira de papel aluminio de 2 cm × 10 cm, un clavo de hierro, una mina de portaminas de grafito y una cucharadita de azufre en polvo de agroservicio en una tapa plástica",
+      "Lupa (opcional) y una cucharita para apretar el azufre en la tapa",
+      "Pliego de papel con una tabla periódica de 18 columnas y 7 filas dibujada, marcadores de tres colores y cinta adhesiva para el mural",
+      "Gafas para quien manipule el azufre y para el docente"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Formen equipos de cuatro y repartan los roles: lector de tarjetas, ordenador, registrador y responsable de materiales. Sin destapar el número atómico, revisen las tarjetas.",
+      "2. (12 min) Ordenen las tarjetas por masa atómica creciente. Acomódenlas en filas de modo que los elementos con fórmulas de cloruro parecidas (por ejemplo, XCl, XCl₂ o «no forma») queden en la misma columna. Anoten en qué lugar una tarjeta no encaja con su columna.",
+      "3. (5 min) Destapen los números atómicos, ordenen de nuevo por número atómico y anoten qué tarjetas cambiaron de lugar y si las columnas quedaron coherentes.",
+      "4. (15 min) Pruebas de materiales: observen el brillo de cada muestra, intenten doblarla con cuidado (el azufre solo se aprieta con la cucharita) y conéctenla entre las dos pinzas del circuito; anoten si el LED enciende fuerte, débil o nada. Desconecten el circuito después de cada prueba.",
+      "5. (8 min) Con sus resultados y la tabla periódica, peguen la ficha de cada material en su casilla del mural y coloreen las zonas de metales, no metales y metaloides que indica la tabla de referencia.",
+      "6. (10 min) Respondan en equipo las dos primeras preguntas de análisis, guarden las muestras y lávense las manos."
+     ],
+     "seguridad": [
+      "El azufre en polvo irrita los ojos y las vías respiratorias: no se sopla ni se huele, se usa con gafas y nunca se calienta ni se acerca a una llama, porque al arder produce un gas tóxico.",
+      "El circuito usa solo dos pilas AA, que no producen descargas peligrosas, pero las pinzas no se dejan unidas entre sí ni conectadas mucho tiempo, porque las pilas se calientan.",
+      "El docente corta y pela el alambre; cuidado con las puntas del alambre y del clavo y con el borde del papel aluminio.",
+      "Lavarse las manos al terminar. El azufre sobrante se devuelve a su bolsa cerrada; el alambre, el clavo y el aluminio se reutilizan o van a la basura sólida."
+     ],
+     "datos_esperados": "Al ordenar por masa, casi todo encaja hasta el final: el potasio (masa algo menor que la del argón; valores de la tabla de referencia) queda en la columna del helio y el neón, aunque forma KCl como el sodio, y el argón, que no forma compuestos, cae bajo el sodio. Al ordenar por número atómico (argón 18, potasio 19) cada uno vuelve a la columna de sus semejantes. En las pruebas, el cobre, el aluminio y el hierro son brillantes, se doblan y encienden el LED con fuerza: son metales. El grafito brilla y enciende el LED (a veces algo más débil), pero se quiebra: el carbono es un no metal y el grafito es una forma suya que conduce, un caso que muestra que una sola propiedad no basta para clasificar. El azufre es amarillo, opaco, se desmorona y no enciende el LED: no metal.",
+     "analisis": [
+      "(Paso 6) ¿En qué lugar dejó de funcionar el orden por masa y cómo lo notaron en las tarjetas? ¿Qué cambió al ordenar por número atómico y por qué esa es la base de la ley periódica actual?",
+      "(Paso 6) ¿Qué material no se comportó como esperaban por su lugar en la tabla? Expliquen por qué para clasificar un elemento como metal, no metal o metaloide se usan varias propiedades y no solo el brillo o la conductividad.",
+      "Tarea: Con la tabla de referencia, comprueben si el cobalto y el níquel, o el telurio y el yodo, tienen el mismo problema que el argón y el potasio, y escriban la ley periódica actual con sus palabras.",
+      "Tarea: Preparen para el mural la ficha de un elemento que se use en El Salvador (por ejemplo, el aluminio de las latas, el calcio de la cal o el azufre de los fungicidas agrícolas) con su grupo, su período, su tipo y un uso, citando de dónde tomaron los datos."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin LED ni resistencia: un multímetro en la escala de resistencia o un foco de linterna de 1.5 V con una pila (con el foco, el grafito puede no encenderlo; anótenlo como conducción débil). Sin azufre: se reemplaza por un trozo de carbón vegetal y se discute que su conductividad varía según cómo se fabricó. Sin laboratorio ni internet: las tarjetas se copian del libro de texto y el docente entrega los resultados de un grupo de ejemplo (cobre, aluminio y hierro: brillantes, se doblan, LED fuerte; grafito: brillante, se quiebra, LED encendido; azufre: amarillo, opaco, se desmorona, LED apagado).",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.2",
+     "grado": 10,
+     "indicador": "4.2. Explica por qué la tabla actual se ordena por número atómico y ubica a los elementos según su grupo, periodo y carácter metálico.",
+     "evidencia": "Tabla periódica mural colectiva con fichas de elementos y explicación escrita de la ley periódica"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.2/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.3"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.3",
+      "CON:quimica/tabla-periodica"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Familias del bloque s: iones 1+ y 2+ en la cocina",
+     "proposito": "Relacionar la configuración de valencia ns¹ o ns² con el grupo y con la carga del ion, y comprobar que los elementos de un mismo grupo forman compuestos parecidos: las sales de magnesio y de calcio (grupo 2, iones 2+) forman sólidos blancos con el carbonato y grumos con el jabón, y las de sodio y potasio (grupo 1, iones 1+) no.",
+     "materiales": [
+      "Disoluciones que prepara el docente con agua purificada de garrafón, 250 mL de cada una en botellas rotuladas: sal de mesa (cloruro de sodio), sal baja en sodio o cloruro de potasio de laboratorio, sal de Epsom de farmacia (sulfato de magnesio) y cloruro de calcio de laboratorio o de tienda de insumos para quesos; unas 3 cucharaditas de cada sal por botella",
+      "250 mL de disolución de carbonato de sodio (3 cucharaditas en agua purificada), del laboratorio o hecho por el docente al hornear bicarbonato de sodio",
+      "250 mL de agua jabonosa: 1 cucharada de jabón de barra rallado (no detergente) disuelto en agua purificada tibia",
+      "8 vasos plásticos transparentes pequeños por equipo, rotulados con cinta adhesiva y marcador",
+      "Una jeringa de 10 mL sin aguja por disolución o una cucharita medidora",
+      "Fondo oscuro (cartulina negra) para ver la turbidez",
+      "Gafas para cada estudiante",
+      "Tabla periódica y una tabla de datos en el cuaderno: sal, ion, configuración del ion, grupo, con carbonato, con jabón"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) En equipo escriban la configuración abreviada del Na, K, Mg y Ca y la de sus iones Na⁺, K⁺, Mg²⁺ y Ca²⁺. Indiquen el bloque, el grupo y el período de cada elemento y predigan qué sales se comportarán de forma parecida.",
+      "2. (5 min) Rotulen los ocho vasos: cuatro «carbonato» y cuatro «jabón», cada uno con el nombre de una sal. Pongan 10 mL de la disolución de cada sal en los dos vasos que le corresponden.",
+      "3. (10 min) Prueba con carbonato: agreguen 5 mL de disolución de carbonato de sodio a cada vaso «carbonato», sobre el fondo oscuro. Observen 3 minutos y anoten si aparece turbidez o un sólido blanco y qué tan pronto.",
+      "4. (10 min) Prueba con jabón: agreguen 5 mL de agua jabonosa a cada vaso «jabón», cúbranlo con la mano limpia o una tapa y agítenlo 10 segundos. Anoten cuánta espuma se forma y si aparecen grumos o una nata en la superficie.",
+      "5. (5 min) Copien sus resultados en la tabla del pizarrón y compárenlos con los de los demás equipos.",
+      "6. (15 min) Respondan en equipo las dos primeras preguntas de análisis. Al final, viertan el contenido de los vasos al desagüe con abundante agua y enjuaguen los vasos."
+     ],
+     "seguridad": [
+      "Gafas durante toda la práctica: el carbonato de sodio y el cloruro de calcio irritan los ojos y la piel. Si salpica, lavar con abundante agua y avisar al docente.",
+      "El docente prepara las disoluciones: el cloruro de calcio se calienta al disolverse, así que se agrega poco a poco al agua.",
+      "No se prueba ninguna disolución, aunque sean sales de cocina o de farmacia; lavarse las manos al terminar.",
+      "Desechos: las cantidades son pequeñas y las sales no son tóxicas en estas concentraciones; se vierten al desagüe con abundante agua."
+     ],
+     "datos_esperados": "Con carbonato, los vasos de magnesio y de calcio se ponen blancos y turbios: se forman carbonatos poco solubles. El de calcio aparece de inmediato; el de magnesio puede tardar un poco más o verse más tenue, porque su carbonato es algo más soluble. Los de sodio y potasio quedan transparentes. Con jabón, el sodio y el potasio dan espuma abundante y un líquido uniforme; el magnesio y el calcio dan poca espuma y grumos o nata, como el agua dura. Las configuraciones muestran el porqué del agrupamiento: Na [Ne] 3s¹ y K [Ar] 4s¹ (grupo 1, bloque s) pierden un electrón y quedan Na⁺ [Ne] y K⁺ [Ar]; Mg [Ne] 3s² y Ca [Ar] 4s² (grupo 2, bloque s) pierden dos y quedan Mg²⁺ [Ne] y Ca²⁺ [Ar]. El Na⁺ y el Mg²⁺ tienen la misma configuración, pero se comportan distinto: la carga del ion, que depende del grupo, pesa más que tener la misma configuración.",
+     "analisis": [
+      "(Paso 6) ¿Qué sales se comportaron igual en las dos pruebas? Relaciónenlo con su configuración de valencia (ns¹ o ns²), su grupo y la carga de su ion.",
+      "(Paso 6) El Na⁺ y el Mg²⁺ tienen la misma configuración, [Ne], pero no se comportaron igual. ¿Qué diferencia entre los dos iones explica sus resultados?",
+      "Tarea: El estroncio tiene la configuración [Kr] 5s². Deduzcan su período, su grupo y su bloque, escriban la configuración de su ion más común y predigan qué pasaría con una de sus sales en la prueba del carbonato.",
+      "Tarea: El agua de algunos pozos de El Salvador hace poca espuma con el jabón y deja sarro en las ollas. ¿Qué iones esperan que tenga, según esta práctica? Escriban la configuración de esos iones."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin cloruro de calcio: agua de cal clara (cal de ferretería con agua, reposada y filtrada por el docente, con gafas porque es corrosiva para los ojos) da el mismo sólido blanco con el carbonato. Sin carbonato de sodio de laboratorio: el docente hornea en casa bicarbonato de sodio en una bandeja a unos 200 °C durante una hora, con lo que se convierte en carbonato. Sin cloruro de potasio: la sal baja en sodio mezcla cloruro de potasio y de sodio, que se comportan igual en las dos pruebas. Sin laboratorio ni internet: el docente entrega los resultados de un grupo de ejemplo (calcio y magnesio: turbidez blanca con carbonato y grumos con jabón; sodio y potasio: transparentes con carbonato y espuma abundante con jabón) y los equipos hacen el paso 1 y el análisis.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.3",
+     "grado": 10,
+     "indicador": "4.3. Deduce el grupo, el periodo y el bloque de un elemento a partir de su configuración electrónica y escribe la configuración de sus iones más comunes.",
+     "evidencia": "Tabla periódica en blanco completada por bloques con configuraciones de valencia y configuraciones de iones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.4"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.4",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Gráfica de radios atómicos y modelo a escala de átomos e iones",
+     "proposito": "Graficar el radio atómico contra el número atómico de los elementos del litio al calcio con datos de una tabla de referencia, describir el patrón periódico y explicarlo con la carga nuclear efectiva y el apantallamiento; luego construir círculos a escala de átomos y de sus iones para comparar sus tamaños.",
+     "materiales": [
+      "Una hoja impresa o copiada en la pizarra con los radios covalentes de Z = 3 a 20 y los radios iónicos de Na⁺, Mg²⁺, Cl⁻ y O²⁻, todos de la misma tabla de referencia (el docente anota la fuente)",
+      "Papel milimetrado o cuadriculado, regla y lápices de dos colores por estudiante",
+      "Cartulina de colores, compás y tijeras por equipo",
+      "Pegamento y un pliego de papel para pegar los círculos por equipo",
+      "Calculadora (o la del celular)"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Pregunta guía: «¿Por qué el sodio es más grande que el cloro si el cloro tiene más protones y electrones?». Cada estudiante escribe su predicción en una oración.",
+      "2. (15 min) Cada estudiante grafica el radio covalente (eje vertical, en pm) contra el número atómico (eje horizontal) de Z = 3 a 20. Se omiten el neón y el argón, porque muchas tablas no dan su radio covalente o lo miden de otra forma. Unan con una línea los puntos de cada período.",
+      "3. (10 min) Marquen con un color los inicios de período (Li, Na, K) y con otro los finales (F, Cl). Escriban bajo la gráfica cómo cambia el radio dentro de un período y al pasar de un período al siguiente.",
+      "4. (15 min) En equipo, con la escala 1 cm = 20 pm, calculen el radio en centímetros del Na, Na⁺, Cl, Cl⁻, Mg, Mg²⁺, O y O²⁻, recorten círculos de cartulina de ese radio con el compás y péguenlos por parejas átomo–ion en el pliego.",
+      "5. (10 min) Respondan en equipo las dos primeras preguntas de análisis y revisen su predicción del paso 1."
+     ],
+     "seguridad": [
+      "Cuidado con la punta del compás y con las tijeras: se pasan cerradas y con la punta hacia abajo.",
+      "Los recortes de cartulina se recogen al terminar para reciclarlos."
+     ],
+     "datos_esperados": "La gráfica forma un diente de sierra: dentro de cada período el radio baja (del Li al F y del Na al Cl, aproximadamente a la mitad o a un poco más de la mitad) y al empezar un período sube de golpe (del F al Na y del Cl al K). El potasio y el calcio quedan por encima de todos los anteriores. Dentro de un período los electrones entran en la misma capa mientras crece la carga nuclear efectiva, que los atrae más; al empezar un período aparece una capa nueva, más lejos y apantallada por las internas. En el modelo a escala, el Na⁺ y el Mg²⁺ salen claramente más pequeños que sus átomos (pierden su capa externa), y el Cl⁻ y el O²⁻ claramente más grandes que los suyos (los electrones ganados aumentan la repulsión). Los valores exactos son los de la tabla de referencia; distintas tablas miden el radio de distinta forma, porque el átomo no tiene un borde definido, por eso todos los datos se toman de la misma fuente.",
+     "analisis": [
+      "(Paso 5) Describan el patrón de la gráfica dentro de un período y entre períodos, y explíquenlo con la carga nuclear efectiva y el apantallamiento.",
+      "(Paso 5) Con el modelo a escala, comparen cada átomo con su ion. ¿Por qué los cationes son más pequeños y los aniones más grandes que sus átomos?",
+      "Tarea: El Na⁺, el Mg²⁺ y el O²⁻ tienen 10 electrones cada uno. Ordénenlos por tamaño con los datos de la tabla de referencia y expliquen el orden con el número de protones de cada uno.",
+      "Tarea: ¿Por qué es importante tomar todos los radios de una misma fuente? Busquen el radio del sodio en dos tablas distintas y anoten la diferencia y la definición de radio que usa cada una."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin papel milimetrado: hoja cuadriculada con 1 cuadro = 10 pm. Sin compás: un hilo amarrado a un lápiz y fijado con el dedo en el centro. Sin hoja de datos impresa ni internet: el docente copia en la pizarra los radios del libro de texto o de su tabla de referencia, anotando de dónde los tomó. Con computadora: la gráfica se hace en una hoja de cálculo con los mismos datos.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.4",
+     "grado": 10,
+     "indicador": "4.4. Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva y compara el tamaño de átomos con el de sus iones.",
+     "evidencia": "Gráfica de radio atómico contra número atómico con explicación de las tendencias y comparación de radios iónicos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.5/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.5/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.5",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Saltos y picos: graficar energías de ionización con datos reales",
+     "proposito": "Ninguna escuela puede medir energías de ionización, pero sí analizar datos medidos por otros. Las parejas grafican las energías de ionización sucesivas del magnesio y del aluminio para deducir sus electrones de valencia a partir del primer salto grande, y la primera energía de ionización de los elementos 1 a 20 para explicar la tendencia en períodos y grupos, los máximos de los gases nobles y las caídas del boro y del oxígeno con los subniveles.",
+     "materiales": [
+      "Hoja de datos impresa, una por pareja (valores aproximados en kJ/mol tomados de una tabla de referencia como la del NIST; la o el docente los verifica antes de imprimir). Primera energía de ionización de Z = 1 a 20: H 1 312, He 2 372, Li 520, Be 900, B 801, C 1 086, N 1 402, O 1 314, F 1 681, Ne 2 081, Na 496, Mg 738, Al 578, Si 787, P 1 012, S 1 000, Cl 1 251, Ar 1 521, K 419, Ca 590. Energías sucesivas, de la primera a la quinta: Mg 738, 1 451, 7 733, 10 543, 13 630; Al 578, 1 817, 2 745, 11 577, 14 842",
+      "Dos hojas de papel milimetrado o cuadriculado por estudiante, regla y lápices de dos colores",
+      "Calculadora (la del celular sirve)",
+      "Tabla periódica del aula o del libro",
+      "Opcional: computadora del CRA con hoja de cálculo para hacer las gráficas con eje lineal y logarítmico"
+     ],
+     "procedimiento": [
+      "Antes de la clase (docente): verifica los valores de la hoja de datos con su tabla de referencia, los imprime o los copia en un pliego para el pizarrón.",
+      "Sesión 1 (55 min)",
+      "1. (5 min) Predicción individual: con la configuración del magnesio (1s² 2s² 2p⁶ 3s²) escriban después de cuántos electrones esperan el primer salto grande de energía y por qué. Hagan lo mismo con el aluminio (1s² 2s² 2p⁶ 3s² 3p¹).",
+      "2. (12 min) En una hoja, grafiquen la energía de ionización (eje vertical, kJ/mol) contra el número de electrón quitado (1 a 5) para el magnesio y el aluminio, con un color cada uno. Si usan hoja de cálculo, hagan la gráfica con eje vertical lineal y luego logarítmico, y comparen.",
+      "3. (8 min) Calculen el cociente entre cada energía y la anterior (segunda entre primera, tercera entre segunda, y así). Marquen el cociente mayor de cada elemento, deduzcan sus electrones de valencia y compárenlos con su grupo y con la predicción del paso 1.",
+      "4. (12 min) En otra hoja, grafiquen la primera energía de ionización contra el número atómico, de 1 a 20, y unan los puntos. Marquen con un color los gases nobles y con otro los metales alcalinos.",
+      "5. (8 min) Rodeen los puntos donde la línea baja dentro de un mismo período (Be a B, N a O, Mg a Al, P a S) y escriban en pareja una explicación con los subniveles y los diagramas de orbitales.",
+      "6. (10 min) Puesta en común: cada pareja presenta una caída o un máximo y el grupo responde las tres primeras preguntas de análisis."
+     ],
+     "seguridad": [
+      "Práctica de análisis de datos: no se usan reactivos, calor ni vidrio.",
+      "Si se usan computadoras del CRA, los cables y regletas quedan lejos de las botellas de agua y del paso de las personas."
+     ],
+     "datos_esperados": "Magnesio: el cociente mayor está entre la segunda y la tercera energía (alrededor de 5), así que tiene dos electrones de valencia (grupo 2). Aluminio: el cociente mayor está entre la tercera y la cuarta (alrededor de 4), así que tiene tres (grupo 13); su segunda energía también es unas tres veces la primera, porque el primer electrón sale del 3p y el segundo del 3s, pero ese salto es menor que el de pasar a la capa 2. En escala lineal los saltos se ven, pero los primeros valores quedan aplastados; en escala logarítmica se comparan mejor. En la gráfica de la primera energía contra Z aparecen picos en He, Ne y Ar y mínimos en Li, Na y K: dentro de un período la energía tiende a aumentar con la carga nuclear efectiva y, al empezar un período, cae porque el electrón está en una capa nueva, más lejana y apantallada. La tendencia tiene excepciones: cae de Be a B y de Mg a Al (el electrón p tiene más energía y está apantallado por el s) y de N a O y de P a S (el electrón que sale comparte orbital y lo repele su pareja).",
+     "analisis": [
+      "(Paso 3) ¿Cuántos electrones de valencia tienen el magnesio y el aluminio según sus datos? ¿Por qué el aumento de la primera a la segunda energía del aluminio no indica que tenga un solo electrón de valencia?",
+      "(Paso 5) Expliquen con los diagramas de orbitales por qué la primera energía de ionización baja del berilio al boro y del nitrógeno al oxígeno. ¿Estas caídas contradicen la tendencia del período o se explican con los subniveles?",
+      "(Paso 6) ¿Por qué los gases nobles ocupan los picos de la gráfica y los metales alcalinos los mínimos? ¿Cómo cambia la primera energía de ionización al bajar en el grupo 1 y por qué?",
+      "Tarea: con los datos de la hoja, justifiquen por qué el sodio forma iones 1+ y el magnesio iones 2+, y no iones 2+ y 3+.",
+      "Tarea: obtener aluminio metálico de su mineral exige devolverle tres electrones a cada ion Al³⁺, y eso se logra con mucha energía eléctrica. Escriban dos razones para reciclar las latas en lugar de tirarlas."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin papel milimetrado: hoja cuadriculada con una escala acordada por el grupo. Sin computadora ni internet: toda la práctica se hace en papel con la hoja de datos impresa o copiada del pizarrón. Con hoja de cálculo: además de las gráficas, la pareja puede calcular los cocientes con una fórmula y comparar la gráfica lineal con la logarítmica.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.5",
+     "grado": 10,
+     "indicador": "4.5. Deduce el número de electrones de valencia de un elemento a partir del salto en sus energías de ionización sucesivas y explica su variación periódica.",
+     "evidencia": "Gráficas de energías de ionización sucesivas y periódicas con interpretación escrita de saltos y anomalías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.5/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.6/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.6/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.6"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.6",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Mapa de calor de la afinidad electrónica: tendencias y excepciones a color",
+     "proposito": "Interpretar el signo de la afinidad electrónica como proceso exotérmico o endotérmico y hacer visibles sus tendencias en la tabla periódica coloreando un mapa de calor con datos de referencia. Con el mapa, las parejas explican por qué los halógenos liberan más energía al captar un electrón y por qué los grupos 2, 15 y 18 y el flúor se salen de la tendencia.",
+     "materiales": [
+      "Hoja de datos impresa, una por pareja: afinidad electrónica como ΔE del proceso X(g) + e⁻ → X⁻(g), en kJ/mol (valores aproximados de una tabla de referencia; la o el docente los verifica antes de imprimir). H −73, He positivo, Li −60, Be positivo, B −27, C −122, N cercano a cero, O −141, F −328, Ne positivo, Na −53, Mg positivo, Al −42, Si −134, P −72, S −200, Cl −349, Ar positivo, K −48, Ca −2, Br −325, I −295. «Positivo» significa que el anión no es estable en fase gaseosa: el proceso absorbe energía",
+      "Una tabla periódica en blanco impresa o dibujada en hoja cuadriculada por pareja, con las casillas de los elementos 1 a 20 más el bromo y el yodo",
+      "Lápices de colores: rojo, anaranjado, amarillo y azul (o gris)",
+      "Pliego de papel y marcadores para el mapa del grupo",
+      "Opcional: computadora del CRA con hoja de cálculo para hacer el mapa con formato condicional"
+     ],
+     "procedimiento": [
+      "Antes de la clase (docente): verifica los valores con su tabla de referencia, imprime la hoja de datos y dibuja en el pliego la tabla en blanco para el mapa del grupo.",
+      "Sesión 1 (55 min)",
+      "1. (5 min) Predicción individual: ordenen F, Cl, O, N y Ne de mayor a menor energía liberada al captar un electrón y escriban si cada proceso será exotérmico o endotérmico.",
+      "2. (8 min) Con la convención de la hoja (ΔE negativo: se libera energía), clasifiquen cada valor como exotérmico o endotérmico y anoten la clasificación junto al símbolo.",
+      "3. (15 min) Coloreen el mapa con esta escala: rojo, −200 kJ/mol o menos; anaranjado, de −199 a −100; amarillo, de −99 a −1; azul o gris, cercano a cero o positivo. Escriban el valor dentro de cada casilla.",
+      "4. (10 min) Busquen las tendencias: ¿hacia dónde se concentra el rojo? Marquen con una estrella las casillas que rompen la tendencia de su período o de su grupo.",
+      "5. (10 min) En pareja escriban una explicación para los halógenos y otra para cada excepción marcada, con la configuración electrónica y la carga nuclear efectiva.",
+      "6. (7 min) Puesta en común: cada pareja pasa al pliego los colores de una fila de la tabla; el grupo compara el mapa con las predicciones del paso 1."
+     ],
+     "seguridad": [
+      "Práctica de análisis de datos: no se usan reactivos, calor ni vidrio.",
+      "Si se usan computadoras del CRA, los cables y regletas quedan lejos de las botellas de agua y del paso de las personas."
+     ],
+     "datos_esperados": "El rojo se concentra en los grupos 16 y 17, con los valores más negativos en el cloro, el flúor y el bromo: el electrón entra en la capa externa casi llena y siente una carga nuclear efectiva alta. Al bajar en el grupo 17, de cloro a yodo, el valor se hace menos negativo porque el electrón queda más lejos y más apantallado. En azul o gris quedan los grupos 2 y 18 (el electrón iría a un subnivel p vacío o a una capa nueva) y el nitrógeno, cercano a cero, porque el electrón tendría que aparearse en un subnivel 2p semilleno. El flúor libera menos que el cloro porque su capa 2 es muy pequeña y la repulsión entre electrones es mayor. La tendencia «más negativa hacia la derecha y hacia arriba» es solo general: tiene estas excepciones.",
+     "analisis": [
+      "(Paso 4) ¿Qué grupo tiene los valores más negativos y qué significa eso en términos de energía liberada? ¿Coincide con su predicción del paso 1?",
+      "(Paso 5) ¿Por qué el berilio, el magnesio y los gases nobles tienen valores positivos? Usen la configuración de cada uno para decir dónde tendría que entrar el electrón.",
+      "(Paso 5) Si el flúor está más arriba que el cloro, ¿por qué el cloro libera más energía al captar un electrón?",
+      "Tarea: expliquen por qué el carbono (−122 kJ/mol) libera energía al captar un electrón y el nitrógeno, a su lado, casi no, con los diagramas de orbitales 2p de los dos átomos."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin impresora: la tabla en blanco se dibuja en hoja cuadriculada y los valores se copian del pizarrón. Sin lápices de colores: se usa una escala de sombreado con lápiz (más oscuro, más negativo). Sin computadora ni internet la práctica completa se hace en papel. Con hoja de cálculo: el mapa se hace con formato condicional de escala de color, y antes la pareja busca en un tutorial cómo aplicarlo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.6",
+     "grado": 10,
+     "indicador": "4.6. Interpreta el signo de la afinidad electrónica como proceso exotérmico o endotérmico y explica por qué los halógenos tienen los valores más favorables.",
+     "evidencia": "Mapa de calor de afinidades electrónicas con explicación escrita de tendencias y excepciones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.6/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U4-4.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U4-4.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.7",
+      "CON:quimica/electronegatividad-y-polaridad-de-enlace"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Δχ en papel y un LED en el vaso: ¿qué sustancias forman iones?",
+     "proposito": "Calcular la diferencia de electronegatividad (Δχ) de los enlaces de sustancias de la casa, predecir cuáles son iónicas y poner a prueba la predicción con un probador de conductividad de LED. Se busca ver que un Δχ grande anticipa un compuesto iónico, que sus iones solo conducen si pueden moverse (disueltos) y que la frontera entre polar e iónico no es una línea exacta.",
+     "materiales": [
+      "Tabla impresa de electronegatividades de Pauling, valores aproximados (verificar con la tabla de referencia): H 2.20, C 2.55, O 3.44, Na 0.93, Cl 3.16",
+      "Ficha con las sustancias y sus enlaces: sal de mesa (Na–Cl), azúcar de mesa o sacarosa (C–H, C–C, C–O, O–H), ácido acético del vinagre (C–H, C–C, C=O, C–O, O–H), bicarbonato de sodio (ion Na⁺ y el ion HCO₃⁻ con enlaces C–O y O–H) y agua (O–H)",
+      "Por equipo, para el probador: una batería de 9 V, un LED rojo, una resistencia de 470 Ω a 1 kΩ, tres cables con caimanes y dos lápices de grafito con punta en ambos extremos (los electrodos)",
+      "Por equipo: 6 vasos transparentes de unos 150 mL rotulados del 1 al 6, 600 mL de agua purificada embotellada, una cucharadita de sal, una de azúcar, una de bicarbonato, 100 mL de vinagre blanco y un plato pequeño",
+      "Un clip metálico, cinta adhesiva, una cucharita y papel toalla"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) En equipo calculen Δχ para cada enlace de la ficha y clasifíquenlo con la convención de la clase: menor que 0.4, covalente apolar; de 0.4 a 1.7, covalente polar; mayor que 1.7, iónico. Escriban qué sustancias creen que forman iones al disolverse y encenderán el LED.",
+      "2. (5 min) Armen el probador: batería, resistencia y LED en serie, y un caimán en cada lápiz. Toquen las puntas de los lápices con el clip: si el LED enciende, el circuito funciona.",
+      "3. (5 min) Preparen los vasos con 100 mL de líquido cada uno: vaso 1, agua purificada; vaso 2, agua purificada con una cucharadita de sal; vaso 3, agua purificada con una cucharadita de azúcar; vaso 4, vinagre; vaso 5, agua purificada con una cucharadita de bicarbonato; vaso 6, agua purificada para enjuagar. Agiten hasta disolver. Pongan en el plato un montoncito de sal seca.",
+      "4. (15 min) Introduzcan las puntas de los lápices en cada vaso, a la misma profundidad (unos 2 cm) y separadas unos 2 cm; anoten si el LED enciende fuerte, débil o nada. Enjuaguen las puntas en el vaso 6 y séquenlas entre una prueba y otra. Al final, claven las puntas en la sal seca, separadas 1 cm, y anoten.",
+      "5. (5 min) Copien sus resultados en la tabla del pizarrón y compárenlos con los de los otros equipos.",
+      "6. (15 min) Respondan en equipo las dos primeras preguntas de análisis. Desarmen el probador y viertan los líquidos al desagüe con agua."
+     ],
+     "seguridad": [
+      "Se usa solo la batería de 9 V: el probador nunca se conecta a un tomacorriente.",
+      "No se unen los dos bornes de la batería sin el LED y la resistencia de por medio, porque se calienta.",
+      "No se prueba ni se bebe ninguna disolución, aunque sean de la cocina. Si el vinagre cae en los ojos, se lavan con abundante agua y se avisa a la o el docente.",
+      "Los vasos de vidrio, si se usan, se manejan sobre la mesa y lejos del borde; el líquido derramado se seca de inmediato."
+     ],
+     "datos_esperados": "Δχ aproximados: Na–Cl 2.23 (iónico); O–H 1.24, C–O y C=O 0.89 (covalentes polares); C–H 0.35 y C–C 0 (apolares). En el bicarbonato, el enlace entre el Na⁺ y los oxígenos del HCO₃⁻ tiene Δχ de unos 2.5 (iónico). Resultados: el LED enciende fuerte con la sal y con el bicarbonato disueltos; débil o apenas visible con el vinagre; nada (o un brillo casi nulo) con el agua purificada y con el agua azucarada; nada con la sal seca. Lectura: los compuestos iónicos liberan iones que se mueven en el agua; en el sólido los iones están fijos y no conducen. El azúcar es covalente polar: se disuelve sin formar iones. El ácido acético es una molécula covalente polar que, al disolverse, se ioniza en una fracción pequeña: Δχ anticipa la tendencia del enlace, pero lo que pasa en el agua depende también de la reacción con el agua. El brillo del LED es una comparación cualitativa; varía con la separación de los lápices y la cantidad disuelta.",
+     "analisis": [
+      "(Paso 6) ¿Se cumplieron sus predicciones del paso 1? ¿Qué sustancia con enlaces solo covalentes encendió el LED y cómo se explica?",
+      "(Paso 6) ¿Por qué la sal seca no encendió el LED si su enlace es iónico? ¿Qué cambia al disolverla?",
+      "Tarea: El HF tiene Δχ ≈ 1.8 y es covalente polar, no iónico. Expliquen con este caso por qué la frontera de 1.7 es una convención aproximada.",
+      "Tarea: Dibujen un diagrama de flechas que vaya de Δχ al tipo de enlace (apolar, polar, iónico), con un ejemplo de la práctica en cada caso."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin batería de 9 V ni resistencia: dos baterías AA en serie, una resistencia de 100 Ω y un LED rojo funcionan, con brillo más débil; si hay multímetro, se mide la corriente en miliamperios y se ordenan las disoluciones con números. Sin laboratorio ni internet: los pasos 1 y 6 se hacen en papel y la o el docente comparte estos resultados de un grupo de ejemplo: sal y bicarbonato disueltos, LED fuerte; vinagre, débil; agua purificada y agua con azúcar, nada; sal seca, nada.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-QUI-U4-4.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+     "nombre": "Electronegatividad y polaridad de enlace",
+     "definicion": "La diferencia de electronegatividad entre átomos enlazados genera enlaces no polares, polares o iónicos con momento dipolar de enlace.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.7",
+     "grado": 10,
+     "indicador": "4.7. Explica la variación de la electronegatividad en la tabla periódica y usa la diferencia de electronegatividad para predecir la polaridad de un enlace.",
+     "evidencia": "Tabla de diferencias de electronegatividad con clasificación de enlaces y diagrama explicativo"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U4-4.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}
