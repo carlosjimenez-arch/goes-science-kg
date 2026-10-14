@@ -1,0 +1,230 @@
+[
+ {
+  "id": "ACT:G11-FIS-U12-12.1/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.1",
+   "CON:fisica/induccion-electromagnetica"
+  ],
+  "habilidad": "explicar",
+  "formato": "opcion_multiple",
+  "grados": [
+   11
+  ],
+  "enunciado": "Kevin deja caer un imán, con el polo norte hacia abajo, a través de una bobina vertical conectada a un sensor de voltaje. Mientras el imán entra por arriba, el sensor registra un pulso positivo. ¿Qué registra mientras el imán sale por abajo, y por qué?",
+  "opciones": {
+   "A": "Un pulso positivo, porque el imán sigue moviéndose hacia abajo, igual que cuando entró.",
+   "B": "Un pulso negativo, porque ahora el flujo disminuye y la fem se opone a esa disminución.",
+   "C": "Un pulso positivo, porque la corriente inducida siempre crea un campo opuesto al del imán.",
+   "D": "Ningún pulso, porque solo se induce voltaje cuando el imán se acerca, no cuando se aleja."
+  },
+  "correcta": "B",
+  "distractores": {
+   "C": "DIF:fisica/induccion-electromagnetica/2"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Al entrar, el flujo hacia abajo dentro de la bobina aumenta; al salir, disminuye. La fem inducida se opone al cambio del flujo, no al campo del imán, así que al invertirse el cambio se invierte el signo: pulso negativo. Ese pulso suele ser algo más alto y breve, porque el imán ya cae más rápido y el flujo cambia más deprisa.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U12-12.1"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U12-12.1/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.1",
+   "CON:fisica/induccion-electromagnetica"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   11
+  ],
+  "enunciado": "Gabriela mete un imán en una bobina de 150 vueltas y 4.0 cm² de sección, siempre desde la misma posición de partida hasta el mismo punto del interior, pero cada vez más rápido. Midió el tiempo Δt de cada movimiento y la fem media inducida (datos de un grupo de ejemplo): Δt = 0.40 s, 7.6 mV; Δt = 0.20 s, 15.0 mV; Δt = 0.10 s, 30.4 mV; Δt = 0.05 s, 59.8 mV. Con la ley de Faraday, ¿cuánto cambia el campo magnético medio dentro de la bobina en cada movimiento, en teslas (T)? Escribe solo el número.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 0.05,
+  "tolerancia": 0.005,
+  "unidad": "T",
+  "retroalimentacion": "La fem media por Δt da casi siempre 3.0 × 10⁻³ V·s, que es NΔΦ: el cambio de flujo es el mismo y solo cambia la rapidez. ΔΦ = 3.0 × 10⁻³ / 150 = 2.0 × 10⁻⁵ Wb, y con A = 4.0 × 10⁻⁴ m², ΔB = 2.0 × 10⁻⁵ / 4.0 × 10⁻⁴ = 0.050 T. Al mover el imán el doble de rápido, la fem se duplica.",
+  "duracion_min": 8,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U12-12.1"
+  }
+ },
+ {
+  "id": "ACT:G11-FIS-U12-12.1/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.1",
+   "CON:fisica/induccion-electromagnetica"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   11
+  ],
+  "enunciado": "Mauricio deja un imán potente quieto dentro de una bobina conectada a un voltímetro, y el voltímetro marca cero. Andrea dice que eso no puede ser, porque dentro de la bobina hay mucho campo magnético. En 2 o 3 oraciones explica con la ley de Faraday quién tiene razón y por qué, y propone una forma de obtener más voltaje con la misma bobina y el mismo imán, diciendo por qué funciona.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Tiene razón Mauricio: la fem depende de la rapidez con que cambia el flujo, ε = −NΔΦ/Δt, no de cuánto campo hay. Con el imán quieto el flujo es grande pero no cambia, y la fem es cero. Mover el imán más rápido, o sacarlo y meterlo del todo en menos tiempo, aumenta ΔΦ/Δt y con ello el voltaje.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G11-FIS-U12-12.1"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Tiene razón Mauricio. Según Faraday, el voltaje inducido depende de qué tan rápido cambia el flujo magnético en la bobina (ε = −NΔΦ/Δt), no de cuánto campo hay; con el imán quieto el flujo es grande pero constante, así que no se induce nada. Para tener más voltaje movería el imán más rápido al meterlo y sacarlo, porque el mismo cambio de flujo ocurre en menos tiempo.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Afirma que la fem depende del cambio del flujo en el tiempo (ΔΦ/Δt) y no del valor del campo o del flujo.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Concluye que con el imán quieto el flujo no cambia y la fem es cero, dando la razón a Mauricio.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Propone una forma válida de aumentar ΔΦ/Δt (mover el imán más rápido, hacerlo entrar y salir por completo en menos tiempo, girarlo más rápido) y la justifica con ese cambio.",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Escribe la ley de Faraday con el número de vueltas o menciona Φ = BA cos θ.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Cree que basta con que haya campo dentro de la bobina para que haya voltaje.",
+     "ejemplo": "Andrea tiene razón; el voltímetro debe estar malo, porque con el imán adentro tiene que haber corriente.",
+     "dificultad": "DIF:fisica/induccion-electromagnetica/1"
+    },
+    {
+     "descripcion": "Relaciona la fem con el valor del flujo y propone aumentar el campo sin movimiento.",
+     "ejemplo": "Hay que meter el imán más adentro y dejarlo ahí, donde el flujo es máximo, para que dé más voltaje.",
+     "dificultad": "DIF:fisica/induccion-electromagnetica/3"
+    },
+    {
+     "descripcion": "Propone algo que cambia la bobina o el imán, en contra de lo que pide la pregunta.",
+     "ejemplo": "Pondría una bobina con más vueltas y un imán más fuerte.",
+     "dificultad": null
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP:G11-FIS-U12-12.1/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G11-FIS-U12-12.1"
+  ],
+  "evalua": [
+   "TEMA:G11-FIS-U12-12.1",
+   "CON:fisica/induccion-electromagnetica"
+  ],
+  "grados": [
+   11
+  ],
+  "titulo": "Imán, bobina y tubo de cobre: el voltaje inducido y la ley de Lenz",
+  "proposito": "Construir la tabla de voltajes inducidos según la rapidez y el sentido del movimiento de un imán en una bobina, comprobar que un imán quieto no induce nada, ver la ley de Lenz como un freno en un tubo de cobre y relacionar lo observado con las ecuaciones de Maxwell y con los generadores de las geotérmicas.",
+  "materiales": [
+   "Por grupo, una bobina de 300 a 500 vueltas de alambre esmaltado calibre 28 o 30 enrollada sobre un tubo de cartón o PVC de 2 a 3 cm de diámetro (la prepara la docente antes de la clase o se usa una del laboratorio)",
+   "Dos imanes de neodimio cilíndricos de unos 12 mm de diámetro que pasen holgados por el tubo de la bobina",
+   "Un multímetro digital (o, mejor, un galvanómetro de cero central del laboratorio) y dos cables con caimanes",
+   "Una brújula y un metrónomo o cronómetro del celular",
+   "Para toda la clase: un tubo de cobre de 1/2 pulgada y 50 cm (de ferretería) y un tubo de PVC del mismo diámetro y largo; un imán cilíndrico de neodimio que pase por ambos sin tocar las paredes; un trapo para recibirlo",
+   "Un imán de barra o de refrigerador que se pueda partir (o dos trozos de uno ya partido)",
+   "Hojas para la tabla y papel milimetrado"
+  ],
+  "procedimiento": [
+   "Sesión 1 (55 min)",
+   "1. (10 min) La docente recuerda el experimento de Oersted y la pregunta guía: ¿por qué aparece voltaje solo mientras el imán se mueve? Cada grupo identifica con la brújula el polo norte de su imán y conecta la bobina al multímetro en voltaje de corriente continua, escala de 200 mV (o al galvanómetro).",
+   "2. (5 min) Dejen el imán quieto dentro de la bobina durante 10 s y anoten la lectura. Luego sáquenlo.",
+   "3. (20 min) Metan el imán con el polo norte por delante, despacio, en unos 2 s (cuenten «mil uno, mil dos»), y anoten el signo y el valor más alto que alcanza a mostrar el multímetro. Sáquenlo igual de despacio. Repitan con el polo sur por delante. Hagan lo mismo en 1 s y en medio segundo. Cada caso se repite tres veces.",
+   "4. (10 min) Peguen los dos imanes y repitan solo el caso de 1 s, metiendo y sacando. Anoten si el voltaje cambia.",
+   "5. (10 min) Ordenen la tabla (polo, sentido, tiempo, signo y valor) y respondan la pregunta de análisis 1.",
+   "Sesión 2 (55 min)",
+   "6. (10 min) La docente presenta Φ = BA cos θ y ε = −NΔΦ/Δt, y la ley de Lenz como «la corriente inducida se opone al cambio que la produce».",
+   "7. (12 min) Demostración con toda la clase: dejen caer el imán de neodimio por el tubo de PVC vertical y luego por el de cobre, sobre el trapo. Tres estudiantes miden el tiempo de caída en cada tubo, tres veces. Comprueben con otro imán que el cobre no se pega a un imán.",
+   "8. (15 min) En grupo, expliquen con la ley de Lenz por qué el imán cae lento en el cobre, y apliquen la ley de Faraday a los datos de la tabla: calculen ΔΦ con ε × Δt / N para dos de sus filas. Respondan la pregunta de análisis 2.",
+   "9. (10 min) Con lo visto en la unidad, completen una tabla de cuatro filas que una cada ecuación de Maxwell con un experimento: cargas que se atraen o repelen (ley de Gauss del campo eléctrico); un imán partido que sigue teniendo dos polos (ley de Gauss del campo magnético); la bobina y el imán (ley de Faraday); la brújula junto a un cable con corriente (ley de Ampère y Maxwell). Partan el imán o usen los trozos ya partidos para comprobar la segunda fila.",
+   "10. (8 min) Respondan la pregunta de análisis 3 y devuelvan los imanes separados."
+  ],
+  "seguridad": [
+   "No hay pilas ni conexión a la red: el único circuito es la bobina con el multímetro.",
+   "Los imanes de neodimio pellizcan los dedos y se quiebran si chocan: se separan deslizándolos, se mantienen lejos de celulares, tarjetas y personas con marcapasos, y nunca se llevan a la boca.",
+   "Si el imán de barra se parte, lo hace la docente envuelto en un trapo, con gafas, porque saltan astillas.",
+   "En la caída por los tubos, el imán se recibe en el trapo, no con la mano."
+  ],
+  "datos_esperados": "Imán quieto: 0 mV. Metiendo el imán en unos 2 s el multímetro muestra unos pocos milivoltios y, en medio segundo, de 10 a varias decenas de milivoltios; el voltaje crece al aumentar la rapidez. El signo cambia al sacar en vez de meter, y al usar el otro polo; meter el polo sur da el mismo signo que sacar el polo norte. Con dos imanes el voltaje es mayor. Un multímetro se actualiza unas pocas veces por segundo y no alcanza a mostrar el pico de los movimientos rápidos: los valores de medio segundo son una cota baja y el galvanómetro los muestra mejor. Tubos: en el PVC la caída de 50 cm dura unas tres décimas de segundo, como una caída libre; en el cobre dura varios segundos, aunque el cobre no se pega al imán. ε × Δt / N debe dar casi lo mismo en filas con distinta rapidez.",
+  "analisis": [
+   "(Paso 5) Según su tabla, ¿qué hace falta para que haya voltaje inducido? ¿Cómo cambian el valor y el signo al mover el imán más rápido, al sacarlo en lugar de meterlo y al usar el otro polo?",
+   "(Paso 8) ¿Por qué el imán cae tan lento en el tubo de cobre si el cobre no es magnético? ¿De dónde sale la energía que se disipa en el tubo?",
+   "(Paso 10) Los generadores de las geotérmicas de Ahuachapán y Berlín hacen girar bobinas o imanes con vapor. ¿Qué ley de su tabla explica la electricidad que producen, y por qué cuesta más girar el generador cuando la red le pide más corriente?",
+   "Tarea: En el simulador PhET «Laboratorio electromagnético de Faraday», muevan el imán a través de la bobina con distinto número de espiras y comparen la lectura del voltímetro con sus datos."
+  ],
+  "duracion_min": 110,
+  "variantes": "Sin tubo de cobre: un perfil o tubo cuadrado de aluminio de ventanería, o una placa de aluminio de 3 mm o más inclinada, por la que el imán resbala más lento que por una tabla de madera. Sin multímetro ni galvanómetro: el simulador PhET «Laboratorio electromagnético de Faraday» tiene una bobina con voltímetro y permite mover el imán con distinta rapidez y en los dos sentidos. Sin laboratorio ni internet: datos de un grupo de ejemplo con una bobina de 400 vueltas. Imán quieto, 0 mV. Polo norte entrando: en 2 s, +4 mV; en 1 s, +9 mV; en 0.5 s, +21 mV. Polo norte saliendo: en 1 s, −8 mV. Polo sur entrando: en 1 s, −9 mV. Dos imanes entrando en 1 s: +15 mV. Caída de 50 cm: PVC, 0.33 s; cobre, 4.1 s.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ },
+ {
+  "id": "DIF:fisica/induccion-electromagnetica/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/induccion-electromagnetica",
+  "descripcion": "Cree que basta con que haya un imán o un campo magnético dentro de la bobina para que se induzca voltaje o corriente, aunque nada se mueva ni cambie, en lugar de reconocer que la fem aparece solo mientras el flujo magnético cambia.",
+  "senales": "Predice que el voltímetro marcará algo con el imán quieto dentro de la bobina; cree que un imán guardado junto a un cable «carga» el circuito; si la lectura es cero, supone que el aparato falla.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Asocia la causa con el campo presente, no con su cambio."
+ },
+ {
+  "id": "DIF:fisica/induccion-electromagnetica/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/induccion-electromagnetica",
+  "descripcion": "Interpreta la ley de Lenz como si la corriente inducida siempre creara un campo opuesto al campo del imán, o siempre repeliera al imán, en lugar de oponerse al cambio del flujo: cuando el flujo disminuye, el campo inducido tiene el mismo sentido que el del imán y tiende a retenerlo.",
+  "senales": "Dice que al alejar el imán la bobina lo empuja; dibuja el campo inducido siempre contrario al del imán; predice el mismo signo de voltaje al meter y al sacar el imán.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunde oponerse al campo con oponerse a su cambio."
+ },
+ {
+  "id": "DIF:fisica/induccion-electromagnetica/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/induccion-electromagnetica",
+  "descripcion": "Cree que la fem inducida es mayor cuanto mayor es el flujo magnético, y no cuanto más rápido cambia: confunde Φ con ΔΦ/Δt y espera la fem máxima de un generador cuando por la espira pasa el máximo flujo.",
+  "senales": "Propone dejar el imán en el punto de mayor campo para tener más voltaje; ubica el pico de fem de una espira que gira cuando su plano es perpendicular al campo; no usa el tiempo al calcular la fem.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Confunde una magnitud con su rapidez de cambio."
+ }
+]

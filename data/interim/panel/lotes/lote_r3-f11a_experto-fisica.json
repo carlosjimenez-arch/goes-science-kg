@@ -1,0 +1,2226 @@
+{
+ "lote": "r3-f11a_experto-fisica",
+ "ronda": 3,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U2-2.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U2-2.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U2-2.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U2-2.3",
+      "CON:fisica/pendulo-simple"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mónica empuja a su hermano en un columpio con empujones pequeños. Responde en 3 o 4 oraciones: (a) ¿por qué la amplitud crece mucho si da un empujón por oscilación, justo cuando el columpio empieza a alejarse de ella, y casi no crece si empuja a un ritmo distinto del columpio? (b) Muchos edificios sismorresistentes llevan disipadores que amortiguan la oscilación: ¿qué le hacen a la amplitud máxima en resonancia y por qué?",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Empujar al ritmo natural del columpio y a favor de su movimiento le suma energía en cada ciclo: eso es la resonancia. A otro ritmo, unos empujones van a favor y otros en contra, y la energía no se acumula. Los disipadores convierten parte de la energía en calor en cada ciclo, así que la amplitud deja de crecer antes.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U2-2.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Si Mónica empuja una vez por oscilación y a favor del movimiento, la frecuencia de sus empujones coincide con la frecuencia natural del columpio y cada empujón le suma energía, así que la amplitud crece: es resonancia. Si empuja a otro ritmo, algunos empujones llegan cuando el columpio viene hacia ella y le quitan energía, y en promedio casi no la acumula. Los disipadores convierten energía de la oscilación en calor en cada ciclo; la amplitud crece solo hasta que la energía que se pierde por ciclo iguala la que entra, y por eso la amplitud máxima en resonancia es mucho menor.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona el crecimiento de la amplitud con que la frecuencia de los empujones coincide con la frecuencia natural del columpio (resonancia), con empujones a favor del movimiento que le suman energía en cada ciclo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que a otro ritmo parte de los empujones van en contra del movimiento (quitan energía) y la energía no se acumula.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que el amortiguamiento disipa energía en cada ciclo (en calor) y que por eso la amplitud máxima en resonancia es menor.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que la frecuencia natural depende del sistema (en el columpio, de su longitud y de g) y no de la fuerza de los empujones.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Atribuye la amplitud a la fuerza del empujón y no al ritmo.",
+        "ejemplo": "Crece porque cada empujón es más fuerte; si empuja más duro a cualquier ritmo también sube más.",
+        "dificultad": "DIF:fisica/pendulo-simple/3"
+       },
+       {
+        "descripcion": "Cree que el amortiguador cambia la frecuencia natural para evitar la resonancia, sin mencionar la disipación de energía.",
+        "ejemplo": "El disipador hace que el edificio tenga otra frecuencia y así nunca resuena.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que el período del columpio depende de quién va sentado (de la masa).",
+        "ejemplo": "Si el hermano pesa más, el columpio va más lento y hay que empujar más despacio.",
+        "dificultad": "DIF:fisica/pendulo-simple/1"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U2-2.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/pendulo-simple",
+     "nombre": "Péndulo simple",
+     "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U2-2.3",
+     "grado": 11,
+     "indicador": "1.2. • Explica la resonancia como la transferencia máxima de energía cuando la frecuencia de la fuerza impulsora coincide con la frecuencia natural del sistema. • Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos pequeños. • Compara el movimiento armónico simple con el amortiguado a partir de gráficas de amplitud en función del tiempo y estima la constante de amortiguamiento. • Argumenta, con valores de módulo de Young y esfuerzo de ruptura, por qué el concreto reforzado con acero es adecuado para construcciones sismorresistentes en El Salvador.",
+     "evidencia": "Ficha de análisis de un caso real de resonancia con curva de amplitud y fuentes citadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U2-2.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U2-2.3/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Resonancia explicada por la coincidencia de frecuencias y el signo del trabajo de cada empujón; el amortiguamiento limita la amplitud al igualar la energía perdida y la ganada por ciclo. El enunciado pide lo que exigen c1–c3. El columpio como péndulo es aproximado, pero c4 es opcional.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U2-2.3 (fila 4)",
+       "cita": "resonancia como transferencia máxima de energía cuando la frecuencia impulsora coincide con la natural"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En régimen estacionario la amplitud crece hasta que la potencia disipada iguala la entregada."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-FIS-U2-2.3/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Mónica empuja a su hermano en un columpio con empujones pequeños. Responde en 3 o 4 oraciones: (a) ¿por qué la amplitud crece mucho si da un empujón por oscilación, justo cuando el columpio empieza a alejarse de ella, y casi no crece si empuja a un ritmo distinto del columpio? (b) Muchos edificios sismorresistentes llevan disipadores que amortiguan la oscilación: ¿qué le hacen a la amplitud máxima en resonancia y por qué?"
+     },
+     "justificacion": "El enunciado pide lo que exigen c1–c3, pero tres criterios obligatorios no caben en «2 o 3 oraciones»: la respuesta modelo usa cuatro. Se amplía a «3 o 4 oraciones» para no inducir respuestas incompletas. Solo cambia la extensión pedida.",
+     "evidencia": [
+      {
+       "fuente": "rúbrica c1–c3",
+       "cita": "tres criterios obligatorios; respuesta modelo de cuatro oraciones"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe permitir cumplir cada criterio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U3-3.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U3-3.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.2"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.2",
+      "CON:fisica/ondas-mecanicas-tipos"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Diego golpea con una piedra un extremo de una tubería de hierro de 50 m que corre a lo largo de una cerca. Valeria, en el otro extremo, apoya el oído en la tubería. Valores aproximados: el sonido viaja a unos 346 m/s en el aire de una tarde cálida y a unos 5000 m/s en el hierro. En 3 o 4 oraciones: (a) ¿cuántos golpes oye Valeria y cuál llega primero?; (b) calcula cuánto tiempo los separa, en segundos; (c) explica por qué el sonido es más rápido en el hierro aunque el hierro sea mucho más denso que el aire.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Oye dos golpes: primero el que viaja por el hierro (unos 0.01 s) y después el del aire (unos 0.14 s), separados por unos 0.13 s. La rapidez del sonido depende de la rigidez del medio frente a su densidad: el hierro es mucho más denso, pero muchísimo más rígido, y cada parte empuja a la siguiente con mucha más fuerza.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U3-3.2"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Valeria oye dos golpes: primero el que llega por el hierro y después el que llega por el aire. Por el hierro tarda 50/5000 = 0.01 s y por el aire 50/346 ≈ 0.14 s, así que los separa cerca de 0.13 s. La rapidez del sonido depende de cuán rígido es el medio comparado con su densidad: el hierro es más denso, lo que la frena, pero es muchísimo más rígido, así que cada capa empuja enseguida a la siguiente y la compresión viaja más rápido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que oye dos golpes y que primero llega el que viaja por el hierro.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Calcula una separación de unos 0.13 a 0.15 s a partir de los tiempos en cada medio.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la rapidez con la rigidez (elasticidad) del medio comparada con su densidad, y explica que en el hierro la rigidez mucho mayor compensa su densidad.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Describe el sonido como compresiones que cada parte del medio transmite a la siguiente (onda longitudinal).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el sonido es más lento en sólidos porque sus partículas están más juntas y lo estorban.",
+        "ejemplo": "Primero llega el del aire, porque en el hierro las partículas están apretadas y le cuesta pasar.",
+        "dificultad": "DIF:fisica/ondas-mecanicas-tipos/3"
+       },
+       {
+        "descripcion": "Explica la diferencia por la fuerza del golpe y no por el medio.",
+        "ejemplo": "Por el tubo llega antes porque el golpe se dio directo en el metal y es más fuerte.",
+        "dificultad": "DIF:fisica/ondas-mecanicas-tipos/2"
+       },
+       {
+        "descripcion": "Dice que el sonido viaja más rápido en el hierro porque es más denso.",
+        "ejemplo": "Llega primero por el hierro porque es más denso y el sonido corre más en lo denso.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-mecanicas-tipos",
+     "nombre": "Ondas mecánicas transversales y longitudinales",
+     "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.2",
+     "grado": 11,
+     "indicador": "1.3. • Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con el teorico • Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia. • Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación teorica de la velocidad de onda armonica para calcular magnitudes de la onda. • Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido. • Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio.",
+     "evidencia": "Informe con tabla de tensiones, densidades y velocidades medidas y teóricas, y porcentaje de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U3-3.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U3-3.2/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: 50/5000 = 0.010 s, 50/340 ≈ 0.147 s, separación ≈ 0.14 s, perceptible como dos golpes. Rapidez explicada por rigidez frente a densidad (v = √(E/ρ)), correcta. Las rapideces se declaran aproximadas. Criterios alineados con lo pedido.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U3-3.2 (fila 5)",
+       "cita": "rapidez del sonido en distintos medios y su relación con elasticidad y densidad"
+      },
+      {
+       "fuente": "DIF:fisica/ondas-mecanicas-tipos/3",
+       "cita": "creer que el sonido es más lento en sólidos"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-FIS-U3-3.2/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Diego golpea con una piedra un extremo de una tubería de hierro de 50 m que corre a lo largo de una cerca. Valeria, en el otro extremo, apoya el oído en la tubería. Valores aproximados: el sonido viaja a unos 346 m/s en el aire de una tarde cálida y a unos 5000 m/s en el hierro. En 3 o 4 oraciones: (a) ¿cuántos golpes oye Valeria y cuál llega primero?; (b) calcula cuánto tiempo los separa, en segundos; (c) explica por qué el sonido es más rápido en el hierro aunque el hierro sea mucho más denso que el aire.",
+      "retroalimentacion": "Oye dos golpes: primero el que viaja por el hierro (unos 0.01 s) y después el del aire (unos 0.14 s), separados por unos 0.13 s. La rapidez del sonido depende de la rigidez del medio frente a su densidad: el hierro es mucho más denso, pero muchísimo más rígido, y cada parte empuja a la siguiente con mucha más fuerza.",
+      "rubrica": {
+       "respuesta_modelo": "Valeria oye dos golpes: primero el que llega por el hierro y después el que llega por el aire. Por el hierro tarda 50/5000 = 0.01 s y por el aire 50/346 ≈ 0.14 s, así que los separa cerca de 0.13 s. La rapidez del sonido depende de cuán rígido es el medio comparado con su densidad: el hierro es más denso, lo que la frena, pero es muchísimo más rígido, así que cada capa empuja enseguida a la siguiente y la compresión viaja más rápido.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Dice que oye dos golpes y que primero llega el que viaja por el hierro.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Calcula una separación de unos 0.13 a 0.15 s a partir de los tiempos en cada medio.",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Relaciona la rapidez con la rigidez (elasticidad) del medio comparada con su densidad, y explica que en el hierro la rigidez mucho mayor compensa su densidad.",
+         "obligatorio": true
+        },
+        {
+         "id": "c4",
+         "descripcion": "Describe el sonido como compresiones que cada parte del medio transmite a la siguiente (onda longitudinal).",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Cree que el sonido es más lento en sólidos porque sus partículas están más juntas y lo estorban.",
+         "ejemplo": "Primero llega el del aire, porque en el hierro las partículas están apretadas y le cuesta pasar.",
+         "dificultad": "DIF:fisica/ondas-mecanicas-tipos/3"
+        },
+        {
+         "descripcion": "Explica la diferencia por la fuerza del golpe y no por el medio.",
+         "ejemplo": "Por el tubo llega antes porque el golpe se dio directo en el metal y es más fuerte.",
+         "dificultad": "DIF:fisica/ondas-mecanicas-tipos/2"
+        },
+        {
+         "descripcion": "Dice que el sonido viaja más rápido en el hierro porque es más denso.",
+         "ejemplo": "Llega primero por el hierro porque es más denso y el sonido corre más en lo denso.",
+         "dificultad": null
+        }
+       ]
+      }
+     },
+     "justificacion": "Regla de condiciones de El Salvador: 340 m/s corresponde a unos 15 °C; se usa 346 m/s (≈25 °C) y se recalculan tiempos (0.14 s y 0.13 s, dentro del rango de c2). Tres partes con cálculo no caben en 2 o 3 oraciones: se piden 3 o 4, y la unidad de (b).",
+     "evidencia": [
+      {
+       "fuente": "prompts/redactar_actividades.md, Condiciones de El Salvador",
+       "cita": "rapidez del sonido ≈ 346–349 m/s, no 340"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "50/346 ≈ 0.145 s; 0.145 − 0.010 ≈ 0.13 s"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U4-4.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U4-4.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U4-4.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U4-4.3",
+      "CON:fisica/tono-volumen-sonido"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una fiesta, el sonómetro de un celular marca 95 dB donde baila Andrés y 75 dB junto a la puerta. En 3 o 4 oraciones: (a) ¿cuántas veces mayor es la intensidad sonora donde baila Andrés que junto a la puerta? Justifica con la definición del nivel de intensidad en decibelios. (b) Propón una medida para proteger su audición y explica con la física del sonido por qué funciona.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cada 10 dB más la intensidad se multiplica por 10, así que 20 dB más son 100 veces la intensidad. Alejarse del parlante funciona porque la intensidad baja con el cuadrado de la distancia; los tapones reducen la intensidad que llega al oído; y menos tiempo de exposición reduce la energía total que recibe.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U4-4.3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "La diferencia es de 20 dB. Como β = 10·log(I/I₀), cada 10 dB más la intensidad se multiplica por 10, así que 20 dB más equivalen a 10 × 10 = 100 veces la intensidad. Andrés debería alejarse de los parlantes: la intensidad baja con el cuadrado de la distancia, así que al duplicarla baja a la cuarta parte, unos 6 dB menos. También puede usar tapones, que absorben parte de la energía antes de que llegue al oído.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Concluye que la intensidad es 100 veces mayor.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la escala logarítmica: cada 10 dB equivalen a multiplicar la intensidad por 10 (o calcula 10^(20/10)).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Propone una medida (alejarse, usar tapones, bajar el volumen o reducir el tiempo de exposición) y la justifica con una idea física: inverso del cuadrado de la distancia, menos energía que llega al oído o menos potencia de la fuente.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Distingue la intensidad física de la sonoridad que se percibe (100 veces la intensidad no se oye 100 veces más fuerte).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Trata los decibelios como una escala lineal.",
+        "ejemplo": "95 dB es un poco más que 75 dB: unas 1.3 veces la intensidad, o 20 veces más.",
+        "dificultad": "DIF:fisica/tono-volumen-sonido/1"
+       },
+       {
+        "descripcion": "Usa una disminución proporcional a la distancia para justificar alejarse.",
+        "ejemplo": "Si se aleja al doble de distancia, el sonido baja a la mitad.",
+        "dificultad": "DIF:fisica/tono-volumen-sonido/3"
+       },
+       {
+        "descripcion": "Propone una medida sin explicar por qué funciona.",
+        "ejemplo": "Es 100 veces mayor; debe usar tapones porque es lo recomendado.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-FIS-U4-4.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tono-volumen-sonido",
+     "nombre": "Características del sonido: tono, intensidad y eco",
+     "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U4-4.3",
+     "grado": 11,
+     "indicador": "1.4. • Calcula niveles de intensidad sonora con β = 10 log(I/I₀) y compara intensidades de fuentes que difieren en un número dado de decibelios. • Calcula la intensidad sonora a distintas distancias de una fuente con I = P/(4πr²) y la compara con el umbral de audición y el umbral de dolor. • Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda. • Interpreta las curvas de Fletcher-Munson para explicar la diferente sensibilidad del oído según la frecuencia y argumenta medidas de protección auditiva.",
+     "evidencia": "Mapa de niveles sonoros de la escuela con cálculos en decibelios y propuestas de reducción de ruido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U4-4.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U4-4.3/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "20 dB de diferencia equivalen a 100 veces la intensidad, correcto. Las medidas propuestas se justifican con física válida; cerca de los parlantes domina el sonido directo y la ley del inverso del cuadrado es buena aproximación. Al usar una diferencia, el error de calibración del celular se cancela en buena parte.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U4-4.3 (fila 6)",
+       "cita": "comparar intensidades de fuentes que difieren en un número de decibelios y argumentar protección auditiva"
+      },
+      {
+       "fuente": "DIF:fisica/tono-volumen-sonido/1",
+       "cita": "tratar la escala de decibelios como lineal"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-FIS-U4-4.3/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "En una fiesta, el sonómetro de un celular marca 95 dB donde baila Andrés y 75 dB junto a la puerta. En 3 o 4 oraciones: (a) ¿cuántas veces mayor es la intensidad sonora donde baila Andrés que junto a la puerta? Justifica con la definición del nivel de intensidad en decibelios. (b) Propón una medida para proteger su audición y explica con la física del sonido por qué funciona."
+     },
+     "justificacion": "Pide lo que exigen c1–c3 y trata los 95 dB como dato, con una medida de protección: no expone a nadie. Pero la respuesta modelo usa cuatro oraciones y el enunciado pedía 2 o 3; se amplía a 3 o 4 para no inducir respuestas incompletas.",
+     "evidencia": [
+      {
+       "fuente": "rúbrica c1–c3",
+       "cita": "concluye 100 veces, justifica con la escala logarítmica y con una medida física"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "la extensión pedida debe permitir cumplir cada criterio"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-FIS-U6-6.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-FIS-U6-6.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U6-6.5",
+      "CON:fisica/ley-coulomb"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Dos cargas están en un plano (x, y), con posiciones en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total en P por componentes y úsalo para hallar la magnitud de la fuerza sobre q0. Usa k ≈ 9.0 × 10⁹ N·m²/C² (valor aproximado de la tabla de referencia). Escribe solo el número, en µN.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": {},
+     "valor": 1.5,
+     "tolerancia": 0.05,
+     "unidad": "µN",
+     "retroalimentacion": "q1 está a 0.40 m de P: E1 = 450 N/C en +x (se aleja de la carga positiva). q2 está a 0.30 m, justo arriba de P: E2 = 600 N/C en +y (apunta hacia la carga negativa). El campo total mide √(450² + 600²) = 750 N/C. La fuerza sobre q0 mide |q0|·E = 2.0 × 10⁻⁹ × 750 = 1.5 × 10⁻⁶ N = 1.5 µN, en sentido contrario al campo porque q0 es negativa.",
+     "duracion_min": 9,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-coulomb",
+     "nombre": "Ley de Coulomb",
+     "definicion": "La fuerza entre cargas puntuales es proporcional al producto de las cargas e inversa al cuadrado de su distancia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U6-6.5",
+     "grado": 11,
+     "indicador": "2.2. • Calcula la magnitud y la dirección de la fuerza eléctrica neta sobre una carga debida a dos o tres cargas puntuales ubicadas en un plano, aplicando la superposición de componentes. • Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales y lo usa para determinar la fuerza sobre una carga de prueba.",
+     "evidencia": "Problemas resueltos de fuerza neta en dos dimensiones con diagramas de cuerpo libre y componentes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-FIS-U6-6.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G11-FIS-U6-6.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: E1 = 9×10⁹·8×10⁻⁹/0.16 = 450 N/C (+x); E2 = 9×10⁹·6×10⁻⁹/0.09 = 600 N/C (+y, hacia q2); |E| = 750 N/C; F = 2×10⁻⁹·750 = 1.5 µN. k remitida a la tabla como aproximada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U6-6.5 (fila 10)",
+       "cita": "calcular el vector campo por varias cargas y usarlo para la fuerza sobre una carga de prueba"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "√(450²+600²) = 750 N/C"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G11-FIS-U6-6.5/obj-2",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Dos cargas están en un plano (x, y), con posiciones en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total en P por componentes y úsalo para hallar la magnitud de la fuerza sobre q0. Usa k ≈ 9.0 × 10⁹ N·m²/C² (valor aproximado de la tabla de referencia). Escribe solo el número, en µN."
+     },
+     "justificacion": "Solo claridad: «Un problema de la hoja del equipo da las cargas» es una frase ambigua (¿qué equipo?, ¿qué hoja?) que no aporta. Se enuncian los datos directamente. Números, unidad y valor sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "enunciados cortos, sin información irrelevante"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U6-6.5",
+       "cita": "campo eléctrico de varias cargas puntuales"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/ondas-mecanicas-tipos/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/ondas-mecanicas-tipos/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/ondas-mecanicas-tipos",
+     "descripcion": "Creer que el sonido viaja más lento en sólidos y líquidos que en el aire porque sus partículas están más juntas y «le estorban». No considera que esos medios son mucho más difíciles de comprimir o deformar (módulo elástico mucho mayor), y eso pesa más que su mayor densidad: por eso el sonido viaja más rápido en ellos.",
+     "senales": "Predice que un golpe se oye antes por el aire que por un riel o una mesa; explica la rapidez solo con la densidad.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Modelo de obstáculo: más partículas juntas, más difícil el paso.",
+     "origen": "redactor-actividades (G11-FIS-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-mecanicas-tipos",
+     "nombre": "Ondas mecánicas transversales y longitudinales",
+     "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.2",
+     "grado": 11,
+     "indicador": "1.3. • Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con el teorico • Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia. • Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación teorica de la velocidad de onda armonica para calcular magnitudes de la onda. • Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido. • Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio.",
+     "evidencia": "Informe con tabla de tensiones, densidades y velocidades medidas y teóricas, y porcentaje de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/ondas-mecanicas-tipos/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/ondas-mecanicas-tipos/3",
+     "decision": "corregir",
+     "cambios": {
+      "descripcion": "Creer que el sonido viaja más lento en sólidos y líquidos que en el aire porque sus partículas están más juntas y «le estorban», sin considerar que esos medios son mucho más difíciles de comprimir o deformar (módulo elástico mucho mayor), lo que pesa más que su mayor densidad y hace que el sonido viaje más rápido."
+     },
+     "justificacion": "Idea previa real, pero atribuirlo a la «rigidez» es falso para los líquidos, que no tienen rigidez al corte: en ellos cuenta la resistencia a la compresión (módulo volumétrico). Se nombra el módulo elástico y la competencia con la densidad, que es lo que pide el indicador.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U3-3.2",
+       "cita": "explicar la velocidad del sonido por la elasticidad y la densidad del medio"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "v = √(B/ρ) en fluidos; los líquidos no tienen módulo de corte"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:DIF:fisica/ondas-mecanicas-tipos/3",
+     "decision": "corregir",
+     "cambios": {
+      "descripcion": "Creer que el sonido viaja más lento en sólidos y líquidos que en el aire porque sus partículas están más juntas y «le estorban». No considera que esos medios son mucho más difíciles de comprimir o deformar (módulo elástico mucho mayor), y eso pesa más que su mayor densidad: por eso el sonido viaja más rápido en ellos."
+     },
+     "justificacion": "Solo forma: una oración de unas 60 palabras se parte en dos para reducir la carga de lectura de la docente. Se conserva el módulo elástico que fijó el experto y la comparación con la densidad.",
+     "evidencia": [
+      {
+       "fuente": "DIF:fisica/ondas-mecanicas-tipos/3",
+       "cita": "descripción en una sola oración larga"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "una idea por oración; mismo contenido científico"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U2-2.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U2-2.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U2-2.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U2-2.3",
+      "CON:fisica/pendulo-simple"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "El péndulo simple: medir g, poner a prueba los ángulos pequeños y ver el amortiguamiento y la resonancia",
+     "proposito": "Determinar la aceleración de la gravedad con la pendiente de la gráfica T² contra L de un péndulo simple; comprobar con datos hasta qué ángulo vale la aproximación de ángulos pequeños, comparando ese efecto con el error de medida; medir cómo decae la amplitud de un péndulo amortiguado y estimar su constante de amortiguamiento; y observar la resonancia entre péndulos acoplados.",
+     "materiales": [
+      "Hilo de pescar o de cáñamo delgado que no se estire (unos 3 m por grupo)",
+      "Una masa compacta de 100 a 200 g: una tuerca grande, un candado pequeño o una bolsita cerrada con arena",
+      "Soporte universal alto sobre una mesa, o un palo de escoba atado con cuerda (no solo con cinta) entre dos estantes o armarios firmes, de modo que el punto de suspensión quede a 1.3 m o más del suelo; sobre dos pupitres queda a unos 0.75 m y no alcanza para L = 1.20 m",
+      "Cinta métrica o regla de 1 m",
+      "Transportador pegado con cinta junto al punto de suspensión",
+      "Cronómetro o celular con cronómetro (y otro celular para grabar video, si hay)",
+      "Un cuadrado de cartulina de unos 15 cm × 15 cm y cinta adhesiva",
+      "Para la resonancia: una cuerda de unos 2 m atada, sin tensarla demasiado, entre los respaldos de dos sillas pesadas (a unos 0.9 m del suelo), cuatro hilos y cuatro masas: una bolsita de unos 200 g y tres tuercas pequeñas",
+      "Papel milimetrado, o computadora con hoja de cálculo (LibreOffice Calc, Excel o Google Sheets)",
+      "Calculadora científica"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) Armen el péndulo: aten la masa al hilo y el hilo al soporte de modo que cuelgue sin rozar nada. Midan la longitud L desde el punto de suspensión hasta el centro de la masa, no hasta su borde.",
+      "2. (25 min) Para cinco longitudes entre 0.30 m y 1.20 m, separen la masa unos 10° (lean el transportador), suéltenla sin empujarla y midan el tiempo de 10 oscilaciones completas. Repitan tres veces cada longitud y anoten L, los tres tiempos y su promedio.",
+      "3. (12 min) Calculen T = t/10 y T² para cada longitud. Hagan la tabla y la gráfica de T² contra L en papel o en la hoja de cálculo.",
+      "4. (8 min) Tracen la recta de mejor ajuste, calculen su pendiente y obtengan g = 4π²/pendiente. Respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "5. (12 min) Con L = 1.00 m, midan tres veces el tiempo de 10 oscilaciones soltando desde 10° y tres veces soltando desde 50°. Calculen el promedio y la diferencia entre las mediciones repetidas de cada ángulo.",
+      "6. (18 min) Peguen la cartulina a la masa, de frente al movimiento. Coloquen la regla horizontal debajo de la masa, a 1 o 2 cm, con el cero bajo la posición de equilibrio. Suelten desde 20 cm a un lado y anoten la amplitud cada 5 oscilaciones (o graben un video y léanla después) hasta que baje de 3 cm. Anoten también el tiempo de cada lectura.",
+      "7. (10 min) Resonancia: cuelguen de la cuerda la bolsita de 200 g con un hilo de 40 cm y las tres tuercas con hilos de 25, 40 y 60 cm (ninguna debe tocar el suelo). Pongan a oscilar solo la bolsita, perpendicular a la cuerda, y observen durante un minuto cuál de las tuercas oscila más.",
+      "8. (15 min) En grupo, grafiquen ln A contra el tiempo con los datos del paso 6 y respondan las preguntas de análisis 2, 3 y 4."
+     ],
+     "seguridad": [
+      "El soporte o el palo lo instala el docente; nadie se sube a sillas ni pupitres. Verifiquen que no se mueva antes de colgar la masa.",
+      "Mantengan la cara y las manos fuera del recorrido de la masa, sobre todo al soltarla desde 50°; nadie pasa por debajo mientras oscila.",
+      "Revisen los nudos antes de cada serie; si la masa es una bolsita, que esté bien cerrada.",
+      "La cuerda del paso 7 queda por debajo de la altura de los ojos y se señaliza con un trozo de tela para que nadie tropiece con ella."
+     ],
+     "datos_esperados": "Paso 2: con L entre 0.30 m y 1.20 m, el período va de cerca de 1.1 s a cerca de 2.2 s. T² contra L es una recta que pasa cerca del origen, con pendiente cercana a 4 s²/m. Con tiempos de 10 oscilaciones y L medida hasta el centro de la masa, g suele salir entre 9.6 y 10.0 m/s², cerca del valor de la tabla de referencia (aproximado, 9.8 m/s²). Si se mide L hasta el borde de la masa, la recta no pasa por el origen. Paso 5: la teoría predice que desde 50° el período es alrededor de 5 % mayor que en ángulos pequeños (unos 0.9 s más en 10 oscilaciones de 20 s), mientras que el error por el tiempo de reacción ronda 0.2 s: la diferencia se detecta. Desde 20° la diferencia sería menor de 1 % (unos 0.15 s) y quedaría dentro del error de medida, por eso se usa 50°. Paso 6: la amplitud baja cada vez más despacio; ln A contra t queda cerca de una recta de pendiente negativa (−γ, en s⁻¹), aunque al principio la caída puede ser más rápida porque la resistencia del aire crece con la rapidez. Sin cartulina, la amplitud baja mucho más lento. Paso 7: oscila con amplitud creciente la tuerca de 40 cm, la que tiene la misma longitud (y la misma frecuencia natural) que la bolsita; las otras apenas se mueven.",
+     "analisis": [
+      "(Paso 4) ¿Los puntos T² contra L forman una recta que pasa por el origen? ¿Qué valor de g obtuvieron y en qué porcentaje difiere del valor de la tabla de referencia? Nombren dos fuentes de error.",
+      "(Paso 8) ¿La diferencia entre los períodos a 10° y a 50° es mayor que la variación entre sus mediciones repetidas? ¿Hasta qué ángulo creen que vale la aproximación de ángulos pequeños con su precisión?",
+      "(Paso 8) ¿Su gráfica de ln A contra t se parece a una recta? Estimen la constante de amortiguamiento γ con su pendiente y digan qué le hizo la cartulina.",
+      "(Paso 8) En los péndulos acoplados, ¿qué tuerca oscilaba más y por qué? Relacionen su respuesta con la frecuencia natural.",
+      "Tarea: Elaboren la ficha de un caso real de resonancia (un edificio en un sismo, una copa que se rompe con sonido o un puente peatonal que se mece con el paso de la gente; no usen el puente de Tacoma, cuya caída no se explica solo con resonancia) con la curva de amplitud contra frecuencia y las fuentes citadas.",
+      "Tarea: Con los valores de módulo de Young y de esfuerzo de ruptura del concreto y del acero de la tabla de referencia, argumenten por qué el concreto reforzado con acero resiste mejor un sismo que el concreto solo o el adobe."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin soporte alto: un palo de escoba atado entre dos estantes firmes (lo instala el docente); si solo se puede colgar entre dos pupitres, usen longitudes de 0.20 a 0.60 m y hagan el paso 5 con L = 0.60 m (la diferencia entre 10° y 50° sigue siendo de unos 0.8 s en 10 oscilaciones). Sin cronómetro: el de cualquier celular. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: L = 0.30, 0.50, 0.70, 0.90 y 1.10 m; tiempo de 10 oscilaciones = 11.0, 14.2, 16.8, 19.0 y 21.0 s; a 50° con L = 1.00 m, 10 oscilaciones duran 21.0 s y a 10° duran 20.1 s; con cartulina, la amplitud fue 20, 14, 10, 7.2, 5.1 y 3.6 cm a los 0, 10, 20, 30, 40 y 50 s. Con internet: la simulación gratuita «Laboratorio de péndulo» de PhET permite cambiar la longitud, la masa, la gravedad, el ángulo y la fricción, y trae cronómetro y medidor de período; sirve para comparar ángulos y ver el amortiguamiento, pero no simula la resonancia con una fuerza impulsora. Para la ficha de resonancia sin internet: usen el libro de texto o una lectura impresa que entregue la docente, y cítenla como fuente.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U2-2.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/pendulo-simple",
+     "nombre": "Péndulo simple",
+     "definicion": "Masa suspendida que oscila con período dependiente de su longitud y de g, intercambiando energía cinética y potencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U2-2.3",
+     "grado": 11,
+     "indicador": "1.2. • Explica la resonancia como la transferencia máxima de energía cuando la frecuencia de la fuerza impulsora coincide con la frecuencia natural del sistema. • Determina la aceleración de la gravedad a partir de la gráfica del período al cuadrado en función de la longitud de un péndulo y evalúa la validez de la aproximación de ángulos pequeños. • Compara el movimiento armónico simple con el amortiguado a partir de gráficas de amplitud en función del tiempo y estima la constante de amortiguamiento. • Argumenta, con valores de módulo de Young y esfuerzo de ruptura, por qué el concreto reforzado con acero es adecuado para construcciones sismorresistentes en El Salvador.",
+     "evidencia": "Ficha de análisis de un caso real de resonancia con curva de amplitud y fuentes citadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U2-2.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U2-2.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Hilo de pescar o de cáñamo delgado que no se estire (unos 3 m por grupo)",
+       "Una masa compacta de 100 a 200 g: una tuerca grande, un candado pequeño o una bolsita cerrada con arena",
+       "Soporte universal alto sobre una mesa, o un palo de escoba atado con cuerda (no solo con cinta) entre dos estantes o armarios firmes, de modo que el punto de suspensión quede a 1.3 m o más del suelo; sobre dos pupitres queda a unos 0.75 m y no alcanza para L = 1.20 m",
+       "Cinta métrica o regla de 1 m",
+       "Transportador pegado con cinta junto al punto de suspensión",
+       "Cronómetro o celular con cronómetro (y otro celular para grabar video, si hay)",
+       "Un cuadrado de cartulina de unos 15 cm × 15 cm y cinta adhesiva",
+       "Para la resonancia: una cuerda de unos 2 m atada, sin tensarla demasiado, entre los respaldos de dos sillas pesadas (a unos 0.9 m del suelo), cuatro hilos y cuatro masas: una bolsita de unos 200 g y tres tuercas pequeñas",
+       "Papel milimetrado, o computadora con hoja de cálculo (LibreOffice Calc, Excel o Google Sheets)",
+       "Calculadora científica"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (10 min) Armen el péndulo: aten la masa al hilo y el hilo al soporte de modo que cuelgue sin rozar nada. Midan la longitud L desde el punto de suspensión hasta el centro de la masa, no hasta su borde.",
+       "2. (25 min) Para cinco longitudes entre 0.30 m y 1.20 m, separen la masa unos 10° (lean el transportador), suéltenla sin empujarla y midan el tiempo de 10 oscilaciones completas. Repitan tres veces cada longitud y anoten L, los tres tiempos y su promedio.",
+       "3. (12 min) Calculen T = t/10 y T² para cada longitud. Hagan la tabla y la gráfica de T² contra L en papel o en la hoja de cálculo.",
+       "4. (8 min) Tracen la recta de mejor ajuste, calculen su pendiente y obtengan g = 4π²/pendiente. Respondan la pregunta de análisis 1.",
+       "Sesión 2 (55 min)",
+       "5. (12 min) Con L = 1.00 m, midan tres veces el tiempo de 10 oscilaciones soltando desde 10° y tres veces soltando desde 50°. Calculen el promedio y la diferencia entre las mediciones repetidas de cada ángulo.",
+       "6. (18 min) Peguen la cartulina a la masa, de frente al movimiento. Coloquen la regla horizontal debajo de la masa, a 1 o 2 cm, con el cero bajo la posición de equilibrio. Suelten desde 20 cm a un lado y anoten la amplitud cada 5 oscilaciones (o graben un video y léanla después) hasta que baje de 3 cm. Anoten también el tiempo de cada lectura.",
+       "7. (10 min) Resonancia: cuelguen de la cuerda la bolsita de 200 g con un hilo de 40 cm y las tres tuercas con hilos de 25, 40 y 60 cm (ninguna debe tocar el suelo). Pongan a oscilar solo la bolsita, perpendicular a la cuerda, y observen durante un minuto cuál de las tuercas oscila más.",
+       "8. (15 min) En grupo, grafiquen ln A contra el tiempo con los datos del paso 6 y respondan las preguntas de análisis 2, 3 y 4."
+      ],
+      "datos_esperados": "Paso 2: con L entre 0.30 m y 1.20 m, el período va de cerca de 1.1 s a cerca de 2.2 s. T² contra L es una recta que pasa cerca del origen, con pendiente cercana a 4 s²/m. Con tiempos de 10 oscilaciones y L medida hasta el centro de la masa, g suele salir entre 9.6 y 10.0 m/s², cerca del valor de la tabla de referencia (aproximado, 9.8 m/s²). Si se mide L hasta el borde de la masa, la recta no pasa por el origen. Paso 5: la teoría predice que desde 50° el período es alrededor de 5 % mayor que en ángulos pequeños (unos 0.9 s más en 10 oscilaciones de 20 s), mientras que el error por el tiempo de reacción ronda 0.2 s: la diferencia se detecta. Desde 20° la diferencia sería menor de 1 % (unos 0.15 s) y quedaría dentro del error de medida, por eso se usa 50°. Paso 6: la amplitud baja cada vez más despacio; ln A contra t queda cerca de una recta de pendiente negativa (−γ, en s⁻¹), aunque al principio la caída puede ser más rápida porque la resistencia del aire crece con la rapidez. Sin cartulina, la amplitud baja mucho más lento. Paso 7: oscila con amplitud creciente la tuerca de 40 cm, la que tiene la misma longitud (y la misma frecuencia natural) que la bolsita; las otras apenas se mueven.",
+      "variantes": "Sin soporte alto: un palo de escoba atado entre dos estantes firmes (lo instala el docente); si solo se puede colgar entre dos pupitres, usen longitudes de 0.20 a 0.60 m y hagan el paso 5 con L = 0.60 m (la diferencia entre 10° y 50° sigue siendo de unos 0.8 s en 10 oscilaciones). Sin cronómetro: el de cualquier celular. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: L = 0.30, 0.50, 0.70, 0.90 y 1.10 m; tiempo de 10 oscilaciones = 11.0, 14.2, 16.8, 19.0 y 21.0 s; a 50° con L = 1.00 m, 10 oscilaciones duran 21.0 s y a 10° duran 20.1 s; con cartulina, la amplitud fue 20, 14, 10, 7.2, 5.1 y 3.6 cm a los 0, 10, 20, 30, 40 y 50 s. Con internet: la simulación gratuita «Laboratorio de péndulo» de PhET permite cambiar la longitud, la masa, la gravedad, el ángulo y la fricción, y trae cronómetro y medidor de período; sirve para comparar ángulos y ver el amortiguamiento, pero no simula la resonancia con una fuerza impulsora."
+     },
+     "justificacion": "Números verificados (T de 1.10 a 2.20 s; pendiente 4.03 s²/m; +5 % a 50°; datos de ejemplo coherentes). Montaje inviable: un palo entre pupitres queda a 0.75 m, no a 1.3 m; y un hilo de 80 cm desde una cuerda entre sillas toca el suelo. Se corrige el soporte y las longitudes de resonancia (25, 40, 60 cm; impulsor de 40 cm).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U2-2.3",
+       "cita": "gráfica T² contra L, ángulos pequeños, amortiguamiento y resonancia"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "T(50°) ≈ T0(1 + θ²/16 + 11θ⁴/3072) ≈ 1.05·T0; L = 0.60 m: 10 T0 ≈ 15.5 s"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U2-2.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "analisis": [
+       "(Paso 4) ¿Los puntos T² contra L forman una recta que pasa por el origen? ¿Qué valor de g obtuvieron y en qué porcentaje difiere del valor de la tabla de referencia? Nombren dos fuentes de error.",
+       "(Paso 8) ¿La diferencia entre los períodos a 10° y a 50° es mayor que la variación entre sus mediciones repetidas? ¿Hasta qué ángulo creen que vale la aproximación de ángulos pequeños con su precisión?",
+       "(Paso 8) ¿Su gráfica de ln A contra t se parece a una recta? Estimen la constante de amortiguamiento γ con su pendiente y digan qué le hizo la cartulina.",
+       "(Paso 8) En los péndulos acoplados, ¿qué tuerca oscilaba más y por qué? Relacionen su respuesta con la frecuencia natural.",
+       "Tarea: Elaboren la ficha de un caso real de resonancia (un edificio en un sismo, una copa que se rompe con sonido o un puente peatonal que se mece con el paso de la gente; no usen el puente de Tacoma, cuya caída no se explica solo con resonancia) con la curva de amplitud contra frecuencia y las fuentes citadas.",
+       "Tarea: Con los valores de módulo de Young y de esfuerzo de ruptura del concreto y del acero de la tabla de referencia, argumenten por qué el concreto reforzado con acero resiste mejor un sismo que el concreto solo o el adobe."
+      ],
+      "seguridad": [
+       "El soporte o el palo lo instala el docente; nadie se sube a sillas ni pupitres. Verifiquen que no se mueva antes de colgar la masa.",
+       "Mantengan la cara y las manos fuera del recorrido de la masa, sobre todo al soltarla desde 50°; nadie pasa por debajo mientras oscila.",
+       "Revisen los nudos antes de cada serie; si la masa es una bolsita, que esté bien cerrada.",
+       "La cuerda del paso 7 queda por debajo de la altura de los ojos y se señaliza con un trozo de tela para que nadie tropiece con ella."
+      ],
+      "variantes": "Sin soporte alto: un palo de escoba atado entre dos estantes firmes (lo instala el docente); si solo se puede colgar entre dos pupitres, usen longitudes de 0.20 a 0.60 m y hagan el paso 5 con L = 0.60 m (la diferencia entre 10° y 50° sigue siendo de unos 0.8 s en 10 oscilaciones). Sin cronómetro: el de cualquier celular. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: L = 0.30, 0.50, 0.70, 0.90 y 1.10 m; tiempo de 10 oscilaciones = 11.0, 14.2, 16.8, 19.0 y 21.0 s; a 50° con L = 1.00 m, 10 oscilaciones duran 21.0 s y a 10° duran 20.1 s; con cartulina, la amplitud fue 20, 14, 10, 7.2, 5.1 y 3.6 cm a los 0, 10, 20, 30, 40 y 50 s. Con internet: la simulación gratuita «Laboratorio de péndulo» de PhET permite cambiar la longitud, la masa, la gravedad, el ángulo y la fricción, y trae cronómetro y medidor de período; sirve para comparar ángulos y ver el amortiguamiento, pero no simula la resonancia con una fuerza impulsora. Para la ficha de resonancia sin internet: usen el libro de texto o una lectura impresa que entregue la docente, y cítenla como fuente."
+     },
+     "justificacion": "Montaje y tiempos correctos (55 + 55 min; cada análisis con paso o «Tarea:»). Se agrega una alternativa sin internet a la ficha con fuentes, y se aclara que Tacoma no sirve: el experto lo descartó como resonancia y es el primer caso que encontrarían. «Cuerda tensa» contradecía «sin tensarla».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U2-2.3",
+       "cita": "evidencia: ficha de un caso real de resonancia con fuentes citadas"
+      },
+      {
+       "fuente": "DIF:fisica/pendulo-simple/3",
+       "cita": "el experto retiró el puente por viento: no es resonancia simple"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "inclusión: escuelas sin internet necesitan una fuente impresa"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U3-3.1-v3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U3-3.1-v3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.1-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.1-v3",
+      "CON:fisica/ley-ohm"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Curvas voltaje-corriente de un resistor y de un LED, y resistividad de un alambre",
+     "proposito": "Construir con pilas y un multímetro las curvas voltaje-corriente de un resistor y de un LED, obtener la resistencia del resistor con la pendiente y decidir con evidencia cuál es óhmico; calcular la carga y la energía que entrega una pila; y medir la resistividad de un alambre a partir de su resistencia, su longitud y su área.",
+     "materiales": [
+      "Cuatro pilas AA de 1.5 V nuevas y un portapilas para cuatro con salidas intermedias, o cuatro portapilas sencillos conectados en serie",
+      "Dos multímetros digitales (uno como voltímetro y otro como amperímetro); si solo hay uno, se mide primero V y luego I",
+      "Un resistor de 330 Ω de 1/4 W o más",
+      "Un LED rojo de 5 mm",
+      "Resistores de 100 Ω, 220 Ω, 470 Ω, 1 kΩ y 10 kΩ (1/4 W) para limitar la corriente del LED",
+      "Cables con caimanes (unos seis) o una protoboard pequeña",
+      "2.2 m de alambre de nicromo de unos 0.3 mm de diámetro (tienda de electrónica): 1.2 m pegados rectos sobre una regla de 1 m con cinta, y 1 m aparte para enrollarlo en el lápiz",
+      "Un lápiz o un clavo grueso para enrollar el alambre y medir su diámetro",
+      "Papel milimetrado o computadora con hoja de cálculo, y calculadora científica"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) La docente muestra las escalas del multímetro: voltaje en corriente directa, escala de 20 V; corriente en corriente directa, escala de 200 mA (y de 2000 µA para corrientes muy pequeñas), con la punta roja en la entrada de mA. El voltímetro va en paralelo con el componente y el amperímetro en serie; el amperímetro nunca se conecta directo a las pilas.",
+      "2. (15 min) Conecten el resistor de 330 Ω en serie con el amperímetro a una, dos, tres y cuatro pilas. En cada caso midan el voltaje en los extremos del resistor y la corriente, y anótenlos en una tabla.",
+      "3. (20 min) Conecten el LED (la pata larga hacia el lado positivo) en serie con uno de los resistores limitadores y con el amperímetro, alimentados con dos pilas. Usen uno por uno los resistores de 10 kΩ, 1 kΩ, 470 Ω, 220 Ω y 100 Ω, y midan cada vez el voltaje en los extremos del LED y la corriente. Agreguen dos puntos más: el LED con una sola pila y 100 Ω, y el LED invertido con dos pilas y 100 Ω.",
+      "4. (10 min) Grafiquen I contra V (o V contra I) para el resistor y para el LED en los mismos ejes. Calculen la resistencia del resistor con la pendiente y comparen con su valor nominal. Respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "5. (10 min) Enrollen unas 40 vueltas juntas del metro de alambre aparte en el lápiz, midan el ancho total con la regla y divídanlo entre el número de vueltas para obtener el diámetro d. Calculen el área A = πd²/4.",
+      "6. (15 min) Pongan el multímetro como ohmímetro en la escala de 200 Ω. Junten las puntas y anoten la resistencia de los cables (hay que restarla). Midan la resistencia del alambre entre la punta y marcas a 0.20, 0.40, 0.60, 0.80 y 1.00 m, apretando bien los caimanes.",
+      "7. (10 min) Midan con el voltímetro el voltaje de las dos pilas sin carga (es casi su fuerza electromotriz) y la corriente del circuito del LED con 100 Ω. Calculen la carga que circularía en 1 h y la energía que entregarían las pilas en ese tiempo si la corriente no cambiara (Q = It, E = εQ).",
+      "8. (20 min) Grafiquen R contra L, calculen la pendiente y la resistividad ρ = pendiente × A, y compárenla con el valor del nicromo de la tabla de referencia. Respondan en grupo las preguntas de análisis 2, 3 y 4."
+     ],
+     "seguridad": [
+      "Solo se usan pilas (6 V como máximo). Nunca conecten cables, el multímetro ni el alambre a un tomacorriente de la red.",
+      "El amperímetro siempre va en serie con un resistor o con el LED y su resistor: si se conecta directo a las pilas, se quema su fusible y los cables se calientan.",
+      "No conecten el LED a las pilas sin un resistor limitador: se daña. No usen como limitador un resistor de menos de 100 Ω.",
+      "En el ohmímetro, el alambre se mide sin pilas conectadas. Las puntas del nicromo pinchan: doblen sus extremos o cúbranlos con cinta.",
+      "Las pilas usadas se guardan para llevarlas a un punto de reciclaje; no se tiran a la basura común ni se queman."
+     ],
+     "datos_esperados": "Paso 2: los puntos del resistor forman una recta que pasa por el origen, con corrientes de unos 4.5 a 18 mA; la pendiente V/I da un valor cercano a 330 Ω, dentro de la tolerancia que indican sus bandas de colores (por ejemplo ±5 %). El voltaje de las pilas en serie no es exactamente 1.5, 3.0, 4.5 y 6.0 V, por eso se mide en el resistor. Paso 3: con una sola pila o con el LED invertido la corriente es casi cero (centésimas de mA o menos). Con dos pilas, el voltaje del LED queda entre cerca de 1.7 V (con 10 kΩ, unas décimas de mA) y cerca de 2.0 V (con 100 Ω, unos 10 mA): la corriente crece muchísimo con un cambio pequeño de voltaje y la curva no es una recta. Paso 6: un alambre de nicromo de 0.3 mm tiene unas decenas de ohmios por metro (del orden de 15 Ω/m); R crece en proporción a L. La resistencia de los cables del multímetro suele estar entre 0.1 y 0.5 Ω. Medir el diámetro con 40 vueltas y una regla da un error de alrededor de 4 % en d y del doble en el área, así que una resistividad dentro de un 10 % del valor de referencia es un buen resultado. Paso 7: la fuerza electromotriz de dos pilas nuevas en serie es algo más de 3 V; con unos 10 mA, en 1 h circulan unos 36 C y se entregan cerca de 100 J.",
+     "analisis": [
+      "(Paso 4) ¿Cuál de los dos componentes cumple la ley de Ohm? Justifiquen con la forma de las gráficas y con el cociente V/I en dos puntos de cada uno. ¿Qué tanto se parece la pendiente del resistor a su valor nominal?",
+      "(Paso 8) ¿Por qué se resta la resistencia de los cables del ohmímetro? ¿La gráfica R contra L pasa por el origen después de restarla?",
+      "(Paso 8) ¿Qué tanto difiere su resistividad del valor de referencia del nicromo? ¿Qué medición aporta más error y por qué el área pesa el doble que el diámetro?",
+      "(Paso 8) Con la carga y la energía del paso 7, expliquen la diferencia entre la fuerza electromotriz de la fuente y la energía que entrega, y por qué en la práctica la corriente no se mantiene igual durante horas.",
+      "Tarea: Redacten el informe con las curvas V–I del resistor y del LED y el cálculo de la resistencia por la pendiente."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin nicromo: usen una mina de grafito de 0.7 mm de portaminas, de unos 6 cm, con caimanes en distintos puntos; su resistencia es de unos pocos a decenas de ohmios y la mina no es grafito puro (tiene arcilla), así que su resistividad sale mayor que la del grafito de tablas, lo que da una buena discusión. Con un solo multímetro: midan V e I por turnos sin desarmar el resto del circuito. Sin multímetro, sin laboratorio o sin internet: trabajen con estos datos de un grupo de ejemplo. Resistor: 1.49 V y 4.5 mA; 2.97 V y 9.0 mA; 4.45 V y 13.4 mA; 5.90 V y 17.9 mA. LED: con una pila, 1.55 V y 0.00 mA; invertido con dos pilas, −3.05 V y 0.00 mA; con dos pilas, 1.71 V y 0.13 mA; 1.80 V y 1.2 mA; 1.85 V y 2.4 mA; 1.90 V y 4.9 mA; 1.95 V y 9.7 mA. Nicromo de 0.30 mm: 3.1, 6.2, 9.3, 12.4 y 15.5 Ω a 0.20, 0.40, 0.60, 0.80 y 1.00 m, ya restados los cables. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET tiene pilas, resistores, voltímetro y amperímetro: sirve para practicar las conexiones y armar la tabla V–I de un resistor; no incluye LED ni dibuja la gráfica, así que la curva del LED se hace con los datos de ejemplo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U3-3.1-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ley-ohm",
+     "nombre": "Ley de Ohm",
+     "definicion": "En un conductor óhmico la corriente es proporcional al voltaje aplicado: V = IR.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.1-v3",
+     "grado": 11,
+     "indicador": "3.1. • Determina la resistencia de un conductor a partir de la pendiente de su curva voltaje-corriente y distingue un conductor óhmico de uno no óhmico. • Calcula la carga que circula y la energía que entrega una fuente a partir de su fuerza electromotriz, la corriente y el tiempo de funcionamiento. • Calcula la resistividad de un material a partir de mediciones de resistencia, longitud y área, y la compara con valores de referencia.",
+     "evidencia": "Informe de laboratorio con curvas voltaje-corriente del resistor y del LED y cálculo de la resistencia por pendiente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U3-3.1-v3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U3-3.1-v3/1",
+     "decision": "corregir",
+     "cambios": {
+      "variantes": "Sin nicromo: usen una mina de grafito de 0.7 mm de portaminas, de unos 6 cm, con caimanes en distintos puntos; su resistencia es de unos pocos a decenas de ohmios y la mina no es grafito puro (tiene arcilla), así que su resistividad sale mayor que la del grafito de tablas, lo que da una buena discusión. Con un solo multímetro: midan V e I por turnos sin desarmar el resto del circuito. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo. Resistor: 1.49 V y 4.5 mA; 2.97 V y 9.0 mA; 4.45 V y 13.4 mA; 5.90 V y 17.9 mA. LED: con una pila, 1.55 V y 0.00 mA; invertido con dos pilas, −3.05 V y 0.00 mA; con dos pilas, 1.71 V y 0.13 mA; 1.80 V y 1.2 mA; 1.85 V y 2.4 mA; 1.90 V y 4.9 mA; 1.95 V y 9.7 mA. Nicromo de 0.30 mm: 3.1, 6.2, 9.3, 12.4 y 15.5 Ω a 0.20, 0.40, 0.60, 0.80 y 1.00 m, ya restados los cables. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET tiene pilas, resistores, voltímetro y amperímetro: sirve para practicar las conexiones y armar la tabla V–I de un resistor; no incluye LED ni dibuja la gráfica, así que la curva del LED se hace con los datos de ejemplo."
+     },
+     "justificacion": "Cálculos verificados: 4.5–18 mA en 330 Ω (0.11 W); LED de 0.13 a ~10 mA; nicromo 0.3 mm ≈ 15.6 Ω/m; 36 C y ~110 J en 1 h; solo pilas. Único error: el dato de ejemplo «1.20 V y 0.00 mA» no sale de ningún punto del paso 3 (con una pila sin corriente el LED tiene casi 1.5 V). Se reemplaza por los dos puntos medidos.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "sin corriente no cae voltaje en el resistor: V_LED ≈ ε de la pila"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ρ_nicromo ≈ 1.1×10⁻⁶ Ω·m; A = 7.1×10⁻⁸ m²"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U3-3.1-v3/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Cuatro pilas AA de 1.5 V nuevas y un portapilas para cuatro con salidas intermedias, o cuatro portapilas sencillos conectados en serie",
+       "Dos multímetros digitales (uno como voltímetro y otro como amperímetro); si solo hay uno, se mide primero V y luego I",
+       "Un resistor de 330 Ω de 1/4 W o más",
+       "Un LED rojo de 5 mm",
+       "Resistores de 100 Ω, 220 Ω, 470 Ω, 1 kΩ y 10 kΩ (1/4 W) para limitar la corriente del LED",
+       "Cables con caimanes (unos seis) o una protoboard pequeña",
+       "2.2 m de alambre de nicromo de unos 0.3 mm de diámetro (tienda de electrónica): 1.2 m pegados rectos sobre una regla de 1 m con cinta, y 1 m aparte para enrollarlo en el lápiz",
+       "Un lápiz o un clavo grueso para enrollar el alambre y medir su diámetro",
+       "Papel milimetrado o computadora con hoja de cálculo, y calculadora científica"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (10 min) La docente muestra las escalas del multímetro: voltaje en corriente directa, escala de 20 V; corriente en corriente directa, escala de 200 mA (y de 2000 µA para corrientes muy pequeñas), con la punta roja en la entrada de mA. El voltímetro va en paralelo con el componente y el amperímetro en serie; el amperímetro nunca se conecta directo a las pilas.",
+       "2. (15 min) Conecten el resistor de 330 Ω en serie con el amperímetro a una, dos, tres y cuatro pilas. En cada caso midan el voltaje en los extremos del resistor y la corriente, y anótenlos en una tabla.",
+       "3. (20 min) Conecten el LED (la pata larga hacia el lado positivo) en serie con uno de los resistores limitadores y con el amperímetro, alimentados con dos pilas. Usen uno por uno los resistores de 10 kΩ, 1 kΩ, 470 Ω, 220 Ω y 100 Ω, y midan cada vez el voltaje en los extremos del LED y la corriente. Agreguen dos puntos más: el LED con una sola pila y 100 Ω, y el LED invertido con dos pilas y 100 Ω.",
+       "4. (10 min) Grafiquen I contra V (o V contra I) para el resistor y para el LED en los mismos ejes. Calculen la resistencia del resistor con la pendiente y comparen con su valor nominal. Respondan la pregunta de análisis 1.",
+       "Sesión 2 (55 min)",
+       "5. (10 min) Enrollen unas 40 vueltas juntas del metro de alambre aparte en el lápiz, midan el ancho total con la regla y divídanlo entre el número de vueltas para obtener el diámetro d. Calculen el área A = πd²/4.",
+       "6. (15 min) Pongan el multímetro como ohmímetro en la escala de 200 Ω. Junten las puntas y anoten la resistencia de los cables (hay que restarla). Midan la resistencia del alambre entre la punta y marcas a 0.20, 0.40, 0.60, 0.80 y 1.00 m, apretando bien los caimanes.",
+       "7. (10 min) Midan con el voltímetro el voltaje de las dos pilas sin carga (es casi su fuerza electromotriz) y la corriente del circuito del LED con 100 Ω. Calculen la carga que circularía en 1 h y la energía que entregarían las pilas en ese tiempo si la corriente no cambiara (Q = It, E = εQ).",
+       "8. (20 min) Grafiquen R contra L, calculen la pendiente y la resistividad ρ = pendiente × A, y compárenla con el valor del nicromo de la tabla de referencia. Respondan en grupo las preguntas de análisis 2, 3 y 4."
+      ],
+      "variantes": "Sin nicromo: usen una mina de grafito de 0.7 mm de portaminas, de unos 6 cm, con caimanes en distintos puntos; su resistencia es de unos pocos a decenas de ohmios y la mina no es grafito puro (tiene arcilla), así que su resistividad sale mayor que la del grafito de tablas, lo que da una buena discusión. Con un solo multímetro: midan V e I por turnos sin desarmar el resto del circuito. Sin multímetro, sin laboratorio o sin internet: trabajen con estos datos de un grupo de ejemplo. Resistor: 1.49 V y 4.5 mA; 2.97 V y 9.0 mA; 4.45 V y 13.4 mA; 5.90 V y 17.9 mA. LED: con una pila, 1.55 V y 0.00 mA; invertido con dos pilas, −3.05 V y 0.00 mA; con dos pilas, 1.71 V y 0.13 mA; 1.80 V y 1.2 mA; 1.85 V y 2.4 mA; 1.90 V y 4.9 mA; 1.95 V y 9.7 mA. Nicromo de 0.30 mm: 3.1, 6.2, 9.3, 12.4 y 15.5 Ω a 0.20, 0.40, 0.60, 0.80 y 1.00 m, ya restados los cables. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET tiene pilas, resistores, voltímetro y amperímetro: sirve para practicar las conexiones y armar la tabla V–I de un resistor; no incluye LED ni dibuja la gráfica, así que la curva del LED se hace con los datos de ejemplo."
+     },
+     "justificacion": "Materiales que no alcanzan: 40 vueltas en un lápiz de 7 mm piden casi 1 m de alambre y el sobrante de 1.2 m medidos hasta 1.00 m es de 20 cm. Se pide 1 m aparte. Se nombra la escuela sin multímetro en la variante de datos. Tiempos (55 + 55), solo pilas y física del experto intactos.",
+     "evidencia": [
+      {
+       "fuente": "EXP:G11-FIS-U3-3.1-v3/1",
+       "cita": "paso 5: 40 vueltas de un trozo sobrante; material: 1.2 m de nicromo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "40 × π × 7 mm ≈ 0.88 m de alambre"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "los materiales alcanzan para todos los pasos; alternativa sin multímetro"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U3-3.2/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U3-3.2/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U3-3.2"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U3-3.2",
+      "CON:fisica/ondas-mecanicas-tipos"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Rapidez de un pulso en una cuerda tensa: tensión, densidad lineal y modelo",
+     "proposito": "Medir la rapidez de pulsos transversales en una cuerda tensa con distintas tensiones y densidades lineales, compararla con la que predice v = √(T/μ) y calcular el porcentaje de error; antes, distinguir con un resorte una onda transversal de una longitudinal y ver que el medio oscila sin viajar con la onda.",
+     "materiales": [
+      "Dos cuerdas iguales de mecate o nylon de unos 8 a 12 mm de grosor y 12 m de largo",
+      "Balanza de cocina para pesar una de las cuerdas",
+      "Una balanza colgante de equipaje (digital) o un dinamómetro que llegue a 10 kg",
+      "Una columna, un árbol o un poste firme para amarrar un extremo",
+      "Cinta métrica de 10 m o más y cinta adhesiva de color",
+      "Celular con cámara (mejor si graba en cámara lenta) y una pila de cuadernos o un trípode",
+      "Un resorte largo de juguete (de los que bajan escaleras), si hay",
+      "Calculadora, papel milimetrado o computadora con hoja de cálculo"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (8 min) Midan el largo de una cuerda y pésenla. Calculen su densidad lineal μ = masa/longitud en kg/m.",
+      "2. (7 min) Con el resorte en el piso y una cinta en una espira del centro, una persona agita el extremo de lado (onda transversal) y luego lo empuja y jala a lo largo (onda longitudinal). Observen qué hace la cinta en cada caso y respondan la pregunta de análisis 1.",
+      "3. (10 min) Amarren un extremo de la cuerda a la columna. Enganchen la balanza al otro extremo, a la altura de la cintura. Peguen una marca de cinta a 1 m de la mano y midan la distancia D entre la marca y el nudo de la columna (unos 9 m). Coloquen el celular quieto, a unos 2 m de la cuerda, de modo que se vea la marca.",
+      "4. (20 min) Con la cuerda tensa a unos 15 N (la balanza marca unos 1.5 kg; la tensión es esa lectura en kg multiplicada por g, aproximado 9.8 m/s², de la tabla de referencia), den un golpe seco hacia un lado cerca de la mano y graben hasta que el pulso vuelva a la marca. Hagan dos videos y repitan con 30 N (unos 3.1 kg) y con 60 N (unos 6.1 kg).",
+      "5. (10 min) Junten las dos cuerdas lado a lado, unidas con cinta cada metro (la densidad lineal se duplica), y graben dos pulsos con 30 N.",
+      "Sesión 2 (55 min)",
+      "6. (20 min) En cada video, revisen cuántos cuadros por segundo graba la cámara, cuenten los cuadros entre el paso del pulso por la marca a la ida y a la vuelta, y calculen el tiempo. La rapidez medida es 2D dividido entre ese tiempo.",
+      "7. (10 min) Calculen la rapidez teórica √(T/μ) para cada caso y el porcentaje de error de la medida. Hagan la tabla de tensiones, densidades, rapideces medidas y teóricas.",
+      "8. (10 min) Grafiquen la rapidez medida contra √(T/μ). Si el modelo funciona, los puntos quedan cerca de una recta de pendiente 1 que pasa por el origen.",
+      "9. (15 min) En grupo, respondan las preguntas de análisis 2, 3 y 4."
+     ],
+     "seguridad": [
+      "Quien sostiene la balanza se para firme y tira de forma gradual, sin tirones; nadie se coloca detrás de esa persona ni sobre la cuerda. No pasen de 60 N.",
+      "Revisen el nudo de la columna antes de tensar: si se suelta, la cuerda puede latiguear. Suelten la tensión despacio al terminar.",
+      "Marquen la cuerda con una tela de color y hagan la actividad en el patio o un pasillo libre, para que nadie tropiece con ella.",
+      "Coloquen el celular fuera del recorrido de la cuerda."
+     ],
+     "datos_esperados": "Con una cuerda de unos 0.06 kg/m, la rapidez teórica es de unos 16 m/s con 15 N, 22 m/s con 30 N y 32 m/s con 60 N; con las dos cuerdas juntas y 30 N baja a unos 16 m/s (dividida entre √2). La ida y vuelta de 18 m dura entre 0.6 y 1.2 s. Grabando a 30 cuadros por segundo, un error de un cuadro en cada extremo da entre 5 % y 10 % de error en el tiempo, así que es razonable que la medida y la teoría difieran de 5 % a 10 %; con cámara lenta el error baja. Al cuadruplicar la tensión, la rapidez casi se duplica. Otras fuentes de error: la tensión cambia un poco mientras se da el golpe y la cuerda cuelga en el centro (con 15 N, varias decenas de centímetros). En el resorte, la cinta oscila de lado en la onda transversal y a lo largo en la longitudinal, y siempre regresa a su lugar.",
+     "analisis": [
+      "(Paso 2) ¿Qué hizo la cinta en la onda transversal y en la longitudinal? ¿Llegó la cinta al otro extremo? ¿Qué es entonces lo que viaja con la onda?",
+      "(Paso 9) ¿Cómo cambia la rapidez al cuadruplicar la tensión y al duplicar la densidad lineal? ¿Coincide con lo que predice v = √(T/μ)?",
+      "(Paso 9) ¿Qué porcentaje de error obtuvieron en cada caso? Comparen ese error con el que causa un cuadro de video de diferencia y decidan si el modelo se cumple dentro de su precisión.",
+      "(Paso 9) Clasifiquen como transversales o longitudinales: las ondas P y S de un sismo, una ola de estadio, el sonido y la onda en la cuerda. Justifiquen con la dirección en que oscila el medio.",
+      "Tarea: Con la relación de la rapidez del sonido con la temperatura del aire de la tabla de referencia, calculen la rapidez del sonido a 20 °C y a 35 °C y expliquen por qué en sólidos y líquidos suele ser mayor que en el aire, en términos de elasticidad y densidad."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin cuerda gruesa: un resorte largo de juguete estirado unos 5 m en el piso; los pulsos van a pocos metros por segundo y se miden bien con el cronómetro, aunque su tensión no se puede medir con la balanza. Sin balanza de equipaje: cuelguen de la cuerda, pasándola sobre una baranda lisa, un balde con agua de masa conocida (la fricción en la baranda baja un poco la tensión). Sin celular con cámara, sin laboratorio o sin internet: trabajen con estos datos de un grupo de ejemplo, con μ = 0.060 kg/m y 2D = 18.0 m: con 15 N, 1.20 s; con 30 N, 0.84 s; con 60 N, 0.58 s; con las dos cuerdas y 30 N, 1.18 s. Con internet: la simulación gratuita «Onda en una cuerda» de PhET permite enviar pulsos, cambiar la tensión entre baja y alta y medir con regla y cronómetro; sirve para ver la tendencia, pero no da la tensión en newtons.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U3-3.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-mecanicas-tipos",
+     "nombre": "Ondas mecánicas transversales y longitudinales",
+     "definicion": "Perturbaciones que transportan energía por un medio sin transportar materia; incluyen ondas sísmicas y en cuerdas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U3-3.2",
+     "grado": 11,
+     "indicador": "1.3. • Determina experimentalmente cómo influyen la tensión y la densidad lineal de una cuerda en la velocidad de la onda y compara el resultado con el teorico • Clasifica ondas mecánicas del entorno como transversales o longitudinales y explica que transportan energía sin transporte neto de materia. • Explica que cada punto de una onda periódica oscila con movimiento armónico simple y aplica la relación teorica de la velocidad de onda armonica para calcular magnitudes de la onda. • Explica la formación del sonido como una sucesión de compresiones y rarefacciones y relaciona su frecuencia con el tono percibido. • Calcula la velocidad del sonido en diferentes medios y temperaturas y explica su relación con la elasticidad y la densidad del medio.",
+     "evidencia": "Informe con tabla de tensiones, densidades y velocidades medidas y teóricas, y porcentaje de error"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U3-3.2/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U3-3.2/1",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: con μ = 0.06 kg/m, √(T/μ) da 15.8, 22.4 y 31.6 m/s y 15.8 m/s con doble cuerda; ida y vuelta de 18 m en 0.57–1.14 s; datos de ejemplo coherentes; flecha de ~0.5 m con 15 N. La balanza de equipaje basta: ±1 N en T da ~3 % en v, menos que el error de un cuadro (5–10 %), ya declarado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U3-3.2",
+       "cita": "tensión y densidad lineal frente a la velocidad, comparada con la teoría"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "flecha ≈ μgD²/(8T) ≈ 0.49 m con 15 N y 10 m"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U3-3.2/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (8 min) Midan el largo de una cuerda y pésenla. Calculen su densidad lineal μ = masa/longitud en kg/m.",
+       "2. (7 min) Con el resorte en el piso y una cinta en una espira del centro, una persona agita el extremo de lado (onda transversal) y luego lo empuja y jala a lo largo (onda longitudinal). Observen qué hace la cinta en cada caso y respondan la pregunta de análisis 1.",
+       "3. (10 min) Amarren un extremo de la cuerda a la columna. Enganchen la balanza al otro extremo, a la altura de la cintura. Peguen una marca de cinta a 1 m de la mano y midan la distancia D entre la marca y el nudo de la columna (unos 9 m). Coloquen el celular quieto, a unos 2 m de la cuerda, de modo que se vea la marca.",
+       "4. (20 min) Con la cuerda tensa a unos 15 N (la balanza marca unos 1.5 kg; la tensión es esa lectura en kg multiplicada por g, aproximado 9.8 m/s², de la tabla de referencia), den un golpe seco hacia un lado cerca de la mano y graben hasta que el pulso vuelva a la marca. Hagan dos videos y repitan con 30 N (unos 3.1 kg) y con 60 N (unos 6.1 kg).",
+       "5. (10 min) Junten las dos cuerdas lado a lado, unidas con cinta cada metro (la densidad lineal se duplica), y graben dos pulsos con 30 N.",
+       "Sesión 2 (55 min)",
+       "6. (20 min) En cada video, revisen cuántos cuadros por segundo graba la cámara, cuenten los cuadros entre el paso del pulso por la marca a la ida y a la vuelta, y calculen el tiempo. La rapidez medida es 2D dividido entre ese tiempo.",
+       "7. (10 min) Calculen la rapidez teórica √(T/μ) para cada caso y el porcentaje de error de la medida. Hagan la tabla de tensiones, densidades, rapideces medidas y teóricas.",
+       "8. (10 min) Grafiquen la rapidez medida contra √(T/μ). Si el modelo funciona, los puntos quedan cerca de una recta de pendiente 1 que pasa por el origen.",
+       "9. (15 min) En grupo, respondan las preguntas de análisis 2, 3 y 4."
+      ],
+      "variantes": "Sin cuerda gruesa: un resorte largo de juguete estirado unos 5 m en el piso; los pulsos van a pocos metros por segundo y se miden bien con el cronómetro, aunque su tensión no se puede medir con la balanza. Sin balanza de equipaje: cuelguen de la cuerda, pasándola sobre una baranda lisa, un balde con agua de masa conocida (la fricción en la baranda baja un poco la tensión). Sin celular con cámara, sin laboratorio o sin internet: trabajen con estos datos de un grupo de ejemplo, con μ = 0.060 kg/m y 2D = 18.0 m: con 15 N, 1.20 s; con 30 N, 0.84 s; con 60 N, 0.58 s; con las dos cuerdas y 30 N, 1.18 s. Con internet: la simulación gratuita «Onda en una cuerda» de PhET permite enviar pulsos, cambiar la tensión entre baja y alta y medir con regla y cronómetro; sirve para ver la tendencia, pero no da la tensión en newtons."
+     },
+     "justificacion": "Andamiaje: la balanza de equipaje marca kg y el paso pedía newtons; se dan las lecturas equivalentes para no sumar una conversión al montaje en el patio. La medición depende del video y no había alternativa explícita sin celular. Tiempos (55 + 55), seguridad y física del experto intactos.",
+     "evidencia": [
+      {
+       "fuente": "EXP:G11-FIS-U3-3.2/1",
+       "cita": "paso 4: tensión en N leída en una balanza en kg"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: una idea por paso; inclusión sin celular"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U4-4.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U4-4.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U4-4.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U4-4.3",
+      "CON:fisica/tono-volumen-sonido"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Decibelios en la escuela: inverso del cuadrado, mapa de ruido y efecto Doppler",
+     "proposito": "Medir con sonómetros de celular cómo baja el nivel sonoro al alejarse de una fuente y compararlo con la ley del inverso del cuadrado; elaborar el mapa de niveles sonoros de la escuela con propuestas para reducir el ruido; y registrar el cambio de frecuencia de un tono que se acerca y se aleja para calcular la rapidez de la fuente con el efecto Doppler.",
+     "materiales": [
+      "Un parlante portátil con batería (bluetooth o de computadora con power bank)",
+      "Celulares con una aplicación gratuita de sonómetro, una de generador de tonos y una de espectro de audio (por ejemplo, phyphox), uno por grupo, y un audio de ruido rosa o blanco descargado o generado antes con Audacity (menú Generar)",
+      "Cinta métrica y tiza o cinta adhesiva para marcar distancias en el piso",
+      "Un banco o silla para el parlante",
+      "Plano sencillo de la escuela dibujado a mano",
+      "Una bicicleta con casco y un cronómetro (sin casco, usen la variante de trotar)",
+      "Computadora con el programa gratuito Audacity (opcional, para ver el espectrograma)",
+      "Calculadora científica"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (10 min) Coloquen todos los celulares juntos frente al parlante con el ruido rosa a volumen moderado y anoten lo que marca cada uno: las aplicaciones no están calibradas y pueden diferir varios decibelios. Desde ahora, cada grupo compara solo medidas de su mismo celular. Anoten también el nivel del ruido de fondo con el parlante apagado.",
+      "2. (20 min) En la cancha, lejos de paredes, pongan el parlante en el banco con el ruido rosa (no un tono puro: un tono se suma con su reflexión en el suelo y deja zonas fuertes y débiles que falsean la caída) y ajusten el volumen para que el celular marque unos 80 dB a 0.25 m. Midan el nivel a 0.25, 0.5, 1.0 y 2.0 m, a la altura del parlante, tres veces cada uno. Verifiquen que a 2.0 m el nivel quede al menos 10 dB por encima del ruido de fondo; si no, repitan en un momento más silencioso.",
+      "3. (15 min) Cada grupo mide en dos o tres lugares asignados (aula con clase, pasillo, cafetín, biblioteca, el portón que da a la calle, desde adentro) durante un minuto y anota el nivel típico y el máximo, la hora y la fuente principal del ruido.",
+      "4. (10 min) Escriban los niveles en el plano de la escuela. Con los datos del paso 2, calculen cuántos decibelios bajó el nivel cada vez que se duplicó la distancia y respondan la pregunta de análisis 1.",
+      "Sesión 2 (55 min)",
+      "5. (10 min) En la cancha vacía, marquen una recta de 20 m con el punto medio señalado. Una persona con el celular grabador se para a 2 m del punto medio, a un lado de la recta. Peguen el parlante al manubrio de la bicicleta con un tono de 3000 Hz.",
+      "6. (15 min) Una persona del grupo con casco recorre la recta en bicicleta a rapidez moderada y constante, sin pedalear fuerte, mientras el celular graba el sonido. Midan con el cronómetro el tiempo que tarda en recorrer los 20 m. Hagan tres pasadas.",
+      "7. (15 min) En el espectro de audio de la aplicación, o en el espectrograma de Audacity con una ventana de 8192 muestras o más (resolución de unos 5 Hz), lean la frecuencia mientras la bicicleta se acerca (fa) y mientras se aleja (fr). Calculen la rapidez de la bicicleta con v = c·(fa − fr)/(fa + fr), con c de la tabla de referencia para la temperatura del día (aproximado, unos 347 m/s en un patio a 27 °C), y compárenla con la del cronómetro.",
+      "8. (15 min) En grupo, respondan las preguntas de análisis 2, 3 y 4."
+     ],
+     "seguridad": [
+      "El ruido rosa y el tono se ponen a volumen moderado: nadie acerca el oído al parlante; si el sonómetro marca más de 85 dB a la distancia de quien escucha, bajen el volumen.",
+      "La bicicleta circula a baja velocidad en la cancha vacía y solo con casco, y nadie cruza la recta mientras pasa; quien graba se queda a 2 m de la recta, nunca sobre ella.",
+      "Las mediciones junto a la calle se hacen desde adentro del portón, sin salir de la escuela.",
+      "El parlante va bien sujeto con cinta para que no caiga mientras la bicicleta se mueve.",
+      "Graben solo el sonido de las pasadas; si se oyen voces de personas, borren los audios al terminar el análisis."
+     ],
+     "datos_esperados": "Paso 1: celulares distintos pueden diferir 3 a 10 dB ante el mismo sonido; por eso solo se comparan diferencias medidas con el mismo celular. Paso 2: el nivel baja unos 6 dB cada vez que la distancia se duplica (la intensidad baja a la cuarta parte): por ejemplo, 80, 74, 68 y 62 dB. Con ruido rosa, las reflexiones en el suelo y el viento pueden hacer que la caída sea de 4 a 7 dB, y lecturas repetidas varían 1 o 2 dB. Paso 3: un aula en silencio suele marcar entre 35 y 45 dB, un aula con clase o un pasillo con estudiantes de 60 a 75 dB, y el portón junto a una calle con tráfico de 65 a 80 dB, según la hora. Pasos 6 y 7: a unos 4 m/s, un tono de 3000 Hz se percibe cerca de 3035 Hz al acercarse y cerca de 2965 Hz al alejarse, unos 70 Hz de diferencia, que se ven como un escalón en el espectrograma si la resolución es de unos 10 Hz o mejor; con la resolución por defecto de algunas aplicaciones (20 a 50 Hz) el escalón no se mide bien. La rapidez calculada con el efecto Doppler debería quedar a menos de un 20 % de la del cronómetro.",
+     "analisis": [
+      "(Paso 4) ¿Cuántos decibelios bajó el nivel cada vez que duplicaron la distancia? ¿Coincide con lo que predice I = P/(4πr²)? ¿Qué parte de la diferencia se debe al suelo, al viento o al error de lectura?",
+      "(Paso 8) Comparen dos lugares de su mapa que difieran unos 20 dB: ¿cuántas veces mayor es la intensidad en el más ruidoso? ¿Por qué no se oye 100 veces más fuerte?",
+      "(Paso 8) ¿El tono percibido cambió de golpe al pasar la bicicleta o poco a poco mientras se acercaba? Expliquen con un dibujo de frentes de onda y comparen la rapidez del efecto Doppler con la del cronómetro.",
+      "(Paso 8) Propongan dos medidas para reducir el ruido en el lugar más ruidoso de la escuela y justifiquen cada una con la intensidad, la distancia o la absorción.",
+      "Tarea: Con las curvas de igual sonoridad (de Fletcher y Munson) de su libro o de la tabla de referencia, expliquen por qué un tono de 100 Hz necesita más decibelios que uno de 3000 Hz para oírse igual de fuerte, y qué implica eso para proteger la audición."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin celulares suficientes: un solo celular que pase de grupo en grupo para el mapa, y el resto con los datos de ejemplo. Sin bicicleta o sin casco: una persona que trota con el parlante en la mano; a unos 3 m/s la diferencia entre acercarse y alejarse es de unos 50 Hz con un tono de 3000 Hz, todavía visible en el espectro. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: a 0.25, 0.5, 1.0 y 2.0 m del parlante, 80, 75, 68 y 63 dB; aula en silencio, 42 dB; aula con clase, 68 dB; cafetín en el recreo, 78 dB; portón a la calle, 74 dB; bicicleta que recorre 20 m en 5.0 s con fa = 3036 Hz y fr = 2966 Hz. Con internet: la simulación gratuita «Interferencia de ondas» de PhET muestra los frentes de onda del sonido, pero no mueve la fuente; para el efecto Doppler, la docente puede buscar y revisar antes una animación de frentes de onda de una fuente en movimiento.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U4-4.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tono-volumen-sonido",
+     "nombre": "Características del sonido: tono, intensidad y eco",
+     "definicion": "Los sonidos son agudos o graves, fuertes o suaves, y se reflejan produciendo eco.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U4-4.3",
+     "grado": 11,
+     "indicador": "1.4. • Calcula niveles de intensidad sonora con β = 10 log(I/I₀) y compara intensidades de fuentes que difieren en un número dado de decibelios. • Calcula la intensidad sonora a distintas distancias de una fuente con I = P/(4πr²) y la compara con el umbral de audición y el umbral de dolor. • Calcula la frecuencia percibida por un observador cuando la fuente o el observador se mueven y explica el efecto Doppler con frentes de onda. • Interpreta las curvas de Fletcher-Munson para explicar la diferente sensibilidad del oído según la frecuencia y argumenta medidas de protección auditiva.",
+     "evidencia": "Mapa de niveles sonoros de la escuela con cálculos en decibelios y propuestas de reducción de ruido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U4-4.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U4-4.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Un parlante portátil con batería (bluetooth o de computadora con power bank)",
+       "Celulares con una aplicación gratuita de sonómetro, una de generador de tonos y una de espectro de audio (por ejemplo, phyphox), uno por grupo, y un audio de ruido rosa o blanco descargado o generado antes con Audacity (menú Generar)",
+       "Cinta métrica y tiza o cinta adhesiva para marcar distancias en el piso",
+       "Un banco o silla para el parlante",
+       "Plano sencillo de la escuela dibujado a mano",
+       "Una bicicleta, un casco si hay, y un cronómetro",
+       "Computadora con el programa gratuito Audacity (opcional, para ver el espectrograma)",
+       "Calculadora científica"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (10 min) Coloquen todos los celulares juntos frente al parlante con el ruido rosa a volumen moderado y anoten lo que marca cada uno: las aplicaciones no están calibradas y pueden diferir varios decibelios. Desde ahora, cada grupo compara solo medidas de su mismo celular. Anoten también el nivel del ruido de fondo con el parlante apagado.",
+       "2. (20 min) En la cancha, lejos de paredes, pongan el parlante en el banco con el ruido rosa (no un tono puro: un tono se suma con su reflexión en el suelo y deja zonas fuertes y débiles que falsean la caída) y ajusten el volumen para que el celular marque unos 80 dB a 0.25 m. Midan el nivel a 0.25, 0.5, 1.0 y 2.0 m, a la altura del parlante, tres veces cada uno. Verifiquen que a 2.0 m el nivel quede al menos 10 dB por encima del ruido de fondo; si no, repitan en un momento más silencioso.",
+       "3. (15 min) Cada grupo mide en dos o tres lugares asignados (aula con clase, pasillo, cafetín, biblioteca, el portón que da a la calle, desde adentro) durante un minuto y anota el nivel típico y el máximo, la hora y la fuente principal del ruido.",
+       "4. (10 min) Escriban los niveles en el plano de la escuela. Con los datos del paso 2, calculen cuántos decibelios bajó el nivel cada vez que se duplicó la distancia y respondan la pregunta de análisis 1.",
+       "Sesión 2 (55 min)",
+       "5. (10 min) En la cancha vacía, marquen una recta de 20 m con el punto medio señalado. Una persona con el celular grabador se para a 2 m del punto medio, a un lado de la recta. Peguen el parlante al manubrio de la bicicleta con un tono de 3000 Hz.",
+       "6. (15 min) Una persona del grupo con casco recorre la recta en bicicleta a rapidez moderada y constante, sin pedalear fuerte, mientras el celular graba el sonido. Midan con el cronómetro el tiempo que tarda en recorrer los 20 m. Hagan tres pasadas.",
+       "7. (15 min) En el espectro de audio de la aplicación, o en el espectrograma de Audacity con una ventana de 8192 muestras o más (resolución de unos 5 Hz), lean la frecuencia mientras la bicicleta se acerca (fa) y mientras se aleja (fr). Calculen la rapidez de la bicicleta con v = c·(fa − fr)/(fa + fr), con c de la tabla de referencia (aproximado, 343 m/s a 20 °C), y compárenla con la del cronómetro.",
+       "8. (15 min) En grupo, respondan las preguntas de análisis 2, 3 y 4."
+      ],
+      "seguridad": [
+       "El tono se pone a volumen moderado: nadie acerca el oído al parlante; si el sonómetro marca más de 85 dB a la distancia de quien escucha, bajen el volumen.",
+       "La bicicleta circula a baja velocidad en la cancha vacía, con casco si hay, y nadie cruza la recta mientras pasa; quien graba se queda a 2 m de la recta, nunca sobre ella.",
+       "Las mediciones junto a la calle se hacen desde adentro del portón, sin salir de la escuela.",
+       "El parlante va bien sujeto con cinta para que no caiga mientras la bicicleta se mueve."
+      ],
+      "datos_esperados": "Paso 1: celulares distintos pueden diferir 3 a 10 dB ante el mismo sonido; por eso solo se comparan diferencias medidas con el mismo celular. Paso 2: el nivel baja unos 6 dB cada vez que la distancia se duplica (la intensidad baja a la cuarta parte): por ejemplo, 80, 74, 68 y 62 dB. Con ruido rosa, las reflexiones en el suelo y el viento pueden hacer que la caída sea de 4 a 7 dB, y lecturas repetidas varían 1 o 2 dB. Paso 3: un aula en silencio suele marcar entre 35 y 45 dB, un aula con clase o un pasillo con estudiantes de 60 a 75 dB, y el portón junto a una calle con tráfico de 65 a 80 dB, según la hora. Pasos 6 y 7: a unos 4 m/s, un tono de 3000 Hz se percibe cerca de 3035 Hz al acercarse y cerca de 2965 Hz al alejarse, unos 70 Hz de diferencia, que se ven como un escalón en el espectrograma si la resolución es de unos 10 Hz o mejor; con la resolución por defecto de algunas aplicaciones (20 a 50 Hz) el escalón no se mide bien. La rapidez calculada con el efecto Doppler debería quedar a menos de un 20 % de la del cronómetro."
+     },
+     "justificacion": "Doppler verificado: a 4 m/s, 3035 y 2965 Hz; fórmula correcta; datos de ejemplo coherentes. Fallas de montaje: con tono puro de 1000 Hz y parlante a ~0.45 m del suelo, a 2 m la reflexión llega ~0.56 λ tarde e interfiere destructivamente, falseando el −6 dB; se usa ruido rosa. El escalón de 70 Hz exige resolución ≤10 Hz; observador a 2 m por seguridad.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U4-4.3",
+       "cita": "intensidad con I = P/(4πr²) y frecuencia percibida con efecto Doppler"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a 2 m: camino reflejado √(4+0.81) ≈ 2.19 m, diferencia 0.19 m ≈ 0.56 λ a 1000 Hz"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U4-4.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Un parlante portátil con batería (bluetooth o de computadora con power bank)",
+       "Celulares con una aplicación gratuita de sonómetro, una de generador de tonos y una de espectro de audio (por ejemplo, phyphox), uno por grupo, y un audio de ruido rosa o blanco descargado o generado antes con Audacity (menú Generar)",
+       "Cinta métrica y tiza o cinta adhesiva para marcar distancias en el piso",
+       "Un banco o silla para el parlante",
+       "Plano sencillo de la escuela dibujado a mano",
+       "Una bicicleta con casco y un cronómetro (sin casco, usen la variante de trotar)",
+       "Computadora con el programa gratuito Audacity (opcional, para ver el espectrograma)",
+       "Calculadora científica"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (10 min) Coloquen todos los celulares juntos frente al parlante con el ruido rosa a volumen moderado y anoten lo que marca cada uno: las aplicaciones no están calibradas y pueden diferir varios decibelios. Desde ahora, cada grupo compara solo medidas de su mismo celular. Anoten también el nivel del ruido de fondo con el parlante apagado.",
+       "2. (20 min) En la cancha, lejos de paredes, pongan el parlante en el banco con el ruido rosa (no un tono puro: un tono se suma con su reflexión en el suelo y deja zonas fuertes y débiles que falsean la caída) y ajusten el volumen para que el celular marque unos 80 dB a 0.25 m. Midan el nivel a 0.25, 0.5, 1.0 y 2.0 m, a la altura del parlante, tres veces cada uno. Verifiquen que a 2.0 m el nivel quede al menos 10 dB por encima del ruido de fondo; si no, repitan en un momento más silencioso.",
+       "3. (15 min) Cada grupo mide en dos o tres lugares asignados (aula con clase, pasillo, cafetín, biblioteca, el portón que da a la calle, desde adentro) durante un minuto y anota el nivel típico y el máximo, la hora y la fuente principal del ruido.",
+       "4. (10 min) Escriban los niveles en el plano de la escuela. Con los datos del paso 2, calculen cuántos decibelios bajó el nivel cada vez que se duplicó la distancia y respondan la pregunta de análisis 1.",
+       "Sesión 2 (55 min)",
+       "5. (10 min) En la cancha vacía, marquen una recta de 20 m con el punto medio señalado. Una persona con el celular grabador se para a 2 m del punto medio, a un lado de la recta. Peguen el parlante al manubrio de la bicicleta con un tono de 3000 Hz.",
+       "6. (15 min) Una persona del grupo con casco recorre la recta en bicicleta a rapidez moderada y constante, sin pedalear fuerte, mientras el celular graba el sonido. Midan con el cronómetro el tiempo que tarda en recorrer los 20 m. Hagan tres pasadas.",
+       "7. (15 min) En el espectro de audio de la aplicación, o en el espectrograma de Audacity con una ventana de 8192 muestras o más (resolución de unos 5 Hz), lean la frecuencia mientras la bicicleta se acerca (fa) y mientras se aleja (fr). Calculen la rapidez de la bicicleta con v = c·(fa − fr)/(fa + fr), con c de la tabla de referencia para la temperatura del día (aproximado, unos 347 m/s en un patio a 27 °C), y compárenla con la del cronómetro.",
+       "8. (15 min) En grupo, respondan las preguntas de análisis 2, 3 y 4."
+      ],
+      "seguridad": [
+       "El ruido rosa y el tono se ponen a volumen moderado: nadie acerca el oído al parlante; si el sonómetro marca más de 85 dB a la distancia de quien escucha, bajen el volumen.",
+       "La bicicleta circula a baja velocidad en la cancha vacía y solo con casco, y nadie cruza la recta mientras pasa; quien graba se queda a 2 m de la recta, nunca sobre ella.",
+       "Las mediciones junto a la calle se hacen desde adentro del portón, sin salir de la escuela.",
+       "El parlante va bien sujeto con cinta para que no caiga mientras la bicicleta se mueve.",
+       "Graben solo el sonido de las pasadas; si se oyen voces de personas, borren los audios al terminar el análisis."
+      ],
+      "variantes": "Sin celulares suficientes: un solo celular que pase de grupo en grupo para el mapa, y el resto con los datos de ejemplo. Sin bicicleta o sin casco: una persona que trota con el parlante en la mano; a unos 3 m/s la diferencia entre acercarse y alejarse es de unos 50 Hz con un tono de 3000 Hz, todavía visible en el espectro. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: a 0.25, 0.5, 1.0 y 2.0 m del parlante, 80, 75, 68 y 63 dB; aula en silencio, 42 dB; aula con clase, 68 dB; cafetín en el recreo, 78 dB; portón a la calle, 74 dB; bicicleta que recorre 20 m en 5.0 s con fa = 3036 Hz y fr = 2966 Hz. Con internet: la simulación gratuita «Interferencia de ondas» de PhET muestra los frentes de onda del sonido, pero no mueve la fuente; para el efecto Doppler, la docente puede buscar y revisar antes una animación de frentes de onda de una fuente en movimiento."
+     },
+     "justificacion": "Seguridad: la bicicleta con casco «si hay» deja rodar sin protección; sin casco se usa la variante de trotar. 343 m/s (20 °C) no es la condición de un patio salvadoreño; se pide c a la temperatura del día (≈347 m/s), y el resultado de ejemplo sigue cerca de 4 m/s. Mínima recolección de audio. Tiempos 55 + 55 correctos.",
+     "evidencia": [
+      {
+       "fuente": "prompts/redactar_actividades.md",
+       "cita": "aula de 25–30 °C: rapidez del sonido ≈ 346–349 m/s, no 340"
+      },
+      {
+       "fuente": "EXP:G11-FIS-U4-4.3/1",
+       "cita": "material: un casco si hay; paso 7: 343 m/s a 20 °C"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "seguridad de menores en bicicleta y mínima recolección de grabaciones"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U5-5.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U5-5.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.4",
+      "CON:fisica/superposicion-interferencia"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Superposición de pulsos, pulsaciones, difracción e interferencia de dos parlantes",
+     "proposito": "Observar cómo se suman dos pulsos que se cruzan; medir la frecuencia de pulsación de dos tonos cercanos y compararla con su diferencia de frecuencias; ver cómo la abertura frente a la longitud de onda decide la difracción; y localizar los mínimos de interferencia de dos parlantes para calcular la longitud de onda del sonido con la diferencia de camino.",
+     "materiales": [
+      "Un resorte largo de juguete o una cuerda de unos 5 m",
+      "Dos celulares con una aplicación de generador de tonos (por ejemplo, phyphox) y un cronómetro",
+      "Un refractario de vidrio transparente de 35 cm o más de largo, agua, una hoja blanca, la linterna de un celular, una regla y plastilina (sin refractario, una bandeja de horno: ver variantes)",
+      "Dos parlantes de computadora (un par estéreo) alimentados por USB desde una laptop o un power bank, con el mismo tono en los dos canales",
+      "Cinta métrica de 10 m, tiza o cinta adhesiva",
+      "Celular con una aplicación de sonómetro (opcional; el oído también sirve)",
+      "Calculadora"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (12 min) Dos personas, en los extremos del resorte estirado en el piso, envían a la vez un pulso cada una: primero los dos hacia el mismo lado y luego hacia lados opuestos. Graben con el celular y dibujen la forma del resorte justo antes, durante y después del cruce.",
+      "2. (15 min) Pongan un celular a 440 Hz y otro a 443 Hz, uno junto al otro y con volumen parecido. Cuenten las pulsaciones durante 10 s, dos veces. Repitan con 440 Hz y 445 Hz.",
+      "3. (13 min) Pongan de 0.5 a 1 cm de agua en el refractario, sobre la hoja blanca, y alumbren desde arriba con la linterna. Golpeen el agua con la regla a un ritmo constante (3 o 4 golpes por segundo) para producir ondas rectas y midan sobre la hoja la distancia entre dos sombras de crestas (λ). Con la plastilina hagan una barrera con una abertura de unos 2 cm y observen las ondas al otro lado; repitan con una abertura de unos 20 cm (o lo más ancha que permita el refractario).",
+      "4. (15 min) En grupo, respondan las preguntas de análisis 1, 2 y 3.",
+      "Sesión 2 (55 min)",
+      "5. (10 min) En la cancha, lejos de paredes, coloquen los dos parlantes sobre un banco, separados 1.0 m y mirando en la misma dirección. Pongan un tono de 1000 Hz con el mismo volumen en ambos. Marquen con tiza una línea paralela a los parlantes, a 4.0 m de ellos.",
+      "6. (25 min) Una persona camina despacio por la línea con un oído tapado (o con el sonómetro a la altura de los parlantes) y el grupo marca con tiza los puntos donde el sonido se debilita claramente. Para cada marca midan con la cinta su distancia a cada parlante.",
+      "7. (10 min) Calculen la diferencia de camino de cada mínimo. Usen la condición de interferencia destructiva para obtener la longitud de onda y compárenla con c/f, con c de la tabla de referencia para la temperatura del día (aproximado, unos 347 m/s en un patio a 27 °C).",
+      "8. (10 min) En grupo, respondan las preguntas de análisis 4 y 5."
+     ],
+     "seguridad": [
+      "Volumen moderado en los tonos: nadie acerca el oído a menos de 1 m de los parlantes y se apagan entre mediciones.",
+      "Solo parlantes alimentados por USB o batería; nada se conecta a la red de 120 V en la cancha.",
+      "El agua del refractario se maneja lejos de la laptop y de los celulares conectados; sequen lo que se derrame.",
+      "El refractario de vidrio se apoya en una mesa firme; si se quiebra, la docente recoge los trozos."
+     ],
+     "datos_esperados": "Paso 1: mientras los pulsos se cruzan, el desplazamiento del resorte es la suma de los dos: el doble si van del mismo lado y casi cero si van de lados opuestos; después cada pulso sigue con su forma original. Paso 2: con 440 y 443 Hz se cuentan unas 30 pulsaciones en 10 s (3 por segundo); con 440 y 445 Hz, unas 50. Paso 3: golpeando a mano, la longitud de onda en el agua queda de unos 5 a 10 cm. Con la abertura de 2 cm, menor que λ, las ondas salen en semicírculos; con 20 cm (unas dos a cuatro λ) el frente sale recto en el centro y se curva solo cerca de los bordes. El contraste se nota, pero no es tan nítido como en los libros, porque la abertura ancha solo mide unas pocas λ; la simulación permite ver el caso de abertura mucho mayor que λ. Paso 6: a 1000 Hz la longitud de onda es de unos 0.34 m; con los parlantes a 1.0 m y la línea a 4.0 m, los primeros mínimos quedan a unos 0.7 m a cada lado del centro y los siguientes, a unos 2.4 m del centro. Las diferencias de camino deberían ser cercanas a 0.17 y 0.51 m, y la longitud de onda calculada, quedar dentro de un 10 % de c/f. Los mínimos no son silencio total, por las reflexiones en el suelo y porque los parlantes no suenan exactamente igual. Si en el centro de la línea hay un mínimo en vez de un máximo, un parlante tiene la polaridad invertida.",
+     "analisis": [
+      "(Paso 4) Dibujen la forma del resorte durante y después del cruce en los dos casos. Cuando los pulsos opuestos se anularon, ¿desaparecieron? ¿Cómo lo saben?",
+      "(Paso 4) ¿Coincide la frecuencia de pulsación medida con la diferencia de frecuencias de los celulares? ¿Cómo usaría alguien que afina una guitarra este fenómeno?",
+      "(Paso 4) ¿Qué abertura produjo la difracción más ancha y por qué? Usen la longitud de onda que midieron en el agua.",
+      "(Paso 8) ¿Qué longitud de onda obtuvieron con los mínimos y qué tanto difiere de c/f? ¿Qué medición aporta más error?",
+      "(Paso 8) ¿Por qué el sonido de un aula se oye desde el pasillo aunque la puerta esté entreabierta, pero no se ve lo que pasa adentro? Usen la relación entre longitud de onda y abertura.",
+      "Tarea: Dibujen el esquema del montaje con las posiciones medidas de los máximos y mínimos y el cálculo de la longitud de onda."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin resorte: una cuerda larga en el piso o una fila de estudiantes que se pasan un empujón por los hombros. Sin parlantes de computadora: dos celulares con el mismo tono no sirven para la interferencia estable, porque sus frecuencias nunca son idénticas (se oyen pulsaciones); hace falta una sola fuente con dos parlantes. Sin refractario: una bandeja de horno con agua, observando las ondas con luz rasante. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: pulsaciones contadas en 10 s, 29 y 31 con 440 y 443 Hz, 49 y 50 con 440 y 445 Hz; mínimos de los parlantes con distancias de 4.18 y 4.01 m, 4.00 y 4.17 m, 4.95 y 4.44 m. Con internet: la simulación gratuita «Interferencia de ondas» de PhET tiene una pantalla de sonido con dos fuentes cuya separación y frecuencia se ajustan, y una pantalla de rendija para la difracción en agua; sirve para comparar con lo medido.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/superposicion-interferencia",
+     "nombre": "Superposición e interferencia de ondas",
+     "definicion": "Ondas que coinciden se suman, produciendo interferencia constructiva o destructiva y pulsaciones.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.4",
+     "grado": 11,
+     "indicador": "1.5. • Determina las condiciones de interferencia constructiva y destructiva de dos fuentes sonoras coherentes a partir de la diferencia de camino y la longitud de onda. • Construye gráficamente la forma resultante de dos pulsos superpuestos en distintos instantes aplicando el principio de superposición lineal. • Explica cómo la relación entre la longitud de onda y el tamaño de la abertura determina si una onda mecánica se difracta de forma estrecha o ancha. • Calcula la frecuencia de pulsación entre dos tonos cercanos con y explica su uso en la afinación de instrumentos musicales.",
+     "evidencia": "Esquema del montaje con posiciones de máximos y mínimos medidas y cálculo de la longitud de onda"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U5-5.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U5-5.4/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Un resorte largo de juguete o una cuerda de unos 5 m",
+       "Dos celulares con una aplicación de generador de tonos (por ejemplo, phyphox) y un cronómetro",
+       "Una bandeja de horno grande o un refractario de vidrio de 35 cm o más de largo, agua, una hoja blanca, la linterna de un celular, una regla y plastilina",
+       "Dos parlantes de computadora (un par estéreo) alimentados por USB desde una laptop o un power bank, con el mismo tono en los dos canales",
+       "Cinta métrica de 10 m, tiza o cinta adhesiva",
+       "Celular con una aplicación de sonómetro (opcional; el oído también sirve)",
+       "Calculadora"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (12 min) Dos personas, en los extremos del resorte estirado en el piso, envían a la vez un pulso cada una: primero los dos hacia el mismo lado y luego hacia lados opuestos. Graben con el celular y dibujen la forma del resorte justo antes, durante y después del cruce.",
+       "2. (15 min) Pongan un celular a 440 Hz y otro a 443 Hz, uno junto al otro y con volumen parecido. Cuenten las pulsaciones durante 10 s, dos veces. Repitan con 440 Hz y 445 Hz.",
+       "3. (13 min) Pongan de 0.5 a 1 cm de agua en la bandeja sobre la hoja blanca y alumbren desde arriba con la linterna. Golpeen el agua con la regla a un ritmo constante (3 o 4 golpes por segundo) para producir ondas rectas y midan sobre la hoja la distancia entre dos sombras de crestas (λ). Con la plastilina hagan una barrera con una abertura de unos 2 cm y observen las ondas al otro lado; repitan con una abertura de unos 20 cm (o lo más ancha que permita la bandeja).",
+       "4. (15 min) En grupo, respondan las preguntas de análisis 1 y 2.",
+       "Sesión 2 (55 min)",
+       "5. (10 min) En la cancha, lejos de paredes, coloquen los dos parlantes sobre un banco, separados 1.0 m y mirando en la misma dirección. Pongan un tono de 1000 Hz con el mismo volumen en ambos. Marquen con tiza una línea paralela a los parlantes, a 4.0 m de ellos.",
+       "6. (25 min) Una persona camina despacio por la línea con un oído tapado (o con el sonómetro a la altura de los parlantes) y el grupo marca con tiza los puntos donde el sonido se debilita claramente. Para cada marca midan con la cinta su distancia a cada parlante.",
+       "7. (10 min) Calculen la diferencia de camino de cada mínimo. Usen la condición de interferencia destructiva para obtener la longitud de onda y compárenla con c/f, con c de la tabla de referencia (aproximado, 343 m/s a 20 °C).",
+       "8. (10 min) En grupo, respondan las preguntas de análisis 3 y 4."
+      ],
+      "datos_esperados": "Paso 1: mientras los pulsos se cruzan, el desplazamiento del resorte es la suma de los dos: el doble si van del mismo lado y casi cero si van de lados opuestos; después cada pulso sigue con su forma original. Paso 2: con 440 y 443 Hz se cuentan unas 30 pulsaciones en 10 s (3 por segundo); con 440 y 445 Hz, unas 50. Paso 3: golpeando a mano, la longitud de onda en el agua queda de unos 5 a 10 cm. Con la abertura de 2 cm, menor que λ, las ondas salen en semicírculos; con 20 cm (unas dos a cuatro λ) el frente sale recto en el centro y se curva solo cerca de los bordes. El contraste se nota, pero no es tan nítido como en los libros, porque la abertura ancha solo mide unas pocas λ; la simulación permite ver el caso de abertura mucho mayor que λ. Paso 6: a 1000 Hz la longitud de onda es de unos 0.34 m; con los parlantes a 1.0 m y la línea a 4.0 m, los primeros mínimos quedan a unos 0.7 m a cada lado del centro y los siguientes, a unos 2.4 m del centro. Las diferencias de camino deberían ser cercanas a 0.17 y 0.51 m, y la longitud de onda calculada, quedar dentro de un 10 % de c/f. Los mínimos no son silencio total, por las reflexiones en el suelo y porque los parlantes no suenan exactamente igual. Si en el centro de la línea hay un mínimo en vez de un máximo, un parlante tiene la polaridad invertida.",
+      "variantes": "Sin resorte: una cuerda larga en el piso o una fila de estudiantes que se pasan un empujón por los hombros. Sin parlantes de computadora: dos celulares con el mismo tono no sirven para la interferencia estable, porque sus frecuencias nunca son idénticas (se oyen pulsaciones); hace falta una sola fuente con dos parlantes. Sin refractario: una bandeja de horno con agua, observando las ondas con luz rasante. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo: pulsaciones contadas en 10 s, 29 y 31 con 440 y 443 Hz, 49 y 50 con 440 y 445 Hz; mínimos de los parlantes con distancias de 4.18 y 4.01 m, 4.00 y 4.17 m, 4.95 y 4.44 m. Con internet: la simulación gratuita «Interferencia de ondas» de PhET tiene una pantalla de sonido con dos fuentes cuya separación y frecuencia se ajustan, y una pantalla de rendija para la difracción en agua; sirve para comparar con lo medido."
+     },
+     "justificacion": "Pulsaciones (3 y 5 Hz) y mínimos (0.70 y 2.41 m del centro; Δ = 0.17 y 0.51 m) verificados. Errores: el ejemplo traía distancias de 3.98 y 3.94 m, imposibles con la línea a 4.0 m; y golpeando a mano en 1 cm de agua λ es 5–10 cm, no 1–3 cm: aberturas de 1 y 5 cm difractan igual. Se corrigen.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U5-5.4",
+       "cita": "difracción según la relación entre longitud de onda y abertura; interferencia por diferencia de camino"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "aguas someras v = √(gh) ≈ 0.22–0.31 m/s; con 3–4 Hz, λ ≈ 5–10 cm"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U5-5.4/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Un resorte largo de juguete o una cuerda de unos 5 m",
+       "Dos celulares con una aplicación de generador de tonos (por ejemplo, phyphox) y un cronómetro",
+       "Un refractario de vidrio transparente de 35 cm o más de largo, agua, una hoja blanca, la linterna de un celular, una regla y plastilina (sin refractario, una bandeja de horno: ver variantes)",
+       "Dos parlantes de computadora (un par estéreo) alimentados por USB desde una laptop o un power bank, con el mismo tono en los dos canales",
+       "Cinta métrica de 10 m, tiza o cinta adhesiva",
+       "Celular con una aplicación de sonómetro (opcional; el oído también sirve)",
+       "Calculadora"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (12 min) Dos personas, en los extremos del resorte estirado en el piso, envían a la vez un pulso cada una: primero los dos hacia el mismo lado y luego hacia lados opuestos. Graben con el celular y dibujen la forma del resorte justo antes, durante y después del cruce.",
+       "2. (15 min) Pongan un celular a 440 Hz y otro a 443 Hz, uno junto al otro y con volumen parecido. Cuenten las pulsaciones durante 10 s, dos veces. Repitan con 440 Hz y 445 Hz.",
+       "3. (13 min) Pongan de 0.5 a 1 cm de agua en el refractario, sobre la hoja blanca, y alumbren desde arriba con la linterna. Golpeen el agua con la regla a un ritmo constante (3 o 4 golpes por segundo) para producir ondas rectas y midan sobre la hoja la distancia entre dos sombras de crestas (λ). Con la plastilina hagan una barrera con una abertura de unos 2 cm y observen las ondas al otro lado; repitan con una abertura de unos 20 cm (o lo más ancha que permita el refractario).",
+       "4. (15 min) En grupo, respondan las preguntas de análisis 1, 2 y 3.",
+       "Sesión 2 (55 min)",
+       "5. (10 min) En la cancha, lejos de paredes, coloquen los dos parlantes sobre un banco, separados 1.0 m y mirando en la misma dirección. Pongan un tono de 1000 Hz con el mismo volumen en ambos. Marquen con tiza una línea paralela a los parlantes, a 4.0 m de ellos.",
+       "6. (25 min) Una persona camina despacio por la línea con un oído tapado (o con el sonómetro a la altura de los parlantes) y el grupo marca con tiza los puntos donde el sonido se debilita claramente. Para cada marca midan con la cinta su distancia a cada parlante.",
+       "7. (10 min) Calculen la diferencia de camino de cada mínimo. Usen la condición de interferencia destructiva para obtener la longitud de onda y compárenla con c/f, con c de la tabla de referencia para la temperatura del día (aproximado, unos 347 m/s en un patio a 27 °C).",
+       "8. (10 min) En grupo, respondan las preguntas de análisis 4 y 5."
+      ],
+      "analisis": [
+       "(Paso 4) Dibujen la forma del resorte durante y después del cruce en los dos casos. Cuando los pulsos opuestos se anularon, ¿desaparecieron? ¿Cómo lo saben?",
+       "(Paso 4) ¿Coincide la frecuencia de pulsación medida con la diferencia de frecuencias de los celulares? ¿Cómo usaría alguien que afina una guitarra este fenómeno?",
+       "(Paso 4) ¿Qué abertura produjo la difracción más ancha y por qué? Usen la longitud de onda que midieron en el agua.",
+       "(Paso 8) ¿Qué longitud de onda obtuvieron con los mínimos y qué tanto difiere de c/f? ¿Qué medición aporta más error?",
+       "(Paso 8) ¿Por qué el sonido de un aula se oye desde el pasillo aunque la puerta esté entreabierta, pero no se ve lo que pasa adentro? Usen la relación entre longitud de onda y abertura.",
+       "Tarea: Dibujen el esquema del montaje con las posiciones medidas de los máximos y mínimos y el cálculo de la longitud de onda."
+      ]
+     },
+     "justificacion": "La pregunta 2 juntaba pulsaciones y difracción: se separa (una idea por pregunta). La sombra de las crestas sobre la hoja solo se ve con vidrio transparente; una bandeja metálica opaca queda como variante con luz rasante. Se usa c a la temperatura del día (≈347 m/s), no 343. Aberturas de 2 y 20 cm y tiempos (55 + 55) intactos.",
+     "evidencia": [
+      {
+       "fuente": "EXP:G11-FIS-U5-5.4/1",
+       "cita": "análisis 2: pulsaciones, afinación y difracción en una sola pregunta"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md",
+       "cita": "condiciones de El Salvador: ≈ 346–349 m/s, no 340"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva: una idea por pregunta; materiales que funcionen"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U5-5.6/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U5-5.6/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U5-5.6"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U5-5.6",
+      "CON:fisica/ondas-estacionarias"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Resonancia en una columna de aire y rapidez del sonido",
+     "proposito": "Medir la frecuencia fundamental de una columna de aire cerrada para varias alturas, construir la tabla y la gráfica de L contra 1/f y obtener de la pendiente la rapidez del sonido; además, comprobar que un tubo cerrado solo resuena en los armónicos impares y uno abierto en todos.",
+     "materiales": [
+      "Un tubo de PVC de 1 pulgada y 60 cm de largo con un tapón de PVC encajado a presión en un extremo (sin pegamento), cortado y lijado por el docente",
+      "Un trozo de tubo de PVC de 1 pulgada de 40 cm, abierto en los dos extremos",
+      "Una botella de 600 mL con agua y un embudo pequeño",
+      "Una varilla delgada de madera o un alambre recto de 50 cm, y una regla o cinta métrica",
+      "Un celular con una aplicación gratuita de generador de tonos que permita fijar la frecuencia en hertz (descargada antes de la clase) y, si hay, un audífono de botón conectado a él, que da más volumen en tonos graves que el parlante del celular",
+      "Cinta adhesiva para sujetar el tubo vertical a la pata de una mesa o de una silla",
+      "Papel milimetrado o una hoja de cálculo, y un termómetro si la escuela tiene"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (6 min) Sujeten el tubo tapado en vertical con la cinta, con la boca hacia arriba. Viertan agua con el embudo hasta que la columna de aire mida unos 40 cm. Midan L introduciendo la varilla seca hasta tocar el agua y marcando con el dedo el nivel de la boca; anoten L en metros y la temperatura del aula (sin termómetro, usen 27 °C).",
+      "2. (9 min) Coloquen el audífono (o el parlante del celular) a 1 cm de la boca, con volumen moderado. Suban la frecuencia desde 100 Hz, despacio, y anoten la frecuencia a la que el tubo suena claramente más fuerte (primera resonancia). Para confirmarla, aparten el tubo: si el sonido baja claramente, era del tubo; si no, era un máximo del propio parlante. Agreguen agua hasta L ≈ 33 cm, midan L con la varilla cada vez que cambien el nivel y repitan. Una persona busca, otra escucha y otra anota; roten los papeles.",
+      "3. (8 min) Agreguen agua hasta L ≈ 26 cm. Barran de 200 a 1100 Hz y anoten todas las frecuencias de resonancia; la más baja es la primera resonancia de esta altura.",
+      "4. (9 min) Repitan la búsqueda de la primera resonancia con L ≈ 20 cm y L ≈ 15 cm. Luego barran de 200 a 1300 Hz con el tubo abierto de 40 cm, sostenido en el aire con la mano, y anoten todas sus resonancias.",
+      "5. (11 min) Hagan la tabla f, 1/f, L y 4fL. Grafiquen L contra 1/f, tracen la recta de mejor ajuste y calculen su pendiente; la rapidez del sonido es 4 × pendiente. Dividan cada resonancia del tubo cerrado de 26 cm y del tubo abierto entre la más baja de ese tubo.",
+      "6. (12 min) En grupo, respondan las dos primeras preguntas de análisis y comparen su rapidez con el valor de la tabla de referencia para la temperatura del aula."
+     ],
+     "seguridad": [
+      "Mantengan el volumen moderado y el celular lejos de los oídos; el audífono se deja junto a la boca del tubo como parlante y nadie se lo pone en el oído durante el barrido. Eviten tonos agudos fuertes por más de unos segundos.",
+      "Sequen enseguida el agua derramada y mantengan el celular fuera del alcance de las salpicaduras.",
+      "Los bordes cortados del tubo los lija el docente antes de la clase; no se usa pegamento de PVC en el aula."
+     ],
+     "datos_esperados": "Para L de 40 a 15 cm, la primera resonancia va de unos 210 a unos 550 Hz: al bajar L sube la frecuencia. La gráfica de L contra 1/f es una recta de pendiente cercana a v/4; v sale entre unos 330 y 360 m/s (en un aula a 25–30 °C, la tabla de referencia da unos 346–349 m/s). La recta corta el eje L un poco por debajo de cero (alrededor de −1 cm): es la corrección de borde, el antinodo se forma algo por encima de la boca. Si se calcula 4fL con L sin corregir, v sale unos pocos por ciento baja. En el tubo cerrado de 26 cm aparecen resonancias cerca de 320 y 970 Hz (razón 1:3) y ninguna cerca de 640 Hz; en el tubo abierto de 40 cm, cerca de 415, 830 y 1250 Hz (razón 1:2:3). Al oído, cada resonancia se ubica con un error de unos 10 a 20 Hz. Los parlantes de celular dan poco volumen por debajo de unos 300 Hz: la resonancia de 40 cm (cerca de 210 Hz) puede oírse débil; con audífono se oye mejor.",
+     "analisis": [
+      "(Paso 6) ¿Sus puntos forman una recta? ¿Qué rapidez del sonido obtuvieron con la pendiente y qué tan lejos queda del valor de la tabla de referencia? ¿Qué indica el corte con el eje L?",
+      "(Paso 6) ¿Qué razones obtuvieron entre las resonancias del tubo cerrado y del abierto? Expliquen con nodos y antinodos por qué en el tubo cerrado faltan los armónicos pares.",
+      "Tarea: Al soplar sobre una botella y llenarla con agua, la nota sube. ¿Se comporta la botella como un tubo cerrado ideal? Señalen qué supuesto del modelo no se cumple (piensen en la forma del cuello)."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin celular con generador de tonos: el docente usa diapasones si la escuela tiene, o se trabaja con los datos de un grupo de ejemplo (L = 0.400, 0.330, 0.260, 0.200 y 0.150 m para 212, 256, 323, 416 y 547 Hz; tubo cerrado de 26 cm: resonancias en 320 y 965 Hz, ninguna entre ambas; tubo abierto de 40 cm: 414, 826 y 1245 Hz). Para las cuerdas, una cuerda de guitarra o un hilo tenso entre dos clavos permite marcar nodos tocándolo suavemente en la mitad o en un tercio de su largo (armónicos). Simulación: en PhET «Onda en una cuerda», con extremo fijo, modo oscilar y amortiguamiento en cero, se ajusta la frecuencia hasta ver patrones estables con uno, dos y tres vientres.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U5-5.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/ondas-estacionarias",
+     "nombre": "Ondas estacionarias y armónicos",
+     "definicion": "Patrones de nodos y antinodos en cuerdas y tubos; determinan los armónicos y el timbre de los instrumentos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U5-5.6",
+     "grado": 11,
+     "indicador": "1.6. • Calcula las frecuencias de resonancia de tubos abiertos y cerrados y explica por qué los tubos cerrados solo producen armónicos impares. • Calcula las frecuencias de los armónicos de una cuerda tensa fija en sus extremos y localiza sus nodos y antinodos. • Interpreta el espectro de frecuencias de un sonido complejo para explicar el timbre de un instrumento a partir de la amplitud de sus armónicos.",
+     "evidencia": "Tabla de alturas de columna de aire y frecuencias medidas con gráfica y cálculo de la velocidad del sonido"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U5-5.6/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U5-5.6/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Un tubo de PVC de 1 pulgada y 60 cm de largo con un tapón de PVC encajado a presión en un extremo (sin pegamento), cortado y lijado por el docente",
+       "Un trozo de tubo de PVC de 1 pulgada de 40 cm, abierto en los dos extremos",
+       "Una botella de 600 mL con agua y un embudo pequeño",
+       "Una varilla delgada de madera o un alambre recto de 50 cm, y una regla o cinta métrica",
+       "Un celular con una aplicación gratuita de generador de tonos que permita fijar la frecuencia en hertz (descargada antes de la clase) y, si hay, un audífono de botón conectado a él, que da más volumen en tonos graves que el parlante del celular",
+       "Cinta adhesiva para sujetar el tubo vertical a la pata de una mesa o de una silla",
+       "Papel milimetrado o una hoja de cálculo, y un termómetro si la escuela tiene"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (6 min) Sujeten el tubo tapado en vertical con la cinta, con la boca hacia arriba. Viertan agua con el embudo hasta que la columna de aire mida unos 40 cm. Midan L introduciendo la varilla seca hasta tocar el agua y marcando con el dedo el nivel de la boca; anoten L en metros y la temperatura del aula.",
+       "2. (9 min) Coloquen el audífono (o el parlante del celular) a 1 cm de la boca, con volumen moderado. Suban la frecuencia desde 100 Hz, despacio, y anoten la frecuencia a la que el tubo suena claramente más fuerte (primera resonancia). Para confirmarla, aparten el tubo: si el sonido baja claramente, era del tubo; si no, era un máximo del propio parlante. Agreguen agua hasta L ≈ 33 cm, midan L con la varilla cada vez que cambien el nivel y repitan. Una persona busca, otra escucha y otra anota; roten los papeles.",
+       "3. (8 min) Agreguen agua hasta L ≈ 26 cm. Barran de 200 a 1100 Hz y anoten todas las frecuencias de resonancia; la más baja es la primera resonancia de esta altura.",
+       "4. (9 min) Repitan la búsqueda de la primera resonancia con L ≈ 20 cm y L ≈ 15 cm. Luego barran de 200 a 1300 Hz con el tubo abierto de 40 cm, sostenido en el aire con la mano, y anoten todas sus resonancias.",
+       "5. (11 min) Hagan la tabla f, 1/f, L y 4fL. Grafiquen L contra 1/f, tracen la recta de mejor ajuste y calculen su pendiente; la rapidez del sonido es 4 × pendiente. Dividan cada resonancia del tubo cerrado de 26 cm y del tubo abierto entre la más baja de ese tubo.",
+       "6. (12 min) En grupo, respondan las dos primeras preguntas de análisis y comparen su rapidez con el valor de la tabla de referencia para la temperatura del aula."
+      ],
+      "datos_esperados": "Para L de 40 a 15 cm, la primera resonancia va de unos 210 a unos 550 Hz: al bajar L sube la frecuencia. La gráfica de L contra 1/f es una recta de pendiente cercana a v/4; v sale entre unos 330 y 360 m/s (en un aula a 25–30 °C, la tabla de referencia da unos 346–349 m/s). La recta corta el eje L un poco por debajo de cero (alrededor de −1 cm): es la corrección de borde, el antinodo se forma algo por encima de la boca. Si se calcula 4fL con L sin corregir, v sale unos pocos por ciento baja. En el tubo cerrado de 26 cm aparecen resonancias cerca de 320 y 970 Hz (razón 1:3) y ninguna cerca de 640 Hz; en el tubo abierto de 40 cm, cerca de 415, 830 y 1250 Hz (razón 1:2:3). Al oído, cada resonancia se ubica con un error de unos 10 a 20 Hz. Los parlantes de celular dan poco volumen por debajo de unos 300 Hz: la resonancia de 40 cm (cerca de 210 Hz) puede oírse débil; con audífono se oye mejor."
+     },
+     "justificacion": "Números verificados con v ≈ 346 m/s y corrección de ~0.8 cm (212 a 547 Hz; 323/969 Hz cerrado; 416/832/1248 Hz abierto). El montaje funciona, pero el parlante del celular rinde poco bajo 300 Hz y tiene picos propios que se confunden con resonancias: se agrega audífono y una comprobación apartando el tubo. El paso 4 no cabía en 6 min; se rebalancea sin pasar de 55.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U5-5.6",
+       "cita": "frecuencias de resonancia de tubos abiertos y cerrados; solo armónicos impares en el cerrado"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "f1 = v/[4(L + 0.3d)] cerrado; f1 = v/[2(L + 0.6d)] abierto"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U5-5.6/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (6 min) Sujeten el tubo tapado en vertical con la cinta, con la boca hacia arriba. Viertan agua con el embudo hasta que la columna de aire mida unos 40 cm. Midan L introduciendo la varilla seca hasta tocar el agua y marcando con el dedo el nivel de la boca; anoten L en metros y la temperatura del aula (sin termómetro, usen 27 °C).",
+       "2. (9 min) Coloquen el audífono (o el parlante del celular) a 1 cm de la boca, con volumen moderado. Suban la frecuencia desde 100 Hz, despacio, y anoten la frecuencia a la que el tubo suena claramente más fuerte (primera resonancia). Para confirmarla, aparten el tubo: si el sonido baja claramente, era del tubo; si no, era un máximo del propio parlante. Agreguen agua hasta L ≈ 33 cm, midan L con la varilla cada vez que cambien el nivel y repitan. Una persona busca, otra escucha y otra anota; roten los papeles.",
+       "3. (8 min) Agreguen agua hasta L ≈ 26 cm. Barran de 200 a 1100 Hz y anoten todas las frecuencias de resonancia; la más baja es la primera resonancia de esta altura.",
+       "4. (9 min) Repitan la búsqueda de la primera resonancia con L ≈ 20 cm y L ≈ 15 cm. Luego barran de 200 a 1300 Hz con el tubo abierto de 40 cm, sostenido en el aire con la mano, y anoten todas sus resonancias.",
+       "5. (11 min) Hagan la tabla f, 1/f, L y 4fL. Grafiquen L contra 1/f, tracen la recta de mejor ajuste y calculen su pendiente; la rapidez del sonido es 4 × pendiente. Dividan cada resonancia del tubo cerrado de 26 cm y del tubo abierto entre la más baja de ese tubo.",
+       "6. (12 min) En grupo, respondan las dos primeras preguntas de análisis y comparen su rapidez con el valor de la tabla de referencia para la temperatura del aula."
+      ],
+      "seguridad": [
+       "Mantengan el volumen moderado y el celular lejos de los oídos; el audífono se deja junto a la boca del tubo como parlante y nadie se lo pone en el oído durante el barrido. Eviten tonos agudos fuertes por más de unos segundos.",
+       "Sequen enseguida el agua derramada y mantengan el celular fuera del alcance de las salpicaduras.",
+       "Los bordes cortados del tubo los lija el docente antes de la clase; no se usa pegamento de PVC en el aula."
+      ]
+     },
+     "justificacion": "Oídos: el audífono de botón invita a ponérselo mientras se barre hasta 1300 Hz; se aclara que solo hace de parlante junto al tubo, como fijó el experto. La temperatura del aula se pide con un termómetro opcional: se da un valor típico. Tiempos (55 min) y física intactos.",
+     "evidencia": [
+      {
+       "fuente": "EXP:G11-FIS-U5-5.6/1",
+       "cita": "audífono de botón conectado; termómetro si la escuela tiene"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "seguridad auditiva e higiene; inclusión sin termómetro"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U7-7.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U7-7.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U7-7.3"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U7-7.3",
+      "CON:fisica/campo-electrico"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "El campo que no entra: blindaje electrostático y mapas de líneas de campo",
+     "proposito": "Medir con un electroscopio casero hasta qué distancia llega el efecto del campo de un globo cargado, comparar esa distancia cuando el electroscopio se cubre con cartón, plástico y metal para comprobar el blindaje, y dibujar mapas de líneas de campo de un dipolo y de dos cargas positivas aplicando sus propiedades.",
+     "materiales": [
+      "Un electroscopio casero: frasco plástico transparente con tapa plástica, clip grande desdoblado y dos tiras de papel aluminio de 1 × 4 cm",
+      "Un colador metálico de cocina más grande que el frasco (de malla fina)",
+      "Una caja de cartón y un recipiente plástico, ambos más grandes que el frasco",
+      "Un globo de látex y un paño de lana, o una regla de plástico frotada con papel",
+      "Una cinta métrica o regla de 1 m pegada a la mesa",
+      "Hojas blancas, lápiz y regla para los mapas de líneas de campo"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (8 min) Armen el electroscopio (o usen el de la práctica de carga): el clip atraviesa la tapa, termina en gancho con las dos tiras dentro del frasco y arriba lleva una bolita de aluminio. Colóquenlo en el cero de la cinta métrica.",
+      "2. (8 min) Froten el globo diez veces y acérquenlo despacio por la cinta, sin tocar. Anoten la distancia a la que las hojas empiezan a separarse. Toquen la bolita con la mano para descargarla y repitan tres veces, frotando igual.",
+      "3. (10 min) Cubran el electroscopio con la caja de cartón y repitan la medición; luego con el recipiente plástico y luego con el colador metálico boca abajo. Para cada cubierta hagan dos mediciones; si no hay reacción, anoten la distancia mínima a la que acercaron el globo.",
+      "4. (5 min) Con el colador puesto, toquen el colador con el globo frotado y observen las hojas. Luego descarguen el colador tocándolo con la mano.",
+      "5. (12 min) Dibujen el mapa de líneas de campo de un dipolo y el de dos cargas positivas iguales, con al menos ocho líneas por carga, flechas de sentido y más densidad cerca de las cargas. Marquen en cada mapa una zona de campo intenso, una de campo débil y, si existe, el punto de campo nulo.",
+      "6. (12 min) En grupo, respondan las tres primeras preguntas de análisis."
+     ],
+     "seguridad": [
+      "Si alguien es alérgico al látex, usen la regla de plástico frotada en lugar del globo.",
+      "Las puntas del clip pinchan: dóblenlas o cúbranlas con cinta.",
+      "No usen la red eléctrica, generadores de alto voltaje ni aparatos conectados: el blindaje se comprueba solo con cargas de frotamiento."
+     ],
+     "datos_esperados": "Sin cubierta, las hojas reaccionan con el globo a unos 20 a 50 cm, según el frotamiento y la humedad. Con el recipiente plástico la distancia casi no cambia (el plástico a veces se carga al manipularlo, lo que confunde la lectura). Con el cartón depende de la humedad: el cartón húmedo conduce un poco y, como el campo del globo es estático, en pocos segundos puede blindar en parte; en tiempo seco se parece al plástico. Con el colador metálico las hojas no se mueven, o apenas, si el globo se acerca por la abertura de abajo. Al tocar el colador con el globo, las hojas tampoco se mueven: la carga queda en la superficie exterior del metal y el campo dentro sigue siendo nulo. En los mapas, las líneas del dipolo van de la carga positiva a la negativa; las de dos cargas positivas se apartan unas de otras sin conectarse, y en el punto medio el campo es cero. En época lluviosa todo se debilita y la carga se escapa en segundos.",
+     "analisis": [
+      "(Paso 6) Comparen las distancias de reacción con cada cubierta. ¿Por qué el metal blinda y el plástico no? ¿Qué pasó con el cartón y por qué podría depender de la humedad?",
+      "(Paso 6) Expliquen con los electrones libres por qué el campo dentro de un conductor en equilibrio es nulo.",
+      "(Paso 6) En sus mapas, ¿dónde es más intenso el campo y cómo lo saben? ¿Por qué dos líneas de campo nunca se cruzan?",
+      "Tarea: Durante una tormenta eléctrica, se dice que dentro de un carro con carrocería metálica se está más protegido. Expliquen por qué, y por qué la razón no es que las llantas de hule aíslen del suelo.",
+      "Tarea: Describan en orden las etapas de una impresora láser (carga del tambor, escritura con el láser, revelado con tóner, paso al papel y fijado con calor) y compárenla con una impresora de inyección de tinta (con internet, el libro de texto o una lectura que entregue la docente)."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin colador: una lata grande de leche en polvo, sin fondo, cubierta arriba con malla metálica de ventana, o una jaula hecha con papel aluminio que deje una ventana para mirar las hojas (cubrirla con malla metálica). Sin laboratorio ni internet: todos los materiales son caseros y los mapas se hacen a mano. Simulación (si hay computadora): PhET «Cargas y campos» muestra, en una cuadrícula, flechas del campo cuya opacidad indica su intensidad, y tiene sensores que dan magnitud y dirección; sirve para comparar los mapas dibujados, aunque no dibuja líneas de campo continuas. Las semillas en aceite entre electrodos requieren alto voltaje: no se hacen en el aula.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U7-7.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-electrico",
+     "nombre": "Campo eléctrico",
+     "definicion": "Región donde una carga experimenta fuerza; se representa con líneas de campo y acelera cargas en trayectorias rectas o parabólicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U7-7.3",
+     "grado": 11,
+     "indicador": "2.3. • Dibuja las líneas de campo de un dipolo y de dos cargas positivas aplicando sus propiedades, e infiere la intensidad del campo a partir de su densidad. • Explica por qué el campo eléctrico es nulo dentro de un conductor en equilibrio y lo relaciona con el blindaje de circuitos y la protección en vehículos. • Explica las etapas de la xerografía en términos de carga, fotoconductividad y campo eléctrico, y compara el funcionamiento de impresoras láser y de inyección de tinta.",
+     "evidencia": "Mapas de líneas de campo de tres configuraciones con explicación de sus propiedades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U7-7.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U7-7.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "datos_esperados": "Sin cubierta, las hojas reaccionan con el globo a unos 20 a 50 cm, según el frotamiento y la humedad. Con el recipiente plástico la distancia casi no cambia (el plástico a veces se carga al manipularlo, lo que confunde la lectura). Con el cartón depende de la humedad: el cartón húmedo conduce un poco y, como el campo del globo es estático, en pocos segundos puede blindar en parte; en tiempo seco se parece al plástico. Con el colador metálico las hojas no se mueven, o apenas, si el globo se acerca por la abertura de abajo. Al tocar el colador con el globo, las hojas tampoco se mueven: la carga queda en la superficie exterior del metal y el campo dentro sigue siendo nulo. En los mapas, las líneas del dipolo van de la carga positiva a la negativa; las de dos cargas positivas se apartan unas de otras sin conectarse, y en el punto medio el campo es cero. En época lluviosa todo se debilita y la carga se escapa en segundos.",
+      "analisis": [
+       "(Paso 6) Comparen las distancias de reacción con cada cubierta. ¿Por qué el metal blinda y el plástico no? ¿Qué pasó con el cartón y por qué podría depender de la humedad? Expliquen con los electrones libres por qué el campo dentro de un conductor en equilibrio es nulo.",
+       "(Paso 6) En sus mapas, ¿dónde es más intenso el campo y cómo lo saben? ¿Por qué dos líneas de campo nunca se cruzan?",
+       "Tarea: Durante una tormenta eléctrica, se dice que dentro de un carro con carrocería metálica se está más protegido. Expliquen por qué, y por qué la razón no es que las llantas de hule aíslen del suelo.",
+       "Tarea: Describan en orden las etapas de una impresora láser (carga del tambor, escritura con el láser, revelado con tóner, paso al papel y fijado con calor) y compárenla con una impresora de inyección de tinta."
+      ]
+     },
+     "justificacion": "Montaje seguro y conceptos correctos (campo nulo en conductor, carga en la superficie exterior, punto de campo nulo entre cargas iguales). Pero en un campo estático basta una conducción pequeña: el cartón húmedo (lo habitual en El Salvador) blinda en parte, y la pregunta «¿por qué el cartón no?» presupone un resultado que puede no ocurrir. Se reformula; «las líneas se repelen» se precisa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U7-7.3",
+       "cita": "campo nulo dentro de un conductor en equilibrio y blindaje"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "tiempo de relajación ε/σ: papel con humedad ambiente, del orden de segundos"
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U7-7.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (8 min) Armen el electroscopio (o usen el de la práctica de carga): el clip atraviesa la tapa, termina en gancho con las dos tiras dentro del frasco y arriba lleva una bolita de aluminio. Colóquenlo en el cero de la cinta métrica.",
+       "2. (8 min) Froten el globo diez veces y acérquenlo despacio por la cinta, sin tocar. Anoten la distancia a la que las hojas empiezan a separarse. Toquen la bolita con la mano para descargarla y repitan tres veces, frotando igual.",
+       "3. (10 min) Cubran el electroscopio con la caja de cartón y repitan la medición; luego con el recipiente plástico y luego con el colador metálico boca abajo. Para cada cubierta hagan dos mediciones; si no hay reacción, anoten la distancia mínima a la que acercaron el globo.",
+       "4. (5 min) Con el colador puesto, toquen el colador con el globo frotado y observen las hojas. Luego descarguen el colador tocándolo con la mano.",
+       "5. (12 min) Dibujen el mapa de líneas de campo de un dipolo y el de dos cargas positivas iguales, con al menos ocho líneas por carga, flechas de sentido y más densidad cerca de las cargas. Marquen en cada mapa una zona de campo intenso, una de campo débil y, si existe, el punto de campo nulo.",
+       "6. (12 min) En grupo, respondan las tres primeras preguntas de análisis."
+      ],
+      "analisis": [
+       "(Paso 6) Comparen las distancias de reacción con cada cubierta. ¿Por qué el metal blinda y el plástico no? ¿Qué pasó con el cartón y por qué podría depender de la humedad?",
+       "(Paso 6) Expliquen con los electrones libres por qué el campo dentro de un conductor en equilibrio es nulo.",
+       "(Paso 6) En sus mapas, ¿dónde es más intenso el campo y cómo lo saben? ¿Por qué dos líneas de campo nunca se cruzan?",
+       "Tarea: Durante una tormenta eléctrica, se dice que dentro de un carro con carrocería metálica se está más protegido. Expliquen por qué, y por qué la razón no es que las llantas de hule aíslen del suelo.",
+       "Tarea: Describan en orden las etapas de una impresora láser (carga del tambor, escritura con el láser, revelado con tóner, paso al papel y fijado con calor) y compárenla con una impresora de inyección de tinta (con internet, el libro de texto o una lectura que entregue la docente)."
+      ]
+     },
+     "justificacion": "La pregunta 1 encadenaba cuatro preguntas: se separa la explicación del campo nulo (una idea por pregunta) y se pasan 2 min del paso 3 (seis mediciones caben en 10) al análisis; la sesión sigue en 55. La tarea de impresoras pide una fuente; se nombran opciones sin internet. Física del experto intacta.",
+     "evidencia": [
+      {
+       "fuente": "EXP:G11-FIS-U7-7.3/1",
+       "cita": "análisis 1 con cuatro preguntas; 10 min para dos análisis"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "carga cognitiva y tiempo realista; inclusión sin internet"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G11-FIS-U8-8.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G11-FIS-U8-8.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G11-FIS-U8-8.4"
+     ],
+     "evalua": [
+      "TEMA:G11-FIS-U8-8.4",
+      "CON:fisica/potencial-electrico"
+     ],
+     "grados": [
+      11
+     ],
+     "titulo": "Mapa de equipotenciales en una bandeja con agua",
+     "proposito": "Medir con un multímetro el potencial en puntos de una lámina de agua entre dos electrodos conectados a pilas, trazar líneas equipotenciales para dos configuraciones, dibujar las líneas de campo perpendiculares a ellas y obtener el campo de la pendiente de la gráfica de potencial contra distancia.",
+     "materiales": [
+      "Por grupo de 4 o 5 estudiantes:",
+      "Una bandeja plástica transparente de unos 25 × 20 cm (o la tapa de un recipiente grande) con agua del grifo hasta 1 cm de profundidad",
+      "Dos hojas de papel cuadriculado de 1 cm: una debajo de la bandeja y una copia para anotar",
+      "Dos trozos rectos de alambre de cobre desnudo de 12 cm (de cable eléctrico pelado) y dos tornillos o clavos grandes",
+      "Cuatro pilas AA en un portapilas (6 V en total) o una batería de 9 V",
+      "Un multímetro digital con sus puntas y cuatro cables con caimanes",
+      "Plastilina para sostener los electrodos de pie y una regla"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (8 min) Pongan la bandeja sobre la hoja cuadriculada y agreguen el agua. Doblen hacia arriba 2 cm de un extremo de cada alambre de cobre y fíjenlos con plastilina acostados en el fondo, paralelos y a 10 cm uno del otro, con el extremo doblado fuera del agua. Conecten los caimanes solo a esos extremos secos: un alambre al polo negativo y el otro al positivo del portapilas.",
+      "2. (5 min) Pongan el multímetro en la escala de 20 V de corriente continua (símbolo V con línea recta, «DCV»). La punta negra (COM) va fija al electrodo negativo; la roja será la sonda. Toquen con la roja el electrodo positivo, lean el voltaje entre los dos electrodos y anótenlo.",
+      "3. (12 min) Introduzcan la punta roja en el agua, en vertical, y midan el potencial cada 1 cm sobre la línea central entre los electrodos; hagan la tabla V contra x. Luego busquen tres puntos más para cada uno de tres valores (más o menos a un cuarto, la mitad y tres cuartos del voltaje del paso 2; por ejemplo 1.5, 3 y 4.5 V con pilas AA) y márquenlos en la hoja de anotación.",
+      "4. (10 min) Cambien los alambres por los dos tornillos de pie, a 10 cm uno del otro, con los caimanes por encima del agua, y repitan la búsqueda: cuatro puntos para cada uno de tres valores de potencial. Márquenlos en otra parte de la hoja.",
+      "5. (10 min) Unan los puntos de igual potencial con curvas suaves y dibujen líneas de campo que las corten en ángulo recto, de mayor a menor potencial. Grafiquen V contra x de la línea central y calculen la pendiente (pasen x de centímetros a metros).",
+      "6. (10 min) En grupo, respondan las dos primeras preguntas de análisis. Al terminar, desconecten las pilas y desechen el agua en el lavadero."
+     ],
+     "seguridad": [
+      "Usen solo pilas o una batería de 9 V; nunca conecten nada a un tomacorriente de 120 V.",
+      "Eviten que los dos caimanes o los dos electrodos se toquen entre sí: eso pone las pilas en cortocircuito y las calienta.",
+      "No agreguen sal al agua: con corriente puede liberar algo de cloro. Si las lecturas son muy inestables, el docente puede agregar una pizca de bicarbonato.",
+      "Mantengan el multímetro y el portapilas secos, fuera de la bandeja, y no dejen las pilas conectadas al terminar: se descargan y los electrodos se corroen.",
+      "Sequen el agua derramada para evitar resbalones."
+     ],
+     "datos_esperados": "El voltaje entre electrodos es algo menor que el de las pilas. Cerca de los electrodos el potencial no llega a 0 ni al voltaje total: parte se queda en el contacto entre el metal y el agua (se ven burbujas pequeñas). Con los alambres paralelos, V crece casi linealmente con x en el centro de la bandeja y las equipotenciales son rectas paralelas a los electrodos, igual de separadas: campo casi uniforme, del orden de 30 a 50 V/m (0.3 a 0.5 V/cm). Con los tornillos, las equipotenciales son curvas cerradas alrededor de cada electrodo, que se abren al alejarse; la del valor medio es casi una recta en la mitad. Las lecturas pueden variar unas décimas de volt con el tiempo, y los bordes de la bandeja deforman las curvas.",
+     "analisis": [
+      "(Paso 6) ¿La gráfica V contra x de los electrodos paralelos es una recta? ¿Qué campo eléctrico obtienen de su pendiente, en V/m, y hacia dónde apunta?",
+      "(Paso 6) ¿Por qué las líneas de campo cortan las equipotenciales en ángulo recto? Justifiquen con el trabajo que hace el campo al mover una carga sobre una equipotencial.",
+      "Tarea: Imaginen dos placas en el vacío con la misma diferencia de potencial que midieron en el paso 2. ¿Cuánta energía cinética, en electronvolts, gana un electrón que parte del reposo en la placa negativa y llega a la positiva? ¿Y un ion positivo de carga e que hace el camino contrario? (En el agua de la bandeja la corriente la llevan iones que chocan sin parar, así que esa energía se disipa como calor.)",
+      "Tarea: Una carga de +2.0 nC y otra de −2.0 nC están a 10 cm. Calculen el potencial total en el punto medio, en volts, con V = kq/r para cada carga (k: valor de la tabla de referencia, aproximado 9.0 × 10⁹ N·m²/C²). ¿Es cero el campo en ese punto? ¿Qué muestra eso sobre el potencial como magnitud escalar?"
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin bandeja: una hoja de papel con una zona rellena con mina de lápiz blando (6B) muy oscura y pareja, con electrodos de papel aluminio sujetos con clips; no burbujea ni cambia con el tiempo como el agua, pero el trazo desigual deforma las curvas. Sin multímetro ni laboratorio, y sin internet: el docente entrega las lecturas de un grupo de ejemplo sobre la línea central (x = 2, 3, 4, 5, 6, 7 y 8 cm; V = 1.6, 2.0, 2.4, 2.9, 3.3, 3.8 y 4.2 V; pendiente cercana a 43 V/m) y un mapa de puntos para unirlos: con los alambres, los puntos de 2.0, 2.9 y 3.8 V forman rectas paralelas a los electrodos en x = 3, 5 y 7 cm; con los tornillos, curvas cerradas alrededor de cada tornillo que se abren al alejarse, y la del valor medio, casi recta en la mitad. Si hay pocos multímetros, un grupo mide frente a la clase y dicta las lecturas; los demás las anotan y trazan su propio mapa. Simulación: en PhET «Cargas y campos», dos filas paralelas de cargas positivas y negativas imitan placas; el sensor de voltaje da el potencial en cada punto y puede trazar la equipotencial que pasa por él, y la cinta métrica permite hacer la gráfica de potencial contra distancia. El docente comprueba antes en la versión que use que esas herramientas están disponibles; si no hay internet en el aula, puede descargar la simulación antes para usarla sin conexión.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G11-FIS-U8-8.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/potencial-electrico",
+     "nombre": "Energía potencial y potencial eléctrico",
+     "definicion": "Energía por unidad de carga en un punto del campo; la diferencia de potencial mide el trabajo eléctrico.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-FIS-U8-8.4",
+     "grado": 11,
+     "indicador": "2.4. • Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos. • Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias. • Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición. • Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas.",
+     "evidencia": "Hoja de problemas resueltos con cálculo de ΔV, trabajo y energía en electronvolts, más gráfica ΔV-distancia del simulador"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G11-FIS-U8-8.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G11-FIS-U8-8.4/1",
+     "decision": "corregir",
+     "justificacion": "Física y cifras correctas (ejemplo ≈ 43 V/m; en el punto medio del dipolo V = 0 y E ≠ 0). Corrijo: caimanes fuera del agua; valores de búsqueda relativos al voltaje medido; la tarea del electrón, en el vacío, porque en el agua conducen iones; k remitida a la tabla de referencia; variante de grafito y simulador descritos con cautela.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 12)",
+       "cita": "Pide trazar equipotenciales medidas en un medio conductor, calcular ΔV y energía en eV, y usar el voltímetro de PhET «Cargas y campos» a distintas distancias."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "En agua del grifo la corriente es iónica; un electrón libre no recorre la bandeja ni acumula energía cinética, por eso la tarea se plantea en el vacío."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Datos de ejemplo: (4.2 − 1.6) V / 0.06 m ≈ 43 V/m, dentro del rango esperado de 30 a 50 V/m."
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de constantes)",
+       "cita": "Las constantes remiten a la tabla de referencia y, si se da el número, rotulado como aproximado."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (8 min) Pongan la bandeja sobre la hoja cuadriculada y agreguen el agua. Doblen hacia arriba 2 cm de un extremo de cada alambre de cobre y fíjenlos con plastilina acostados en el fondo, paralelos y a 10 cm uno del otro, con el extremo doblado fuera del agua. Conecten los caimanes solo a esos extremos secos: un alambre al polo negativo y el otro al positivo del portapilas.",
+       "2. (5 min) Pongan el multímetro en la escala de 20 V de corriente continua (símbolo V con línea recta, «DCV»). La punta negra (COM) va fija al electrodo negativo; la roja será la sonda. Toquen con la roja el electrodo positivo, lean el voltaje entre los dos electrodos y anótenlo.",
+       "3. (12 min) Introduzcan la punta roja en el agua, en vertical, y midan el potencial cada 1 cm sobre la línea central entre los electrodos; hagan la tabla V contra x. Luego busquen tres puntos más para cada uno de tres valores (más o menos a un cuarto, la mitad y tres cuartos del voltaje del paso 2; por ejemplo 1.5, 3 y 4.5 V con pilas AA) y márquenlos en la hoja de anotación.",
+       "4. (12 min) Cambien los alambres por los dos tornillos de pie, a 10 cm uno del otro, con los caimanes por encima del agua, y repitan la búsqueda: cinco puntos para cada uno de tres valores de potencial. Márquenlos en otra parte de la hoja.",
+       "5. (8 min) Unan los puntos de igual potencial con curvas suaves y dibujen líneas de campo que las corten en ángulo recto, de mayor a menor potencial. Grafiquen V contra x de la línea central y calculen la pendiente.",
+       "6. (10 min) En grupo, respondan las dos primeras preguntas de análisis. Al terminar, desconecten las pilas y desechen el agua en el lavadero."
+      ],
+      "analisis": [
+       "(Paso 6) ¿La gráfica V contra x de los electrodos paralelos es una recta? ¿Qué campo eléctrico obtienen de su pendiente, en V/m, y hacia dónde apunta?",
+       "(Paso 6) ¿Por qué las líneas de campo cortan las equipotenciales en ángulo recto? Justifiquen con el trabajo que hace el campo al mover una carga sobre una equipotencial.",
+       "Tarea: Imaginen dos placas en el vacío con la misma diferencia de potencial que midieron en el paso 2. ¿Cuánta energía cinética, en electronvolts, gana un electrón que parte del reposo en la placa negativa y llega a la positiva? ¿Y un ion positivo de carga e que hace el camino contrario? (En el agua de la bandeja la corriente la llevan iones que chocan sin parar, así que esa energía se disipa como calor.)",
+       "Tarea: Una carga de +2.0 nC y otra de −2.0 nC están a 10 cm. Calculen el potencial total en el punto medio con V = kq/r para cada carga (k: valor de la tabla de referencia, aproximado 9.0 × 10⁹ N·m²/C²). ¿Es cero el campo en ese punto? ¿Qué muestra eso sobre el potencial como magnitud escalar?"
+      ],
+      "variantes": "Sin bandeja: una hoja de papel con una zona rellena con mina de lápiz blando (6B) muy oscura y pareja, con electrodos de papel aluminio sujetos con clips; no burbujea ni cambia con el tiempo como el agua, pero el trazo desigual deforma las curvas. Sin multímetro ni laboratorio, y sin internet: el docente entrega las lecturas de un grupo de ejemplo sobre la línea central (x = 2, 3, 4, 5, 6, 7 y 8 cm; V = 1.6, 2.0, 2.4, 2.9, 3.3, 3.8 y 4.2 V; pendiente cercana a 43 V/m) y un mapa de puntos equipotenciales para unirlos. Simulación: en PhET «Cargas y campos», dos filas paralelas de cargas positivas y negativas imitan placas; el sensor de voltaje da el potencial en cada punto y puede trazar la equipotencial que pasa por él, y la cinta métrica permite hacer la gráfica de potencial contra distancia. El docente comprueba antes en la versión que use que esas herramientas están disponibles."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G11-FIS-U8-8.4/1",
+     "decision": "corregir",
+     "justificacion": "Ciencia fijada por el experto intacta. Corrijo forma: el paso 5 (dos mapas, gráfica y pendiente) no cabía en 8 min; reparto 10/10 con cuatro puntos por valor. Agrego aviso de cortocircuito, conversión cm→m, unidad del potencial, materiales por grupo, mapa de ejemplo descrito (no solo nombrado), estrategia con pocos multímetros y simulación descargable sin internet. Sesión suma 55 min.",
+     "evidencia": [
+      {
+       "fuente": "prompts/redactar_actividades.md (reglas de la revisión del panel)",
+       "cita": "Pasos que suman 55 min; materiales que alcanzan; una tabla de ejemplo se describe o se incluye; numéricas con unidad."
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (indicador 2.4)",
+       "cita": "Pide trazar superficies equipotenciales a partir de mediciones y justificar la perpendicularidad del campo."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "En 8 min no se unen dos mapas, se grafica y se calcula la pendiente; la prisa vuelve mecánico el trazo que es el núcleo del objetivo."
+      },
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "Escuelas con un solo multímetro o sin internet necesitan una ruta explícita para que todos tracen su propio mapa."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Mapa de ejemplo tomado de los datos ya dados: 2.0, 2.9 y 3.8 V en x = 3, 5 y 7 cm."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "materiales": [
+       "Por grupo de 4 o 5 estudiantes:",
+       "Una bandeja plástica transparente de unos 25 × 20 cm (o la tapa de un recipiente grande) con agua del grifo hasta 1 cm de profundidad",
+       "Dos hojas de papel cuadriculado de 1 cm: una debajo de la bandeja y una copia para anotar",
+       "Dos trozos rectos de alambre de cobre desnudo de 12 cm (de cable eléctrico pelado) y dos tornillos o clavos grandes",
+       "Cuatro pilas AA en un portapilas (6 V en total) o una batería de 9 V",
+       "Un multímetro digital con sus puntas y cuatro cables con caimanes",
+       "Plastilina para sostener los electrodos de pie y una regla"
+      ],
+      "procedimiento": [
+       "Sesión 1 (55 min)",
+       "1. (8 min) Pongan la bandeja sobre la hoja cuadriculada y agreguen el agua. Doblen hacia arriba 2 cm de un extremo de cada alambre de cobre y fíjenlos con plastilina acostados en el fondo, paralelos y a 10 cm uno del otro, con el extremo doblado fuera del agua. Conecten los caimanes solo a esos extremos secos: un alambre al polo negativo y el otro al positivo del portapilas.",
+       "2. (5 min) Pongan el multímetro en la escala de 20 V de corriente continua (símbolo V con línea recta, «DCV»). La punta negra (COM) va fija al electrodo negativo; la roja será la sonda. Toquen con la roja el electrodo positivo, lean el voltaje entre los dos electrodos y anótenlo.",
+       "3. (12 min) Introduzcan la punta roja en el agua, en vertical, y midan el potencial cada 1 cm sobre la línea central entre los electrodos; hagan la tabla V contra x. Luego busquen tres puntos más para cada uno de tres valores (más o menos a un cuarto, la mitad y tres cuartos del voltaje del paso 2; por ejemplo 1.5, 3 y 4.5 V con pilas AA) y márquenlos en la hoja de anotación.",
+       "4. (10 min) Cambien los alambres por los dos tornillos de pie, a 10 cm uno del otro, con los caimanes por encima del agua, y repitan la búsqueda: cuatro puntos para cada uno de tres valores de potencial. Márquenlos en otra parte de la hoja.",
+       "5. (10 min) Unan los puntos de igual potencial con curvas suaves y dibujen líneas de campo que las corten en ángulo recto, de mayor a menor potencial. Grafiquen V contra x de la línea central y calculen la pendiente (pasen x de centímetros a metros).",
+       "6. (10 min) En grupo, respondan las dos primeras preguntas de análisis. Al terminar, desconecten las pilas y desechen el agua en el lavadero."
+      ],
+      "seguridad": [
+       "Usen solo pilas o una batería de 9 V; nunca conecten nada a un tomacorriente de 120 V.",
+       "Eviten que los dos caimanes o los dos electrodos se toquen entre sí: eso pone las pilas en cortocircuito y las calienta.",
+       "No agreguen sal al agua: con corriente puede liberar algo de cloro. Si las lecturas son muy inestables, el docente puede agregar una pizca de bicarbonato.",
+       "Mantengan el multímetro y el portapilas secos, fuera de la bandeja, y no dejen las pilas conectadas al terminar: se descargan y los electrodos se corroen.",
+       "Sequen el agua derramada para evitar resbalones."
+      ],
+      "analisis": [
+       "(Paso 6) ¿La gráfica V contra x de los electrodos paralelos es una recta? ¿Qué campo eléctrico obtienen de su pendiente, en V/m, y hacia dónde apunta?",
+       "(Paso 6) ¿Por qué las líneas de campo cortan las equipotenciales en ángulo recto? Justifiquen con el trabajo que hace el campo al mover una carga sobre una equipotencial.",
+       "Tarea: Imaginen dos placas en el vacío con la misma diferencia de potencial que midieron en el paso 2. ¿Cuánta energía cinética, en electronvolts, gana un electrón que parte del reposo en la placa negativa y llega a la positiva? ¿Y un ion positivo de carga e que hace el camino contrario? (En el agua de la bandeja la corriente la llevan iones que chocan sin parar, así que esa energía se disipa como calor.)",
+       "Tarea: Una carga de +2.0 nC y otra de −2.0 nC están a 10 cm. Calculen el potencial total en el punto medio, en volts, con V = kq/r para cada carga (k: valor de la tabla de referencia, aproximado 9.0 × 10⁹ N·m²/C²). ¿Es cero el campo en ese punto? ¿Qué muestra eso sobre el potencial como magnitud escalar?"
+      ],
+      "variantes": "Sin bandeja: una hoja de papel con una zona rellena con mina de lápiz blando (6B) muy oscura y pareja, con electrodos de papel aluminio sujetos con clips; no burbujea ni cambia con el tiempo como el agua, pero el trazo desigual deforma las curvas. Sin multímetro ni laboratorio, y sin internet: el docente entrega las lecturas de un grupo de ejemplo sobre la línea central (x = 2, 3, 4, 5, 6, 7 y 8 cm; V = 1.6, 2.0, 2.4, 2.9, 3.3, 3.8 y 4.2 V; pendiente cercana a 43 V/m) y un mapa de puntos para unirlos: con los alambres, los puntos de 2.0, 2.9 y 3.8 V forman rectas paralelas a los electrodos en x = 3, 5 y 7 cm; con los tornillos, curvas cerradas alrededor de cada tornillo que se abren al alejarse, y la del valor medio, casi recta en la mitad. Si hay pocos multímetros, un grupo mide frente a la clase y dicta las lecturas; los demás las anotan y trazan su propio mapa. Simulación: en PhET «Cargas y campos», dos filas paralelas de cargas positivas y negativas imitan placas; el sensor de voltaje da el potencial en cada punto y puede trazar la equipotencial que pasa por él, y la cinta métrica permite hacer la gráfica de potencial contra distancia. El docente comprueba antes en la versión que use que esas herramientas están disponibles; si no hay internet en el aula, puede descargar la simulación antes para usarla sin conexión."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}
