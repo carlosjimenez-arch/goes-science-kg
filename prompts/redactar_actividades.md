@@ -117,6 +117,10 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
 - **Experimentos:** el procedimiento cabe en el tiempo de las sesiones. Las preguntas de análisis que no caben se
   marcan como tarea. Los materiales alcanzan para todos los pasos (cuenta vasos y volúmenes). Una simulación que se
   nombre en `variantes` debe mostrar de verdad lo que se pide.
+- **Análisis con tiempo:** cada pregunta de `analisis` se responde en un paso del procedimiento que tiene minutos
+  asignados, o empieza con «Tarea:». Los pasos de cada sesión suman exactamente su duración (55 min por sesión).
+- **Constantes:** también g, la densidad del agua y la presión atmosférica remiten a la «tabla de referencia»; si un
+  cálculo necesita el número, ponlo rotulado «aproximado».
 - **Exactitud:** la retroalimentación no simplifica hasta decir algo falso (p. ej. «el resorte siempre jala», «los
   elementos junto a la línea escalonada son metaloides»). Si una regla tiene excepciones en el grado, dilo.
 
