@@ -94,6 +94,13 @@ Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuest
 | TEMA:G10-QUI-U3-3.7 | [G10-QUI-U3-3.7](G10-QUI-U3-3.7.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U3-3.8 | [G10-QUI-U3-3.8](G10-QUI-U3-3.8.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U3-3.9 | [G10-QUI-U3-3.9](G10-QUI-U3-3.9.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.10 | [G10-QUI-U3-3.10](G10-QUI-U3-3.10.md) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
+| TEMA:G10-QUI-U4-4.2 | [G10-QUI-U4-4.2](G10-QUI-U4-4.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U4-4.3 | [G10-QUI-U4-4.3](G10-QUI-U4-4.3.md) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
+| TEMA:G10-QUI-U4-4.4 | [G10-QUI-U4-4.4](G10-QUI-U4-4.4.md) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
+| TEMA:G10-QUI-U4-4.5 | [G10-QUI-U4-4.5](G10-QUI-U4-4.5.md) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
+| TEMA:G10-QUI-U4-4.6 | [G10-QUI-U4-4.6](G10-QUI-U4-4.6.md) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
+| TEMA:G10-QUI-U4-4.7 | [G10-QUI-U4-4.7](G10-QUI-U4-4.7.md) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
 | G10-QUI-U13-13.8 | [G10-QUI-U4-4.8](G10-QUI-U4-4.8.md) (VECINO, no equivalente: 25 % de los conceptos y 22 % del texto del pedido) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
 | TEMA:G11-FIS-U1-1.2 | [G11-FIS-U1-1.2](G11-FIS-U1-1.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | TEMA:G11-QUI-U12-12.1 | [G11-QUI-U12-12.1](G11-QUI-U12-12.1.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
