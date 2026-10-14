@@ -1,0 +1,1699 @@
+{
+ "lote": "r2-f10a_psicopedagogo_3",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/suma-vectores-componentes/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/suma-vectores-componentes/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/suma-vectores-componentes",
+     "descripcion": "Asigna los signos de las componentes sin mirar el cuadrante: las escribe todas positivas, cree que una componente negativa es un error porque el módulo es positivo, o acepta el ángulo de la calculadora con arctan sin corregir el cuadrante.",
+     "senales": "Componentes x positivas para vectores que apuntan al oeste o y positivas hacia el sur; una resultante en el primer cuadrante cuando el dibujo la muestra en el tercero.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error frecuente al descomponer vectores fuera del primer cuadrante.",
+     "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/suma-vectores-componentes",
+     "nombre": "Suma de vectores y componentes rectangulares",
+     "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.4",
+     "grado": 10,
+     "indicador": "1.4. • Resuelve problemas en contexto con tres o más vectores en direcciones arbitrarias, obteniendo la resultante por componentes y expresándola en forma polar. • Representa magnitudes vectoriales con escala, notación polar y rumbo geográfico, y las distingue de las escalares. • Obtiene el módulo y la dirección de la suma y la resta de dos vectores con ángulos arbitrarios aplicando las leyes del seno y del coseno. • Calcula las componentes de vectores en cualquier cuadrante y reconstruye su módulo y dirección a partir de las componentes, expresándolos con vectores unitarios.",
+     "evidencia": "Solución de un problema de rescate con tabla de componentes, resultante en notación î, ĵ y rumbo de regreso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/suma-vectores-componentes/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/suma-vectores-componentes/2",
+     "decision": "aprobar",
+     "justificacion": "Error real y frecuente: signos de componentes según cuadrante y ambigüedad de arctan (da el mismo valor para el primer y tercer cuadrante). Descripción y señales correctas y observables.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U2-2.4",
+       "cita": "Pide calcular componentes en cualquier cuadrante y reconstruir módulo y dirección."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "arctan(y/x) devuelve ángulos entre −90° y 90°; con x<0 hay que sumar 180°."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/suma-vectores-componentes/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/suma-vectores-componentes/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/suma-vectores-componentes",
+     "descripcion": "Usa siempre el coseno para x y el seno para y, aunque el ángulo esté medido desde el eje vertical o sea un rumbo desde el norte (N 30° E), o mide el ángulo de la resultante desde el eje equivocado.",
+     "senales": "Para un rumbo N 30° E escribe x = d cos 30°; da un rumbo S 53° O donde corresponde S 37° O; intercambia las componentes de un vector.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se memoriza la regla del coseno sin ver desde qué eje.",
+     "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/suma-vectores-componentes",
+     "nombre": "Suma de vectores y componentes rectangulares",
+     "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.4",
+     "grado": 10,
+     "indicador": "1.4. • Resuelve problemas en contexto con tres o más vectores en direcciones arbitrarias, obteniendo la resultante por componentes y expresándola en forma polar. • Representa magnitudes vectoriales con escala, notación polar y rumbo geográfico, y las distingue de las escalares. • Obtiene el módulo y la dirección de la suma y la resta de dos vectores con ángulos arbitrarios aplicando las leyes del seno y del coseno. • Calcula las componentes de vectores en cualquier cuadrante y reconstruye su módulo y dirección a partir de las componentes, expresándolos con vectores unitarios.",
+     "evidencia": "Solución de un problema de rescate con tabla de componentes, resultante en notación î, ĵ y rumbo de regreso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/suma-vectores-componentes/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/suma-vectores-componentes/3",
+     "decision": "aprobar",
+     "justificacion": "Confusión real con rumbos: N 30° E da x = d sen 30°, no d cos 30°; el ejemplo S 53° O frente a S 37° O es el intercambio de ángulos complementarios. Correcto.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U2-2.4",
+       "cita": "Pide representar vectores con rumbo geográfico y notación polar."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Un rumbo se mide desde el eje norte-sur; el coseno corresponde a la componente sobre ese eje."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/tercera-ley-newton/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/tercera-ley-newton/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/tercera-ley-newton",
+     "descripcion": "Cree que en una interacción ejerce más fuerza el cuerpo más grande, más masivo, más rápido o el que «inicia» la acción: el camión empuja más a la moto que la moto al camión, o quien jala más fuerte marca más en su dinamómetro. Las dos fuerzas del par siempre tienen el mismo módulo; lo que sí es distinto son sus efectos (aceleraciones, daños), porque las masas y los materiales son distintos.",
+     "senales": "Predice que el dinamómetro de quien jala marcará más; dice que la Tierra atrae a la Luna con más fuerza que la Luna a la Tierra; explica el choque diciendo que «el camión pega más fuerte»; llama «acción» a la fuerza del cuerpo activo y la cree mayor que la «reacción».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa muy frecuente; la malla pide registrar dinamómetros enganchados para refutarla.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tercera-ley-newton",
+     "nombre": "Tercera ley de Newton: acción y reacción",
+     "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.7",
+     "grado": 10,
+     "indicador": "3.3. • Identifica pares de acción y reacción en sistemas de dos o más cuerpos y los diferencia de fuerzas que se equilibran sobre un mismo cuerpo. • Clasifica las fuerzas que intervienen en situaciones reales según su tipo y las relaciona con la interacción fundamental de la que provienen. • Calcula el módulo de la fuerza gravitatoria entre dos cuerpos con la ley de gravitación universal y explica el peso como la atracción que la Tierra ejerce sobre un cuerpo.",
+     "evidencia": "Tabla de lecturas de dinamómetros y diagramas de cuerpo libre separados con identificación de pares de acción y reacción"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/tercera-ley-newton/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/tercera-ley-newton/1",
+     "decision": "aprobar",
+     "justificacion": "Idea previa documentada (asimetría por masa, rapidez o agente activo). Afirma correctamente que las fuerzas del par son iguales y que difieren los efectos por la masa. Señales observables con los dinamómetros que pide la malla.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.7 (fila 13)",
+       "cita": "D4: lecturas simultáneas de dos dinamómetros enganchados marcan el mismo valor."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "F₁₂ = −F₂₁ siempre; a = F/m difiere entre cuerpos."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/tercera-ley-newton/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/tercera-ley-newton/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/tercera-ley-newton",
+     "descripcion": "Confunde un par de acción y reacción con dos fuerzas que se equilibran sobre un mismo cuerpo: cree que el peso del libro y la normal de la mesa son un par, o que las fuerzas del par se anulan entre sí y por eso nada podría moverse. Las fuerzas de un par actúan sobre cuerpos distintos y nunca se suman en el mismo diagrama de cuerpo libre.",
+     "senales": "Une con una línea el peso y la normal de un mismo cuerpo como «acción y reacción»; dice que si las fuerzas son iguales «se cancelan» y el bote o el caballo que jala la carreta no avanza; dibuja las dos fuerzas del par en el mismo diagrama de cuerpo libre.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error clásico; la malla pide refutar «si son iguales, nada se movería».",
+     "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tercera-ley-newton",
+     "nombre": "Tercera ley de Newton: acción y reacción",
+     "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.7",
+     "grado": 10,
+     "indicador": "3.3. • Identifica pares de acción y reacción en sistemas de dos o más cuerpos y los diferencia de fuerzas que se equilibran sobre un mismo cuerpo. • Clasifica las fuerzas que intervienen en situaciones reales según su tipo y las relaciona con la interacción fundamental de la que provienen. • Calcula el módulo de la fuerza gravitatoria entre dos cuerpos con la ley de gravitación universal y explica el peso como la atracción que la Tierra ejerce sobre un cuerpo.",
+     "evidencia": "Tabla de lecturas de dinamómetros y diagramas de cuerpo libre separados con identificación de pares de acción y reacción"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/tercera-ley-newton/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/tercera-ley-newton/2",
+     "decision": "aprobar",
+     "justificacion": "Confusión clásica entre par de acción y reacción y fuerzas equilibradas sobre un cuerpo. La corrección (cuerpos distintos, nunca en el mismo diagrama de un cuerpo) es exacta.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.7",
+       "cita": "Indicador: diferenciar pares de acción y reacción de fuerzas equilibradas sobre un mismo cuerpo."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Peso del libro (Tierra-libro) y normal (mesa-libro) son interacciones distintas."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/tercera-ley-newton/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/tercera-ley-newton/3",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/tercera-ley-newton",
+     "descripcion": "Cree que la gravedad actúa en un solo sentido: la Tierra atrae a la manzana o a la Luna, pero estas no atraen a la Tierra, o la atraen con una fuerza menor. Toda atracción gravitatoria es mutua y las dos fuerzas tienen el mismo módulo; la Tierra casi no se mueve porque su masa es enorme y su aceleración es pequeñísima.",
+     "senales": "Dibuja una sola flecha en la interacción Tierra–Luna; responde que la manzana atrae a la Tierra «con cero» o «con mucho menos fuerza»; usa en la ley de gravitación solo la masa del cuerpo que cae; dice que un objeto pequeño «no tiene gravedad».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Asimetría intuitiva frecuente al estudiar gravitación y peso.",
+     "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tercera-ley-newton",
+     "nombre": "Tercera ley de Newton: acción y reacción",
+     "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.7",
+     "grado": 10,
+     "indicador": "3.3. • Identifica pares de acción y reacción en sistemas de dos o más cuerpos y los diferencia de fuerzas que se equilibran sobre un mismo cuerpo. • Clasifica las fuerzas que intervienen en situaciones reales según su tipo y las relaciona con la interacción fundamental de la que provienen. • Calcula el módulo de la fuerza gravitatoria entre dos cuerpos con la ley de gravitación universal y explica el peso como la atracción que la Tierra ejerce sobre un cuerpo.",
+     "evidencia": "Tabla de lecturas de dinamómetros y diagramas de cuerpo libre separados con identificación de pares de acción y reacción"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/tercera-ley-newton/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/tercera-ley-newton/3",
+     "decision": "aprobar",
+     "justificacion": "Asimetría gravitatoria real en estudiantes. Lo afirmado es correcto: fuerzas mutuas de igual módulo; la Tierra apenas acelera por su gran masa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.7",
+       "cita": "Indicador: ley de gravitación y peso como atracción de la Tierra."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "F = G m₁m₂/r² actúa sobre ambos cuerpos con el mismo módulo."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U2-2.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U2-2.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U2-2.1"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U2-2.1",
+      "CON:fisica/sistema-internacional-unidades"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "¿Cuánta agua deja ir un chorro abierto? Caudal con conversiones encadenadas y análisis dimensional",
+     "proposito": "Medir el caudal de un chorro de la escuela con una botella y un cronómetro, expresarlo con factores de conversión encadenados en L/s, m³/día y piscinas por día, comprobar en cada paso que las unidades se cancelan y decidir si el resultado es razonable. Después, usar el análisis dimensional para detectar ecuaciones mal planteadas. Produce la resolución escrita con cadena de factores y comprobación de unidades que pide la malla.",
+     "materiales": [
+      "Un chorro (grifo) de la escuela o un garrafón con grifo dispensador, uno por grupo o por turnos",
+      "Una botella plástica de 1.5 L o 2 L con el volumen impreso en la etiqueta, por grupo",
+      "Una cubeta o un barril para recoger el agua y reutilizarla (regar plantas o limpieza)",
+      "Cronómetro o celular",
+      "Cinta adhesiva y marcador para marcar la posición de la llave",
+      "Calculadora y la hoja de trabajo con cinco ecuaciones para el análisis dimensional"
+     ],
+     "procedimiento": [
+      "1. (5 min) Escriban la pregunta guía «¿Cuánta agua se pierde en un día si un chorro de la escuela queda abierto?». Antes de medir, cada pareja estima el orden de magnitud en litros por día (¿cientos?, ¿miles?, ¿decenas de miles?) y lo anota.",
+      "2. (10 min) Abran la llave hasta una posición fija y márquenla con cinta. Llenen la botella desde vacía y midan el tiempo de llenado; repitan tres veces con la misma apertura, vaciando el agua en la cubeta para reutilizarla. Anoten volumen de la botella y los tres tiempos.",
+      "3. (10 min) Calculen el tiempo promedio y el caudal en L/s. En parejas, uno escribe la cadena de factores para pasar a m³/día (L → m³, s → min → h → día) y el otro tacha las unidades que se cancelan en cada factor; luego cambian de rol y pasan el caudal a L/min.",
+      "4. (5 min) Una piscina olímpica mide 50 m × 25 m × 2 m. Calculen su volumen en m³ y en litros y cuántos días tardaría el chorro en llenarla. Comparen con la estimación del paso 1 y respondan la pregunta de análisis 2.",
+      "5. (15 min) Hoja de análisis dimensional (x distancia, v y v₀ rapideces, a aceleración, t tiempo, h altura, g aceleración de la gravedad, Q caudal, V volumen). Escriban las dimensiones de cada término de: (i) x = v₀·t + ½·a·t²; (ii) v = v₀ + a·t²; (iii) Q = V/t; (iv) x = v/t; (v) t = √(2h/g). Decidan cuáles son dimensionalmente imposibles y cuál es homogénea pero podría tener mal un factor numérico; respondan la pregunta de análisis 3.",
+      "6. (10 min) Puesta en común: cada grupo dice su caudal y su número de días para la piscina; comparan entre grupos y responden la pregunta de análisis 1."
+     ],
+     "seguridad": [
+      "Sequen el piso mojado de inmediato para evitar resbalones y no corran cerca del chorro.",
+      "Usen solo botellas plásticas, nada de vidrio.",
+      "No desperdicien el agua: recójanla en la cubeta y úsenla para regar o limpiar."
+     ],
+     "datos_esperados": "Un chorro escolar abierto a medias llena una botella de 1.5 L en unos 8 a 30 s, es decir, entre unos 0.05 y 0.2 L/s; por ejemplo, 1.5 L en 12 s dan 0.125 L/s, 7.5 L/min y unos 10.8 m³/día (10 800 L/día). Los tres tiempos de un mismo grupo suelen diferir unas décimas de segundo, por la reacción al detener el cronómetro, así que el caudal tiene sentido con dos o tres cifras. La piscina tiene 2 500 m³ (2 500 000 L) y el chorro tardaría del orden de cientos de días en llenarla. En la hoja, (ii) y (iv) son dimensionalmente imposibles; (i), (iii) y (v) son homogéneas, y el análisis dimensional no puede comprobar si el ½ de (i) o el 2 de (v) son correctos.",
+     "analisis": [
+      "¿Cuánto variaron sus tres tiempos de llenado y los caudales de los distintos grupos? Con esa variación, ¿cuántas cifras tiene sentido dar en el caudal?",
+      "¿Cuántos días tardaría el chorro en llenar la piscina? ¿Su estimación del paso 1 tuvo el orden de magnitud correcto? ¿Por qué 1 m³ equivale a 1 000 L y no a 100 L?",
+      "¿Cuáles ecuaciones de la hoja son dimensionalmente imposibles y por qué? ¿Basta que una ecuación sea homogénea para saber que es correcta?",
+      "Tarea: busquen el caudal medio del río Lempa en una fuente del MARN, conviértanlo con factores encadenados a piscinas olímpicas por día y anoten la referencia completa de la fuente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin agua corriente: usen un garrafón con grifo dispensador o una botella grande con un agujero de unos 3 mm cerca del fondo, mantenida llena hasta una marca mientras se mide (si el nivel baja, el caudal disminuye y conviene medir solo el primer litro). Sin cronómetro: cuenten segundos con el reloj del celular o del aula y aumenten el volumen medido para que el error pese menos. No hace falta internet salvo para la tarea, que puede hacerse con un dato de caudal que lleve el docente impreso con su fuente.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/sistema-internacional-unidades",
+     "nombre": "Sistema Internacional de Unidades",
+     "definicion": "Sistema de unidades fundamentales y derivadas, con prefijos y factores de conversión, usado para expresar magnitudes físicas.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.1",
+     "grado": 10,
+     "indicador": "1.3. • Resuelve problemas en contexto que requieren varias conversiones encadenadas de unidades y verifica la coherencia de las unidades del resultado. • Comprueba la homogeneidad dimensional de una ecuación física y detecta ecuaciones mal planteadas por sus dimensiones.",
+     "evidencia": "Resolución escrita de tres problemas contextualizados con cadena de factores de conversión y comprobación de unidades"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U2-2.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U2-2.1/1",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: 1.5 L/12 s = 0.125 L/s = 7.5 L/min = 10.8 m³/día; piscina 2 500 m³ ≈ 231 días (145 a 580 en el rango dado). Ecuaciones (ii) y (iv) no homogéneas, correcto. Tiempos suman 55 min y cada pregunta tiene su paso o «Tarea».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U2-2.1",
+       "cita": "Conversiones encadenadas y homogeneidad dimensional."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a·t² tiene dimensión de longitud y v/t de aceleración: (ii) y (iv) son imposibles."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U2-2.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U2-2.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U2-2.4"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U2-2.4",
+      "CON:fisica/suma-vectores-componentes"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Rescate en el patio: tres desplazamientos, su resultante y el rumbo de regreso",
+     "proposito": "Recorrer en el patio tres desplazamientos dados por distancia y rumbo, calcular antes su resultante por componentes (tabla, notación î, ĵ, forma polar y rumbo de regreso) y comprobarla midiendo en el piso y con un dibujo a escala. Así se ve por qué la distancia caminada no es el desplazamiento y qué errores de signo o de ángulo se notan en la medición. Produce la solución con tabla de componentes y rumbo de regreso que pide la malla.",
+     "materiales": [
+      "Una tarjeta por grupo con los tramos: d₁ = 8.0 m con rumbo N 60° E; d₂ = 5.0 m con rumbo N 30° O; d₃ = 6.0 m con rumbo S 20° O",
+      "Cinta métrica de 10 m o más por grupo (o una cuerda de 10 m marcada cada metro y una regla de 1 m)",
+      "Una brújula o un celular con aplicación de brújula por grupo",
+      "Yeso o cinta adhesiva para marcar puntos en el piso",
+      "Papel cuadriculado, regla, transportador y calculadora con funciones trigonométricas",
+      "Un espacio libre de unos 10 m × 10 m en el patio o la cancha"
+     ],
+     "procedimiento": [
+      "1. (5 min) Acuerden los ejes: el este es el eje x y el norte el eje y. Con la brújula, marquen con yeso el origen O y una línea norte–sur que pase por él. Lean la tarjeta y anoten, sin calcular, hacia dónde creen que quedará el punto final.",
+      "2. (15 min) Pasen cada rumbo a ángulo medido desde el este en sentido antihorario, calculen las componentes de cada tramo en una tabla, sumen cada columna y escriban la resultante con î y ĵ. Calculen su módulo, su ángulo y su rumbo, y el rumbo y la distancia para regresar a O.",
+      "3. (15 min) En el patio, una persona sostiene la brújula y orienta el rumbo, otra estira la cinta y una tercera marca con yeso el final de cada tramo, empezando cada tramo donde terminó el anterior. Marquen el punto final P, midan con la cinta la distancia de P a O y con la brújula el rumbo de P hacia O.",
+      "4. (12 min) Hagan el dibujo a escala 1 cm : 1 m en el papel cuadriculado por el método del polígono (cada vector empieza donde termina el anterior), con regla y transportador; midan la resultante y su ángulo.",
+      "5. (8 min) Comparen en una tabla los tres resultados (cálculo, patio y dibujo) y respondan las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "Trabajen en una zona del patio sin tránsito de vehículos ni partidos en curso; caminen, no corran.",
+      "Las cintas métricas metálicas tienen bordes que cortan: recójanlas despacio y sin soltar el extremo.",
+      "Si hace mucho sol, usen gorra y tengan agua; alejen la brújula de mallas, postes y celulares, que desvían la aguja."
+     ],
+     "datos_esperados": "Componentes calculadas (en m): d₁ = (6.93, 4.00), d₂ = (−2.50, 4.33), d₃ = (−2.05, −5.64); resultante R ≈ 2.38 î + 2.69 ĵ m, de unos 3.6 m, a unos 48° del este (rumbo N 41° E aproximadamente). Para regresar: unos 3.6 m con rumbo S 41° O. En el patio el punto final suele quedar a 0.3–0.8 m del calculado y el rumbo medido diferir 5° a 10°, por errores de orientación de la brújula y al estirar la cinta; el dibujo a escala da la resultante con unos pocos milímetros de diferencia. La distancia caminada es 19 m, unas cinco veces el módulo de la resultante.",
+     "analisis": [
+      "¿Coinciden el módulo y el rumbo de la resultante calculada, la medida en el patio y la del dibujo? ¿Qué causa las diferencias y cuál de los tres métodos les parece más confiable?",
+      "Caminaron 19 m: ¿por qué el camino de regreso es mucho más corto? ¿Cuál de las dos cantidades es escalar y cuál vectorial?",
+      "Tarea: calculen el módulo y la dirección de d₁ − d₂ con las leyes del coseno y del seno, y compruébenlos por componentes.",
+      "Tarea: expliquen por qué, con tres o más vectores, conviene el método por componentes y no el gráfico."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin patio amplio: hagan el recorrido a escala 1:10 (tramos de 80, 50 y 60 cm) en el piso del aula, marcando con cinta adhesiva en un área de al menos 1 m × 1 m (el recorrido ocupa unos 70 × 85 cm, más que un pliego de papel), con la línea norte–sur trazada y el transportador. Sin brújula ni celular: el docente marca una línea de referencia norte–sur y los rumbos se trazan con un transportador sobre un cartón alineado con ella. Con computadora del CRA, GeoGebra Clásico permite escribir cada vector por sus componentes en la barra de entrada, sumarlos y ver la resultante y sus componentes en la vista algebraica; el docente lo prueba antes de la clase.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/suma-vectores-componentes",
+     "nombre": "Suma de vectores y componentes rectangulares",
+     "definicion": "Descomposición de vectores en componentes y suma gráfica o analítica para obtener la resultante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U2-2.4",
+     "grado": 10,
+     "indicador": "1.4. • Resuelve problemas en contexto con tres o más vectores en direcciones arbitrarias, obteniendo la resultante por componentes y expresándola en forma polar. • Representa magnitudes vectoriales con escala, notación polar y rumbo geográfico, y las distingue de las escalares. • Obtiene el módulo y la dirección de la suma y la resta de dos vectores con ángulos arbitrarios aplicando las leyes del seno y del coseno. • Calcula las componentes de vectores en cualquier cuadrante y reconstruye su módulo y dirección a partir de las componentes, expresándolos con vectores unitarios.",
+     "evidencia": "Solución de un problema de rescate con tabla de componentes, resultante en notación î, ĵ y rumbo de regreso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U2-2.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U2-2.4/1",
+     "decision": "corregir",
+     "justificacion": "Recalculado: d₁(6.93; 4.00), d₂(−2.50; 4.33), d₃(−2.05; −5.64), R = 2.38î + 2.69ĵ, 3.59 m a 48.6° (N 41° E); regreso S 41° O; cabe en 10 m × 10 m (máx. 6.9 × 8.3 m). Solo falla la variante: a escala 1:10 ocupa unos 70 × 85 cm y no cabe en un pliego con margen.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U2-2.4",
+       "cita": "Evidencia: problema de rescate con tabla de componentes, î, ĵ y rumbo de regreso."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Extremos del recorrido: x hasta 6.93 m, y hasta 8.33 m; a 1:10, 69 × 83 cm."
+      }
+     ],
+     "cambios": {
+      "variantes": "Sin patio amplio: hagan el recorrido a escala 1:10 (tramos de 80, 50 y 60 cm) en el piso del aula, marcando con cinta adhesiva en un área de al menos 1 m × 1 m (el recorrido ocupa unos 70 × 85 cm, más que un pliego de papel), con la línea norte–sur trazada y el transportador. Sin brújula ni celular: el docente marca una línea de referencia norte–sur y los rumbos se trazan con un transportador sobre un cartón alineado con ella. Con computadora del CRA, GeoGebra Clásico permite escribir cada vector por sus componentes en la barra de entrada, sumarlos y ver la resultante y sus componentes en la vista algebraica; el docente lo prueba antes de la clase."
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U3-3.5/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U3-3.5/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U3-3.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U3-3.5",
+      "CON:fisica/movimiento-uniformemente-acelerado"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Mi tiempo de reacción y la distancia para detener un carro",
+     "proposito": "Medir el tiempo de reacción con una regla que cae y usarlo, junto con una desaceleración de ejemplo, para calcular por etapas la distancia de reacción, la de frenado y la total de un carro a varias rapideces en pavimento seco y mojado. Con la tabla y la gráfica de distancia de detención contra rapidez, que pide la malla como evidencia, se comprueba que la distancia de frenado crece con el cuadrado de la rapidez y se argumenta sobre distancias de seguridad.",
+     "materiales": [
+      "Una regla de madera de 50 cm o de 1 m por pareja (sirve la regla de pizarra)",
+      "Calculadora o celular con calculadora",
+      "Papel milimetrado o cuadriculado (o una hoja de cálculo en la computadora del CRA)",
+      "Hoja con las desaceleraciones de ejemplo y las rapideces de la tabla"
+     ],
+     "procedimiento": [
+      "1. (5 min) Escriban una predicción: si un carro duplica su rapidez, ¿cuántas veces más distancia necesita para detenerse? Anoten por qué.",
+      "2. (10 min) En parejas, una persona sostiene la regla vertical por el extremo superior; la otra pone los dedos abiertos, sin tocarla, a la altura de la marca de 0 cm. Sin aviso, la primera suelta la regla y la segunda la atrapa; anoten en centímetros la distancia d que cayó. Hagan diez intentos cada persona y descarten los intentos en que alguien se adelantó.",
+      "3. (8 min) Calculen el tiempo de cada intento con t = √(2d/g), con d en metros y g de la tabla de referencia (aproximado 9.8 m/s²), y su tiempo de reacción promedio.",
+      "4. (15 min) Con su tiempo de reacción y las desaceleraciones de ejemplo de 7.0 m/s² en pavimento seco y 4.0 m/s² en mojado (valores aproximados; el docente los contrasta con su fuente), completen la tabla para 30, 45, 60 y 90 km/h: rapidez en m/s, distancia de reacción v·t, distancia de frenado v²/(2a) y distancia total, en seco y en mojado.",
+      "5. (9 min) Grafiquen la distancia total contra la rapidez, con una curva para pavimento seco y otra para mojado.",
+      "6. (8 min) Comparen con la predicción del paso 1 y respondan las preguntas de análisis 1 y 2."
+     ],
+     "seguridad": [
+      "Quien suelta la regla la sostiene por encima de la mano de su pareja y lejos de la cara; nadie juega a lanzarla.",
+      "Revisen que la regla no tenga astillas ni clavos.",
+      "Ninguna medición se hace en la calle ni con vehículos: los datos de frenado se calculan."
+     ],
+     "datos_esperados": "La regla cae entre unos 12 y 30 cm, que dan tiempos de reacción de unos 0.15 a 0.25 s; el promedio suele estar cerca de 0.2 s y es algo mejor después de varios intentos. Con 0.20 s, la distancia total sale, en seco, unos 7, 14, 23 y 50 m a 30, 45, 60 y 90 km/h, y en mojado unos 10, 22, 38 y 83 m. La distancia de reacción crece en proporción a la rapidez y la de frenado con su cuadrado: de 45 a 90 km/h la de frenado se cuadruplica (de unos 11 a 45 m en seco), y la curva de distancia total contra rapidez se curva hacia arriba. A rapidez baja pesa más la reacción; a rapidez alta domina el frenado.",
+     "analisis": [
+      "¿Se cumplió su predicción? Comparen la distancia de frenado a 45 y a 90 km/h y expliquen el resultado con v² = v₀² + 2aΔx.",
+      "¿Qué parte de la distancia total domina a 30 km/h y cuál a 90 km/h? ¿Cuánto más necesita el carro en pavimento mojado?",
+      "Tarea: en la calle, el conductor no espera la señal como en el juego de la regla. Repitan la tabla con un tiempo de reacción supuesto de 1.0 s y digan cómo cambia la distancia total a 90 km/h.",
+      "Tarea: busquen la distancia o el tiempo de separación entre vehículos que recomienda el reglamento de tránsito o un manual de manejo, citen la fuente y argumenten con su gráfica si basta a 90 km/h en carretera mojada. ¿Qué supuestos de su modelo (aceleración constante, reacción fija) pueden fallar?"
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin regla larga: con una regla de 30 cm solo se atrapan tiempos de hasta unos 0.25 s; los intentos en que la regla cae al suelo se anotan como «más de 0.25 s». Sin papel milimetrado, la gráfica se hace en hoja cuadriculada con escalas elegidas por el grupo. No hace falta internet salvo para la última tarea, que puede hacerse con el reglamento impreso que lleve el docente.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-uniformemente-acelerado",
+     "nombre": "Movimiento con aceleración constante",
+     "definicion": "Movimiento rectilíneo uniformemente variado descrito por las ecuaciones de la cinemática con aceleración constante.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.5",
+     "grado": 10,
+     "indicador": "2.2. • Resuelve problemas de varias etapas con las ecuaciones de la cinemática, como la distancia total de detención de un vehículo o el tiempo de encuentro entre dos móviles. • Calcula la aceleración media de un móvil a partir de datos experimentales y determina, según los signos de velocidad y aceleración, si el móvil acelera o frena. • Deduce las ecuaciones del movimiento rectilíneo uniformemente acelerado a partir de la pendiente y el área de la gráfica velocidad-tiempo, e identifica la ecuación adecuada según las variables conocidas.",
+     "evidencia": "Tabla y gráfica de distancia de detención contra rapidez con argumentación sobre distancias de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U3-3.5/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U3-3.5/1",
+     "decision": "aprobar",
+     "justificacion": "Recalculado con 0.20 s: seco 6.6, 13.7, 23.2 y 49.6 m; mojado 10.4, 22.0, 38.1 y 83.1 m; frenado 11.2 a 44.6 m (×4). Regla de 12–30 cm da 0.16–0.25 s. Desaceleraciones 7 y 4 m/s² realistas y declaradas aproximadas; g remite a la tabla. 55 min.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U3-3.5",
+       "cita": "Evidencia: tabla y gráfica de distancia de detención contra rapidez."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "d = v·t_r + v²/(2a); t = √(2d/g)."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U3-3.6/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U3-3.6/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U3-3.6"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U3-3.6",
+      "CON:fisica/caida-libre"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Medir g en el aula con una pelota, una cinta métrica y el video del celular",
+     "proposito": "Determinar experimentalmente la aceleración de la gravedad: medir con video el tiempo de caída de una pelota desde varias alturas, linealizar los datos con la gráfica de h contra t² (pendiente g/2) y comparar el valor obtenido con el de la tabla de referencia. Después, aplicar el resultado a un lanzamiento vertical: predecir la altura máxima con el tiempo de vuelo y comprobarla en el video. Produce la gráfica h–t² con ajuste lineal y el valor experimental de g que pide la malla.",
+     "materiales": [
+      "Una pelota pequeña y densa por grupo (de hule maciza, de golf o de béisbol); una de tenis también sirve, con algo más de efecto del aire",
+      "Dos hojas de papel iguales",
+      "Cinta métrica y cinta adhesiva de color (masking tape) con marcador",
+      "Un celular con cámara por grupo (mejor si graba en cámara lenta) y un soporte improvisado con libros",
+      "Computadora del CRA con Tracker (gratuito) u otro reproductor que avance cuadro a cuadro",
+      "Papel milimetrado o una hoja de cálculo, regla y calculadora"
+     ],
+     "procedimiento": [
+      "1. (5 min) (Sesión 1) Suelten al mismo tiempo, desde la misma altura, una hoja extendida y otra igual hecha bola; luego la bola de papel y la pelota. Anoten qué llega primero y respondan la pregunta de análisis 1.",
+      "2. (10 min) Peguen en una pared lisa una tira vertical de cinta con marcas a 0.50, 1.00, 1.50 y 1.80 m del piso y marcas cada 25 cm hasta 2.25 m (las más altas las pega el docente). Pongan el celular en el soporte a unos 2–3 m de la pared, a media altura, de modo que se vean el piso y la marca más alta. Anoten cuántos cuadros por segundo graba el celular (en cámara lenta, los que indica al grabar, no los de reproducción).",
+      "3. (25 min) Para cada una de las cuatro alturas, pongan la parte de abajo de la pelota en la marca, cerca de la pared sin tocarla, y suéltenla abriendo la mano de golpe, sin empujarla. Graben tres caídas por altura (doce videos).",
+      "4. (10 min) Graben tres lanzamientos verticales suaves: la pelota sale de la mano a la altura de la marca de 1.00 m y sube hasta cerca de la marca de 2.00 m, junto a la pared.",
+      "5. (5 min) Nombren cada video con la altura y el intento, y guárdenlos para la sesión 2.",
+      "6. (20 min) (Sesión 2) En Tracker o en el reproductor, avancen cuadro a cuadro y cuenten los cuadros n desde el último cuadro en que la mano toca la pelota hasta el primero en que la pelota toca el piso. Calculen t = n / (cuadros por segundo), el promedio por altura y t², y hagan la tabla h, t y t².",
+      "7. (12 min) Grafiquen h (eje vertical) contra t², tracen la recta que mejor pase por los puntos y por el origen, calculen su pendiente y obtengan g = 2 × pendiente. Respondan la pregunta de análisis 2.",
+      "8. (8 min) En los videos de los lanzamientos, midan el tiempo de vuelo T hasta que la pelota vuelve a la marca de 1.00 m. Con su g, calculen v₀ = gT/2 y la altura que sube sobre el punto de salida, gT²/8, y compárenla con la marca más alta que alcanzó en el video. Respondan la pregunta de análisis 4.",
+      "9. (10 min) Cada equipo anota su g en una tabla común de la pizarra y la clase hace una sola gráfica con todos los datos. Comparen con el valor de la tabla de referencia y respondan la pregunta de análisis 3.",
+      "10. (5 min) Calculen la diferencia porcentual entre su g y el de la tabla de referencia y escriban una conclusión de dos oraciones."
+     ],
+     "seguridad": [
+      "Nadie se sube a sillas ni mesas: las marcas altas las pega el docente desde el piso.",
+      "Los lanzamientos son suaves y verticales, lejos de ventanas, lámparas y ventiladores; solo lanza una persona a la vez y las demás quedan detrás de la cámara.",
+      "No graben rostros de compañeros sin su permiso; si comparten los videos, que solo se vean las manos y la pelota.",
+      "Recojan la pelota de inmediato para que nadie la pise."
+     ],
+     "datos_esperados": "Los tiempos de caída esperados son de unos 0.32 s (0.50 m), 0.45 s (1.00 m), 0.55 s (1.50 m) y 0.61 s (1.80 m). Con video normal de 30 cuadros por segundo son solo unos 10 a 18 cuadros, y un cuadro de más o de menos cambia mucho t²: el g de cada equipo puede salir entre unos 8.5 y 11 m/s². Con cámara lenta (120 o 240 cuadros por segundo) suele quedar a menos de un 5 % del valor de la tabla de referencia (aproximado 9.8 m/s²), y algo por debajo con pelota de tenis por el aire. Los puntos h–t² forman casi una recta; si corta el eje de t² lejos del origen, suele ser porque se empezó a contar antes de soltar la pelota. En el lanzamiento que sube 1 m, el tiempo de vuelo es de unos 0.9 s. La hoja extendida tarda mucho más que la bola; la bola de papel y la pelota llegan casi juntas desde poca altura.",
+     "analisis": [
+      "¿Por qué la hoja arrugada llegó antes que la extendida, si tienen la misma masa? ¿Por qué la bola de papel y la pelota llegaron casi juntas?",
+      "¿Los puntos de h contra t² forman una recta que pasa cerca del origen? ¿Qué representa la pendiente y qué valor de g obtienen?",
+      "¿Coincide su g con el de los otros equipos y con el valor de la tabla de referencia? ¿Qué fuentes de error (cuadros por segundo, inicio de la caída, perspectiva de la cámara) explican la diferencia?",
+      "¿Se cumplió la altura máxima predicha con el tiempo de vuelo? ¿Cuánto vale la aceleración de la pelota en el punto más alto?",
+      "Tarea: ¿en qué casos la resistencia del aire deja de ser despreciable? Den ejemplos con una pelota de playa, una pluma y una gota de lluvia."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin celular ni computadora (actividad de la malla): péndulo con un hilo y una tuerca. Midan con cronómetro el tiempo de 20 oscilaciones pequeñas (menos de unos 10°) para longitudes de 0.40, 0.60, 0.80 y 1.00 m, cinco veces cada una; calculen el período T y grafiquen L contra T²: es una recta de pendiente g/(4π²). Así se obtiene g, aunque no se observa la caída misma. Con internet, la simulación PhET «Laboratorio de péndulo» trae cronómetro y permite cambiar la longitud y el valor de la gravedad para comparar; el docente comprueba antes que su versión muestra el período.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/caida-libre",
+     "nombre": "Caída libre",
+     "definicion": "Movimiento vertical bajo la sola acción de la gravedad, con aceleración constante g, despreciando la resistencia del aire.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.6",
+     "grado": 10,
+     "indicador": "2.3. Determina experimentalmente la aceleración de la gravedad y aplica las ecuaciones de la cinemática a la caída libre y al lanzamiento vertical.",
+     "evidencia": "Gráfica h contra t² con ajuste lineal, valor experimental de g y comparación con el valor aceptado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U3-3.6/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U3-3.6/1",
+     "decision": "aprobar",
+     "justificacion": "Recalculado: t = √(2h/g) da 0.32, 0.45, 0.55 y 0.61 s; un cuadro a 30 fps altera t² ≈ 15 %, coherente con 8.5–11 m/s²; subir 1 m da T ≈ 0.90 s y h = gT²/8 correcto. Péndulo: L contra T² con pendiente g/4π², actividad de la malla. Dos sesiones de 55 min cuadran.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U3-3.6 (fila 9)",
+       "cita": "E2: graficar h contra t² y relacionar la pendiente con g/2; E3: lanzamiento vertical comprobado con video."
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U3-3.6 (fila 9)",
+       "cita": "Actividad con péndulo de 1 m, 20 oscilaciones, cinco repeticiones.",
+       "cita_literal": "Determina g con un péndulo de 1 m (20 oscilaciones, cinco repeticiones)"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U3-3.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U3-3.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U3-3.7"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U3-3.7",
+      "CON:fisica/graficas-movimiento"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Caminar una gráfica: las tres gráficas de un movimiento por tramos",
+     "proposito": "Registrar en el patio la posición de una persona que camina por tramos (avanza, se detiene y regresa) cada 2 s, construir con esos datos la gráfica x-t y, a partir de sus pendientes y áreas, las gráficas v-t y a-t coherentes. Se calculan el desplazamiento con signo, la distancia, la rapidez media y la velocidad media, y se analiza qué cambia al mover el origen. Produce el conjunto de tres gráficas coherentes con cálculos de áreas y pendientes que pide la malla.",
+     "materiales": [
+      "Cinta métrica de 10 m o más (o una cuerda marcada cada metro) y yeso para trazar una línea recta de 12 m con marcas de 0 a 12 m",
+      "Ocho tapitas de botella por grupo, rotuladas con los tiempos 2, 4, 6, 8, 10, 12, 14 y 16 s",
+      "Un cronómetro o celular para quien da las señales",
+      "Papel milimetrado o cuadriculado, regla y calculadora"
+     ],
+     "procedimiento": [
+      "1. (8 min) Lean la historia del recorrido: «Parte de la marca de 3 m, camina hacia adelante con paso lento y parejo durante 6 s, se detiene 4 s y regresa con paso más rápido y parejo durante 6 s». Cada estudiante dibuja, sin medir, cómo cree que serán las gráficas x-t, v-t y a-t.",
+      "2. (7 min) Tracen en el patio la línea recta de 12 m con marcas cada metro. Repartan roles por grupo de seis: quien camina, quien mira el cronómetro y dice «¡ya!» cada 2 s, y cuatro observadores con dos tapitas cada uno (uno pone las de 2 y 10 s, otro las de 4 y 12 s, otro las de 6 y 14 s y otro las de 8 y 16 s).",
+      "3. (15 min) Hagan tres corridas, cambiando de caminante. En cada señal, el observador de ese tiempo pone su tapita junto al pie delantero de quien camina. Al terminar, midan con la cinta la posición de cada tapita, al 0.1 m, anoten la tabla t–x y recojan las tapitas.",
+      "4. (15 min) Con la corrida más pareja, grafiquen x contra t. Tracen un segmento recto por tramo, calculen sus pendientes y con ellas dibujen la gráfica v-t; a partir de la v-t, dibujen la a-t. Calculen el área de cada tramo de la v-t, la distancia recorrida, la rapidez media y la velocidad media, y respondan la pregunta de análisis 2.",
+      "5. (10 min) Comparen sus gráficas con las que predijeron en el paso 1 y respondan las preguntas de análisis 1 y 3."
+     ],
+     "seguridad": [
+      "Usen una zona del patio sin obstáculos ni tránsito; quien camina no corre ni camina hacia atrás: se da vuelta para regresar.",
+      "Los observadores se agachan a poner la tapita sin meterse en el camino de quien camina.",
+      "Si hace mucho sol, usen gorra y tengan agua a mano."
+     ],
+     "datos_esperados": "En el primer tramo la x-t es casi una recta de pendiente positiva (unos 0.6 a 0.9 m/s), de 3 m hasta unos 7 u 8 m; en el segundo, horizontal; en el tercero, una recta de pendiente negativa más empinada (unos −0.9 a −1.2 m/s) que termina cerca de la marca de 1 o 2 m. La v-t queda en tres escalones: positivo, cero y negativo; la a-t es casi cero en cada tramo, con picos breves al arrancar, detenerse y dar la vuelta, que con datos cada 2 s apenas se notan. Las áreas de la v-t dan un desplazamiento total pequeño y negativo (del orden de −1 a −2 m), igual a x final − x inicial, mientras que la distancia recorrida es de unos 9 a 11 m. La rapidez media sale cerca de 0.6 m/s y la velocidad media cerca de −0.1 m/s. Las posiciones tienen errores de unos 0.2 a 0.3 m por la reacción de los observadores.",
+     "analisis": [
+      "¿En qué se parecen y en qué difieren las gráficas que predijeron y las medidas? ¿Qué significa que la velocidad sea negativa en el último tramo, si quien camina no va «hacia abajo»?",
+      "Calculen el desplazamiento con las áreas de la v-t y compárenlo con x final − x inicial. ¿Por qué la distancia recorrida es mayor? ¿Por qué la rapidez media y la velocidad media no coinciden?",
+      "Si hubieran puesto el origen en la marca de 5 m, ¿qué cambiaría en la gráfica x-t, en la v-t y en el desplazamiento?",
+      "Tarea: dibujen una gráfica x-t imposible (dos posiciones en el mismo instante o un tramo vertical) y expliquen por qué no puede ocurrir. En una gráfica x-t curva que entregue el docente, estimen la velocidad instantánea en un punto con la pendiente de la tangente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin patio: usen un pasillo con una línea de 8 m y tramos de 4 s (12 s en total), con señales cada 2 s, seis tapitas y tres observadores con dos tapitas cada uno. Con celular y la computadora del CRA: graben el recorrido de lado, con la cinta visible como escala, y analícenlo en Tracker (gratuito), que marca la posición cuadro a cuadro y grafica x-t y v-t; el docente lo prueba antes de la clase. Sin internet ni computadora, el método de las tapitas basta.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U3-3.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/graficas-movimiento",
+     "nombre": "Gráficas del movimiento",
+     "definicion": "Interpretación de gráficas posición-tiempo y velocidad-tiempo: la pendiente da velocidad o aceleración; el área, desplazamiento.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U3-3.7",
+     "grado": 10,
+     "indicador": "2.1. • Construye, a partir de una de ellas, las otras dos gráficas del movimiento (x-t, v-t, a-t) para un móvil con varios tramos, usando pendientes y áreas. • Calcula el desplazamiento de un móvil en varios tramos rectilíneos con signo, y explica cómo cambian las posiciones, pero no el desplazamiento, al cambiar el origen del sistema de referencia. • Diferencia la rapidez media de la velocidad media en recorridos reales y estima la velocidad instantánea con la pendiente de la tangente en una gráfica posición-tiempo.",
+     "evidencia": "Conjunto de tres gráficas coherentes x-t, v-t y a-t de un movimiento por tramos con cálculos de áreas y pendientes"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U3-3.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U3-3.7/1",
+     "decision": "corregir",
+     "justificacion": "Cifras coherentes: avance 3.6–5.4 m, regreso 5.4–7.2 m, desplazamiento −1 a −2 m, distancia 9–11 m, rapidez media ≈ 0.6 m/s y velocidad media ≈ −0.1 m/s en 16 s; 55 min. La variante es inconsistente: señales cada segundo exigen más tapitas y observadores, no menos; se ajusta a señales cada 2 s.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U3-3.7",
+       "cita": "Evidencia: tres gráficas coherentes x-t, v-t, a-t de un movimiento por tramos."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "12 s con señales cada segundo = 12 posiciones; con cada 2 s = 6."
+      }
+     ],
+     "cambios": {
+      "variantes": "Sin patio: usen un pasillo con una línea de 8 m y tramos de 4 s (12 s en total), con señales cada 2 s, seis tapitas y tres observadores con dos tapitas cada uno. Con celular y la computadora del CRA: graben el recorrido de lado, con la cinta visible como escala, y analícenlo en Tracker (gratuito), que marca la posición cuadro a cuadro y grafica x-t y v-t; el docente lo prueba antes de la clase. Sin internet ni computadora, el método de las tapitas basta."
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U4-4.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U4-4.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U4-4.1"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U4-4.1",
+      "CON:fisica/movimiento-proyectiles"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Lanzador de liga: predecir y medir el alcance según el ángulo",
+     "proposito": "Construir un lanzador de bajo riesgo con un tubo, una varilla y ligas; medir su rapidez de salida con un tiro horizontal desde una mesa; con ese dato predecir con el modelo por componentes el alcance para cinco ángulos, y contrastar la predicción con el alcance medido. El producto es la tabla de alcance contra ángulo y la gráfica de valores medidos y predichos que pide la malla como evidencia.",
+     "materiales": [
+      "Un tubo de PVC de 1/2 pulgada y unos 25 cm de largo, o el tubo de cartón de un rollo de papel toalla reforzado con cinta adhesiva",
+      "Una varilla de madera de unos 25 cm, del mismo largo que el tubo (un pincho grueso sin punta o un palito), que corra holgada dentro del tubo, con una tapita de botella pegada en el extremo de atrás como tope; así, al soltarla, la punta llega justo a la boca y no sobresale",
+      "Dos ligas iguales y cinta adhesiva",
+      "Pelotas de espuma pequeñas o bolitas de papel periódico forradas con cinta (unos 2 cm, que pasen holgadas por el tubo); tres por grupo",
+      "Transportador, plastilina y dos o tres libros para fijar el ángulo del tubo",
+      "Cinta métrica de 3 m o más y cinta de papel o yeso para marcar el piso",
+      "Un hilo con una tuerca (plomada) para marcar en el piso el punto bajo el borde de la mesa",
+      "Una hoja de papel con papel carbón encima (o un poco de harina en una bandeja) para marcar dónde cae la pelota",
+      "Gafas de protección o lentes de seguridad para quien lanza y para quien mide",
+      "Calculadora con funciones trigonométricas y papel milimetrado u hoja de cálculo"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 10 min) Armen el lanzador: peguen las ligas con cinta por fuera, en el extremo delantero del tubo, y engánchenlas a la tapita de la varilla, que entra por atrás. Al jalar la varilla hacia atrás las ligas se estiran; al soltarla, la varilla empuja la pelota y la tapita se detiene contra el tubo.",
+      "2. (5 min) Marquen en la varilla una línea de jalón (por ejemplo, a 8 cm) y prueben tres tiros: siempre se jala hasta la misma marca para que la rapidez de salida sea parecida. Antes de seguir, cada estudiante escribe qué ángulo cree que dará el mayor alcance y por qué.",
+      "3. (12 min) Calibración: fijen el tubo horizontal sobre el borde de la mesa con plastilina y midan la altura h de la boca del tubo sobre el piso. Marquen con la plomada el punto del piso bajo la boca. Hagan 5 tiros y midan la distancia horizontal x desde ese punto hasta donde cae la pelota.",
+      "4. (25 min) En un pasillo o en el patio, apoyen la boca del tubo sobre la marca de salida en el piso y levanten la parte de atrás con libros y plastilina hasta el ángulo, para que la pelota salga casi al nivel del piso, como supone el modelo. Con el transportador fijen el tubo a 15°, 30°, 45°, 60° y 75°, y hagan 5 tiros en cada ángulo. Midan el alcance desde la boca del tubo hasta la marca de caída y anoten todo en la tabla.",
+      "5. (3 min) Recojan pelotas, ligas y marcas del piso.",
+      "6. (Sesión 2, 10 min) Con los datos del paso 3 calculen el tiempo de caída t = √(2h/g), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia), y la rapidez de salida v₀ = x promedio / t.",
+      "7. (10 min) Con ese v₀ calculen el alcance predicho para cada ángulo, R = v₀² sen(2θ)/g, y también la altura máxima y el tiempo de vuelo predichos para 45°.",
+      "8. (15 min) Completen la tabla ángulo – alcance medido (promedio) – alcance predicho y hagan en una misma gráfica las dos curvas, medida y predicha, contra el ángulo.",
+      "9. (15 min) En grupo, respondan las tres primeras preguntas de análisis con su tabla y su gráfica.",
+      "10. (5 min) Puesta en común: cada grupo dice su ángulo de alcance máximo y su mayor diferencia entre medido y predicho."
+     ],
+     "seguridad": [
+      "Usen gafas de protección quien lanza y quien mide. Solo se lanzan pelotas de espuma o bolitas de papel; nunca piedras, canicas, lápices ni objetos con punta.",
+      "Nunca apunten el lanzador hacia una persona. Marquen la zona de caída y nadie entra en ella hasta que el lanzador esté descargado.",
+      "Jalen la varilla solo hasta la marca: estirar de más puede romper la liga y golpear la mano.",
+      "En el paso 3 la mesa debe estar firme y nadie se sube a ella."
+     ],
+     "datos_esperados": "Con un lanzador de liga la rapidez de salida suele estar entre unos 3 y 5 m/s; desde una mesa de unos 0.80 m la pelota cae en unos 0.4 s y avanza entre 1.2 y 2 m. El alcance medido crece de 15° a 45° y baja de 45° a 75°; los pares 15°–75° y 30°–60° dan alcances parecidos, y el máximo queda entre unos 40° y 45° (con pelotas livianas, el aire lo corre un poco por debajo de 45°). Los alcances medidos suelen salir algo menores que los predichos, del orden de un 5 a 20 %, por el aire y la variación de la rapidez de salida. Si la boca queda elevada sobre el piso, el efecto es el contrario: el alcance crece, sobre todo a ángulos bajos (con v₀ = 4 m/s y la boca a 6 cm, el tiro a 15° llega cerca de un 20 % más lejos), y la simetría 15°–75° se pierde. Para 45° la altura máxima predicha es v₀²/(4g), del orden de 0.2 a 0.6 m.",
+     "analisis": [
+      "(Paso 9) ¿Para qué ángulo fue mayor el alcance medido? ¿Coincide con lo que predijeron al inicio y con el que da el modelo?",
+      "(Paso 9) ¿Qué pares de ángulos dieron alcances parecidos? Expliquen con las componentes vx y vy por qué el modelo predice eso.",
+      "(Paso 9) ¿Los alcances medidos quedaron por encima o por debajo de los predichos? ¿Qué supuestos del modelo (sin aire, salida al nivel del piso, misma rapidez en todos los tiros) explican la diferencia?",
+      "Tarea: Propongan una mejora al lanzador para que la rapidez de salida sea más repetible o el ángulo se mida con más precisión, y expliquen cómo comprobarían que funciona.",
+      "Tarea: Las zonas de exclusión del volcán de San Miguel consideran hasta dónde llegan las rocas que lanza. ¿Por qué el modelo sin aire sirve solo como una estimación de ese alcance?"
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin tubo de PVC: el tubo de cartón reforzado funciona, aunque la rapidez de salida varía más. Sin mesa firme para calibrar: lancen a 45° y calculen v₀ despejándola de R = v₀²/g. Sin laboratorio ni internet: el docente entrega la tabla del ejercicio obj-2 como datos de un grupo de ejemplo y el grupo hace la predicción, la gráfica y el análisis en papel. Con internet: la simulación PhET «Movimiento de proyectiles» permite fijar ángulo y rapidez, activar o quitar la resistencia del aire (en sus pantallas que la incluyen; el docente lo comprueba antes) y medir alcance, altura y tiempo con su herramienta de medición; sirve para comparar el máximo con y sin aire.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U4-4.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-proyectiles",
+     "nombre": "Cinemática en dos dimensiones y proyectiles",
+     "definicion": "Movimiento en el plano por componentes independientes: tiro parabólico y velocidad relativa entre sistemas de referencia.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U4-4.1",
+     "grado": 10,
+     "indicador": "2.4. • Predice el alcance, la altura máxima y el tiempo de vuelo de un proyectil lanzado con cualquier ángulo y contrasta la predicción con mediciones de un lanzador construido en el aula. • Calcula con vectores unitarios el desplazamiento, la velocidad media y la aceleración media de un móvil en el plano, y explica por qué un móvil que cambia de dirección con rapidez constante está acelerado. • Aplica las ecuaciones de la cinemática por separado en cada eje para resolver movimientos en el plano con aceleración constante.",
+     "evidencia": "Lanzador construido, tabla de alcance contra ángulo y gráfica comparativa de valores medidos y predichos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U4-4.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U4-4.1/1",
+     "decision": "corregir",
+     "justificacion": "Cifras correctas (t ≈ 0.40 s desde 0.80 m; v₀²/4g = 0.23–0.64 m). Error: atribuye a la boca elevada que el alcance medido salga menor, cuando una salida sobre el nivel de llegada lo aumenta (≈ +24 % a 15° con boca a 6.5 cm y v₀ = 4 m/s). Boca al piso; varilla igual al tubo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U4-4.1",
+       "cita": "Predice el alcance y lo contrasta con mediciones de un lanzador construido en el aula."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Con altura de salida h₀ > 0, y(t) = 0 ocurre más tarde y el alcance supera v₀² sen 2θ/g."
+      }
+     ],
+     "cambios": {
+      "materiales": [
+       "Un tubo de PVC de 1/2 pulgada y unos 25 cm de largo, o el tubo de cartón de un rollo de papel toalla reforzado con cinta adhesiva",
+       "Una varilla de madera de unos 25 cm, del mismo largo que el tubo (un pincho grueso sin punta o un palito), que corra holgada dentro del tubo, con una tapita de botella pegada en el extremo de atrás como tope; así, al soltarla, la punta llega justo a la boca y no sobresale",
+       "Dos ligas iguales y cinta adhesiva",
+       "Pelotas de espuma pequeñas o bolitas de papel periódico forradas con cinta (unos 2 cm, que pasen holgadas por el tubo); tres por grupo",
+       "Transportador, plastilina y dos o tres libros para fijar el ángulo del tubo",
+       "Cinta métrica de 3 m o más y cinta de papel o yeso para marcar el piso",
+       "Un hilo con una tuerca (plomada) para marcar en el piso el punto bajo el borde de la mesa",
+       "Una hoja de papel con papel carbón encima (o un poco de harina en una bandeja) para marcar dónde cae la pelota",
+       "Gafas de protección o lentes de seguridad para quien lanza y para quien mide",
+       "Calculadora con funciones trigonométricas y papel milimetrado u hoja de cálculo"
+      ],
+      "procedimiento": [
+       "1. (Sesión 1, 10 min) Armen el lanzador: peguen las ligas con cinta por fuera, en el extremo delantero del tubo, y engánchenlas a la tapita de la varilla, que entra por atrás. Al jalar la varilla hacia atrás las ligas se estiran; al soltarla, la varilla empuja la pelota y la tapita se detiene contra el tubo.",
+       "2. (5 min) Marquen en la varilla una línea de jalón (por ejemplo, a 8 cm) y prueben tres tiros: siempre se jala hasta la misma marca para que la rapidez de salida sea parecida. Antes de seguir, cada estudiante escribe qué ángulo cree que dará el mayor alcance y por qué.",
+       "3. (12 min) Calibración: fijen el tubo horizontal sobre el borde de la mesa con plastilina y midan la altura h de la boca del tubo sobre el piso. Marquen con la plomada el punto del piso bajo la boca. Hagan 5 tiros y midan la distancia horizontal x desde ese punto hasta donde cae la pelota.",
+       "4. (25 min) En un pasillo o en el patio, apoyen la boca del tubo sobre la marca de salida en el piso y levanten la parte de atrás con libros y plastilina hasta el ángulo, para que la pelota salga casi al nivel del piso, como supone el modelo. Con el transportador fijen el tubo a 15°, 30°, 45°, 60° y 75°, y hagan 5 tiros en cada ángulo. Midan el alcance desde la boca del tubo hasta la marca de caída y anoten todo en la tabla.",
+       "5. (3 min) Recojan pelotas, ligas y marcas del piso.",
+       "6. (Sesión 2, 10 min) Con los datos del paso 3 calculen el tiempo de caída t = √(2h/g), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia), y la rapidez de salida v₀ = x promedio / t.",
+       "7. (10 min) Con ese v₀ calculen el alcance predicho para cada ángulo, R = v₀² sen(2θ)/g, y también la altura máxima y el tiempo de vuelo predichos para 45°.",
+       "8. (15 min) Completen la tabla ángulo – alcance medido (promedio) – alcance predicho y hagan en una misma gráfica las dos curvas, medida y predicha, contra el ángulo.",
+       "9. (15 min) En grupo, respondan las tres primeras preguntas de análisis con su tabla y su gráfica.",
+       "10. (5 min) Puesta en común: cada grupo dice su ángulo de alcance máximo y su mayor diferencia entre medido y predicho."
+      ],
+      "datos_esperados": "Con un lanzador de liga la rapidez de salida suele estar entre unos 3 y 5 m/s; desde una mesa de unos 0.80 m la pelota cae en unos 0.4 s y avanza entre 1.2 y 2 m. El alcance medido crece de 15° a 45° y baja de 45° a 75°; los pares 15°–75° y 30°–60° dan alcances parecidos, y el máximo queda entre unos 40° y 45° (con pelotas livianas, el aire lo corre un poco por debajo de 45°). Los alcances medidos suelen salir algo menores que los predichos, del orden de un 5 a 20 %, por el aire y la variación de la rapidez de salida. Si la boca queda elevada sobre el piso, el efecto es el contrario: el alcance crece, sobre todo a ángulos bajos (con v₀ = 4 m/s y la boca a 6 cm, el tiro a 15° llega cerca de un 20 % más lejos), y la simetría 15°–75° se pierde. Para 45° la altura máxima predicha es v₀²/(4g), del orden de 0.2 a 0.6 m.",
+      "variantes": "Sin tubo de PVC: el tubo de cartón reforzado funciona, aunque la rapidez de salida varía más. Sin mesa firme para calibrar: lancen a 45° y calculen v₀ despejándola de R = v₀²/g. Sin laboratorio ni internet: el docente entrega la tabla del ejercicio obj-2 como datos de un grupo de ejemplo y el grupo hace la predicción, la gráfica y el análisis en papel. Con internet: la simulación PhET «Movimiento de proyectiles» permite fijar ángulo y rapidez, activar o quitar la resistencia del aire (en sus pantallas que la incluyen; el docente lo comprueba antes) y medir alcance, altura y tiempo con su herramienta de medición; sirve para comparar el máximo con y sin aire."
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U5-5.10/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U5-5.10/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.10"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.10",
+      "CON:fisica/aplicaciones-leyes-newton"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Máquina de Atwood casera: aceleración común y tensión",
+     "proposito": "Construir una máquina de Atwood con una polea y dos bolsitas de arena, medir la aceleración común para varias diferencias de masa y compararla con la que predicen los diagramas de cuerpo libre separados, a = (m₁ − m₂)g/(m₁ + m₂); medir con un dinamómetro en la cuerda que la tensión, con el sistema en movimiento, queda entre los dos pesos, y evaluar si el modelo de cuerda y polea ideales es adecuado. Es la comparación con los datos de la máquina de Atwood que pide la malla.",
+     "materiales": [
+      "Una polea de laboratorio, o un carrete de hilo vacío que gire suelto sobre un lápiz o un clavo liso",
+      "Un soporte universal con varilla horizontal que sobresalga del borde de la mesa, o un palo de escoba amarrado entre dos estantes, para que la polea quede al menos a 1.40 m del piso y las bolsitas cuelguen libres fuera de la mesa",
+      "Unos 1.8 m de hilo de nylon (de pescar)",
+      "Dos bolsitas plásticas resistentes con cierre, arena y una cucharita para ajustar las masas a 180, 190, 200, 205, 210, 215, 220, 230 y 240 g según cada par",
+      "Balanza de cocina o de laboratorio",
+      "Un dinamómetro de 0 a 5 N y un clip para intercalarlo en la cuerda",
+      "Cinta métrica, cinta de papel y un cojín o una caja con papel arrugado en el piso",
+      "Cronómetro o celular (mejor si graba video) y calculadora"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 8 min) Fijen la polea a 1.40 m o más del piso y comprueben con la cinta métrica esa altura. Pongan el cojín debajo del lado de la bolsita pesada y marquen en la pared o en la varilla una altura de 1.00 m sobre el cojín.",
+      "2. (5 min) Preparen y pesen el primer par: 220 g y 200 g (masa total de 420 g). Átenlas a los extremos del hilo, ajustando el largo para que la pesada quede con su base a 1.00 m del cojín y la liviana cerca del piso sin tocarlo.",
+      "3. (20 min) Suelten desde el reposo y midan tres veces el tiempo que tarda la bolsita pesada en bajar 1.00 m. Repitan con los pares 215/205 g, 230/190 g y 240/180 g, pasando arena de una bolsita a la otra para que la masa total siga en 420 g.",
+      "4. (7 min) Pesen el dinamómetro e intercálenlo en el hilo justo arriba de la bolsita liviana, quitándole arena para que bolsita y dinamómetro sumen 180 g (la pesada sigue en 240 g); si no se compensa su masa, el sistema casi queda equilibrado. Lean la fuerza con el sistema sostenido quieto y luego graben la lectura mientras se mueve.",
+      "5. (8 min) Calculen la aceleración medida, a = 2d/t², y la predicha, a = (m₁ − m₂)g/(m₁ + m₂), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia); la tensión predicha del hilo, T = m₂(g + a), y la lectura predicha del dinamómetro, m_b(g + a), donde m_b es la masa de la bolsita que cuelga de su gancho.",
+      "6. (7 min) En grupo, respondan las dos primeras preguntas de análisis."
+     ],
+     "seguridad": [
+      "Nadie pone los pies ni las manos bajo las bolsitas; caen sobre el cojín.",
+      "El soporte o el palo deben estar firmes y sujetos; revisen los nudos antes de cada serie.",
+      "Las bolsitas van bien cerradas; si se derrama arena, bárranla para que nadie resbale."
+     ],
+     "datos_esperados": "Con una masa total de 420 g y diferencias de 10 a 60 g, las aceleraciones predichas van de unos 0.23 a 1.4 m/s², con tiempos de unos 2.9 a 1.2 s para 1.00 m. Las aceleraciones medidas suelen salir algo menores, del orden de un 5 a 20 %, por la fricción y la masa del carrete. Con el par 240/180 g, la tensión predicha del hilo es T = m₂(g + a) ≈ 2.0 N: queda entre los dos pesos (1.8 y 2.4 N), no igual al de la pesada. El dinamómetro mide la fuerza sobre la bolsita que cuelga de su gancho: quieto, su peso; en movimiento, un factor (g + a)/g ≈ 1.14 mayor (con un dinamómetro de 60 g, la bolsita queda en 120 g y la lectura pasa de unos 1.2 N a unos 1.3 N). La lectura oscila y es aproximada.",
+     "analisis": [
+      "(Paso 6) ¿Qué tanto se parecen las aceleraciones medidas y las predichas? ¿Las medidas son mayores o menores? ¿Es adecuado el modelo de cuerda y polea ideales para esta máquina?",
+      "(Paso 6) ¿La lectura del dinamómetro aumentó, disminuyó o se mantuvo al pasar de quieto a en movimiento? Con ese resultado y T = m₂(g + a), ¿la tensión del hilo es igual al peso de la bolsita pesada, al de la liviana o queda entre los dos? Expliquen con los diagramas de cuerpo libre separados.",
+      "Tarea: Calculen la tensión del cable de un ascensor de 800 kg cuando arranca hacia arriba con a = 1.0 m/s² y cuando frena al subir con la misma aceleración; relacionen la fuerza del cable sobre el ascensor con su par de la tercera ley.",
+      "Tarea: Resuelvan con ΣFx = 0 y ΣFy = 0 las tensiones de un semáforo de 20 kg colgado de dos cables que forman 30° con la horizontal."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin soporte ni polea: un carrete vacío sobre un lápiz amarrado al marco de una puerta (polea a unos 2 m), comprobando que la puerta no se cierre. Sin dinamómetro: omitan el paso 4 y comparen la tensión predicha con los dos pesos. Sin laboratorio ni internet: el docente entrega los tiempos de un grupo de ejemplo para cada par y el grupo calcula y compara. Con celular: grabar en cámara lenta mejora la medida del tiempo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aplicaciones-leyes-newton",
+     "nombre": "Aplicaciones de las leyes de Newton",
+     "definicion": "Análisis dinámico de planos inclinados con rozamiento (μs, μk), poleas, ascensores y sistemas de cuerpos conectados.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.10",
+     "grado": 10,
+     "indicador": "3.5. • Resuelve problemas de sistemas de cuerpos conectados, con o sin rozamiento y en planos inclinados, determinando la aceleración común y las tensiones. • Calcula la tensión de un cable que sostiene un ascensor cuando sube o baja con aceleración y la relaciona con el par de fuerzas de la tercera ley. • Resuelve problemas de equilibrio de traslación planteando ΣFx = 0 y ΣFy = 0, como el de un semáforo suspendido de dos cables o un bloque en reposo sobre un plano inclinado. • Explica la ingravidez aparente como caída libre continua y calcula la rapidez de giro necesaria para producir gravedad artificial.",
+     "evidencia": "Resolución de problemas de cuerpos conectados con diagramas separados y comparación con los datos de la máquina de Atwood"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U5-5.10/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U5-5.10/1",
+     "decision": "corregir",
+     "justificacion": "Recalculado: a = 0.23–1.40 m/s², t = 2.93–1.20 s, T = 0.18(9.8 + 1.4) ≈ 2.02 N. Falla el montaje del dinamómetro: un dinamómetro de 0–5 N pesa unos 50–80 g y, en el lado de 180 g, casi equilibra el par 240/180. Se compensa su masa y se aclara que su lectura es la fuerza sobre la bolsita, no la tensión arriba.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.10",
+       "cita": "Evidencia: cuerpos conectados con diagramas separados y comparación con la máquina de Atwood."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Δm efectiva = 240 − (180 + m_dinamómetro) g; con 60 g, Δm ≈ 0."
+      }
+     ],
+     "cambios": {
+      "procedimiento": [
+       "1. (Sesión 1, 8 min) Fijen la polea a 1.40 m o más del piso y comprueben con la cinta métrica esa altura. Pongan el cojín debajo del lado de la bolsita pesada y marquen en la pared o en la varilla una altura de 1.00 m sobre el cojín.",
+       "2. (5 min) Preparen y pesen el primer par: 220 g y 200 g (masa total de 420 g). Átenlas a los extremos del hilo, ajustando el largo para que la pesada quede con su base a 1.00 m del cojín y la liviana cerca del piso sin tocarlo.",
+       "3. (20 min) Suelten desde el reposo y midan tres veces el tiempo que tarda la bolsita pesada en bajar 1.00 m. Repitan con los pares 215/205 g, 230/190 g y 240/180 g, pasando arena de una bolsita a la otra para que la masa total siga en 420 g.",
+       "4. (7 min) Pesen el dinamómetro e intercálenlo en el hilo justo arriba de la bolsita liviana, quitándole arena para que bolsita y dinamómetro sumen 180 g (la pesada sigue en 240 g); si no se compensa su masa, el sistema casi queda equilibrado. Lean la fuerza con el sistema sostenido quieto y luego graben la lectura mientras se mueve.",
+       "5. (8 min) Calculen la aceleración medida, a = 2d/t², y la predicha, a = (m₁ − m₂)g/(m₁ + m₂), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia); la tensión predicha del hilo, T = m₂(g + a), y la lectura predicha del dinamómetro, m_b(g + a), donde m_b es la masa de la bolsita que cuelga de su gancho.",
+       "6. (7 min) En grupo, respondan las dos primeras preguntas de análisis."
+      ],
+      "datos_esperados": "Con una masa total de 420 g y diferencias de 10 a 60 g, las aceleraciones predichas van de unos 0.23 a 1.4 m/s², con tiempos de unos 2.9 a 1.2 s para 1.00 m. Las aceleraciones medidas suelen salir algo menores, del orden de un 5 a 20 %, por la fricción y la masa del carrete. Con el par 240/180 g, la tensión predicha del hilo es T = m₂(g + a) ≈ 2.0 N: queda entre los dos pesos (1.8 y 2.4 N), no igual al de la pesada. El dinamómetro mide la fuerza sobre la bolsita que cuelga de su gancho: quieto, su peso; en movimiento, un factor (g + a)/g ≈ 1.14 mayor (con un dinamómetro de 60 g, la bolsita queda en 120 g y la lectura pasa de unos 1.2 N a unos 1.3 N). La lectura oscila y es aproximada.",
+      "analisis": [
+       "(Paso 6) ¿Qué tanto se parecen las aceleraciones medidas y las predichas? ¿Las medidas son mayores o menores? ¿Es adecuado el modelo de cuerda y polea ideales para esta máquina?",
+       "(Paso 6) ¿La lectura del dinamómetro aumentó, disminuyó o se mantuvo al pasar de quieto a en movimiento? Con ese resultado y T = m₂(g + a), ¿la tensión del hilo es igual al peso de la bolsita pesada, al de la liviana o queda entre los dos? Expliquen con los diagramas de cuerpo libre separados.",
+       "Tarea: Calculen la tensión del cable de un ascensor de 800 kg cuando arranca hacia arriba con a = 1.0 m/s² y cuando frena al subir con la misma aceleración; relacionen la fuerza del cable sobre el ascensor con su par de la tercera ley.",
+       "Tarea: Resuelvan con ΣFx = 0 y ΣFy = 0 las tensiones de un semáforo de 20 kg colgado de dos cables que forman 30° con la horizontal."
+      ]
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U5-5.2/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U5-5.2/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.2"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.2",
+      "CON:fisica/primera-ley-newton"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "La figura sin cinturón, la plomada en la caja y las botellas colgadas: inercia y sistemas de referencia",
+     "proposito": "Observar con un carrito que choca, con y sin «cinturón», que un cuerpo sigue en movimiento si nada le hace fuerza; reconocer con una plomada cuándo un sistema de referencia no es inercial (cuando acelera), y distinguir la masa inercial del peso con dos botellas colgadas, cuyo peso sostienen los hilos. Los resultados sirven para la explicación escrita de tres situaciones de tránsito y la norma de seguridad que pide la malla.",
+     "materiales": [
+      "Un carrito de juguete de 10 a 20 cm (lo puede traer alguien del grupo) o una caja pequeña con cuatro tapitas como ruedas",
+      "Una figura de plastilina del tamaño de un dedo y una liga delgada como «cinturón»",
+      "Una tabla o un cartón grueso de unos 60 cm y libros para hacer una rampa de unos 10 cm de alto",
+      "Un libro grueso como tope al final de la rampa y una regla",
+      "Una caja de zapatos sin tapa, un hilo de 15 cm y una tuerca o clip grande (plomada), y cinta adhesiva",
+      "Un pedazo de cordel de 1 m para jalar la caja",
+      "Dos botellas plásticas de 600 mL con tapa: una llena de agua y otra vacía",
+      "Un palo de escoba, dos pupitres o mesas firmes y dos trozos de hilo de nylon de 40 cm"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 5 min) Cada estudiante escribe su predicción: al chocar el carrito contra el libro, ¿qué hará la figura sin cinturón y con cinturón? ¿Qué botella costará más poner en movimiento si las dos cuelgan de hilos?",
+      "2. (10 min) Armen la rampa y pongan el libro de tope a unos 30 cm del final. Coloquen la figura sobre el carrito sin sujetarla, suéltenlo siempre desde la misma marca y midan con la regla a qué distancia del tope cae la figura. Repitan tres veces.",
+      "3. (8 min) Repitan el paso 2 con la figura sujeta al carrito por la liga, y anoten qué cambia.",
+      "4. (8 min) Peguen el hilo con la tuerca en el centro del fondo de la caja, de modo que la plomada cuelgue sin tocar el fondo. Jalen la caja con el cordel por el piso: quieta, arrancando, a rapidez pareja en línea recta y frenando. Quien observa anota hacia dónde se inclina la plomada en cada etapa.",
+      "5. (10 min) Coloquen el palo de escoba entre los dos pupitres, sujeto con cinta, y cuelguen de él las dos botellas tapadas con los hilos de 40 cm, separadas unos 30 cm. Con el mismo empujón suave del dedo en el costado de cada botella, comparen cuánto se mueve cada una. Luego intenten detener cada botella cuando viene de regreso.",
+      "6. (14 min) En grupo, respondan las tres primeras preguntas de análisis y comparen con su predicción del paso 1."
+     ],
+     "seguridad": [
+      "La rampa es baja (unos 10 cm) y el carrito se suelta, no se lanza; nadie pone la mano frente al tope.",
+      "Las botellas van bien tapadas y colgadas a pocos centímetros del piso; el palo se sujeta con cinta para que no ruede. Si se derrama agua, séquenla para evitar resbalones.",
+      "Al jalar la caja por el piso, despejen el paso y no corran."
+     ],
+     "datos_esperados": "Sin cinturón, la figura sigue hacia adelante y cae a unos 5 a 20 cm del tope, según la rapidez del carrito; con la liga se queda en el carrito. La plomada cuelga vertical con la caja quieta y moviéndose a rapidez pareja en línea recta, se inclina hacia atrás al arrancar y hacia adelante al frenar. La botella llena se mueve mucho menos con el mismo empujón y cuesta más detenerla, aunque su peso lo sostiene el hilo: lo que se compara es su masa (inercia), no su peso.",
+     "analisis": [
+      "(Paso 6) ¿Por qué la figura siguió hacia adelante cuando el carrito chocó, si nadie la empujó? Con la liga, ¿qué fuerza la detuvo y sobre qué cuerpo actuaba?",
+      "(Paso 6) ¿En qué etapas la plomada colgó vertical dentro de la caja? ¿En cuáles la caja era un sistema de referencia inercial y por qué?",
+      "(Paso 6) Si el peso de cada botella lo sostiene su hilo, ¿por qué costó más mover y detener la botella llena? ¿Qué propiedad compararon: la masa o el peso?",
+      "Tarea: Escriban la explicación de tres situaciones de tránsito con la primera ley (por ejemplo, el cinturón, el casco y los objetos sueltos en un microbús) y propongan una norma de seguridad argumentada.",
+      "Tarea: Con una fuente histórica que indique el docente, expliquen en qué se diferencia la idea de Aristóteles («todo movimiento necesita un motor») de la de Galileo y Newton."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin carrito: una caja de fósforos con la figura encima, empujada por la mesa contra un tope. Sin botellas ni palo: dos bolsas de tela, una con libros y otra vacía, colgadas de una rama o del marco de una puerta. Otra demostración rápida: una moneda sobre una tarjeta encima de un vaso; al jalar la tarjeta de golpe, la moneda cae dentro. Sin internet no se necesita nada más. Con internet: la simulación PhET «Fuerzas y movimiento: fundamentos» permite poner la fricción en cero y ver que el objeto sigue a velocidad constante cuando se deja de empujar.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/primera-ley-newton",
+     "nombre": "Primera ley de Newton: inercia",
+     "definicion": "Un cuerpo mantiene su estado de reposo o movimiento rectilíneo uniforme si la fuerza neta sobre él es cero.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.2",
+     "grado": 10,
+     "indicador": "3.1. • Explica con la primera ley de Newton situaciones de seguridad vial y reconoce cuándo un sistema de referencia no es inercial. • Distingue la masa inercial del peso y explica cómo cambió la idea de fuerza desde Aristóteles hasta Newton a partir de fuentes históricas.",
+     "evidencia": "Explicación escrita de tres situaciones de tránsito con la primera ley y propuesta argumentada de una norma de seguridad"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U5-5.2/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U5-5.2/1",
+     "decision": "aprobar",
+     "justificacion": "Física correcta: la plomada se inclina hacia atrás al arrancar y hacia adelante al frenar; vertical en reposo o a velocidad constante. Las botellas colgadas separan masa inercial de peso. La figura cae a 10–14 cm con rampa de 10 cm, dentro del rango. PhET «Fuerzas y movimiento: fundamentos» sí permite fricción nula. 55 min.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.2",
+       "cita": "Primera ley en seguridad vial, sistemas no inerciales y masa inercial frente a peso."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Mismo impulso: v = J/m, la botella llena (~620 g) apenas se mueve frente a la vacía (~20 g)."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U5-5.4/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U5-5.4/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.4"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.4",
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Carrito y arandelas: aceleración contra fuerza y contra 1/m",
+     "proposito": "Medir la aceleración de un carrito jalado por arandelas que cuelgan de un hilo que pasa por una polea, primero variando la fuerza con la masa total constante y luego variando la masa con la fuerza constante. Con las gráficas linealizadas a contra F y a contra 1/m, comprobar que la aceleración es proporcional a la fuerza neta e inversamente proporcional a la masa, e interpretar la pendiente y el intercepto (fricción). Es el informe con gráficas y ecuaciones de ajuste que pide la malla como evidencia.",
+     "materiales": [
+      "Un carrito de juguete con ruedas que giren bien, de unos 15 cm, con unos 200 g de plastilina o una bolsita de arena pegada encima para que la masa total del carrito sea de unos 400 g",
+      "Tres bolsitas cerradas de unos 100 g de arena (para la serie 2), pesadas en la balanza",
+      "Diez arandelas iguales (de unos 10 g cada una) o monedas iguales, y un clip grande como portapesas",
+      "Una polea de laboratorio, o un carrete de hilo vacío que gire sobre un lápiz pegado con cinta en el borde de la mesa, sobresaliendo",
+      "1.5 m de hilo de nylon delgado",
+      "La mesa del docente o dos mesas juntas a la misma altura, lisas y de al menos 1.2 m de largo",
+      "Cinta métrica, cinta de papel para marcar salida y llegada, y un cojín o una caja con papel en el piso bajo la polea",
+      "Balanza de cocina o de laboratorio",
+      "Cronómetro o celular (mejor si graba video para medir el tiempo cuadro por cuadro)",
+      "Papel milimetrado o computadora con hoja de cálculo, y calculadora"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 10 min) Pesen el carrito con su carga, el clip y las arandelas. Coloquen la polea en el borde de la mesa, aten el hilo al carrito, pásenlo por la polea y cuelguen el clip. Marquen la salida del carrito a 0.60 m de la llegada; comprueben que en esos 0.60 m el clip no toca el piso ni lo que pongan debajo (la mesa mide unos 75 cm y el clip baja hasta unos 8 cm del piso): usen papel arrugado o una caja baja, no un cojín grueso.",
+      "2. (5 min) Pongan las diez arandelas: una en el clip y nueve sobre el carrito. Suelten el carrito desde el reposo en la salida y comprueben que se mueve; si no se mueve, pasen una arandela más al clip.",
+      "3. (25 min) Serie 1, masa total constante: con 1, 2, 3, 4 y 5 arandelas en el clip (las demás siempre sobre el carrito), suelten el carrito desde la salida y midan tres veces el tiempo t que tarda en recorrer d = 0.60 m.",
+      "4. (10 min) Calculen para cada caso el tiempo promedio, la aceleración a = 2d/t² y la fuerza F = peso de las arandelas que cuelgan, con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Anoten la masa total que se acelera: carrito, clip y las diez arandelas.",
+      "5. (5 min) Guarden el montaje armado, o anoten sus medidas para rearmarlo igual en la sesión 2.",
+      "6. (Sesión 2, 20 min) Serie 2, fuerza constante: dejen 3 arandelas en el clip y las otras siete sobre el carrito. Midan tres veces el tiempo en 0.60 m con el carrito solo y luego agregándole una, dos y tres bolsitas de 100 g. Calculen a y la masa total de cada caso.",
+      "7. (15 min) Hagan las gráficas a contra F (serie 1) y a contra 1/m (serie 2) en papel milimetrado o en la hoja de cálculo; tracen las rectas de mejor ajuste y escriban sus ecuaciones.",
+      "8. (15 min) En grupo, respondan las tres primeras preguntas de análisis con sus gráficas.",
+      "9. (5 min) Puesta en común: cada grupo da la pendiente y el intercepto de su gráfica a contra F."
+     ],
+     "seguridad": [
+      "El clip con arandelas cae sobre el cojín; nadie pone los pies ni las manos debajo.",
+      "Atrapen el carrito al final de la mesa para que no caiga al piso.",
+      "Las bolsitas de arena van bien cerradas y con cinta; si se rompen, barran la arena para que nadie resbale."
+     ],
+     "datos_esperados": "Con un carrito de unos 0.40 kg y arandelas de 10 g, la masa total es de unos 0.50 kg y la fuerza va de unos 0.1 a 0.5 N. Las aceleraciones salen del orden de 0.1 a 1 m/s², con tiempos de unos 3.5 s a 1.1 s para 0.60 m. La gráfica a contra F es casi una recta con pendiente cercana a 1/(masa total) y corta el eje de la fuerza en un valor pequeño y positivo, la fricción (del orden de 0.05 a 0.15 N). La gráfica a contra 1/m de la serie 2 también es casi una recta; su pendiente es cercana a la fuerza neta (peso de 3 arandelas menos la fricción). La dispersión entre tiempos repetidos suele ser de 0.1 a 0.2 s con cronómetro y menor con video.",
+     "analisis": [
+      "(Paso 8) ¿La gráfica a contra F es una recta? ¿Qué representa su pendiente? Comparen 1/pendiente con la masa total que pesaron.",
+      "(Paso 8) ¿Por qué la recta a contra F no pasa por el origen? ¿Qué representa el valor de F donde a = 0?",
+      "(Paso 8) ¿Por qué graficaron a contra 1/m y no a contra m? ¿Qué significa que esa gráfica sea una recta?",
+      "Tarea: Escriban el informe con las dos gráficas, sus ecuaciones de ajuste y la conclusión sobre la segunda ley, incluyendo las fuentes de error y cómo las reducirían.",
+      "Tarea: Planteen un problema propio de una caja jalada por dos cuerdas con ángulos distintos, con su diagrama de cuerpo libre, ΣFx = m·ax, ΣFy = m·ay y la aceleración resultante."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin polea: un carrete vacío sobre un lápiz o un clavo liso funciona, aunque agrega fricción (se ve en el intercepto). Sin carrito: una caja de fósforos con cuatro tapitas como ruedas, aceptando más fricción. Sin laboratorio ni internet: el docente entrega la tabla de la actividad obj-2 como datos de un grupo de ejemplo y el grupo hace las gráficas y el análisis. Con celular: la app gratuita phyphox mide la aceleración si el celular va pegado al carrito, aunque su masa cuenta. Con internet: en la pantalla «Aceleración» de la simulación PhET «Fuerzas y movimiento: fundamentos» se fija la fuerza aplicada, se cambian las cajas y se lee la aceleración.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U5-5.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.4",
+     "grado": 10,
+     "indicador": "3.2. • Comprueba experimentalmente que la aceleración es directamente proporcional a la fuerza neta e inversamente proporcional a la masa, a partir de gráficas linealizadas. • Aplica la segunda ley de Newton por componentes para calcular la aceleración de un cuerpo sometido a varias fuerzas con ángulos arbitrarios.",
+     "evidencia": "Informe con gráficas a contra F y a contra 1/m, ecuaciones de ajuste y conclusión sobre la segunda ley"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U5-5.4/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U5-5.4/1",
+     "decision": "corregir",
+     "justificacion": "Cifras correctas: F = 0.098–0.49 N, a ≈ 0.1–0.9 m/s², t ≈ 3.5–1.2 s en 0.60 m; pendiente 1/M e intercepto = fricción bien interpretados; 2 × 55 min. Montaje: el clip baja 0.60 m más su colgado inicial y llega a unos 8 cm del piso en una mesa de 75 cm; un cojín grueso lo detendría antes de la llegada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.4",
+       "cita": "Evidencia: informe con gráficas a contra F y a contra 1/m y ecuaciones de ajuste."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Si el clip toca el apoyo, el hilo se afloja y el carrito deja de acelerar."
+      }
+     ],
+     "cambios": {
+      "procedimiento": [
+       "1. (Sesión 1, 10 min) Pesen el carrito con su carga, el clip y las arandelas. Coloquen la polea en el borde de la mesa, aten el hilo al carrito, pásenlo por la polea y cuelguen el clip. Marquen la salida del carrito a 0.60 m de la llegada; comprueben que en esos 0.60 m el clip no toca el piso ni lo que pongan debajo (la mesa mide unos 75 cm y el clip baja hasta unos 8 cm del piso): usen papel arrugado o una caja baja, no un cojín grueso.",
+       "2. (5 min) Pongan las diez arandelas: una en el clip y nueve sobre el carrito. Suelten el carrito desde el reposo en la salida y comprueben que se mueve; si no se mueve, pasen una arandela más al clip.",
+       "3. (25 min) Serie 1, masa total constante: con 1, 2, 3, 4 y 5 arandelas en el clip (las demás siempre sobre el carrito), suelten el carrito desde la salida y midan tres veces el tiempo t que tarda en recorrer d = 0.60 m.",
+       "4. (10 min) Calculen para cada caso el tiempo promedio, la aceleración a = 2d/t² y la fuerza F = peso de las arandelas que cuelgan, con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Anoten la masa total que se acelera: carrito, clip y las diez arandelas.",
+       "5. (5 min) Guarden el montaje armado, o anoten sus medidas para rearmarlo igual en la sesión 2.",
+       "6. (Sesión 2, 20 min) Serie 2, fuerza constante: dejen 3 arandelas en el clip y las otras siete sobre el carrito. Midan tres veces el tiempo en 0.60 m con el carrito solo y luego agregándole una, dos y tres bolsitas de 100 g. Calculen a y la masa total de cada caso.",
+       "7. (15 min) Hagan las gráficas a contra F (serie 1) y a contra 1/m (serie 2) en papel milimetrado o en la hoja de cálculo; tracen las rectas de mejor ajuste y escriban sus ecuaciones.",
+       "8. (15 min) En grupo, respondan las tres primeras preguntas de análisis con sus gráficas.",
+       "9. (5 min) Puesta en común: cada grupo da la pendiente y el intercepto de su gráfica a contra F."
+      ]
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U5-5.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U5-5.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.7"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.7",
+      "CON:fisica/tercera-ley-newton"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Dinamómetros enganchados, carritos con liga y el dedo en el agua: pares de acción y reacción",
+     "proposito": "Comprobar con lecturas simultáneas de dos dinamómetros que las fuerzas de un par de acción y reacción tienen el mismo módulo sin importar quién jale o si hay movimiento; ver con dos carritos unidos por una liga que fuerzas iguales producen aceleraciones distintas si las masas son distintas; detectar un par con una balanza de cocina; y separar los pares de las fuerzas que se equilibran sobre un mismo cuerpo con diagramas de cuerpo libre separados. Es la tabla de lecturas y los diagramas que pide la malla.",
+     "materiales": [
+      "Dos dinamómetros iguales de 0 a 10 N (o dos dinamómetros caseros de liga calibrados con masas conocidas)",
+      "Celular para grabar las dos lecturas a la vez",
+      "Dos carritos de juguete parecidos (o dos cajas de fósforos sobre lápices como rodillos), una liga y cinta adhesiva",
+      "Una bolsita cerrada con unos 200 g de arena para cargar un carrito, y una regla o cinta métrica",
+      "Balanza de cocina digital y un vaso plástico con unos 300 mL de agua",
+      "Un libro, una mesa y hojas para los diagramas de cuerpo libre"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 5 min) Cada estudiante escribe su hipótesis: si una persona jala fuerte y la otra solo sostiene, ¿qué dinamómetro marcará más?",
+      "2. (12 min) Enganchen los dos dinamómetros y graben las lecturas en cuatro pruebas: jala una persona; jala la otra; jalan las dos; un dinamómetro atado a la pata de una mesa pesada. Anoten la tabla.",
+      "3. (8 min) Unan los dos carritos con la liga estirada unos 10 cm, sujetándolos con la mano en una mesa lisa, marquen el punto medio y suéltenlos a la vez. Midan cuánto recorre cada uno hasta chocar. Repitan con la bolsita de arena sobre uno de los carritos.",
+      "4. (10 min) Pongan el vaso con agua sobre la balanza y anoten la lectura. Metan un dedo en el agua sin tocar el vaso y anoten la nueva lectura. Hagan lo mismo con el dedo más hundido.",
+      "5. (8 min) Dibujen diagramas de cuerpo libre separados del libro y de la mesa: marquen el peso del libro, la normal sobre el libro y la fuerza del libro sobre la mesa. Unan con una línea punteada cada par de acción y reacción y clasifiquen cada fuerza según la interacción fundamental de la que proviene.",
+      "6. (12 min) En grupo, respondan las cuatro primeras preguntas de análisis."
+     ],
+     "seguridad": [
+      "No suelten de golpe un dinamómetro estirado: el resorte o el gancho puede golpear la mano o la cara.",
+      "Estiren la liga solo unos 10 cm y nunca la apunten hacia una persona.",
+      "Mantengan el agua lejos de tomacorrientes y celulares; sequen cualquier derrame para que nadie resbale."
+     ],
+     "datos_esperados": "Los dos dinamómetros marcan lo mismo, dentro de su resolución (unos 0.1 a 0.2 N), en todas las pruebas, aunque una persona jale y la otra solo sostenga. Sin carga, los carritos recorren distancias parecidas y se encuentran cerca del punto medio; con la bolsita, el carrito cargado recorre menos, aproximadamente en proporción inversa a las masas si la fricción es pequeña. La lectura de la balanza sube unos gramos al meter el dedo, tanto más cuanto más se hunde: el agua empuja el dedo hacia arriba y el dedo empuja el agua hacia abajo. El peso del libro y la normal no son un par: actúan sobre el mismo cuerpo; el peso es gravitatorio y la normal es de origen electromagnético.",
+     "analisis": [
+      "(Paso 6) ¿Qué marcaron los dos dinamómetros en cada prueba? ¿Importó quién jalaba? Comparen con su hipótesis del paso 1.",
+      "(Paso 6) Si las fuerzas de la liga sobre los dos carritos son iguales, ¿por qué el carrito cargado recorrió menos?",
+      "(Paso 6) ¿Por qué subió la lectura de la balanza al meter el dedo, si el dedo no tocó el vaso? Nombren el par de fuerzas y el cuerpo sobre el que actúa cada una.",
+      "(Paso 6) El peso del libro y la normal sobre el libro son iguales y opuestos: ¿por qué no son un par de acción y reacción? ¿Cuál es la pareja de cada una?",
+      "Tarea: Con la ley de gravitación calculen el peso de una mochila de 5 kg al nivel del mar y en la cima del volcán de Santa Ana (busquen su altitud en una fuente oficial; G, la masa y el radio de la Tierra de la tabla de referencia). ¿Lo notaría una balanza?"
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin dinamómetros: dos balanzas de baño de resorte apretadas cara a cara entre las palmas de dos personas marcan lo mismo; o dos ligas iguales enganchadas se estiran lo mismo. Sin carritos: dos estudiantes en sillas con rueditas se empujan con las palmas (sentados y despacio). Sin internet no hace falta nada más. Con internet: la simulación PhET «Laboratorio de fuerza gravitatoria» muestra el valor de la fuerza sobre cada una de dos masas, y siempre es el mismo aunque las masas sean distintas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U5-5.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/tercera-ley-newton",
+     "nombre": "Tercera ley de Newton: acción y reacción",
+     "definicion": "Las fuerzas aparecen en pares de igual magnitud y sentido opuesto que actúan sobre cuerpos distintos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.7",
+     "grado": 10,
+     "indicador": "3.3. • Identifica pares de acción y reacción en sistemas de dos o más cuerpos y los diferencia de fuerzas que se equilibran sobre un mismo cuerpo. • Clasifica las fuerzas que intervienen en situaciones reales según su tipo y las relaciona con la interacción fundamental de la que provienen. • Calcula el módulo de la fuerza gravitatoria entre dos cuerpos con la ley de gravitación universal y explica el peso como la atracción que la Tierra ejerce sobre un cuerpo.",
+     "evidencia": "Tabla de lecturas de dinamómetros y diagramas de cuerpo libre separados con identificación de pares de acción y reacción"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U5-5.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U5-5.7/1",
+     "decision": "corregir",
+     "justificacion": "Física correcta: dinamómetros iguales en todo caso, distancias de los carritos en razón inversa a las masas, la balanza sube por el par empuje del agua-dedo, peso y normal no son par. Solo se corrige «G de la malla»: la malla no da G; las constantes remiten a la tabla de referencia. El cambio de peso en Santa Ana es ≈ 0.07 %.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.7 (fila 13)",
+       "cita": "Actividad de la mochila de 5 kg en el volcán de Santa Ana; no fija el valor de G."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Δg/g ≈ 2h/R = 2·2381/6.371×10⁶ ≈ 0.075 %."
+      }
+     ],
+     "cambios": {
+      "analisis": [
+       "(Paso 6) ¿Qué marcaron los dos dinamómetros en cada prueba? ¿Importó quién jalaba? Comparen con su hipótesis del paso 1.",
+       "(Paso 6) Si las fuerzas de la liga sobre los dos carritos son iguales, ¿por qué el carrito cargado recorrió menos?",
+       "(Paso 6) ¿Por qué subió la lectura de la balanza al meter el dedo, si el dedo no tocó el vaso? Nombren el par de fuerzas y el cuerpo sobre el que actúa cada una.",
+       "(Paso 6) El peso del libro y la normal sobre el libro son iguales y opuestos: ¿por qué no son un par de acción y reacción? ¿Cuál es la pareja de cada una?",
+       "Tarea: Con la ley de gravitación calculen el peso de una mochila de 5 kg al nivel del mar y en la cima del volcán de Santa Ana (busquen su altitud en una fuente oficial; G, la masa y el radio de la Tierra de la tabla de referencia). ¿Lo notaría una balanza?"
+      ]
+     },
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-FIS-U5-5.9/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-FIS-U5-5.9/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-FIS-U5-5.9"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U5-5.9",
+      "CON:fisica/friccion-resistencia-aire"
+     ],
+     "grados": [
+      10
+     ],
+     "titulo": "Coeficientes de rozamiento: ángulo crítico, dinamómetro y predicción verificada",
+     "proposito": "Medir el coeficiente de rozamiento estático con el ángulo crítico de un plano inclinado (μs = tan θ) y el cinético jalando con un dinamómetro a velocidad constante, para tres materiales sobre la misma tabla; comprobar con una balanza de cocina que la normal cambia con una fuerza inclinada, y usar los coeficientes para predecir si un bloque se desliza a un ángulo dado. Es la tabla de μs y μk de tres pares de materiales con la predicción verificada que pide la malla.",
+     "materiales": [
+      "Una tabla lisa de unos 80 cm (repisa o tablero suelto) y libros para levantar un extremo",
+      "Tres bloques de madera iguales de unos 10 × 6 × 3 cm: uno sin forro, uno forrado por abajo con caucho (trozo de cámara de llanta) y uno forrado con cartón, pegados con cinta o pegamento",
+      "Tres bolsitas cerradas con unos 500 g de arena, una pegada con cinta sobre cada bloque",
+      "Un dinamómetro de 0 a 10 N (o uno casero de liga calibrado) y un hilo con un clip",
+      "Balanza de cocina digital",
+      "Regla o cinta métrica y transportador",
+      "Calculadora con funciones trigonométricas"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1, 5 min) Pesen cada bloque con su bolsita. Cada estudiante escribe qué material cree que tendrá el mayor coeficiente y por qué.",
+      "2. (15 min) Ángulo crítico: pongan un bloque en el extremo alto de la tabla y levanten ese extremo muy despacio hasta que el bloque empiece a deslizar. Midan la altura h y la base b en ese instante: μs = h/b = tan θ. Tres intentos por bloque.",
+      "3. (12 min) Coeficiente cinético: con la tabla horizontal, jalen cada bloque con el dinamómetro horizontal a velocidad lenta y pareja y lean la fuerza mientras se desliza. Calculen μk = F/(m·g), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Dos intentos por bloque.",
+      "4. (8 min) Normal con fuerza inclinada: pongan sobre la balanza una goma pegada con cinta como tope, pongan la balanza en cero y coloquen el bloque de madera contra el tope. Jálenlo con el dinamómetro hacia arriba a unos 30°, empujándolo contra el tope (la fuerza horizontal la resiste el tope), con unos 2 N, y anoten la lectura de la balanza y la del dinamómetro.",
+      "5. (8 min) Predicción verificada: el docente fija la tabla a unos 25°. Con sus μs, cada grupo predice por escrito qué bloques se deslizarán y luego lo comprueba.",
+      "6. (7 min) En grupo, respondan las dos primeras preguntas de análisis."
+     ],
+     "seguridad": [
+      "Sujeten la tabla inclinada para que no resbale sobre los libros ni caiga sobre los pies.",
+      "Las bolsitas de arena van bien cerradas y pegadas a los bloques; atrapen el bloque al final de la tabla.",
+      "No suelten el dinamómetro estirado: el gancho puede golpear la mano."
+     ],
+     "datos_esperados": "Los ángulos críticos suelen salir entre unos 15° y 30° para madera y cartón sobre madera (μs del orden de 0.3 a 0.6) y mayores para el caucho; los valores de comparación salen de la tabla de referencia y pueden diferir por la limpieza, la humedad o la rugosidad. μk sale menor que μs para el mismo par, del orden de un 10 a 30 % menos. Al jalar a 30° hacia arriba la lectura de la balanza baja en F sen 30°/g: con 2 N, unos 100 g menos. En la predicción a 25°, se deslizan los bloques con μs menor que tan 25° ≈ 0.47.",
+     "analisis": [
+      "(Paso 6) ¿Qué par de materiales tuvo el mayor μs? ¿Por qué μk salió menor que μs para cada uno?",
+      "(Paso 6) ¿Cuánto bajó la lectura de la balanza al jalar inclinado? Explíquenlo con N = mg − F sen θ y digan si su predicción del paso 5 se cumplió.",
+      "Tarea: Expliquen por qué sus coeficientes difieren de los de la tabla de referencia y qué variables del experimento podrían explicarlo.",
+      "Tarea: Con sus coeficientes, recomienden qué material usaría el calzado de alguien que trabaja en una rampa mojada y justifiquen por qué el agua cambia el resultado."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin dinamómetro: midan μk con el ángulo al que el bloque, después de un toquecito, baja a rapidez pareja (μk = tan de ese ángulo). Sin balanza: omitan el paso 4 y resuelvan la normal en papel. Sin laboratorio ni internet: basta con la tabla, libros, una regla y objetos de distintos materiales (cuaderno, estuche, zapato). Con internet: la pantalla «Fricción» de la simulación PhET «Fuerzas y movimiento: fundamentos» muestra que la fricción crece con el empuje hasta un máximo y baja cuando el objeto desliza; no permite inclinar la superficie ni muestra los coeficientes.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/friccion-resistencia-aire",
+     "nombre": "Fricción y resistencia del aire",
+     "definicion": "Fuerzas que se oponen al movimiento relativo entre superficies o a través del aire, frenando los objetos.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U5-5.9",
+     "grado": 10,
+     "indicador": "3.4. • Determina experimentalmente los coeficientes de rozamiento estático y cinético entre dos materiales y los utiliza para predecir si un cuerpo se desliza. • Calcula la fuerza normal en planos horizontales e inclinados y en casos con fuerzas aplicadas en ángulo, explicando por qué no siempre es igual al peso.",
+     "evidencia": "Tabla de coeficientes μ_s y μ_k para tres pares de materiales con cálculos y predicción verificada de deslizamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-FIS-U5-5.9/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G10-FIS-U5-5.9/1",
+     "decision": "aprobar",
+     "justificacion": "Correcto: μs = tan θ crítico, μk = F/mg a velocidad constante, la balanza baja F sen 30°/g ≈ 102 g con 2 N, tan 25° ≈ 0.47. Bloques de ~0.6 kg piden 1.8–6 N, dentro de 0–10 N. La descripción de la pantalla «Fricción» de PhET y sus límites es acertada. 55 min.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U5-5.9",
+       "cita": "Coeficientes estático y cinético de tres pares y normal con fuerza en ángulo."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "N = mg − F sen θ cuando la fuerza aplicada tiene componente hacia arriba."
+      }
+     ],
+     "confianza": "media",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}

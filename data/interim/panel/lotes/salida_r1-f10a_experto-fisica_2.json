@@ -1,0 +1,495 @@
+[
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.9/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: peso 20·9.8 = 196 N, componente vertical 80·sen 30° = 40 N, N = 156 N; tolerancia de 2 N razonable. Remite g a la tabla de referencia y la retroalimentación explica por qué N difiere del peso, como pide el indicador.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.9",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "ΣFy = 0: N + F sen θ − mg = 0 ⇒ N = 196 − 40 = 156 N"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.9/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: tan 22° = 0.40, tan 27° = 0.51, tan 40° = 0.84, tan 30° = 0.58; solo el caucho queda quieto, clave A correcta. B es un distractor real (compara con sen en vez de tan; 0.51 > 0.50 lo hace tentador), C refleja dependencia de la masa y D la fricción estática sin límite. La masa no altera el ángulo crítico.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.9",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En el ángulo crítico μs = tan θ, independiente de la masa; a 30° queda quieto si θcrítico > 30°"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.9/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "Física correcta: μs > μk explica el arranque y N = mg − F sen θ explica la menor fricción. El enunciado pide explicar ambas observaciones y qué pasa con la normal y la fricción, así que los tres criterios obligatorios están pedidos. c4 reconoce el límite de ángulos grandes sin exigirlo.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.9",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "f_s,máx = μs·N > f_k = μk·N; con cuerda inclinada N = mg − F sen θ"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/aplicaciones-leyes-newton/1",
+  "decision": "aprobar",
+  "justificacion": "Idea previa real en cuerpos conectados. La condición de validez (T = mg solo sin aceleración, cuerda y polea ideales) es correcta, y las señales son coherentes: tomar T = m·g sobre el carrito da una aceleración mayor que m_c·g/(M + m_c).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.10",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Si la masa colgante acelera, T = m(g − a) ≠ mg"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/aplicaciones-leyes-newton/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta: la lectura de la balanza depende del sentido de la aceleración, no de la velocidad; los cuatro casos (arranque o frenado, subiendo o bajando) están bien asignados y a velocidad constante marca el peso. Error documentado de confusión velocidad-aceleración.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.10",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "N = m(g + a) con a positiva hacia arriba"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/aplicaciones-leyes-newton/3",
+  "decision": "corregir",
+  "justificacion": "«La gravedad casi no cambia» vale para el ascensor, pero en la Estación Espacial (unos 400 km de altura) la gravedad es cerca del 90 % de la de la superficie: conviene decirlo con precisión, porque es justo el dato que derriba la idea de «no hay gravedad» y lo que mantiene la órbita. El resto es correcto.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.10",
+    "cita": "el indicador pide explicar la ingravidez aparente como caída libre continua"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "g(h) = g₀·(R/(R+h))²; con h ≈ 400 km y R ≈ 6 370 km, g ≈ 0.88–0.89 g₀"
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "descripcion": "Confunde el peso aparente con la fuerza de gravedad: cree que cuando la balanza marca menos o cuando un cuerpo «flota» (en un ascensor que baja acelerando, en una caída o en órbita) la Tierra lo atrae menos o deja de atraerlo, y que en la Estación Espacial no hay gravedad. En el ascensor la gravedad no cambia, y a la altura de la Estación sigue siendo cerca del 90 % de la de la superficie: es la que la mantiene en órbita. Lo que cambia es la normal, que llega a cero en caída libre."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/caida-libre/1",
+  "decision": "aprobar",
+  "justificacion": "Idea aristotélica real; la aclaración entre paréntesis evita marcar como error algo cierto (con aire, a igual forma, el más pesado puede llegar antes). La señal de la hoja arrugada es válida: misma masa, distinta resistencia del aire.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.6",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En el modelo sin aire a = g para todo cuerpo, independiente de la masa"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/caida-libre/2",
+  "decision": "aprobar",
+  "justificacion": "Confusión real y documentada entre velocidad nula y aceleración nula en el punto más alto; la descripción no afirma nada falso.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.6",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En la altura máxima v = 0 pero a = g hacia abajo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/caida-libre/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: la aceleración vale g hacia abajo en subida y bajada; la señal de cambiar el signo de g con el mismo eje y la de «fuerza que se agota» son manifestaciones reales de esta idea.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.6",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Con un eje fijo, a = −g durante todo el lanzamiento vertical"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/friccion-resistencia-aire/1",
+  "decision": "aprobar",
+  "justificacion": "Correcta y completa: delimita bien cuándo N = mg (superficie horizontal, solo peso y normal en vertical, sin aceleración vertical). Las señales son reales, incluida la de llamar a la normal «reacción del peso». Sirve directamente a la segunda parte del indicador.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.9",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "N = mg cos θ en el plano inclinado; N = mg ∓ F sen θ con fuerza inclinada"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/friccion-resistencia-aire/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta: recoge los dos extremos del error (siempre el máximo o sin límite) y enuncia f_s ≤ μs·N. Las señales coinciden con los distractores de la actividad obj-2 (opción D).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.9",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "f_s ≤ μs·N; solo vale μs·N en el umbral del deslizamiento"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/friccion-resistencia-aire/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: la fricción se opone al deslizamiento relativo, no necesariamente al movimiento; los ejemplos del pie, las llantas y la caja en la paila del pick-up son físicamente correctos (fricción hacia adelante).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.9",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Sobre el pie que empuja hacia atrás, el piso ejerce fricción hacia adelante"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/graficas-movimiento/1",
+  "decision": "aprobar",
+  "justificacion": "Error gráfica-imagen ampliamente documentado en cinemática; descripción y señales correctas.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.7",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Una x-t es posición contra tiempo, no la forma de la trayectoria"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/graficas-movimiento/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta: confusión valor-pendiente; el cruce de dos x-t indica igual posición, no igual velocidad.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.7",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "La velocidad es la pendiente de la x-t"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/graficas-movimiento/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: en la v-t un tramo horizontal no nulo es velocidad constante y llegar al eje es detenerse, no regresar. Se usa al construir unas gráficas a partir de otras, como pide el indicador.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.7",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En la v-t, v = 0 significa reposo instantáneo; la posición sale del área"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/movimiento-proyectiles/1",
+  "decision": "aprobar",
+  "justificacion": "Correcta: arriba solo se anula la componente vertical y a = g todo el vuelo; distingue bien el caso vertical. La señal t = v₀/g es coherente con creer que toda la velocidad se anula arriba.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U4-4.1",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En la altura máxima v = v₀ cos θ y a = g hacia abajo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/movimiento-proyectiles/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta: en el modelo sin aire los tiempos de caída son iguales, y se declara la idealización. Las señales (usar v₀ completo en la ecuación vertical) son errores reales de mezcla de componentes.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U4-4.1",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "El tiempo de caída depende solo de la altura y de la componente vertical inicial"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/movimiento-proyectiles/3",
+  "decision": "aprobar",
+  "justificacion": "Idea del ímpetu bien documentada en la mecánica intuitiva; la física de contraste (solo peso y resistencia del aire en vuelo) es correcta.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U4-4.1",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "En vuelo no hay fuerza hacia adelante; la velocidad horizontal se conserva sin aire"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/1",
+  "decision": "aprobar",
+  "justificacion": "Correcta: frena si v y a tienen signos opuestos; el ejemplo v = −12 m/s, a = −2 m/s² es correctamente un caso de aumento de rapidez. Sirve al indicador sobre signos.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.5",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Rapidez aumenta si v·a > 0 y disminuye si v·a < 0"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/2",
+  "decision": "corregir",
+  "justificacion": "La física es correcta (d = v²/2a: doble rapidez, cuádruple distancia), pero la señal «predice 18 m donde corresponden 36 m» no da el dato de partida y un generador podría copiarla sin contexto. Se explicita la situación base (9 m) para que los números sean verificables.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.5",
+    "cita": "el indicador pide la distancia total de detención de un vehículo"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "d = v²/(2a); con a igual, d(2v) = 4·d(v): 9 m → 36 m"
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "senales": "Si un carro frena en 9 m a cierta rapidez, predice 18 m al doble de rapidez cuando corresponden 36 m; dibuja la distancia de frenado contra la rapidez como una recta."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: omitir la fase de reacción es el error típico del problema de varias etapas que nombra el indicador; las señales coinciden con ese error.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.5",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "d_total = v·t_r + v²/(2a)"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/primera-ley-newton/1",
+  "decision": "aprobar",
+  "justificacion": "Idea aristotélica real y bien delimitada: reconoce que en la vida diaria hay que empujar para compensar la fricción y sitúa el error en confundir fuerza aplicada con fuerza neta. No marca como error nada cierto.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.2",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "A velocidad constante ΣF = 0; la fuerza aplicada equilibra la fricción"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/primera-ley-newton/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta: desde el suelo no hay fuerza hacia adelante y, en el vehículo que frena (no inercial), la fuerza ficticia no tiene agente; distinguir los dos marcos es exactamente lo que pide el indicador.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.2",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Las fuerzas ficticias aparecen solo en marcos no inerciales y no forman par de tercera ley"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/primera-ley-newton/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: la masa inercial no depende de la gravedad ni del lugar; ejemplo del satélite y señales de unidades son errores reales de la confusión masa-peso que el indicador pide distinguir.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.2",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "m mide la resistencia a cambiar la velocidad; P = m·g depende del lugar"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/segunda-ley-newton/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta: usar la fuerza aplicada en vez de la neta explica la ordenada no nula en la gráfica a-F con fricción; las señales sobre componentes de fuerzas inclinadas sirven al indicador por componentes.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.4",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "a = ΣF/m; con fricción, a = (F − f)/m no pasa por el origen contra F"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/segunda-ley-newton/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: poner el peso donde va la masa da aceleraciones unas diez veces menores (factor g ≈ 9.8); las demás señales son manifestaciones reales de la confusión masa-peso.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.4",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "a = F/m con m en kg; F/(m·g) divide de más por ≈ 9.8"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/sistema-internacional-unidades/1",
+  "decision": "corregir",
+  "justificacion": "Los valores erróneos no salen del error descrito: no cubicar el factor 100 da 1 m³ = 100 cm³ (no 1 000 cm³, que es la equivalencia de 1 L), y 1 m³ = 100 L o 2 m³ = 200 L no provienen de usar el factor lineal. Además, el resultado queda 100 o 10 000 veces menor, no «mil o un millón». Se reescriben con números coherentes.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.1",
+    "cita": "el indicador pide conversiones encadenadas y verificar unidades"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "1 m² = 10⁴ cm²; 1 m³ = 10⁶ cm³ = 10³ L; con el factor lineal: 10² cm², 10² cm³ y 10 L (1 m = 10 dm)"
+   }
+  ],
+  "confianza": "alta",
+  "cambios": {
+   "descripcion": "Al convertir unidades de área o de volumen usa el factor de la longitud sin elevarlo al cuadrado o al cubo: cree que 1 m² son 100 cm² (en lugar de 10 000 cm²), que 1 m³ son 100 cm³ (en lugar de 1 000 000 cm³) o que 1 m³ son 10 L, porque 1 m = 10 dm (en lugar de 1 000 L).",
+   "senales": "Escribe 2 m³ = 20 L o 1 m² = 100 cm²; al calcular el área de un terreno o el volumen de un tanque obtiene un valor cien o diez mil veces menor de lo razonable."
+  }
+ },
+ {
+  "id": "PED:DIF:fisica/sistema-internacional-unidades/2",
+  "decision": "aprobar",
+  "justificacion": "Correcta y verificada: 90 km/h × 3.6 = 324 m/s, absurdo para un carro; lo correcto es 90/3.6 = 25 m/s. Error real al usar factores de memoria.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.1",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "90 km/h = 90 000 m / 3 600 s = 25 m/s"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/sistema-internacional-unidades/3",
+  "decision": "aprobar",
+  "justificacion": "Correcta: los factores numéricos no tienen dimensión y la homogeneidad es condición necesaria, no suficiente; x = a·t² frente a ½·a·t² ilustra bien el límite.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.1",
+    "cita": "indicador de la fila de la malla vigente"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "[½] = 1; x = a·t² es homogénea pero incorrecta para partir del reposo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:DIF:fisica/suma-vectores-componentes/1",
+  "decision": "corregir",
+  "justificacion": "Error real y bien descrito (3 km E + 4 km N dan 5 km, no 7 km). La señal «el regreso mide lo mismo que todo el recorrido» es ambigua; se reformula como confusión entre la distancia recorrida y el desplazamiento de regreso al punto de partida.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.4",
+    "cita": "el indicador pide la resultante por componentes de tres o más vectores"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "|R| = √(3² + 4²) = 5 km ≤ suma de módulos"
+   }
+  ],
+  "confianza": "media",
+  "cambios": {
+   "senales": "Responde que 3 km al este y 4 km al norte dan una resultante de 7 km (en lugar de 5 km), o que para volver al punto de partida hay que recorrer en línea recta lo mismo que todo el camino de ida; no dibuja los vectores ni separa componentes."
+  }
+ }
+]

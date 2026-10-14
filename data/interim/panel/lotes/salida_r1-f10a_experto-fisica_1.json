@@ -1,0 +1,550 @@
+[
+ {
+  "id": "PED:ACT:G10-FIS-U2-2.1/obj-1",
+  "decision": "corregir",
+  "cambios": {
+   "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación es imposible. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las unidades derivadas, como m/s o N), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término."
+  },
+  "justificacion": "Clave A correcta: a·t tiene [L][T]⁻¹ y no puede sumarse a x. Solo se aclara en la retroalimentación «así nacen las derivadas»: en 10.° se lee como derivadas del cálculo; se dice «unidades derivadas, como m/s o N».",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.1",
+    "cita": "Comprueba la homogeneidad dimensional de una ecuación y detecta ecuaciones mal planteadas"
+   },
+   {
+    "fuente": "DIF:fisica/sistema-internacional-unidades/3",
+    "cita": "factor numérico como ½ no arregla las dimensiones; D lo describe"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U2-2.1/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: 600 L cada 5 min son 120 L/min; 120 × 1440 min = 172 800 L = 172.8 m³/día. Valor, unidad y tolerancia correctos; la cadena de factores sirve al indicador de conversiones encadenadas.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.1",
+    "cita": "problemas en contexto con varias conversiones encadenadas de unidades"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "120 L/min × 1 m³/1000 L × 60 min/h × 24 h/día = 172.8 m³/día"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U2-2.1/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "90 km/h ÷ 3.6 = 25 m/s y 324 m/s ≈ 1166 km/h, rapidez de avión: correcto. El enunciado pide las tres cosas que exigen los criterios obligatorios; los errores típicos corresponden a la dificultad del factor invertido.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/sistema-internacional-unidades/2",
+    "cita": "multiplica cuando debía dividir (90 km/h × 3.6)"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "90 × 1000/3600 = 25 m/s"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U2-2.4/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: |R| = √(600²+800²) = 1000 m; el regreso es −R, con arctan(600/800) ≈ 36.9° desde el sur hacia el oeste: S 37° O. B (dirección de ida), D (ángulo desde el eje equivocado) y A (suma de módulos) son errores reales.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/suma-vectores-componentes/3",
+    "cita": "mide el ángulo de la resultante desde el eje equivocado"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U2-2.4",
+    "cita": "representa con rumbo geográfico; resultante por componentes"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U2-2.4/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Componentes recalculadas: 5cos30° = 4.33, 5sen30° = 2.50; 3cos120° = −1.50 (la tabla dice +1.50); 4cos250° = −1.37, 4sen250° = −3.76. Clave B correcta y D muestra bien que x²+y² no detecta errores de signo.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/suma-vectores-componentes/2",
+    "cita": "cree que una componente negativa es un error porque el módulo es positivo"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "cos 120° = −0.5"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U2-2.4/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "R = 4.0 î + 2.0 ĵ km, |R| ≈ 4.47 km; el regreso −R forma arctan(4/2) ≈ 63° con el sur: S 63° O ≈ 207° desde el este. Números, rúbrica y tolerancias correctos; distingue distancia recorrida (10 km) de desplazamiento.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/suma-vectores-componentes/1",
+    "cita": "suma los módulos como si fueran escalares"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "180° + 26.6° ≈ 207°"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.5/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Δx = v₀²/(2a): al doble de rapidez, cuádruple distancia, 36 m. B tiene el número correcto con una razón falsa (el tiempo solo se duplica), así que la clave D evalúa el porqué. Datos realistas: a ≈ 6.9 m/s² en pavimento seco.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/movimiento-uniformemente-acelerado/2",
+    "cita": "cree que la distancia de frenado es proporcional a la rapidez"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.5",
+    "cita": "distancia total de detención de un vehículo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.5/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: reacción 15.0 × 0.8 = 12 m; frenado lineal a −5.0 m/s² (coherente con 10.0 m/s a 1.8 s) y área ½ × 15.0 × 3.0 = 22.5 m; total 34.5 m. Incluye la fase de reacción, como pide el indicador.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/movimiento-uniformemente-acelerado/3",
+    "cita": "olvida que durante el tiempo de reacción el vehículo sigue a la misma rapidez"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.5",
+    "cita": "problemas de varias etapas: distancia total de detención"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.5/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "v = −12 + (−2.0)(3.0) = −18 m/s; v y a del mismo signo: la rapidez aumenta. Sirve al indicador (acelera o frena según los signos de v y a) y el error principal es la dificultad documentada.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.5",
+    "cita": "determina, según los signos de velocidad y aceleración, si el móvil acelera o frena"
+   },
+   {
+    "fuente": "DIF:fisica/movimiento-uniformemente-acelerado/1",
+    "cita": "aceleración negativa siempre significa frenar"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.6/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Clave A correcta: sin aire la aceleración es g hacia abajo en todo el vuelo, también en el punto más alto. B y C son ideas previas documentadas; la retroalimentación explica el cambio de la velocidad en torno al punto más alto.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/caida-libre/2",
+    "cita": "cree que en el punto más alto la aceleración es cero"
+   },
+   {
+    "fuente": "DIF:fisica/caida-libre/3",
+    "cita": "cree que la aceleración apunta en el sentido del movimiento"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.6/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Datos coherentes (t² recalculados; h/t² ≈ 4.81–4.85 m/s², intercepto ≈ 0). Pendiente 1.50/0.308 ≈ 4.87 m/s², g ≈ 9.7 m/s²; tolerancia 0.2 adecuada. Remite a la tabla de referencia para comparar: coincide con la evidencia de la malla.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.6",
+    "cita": "gráfica h contra t² con ajuste lineal, valor experimental de g"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "h = ½gt², pendiente = g/2"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.6/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "Correcto: arrugar no cambia masa ni peso; la diferencia es la resistencia del aire; sin aire caen juntas. Las tres partes del enunciado corresponden a los tres criterios obligatorios y el error principal es una idea previa documentada.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/caida-libre/1",
+    "cita": "cree que los más pesados caen con mayor aceleración aun sin aire"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "la masa no depende de la forma"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.7/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Entre 10 y 12 s v > 0 y decrece: x-t sube cada vez menos inclinada y queda horizontal en 12 s (cóncava hacia abajo). Clave C correcta; A es la lectura de v-t como x-t documentada.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/graficas-movimiento/3",
+    "cita": "un tramo que baja hasta el eje como regreso al punto de partida"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.7",
+    "cita": "construye las otras gráficas usando pendientes y áreas"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.7/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Áreas con signo recalculadas: 20 + 4 − 6 = 18 m; distancia 30 m. Valor, signo y tolerancia correctos; sirve al indicador (desplazamiento con signo por tramos a partir de la v-t).",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.7",
+    "cita": "calcula el desplazamiento de un móvil en varios tramos rectilíneos con signo"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "área bajo v-t con signo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U3-3.7/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "Origen 50 m al norte: x' = x − 50, de −40 m a 20 m; Δx = 60 m en los dos sistemas. Responde exactamente al indicador sobre el cambio de origen; c4 (la x-t se traslada hacia abajo) también es correcto.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U3-3.7",
+    "cita": "cómo cambian las posiciones, pero no el desplazamiento, al cambiar el origen"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Δx' = (x_f − 50) − (x_i − 50) = Δx"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U4-4.1/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: vx = 12.99 m/s, vy = 7.5 m/s, t = 1.531 s, x = 19.88 m = v₀² sen 60°/g. Valor 19.9 ± 0.3 m correcto; g remite a la tabla de referencia y la idealización sin aire está declarada.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U4-4.1",
+    "cita": "predice el alcance de un proyectil lanzado con cualquier ángulo"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "225 × 0.866 / 9.8 = 19.9 m"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U4-4.1/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Los datos siguen sen 2θ (2.38 × 0.5 = 1.19; 2.38 × 0.866 = 2.06). Clave B da la razón correcta; C tiene la misma observación con una razón falsa (los tiempos de vuelo difieren), así que el ítem evalúa el porqué. D es el «ímpetu» documentado.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/movimiento-proyectiles/3",
+    "cita": "el lanzamiento le deja una fuerza que se va gastando"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U4-4.1",
+    "cita": "tabla de alcance contra ángulo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U4-4.1/obj-abierta",
+  "decision": "corregir",
+  "cambios": {
+   "enunciado": "Desde el borde de una mesa de 0.80 m de alto, Marcos empuja una canica que sale disparada en horizontal y, en el instante en que esa canica deja el borde, Daniela suelta otra canica igual desde el mismo borde. En 2 o 3 oraciones: di cuál llega primero al piso (o si llegan juntas), explica por qué usando lo que pasa en el eje vertical de cada canica, y explica por qué la de Marcos cae más lejos."
+  },
+  "justificacion": "La física es correcta, pero «en el mismo instante» podía leerse como el del empujón: si la canica rueda antes sobre la mesa, la de Daniela llegaría primero y la clave fallaría. Se fija la simultaneidad al dejar el borde.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/movimiento-proyectiles/2",
+    "cita": "lanzado en horizontal frente a otro soltado a la misma altura en el mismo instante"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "t = √(2h/g) solo vale desde que ambas inician la caída a la vez"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.10/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: a = 0.20g/1.00 = 1.96 m/s²; T = 2m₁m₂g/(m₁+m₂) = 4.70 N, entre los dos pesos. Idealizaciones declaradas y g remite a la tabla. La retroalimentación ataca la idea de que T es igual al peso colgado.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.10",
+    "cita": "sistemas de cuerpos conectados: aceleración común y tensiones; máquina de Atwood"
+   },
+   {
+    "fuente": "DIF:fisica/aplicaciones-leyes-newton/1",
+    "cita": "en una Atwood toma la tensión igual al peso de la masa pesada"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.10/obj-2",
+  "decision": "corregir",
+  "cambios": {
+   "distractores": {
+    "A": "DIF:fisica/aplicaciones-leyes-newton/2",
+    "B": "DIF:fisica/primera-ley-newton/1",
+    "D": "DIF:fisica/aplicaciones-leyes-newton/3"
+   }
+  },
+  "justificacion": "Clave C correcta (66 kg: a ≈ 0.1g hacia arriba al arrancar; 54 kg: frena subiendo). Se enlaza B a primera-ley/1: suponer que solo en reposo N = mg es creer que moverse a velocidad constante exige una fuerza neta.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/primera-ley-newton/1",
+    "cita": "asocia velocidad constante con fuerza hacia adelante y reposo con ninguna fuerza"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.10",
+    "cita": "peso aparente en ascensores"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.10/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "(6400/6800)² ≈ 0.886: cerca del 90 %. Explica la ingravidez como caída libre continua, como pide el indicador; radio terrestre remite a la tabla. La fuerza centrífuga real se mapea a una dificultad documentada.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.10",
+    "cita": "explica la ingravidez aparente como caída libre continua"
+   },
+   {
+    "fuente": "DIF:fisica/aplicaciones-leyes-newton/3",
+    "cita": "en la Estación Espacial no hay gravedad"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.2/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Clave A correcta desde el sistema inercial de la acera; la retroalimentación nombra bien la fricción de los pies como única fuerza horizontal, pequeña. B (inercia como fuerza) y D (fuerza que se gasta) son ideas previas documentadas.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/primera-ley-newton/2",
+    "cita": "«la fuerza de la inercia» lo lanza hacia adelante al frenar"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.2",
+    "cita": "primera ley en situaciones de seguridad vial"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.2/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Plomada: arrancando atrás, frenando adelante, en la curva hacia afuera; vertical solo sin aceleración. Clave C correcta; D (rapidez constante en curva) y A (solo en reposo) mapean a dificultades reales.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.2",
+    "cita": "reconoce cuándo un sistema de referencia no es inercial"
+   },
+   {
+    "fuente": "DIF:fisica/aceleracion-fuerza-centripeta/3",
+    "cita": "si la rapidez es constante no hay aceleración"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.2/obj-abierta",
+  "decision": "corregir",
+  "cambios": {
+   "retroalimentacion": "Al frenar, el pick-up recibe una gran fuerza hacia atrás; sobre los jóvenes y la caja solo actúa la fricción con la paila, demasiado pequeña. Por inercia siguen moviéndose hacia adelante con la velocidad que traían y chocan con la cabina o salen despedidos. Para detenerlos junto con el vehículo hace falta una fuerza mayor hacia atrás sobre ellos, como la de un cinturón o una amarra; por eso las personas deben viajar en asientos con cinturón y la carga, amarrada."
+  },
+  "justificacion": "La retroalimentación decía que sobre los jóvenes y la caja no actúa fuerza hacia atrás; la fricción con la paila sí actúa, pero es insuficiente (como dicen la respuesta modelo y el ítem obj-1). Se corrige para no sembrar un error.",
+  "evidencia": [
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "fricción estática/cinética del piso de la paila actúa hacia atrás, pero es pequeña"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.2",
+    "cita": "propuesta argumentada de una norma de seguridad"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.4/obj-1",
+  "decision": "aprobar",
+  "justificacion": "Recalculado: 50 cos 30° = 43.3 N; (43.3 − 20)/12 = 1.94 m/s². La fricción se da como dato (no exige μ), y se aclara bien que la componente vertical reduce la normal.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.4",
+    "cita": "segunda ley por componentes con fuerzas a ángulos arbitrarios"
+   },
+   {
+    "fuente": "DIF:fisica/segunda-ley-newton/2",
+    "cita": "usa la fuerza completa de una cuerda inclinada"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.4/obj-2",
+  "decision": "aprobar",
+  "justificacion": "Los cinco datos cumplen a = 2.0F − 0.30; pendiente 1/m → 0.50 kg de masa total, corte con el eje F en 0.15 N. Clave D correcta; B reproduce la conclusión «la ley falla» documentada. Masa total constante bien controlada.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.4",
+    "cita": "gráficas a contra F linealizadas"
+   },
+   {
+    "fuente": "DIF:fisica/segunda-ley-newton/2",
+    "cita": "concluye que la ley «falla» cuando no es proporcional a la fuerza aplicada"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.4/obj-abierta",
+  "decision": "aprobar",
+  "justificacion": "Correcto: la aceleración y la fuerza neta apuntan al sur al frenar; con el doble de masa, la mitad. Los criterios obligatorios corresponden a las tres partes del enunciado y los errores, a dificultades documentadas.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/segunda-ley-newton/1",
+    "cita": "cree que la fuerza neta apunta hacia donde se mueve el cuerpo"
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "a = F/m"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.7/obj-1",
+  "decision": "corregir",
+  "cambios": {
+   "enunciado": "La Tierra atrae a la Luna con la fuerza gravitatoria. Usa la ley de gravitación universal con estos valores aproximados de la tabla de referencia: G = 6.674 × 10⁻¹¹ N·m²/kg², masa de la Tierra 5.97 × 10²⁴ kg, masa de la Luna 7.35 × 10²² kg y distancia entre sus centros 3.84 × 10⁸ m. ¿Con qué fuerza atrae la Luna a la Tierra? Responde en unidades de 10²⁰ N (por ejemplo, si obtienes 3.5 × 10²⁰ N, escribe 3.5); escribe solo el número."
+  },
+  "justificacion": "Cálculo correcto: F ≈ 1.99 × 10²⁰ N y M/m ≈ 81. Se quita «(el que da la malla)»: la fila vigente no da valor de G y la nota no tiene sentido para el estudiante; el valor queda remitido a la tabla de referencia.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.7 (fila 13)",
+    "cita": "calcula el módulo de la fuerza gravitatoria; no trae valor numérico de G"
+   },
+   {
+    "fuente": "DIF:fisica/tercera-ley-newton/3",
+    "cita": "la gravedad es mutua y de igual módulo"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.7/obj-2",
+  "decision": "corregir",
+  "cambios": {
+   "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Kevin arrastra a Ana: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: para saber si Ana se acelera solo se suman las fuerzas sobre ella, la del dinamómetro y la fricción de las rueditas."
+  },
+  "justificacion": "Clave B correcta. La retroalimentación decía «Ana se mueve porque la fuerza neta sobre ella no es cero»: si Kevin la arrastra a rapidez constante, la neta es cero. Eso refuerza la idea aristotélica de primera-ley/1; se reescribe en términos de aceleración.",
+  "evidencia": [
+   {
+    "fuente": "DIF:fisica/primera-ley-newton/1",
+    "cita": "cree que un cuerpo necesita fuerza neta para seguir moviéndose"
+   },
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.7 (fila 13)",
+    "cita": "lecturas simultáneas de dos dinamómetros marcan lo mismo en todas las pruebas"
+   }
+  ],
+  "confianza": "alta"
+ },
+ {
+  "id": "PED:ACT:G10-FIS-U5-5.7/obj-abierta",
+  "decision": "corregir",
+  "cambios": {
+   "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par y por qué el bote sí puede arrancar y ganar rapidez.",
+   "retroalimentacion": "El remo empuja el agua hacia atrás (fuerza sobre el agua) y el agua empuja el remo, y con él al bote y a Sofía, hacia adelante (fuerza sobre el bote). Como actúan sobre cuerpos distintos, no se suman ni se anulan. Al arrancar, la fuerza del agua hacia adelante sobre el bote es mayor que la resistencia del agua, así que la fuerza neta lo acelera; ya a rapidez constante, esas dos fuerzas se equilibran.",
+   "rubrica": {
+    "respuesta_modelo": "El error es sumar dos fuerzas que actúan sobre cuerpos distintos. El remo empuja el agua hacia atrás, y esa fuerza actúa sobre el agua; el agua empuja el remo hacia adelante, y esa fuerza actúa sobre el remo, el bote y Sofía. Para saber qué pasa con el bote solo cuentan las fuerzas sobre el bote: al arrancar, la del agua en el remo hacia adelante es mayor que la resistencia del agua al avance, así que la fuerza neta lo acelera hacia adelante.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Identifica el par: el remo empuja el agua hacia atrás y el agua empuja el remo (o el bote) hacia adelante.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Afirma que las dos fuerzas del par actúan sobre cuerpos distintos (agua y remo-bote) y por eso no se anulan entre sí.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica con las fuerzas sobre el bote por qué arranca: la del agua sobre el remo hacia adelante supera a la resistencia y la fuerza neta lo acelera (se acepta añadir que, a rapidez constante, esas fuerzas se equilibran).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Usa un diagrama o un ejemplo análogo (caminar, nadar, un cohete).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta que el par se anula y busca otra fuerza que mueva al bote.",
+      "ejemplo": "Sí se anulan, pero el bote avanza porque Sofía rema con más fuerza de la que regresa el agua.",
+      "dificultad": "DIF:fisica/tercera-ley-newton/2"
+     },
+     {
+      "descripcion": "Cree que la acción es mayor que la reacción.",
+      "ejemplo": "El remo empuja más fuerte al agua que el agua al remo, y esa diferencia mueve el bote.",
+      "dificultad": "DIF:fisica/tercera-ley-newton/1"
+     },
+     {
+      "descripcion": "Nombra fuerzas sin decir sobre qué cuerpo actúa cada una.",
+      "ejemplo": "El bote avanza por la reacción del agua, que es la tercera ley.",
+      "dificultad": null
+     }
+    ]
+   }
+  },
+  "justificacion": "La física del par es correcta, pero el criterio obligatorio c3 premiaba «el bote avanza porque la fuerza neta apunta adelante»: a rapidez constante la neta es cero. Se pide explicar por qué arranca y se menciona el equilibrio a rapidez constante.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G10-FIS-U5-5.7 (fila 13)",
+    "cita": "explica con diagramas separados por qué un bote avanza aunque las fuerzas del par sean iguales"
+   },
+   {
+    "fuente": "DIF:fisica/primera-ley-newton/1",
+    "cita": "no distingue la fuerza aplicada de la fuerza neta"
+   }
+  ],
+  "confianza": "alta"
+ }
+]
