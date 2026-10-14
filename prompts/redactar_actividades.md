@@ -127,6 +127,8 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
   de tema; si un experimento usa una tabla de ejemplo, la describe o la incluye.
 - **Fuego y calor:** la llama (mechero, fósforos, vela) y el agua por encima de 50 °C los maneja solo la docente;
   nadie mueve un mechero encendido.
+- **Condiciones de El Salvador:** los datos de ejemplo suponen un aula de 25–30 °C (rapidez del sonido ≈ 346–349
+  m/s, no 340), la presión de la altitud de la escuela y la humedad de la época lluviosa cuando afecta (electrostática).
 - **Análisis con tiempo:** cada pregunta de `analisis` se responde en un paso del procedimiento que tiene minutos
   asignados, o empieza con «Tarea:». Los pasos de cada sesión suman exactamente su duración (55 min por sesión).
 - **Constantes:** también g, la densidad del agua y la presión atmosférica remiten a la «tabla de referencia»; si un
