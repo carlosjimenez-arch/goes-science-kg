@@ -446,8 +446,8 @@ def unir(base: Path | None = None, prefijos: list[str] | None = None) -> dict:
                     "revisado_por": ""} for e in salida if e.get("tipo") in ARCHIVOS]
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
-    ped = ped.con([e for e in nuevos if e["id"] not in
-                   set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas)])
+    existentes = set(ped.actividades) | set(ped.dificultades) | set(ped.microtemas) | set(ped.experimentos)
+    ped = ped.con([e for e in nuevos if e["id"] not in existentes])   # nunca pisa lo ya unido (ni lo revisado)
     for tipo, archivo in ARCHIVOS.items():
         elementos = getattr(ped, ATRIBUTO[tipo])
         (d / archivo).write_text(json.dumps(sorted(elementos.values(), key=lambda x: x["id"]), ensure_ascii=False,

@@ -437,3 +437,25 @@ def test_unir_por_prefijo_ignora_lotes_en_redaccion(tmp_path):
         unir(tmp_path)
     with pytest.raises(ValueError, match="ningún lote"):
         unir(tmp_path, prefijos=["G98-"])
+
+
+def test_unir_no_pisa_un_experimento_ya_unido(tmp_path):
+    """Volver a unir un lote no reemplaza el experimento que ya está en la capa (y que el panel pudo corregir)."""
+    import json
+    import shutil
+
+    from goes_science_kg.aprendizaje.pedagogia import ARCHIVOS, directorio, unir
+
+    for archivo in ARCHIVOS.values():
+        shutil.copy(directorio() / archivo, tmp_path / archivo)
+    shutil.copytree(directorio() / "lotes", tmp_path / "lotes",
+                    ignore=lambda d, fs: [f for f in fs if "G09-CIE-U3-3.3" not in f and not f.startswith("lotes")])
+    p = tmp_path / ARCHIVOS["experimento"]
+    xs = json.loads(p.read_text(encoding="utf-8"))
+    for x in xs:
+        if x["id"] == "EXP:G09-CIE-U3-3.3/1":
+            x["titulo"] = "versión revisada por el panel"
+    p.write_text(json.dumps(xs, ensure_ascii=False), encoding="utf-8")
+    unir(tmp_path, prefijos=["G09-CIE-U3-3.3"])
+    despues = {x["id"]: x for x in json.loads(p.read_text(encoding="utf-8"))}
+    assert despues["EXP:G09-CIE-U3-3.3/1"]["titulo"] == "versión revisada por el panel"

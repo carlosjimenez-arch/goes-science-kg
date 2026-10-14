@@ -481,6 +481,22 @@
    "fuente": null
   },
   {
+   "id": "DIF:quimica/equilibrio-dinamico/2",
+   "concepto": "CON:quimica/equilibrio-dinamico",
+   "descripcion": "Imagina el equilibrio como una alternancia: cree que primero ocurre toda la reacción directa y después la inversa, o que se turnan, en lugar de entender que las dos ocurren al mismo tiempo durante todo el proceso.",
+   "senales": "Usa expresiones como «primero se forma todo el producto y luego se regresa», «van y vienen por turnos» o «cuando termina una empieza la otra»; describe el equilibrio como un vaivén o un péndulo.",
+   "estado": "propuesta_pendiente",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/equilibrio-dinamico/3",
+   "concepto": "CON:quimica/equilibrio-dinamico",
+   "descripcion": "Cree que al equilibrio solo se llega partiendo de los reactivos: si se empieza únicamente con productos, piensa que no ocurre nada o que se llega a un estado distinto del que se alcanza desde los reactivos.",
+   "senales": "Afirma que una mezcla que empieza solo con productos «no puede reaccionar» o «no llega al equilibrio»; predice concentraciones finales distintas para dos ensayos que solo difieren en el lado por el que se empieza.",
+   "estado": "propuesta_pendiente",
+   "fuente": null
+  },
+  {
    "id": "DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1",
    "concepto": "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion",
    "descripcion": "Confunde la cantidad de soluto (moles o gramos) con la concentración: cree que la disolución con más soluto es la más concentrada, sin dividir entre el volumen.",
@@ -490,6 +506,168 @@
   }
  ],
  "actividades": [
+  {
+   "id": "ACT:G09-CIE-U3-3.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G09-CIE-U3-3.1"
+   ],
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.1",
+    "CON:quimica/equilibrio-dinamico"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    9
+   ],
+   "enunciado": "En una botella cerrada de agua carbonatada, parte del dióxido de carbono está como gas arriba del líquido y parte está disuelto: CO₂(g) ⇌ CO₂(ac). Después de un rato, la cantidad de CO₂ disuelto deja de cambiar, aunque la temperatura no cambia. ¿Qué explica mejor esa situación?",
+   "opciones": {
+    "A": "El CO₂ ya no pasa del gas al líquido ni del líquido al gas.",
+    "B": "El CO₂ se disuelve y sale del líquido con la misma rapidez.",
+    "C": "El CO₂ se disuelve y sale del líquido por turnos, uno tras otro.",
+    "D": "Hay la misma cantidad de CO₂ disuelto que de CO₂ en el gas."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:quimica/equilibrio-dinamico/1",
+    "C": "DIF:quimica/equilibrio-dinamico/2",
+    "D": "DIF:quimica/constante-de-equilibrio/4"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En el equilibrio los dos procesos siguen ocurriendo al mismo tiempo: en cada instante entra al líquido tanto CO₂ como el que sale, por eso la cantidad disuelta no cambia. Eso no exige que las cantidades en el gas y en el líquido sean iguales.",
+   "duracion_min": 5,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G09-CIE-U3-3.1"
+   },
+   "origen": "redactor-actividades (G09-CIE-U3-3.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  },
+  {
+   "id": "ACT:G09-CIE-U3-3.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G09-CIE-U3-3.1"
+   ],
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.1",
+    "CON:quimica/equilibrio-dinamico"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    9
+   ],
+   "enunciado": "Datos de un grupo de ejemplo. La reacción reversible X ⇌ Y ocurre en un recipiente cerrado a temperatura constante. Ensayo 1: empieza solo con X. Ensayo 2: empieza solo con Y. Concentraciones en mol/L a los 0, 2, 4, 6 y 8 minutos. Ensayo 1: [X] = 1.00, 0.60, 0.40, 0.33, 0.33; [Y] = 0, 0.40, 0.60, 0.67, 0.67. Ensayo 2: [X] = 0, 0.20, 0.30, 0.33, 0.33; [Y] = 1.00, 0.80, 0.70, 0.67, 0.67. ¿Qué conclusión apoyan estos datos?",
+   "opciones": {
+    "A": "Desde el minuto 6 la reacción se detiene en los dos ensayos.",
+    "B": "Solo el ensayo 1 llega al equilibrio, pues el 2 empezó sin X.",
+    "C": "Ningún ensayo llega al equilibrio, porque [X] y [Y] no se igualan.",
+    "D": "Los dos ensayos llegan al mismo estado, aunque empezaron al revés."
+   },
+   "correcta": "D",
+   "distractores": {
+    "A": "DIF:quimica/equilibrio-dinamico/1",
+    "B": "DIF:quimica/equilibrio-dinamico/3",
+    "C": "DIF:quimica/constante-de-equilibrio/4"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En ambos ensayos las concentraciones terminan en 0.33 mol/L de X y 0.67 mol/L de Y: al equilibrio se llega tanto desde los reactivos como desde los productos. Que las concentraciones no cambien no significa que la reacción se detuvo ni que deban ser iguales.",
+   "duracion_min": 7,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G09-CIE-U3-3.1"
+   },
+   "origen": "redactor-actividades (G09-CIE-U3-3.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  },
+  {
+   "id": "ACT:G09-CIE-U3-3.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G09-CIE-U3-3.1"
+   ],
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.1",
+    "CON:quimica/equilibrio-dinamico"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    9
+   ],
+   "enunciado": "En clase se hizo este modelo: el grupo 1 empieza con 30 tapitas y el grupo 2 con ninguna. En cada ronda, al mismo tiempo, el grupo 1 pasa la mitad de sus tapitas al grupo 2 y el grupo 2 pasa la cuarta parte de las suyas al grupo 1 (redondeando). Después de unas cuatro rondas, el grupo 1 tiene siempre unas 10 y el grupo 2 unas 20, aunque las tapitas siguen pasando. a) Usa el modelo para explicar con tus palabras qué es el equilibrio químico: di qué pasa con la reacción directa y la inversa y qué pasa con las cantidades. b) Escribe una cosa del equilibrio químico real que este modelo no representa bien.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El equilibrio químico es dinámico: la reacción directa y la inversa siguen ocurriendo con la misma rapidez, por eso las cantidades ya no cambian aunque no sean iguales. El modelo tiene límites: en él hay personas que deciden y rondas por turnos, mientras que las partículas no deciden nada y las dos reacciones ocurren a la vez y sin pausa.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G09-CIE-U3-3.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "El equilibrio químico es cuando la reacción directa y la inversa siguen pasando, pero con la misma rapidez. En el modelo, al final el grupo 1 pasa 5 tapitas y recibe 5, por eso cada grupo se queda con la misma cantidad aunque las tapitas no paran de moverse. Las cantidades quedan fijas, pero no iguales: 10 y 20. Un límite del modelo es que las partículas no deciden pasarse, chocan al azar, y en la reacción real todo ocurre al mismo tiempo, no por rondas.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que en el equilibrio la reacción directa y la inversa siguen ocurriendo (las tapitas siguen pasando en los dos sentidos); no dice que se detiene.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Relaciona que las cantidades no cambien con que lo que pasa en un sentido es igual a lo que pasa en el otro (misma rapidez, «pasan 5 y regresan 5»).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Nombra al menos un límite del modelo: las partículas no deciden ni se cuentan por turnos, las reacciones ocurren a la vez y sin rondas, las tapitas no se transforman en otra sustancia, o hay muy pocas tapitas comparadas con las partículas reales.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Aclara que en el equilibrio las cantidades quedan constantes pero no necesariamente iguales (10 y 20).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Describe el equilibrio como el momento en que ya no pasa nada.",
+      "ejemplo": "El equilibrio es cuando ya no se pasan tapitas porque cada grupo ya tiene lo suyo.",
+      "dificultad": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     {
+      "descripcion": "Piensa que en el equilibrio las cantidades tienen que ser iguales.",
+      "ejemplo": "Todavía no hay equilibrio porque un grupo tiene 10 y el otro 20; tendrían que tener 15 cada uno.",
+      "dificultad": "DIF:quimica/constante-de-equilibrio/4"
+     },
+     {
+      "descripcion": "Da como límite algo que el modelo sí representa, o no da ningún límite.",
+      "ejemplo": "Un límite es que las tapitas siguen pasando y en la reacción no.",
+      "dificultad": "DIF:quimica/equilibrio-dinamico/1"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G09-CIE-U3-3.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  },
   {
    "id": "ACT:G09-CIE-U3-3.3/obj-1",
    "tipo": "actividad",
@@ -983,6 +1161,157 @@
    "objetivos_originales": [
     "TEMA:G09-CIE-U3-3.6"
    ]
+  },
+  {
+   "id": "ACT:G09-CIE-U3-3.7/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G09-CIE-U3-3.7"
+   ],
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.7",
+    "CON:quimica/constante-de-equilibrio"
+   ],
+   "habilidad": "razonar",
+   "formato": "numerica",
+   "grados": [
+    9
+   ],
+   "enunciado": "Datos de ejemplo. En un recipiente cerrado, a temperatura constante, se alcanza el equilibrio H₂(g) + I₂(g) ⇌ 2HI(g). Las concentraciones en el equilibrio son [H₂] = 0.020 mol/L, [I₂] = 0.020 mol/L y [HI] = 0.14 mol/L. Escribe la expresión de Kc y calcula su valor. Kc no lleva unidad: escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 49,
+   "tolerancia": 1,
+   "unidad": "adimensional (Kc no lleva unidad)",
+   "retroalimentacion": "Kc = [HI]² / ([H₂][I₂]) = (0.14)² / (0.020 × 0.020) = 0.0196 / 0.0004 = 49. El coeficiente 2 del HI es un exponente, no un factor: si se multiplica 2 × 0.14 se obtiene 700, que es incorrecto.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G09-CIE-U3-3.7"
+   },
+   "origen": "redactor-actividades (G09-CIE-U3-3.7)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  },
+  {
+   "id": "ACT:G09-CIE-U3-3.7/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G09-CIE-U3-3.7"
+   ],
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.7",
+    "CON:quimica/constante-de-equilibrio"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    9
+   ],
+   "enunciado": "Datos de ejemplo. La reacción CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) llega al equilibrio en tres recipientes cerrados a la misma temperatura, con mezclas iniciales distintas. Concentraciones en el equilibrio, en mol/L. Recipiente 1: [CO] = 0.10, [H₂O] = 0.10, [CO₂] = 0.40, [H₂] = 0.40. Recipiente 2: [CO] = 0.20, [H₂O] = 0.050, [CO₂] = 0.40, [H₂] = 0.40. Recipiente 3: [CO] = 0.025, [H₂O] = 0.10, [CO₂] = 0.20, [H₂] = 0.20. ¿Qué conclusión apoyan los datos?",
+   "opciones": {
+    "A": "Kc ≈ 16 en los tres; la reacción llega rápido al equilibrio.",
+    "B": "Kc ≈ 16 en los tres; en el equilibrio predominan los productos.",
+    "C": "Kc ≈ 0.06 en los tres; en el equilibrio predominan los reactivos.",
+    "D": "Kc cambia en cada recipiente; depende de la mezcla inicial."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:quimica/constante-de-equilibrio/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con Kc = [CO₂][H₂] / ([CO][H₂O]) los tres recipientes dan 16: a una misma temperatura K no depende de la mezcla inicial. Como Kc es mayor que 1, en el equilibrio predominan los productos. K no dice nada de la rapidez, y 0.06 sale de invertir la expresión (reactivos arriba).",
+   "duracion_min": 8,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G09-CIE-U3-3.7"
+   },
+   "origen": "redactor-actividades (G09-CIE-U3-3.7)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  },
+  {
+   "id": "ACT:G09-CIE-U3-3.7/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G09-CIE-U3-3.7"
+   ],
+   "evalua": [
+    "TEMA:G09-CIE-U3-3.7",
+    "CON:quimica/constante-de-equilibrio"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    9
+   ],
+   "enunciado": "El dióxido de nitrógeno de los escapes de los vehículos en San Salvador participa en el equilibrio 2NO₂(g) ⇌ N₂O₄(g). En un recipiente cerrado, a cierta temperatura, las concentraciones en el equilibrio son [NO₂] = 0.040 mol/L y [N₂O₄] = 0.16 mol/L (datos de ejemplo). Ana calculó Kc = 0.16 / (2 × 0.040) = 2.0. a) ¿Es correcto su resultado? Justifica escribiendo la expresión de Kc y haciendo el cálculo. b) ¿Qué indica el valor correcto de Kc sobre el reactivo y el producto en el equilibrio?",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Kc = [N₂O₄] / [NO₂]² = 0.16 / (0.040)² = 0.16 / 0.0016 = 100. Ana multiplicó por el coeficiente en lugar de usarlo como exponente. Un Kc mucho mayor que 1 indica que en el equilibrio predomina el producto, N₂O₄; coincide con los datos, donde [N₂O₄] es mayor que [NO₂]. K no dice qué tan rápido se llega al equilibrio.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G09-CIE-U3-3.7"
+   },
+   "rubrica": {
+    "respuesta_modelo": "No es correcto. La expresión es Kc = [N₂O₄] / [NO₂]², porque el 2 del NO₂ va como exponente, no multiplicando. Entonces Kc = 0.16 / (0.040 × 0.040) = 0.16 / 0.0016 = 100. Como Kc es mucho mayor que 1, en el equilibrio hay más producto (N₂O₄) que reactivo (NO₂), y eso cuadra con los datos: 0.16 es mayor que 0.040.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que el resultado de Ana es incorrecto y escribe la expresión Kc = [N₂O₄] / [NO₂]², con el coeficiente 2 como exponente.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Sustituye los datos y obtiene Kc = 100 (se acepta 1.0 × 10²).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Relaciona Kc mayor que 1 con que en el equilibrio predomina el producto (N₂O₄) sobre el reactivo (NO₂).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Verifica la coherencia del resultado comparando con los datos ([N₂O₄] mayor que [NO₂]).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta el cálculo de Ana o repite el error de multiplicar por el coeficiente.",
+      "ejemplo": "Sí está bien, porque hay 2 NO₂ y por eso se multiplica por 2; Kc = 2.0.",
+      "dificultad": "DIF:quimica/constante-de-equilibrio/1"
+     },
+     {
+      "descripcion": "Interpreta el valor de K como rapidez de la reacción.",
+      "ejemplo": "Kc = 100 quiere decir que la reacción es muy rápida y llega pronto al equilibrio.",
+      "dificultad": "DIF:quimica/constante-de-equilibrio/3"
+     },
+     {
+      "descripcion": "Invierte la expresión y concluye que predomina el reactivo.",
+      "ejemplo": "Kc = [NO₂]² / [N₂O₄] = 0.01, así que hay más NO₂.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G09-CIE-U3-3.7)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
   },
   {
    "id": "ACT:quimica/constante-de-equilibrio/comprobacion-G09",
@@ -1966,7 +2295,16 @@
   "experimentos": "completo",
   "capa_pedagogica": "completo",
   "datos_de_referencia": "pendiente_de_fuente",
-  "revision_del_panel": "completa"
+  "revision_del_panel": "pendiente"
  },
- "sin_revision_del_panel": []
+ "sin_revision_del_panel": [
+  "ACT:G09-CIE-U3-3.1/obj-1",
+  "ACT:G09-CIE-U3-3.1/obj-2",
+  "ACT:G09-CIE-U3-3.1/obj-abierta",
+  "ACT:G09-CIE-U3-3.7/obj-1",
+  "ACT:G09-CIE-U3-3.7/obj-2",
+  "ACT:G09-CIE-U3-3.7/obj-abierta",
+  "DIF:quimica/equilibrio-dinamico/2",
+  "DIF:quimica/equilibrio-dinamico/3"
+ ]
 }

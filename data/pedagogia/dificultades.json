@@ -2083,13 +2083,34 @@
   "tipo": "dificultad",
   "concepto": "CON:fisica/segunda-ley-maquinas-termicas",
   "descripcion": "Ignorar que el calor que sale por atrás es mayor que el que se saca de adentro (se suma el trabajo del compresor): creer que dejar la puerta abierta enfría la cocina o que el calor de atrás es solo el del motor.",
-  "senales": "Propone abrir la refrigeradora para refrescar un cuarto; atribuye la rejilla tibia solo al motor; no sabe que el balance da más calor afuera que el extraído adentro.",
-  "estado": "propuesta_pendiente",
+  "senales": "Propone abrir la refrigeradora para refrescar un cuarto; atribuye la rejilla tibia solo al motor; en el esquema dibuja la flecha del calor de atrás igual o menor que la del calor de adentro, sin sumar el trabajo del compresor.",
+  "estado": "revisado_panel",
   "fuente": null,
   "justificacion": "Falta el balance: calor expulsado igual a calor extraído más trabajo.",
   "origen": "redactor-actividades (G09-CIE-U2-2.9)",
   "version": "pedagogia-v1",
-  "revisado_por": ""
+  "revisado_por": "",
+  "revision_panel": {
+   "fecha": "2026-10-14",
+   "version": "panel-v1",
+   "decision": "corregir",
+   "roles": [
+    "experto-fisica",
+    "psicopedagogo"
+   ],
+   "rondas": [
+    1,
+    2,
+    3
+   ],
+   "justificaciones": {
+    "experto-fisica": "La nueva señal (flecha de atrás igual o menor que la de adentro) es observable y expresa justo el error del balance Q_caliente = Q_frío + W. Descripción y justificación siguen correctas."
+   },
+   "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+   "valores_anteriores": {
+    "senales": "Propone abrir la refrigeradora para refrescar un cuarto; atribuye la rejilla tibia solo al motor; no sabe que el balance da más calor afuera que el extraído adentro."
+   }
+  }
  },
  {
   "id": "DIF:fisica/segunda-ley-newton/1",
