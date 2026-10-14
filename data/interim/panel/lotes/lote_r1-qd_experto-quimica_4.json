@@ -1,0 +1,1212 @@
+{
+ "lote": "r1-qd_experto-quimica_4",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/reacciones-organicas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/reacciones-organicas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/reacciones-organicas",
+     "descripcion": "Clasifica las reacciones orgánicas contando únicamente cuántas fórmulas hay a cada lado de la flecha o suponiendo que un enlace doble «sustituye» a un grupo funcional, sin analizar qué enlaces se rompen y se forman en el esqueleto carbonado.",
+     "senales": "Clasifica una eliminación (como R–CH2–CH2–OH → R–CH=CH2 + H2O) como sustitución porque «el doble enlace sustituye al OH» o porque ve dos productos, sin notar la pérdida de átomos en carbonos adyacentes.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Sustituye el análisis estructural de los enlaces por reglas superficiales de conteo de fórmulas.",
+     "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.2",
+     "grado": 11,
+     "indicador": "9.2. Determina si una reacción orgánica es de sustitución, adición o eliminación comparando la estructura de reactivos y productos.",
+     "evidencia": "Tabla de quince reacciones clasificadas con los criterios estructurales utilizados"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/reacciones-organicas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/reactivo-limitante/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/reactivo-limitante/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/reactivo-limitante",
+     "descripcion": "Compara directamente las masas en gramos de los reactivos sin convertirlas a moles ni usar la relación molar de la ecuación balanceada, asumiendo que el reactivo con menor masa en gramos es siempre el reactivo limitante y que las masas reaccionan en proporción 1:1.",
+     "senales": "Elige como limitante al reactivo de menor masa en gramos; resta directamente los gramos de un reactivo a los del otro para hallar el exceso; suma los gramos de ambos reactivos consumidos sin pasar por moles.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Trabaja con gramos como si los coeficientes estequiométricos fueran proporciones en masa.",
+     "origen": "redactor-actividades (G10-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reactivo-limitante",
+     "nombre": "Reactivo limitante y en exceso",
+     "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.2",
+     "grado": 10,
+     "indicador": "10.2. Determina el reactivo limitante y la cantidad sobrante del reactivo en exceso, y calcula a partir de ellos la cantidad máxima de producto.",
+     "evidencia": "Gráfica de volumen de gas contra volumen de vinagre con identificación del punto estequiométrico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/reactivo-limitante/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/reactivo-limitante/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/reactivo-limitante/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/reactivo-limitante",
+     "descripcion": "Identifica como reactivo limitante al que tiene el menor número inicial de moles (o al que tiene mayor coeficiente en la ecuación), sin dividir ni comparar los moles disponibles con los coeficientes estequiométricos de la reacción balanceada.",
+     "senales": "Calcula bien los moles iniciales pero afirma que el limitante es el que tiene menos moles absolutos sin considerar la proporción de la ecuación; o calcula el sobrante restando los moles iniciales sin multiplicarlos por la razón molar.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Ignora la razón estequiométrica entre coeficientes al comparar los moles iniciales.",
+     "origen": "redactor-actividades (G10-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reactivo-limitante",
+     "nombre": "Reactivo limitante y en exceso",
+     "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.2",
+     "grado": 10,
+     "indicador": "10.2. Determina el reactivo limitante y la cantidad sobrante del reactivo en exceso, y calcula a partir de ellos la cantidad máxima de producto.",
+     "evidencia": "Gráfica de volumen de gas contra volumen de vinagre con identificación del punto estequiométrico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/reactivo-limitante/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/reactivo-limitante/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/reactivo-limitante/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/reactivo-limitante",
+     "descripcion": "Calcula la cantidad máxima de producto a partir del reactivo en exceso o sumando las cantidades de producto que formarían ambos reactivos por separado, como si los dos reactivos se consumieran por completo sin que la reacción se detenga al agotarse el limitante.",
+     "senales": "Usa los moles del reactivo más abundante para calcular el producto; suma los moles de ambos reactivos para obtener el producto; o cree que en una gráfica el producto sigue aumentando indefinidamente al agregar más de un solo reactivo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "No reconoce que la reacción se detiene en cuanto se agota el reactivo limitante.",
+     "origen": "redactor-actividades (G10-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reactivo-limitante",
+     "nombre": "Reactivo limitante y en exceso",
+     "definicion": "El reactivo que se agota primero limita la cantidad de producto; el otro queda en exceso.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.2",
+     "grado": 10,
+     "indicador": "10.2. Determina el reactivo limitante y la cantidad sobrante del reactivo en exceso, y calcula a partir de ellos la cantidad máxima de producto.",
+     "evidencia": "Gráfica de volumen de gas contra volumen de vinagre con identificación del punto estequiométrico"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/reactivo-limitante/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/rendimiento-de-reaccion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/rendimiento-de-reaccion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/rendimiento-de-reaccion",
+     "descripcion": "Invierte la razón entre rendimiento real y rendimiento teórico al calcular el rendimiento porcentual, o sustituye la masa del reactivo inicial en lugar de la masa teórica del producto calculada por estequiometría.",
+     "senales": "Divide el rendimiento teórico entre el experimental obteniendo porcentajes mayores al 100 % cuando hubo pérdidas de producto, o divide la masa de producto obtenida entre la suma de las masas de los reactivos iniciales.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Impide cuantificar correctamente la eficiencia de una reacción a partir de datos estequiométricos.",
+     "origen": "redactor-actividades (G10-QUI-U10-10.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.3",
+     "grado": 10,
+     "indicador": "10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "evidencia": "Informe de laboratorio con cálculo del rendimiento porcentual del precipitado y análisis de pérdidas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/rendimiento-de-reaccion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/rendimiento-de-reaccion/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/rendimiento-de-reaccion/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/rendimiento-de-reaccion",
+     "descripcion": "Interpreta un rendimiento porcentual aparente mayor al 100 % como una producción real de sustancia que supera el límite estequiométrico del reactivo limitante, sin reconocer la presencia de agua o impurezas en la muestra pesada.",
+     "senales": "Afirma que la reacción fue «más que eficiente» o que creó más moles de producto que el máximo teórico cuando pesa un precipitado húmedo o con sales coprecipitadas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Desconoce que el rendimiento teórico es el máximo estequiométrico impuesto por el reactivo limitante.",
+     "origen": "redactor-actividades (G10-QUI-U10-10.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.3",
+     "grado": 10,
+     "indicador": "10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "evidencia": "Informe de laboratorio con cálculo del rendimiento porcentual del precipitado y análisis de pérdidas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/rendimiento-de-reaccion/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/rendimiento-de-reaccion/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/rendimiento-de-reaccion/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/rendimiento-de-reaccion",
+     "descripcion": "Atribuye un rendimiento menor al 100 % a la desaparición o destrucción de masa de los átomos durante la reacción química, en lugar de explicarlo por reacciones incompletas, impurezas o pérdidas físicas durante la recuperación.",
+     "senales": "Explica la diferencia entre masa teórica y experimental diciendo que parte de la masa «se consumió en la reacción» o «dejó de existir», sin considerar el producto retenido en el filtro, disuelto en el filtrado o sin reaccionar.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confunde el rendimiento de recuperación del producto deseado con una violación de la conservación de la masa.",
+     "origen": "redactor-actividades (G10-QUI-U10-10.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/rendimiento-de-reaccion",
+     "nombre": "Rendimiento de una reacción",
+     "definicion": "Relación entre cantidad real y teórica de producto; considera pureza de reactivos, reacciones incompletas y de varios pasos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U10-10.3",
+     "grado": 10,
+     "indicador": "10.3. Calcula el rendimiento porcentual de una reacción y explica las causas químicas y experimentales de las pérdidas de producto.",
+     "evidencia": "Informe de laboratorio con cálculo del rendimiento porcentual del precipitado y análisis de pérdidas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/rendimiento-de-reaccion/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/semivida-y-series-de-desintegracion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/semivida-y-series-de-desintegracion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/semivida-y-series-de-desintegracion",
+     "descripcion": "Atribuye a la emisión beta negativa una pérdida de número másico A (por ejemplo, ΔA = −1) o una disminución del número atómico Z (ΔZ = −1), en lugar de reconocer que en la emisión β⁻ un neutrón se transforma en un protón manteniendo A constante (ΔA = 0) y aumentando Z en una unidad (ΔZ = +1).",
+     "senales": "Resta 1 al número másico o al número atómico al escribir un paso beta de la serie; afirma que las emisiones beta ayudan a reducir la masa desde 238 hasta 206.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Impide balancear Z y A en cada paso de la serie de desintegración.",
+     "origen": "redactor-actividades (G11-QUI-U8-8.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.3",
+     "grado": 11,
+     "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "evidencia": "Gráfica N frente a Z de la serie del uranio-238 con el cálculo del número de emisiones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/semivida-y-series-de-desintegracion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/semivida-y-series-de-desintegracion/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/semivida-y-series-de-desintegracion/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/semivida-y-series-de-desintegracion",
+     "descripcion": "Calcula el número de emisiones beta de una serie directamente como la diferencia neta entre el número atómico inicial y el final (ΔZ total), olvidando que las emisiones alfa ya redujeron el número atómico en 2 unidades por cada partícula alfa emitida.",
+     "senales": "Para el paso de ²³⁸₉₂U a ²⁰⁶₈₂Pb responde que hay 8 emisiones alfa y 10 emisiones beta porque 92 − 82 = 10; plantea las ecuaciones de A y Z como si las emisiones alfa no afectaran a Z.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Es el error algebraico más común al calcular el conteo de emisiones α y β⁻.",
+     "origen": "redactor-actividades (G11-QUI-U8-8.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.3",
+     "grado": 11,
+     "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "evidencia": "Gráfica N frente a Z de la serie del uranio-238 con el cálculo del número de emisiones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/semivida-y-series-de-desintegracion/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/semivida-y-series-de-desintegracion/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/semivida-y-series-de-desintegracion/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/semivida-y-series-de-desintegracion",
+     "descripcion": "Confunde el número de neutrones N con el número másico A al leer o construir una gráfica N frente a Z, o interpreta que en una emisión beta el número de neutrones permanece constante porque el número másico A no cambia.",
+     "senales": "Dibuja las emisiones beta como flechas horizontales (ΔN = 0, ΔZ = +1) en la gráfica N contra Z, o resta 4 al eje N en una emisión alfa en lugar de restar 2 protones y 2 neutrones.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "El indicador exige interpretar y construir la gráfica N frente a Z de la serie.",
+     "origen": "redactor-actividades (G11-QUI-U8-8.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.3",
+     "grado": 11,
+     "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "evidencia": "Gráfica N frente a Z de la serie del uranio-238 con el cálculo del número de emisiones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/semivida-y-series-de-desintegracion/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/solubilidad/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/solubilidad/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/solubilidad",
+     "descripcion": "Generaliza que la solubilidad de cualquier sustancia aumenta con la temperatura, también la de los gases: cree que el agua caliente puede tener más oxígeno o CO₂ disuelto que la fría.",
+     "senales": "Dice que una bebida caliente «guarda más gas», que un río caliente tiene más oxígeno para los peces o que «con calor todo se disuelve mejor».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Extiende a los gases lo que observa con el azúcar y la sal.",
+     "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/solubilidad",
+     "nombre": "Solubilidad y disoluciones saturadas",
+     "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.7",
+     "grado": 10,
+     "indicador": "8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura.",
+     "evidencia": "Curva de solubilidad del KNO₃ con cálculos de cristalización y análisis del oxígeno disuelto en agua"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/solubilidad/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/solubilidad/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/solubilidad/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/solubilidad",
+     "descripcion": "Confunde la rapidez de disolución con la solubilidad: cree que agitar, moler el sólido o esperar más tiempo aumenta la cantidad máxima de soluto que se disuelve a una temperatura dada.",
+     "senales": "Propone «agitar más fuerte para que quepa más sal» en una disolución saturada o afirma que el azúcar en polvo es más soluble que el granulado.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Agitar acelera la disolución y parece que también aumenta cuánto se disuelve.",
+     "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/solubilidad",
+     "nombre": "Solubilidad y disoluciones saturadas",
+     "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.7",
+     "grado": 10,
+     "indicador": "8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura.",
+     "evidencia": "Curva de solubilidad del KNO₃ con cálculos de cristalización y análisis del oxígeno disuelto en agua"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/solubilidad/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/solubilidad/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/solubilidad/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/solubilidad",
+     "descripcion": "Cree que «saturada» significa «muy concentrada»: no relaciona la saturación con la solubilidad de esa sustancia a esa temperatura y piensa que una disolución con poco soluto no puede estar saturada.",
+     "senales": "Afirma que el agua de un río no puede estar saturada de oxígeno porque tiene «muy poquito», o que una disolución diluida de una sal poco soluble está insaturada solo por ser diluida.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Asocia saturación con mucha cantidad, no con el máximo que admite.",
+     "origen": "redactor-actividades (G10-QUI-U8-8.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/solubilidad",
+     "nombre": "Solubilidad y disoluciones saturadas",
+     "definicion": "Máxima cantidad de soluto que se disuelve a una temperatura; define disoluciones insaturadas, saturadas y sobresaturadas y curvas de solubilidad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U8-8.7",
+     "grado": 10,
+     "indicador": "8.7. Interpreta curvas de solubilidad para calcular la masa de soluto que cristaliza al enfriar una disolución y explica la disminución de la solubilidad de los gases con la temperatura.",
+     "evidencia": "Curva de solubilidad del KNO₃ con cálculos de cristalización y análisis del oxígeno disuelto en agua"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/solubilidad/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/teoria-de-colisiones/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/teoria-de-colisiones/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/teoria-de-colisiones",
+     "descripcion": "Cree que cualquier choque entre moléculas de reactivos produce automáticamente una reacción química, sin reconocer que la gran mayoría de las colisiones son ineficaces porque no superan la energía de activación o no tienen la orientación adecuada.",
+     "senales": "Afirma que todas las colisiones entre reactivos forman productos; explica la lentitud de una reacción diciendo que las moléculas casi no se tocan en lugar de señalar que muy pocos choques superan la barrera energética.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Impide comprender por qué solo una fracción de los choques produce reacción.",
+     "origen": "redactor-actividades (G10-QUI-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/teoria-de-colisiones",
+     "nombre": "Teoría de colisiones",
+     "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.4",
+     "grado": 10,
+     "indicador": "12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "evidencia": "Diagrama de energía potencial rotulado y reporte de la simulación con variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/teoria-de-colisiones/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/teoria-de-colisiones/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/teoria-de-colisiones/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/teoria-de-colisiones",
+     "descripcion": "Considera que superar la energía de activación es la única condición necesaria para que un choque sea eficaz, olvidando el factor estérico o de orientación espacial que deben tener las moléculas al colisionar.",
+     "senales": "Predice que el 100 % de las colisiones con energía superior a la energía de activación formará productos; omite el requisito de alineación geométrica al explicar qué es un choque eficaz.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Lleva a ignorar el efecto de la geometría molecular en los choques eficaces.",
+     "origen": "redactor-actividades (G10-QUI-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/teoria-de-colisiones",
+     "nombre": "Teoría de colisiones",
+     "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.4",
+     "grado": 10,
+     "indicador": "12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "evidencia": "Diagrama de energía potencial rotulado y reporte de la simulación con variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/teoria-de-colisiones/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/teoria-de-colisiones/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/teoria-de-colisiones/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/teoria-de-colisiones",
+     "descripcion": "Confunde en el diagrama de energía potencial la energía de activación con la entalpía total del complejo activado o con el cambio de entalpía de la reacción (ΔH), o cree que aumentar la temperatura disminuye el valor de la energía de activación.",
+     "senales": "Mide la energía de activación desde el cero del eje vertical o entre reactivos y productos; afirma que al calentar los reactivos baja la cima de la barrera en el diagrama de energía potencial.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Dificulta interpretar diagramas de energía potencial y el efecto real de la temperatura.",
+     "origen": "redactor-actividades (G10-QUI-U12-12.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/teoria-de-colisiones",
+     "nombre": "Teoría de colisiones",
+     "definicion": "Las reacciones ocurren por choques con energía suficiente y orientación adecuada; explica el efecto de concentración, temperatura, presión y superficie.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.4",
+     "grado": 10,
+     "indicador": "12.4. Explica con la teoría de las colisiones y un diagrama de energía potencial por qué solo una fracción de los choques produce reacción.",
+     "evidencia": "Diagrama de energía potencial rotulado y reporte de la simulación con variables controladas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/teoria-de-colisiones/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tipos-de-reacciones-quimicas/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tipos-de-reacciones-quimicas/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tipos-de-reacciones-quimicas",
+     "descripcion": "Clasifica la reacción por una evidencia que ve y no por la reorganización de reactivos y productos: llama combustión a todo lo que tiene fuego, descomposición a todo lo que suelta gas y síntesis a todo lo que forma un sólido.",
+     "senales": "Justifica el tipo con «porque salió gas», «porque hubo llama» o «porque se formó polvo», sin mencionar qué sustancias se unen, se separan o se intercambian en la ecuación.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La evidencia visible sustituye al criterio de la ecuación.",
+     "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipos-de-reacciones-quimicas",
+     "nombre": "Clasificación de las reacciones químicas",
+     "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.2",
+     "grado": 10,
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación.",
+     "evidencia": "Cuadro de clasificación de diez reacciones con ecuación, tipo y justificación del criterio usado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tipos-de-reacciones-quimicas/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tipos-de-reacciones-quimicas/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tipos-de-reacciones-quimicas/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tipos-de-reacciones-quimicas",
+     "descripcion": "Cree que cada reacción pertenece a uno solo de los cinco tipos, como una etiqueta única, y no acepta que una reacción cumpla dos criterios (la combustión del magnesio también es síntesis).",
+     "senales": "Discute cuál es «el» tipo correcto de una reacción y descarta el otro, o dice que algo «no puede ser síntesis si ya es combustión».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Las categorías escolares se perciben como excluyentes.",
+     "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipos-de-reacciones-quimicas",
+     "nombre": "Clasificación de las reacciones químicas",
+     "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.2",
+     "grado": 10,
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación.",
+     "evidencia": "Cuadro de clasificación de diez reacciones con ecuación, tipo y justificación del criterio usado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tipos-de-reacciones-quimicas/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tipos-de-reacciones-quimicas/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tipos-de-reacciones-quimicas/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tipos-de-reacciones-quimicas",
+     "descripcion": "Confunde sustitución simple con doble sustitución: clasifica por la cantidad de reactivos y productos (dos y dos es «doble») en lugar de fijarse si un elemento libre desplaza a otro o si dos compuestos intercambian iones.",
+     "senales": "Llama doble sustitución a Zn + 2HCl → ZnCl₂ + H₂ porque «hay dos y dos», o no identifica qué sustancia de los reactivos es un elemento libre.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Se interpreta «doble» como cantidad de sustancias, no de intercambios.",
+     "origen": "redactor-actividades (G10-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tipos-de-reacciones-quimicas",
+     "nombre": "Clasificación de las reacciones químicas",
+     "definicion": "Reacciones de síntesis, descomposición, sustitución simple, doble sustitución y combustión según el reordenamiento de reactivos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U9-9.2",
+     "grado": 10,
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación.",
+     "evidencia": "Cuadro de clasificación de diez reacciones con ecuación, tipo y justificación del criterio usado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tipos-de-reacciones-quimicas/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "descripcion": "Confunde la demanda química o bioquímica de oxígeno (DQO/DBO) con la concentración de oxígeno disuelto (OD): cree que un agua con DQO alta contiene mucho oxígeno disuelto y es beneficiosa para la vida acuática, en lugar de entender que mide el oxígeno que se consumirá al oxidar los contaminantes.",
+     "senales": "Afirma que las aguas mieles con alta DQO oxigenan el río; interpreta una reducción de DQO tras el tratamiento como una pérdida indeseable de oxígeno en el agua.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Invertir DQO y oxígeno disuelto impide comprender la asfixia de la fauna acuática.",
+     "origen": "redactor-actividades (G11-QUI-U7-7.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.4",
+     "grado": 11,
+     "indicador": "7.4. Explica por qué las aguas mieles tienen una alta demanda química de oxígeno y propone un tratamiento que reduzca su impacto en los ríos.",
+     "evidencia": "Propuesta escrita de tratamiento de aguas mieles con datos de DQO y esquema del sistema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tratamiento-y-potabilizacion-del-agua/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "descripcion": "Cree que los tratamientos primarios físicos o físico-químicos (cribado, filtración por arena, sedimentación o coagulación-floculación) bastan por sí solos para eliminar la materia orgánica soluble como los azúcares del mucílago, sin distinguir entre sólidos en suspensión/coloides y solutos moleculares que requieren degradación biológica.",
+     "senales": "Propone únicamente filtros de arena, mallas o pilas de sedimentación para abatir más del 90 % de la DQO de las aguas mieles; asume que el agua clarificada ya no tiene demanda de oxígeno.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "No distinguir sólidos suspendidos de materia orgánica disuelta lleva a omitir el tratamiento biológico.",
+     "origen": "redactor-actividades (G11-QUI-U7-7.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.4",
+     "grado": 11,
+     "indicador": "7.4. Explica por qué las aguas mieles tienen una alta demanda química de oxígeno y propone un tratamiento que reduzca su impacto en los ríos.",
+     "evidencia": "Propuesta escrita de tratamiento de aguas mieles con datos de DQO y esquema del sistema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tratamiento-y-potabilizacion-del-agua/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "descripcion": "Confunde la neutralización ácido-base del efluente con la oxidación o eliminación de su carga orgánica: piensa que agregar cal para llevar el pH de 4 a 7 destruye los azúcares y las pectinas y abate por completo la DQO, en vez de verla como un acondicionamiento para las bacterias.",
+     "senales": "Sostiene que al neutralizar la acidez con cal el agua miel ya puede verterse al río porque su DQO desaparece al llegar a pH 7.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confundir ajuste de pH con degradación orgánica impide valorar la etapa anaerobia.",
+     "origen": "redactor-actividades (G11-QUI-U7-7.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.4",
+     "grado": 11,
+     "indicador": "7.4. Explica por qué las aguas mieles tienen una alta demanda química de oxígeno y propone un tratamiento que reduzca su impacto en los ríos.",
+     "evidencia": "Propuesta escrita de tratamiento de aguas mieles con datos de DQO y esquema del sistema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/tratamiento-y-potabilizacion-del-agua/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/velocidad-de-reaccion-medicion/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/velocidad-de-reaccion-medicion/1",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/velocidad-de-reaccion-medicion",
+     "descripcion": "Calcula la velocidad media en un intervalo o la instantánea en un punto dividiendo la concentración (o masa) en ese instante entre el tiempo transcurrido (c/t), en lugar de usar el cambio Δc/Δt o la pendiente de la recta tangente a la curva.",
+     "senales": "Para hallar la velocidad entre t₁ y t₂ calcula c(t₂)/t₂; para hallar la velocidad instantánea lee un solo punto de la curva y divide su ordenada entre su abscisa sin trazar la tangente; afirma que cuando la curva de producto se vuelve horizontal la velocidad es constante y distinta de cero.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Confundir valor puntual con razón de cambio impide interpretar gráficas cinéticas.",
+     "origen": "redactor-actividades (G10-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/velocidad-de-reaccion-medicion",
+     "nombre": "Medición de la velocidad de reacción",
+     "definicion": "Velocidad expresada como cambio de concentración de reactivos o productos por unidad de tiempo, media o instantánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.1",
+     "grado": 10,
+     "indicador": "12.1. Calcula la velocidad media e instantánea de una reacción a partir de una curva experimental y la expresa en función de cualquier reactivo o producto.",
+     "evidencia": "Gráfica masa-tiempo con cálculo de velocidades medias por intervalo y velocidad instantánea por tangente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/velocidad-de-reaccion-medicion/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/velocidad-de-reaccion-medicion/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/velocidad-de-reaccion-medicion/2",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/velocidad-de-reaccion-medicion",
+     "descripcion": "Iguala directamente las velocidades de consumo y formación de distintas especies sin considerar los coeficientes estequiométricos, o multiplica por el coeficiente en lugar de dividir al aplicar la relación general de velocidad.",
+     "senales": "En una reacción como N₂ + 3 H₂ → 2 NH₃ afirma que H₂ se consume a la misma velocidad con que se forma NH₃, o escribe que 3 v(H₂) = 2 v(NH₃) invirtiendo la proporción molar.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Impide expresar la velocidad de reacción en función de cualquier reactivo o producto.",
+     "origen": "redactor-actividades (G10-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/velocidad-de-reaccion-medicion",
+     "nombre": "Medición de la velocidad de reacción",
+     "definicion": "Velocidad expresada como cambio de concentración de reactivos o productos por unidad de tiempo, media o instantánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.1",
+     "grado": 10,
+     "indicador": "12.1. Calcula la velocidad media e instantánea de una reacción a partir de una curva experimental y la expresa en función de cualquier reactivo o producto.",
+     "evidencia": "Gráfica masa-tiempo con cálculo de velocidades medias por intervalo y velocidad instantánea por tangente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/velocidad-de-reaccion-medicion/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:quimica/velocidad-de-reaccion-medicion/3",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:quimica/velocidad-de-reaccion-medicion/3",
+     "tipo": "dificultad",
+     "concepto": "CON:quimica/velocidad-de-reaccion-medicion",
+     "descripcion": "Reporta la velocidad de reacción o la velocidad de consumo de un reactivo como un número negativo porque su concentración disminuye, olvidando el signo menos de la definición v = −(1/a) Δ[A]/Δt.",
+     "senales": "Deja el signo negativo de Δ[reactivo] en el resultado final de la velocidad y concluye que la velocidad de los reactivos es negativa mientras que la de los productos es positiva.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "La velocidad de reacción es por definición una magnitud positiva.",
+     "origen": "redactor-actividades (G10-QUI-U12-12.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/velocidad-de-reaccion-medicion",
+     "nombre": "Medición de la velocidad de reacción",
+     "definicion": "Velocidad expresada como cambio de concentración de reactivos o productos por unidad de tiempo, media o instantánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U12-12.1",
+     "grado": 10,
+     "indicador": "12.1. Calcula la velocidad media e instantánea de una reacción a partir de una curva experimental y la expresa en función de cualquier reactivo o producto.",
+     "evidencia": "Gráfica masa-tiempo con cálculo de velocidades medias por intervalo y velocidad instantánea por tangente"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:quimica/velocidad-de-reaccion-medicion/3",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ]
+  }
+ ]
+}

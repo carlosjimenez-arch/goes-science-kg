@@ -1,0 +1,2793 @@
+{
+ "lote": "r1-q11a_experto-quimica_5",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.6/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.6/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.6",
+      "CON:quimica/tratamiento-y-potabilizacion-del-agua"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una planta potabilizadora que capta agua turbia del río Lempa se adiciona sulfato de aluminio, Al₂(SO₄)₃(ac), antes de la etapa de sedimentación. ¿Cuál es la función química principal de este reactivo durante la coagulación y floculación?",
+     "opciones": {
+      "A": "Oxidarse con el oxígeno disuelto para eliminar las bacterias y los virus antes de la filtración en arena.",
+      "B": "Desestabilizar las cargas superficiales de los coloides y formar Al(OH)₃(s) que agrupa las partículas en flóculos sedimentables.",
+      "C": "Disolver las arcillas en iones solubles para que atraviesen los filtros de arena sin obstruir los poros.",
+      "D": "Aumentar el pH del agua mediante la liberación de iones hidróxido para precipitar las sales de calcio disueltas."
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:quimica/separacion-de-mezclas/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los iones Al³⁺ neutralizan las cargas negativas de los coloides suspendidos y reaccionan con la alcalinidad del agua para formar hidróxido de aluminio, Al(OH)₃(s), un precipitado gelatinoso que atrapa las partículas en flóculos más densos que sedimentan.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.6",
+     "grado": 11,
+     "indicador": "7.6. Explica la función química de la coagulación, la floculación y la desinfección en la potabilización y la compara con las etapas del tratamiento de aguas residuales.",
+     "evidencia": "Informe del ensayo de jarras con tabla de turbidez por dosis y evaluación del diseño experimental"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.6/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.6/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.6/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.6",
+      "CON:quimica/tratamiento-y-potabilizacion-del-agua"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo de laboratorio realiza un ensayo de jarras con 5 muestras de 1.0 L de una misma agua cruda (turbidez inicial de 85 NTU y pH 7.4). Aplican la misma agitación y tiempo de reposo, y obtienen estos datos de un grupo de ejemplo para la turbidez final del sobrenadante según la dosis de Al₂(SO₄)₃: vaso 1 (0 mg/L): 80 NTU; vaso 2 (10 mg/L): 28 NTU; vaso 3 (20 mg/L): 5 NTU; vaso 4 (30 mg/L): 4 NTU; vaso 5 (50 mg/L): 22 NTU. ¿Qué conclusión respaldan los datos?",
+     "opciones": {
+      "A": "La dosis óptima está cerca de 20 mg/L, pues reduce la turbidez a 5 NTU sin gastar reactivo extra ni reestabilizar los coloides como ocurre a 50 mg/L.",
+      "B": "La dosis óptima es 50 mg/L, porque a mayor concentración de coagulante siempre se garantiza una mayor formación de precipitado en el agua tratada.",
+      "C": "El coagulante no tuvo efecto químico alguno, ya que en el vaso 1 la turbidez disminuyó de 85 NTU a 80 NTU únicamente por acción de la gravedad.",
+      "D": "La dosis de 30 mg/L es deficiente porque el sulfato de aluminio empieza a disolver los flóculos ya formados en cuanto supera los 10 mg/L de concentración."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Entre 20 mg/L y 30 mg/L se alcanza la mínima turbidez; pasar de 20 mg/L a 30 mg/L casi no mejora la remoción (de 5 NTU a 4 NTU), y un exceso como 50 mg/L invierte la carga de las partículas y las reestabiliza, subiendo la turbidez a 22 NTU.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.6",
+     "grado": 11,
+     "indicador": "7.6. Explica la función química de la coagulación, la floculación y la desinfección en la potabilización y la compara con las etapas del tratamiento de aguas residuales.",
+     "evidencia": "Informe del ensayo de jarras con tabla de turbidez por dosis y evaluación del diseño experimental"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.6/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.6",
+      "CON:quimica/tratamiento-y-potabilizacion-del-agua"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Explica la función química de la coagulación-floculación y de la desinfección con cloro en una planta potabilizadora, y compáralas indicando qué etapa adicional es indispensable en el tratamiento de aguas residuales urbanas para degradar la materia orgánica disuelta y por qué no basta solo con coagular y filtrar.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En la potabilización, la coagulación con sales como el sulfato de aluminio neutraliza las cargas eléctricas de los coloides y en la floculación se agrupan en flóculos de Al(OH)₃(s) que sedimentan fácil; luego, la desinfección con cloro oxida y destruye microorganismos patógenos dejando un efecto residual en la red. En cambio, en el tratamiento de aguas residuales urbanas no basta con coagular y filtrar porque contienen alta carga de materia orgánica biodegradable disuelta, que no es retenida por filtros mecánicos; por eso es indispensable un tratamiento secundario biológico donde microorganismos aerobios o anaerobios oxidan y descomponen esa materia orgánica antes de desinfectar.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que la coagulación-floculación desestabiliza o neutraliza coloides en suspensión y los agrupa en flóculos que pueden sedimentar.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que la desinfección con cloro inactiva o elimina microorganismos patógenos mediante acción oxidante.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Compara con el tratamiento de aguas residuales identificando la necesidad de una etapa biológica (tratamiento secundario) porque la materia orgánica disuelta no se separa por simple filtración o sedimentación.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que los filtros de arena o la sedimentación retienen por sí solos las sustancias disueltas en el agua residual sin necesidad de procesos químicos o biológicos.",
+        "ejemplo": "En las aguas residuales basta pasar el agua por un filtro más fino para atrapar toda la materia orgánica disuelta.",
+        "dificultad": "DIF:quimica/separacion-de-mezclas/1"
+       },
+       {
+        "descripcion": "Confunde la función del coagulante con la del desinfectante, atribuyendo al sulfato de aluminio la eliminación química de bacterias y virus.",
+        "ejemplo": "El sulfato de aluminio se agrega para matar las bacterias del río y el cloro sirve para que la tierra se vaya al fondo.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "La coagulación-floculación retira partículas coloidales y la cloración elimina patógenos; en aguas residuales se requiere además el tratamiento biológico secundario para oxidar la materia orgánica disuelta que un filtro físico no puede retener.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.6",
+     "grado": 11,
+     "indicador": "7.6. Explica la función química de la coagulación, la floculación y la desinfección en la potabilización y la compara con las etapas del tratamiento de aguas residuales.",
+     "evidencia": "Informe del ensayo de jarras con tabla de turbidez por dosis y evaluación del diseño experimental"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.7/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.7"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.7",
+      "CON:quimica/quimica-verde"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una planta evalúa dos rutas para producir óxido de etileno, C₂H₄O (44.0 g/mol). Ruta 1 (clorhidrina): C₂H₄ + Cl₂ + Ca(OH)₂ → C₂H₄O + CaCl₂ + H₂O (masa total de reactivos: 173.0 g/mol). Ruta 2 (oxidación catalítica): 2 C₂H₄ + O₂ → 2 C₂H₄O (masa total de reactivos: 88.0 g/mol para 2 moles de producto). ¿Cuál ruta es más sostenible según la economía atómica y los principios de la química verde?",
+     "opciones": {
+      "A": "La ruta 1, porque forma agua como subproducto y eso neutraliza cualquier impacto ambiental del proceso.",
+      "B": "La ruta 2, porque alcanza 100 % de economía atómica al incorporar todos los átomos y evita usar cloro.",
+      "C": "La ruta 1, porque emplea tres reactivos distintos que aseguran que el etileno reaccione por completo.",
+      "D": "Ambas por igual, porque en las dos ecuaciones balanceadas la masa total se conserva de principio a fin."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/quimica-verde/3",
+      "D": "DIF:quimica/quimica-verde/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la ruta 2 la masa de los 2 moles de C₂H₄O deseados (88.0 g) es igual a la masa de los reactivos (88.0 g), lo que da una economía atómica de 100 %. En la ruta 1 es (44.0 / 173.0) × 100 = 25.4 %, pues la mayor parte de la masa termina como residuo de CaCl₂ y agua, además de usar cloro peligroso.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.7"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-verde",
+     "nombre": "Química verde y economía atómica",
+     "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.7",
+     "grado": 11,
+     "indicador": "7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "evidencia": "Propuesta de producción más limpia con cálculo de economía atómica de dos rutas y justificación de principios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.7/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.7/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.7"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.7",
+      "CON:quimica/quimica-verde"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo comparó dos procesos para sintetizar acetato de etilo (88.0 g/mol). Proceso 1 (esterificación con catalizador ácido): masa estequiométrica de reactivos = 106.0 g/mol; rendimiento experimental = 85 %; disolvente: ninguno. Proceso 2 (con cloruro de acetilo y base orgánica): masa estequiométrica de reactivos = 203.5 g/mol; rendimiento experimental = 96 %; disolvente: diclorometano. Según los datos, ¿cuál propuesta está mejor justificada?",
+     "opciones": {
+      "A": "Elegir el proceso 2, porque su rendimiento de 96 % demuestra que casi no se generan subproductos ni residuos.",
+      "B": "Elegir el proceso 1, porque tiene 83.0 % de economía atómica frente a 43.2 % del proceso 2 y evita disolventes clorados.",
+      "C": "Elegir el proceso 2, porque una masa molar mayor de reactivos siempre incrementa la pureza del producto final.",
+      "D": "Elegir el proceso 1, porque un rendimiento menor de 85 % indica que el proceso consume menos energía térmica."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/quimica-verde/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La economía atómica del proceso 1 es (88.0 / 106.0) × 100 = 83.0 %, mientras que la del proceso 2 es (88.0 / 203.5) × 100 = 43.2 %. Aunque el proceso 2 tiene mayor rendimiento experimental, más de la mitad de la masa de sus reactivos se convierte en residuo estequiométrico y además emplea un disolvente clorado nocivo.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.7"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-verde",
+     "nombre": "Química verde y economía atómica",
+     "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.7",
+     "grado": 11,
+     "indicador": "7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "evidencia": "Propuesta de producción más limpia con cálculo de economía atómica de dos rutas y justificación de principios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.7/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.7/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.7/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.7"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.7",
+      "CON:quimica/quimica-verde"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para obtener ácido acético, CH₃COOH (60.0 g/mol), se comparan dos rutas. Ruta 1 (carbonilación catalítica): CH₃OH (32.0 g/mol) + CO (28.0 g/mol) → CH₃COOH (rendimiento: 90 %). Ruta 2 (oxidación estequiométrica con reactivos tóxicos en disolvente ácido): masa total de reactivos por mol de CH₃COOH producido = 210.0 g/mol (rendimiento: 95 %). Calcula la economía atómica de ambas rutas, explica por qué un rendimiento de 95 % no basta para afirmar que la ruta 2 es limpia y justifica cuál ruta propones usando dos principios de la química verde.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En la ruta 1 la economía atómica es (60.0 / 60.0) × 100 = 100 %, porque toda la masa de los reactivos pasa al producto deseado. En la ruta 2 la economía atómica es (60.0 / 210.0) × 100 = 28.6 %. Un rendimiento de 95 % en la ruta 2 no significa que sea limpia, porque el rendimiento solo compara el producto obtenido con el teórico, pero aun si fuera de 100 %, el 71.4 % de la masa de los reactivos se transforma inevitablemente en subproductos de desecho. Propongo la ruta 1 aplicando los principios de economía atómica, prevención de residuos y uso de catalizadores en lugar de reactivos estequiométricos tóxicos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula correctamente la economía atómica de la ruta 1 (100 %) y de la ruta 2 (28.6 % o 29 %).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica la diferencia entre rendimiento y economía atómica señalando que la ruta 2 genera subproductos o residuos por diseño estequiométrico aunque el rendimiento sea alto.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica la elección de la ruta 1 nombrando o describiendo al menos dos principios de la química verde (economía atómica, prevención de residuos, catálisis o menor toxicidad).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde el rendimiento porcentual con la economía atómica y elige la ruta 2 por tener 95 %.",
+        "ejemplo": "La ruta 2 es más limpia porque tiene 95 % de rendimiento y aprovecha mejor los reactivos que la ruta 1 de 90 %.",
+        "dificultad": "DIF:quimica/quimica-verde/1"
+       },
+       {
+        "descripcion": "Afirma que ambas rutas tienen 100 % de economía atómica porque las ecuaciones están balanceadas.",
+        "ejemplo": "En las dos rutas la economía atómica es 100 % por la ley de conservación de la masa, pero elijo la 1 porque no usa tóxicos.",
+        "dificultad": "DIF:quimica/quimica-verde/2"
+       }
+      ]
+     },
+     "retroalimentacion": "Una síntesis con alto rendimiento experimental puede tener muy baja economía atómica si la ecuación genera subproductos pesados. La ruta 1 incorpora el 100 % de los átomos de los reactivos en el ácido acético mediante catálisis, evitando los residuos y la toxicidad de la ruta 2.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.7"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-verde",
+     "nombre": "Química verde y economía atómica",
+     "definicion": "Principios para diseñar procesos con materias primas renovables, menos disolventes nocivos y mínima generación de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.7",
+     "grado": 11,
+     "indicador": "7.7. Calcula la economía atómica de dos rutas de síntesis y propone la más sostenible aplicando los principios de la química verde.",
+     "evidencia": "Propuesta de producción más limpia con cálculo de economía atómica de dos rutas y justificación de principios"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.7/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.1",
+      "CON:quimica/radiactividad"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Marie y Pierre Curie aislaron a partir de la pechblenda el radio-226 (²²⁶₈₈Ra), un núclido inestable del grupo 2 que se desintegra espontáneamente emitiendo una partícula alfa (⁴₂He). Al aplicar las leyes del desplazamiento de Soddy y Fajans, ¿qué núclido se forma y cómo se ubica en la tabla periódica respecto al radio?",
+     "opciones": {
+      "A": "Se forma ²²²₈₆Rn, ubicado dos casillas a la izquierda porque pierde dos protones y cuatro nucleones.",
+      "B": "Se forma ²²⁶₈₉Ac, ubicado una casilla a la derecha porque un neutrón del núcleo se transforma en protón.",
+      "C": "Se forma ²²²₈₈Ra, ubicado en la misma casilla porque solo pierde cuatro neutrones y conserva sus protones.",
+      "D": "Se forma ²²⁴₈₄Po, ubicado cuatro casillas a la izquierda porque el número atómico disminuye en cuatro unidades."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/radiactividad/1",
+      "C": "DIF:quimica/radiactividad/2",
+      "D": "DIF:quimica/radiactividad/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una emisión alfa (⁴₂He), el número másico A disminuye en 4 (226 − 4 = 222) y el número atómico Z disminuye en 2 (88 − 2 = 86). Según la ley de Soddy y Fajans, el producto se desplaza dos lugares hacia la izquierda en la tabla periódica y corresponde al radón-222 (²²²₈₆Rn).",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/radiactividad",
+     "nombre": "Radiactividad y emisiones nucleares",
+     "definicion": "Desintegración espontánea de núcleos inestables con emisión de partículas alfa, beta y radiación gamma.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.1",
+     "grado": 11,
+     "indicador": "8.1. Relaciona los experimentos de Becquerel y de Marie y Pierre Curie con el descubrimiento de elementos radiactivos y aplica las leyes del desplazamiento para ubicar el producto en la tabla periódica.",
+     "evidencia": "Línea de tiempo comentada del descubrimiento de la radiactividad y ejercicios de desplazamiento radiactivo"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.1",
+      "CON:quimica/radiactividad"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo reconstruye los primeros pasos de la serie del uranio-238 descubierta tras los hallazgos de Becquerel: paso 1: ²³⁸₉₂U → ²³⁴₉₀Th; paso 2: ²³⁴₉₀Th → ²³⁴₉₁Pa; paso 3: ²³⁴₉₁Pa → núclido X (mediante emisión β⁻, ⁰₋₁e). Según los datos de A y Z, ¿qué emisión ocurre en los pasos 1 y 2 y cuál es la composición de X?",
+     "opciones": {
+      "A": "Paso 1 es emisión β⁻ y paso 2 es α; el núclido X tiene A = 230 y Z = 89, desplazado a la izquierda.",
+      "B": "Paso 1 es emisión α y paso 2 es β⁻; el núclido X tiene A = 234 y Z = 90, regresando al torio.",
+      "C": "Paso 1 es emisión α y paso 2 es β⁻; el núclido X tiene A = 234 y Z = 92, un isótopo del uranio.",
+      "D": "Paso 1 es emisión α y paso 2 es γ; el núclido X tiene A = 233 y Z = 91, conservando el elemento."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/radiactividad/1",
+      "B": "DIF:quimica/radiactividad/1",
+      "D": "DIF:quimica/radiactividad/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el paso 1, A baja en 4 y Z baja en 2 (emisión α). En el paso 2, A se mantiene en 234 y Z sube de 90 a 91 (emisión β⁻). En el paso 3, otra emisión β⁻ aumenta Z en 1 (91 + 1 = 92) sin cambiar A = 234, formando ²³⁴₉₂U, isótopo del uranio inicial.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/radiactividad",
+     "nombre": "Radiactividad y emisiones nucleares",
+     "definicion": "Desintegración espontánea de núcleos inestables con emisión de partículas alfa, beta y radiación gamma.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.1",
+     "grado": 11,
+     "indicador": "8.1. Relaciona los experimentos de Becquerel y de Marie y Pierre Curie con el descubrimiento de elementos radiactivos y aplica las leyes del desplazamiento para ubicar el producto en la tabla periódica.",
+     "evidencia": "Línea de tiempo comentada del descubrimiento de la radiactividad y ejercicios de desplazamiento radiactivo"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.1",
+      "CON:quimica/radiactividad"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Explica qué observó Henri Becquerel en sus placas fotográficas guardadas en la oscuridad con sales de uranio y por qué ese hallazgo demostró que la radiación era una propiedad atómica espontánea y no fosforescencia inducida por el Sol. Además, aplica las leyes de Soddy y Fajans para indicar cómo cambian el número másico (A), el número atómico (Z) y la posición en la tabla periódica cuando el polonio-210 (²¹⁰₈₄Po), descubierto por Marie y Pierre Curie, emite una partícula alfa.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Becquerel comprobó que las sales de uranio velaban la placa sin exposición solar previa, probando que la emisión proviene del núcleo atómico de forma espontánea. Al emitir una partícula alfa, el ²¹⁰₈₄Po reduce A en 4 (a 206) y Z en 2 (a 82, plomo), desplazándose dos casillas a la izquierda en la tabla periódica.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Becquerel observó que las sales de uranio velaban las placas fotográficas envueltas en papel negro aun después de varios días guardadas en un cajón oscuro sin recibir luz del Sol. Esto demostró que la radiación no era fosforescencia que requería absorber luz previa, sino una emisión espontánea propia de los átomos de uranio. Cuando el polonio-210 (²¹⁰₈₄Po) emite una partícula alfa (⁴₂He), su número másico A disminuye en 4 unidades (pasa a 206) y su número atómico Z disminuye en 2 unidades (pasa a 82), por lo que el producto se ubica dos casillas a la izquierda en la tabla periódica, formando plomo-206 (²⁰⁶₈₂Pb).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que las sales de uranio velaron la placa fotográfica en la oscuridad sin exposición solar previa, descartando la fosforescencia y mostrando que la emisión es espontánea del átomo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Indica que en la emisión alfa del ²¹⁰₈₄Po el número másico A disminuye en 4 (a 206) y el número atómico Z disminuye en 2 (a 82), ubicando el producto dos casillas a la izquierda en la tabla periódica.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Escribe el símbolo o nombre del producto resultante como plomo-206 (²⁰⁶₈₂Pb).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el mineral de uranio necesitaba absorber rayos solares o calentarse para activar la emisión radiactiva.",
+        "ejemplo": "Becquerel vio que la sal de uranio brillaba en la placa porque antes había guardado energía de la luz del Sol.",
+        "dificultad": "DIF:quimica/radiactividad/3"
+       },
+       {
+        "descripcion": "Intercambia los cambios de A y Z o desplaza el elemento hacia la derecha en la emisión alfa.",
+        "ejemplo": "Al emitir una partícula alfa, el polonio-210 baja su A en 2 y su Z en 4, o avanza dos lugares a la derecha.",
+        "dificultad": "DIF:quimica/radiactividad/1"
+       },
+       {
+        "descripcion": "Cree que al emitir radiación el núcleo sigue siendo polonio porque un elemento no puede transformarse en otro.",
+        "ejemplo": "El polonio-210 pierde masa y pasa a polonio-206, quedándose en la misma casilla Z = 84.",
+        "dificultad": "DIF:quimica/radiactividad/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/radiactividad",
+     "nombre": "Radiactividad y emisiones nucleares",
+     "definicion": "Desintegración espontánea de núcleos inestables con emisión de partículas alfa, beta y radiación gamma.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.1",
+     "grado": 11,
+     "indicador": "8.1. Relaciona los experimentos de Becquerel y de Marie y Pierre Curie con el descubrimiento de elementos radiactivos y aplica las leyes del desplazamiento para ubicar el producto en la tabla periódica.",
+     "evidencia": "Línea de tiempo comentada del descubrimiento de la radiactividad y ejercicios de desplazamiento radiactivo"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.2",
+      "CON:quimica/ecuaciones-nucleares"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un detector de humo doméstico, un núcleo de americio-241 (Z = 95) sufre una desintegración espontánea y se transforma en neptunio-237 (Z = 93) más una partícula emitida. ¿Cuál es la partícula que falta y por qué?",
+     "opciones": {
+      "A": "Una partícula alfa (A = 4, Z = 2), porque así la suma de A queda en 241 y la de Z en 95.",
+      "B": "Una partícula beta menos (A = 0, Z = -1), porque al emitirla el número atómico disminuye.",
+      "C": "Cuatro neutrones libres (A = 1, Z = 0), porque faltan cuatro unidades de masa en los productos.",
+      "D": "Un núcleo de berilio-4 (A = 4, Z = 4), porque los números másicos y atómicos cambian igual."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/ecuaciones-nucleares/2",
+      "C": "DIF:quimica/ecuaciones-nucleares/3",
+      "D": "DIF:quimica/ecuaciones-nucleares/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En toda ecuación nuclear se conservan el número másico (A) y el número atómico (Z). Como 241 = 237 + 4 y 95 = 93 + 2, la partícula emitida tiene A = 4 y Z = 2, que corresponde a un núcleo de helio-4 o partícula alfa.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ecuaciones-nucleares",
+     "nombre": "Ecuaciones y reacciones nucleares",
+     "definicion": "Representación de desintegraciones, transmutación, fisión y fusión conservando número másico y atómico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.2",
+     "grado": 11,
+     "indicador": "8.2. Balancea ecuaciones nucleares de desintegración y de transmutación artificial identificando la partícula o el núclido faltante mediante la conservación de A y Z.",
+     "evidencia": "Hoja de diez ecuaciones nucleares balanceadas y clasificadas con justificación del núclido faltante"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.2",
+      "CON:quimica/ecuaciones-nucleares"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo organizó en una tabla tres procesos nucleares indicando los reactivos y los productos: Proceso 1: carbono-14 (A = 14, Z = 6) produce un núclido X más un electrón beta (A = 0, Z = -1). Proceso 2: nitrógeno-14 (A = 14, Z = 7) más helio-4 (A = 4, Z = 2) producen oxígeno-17 (A = 17, Z = 8) más un protón (A = 1, Z = 1). ¿Cuál es el núclido X del Proceso 1 y cómo se clasifica el Proceso 2?",
+     "opciones": {
+      "A": "X tiene A = 14 y Z = 5 (boro-14); el Proceso 2 es una desintegración espontánea.",
+      "B": "X tiene A = 14 y Z = 7 (nitrógeno-14); el Proceso 2 es una transmutación artificial.",
+      "C": "X tiene A = 13 y Z = 6 (carbono-13); el Proceso 2 es una transmutación artificial.",
+      "D": "X tiene A = 14 y Z = 7 (nitrógeno-14); el Proceso 2 es una desintegración espontánea."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/ecuaciones-nucleares/2",
+      "C": "DIF:quimica/ecuaciones-nucleares/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el Proceso 1, conservar A da 14 = A_X + 0 (A_X = 14) y conservar Z da 6 = Z_X + (-1), por lo que Z_X = 7 (nitrógeno-14). El Proceso 2 tiene dos núcleos que chocan en los reactivos (nitrógeno-14 bombardeado con una partícula alfa), por lo que se clasifica como una transmutación artificial.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ecuaciones-nucleares",
+     "nombre": "Ecuaciones y reacciones nucleares",
+     "definicion": "Representación de desintegraciones, transmutación, fisión y fusión conservando número másico y atómico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.2",
+     "grado": 11,
+     "indicador": "8.2. Balancea ecuaciones nucleares de desintegración y de transmutación artificial identificando la partícula o el núclido faltante mediante la conservación de A y Z.",
+     "evidencia": "Hoja de diez ecuaciones nucleares balanceadas y clasificadas con justificación del núclido faltante"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.2",
+      "CON:quimica/ecuaciones-nucleares"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para preparar un radiofármaco médico se bombardea un núcleo de boro-10 (A = 10, Z = 5) con una partícula alfa (A = 4, Z = 2), y se obtiene un neutrón (A = 1, Z = 0) junto con un núclido desconocido. Calcula el número másico (A) y el número atómico (Z) del núclido que se forma mostrando las sumas de conservación en ambos lados, y explica por qué este proceso se clasifica como transmutación artificial y no como desintegración radiactiva espontánea.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En los reactivos la suma de números másicos es A = 10 + 4 = 14 y la de números atómicos es Z = 5 + 2 = 7. Como en los productos ya hay un neutrón con A = 1 y Z = 0, el núclido desconocido debe tener A = 14 - 1 = 13 y Z = 7 - 0 = 7 (nitrógeno-13). Se clasifica como transmutación artificial porque el cambio ocurre al bombardear el núcleo inicial de boro con otra partícula (la partícula alfa), en lugar de ocurrir por sí solo a partir de un único núcleo inestable.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "calcula correctamente A = 13 y Z = 7 para el núclido producto planteando la suma de A (10 + 4 = 1 + 13) y de Z (5 + 2 = 0 + 7)",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "justifica que es una transmutación artificial porque el núcleo inicial es bombardeado o colisiona con una partícula incidente (dos reactivos), a diferencia de la desintegración espontánea de un solo núcleo",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "identifica el elemento formado como nitrógeno (nitrógeno-13) a partir de su número atómico Z = 7",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "olvida restar el neutrón emitido en el balance del número másico y reporta A = 14",
+        "ejemplo": "El núclido que se forma tiene A = 10 + 4 = 14 y Z = 5 + 2 = 7.",
+        "dificultad": "DIF:quimica/ecuaciones-nucleares/3"
+       },
+       {
+        "descripcion": "intercambia o mezcla el número másico con el número atómico al sumar reactivos y productos",
+        "ejemplo": "Sumo 10 + 2 = 12 para la masa y 5 + 4 = 9 para el número atómico.",
+        "dificultad": "DIF:quimica/ecuaciones-nucleares/1"
+       }
+      ]
+     },
+     "retroalimentacion": "Al conservar el número de nucleones (10 + 4 = 13 + 1) y la carga nuclear (5 + 2 = 7 + 0), se obtiene el núclido con A = 13 y Z = 7 (nitrógeno-13). Es una transmutación inducida o artificial porque requiere el choque de la partícula alfa contra el núcleo de boro-10.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ecuaciones-nucleares",
+     "nombre": "Ecuaciones y reacciones nucleares",
+     "definicion": "Representación de desintegraciones, transmutación, fisión y fusión conservando número másico y atómico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.2",
+     "grado": 11,
+     "indicador": "8.2. Balancea ecuaciones nucleares de desintegración y de transmutación artificial identificando la partícula o el núclido faltante mediante la conservación de A y Z.",
+     "evidencia": "Hoja de diez ecuaciones nucleares balanceadas y clasificadas con justificación del núclido faltante"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.3",
+      "CON:quimica/semivida-y-series-de-desintegracion"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la serie de desintegración natural del uranio, el núcleo padre ²³⁸₉₂U se transforma mediante una secuencia de emisiones alfa (⁴₂He) y beta negativa (⁰₋₁e) hasta estabilizarse como plomo, ²⁰⁶₈₂Pb. A partir del cambio total en el número másico (A) y en el número atómico (Z), ¿cuántas partículas alfa y cuántas partículas beta negativa se emiten en total en esta serie?",
+     "opciones": {
+      "A": "8 partículas alfa y 10 partículas beta, porque el número atómico disminuye en 10 unidades desde 92 hasta 82.",
+      "B": "8 partículas alfa y 6 partículas beta, porque las 8 emisiones alfa bajan Z a 76 y 6 emisiones beta lo suben a 82.",
+      "C": "16 partículas alfa y 6 partículas beta, porque cada partícula alfa disminuye en 2 unidades el número másico A.",
+      "D": "8 partículas alfa y 26 partículas beta, porque las emisiones beta compensan el resto de la pérdida de masa hasta 206."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/semivida-y-series-de-desintegracion/2",
+      "D": "DIF:quimica/semivida-y-series-de-desintegracion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El número másico A baja de 238 a 206 (ΔA = −32); como solo la emisión alfa cambia A (en 4 unidades), hay 32 / 4 = 8 emisiones alfa. Esas 8 partículas alfa reducen Z en 16 unidades (de 92 a 76), por lo que se necesitan 6 emisiones beta negativa (cada una suma 1 a Z) para llegar a Z = 82.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.3",
+     "grado": 11,
+     "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "evidencia": "Gráfica N frente a Z de la serie del uranio-238 con el cálculo del número de emisiones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.3",
+      "CON:quimica/semivida-y-series-de-desintegracion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo grafica el número de neutrones (N = A − Z) frente al número atómico (Z) para los cuatro primeros pasos de la serie del uranio-238 y registra esta tabla de coordenadas (Z, N): Núcleo 1: (92, 146) → Núcleo 2: (90, 144) → Núcleo 3: (91, 143) → Núcleo 4: (92, 142) → Núcleo 5: (90, 140). ¿Qué secuencia de emisiones representa este tramo de la gráfica?",
+     "opciones": {
+      "A": "Alfa, alfa, beta, beta, porque en dos pasos disminuye el número de neutrones y en otros dos cambia el número atómico.",
+      "B": "Beta, alfa, alfa, beta, porque el número atómico Z termina en 90 después de subir y bajar entre los núcleos.",
+      "C": "Alfa, beta, beta, alfa, porque en los pasos 1 y 4 bajan Z y N en 2 unidades, y en los pasos 2 y 3 Z sube 1 y N baja 1.",
+      "D": "Beta, beta, alfa, alfa, porque las emisiones beta ocurren cuando el número de neutrones N disminuye de uno en uno."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/semivida-y-series-de-desintegracion/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Una emisión alfa resta 2 protones (ΔZ = −2) y 2 neutrones (ΔN = −2), lo que ocurre del núcleo 1 al 2 y del 4 al 5. Una emisión beta negativa convierte un neutrón en un protón (ΔZ = +1, ΔN = −1), lo que ocurre del núcleo 2 al 3 y del 3 al 4.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.3",
+     "grado": 11,
+     "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "evidencia": "Gráfica N frente a Z de la serie del uranio-238 con el cálculo del número de emisiones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U8-8.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U8-8.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U8-8.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U8-8.3",
+      "CON:quimica/semivida-y-series-de-desintegracion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la serie natural del torio, el núcleo inicial ²³²₉₀Th se desintegra hasta el isótopo estable ²⁰⁸₈₂Pb. Explica paso a paso cómo determinas el número total de emisiones alfa y de emisiones beta negativa de la serie: indica por qué el número de emisiones alfa se calcula primero solo con el cambio de A, cuántas emisiones alfa ocurren y cómo obtienes luego las emisiones beta a partir del cambio en Z.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Primero se calcula el cambio en el número másico: A pasa de 232 a 208, por lo que disminuye en 24 unidades. Como solo las emisiones alfa alteran el número másico (restando 4 unidades por cada partícula ⁴₂He, mientras que la partícula beta ⁰₋₁e tiene A = 0), el número de emisiones alfa es 24 / 4 = 6. Luego, esas 6 emisiones alfa disminuirían el número atómico Z en 6 × 2 = 12 unidades, llevando Z de 90 a 78. Como el plomo final tiene Z = 82 y cada emisión beta negativa aumenta Z en 1 unidad, se necesitan 82 − 78 = 4 emisiones beta negativa.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Justifica que el número de emisiones alfa se obtiene solo del cambio en A porque la emisión beta tiene A = 0 y cada partícula alfa resta 4 a A.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Calcula correctamente que ocurren 6 emisiones alfa a partir de ΔA = 232 − 208 = 24.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el efecto de las 6 emisiones alfa sobre Z (baja de 90 a 78) con el aumento que producen las emisiones beta para obtener 4 emisiones beta negativa hasta llegar a Z = 82.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Calcula las emisiones beta directamente como la diferencia entre el Z inicial y el Z final (90 − 82 = 8) sin descontar el cambio de Z causado por las partículas alfa.",
+        "ejemplo": "Hay 6 emisiones alfa porque 24 entre 4 es 6, y hay 8 emisiones beta porque Z baja de 90 a 82.",
+        "dificultad": "DIF:quimica/semivida-y-series-de-desintegracion/2"
+       },
+       {
+        "descripcion": "Supone que la emisión beta negativa disminuye Z en 1 en lugar de aumentarlo, o que cambia el número másico A.",
+        "ejemplo": "Cada beta resta 1 al número másico, así que después de las alfa faltan betas para llegar a 208.",
+        "dificultad": "DIF:quimica/semivida-y-series-de-desintegracion/1"
+       }
+      ]
+     },
+     "retroalimentacion": "Toda la disminución de masa (ΔA = −24) se debe a las partículas alfa, lo que da 6 emisiones alfa. Esas 6 emisiones reducen Z de 90 a 78; para llegar al plomo (Z = 82) hacen falta 4 emisiones beta negativa.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U8-8.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U8-8.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/semivida-y-series-de-desintegracion",
+     "nombre": "Semivida, series de desintegración y residuos radiactivos",
+     "definicion": "Tiempo en que decae la mitad de un radioisótopo; determina series de desintegración, datación, usos y gestión de residuos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U8-8.3",
+     "grado": 11,
+     "indicador": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z.",
+     "evidencia": "Gráfica N frente a Z de la serie del uranio-238 con el cálculo del número de emisiones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U8-8.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.1",
+      "CON:quimica/fundamentos-de-reactividad-organica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una reacción de sustitución en disolución, el enlace carbono-bromo del 2-bromopropano se rompe de modo que el bromo se lleva los dos electrones del enlace compartido. Luego, una molécula de amoníaco (NH3) se une al carbono resultante. ¿Qué tipo de ruptura ocurrió y cómo actúan el intermediario de carbono y el amoníaco?",
+     "opciones": {
+      "A": "Ruptura homolítica; se forma un radical de carbono que reacciona con el amoníaco porque ambos tienen electrones desapareados.",
+      "B": "Ruptura heterolítica; se forma un carbocatión electrófilo y el amoníaco actúa como nucleófilo gracias a su par libre en el nitrógeno.",
+      "C": "Ruptura heterolítica; se forma un carbocatión electrófilo, pero el amoníaco no actúa como nucleófilo porque es una molécula neutra.",
+      "D": "Ruptura heterolítica; se forma un carbanión nucleófilo porque el carbono retiene la carga negativa al separarse del átomo de bromo."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/fundamentos-de-reactividad-organica/1",
+      "C": "DIF:quimica/fundamentos-de-reactividad-organica/2",
+      "D": "DIF:quimica/fundamentos-de-reactividad-organica/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Como el bromo es más electronegativo que el carbono y se lleva el par de electrones, la ruptura es heterolítica y deja un carbocatión (electrófilo). El amoníaco, aunque es neutro, tiene un par de electrones no compartido en el nitrógeno, por lo que actúa como nucleófilo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.1",
+     "grado": 11,
+     "indicador": "9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electrónica.",
+     "evidencia": "Esquema conceptual de rupturas y reactivos con la clasificación justificada de doce especies"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.1",
+      "CON:quimica/fundamentos-de-reactividad-organica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo de ejemplo organizó cuatro especies químicas en una tabla según sus electrones de valencia en el átomo central y su carga neta: Especie 1: ion hidróxido (OH⁻, oxígeno con octeto completo y pares libres, carga -1); Especie 2: catión metilo (CH3⁺, carbono con 6 electrones de valencia, carga +1); Especie 3: átomo de cloro (Cl·, 7 electrones de valencia, carga 0); Especie 4: agua (H2O, oxígeno con octeto completo y dos pares libres, carga 0). ¿Qué opción clasifica correctamente las cuatro especies?",
+     "opciones": {
+      "A": "Especie 1: electrófilo; Especie 2: nucleófilo; Especie 3: radical libre; Especie 4: nucleófilo por sus pares libres.",
+      "B": "Especie 1: nucleófilo; Especie 2: radical libre; Especie 3: electrófilo; Especie 4: nucleófilo por sus pares libres.",
+      "C": "Especie 1: nucleófilo; Especie 2: electrófilo; Especie 3: radical libre; Especie 4: inactiva por no tener carga neta.",
+      "D": "Especie 1: nucleófilo; Especie 2: electrófilo; Especie 3: radical libre; Especie 4: nucleófilo por sus pares libres."
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/fundamentos-de-reactividad-organica/1",
+      "C": "DIF:quimica/fundamentos-de-reactividad-organica/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El OH⁻ y el H2O poseen pares de electrones libres disponibles para donar, por lo que son nucleófilos. El CH3⁺ tiene un octeto incompleto (6 electrones) y carga positiva, así que es un electrófilo; el Cl· tiene un electrón desapareado y es un radical.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.1",
+     "grado": 11,
+     "indicador": "9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electrónica.",
+     "evidencia": "Esquema conceptual de rupturas y reactivos con la clasificación justificada de doce especies"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.1",
+      "CON:quimica/fundamentos-de-reactividad-organica"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Compara la ruptura del enlace Cl–Cl bajo luz ultravioleta con la ruptura del enlace C–Br en el 2-bromopropano disuelto en un solvente polar. Explica en 2 o 3 oraciones qué tipo de ruptura ocurre en cada caso, cómo se reparten los electrones del enlace, qué especies intermedias se forman (radical, carbocatión o carbanión) y clasifícalas como nucleófilos, electrófilos o radicales justificando con su distribución electrónica.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En la molécula de Cl–Cl ocurre una ruptura homolítica porque ambos átomos tienen igual electronegatividad y cada uno se queda con un electrón del enlace, formando dos radicales de cloro (Cl·) que tienen un electrón desapareado. En cambio, en el enlace C–Br ocurre una ruptura heterolítica porque el bromo es más electronegativo y se lleva el par completo de electrones. Esto produce un ion bromuro (Br⁻, nucleófilo con pares libres) y un carbocatión (electrófilo con carga positiva y octeto incompleto en el carbono).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Identifica la ruptura de Cl–Cl como homolítica (reparto equitativo de un electrón para cada átomo) y la de C–Br como heterolítica (el bromo se lleva el par de electrones).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra los intermediarios formados: radicales de cloro en el primer caso y un carbocatión (más el ion bromuro) en el segundo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Clasifica el carbocatión como electrófilo por su deficiencia electrónica (octeto incompleto o carga positiva) y los átomos de cloro como radicales por su electrón desapareado.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde ruptura homolítica con heterolítica o afirma que el enlace C–Br forma radicales en un solvente polar e iones en Cl–Cl.",
+        "ejemplo": "El Cl–Cl se rompe en Cl⁺ y Cl⁻ de forma homolítica, mientras que el C–Br reparte un electrón a cada átomo.",
+        "dificultad": "DIF:quimica/fundamentos-de-reactividad-organica/1"
+       },
+       {
+        "descripcion": "Asigna la carga negativa al carbono y la positiva al bromo tras la ruptura heterolítica del enlace C–Br.",
+        "ejemplo": "Al romperse el enlace C–Br se forma un carbanión con carga negativa y un catión Br⁺ porque el carbono retiene el par de electrones.",
+        "dificultad": "DIF:quimica/fundamentos-de-reactividad-organica/3"
+       }
+      ]
+     },
+     "retroalimentacion": "En el enlace apolar Cl–Cl la luz provoca una ruptura homolítica que deja un electrón desapareado en cada átomo (radicales). En el enlace polar C–Br el bromo es más electronegativo, atrae el par compartido en una ruptura heterolítica y deja un carbocatión deficiente en electrones (electrófilo).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/fundamentos-de-reactividad-organica",
+     "nombre": "Fundamentos de la reactividad orgánica",
+     "definicion": "Ruptura homolítica y heterolítica de enlaces que genera radicales, carbocationes y carbaniones; base de los mecanismos orgánicos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.1",
+     "grado": 11,
+     "indicador": "9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electrónica.",
+     "evidencia": "Esquema conceptual de rupturas y reactivos con la clasificación justificada de doce especies"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.2",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el laboratorio se estudia la transformación del bromoetano (CH3–CH2–Br) con hidróxido de sodio acuoso (NaOH(ac)) para producir etanol (CH3–CH2–OH) y bromuro de sodio (NaBr(ac)). Al comparar la estructura del reactivo orgánico con la del producto orgánico, ¿cómo se clasifica esta reacción y por qué?",
+     "opciones": {
+      "A": "Como adición, porque el grupo OH se suma a la cadena carbonada.",
+      "B": "Como eliminación, porque el átomo de bromo sale de la molécula inicial.",
+      "C": "Como sustitución, porque el grupo OH reemplaza al Br en el mismo carbono.",
+      "D": "Como adición, porque hay dos reactivos que intercambian sus iones en agua."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/reacciones-organicas/1",
+      "B": "DIF:quimica/reacciones-organicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Es una reacción de sustitución porque el átomo de carbono saturado mantiene todos sus enlaces simples: se rompe el enlace C–Br y en ese mismo carbono se forma un enlace C–OH.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.2",
+     "grado": 11,
+     "indicador": "9.2. Determina si una reacción orgánica es de sustitución, adición o eliminación comparando la estructura de reactivos y productos.",
+     "evidencia": "Tabla de quince reacciones clasificadas con los criterios estructurales utilizados"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.2",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un equipo registra en una tabla los cambios estructurales de tres reacciones orgánicas (datos de un grupo de ejemplo):\n\n• Reacción 1: propeno (CH2=CH–CH3) + HBr → 2-bromopropano (CH3–CHBr–CH3). El enlace doble C=C pasa a enlace simple C–C.\n• Reacción 2: ciclohexanol (C6H11OH) → ciclohexeno (C6H10) + H2O. Un enlace simple C–C pasa a enlace doble C=C.\n• Reacción 3: metano (CH4) + Cl2 → clorometano (CH3Cl) + HCl. Todos los enlaces del carbono siguen siendo simples.\n\nSegún los datos de la tabla, ¿qué clasificación corresponde a las reacciones 1, 2 y 3 en ese orden?",
+     "opciones": {
+      "A": "1: adición; 2: eliminación; 3: sustitución, según cambian las insaturaciones.",
+      "B": "1: sustitución; 2: adición; 3: eliminación, según el número de productos.",
+      "C": "1: eliminación; 2: adición; 3: sustitución, según dónde aparece el enlace doble.",
+      "D": "1: adición; 2: sustitución; 3: eliminación, según los átomos que salen."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/reacciones-organicas/3",
+      "C": "DIF:quimica/reacciones-organicas/1",
+      "D": "DIF:quimica/reacciones-organicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la reacción 1 desaparece el enlace doble al incorporarse H y Br (adición); en la 2 se pierden H y OH de carbonos vecinos y se forma un enlace doble C=C (eliminación); en la 3 un Cl reemplaza a un H sin cambiar el grado de saturación (sustitución).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.2",
+     "grado": 11,
+     "indicador": "9.2. Determina si una reacción orgánica es de sustitución, adición o eliminación comparando la estructura de reactivos y productos.",
+     "evidencia": "Tabla de quince reacciones clasificadas con los criterios estructurales utilizados"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.2",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Al calentar etanol (CH3–CH2–OH) con ácido sulfúrico concentrado se obtiene eteno (CH2=CH2) y agua (H2O). Clasifica esta reacción como sustitución, adición o eliminación, indica qué enlaces del reactivo se rompen y qué enlace nuevo se forma en el producto orgánico, y explica por qué ese cambio en el tipo de enlace carbono-carbono justifica tu clasificación.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "La deshidratación del etanol es una reacción de eliminación. En el etanol se rompen el enlace C–OH de un carbono y un enlace C–H del carbono vecino, cuyos átomos se unen para formar una molécula de agua (H2O). Como esos dos carbonos adyacentes pierden átomos sin recibir otros nuevos, comparten un par adicional de electrones y el enlace simple C–C pasa a ser un enlace doble C=C en el eteno. Este aumento en la insaturación de la cadena carbonada al salir una molécula pequeña es el criterio estructural que define a una eliminación.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Clasifica explícitamente la reacción como una reacción de eliminación.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Identifica que se rompen los enlaces C–OH y C–H en carbonos adyacentes (o que salen H y OH como agua) y que se forma un enlace doble carbono-carbono (C=C).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el paso de un enlace simple C–C a un enlace múltiple (aumento de insaturación sin reemplazo de grupos) con la definición de eliminación.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "La clasifica como sustitución porque ve dos sustancias al final o cree que el doble enlace reemplaza al grupo OH.",
+        "ejemplo": "Es una sustitución porque el grupo OH del etanol se cambia por un doble enlace y queda agua aparte.",
+        "dificultad": "DIF:quimica/reacciones-organicas/3"
+       },
+       {
+        "descripcion": "Invierte el cambio de saturación y la llama adición porque se forma un enlace π nuevo.",
+        "ejemplo": "Es de adición porque se añade un segundo enlace entre los dos carbonos para formar el eteno.",
+        "dificultad": "DIF:quimica/reacciones-organicas/1"
+       }
+      ]
+     },
+     "retroalimentacion": "Cuando dos carbonos vecinos pierden átomos o grupos (aquí H y OH, que salen como H2O) y entre ellos un enlace simple C–C se convierte en doble C=C, la reacción es de eliminación.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.2",
+     "grado": 11,
+     "indicador": "9.2. Determina si una reacción orgánica es de sustitución, adición o eliminación comparando la estructura de reactivos y productos.",
+     "evidencia": "Tabla de quince reacciones clasificadas con los criterios estructurales utilizados"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.3",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para comparar una combustión completa con una incompleta del propano, C3H8(g), un grupo escribe ecuaciones balanceadas con coeficientes enteros mínimos: en la reacción 1 los únicos productos son CO2(g) y H2O(g), y en la reacción 2 los únicos productos son CO(g) y H2O(g). ¿Qué relación es correcta entre los coeficientes del O2(g) y el tipo de reacción?",
+     "opciones": {
+      "A": "En la reacción 1 el coeficiente del O2(g) es 5 y en la 2 es 7, porque formar CO(g) exige más oxígeno por mol de propano.",
+      "B": "En la reacción 1 el coeficiente del O2(g) es 5 para 1 mol de C3H8(g) y en la 2 es 7 para 2 moles de C3H8(g), porque la combustión incompleta consume menos O2(g) por mol.",
+      "C": "En ambas reacciones el coeficiente del O2(g) es 5 por mol de C3H8(g), porque los átomos de hidrógeno determinan todo el oxígeno consumido.",
+      "D": "En la reacción 1 el coeficiente del O2(g) es 3 y en la 2 es 4, porque solo los átomos de carbono se combinan con el oxígeno."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La combustión completa balanceada es C3H8(g) + 5 O2(g) → 3 CO2(g) + 4 H2O(g) (5 mol de O2 por mol de propano). La incompleta a monóxido de carbono es 2 C3H8(g) + 7 O2(g) → 6 CO(g) + 8 H2O(g) (3.5 mol de O2 por mol de propano), porque ocurre con deficiencia de oxígeno.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.3",
+     "grado": 11,
+     "indicador": "9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno.",
+     "evidencia": "Hoja de ecuaciones balanceadas de combustión, halogenación y adición con conclusiones del video"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.3",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un video de laboratorio (datos de un grupo de ejemplo) se agregan gotas de agua de bromo, Br2(ac) de color pardo-rojizo, a tres tubos con los hidrocarburos 1, 2 y 3:\n- Tubo 1 (hexano, C6H14): en oscuridad permanece pardo; bajo luz ultravioleta se decolora tras 5 min y desprende vapores ácidos de HBr(g).\n- Tubo 2 (1-hexeno, C6H12): en oscuridad se decolora en menos de 5 s sin desprender vapores ácidos.\n- Tubo 3 (benceno, C6H6): en oscuridad y bajo luz permanece pardo sin cambio tras 10 min.\n¿Qué conclusión relaciona correctamente los datos con las reacciones ocurridas?",
+     "opciones": {
+      "A": "En el tubo 1 hubo adición al enlace C–C simple y en el tubo 2 hubo sustitución por radicales libres que consumió todo el HBr(g) formado.",
+      "B": "En los tubos 1 y 2 hubo halogenación por radicales libres, mientras que el tubo 3 no reaccionó porque el benceno carece de enlaces pi.",
+      "C": "En el tubo 1 hubo sustitución por radicales libres (forma C6H13Br y HBr), en el tubo 2 adición al doble enlace (forma C6H12Br2) y el tubo 3 no adicionó por su estabilidad aromática.",
+      "D": "En el tubo 2 hubo combustión del alqueno con el agua y en el tubo 1 el hexano se isomerizó a benceno sin liberar subproductos."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El alcano (tubo 1) solo reacciona con luz UV mediante sustitución por radicales libres: C6H14(l) + Br2(ac) → C6H13Br(l) + HBr(g). El alqueno (tubo 2) sufre adición rápida en el enlace doble C=C sin subproducto ácido: C6H12(l) + Br2(ac) → C6H12Br2(l). El benceno (tubo 3) no da adición porque perdería la deslocalización aromática.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.3",
+     "grado": 11,
+     "indicador": "9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno.",
+     "evidencia": "Hoja de ecuaciones balanceadas de combustión, halogenación y adición con conclusiones del video"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.3",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Escribe la ecuación química balanceada de la reacción entre el eteno, C2H4(g), y el agua de bromo, Br2(ac), y explica por qué el eteno decolora rápidamente el agua de bromo por adición mientras que el benceno, C6H6(l), no sufre esa adición en las mismas condiciones y reacciona preferentemente por sustitución.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "La reacción del eteno es C2H4(g) + Br2(ac) → C2H4Br2(l) (1,2-dibromoetano). El eteno tiene un enlace pi localizado entre los dos carbonos que se rompe con facilidad para adicionar los dos átomos de bromo, por lo que consume el Br2(ac) y decolora la disolución. En cambio, en el benceno los seis electrones pi están deslocalizados en todo el anillo aromático; una adición rompería esa aromaticidad estable, así que solo reacciona con un catalizador mediante sustitución aromática para conservar el anillo.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe la ecuación balanceada de adición del eteno con el bromo: C2H4 + Br2 → C2H4Br2 (o CH2=CH2 + Br2 → CH2Br–CH2Br).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la rápida decoloración en el eteno con la ruptura del enlace pi (doble enlace C=C) en una reacción de adición.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que el benceno no adiciona Br2(ac) porque tiene electrones pi deslocalizados (estabilidad aromática) que se perderían en la adición, por lo que prefiere la sustitución.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Escribe una reacción de sustitución para el eteno liberando HBr (C2H4 + Br2 → C2H3Br + HBr) en vez de la reacción de adición.",
+        "ejemplo": "El eteno cambia un hidrógeno por bromo: C2H4 + Br2 → C2H3Br + HBr.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Afirma que el benceno no reacciona con el agua de bromo porque solo tiene enlaces simples C–C como un alcano.",
+        "ejemplo": "El benceno no decolora el bromo porque es un hidrocarburo saturado sin enlaces pi.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "En el eteno el enlace pi localizado reacciona por adición formando 1,2-dibromoetano: C2H4(g) + Br2(ac) → C2H4Br2(l). En el benceno los seis electrones pi están deslocalizados en el anillo aromático; adicionar bromo destruiría esa estabilidad, por lo que el benceno experimenta sustitución electrofílica en presencia de un catalizador.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.3",
+     "grado": 11,
+     "indicador": "9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno.",
+     "evidencia": "Hoja de ecuaciones balanceadas de combustión, halogenación y adición con conclusiones del video"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.4",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mariana hace reaccionar por separado tres alcoholes en exceso de dicromato de potasio acidificado, K₂Cr₂O₇(ac) con H₂SO₄(ac), bajo calentamiento: en el tubo 1 pone 1-propanol, en el tubo 2 pone 2-propanol y en el tubo 3 pone 2-metil-2-propanol. ¿Qué producto orgánico principal se obtiene en cada tubo al finalizar la reacción?",
+     "opciones": {
+      "A": "En el tubo 1 propanal, en el tubo 2 ácido propanoico y en el tubo 3 propanona, porque todos los alcoholes se oxidan en medio ácido.",
+      "B": "En el tubo 1 ácido propanoico, en el tubo 2 propanona y en el tubo 3 no hay reacción porque el carbono con el grupo –OH no tiene hidrógenos unidos.",
+      "C": "En el tubo 1 propanona, en el tubo 2 propanal y en el tubo 3 ácido 2-metilpropanoico, según la posición del grupo hidroxilo en la cadena.",
+      "D": "En el tubo 1 propanal, en el tubo 2 propanona y en el tubo 3 no hay reacción porque el oxidante fuerte detiene la oxidación en el aldehído."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con un oxidante fuerte y calor, el alcohol primario (1-propanol) se oxida pasando por propanal hasta ácido propanoico, y el secundario (2-propanol) forma una cetona (propanona). El alcohol terciario (2-metil-2-propanol) no se oxida en estas condiciones porque el carbono unido al grupo –OH carece de átomos de hidrógeno para eliminar.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.4",
+     "grado": 11,
+     "indicador": "9.4. Predice si la oxidación de un alcohol produce un aldehído, una cetona o un ácido carboxílico y diferencia aldehídos de cetonas por su comportamiento frente a oxidantes.",
+     "evidencia": "Historieta científica y hoja de ecuaciones de oxidación de alcoholes con interpretación de las pruebas de Tollens y Fehling"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.4",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo analiza tres líquidos desconocidos (muestras 1, 2 y 3), que corresponden sin orden a 2-propanol, propanal y propanona. En la tabla de resultados, con K₂Cr₂O₇(ac)/H⁺ en tibio las muestras 1 y 2 cambian de naranja a verde azulado y la muestra 3 permanece naranja; con el reactivo de Fehling en baño María solo la muestra 1 forma un precipitado rojo ladrillo de Cu₂O(s). ¿Qué compuesto contiene cada muestra?",
+     "opciones": {
+      "A": "La muestra 1 es 2-propanol, la muestra 2 es propanal y la muestra 3 es propanona, porque solo los alcoholes reducen al ion cúprico en caliente.",
+      "B": "La muestra 1 es propanona, la muestra 2 es 2-propanol y la muestra 3 es propanal, porque las cetonas dan precipitado rojo con el reactivo de Fehling.",
+      "C": "La muestra 1 es propanal, la muestra 2 es propanona y la muestra 3 es 2-propanol, porque los alcoholes secundarios no reaccionan con dicromato ácido.",
+      "D": "La muestra 1 es propanal, la muestra 2 es 2-propanol y la muestra 3 es propanona, porque el aldehído se oxida con ambos reactivos y la cetona con ninguno."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El propanal (aldehído) se oxida fácilmente a ácido propanoico tanto con dicromato ácido como con oxidantes suaves como el reactivo de Fehling (muestra 1). El 2-propanol (alcohol secundario) se oxida a propanona con dicromato ácido pero no reacciona con Fehling (muestra 2), y la propanona (cetona) no se oxida con ninguno de los dos reactivos (muestra 3).",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.4",
+     "grado": 11,
+     "indicador": "9.4. Predice si la oxidación de un alcohol produce un aldehído, una cetona o un ácido carboxílico y diferencia aldehídos de cetonas por su comportamiento frente a oxidantes.",
+     "evidencia": "Historieta científica y hoja de ecuaciones de oxidación de alcoholes con interpretación de las pruebas de Tollens y Fehling"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.4",
+      "CON:quimica/reacciones-organicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Cuando una botella de vino queda destapada varios días, el etanol, CH₃CH₂OH(ac), se oxida en dos etapas hasta convertirse en vinagre. Nombra el compuesto intermedio y el producto orgánico final, indica a qué familia (grupo funcional) pertenece cada uno, explica por qué el etanol puede experimentar ambas oxidaciones según su estructura y señala cómo diferenciarías experimentalmente al compuesto intermedio de una cetona como la propanona usando el reactivo de Tollens o el de Fehling.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "El etanol es un alcohol primario porque el carbono unido al grupo –OH tiene dos hidrógenos unidos; por eso puede perder un hidrógeno para oxidarse primero a etanal (acetaldehído), que es un aldehído, y luego oxidarse de nuevo a ácido etanoico (ácido acético), que es un ácido carboxílico. El etanal se diferencia de la propanona porque el aldehído tiene un hidrógeno unido al carbono carbonílico (–CHO) y se oxida con el reactivo de Tollens formando un espejo de plata, Ag(s), o con el de Fehling dando un precipitado rojo ladrillo de Cu₂O(s), mientras que la cetona no reacciona.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra el intermedio como etanal (o acetaldehído, familia de los aldehídos) y el producto final como ácido etanoico (o ácido acético, familia de los ácidos carboxílicos).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la doble oxidación con que el etanol es un alcohol primario cuyo carbono con el grupo –OH posee dos átomos de hidrógeno.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que el etanal da prueba positiva con Tollens (espejo de plata) o Fehling (precipitado rojo ladrillo) porque los aldehídos se oxidan a carboxilato y las cetonas como la propanona no reaccionan.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde la oxidación de un alcohol primario con la de uno secundario y afirma que el etanol forma una cetona.",
+        "ejemplo": "El etanol primero se oxida a propanona o etanona, que es una cetona, y después se vuelve ácido acético.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Atribuye prueba positiva de Tollens o Fehling tanto a aldehídos como a cetonas por tener ambos el grupo carbonilo.",
+        "ejemplo": "Tanto el etanal como la propanona forman el espejo de plata con Tollens porque los dos tienen el enlace doble C=O.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Por ser un alcohol primario, el etanol se oxida primero al aldehído etanal y luego al ácido carboxílico ácido etanoico. A diferencia de las cetonas, el etanal posee un hidrógeno unido al carbono carbonílico y se oxida frente a los reactivos de Tollens o de Fehling.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-organicas",
+     "nombre": "Reacciones orgánicas características",
+     "definicion": "Sustitución, adición, eliminación y oxidación (p. ej. de alcoholes) según el grupo funcional, usadas también para identificarlos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.4",
+     "grado": 11,
+     "indicador": "9.4. Predice si la oxidación de un alcohol produce un aldehído, una cetona o un ácido carboxílico y diferencia aldehídos de cetonas por su comportamiento frente a oxidantes.",
+     "evidencia": "Historieta científica y hoja de ecuaciones de oxidación de alcoholes con interpretación de las pruebas de Tollens y Fehling"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.5",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el laboratorio se calienta ácido butanoico con metanol y unas gotas de ácido sulfúrico concentrado para producir un compuesto con aroma de manzana. ¿Cuál opción presenta el nombre IUPAC del compuesto aromático, el subproducto que se forma y la razón por la que la reacción alcanza un equilibrio químico?",
+     "opciones": {
+      "A": "Butanoato de metilo y agua, porque el agua formada hidroliza al éster al mismo tiempo que se sintetiza.",
+      "B": "Metanoato de butilo y agua, porque la cadena del alcohol da la raíz del nombre y la reacción es reversible.",
+      "C": "Butanoato de metilo e hidrógeno gaseoso, porque los grupos hidroxilo liberan gas que frena la reacción directa.",
+      "D": "Metanoato de butilo y oxígeno, porque al consumirse el catalizador ácido la reacción se detiene por completo."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/esterificacion-e-hidrolisis/1",
+      "D": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El ácido butanoico aporta la cadena de cuatro carbonos (butanoato) y el metanol aporta el grupo metilo, formando butanoato de metilo y agua (H₂O). La esterificación de Fischer es reversible porque el agua acumulada reacciona con el éster (hidrólisis ácida) hasta igualar las velocidades directa e inversa.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.5",
+     "grado": 11,
+     "indicador": "9.5. Escribe las ecuaciones de esterificación e hidrólisis de ésteres, nombra los productos y explica por qué la esterificación es una reacción reversible.",
+     "evidencia": "Informe técnico con ecuaciones de esterificación e hidrólisis y análisis del rendimiento de la síntesis observada"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.5",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo estudia la síntesis de etanoato de etilo a temperatura constante en tres matraces cerrados y registra los moles en el equilibrio:\n- Matraz 1: mezcla inicial de 1.0 mol de ácido etanoico + 1.0 mol de etanol (con H₂SO₄); en el equilibrio hay 0.67 mol de éster.\n- Matraz 2: mezcla inicial de 1.0 mol de ácido etanoico + 3.0 mol de etanol (con H₂SO₄); en el equilibrio hay 0.90 mol de éster.\n- Matraz 3: mezcla inicial de 1.0 mol de ácido etanoico + 1.0 mol de etanol (sin H₂SO₄); tras 2 horas solo hay 0.05 mol de éster.\n¿Qué conclusión se deduce de estos datos?",
+     "opciones": {
+      "A": "El exceso de etanol desplaza la constante de equilibrio a un valor tres veces mayor que en el primer matraz.",
+      "B": "El ácido sulfúrico se consume como reactivo estequiométrico para atrapar los protones y formar más éster.",
+      "C": "El exceso de etanol desplaza el equilibrio hacia los productos y el ácido sulfúrico acelera la llegada al equilibrio.",
+      "D": "Sin ácido sulfúrico la reacción es irreversible, pero alcanza un rendimiento máximo de apenas cinco por ciento."
+     },
+     "correcta": "C",
+     "distractores": {
+      "B": "DIF:quimica/esterificacion-e-hidrolisis/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aumentar la concentración de uno de los reactivos (etanol en el matraz 2) desplaza la posición de equilibrio hacia la formación de más éster y agua, sin cambiar la constante de equilibrio. El ácido sulfúrico actúa como catalizador: disminuye la energía de activación para alcanzar rápido el equilibrio, como se ve al comparar los matraces 1 y 3.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.5",
+     "grado": 11,
+     "indicador": "9.5. Escribe las ecuaciones de esterificación e hidrólisis de ésteres, nombra los productos y explica por qué la esterificación es una reacción reversible.",
+     "evidencia": "Informe técnico con ecuaciones de esterificación e hidrólisis y análisis del rendimiento de la síntesis observada"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U9-9.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U9-9.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U9-9.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U9-9.5",
+      "CON:quimica/esterificacion-e-hidrolisis"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "El etanoato de propilo (aroma de pera) se calienta en dos tubos separados: en el tubo 1 con agua y ácido clorhídrico diluido, y en el tubo 2 con disolución acuosa de hidróxido de sodio (NaOH). Escribe o nombra los productos orgánicos que se obtienen en cada tubo y explica por qué la hidrólisis en el tubo 1 es reversible mientras que la del tubo 2 es prácticamente irreversible.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En el tubo 1 (hidrólisis ácida) se obtienen ácido etanoico y propan-1-ol (alcohol propílico). En el tubo 2 (hidrólisis básica o saponificación) se obtienen etanoato de sodio (una sal carboxilato) y propan-1-ol. La reacción del tubo 1 es reversible porque el ácido carboxílico y el alcohol formados pueden volver a condensarse en medio ácido para regenerar el éster. En cambio, en el tubo 2 el medio básico desprotona el ácido formando el ion etanoato (CH₃COO⁻), que tiene carga negativa y no sufre el ataque nucleofílico del alcohol, por lo que la reacción es irreversible.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra o escribe correctamente los productos de la hidrólisis ácida en el tubo 1: ácido etanoico (o ácido acético) y propan-1-ol (o propanol).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra o escribe correctamente los productos de la hidrólisis básica en el tubo 2: etanoato de sodio (o ion etanoato/acetato de sodio) y propan-1-ol.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que la hidrólisis ácida es reversible porque el ácido carboxílico y el alcohol pueden reesterificarse, mientras que en la básica se forma la sal (ion carboxilato) estabilizada que no reacciona con el alcohol.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Escribe el ácido carboxílico libre (ácido etanoico) como producto final en el medio básico (tubo 2) en lugar de la sal carboxilato.",
+        "ejemplo": "En ambos tubos se forma ácido etanoico y propanol, solo que con NaOH ocurre más rápido.",
+        "dificultad": "DIF:quimica/esterificacion-e-hidrolisis/2"
+       },
+       {
+        "descripcion": "Invierte las cadenas del éster y nombra ácido propanoico y etanol como productos de la hidrólisis.",
+        "ejemplo": "El etanoato de propilo se rompe dando etanol y ácido propanoico.",
+        "dificultad": "DIF:quimica/esterificacion-e-hidrolisis/1"
+       }
+      ]
+     },
+     "retroalimentacion": "En la hidrólisis ácida del etanoato de propilo se establece un equilibrio con ácido etanoico y propan-1-ol. En la hidrólisis básica con NaOH se forma propan-1-ol y etanoato de sodio; como el ion carboxilato no es atacado por el alcohol, el proceso es irreversible.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U9-9.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U9-9.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/esterificacion-e-hidrolisis",
+     "nombre": "Esterificación e hidrólisis",
+     "definicion": "Ácidos carboxílicos y alcoholes forman ésteres por condensación; ésteres y amidas se hidrolizan en medio ácido o básico.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U9-9.5",
+     "grado": 11,
+     "indicador": "9.5. Escribe las ecuaciones de esterificación e hidrólisis de ésteres, nombra los productos y explica por qué la esterificación es una reacción reversible.",
+     "evidencia": "Informe técnico con ecuaciones de esterificación e hidrólisis y análisis del rendimiento de la síntesis observada"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U9-9.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  }
+ ]
+}

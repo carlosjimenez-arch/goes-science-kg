@@ -1,0 +1,2837 @@
+{
+ "lote": "r1-q11a_experto-quimica_1",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.1",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Los contactos del conector de un cargador de teléfono son de cobre cubierto con una capa muy delgada de oro. ¿Cuál es la razón principal para recubrirlos de oro?",
+     "opciones": {
+      "A": "El oro conduce la electricidad mejor que cualquier otro metal, así que la carga pasa más rápido.",
+      "B": "El oro es muy maleable y se extiende en capas finísimas, así que se gasta poco metal caro.",
+      "C": "El oro no forma óxido con el aire húmedo, así que el contacto conserva una resistencia baja.",
+      "D": "El oro es muy denso y pesado, así que el conector queda firme y bien sujeto en el puerto."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/ciencia-de-materiales/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El oro no se oxida ni se corroe con el aire húmedo, así que su superficie sigue conduciendo después de miles de conexiones; el cobre y el hierro forman óxidos que conducen mal. No es el mejor conductor: la plata y el cobre conducen más. Que sea maleable explica que la capa pueda ser delgada, no que se elija el oro.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.1",
+     "grado": 11,
+     "indicador": "1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "evidencia": "Tabla comparativa de propiedades de cuatro metales y aleaciones de la industria electrónica con justificación de su uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.1",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una ficha técnica da estas temperaturas de fusión (valores aproximados de la tabla de referencia): estaño, 232 °C; plata, 962 °C; cobre, 1085 °C; soldadura sin plomo de 96.5 % de estaño, 3 % de plata y 0.5 % de cobre, de 217 °C a 220 °C. ¿Qué conclusión respaldan estos datos?",
+     "opciones": {
+      "A": "La soldadura funde a una temperatura intermedia, cercana al promedio de sus tres metales.",
+      "B": "La soldadura funde por debajo del estaño puro, aunque la plata y el cobre funden mucho más alto.",
+      "C": "La soldadura funde igual que el estaño puro, porque casi toda la aleación es estaño.",
+      "D": "La soldadura funde por encima del estaño, porque la plata y el cobre la hacen más resistente."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/ciencia-de-materiales/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los datos muestran que la aleación funde entre 217 °C y 220 °C, por debajo de los 232 °C del estaño y muy lejos de un promedio. Una aleación no hereda el promedio de las propiedades de sus metales; esa temperatura baja es justo lo que permite soldar componentes sin dañarlos con el calor.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.1",
+     "grado": 11,
+     "indicador": "1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "evidencia": "Tabla comparativa de propiedades de cuatro metales y aleaciones de la industria electrónica con justificación de su uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.1",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el aire húmedo de El Salvador, ¿qué problema aparecería si los contactos de un cargador se fabricaran de hierro en lugar de cobre cubierto de oro? En 2 o 3 oraciones: nombra el problema, explica por qué afecta la carga del teléfono y explica por qué no ocurre con el oro.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El hierro se oxida con el oxígeno y la humedad, y la herrumbre que cubre el contacto conduce muy mal: la resistencia sube, la carga se vuelve lenta o se interrumpe y el contacto se calienta. El oro no se oxida, así que su superficie sigue conduciendo. Además, el hierro conduce varias veces menos que el cobre.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Los contactos de hierro se oxidarían con la humedad y se cubrirían de herrumbre. Esa capa de óxido conduce muy mal, así que la resistencia del contacto sube y el teléfono cargaría lento, de forma intermitente o el conector se calentaría. Con el oro no pasa porque no reacciona con el oxígeno ni con la humedad, y su superficie sigue limpia y conductora. Además, el hierro conduce varias veces menos que el cobre.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra la oxidación o corrosión del hierro (herrumbre) por el oxígeno y la humedad como el problema.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la capa de óxido con un mal contacto eléctrico (más resistencia) y una consecuencia en la carga: lenta, intermitente o con calentamiento.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que el oro no se oxida ni se corroe con el aire húmedo, por lo que su superficie sigue conduciendo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Agrega que el hierro conduce la electricidad bastante menos que el cobre.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el hierro no conduce la electricidad.",
+        "ejemplo": "No cargaría nada porque el hierro no es conductor, solo el cobre y el oro lo son.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Atribuye la ventaja del oro a que sería el mejor conductor y no menciona la corrosión.",
+        "ejemplo": "Con hierro cargaría más lento, porque el oro es el metal que mejor conduce la electricidad.",
+        "dificultad": "DIF:quimica/ciencia-de-materiales/1"
+       },
+       {
+        "descripcion": "Explica el problema por fusión o desgaste y no por corrosión.",
+        "ejemplo": "El hierro se derretiría con el calor de la carga y el contacto se deformaría.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.1",
+     "grado": 11,
+     "indicador": "1.1. Identifica propiedades de los principales metales y aleaciones utilizadas en la industria electrónica.",
+     "evidencia": "Tabla comparativa de propiedades de cuatro metales y aleaciones de la industria electrónica con justificación de su uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.2-v3/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.2-v3/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.2-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.2-v3",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una bujía de motor, el electrodo central de metal va rodeado por una pieza de cerámica de alúmina (óxido de aluminio). ¿Por qué se usa ese cerámico y no un metal para rodear el electrodo?",
+     "opciones": {
+      "A": "Porque es tenaz y no se quiebra con las vibraciones, ya que sus capas de iones se deslizan sin romperse.",
+      "B": "Porque contiene aluminio y lleva la corriente hasta la punta, ya que conserva los electrones libres del metal.",
+      "C": "Porque se dilata mucho con el calor y sella el cilindro, ya que los cerámicos se expanden más que los metales.",
+      "D": "Porque aísla la corriente y aguanta mucho calor, ya que sus electrones quedan fijos en enlaces iónicos y covalentes."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La alúmina es un aislante eléctrico: en sus enlaces iónicos y covalentes no hay electrones libres, así que la chispa salta solo en la punta. Esos enlaces fuertes también le dan una temperatura de fusión muy alta. Que contenga aluminio no la hace metálica, y los cerámicos son frágiles y se dilatan poco.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.2-v3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.2-v3",
+     "grado": 11,
+     "indicador": "1.2. Relaciona las propiedades de los metales y los cerámicos con sus aplicaciones en la construcción, la industria y la vida cotidiana.",
+     "evidencia": "Organizador gráfico de aplicaciones de metales y cerámicos con los resultados de las pruebas de rayado, maleabilidad y conductividad que justifican cada uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.2-v3/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.2-v3/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.2-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.2-v3",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo. Rayado con la punta de un clavo de acero: el aluminio y la teja de barro quedan rayados; el azulejo esmaltado no (el trazo gris se borra con el dedo). Golpe suave con martillo: el aluminio y el alambre de hierro se aplanan; la teja y el azulejo se quiebran. Circuito con LED: enciende con los dos metales y no con los dos cerámicos. ¿Qué material respaldan los datos para cubrir una mesa de trabajo que no debe rayarse ni conducir la corriente?",
+     "opciones": {
+      "A": "El azulejo esmaltado, porque el clavo no lo raya y no deja pasar la corriente.",
+      "B": "El alambre de hierro, porque se aplana con el golpe en lugar de quebrarse.",
+      "C": "La teja de barro, porque no deja pasar la corriente del circuito con LED.",
+      "D": "El aluminio, porque es liviano y se deforma sin romperse con un golpe."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La mesa pide dos propiedades: resistir el rayado y no conducir. Solo el azulejo cumple las dos: el clavo no lo raya (el trazo gris es metal del clavo que se borra) y el LED no enciende. La teja tampoco conduce, pero se raya; los metales no se quiebran, pero conducen y se rayan.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.2-v3"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.2-v3",
+     "grado": 11,
+     "indicador": "1.2. Relaciona las propiedades de los metales y los cerámicos con sus aplicaciones en la construcción, la industria y la vida cotidiana.",
+     "evidencia": "Organizador gráfico de aplicaciones de metales y cerámicos con los resultados de las pruebas de rayado, maleabilidad y conductividad que justifican cada uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.2-v3"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.2-v3",
+      "CON:quimica/ciencia-de-materiales"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Gabriela dice: «El azulejo es blando, porque se quiebra cuando cae al piso; el clavo es duro, porque no se quiebra». En la prueba de rayado el clavo no rayó el esmalte del azulejo. En 2 o 3 oraciones: di si Gabriela tiene razón usando ese resultado, explica la diferencia entre dureza y fragilidad, y explica con la forma en que están unidas sus partículas por qué el metal se deforma y el cerámico se quiebra.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El esmalte es más duro que el clavo, porque resiste el rayado, pero es frágil: se rompe sin deformarse. En el metal, las capas de átomos se deslizan y el enlace metálico se mantiene; en el cerámico, los enlaces iónicos y covalentes son rígidos y, al desplazar las capas, se rompen o se enfrentan iones de igual carga, y aparece una grieta.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.2-v3"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Gabriela no tiene razón: el azulejo es más duro que el clavo, porque el clavo no logra rayar el esmalte. Dureza es resistir el rayado y fragilidad es romperse sin deformarse; el azulejo es duro pero frágil. En el metal las capas de átomos se deslizan y siguen unidas por los electrones compartidos, así que se dobla; en el cerámico los enlaces iónicos y covalentes no permiten ese deslizamiento, al mover una capa se rompen enlaces o se repelen iones de igual carga, y el material se agrieta.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Gabriela no tiene razón y usa el resultado del rayado: el azulejo es más duro que el clavo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Distingue dureza (resistencia al rayado) de fragilidad (romperse sin deformarse) o de tenacidad.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que en el metal las capas de átomos se deslizan sin que se pierda el enlace metálico.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Explica que en el cerámico los enlaces iónicos o covalentes no admiten el deslizamiento: se rompen o se enfrentan iones de igual carga.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que lo que se quiebra es blando.",
+        "ejemplo": "Sí tiene razón: el azulejo es más blando porque se rompió y el clavo no.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Toma el trazo gris del clavo como una raya en el azulejo.",
+        "ejemplo": "El clavo sí rayó el azulejo porque quedó una línea gris, así que el clavo es más duro.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la diferencia por el peso o el grosor y no por el enlace.",
+        "ejemplo": "El clavo no se quiebra porque es más pesado y grueso que el azulejo.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/ciencia-de-materiales",
+     "nombre": "Metales, cerámicas y materiales compuestos",
+     "definicion": "Relación entre estructura atómica y propiedades eléctricas, ópticas, térmicas y mecánicas de aleaciones, aceros, cerámicas y compuestos reforzados.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.2-v3",
+     "grado": 11,
+     "indicador": "1.2. Relaciona las propiedades de los metales y los cerámicos con sus aplicaciones en la construcción, la industria y la vida cotidiana.",
+     "evidencia": "Organizador gráfico de aplicaciones de metales y cerámicos con los resultados de las pruebas de rayado, maleabilidad y conductividad que justifican cada uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.4",
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "habilidad": "recordar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el fondo de un vaso desechable aparece un triángulo de flechas con el número 6 y las letras PS. ¿Qué información da ese código?",
+     "opciones": {
+      "A": "Que el vaso se puede reciclar hasta seis veces antes de que el material se deteriore.",
+      "B": "Que el vaso es de poliestireno, un polímero distinto de los marcados con los números 1 a 5.",
+      "C": "Que el vaso contiene un 6 % de plástico reciclado y el resto es plástico nuevo.",
+      "D": "Que el vaso tiene un nivel 6 de toxicidad en una escala que va del 1 al 7."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/estructura-y-propiedades-de-polimeros/2",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/2",
+      "D": "DIF:quimica/estructura-y-propiedades-de-polimeros/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El número del triángulo es el código de identificación de resina: dice de qué polímero está hecho el envase (6 es poliestireno). Sirve para separar plásticos en el acopio. No indica cuántas veces se recicla, ni su contenido reciclado, ni su toxicidad, ni garantiza que se recicle en el municipio.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+     "nombre": "Estructura y propiedades de los polímeros",
+     "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.4",
+     "grado": 11,
+     "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común.",
+     "evidencia": "Inventario clasificado de envases del entorno escolar por código de resina con gráfica de frecuencias"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.4",
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un grupo de ejemplo: un inventario de 100 envases del cafetín de la escuela dio, por código de resina: 1 (PET), 42; 2 (PEAD), 12; 3 (PVC), 0; 4 (PEBD), 8; 5 (PP), 20; 6 (PS), 15; 7 (otros), 3. ¿Qué conclusión respaldan los datos?",
+     "opciones": {
+      "A": "Los del código 7 son los más fáciles de reciclar, porque son los envases menos frecuentes.",
+      "B": "Como todos los envases son de plástico, basta un contenedor para los 100 envases.",
+      "C": "El PP es el más frecuente, porque casi todos los envases del cafetín llevan una tapa.",
+      "D": "El PET es el más frecuente; separar solo el código 1 recupera casi la mitad de los envases."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/estructura-y-propiedades-de-polimeros/2",
+      "B": "DIF:quimica/estructura-y-propiedades-de-polimeros/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El PET (código 1) suma 42 de 100 envases, más del doble que el PP (20), así que un contenedor solo para el código 1 recoge casi la mitad. Mezclar todo en un contenedor dificulta el reciclaje, porque cada polímero funde y se procesa distinto. El código no dice qué tan reciclable es un plástico.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+     "nombre": "Estructura y propiedades de los polímeros",
+     "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.4",
+     "grado": 11,
+     "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común.",
+     "evidencia": "Inventario clasificado de envases del entorno escolar por código de resina con gráfica de frecuencias"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.4",
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Óscar dice: «El vaso desechable de poliestireno es termoestable, porque es rígido». En 2 o 3 oraciones: di si Óscar tiene razón, explica qué diferencia hay entre las cadenas de un termoplástico y las de un termoestable y qué le pasa a cada uno al calentarlo, y da un ejemplo de objeto termoestable.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El poliestireno es termoplástico aunque sea rígido: sus cadenas están separadas y unidas solo por fuerzas intermoleculares, que se debilitan al calentar, así que se ablanda y se puede volver a moldear. En un termoestable las cadenas están unidas entre sí por enlaces covalentes (entrecruzadas): no se ablanda, se descompone. Ejemplos: mangos de ollas de baquelita y platos de melamina.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Óscar no tiene razón: el poliestireno es un termoplástico aunque sea rígido. En un termoplástico las cadenas están separadas y se atraen solo por fuerzas intermoleculares; al calentarlo esas fuerzas se vencen, se ablanda y se puede remoldear. En un termoestable las cadenas están unidas entre sí por enlaces covalentes formando una red; al calentarlo no se ablanda, sino que se quema o se descompone, como el mango de baquelita de una olla.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Óscar no tiene razón: el poliestireno es termoplástico y la rigidez no decide si un polímero es termoplástico o termoestable.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que en el termoplástico las cadenas están separadas, unidas por fuerzas intermoleculares, y que al calentarlo se ablanda y se puede remoldear.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que en el termoestable las cadenas están entrecruzadas por enlaces covalentes y que al calentarlo no se ablanda, sino que se descompone.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Da un ejemplo correcto de termoestable (baquelita, melamina, resina epóxica, caucho vulcanizado).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa la rigidez como criterio para clasificar.",
+        "ejemplo": "Sí, es termoestable porque es duro; las bolsas son termoplásticas porque son blandas.",
+        "dificultad": "DIF:quimica/estructura-y-propiedades-de-polimeros/3"
+       },
+       {
+        "descripcion": "Cree que al ablandar un termoplástico se rompen los enlaces de la cadena.",
+        "ejemplo": "Es termoplástico porque al calentarlo se rompen los enlaces entre los carbonos de la cadena y se derrite.",
+        "dificultad": "DIF:quimica/fuerzas-intermoleculares/1"
+       },
+       {
+        "descripcion": "Da como ejemplo de termoestable un envase con código de resina.",
+        "ejemplo": "No tiene razón; un termoestable es la botella de PET, que aguanta el calor.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/estructura-y-propiedades-de-polimeros",
+     "nombre": "Estructura y propiedades de los polímeros",
+     "definicion": "Cristalinidad, tacticidad, entrecruzamiento y fuerzas intermoleculares explican resistencia, densidad y comportamiento termoplástico o termoestable.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.4",
+     "grado": 11,
+     "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común.",
+     "evidencia": "Inventario clasificado de envases del entorno escolar por código de resina con gráfica de frecuencias"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.8",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "La etiqueta de un protector solar dice que sus partículas de óxido de zinc miden 3 × 10⁻⁸ m. Con el criterio de nanomaterial (partículas o estructuras de 1 nm a 100 nm en al menos una dimensión), ¿es un nanomaterial?",
+     "opciones": {
+      "A": "Sí, porque 3 × 10⁻⁸ m equivale a 30 nm, que está dentro del intervalo de 1 nm a 100 nm.",
+      "B": "No, porque 3 × 10⁻⁸ m equivale a 300 nm, que está por encima del límite de 100 nm.",
+      "C": "No, porque 3 × 10⁻⁸ m equivale a 0.03 nm, que es incluso menor que el tamaño de un átomo.",
+      "D": "Sí, porque cualquier partícula que no se ve a simple vista ya está en la escala nanométrica."
+     },
+     "correcta": "A",
+     "distractores": {
+      "D": "DIF:quimica/nanomateriales/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Como 1 nm = 1 × 10⁻⁹ m, 3 × 10⁻⁸ m = 30 × 10⁻⁹ m = 30 nm, dentro del intervalo de 1 nm a 100 nm. No basta con que algo sea invisible a simple vista: una bacteria mide alrededor de 1 µm (1000 nm) y no es nanométrica.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.8",
+     "grado": 11,
+     "indicador": "1.8. Explica el concepto de nanomaterial en función del tamaño de su partícula o estructura.",
+     "evidencia": "Escala comparativa de tamaños en notación científica con cálculo de la relación superficie-volumen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.8",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de la hoja de cálculo de un grupo de ejemplo: un cubo se divide en cubitos iguales y se calcula la relación superficie-volumen (S/V) de cada cubito. Arista 1 cm: S/V = 6 cm⁻¹. Arista 1 mm (0.1 cm): S/V = 60 cm⁻¹. Arista 1 µm (0.0001 cm): S/V = 60 000 cm⁻¹. Siguiendo la misma tendencia, ¿cuál es la S/V, en cm⁻¹, de cubitos de 10 nm (0.000001 cm) de arista? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 6000000,
+     "tolerancia": 0,
+     "unidad": "cm⁻¹",
+     "retroalimentacion": "En la tabla, cada vez que la arista se divide entre 10, la S/V se multiplica por 10: es inversamente proporcional a la arista (S/V = 6/a). De 1 µm a 10 nm la arista se divide entre 100, así que la S/V pasa de 60 000 cm⁻¹ a 6 000 000 cm⁻¹ (6 × 10⁶ cm⁻¹).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.8",
+     "grado": 11,
+     "indicador": "1.8. Explica el concepto de nanomaterial en función del tamaño de su partícula o estructura.",
+     "evidencia": "Escala comparativa de tamaños en notación científica con cálculo de la relación superficie-volumen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.8",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un anillo de oro no reacciona con el aire, pero nanopartículas de oro de unos 3 nm aceleran la reacción del monóxido de carbono con el oxígeno. En 2 o 3 oraciones, explica esta diferencia: compara qué fracción de los átomos de oro está en la superficie en cada caso, explica por qué importa que un átomo esté en la superficie y di si el oro cambió de sustancia.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Al reducir el tamaño crece la relación superficie-volumen: en el anillo casi todos los átomos están en el interior, y en una partícula de 3 nm una parte grande está en la superficie. Esos átomos tienen menos vecinos, quedan expuestos y pueden interactuar con otras moléculas. Sigue siendo oro: lo que cambia con el tamaño son sus propiedades.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En el anillo casi todos los átomos de oro están en el interior y muy pocos en la superficie, mientras que en una partícula de 3 nm una fracción grande de los átomos queda en la superficie, porque la relación superficie-volumen es enorme. Los átomos de la superficie tienen menos vecinos y quedan expuestos, así que pueden unirse a las moléculas de CO y O₂ y ayudar a que reaccionen. El oro sigue siendo el mismo elemento; lo que cambia con el tamaño son sus propiedades.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Compara la fracción de átomos en la superficie: muy pequeña en el anillo y grande en la nanopartícula (o lo relaciona con una relación superficie-volumen mucho mayor).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que los átomos de la superficie están expuestos o tienen menos vecinos y por eso pueden interactuar con las moléculas que reaccionan.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Dice que el oro no cambió de sustancia ni de elemento: cambian sus propiedades con el tamaño.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Menciona que a esa escala también cambian otras propiedades, como el color o la estructura electrónica.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el tamaño no cambia las propiedades y busca otra causa.",
+        "ejemplo": "El oro nano debe estar mezclado con otra sustancia que es la que reacciona, porque el oro siempre es igual.",
+        "dificultad": "DIF:quimica/nanomateriales/2"
+       },
+       {
+        "descripcion": "Cree que al dividir el material la superficie total no cambia.",
+        "ejemplo": "Hay la misma cantidad de oro y la misma superficie, solo que repartida en partículas pequeñas.",
+        "dificultad": "DIF:quimica/nanomateriales/3"
+       },
+       {
+        "descripcion": "Cree que a escala nano el oro se vuelve otra sustancia.",
+        "ejemplo": "A ese tamaño el oro ya no es oro, se convierte en un compuesto reactivo.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.8",
+     "grado": 11,
+     "indicador": "1.8. Explica el concepto de nanomaterial en función del tamaño de su partícula o estructura.",
+     "evidencia": "Escala comparativa de tamaños en notación científica con cálculo de la relación superficie-volumen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.9/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.9/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.9",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un protector solar con partículas grandes de óxido de zinc deja una capa blanca en la piel; uno con nanopartículas del mismo óxido se ve transparente y sigue protegiendo de la radiación ultravioleta. ¿Qué explica la diferencia?",
+     "opciones": {
+      "A": "A escala nano el óxido de zinc se disuelve en la crema, así que ya no hay partículas sólidas que se vean.",
+      "B": "Las nanopartículas ya no absorben la radiación ultravioleta, así que solo bloquean la luz visible del sol.",
+      "C": "Son mucho menores que la longitud de onda de la luz visible y casi no la dispersan, pero absorben ultravioleta.",
+      "D": "Las nanopartículas atraviesan la piel y quedan debajo de ella, así que la capa protectora deja de verse."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Las partículas grandes dispersan toda la luz visible y por eso se ven blancas. Las de pocas decenas de nanómetros son mucho menores que la longitud de onda de la luz visible (400–700 nm) y la dispersan poco, así que la crema se ve transparente, pero el óxido de zinc sigue absorbiendo el ultravioleta. Siguen siendo partículas sólidas en la superficie de la piel.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.9",
+     "grado": 11,
+     "indicador": "1.9. Ejemplifica las principales aplicaciones de los nanomateriales.",
+     "evidencia": "Texto divulgativo sobre una aplicación de los nanomateriales con análisis de beneficios y riesgos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.9/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.9/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.9/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.9",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Datos de un ensayo de ejemplo con agua de un pozo. Bacterias coliformes por cada 100 mL: agua sin filtrar, 1 200; después de un filtro de cerámica sin plata, 60; después de un filtro de cerámica con nanopartículas de plata, no se detectan. Plata en el agua filtrada: filtro sin plata, no se detecta; filtro con nanopartículas, 20 µg/L. ¿Qué conclusión respaldan los datos?",
+     "opciones": {
+      "A": "La nanoplata elimina todas las bacterias, así que la cerámica del filtro no aporta nada al resultado.",
+      "B": "Los dos filtros reducen las bacterias, solo el de nanoplata llega a no detectarlas y libera algo de plata.",
+      "C": "El filtro de nanoplata no tiene riesgos, porque la plata es un metal noble que no pasa al agua filtrada.",
+      "D": "Los dos filtros funcionan igual de bien, porque pasar de 1 200 a 60 o a cero bacterias es casi lo mismo."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La cerámica sola retiene el 95 % de las bacterias (de 1 200 a 60) y la plata elimina las que quedan, pero 60 coliformes por 100 mL todavía hacen el agua insegura para beber. A la vez, el filtro con nanoplata libera plata al agua (20 µg/L): es un beneficio con un costo que hay que vigilar.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.9",
+     "grado": 11,
+     "indicador": "1.9. Ejemplifica las principales aplicaciones de los nanomateriales.",
+     "evidencia": "Texto divulgativo sobre una aplicación de los nanomateriales con análisis de beneficios y riesgos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.9/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U1-1.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U1-1.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U1-1.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U1-1.9",
+      "CON:quimica/nanomateriales"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una alcaldía piensa repartir filtros de cerámica con nanopartículas de plata en un cantón que toma agua de pozo. En 2 o 3 oraciones: di si recomiendas usarlos, explica un beneficio con la razón química de por qué la plata a escala nano funciona, nombra un riesgo o una limitación, y propone una medida para reducirlo.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los filtros pueden recomendarse con condiciones: la nanoplata libera iones de plata que dañan a las bacterias y, por su gran superficie, los libera con más eficacia que un trozo de plata. Riesgos y límites: la plata pasa al agua y al ambiente, el filtro pierde efecto con el tiempo y no quita contaminantes disueltos como el arsénico. Medidas: análisis periódicos y reemplazo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U1-1.9"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Sí los recomiendo, con condiciones. Las nanopartículas de plata tienen mucha superficie expuesta y liberan iones de plata que dañan a las bacterias que la cerámica no retuvo, así que el agua sale con muchas menos bacterias. El riesgo es que algo de plata pasa al agua y al ambiente, y con el uso el filtro pierde plata y eficacia; además no elimina contaminantes disueltos como el arsénico. Propongo analizar el agua filtrada cada cierto tiempo y cambiar los filtros cuando lo indique el fabricante, recogiendo los usados.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Da una recomendación clara (sí, no o sí con condiciones) coherente con lo que argumenta.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica el beneficio con química: la plata libera iones que dañan a las bacterias, y la gran superficie de las nanopartículas lo favorece.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Nombra un riesgo o una limitación concreta: liberación de plata al agua o al ambiente, pérdida de eficacia con el tiempo, o que no elimina contaminantes disueltos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Propone una medida concreta y relacionada con el riesgo nombrado (análisis del agua, reemplazo de filtros, recolección de los usados).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que no hay riesgos porque la plata es un metal noble.",
+        "ejemplo": "Sí, sin problema: la plata no se oxida ni se disuelve, así que no pasa nada al agua.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Rechaza la tecnología solo porque es nano, sin argumento químico.",
+        "ejemplo": "No, porque todo lo que es nanotecnología es tóxico y peligroso para la salud.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que el filtro funciona porque sus poros son nanométricos y atrapan todo.",
+        "ejemplo": "Sí, porque los poros son de nanómetros y no dejan pasar bacterias, virus ni químicos.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U1-1.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/nanomateriales",
+     "nombre": "Nanomateriales y manufactura molecular",
+     "definicion": "Materiales de 1 a 100 nm con propiedades dependientes del tamaño, y fabricación molecular controlada de nanotubos, sensores y catalizadores.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U1-1.9",
+     "grado": 11,
+     "indicador": "1.9. Ejemplifica las principales aplicaciones de los nanomateriales.",
+     "evidencia": "Texto divulgativo sobre una aplicación de los nanomateriales con análisis de beneficios y riesgos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U1-1.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.1",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la polimerización del cloroeteno (CH₂=CHCl) iniciada con un radical libre (R•), se distinguen las etapas de iniciación, propagación y terminación. ¿Cuál de las siguientes ecuaciones representa un paso de la etapa de propagación y muestra la unidad repetitiva correcta que se añade a la cadena?",
+     "opciones": {
+      "A": "R-CH₂-CHCl• + CH₂=CHCl → R-CH₂-CHCl-CH₂-CHCl•, donde la cadena crece con enlaces simples y el radical pasa al extremo.",
+      "B": "R-CH₂-CHCl• + CH₂=CHCl → R-CH₂-CHCl-CH=CH• + HCl, porque al unirse cada monómero se libera ácido clorhídrico.",
+      "C": "R-CH=CHCl• + CH₂=CHCl → R-CH=CHCl-CH=CHCl•, donde la cadena conserva los enlaces dobles originales del monómero.",
+      "D": "2 R-CH₂-CHCl• → R-CH₂-CHCl-CHCl-CH₂-R, porque dos radicales en crecimiento se unen y alargan la cadena polimérica."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/polimerizacion/3",
+      "C": "DIF:quimica/polimerizacion/2",
+      "D": "DIF:quimica/polimerizacion/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la propagación, el radical de la cadena en crecimiento se adiciona al enlace doble C=C de un nuevo monómero: el enlace π se rompe para formar un nuevo enlace simple C-C y el electrón desapareado pasa al carbono terminal sin eliminar átomos. La unión de dos radicales corresponde a la etapa de terminación.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.1",
+     "grado": 11,
+     "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido.",
+     "evidencia": "Modelo físico de polimerización con ecuaciones de las tres etapas y tabla monómero-polímero-uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.1",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo compara tres polímeros vinílicos de fórmula general -[CH₂-CHX]ₙ- a 28 °C: el polietileno (X = -H, Tg = -120 °C), el policloruro de vinilo sin plastificante (X = -Cl, Tg = 82 °C) y el poliestireno (X = -C₆H₅, Tg = 100 °C). Con base en estos datos y la estructura del sustituyente X, ¿qué relación explica cuál sirve mejor para tuberías rígidas de drenaje?",
+     "opciones": {
+      "A": "El policloruro de vinilo, porque el enlace polar C-Cl intensifica las fuerzas dipolo-dipolo entre cadenas y eleva la Tg por encima de 28 °C.",
+      "B": "El polietileno, porque al tener el sustituyente -H más pequeño sus cadenas mantienen enlaces dobles que dan la mayor rigidez a 28 °C.",
+      "C": "El poliestireno, porque su anillo bencénico forma puentes de hidrógeno entre las cadenas y le da flexibilidad sin quebrarse al golpearlo.",
+      "D": "Cualquiera de los tres por igual, porque todos provienen de monómeros vinílicos por adición y comparten el mismo esqueleto de carbonos."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/polimerizacion/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "A 28 °C, un polímero con Tg mayor que la temperatura ambiente se encuentra en estado vítreo y rígido. En el PVC (X = -Cl), la polaridad del enlace C-Cl genera atracciones dipolo-dipolo entre cadenas que restringen su movimiento, elevan la Tg a 82 °C y le dan la rigidez y resistencia química requeridas en tuberías.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.1",
+     "grado": 11,
+     "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido.",
+     "evidencia": "Modelo físico de polimerización con ecuaciones de las tres etapas y tabla monómero-polímero-uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.1",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "A partir del monómero estireno (CH₂=CH-C₆H₅) y un iniciador que genera radicales R•: 1) escribe la fórmula de la unidad repetitiva del poliestireno indicando qué le ocurre al enlace doble C=C durante la iniciación y la propagación, y cómo se detiene el crecimiento en la terminación; 2) explica por qué el sustituyente fenilo (-C₆H₅) hace que el poliestireno sólido sea más rígido a temperatura ambiente que el polietileno.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la polimerización por adición del estireno, el enlace π del grupo vinilo se abre en la iniciación y la propagación para formar enlaces simples C-C con unidad repetitiva -[CH₂-CH(C₆H₅)]ₙ-, y la cadena termina cuando dos radicales se unen. El grupo fenilo voluminoso impide el giro libre de la cadena, aumentando la rigidez frente al polietileno.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.1"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En la iniciación el radical R• ataca el enlace doble del estireno y forma R-CH₂-CH(C₆H₅)•. En la propagación este radical se adiciona a más moléculas de estireno abriendo sus enlaces dobles C=C para formar una cadena de enlaces simples con unidad repetitiva -[CH₂-CH(C₆H₅)]ₙ-, y en la terminación dos radicales se unen y detienen el crecimiento. El poliestireno es más rígido que el polietileno a temperatura ambiente porque el anillo fenilo (-C₆H₅) es un sustituyente muy voluminoso que restringe la rotación y el deslizamiento de las cadenas poliméricas, a diferencia de los átomos de hidrógeno pequeños del polietileno.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "escribe la unidad repetitiva -[CH₂-CH(C₆H₅)]ₙ- con enlaces simples en la cadena principal e indica que el enlace doble C=C se abre en la iniciación y la propagación",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "indica que en la terminación se unen dos especies con radicales libres (o se transfiere un átomo) desapareciendo el electrón desapareado",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "relaciona el mayor volumen o impedimento estérico del grupo fenilo (-C₆H₅) con la menor movilidad de las cadenas y la mayor rigidez frente al polietileno",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "mantiene el enlace doble C=C dentro de la unidad repetitiva del poliestireno o mete el anillo bencénico en la cadena principal en vez de dejarlo como sustituyente lateral",
+        "ejemplo": "La unidad repetitiva es -[CH=CH-C₆H₄]ₙ- porque el enlace doble del estireno se conserva en el polímero.",
+        "dificultad": "DIF:quimica/polimerizacion/2"
+       },
+       {
+        "descripcion": "afirma que en la propagación se libera H₂ o benceno como subproducto o que la iniciación une dos monómeros sin radical iniciador",
+        "ejemplo": "Al unirse dos moléculas de estireno en la propagación sale una molécula de H₂ para formar el enlace entre ellas.",
+        "dificultad": "DIF:quimica/polimerizacion/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.1",
+     "grado": 11,
+     "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido.",
+     "evidencia": "Modelo físico de polimerización con ecuaciones de las tres etapas y tabla monómero-polímero-uso"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.2",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para sintetizar un poliéster como el tereftalato de polietileno (PET), se hacen reaccionar ácido tereftálico, HOOC–C₆H₄–COOH, y etilenglicol, HO–CH₂CH₂–OH. ¿Por qué ambos monómeros necesitan dos grupos funcionales y qué sucede en cada unión entre ellos?",
+     "opciones": {
+      "A": "Para reaccionar en ambos extremos de cada monómero, formando enlaces éster y liberando una molécula de H₂O(l) por unión.",
+      "B": "Para sumar todos sus átomos sin perder ninguno, formando enlaces éster directos sin liberar moléculas pequeñas en la reacción.",
+      "C": "Para romper los dobles enlaces del anillo aromático, formando enlaces amida y liberando gas H₂(g) en cada unión nueva.",
+      "D": "Para neutralizar el ácido con el alcohol en un solo extremo, deteniendo el crecimiento al formar un dímero y liberar CO₂(g)."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/polimerizacion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la polimerización por condensación del PET, cada monómero tiene dos grupos funcionales (–COOH o –OH) para que la cadena siga creciendo por ambos extremos; en cada enlace éster formado entre un carboxilo y un hidroxilo se elimina una molécula de agua.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.2",
+     "grado": 11,
+     "indicador": "10.2. Representa la formación de un poliéster y una poliamida a partir de monómeros bifuncionales e identifica la molécula pequeña que se libera en cada unión.",
+     "evidencia": "Cuadro comparativo de polimerización por adición y condensación con las ecuaciones del PET y del nailon"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.2",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Sofía y Mateo elaboran un cuadro comparativo con datos teóricos de dos síntesis a partir de 1 mol de unidades repetitivas:\n• Polímero 1 (a partir de eteno, CH₂=CH₂, 28 g/mol): masa del polímero = 28 g por mol de monómero; subproducto = ninguno.\n• Polímero 2 (a partir de ácido hexanodioico, HOOC–(CH₂)₄–COOH, 146 g/mol, y 1,6-hexanodiamina, H₂N–(CH₂)₆–NH₂, 116 g/mol): masa de la unidad repetitiva = 226 g/mol; subproducto = 36 g/mol (2 moles de una molécula pequeña).\n¿Qué tipos de polimerización, enlace y molécula liberada corresponden al polímero 2?",
+     "opciones": {
+      "A": "Polimerización por adición, con enlaces éster y liberación de dos moles de metanol (CH₃OH) por unidad repetitiva.",
+      "B": "Polimerización por condensación, con enlaces éster y sin pérdida real de masa porque el agua queda unida a la cadena.",
+      "C": "Polimerización por condensación, con enlaces amida (nailon 6,6) y liberación de dos moles de agua (H₂O, 18 g/mol) por unidad.",
+      "D": "Polimerización por adición, con enlaces amida (nailon 6,6) y liberación de dos moles de amoníaco (NH₃, 17 g/mol) por unidad."
+     },
+     "correcta": "C",
+     "distractores": {
+      "B": "DIF:quimica/polimerizacion/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La suma de masas molares del diácido y la diamina es 146 + 116 = 262 g/mol; como la unidad repetitiva del nailon 6,6 tiene 226 g/mol, la diferencia de 36 g/mol corresponde a 2 moles de agua (18 g/mol cada uno) liberados al formar dos enlaces amida por condensación.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.2",
+     "grado": 11,
+     "indicador": "10.2. Representa la formación de un poliéster y una poliamida a partir de monómeros bifuncionales e identifica la molécula pequeña que se libera en cada unión.",
+     "evidencia": "Cuadro comparativo de polimerización por adición y condensación con las ecuaciones del PET y del nailon"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.2",
+      "CON:quimica/polimerizacion"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un intento de sintetizar un poliéster, alguien del grupo mezcla ácido etanoico (CH₃–COOH) con etanol (CH₃–CH₂–OH) en presencia de un catalizador ácido, en lugar de usar un diácido y un dialcohol. Explica en 2 o 3 oraciones si se formará un polímero de cadena larga o no, nombra qué tipo de compuesto e interacción ocurre y justifica por qué los monómeros de una polimerización por condensación deben ser bifuncionales, indicando qué molécula pequeña se libera en la unión.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "No se formará un polímero de cadena larga, sino únicamente una molécula pequeña de éster (etanoato de etilo) y una molécula de agua (H₂O) liberada por condensación. Como el ácido etanoico solo tiene un grupo carboxilo (–COOH) y el etanol solo tiene un grupo hidroxilo (–OH), al unirse se agotan los grupos reactivos y la reacción se detiene. Para formar un poliéster por condensación, ambos monómeros deben ser bifuncionales (tener dos grupos funcionales cada uno) para que los extremos libres sigan reaccionando y alarguen la cadena.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Indica que no se forma un polímero sino un éster simple (molécula pequeña) y nombra el agua (H₂O) como la molécula pequeña que se libera.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la detención del crecimiento de la cadena con que los reactivos son monofuncionales (solo tienen un grupo –COOH o –OH) y justifica que se requieren monómeros bifuncionales para que la cadena continúe creciendo por ambos extremos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Nombra correctamente el producto formado (etanoato de etilo o acetato de etilo) o contrasta con el caso del ácido tereftálico y etilenglicol en el PET.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que los monómeros se suman directamente formando una cadena larga sin perder átomos ni liberar agua.",
+        "ejemplo": "Sí se forma un polímero porque muchas moléculas de ácido etanoico y etanol se van sumando una tras otra sin perder nada.",
+        "dificultad": "DIF:quimica/polimerizacion/1"
+       },
+       {
+        "descripcion": "Cree que basta con tener muchas moléculas de reactivo en el vaso para que se forme una macromolécula, sin importar cuántos grupos funcionales tenga cada una.",
+        "ejemplo": "Como hay muchos moles de ácido y alcohol en la mezcla, se unen todos formando un poliéster largo y liberando agua.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Un ácido y un alcohol monofuncionales solo pueden reaccionar una vez entre sí para dar un éster simple y agua; para que la condensación continúe en ambos extremos y forme un poliéster como el PET, se necesitan monómeros bifuncionales (un diácido y un dialcohol).",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimerizacion",
+     "nombre": "Polimerización por adición y por condensación",
+     "definicion": "Formación de polímeros a partir de monómeros por adición (polietileno) o condensación con pérdida de molécula pequeña (PET, nailon).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.2",
+     "grado": 11,
+     "indicador": "10.2. Representa la formación de un poliéster y una poliamida a partir de monómeros bifuncionales e identifica la molécula pequeña que se libera en cada unión.",
+     "evidencia": "Cuadro comparativo de polimerización por adición y condensación con las ecuaciones del PET y del nailon"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.4",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un chalet escolar de San Salvador sustituyen los vasos de polietileno (código 4, PEBD) por vasos de ácido poliláctico (código 7, PLA), rotulados como «compostables». Si ambos vasos terminan enterrados en un botadero común a 28 °C y con poca humedad, ¿qué ocurrirá con su degradación?",
+     "opciones": {
+      "A": "El vaso de PLA se biodegradará en pocas semanas, porque sus enlaces éster se rompen rápido en cualquier suelo.",
+      "B": "El vaso de PLA tardará años en degradarse casi como el PEBD, porque su hidrólisis requiere calor y humedad de compostaje.",
+      "C": "El vaso de PEBD se degradará antes en dióxido de carbono y agua, porque la presión del suelo fragmenta sus cadenas.",
+      "D": "Ambos vasos pueden fundirse juntos en el reciclaje mecánico, porque los dos llevan el triángulo de identificación."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/polimeros-y-ambiente/1",
+      "C": "DIF:quimica/polimeros-y-ambiente/2",
+      "D": "DIF:quimica/polimeros-y-ambiente/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aunque el ácido poliláctico (PLA) tiene grupos éster hidrolizables, su biodegradación rápida requiere condiciones de compostaje industrial (cerca de 58 °C, humedad controlada y microorganismos). En un botadero común a temperatura ambiente, esa hidrólisis es muy lenta y el envase persiste durante años.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.4",
+     "grado": 11,
+     "indicador": "10.4. Clasifica plásticos según su código de identificación y su capacidad de degradación, y evalúa críticamente las ventajas y limitaciones de los polímeros biodegradables y del reciclaje.",
+     "evidencia": "Inventario escolar de plásticos por código de resina y propuesta justificada de separación y reciclaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.4",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo pesó los residuos plásticos de su instituto en una semana: código 1 (PET, botellas): 14.0 kg; código 2 (PEAD, galones): 4.5 kg; código 5 (PP, tapones): 2.5 kg; código 6 (PS espumado, platos con grasa): 3.0 kg; código 7 (empaques multicapa y PLA): 1.0 kg. Un centro de acopio local compra PET, PEAD y PP limpios y separados. ¿Qué propuesta aprovecha mejor estos datos?",
+     "opciones": {
+      "A": "Mezclar los 25.0 kg de plásticos en un solo contenedor para fundirlos juntos, ya que todos tienen código de resina.",
+      "B": "Enterrar el código 7 en el huerto escolar y entregar los códigos 1, 2, 5 y 6 revueltos al centro de acopio.",
+      "C": "Compactar los códigos 1 y 6 en una misma paca para reunir 17.0 kg y desechar los códigos 2 y 5 por su menor masa.",
+      "D": "Separar limpios los códigos 1, 2 y 5 para recuperar 21.0 kg reciclables y sustituir en el cafetín los platos de código 6."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:quimica/polimeros-y-ambiente/3",
+      "B": "DIF:quimica/polimeros-y-ambiente/1",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Separar por código los polímeros 1 (PET), 2 (PEAD) y 5 (PP) permite el reciclaje mecánico de 21.0 kg (84 % de la masa total) sin que se contaminen entre sí al fundirse. El poliestireno espumado sucio (código 6) y los multicapa (código 7) tienen baja viabilidad de reciclaje local, por lo que conviene reducir su uso en origen.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.4",
+     "grado": 11,
+     "indicador": "10.4. Clasifica plásticos según su código de identificación y su capacidad de degradación, y evalúa críticamente las ventajas y limitaciones de los polímeros biodegradables y del reciclaje.",
+     "evidencia": "Inventario escolar de plásticos por código de resina y propuesta justificada de separación y reciclaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.4",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Compara desde el punto de vista químico por qué el ácido poliláctico (PLA, código 7) puede biodegradarse mediante hidrólisis mientras que el polietileno de alta densidad (PEAD, código 2) resiste la biodegradación. Además, explica una limitación real del PLA cuando se desecha en un botadero común y por qué no debe mezclarse con envases de PET (código 1) en el reciclaje mecánico.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El PLA posee grupos éster en su cadena principal que sufren hidrólisis en presencia de agua, calor y enzimas, mientras que el PEAD solo tiene enlaces covalentes C-C y C-H apolares muy estables. Sin embargo, el PLA necesita compostaje industrial para degradarse rápido y, si se mezcla con el PET en el reciclaje mecánico, funde a menor temperatura y arruina el lote.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.4"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El ácido poliláctico (PLA) es un poliéster cuyos enlaces éster son polares y pueden romperse por reacción de hidrólisis con agua y enzimas microbianas, cortando las cadenas en moléculas pequeñas. En cambio, el polietileno (PEAD) tiene una cadena principal formada únicamente por enlaces simples carbono-carbono (C-C) y carbono-hidrógeno (C-H), que son apolares, muy estables e hidrofóbicos, por lo que las enzimas no los atacan fácilmente. Una limitación del PLA es que requiere condiciones de compostaje industrial (cerca de 60 °C y humedad alta) para hidrolizarse rápido; en un botadero común a temperatura ambiente tarda años en degradarse. Tampoco debe mezclarse con el PET (código 1) en el reciclaje mecánico porque tienen distinta estructura y punto de fusión: al fundirlos juntos, el PLA se degrada térmicamente y contamina el PET reciclado.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la biodegradabilidad del PLA con la ruptura por hidrólisis de sus enlaces éster y la resistencia del PEAD con la estabilidad y apolaridad de sus enlaces C-C y C-H.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que el PLA requiere condiciones específicas (temperatura elevada y humedad de compostaje industrial) que no se alcanzan en un botadero común.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que mezclar PLA (código 7) con PET (código 1) en el reciclaje mecánico contamina el lote por sus distintas propiedades térmicas y químicas al fundirse.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el PLA se biodegrada rápido en cualquier ambiente natural o botadero solo por ser un bioplástico.",
+        "ejemplo": "El PLA tiene enlaces éster y por eso al enterrarlo en cualquier basurero desaparece en un par de semanas sin dejar rastro.",
+        "dificultad": "DIF:quimica/polimeros-y-ambiente/1"
+       },
+       {
+        "descripcion": "Confunde la fragmentación física en microplásticos con la biodegradación química.",
+        "ejemplo": "El PEAD también se biodegrada cuando el sol lo quiebra en pedacitos invisibles en el botadero.",
+        "dificultad": "DIF:quimica/polimeros-y-ambiente/2"
+       },
+       {
+        "descripcion": "Sostiene que el PLA y el PET pueden fundirse juntos porque ambos son plásticos transparentes con código de resina.",
+        "ejemplo": "El PLA sí se puede echar con las botellas de PET porque los dos tienen el triángulo de reciclaje y se derriten igual.",
+        "dificultad": "DIF:quimica/polimeros-y-ambiente/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.4",
+     "grado": 11,
+     "indicador": "10.4. Clasifica plásticos según su código de identificación y su capacidad de degradación, y evalúa críticamente las ventajas y limitaciones de los polímeros biodegradables y del reciclaje.",
+     "evidencia": "Inventario escolar de plásticos por código de resina y propuesta justificada de separación y reciclaje"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.5",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Lucía analiza una muestra de arena de la bahía de Jiquilisco que contiene granos de cuarzo (densidad aproximada de 2.65 g/cm³) y fragmentos de polietileno de alta densidad, polipropileno, poliestireno y tereftalato de polietileno (densidades aproximadas de 0.95, 0.90, 1.05 y 1.38 g/cm³, respectivamente). Mezcla la arena con una disolución saturada de cloruro de sodio (densidad aproximada de 1.20 g/cm³), agita y deja reposar. ¿Qué resultado obtendrá en la superficie del líquido?",
+     "opciones": {
+      "A": "Flotarán el polietileno, el polipropileno y el poliestireno, mientras el tereftalato de polietileno se hundirá con la arena.",
+      "B": "Flotarán los cuatro polímeros por igual, porque todos los plásticos tienen la misma densidad menor que el agua salada.",
+      "C": "Flotarán solo el polietileno y el polipropileno, porque el poliestireno es rígido y los plásticos duros siempre se hunden.",
+      "D": "Se hundirán los cuatro polímeros junto con el cuarzo, porque la sal disuelta se adhiere a las cadenas poliméricas."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/estructura-y-propiedades-de-polimeros/1",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una salmuera de 1.20 g/cm³ flotan los polímeros con densidad menor que la del líquido (polietileno, polipropileno y poliestireno), mientras que el tereftalato de polietileno (1.38 g/cm³) y el cuarzo (2.65 g/cm³) se depositan en el fondo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.5",
+     "grado": 11,
+     "indicador": "10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "evidencia": "Informe de muestreo con conteo de microplásticos por tipo, fotografías y conclusión sobre su origen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.5",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo separó con salmuera y observó con lupa los microplásticos en 500 g de sedimento seco de dos sitios del río Acelhuate. En el sitio 1 (cerca de desagües domésticos) contaron 42 fibras flexibles, 8 fragmentos rígidos y 2 películas; en el sitio 2 (junto a un botadero de envases y bolsas) contaron 9 fibras, 38 fragmentos de bordes irregulares y 25 películas. ¿Qué conclusión respaldan estos datos sobre el origen y el efecto de estas partículas?",
+     "opciones": {
+      "A": "Ambos sitios reciben microplásticos primarios idénticos, los cuales se biodegradan rápido en el estómago de los peces de río.",
+      "B": "El sitio 1 recibe sobre todo fibras de lavado textil y el sitio 2 fragmentos por degradación de envases, que pueden ser ingeridos por la fauna acuática.",
+      "C": "El sitio 2 tiene más fragmentos porque el código de resina de los envases indica cuántas veces se dividen en el agua del río.",
+      "D": "El sitio 1 tiene menos fragmentos rígidos porque la luz solar convierte los envases duros en fibras textiles dentro del agua."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/estructura-y-propiedades-de-polimeros/1",
+      "C": "DIF:quimica/estructura-y-propiedades-de-polimeros/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El predominio de fibras en el sitio 1 apunta a aguas grises de lavado de ropa sintética, mientras que los fragmentos y películas del sitio 2 provienen de la fragmentación de envases y bolsas (microplásticos secundarios); al persistir en el agua, ambos tipos son ingeridos por peces y moluscos.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.5",
+     "grado": 11,
+     "indicador": "10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "evidencia": "Informe de muestreo con conteo de microplásticos por tipo, fotografías y conclusión sobre su origen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U10-10.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U10-10.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U10-10.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U10-10.5",
+      "CON:quimica/polimeros-y-ambiente"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Durante un muestreo en el estero de Jaltepeque, Mateo separa partículas de la arena usando una disolución saturada de sal y observa con lupa fragmentos irregulares de polietileno. En 2 o 3 oraciones: (1) explica por qué la salmuera permite separar estos microplásticos de la arena en función de la densidad, (2) explica cómo se originan estos microplásticos secundarios a partir de envases desechados y (3) describe un efecto que causan al ser ingeridos por moluscos o peces del estero.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "La salmuera saturada tiene una densidad cercana a 1.20 g/cm³, que es mayor que la del polietileno (aproximadamente 0.92–0.96 g/cm³) pero menor que la de los granos de arena, por lo que los fragmentos plásticos flotan y la arena se hunde. Estos microplásticos secundarios se forman cuando la radiación solar (fotodegradación) y el roce mecánico del agua y la arena rompen las cadenas poliméricas de bolsas o botellas grandes en fragmentos cada vez más pequeños y persistentes. En el estero, moluscos como los curiles y los peces los confunden con alimento, lo que les provoca obstrucción digestiva, falsa saciedad y transferencia de contaminantes en la red trófica.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la flotación de los fragmentos de polietileno y el hundimiento de la arena con la diferencia de densidades respecto a la salmuera.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica que los microplásticos secundarios se originan por la fragmentación física y degradación por luz solar de objetos plásticos más grandes.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Describe al menos un efecto dañino en la fauna acuática (ingestión por peces o moluscos, bloqueo del tracto digestivo, falsa saciedad o bioacumulación).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que todos los tipos de plástico tienen exactamente la misma densidad y flotan por igual sin importar su estructura química.",
+        "ejemplo": "Todos los plásticos flotan en el agua salada porque el plástico es una sola sustancia liviana que nunca se hunde.",
+        "dificultad": "DIF:quimica/estructura-y-propiedades-de-polimeros/1"
+       },
+       {
+        "descripcion": "Confunde la fragmentación en microplásticos con una biodegradación completa e inocua en el agua.",
+        "ejemplo": "El sol deshace las botellas en pedacitos que se disuelven en el agua y sirven de nutrientes a los peces.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "La separación aprovecha que el polietileno es menos denso que la salmuera saturada mientras que los silicatos de la arena son más densos; esos fragmentos provienen de plásticos mayores quebrados por el sol y el oleaje, y al no biodegradarse obstruyen el sistema digestivo de peces y moluscos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U10-10.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U10-10.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/polimeros-y-ambiente",
+     "nombre": "Polímeros y ambiente",
+     "definicion": "Biodegradabilidad, reciclaje por códigos de resina y microplásticos como problemas y soluciones de los plásticos.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U10-10.5",
+     "grado": 11,
+     "indicador": "10.5. Identifica microplásticos en una muestra de arena mediante separación por densidad y observación con lupa, y explica sus efectos en los ecosistemas acuáticos del país.",
+     "evidencia": "Informe de muestreo con conteo de microplásticos por tipo, fotografías y conclusión sobre su origen"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U10-10.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U11-11.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U11-11.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U11-11.1",
+      "CON:quimica/quimica-de-los-carbohidratos"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la proyección de Fischer de la D-galactosa (una aldohexosa), los grupos hidroxilo (–OH) de los carbonos quirales se orientan así: C2 a la derecha, C3 a la izquierda, C4 a la izquierda y C5 a la derecha. Cuando esta molécula se cicla para formar la α-D-galactopiranosa en proyección de Haworth estándar (con el grupo –CH₂OH de C6 hacia arriba), ¿cuál es la orientación de los grupos –OH en los carbonos C1, C2, C3 y C4, respectivamente?",
+     "opciones": {
+      "A": "C1 abajo, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C1.",
+      "B": "C1 arriba, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C1.",
+      "C": "C1 abajo, C2 arriba, C3 abajo y C4 abajo, con el carbono anomérico en C1.",
+      "D": "C1 abajo, C2 abajo, C3 arriba y C4 arriba, con el carbono anomérico en C5."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/quimica-de-los-carbohidratos/2",
+      "C": "DIF:quimica/quimica-de-los-carbohidratos/1",
+      "D": "DIF:quimica/quimica-de-los-carbohidratos/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la conversión de Fischer a Haworth, los grupos a la derecha (C2) quedan hacia abajo y los que están a la izquierda (C3 y C4) quedan hacia arriba. El carbono anomérico es C1 (el antiguo carbonilo) y en el anómero α de un azúcar D su grupo –OH se ubica hacia abajo, en posición trans respecto al –CH₂OH de C6.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-carbohidratos",
+     "nombre": "Química de los carbohidratos",
+     "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U11-11.1",
+     "grado": 11,
+     "indicador": "11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "evidencia": "Hoja de proyecciones de Fischer y Haworth de tres monosacáridos y modelo molecular de la ciclación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U11-11.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U11-11.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U11-11.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U11-11.1",
+      "CON:quimica/quimica-de-los-carbohidratos"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo consulta datos de rotación específica [α] en agua a 25 °C: una disolución recién preparada de α-D-glucopiranosa pura tiene [α] = +112.2°, mientras que una de β-D-glucopiranosa pura tiene [α] = +18.7°. Al dejar cualquiera de las dos en reposo, la rotación cambia hasta estabilizarse en +52.7° (aproximadamente 36 % del isómero α, 64 % del β y menos de 0.02 % de la cadena abierta). ¿Qué proceso químico a nivel molecular explica estos datos?",
+     "opciones": {
+      "A": "La apertura reversible del hemiacetal en C1 permite rotar el enlace C1–C2 antes de volver a cerrar el anillo.",
+      "B": "El giro directo del grupo –OH unido a C1 sin abrir el anillo convierte un anómero en el otro hasta el equilibrio.",
+      "C": "La migración del grupo –OH desde C5 hacia C1 desplaza el oxígeno del anillo y cambia el ángulo de rotación óptica.",
+      "D": "La inversión simultánea de los grupos –OH en C2, C3 y C4 transforma toda la molécula en su imagen especular opuesta."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/quimica-de-los-carbohidratos/3",
+      "C": "DIF:quimica/quimica-de-los-carbohidratos/3",
+      "D": "DIF:quimica/quimica-de-los-carbohidratos/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La mutarrotación ocurre porque la formación del hemiacetal es reversible en disolución acuosa: el anillo se abre brevemente a la forma de aldehído plano en C1 y, al volver a cerrarse por el ataque del –OH de C5, puede hacerlo por cualquiera de las dos caras del carbonilo, generando una mezcla en equilibrio de los anómeros α y β.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-carbohidratos",
+     "nombre": "Química de los carbohidratos",
+     "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U11-11.1",
+     "grado": 11,
+     "indicador": "11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "evidencia": "Hoja de proyecciones de Fischer y Haworth de tres monosacáridos y modelo molecular de la ciclación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U11-11.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U11-11.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U11-11.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U11-11.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U11-11.1",
+      "CON:quimica/quimica-de-los-carbohidratos"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Explica cómo se cicla una molécula de D-glucosa en disolución acuosa para pasar de su forma de cadena abierta a su forma de piranosa. En tu respuesta nombra qué grupos funcionales reaccionan entre sí y en qué carbonos se encuentran, indica qué grupo funcional nuevo se forma y cuál pasa a ser el carbono anomérico, y explica por qué este proceso origina dos isómeros distintos (α y β).",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En disolución acuosa, la cadena de la D-glucosa se pliega y el grupo hidroxilo (–OH) del carbono 5 (C5) ataca al carbono del grupo carbonilo (aldehído) en C1. Esta reacción intramolecular entre un alcohol y un aldehído forma un hemiacetal cíclico de seis miembros (anillo de piranosa), donde el oxígeno de C5 queda dentro del anillo. El carbono C1 pasa de ser plano a ser un nuevo centro quiral llamado carbono anomérico. Como el grupo carbonilo de C1 es plano, el –OH de C5 puede atacarlo por dos caras opuestas, lo que produce dos estereoisómeros llamados anómeros: el anómero α (con el nuevo –OH de C1 hacia abajo en Haworth, en lado opuesto al –CH₂OH de C6) y el anómero β (con el –OH de C1 hacia arriba, del mismo lado que C6).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra los grupos funcionales que reaccionan y sus posiciones: el grupo hidroxilo (alcohol, –OH) del C5 y el grupo carbonilo (aldehído, C=O) del C1.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Identifica que se forma un enlace hemiacetal (o hemiacetálico) y que el C1 se convierte en el carbono anomérico (nuevo centro quiral).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona la aparición de los dos anómeros (α y β) con las dos posibles orientaciones del nuevo grupo –OH en C1 al cerrarse el anillo (ataque por dos caras del carbonilo o posición abajo/arriba en Haworth).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el anillo se cierra por reacción entre C1 y C6 (o que el oxígeno del anillo proviene de C1) en lugar de entre el C1 y el –OH del C5.",
+        "ejemplo": "El –OH del último carbono (C6) se une al aldehído del C1 para cerrar un anillo de seis carbonos.",
+        "dificultad": "DIF:quimica/quimica-de-los-carbohidratos/3"
+       },
+       {
+        "descripcion": "Invierte la definición de los anómeros α y β en la serie D (dice que α tiene el –OH hacia arriba y β hacia abajo).",
+        "ejemplo": "Se forman dos anómeros: el alfa cuando el –OH de C1 queda arriba del plano del anillo y el beta cuando queda abajo.",
+        "dificultad": "DIF:quimica/quimica-de-los-carbohidratos/2"
+       }
+      ]
+     },
+     "retroalimentacion": "La ciclación de la D-glucosa ocurre por la adición nucleofílica intramolecular del grupo –OH de C5 al carbonilo aldehídico de C1, formando un hemiacetal cíclico. Al volverse quiral el C1 (carbono anomérico), el nuevo grupo –OH puede quedar hacia abajo (anómero α) o hacia arriba (anómero β) respecto al plano del anillo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U11-11.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U11-11.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/quimica-de-los-carbohidratos",
+     "nombre": "Química de los carbohidratos",
+     "definicion": "Monosacáridos (aldosas, cetosas), su ciclación y enlaces glucosídicos que forman disacáridos y polisacáridos como almidón y celulosa.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U11-11.1",
+     "grado": 11,
+     "indicador": "11.1. Transforma la proyección de Fischer de una pentosa o una hexosa en su proyección de Haworth e identifica el carbono anomérico y las formas α y β.",
+     "evidencia": "Hoja de proyecciones de Fischer y Haworth de tres monosacáridos y modelo molecular de la ciclación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U11-11.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  }
+ ]
+}

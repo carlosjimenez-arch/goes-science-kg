@@ -1,0 +1,2814 @@
+{
+ "lote": "r1-q11a_experto-quimica_4",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U5-5.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U5-5.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U5-5.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U5-5.5",
+      "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una muestra acuosa puede contener Ag⁺, Pb²⁺ y Cu²⁺. En el paso 1 se agrega HCl(ac) 6 M en frío y se forma un precipitado blanco, que se separa por filtración. En el paso 2 el sólido se lava con agua a 80 °C, se vuelve a filtrar y en el papel queda un residuo blanco; al filtrado caliente se le añade K₂CrO₄(ac) y no se observa precipitado. En el paso 3 al líquido del paso 1 se le agrega NH₃(ac) en exceso y la disolución toma un color azul intenso. ¿Qué cationes tenía la muestra original?",
+     "opciones": {
+      "A": "Contenía Ag⁺ y Cu²⁺, porque el AgCl(s) no se disuelve en agua caliente y el Cu²⁺ forma el complejo azul.",
+      "B": "Contenía Pb²⁺ y Cu²⁺, porque el PbCl₂(s) se queda en el filtro en caliente y el Cu²⁺ da el color azul.",
+      "C": "Contenía Ag⁺ y Pb²⁺, porque ambos precipitan con HCl(ac) en frío como cloruros blancos insolubles en agua.",
+      "D": "Contenía Ag⁺, Pb²⁺ y Cu²⁺, porque hubo precipitado blanco en el paso 1 y coloración azul en el paso 3."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/solubilidad/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El HCl(ac) precipita el grupo I (AgCl y PbCl₂). El PbCl₂ es soluble en agua caliente y daría un precipitado amarillo de PbCrO₄(s) con K₂CrO₄(ac); al no formarse, se descarta Pb²⁺ y el sólido blanco que permanece en el filtro es AgCl(s). El color azul intenso con NH₃(ac) confirma Cu²⁺.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U5-5.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U5-5.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+     "nombre": "Reacciones de precipitación e identificación de iones",
+     "definicion": "Formación de sólidos insolubles al mezclar disoluciones iónicas, usada para identificar y separar iones (marcha analítica).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U5-5.5",
+     "grado": 11,
+     "indicador": "5.5. Identifica los cationes presentes en una muestra problema interpretando los precipitados que se forman en una marcha analítica.",
+     "evidencia": "Esquema de marcha analítica y dictamen escrito sobre los cationes presentes en una muestra problema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U5-5.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U5-5.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U5-5.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U5-5.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U5-5.5",
+      "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Sofía analiza una muestra problema que puede contener Ag⁺, Fe³⁺, Ba²⁺ y Na⁺ (datos de un grupo de ejemplo). Sigue el orden de reactivos y registra en su tabla: Etapa 1, + HCl(ac) diluido → sin precipitado. Etapa 2, a la misma disolución + NaOH(ac) → precipitado pardo rojizo (se filtra y se separa). Etapa 3, al filtrado de la etapa 2 + Na₂SO₄(ac) → precipitado blanco. Según la tabla de observaciones, ¿cuál es el dictamen correcto sobre los cationes presentes y ausentes?",
+     "opciones": {
+      "A": "Están presentes Ag⁺ y Fe³⁺; se descarta Ba²⁺ porque en la primera etapa no se formó ningún sólido.",
+      "B": "Están presentes Fe³⁺ y Na⁺; se descarta Ba²⁺ porque el NaOH(ac) ya precipitó todos los iones metálicos.",
+      "C": "Están presentes Fe³⁺ y Ba²⁺; se descarta Ag⁺ y no es posible decidir con esta marcha si había Na⁺.",
+      "D": "Están presentes Ag⁺, Fe³⁺ y Ba²⁺; el AgCl(s) no se vio en la etapa 1 porque precipitó hasta la etapa 3."
+     },
+     "correcta": "C",
+     "distractores": {
+      "D": "DIF:quimica/solubilidad/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La ausencia de precipitado con HCl(ac) descarta Ag⁺. El precipitado pardo rojizo con NaOH(ac) corresponde a Fe(OH)₃(s), lo que confirma Fe³⁺, y el precipitado blanco con Na₂SO₄(ac) es BaSO₄(s), que confirma Ba²⁺. Como se agregaron reactivos con Na⁺, esta marcha no permite decidir si la muestra original tenía Na⁺.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U5-5.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U5-5.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+     "nombre": "Reacciones de precipitación e identificación de iones",
+     "definicion": "Formación de sólidos insolubles al mezclar disoluciones iónicas, usada para identificar y separar iones (marcha analítica).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U5-5.5",
+     "grado": 11,
+     "indicador": "5.5. Identifica los cationes presentes en una muestra problema interpretando los precipitados que se forman en una marcha analítica.",
+     "evidencia": "Esquema de marcha analítica y dictamen escrito sobre los cationes presentes en una muestra problema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U5-5.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U5-5.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U5-5.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U5-5.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U5-5.5",
+      "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En una marcha analítica para analizar una muestra que puede contener Ag⁺ y Ba²⁺, se indica agregar primero HCl(ac) diluido, filtrar si hay precipitado y luego agregar Na₂CO₃(ac) al filtrado. Explica qué cationes precipitarían juntos si un estudiante invierte el orden y agrega primero Na₂CO₃(ac) sin haber añadido HCl(ac), nombra las fórmulas de los precipitados que se formarían y justifica por qué el orden de los reactivos de grupo es indispensable para identificar cada catión por separado.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El HCl(ac) es un reactivo selectivo que solo precipita a Ag⁺ como AgCl(s), dejando a Ba²⁺ en disolución. En cambio, el carbonato precipita tanto a Ag⁺ como a Ba²⁺ (Ag₂CO₃(s) y BaCO₃(s)), por lo que añadir Na₂CO₃(ac) primero impide separarlos y saber cuál de los dos estaba presente.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U5-5.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "Si se agrega primero Na₂CO₃(ac), precipitarían al mismo tiempo los dos cationes, Ag⁺ y Ba²⁺, formando una mezcla de sólidos blancos de Ag₂CO₃(s) y BaCO₃(s) porque ambos carbonatos son insolubles en agua. El orden de los reactivos de grupo es indispensable porque la marcha analítica usa precipitación selectiva: el HCl(ac) precipita únicamente al Ag⁺ como AgCl(s), mientras que el BaCl₂ es soluble y el Ba²⁺ queda en el filtrado; solo después de separar el AgCl(s) por filtración se puede agregar Na₂CO₃(ac) para que un segundo precipitado confirme sin ambigüedad la presencia de Ba²⁺.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra que al agregar primero Na₂CO₃(ac) precipitan ambos cationes (Ag⁺ y Ba²⁺) y escribe o nombra los dos carbonatos insolubles: Ag₂CO₃(s) y BaCO₃(s).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona el orden correcto con la precipitación selectiva: explica que el HCl(ac) precipita solo AgCl(s) porque el cloruro de bario es soluble, permitiendo separarlos por filtración antes de añadir Na₂CO₃(ac).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que si ambos precipitan juntos en un solo paso no se puede distinguir si la muestra tenía uno solo de los cationes o los dos.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el orden de adición no altera el resultado porque las mismas sustancias siguen en el vaso y reaccionan igual.",
+        "ejemplo": "No pasa nada si pone primero el carbonato de sodio, porque de todos modos al echar después el HCl se van a formar los mismos precipitados.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Cree que el BaCl₂ también es insoluble o que el Ag₂CO₃ es soluble, invirtiendo las reglas de solubilidad de los grupos analíticos.",
+        "ejemplo": "Con HCl precipitan el AgCl y el BaCl₂ juntos, así que el carbonato solo sirve para confirmar el color.",
+        "dificultad": "DIF:quimica/solubilidad/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U5-5.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/reacciones-de-precipitacion-e-identificacion-de-iones",
+     "nombre": "Reacciones de precipitación e identificación de iones",
+     "definicion": "Formación de sólidos insolubles al mezclar disoluciones iónicas, usada para identificar y separar iones (marcha analítica).",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U5-5.5",
+     "grado": 11,
+     "indicador": "5.5. Identifica los cationes presentes en una muestra problema interpretando los precipitados que se forman en una marcha analítica.",
+     "evidencia": "Esquema de marcha analítica y dictamen escrito sobre los cationes presentes en una muestra problema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U5-5.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.1/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.1/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.1",
+      "CON:quimica/oxidacion-y-reduccion"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Elena intenta balancear la reacción entre el cobre sólido y el ion plata en disolución acuosa y escribe: Cu(s) + Ag⁺(ac) → Cu²⁺(ac) + Ag(s). Alguien del grupo afirma que la ecuación ya está balanceada porque hay un átomo de cobre y uno de plata a cada lado. ¿Es correcta esa afirmación?",
+     "opciones": {
+      "A": "Sí, porque conservar la cantidad de átomos de cada elemento basta para balancear cualquier ecuación.",
+      "B": "No, porque la carga total es +1 en reactivos y +2 en productos, así que no se igualan los electrones.",
+      "C": "No, porque el cobre gana dos electrones y la plata pierde uno, por lo que sobran cargas negativas.",
+      "D": "Sí, porque las cargas iónicas solo indican el estado físico y no se suman al verificar el balance."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/oxidacion-y-reduccion/1",
+      "C": "DIF:quimica/oxidacion-y-reduccion/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una ecuación redox deben conservarse tanto la masa como la carga eléctrica. Para igualar los 2 electrones que pierde cada átomo de Cu con los que gana el Ag⁺, la ecuación balanceada es Cu(s) + 2Ag⁺(ac) → Cu²⁺(ac) + 2Ag(s), con carga +2 en ambos lados.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-reduccion",
+     "nombre": "Oxidación y reducción",
+     "definicion": "Oxidación es pérdida y reducción ganancia de electrones; ocurren juntas y se representan y balancean con semiecuaciones.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.1",
+     "grado": 11,
+     "indicador": "6.1. Reconoce que las ecuaciones de oxidación-reducción se deben balancear en masa y carga.",
+     "evidencia": "Lista de cinco ecuaciones analizadas con la verificación del balance de masa y de carga en cada una"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.1/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.1/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.1/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.1",
+      "CON:quimica/oxidacion-y-reduccion"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo revisó cuatro ecuaciones iónicas propuestas en una guía de estudio y registró el conteo de átomos y la suma de cargas eléctricas de cada lado:\n\nEcuación 1: Zn(s) + Fe³⁺(ac) → Zn²⁺(ac) + Fe(s) | Átomos: 1 Zn, 1 Fe a cada lado | Carga: +3 en reactivos, +2 en productos.\nEcuación 2: 2Al(s) + 6H⁺(ac) → 2Al³⁺(ac) + 3H₂(g) | Átomos: 2 Al, 6 H a cada lado | Carga: +6 en reactivos, +6 en productos.\nEcuación 3: Sn²⁺(ac) + Fe³⁺(ac) → Sn⁴⁺(ac) + Fe²⁺(ac) | Átomos: 1 Sn, 1 Fe a cada lado | Carga: +5 en reactivos, +6 en productos.\nEcuación 4: Cl₂(g) + 2Br⁻(ac) → 2Cl⁻(ac) + Br₂(l) | Átomos: 2 Cl, 2 Br a cada lado | Carga: −2 en reactivos, −2 en productos.\n\nSegún la tabla, ¿cuáles ecuaciones están correctamente balanceadas en masa y en carga?",
+     "opciones": {
+      "A": "Las ecuaciones 1, 2, 3 y 4, porque en las cuatro coincide el número de átomos de cada elemento.",
+      "B": "Solo la ecuación 2, porque en la ecuación 4 las cargas son negativas y no se conservan igual.",
+      "C": "Las ecuaciones 2 y 4, porque conservan tanto el número de átomos como la carga eléctrica total.",
+      "D": "Las ecuaciones 1 y 3, porque tienen coeficientes iguales a 1 en todas las especies químicas."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/oxidacion-y-reduccion/1",
+      "B": "DIF:quimica/oxidacion-y-reduccion/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Una ecuación redox está balanceada solo si cumple la conservación de átomos y la conservación de la carga neta. Únicamente las ecuaciones 2 (carga +6 = +6) y 4 (carga −2 = −2) cumplen ambos criterios.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-reduccion",
+     "nombre": "Oxidación y reducción",
+     "definicion": "Oxidación es pérdida y reducción ganancia de electrones; ocurren juntas y se representan y balancean con semiecuaciones.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.1",
+     "grado": 11,
+     "indicador": "6.1. Reconoce que las ecuaciones de oxidación-reducción se deben balancear en masa y carga.",
+     "evidencia": "Lista de cinco ecuaciones analizadas con la verificación del balance de masa y de carga en cada una"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.1/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.1/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.1/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.1"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.1",
+      "CON:quimica/oxidacion-y-reduccion"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo revisa la ecuación Al(s) + Cu²⁺(ac) → Al³⁺(ac) + Cu(s) y dice que ya está balanceada porque hay 1 átomo de Al y 1 de Cu en cada lado. Explica por qué la ecuación no está balanceada calculando la carga eléctrica total en reactivos y en productos, justifica qué pasa con los electrones transferidos entre el aluminio y el ion cobre(II) y escribe la ecuación correctamente balanceada.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "La ecuación no está balanceada en carga porque en los reactivos la carga total es 0 + (+2) = +2 y en los productos es (+3) + 0 = +3. Esto ocurre porque cada átomo de aluminio pierde 3 electrones al oxidarse a Al³⁺, mientras que cada ion Cu²⁺ solo gana 2 electrones al reducirse a Cu, y los electrones cedidos deben igualar a los ganados (6 electrones en total). La ecuación balanceada en masa y carga es 2Al(s) + 3Cu²⁺(ac) → 2Al³⁺(ac) + 3Cu(s), con carga +6 en ambos lados.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula y compara la carga total de los reactivos (+2) con la de los productos (+3) para mostrar que la carga no se conserva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona el desbalance de carga con que los electrones perdidos por el Al (3 e⁻) deben igualar a los ganados por el Cu²⁺ (2 e⁻).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Escribe la ecuación balanceada en masa y carga: 2Al(s) + 3Cu²⁺(ac) → 2Al³⁺(ac) + 3Cu(s).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que la ecuación sí está balanceada porque solo verifica que haya un átomo de cada elemento por lado.",
+        "ejemplo": "Mateo tiene razón, hay 1 Al y 1 Cu en reactivos y productos, así que se conserva la masa.",
+        "dificultad": "DIF:quimica/oxidacion-y-reduccion/1"
+       },
+       {
+        "descripcion": "Suma mal las cargas al no multiplicar el coeficiente por la carga del ion o al confundir quién gana y quién pierde electrones.",
+        "ejemplo": "El Al gana 3 electrones porque sube a +3 y el Cu²⁺ pierde 2 electrones al bajar a 0.",
+        "dificultad": "DIF:quimica/oxidacion-y-reduccion/3"
+       }
+      ]
+     },
+     "retroalimentacion": "Aunque el conteo de átomos es 1 a 1, la carga pasa de +2 a +3 porque cada Al cede 3 e⁻ y cada Cu²⁺ acepta 2 e⁻. Igualando a 6 e⁻ transferidos se obtiene 2Al(s) + 3Cu²⁺(ac) → 2Al³⁺(ac) + 3Cu(s).",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.1"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-reduccion",
+     "nombre": "Oxidación y reducción",
+     "definicion": "Oxidación es pérdida y reducción ganancia de electrones; ocurren juntas y se representan y balancean con semiecuaciones.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.1",
+     "grado": 11,
+     "indicador": "6.1. Reconoce que las ecuaciones de oxidación-reducción se deben balancear en masa y carga.",
+     "evidencia": "Lista de cinco ecuaciones analizadas con la verificación del balance de masa y de carga en cada una"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.1/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.11/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.11/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.11"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.11",
+      "CON:quimica/oxidacion-y-corrosion-de-metales"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una gota de brisa marina se posa sobre una viga de hierro sin pintar en el muelle de La Libertad y se forma una celda electroquímica de corrosión. ¿Qué proceso ocurre en la zona anódica, cuál en la zona catódica en contacto con el aire y qué función cumple la sal disuelta?",
+     "opciones": {
+      "A": "En el ánodo el hierro se oxida a Fe²⁺(ac), en el cátodo el O₂(g) con agua se reduce a OH⁻(ac) y los iones Na⁺ y Cl⁻ aumentan la conductividad del electrolito.",
+      "B": "En el ánodo el O₂(g) con agua se reduce a OH⁻(ac), en el cátodo el hierro se oxida a Fe²⁺(ac) y los iones Na⁺ y Cl⁻ aumentan la conductividad del electrolito.",
+      "C": "En el ánodo el hierro se oxida a Fe²⁺(ac), en el cátodo el Cl⁻(ac) se reduce a Cl₂(g) y el cloruro de sodio reacciona directamente con el hierro para oxidarlo.",
+      "D": "En el ánodo el hierro se reduce ganando electrones del oxígeno, en el cátodo el agua se oxida a O₂(g) y los iones de la sal bloquean el paso de corriente eléctrica."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/oxidacion-y-corrosion-de-metales/1",
+      "C": "DIF:quimica/oxidacion-y-corrosion-de-metales/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una celda galvánica de corrosión, la zona anódica oxida el hierro (Fe(s) → Fe²⁺(ac) + 2e⁻) y en la zona catódica el oxígeno disuelto se reduce con agua (O₂(g) + 2H₂O(l) + 4e⁻ → 4OH⁻(ac)). Los iones de la sal cierran el circuito iónico y aceleran el flujo de cargas.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.11"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+     "nombre": "Oxidación y corrosión de los metales",
+     "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.11",
+     "grado": 11,
+     "indicador": "6.11. Explica la corrosión del hierro como un proceso electroquímico y argumenta el método de protección más adecuado para un metal expuesto al ambiente costero salvadoreño.",
+     "evidencia": "Registro fotográfico de siete días de los clavos con semirreacciones y recomendación argumentada de protección"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.11/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.11/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.11/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.11"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.11",
+      "CON:quimica/oxidacion-y-corrosion-de-metales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo dejó cuatro clavos de hierro durante 7 días en vasos con agua salada y un rayón superficial de 5 mm en el recubrimiento: vaso 1 (sin recubrir): herrumbre abundante; vaso 2 (pintado con esmalte): herrumbre en el rayón; vaso 3 (cubierto con grasa): herrumbre en el rayón; vaso 4 (enrollado con tira de zinc): sin herrumbre, precipitado blanco sobre el zinc. Según estos datos, ¿qué método conviene para proteger pilotes de acero en el puerto de La Unión donde las olas y embarcaciones raspan la superficie?",
+     "opciones": {
+      "A": "Pintura anticorrosiva sola, porque aísla el hierro del agua salada y en el vaso 2 la mayor parte del clavo permaneció sin herrumbre.",
+      "B": "Recubrimiento con grasa espesa, porque repele el agua del mar y evita que el oxígeno disuelto llegue a la superficie del acero.",
+      "C": "Galvanizado o ánodos de sacrificio de zinc, porque aunque el acero quede expuesto por un golpe, el zinc actúa como ánodo y se oxida en lugar del hierro.",
+      "D": "Acero sin recubrir pero pulido, porque la herrumbre inicial del vaso 1 forma una capa compacta e impermeable que detiene la corrosión."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/oxidacion-y-corrosion-de-metales/3",
+      "D": "DIF:quimica/oxidacion-y-corrosion-de-metales/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los vasos 2 y 3 muestran que cuando una barrera física (pintura o grasa) se raya, el hierro expuesto se corroe en presencia de agua salada. En el vaso 4 el zinc tiene menor potencial de reducción que el hierro: se oxida como ánodo de sacrificio y mantiene al hierro como cátodo protegido aun con raspones.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.11"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+     "nombre": "Oxidación y corrosión de los metales",
+     "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.11",
+     "grado": 11,
+     "indicador": "6.11. Explica la corrosión del hierro como un proceso electroquímico y argumenta el método de protección más adecuado para un metal expuesto al ambiente costero salvadoreño.",
+     "evidencia": "Registro fotográfico de siete días de los clavos con semirreacciones y recomendación argumentada de protección"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.11/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.11/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.11/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.11"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.11",
+      "CON:quimica/oxidacion-y-corrosion-de-metales"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un techo de lámina de hierro cerca de la playa en Acajutla se comparan dos opciones de protección: pintar la lámina o usar lámina galvanizada (recubierta con zinc). Escribe las semirreacciones de oxidación del hierro y de reducción del oxígeno en la corrosión húmeda, explica por qué la brisa marina acelera este proceso y argumenta cuál de las dos opciones protege mejor la lámina si una rama la raya, indicando qué función electroquímica cumple el zinc.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "En la corrosión del hierro, en el ánodo ocurre la oxidación Fe(s) → Fe²⁺(ac) + 2e⁻ y en el cátodo el oxígeno del aire se reduce en presencia de agua según O₂(g) + 2H₂O(l) + 4e⁻ → 4OH⁻(ac) (luego el Fe²⁺ se oxida más hasta formar herrumbre hidratada, Fe₂O₃·xH₂O(s)). La brisa marina deposita agua con sales disueltas (como NaCl), cuyos iones actúan como electrolito conductor y aceleran el flujo de cargas entre ánodo y cátodo. Si una rama raya la lámina pintada, el hierro expuesto entra en contacto con el agua salada y el oxígeno y se corroe. En cambio, la lámina galvanizada protege mejor porque el zinc se oxida más fácilmente que el hierro (tiene potencial estándar de reducción más negativo): actúa como ánodo de sacrificio que cede electrones al hierro y evita su corrosión incluso en el rayón.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "escribe o describe correctamente la oxidación anódica del hierro a Fe²⁺(ac) con pérdida de electrones y la reducción catódica del O₂(g) con H₂O(l) a OH⁻(ac)",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "explica que la sal de la brisa marina aporta iones disueltos que aumentan la conductividad eléctrica del electrolito sobre el metal",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "argumenta que el galvanizado protege aun con el rayón porque el zinc actúa como ánodo de sacrificio (se oxida en lugar del hierro), mientras la pintura solo funciona como barrera intacta",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "invierte ánodo y cátodo o afirma que el hierro se reduce durante la corrosión",
+        "ejemplo": "En el cátodo el hierro pierde electrones y en el ánodo el oxígeno se oxida formando óxido.",
+        "dificultad": "DIF:quimica/oxidacion-y-corrosion-de-metales/1"
+       },
+       {
+        "descripcion": "atribuye el efecto de la sal a que el cloruro reacciona como oxidante directo del hierro en vez de actuar como electrolito",
+        "ejemplo": "La sal oxida directamente al hierro formando cloruro de hierro sin necesidad de oxígeno ni agua.",
+        "dificultad": "DIF:quimica/oxidacion-y-corrosion-de-metales/2"
+       },
+       {
+        "descripcion": "cree que el zinc protege únicamente como barrera física igual que la pintura y que al rayarse deja de proteger al hierro",
+        "ejemplo": "Si se raya el zinc o la pintura pasa lo mismo porque en ambos casos el agua toca el hierro y lo oxida.",
+        "dificultad": "DIF:quimica/oxidacion-y-corrosion-de-metales/3"
+       }
+      ]
+     },
+     "retroalimentacion": "Una explicación completa incluye la oxidación del hierro en el ánodo, la reducción del oxígeno con agua en el cátodo, el papel de la sal marina como electrolito que facilita la migración de iones y la protección catódica del zinc como ánodo de sacrificio frente a un daño mecánico.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.11"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.11)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/oxidacion-y-corrosion-de-metales",
+     "nombre": "Oxidación y corrosión de los metales",
+     "definicion": "Los metales reaccionan con oxígeno y agua formando óxidos (herrumbre); la corrosión se previene con recubrimientos o protección catódica.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.11",
+     "grado": 11,
+     "indicador": "6.11. Explica la corrosión del hierro como un proceso electroquímico y argumenta el método de protección más adecuado para un metal expuesto al ambiente costero salvadoreño.",
+     "evidencia": "Registro fotográfico de siete días de los clavos con semirreacciones y recomendación argumentada de protección"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.11/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.5",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Lucía arma una celda galvánica: en el vaso 1 coloca un clavo galvanizado de Zn(s) en una disolución con iones Zn²⁺(ac) y en el vaso 2 una lámina de Cu(s) en una disolución con iones Cu²⁺(ac). Une los vasos con una tira de papel filtro empapada en NaCl(ac) y conecta los electrodos a un multímetro que marca +0.92 V con la punta roja en el cobre. Como el zinc se oxida espontáneamente, ¿qué función cumple cada electrodo y cómo se mueven los electrones?",
+     "opciones": {
+      "A": "El clavo de zinc es el cátodo porque cede electrones que viajan por el puente salino hacia el cobre.",
+      "B": "El clavo de zinc es el ánodo porque se oxida y los electrones viajan por el cable hacia el cobre.",
+      "C": "La lámina de cobre es el ánodo porque tiene signo positivo y envía electrones por el cable al zinc.",
+      "D": "La lámina de cobre es el cátodo porque se oxida y recibe electrones a través de la tira de papel."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/celdas-galvanicas/1",
+      "C": "DIF:quimica/celdas-galvanicas/2",
+      "D": "DIF:quimica/celdas-galvanicas/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una celda galvánica, la oxidación ocurre en el ánodo (el zinc pierde electrones) y la reducción en el cátodo (el cobre). Los electrones liberados en el ánodo viajan por el conductor metálico externo hacia el cátodo, mientras que por el puente salino solo migran iones para mantener la neutralidad eléctrica.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.5",
+     "grado": 11,
+     "indicador": "6.5. Construye una celda galvánica con implementos cotidianos.",
+     "evidencia": "Celda galvánica construida con esquema rotulado y registro de voltajes medidos en una y dos celdas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.5",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo construye dos celdas caseras con rodajas de limón, clavos galvanizados (Zn) y monedas de cobre (Cu). Registra estos datos de un grupo de ejemplo con el multímetro:\n• Celda 1 sola (punta roja en Cu, negra en Zn): +0.90 V\n• Celda 2 sola (punta roja en Cu, negra en Zn): +0.85 V\n• Celdas 1 y 2 conectadas entre sí: +0.05 V\n¿Qué conexión hizo Mateo en la tercera medición y cómo debe corregirla para encender un led que requiere 1.60 V?",
+     "opciones": {
+      "A": "Unió cobre con cobre en oposición; debe unir el zinc de la celda 1 con el cobre de la celda 2 para sumar +1.75 V.",
+      "B": "Unió el zinc de la celda 1 con el cobre de la celda 2; debe unir ambos cobres entre sí para sumar +1.75 V.",
+      "C": "Retiró la pulpa del limón que actúa como puente; debe agregar más jugo ácido para que la lectura suba a +1.75 V.",
+      "D": "Invirtió las puntas del multímetro en una sola celda; debe cambiar la escala de corriente para obtener +1.75 V."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/celdas-galvanicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La lectura de +0.05 V es la diferencia entre 0.90 V y 0.85 V, lo que indica que las dos celdas se conectaron en serie opuesta (polo con polo igual). Para sumar los voltajes en serie (+1.75 V) hay que conectar el ánodo (Zn, negativo) de una celda con el cátodo (Cu, positivo) de la siguiente.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.5",
+     "grado": 11,
+     "indicador": "6.5. Construye una celda galvánica con implementos cotidianos.",
+     "evidencia": "Celda galvánica construida con esquema rotulado y registro de voltajes medidos en una y dos celdas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.5",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Sofía arma una celda galvánica con un electrodo de Zn(s) en vaso 1 y uno de Cu(s) en vaso 2, ambos en disolución salina, unidos por una tira de papel humedecida en NaCl(ac). El multímetro marca +0.88 V, pero al retirar la tira de papel la lectura cae a 0.00 V. Explica en 2 o 3 oraciones cuál de los metales es el ánodo y cuál el cátodo indicando qué proceso redox ocurre en cada uno, en qué sentido viajan los electrones por el cable externo y por qué el voltaje cae a cero al quitar la tira de papel.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "El zinc es el ánodo porque se oxida perdiendo electrones (Zn → Zn²⁺ + 2e⁻) y el cobre es el cátodo donde ocurre la reducción. Los electrones viajan del zinc al cobre por el cable externo del multímetro. Al quitar la tira de papel (puente salino), los iones ya no pueden migrar entre los vasos para compensar las cargas acumuladas, por lo que el circuito se abre y el flujo de electrones se detiene.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Identifica al zinc como el ánodo (donde ocurre la oxidación) y al cobre como el cátodo (donde ocurre la reducción).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Indica que los electrones fluyen desde el electrodo de zinc hacia el de cobre a través del cable externo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que la tira de papel actúa como puente salino permitiendo el paso de iones para mantener la neutralidad eléctrica y cerrar el circuito.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que los electrones viajan a través de la tira de papel (puente salino) y que al quitarla ya no pueden cruzar de un vaso a otro.",
+        "ejemplo": "Al quitar el papel el voltaje es cero porque los electrones ya no pueden pasar por el puente salino del cobre al zinc.",
+        "dificultad": "DIF:quimica/celdas-galvanicas/3"
+       },
+       {
+        "descripcion": "Intercambia el ánodo y el cátodo, asignando la oxidación al cátodo o al cobre.",
+        "ejemplo": "El zinc es el cátodo porque se oxida y manda electrones al ánodo de cobre.",
+        "dificultad": "DIF:quimica/celdas-galvanicas/1"
+       }
+      ]
+     },
+     "retroalimentacion": "En la celda Zn-Cu, el zinc es el ánodo (se oxida) y cede electrones que van por el cable externo hacia el cátodo de cobre (donde ocurre la reducción). La tira con NaCl(ac) es el puente salino: permite que los iones cierren el circuito interno neutralizando las cargas en ambos vasos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.5"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.5",
+     "grado": 11,
+     "indicador": "6.5. Construye una celda galvánica con implementos cotidianos.",
+     "evidencia": "Celda galvánica construida con esquema rotulado y registro de voltajes medidos en una y dos celdas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.6/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.6/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.6",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Elena revisa las instrucciones de un tutorial para armar una celda galvánica Zn | Zn²⁺(ac) || Cu²⁺(ac) | Cu: «1. Vierta 50 mL de ZnSO₄(ac) 1.0 mol/L en el vaso 1 y 50 mL de CuSO₄(ac) 1.0 mol/L en el vaso 2. 2. Sumerja la lámina de zinc en el vaso 1 y la de cobre en el vaso 2. 3. Conecte ambas láminas al voltímetro con cables y caimanes. 4. Lea el voltaje». ¿Qué corrección es indispensable para que la celda funcione y por qué?",
+     "opciones": {
+      "A": "Agregar un puente salino entre los dos vasos, porque cierra el circuito interno manteniendo la neutralidad eléctrica de las disoluciones.",
+      "B": "Mezclar ambas disoluciones en un solo vaso, porque los iones Cu²⁺(ac) y Zn²⁺(ac) necesitan chocar directamente para transferir carga.",
+      "C": "Calentar ambos vasos con un mechero antes de medir, porque las reacciones de oxidación y reducción requieren energía térmica inicial.",
+      "D": "Unir las dos láminas metálicas con un segundo alambre de cobre dentro del líquido, porque los electrones deben volver al ánodo."
+     },
+     "correcta": "A",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Sin puente salino (o membrana porosa), la oxidación del zinc acumula carga positiva en el vaso 1 y la reducción de Cu²⁺(ac) deja exceso de carga negativa en el vaso 2; esa polarización detiene de inmediato el flujo de electrones.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.6",
+     "grado": 11,
+     "indicador": "6.6. Evalúa una secuencia de instrucciones para la construcción de una celda electroquímica.",
+     "evidencia": "Rúbrica de evaluación aplicada a una secuencia de instrucciones con correcciones justificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.6/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.6/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.6/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.6",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Cuatro equipos evaluaron distintas secuencias de instrucciones para construir una celda Zn | Zn²⁺(ac) || Cu²⁺(ac) | Cu (datos de un grupo de ejemplo, con potencial esperado cercano a 1.10 V). Equipo 1: siguió la secuencia base con puente salino de KNO₃(ac) y midió 0.00 V porque sumergió la lámina de Zn en CuSO₄(ac) y la de Cu en ZnSO₄(ac). Equipo 2: usó una tira de plástico seco como «puente» y midió 0.00 V. Equipo 3: lijó las láminas, puso cada metal en la disolución de su propio ion con puente salino de KNO₃(ac), pero invirtió las puntas del voltímetro y midió −1.08 V. Equipo 4: unió los dos vasos con un alambre de cobre sumergido en lugar de puente salino y midió 0.02 V. Según los datos, ¿qué equipo siguió una secuencia donde la celda sí funcionó y solo requiere corregir el paso de conexión del instrumento?",
+     "opciones": {
+      "A": "El equipo 1, porque al intercambiar las láminas la reacción redox ocurre de forma controlada en los dos vasos a la vez.",
+      "B": "El equipo 2, porque el plástico seco evita que las disoluciones se contaminen mientras el voltímetro estabiliza su lectura.",
+      "C": "El equipo 3, porque la magnitud de 1.08 V confirma que la celda opera y el signo negativo solo indica puntas invertidas.",
+      "D": "El equipo 4, porque el alambre de cobre sumergido actúa como puente salino y conduce iones entre las dos semiceldas."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Una lectura de −1.08 V tiene la magnitud esperada para la celda Daniell; el signo negativo solo muestra que la punta positiva del voltímetro se conectó al ánodo (Zn) en vez del cátodo (Cu).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.6",
+     "grado": 11,
+     "indicador": "6.6. Evalúa una secuencia de instrucciones para la construcción de una celda electroquímica.",
+     "evidencia": "Rúbrica de evaluación aplicada a una secuencia de instrucciones con correcciones justificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.6/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.6/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.6/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.6"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.6",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo redactó estas instrucciones para armar una celda galvánica de cobre y zinc: «Paso 1: Poner 50 mL de CuSO₄(ac) 1.0 mol/L en el vaso 1 y 50 mL de ZnSO₄(ac) 1.0 mol/L en el vaso 2. Paso 2: Sumergir la lámina de zinc en el vaso 1 con CuSO₄(ac) y la lámina de cobre en el vaso 2 con ZnSO₄(ac). Paso 3: Colocar el puente salino con KNO₃(ac) entre ambos vasos y conectar las láminas al voltímetro». Identifica qué paso es incorrecto, explica por qué impide que la celda entregue corriente eléctrica por el circuito externo y escribe cómo debe redactarse ese paso corregido.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "El paso 2 es incorrecto porque sumerge el zinc directamente en la disolución de CuSO₄(ac). Al estar en contacto directo, el Zn(s) reduce a los iones Cu²⁺(ac) en la superficie misma de la lámina y los electrones se transfieren directamente sin pasar por el cable externo ni por el voltímetro. Corrección del paso 2: sumergir la lámina de cobre en el vaso 1 con CuSO₄(ac) y la lámina de zinc en el vaso 2 con ZnSO₄(ac).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Identifica el paso 2 como incorrecto (sumergir la lámina de zinc en CuSO₄(ac) y la de cobre en ZnSO₄(ac)).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Explica por qué falla: el Zn(s) reacciona directamente con el Cu²⁺(ac) en el vaso 1 y los electrones se transfieren sin recorrer el circuito externo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Reescribe el paso 2 indicando que cada metal debe sumergirse en la disolución de su propio ion (Zn en ZnSO₄(ac) y Cu en CuSO₄(ac)).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el error está en el puente salino de KNO₃(ac) y propone quitarlo o cambiarlo por un alambre metálico.",
+        "ejemplo": "El paso 3 está mal porque el puente salino bloquea los electrones; hay que poner un cable de cobre dentro de los vasos.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Dice que hay que intercambiar las láminas solo por simetría, pero cree que el cobre se oxidará en ZnSO₄(ac).",
+        "ejemplo": "En el paso 2 el cobre se disuelve en el sulfato de zinc y por eso hay que cambiarlos.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "En una celda galvánica las semirreacciones de oxidación y reducción deben ocurrir en recipientes separados; si el reductor (Zn) toca directamente al oxidante (Cu²⁺), los electrones se transfieren en la superficie del metal y no por el cable externo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.6"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.6",
+     "grado": 11,
+     "indicador": "6.6. Evalúa una secuencia de instrucciones para la construcción de una celda electroquímica.",
+     "evidencia": "Rúbrica de evaluación aplicada a una secuencia de instrucciones con correcciones justificadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.6/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.7/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.7"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.7",
+      "CON:quimica/electrolisis"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Sofía y Mateo arman una celda electrolítica con una batería de 9 V, dos minas de grafito y agua con bicarbonato de sodio. El electrodo 1 se conecta al polo negativo de la batería y el electrodo 2 al polo positivo. ¿Qué proceso ocurre en cada electrodo y qué gas se recoge?",
+     "opciones": {
+      "A": "En el electrodo 1 ocurre reducción y sale H₂(g); en el electrodo 2 ocurre oxidación y sale O₂(g).",
+      "B": "En el electrodo 1 ocurre oxidación y sale H₂(g); en el electrodo 2 ocurre reducción y sale O₂(g).",
+      "C": "En el electrodo 1 ocurre reducción y sale O₂(g); en el electrodo 2 ocurre oxidación y sale H₂(g).",
+      "D": "En el electrodo 1 ocurre oxidación y sale O₂(g); en el electrodo 2 ocurre reducción y sale H₂(g)."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/electrolisis/1",
+      "C": "DIF:quimica/electrolisis/1",
+      "D": "DIF:quimica/electrolisis/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En una celda electrolítica, el polo negativo de la fuente suministra electrones al cátodo (electrodo 1), donde el agua se reduce y produce H₂(g). En el ánodo (electrodo 2, polo positivo) ocurre la oxidación del agua y se libera O₂(g).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.7"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electrolisis",
+     "nombre": "Electrólisis y celdas electrolíticas",
+     "definicion": "Uso de energía eléctrica externa para producir reacciones redox no espontáneas, como en galvanoplastia y obtención de metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.7",
+     "grado": 11,
+     "indicador": "6.7. Construye una celda electrolítica para la descomposición del agua.",
+     "evidencia": "Informe de laboratorio con esquema de la celda electrolítica, semirreacciones y relación de volúmenes medida"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.7/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.7/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.7"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.7",
+      "CON:quimica/electrolisis"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la electrólisis de agua con sulfato de sodio a 28 °C, un grupo de ejemplo anota el volumen de gas en las dos jeringas: a 5 min miden 2.8 mL en el cátodo y 1.4 mL en el ánodo; a 10 min miden 5.6 mL y 2.8 mL; a 15 min miden 8.4 mL y 4.2 mL. ¿Qué explica esta proporción constante de 2 a 1?",
+     "opciones": {
+      "A": "La molécula de H₂(g) tiene menor masa molar que la de O₂(g) y por eso ocupa el doble de volumen.",
+      "B": "Por cada 4 mol de electrones transferidos se forman 2 mol de H₂(g) en el cátodo y 1 mol de O₂(g) en el ánodo.",
+      "C": "El polo negativo de la batería entrega el doble de corriente eléctrica que la que recibe el polo positivo.",
+      "D": "El sulfato de sodio reacciona en el cátodo y libera el doble de gas que el agua pura en el ánodo."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/electrolisis/2",
+      "D": "DIF:quimica/electrolisis/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Por conservación de la carga, por ambos electrodos pasa la misma cantidad de electrones. La reducción de agua requiere 2 mol de electrones por cada mol de H₂(g), mientras que la oxidación libera 4 mol de electrones por cada mol de O₂(g), lo que da 2 mol de H₂(g) por 1 mol de O₂(g) y el doble de volumen a igual presión y temperatura.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.7"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electrolisis",
+     "nombre": "Electrólisis y celdas electrolíticas",
+     "definicion": "Uso de energía eléctrica externa para producir reacciones redox no espontáneas, como en galvanoplastia y obtención de metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.7",
+     "grado": 11,
+     "indicador": "6.7. Construye una celda electrolítica para la descomposición del agua.",
+     "evidencia": "Informe de laboratorio con esquema de la celda electrolítica, semirreacciones y relación de volúmenes medida"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.7/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.7/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.7/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.7"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.7",
+      "CON:quimica/electrolisis"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Alguien del grupo arma la celda electrolítica con agua destilada pura y una batería de 9 V, pero casi no observa burbujas en los electrodos de grafito. Explica por qué ocurre esto en función de los iones y la conductividad eléctrica, e indica qué sustancia agregarías al agua y cuál es su función para que la electrólisis avance sin cambiar los gases producidos.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El agua destilada apenas se autoioniza y tiene muy baja conductividad eléctrica; al agregar un electrolito como sulfato de sodio o bicarbonato de sodio, sus iones transportan la carga en la disolución y cierran el circuito mientras el agua se oxida y se reduce en los electrodos.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.7"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El agua destilada pura casi no tiene iones libres porque se autoioniza muy poco, así que su conductividad eléctrica es muy baja y no circula suficiente corriente para descomponerla. Para que funcione, agregaría un electrolito como bicarbonato de sodio o sulfato de sodio; al disociarse aporta iones móviles que conducen la corriente y cierran el circuito en la disolución, mientras el agua sigue produciendo H₂(g) y O₂(g) en los electrodos.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que el agua destilada tiene muy pocos iones libres y por eso su conductividad eléctrica es muy baja (o su resistencia muy alta).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra un electrolito adecuado (como sulfato de sodio o bicarbonato de sodio) y relaciona su disociación en iones con el transporte de carga eléctrica en la disolución.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Aclara que los iones del electrolito conducen la corriente sin cambiar los gases que se forman por la descomposición del agua.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el agua pura conduce bien la electricidad y atribuye la falta de burbujas solo a que la batería de 9 V tiene poco voltaje.",
+        "ejemplo": "El agua pura sí conduce la corriente, pero no salen burbujas porque una batería de 9 V no tiene fuerza suficiente para romper el agua.",
+        "dificultad": "DIF:quimica/electrolisis/3"
+       },
+       {
+        "descripcion": "Piensa que el electrolito añadido es el reactivo que se descompone para formar el hidrógeno y el oxígeno.",
+        "ejemplo": "Hay que agregar bicarbonato de sodio porque el agua no reacciona y es el bicarbonato el que se rompe para dar hidrógeno y oxígeno.",
+        "dificultad": "DIF:quimica/electrolisis/3"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/electrolisis",
+     "nombre": "Electrólisis y celdas electrolíticas",
+     "definicion": "Uso de energía eléctrica externa para producir reacciones redox no espontáneas, como en galvanoplastia y obtención de metales.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.7",
+     "grado": 11,
+     "indicador": "6.7. Construye una celda electrolítica para la descomposición del agua.",
+     "evidencia": "Informe de laboratorio con esquema de la celda electrolítica, semirreacciones y relación de volúmenes medida"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.7/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.8",
+      "CON:quimica/potenciales-de-electrodo"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Daniela evalúa si una lámina de hierro reaccionará al sumergirla en una disolución acuosa de sulfato de cobre(II) según la ecuación: Fe(s) + Cu²⁺(ac) → Fe²⁺(ac) + Cu(s). En la tabla de referencia, los potenciales estándar de reducción aproximados son E°(Cu²⁺/Cu) = +0.34 V y E°(Fe²⁺/Fe) = −0.44 V. ¿Cuál es el potencial estándar de celda y qué se deduce sobre la reacción?",
+     "opciones": {
+      "A": "E°celda = +0.78 V; la reacción directa es espontánea y se depositará cobre sólido.",
+      "B": "E°celda = −0.78 V; la reacción directa no es espontánea en condiciones estándar.",
+      "C": "E°celda = −0.10 V; la reacción directa no ocurre sin aplicar corriente externa.",
+      "D": "E°celda = +0.78 V; la reacción directa requiere energía eléctrica para ocurrir."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/potenciales-de-electrodo/3",
+      "C": "DIF:quimica/potenciales-de-electrodo/1",
+      "D": "DIF:quimica/potenciales-de-electrodo/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la reacción propuesta, el Cu²⁺ se reduce en el cátodo (E° = +0.34 V) y el Fe se oxida en el ánodo (E° = −0.44 V). Al calcular E°celda = E°cátodo − E°ánodo = +0.34 V − (−0.44 V) se obtiene +0.78 V; como el valor es positivo, la reacción es espontánea.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/potenciales-de-electrodo",
+     "nombre": "Potenciales estándar de electrodo y de celda",
+     "definicion": "Los potenciales estándar de reducción permiten calcular el potencial de una celda y predecir la espontaneidad redox.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.8",
+     "grado": 11,
+     "indicador": "6.8. Deduce si una reacción de oxidación-reducción es espontánea con base en el potencial de celda.",
+     "evidencia": "Tabla de seis reacciones con E°celda calculado, predicción de espontaneidad y contraste con observaciones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.8",
+      "CON:quimica/potenciales-de-electrodo"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo de ejemplo contrastó en tres tubos de ensayo la espontaneidad de reacciones redox usando los potenciales estándar de reducción aproximados: E°(Ag⁺/Ag) = +0.80 V, E°(Cu²⁺/Cu) = +0.34 V y E°(Zn²⁺/Zn) = −0.76 V.\n- Tubo 1: Zn(s) en Cu²⁺(ac) → se observa depósito rojizo sobre el zinc.\n- Tubo 2: Cu(s) en Zn²⁺(ac) → no se observa ningún cambio.\n- Tubo 3: Cu(s) en Ag⁺(ac) → se observa depósito brillante sobre el cobre.\n¿Qué fila relaciona correctamente el cálculo de E°celda con las observaciones de los tres tubos?",
+     "opciones": {
+      "A": "Tubo 1: +1.10 V (espontánea); Tubo 2: −1.10 V (no espontánea); Tubo 3: +0.46 V (espontánea).",
+      "B": "Tubo 1: −0.42 V (espontánea); Tubo 2: +0.42 V (no espontánea); Tubo 3: +1.14 V (espontánea).",
+      "C": "Tubo 1: −1.10 V (espontánea); Tubo 2: +1.10 V (no espontánea); Tubo 3: −0.46 V (espontánea).",
+      "D": "Tubo 1: +1.10 V (espontánea); Tubo 2: −1.10 V (no espontánea); Tubo 3: +1.26 V (espontánea)."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/potenciales-de-electrodo/1",
+      "C": "DIF:quimica/potenciales-de-electrodo/2",
+      "D": "DIF:quimica/potenciales-de-electrodo/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Para cada tubo se calcula E°celda = E°(especie que se reduce) − E°(especie que se oxida): en el tubo 1 es +0.34 V − (−0.76 V) = +1.10 V; en el tubo 2 es −0.76 V − (+0.34 V) = −1.10 V; y en el tubo 3 es +0.80 V − (+0.34 V) = +0.46 V. Solo los tubos con E°celda positivo muestran reacción espontánea.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.8"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/potenciales-de-electrodo",
+     "nombre": "Potenciales estándar de electrodo y de celda",
+     "definicion": "Los potenciales estándar de reducción permiten calcular el potencial de una celda y predecir la espontaneidad redox.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.8",
+     "grado": 11,
+     "indicador": "6.8. Deduce si una reacción de oxidación-reducción es espontánea con base en el potencial de celda.",
+     "evidencia": "Tabla de seis reacciones con E°celda calculado, predicción de espontaneidad y contraste con observaciones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.8"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.8",
+      "CON:quimica/potenciales-de-electrodo"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Mateo necesita guardar una disolución acuosa de nitrato de plata, AgNO₃(ac), y piensa usar un recipiente de cobre metálico, Cu(s). Con los potenciales estándar de reducción aproximados de la tabla de referencia, E°(Ag⁺/Ag) = +0.80 V y E°(Cu²⁺/Cu) = +0.34 V, calcula el potencial estándar de celda (E°celda) para la reacción Cu(s) + 2Ag⁺(ac) → Cu²⁺(ac) + 2Ag(s), deduce si la reacción es espontánea según el signo de E°celda y explica qué le pasaría al recipiente si Mateo guarda ahí la disolución.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En la reacción entre cobre sólido e iones plata, el Ag⁺ se reduce (cátodo, +0.80 V) y el Cu se oxida (ánodo, +0.34 V), por lo que E°celda = +0.80 V − (+0.34 V) = +0.46 V. Como E°celda es positivo, la reacción es espontánea y el recipiente de cobre se oxidaría y perforaría mientras se deposita plata sólida.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "En la posible reacción, los iones Ag⁺ se reducen a Ag(s) y el Cu(s) se oxida a Cu²⁺(ac). El potencial estándar de celda es E°celda = E°cátodo − E°ánodo = +0.80 V − (+0.34 V) = +0.46 V. Como el signo de E°celda es positivo, la reacción redox es espontánea. Por lo tanto, no se debe guardar la disolución en ese recipiente, porque el cobre metálico se irá disolviendo al oxidarse y la plata se depositará, dañando el envase y contaminando el reactivo.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula o indica correctamente el valor de E°celda = +0.46 V identificando la reducción de Ag⁺ (+0.80 V) y la oxidación de Cu (+0.34 V).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona el signo positivo de E°celda (> 0) con que la reacción redox es espontánea.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica la consecuencia observable: el recipiente de cobre se oxida o corroe y se deposita plata metálica, por lo que no sirve para guardar la disolución.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Multiplica el potencial estándar de la plata por el coeficiente estequiométrico 2 (2 × 0.80 V = 1.60 V) y obtiene E°celda = +1.26 V.",
+        "ejemplo": "Como hay 2Ag⁺, el potencial del cátodo es 1.60 V y al restar 0.34 V da +1.26 V.",
+        "dificultad": "DIF:quimica/potenciales-de-electrodo/3"
+       },
+       {
+        "descripcion": "Invierte ánodo y cátodo o suma directamente los potenciales sin respetar la fórmula, obteniendo −0.46 V o +1.14 V.",
+        "ejemplo": "E°celda = 0.34 V − 0.80 V = −0.46 V, así que no reacciona y sí puede guardarla.",
+        "dificultad": "DIF:quimica/potenciales-de-electrodo/1"
+       },
+       {
+        "descripcion": "Interpreta al revés el criterio de espontaneidad y afirma que un E°celda positivo significa que la reacción no ocurre por sí sola.",
+        "ejemplo": "Da +0.46 V, pero como es positivo necesita corriente eléctrica para reaccionar.",
+        "dificultad": "DIF:quimica/potenciales-de-electrodo/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/potenciales-de-electrodo",
+     "nombre": "Potenciales estándar de electrodo y de celda",
+     "definicion": "Los potenciales estándar de reducción permiten calcular el potencial de una celda y predecir la espontaneidad redox.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.8",
+     "grado": 11,
+     "indicador": "6.8. Deduce si una reacción de oxidación-reducción es espontánea con base en el potencial de celda.",
+     "evidencia": "Tabla de seis reacciones con E°celda calculado, predicción de espontaneidad y contraste con observaciones"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.9/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.9/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.9",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En un taller de Ahuachapán recubren láminas de hierro con cinc (galvanizado) para protegerlas de la oxidación y también dan mantenimiento a acumuladores de plomo de automóviles. ¿Cuál opción relaciona de manera correcta una de estas aplicaciones electroquímicas con su funcionamiento redox y el impacto de su desecho?",
+     "opciones": {
+      "A": "El acumulador descarga por reducción del plomo metálico y no contamina el suelo porque el electrolito es agua pura.",
+      "B": "El acumulador entrega corriente por una reacción redox entre Pb(s) y PbO₂(s) en H₂SO₄(ac); tirarlo libera plomo y ácido.",
+      "C": "El galvanizado protege al hierro porque el cinc se reduce en el aire húmedo y forma una capa aislante sin transferir electrones.",
+      "D": "Las baterías de ion litio funcionan sin reacción redox interna y pueden enterrarse porque sus sales se degradan en el suelo."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Durante la descarga del acumulador, el Pb(s) se oxida en el ánodo y el PbO₂(s) se reduce en el cátodo en medio de H₂SO₄(ac) para formar PbSO₄(s). Desecharlo sin control libera compuestos de plomo tóxicos y ácido sulfúrico que contaminan el suelo y el agua.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.9",
+     "grado": 11,
+     "indicador": "6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos.",
+     "evidencia": "Material de campaña escolar sobre el manejo responsable de pilas y baterías usadas con datos del MARN"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.9/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.9/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.9/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.9",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un grupo escolar organizó una jornada de acopio de celdas usadas (datos de un grupo de ejemplo): recolectaron 120 pilas alcalinas AA (Zn/MnO₂, 23 g cada una), 15 baterías de teléfono (ion litio con cátodo de LiCoO₂, 45 g cada una) y 2 acumuladores de motocicleta (Pb/PbO₂ en H₂SO₄(ac), 2 500 g cada uno). Según estos registros, ¿qué decisión para la campaña escolar y el envío al punto de acopio autorizado por el MARN está mejor justificada?",
+     "opciones": {
+      "A": "Enviar solo las 120 pilas alcalinas al acopio porque son las más numerosas y enterrar los 2 acumuladores en el huerto escolar.",
+      "B": "Desarmar las 15 baterías de ion litio en el aula para neutralizarlas con agua antes de tirarlas al camión recolector municipal.",
+      "C": "Separar y entregar los tres lotes en el acopio: los 2 acumuladores suman 5 000 g con plomo y ácido, y las baterías contienen cobalto.",
+      "D": "Guardar únicamente las baterías de teléfono porque pesan 675 g en total y desechar las pilas alcalinas al río pues el manganeso es inocuo."
+     },
+     "correcta": "C",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aunque los acumuladores son solo 2 unidades, aportan 5 000 g de residuos peligrosos con plomo y ácido sulfúrico; además, las baterías de ion litio contienen metales como cobalto y electrolitos inflamables, y las pilas alcalinas corroen sus carcasas. Todos deben entregarse separados en un punto de acopio.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.9",
+     "grado": 11,
+     "indicador": "6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos.",
+     "evidencia": "Material de campaña escolar sobre el manejo responsable de pilas y baterías usadas con datos del MARN"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.9/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U6-6.9/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U6-6.9/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U6-6.9"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U6-6.9",
+      "CON:quimica/celdas-galvanicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Para el afiche de la campaña escolar sobre residuos electroquímicos, redacta un texto breve en el que: (1) nombres una aplicación cotidiana de las celdas galvánicas e identifiques qué tipo de conversión de energía y proceso químico ocurre en su interior cuando funciona, y (2) expliques por qué al agotarse debe llevarse a un punto de acopio autorizado por el MARN en lugar de tirarse a la basura común, indicando qué ocurre con su carcasa y sus componentes químicos.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Una batería de teléfono celular o un acumulador de automóvil funciona como una celda galvánica: convierte energía química en energía eléctrica mediante una reacción de oxidación-reducción espontánea entre sus electrodos. Cuando ya no retiene carga, no debe tirarse a la basura común porque con la humedad y el tiempo su carcasa se corroe y se rompe. Al abrirse, libera electrolitos corrosivos y iones de metales pesados (como plomo, cobalto, níquel o cadmio) que se filtran con el agua de lluvia hacia el suelo y los mantos acuíferos. Entregarla en un punto de acopio autorizado por el MARN permite confinar o recuperar esos materiales de forma segura.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra una aplicación cotidiana de celda galvánica (pila, batería de ion litio o acumulador de plomo) e indica que convierte energía química en eléctrica mediante una reacción redox.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona el desecho en la basura común con la corrosión o ruptura de la carcasa y la liberación de metales pesados o electrolitos que contaminan el suelo y el agua.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica la entrega en un punto de acopio autorizado por el MARN para la contención segura o el reciclaje de sus componentes.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que una pila descargada ya no contiene sustancias químicas reactivas ni tóxicas porque se consumieron por completo.",
+        "ejemplo": "Cuando la pila se gasta ya solo queda ceniza sin químicos adentro, así que solo estorba por el plástico.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confunde el funcionamiento de la celda con almacenamiento electrostático sin reacción redox.",
+        "ejemplo": "La batería guarda electricidad pura sin cambios químicos en sus metales.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Las pilas y baterías generan corriente mediante reacciones redox cuyos productos y reactivos remanentes (metales pesados, óxidos y electrolitos) siguen dentro del envase al agotarse; acopiarlas evita que la corrosión libere estos contaminantes al suelo y al agua.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U6-6.9"
+     },
+     "origen": "redactor-actividades (G11-QUI-U6-6.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/celdas-galvanicas",
+     "nombre": "Celdas galvánicas",
+     "definicion": "Dispositivos, como pilas y celdas de combustible, que convierten energía química en eléctrica mediante una reacción redox espontánea.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U6-6.9",
+     "grado": 11,
+     "indicador": "6.9. Ejemplifica aplicaciones de la electroquímica y sus impactos.",
+     "evidencia": "Material de campaña escolar sobre el manejo responsable de pilas y baterías usadas con datos del MARN"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U6-6.9/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.2/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.2/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.2",
+      "CON:quimica/equilibrio-en-procesos-industriales"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "En el proceso de contacto, la oxidación de dióxido de azufre a trióxido de azufre es exotérmica: 2 SO₂(g) + O₂(g) ⇌ 2 SO₃(g), con ΔH < 0. En las plantas industriales se opera cerca de 450 °C con catalizador de V₂O₅ y una presión de 1 a 2 atm, aunque a 250 °C el porcentaje de SO₃ en equilibrio sería mayor. ¿Qué justifica elegir esas condiciones?",
+     "opciones": {
+      "A": "A 250 °C la reacción es muy lenta; 450 °C con V₂O₅ da rapidez aceptable y a 1–2 atm el rendimiento ya supera el 97 %, sin el costo de alta presión.",
+      "B": "Al subir la temperatura a 450 °C el equilibrio exotérmico se desplaza hacia los productos y así aumentan tanto la rapidez como el rendimiento de SO₃.",
+      "C": "El catalizador V₂O₅ desplaza el equilibrio hacia el SO₃ a 450 °C y compensa la pérdida de rendimiento que causaría trabajar a baja presión.",
+      "D": "Operar a 1–2 atm desplaza el equilibrio hacia donde hay menos moles de gas y por eso da más SO₃ que una presión de 100 atm."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/principio-de-le-chatelier/3",
+      "C": "DIF:quimica/equilibrio-en-procesos-industriales/2",
+      "D": "DIF:quimica/principio-de-le-chatelier/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Por ser exotérmica, bajar la temperatura favorece el SO₃ en el equilibrio, pero a 250 °C la rapidez es demasiado baja. Cerca de 450 °C el catalizador V₂O₅ es activo y logra buena rapidez con alto rendimiento; además, a 1–2 atm la conversión ya es tan alta que comprimir más no compensa el costo.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-en-procesos-industriales",
+     "nombre": "Equilibrio y rapidez en procesos industriales",
+     "definicion": "Selección de condiciones como en Haber-Bosch o el proceso de contacto para equilibrar rendimiento, rapidez y costo.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.2",
+     "grado": 11,
+     "indicador": "7.2. Justifica las condiciones de presión, temperatura y catalizador del proceso de contacto con el principio de Le Châtelier y relaciona el amoníaco del proceso Haber con la producción de fertilizantes.",
+     "evidencia": "Cuadro de condiciones del proceso de contacto con justificación termodinámica y cinética"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.2/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.2/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.2/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.2",
+      "CON:quimica/equilibrio-en-procesos-industriales"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Una tabla de datos de referencia para 2 SO₂(g) + O₂(g) ⇌ 2 SO₃(g) muestra el porcentaje de SO₃ en equilibrio: a 400 °C es 99.2 % a 1 atm y 99.6 % a 10 atm; a 550 °C es 85.0 % a 1 atm y 93.0 % a 10 atm. El catalizador requiere al menos 420 °C para activarse. ¿Qué conclusión respaldan estos datos para diseñar la planta?",
+     "opciones": {
+      "A": "Conviene operar a 550 °C y 1 atm, porque la alta temperatura aumenta el porcentaje de SO₃ en equilibrio y evita gastar en compresores.",
+      "B": "Conviene operar a 400 °C sin catalizador y a 10 atm, porque el equilibrio por sí solo garantiza que el 99.6 % de SO₃ se forme en pocos segundos.",
+      "C": "Conviene operar cerca de 450 °C con catalizador y a 1–2 atm, porque subir a 10 atm apenas añade fracciones de punto porcentual y encarece el equipo.",
+      "D": "Conviene operar a 550 °C y 10 atm con catalizador, porque el catalizador eleva el porcentaje en equilibrio de 93.0 % hasta 99.6 %."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/principio-de-le-chatelier/3",
+      "B": "DIF:quimica/equilibrio-en-procesos-industriales/1",
+      "D": "DIF:quimica/equilibrio-en-procesos-industriales/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Cerca de 400–450 °C el porcentaje en equilibrio a 1 atm ya ronda el 98–99 %; subir a 10 atm gana menos de 1 % y exige reactores y compresores costosos. Se elige ~450 °C para que el catalizador funcione rápido sin perder mucho rendimiento.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-en-procesos-industriales",
+     "nombre": "Equilibrio y rapidez en procesos industriales",
+     "definicion": "Selección de condiciones como en Haber-Bosch o el proceso de contacto para equilibrar rendimiento, rapidez y costo.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.2",
+     "grado": 11,
+     "indicador": "7.2. Justifica las condiciones de presión, temperatura y catalizador del proceso de contacto con el principio de Le Châtelier y relaciona el amoníaco del proceso Haber con la producción de fertilizantes.",
+     "evidencia": "Cuadro de condiciones del proceso de contacto con justificación termodinámica y cinética"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.2/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.2/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.2/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.2"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.2",
+      "CON:quimica/equilibrio-en-procesos-industriales"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "En la etapa 2 SO₂(g) + O₂(g) ⇌ 2 SO₃(g) (ΔH < 0) del proceso de contacto se usa ~450 °C, 1–2 atm y catalizador de V₂O₅. Explica por qué se elige una temperatura de compromiso citando el efecto sobre el equilibrio y sobre la rapidez, indica qué hace el catalizador y nombra un fertilizante nitrogenado que se fabrique combinando el amoníaco del proceso Haber con un ácido industrial.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Como la reacción es exotérmica, según Le Châtelier una temperatura baja desplaza el equilibrio hacia el SO₃ y da mayor rendimiento, pero disminuye mucho la rapidez de reacción. Por eso se elige un compromiso de ~450 °C junto con el catalizador V₂O₅, que acelera la reacción sin cambiar el rendimiento en equilibrio. A 1–2 atm la conversión ya es muy alta y no hace falta gastar en alta presión. El amoníaco del proceso Haber reacciona con el ácido sulfúrico del proceso de contacto para producir sulfato de amonio, o con ácido nítrico para dar nitrato de amonio, usados como fertilizantes.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica la condición de compromiso de temperatura: bajar la temperatura favorece el rendimiento en equilibrio (reacción exotérmica), pero subirla a ~450 °C aumenta la rapidez de reacción.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Indica que el catalizador (V₂O₅) aumenta la rapidez con que se alcanza el equilibrio sin modificar la posición del equilibrio.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Nombra al menos un fertilizante nitrogenado obtenido a partir del amoníaco del proceso Haber (como sulfato de amonio, nitrato de amonio o urea).",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que se usa 450 °C porque calentar desplaza el equilibrio exotérmico hacia los productos.",
+        "ejemplo": "Se calienta a 450 °C para que el equilibrio se desplace a la derecha y se forme más SO₃.",
+        "dificultad": "DIF:quimica/principio-de-le-chatelier/3"
+       },
+       {
+        "descripcion": "Atribuye al catalizador V₂O₅ un aumento del porcentaje de SO₃ en el equilibrio.",
+        "ejemplo": "El V₂O₅ empuja el equilibrio hacia el SO₃ para recuperar el rendimiento perdido por el calor.",
+        "dificultad": "DIF:quimica/equilibrio-en-procesos-industriales/2"
+       },
+       {
+        "descripcion": "No distingue entre rapidez y rendimiento y cree que el porcentaje de equilibrio basta para elegir la condición.",
+        "ejemplo": "Deberían usar 200 °C porque en la tabla da casi 100 % de rendimiento y así se produce más ácido por hora.",
+        "dificultad": "DIF:quimica/equilibrio-en-procesos-industriales/1"
+       }
+      ]
+     },
+     "retroalimentacion": "Una temperatura moderada (~450 °C) con catalizador V₂O₅ equilibra un alto porcentaje de SO₃ (favorecido por bajas temperaturas al ser exotérmica) con una rapidez industrialmente útil; el amoníaco del proceso Haber se neutraliza con H₂SO₄ o HNO₃ para producir fertilizantes como el sulfato o el nitrato de amonio.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.2"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/equilibrio-en-procesos-industriales",
+     "nombre": "Equilibrio y rapidez en procesos industriales",
+     "definicion": "Selección de condiciones como en Haber-Bosch o el proceso de contacto para equilibrar rendimiento, rapidez y costo.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.2",
+     "grado": 11,
+     "indicador": "7.2. Justifica las condiciones de presión, temperatura y catalizador del proceso de contacto con el principio de Le Châtelier y relaciona el amoníaco del proceso Haber con la producción de fertilizantes.",
+     "evidencia": "Cuadro de condiciones del proceso de contacto con justificación termodinámica y cinética"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.2/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.4/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.4/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.4",
+      "CON:quimica/tratamiento-y-potabilizacion-del-agua"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Durante el beneficiado húmedo del café se generan aguas mieles ricas en azúcares y pectinas del mucílago, con una demanda química de oxígeno (DQO) muy elevada. Si estas aguas se vierten sin tratar a un río, ¿por qué disminuyen el oxígeno disuelto y qué tratamiento previo reduce mejor ese impacto?",
+     "opciones": {
+      "A": "Porque tienen mucho oxígeno disuelto que escapa al río; basta pasarlas por rejillas y filtros de arena para retener los azúcares.",
+      "B": "Porque la oxidación de su materia orgánica consume el oxígeno del agua; conviene degradar esa carga en un biodigestor anaerobio antes de descargar.",
+      "C": "Porque su acidez neutraliza las moléculas de oxígeno del agua; basta agregar cal hasta alcanzar un pH neutro antes de verterlas al cauce.",
+      "D": "Porque los sólidos suspendidos bloquean el paso del aire; basta dejarlas reposar en una pila de sedimentación simple durante dos horas."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/1",
+      "C": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/3",
+      "D": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Una DQO alta indica gran cantidad de materia orgánica oxidable (azúcares y pectinas disueltas). Al llegar al río, los microorganismos aeróbicos consumen el oxígeno disuelto para degradarla; por eso se requiere un tratamiento biológico (como un reactor anaerobio que además produce biogás) y no solo filtración o ajuste de pH.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.4",
+     "grado": 11,
+     "indicador": "7.4. Explica por qué las aguas mieles tienen una alta demanda química de oxígeno y propone un tratamiento que reduzca su impacto en los ríos.",
+     "evidencia": "Propuesta escrita de tratamiento de aguas mieles con datos de DQO y esquema del sistema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.4/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.4/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.4/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.4",
+      "CON:quimica/tratamiento-y-potabilizacion-del-agua"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un beneficio de café evalúa tres sistemas para tratar 50 m³/día de aguas mieles cuya DQO inicial es de 24 000 mg/L (24 kg/m³). Datos de un grupo de ejemplo:\n- Sistema 1 (tamizado + neutralización con cal): DQO de salida = 20 400 mg/L.\n- Sistema 2 (coagulación-floculación + sedimentación): DQO de salida = 13 200 mg/L.\n- Sistema 3 (neutralización + reactor anaerobio + laguna facultativa): DQO de salida = 1 200 mg/L.\n¿Qué sistema remueve mayor masa diaria de DQO y por qué?",
+     "opciones": {
+      "A": "El sistema 1, porque al neutralizar la acidez elimina 1 020 kg/día de demanda química de oxígeno en el efluente tratado.",
+      "B": "El sistema 2, porque la coagulación retiene 660 kg/día de azúcares disueltos sin requerir etapas biológicas posteriores.",
+      "C": "El sistema 3, porque solo deja 60 kg/día y remueve 1 140 kg/día al degradar biológicamente la materia orgánica disuelta.",
+      "D": "Los tres sistemas remueven la misma masa diaria, porque el caudal de 50 m³/día no cambia entre la entrada y la salida."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/3",
+      "B": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La carga inicial es 50 m³/día × 24 kg/m³ = 1 200 kg/día de DQO. Con el sistema 3 salen 50 m³/día × 1.2 kg/m³ = 60 kg/día, por lo que se remueven 1 140 kg/día (95 %) gracias a que las bacterias anaerobias transforman los compuestos orgánicos disueltos en biogás.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.4",
+     "grado": 11,
+     "indicador": "7.4. Explica por qué las aguas mieles tienen una alta demanda química de oxígeno y propone un tratamiento que reduzca su impacto en los ríos.",
+     "evidencia": "Propuesta escrita de tratamiento de aguas mieles con datos de DQO y esquema del sistema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.4/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G11-QUI-U7-7.4/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G11-QUI-U7-7.4/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G11-QUI-U7-7.4"
+     ],
+     "evalua": [
+      "TEMA:G11-QUI-U7-7.4",
+      "CON:quimica/tratamiento-y-potabilizacion-del-agua"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      11
+     ],
+     "enunciado": "Un beneficio en la zona occidental genera aguas mieles con una DQO de 20 000 mg/L y un pH de 4.2. En 2 o 3 oraciones: (1) explica por qué los azúcares y pectinas del mucílago causan esa DQO tan alta y qué le pasaría al oxígeno disuelto de un río si se vierten crudas, y (2) propón una secuencia de al menos dos etapas de tratamiento (incluyendo una biológica) indicando la función de cada una.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "rubrica": {
+      "respuesta_modelo": "Los azúcares y las pectinas disueltas en las aguas mieles son compuestos orgánicos que requieren mucho oxígeno para oxidarse, lo que eleva la DQO; al caer al río, los microorganismos consumen el oxígeno disuelto del agua para degradarlos y asfixian a la fauna acuática. Para tratarlas, primero se tamizan y se neutraliza su acidez con cal para proteger a las bacterias, y luego se pasan por un biodigestor anaerobio donde los microorganismos degradan la materia orgánica disuelta y la transforman en biogás.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la alta concentración de compuestos orgánicos (azúcares y pectinas) con la gran cantidad de oxígeno necesario para su oxidación (DQO alta) y la consecuente caída del oxígeno disuelto en el río.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Propone una secuencia lógica de al menos dos etapas que incluye acondicionamiento previo (tamizado/sedimentación o neutralización de pH) y un tratamiento biológico (reactor anaerobio o laguna) que degrada la carga orgánica disuelta.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Menciona el aprovechamiento del subproducto del tratamiento anaerobio (biogás/metano o bioabono).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Interpreta la DQO alta como exceso de oxígeno en el agua miel en lugar de demanda de oxígeno.",
+        "ejemplo": "Como tienen una DQO de 20 000 mg/L llevan demasiado oxígeno disuelto al río y oxidan a los peces.",
+        "dificultad": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/1"
+       },
+       {
+        "descripcion": "Propone únicamente filtración o sedimentación física para eliminar la DQO de los azúcares disueltos.",
+        "ejemplo": "Se pasan por un filtro de grava y arena fina para retener todos los azúcares y bajar la DQO.",
+        "dificultad": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/2"
+       },
+       {
+        "descripcion": "Asume que neutralizar el pH con cal basta para eliminar la carga orgánica y la DQO.",
+        "ejemplo": "Se les agrega cal hasta llegar a pH 7 y con eso ya queda destruida la DQO y pueden ir al río.",
+        "dificultad": "DIF:quimica/tratamiento-y-potabilizacion-del-agua/3"
+       }
+      ]
+     },
+     "retroalimentacion": "Una buena propuesta explica que la oxidación microbiana de azúcares y pectinas agota el oxígeno del río, y combina pretratamiento físico-químico (cribado y ajuste de pH) con degradación biológica (biodigestor anaerobio) para abatir la DQO.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G11-QUI-U7-7.4"
+     },
+     "origen": "redactor-actividades (G11-QUI-U7-7.4)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tratamiento-y-potabilizacion-del-agua",
+     "nombre": "Calidad y tratamiento del agua",
+     "definicion": "Parámetros químicos de calidad del agua y procesos (coagulación, floculación, filtración, cloración) que la potabilizan o depuran.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G11-QUI-U7-7.4",
+     "grado": 11,
+     "indicador": "7.4. Explica por qué las aguas mieles tienen una alta demanda química de oxígeno y propone un tratamiento que reduzca su impacto en los ríos.",
+     "evidencia": "Propuesta escrita de tratamiento de aguas mieles con datos de DQO y esquema del sistema"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G11-QUI-U7-7.4/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ]
+  }
+ ]
+}
