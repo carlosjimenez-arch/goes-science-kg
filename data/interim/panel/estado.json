@@ -90733,6 +90733,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U2-2.1/obj-1",
+    "decision": "corregir",
+    "cambios": {
+     "opciones": {
+      "A": "Está mal planteada, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
+      "B": "Es correcta, porque a·t tiene dimensión de rapidez, la misma que tiene v₀.",
+      "C": "Está mal planteada, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
+      "D": "Es correcta si se agrega ½ antes de a·t, porque ese factor ajusta sus dimensiones."
+     },
+     "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación está mal planteada. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las unidades derivadas, como m/s o N), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término."
+    },
+    "justificacion": "Física del experto intacta. «Es imposible» se cambia por «está mal planteada», el término del indicador y más claro en 10.°; A y C conservan inicio paralelo y longitud pareja, sin pistas.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.1",
+      "cita": "detecta ecuaciones mal planteadas por sus dimensiones"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "vocabulario del indicador; opciones parejas"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -90756,9 +90784,9 @@
    ],
    "enunciado": "Para un problema de tránsito, Valeria escribe la ecuación x = v₀·t + a·t, donde x es una distancia (m), v₀ una rapidez (m/s), a una aceleración (m/s²) y t un tiempo (s). ¿Qué concluye el análisis dimensional de esa ecuación?",
    "opciones": {
-    "A": "Es imposible, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
+    "A": "Está mal planteada, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
     "B": "Es correcta, porque a·t tiene dimensión de rapidez, la misma que tiene v₀.",
-    "C": "Es imposible, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
+    "C": "Está mal planteada, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
     "D": "Es correcta si se agrega ½ antes de a·t, porque ese factor ajusta sus dimensiones."
    },
    "correcta": "A",
@@ -90768,7 +90796,7 @@
    "valor": null,
    "tolerancia": null,
    "unidad": null,
-   "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación es imposible. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las unidades derivadas, como m/s o N), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término.",
+   "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación está mal planteada. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las unidades derivadas, como m/s o N), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término.",
    "duracion_min": 6,
    "estado": "propuesta_pendiente",
    "fuente": {
@@ -90872,11 +90900,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U2-2.1/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Contexto rural cercano (riego en Usulután), datos de ejemplo que no exigen laboratorio, unidad de respuesta explícita y retroalimentación de 64 palabras que modela la cancelación de unidades. Carga cognitiva adecuada para 10.°.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.1",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U2-2.1/obj-abierta": {
   "tipo": "contenido",
@@ -91012,11 +91063,109 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U2-2.1/obj-abierta",
+    "decision": "corregir",
+    "cambios": {
+     "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 3 o 4 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y compara 324 m/s con una rapidez conocida para explicar cómo una estimación previa le habría avisado del error."
+    },
+    "justificacion": "El criterio obligatorio c3 exige comparar con una rapidez conocida; el enunciado solo pedía «estimación del orden de magnitud». Se pide la comparación explícitamente y se amplía a 3 o 4 oraciones, porque incluye una cadena de cálculo.",
+    "evidencia": [
+     {
+      "fuente": "rúbrica c3",
+      "cita": "justifica que 324 m/s no es razonable comparándolo con una rapidez conocida"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "la abierta pide todo lo que exige cada criterio obligatorio"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U2-2.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U2-2.1"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U2-2.1",
+    "CON:fisica/sistema-internacional-unidades"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 3 o 4 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y compara 324 m/s con una rapidez conocida para explicar cómo una estimación previa le habría avisado del error.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Kevin usó el factor al revés: para pasar de km/h a m/s se divide entre 3.6, porque 1 km/h = 1000 m / 3600 s. La cadena 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) da 25 m/s. Estimar antes ayuda: 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro.",
+   "duracion_min": 5,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U2-2.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Kevin multiplicó por 3.6 cuando debía dividir: usó el factor al revés y por eso las unidades no se cancelan. Lo correcto es 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) = 25 m/s, donde se cancelan km con km y h con h. Si hubiera estimado antes, habría visto que 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro en carretera, así que el resultado no era razonable.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Identifica el error: multiplicó por 3.6 en lugar de dividir (usó el factor invertido), y por eso las unidades no se cancelan.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Escribe una cadena de factores con unidades (km a m y h a s, o el factor 1 m/s = 3.6 km/h escrito como fracción) en la que se cancelan km y h, y obtiene 25 m/s.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que 324 m/s no es razonable comparándolo con una rapidez conocida (más de 1 000 km/h, rapidez de avión, o varias veces la de un carro en carretera).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona que la unidad del resultado sale de la cancelación de unidades y sirve para comprobarlo.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Corrige el número sin explicar el factor invertido ni mostrar la cancelación de unidades.",
+      "ejemplo": "Se equivocó en la multiplicación; la respuesta correcta es 25 m/s.",
+      "dificultad": "DIF:fisica/sistema-internacional-unidades/2"
+     },
+     {
+      "descripcion": "Usa un factor de conversión incompleto (convierte solo los km o solo las horas).",
+      "ejemplo": "90 km/h × 1000 m/km = 90 000 m/h, y eso ya está en metros, así que la respuesta es 90 000 m/s.",
+      "dificultad": "DIF:fisica/sistema-internacional-unidades/2"
+     },
+     {
+      "descripcion": "No ve problema en el orden de magnitud y acepta el resultado.",
+      "ejemplo": "No hay error, porque 3.6 es el factor entre km/h y m/s y el resultado ya está en m/s.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U2-2.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-FIS-U2-2.4/obj-1": {
   "tipo": "contenido",
@@ -91118,11 +91267,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U2-2.4/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Contexto cercano (dron de Protección Civil), opciones de longitud pareja; A, B y D son errores reales y dos comparten 1000 m, así que el número no delata la clave. Retroalimentación de 77 palabras, clara y sin regaño.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.4",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U2-2.4/obj-2": {
   "tipo": "contenido",
@@ -91224,11 +91396,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U2-2.4/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Tabla de componentes breve y leíble, ángulo de referencia declarado. Opciones parejas y plausibles; la D enseña que x² + y² no detecta errores de signo. Retroalimentación de 75 palabras, dentro del límite.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.4",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U2-2.4/obj-abierta": {
   "tipo": "contenido",
@@ -91364,11 +91559,109 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U2-2.4/obj-abierta",
+    "decision": "corregir",
+    "cambios": {
+     "enunciado": "Una brigada de rescate sale del campamento y camina 6.0 km hacia el este, luego 2.0 km hacia el norte y luego 2.0 km hacia el oeste. Daniela dice: «Quedamos a 10 km del campamento». En 2 o 3 oraciones: explica por qué su razonamiento falla; calcula la resultante con î y ĵ y su módulo; y di qué distancia y con qué rumbo (dirección y ángulo) debe caminar la brigada para regresar."
+    },
+    "justificacion": "El criterio obligatorio c3 exige el ángulo de regreso (S 63° O o equivalente, ±2°), pero el enunciado solo pedía «en qué dirección»: «suroeste» bastaría al leerlo. Se pide el rumbo con dirección y ángulo. Números y rúbrica del experto intactos.",
+    "evidencia": [
+     {
+      "fuente": "rúbrica c3",
+      "cita": "dirección de regreso: suroeste, rumbo S 63° O o 207° desde el este, ±2°"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "el enunciado pide lo que exige cada criterio obligatorio"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U2-2.4/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U2-2.4"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U2-2.4",
+    "CON:fisica/suma-vectores-componentes"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Una brigada de rescate sale del campamento y camina 6.0 km hacia el este, luego 2.0 km hacia el norte y luego 2.0 km hacia el oeste. Daniela dice: «Quedamos a 10 km del campamento». En 2 o 3 oraciones: explica por qué su razonamiento falla; calcula la resultante con î y ĵ y su módulo; y di qué distancia y con qué rumbo (dirección y ángulo) debe caminar la brigada para regresar.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Los desplazamientos se suman por componentes: x = 6.0 − 2.0 = 4.0 km y y = 2.0 km, así que R = 4.0 î + 2.0 ĵ km, de unos 4.5 km. Los 10 km son la distancia caminada, que es escalar. Para regresar, la brigada recorre −R: unos 4.5 km hacia el suroeste, con rumbo S 63° O (unos 207° medidos desde el este).",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U2-2.4"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Daniela sumó las distancias como números, pero los desplazamientos tienen dirección y se suman por componentes: los 2.0 km al oeste restan en x. La resultante es R = (6.0 − 2.0) î + 2.0 ĵ = 4.0 î + 2.0 ĵ km, con módulo √(4.0² + 2.0²) ≈ 4.5 km. Para regresar deben caminar unos 4.5 km en sentido opuesto, hacia el suroeste, con rumbo S 63° O, porque tan θ = 4.0/2.0 medido desde el sur.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Explica que los desplazamientos son vectores y se suman según su dirección (por componentes), no sumando sus módulos; o que 10 km es la distancia recorrida y no el desplazamiento.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Escribe R = 4.0 î + 2.0 ĵ km (o componentes x = 4.0 km, y = 2.0 km) y un módulo entre 4.4 y 4.5 km.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Da la dirección de regreso opuesta a la resultante: hacia el suroeste, con rumbo S 63° O, unos 27° al sur del oeste o unos 207° desde el este (se aceptan ±2°).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Muestra cómo obtuvo el ángulo (tan θ con las componentes) o un diagrama de los tramos.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Suma los módulos o acepta los 10 km como distancia al campamento.",
+      "ejemplo": "Daniela tiene razón: 6 + 2 + 2 = 10 km, así que deben caminar 10 km de regreso.",
+      "dificultad": "DIF:fisica/suma-vectores-componentes/1"
+     },
+     {
+      "descripcion": "Da como regreso la dirección de la resultante y no la opuesta.",
+      "ejemplo": "R = 4.0 î + 2.0 ĵ km, unos 4.5 km; deben caminar 4.5 km hacia el noreste.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Toma positiva la componente x del tramo hacia el oeste.",
+      "ejemplo": "R = 8.0 î + 2.0 ĵ km, unos 8.2 km, porque las componentes x de los tramos se suman: 6.0 + 2.0.",
+      "dificultad": "DIF:fisica/suma-vectores-componentes/2"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U2-2.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-FIS-U3-3.5/obj-1": {
   "tipo": "contenido",
@@ -91469,11 +91762,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.5/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Contexto de seguridad vial con sentido para jóvenes de 15–16 años. B y D comparten 36 m y obligan a elegir el porqué: buen diseño sin pistas. Retroalimentación de 63 palabras, sin regaño.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.5",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.5/obj-2": {
   "tipo": "contenido",
@@ -91567,11 +91883,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.5/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Datos de ejemplo de video, sin requerir equipo. Unidad y desde dónde se mide declarados. La retroalimentación (68 palabras) separa reacción y frenado: una idea por paso. Personaje adulto al volante, adecuado.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.5",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.5/obj-abierta": {
   "tipo": "contenido",
@@ -91707,11 +92046,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.5/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "El enunciado pide lo que exigen los tres criterios obligatorios (conclusión, signos y cálculo con unidad). Mario se equivoca y la retroalimentación (60 palabras) corrige la idea sin avergonzar.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.5",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.6/obj-1": {
   "tipo": "contenido",
@@ -91813,11 +92175,71 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.6/obj-1",
+    "decision": "corregir",
+    "cambios": {
+     "enunciado": "Andrea lanza una pelota pequeña de hule verticalmente hacia arriba en el patio. Si se desprecia la resistencia del aire, ¿cómo es la aceleración de la pelota en el instante en que alcanza el punto más alto?"
+    },
+    "justificacion": "Ítem correcto y sin pistas. Solo se cambia «pelota de golf», objeto de un deporte poco accesible en muchas comunidades, por una pelota pequeña de hule, común en cualquier escuela; la física no cambia.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "contextos familiares sin sesgo socioeconómico (DUA)"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U3-3.6/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U3-3.6"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U3-3.6",
+    "CON:fisica/caida-libre"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Andrea lanza una pelota pequeña de hule verticalmente hacia arriba en el patio. Si se desprecia la resistencia del aire, ¿cómo es la aceleración de la pelota en el instante en que alcanza el punto más alto?",
+   "opciones": {
+    "A": "Es g hacia abajo, igual que al subir y al bajar, porque el peso actúa todo el tiempo.",
+    "B": "Es cero, porque en ese instante la velocidad es cero y la pelota no se está moviendo.",
+    "C": "Pasa de g hacia arriba a g hacia abajo, porque la aceleración sigue el sentido del movimiento.",
+    "D": "Es mayor que g, porque en ese punto la pelota cambia de sentido de golpe y frena en seco."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:fisica/caida-libre/2",
+    "C": "DIF:fisica/caida-libre/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En el punto más alto la velocidad es cero solo un instante, pero la velocidad sigue cambiando: un instante antes apuntaba hacia arriba y un instante después hacia abajo. La única fuerza es el peso, que no se apaga, así que la aceleración vale g y apunta hacia abajo al subir, en el punto más alto y al bajar.",
+   "duracion_min": 5,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U3-3.6"
+   },
+   "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-FIS-U3-3.6/obj-2": {
   "tipo": "contenido",
@@ -91911,11 +92333,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.6/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Datos de ejemplo linealizados, unidad declarada, constante remitida a la tabla de referencia. La retroalimentación (71 palabras) nombra el error frecuente de reportar la pendiente como g. Carga adecuada para 10.°.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.6",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.6/obj-abierta": {
   "tipo": "contenido",
@@ -92051,11 +92496,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.6/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Experiencia que cualquier escuela puede repetir con dos hojas de papel, sin laboratorio. Las tres partes del enunciado coinciden con los tres criterios obligatorios. Retroalimentación de 62 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.6",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.7/obj-1": {
   "tipo": "contenido",
@@ -92156,11 +92624,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.7/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Gráfica descrita con palabras, accesible sin imagen. Opciones parejas y plausibles; A recoge la lectura de v-t como x-t. Retroalimentación de 62 palabras, clara.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.7/obj-2": {
   "tipo": "contenido",
@@ -92254,11 +92745,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.7/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Tramos descritos con palabras, signo y unidad explícitos. La retroalimentación (78 palabras) distingue desplazamiento y distancia recorrida. Adecuado para 10.°.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U3-3.7/obj-abierta": {
   "tipo": "contenido",
@@ -92394,11 +92908,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U3-3.7/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Contexto escolar cercano. Las tres partes del enunciado corresponden a los tres criterios obligatorios. El enunciado es largo, pero cada dato se usa. Retroalimentación de 64 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U4-4.1/obj-1": {
   "tipo": "contenido",
@@ -92492,11 +93029,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U4-4.1/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Contexto deportivo cercano, idealización declarada, g remitida a la tabla con «aproximado» y unidad pedida. Retroalimentación de 68 palabras con una idea por paso (componentes, tiempo, alcance).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U4-4.1",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U4-4.1/obj-2": {
   "tipo": "contenido",
@@ -92597,11 +93157,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U4-4.1/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Lanzador de liga hecho en el aula: viable sin laboratorio. B y C comparten la observación y obligan a elegir el porqué; sin pistas gramaticales. Retroalimentación de 64 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U4-4.1",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U4-4.1/obj-abierta": {
   "tipo": "contenido",
@@ -92740,9 +93323,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U4-4.1/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Se mantiene la precisión del experto sobre la simultaneidad. Experiencia con canicas y una mesa, viable en cualquier escuela. El enunciado pide lo que exigen los tres criterios obligatorios. Retroalimentación de 56 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U4-4.1",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -92820,6 +93422,10 @@
    "origen": "redactor-actividades (G10-FIS-U4-4.1)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:ACT:G10-FIS-U5-5.10/obj-1": {
@@ -92914,11 +93520,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.10/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Idealizaciones declaradas, g aproximada de la tabla, unidad pedida y andamiaje explícito (diagrama de cuerpo libre y segunda ley para cada bolsa). Retroalimentación de 65 palabras. 8 min es realista.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.10",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.10/obj-2": {
   "tipo": "contenido",
@@ -93027,9 +93656,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.10/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Situación cotidiana (balanza en un ascensor), datos de ejemplo. Se mantiene el enlace de B que fijó el experto. Opciones parejas; la retroalimentación (69 palabras) explica sin regañar y aclara que el peso no cambia.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.10",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -93074,6 +93722,10 @@
    "origen": "redactor-actividades (G10-FIS-U5-5.10)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:ACT:G10-FIS-U5-5.10/obj-abierta": {
@@ -93210,11 +93862,109 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.10/obj-abierta",
+    "decision": "corregir",
+    "cambios": {
+     "enunciado": "En los videos de la Estación Espacial Internacional, que orbita a unos 400 km de altura, las astronautas flotan dentro de la nave. Fernanda dice que flotan porque allá arriba ya no hay gravedad. El radio de la Tierra es de unos 6 400 km (valor aproximado de la tabla de referencia). En 2 o 3 oraciones: di si a esa altura la gravedad es nula o, si no, aproximadamente qué fracción es de la del suelo; y explica por qué las astronautas flotan y por qué el piso de la nave no tiene que empujarlas."
+    },
+    "justificacion": "Física del experto intacta. El criterio obligatorio c3 exige relacionar la caída común con que el piso no las empuja (normal cero); el enunciado lo insinuaba sin pedirlo. Se pide explícitamente por qué el piso no tiene que empujarlas.",
+    "evidencia": [
+     {
+      "fuente": "rúbrica c3",
+      "cita": "relaciona esa caída común con que el piso no las empuja: normal cero"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "el enunciado pide lo que exige cada criterio obligatorio"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U5-5.10/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U5-5.10"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.10",
+    "CON:fisica/aplicaciones-leyes-newton"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "En los videos de la Estación Espacial Internacional, que orbita a unos 400 km de altura, las astronautas flotan dentro de la nave. Fernanda dice que flotan porque allá arriba ya no hay gravedad. El radio de la Tierra es de unos 6 400 km (valor aproximado de la tabla de referencia). En 2 o 3 oraciones: di si a esa altura la gravedad es nula o, si no, aproximadamente qué fracción es de la del suelo; y explica por qué las astronautas flotan y por qué el piso de la nave no tiene que empujarlas.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "A 400 km la gravedad sigue siendo cerca del 90 % de la del suelo: g cambia con (R/(R + h))² ≈ (6400/6800)² ≈ 0.89. Las astronautas flotan porque ellas y la nave caen libremente juntas, con la misma aceleración, mientras avanzan tan rápido de lado que nunca llegan al suelo: el piso no tiene que empujarlas, la normal es cero y su peso aparente también.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U5-5.10"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Fernanda se equivoca: a 400 km la gravedad todavía es cerca del 90 % de la del suelo, porque (6400/6800)² ≈ 0.89. Las astronautas flotan porque ellas y la estación están en caída libre continua: caen hacia la Tierra con la misma aceleración, pero avanzan de lado tan rápido que dan la vuelta sin llegar al suelo. Como caen juntas, el piso no necesita empujarlas, la normal es cero y no sienten su peso, igual que en un ascensor cuyo cable se rompiera.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Afirma que a esa altura la gravedad no es nula y da una fracción cercana al 90 % (entre 0.85 y 0.92) o la calcula con (R/(R + h))².",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Explica que las astronautas y la nave caen libremente juntas, con la misma aceleración (caída libre continua u órbita como caída).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Relaciona esa caída común con que el piso no las empuja: normal cero o peso aparente nulo.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona la gran velocidad horizontal que impide que lleguen al suelo o compara con un ascensor en caída libre.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta que en órbita no hay gravedad.",
+      "ejemplo": "Flotan porque a 400 km ya salieron de la gravedad de la Tierra.",
+      "dificultad": "DIF:fisica/aplicaciones-leyes-newton/3"
+     },
+     {
+      "descripcion": "Explica la flotación con una fuerza centrífuga real que equilibra la gravedad.",
+      "ejemplo": "La gravedad las jala hacia abajo pero la fuerza centrífuga las jala hacia afuera y quedan en equilibrio.",
+      "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+     },
+     {
+      "descripcion": "Atribuye la flotación a la falta de aire.",
+      "ejemplo": "Flotan porque en el espacio no hay aire que las empuje hacia abajo.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U5-5.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-FIS-U5-5.2/obj-1": {
   "tipo": "contenido",
@@ -93316,11 +94066,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.2/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Contexto de seguridad vial salvadoreño (microbús). Opciones de longitud pareja y plausibles; B y D son ideas previas reales. Retroalimentación de 68 palabras, exacta (nombra la fricción pequeña de los pies).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.2/obj-2": {
   "tipo": "contenido",
@@ -93422,11 +94195,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.2/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Plomada de tuerca e hilo: material de bajo costo; los datos son de ejemplo. Opciones parejas. La retroalimentación (63 palabras) aclara que en la curva hay aceleración aunque la rapidez sea constante.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.2/obj-abierta": {
   "tipo": "contenido",
@@ -93565,9 +94361,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.2/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Contexto real y relevante para la seguridad de jóvenes (viajar en la paila). Los criterios obligatorios c1, c3 y c4 están pedidos en el enunciado. Retroalimentación corregida por el experto: 81 palabras, dentro del límite.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -93645,6 +94460,10 @@
    "origen": "redactor-actividades (G10-FIS-U5-5.2)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:ACT:G10-FIS-U5-5.4/obj-1": {
@@ -93739,11 +94558,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.4/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Datos del problema completos (fricción dada), unidad pedida y andamiaje explícito (diagrama y ΣFx). Retroalimentación de 70 palabras, una idea por paso.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.4",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.4/obj-2": {
   "tipo": "contenido",
@@ -93844,11 +94686,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.4/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Montaje de arandelas y polea con datos de ejemplo, sin exigir laboratorio. Opciones parejas; B recoge la conclusión «la ley falla». Retroalimentación de 75 palabras. Adecuado para 10.°.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.4",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.4/obj-abierta": {
   "tipo": "contenido",
@@ -93984,11 +94849,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.4/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Fuerza neta asociada a la aceleración y no al movimiento, como exige la regla del panel. Las tres partes del enunciado coinciden con los criterios obligatorios. Retroalimentación de 67 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.4",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.7/obj-1": {
   "tipo": "contenido",
@@ -94085,9 +94973,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.7/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Se mantiene la corrección del experto (sin la nota de la malla). Constantes rotuladas como aproximadas de la tabla de referencia; el formato de respuesta en 10²⁰ N trae ejemplo. Retroalimentación de 70 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.7",
+      "cita": "el ítem sirve al indicador; contenido científico fijado por el experto"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "registro, carga, opciones parejas y retroalimentación ≤100 palabras"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -94123,6 +95030,10 @@
    "origen": "redactor-actividades (G10-FIS-U5-5.7)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:ACT:G10-FIS-U5-5.7/obj-2": {
@@ -94228,6 +95139,29 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.7/obj-2",
+    "decision": "corregir",
+    "cambios": {
+     "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Ana camina hacia atrás y arrastra a Kevin, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
+     "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Ana arrastra a Kevin: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: para saber si Kevin se acelera solo se suman las fuerzas sobre él, la del dinamómetro y la fricción de las rueditas."
+    },
+    "justificacion": "Clave y física del experto intactas. En las pruebas 2 y 3 Kevin jalaba fuerte y arrastraba a Ana, que quedaba pasiva: estereotipo de fuerza por género. Se invierte la prueba 3 (Ana arrastra a Kevin) y la retroalimentación en consecuencia.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "equilibrio de roles por género en los personajes"
+     },
+     {
+      "fuente": "prompts/redactar_actividades.md",
+      "cita": "Personajes: alterna nombres y géneros"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -94249,7 +95183,7 @@
    "grados": [
     10
    ],
-   "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Kevin camina hacia atrás y arrastra a Ana, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
+   "enunciado": "Ana y Kevin enganchan dos dinamómetros iguales, uno contra otro, y anotan las dos lecturas al mismo tiempo con un video (datos de un grupo de ejemplo). Prueba 1, Ana jala y Kevin solo sostiene: 2.0 N y 2.0 N. Prueba 2, Kevin jala fuerte y Ana sostiene: 4.5 N y 4.5 N. Prueba 3, Ana camina hacia atrás y arrastra a Kevin, que va en una silla con rueditas: 3.5 N y 3.5 N. ¿Qué conclusión apoyan mejor los datos?",
    "opciones": {
     "A": "Marcan igual solo si nadie se mueve, porque al avanzar quien arrastra hace más fuerza que la otra.",
     "B": "Marcan igual siempre: cada uno mide la fuerza que le hace el otro, y esas dos forman un par.",
@@ -94264,7 +95198,7 @@
    "valor": null,
    "tolerancia": null,
    "unidad": null,
-   "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Kevin arrastra a Ana: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: para saber si Ana se acelera solo se suman las fuerzas sobre ella, la del dinamómetro y la fricción de las rueditas.",
+   "retroalimentacion": "En las tres pruebas las lecturas son iguales, también en la 3, donde Ana arrastra a Kevin: quien jala con más ganas no ejerce más fuerza sobre el otro. Cada dinamómetro mide la fuerza que recibe del otro; son un par de acción y reacción, iguales y opuestas, sobre cuerpos distintos. No se anulan entre sí: para saber si Kevin se acelera solo se suman las fuerzas sobre él, la del dinamómetro y la fricción de las rueditas.",
    "duracion_min": 6,
    "estado": "propuesta_pendiente",
    "fuente": {
@@ -94456,6 +95390,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.7/obj-abierta",
+    "decision": "corregir",
+    "cambios": {
+     "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par; y, comparando las fuerzas que actúan sobre el bote (incluida la resistencia del agua), explica por qué el bote sí puede arrancar y ganar rapidez."
+    },
+    "justificacion": "Se mantiene la corrección del experto (arrancar y ganar rapidez, no «avanzar»). El criterio obligatorio c3 exige comparar la fuerza del agua con la resistencia; el enunciado no lo pedía. Se pide comparar las fuerzas sobre el bote, incluida la resistencia.",
+    "evidencia": [
+     {
+      "fuente": "rúbrica c3",
+      "cita": "la del agua sobre el remo supera a la resistencia y la fuerza neta lo acelera"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "el enunciado pide lo que exige cada criterio obligatorio"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -94477,7 +95433,7 @@
    "grados": [
     10
    ],
-   "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par y por qué el bote sí puede arrancar y ganar rapidez.",
+   "enunciado": "Sofía rema en un bote en el lago de Ilopango. Su hermano le dice: «Si el remo empuja el agua y el agua empuja el remo con la misma fuerza, las dos se anulan y el bote no debería avanzar». En 2 o 3 oraciones, explica qué está mal en su razonamiento: di sobre qué cuerpo actúa cada fuerza del par; y, comparando las fuerzas que actúan sobre el bote (incluida la resistencia del agua), explica por qué el bote sí puede arrancar y ganar rapidez.",
    "opciones": null,
    "correcta": null,
    "distractores": null,
@@ -94630,11 +95586,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.9/obj-1",
+    "decision": "aprobar",
+    "justificacion": "Enunciado claro y en registro de 10.°: andamia con «plantea ΣFy = 0», dice la unidad y remite g a la tabla de referencia como aproximado. Retroalimentación de 74 palabras (límite 100), explica sin regañar y conecta con el porqué que pide el indicador. Contexto cotidiano (costal en el patio) y 7 min realistas.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.9",
+      "cita": "indicador: calcula la normal con fuerzas en ángulo y explica por qué no siempre es el peso"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "un paso guiado por ítem; unidad y constante explícitas"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.9/obj-2": {
   "tipo": "contenido",
@@ -94735,11 +95714,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.9/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Datos rotulados como de ejemplo, situación concreta y manipulable. Opciones de longitud pareja; A y B dan ambas un cálculo, así que el número no delata la clave; C y D recogen ideas previas plausibles. Retroalimentación de 74 palabras, explica la regla μs = tan θ y por qué la masa no importa. 7 min suficientes.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.9",
+      "cita": "indicador: usa los coeficientes para predecir si un cuerpo se desliza"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "distractores B, C y D plausibles y sin pistas gramaticales"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:ACT:G10-FIS-U5-5.9/obj-abierta": {
   "tipo": "contenido",
@@ -94875,11 +95877,110 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:ACT:G10-FIS-U5-5.9/obj-abierta",
+    "decision": "corregir",
+    "justificacion": "El criterio obligatorio c2 exige el porqué de que baje la normal, pero el enunciado solo pregunta qué le pasa; c3 pide relacionarla con la fricción. Se piden las tres partes por separado y 3 o 4 oraciones, y se ajusta el tiempo a 6 min. Contenido científico intacto.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.9",
+      "cita": "indicador: explicar por qué la normal no siempre es igual al peso"
+     },
+     {
+      "fuente": "prompts/redactar_actividades.md",
+      "cita": "la abierta pide explícitamente todo lo que exige cada criterio obligatorio"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 3 o 4 oraciones, explica: 1) por qué cuesta más arrancar que mantenerla deslizándose; 2) qué le pasa a la fuerza normal cuando jala inclinado, y por qué; 3) qué le pasa entonces a la fricción.",
+     "duracion_min": 6
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U5-5.9/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U5-5.9"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.9",
+    "CON:fisica/friccion-resistencia-aire"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Carmen arrastra con una cuerda una caja pesada por el piso. Nota dos cosas: le cuesta más ponerla en movimiento que mantenerla deslizándose, y se le hace más fácil si jala la cuerda inclinada hacia arriba en vez de horizontal. En 3 o 4 oraciones, explica: 1) por qué cuesta más arrancar que mantenerla deslizándose; 2) qué le pasa a la fuerza normal cuando jala inclinado, y por qué; 3) qué le pasa entonces a la fricción.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Para arrancar hay que superar la fricción estática máxima, μs·N, que es mayor que la cinética, μk·N, porque en general μs > μk. Al jalar inclinado, la componente vertical de la cuerda carga parte del peso: la normal baja (N = mg − F sen θ) y con ella baja la fricción, que es proporcional a N.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U5-5.9"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Cuesta más arrancar porque, para que la caja empiece a moverse, la fuerza debe superar la fricción estática máxima, μs·N, y el coeficiente estático es mayor que el cinético; ya en movimiento solo hay que igualar μk·N, que es menor. Al jalar inclinado, la componente vertical de la cuerda sostiene parte del peso, así que el piso empuja menos: la normal es menor que el peso (N = mg − F sen θ) y la fricción, que es proporcional a N, también baja.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Explica que para arrancar se debe superar la fricción estática máxima, mayor que la cinética (μs > μk).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Dice que al jalar inclinado la normal disminuye porque la componente vertical de la cuerda sostiene parte del peso.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Relaciona la menor normal con una menor fricción (f = μ·N).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Escribe N = mg − F sen θ o menciona que, si el ángulo es muy grande, la componente horizontal útil se reduce demasiado.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Supone que la normal es siempre igual al peso.",
+      "ejemplo": "Jalar inclinado no cambia la normal, que siempre es mg; solo se siente más fácil por la postura.",
+      "dificultad": "DIF:fisica/friccion-resistencia-aire/1"
+     },
+     {
+      "descripcion": "Cree que la fricción estática vale siempre su máximo.",
+      "ejemplo": "Cuando la caja está quieta la fricción es μs·mg aunque nadie la empuje, y por eso cuesta más arrancar.",
+      "dificultad": "DIF:fisica/friccion-resistencia-aire/2"
+     },
+     {
+      "descripcion": "Explica la diferencia por el peso o la inercia sin hablar de los coeficientes.",
+      "ejemplo": "Cuesta más arrancar porque quieta la caja pesa más.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-FIS-U6-6.5/obj-1": {
   "tipo": "contenido",
@@ -121192,11 +122293,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/aplicaciones-leyes-newton/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.10",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/aplicaciones-leyes-newton/2": {
   "tipo": "contenido",
@@ -121269,11 +122393,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/aplicaciones-leyes-newton/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.10",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/aplicaciones-leyes-newton/3": {
   "tipo": "contenido",
@@ -121349,9 +122496,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/aplicaciones-leyes-newton/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.10",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -121366,6 +122532,10 @@
    "origen": "redactor-actividades (G10-FIS-U5-5.10)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:DIF:fisica/caida-libre/1": {
@@ -121439,11 +122609,46 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/caida-libre/1",
+    "decision": "corregir",
+    "justificacion": "La descripción es clara y la aclaración sobre el aire evita marcar como error algo cierto. La señal de la hoja arrugada no dice con qué se compara; se precisa «que una hoja lisa igual» para que la docente reconozca la señal sin ambigüedad. Sin cambio científico.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.6",
+      "cita": "fila de caída libre de la malla vigente"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "una señal debe ser observable sin conocer la actividad de origen"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "senales": "Predice que la piedra llega claramente antes que la canica; explica que una hoja arrugada cae antes que una hoja lisa igual porque «pesa más»; usa la masa en las ecuaciones de la caída libre."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "DIF:fisica/caida-libre/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/caida-libre",
+   "descripcion": "Cree que los cuerpos más pesados caen con mayor aceleración también cuando el aire es despreciable, por ejemplo una piedra y una canica soltadas desde 1 m. (Con aire, entre cuerpos de igual forma, el más pesado sí puede llegar antes; el error es extenderlo a la caída libre.)",
+   "senales": "Predice que la piedra llega claramente antes que la canica; explica que una hoja arrugada cae antes que una hoja lisa igual porque «pesa más»; usa la masa en las ecuaciones de la caída libre.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "justificacion": "Idea aristotélica muy extendida sobre la caída de los cuerpos.",
+   "origen": "redactor-actividades (G10-FIS-U3-3.6)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:fisica/caida-libre/2": {
   "tipo": "contenido",
@@ -121516,11 +122721,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/caida-libre/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.6",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/caida-libre/3": {
   "tipo": "contenido",
@@ -121593,11 +122821,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/caida-libre/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.6",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/calor-latente/1": {
   "tipo": "contenido",
@@ -124338,11 +125589,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/friccion-resistencia-aire/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.9",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/friccion-resistencia-aire/2": {
   "tipo": "contenido",
@@ -124415,11 +125689,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/friccion-resistencia-aire/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.9",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/friccion-resistencia-aire/3": {
   "tipo": "contenido",
@@ -124492,11 +125789,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/friccion-resistencia-aire/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.9",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/fuerza-elastica-ley-hooke/1": {
   "tipo": "contenido",
@@ -125254,11 +126574,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/graficas-movimiento/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/graficas-movimiento/2": {
   "tipo": "contenido",
@@ -125331,11 +126674,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/graficas-movimiento/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/graficas-movimiento/3": {
   "tipo": "contenido",
@@ -125408,11 +126774,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/graficas-movimiento/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/ley-coulomb/1": {
   "tipo": "contenido",
@@ -126599,11 +127988,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/movimiento-proyectiles/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U4-4.1",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/movimiento-proyectiles/2": {
   "tipo": "contenido",
@@ -126676,11 +128088,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/movimiento-proyectiles/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U4-4.1",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/movimiento-proyectiles/3": {
   "tipo": "contenido",
@@ -126753,11 +128188,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/movimiento-proyectiles/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U4-4.1",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/movimiento-uniformemente-acelerado/1": {
   "tipo": "contenido",
@@ -126830,11 +128288,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.5",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/movimiento-uniformemente-acelerado/2": {
   "tipo": "contenido",
@@ -126910,9 +128391,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.5",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -126927,6 +128427,10 @@
    "origen": "redactor-actividades (G10-FIS-U3-3.5)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:DIF:fisica/movimiento-uniformemente-acelerado/3": {
@@ -127000,11 +128504,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/movimiento-uniformemente-acelerado/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.5",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/potencia-electrica-joule/1": {
   "tipo": "contenido",
@@ -127861,11 +129388,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/primera-ley-newton/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/primera-ley-newton/2": {
   "tipo": "contenido",
@@ -127938,11 +129488,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/primera-ley-newton/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/primera-ley-newton/3": {
   "tipo": "contenido",
@@ -128015,11 +129588,46 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/primera-ley-newton/3",
+    "decision": "corregir",
+    "justificacion": "Contenido correcto, pero la señal «las dos botellas colgadas» supone que la docente recuerda el experimento. Se describe la situación (una llena de agua y otra vacía, mismo empujón), tomada de los materiales del experimento de la unidad, para que la señal sea observable por sí sola. Sin cambio científico.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "indicador: distinguir masa inercial de peso"
+     },
+     {
+      "fuente": "data/pedagogia/experimentos.json",
+      "cita": "materiales: dos botellas de 600 mL, una llena de agua y otra vacía, colgadas de hilos"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "senales": "Dice que un astronauta podría detener con un dedo un satélite grande «porque allá no pesa»; predice que dos botellas colgadas de hilos, una llena de agua y otra vacía, se moverán igual con el mismo empujón porque el hilo sostiene su peso; usa «masa» y «peso» como sinónimos o da la masa en newtons; afirma que una caja liviana suelta en un bus no es peligrosa porque «no tiene inercia»."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "DIF:fisica/primera-ley-newton/3",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/primera-ley-newton",
+   "descripcion": "Confunde la masa inercial con el peso: cree que la inercia depende de la gravedad, de modo que un objeto colgado, apoyado o en el espacio, donde «no pesa», no costaría nada acelerarlo o detenerlo; o que un objeto liviano no tiene inercia. La masa mide la resistencia a cambiar la velocidad y es la misma en cualquier lugar; el peso es la fuerza con que la Tierra lo atrae.",
+   "senales": "Dice que un astronauta podría detener con un dedo un satélite grande «porque allá no pesa»; predice que dos botellas colgadas de hilos, una llena de agua y otra vacía, se moverán igual con el mismo empujón porque el hilo sostiene su peso; usa «masa» y «peso» como sinónimos o da la masa en newtons; afirma que una caja liviana suelta en un bus no es peligrosa porque «no tiene inercia».",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "justificacion": "Confusión masa-peso muy frecuente; el indicador pide distinguir masa inercial de peso.",
+   "origen": "redactor-actividades (G10-FIS-U5-5.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:fisica/primera-ley-termodinamica/1": {
   "tipo": "contenido",
@@ -130474,11 +132082,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/segunda-ley-newton/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.4",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/segunda-ley-newton/3": {
   "tipo": "contenido",
@@ -130551,11 +132182,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/segunda-ley-newton/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.4",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/semiconductores-dispositivos/1": {
   "tipo": "contenido",
@@ -130911,9 +132565,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/sistema-internacional-unidades/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.1",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -130928,6 +132601,10 @@
    "origen": "redactor-actividades (G10-FIS-U2-2.1)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:DIF:fisica/sistema-internacional-unidades/2": {
@@ -131001,11 +132678,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/sistema-internacional-unidades/2",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.1",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/sistema-internacional-unidades/3": {
   "tipo": "contenido",
@@ -131078,11 +132778,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/sistema-internacional-unidades/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.1",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/suma-vectores-componentes/1": {
   "tipo": "contenido",
@@ -131158,9 +132881,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/suma-vectores-componentes/1",
+    "decision": "aprobar",
+    "justificacion": "Descripción y señales en lenguaje claro para la docente, sin ids internos ni términos sin definir; las señales son conductas observables en lo que el estudiante escribe o dice. Longitud manejable y contexto cercano (ejemplos cotidianos). Respeto el contenido que fijó el experto de Física; no veo riesgo de que la redacción avergüence ni sesgo de género o zona.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.4",
+      "cita": "indicador de la fila de la malla vigente al que sirve la dificultad"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "señales observables y formuladas sin juicio sobre el estudiante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -131175,6 +132917,10 @@
    "origen": "redactor-actividades (G10-FIS-U2-2.4)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:DIF:fisica/suma-vectores-componentes/2": {
@@ -131248,11 +132994,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/suma-vectores-componentes/2",
+    "decision": "aprobar",
+    "justificacion": "Dificultad formulada en lenguaje claro para 10.°, con señales observables en el cuaderno (signos según el punto cardinal, cuadrante de la resultante frente al dibujo). Sirve a la docente para diagnosticar sin etiquetar al estudiante.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Señales observables y concretas: dos docentes las reconocerían igual."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.4",
+      "cita": "Pide componentes en cualquier cuadrante y reconstruir módulo y dirección."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/suma-vectores-componentes/3": {
   "tipo": "contenido",
@@ -131325,11 +133094,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/suma-vectores-componentes/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción breve y precisa; los ejemplos de rumbo (N 30° E, S 53° O frente a S 37° O) son concretos y la docente puede reconocerlos en la tabla de componentes. Lenguaje adecuado al grado.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Ejemplos concretos de error, no definiciones abstractas."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.4",
+      "cita": "Representa magnitudes vectoriales con rumbo geográfico."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/temperatura-medicion-escalas/1": {
   "tipo": "contenido",
@@ -131536,11 +133328,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/tercera-ley-newton/1",
+    "decision": "aprobar",
+    "justificacion": "Idea previa bien descrita y con la explicación correcta en una oración. Las señales se observan en la predicción con dinamómetros y en el lenguaje cotidiano (camión y moto), contextos con sentido para estudiantes salvadoreños.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Contexto cotidiano (camión y moto) y señales observables en la predicción."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.7",
+      "cita": "Identifica pares de acción y reacción en sistemas de dos o más cuerpos."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/tercera-ley-newton/2": {
   "tipo": "contenido",
@@ -131613,11 +133428,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/tercera-ley-newton/2",
+    "decision": "aprobar",
+    "justificacion": "Distingue con claridad par de acción y reacción y fuerzas equilibradas; las señales (unir peso y normal, «se cancelan y nada avanza») son observables en los diagramas del experimento 5.7. Registro adecuado.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Señales verificables en los diagramas de cuerpo libre que pide la malla."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.7",
+      "cita": "Diferencia pares de fuerzas que se equilibran sobre un mismo cuerpo."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/tercera-ley-newton/3": {
   "tipo": "contenido",
@@ -131690,11 +133528,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:DIF:fisica/tercera-ley-newton/3",
+    "decision": "aprobar",
+    "justificacion": "Descripción clara y breve; las señales (una sola flecha Tierra–Luna, «un objeto pequeño no tiene gravedad») son observables en dibujos y respuestas orales. Coherente con el indicador de gravitación del grado.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Señales reconocibles en dibujos y respuestas orales."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.7",
+      "cita": "Calcula la fuerza gravitatoria y explica el peso como atracción terrestre."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:DIF:fisica/viscosidad-regimen-flujo/1": {
   "tipo": "contenido",
@@ -147944,11 +149805,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U2-2.1/1",
+    "decision": "aprobar",
+    "justificacion": "Pasos suman 55 min y cada pregunta de análisis tiene paso o «Tarea:». Una idea por paso, roles alternados en parejas, contexto escolar real (agua desperdiciada). Variantes sin agua corriente, sin cronómetro y sin internet (dato impreso del docente). La puesta en común compara caudales de grifos, no a estudiantes.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Tiempos 5+10+10+5+15+10 = 55 min; análisis 1→paso 6, 2→paso 4, 3→paso 5, 4 Tarea."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.1",
+      "cita": "Conversiones encadenadas y homogeneidad dimensional."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:EXP:G10-FIS-U2-2.4/1": {
   "tipo": "contenido",
@@ -148061,9 +149945,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U2-2.4/1",
+    "decision": "aprobar",
+    "justificacion": "Con la variante ya corregida por Física, cuadra: 55 min, análisis en el paso 5 o como tarea, roles repartidos, cuidado del sol y alternativas sin patio, sin brújula ni celular y con GeoGebra en el CRA. La carga del paso 2 es alta pero propia de 10.° y precede a la medición.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Tiempos 5+15+15+12+8 = 55 min; análisis 1 y 2 en paso 5; 3 y 4 Tarea."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U2-2.4",
+      "cita": "Problema de rescate con tabla de componentes y rumbo de regreso."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -148115,6 +150018,10 @@
    "origen": "redactor-actividades (G10-FIS-U2-2.4)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:EXP:G10-FIS-U3-3.5/1": {
@@ -148224,11 +150131,82 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U3-3.5/1",
+    "decision": "corregir",
+    "justificacion": "Física, tiempos (55 min) y análisis cuadran. Corrijo solo la variante: el tiempo de reacción es un dato personal y no debe ordenarse ni compararse entre estudiantes; además, quien tenga una dificultad motora o prefiera no atrapar la regla necesita una vía para hacer la tabla. No cambia ningún valor científico.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Comparar tiempos de reacción personales expone al estudiante; el criterio de bienestar pide evitar comparaciones."
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "DUA: alternativa para quien no puede atrapar la regla."
+     }
+    ],
+    "cambios": {
+     "variantes": "Sin regla larga: con una regla de 30 cm solo se atrapan tiempos de hasta unos 0.25 s; los intentos en que la regla cae al suelo se anotan como «más de 0.25 s». Sin papel milimetrado, la gráfica se hace en hoja cuadriculada con escalas elegidas por el grupo. No hace falta internet salvo para la última tarea, que puede hacerse con el reglamento impreso que lleve el docente. Los tiempos de reacción son personales: no se ordenan ni se comparan entre estudiantes; en la puesta en común se habla del rango de la clase, no de quién fue más rápido. Quien no pueda o no quiera atrapar la regla (por una lesión o una dificultad motora) la suelta para su pareja y hace la tabla del paso 4 con el tiempo de su pareja o con el valor de ejemplo de 0.20 s."
+    },
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-FIS-U3-3.5/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-FIS-U3-3.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U3-3.5",
+    "CON:fisica/movimiento-uniformemente-acelerado"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Mi tiempo de reacción y la distancia para detener un carro",
+   "proposito": "Medir el tiempo de reacción con una regla que cae y usarlo, junto con una desaceleración de ejemplo, para calcular por etapas la distancia de reacción, la de frenado y la total de un carro a varias rapideces en pavimento seco y mojado. Con la tabla y la gráfica de distancia de detención contra rapidez, que pide la malla como evidencia, se comprueba que la distancia de frenado crece con el cuadrado de la rapidez y se argumenta sobre distancias de seguridad.",
+   "materiales": [
+    "Una regla de madera de 50 cm o de 1 m por pareja (sirve la regla de pizarra)",
+    "Calculadora o celular con calculadora",
+    "Papel milimetrado o cuadriculado (o una hoja de cálculo en la computadora del CRA)",
+    "Hoja con las desaceleraciones de ejemplo y las rapideces de la tabla"
+   ],
+   "procedimiento": [
+    "1. (5 min) Escriban una predicción: si un carro duplica su rapidez, ¿cuántas veces más distancia necesita para detenerse? Anoten por qué.",
+    "2. (10 min) En parejas, una persona sostiene la regla vertical por el extremo superior; la otra pone los dedos abiertos, sin tocarla, a la altura de la marca de 0 cm. Sin aviso, la primera suelta la regla y la segunda la atrapa; anoten en centímetros la distancia d que cayó. Hagan diez intentos cada persona y descarten los intentos en que alguien se adelantó.",
+    "3. (8 min) Calculen el tiempo de cada intento con t = √(2d/g), con d en metros y g de la tabla de referencia (aproximado 9.8 m/s²), y su tiempo de reacción promedio.",
+    "4. (15 min) Con su tiempo de reacción y las desaceleraciones de ejemplo de 7.0 m/s² en pavimento seco y 4.0 m/s² en mojado (valores aproximados; el docente los contrasta con su fuente), completen la tabla para 30, 45, 60 y 90 km/h: rapidez en m/s, distancia de reacción v·t, distancia de frenado v²/(2a) y distancia total, en seco y en mojado.",
+    "5. (9 min) Grafiquen la distancia total contra la rapidez, con una curva para pavimento seco y otra para mojado.",
+    "6. (8 min) Comparen con la predicción del paso 1 y respondan las preguntas de análisis 1 y 2."
+   ],
+   "seguridad": [
+    "Quien suelta la regla la sostiene por encima de la mano de su pareja y lejos de la cara; nadie juega a lanzarla.",
+    "Revisen que la regla no tenga astillas ni clavos.",
+    "Ninguna medición se hace en la calle ni con vehículos: los datos de frenado se calculan."
+   ],
+   "datos_esperados": "La regla cae entre unos 12 y 30 cm, que dan tiempos de reacción de unos 0.15 a 0.25 s; el promedio suele estar cerca de 0.2 s y es algo mejor después de varios intentos. Con 0.20 s, la distancia total sale, en seco, unos 7, 14, 23 y 50 m a 30, 45, 60 y 90 km/h, y en mojado unos 10, 22, 38 y 83 m. La distancia de reacción crece en proporción a la rapidez y la de frenado con su cuadrado: de 45 a 90 km/h la de frenado se cuadruplica (de unos 11 a 45 m en seco), y la curva de distancia total contra rapidez se curva hacia arriba. A rapidez baja pesa más la reacción; a rapidez alta domina el frenado.",
+   "analisis": [
+    "¿Se cumplió su predicción? Comparen la distancia de frenado a 45 y a 90 km/h y expliquen el resultado con v² = v₀² + 2aΔx.",
+    "¿Qué parte de la distancia total domina a 30 km/h y cuál a 90 km/h? ¿Cuánto más necesita el carro en pavimento mojado?",
+    "Tarea: en la calle, el conductor no espera la señal como en el juego de la regla. Repitan la tabla con un tiempo de reacción supuesto de 1.0 s y digan cómo cambia la distancia total a 90 km/h.",
+    "Tarea: busquen la distancia o el tiempo de separación entre vehículos que recomienda el reglamento de tránsito o un manual de manejo, citen la fuente y argumenten con su gráfica si basta a 90 km/h en carretera mojada. ¿Qué supuestos de su modelo (aceleración constante, reacción fija) pueden fallar?"
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin regla larga: con una regla de 30 cm solo se atrapan tiempos de hasta unos 0.25 s; los intentos en que la regla cae al suelo se anotan como «más de 0.25 s». Sin papel milimetrado, la gráfica se hace en hoja cuadriculada con escalas elegidas por el grupo. No hace falta internet salvo para la última tarea, que puede hacerse con el reglamento impreso que lleve el docente. Los tiempos de reacción son personales: no se ordenan ni se comparan entre estudiantes; en la puesta en común se habla del rango de la clase, no de quién fue más rápido. Quien no pueda o no quiera atrapar la regla (por una lesión o una dificultad motora) la suelta para su pareja y hace la tabla del paso 4 con el tiempo de su pareja o con el valor de ejemplo de 0.20 s.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-FIS-U3-3.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-FIS-U3-3.6/1": {
   "tipo": "contenido",
@@ -148346,11 +150324,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U3-3.6/1",
+    "decision": "aprobar",
+    "justificacion": "Dos sesiones que suman 55 min cada una; cada pregunta tiene paso con minutos o es tarea. Seguridad cuidada (nadie se sube a sillas, permiso para grabar rostros). Variante sin celular ni computadora con el péndulo, que es actividad de la malla, y simulación opcional. Lenguaje claro y pasos de una idea.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Sesión 1: 5+10+25+10+5; sesión 2: 20+12+8+10+5."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.6",
+      "cita": "Determina experimentalmente la aceleración de la gravedad."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:EXP:G10-FIS-U3-3.7/1": {
   "tipo": "contenido",
@@ -148461,9 +150462,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U3-3.7/1",
+    "decision": "aprobar",
+    "justificacion": "Experiencia corporal (caminar la gráfica) que hace concreto lo abstracto antes de pasar a pendientes y áreas; roles claros que permiten participar sin caminar. 55 min y análisis ubicados. Variante sin patio coherente tras la corrección de Física; no requiere internet.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Tiempos 8+7+15+15+10 = 55; análisis 2 en paso 4, 1 y 3 en paso 5, 4 Tarea."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U3-3.7",
+      "cita": "Construye x-t, v-t y a-t de un móvil por tramos."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -148513,6 +150533,10 @@
    "origen": "redactor-actividades (G10-FIS-U3-3.7)",
    "version": "pedagogia-v1",
    "revisado_por": ""
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "PED:EXP:G10-FIS-U4-4.1/1": {
@@ -148662,6 +150686,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U4-4.1/1",
+    "decision": "corregir",
+    "justificacion": "Tras la corrección de Física (boca en el piso) cuadran tiempos y análisis. La variante sin laboratorio remite a «la tabla del ejercicio obj-2», un id interno que la docente no entiende. La sustituyo por los datos mismos: los alcances del ejercicio de opción múltiple del tema y una calibración coherente (v₀ ≈ 5 m/s), rotulados como ejemplo.",
+    "evidencia": [
+     {
+      "fuente": "ACT:G10-FIS-U4-4.1/obj-2",
+      "cita": "15°: 1.20 m; 30°: 2.05 m; 45°: 2.38 m; 60°: 2.03 m; 75°: 1.17 m (datos de ejemplo)."
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Regla del panel: el texto no nombra ids internos; describe o incluye la tabla."
+     }
+    ],
+    "cambios": {
+     "variantes": "Sin tubo de PVC: el tubo de cartón reforzado funciona, aunque la rapidez de salida varía más. Sin mesa firme para calibrar: lancen a 45° y calculen v₀ despejándola de R = v₀²/g. Sin laboratorio ni internet: el docente entrega estos datos de un grupo de ejemplo y el grupo hace la predicción, la gráfica y el análisis en papel. Calibración: tiro horizontal desde una mesa de 0.80 m, distancia horizontal promedio de 2.00 m. Alcance promedio de 5 tiros, con la boca al nivel del piso: 15°, 1.20 m; 30°, 2.05 m; 45°, 2.38 m; 60°, 2.03 m; 75°, 1.17 m. Con internet: la simulación PhET «Movimiento de proyectiles» permite fijar ángulo y rapidez, activar o quitar la resistencia del aire (en sus pantallas que la incluyen; el docente lo comprueba antes) y medir alcance, altura y tiempo con su herramienta de medición; sirve para comparar el máximo con y sin aire."
+    },
+    "confianza": "media",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -148721,7 +150767,7 @@
     "Tarea: Las zonas de exclusión del volcán de San Miguel consideran hasta dónde llegan las rocas que lanza. ¿Por qué el modelo sin aire sirve solo como una estimación de ese alcance?"
    ],
    "duracion_min": 110,
-   "variantes": "Sin tubo de PVC: el tubo de cartón reforzado funciona, aunque la rapidez de salida varía más. Sin mesa firme para calibrar: lancen a 45° y calculen v₀ despejándola de R = v₀²/g. Sin laboratorio ni internet: el docente entrega la tabla del ejercicio obj-2 como datos de un grupo de ejemplo y el grupo hace la predicción, la gráfica y el análisis en papel. Con internet: la simulación PhET «Movimiento de proyectiles» permite fijar ángulo y rapidez, activar o quitar la resistencia del aire (en sus pantallas que la incluyen; el docente lo comprueba antes) y medir alcance, altura y tiempo con su herramienta de medición; sirve para comparar el máximo con y sin aire.",
+   "variantes": "Sin tubo de PVC: el tubo de cartón reforzado funciona, aunque la rapidez de salida varía más. Sin mesa firme para calibrar: lancen a 45° y calculen v₀ despejándola de R = v₀²/g. Sin laboratorio ni internet: el docente entrega estos datos de un grupo de ejemplo y el grupo hace la predicción, la gráfica y el análisis en papel. Calibración: tiro horizontal desde una mesa de 0.80 m, distancia horizontal promedio de 2.00 m. Alcance promedio de 5 tiros, con la boca al nivel del piso: 15°, 1.20 m; 30°, 2.05 m; 45°, 2.38 m; 60°, 2.03 m; 75°, 1.17 m. Con internet: la simulación PhET «Movimiento de proyectiles» permite fijar ángulo y rapidez, activar o quitar la resistencia del aire (en sus pantallas que la incluyen; el docente lo comprueba antes) y medir alcance, altura y tiempo con su herramienta de medición; sirve para comparar el máximo con y sin aire.",
    "estado": "propuesta_pendiente",
    "fuente": null,
    "origen": "redactor-actividades (G10-FIS-U4-4.1)",
@@ -148857,6 +150903,28 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U5-5.10/1",
+    "decision": "corregir",
+    "justificacion": "Tiempos (55 min), análisis y seguridad cuadran tras la corrección de Física. La variante sin laboratorio dice que el docente entrega tiempos de ejemplo, pero no los da: una escuela sin material no podría hacer la actividad. Agrego tiempos rotulados como ejemplo, coherentes con las aceleraciones predichas y unos 10 % menores, y la lectura del dinamómetro que ya trae datos_esperados.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "DUA y recursos: la variante debe ser utilizable sin material."
+     },
+     {
+      "fuente": "datos_esperados del elemento",
+      "cita": "a predicha 0.23 a 1.4 m/s²; tiempos 2.9 a 1.2 s; medidas 5 a 20 % menores; lectura 1.2 a 1.3 N."
+     }
+    ],
+    "cambios": {
+     "variantes": "Sin soporte ni polea: un carrete vacío sobre un lápiz amarrado al marco de una puerta (polea a unos 2 m), comprobando que la puerta no se cierre. Sin dinamómetro: omitan el paso 4 y comparen la tensión predicha con los dos pesos. Sin laboratorio ni internet: el docente entrega estos tiempos de un grupo de ejemplo para bajar 1.00 m (promedio de tres) y el grupo calcula y compara: 215/205 g, 3.1 s; 220/200 g, 2.2 s; 230/190 g, 1.5 s; 240/180 g, 1.3 s; dinamómetro con la bolsita de 120 g, 1.2 N quieto y 1.3 N en movimiento. Con celular: grabar en cámara lenta mejora la medida del tiempo."
+    },
+    "confianza": "media",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -148908,7 +150976,7 @@
     "Tarea: Resuelvan con ΣFx = 0 y ΣFy = 0 las tensiones de un semáforo de 20 kg colgado de dos cables que forman 30° con la horizontal."
    ],
    "duracion_min": 55,
-   "variantes": "Sin soporte ni polea: un carrete vacío sobre un lápiz amarrado al marco de una puerta (polea a unos 2 m), comprobando que la puerta no se cierre. Sin dinamómetro: omitan el paso 4 y comparen la tensión predicha con los dos pesos. Sin laboratorio ni internet: el docente entrega los tiempos de un grupo de ejemplo para cada par y el grupo calcula y compara. Con celular: grabar en cámara lenta mejora la medida del tiempo.",
+   "variantes": "Sin soporte ni polea: un carrete vacío sobre un lápiz amarrado al marco de una puerta (polea a unos 2 m), comprobando que la puerta no se cierre. Sin dinamómetro: omitan el paso 4 y comparen la tensión predicha con los dos pesos. Sin laboratorio ni internet: el docente entrega estos tiempos de un grupo de ejemplo para bajar 1.00 m (promedio de tres) y el grupo calcula y compara: 215/205 g, 3.1 s; 220/200 g, 2.2 s; 230/190 g, 1.5 s; 240/180 g, 1.3 s; dinamómetro con la bolsita de 120 g, 1.2 N quieto y 1.3 N en movimiento. Con celular: grabar en cámara lenta mejora la medida del tiempo.",
    "estado": "propuesta_pendiente",
    "fuente": null,
    "origen": "redactor-actividades (G10-FIS-U5-5.10)",
@@ -149028,11 +151096,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U5-5.2/1",
+    "decision": "aprobar",
+    "justificacion": "Tres demostraciones concretas y baratas, predicción escrita antes, 55 min con análisis en el paso 6 y tareas de tránsito con sentido local (microbús, casco). Variantes sin carrito, sin botellas y sin internet. Lenguaje claro.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Tiempos 5+10+8+8+10+14 = 55; análisis 1–3 en paso 6."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.2",
+      "cita": "Explica con la primera ley situaciones de seguridad vial."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "PED:EXP:G10-FIS-U5-5.4/1": {
   "tipo": "contenido",
@@ -149164,6 +151255,33 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U5-5.4/1",
+    "decision": "corregir",
+    "justificacion": "Dos correcciones de forma. La variante sin laboratorio remite a «la tabla de la actividad obj-2», un id interno, y esa actividad usa fuerzas de hasta 1 N que no corresponden a estas arandelas; la sustituyo por tiempos de ejemplo coherentes con datos_esperados (masa 0.50 kg, fricción ≈ 0.05 N). La seguridad seguía diciendo «cojín», que Física descartó en el paso 1.",
+    "evidencia": [
+     {
+      "fuente": "ACT:G10-FIS-U5-5.4/obj-2",
+      "cita": "F = 0.20 a 1.00 N: no corresponde a arandelas de 10 g (0.1 a 0.5 N)."
+     },
+     {
+      "fuente": "datos_esperados del elemento",
+      "cita": "Masa total 0.50 kg, F 0.1 a 0.5 N, tiempos 3.5 a 1.1 s, fricción 0.05 a 0.15 N."
+     }
+    ],
+    "cambios": {
+     "variantes": "Sin polea: un carrete vacío sobre un lápiz o un clavo liso funciona, aunque agrega fricción (se ve en el intercepto). Sin carrito: una caja de fósforos con cuatro tapitas como ruedas, aceptando más fricción. Sin laboratorio ni internet: el docente entrega estos datos de un grupo de ejemplo (tiempo promedio para recorrer 0.60 m) y el grupo calcula a, hace las gráficas y el análisis. Serie 1, masa total de 0.50 kg: 1, 2, 3, 4 y 5 arandelas de 10 g en el clip, 3.55, 2.03, 1.58, 1.33 y 1.17 s. Serie 2, 3 arandelas en el clip: masa total de 0.50, 0.60, 0.70 y 0.80 kg, 1.58, 1.73, 1.86 y 1.99 s. Con celular: la app gratuita phyphox mide la aceleración si el celular va pegado al carrito, aunque su masa cuenta. Con internet: en la pantalla «Aceleración» de la simulación PhET «Fuerzas y movimiento: fundamentos» se fija la fuerza aplicada, se cambian las cajas y se lee la aceleración.",
+     "seguridad": [
+      "El clip con arandelas cae sobre el papel arrugado o la caja baja; nadie pone los pies ni las manos debajo.",
+      "Atrapen el carrito al final de la mesa para que no caiga al piso.",
+      "Las bolsitas de arena van bien cerradas y con cinta; si se rompen, barran la arena para que nadie resbale."
+     ]
+    },
+    "confianza": "media",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -149208,7 +151326,7 @@
     "9. (5 min) Puesta en común: cada grupo da la pendiente y el intercepto de su gráfica a contra F."
    ],
    "seguridad": [
-    "El clip con arandelas cae sobre el cojín; nadie pone los pies ni las manos debajo.",
+    "El clip con arandelas cae sobre el papel arrugado o la caja baja; nadie pone los pies ni las manos debajo.",
     "Atrapen el carrito al final de la mesa para que no caiga al piso.",
     "Las bolsitas de arena van bien cerradas y con cinta; si se rompen, barran la arena para que nadie resbale."
    ],
@@ -149221,7 +151339,7 @@
     "Tarea: Planteen un problema propio de una caja jalada por dos cuerdas con ángulos distintos, con su diagrama de cuerpo libre, ΣFx = m·ax, ΣFy = m·ay y la aceleración resultante."
    ],
    "duracion_min": 110,
-   "variantes": "Sin polea: un carrete vacío sobre un lápiz o un clavo liso funciona, aunque agrega fricción (se ve en el intercepto). Sin carrito: una caja de fósforos con cuatro tapitas como ruedas, aceptando más fricción. Sin laboratorio ni internet: el docente entrega la tabla de la actividad obj-2 como datos de un grupo de ejemplo y el grupo hace las gráficas y el análisis. Con celular: la app gratuita phyphox mide la aceleración si el celular va pegado al carrito, aunque su masa cuenta. Con internet: en la pantalla «Aceleración» de la simulación PhET «Fuerzas y movimiento: fundamentos» se fija la fuerza aplicada, se cambian las cajas y se lee la aceleración.",
+   "variantes": "Sin polea: un carrete vacío sobre un lápiz o un clavo liso funciona, aunque agrega fricción (se ve en el intercepto). Sin carrito: una caja de fósforos con cuatro tapitas como ruedas, aceptando más fricción. Sin laboratorio ni internet: el docente entrega estos datos de un grupo de ejemplo (tiempo promedio para recorrer 0.60 m) y el grupo calcula a, hace las gráficas y el análisis. Serie 1, masa total de 0.50 kg: 1, 2, 3, 4 y 5 arandelas de 10 g en el clip, 3.55, 2.03, 1.58, 1.33 y 1.17 s. Serie 2, 3 arandelas en el clip: masa total de 0.50, 0.60, 0.70 y 0.80 kg, 1.58, 1.73, 1.86 y 1.99 s. Con celular: la app gratuita phyphox mide la aceleración si el celular va pegado al carrito, aunque su masa cuenta. Con internet: en la pantalla «Aceleración» de la simulación PhET «Fuerzas y movimiento: fundamentos» se fija la fuerza aplicada, se cambian las cajas y se lee la aceleración.",
    "estado": "propuesta_pendiente",
    "fuente": null,
    "origen": "redactor-actividades (G10-FIS-U5-5.4)",
@@ -149348,6 +151466,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U5-5.7/1",
+    "decision": "corregir",
+    "justificacion": "Experimento claro, 55 min, análisis en el paso 6, seguridad adecuada y variantes sin dinamómetros ni carritos. La variante afirma que sin internet no hace falta nada más, pero la tarea pide buscar la altitud del volcán de Santa Ana; agrego que el docente puede llevar el dato impreso. No toco la física ni la corrección de G que hizo el experto.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Tareas que exigen internet necesitan una alternativa para quien no lo tiene."
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U5-5.7",
+      "cita": "Calcula la fuerza gravitatoria con la ley de gravitación universal."
+     }
+    ],
+    "cambios": {
+     "analisis": [
+      "(Paso 6) ¿Qué marcaron los dos dinamómetros en cada prueba? ¿Importó quién jalaba? Comparen con su hipótesis del paso 1.",
+      "(Paso 6) Si las fuerzas de la liga sobre los dos carritos son iguales, ¿por qué el carrito cargado recorrió menos?",
+      "(Paso 6) ¿Por qué subió la lectura de la balanza al meter el dedo, si el dedo no tocó el vaso? Nombren el par de fuerzas y el cuerpo sobre el que actúa cada una.",
+      "(Paso 6) El peso del libro y la normal sobre el libro son iguales y opuestos: ¿por qué no son un par de acción y reacción? ¿Cuál es la pareja de cada una?",
+      "Tarea: Con la ley de gravitación calculen el peso de una mochila de 5 kg al nivel del mar y en la cima del volcán de Santa Ana (busquen su altitud en una fuente oficial o usen el dato que lleve el docente impreso con su fuente; G, la masa y el radio de la Tierra de la tabla de referencia). ¿Lo notaría una balanza?"
+     ]
+    },
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
@@ -149395,7 +151541,7 @@
     "(Paso 6) Si las fuerzas de la liga sobre los dos carritos son iguales, ¿por qué el carrito cargado recorrió menos?",
     "(Paso 6) ¿Por qué subió la lectura de la balanza al meter el dedo, si el dedo no tocó el vaso? Nombren el par de fuerzas y el cuerpo sobre el que actúa cada una.",
     "(Paso 6) El peso del libro y la normal sobre el libro son iguales y opuestos: ¿por qué no son un par de acción y reacción? ¿Cuál es la pareja de cada una?",
-    "Tarea: Con la ley de gravitación calculen el peso de una mochila de 5 kg al nivel del mar y en la cima del volcán de Santa Ana (busquen su altitud en una fuente oficial; G, la masa y el radio de la Tierra de la tabla de referencia). ¿Lo notaría una balanza?"
+    "Tarea: Con la ley de gravitación calculen el peso de una mochila de 5 kg al nivel del mar y en la cima del volcán de Santa Ana (busquen su altitud en una fuente oficial o usen el dato que lleve el docente impreso con su fuente; G, la masa y el radio de la Tierra de la tabla de referencia). ¿Lo notaría una balanza?"
    ],
    "duracion_min": 55,
    "variantes": "Sin dinamómetros: dos balanzas de baño de resorte apretadas cara a cara entre las palmas de dos personas marcan lo mismo; o dos ligas iguales enganchadas se estiran lo mismo. Sin carritos: dos estudiantes en sillas con rueditas se empujan con las palmas (sentados y despacio). Sin internet no hace falta nada más. Con internet: la simulación PhET «Laboratorio de fuerza gravitatoria» muestra el valor de la fuerza sobre cada una de dos masas, y siempre es el mismo aunque las masas sean distintas.",
@@ -149516,11 +151662,92 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-14"
+   },
+   {
+    "id": "PED:EXP:G10-FIS-U5-5.9/1",
+    "decision": "corregir",
+    "justificacion": "Tiempos (55 min) y análisis cuadran. Ajusto el lenguaje del paso 4: en El Salvador «goma» se entiende como pegamento o chicle; «borrador» es claro. Y preciso que los 30° se miden sobre la horizontal, porque la lectura esperada (F sen 30°) depende de eso y un estudiante podría medirlos desde la vertical.",
+    "evidencia": [
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Español salvadoreño claro: «borrador» en lugar de «goma»."
+     },
+     {
+      "fuente": "datos_esperados del elemento",
+      "cita": "La balanza baja F sen 30°/g, unos 100 g con 2 N."
+     }
+    ],
+    "cambios": {
+     "procedimiento": [
+      "1. (Sesión 1, 5 min) Pesen cada bloque con su bolsita. Cada estudiante escribe qué material cree que tendrá el mayor coeficiente y por qué.",
+      "2. (15 min) Ángulo crítico: pongan un bloque en el extremo alto de la tabla y levanten ese extremo muy despacio hasta que el bloque empiece a deslizar. Midan la altura h y la base b en ese instante: μs = h/b = tan θ. Tres intentos por bloque.",
+      "3. (12 min) Coeficiente cinético: con la tabla horizontal, jalen cada bloque con el dinamómetro horizontal a velocidad lenta y pareja y lean la fuerza mientras se desliza. Calculen μk = F/(m·g), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Dos intentos por bloque.",
+      "4. (8 min) Normal con fuerza inclinada: pongan sobre la balanza un borrador pegado con cinta como tope, pongan la balanza en cero y coloquen el bloque de madera contra el tope. Jálenlo con el dinamómetro hacia arriba, a unos 30° sobre la horizontal, empujándolo contra el tope (la fuerza horizontal la resiste el tope), con unos 2 N, y anoten la lectura de la balanza y la del dinamómetro.",
+      "5. (8 min) Predicción verificada: el docente fija la tabla a unos 25°. Con sus μs, cada grupo predice por escrito qué bloques se deslizarán y luego lo comprueba.",
+      "6. (7 min) En grupo, respondan las dos primeras preguntas de análisis."
+     ]
+    },
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-14"
    }
   ],
   "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-FIS-U5-5.9/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-FIS-U5-5.9"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U5-5.9",
+    "CON:fisica/friccion-resistencia-aire"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Coeficientes de rozamiento: ángulo crítico, dinamómetro y predicción verificada",
+   "proposito": "Medir el coeficiente de rozamiento estático con el ángulo crítico de un plano inclinado (μs = tan θ) y el cinético jalando con un dinamómetro a velocidad constante, para tres materiales sobre la misma tabla; comprobar con una balanza de cocina que la normal cambia con una fuerza inclinada, y usar los coeficientes para predecir si un bloque se desliza a un ángulo dado. Es la tabla de μs y μk de tres pares de materiales con la predicción verificada que pide la malla.",
+   "materiales": [
+    "Una tabla lisa de unos 80 cm (repisa o tablero suelto) y libros para levantar un extremo",
+    "Tres bloques de madera iguales de unos 10 × 6 × 3 cm: uno sin forro, uno forrado por abajo con caucho (trozo de cámara de llanta) y uno forrado con cartón, pegados con cinta o pegamento",
+    "Tres bolsitas cerradas con unos 500 g de arena, una pegada con cinta sobre cada bloque",
+    "Un dinamómetro de 0 a 10 N (o uno casero de liga calibrado) y un hilo con un clip",
+    "Balanza de cocina digital",
+    "Regla o cinta métrica y transportador",
+    "Calculadora con funciones trigonométricas"
+   ],
+   "procedimiento": [
+    "1. (Sesión 1, 5 min) Pesen cada bloque con su bolsita. Cada estudiante escribe qué material cree que tendrá el mayor coeficiente y por qué.",
+    "2. (15 min) Ángulo crítico: pongan un bloque en el extremo alto de la tabla y levanten ese extremo muy despacio hasta que el bloque empiece a deslizar. Midan la altura h y la base b en ese instante: μs = h/b = tan θ. Tres intentos por bloque.",
+    "3. (12 min) Coeficiente cinético: con la tabla horizontal, jalen cada bloque con el dinamómetro horizontal a velocidad lenta y pareja y lean la fuerza mientras se desliza. Calculen μk = F/(m·g), con g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). Dos intentos por bloque.",
+    "4. (8 min) Normal con fuerza inclinada: pongan sobre la balanza un borrador pegado con cinta como tope, pongan la balanza en cero y coloquen el bloque de madera contra el tope. Jálenlo con el dinamómetro hacia arriba, a unos 30° sobre la horizontal, empujándolo contra el tope (la fuerza horizontal la resiste el tope), con unos 2 N, y anoten la lectura de la balanza y la del dinamómetro.",
+    "5. (8 min) Predicción verificada: el docente fija la tabla a unos 25°. Con sus μs, cada grupo predice por escrito qué bloques se deslizarán y luego lo comprueba.",
+    "6. (7 min) En grupo, respondan las dos primeras preguntas de análisis."
+   ],
+   "seguridad": [
+    "Sujeten la tabla inclinada para que no resbale sobre los libros ni caiga sobre los pies.",
+    "Las bolsitas de arena van bien cerradas y pegadas a los bloques; atrapen el bloque al final de la tabla.",
+    "No suelten el dinamómetro estirado: el gancho puede golpear la mano."
+   ],
+   "datos_esperados": "Los ángulos críticos suelen salir entre unos 15° y 30° para madera y cartón sobre madera (μs del orden de 0.3 a 0.6) y mayores para el caucho; los valores de comparación salen de la tabla de referencia y pueden diferir por la limpieza, la humedad o la rugosidad. μk sale menor que μs para el mismo par, del orden de un 10 a 30 % menos. Al jalar a 30° hacia arriba la lectura de la balanza baja en F sen 30°/g: con 2 N, unos 100 g menos. En la predicción a 25°, se deslizan los bloques con μs menor que tan 25° ≈ 0.47.",
+   "analisis": [
+    "(Paso 6) ¿Qué par de materiales tuvo el mayor μs? ¿Por qué μk salió menor que μs para cada uno?",
+    "(Paso 6) ¿Cuánto bajó la lectura de la balanza al jalar inclinado? Explíquenlo con N = mg − F sen θ y digan si su predicción del paso 5 se cumplió.",
+    "Tarea: Expliquen por qué sus coeficientes difieren de los de la tabla de referencia y qué variables del experimento podrían explicarlo.",
+    "Tarea: Con sus coeficientes, recomienden qué material usaría el calzado de alguien que trabaja en una rampa mojada y justifiquen por qué el agua cambia el resultado."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin dinamómetro: midan μk con el ángulo al que el bloque, después de un toquecito, baja a rapidez pareja (μk = tan de ese ángulo). Sin balanza: omitan el paso 4 y resuelvan la normal en papel. Sin laboratorio ni internet: basta con la tabla, libros, una regla y objetos de distintos materiales (cuaderno, estuche, zapato). Con internet: la pantalla «Fricción» de la simulación PhET «Fuerzas y movimiento: fundamentos» muestra que la fricción crece con el empuje hasta un máximo y baja cuando el objeto desliza; no permite inclinar la superficie ni muestra los coeficientes.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-FIS-U5-5.9)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-FIS-U6-6.5/1": {
   "tipo": "contenido",
