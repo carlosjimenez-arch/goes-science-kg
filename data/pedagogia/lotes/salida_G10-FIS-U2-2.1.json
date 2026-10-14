@@ -1,0 +1,222 @@
+[
+ {
+  "id": "ACT:G10-FIS-U2-2.1/obj-1",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "habilidad": "razonar",
+  "formato": "opcion_multiple",
+  "grados": [
+   10
+  ],
+  "enunciado": "Para un problema de tránsito, Valeria escribe la ecuación x = v₀·t + a·t, donde x es una distancia (m), v₀ una rapidez (m/s), a una aceleración (m/s²) y t un tiempo (s). ¿Qué concluye el análisis dimensional de esa ecuación?",
+  "opciones": {
+   "A": "Es imposible, porque el término a·t tiene dimensión [L][T]⁻¹ y no [L] como x.",
+   "B": "Es correcta, porque a·t tiene dimensión de rapidez, la misma que tiene v₀.",
+   "C": "Es imposible, porque no se pueden multiplicar magnitudes de distinta unidad, como a y t.",
+   "D": "Es correcta si se agrega ½ antes de a·t, porque ese factor ajusta sus dimensiones."
+  },
+  "correcta": "A",
+  "distractores": {
+   "D": "DIF:fisica/sistema-internacional-unidades/3"
+  },
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Una ecuación física solo puede sumar términos con las mismas dimensiones. x tiene dimensión [L] y v₀·t también, pero a·t tiene [L][T]⁻¹, que es una rapidez: la ecuación es imposible. Multiplicar magnitudes de unidades distintas sí está permitido (así nacen las derivadas), y un factor numérico como ½ no tiene dimensiones, así que no puede arreglar el término.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.1"
+  }
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.1/obj-2",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "habilidad": "interpretar_datos",
+  "formato": "numerica",
+  "grados": [
+   10
+  ],
+  "enunciado": "Datos de un grupo de ejemplo: en una finca de Usulután, un tubo de riego llena un tanque. Anotaron el volumen acumulado: a los 0 min, 0 L; a los 5 min, 600 L; a los 10 min, 1 200 L; a los 15 min, 1 800 L. Si el caudal se mantiene igual todo el día, ¿cuántos metros cúbicos entrega el tubo en un día (24 h)? Usa una cadena de factores de conversión y escribe solo el número, en m³/día.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": 172.8,
+  "tolerancia": 0.5,
+  "unidad": "m³/día",
+  "retroalimentacion": "La tabla muestra 600 L cada 5 min, o sea 120 L/min. La cadena es 120 L/min × (1 m³ / 1000 L) × (60 min / 1 h) × (24 h / 1 día) = 172.8 m³/día. Si en cada factor la unidad que se quiere eliminar queda una vez arriba y una vez abajo, se cancela y el resultado sale en m³/día.",
+  "duracion_min": 6,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.1"
+  }
+ },
+ {
+  "id": "ACT:G10-FIS-U2-2.1/obj-abierta",
+  "tipo": "actividad",
+  "rol": "objetivo",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "habilidad": "razonar",
+  "formato": "abierta",
+  "grados": [
+   10
+  ],
+  "enunciado": "Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 2 o 3 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando cómo se cancelan las unidades, con su resultado; y explica cómo una estimación previa del orden de magnitud le habría avisado del error.",
+  "opciones": null,
+  "correcta": null,
+  "distractores": null,
+  "valor": null,
+  "tolerancia": null,
+  "unidad": null,
+  "retroalimentacion": "Kevin usó el factor al revés: para pasar de km/h a m/s se divide entre 3.6, porque 1 km/h = 1000 m / 3600 s. La cadena 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) da 25 m/s. Estimar antes ayuda: 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro.",
+  "duracion_min": 5,
+  "estado": "propuesta_pendiente",
+  "fuente": {
+   "tipo": "malla",
+   "ref": "TEMA:G10-FIS-U2-2.1"
+  },
+  "rubrica": {
+   "respuesta_modelo": "Kevin multiplicó por 3.6 cuando debía dividir: usó el factor al revés y por eso las unidades no se cancelan. Lo correcto es 90 km/h × (1000 m / 1 km) × (1 h / 3600 s) = 25 m/s, donde se cancelan km con km y h con h. Si hubiera estimado antes, habría visto que 324 m/s son más de 1 000 km/h, rapidez de un avión y no de un carro en carretera, así que el resultado no era razonable.",
+   "criterios": [
+    {
+     "id": "c1",
+     "descripcion": "Identifica el error: multiplicó por 3.6 en lugar de dividir (usó el factor invertido), y por eso las unidades no se cancelan.",
+     "obligatorio": true
+    },
+    {
+     "id": "c2",
+     "descripcion": "Escribe una cadena de factores con unidades (km a m y h a s, o el factor 1 m/s = 3.6 km/h escrito como fracción) en la que se cancelan km y h, y obtiene 25 m/s.",
+     "obligatorio": true
+    },
+    {
+     "id": "c3",
+     "descripcion": "Justifica que 324 m/s no es razonable comparándolo con una rapidez conocida (más de 1 000 km/h, rapidez de avión, o varias veces la de un carro en carretera).",
+     "obligatorio": true
+    },
+    {
+     "id": "c4",
+     "descripcion": "Menciona que la unidad del resultado sale de la cancelación de unidades y sirve para comprobarlo.",
+     "obligatorio": false
+    }
+   ],
+   "errores": [
+    {
+     "descripcion": "Corrige el número sin explicar el factor invertido ni mostrar la cancelación de unidades.",
+     "ejemplo": "Se equivocó en la multiplicación; la respuesta correcta es 25 m/s.",
+     "dificultad": "DIF:fisica/sistema-internacional-unidades/2"
+    },
+    {
+     "descripcion": "Usa un factor de conversión incompleto (convierte solo los km o solo las horas).",
+     "ejemplo": "90 km/h × 1000 m/km = 90 000 m/h, y eso ya está en metros, así que la respuesta es 90 000 m/s.",
+     "dificultad": "DIF:fisica/sistema-internacional-unidades/2"
+    },
+    {
+     "descripcion": "No ve problema en el orden de magnitud y acepta el resultado.",
+     "ejemplo": "No hay error, porque 3.6 es el factor entre km/h y m/s y el resultado ya está en m/s.",
+     "dificultad": null
+    }
+   ]
+  }
+ },
+ {
+  "id": "EXP:G10-FIS-U2-2.1/1",
+  "tipo": "experimento",
+  "objetivos": [
+   "TEMA:G10-FIS-U2-2.1"
+  ],
+  "evalua": [
+   "TEMA:G10-FIS-U2-2.1",
+   "CON:fisica/sistema-internacional-unidades"
+  ],
+  "grados": [
+   10
+  ],
+  "titulo": "¿Cuánta agua deja ir un chorro abierto? Caudal con conversiones encadenadas y análisis dimensional",
+  "proposito": "Medir el caudal de un chorro de la escuela con una botella y un cronómetro, expresarlo con factores de conversión encadenados en L/s, m³/día y piscinas por día, comprobar en cada paso que las unidades se cancelan y decidir si el resultado es razonable. Después, usar el análisis dimensional para detectar ecuaciones mal planteadas. Produce la resolución escrita con cadena de factores y comprobación de unidades que pide la malla.",
+  "materiales": [
+   "Un chorro (grifo) de la escuela o un garrafón con grifo dispensador, uno por grupo o por turnos",
+   "Una botella plástica de 1.5 L o 2 L con el volumen impreso en la etiqueta, por grupo",
+   "Una cubeta o un barril para recoger el agua y reutilizarla (regar plantas o limpieza)",
+   "Cronómetro o celular",
+   "Cinta adhesiva y marcador para marcar la posición de la llave",
+   "Calculadora y la hoja de trabajo con cinco ecuaciones para el análisis dimensional"
+  ],
+  "procedimiento": [
+   "1. (5 min) Escriban la pregunta guía «¿Cuánta agua se pierde en un día si un chorro de la escuela queda abierto?». Antes de medir, cada pareja estima el orden de magnitud en litros por día (¿cientos?, ¿miles?, ¿decenas de miles?) y lo anota.",
+   "2. (10 min) Abran la llave hasta una posición fija y márquenla con cinta. Llenen la botella desde vacía y midan el tiempo de llenado; repitan tres veces con la misma apertura, vaciando el agua en la cubeta para reutilizarla. Anoten volumen de la botella y los tres tiempos.",
+   "3. (10 min) Calculen el tiempo promedio y el caudal en L/s. En parejas, uno escribe la cadena de factores para pasar a m³/día (L → m³, s → min → h → día) y el otro tacha las unidades que se cancelan en cada factor; luego cambian de rol y pasan el caudal a L/min.",
+   "4. (5 min) Una piscina olímpica mide 50 m × 25 m × 2 m. Calculen su volumen en m³ y en litros y cuántos días tardaría el chorro en llenarla. Comparen con la estimación del paso 1 y respondan la pregunta de análisis 2.",
+   "5. (15 min) Hoja de análisis dimensional (x distancia, v y v₀ rapideces, a aceleración, t tiempo, h altura, g aceleración de la gravedad, Q caudal, V volumen). Escriban las dimensiones de cada término de: (i) x = v₀·t + ½·a·t²; (ii) v = v₀ + a·t²; (iii) Q = V/t; (iv) x = v/t; (v) t = √(2h/g). Decidan cuáles son dimensionalmente imposibles y cuál es homogénea pero podría tener mal un factor numérico; respondan la pregunta de análisis 3.",
+   "6. (10 min) Puesta en común: cada grupo dice su caudal y su número de días para la piscina; comparan entre grupos y responden la pregunta de análisis 1."
+  ],
+  "seguridad": [
+   "Sequen el piso mojado de inmediato para evitar resbalones y no corran cerca del chorro.",
+   "Usen solo botellas plásticas, nada de vidrio.",
+   "No desperdicien el agua: recójanla en la cubeta y úsenla para regar o limpiar."
+  ],
+  "datos_esperados": "Un chorro escolar abierto a medias llena una botella de 1.5 L en unos 8 a 30 s, es decir, entre unos 0.05 y 0.2 L/s; por ejemplo, 1.5 L en 12 s dan 0.125 L/s, 7.5 L/min y unos 10.8 m³/día (10 800 L/día). Los tres tiempos de un mismo grupo suelen diferir unas décimas de segundo, por la reacción al detener el cronómetro, así que el caudal tiene sentido con dos o tres cifras. La piscina tiene 2 500 m³ (2 500 000 L) y el chorro tardaría del orden de cientos de días en llenarla. En la hoja, (ii) y (iv) son dimensionalmente imposibles; (i), (iii) y (v) son homogéneas, y el análisis dimensional no puede comprobar si el ½ de (i) o el 2 de (v) son correctos.",
+  "analisis": [
+   "¿Cuánto variaron sus tres tiempos de llenado y los caudales de los distintos grupos? Con esa variación, ¿cuántas cifras tiene sentido dar en el caudal?",
+   "¿Cuántos días tardaría el chorro en llenar la piscina? ¿Su estimación del paso 1 tuvo el orden de magnitud correcto? ¿Por qué 1 m³ equivale a 1 000 L y no a 100 L?",
+   "¿Cuáles ecuaciones de la hoja son dimensionalmente imposibles y por qué? ¿Basta que una ecuación sea homogénea para saber que es correcta?",
+   "Tarea: busquen el caudal medio del río Lempa en una fuente del MARN, conviértanlo con factores encadenados a piscinas olímpicas por día y anoten la referencia completa de la fuente."
+  ],
+  "duracion_min": 55,
+  "variantes": "Sin agua corriente: usen un garrafón con grifo dispensador o una botella grande con un agujero de unos 3 mm cerca del fondo, mantenida llena hasta una marca mientras se mide (si el nivel baja, el caudal disminuye y conviene medir solo el primer litro). Sin cronómetro: cuenten segundos con el reloj del celular o del aula y aumenten el volumen medido para que el error pese menos. No hace falta internet salvo para la tarea, que puede hacerse con un dato de caudal que lleve el docente impreso con su fuente.",
+  "estado": "propuesta_pendiente",
+  "fuente": null
+ },
+ {
+  "id": "DIF:fisica/sistema-internacional-unidades/1",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/sistema-internacional-unidades",
+  "descripcion": "Al convertir unidades de área o de volumen usa el factor de la longitud sin elevarlo al cuadrado o al cubo: cree que 1 m² son 100 cm² o que 1 m³ son 100 L o 1 000 cm³.",
+  "senales": "Escribe 2 m³ = 200 L o 1 m³ = 1 000 cm³; al calcular el volumen de un tanque obtiene un valor mil o un millón de veces menor de lo razonable.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Error frecuente al convertir unidades elevadas a una potencia."
+ },
+ {
+  "id": "DIF:fisica/sistema-internacional-unidades/2",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/sistema-internacional-unidades",
+  "descripcion": "Escribe los factores de conversión sin unidades o los usa invertidos: multiplica cuando debía dividir (por ejemplo, 90 km/h × 3.6) porque no comprueba que la unidad que quiere eliminar quede arriba y abajo.",
+  "senales": "Resultados de un orden de magnitud absurdo (un carro a 324 m/s) o con unidades que no se cancelan, como km²/h o h²; números sin unidad en los pasos intermedios.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Típico al aplicar factores de memoria sin cancelar unidades."
+ },
+ {
+  "id": "DIF:fisica/sistema-internacional-unidades/3",
+  "tipo": "dificultad",
+  "concepto": "CON:fisica/sistema-internacional-unidades",
+  "descripcion": "Confunde lo que el análisis dimensional puede decir: cree que un factor numérico como ½ o 2π cambia las dimensiones y puede arreglar un término mal planteado, o que una ecuación con dimensiones homogéneas ya es correcta.",
+  "senales": "Propone «agregar ½» para corregir una ecuación con dimensiones distintas, o afirma que x = a·t² es correcta para la caída solo porque las dimensiones coinciden.",
+  "estado": "propuesta_pendiente",
+  "fuente": null,
+  "justificacion": "Se atribuye al análisis dimensional más alcance del que tiene."
+ }
+]
