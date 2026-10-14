@@ -1,0 +1,376 @@
+{
+ "lote": "r1-q10u23_experto-quimica_3",
+ "ronda": 1,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U3-3.5/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U3-3.5/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U3-3.5"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U3-3.5",
+      "CON:quimica/espectros-atomicos-y-modelo-de-bohr"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "titulo": "Espectroscopio de CD: la huella del mercurio en la lámpara fluorescente",
+     "proposito": "Construir un espectroscopio con un trozo de CD y una caja, comparar los espectros de varias fuentes de luz del aula y reconocer las líneas de emisión del mercurio de la lámpara fluorescente como huella de un elemento. Con las longitudes de onda de referencia de esas líneas se calcula la energía de sus fotones y se relaciona con los saltos entre niveles de energía.",
+     "materiales": [
+      "Por equipo: una caja pequeña de cartón (de cereal, de pasta dental grande o de zapatos), cinta adhesiva negra o masking tape y tijeras",
+      "Por equipo: un cuarto de CD (los corta la docente antes de la clase con tijeras fuertes) o un CD entero si la caja es grande",
+      "Dos tarjetas o trozos de cartulina para hacer la rendija y una hoja de papel negro (opcional, para oscurecer el interior)",
+      "Fuentes de luz: lámparas fluorescentes del techo del aula (tubos o bombillos ahorradores), una lámpara o linterna LED blanca, la pantalla de un celular en blanco y una hoja blanca iluminada por la ventana",
+      "Lápices de colores, calculadora y una hoja de registro con una fila por fuente",
+      "Tabla de referencia con las longitudes de onda de las líneas visibles del mercurio y los valores de h y de c"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Pregunta guía: ¿por qué la luz de una lámpara de sodio del alumbrado no produce un arcoíris completo? Cada equipo predice si las lámparas del aula darán el mismo espectro.",
+      "2. (15 min) Construyan el espectroscopio: en un extremo de la caja abran una ranura y tápenla con las dos cartulinas dejando entre ellas una rendija de 1 mm; en el otro extremo peguen el trozo de CD en el fondo con el lado brillante hacia arriba, inclinado; en la tapa, sobre el CD, abran un agujero de observación de 1 cm. Apunten la rendija a la lámpara fluorescente y muevan el ojo hasta ver los colores reflejados en el CD.",
+      "3. (15 min) Observen cada fuente: la lámpara fluorescente, la LED, la pantalla del celular y la hoja blanca iluminada por la ventana. Dibujen cada espectro con lápices de colores y anoten si es continuo, si tiene bandas o si tiene líneas finas brillantes. Si alguien tiene celular, puede fotografiar el espectro por el agujero y rotular la foto.",
+      "4. (12 min) Identifiquen en el espectro de la lámpara fluorescente las líneas violeta, azul y verde del mercurio. Con las longitudes de onda de la tabla de referencia (aproximadas: 405 nm, 436 nm y 546 nm) calculen la frecuencia con f = c/λ y la energía de un fotón con E = hf, usando los valores de la tabla (aproximados: c ≈ 3.00 × 10⁸ m/s y h ≈ 6.63 × 10⁻³⁴ J·s).",
+      "5. (8 min) Respondan en equipo las preguntas de análisis 1 y 2 y compartan con la clase qué fuente tuvo líneas y cuál no."
+     ],
+     "seguridad": [
+      "Nunca miren el Sol, ni directamente ni con el espectroscopio; para la luz del día, apunten a una hoja blanca iluminada.",
+      "No miren de cerca y por mucho tiempo una linterna LED potente; obsérvenla desde 1 o 2 m.",
+      "Los bordes del CD cortado son filosos: la docente lo corta antes y los estudiantes lo manejan por la cara, no por el borde.",
+      "No toquen ni desmonten los tubos fluorescentes: contienen mercurio. Si uno se quiebra, salgan del aula, ventilen y la docente recoge los restos sin barrer en seco."
+     ],
+     "datos_esperados": "La lámpara fluorescente muestra un fondo tenue de colores y, encima, líneas finas brillantes en el violeta, el azul y el verde (y, según la lámpara, en el amarillo), siempre en las mismas posiciones: son las del mercurio. Muchas lámparas también muestran bandas rojas o anaranjadas que vienen del recubrimiento del tubo. La LED blanca y la hoja iluminada por el día dan un espectro continuo (la LED, con una zona azul más brillante); la pantalla del celular da tres bandas: roja, verde y azul. Las energías calculadas son del orden de 10⁻¹⁹ J: unos 4.91 × 10⁻¹⁹ J para la violeta, 4.56 × 10⁻¹⁹ J para la azul y 3.64 × 10⁻¹⁹ J para la verde; a menor longitud de onda, mayor energía.",
+     "analisis": [
+      "(Paso 5) ¿Qué fuentes dieron un espectro continuo y cuál dio líneas finas? ¿Por qué decimos que esas líneas son la huella del mercurio y no de la lámpara como aparato?",
+      "(Paso 5) ¿Cuál de las líneas del mercurio corresponde al salto de energía más grande entre niveles? Justifíquenlo con sus cálculos.",
+      "Tarea: miren el video de ensayos a la llama que indique la docente y expliquen por qué cada metal da un color distinto; después respondan la pregunta guía sobre la lámpara de sodio."
+     ],
+     "duracion_min": 55,
+     "variantes": "Si las lámparas del aula son LED, el espectro de líneas se observa en un bombillo ahorrador fluorescente que lleve la docente o en una lámpara de vapor del alumbrado público por la noche, como tarea. Demostración docente opcional: el ensayo a la llama con sal de mesa en un mechero da el amarillo intenso del sodio; las demás sales metálicas se muestran solo en video. Sin laboratorio ni internet: trabajen con la descripción de los datos esperados como datos de un grupo de ejemplo y con las longitudes de onda de la tabla de referencia para los cálculos.",
+     "origen": "redactor-actividades (G10-QUI-U3-3.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/espectros-atomicos-y-modelo-de-bohr",
+     "nombre": "Espectros atómicos y modelo de Bohr",
+     "definicion": "Los electrones ocupan niveles de energía; las transiciones entre ellos emiten o absorben luz de frecuencias específicas, base del ensayo a la llama.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U3-3.5",
+     "grado": 10,
+     "indicador": "3.5. Relaciona la longitud de onda, la frecuencia y la energía de la luz y explica los espectros atómicos de emisión y absorción como huellas de cada elemento.",
+     "evidencia": "Espectroscopio casero, fotografías de espectros rotuladas y cálculos de energía de las líneas observadas"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U3-3.5/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U3-3.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U3-3.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U3-3.7"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U3-3.7",
+      "CON:quimica/modelo-mecanocuantico-y-orbitales"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "titulo": "Cien puntos sin camino: una nube de probabilidad en papel",
+     "proposito": "Construir con puntos al azar un modelo de cómo se describe la posición del electrón en un orbital: muchas «fotos» de posiciones, sin trayectoria que las una. Se cuenta cuántos puntos caen en cada anillo, se calcula la densidad de puntos y se traza el círculo que encierra el 90 % de ellos, para distinguir la órbita de Bohr del orbital y llenar el cuadro comparativo de los dos modelos.",
+     "materiales": [
+      "Por equipo: un pliego de papel bond o papel periódico de al menos 40 cm × 40 cm",
+      "Un marcador de punta fina lavable, un lápiz, una regla y un cordel de 20 cm (para trazar círculos)",
+      "Calculadora y hoja de registro con la tabla de anillos (las áreas vienen en el procedimiento)",
+      "Una prenda o pañoleta limpia para tapar los ojos (opcional: basta con cerrarlos)"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Pregunta guía: si tomáramos muchas «fotos» de la posición del electrón del hidrógeno, ¿podríamos unirlas para dibujar su órbita? Cada equipo escribe su predicción.",
+      "2. (5 min) Marquen un punto central (el núcleo) en el pliego y, con el cordel atado al lápiz, tracen 8 círculos de radios 2, 4, 6, 8, 10, 12, 14 y 16 cm. Numeren los anillos del 1 (centro) al 8.",
+      "3. (12 min) Pongan el pliego en el piso o en una mesa baja. Por turnos, cada integrante mira el centro, cierra los ojos, levanta el marcador a la altura del hombro y lo baja de una vez para marcar un punto tratando de acertar al centro. Entre todo el equipo hagan 100 puntos.",
+      "4. (8 min) Cuenten cuántos puntos hay en cada anillo (los que caen fuera del círculo de 16 cm van aparte) y anótenlos.",
+      "5. (10 min) Calculen la densidad de cada anillo (puntos entre área). Áreas aproximadas en cm²: anillo 1, 12.6; 2, 37.7; 3, 62.8; 4, 88.0; 5, 113.1; 6, 138.2; 7, 163.4; 8, 188.5. Hagan una gráfica de barras de puntos por anillo y otra de densidad por anillo.",
+      "6. (10 min) Sumen los puntos desde el centro hasta llegar a 90 y tracen con color el círculo que los encierra: esa es la «frontera» del modelo de orbital. Respondan las preguntas de análisis 1 y 2.",
+      "7. (5 min) Puesta en común: cada equipo dice el radio de su círculo del 90 % y en qué anillo tuvo más puntos."
+     ],
+     "seguridad": [
+      "Usen solo marcadores lavables y con los ojos cerrados bajen el marcador despacio; quien no marca se mantiene fuera del pliego para no recibir un golpe.",
+      "No usen compás de punta ni objetos punzantes para trazar círculos; el cordel con lápiz basta.",
+      "Si se usa una pañoleta, que sea limpia y personal, y no la compartan sin lavarla."
+     ],
+     "datos_esperados": "La densidad de puntos es mayor en el anillo central y disminuye hacia afuera, mientras que el número de puntos por anillo sube primero y luego baja, con un máximo en un anillo intermedio (suele ser el 3 o el 4), porque los anillos externos tienen más área. Así, en el orbital 1s la probabilidad por volumen es máxima cerca del núcleo, pero la distancia más probable no es cero. El círculo del 90 % suele quedar entre 10 y 14 cm. Ninguna línea une los puntos: el orden en que se marcaron no dice nada sobre un camino.",
+     "analisis": [
+      "(Paso 6) ¿En qué anillo es mayor la densidad de puntos y en cuál hay más puntos? ¿Por qué no coinciden?",
+      "(Paso 6) ¿Por qué no tiene sentido unir los puntos con una línea para dibujar «el camino»? ¿Qué representa el círculo del 90 % y en qué se diferencia de una órbita de Bohr?",
+      "Tarea: completen el cuadro comparativo de los modelos de Bohr y mecanocuántico (trayectoria, energía, posición del electrón, átomos que explica) y señalen dos límites de la analogía de los puntos (por ejemplo, que el papel es plano y el orbital es tridimensional, y que el electrón no «apunta» a ningún lugar)."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin pliego: una hoja tamaño carta con círculos cada 1 cm y puntos hechos desde menor altura. Sin laboratorio ni internet, o para comparar: datos de un grupo de ejemplo con 100 puntos: anillo 1, 6; anillo 2, 15; anillo 3, 20; anillo 4, 19; anillo 5, 16; anillo 6, 12; anillo 7, 8; anillo 8, 4.",
+     "origen": "redactor-actividades (G10-QUI-U3-3.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-mecanocuantico-y-orbitales",
+     "nombre": "Modelo mecanocuántico y orbitales atómicos",
+     "definicion": "La dualidad onda-partícula describe al electrón como un orbital: región de probabilidad con forma s, p, d o f y energía definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U3-3.7",
+     "grado": 10,
+     "indicador": "3.7. Explica las limitaciones del modelo de Bohr y las hipótesis de De Broglie, Heisenberg y Schrödinger que dan lugar al concepto de orbital.",
+     "evidencia": "Cuadro comparativo de los modelos de Bohr y mecanocuántico y glosario ilustrado de términos cuánticos"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U3-3.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U3-3.8/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U3-3.8/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U3-3.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U3-3.8",
+      "CON:quimica/numeros-cuanticos"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "titulo": "Tapitas y frijoles: la tabla de números cuánticos y el juego de los conjuntos imposibles",
+     "proposito": "Construir con tapitas (orbitales) y frijoles de dos colores (electrones con espín +½ o −½) los niveles n = 1, 2 y 3, para deducir los valores permitidos de l, mₗ y mₛ, el número de orbitales por subnivel y las regularidades n² y 2n². Después, cada equipo escribe conjuntos de números cuánticos, algunos imposibles, y otro equipo los valida justificando la regla que violan.",
+     "materiales": [
+      "Por equipo: 14 tapitas de botella (1 para n = 1, 4 para n = 2 y 9 para n = 3)",
+      "Por equipo: 28 frijoles, 14 de un color (espín +½) y 14 de otro (espín −½), o fichas de dos colores",
+      "Un pliego de papel o cartulina con tres franjas rotuladas n = 1, n = 2 y n = 3, y un marcador",
+      "Por equipo: 6 tarjetas de cartulina en blanco y un sobre",
+      "Hoja de registro con la tabla: n, l, letra del subnivel, valores de mₗ, número de orbitales y número de electrones"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) Predicción en equipo: ¿cuántos orbitales y cuántos electrones caben en el nivel n = 3? Anótenla sin consultar.",
+      "2. (12 min) Con la regla de que l va de 0 a n − 1 y mₗ de −l a +l, coloquen en cada franja una fila de tapitas por subnivel, una tapita por cada valor de mₗ, y rotulen cada tapita con su mₗ. Pongan en cada tapita un frijol de cada color.",
+      "3. (8 min) Llenen la tabla de la hoja de registro con lo que armaron y respondan la pregunta de análisis 1; completen la fila de n = 4 sin material.",
+      "4. (10 min) En las 6 tarjetas, cada equipo escribe 6 conjuntos (n, l, mₗ, mₛ): 3 permitidos y 3 imposibles, y cada imposible debe violar una regla distinta (la de l, la de mₗ o la de mₛ). Anoten la clave aparte, mezclen las tarjetas y guárdenlas en el sobre.",
+      "5. (12 min) Intercambien el sobre con otro equipo. Validen cada tarjeta buscando su tapita en el modelo y escriban al reverso «permitido» o «imposible» con la regla que viola.",
+      "6. (8 min) Devuelvan el sobre, comparen con la clave, discutan los desacuerdos y respondan la pregunta de análisis 2."
+     ],
+     "seguridad": [
+      "Los frijoles no se comen ni se llevan a la boca, la nariz o los oídos; al terminar se guardan para otra práctica.",
+      "Recojan las tapitas y los frijoles que caigan al piso para evitar resbalones."
+     ],
+     "datos_esperados": "n = 1: solo l = 0 (1s), 1 orbital y 2 electrones. n = 2: l = 0 y 1 (2s, 2p), 4 orbitales y 8 electrones. n = 3: l = 0, 1 y 2 (3s, 3p, 3d), 9 orbitales y 18 electrones. Para n = 4 se deduce 16 orbitales y 32 electrones: n² orbitales y 2n² electrones. Los subniveles tienen 1, 3, 5 y 7 orbitales (2l + 1). Muchas predicciones del paso 1 dan 8 electrones para n = 3 o cuentan solo mₗ positivos. Los errores más comunes en las tarjetas son l = n y mₗ fuera de −l a +l.",
+     "analisis": [
+      "(Paso 3) ¿Qué regularidad hay entre n y el número de orbitales y de electrones del nivel? ¿Cuántos tiene n = 4? ¿Acertó su predicción del paso 1?",
+      "(Paso 6) ¿Qué regla se violó en las tarjetas que más les costó validar y cómo se ve esa violación en el modelo de tapitas (por ejemplo, una tapita que no existe)?",
+      "Tarea: ¿qué representan una tapita y un frijol? Señalen en qué se aleja el modelo del átomo real: un orbital no es un recipiente con lugar fijo y el espín no es un giro como el de un trompo."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin tapitas ni frijoles: dibujen cada orbital como un cuadrito y cada electrón como una flecha hacia arriba (+½) o hacia abajo (−½). Las tarjetas pueden ser recortes de cuaderno. No necesita laboratorio ni internet.",
+     "origen": "redactor-actividades (G10-QUI-U3-3.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/numeros-cuanticos",
+     "nombre": "Números cuánticos",
+     "definicion": "Los números n, l, ml y ms describen nivel, subnivel, orientación del orbital y espín de cada electrón.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U3-3.8",
+     "grado": 10,
+     "indicador": "3.8. Determina los conjuntos permitidos de números cuánticos de un electrón e identifica los que son imposibles justificando la regla que violan.",
+     "evidencia": "Tabla de números cuánticos por nivel y ejercicio de validación de conjuntos con justificación"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U3-3.8/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G10-QUI-U3-3.9/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G10-QUI-U3-3.9/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G10-QUI-U3-3.9"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U3-3.9",
+      "CON:quimica/modelo-mecanocuantico-y-orbitales"
+     ],
+     "grados": [
+      10
+     ],
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "titulo": "Orbitales de globos y diagrama de Möller: forma, tamaño y orden de llenado",
+     "proposito": "Construir modelos tridimensionales de los orbitales s, p y d con globos sobre ejes cartesianos para comparar su forma, su orientación y su tamaño según n, y luego construir el diagrama de Möller hasta el subnivel 6p, justificando el orden de llenado con la regla n + l.",
+     "materiales": [
+      "Unos 30 globos: 3 redondos de tamaños distintos para 1s, 2s y 3s y 24 para los lóbulos de p y d, más 3 de repuesto; inflador de globos si hay",
+      "Por equipo: 6 pajillas y 2 bolas de plastilina (hasta dos juegos de ejes x, y, z con su núcleo) y cinta adhesiva",
+      "Para el orbital dz²: un anillo de cartulina de unos 20 cm de diámetro",
+      "Marcadores y etiquetas para rotular cada orbital y sus ejes",
+      "Un pliego de papel para el diagrama de Möller de la clase y la hoja de registro de cada estudiante"
+     ],
+     "procedimiento": [
+      "Sesión 1 (55 min)",
+      "1. (5 min) La docente reparte los orbitales: equipo 1, los s (1s, 2s y 3s); equipo 2, los tres 2p; equipo 3, 3dxy y 3dx²−y²; equipo 4, 3dxz y 3dyz; equipo 5, 3dz². Cada equipo arma sus ejes cruzando tres pajillas en una bola de plastilina; los equipos 3 y 4 arman un juego de ejes por orbital.",
+      "2. (15 min) Construyan los modelos: los s son un globo redondo centrado en el núcleo, más grande cuanto mayor es n; cada p son dos globos opuestos a lo largo de un eje; cada d de cuatro lóbulos son cuatro globos, entre los ejes (dxy, dxz, dyz) o sobre los ejes x e y (dx²−y²); el dz² son dos globos sobre el eje z y el anillo de cartulina alrededor del núcleo. Rotulen cada modelo.",
+      "3. (10 min) Galería: cada equipo muestra sus modelos y la clase anota en la hoja de registro la forma, la orientación y el tamaño relativo de cada orbital, y responde la pregunta de análisis 1.",
+      "4. (15 min) Cada estudiante escribe los subniveles en filas (1s; 2s 2p; 3s 3p 3d; 4s 4p 4d 4f; 5s 5p 5d 5f; 6s 6p…; 7s…), traza las diagonales del diagrama de Möller y escribe el orden de llenado hasta 6p, con la suma n + l junto a cada subnivel. Luego se arma el diagrama de la clase en el pliego.",
+      "5. (10 min) Respondan en equipo la pregunta de análisis 2 y compartan qué empates de n + l encontraron y cómo los resolvieron."
+     ],
+     "seguridad": [
+      "Pregunten antes si alguien es alérgico al látex; esa persona no infla ni manipula globos y trabaja en los rótulos o con modelos de papel.",
+      "Inflen con inflador si es posible y no compartan la boquilla de un globo.",
+      "Recojan de inmediato los trozos de globos reventados: son un riesgo de asfixia si los toman niños pequeños.",
+      "No usen palillos de pincho ni objetos punzantes como ejes; las pajillas bastan."
+     ],
+     "datos_esperados": "Los orbitales s son esferas que crecen con n (1s < 2s < 3s); los tres 2p tienen dos lóbulos cada uno y apuntan a lo largo de x, y y z; cuatro de los cinco 3d tienen cuatro lóbulos y el dz² tiene dos lóbulos con un anillo. El orden de Möller hasta 6p es 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p; entre subniveles con la misma suma n + l va primero el de menor n (por ejemplo, 3d antes que 4p y 4p antes que 5s). Es el orden aproximado para átomos neutros, con excepciones como el cromo y el cobre.",
+     "analisis": [
+      "(Paso 3) ¿Qué tienen en común y en qué se diferencian el 1s, el 2s y el 3s? ¿Qué no puede mostrar un globo de superficie bien definida sobre la probabilidad de encontrar al electrón?",
+      "(Paso 5) Según su diagrama, ¿qué subniveles se llenan después del 4s y antes del 5s? Justifiquen el orden con la suma n + l y la regla de los empates.",
+      "Tarea: busquen la configuración del cromo y del cobre en la tabla de referencia y expliquen en qué se apartan del orden de Möller."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin globos: modelos de plastilina, de papel periódico arrugado envuelto en cinta o de bolsas de papel infladas. Sin laboratorio ni internet: la actividad no los necesita. Con computadora o celular, un visualizador tridimensional de orbitales que la docente haya probado antes permite comparar las superficies del 1s, 2s, 2p y 3d con los modelos de globos.",
+     "origen": "redactor-actividades (G10-QUI-U3-3.9)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/modelo-mecanocuantico-y-orbitales",
+     "nombre": "Modelo mecanocuántico y orbitales atómicos",
+     "definicion": "La dualidad onda-partícula describe al electrón como un orbital: región de probabilidad con forma s, p, d o f y energía definida.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U3-3.9",
+     "grado": 10,
+     "indicador": "3.9. Describe la forma de los orbitales s, p y d y ordena los subniveles por energía creciente aplicando la regla n + l y el diagrama de Möller.",
+     "evidencia": "Modelos tridimensionales de orbitales y diagrama de Möller construido con el orden de llenado justificado"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G10-QUI-U3-3.9/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "exactitud científica (experto)",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ]
+  }
+ ]
+}
