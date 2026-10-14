@@ -84,6 +84,16 @@ Insumo para preparar clases. La malla es la V3 del MINED; lo demás son propuest
 | TEMA:G10-QUI-U1-1.12 | [G10-QUI-U1-1.12](G10-QUI-U1-1.12.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U1-1.13 | [G10-QUI-U1-1.13](G10-QUI-U1-1.13.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | TEMA:G10-QUI-U1-1.14 | [G10-QUI-U1-1.14](G10-QUI-U1-1.14.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U2-2.1 | [G10-QUI-U2-2.1](G10-QUI-U2-2.1.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U2-2.5 | [G10-QUI-U2-2.5](G10-QUI-U2-2.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.1 | [G10-QUI-U3-3.1](G10-QUI-U3-3.1.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.2 | [G10-QUI-U3-3.2](G10-QUI-U3-3.2.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.3 | [G10-QUI-U3-3.3](G10-QUI-U3-3.3.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.4 | [G10-QUI-U3-3.4](G10-QUI-U3-3.4.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.5 | [G10-QUI-U3-3.5](G10-QUI-U3-3.5.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.7 | [G10-QUI-U3-3.7](G10-QUI-U3-3.7.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.8 | [G10-QUI-U3-3.8](G10-QUI-U3-3.8.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
+| TEMA:G10-QUI-U3-3.9 | [G10-QUI-U3-3.9](G10-QUI-U3-3.9.md) | completo | completo | completo | ligera | pendiente_de_fuente | completa |
 | G10-QUI-U13-13.8 | [G10-QUI-U4-4.8](G10-QUI-U4-4.8.md) (VECINO, no equivalente: 25 % de los conceptos y 22 % del texto del pedido) | completo | completo | completo | completo | pendiente_de_fuente | pendiente |
 | TEMA:G11-FIS-U1-1.2 | [G11-FIS-U1-1.2](G11-FIS-U1-1.2.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
 | TEMA:G11-QUI-U12-12.1 | [G11-QUI-U12-12.1](G11-QUI-U12-12.1.md) | completo | completo | completo | completo | pendiente_de_fuente | completa |
