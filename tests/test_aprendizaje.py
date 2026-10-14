@@ -406,3 +406,16 @@ def test_el_paquete_de_clase_trae_texto_crudo_y_dice_lo_que_falta():
     if not p["datos_de_referencia"]["valores"]:
         assert p["completitud"]["datos_de_referencia"] == "pendiente_de_fuente"
     assert paquete("TEMA:G09-CIE-U3-3.6")["tema"]["id"] == "G09-CIE-U3-3.3"   # absorbido por la V3
+
+
+def test_datos_que_faltan_sin_ruido():
+    """La sustancia no arrastra verbos («sea») y el plural no repite el dato."""
+    from goes_science_kg.aprendizaje.paquete import _datos_que_faltan
+
+    e = {"id": "EXP:x/1", "titulo": "t", "procedimiento": [
+        "Busca en la tabla de referencia la energía de ionización del aluminio sea cual sea.",
+        "Anota la energía de ionización y las energías de ionización de la tabla de referencia; usa μs de la tabla "
+        "de referencia."]}
+    datos = [d["dato"] for d in _datos_que_faltan([e])]
+    assert datos == ["energía de ionización de aluminio", "energía de ionización",
+                     "coeficiente de fricción estática (μs)"], datos

@@ -439,7 +439,7 @@
    "concepto": "CON:quimica/aminoacidos-y-proteinas",
    "descripcion": "Cree que «carga neta cero» significa que el aminoácido no tiene grupos cargados (lo dibuja como H2N–CH(R)–COOH) y que eso ocurre siempre a pH 7, en vez de verlo como un ion dipolar (–NH3+ y –COO−) cuyas cargas se compensan a un pH propio de cada aminoácido: su punto isoeléctrico.",
    "senales": "Dibuja en el pI la forma sin cargas; responde que el pI de todo aminoácido es 7 o que a pH 7 ningún aminoácido migra en la electroforesis; usa «neutro» como sinónimo de «sin cargas» o de «pH 7».",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -447,7 +447,7 @@
    "concepto": "CON:quimica/aminoacidos-y-proteinas",
    "descripcion": "Invierte la relación entre el pH y la carga: cree que en medio básico (pH mayor que el pI) el aminoácido queda con carga neta positiva y en medio ácido con carga negativa, como si «básico» significara «positivo», en vez de razonar que por debajo del pI los grupos conservan sus protones (carga neta +) y por encima los ceden (carga neta −).",
    "senales": "Afirma que a pH 10 la glicina tiene carga neta positiva y migra hacia el cátodo; dice que a pH bajo el grupo –COOH «pierde» su protón; en la hoja de cálculo pone al revés el signo de la carga en las filas con pH mayor y menor que el pI; asocia «más OH−» con «más carga positiva».",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -455,7 +455,7 @@
    "concepto": "CON:quimica/aminoacidos-y-proteinas",
    "descripcion": "Calcula el punto isoeléctrico promediando todos los pKa del aminoácido, o siempre los del carboxilo y el amino alfa, aunque la cadena lateral sea ionizable: no identifica primero la forma con carga neta cero ni elige los dos pKa que la rodean (los dos menores en aminoácidos ácidos, los dos mayores en básicos).",
    "senales": "Divide entre 3 la suma de tres pKa; para el ácido aspártico obtiene un pI intermedio (cercano a 5 o 6) en vez de uno ácido, cercano a 3, y para la lisina uno cercano a 6 o 7 en vez de uno básico, cercano a 10; aplica a todos los aminoácidos el promedio de los pKa del carboxilo y el amino alfa sin escribir antes las formas iónicas.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -463,15 +463,15 @@
    "concepto": "CON:quimica/aminoacidos-y-proteinas",
    "descripcion": "Lee mal la curva de titulación: ubica cada pKa en un salto vertical (punto de equivalencia) en lugar del centro de la zona plana, donde el pH casi no cambia porque la mitad del grupo ya cedió su protón; por eso cree que a pH = pKa el grupo está totalmente desprotonado y confunde con un pKa el pI, que en la glicina cae en el salto entre las dos zonas planas.",
    "senales": "Marca los pKa en las partes más empinadas de la curva; dice que a pH = pKa1 «ya no queda» –COOH; lee el pI en el centro de una zona plana; no relaciona 0.5, 1 y 1.5 equivalentes de base añadidos con el primer pKa, el pI y el segundo pKa.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
    "id": "DIF:quimica/fuerzas-intermoleculares/1",
    "concepto": "CON:quimica/fuerzas-intermoleculares",
-   "descripcion": "Confunde las fuerzas intermoleculares con los enlaces covalentes dentro de la molécula: cree que al hervir, evaporar o disolver se rompen enlaces como el O–H, o que el puente de hidrógeno es el enlace entre el H y el O de una misma molécula.",
-   "senales": "Dice que las burbujas del agua hirviendo son hidrógeno y oxígeno; explica la evaporación, la disolución o la desnaturalización como ruptura de enlaces covalentes o peptídicos; dibuja el puente de hidrógeno dentro de una sola molécula.",
-   "estado": "propuesta_pendiente",
+   "descripcion": "Confunde las fuerzas intermoleculares con los enlaces covalentes dentro de la molécula: cree que al hervir, evaporar o disolver una sustancia molecular se rompen enlaces como el O–H, o que el puente de hidrógeno es el propio enlace covalente entre el H y el O de una molécula.",
+   "senales": "Dice que las burbujas del agua hirviendo son hidrógeno y oxígeno; explica la evaporación o la disolución del azúcar como ruptura de enlaces covalentes, o la desnaturalización por calor como ruptura de enlaces peptídicos; dibuja el puente de hidrógeno sobre el enlace O–H de una misma molécula, y no entre el H de un grupo y el O o N de otro grupo o de otra molécula.",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -479,7 +479,7 @@
    "concepto": "CON:quimica/polimerizacion",
    "descripcion": "Trata la polimerización por condensación como una simple suma de monómeros: no reconoce que en cada unión sale una molécula pequeña (agua en el enlace peptídico), ni que la hidrólisis consume una molécula de agua por cada enlace que rompe.",
    "senales": "Escribe la fórmula o la masa de un dipéptido como la suma exacta de los dos aminoácidos; dice que la hidrólisis no usa agua o que la libera; no distingue la condensación de la adición.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   }
  ],
@@ -509,6 +509,7 @@
    },
    "correcta": "B",
    "distractores": {
+    "A": "DIF:quimica/aminoacidos-y-proteinas/2",
     "C": "DIF:quimica/aminoacidos-y-proteinas/1"
    },
    "valor": null,
@@ -516,14 +517,36 @@
    "unidad": null,
    "retroalimentacion": "A pH 7 el medio tiene más H+ que en su pI (9.8), así que sus grupos amino siguen protonados y la carga neta es positiva: lo atrae el cátodo (−). Solo a pH 9.8 su carga neta sería cero y no migraría.",
    "duracion_min": 5,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "malla",
     "ref": "TEMA:G11-QUI-U12-12.1"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Reproduce la actividad E3 de la malla (electroforesis a pH 7) con datos rotulados. Enunciado de 50 palabras, ánodo y cátodo definidos en el propio texto, opciones parejas con la forma «hacia…, porque…» y distractores que separan la inversión pH–carga (A) de «a pH 7 todo es neutro» (C). La retroalimentación explica sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "distractores": {
+      "C": "DIF:quimica/aminoacidos-y-proteinas/1"
+     }
+    }
+   }
   },
   {
    "id": "ACT:G11-QUI-U12-12.1/obj-2",
@@ -550,21 +573,45 @@
    },
    "correcta": "C",
    "distractores": {
-    "B": "DIF:quimica/aminoacidos-y-proteinas/1"
+    "A": "DIF:quimica/aminoacidos-y-proteinas/4",
+    "B": "DIF:quimica/aminoacidos-y-proteinas/1",
+    "D": "DIF:quimica/aminoacidos-y-proteinas/4"
    },
    "valor": null,
    "tolerancia": null,
    "unidad": null,
    "retroalimentacion": "Las mesetas centradas en 0.5 y 1.5 equivalentes dan pKa1 ≈ 2.4 y pKa2 ≈ 9.6; el pI es su promedio, (2.4 + 9.6)/2 = 6.0, justo en el salto de 1.0 equivalente. Ahí predomina el ion dipolar (–NH3+ y –COO−), con cargas que se compensan.",
    "duracion_min": 8,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "malla",
     "ref": "TEMA:G11-QUI-U12-12.1"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide interpretar una curva de titulación, como el procedimental de la malla, con datos rotulados y 8 minutos razonables para 11.°. Las opciones combinan pI y forma predominante, y los distractores salen de dificultades de la capa. La retroalimentación modela la lectura: mesetas → pKa, salto → pI. Sugerencia no bloqueante: invitar a esbozar la curva, como pide la propia malla."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "distractores": {
+      "B": "DIF:quimica/aminoacidos-y-proteinas/1"
+     }
+    }
+   }
   },
   {
    "id": "ACT:G11-QUI-U12-12.1/obj-abierta",
@@ -582,7 +629,7 @@
    "grados": [
     11
    ],
-   "enunciado": "Un compañero afirma: «En su punto isoeléctrico, la glicina no tiene ninguna carga, igual que una molécula de azúcar». ¿Tiene razón? Explica en 2 o 3 oraciones cómo está la glicina en su pI y qué le pasa a su carga neta si el pH baja por debajo del pI.",
+   "enunciado": "Una compañera afirma: «En su punto isoeléctrico, la glicina no tiene ninguna carga, igual que una molécula de azúcar». ¿Tiene razón? Explica en 2 o 3 oraciones: 1) qué forma tiene la glicina en su pI y por qué su carga neta es cero; 2) qué le pasa a su carga neta si el pH baja por debajo del pI, y por qué.",
    "opciones": null,
    "correcta": null,
    "distractores": null,
@@ -622,7 +669,7 @@
      {
       "descripcion": "Invierte el efecto del pH: cree que en medio más ácido la carga neta se vuelve negativa.",
       "ejemplo": "No tiene razón; y si baja el pH queda negativa, porque hay más ácido en el agua.",
-      "dificultad": null
+      "dificultad": "DIF:quimica/aminoacidos-y-proteinas/2"
      },
      {
       "descripcion": "Supone que el pI de todo aminoácido es 7 (pH neutro).",
@@ -633,14 +680,77 @@
    },
    "retroalimentacion": "En el pI la glicina es un ion dipolar: tiene –NH3+ y –COO−, y su carga neta es cero porque las dos cargas se compensan. Por debajo del pI el –COO− gana un H+ y la carga neta pasa a ser positiva.",
    "duracion_min": 5,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "malla",
     "ref": "TEMA:G11-QUI-U12-12.1"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Cambios de forma correctos: «Una compañera» no altera nada y el enunciado pide ahora el porqué que exige c3. La química queda como la fijé: en el pI la glicina es ion dipolar con carga neta cero por compensación de cargas, y bajo el pI el –COO− se protona y la carga neta es positiva. El error 2 sigue mapeado a la dificultad 2."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Un compañero afirma: «En su punto isoeléctrico, la glicina no tiene ninguna carga, igual que una molécula de azúcar». ¿Tiene razón? Explica en 2 o 3 oraciones cómo está la glicina en su pI y qué le pasa a su carga neta si el pH baja por debajo del pI.",
+     "rubrica": {
+      "respuesta_modelo": "No tiene razón. En su pI la glicina está como ion dipolar: el grupo amino tiene carga positiva (–NH3+) y el carboxilo, carga negativa (–COO−); la carga neta es cero porque se compensan, no porque no haya cargas. Si el pH baja por debajo del pI, el –COO− toma un H+ y queda –COOH, así que la molécula queda con carga neta positiva.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que en el pI sí hay cargas: nombra el amino positivo (–NH3+) y el carboxilo negativo (–COO−), o usa «ion dipolar» o «zwitterión» con esas dos cargas.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Distingue carga neta cero de ausencia de cargas: explica que las dos cargas se compensan.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Predice que por debajo del pI la carga neta es positiva y lo justifica con que el carboxilato (–COO−) gana un H+.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Agrega que en su pI la glicina no migraría en una electroforesis, o que actúa como ácido y como base (anfótera).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde carga neta cero con ausencia de cargas.",
+        "ejemplo": "Sí tiene razón, en el pI la glicina es neutra porque no tiene cargas, como el azúcar.",
+        "dificultad": "DIF:quimica/aminoacidos-y-proteinas/1"
+       },
+       {
+        "descripcion": "Invierte el efecto del pH: cree que en medio más ácido la carga neta se vuelve negativa.",
+        "ejemplo": "No tiene razón; y si baja el pH queda negativa, porque hay más ácido en el agua.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Supone que el pI de todo aminoácido es 7 (pH neutro).",
+        "ejemplo": "En su pI, que es pH 7, la glicina es neutra; si baja de 7 se carga.",
+        "dificultad": "DIF:quimica/aminoacidos-y-proteinas/1"
+       }
+      ]
+     }
+    }
+   }
   },
   {
    "id": "ACT:quimica/aminoacidos-y-proteinas/comprobacion-G11",
@@ -666,21 +776,44 @@
    },
    "correcta": "D",
    "distractores": {
-    "A": "DIF:quimica/aminoacidos-y-proteinas/1"
+    "A": "DIF:quimica/aminoacidos-y-proteinas/1",
+    "B": "DIF:quimica/aminoacidos-y-proteinas/4"
    },
    "valor": null,
    "tolerancia": null,
    "unidad": null,
    "retroalimentacion": "En cada meseta el OH− que entra le quita H+ a un grupo, y la mezcla de las dos formas resiste el cambio de pH; en su centro hay iguales cantidades de ambas y pH = pKa. El pI está en el salto entre las dos mesetas.",
    "duracion_min": 4,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/aminoacidos-y-proteinas"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Situación nueva (otra curva de titulación descrita en palabras) que comprueba la lectura de las mesetas sin repetir la práctica. Opciones muy parejas, la clave no es la más larga y los distractores mapeados recogen dos ideas previas de la capa. Retroalimentación breve que explica la amortiguación."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "distractores": {
+      "A": "DIF:quimica/aminoacidos-y-proteinas/1"
+     }
+    }
+   }
   },
   {
    "id": "ACT:quimica/aminoacidos-y-proteinas/practica-G11",
@@ -704,16 +837,36 @@
    "valor": 3.0,
    "tolerancia": 0.1,
    "unidad": null,
-   "retroalimentacion": "A pH muy bajo la carga es +1; al perder el H+ del carboxilo α (pKa 2.0) queda en 0, y al perder el de la cadena lateral (pKa 4.0) pasa a −1. El pI es el promedio de los pKa que rodean la forma neutra: (2.0 + 4.0)/2 = 3.0, no el promedio de los tres.",
+   "retroalimentacion": "A pH muy bajo la carga es +1; al perder el H+ del carboxilo α (pKa 2.0) queda en 0, y al perder el de la cadena lateral (pKa 4.0) pasa a −1. El pI es el promedio de los dos pKa que rodean la forma de carga neta cero: (2.0 + 4.0)/2 = 3.0, no el promedio de los tres.",
    "duracion_min": 6,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/aminoacidos-y-proteinas"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Buen andamiaje para una práctica: el enunciado guía los pasos (cargas de cada forma, pKa que rodean la de carga cero, cálculo) y la retroalimentación es un ejemplo trabajado que nombra el error de promediar los tres pKa. Pide «solo el número» y aclara que el pI no lleva unidad. Coherente con la malla."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "retroalimentacion": "A pH muy bajo la carga es +1; al perder el H+ del carboxilo α (pKa 2.0) queda en 0, y al perder el de la cadena lateral (pKa 4.0) pasa a −1. El pI es el promedio de los pKa que rodean la forma neutra: (2.0 + 4.0)/2 = 3.0, no el promedio de los tres."
+    }
+   }
   },
   {
    "id": "ACT:quimica/aminoacidos-y-proteinas/sondeo-1-G11",
@@ -730,7 +883,7 @@
    "grados": [
     11
    ],
-   "enunciado": "La glicina es un sólido blanco que se disuelve bien en agua y que, al calentarlo, se descompone antes de fundirse. En cambio, el ácido acético, una molécula orgánica de tamaño parecido, es líquido a temperatura ambiente. ¿Qué explica mejor la diferencia?",
+   "enunciado": "La glicina es un sólido blanco que se disuelve bien en agua y que, al calentarlo, se descompone antes de fundirse. En cambio, el ácido acético, una molécula orgánica de tamaño parecido, es líquido a temperatura ambiente. ¿Qué característica de la glicina explica mejor la diferencia?",
    "opciones": {
     "A": "Sus moléculas son iones dipolares que se atraen entre sí como iones de una sal",
     "B": "Sus moléculas no tienen cargas y solo se atraen por medio de puentes de hidrógeno",
@@ -746,14 +899,35 @@
    "unidad": null,
    "retroalimentacion": "En el sólido y en el agua, la glicina está como ion dipolar (–NH3+ y –COO−). Las atracciones entre cargas opuestas de moléculas vecinas son fuertes, como en una sal: por eso no funde con facilidad y se disuelve bien en agua.",
    "duracion_min": 3,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/aminoacidos-y-proteinas"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "El cambio solo quita la ambigüedad del posesivo («de la glicina») y la clave A sigue siendo única. Los hechos siguen exactos: la glicina se descompone sin fundir porque en el sólido es ion dipolar, y el ácido acético, de masa molar parecida (60 frente a 75 g/mol), es líquido a la temperatura del aula. B sigue mapeado a la dificultad 1."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "La glicina es un sólido blanco que se disuelve bien en agua y que, al calentarlo, se descompone antes de fundirse. En cambio, el ácido acético, una molécula orgánica de tamaño parecido, es líquido a temperatura ambiente. ¿Qué explica mejor la diferencia?"
+    }
+   }
   },
   {
    "id": "ACT:quimica/fuerzas-intermoleculares/comprobacion-G11",
@@ -770,7 +944,7 @@
    "grados": [
     11
    ],
-   "enunciado": "Al freír un huevo, la clara pasa de transparente y líquida a blanca y firme. Un estudiante dice que el calor rompió los enlaces peptídicos de las proteínas de la clara. Según el modelo de fuerzas intermoleculares, ¿qué ocurre en realidad?",
+   "enunciado": "Al freír un huevo, la clara pasa de transparente y líquida a blanca y firme. ¿Qué les pasa a las proteínas de la clara con el calor?",
    "opciones": {
     "A": "Se rompen los enlaces peptídicos y cada proteína queda en aminoácidos sueltos",
     "B": "Se vencen puentes de hidrógeno y otras atracciones; cada cadena se despliega",
@@ -786,14 +960,35 @@
    "unidad": null,
    "retroalimentacion": "El calor vence las interacciones débiles (puentes de hidrógeno y otras) que mantenían plegada cada proteína; las cadenas se despliegan y se enredan entre sí. Los enlaces peptídicos, que son covalentes, siguen intactos: la secuencia no cambia.",
    "duracion_min": 4,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/fuerzas-intermoleculares"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Quitar las pistas no altera la química y mejora la validez: A (ruptura de enlaces peptídicos) ya puede elegirse y delatar la dificultad 1. B sigue siendo la única clave: el calor vence interacciones no covalentes y la cadena se despliega; C (se derrite) y D (se evapora toda el agua) son falsas. La retroalimentación conserva los enlaces peptídicos intactos."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Al freír un huevo, la clara pasa de transparente y líquida a blanca y firme. Un estudiante dice que el calor rompió los enlaces peptídicos de las proteínas de la clara. Según el modelo de fuerzas intermoleculares, ¿qué ocurre en realidad?"
+    }
+   }
   },
   {
    "id": "ACT:quimica/fuerzas-intermoleculares/practica-G11",
@@ -824,16 +1019,36 @@
    "valor": null,
    "tolerancia": null,
    "unidad": null,
-   "retroalimentacion": "Dos líquidos se mezclan si sus moléculas se atraen entre sí tanto como consigo mismas. El –OH del etanol forma puentes de hidrógeno con el agua; el aceite solo tiene fuerzas de London y no puede competir con los puentes de hidrógeno entre moléculas de agua.",
+   "retroalimentacion": "Dos líquidos se mezclan si sus moléculas se atraen entre sí tanto como consigo mismas. El –OH del etanol forma puentes de hidrógeno con el agua; el aceite, casi apolar, se atrae sobre todo por fuerzas de London y no puede competir con los puentes de hidrógeno entre moléculas de agua.",
    "duracion_min": 6,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/fuerzas-intermoleculares"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto cotidiano (etanol y aceite de cocina), enunciado corto y opciones parejas. Los distractores son ideas reales (reacción química, densidad, cargas) y B está mapeado. La retroalimentación que corrigió el experto da la regla general antes del caso, lo que sirve de modelo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "retroalimentacion": "Dos líquidos se mezclan si sus moléculas se atraen entre sí tanto como consigo mismas. El –OH del etanol forma puentes de hidrógeno con el agua; el aceite solo tiene fuerzas de London y no puede competir con los puentes de hidrógeno entre moléculas de agua."
+    }
+   }
   },
   {
    "id": "ACT:quimica/fuerzas-intermoleculares/sondeo-1-G11",
@@ -866,14 +1081,31 @@
    "unidad": null,
    "retroalimentacion": "Al hervir, las moléculas de H2O se alejan unas de otras porque se vencen los puentes de hidrógeno entre ellas; los enlaces O–H dentro de cada molécula siguen intactos. Las burbujas son vapor de agua.",
    "duracion_min": 3,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/fuerzas-intermoleculares"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Fenómeno que todo estudiante ha visto (agua hirviendo), 28 palabras y 3 minutos. Los distractores son ideas previas documentadas sobre la ebullición: moléculas que crecen, hidrógeno y oxígeno, aire. La retroalimentación distingue las fuerzas entre moléculas de los enlaces dentro de ellas sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   },
   {
    "id": "ACT:quimica/fuerzas-intermoleculares/sondeo-2-G11",
@@ -906,14 +1138,31 @@
    "unidad": null,
    "retroalimentacion": "Cuanto más fuertes son las atracciones entre moléculas, más lento se evapora un líquido. La glicerina, con tres grupos –OH y una molécula más grande, forma más puentes de hidrógeno por molécula que el etanol y el agua, y además tiene más fuerzas de London.",
    "duracion_min": 3,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/fuerzas-intermoleculares"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Situación distinta del sondeo-1 (datos de evaporación), rotulados de ejemplo y que piden relacionar datos con fuerzas, adecuado a 11.°. Distractores plausibles, incluida la idea invertida de A. Nota para quien quiera repetirlo en clase: la acetona es inflamable; basta con agua, etanol y glicerina, lejos de llamas."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   },
   {
    "id": "ACT:quimica/polimerizacion/comprobacion-G11",
@@ -947,14 +1196,31 @@
    "unidad": null,
    "retroalimentacion": "La hidrólisis es la reacción inversa de la condensación: cada uno de los 9 enlaces peptídicos se rompe con una molécula de agua, cuyo –OH queda en el carboxilo y cuyo H queda en el amino.",
    "duracion_min": 4,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/polimerizacion"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto con sentido (la digestión), enunciado corto y el conteo 9 frente a 10 como distractor plausible. Comprueba la hidrólisis en una situación distinta de la práctica. La retroalimentación explica cómo se reparte cada molécula de agua."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   },
   {
    "id": "ACT:quimica/polimerizacion/practica-G11",
@@ -987,14 +1253,31 @@
    "unidad": null,
    "retroalimentacion": "En la condensación, el –OH del carboxilo de un aminoácido y un H del amino del otro salen como H2O: C2H5NO2 + C3H7NO2 − H2O = C5H10N2O3.",
    "duracion_min": 6,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/polimerizacion"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Ejercicio de balance de fórmulas con un solo paso conceptual (sale una molécula de agua), adecuado a 11.°. Opciones parejas con la forma «fórmula, porque…»; cada distractor es un error real de balance. La retroalimentación muestra el cálculo completo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   },
   {
    "id": "ACT:quimica/polimerizacion/sondeo-1-G11",
@@ -1027,14 +1310,31 @@
    "unidad": null,
    "retroalimentacion": "En la adición (polietileno) se abre el doble enlace C=C y todos los átomos del monómero quedan en la cadena. En la condensación (nailon), cada –COOH reacciona con un –NH2 y sale una molécula de agua por unión.",
    "duracion_min": 3,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/polimerizacion"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contrasta adición y condensación con ejemplos cotidianos (bolsas, nailon) en 35 palabras. Los distractores son plausibles y A está mapeada a la dificultad de la capa. Lenguaje claro y 3 minutos realistas."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   },
   {
    "id": "ACT:quimica/polimerizacion/sondeo-2-G11",
@@ -1067,14 +1367,31 @@
    "unidad": null,
    "retroalimentacion": "Un tripéptido tiene dos enlaces peptídicos y en cada uno sale una molécula de agua: 75 + 89 + 105 − 2 × 18 = 233 g/mol.",
    "duracion_min": 4,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "concepto",
     "ref": "CON:quimica/polimerizacion"
    },
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Ítem breve (4 min) y legible para 11.°: da las masas que necesita y pide una sola decisión, cuántas aguas salen. Las cuatro opciones son paralelas y plausibles, sin pistas gramaticales, y A detecta la idea previa de la suma simple. Usa otra habilidad que el sondeo 1 (interpretar datos). La retroalimentación explica el cálculo sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   }
  ],
  "microtemas": [
@@ -1086,20 +1403,41 @@
     11
    ],
    "titulo": "Aminoácidos: ácido y base a la vez",
-   "explicacion": "Un aminoácido tiene un grupo amino, que acepta H+, y un grupo carboxilo, que lo cede. En agua el carboxilo cede su H+ al amino: queda un ion dipolar (–NH3+ y –COO−), con dos cargas pero carga neta cero. Si el pH baja, el –COO− toma H+ y la carga neta es positiva; si sube, el –NH3+ lo pierde y es negativa. El pH donde predomina la forma de carga cero es el punto isoeléctrico (pI), el promedio de los dos pKa que rodean esa forma. En la curva de titulación, cada pKa es el centro de una zona amortiguadora.",
+   "explicacion": "Un aminoácido tiene un grupo amino, que acepta H+, y un carboxilo, que lo cede. En agua el carboxilo cede su H+ al amino: queda un ion dipolar (–NH3+ y –COO−), con dos cargas pero carga neta cero. Si el pH baja, el –COO− toma H+ y la carga neta es positiva; si sube, el –NH3+ lo pierde y es negativa. El punto isoeléctrico (pI) es el pH con carga neta promedio cero; se calcula promediando los dos pKa que rodean la forma de carga cero. En la curva de titulación, cada pKa es el centro de una zona amortiguadora.",
    "ejemplo": "Al echar jugo de limón en leche tibia se forman grumos: la leche «se corta». La caseína, proteína de la leche, al pH normal de la leche tiene carga neta negativa y sus moléculas se repelen. El ácido baja el pH hasta cerca de su pI: la carga neta se acerca a cero, las moléculas dejan de repelerse y se agrupan.",
    "practica": "ACT:quimica/aminoacidos-y-proteinas/practica-G11",
    "comprobacion": "ACT:quimica/aminoacidos-y-proteinas/comprobacion-G11",
    "duracion_min": 12,
    "criterio": "Responde bien la comprobación, que pide interpretar las mesetas de una curva nueva como zonas amortiguadoras y ubicar el pI en el salto, sin confundir carga neta cero con ausencia de cargas.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuentes": [
     "CON:quimica/aminoacidos-y-proteinas",
     "TEMA:G11-QUI-U12-12.1"
    ],
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La separación es correcta y conserva lo que fijé: el pI se define como el pH de carga neta promedio cero y, aparte, se calcula promediando los dos pKa que rodean la forma de carga cero, regla que vale también con cadena lateral ionizable. Son 100 palabras, en el límite de 11.°. El ejemplo de la caseína (pI ≈ 4.6; leche ≈ 6.6) sigue exacto."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "explicacion": "Un aminoácido tiene un grupo amino, que acepta H+, y un grupo carboxilo, que lo cede. En agua el carboxilo cede su H+ al amino: queda un ion dipolar (–NH3+ y –COO−), con dos cargas pero carga neta cero. Si el pH baja, el –COO− toma H+ y la carga neta es positiva; si sube, el –NH3+ lo pierde y es negativa. El pH donde predomina la forma de carga cero es el punto isoeléctrico (pI), el promedio de los dos pKa que rodean esa forma. En la curva de titulación, cada pKa es el centro de una zona amortiguadora."
+    }
+   }
   },
   {
    "id": "MT:quimica/fuerzas-intermoleculares/G11",
@@ -1109,20 +1447,40 @@
     11
    ],
    "titulo": "Fuerzas entre moléculas, no dentro de ellas",
-   "explicacion": "Dentro de una molécula, los átomos se unen por enlaces covalentes, fuertes. Entre moléculas actúan atracciones más débiles: las fuerzas intermoleculares. La dispersión de London existe en todas y crece con el tamaño y la superficie de contacto; la dipolo-dipolo aparece entre moléculas polares; y el puente de hidrógeno, la más fuerte de las tres, se forma cuando un H unido a O, N o F se atrae con el O, N o F de otra molécula. Hervir, evaporar o disolver vence estas atracciones sin romper enlaces covalentes. En las proteínas, sostienen el plegamiento.",
+   "explicacion": "En una molécula, los átomos se unen por enlaces covalentes, fuertes. Entre moléculas actúan atracciones más débiles: las fuerzas intermoleculares. La dispersión de London existe en todas y crece con el tamaño y la superficie de contacto; la dipolo-dipolo aparece entre moléculas polares; y el puente de hidrógeno, la más fuerte de las tres, se forma cuando un H unido a O, N o F atrae un O, N o F de otra molécula. Hervir, evaporar o disolver sustancias moleculares vence estas atracciones sin romper enlaces covalentes. En las proteínas, estas atracciones entre partes de la cadena sostienen el plegamiento.",
    "ejemplo": "El propano que sale del cilindro de gas de la cocina es gas a temperatura ambiente, aunque su molécula (C3H8) pesa más del doble que la del agua (H2O), que es líquida. El propano solo tiene fuerzas de London; el agua forma puentes de hidrógeno que mantienen juntas sus moléculas.",
    "practica": "ACT:quimica/fuerzas-intermoleculares/practica-G11",
    "comprobacion": "ACT:quimica/fuerzas-intermoleculares/comprobacion-G11",
    "duracion_min": 12,
    "criterio": "Responde bien la comprobación: explica que al cocer la clara se vencen atracciones débiles y se despliegan las proteínas, sin romper los enlaces peptídicos.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuentes": [
     "CON:quimica/fuerzas-intermoleculares",
     "TEMA:G11-QUI-U12-12.1"
    ],
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "100 palabras con una progresión clara (dentro frente a entre moléculas, tres fuerzas, cambios de fase, proteínas). El ejemplo del cilindro de gas de la cocina frente al agua es cotidiano y contrasta masa con atracción. Criterio observable con la clara de huevo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "explicacion": "Dentro de una molécula, los átomos se unen por enlaces covalentes, fuertes. Entre moléculas actúan atracciones más débiles: las fuerzas intermoleculares. La dispersión de London existe en todas y crece con el tamaño y la superficie de contacto; la dipolo-dipolo aparece entre moléculas polares; y el puente de hidrógeno, la más fuerte de las tres, se forma cuando un H unido a O, N o F se atrae con el O, N o F de otra molécula. Hervir, evaporar o disolver vence estas atracciones sin romper enlaces covalentes. En las proteínas, sostienen el plegamiento."
+    }
+   }
   },
   {
    "id": "MT:quimica/polimerizacion/G11",
@@ -1138,14 +1496,31 @@
    "comprobacion": "ACT:quimica/polimerizacion/comprobacion-G11",
    "duracion_min": 12,
    "criterio": "Responde bien la comprobación, que pide aplicar la condensación al revés: contar el agua que consume la hidrólisis de un péptido.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuentes": [
     "CON:quimica/polimerizacion",
     "TEMA:G11-QUI-U12-12.1"
    ],
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Parte de objetos cotidianos (bolsa, botella PET, proteína), presenta las dos vías en oraciones paralelas y cierra con la hidrólisis, que la comprobación retoma. 96 palabras, vocabulario definido en el texto (monómero, condensación)."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   }
  ],
  "experimentos": [
@@ -1178,23 +1553,23 @@
    ],
    "procedimiento": [
     "1. Antes de la clase, el docente prepara HCl 0.1 mol/L y NaOH 0.1 mol/L a partir de los reactivos del laboratorio (siempre agregando el reactivo al agua, nunca al revés) y rotula cada frasco.",
-    "2. Cada grupo disuelve 0.75 g de glicina en agua destilada y completa 100 mL: queda una disolución 0.1 mol/L (la masa molar de la glicina, C2H5NO2, es 75 g/mol).",
+    "2. (Sesión 1) Cada grupo disuelve 0.75 g de glicina en agua destilada y completa 100 mL: queda una disolución 0.1 mol/L (la masa molar de la glicina, C2H5NO2, es 75 g/mol).",
     "3. Calibren el pHmetro con las disoluciones patrón del equipo. Si usan tiras, preparen la tabla para anotar el color y el pH leído en cada paso.",
     "4. Midan 20 mL de la disolución de glicina en el vaso 1 y otros 20 mL en el vaso 2. Midan y anoten el pH inicial de cada vaso (debe ser el mismo).",
     "5. Vaso 1: agreguen HCl 0.1 mol/L de 2 mL en 2 mL, agiten 10 segundos después de cada adición y anoten el pH, hasta completar 30 mL.",
     "6. Vaso 2: repitan el paso 5 con NaOH 0.1 mol/L, también hasta 30 mL.",
-    "7. En la hoja de cálculo, conviertan cada volumen en equivalentes: mL agregados ÷ 20 mL (20 mL de titulante 0.1 mol/L tienen los mismos moles que la glicina del vaso).",
-    "8. Unan las dos series en una sola curva que parte de la forma totalmente protonada: para el vaso 1 usen x = 1 − (equivalentes de HCl) y para el vaso 2, x = 1 + (equivalentes de NaOH). Grafiquen el pH (eje vertical) contra x (eje horizontal, de −0.5 a 2.5).",
-    "9. Marquen los tramos donde el pH casi no cambia (mesetas) y el tramo donde cambia de golpe. Lean el pH en x = 0.5 y en x = 1.5: son sus estimaciones de pKa1 y pKa2.",
-    "10. Calculen el pI como el promedio de los dos pKa estimados y anótenlo junto al valor de la tabla de referencia que indique el docente.",
-    "11. Mezclen el contenido de los vasos 1 y 2 (se neutralizan entre sí), comprueben con una tira que el pH quede entre 5 y 8 y desechen por el desagüe con abundante agua."
+    "7. Al terminar las mediciones, mezclen el contenido de los vasos 1 y 2 (se neutralizan entre sí), comprueben con una tira que el pH quede entre 5 y 8 y desechen por el desagüe con abundante agua.",
+    "8. (Sesión 2) En la hoja de cálculo, conviertan cada volumen en equivalentes: mL agregados ÷ 20 mL (20 mL de titulante 0.1 mol/L tienen los mismos moles que la glicina del vaso). Por ejemplo, 10 mL agregados son 0.5 equivalentes.",
+    "9. Unan las dos series en una sola curva que parte de la forma totalmente protonada: para el vaso 1 usen x = 1 − (equivalentes de HCl) y para el vaso 2, x = 1 + (equivalentes de NaOH); por ejemplo, 10 mL de HCl dan x = 0.5 y 10 mL de NaOH, x = 1.5. Grafiquen el pH (eje vertical) contra x (eje horizontal, de −0.5 a 2.5).",
+    "10. Marquen los tramos donde el pH casi no cambia (mesetas) y el tramo donde cambia de golpe. Lean el pH en x = 0.5 y en x = 1.5: son sus estimaciones de pKa1 y pKa2.",
+    "11. Calculen el pI como el promedio de los dos pKa estimados y anótenlo junto al valor de la tabla de referencia que indique el docente."
    ],
    "seguridad": [
     "Gafas y guantes durante toda la práctica: el HCl y el NaOH, aun a 0.1 mol/L, irritan ojos y piel. Si salpica, lavar con abundante agua durante 15 minutos y avisar al docente.",
     "Solo el docente maneja los reactivos concentrados y prepara las diluciones, en un lugar ventilado. No se usan en el aula ácido muriático ni soda cáustica de ferretería.",
     "No pipetear con la boca: medir con jeringas sin aguja o con bureta. No probar ni oler las disoluciones, aunque la glicina sea comestible.",
     "Revisar que los vasos de vidrio no estén astillados; si algo se quiebra, el docente lo recoge con escoba y recogedor, nunca con las manos.",
-    "Desechos: neutralizar y diluir antes de verter al desagüe (paso 11). En esta práctica no se calienta nada."
+    "Desechos: neutralizar y diluir antes de verter al desagüe (paso 7). En esta práctica no se calienta nada."
    ],
    "datos_esperados": "La disolución de glicina recién preparada tiene un pH ligeramente ácido, cercano a su pI (valor de la tabla de referencia), porque casi toda está como ion dipolar. La curva completa tiene forma de doble S: dos mesetas (zonas de amortiguación) separadas por un salto brusco. La primera meseta está a pH ácido y su centro, en x = 0.5, da pKa1 (valor de la tabla de referencia): ahí hay iguales cantidades de catión (–NH3+ y –COOH) y de ion dipolar. La segunda está a pH básico y su centro, en x = 1.5, da pKa2 (valor de la tabla de referencia): ahí hay iguales cantidades de ion dipolar y de anión (–NH2 y –COO−). El salto está en x = 1, que corresponde al pI, el promedio de pKa1 y pKa2. En el lado ácido no aparece un salto final marcado, porque pKa1 está cerca del pH del propio HCl diluido; en el lado básico, desde x = 2 el pH ronda 11 y con el exceso de NaOH sube a 12 o más. Con pHmetro, los pKa estimados suelen quedar a pocas décimas de los tabulados; con tiras, a una unidad, y cada meseta se ve como varias lecturas seguidas con el mismo color.",
    "analisis": [
@@ -1207,12 +1582,53 @@
     "Agreguen a la hoja de cálculo una columna con un condicional que, dado un pH, indique si la carga neta de la glicina es positiva, cero o negativa, y pruébenla con tres valores de pH."
    ],
    "duracion_min": 110,
-   "variantes": "Sin glicina: usen glutamato monosódico, el sazonador que se vende en supermercados y mercados (unos 1.9 g en 100 mL si es monohidrato, 187 g/mol), y lleven el vaso 1 hasta 50 mL de HCl. Su pH inicial es cercano al neutro; hacia el lado ácido aparece una meseta ancha que corresponde a los dos grupos carboxilo, y hacia el básico, la meseta del grupo amino; el pI queda a pH ácido, promedio de los pKa de los dos carboxilos (valores de la tabla de referencia). Sin pHmetro ni tiras: extracto de repollo morado como indicador; solo distingue intervalos de color, pero las mesetas se ven como tramos donde el color no cambia. Sin laboratorio: en la hoja de cálculo, con los pKa de la tabla de referencia y la ecuación de Henderson-Hasselbalch, calculen el pH para cada valor de x y grafiquen la curva simulada; repasen la amortiguación de un ácido débil con la simulación PhET «Soluciones ácido-base».",
-   "estado": "propuesta_pendiente",
+   "variantes": "Sin glicina: usen glutamato monosódico, el sazonador que se vende en supermercados y mercados (unos 1.9 g en 100 mL si es monohidrato, 187 g/mol), y lleven el vaso 1 hasta 50 mL de HCl (preparen 60 mL de HCl y 60 mL de NaOH 0.1 mol/L por grupo). Su pH inicial es cercano al neutro; hacia el lado ácido aparece una meseta ancha que corresponde a los dos grupos carboxilo, y hacia el básico, la meseta del grupo amino; el pI queda a pH ácido, promedio de los pKa de los dos carboxilos (valores de la tabla de referencia). Como el sazonador ya perdió dos H+ respecto de la forma totalmente protonada, en el paso 9 usen x = 2 − (equivalentes de HCl) y x = 2 + (equivalentes de NaOH), con el eje de −0.5 a 3.5; en el paso 10 lean los pKa en x = 0.5, 1.5 y 2.5 (las dos primeras lecturas son aproximadas, porque las mesetas de los carboxilos se funden) y en el paso 11 promedien los dos pKa que rodean la forma de carga cero, que está en x = 1: los de x = 0.5 y x = 1.5. El salto grande queda en x = 2, en el pH inicial, y no marca el pI. En el paso 7 la mezcla queda cerca de pH 4, porque se agregó más ácido que base: añadan 20 mL de NaOH 0.1 mol/L antes de comprobar con la tira y desechar. Sin pHmetro ni tiras: extracto de repollo morado como indicador; solo distingue intervalos de color, pero las mesetas se ven como tramos donde el color no cambia. Sin laboratorio: en la hoja de cálculo, con los pKa de la tabla de referencia y la ecuación de Henderson-Hasselbalch, calculen el pH para cada valor de x, grafiquen la curva simulada y marquen en ella las mesetas, el salto y el pI.",
+   "estado": "revisado_panel",
    "fuente": null,
    "origen": "redactor-actividades (G11-QUI-U12-12.1)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Cambios del psicopedagogo correctos: sesiones, desecho en el paso 7 y ejemplo resuelto (10 mL son 0.5 equivalentes; x = 0.5 y 1.5). Corrijo un error de la variante que aprobé en la ronda 1: el glutamato monosódico ya perdió dos H+; con x = 1 ∓ equivalentes el paso 11 daría pI ≈ 7, no ≈ 3.2, y la mezcla del paso 7 quedaría a pH ≈ 4."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "procedimiento": [
+      "1. Antes de la clase, el docente prepara HCl 0.1 mol/L y NaOH 0.1 mol/L a partir de los reactivos del laboratorio (siempre agregando el reactivo al agua, nunca al revés) y rotula cada frasco.",
+      "2. Cada grupo disuelve 0.75 g de glicina en agua destilada y completa 100 mL: queda una disolución 0.1 mol/L (la masa molar de la glicina, C2H5NO2, es 75 g/mol).",
+      "3. Calibren el pHmetro con las disoluciones patrón del equipo. Si usan tiras, preparen la tabla para anotar el color y el pH leído en cada paso.",
+      "4. Midan 20 mL de la disolución de glicina en el vaso 1 y otros 20 mL en el vaso 2. Midan y anoten el pH inicial de cada vaso (debe ser el mismo).",
+      "5. Vaso 1: agreguen HCl 0.1 mol/L de 2 mL en 2 mL, agiten 10 segundos después de cada adición y anoten el pH, hasta completar 30 mL.",
+      "6. Vaso 2: repitan el paso 5 con NaOH 0.1 mol/L, también hasta 30 mL.",
+      "7. En la hoja de cálculo, conviertan cada volumen en equivalentes: mL agregados ÷ 20 mL (20 mL de titulante 0.1 mol/L tienen los mismos moles que la glicina del vaso).",
+      "8. Unan las dos series en una sola curva que parte de la forma totalmente protonada: para el vaso 1 usen x = 1 − (equivalentes de HCl) y para el vaso 2, x = 1 + (equivalentes de NaOH). Grafiquen el pH (eje vertical) contra x (eje horizontal, de −0.5 a 2.5).",
+      "9. Marquen los tramos donde el pH casi no cambia (mesetas) y el tramo donde cambia de golpe. Lean el pH en x = 0.5 y en x = 1.5: son sus estimaciones de pKa1 y pKa2.",
+      "10. Calculen el pI como el promedio de los dos pKa estimados y anótenlo junto al valor de la tabla de referencia que indique el docente.",
+      "11. Mezclen el contenido de los vasos 1 y 2 (se neutralizan entre sí), comprueben con una tira que el pH quede entre 5 y 8 y desechen por el desagüe con abundante agua."
+     ],
+     "seguridad": [
+      "Gafas y guantes durante toda la práctica: el HCl y el NaOH, aun a 0.1 mol/L, irritan ojos y piel. Si salpica, lavar con abundante agua durante 15 minutos y avisar al docente.",
+      "Solo el docente maneja los reactivos concentrados y prepara las diluciones, en un lugar ventilado. No se usan en el aula ácido muriático ni soda cáustica de ferretería.",
+      "No pipetear con la boca: medir con jeringas sin aguja o con bureta. No probar ni oler las disoluciones, aunque la glicina sea comestible.",
+      "Revisar que los vasos de vidrio no estén astillados; si algo se quiebra, el docente lo recoge con escoba y recogedor, nunca con las manos.",
+      "Desechos: neutralizar y diluir antes de verter al desagüe (paso 11). En esta práctica no se calienta nada."
+     ],
+     "variantes": "Sin glicina: usen glutamato monosódico, el sazonador que se vende en supermercados y mercados (unos 1.9 g en 100 mL si es monohidrato, 187 g/mol), y lleven el vaso 1 hasta 50 mL de HCl. Su pH inicial es cercano al neutro; hacia el lado ácido aparece una meseta ancha que corresponde a los dos grupos carboxilo, y hacia el básico, la meseta del grupo amino; el pI queda a pH ácido, promedio de los pKa de los dos carboxilos (valores de la tabla de referencia). Sin pHmetro ni tiras: extracto de repollo morado como indicador; solo distingue intervalos de color, pero las mesetas se ven como tramos donde el color no cambia. Sin laboratorio: en la hoja de cálculo, con los pKa de la tabla de referencia y la ecuación de Henderson-Hasselbalch, calculen el pH para cada valor de x y grafiquen la curva simulada; repasen la amortiguación de un ácido débil con la simulación PhET «Soluciones ácido-base»."
+    }
+   }
   }
  ],
  "datos_de_referencia": {
@@ -1256,32 +1672,7 @@
   "experimentos": "completo",
   "capa_pedagogica": "completo",
   "datos_de_referencia": "pendiente_de_fuente",
-  "revision_del_panel": "pendiente"
+  "revision_del_panel": "completa"
  },
- "sin_revision_del_panel": [
-  "ACT:G11-QUI-U12-12.1/obj-1",
-  "ACT:G11-QUI-U12-12.1/obj-2",
-  "ACT:G11-QUI-U12-12.1/obj-abierta",
-  "ACT:quimica/aminoacidos-y-proteinas/comprobacion-G11",
-  "ACT:quimica/aminoacidos-y-proteinas/practica-G11",
-  "ACT:quimica/aminoacidos-y-proteinas/sondeo-1-G11",
-  "ACT:quimica/fuerzas-intermoleculares/comprobacion-G11",
-  "ACT:quimica/fuerzas-intermoleculares/practica-G11",
-  "ACT:quimica/fuerzas-intermoleculares/sondeo-1-G11",
-  "ACT:quimica/fuerzas-intermoleculares/sondeo-2-G11",
-  "ACT:quimica/polimerizacion/comprobacion-G11",
-  "ACT:quimica/polimerizacion/practica-G11",
-  "ACT:quimica/polimerizacion/sondeo-1-G11",
-  "ACT:quimica/polimerizacion/sondeo-2-G11",
-  "DIF:quimica/aminoacidos-y-proteinas/1",
-  "DIF:quimica/aminoacidos-y-proteinas/2",
-  "DIF:quimica/aminoacidos-y-proteinas/3",
-  "DIF:quimica/aminoacidos-y-proteinas/4",
-  "DIF:quimica/fuerzas-intermoleculares/1",
-  "DIF:quimica/polimerizacion/1",
-  "EXP:G11-QUI-U12-12.1/1",
-  "MT:quimica/aminoacidos-y-proteinas/G11",
-  "MT:quimica/fuerzas-intermoleculares/G11",
-  "MT:quimica/polimerizacion/G11"
- ]
+ "sin_revision_del_panel": []
 }

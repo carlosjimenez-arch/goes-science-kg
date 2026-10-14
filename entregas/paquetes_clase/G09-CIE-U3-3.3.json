@@ -453,7 +453,7 @@
    "concepto": "CON:quimica/constante-de-equilibrio",
    "descripcion": "Incluye los sólidos y líquidos puros (como CaCO₃(s) o H₂O(l)) en la expresión de Kc igual que los gases y las sustancias disueltas, y no distingue el equilibrio heterogéneo (sustancias en fases distintas) del homogéneo (todas en la misma fase).",
    "senales": "Para CaCO₃(s) ⇌ CaO(s) + CO₂(g) escribe Kc = [CaO][CO₂]/[CaCO₃] en lugar de Kc = [CO₂]; clasifica una reacción como homogénea o heterogénea por el número de sustancias y no por sus estados (s, l, g, ac); ignora los símbolos de estado al escribir K.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -461,7 +461,7 @@
    "concepto": "CON:quimica/constante-de-equilibrio",
    "descripcion": "Confunde el valor de K con la rapidez de la reacción: cree que un K grande indica que el equilibrio se alcanza pronto y uno pequeño que la reacción es lenta, cuando K solo dice si predominan los productos o los reactivos una vez alcanzado el equilibrio.",
    "senales": "Interpreta Kc = 1 × 10⁵ como «la reacción es muy rápida» y Kc = 1 × 10⁻³ como «tarda mucho»; usa «avanza rápido» como sinónimo de «se forma mucho producto»; afirma que un catalizador aumenta el valor de K.",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -469,7 +469,7 @@
    "concepto": "CON:quimica/constante-de-equilibrio",
    "descripcion": "Cree que en el equilibrio las concentraciones de reactivos y productos son iguales, o que quedan en la proporción de los coeficientes, en vez de entender que solo dejan de cambiar y que la relación entre ellas la fija el valor de K.",
    "senales": "Dice que en el equilibrio «hay la misma cantidad de reactivos que de productos»; espera Kc = 1 en todo equilibrio; en una gráfica de concentración contra tiempo marca el equilibrio donde se cruzan las curvas y no donde se vuelven horizontales; ante Kc = 1 × 10⁻³ dice que la reacción «no está en equilibrio».",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null
   },
   {
@@ -506,7 +506,7 @@
    "grados": [
     9
    ],
-   "enunciado": "El mar absorbe parte del dióxido de carbono del aire. Entre el aire y el agua de la superficie se establece este equilibrio: CO₂(g) ⇌ CO₂(aq). ¿Qué tipo de equilibrio es y cuál es la expresión de su constante Kc?",
+   "enunciado": "El mar absorbe parte del dióxido de carbono del aire. Entre el aire y el agua de la superficie se establece este equilibrio: CO₂(g) ⇌ CO₂(aq). El símbolo (aq), que también se escribe (ac), indica que el CO₂ está disuelto en agua. ¿Qué tipo de equilibrio es y cuál es la expresión de su constante Kc?",
    "opciones": {
     "A": "Homogéneo, porque solo participa una sustancia; Kc = [CO₂(aq)] / [CO₂(g)]",
     "B": "Heterogéneo, porque hay un gas y un líquido puro; Kc = 1 / [CO₂(g)]",
@@ -514,20 +514,44 @@
     "D": "Heterogéneo, porque hay un gas y una disolución; Kc = [CO₂(g)] / [CO₂(aq)]"
    },
    "correcta": "C",
-   "distractores": {},
+   "distractores": {
+    "A": "DIF:quimica/constante-de-equilibrio/2"
+   },
    "valor": null,
    "tolerancia": null,
    "unidad": null,
    "retroalimentacion": "Hay dos fases, el gas del aire y la disolución del mar, así que el equilibrio es heterogéneo. El CO₂(aq) no es un líquido puro: su concentración cambia, por eso va arriba como producto y el CO₂(g) abajo como reactivo.",
    "duracion_min": 5,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "malla",
     "ref": "TEMA:G09-CIE-U3-3.3"
    },
    "origen": "redactor-actividades (G09-CIE-U3-3.3)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La glosa del psicopedagogo es exacta: (aq) y (ac) son la misma notación de disolución acuosa, y la malla usa (ac) desde 6.°. No toca lo que fijé: clave C (gas y disolución, heterogéneo; el CO₂(aq) entra en Kc porque su concentración cambia), A mapeado a la dificultad 2 y B sin mapear. Retroalimentación de 40 palabras, dentro de las 80 de 9.°."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "El mar absorbe parte del dióxido de carbono del aire. Entre el aire y el agua de la superficie se establece este equilibrio: CO₂(g) ⇌ CO₂(aq). ¿Qué tipo de equilibrio es y cuál es la expresión de su constante Kc?",
+     "distractores": {}
+    }
+   }
   },
   {
    "id": "ACT:G09-CIE-U3-3.3/obj-2",
@@ -547,28 +571,59 @@
    ],
    "enunciado": "Datos de ejemplo. A la misma temperatura, tres reacciones del tipo reactivo(g) ⇌ producto(g), con coeficientes 1, llegan al equilibrio en recipientes cerrados. Sus constantes son: reacción 1, Kc = 2 × 10⁶; reacción 2, Kc = 1.0; reacción 3, Kc = 3 × 10⁻⁷. ¿Qué describe mejor la mezcla en equilibrio de la reacción 3?",
    "opciones": {
-    "A": "Casi todo es producto, porque 10⁻⁷ tiene el exponente más grande de la tabla.",
+    "A": "Casi todo es producto, porque 10⁻⁷ tiene el exponente más grande de la lista.",
     "B": "Ya no hay reacción, porque un Kc casi igual a cero indica que se detuvo.",
     "C": "Hay igual reactivo que producto, porque en el equilibrio las cantidades se igualan.",
     "D": "Casi todo es reactivo, porque un Kc mucho menor que 1 indica poco producto."
    },
    "correcta": "D",
    "distractores": {
-    "B": "DIF:quimica/equilibrio-dinamico/1"
+    "B": "DIF:quimica/equilibrio-dinamico/1",
+    "C": "DIF:quimica/constante-de-equilibrio/4"
    },
    "valor": null,
    "tolerancia": null,
    "unidad": null,
-   "retroalimentacion": "Aquí Kc = [producto] / [reactivo]; 3 × 10⁻⁷ es muchísimo menor que 1, así que en el equilibrio hay muy poco producto frente al reactivo. La reacción no se detiene: sigue ocurriendo en los dos sentidos con la misma rapidez.",
+   "retroalimentacion": "Aquí Kc = [producto] / [reactivo]. Como 3 × 10⁻⁷ = 0.0000003, muchísimo menor que 1, en el equilibrio hay muy poco producto frente al reactivo. La reacción no se detiene: sigue ocurriendo en los dos sentidos con la misma rapidez.",
    "duracion_min": 6,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "malla",
     "ref": "TEMA:G09-CIE-U3-3.3"
    },
    "origen": "redactor-actividades (G09-CIE-U3-3.3)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Cambios de forma correctos: 3 × 10⁻⁷ = 0.0000003 es exacto y ayuda a quien lee el exponente sin su signo (opción A), que ya no alude a una tabla inexistente. Quedan intactos la clave D, los mapeos de B (equilibrio dinámico) y C (cantidades iguales) y la idea de que la reacción sigue en ambos sentidos con igual rapidez."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "opciones": {
+      "A": "Casi todo es producto, porque 10⁻⁷ tiene el exponente más grande de la tabla.",
+      "B": "Ya no hay reacción, porque un Kc casi igual a cero indica que se detuvo.",
+      "C": "Hay igual reactivo que producto, porque en el equilibrio las cantidades se igualan.",
+      "D": "Casi todo es reactivo, porque un Kc mucho menor que 1 indica poco producto."
+     },
+     "distractores": {
+      "B": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     "retroalimentacion": "Aquí Kc = [producto] / [reactivo]; 3 × 10⁻⁷ es muchísimo menor que 1, así que en el equilibrio hay muy poco producto frente al reactivo. La reacción no se detiene: sigue ocurriendo en los dos sentidos con la misma rapidez."
+    }
+   }
   },
   {
    "id": "ACT:G09-CIE-U3-3.3/obj-abierta",
@@ -586,7 +641,7 @@
    "grados": [
     9
    ],
-   "enunciado": "Si se calienta piedra caliza en un recipiente cerrado a alta temperatura, se llega a este equilibrio: CaCO₃(s) ⇌ CaO(s) + CO₂(g). Así se obtiene la cal viva, aunque en los hornos de cal el CO₂ escapa. Escribe la expresión de Kc, di qué tipo de equilibrio es y explica, en 2 o 3 oraciones, por qué el CaCO₃ y el CaO no aparecen en Kc.",
+   "enunciado": "La cal viva (CaO) se obtiene al calentar piedra caliza (CaCO₃). En un recipiente cerrado y a alta temperatura se llega a este equilibrio: CaCO₃(s) ⇌ CaO(s) + CO₂(g). Responde: 1) Escribe la expresión de Kc. 2) Di qué tipo de equilibrio es y por qué. 3) Explica, en 2 o 3 oraciones, por qué el CaCO₃ y el CaO no aparecen en Kc.",
    "opciones": null,
    "correcta": null,
    "distractores": null,
@@ -621,7 +676,7 @@
      {
       "descripcion": "Incluye los sólidos en Kc como si fueran gases o sustancias disueltas.",
       "ejemplo": "Kc = [CaO][CO₂] / [CaCO₃]; es heterogéneo porque hay sólidos y un gas.",
-      "dificultad": null
+      "dificultad": "DIF:quimica/constante-de-equilibrio/2"
      },
      {
       "descripcion": "Explica la ausencia de los sólidos con que en el equilibrio ya no reaccionan, no con que su concentración es constante.",
@@ -631,20 +686,83 @@
      {
       "descripcion": "Clasifica el equilibrio por el recipiente y no por las fases de las sustancias.",
       "ejemplo": "Es homogéneo porque todo está dentro del mismo recipiente cerrado.",
-      "dificultad": null
+      "dificultad": "DIF:quimica/constante-de-equilibrio/2"
      }
     ]
    },
    "retroalimentacion": "Kc = [CO₂]: hay dos sólidos y un gas, así que el equilibrio es heterogéneo. Un sólido puro tiene la misma concentración haya mucho o poco de él; por eso no cambia el equilibrio y no se escribe en Kc.",
    "duracion_min": 6,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": {
     "tipo": "malla",
     "ref": "TEMA:G09-CIE-U3-3.3"
    },
    "origen": "redactor-actividades (G09-CIE-U3-3.3)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "El enunciado en tres pasos pide ahora lo que exigen c2 (tipo y por qué) y c3 (por qué faltan los sólidos). Quitar la aclaración del horno abierto no introduce error: el equilibrio se plantea en recipiente cerrado, que es la condición correcta. Siguen como los fijé Kc = [CO₂], el carácter heterogéneo, los sólidos puros de concentración constante y los mapeos a la dificultad 2."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Si se calienta piedra caliza en un recipiente cerrado a alta temperatura, se llega a este equilibrio: CaCO₃(s) ⇌ CaO(s) + CO₂(g). Así se obtiene la cal viva, aunque en los hornos de cal el CO₂ escapa. Escribe la expresión de Kc, di qué tipo de equilibrio es y explica, en 2 o 3 oraciones, por qué el CaCO₃ y el CaO no aparecen en Kc.",
+     "rubrica": {
+      "respuesta_modelo": "Kc = [CO₂]. Es un equilibrio heterogéneo porque hay dos sólidos y un gas, o sea, fases distintas. El CaCO₃ y el CaO no aparecen porque son sólidos puros: su concentración no cambia aunque haya más o menos piedra, así que la cantidad de sólido no cambia el equilibrio. Por eso solo cuenta la concentración del CO₂.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe Kc = [CO₂], sin CaCO₃ ni CaO en la expresión.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra el equilibrio como heterogéneo y lo justifica con que hay fases distintas (sólidos y gas).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica la ausencia de CaCO₃ y CaO con que son sólidos puros cuya concentración no cambia, por mucho o poco sólido que haya.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Agrega que la cantidad de sólido presente no cambia la concentración de CO₂ en el equilibrio, mientras haya algo de cada sólido.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Incluye los sólidos en Kc como si fueran gases o sustancias disueltas.",
+        "ejemplo": "Kc = [CaO][CO₂] / [CaCO₃]; es heterogéneo porque hay sólidos y un gas.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la ausencia de los sólidos con que en el equilibrio ya no reaccionan, no con que su concentración es constante.",
+        "ejemplo": "No aparecen porque en el equilibrio la piedra ya dejó de descomponerse y solo queda el gas.",
+        "dificultad": "DIF:quimica/equilibrio-dinamico/1"
+       },
+       {
+        "descripcion": "Clasifica el equilibrio por el recipiente y no por las fases de las sustancias.",
+        "ejemplo": "Es homogéneo porque todo está dentro del mismo recipiente cerrado.",
+        "dificultad": null
+       }
+      ]
+     }
+    }
+   }
   },
   {
    "id": "ACT:G09-CIE-U3-3.6/obj-1",
@@ -1716,10 +1834,10 @@
    "materiales": [
     "Sal de mesa (unos 150 g por grupo)",
     "Agua del chorro o purificada",
-    "5 vasos plásticos transparentes iguales (de 350 a 500 mL) y un marcador para rotularlos",
+    "7 vasos plásticos transparentes iguales (de 350 a 500 mL): 3 para preparar las mezclas, 3 para el líquido filtrado y 1 para pesar; y un marcador para rotularlos",
     "Cuchara o paleta para agitar",
     "Jeringa de 20 mL sin aguja (de farmacia) o probeta de 100 mL",
-    "Filtro de papel para café o tela limpia de algodón",
+    "3 filtros de papel para café o 3 trozos de tela limpia de algodón (uno por vaso)",
     "Balanza de cocina digital que mida de 1 en 1 g (una para varios grupos)",
     "Una botella plástica de gaseosa de 600 mL, cerrada y fría (una para toda la clase)",
     "120 frijoles o granos de maíz por grupo y dos platos rotulados «reactivo» y «producto»",
@@ -1730,7 +1848,7 @@
     "2. Agrega 50 g de sal al vaso 1, 80 g al vaso 2 y 10 g al vaso 3. En los vasos 1 y 2 debe sobrar sal en el fondo; en el vaso 3 se disuelve toda.",
     "3. Agita los tres vasos por turnos durante 10 minutos y deja reposar 5 minutos. Revisa que en los vasos 1 y 2 quede sal sin disolver; si no queda, agrega 10 g más y agita otra vez.",
     "4. Pasa el líquido claro de cada vaso por el filtro a un vaso limpio y rotulado, sin arrastrar la sal del fondo.",
-    "5. Pon un vaso vacío y seco en la balanza y presiona «tara» para marcar cero. Agrega 100 mL del líquido filtrado del vaso 1 y anota la masa. Vacía, seca y repite con el líquido de los vasos 2 y 3 y con 100 mL de agua sola.",
+    "5. Pon un vaso vacío y seco en la balanza y presiona «tara» para marcar cero. Agrega 60 mL (3 jeringas de 20 mL) del líquido filtrado del vaso 1 y anota la masa. Vacía, seca y repite con el líquido de los vasos 2 y 3 y con 60 mL de agua sola.",
     "6. Escribe en el cuaderno la ecuación NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) con sus fases, el tipo de equilibrio y la expresión de Kc.",
     "7. Demostración del docente: muestra la gaseosa cerrada y pide señalar las dos fases (gas arriba, líquido abajo). Abre la tapa despacio, apuntando lejos de las personas, observen las burbujas, ciérrala y observen 3 minutos más. Cada grupo escribe CO₂(g) ⇌ CO₂(aq), su tipo de equilibrio y su Kc.",
     "8. Sesión 2. Cada grupo recibe un ensayo del modelo de los frijoles: ensayo 1, 120 frijoles en «reactivo» y 0 en «producto»; ensayo 2, 0 en «reactivo» y 120 en «producto»; ensayo 3, 60 en «reactivo» y 0 en «producto»; ensayo 4, igual que el 1 pero con las reglas intercambiadas (paso 9).",
@@ -1748,7 +1866,7 @@
     "Las jeringas se usan sin aguja.",
     "Desechos: el agua con sal se vierte en el lavadero con bastante agua, no en el suelo ni en las plantas, porque la sal daña la tierra. Los frijoles usados no se comen; se guardan para otra práctica. Todos se lavan las manos al terminar."
    ],
-   "datos_esperados": "Sesión 1: los vasos 1 y 2 conservan sal sin disolver y 100 mL de su líquido claro tienen casi la misma masa (diferencia de 1 a 3 g, dentro del error de la jeringa y de una balanza de 1 g), claramente mayor que la de 100 mL de agua; el vaso 3, sin sal sobrante, da una masa intermedia. La densidad de la salmuera saturada a la temperatura del aula es un valor de la tabla de referencia. Conclusión esperada: si hay sólido presente, la cantidad de sólido no cambia la concentración de lo disuelto. En la gaseosa cerrada casi no se ven burbujas; al abrir salen muchas y, al cerrar, disminuyen. Sesión 2 (verificado con las reglas del paso 9): los ensayos 1, 2 y 3 se estabilizan en 6 a 9 rondas y dan un K del modelo cercano a 2 (entre 1.8 y 2.2 por el redondeo; por ejemplo, 41 y 79 frijoles en el ensayo 1, 38 y 82 en el 2, 21 y 39 en el 3). El K no depende del inicio ni del total de frijoles y coincide con el cociente de las reglas, (1/4) ÷ (1/8) = 2. Ya estable, siguen pasando unos 10 frijoles por ronda en cada sentido (5 en el ensayo 3). El ensayo 4 se estabiliza en 82 en «reactivo» y 38 en «producto»: K cercano a 0.5, y predomina el reactivo.",
+   "datos_esperados": "Sesión 1: los vasos 1 y 2 conservan sal sin disolver y 60 mL de su líquido claro tienen casi la misma masa (difieren en 2 g o menos, dentro del error de la jeringa y de una balanza de 1 g), claramente mayor que la de 60 mL de agua; el vaso 3, sin sal sobrante, da una masa intermedia. La densidad de la salmuera saturada a la temperatura del aula es un valor de la tabla de referencia. Conclusión esperada: si hay sólido presente, la cantidad de sólido no cambia la concentración de lo disuelto. En la gaseosa cerrada casi no se ven burbujas; al abrir salen muchas y, al cerrar, disminuyen. Sesión 2 (verificado con las reglas del paso 9): los ensayos 1, 2 y 3 se estabilizan en 6 a 9 rondas y dan un K del modelo cercano a 2 (entre 1.8 y 2.2 por el redondeo; por ejemplo, 41 y 79 frijoles en el ensayo 1, 38 y 82 en el 2, 21 y 39 en el 3). El K no depende del inicio ni del total de frijoles y coincide con el cociente de las reglas, (1/4) ÷ (1/8) = 2. Ya estable, siguen pasando unos 10 frijoles por ronda en cada sentido (5 en el ensayo 3). El ensayo 4 se estabiliza en 82 en «reactivo» y 38 en «producto»: K cercano a 0.5, y predomina el reactivo.",
    "analisis": [
     "¿Qué tipo de equilibrio es NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) y cuál es su Kc? Usa las masas de los vasos 1 y 2 para explicar por qué el NaCl(s) no aparece en Kc.",
     "¿Por qué el vaso 3 no sirve para esa conclusión? ¿Hay equilibrio heterogéneo si no queda sólido?",
@@ -1761,11 +1879,60 @@
    ],
    "duracion_min": 110,
    "variantes": "Sin balanza: evaporar al sol, durante 2 o 3 días, 20 mL del líquido claro de los vasos 1 y 2 en dos platos iguales y comparar la sal que queda (debe ser casi la misma). Si se puede, preparar los vasos el día anterior para asegurar que el líquido quede saturado. Sin frijoles: granos de maíz, piedritas o papelitos. Sin gaseosa: el docente describe o muestra en video lo que pasa al abrirla. Simulación: en una hoja de cálculo, R_nuevo = R − R/4 + P/8 y P_nuevo = P + R/4 − P/8, copiado en 20 filas; enlaza con la actividad desconectada de la malla (algoritmo para escribir Kc y cuadro digital de resultados).",
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "fuente": null,
    "origen": "redactor-actividades (G09-CIE-U3-3.3)",
    "version": "pedagogia-v1",
-   "revisado_por": ""
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-13",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La corrección de materiales es exacta y coherente con los pasos 1, 4 y 5: siete vasos (tres mezclas, tres filtrados y uno para pesar). Un filtro por vaso es además mejor química: cristales del vaso 1 en el filtro subirían la concentración del vaso 3, no saturado. Los 60 mL pesados, la sal (140 a 150 g) y el modelo de frijoles quedan como los fijé."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "materiales": [
+      "Sal de mesa (unos 150 g por grupo)",
+      "Agua del chorro o purificada",
+      "5 vasos plásticos transparentes iguales (de 350 a 500 mL) y un marcador para rotularlos",
+      "Cuchara o paleta para agitar",
+      "Jeringa de 20 mL sin aguja (de farmacia) o probeta de 100 mL",
+      "Filtro de papel para café o tela limpia de algodón",
+      "Balanza de cocina digital que mida de 1 en 1 g (una para varios grupos)",
+      "Una botella plástica de gaseosa de 600 mL, cerrada y fría (una para toda la clase)",
+      "120 frijoles o granos de maíz por grupo y dos platos rotulados «reactivo» y «producto»",
+      "Hoja de registro, lápiz y calculadora"
+     ],
+     "procedimiento": [
+      "1. Sesión 1. Rotula tres vasos como vaso 1, vaso 2 y vaso 3. Con la jeringa (5 veces 20 mL) o la probeta, pon 100 mL de agua en cada uno.",
+      "2. Agrega 50 g de sal al vaso 1, 80 g al vaso 2 y 10 g al vaso 3. En los vasos 1 y 2 debe sobrar sal en el fondo; en el vaso 3 se disuelve toda.",
+      "3. Agita los tres vasos por turnos durante 10 minutos y deja reposar 5 minutos. Revisa que en los vasos 1 y 2 quede sal sin disolver; si no queda, agrega 10 g más y agita otra vez.",
+      "4. Pasa el líquido claro de cada vaso por el filtro a un vaso limpio y rotulado, sin arrastrar la sal del fondo.",
+      "5. Pon un vaso vacío y seco en la balanza y presiona «tara» para marcar cero. Agrega 100 mL del líquido filtrado del vaso 1 y anota la masa. Vacía, seca y repite con el líquido de los vasos 2 y 3 y con 100 mL de agua sola.",
+      "6. Escribe en el cuaderno la ecuación NaCl(s) ⇌ Na⁺(aq) + Cl⁻(aq) con sus fases, el tipo de equilibrio y la expresión de Kc.",
+      "7. Demostración del docente: muestra la gaseosa cerrada y pide señalar las dos fases (gas arriba, líquido abajo). Abre la tapa despacio, apuntando lejos de las personas, observen las burbujas, ciérrala y observen 3 minutos más. Cada grupo escribe CO₂(g) ⇌ CO₂(aq), su tipo de equilibrio y su Kc.",
+      "8. Sesión 2. Cada grupo recibe un ensayo del modelo de los frijoles: ensayo 1, 120 frijoles en «reactivo» y 0 en «producto»; ensayo 2, 0 en «reactivo» y 120 en «producto»; ensayo 3, 60 en «reactivo» y 0 en «producto»; ensayo 4, igual que el 1 pero con las reglas intercambiadas (paso 9).",
+      "9. Reglas de cada ronda: al inicio, cuenta los frijoles de cada plato. Separa la cuarta parte de los de «reactivo» (divide entre 4) y la octava parte de los de «producto» (divide entre 8); redondea al entero más cercano y, si termina en .5, hacia arriba. En el ensayo 4 se divide entre 8 en «reactivo» y entre 4 en «producto».",
+      "10. Pasa al mismo tiempo los frijoles separados al otro plato. Anota en una tabla: número de ronda, frijoles en «reactivo», frijoles en «producto» y cuántos pasaron en cada sentido.",
+      "11. Repite las rondas hasta que los números de los dos platos no cambien en tres rondas seguidas (unas 10 a 15 rondas).",
+      "12. Calcula el K del modelo con los números finales: K = frijoles en «producto» ÷ frijoles en «reactivo». Escríbelo con dos cifras.",
+      "13. Puesta en común: cada grupo escribe en la pizarra su ensayo, sus números finales y su K. La clase compara los ensayos 1, 2 y 3 entre sí y luego con el 4.",
+      "14. Cierre: cada estudiante completa un cuadro con cinco reacciones (las de las preguntas de análisis), su tipo de equilibrio, su expresión de Kc y lo que diría un Kc grande o pequeño."
+     ],
+     "datos_esperados": "Sesión 1: los vasos 1 y 2 conservan sal sin disolver y 100 mL de su líquido claro tienen casi la misma masa (diferencia de 1 a 3 g, dentro del error de la jeringa y de una balanza de 1 g), claramente mayor que la de 100 mL de agua; el vaso 3, sin sal sobrante, da una masa intermedia. La densidad de la salmuera saturada a la temperatura del aula es un valor de la tabla de referencia. Conclusión esperada: si hay sólido presente, la cantidad de sólido no cambia la concentración de lo disuelto. En la gaseosa cerrada casi no se ven burbujas; al abrir salen muchas y, al cerrar, disminuyen. Sesión 2 (verificado con las reglas del paso 9): los ensayos 1, 2 y 3 se estabilizan en 6 a 9 rondas y dan un K del modelo cercano a 2 (entre 1.8 y 2.2 por el redondeo; por ejemplo, 41 y 79 frijoles en el ensayo 1, 38 y 82 en el 2, 21 y 39 en el 3). El K no depende del inicio ni del total de frijoles y coincide con el cociente de las reglas, (1/4) ÷ (1/8) = 2. Ya estable, siguen pasando unos 10 frijoles por ronda en cada sentido (5 en el ensayo 3). El ensayo 4 se estabiliza en 82 en «reactivo» y 38 en «producto»: K cercano a 0.5, y predomina el reactivo."
+    }
+   }
   }
  ],
  "datos_de_referencia": {
@@ -1787,9 +1954,9 @@
    "id": "REF:panel_hallazgo:HAL:H911-equilibrio",
    "decision": "inyectar",
    "forma": "nota_en_tema",
-   "refuerzo": "En 9.°, usar K solo de forma cualitativa: qué dice un valor grande o pequeño sobre reactivos y productos. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización: Química 10.° (12.3–12.5) y 11.° (4.2) los formalizan y no deben darlos por sabidos. Los buffers (3.10) ya son experimentales, sin Ka.",
+   "refuerzo": "Usar K solo cualitativamente: un valor grande o pequeño indica si en el equilibrio predominan productos o reactivos, no la rapidez. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización; Química 10.° (12.3–12.5) y 11.° (4.2) deben enseñarlos desde cero, sin «recordarlos» de 9.°. Los buffers (3.10) siguen experimentales, sin Ka.",
    "fila": null,
-   "estado": "propuesta_pendiente",
+   "estado": "revisado_panel",
    "origen": "panel_hallazgo"
   }
  ],
@@ -1799,15 +1966,7 @@
   "experimentos": "completo",
   "capa_pedagogica": "completo",
   "datos_de_referencia": "pendiente_de_fuente",
-  "revision_del_panel": "pendiente"
+  "revision_del_panel": "completa"
  },
- "sin_revision_del_panel": [
-  "ACT:G09-CIE-U3-3.3/obj-1",
-  "ACT:G09-CIE-U3-3.3/obj-2",
-  "ACT:G09-CIE-U3-3.3/obj-abierta",
-  "DIF:quimica/constante-de-equilibrio/2",
-  "DIF:quimica/constante-de-equilibrio/3",
-  "DIF:quimica/constante-de-equilibrio/4",
-  "EXP:G09-CIE-U3-3.3/1"
- ]
+ "sin_revision_del_panel": []
 }

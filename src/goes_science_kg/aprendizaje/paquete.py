@@ -110,6 +110,19 @@ MAGNITUD = (r"\b(pKa\d?|pKb|pI|Ka|Kb|Kc|Kp|Kw|Kps|densidad|calor específico|cal
             r"(?:\s+(?:de|del)\s+(?:la\s+|el\s+|los\s+|las\s+)?([a-záéíóúñ\-]+(?:\s+[a-záéíóúñ\-]+)?))?")
 
 
+# Palabras que siguen a la magnitud pero no nombran una sustancia
+_NO_SUSTANCIA = {"es", "sea", "son", "sean", "está", "están", "que", "y", "o", "en", "con", "para", "se", "al", "del",
+                 "no", "lugar", "un", "una", "cada", "este", "esta", "ese", "esa"}
+_NOMBRE_DATO = {"μ": "coeficiente de fricción (μ)", "μs": "coeficiente de fricción estática (μs)"}
+
+
+def _clave_dato(dato: str) -> str:
+    """Clave para no repetir un dato en singular y plural («energía/energías de ionización»)."""
+    import re
+
+    return re.sub(r"(?<=[a-záéíóúñ])s\b", "", dato.lower())
+
+
 def _datos_que_faltan(elementos: list[dict]) -> list[dict]:
     """Qué datos de referencia piden los elementos: en cada oración que dice «tabla de referencia», las magnitudes
     que nombra (pKa, pI, Kc, densidad…) con su sustancia cuando la dice."""
@@ -122,10 +135,14 @@ def _datos_que_faltan(elementos: list[dict]) -> list[dict]:
             if "tabla de referencia" not in oracion.lower():
                 continue
             for m in re.finditer(MAGNITUD, oracion, re.IGNORECASE):
-                sustancia = m.group(2) or ""
-                dato = m.group(1) + (f" de {sustancia}" if sustancia and not sustancia.lower().startswith(
-                    ("la", "tabla", "referencia", "valor")) else "")
-                if not any(x["dato"].lower() == dato.lower() for x in salida):
+                palabras = (m.group(2) or "").split()
+                if len(palabras) > 1 and palabras[1].lower() in _NO_SUSTANCIA:
+                    palabras = palabras[:1]   # «del aluminio sea» → «del aluminio»
+                sustancia = " ".join(palabras)
+                nombre = _NOMBRE_DATO.get(m.group(1).lower(), m.group(1))
+                dato = nombre + (f" de {sustancia}" if sustancia and palabras[0].lower() not in _NO_SUSTANCIA
+                                 and not sustancia.lower().startswith(("tabla", "referencia", "valor")) else "")
+                if not any(_clave_dato(x["dato"]) == _clave_dato(dato) for x in salida):
                     salida.append({"dato": dato, "elemento": e["id"],
                                    "contexto": e.get("titulo") or (e.get("enunciado") or "")[:90]})
     return salida
