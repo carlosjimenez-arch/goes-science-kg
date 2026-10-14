@@ -239,7 +239,34 @@ def _errores_experimento(x: dict, nav: Navegador) -> list[str]:
         e.append(f"duración entre 10 y {DURACION_MAX_EXPERIMENTO} min (sesiones de 55)")
     if not x.get("grados") or x.get("estado") not in ESTADOS:
         e.append("grados y estado válido")
+    e += _errores_pasos(x.get("procedimiento") or [])
     return [f"{x['id']}: {m}" for m in e]
+
+
+def _errores_pasos(procedimiento: list) -> list[str]:
+    """Los pasos numerados no se repiten y, dentro de cada «Sesión k (m min)», sus minutos no pasan de m."""
+    import re
+
+    e, vistos, sesion, suma = [], set(), None, 0
+
+    def cerrar() -> None:
+        if sesion and suma > sesion[1]:
+            e.append(f"los pasos de «{sesion[0]}» suman {suma} min y la sesión dura {sesion[1]}")
+
+    for paso in procedimiento:
+        texto = paso if isinstance(paso, str) else str(paso)
+        if m := re.match(r"\s*(Sesi[oó]n \d+)\s*\((\d+) min\)", texto):
+            cerrar()
+            sesion, suma = (m.group(1), int(m.group(2))), 0
+            continue
+        if n := re.match(r"\s*(\d+)\.", texto):
+            if n.group(1) in vistos:
+                e.append(f"el paso {n.group(1)} está repetido")
+            vistos.add(n.group(1))
+        if t := re.search(r"\((\d+) min\)", texto):
+            suma += int(t.group(1))
+    cerrar()
+    return e
 
 
 def errores_elemento(e: dict, nav: Navegador, ped: Pedagogia) -> list[str]:

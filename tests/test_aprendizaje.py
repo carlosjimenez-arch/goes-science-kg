@@ -459,3 +459,13 @@ def test_unir_no_pisa_un_experimento_ya_unido(tmp_path):
     unir(tmp_path, prefijos=["G09-CIE-U3-3.3"])
     despues = {x["id"]: x for x in json.loads(p.read_text(encoding="utf-8"))}
     assert despues["EXP:G09-CIE-U3-3.3/1"]["titulo"] == "versión revisada por el panel"
+
+
+def test_pasos_repetidos_o_sesion_excedida():
+    from goes_science_kg.aprendizaje.pedagogia import _errores_pasos
+
+    bien = ["Sesión 1 (55 min)", "1. (30 min) a", "2. (25 min) b", "Sesión 2 (55 min)", "3. (20 min) c"]
+    assert _errores_pasos(bien) == []
+    mal = ["Sesión 1 (55 min)", "1. (30 min) a", "2. (30 min) b", "2. (5 min) b"]
+    errores = " | ".join(_errores_pasos(mal))
+    assert "el paso 2 está repetido" in errores and "suman 65 min" in errores

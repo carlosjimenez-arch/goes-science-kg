@@ -11,7 +11,7 @@
 | experimentos | completo |
 | capa pedagogica | completo |
 | datos de referencia | pendiente_de_fuente |
-| revision del panel | pendiente |
+| revision del panel | completa |
 
 ## Tema (malla V3, texto crudo)
 
@@ -77,8 +77,8 @@
 - **DIF:quimica/constante-de-equilibrio/3** (revisado_panel): Confunde el valor de K con la rapidez de la reacción: cree que un K grande indica que el equilibrio se alcanza pronto y uno pequeño que la reacción es lenta, cuando K solo dice si predominan los productos o los reactivos una vez alcanzado el equilibrio. *Señal:* Interpreta Kc = 1 × 10⁵ como «la reacción es muy rápida» y Kc = 1 × 10⁻³ como «tarda mucho»; usa «avanza rápido» como sinónimo de «se forma mucho producto»; afirma que un catalizador aumenta el valor de K.
 - **DIF:quimica/constante-de-equilibrio/4** (revisado_panel): Cree que en el equilibrio las concentraciones de reactivos y productos son iguales, o que quedan en la proporción de los coeficientes, en vez de entender que solo dejan de cambiar y que la relación entre ellas la fija el valor de K. *Señal:* Dice que en el equilibrio «hay la misma cantidad de reactivos que de productos»; espera Kc = 1 en todo equilibrio; en una gráfica de concentración contra tiempo marca el equilibrio donde se cruzan las curvas y no donde se vuelven horizontales; ante Kc = 1 × 10⁻³ dice que la reacción «no está en equilibrio».
 - **DIF:quimica/equilibrio-dinamico/1** (revisado_panel): Cree que al llegar al equilibrio la reacción se detiene: como las concentraciones ya no cambian, supone que reactivos y productos dejaron de transformarse. *Señal:* Dice que «la reacción terminó» o «ya no pasa nada»; interpreta concentraciones o color constantes como rapidez cero; no espera que partículas marcadas pasen al otro lado de la reacción.
-- **DIF:quimica/equilibrio-dinamico/2** (propuesta_pendiente): Imagina el equilibrio como una alternancia: cree que primero ocurre toda la reacción directa y después la inversa, o que se turnan, en lugar de entender que las dos ocurren al mismo tiempo durante todo el proceso. *Señal:* Usa expresiones como «primero se forma todo el producto y luego se regresa», «van y vienen por turnos» o «cuando termina una empieza la otra»; describe el equilibrio como un vaivén o un péndulo.
-- **DIF:quimica/equilibrio-dinamico/3** (propuesta_pendiente): Cree que al equilibrio solo se llega partiendo de los reactivos: si se empieza únicamente con productos, piensa que no ocurre nada o que se llega a un estado distinto del que se alcanza desde los reactivos. *Señal:* Afirma que una mezcla que empieza solo con productos «no puede reaccionar» o «no llega al equilibrio»; predice concentraciones finales distintas para dos ensayos que solo difieren en el lado por el que se empieza.
+- **DIF:quimica/equilibrio-dinamico/2** (revisado_panel): Imagina el equilibrio como una alternancia: cree que primero ocurre toda la reacción directa y después la inversa, o que se turnan, en lugar de entender que las dos ocurren al mismo tiempo durante todo el proceso. *Señal:* Usa expresiones como «primero se forma todo el producto y luego se regresa», «van y vienen por turnos» o «cuando termina una empieza la otra»; describe el equilibrio como un vaivén o un péndulo.
+- **DIF:quimica/equilibrio-dinamico/3** (revisado_panel): Cree que al equilibrio solo se llega partiendo de los reactivos: si se empieza únicamente con productos, piensa que no ocurre nada o que se llega a un estado distinto del que se alcanza desde cantidades equivalentes de reactivos. *Señal:* Afirma que una mezcla que empieza solo con productos «no puede reaccionar» o «no llega al equilibrio»; predice concentraciones finales distintas para dos ensayos con cantidades equivalentes que solo difieren en el lado por el que se empieza.
 - **DIF:quimica/molaridad-y-unidades-quimicas-de-concentracion/1** (revisado_panel): Confunde la cantidad de soluto (moles o gramos) con la concentración: cree que la disolución con más soluto es la más concentrada, sin dividir entre el volumen. *Señal:* Compara disoluciones solo por los moles o los gramos; cree que al servir una porción la concentración baja; escribe los moles en lugar de mol/L dentro de los corchetes.
 
 ## Experimentos con procedimiento
@@ -114,7 +114,7 @@
 ## Actividades
 
 - **ACT:G09-CIE-U3-3.1/obj-1** (objetivo, explicar, opcion_multiple): En una botella cerrada de agua carbonatada, parte del dióxido de carbono está como gas arriba del líquido y parte está disuelto: CO₂(g) ⇌ CO₂(ac). Después de un rato, la cantidad de CO₂ disuelto deja de cambiar, aunque l
-- **ACT:G09-CIE-U3-3.1/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo. La reacción reversible X ⇌ Y ocurre en un recipiente cerrado a temperatura constante. Ensayo 1: empieza solo con X. Ensayo 2: empieza solo con Y. Concentraciones en mol/L a los 0, 2, 4, 6 y 
+- **ACT:G09-CIE-U3-3.1/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo. La reacción reversible X ⇌ Y ocurre en un recipiente cerrado a temperatura constante. Se midieron las concentraciones, en mol/L, a los 0, 2, 4, 6 y 8 minutos. Ensayo 1 (empieza solo con X): 
 - **ACT:G09-CIE-U3-3.1/obj-abierta** (objetivo, razonar, abierta): En clase se hizo este modelo: el grupo 1 empieza con 30 tapitas y el grupo 2 con ninguna. En cada ronda, al mismo tiempo, el grupo 1 pasa la mitad de sus tapitas al grupo 2 y el grupo 2 pasa la cuarta parte de las suyas 
 - **ACT:G09-CIE-U3-3.3/obj-1** (objetivo, razonar, opcion_multiple): El mar absorbe parte del dióxido de carbono del aire. Entre el aire y el agua de la superficie se establece este equilibrio: CO₂(g) ⇌ CO₂(aq). El símbolo (aq), que también se escribe (ac), indica que el CO₂ está disuelto
 - **ACT:G09-CIE-U3-3.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de ejemplo. A la misma temperatura, tres reacciones del tipo reactivo(g) ⇌ producto(g), con coeficientes 1, llegan al equilibrio en recipientes cerrados. Sus constantes son: reacción 1, Kc = 2 × 10⁶; reacción 2, Kc
@@ -145,5 +145,3 @@
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
 - REF:panel_hallazgo:HAL:H911-equilibrio (revisado_panel): Usar K solo cualitativamente: un valor grande o pequeño indica si en el equilibrio predominan productos o reactivos, no la rapidez. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización; Química 10.° (12.3–12.5) y 11.° (4.2) deben enseñarlos desde cero, sin «recordarlos» de 9.°. Los buffers (3.10) siguen experimentales, sin Ka.
-
-*Sin revisión del panel todavía: 8 elementos.*

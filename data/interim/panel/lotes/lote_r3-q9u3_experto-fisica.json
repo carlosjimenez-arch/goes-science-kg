@@ -1,0 +1,1176 @@
+{
+ "lote": "r3-q9u3_experto-fisica",
+ "ronda": 3,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U7-7.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U7-7.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.5"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.5",
+      "CON:fisica/fuerza-sobre-corrientes-motor"
+     ],
+     "habilidad": "razonar",
+     "formato": "abierta",
+     "grados": [
+      9
+     ],
+     "enunciado": "Joaquín quiere saber si más vueltas en la bobina hacen girar más rápido su motor. Probó una bobina de 10 vueltas con una pila nueva y, al final de la clase, una de 30 vueltas con la misma pila ya usada; la de 30 giró más lento y concluyó: «más vueltas, menos rapidez». En 3 o 4 oraciones: (1) di si su conclusión es válida y por qué; y (2) propón cómo repetir la prueba, nombrando la variable independiente, la dependiente y al menos una variable de control.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La conclusión no es válida porque cambiaron dos cosas a la vez: las vueltas y el estado de la pila, que se agota con el uso. Hay que cambiar solo las vueltas (independiente), medir la rapidez de giro (dependiente) y mantener iguales la pila, el imán, el alambre y la altura de los soportes (control), con varios intentos.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U7-7.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "No es válida, porque además de las vueltas cambió la pila: al final de la clase ya estaba más gastada y eso solo puede bajar la rapidez. Yo cambiaría solo el número de vueltas (variable independiente), mediría las vueltas por segundo (dependiente) y usaría la misma pila nueva, el mismo imán y el mismo alambre (control), probando cada bobina tres veces.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que la conclusión no es válida porque cambiaron dos variables a la vez (las vueltas y el estado de la pila).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra el número de vueltas como variable independiente y la rapidez de giro como dependiente.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Nombra al menos una variable de control pertinente: la misma pila (o pila nueva en cada prueba), el mismo imán, el mismo alambre o la misma altura de los soportes.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Propone repetir cada prueba varias veces o alternar el orden de las bobinas.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta la conclusión con una explicación propia, sin notar el cambio de pila.",
+        "ejemplo": "Sí es válida, porque 30 vueltas pesan más y por eso giran más lento.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Descarta la pila como variable porque cree que la energía del giro sale del imán.",
+        "ejemplo": "La pila no importa, porque el que hace girar la bobina es el imán.",
+        "dificultad": "DIF:fisica/fuerza-sobre-corrientes-motor/2"
+       },
+       {
+        "descripcion": "Confunde los tipos de variables.",
+        "ejemplo": "La variable independiente es la rapidez y la dependiente son las vueltas.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G09-CIE-U7-7.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+     "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+     "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.5",
+     "grado": 9,
+     "indicador": "7.4 Construye un motor de corriente directa.",
+     "evidencia": "Motor funcional con tabla de rapidez de giro según la variable cambiada"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U7-7.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G09-CIE-U7-7.5/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "El enunciado pide validez y diseño; c1 a c3 cubren exactamente eso (dos variables cambiadas a la vez, independiente y dependiente, una de control). Es correcto que una pila usada entrega menos corriente y baja la rapidez. El error que descarta la pila porque «el imán da la energía» enlaza bien con motor/2.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.5",
+       "cita": "La malla pide identificar las variables y evaluar las no controladas.",
+       "cita_literal": "Evalúa qué variables no logró controlar y propone mejoras al diseño de su motor."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La resistencia interna de la pila crece con el uso: menos corriente, menos par y menos rapidez."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G09-CIE-U7-7.5/obj-abierta",
+     "decision": "corregir",
+     "cambios": {
+      "enunciado": "Joaquín quiere saber si más vueltas en la bobina hacen girar más rápido su motor. Probó una bobina de 10 vueltas con una pila nueva y, al final de la clase, una de 30 vueltas con la misma pila ya usada; la de 30 giró más lento y concluyó: «más vueltas, menos rapidez». En 3 o 4 oraciones: (1) di si su conclusión es válida y por qué; y (2) propón cómo repetir la prueba, nombrando la variable independiente, la dependiente y al menos una variable de control."
+     },
+     "justificacion": "Solo forma: «propone» era indicativo y debe ser imperativo («propón»). Además, la respuesta exige validez, porqué y tres tipos de variable (c1 a c3 obligatorios): pedir 2 o 3 oraciones era injusto; se amplía a 3 o 4. Contenido y rúbrica sin cambios.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Pedir más elementos obligatorios de los que caben en la extensión solicitada penaliza la síntesis, no la comprensión"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (revisión del panel)",
+       "cita": "El enunciado pide explícitamente todo lo que exige cada criterio obligatorio de la rúbrica"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.5",
+       "cita": "7.4 Construye un motor de corriente directa."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G09-CIE-U7-7.7/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G09-CIE-U7-7.7/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.7"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.7",
+      "CON:fisica/fuerza-sobre-corrientes-motor"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      9
+     ],
+     "enunciado": "Un bus eléctrico y un bus diésel suben la misma cuesta con la misma carga, así que sus motores hacen el mismo trabajo. Al llegar arriba, el motor diésel está mucho más caliente que el eléctrico. ¿Qué explica la diferencia?",
+     "opciones": {
+      "A": "El diésel gasta su energía al quemarse, y el motor eléctrico no gasta energía al girar.",
+      "B": "El diésel pierde energía solo por la fricción, y el eléctrico no tiene piezas que rocen.",
+      "C": "El diésel convierte en movimiento una parte menor de su energía, y el resto lo disipa como calor.",
+      "D": "El diésel produce una fuerza mayor que el eléctrico, y toda fuerza grande calienta el motor."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/conservacion-energia/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los dos motores reciben energía y la transforman: el eléctrico convierte en movimiento la mayor parte de la energía eléctrica, mientras que el de combustión convierte solo una parte menor de la energía del combustible y el resto sale como calor por el escape y el radiador. La energía no desaparece en ninguno: se transforma.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G09-CIE-U7-7.7"
+     },
+     "origen": "redactor-actividades (G09-CIE-U7-7.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+     "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+     "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.7",
+     "grado": 9,
+     "indicador": "7.6. Compara las tecnologías del motor eléctrico y del motor de combustión interna.",
+     "evidencia": "Cuadro comparativo con argumentación"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G09-CIE-U7-7.7/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G09-CIE-U7-7.7/obj-1",
+     "decision": "aprobar",
+     "justificacion": "Clave C correcta: con el mismo trabajo útil, el motor diésel (unos 30 a 40 % de eficiencia) disipa como calor mucha más energía que el eléctrico (cerca del 90 %). A enlaza bien con conservacion-energia/1 (la energía «se gasta»); B y D son errores verosímiles. La retroalimentación cierra con la conservación de la energía.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.7",
+       "cita": "La malla pide usar la energía disipada como calor para comparar motores.",
+       "cita_literal": "usa datos de eficiencia y de energía disipada como calor para argumentar qué tecnología conviene"
+      },
+      {
+       "fuente": "DIF:fisica/conservacion-energia/1",
+       "cita": "Creer que la energía se gasta y desaparece en lugar de transformarse."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:ACT:G09-CIE-U7-7.7/obj-1",
+     "decision": "corregir",
+     "cambios": {
+      "opciones": {
+       "A": "El diésel gasta su energía al quemarse, y el motor eléctrico no gasta energía al girar.",
+       "B": "El diésel pierde energía solo por la fricción, y el eléctrico no tiene piezas que rocen.",
+       "C": "El diésel convierte en movimiento una parte menor de su energía, y el resto lo disipa como calor.",
+       "D": "El diésel produce una fuerza mayor que el eléctrico, y toda fuerza grande calienta el motor."
+      }
+     },
+     "justificacion": "Solo redacción de la clave: «menos parte de su energía» es una construcción forzada que dificulta la lectura; se escribe «una parte menor de su energía». La física, la clave y los distractores no cambian. Retroalimentación de 55 palabras.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una clave con sintaxis extraña obliga a releer y puede hacerla parecer errónea; se mantiene su longitud pareja con las demás"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.7",
+       "cita": "7.6. Compara las tecnologías del motor eléctrico y del motor de combustión interna."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U7-7.1/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U7-7.1/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.1"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.1",
+      "CON:fisica/campo-magnetico"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Mapa magnético del aula: mediciones repetidas con el magnetómetro de la tableta y una brújula",
+     "proposito": "Medir varias veces el campo magnético en distintos puntos del aula y del patio con el magnetómetro de una tableta o un celular, calcular promedios y dispersión, y explicar con esos datos por qué las mediciones lejos del hierro representan mejor el campo de la Tierra que orienta la brújula.",
+     "materiales": [
+      "Por grupo de 4: 1 tableta o celular con magnetómetro y una aplicación gratuita que lo muestre en μT (por ejemplo, phyphox)",
+      "Por grupo: 1 brújula de aguja",
+      "Por grupo: 1 regla o cinta métrica de 1 m y cinta adhesiva para marcar los puntos",
+      "Por grupo: una tijera o un clavo de hierro, una lata de aluminio limpia y un trozo de alambre de cobre",
+      "Hoja de registro con una tabla: punto, 5 mediciones, promedio y diferencia entre el valor mayor y el menor",
+      "Calculadora u hoja de cálculo"
+     ],
+     "procedimiento": [
+      "1. (5 min) Comenten por qué el mapa del celular a veces marca mal la dirección cerca de objetos metálicos y escriban una hipótesis.",
+      "2. (4 min) Abran la aplicación de magnetómetro que la docente pidió instalar antes de la clase, sin permisos de ubicación, contactos ni cámara. Ubiquen el sensor: acerquen la tijera al borde de la tableta y busquen dónde cambia más la lectura. Pongan la tableta horizontal sobre la mesa.",
+      "3. (15 min) El grupo se reparte cuatro puntos marcados con cinta: centro del aula, junto a la pata de un pupitre o una ventana de hierro, cerca de una computadora o un proyector encendidos por la docente, y el patio lejos de todo. En cada punto midan 5 veces el valor total del campo, levantando y volviendo a poner la tableta en la misma marca y siempre con la misma orientación (por ejemplo, con el borde de arriba hacia la pizarra), y anótenlo.",
+      "4. (8 min) En el centro del aula, acerquen a 5 cm del sensor la tijera de hierro, luego la lata de aluminio y luego el alambre de cobre. Anoten cuánto cambia la lectura con cada uno. Repitan acercando cada objeto a la brújula y anoten si la aguja se mueve.",
+      "5. (4 min) Lejos de metales, dejen la brújula quieta, marquen hacia dónde apunta la aguja y compárenlo con la dirección norte que indica la docente en un plano de la escuela.",
+      "6. (10 min) Calculen el promedio y la diferencia entre el valor mayor y el menor de cada punto. Comparen los puntos y combinen sus datos con los de otro grupo.",
+      "7. (7 min) Respondan en grupo las dos primeras preguntas de análisis con su tabla.",
+      "8. (2 min) Guarden el material."
+     ],
+     "seguridad": [
+      "La tijera se manipula cerrada y con la punta hacia abajo; la lata debe estar limpia y sin bordes cortantes.",
+      "Ningún imán fuerte se acerca a las tabletas, a tarjetas bancarias ni a personas con marcapasos.",
+      "En el patio, el grupo se queda en la zona que indica la docente.",
+      "La aplicación no recibe permisos de ubicación, contactos ni cámara."
+     ],
+     "datos_esperados": "Lejos de metales, las lecturas quedan en decenas de microteslas (del orden de 30 μT a 45 μT, según la calibración de cada aparato; la docente puede comparar con el valor del campo terrestre de su localidad en la tabla de referencia), con poca diferencia entre repeticiones (1 μT a 3 μT) y promedios parecidos entre el centro del aula y el patio, aunque pueden diferir unos pocos μT por el hierro del concreto. Junto al hierro y cerca de aparatos, los valores cambian varios o muchos microteslas y varían más entre repeticiones. La tijera cambia la lectura y mueve la aguja; la lata de aluminio y el cobre casi no las cambian. La brújula, lejos de metales, apunta aproximadamente al norte.",
+     "analisis": [
+      "¿Qué puntos dieron promedios parecidos y poca dispersión? ¿Por qué esos representan mejor el campo de la Tierra?",
+      "¿Por qué la tijera cambió la lectura y la lata de aluminio casi no? ¿Qué dice eso de la brújula del celular cerca del portón de una casa?",
+      "Tarea: ¿por qué promediar 5 mediciones da un valor más confiable que una sola, y por qué el promedio no corrige el efecto del hierro?",
+      "Tarea: busquen y expliquen en 3 oraciones una aplicación del campo magnético de la Tierra (orientación de aves, búsqueda de minerales o protección frente al viento solar). Si no tienen internet, usen el libro de texto o la ficha impresa que deja la docente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Si no hay tabletas con magnetómetro, el mapa se hace solo con brújulas: en cada punto se mide 3 veces el ángulo de la aguja con respecto a una línea marcada en el piso y se promedia; cerca del hierro el ángulo cambia. En la pantalla del imán de barra del simulador «Laboratorio electromagnético de Faraday» de PhET (el que nombra la malla de esta unidad) se ven las líneas de campo de un imán y cómo se orienta una brújula; la docente lo revisa antes de recomendarlo.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U7-7.1)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.1",
+     "grado": 9,
+     "indicador": "7.1. Reconoce las aplicaciones del campo magnético en fenómenos terrestres.",
+     "evidencia": "Registro del campo magnético en distintos puntos con mediciones repetidas y promedio"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U7-7.1/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.1/1",
+     "decision": "corregir",
+     "justificacion": "Física y valores correctos (unos 30 a 45 μT; hierro sí, aluminio y cobre no). Ajustes: instalar la aplicación no cabe en 5 min; el módulo que da el teléfono cambia con la orientación por su calibración, así que se fija; dos preguntas no tenían tiempo; y «Imán y brújula» de PhET es una versión antigua: se remite al simulador de la malla.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.1",
+       "cita": "La malla pide repetir y promediar para reducir la incertidumbre por interferencias.",
+       "cita_literal": "repite las mediciones del magnetómetro y las promedia para reducir la incertidumbre causada por interferencias."
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.6",
+       "cita": "La malla de la unidad nombra el simulador de PhET.",
+       "cita_literal": "Comprobar predicciones en el simulador «Laboratorio electromagnético de Faraday» (PhET)."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Los magnetómetros de teléfono tienen desplazamientos de calibración que hacen variar el módulo con la orientación."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "procedimiento": [
+       "1. (5 min) Comenten por qué el mapa del celular a veces marca mal la dirección cerca de objetos metálicos y escriban una hipótesis.",
+       "2. (4 min) Abran la aplicación de magnetómetro que la docente pidió instalar antes de la clase, sin permisos de ubicación, contactos ni cámara. Ubiquen el sensor: acerquen la tijera al borde de la tableta y busquen dónde cambia más la lectura. Pongan la tableta horizontal sobre la mesa.",
+       "3. (15 min) El grupo se reparte cuatro puntos marcados con cinta: centro del aula, junto a la pata de un pupitre o una ventana de hierro, cerca de una computadora o un proyector encendidos por la docente, y el patio lejos de todo. En cada punto midan 5 veces el valor total del campo, levantando y volviendo a poner la tableta en la misma marca y siempre con la misma orientación (por ejemplo, con el borde de arriba hacia la pizarra), y anótenlo.",
+       "4. (8 min) En el centro del aula, acerquen a 5 cm del sensor la tijera de hierro, luego la lata de aluminio y luego el alambre de cobre. Anoten cuánto cambia la lectura con cada uno. Repitan acercando cada objeto a la brújula y anoten si la aguja se mueve.",
+       "5. (4 min) Lejos de metales, dejen la brújula quieta, marquen hacia dónde apunta la aguja y compárenlo con la dirección norte que indica la docente en un plano de la escuela.",
+       "6. (10 min) Calculen el promedio y la diferencia entre el valor mayor y el menor de cada punto. Comparen los puntos y combinen sus datos con los de otro grupo.",
+       "7. (7 min) Respondan en grupo las dos primeras preguntas de análisis con su tabla.",
+       "8. (2 min) Guarden el material."
+      ],
+      "analisis": [
+       "¿Qué puntos dieron promedios parecidos y poca dispersión? ¿Por qué esos representan mejor el campo de la Tierra?",
+       "¿Por qué la tijera cambió la lectura y la lata de aluminio casi no? ¿Qué dice eso de la brújula del celular cerca del portón de una casa?",
+       "Tarea: ¿por qué promediar 5 mediciones da un valor más confiable que una sola, y por qué el promedio no corrige el efecto del hierro?",
+       "Tarea: busquen y expliquen en 3 oraciones una aplicación del campo magnético de la Tierra (orientación de aves, búsqueda de minerales o protección frente al viento solar)."
+      ],
+      "datos_esperados": "Lejos de metales, las lecturas quedan en decenas de microteslas (del orden de 30 μT a 45 μT, según la calibración de cada aparato; la docente puede comparar con el valor del campo terrestre de su localidad en la tabla de referencia), con poca diferencia entre repeticiones (1 μT a 3 μT) y promedios parecidos entre el centro del aula y el patio, aunque pueden diferir unos pocos μT por el hierro del concreto. Junto al hierro y cerca de aparatos, los valores cambian varios o muchos microteslas y varían más entre repeticiones. La tijera cambia la lectura y mueve la aguja; la lata de aluminio y el cobre casi no las cambian. La brújula, lejos de metales, apunta aproximadamente al norte.",
+      "variantes": "Si no hay tabletas con magnetómetro, el mapa se hace solo con brújulas: en cada punto se mide 3 veces el ángulo de la aguja con respecto a una línea marcada en el piso y se promedia; cerca del hierro el ángulo cambia. En la pantalla del imán de barra del simulador «Laboratorio electromagnético de Faraday» de PhET (el que nombra la malla de esta unidad) se ven las líneas de campo de un imán y cómo se orienta una brújula; la docente lo revisa antes de recomendarlo.",
+      "duracion_min": 55
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.1/1",
+     "decision": "corregir",
+     "cambios": {
+      "analisis": [
+       "¿Qué puntos dieron promedios parecidos y poca dispersión? ¿Por qué esos representan mejor el campo de la Tierra?",
+       "¿Por qué la tijera cambió la lectura y la lata de aluminio casi no? ¿Qué dice eso de la brújula del celular cerca del portón de una casa?",
+       "Tarea: ¿por qué promediar 5 mediciones da un valor más confiable que una sola, y por qué el promedio no corrige el efecto del hierro?",
+       "Tarea: busquen y expliquen en 3 oraciones una aplicación del campo magnético de la Tierra (orientación de aves, búsqueda de minerales o protección frente al viento solar). Si no tienen internet, usen el libro de texto o la ficha impresa que deja la docente."
+      ]
+     },
+     "justificacion": "Los pasos suman 55 min y cada pregunta tiene tiempo o es tarea; la seguridad nombra marcapasos y permisos de la aplicación, y hay variante sin tabletas. Solo falta inclusión: la tarea de investigar presupone internet; se agrega la alternativa del libro o una ficha impresa.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "Una tarea para la casa no debe presuponer recursos que no todas las familias tienen"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (revisión del panel)",
+       "cita": "Análisis con tiempo: cada pregunta en un paso con minutos o con «Tarea:»"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.1",
+       "cita": "7.1. Reconoce las aplicaciones del campo magnético en fenómenos terrestres."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U7-7.2/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U7-7.2/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.2"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.2",
+      "CON:fisica/campo-magnetico"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "El sobrevuelo de la sonda: mapear imanes escondidos con un magnetómetro",
+     "proposito": "Simular cómo una sonda descubre lo que hay bajo la superficie de un planeta con su magnetómetro: medir el campo magnético en una cuadrícula a dos alturas, ubicar imanes escondidos y comprobar por qué las naves alejan el sensor de sus propias fuentes de campo.",
+     "materiales": [
+      "Por grupo de 4: una caja de cartón baja (de zapatos o de fruta) con la tapa o un cartón encima como «superficie del planeta», con una cuadrícula de 6 × 6 casillas de 5 cm dibujada con marcador",
+      "Por grupo: 2 o 3 imanes cerámicos pequeños de disco (de unos 2 cm), que otro grupo esconde y pega con cinta bajo el cartón. No sirven las láminas flexibles de refrigeradora: su campo casi no se nota a 3 cm. No usar imanes de neodimio.",
+      "Por grupo: un teléfono con una aplicación gratuita de magnetómetro (por ejemplo, phyphox, descargada antes) o, si no hay teléfono, una brújula de aguja",
+      "Por grupo: dos pilas de libros o cajitas de 3 cm y de 8 cm de alto que sirven de «órbita baja» y «órbita alta», y una regla",
+      "Por grupo, para simular los circuitos de la nave: 1 pila tamaño D y 40 cm de cable delgado con las puntas peladas",
+      "Cuaderno con dos cuadrículas de 6 × 6 para anotar la lectura de cada casilla (en μT o en grados de giro de la aguja)"
+     ],
+     "procedimiento": [
+      "1. (5 min) La docente muestra imágenes de auroras y de un satélite que mide el campo terrestre y plantea la pregunta: ¿cómo puede una sonda saber qué hay bajo la superficie de un planeta sin aterrizar?",
+      "2. (5 min) Cada grupo esconde sus imanes bajo el cartón de OTRO grupo, en casillas que anota en secreto.",
+      "3. (5 min) Ubiquen el sensor: abran la aplicación, acerquen un imán al teléfono y busquen el punto donde la lectura sube más. Lejos de todo imán anoten la lectura de fondo (el campo de la Tierra, unas decenas de μT). Con brújula, anoten hacia dónde apunta la aguja sin imanes.",
+      "4. (13 min) Sobrevuelo bajo: deslicen el teléfono (o la brújula) sobre la tapa de 3 cm de alto y midan en el centro de cada casilla. Anoten la lectura total o el ángulo que gira la aguja.",
+      "5. (7 min) Sobrevuelo alto: repitan solo en las filas donde hubo lecturas altas, ahora a 8 cm.",
+      "6. (5 min) Prueba de los circuitos de la nave: lejos de los imanes, coloquen el cable recto bajo el sensor, a 1 cm. Una persona toca los polos de la pila con las puntas del cable solo 2 segundos mientras otra lee la medida; repitan con el cable a 20 cm.",
+      "7. (8 min) Marquen en el mapa dónde creen que están los imanes, comparen con lo que anotó el grupo que los escondió y respondan la primera pregunta de análisis.",
+      "8. (7 min) Respondan en grupo la segunda y la tercera preguntas de análisis con los datos de los pasos 5 y 6, y guarden el material."
+     ],
+     "seguridad": [
+      "Usar solo imanes cerámicos pequeños; los de neodimio pellizcan los dedos y pueden dañar tarjetas.",
+      "No dejar los imanes pegados al teléfono ni cerca de tarjetas bancarias o del carné con banda magnética.",
+      "Los imanes cerámicos se quiebran y dejan bordes filosos: si uno se rompe, la docente recoge los trozos.",
+      "El cable conectado a la pila casi no tiene resistencia y se calienta: tocar los polos solo 2 segundos. Solo se usan pilas, nunca un tomacorriente."
+     ],
+     "datos_esperados": "Lejos de los imanes, la lectura es el campo terrestre (unas decenas de μT) y casi no cambia de casilla en casilla. A 3 cm sobre un imán cerámico de 2 cm aparecen cientos de μT o más (o la aguja gira mucho), y a 8 cm la lectura baja mucho, a unas decenas o un centenar de μT, y la mancha del mapa se ve más ancha y borrosa. El cable con corriente a 1 cm cambia la lectura en decenas de μT o más mientras está conectado (la aguja de la brújula gira), y a 20 cm solo unos pocos μT. Los valores exactos dependen del imán y del teléfono.",
+     "analisis": [
+      "¿Cómo se ve en el mapa una casilla con imán abajo? ¿Ubicaron todos los imanes? ¿Cuál fue más difícil y por qué?",
+      "Comparen los dos sobrevuelos: ¿qué ventaja tiene la órbita baja para encontrar rocas imantadas y qué ventaja tendría una órbita alta para una nave real?",
+      "Con lo que vieron en el paso 6, expliquen por qué las sondas, llenas de circuitos con corriente, llevan el magnetómetro en la punta de un brazo largo.",
+      "Tarea: investiguen en la página oficial de una misión que mida campos magnéticos (por ejemplo, Swarm de la Agencia Espacial Europea o Juno de la NASA) qué mide, qué ha descubierto y qué países o agencias la financian; citen la fuente. Si no tienen internet, usen el libro de texto o la ficha impresa que deja la docente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin teléfonos: una brújula de aguja por grupo, anotando el ángulo que gira la aguja respecto de su dirección sin imanes. Si solo hay un teléfono, cada grupo hace un sobrevuelo bajo de 10 minutos y los demás usan brújula, y al final se comparan los mapas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U7-7.2)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.2",
+     "grado": 9,
+     "indicador": "7.2. Reconoce las aplicaciones del campo magnético en la exploración espacial.",
+     "evidencia": "Ficha de una misión espacial con sus aplicaciones magnéticas y su forma de financiamiento"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U7-7.2/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.2/1",
+     "decision": "corregir",
+     "justificacion": "Recalculé: un disco cerámico de 2 cm da unos 1 800 μT a 3 cm y 100 μT a 8 cm; un cable con 5 A, 100 μT a 1 cm y 5 μT a 20 cm. Pero una lámina flexible de refrigeradora alterna polos y su campo casi desaparece a 3 cm: se piden discos cerámicos. Los tiempos sumaban 50 min y tres preguntas no tenían tiempo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.2",
+       "cita": "La malla pide reconocer los magnetómetros de las sondas.",
+       "cita_literal": "Reconoce aplicaciones del magnetismo en la exploración espacial, como los magnetómetros de las sondas y la protección de las naves."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Dipolo en el eje: B = μ0 m / (2π z³); cable recto: B = μ0 I / (2π r) = 2×10⁻⁷ × 5 / 0.01 = 100 μT."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Las láminas magnéticas flexibles alternan polos cada pocos milímetros: su campo decae en una distancia de ese orden."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "materiales": [
+       "Por grupo de 4: una caja de cartón baja (de zapatos o de fruta) con la tapa o un cartón encima como «superficie del planeta», con una cuadrícula de 6 × 6 casillas de 5 cm dibujada con marcador",
+       "Por grupo: 2 o 3 imanes cerámicos pequeños de disco (de unos 2 cm), que otro grupo esconde y pega con cinta bajo el cartón. No sirven las láminas flexibles de refrigeradora: su campo casi no se nota a 3 cm. No usar imanes de neodimio.",
+       "Por grupo: un teléfono con una aplicación gratuita de magnetómetro (por ejemplo, phyphox, descargada antes) o, si no hay teléfono, una brújula de aguja",
+       "Por grupo: dos pilas de libros o cajitas de 3 cm y de 8 cm de alto que sirven de «órbita baja» y «órbita alta», y una regla",
+       "Por grupo, para simular los circuitos de la nave: 1 pila tamaño D y 40 cm de cable delgado con las puntas peladas",
+       "Cuaderno con dos cuadrículas de 6 × 6 para anotar la lectura de cada casilla (en μT o en grados de giro de la aguja)"
+      ],
+      "procedimiento": [
+       "1. (5 min) La docente muestra imágenes de auroras y de un satélite que mide el campo terrestre y plantea la pregunta: ¿cómo puede una sonda saber qué hay bajo la superficie de un planeta sin aterrizar?",
+       "2. (5 min) Cada grupo esconde sus imanes bajo el cartón de OTRO grupo, en casillas que anota en secreto.",
+       "3. (5 min) Ubiquen el sensor: abran la aplicación, acerquen un imán al teléfono y busquen el punto donde la lectura sube más. Lejos de todo imán anoten la lectura de fondo (el campo de la Tierra, unas decenas de μT). Con brújula, anoten hacia dónde apunta la aguja sin imanes.",
+       "4. (13 min) Sobrevuelo bajo: deslicen el teléfono (o la brújula) sobre la tapa de 3 cm de alto y midan en el centro de cada casilla. Anoten la lectura total o el ángulo que gira la aguja.",
+       "5. (7 min) Sobrevuelo alto: repitan solo en las filas donde hubo lecturas altas, ahora a 8 cm.",
+       "6. (5 min) Prueba de los circuitos de la nave: lejos de los imanes, coloquen el cable recto bajo el sensor, a 1 cm. Una persona toca los polos de la pila con las puntas del cable solo 2 segundos mientras otra lee la medida; repitan con el cable a 20 cm.",
+       "7. (8 min) Marquen en el mapa dónde creen que están los imanes, comparen con lo que anotó el grupo que los escondió y respondan la primera pregunta de análisis.",
+       "8. (7 min) Respondan en grupo la segunda y la tercera preguntas de análisis con los datos de los pasos 5 y 6, y guarden el material."
+      ],
+      "seguridad": [
+       "Usar solo imanes cerámicos pequeños; los de neodimio pellizcan los dedos y pueden dañar tarjetas.",
+       "No dejar los imanes pegados al teléfono ni cerca de tarjetas bancarias o del carné con banda magnética.",
+       "Los imanes cerámicos se quiebran y dejan bordes filosos: si uno se rompe, la docente recoge los trozos.",
+       "El cable conectado a la pila casi no tiene resistencia y se calienta: tocar los polos solo 2 segundos. Solo se usan pilas, nunca un tomacorriente."
+      ],
+      "datos_esperados": "Lejos de los imanes, la lectura es el campo terrestre (unas decenas de μT) y casi no cambia de casilla en casilla. A 3 cm sobre un imán cerámico de 2 cm aparecen cientos de μT o más (o la aguja gira mucho), y a 8 cm la lectura baja mucho, a unas decenas o un centenar de μT, y la mancha del mapa se ve más ancha y borrosa. El cable con corriente a 1 cm cambia la lectura en decenas de μT o más mientras está conectado (la aguja de la brújula gira), y a 20 cm solo unos pocos μT. Los valores exactos dependen del imán y del teléfono.",
+      "duracion_min": 55
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.2/1",
+     "decision": "corregir",
+     "cambios": {
+      "analisis": [
+       "¿Cómo se ve en el mapa una casilla con imán abajo? ¿Ubicaron todos los imanes? ¿Cuál fue más difícil y por qué?",
+       "Comparen los dos sobrevuelos: ¿qué ventaja tiene la órbita baja para encontrar rocas imantadas y qué ventaja tendría una órbita alta para una nave real?",
+       "Con lo que vieron en el paso 6, expliquen por qué las sondas, llenas de circuitos con corriente, llevan el magnetómetro en la punta de un brazo largo.",
+       "Tarea: investiguen en la página oficial de una misión que mida campos magnéticos (por ejemplo, Swarm de la Agencia Espacial Europea o Juno de la NASA) qué mide, qué ha descubierto y qué países o agencias la financian; citen la fuente. Si no tienen internet, usen el libro de texto o la ficha impresa que deja la docente."
+      ]
+     },
+     "justificacion": "Actividad manipulable y motivadora; los pasos suman 55 min, las preguntas tienen tiempo, la seguridad cubre el cable con la pila (2 s) y hay variante sin teléfonos. Se respetan los discos cerámicos. Solo se agrega la alternativa sin internet a la tarea de investigar la misión.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "La ficha de la misión que pide la malla debe poder hacerse sin conexión en casa"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (revisión del panel)",
+       "cita": "Análisis con tiempo: cada pregunta en un paso con minutos o con «Tarea:»"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.2",
+       "cita": "7.2. Reconoce las aplicaciones del campo magnético en la exploración espacial."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U7-7.3/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U7-7.3/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.3"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.3",
+      "CON:fisica/campo-magnetico"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "Un electroimán de clavo: qué atrae, cuánto y desde dónde, para entender las reglas de la resonancia",
+     "proposito": "Construir un electroimán con pila, alambre y clavo para comprobar que la corriente produce un campo magnético cuya intensidad crece con las vueltas y la corriente, ver qué materiales atrae y cómo cambia la atracción con la distancia, y usarlo para explicar por qué se retiran los objetos de hierro antes de una resonancia magnética y por qué un anuncio no es evidencia.",
+     "materiales": [
+      "Por grupo de 4: un clavo de hierro de 10 cm, 3 m de alambre de cobre esmaltado o forrado delgado (calibre 22 a 24) y un trozo de lija para pelar 2 cm de cada punta",
+      "Por grupo: 2 pilas tamaño D en un portapilas (o unidas con cinta) y una pila D de repuesto",
+      "Por grupo: una caja con 20 clips de acero iguales y objetos de prueba: una moneda de 25 centavos, papel aluminio, una tapita de acero de botella, un trozo de plástico y un borrador",
+      "Por grupo: una regla de 30 cm, una brújula y cinta adhesiva",
+      "Una copia por grupo del texto de un anuncio de pulsera magnética que prepara la docente",
+      "Cuaderno con la tabla: número de vueltas, número de pilas, clips levantados en tres intentos y promedio"
+     ],
+     "procedimiento": [
+      "1. (5 min) La docente lee las indicaciones de un hospital antes de una resonancia (retirar llaves, horquillas, relojes) y pregunta: ¿qué le haría un electroimán muy potente a un objeto de hierro?",
+      "2. (8 min) Enrollen 20 vueltas apretadas del alambre sobre el clavo, siempre en el mismo sentido, dejando 30 cm libres en cada punta, y lijen 2 cm de cada extremo. Conecten las puntas a una sola pila D solo mientras prueban (unos 5 segundos).",
+      "3. (7 min) Prueba de materiales: acerquen el electroimán encendido a cada objeto de prueba y anoten cuáles son atraídos. Repitan con el electroimán desconectado.",
+      "4. (15 min) Intensidad: cuenten cuántos clips levanta la punta del clavo con 20 vueltas y 1 pila; luego enrollen otras 20 vueltas encima de las primeras y en el mismo sentido, y prueben con 40 vueltas y 1 pila, y con 40 vueltas y 2 pilas en serie. Tres intentos en cada caso; esperen medio minuto entre intentos y desconecten si el alambre se siente tibio.",
+      "5. (6 min) Distancia: con 40 vueltas y 2 pilas, acerquen el electroimán a un clip suelto sobre la regla, desde 15 cm, y anoten a qué distancia el clip salta hacia el clavo. Coloquen la brújula a 10 cm y vean si la aguja gira al conectar y desconectar.",
+      "6. (8 min) Lean el anuncio de la pulsera y separen en dos columnas las promesas y la evidencia que presenta. Desconecten las pilas.",
+      "7. (6 min) Respondan en grupo las tres primeras preguntas de análisis con su tabla y guarden el material."
+     ],
+     "seguridad": [
+      "Solo se usan pilas; nunca se conecta el alambre a un tomacorriente ni a un cargador.",
+      "El alambre y la pila se calientan porque el circuito casi no tiene resistencia: conectar solo unos 5 segundos cada vez y desconectar si se siente tibio.",
+      "La punta del clavo y las puntas del alambre pinchan: manipularlos con cuidado y no apuntarlos a la cara.",
+      "Al terminar, las pilas gastadas se entregan a la docente para su desecho; no se tiran a la basura común."
+     ],
+     "datos_esperados": "Solo el clip, la tapita de acero y el clavo responden; la moneda, el aluminio, el plástico y el borrador no son atraídos. Desconectado, el clavo casi no atrae (a veces retiene un clip por un momento). Con 20 vueltas y 1 pila se levantan pocos clips (unos 1 a 5); con 40 vueltas suelen ser más, y con 2 pilas, más aún, aunque no en proporción exacta y con variaciones entre intentos porque la pila se agota. El clip salta solo cuando el clavo está a pocos centímetros: la atracción crece rápido al acercarse. La brújula a 10 cm gira al conectar.",
+     "analisis": [
+      "¿Qué materiales atrajo el electroimán y cuáles no? ¿Por qué el hospital pide retirar llaves y horquillas, pero no tiene el mismo problema con objetos de plástico?",
+      "¿Qué cambió al duplicar las vueltas y al usar 2 pilas? ¿Qué harían para obtener un campo mucho más intenso, como el de un equipo de resonancia?",
+      "El clip saltó solo al estar cerca. ¿Por qué un objeto de hierro puede estar tranquilo en la puerta de la sala de resonancia y salir disparado al acercarse al equipo?",
+      "Tarea: ¿qué evidencia presenta el anuncio de la pulsera? ¿Qué tipo de estudio haría falta para saber si funciona? Busquen en una fuente médica confiable si existen estudios revisados por pares y citen la fuente. Si no tienen internet, usen el libro de texto o la ficha impresa que deja la docente."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin pila D, sirven 2 pilas AA en un portapilas (los clips levantados serán menos). Sin alambre esmaltado, sirve cable telefónico delgado con forro de plástico, sin pelar más que las puntas.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U7-7.3)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/campo-magnetico",
+     "nombre": "Campo magnético y magnetismo terrestre",
+     "definicion": "Región de influencia de un imán representada con líneas de campo; la Tierra tiene un campo que orienta la brújula.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.3",
+     "grado": 9,
+     "indicador": "7.3. Indaga aplicaciones magnéticas a partir del diagnóstico y los tratamientos médicos y explica los fenómenos magnéticos involucrados entre el equipo de uso médico y el cuerpo humano.",
+     "evidencia": "Ficha de aplicaciones médicas con fuentes revisadas y crítica de un anuncio Explicación de los fenómenos magnéticos en equipos médicos"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U7-7.3/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.3/1",
+     "decision": "corregir",
+     "justificacion": "Diseño correcto: con los 3 m siempre en el circuito, la corriente no cambia de 20 a 40 vueltas y el campo se duplica; la moneda de cuproníquel y el aluminio no son atraídos. Fallas: no se decía que las vueltas nuevas van en el mismo sentido (al revés restan), nueve intentos con un minuto de espera no caben en 12 min y tres preguntas no tenían tiempo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.3",
+       "cita": "La malla pide explicar en términos sencillos el electroimán.",
+       "cita_literal": "Reconoce aplicaciones magnéticas en el diagnóstico y el tratamiento médico, como la resonancia magnética y explica en términos sencillos el electroimán, la inducción y la resonancia magnética."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El campo de un solenoide es proporcional a N·I; vueltas en sentido contrario restan su campo."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "procedimiento": [
+       "1. (5 min) La docente lee las indicaciones de un hospital antes de una resonancia (retirar llaves, horquillas, relojes) y pregunta: ¿qué le haría un electroimán muy potente a un objeto de hierro?",
+       "2. (8 min) Enrollen 20 vueltas apretadas del alambre sobre el clavo, siempre en el mismo sentido, dejando 30 cm libres en cada punta, y lijen 2 cm de cada extremo. Conecten las puntas a una sola pila D solo mientras prueban (unos 5 segundos).",
+       "3. (7 min) Prueba de materiales: acerquen el electroimán encendido a cada objeto de prueba y anoten cuáles son atraídos. Repitan con el electroimán desconectado.",
+       "4. (15 min) Intensidad: cuenten cuántos clips levanta la punta del clavo con 20 vueltas y 1 pila; luego enrollen otras 20 vueltas encima de las primeras y en el mismo sentido, y prueben con 40 vueltas y 1 pila, y con 40 vueltas y 2 pilas en serie. Tres intentos en cada caso; esperen medio minuto entre intentos y desconecten si el alambre se siente tibio.",
+       "5. (6 min) Distancia: con 40 vueltas y 2 pilas, acerquen el electroimán a un clip suelto sobre la regla, desde 15 cm, y anoten a qué distancia el clip salta hacia el clavo. Coloquen la brújula a 10 cm y vean si la aguja gira al conectar y desconectar.",
+       "6. (8 min) Lean el anuncio de la pulsera y separen en dos columnas las promesas y la evidencia que presenta. Desconecten las pilas.",
+       "7. (6 min) Respondan en grupo las tres primeras preguntas de análisis con su tabla y guarden el material."
+      ],
+      "duracion_min": 55
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.3/1",
+     "decision": "corregir",
+     "cambios": {
+      "analisis": [
+       "¿Qué materiales atrajo el electroimán y cuáles no? ¿Por qué el hospital pide retirar llaves y horquillas, pero no tiene el mismo problema con objetos de plástico?",
+       "¿Qué cambió al duplicar las vueltas y al usar 2 pilas? ¿Qué harían para obtener un campo mucho más intenso, como el de un equipo de resonancia?",
+       "El clip saltó solo al estar cerca. ¿Por qué un objeto de hierro puede estar tranquilo en la puerta de la sala de resonancia y salir disparado al acercarse al equipo?",
+       "Tarea: ¿qué evidencia presenta el anuncio de la pulsera? ¿Qué tipo de estudio haría falta para saber si funciona? Busquen en una fuente médica confiable si existen estudios revisados por pares y citen la fuente. Si no tienen internet, usen el libro de texto o la ficha impresa que deja la docente."
+      ]
+     },
+     "justificacion": "Pasos que suman 55 min, preguntas con tiempo, seguridad clara sobre el calentamiento en cortocircuito y bobinas en el mismo sentido como fijó el experto. Solo inclusión: la tarea de buscar estudios revisados por pares presupone internet; se agrega la alternativa impresa.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "Buscar fuentes médicas confiables requiere conexión; sin alternativa, la tarea excluye a quien no la tiene"
+      },
+      {
+       "fuente": "prompts/redactar_actividades.md (revisión del panel)",
+       "cita": "Análisis con tiempo: cada pregunta en un paso con minutos o con «Tarea:»"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.3",
+       "cita": "7.3. Indaga aplicaciones magnéticas a partir del diagnóstico y los tratamientos médicos y explica los fenómenos magnéticos involucrados entre el equipo de uso médico y el cuerpo humano."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U7-7.6/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U7-7.6/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.6"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.6",
+      "CON:fisica/fuerza-sobre-corrientes-motor"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "El columpio de aluminio: hacia dónde empuja el imán a una corriente y por qué gira un motor",
+     "proposito": "Observar que un conductor con corriente dentro de un campo magnético recibe una fuerza, averiguar cómo cambia su sentido al invertir la corriente o el imán, y usar esos resultados para dibujar el esquema de fuerzas sobre la bobina de un motor de corriente directa y predecir su sentido de giro.",
+     "materiales": [
+      "Por grupo de 4: 1 pila tamaño D en un portapilas, con 2 cables con pinzas de cocodrilo",
+      "Por grupo: 3 tiras de papel aluminio de 1 cm × 30 cm (una para usar y dos de repuesto) y dos pilas de libros de la misma altura, de unos 10 cm",
+      "Por grupo: 3 imanes cerámicos de disco apilados, o un imán de neodimio que entrega y recoge la docente",
+      "Por grupo: una brújula para identificar la cara norte del imán y un marcador para rotularla",
+      "Hoja con dos esquemas impresos: el columpio visto desde arriba y una bobina rectangular entre dos imanes, para dibujar flechas de corriente, campo y fuerza",
+      "Si hay: el motor de pila e imán construido en el tema anterior"
+     ],
+     "procedimiento": [
+      "1. (5 min) La docente muestra un video corto o una imagen impresa de un bus o tren eléctrico y pregunta: ¿qué hace girar sus ruedas si no queman combustible?",
+      "2. (4 min) Identifiquen la cara norte del imán: con la brújula a unos 10 cm, para no imantar su aguja al revés, la punta norte de la brújula apunta hacia la cara sur del imán. Rotulen la cara norte con el marcador.",
+      "3. (8 min) Coloquen las pilas de libros a 20 cm una de otra y dejen la tira de aluminio colgando floja entre ellas, con los extremos sujetos bajo los libros. Pongan el imán debajo del centro de la tira, con la cara norte arriba, a 1 o 2 cm de ella. Sujeten una pinza a cada extremo de la tira.",
+      "4. (15 min) Antes de cada ensayo, escriban su predicción. Conecten la pila solo 2 segundos y anoten hacia dónde se mueve la tira: (a) como está; (b) volteando la pila; (c) volteando el imán; (d) volteando los dos; (e) sin conectar la pila; (f) quitando el imán. Esperen medio minuto entre ensayos.",
+      "5. (10 min) En la hoja, dibujen flechas de corriente, campo y fuerza para cada ensayo. Luego, en la bobina rectangular, dibujen la corriente en cada lado (en sentidos opuestos) y la fuerza que recibe cada lado, y marquen hacia dónde girará.",
+      "6. (7 min) Predigan qué pasará con el giro del motor si se invierte la pila. Si tienen el motor de pila e imán del tema anterior, compruébenlo. Desconecten todo.",
+      "7. (6 min) Respondan en grupo las tres primeras preguntas de análisis con sus esquemas y guarden el material."
+     ],
+     "seguridad": [
+      "Solo se usan pilas; nunca se conecta nada a un tomacorriente ni a un cargador.",
+      "La tira de aluminio deja pasar mucha corriente y se calienta: conectar solo 2 segundos y no tocar la tira mientras está conectada.",
+      "Si se usa un imán de neodimio, lo manipula la docente: pellizca los dedos y se quiebra si choca con otro imán o con metal; mantenerlo lejos de teléfonos y tarjetas, y de cualquier persona con marcapasos.",
+      "Las pilas gastadas se entregan a la docente para su desecho."
+     ],
+     "datos_esperados": "Con la pila conectada, la tira se mueve de lado, unos milímetros o más (más con un imán de neodimio), y no hacia el imán. Invertir la pila o el imán invierte el sentido del movimiento; invertir los dos lo deja como al inicio. Sin corriente o sin imán, la tira no se mueve. En el esquema de la bobina, los dos lados reciben fuerzas opuestas que forman un par.",
+     "analisis": [
+      "¿Qué ensayos muestran que se necesitan a la vez la corriente y el campo para que aparezca la fuerza?",
+      "¿Por qué la tira no se movió hacia el imán, como haría un clip de hierro?",
+      "Con su esquema, expliquen por qué la bobina gira y qué tendría que hacer el conmutador cuando la bobina pasa la posición vertical.",
+      "Tarea: ¿cómo cambia el sentido de giro de un tren eléctrico para retroceder? Relaciónenlo con los ensayos (b) y (c)."
+     ],
+     "duracion_min": 55,
+     "variantes": "Sin papel aluminio: un trozo de 15 cm de alambre de cobre sin forro colgado de dos clips, como un columpio, se mueve igual (necesita un imán más fuerte). Para repasar en casa, la simulación «Motor eléctrico» de Walter Fendt (HTML5, gratuita) muestra la bobina, el conmutador, el sentido de la corriente y las fuerzas sobre cada lado, y permite invertir la corriente; la docente la revisa antes de recomendarla. Para usar el simulador que nombra la malla, «Laboratorio electromagnético de Faraday» de PhET: no tiene un motor, pero su pantalla del electroimán muestra que al invertir la pila se invierten los polos de la bobina y la brújula gira al revés, lo que apoya la explicación del motor con la bobina como electroimán.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U7-7.6)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+     "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+     "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.6",
+     "grado": 9,
+     "indicador": "7.5. Explica el funcionamiento del motor de corriente eléctrica a partir de campos magnéticos.",
+     "evidencia": "Explicación del motor con esquema de fuerzas"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U7-7.6/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.6/1",
+     "decision": "corregir",
+     "justificacion": "Física correcta: con unos 5 A en la tira y unos 0.05 T, F = BIL ≈ 6 mN, varias veces el peso de la tira (unos 1.3 mN), y el movimiento es lateral. Ajustes: tres preguntas de análisis sin tiempo; un imán fuerte puede invertir la aguja de la brújula si se acerca mucho; y el simulador que pide la malla no muestra un motor, lo que debe decirse.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.6",
+       "cita": "La malla pide comprobar predicciones en un simulador de PhET.",
+       "cita_literal": "Comprobar predicciones en el simulador «Laboratorio electromagnético de Faraday» (PhET)."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Tira de aluminio de 1 cm × 30 cm × 16 μm: unos 0.13 g; R ≈ 0.05 Ω, la corriente la limita la pila (varios amperes)."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "procedimiento": [
+       "1. (5 min) La docente muestra un video corto de un bus o tren eléctrico y pregunta: ¿qué hace girar sus ruedas si no queman combustible?",
+       "2. (4 min) Identifiquen la cara norte del imán: con la brújula a unos 10 cm, para no imantar su aguja al revés, la punta norte de la brújula apunta hacia la cara sur del imán. Rotulen la cara norte con el marcador.",
+       "3. (8 min) Coloquen las pilas de libros a 20 cm una de otra y dejen la tira de aluminio colgando floja entre ellas, con los extremos sujetos bajo los libros. Pongan el imán debajo del centro de la tira, con la cara norte arriba, a 1 o 2 cm de ella. Sujeten una pinza a cada extremo de la tira.",
+       "4. (15 min) Antes de cada ensayo, escriban su predicción. Conecten la pila solo 2 segundos y anoten hacia dónde se mueve la tira: (a) como está; (b) volteando la pila; (c) volteando el imán; (d) volteando los dos; (e) sin conectar la pila; (f) quitando el imán. Esperen medio minuto entre ensayos.",
+       "5. (10 min) En la hoja, dibujen flechas de corriente, campo y fuerza para cada ensayo. Luego, en la bobina rectangular, dibujen la corriente en cada lado (en sentidos opuestos) y la fuerza que recibe cada lado, y marquen hacia dónde girará.",
+       "6. (7 min) Predigan qué pasará con el giro del motor si se invierte la pila. Si tienen el motor de pila e imán del tema anterior, compruébenlo. Desconecten todo.",
+       "7. (6 min) Respondan en grupo las tres primeras preguntas de análisis con sus esquemas y guarden el material."
+      ],
+      "variantes": "Sin papel aluminio: un trozo de 15 cm de alambre de cobre sin forro colgado de dos clips, como un columpio, se mueve igual (necesita un imán más fuerte). Para repasar en casa, la simulación «Motor eléctrico» de Walter Fendt (HTML5, gratuita) muestra la bobina, el conmutador, el sentido de la corriente y las fuerzas sobre cada lado, y permite invertir la corriente; la docente la revisa antes de recomendarla. Para usar el simulador que nombra la malla, «Laboratorio electromagnético de Faraday» de PhET: no tiene un motor, pero su pantalla del electroimán muestra que al invertir la pila se invierten los polos de la bobina y la brújula gira al revés, lo que apoya la explicación del motor con la bobina como electroimán.",
+      "duracion_min": 55
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.6/1",
+     "decision": "corregir",
+     "cambios": {
+      "procedimiento": [
+       "1. (5 min) La docente muestra un video corto o una imagen impresa de un bus o tren eléctrico y pregunta: ¿qué hace girar sus ruedas si no queman combustible?",
+       "2. (4 min) Identifiquen la cara norte del imán: con la brújula a unos 10 cm, para no imantar su aguja al revés, la punta norte de la brújula apunta hacia la cara sur del imán. Rotulen la cara norte con el marcador.",
+       "3. (8 min) Coloquen las pilas de libros a 20 cm una de otra y dejen la tira de aluminio colgando floja entre ellas, con los extremos sujetos bajo los libros. Pongan el imán debajo del centro de la tira, con la cara norte arriba, a 1 o 2 cm de ella. Sujeten una pinza a cada extremo de la tira.",
+       "4. (15 min) Antes de cada ensayo, escriban su predicción. Conecten la pila solo 2 segundos y anoten hacia dónde se mueve la tira: (a) como está; (b) volteando la pila; (c) volteando el imán; (d) volteando los dos; (e) sin conectar la pila; (f) quitando el imán. Esperen medio minuto entre ensayos.",
+       "5. (10 min) En la hoja, dibujen flechas de corriente, campo y fuerza para cada ensayo. Luego, en la bobina rectangular, dibujen la corriente en cada lado (en sentidos opuestos) y la fuerza que recibe cada lado, y marquen hacia dónde girará.",
+       "6. (7 min) Predigan qué pasará con el giro del motor si se invierte la pila. Si tienen el motor de pila e imán del tema anterior, compruébenlo. Desconecten todo.",
+       "7. (6 min) Respondan en grupo las tres primeras preguntas de análisis con sus esquemas y guarden el material."
+      ],
+      "seguridad": [
+       "Solo se usan pilas; nunca se conecta nada a un tomacorriente ni a un cargador.",
+       "La tira de aluminio deja pasar mucha corriente y se calienta: conectar solo 2 segundos y no tocar la tira mientras está conectada.",
+       "Si se usa un imán de neodimio, lo manipula la docente: pellizca los dedos y se quiebra si choca con otro imán o con metal; mantenerlo lejos de teléfonos y tarjetas, y de cualquier persona con marcapasos.",
+       "Las pilas gastadas se entregan a la docente para su desecho."
+      ]
+     },
+     "justificacion": "Tiempos exactos (55 min) y preguntas con tiempo o tarea. Dos ajustes de forma: el inicio presupone proyector o internet, así que se admite una imagen impresa; y con el imán de neodimio opcional se agrega la advertencia de marcapasos. La física no cambia.",
+     "evidencia": [
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "El arranque de la clase no debe depender de un recurso que muchas aulas no tienen"
+      },
+      {
+       "fuente": "criterio de seguridad",
+       "cita": "Los imanes de neodimio pueden alterar marcapasos; la advertencia debe estar donde se usan"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.6",
+       "cita": "7.5. Explica el funcionamiento del motor de corriente eléctrica a partir de campos magnéticos."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "EXP:G09-CIE-U7-7.7/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "EXP:G09-CIE-U7-7.7/1",
+     "tipo": "experimento",
+     "objetivos": [
+      "TEMA:G09-CIE-U7-7.7"
+     ],
+     "evalua": [
+      "TEMA:G09-CIE-U7-7.7",
+      "CON:fisica/fuerza-sobre-corrientes-motor"
+     ],
+     "grados": [
+      9
+     ],
+     "titulo": "¿Cuánta energía de la pila sube una carga? La eficiencia de un motor de juguete y el cuadro comparativo",
+     "proposito": "Medir la eficiencia de un motor eléctrico pequeño comparando la energía útil que entrega al subir una carga con la energía eléctrica que recibe de las pilas, y usar esa experiencia para construir con datos de fuentes confiables un cuadro comparativo entre el motor eléctrico y el de combustión interna.",
+     "materiales": [
+      "Por grupo de 4: un motorreductor de 3 a 6 V con caja de engranes (el amarillo que se vende para carritos de robótica) o el motor con engranes de un juguete en desuso, con sus cables, y un portapilas con 2 pilas AA nuevas. Un motor sin engranes gira tan rápido que la bolsita sube en cerca de 1 segundo y no da tiempo de leer los medidores.",
+      "Por grupo: un multímetro (escala de 20 V para voltaje y de 10 A para corriente); si solo hay uno por cada dos grupos, se mide la corriente y el voltaje en subidas distintas",
+      "Por grupo: 1.5 m de hilo de coser grueso, cinta adhesiva, una bolsita plástica con monedas o arena hasta unos 50 g y una balanza (de cocina o del laboratorio) para pesarla",
+      "Por grupo: un metro o cinta métrica, un teléfono con cronómetro y una mesa de unos 70 cm de alto",
+      "Por grupo: calculadora y la hoja con E útil = m × g × h (g de la tabla de referencia, aproximado: 9.8 m/s²), E eléctrica = V × I × t y eficiencia = E útil ÷ E eléctrica × 100",
+      "Para la sesión 2: fichas de datos que la docente prepara a partir de fuentes oficiales o científicas (eficiencia, emisiones y costos de los dos tipos de motor y fuentes de generación eléctrica del país), con la fuente citada, y dos anuncios de carros para contrastar"
+     ],
+     "procedimiento": [
+      "1. (5 min) Sesión 1. Pregunta inicial: de toda la energía que entregan las pilas, ¿qué parte termina subiendo una carga? Cada grupo escribe una predicción en porcentaje.",
+      "2. (10 min) Pesen la bolsita y anoten la masa en kg. Sujeten el motor con cinta al borde de la mesa con el eje hacia afuera, peguen un extremo del hilo al eje de salida (o al centro de la rueda) con un poco de cinta y amarren la bolsita al otro extremo, que quede en el piso. Midan la altura de subida h (del piso al borde, unos 0.70 m).",
+      "3. (8 min) Conecten el multímetro en serie para la corriente (escala de 10 A) y otro, si hay, entre los bornes del motor para el voltaje (escala de 20 V). Prueben una subida; si el motor se detiene, quiten monedas.",
+      "4. (15 min) Hagan tres subidas: midan el tiempo t desde que la bolsita deja el piso hasta que llega al borde (con el motorreductor, unos 5 a 15 s), y lean el voltaje y la corriente a mitad de la subida. Desconecten antes de que la bolsita toque el motor.",
+      "5. (10 min) Calculen para cada subida la energía útil, la energía eléctrica y la eficiencia, y el promedio. Toquen la carcasa del motor y anoten si está tibia.",
+      "6. (7 min) Comparen con su predicción, respondan en grupo las dos primeras preguntas de análisis y guarden el material.",
+      "7. (20 min) Sesión 2. Con las fichas de datos, completen un cuadro comparativo: eficiencia, energía disipada como calor, emisiones y costos de cada motor; marquen de qué fuente sale cada dato y si es fuente científica, oficial o publicidad. Respondan la tercera pregunta de análisis.",
+      "8. (15 min) Lean los dos anuncios y separen opiniones de datos.",
+      "9. (20 min) Escriban un argumento de un párrafo sobre qué motor conviene al transporte de El Salvador según cómo se genera la electricidad del país, y compártanlo con otro grupo. Las preguntas de análisis que no alcancen quedan de tarea."
+     ],
+     "seguridad": [
+      "Solo se usan pilas; nunca se conecta el motor a un tomacorriente ni a un cargador.",
+      "El multímetro en escala de corriente va siempre en serie; si se conecta directo a la pila, se puede dañar.",
+      "Recoger el cabello y mantener los dedos lejos del eje y de los engranes mientras giran; no frenar el eje con la mano.",
+      "Si el motor se traba, desconectarlo enseguida: trabado se calienta. Mantener los pies lejos de la bolsita que cuelga."
+     ],
+     "datos_esperados": "Con unos 50 g subidos 0.70 m, la energía útil es de unas pocas décimas de joule (0.05 × 9.8 × 0.70 ≈ 0.34 J). Un motorreductor de juguete suele tomar de 0.1 a 0.5 A con unos 2.5 a 3 V y tarda de 5 a 15 s en subir la bolsita, es decir, varios joules de energía eléctrica, así que la eficiencia sale de pocas unidades por ciento y rara vez supera el 20 %. Los motores eléctricos grandes de buses y carros son mucho más eficientes: un motor de juguete pierde, en proporción, mucha más energía en la fricción de sus engranes y ejes y en el calentamiento de su bobina. Las fichas de fuentes confiables muestran que los motores eléctricos de vehículos aprovechan una fracción mucho mayor que los de combustión; la docente verifica las cifras con la fuente citada.",
+     "analisis": [
+      "¿Qué porcentaje de la energía eléctrica se convirtió en energía útil? ¿A dónde se fue el resto? Usen lo que sintieron al tocar el motor.",
+      "¿Por qué no se puede usar la eficiencia de su motor de juguete para juzgar la de un bus eléctrico?",
+      "En su cuadro, ¿qué dato cambia más la conclusión según si la electricidad del país viene de fuentes renovables o de quemar petróleo?",
+      "Tarea: ¿qué afirmaciones de los anuncios no traían datos ni fuente? Reescriban una con un dato verificable."
+     ],
+     "duracion_min": 110,
+     "variantes": "Sin multímetro: midan solo la energía útil y el tiempo, y calculen la potencia útil (E útil ÷ t) con 1, 2 y 3 bolsitas, y discutan qué dato les falta para calcular la eficiencia. Si solo hay un motor sin engranes (por ejemplo, el de un ventilador de pilas), graben en video la subida junto a la pantalla del multímetro y lean el tiempo, el voltaje y la corriente al reproducirlo. Sin balanza: llenen la bolsita con 50 mL de agua medidos con una jeringa o una taza medidora (tienen una masa aproximada de 50 g) y ciérrenla bien.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "origen": "redactor-actividades (G09-CIE-U7-7.7)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/fuerza-sobre-corrientes-motor",
+     "nombre": "Fuerza magnética sobre corrientes y motor eléctrico",
+     "definicion": "Un conductor con corriente en un campo magnético experimenta fuerza; el par sobre una espira hace girar los motores.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G09-CIE-U7-7.7",
+     "grado": 9,
+     "indicador": "7.6. Compara las tecnologías del motor eléctrico y del motor de combustión interna.",
+     "evidencia": "Cuadro comparativo con argumentación"
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:EXP:G09-CIE-U7-7.7/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "titulo",
+    "proposito",
+    "materiales",
+    "procedimiento",
+    "seguridad",
+    "datos_esperados",
+    "analisis",
+    "duracion_min",
+    "variantes"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.7/1",
+     "decision": "corregir",
+     "justificacion": "E útil correcta (≈ 0.34 J). Pero un motor sin engranes con el hilo en un eje de 2 mm gira a unas 100 vueltas/s: sube la bolsita en cerca de 1 s, no deja leer los medidores a mitad de la subida y su eficiencia rondaría 20 %, no «pocas unidades». Se pide un motorreductor (5 a 15 s, unos 5 %) y tiempo a las preguntas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.7",
+       "cita": "La malla pide comparar datos de eficiencia de ambos motores.",
+       "cita_literal": "Busca datos de eficiencia, emisiones y costos en fuentes científicas y en publicidad, y compara su confiabilidad."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Motor tipo 130 a 3 V con 0.5 mN·m: unas 7 000 rpm; v = π × 2 mm × 117 s⁻¹ ≈ 0.7 m/s. Motorreductor: 2.8 V × 0.2 A × 10 s ≈ 5.6 J; 0.34/5.6 ≈ 6 %."
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "materiales": [
+       "Por grupo de 4: un motorreductor de 3 a 6 V con caja de engranes (el amarillo que se vende para carritos de robótica) o el motor con engranes de un juguete en desuso, con sus cables, y un portapilas con 2 pilas AA nuevas. Un motor sin engranes gira tan rápido que la bolsita sube en cerca de 1 segundo y no da tiempo de leer los medidores.",
+       "Por grupo: un multímetro (escala de 20 V para voltaje y de 10 A para corriente); si solo hay uno por cada dos grupos, se mide la corriente y el voltaje en subidas distintas",
+       "Por grupo: 1.5 m de hilo de coser grueso, cinta adhesiva, una bolsita plástica con monedas o arena hasta unos 50 g y una balanza (de cocina o del laboratorio) para pesarla",
+       "Por grupo: un metro o cinta métrica, un teléfono con cronómetro y una mesa de unos 70 cm de alto",
+       "Por grupo: calculadora y la hoja con E útil = m × g × h (g = 9.8 m/s²), E eléctrica = V × I × t y eficiencia = E útil ÷ E eléctrica × 100",
+       "Para la sesión 2: fichas de datos que la docente prepara a partir de fuentes oficiales o científicas (eficiencia, emisiones y costos de los dos tipos de motor y fuentes de generación eléctrica del país), con la fuente citada, y dos anuncios de carros para contrastar"
+      ],
+      "procedimiento": [
+       "1. (5 min) Sesión 1. Pregunta inicial: de toda la energía que entregan las pilas, ¿qué parte termina subiendo una carga? Cada grupo escribe una predicción en porcentaje.",
+       "2. (10 min) Pesen la bolsita y anoten la masa en kg. Sujeten el motor con cinta al borde de la mesa con el eje hacia afuera, peguen un extremo del hilo al eje de salida (o al centro de la rueda) con un poco de cinta y amarren la bolsita al otro extremo, que quede en el piso. Midan la altura de subida h (del piso al borde, unos 0.70 m).",
+       "3. (8 min) Conecten el multímetro en serie para la corriente (escala de 10 A) y otro, si hay, entre los bornes del motor para el voltaje (escala de 20 V). Prueben una subida; si el motor se detiene, quiten monedas.",
+       "4. (15 min) Hagan tres subidas: midan el tiempo t desde que la bolsita deja el piso hasta que llega al borde (con el motorreductor, unos 5 a 15 s), y lean el voltaje y la corriente a mitad de la subida. Desconecten antes de que la bolsita toque el motor.",
+       "5. (10 min) Calculen para cada subida la energía útil, la energía eléctrica y la eficiencia, y el promedio. Toquen la carcasa del motor y anoten si está tibia.",
+       "6. (7 min) Comparen con su predicción, respondan en grupo las dos primeras preguntas de análisis y guarden el material.",
+       "7. (20 min) Sesión 2. Con las fichas de datos, completen un cuadro comparativo: eficiencia, energía disipada como calor, emisiones y costos de cada motor; marquen de qué fuente sale cada dato y si es fuente científica, oficial o publicidad. Respondan la tercera pregunta de análisis.",
+       "8. (15 min) Lean los dos anuncios y separen opiniones de datos.",
+       "9. (20 min) Escriban un argumento de un párrafo sobre qué motor conviene al transporte de El Salvador según cómo se genera la electricidad del país, y compártanlo con otro grupo. Las preguntas de análisis que no alcancen quedan de tarea."
+      ],
+      "seguridad": [
+       "Solo se usan pilas; nunca se conecta el motor a un tomacorriente ni a un cargador.",
+       "El multímetro en escala de corriente va siempre en serie; si se conecta directo a la pila, se puede dañar.",
+       "Recoger el cabello y mantener los dedos lejos del eje y de los engranes mientras giran; no frenar el eje con la mano.",
+       "Si el motor se traba, desconectarlo enseguida: trabado se calienta. Mantener los pies lejos de la bolsita que cuelga."
+      ],
+      "datos_esperados": "Con unos 50 g subidos 0.70 m, la energía útil es de unas pocas décimas de joule (0.05 × 9.8 × 0.70 ≈ 0.34 J). Un motorreductor de juguete suele tomar de 0.1 a 0.5 A con unos 2.5 a 3 V y tarda de 5 a 15 s en subir la bolsita, es decir, varios joules de energía eléctrica, así que la eficiencia sale de pocas unidades por ciento y rara vez supera el 20 %. Los motores eléctricos grandes de buses y carros son mucho más eficientes: un motor de juguete pierde, en proporción, mucha más energía en la fricción de sus engranes y ejes y en el calentamiento de su bobina. Las fichas de fuentes confiables muestran que los motores eléctricos de vehículos aprovechan una fracción mucho mayor que los de combustión; la docente verifica las cifras con la fuente citada.",
+      "variantes": "Sin multímetro: midan solo la energía útil y el tiempo, y calculen la potencia útil (E útil ÷ t) con 1, 2 y 3 bolsitas, y discutan qué dato les falta para calcular la eficiencia. Si solo hay un motor sin engranes (por ejemplo, el de un ventilador de pilas), graben en video la subida junto a la pantalla del multímetro y lean el tiempo, el voltaje y la corriente al reproducirlo.",
+      "duracion_min": 110
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-14"
+    },
+    {
+     "id": "PED:EXP:G09-CIE-U7-7.7/1",
+     "decision": "corregir",
+     "cambios": {
+      "materiales": [
+       "Por grupo de 4: un motorreductor de 3 a 6 V con caja de engranes (el amarillo que se vende para carritos de robótica) o el motor con engranes de un juguete en desuso, con sus cables, y un portapilas con 2 pilas AA nuevas. Un motor sin engranes gira tan rápido que la bolsita sube en cerca de 1 segundo y no da tiempo de leer los medidores.",
+       "Por grupo: un multímetro (escala de 20 V para voltaje y de 10 A para corriente); si solo hay uno por cada dos grupos, se mide la corriente y el voltaje en subidas distintas",
+       "Por grupo: 1.5 m de hilo de coser grueso, cinta adhesiva, una bolsita plástica con monedas o arena hasta unos 50 g y una balanza (de cocina o del laboratorio) para pesarla",
+       "Por grupo: un metro o cinta métrica, un teléfono con cronómetro y una mesa de unos 70 cm de alto",
+       "Por grupo: calculadora y la hoja con E útil = m × g × h (g de la tabla de referencia, aproximado: 9.8 m/s²), E eléctrica = V × I × t y eficiencia = E útil ÷ E eléctrica × 100",
+       "Para la sesión 2: fichas de datos que la docente prepara a partir de fuentes oficiales o científicas (eficiencia, emisiones y costos de los dos tipos de motor y fuentes de generación eléctrica del país), con la fuente citada, y dos anuncios de carros para contrastar"
+      ],
+      "variantes": "Sin multímetro: midan solo la energía útil y el tiempo, y calculen la potencia útil (E útil ÷ t) con 1, 2 y 3 bolsitas, y discutan qué dato les falta para calcular la eficiencia. Si solo hay un motor sin engranes (por ejemplo, el de un ventilador de pilas), graben en video la subida junto a la pantalla del multímetro y lean el tiempo, el voltaje y la corriente al reproducirlo. Sin balanza: llenen la bolsita con 50 mL de agua medidos con una jeringa o una taza medidora (tienen una masa aproximada de 50 g) y ciérrenla bien."
+     },
+     "justificacion": "Sesiones de 55 min exactos, preguntas con tiempo o tarea, seguridad adecuada y motorreductor como fijó el experto; hay variante sin multímetro. Ajustes: g se rotula como valor aproximado de la tabla de referencia, y se agrega una variante sin balanza (50 mL de agua) para escuelas que no la tienen.",
+     "evidencia": [
+      {
+       "fuente": "prompts/redactar_actividades.md (revisión del panel)",
+       "cita": "Constantes: g y la densidad del agua remiten a la tabla de referencia y se rotulan aproximadas"
+      },
+      {
+       "fuente": "criterio psicopedagógico (DUA)",
+       "cita": "No presuponer una balanza; la masa se puede obtener con un volumen de agua medido"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U7-7.7",
+       "cita": "7.6. Compara las tecnologías del motor eléctrico y del motor de combustión interna."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-14"
+    }
+   ]
+  }
+ ]
+}

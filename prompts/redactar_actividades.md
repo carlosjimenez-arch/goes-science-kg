@@ -119,6 +119,8 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
   nombre en `variantes` debe mostrar de verdad lo que se pide.
 - **Datos del hogar:** una tarea que pida datos de la familia (recibos, aparatos, consumos, fotos de la casa) trae
   siempre una alternativa con datos de ejemplo, y esos datos no se comparan entre familias.
+- **Logaritmos en 9.°:** todavía no se estudian; un ítem de pH da el andamio «si [H⁺] = 1.0 × 10⁻ⁿ mol/L, el pH es
+  n» y trabaja con potencias de 10 antes de usar −log.
 - **Análisis con tiempo:** cada pregunta de `analisis` se responde en un paso del procedimiento que tiene minutos
   asignados, o empieza con «Tarea:». Los pasos de cada sesión suman exactamente su duración (55 min por sesión).
 - **Constantes:** también g, la densidad del agua y la presión atmosférica remiten a la «tabla de referencia»; si un
