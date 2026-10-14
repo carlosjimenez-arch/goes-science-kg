@@ -102,8 +102,11 @@ def _hace_falta_un_dato(texto: object) -> bool:
     return "tabla de referencia" in json.dumps(texto, ensure_ascii=False).lower()
 
 
-MAGNITUD = (r"\b(pKa\d?|pKb|pI|Ka|Kb|Kc|Kp|Kw|Kps|densidad|calor específico|presión atmosférica|"
-            r"punto isoeléctrico|constante de [a-záéíóúñ]+|masa molar|solubilidad|entalpía)\b"
+MAGNITUD = (r"\b(pKa\d?|pKb|pI|Ka|Kb|Kc|Kp|Kw|Kps|densidad|calor específico|calor latente|presión atmosférica|"
+            r"punto isoeléctrico|constante de [a-záéíóúñ]+|masa molar|solubilidad|entalpía|"
+            r"coeficientes? de (?:fricción|rozamiento)|μs?|energías? de ionización|electronegatividad(?:es)?|"
+            r"radios? atómicos?|índices? de refracción|resistividad|conductividad|punto de (?:fusión|ebullición)|"
+            r"módulo de Young|potencial(?:es)? estándar)\b"
             r"(?:\s+(?:de|del)\s+(?:la\s+|el\s+|los\s+|las\s+)?([a-záéíóúñ\-]+(?:\s+[a-záéíóúñ\-]+)?))?")
 
 

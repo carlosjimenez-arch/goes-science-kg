@@ -1,0 +1,3266 @@
+{
+ "lote": "r2-ped2_psicopedagogo_1",
+ "ronda": 2,
+ "rol": "psicopedagogo",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/psicopedagogo.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U6-6.5/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U6-6.5/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un microbús toma una curva plana (sin peralte) de 50 m de radio con el pavimento mojado. Supón que el coeficiente de fricción estática entre las llantas y ese pavimento es 0.40 (dato del problema) y usa g = 9.8 m/s². Identifica qué fuerza real mantiene al microbús en la curva y calcula la rapidez máxima, en m/s, a la que puede tomarla sin derrapar. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 14.0,
+     "tolerancia": 0.3,
+     "unidad": "m/s",
+     "retroalimentacion": "La fuerza que apunta al centro es la fricción estática lateral de las llantas, y su valor máximo es μmg. Al igualarla con mv²/r la masa se cancela: v = √(μgr) = √(0.40 · 9.8 · 50) = 14 m/s, unos 50 km/h. Más rápido, la fricción máxima ya no alcanza: las llantas derrapan y el vehículo se abre hacia el exterior de la curva.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U6-6.5/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-FIS-U6-6.5/obj-1",
+     "decision": "corregir",
+     "justificacion": "Valor y clave correctos: √(0.40·9.8·50) = 14.0 m/s (50 km/h); el μ = 0.40 está declarado como dato del problema. Solo corrijo el cierre: al superar la rapidez máxima el vehículo no sale por la tangente, porque sigue actuando la fricción cinética; derrapa y describe una trayectoria más abierta, hacia el exterior. La tangente recta es el caso sin ninguna fuerza hacia el centro.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el indicador pide calcular la rapidez máxima en curvas planas",
+       "cita_literal": "Calcula la rapidez máxima segura en curvas planas y peraltadas"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "v = √(μ g r) = √(0.40 · 9.8 · 50) = √196 = 14.0 m/s; la tolerancia 0.3 es razonable"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en el derrape la fricción cinética sigue dando una fuerza hacia el centro, menor que mv²/r: el radio de la trayectoria crece, no se vuelve una recta"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "retroalimentacion": "La fuerza que apunta al centro es la fricción estática lateral de las llantas, y su valor máximo es μmg. Al igualarla con mv²/r la masa se cancela: v = √(μgr) = √(0.40 · 9.8 · 50) = 14 m/s, unos 50 km/h. Más rápido, la fricción máxima ya no alcanza: las llantas derrapan y el vehículo se abre hacia el exterior de la curva."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U6-6.5/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U6-6.5/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de tres satélites en órbita circular alrededor de la Tierra (valores aproximados, redondeados para el ejercicio). Satélite 1 (Estación Espacial Internacional): masa 420 000 kg, altura 400 km, período 92 min. Satélite 2: masa 100 kg, altura 400 km, período 92 min. Satélite 3 (de navegación GPS): masa 2000 kg, altura 20 200 km, período 718 min. ¿Qué conclusión apoyan mejor los datos?",
+     "opciones": {
+      "A": "La masa sí influye en el período, porque el satélite 3, más pesado que el 2, tarda mucho más.",
+      "B": "El satélite 3 es el más rápido, porque en cada vuelta recorre una circunferencia mucho mayor.",
+      "C": "La masa no influye en el período, porque los satélites 1 y 2 difieren en masa y tardan igual.",
+      "D": "La gravedad casi no actúa a 400 km de altura, porque los satélites 1 y 2 flotan allí sin caer."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/aceleracion-fuerza-centripeta/4",
+      "D": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los satélites 1 y 2 están a la misma altura, sus masas difieren unas 4200 veces y tardan lo mismo: al igualar GMm/r² con mv²/r la masa del satélite se cancela, y v y T dependen solo del radio de la órbita. El satélite 3 tarda más porque su órbita es mayor, y además va más lento (unos 3.9 km/s frente a 7.7 km/s).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U6-6.5"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U6-6.5/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-FIS-U6-6.5/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Datos verosímiles y declarados como aproximados: a 400 km el período es ≈ 92 min y a 20 200 km ≈ 718 min; rapideces 7.7 y 3.9 km/s. La clave C es la única conclusión que los datos sostienen (control de la altura). A confunde masa y radio; B invierte la rapidez; D es la idea de que no hay gravedad en órbita (a 400 km g ≈ 8.7 m/s²).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el indicador pide explicar por qué v y T no dependen de la masa del satélite",
+       "cita_literal": "Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "T = 2π√(r³/GM): con r = 6771 km da 92.4 min; con r = 26 571 km, 718 min; v = 7.67 y 3.87 km/s"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "g a 400 km = 9.8·(6371/6771)² ≈ 8.7 m/s², casi el 90 % de la superficie: el distractor D es falso"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-FIS-U6-6.5/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-FIS-U6-6.5/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "TEMA:G10-FIS-U6-6.5",
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un bus toma una curva de la carretera de Los Chorros con una rapidez constante de 40 km/h. Un pasajero dice: «Como el velocímetro no cambia, el bus no acelera; lo que me empuja contra la ventana es la fuerza centrífuga». En 2 o 3 oraciones, explica qué está mal en lo que dice y qué fuerza real mantiene al bus en la curva.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Aunque la rapidez no cambie, la velocidad es tangente a la curva y cambia de dirección: hay aceleración hacia el centro, v²/r. Esa aceleración la produce una fuerza real, la fricción lateral de las llantas con el pavimento; el pasajero no es empujado hacia afuera: por inercia tiende a seguir recto y la pared del bus lo empuja hacia el centro.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-FIS-U6-6.5"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El bus sí acelera: aunque la rapidez es constante, la velocidad es tangente a la curva y cambia de dirección a cada instante, y ese cambio es una aceleración dirigida hacia el centro de la curva (v²/r). Por la segunda ley hace falta una fuerza neta hacia el centro, y la da una fuerza real: la fricción lateral entre las llantas y el pavimento (más una parte de la normal si la curva tiene peralte). Para quien mira desde la calle, ninguna fuerza empuja al pasajero hacia afuera: por inercia tiende a seguir en línea recta, y la pared del bus lo empuja hacia el centro para que también dé la curva. La «fuerza centrífuga» no la ejerce ningún cuerpo; solo aparece como fuerza ficticia si se describe el movimiento desde dentro del bus.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Afirma que el bus sí acelera porque cambia la dirección de la velocidad (tangente a la curva), aunque la rapidez sea constante.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra una fuerza real que apunta hacia el centro de la curva y la mantiene: la fricción lateral entre llantas y pavimento (o, si menciona peralte, la componente de la normal hacia el centro).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica la sensación del pasajero sin una fuerza real hacia afuera: por inercia tiende a seguir recto y la pared o el asiento lo empuja hacia el centro. También vale si aclara que la «fuerza centrífuga» solo aparece como fuerza ficticia al describir el movimiento desde dentro del bus.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Escribe la aceleración como v²/r o la fuerza como mv²/r, o relaciona la fuerza neta hacia el centro con la segunda ley.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que no hay aceleración porque la rapidez no cambia.",
+        "ejemplo": "Tiene razón en que no acelera, porque va siempre a 40 km/h; solo se equivoca en el nombre de la fuerza.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/3"
+       },
+       {
+        "descripcion": "Mantiene la fuerza centrífuga como una fuerza real que equilibra a la centrípeta.",
+        "ejemplo": "La centrípeta jala al bus hacia adentro y la centrífuga lo empuja hacia afuera; como se equilibran, el bus no se sale de la curva.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+       },
+       {
+        "descripcion": "Nombra la «fuerza centrípeta» como si fuera el agente, sin identificar la fuerza real.",
+        "ejemplo": "Lo que mantiene al bus en la curva es la fuerza centrípeta, que aparece cuando el bus gira.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-FIS-U6-6.5/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-FIS-U6-6.5/obj-abierta",
+     "decision": "corregir",
+     "justificacion": "Física correcta y errores típicos reales. Matizo la rúbrica: «no hay fuerza centrífuga», sin marco, penalizaría a quien la reconoce como fuerza ficticia dentro del bus, y la malla pide justificarlo para un observador en reposo. La respuesta modelo y el criterio c3 dicen ahora que ninguna fuerza real empuja hacia afuera y aceptan la mención de la fuerza ficticia. El resto queda igual.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la fase Reforzar pide la ausencia de la centrífuga para un observador en reposo",
+       "cita_literal": "Justifica por qué la «fuerza centrífuga» no aparece en el diagrama de cuerpo libre de un observador en reposo"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la fase Explorar plantea la misma situación del bus",
+       "cita_literal": "Formula una hipótesis sobre qué fuerza mantiene a un bus en la curva de la carretera de Los Chorros"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en un marco que gira la fuerza centrífuga es una fuerza ficticia legítima; afirmar que no existe en ningún marco es una idea que luego hay que desaprender"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "rubrica": {
+       "respuesta_modelo": "El bus sí acelera: aunque la rapidez es constante, la velocidad es tangente a la curva y cambia de dirección a cada instante, y ese cambio es una aceleración dirigida hacia el centro de la curva (v²/r). Por la segunda ley hace falta una fuerza neta hacia el centro, y la da una fuerza real: la fricción lateral entre las llantas y el pavimento (más una parte de la normal si la curva tiene peralte). Para quien mira desde la calle, ninguna fuerza empuja al pasajero hacia afuera: por inercia tiende a seguir en línea recta, y la pared del bus lo empuja hacia el centro para que también dé la curva. La «fuerza centrífuga» no la ejerce ningún cuerpo; solo aparece como fuerza ficticia si se describe el movimiento desde dentro del bus.",
+       "criterios": [
+        {
+         "id": "c1",
+         "descripcion": "Afirma que el bus sí acelera porque cambia la dirección de la velocidad (tangente a la curva), aunque la rapidez sea constante.",
+         "obligatorio": true
+        },
+        {
+         "id": "c2",
+         "descripcion": "Nombra una fuerza real que apunta hacia el centro de la curva y la mantiene: la fricción lateral entre llantas y pavimento (o, si menciona peralte, la componente de la normal hacia el centro).",
+         "obligatorio": true
+        },
+        {
+         "id": "c3",
+         "descripcion": "Explica la sensación del pasajero sin una fuerza real hacia afuera: por inercia tiende a seguir recto y la pared o el asiento lo empuja hacia el centro. También vale si aclara que la «fuerza centrífuga» solo aparece como fuerza ficticia al describir el movimiento desde dentro del bus.",
+         "obligatorio": true
+        },
+        {
+         "id": "c4",
+         "descripcion": "Escribe la aceleración como v²/r o la fuerza como mv²/r, o relaciona la fuerza neta hacia el centro con la segunda ley.",
+         "obligatorio": false
+        }
+       ],
+       "errores": [
+        {
+         "descripcion": "Acepta que no hay aceleración porque la rapidez no cambia.",
+         "ejemplo": "Tiene razón en que no acelera, porque va siempre a 40 km/h; solo se equivoca en el nombre de la fuerza.",
+         "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/3"
+        },
+        {
+         "descripcion": "Mantiene la fuerza centrífuga como una fuerza real que equilibra a la centrípeta.",
+         "ejemplo": "La centrípeta jala al bus hacia adentro y la centrífuga lo empuja hacia afuera; como se equilibran, el bus no se sale de la curva.",
+         "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+        },
+        {
+         "descripcion": "Nombra la «fuerza centrípeta» como si fuera el agente, sin identificar la fuerza real.",
+         "ejemplo": "Lo que mantiene al bus en la curva es la fuerza centrípeta, que aparece cuando el bus gira.",
+         "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+        }
+       ]
+      }
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-1",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En un video de ejemplo, el litio burbujea despacio sobre el agua, el sodio se funde en una bolita que corre por la superficie y el potasio se inflama al instante con llama lila. El rubidio está debajo del potasio en el grupo 1. ¿Cómo esperas que reaccione el rubidio con el agua y por qué?",
+     "opciones": {
+      "A": "Igual que el potasio, porque los elementos de un mismo grupo comparten sus propiedades y reaccionan igual",
+      "B": "Menos violento que el potasio, porque su núcleo tiene más protones y sujeta más fuerte su electrón externo",
+      "C": "Más violento que el potasio, porque su electrón externo está más lejos del núcleo y quitarlo cuesta menos",
+      "D": "Más violento que el potasio, porque tiene más electrones de valencia que el potasio para cederle al agua"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/tabla-periodica/1",
+      "B": "DIF:quimica/propiedades-periodicas/2",
+      "D": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El rubidio tiene una capa más que el potasio: su único electrón de valencia está más lejos del núcleo y más apantallado por las capas internas, así que su energía de ionización es menor y lo cede con más facilidad. Los protones de más no lo compensan: por eso reacciona con más violencia que el potasio.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U4-4.8/obj-1",
+     "decision": "corregir",
+     "justificacion": "Química correcta: Li, Na y K en agua descritos bien (llama lila del potasio) y clave C sostenida por distancia, apantallamiento y energía de ionización. Distractores mapeados a ideas previas reales. Solo se rotula el video como de ejemplo, como en las otras actividades con observaciones, para que no se lean como datos medidos en clase.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "La reactividad de los alcalinos con agua crece al bajar en el grupo; el potasio arde con llama lila."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "enunciado": "En un video de ejemplo, el litio burbujea despacio sobre el agua, el sodio se funde en una bolita que corre por la superficie y el potasio se inflama al instante con llama lila. El rubidio está debajo del potasio en el grupo 1. ¿Cómo esperas que reaccione el rubidio con el agua y por qué?"
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-2",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Observaciones de ejemplo, como las de un video de esta práctica: a una disolución incolora de una sal de potasio se le agrega agua con un halógeno disuelto. Agua de cloro + bromuro: se pone naranja (aparece bromo). Agua de cloro + yoduro: se pone café (aparece yodo). Agua de bromo + yoduro: se pone café (aparece yodo). Agua de bromo + cloruro: sigue naranja, como el agua de bromo sola. Agua de yodo + cloruro o bromuro: sigue café. ¿Qué orden de reactividad muestran y qué lo explica?",
+     "opciones": {
+      "A": "Br > Cl > I, porque el agua de bromo quedó naranja con el cloruro, señal de que sí reaccionó con él",
+      "B": "I > Br > Cl, porque, como en los metales alcalinos, la reactividad de un grupo aumenta hacia abajo",
+      "C": "I > Br > Cl, porque el yodo tiene más protones y su núcleo atrae con más fuerza un electrón extra",
+      "D": "Cl > Br > I, porque al bajar en el grupo baja la electronegatividad y atraen menos un electrón extra"
+     },
+     "correcta": "D",
+     "distractores": {
+      "B": "DIF:quimica/propiedades-periodicas/1",
+      "C": "DIF:quimica/propiedades-periodicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un halógeno más reactivo saca al menos reactivo de su sal: el cloro desplazó al bromo y al yodo, y el bromo solo al yodo; el agua de bromo con cloruro solo conservó su propio color. Al bajar en el grupo, el electrón que se gana queda más lejos del núcleo y más apantallado, baja la electronegatividad y el halógeno reacciona menos.",
+     "duracion_min": 8,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U4-4.8/obj-2",
+     "decision": "aprobar",
+     "justificacion": "Observaciones de desplazamiento de halógenos correctas y rotuladas como de ejemplo: el cloro desplaza a bromo y yodo, el bromo solo al yodo, y el yodo a ninguno. Clave D correcta (Cl > Br > I); B y C mapean ideas previas reales y A es una lectura errónea de los datos. Sin flúor, no aparece la anomalía de la afinidad electrónica.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.7 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 28)",
+       "cita": "La electronegatividad se trabaja en 4.7, inmediatamente antes.",
+       "cita_literal": "Explica la variación de la electronegatividad en la tabla periódica"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Bromo acuoso naranja, yodo acuoso café; un halógeno solo desplaza a los de abajo del grupo."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:G10-QUI-U4-4.8/obj-abierta",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:G10-QUI-U4-4.8/obj-abierta",
+     "tipo": "actividad",
+     "rol": "objetivo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "TEMA:G10-QUI-U4-4.8",
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "abierta",
+     "grados": [
+      10
+     ],
+     "enunciado": "Pregunta guía de la unidad: «¿Por qué el potasio reacciona violentamente con el agua mientras el magnesio apenas lo hace?». Respóndela en 2 o 3 oraciones usando la posición de cada elemento en la tabla periódica y la energía de ionización.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Reacciona más el metal al que le cuesta menos energía ceder sus electrones de valencia. El potasio cede uno solo, de la cuarta capa, lejos del núcleo y apantallado; el magnesio debe ceder dos, de la tercera capa y con más carga nuclear efectiva, y quitar el segundo cuesta aún más.",
+     "duracion_min": 5,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "malla",
+      "ref": "TEMA:G10-QUI-U4-4.8"
+     },
+     "rubrica": {
+      "respuesta_modelo": "El potasio (grupo 1, período 4) solo tiene que ceder un electrón, que está en la cuarta capa, lejos del núcleo y apantallado por tres capas internas; por eso su energía de ionización es baja y lo cede con facilidad. El magnesio (grupo 2, período 3) tiene que ceder dos electrones de la tercera capa, más cerca del núcleo y con mayor carga nuclear efectiva, y quitar el segundo cuesta todavía más energía. Como al potasio le cuesta mucho menos ceder su electrón, reacciona mucho más rápido.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona la reactividad del metal con la facilidad para ceder sus electrones de valencia, es decir, con una energía de ionización baja (menor energía de ionización, más reactivo).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la estructura por qué al potasio le cuesta menos: su electrón de valencia está en una capa más externa (más lejos del núcleo o más apantallado) que los del magnesio, o el magnesio tiene mayor carga nuclear efectiva.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Menciona que el magnesio debe ceder dos electrones y que quitar el segundo requiere todavía más energía.",
+        "obligatorio": false
+       },
+       {
+        "id": "c4",
+        "descripcion": "Ubica a los dos elementos en la tabla (grupo y período) para apoyar la explicación.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Explica con el total de electrones o de protones, no con la capa externa ni con la energía.",
+        "ejemplo": "El potasio tiene 19 electrones y el magnesio 12; como tiene más electrones, tiene más para ceder y reacciona más.",
+        "dificultad": "DIF:quimica/distribucion-electronica-por-niveles/1"
+       },
+       {
+        "descripcion": "Cree que perder el electrón libera energía porque el átomo «queda estable» con el octeto.",
+        "ejemplo": "El potasio quiere perder su electrón para quedar con ocho y ser estable, y al perderlo libera mucha energía; el magnesio no lo necesita tanto.",
+        "dificultad": "DIF:quimica/propiedades-periodicas/4"
+       },
+       {
+        "descripcion": "Describe la posición sin explicarla: no usa energía de ionización ni estructura.",
+        "ejemplo": "Porque el potasio es del grupo 1 y el magnesio del grupo 2, y los del grupo 1 son los más reactivos.",
+        "dificultad": null
+       }
+      ]
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+     "decision": "aprobar",
+     "justificacion": "Respuesta modelo correcta: el potasio cede un electrón de la cuarta capa; el magnesio, dos de la tercera con mayor carga nuclear efectiva, y el segundo cuesta más. Reacción casi nula del magnesio en agua fría es real. La rúbrica exige energía de ionización y estructura, como pide 4.8, y sus errores típicos remiten a ideas previas existentes.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+       "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+       "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El magnesio apenas reacciona con agua fría; el potasio reacciona con violencia."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una curva peraltada de una carretera está diseñada para que, a 50 km/h, un vehículo la tome sin necesitar fricción. Un día de lluvia, con el pavimento muy liso, un carro de 1000 kg y un camión de 10 000 kg la toman a 50 km/h. Tratándolos como partículas, ¿qué ocurre?",
+     "opciones": {
+      "A": "Solo el carro la toma bien, porque el camión necesita diez veces más fuerza hacia el centro.",
+      "B": "Los dos se salen hacia afuera, porque sin fricción nada aporta la fuerza hacia el centro de la curva.",
+      "C": "Los dos se salen hacia afuera, porque la fuerza centrífuga ya no tiene quién la compense en la curva.",
+      "D": "Los dos la toman bien, porque la normal inclinada da la fuerza al centro y crece con la masa."
+     },
+     "correcta": "D",
+     "distractores": {
+      "A": "DIF:fisica/aceleracion-fuerza-centripeta/4",
+      "B": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+      "C": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En el peralte la normal está inclinada y su componente horizontal apunta al centro. A la rapidez de diseño cumple N sen θ = mv²/r y N cos θ = mg, de donde tan θ = v²/(rg): la masa se cancela, así que los dos toman la curva sin necesitar fricción.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/aceleracion-fuerza-centripeta"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+     "decision": "aprobar",
+     "justificacion": "Clave D correcta: a la rapidez de diseño N sen θ = mv²/r y N cos θ = mg dan tan θ = v²/(rg), sin masa, así que ambos vehículos toman la curva sin fricción. La idealización está declarada (pavimento muy liso, partículas). A, B y C son ideas previas reales (masa, solo la fricción, centrífuga) y están mapeadas a sus dificultades. Opciones parejas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el indicador pide explicar cómo el peralte reduce la dependencia de la fricción",
+       "cita_literal": "explica cómo el ángulo de peralte reduce la dependencia de la fricción"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "rapidez de diseño v² = r g tan θ, independiente de la masa en el modelo de partícula"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo hace girar un tapón atado a un dinamómetro en un círculo horizontal de 0.50 m de radio, sobre una mesa lisa, y graba la lectura a tres rapideces (datos de un grupo de ejemplo): a 2.0 m/s, 0.21 N; a 4.0 m/s, 0.78 N; a 6.0 m/s, 1.83 N. Busca cómo cambia la tensión cuando la rapidez se duplica y estima qué tensión marcaría el dinamómetro a 8.0 m/s, con el mismo radio. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 3.2,
+     "tolerancia": 0.2,
+     "unidad": "N",
+     "retroalimentacion": "De 2.0 a 4.0 m/s la rapidez se duplica y la tensión casi se cuadruplica (0.21 → 0.78 N): la fuerza crece con v², como pide F = mv²/r. De 4.0 a 8.0 m/s se duplica otra vez, así que la tensión será unas 4 × 0.78 ≈ 3.2 N. El hilo da toda la fuerza centrípeta.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/aceleracion-fuerza-centripeta"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+     "decision": "aprobar",
+     "justificacion": "Datos coherentes con F = mv²/r para un tapón de unos 25 g: F/v² ≈ 0.052, 0.049 y 0.051 N·s²/m², con dispersión realista. La extrapolación a 8.0 m/s da entre 3.1 y 3.4 N según la fila usada, dentro de 3.2 ± 0.2 N. La tensión es la única fuerza horizontal radial (la fricción de la mesa es tangencial) y los datos están rotulados como de ejemplo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la fase Indagar pide medir la tensión con dinamómetro a tres rapideces",
+       "cita_literal": "Mide la tensión con un dinamómetro para tres rapideces de giro"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "4 × 0.78 = 3.12 N; 16 × 0.21 = 3.36 N; (64/36) × 1.83 = 3.25 N"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/aceleracion-fuerza-centripeta"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un tapón atado a un hilo gira con rapidez constante sobre una mesa horizontal muy lisa; el otro extremo del hilo está amarrado a un clavo en el centro. Si solo cuentas las fuerzas horizontales, ¿cuáles actúan sobre el tapón?",
+     "opciones": {
+      "A": "La tensión hacia el centro y otra fuerza hacia adelante, en el sentido en que avanza.",
+      "B": "Solo la tensión del hilo, que apunta hacia el clavo, en el centro del círculo.",
+      "C": "La tensión hacia el centro y una fuerza centrífuga igual que apunta hacia afuera.",
+      "D": "La tensión del hilo y además la fuerza centrípeta, las dos hacia el centro."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:fisica/segunda-ley-newton/1",
+      "C": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+      "D": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Sobre la mesa lisa, lo único horizontal que toca al tapón es el hilo: la tensión, hacia el centro, es la fuerza centrípeta. No hay fuerza hacia afuera ni hacia adelante: el tapón avanza por inercia y la tensión solo le cambia la dirección.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/aceleracion-fuerza-centripeta"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Clave B correcta: sobre una mesa muy lisa la única fuerza horizontal es la tensión, que es la centrípeta. Los distractores corresponden a tres ideas previas documentadas y bien mapeadas: fuerza en el sentido del movimiento, centrífuga real y centrípeta como fuerza adicional. La idealización (mesa muy lisa) está declarada.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la fase Aproximar usa este mismo tapón sobre mesa lisa",
+       "cita_literal": "Recuerda las leyes de Newton de 8.° y las aplica a un tapón que gira atado a un hilo sobre una mesa lisa"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "sin fricción, ΣF horizontal = T = mv²/r; no hace falta fuerza tangencial para rapidez constante"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una bicicleta está volteada y su rueda trasera gira en el aire dando 2.0 vueltas por segundo. Si se giran los pedales más rápido y la rueda pasa a dar 4.0 vueltas por segundo, ¿qué ocurre con el período de la rueda y con la rapidez de la válvula, que está en el borde?",
+     "opciones": {
+      "A": "El período se duplica y la rapidez de la válvula también se duplica.",
+      "B": "El período baja a la mitad y la rapidez de la válvula se duplica.",
+      "C": "El período se reduce a la mitad y la rapidez de la válvula no cambia.",
+      "D": "El período queda igual y la rapidez de la válvula se duplica."
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Período y frecuencia son inversos: con el doble de vueltas por segundo, cada vuelta dura la mitad (de 0.50 s a 0.25 s). La válvula recorre la misma circunferencia en la mitad del tiempo, así que v = 2πr/T se duplica.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+     "decision": "aprobar",
+     "justificacion": "Clave B correcta: f pasa de 2.0 a 4.0 Hz, T baja de 0.50 a 0.25 s y v = 2πr/T se duplica para la válvula del borde. Los distractores son confusiones reales (período con frecuencia; rapidez que solo depende del radio). No mapearlos es aceptable: no hay dificultades de esa confusión en la capa.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la habilidad TIMSS pide definir período, frecuencia y rapidez tangencial",
+       "cita_literal": "definir período, frecuencia y rapidez tangencial"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "T = 1/f; v = 2πr f: con r fijo, v es proporcional a f"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Para medir el giro de un ventilador de techo, un grupo pegó una cinta en la punta de un aspa, a 0.60 m del eje, y con un video en cámara lenta contó 30 vueltas en 20 s de tiempo real (datos de un grupo de ejemplo). Calcula el período y luego la rapidez tangencial de la cinta, en m/s. Escribe solo el número de la rapidez.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 5.65,
+     "tolerancia": 0.15,
+     "unidad": "m/s",
+     "retroalimentacion": "El período es T = 20 s / 30 ≈ 0.667 s (frecuencia 1.5 Hz). En cada vuelta la cinta recorre 2π · 0.60 m ≈ 3.77 m, así que v = 3.77 m / 0.667 s ≈ 5.65 m/s; con ω = 2πf ≈ 9.42 rad/s, v = ωr da lo mismo. No redondees T a 0.7 s antes de dividir: el resultado se aleja (5.4 m/s).",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/movimiento-circular-uniforme/practica-G10",
+     "decision": "corregir",
+     "justificacion": "Valor y tolerancia correctos (v = 2π·0.60·1.5 = 5.65 m/s; 1.5 Hz = 90 rpm, verosímil para un ventilador de techo). Corrijo una cuenta de la retroalimentación: 3.77 m / 0.67 s da 5.63, no 5.7, y confunde a quien verifica. Uso T ≈ 0.667 s y ω ≈ 9.42 rad/s, y advierto que redondear T a 0.7 s saca el resultado de la tolerancia.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el indicador pide la rapidez tangencial a partir del período",
+       "cita_literal": "definir período, frecuencia y rapidez tangencial"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "T = 20/30 = 0.667 s; v = 2π·0.60/0.667 = 5.65 m/s; con T = 0.7 s, v = 5.39 m/s, fuera de 5.65 ± 0.15"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "El período es T = 20 s / 30 ≈ 0.667 s (frecuencia 1.5 Hz). En cada vuelta la cinta recorre 2π · 0.60 m ≈ 3.77 m, así que v = 3.77 m / 0.667 s ≈ 5.65 m/s; con ω = 2πf ≈ 9.42 rad/s, v = ωr da lo mismo. No redondees T a 0.7 s antes de dividir: el resultado se aleja (5.4 m/s)."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una niña hace girar sobre su cabeza una pelota atada a una pita, en un círculo horizontal. Vista desde arriba, la pelota gira en sentido contrario a las agujas del reloj. Si la pita se rompe justo cuando la pelota pasa por el punto más al norte del círculo, ¿hacia dónde sale la pelota, vista desde arriba?",
+     "opciones": {
+      "A": "Hacia el oeste en línea recta, por la tangente al círculo en ese punto.",
+      "B": "Hacia el norte en línea recta, alejándose del centro por el radio.",
+      "C": "Hacia el oeste, pero curvándose poco a poco como si siguiera girando.",
+      "D": "Hacia el noroeste en línea recta, a medio camino entre la tangente y el radio."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+      "C": "DIF:fisica/movimiento-circular-uniforme/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "En cada punto la velocidad es tangente al círculo; en el punto norte, girando en sentido contrario a las agujas del reloj, apunta al oeste. Al romperse la pita ya nada la desvía, así que sigue en línea recta hacia el oeste (y va cayendo por la gravedad).",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Clave A correcta: girando en sentido antihorario visto desde arriba, en el punto norte la velocidad apunta al oeste. B (por el radio) y C (sigue curvándose) son las ideas previas clásicas de este caso y están mapeadas; D es un intermedio plausible. La retroalimentación aclara que además cae por la gravedad.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el subcontenido pide la velocidad como vector tangente",
+       "cita_literal": "Velocidad como vector tangente"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en (0, R) con giro antihorario, v = (−v, 0): oeste; sin fuerza horizontal, sigue recta en planta"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/movimiento-circular-uniforme"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En el carrusel de una feria, dos amigos toman datos (datos de un grupo de ejemplo): Ana va sentada a 2.0 m del eje y tarda 8.0 s en dar una vuelta; Beto va a 4.0 m del eje y también tarda 8.0 s. ¿Qué afirmación apoyan los datos?",
+     "opciones": {
+      "A": "Tienen igual rapidez tangencial, porque los dos tardan 8.0 s en completar la vuelta.",
+      "B": "Beto tiene el doble de velocidad angular, porque recorre el doble de distancia por vuelta.",
+      "C": "Ana tiene mayor rapidez tangencial, porque su vuelta es más cerrada y gira más.",
+      "D": "Igual velocidad angular, y Beto el doble de rapidez, porque recorre el doble en 8.0 s."
+     },
+     "correcta": "D",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los dos giran una vuelta (2π rad) en 8.0 s: tienen la misma velocidad angular, ω ≈ 0.79 rad/s. Pero v = 2πr/T: Ana va a unos 1.6 m/s y Beto a unos 3.1 m/s, porque en el mismo tiempo recorre una circunferencia del doble.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/movimiento-circular-uniforme"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/movimiento-circular-uniforme",
+     "nombre": "Movimiento circular y variables angulares",
+     "definicion": "Movimiento en circunferencia descrito por período, frecuencia, desplazamiento y velocidad angular, y su relación con la velocidad tangencial.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+     "decision": "aprobar",
+     "justificacion": "Clave D correcta: igual período implica igual ω ≈ 0.79 rad/s, y v = ωr da 1.6 m/s para Ana y 3.1 m/s para Beto. A, B y C son confusiones reales entre velocidad angular y rapidez tangencial. Datos rotulados como de ejemplo y verosímiles para un carrusel.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la habilidad TIMSS pide calcular período, frecuencia y rapidez",
+       "cita_literal": "definir período, frecuencia y rapidez tangencial"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "ω = 2π/8.0 = 0.785 rad/s; v = 2π·2.0/8.0 = 1.57 m/s y 2π·4.0/8.0 = 3.14 m/s"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una niña de 30 kg (con el asiento) se mece en un columpio. Al pasar por el punto más bajo, su rapidez es máxima y no está cambiando; en ese instante las cadenas tiran de ella hacia arriba con 429 N y su peso es 294 N. ¿Cuál es su aceleración en ese instante?",
+     "opciones": {
+      "A": "4.5 m/s² hacia arriba, porque la fuerza neta de 135 N apunta hacia arriba.",
+      "B": "0 m/s², porque en el punto más bajo su rapidez es máxima y no está cambiando.",
+      "C": "4.5 m/s² hacia adelante, porque la aceleración va en el sentido en que se mueve.",
+      "D": "14.3 m/s² hacia arriba, porque las cadenas tiran con 429 N de los 30 kg."
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:fisica/aceleracion-fuerza-centripeta/3",
+      "C": "DIF:fisica/segunda-ley-newton/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La fuerza neta es la suma con sentido: 429 N − 294 N = 135 N hacia arriba, así que a = 135 N / 30 kg = 4.5 m/s² hacia arriba, hacia la barra de la que cuelgan las cadenas (el centro del arco). Aunque la rapidez no cambie en ese instante, la dirección de la velocidad sí: esa aceleración es centrípeta.",
+     "duracion_min": 4,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/segunda-ley-newton/comprobacion-G10",
+     "decision": "corregir",
+     "justificacion": "Clave y números correctos: (429 − 294)/30 = 4.5 m/s² hacia arriba, coherente con un columpio de unos 2.5 m a 3.4 m/s. Corrijo una frase ambigua de la retroalimentación: «hacia donde cuelgan las cadenas» puede leerse como hacia abajo, que es justo el sentido contrario. Ahora dice hacia la barra de la que cuelgan, el centro del arco.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la habilidad TIMSS pide calcular fuerzas con la segunda ley",
+       "cita_literal": "calcular fuerzas con la segunda ley de Newton"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "en el punto más bajo ΣF = T − mg = mv²/r, hacia el punto de suspensión; la aceleración tangencial es 0"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "La fuerza neta es la suma con sentido: 429 N − 294 N = 135 N hacia arriba, así que a = 135 N / 30 kg = 4.5 m/s² hacia arriba, hacia la barra de la que cuelgan las cadenas (el centro del arco). Aunque la rapidez no cambie en ese instante, la dirección de la velocidad sí: esa aceleración es centrípeta."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un grupo jala un carrito con un dinamómetro sobre una superficie con fricción despreciable y mide la aceleración con un celular (datos de un grupo de ejemplo): con 0.50 N, 0.24 m/s²; con 1.00 N, 0.51 m/s²; con 1.50 N, 0.74 m/s²; con 2.00 N, 1.01 m/s². Grafica o compara F y a, y calcula la masa del carrito, en kg. Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 2.0,
+     "tolerancia": 0.1,
+     "unidad": "kg",
+     "retroalimentacion": "La aceleración crece en proporción a la fuerza: al duplicar F, a casi se duplica. El cociente F/a es casi el mismo en cada fila (2.08, 1.96, 2.03 y 1.98 kg) y es la masa: m = ΣF/a ≈ 2.0 kg, la pendiente de la recta F contra a.",
+     "duracion_min": 7,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/segunda-ley-newton/practica-G10",
+     "decision": "aprobar",
+     "justificacion": "Datos coherentes: F/a = 2.08, 1.96, 2.03 y 1.98 kg y el ajuste por mínimos cuadrados por el origen da 1.99 kg, dentro de 2.0 ± 0.1. La pendiente de F contra a es la masa, como dice la retroalimentación. La idealización (fricción despreciable) está declarada y los datos están rotulados como de ejemplo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la habilidad TIMSS pide calcular fuerzas con la segunda ley",
+       "cita_literal": "calcular fuerzas con la segunda ley de Newton"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "m = Σ(F·a)/Σ(a²) = 3.76/1.885 = 1.99 kg"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un carro avanza por un tramo recto y plano de la carretera con una rapidez constante de 60 km/h. ¿Cómo es la fuerza neta sobre el carro?",
+     "opciones": {
+      "A": "Hacia adelante, porque el carro avanza y necesita una fuerza neta para seguir moviéndose.",
+      "B": "Hacia atrás, porque el aire y la rodadura frenan al carro durante todo el recorrido.",
+      "C": "Cero, porque la velocidad no cambia: el empuje hacia adelante iguala a lo que se opone.",
+      "D": "Hacia adelante y de valor m·v, porque depende de la masa y de la rapidez del carro."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:fisica/segunda-ley-newton/1",
+      "D": "DIF:fisica/segunda-ley-newton/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Si la velocidad no cambia (ni en rapidez ni en dirección), la aceleración es cero y, por la segunda ley, la fuerza neta también: el empuje del pavimento sobre las llantas iguala a la resistencia del aire y a la de rodadura. Hace falta fuerza neta para cambiar la velocidad, no para mantenerla.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Clave C correcta: con velocidad constante en rapidez y dirección, ΣF = 0. A y D expresan la idea aristotélica de que mantener el movimiento exige fuerza neta (D además la confunde con m·v) y están bien mapeadas; B, olvidar la fuerza motriz, es un error real. La retroalimentación identifica bien el agente: el pavimento empuja las llantas.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "primera y segunda ley: a = 0 implica ΣF = 0; la fuerza hacia adelante es la fricción estática del pavimento sobre las llantas motrices"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el indicador exige manejar velocidad como vector, base de este sondeo",
+       "cita_literal": "Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-FIS-U6-6.5"
+     ],
+     "evalua": [
+      "CON:fisica/segunda-ley-newton"
+     ],
+     "habilidad": "razonar",
+     "formato": "numerica",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una estudiante arrastra por el piso una caja de 25 kg con una cuerda horizontal que tira con 80 N; la fricción del piso sobre la caja es de 30 N, en sentido contrario. ¿Cuál es la aceleración de la caja, en m/s²? Escribe solo el número.",
+     "opciones": null,
+     "correcta": null,
+     "distractores": null,
+     "valor": 2.0,
+     "tolerancia": 0.05,
+     "unidad": "m/s²",
+     "retroalimentacion": "La fuerza neta es la suma con sentido: 80 N − 30 N = 50 N hacia adelante. Entonces a = ΣF/m = 50 N / 25 kg = 2.0 m/s². Si dividiste 80 N entre 25 kg, faltó restar la fricción.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:fisica/segunda-ley-newton"
+     },
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/segunda-ley-newton",
+     "nombre": "Segunda ley de Newton",
+     "definicion": "La aceleración de un cuerpo es proporcional a la fuerza neta e inversamente proporcional a su masa: ΣF = ma.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+     "decision": "aprobar",
+     "justificacion": "Cálculo correcto: ΣF = 80 − 30 = 50 N y a = 50/25 = 2.0 m/s²; la tolerancia de 0.05 separa bien el error típico de usar solo la fuerza aplicada (80/25 = 3.2 m/s²), que la retroalimentación nombra. Valores verosímiles para una caja arrastrada.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "a = (F − f)/m = (80 − 30)/25 = 2.0 m/s²"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la habilidad TIMSS pide calcular fuerzas con la segunda ley",
+       "cita_literal": "calcular fuerzas con la segunda ley de Newton"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un átomo tiene 20 electrones. ¿Cuál es su distribución por capas y qué ion tiende a formar al reaccionar?",
+     "opciones": {
+      "A": "2, 8, 10: cede los diez electrones de su capa externa y forma un ion 10+",
+      "B": "2, 8, 8, 2: cede los dos electrones de su capa externa y forma un ion 2+",
+      "C": "2, 8, 8, 2: gana seis electrones para tener ocho afuera y forma un ion 6−",
+      "D": "2, 8, 8, 2: cede un electrón por cada una de sus cuatro capas: un ion 4+"
+     },
+     "correcta": "B",
+     "distractores": {
+      "D": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Con 20 electrones (es el calcio), la tercera capa llega a 8 y los dos últimos pasan a la cuarta: 2, 8, 8, 2. Ceder esos dos cuesta mucho menos que ganar seis, así que forma el ion Ca²⁺, como los demás metales del grupo 2.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+     "decision": "corregir",
+     "justificacion": "Química correcta: 20 electrones dan 2, 8, 8, 2 y el calcio forma el ion 2+; el distractor D corresponde a una señal de la idea previa. Solo se corrige la notación del ion (Ca²⁺ en lugar de Ca2+), como en el resto de la capa, para que no se lea como «Ca2» más un signo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+       "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+      },
+      {
+       "fuente": "data/pedagogia/actividades.json",
+       "cita": "La capa usa superíndices para las cargas (Ca²⁺) en sus demás actividades."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "Con 20 electrones (es el calcio), la tercera capa llega a 8 y los dos últimos pasan a la cuarta: 2, 8, 8, 2. Ceder esos dos cuesta mucho menos que ganar seis, así que forma el ion Ca²⁺, como los demás metales del grupo 2."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Dos compañeros dibujaron el átomo de aluminio, que tiene 13 electrones. Uno puso 2, 8 y 3 electrones en tres capas; el otro, 2 y 11 en dos capas. ¿Qué dibujo es correcto y qué indica sobre la posición del aluminio?",
+     "opciones": {
+      "A": "El de 2, 11: la segunda capa admite los electrones que falten, así que está en el período 2",
+      "B": "El de 2, 8, 3: sus tres electrones externos indican el período 3, y sus tres capas, el grupo 13",
+      "C": "El de 2, 8, 3: sus 13 electrones son de valencia y puede ceder cualquiera de ellos al reaccionar",
+      "D": "El de 2, 8, 3: sus tres capas indican el período 3, y sus tres electrones externos, el grupo 13"
+     },
+     "correcta": "D",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La segunda capa se llena con 8, así que el aluminio queda 2, 8, 3. El número de capas (3) da el período, y los tres electrones de valencia lo ubican en el grupo 13: son esos tres los que cede al reaccionar.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+     "decision": "aprobar",
+     "justificacion": "Aluminio 2, 8, 3 correcto; la clave D asigna bien capas al período y electrones externos al grupo 13. B invierte la relación (buen distractor) y C remite a la idea previa de ceder todos los electrones. Coherente con la configuración por orbitales que el grupo ya estudió (3.10).",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U3-3.10 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22)",
+       "cita": "Antes de 4.8 el grupo ya escribe configuraciones por orbitales (Aufbau).",
+       "cita_literal": "Escribe configuraciones electrónicas y diagramas de orbitales aplicando el principio de Aufbau"
+      },
+      {
+       "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+       "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "El litio, el sodio y el potasio están en la misma columna (grupo 1) de la tabla periódica. ¿Qué tienen en común sus distribuciones de electrones por capas?",
+     "opciones": {
+      "A": "Los tres tienen un electrón en la capa externa, que es distinta en cada uno",
+      "B": "Los tres tienen el mismo número de capas de electrones alrededor de su núcleo",
+      "C": "Al bajar, cada uno tiene un electrón externo más que el anterior: uno, dos y tres",
+      "D": "Los tres tienen la capa externa llena con ocho electrones, como los gases nobles"
+     },
+     "correcta": "A",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Li (2, 1), Na (2, 8, 1) y K (2, 8, 8, 1) tienen un electrón en la capa externa; lo que cambia al bajar es el número de capas. Por eso comparten grupo y reaccionan de forma parecida.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Li (2, 1), Na (2, 8, 1) y K (2, 8, 8, 1): la clave A es correcta y el distractor C reproduce la señal documentada de la dificultad (uno, dos y tres electrones externos). Sondeo breve y adecuado como base.",
+     "evidencia": [
+      {
+       "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+       "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Los alcalinos comparten un electrón externo; cambia el número de capas."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/distribucion-electronica-por-niveles"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Distribución por capas de cuatro elementos. Elemento 1: 2, 8, 1. Elemento 2: 2, 8, 7. Elemento 3: 2, 8, 8, 1. Elemento 4: 2, 8, 8, 2. ¿Qué par está en el mismo grupo y por qué?",
+     "opciones": {
+      "A": "El 1 y el 2, porque los dos tienen tres capas de electrones alrededor del núcleo",
+      "B": "El 1 y el 3, porque los dos tienen un solo electrón en su capa más externa",
+      "C": "El 1 y el 4, porque al bajar en un grupo se suma un electrón a la capa externa",
+      "D": "El 3 y el 4, porque los dos tienen ocho electrones en la segunda y la tercera capa"
+     },
+     "correcta": "B",
+     "distractores": {
+      "C": "DIF:quimica/distribucion-electronica-por-niveles/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "El grupo lo da el número de electrones de la capa externa: el 1 y el 3 tienen uno (son el sodio y el potasio). El número de capas indica el período: el 1 y el 2 comparten el período 3, y el 3 y el 4, el período 4.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/distribucion-electronica-por-niveles"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/distribucion-electronica-por-niveles",
+     "nombre": "Distribución electrónica por niveles (modelo de capas)",
+     "definicion": "Electrones ordenados en capas o niveles de energía (2, 8, 8…) según el modelo de Bohr; la capa externa (de valencia) explica el grupo, el período y la reactividad.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+     "decision": "aprobar",
+     "justificacion": "Los cuatro elementos (Na, Cl, K, Ca) están bien descritos; la clave B es correcta y la retroalimentación distingue grupo (electrones externos) y período (capas). C mapea la señal de la idea previa.",
+     "evidencia": [
+      {
+       "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+       "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "2, 8, 1 y 2, 8, 8, 1 son sodio y potasio, ambos del grupo 1."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Sin consultar datos, ordena de mayor a menor reactividad, como no metales, al flúor (grupo 17, período 2), al cloro (grupo 17, período 3) y al azufre (grupo 16, período 3).",
+     "opciones": {
+      "A": "S > Cl > F, porque, como en los metales, la reactividad crece hacia abajo y hacia la izquierda",
+      "B": "Cl > F > S, porque el cloro tiene más protones que el flúor y atrae con más fuerza un electrón",
+      "C": "F > Cl > S, porque la electronegatividad crece hacia arriba en un grupo y hacia la derecha en un período",
+      "D": "F > S > Cl, porque el radio crece hacia la derecha y el azufre, más pequeño, atrae mejor un electrón"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/propiedades-periodicas/1",
+      "B": "DIF:quimica/propiedades-periodicas/2",
+      "D": "DIF:quimica/propiedades-periodicas/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un no metal reacciona ganando electrones, y lo hace con más facilidad cuanto mayor es su electronegatividad, es decir, cuanto más atrae su núcleo a los electrones de enlace. Crece hacia la derecha en un período (el cloro más que el azufre) y hacia arriba en un grupo (el flúor más que el cloro): F > Cl > S. Ojo: la afinidad electrónica del cloro es algo mayor que la del flúor, pero el flúor es el más electronegativo y el más reactivo.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/propiedades-periodicas"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/propiedades-periodicas/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/propiedades-periodicas/comprobacion-G10",
+     "decision": "corregir",
+     "justificacion": "Orden F > Cl > S correcto. La opción C decía que el núcleo atrae al electrón «hacia arriba y hacia la derecha», lectura física falsa. La retroalimentación igualaba electronegatividad con atraer un electrón extra, que es afinidad electrónica (4.6): la del cloro supera a la del flúor y confundiría. Se separan ambos conceptos.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.6 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 27)",
+       "cita": "Justo antes de 4.8 el grupo estudia la afinidad electrónica como concepto distinto.",
+       "cita_literal": "explica por qué los halógenos tienen los valores más favorables"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.7 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 28)",
+       "cita": "La electronegatividad se trabaja en 4.7, inmediatamente antes.",
+       "cita_literal": "Explica la variación de la electronegatividad en la tabla periódica"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Afinidad electrónica Cl > F, pero electronegatividad y reactividad F > Cl."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "opciones": {
+       "A": "S > Cl > F, porque, como en los metales, la reactividad crece hacia abajo y hacia la izquierda",
+       "B": "Cl > F > S, porque el cloro tiene más protones que el flúor y atrae con más fuerza un electrón",
+       "C": "F > Cl > S, porque la electronegatividad crece hacia arriba en un grupo y hacia la derecha en un período",
+       "D": "F > S > Cl, porque el radio crece hacia la derecha y el azufre, más pequeño, atrae mejor un electrón"
+      },
+      "retroalimentacion": "Un no metal reacciona ganando electrones, y lo hace con más facilidad cuanto mayor es su electronegatividad, es decir, cuanto más atrae su núcleo a los electrones de enlace. Crece hacia la derecha en un período (el cloro más que el azufre) y hacia arriba en un grupo (el flúor más que el cloro): F > Cl > S. Ojo: la afinidad electrónica del cloro es algo mayor que la del flúor, pero el flúor es el más electronegativo y el más reactivo."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/propiedades-periodicas/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/propiedades-periodicas/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Una gráfica de la tabla de referencia muestra la primera energía de ionización contra el número atómico, del 1 al 20. Hay picos en He, Ne y Ar y valles en Li, Na y K. Dentro de cada período la curva, en general, sube, y cada valle es más bajo que el anterior. ¿Cuáles son los metales más reactivos de la gráfica y por qué?",
+     "opciones": {
+      "A": "Los de los valles, sobre todo el potasio, porque quitarle su electrón externo requiere menos energía",
+      "B": "Los de los picos, sobre todo el helio, porque sus átomos tienen más energía guardada para reaccionar",
+      "C": "Los de los valles, todos por igual, porque están en el mismo grupo y la curva repite su forma",
+      "D": "Los de los valles, sobre todo el litio, porque el potasio tiene más protones y sujeta más su electrón"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/propiedades-periodicas/4",
+      "C": "DIF:quimica/tabla-periodica/1",
+      "D": "DIF:quimica/propiedades-periodicas/2"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La energía de ionización es la que hay que dar para quitar un electrón. Los valles son los metales alcalinos, a los que cuesta poco quitarles su único electrón de valencia, y el del potasio es el más bajo porque ese electrón está en la cuarta capa. Los picos son gases nobles, que casi no reaccionan.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/propiedades-periodicas"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/propiedades-periodicas/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/propiedades-periodicas/practica-G10",
+     "decision": "aprobar",
+     "justificacion": "La gráfica descrita es fiel (picos en He, Ne, Ar; valles en Li, Na, K; subida general en el período; valles decrecientes) y no inventa valores. Clave A correcta; B, C y D mapean ideas previas reales sobre el significado de la energía de ionización, la identidad de grupo y el número de protones.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.5 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 26)",
+       "cita": "La energía de ionización y su variación periódica se trabajan en 4.5.",
+       "cita_literal": "Deduce el número de electrones de valencia de un elemento a partir del salto en sus energías de ionización sucesivas"
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/propiedades-periodicas"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "En el período 3, del sodio al cloro, el número de electrones aumenta de 11 a 17. ¿Cómo cambia el radio atómico a lo largo del período y por qué?",
+     "opciones": {
+      "A": "Aumenta, porque cada elemento tiene más electrones y esos electrones ocupan más espacio",
+      "B": "Disminuye, porque crece la carga nuclear efectiva y atrae más a los electrones de la misma capa",
+      "C": "Se mantiene igual, porque todos los elementos del período tienen tres capas de electrones",
+      "D": "Disminuye, porque los elementos de la derecha tienen menos capas de electrones que los de la izquierda"
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/propiedades-periodicas/3"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Del sodio al cloro, los electrones nuevos entran en la misma tercera capa mientras el núcleo gana un protón cada vez; el apantallamiento casi no cambia, así que la carga nuclear efectiva crece y acerca la capa externa al núcleo: el radio disminuye.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/propiedades-periodicas"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/propiedades-periodicas",
+     "nombre": "Propiedades periódicas",
+     "definicion": "Variación de radio atómico e iónico, energía de ionización, afinidad electrónica y electronegatividad en periodos y grupos según la carga nuclear efectiva.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Radio decreciente en el período 3 explicado con carga nuclear efectiva y misma capa: correcto. El distractor A es la idea previa «más electrones, átomo más grande»; D y C son errores plausibles. Adecuado al nivel de 4.4.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+       "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+       "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Del sodio al cloro los electrones entran en la tercera capa y el radio disminuye."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/comprobacion-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/comprobacion-G10",
+     "tipo": "actividad",
+     "rol": "comprobacion",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "El silicio, que se usa en los chips de los celulares, está en el grupo 14 y el período 3, junto a la línea escalonada que separa los metales de los no metales. ¿Qué propiedades esperas que tenga?",
+     "opciones": {
+      "A": "Las de un metal típico: brilla, se dobla sin romperse y conduce muy bien la electricidad",
+      "B": "Las de un no metal gaseoso, como el cloro, que está en su mismo período de la tabla",
+      "C": "Idénticas a las del carbono, porque los elementos de un grupo comparten todas sus propiedades",
+      "D": "Intermedias: tiene brillo metálico, pero es quebradizo y conduce poco la electricidad"
+     },
+     "correcta": "D",
+     "distractores": {
+      "C": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "La mayoría de los elementos que bordean la línea escalonada son metaloides: el silicio tiene brillo metálico, pero es quebradizo y conduce la electricidad mucho menos que un metal, por eso sirve como semiconductor en los chips. Comparte grupo con el carbono, pero no todas sus propiedades.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/comprobacion-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/tabla-periodica/comprobacion-G10",
+     "decision": "corregir",
+     "justificacion": "Clave D correcta: el silicio es metaloide, brillante, quebradizo y semiconductor. La retroalimentación afirmaba que todos los elementos junto a la línea escalonada son metaloides; el aluminio, que la bordea y aparece en otra actividad del tema, es metal. Se acota a «la mayoría».",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.2 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 23)",
+       "cita": "El grupo ubica elementos por carácter metálico.",
+       "cita_literal": "ubica a los elementos según su grupo, periodo y carácter metálico"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El aluminio bordea la línea escalonada y es un metal."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "La mayoría de los elementos que bordean la línea escalonada son metaloides: el silicio tiene brillo metálico, pero es quebradizo y conduce la electricidad mucho menos que un metal, por eso sirve como semiconductor en los chips. Comparte grupo con el carbono, pero no todas sus propiedades."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/practica-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/practica-G10",
+     "tipo": "actividad",
+     "rol": "practica",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "razonar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Elemento 1: metal brillante y blando que reacciona con el agua y forma iones 2+. Elemento 2: gas amarillo verdoso que forma iones 1−. ¿En qué zona de la tabla periódica ubicarías cada uno?",
+     "opciones": {
+      "A": "El 1, en el período 2 a la izquierda; el 2, en el período 1 arriba, por la carga de sus iones",
+      "B": "El 1, en el grupo 2 a la izquierda; el 2, en el grupo 17 a la derecha, entre los no metales",
+      "C": "El 1, en el grupo 2 a la izquierda; el 2, en el grupo 18, junto a los demás elementos gaseosos",
+      "D": "El 1, en el centro, con el hierro y el cobre; el 2, en el grupo 17 a la derecha, con los no metales"
+     },
+     "correcta": "B",
+     "distractores": {},
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un metal blando que reacciona con el agua y forma iones 2+ es un alcalinotérreo: tiene dos electrones de valencia, grupo 2, a la izquierda. El hierro y el cobre también forman iones 2+, pero son duros y casi no reaccionan con agua fría. Un gas que forma iones 1− gana un electrón: grupo 17, entre los no metales. La carga del ion se relaciona con el grupo, no con el período, y el grupo 18 casi no forma iones.",
+     "duracion_min": 6,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/practica-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/tabla-periodica/practica-G10",
+     "decision": "corregir",
+     "justificacion": "Clave B correcta (calcio y cloro). Pero la retroalimentación enseñaba «forma iones 2+, entonces grupo 2», regla falsa: hierro, cobre o zinc también forman iones 2+, y el grupo ya escribe sus configuraciones (4.3). Además no explicaba por qué D es incorrecta. Se acota a un metal blando que reacciona con agua.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.3 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 24)",
+       "cita": "El grupo ya escribe la configuración de iones comunes, incluidos los de metales de transición.",
+       "cita_literal": "escribe la configuración de sus iones más comunes"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Fe²⁺, Cu²⁺ y Zn²⁺ son iones 2+ de metales de transición, no del grupo 2."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "Un metal blando que reacciona con el agua y forma iones 2+ es un alcalinotérreo: tiene dos electrones de valencia, grupo 2, a la izquierda. El hierro y el cobre también forman iones 2+, pero son duros y casi no reaccionan con agua fría. Un gas que forma iones 1− gana un electrón: grupo 17, entre los no metales. La carga del ion se relaciona con el grupo, no con el período, y el grupo 18 casi no forma iones."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/sondeo-1-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/sondeo-1-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "explicar",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Un compañero afirma: «El sodio y el potasio están en el mismo grupo, así que reaccionan con el agua exactamente igual». ¿Qué le responderías?",
+     "opciones": {
+      "A": "Que tiene razón, porque los elementos de un mismo grupo tienen propiedades idénticas",
+      "B": "Que no, porque el sodio y el potasio están en el mismo período y no en el mismo grupo",
+      "C": "Que no: reaccionan de forma parecida, pero la intensidad cambia al bajar en el grupo",
+      "D": "Que tiene razón, porque los dos son metales y todos los metales reaccionan igual con agua"
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Un grupo comparte el tipo de comportamiento (los dos ceden un electrón y con el agua forman un hidróxido e hidrógeno), pero no la intensidad: el potasio, más abajo, reacciona con más violencia que el sodio.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+     "decision": "aprobar",
+     "justificacion": "Correcto: sodio y potasio forman hidróxido e hidrógeno con agua y el potasio reacciona con más violencia. La clave C distingue comportamiento compartido de intensidad gradual; A mapea la idea previa de propiedades idénticas.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Na y K con agua: hidróxido e hidrógeno; K más vigoroso."
+      }
+     ],
+     "confianza": "alta",
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "ACT:quimica/tabla-periodica/sondeo-2-G10",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "ACT:quimica/tabla-periodica/sondeo-2-G10",
+     "tipo": "actividad",
+     "rol": "sondeo",
+     "objetivos": [
+      "TEMA:G10-QUI-U4-4.8"
+     ],
+     "evalua": [
+      "CON:quimica/tabla-periodica"
+     ],
+     "habilidad": "interpretar_datos",
+     "formato": "opcion_multiple",
+     "grados": [
+      10
+     ],
+     "enunciado": "Datos de un grupo de ejemplo, tomados de un video con trozos de metales del grupo 2 en agua fría. Magnesio: casi sin burbujas en 10 minutos. Calcio: burbujeo constante y el agua se enturbia. Estroncio: burbujeo rápido y el trozo se consume en pocos minutos. ¿Qué concluyes sobre los elementos de un mismo grupo?",
+     "opciones": {
+      "A": "Reaccionan de forma parecida, y la intensidad de la reacción crece al bajar en el grupo",
+      "B": "Reaccionan igual; las diferencias se deben al tamaño o a la limpieza de cada trozo",
+      "C": "No se parecen en nada, así que el grupo no dice nada sobre cómo reacciona un elemento",
+      "D": "Reaccionan de forma parecida porque los tres tienen el mismo número de capas de electrones"
+     },
+     "correcta": "A",
+     "distractores": {
+      "B": "DIF:quimica/tabla-periodica/1"
+     },
+     "valor": null,
+     "tolerancia": null,
+     "unidad": null,
+     "retroalimentacion": "Los tres tienen dos electrones de valencia y reaccionan con el agua del mismo modo, formando hidrógeno y un hidróxido, pero la intensidad cambia de forma gradual: el magnesio apenas reacciona en frío y el estroncio lo hace rápido. Crece al bajar en el grupo. Las diferencias son demasiado grandes para atribuirlas al tamaño de los trozos.",
+     "duracion_min": 3,
+     "estado": "propuesta_pendiente",
+     "fuente": {
+      "tipo": "concepto",
+      "ref": "CON:quimica/tabla-periodica"
+     },
+     "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:quimica/tabla-periodica",
+     "nombre": "Organización de la tabla periódica",
+     "definicion": "Los elementos se ordenan por número atómico en periodos y grupos, con metales, no metales y metaloides; un grupo comparte propiedades.",
+     "asignatura": "quimica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-QUI-U4-4.8",
+     "grado": 10,
+     "indicador": "4.8. Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad.",
+     "evidencia": "Tabla de observaciones de reactividad con orden justificado y propuesta de disposición segura de baterías"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:ACT:quimica/tabla-periodica/sondeo-2-G10",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "enunciado",
+    "opciones",
+    "correcta",
+    "distractores",
+    "valor",
+    "tolerancia",
+    "unidad",
+    "retroalimentacion",
+    "rubrica",
+    "habilidad",
+    "duracion_min"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:ACT:quimica/tabla-periodica/sondeo-2-G10",
+     "decision": "corregir",
+     "justificacion": "Observaciones del grupo 2 correctas y rotuladas como de ejemplo; clave A correcta. Pero la retroalimentación decía «los tres burbujean», y el propio enunciado da al magnesio «casi sin burbujas»: contradicción que un estudiante atento detecta. Se reescribe: el tipo de reacción es el mismo y la intensidad cambia.",
+     "evidencia": [
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El magnesio apenas reacciona con agua fría; calcio y estroncio sí, con hidrógeno e hidróxido."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+       "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+       "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "retroalimentacion": "Los tres tienen dos electrones de valencia y reaccionan con el agua del mismo modo, formando hidrógeno y un hidróxido, pero la intensidad cambia de forma gradual: el magnesio apenas reacciona en frío y el estroncio lo hace rápido. Crece al bajar en el grupo. Las diferencias son demasiado grandes para atribuirlas al tamaño de los trozos."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "descripcion": "Cree que sobre un cuerpo que gira actúa una fuerza real hacia afuera, la «fuerza centrífuga», que equilibra a la centrípeta. Toma como fuerza la sensación de ser lanzado hacia afuera en un bus o un carrusel, que en realidad es la inercia: el cuerpo tiende a seguir recto y algo lo obliga a girar (el asiento o la pared lo empujan, el hilo lo jala hacia el centro). Para un observador en reposo no existe esa fuerza hacia afuera; solo aparece como fuerza ficticia al describir el movimiento desde dentro de lo que gira.",
+     "senales": "Dibuja en el diagrama de cuerpo libre una flecha hacia afuera rotulada «centrífuga»; dice que el tapón o el bus está «en equilibrio» porque la fuerza hacia adentro y la de hacia afuera se anulan; explica que la Estación Espacial no cae porque la centrífuga compensa la gravedad; predice que, si el hilo se rompe, el objeto sale disparado por el radio, alejándose del centro.",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Idea previa muy extendida, reforzada por el habla cotidiana y la sensación en vehículos.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/1",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/1",
+     "decision": "corregir",
+     "justificacion": "Idea previa real y muy documentada, con señales observables. Corrijo dos precisiones: un hilo jala, no empuja; y conviene acotar el marco: para un observador en reposo no hay fuerza hacia afuera, pero en un marco que gira la centrífuga es una fuerza ficticia legítima. Así el docente no siembra una negación absoluta que luego habría que desaprender.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "la malla acota la ausencia de la centrífuga al observador en reposo",
+       "cita_literal": "Justifica por qué la «fuerza centrífuga» no aparece en el diagrama de cuerpo libre de un observador en reposo"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "la centrífuga aparece solo en marcos no inerciales; no tiene agente ni par de acción y reacción"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "descripcion": "Cree que sobre un cuerpo que gira actúa una fuerza real hacia afuera, la «fuerza centrífuga», que equilibra a la centrípeta. Toma como fuerza la sensación de ser lanzado hacia afuera en un bus o un carrusel, que en realidad es la inercia: el cuerpo tiende a seguir recto y algo lo obliga a girar (el asiento o la pared lo empujan, el hilo lo jala hacia el centro). Para un observador en reposo no existe esa fuerza hacia afuera; solo aparece como fuerza ficticia al describir el movimiento desde dentro de lo que gira."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+   "pregunta": "¿El elemento se puede usar tal cual con estudiantes del grado? Si no, corrígelo.",
+   "datos": {
+    "elemento": {
+     "id": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+     "tipo": "dificultad",
+     "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+     "descripcion": "Trata la fuerza centrípeta como una fuerza más, que aparece sola cuando algo gira, en lugar de entenderla como el papel que cumple la resultante hacia el centro de fuerzas reales con un agente (tensión, fricción, normal o gravedad). Por eso no identifica quién la ejerce en cada situación: no reconoce que una fuerza distinta de la fricción, como la normal inclinada, puede cumplir ese papel, ni que en una órbita lo cumple la gravedad, que a 400 km de altura sigue siendo casi el 90 % de la de la superficie.",
+     "senales": "Agrega al diagrama de cuerpo libre una flecha «Fc» además de la tensión o la fricción; escribe ΣF = T + mv²/r; ante «¿quién ejerce esa fuerza?» responde «el giro» o «la curva»; en una curva peraltada sin fricción dice que nada puede mantener al carro en la curva; afirma que un satélite no cae porque «en el espacio no hay gravedad».",
+     "estado": "propuesta_pendiente",
+     "fuente": null,
+     "justificacion": "Error típico al construir diagramas de cuerpo libre en movimiento circular.",
+     "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+     "version": "pedagogia-v1",
+     "revisado_por": ""
+    },
+    "concepto": {
+     "id": "CON:fisica/aceleracion-fuerza-centripeta",
+     "nombre": "Aceleración y fuerza centrípeta",
+     "definicion": "En el movimiento circular la aceleración apunta al centro (v²/r) y requiere una fuerza neta centrípeta.",
+     "asignatura": "fisica"
+    },
+    "objetivo": {
+     "id": "TEMA:G10-FIS-U6-6.5",
+     "grado": 10,
+     "indicador": "3.6. • Identifica qué fuerza real actúa como fuerza centrípeta en cada situación y calcula su magnitud con la segunda ley de Newton. • Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable, apoyándose en la dirección tangente del vector velocidad. • Calcula la rapidez máxima segura en curvas planas y peraltadas y explica cómo el ángulo de peralte reduce la dependencia de la fricción. • Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite.",
+     "evidencia": "Hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta"
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    },
+    "notas_de_los_redactores": ""
+   },
+   "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/2",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "revisión psicopedagógica",
+   "campos_editables": [
+    "descripcion",
+    "senales",
+    "justificacion"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/2",
+     "decision": "corregir",
+     "justificacion": "Idea previa real (la centrípeta como fuerza adicional en el diagrama). Pero una de sus señales, «en el espacio no hay gravedad», y el distractor D de obj-2 que la usa no encajan con la descripción, que solo menciona la normal. Amplío la descripción: tampoco reconoce que en una órbita la gravedad cumple ese papel, y a 400 km sigue siendo casi el 90 % de la de la superficie.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+       "cita": "el subcontenido incluye la gravedad como fuerza centrípeta",
+       "cita_literal": "Fuerza gravitatoria como fuerza centrípeta"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "g(400 km) = 9.8·(6371/6771)² ≈ 8.7 m/s², un 89 % de la de la superficie"
+      }
+     ],
+     "confianza": "media",
+     "cambios": {
+      "descripcion": "Trata la fuerza centrípeta como una fuerza más, que aparece sola cuando algo gira, en lugar de entenderla como el papel que cumple la resultante hacia el centro de fuerzas reales con un agente (tensión, fricción, normal o gravedad). Por eso no identifica quién la ejerce en cada situación: no reconoce que una fuerza distinta de la fricción, como la normal inclinada, puede cumplir ese papel, ni que en una órbita lo cumple la gravedad, que a 400 km de altura sigue siendo casi el 90 % de la de la superficie."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    }
+   ]
+  }
+ ]
+}

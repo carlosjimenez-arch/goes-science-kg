@@ -68801,10 +68801,72 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-FIS-U6-6.5/obj-1",
+    "decision": "corregir",
+    "justificacion": "Valor y clave correctos: √(0.40·9.8·50) = 14.0 m/s (50 km/h); el μ = 0.40 está declarado como dato del problema. Solo corrijo el cierre: al superar la rapidez máxima el vehículo no sale por la tangente, porque sigue actuando la fricción cinética; derrapa y describe una trayectoria más abierta, hacia el exterior. La tangente recta es el caso sin ninguna fuerza hacia el centro.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador pide calcular la rapidez máxima en curvas planas",
+      "cita_literal": "Calcula la rapidez máxima segura en curvas planas y peraltadas"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "v = √(μ g r) = √(0.40 · 9.8 · 50) = √196 = 14.0 m/s; la tolerancia 0.3 es razonable"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "en el derrape la fricción cinética sigue dando una fuerza hacia el centro, menor que mv²/r: el radio de la trayectoria crece, no se vuelve una recta"
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "retroalimentacion": "La fuerza que apunta al centro es la fricción estática lateral de las llantas, y su valor máximo es μmg. Al igualarla con mv²/r la masa se cancela: v = √(μgr) = √(0.40 · 9.8 · 50) = 14 m/s, unos 50 km/h. Más rápido, la fricción máxima ya no alcanza: las llantas derrapan y el vehículo se abre hacia el exterior de la curva."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U6-6.5/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U6-6.5",
+    "CON:fisica/aceleracion-fuerza-centripeta"
+   ],
+   "habilidad": "razonar",
+   "formato": "numerica",
+   "grados": [
+    10
+   ],
+   "enunciado": "Un microbús toma una curva plana (sin peralte) de 50 m de radio con el pavimento mojado. Supón que el coeficiente de fricción estática entre las llantas y ese pavimento es 0.40 (dato del problema) y usa g = 9.8 m/s². Identifica qué fuerza real mantiene al microbús en la curva y calcula la rapidez máxima, en m/s, a la que puede tomarla sin derrapar. Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 14.0,
+   "tolerancia": 0.3,
+   "unidad": "m/s",
+   "retroalimentacion": "La fuerza que apunta al centro es la fricción estática lateral de las llantas, y su valor máximo es μmg. Al igualarla con mv²/r la masa se cancela: v = √(μgr) = √(0.40 · 9.8 · 50) = 14 m/s, unos 50 km/h. Más rápido, la fricción máxima ya no alcanza: las llantas derrapan y el vehículo se abre hacia el exterior de la curva.",
+   "duracion_min": 7,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U6-6.5"
+   },
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-FIS-U6-6.5/obj-2": {
   "tipo": "contenido",
@@ -68887,8 +68949,33 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-FIS-U6-6.5/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Datos verosímiles y declarados como aproximados: a 400 km el período es ≈ 92 min y a 20 200 km ≈ 718 min; rapideces 7.7 y 3.9 km/s. La clave C es la única conclusión que los datos sostienen (control de la altura). A confunde masa y radio; B invierte la rapidez; D es la idea de que no hay gravedad en órbita (a 400 km g ≈ 8.7 m/s²).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador pide explicar por qué v y T no dependen de la masa del satélite",
+      "cita_literal": "Calcula la rapidez y el período de un satélite en órbita circular y explica por qué no dependen de la masa del satélite"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "T = 2π√(r³/GM): con r = 6771 km da 92.4 min; con r = 26 571 km, 718 min; v = 7.67 y 3.87 km/s"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "g a 400 km = 9.8·(6371/6771)² ≈ 8.7 m/s², casi el 90 % de la superficie: el distractor D es falso"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -69007,10 +69094,156 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-FIS-U6-6.5/obj-abierta",
+    "decision": "corregir",
+    "justificacion": "Física correcta y errores típicos reales. Matizo la rúbrica: «no hay fuerza centrífuga», sin marco, penalizaría a quien la reconoce como fuerza ficticia dentro del bus, y la malla pide justificarlo para un observador en reposo. La respuesta modelo y el criterio c3 dicen ahora que ninguna fuerza real empuja hacia afuera y aceptan la mención de la fuerza ficticia. El resto queda igual.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la fase Reforzar pide la ausencia de la centrífuga para un observador en reposo",
+      "cita_literal": "Justifica por qué la «fuerza centrífuga» no aparece en el diagrama de cuerpo libre de un observador en reposo"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la fase Explorar plantea la misma situación del bus",
+      "cita_literal": "Formula una hipótesis sobre qué fuerza mantiene a un bus en la curva de la carretera de Los Chorros"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "en un marco que gira la fuerza centrífuga es una fuerza ficticia legítima; afirmar que no existe en ningún marco es una idea que luego hay que desaprender"
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "rubrica": {
+      "respuesta_modelo": "El bus sí acelera: aunque la rapidez es constante, la velocidad es tangente a la curva y cambia de dirección a cada instante, y ese cambio es una aceleración dirigida hacia el centro de la curva (v²/r). Por la segunda ley hace falta una fuerza neta hacia el centro, y la da una fuerza real: la fricción lateral entre las llantas y el pavimento (más una parte de la normal si la curva tiene peralte). Para quien mira desde la calle, ninguna fuerza empuja al pasajero hacia afuera: por inercia tiende a seguir en línea recta, y la pared del bus lo empuja hacia el centro para que también dé la curva. La «fuerza centrífuga» no la ejerce ningún cuerpo; solo aparece como fuerza ficticia si se describe el movimiento desde dentro del bus.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Afirma que el bus sí acelera porque cambia la dirección de la velocidad (tangente a la curva), aunque la rapidez sea constante.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Nombra una fuerza real que apunta hacia el centro de la curva y la mantiene: la fricción lateral entre llantas y pavimento (o, si menciona peralte, la componente de la normal hacia el centro).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica la sensación del pasajero sin una fuerza real hacia afuera: por inercia tiende a seguir recto y la pared o el asiento lo empuja hacia el centro. También vale si aclara que la «fuerza centrífuga» solo aparece como fuerza ficticia al describir el movimiento desde dentro del bus.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Escribe la aceleración como v²/r o la fuerza como mv²/r, o relaciona la fuerza neta hacia el centro con la segunda ley.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que no hay aceleración porque la rapidez no cambia.",
+        "ejemplo": "Tiene razón en que no acelera, porque va siempre a 40 km/h; solo se equivoca en el nombre de la fuerza.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/3"
+       },
+       {
+        "descripcion": "Mantiene la fuerza centrífuga como una fuerza real que equilibra a la centrípeta.",
+        "ejemplo": "La centrípeta jala al bus hacia adentro y la centrífuga lo empuja hacia afuera; como se equilibran, el bus no se sale de la curva.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+       },
+       {
+        "descripcion": "Nombra la «fuerza centrípeta» como si fuera el agente, sin identificar la fuerza real.",
+        "ejemplo": "Lo que mantiene al bus en la curva es la fuerza centrípeta, que aparece cuando el bus gira.",
+        "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+       }
+      ]
+     }
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-FIS-U6-6.5/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U6-6.5",
+    "CON:fisica/aceleracion-fuerza-centripeta"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Un bus toma una curva de la carretera de Los Chorros con una rapidez constante de 40 km/h. Un pasajero dice: «Como el velocímetro no cambia, el bus no acelera; lo que me empuja contra la ventana es la fuerza centrífuga». En 2 o 3 oraciones, explica qué está mal en lo que dice y qué fuerza real mantiene al bus en la curva.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Aunque la rapidez no cambie, la velocidad es tangente a la curva y cambia de dirección: hay aceleración hacia el centro, v²/r. Esa aceleración la produce una fuerza real, la fricción lateral de las llantas con el pavimento; el pasajero no es empujado hacia afuera: por inercia tiende a seguir recto y la pared del bus lo empuja hacia el centro.",
+   "duracion_min": 5,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U6-6.5"
+   },
+   "rubrica": {
+    "respuesta_modelo": "El bus sí acelera: aunque la rapidez es constante, la velocidad es tangente a la curva y cambia de dirección a cada instante, y ese cambio es una aceleración dirigida hacia el centro de la curva (v²/r). Por la segunda ley hace falta una fuerza neta hacia el centro, y la da una fuerza real: la fricción lateral entre las llantas y el pavimento (más una parte de la normal si la curva tiene peralte). Para quien mira desde la calle, ninguna fuerza empuja al pasajero hacia afuera: por inercia tiende a seguir en línea recta, y la pared del bus lo empuja hacia el centro para que también dé la curva. La «fuerza centrífuga» no la ejerce ningún cuerpo; solo aparece como fuerza ficticia si se describe el movimiento desde dentro del bus.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Afirma que el bus sí acelera porque cambia la dirección de la velocidad (tangente a la curva), aunque la rapidez sea constante.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Nombra una fuerza real que apunta hacia el centro de la curva y la mantiene: la fricción lateral entre llantas y pavimento (o, si menciona peralte, la componente de la normal hacia el centro).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica la sensación del pasajero sin una fuerza real hacia afuera: por inercia tiende a seguir recto y la pared o el asiento lo empuja hacia el centro. También vale si aclara que la «fuerza centrífuga» solo aparece como fuerza ficticia al describir el movimiento desde dentro del bus.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Escribe la aceleración como v²/r o la fuerza como mv²/r, o relaciona la fuerza neta hacia el centro con la segunda ley.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta que no hay aceleración porque la rapidez no cambia.",
+      "ejemplo": "Tiene razón en que no acelera, porque va siempre a 40 km/h; solo se equivoca en el nombre de la fuerza.",
+      "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/3"
+     },
+     {
+      "descripcion": "Mantiene la fuerza centrífuga como una fuerza real que equilibra a la centrípeta.",
+      "ejemplo": "La centrípeta jala al bus hacia adentro y la centrífuga lo empuja hacia afuera; como se equilibran, el bus no se sale de la curva.",
+      "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/1"
+     },
+     {
+      "descripcion": "Nombra la «fuerza centrípeta» como si fuera el agente, sin identificar la fuerza real.",
+      "ejemplo": "Lo que mantiene al bus en la curva es la fuerza centrípeta, que aparece cuando el bus gira.",
+      "dificultad": "DIF:fisica/aceleracion-fuerza-centripeta/2"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U4-4.8/obj-1": {
   "tipo": "contenido",
@@ -69094,10 +69327,77 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.8/obj-1",
+    "decision": "corregir",
+    "justificacion": "Química correcta: Li, Na y K en agua descritos bien (llama lila del potasio) y clave C sostenida por distancia, apantallamiento y energía de ionización. Distractores mapeados a ideas previas reales. Solo se rotula el video como de ejemplo, como en las otras actividades con observaciones, para que no se lean como datos medidos en clase.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "La reactividad de los alcalinos con agua crece al bajar en el grupo; el potasio arde con llama lila."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "enunciado": "En un video de ejemplo, el litio burbujea despacio sobre el agua, el sodio se funde en una bolita que corre por la superficie y el potasio se inflama al instante con llama lila. El rubidio está debajo del potasio en el grupo 1. ¿Cómo esperas que reaccione el rubidio con el agua y por qué?"
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:G10-QUI-U4-4.8/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.8",
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "En un video de ejemplo, el litio burbujea despacio sobre el agua, el sodio se funde en una bolita que corre por la superficie y el potasio se inflama al instante con llama lila. El rubidio está debajo del potasio en el grupo 1. ¿Cómo esperas que reaccione el rubidio con el agua y por qué?",
+   "opciones": {
+    "A": "Igual que el potasio, porque los elementos de un mismo grupo comparten sus propiedades y reaccionan igual",
+    "B": "Menos violento que el potasio, porque su núcleo tiene más protones y sujeta más fuerte su electrón externo",
+    "C": "Más violento que el potasio, porque su electrón externo está más lejos del núcleo y quitarlo cuesta menos",
+    "D": "Más violento que el potasio, porque tiene más electrones de valencia que el potasio para cederle al agua"
+   },
+   "correcta": "C",
+   "distractores": {
+    "A": "DIF:quimica/tabla-periodica/1",
+    "B": "DIF:quimica/propiedades-periodicas/2",
+    "D": "DIF:quimica/distribucion-electronica-por-niveles/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El rubidio tiene una capa más que el potasio: su único electrón de valencia está más lejos del núcleo y más apantallado por las capas internas, así que su energía de ionización es menor y lo cede con más facilidad. Los protones de más no lo compensan: por eso reacciona con más violencia que el potasio.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U4-4.8"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:G10-QUI-U4-4.8/obj-2": {
   "tipo": "contenido",
@@ -69180,8 +69480,34 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.8/obj-2",
+    "decision": "aprobar",
+    "justificacion": "Observaciones de desplazamiento de halógenos correctas y rotuladas como de ejemplo: el cloro desplaza a bromo y yodo, el bromo solo al yodo, y el yodo a ninguno. Clave D correcta (Cl > Br > I); B y C mapean ideas previas reales y A es una lectura errónea de los datos. Sin flúor, no aparece la anomalía de la afinidad electrónica.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 28)",
+      "cita": "La electronegatividad se trabaja en 4.7, inmediatamente antes.",
+      "cita_literal": "Explica la variación de la electronegatividad en la tabla periódica"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Bromo acuoso naranja, yodo acuoso café; un halógeno solo desplaza a los de abajo del grupo."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -69300,8 +69626,34 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:G10-QUI-U4-4.8/obj-abierta",
+    "decision": "aprobar",
+    "justificacion": "Respuesta modelo correcta: el potasio cede un electrón de la cuarta capa; el magnesio, dos de la tercera con mayor carga nuclear efectiva, y el segundo cuesta más. Reacción casi nula del magnesio en agua fría es real. La rúbrica exige energía de ionización y estructura, como pide 4.8, y sus errores típicos remiten a ideas previas existentes.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+      "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+      "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "El magnesio apenas reacciona con agua fría; el potasio reacciona con violencia."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -76591,8 +76943,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+    "decision": "aprobar",
+    "justificacion": "Clave D correcta: a la rapidez de diseño N sen θ = mv²/r y N cos θ = mg dan tan θ = v²/(rg), sin masa, así que ambos vehículos toman la curva sin fricción. La idealización está declarada (pavimento muy liso, partículas). A, B y C son ideas previas reales (masa, solo la fricción, centrífuga) y están mapeadas a sus dificultades. Opciones parejas.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador pide explicar cómo el peralte reduce la dependencia de la fricción",
+      "cita_literal": "explica cómo el ángulo de peralte reduce la dependencia de la fricción"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "rapidez de diseño v² = r g tan θ, independiente de la masa en el modelo de partícula"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -76668,8 +77041,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+    "decision": "aprobar",
+    "justificacion": "Datos coherentes con F = mv²/r para un tapón de unos 25 g: F/v² ≈ 0.052, 0.049 y 0.051 N·s²/m², con dispersión realista. La extrapolación a 8.0 m/s da entre 3.1 y 3.4 N según la fila usada, dentro de 3.2 ± 0.2 N. La tensión es la única fuerza horizontal radial (la fricción de la mesa es tangencial) y los datos están rotulados como de ejemplo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la fase Indagar pide medir la tensión con dinamómetro a tres rapideces",
+      "cita_literal": "Mide la tensión con un dinamómetro para tres rapideces de giro"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "4 × 0.78 = 3.12 N; 16 × 0.21 = 3.36 N; (64/36) × 1.83 = 3.25 N"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -76754,8 +77148,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/aceleracion-fuerza-centripeta/sondeo-1-G10",
+    "decision": "aprobar",
+    "justificacion": "Clave B correcta: sobre una mesa muy lisa la única fuerza horizontal es la tensión, que es la centrípeta. Los distractores corresponden a tres ideas previas documentadas y bien mapeadas: fuerza en el sentido del movimiento, centrífuga real y centrípeta como fuerza adicional. La idealización (mesa muy lisa) está declarada.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la fase Aproximar usa este mismo tapón sobre mesa lisa",
+      "cita_literal": "Recuerda las leyes de Newton de 8.° y las aplica a un tapón que gira atado a un hilo sobre una mesa lisa"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "sin fricción, ΣF horizontal = T = mv²/r; no hace falta fuerza tangencial para rapidez constante"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -80804,8 +81219,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/movimiento-circular-uniforme/comprobacion-G10",
+    "decision": "aprobar",
+    "justificacion": "Clave B correcta: f pasa de 2.0 a 4.0 Hz, T baja de 0.50 a 0.25 s y v = 2πr/T se duplica para la válvula del borde. Los distractores son confusiones reales (período con frecuencia; rapidez que solo depende del radio). No mapearlos es aceptable: no hay dificultades de esa confusión en la capa.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide definir período, frecuencia y rapidez tangencial",
+      "cita_literal": "definir período, frecuencia y rapidez tangencial"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "T = 1/f; v = 2πr f: con r fijo, v es proporcional a f"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -80881,10 +81317,67 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/movimiento-circular-uniforme/practica-G10",
+    "decision": "corregir",
+    "justificacion": "Valor y tolerancia correctos (v = 2π·0.60·1.5 = 5.65 m/s; 1.5 Hz = 90 rpm, verosímil para un ventilador de techo). Corrijo una cuenta de la retroalimentación: 3.77 m / 0.67 s da 5.63, no 5.7, y confunde a quien verifica. Uso T ≈ 0.667 s y ω ≈ 9.42 rad/s, y advierto que redondear T a 0.7 s saca el resultado de la tolerancia.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador pide la rapidez tangencial a partir del período",
+      "cita_literal": "definir período, frecuencia y rapidez tangencial"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "T = 20/30 = 0.667 s; v = 2π·0.60/0.667 = 5.65 m/s; con T = 0.7 s, v = 5.39 m/s, fuera de 5.65 ± 0.15"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "El período es T = 20 s / 30 ≈ 0.667 s (frecuencia 1.5 Hz). En cada vuelta la cinta recorre 2π · 0.60 m ≈ 3.77 m, así que v = 3.77 m / 0.667 s ≈ 5.65 m/s; con ω = 2πf ≈ 9.42 rad/s, v = ωr da lo mismo. No redondees T a 0.7 s antes de dividir: el resultado se aleja (5.4 m/s)."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:fisica/movimiento-circular-uniforme/practica-G10",
+   "tipo": "actividad",
+   "rol": "practica",
+   "objetivos": [
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "CON:fisica/movimiento-circular-uniforme"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    10
+   ],
+   "enunciado": "Para medir el giro de un ventilador de techo, un grupo pegó una cinta en la punta de un aspa, a 0.60 m del eje, y con un video en cámara lenta contó 30 vueltas en 20 s de tiempo real (datos de un grupo de ejemplo). Calcula el período y luego la rapidez tangencial de la cinta, en m/s. Escribe solo el número de la rapidez.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 5.65,
+   "tolerancia": 0.15,
+   "unidad": "m/s",
+   "retroalimentacion": "El período es T = 20 s / 30 ≈ 0.667 s (frecuencia 1.5 Hz). En cada vuelta la cinta recorre 2π · 0.60 m ≈ 3.77 m, así que v = 3.77 m / 0.667 s ≈ 5.65 m/s; con ω = 2πf ≈ 9.42 rad/s, v = ωr da lo mismo. No redondees T a 0.7 s antes de dividir: el resultado se aleja (5.4 m/s).",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:fisica/movimiento-circular-uniforme"
+   },
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10": {
   "tipo": "contenido",
@@ -80966,8 +81459,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-1-G10",
+    "decision": "aprobar",
+    "justificacion": "Clave A correcta: girando en sentido antihorario visto desde arriba, en el punto norte la velocidad apunta al oeste. B (por el radio) y C (sigue curvándose) son las ideas previas clásicas de este caso y están mapeadas; D es un intermedio plausible. La retroalimentación aclara que además cae por la gravedad.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el subcontenido pide la velocidad como vector tangente",
+      "cita_literal": "Velocidad como vector tangente"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "en (0, R) con giro antihorario, v = (−v, 0): oeste; sin fuerza horizontal, sigue recta en planta"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -81048,8 +81562,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/movimiento-circular-uniforme/sondeo-2-G10",
+    "decision": "aprobar",
+    "justificacion": "Clave D correcta: igual período implica igual ω ≈ 0.79 rad/s, y v = ωr da 1.6 m/s para Ana y 3.1 m/s para Beto. A, B y C son confusiones reales entre velocidad angular y rapidez tangencial. Datos rotulados como de ejemplo y verosímiles para un carrusel.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide calcular período, frecuencia y rapidez",
+      "cita_literal": "definir período, frecuencia y rapidez tangencial"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "ω = 2π/8.0 = 0.785 rad/s; v = 2π·2.0/8.0 = 1.57 m/s y 2π·4.0/8.0 = 3.14 m/s"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -84268,10 +84803,75 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/segunda-ley-newton/comprobacion-G10",
+    "decision": "corregir",
+    "justificacion": "Clave y números correctos: (429 − 294)/30 = 4.5 m/s² hacia arriba, coherente con un columpio de unos 2.5 m a 3.4 m/s. Corrijo una frase ambigua de la retroalimentación: «hacia donde cuelgan las cadenas» puede leerse como hacia abajo, que es justo el sentido contrario. Ahora dice hacia la barra de la que cuelgan, el centro del arco.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide calcular fuerzas con la segunda ley",
+      "cita_literal": "calcular fuerzas con la segunda ley de Newton"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "en el punto más bajo ΣF = T − mg = mv²/r, hacia el punto de suspensión; la aceleración tangencial es 0"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "La fuerza neta es la suma con sentido: 429 N − 294 N = 135 N hacia arriba, así que a = 135 N / 30 kg = 4.5 m/s² hacia arriba, hacia la barra de la que cuelgan las cadenas (el centro del arco). Aunque la rapidez no cambie en ese instante, la dirección de la velocidad sí: esa aceleración es centrípeta."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "objetivos": [
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "CON:fisica/segunda-ley-newton"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Una niña de 30 kg (con el asiento) se mece en un columpio. Al pasar por el punto más bajo, su rapidez es máxima y no está cambiando; en ese instante las cadenas tiran de ella hacia arriba con 429 N y su peso es 294 N. ¿Cuál es su aceleración en ese instante?",
+   "opciones": {
+    "A": "4.5 m/s² hacia arriba, porque la fuerza neta de 135 N apunta hacia arriba.",
+    "B": "0 m/s², porque en el punto más bajo su rapidez es máxima y no está cambiando.",
+    "C": "4.5 m/s² hacia adelante, porque la aceleración va en el sentido en que se mueve.",
+    "D": "14.3 m/s² hacia arriba, porque las cadenas tiran con 429 N de los 30 kg."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:fisica/aceleracion-fuerza-centripeta/3",
+    "C": "DIF:fisica/segunda-ley-newton/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La fuerza neta es la suma con sentido: 429 N − 294 N = 135 N hacia arriba, así que a = 135 N / 30 kg = 4.5 m/s² hacia arriba, hacia la barra de la que cuelgan las cadenas (el centro del arco). Aunque la rapidez no cambie en ese instante, la dirección de la velocidad sí: esa aceleración es centrípeta.",
+   "duracion_min": 4,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:fisica/segunda-ley-newton"
+   },
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:fisica/segunda-ley-newton/comprobacion-G11": {
   "tipo": "contenido",
@@ -84466,8 +85066,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/segunda-ley-newton/practica-G10",
+    "decision": "aprobar",
+    "justificacion": "Datos coherentes: F/a = 2.08, 1.96, 2.03 y 1.98 kg y el ajuste por mínimos cuadrados por el origen da 1.99 kg, dentro de 2.0 ± 0.1. La pendiente de F contra a es la masa, como dice la retroalimentación. La idealización (fricción despreciable) está declarada y los datos están rotulados como de ejemplo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide calcular fuerzas con la segunda ley",
+      "cita_literal": "calcular fuerzas con la segunda ley de Newton"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "m = Σ(F·a)/Σ(a²) = 3.76/1.885 = 1.99 kg"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -84679,8 +85300,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-1-G10",
+    "decision": "aprobar",
+    "justificacion": "Clave C correcta: con velocidad constante en rapidez y dirección, ΣF = 0. A y D expresan la idea aristotélica de que mantener el movimiento exige fuerza neta (D además la confunde con m·v) y están bien mapeadas; B, olvidar la fuerza motriz, es un error real. La retroalimentación identifica bien el agente: el pavimento empuja las llantas.",
+    "evidencia": [
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "primera y segunda ley: a = 0 implica ΣF = 0; la fuerza hacia adelante es la fricción estática del pavimento sobre las llantas motrices"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador exige manejar velocidad como vector, base de este sondeo",
+      "cita_literal": "Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -84884,8 +85526,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:fisica/segunda-ley-newton/sondeo-2-G10",
+    "decision": "aprobar",
+    "justificacion": "Cálculo correcto: ΣF = 80 − 30 = 50 N y a = 50/25 = 2.0 m/s²; la tolerancia de 0.05 separa bien el error típico de usar solo la fuerza aplicada (80/25 = 3.2 m/s²), que la retroalimentación nombra. Valores verosímiles para una caja arrastrada.",
+    "evidencia": [
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "a = (F − f)/m = (80 − 30)/25 = 2.0 m/s²"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide calcular fuerzas con la segunda ley",
+      "cita_literal": "calcular fuerzas con la segunda ley de Newton"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -87615,10 +88278,78 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+    "decision": "corregir",
+    "justificacion": "Química correcta: 20 electrones dan 2, 8, 8, 2 y el calcio forma el ion 2+; el distractor D corresponde a una señal de la idea previa. Solo se corrige la notación del ion (Ca²⁺ en lugar de Ca2+), como en el resto de la capa, para que no se lea como «Ca2» más un signo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+      "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+     },
+     {
+      "fuente": "data/pedagogia/actividades.json",
+      "cita": "La capa usa superíndices para las cargas (Ca²⁺) en sus demás actividades."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "Con 20 electrones (es el calcio), la tercera capa llega a 8 y los dos últimos pasan a la cuarta: 2, 8, 8, 2. Ceder esos dos cuesta mucho menos que ganar seis, así que forma el ion Ca²⁺, como los demás metales del grupo 2."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "CON:quimica/distribucion-electronica-por-niveles"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Un átomo tiene 20 electrones. ¿Cuál es su distribución por capas y qué ion tiende a formar al reaccionar?",
+   "opciones": {
+    "A": "2, 8, 10: cede los diez electrones de su capa externa y forma un ion 10+",
+    "B": "2, 8, 8, 2: cede los dos electrones de su capa externa y forma un ion 2+",
+    "C": "2, 8, 8, 2: gana seis electrones para tener ocho afuera y forma un ion 6−",
+    "D": "2, 8, 8, 2: cede un electrón por cada una de sus cuatro capas: un ion 4+"
+   },
+   "correcta": "B",
+   "distractores": {
+    "D": "DIF:quimica/distribucion-electronica-por-niveles/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con 20 electrones (es el calcio), la tercera capa llega a 8 y los dos últimos pasan a la cuarta: 2, 8, 8, 2. Ceder esos dos cuesta mucho menos que ganar seis, así que forma el ion Ca²⁺, como los demás metales del grupo 2.",
+   "duracion_min": 3,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:quimica/distribucion-electronica-por-niveles"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10": {
   "tipo": "contenido",
@@ -87699,8 +88430,34 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+    "decision": "aprobar",
+    "justificacion": "Aluminio 2, 8, 3 correcto; la clave D asigna bien capas al período y electrones externos al grupo 13. B invierte la relación (buen distractor) y C remite a la idea previa de ceder todos los electrones. Coherente con la configuración por orbitales que el grupo ya estudió (3.10).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22)",
+      "cita": "Antes de 4.8 el grupo ya escribe configuraciones por orbitales (Aufbau).",
+      "cita_literal": "Escribe configuraciones electrónicas y diagramas de orbitales aplicando el principio de Aufbau"
+     },
+     {
+      "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+      "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -87783,8 +88540,28 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-1-G10",
+    "decision": "aprobar",
+    "justificacion": "Li (2, 1), Na (2, 8, 1) y K (2, 8, 8, 1): la clave A es correcta y el distractor C reproduce la señal documentada de la dificultad (uno, dos y tres electrones externos). Sondeo breve y adecuado como base.",
+    "evidencia": [
+     {
+      "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+      "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Los alcalinos comparten un electrón externo; cambia el número de capas."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -87867,8 +88644,28 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/distribucion-electronica-por-niveles/sondeo-2-G10",
+    "decision": "aprobar",
+    "justificacion": "Los cuatro elementos (Na, Cl, K, Ca) están bien descritos; la clave B es correcta y la retroalimentación distingue grupo (electrones externos) y período (capas). C mapea la señal de la idea previa.",
+    "evidencia": [
+     {
+      "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+      "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "2, 8, 1 y 2, 8, 8, 1 son sodio y potasio, ambos del grupo 1."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -90638,10 +91435,92 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/propiedades-periodicas/comprobacion-G10",
+    "decision": "corregir",
+    "justificacion": "Orden F > Cl > S correcto. La opción C decía que el núcleo atrae al electrón «hacia arriba y hacia la derecha», lectura física falsa. La retroalimentación igualaba electronegatividad con atraer un electrón extra, que es afinidad electrónica (4.6): la del cloro supera a la del flúor y confundiría. Se separan ambos conceptos.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.6 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 27)",
+      "cita": "Justo antes de 4.8 el grupo estudia la afinidad electrónica como concepto distinto.",
+      "cita_literal": "explica por qué los halógenos tienen los valores más favorables"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.7 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 28)",
+      "cita": "La electronegatividad se trabaja en 4.7, inmediatamente antes.",
+      "cita_literal": "Explica la variación de la electronegatividad en la tabla periódica"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Afinidad electrónica Cl > F, pero electronegatividad y reactividad F > Cl."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "opciones": {
+      "A": "S > Cl > F, porque, como en los metales, la reactividad crece hacia abajo y hacia la izquierda",
+      "B": "Cl > F > S, porque el cloro tiene más protones que el flúor y atrae con más fuerza un electrón",
+      "C": "F > Cl > S, porque la electronegatividad crece hacia arriba en un grupo y hacia la derecha en un período",
+      "D": "F > S > Cl, porque el radio crece hacia la derecha y el azufre, más pequeño, atrae mejor un electrón"
+     },
+     "retroalimentacion": "Un no metal reacciona ganando electrones, y lo hace con más facilidad cuanto mayor es su electronegatividad, es decir, cuanto más atrae su núcleo a los electrones de enlace. Crece hacia la derecha en un período (el cloro más que el azufre) y hacia arriba en un grupo (el flúor más que el cloro): F > Cl > S. Ojo: la afinidad electrónica del cloro es algo mayor que la del flúor, pero el flúor es el más electronegativo y el más reactivo."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Sin consultar datos, ordena de mayor a menor reactividad, como no metales, al flúor (grupo 17, período 2), al cloro (grupo 17, período 3) y al azufre (grupo 16, período 3).",
+   "opciones": {
+    "A": "S > Cl > F, porque, como en los metales, la reactividad crece hacia abajo y hacia la izquierda",
+    "B": "Cl > F > S, porque el cloro tiene más protones que el flúor y atrae con más fuerza un electrón",
+    "C": "F > Cl > S, porque la electronegatividad crece hacia arriba en un grupo y hacia la derecha en un período",
+    "D": "F > S > Cl, porque el radio crece hacia la derecha y el azufre, más pequeño, atrae mejor un electrón"
+   },
+   "correcta": "C",
+   "distractores": {
+    "A": "DIF:quimica/propiedades-periodicas/1",
+    "B": "DIF:quimica/propiedades-periodicas/2",
+    "D": "DIF:quimica/propiedades-periodicas/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Un no metal reacciona ganando electrones, y lo hace con más facilidad cuanto mayor es su electronegatividad, es decir, cuanto más atrae su núcleo a los electrones de enlace. Crece hacia la derecha en un período (el cloro más que el azufre) y hacia arriba en un grupo (el flúor más que el cloro): F > Cl > S. Ojo: la afinidad electrónica del cloro es algo mayor que la del flúor, pero el flúor es el más electronegativo y el más reactivo.",
+   "duracion_min": 3,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:quimica/propiedades-periodicas"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:quimica/propiedades-periodicas/practica-G10": {
   "tipo": "contenido",
@@ -90724,8 +91603,30 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/propiedades-periodicas/practica-G10",
+    "decision": "aprobar",
+    "justificacion": "La gráfica descrita es fiel (picos en He, Ne, Ar; valles en Li, Na, K; subida general en el período; valles decrecientes) y no inventa valores. Clave A correcta; B, C y D mapean ideas previas reales sobre el significado de la energía de ionización, la identidad de grupo y el número de protones.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.5 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 26)",
+      "cita": "La energía de ionización y su variación periódica se trabajan en 4.5.",
+      "cita_literal": "Deduce el número de electrones de valencia de un elemento a partir del salto en sus energías de ionización sucesivas"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -90808,8 +91709,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/propiedades-periodicas/sondeo-1-G10",
+    "decision": "aprobar",
+    "justificacion": "Radio decreciente en el período 3 explicado con carga nuclear efectiva y misma capa: correcto. El distractor A es la idea previa «más electrones, átomo más grande»; D y C son errores plausibles. Adecuado al nivel de 4.4.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+      "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+      "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Del sodio al cloro los electrones entran en la tercera capa y el radio disminuye."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -90892,10 +91814,74 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/tabla-periodica/comprobacion-G10",
+    "decision": "corregir",
+    "justificacion": "Clave D correcta: el silicio es metaloide, brillante, quebradizo y semiconductor. La retroalimentación afirmaba que todos los elementos junto a la línea escalonada son metaloides; el aluminio, que la bordea y aparece en otra actividad del tema, es metal. Se acota a «la mayoría».",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 23)",
+      "cita": "El grupo ubica elementos por carácter metálico.",
+      "cita_literal": "ubica a los elementos según su grupo, periodo y carácter metálico"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "El aluminio bordea la línea escalonada y es un metal."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "La mayoría de los elementos que bordean la línea escalonada son metaloides: el silicio tiene brillo metálico, pero es quebradizo y conduce la electricidad mucho menos que un metal, por eso sirve como semiconductor en los chips. Comparte grupo con el carbono, pero no todas sus propiedades."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:quimica/tabla-periodica/comprobacion-G10",
+   "tipo": "actividad",
+   "rol": "comprobacion",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "CON:quimica/tabla-periodica"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "El silicio, que se usa en los chips de los celulares, está en el grupo 14 y el período 3, junto a la línea escalonada que separa los metales de los no metales. ¿Qué propiedades esperas que tenga?",
+   "opciones": {
+    "A": "Las de un metal típico: brilla, se dobla sin romperse y conduce muy bien la electricidad",
+    "B": "Las de un no metal gaseoso, como el cloro, que está en su mismo período de la tabla",
+    "C": "Idénticas a las del carbono, porque los elementos de un grupo comparten todas sus propiedades",
+    "D": "Intermedias: tiene brillo metálico, pero es quebradizo y conduce poco la electricidad"
+   },
+   "correcta": "D",
+   "distractores": {
+    "C": "DIF:quimica/tabla-periodica/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La mayoría de los elementos que bordean la línea escalonada son metaloides: el silicio tiene brillo metálico, pero es quebradizo y conduce la electricidad mucho menos que un metal, por eso sirve como semiconductor en los chips. Comparte grupo con el carbono, pero no todas sus propiedades.",
+   "duracion_min": 3,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:quimica/tabla-periodica"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:quimica/tabla-periodica/practica-G10": {
   "tipo": "contenido",
@@ -90974,10 +91960,72 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/tabla-periodica/practica-G10",
+    "decision": "corregir",
+    "justificacion": "Clave B correcta (calcio y cloro). Pero la retroalimentación enseñaba «forma iones 2+, entonces grupo 2», regla falsa: hierro, cobre o zinc también forman iones 2+, y el grupo ya escribe sus configuraciones (4.3). Además no explicaba por qué D es incorrecta. Se acota a un metal blando que reacciona con agua.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.3 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 24)",
+      "cita": "El grupo ya escribe la configuración de iones comunes, incluidos los de metales de transición.",
+      "cita_literal": "escribe la configuración de sus iones más comunes"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Fe²⁺, Cu²⁺ y Zn²⁺ son iones 2+ de metales de transición, no del grupo 2."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "Un metal blando que reacciona con el agua y forma iones 2+ es un alcalinotérreo: tiene dos electrones de valencia, grupo 2, a la izquierda. El hierro y el cobre también forman iones 2+, pero son duros y casi no reaccionan con agua fría. Un gas que forma iones 1− gana un electrón: grupo 17, entre los no metales. La carga del ion se relaciona con el grupo, no con el período, y el grupo 18 casi no forma iones."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:quimica/tabla-periodica/practica-G10",
+   "tipo": "actividad",
+   "rol": "practica",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "CON:quimica/tabla-periodica"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Elemento 1: metal brillante y blando que reacciona con el agua y forma iones 2+. Elemento 2: gas amarillo verdoso que forma iones 1−. ¿En qué zona de la tabla periódica ubicarías cada uno?",
+   "opciones": {
+    "A": "El 1, en el período 2 a la izquierda; el 2, en el período 1 arriba, por la carga de sus iones",
+    "B": "El 1, en el grupo 2 a la izquierda; el 2, en el grupo 17 a la derecha, entre los no metales",
+    "C": "El 1, en el grupo 2 a la izquierda; el 2, en el grupo 18, junto a los demás elementos gaseosos",
+    "D": "El 1, en el centro, con el hierro y el cobre; el 2, en el grupo 17 a la derecha, con los no metales"
+   },
+   "correcta": "B",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Un metal blando que reacciona con el agua y forma iones 2+ es un alcalinotérreo: tiene dos electrones de valencia, grupo 2, a la izquierda. El hierro y el cobre también forman iones 2+, pero son duros y casi no reaccionan con agua fría. Un gas que forma iones 1− gana un electrón: grupo 17, entre los no metales. La carga del ion se relaciona con el grupo, no con el período, y el grupo 18 casi no forma iones.",
+   "duracion_min": 6,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:quimica/tabla-periodica"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:ACT:quimica/tabla-periodica/sondeo-1-G10": {
   "tipo": "contenido",
@@ -91058,8 +92106,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/tabla-periodica/sondeo-1-G10",
+    "decision": "aprobar",
+    "justificacion": "Correcto: sodio y potasio forman hidróxido e hidrógeno con agua y el potasio reacciona con más violencia. La clave C distingue comportamiento compartido de intensidad gradual; A mapea la idea previa de propiedades idénticas.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Na y K con agua: hidróxido e hidrógeno; K más vigoroso."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -91142,10 +92211,74 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:ACT:quimica/tabla-periodica/sondeo-2-G10",
+    "decision": "corregir",
+    "justificacion": "Observaciones del grupo 2 correctas y rotuladas como de ejemplo; clave A correcta. Pero la retroalimentación decía «los tres burbujean», y el propio enunciado da al magnesio «casi sin burbujas»: contradicción que un estudiante atento detecta. Se reescribe: el tipo de reacción es el mismo y la intensidad cambia.",
+    "evidencia": [
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "El magnesio apenas reacciona con agua fría; calcio y estroncio sí, con hidrógeno e hidróxido."
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "retroalimentacion": "Los tres tienen dos electrones de valencia y reaccionan con el agua del mismo modo, formando hidrógeno y un hidróxido, pero la intensidad cambia de forma gradual: el magnesio apenas reacciona en frío y el estroncio lo hace rápido. Crece al bajar en el grupo. Las diferencias son demasiado grandes para atribuirlas al tamaño de los trozos."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "ACT:quimica/tabla-periodica/sondeo-2-G10",
+   "tipo": "actividad",
+   "rol": "sondeo",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "CON:quimica/tabla-periodica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Datos de un grupo de ejemplo, tomados de un video con trozos de metales del grupo 2 en agua fría. Magnesio: casi sin burbujas en 10 minutos. Calcio: burbujeo constante y el agua se enturbia. Estroncio: burbujeo rápido y el trozo se consume en pocos minutos. ¿Qué concluyes sobre los elementos de un mismo grupo?",
+   "opciones": {
+    "A": "Reaccionan de forma parecida, y la intensidad de la reacción crece al bajar en el grupo",
+    "B": "Reaccionan igual; las diferencias se deben al tamaño o a la limpieza de cada trozo",
+    "C": "No se parecen en nada, así que el grupo no dice nada sobre cómo reacciona un elemento",
+    "D": "Reaccionan de forma parecida porque los tres tienen el mismo número de capas de electrones"
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/tabla-periodica/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Los tres tienen dos electrones de valencia y reaccionan con el agua del mismo modo, formando hidrógeno y un hidróxido, pero la intensidad cambia de forma gradual: el magnesio apenas reacciona en frío y el estroncio lo hace rápido. Crece al bajar en el grupo. Las diferencias son demasiado grandes para atribuirlas al tamaño de los trozos.",
+   "duracion_min": 3,
+   "estado": "propuesta_pendiente",
+   "fuente": {
+    "tipo": "concepto",
+    "ref": "CON:quimica/tabla-periodica"
+   },
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:biologia/adn-y-cromosomas/1": {
   "tipo": "contenido",
@@ -92299,10 +93432,47 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/1",
+    "decision": "corregir",
+    "justificacion": "Idea previa real y muy documentada, con señales observables. Corrijo dos precisiones: un hilo jala, no empuja; y conviene acotar el marco: para un observador en reposo no hay fuerza hacia afuera, pero en un marco que gira la centrífuga es una fuerza ficticia legítima. Así el docente no siembra una negación absoluta que luego habría que desaprender.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la malla acota la ausencia de la centrífuga al observador en reposo",
+      "cita_literal": "Justifica por qué la «fuerza centrífuga» no aparece en el diagrama de cuerpo libre de un observador en reposo"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "la centrífuga aparece solo en marcos no inerciales; no tiene agente ni par de acción y reacción"
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "descripcion": "Cree que sobre un cuerpo que gira actúa una fuerza real hacia afuera, la «fuerza centrífuga», que equilibra a la centrípeta. Toma como fuerza la sensación de ser lanzado hacia afuera en un bus o un carrusel, que en realidad es la inercia: el cuerpo tiende a seguir recto y algo lo obliga a girar (el asiento o la pared lo empujan, el hilo lo jala hacia el centro). Para un observador en reposo no existe esa fuerza hacia afuera; solo aparece como fuerza ficticia al describir el movimiento desde dentro de lo que gira."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "DIF:fisica/aceleracion-fuerza-centripeta/1",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+   "descripcion": "Cree que sobre un cuerpo que gira actúa una fuerza real hacia afuera, la «fuerza centrífuga», que equilibra a la centrípeta. Toma como fuerza la sensación de ser lanzado hacia afuera en un bus o un carrusel, que en realidad es la inercia: el cuerpo tiende a seguir recto y algo lo obliga a girar (el asiento o la pared lo empujan, el hilo lo jala hacia el centro). Para un observador en reposo no existe esa fuerza hacia afuera; solo aparece como fuerza ficticia al describir el movimiento desde dentro de lo que gira.",
+   "senales": "Dibuja en el diagrama de cuerpo libre una flecha hacia afuera rotulada «centrífuga»; dice que el tapón o el bus está «en equilibrio» porque la fuerza hacia adentro y la de hacia afuera se anulan; explica que la Estación Espacial no cae porque la centrífuga compensa la gravedad; predice que, si el hilo se rompe, el objeto sale disparado por el radio, alejándose del centro.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "justificacion": "Idea previa muy extendida, reforzada por el habla cotidiana y la sensación en vehículos.",
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:fisica/aceleracion-fuerza-centripeta/2": {
   "tipo": "contenido",
@@ -92356,10 +93526,47 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/2",
+    "decision": "corregir",
+    "justificacion": "Idea previa real (la centrípeta como fuerza adicional en el diagrama). Pero una de sus señales, «en el espacio no hay gravedad», y el distractor D de obj-2 que la usa no encajan con la descripción, que solo menciona la normal. Amplío la descripción: tampoco reconoce que en una órbita la gravedad cumple ese papel, y a 400 km sigue siendo casi el 90 % de la de la superficie.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el subcontenido incluye la gravedad como fuerza centrípeta",
+      "cita_literal": "Fuerza gravitatoria como fuerza centrípeta"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "g(400 km) = 9.8·(6371/6771)² ≈ 8.7 m/s², un 89 % de la de la superficie"
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "descripcion": "Trata la fuerza centrípeta como una fuerza más, que aparece sola cuando algo gira, en lugar de entenderla como el papel que cumple la resultante hacia el centro de fuerzas reales con un agente (tensión, fricción, normal o gravedad). Por eso no identifica quién la ejerce en cada situación: no reconoce que una fuerza distinta de la fricción, como la normal inclinada, puede cumplir ese papel, ni que en una órbita lo cumple la gravedad, que a 400 km de altura sigue siendo casi el 90 % de la de la superficie."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "DIF:fisica/aceleracion-fuerza-centripeta/2",
+   "tipo": "dificultad",
+   "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+   "descripcion": "Trata la fuerza centrípeta como una fuerza más, que aparece sola cuando algo gira, en lugar de entenderla como el papel que cumple la resultante hacia el centro de fuerzas reales con un agente (tensión, fricción, normal o gravedad). Por eso no identifica quién la ejerce en cada situación: no reconoce que una fuerza distinta de la fricción, como la normal inclinada, puede cumplir ese papel, ni que en una órbita lo cumple la gravedad, que a 400 km de altura sigue siendo casi el 90 % de la de la superficie.",
+   "senales": "Agrega al diagrama de cuerpo libre una flecha «Fc» además de la tensión o la fricción; escribe ΣF = T + mv²/r; ante «¿quién ejerce esa fuerza?» responde «el giro» o «la curva»; en una curva peraltada sin fricción dice que nada puede mantener al carro en la curva; afirma que un satélite no cae porque «en el espacio no hay gravedad».",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "justificacion": "Error típico al construir diagramas de cuerpo libre en movimiento circular.",
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:DIF:fisica/aceleracion-fuerza-centripeta/3": {
   "tipo": "contenido",
@@ -92413,8 +93620,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/3",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real y frecuente: confundir rapidez con velocidad y negar la aceleración en el movimiento circular uniforme. Las señales son observables (a = 0 en el diagrama, «siempre va a 40 km/h», aceleración dibujada tangente). Corresponde a un punto explícito del indicador.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador pide justificar la velocidad variable con rapidez constante",
+      "cita_literal": "Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "a = v²/r ≠ 0 aunque |v| sea constante, porque cambia la dirección del vector velocidad"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -92470,8 +93698,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:fisica/aceleracion-fuerza-centripeta/4",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real («más pesado, distinto») y bien acotada: la fuerza disponible (μmg, la normal, GMm/r²) y la necesaria (mv²/r) crecen ambas con la masa. Declara el modelo de partícula y aclara que los límites menores para camiones vienen de otras causas (vuelco, frenado), lo que evita una afirmación falsa sobre la vía real. Señales observables.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide justificar la independencia de la masa",
+      "cita_literal": "justificar la independencia de la masa"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "√(μgr), √(rg tan θ) y √(GM/r) no contienen la masa del vehículo ni del satélite"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -93595,8 +94844,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:fisica/movimiento-circular-uniforme/1",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real y clásica: la creencia de un «ímpetu circular» que hace que un objeto liberado siga curvándose (McCloskey, Caramazza y Green, 1980, Science 210). Descripción correcta (velocidad tangente; trayectoria recta al soltarse) y señales observables con el plato y la pelota con pita.",
+    "evidencia": [
+     {
+      "fuente": "McCloskey, Caramazza y Green (1980), Science 210, 1139-1141",
+      "cita": "estudio de creencias ingenuas sobre el movimiento curvilíneo sin fuerzas externas"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el subcontenido pide la velocidad como vector tangente",
+      "cita_literal": "Velocidad como vector tangente"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -95777,8 +97047,28 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/distribucion-electronica-por-niveles/1",
+    "decision": "aprobar",
+    "justificacion": "Confusión real y documentada entre electrones de valencia, electrones totales y número de capas. Las señales son observables en respuestas (19 contra 11 electrones, cargas iguales al número de capas) y coinciden con los distractores que la usan.",
+    "evidencia": [
+     {
+      "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+      "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Error frecuente: «el potasio tiene más electrones para ceder»."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -96311,8 +97601,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/propiedades-periodicas/1",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real: extender a los halógenos la tendencia de los alcalinos («más abajo, más reactivo»). La descripción explica bien la causa común con efectos opuestos (ceder frente a ganar) y las señales son observables.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Los estudiantes suelen ordenar los halógenos I > Br > Cl por analogía con los alcalinos."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -96368,8 +97679,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/propiedades-periodicas/2",
+    "decision": "aprobar",
+    "justificacion": "Confusión real entre número atómico y carga nuclear efectiva: «más protones, atrae más» sin apantallamiento ni distancia. Descripción correcta y señales observables, incluida la lectura de la gráfica de energías de ionización.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+      "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+      "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Ignorar el apantallamiento lleva a predecir que la energía de ionización sube al bajar."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -96425,8 +97757,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/propiedades-periodicas/3",
+    "decision": "aprobar",
+    "justificacion": "Idea previa real y frecuente: más electrones implican un átomo más grande a lo largo del período. La descripción da la explicación correcta (misma capa, carga nuclear efectiva creciente) y las señales son concretas.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.4 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 25)",
+      "cita": "La carga nuclear efectiva se enseña en 4.4, antes de 4.8.",
+      "cita_literal": "Explica la variación del radio atómico en grupos y periodos con la carga nuclear efectiva"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Del sodio al cloro el radio disminuye, contra la intuición."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -96482,8 +97835,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/propiedades-periodicas/4",
+    "decision": "aprobar",
+    "justificacion": "Dos confusiones reales y relacionadas: leer la energía de ionización como energía que el átomo tiene o libera, y la idea de que perder un electrón para «completar el octeto» libera energía. La primera ionización siempre requiere energía; la descripción lo dice bien.",
+    "evidencia": [
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Toda primera ionización de un átomo gaseoso es endotérmica; el octeto no la vuelve favorable."
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -96539,8 +97913,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:DIF:quimica/tabla-periodica/1",
+    "decision": "aprobar",
+    "justificacion": "Generalización real: «comparten propiedades» leído como «propiedades idénticas», y las diferencias atribuidas al experimento. La tabla periódica entra en 5.° grado, así que la justificación sobre primaria es coherente con la malla.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G05-CIE-U4-4.3 (Matriz_Ciencias_5to_Grado_U1_U6 V2.xlsx, hoja «Unidad 4 - Tabla periódica», fila 5)",
+      "cita": "La organización de la tabla periódica se enseña en 5.° grado.",
+      "cita_literal": "Describe los criterios de organización presentes en la Tabla Periódica actual"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "La variación gradual dentro de un grupo es lo que esta idea omite."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -97215,10 +98610,155 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-FIS-U6-6.5/1",
+    "decision": "corregir",
+    "justificacion": "Números correctos (períodos 0.6-1.1 s, m/L = 0.06 kg/m, peralte 9.3 m/s, Luna 2 × 10²⁰ N) sin μ inventado. Corrijo: con 30 g y 50 g el hilo baja unos 37°, no «un poco», y el objeto pasaría a la altura de la cara; la centrípeta es la componente horizontal de la tensión; h/b exige base horizontal; un dinamómetro pegado con cinta no se alinea con el hilo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la malla pide esta hoja como evidencia y estas tres situaciones",
+      "cita_literal": "Construye diagramas de cuerpo libre para un auto en curva plana, un tapón en un hilo y la Luna alrededor de la Tierra"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la variante con dinamómetro responde a la fase Indagar",
+      "cita_literal": "Mide la tensión con un dinamómetro para tres rapideces de giro"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "T sen θ = mg y T cos θ = mω²L cos θ: T = mω²L y sen θ = m/M; con m = 30 g y M = 50 g, θ = 37° y el objeto baja 0.30 m; con M = 150 g, θ = 11.5°"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "μs = tan θ = h/b solo si b es la proyección horizontal; v(peralte 10°, 50 m) = √(50·9.8·tan 10°) = 9.3 m/s; F(Luna) = m(2πr/T)²/r = 2.0 × 10²⁰ N"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "proposito": "Con un aparato casero (un objeto que gira atado a un hilo que pasa por un tubo y sostiene unas arandelas colgadas), identificar la tensión (su componente horizontal) como la fuerza real que actúa como centrípeta y comprobar con datos que la fuerza necesaria crece con el cuadrado de la rapidez a radio constante (F = mv²/r), comparándola con el peso de las arandelas. Luego observar que un cuerpo que deja de recibir fuerza hacia el centro sale por la tangente, y modelar las curvas de carretera: la curva plana, donde la fricción estática da la fuerza hacia el centro, y la peraltada, donde la da parte de la normal. El producto es la hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta, que pide la malla como evidencia.",
+     "materiales": [
+      "Un tubo rígido de 12 a 15 cm: el cuerpo de un lapicero sin carga o un trozo de tubo PVC delgado, con los dos extremos lijados o forrados con cinta adhesiva",
+      "1.5 m de hilo de nylon (de pescar) o de pita delgada y resistente",
+      "Un objeto blando de 20 a 30 g para hacer girar (más liviano que cada juego de arandelas): un tapón de hule, una pelota de esponja con dos o tres monedas adentro, o una tapa de botella rellena de plastilina y forrada con cinta",
+      "Arandelas o tuercas (o bolsitas cerradas con arena) para colgar, tres juegos iguales de unos 50 g (150 g en total), y un clip grande para colgarlas",
+      "Una pinza de ropa pequeña o un clip para marcar el hilo",
+      "Balanza de cocina o de laboratorio, cinta métrica y cronómetro o celular",
+      "Yeso o cinta para marcar en el patio un círculo de seguridad de unos 3 m de radio",
+      "Un plato desechable de cartón o plástico, tijeras, un pliego de papel y una canica",
+      "Una palangana o un tazón grande de paredes curvas, y otra canica",
+      "Un cuaderno de pasta dura o un trozo de cartón grueso, una goma de borrar y una regla (plano inclinado)",
+      "Papel milimetrado o computadora con hoja de cálculo, y calculadora con funciones trigonométricas",
+      "Lentes de seguridad para quien hace girar el objeto, si la escuela los tiene"
+     ],
+     "procedimiento": [
+      "1. (Sesión 1) Pesen el objeto que va a girar (masa m) y cada juego de arandelas (masa M); anoten las masas en kilogramos.",
+      "2. Aten el objeto a un extremo del hilo con doble nudo, pasen el hilo por el tubo y aten en el otro extremo el clip con un juego de arandelas (M).",
+      "3. Midan L = 0.50 m de hilo desde el borde superior del tubo hasta el centro del objeto y pongan la pinza en el hilo justo debajo del extremo inferior del tubo. La pinza es la marca del radio: si durante el giro se mantiene a 1 cm del tubo, L no cambia.",
+      "4. En el patio, dentro del círculo de seguridad, quien gira sostiene el tubo vertical con el brazo estirado hacia arriba, para que el objeto pase por encima de su cabeza, y lo hace girar en un círculo horizontal con movimientos pequeños de la muñeca, hasta que la pinza quede quieta cerca del tubo. El hilo no queda horizontal: baja desde el tubo hasta el objeto, más cuantas menos arandelas cuelguen. Los demás se quedan fuera del círculo.",
+      "5. Otro estudiante mide el tiempo de 20 vueltas; repitan tres veces y promedien. Calculen el período T = t/20, la rapidez v = 2πL/T y la fuerza que pide el modelo, F = mv²/L. Anoten también el peso de las arandelas, Mg, con g = 9.8 m/s².",
+      "6. Repitan los pasos 4 y 5 con dos y con tres juegos de arandelas (2M y 3M), sin cambiar L.",
+      "7. Hagan la tabla (M, Mg, tiempo de 20 vueltas, T, v, v², mv²/L) y grafiquen Mg contra v².",
+      "8. Con un solo juego de arandelas, predigan el período si L fuera 0.25 m y compruébenlo moviendo la pinza. Nota para el docente: el hilo baja respecto de la horizontal un ángulo θ con sen θ ≈ m/M (con un objeto de 30 g y 50 g de arandelas, unos 37°; con 150 g, unos 12°). La componente vertical de la tensión sostiene el peso del objeto y la horizontal es la fuerza centrípeta. El radio real es L cos θ, pero la cuenta con L da justo la tensión del hilo, mω²L; por eso se usa L.",
+      "9. Dibujen el diagrama de cuerpo libre del objeto visto de lado (peso y tensión inclinada) y visto desde arriba, y marquen qué fuerza real, o qué componente de ella, cumple el papel de fuerza centrípeta.",
+      "10. (Sesión 2) Recorten un cuarto del borde del plato desechable y pónganlo sobre el pliego de papel. Hagan rodar la canica pegada al borde interior para que salga por el tramo recortado y marquen con lápiz por dónde pasa. Repitan cinco veces, en los dos sentidos de giro, y tracen con regla la tangente al borde en el punto de salida.",
+      "11. Curva plana. Pongan la goma sobre el cuaderno y levanten un extremo despacio hasta que la goma empiece a deslizar. Midan la altura h y la base horizontal b de la rampa en ese instante (la distancia sobre la mesa, no el largo del cuaderno): el coeficiente de fricción estática es μs ≈ h/b. Repitan cinco veces y promedien. Ese valor es el de su goma y su cuaderno; para una llanta en el pavimento se usa el valor de la tabla de referencia.",
+      "12. Dibujen el diagrama de cuerpo libre de un carro en una curva plana visto de frente (peso, normal y fricción estática hacia el centro) y calculen la rapidez máxima en una curva de 50 m de radio, v = √(μs g r), con el coeficiente llanta–pavimento seco y mojado (valor de la tabla de referencia).",
+      "13. Peralte. Pongan la canica dentro de la palangana y, moviendo la palangana en círculos pequeños sobre la mesa, háganla girar pegada a la pared. Observen a qué altura de la pared gira cuando va despacio y cuando va rápido, y anótenlo.",
+      "14. Dibujen el diagrama de cuerpo libre de un carro en una curva peraltada sin fricción (peso y normal inclinada) y calculen la rapidez de diseño de una curva de 50 m de radio con 10° de peralte: v = √(r g tan θ). Compárenla con la rapidez máxima de la curva plana mojada del paso 12.",
+      "15. Completen la hoja de diagramas de cuerpo libre de tres situaciones (el objeto con hilo, el carro en la curva plana o peraltada y la Luna alrededor de la Tierra) y calculen en cada una la fuerza centrípeta con mv²/r. Para la Luna usen masa 7.35 × 10²² kg, radio de la órbita 3.84 × 10⁸ m y período 27.3 días."
+     ],
+     "seguridad": [
+      "La Parte 1 se hace en el patio, con el círculo de seguridad marcado: solo quien gira está adentro, y nadie cruza mientras el objeto da vueltas.",
+      "Solo se hace girar un objeto blando y liviano; nada de piedras, tuercas sueltas ni vidrio en el extremo que gira. Revisen los nudos y el hilo antes de cada serie y cámbienlo si está deshilachado.",
+      "Giren por encima de la cabeza: quien gira mantiene el brazo estirado hacia arriba para que el objeto no pase a la altura de su propia cara (con pocas arandelas el hilo baja más), y nunca a la altura de la cara de otra persona; si hay lentes de seguridad, que los use quien gira. No suelten el hilo a propósito (la salida por la tangente se observa sin riesgo con la canica del plato).",
+      "Forren con cinta los extremos del tubo para que no corten el hilo ni la mano, y túrnense para no cansar el brazo.",
+      "Recojan las canicas del piso para que nadie resbale; las tijeras las usa una persona a la vez."
+     ],
+     "datos_esperados": "Parte 1: con un objeto de unos 30 g, L = 0.50 m y juegos de arandelas de 50, 100 y 150 g, los períodos salen entre unos 0.6 y 1.1 s (20 vueltas en 12 a 22 s), las rapideces calculadas con L entre unos 3 y 5 m/s y los pesos Mg entre 0.5 y 1.5 N. El hilo queda inclinado: con 50 g baja unos 37° bajo la horizontal (sen θ ≈ m/M = 0.6) y el objeto gira unos 30 cm por debajo del borde del tubo; con 150 g, unos 12°. Aun así, mv²/L con v = 2πL/T es la tensión del hilo. Al duplicar M la rapidez no se duplica: lo que se duplica es v² (v crece unas 1.4 veces). La gráfica de Mg contra v² es casi una recta que pasa cerca del origen, con pendiente cercana a m/L (unos 0.06 kg/m en este ejemplo). Es normal que mv²/L y Mg difieran del orden de un 10 a 20 %, por la fricción del hilo en el tubo, el pequeño círculo que describe la mano y el error al contar vueltas. Con L = 0.25 m y las mismas arandelas, el período baja a unas 0.7 veces (1/√2) el anterior. Parte 2: la canica sale siempre en línea recta por la tangente al borde en el punto donde lo deja; no sale por el radio ni sigue curvándose. El μs de la goma es un número sin unidad, propio de esa goma y ese cuaderno. Con el valor de la tabla de referencia, la rapidez máxima en la curva plana sale menor con pavimento mojado que seco, porque crece con √μ, y no depende de la masa del vehículo. La rapidez de diseño de la curva de 50 m con 10° de peralte es √(50 · 9.8 · tan 10°) ≈ 9.3 m/s (unos 33 km/h), sin fricción y sin depender de la masa. En la palangana, a más rapidez la canica gira más arriba, donde la pared está más inclinada. La fuerza centrípeta sobre la Luna sale del orden de 2 × 10²⁰ N y es la atracción gravitatoria de la Tierra.",
+     "variantes": "Con dinamómetro (actividad de la malla): cuelguen su anillo de un clavo o tornillo fijo en el centro de una tabla o mesa lisa, de modo que gire libremente y quede siempre alineado con el hilo (si se fija con cinta, el hilo lo jala de lado y la lectura no vale); aten el hilo a su gancho y hagan girar sobre la mesa un carrito o un disco liviano con radio fijo; graben la lectura con el celular en cámara lenta para tres rapideces y comprueben que la tensión crece con v². Con celular: la app gratuita phyphox (experimento «Aceleración centrípeta») mide la velocidad angular con el giroscopio y la aceleración con el acelerómetro; con el celular bien sujeto con cinta al asiento de una silla giratoria que el docente hace girar despacio, se grafica a contra ω² y la pendiente da el radio. Sin patio ni materiales: en la simulación PhET «Gravedad y órbitas» se puede quitar la gravedad y ver que el cuerpo sigue en línea recta por la tangente, y medir el período de órbitas de distinto radio."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-FIS-U6-6.5/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U6-6.5",
+    "CON:fisica/aceleracion-fuerza-centripeta"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "El tapón que gira: qué fuerza real lo mantiene en el círculo y qué cambia en una curva",
+   "proposito": "Con un aparato casero (un objeto que gira atado a un hilo que pasa por un tubo y sostiene unas arandelas colgadas), identificar la tensión (su componente horizontal) como la fuerza real que actúa como centrípeta y comprobar con datos que la fuerza necesaria crece con el cuadrado de la rapidez a radio constante (F = mv²/r), comparándola con el peso de las arandelas. Luego observar que un cuerpo que deja de recibir fuerza hacia el centro sale por la tangente, y modelar las curvas de carretera: la curva plana, donde la fricción estática da la fuerza hacia el centro, y la peraltada, donde la da parte de la normal. El producto es la hoja de diagramas de cuerpo libre de tres situaciones con el cálculo de la fuerza centrípeta, que pide la malla como evidencia.",
+   "materiales": [
+    "Un tubo rígido de 12 a 15 cm: el cuerpo de un lapicero sin carga o un trozo de tubo PVC delgado, con los dos extremos lijados o forrados con cinta adhesiva",
+    "1.5 m de hilo de nylon (de pescar) o de pita delgada y resistente",
+    "Un objeto blando de 20 a 30 g para hacer girar (más liviano que cada juego de arandelas): un tapón de hule, una pelota de esponja con dos o tres monedas adentro, o una tapa de botella rellena de plastilina y forrada con cinta",
+    "Arandelas o tuercas (o bolsitas cerradas con arena) para colgar, tres juegos iguales de unos 50 g (150 g en total), y un clip grande para colgarlas",
+    "Una pinza de ropa pequeña o un clip para marcar el hilo",
+    "Balanza de cocina o de laboratorio, cinta métrica y cronómetro o celular",
+    "Yeso o cinta para marcar en el patio un círculo de seguridad de unos 3 m de radio",
+    "Un plato desechable de cartón o plástico, tijeras, un pliego de papel y una canica",
+    "Una palangana o un tazón grande de paredes curvas, y otra canica",
+    "Un cuaderno de pasta dura o un trozo de cartón grueso, una goma de borrar y una regla (plano inclinado)",
+    "Papel milimetrado o computadora con hoja de cálculo, y calculadora con funciones trigonométricas",
+    "Lentes de seguridad para quien hace girar el objeto, si la escuela los tiene"
+   ],
+   "procedimiento": [
+    "1. (Sesión 1) Pesen el objeto que va a girar (masa m) y cada juego de arandelas (masa M); anoten las masas en kilogramos.",
+    "2. Aten el objeto a un extremo del hilo con doble nudo, pasen el hilo por el tubo y aten en el otro extremo el clip con un juego de arandelas (M).",
+    "3. Midan L = 0.50 m de hilo desde el borde superior del tubo hasta el centro del objeto y pongan la pinza en el hilo justo debajo del extremo inferior del tubo. La pinza es la marca del radio: si durante el giro se mantiene a 1 cm del tubo, L no cambia.",
+    "4. En el patio, dentro del círculo de seguridad, quien gira sostiene el tubo vertical con el brazo estirado hacia arriba, para que el objeto pase por encima de su cabeza, y lo hace girar en un círculo horizontal con movimientos pequeños de la muñeca, hasta que la pinza quede quieta cerca del tubo. El hilo no queda horizontal: baja desde el tubo hasta el objeto, más cuantas menos arandelas cuelguen. Los demás se quedan fuera del círculo.",
+    "5. Otro estudiante mide el tiempo de 20 vueltas; repitan tres veces y promedien. Calculen el período T = t/20, la rapidez v = 2πL/T y la fuerza que pide el modelo, F = mv²/L. Anoten también el peso de las arandelas, Mg, con g = 9.8 m/s².",
+    "6. Repitan los pasos 4 y 5 con dos y con tres juegos de arandelas (2M y 3M), sin cambiar L.",
+    "7. Hagan la tabla (M, Mg, tiempo de 20 vueltas, T, v, v², mv²/L) y grafiquen Mg contra v².",
+    "8. Con un solo juego de arandelas, predigan el período si L fuera 0.25 m y compruébenlo moviendo la pinza. Nota para el docente: el hilo baja respecto de la horizontal un ángulo θ con sen θ ≈ m/M (con un objeto de 30 g y 50 g de arandelas, unos 37°; con 150 g, unos 12°). La componente vertical de la tensión sostiene el peso del objeto y la horizontal es la fuerza centrípeta. El radio real es L cos θ, pero la cuenta con L da justo la tensión del hilo, mω²L; por eso se usa L.",
+    "9. Dibujen el diagrama de cuerpo libre del objeto visto de lado (peso y tensión inclinada) y visto desde arriba, y marquen qué fuerza real, o qué componente de ella, cumple el papel de fuerza centrípeta.",
+    "10. (Sesión 2) Recorten un cuarto del borde del plato desechable y pónganlo sobre el pliego de papel. Hagan rodar la canica pegada al borde interior para que salga por el tramo recortado y marquen con lápiz por dónde pasa. Repitan cinco veces, en los dos sentidos de giro, y tracen con regla la tangente al borde en el punto de salida.",
+    "11. Curva plana. Pongan la goma sobre el cuaderno y levanten un extremo despacio hasta que la goma empiece a deslizar. Midan la altura h y la base horizontal b de la rampa en ese instante (la distancia sobre la mesa, no el largo del cuaderno): el coeficiente de fricción estática es μs ≈ h/b. Repitan cinco veces y promedien. Ese valor es el de su goma y su cuaderno; para una llanta en el pavimento se usa el valor de la tabla de referencia.",
+    "12. Dibujen el diagrama de cuerpo libre de un carro en una curva plana visto de frente (peso, normal y fricción estática hacia el centro) y calculen la rapidez máxima en una curva de 50 m de radio, v = √(μs g r), con el coeficiente llanta–pavimento seco y mojado (valor de la tabla de referencia).",
+    "13. Peralte. Pongan la canica dentro de la palangana y, moviendo la palangana en círculos pequeños sobre la mesa, háganla girar pegada a la pared. Observen a qué altura de la pared gira cuando va despacio y cuando va rápido, y anótenlo.",
+    "14. Dibujen el diagrama de cuerpo libre de un carro en una curva peraltada sin fricción (peso y normal inclinada) y calculen la rapidez de diseño de una curva de 50 m de radio con 10° de peralte: v = √(r g tan θ). Compárenla con la rapidez máxima de la curva plana mojada del paso 12.",
+    "15. Completen la hoja de diagramas de cuerpo libre de tres situaciones (el objeto con hilo, el carro en la curva plana o peraltada y la Luna alrededor de la Tierra) y calculen en cada una la fuerza centrípeta con mv²/r. Para la Luna usen masa 7.35 × 10²² kg, radio de la órbita 3.84 × 10⁸ m y período 27.3 días."
+   ],
+   "seguridad": [
+    "La Parte 1 se hace en el patio, con el círculo de seguridad marcado: solo quien gira está adentro, y nadie cruza mientras el objeto da vueltas.",
+    "Solo se hace girar un objeto blando y liviano; nada de piedras, tuercas sueltas ni vidrio en el extremo que gira. Revisen los nudos y el hilo antes de cada serie y cámbienlo si está deshilachado.",
+    "Giren por encima de la cabeza: quien gira mantiene el brazo estirado hacia arriba para que el objeto no pase a la altura de su propia cara (con pocas arandelas el hilo baja más), y nunca a la altura de la cara de otra persona; si hay lentes de seguridad, que los use quien gira. No suelten el hilo a propósito (la salida por la tangente se observa sin riesgo con la canica del plato).",
+    "Forren con cinta los extremos del tubo para que no corten el hilo ni la mano, y túrnense para no cansar el brazo.",
+    "Recojan las canicas del piso para que nadie resbale; las tijeras las usa una persona a la vez."
+   ],
+   "datos_esperados": "Parte 1: con un objeto de unos 30 g, L = 0.50 m y juegos de arandelas de 50, 100 y 150 g, los períodos salen entre unos 0.6 y 1.1 s (20 vueltas en 12 a 22 s), las rapideces calculadas con L entre unos 3 y 5 m/s y los pesos Mg entre 0.5 y 1.5 N. El hilo queda inclinado: con 50 g baja unos 37° bajo la horizontal (sen θ ≈ m/M = 0.6) y el objeto gira unos 30 cm por debajo del borde del tubo; con 150 g, unos 12°. Aun así, mv²/L con v = 2πL/T es la tensión del hilo. Al duplicar M la rapidez no se duplica: lo que se duplica es v² (v crece unas 1.4 veces). La gráfica de Mg contra v² es casi una recta que pasa cerca del origen, con pendiente cercana a m/L (unos 0.06 kg/m en este ejemplo). Es normal que mv²/L y Mg difieran del orden de un 10 a 20 %, por la fricción del hilo en el tubo, el pequeño círculo que describe la mano y el error al contar vueltas. Con L = 0.25 m y las mismas arandelas, el período baja a unas 0.7 veces (1/√2) el anterior. Parte 2: la canica sale siempre en línea recta por la tangente al borde en el punto donde lo deja; no sale por el radio ni sigue curvándose. El μs de la goma es un número sin unidad, propio de esa goma y ese cuaderno. Con el valor de la tabla de referencia, la rapidez máxima en la curva plana sale menor con pavimento mojado que seco, porque crece con √μ, y no depende de la masa del vehículo. La rapidez de diseño de la curva de 50 m con 10° de peralte es √(50 · 9.8 · tan 10°) ≈ 9.3 m/s (unos 33 km/h), sin fricción y sin depender de la masa. En la palangana, a más rapidez la canica gira más arriba, donde la pared está más inclinada. La fuerza centrípeta sobre la Luna sale del orden de 2 × 10²⁰ N y es la atracción gravitatoria de la Tierra.",
+   "analisis": [
+    "¿La gráfica de Mg contra v² es casi una recta que pasa por el origen? Calculen su pendiente y compárenla con m/L. Si la rapidez se duplica, ¿cuántas veces más fuerza hace falta?",
+    "¿Qué fuerza real actúa como fuerza centrípeta sobre el objeto que gira? Al girar, sienten que el hilo jala el tubo y la mano hacia el objeto, hacia afuera: ¿sobre qué cuerpo actúa ese jalón y por qué no aparece una «fuerza centrífuga» en el diagrama del objeto?",
+    "¿Se cumplió su predicción del período con L = 0.25 m? Justifiquen con F = m(2π/T)²L.",
+    "¿Por dónde salió la canica del plato? ¿Qué dice eso sobre la dirección de la velocidad en el movimiento circular y sobre lo que pasa cuando deja de actuar la fuerza hacia el centro?",
+    "En la curva plana, ¿por qué la fricción estática apunta hacia el centro y no hacia atrás? Con sus cálculos, justifiquen la recomendación de bajar la velocidad cuando llueve. ¿Un camión cargado tiene, según este modelo, otra rapidez máxima? ¿Qué otras causas (vuelco, frenado) explican que las señales le pidan ir más despacio?",
+    "¿Por qué la canica sube por la pared de la palangana cuando va más rápido? Relacionen esa observación con la rapidez de diseño de la curva peraltada y expliquen por qué el peralte reduce la dependencia de la fricción.",
+    "Para profundizar: con fricción, la rapidez máxima en la curva peraltada es v = √(r g (sen θ + μ cos θ) / (cos θ − μ sen θ)). Calcúlenla con el mismo μ de la tabla de referencia y compárenla con la de la curva plana.",
+    "¿Qué fuentes de error explican la diferencia entre Mg y mv²/L? ¿Cómo la reducirían?"
+   ],
+   "duracion_min": 110,
+   "variantes": "Con dinamómetro (actividad de la malla): cuelguen su anillo de un clavo o tornillo fijo en el centro de una tabla o mesa lisa, de modo que gire libremente y quede siempre alineado con el hilo (si se fija con cinta, el hilo lo jala de lado y la lectura no vale); aten el hilo a su gancho y hagan girar sobre la mesa un carrito o un disco liviano con radio fijo; graben la lectura con el celular en cámara lenta para tres rapideces y comprueben que la tensión crece con v². Con celular: la app gratuita phyphox (experimento «Aceleración centrípeta») mide la velocidad angular con el giroscopio y la aceleración con el acelerómetro; con el celular bien sujeto con cinta al asiento de una silla giratoria que el docente hace girar despacio, se grafica a contra ω² y la pendiente da el radio. Sin patio ni materiales: en la simulación PhET «Gravedad y órbitas» se puede quitar la gravedad y ver que el cuerpo sigue en línea recta por la tangente, y medir el período de órbitas de distinto radio.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G10-QUI-U4-4.8/1": {
   "tipo": "contenido",
@@ -97334,10 +98874,159 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:EXP:G10-QUI-U4-4.8/1",
+    "decision": "corregir",
+    "justificacion": "Observaciones correctas y seguridad básica bien (HCl ≤ 1 mol/L solo del docente, hidrógeno, alcalinos en video, baterías sin abrir). Pero los vasos solo respaldan la serie de actividad y una comparación Mg-Al; hierro y cobre son de transición. Se dice en propósito y análisis, se aclara la superficie desigual, se agregan dilución del ácido, riesgo de «agua de cloro» casera y una variante con calcio.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "La evidencia de logro es una tabla de observaciones con orden justificado.",
+      "cita_literal": "Tabla de observaciones de reactividad con orden justificado"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Hierro y cobre (bloque d) no siguen una tendencia simple de grupo o período en reactividad."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Lejía mezclada con ácido libera cloro gaseoso; el ácido se agrega al agua al diluir."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "proposito": "Comparar cómo reaccionan el magnesio, el aluminio, el hierro y el cobre con vinagre y con agua salada; completar la tabla con la demostración del docente (magnesio en ácido clorhídrico diluido) y con videos de metales alcalinos en agua y de halógenos, y ordenar la reactividad observada con su justificación. Los vasos dan un orden de la serie de actividad: de él, solo la comparación magnesio-aluminio (período 3) se explica con la energía de ionización, porque el hierro y el cobre son de transición. Las tendencias de grupo (energía de ionización en los metales, electronegatividad en los no metales) se apoyan en los videos. Se cierra con una propuesta de disposición segura de baterías de litio.",
+     "procedimiento": [
+      "1. Antes de la clase, el docente revisa los dos videos y deja listo un recipiente con bicarbonato para los desechos. Si hará la demostración, prepara el ácido clorhídrico diluido (no más de 1 mol/L) con gafas y guantes, en un lugar ventilado: agrega siempre el ácido al agua, nunca el agua al ácido.",
+      "2. Formen equipos de cuatro con roles: observador, cronometrista, registrador y encargado de seguridad y materiales.",
+      "3. Predicción: ubiquen el magnesio, el aluminio, el hierro y el cobre en la tabla periódica y escriban el orden de reactividad que esperan, con una razón para cada lugar.",
+      "4. Lijen la cinta de magnesio, el clavo y el alambre hasta que brillen. El papel aluminio no se lija (se rompe) y conserva su capa delgada de óxido: anótenlo. Usen las piezas indicadas y anoten su tamaño; como no tienen la misma superficie, comparen sobre todo diferencias grandes (muchas burbujas frente a ninguna).",
+      "5. Rotulen ocho vasos: cuatro «vinagre» y cuatro «agua salada», cada uno con el nombre de un metal. Pongan 50 mL del líquido correspondiente en cada vaso.",
+      "6. Coloquen cada metal en su vaso al mismo tiempo, inicien el cronómetro y observen 15 minutos. Cada 3 minutos anoten: burbujas (ninguna, pocas o muchas), cambios en el metal (brillo, color, tamaño) y cambios en el líquido.",
+      "7. Demostración del docente: con pinzas coloca 1 cm de cinta de magnesio en 5 mL de ácido clorhídrico diluido dentro de un tubo de ensayo en su gradilla, sin taparlo, en un lugar ventilado y lejos de llamas; el tubo se calienta y no se toca. Anoten lo que ven y compárenlo con el magnesio en vinagre.",
+      "8. Vean el video de los metales alcalinos en agua y anoten en la misma tabla qué tan rápido reaccionan el litio, el sodio y el potasio y qué se observa en cada caso.",
+      "9. Vean el video de los halógenos (agua de cloro, de bromo y de yodo con sales de los otros dos) y anoten qué mezclas cambian de color y qué halógeno aparece.",
+      "10. Cubran los vasos con papel, sin sellarlos, rotúlenlos con el nombre del equipo y déjenlos 5 días en un lugar seguro junto al clavo testigo al aire. Si pueden, tomen una foto cada día.",
+      "11. Segunda sesión: observen los vasos, completen la columna del día 5 y consensúen en equipo el orden de reactividad de mayor a menor, con la observación que justifica cada lugar.",
+      "12. Respondan las preguntas de análisis y redacten la propuesta de disposición segura de baterías de litio.",
+      "13. Desechos: el docente neutraliza el ácido de la demostración con bicarbonato hasta que deje de burbujear y lo vierte al desagüe con abundante agua. El vinagre y el agua salada se vierten diluidos al desagüe; los trozos de metal se enjuagan, se secan y van a la basura sólida, nunca al lavamanos."
+     ],
+     "seguridad": [
+      "Gafas durante toda la práctica: el vinagre y el agua salada irritan los ojos. Si salpica, lavar con abundante agua y avisar al docente.",
+      "Solo el docente maneja el ácido clorhídrico diluido (no más de 1 mol/L), con gafas y guantes; al diluirlo, agrega el ácido al agua. No se usa ácido muriático de ferretería en el aula.",
+      "El sodio, el potasio y los demás metales alcalinos no se manipulan en el aula: solo se observan en video, porque reaccionan con violencia con el agua y pueden inflamarse.",
+      "Las reacciones producen hidrógeno, un gas inflamable: no hay llamas ni fósforos cerca y los vasos no se tapan herméticamente.",
+      "El agua de cloro y el agua de bromo son tóxicas: solo se ven en video. Nunca se mezcla lejía (cloro de uso doméstico) con vinagre ni con ácido para «hacer agua de cloro»: libera cloro gaseoso tóxico.",
+      "La cinta de magnesio no se quema: su luz es tan intensa que daña la vista.",
+      "El docente corta y pela el alambre; cuidado con las puntas del alambre y de los clavos. Si se quiebra un frasco, lo recoge el docente con escoba y recogedor, nunca con las manos.",
+      "No probar ni oler los líquidos; lavarse las manos al terminar cada sesión.",
+      "En esta práctica no se abren, perforan ni mojan pilas o baterías: la propuesta de disposición se hace por escrito.",
+      "Desechos según el paso 13: el ácido se neutraliza antes de verterlo y nada sólido va al desagüe."
+     ],
+     "datos_esperados": "En vinagre, el magnesio burbujea desde el primer minuto y en 15 minutos se reduce buena parte de la cinta; el hierro casi no muestra burbujas en clase y a los 5 días el líquido toma un tono amarillento o anaranjado; el aluminio apenas cambia, porque una capa delgada de óxido lo protege; el cobre no burbujea (con los días puede aparecer un leve tono verde azulado por el aire). En agua salada, a los 5 días el clavo muestra herrumbre anaranjada y sedimento, más que el testigo al aire (la herrumbre necesita también el oxígeno disuelto); el aluminio puede verse opaco o con puntos blancos, el magnesio burbujea lentamente y el cobre casi no cambia. En la demostración, el magnesio en ácido clorhídrico diluido burbujea con mucha más fuerza que en vinagre y se consume en uno o dos minutos, porque ese ácido aporta muchos más iones hidrógeno. Orden observado esperable: Mg > Fe > Al > Cu o Mg > Al > Fe > Cu, según cuánto ceda la capa de óxido del aluminio; el orden de la serie de actividad es Mg > Al > Fe > Cu. Qué respalda cada parte: en los vasos, solo la comparación magnesio-aluminio (mismo período) ilustra una tendencia periódica, y la capa de óxido exagera la diferencia. Que el magnesio supere al aluminio concuerda con la mayor carga nuclear efectiva del aluminio: quitarle sus tres electrones de valencia cuesta, en total, más energía que quitarle al magnesio sus dos (sumas de energías de ionización: valor de la tabla de referencia), aunque la primera del aluminio sea algo menor porque su electrón externo está en el subnivel 3p. El hierro y el cobre son de transición: su lugar se compara con la serie de actividad, y este experimento no respalda para ellos ninguna tendencia de grupo o período. Las tendencias de grupo se apoyan en los videos: la reactividad crece del litio al potasio y, en los halógenos, el cloro desplaza al bromo y al yodo, y el bromo solo al yodo: Cl > Br > I.",
+     "analisis": [
+      "Escriban el orden de reactividad de los cuatro metales que consensuó su equipo y justifiquen cada lugar con una observación concreta de la tabla (burbujas, cambio del metal o del líquido, tiempo).",
+      "Comparen su orden con la predicción del paso 3 y con la serie de actividad de la tabla de referencia. Si el aluminio pareció menos reactivo que el hierro, ¿qué explica la diferencia y cómo podrían comprobarlo?",
+      "El magnesio y el aluminio están en el período 3. Con las energías de ionización de la tabla de referencia, expliquen por qué el magnesio es más reactivo aunque la primera energía de ionización del aluminio sea algo menor (piensen en cuántos electrones cede cada uno, cuánto cuesta quitarlos todos y en qué subnivel está el electrón externo del aluminio).",
+      "El hierro y el cobre son metales de transición. ¿Su lugar en el orden se puede predecir con una tendencia de grupo o de período? ¿Qué parte de esta práctica respalda una tendencia periódica y qué parte solo muestra la serie de actividad?",
+      "¿Por qué el magnesio reaccionó más rápido en el ácido clorhídrico que en el vinagre? ¿Qué variable cambió y por qué no es justo comparar un metal en vinagre con otro en ácido clorhídrico?",
+      "Con el video de los metales alcalinos: ¿cómo cambia la reactividad al bajar en el grupo 1? Explíquenlo con la distancia del electrón de valencia al núcleo, el apantallamiento y la energía de ionización.",
+      "Con el video de los halógenos: ¿qué orden de reactividad muestran? ¿Por qué en los no metales la tendencia del grupo es la contraria a la de los metales? Usen la electronegatividad.",
+      "Propuesta de disposición segura: las pilas de botón de litio (relojes, calculadoras) tienen litio metálico, del grupo 1; las baterías de iones de litio de los celulares no llevan litio metálico, pero pueden calentarse e incendiarse si se perforan, se aplastan o hacen cortocircuito. Propongan cómo guardarlas en casa (lejos de los niños pequeños, que pueden tragarse las pilas de botón) y dónde entregarlas en su comunidad, en lugar de tirarlas a la basura o al fuego, y justifiquen cada medida con lo aprendido."
+     ],
+     "variantes": "Sin cinta de magnesio: la comparación en vasos se hace con aluminio, hierro y cobre, y el magnesio se observa solo en la demostración o en un video. Sin ácido clorhídrico: la demostración se reemplaza por un video de magnesio en ácido diluido. Sin vasos de laboratorio: frascos de compota o vasos plásticos transparentes. Versión de casa (como la actividad digital de la unidad): tres clavos (en agua, en agua con sal y al aire) y una tira de aluminio en agua con sal durante 5 días, con una foto diaria. Sin proyector: el docente lee o entrega impresa una ficha con las observaciones de los videos. Con calcio en granallas en el laboratorio: el docente agrega una demostración de un grano pequeño de calcio y de un trozo de magnesio en agua fría, en vasos abiertos y lejos de llamas; el calcio burbujea de forma constante y enturbia el agua, y el magnesio casi no reacciona. Así una tendencia del grupo 2 se observa con materiales reales; el líquido queda básico y se diluye antes de verterlo."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "EXP:G10-QUI-U4-4.8/1",
+   "tipo": "experimento",
+   "objetivos": [
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U4-4.8",
+    "CON:quimica/propiedades-periodicas"
+   ],
+   "grados": [
+    10
+   ],
+   "titulo": "Reactividad de metales comunes: tabla de observaciones con orden justificado",
+   "proposito": "Comparar cómo reaccionan el magnesio, el aluminio, el hierro y el cobre con vinagre y con agua salada; completar la tabla con la demostración del docente (magnesio en ácido clorhídrico diluido) y con videos de metales alcalinos en agua y de halógenos, y ordenar la reactividad observada con su justificación. Los vasos dan un orden de la serie de actividad: de él, solo la comparación magnesio-aluminio (período 3) se explica con la energía de ionización, porque el hierro y el cobre son de transición. Las tendencias de grupo (energía de ionización en los metales, electronegatividad en los no metales) se apoyan en los videos. Se cierra con una propuesta de disposición segura de baterías de litio.",
+   "materiales": [
+    "Cinta de magnesio del laboratorio: 2 trozos de 2 cm por equipo (si no hay, ver variantes)",
+    "Papel aluminio de cocina: 2 tiras de 2 cm × 5 cm por equipo",
+    "Clavos de hierro sin galvanizar, de ferretería: 2 por equipo y 1 más como testigo al aire",
+    "Alambre de cobre de un cable eléctrico pelado: 2 trozos de 5 cm por equipo (los corta y pela el docente)",
+    "Lija fina para limpiar la cinta, el clavo y el alambre",
+    "Vinagre blanco de cocina: unos 250 mL por equipo",
+    "Agua salada: 1 cucharada de sal de mesa en 250 mL de agua de chorro, por equipo",
+    "8 vasos plásticos transparentes o frascos de vidrio de compota por equipo, rotulados con cinta adhesiva y marcador",
+    "Jeringa de 60 mL sin aguja, probeta o taza medidora de cocina",
+    "Celular para cronometrar y tomar fotos; lupa (opcional)",
+    "Para la demostración del docente: ácido clorhídrico diluido del laboratorio (no más de 1 mol/L), un tubo de ensayo en su gradilla, pinzas y bicarbonato de sodio para neutralizar",
+    "Proyector, televisor o celular con dos videos que el docente revisó antes: metales alcalinos (litio, sodio, potasio) en agua y halógenos que se desplazan de sus sales",
+    "Gafas de seguridad para cada estudiante y guantes para quien maneje desechos",
+    "Tabla de observaciones en el cuaderno o impresa (metal, líquido, minuto 0 a 15, día 5)"
+   ],
+   "procedimiento": [
+    "1. Antes de la clase, el docente revisa los dos videos y deja listo un recipiente con bicarbonato para los desechos. Si hará la demostración, prepara el ácido clorhídrico diluido (no más de 1 mol/L) con gafas y guantes, en un lugar ventilado: agrega siempre el ácido al agua, nunca el agua al ácido.",
+    "2. Formen equipos de cuatro con roles: observador, cronometrista, registrador y encargado de seguridad y materiales.",
+    "3. Predicción: ubiquen el magnesio, el aluminio, el hierro y el cobre en la tabla periódica y escriban el orden de reactividad que esperan, con una razón para cada lugar.",
+    "4. Lijen la cinta de magnesio, el clavo y el alambre hasta que brillen. El papel aluminio no se lija (se rompe) y conserva su capa delgada de óxido: anótenlo. Usen las piezas indicadas y anoten su tamaño; como no tienen la misma superficie, comparen sobre todo diferencias grandes (muchas burbujas frente a ninguna).",
+    "5. Rotulen ocho vasos: cuatro «vinagre» y cuatro «agua salada», cada uno con el nombre de un metal. Pongan 50 mL del líquido correspondiente en cada vaso.",
+    "6. Coloquen cada metal en su vaso al mismo tiempo, inicien el cronómetro y observen 15 minutos. Cada 3 minutos anoten: burbujas (ninguna, pocas o muchas), cambios en el metal (brillo, color, tamaño) y cambios en el líquido.",
+    "7. Demostración del docente: con pinzas coloca 1 cm de cinta de magnesio en 5 mL de ácido clorhídrico diluido dentro de un tubo de ensayo en su gradilla, sin taparlo, en un lugar ventilado y lejos de llamas; el tubo se calienta y no se toca. Anoten lo que ven y compárenlo con el magnesio en vinagre.",
+    "8. Vean el video de los metales alcalinos en agua y anoten en la misma tabla qué tan rápido reaccionan el litio, el sodio y el potasio y qué se observa en cada caso.",
+    "9. Vean el video de los halógenos (agua de cloro, de bromo y de yodo con sales de los otros dos) y anoten qué mezclas cambian de color y qué halógeno aparece.",
+    "10. Cubran los vasos con papel, sin sellarlos, rotúlenlos con el nombre del equipo y déjenlos 5 días en un lugar seguro junto al clavo testigo al aire. Si pueden, tomen una foto cada día.",
+    "11. Segunda sesión: observen los vasos, completen la columna del día 5 y consensúen en equipo el orden de reactividad de mayor a menor, con la observación que justifica cada lugar.",
+    "12. Respondan las preguntas de análisis y redacten la propuesta de disposición segura de baterías de litio.",
+    "13. Desechos: el docente neutraliza el ácido de la demostración con bicarbonato hasta que deje de burbujear y lo vierte al desagüe con abundante agua. El vinagre y el agua salada se vierten diluidos al desagüe; los trozos de metal se enjuagan, se secan y van a la basura sólida, nunca al lavamanos."
+   ],
+   "seguridad": [
+    "Gafas durante toda la práctica: el vinagre y el agua salada irritan los ojos. Si salpica, lavar con abundante agua y avisar al docente.",
+    "Solo el docente maneja el ácido clorhídrico diluido (no más de 1 mol/L), con gafas y guantes; al diluirlo, agrega el ácido al agua. No se usa ácido muriático de ferretería en el aula.",
+    "El sodio, el potasio y los demás metales alcalinos no se manipulan en el aula: solo se observan en video, porque reaccionan con violencia con el agua y pueden inflamarse.",
+    "Las reacciones producen hidrógeno, un gas inflamable: no hay llamas ni fósforos cerca y los vasos no se tapan herméticamente.",
+    "El agua de cloro y el agua de bromo son tóxicas: solo se ven en video. Nunca se mezcla lejía (cloro de uso doméstico) con vinagre ni con ácido para «hacer agua de cloro»: libera cloro gaseoso tóxico.",
+    "La cinta de magnesio no se quema: su luz es tan intensa que daña la vista.",
+    "El docente corta y pela el alambre; cuidado con las puntas del alambre y de los clavos. Si se quiebra un frasco, lo recoge el docente con escoba y recogedor, nunca con las manos.",
+    "No probar ni oler los líquidos; lavarse las manos al terminar cada sesión.",
+    "En esta práctica no se abren, perforan ni mojan pilas o baterías: la propuesta de disposición se hace por escrito.",
+    "Desechos según el paso 13: el ácido se neutraliza antes de verterlo y nada sólido va al desagüe."
+   ],
+   "datos_esperados": "En vinagre, el magnesio burbujea desde el primer minuto y en 15 minutos se reduce buena parte de la cinta; el hierro casi no muestra burbujas en clase y a los 5 días el líquido toma un tono amarillento o anaranjado; el aluminio apenas cambia, porque una capa delgada de óxido lo protege; el cobre no burbujea (con los días puede aparecer un leve tono verde azulado por el aire). En agua salada, a los 5 días el clavo muestra herrumbre anaranjada y sedimento, más que el testigo al aire (la herrumbre necesita también el oxígeno disuelto); el aluminio puede verse opaco o con puntos blancos, el magnesio burbujea lentamente y el cobre casi no cambia. En la demostración, el magnesio en ácido clorhídrico diluido burbujea con mucha más fuerza que en vinagre y se consume en uno o dos minutos, porque ese ácido aporta muchos más iones hidrógeno. Orden observado esperable: Mg > Fe > Al > Cu o Mg > Al > Fe > Cu, según cuánto ceda la capa de óxido del aluminio; el orden de la serie de actividad es Mg > Al > Fe > Cu. Qué respalda cada parte: en los vasos, solo la comparación magnesio-aluminio (mismo período) ilustra una tendencia periódica, y la capa de óxido exagera la diferencia. Que el magnesio supere al aluminio concuerda con la mayor carga nuclear efectiva del aluminio: quitarle sus tres electrones de valencia cuesta, en total, más energía que quitarle al magnesio sus dos (sumas de energías de ionización: valor de la tabla de referencia), aunque la primera del aluminio sea algo menor porque su electrón externo está en el subnivel 3p. El hierro y el cobre son de transición: su lugar se compara con la serie de actividad, y este experimento no respalda para ellos ninguna tendencia de grupo o período. Las tendencias de grupo se apoyan en los videos: la reactividad crece del litio al potasio y, en los halógenos, el cloro desplaza al bromo y al yodo, y el bromo solo al yodo: Cl > Br > I.",
+   "analisis": [
+    "Escriban el orden de reactividad de los cuatro metales que consensuó su equipo y justifiquen cada lugar con una observación concreta de la tabla (burbujas, cambio del metal o del líquido, tiempo).",
+    "Comparen su orden con la predicción del paso 3 y con la serie de actividad de la tabla de referencia. Si el aluminio pareció menos reactivo que el hierro, ¿qué explica la diferencia y cómo podrían comprobarlo?",
+    "El magnesio y el aluminio están en el período 3. Con las energías de ionización de la tabla de referencia, expliquen por qué el magnesio es más reactivo aunque la primera energía de ionización del aluminio sea algo menor (piensen en cuántos electrones cede cada uno, cuánto cuesta quitarlos todos y en qué subnivel está el electrón externo del aluminio).",
+    "El hierro y el cobre son metales de transición. ¿Su lugar en el orden se puede predecir con una tendencia de grupo o de período? ¿Qué parte de esta práctica respalda una tendencia periódica y qué parte solo muestra la serie de actividad?",
+    "¿Por qué el magnesio reaccionó más rápido en el ácido clorhídrico que en el vinagre? ¿Qué variable cambió y por qué no es justo comparar un metal en vinagre con otro en ácido clorhídrico?",
+    "Con el video de los metales alcalinos: ¿cómo cambia la reactividad al bajar en el grupo 1? Explíquenlo con la distancia del electrón de valencia al núcleo, el apantallamiento y la energía de ionización.",
+    "Con el video de los halógenos: ¿qué orden de reactividad muestran? ¿Por qué en los no metales la tendencia del grupo es la contraria a la de los metales? Usen la electronegatividad.",
+    "Propuesta de disposición segura: las pilas de botón de litio (relojes, calculadoras) tienen litio metálico, del grupo 1; las baterías de iones de litio de los celulares no llevan litio metálico, pero pueden calentarse e incendiarse si se perforan, se aplastan o hacen cortocircuito. Propongan cómo guardarlas en casa (lejos de los niños pequeños, que pueden tragarse las pilas de botón) y dónde entregarlas en su comunidad, en lugar de tirarlas a la basura o al fuego, y justifiquen cada medida con lo aprendido."
+   ],
+   "duracion_min": 110,
+   "variantes": "Sin cinta de magnesio: la comparación en vasos se hace con aluminio, hierro y cobre, y el magnesio se observa solo en la demostración o en un video. Sin ácido clorhídrico: la demostración se reemplaza por un video de magnesio en ácido diluido. Sin vasos de laboratorio: frascos de compota o vasos plásticos transparentes. Versión de casa (como la actividad digital de la unidad): tres clavos (en agua, en agua con sal y al aire) y una tira de aluminio en agua con sal durante 5 días, con una foto diaria. Sin proyector: el docente lee o entrega impresa una ficha con las observaciones de los videos. Con calcio en granallas en el laboratorio: el docente agrega una demostración de un grano pequeño de calcio y de un trozo de magnesio en agua fría, en vasos abiertos y lejos de llamas; el calcio burbujea de forma constante y enturbia el agua, y el magnesio casi no reacciona. Así una tendencia del grupo 2 se observa con materiales reales; el líquido queda básico y se diluye antes de verterlo.",
+   "estado": "propuesta_pendiente",
+   "fuente": null,
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:EXP:G11-FIS-U1-1.2/1": {
   "tipo": "contenido",
@@ -99458,10 +101147,58 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:MT:fisica/aceleracion-fuerza-centripeta/G10",
+    "decision": "corregir",
+    "justificacion": "Explicación y ejemplo correctos (1000·10²/20 = 5000 N). Corrijo «es el papel que cumple una fuerza real»: a veces es la resultante de varias, como en el columpio de la comprobación de la segunda ley (T − mg); decirlo así evita el distractor 429/30 = 14.3 m/s². Ajusto el criterio, que decía que el peralte no aparece en la explicación, cuando sí se nombra.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador pide identificar la fuerza real y calcularla con la segunda ley",
+      "cita_literal": "Identifica qué fuerza real actúa como fuerza centrípeta en cada situación"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "en el punto más bajo de un columpio la centrípeta es T − mg, la resultante de dos fuerzas"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "explicacion": "En un redondel, aunque el velocímetro no cambie, la dirección de la velocidad cambia: eso es aceleración. Apunta al centro y vale a = v²/r. Por la segunda ley hace falta una fuerza neta hacia el centro, F = mv²/r. La fuerza centrípeta no es una fuerza nueva: es el papel que cumple una fuerza real, o la resultante de varias. En un tapón con hilo es la tensión; en una curva plana, la fricción; en una peraltada, parte de la normal; en un satélite, la gravedad. Lo que sientes hacia afuera en el bus es inercia, no una fuerza.",
+     "criterio": "Responde correctamente la comprobación: en una curva peraltada sin fricción con dos vehículos de distinta masa, un caso que la explicación solo nombra, reconoce que la normal inclinada aporta la fuerza hacia el centro y que el resultado no depende de la masa."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "MT:fisica/aceleracion-fuerza-centripeta/G10",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/aceleracion-fuerza-centripeta",
+   "grados": [
+    10
+   ],
+   "titulo": "Girar es acelerar: qué fuerza real jala hacia el centro",
+   "explicacion": "En un redondel, aunque el velocímetro no cambie, la dirección de la velocidad cambia: eso es aceleración. Apunta al centro y vale a = v²/r. Por la segunda ley hace falta una fuerza neta hacia el centro, F = mv²/r. La fuerza centrípeta no es una fuerza nueva: es el papel que cumple una fuerza real, o la resultante de varias. En un tapón con hilo es la tensión; en una curva plana, la fricción; en una peraltada, parte de la normal; en un satélite, la gravedad. Lo que sientes hacia afuera en el bus es inercia, no una fuerza.",
+   "ejemplo": "Un carro de 1000 kg da la vuelta a un redondel plano de 20 m de radio a 10 m/s (36 km/h): necesita 1000 · 10² / 20 = 5000 N hacia el centro, y esa fuerza la pone la fricción entre las llantas y el pavimento.",
+   "practica": "ACT:fisica/aceleracion-fuerza-centripeta/practica-G10",
+   "comprobacion": "ACT:fisica/aceleracion-fuerza-centripeta/comprobacion-G10",
+   "duracion_min": 12,
+   "criterio": "Responde correctamente la comprobación: en una curva peraltada sin fricción con dos vehículos de distinta masa, un caso que la explicación solo nombra, reconoce que la normal inclinada aporta la fuerza hacia el centro y que el resultado no depende de la masa.",
+   "estado": "propuesta_pendiente",
+   "fuentes": [
+    "CON:fisica/aceleracion-fuerza-centripeta",
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:MT:fisica/calor-vs-temperatura/G09": {
   "tipo": "contenido",
@@ -100498,8 +102235,29 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:MT:fisica/movimiento-circular-uniforme/G10",
+    "decision": "aprobar",
+    "justificacion": "Correcto y dentro del límite (91 palabras): T, f = 1/T, ω = 2π/T común a todos los puntos y v = ωr mayor lejos del eje; velocidad tangente. Ejemplo verificado: 2π·8.0 ≈ 50 m por vuelta en 20 s, unos 2.5 m/s, y en lo más alto la velocidad es horizontal. Contexto salvadoreño (rueda de Chicago) natural.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "la habilidad TIMSS pide definir período, frecuencia y rapidez tangencial",
+      "cita_literal": "definir período, frecuencia y rapidez tangencial"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "v = 2π·8.0/20 = 2.51 m/s"
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
   "malla": "V3"
  },
@@ -101261,10 +103019,57 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:MT:fisica/segunda-ley-newton/G10",
+    "decision": "corregir",
+    "justificacion": "Ejemplo correcto (18 000 − 3000 = 15 000 N; 1.5 m/s²) y buena idea central: la fuerza neta indica hacia dónde cambia la velocidad. Pero «hacia el centro si da una curva» es falso si la rapidez cambia en la curva: la fuerza neta tiene además una componente tangencial. Acoto: hacia atrás si frena en línea recta, hacia el centro si la curva es a rapidez constante.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 16)",
+      "cita": "el indicador trabaja el caso de rapidez constante en la trayectoria circular",
+      "cita_literal": "Explica por qué un cuerpo con rapidez constante en una trayectoria circular tiene velocidad variable"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "en una curva con rapidez variable a = a_t + a_c: la fuerza neta no apunta al centro"
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "explicacion": "Una carreta de mercado vacía arranca fácil; llena, cuesta más: la misma fuerza neta acelera menos a más masa. La segunda ley lo resume: ΣF = ma, donde ΣF es la suma de todas las fuerzas con su dirección y sentido, y la aceleración apunta hacia donde apunta ΣF. La fuerza neta no dice hacia dónde se mueve el cuerpo, sino hacia dónde cambia su velocidad: es cero si la velocidad es constante en rapidez y dirección, apunta hacia atrás si frena en línea recta y hacia el centro si da una curva con rapidez constante."
+    },
+    "ronda": 1,
+    "rol": "experto-fisica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "MT:fisica/segunda-ley-newton/G10",
+   "tipo": "microtema",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "grados": [
+    10
+   ],
+   "titulo": "La fuerza neta decide hacia dónde cambia la velocidad",
+   "explicacion": "Una carreta de mercado vacía arranca fácil; llena, cuesta más: la misma fuerza neta acelera menos a más masa. La segunda ley lo resume: ΣF = ma, donde ΣF es la suma de todas las fuerzas con su dirección y sentido, y la aceleración apunta hacia donde apunta ΣF. La fuerza neta no dice hacia dónde se mueve el cuerpo, sino hacia dónde cambia su velocidad: es cero si la velocidad es constante en rapidez y dirección, apunta hacia atrás si frena en línea recta y hacia el centro si da una curva con rapidez constante.",
+   "ejemplo": "Un bus de 10 000 kg arranca en la parada: el pavimento lo empuja hacia adelante con 18 000 N y el aire y la rodadura se oponen con 3000 N. La fuerza neta es 15 000 N hacia adelante y a = 15 000 N / 10 000 kg = 1.5 m/s².",
+   "practica": "ACT:fisica/segunda-ley-newton/practica-G10",
+   "comprobacion": "ACT:fisica/segunda-ley-newton/comprobacion-G10",
+   "duracion_min": 10,
+   "criterio": "Responde correctamente la comprobación: suma fuerzas con su sentido para hallar la aceleración de una niña en el punto más bajo de un columpio, donde la rapidez no cambia pero la aceleración no es cero.",
+   "estado": "propuesta_pendiente",
+   "fuentes": [
+    "CON:fisica/segunda-ley-newton",
+    "TEMA:G10-FIS-U6-6.5"
+   ],
+   "origen": "redactor-actividades (G10-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:MT:fisica/segunda-ley-newton/G11": {
   "tipo": "contenido",
@@ -102067,10 +103872,61 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:MT:quimica/distribucion-electronica-por-niveles/G10",
+    "decision": "corregir",
+    "justificacion": "Explicación correcta del modelo de capas, pero «la tercera capa se cierra con 8» sugiere que su máximo es 8. En 10.° el grupo ya escribe configuraciones por orbitales (3.10): se aclara que la cuarta capa (4s) empieza antes de completar la tercera (3d), para que el modelo de capas no contradiga lo aprendido.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.10 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 22)",
+      "cita": "Antes de 4.8 el grupo ya escribe configuraciones por orbitales (Aufbau).",
+      "cita_literal": "Escribe configuraciones electrónicas y diagramas de orbitales aplicando el principio de Aufbau"
+     },
+     {
+      "fuente": "CON:quimica/distribucion-electronica-por-niveles (data/grafo/nodos.jsonl)",
+      "cita": "Concepto dividido: modelo de capas (2, 8, 8…), distinto de la configuración por orbitales."
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Desde el escandio la tercera capa pasa de 8 a 18 electrones (3d)."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "explicacion": "En el modelo de capas caben 2 electrones en la primera capa y 8 en la segunda. Hasta el calcio, la tercera llega a 8 (3s y 3p) y los siguientes pasan a la cuarta (4s); del escandio al zinc, la tercera se completa hasta 18 (3d). La capa externa es la de valencia: sus electrones se ceden, ganan o comparten al reaccionar. El número de capas indica el período, y los electrones de valencia, el grupo. Al bajar en un grupo se agrega una capa, pero la externa conserva el mismo número de electrones: por eso reaccionan parecido."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "MT:quimica/distribucion-electronica-por-niveles/G10",
+   "tipo": "microtema",
+   "concepto": "CON:quimica/distribucion-electronica-por-niveles",
+   "grados": [
+    10
+   ],
+   "titulo": "La capa externa decide",
+   "explicacion": "En el modelo de capas caben 2 electrones en la primera capa y 8 en la segunda. Hasta el calcio, la tercera llega a 8 (3s y 3p) y los siguientes pasan a la cuarta (4s); del escandio al zinc, la tercera se completa hasta 18 (3d). La capa externa es la de valencia: sus electrones se ceden, ganan o comparten al reaccionar. El número de capas indica el período, y los electrones de valencia, el grupo. Al bajar en un grupo se agrega una capa, pero la externa conserva el mismo número de electrones: por eso reaccionan parecido.",
+   "ejemplo": "Los letreros luminosos de neón brillan con un gas que no reacciona: el neón (2, 8) tiene su capa externa completa. El sodio (2, 8, 1), con un solo electrón externo, reacciona tan rápido con el agua y el aire que se guarda bajo aceite.",
+   "practica": "ACT:quimica/distribucion-electronica-por-niveles/practica-G10",
+   "comprobacion": "ACT:quimica/distribucion-electronica-por-niveles/comprobacion-G10",
+   "duracion_min": 10,
+   "criterio": "Responde bien la comprobación: escribe la distribución de un átomo de 20 electrones y deduce que cede los dos de su capa externa.",
+   "estado": "propuesta_pendiente",
+   "fuentes": [
+    "CON:quimica/distribucion-electronica-por-niveles",
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:MT:quimica/equilibrio-dinamico/G09": {
   "tipo": "contenido",
@@ -102691,10 +104547,57 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:MT:quimica/propiedades-periodicas/G10",
+    "decision": "corregir",
+    "justificacion": "El gancho comparaba cobre y potasio, pero el cobre es de transición: su baja reactividad no se explica con la tendencia de los grupos principales (su primera energía de ionización se parece a la del magnesio). Se cambia por magnesio frente a potasio, se acota la tendencia a los grupos principales y «ganando uno» pasa a «ganando electrones» (el oxígeno gana dos).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.8 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 29)",
+      "cita": "El indicador pide explicar la reactividad de metales y no metales con energía de ionización y electronegatividad.",
+      "cita_literal": "Explica las tendencias de reactividad de metales y no metales en la tabla periódica relacionándolas con la energía de ionización y la electronegatividad"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "Primera energía de ionización del cobre parecida a la del magnesio; reactividad muy distinta."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "explicacion": "El potasio se guarda bajo aceite; el magnesio apenas reacciona con agua fría. Depende de cuánto atrae el núcleo a los electrones externos. Un metal reacciona cediéndolos: a menor energía de ionización, más reactivo. Un no metal reacciona ganando electrones: a mayor electronegatividad, más reactivo. Al bajar en un grupo se agrega una capa y los electrones externos quedan más lejos y apantallados: los metales ganan reactividad y los no metales la pierden. En un período crece la carga nuclear efectiva: los metales la pierden y los no metales la ganan. No vale para los metales de transición."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "MT:quimica/propiedades-periodicas/G10",
+   "tipo": "microtema",
+   "concepto": "CON:quimica/propiedades-periodicas",
+   "grados": [
+    10
+   ],
+   "titulo": "Por qué la reactividad cambia en la tabla",
+   "explicacion": "El potasio se guarda bajo aceite; el magnesio apenas reacciona con agua fría. Depende de cuánto atrae el núcleo a los electrones externos. Un metal reacciona cediéndolos: a menor energía de ionización, más reactivo. Un no metal reacciona ganando electrones: a mayor electronegatividad, más reactivo. Al bajar en un grupo se agrega una capa y los electrones externos quedan más lejos y apantallados: los metales ganan reactividad y los no metales la pierden. En un período crece la carga nuclear efectiva: los metales la pierden y los no metales la ganan. No vale para los metales de transición.",
+   "ejemplo": "La sal de las salineras de la costa salvadoreña es cloruro de sodio. El sodio, con energía de ionización baja, cede con facilidad su electrón, y el cloro, muy electronegativo, lo gana con facilidad. Por ser tan reactivos, en la naturaleza no se encuentran libres, sino combinados, como en la sal.",
+   "practica": "ACT:quimica/propiedades-periodicas/practica-G10",
+   "comprobacion": "ACT:quimica/propiedades-periodicas/comprobacion-G10",
+   "duracion_min": 12,
+   "criterio": "Responde bien la comprobación, que pide ordenar tres no metales que no aparecen en la práctica usando la tendencia de los no metales, no la de los metales.",
+   "estado": "propuesta_pendiente",
+   "fuentes": [
+    "CON:quimica/propiedades-periodicas",
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PED:MT:quimica/tabla-periodica/G10": {
   "tipo": "contenido",
@@ -102758,10 +104661,58 @@
    },
    "notas_de_los_redactores": ""
   },
-  "dictamenes": [],
-  "estado": "pendiente",
+  "dictamenes": [
+   {
+    "id": "PED:MT:quimica/tabla-periodica/G10",
+    "decision": "corregir",
+    "justificacion": "Contenido correcto y ejemplo local exacto (azufre de los ausoles, H₂S). Tres precisiones: un grupo comparte el número de electrones de valencia, no «los mismos electrones»; el hidrógeno es no metal aunque está a la izquierda; y las fórmulas van con subíndices (H₂O, H₂S), como en el resto de la capa.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.2 (Matriz_Bachillerato_Quimica_10_11.xlsx, hoja «Química 10.°», fila 23)",
+      "cita": "Ubicar por grupo, período y carácter metálico.",
+      "cita_literal": "ubica a los elementos según su grupo, periodo y carácter metálico"
+     },
+     {
+      "fuente": "criterio disciplinar",
+      "cita": "El hidrógeno, arriba a la izquierda, es un no metal."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "explicacion": "La tabla periódica ordena los elementos por número atómico. Cada fila es un período: sus elementos tienen el mismo número de capas. Cada columna es un grupo: sus elementos tienen el mismo número de electrones de valencia y por eso un comportamiento químico parecido, aunque no idéntico, porque sus propiedades cambian de forma gradual al bajar. Una línea escalonada separa los metales, a la izquierda y al centro, de los no metales, arriba a la derecha (salvo el hidrógeno); junto a ella están los metaloides, con propiedades intermedias. El grupo 18, el de los gases nobles, casi no reacciona.",
+     "ejemplo": "El oxígeno del aire y el azufre de los ausoles de Ahuachapán están en el grupo 16. Los dos se unen al hidrógeno en la misma proporción: H₂O y H₂S. Pero no son idénticos: el agua es líquida, y el H₂S es el gas que huele a huevo podrido en los ausoles."
+    },
+    "ronda": 1,
+    "rol": "experto-quimica",
+    "fecha": "2026-10-13"
+   }
+  ],
+  "estado": "en_revision",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "version_vigente": {
+   "id": "MT:quimica/tabla-periodica/G10",
+   "tipo": "microtema",
+   "concepto": "CON:quimica/tabla-periodica",
+   "grados": [
+    10
+   ],
+   "titulo": "Filas, columnas y zonas de la tabla",
+   "explicacion": "La tabla periódica ordena los elementos por número atómico. Cada fila es un período: sus elementos tienen el mismo número de capas. Cada columna es un grupo: sus elementos tienen el mismo número de electrones de valencia y por eso un comportamiento químico parecido, aunque no idéntico, porque sus propiedades cambian de forma gradual al bajar. Una línea escalonada separa los metales, a la izquierda y al centro, de los no metales, arriba a la derecha (salvo el hidrógeno); junto a ella están los metaloides, con propiedades intermedias. El grupo 18, el de los gases nobles, casi no reacciona.",
+   "ejemplo": "El oxígeno del aire y el azufre de los ausoles de Ahuachapán están en el grupo 16. Los dos se unen al hidrógeno en la misma proporción: H₂O y H₂S. Pero no son idénticos: el agua es líquida, y el H₂S es el gas que huele a huevo podrido en los ausoles.",
+   "practica": "ACT:quimica/tabla-periodica/practica-G10",
+   "comprobacion": "ACT:quimica/tabla-periodica/comprobacion-G10",
+   "duracion_min": 10,
+   "criterio": "Responde bien la comprobación: predice propiedades intermedias para un elemento junto a la línea escalonada y no supone que es idéntico a su vecino de grupo.",
+   "estado": "propuesta_pendiente",
+   "fuentes": [
+    "CON:quimica/tabla-periodica",
+    "TEMA:G10-QUI-U4-4.8"
+   ],
+   "origen": "redactor-actividades (G10-QUI-U4-4.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": ""
+  }
  },
  "PIL:alcance": {
   "tipo": "piloto",
@@ -108074,11 +110025,40 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:contraste:2_8:CON:fisica/reflexion-interna-total",
+    "decision": "aprobar",
+    "justificacion": "Apruebo el descarte. La secuencia ya es adecuada al desarrollo: en 7.° la refracción se experimenta de forma concreta y en 10.° se formaliza con el ángulo crítico, un cálculo propio del formalismo de Bachillerato. Un precursor en 2.°–8.° sumaría una fila sin respaldo (solo Hong Kong). El motivo es claro y cita las filas. El rótulo «corpuscular» de 7.3 se corrige aparte (ERR-02).",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G07-CIE-U6-6.21",
+      "cita": "7.°: experiencia concreta con la refracción, base para 10.°.",
+      "cita_literal": "Experimentación con la reflexión, refracción y absorción de la luz"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U16-16.7",
+      "cita": "10.°: ángulo crítico y problemas de reflexión interna total.",
+      "cita_literal": "resolución de problemas sobre reflexión, refracción y reflexión interna total"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Primero la experiencia con la luz y después el modelo cuantitativo: no hace falta un paso intermedio."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "RFZ:REF:contraste:2_8:CON:quimica/radiactividad": {
   "tipo": "contenido",
@@ -108327,11 +110307,35 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:contraste:9_11:CON:fisica/astronomia-multionda",
+    "decision": "aprobar",
+    "justificacion": "Apruebo el descarte. En 11.°, «ejemplificar» detectores y relacionar la temperatura con la radiación es un nivel cualitativo alcanzable, sin la carga del modelo de píxeles de los sensores CCD y CMOS que la V3 ya quitó. Desde la carga cognitiva no queda nada que acotar. El motivo es claro, cita la fila que lo cubre y cabe en 40 palabras.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-FIS-U22-22.4",
+      "cita": "11.°: el indicador se queda en ejemplificar detectores.",
+      "cita_literal": "Ejemplifica tipos de detectores de imágenes empleados en los observatorios astronómicos terrestres y espaciales"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Ejemplificar con imágenes de observatorios es concreto y no exige modelar el sensor."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "RFZ:REF:contraste:9_11:CON:fisica/capacitancia": {
   "tipo": "contenido",
@@ -108757,9 +110761,29 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:contraste:9_11:CON:quimica/composicion-porcentual-y-formulas",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. Es un buen andamiaje para 10.°: primero la fórmula empírica desde la proporción de átomos, sin masas; luego desde datos de masa, y después las razones no enteras, que conviene trabajar porque redondear 1,5 a 2 es un error frecuente. No suma una clase: ordena lo que la clase 11 ya pide. Los códigos ACSCH y ENG sirven al MINED para rastrear la fuente.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U2-2.5",
+      "cita": "La clase ya pide pasar a razones enteras: la nota ordena ese paso, no lo agrega.",
+      "cita_literal": "Transforma la composición centesimal en razones molares enteras"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Ir de lo concreto (contar átomos) a lo abstracto (masas y moles) baja la carga del primer cálculo."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -108799,6 +110823,10 @@
     }
    ],
    "confianza": "media"
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "RFZ:REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales": {
@@ -109272,9 +111300,29 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:contraste:9_11:CON:quimica/fundamentos-de-reactividad-organica",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. Acotar 9.1 a lo cualitativo baja la carga de una clase llena de entidades no observables (pares de electrones, intermediarios) y conserva lo que necesitan 9.2 y 9.3: distinguir las rupturas por sus productos y clasificar especies con ejemplos guiados, como ya pide la fase Indagar. La notación de flechas queda en profundización para quien la quiera ampliar. La nota es clara para un docente.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-QUI-U9-9.1",
+      "cita": "La clasificación de especies que queda en el núcleo ya es una tarea de la clase.",
+      "cita_literal": "Clasifica doce especies químicas como nucleófilos, electrófilos o radicales"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Mover un electrón o un par con flechas es notación sobre entidades no observables: mejor como profundización."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -109309,6 +111357,10 @@
     }
    ],
    "confianza": "media"
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "RFZ:REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos": {
@@ -109533,11 +111585,35 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:contraste:9_11:CON:quimica/quimica-verde",
+    "decision": "aprobar",
+    "justificacion": "Apruebo el descarte. La economía atómica es una razón de masas que en 11.° se resuelve sin apoyo especial, y elegir la ruta más sostenible da a la tarea un propósito con sentido. Es una sola clase; acotarla más la dejaría en una mención sin tarea. El motivo es claro y cita la fila que lo cubre.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-QUI-U7-7.7",
+      "cita": "Una tarea concreta y acotada: comparar dos rutas.",
+      "cita_literal": "Calcula la economía atómica de dos rutas de síntesis"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Un cálculo de proporción con una decisión al final es alcanzable a los 16–17 años."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "RFZ:REF:error_malla:ERR-02": {
   "tipo": "contenido",
@@ -109675,9 +111751,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:error_malla:ERR-02",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. La nota corrige una idea que, enseñada así, se vuelve una concepción alternativa persistente: asociar la reflexión y la refracción con partículas. Está en positivo (qué explica cada modelo), es breve y no agrega tiempo, porque Huygens ya está en la clase. Remitir lo corpuscular al efecto fotoeléctrico deja a 11.° una base coherente. Indica que vale también para 7.3.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U16-16.1",
+      "cita": "El error sigue literal en la V3.",
+      "cita_literal": "mientras que la reflexión y la refracción se relacionan al comportamiento corpuscular"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U16-16.1",
+      "cita": "Huygens ya está en la clase: la corrección no suma contenido.",
+      "cita_literal": "usar el principio de Huygens"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Una nota en positivo (qué explica cada modelo) se enseña mejor que una prohibición."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -109712,6 +111813,10 @@
     }
    ],
    "confianza": "alta"
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "RFZ:REF:error_malla:PROG-02": {
@@ -109845,9 +111950,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:error_malla:PROG-02",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. Pedir «recordar» algo que ningún grado nombró deja sin base a quien no lo aprendió fuera del aula: es un problema de equidad. La nota lo resuelve sin sumar tiempo, porque la clase ya mide las curvas del resistor y del LED: solo cambia el inicio y fija la ley donde se mide. Nombrarla de forma cualitativa en 6.° es alcanzable a esa edad.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-FIS-U3-3.1-v3",
+      "cita": "La fase Aproximar da por sabida la ley.",
+      "cita_literal": "Recuerda la relación V = IR"
+     },
+     {
+      "fuente": "TEMA:G11-FIS-U3-3.1-v3",
+      "cita": "La misma clase ya mide lo que permite establecer la ley.",
+      "cita_literal": "Compara las curvas del resistor y del LED para concluir cuál cumple la ley de Ohm en todo el rango medido"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "En 6.° basta la relación cualitativa (más voltaje, más corriente), sin fórmula."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -109882,6 +112012,10 @@
     }
    ],
    "confianza": "alta"
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "RFZ:REF:panel_hallazgo:HAL:H911-equilibrio": {
@@ -110016,6 +112150,34 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_hallazgo:HAL:H911-equilibrio",
+    "decision": "corregir",
+    "justificacion": "Apruebo el acotamiento: la K cualitativa es adecuada para 9.° y la notación de Kc es formalismo de 10.°. Corrijo solo la redacción final: «los formalizan sin darlos por sabidos» se lee como descripción, pero hoy 10.° abre 12.8 y 12.10 «recordando» la K de 9.°. Si no se pide de forma explícita, quien no cursó la profundización llega sin base. El contenido científico no cambia.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U12-12.8",
+      "cita": "10.° abre la clase con la K de 9.°.",
+      "cita_literal": "Recuerda la expresión de la constante de equilibrio trabajada en 9.°"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U12-12.10",
+      "cita": "Y la siguiente, con el cálculo de K de 9.°.",
+      "cita_literal": "Recuerda el cálculo de K con concentraciones de equilibrio dadas en 9.°"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Lo que pasa a profundización no puede darse por sabido en el grado siguiente: excluiría a la mayoría."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "refuerzo": "Usar K solo cualitativamente: un valor grande o pequeño indica si en el equilibrio predominan productos o reactivos, no la rapidez. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización; Química 10.° (12.3–12.5) y 11.° (4.2) deben enseñarlos desde cero, sin «recordarlos» de 9.°. Los buffers (3.10) siguen experimentales, sin Ka."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
   "estado": "en_revision",
@@ -110028,7 +112190,7 @@
    "motivo": null,
    "forma": "nota_en_tema",
    "tema_ancla": "G09-CIE-U3-3.3",
-   "refuerzo": "En 9.°, usar K solo cualitativamente: un valor grande o pequeño indica si en el equilibrio predominan productos o reactivos, no la rapidez. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización: Química 10.° (12.3–12.5) y 11.° (4.2) los formalizan sin darlos por sabidos. Los buffers (3.10) siguen experimentales, sin Ka.",
+   "refuerzo": "Usar K solo cualitativamente: un valor grande o pequeño indica si en el equilibrio predominan productos o reactivos, no la rapidez. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización; Química 10.° (12.3–12.5) y 11.° (4.2) deben enseñarlos desde cero, sin «recordarlos» de 9.°. Los buffers (3.10) siguen experimentales, sin Ka.",
    "fila": null,
    "evidencia": [
     {
@@ -110215,6 +112377,34 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_hallazgo:HAL:H911-especializacion",
+    "decision": "corregir",
+    "justificacion": "El contenido se mantiene; corrijo la legibilidad. La nota mezclaba en una frase lo que sale y lo que queda, con paréntesis anidados y abreviaturas («Concepto por concepto», «Lewis sigue», «Hess», «potenciales»). La reescribo en dos listas: qué pasa a profundización o trato cualitativo y qué sigue en el núcleo, con la notación s, p, d y las estructuras de Lewis explícitas. Así dos docentes la leen igual.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.8",
+      "cita": "Lo más abstracto de la lista: entidades no observables y notación propia.",
+      "cita_literal": "Determina los conjuntos permitidos de números cuánticos de un electrón"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U4-4.3",
+      "cita": "Por eso la notación s, p, d sigue en el núcleo.",
+      "cita_literal": "Deduce el grupo, el periodo y el bloque de un elemento a partir de su configuración electrónica"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Separar «sale» y «queda» en dos listas evita lecturas distintas de la misma nota."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "refuerzo": "Pasan a profundización o trato cualitativo: números cuánticos y orbitales (10.° 3.6–3.9; basta el modelo de capas), ley de Hess (11.1), carga formal y resonancia (5.1–5.2) y, en 11.°, hibridación (2.2), mecanismos (9.1), Kps (U5) y Henderson-Hasselbalch (4.4). Siguen en el núcleo: notación s, p, d (bloques, 4.2), estructuras de Lewis, entalpía, K, Ka, potenciales de celda y síntesis."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
   "estado": "en_revision",
@@ -110227,7 +112417,7 @@
    "motivo": null,
    "forma": "nota_en_tema",
    "tema_ancla": "G10-QUI-U3-3.8",
-   "refuerzo": "Concepto por concepto, a profundización u opción cualitativa: números cuánticos y orbitales (10.° 3.6–3.9; el pivote usa capas, ACSCH018), salvo la notación s, p, d (bloques, 4.2); Hess (10.° 11.1); carga formal y resonancia (10.° 5.1–5.2; Lewis sigue); hibridación (11.° 2.2), mecanismos (9.1), Kps (U5) y Henderson-Hasselbalch (4.4). Entalpía, K, Ka, potenciales y síntesis siguen en el núcleo.",
+   "refuerzo": "Pasan a profundización o trato cualitativo: números cuánticos y orbitales (10.° 3.6–3.9; basta el modelo de capas), ley de Hess (11.1), carga formal y resonancia (5.1–5.2) y, en 11.°, hibridación (2.2), mecanismos (9.1), Kps (U5) y Henderson-Hasselbalch (4.4). Siguen en el núcleo: notación s, p, d (bloques, 4.2), estructuras de Lewis, entalpía, K, Ka, potenciales de celda y síntesis.",
    "fila": null,
    "evidencia": [
     {
@@ -110367,6 +112557,33 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+    "decision": "corregir",
+    "justificacion": "El diagnóstico y las acciones se mantienen. Corrijo un punto de evaluación justa: la nota pedía «evaluar» el razonamiento, pero juzgar si un resultado es razonable o evaluar un diseño no se aprende solo; hay que enseñarlo con un ejemplo resuelto antes de calificarlo. Las fases ya practican predecir (E3). Quito «(calcular, explicar)» por espacio: «conocer o aplicar» son las etiquetas de la propia columna TIMSS.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U1-1.4",
+      "cita": "Las fases ya practican la predicción; falta llevarla a lo que se evalúa.",
+      "cita_literal": "Predice la forma de la gráfica de iluminancia contra distancia"
+     },
+     {
+      "fuente": "Sweller y Cooper (1985), Cognition and Instruction 2(1), 59-89",
+      "cita": "Efecto del ejemplo resuelto: estudiar ejemplos antes de resolver mejora el aprendizaje de principiantes."
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Evaluar una habilidad que no se enseñó mide lo que el estudiante trae de casa, no lo que aprendió."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "refuerzo": "Transversal a Física 10.°–11.°: en 40 de 64 filas la columna TIMSS declara «Razonar», pero el indicador solo pide conocer o aplicar. Sin agregar contenido ni quitar el cálculo, enseñar esa habilidad con un ejemplo resuelto y evaluarla: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
   "estado": "en_revision",
@@ -110379,7 +112596,7 @@
    "motivo": null,
    "forma": "nota_en_tema",
    "tema_ancla": "G10-FIS-U1-1.4",
-   "refuerzo": "Nota transversal para Física 10.°–11.°: en 40 de sus 64 filas la columna TIMSS declara «Razonar», pero el indicador no pasa de conocer o aplicar (calcular, explicar). Sin agregar contenido ni quitar el cálculo, evaluar también esa habilidad: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño.",
+   "refuerzo": "Transversal a Física 10.°–11.°: en 40 de 64 filas la columna TIMSS declara «Razonar», pero el indicador solo pide conocer o aplicar. Sin agregar contenido ni quitar el cálculo, enseñar esa habilidad con un ejemplo resuelto y evaluarla: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño.",
    "fila": null,
    "evidencia": [
     {
@@ -110574,6 +112791,34 @@
     "ronda": 1,
     "rol": "experto-fisica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_hallazgo:HAL:H911-secuencias",
+    "decision": "corregir",
+    "justificacion": "La secuencia es adecuada para 9.°: fijar una variable reduce tres magnitudes simultáneas a dos y hace medible cada ley. Corrijo una ambigüedad: «isobáricos e isocóricos (W = 0)» puede leerse como trabajo nulo en los dos, una idea errónea que el docente podría transmitir. Reordeno a «isocóricos (W = 0) e isobáricos». No cambio el contenido ni la ubicación.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G09-CIE-U2-2.5",
+      "cita": "Ahí se aplica el trabajo como área: la nota debe ser inequívoca.",
+      "cita_literal": "Resuelve problemas a partir de gráficas de procesos termodinámicos"
+     },
+     {
+      "fuente": "TEMA:G09-CIE-U2-2.4",
+      "cita": "Los experimentos de 9.° permiten una variable constante cada vez.",
+      "cita_literal": "Efectúa experimentos sobre procesos termodinámicos en un gas ideal"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "El paréntesis debe ir junto al único proceso al que se aplica."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5)."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
   "estado": "en_revision",
@@ -110586,7 +112831,7 @@
    "motivo": null,
    "forma": "nota_en_tema",
    "tema_ancla": "G09-CIE-U2-2.4",
-   "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isobáricos e isocóricos (W = 0); isotérmico y adiabático, en 10.° (6.5).",
+   "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5).",
    "fila": null,
    "evidencia": [
     {
@@ -110753,6 +112998,46 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#10",
+    "decision": "corregir",
+    "justificacion": "Apruebo la clase nueva: leer espectros dados con una tabla es análisis de datos alcanzable en 11.°. Corrijo dos microhabilidades. En Explorar, nadie puede predecir un espectro sin saber qué mide: añado la premisa de que cada enlace absorbe una radiación característica. En Indagar, aclaro que se analizan los espectros de una muestra para elegir entre candidatos, impresos o proyectados: no se presupone un espectrómetro.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-QUI-U3-3.14",
+      "cita": "La clase anterior construye los isómeros que la nueva distingue.",
+      "cita_literal": "isómeros de función del C₂H₆O"
+     },
+     {
+      "fuente": "Matriz_Bachillerato_Quimica_10_11.xlsx (V3), hoja «Microhabilidades PISA», código E3",
+      "cita": "E3 pide justificar la predicción con un principio o modelo: sin la premisa, no hay con qué justificar."
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Una escuela pública no tiene espectrómetro: los espectros deben llegar impresos o proyectados."
+     }
+    ],
+    "confianza": "alta",
+    "cambios": {
+     "fila": {
+      "contenido": "Determinación de estructuras orgánicas",
+      "subcontenido": "Ion molecular en el espectro de masas. Bandas características del infrarrojo: O–H de alcohol, O–H de ácido carboxílico y C=O. Combinación de evidencias",
+      "procedimental": "3.9a. Determinación de la estructura de compuestos orgánicos sencillos combinando el ion molecular del espectro de masas y las bandas características del espectro infrarrojo.",
+      "indicador": "3.14a. Confirma la masa molar con el ion molecular del espectro de masas, elige entre dos o tres estructuras candidatas de esa fórmula molecular con una o dos bandas del infrarrojo de una tabla dada y justifica su elección con ambas evidencias.",
+      "evidencia_aprendizaje": "Tabla de decisión con los espectros analizados, las bandas y el ion molecular identificados y la estructura elegida con su justificación",
+      "microhabilidades": {
+       "1. Aproximar": "E1 · Recuerda los isómeros de función del C₂H₆O de la clase anterior y se pregunta cómo distinguir en el laboratorio dos sustancias con la misma fórmula molecular.",
+       "2. Explorar": "E3 · Predice qué diferencia mostrará el espectro infrarrojo del etanol frente al del metoximetano, sabiendo que cada tipo de enlace absorbe una radiación infrarroja característica, y justifica la predicción con sus grupos funcionales.",
+       "3. Explicar": "E2 · Lee el ion molecular en un espectro de masas y localiza en un espectro infrarrojo, con una tabla dada, la banda O–H de un alcohol, la O–H más ancha y a menor número de onda de un ácido carboxílico y la C=O.",
+       "4. Indagar": "D4 · Analiza los espectros impresos o proyectados de una muestra y concluye cuál de dos o tres candidatos le corresponde (propan-1-ol y metoxietano; ácido propanoico y etanoato de metilo).",
+       "5. Reforzar": "I3 · Argumenta su elección con las dos evidencias y explica por qué el ion molecular solo no basta para distinguir isómeros."
+      }
+     }
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
   "estado": "en_revision",
@@ -110774,9 +113059,9 @@
     "evidencia_aprendizaje": "Tabla de decisión con los espectros analizados, las bandas y el ion molecular identificados y la estructura elegida con su justificación",
     "microhabilidades": {
      "1. Aproximar": "E1 · Recuerda los isómeros de función del C₂H₆O de la clase anterior y se pregunta cómo distinguir en el laboratorio dos sustancias con la misma fórmula molecular.",
-     "2. Explorar": "E3 · Predice qué diferencia mostrará el espectro infrarrojo del etanol frente al del metoximetano y justifica la predicción con sus grupos funcionales.",
+     "2. Explorar": "E3 · Predice qué diferencia mostrará el espectro infrarrojo del etanol frente al del metoximetano, sabiendo que cada tipo de enlace absorbe una radiación infrarroja característica, y justifica la predicción con sus grupos funcionales.",
      "3. Explicar": "E2 · Lee el ion molecular en un espectro de masas y localiza en un espectro infrarrojo, con una tabla dada, la banda O–H de un alcohol, la O–H más ancha y a menor número de onda de un ácido carboxílico y la C=O.",
-     "4. Indagar": "D4 · Analiza los espectros de dos o tres candidatos (propan-1-ol y metoxietano; ácido propanoico y etanoato de metilo) y concluye cuál corresponde a la muestra.",
+     "4. Indagar": "D4 · Analiza los espectros impresos o proyectados de una muestra y concluye cuál de dos o tres candidatos le corresponde (propan-1-ol y metoxietano; ácido propanoico y etanoato de metilo).",
      "5. Reforzar": "I3 · Argumenta su elección con las dos evidencias y explica por qué el ion molecular solo no basta para distinguir isómeros."
     }
    },
@@ -110900,11 +113185,40 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#11",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. Comparar combustibles con datos tabulados y recomendar uno para un uso local es una decisión con sentido para el estudiante, también en zona rural, y no exige quemar nada. Para no alargar la clase 53, el docente debe integrarla en la fase Reforzar, que ya relaciona la combustión incompleta con la calidad del aire, y no añadirla después. Retomar la tabla de 10.° ahorra tiempo.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-QUI-U9-9.3",
+      "cita": "La fase Reforzar ya trata las emisiones, pero solo con un contexto urbano.",
+      "cita_literal": "Relaciona las emisiones de la combustión incompleta con la calidad del aire en el área metropolitana de San Salvador"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U11-11.1",
+      "cita": "La tabla de 10.° ya existe: solo se le suman dos filas.",
+      "cita_literal": "tabla comparativa de combustibles con energía por gramo y CO₂ emitido"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "El «uso local» incluye la leña y el gas de cocina: contexto válido en la ciudad y en el campo."
+     }
+    ],
+    "confianza": "media",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#12": {
   "tipo": "contenido",
@@ -111019,6 +113333,34 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#12",
+    "decision": "corregir",
+    "justificacion": "La química se mantiene; corrijo la carga. «Cerrar con» apilaba al final de una clase completa una ruta, tres justificaciones, dos cálculos y la economía atómica, y repetía lo que la fase Indagar ya concluye sobre el ácido sulfúrico. Reparto: rendimiento y condiciones en Indagar, sobre la síntesis del video; la ruta, en Reforzar. Si aun así no cabe, conviene la fila 9.9 que propuso el panel.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G11-QUI-U9-9.5",
+      "cita": "La fase Indagar ya trata el rendimiento y el papel del ácido sulfúrico.",
+      "cita_literal": "concluye cómo el ácido sulfúrico y el exceso de alcohol aumentan el rendimiento"
+     },
+     {
+      "fuente": "TEMA:G11-QUI-U9-9.5",
+      "cita": "La evidencia de aprendizaje ya pide analizar el rendimiento: el cálculo encaja ahí.",
+      "cita_literal": "Informe técnico con ecuaciones de esterificación e hidrólisis y análisis del rendimiento de la síntesis observada"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Una idea por fase: si todo va al cierre, la clase se parte en dos o la ruta queda sin hacer."
+     }
+    ],
+    "confianza": "media",
+    "cambios": {
+     "refuerzo": "En Indagar, con el video y datos dados, calcular el rendimiento teórico y porcentual (10.° 10.3) y justificar el exceso de reactivo y el ácido sulfúrico como catalizador (rapidez) y deshidratante (rendimiento). En Reforzar, diseñar en papel una ruta hacia un éster aromatizante: oxidar un alcohol primario hasta ácido (9.4), esterificar y purificar; valorarla con la economía atómica (7.4)."
+    },
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
   "estado": "en_revision",
@@ -111031,7 +113373,7 @@
    "motivo": null,
    "forma": "nota_en_tema",
    "tema_ancla": "G11-QUI-U9-9.5",
-   "refuerzo": "Cerrar con el diseño en papel de una ruta hacia un éster aromatizante con reacciones estudiadas: oxidar un alcohol primario hasta ácido (9.4) y esterificar. Justificar el exceso de reactivo, el ácido sulfúrico como catalizador (rapidez) y deshidratante (rendimiento) y la purificación; calcular rendimiento teórico y porcentual con un dato dado (10.° 10.3). Aplica la economía atómica de 7.4.",
+   "refuerzo": "En Indagar, con el video y datos dados, calcular el rendimiento teórico y porcentual (10.° 10.3) y justificar el exceso de reactivo y el ácido sulfúrico como catalizador (rapidez) y deshidratante (rendimiento). En Reforzar, diseñar en papel una ruta hacia un éster aromatizante: oxidar un alcohol primario hasta ácido (9.4), esterificar y purificar; valorarla con la economía atómica (7.4).",
    "fila": null,
    "evidencia": [
     {
@@ -111159,11 +113501,35 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#3",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. Leer masas y abundancias en un espectro sencillo da una representación visual concreta a un cálculo abstracto y apoya la predicción que la clase ya hace con el cloro. Sustituye los datos en tabla, así que casi no suma tiempo, y el aparato se describe solo en términos generales. Excluir los picos de Cl₂ evita una confusión innecesaria. Es clara para un docente.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U3-3.4",
+      "cita": "La clase ya razona con los isótopos del cloro: el espectro lo hace visible.",
+      "cita_literal": "Predice si la masa atómica del cloro, 35.45, está más cerca de 35 o de 37"
+     },
+     {
+      "fuente": "criterio psicopedagógico",
+      "cita": "Una gráfica de barras de abundancias es una segunda representación del mismo dato (DUA)."
+     }
+    ],
+    "confianza": "alta",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
-  "malla": "V3"
+  "malla": "V3",
+  "resolucion": {
+   "decision": "aprobar",
+   "ronda": 2
+  }
  },
  "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#5": {
   "tipo": "contenido",
@@ -111278,9 +113644,35 @@
     "ronda": 1,
     "rol": "experto-quimica",
     "fecha": "2026-10-13"
+   },
+   {
+    "id": "RFZ:REF:panel_propuesta:PRO:quimica:G10-G11#5",
+    "decision": "aprobar",
+    "justificacion": "Apruebo. Explicar la reversibilidad con el perfil energético conecta cinética y equilibrio y retoma lo que 12.4 ya predice sobre la reacción inversa. Para no alargar la clase 62, conviene abrir con el perfil y hacer la predicción de velocidades dentro de la fase Indagar, que ya interpreta gráficas de velocidad. Si se adopta H911-equilibrio, ese inicio reemplaza el «recordar» la K de 9.°.",
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-QUI-U12-12.4",
+      "cita": "La clase anterior ya compara las dos energías de activación.",
+      "cita_literal": "Predice cómo cambiaría el diagrama de energía potencial de la reacción inversa"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U12-12.8",
+      "cita": "La fase Indagar ya trabaja con las dos velocidades: ahí cabe la predicción.",
+      "cita_literal": "Interpreta gráficas de velocidad directa e inversa contra tiempo"
+     },
+     {
+      "fuente": "TEMA:G10-QUI-U12-12.8",
+      "cita": "Hoy la clase abre con la K de 9.°.",
+      "cita_literal": "Recuerda la expresión de la constante de equilibrio trabajada en 9.°"
+     }
+    ],
+    "confianza": "media",
+    "ronda": 2,
+    "rol": "psicopedagogo",
+    "fecha": "2026-10-13"
    }
   ],
-  "estado": "en_revision",
+  "estado": "resuelta",
   "version": "panel-v1",
   "malla": "V3",
   "version_vigente": {
@@ -111315,6 +113707,10 @@
     }
    ],
    "confianza": "media"
+  },
+  "resolucion": {
+   "decision": "corregir",
+   "ronda": 2
   }
  },
  "RFZ:REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores": {

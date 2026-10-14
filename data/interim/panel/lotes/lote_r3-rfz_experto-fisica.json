@@ -1,0 +1,352 @@
+{
+ "lote": "r3-rfz_experto-fisica",
+ "ronda": 3,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "REF:panel_hallazgo:HAL:H911-razonar (precisar, 10.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:panel_hallazgo:HAL:H911-razonar",
+     "tipo": "precisar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G10-FIS-U1-1.4",
+     "refuerzo": "Transversal a Física 10.°–11.°: en 40 de 64 filas la columna TIMSS declara «Razonar», pero el indicador solo pide conocer o aplicar. Sin agregar contenido ni quitar el cálculo, enseñar esa habilidad con un ejemplo resuelto y evaluarla: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7",
+       "cita_literal": "Razonar: decidir si ocurre reflexión interna total"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7",
+       "cita_literal": "Resuelve problemas que involucran reflexión, refracción y reflexión interna total"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U1-1.4",
+       "cita_literal": "Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido"
+      },
+      {
+       "fuente": "Malla V3, Física 10.°–11.° (64 filas), clasificador por verbos de internacional/profundidad.py",
+       "cita": "61 filas declaran Razonar en la columna TIMSS; en 40 el indicador no llega a razonar. 22 de 202 enunciados del indicador (11 %) son de razonar."
+      },
+      {
+       "fuente": "internacional/README.md",
+       "cita": "Demanda cognitiva: Física de la V2, 10 % de razonar frente a 31 % de mediana de los países."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "panel_hallazgo",
+     "problema": "Física pide poco razonamiento (10 % frente a 31 %)",
+     "texto_base": "Reescribir como razonar una parte de los indicadores de Física de 10.°–11.° que hoy son de calcular o resolver, sin agregar contenido y sin quitar el cálculo: predecir y justificar con un modelo antes de calcular, evaluar si un resultado es razonable (unidades, órdenes de magnitud, casos límite), diseñar y evaluar un experimento y argumentar con datos. Empezar por las 128 filas cuya columna de habilidad TIMSS ya declara «Razonar» pero cuyo indicador no lo pide: basta con llevar esa habilidad al indicador. Tomar el 10 % frente al 31 % como orientación, no como meta numérica.",
+     "conceptos": [],
+     "temas_ancla": [],
+     "solidez": "solido"
+    },
+    "tema_ancla": {
+     "id": "G10-FIS-U1-1.4",
+     "grado": 10,
+     "unidad": "1. La física como ciencia: indagación y herramientas",
+     "contenido": "Análisis de datos y modelos",
+     "procedimental": "1.2. Linealización de datos experimentales, interpretación física de la pendiente y el intercepto, y evaluación de los límites de validez de modelos idealizados.",
+     "indicador": "1.2. • Linealiza una relación no lineal entre dos magnitudes e interpreta el significado físico de la pendiente y del intercepto de la recta de ajuste. • Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "decision": "corregir",
+     "justificacion": "Recalculé con el clasificador del repositorio sobre la V3: 64 filas de Física 10.° y 11.°, 61 declaran Razonar y en 40 el indicador no lo pide; 22 de 202 enunciados (11 %) son de razonar. Las acciones son razonar en TIMSS (predecir, justificar, evaluar) y explicar es aplicar. Solo preciso el verbo: esos indicadores también usan reconoce o identifica, no solo calcular o explicar.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 33)",
+       "cita": "Ejemplo: la columna TIMSS declara razonar y el indicador solo resuelve problemas.",
+       "cita_literal": "Razonar: decidir si ocurre reflexión interna total"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7 (fila 33)",
+       "cita": "El indicador correspondiente.",
+       "cita_literal": "Resuelve problemas que involucran reflexión, refracción y reflexión interna total"
+      },
+      {
+       "fuente": "src/goes_science_kg/internacional/profundidad.py, demanda() sobre la malla V3",
+       "cita": "64 filas; 61 con Razonar en la columna TIMSS; 40 sin verbo de razonar en el indicador; verbos más frecuentes en esas 40: calcula 29, explica 23, determina 12, reconoce 8."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "Nota transversal para Física 10.°–11.°: en 40 de sus 64 filas la columna TIMSS declara «Razonar», pero el indicador no pasa de conocer o aplicar (calcular, explicar). Sin agregar contenido ni quitar el cálculo, evaluar también esa habilidad: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño."
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "decision": "corregir",
+     "justificacion": "El diagnóstico y las acciones se mantienen. Corrijo un punto de evaluación justa: la nota pedía «evaluar» el razonamiento, pero juzgar si un resultado es razonable o evaluar un diseño no se aprende solo; hay que enseñarlo con un ejemplo resuelto antes de calificarlo. Las fases ya practican predecir (E3). Quito «(calcular, explicar)» por espacio: «conocer o aplicar» son las etiquetas de la propia columna TIMSS.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U1-1.4",
+       "cita": "Las fases ya practican la predicción; falta llevarla a lo que se evalúa.",
+       "cita_literal": "Predice la forma de la gráfica de iluminancia contra distancia"
+      },
+      {
+       "fuente": "Sweller y Cooper (1985), Cognition and Instruction 2(1), 59-89",
+       "cita": "Efecto del ejemplo resuelto: estudiar ejemplos antes de resolver mejora el aprendizaje de principiantes."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Evaluar una habilidad que no se enseñó mide lo que el estudiante trae de casa, no lo que aprendió."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "Transversal a Física 10.°–11.°: en 40 de 64 filas la columna TIMSS declara «Razonar», pero el indicador solo pide conocer o aplicar. Sin agregar contenido ni quitar el cálculo, enseñar esa habilidad con un ejemplo resuelto y evaluarla: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:panel_hallazgo:HAL:H911-secuencias (precisar, 9.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:panel_hallazgo:HAL:H911-secuencias",
+     "tipo": "precisar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G09-CIE-U2-2.4",
+     "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5).",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4",
+       "cita_literal": "Reconoce los procesos isotérmico, isobárico, isocórico y adiabático en un gas ideal"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.5",
+       "cita_literal": "calcula el trabajo como el área bajo la curva"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U14-14.1",
+       "cita_literal": "Recuerda las leyes de los gases trabajadas en 9.°"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U15-15.1",
+       "cita_literal": "Calcula el trabajo de expansiones isotérmicas y adiabáticas de un gas ideal"
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.2",
+       "cita_literal": "Determina con datos experimentales la constante de proporcionalidad de la ley de Boyle-Mariotte"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U14-14.1",
+       "cita_literal": "Mide pares presión-volumen con una jeringa sellada y un manómetro"
+      },
+      {
+       "fuente": "internacional/README.md",
+       "cita": "Gases antes de procesos termodinámicos; coordinar Física y Química de 10.° para no repetir las leyes de los gases."
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U15-15.1",
+       "cita_literal": "Calcula el trabajo realizado en procesos isobáricos e isocóricos como área bajo la curva"
+      },
+      {
+       "fuente": "Loverude, Kautz y Heron (2002), Am. J. Phys. 70(2), 137-148",
+       "cita": "Idea previa: en una compresión adiabática la temperatura no cambia porque no hay calor."
+      }
+     ],
+     "confianza": "alta"
+    },
+    "candidato": {
+     "origen": "panel_hallazgo",
+     "problema": "Secuencias por ordenar en 9.°–11.°",
+     "texto_base": "Física. (1) Gases. En 9.°, presentar G09-CIE-U2-2.4 como relaciones entre presión, volumen y temperatura con una variable controlada (temperatura, volumen o presión constante), que es lo que esos experimentos miden, y nombrar sobre esa base los procesos isotérmico, isocórico e isobárico. En 2.5, limitar el trabajo como área a procesos isobáricos e isocóricos (rectángulos), lo que alimenta la primera ley de 2.8, que se conserva; los procesos adiabáticos y el trabajo isotérmico se formalizan en Física de 10.° U15, que ya los tiene. En 10.°, programar Química U6 (leyes empíricas y PV = nRT) antes de Física U14 y compartir un solo laboratorio de p frente a 1/V: Química obtiene la constante de Boyle y Física reutiliza esos datos para estimar el número de moléculas con pV = NkT y dar la interpretación cinética (14.2), sin repetir las leyes. (2) Ondas. 10.° 16.2 explica la interferencia y la difracción de la luz antes de que se enseñe la superposición (11.° U5). Abrir 16.2 con una introducción cualitativa a la superposición de pulsos (resorte largo o cubeta de ondas) y mantenerla en nivel cualitativo; la formalización sigue en 11.° U5 y el cálculo con la luz en 11.° U18. Las secuencias de Química (redox, hidrocarburos e isomería) y de Biología (mitocondria y metabolismo) parecen lógicas, pero deben dictaminarlas sus expertos.",
+     "conceptos": [],
+     "temas_ancla": [
+      {
+       "id": "G09-CIE-U2-2.4",
+       "grado": 9,
+       "unidad": "2. Calor y temperatura",
+       "contenido": "Procesos termodinámicos",
+       "procedimental": "2.3. Experimentación con procesos termodinámicos en un gas ideal.",
+       "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal."
+      }
+     ],
+     "solidez": "solido"
+    },
+    "tema_ancla": {
+     "id": "G09-CIE-U2-2.4",
+     "grado": 9,
+     "unidad": "2. Calor y temperatura",
+     "contenido": "Procesos termodinámicos",
+     "procedimental": "2.3. Experimentación con procesos termodinámicos en un gas ideal.",
+     "indicador": "2.4. Efectúa experimentos sobre procesos termodinámicos en un gas ideal."
+    },
+    "adaptacion": {
+     "palabras_max": 80,
+     "registro": "modelos y datos simples"
+    }
+   },
+   "id": "RFZ:REF:panel_hallazgo:HAL:H911-secuencias",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-secuencias",
+     "decision": "corregir",
+     "justificacion": "Ubicación y secuencia correctas: 9.° no nombra a Boyle, Charles ni Gay-Lussac, Física 10.° (6.4) los da por vistos y 10.° (6.5) formaliza isotérmico y adiabático. Precisé que el adiabático no sale de una ley con una variable constante: no intercambia calor, pero el gas se calienta al comprimirse (confusión documentada). Agregué que en el isocórico el trabajo es nulo. La parte de ondas del hallazgo quedó sin refuerzo.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4 (Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx, hoja Unidad 2, fila 5)",
+       "cita": "La microhabilidad de 9.° incluye el adiabático junto a los otros tres.",
+       "cita_literal": "Reconoce los procesos isotérmico, isobárico, isocórico y adiabático en un gas ideal"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U14-14.1 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 28)",
+       "cita": "10.° supone las leyes de los gases que 9.° no nombra.",
+       "cita_literal": "Recuerda las leyes de los gases trabajadas en 9.°"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U15-15.1 (hoja Física 10.°, fila 29)",
+       "cita": "10.° formaliza el trabajo isotérmico y adiabático.",
+       "cita_literal": "Calcula el trabajo de expansiones isotérmicas y adiabáticas de un gas ideal"
+      },
+      {
+       "fuente": "Loverude, Kautz y Heron (2002), Am. J. Phys. 70(2), 137-148",
+       "cita": "Estudiantes universitarios suelen creer que en una compresión adiabática la temperatura no cambia porque no hay calor; confunden calor y temperatura."
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U5-5.4 (hoja Física 11.°, fila 7)",
+       "cita": "La superposición sigue en 11.°, después de la interferencia de la luz de 10.° (7.1): el problema de ondas persiste en la V3.",
+       "cita_literal": "Análisis de la superposición de pulsos, de la interferencia y la difracción de ondas mecánicas"
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isobáricos e isocóricos (W = 0); isotérmico y adiabático, en 10.° (6.5).",
+      "evidencia": [
+       {
+        "fuente": "TEMA:G09-CIE-U2-2.4",
+        "cita_literal": "Reconoce los procesos isotérmico, isobárico, isocórico y adiabático en un gas ideal"
+       },
+       {
+        "fuente": "TEMA:G09-CIE-U2-2.5",
+        "cita_literal": "calcula el trabajo como el área bajo la curva"
+       },
+       {
+        "fuente": "TEMA:G10-FIS-U14-14.1",
+        "cita_literal": "Recuerda las leyes de los gases trabajadas en 9.°"
+       },
+       {
+        "fuente": "TEMA:G10-FIS-U15-15.1",
+        "cita_literal": "Calcula el trabajo de expansiones isotérmicas y adiabáticas de un gas ideal"
+       },
+       {
+        "fuente": "TEMA:G10-QUI-U6-6.2",
+        "cita_literal": "Determina con datos experimentales la constante de proporcionalidad de la ley de Boyle-Mariotte"
+       },
+       {
+        "fuente": "TEMA:G10-FIS-U14-14.1",
+        "cita_literal": "Mide pares presión-volumen con una jeringa sellada y un manómetro"
+       },
+       {
+        "fuente": "internacional/README.md",
+        "cita": "Gases antes de procesos termodinámicos; coordinar Física y Química de 10.° para no repetir las leyes de los gases."
+       },
+       {
+        "fuente": "TEMA:G10-FIS-U15-15.1",
+        "cita_literal": "Calcula el trabajo realizado en procesos isobáricos e isocóricos como área bajo la curva"
+       },
+       {
+        "fuente": "Loverude, Kautz y Heron (2002), Am. J. Phys. 70(2), 137-148",
+        "cita": "Idea previa: en una compresión adiabática la temperatura no cambia porque no hay calor."
+       }
+      ]
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-13"
+    },
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-secuencias",
+     "decision": "corregir",
+     "justificacion": "La secuencia es adecuada para 9.°: fijar una variable reduce tres magnitudes simultáneas a dos y hace medible cada ley. Corrijo una ambigüedad: «isobáricos e isocóricos (W = 0)» puede leerse como trabajo nulo en los dos, una idea errónea que el docente podría transmitir. Reordeno a «isocóricos (W = 0) e isobáricos». No cambio el contenido ni la ubicación.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.5",
+       "cita": "Ahí se aplica el trabajo como área: la nota debe ser inequívoca.",
+       "cita_literal": "Resuelve problemas a partir de gráficas de procesos termodinámicos"
+      },
+      {
+       "fuente": "TEMA:G09-CIE-U2-2.4",
+       "cita": "Los experimentos de 9.° permiten una variable constante cada vez.",
+       "cita_literal": "Efectúa experimentos sobre procesos termodinámicos en un gas ideal"
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "El paréntesis debe ir junto al único proceso al que se aplica."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5)."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-13"
+    }
+   ]
+  }
+ ]
+}
