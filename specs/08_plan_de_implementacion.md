@@ -180,6 +180,26 @@ generación de matrices Excel anotadas. La fila de espectros de masas/infrarrojo
 55 minutos, sin ahorro compensatorio demostrado: su adopción exige validar el presupuesto. Las notas tampoco
 presuponen coste didáctico nulo.
 
+## Fase 10 · Contenido estructurado para el motor (spec 16)
+
+Prioridad del responsable: un contrato independiente del motor sobre las capas existentes, con comprobaciones
+críticas y sin promover revisiones IA a aprobaciones docentes.
+
+- [x] 16.0 Unificar visión, arquitectura y ruta; distinguir catálogo, propuesta institucional y contenido pedagógico.
+- [x] 16.1 Puente exacto de 935 temas V3 con el análisis de cobertura, validando los 11 libros por SHA y las columnas
+  completas, incluidas celdas combinadas. Se conservan nueve discrepancias con la extracción anterior del grafo.
+- [x] 16.2 Contrato ejecutable, esquemas y exportación inmutable con insumos identificados: catálogo completo,
+  grafo principal, análisis separado y 230 paquetes existentes; permisos y dependencias por componente.
+- [x] 16.3 Validador portátil y consumidor de referencia: importación idempotente, activación atómica,
+  reversión, resolución de alias exactos y filtrado de autoría. Aula deshabilitada en este contrato inicial.
+- [ ] 16.4 Completar la unidad piloto de Física 10.°, «4. Trabajo, energía y momento»: datos citables,
+  secuencia de cinco momentos, evidencia e instrumentos de evaluación. Expediente en `entregas/motor/`.
+- [ ] 16.5 Revisión científica y didáctica humana, ensayo docente de sesiones de 55 minutos y correcciones.
+- [ ] 16.6 Integración con el motor real, permisos institucionales, piloto y evaluación antes de escalar.
+
+Los cinco ciclos técnicos de validación y sus resultados quedan en `entregas/motor/VALIDACION_5_CICLOS.json`.
+No cierran los pendientes humanos, las matrices anotadas de la spec 15 ni el recálculo global del contraste V3.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

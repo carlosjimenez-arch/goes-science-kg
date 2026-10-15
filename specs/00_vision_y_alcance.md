@@ -1,8 +1,9 @@
 # 00 · Visión y alcance
 
 ## Problema
-El MINED está rediseñando las mallas de Ciencias (2.° a 11.°). Hoy existe una malla con
-1.260 temas y un análisis de cobertura (`reportes/cobertura_curricular/`) que dice **qué cubre
+El MINED está rediseñando las mallas de Ciencias (2.° a 11.°). La V3 vigente (2026-10-13) contiene
+935 temas, de los cuales 920 están en el alcance de Ciencias. Existe un análisis histórico de cobertura
+(`reportes/cobertura_curricular/`, basado en la V1 de 1.260 temas) que dice **qué cubre
 y qué no** frente a TIMSS 2027, TIMSS Advanced y PISA 2025, y **cuándo** enseña El Salvador
 cada objetivo comparado con Uruguay, Colombia y Singapur.
 
@@ -22,17 +23,23 @@ Construir un **grafo de conocimiento de Ciencias** que:
 4. Agregue una capa de **conceptos y prerrequisitos** con evidencia.
 5. Permita **proponer, por asignatura**, una malla mejorada y justificada: qué agregar, mover,
    fusionar o quitar, en qué grado y por qué. Cada propuesta debe traer su evidencia.
+6. Sostenga una **capa de contenido para autoría y un motor independiente**: identidades estables,
+   componentes trazables, revisión por componente y entregas versionadas (specs 13–16). El catálogo
+   curricular y las propuestas institucionales mantienen su autoridad propia; una revisión IA no aprueba clases.
 
 ## Alcance
 - **Asignaturas:** Biología, Física, Química y Ciencias de la Tierra y del Espacio
   (`asignaturas/`). Los temas técnicos de «Ciencia y Tecnología» quedan fuera y se enlazan
   con `goes-techonoly-kg`.
 - **Grados:** 2.° a 11.° (Ciencias de la Tierra, 2.° a 9.°).
-- **Usuarios:** equipo GOES (diseño curricular) y equipo de Ciencias del MINED (validación).
+- **Usuarios:** equipo GOES (diseño curricular), autores y revisores de contenido y equipo de Ciencias del MINED
+  (validación curricular). El uso con docentes y estudiantes exige los hitos de revisión y piloto de la spec 16.
 
 ## Fuera de alcance (por ahora)
-- Planes de clase, materiales y evaluaciones de aula.
-- Datos de estudiantes. El grafo es de contenido curricular, no de desempeño individual.
+- Publicar planes, materiales o evaluaciones como aprobados para aula sin verificación humana y prueba temporal.
+  La elaboración y revisión de propuestas pedagógicas sí forma parte del alcance ampliado (specs 13–16).
+- Datos personales de estudiantes en el grafo o las entregas compartidas. El prototipo de la spec 13 mantiene
+  cualquier estado individual en una capa separada; el contrato inicial del motor no lo transporta.
 - Decidir la malla final. El grafo **propone con evidencia** y el MINED decide.
 
 ## Criterios de éxito
@@ -41,3 +48,5 @@ Construir un **grafo de conocimiento de Ciencias** que:
 - `gskg grafo validar` termina sin errores. Toda inferencia de IA trae confianza,
   justificación y versión.
 - Al menos 4 países de alto desempeño, además de los 3 regionales, alineados al pivote.
+- La entrega para el motor se valida sin los Excel del productor, se importa sin duplicar registros y permite
+  activar o revertir una versión. Distingue consulta, autoría asistida y habilitación de aula.

@@ -2,7 +2,8 @@
 
 Grafo de conocimiento de **Ciencias** para El Salvador. Une la malla del MINED (2.° a 11.°) con los
 marcos internacionales (TIMSS 2027, TIMSS Advanced, PISA 2025) y con los currículos de otros
-países. El fin es **proponer, por asignatura, una curricularización mejor y con evidencia**.
+países. El fin es **proponer, por asignatura, una curricularización mejor y con evidencia** y sostener
+contenido trazable para autoría y un motor de aprendizaje, con revisión humana antes del uso en aula.
 
 | Asignatura | Grados | Carpeta |
 |---|---|---|
@@ -21,9 +22,9 @@ uv run pytest -q
 ```
 
 ## Estado
-**Grafo v1** sobre la **malla V2** del MINED (desde el 2026-10-11): 3.675 nodos y 20.538 aristas.
-- 1.307 temas de la malla (1.292 en alcance y 15 de tecnología o transversales fuera de alcance). La V2 conserva los
-  1.260 temas de la V1 sin cambios y agrega 47; la V1 queda en `config/mallas_v1.yaml`.
+**Grafo v1** sobre la **malla V3** del MINED (desde el 2026-10-13): 3.303 nodos y 18.177 aristas.
+- 935 temas de la malla (920 en alcance y 15 fuera de Ciencias). Los temas heredados conservan su id estable;
+  el grado y orden actuales se leen como atributos. V1 y V2 permanecen como referencias históricas.
 - **513 conceptos y 30 prácticas científicas**, con 822 prerrequisitos entre conceptos (un grafo sin ciclos por
   asignatura) y equivalencias entre asignaturas. 14 conceptos vienen del triaje de los que propuso el etiquetado.
 - 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
@@ -45,18 +46,34 @@ de 55 a 5 (decisiones abiertas para el MINED en cada informe).
 **Contraste internacional de 9.°–11.°** (malla V2): [`internacional/`](internacional/README.md). Hay grafos de
 9 países de alto desempeño (SG, JP, KR, ENG, AU, HK, TW, EE y ON; 9.040 objetivos extraídos y validados con Vertex
 AI), un consenso por concepto y un informe por asignatura con los hallazgos verificados contra las fuentes.
+Esta capa internacional es distinta de los seis países del grafo principal y su contraste publicado sigue identificado
+como V2: no se declara recalculado íntegramente sobre V3.
 Se construye con `uv run gskg internacional extraer | etiquetar | construir`.
 
 **Apoyo al aprendizaje (prototipo, spec 13)**: un tutor que complementa la malla sin cambiarla: revisa las bases de
 un objetivo, comprueba hipótesis con preguntas breves, refuerza, reevalúa con otra actividad y programa repasos.
 Tres recorridos de ejemplo en [`aprendizaje/`](aprendizaje/README.md) (`uv run gskg tutor recorridos`); el
-contenido pedagógico es propuesta pendiente de revisión y la mejora del aprendizaje requiere un piloto.
+contenido pedagógico combina propuestas y revisiones del panel IA; la verificación docente y la mejora del
+aprendizaje requieren revisión y piloto. Hay 230 paquetes ligeros de Física y Química de 9.°–11.°
+en [`entregas/paquetes_clase/`](entregas/paquetes_clase/README.md), con pendientes explícitos.
+
+**Entrega para el motor v0.1.0:** catálogo V3 de 935 temas, puente exacto con el análisis de cobertura y los
+230 paquetes existentes, con permisos por componente. Incluye contrato, validador portátil e importador de
+referencia con activación y reversión de versiones. Habilita consulta y autoría asistida; **aula sigue deshabilitada**.
+Documentación: [`spec 16`](specs/16_contenido_motor.md) y [`entrega`](entregas/motor/README.md).
+
+```bash
+uv run gskg motor validar entregas/motor/0.1.0
+uv run gskg motor importar entregas/motor/0.1.0 --almacen /tmp/goes-motor
+uv run gskg motor consultar G10-FIS-U7-7.5 --perfil autoria --almacen /tmp/goes-motor
+```
 
 **GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
 API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).
 
-Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
+El siguiente hito es completar una unidad para revisión científica, didáctica y ensayo docente de 55 minutos.
+El plan, con lo cerrado y lo pendiente, está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).
 
 ## Secuencia del proceso
@@ -71,6 +88,7 @@ todo está al día (las salidas son deterministas y una prueba verifica que `dat
 | 4 | Lecturas del grafo | `gskg fichas`, `grados construir`, `brechas`, `progresion` | grafo → `asignaturas/`, `grados/` |
 | 5 | Propuestas (con revisión) | `make propuestas` | propuestas → simulación, Excel y `asignaturas/PROPUESTAS.md` |
 | 6 | Internacional | `make internacional` (o `make internacional-ia` con Vertex) | países y malla V2 → `internacional/` |
+| 7 | Motor | `gskg motor exportar / validar / importar / consultar / activar` | fuentes V3, grafo, análisis y paquetes → entrega inmutable y consumidor de referencia |
 
 ## Cómo continuar con Claude Code
 El repo trae su propio harness: hooks que protegen `.env` y las fuentes, piden aprobación antes de gastar en Vertex y

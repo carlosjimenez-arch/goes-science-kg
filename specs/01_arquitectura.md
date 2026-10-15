@@ -12,8 +12,11 @@ data/grafo/            GRAFO (fuente de verdad) nodos.jsonl · aristas.jsonl · 
       │
       ├─▶ fichas.py · brechas.py · progresion.py · propuesta.py   (por asignatura)
       ├─▶ grados.py · rag.py · api.py                               (por grado y consultas)
+      ├─▶ aprendizaje/ · panel · refuerzo_v3                         (componentes y revisión)
+      └─▶ motor/ + insumos de cobertura V3                         (contrato, exportación, validación)
       ▼
 asignaturas/<x>/ · grados/   ENTREGABLES        ficha.md · brechas/ · propuesta/ · G<gg>/
+entregas/motor/<versión>/    ENTREGA MOTOR     JSONL · catálogos · esquemas · manifiesto SHA-256
 ```
 
 ## Decisiones
@@ -25,15 +28,16 @@ asignaturas/<x>/ · grados/   ENTREGABLES        ficha.md · brechas/ · propues
 | **IA con trazabilidad** | Toda arista inferida trae confianza, justificación (≤15 palabras) y versión. Las de confianza «baja» van a revisión humana. |
 | **Subagentes por lote** para clasificar o alinear | Paralelismo controlado: un lote por grado, país o asignatura. Se unen con un script determinista. |
 | **Config en YAML** (`config/`) | Las reglas de negocio se cambian sin tocar código. |
-| **Malla vigente = V2** (`config/mallas.yaml`, desde el 2026-10-11) | Contiene los 1.260 temas de la V1 sin cambios (mismo id, hoja, fila y texto) y agrega 47. Etiquetas, revisiones y propuestas siguen valiendo; la V1 queda en `config/mallas_v1.yaml`. |
+| **Malla vigente = V3** (`config/mallas.yaml`, desde el 2026-10-13) | 935 temas; los heredados conservan su id por correspondencia. Grado, unidad y orden actuales se leen como atributos, nunca desde el id. V1 y V2 quedan como historia. |
 | **reportes/ se conserva** | Es el trabajo previo y fuente de los catálogos. El paquete nuevo lo lee y nunca lo modifica. |
+| **Entrega independiente del motor** (spec 16) | Catálogo, grafo, análisis y componentes conservan sus procedencias. Se importan por identidad de entrega; activar o revertir cambia solo un puntero. Aula no está habilitada en v0.1. |
 
 ## Paquete `src/goes_science_kg/`
 | Módulo | Responsabilidad |
 |---|---|
 | `config.py` | Raíz del repo y lectura de `config/*.yaml` |
 | `modelos.py` | Contrato del grafo: nodos, aristas, evidencia e invariantes |
-| `ingesta/mallas.py` | Excel del MINED → temas con id estable (malla vigente: V2, `config/mallas.yaml`) |
+| `ingesta/mallas.py` | Excel del MINED → temas con id estable (malla vigente: V3, `config/mallas.yaml`) |
 | `ingesta/legado.py` | Catálogos y clasificaciones de `reportes/` (solo lectura), traducidos a la malla vigente |
 | `ingesta/acara.py` | Catálogo de ACARA Senior Secondary (pivote de Biología y Química de 10.°–11.°) |
 | `alineacion.py` | Lotes de alineación de temas contra un pivote (AUSS; TIMSS y PISA para los temas nuevos de la V2) |
@@ -49,6 +53,7 @@ asignaturas/<x>/ · grados/   ENTREGABLES        ficha.md · brechas/ · propues
 | `revision_humana.py` · `revision_decisiones.py` | Circuito de revisión con el MINED: etiquetas y decisiones de contenido (spec 07) |
 | `excel.py` | Guardado determinista de libros de Excel |
 | `internacional/` | Estudio internacional por tramo (`tramo.py`): Vertex (`vertex.py`), `extraer.py`, `etiquetar.py`, `consenso.py`, `contraste.py`, `profundidad.py`, `informe.py`, `visor.py` (specs 11 y 12) |
+| `motor/` | Puente exacto de identidades V3, contrato, exportador, permisos por componente, validador portátil y consumidor de referencia (spec 16) |
 | `cli.py` | CLI `gskg`: un comando por etapa (spec 04) |
 
 ## Convenciones

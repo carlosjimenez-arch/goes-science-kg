@@ -20,5 +20,6 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 13 | [apoyo_al_aprendizaje](13_apoyo_al_aprendizaje.md) | Tutor que complementa la malla sobre el grafo (diseño y prototipo) |
 | 14 | [panel_expertos](14_panel_expertos.md) | Panel de expertos IA y su bucle de fortalecimiento (revisión interina) |
 | 15 | [refuerzo_v3](15_refuerzo_v3.md) | Entrega V3 del MINED y refuerzo de cada tema con evidencia |
+| 16 | [contenido_motor](16_contenido_motor.md) | Plan unificado, contrato de datos, entregas y validación para el motor |
 
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.

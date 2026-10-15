@@ -14,6 +14,88 @@ app = typer.Typer(help="Grafo de conocimiento de Ciencias · El Salvador", no_ar
 grafo_app = typer.Typer(help="Construir, validar y exportar el grafo", no_args_is_help=True)
 app.add_typer(grafo_app, name="grafo")
 
+motor_app = typer.Typer(help="Contenido estructurado y consumidor de referencia (spec 16)", no_args_is_help=True)
+app.add_typer(motor_app, name="motor")
+
+
+@motor_app.command("incorporar-analisis")
+def motor_incorporar(
+    origen: Annotated[Path, typer.Argument(help="carpeta de datos del análisis independiente")],
+) -> None:
+    from goes_science_kg.motor.identidades import incorporar
+
+    try:
+        typer.echo(json.dumps(incorporar(origen), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f"ERROR {e}", err=True)
+        raise typer.Exit(1) from e
+
+
+@motor_app.command("exportar")
+def motor_exportar(destino: Annotated[Path | None, typer.Option()] = None,
+                   version: Annotated[str | None, typer.Option()] = None,
+                   commit_base: Annotated[str | None, typer.Option(help="revisión base para reproducción exacta")]
+                   = None) -> None:
+    from goes_science_kg.motor.construccion import exportar
+
+    try:
+        typer.echo(f"→ {exportar(destino, version, commit_base)}")
+    except (ValueError, OSError) as e:
+        typer.echo(f"ERROR {e}", err=True)
+        raise typer.Exit(1) from e
+
+
+@motor_app.command("validar")
+def motor_validar(entrega: Path) -> None:
+    from goes_science_kg.motor.validacion import validar
+
+    try:
+        typer.echo(json.dumps(validar(entrega), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f"ERROR {e}", err=True)
+        raise typer.Exit(1) from e
+
+
+@motor_app.command("importar")
+def motor_importar(entrega: Path, almacen: Annotated[Path | None, typer.Option()] = None,
+                   activar: bool = typer.Option(True)) -> None:
+    from goes_science_kg.config import cargar
+    from goes_science_kg.motor.consumidor import importar
+
+    try:
+        typer.echo(json.dumps(importar(entrega, almacen or ruta(cargar("motor")["almacen_prueba"]), activar),
+                              ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f"ERROR {e}", err=True)
+        raise typer.Exit(1) from e
+
+
+@motor_app.command("activar")
+def motor_activar(id_entrega: str, almacen: Annotated[Path | None, typer.Option()] = None) -> None:
+    from goes_science_kg.config import cargar
+    from goes_science_kg.motor.consumidor import activar
+
+    try:
+        typer.echo(json.dumps(activar(almacen or ruta(cargar("motor")["almacen_prueba"]), id_entrega), indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f"ERROR {e}", err=True)
+        raise typer.Exit(1) from e
+
+
+@motor_app.command("consultar")
+def motor_consultar(tema: str, almacen: Annotated[Path | None, typer.Option()] = None,
+                    perfil: str = typer.Option("consulta"),
+                    incluir_propuestas: bool = typer.Option(False)) -> None:
+    from goes_science_kg.config import cargar
+    from goes_science_kg.motor.consumidor import consultar
+
+    try:
+        typer.echo(json.dumps(consultar(almacen or ruta(cargar("motor")["almacen_prueba"]), tema, perfil,
+                                       incluir_propuestas), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f"ERROR {e}", err=True)
+        raise typer.Exit(1) from e
+
 
 @app.command()
 def temas() -> None:
