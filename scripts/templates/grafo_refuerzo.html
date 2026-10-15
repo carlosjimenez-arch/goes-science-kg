@@ -1,0 +1,131 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grafo de Ciencias · Refuerzo y progresión</title><style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#173c2b;background:#f4f7f4}body{margin:0}header,main{max-width:1550px;margin:auto;padding:24px}
+header{padding-bottom:0}h1{margin:0;font-size:1.8rem}h2{margin-top:0}h3{font-size:1.1rem}p{max-width:1050px}button,select,input{font:inherit;color:inherit;
+border:1px solid #9bb2a3;background:white;border-radius:6px;padding:9px}button,summary{cursor:pointer}label{font-weight:600}.filtros{display:flex;flex-wrap:wrap;gap:20px}
+label>select,label>input{display:block}.layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px}#lista{max-height:80vh;overflow:auto}
+.item{width:100%;text-align:left;margin-bottom:7px}.item[aria-pressed=true]{outline:3px solid #1e4d3a}.panel{background:white;border-radius:8px;padding:22px;overflow-wrap:anywhere}
+.meta{font-size:.9rem;color:#52695b}.alerta{border-left:5px solid #a34232;background:#fff3ef;padding:12px}.nota{border-left:5px solid #b38c25;background:#fff8df;padding:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:.88rem;padding:6px 9px}.grafo{overflow:auto;background:#fafcf9;border:1px solid #dce4dd;border-radius:6px}
+svg{display:block;width:100%;min-width:760px;max-height:900px}svg text{font:12px system-ui,sans-serif;fill:#173c2b}.leyenda{font-size:.88rem;color:#52695b}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #dce4dd}th{background:#e9f0e9}
+details{margin:14px 0}summary{font-weight:600}button:focus,input:focus,select:focus{outline:3px solid #9bbba8}.tabla{overflow:auto}small{color:#52695b}
+@media(max-width:850px){.layout{grid-template-columns:1fr}#lista{max-height:32vh}header,main{padding:16px}}
+</style><header><h1>Grafo de Ciencias · Refuerzo y progresión</h1>
+<p>2.º–11.º: conecta la malla, sus conceptos y prácticas, las bases propuestas y los recursos de aprendizaje.
+Los vacíos de recursos y los reparos del grafo orientan la autoría. No describen dificultades comprobadas de un estudiante.</p>
+<p class="meta">La disponibilidad se refiere a esta entrega versionada. El banco del repositorio puede contener otros recursos:
+revisar su estado y los motivos de exportación antes de encargar contenido nuevo.</p>
+<div class="filtros"><label>Grado<select id="grado"><option value="">Todos</option></select></label>
+<label>Disciplina<select id="asignatura"><option value="">Todas</option></select></label>
+<label>Disponibilidad<select id="disponibilidad"><option value="">Todas</option><option value="sinpareja">Sin dos evaluaciones cerradas aptas</option>
+<option value="conpareja">Con dos evaluaciones cerradas aptas</option><option value="retenida">Secuencia retenida</option>
+<option value="practica">Objetivo metodológico</option></select></label><label>Buscar tema, concepto o id<input id="buscar" type="search"></label></div>
+<p id="conteo" aria-live="polite"></p></header><main><div class="layout"><nav id="lista" aria-label="Temas"></nav>
+<article id="detalle" class="panel" aria-label="Grafo y ruta del tema"></article></div></main>
+<script id="datos" type="application/json">__DATOS__</script><script>
+const datos=JSON.parse(document.getElementById('datos').textContent),ns=new Map(datos.nodos.map(n=>[n.id,n]));
+const nombres={biologia:'Biología',fisica:'Física',quimica:'Química',ciencias_tierra_espacio:'Tierra y Espacio'};
+const relaciones={DESARROLLA:'desarrolla',DEFINE_CRITERIO:'define criterio',TRABAJA:'trabaja',PRERREQUISITO_DE:'prerrequisito IA',
+sirve_a:'sirve a',evalua:'evalúa (declarado)',refuerza:'refuerza',es_dificultad_de:'dificultad de',requiere_recurso:'requiere recurso'};
+const estados={ausente:'Sin antecedente en el grafo',previo:'Antecedente previo',mismo_grado:'En el mismo grado',posterior:'Antecedente posterior'};
+const motivos={falta_sondeo:'Completar sondeos del grado',falta_microtema:'Completar microtema y comprobación del grado',
+falta_evaluacion_objetivo:'Completar evaluación y reevaluación',retencion_secuencia:'Resolver retención de la secuencia',
+mapeo_criterios:'Revisar qué evalúa cada criterio',base_ausente:'Revisar base sin antecedente',base_posterior:'Revisar progresión y etiquetado'};
+const el=(t,texto,clase)=>{const e=document.createElement(t);if(texto!==undefined)e.textContent=texto;if(clase)e.className=clase;return e};
+const etiqueta=i=>ns.get(i)?.etiqueta||i,normalizar=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const grado=document.getElementById('grado'),asig=document.getElementById('asignatura'),lista=document.getElementById('lista'),detalle=document.getElementById('detalle');
+for(let g=2;g<=11;g++){const o=el('option',g+'º');o.value=g;grado.append(o)}
+for(const a of Object.keys(nombres)){const o=el('option',nombres[a]);o.value=a;asig.append(o)}
+let elegida=null,foco=null;
+function tabla(enc,filas){const caja=el('div',undefined,'tabla'),t=el('table'),h=el('tr');enc.forEach(x=>h.append(el('th',x)));t.append(h);
+for(const f of filas){const r=el('tr');f.forEach(x=>r.append(el('td',String(x))));t.append(r)}caja.append(t);return caja}
+function listaTexto(xs){const l=el('ul');xs.forEach(x=>l.append(el('li',x)));return l}
+function contenidoLegible(v){if(Array.isArray(v))return listaTexto(v.map(x=>typeof x==='object'?Object.entries(x).map(([k,t])=>k+': '+t).join(' / '):String(x)));
+ if(v&&typeof v==='object')return listaTexto(Object.entries(v).map(([k,t])=>k+': '+(typeof t==='object'?Object.values(t).join(' / '):t)));
+ return el('p',String(v))}
+function recursoDetalle(id){const c=datos.componentes[id],d=el('details');if(!c)return d;
+ d.append(el('summary',etiqueta(id)),el('p',id+' · '+c.tipo,'meta'));
+ d.append(el('p',c.usos.autoria?'Su revisión permite autoría; comprobar la adaptación al grado.':'Retenido: disponible para consulta, sin recomendar su ejecución.','nota'));
+ if(c.usos.motivos_autoria?.length)d.append(listaTexto(c.usos.motivos_autoria));
+ const titulos={titulo:'Título',enunciado:'Consigna',opciones:'Opciones',explicacion:'Explicación',ejemplo:'Ejemplo',criterio:'Criterio',
+ retroalimentacion:'Retroalimentación',pasos:'Pasos declarados',procedimiento:'Procedimiento declarado',materiales:'Materiales',seguridad:'Condiciones de seguridad',
+ practica:'Actividad de práctica',comprobacion:'Actividad de comprobación',fuentes:'Fuentes declaradas',fuente:'Fuente declarada'};
+ for(const [k,t]of Object.entries(titulos)){if(c.contenido[k]!==undefined){d.append(el('h3',t),contenidoLegible(c.contenido[k]))}}
+ return d;
+}
+function dibujar(r){const cont=el('div',undefined,'grafo'),svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+ const conceptos=foco?r.conceptos.filter(c=>c.id===foco):r.conceptos.slice().sort((a,b)=>(a.rol==='principal'?-1:1)-(b.rol==='principal'?-1:1)).slice(0,6);
+ const cids=new Set(conceptos.map(c=>c.id)),bases=[...new Set(r.bases.filter(b=>cids.has(b.para_concepto)).map(b=>b.concepto))].slice(0,6);
+ const recursos=r.materiales.slice(0,4).map(m=>m.id),focos=[...conceptos.map(c=>c.id),...r.practicas.slice(0,Math.max(0,6-conceptos.length)).map(p=>p.id)];
+ const niveles=[bases,focos,[r.tema_id],[r.secuencia.id,...recursos],r.criterios.map(c=>c.id)].filter(n=>n.length),pos=new Map();
+ const ancho=Math.max(800,...niveles.map(n=>n.length*190+40));svg.setAttribute('viewBox',`0 0 ${ancho} ${niveles.length*145+15}`);svg.setAttribute('role','img');
+ svg.setAttribute('aria-label','Relaciones del tema, conceptos, bases y recursos');
+ const sn=(tag,atr={},texto)=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v]of Object.entries(atr))n.setAttribute(k,v);if(texto!==undefined)n.textContent=texto;return n};
+ const defs=sn('defs'),mark=sn('marker',{id:'flecha',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:6,markerHeight:6,orient:'auto-start-reverse'});
+ mark.append(sn('path',{d:'M 0 0 L 10 5 L 0 10 z',fill:'#718b79'}));defs.append(mark);svg.append(defs);
+ niveles.forEach((ids,n)=>ids.forEach((id,i)=>{if(!pos.has(id))pos.set(id,{x:(ancho-ids.length*190)/2+i*190+10,y:n*145+25})}));
+ for(const a of datos.aristas){if(!pos.has(a.origen)||!pos.has(a.destino)||!relaciones[a.tipo])continue;const p=pos.get(a.origen),q=pos.get(a.destino);
+  const sube=q.y<p.y,x1=p.x+85,y1=p.y+(sube?0:66),x2=q.x+85,y2=q.y+(sube?66:0);
+  const linea=sn('path',{d:`M${x1},${y1} C${x1},${(y1+y2)/2} ${x2},${(y1+y2)/2} ${x2},${y2}`,fill:'none',stroke:'#8ca491','stroke-width':1.3,'marker-end':'url(#flecha)'});
+  linea.append(sn('title',{},relaciones[a.tipo]+(a.confianza?' · confianza '+a.confianza:'')));svg.append(linea);
+  svg.append(sn('text',{x:(x1+x2)/2+4,y:(y1+y2)/2-3,'font-size':10},relaciones[a.tipo]));
+ }
+ for(const [id,p]of pos){const n=ns.get(id),grupo=sn('g');grupo.append(sn('title',{},n.tipo+' · '+n.etiqueta+' · '+id));
+  const clase={SecuenciaPropuesta:'Secuencia propuesta',CriterioPropuesto:'Criterio propuesto',Dificultad:'Dificultad propuesta'}[n.tipo]||n.tipo;
+  grupo.append(sn('text',{x:p.x+5,y:p.y-5,'font-size':10},clase));
+  const color=n.tipo==='CriterioPropuesto'?'#fff6d9':n.tipo==='SecuenciaPropuesta'?'#dcecdf':n.tipo==='Concepto'?'#e5efdf':n.tipo==='Tema'?'#c9dfce':'#f0f3ed';
+  grupo.append(sn('rect',{x:p.x,y:p.y,width:170,height:66,rx:7,fill:color,stroke:'#789781'}));
+  const words=etiqueta(id).split(/\s+/),lines=[];let line='';for(const w of words){if((line+' '+w).length>24){if(line)lines.push(line);line=w}else line+=(line?' ':'')+w}if(line)lines.push(line);
+  lines.slice(0,3).forEach((s,i)=>grupo.append(sn('text',{x:p.x+8,y:p.y+16+i*16},s.slice(0,27)+(i===2&&lines.length>3?'…':''))));svg.append(grupo);
+ }
+ cont.append(svg);return cont;
+}
+function mostrar(r){elegida=r.tema_id;detalle.replaceChildren();detalle.append(el('h2',r.grado+'º · '+r.titulo),el('p',nombres[r.asignatura]+' · '+r.tema_id,'meta'),el('p',r.procedimental));
+ detalle.append(el('p',r.secuencia.autoria_asistida?'Secuencia disponible para autoría asistida IA.':'Secuencia retenida: conservar sus reparos al preparar contenidos.',r.secuencia.autoria_asistida?'nota':'alerta'));
+ detalle.append(el('p','La ruta describe el conocimiento compartido y recursos declarados. No hay evidencia de un estudiante; aula permanece deshabilitada.','meta'));
+ const s=r.detalle_secuencia,adaptacion=el('details');
+ if(s.pendientes.length)detalle.append(el('p','Pendiente documentado: '+s.pendientes[0],s.motivos_retencion.length?'alerta':'nota'));
+ adaptacion.append(el('summary','Reparos ('+s.pendientes.length+'), apoyos y adaptación de la secuencia'));
+ if(s.motivos_retencion.length)adaptacion.append(el('h3','Retenciones conservadas'),listaTexto(s.motivos_retencion));
+ if(s.pendientes.length)adaptacion.append(el('h3','Pendientes concretos de los revisores'),listaTexto(s.pendientes));
+ adaptacion.append(el('h3','Apoyos propuestos'),listaTexto(s.apoyos),el('h3','Alternativa sin internet'),el('p',s.alternativa_sin_internet),
+ el('h3','Planificación orientativa'),el('p',s.sesiones_sugeridas+' sesiones sugeridas. '+s.motivo_tiempo));
+ adaptacion.append(el('p','La distribución de 55 minutos es una hipótesis para adaptar cada sesión. Tiempo observado: no disponible.','meta'));
+ const dictamenes=el('details');dictamenes.append(el('summary','Lecturas y sus fundamentos'));
+ for(const etapa of ['ciencia','psicopedagogia','refutacion','final','refutacion_final']){const v=s.revisiones[etapa];if(!v)continue;
+  dictamenes.append(el('h3',etapa+' · '+v.decision),el('p',v.justificacion),el('p','Confianza: '+v.confianza,'meta'));
+  v.evidencia.forEach(e=>dictamenes.append(el('p',e.campo+': «'+e.cita+'»')))}adaptacion.append(dictamenes);
+ const pareja=r.evaluacion_objetivo.pareja_autoria;detalle.append(el('p',pareja?'Hay dos actividades cerradas distintas para el objetivo en esta entrega. Esto no completa por sí solo todos sus refuerzos.':'No hay en esta entrega una pareja de actividades cerradas aptas del grado para diagnosticar y reevaluar. Revisar el banco antes de crear recursos nuevos.','nota'));
+ for(const o of r.observaciones_semanticas)detalle.append(el('p',o.observacion,'alerta'));
+ detalle.append(el('h3','Conceptos y prácticas · elegir un concepto enfoca el grafo'));
+ const chips=el('div',undefined,'chips'),todos=el('button','Todos los conceptos','chip');todos.onclick=()=>{foco=null;mostrar(r)};chips.append(todos);
+ for(const c of r.conceptos){const b=el('button',etiqueta(c.id)+' · '+c.rol,'chip');b.onclick=()=>{foco=c.id;mostrar(r)};chips.append(b)}detalle.append(chips);
+ if(r.practicas.length)detalle.append(el('p','Prácticas: '+r.practicas.map(p=>etiqueta(p.id)).join(' / ')));
+ detalle.append(dibujar(r),el('p','Las flechas conservan su sentido y procedencia. Se muestran hasta seis focos y bases, cuatro recursos y tres criterios; las listas siguientes conservan el resto. Definir un criterio no crea una relación de evaluación con conceptos.','leyenda'),adaptacion);
+ const bases=el('details');bases.open=true;bases.append(el('summary','Bases y disponibilidad de refuerzo ('+r.bases.length+')'));
+ bases.append(tabla(['Base propuesta','Para comprender','Situación curricular','Recursos del grado'],r.bases.map(b=>[etiqueta(b.concepto),etiqueta(b.para_concepto),
+  (estados[b.estado_curricular]||b.estado_curricular)+' · '+b.orden_respecto_al_tema+' · '+b.confianza,
+  b.sondeos_cerrados_autoria.length+' sondeos cerrados aptos / '+b.refuerzos_completos.filter(x=>x.autoria&&!x.requiere_evaluador).length+' refuerzos con práctica y comprobación aptas'])));detalle.append(bases);
+ const criterios=el('details');criterios.append(el('summary','Tres criterios propuestos · mapeo de evaluación pendiente'));const ol=el('ol');r.criterios.forEach(c=>ol.append(el('li',c.texto)));criterios.append(ol);detalle.append(criterios);
+ const recursos=el('details');recursos.append(el('summary','Recursos vinculados y permisos ('+r.materiales.length+')'));
+ recursos.append(tabla(['Recurso','Tipo','Revisión del recurso','Uso en este grado'],r.materiales.map(m=>[etiqueta(m.id),m.tipo,m.usos.autoria?'Permite autoría':'Retenido; solo consulta',m.autoria_en_grado?'Disponible para autoría':'Requiere revisión o adaptación'])));detalle.append(recursos);
+ for(const m of r.materiales)recursos.append(recursoDetalle(m.id));
+ const cola=datos.cola.filter(q=>q.temas_afectados.includes(r.tema_id)),pend=el('details');pend.open=true;pend.append(el('summary','Necesidades para autoría y progresión ('+cola.length+')'));
+ pend.append(tabla(['Prioridad','Necesidad','Impacto estructural'],cola.map(q=>[q.prioridad,motivos[q.tipo]||q.tipo,q.impacto_estructural+' temas distintos'])));
+ pend.append(el('p','Son candidatos a revisar, no cambios curriculares aprobados. El impacto cuenta conexiones; no demuestra eficacia, déficit ni ahorro de tiempo.','meta'));detalle.append(pend);
+ detalle.append(el('h3','Fuente del objetivo'),el('p',r.fuente.archivo+' · '+r.fuente.hoja+' · fila '+r.fuente.fila,'meta'));
+ document.querySelectorAll('.item').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===elegida)));
+}
+function filtrar(){const d=document.getElementById('disponibilidad').value,q=normalizar(document.getElementById('buscar').value);
+ const rs=datos.rutas.filter(r=>(!grado.value||r.grado===+grado.value)&&(!asig.value||r.asignatura===asig.value)
+  &&(!d||d==='sinpareja'&&!r.evaluacion_objetivo.pareja_autoria||d==='conpareja'&&r.evaluacion_objetivo.pareja_autoria||d==='retenida'&&!r.secuencia.autoria_asistida||d==='practica'&&r.tipo_objetivo==='practica_metodologica')
+  &&(!q||normalizar([r.tema_id,r.titulo,r.procedimental,...r.conceptos.map(c=>etiqueta(c.id)),...r.practicas.map(p=>etiqueta(p.id))].join(' ')).includes(q)));
+ document.getElementById('conteo').textContent=rs.length+' temas · '+rs.filter(r=>r.evaluacion_objetivo.pareja_autoria).length+' con dos evaluaciones cerradas aptas · '+datos.cola.length+' necesidades en la cola general';
+ lista.replaceChildren();for(const r of rs){const b=el('button',r.grado+'º · '+r.titulo,'item');b.dataset.id=r.tema_id;b.onclick=()=>{foco=null;mostrar(r)};lista.append(b)}
+ const r=rs.find(r=>r.tema_id===elegida)||rs[0];foco=null;if(r)mostrar(r);else detalle.replaceChildren(el('p','No hay resultados con estos filtros.'));
+}
+for(const id of ['grado','asignatura','buscar','disponibilidad'])document.getElementById(id).addEventListener('input',filtrar);
+const params=new URLSearchParams(location.search);for(const id of ['grado','asignatura']){const v=params.get(id),e=document.getElementById(id);if([...e.options].some(o=>o.value===v))e.value=v}
+filtrar();
+</script></html>

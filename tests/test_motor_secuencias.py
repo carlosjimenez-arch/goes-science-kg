@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 
 from goes_science_kg import secuencias_ia
+from goes_science_kg.config import relativa, ruta
 from goes_science_kg.motor import archivos
 from goes_science_kg.motor.construccion import exportar
 from goes_science_kg.motor.consumidor import activar, consultar, importar
@@ -56,9 +57,18 @@ def test_consumidor11_portatil_retenciones_alias_e_idempotencia_y_reversion(tmp_
     assert consultar(almacen, apta.tema_id)['secuencia']['id'] == apta.id
 
 
-def test_exportacion11_reproducible_con_insumos_y_base_git_registrados(tmp_path):
+def test_exportacion11_conserva_contenido_y_es_reproducible_con_mismos_insumos(tmp_path):
+    """El commit de partida no restaura código: su evolución debe cambiar las huellas, no los datos del corte."""
     m, _ = cargar_entrega(ENTREGA)
     nuevo = exportar(tmp_path / 'entrega', m.version_contenido, m.commit_base, incluir_secuencias=True)
-    original = ENTREGA
+    assert {p.name for p in nuevo.iterdir()} == {p.name for p in ENTREGA.iterdir()}
+    assert {p.name: archivos.sha(p) for p in nuevo.iterdir() if p.name != 'manifiesto.json'} == {
+        p.name: archivos.sha(p) for p in ENTREGA.iterdir() if p.name != 'manifiesto.json'}
+    actual, _ = cargar_entrega(nuevo)
+    assert actual.model_dump(exclude={'insumos', 'id_entrega'}) == m.model_dump(exclude={'insumos', 'id_entrega'})
+    assert all(archivos.sha(ruta(p)) == h for p, h in actual.insumos.items())
+    assert {relativa(p) for p in ruta('src/goes_science_kg').rglob('*.py')} <= actual.insumos.keys()
+    assert (actual.id_entrega == m.id_entrega) == (actual.insumos == m.insumos)
+    repetida = exportar(tmp_path / 'repetida', m.version_contenido, m.commit_base, incluir_secuencias=True)
     assert {p.name: archivos.sha(p) for p in nuevo.iterdir()} == {
-        p.name: archivos.sha(p) for p in original.iterdir()}
+        p.name: archivos.sha(p) for p in repetida.iterdir()}

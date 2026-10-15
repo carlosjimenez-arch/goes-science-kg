@@ -57,6 +57,14 @@ contenido pedagógico combina propuestas y revisiones del panel IA; la verificac
 aprendizaje requieren revisión y piloto. Hay 230 paquetes ligeros de Física y Química de 9.°–11.°
 en [`entregas/paquetes_clase/`](entregas/paquetes_clase/README.md), con pendientes explícitos.
 
+**Grafo para reforzamiento de todos los grados:** la proyección compuesta conecta los 920 temas de Ciencias
+con conceptos, prácticas, bases propuestas, secuencias y recursos. Tiene 8.530 nodos y 26.410 relaciones.
+El [visor por grado](entregas/grafo_refuerzo/revision/visor.html) permite recorrer esas conexiones y revisar
+la disponibilidad; la [cola de autoría](entregas/grafo_refuerzo/revision/cola_autoria.csv) prioriza necesidades
+sin convertirlas en déficits del estudiante ni decisiones curriculares adoptadas. Los criterios conservan su
+mapeo de evaluación pendiente. Alcance, límites y ruta de mejora en la [entrega del grafo](entregas/grafo_refuerzo/README.md)
+y la [spec 18](specs/18_grafo_para_reforzamiento.md).
+
 **Entrega para el motor v0.2.0:** conserva el catálogo V3 de 935 temas, el análisis y los 230 paquetes anteriores;
 agrega propuestas de secuencias para los 920 temas de Ciencias de 2.º–11.º, con especialistas IA,
 psicopedagogía, refutación independiente y cierre. Las correcciones finales tienen otra lectura adversarial.
@@ -75,8 +83,9 @@ uv run gskg motor consultar G10-FIS-U7-7.5 --perfil autoria --almacen /tmp/goes-
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
 API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).
 
-El siguiente hito es resolver las objeciones documentadas y completar protocolos, datos y distribución entre
-sesiones sobre nuevas candidatas. El panel IA permite continuar esa autoría; el ensayo docente sigue por realizar.
+El siguiente hito es llenar las necesidades del grafo: conciliar el banco con lo exportado, revisar los caminos
+discutibles, redactar sondeos y microtemas por grado y mapear los criterios con evidencia de sus tareas.
+El panel IA permite continuar esa autoría; el ensayo docente sigue por realizar.
 El plan, con lo cerrado y lo pendiente, está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).
 
@@ -94,6 +103,7 @@ todo está al día (las salidas son deterministas y una prueba verifica que `dat
 | 6 | Internacional | `make internacional` (o `make internacional-ia` con Vertex) | países y malla V2 → `internacional/` |
 | 7 | Motor | `gskg motor exportar / validar / importar / consultar / activar` | fuentes V3, grafo, análisis y paquetes → entrega inmutable y consumidor de referencia |
 | 8 | Secuencias | `gskg secuencias preparar / validar-dictamenes / construir` | candidatas y lecturas IA encadenadas → propuestas, retenciones y evidencias por tema |
+| 9 | Grafo de refuerzo | `gskg grafo-refuerzo construir / validar / consultar` | entrega validada → grafo compuesto, rutas de todos los grados y cola de mejora |
 
 ## Cómo continuar con Claude Code
 El repo trae su propio harness: hooks que protegen `.env` y las fuentes, piden aprobación antes de gastar en Vertex y

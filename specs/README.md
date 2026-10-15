@@ -22,5 +22,6 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 15 | [refuerzo_v3](15_refuerzo_v3.md) | Entrega V3 del MINED y refuerzo de cada tema con evidencia |
 | 16 | [contenido_motor](16_contenido_motor.md) | Plan unificado, contrato de datos, entregas y validación para el motor |
 | 17 | [panel_secuencias_ia](17_panel_secuencias_ia.md) | Revisión multiagente y autoría de secuencias para todos los grados |
+| 18 | [grafo_para_reforzamiento](18_grafo_para_reforzamiento.md) | Grafo compuesto, rutas y prioridades de refuerzo de 2.º–11.º |
 
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.

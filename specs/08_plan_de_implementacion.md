@@ -218,6 +218,22 @@ consulta y mejora, sin habilitarse para autoría por una votación posterior fav
 920 temas no significa disponer de 920 prácticas experimentales terminadas ni de un presupuesto de aula demostrado.
 El informe de cinco ciclos y los próximos reparos están en `entregas/secuencias_ia/README.md`.
 
+## Fase 12 · Grafo para reforzamiento de todos los grados (spec 18)
+
+El responsable confirmó que el objetivo central es el grafo de conocimiento para reforzar clases, llenar vacíos
+y proponer una progresión mejor. Las secuencias revisadas alimentan esa estructura.
+
+- [x] 18.0 Auditoría estructural y pedagógica de todos los grados, con distinción entre banco y entrega.
+- [x] 18.1 Proyección compuesta de 920 rutas, 8.530 nodos y 26.410 relaciones; conservar la fuente inmutable.
+- [x] 18.2 Aceptación técnica: 365 pruebas, revisión psicopedagógica de diez rutas, visor comprobado en navegador
+  y publicación idéntica por bytes a la candidata. Evidencias en `entregas/grafo_refuerzo/`.
+- [ ] 18.3 Conciliar recursos del banco y lo exportado; revisión semántica de caminos discutibles.
+- [ ] 18.4 Autoría por grado de sondeos, microtemas, prácticas y comprobaciones, con panel y refutación.
+- [ ] 18.5 Mapeo de criterios a conceptos/prácticas, pruebas del ciclo individual y ensayo docente.
+
+La cola compartida es una lista de candidatos a revisar; no es un diagnóstico de alumnos. Los fallos del tutor
+original quedan documentados y no se declaran reparados por proyectar sus recursos.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

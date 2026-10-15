@@ -1,0 +1,949 @@
+{
+  "tipo": "auditoria_independiente_ia_psicopedagogica_proyeccion",
+  "fecha": "2026-10-15",
+  "alcance": "Proyección compuesta y visor para autoría y revisión curricular de 2.º–11.º. Lectura manual de diez rutas, una por grado, y contraste con banco existente. No se reevalúan automáticamente los 920 textos ni se certifica aprendizaje.",
+  "metodo": [
+    "Lectura CLAUDE.md, perfil psicopedagogo, specs 13 y 18, módulo de proyección y generador/plantilla del visor.",
+    "Ejecución de compilar(entregas/motor/0.2.0) y consultar() en memoria, sin exportar ni alterar fuentes.",
+    "Revisión semántica del producto, criterios, pendientes, alternativas y actividades de las diez rutas; sin clasificación por regex.",
+    "Contraste explícito del banco data/pedagogia con los componentes del motor. No APIs pagadas ni suites amplias de pruebas."
+  ],
+  "version_fuente": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+  "conteos": {
+    "version": "0.1.0",
+    "temas": 920,
+    "alumno_sin_evidencia": true,
+    "aula_habilitada": false,
+    "nodos_por_tipo": {
+      "Actividad": 785,
+      "Asignatura": 4,
+      "Concepto": 513,
+      "CriterioPropuesto": 2760,
+      "Dificultad": 485,
+      "Documento": 41,
+      "Experimento": 230,
+      "Grado": 10,
+      "Marco": 6,
+      "Microtema": 24,
+      "ObjetivoMarco": 493,
+      "ObjetivoPais": 1265,
+      "Pais": 6,
+      "Practica": 30,
+      "RefuerzoCurricularPropuesto": 23,
+      "SecuenciaPropuesta": 920,
+      "Tema": 935
+    },
+    "aristas_por_tipo": {
+      "ALINEA_CON": 1600,
+      "CUBRE": 1747,
+      "DEFINE_CRITERIO": 2760,
+      "DESARROLLA": 920,
+      "DE_ASIGNATURA": 3005,
+      "DE_PAIS": 1265,
+      "EN_GRADO": 935,
+      "EN_MARCO": 493,
+      "EQUIVALE_A": 100,
+      "FUENTE": 2693,
+      "PRERREQUISITO_DE": 822,
+      "TRABAJA": 5517,
+      "es_dificultad_de": 485,
+      "evalua": 1941,
+      "refuerza": 24,
+      "requiere_recurso": 1065,
+      "sirve_a": 1038
+    },
+    "cola": 3266,
+    "por_grado": [
+      {
+        "grado": 2,
+        "temas": 66,
+        "secuencias_autoria": 40,
+        "con_evaluacion_cerrada_autoria": 0,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 3,
+        "temas": 66,
+        "secuencias_autoria": 38,
+        "con_evaluacion_cerrada_autoria": 1,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 4,
+        "temas": 64,
+        "secuencias_autoria": 37,
+        "con_evaluacion_cerrada_autoria": 0,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 5,
+        "temas": 71,
+        "secuencias_autoria": 43,
+        "con_evaluacion_cerrada_autoria": 0,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 6,
+        "temas": 56,
+        "secuencias_autoria": 25,
+        "con_evaluacion_cerrada_autoria": 0,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 7,
+        "temas": 87,
+        "secuencias_autoria": 56,
+        "con_evaluacion_cerrada_autoria": 0,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 8,
+        "temas": 100,
+        "secuencias_autoria": 48,
+        "con_evaluacion_cerrada_autoria": 0,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 9,
+        "temas": 93,
+        "secuencias_autoria": 58,
+        "con_evaluacion_cerrada_autoria": 44,
+        "solo_practicas": 0
+      },
+      {
+        "grado": 10,
+        "temas": 151,
+        "secuencias_autoria": 54,
+        "con_evaluacion_cerrada_autoria": 88,
+        "solo_practicas": 6
+      },
+      {
+        "grado": 11,
+        "temas": 166,
+        "secuencias_autoria": 45,
+        "con_evaluacion_cerrada_autoria": 95,
+        "solo_practicas": 0
+      }
+    ]
+  },
+  "banco_y_entrega": {
+    "actividades_banco": 827,
+    "microtemas_banco": 33,
+    "actividades_proyeccion": 785,
+    "microtemas_proyeccion": 24,
+    "grados_sin_banco_sondeos_o_microtemas": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "recursos_no_dificultad_autoria_incompatible_grado": 0,
+    "ejemplo_recursos_banco_no_en_entrega": [
+      "ACT:G05-CIE-U6-6.14/obj-1",
+      "ACT:G05-CIE-U6-6.14/obj-2"
+    ]
+  },
+  "rutas_revisadas": [
+    {
+      "grado": 2,
+      "tema_id": "TEMA:G02-CIE-U1-1.1",
+      "titulo": "¿Qué es medir?",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_2do_Grado_U1_U6 - V2.xlsx",
+        "fila": 3,
+        "fila_fin": 3,
+        "hoja": "Unidad 1 - Materia",
+        "sha256": "b2ea662baf01eb6cba87ac06b37886efc94ebd9e62a9c3a381dca2c68bbd60b9"
+      },
+      "secuencia_id": "SEC:G02-CIE-U1-1.1",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Mide con apoyo objetos del aula con regla, balanza y termómetro, y registra el resultado con un dibujo y un número",
+      "criterios_leidos": [
+        "Elige regla para una longitud",
+        "Relaciona balanza con masa y termómetro con temperatura",
+        "Registra una lectura con dibujo, número y unidad con apoyo"
+      ],
+      "alternativa_leida": "Usar instrumentos del aula y tarjetas dibujadas, sin recopilar medidas corporales.",
+      "pendientes_leidos": [
+        "La actividad compara facilidad de lectura, pero la habilidad exige decidir confiabilidad: legibilidad no prueba exactitud. Hace falta referencia o separar explícitamente esos dos juicios; tampoco se define la protección del termómetro de vidrio.",
+        "Definir instrumento protegido y separar facilidad de lectura de exactitud, con referencia de comparación si se evalúa esta última."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:fisica/medicion-magnitudes-instrumentos",
+          "rol": "principal",
+          "confianza": "alta",
+          "arista_id": "REL:f531fb5b98a58c17fc00cb5b5d48e3700173a78638a59b569de855c123803b5d",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:f531fb5b98a58c17fc00cb5b5d48e3700173a78638a59b569de855c123803b5d",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [
+        {
+          "id": "PRAC:medir-con-instrumentos",
+          "rol": "practica",
+          "confianza": "alta",
+          "arista_id": "REL:b75d24053ea8dbc6eb83ea8941da375182a4fbc8eb55b25d063be6030299fcd7",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:b75d24053ea8dbc6eb83ea8941da375182a4fbc8eb55b25d063be6030299fcd7",
+            "campo": "$"
+          }
+        }
+      ],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "La medición asistida y dibujos son concretos; la retención conserva el problema de legibilidad frente a confiabilidad y protección del vidrio. La proyección no autoriza aula ni inventa un sondeo."
+    },
+    {
+      "grado": 3,
+      "tema_id": "TEMA:G03-CIE-U1-1.3",
+      "titulo": "Tipos de fuerza.",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_3er_Grado_U1_U6 V2.xlsx",
+        "fila": 5,
+        "fila_fin": 5,
+        "hoja": "Unidad 1 - Medidas y fuerzas",
+        "sha256": "27ee1b047d7f8bf73bb40ad6e36dcc14f269c450398224362fdbb189832f26d1"
+      },
+      "secuencia_id": "SEC:G03-CIE-U1-1.3",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Tabla de superficie, instrumento y estiramiento observado en centímetros con la misma liga y objeto, descrito como indicador indirecto de la interacción. Si se usa un dinamómetro calibrado, registrar por separado fuerza en newtons; explicar que centímetros de estiramiento no son unidades de fuerza.",
+      "criterios_leidos": [
+        "Registra estiramiento en centímetros",
+        "Compara superficies manteniendo el mismo objeto",
+        "Distingue estiramiento de fuerza en newtons medida con instrumento calibrado"
+      ],
+      "alternativa_leida": "Usar registros impresos de estiramiento o demostración autorizada y tabla de papel, sin video.",
+      "pendientes_leidos": [
+        "La preparación de ligas y límites de estiramiento requiere supervisión para evitar retrocesos hacia rostros.",
+        "La evidencia sigue llamando fuerza necesaria al estiramiento en centímetros aunque la indagación lo distingue como indicador indirecto. Unificar producto y habilidad de dinamómetro, y fijar límites de la liga, antes de interpretar el registro como fuerza.",
+        "Seleccionar liga y límite de extensión apropiados, con protección frente a retroceso; emplear un instrumento calibrado si se registran N.",
+        "Preparar liga, límites de extensión y protección frente al retroceso antes de la demostración."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:fisica/fuerza-empuje-tiron",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:e27d83285d586384b80191fc63f79e3b2993518b730964cc502abbd49e694c37",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:e27d83285d586384b80191fc63f79e3b2993518b730964cc502abbd49e694c37",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:fisica/fuerzas-contacto-distancia",
+          "rol": "principal",
+          "confianza": "alta",
+          "arista_id": "REL:ea39ff9e6ef8ad7f3a99ba8fb6a0eb6932c334eedef9d802a0ee26bbcf30ff43",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:ea39ff9e6ef8ad7f3a99ba8fb6a0eb6932c334eedef9d802a0ee26bbcf30ff43",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [],
+      "pareja_autoria": {
+        "objetivo": "ACT:G03-CIE-U1-1.3/obj-1",
+        "reevaluacion": "ACT:G03-CIE-U1-1.3/obj-2"
+      },
+      "ids_recursos_inspeccionados": [
+        "ACT:G03-CIE-U1-1.3/obj-1",
+        "ACT:G03-CIE-U1-1.3/obj-2",
+        "ACT:G03-CIE-U1-1.3/obj-abierta"
+      ],
+      "juicio": "Las dos actividades son distintas y concretas, pero su presencia no resuelve los reparos del montaje con liga ni acredita toda la práctica. La secuencia permanece retenida aunque las ACT permiten autoría."
+    },
+    {
+      "grado": 4,
+      "tema_id": "TEMA:G04-CIE-U1-1.1",
+      "titulo": "Máquinas simples.",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_4to_Grado_U1_U6 V2.xlsx",
+        "fila": 3,
+        "fila_fin": 3,
+        "hoja": "Unidad 1 - Máquinas y energía",
+        "sha256": "d518d7974d6f9dca7f2a1501a9d0cd7326bcfff7f64995e7dc58ae09bd4f189f"
+      },
+      "secuencia_id": "SEC:G04-CIE-U1-1.1",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Lista de máquinas simples del entorno con la tarea que facilitan",
+      "criterios_leidos": [
+        "Identifica una máquina simple en un ejemplo",
+        "Describe la tarea que facilita",
+        "Reconoce un caso de cambio de dirección o intensidad de fuerza"
+      ],
+      "alternativa_leida": "Usar imágenes impresas y esquemas de herramientas, sin operar tijeras, azadones ni poleas de pozo.",
+      "pendientes_leidos": [
+        "Cualquier medición de fuerza requiere instrumento calibrado y montaje autorizado antes de ejecutar.",
+        "Se propone comparar fuerza con dinamómetro sencillo sin calibración ni cargas y montaje definidos. La lista conceptual de máquinas no requiere esa medición: concretar o sustituir indagación para evitar atribuir newtons sin instrumento adecuado."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:fisica/maquinas-simples",
+          "rol": "principal",
+          "confianza": "alta",
+          "arista_id": "REL:4709211107b254f323f79197324d433ccdf8862a4a2c34acb17bd55b5adee4ca",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:4709211107b254f323f79197324d433ccdf8862a4a2c34acb17bd55b5adee4ca",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "Identificar máquinas mediante imágenes es accesible sin operar herramientas. La ausencia de sondeo y microtema del grado queda como necesidad de recursos; no demuestra déficit del alumno."
+    },
+    {
+      "grado": 5,
+      "tema_id": "TEMA:G05-CIE-U6-6.14",
+      "titulo": "El suelo.",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_5to_Grado_U1_U6 V2.xlsx",
+        "fila": 19,
+        "fila_fin": 19,
+        "hoja": "Unidad 6 - Ciencias de la Tierr",
+        "sha256": "ef161b79db33a20f0e40e0dcd50e7bec331c7eeb7d5e7e5fe9577aa7a6879da9"
+      },
+      "secuencia_id": "SEC:G05-CIE-U6-6.14",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Registro de reacciones en muestras de suelo",
+      "criterios_leidos": [
+        "Describe la observación sin convertir ausencia de burbujas en ausencia de carbonatos.",
+        "Identifica variables que hacen comparable la prueba.",
+        "Distingue la prueba de ejemplos documentados de oxidación y descomposición."
+      ],
+      "alternativa_leida": "Analizar un registro impreso documentado de la prueba y ejemplos de procesos del suelo.",
+      "pendientes_leidos": [
+        "Identificar muestras seguras, procedimiento y gestión de residuos; no usar suelo contaminado o de procedencia desconocida.",
+        "Definir muestras, materiales, comparación y gestión de residuos; aportar ejemplos de otros procesos.",
+        "Devolver suelo al jardín después de añadir vinagre contradice gestión de residuos pendiente. Faltan cantidades y selección de muestras; burbujeo no identifica todos los procesos químicos ni ausencia de reacción descarta carbonatos.",
+        "Precisar procedimiento, muestras y gestión de residuos; armonizar la instrucción de devolver suelo para que no incluya muestras tratadas y preparar ejemplos de oxidación y descomposición."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:ciencias_tierra_espacio/meteorizacion",
+          "rol": "secundario",
+          "confianza": "media",
+          "arista_id": "REL:58e4ffe57be47d496a06ec1c672e0f3f83c4797abe6c88ce8a539ce3b484f16a",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:58e4ffe57be47d496a06ec1c672e0f3f83c4797abe6c88ce8a539ce3b484f16a",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:quimica/reaccion-quimica-y-evidencias",
+          "rol": "secundario",
+          "confianza": "media",
+          "arista_id": "REL:cbaaffc74af79b5121a622bf8b44ad11e12208fdbc880ca305aa7b9e0813f5d7",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:cbaaffc74af79b5121a622bf8b44ad11e12208fdbc880ca305aa7b9e0813f5d7",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+          "rol": "principal",
+          "confianza": "media",
+          "arista_id": "REL:cd7687e727a3db7b6d10c0ab22df3dba92b90b0759eb9e90d889ff92b136fc32",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:cd7687e727a3db7b6d10c0ab22df3dba92b90b0759eb9e90d889ff92b136fc32",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "La tarea distingue observaciones de inferencias y conserva muestras/procedimiento/residuos pendientes. La pareja existe en el banco previo, pero no en el motor fuente; la proyección no debe inventarla ni importar automáticamente el banco."
+    },
+    {
+      "grado": 6,
+      "tema_id": "TEMA:G06-CIE-U6-6.9",
+      "titulo": "Desarrollo Vegetal.",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_6to_Grado_U1_U6 V2.xlsx",
+        "fila": 9,
+        "fila_fin": 9,
+        "hoja": "Unidad 6 - Biología del desarro",
+        "sha256": "daed6a255a9da8473f149265287a5c5444262bde58bcb0afc7feb9aa38e02eab"
+      },
+      "secuencia_id": "SEC:G06-CIE-U6-6.9",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Registro semanal del prendimiento",
+      "criterios_leidos": [
+        "Distingue esqueje, acodo e injerto mediante casos documentados.",
+        "Registra prendimiento junto con condiciones y tiempo cuando haya procedimiento definido.",
+        "Explica límites del registro para comparar técnicas o evaluar influencia lunar."
+      ],
+      "alternativa_leida": "Analizar secuencias impresas y registros semanales documentados sin cortes estudiantiles.",
+      "pendientes_leidos": [
+        "Alinear subcontenido y técnicas; identificar especie, procedimiento y manejo adulto de cortes.",
+        "Los planos de división y desarrollo de forma no se desarrollan con reconocer técnicas de propagación. La corrección limita adecuadamente inferencias sobre Luna y eficacia, pero faltan especie y procedimiento concreto para ejecutar y registrar prendimiento de manera interpretable.",
+        "Armonizar subcontenido oficial y técnicas; preparar especie, condiciones y responsable de cortes sin afirmar eficacia o influencia lunar por un seguimiento."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:biologia/reproduccion-sexual-y-asexual",
+          "rol": "principal",
+          "confianza": "media",
+          "arista_id": "REL:83918c45ad5705c2ed32ea37c0a00248625455eb4cbe1b3e2278130afac9a72a",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:83918c45ad5705c2ed32ea37c0a00248625455eb4cbe1b3e2278130afac9a72a",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:biologia/biotecnologia-vegetal",
+          "rol": "secundario",
+          "confianza": "media",
+          "arista_id": "REL:f3afcff5076d3cf810c305082e1d380f3bd479eeb199713f1351493d43ef0f3e",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:f3afcff5076d3cf810c305082e1d380f3bd479eeb199713f1351493d43ef0f3e",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "Propagar por esquejes, acodo o injerto no exige ingeniería genética. El recorrido conserva la relación inferida y la observación que obliga revisar su sentido. No procede adelantar ingeniería genética por esta fila."
+    },
+    {
+      "grado": 7,
+      "tema_id": "TEMA:G07-CIE-U2-2.7",
+      "titulo": "Polimorfismo y alelos",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_7mo_Grado_U1_U6 V2.xlsx",
+        "fila": 9,
+        "fila_fin": 9,
+        "hoja": "Unidad 2 - Genética y evolución",
+        "sha256": "0171eb3649ab8e36008a2bb1fa07d1436134eee6228bd1e495b048611aa73da2"
+      },
+      "secuencia_id": "SEC:G07-CIE-U2-2.7",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Explicación del concepto de alelo con ejemplos de plantas",
+      "criterios_leidos": [
+        "Distingue gen, alelo y fenotipo.",
+        "Interpreta el caso con alelos definidos.",
+        "Reconoce rasgos multigénicos y ambientales."
+      ],
+      "alternativa_leida": "Usa fichas de plantas con herencia explícita y fotografías impresas; sin semillas propias, fotos familiares, cuenta ni IA.",
+      "pendientes_leidos": [
+        "Armonizar ejemplo de casa con límites del modelo; no atribuir alelos a colores reales sin evidencia.",
+        "Aceptar fichas como ejemplo cotidiano y conservar el límite alélico en el cierre; no exigir fotografías o semillas familiares.",
+        "Fuente conceptual primaria: https://www.genome.gov/genetics-glossary/Allele . No desaparece la retención anterior de confianza baja."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:biologia/genes-y-alelos",
+          "rol": "principal",
+          "confianza": "alta",
+          "arista_id": "REL:d17370974ba66849227c81cf4bd9f1bd6660f3a9efb97b1c13b716b5bd22a2c7",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:d17370974ba66849227c81cf4bd9f1bd6660f3a9efb97b1c13b716b5bd22a2c7",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:biologia/genotipo-y-fenotipo",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:df17480d504d7da978e67ab27d5e5de90d334c27b12bac8f5ff9fca3e410963f",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:df17480d504d7da978e67ab27d5e5de90d334c27b12bac8f5ff9fca3e410963f",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "Las fichas ficticias evitan fotos familiares y permiten distinguir gen, alelo y fenotipo. Se conserva la reserva sobre deducir alelos del color. Sin recursos en esta entrega no se certifica diagnóstico."
+    },
+    {
+      "grado": 8,
+      "tema_id": "TEMA:G08-CIE-U1-1.1",
+      "titulo": "Instrumentos de medición",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_8vo_Grado_U1_U10 V2.xlsx",
+        "fila": 3,
+        "fila_fin": 3,
+        "hoja": "Unidad 1 - Mecánica",
+        "sha256": "2284753bb9ee1b39ce5bae9bf2356237fd0672fb406dc0df815507312024e71a"
+      },
+      "secuencia_id": "SEC:G08-CIE-U1-1.1",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Dinamómetro calibrado con su curva de calibración, lecturas repetidas y comparación de exactitud con un instrumento comercial",
+      "criterios_leidos": [
+        "Convierte masa conocida a fuerza declarando g.",
+        "Construye curva con unidades.",
+        "Distingue repetibilidad de desviación frente a referencia."
+      ],
+      "alternativa_leida": "Analiza lecturas y patrones impresos documentados y dibuja curva sin cargas suspendidas, hoja electrónica, cuenta ni IA.",
+      "pendientes_leidos": [
+        "Armonizar referencia comercial en evidencia/PISA; adjuntar masas, soporte y límites elásticos.",
+        "Precisar trazabilidad de la referencia y evaluar el instrumento construido.",
+        "Delimitar referencia, resolución e incertidumbre y evaluar construcción/calibración real con límites del resorte, no solo lectura de una curva."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:fisica/medicion-magnitudes-instrumentos",
+          "rol": "principal",
+          "confianza": "media",
+          "arista_id": "REL:9dfc995442cbbf2790ddf24036b8fb23c1cf4fa8b09172550601dc7fdb6bc597",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:9dfc995442cbbf2790ddf24036b8fb23c1cf4fa8b09172550601dc7fdb6bc597",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [
+        {
+          "id": "PRAC:medir-con-instrumentos",
+          "rol": "practica",
+          "confianza": "media",
+          "arista_id": "REL:06579b38261ede6e77a0fe6cf1e4ed7982c8e8442078f68addf8165ac63d88b7",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:06579b38261ede6e77a0fe6cf1e4ed7982c8e8442078f68addf8165ac63d88b7",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "PRAC:disenar-y-evaluar-soluciones",
+          "rol": "practica",
+          "confianza": "media",
+          "arista_id": "REL:9403a17d81a62c2df79ecca18ff494a0aa40d0569c1ca9a7057a0fc34de061b5",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:9403a17d81a62c2df79ecca18ff494a0aa40d0569c1ca9a7057a0fc34de061b5",
+            "campo": "$"
+          }
+        }
+      ],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "Calibrar y separar repetibilidad de exactitud requiere datos y andamiaje, más allá de construir un gráfico. La retención y alternativa impresa son pertinentes; no se presenta cobertura curricular como recurso listo."
+    },
+    {
+      "grado": 9,
+      "tema_id": "TEMA:G09-CIE-U1-1.1",
+      "titulo": "Principio de Arquímedes",
+      "fuente": {
+        "archivo": "Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx",
+        "fila": 3,
+        "fila_fin": 3,
+        "hoja": "Unidad 1 - Mecánica de fluidos",
+        "sha256": "3de3d14ece83ee10bed66f8c01fa7af44563c82792d755f235c01ff083f34dec"
+      },
+      "secuencia_id": "SEC:G09-CIE-U1-1.1",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Tabla del empuje en líquidos de distinta densidad con las variables independiente, dependiente y de control identificadas",
+      "criterios_leidos": [
+        "Identifica densidad, empuje y controles.",
+        "Registra inmersión constante y unidades.",
+        "Explica diferencias sin recomendar cargas reales."
+      ],
+      "alternativa_leida": "Analizar tablas impresas documentadas de empuje y densidad y justificar controles sin dinamómetro.",
+      "pendientes_leidos": [
+        "La noticia y los datos de carga segura no están identificados; no tratar el experimento como autorización de carga de una lancha real.",
+        "Verificar noticia y datos; no certificar carga de lanchas.",
+        "Describir cómo medir empuje por diferencia de lecturas y densidad de cada solución.",
+        "Condicionar Bernoulli a modelo de flujo y puntos comparables. Fuente primaria: https://www.grc.nasa.gov/www/k-12/airplane/bern.html ; mantener medición de densidad y empuje diferenciadas."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:fisica/principio-arquimedes",
+          "rol": "principal",
+          "confianza": "alta",
+          "arista_id": "REL:5e52511ff29ab182a1946070f949a2ff06fcab85a1d46c6f74af41ec00fa2ed2",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:5e52511ff29ab182a1946070f949a2ff06fcab85a1d46c6f74af41ec00fa2ed2",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:fisica/densidad",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:ef4fbade5f45816720b7dfbdefe87e11446ae3e9f270a1fa97f55947f8de6bb5",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:ef4fbade5f45816720b7dfbdefe87e11446ae3e9f270a1fa97f55947f8de6bb5",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [],
+      "pareja_autoria": {
+        "objetivo": "ACT:G09-CIE-U1-1.1/obj-1",
+        "reevaluacion": "ACT:G09-CIE-U1-1.1/obj-2"
+      },
+      "ids_recursos_inspeccionados": [
+        "ACT:G09-CIE-U1-1.1/obj-1",
+        "ACT:G09-CIE-U1-1.1/obj-2",
+        "ACT:G09-CIE-U1-1.1/obj-abierta"
+      ],
+      "juicio": "La comparación con objeto sumergido mantiene variables controladas; las actividades cerradas no certifican carga segura de una lancha. La retención conserva medición y datos pendientes."
+    },
+    {
+      "grado": 10,
+      "tema_id": "TEMA:G10-FIS-U1-1.3",
+      "titulo": "Indagación y diseño experimental",
+      "fuente": {
+        "archivo": "Matriz_Bachillerato_Fisica_10_11.xlsx",
+        "fila": 3,
+        "fila_fin": 3,
+        "hoja": "Física 10.°",
+        "sha256": "c4903d790435318dcbbf82cd9ebda227c03aafd52e0dc56f6368c18db763210a"
+      },
+      "secuencia_id": "SEC:G10-FIS-U1-1.3",
+      "estado": "revisado_multiagente_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Protocolo experimental con tabla de variables, procedimiento numerado y lista de materiales seguros",
+      "criterios_leidos": [
+        "Formula una predicción medible del tiempo al cambiar el ángulo.",
+        "Identifica ángulo, tiempo y condiciones fijas en una tabla con unidades.",
+        "Detecta una variable no controlada en un protocolo ajeno y justifica su corrección."
+      ],
+      "alternativa_leida": "Planificar la misma rampa en papel, registrar mediciones con cronómetro disponible y cotejar el protocolo con una definición impresa de experimento justo; no añadir el péndulo digital.",
+      "pendientes_leidos": [
+        "Alinear el recurso digital con el fenómeno central y verificar disponibilidad de sus fuentes.",
+        "Precisar cuándo se usa rampa o péndulo y su relación con el protocolo evaluado.",
+        "Hacer explícita elección rampa/péndulo y su presupuesto, con fuentes del cuaderno verificables; no exigir ambas series por defecto."
+      ],
+      "conceptos": [],
+      "practicas": [
+        {
+          "id": "PRAC:controlar-variables",
+          "rol": "practica",
+          "confianza": "alta",
+          "arista_id": "REL:2f7e92dac9186dd83203c2e3e51f268c2f9f63514091520b3d5865f804e64e79",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:2f7e92dac9186dd83203c2e3e51f268c2f9f63514091520b3d5865f804e64e79",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "PRAC:formular-hipotesis-y-predicciones",
+          "rol": "practica",
+          "confianza": "alta",
+          "arista_id": "REL:a44ff6954dd7ae5617b5dcd02a0ff5492793c1788e31e6ae272cb2da380ec27d",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:a44ff6954dd7ae5617b5dcd02a0ff5492793c1788e31e6ae272cb2da380ec27d",
+            "campo": "$"
+          }
+        }
+      ],
+      "pareja_autoria": null,
+      "ids_recursos_inspeccionados": [],
+      "juicio": "Controlar variables y formular hipótesis son prácticas legítimas sin concepto principal. No debe rellenarse un CON artificial para habilitar rutas. Rampa y péndulo son alternativas que deben explicitarse; no dos series obligatorias."
+    },
+    {
+      "grado": 11,
+      "tema_id": "TEMA:G11-FIS-U1-1.2",
+      "titulo": "Movimiento armónico simple",
+      "fuente": {
+        "archivo": "Matriz_Bachillerato_Fisica_10_11.xlsx",
+        "fila": 3,
+        "fila_fin": 3,
+        "hoja": "Física 11.°",
+        "sha256": "c4903d790435318dcbbf82cd9ebda227c03aafd52e0dc56f6368c18db763210a"
+      },
+      "secuencia_id": "SEC:G11-FIS-U1-1.2",
+      "estado": "retenido_por_panel_ia",
+      "revisado_por": null,
+      "aula_habilitada": false,
+      "producto_evaluable": "Gráfica F-x con rango, k de la pendiente y predicción de elongación; gráficas temporales x,v,a construidas desde el círculo de referencia; tabla/gráfica de energías con origen y análisis de compatibilidad e incertidumbres.",
+      "criterios_leidos": [
+        "Calcula energías cinética y elástica con unidades y origen de posición declarado.",
+        "Obtiene k de una gráfica F-x con unidades y rango, predice una elongación y contrasta la suma de energías considerando incertidumbres.",
+        "Construye y relaciona x,v,a desde la proyección circular con fase y unidades coherentes, distinguiendo modelo ideal y amortiguamiento real."
+      ],
+      "alternativa_leida": "Usa una tabla impresa de posiciones y velocidades con procedencia y unidades; calcula y grafica a mano las tres energías y argumenta las pérdidas sin cuenta ni IA.",
+      "pendientes_leidos": [
+        "La secuencia no recoge aún determinación experimental de k ni representación MAS-MCU exigidas en el indicador.",
+        "Conservar pendiente científica: faltan determinación experimental de k y representación MAS-MCU; no evaluar su dominio con la gráfica de energías.",
+        "Desarrollar calibración F-x y representación MAS-MCU con evidencia y criterios propios.",
+        "Preparar resorte y rango caracterizados, fuerzas e instrumentos con resolución y un registro de video calibrado.",
+        "Preparar resorte caracterizado, instrumentos y video con calibración y resolución; aportar los datos y representaciones de las tres tareas."
+      ],
+      "conceptos": [
+        {
+          "id": "CON:fisica/movimiento-armonico-simple",
+          "rol": "principal",
+          "confianza": "alta",
+          "arista_id": "REL:006ceb1115f33e17bd7897e8de95ce89d5084c6ae07bb91811fc1258e262438e",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:006ceb1115f33e17bd7897e8de95ce89d5084c6ae07bb91811fc1258e262438e",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:fisica/energia-cinetica",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:3e986e0d3715757f85b87ae10e2d115361f9ed0546ed1081a40e095391db4f7f",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:3e986e0d3715757f85b87ae10e2d115361f9ed0546ed1081a40e095391db4f7f",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:fisica/fuerza-elastica-ley-hooke",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:457003509085078fdb3d7462d88cacba4c3c8cdd4cfdf8a43492f69a90502b31",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:457003509085078fdb3d7462d88cacba4c3c8cdd4cfdf8a43492f69a90502b31",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:fisica/energia-potencial-gravitatoria",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:bab280c0d094a7d1fd4bfdc117a8e3c5ffc8f4b6c7501ae52b63bd6ffdb96f8c",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:bab280c0d094a7d1fd4bfdc117a8e3c5ffc8f4b6c7501ae52b63bd6ffdb96f8c",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "CON:fisica/conservacion-energia-mecanica",
+          "rol": "secundario",
+          "confianza": "alta",
+          "arista_id": "REL:bb5d8cdf9f86dd6a6a80ea0fb384279509adbc604394cc0d69b76b77ebb05c6e",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:bb5d8cdf9f86dd6a6a80ea0fb384279509adbc604394cc0d69b76b77ebb05c6e",
+            "campo": "$"
+          }
+        }
+      ],
+      "practicas": [
+        {
+          "id": "PRAC:representar-datos",
+          "rol": "practica",
+          "confianza": "alta",
+          "arista_id": "REL:ac35f71311e5a5305bcdf74ad2beb9305713d5998215892dbffb3f56fe565a8e",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:ac35f71311e5a5305bcdf74ad2beb9305713d5998215892dbffb3f56fe565a8e",
+            "campo": "$"
+          }
+        },
+        {
+          "id": "PRAC:medir-con-instrumentos",
+          "rol": "practica",
+          "confianza": "alta",
+          "arista_id": "REL:ddc27b1728bd02e99e2df81bdd9d80cff88ee0d2af709ef3f44634161eb3327d",
+          "procedencia": {
+            "id_entrega": "6c28a0689f4aede8bd7eeb8acf1dfa998129b6e4bf4fb1666742e7bf23b9d13a",
+            "archivo": "relaciones.jsonl",
+            "sha256": "15e6c4db23766cdcd3253a33bf2c96dab669e61e49c94fbfd4a3c76ef27aaac7",
+            "registro_id": "REL:ddc27b1728bd02e99e2df81bdd9d80cff88ee0d2af709ef3f44634161eb3327d",
+            "campo": "$"
+          }
+        }
+      ],
+      "pareja_autoria": {
+        "objetivo": "ACT:G11-FIS-U1-1.2/obj-1",
+        "reevaluacion": "ACT:G11-FIS-U1-1.2/obj-2"
+      },
+      "ids_recursos_inspeccionados": [
+        "ACT:G11-FIS-U1-1.2/obj-1",
+        "ACT:G11-FIS-U1-1.2/obj-2",
+        "ACT:G11-FIS-U1-1.2/obj-abierta"
+      ],
+      "juicio": "El formalismo es pertinente con apoyos, pero una pareja cerrada sobre energía no demuestra determinación experimental de k ni representación MAS-MCU. La retención conserva esas tareas y el límite entre modelo ideal y amortiguamiento."
+    }
+  ],
+  "hallazgos": [
+    {
+      "id": "PSICO-PROP-01",
+      "prioridad": "P1",
+      "estado": "corregido_en_codigo_verificado_por_lectura",
+      "titulo": "El visor oculta reparos y adaptaciones conservados en la secuencia fuente",
+      "impacto": "Una persona que prepara contenido ve la retención pero no puede conocer desde el visor el cambio necesario ni la alternativa accesible; el aviso genérico no hace accionable la cola. También afecta secuencias permitidas que conservan pendientes.",
+      "evidencia_codigo": [
+        {
+          "archivo": "scripts/preparar_visor_grafo_refuerzo.py",
+          "linea": 30,
+          "cita": "vistas.append({**r, 'titulo': t['columnas']['Contenido'],"
+        },
+        {
+          "archivo": "scripts/preparar_visor_grafo_refuerzo.py",
+          "linea": 34,
+          "cita": "'nodos': [{'id': n['id'], 'tipo': n['tipo'], 'etiqueta': etiqueta(n)} for n in nodos.values()],"
+        },
+        {
+          "archivo": "src/goes_science_kg/grafo_refuerzo.py",
+          "linea": 239,
+          "campo": "ruta.secuencia",
+          "observacion": "La ruta resumida omite pendientes/apoyos/alternativa; consultar() recupera registro íntegro desde props."
+        }
+      ],
+      "casos": [
+        {
+          "registro": "SEC:G02-CIE-U1-1.1",
+          "archivo": "entregas/motor/0.2.0/secuencias.jsonl",
+          "campo": "pendientes",
+          "cita": "Definir instrumento protegido y separar facilidad de lectura de exactitud, con referencia de comparación si se evalúa esta última."
+        },
+        {
+          "registro": "SEC:G06-CIE-U6-6.9",
+          "archivo": "entregas/motor/0.2.0/secuencias.jsonl",
+          "campo": "pendientes",
+          "cita": "Alinear subcontenido y técnicas; identificar especie, procedimiento y manejo adulto de cortes."
+        }
+      ],
+      "correccion_propuesta": "Incluir el registro de secuencia y mostrar pendientes y motivos exactos, apoyos y alternativa sin internet en el visor, sin elevar permisos ni presentar el dictamen IA como revisión humana.",
+      "verificacion_correccion": {
+        "alcance": "Verificación por lectura del parche real, sin afirmar renderizado en navegador.",
+        "evidencia": [
+          {
+            "archivo": "scripts/preparar_visor_grafo_refuerzo.py",
+            "campo": "vistas.detalle_secuencia",
+            "cita": "'detalle_secuencia': nodos[r['secuencia']['id']]['props']['registro'],"
+          },
+          {
+            "archivo": "scripts/templates/grafo_refuerzo.html",
+            "campo": "mostrar",
+            "cita": "if(s.pendientes.length)adaptacion.append(el('h3','Pendientes concretos de los revisores'),listaTexto(s.pendientes));"
+          },
+          {
+            "archivo": "scripts/templates/grafo_refuerzo.html",
+            "campo": "mostrar",
+            "cita": "adaptacion.append(el('h3','Apoyos propuestos'),listaTexto(s.apoyos),el('h3','Alternativa sin internet'),el('p',s.alternativa_sin_internet),"
+          }
+        ],
+        "resultado": "El parche incluye registro íntegro, muestra retenciones y pendientes, apoyos, alternativa, planificación y fundamentos de revisión; no modifica permisos."
+      }
+    }
+  ],
+  "observaciones_no_bloqueantes": [
+    {
+      "id": "PSICO-OBS-01",
+      "tema": "Alcance de las carencias",
+      "evidencia": "G05 6.14 dispone de obj-1 y obj-2 en data/pedagogia/actividades.json, pero ninguna aparece en motor/0.2.0/componentes.jsonl; banco 827 ACT/33 MT y proyección 785 ACT/24 MT.",
+      "recomendacion": "Rotular necesidades como recursos no disponibles en esta entrega; antes de escribirlos desde cero revisar recuperación, adaptación o retención en el banco. No importar recursos automáticamente.",
+      "estado": "atendida_en_texto_del_visor",
+      "verificacion": "mostrar(): No hay en esta entrega una pareja de actividades cerradas aptas del grado para diagnosticar y reevaluar. Revisar el banco antes de crear recursos nuevos."
+    }
+  ],
+  "comprobaciones_de_sentido": [
+    "No se inventan relaciones evalua desde los criterios propuestos; quedan mapeo_pendiente.",
+    "No se confunden los seis temas metodológicos sin CON con errores de cobertura.",
+    "La ausencia o posterioridad curricular de una base queda como hipótesis de revisión y nunca como déficit observado del alumno.",
+    "Los 228 pares cerrados son disponibilidad de autoría, no garantía de clase completa ni dominio.",
+    "Impacto estructural cuenta temas y no demuestra eficacia, ahorro ni mejor currículo.",
+    "No encontré reasignación de firmas humanas: revisado_por permanece null y aula_habilitada false.",
+    "Los indicadores avanzados pueden desarrollarse durante la unidad; no se exige su ejecución íntegra en cada fila."
+  ],
+  "limites": [
+    "No observación de aula ni datos de estudiantes.",
+    "No auditoría exhaustiva de cada recurso o dictamen previo.",
+    "La validez de una ACT como medición completa de un concepto no queda certificada por conservar su campo evalua.",
+    "Las relaciones IA discutibles se preservan para revisión, no se aceptan por mera integridad estructural."
+  ],
+  "archivos_leidos_sha256": {
+    "src/goes_science_kg/grafo_refuerzo.py": "2b88ff053e10c4800a7bf112cdffd39f908ce1f5a02719c8a03de8ed73616959",
+    "scripts/preparar_visor_grafo_refuerzo.py": "906c5dfa0ae8790da2970ae5c9245e6961c9926af171148c1c99204682494a69",
+    "scripts/templates/grafo_refuerzo.html": "78d5523d2666f1a6d8a870d483651053b0050bdf712c53b02050ac85130dd521",
+    "config/grafo_refuerzo.yaml": "644560f40f22f8225e57eb17fe0493d866e77fbcea57944b9f753bb25d23304f"
+  },
+  "sin_aprobacion_humana_o_institucional": true,
+  "conclusion": "La proyección conserva las distinciones pedagógicas y permisos revisados. Un hallazgo material de visibilidad fue corregido en el código y una observación sobre alcance del banco fue atendida. No quedan otros errores materiales identificados en la muestra; esto no certifica cobertura pedagógica suficiente, clases completas o eficacia."
+}

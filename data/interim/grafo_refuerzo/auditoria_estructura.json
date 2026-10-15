@@ -1,0 +1,2553 @@
+{
+  "version": "auditoria-estructura-refuerzo-v1",
+  "fecha": "2026-10-15",
+  "alcance": "Solo lectura del grafo vigente V3, los diagnósticos, la pedagogía y la entrega 0.2.0. No mide aprendizaje de estudiantes ni aprueba contenido.",
+  "metodo": {
+    "grado": "Nodo.grado y tema.grado de la fuente; nunca inferido desde id",
+    "diagnosticos": "Recalculados en memoria con evidencia_orden y subgrafo; comparación JSON normalizada",
+    "refuerzos": "Separación entre microtemas de aprendizaje, propuestas curriculares V3 y quinto momento oficial de cada secuencia",
+    "criterios": "No se inventaron relaciones criterio-concepto. Revisión semántica explícita de muestras contra filas XLSX."
+  },
+  "huellas_sha256": {
+    "data/grafo/nodos.jsonl": "fdd1c5969041a138ebafb5b7a97ccf0ac775a9f78bfb5d8eabf49236254aef90",
+    "data/grafo/aristas.jsonl": "cbc02acb996591562c2d9a06c9831725290a5c94a38d9041c2d7d63cbd62a1ef",
+    "entregas/motor/0.2.0/secuencias.jsonl": "82a31c61bae05d608df93431f514b6ef3ec732a7a0f684ccc8c9b1682ed346b9",
+    "data/pedagogia/actividades.json": "6fdf1d2234a7701fa5fcd4d27a1b7e3cce632f53c6e0e42f8cce1079afbf137c",
+    "data/pedagogia/microtemas.json": "b253d79f57d2a003631c0a5a3254b37d6644712a470cdd50e6c1634330505d67",
+    "data/interim/refuerzo_v3/refuerzos.json": "4b6fb3f65893840f6ee228cde5f512e03a393694de24031327c6995f8dc114a4"
+  },
+  "totales": {
+    "nodos_por_tipo": {
+      "Asignatura": 4,
+      "Concepto": 513,
+      "Documento": 41,
+      "Grado": 10,
+      "Marco": 6,
+      "ObjetivoMarco": 493,
+      "ObjetivoPais": 1265,
+      "Pais": 6,
+      "Practica": 30,
+      "Tema": 935
+    },
+    "aristas_por_tipo": {
+      "ALINEA_CON": 1600,
+      "CUBRE": 1747,
+      "DE_ASIGNATURA": 3005,
+      "DE_PAIS": 1265,
+      "EN_GRADO": 935,
+      "EN_MARCO": 493,
+      "EQUIVALE_A": 100,
+      "FUENTE": 2693,
+      "PRERREQUISITO_DE": 822,
+      "TRABAJA": 5517
+    },
+    "temas_ciencias": 920,
+    "temas_fuera_alcance": 15,
+    "tema_trabaja_concepto_aristas": 1721,
+    "tema_trabaja_practica_aristas": 704,
+    "temas_sin_conceptos": 6,
+    "temas_sin_trabaja": 0,
+    "prerrequisitos_confianza": {
+      "alta": 454,
+      "baja": 7,
+      "media": 361
+    },
+    "prerrequisitos_revisados_por_persona": 0,
+    "prerrequisitos_tipo_evidencia": {
+      "logica": 459,
+      "orden_observado": 363
+    },
+    "apariciones_anclaje_ausente_por_grado": 38,
+    "apariciones_anclaje_posterior_por_grado": 114,
+    "conceptos_sin_trabaja_desde_tema": [
+      "CON:biologia/adaptaciones-conductuales",
+      "CON:biologia/adaptaciones-fisiologicas",
+      "CON:biologia/especies-clave",
+      "CON:biologia/estructuras-celulares-basicas",
+      "CON:biologia/relacion-superficie-volumen",
+      "CON:biologia/reproduccion-de-plantas-con-flor",
+      "CON:ciencias_tierra_espacio/conservacion-del-agua",
+      "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+      "CON:ciencias_tierra_espacio/nubes-y-precipitacion",
+      "CON:ciencias_tierra_espacio/sistemas-terrestres",
+      "CON:ciencias_tierra_espacio/tsunamis",
+      "CON:fisica/absorcion-radiacion-efecto-invernadero",
+      "CON:fisica/estados-materia",
+      "CON:fisica/gravedad-atrae-hacia-tierra",
+      "CON:fisica/momento-angular",
+      "CON:fisica/movimiento-circular-uniformemente-acelerado",
+      "CON:fisica/niveles-energia-espectros",
+      "CON:quimica/agentes-oxidantes-y-reductores",
+      "CON:quimica/combustibles-y-biocombustibles",
+      "CON:quimica/ecuacion-de-nernst",
+      "CON:quimica/energia-de-enlace",
+      "CON:quimica/energia-de-gibbs-y-espontaneidad",
+      "CON:quimica/energia-reticular",
+      "CON:quimica/enlace-de-valencia-y-orbitales-moleculares",
+      "CON:quimica/enlace-quimico",
+      "CON:quimica/entropia",
+      "CON:quimica/equilibrio-y-termodinamica",
+      "CON:quimica/espectrometria-de-masas",
+      "CON:quimica/espectroscopia-y-estructura-organica",
+      "CON:quimica/ley-de-velocidad-y-orden-de-reaccion",
+      "CON:quimica/redes-covalentes-y-alotropos-del-carbono"
+    ],
+    "actividades": 827,
+    "actividades_historicas": 0,
+    "actividades_por_rol": {
+      "comprobacion": 33,
+      "objetivo": 705,
+      "practica": 33,
+      "sondeo": 56
+    },
+    "microtemas": 33,
+    "dificultades": 493,
+    "experimentos": 230,
+    "pedagogia_estados": {
+      "propuesta_pendiente": 6,
+      "revisado_panel": 1577
+    },
+    "pedagogia_con_revisado_por_persona": 0,
+    "secuencias": 920,
+    "secuencias_autoria": 444,
+    "criterios_textuales_sin_id_criterio": 2760,
+    "secuencias_con_campos_explicitos_conceptos_o_bases": 0,
+    "refuerzo_curricular_candidatos": 147,
+    "refuerzo_curricular_redacciones": 24,
+    "refuerzo_curricular_inserciones_con_filtro": 19,
+    "paquetes_motor": 230,
+    "relaciones_distintas_con_anclaje_ausente_o_posterior": 112
+  },
+  "por_grado": [
+    {
+      "grado": 2,
+      "temas_ciencias": 66,
+      "temas_por_asignatura": {
+        "biologia": 26,
+        "ciencias_tierra_espacio": 11,
+        "fisica": 19,
+        "quimica": 10
+      },
+      "trabaja_conceptos_aristas": 108,
+      "conceptos_distintos": 69,
+      "trabaja_practicas_aristas": 42,
+      "practicas_distintas": 8,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 2,
+        "mismo_grado": 55,
+        "posterior": 14
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+          "concepto": "CON:ciencias_tierra_espacio/energia-geotermica",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/gravedad-atrae-hacia-tierra",
+          "concepto": "CON:fisica/masa-y-peso",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/biotecnologia-vegetal",
+          "concepto": "CON:biologia/agricultura-y-seguridad-alimentaria",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+          "concepto": "CON:biologia/agricultura-y-seguridad-alimentaria",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/sistema-inmunitario",
+          "concepto": "CON:biologia/inmunidad-activa-y-pasiva-vacunas",
+          "estado": "posterior",
+          "primer_grado_sv": 9,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+          "concepto": "CON:ciencias_tierra_espacio/amenazas-naturales",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/limites-de-placas",
+          "concepto": "CON:ciencias_tierra_espacio/sismos",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/composicion-de-la-atmosfera",
+          "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+          "estado": "posterior",
+          "primer_grado_sv": 3,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/temperatura-medicion-escalas",
+          "concepto": "CON:ciencias_tierra_espacio/tiempo-atmosferico",
+          "estado": "posterior",
+          "primer_grado_sv": 3,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/torque",
+          "concepto": "CON:fisica/centro-gravedad-estabilidad",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/conductores-aislantes-electricos",
+          "concepto": "CON:fisica/circuito-electrico-simple",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/fuerza-elastica-ley-hooke",
+          "concepto": "CON:fisica/elasticidad-esfuerzo-deformacion",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/presion",
+          "concepto": "CON:fisica/elasticidad-esfuerzo-deformacion",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/modelo-particulas",
+          "concepto": "CON:fisica/mecanismos-transferencia-calor",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/posicion-desplazamiento",
+          "concepto": "CON:fisica/rapidez-velocidad",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/cambios-fisicos-y-quimicos",
+          "concepto": "CON:quimica/reaccion-quimica-y-evidencias",
+          "estado": "posterior",
+          "primer_grado_sv": 3,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G02/diagnostico.json",
+      "conceptos_nuevos": 68,
+      "conceptos_retomados": 0,
+      "faltantes_por_edad": 3,
+      "secuencias": {
+        "total": 66,
+        "criterios_textuales": 198,
+        "autoria_asistida": 40,
+        "retenidas": 26,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 0,
+        "actividades_por_rol": {},
+        "actividades_estado": {},
+        "temas_con_actividad_de_objetivo": 0,
+        "microtemas_grado_explicito": 0,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 47,
+        "bases_con_sondeo_del_grado": 0,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 0,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 8,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 3,
+      "temas_ciencias": 66,
+      "temas_por_asignatura": {
+        "biologia": 26,
+        "ciencias_tierra_espacio": 18,
+        "fisica": 8,
+        "quimica": 14
+      },
+      "trabaja_conceptos_aristas": 98,
+      "conceptos_distintos": 58,
+      "trabaja_practicas_aristas": 42,
+      "practicas_distintas": 12,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 1,
+        "mismo_grado": 14,
+        "posterior": 21,
+        "previo": 40
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/conservacion-del-agua",
+          "concepto": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+          "concepto": "CON:biologia/ciclo-del-agua-y-seres-vivos",
+          "estado": "posterior",
+          "primer_grado_sv": 7,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/glucolisis-y-ciclo-de-krebs",
+          "concepto": "CON:biologia/fermentacion-y-respiracion-anaerobia",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/difusion-y-osmosis",
+          "concepto": "CON:biologia/intercambio-de-gases-en-animales",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/sistema-respiratorio",
+          "concepto": "CON:biologia/intercambio-de-gases-en-animales",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/cadena-alimentaria",
+          "concepto": "CON:biologia/productores-consumidores-descomponedores",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+          "concepto": "CON:ciencias_tierra_espacio/aguas-subterraneas-y-acuiferos",
+          "estado": "posterior",
+          "primer_grado_sv": 7,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+          "concepto": "CON:ciencias_tierra_espacio/aguas-subterraneas-y-acuiferos",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+          "concepto": "CON:ciencias_tierra_espacio/amenazas-naturales",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/presion-hidrostatica",
+          "concepto": "CON:ciencias_tierra_espacio/capas-de-la-atmosfera",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/erosion-y-sedimentacion",
+          "concepto": "CON:ciencias_tierra_espacio/ciclo-de-las-rocas",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/origen-del-vulcanismo",
+          "concepto": "CON:ciencias_tierra_espacio/ciclo-de-las-rocas",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/ciclo-del-agua",
+          "concepto": "CON:ciencias_tierra_espacio/cuencas-y-aguas-superficiales",
+          "estado": "posterior",
+          "primer_grado_sv": 7,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/erosion-y-sedimentacion",
+          "concepto": "CON:ciencias_tierra_espacio/fosiles",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores",
+          "concepto": "CON:ciencias_tierra_espacio/glaciaciones",
+          "estado": "posterior",
+          "primer_grado_sv": 4,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
+          "concepto": "CON:ciencias_tierra_espacio/recursos-minerales-y-mineria",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/tiempo-geologico",
+          "concepto": "CON:ciencias_tierra_espacio/registro-fosil-y-cambios-ambientales",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/minerales-y-sus-propiedades",
+          "concepto": "CON:ciencias_tierra_espacio/tipos-de-rocas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/origen-del-vulcanismo",
+          "concepto": "CON:ciencias_tierra_espacio/volcanes-estructura-y-tipos",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/espejos-esfericos",
+          "concepto": "CON:fisica/ojo-instrumentos-opticos",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/lentes-delgadas",
+          "concepto": "CON:fisica/ojo-instrumentos-opticos",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/fuerzas-intermoleculares",
+          "concepto": "CON:quimica/propiedades-singulares-del-agua",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G03/diagnostico.json",
+      "conceptos_nuevos": 37,
+      "conceptos_retomados": 19,
+      "faltantes_por_edad": 7,
+      "secuencias": {
+        "total": 66,
+        "criterios_textuales": 198,
+        "autoria_asistida": 38,
+        "retenidas": 28,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 10,
+        "actividades_por_rol": {
+          "comprobacion": 2,
+          "objetivo": 3,
+          "practica": 2,
+          "sondeo": 3
+        },
+        "actividades_estado": {
+          "revisado_panel": 10
+        },
+        "temas_con_actividad_de_objetivo": 1,
+        "microtemas_grado_explicito": 2,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 49,
+        "bases_con_sondeo_del_grado": 2,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 2,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [
+          "CON:fisica/fuerza-empuje-tiron",
+          "CON:fisica/fuerzas-contacto-distancia"
+        ],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 15,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 4,
+      "temas_ciencias": 64,
+      "temas_por_asignatura": {
+        "biologia": 29,
+        "ciencias_tierra_espacio": 20,
+        "fisica": 15
+      },
+      "trabaja_conceptos_aristas": 106,
+      "conceptos_distintos": 62,
+      "trabaja_practicas_aristas": 32,
+      "practicas_distintas": 13,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "mismo_grado": 21,
+        "posterior": 13,
+        "previo": 43
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:biologia/biotecnologia-vegetal",
+          "concepto": "CON:biologia/agricultura-y-seguridad-alimentaria",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/respiracion-celular",
+          "concepto": "CON:biologia/energia-de-los-alimentos-y-balance-energetico",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/la-celula-unidad-de-la-vida",
+          "concepto": "CON:biologia/niveles-de-organizacion",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
+          "concepto": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/presion-hidrostatica",
+          "concepto": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+          "concepto": "CON:ciencias_tierra_espacio/exploracion-espacial",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+          "concepto": "CON:ciencias_tierra_espacio/mareas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/limites-de-placas",
+          "concepto": "CON:ciencias_tierra_espacio/sismos",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
+          "concepto": "CON:ciencias_tierra_espacio/tipos-de-clima-y-sus-factores",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/erosion-y-sedimentacion",
+          "concepto": "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+          "concepto": "CON:ciencias_tierra_espacio/uso-y-degradacion-del-suelo",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/origen-del-vulcanismo",
+          "concepto": "CON:ciencias_tierra_espacio/volcanes-estructura-y-tipos",
+          "estado": "posterior",
+          "primer_grado_sv": 5,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/modelo-particulas",
+          "concepto": "CON:fisica/mecanismos-transferencia-calor",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G04/diagnostico.json",
+      "conceptos_nuevos": 34,
+      "conceptos_retomados": 28,
+      "faltantes_por_edad": 18,
+      "secuencias": {
+        "total": 64,
+        "criterios_textuales": 192,
+        "autoria_asistida": 37,
+        "retenidas": 27,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 0,
+        "actividades_por_rol": {},
+        "actividades_estado": {},
+        "temas_con_actividad_de_objetivo": 0,
+        "microtemas_grado_explicito": 0,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 50,
+        "bases_con_sondeo_del_grado": 0,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 1,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 14,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 5,
+      "temas_ciencias": 71,
+      "temas_por_asignatura": {
+        "biologia": 4,
+        "ciencias_tierra_espacio": 29,
+        "fisica": 23,
+        "quimica": 15
+      },
+      "trabaja_conceptos_aristas": 108,
+      "conceptos_distintos": 70,
+      "trabaja_practicas_aristas": 32,
+      "practicas_distintas": 14,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 2,
+        "mismo_grado": 45,
+        "posterior": 14,
+        "previo": 48
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+          "concepto": "CON:ciencias_tierra_espacio/tectonica-de-placas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-ionico",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/efecto-doppler",
+          "concepto": "CON:ciencias_tierra_espacio/big-bang",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+          "concepto": "CON:ciencias_tierra_espacio/evolucion-estelar",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/fision-fusion-nuclear",
+          "concepto": "CON:ciencias_tierra_espacio/evolucion-estelar",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+          "concepto": "CON:ciencias_tierra_espacio/exploracion-espacial",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+          "concepto": "CON:ciencias_tierra_espacio/formacion-del-sistema-solar",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/ondas-mecanicas-tipos",
+          "concepto": "CON:ciencias_tierra_espacio/ondas-sismicas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/desintegracion-radiactiva",
+          "concepto": "CON:ciencias_tierra_espacio/tiempo-geologico",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/trabajo-mecanico",
+          "concepto": "CON:fisica/energia-cinetica",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/fuerza-neta-diagrama-cuerpo-libre",
+          "concepto": "CON:fisica/primera-ley-newton",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/modelo-de-particulas",
+          "concepto": "CON:quimica/atomo-y-particulas-subatomicas",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/electrones-de-valencia-y-regla-del-octeto",
+          "concepto": "CON:quimica/iones",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+          "concepto": "CON:quimica/moleculas-y-formulas-quimicas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/electronegatividad-y-polaridad-de-enlace",
+          "concepto": "CON:quimica/numero-de-oxidacion",
+          "estado": "posterior",
+          "primer_grado_sv": 6,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/modelo-mecanocuantico-y-orbitales",
+          "concepto": "CON:quimica/numeros-cuanticos",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G05/diagnostico.json",
+      "conceptos_nuevos": 52,
+      "conceptos_retomados": 18,
+      "faltantes_por_edad": 27,
+      "secuencias": {
+        "total": 71,
+        "criterios_textuales": 213,
+        "autoria_asistida": 43,
+        "retenidas": 28,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 18,
+        "actividades_por_rol": {
+          "comprobacion": 4,
+          "objetivo": 3,
+          "practica": 4,
+          "sondeo": 7
+        },
+        "actividades_estado": {
+          "revisado_panel": 18
+        },
+        "temas_con_actividad_de_objetivo": 1,
+        "microtemas_grado_explicito": 4,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 80,
+        "bases_con_sondeo_del_grado": 4,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 6,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [
+          "CON:biologia/productores-consumidores-descomponedores",
+          "CON:ciencias_tierra_espacio/meteorizacion",
+          "CON:ciencias_tierra_espacio/suelo-formacion-y-tipos",
+          "CON:ciencias_tierra_espacio/tipos-de-rocas"
+        ],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 33,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 6,
+      "temas_ciencias": 56,
+      "temas_por_asignatura": {
+        "biologia": 24,
+        "fisica": 22,
+        "quimica": 10
+      },
+      "trabaja_conceptos_aristas": 91,
+      "conceptos_distintos": 62,
+      "trabaja_practicas_aristas": 41,
+      "practicas_distintas": 16,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 7,
+        "mismo_grado": 35,
+        "posterior": 12,
+        "previo": 47
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/reproduccion-de-plantas-con-flor",
+          "concepto": "CON:biologia/biotecnologia-vegetal",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/celula-procariota-y-eucariota",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/membrana-celular",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-covalente",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-ionico",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-metalico",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/herencia-de-rasgos",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/requerimientos-de-la-celula",
+          "concepto": "CON:biologia/atp-y-energia-celular",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/el-carbono-y-las-moleculas-organicas",
+          "concepto": "CON:biologia/biomoleculas",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/ingenieria-genetica",
+          "concepto": "CON:biologia/biotecnologia-vegetal",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/proteinas-estructura-y-funcion",
+          "concepto": "CON:biologia/enzimas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/oxidacion-y-reduccion",
+          "concepto": "CON:biologia/fases-de-la-fotosintesis",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/celula-animal-y-vegetal",
+          "concepto": "CON:biologia/organelos-de-la-celula-eucariota",
+          "estado": "posterior",
+          "primer_grado_sv": 9,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/requerimientos-de-la-celula",
+          "concepto": "CON:biologia/respiracion-celular",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/calor-vs-temperatura",
+          "concepto": "CON:fisica/capacidad-calorifica-calor-especifico",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/ley-ohm",
+          "concepto": "CON:fisica/resistencia-equivalente",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/energia-de-activacion-y-perfil-energetico",
+          "concepto": "CON:quimica/catalizadores",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/sustancias-puras-elementos-y-compuestos",
+          "concepto": "CON:quimica/moleculas-y-formulas-quimicas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G06/diagnostico.json",
+      "conceptos_nuevos": 45,
+      "conceptos_retomados": 15,
+      "faltantes_por_edad": 37,
+      "secuencias": {
+        "total": 56,
+        "criterios_textuales": 168,
+        "autoria_asistida": 25,
+        "retenidas": 31,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 0,
+        "actividades_por_rol": {},
+        "actividades_estado": {},
+        "temas_con_actividad_de_objetivo": 0,
+        "microtemas_grado_explicito": 0,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 72,
+        "bases_con_sondeo_del_grado": 0,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 1,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 28,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 7,
+      "temas_ciencias": 87,
+      "temas_por_asignatura": {
+        "biologia": 41,
+        "ciencias_tierra_espacio": 30,
+        "fisica": 3,
+        "quimica": 13
+      },
+      "trabaja_conceptos_aristas": 163,
+      "conceptos_distintos": 77,
+      "trabaja_practicas_aristas": 57,
+      "practicas_distintas": 17,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 4,
+        "mismo_grado": 25,
+        "posterior": 9,
+        "previo": 91
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/celula-procariota-y-eucariota",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/membrana-celular",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/conservacion-del-agua",
+          "concepto": "CON:ciencias_tierra_espacio/potabilizacion-y-desalinizacion",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/herencia-de-rasgos",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/evidencias-de-la-evolucion",
+          "concepto": "CON:biologia/filogenia-y-parentesco-evolutivo",
+          "estado": "posterior",
+          "primer_grado_sv": 9,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/mutaciones",
+          "concepto": "CON:biologia/mecanismos-de-microevolucion",
+          "estado": "posterior",
+          "primer_grado_sv": 9,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/seleccion-natural",
+          "concepto": "CON:biologia/mecanismos-de-microevolucion",
+          "estado": "posterior",
+          "primer_grado_sv": 9,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/proteinas-estructura-y-funcion",
+          "concepto": "CON:biologia/sintesis-de-proteinas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
+          "concepto": "CON:ciencias_tierra_espacio/causas-del-cambio-climatico",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/radiacion-solar-y-balance-energetico",
+          "concepto": "CON:ciencias_tierra_espacio/ciclones-tropicales-y-tormentas",
+          "estado": "posterior",
+          "primer_grado_sv": 8,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/rapidez-luz",
+          "concepto": "CON:fisica/refraccion-luz",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/conservacion-de-la-masa",
+          "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G07/diagnostico.json",
+      "conceptos_nuevos": 35,
+      "conceptos_retomados": 42,
+      "faltantes_por_edad": 42,
+      "secuencias": {
+        "total": 87,
+        "criterios_textuales": 261,
+        "autoria_asistida": 56,
+        "retenidas": 31,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 10,
+        "actividades_por_rol": {
+          "comprobacion": 2,
+          "objetivo": 3,
+          "practica": 2,
+          "sondeo": 3
+        },
+        "actividades_estado": {
+          "revisado_panel": 10
+        },
+        "temas_con_actividad_de_objetivo": 1,
+        "microtemas_grado_explicito": 2,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 74,
+        "bases_con_sondeo_del_grado": 2,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 4,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [
+          "CON:biologia/adn-y-cromosomas",
+          "CON:biologia/genes-y-alelos"
+        ],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 26,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 8,
+      "temas_ciencias": 100,
+      "temas_por_asignatura": {
+        "biologia": 27,
+        "ciencias_tierra_espacio": 19,
+        "fisica": 31,
+        "quimica": 23
+      },
+      "trabaja_conceptos_aristas": 187,
+      "conceptos_distintos": 101,
+      "trabaja_practicas_aristas": 79,
+      "practicas_distintas": 13,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 2,
+        "mismo_grado": 28,
+        "posterior": 8,
+        "previo": 134
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/sistemas-terrestres",
+          "concepto": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/gravedad-atrae-hacia-tierra",
+          "concepto": "CON:ciencias_tierra_espacio/gravedad-y-orbitas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/proteinas-estructura-y-funcion",
+          "concepto": "CON:biologia/enzimas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/homeostasis",
+          "concepto": "CON:biologia/osmorregulacion",
+          "estado": "posterior",
+          "primer_grado_sv": 9,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/efecto-doppler",
+          "concepto": "CON:ciencias_tierra_espacio/big-bang",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/fision-fusion-nuclear",
+          "concepto": "CON:ciencias_tierra_espacio/evolucion-estelar",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/desintegracion-radiactiva",
+          "concepto": "CON:ciencias_tierra_espacio/tiempo-geologico",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/friccion-resistencia-aire",
+          "concepto": "CON:fisica/fuerzas-mecanicas-comunes",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/caida-libre",
+          "concepto": "CON:fisica/movimiento-proyectiles",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/superposicion-interferencia",
+          "concepto": "CON:fisica/ondas-estacionarias",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G08/diagnostico.json",
+      "conceptos_nuevos": 41,
+      "conceptos_retomados": 60,
+      "faltantes_por_edad": 38,
+      "secuencias": {
+        "total": 100,
+        "criterios_textuales": 300,
+        "autoria_asistida": 48,
+        "retenidas": 52,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 0,
+        "actividades_por_rol": {},
+        "actividades_estado": {},
+        "temas_con_actividad_de_objetivo": 0,
+        "microtemas_grado_explicito": 0,
+        "experimentos": 0,
+        "paquetes_motor": 0,
+        "bases_directas_confianza_media_alta_distintas": 118,
+        "bases_con_sondeo_del_grado": 0,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 6,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 33,
+        "redacciones": 0,
+        "decisiones": {},
+        "inserciones_que_cumplen_filtro_existente": 0,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 9,
+      "temas_ciencias": 93,
+      "temas_por_asignatura": {
+        "biologia": 23,
+        "ciencias_tierra_espacio": 26,
+        "fisica": 32,
+        "quimica": 12
+      },
+      "trabaja_conceptos_aristas": 186,
+      "conceptos_distintos": 119,
+      "trabaja_practicas_aristas": 78,
+      "practicas_distintas": 20,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 6,
+        "mismo_grado": 26,
+        "posterior": 9,
+        "previo": 155
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/reproduccion-de-plantas-con-flor",
+          "concepto": "CON:biologia/biotecnologia-vegetal",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/celula-animal-y-vegetal",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/celula-procariota-y-eucariota",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/membrana-celular",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/conveccion-del-manto-y-energia-interna",
+          "concepto": "CON:ciencias_tierra_espacio/tectonica-de-placas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/herencia-de-rasgos",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/ingenieria-genetica",
+          "concepto": "CON:biologia/biotecnologia-vegetal",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/requerimientos-de-la-celula",
+          "concepto": "CON:biologia/respiracion-celular",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/proteinas-estructura-y-funcion",
+          "concepto": "CON:biologia/sintesis-de-proteinas",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/calor-vs-temperatura",
+          "concepto": "CON:fisica/capacidad-calorifica-calor-especifico",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/potencial-electrico",
+          "concepto": "CON:fisica/capacitancia",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/induccion-electromagnetica",
+          "concepto": "CON:fisica/corriente-alterna-transformador",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/calor-vs-temperatura",
+          "concepto": "CON:fisica/primera-ley-termodinamica",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/conservacion-energia",
+          "concepto": "CON:fisica/primera-ley-termodinamica",
+          "estado": "posterior",
+          "primer_grado_sv": 10,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G09/diagnostico.json",
+      "conceptos_nuevos": 48,
+      "conceptos_retomados": 70,
+      "faltantes_por_edad": 33,
+      "secuencias": {
+        "total": 93,
+        "criterios_textuales": 279,
+        "autoria_asistida": 58,
+        "retenidas": 35,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 187,
+        "actividades_por_rol": {
+          "comprobacion": 13,
+          "objetivo": 138,
+          "practica": 13,
+          "sondeo": 23
+        },
+        "actividades_estado": {
+          "revisado_panel": 187
+        },
+        "temas_con_actividad_de_objetivo": 45,
+        "microtemas_grado_explicito": 13,
+        "experimentos": 44,
+        "paquetes_motor": 44,
+        "bases_directas_confianza_media_alta_distintas": 136,
+        "bases_con_sondeo_del_grado": 12,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 18,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [
+          "CON:biologia/membrana-celular",
+          "CON:fisica/calor-vs-temperatura",
+          "CON:fisica/conservacion-energia",
+          "CON:fisica/presion",
+          "CON:fisica/primera-ley-termodinamica",
+          "CON:fisica/procesos-termodinamicos",
+          "CON:fisica/relaciones-presion-volumen-temperatura-gases",
+          "CON:fisica/temperatura-medicion-escalas",
+          "CON:quimica/concentracion-de-disoluciones",
+          "CON:quimica/constante-de-equilibrio",
+          "CON:quimica/equilibrio-dinamico",
+          "CON:quimica/molaridad-y-unidades-quimicas-de-concentracion"
+        ],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 9,
+        "redacciones": 2,
+        "decisiones": {
+          "inyectar": 2
+        },
+        "inserciones_que_cumplen_filtro_existente": 2,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 10,
+      "temas_ciencias": 151,
+      "temas_por_asignatura": {
+        "biologia": 55,
+        "fisica": 32,
+        "quimica": 64
+      },
+      "trabaja_conceptos_aristas": 331,
+      "conceptos_distintos": 202,
+      "trabaja_practicas_aristas": 154,
+      "practicas_distintas": 22,
+      "temas_sin_conceptos": [
+        "TEMA:G10-FIS-U1-1.3",
+        "TEMA:G10-FIS-U1-1.4",
+        "TEMA:G10-QUI-U1-1.1",
+        "TEMA:G10-QUI-U1-1.10",
+        "TEMA:G10-QUI-U1-1.6",
+        "TEMA:G10-QUI-U9-9.4"
+      ],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 7,
+        "mismo_grado": 37,
+        "posterior": 14,
+        "previo": 273
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:ciencias_tierra_espacio/sistemas-terrestres",
+          "concepto": "CON:ciencias_tierra_espacio/ciclo-del-carbono",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/gravedad-atrae-hacia-tierra",
+          "concepto": "CON:fisica/caida-libre",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/gravedad-atrae-hacia-tierra",
+          "concepto": "CON:fisica/masa-y-peso",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-covalente",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-ionico",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-quimico",
+          "concepto": "CON:quimica/enlace-metalico",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/el-carbono-y-las-moleculas-organicas",
+          "concepto": "CON:biologia/biomoleculas",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/oxidacion-y-reduccion",
+          "concepto": "CON:biologia/fases-de-la-fotosintesis",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/aminoacidos-y-proteinas",
+          "concepto": "CON:biologia/proteinas-estructura-y-funcion",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/superposicion-interferencia",
+          "concepto": "CON:fisica/difraccion-luz",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/cuantizacion-energia-planck",
+          "concepto": "CON:fisica/foton-efecto-fotoelectrico",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/superposicion-interferencia",
+          "concepto": "CON:fisica/interferencia-luz",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/equivalencia-masa-energia",
+          "concepto": "CON:fisica/modelo-estandar-particulas",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "baja"
+        },
+        {
+          "prerrequisito": "CON:fisica/nucleo-atomico-isotopos",
+          "concepto": "CON:fisica/modelo-estandar-particulas",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:fisica/rapidez-luz",
+          "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/rapidez-luz",
+          "concepto": "CON:fisica/refraccion-luz",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:fisica/dualidad-onda-particula",
+          "concepto": "CON:quimica/modelo-mecanocuantico-y-orbitales",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/estereoquimica",
+          "concepto": "CON:quimica/quimica-de-los-carbohidratos",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/grupos-funcionales",
+          "concepto": "CON:quimica/quimica-de-los-carbohidratos",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/esterificacion-e-hidrolisis",
+          "concepto": "CON:quimica/quimica-de-los-lipidos",
+          "estado": "posterior",
+          "primer_grado_sv": 11,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G10/diagnostico.json",
+      "conceptos_nuevos": 61,
+      "conceptos_retomados": 141,
+      "faltantes_por_edad": 13,
+      "secuencias": {
+        "total": 151,
+        "criterios_textuales": 453,
+        "autoria_asistida": 54,
+        "retenidas": 97,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 292,
+        "actividades_por_rol": {
+          "comprobacion": 6,
+          "objetivo": 270,
+          "practica": 6,
+          "sondeo": 10
+        },
+        "actividades_estado": {
+          "propuesta_pendiente": 4,
+          "revisado_panel": 288
+        },
+        "temas_con_actividad_de_objetivo": 90,
+        "microtemas_grado_explicito": 6,
+        "experimentos": 90,
+        "paquetes_motor": 90,
+        "bases_directas_confianza_media_alta_distintas": 189,
+        "bases_con_sondeo_del_grado": 6,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 22,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [
+          "CON:fisica/aceleracion-fuerza-centripeta",
+          "CON:fisica/movimiento-circular-uniforme",
+          "CON:fisica/segunda-ley-newton",
+          "CON:quimica/distribucion-electronica-por-niveles",
+          "CON:quimica/propiedades-periodicas",
+          "CON:quimica/tabla-periodica"
+        ],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 23,
+        "redacciones": 10,
+        "decisiones": {
+          "descartar": 2,
+          "inyectar": 8
+        },
+        "inserciones_que_cumplen_filtro_existente": 8,
+        "filas_nuevas_con_filtro": 0
+      }
+    },
+    {
+      "grado": 11,
+      "temas_ciencias": 166,
+      "temas_por_asignatura": {
+        "biologia": 70,
+        "fisica": 32,
+        "quimica": 64
+      },
+      "trabaja_conceptos_aristas": 343,
+      "conceptos_distintos": 182,
+      "trabaja_practicas_aristas": 147,
+      "practicas_distintas": 23,
+      "temas_sin_conceptos": [],
+      "temas_sin_trabaja": [],
+      "anclajes_por_estado": {
+        "ausente": 7,
+        "mismo_grado": 43,
+        "previo": 255
+      },
+      "anclajes_ausentes_o_posteriores": [
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/adn-y-cromosomas",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:biologia/reproduccion-de-plantas-con-flor",
+          "concepto": "CON:biologia/biotecnologia-vegetal",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:biologia/estructuras-celulares-basicas",
+          "concepto": "CON:biologia/celula-animal-y-vegetal",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/enlace-de-valencia-y-orbitales-moleculares",
+          "concepto": "CON:quimica/hibridacion-de-orbitales",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/ley-de-velocidad-y-orden-de-reaccion",
+          "concepto": "CON:quimica/mecanismos-de-reaccion",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        },
+        {
+          "prerrequisito": "CON:quimica/redes-covalentes-y-alotropos-del-carbono",
+          "concepto": "CON:quimica/nanomateriales",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "media"
+        },
+        {
+          "prerrequisito": "CON:quimica/agentes-oxidantes-y-reductores",
+          "concepto": "CON:quimica/potenciales-de-electrodo",
+          "estado": "ausente",
+          "primer_grado_sv": null,
+          "confianza": "alta"
+        }
+      ],
+      "diagnostico_guardado_reproducido": true,
+      "diagnostico_ruta": "data/grafo/grados/G11/diagnostico.json",
+      "conceptos_nuevos": 56,
+      "conceptos_retomados": 126,
+      "faltantes_por_edad": 7,
+      "secuencias": {
+        "total": 166,
+        "criterios_textuales": 498,
+        "autoria_asistida": 45,
+        "retenidas": 121,
+        "aula_habilitada": 0
+      },
+      "pedagogia": {
+        "actividades": 310,
+        "actividades_por_rol": {
+          "comprobacion": 6,
+          "objetivo": 288,
+          "practica": 6,
+          "sondeo": 10
+        },
+        "actividades_estado": {
+          "revisado_panel": 310
+        },
+        "temas_con_actividad_de_objetivo": 96,
+        "microtemas_grado_explicito": 6,
+        "experimentos": 96,
+        "paquetes_motor": 96,
+        "bases_directas_confianza_media_alta_distintas": 188,
+        "bases_con_sondeo_del_grado": 5,
+        "bases_con_microtema_elegible_incluyendo_grados_previos": 20,
+        "bases_con_sondeo_microtema_practica_comprobacion_del_grado": [
+          "CON:fisica/fuerza-elastica-ley-hooke",
+          "CON:fisica/movimiento-armonico-simple",
+          "CON:fisica/segunda-ley-newton",
+          "CON:quimica/fuerzas-intermoleculares",
+          "CON:quimica/polimerizacion"
+        ],
+        "nota": "La selección del prototipo permite microtemas de grados previos; la existencia de un recurso no implica dominio ni habilitación de aula."
+      },
+      "refuerzo_curricular_v3": {
+        "candidatos_dirigidos_al_grado": 29,
+        "redacciones": 12,
+        "decisiones": {
+          "descartar": 2,
+          "inyectar": 10
+        },
+        "inserciones_que_cumplen_filtro_existente": 9,
+        "filas_nuevas_con_filtro": 1
+      }
+    }
+  ],
+  "validacion": {
+    "errores": [],
+    "avisos": [
+      "520 aristas con confianza baja pendientes de revisión humana"
+    ],
+    "dag_sin_ciclos": true,
+    "cadena_maxima_prerrequisitos_aristas": 22,
+    "aristas_transitivas_redundantes": 0,
+    "diagnosticos_actualizados": true,
+    "pruebas_previas_de_la_sesion": {
+      "archivo": "entregas/secuencias_ia/PRUEBAS.txt",
+      "resultado_leido": "331 passed in 137.82s",
+      "nota": "No reejecutadas por esta auditoría; se usó evidencia de la sesión raíz y comprobaciones concretas en memoria."
+    }
+  },
+  "muestras_fuente": [
+    {
+      "tema_id": "TEMA:G10-FIS-U1-1.3",
+      "grado_atributo": 10,
+      "etiqueta": "1.1. Formulación de preguntas investigables e hipótesis comprobables, y diseño de experimentos justos con control de las variables independiente, dependiente y controladas.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Bachillerato_Fisica_10_11.xlsx",
+      "fuente_hoja": "Física 10.°",
+      "fuente_fila": 3,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        "Eje integrador: sistemas",
+        "1. La física como ciencia: indagación y herramientas",
+        "Indagación y diseño experimental",
+        "Variable independiente\n Variable dependiente\n Variables controladas\n Pregunta investigable\n Hipótesis comprobable\n Predicción",
+        "1.1. Formulación de preguntas investigables e hipótesis comprobables, y diseño de experimentos justos con control de las variables independiente, dependiente y controladas.",
+        "Diseña investigaciones experimentales justas, linealiza datos e interpreta la pendiente y el intercepto, evalúa los límites de validez de un modelo y verifica la coherencia dimensional y vectorial de los resultados.",
+        "Curiosidad y rigor al formular preguntas comprobables sobre fenómenos físicos cotidianos. Honestidad en el registro y la comunicación de datos experimentales, y respeto en la revisión del trabajo de los pares.",
+        "2. Construir y evaluar diseños para la indagación científica e interpretar datos y evidencia de forma crítica",
+        "E1 · Recuerda experiencias escolares en las que un resultado «salió raro» porque se cambiaron varias cosas a la vez.",
+        "E5 · Propone explicaciones de por qué dos carritos en rampas distintas llegan con diferente rapidez y reconoce cuántos factores podrían influir.",
+        "E2 · Representa en una tabla de diseño la variable independiente, la dependiente, las controladas, sus unidades y el instrumento de medida de cada una.",
+        "D2 · Diseña un experimento justo para investigar cómo el ángulo de una rampa afecta el tiempo de bajada de un carrito, con al menos cinco valores y tres repeticiones.",
+        "D3 · Evalúa el diseño de otro equipo, detecta variables no controladas y propone cómo corregirlas antes de medir.",
+        "Pensamiento crítico (Indagar)\n Justifica por qué su diseño permite atribuir los cambios del tiempo de bajada solo al ángulo de la rampa.",
+        "Aplicar: identificar variables; formular hipótesis. Razonar: justificar el control de variables; evaluar si una pregunta es investigable",
+        "Protocolo experimental con tabla de variables, procedimiento numerado y lista de materiales seguros",
+        "INDAGACIÓN: Plantear preguntas e hipótesis comprobables sobre fenómenos físicos, controlar variables en el diseño de experimentos y analizar gráficas linealizadas para construir modelos físicos y reconocer sus límites de validez.",
+        "1.1.\n • Diseña un experimento justo en el que modifica una sola variable independiente y justifica cómo mantiene constantes las variables controladas.\n • Transforma una pregunta general sobre un fenómeno físico en una hipótesis comprobable con una predicción medible.",
+        "La física construye conocimiento mediante un ciclo de indagación en el que las preguntas se transforman en hipótesis comprobables, los datos se analizan con modelos matemáticos y los resultados se someten a la revisión de otros. Este modo de razonar permite a la sociedad tomar decisiones fundamentadas sobre tecnología, riesgos naturales y uso de la energía.",
+        "4.2 Protección de datos personales y privacidad – Básico\nCon la IA (DigComp 3.0, nivel real): CS1.2.13 – Intermedio: valora qué tan confiable es una fuente, teniendo en cuenta el papel de la IA.",
+        "Revisar los permisos que solicita la aplicación phyphox antes de usar su cronómetro acústico y desactivar los que no se necesitan para el experimento.\nIA (Indagar · el estudiante, solo o en pareja).\nHerramienta y medio: cuaderno de la unidad en NotebookLM (notebooklm.google.com), que abres con tu cuenta institucional desde el enlace de tu ficha; responde solo con las fuentes cargadas y cita de dónde sale cada idea. Sin internet: usa el resumen impreso de tu ficha.\nActividad: Diseña un experimento justo para saber si el período de un péndulo de hilo y tuerca depende de la longitud: escribe la variable independiente, la dependiente y tres controladas. Luego pregúntale al cuaderno NotebookLM «¿Qué es un experimento justo y por qué se cambia una sola variable a la vez?». Haz el experimento y, aparte, una prueba cambiando longitud y masa a la vez: explica por qué esa prueba no permite concluir.\nEvidencia: Ficha «Yo pienso · La IA dice · Lo comprobé»: tu tabla de variables; la definición del cuaderno rotulada «Respuesta de IA»; tus datos longitud-período y la prueba «injusta» comentada, con ✔ o ✘ para la IA. Línea en tu registro de uso de IA.\nRefuerza con: PhET «Lab de péndulo» (https://phet.colorado.edu/sims/html/pendulum-lab/latest/pendulum-lab_es.html)\n→ PISA D2 · TIMSS Razonar",
+        "Uso ético de la información\n Explica al equipo qué datos personales podría recoger una aplicación de sensores y cómo limitar su acceso.\n ↳ Se trabaja en la actividad digital (DigComp 4.2).",
+        "Las unidades de medida, su definición, simbología, prefijos, reglas de escritura y el manejo de cifras a emplear, son las estandarizadas por el Sistema Internacional (SI), de acuerdo con el Reglamento Técnico Salvadoreño (RTS) 01.02.01:18 o su actualización. En los valores numéricos se empleará el punto como separador decimal. Los números con muchas cifras se repartirán en grupos de tres cifras, separadas por un espacio. No se emplearán comas. Simbología utilizada para la representación de magnitudes de interés en la unidad: x: variable independiente, en la unidad SI de la magnitud controlada. y: variable dependiente, en la unidad SI de la magnitud medida. a: pendiente de la recta de ajuste, en unidades de y sobre unidades de x. b: intercepto con el eje vertical, en unidades de y. R²: coeficiente de determinación del ajuste lineal, adimensional. ",
+        "Nuevo (propuesta)"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G10-FIS-U1-1.3",
+          "destino": "PRAC:controlar-variables",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "alta",
+          "justificacion": "Preguntas investigables, hipótesis comprobables y experimento justo con control de variables.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G10-FIS-U1-1.3",
+          "destino": "PRAC:formular-hipotesis-y-predicciones",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "alta",
+          "justificacion": "Preguntas investigables, hipótesis comprobables y experimento justo con control de variables.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G10-FIS-U1-1.4",
+      "grado_atributo": 10,
+      "etiqueta": "1.2. Linealización de datos experimentales, interpretación física de la pendiente y el intercepto, y evaluación de los límites de validez de modelos idealizados.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Bachillerato_Fisica_10_11.xlsx",
+      "fuente_hoja": "Física 10.°",
+      "fuente_fila": 4,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        null,
+        "Análisis de datos y modelos",
+        "Gráficas de dispersión\n Linealización\n Ajuste lineal: pendiente e intercepto\n Modelo de partícula\n Idealizaciones: superficie sin fricción\n Límites de validez",
+        "1.2. Linealización de datos experimentales, interpretación física de la pendiente y el intercepto, y evaluación de los límites de validez de modelos idealizados.",
+        null,
+        null,
+        "2. Construir y evaluar diseños para la indagación científica e interpretar datos y evidencia de forma crítica",
+        "E1 · Recuerda de 8.° el significado de la pendiente en una gráfica y lo relaciona con la proporcionalidad directa.",
+        "E3 · Predice la forma de la gráfica de iluminancia contra distancia a una lámpara y justifica por qué no espera una recta.",
+        "E2 · Transforma los datos de iluminancia contra distancia en una gráfica de iluminancia contra 1/d² para obtener una relación lineal.",
+        "D4 · Interpreta la pendiente del ajuste como una medida de la intensidad de la fuente y el intercepto como la luz ambiental del aula.",
+        "E6 · Explica cómo el análisis de la iluminancia ayuda a planificar el alumbrado público eficiente en un municipio salvadoreño.",
+        "Colaboración (Explicar)\n Distribuye en el equipo las tareas de medir, registrar, graficar y verificar, y rota los roles en cada serie de datos.",
+        "Aplicar: construir gráficas y calcular pendientes; comparar predicciones con datos. Razonar: interpretar parámetros del ajuste; evaluar modelos",
+        "Gráfica linealizada I contra 1/d² con ecuación de ajuste, R² e interpretación escrita de pendiente e intercepto",
+        null,
+        "1.2.\n • Linealiza una relación no lineal entre dos magnitudes e interpreta el significado físico de la pendiente y del intercepto de la recta de ajuste.\n • Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido.",
+        null,
+        "1.3 Gestión de la información – Básico\nCon la IA (DigComp 3.0, nivel real): CS1.2.10 – Intermedio: reconoce que la IA puede dar respuestas equivocadas que parecen ciertas y que quien la usa debe verificarlas.",
+        "Organizar en una hoja de cálculo las mediciones del luxómetro de phyphox, calcular 1/d² y obtener la línea de tendencia con su ecuación y R².\nIA (Reforzar · el estudiante, solo o en pareja).\nHerramienta y medio: Gemini (gemini.google.com) con tu cuenta institucional, en el celular, la tableta o la computadora del CRA. Sin internet: usa la respuesta de IA impresa en tu ficha.\nActividad: Mide el período T de tu péndulo con cinco longitudes L (10 oscilaciones cada vez). Grafica T² contra L, traza la recta y calcula a mano la pendiente y el intercepto. Luego pega solo tu tabla en la IA y pídele «Calcula la pendiente y el intercepto por mínimos cuadrados y muestra cada paso con unidades». Revisa cada operación: ¿usó T o T²? ¿puso unidades? Con tu pendiente calcula g.\nEvidencia: Ficha «Yo pienso · La IA dice · Lo comprobé»: tu gráfica, pendiente e intercepto con unidades; el cálculo rotulado «Respuesta de IA»; el error que encontraste (si hubo) y tu valor de g comparado con el simulador, con ✔ o ✘ para la IA. Línea en tu registro de uso de IA.\nRefuerza con: PhET «Lab de péndulo» (https://phet.colorado.edu/sims/html/pendulum-lab/latest/pendulum-lab_es.html)\n→ PISA E6 · TIMSS Aplicar",
+        "Respeto al medio ambiente, entorno y territorio\n Propone una medida de ahorro de energía en la iluminación del aula a partir de la relación entre distancia e iluminancia.",
+        null,
+        "Nuevo (propuesta)"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G10-FIS-U1-1.4",
+          "destino": "PRAC:evaluar-modelos-y-limitaciones",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "alta",
+          "justificacion": "Linealización, pendiente e intercepto; límites de validez de modelos idealizados.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G10-FIS-U1-1.4",
+          "destino": "PRAC:interpretar-datos-y-concluir",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "alta",
+          "justificacion": "Linealización, pendiente e intercepto; límites de validez de modelos idealizados.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G10-QUI-U1-1.1",
+      "grado_atributo": 10,
+      "etiqueta": "1.1. Análisis de la química como ciencia central que conecta las ciencias físicas, las ciencias de la vida y las ciencias aplicadas.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Bachillerato_Quimica_10_11.xlsx",
+      "fuente_hoja": "Química 10.°",
+      "fuente_fila": 3,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        "U1 - Eje integrador: sistemas",
+        "1. La química como ciencia: ciclo de indagación",
+        "La química y su método",
+        "1.0",
+        "Objeto de estudio de la química\nLa química como ciencia central",
+        "1.1. Análisis de la química como ciencia central que conecta las ciencias físicas, las ciencias de la vida y las ciencias aplicadas.",
+        "Planifica y ejecuta una investigación de laboratorio en química, registra mediciones con el número correcto de cifras significativas y evalúa la exactitud y la precisión de sus resultados. Selecciona y justifica el método de separación adecuado para caracterizar una mezcla a partir de las propiedades de sus componentes.",
+        "Rigor y honestidad en el registro y el redondeo de datos experimentales. Responsabilidad con la seguridad en el laboratorio y con la disposición correcta de los residuos químicos.",
+        "1. Explicar fenómenos científicamente",
+        "E1 · Recuerda procesos del entorno salvadoreño, como el beneficiado del café, la producción de azúcar de caña o la potabilización del agua, e identifica la química presente en ellos.",
+        "E5 · Plantea una hipótesis explicativa sobre por qué la química se considera una «ciencia central» entre la física y la biología.",
+        "E2 · Construye un diagrama de red que ubica la química en el centro y la conecta con la física, la biología, la geología, la medicina y la agronomía mediante ejemplos concretos.",
+        "I1 · Busca en fuentes confiables un caso de investigación salvadoreña, como el análisis del agua del río Lempa, que requiera la colaboración de varias disciplinas.",
+        "E6 · Argumenta por qué una persona que no será química necesita comprender conceptos químicos para tomar decisiones sobre salud y ambiente.",
+        "Comunicación (Aproximar)\nPresenta a la clase en dos minutos un proceso salvadoreño elegido y explica con vocabulario químico qué transformación de la materia ocurre en él.",
+        "Conocer: describir la relación de la química con la física, la biología, la medicina y la ingeniería",
+        "Diagrama de red de la química como ciencia central con cinco ejemplos salvadoreños justificados",
+        "INDAGACIÓN: Aplicar el método científico a problemas químicos del entorno, midiendo con exactitud y precisión y expresando los resultados con notación científica y cifras significativas, para caracterizar la materia y separar sus componentes.",
+        "1.1. Explica con ejemplos del entorno cómo la química se relaciona con la física, la biología, la medicina y la ingeniería.",
+        "La química estudia la composición, la estructura y las transformaciones de la materia mediante un ciclo de indagación que exige mediciones cuidadosas y la comunicación honesta de su incertidumbre. Este conocimiento sustenta la producción de alimentos, medicamentos y materiales, así como el control de la calidad del agua y del aire que respira la población.",
+        "1.1 Navegación, búsqueda y filtrado de información – Básico\nCon la IA (DigComp 3.0, nivel real): CS1.2.13 – Intermedio: valora qué tan confiable es una fuente, teniendo en cuenta el papel de la IA.",
+        "Buscar con operadores y filtros de dominio artículos de universidades salvadoreñas sobre investigación química aplicada y seleccionar los más pertinentes.\nIA (Reforzar · el estudiante, solo o en pareja).\nHerramienta y medio: cuaderno de la unidad en NotebookLM (notebooklm.google.com), que abres con tu cuenta institucional desde el enlace de tu ficha; responde solo con las fuentes cargadas y cita de dónde sale cada idea. Sin internet: usa el resumen impreso de tu ficha.\nActividad: Dibuja primero una red con la química al centro conectada con física, biología, geología y medicina, usando un proceso salvadoreño: beneficiado del café, azúcar de caña o potabilización del agua. Luego pregúntale al cuaderno de NotebookLM: «¿Qué ciencias intervienen en la potabilización del agua según estas fuentes?». Compara con tu red y revisa en la cita cada conexión nueva antes de agregarla.\nEvidencia: Ficha «Yo pienso · La IA dice · Lo comprobé»: tu red dibujada; la «Respuesta de IA» rotulada con las fuentes que citó; en «Lo comprobé» marca ✔ o ✘ cada conexión según lo que dice la fuente. Una línea en tu registro de uso de IA.\nRefuerza con: ANDA (https://www.anda.gob.sv)\n→ PISA E6 · TIMSS Aplicar",
+        "Uso ético de la información\nRegistra la referencia completa de cada artículo consultado y distingue sus propias ideas de las tomadas de las fuentes.\n↳ Se trabaja en la actividad digital (DigComp 1.1).",
+        "Las unidades de medida, su definición, simbología, prefijos, reglas de escritura y el manejo de cifras a emplear, son las estandarizadas por el Sistema Internacional (SI), de acuerdo con el Reglamento Técnico Salvadoreño (RTS) 01.02.01:18 o su actualización. En los valores numéricos se empleará el punto como separador decimal. Los números con muchas cifras se repartirán en grupos de tres cifras, separadas por un espacio. No se emplearán comas. Todos los estándares para la denominación, nomenclatura, escritura y representación de elementos, compuestos e iones deberán ser compatibles con las disposiciones de la Unión Internacional de Química Pura y Aplicada (IUPAC); los símbolos de los elementos se escriben con inicial mayúscula y sin punto, y el número de masa y el número atómico se anotan como superíndice y subíndice a la izquierda del símbolo. Simbología utilizada para la representación de magnitudes de interés en la unidad: m: masa, en kilogramos, kg (en el laboratorio, en gramos, g). V: volumen, en metros cúbicos, m³ (en el laboratorio, en mililitros, mL, o centímetros cúbicos, cm³). ρ: densidad, en kilogramos por metro cúbico, kg/m³ (en el laboratorio, g/mL o g/cm³). Rf: factor de retención en cromatografía, adimensional. Er: error relativo, expresado en porcentaje, %. Los números muy grandes o muy pequeños se expresan en notación científica, a × 10ⁿ, con 1 ≤ a < 10.",
+        "Nuevo (planeador)\nPlaneador Química I · 1.1"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G10-QUI-U1-1.1",
+          "destino": "PRAC:ciencia-como-empresa-colectiva",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "baja",
+          "justificacion": "Interdisciplinariedad de la química; sin concepto químico específico en vocabulario",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G10-QUI-U1-1.10",
+      "grado_atributo": 10,
+      "etiqueta": "1.5. Aplicación de una técnica sistemática para resolver problemas químicos cuantitativos.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Bachillerato_Quimica_10_11.xlsx",
+      "fuente_hoja": "Química 10.°",
+      "fuente_fila": 7,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "1. La química como ciencia: ciclo de indagación",
+        "La medición en el laboratorio químico",
+        "5.0",
+        "Análisis del problema\nPlan de resolución y factores de conversión\nVerificación del resultado",
+        "1.5. Aplicación de una técnica sistemática para resolver problemas químicos cuantitativos.",
+        null,
+        null,
+        "3. Investigar, evaluar y usar información científica para tomar decisiones y actuar",
+        "E1 · Recuerda los pasos que siguió en 8.° para resolver problemas de concentración y reconoce dónde cometía errores con más frecuencia.",
+        "D1 · Pregunta guía: «¿Cómo sé si el resultado de un problema químico es razonable antes de entregarlo?».",
+        "E2 · Transforma el enunciado de un problema en un esquema de datos, incógnita, relaciones y factores de conversión.",
+        "I3 · Argumenta con el análisis de unidades y del orden de magnitud por qué una solución propuesta es correcta o incorrecta.",
+        "I4 · Identifica errores de razonamiento en soluciones resueltas incorrectamente y explica cómo corregirlos.",
+        "Colaboración (Reforzar)\nResuelve en pareja problemas con la técnica de «uno explica y otro verifica», alternando los papeles en cada problema.",
+        "Aplicar: planificar y calcular. Razonar: verificar la razonabilidad del resultado",
+        "Portafolio de cinco problemas resueltos con esquema de análisis, cálculo y verificación escrita",
+        null,
+        "1.10. Resuelve problemas químicos cuantitativos siguiendo una estrategia de análisis, planificación, cálculo y verificación de la razonabilidad del resultado.",
+        null,
+        "5.4 Identificación y atención de necesidades de competencia digital – Básico\nCon la IA (DigComp 3.0, nivel real): CS1.2.10 – Intermedio: reconoce que la IA puede dar respuestas equivocadas que parecen ciertas y que quien la usa debe verificarlas.",
+        "Identificar qué herramienta digital le falta dominar para resolver problemas, como el editor de ecuaciones, y practicarla con un tutorial.\nIA (Reforzar · el estudiante, solo o en pareja).\nHerramienta y medio: Gemini (gemini.google.com) con tu cuenta institucional, en el celular, la tableta o la computadora del CRA. Sin internet: usa la respuesta de IA impresa en tu ficha.\nActividad: Mide con un balde cuánta agua usa tu casa en un día para una tarea (lavar trastes, por ejemplo) y calcula cuántos metros cúbicos serían en un mes, como en el recibo de ANDA. Usa el método análisis, plan con factores de conversión, cálculo y verificación. Después pide a la IA que resuelva el mismo problema con tus datos. Marca el primer paso donde difieran y decide con análisis dimensional quién tiene razón.\nEvidencia: Problema resuelto con las cuatro etapas; al lado la «Respuesta de IA» con los factores subrayados y ✔/✘ en cada uno según el análisis dimensional. Una línea en tu registro de uso de IA.\nRefuerza con: ANDA (https://www.anda.gob.sv)\n→ PISA I4 · TIMSS Aplicar",
+        "Convivir\nOfrece ayuda respetuosa a su pareja cuando detecta un error y acepta las correcciones sin descalificar.",
+        null,
+        "Nuevo (planeador)\nPlaneador Química I · 1.11"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G10-QUI-U1-1.10",
+          "destino": "PRAC:usar-matematicas-en-ciencias",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "media",
+          "justificacion": "Estrategia general de cálculo; no enseña un concepto químico concreto",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G10-QUI-U1-1.6",
+      "grado_atributo": 10,
+      "etiqueta": "1.2. Aplicación de las etapas del método científico a una investigación química sencilla con materiales seguros.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Bachillerato_Quimica_10_11.xlsx",
+      "fuente_hoja": "Química 10.°",
+      "fuente_fila": 4,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "1. La química como ciencia: ciclo de indagación",
+        "El método científico en química",
+        "2.0",
+        "Observación, pregunta e hipótesis\nExperimentación y control de variables\nConclusión y comunicación",
+        "1.2. Aplicación de las etapas del método científico a una investigación química sencilla con materiales seguros.",
+        null,
+        null,
+        "2. Construir y evaluar diseños para la indagación científica e interpretar datos y evidencia de forma crítica",
+        "E1 · Recuerda lo que hizo en grados anteriores para presentar resultados con error de medida y lo relaciona con las etapas del método científico.",
+        "D1 · Pregunta guía: «¿Influye la temperatura del agua en el tiempo que tarda en disolverse una tableta efervescente?».",
+        "E1 · Describe la función de cada etapa del método científico y diferencia variable independiente, dependiente y controlada.",
+        "D2 · Propone un diseño experimental con tres temperaturas del agua, repeticiones y control de la masa de la tableta; el agua caliente la prepara la docente.",
+        "D3 · Evalúa el diseño de otro equipo e identifica fuentes de error y mejoras posibles en el control de variables.",
+        "Colaboración (Indagar)\nDistribuye en el equipo los roles de cronometrista, registrador y experimentador y rota los roles en cada repetición.",
+        "Aplicar: controlar variables y medir. Razonar: contrastar hipótesis con datos",
+        "Informe de laboratorio con hipótesis, diseño, tabla de tiempos, gráfica y conclusión",
+        null,
+        "1.6. Diseña y ejecuta una investigación química sencilla en la que controla variables y contrasta su hipótesis con los resultados.",
+        null,
+        "3.1 Desarrollo de contenidos digitales – Básico\nCon la IA (DigComp 3.0, nivel real): CS2.1.10 – Intermedio: formula y mejora instrucciones (prompts) para un asistente de IA.",
+        "Elaborar el informe de laboratorio en un procesador de textos con tabla, gráfica insertada y formato de secciones del método científico.\nIA (Indagar · el estudiante, solo o en pareja).\nHerramienta y medio: Gemini (gemini.google.com) con tu cuenta institucional, en el celular, la tableta o la computadora del CRA. Sin internet: usa la respuesta de IA impresa en tu ficha.\nActividad: Diseña tú una investigación: «¿La temperatura del agua cambia el tiempo que tarda en disolverse una pastilla efervescente?». Escribe hipótesis, variables independiente, dependiente y controladas, y procedimiento con agua fría, ambiente y tibia del grifo. Después pega solo tu diseño y pide a la IA: «Revisa este diseño experimental y dime qué variable no estoy controlando». Hazlo con 3 repeticiones y decide tú si su sugerencia mejoró tus datos.\nEvidencia: Informe breve con hipótesis, tabla de tiempos y conclusión; la sugerencia rotulada «Respuesta de IA» y la declaración «Así usé la IA: … · Lo que revisé yo: …». Una línea en tu registro de uso de IA.\n→ PISA D2 · TIMSS Razonar",
+        "Respeto al medio ambiente, entorno y territorio\nDispone las disoluciones usadas en el recipiente de residuos indicado por la docente y no las vierte al desagüe.",
+        null,
+        "Nuevo (planeador)\nPlaneador Química I · 1.6"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G10-QUI-U1-1.6",
+          "destino": "PRAC:controlar-variables",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "media",
+          "justificacion": "Diseño de investigación con control de variables e hipótesis",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G10-QUI-U1-1.6",
+          "destino": "PRAC:planificar-investigaciones",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "media",
+          "justificacion": "Diseño de investigación con control de variables e hipótesis",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G10-QUI-U9-9.4",
+      "grado_atributo": 10,
+      "etiqueta": "9.4. Análisis de pictogramas SGA y fichas de datos de seguridad para planificar el manejo y la disposición de residuos de las reacciones escolares.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Bachillerato_Quimica_10_11.xlsx",
+      "fuente_hoja": "Química 10.°",
+      "fuente_fila": 57,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "9. Reacciones químicas",
+        "Seguridad en el laboratorio de química",
+        "55.0",
+        "Pictogramas SGA\nFichas de datos de seguridad\nDisposición de residuos",
+        "9.4. Análisis de pictogramas SGA y fichas de datos de seguridad para planificar el manejo y la disposición de residuos de las reacciones escolares.",
+        null,
+        null,
+        "3. Investigar, evaluar y usar información científica para tomar decisiones y actuar",
+        "E6 · Reflexiona sobre las consecuencias de verter residuos químicos al desagüe o al suelo para ríos como el Acelhuate y los mantos acuíferos.",
+        "D1 · Pregunta guía: «¿Qué información de una etiqueta y de una ficha de seguridad necesitamos antes de manipular un reactivo?».",
+        "E2 · Interpreta los nueve pictogramas del Sistema Globalmente Armonizado (SGA) y las secciones clave de una ficha de datos de seguridad.",
+        "I1 · Busca y evalúa fichas de datos de seguridad oficiales de los reactivos usados en la unidad y extrae peligros, equipo de protección y disposición.",
+        "I5 · Justifica la decisión de neutralizar, recolectar o entregar a la docente cada residuo generado, nunca vertiéndolo al desagüe ni al suelo.",
+        "Creatividad (Reforzar)\nDiseña un cartel de señalización para el laboratorio que comunique con pictogramas y rutas de residuos las reglas de la práctica.",
+        "Conocer: reconocer pictogramas. Aplicar: interpretar fichas de seguridad. Razonar: decidir la disposición de residuos",
+        "Protocolo de seguridad y matriz de residuos de una práctica con pictogramas SGA y equipo de protección",
+        null,
+        "9.4. Elabora un protocolo de seguridad para una práctica de reacciones químicas que identifica peligros con pictogramas SGA y define la disposición correcta de cada residuo.",
+        null,
+        "4.4 Protección del medio ambiente – Básico\nDigComp 3.0 cambió el nombre de la 4.4: «Impacto ambiental de las tecnologías digitales» (Environmental impacts of digital technologies).\nCon la IA (DigComp 3.0, nivel real): CS1.2.10 – Intermedio: reconoce que la IA puede dar respuestas equivocadas que parecen ciertas y que quien la usa debe verificarlas.",
+        "Investigar cómo se disponen los residuos químicos y electrónicos del laboratorio escolar y proponer una ruta de gestión que reduzca el impacto ambiental.\nIA (Indagar · el estudiante, solo o en pareja).\nHerramienta y medio: Teachable Machine (teachablemachine.withgoogle.com) en la computadora del CRA con Chrome; entrenas un modelo con fotos o sonidos de objetos, nunca de personas ni voces de compañeros. Sin internet: usa los resultados de ejemplo de tu ficha.\nActividad: Fotografía, sin abrirlos ni moverlos, las etiquetas de productos de limpieza de tu casa y dibuja los 9 pictogramas SGA. Escribe qué peligro indica cada uno. Entrena Teachable Machine para reconocer 3 pictogramas y pruébalo con fotos nuevas. Si falla, ¿qué pasaría en un laboratorio? Escribe por qué nunca se mezclan productos de limpieza y por qué ninguna IA debe decidir qué mezclar.\nEvidencia: Tabla «Pictograma · Peligro · Modelo (hecho con IA) · ✔/✘» y un párrafo sobre los riesgos de confiar la seguridad a una IA. Una línea en tu registro de uso de IA.\n→ PISA I1 · TIMSS Razonar",
+        "Respeto al medio ambiente, entorno y territorio\nClasifica y rotula los residuos de la práctica para su gestión responsable y evita cualquier vertido al desagüe o al suelo.\n↳ Se trabaja en la actividad digital (DigComp 4.4).",
+        null,
+        "Nuevo (propuesta)"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G10-QUI-U9-9.4",
+          "destino": "PRAC:trabajar-con-seguridad-y-etica",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "media",
+          "justificacion": "Protocolo de seguridad con pictogramas SGA y residuos",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G06-CIE-U6-6.9",
+      "grado_atributo": 6,
+      "etiqueta": "6.7. Práctica con técnicas de propagación vegetal asexual.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Ciencias_6to_Grado_U1_U6 V2.xlsx",
+      "fuente_hoja": "Unidad 6 - Biología del desarro",
+      "fuente_fila": 9,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "6. Biología del desarrollo.",
+        "Desarrollo Vegetal.",
+        "Planos de division y desarrollo de forma",
+        "6.7. Práctica con técnicas de propagación vegetal asexual.",
+        null,
+        null,
+        "3. Investigar, evaluar y usar información científica para tomar decisiones y actuar",
+        "I2 · Analiza la creencia «los esquejes solo prenden si se siembran en luna llena» y piensa cómo comprobarla.",
+        "E3 · Predice qué técnica de propagación prenderá mejor y justifica.",
+        "E1 · Reconoce esquejes, acodos e injertos como técnicas de propagación asexual.",
+        "D2 · Practica las técnicas y registra semanalmente el prendimiento.",
+        "I3 · Argumenta con sus datos qué técnica recomendaría para el huerto escolar.",
+        "Creatividad (Reforzar)\nPropone una combinación de técnicas para el huerto.",
+        "Conocer: reconocer técnicas de propagación asexual. Aplicar: practicar las técnicas. Razonar: evaluar resultados y argumentar.",
+        "Registro semanal del prendimiento",
+        null,
+        "6.9. Ejemplifica las principales técnicas de propagación vegetal asexual.",
+        null,
+        "1.3 Gestión de la información – Básico",
+        "Fotografiar semanalmente los esquejes.",
+        "Respeto al medio ambiente, entorno y territorio\nSiembra las plantas obtenidas en el huerto.",
+        null,
+        "Oficial"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G06-CIE-U6-6.9",
+          "destino": "CON:biologia/biotecnologia-vegetal",
+          "tipo": "TRABAJA",
+          "rol": "secundario",
+          "confianza": "media",
+          "justificacion": "Técnicas de propagación asexual de plantas.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G06-CIE-U6-6.9",
+          "destino": "CON:biologia/reproduccion-sexual-y-asexual",
+          "tipo": "TRABAJA",
+          "rol": "principal",
+          "confianza": "media",
+          "justificacion": "Técnicas de propagación asexual de plantas.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G09-CIE-U9-9.2-v3",
+      "grado_atributo": 9,
+      "etiqueta": "9.2. Diseño de un procedimiento para el mejoramiento genético de organismos.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Ciencias_9no_Grado_U1_U12 - V2.xlsx",
+      "fuente_hoja": "Unidad 9. Genética y evolución",
+      "fuente_fila": 4,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "9. Genética y biotecnología",
+        "Mecanismos de evolución",
+        "Mejoramiento genético",
+        "9.2. Diseño de un procedimiento para el mejoramiento genético de organismos.",
+        null,
+        null,
+        "2. Construir y evaluar diseños para la indagación científica e interpretar datos y evidencia de forma crítica",
+        "E6 · Observa semillas de frijol mejoradas por el CENTA para resistir la sequía en el Corredor Seco.",
+        "D1 · Formula la pregunta: «¿Cómo obtendríamos un frijol que resista mejor la sequía?».",
+        "E1 · Distingue el conocimiento científico de la herencia de la técnica de mejoramiento que lo aplica.",
+        "D2 · Diseña un procedimiento hipotético de selección y cruce durante varias generaciones.",
+        "I5 · Justifica ventajas y riesgos de su procedimiento frente a conservar las semillas criollas.",
+        "Epistémico · EP2 Propósito de la ciencia (explicar y predecir) frente al de la tecnología (soluciones óptimas): distingue la genética, que explica la herencia, del mejoramiento, que busca la mejor variedad para una necesidad",
+        "Local/nacional · Recursos naturales: las variedades de frijol tolerantes a la sequía desarrolladas por el CENTA para el Corredor Seco",
+        "Creatividad (Indagar)\nDiseña su propio procedimiento hipotético de mejoramiento.",
+        "Conocer: distinguir ciencia y técnica en el mejoramiento. Razonar: diseñar un procedimiento y justificarlo",
+        "Procedimiento hipotético de mejoramiento",
+        null,
+        "2.17. Diseña un procedimiento para el hipotético mejoramiento genético de un organismo.",
+        null,
+        "1.1 Navegación, búsqueda y filtrado de información – Básico",
+        "Consultar información del CENTA.",
+        "Respeto al medio ambiente, entorno y territorio\nValora las semillas criollas.",
+        null,
+        "Oficial"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G09-CIE-U9-9.2-v3",
+          "destino": "CON:biologia/biotecnologia-vegetal",
+          "tipo": "TRABAJA",
+          "rol": "secundario",
+          "confianza": "media",
+          "justificacion": "Diseña un procedimiento hipotético de mejoramiento genético de un organismo.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G09-CIE-U9-9.2-v3",
+          "destino": "CON:biologia/seleccion-artificial",
+          "tipo": "TRABAJA",
+          "rol": "principal",
+          "confianza": "media",
+          "justificacion": "Diseña un procedimiento hipotético de mejoramiento genético de un organismo.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G09-CIE-U9-9.2-v3",
+          "destino": "PRAC:disenar-y-evaluar-soluciones",
+          "tipo": "TRABAJA",
+          "rol": "practica",
+          "confianza": "media",
+          "justificacion": "Diseña un procedimiento hipotético de mejoramiento genético de un organismo.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G05-CIE-U2-2.15",
+      "grado_atributo": 5,
+      "etiqueta": "2.15. Experimentación con transformaciones energéticas en un sistema mecánico.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Ciencias_5to_Grado_U1_U6 V2.xlsx",
+      "fuente_hoja": "Unidad 2 - Mecánica",
+      "fuente_fila": 17,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "2. Mecánica.",
+        "Energía mecánica.",
+        "Principio de Conservación de la energía mecánica",
+        "2.15. Experimentación con transformaciones energéticas en un sistema mecánico.",
+        null,
+        null,
+        "1. Explicar fenómenos científicamente",
+        "E1 · Observa un péndulo hecho con hilo y tuerca, y una pelota que rebota cada vez más bajo.",
+        "D1 · Plantea la pregunta «¿Qué pasa con la energía mientras el péndulo oscila?».",
+        "E4 · Representa con diagramas de barras la energía cinética y potencial en tres puntos del péndulo.",
+        "D4 · Registra cómo baja la altura del péndulo con el tiempo y la relaciona con la fricción del aire.",
+        "I4 · Critica el anuncio de un «péndulo que se mueve para siempre» usando la conservación de la energía.",
+        "Comunicación (Explicar)\nExplica las transformaciones de energía con diagramas de barras.",
+        "Conocer: describir las transformaciones entre energía cinética y potencial. Razonar: explicar con el modelo de barras por qué el péndulo pierde altura.",
+        "Diagrama de barras de energía en tres puntos del péndulo",
+        null,
+        "2.15. Identifica las transformaciones de energía a través de experimentos.",
+        null,
+        "5.3 Identificación de soluciones creativas con tecnologías digitales – Básico",
+        "Usar un simulador de energía en la pista de patinaje (por ejemplo, PhET) para comprobar sus predicciones.",
+        "Convivir\nComparte el simulador y ayuda a otros a usarlo.",
+        null,
+        "Oficial"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G05-CIE-U2-2.15",
+          "destino": "CON:fisica/conservacion-energia-mecanica",
+          "tipo": "TRABAJA",
+          "rol": "secundario",
+          "confianza": "media",
+          "justificacion": "Transformaciones energéticas en un sistema mecánico experimental.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        },
+        {
+          "origen": "TEMA:G05-CIE-U2-2.15",
+          "destino": "CON:fisica/transformaciones-energia",
+          "tipo": "TRABAJA",
+          "rol": "principal",
+          "confianza": "media",
+          "justificacion": "Transformaciones energéticas en un sistema mecánico experimental.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    },
+    {
+      "tema_id": "TEMA:G08-CIE-U2-2.7",
+      "grado_atributo": 8,
+      "etiqueta": "2.7. Experimentación con la ley de conservación de la energía mecánica.",
+      "fuente_archivo": "data/fuentes/mined/Mallas sugeridas v3/Matriz_Ciencias_8vo_Grado_U1_U10 V2.xlsx",
+      "fuente_hoja": "Unidad 2 - Energía",
+      "fuente_fila": 9,
+      "etiqueta_literal_en_fila": true,
+      "fila_original": [
+        null,
+        "2. Energía",
+        "Principio de conservacion de la energía mecánica",
+        "Energía mecánica total",
+        "2.7. Experimentación con la ley de conservación de la energía mecánica.",
+        null,
+        null,
+        "3. Investigar, evaluar y usar información científica para tomar decisiones y actuar",
+        "I2 · Analiza un video viral que presenta una «máquina de movimiento perpetuo» que supuestamente nunca se detiene.",
+        "E3 · Predice la altura de cada rebote de una pelota usando el modelo de conservación de la energía mecánica.",
+        "E1 · Reconoce la ley de conservación de la energía mecánica y las condiciones ideales en que se cumple.",
+        "D4 · Mide alturas sucesivas de rebote y calcula cuánta energía mecánica se pierde en cada uno.",
+        "I4 · Critica la afirmación del video explicando los límites del modelo ideal sin fricción.",
+        "Epistémico · EP7 Cómo las limitaciones de un modelo restringen su uso: compara las predicciones del modelo ideal sin fricción con sus datos de rebote y reconoce que el modelo solo sirve cuando las pérdidas son pequeñas.",
+        "Global · Avances y desafíos científicos y tecnológicos: los videos virales de supuestas máquinas de movimiento perpetuo que circulan en internet",
+        "Pensamiento crítico (Indagar)\nExplica por qué la energía mecánica no se conserva del todo.",
+        "Aplicar: medir alturas y calcular pérdidas de energía. Razonar: evaluar los límites del modelo y criticar una afirmación.",
+        "Registro de alturas de rebote con pérdidas calculadas y crítica argumentada a un video de movimiento perpetuo",
+        null,
+        "2.7. Explica la ley de conservación de la energía mecánica a partir de un experimento.",
+        null,
+        "5.3 Identificación de soluciones creativas con tecnologías digitales – Básico",
+        "Usar el simulador «Energía en la pista de patinaje» (PhET).",
+        "Convivir\nComparte el simulador.",
+        null,
+        "Oficial"
+      ],
+      "trabaja": [
+        {
+          "origen": "TEMA:G08-CIE-U2-2.7",
+          "destino": "CON:fisica/conservacion-energia-mecanica",
+          "tipo": "TRABAJA",
+          "rol": "principal",
+          "confianza": "alta",
+          "justificacion": "Conservación de la energía mecánica a partir de un experimento.",
+          "version": "etiquetado-v1",
+          "metodo": "ia",
+          "props": {}
+        }
+      ]
+    }
+  ],
+  "hallazgos": [
+    {
+      "prioridad": 1,
+      "id": "criterios_sin_enlace_semantico",
+      "hecho": "920 secuencias enlazan por tema_id, pero sus 2760 criterios son textos sin ids ni relación explicita con conceptos, prácticas, prerrequisitos o sondeos. El consumidor adjunta secuencia y paquete; no convierte esos criterios en evidencias del tutor.",
+      "codigo": [
+        "src/goes_science_kg/secuencias_ia.py:79",
+        "src/goes_science_kg/motor/consumidor.py:130",
+        "src/goes_science_kg/aprendizaje/diagnostico.py:47"
+      ],
+      "accion_minima": "Crear capa derivada fuera de 0.1.0/0.2.0 que una secuencia.tema_id a TRABAJA por identidad exacta y copie rol/confianza/fuente. Mantener los criterios con identificador estable, campo de enlace vacío y estado pendiente hasta revisión semántica; no heredar automáticamente todos los conceptos de un tema a cada criterio."
+    },
+    {
+      "prioridad": 1,
+      "id": "sin_banco_de_diagnostico_general",
+      "hecho": "705 actividades de objetivo frente a solo56 sondeos y33 microtemas. G02,G04,G06,G08 no tienen actividades propias. Las secuencias no son todavía banco de ítems diagnosticables.",
+      "codigo": [
+        "src/goes_science_kg/aprendizaje/diagnostico.py:101",
+        "src/goes_science_kg/aprendizaje/planificador.py:67"
+      ],
+      "accion_minima": "Priorizar por grado bases directas con confianza media/alta, sondeo ausente y necesidad curricular; redactar sondeo, práctica y comprobación distintas con evalua explícito y revisión separada. No declarar brecha cuando falte sondeo."
+    },
+    {
+      "prioridad": 1,
+      "id": "biotecnologia_vegetal_falso_positivo",
+      "hecho": "G06-CIE-U6-6.9,grado6,hoja Unidad6fila9 enseña propagación asexual. Su TRABAJA secundario medio a biotecnologia-vegetal fija SV6 e introduce como tardía ingeniería genética de11. El candidato de refuerzo existente ya dice que esa propagación no es biotecnología y sitúa entrada9; el grafo principal conserva la etiqueta.",
+      "fuentes": [
+        "data/interim/refuerzo_v3/candidatos.json#REF:contraste:2_8:CON:biologia/biotecnologia-vegetal",
+        "data/grafo/nodos.jsonl#TEMA:G06-CIE-U6-6.9",
+        "data/grafo/aristas.jsonl"
+      ],
+      "accion_minima": "Abrir discrepancia de etiquetado en capa de revisión y evaluar retiro de esa etiqueta secundaria con la fila y el dictamen. Recalcular en simulación el primer grado y los anclajes antes de proponer mover contenido. No modificar el grafo en esta auditoría.",
+      "codigo": []
+    },
+    {
+      "prioridad": 2,
+      "id": "seis_temas_practicas_sin_bases",
+      "hecho": "Seis temas de10 tienen prácticas y ningún concepto principal. Son indagación, análisis de datos, rol de la química, resolución cuantitativa y seguridad. No son temas desconectados; Navegador.bases solo recorre Concepto principal, por lo que no da bases para esas habilidades.",
+      "codigo": [
+        "src/goes_science_kg/aprendizaje/relaciones.py:157",
+        "src/goes_science_kg/modelos.py"
+      ],
+      "accion_minima": "Admitir objetivos de refuerzo de tipo Practica y actividades evalua PRAC en una capa nueva con contrato y revisión explícitos; mientras tanto reportar soporte de bases no implementado para esas seis secuencias, sin inventar Concepto."
+    },
+    {
+      "prioridad": 2,
+      "id": "energia_granularidad",
+      "hecho": "La fuente y TRABAJA reconocen conservación de energía mecánica en5 y8. Conservación de la energía general es otro Concepto con primer grado10, ligado por PRERREQUISITO_DE desde conservación mecánica. La advertencia histórica de spec13 no demuestra por sí sola un hueco actual de etiquetado mecánico.",
+      "fuentes": [
+        "data/grafo/nodos.jsonl#CON:fisica/conservacion-energia-mecanica",
+        "data/grafo/nodos.jsonl#CON:fisica/conservacion-energia",
+        "specs/13_apoyo_al_aprendizaje.md"
+      ],
+      "accion_minima": "Conservar la distinción y revisar criterios de generalización contra sus textos; no fusionar ambos conceptos ni convertir el grado10 del concepto general en ausencia de energía mecánica en primaria.",
+      "codigo": []
+    },
+    {
+      "prioridad": 2,
+      "id": "prerrequisitos_solo_propuestos",
+      "hecho": "822 relaciones propuestas por IA,454alta361media7baja,ninguna con revisado_por.152 apariciones de anclajes ausentes o posteriores entre grados son señales del grafo y pueden repetir una relación.",
+      "codigo": [
+        "src/goes_science_kg/prerrequisitos.py:80",
+        "src/goes_science_kg/grados.py:66",
+        "src/goes_science_kg/aprendizaje/diagnostico.py:109"
+      ],
+      "accion_minima": "Separar revisión del etiquetado y revisión de dependencia. Priorizar muestra de relaciones usadas en refuerzo real; mantener tipo_evidencia,confianza y evidencia, sin inferir causalidad desde orden internacional."
+    }
+  ],
+  "recomendacion_implementable_ahora": {
+    "producto": "Índice derivado de progreso y necesidades por grado, sin alterar entregas congeladas",
+    "filas_por_tema": [
+      "tema_id",
+      "grado_fuente",
+      "secuencia_id",
+      "estado_autoria_ia",
+      "conceptos_TRABAJA_con_rol_confianza",
+      "practicas_TRABAJA",
+      "bases_directas_propuestas_y_fuente",
+      "criterios_con_id_y_mapeo_pendiente",
+      "sondeos_disponibles",
+      "microtemas_con_practica_y_comprobacion",
+      "vacante_de_recurso",
+      "discrepancias_semanticas"
+    ],
+    "reglas": [
+      "Unir entidades existentes solo por ids exactos y atributos fuente.",
+      "Relacionar secuencia con conceptos mediante su tema no convierte cada criterio en evaluación de todos esos conceptos.",
+      "La ausencia estructural y la secuencia curricular nunca actualizan dominio estudiantil.",
+      "Una propuesta de progresión indica origen,destino,motivo,evidencia,presupuesto y estado de revisión; no sustituye la malla.",
+      "Validar primero discrepancias semánticas y después ordenar candidatos de progresión."
+    ],
+    "proyeccion_compuesta_sugerida": {
+      "nodos_nuevos": [
+        "Secuencia con identidad id conservada",
+        "Criterio con id derivado del id de secuencia y posición1a3"
+      ],
+      "relaciones_nuevas_sin_inferencia_semantica": [
+        "Secuencia→Tema por tema_id exacto",
+        "Secuencia→Criterio por posición en criterios_evaluacion"
+      ],
+      "relaciones_existentes_proyectables": [
+        "Tema→Concepto/Practica TRABAJA conservando rol/confianza/fuente",
+        "Concepto→Concepto PRERREQUISITO_DE conservando tipo_evidencia/confianza",
+        "Actividad→Tema sirve_a según objetivos",
+        "Actividad→Concepto/Tema evalua según evalua",
+        "Microtema→Concepto refuerza según concepto",
+        "Microtema→Actividad practica y comprobacion según ids"
+      ],
+      "no_inferir": [
+        "Criterio→Concepto evalua por similitud de texto",
+        "Practica→Concepto como sustituto automático para seis temas",
+        "Brecha de estudiante desde grado de primer tema",
+        "Propuesta de mover grado desde el único falso positivo de G06 biotecnologia"
+      ],
+      "discrepancia_biotecnologia": {
+        "estado": "pendiente_revision_semantica",
+        "tema_id": "TEMA:G06-CIE-U6-6.9",
+        "etiqueta_en_disputa": "CON:biologia/biotecnologia-vegetal",
+        "relacion_de_prerrequisito_afectada": [
+          "CON:biologia/ingenieria-genetica",
+          "CON:biologia/biotecnologia-vegetal"
+        ],
+        "accion": "Conservar ambas evidencias y marcar la ruta afectada; excluir este caso de recomendaciones firmes de anticipación curricular hasta decidir la etiqueta. No retirar ni agregar aristas de la base en la proyección."
+      }
+    }
+  }
+}

@@ -18,6 +18,49 @@ motor_app = typer.Typer(help="Contenido estructurado y consumidor de referencia 
 app.add_typer(motor_app, name="motor")
 secuencias_app = typer.Typer(help='Secuencias V3 con panel multiagente IA', no_args_is_help=True)
 app.add_typer(secuencias_app, name='secuencias')
+grafo_refuerzo_app = typer.Typer(help='Grafo compuesto y rutas de refuerzo de todos los grados', no_args_is_help=True)
+app.add_typer(grafo_refuerzo_app, name='grafo-refuerzo')
+
+
+@grafo_refuerzo_app.command('construir')
+def grafo_refuerzo_construir(destino: Annotated[Path | None, typer.Option()] = None,
+                            entrega: Annotated[Path | None, typer.Option()] = None) -> None:
+    from goes_science_kg.config import cargar
+    from goes_science_kg.grafo_refuerzo import exportar
+
+    cfg = cargar('grafo_refuerzo')
+    try:
+        p = exportar(destino or ruta(cfg['salida']), entrega or ruta(cfg['entrega']))
+        typer.echo(f'→ {p}')
+    except (ValueError, OSError) as e:
+        typer.echo(f'ERROR {e}', err=True)
+        raise typer.Exit(1) from e
+
+
+@grafo_refuerzo_app.command('validar')
+def grafo_refuerzo_validar(carpeta: Annotated[Path, typer.Argument()]) -> None:
+    from goes_science_kg.grafo_refuerzo import cargar
+
+    try:
+        datos = cargar(carpeta)
+        typer.echo(json.dumps(datos['resumen'], ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f'ERROR {e}', err=True)
+        raise typer.Exit(1) from e
+
+
+@grafo_refuerzo_app.command('consultar')
+def grafo_refuerzo_consultar(identificador: Annotated[str, typer.Argument(help='id de tema o alias exacto')],
+                            carpeta: Annotated[Path | None, typer.Option()] = None) -> None:
+    from goes_science_kg.config import cargar as cargar_config
+    from goes_science_kg.grafo_refuerzo import cargar, consultar
+
+    try:
+        p = carpeta or ruta(cargar_config('grafo_refuerzo')['salida'])
+        typer.echo(json.dumps(consultar(cargar(p), identificador), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f'ERROR {e}', err=True)
+        raise typer.Exit(1) from e
 
 
 @secuencias_app.command('preparar')

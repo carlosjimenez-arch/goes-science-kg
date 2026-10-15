@@ -99,8 +99,9 @@ Antes de publicar una versión inmutable se comprueba una candidata temporal. La
 `GSKG_ENTREGA_SECUENCIAS=/ruta/candidata` permite ejecutar la aceptación completa del motor contra esa
 carpeta; sin la variable, las pruebas usan `entregas/motor/0.2.0`. La candidata aprobada y la entrega publicada
 deben coincidir por bytes. El manifiesto registra el commit de partida y las huellas del código exportador.
-Al reproducir un corte después de otro commit, pasar `--commit-base` con el valor exacto de `commit_base`
-de su manifiesto y usar otro destino. Para cambiar contenido o revisiones, publicar una versión nueva:
+Al reproducir un corte, conservar sus insumos exactos, incluido el código, pasar `--commit-base` con el valor
+exacto de su manifiesto y usar otro destino. Ese argumento identifica el punto de partida; no restaura código
+histórico. Cambiar código, contenido o revisiones produce otra identidad y requiere una versión nueva:
 la exportación rechaza sustituir una entrega existente por otra identidad.
 
 ## Cómo continuar con los retenidos
