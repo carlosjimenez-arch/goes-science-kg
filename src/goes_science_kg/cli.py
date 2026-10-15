@@ -16,6 +16,41 @@ app.add_typer(grafo_app, name="grafo")
 
 motor_app = typer.Typer(help="Contenido estructurado y consumidor de referencia (spec 16)", no_args_is_help=True)
 app.add_typer(motor_app, name="motor")
+secuencias_app = typer.Typer(help='Secuencias V3 con panel multiagente IA', no_args_is_help=True)
+app.add_typer(secuencias_app, name='secuencias')
+
+
+@secuencias_app.command('preparar')
+def secuencias_preparar(etapa: str = typer.Option('ciencia')) -> None:
+    from goes_science_kg.secuencias_ia import preparar
+
+    try:
+        typer.echo(json.dumps(preparar(etapa), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f'ERROR {e}', err=True)
+        raise typer.Exit(1) from e
+
+
+@secuencias_app.command('validar-dictamenes')
+def secuencias_validar(etapa: str = typer.Option('ciencia'), completo: bool = typer.Option(False)) -> None:
+    from goes_science_kg.secuencias_ia import validar_dictamenes
+
+    try:
+        typer.echo(json.dumps(validar_dictamenes(etapa, completo), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f'ERROR {e}', err=True)
+        raise typer.Exit(1) from e
+
+
+@secuencias_app.command('construir')
+def secuencias_construir() -> None:
+    from goes_science_kg.secuencias_ia import construir
+
+    try:
+        typer.echo(json.dumps(construir(), ensure_ascii=False, indent=2))
+    except (ValueError, OSError) as e:
+        typer.echo(f'ERROR {e}', err=True)
+        raise typer.Exit(1) from e
 
 
 @motor_app.command("incorporar-analisis")
@@ -35,11 +70,12 @@ def motor_incorporar(
 def motor_exportar(destino: Annotated[Path | None, typer.Option()] = None,
                    version: Annotated[str | None, typer.Option()] = None,
                    commit_base: Annotated[str | None, typer.Option(help="revisión base para reproducción exacta")]
-                   = None) -> None:
+                   = None,
+                   secuencias_ia: bool = typer.Option(False, help='incluir secuencias IA, contrato 1.1.0')) -> None:
     from goes_science_kg.motor.construccion import exportar
 
     try:
-        typer.echo(f"→ {exportar(destino, version, commit_base)}")
+        typer.echo(f"→ {exportar(destino, version, commit_base, secuencias_ia)}")
     except (ValueError, OSError) as e:
         typer.echo(f"ERROR {e}", err=True)
         raise typer.Exit(1) from e

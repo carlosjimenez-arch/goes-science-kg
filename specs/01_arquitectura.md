@@ -54,6 +54,7 @@ entregas/motor/<versión>/    ENTREGA MOTOR     JSONL · catálogos · esquemas 
 | `excel.py` | Guardado determinista de libros de Excel |
 | `internacional/` | Estudio internacional por tramo (`tramo.py`): Vertex (`vertex.py`), `extraer.py`, `etiquetar.py`, `consenso.py`, `contraste.py`, `profundidad.py`, `informe.py`, `visor.py` (specs 11 y 12) |
 | `motor/` | Puente exacto de identidades V3, contrato, exportador, permisos por componente, validador portátil y consumidor de referencia (spec 16) |
+| `secuencias_ia.py` | Candidatas de los 920 temas, cadena de dictámenes con citas y huellas, adaptación psicopedagógica y retenciones por desacuerdo (spec 17) |
 | `cli.py` | CLI `gskg`: un comando por etapa (spec 04) |
 
 ## Convenciones

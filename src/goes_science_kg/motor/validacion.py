@@ -9,7 +9,14 @@ import networkx as nx
 
 from goes_science_kg.grafo.validar import validar as validar_grafo
 from goes_science_kg.motor.archivos import decodificar, firma, id_manifiesto, leer, sha
-from goes_science_kg.motor.contrato import ARCHIVOS, MODELOS, Componente, Manifiesto, esquemas
+from goes_science_kg.motor.contrato import (
+    Componente,
+    Manifiesto,
+    archivos_para,
+    clase_manifiesto,
+    esquemas,
+    modelos_para,
+)
 from goes_science_kg.motor.politicas import calidad, propagar_dependencias, usos
 
 
@@ -120,11 +127,19 @@ def cargar_entrega(directorio: str | Path) -> tuple[Manifiesto, dict]:
     """Valida primero bytes y contrato; después devuelve objetos tipados, sin depender del repo productor."""
     d = Path(directorio)
     _exigir(d.is_dir() and not d.is_symlink(), "entrega inexistente o enlace simbólico")
-    _exigir({p.name for p in d.iterdir()} == ARCHIVOS | {"manifiesto.json"}, "archivos de entrega incompletos o ajenos")
+    _exigir((d / 'manifiesto.json').is_file() and not (d / 'manifiesto.json').is_symlink(),
+            'manifiesto inexistente o simbólico')
+    original = leer(d / 'manifiesto.json')
+    _exigir(isinstance(original, dict), 'manifiesto debe ser un objeto')
+    version = original.get('version_contrato')
+    modelo = clase_manifiesto(version)
+    archivos = archivos_para(version)
+    modelos = modelos_para(version)
+    _exigir({p.name for p in d.iterdir()} == archivos | {"manifiesto.json"}, "archivos de entrega incompletos o ajenos")
     _exigir(all(p.is_file() and not p.is_symlink() for p in d.iterdir()),
             "archivos simbólicos o directorios inesperados")
-    m = Manifiesto.model_validate(leer(d / "manifiesto.json"))
-    _exigir(set(m.archivos) == ARCHIVOS, "manifiesto con rutas o archivos no permitidos")
+    m = modelo.model_validate(original)
+    _exigir(set(m.archivos) == archivos, "manifiesto con rutas o archivos no permitidos")
     _exigir(m.id_entrega == id_manifiesto(m.model_dump(mode="json")), "identidad del manifiesto no coincide")
     _exigir(set(m.perfiles) == {"consulta", "autoria"} and len(m.perfiles) == 2, "perfiles de uso inválidos")
     datos = {}
@@ -133,14 +148,14 @@ def cargar_entrega(directorio: str | Path) -> tuple[Manifiesto, dict]:
         _exigir(p.stat().st_size == f.bytes and sha(p) == f.sha256, f"SHA o tamaño distintos: {n}")
         if n.endswith(".jsonl"):
             tipo = n.removesuffix(".jsonl")
-            filas = [MODELOS[tipo].model_validate(decodificar(linea))
+            filas = [modelos[tipo].model_validate(decodificar(linea))
                      for linea in p.read_text(encoding="utf-8").splitlines()]
             _exigir(len(filas) == f.registros, f"conteo distinto: {n}")
             _unicos(filas, "id_analisis" if tipo == "puente" else "id")
             datos[tipo] = filas
         elif n.endswith(".json"):
             datos[n.removesuffix(".json")] = leer(p)
-    _exigir(datos["esquemas"] == esquemas(), "esquemas distintos del contrato ejecutable")
+    _exigir(datos["esquemas"] == esquemas(version), "esquemas distintos del contrato ejecutable")
     return m, datos
 
 
@@ -220,11 +235,18 @@ def validar(directorio: str | Path) -> dict:
                 and all(c in nodos and nodos[c].tipo == "Concepto" for c in r.conceptos),
                 "referencia sin documento o concepto")
         _exigir(nodos[r.documento].props.get("sha256") == r.sha256, "SHA de referencia sin respaldo en documento")
-    metricas = {k: len(datos[k]) for k in MODELOS}
+    metricas = {k: len(datos[k]) for k in modelos_para(m.version_contrato)}
     metricas.update(temas_en_alcance=sum(t.en_alcance_ciencias for t in temas.values()),
                     componentes_autoria=sum(c.usos.autoria for c in comps.values()), componentes_aula=0,
                     temas_con_diferencias_extraccion=sum(bool(t.diferencias_extraccion) for t in temas.values()),
                     relaciones_confianza_baja=sum(r.confianza == "baja" for r in datos["relaciones"]))
+    if m.version_contrato == '1.1.0':
+        from goes_science_kg.secuencias_ia import validar_secuencias
+
+        reglas = datos['catalogos'].get('secuencias_ia')
+        _exigir(isinstance(reglas, dict), 'reglas de secuencias ausentes')
+        validar_secuencias(datos['secuencias'], temas, reglas)
+        metricas['secuencias_autoria_ia'] = sum(s.autoria_asistida for s in datos['secuencias'])
     _exigir(metricas == m.metricas, "métricas del manifiesto distintas de los datos")
     return {"resultado": "valido", "id_entrega": m.id_entrega, "version": m.version_contenido,
             "metricas": metricas, "avisos_grafo": gr.avisos,

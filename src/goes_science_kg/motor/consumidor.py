@@ -123,7 +123,17 @@ def consultar(almacen: str | Path, identificador: str, perfil: str = "consulta",
     paquete = p.model_dump(mode="json") if p else None
     if paquete:
         paquete["componentes"] = {k: [i for i in ids if i in ids_incluidos] for k, ids in p.componentes.items()}
-    return {"id_entrega": rep["id_entrega"], "perfil": perfil, "tema": t.model_dump(mode="json"),
+    resultado = {"id_entrega": rep["id_entrega"], "perfil": perfil, "tema": t.model_dump(mode="json"),
             "analisis": [a.model_dump(mode="json") for a in datos["analisis"] if a.tema_id == tid],
             "paquete": paquete, "componentes": incluidos, "omitidos": omitidos,
             "aula_habilitada": False, "aviso": "Autoría asistida requiere completar datos y revisión docente."}
+    if 'secuencias' in datos:
+        resultado['aviso'] = ('Secuencias con revisión IA y pendientes explícitos. '
+                              'Sin ensayo docente observado ni aprobación institucional; aula deshabilitada.')
+        s = next((s for s in datos['secuencias'] if s.tema_id == tid), None)
+        if s and perfil == 'autoria' and not s.autoria_asistida:
+            resultado['omitidos'].append({'id': s.id, 'motivos': s.motivos_retencion})
+            resultado['secuencia'] = None
+        else:
+            resultado['secuencia'] = s.model_dump(mode='json') if s else None
+    return resultado

@@ -149,6 +149,11 @@ nueva versión de contrato; cambios de contenido o procedencia, una entrega nuev
 
 ## Ruta después de la entrega técnica
 
+**Actualización autorizada por el responsable (2026-10-15):** al no disponer de revisión humana se continúa esta
+fase con expertos IA, psicopedagogía y refutación, extendiendo la autoría a todos los grados (spec17). Esa decisión
+reemplaza la prioridad anterior de limitar la autoría a una unidad antes de extenderla. No se registran firmas
+humanas ni tiempos observados; la entrega0.1.0 permanece como corte histórico reproducible.
+
 1. **Cerrar una unidad piloto para autoría.** Candidata: Física 10.°, «4. Trabajo, energía y momento», cuatro temas
    (`G10-FIS-U7-7.5`, `G10-FIS-U7-7.7`, `G10-FIS-U7-7.9`, `G10-FIS-U8-8.1`). Confirmar sus prerrequisitos,
    localizar los datos científicos y resolver discrepancias de fuentes antes de redactar.

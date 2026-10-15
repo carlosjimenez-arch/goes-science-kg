@@ -153,5 +153,31 @@ MODELOS = {"temas": Tema, "puente": Identidad, "nodos": Nodo, "relaciones": Rela
 ARCHIVOS = {f"{n}.jsonl" for n in MODELOS} | {"catalogos.json", "esquemas.json", "LEEME.md"}
 
 
-def esquemas() -> dict:
-    return {**{n: m.model_json_schema() for n, m in MODELOS.items()}, "manifiesto": Manifiesto.model_json_schema()}
+class Manifiesto11(Manifiesto):
+    version_contrato: Literal['1.1.0'] = '1.1.0'
+
+
+def clase_manifiesto(version: str):
+    if version == '1.0.0':
+        return Manifiesto
+    if version == '1.1.0':
+        return Manifiesto11
+    raise ValueError('versión de contrato no implementada')
+
+
+def modelos_para(version: str) -> dict:
+    clase_manifiesto(version)
+    if version == '1.0.0':
+        return MODELOS
+    from goes_science_kg.secuencias_ia import Secuencia
+
+    return {**MODELOS, 'secuencias': Secuencia}
+
+
+def archivos_para(version: str) -> set[str]:
+    return {f'{n}.jsonl' for n in modelos_para(version)} | {'catalogos.json', 'esquemas.json', 'LEEME.md'}
+
+
+def esquemas(version: str = '1.0.0') -> dict:
+    return {**{n: m.model_json_schema() for n, m in modelos_para(version).items()},
+            'manifiesto': clase_manifiesto(version).model_json_schema()}

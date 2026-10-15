@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ciencias V3 · Revisión de secuencias</title>
+<style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#18382b;background:#f5f7f5}body{margin:0}header,main{padding:24px;
+max-width:1450px;margin:auto}header{padding-bottom:0}h1{margin:0;font-size:1.8rem}p{max-width:950px}label{display:block;
+font-weight:600}select,input,button{font:inherit;padding:9px;border:1px solid #9db3a7;border-radius:6px;background:white;
+color:#18382b}input{width:min(95%,420px)}.filtros{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0}.layout{display:grid;
+grid-template-columns:minmax(280px,1fr) minmax(360px,2fr);gap:24px}.lista{max-height:75vh;overflow:auto}.item{display:block;
+width:100%;text-align:left;margin:0 0 8px;padding:13px;background:white}.item[aria-pressed=true]{outline:3px solid #1e4d3a}
+.retenida{border-left:6px solid #a63c32}.autoria{border-left:6px solid #37704c}.detalle{background:white;padding:22px;
+border-radius:8px;overflow-wrap:anywhere}.estado{display:inline-block;padding:4px 10px;border-radius:6px;background:#e7efe9}
+h2{margin-top:0}h3{margin-bottom:5px;font-size:1.1rem}small,.meta{color:#52665c}.comparacion{display:grid;
+grid-template-columns:1fr 1fr;gap:16px}.columna{padding:12px;background:#f5f7f5}summary{cursor:pointer;font-weight:600}
+.review{border-top:1px solid #d4dfd8;padding:12px 0}button:focus,input:focus,select:focus{outline:3px solid #9ab5a5}
+@media(max-width:850px){.layout,.comparacion{grid-template-columns:1fr}.lista{max-height:40vh}header,main{padding:16px}}
+</style><header><h1>Ciencias V3 · Revisión multiagente</h1>
+<p>Propuestas de 2.º a 11.º. Cada tema conserva la malla original, los cambios y los desacuerdos de los revisores IA.
+Las sesiones son una hipótesis de planificación. La revisión no demuestra tiempo observado ni aprobación institucional.</p>
+<div class="filtros"><label>Grado<br><select id="grado"><option value="">Todos</option></select></label>
+<label>Disciplina<br><select id="asignatura"><option value="">Todas</option></select></label>
+<label>Estado<br><select id="estado"><option value="">Todos</option><option value="autoria">Autoría asistida IA</option>
+<option value="retenida">Retenida</option></select></label><label>Buscar tema o pendiente<br>
+<input id="buscar" placeholder="Ejemplo: ósmosis, protocolo, G06" type="search"></label></div>
+<p id="conteo" aria-live="polite"></p></header><main><div class="layout"><div id="lista" class="lista"
+aria-label="Temas encontrados"></div><article id="detalle" class="detalle" aria-label="Detalle del tema"></article>
+</div></main><script id="datos" type="application/json">__DATOS__</script>
+<script>
+const datos=JSON.parse(document.getElementById('datos').textContent);
+const nombres={biologia:'Biología',fisica:'Física',quimica:'Química',ciencias_tierra_espacio:'Tierra y Espacio'};
+const etapas={ciencia:'Primera revisión científica',psicopedagogia:'Psicopedagogía',refutacion:'Refutación independiente',
+final:'Cierre científico',refutacion_final:'Refutación de cambios finales'};
+const decisiones={sin_objecion_en_lectura:'Sin objeción en esta lectura',corregir:'Corrección propuesta',retener:'Retener'};
+const elemento=(tag,texto,clase)=>{const e=document.createElement(tag);if(texto!==undefined)e.textContent=texto;
+if(clase)e.className=clase;return e};
+const grado=document.getElementById('grado'),asignatura=document.getElementById('asignatura');
+for(const g of [...new Set(datos.map(t=>t.grado))].sort((a,b)=>a-b)){const o=elemento('option',g+'º');o.value=g;grado.append(o)}
+for(const a of Object.keys(nombres)){const o=elemento('option',nombres[a]);o.value=a;asignatura.append(o)}
+const normalizar=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+let elegida=null;
+function mostrar(t){elegida=t.id;const d=document.getElementById('detalle');d.replaceChildren();
+ d.append(elemento('h2',t.grado+'º · '+t.contenido),elemento('p',t.id+' · '+nombres[t.asignatura],'meta'),
+ elemento('p',t.autoria?'Autoría asistida IA':'Retenida: consultar objeciones','estado'),
+ elemento('p','Unidad actual: '+t.unidad),elemento('p',t.procedimental));
+ d.append(elemento('h3','Planificación propuesta'),elemento('p',t.sesiones+' sesiones sugeridas de 55 minutos. '+t.motivo_tiempo),
+ elemento('p','Tiempo observado: no disponible. La suma de sesiones no modifica el horario curricular.'));
+ d.append(elemento('h3','Producto evaluable'),elemento('p',t.producto));
+ const criterios=elemento('ol');t.criterios.forEach(c=>criterios.append(elemento('li',c)));d.append(criterios);
+ d.append(elemento('h3','Consigna de salida'),elemento('p',t.salida),elemento('h3','Apoyos'),elemento('p',t.apoyos.join(' / ')),
+ elemento('h3','Alternativa sin internet'),elemento('p',t.offline));
+ d.append(elemento('h3','Cinco momentos · original y propuesta'));
+ for(const m of t.momentos){const bloque=elemento('details');bloque.append(elemento('summary',m.nombre));
+ const cols=elemento('div',undefined,'comparacion');for(const [titulo,texto] of [['Malla original',m.original],['Propuesta IA',m.propuesta]]){
+ const c=elemento('div',undefined,'columna');c.append(elemento('strong',titulo),elemento('p',texto));cols.append(c)}bloque.append(cols);d.append(bloque)}
+ d.append(elemento('h3','Dictámenes y desacuerdos'));
+ for(const r of t.revisiones){const b=elemento('section',undefined,'review');b.append(elemento('strong',etapas[r.etapa]+': '+decisiones[r.decision]),
+ elemento('p',r.justificacion),elemento('small','Rol IA: '+r.rol+' · Confianza: '+r.confianza));
+ for(const e of r.evidencia)b.append(elemento('p',e.campo+': «'+e.cita+'»'));
+ for(const p of r.pendientes)b.append(elemento('p','Pendiente: '+p));d.append(b)}
+ d.append(elemento('h3','Fuente exacta'),elemento('p',t.fuente.archivo+' · '+t.fuente.hoja+' · fila '+t.fuente.fila),
+ elemento('small','SHA-256: '+t.fuente.sha256));
+ document.querySelectorAll('.item').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===elegida)));
+}
+function filtrar(){const est=document.getElementById('estado').value,q=normalizar(document.getElementById('buscar').value);
+ const visibles=datos.filter(t=>(!grado.value||t.grado===+grado.value)&&(!asignatura.value||t.asignatura===asignatura.value)
+ &&(!est||(est==='autoria')===t.autoria)&&(!q||t.busqueda.includes(q)));
+ const aptas=visibles.filter(t=>t.autoria).length;document.getElementById('conteo').textContent=visibles.length+
+ ' temas · '+aptas+' para autoría asistida IA · '+(visibles.length-aptas)+' retenidos';
+ const lista=document.getElementById('lista');lista.replaceChildren();
+ for(const t of visibles){const b=elemento('button',undefined,'item '+(t.autoria?'autoria':'retenida'));b.dataset.id=t.id;
+ b.append(elemento('strong',t.grado+'º · '+t.contenido),elemento('br'),elemento('small',nombres[t.asignatura]+' · '+t.id));
+ b.addEventListener('click',()=>mostrar(t));lista.append(b)}
+ const t=visibles.find(t=>t.id===elegida)||visibles[0];if(t)mostrar(t);else document.getElementById('detalle').replaceChildren(elemento('p','No hay temas con estos filtros.'));
+}
+for(const id of ['grado','asignatura','estado','buscar'])document.getElementById(id).addEventListener('input',filtrar);
+filtrar();</script></html>

@@ -24,6 +24,7 @@ from goes_science_kg.motor.contrato import (
     Relacion,
     Tema,
     Ubicacion,
+    clase_manifiesto,
     esquemas,
 )
 from goes_science_kg.motor.identidades import columnas_vigentes, comprobar_identidades
@@ -178,7 +179,7 @@ def compilar() -> tuple[dict[str, object], dict[str, str], dict[str, int], list[
 
 
 def exportar(destino: str | Path | None = None, version: str | None = None,
-             commit_base: str | None = None) -> Path:
+             commit_base: str | None = None, incluir_secuencias: bool = False) -> Path:
     """Crea una entrega candidata, la valida y solo entonces la publica. Nunca reemplaza otra versión."""
     cfg = cargar("motor")
     if cfg["contrato"] != Manifiesto.model_fields["version_contrato"].default:
@@ -186,6 +187,27 @@ def exportar(destino: str | Path | None = None, version: str | None = None,
     version = version or cfg["contenido"]
     salida = destino_seguro(ruta(destino or Path(cfg["salida"]) / version))
     colecciones, insumos, metricas, avisos = compilar()
+    contrato = '1.1.0' if incluir_secuencias else '1.0.0'
+    if incluir_secuencias:
+        from goes_science_kg.secuencias_ia import compilar as compilar_secuencias
+        from goes_science_kg.secuencias_ia import configuracion as reglas_secuencias
+
+        ss, origen = compilar_secuencias(colecciones['temas'])
+        colecciones['secuencias'] = ss
+        reglas = reglas_secuencias()
+        colecciones['catalogos']['secuencias_ia'] = reglas
+        ejecucion = ruta(reglas['directorio']) / 'EJECUCION.json'
+        colecciones['catalogos']['secuencias_ia_ejecucion'] = leer(ejecucion)
+        insumos[relativa(ejecucion)] = sha(ejecucion)
+        insumos.update(origen)
+        # commit_base identifica el punto de partida; las huellas también identifican el código local exportador.
+        for n in ('secuencias_ia.py', 'motor/construccion.py', 'motor/contrato.py',
+                  'motor/validacion.py', 'motor/consumidor.py'):
+            p = ruta('src/goes_science_kg') / n
+            insumos[relativa(p)] = sha(p)
+        metricas['secuencias'] = len(ss)
+        metricas['secuencias_autoria_ia'] = sum(s.autoria_asistida for s in ss)
+        avisos.append('Secuencias revisadas por agentes IA; no son validación humana ni tiempo observado.')
     salida.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".motor-", dir=salida.parent) as temporal:
         d = Path(temporal)
@@ -197,7 +219,7 @@ def exportar(destino: str | Path | None = None, version: str | None = None,
             p = d / f"{nombre}.jsonl"
             p.write_text("".join(canonico(r.model_dump(mode="json")) + "\n" for r in rs), encoding="utf-8")
             fichas[p.name] = FichaArchivo(sha256=sha(p), bytes=p.stat().st_size, registros=len(rs))
-        escribir(d / "esquemas.json", esquemas())
+        escribir(d / "esquemas.json", esquemas(contrato))
         (d / "LEEME.md").write_text(
             "# GOES Science Content " + version + "\n\n"
             "Entrega V3 para consulta y autoría asistida. El uso en aula no está habilitado.\n\n"
@@ -206,12 +228,20 @@ def exportar(destino: str | Path | None = None, version: str | None = None,
             "se conservan completas. El orden de enseñanza es un atributo, no se deduce del id.\n\n"
             "Validar: `gskg motor validar <carpeta>`. Importar: `gskg motor importar <carpeta>`.\n\n"
             "Las huellas detectan alteraciones; no son una firma digital de identidad institucional. "
-            "Contrato: `specs/16_contenido_motor.md`.\n", encoding="utf-8")
+            "Contrato: `specs/16_contenido_motor.md`.\n" + (
+                "\nEsta versión agrega secuencias propuestas para todos los temas de Ciencias. "
+                "Incluye revisión científica, psicopedagogía, refutación, cierre y nueva refutación de sus cambios. "
+                "Las secuencias retenidas se consultan, pero se omiten del perfil de autoría. "
+                "La distribución de 55 minutos es orientativa; no hay tiempo observado ni firma humana. "
+                "Los roles de las ejecuciones IA se documentan en catalogos.json, sin presumir diversidad de modelos. "
+                "Contrato ampliado: `specs/17_panel_secuencias_ia.md`.\n"
+                if incluir_secuencias else ""), encoding="utf-8")
         for n in ("catalogos.json", "esquemas.json", "LEEME.md"):
             p = d / n
             fichas[n] = FichaArchivo(sha256=sha(p), bytes=p.stat().st_size)
         commit = commit_base or subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ruta("."), text=True).strip()
-        m = Manifiesto(version_contenido=version, fecha_corte=cfg["fecha_corte"], perfiles=cfg["perfiles"],
+        m = clase_manifiesto(contrato)(version_contenido=version, fecha_corte=cfg["fecha_corte"],
+                       perfiles=cfg["perfiles"],
                        commit_base=commit, insumos=insumos, archivos=fichas, metricas=metricas,
                        advertencias=avisos, id_entrega="0" * 64).model_dump(mode="json")
         m["id_entrega"] = id_manifiesto(m)

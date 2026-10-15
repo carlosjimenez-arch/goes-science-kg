@@ -200,6 +200,24 @@ críticas y sin promover revisiones IA a aprobaciones docentes.
 Los cinco ciclos técnicos de validación y sus resultados quedan en `entregas/motor/VALIDACION_5_CICLOS.json`.
 No cierran los pendientes humanos, las matrices anotadas de la spec 15 ni el recálculo global del contraste V3.
 
+## Fase 11 · Autoría de todos los grados con panel IA (spec 17)
+
+El responsable autorizó el 2026-10-15 continuar esta fase y los demás grados mediante especialistas IA y
+psicopedagogía, al no contar con revisión humana. La autoría ya no espera a completar una sola unidad piloto.
+La revisión IA y el ensayo docente observado son evidencias diferentes y conservan estados distintos.
+
+- [x] 17.0 Preparar candidatas exactas de los 920 temas de Ciencias de 2.°–11.° y conservar fuentes inmutables.
+- [x] 17.1 Primera revisión de Biología, Física, Química y Tierra/Espacio: 920 dictámenes citados y comprobados.
+- [x] 17.2 Adaptación psicopedagógica completa: tres criterios, consigna, apoyos, alternativa sin internet y sesiones.
+- [x] 17.3 Refutación independiente de 920 temas, cierre científico y nueva refutación de 126 correcciones finales.
+- [x] 17.4 Entrega 0.2.0 con contrato 1.1.0; 331 pruebas, reproducción por bytes, importación, reversión,
+  visor y Excel de revisión copiado a Desktop. 444 secuencias para autoría IA y 476 retenidas para consulta.
+
+Los expedientes de esta ampliación viven en `data/interim/secuencias_ia/`. Un tema retenido sigue disponible para
+consulta y mejora, sin habilitarse para autoría por una votación posterior favorable. Completar la revisión de los
+920 temas no significa disponer de 920 prácticas experimentales terminadas ni de un presupuesto de aula demostrado.
+El informe de cinco ciclos y los próximos reparos están en `entregas/secuencias_ia/README.md`.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

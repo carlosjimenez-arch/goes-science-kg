@@ -57,14 +57,17 @@ contenido pedagógico combina propuestas y revisiones del panel IA; la verificac
 aprendizaje requieren revisión y piloto. Hay 230 paquetes ligeros de Física y Química de 9.°–11.°
 en [`entregas/paquetes_clase/`](entregas/paquetes_clase/README.md), con pendientes explícitos.
 
-**Entrega para el motor v0.1.0:** catálogo V3 de 935 temas, puente exacto con el análisis de cobertura y los
-230 paquetes existentes, con permisos por componente. Incluye contrato, validador portátil e importador de
-referencia con activación y reversión de versiones. Habilita consulta y autoría asistida; **aula sigue deshabilitada**.
-Documentación: [`spec 16`](specs/16_contenido_motor.md) y [`entrega`](entregas/motor/README.md).
+**Entrega para el motor v0.2.0:** conserva el catálogo V3 de 935 temas, el análisis y los 230 paquetes anteriores;
+agrega propuestas de secuencias para los 920 temas de Ciencias de 2.º–11.º, con especialistas IA,
+psicopedagogía, refutación independiente y cierre. Las correcciones finales tienen otra lectura adversarial.
+Las retenciones permanecen para consulta; el perfil de autoría filtra las secuencias retenidas y conserva los
+permisos propios de los componentes anteriores. **Aula sigue deshabilitada**; los 55 minutos son una hipótesis.
+Documentación: [`spec 17`](specs/17_panel_secuencias_ia.md), [`entrega`](entregas/motor/README.md) y
+[`revisión de secuencias`](entregas/secuencias_ia/README.md). La versión 0.1.0 se conserva para reversión.
 
 ```bash
-uv run gskg motor validar entregas/motor/0.1.0
-uv run gskg motor importar entregas/motor/0.1.0 --almacen /tmp/goes-motor
+uv run gskg motor validar entregas/motor/0.2.0
+uv run gskg motor importar entregas/motor/0.2.0 --almacen /tmp/goes-motor
 uv run gskg motor consultar G10-FIS-U7-7.5 --perfil autoria --almacen /tmp/goes-motor
 ```
 
@@ -72,7 +75,8 @@ uv run gskg motor consultar G10-FIS-U7-7.5 --perfil autoria --almacen /tmp/goes-
 (recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
 API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).
 
-El siguiente hito es completar una unidad para revisión científica, didáctica y ensayo docente de 55 minutos.
+El siguiente hito es resolver las objeciones documentadas y completar protocolos, datos y distribución entre
+sesiones sobre nuevas candidatas. El panel IA permite continuar esa autoría; el ensayo docente sigue por realizar.
 El plan, con lo cerrado y lo pendiente, está en
 [`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).
 
@@ -89,6 +93,7 @@ todo está al día (las salidas son deterministas y una prueba verifica que `dat
 | 5 | Propuestas (con revisión) | `make propuestas` | propuestas → simulación, Excel y `asignaturas/PROPUESTAS.md` |
 | 6 | Internacional | `make internacional` (o `make internacional-ia` con Vertex) | países y malla V2 → `internacional/` |
 | 7 | Motor | `gskg motor exportar / validar / importar / consultar / activar` | fuentes V3, grafo, análisis y paquetes → entrega inmutable y consumidor de referencia |
+| 8 | Secuencias | `gskg secuencias preparar / validar-dictamenes / construir` | candidatas y lecturas IA encadenadas → propuestas, retenciones y evidencias por tema |
 
 ## Cómo continuar con Claude Code
 El repo trae su propio harness: hooks que protegen `.env` y las fuentes, piden aprobación antes de gastar en Vertex y
