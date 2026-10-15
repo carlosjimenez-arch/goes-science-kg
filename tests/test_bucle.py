@@ -301,6 +301,23 @@ def test_una_serie_corre_aparte_sobre_expedientes_nuevos(aislado):
     assert bucle.replicar(1, 1) == []   # la serie principal no tiene nada pendiente
 
 
+def test_prefijo_aisla_refuerzos_sin_incluir_contenido_nuevo_ajeno(aislado):
+    """Una serie de refuerzos no debe enviar al refutador todos los paquetes recién revisados."""
+    def contenido(i, tipo):
+        return _resuelto("contenido", ["experto-fisica"], "aprobar", elemento=tipo,
+                         etapas=[["experto-fisica"], ["psicopedagogo"], ["experto-fisica"]],
+                         datos={"elemento": {"id": i, "tipo": tipo}})
+
+    estado = {"RFZ:REF:x": contenido("REF:x", "refuerzo"),
+              "PED:ACT:y": contenido("ACT:y", "actividad")}
+    panel._guardar_estado(estado)
+    lotes = bucle.impugnar(1, ["contenido"], serie="rfz", prefijo="RFZ:")
+    assert len(lotes) == 1
+    lote = json.loads((aislado / lotes[0]).read_text(encoding="utf-8"))
+    assert [e["id"] for e in lote["expedientes"]] == ["RFZ:REF:x"]
+    assert panel.cargar_estado() == estado
+
+
 def test_la_vuelta_2_de_una_serie_solo_toma_sus_cambios():
     """La vuelta 2 de una serie reimpugna lo que cambió en la vuelta 1 de esa serie, no lo de otra corrida ni lo que ya
     se impugnó en la vuelta 2."""

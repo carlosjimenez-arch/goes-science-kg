@@ -120,6 +120,13 @@ estado por estudiante fuera de las capas compartidas, cola de propuestas a revis
 Pendiente: revisión del contenido, prueba con el modelo real (requiere aprobación del gasto), interfaz y las
 decisiones del piloto.
 
+**Paquetes de clase, corte 2026-10-15:**
+- [x] 230 paquetes ligeros de Física y Química de 9.°–11.°, en `entregas/paquetes_clase/`.
+- [x] Continuación del panel interrumpido: 152 vistos buenos cerrados con Codex (47 aprobar, 105 corregir), sin
+  llamadas nuevas a Vertex. Se conservan los dictámenes previos de Claude y las redacciones de Gemini.
+- [ ] Seis elementos sin consenso, compartidos por 12 paquetes, esperan decisión humana; los datos de referencia
+  de los 230 paquetes siguen pendientes de fuente citable. La revisión IA no sustituye la firma docente.
+
 ## Fase 8 · Panel de expertos IA (spec 14) ✅ (2026-10-12)
 `panel.py`, `gskg panel …`, `config/panel.yaml`, cinco agentes en `.claude/agents/` y el hook SubagentStop. Es una
 revisión técnica interina mientras no haya un equipo del MINED.

@@ -119,6 +119,9 @@
 - **ACT:G09-CIE-U7-7.7/obj-1** (objetivo, explicar, opcion_multiple): Un bus eléctrico y un bus diésel suben la misma cuesta con la misma carga, así que sus motores hacen el mismo trabajo. Al llegar arriba, el motor diésel está mucho más caliente que el eléctrico. ¿Qué explica la diferenci
 - **ACT:G09-CIE-U7-7.7/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de ejemplo redondeados, para recorrer 100 km. Carro de gasolina: quema combustible con 60 kWh de energía. Carro eléctrico: toma 16 kWh de electricidad. Si esa electricidad viene de plantas geotérmicas, hidroeléctri
 - **ACT:G09-CIE-U7-7.7/obj-abierta** (objetivo, razonar, abierta): Cuadro con datos de ejemplo redondeados: de cada 100 unidades de energía que recibe, un motor eléctrico de bus entrega unas 90 como movimiento y un motor diésel, unas 35. En El Salvador, una parte grande de la electricid
+- **ACT:G10-FIS-U15-15.10/obj-1** (objetivo, razonar, opcion_multiple): Una inventora anuncia un motor que, en cada ciclo, recibe 1 000 J de calor de una fuente a 500 K, entrega 700 J de trabajo y cede 300 J al ambiente, que está a 300 K. ¿Puede funcionar ese motor?
+- **ACT:G10-FIS-U15-15.10/obj-2** (objetivo, interpretar_datos, numerica): Datos de ejemplo (no son de una central real): una central geotérmica extrae del fluido del subsuelo 800 MW de calor y entrega 100 MW de potencia eléctrica. El vapor entra a la turbina a 240 °C y el condensador está a 40
+- **ACT:G10-FIS-U15-15.10/obj-abierta** (objetivo, razonar, abierta): En una tarde calurosa en San Miguel, Óscar propone dejar abierta la puerta de la refrigeradora para refrescar la cocina, que está cerrada. En 2 o 3 oraciones: (1) di si, al cabo de un rato, la cocina se enfría, se calien
 
 ## Datos de referencia
 

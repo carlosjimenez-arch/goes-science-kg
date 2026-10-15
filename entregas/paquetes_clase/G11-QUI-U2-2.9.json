@@ -367,6 +367,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:quimica/grupos-funcionales/1",
+   "concepto": "CON:quimica/grupos-funcionales",
+   "descripcion": "Clasifica como alcohol a cualquier compuesto orgánico que contenga un grupo hidroxilo (–OH), sin distinguir si el carbono al que se une es saturado (sp³, alcohol) o forma parte de un anillo bencénico aromático (sp², fenol), o bien confunde un anillo cicloalcano con un anillo bencénico.",
+   "senales": "Afirma que el fenol es un alcohol cíclico o secundario; clasifica el ciclohexanol como fenol solo por ver un hexágono; dice que todo compuesto con –OH pertenece a la función alcohol.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/grupos-funcionales/2",
+   "concepto": "CON:quimica/grupos-funcionales",
+   "descripcion": "Determina si un alcohol es primario, secundario o terciario contando el número total de carbonos de la molécula o el número de grupos –OH presentes, en lugar de contar cuántos átomos de carbono están unidos directamente al carbono carbinol (el carbono sp³ que porta el grupo –OH).",
+   "senales": "Llama alcohol secundario al 1,2-etanodiol porque tiene dos grupos –OH; dice que el 1-propanol es terciario porque tiene tres carbonos.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/grupos-funcionales/3",
+   "concepto": "CON:quimica/grupos-funcionales",
+   "descripcion": "Asume que dos compuestos con la misma fórmula molecular o con un átomo de oxígeno tienen iguales fuerzas intermoleculares y propiedades físicas, creyendo que los éteres (R–O–R') forman puentes de hidrógeno entre sus propias moléculas igual que los alcoholes (R–OH).",
+   "senales": "Predice puntos de ebullición similares para el etanol y el éter dimetílico; afirma que el oxígeno puente C–O–C forma enlaces de hidrógeno consigo mismo sin tener átomos de hidrógeno unidos al oxígeno.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:quimica/hidrocarburos-alifaticos/1",
    "concepto": "CON:quimica/hidrocarburos-alifaticos",
    "descripcion": "Clasifica como alcano a cualquier compuesto orgánico que contenga carbono e hidrógeno o enlaces simples, sin verificar que esté formado exclusivamente por C y H, que todos sus enlaces carbono–carbono sean simples y, si es de cadena abierta, que cumpla la fórmula CₙH₂ₙ₊₂ que lo distingue de alquenos, alquinos y compuestos oxigenados (los cicloalcanos, también saturados, siguen CₙH₂ₙ).",
@@ -2399,6 +2423,736 @@
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
     "valores_anteriores": {
      "enunciado": "Mateo nombró el compuesto CH₃–CH₂–CH=CH–CH₂–CH₃ como «hexeno», sin escribir ningún número localizador, argumentando que al ser simétrico no hace falta indicar la posición del doble enlace. Explica en dos o tres oraciones por qué es necesario incluir el localizador en el nombre IUPAC de este compuesto, escribe su nombre IUPAC correcto y menciona el nombre de otro isómero de posición de cadena lineal con la misma fórmula molecular (C₆H₁₂) del que debe diferenciarse."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.12/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.12"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.12",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Alejandra analiza la molécula CH₃-CH(Br)-CH₂-CH(CH₃)-SH y quiere asignarle su nombre IUPAC sistemático. ¿Cuál es el nombre IUPAC correcto y por qué?",
+   "opciones": {
+    "A": "4-bromopentano-2-tiol, porque la cadena con el carbono del –SH tiene cinco carbonos y el –SH recibe el localizador más bajo.",
+    "B": "3-bromo-1-metilbutano-1-tiol, porque la cadena principal es la de cuatro carbonos que aparece escrita en línea horizontal.",
+    "C": "2-bromopentano-4-tiol, porque la cadena se numera desde el extremo izquierdo, en el orden en que se lee la fórmula.",
+    "D": "2-bromo-4-sulfanilpentano, porque el bromo es el grupo principal y por eso el –SH se nombra como prefijo."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/nomenclatura-organica/1",
+    "C": "DIF:quimica/nomenclatura-organica/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El CH₃ escrito entre paréntesis forma parte de la cadena más larga: CH₃–CH(SH)–CH₂–CH(Br)–CH₃ tiene cinco carbonos (pentano). El tiol es el grupo principal (sufijo -tiol) y debe recibir el localizador más bajo, así que se numera desde el extremo más cercano al –SH: queda en el carbono 2 y el bromo en el 4. Nombre: 4-bromopentano-2-tiol.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.12"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.12)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La reformulación no altera la cadena principal: el metilo entre paréntesis prolonga la cadena a cinco carbonos. La numeración desde ese extremo pone SH en C2 y Br en C4: A es única. B diagnostica escoger solo la línea horizontal y C numerar desde la izquierda; D prioriza indebidamente el bromo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Alejandra analiza la molécula CH₃-CH(Br)-CH₂-CH(CH₃)-SH y quiere asignarle su nombre IUPAC sistemático. Considerando que el grupo tiol (-SH) tiene prioridad como grupo principal frente a los halógenos y las ramificaciones alquílicas, ¿cuál es el nombre IUPAC correcto y por qué?",
+     "opciones": {
+      "A": "4-bromo-2-metilpentano-1-tiol, porque la cadena principal de cinco carbonos incluye al grupo -SH en el carbono 2.",
+      "B": "4-bromo-2-metilbutan-1-tiol, porque el carbono unido al -SH recibe el localizador 1 en la cadena de cuatro carbonos.",
+      "C": "2-bromo-4-metilbutan-4-tiol, porque se numera desde el extremo izquierdo para darle el menor número al bromo.",
+      "D": "2-metil-4-bromobutan-1-tiol, porque los sustituyentes se ordenan según su posición numérica creciente en la cadena."
+     },
+     "correcta": "B",
+     "distractores": {
+      "A": "DIF:quimica/nomenclatura-organica/1",
+      "C": "DIF:quimica/nomenclatura-organica/2",
+      "D": "DIF:quimica/nomenclatura-organica/3"
+     },
+     "retroalimentacion": "El grupo tiol (-SH) es el grupo funcional principal y define el sufijo -tiol. La cadena principal de carbonos que contiene al carbono unido al -SH tiene 4 carbonos (butano), se numera dando el localizador 1 a ese carbono y los sustituyentes (4-bromo y 2-metil) se citan en orden alfabético."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.12/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.12"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.12",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Mateo revisa una tabla con tres compuestos orgánicos:\n- Compuesto 1: CH₃-S-CH₂-CH₃ (tioéter)\n- Compuesto 2: CH₃-CH₂-NH-CH₃ (amina secundaria)\n- Compuesto 3: Cl-C₆H₄-CH₃, con los grupos en los carbonos 1 y 4 del anillo bencénico (haluro de arilo)\n¿Qué opción relaciona correctamente los compuestos 1, 2 y 3 con sus nombres IUPAC?",
+   "opciones": {
+    "A": "1: etilmetiltiol; 2: propilamina; 3: 4-clorometilbenceno.",
+    "B": "1: metiltioetano; 2: 2-aza-butano; 3: 1-metil-4-clorobenceno.",
+    "C": "1: etilmetilsulfano; 2: N-metiletilamina; 3: 1-cloro-2-metilbenceno.",
+    "D": "1: (metilsulfanil)etano; 2: N-metiletanamina; 3: 1-cloro-4-metilbenceno."
+   },
+   "correcta": "D",
+   "distractores": {
+    "B": "DIF:quimica/nomenclatura-organica/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El tioéter CH₃-S-CH₂-CH₃ toma la cadena más larga (etano) y el grupo CH₃–S– como prefijo: (metilsulfanil)etano, nombre preferido actual; (metiltio)etano es la forma tradicional. En la amina secundaria la cadena mayor es etanamina y el metilo unido al nitrógeno lleva el localizador N-. En el anillo con sustituyentes en 1 y 4, el orden alfabético da 1-cloro-4-metilbenceno.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.12"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.12)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Eliminar el compuesto no usado conserva la clasificación. D es única como conjunto, pero actualizo su primer nombre al prefijo preferido que la retroalimentación ya explica. IUPAC admite «metiltio» en nomenclatura general; no es falso. B sigue diagnosticando orden incorrecto de cloro y metilo, aunque su primer nombre sea admisible."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Mateo revisa una tabla de un grupo de ejemplo con cuatro compuestos orgánicos:\n• Compuesto 1: CH₃-S-CH₂-CH₃ (tioéter)\n• Compuesto 2: CH₃-CH₂-NH-CH₃ (amina secundaria)\n• Compuesto 3: Cl-C₆H₄-CH₃ con los grupos en carbonos 1 y 4 del anillo bencénico (haluro de arilo)\n• Compuesto 4: CH₃-CH(Cl)-CH₂-CH₃ (haluro de alquilo)\n¿Qué fila relaciona correctamente los compuestos 1, 2 y 3 con sus nombres IUPAC?",
+     "opciones": {
+      "A": "1: etilmetiltiol; 2: propilamina; 3: 4-clorometilbenceno.",
+      "B": "1: metiltioetano; 2: 2-aza-butano; 3: 1-metil-4-clorobenceno.",
+      "C": "1: etilmetilsulfano; 2: N-metiletilamina; 3: 1-cloro-2-metilbenceno.",
+      "D": "1: (metiltio)etano; 2: N-metiletanamina; 3: 1-cloro-4-metilbenceno."
+     },
+     "retroalimentacion": "En IUPAC, el tioéter CH₃-S-CH₂-CH₃ toma la cadena más larga (etano) con el prefijo (metiltio)-. En la amina secundaria, la cadena mayor es etanamina y el metilo unido al nitrógeno lleva el localizador N-. En el anillo disustituido en 1 y 4, se ordena alfabéticamente: 1-cloro-4-metilbenceno."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.12/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.12"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.12",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Observa la estructura de la amina sustituida CH₃-CH(Cl)-CH₂-NH-CH₂-CH₃. Escribe su nombre IUPAC completo y explica paso a paso: 1) cómo elegiste y numeraste la cadena principal según la prioridad entre el grupo amina y el halógeno, y 2) por qué se usa el localizador N para uno de los grupos y un número para el otro.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "El nombre IUPAC es 2-cloro-N-etilpropan-1-amina. Elegí la cadena de tres carbonos (propano) como principal porque está unida al grupo funcional de mayor prioridad, la amina, y es más larga que el grupo etilo del otro lado del nitrógeno. Numeré desde el carbono unido al nitrógeno (carbono 1) para darle el menor localizador al grupo principal (-amina), por lo que el cloro queda en el carbono 2 como prefijo. Se usa el localizador N- para el etilo porque está unido directamente al átomo de nitrógeno, mientras que el 2 indica que el cloro está unido al carbono 2 de la cadena principal.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Nombra correctamente el compuesto como 2-cloro-N-etilpropan-1-amina: cadena de propano, sufijo -amina en C1, cloro en C2 y etilo en N, con los prefijos en orden alfabético.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica la elección y numeración de la cadena de tres carbonos indicando que la amina tiene prioridad como grupo principal (sufijo -amina, C1) frente al halógeno (prefijo cloro).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Relaciona el uso del localizador N con la unión del grupo etilo al átomo de nitrógeno y el localizador numérico (2) con la unión del cloro a un carbono de la cadena principal.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cuenta los carbonos a través del átomo de nitrógeno como si fuera una sola cadena continua de cinco carbonos (pentanamina).",
+      "ejemplo": "Es 2-cloropentan-3-amina porque en línea horizontal hay cinco carbonos seguidos.",
+      "dificultad": "DIF:quimica/nomenclatura-organica/1"
+     },
+     {
+      "descripcion": "Numera la cadena de tres carbonos desde el extremo izquierdo para darle menor número al cloro antes que al grupo principal amina.",
+      "ejemplo": "Se llama 2-cloro-N-etilpropan-3-amina porque se empieza a numerar desde la izquierda.",
+      "dificultad": "DIF:quimica/nomenclatura-organica/2"
+     },
+     {
+      "descripcion": "Ordena los prefijos N-etil y 2-cloro por localizador en lugar de orden alfabético (cloro antes que etil).",
+      "ejemplo": "Se llama N-etil-2-cloropropan-1-amina porque primero se pone la letra N y después el número 2.",
+      "dificultad": "DIF:quimica/nomenclatura-organica/3"
+     }
+    ]
+   },
+   "retroalimentacion": "En aminas secundarias con halógenos, la función amina tiene mayor prioridad que el haluro: define la cadena principal (la más larga unida al N, aquí propano) y recibe el localizador 1. El grupo unido al nitrógeno lleva localizador N- y ambos prefijos (2-cloro y N-etil) se ordenan alfabéticamente.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.12"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.12)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide el nombre, la elección y numeración de la cadena y el uso del localizador N: cubre los tres criterios obligatorios, y el orden alfabético va implícito en el nombre correcto. Andamiaje en pasos numerados. Rúbrica observable tras la corrección del experto."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "rubrica": {
+      "respuesta_modelo": "El nombre IUPAC es 2-cloro-N-etilpropan-1-amina. Elegí la cadena de tres carbonos (propano) como principal porque está unida al grupo funcional de mayor prioridad, la amina, y es más larga que el grupo etilo del otro lado del nitrógeno. Numeré desde el carbono unido al nitrógeno (carbono 1) para darle el menor localizador al grupo principal (-amina), por lo que el cloro queda en el carbono 2 como prefijo. Se usa el localizador N- para el etilo porque está unido directamente al átomo de nitrógeno, mientras que el 2 indica que el cloro está unido al carbono 2 de la cadena principal.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra correctamente el compuesto como 2-cloro-N-etilpropan-1-amina (o N-etil-2-cloropropan-1-amina si invierte el orden alfabético pero identifica bien cadena, sufijo y localizadores).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica la elección y numeración de la cadena de tres carbonos indicando que la amina tiene prioridad como grupo principal (sufijo -amina, C1) frente al halógeno (prefijo cloro).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Relaciona el uso del localizador N con la unión del grupo etilo al átomo de nitrógeno y el localizador numérico (2) con la unión del cloro a un carbono de la cadena principal.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cuenta los carbonos a través del átomo de nitrógeno como si fuera una sola cadena continua de cinco carbonos (pentanamina).",
+        "ejemplo": "Es 2-cloropentan-3-amina porque en línea horizontal hay cinco carbonos seguidos.",
+        "dificultad": "DIF:quimica/nomenclatura-organica/1"
+       },
+       {
+        "descripcion": "Numera la cadena de tres carbonos desde el extremo izquierdo para darle menor número al cloro antes que al grupo principal amina.",
+        "ejemplo": "Se llama 2-cloro-N-etilpropan-3-amina porque se empieza a numerar desde la izquierda.",
+        "dificultad": "DIF:quimica/nomenclatura-organica/2"
+       },
+       {
+        "descripcion": "Ordena los prefijos N-etil y 2-cloro por localizador en lugar de orden alfabético (cloro antes que etil).",
+        "ejemplo": "Se llama N-etil-2-cloropropan-1-amina porque primero se pone la letra N y después el número 2.",
+        "dificultad": "DIF:quimica/nomenclatura-organica/3"
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.3/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.3",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Daniela dibuja un anillo de benceno unido a tres grupos sustituyentes: un grupo etilo en el vértice superior, un átomo de cloro en el vértice inmediatamente contiguo a la derecha y un segundo átomo de cloro separado por un vértice libre respecto al primero, en el mismo sentido horario. ¿Cuál es el nombre sistemático IUPAC correcto de este compuesto aromático y por qué?",
+   "opciones": {
+    "A": "1-etil-2,4-diclorobenceno, porque el sustituyente que lleva el localizador 1 se escribe primero.",
+    "B": "4-etil-1,3-diclorobenceno, porque el sentido antihorario da (1,3,4) y la «d» de dicloro va después de la «e».",
+    "C": "1,3-dicloro-4-etilbenceno, porque la numeración debe empezar en uno de los cloros, que son dos.",
+    "D": "2,4-dicloro-1-etilbenceno, porque (1,2,4) es el conjunto de localizadores más bajo y «cloro» precede a «etil»."
+   },
+   "correcta": "D",
+   "distractores": {
+    "A": "DIF:quimica/nomenclatura-organica/3",
+    "B": "DIF:quimica/nomenclatura-organica/3",
+    "C": "DIF:quimica/nomenclatura-organica/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Primero se busca el conjunto de localizadores más bajo: empezando en el etilo y avanzando hacia el cloro contiguo, los sustituyentes quedan en 1, 2 y 4; cualquier otro inicio da 1,2,5, 1,3,4, 1,3,6 o 1,4,5, que son mayores en la primera diferencia. Después se citan los prefijos en orden alfabético sin contar «di-»: cloro antes que etil. Nombre: 2,4-dicloro-1-etilbenceno.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Tras el intercambio de letras, D conserva el nombre correcto: 2,4-dicloro-1-etilbenceno. La posición descrita admite (1,2,4), menor en la primera diferencia que (1,3,4). El orden alfabético no cuenta di-. A y B evidencian orden incorrecto; C prioriza empezar en cloro sobre los localizadores menores."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "opciones": {
+      "A": "1-etil-2,4-diclorobenceno, porque al numerar se inicia en el etilo por ir antes en el alfabeto.",
+      "B": "2,4-dicloro-1-etilbenceno, porque el conjunto de localizadores (1,2,4) es igual y el cloro va antes.",
+      "C": "1,3-dicloro-4-etilbenceno, porque ese sentido da el conjunto más bajo (1,3,4) y se ordena por alfabeto.",
+      "D": "4-etil-1,3-diclorobenceno, porque el sentido antihorario da (1,3,4) y la «d» de dicloro va después de «e»."
+     },
+     "correcta": "C",
+     "distractores": {
+      "A": "DIF:quimica/nomenclatura-organica/2",
+      "B": "DIF:quimica/nomenclatura-organica/2",
+      "D": "DIF:quimica/nomenclatura-organica/3"
+     },
+     "retroalimentacion": "En un anillo trisustituido primero se busca el conjunto de localizadores más bajo posible en la primera diferencia: (1,2,4) es menor que (1,3,4). Al iniciar en el cloro intermedio hacia el etilo se obtiene (1,2,4), pero aquí los cloros están separados por un carbono libre y uno está junto al etilo, por lo que iniciar en el cloro aislado y recorrer hacia el otro cloro y luego al etilo da las posiciones 1, 3 y 4; al escribir el nombre, «cloro» antecede a «etilo» alfabéticamente sin contar el prefijo «di-»."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.3/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.3",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "En un torneo de química, un equipo de ejemplo registra tres anillos de benceno disustituidos:\n• Compuesto 1: grupos –CH₃ y –Br separados por un carbono sin sustituir del anillo.\n• Compuesto 2: dos grupos –CH₂CH₃ en carbonos opuestos del anillo.\n• Compuesto 3: grupo –NH₂ (nombre base: anilina) y grupo –Cl en carbonos contiguos.\n¿Qué fila relaciona cada compuesto con un nombre aceptado por la IUPAC?",
+   "opciones": {
+    "A": "Compuesto 1: m-bromotolueno; Compuesto 2: 1,4-dietilbenceno; Compuesto 3: 2-cloroanilina.",
+    "B": "Compuesto 1: o-bromotolueno; Compuesto 2: p-dietilbenceno; Compuesto 3: 1-amino-2-clorobenceno.",
+    "C": "Compuesto 1: 1-metil-3-bromobenceno; Compuesto 2: m-dietilbenceno; Compuesto 3: o-cloroanilina.",
+    "D": "Compuesto 1: 3-metil-1-bromobenceno; Compuesto 2: 1,4-dietilbenceno; Compuesto 3: 3-cloroanilina."
+   },
+   "correcta": "A",
+   "distractores": {
+    "C": "DIF:quimica/nomenclatura-organica/3",
+    "D": "DIF:quimica/nomenclatura-organica/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Separados por un carbono corresponde a la posición 1,3 (meta), carbonos opuestos a 1,4 (para) y carbonos contiguos a 1,2 (orto). Al usar tolueno o anilina como estructura base, el carbono unido a –CH₃ o –NH₂ lleva el localizador 1, por lo que resultan m-bromotolueno, 1,4-dietilbenceno y 2-cloroanilina.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Lista ya escrita con guiones, posiciones descritas en palabras (accesible sin dibujo). Opciones paralelas de 9 palabras; cada distractor falla en una posición. Clave A distinta de la de obj-1."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.3",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Mateo afirma que el dimetilbenceno (xileno) tiene cinco isómeros de posición porque el primer grupo metilo está fijo en el carbono 1 y el segundo puede colocarse en cualquiera de los otros cinco carbonos del anillo (2, 3, 4, 5 o 6). Explica cuántos isómeros de posición existen realmente, justifica por qué varias de las posiciones que menciona Mateo producen la misma molécula debido a la simetría del anillo de benceno y escribe el nombre de cada isómero usando tanto localizadores numéricos como los prefijos orto, meta y para.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "En realidad solo existen tres isómeros de posición del dimetilbenceno. Como el anillo de benceno es plano y simétrico, colocar el segundo grupo metilo en el carbono 6 da la misma molécula que en el carbono 2 (ambos están contiguos al carbono 1), y colocarlo en el carbono 5 equivale a ponerlo en el carbono 3 (ambos quedan separados por un carbono del anillo); al girar la molécula en el espacio se superponen y reciben los localizadores más bajos. Los tres isómeros son: 1,2-dimetilbenceno (orto-dimetilbenceno u o-xileno), 1,3-dimetilbenceno (meta-dimetilbenceno o m-xileno) y 1,4-dimetilbenceno (para-dimetilbenceno o p-xileno).",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Indica que existen exactamente tres isómeros de posición del dimetilbenceno.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica con la simetría o el giro del anillo que las posiciones 1,6 y 1,2 son equivalentes (contiguas), y que las posiciones 1,5 y 1,3 son equivalentes (separadas por un carbono).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Nombra los tres isómeros relacionando las posiciones 1,2 con orto (o-), 1,3 con meta (m-) y 1,4 con para (p-) en el dimetilbenceno o xileno.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Numera siempre en sentido horario y trata el 1,6-dimetilbenceno y el 1,5-dimetilbenceno como compuestos distintos del 1,2 y 1,3 sin elegir el conjunto de localizadores más bajo.",
+      "ejemplo": "Hay cinco porque el 1,2-dimetilbenceno tiene el metilo a la derecha y el 1,6-dimetilbenceno lo tiene a la izquierda.",
+      "dificultad": "DIF:quimica/nomenclatura-organica/2"
+     },
+     {
+      "descripcion": "Intercambia el significado de los prefijos orto, meta y para al asignarlos a los localizadores 1,2, 1,3 y 1,4.",
+      "ejemplo": "Son tres isómeros: 1,2-dimetilbenceno (meta), 1,3-dimetilbenceno (orto) y 1,4-dimetilbenceno (para).",
+      "dificultad": null
+     }
+    ]
+   },
+   "retroalimentacion": "Por la simetría hexagonal del benceno, las posiciones 2 y 6 son equivalentes entre sí (1,2 u orto), igual que las posiciones 3 y 5 (1,3 o meta), y la posición 4 es la opuesta (1,4 o para); por eso solo existen tres isómeros de posición.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide cuántos isómeros, la justificación por simetría y los nombres con números y prefijos o/m/p: cubre los tres criterios. 89 palabras, dentro del límite. El razonamiento erróneo se atribuye a un personaje para analizarlo, sin etiquetar al estudiante."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.9/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.9"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.9",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Daniela dibuja la estructura semidesarrollada CH₃–CH(C₂H₅)–CH(CH₃)–CHO. ¿Cuál es el nombre sistemático IUPAC correcto de este compuesto y por qué?",
+   "opciones": {
+    "A": "2,3-dimetilpentanal, porque la cadena principal con el grupo formilo tiene cinco carbonos y el carbonilo es C1.",
+    "B": "3-etil-2-metilbutanal, porque la cadena horizontal con el grupo formilo tiene cuatro carbonos numerados desde el carbonilo.",
+    "C": "3,4-dimetilpentanal, porque la cadena más larga de cinco carbonos se numera desde el extremo metilo izquierdo.",
+    "D": "3-metil-2-etilbutanal, porque los sustituyentes de la cadena de cuatro carbonos se ordenan según su localizador."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/nomenclatura-organica/1",
+    "C": "DIF:quimica/nomenclatura-organica/2",
+    "D": "DIF:quimica/nomenclatura-organica/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La cadena principal debe incluir el carbono del aldehído (C1) y seguir por la ramificación –C₂H₅ para alcanzar cinco carbonos en vez de cuatro. Así quedan dos grupos metilo en las posiciones C2 y C3, formando el 2,3-dimetilpentanal.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.9"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.9)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Enunciado breve; opciones parejas en longitud y forma; cada distractor refleja un error de cadena o numeración. Retroalimentación explicativa sin letras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.9/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.9"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.9",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "En un documento colaborativo de un grupo de ejemplo se registraron cuatro estructuras y los nombres IUPAC propuestos por el equipo:\n• Compuesto 1: CH₃–CH₂–CO–CH(CH₃)₂ → 2-metilpentan-3-ona\n• Compuesto 2: CH₃–CH(C₂H₅)–CH₂–COOH → ácido 3-etilbutanoico\n• Compuesto 3: CH₃–CH₂–COO–CH₃ → etanoato de propilo\n• Compuesto 4: CH₃–CH(Br)–CH(CH₃)–CO–CH₃ → 3-metil-4-bromopentan-2-ona\n¿Cuál de los cuatro registros cumple correctamente todas las reglas IUPAC?",
+   "opciones": {
+    "A": "El compuesto 2, porque numera desde el grupo carboxilo y ubica el radical etilo en el tercer carbono.",
+    "B": "El compuesto 1, porque da al grupo carbonilo el localizador 3 y luego el menor número al metilo.",
+    "C": "El compuesto 3, porque nombra primero la cadena de dos carbonos y después el grupo unido al oxígeno.",
+    "D": "El compuesto 4, porque numera desde la cetona y ordena los sustituyentes de menor a mayor localizador."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:quimica/nomenclatura-organica/1",
+    "D": "DIF:quimica/nomenclatura-organica/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En el compuesto 1 el carbonilo queda en C3 por ambos extremos, por lo que se numera desde el lado que da al metilo el localizador 2 (2-metilpentan-3-ona). En el 2 la cadena más larga tiene cinco carbonos (ácido 3-metilpentanoico); en el 3 es propanoato de metilo; y en el 4 el orden alfabético exige 4-bromo-3-metilpentan-2-ona.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.9"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.9)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Cuatro registros en lista, legibles; opciones parejas (17–18 palabras) y sin pistas; clave distinta de la del ítem anterior del tema."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U3-3.9/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U3-3.9"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U3-3.9",
+    "CON:quimica/nomenclatura-organica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "En un sitio web aparece el nombre «propan-1-ona» para el compuesto CH₃–CH₂–CHO y el nombre «ácido 2-metil-4-oxopentan-5-oico» para HOOC–CH₂–CH(CH₃)–CHO. En 4 a 6 oraciones: (1) explica por qué no puede existir una «propan-1-ona» según la posición del grupo carbonilo y escribe el nombre IUPAC correcto del primer compuesto, y (2) corrige el nombre del segundo compuesto justificando cómo la prioridad entre grupos funcionales determina la numeración y los prefijos o sufijos.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "No puede existir la «propan-1-ona» porque las cetonas tienen el grupo carbonilo unido a dos átomos de carbono (posición interna), mientras que si el carbonilo está en el carbono 1 terminal unido a un hidrógeno es un aldehído y se llama propanal. En el segundo compuesto, el ácido carboxílico tiene mayor prioridad que el aldehído, por lo que el carbono carboxílico recibe el localizador 1 (sufijo «-oico») y el grupo formilo en C4 se nombra con el prefijo «oxo»: su nombre correcto es ácido 3-metil-4-oxobutanoico.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Explica que una cetona requiere el carbonilo en un carbono interno (entre dos carbonos) y que en C1 terminal corresponde a un aldehído, nombrándolo propanal.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica que el grupo carboxilo tiene prioridad sobre el aldehído para recibir el localizador C1 y definir el sufijo ácido …-oico.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Escribe el nombre IUPAC corregido del segundo compuesto con la numeración desde el carboxilo: ácido 3-metil-4-oxobutanoico (la cadena incluye el carbono del aldehído, que se nombra con el prefijo «oxo»).",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Mantiene la numeración de izquierda a derecha desde el extremo aldehído o metilo sin dar C1 al grupo ácido carboxílico prioritario.",
+      "ejemplo": "Se llama ácido 2-metil-1-oxobutanoico porque se empieza a contar desde el CHO.",
+      "dificultad": "DIF:quimica/nomenclatura-organica/2"
+     },
+     {
+      "descripcion": "Confunde el grupo funcional aldehído con una cetona o con un alcohol al corregir el primer compuesto.",
+      "ejemplo": "No es propan-1-ona porque el oxígeno está en la orilla, así que se llama propan-1-ol.",
+      "dificultad": null
+     }
+    ]
+   },
+   "retroalimentacion": "CH₃–CH₂–CHO es propanal: su carbonilo terminal está unido a H, mientras una cetona requiere dos carbonos unidos al carbonilo. En HOOC–CH₂–CH(CH₃)–CHO, el ácido carboxílico tiene prioridad y fija C1. La cadena incluye cuatro carbonos, el metilo queda en C3 y el carbonilo aldehídico en C4 se nombra oxo. El nombre es ácido 3-metil-4-oxobutanoico.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U3-3.9"
+   },
+   "origen": "redactor-actividades (G11-QUI-U3-3.9)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Los dos nombres corregidos son propanal y ácido 3-metil-4-oxobutanoico; la cadena tiene cuatro carbonos y el ácido fija C1. La consigna ampliada los pide explícitamente, pero la rúbrica deja opcional el segundo nombre. Lo hago obligatorio y completo la retroalimentación para que enseñe la corrección de ambas estructuras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "En un sitio web aparece el nombre «propan-1-ona» para el compuesto CH₃–CH₂–CHO y el nombre «ácido 2-metil-4-oxopentan-5-oico» para HOOC–CH₂–CH(CH₃)–CHO. En 2 a 3 oraciones: (1) explica por qué no puede existir una «propan-1-ona» según la posición del grupo carbonilo y escribe el nombre IUPAC correcto del primer compuesto, y (2) corrige el nombre del segundo compuesto justificando cómo la prioridad entre grupos funcionales determina la numeración y los prefijos o sufijos.",
+     "rubrica": {
+      "respuesta_modelo": "No puede existir la «propan-1-ona» porque las cetonas tienen el grupo carbonilo unido a dos átomos de carbono (posición interna), mientras que si el carbonilo está en el carbono 1 terminal unido a un hidrógeno es un aldehído y se llama propanal. En el segundo compuesto, el ácido carboxílico tiene mayor prioridad que el aldehído, por lo que el carbono carboxílico recibe el localizador 1 (sufijo «-oico») y el grupo formilo en C4 se nombra con el prefijo «oxo»: su nombre correcto es ácido 3-metil-4-oxobutanoico (o ácido 3-formilbutanoico).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que una cetona requiere el carbonilo en un carbono interno (entre dos carbonos) y que en C1 terminal corresponde a un aldehído, nombrándolo propanal.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica que el grupo carboxilo tiene prioridad sobre el aldehído para recibir el localizador C1 y definir el sufijo ácido …-oico.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Escribe el nombre IUPAC corregido del segundo compuesto con la numeración desde el carboxilo (ácido 3-metil-4-oxobutanoico o ácido 3-formilbutanoico).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Mantiene la numeración de izquierda a derecha desde el extremo aldehído o metilo sin dar C1 al grupo ácido carboxílico prioritario.",
+        "ejemplo": "Se llama ácido 2-metil-1-oxobutanoico porque se empieza a contar desde el CHO.",
+        "dificultad": "DIF:quimica/nomenclatura-organica/2"
+       },
+       {
+        "descripcion": "Confunde el grupo funcional aldehído con una cetona o con un alcohol al corregir el primer compuesto.",
+        "ejemplo": "No es propan-1-ona porque el oxígeno está en la orilla, así que se llama propan-1-ol.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Un carbonilo en el carbono terminal (C1) es un aldehído (propanal), pues una cetona exige dos carbonos unidos al carbonilo. En compuestos polifuncionales, el ácido carboxílico tiene prioridad sobre el aldehído y fija el C1.",
+     "duracion_min": 6
     }
    }
   }

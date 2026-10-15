@@ -67,6 +67,30 @@ uv run gskg tutor evaluar ACT:G05-CIE-U6-6.14/obj-abierta "…"   # sin --confir
   la primera ley, seguridad de las actividades, dificultades que juntan dos ideas) están en
   [`data/pedagogia/REVISION_PENDIENTE.md`](../data/pedagogia/REVISION_PENDIENTE.md).
 
+## Paquetes ligeros de Física y Química (corte 2026-10-15)
+
+Hay [230 paquetes de clase](../entregas/paquetes_clase/README.md) de 9.°–11.°, con dos actividades de objetivo de
+habilidades diferentes, una abierta con rúbrica y un experimento. La capa también aporta ideas previas, bases y
+fuentes. La redacción y la revisión previa se hicieron en Claude Code, con las últimas 56 redacciones en Gemini;
+Codex continuó el visto bueno que quedó interrumpido. Cerró 152 expedientes: 47 aprobaciones y 105 correcciones.
+Los nuevos dictámenes identifican `motor_revision: Codex`; no se realizaron nuevas llamadas a Vertex en este relevo.
+
+| Grado | Física | Química |
+|---|---:|---:|
+| 9.° | 32 | 12 |
+| 10.° | 30 | 60 |
+| 11.° | 32 | 64 |
+
+La revisión del panel está completa en 218 paquetes. Otros 12 reutilizan alguno de los seis elementos que siguen
+[sin consenso](../entregas/paquetes_clase/REVISION_HUMANA.md); se mantienen sin revisión completa. Los 230 registran
+datos de referencia pendientes de fuente citable. Esto describe el estado del insumo para preparar la clase, no una
+autorización para usarlo con estudiantes. La firma docente sigue siendo necesaria.
+
+La corrosión de 11.° Química 6.11 ocupa dos sesiones de 55 minutos, separadas por siete días de observación; también
+requiere registros diarios. Las adaptaciones experimentales que dependen del montaje incluyen prueba docente previa
+y alternativas con datos de ejemplo. El [registro de validación](../data/interim/panel/validacion_paquetes_codex_2026-10-15.json)
+conserva el alcance, los reemplazos elegidos y los pendientes.
+
 ## Prueba de humo con el modelo real (2026-10-12, 12 llamadas aprobadas)
 Se usó Gemini en Vertex con respuestas de ejemplo escritas por el equipo, sin datos de estudiantes.
 
@@ -98,6 +122,7 @@ Lo que ya está construido:
 - No tiene validación con docentes. El tutor puede decir algo científicamente impreciso que las guardas no detectan:
   hace falta revisión humana de turnos reales (fase A del piloto) o un segundo control de fidelidad, con su costo.
 - No tiene interfaz para estudiantes ni docentes: es de línea de comandos.
-- No cubre una unidad completa. Hay 6 objetivos; un piloto necesita todos los de su unidad, revisados.
+- La prueba con estudiantes sigue pendiente. Los paquetes nuevos amplían el contenido disponible; el piloto necesita
+  cerrar los pendientes de su unidad, contar con fuentes verificables y obtener revisión docente.
 - No guarda datos reales de estudiantes: `data/estudiantes/` no se versiona. La propuesta de política de datos está
   en [`PILOTO.md`](PILOTO.md) y la decisión es de GOES y del MINED.

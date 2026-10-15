@@ -94,6 +94,9 @@
 - **ACT:G09-CIE-U1-1.5/obj-1** (objetivo, razonar, opcion_multiple): Un modelo de prensa hidráulica tiene una jeringa delgada, con émbolo de 2.0 cm², unida por una manguera llena de agua a una jeringa gruesa, con émbolo de 10 cm². Ambos émbolos están a la misma altura. Valeria empuja el é
 - **ACT:G09-CIE-U1-1.5/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo: en su prensa de jeringas, el émbolo grande tiene 4 veces el área del pequeño. Pusieron cargas sobre el émbolo grande y midieron la fuerza mínima en el pequeño para empezar a subirlas. Carga 
 - **ACT:G09-CIE-U1-1.5/obj-abierta** (objetivo, explicar, abierta): En los frenos hidráulicos de un bus, el pedal empuja un émbolo pequeño; el líquido de frenos llena unos tubos que llegan a émbolos más grandes en cada una de las ruedas, que aprietan las pastillas. En 2 o 3 oraciones: (1
+- **ACT:G10-FIS-U11-11.6/obj-1** (objetivo, razonar, numerica): En un taller de Soyapango, el gato hidráulico de Óscar tiene un émbolo pequeño de 2.0 cm de diámetro y un émbolo grande de 10.0 cm de diámetro. El aceite no se comprime y no hay fugas. Para subir el carro 3.0 cm, ¿cuánto
+- **ACT:G10-FIS-U11-11.6/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo. Unieron con una manguera llena de agua una jeringa pequeña (émbolo de 1.1 cm²) con jeringas grandes de distinta área. Sobre el émbolo grande pusieron siempre una carga de 10 N y midieron la 
+- **ACT:G10-FIS-U11-11.6/obj-abierta** (objetivo, razonar, abierta): Mauricio dice que un gato hidráulico «crea energía», porque con una fuerza pequeña en el émbolo chico levanta un carro en el émbolo grande. En 3 o 4 oraciones, explica si tiene razón comparando entre los dos émbolos: (a)
 
 ## Datos de referencia
 

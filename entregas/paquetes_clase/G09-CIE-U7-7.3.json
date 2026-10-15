@@ -445,6 +445,30 @@
    "senales": "Predice que una lata de aluminio o un cable de cobre moverá la aguja; usa «metálico» y «magnético» como sinónimos; se sorprende de que una moneda no se pegue al imán.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:fisica/induccion-electromagnetica/1",
+   "concepto": "CON:fisica/induccion-electromagnetica",
+   "descripcion": "Cree que basta con que haya un imán o un campo magnético dentro de la bobina para que se induzca voltaje o corriente, aunque nada se mueva ni cambie, en lugar de reconocer que la fem aparece solo mientras el flujo magnético cambia.",
+   "senales": "Predice que el voltímetro marcará algo con el imán quieto dentro de la bobina; cree que un imán guardado junto a un cable «carga» el circuito; si la lectura es cero, supone que el aparato falla.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/induccion-electromagnetica/2",
+   "concepto": "CON:fisica/induccion-electromagnetica",
+   "descripcion": "Interpreta la ley de Lenz como si la corriente inducida siempre creara un campo opuesto al campo del imán, o siempre repeliera al imán, en lugar de oponerse al cambio del flujo: cuando el flujo disminuye, el campo inducido tiene el mismo sentido que el del imán y tiende a retenerlo.",
+   "senales": "Dice que al alejar el imán la bobina lo empuja; dibuja el campo inducido siempre contrario al del imán; predice el mismo signo de voltaje al meter y al sacar el imán.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/induccion-electromagnetica/3",
+   "concepto": "CON:fisica/induccion-electromagnetica",
+   "descripcion": "Cree que la fem inducida es mayor cuanto mayor es el flujo magnético, y no cuanto más rápido cambia: confunde Φ con ΔΦ/Δt y espera la fem máxima de un generador cuando por la espira pasa el máximo flujo.",
+   "senales": "Propone dejar el imán en el punto de mayor campo para tener más voltaje; ubica el pico de fem de una espira que gira cuando su plano es perpendicular al campo; no usa el tiempo al calcular la fem.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [
@@ -1123,6 +1147,421 @@
      }
     }
    }
+  },
+  {
+   "id": "ACT:G11-FIS-U11-11.3/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U11-11.3"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U11-11.3",
+    "CON:fisica/campo-magnetico"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Para deducir con la ley de Ampère el campo magnético dentro de un solenoide largo, Daniela elige como trayectoria cerrada un rectángulo: un lado largo dentro de la bobina, paralelo a su eje, el lado opuesto por fuera y dos lados cortos que atraviesan las espiras. ¿Por qué esa trayectoria permite despejar B?",
+   "opciones": {
+    "A": "Porque B vale lo mismo dentro y fuera de la bobina, y así los dos lados largos aportan igual.",
+    "B": "Porque los lados cortos siguen las líneas del campo, y son los únicos que aportan a la suma.",
+    "C": "Porque dentro B es uniforme y paralelo a ese lado y fuera es casi nulo: solo aporta B·L.",
+    "D": "Porque encierra la corriente de una sola espira, y el campo no depende del número de vueltas."
+   },
+   "correcta": "C",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Dentro de un solenoide largo el campo es casi uniforme y paralelo al eje, y fuera es casi nulo. En los lados cortos el campo interior es perpendicular al recorrido y no aporta. Así la circulación queda B·L y, con la corriente encerrada N·I, sale B = μ₀NI/L: el campo sí depende del número de vueltas por unidad de largo.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U11-11.3"
+   },
+   "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Ítem de explicación adecuado a 11.°: pide razonar la elección de la trayectoria de Ampère, no recordar la fórmula. Cuatro opciones de largo parejo, todas con «Porque», sin pistas gramaticales; la retroalimentación explica cada lado del rectángulo y corrige sin regañar. Personaje femenino que acierta."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U11-11.3/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U11-11.3"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U11-11.3",
+    "CON:fisica/campo-magnetico"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Josué tendió un cable recto y largo sobre la mesa y midió con el magnetómetro del celular el campo del cable a varias distancias r, ya descontado el campo de la Tierra (datos de un grupo de ejemplo): r = 1.0 cm, B = 39.6 μT; r = 2.0 cm, B = 20.3 μT; r = 4.0 cm, B = 10.1 μT; r = 5.0 cm, B = 7.9 μT. Al graficar B contra 1/r obtuvo una recta que pasa por el origen. Con B = μ₀I/(2πr) y μ₀ de la tabla de referencia (aproximado 4π × 10⁻⁷ T·m/A), ¿qué corriente llevaba el cable, en amperios (A)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 2.0,
+   "tolerancia": 0.15,
+   "unidad": "A",
+   "retroalimentacion": "El producto B·r es casi constante, cerca de 4.0 × 10⁻⁷ T·m, y es la pendiente de B contra 1/r. Como la pendiente vale μ₀I/(2π) = 2 × 10⁻⁷ T·m/A × I, la corriente es I ≈ 4.0 × 10⁻⁷ / 2 × 10⁻⁷ ≈ 2.0 A. Que la recta pase por el origen confirma que B es inversamente proporcional a r.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U11-11.3"
+   },
+   "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Enunciado largo (111 palabras) pero toda la información es necesaria: los cuatro pares de datos, la fórmula y μ₀ rotulado aproximado. Da la unidad (A), se apoya en datos de ejemplo y no exige celular. La retroalimentación muestra el producto B·r como camino, buen ejemplo trabajado para quien falle."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U11-11.3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U11-11.3"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U11-11.3",
+    "CON:fisica/campo-magnetico"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Valeria va a medir con la aplicación phyphox el campo de un cable recto con corriente. Antes de conectar la pila, el celular ya marca unos 40 μT, y la lectura cambia si lo acerca a la pata de hierro de la mesa. En 2 o 3 oraciones explica de dónde sale la lectura que aparece sin corriente, cómo debe corregir sus datos para quedarse solo con el campo del cable y por qué conviene medir lejos de la pata de hierro.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Sin corriente, el sensor mide el campo de la Tierra más el de objetos de hierro cercanos. Si mide la misma componente con la corriente apagada y encendida (o con la corriente en un sentido y luego en el otro) y resta, se queda con el campo del cable. El hierro concentra y desvía el campo, y eso cambiaría la medición de un punto a otro.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U11-11.3"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Sin corriente el celular mide el campo magnético de la Tierra, sumado al de cosas de hierro cercanas. Para quedarme solo con el campo del cable, mido la misma componente sin corriente y con corriente (o con la corriente en un sentido y en el otro) y saco la diferencia. Hay que alejarse de la pata de hierro porque el hierro se magnetiza y desvía el campo, así que cambia la lectura según dónde mida.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Atribuye la lectura sin corriente al campo magnético de la Tierra (puede sumar el de objetos de hierro o aparatos cercanos).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Propone medir con y sin corriente, o con la corriente invertida, y restar las lecturas de la misma componente para obtener el campo del cable.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que el hierro se magnetiza o concentra el campo y altera la lectura cerca de él.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona que la resta debe hacerse componente por componente o con el celular siempre en la misma orientación.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cree que el celular mide solo el campo de la Tierra y que la diferencia junto a la mesa se debe a que allí el campo terrestre es más fuerte.",
+      "ejemplo": "Cerca de la pata el campo de la Tierra es más fuerte, por eso sube; hay que medir donde el campo de la Tierra sea más débil.",
+      "dificultad": "DIF:fisica/campo-magnetico/2"
+     },
+     {
+      "descripcion": "Cree que cualquier metal altera el campo, también el cobre del propio cable o el aluminio.",
+      "ejemplo": "Hay que alejar todo lo metálico, hasta el cable de cobre, porque los metales desvían el campo.",
+      "dificultad": "DIF:fisica/campo-magnetico/3"
+     },
+     {
+      "descripcion": "Propone restar las magnitudes totales sin cuidar la orientación, o calibrar a cero sin explicar qué se quita.",
+      "ejemplo": "Pongo el celular en cero y listo, así ya no cuenta el error del sensor.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide las tres cosas que exigen los criterios obligatorios: origen de la lectura sin corriente (c1), cómo corregir los datos (c2) y por qué alejarse del hierro (c3). Rúbrica observable y errores con ejemplos verosímiles. Situación concreta y cercana al experimento del tema."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U12-12.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U12-12.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U12-12.1",
+    "CON:fisica/induccion-electromagnetica"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Kevin deja caer un imán, con el polo norte hacia abajo, a través de una bobina vertical conectada a un sensor de voltaje. Mientras el imán entra por arriba, el sensor registra un pulso positivo. ¿Qué registra mientras el imán sale por abajo, y por qué?",
+   "opciones": {
+    "A": "Un pulso positivo, porque el imán sigue moviéndose hacia abajo, igual que cuando entró.",
+    "B": "Un pulso negativo, porque ahora el flujo disminuye y la fem se opone a esa disminución.",
+    "C": "Un pulso positivo, porque la corriente inducida siempre crea un campo opuesto al del imán.",
+    "D": "Un pulso negativo, porque al salir la corriente inducida empuja al imán hacia abajo, alejándolo."
+   },
+   "correcta": "B",
+   "distractores": {
+    "C": "DIF:fisica/induccion-electromagnetica/2",
+    "D": "DIF:fisica/induccion-electromagnetica/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Al entrar, el flujo hacia abajo dentro de la bobina aumenta; al salir, disminuye. La fem inducida se opone al cambio del flujo, no al campo del imán: al invertirse el cambio se invierte el signo y el pulso es negativo. Al salir, la corriente inducida crea un campo en el mismo sentido que el del imán y tiende a retenerlo, no a empujarlo. Ese pulso suele ser algo más alto y breve, porque el imán ya cae más rápido.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U12-12.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Tras la corrección del experto, dos opciones dan pulso negativo y dos positivo: ya no se acierta solo por el signo. Opciones parejas en largo y forma; C y D atacan la idea previa de Lenz. La retroalimentación, de 80 palabras, cabe en el límite y explica sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "opciones": {
+      "A": "Un pulso positivo, porque el imán sigue moviéndose hacia abajo, igual que cuando entró.",
+      "B": "Un pulso negativo, porque ahora el flujo disminuye y la fem se opone a esa disminución.",
+      "C": "Un pulso positivo, porque la corriente inducida siempre crea un campo opuesto al del imán.",
+      "D": "Ningún pulso, porque solo se induce voltaje cuando el imán se acerca, no cuando se aleja."
+     },
+     "distractores": {
+      "C": "DIF:fisica/induccion-electromagnetica/2"
+     },
+     "retroalimentacion": "Al entrar, el flujo hacia abajo dentro de la bobina aumenta; al salir, disminuye. La fem inducida se opone al cambio del flujo, no al campo del imán, así que al invertirse el cambio se invierte el signo: pulso negativo. Ese pulso suele ser algo más alto y breve, porque el imán ya cae más rápido y el flujo cambia más deprisa."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U12-12.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U12-12.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U12-12.1",
+    "CON:fisica/induccion-electromagnetica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Gabriela mete un imán en una bobina de 150 vueltas y 4.0 cm² de sección, siempre desde la misma posición de partida hasta el mismo punto del interior, pero cada vez más rápido. Midió el tiempo Δt de cada movimiento y la fem media inducida (datos de un grupo de ejemplo): Δt = 0.40 s, 7.6 mV; Δt = 0.20 s, 15.0 mV; Δt = 0.10 s, 30.4 mV; Δt = 0.05 s, 59.8 mV. Con la ley de Faraday, ¿cuánto cambia el campo magnético medio dentro de la bobina en cada movimiento, en teslas (T)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 0.05,
+   "tolerancia": 0.005,
+   "unidad": "T",
+   "retroalimentacion": "La fem media por Δt da casi siempre 3.0 × 10⁻³ V·s, que es NΔΦ: el cambio de flujo es el mismo y solo cambia la rapidez. ΔΦ = 3.0 × 10⁻³ / 150 = 2.0 × 10⁻⁵ Wb, y con A = 4.0 × 10⁻⁴ m², ΔB = 2.0 × 10⁻⁵ / 4.0 × 10⁻⁴ = 0.050 T. Al mover el imán el doble de rápido, la fem se duplica.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U12-12.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Datos completos y unidad pedida (T). La tarea exige notar que ε·Δt es constante, un razonamiento proporcional propio de 11.°. Retroalimentación como ejemplo trabajado paso a paso, dentro del límite de palabras. Se apoya en datos de ejemplo, sin exigir sensor de voltaje."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U12-12.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U12-12.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U12-12.1",
+    "CON:fisica/induccion-electromagnetica"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Mauricio deja un imán potente quieto dentro de una bobina conectada a un voltímetro, y el voltímetro marca cero. Andrea dice que eso no puede ser, porque dentro de la bobina hay mucho campo magnético. En 2 o 3 oraciones explica con la ley de Faraday quién tiene razón y por qué, y propone una forma de obtener más voltaje con la misma bobina y el mismo imán, diciendo por qué funciona.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Tiene razón Mauricio: la fem depende de la rapidez con que cambia el flujo, ε = −NΔΦ/Δt, no de cuánto campo hay. Con el imán quieto el flujo es grande pero no cambia, y la fem es cero. Mover el imán más rápido, o sacarlo y meterlo del todo en menos tiempo, aumenta ΔΦ/Δt y con ello el voltaje.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U12-12.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Tiene razón Mauricio. Según Faraday, el voltaje inducido depende de qué tan rápido cambia el flujo magnético en la bobina (ε = −NΔΦ/Δt), no de cuánto campo hay; con el imán quieto el flujo es grande pero constante, así que no se induce nada. Para tener más voltaje movería el imán más rápido al meterlo y sacarlo, porque el mismo cambio de flujo ocurre en menos tiempo.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Afirma que la fem depende del cambio del flujo en el tiempo (ΔΦ/Δt) y no del valor del campo o del flujo.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Concluye que con el imán quieto el flujo no cambia y la fem es cero, dando la razón a Mauricio.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Propone una forma válida de aumentar ΔΦ/Δt (mover el imán más rápido, hacerlo entrar y salir por completo en menos tiempo, girarlo más rápido) y la justifica con ese cambio.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Escribe la ley de Faraday con el número de vueltas o menciona Φ = BA cos θ.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cree que basta con que haya campo dentro de la bobina para que haya voltaje.",
+      "ejemplo": "Andrea tiene razón; el voltímetro debe estar malo, porque con el imán adentro tiene que haber corriente.",
+      "dificultad": "DIF:fisica/induccion-electromagnetica/1"
+     },
+     {
+      "descripcion": "Relaciona la fem con el valor del flujo y propone aumentar el campo sin movimiento.",
+      "ejemplo": "Hay que meter el imán más adentro y dejarlo ahí, donde el flujo es máximo, para que dé más voltaje.",
+      "dificultad": "DIF:fisica/induccion-electromagnetica/3"
+     },
+     {
+      "descripcion": "Propone algo que cambia la bobina o el imán, en contra de lo que pide la pregunta.",
+      "ejemplo": "Pondría una bobina con más vueltas y un imán más fuerte.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U12-12.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide quién tiene razón, por qué y una forma de aumentar el voltaje con su porqué: coincide con c1–c3. La restricción «misma bobina y mismo imán» está explícita, así que el tercer error es justo. Aquí se equivoca una chica (Andrea); en el resto del lote no hay más personajes que fallen, así que no hay sesgo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   }
  ],
  "microtemas": [],
@@ -1217,7 +1656,9 @@
  ],
  "datos_de_referencia": {
   "valores": [],
-  "hacen_falta_en": [],
+  "hacen_falta_en": [
+   "ACT:G11-FIS-U11-11.3/obj-2"
+  ],
   "datos_que_faltan": [],
   "fuente_esperada": "tabla de referencia citable en data/fuentes/ (pendiente)"
  },

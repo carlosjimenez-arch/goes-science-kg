@@ -208,6 +208,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:fisica/conservacion-energia-mecanica/1",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "descripcion": "Aplica la conservación de la energía mecánica a situaciones con fricción o resistencia del aire como si no las hubiera: espera que un carrito, una pelota o una canica vuelvan a la altura de partida, o atribuye toda diferencia entre lo calculado y lo medido a «errores de medición», sin reconocer la energía que las fuerzas no conservativas transforman en energía interna.",
+   "senales": "Dice que «la energía mecánica siempre se conserva»; predice la altura ideal para un sistema real sin mencionar pérdidas; explica la diferencia solo con «medimos mal».",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/2",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "descripcion": "Cree que la rapidez con que un cuerpo llega abajo depende del camino: que por una rampa más larga, más empinada o con curvas se llega con más o con menos rapidez aunque no haya fricción. No reconoce que el trabajo del peso solo depende del cambio de altura; lo que sí cambia con el camino es el tiempo que tarda.",
+   "senales": "Dice que en la rampa larga «tiene más tiempo para acelerar» o que en la empinada «llega con más fuerza»; calcula el trabajo del peso con la longitud de la rampa en lugar de la altura.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/3",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "descripcion": "Trata la energía potencial elástica como proporcional a la deformación: cree que comprimir el doble un resorte guarda el doble de energía y lanza un cuerpo al doble de altura, en lugar de usar ½kx², que se cuadruplica.",
+   "senales": "Predice «el doble de altura» al duplicar la compresión; escribe U = kx, o usa la fuerza del resorte como si fuera su energía.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:fisica/presion-hidrostatica/1",
    "concepto": "CON:fisica/presion-hidrostatica",
    "descripcion": "Cree que la presión en un punto del líquido depende de la cantidad total de líquido o de la forma y el ancho del recipiente. En un líquido en reposo, la presión que agrega el líquido depende solo de la profundidad del punto bajo la superficie libre y de la densidad: a igual profundidad, un tubo angosto y un lago dan la misma presión.",
@@ -1178,6 +1202,223 @@
     },
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.10/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U11-11.10"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "habilidad": "razonar",
+   "formato": "numerica",
+   "grados": [
+    10
+   ],
+   "enunciado": "Una tubería horizontal de riego en una parcela de Zapotitán tiene 2.0 cm de diámetro; allí el agua va a 1.5 m/s con una presión manométrica de 150 kPa. Más adelante, en el mismo nivel, la tubería se reduce a 1.0 cm de diámetro. Considera el agua como un fluido ideal, con ρ ≈ 1000 kg/m³ (valor aproximado de la tabla de referencia). Usa la ecuación de continuidad y la de Bernoulli: ¿cuál es la presión manométrica en el tramo angosto, en kilopascales (kPa)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 133.1,
+   "tolerancia": 0.5,
+   "unidad": "kPa",
+   "retroalimentacion": "Al reducir el diámetro a la mitad, el área queda en un cuarto y, por continuidad, la rapidez se multiplica por 4: v₂ = 6.0 m/s. En el mismo nivel, Bernoulli da P₂ = P₁ − ½ ρ (v₂² − v₁²) = 150 000 − 500 · (36 − 2.25) = 150 000 − 16 875 ≈ 133 100 Pa, o sea 133.1 kPa. La presión baja donde el agua va más rápido; en una tubería real bajaría algo más por la fricción.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U11-11.10"
+   },
+   "origen": "redactor-actividades (G10-FIS-U11-11.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto agrícola local (Zapotitán), pasos explícitos (continuidad y Bernoulli), unidad y supuestos declarados. Retroalimentación de 83 palabras que modela el cálculo completo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.10/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U11-11.10"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Datos de un grupo de ejemplo. Por un tubo de Venturi horizontal pasa agua: tramo 1 de 2.0 cm de diámetro, tramo 2 angosto de 1.0 cm y tramo 3 otra vez de 2.0 cm. Un tubito vertical abierto en cada tramo muestra columnas de agua de 30 cm (tubito 1), 18 cm (tubito 2) y 29 cm (tubito 3). ¿Qué conclusión sobre el tramo angosto apoyan estos datos?",
+   "opciones": {
+    "A": "Su rapidez es 4 veces mayor, porque el área es un cuarto, y su presión es menor, porque aumenta su energía cinética por volumen.",
+    "B": "Su rapidez es 2 veces mayor, porque el diámetro es la mitad, y su presión es menor, porque aumenta su energía cinética por volumen.",
+    "C": "Su rapidez es menor, porque el agua se frena al entrar en lo angosto, y su presión es menor, porque el agua pierde empuje.",
+    "D": "Su rapidez es 4 veces mayor, porque el área es un cuarto, y su presión es mayor, porque el agua más rápida empuja más."
+   },
+   "correcta": "A",
+   "distractores": {
+    "C": "DIF:fisica/principio-bernoulli/3",
+    "D": "DIF:fisica/principio-bernoulli/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La columna más baja en el tubito 2 indica menor presión allí. Por continuidad, con la mitad del diámetro el área es un cuarto y la rapidez es 4 veces mayor. Bernoulli lo explica: al subir la energía cinética por volumen, ½ ρ v², baja la presión. Con 12 cm de diferencia, ρ g (0.12 m) = ½ ρ (v₂² − v₁²), y como v₂ = 4 v₁ queda v₁ = √(2 g · 0.12 / 15) ≈ 0.40 m/s. El tubito 3 marca 1 cm menos que el 1 por la fricción.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U11-11.10"
+   },
+   "origen": "redactor-actividades (G10-FIS-U11-11.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "Opciones paralelas sin cambio de contenido: A (factor 4 por área un cuarto; menor presión al subir ½ρv²) es la única correcta; B (factor 2), C (más lenta) y D (más presión) siguen siendo falsas. La retroalimentación ρg·0.12 = ½ρ(v₂² − v₁²) = ½ρ·15v₁² da v₁ ≈ 0.40 m/s: correcto."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "opciones": {
+      "A": "Su rapidez es 4 veces mayor y su presión es menor, porque se conserva la energía por volumen.",
+      "B": "Su rapidez es 2 veces mayor y su presión es menor, porque la rapidez sigue al diámetro.",
+      "C": "Su rapidez es menor y su presión es menor, porque el agua se frena al entrar en lo angosto.",
+      "D": "Su rapidez es 4 veces mayor y su presión es mayor, porque el agua rápida empuja más."
+     },
+     "retroalimentacion": "La columna más baja en el tubito 2 indica menor presión allí. Por continuidad, con la mitad del diámetro el área es un cuarto y la rapidez es 4 veces mayor. Bernoulli lo explica: al subir la energía cinética por volumen, ½ ρ v², baja la presión. Con 12 cm de diferencia, v₁ = √(2 g · 0.12 / 15) ≈ 0.40 m/s. El tubito 3 marca 1 cm menos que el 1 por la fricción."
+    }
+   }
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.10/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U11-11.10"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.10",
+    "CON:fisica/principio-bernoulli"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Rosa propone poner una tubería más delgada para subir el agua al cuarto piso de un edificio, a 12 m sobre la tubería de la calle, porque «en el tubo delgado el agua se aprieta y llega con más presión». En 3 o 4 oraciones explica: (a) qué pasa con la rapidez del agua en el tramo delgado y por qué; (b) qué pasa con su presión según Bernoulli y si Rosa tiene razón; (c) qué presión manométrica mínima hace falta en la tubería de la calle para que el agua llegue a 12 m (usa ρ ≈ 1000 kg/m³ y g ≈ 9.8 m/s², valores aproximados de la tabla de referencia).",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con el mismo caudal, en el tubo delgado el agua va más rápido (A₁ v₁ = A₂ v₂). Por Bernoulli, a la misma altura, donde la rapidez aumenta la presión baja: el tubo delgado no da más presión, y en una tubería real pierde además más por fricción. Para subir 12 m hace falta al menos ρ g h ≈ 118 kPa de presión manométrica en la calle, y algo más para que el agua salga con rapidez.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U11-11.10"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Rosa no tiene razón. Como el caudal es el mismo, en el tubo delgado el agua va más rápido (A₁ v₁ = A₂ v₂). Según Bernoulli, a la misma altura, donde aumenta la rapidez disminuye la presión, así que el tubo delgado no da más presión; en una tubería real además se pierde más por fricción. Para que el agua suba 12 m, la presión manométrica en la calle debe ser al menos ρ g h = 1000 · 9.8 · 12 ≈ 118 000 Pa, unos 118 kPa, y un poco más para que salga con rapidez en el cuarto piso.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que en el tramo delgado la rapidez aumenta y lo justifica con la continuidad (mismo caudal, A₁ v₁ = A₂ v₂).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Dice que, según Bernoulli y a la misma altura, la presión baja donde la rapidez aumenta, y concluye que Rosa no tiene razón.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Calcula la presión mínima con ρ g h para 12 m de altura (unos 118 kPa) o plantea correctamente ese término.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona que hace falta algo más de presión para que el agua salga con rapidez o para vencer la fricción de la tubería.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta que el agua más rápida o «apretada» tiene más presión.",
+      "ejemplo": "Sí, en el tubo delgado el agua va más rápido y por eso empuja con más presión y sube más.",
+      "dificultad": "DIF:fisica/principio-bernoulli/2"
+     },
+     {
+      "descripcion": "Cree que en el tubo delgado el agua va más despacio.",
+      "ejemplo": "En el tubo delgado al agua le cuesta pasar y va más lenta, entonces se acumula y gana presión.",
+      "dificultad": "DIF:fisica/principio-bernoulli/3"
+     },
+     {
+      "descripcion": "Usa el largo de la tubería en lugar de la altura vertical para calcular ρ g h.",
+      "ejemplo": "Como la tubería mide 20 m hasta el cuarto piso, la presión necesaria es 1000 · 9.8 · 20.",
+      "dificultad": "DIF:fisica/presion-hidrostatica/3"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U11-11.10)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "Solo cambia la extensión a 3 o 4 oraciones; la física (continuidad, Bernoulli a igual altura, ρgh ≈ 118 kPa como mínimo) y la rúbrica quedan como se aprobaron."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Rosa propone poner una tubería más delgada para subir el agua al cuarto piso de un edificio, a 12 m sobre la tubería de la calle, porque «en el tubo delgado el agua se aprieta y llega con más presión». En 2 o 3 oraciones explica: (a) qué pasa con la rapidez del agua en el tramo delgado y por qué; (b) qué pasa con su presión según Bernoulli y si Rosa tiene razón; (c) qué presión manométrica mínima hace falta en la tubería de la calle para que el agua llegue a 12 m (usa ρ ≈ 1000 kg/m³ y g ≈ 9.8 m/s², valores aproximados de la tabla de referencia)."
+    }
+   }
   }
  ],
  "microtemas": [],
@@ -1288,7 +1529,9 @@
  "datos_de_referencia": {
   "valores": [],
   "hacen_falta_en": [
-   "ACT:G09-CIE-U1-1.11/obj-abierta"
+   "ACT:G09-CIE-U1-1.11/obj-abierta",
+   "ACT:G10-FIS-U11-11.10/obj-1",
+   "ACT:G10-FIS-U11-11.10/obj-abierta"
   ],
   "datos_que_faltan": [
    {

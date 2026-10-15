@@ -379,6 +379,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:quimica/ciencia-de-materiales/1",
+   "concepto": "CON:quimica/ciencia-de-materiales",
+   "descripcion": "Cree que el oro es el mejor conductor eléctrico y que por eso se usa en contactos y conectores. Confunde el valor o la nobleza del metal con su conductividad: no reconoce que la plata y el cobre conducen más que el oro, que se elige por no oxidarse.",
+   "senales": "Responde «se usa oro porque conduce mejor» o ordena la conductividad según el precio del metal (oro > plata > cobre).",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/ciencia-de-materiales/2",
+   "concepto": "CON:quimica/ciencia-de-materiales",
+   "descripcion": "Cree que todas las propiedades de una aleación son el promedio de las de sus metales, o que es un compuesto con fórmula fija. No reconoce que algunas propiedades no se promedian: una aleación puede fundir por debajo de todos sus componentes (como la soldadura de estaño y plomo) y ser más dura y peor conductora que el metal puro.",
+   "senales": "Calcula o predice la temperatura de fusión de una soldadura como promedio de las de sus metales, o escribe una fórmula química para el bronce o la soldadura.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/ciencia-de-materiales/3",
+   "concepto": "CON:quimica/ciencia-de-materiales",
+   "descripcion": "Confunde dureza con tenacidad: cree que un material que se quiebra al caer, como un azulejo o una cerámica, es blando, y que el material más duro es el que mejor resiste los golpes. No distingue resistencia al rayado de capacidad de deformarse sin romperse.",
+   "senales": "Dice «el azulejo es más blando que el clavo porque se quiebra» o elige un cerámico frágil para una pieza que recibe golpes porque «es muy duro».",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:quimica/enlace-metalico/1",
    "concepto": "CON:quimica/enlace-metalico",
    "descripcion": "Cree que un metal puro como el cobre no tiene enlace químico porque «es un solo elemento», o que sus átomos se unen de dos en dos con enlaces covalentes fijos. No reconoce el enlace metálico como la atracción entre una red de cationes y los electrones de valencia deslocalizados que comparten todos.",
@@ -881,6 +905,481 @@
     },
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
+  },
+  {
+   "id": "ACT:G11-QUI-U1-1.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U1-1.1"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U1-1.1",
+    "CON:quimica/ciencia-de-materiales"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Los contactos del conector de un cargador de teléfono son de cobre cubierto con una capa muy delgada de oro. ¿Cuál es la razón principal para recubrirlos de oro?",
+   "opciones": {
+    "A": "El oro conduce la electricidad mejor que cualquier otro metal, así que la carga pasa más rápido.",
+    "B": "El oro es muy maleable y se extiende en capas finísimas, así que se gasta poco metal caro.",
+    "C": "El oro no forma óxido con el aire húmedo, así que el contacto conserva una resistencia baja.",
+    "D": "El oro es muy denso y pesado, así que el conector queda firme y bien sujeto en el puerto."
+   },
+   "correcta": "C",
+   "distractores": {
+    "A": "DIF:quimica/ciencia-de-materiales/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El oro no se oxida ni se corroe con el aire húmedo, así que su superficie sigue conduciendo después de miles de conexiones; el cobre y el hierro forman óxidos que conducen mal. No es el mejor conductor: la plata y el cobre conducen más. Que sea maleable explica que la capa pueda ser delgada, no que se elija el oro.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U1-1.1"
+   },
+   "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto cercano (cargador), registro adecuado a 11.°, opciones de longitud pareja y sin pistas gramaticales. B es un hecho cierto pero no la razón principal y la retroalimentación lo aclara sin regañar ni nombrar letras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U1-1.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U1-1.1"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U1-1.1",
+    "CON:quimica/ciencia-de-materiales"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Una ficha técnica da estas temperaturas de fusión (valores aproximados de la tabla de referencia):\n• estaño: 232 °C\n• plata: 962 °C\n• cobre: 1085 °C\n• soldadura sin plomo (96.5 % de estaño, 3 % de plata y 0.5 % de cobre): de 217 °C a 220 °C\n¿Qué conclusión respaldan estos datos?",
+   "opciones": {
+    "A": "La soldadura funde a una temperatura intermedia, cercana al promedio de sus tres metales.",
+    "B": "La soldadura funde por debajo del estaño puro, aunque la plata y el cobre funden mucho más alto.",
+    "C": "La soldadura funde igual que el estaño puro, porque casi toda la aleación es estaño.",
+    "D": "La soldadura funde por encima del estaño, porque la plata y el cobre la hacen más resistente."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:quimica/ciencia-de-materiales/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La aleación funde entre 217 °C y 220 °C, por debajo de los 232 °C del estaño. La temperatura de fusión de una aleación no se obtiene promediando las de sus metales. Fundir a menor temperatura permite unir componentes aportando menos calor; aun así, para evitar daños hay que controlar la temperatura y el tiempo de soldadura.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U1-1.1"
+   },
+   "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La lista conserva los valores y la clave B: 220 °C es menor que 232 °C. El distractor A corresponde a la dificultad sobre promediar propiedades. Corrijo solo la garantía implícita de soldar sin daño: una menor temperatura reduce el calor necesario, pero no asegura que cualquier componente resista el proceso."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Una ficha técnica da estas temperaturas de fusión (valores aproximados de la tabla de referencia): estaño, 232 °C; plata, 962 °C; cobre, 1085 °C; soldadura sin plomo de 96.5 % de estaño, 3 % de plata y 0.5 % de cobre, de 217 °C a 220 °C. ¿Qué conclusión respaldan estos datos?",
+     "retroalimentacion": "Los datos muestran que la aleación funde entre 217 °C y 220 °C, por debajo de los 232 °C del estaño y muy lejos de un promedio. Una aleación no hereda el promedio de las propiedades de sus metales; esa temperatura baja es justo lo que permite soldar componentes sin dañarlos con el calor."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U1-1.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U1-1.1"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U1-1.1",
+    "CON:quimica/ciencia-de-materiales"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "En el aire húmedo de El Salvador, ¿qué problema aparecería si los contactos de un cargador se fabricaran de hierro en lugar de cobre cubierto de oro? En 3 o 4 oraciones: nombra el problema, explica por qué afecta la carga del teléfono y explica por qué no ocurre con el oro.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El hierro se oxida con el oxígeno y la humedad, y la herrumbre que cubre el contacto conduce muy mal: la resistencia sube, la carga se vuelve lenta o se interrumpe y el contacto se calienta. El oro no se oxida, así que su superficie sigue conduciendo. Además, el hierro conduce varias veces menos que el cobre.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U1-1.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Los contactos de hierro se oxidarían con la humedad y se cubrirían de herrumbre. Esa capa de óxido conduce muy mal, así que la resistencia del contacto sube y el teléfono cargaría lento, de forma intermitente o el conector se calentaría. Con el oro no pasa porque no reacciona con el oxígeno ni con la humedad, y su superficie sigue limpia y conductora. Además, el hierro conduce varias veces menos que el cobre.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Nombra la oxidación o corrosión del hierro (herrumbre) por el oxígeno y la humedad como el problema.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Relaciona la capa de óxido con un mal contacto eléctrico (más resistencia) y una consecuencia en la carga: lenta, intermitente o con calentamiento.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica que el oro no se oxida ni se corroe con el aire húmedo, por lo que su superficie sigue conduciendo.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Agrega que el hierro conduce la electricidad bastante menos que el cobre.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Afirma que el hierro no conduce la electricidad.",
+      "ejemplo": "No cargaría nada porque el hierro no es conductor, solo el cobre y el oro lo son.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Atribuye la ventaja del oro a que sería el mejor conductor y no menciona la corrosión.",
+      "ejemplo": "Con hierro cargaría más lento, porque el oro es el metal que mejor conduce la electricidad.",
+      "dificultad": "DIF:quimica/ciencia-de-materiales/1"
+     },
+     {
+      "descripcion": "Explica el problema por fusión o desgaste y no por corrosión.",
+      "ejemplo": "El hierro se derretiría con el calor de la carga y el contacto se deformaría.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-QUI-U1-1.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La ampliación a 3 o 4 oraciones permite explicar los tres criterios obligatorios. La corrosión del hierro en aire húmedo eleva la resistencia de contacto; el oro resiste ese ambiente y el hierro sigue siendo conductor. El error que atribuye al oro la máxima conductividad corresponde a ciencia-de-materiales/1."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "En el aire húmedo de El Salvador, ¿qué problema aparecería si los contactos de un cargador se fabricaran de hierro en lugar de cobre cubierto de oro? En 2 o 3 oraciones: nombra el problema, explica por qué afecta la carga del teléfono y explica por qué no ocurre con el oro."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U1-1.2-v3/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U1-1.2-v3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U1-1.2-v3",
+    "CON:quimica/ciencia-de-materiales"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "En una bujía de motor, el electrodo central de metal va rodeado por una pieza de cerámica de alúmina (óxido de aluminio). ¿Por qué se usa ese cerámico y no un metal para rodear el electrodo?",
+   "opciones": {
+    "A": "Porque es tenaz y no se quiebra con las vibraciones, ya que sus capas de iones se deslizan sin romperse.",
+    "B": "Porque contiene aluminio y lleva la corriente hasta la punta, ya que conserva los electrones libres del metal.",
+    "C": "Porque se dilata mucho con el calor y sella el cilindro, ya que los cerámicos se expanden más que los metales.",
+    "D": "Porque aísla la corriente y aguanta mucho calor, ya que sus electrones quedan fijos en enlaces iónicos y covalentes."
+   },
+   "correcta": "D",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La alúmina es un aislante eléctrico: en sus enlaces iónicos y covalentes no hay electrones libres, así que la chispa salta solo en la punta. Esos enlaces fuertes también le dan una temperatura de fusión muy alta. Que contenga aluminio no la hace metálica, y los cerámicos son frágiles y se dilatan poco.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U1-1.2-v3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto cotidiano (bujía), opciones parejas de 18 a 21 palabras con la misma estructura «porque… ya que…», sin pistas. La retroalimentación explica cada idea errónea sin nombrar letras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U1-1.2-v3/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U1-1.2-v3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U1-1.2-v3",
+    "CON:quimica/ciencia-de-materiales"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Datos de un grupo de ejemplo:\n• Rayado con la punta de un clavo de acero: el aluminio y la teja de barro quedan rayados; el azulejo esmaltado no (el trazo gris se borra con el dedo).\n• Golpe suave con martillo: el aluminio y el alambre de hierro se aplanan; la teja y el azulejo se quiebran.\n• Circuito con LED: enciende con los dos metales y no con los dos cerámicos.\n¿Qué material respaldan los datos para cubrir una mesa de trabajo que no debe rayarse ni conducir la corriente?",
+   "opciones": {
+    "A": "El azulejo esmaltado, porque el clavo no lo raya y no deja pasar la corriente.",
+    "B": "El alambre de hierro, porque se aplana con el golpe en lugar de quebrarse.",
+    "C": "La teja de barro, porque no deja pasar la corriente del circuito con LED.",
+    "D": "El aluminio, porque es liviano y se deforma sin romperse con un golpe."
+   },
+   "correcta": "A",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La mesa pide dos propiedades: resistir el rayado y no conducir. Solo el azulejo cumple las dos: el clavo no lo raya (el trazo gris es metal del clavo que se borra) y el LED no enciende. La teja tampoco conduce, pero se raya; los metales no se quiebran, pero conducen, y el aluminio además se raya.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U1-1.2-v3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La lista conserva las tres pruebas; A es la única opción que satisface resistencia al rayado y baja conductividad observada. La retroalimentación ya limita el rayado al aluminio, tal como corrigió el experto. El mapeo vacío evita adjudicar a las otras respuestas una dificultad no demostrada."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Datos de un grupo de ejemplo. Rayado con la punta de un clavo de acero: el aluminio y la teja de barro quedan rayados; el azulejo esmaltado no (el trazo gris se borra con el dedo). Golpe suave con martillo: el aluminio y el alambre de hierro se aplanan; la teja y el azulejo se quiebran. Circuito con LED: enciende con los dos metales y no con los dos cerámicos. ¿Qué material respaldan los datos para cubrir una mesa de trabajo que no debe rayarse ni conducir la corriente?",
+     "retroalimentacion": "La mesa pide dos propiedades: resistir el rayado y no conducir. Solo el azulejo cumple las dos: el clavo no lo raya (el trazo gris es metal del clavo que se borra) y el LED no enciende. La teja tampoco conduce, pero se raya; los metales no se quiebran, pero conducen y se rayan."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U1-1.2-v3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U1-1.2-v3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U1-1.2-v3",
+    "CON:quimica/ciencia-de-materiales"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Gabriela dice: «El azulejo es blando, porque se quiebra cuando cae al piso; el clavo es duro, porque no se quiebra». En la prueba de rayado el clavo no rayó el esmalte del azulejo. En 4 o 5 oraciones: di si Gabriela tiene razón usando ese resultado, explica la diferencia entre dureza y fragilidad, y explica con la forma en que están unidas sus partículas por qué el metal se deforma y el cerámico se quiebra.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El esmalte resiste el rayado del clavo, pero es frágil: se rompe con poca deformación plástica. En el metal, capas de átomos pueden deslizarse conservando la cohesión del enlace metálico. En muchos cerámicos, los enlaces iónicos o covalentes dificultan ese deslizamiento; al romperse enlaces o enfrentarse cargas iguales puede propagarse una grieta. Un material frágil sí puede deformarse elásticamente antes de romperse.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U1-1.2-v3"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Gabriela confunde dureza con fragilidad: el esmalte es más duro que el clavo según el rayado, pero puede quebrarse. Dureza es resistencia al rayado; fragilidad es romperse con poca deformación plástica. En el metal, capas de átomos pueden deslizarse manteniendo la cohesión del enlace metálico mediante electrones deslocalizados. En muchos cerámicos, los enlaces iónicos o covalentes dificultan el deslizamiento; se rompen enlaces o se enfrentan cargas iguales y puede propagarse una grieta.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que Gabriela no tiene razón y usa el resultado del rayado: el esmalte del azulejo es más duro que el clavo.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Distingue dureza (resistencia al rayado) de fragilidad (rotura con poca deformación plástica), sin negar que el cerámico pueda deformarse elásticamente.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica que en el metal las capas de átomos se deslizan sin que se pierda el enlace metálico.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Explica, con un modelo simplificado, que los enlaces iónicos o covalentes del cerámico dificultan el deslizamiento de capas y favorecen la fractura; admite rotura de enlaces o repulsión de cargas iguales.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta que lo que se quiebra es blando.",
+      "ejemplo": "Sí tiene razón: el azulejo es más blando porque se rompió y el clavo no.",
+      "dificultad": "DIF:quimica/ciencia-de-materiales/3"
+     },
+     {
+      "descripcion": "Toma el trazo gris del clavo como una raya en el azulejo.",
+      "ejemplo": "El clavo sí rayó el azulejo porque quedó una línea gris, así que el clavo es más duro.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Explica la diferencia por el peso o el grosor y no por el enlace.",
+      "ejemplo": "El clavo no se quiebra porque es más pesado y grueso que el azulejo.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-QUI-U1-1.2-v3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La consigna ampliada mantiene las cuatro tareas y el modelo de electrones deslocalizados. Preciso fragilidad como poca deformación plástica: los cerámicos sí admiten deformación elástica. Evito presentar el deslizamiento como imposible en cualquier cerámico y enlazo la confusión entre rayado y rotura a su dificultad existente."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Gabriela dice: «El azulejo es blando, porque se quiebra cuando cae al piso; el clavo es duro, porque no se quiebra». En la prueba de rayado el clavo no rayó el esmalte del azulejo. En 2 o 3 oraciones: di si Gabriela tiene razón usando ese resultado, explica la diferencia entre dureza y fragilidad, y explica con la forma en que están unidas sus partículas por qué el metal se deforma y el cerámico se quiebra.",
+     "retroalimentacion": "El esmalte es más duro que el clavo, porque resiste el rayado, pero es frágil: se rompe sin deformarse. En el metal, las capas de átomos se deslizan y el enlace metálico se mantiene; en el cerámico, los enlaces iónicos y covalentes son rígidos y, al desplazar las capas, se rompen o se enfrentan iones de igual carga, y aparece una grieta.",
+     "rubrica": {
+      "respuesta_modelo": "Gabriela no tiene razón: el azulejo es más duro que el clavo, porque el clavo no logra rayar el esmalte. Dureza es resistir el rayado y fragilidad es romperse sin deformarse; el azulejo es duro pero frágil. En el metal las capas de átomos se deslizan y siguen unidas por los electrones compartidos, así que se dobla; en el cerámico los enlaces iónicos y covalentes no permiten ese deslizamiento, al mover una capa se rompen enlaces o se repelen iones de igual carga, y el material se agrieta.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Dice que Gabriela no tiene razón y usa el resultado del rayado: el azulejo es más duro que el clavo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Distingue dureza (resistencia al rayado) de fragilidad (romperse sin deformarse) o de tenacidad.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que en el metal las capas de átomos se deslizan sin que se pierda el enlace metálico.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Explica que en el cerámico los enlaces iónicos o covalentes no admiten el deslizamiento: se rompen o se enfrentan iones de igual carga.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Acepta que lo que se quiebra es blando.",
+        "ejemplo": "Sí tiene razón: el azulejo es más blando porque se rompió y el clavo no.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Toma el trazo gris del clavo como una raya en el azulejo.",
+        "ejemplo": "El clavo sí rayó el azulejo porque quedó una línea gris, así que el clavo es más duro.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Explica la diferencia por el peso o el grosor y no por el enlace.",
+        "ejemplo": "El clavo no se quiebra porque es más pesado y grueso que el azulejo.",
+        "dificultad": null
+       }
+      ]
+     }
+    }
+   }
   }
  ],
  "microtemas": [],
@@ -991,7 +1490,8 @@
  "datos_de_referencia": {
   "valores": [],
   "hacen_falta_en": [
-   "ACT:G10-QUI-U5-5.14/obj-2"
+   "ACT:G10-QUI-U5-5.14/obj-2",
+   "ACT:G11-QUI-U1-1.1/obj-2"
   ],
   "datos_que_faltan": [],
   "fuente_esperada": "tabla de referencia citable en data/fuentes/ (pendiente)"

@@ -127,6 +127,9 @@ faltante o una recuperación con evidencia fuerte. El resumen por ciclo cuenta l
   `validar_lotes.py` valida su salida. Todo nace `propuesta_pendiente`.
 - **Revisión:** el panel revisa las propuestas (experto de la disciplina y psicopedagogo), y el bucle de
   fortalecimiento las impugna con citas. Solo se entregan las propuestas sólidas o respaldadas.
+  Para enviar únicamente los refuerzos al bucle, usar una serie propia y `--prefijo RFZ:`:
+  `gskg bucle impugnar --vuelta 1 --tipos contenido --serie rfz --prefijo RFZ:`.
+  Así no se incorporan también los paquetes pedagógicos recién revisados.
 
 ### 15.6 · Entregable
 `entregas/mallas_v3_reforzadas/` (se genera):

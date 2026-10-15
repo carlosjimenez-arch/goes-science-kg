@@ -29,6 +29,34 @@
  ],
  "salidas_codex": [
   {
+   "archivo": "data/interim/panel/lotes/salida_r1-rfz2_experto-fisica.json",
+   "dictamenes": 2,
+   "decisiones": {
+    "corregir": 2
+   },
+   "sha256": "ea9b9dafb447c94f8ccb898defae5b7882338718a210af9fd7201c7c7f4266f6",
+   "consolidado": true
+  },
+  {
+   "archivo": "data/interim/panel/lotes/salida_r1-rfz2_experto-quimica.json",
+   "dictamenes": 6,
+   "decisiones": {
+    "corregir": 6
+   },
+   "sha256": "5067d45f15c0a27321375c51119e66d6ecc3baca6c21217066ca1709eba238f7",
+   "consolidado": true
+  },
+  {
+   "archivo": "data/interim/panel/lotes/salida_r3-q10a_experto-quimica.json",
+   "dictamenes": 30,
+   "decisiones": {
+    "corregir": 15,
+    "aprobar": 15
+   },
+   "sha256": "2baca306675ad8970fcce94f2db1722f1825abbfd0a0bef8892899a65d350a2c",
+   "consolidado": true
+  },
+  {
    "archivo": "data/interim/panel/lotes/salida_r3-q11a_experto-quimica_1.json",
    "dictamenes": 30,
    "decisiones": {
@@ -57,9 +85,83 @@
    },
    "sha256": "eb70e8c7e994e04fcba36d9be9c4bf9c2a449d9fb0c5967494108d2cc586f057",
    "consolidado": true
+  },
+  {
+   "archivo": "data/interim/panel/lotes/salida_r3-q11e_experto-quimica_1.json",
+   "dictamenes": 30,
+   "decisiones": {
+    "corregir": 28,
+    "aprobar": 2
+   },
+   "sha256": "dbc2c2f0b1615e4b798b0dfe964f7295072e7596a332dc58381257f9fe08e010",
+   "consolidado": true
+  },
+  {
+   "archivo": "data/interim/panel/lotes/salida_r3-q11e_experto-quimica_2.json",
+   "dictamenes": 7,
+   "decisiones": {
+    "corregir": 7
+   },
+   "sha256": "818534c76de73039082e3eed3c3807c6e8cb3bf741c4ab86abbca20d2755f09a",
+   "consolidado": true
+  },
+  {
+   "archivo": "data/interim/panel/lotes/salida_r4-f11d_experto-fisica.json",
+   "dictamenes": 17,
+   "decisiones": {
+    "corregir": 12,
+    "aprobar": 5
+   },
+   "sha256": "f53af711057e06c3dd0b67cfb60c5317f81896970e54f5946e6ccfe21e3a3df6",
+   "consolidado": true
   }
  ],
- "contenido_en_revision": 84,
- "estado": "visto bueno científico en curso",
- "nota": "Dictámenes del panel IA, sin confirmación del MINED ni habilitación de uso con estudiantes."
+ "estado": "paquetes ligeros generados; refuerzos V3 en revisión y bucle",
+ "nota": "Dictámenes del panel IA, sin confirmación del MINED ni habilitación de uso con estudiantes.",
+ "ajustes_vinculos": [
+  {
+   "elemento": "ACT:G11-FIS-U20-20.6/obj-2",
+   "fecha": "2026-10-14",
+   "motor_revision": "Codex",
+   "campo": "evalua",
+   "anterior": [
+    "TEMA:G11-FIS-U20-20.6",
+    "CON:fisica/cosmologia-big-bang"
+   ],
+   "nuevo": [
+    "TEMA:G11-FIS-U20-20.6",
+    "CON:fisica/astronomia-multionda"
+   ],
+   "justificacion": "La curva de tránsito evalúa detección de exoplanetas, no cosmología del Big Bang.",
+   "confianza": "alta",
+   "fuente": {
+    "archivo": "Matriz_Bachillerato_Fisica_10_11.xlsx",
+    "hoja": "Física 11.°",
+    "fila": 34,
+    "cita_literal": "Indagación de los métodos para detectar y caracterizar un exoplaneta."
+   },
+   "nota": "Ajuste técnico de vínculos; no modifica el dictamen científico ni la malla."
+  }
+ ],
+ "fecha_cierre_vistos_buenos": "2026-10-15",
+ "vistos_buenos_pedagogicos": {
+  "expedientes": 152,
+  "decisiones": {
+   "corregir": 105,
+   "aprobar": 47
+  },
+  "confianza": {
+   "alta": 148,
+   "media": 4
+  }
+ },
+ "contenido_pedagogico_en_revision": 0,
+ "publicacion": {
+  "rama": "refactor/calidad-codigo",
+  "primer_commit": "6c31799",
+  "primer_commit_subido": true,
+  "main": "sin publicar: la revisión automática exige autorización explícita"
+ },
+ "contenido_en_revision_al_primer_corte": 84,
+ "refuerzos_en_revision": 8
 }

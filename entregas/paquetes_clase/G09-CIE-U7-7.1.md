@@ -111,6 +111,9 @@
 - **ACT:G09-CIE-U7-7.3/obj-1** (objetivo, razonar, opcion_multiple): El imán de un equipo de resonancia magnética es un electroimán muy potente. Don Ernesto acompaña a su hija y, por descuido, entra a la sala con unas tijeras de acero y una lata de aluminio vacía en la bolsa. ¿Qué predice
 - **ACT:G09-CIE-U7-7.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Un anuncio dice que una pulsera magnética quita el dolor de rodilla. Datos de ejemplo de un estudio: 40 personas usaron la pulsera con imán y 40 una pulsera idéntica sin imán; nadie sabía cuál llevaba. En una escala de 0
 - **ACT:G09-CIE-U7-7.3/obj-abierta** (objetivo, explicar, abierta): Antes de una resonancia magnética, el hospital pide retirar llaves, horquillas y relojes. Además, el anuncio de una pulsera magnética promete curar dolores. En 2 o 3 oraciones: (1) explica, usando la idea de campo magnét
+- **ACT:G11-FIS-U11-11.3/obj-1** (objetivo, explicar, opcion_multiple): Para deducir con la ley de Ampère el campo magnético dentro de un solenoide largo, Daniela elige como trayectoria cerrada un rectángulo: un lado largo dentro de la bobina, paralelo a su eje, el lado opuesto por fuera y d
+- **ACT:G11-FIS-U11-11.3/obj-2** (objetivo, interpretar_datos, numerica): Josué tendió un cable recto y largo sobre la mesa y midió con el magnetómetro del celular el campo del cable a varias distancias r, ya descontado el campo de la Tierra (datos de un grupo de ejemplo): r = 1.0 cm, B = 39.6
+- **ACT:G11-FIS-U11-11.3/obj-abierta** (objetivo, explicar, abierta): Valeria va a medir con la aplicación phyphox el campo de un cable recto con corriente. Antes de conectar la pila, el celular ya marca unos 40 μT, y la lectura cambia si lo acerca a la pata de hierro de la mesa. En 2 o 3 
 
 ## Datos de referencia
 

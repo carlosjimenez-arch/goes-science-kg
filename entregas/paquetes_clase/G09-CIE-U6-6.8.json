@@ -706,6 +706,258 @@
      }
     }
    }
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.4/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U9-9.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.4",
+    "CON:fisica/potencia-electrica-joule"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Mónica conecta por separado un resistor de 22 Ω y otro de 220 Ω, los dos de 2 W para que soporten el calor, a la misma batería de 4.5 V (tres pilas en serie; supón que su voltaje no cambia). ¿Cuál de los dos disipa más potencia como calor, cuántas veces más, aproximadamente, y por qué?",
+   "opciones": {
+    "A": "El de 220 Ω, unas 10 veces más, porque según P = I²R la potencia crece con la resistencia.",
+    "B": "El de 22 Ω, unas 10 veces más, porque con el mismo voltaje le pasa 10 veces más corriente.",
+    "C": "Los dos igual, porque están en la misma pila de 4.5 V y es el voltaje el que fija la potencia.",
+    "D": "El de 22 Ω, unas 100 veces más, porque la potencia depende del cuadrado de la corriente."
+   },
+   "correcta": "B",
+   "distractores": {
+    "C": "DIF:fisica/potencia-electrica-joule/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con el mismo voltaje conviene P = V²/R: 4.5²/22 ≈ 0.92 W y 4.5²/220 ≈ 0.092 W. Por el de 22 Ω pasa 10 veces más corriente; aunque su resistencia es 10 veces menor, I²R da 100/10 = 10 veces más potencia. La regla «más resistencia, más calor» de P = I²R solo vale cuando la corriente es la misma, como en un circuito en serie.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U9-9.4"
+   },
+   "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Escenario concreto y seguro (resistores de 2 W, solo pilas). Opciones parejas: B y D comparten el sentido correcto y se diferencian en el factor, lo que discrimina bien entre V²/R e I²R mal aplicado. La retroalimentación dice cuándo vale «más resistencia, más calor», sin simplificar de más."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Mónica conecta por separado un resistor de 22 Ω y otro de 220 Ω a la misma batería de 4.5 V (tres pilas en serie; supón que su voltaje no cambia). ¿Cuál de los dos disipa más potencia como calor, cuántas veces más, aproximadamente, y por qué?"
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.4/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U9-9.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.4",
+    "CON:fisica/potencia-electrica-joule"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Tabla de consumo de una familia (datos de ejemplo), para un mes de 30 días: refrigeradora de 150 W cuyo compresor funciona en promedio 10 h al día; cinco focos LED de 9 W cada uno, encendidos 6 h al día; televisor de 80 W, 5 h al día; plancha de 1000 W, 4 h en todo el mes. Calcula la energía total que consumen estos aparatos en el mes, en kilowatt hora (kWh). Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 69.1,
+   "tolerancia": 0.5,
+   "unidad": "kWh",
+   "retroalimentacion": "Energía = potencia en kW × horas: refrigeradora 0.150 × 10 × 30 = 45 kWh; focos 5 × 0.009 × 6 × 30 = 8.1 kWh; televisor 0.080 × 5 × 30 = 12 kWh; plancha 1.0 × 4 = 4 kWh. Total ≈ 69.1 kWh. La plancha tiene la mayor potencia, pero la refrigeradora consume más de la mitad de la energía porque funciona muchas más horas.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U9-9.4"
+   },
+   "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Usa una tabla de consumo de ejemplo, no datos de la familia del estudiante: no hay comparación entre hogares ni exige recibos. Pide la unidad (kWh) y el periodo. La retroalimentación desglosa aparato por aparato y deja la idea clave de potencia frente a tiempo de uso."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.4/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U9-9.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.4",
+    "CON:fisica/potencia-electrica-joule"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Natalia lee estos valores aproximados, que varían mucho entre personas: de una mano a la otra, el cuerpo tiene unos 100 000 Ω con la piel seca y unos 1 000 Ω con la piel mojada. Una corriente de unos 1 mA se siente; desde unos 10 mA puede impedir soltar el cable, y desde unos 50 mA puede detener el ritmo normal del corazón (fibrilación). Es solo un cálculo: nunca se prueba. En 3 o 4 oraciones: calcula con la ley de Ohm la corriente que pasaría por el cuerpo al tocar los 120 V de un tomacorriente en cada caso; di cuál caso es más peligroso y por qué, y justifica con esos resultados una medida de protección.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con 120 V, I = V/R da unos 1.2 mA con la piel seca y unos 120 mA con la piel mojada. Lo que daña es la corriente: al bajar la resistencia, sube por encima del nivel de fibrilación. El caso seco tampoco es seguro: el sudor, una herida o un contacto firme bajan mucho la resistencia. Por eso no se tocan aparatos con las manos mojadas y se usan tomacorrientes con protección contra falla a tierra, que cortan con pocos miliamperios; el disyuntor común solo protege los cables.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U9-9.4"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Con la piel seca, I = 120/100 000 = 0.0012 A, unos 1.2 mA, que ya se siente; aun así no es un caso seguro, porque el sudor, una herida o un contacto firme bajan mucho esa resistencia. Con la piel mojada, I = 120/1 000 = 0.12 A, unos 120 mA, más que los 50 mA que pueden causar fibrilación: el voltaje es el mismo, pero la resistencia es 100 veces menor y la corriente 100 veces mayor. Por eso no se tocan aparatos ni cables con las manos mojadas, y en baños y cocinas conviene un tomacorriente con protección contra falla a tierra, que corta en cuanto parte de la corriente se desvía por el cuerpo.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Calcula con I = V/R las dos corrientes: cerca de 1.2 mA con la piel seca y cerca de 120 mA con la piel mojada.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Concluye que el caso de la piel mojada es el más peligroso y lo justifica comparando su corriente con los umbrales dados (o diciendo que el daño depende de la corriente, que crece al bajar la resistencia). No se penaliza que agregue que el caso seco tampoco es seguro.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Propone una medida de protección y la relaciona con sus cálculos: evitar que baje la resistencia (manos secas, calzado aislante) o cortar el circuito ante una fuga (protección contra falla a tierra, conexión a tierra, desconectar antes de reparar).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Señala que el fusible o el disyuntor común no protege a la persona, porque se dispara con corrientes de varios amperios.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cree que el peligro lo da solo el voltaje y que los dos casos son iguales.",
+      "ejemplo": "Los dos son igual de peligrosos, porque en ambos casos son 120 V.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Aplica «más resistencia, más calor» y elige la piel seca como el caso peligroso.",
+      "ejemplo": "Con la piel seca es peor, porque hay más resistencia y se produce más calor en el cuerpo.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Confía en el disyuntor de la casa como protección de la persona.",
+      "ejemplo": "No hay peligro, porque si pasa mucha corriente el breaker de la casa la corta.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U9-9.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "«Cuál caso es más peligroso» es más exacto que el anterior y coherente con la salvedad que agregué: el caso seco tampoco es seguro. Datos (100 000 Ω y 1 000 Ω, 120 V), cálculos (1.2 mA y 120 mA), umbrales y rúbrica sin cambios; c2 ya no penaliza decir que el seco también es riesgoso. 3 o 4 oraciones es razonable para tres criterios obligatorios."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Natalia lee que, de una mano a la otra, la resistencia del cuerpo es de unos 100 000 Ω con la piel seca y de unos 1 000 Ω con la piel mojada (valores aproximados; varían mucho entre personas). Como referencia aproximada, una corriente de unos 1 mA se siente, desde unos 10 mA puede impedir soltar el cable y desde unos 50 mA puede detener el ritmo normal del corazón (fibrilación). Es solo un cálculo: nunca se prueba. En 2 o 3 oraciones: calcula con la ley de Ohm la corriente que pasaría por el cuerpo al tocar los 120 V de un tomacorriente en cada caso, di cuál es peligrosa y por qué, y justifica con esos resultados una medida de protección.",
+     "retroalimentacion": "Con 120 V, I = V/R da unos 1.2 mA con la piel seca y unos 120 mA con la piel mojada. Lo que daña es la corriente: al bajar la resistencia de la piel, sube por encima del nivel de fibrilación. Por eso no se tocan aparatos con las manos mojadas y se usan tomacorrientes con protección contra falla a tierra, que cortan con pocos miliamperios; el disyuntor común solo protege los cables.",
+     "rubrica": {
+      "respuesta_modelo": "Con la piel seca, I = 120/100 000 = 0.0012 A, unos 1.2 mA, que apenas se siente. Con la piel mojada, I = 120/1 000 = 0.12 A, unos 120 mA, más que los 50 mA que pueden causar fibrilación, así que es peligrosa: el voltaje es el mismo, pero la resistencia es 100 veces menor y la corriente 100 veces mayor. Por eso no se deben tocar aparatos ni cables con las manos mojadas, y en baños y cocinas conviene un tomacorriente con protección contra falla a tierra, que corta la corriente en cuanto una parte se desvía por el cuerpo.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula con I = V/R las dos corrientes: cerca de 1.2 mA con la piel seca y cerca de 120 mA con la piel mojada.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Concluye que el caso de la piel mojada es el peligroso y lo justifica comparando su corriente con los umbrales dados (o diciendo que el daño depende de la corriente, que crece al bajar la resistencia).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Propone una medida de protección y la relaciona con sus cálculos: evitar que baje la resistencia (manos secas, calzado aislante) o cortar el circuito ante una fuga (protección contra falla a tierra, conexión a tierra, desconectar antes de reparar).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que el fusible o el disyuntor común no protege a la persona, porque se dispara con corrientes de varios amperios.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Cree que el peligro lo da solo el voltaje y que los dos casos son iguales.",
+        "ejemplo": "Los dos son igual de peligrosos, porque en ambos casos son 120 V.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Aplica «más resistencia, más calor» y elige la piel seca como el caso peligroso.",
+        "ejemplo": "Con la piel seca es peor, porque hay más resistencia y se produce más calor en el cuerpo.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Confía en el disyuntor de la casa como protección de la persona.",
+        "ejemplo": "No hay peligro, porque si pasa mucha corriente el breaker de la casa la corta.",
+        "dificultad": null
+       }
+      ]
+     }
+    }
+   }
   }
  ],
  "microtemas": [],

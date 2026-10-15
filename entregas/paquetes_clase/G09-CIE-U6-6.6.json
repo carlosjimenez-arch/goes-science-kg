@@ -324,6 +324,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:fisica/capacitancia/1",
+   "concepto": "CON:fisica/capacitancia",
+   "descripcion": "Cree que un condensador cargado guarda carga neta (que «se llena de electrones» o de carga positiva), en lugar de reconocer que sus placas tienen cargas iguales y opuestas, con carga total cero, y que lo que almacena es energía en el campo eléctrico entre ellas.",
+   "senales": "Dice que el condensador cargado atraería papelitos como un globo frotado; suma las cargas de las dos placas como si guardara el doble; cree que al descargarse la carga sale del condensador y se gasta en el circuito, en lugar de pasar por el circuito de una placa a la otra hasta neutralizarse.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/capacitancia/2",
+   "concepto": "CON:fisica/capacitancia",
+   "descripcion": "Lee C = Q/V como si la capacitancia la causaran la carga o el voltaje: cree que con más voltaje o más carga un condensador tiene más capacitancia, en lugar de entender que depende del área, la separación y el dieléctrico.",
+   "senales": "Afirma que un condensador «tiene más faradios» al cargarlo con más voltaje; al cambiar la separación de las placas dice que la capacitancia no cambia porque la carga es la misma.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/capacitancia/3",
+   "concepto": "CON:fisica/capacitancia",
+   "descripcion": "Aplica a los condensadores las reglas de combinación de los resistores: suma directa en serie y suma de recíprocos en paralelo, sin razonar qué es igual en cada caso (la carga en serie, el voltaje en paralelo).",
+   "senales": "Obtiene para dos condensadores en serie una capacitancia mayor que la de cada uno; elige la conexión en serie para «juntar más capacitancia».",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:fisica/semiconductores-dispositivos/1",
    "concepto": "CON:fisica/semiconductores-dispositivos",
    "descripcion": "Cree que el LED o el diodo conducen igual en los dos sentidos, como un foco o un cable, y que si no encienden al conectarlos al revés es porque se dañaron, en lugar de reconocer que un diodo solo deja pasar corriente en un sentido.",
@@ -822,6 +846,256 @@
        {
         "descripcion": "Cree que el capacitor es una batería de respaldo para cuando se va la luz.",
         "ejemplo": "El capacitor guarda electricidad para seguir cargando el celular si se va la luz.",
+        "dificultad": null
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.11/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U9-9.11"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.11",
+    "CON:fisica/capacitancia"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Laura conecta un condensador de placas paralelas (dos láminas metálicas separadas por aire) a una pila de 9 V y, sin desconectarlo, separa las placas hasta el doble de la distancia inicial. ¿Qué pasa con la capacitancia y con la carga de cada placa?",
+   "opciones": {
+    "A": "La capacitancia baja a la mitad y la carga también, porque el voltaje lo sigue fijando la pila.",
+    "B": "La capacitancia no cambia y la carga tampoco, porque la capacitancia depende de la carga guardada.",
+    "C": "La capacitancia se duplica y la carga también, porque al separar las placas hay más espacio para carga.",
+    "D": "La capacitancia baja a la mitad y la carga no cambia, porque la carga no tiene por dónde escapar."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:fisica/capacitancia/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La capacitancia depende de la geometría y del material: C = κε₀A/d, así que al duplicar d se reduce a la mitad. Como el condensador sigue conectado, la pila mantiene el voltaje en 9 V y Q = CV también se reduce a la mitad: parte de la carga regresa a la pila. Si lo hubiera desconectado antes, la carga se conservaría y lo que cambiaría sería el voltaje.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U9-9.11"
+   },
+   "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Explica qué es un condensador de placas paralelas en el propio enunciado. Opciones parejas (16–19 palabras); D, el caso desconectado, es un distractor muy plausible y no correcto por accidente porque el enunciado dice «sin desconectarlo». La retroalimentación contrasta ambos casos sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.11/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U9-9.11"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.11",
+    "CON:fisica/capacitancia"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un condensador electrolítico de 1000 µF nominales, cargado a 6.0 V, se descarga a través de un resistor de 47 kΩ. Un grupo leyó el voltaje del condensador cada 20 s (datos de un grupo de ejemplo): 0 s, 6.00 V; 20 s, 4.02 V; 40 s, 2.69 V; 60 s, 1.80 V; 80 s, 1.20 V; 100 s, 0.81 V. Determina la constante de tiempo (el tiempo en que el voltaje baja al 37 % del inicial; si ese voltaje cae entre dos lecturas, estima el tiempo entre ellas) y con ella calcula la capacitancia real del condensador, en microfaradios (µF). Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 1060,
+   "tolerancia": 60,
+   "unidad": "µF",
+   "retroalimentacion": "El 37 % de 6.00 V son unos 2.21 V, que se alcanzan cerca de los 50 s, entre las lecturas de 40 s y 60 s. Con τ = RC, C = τ/R ≈ 50 s / 47 000 Ω ≈ 1.06 × 10⁻³ F ≈ 1060 µF. Es algo más que lo nominal, dentro de la tolerancia habitual de los electrolíticos (±20 %). Una gráfica de ln V contra t da una recta de pendiente −1/τ y aprovecha todos los datos.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U9-9.11"
+   },
+   "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "El andamio (estimar el tiempo entre dos lecturas) no cambia la física. Interpolando 2.22 V entre 2.69 V (40 s) y 1.80 V (60 s) sale ≈ 50.6 s y 1076 µF; la tolerancia 1060 ± 60 admite τ entre ≈ 47 y 52.6 s, que cubre la interpolación lineal y la exponencial (≈ 49.8 s). Valor, unidad y retroalimentación siguen como los fijé."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Un condensador electrolítico de 1000 µF nominales, cargado a 6.0 V, se descarga a través de un resistor de 47 kΩ. Un grupo leyó el voltaje del condensador cada 20 s (datos de un grupo de ejemplo): 0 s, 6.00 V; 20 s, 4.02 V; 40 s, 2.69 V; 60 s, 1.80 V; 80 s, 1.20 V; 100 s, 0.81 V. Determina la constante de tiempo (el tiempo en que el voltaje baja al 37 % del inicial) y con ella calcula la capacitancia real del condensador, en microfaradios (µF). Escribe solo el número."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U9-9.11/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U9-9.11"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U9-9.11",
+    "CON:fisica/capacitancia"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Fernando tiene dos condensadores, de 10 µF y de 30 µF, y necesita la mayor capacitancia posible. En 2 o 3 oraciones: calcula la capacitancia equivalente si los conecta en paralelo y si los conecta en serie, di cuál conexión le conviene y explica por qué una suma las capacitancias y la otra da menos que la menor, diciendo qué es igual en los dos condensadores en cada caso (la carga o el voltaje).",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En paralelo, C = 10 + 30 = 40 µF; en serie, 1/C = 1/10 + 1/30, así que C = 7.5 µF: le conviene el paralelo. En paralelo los dos tienen el mismo voltaje y sus cargas se suman, como si se sumara área. En serie los dos guardan la misma carga y sus voltajes se suman, así que con la misma carga se necesita más voltaje, como si la separación creciera. Son las reglas de los resistores, al revés.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U9-9.11"
+   },
+   "rubrica": {
+    "respuesta_modelo": "En paralelo la capacitancia es 10 + 30 = 40 µF y en serie es 1/(1/10 + 1/30) = 7.5 µF, así que le conviene el paralelo. En paralelo los dos condensadores tienen el mismo voltaje y la carga total es la suma de sus cargas, por eso las capacitancias se suman. En serie los dos tienen la misma carga y el voltaje total es la suma de sus voltajes, así que para la misma carga hace falta más voltaje y Q/V queda menor que la del más pequeño.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Calcula 40 µF en paralelo y 7.5 µF en serie, y elige la conexión en paralelo.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica el paralelo con que los dos tienen el mismo voltaje y sus cargas se suman (o con que equivale a aumentar el área).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica la serie con que los dos tienen la misma carga y sus voltajes se suman, de modo que Q/V es menor (o con que equivale a aumentar la separación).",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Señala que las reglas son las inversas de las de los resistores.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Usa las reglas de los resistores: suma en serie y recíprocos en paralelo.",
+      "ejemplo": "En serie da 40 µF, porque uno va tras otro y se suman, y en paralelo da 7.5 µF; le conviene la serie.",
+      "dificultad": "DIF:fisica/capacitancia/3"
+     },
+     {
+      "descripcion": "Cree que la capacitancia equivalente depende del voltaje de carga y no de la conexión.",
+      "ejemplo": "Depende de con cuánto voltaje los cargue: con más voltaje cualquier conexión tiene más capacitancia.",
+      "dificultad": "DIF:fisica/capacitancia/2"
+     },
+     {
+      "descripcion": "Calcula bien, pero explica la serie diciendo que cada condensador recibe más carga o que las cargas se suman, en lugar de que tienen la misma carga y se suman los voltajes.",
+      "ejemplo": "En serie da 7.5 µF porque la carga pasa por los dos y cada uno guarda la carga dos veces.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U9-9.11)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide lo que exigen c1–c3: los dos cálculos, la elección y qué es igual en cada conexión. La forma «una suma… y la otra da menos» no revela cuál es cuál, así que el error de aplicar las reglas de resistores sigue siendo detectable. La respuesta modelo cabe en tres oraciones."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "rubrica": {
+      "respuesta_modelo": "En paralelo la capacitancia es 10 + 30 = 40 µF y en serie es 1/(1/10 + 1/30) = 7.5 µF, así que le conviene el paralelo. En paralelo los dos condensadores tienen el mismo voltaje y la carga total es la suma de sus cargas, por eso las capacitancias se suman. En serie los dos tienen la misma carga y el voltaje total es la suma de sus voltajes, así que para la misma carga hace falta más voltaje y Q/V queda menor que la del más pequeño.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Calcula 40 µF en paralelo y 7.5 µF en serie, y elige la conexión en paralelo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica el paralelo con que los dos tienen el mismo voltaje y sus cargas se suman (o con que equivale a aumentar el área).",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica la serie con que los dos tienen la misma carga y sus voltajes se suman, de modo que Q/V es menor (o con que equivale a aumentar la separación).",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Señala que las reglas son las inversas de las de los resistores.",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa las reglas de los resistores: suma en serie y recíprocos en paralelo.",
+        "ejemplo": "En serie da 40 µF, porque uno va tras otro y se suman, y en paralelo da 7.5 µF; le conviene la serie.",
+        "dificultad": "DIF:fisica/capacitancia/3"
+       },
+       {
+        "descripcion": "Cree que la capacitancia equivalente depende del voltaje de carga y no de la conexión.",
+        "ejemplo": "Depende de con cuánto voltaje los cargue: con más voltaje cualquier conexión tiene más capacitancia.",
+        "dificultad": "DIF:fisica/capacitancia/2"
+       },
+       {
+        "descripcion": "Calcula bien, pero explica con una carga que se reparte en paralelo y se suma en serie.",
+        "ejemplo": "En paralelo da 40 µF porque la carga se reparte entre los dos, y en serie cada uno recibe la misma carga dos veces.",
         "dificultad": null
        }
       ]

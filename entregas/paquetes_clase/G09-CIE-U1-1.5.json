@@ -538,6 +538,224 @@
     },
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.6/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U11-11.6"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.6",
+    "CON:fisica/principio-pascal"
+   ],
+   "habilidad": "razonar",
+   "formato": "numerica",
+   "grados": [
+    10
+   ],
+   "enunciado": "En un taller de Soyapango, el gato hidráulico de Óscar tiene un émbolo pequeño de 2.0 cm de diámetro y un émbolo grande de 10.0 cm de diámetro. El aceite no se comprime y no hay fugas. Para subir el carro 3.0 cm, ¿cuántos centímetros en total debe bajar el émbolo pequeño, sumando todos los bombeos y medidos desde su posición inicial? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 75,
+   "tolerancia": 1,
+   "unidad": "cm",
+   "retroalimentacion": "El aceite que sale del cilindro pequeño entra en el grande: A₁ d₁ = A₂ d₂. La razón de áreas es la del cuadrado de los diámetros, (10.0/2.0)² = 25, así que d₁ = 25 · 3.0 cm = 75 cm. La fuerza en el émbolo grande es 25 veces la aplicada, pero el pequeño recorre 25 veces más: el trabajo de entrada y el de salida son iguales en el caso ideal.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U11-11.6"
+   },
+   "origen": "redactor-actividades (G10-FIS-U11-11.6)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto cotidiano (taller de Soyapango), supuestos declarados y pregunta precisa sobre qué se mide (recorrido total del émbolo). Unidad indicada. Retroalimentación de 73 palabras que conecta con el trabajo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.6/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U11-11.6"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.6",
+    "CON:fisica/principio-pascal"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Datos de un grupo de ejemplo. Unieron con una manguera llena de agua una jeringa pequeña (émbolo de 1.1 cm²) con jeringas grandes de distinta área. Sobre el émbolo grande pusieron siempre una carga de 10 N y midieron la fuerza mínima sobre el émbolo pequeño para hacerla subir. Jeringa grande de 2.5 cm²: 4.7 N; de 4.5 cm²: 2.7 N; de 6.6 cm²: 1.9 N. ¿Qué interpretación de los datos es correcta?",
+   "opciones": {
+    "A": "La fuerza pequeña por la razón de áreas da cerca de 10 N, porque la presión es igual en las dos jeringas.",
+    "B": "La presión es mayor en la jeringa grande, porque allí sostiene una carga mayor que la fuerza aplicada.",
+    "C": "La presión se reparte en la jeringa más ancha, porque llega más débil cuanto más espacio ocupa el agua.",
+    "D": "La jeringa más grande ahorra trabajo, porque levanta la misma carga empujando con menos fuerza."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:fisica/principio-pascal/1",
+    "C": "DIF:fisica/principio-pascal/2",
+    "D": "DIF:fisica/principio-pascal/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En cada fila, la fuerza pequeña por la razón de áreas da algo más de 10 N (4.7 · 2.5/1.1 ≈ 10.7 N; 2.7 · 4.5/1.1 ≈ 11.0 N; 1.9 · 6.6/1.1 ≈ 11.4 N). En cada montaje la presión es la misma en las dos jeringas (unos 4 N/cm² con la de 2.5 cm² y 1.5 N/cm² con la de 6.6 cm²), y la grande recibe más fuerza porque tiene más área. El pequeño exceso se debe a la fricción de los émbolos. No se ahorra trabajo: el émbolo pequeño recorre más distancia.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U11-11.6"
+   },
+   "origen": "redactor-actividades (G10-FIS-U11-11.6)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Montaje con jeringas, accesible sin laboratorio. Opciones parejas, cada distractor ligado a una idea previa de Pascal. Retroalimentación de 94 palabras, dentro del límite, que explica el exceso por fricción sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "opciones": {
+      "A": "La fuerza pequeña por la razón de áreas da casi 10 N, porque la presión es igual en las dos jeringas.",
+      "B": "La presión es mayor en la jeringa grande, porque allí sostiene una carga mayor que la fuerza aplicada.",
+      "C": "La presión se reparte en la jeringa más ancha, porque llega más débil cuanto más espacio ocupa el agua.",
+      "D": "La jeringa más grande ahorra trabajo, porque levanta la misma carga empujando con menos fuerza."
+     },
+     "retroalimentacion": "En cada fila, la fuerza pequeña por la razón de áreas da casi 10 N (4.7 · 2.5/1.1 ≈ 10.7 N; 1.9 · 6.6/1.1 ≈ 11.4 N): la presión es la misma en las dos jeringas, unos 4 N/cm², y la jeringa grande recibe más fuerza porque tiene más área. El pequeño exceso se debe a la fricción de los émbolos. No se ahorra trabajo: el émbolo pequeño recorre más distancia que el grande."
+    }
+   }
+  },
+  {
+   "id": "ACT:G10-FIS-U11-11.6/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U11-11.6"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U11-11.6",
+    "CON:fisica/principio-pascal"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Mauricio dice que un gato hidráulico «crea energía», porque con una fuerza pequeña en el émbolo chico levanta un carro en el émbolo grande. En 3 o 4 oraciones, explica si tiene razón comparando entre los dos émbolos: (a) la presión y la fuerza; (b) la distancia que recorre cada uno y por qué; (c) el trabajo de entrada y el de salida.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La presión que se aplica en el émbolo chico se transmite a todo el líquido, así que es la misma en los dos émbolos y la fuerza crece en proporción al área. Pero el volumen que sale del cilindro chico es el que entra al grande, y por eso el émbolo grande sube mucho menos de lo que baja el chico. El trabajo de salida, F₂ d₂, es a lo sumo igual al de entrada, F₁ d₁: el gato multiplica la fuerza, no la energía.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U11-11.6"
+   },
+   "rubrica": {
+    "respuesta_modelo": "No tiene razón. La presión es la misma en los dos émbolos, porque el líquido encerrado la transmite completa, y por eso la fuerza en el émbolo grande es mayor en la misma proporción en que su área es mayor. Como el líquido no se comprime, el volumen que baja el émbolo chico es el que sube el grande, así que el grande recorre mucho menos distancia. El trabajo de salida, F₂ · d₂, es igual al de entrada, F₁ · d₁, en un gato ideal, y un poco menor en uno real por la fricción: multiplica la fuerza, no la energía.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Afirma que la presión es la misma en los dos émbolos y que la fuerza es mayor en el grande porque su área es mayor (F₂/F₁ = A₂/A₁).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Explica que el émbolo grande recorre menos distancia porque el volumen de líquido que sale del cilindro chico es el que entra al grande (A₁ d₁ = A₂ d₂).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Concluye que el trabajo de salida no supera al de entrada (igual en el caso ideal, menor con fricción) y que el gato no crea energía.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Usa un ejemplo numérico o una razón de áreas concreta para mostrarlo.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cree que el gato multiplica la presión.",
+      "ejemplo": "La presión en el émbolo grande es mucho mayor que en el chico, y por eso levanta el carro.",
+      "dificultad": "DIF:fisica/principio-pascal/1"
+     },
+     {
+      "descripcion": "Acepta que se gana energía porque la fuerza aplicada es menor, sin considerar las distancias.",
+      "ejemplo": "Sí tiene razón: con poca fuerza se hace el trabajo de levantar un carro, así que se gana energía.",
+      "dificultad": "DIF:fisica/principio-pascal/3"
+     },
+     {
+      "descripcion": "Atribuye la energía extra al líquido.",
+      "ejemplo": "El aceite guarda energía y la suelta al empujar el émbolo grande.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U11-11.6)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "Cambian la extensión y la duración (6 min); presión igual en los émbolos, A₁d₁ = A₂d₂ y trabajo de salida no mayor que el de entrada siguen intactos."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Mauricio dice que un gato hidráulico «crea energía», porque con una fuerza pequeña en el émbolo chico levanta un carro en el émbolo grande. En 2 o 3 oraciones, explica si tiene razón comparando entre los dos émbolos: (a) la presión y la fuerza; (b) la distancia que recorre cada uno y por qué; (c) el trabajo de entrada y el de salida.",
+     "duracion_min": 5
+    }
+   }
   }
  ],
  "microtemas": [],

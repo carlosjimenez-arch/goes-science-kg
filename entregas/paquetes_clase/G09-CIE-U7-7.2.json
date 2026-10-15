@@ -1113,6 +1113,206 @@
      }
     }
    }
+  },
+  {
+   "id": "ACT:G11-FIS-U11-11.3/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U11-11.3"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U11-11.3",
+    "CON:fisica/campo-magnetico"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Para deducir con la ley de Ampère el campo magnético dentro de un solenoide largo, Daniela elige como trayectoria cerrada un rectángulo: un lado largo dentro de la bobina, paralelo a su eje, el lado opuesto por fuera y dos lados cortos que atraviesan las espiras. ¿Por qué esa trayectoria permite despejar B?",
+   "opciones": {
+    "A": "Porque B vale lo mismo dentro y fuera de la bobina, y así los dos lados largos aportan igual.",
+    "B": "Porque los lados cortos siguen las líneas del campo, y son los únicos que aportan a la suma.",
+    "C": "Porque dentro B es uniforme y paralelo a ese lado y fuera es casi nulo: solo aporta B·L.",
+    "D": "Porque encierra la corriente de una sola espira, y el campo no depende del número de vueltas."
+   },
+   "correcta": "C",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Dentro de un solenoide largo el campo es casi uniforme y paralelo al eje, y fuera es casi nulo. En los lados cortos el campo interior es perpendicular al recorrido y no aporta. Así la circulación queda B·L y, con la corriente encerrada N·I, sale B = μ₀NI/L: el campo sí depende del número de vueltas por unidad de largo.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U11-11.3"
+   },
+   "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Ítem de explicación adecuado a 11.°: pide razonar la elección de la trayectoria de Ampère, no recordar la fórmula. Cuatro opciones de largo parejo, todas con «Porque», sin pistas gramaticales; la retroalimentación explica cada lado del rectángulo y corrige sin regañar. Personaje femenino que acierta."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U11-11.3/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U11-11.3"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U11-11.3",
+    "CON:fisica/campo-magnetico"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Josué tendió un cable recto y largo sobre la mesa y midió con el magnetómetro del celular el campo del cable a varias distancias r, ya descontado el campo de la Tierra (datos de un grupo de ejemplo): r = 1.0 cm, B = 39.6 μT; r = 2.0 cm, B = 20.3 μT; r = 4.0 cm, B = 10.1 μT; r = 5.0 cm, B = 7.9 μT. Al graficar B contra 1/r obtuvo una recta que pasa por el origen. Con B = μ₀I/(2πr) y μ₀ de la tabla de referencia (aproximado 4π × 10⁻⁷ T·m/A), ¿qué corriente llevaba el cable, en amperios (A)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 2.0,
+   "tolerancia": 0.15,
+   "unidad": "A",
+   "retroalimentacion": "El producto B·r es casi constante, cerca de 4.0 × 10⁻⁷ T·m, y es la pendiente de B contra 1/r. Como la pendiente vale μ₀I/(2π) = 2 × 10⁻⁷ T·m/A × I, la corriente es I ≈ 4.0 × 10⁻⁷ / 2 × 10⁻⁷ ≈ 2.0 A. Que la recta pase por el origen confirma que B es inversamente proporcional a r.",
+   "duracion_min": 8,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U11-11.3"
+   },
+   "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Enunciado largo (111 palabras) pero toda la información es necesaria: los cuatro pares de datos, la fórmula y μ₀ rotulado aproximado. Da la unidad (A), se apoya en datos de ejemplo y no exige celular. La retroalimentación muestra el producto B·r como camino, buen ejemplo trabajado para quien falle."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U11-11.3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U11-11.3"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U11-11.3",
+    "CON:fisica/campo-magnetico"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Valeria va a medir con la aplicación phyphox el campo de un cable recto con corriente. Antes de conectar la pila, el celular ya marca unos 40 μT, y la lectura cambia si lo acerca a la pata de hierro de la mesa. En 2 o 3 oraciones explica de dónde sale la lectura que aparece sin corriente, cómo debe corregir sus datos para quedarse solo con el campo del cable y por qué conviene medir lejos de la pata de hierro.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Sin corriente, el sensor mide el campo de la Tierra más el de objetos de hierro cercanos. Si mide la misma componente con la corriente apagada y encendida (o con la corriente en un sentido y luego en el otro) y resta, se queda con el campo del cable. El hierro concentra y desvía el campo, y eso cambiaría la medición de un punto a otro.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U11-11.3"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Sin corriente el celular mide el campo magnético de la Tierra, sumado al de cosas de hierro cercanas. Para quedarme solo con el campo del cable, mido la misma componente sin corriente y con corriente (o con la corriente en un sentido y en el otro) y saco la diferencia. Hay que alejarse de la pata de hierro porque el hierro se magnetiza y desvía el campo, así que cambia la lectura según dónde mida.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Atribuye la lectura sin corriente al campo magnético de la Tierra (puede sumar el de objetos de hierro o aparatos cercanos).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Propone medir con y sin corriente, o con la corriente invertida, y restar las lecturas de la misma componente para obtener el campo del cable.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que el hierro se magnetiza o concentra el campo y altera la lectura cerca de él.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona que la resta debe hacerse componente por componente o con el celular siempre en la misma orientación.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cree que el celular mide solo el campo de la Tierra y que la diferencia junto a la mesa se debe a que allí el campo terrestre es más fuerte.",
+      "ejemplo": "Cerca de la pata el campo de la Tierra es más fuerte, por eso sube; hay que medir donde el campo de la Tierra sea más débil.",
+      "dificultad": "DIF:fisica/campo-magnetico/2"
+     },
+     {
+      "descripcion": "Cree que cualquier metal altera el campo, también el cobre del propio cable o el aluminio.",
+      "ejemplo": "Hay que alejar todo lo metálico, hasta el cable de cobre, porque los metales desvían el campo.",
+      "dificultad": "DIF:fisica/campo-magnetico/3"
+     },
+     {
+      "descripcion": "Propone restar las magnitudes totales sin cuidar la orientación, o calibrar a cero sin explicar qué se quita.",
+      "ejemplo": "Pongo el celular en cero y listo, así ya no cuenta el error del sensor.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U11-11.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide las tres cosas que exigen los criterios obligatorios: origen de la lectura sin corriente (c1), cómo corregir los datos (c2) y por qué alejarse del hierro (c3). Rúbrica observable y errores con ejemplos verosímiles. Situación concreta y cercana al experimento del tema."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   }
  ],
  "microtemas": [],
@@ -1224,7 +1424,9 @@
  ],
  "datos_de_referencia": {
   "valores": [],
-  "hacen_falta_en": [],
+  "hacen_falta_en": [
+   "ACT:G11-FIS-U11-11.3/obj-2"
+  ],
   "datos_que_faltan": [],
   "fuente_esperada": "tabla de referencia citable en data/fuentes/ (pendiente)"
  },

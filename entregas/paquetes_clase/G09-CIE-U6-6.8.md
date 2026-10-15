@@ -107,6 +107,9 @@
 - plancha: 1 200 W, 0.5 h al día
 - refrigeradora: 150 W, 10 h al día con el
 - **ACT:G09-CIE-U6-6.8/obj-abierta** (objetivo, explicar, abierta): Andrea compara dos focos que, según sus empaques, dan casi la misma luz: uno incandescente de 60 W y uno LED de 9 W. Los dos funcionan con 120 V. En 2 o 3 oraciones explica: (1) cuál consume más energía en un mes si se u
+- **ACT:G11-FIS-U9-9.4/obj-1** (objetivo, razonar, opcion_multiple): Mónica conecta por separado un resistor de 22 Ω y otro de 220 Ω, los dos de 2 W para que soporten el calor, a la misma batería de 4.5 V (tres pilas en serie; supón que su voltaje no cambia). ¿Cuál de los dos disipa más p
+- **ACT:G11-FIS-U9-9.4/obj-2** (objetivo, interpretar_datos, numerica): Tabla de consumo de una familia (datos de ejemplo), para un mes de 30 días: refrigeradora de 150 W cuyo compresor funciona en promedio 10 h al día; cinco focos LED de 9 W cada uno, encendidos 6 h al día; televisor de 80 
+- **ACT:G11-FIS-U9-9.4/obj-abierta** (objetivo, razonar, abierta): Natalia lee estos valores aproximados, que varían mucho entre personas: de una mano a la otra, el cuerpo tiene unos 100 000 Ω con la piel seca y unos 1 000 Ω con la piel mojada. Una corriente de unos 1 mA se siente; desd
 
 ## Datos de referencia
 

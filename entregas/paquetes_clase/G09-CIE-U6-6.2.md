@@ -117,6 +117,12 @@
 - 8 cm: 2.81 N
 ¿Qué 
 - **ACT:G09-CIE-U6-6.3/obj-abierta** (objetivo, razonar, abierta): Dos esferas pequeñas, cada una con +4.0 μC, están a 10 cm de distancia y se repelen con una fuerza de 14.4 N. Valeria duplica la carga de una sola esfera y, al mismo tiempo, duplica la distancia entre ellas. Responde en 
+- **ACT:G11-FIS-U6-6.5/obj-1** (objetivo, razonar, opcion_multiple): Tres cargas puntuales forman un triángulo equilátero. En la base, q1 = +2 µC a la izquierda y q2 = −2 µC a la derecha; en el vértice superior está q3 = +1 µC. Sin calcular, ¿hacia dónde apunta la fuerza eléctrica neta so
+- **ACT:G11-FIS-U6-6.5/obj-2** (objetivo, interpretar_datos, numerica): Dos cargas están en un plano (x, y), con posiciones en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total
+- **ACT:G11-FIS-U6-6.5/obj-abierta** (objetivo, razonar, abierta): Sobre una recta están q1 = +4.0 µC en x = 0 y q2 = +1.0 µC en x = 0.60 m. Josué busca el punto donde una carga de prueba no siente fuerza neta. Indica si ese punto está entre las cargas o fuera de ellas y por qué, calcul
+- **ACT:G11-FIS-U7-7.3/obj-1** (objetivo, razonar, opcion_multiple): Karla dibuja el mapa de líneas de campo de dos cargas puntuales positivas iguales. Las líneas salen de cada carga, se curvan alejándose de la otra y ninguna pasa por el punto medio entre ambas. ¿Qué se puede afirmar del 
+- **ACT:G11-FIS-U7-7.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo. Acercaron despacio un globo cargado a un electroscopio y midieron la distancia a la que las hojas empezaban a separarse. Electroscopio descubierto: 35 cm. Tapado con una caja de cartón: 30 c
+- **ACT:G11-FIS-U7-7.3/obj-abierta** (objetivo, explicar, abierta): En una fotocopiadora, un tambor de material fotoconductor se carga positivo en la oscuridad y luego se ilumina con la luz que refleja la hoja original: el fondo blanco refleja mucha luz y las letras negras casi nada. Des
 
 ## Datos de referencia
 

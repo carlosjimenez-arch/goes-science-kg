@@ -454,6 +454,30 @@
    "senales": "Da por válido un anuncio que dice «sin químicos» porque el producto no daña la piel, o afirma que la vaselina o la cera de parafina no están formadas por sustancias químicas porque son productos de uso diario.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:quimica/reacciones-organicas/1",
+   "concepto": "CON:quimica/reacciones-organicas",
+   "descripcion": "Confunde el sentido del cambio de insaturación entre adición y eliminación: cree que formar un doble enlace carbono-carbono es una adición (porque «se añade un segundo enlace») o que cuando un grupo entra a la cadena siempre es adición aunque otro grupo haya salido del mismo carbono.",
+   "senales": "Clasifica la deshidratación de un alcohol a alqueno como adición diciendo que se agregó un enlace doble, o llama adición a la reacción de bromoetano con OH⁻ porque el grupo OH se incorporó a la molécula.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/reacciones-organicas/2",
+   "concepto": "CON:quimica/reacciones-organicas",
+   "descripcion": "Clasifica cualquier reacción en la que un átomo o grupo sale del reactivo orgánico como eliminación, sin verificar si otro grupo ocupó su lugar en el mismo carbono (sustitución) o si en cambio se formó un enlace múltiple entre carbonos vecinos (eliminación).",
+   "senales": "Afirma que CH₃–CH₂–Br + OH⁻ → CH₃–CH₂–OH + Br⁻ es una eliminación porque «se eliminó el bromo de la cadena», sin notar que el grupo OH ocupó su lugar en el mismo carbono.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/reacciones-organicas/3",
+   "concepto": "CON:quimica/reacciones-organicas",
+   "descripcion": "Clasifica las reacciones orgánicas contando únicamente cuántas fórmulas hay a cada lado de la flecha o suponiendo que un enlace doble «sustituye» a un grupo funcional, sin analizar qué enlaces se rompen y se forman en el esqueleto carbonado.",
+   "senales": "Clasifica una eliminación (como R–CH₂–CH₂–OH → R–CH=CH₂ + H₂O) como sustitución porque «el doble enlace sustituye al OH» o porque ve dos productos, sin notar la pérdida de átomos en carbonos vecinos.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [
@@ -1818,6 +1842,697 @@
       ]
      },
      "retroalimentacion": "Como todo hidrocarburo, el eteno es apolar e insoluble en agua; pero su enlace π es reactivo y, con un catalizador ácido, experimenta una reacción de adición de agua (hidratación) que convierte el enlace doble C=C en uno simple: CH₂=CH₂(g) + H₂O(l) → CH₃–CH₂–OH(ac)."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.2/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.2"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.2",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "En el laboratorio se estudia la transformación del bromoetano (CH3–CH2–Br) con hidróxido de sodio acuoso (NaOH(ac)) para producir etanol (CH3–CH2–OH) y bromuro de sodio (NaBr(ac)). Al comparar la estructura del reactivo orgánico con la del producto orgánico, ¿cómo se clasifica esta reacción y por qué?",
+   "opciones": {
+    "A": "Como adición, porque el grupo OH se suma a la cadena carbonada.",
+    "B": "Como eliminación, porque el átomo de bromo sale de la molécula inicial.",
+    "C": "Como sustitución, porque el grupo OH reemplaza al Br en el mismo carbono.",
+    "D": "Como adición, porque hay dos reactivos que intercambian sus iones en agua."
+   },
+   "correcta": "C",
+   "distractores": {
+    "A": "DIF:quimica/reacciones-organicas/1",
+    "B": "DIF:quimica/reacciones-organicas/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Es una reacción de sustitución porque el átomo de carbono saturado mantiene todos sus enlaces simples: se rompe el enlace C–Br y en ese mismo carbono se forma un enlace C–OH.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.2"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Enunciado breve, opciones cortas y parejas, cada distractor con una confusión real (adición porque se «suma» OH, eliminación porque sale Br). Retroalimentación clara. Clave C; la de obj-2 es A."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.2/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.2"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.2",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un equipo registra en una tabla los cambios estructurales de tres reacciones orgánicas (datos de un grupo de ejemplo):\n\n• Reacción 1: propeno (CH2=CH–CH3) + HBr → 2-bromopropano (CH3–CHBr–CH3). El enlace doble C=C pasa a enlace simple C–C.\n• Reacción 2: ciclohexanol (C6H11OH) → ciclohexeno (C6H10) + H2O. Un enlace simple C–C pasa a enlace doble C=C.\n• Reacción 3: metano (CH4) + Cl2 → clorometano (CH3Cl) + HCl. Todos los enlaces del carbono siguen siendo simples.\n\nSegún los datos de la tabla, ¿qué clasificación corresponde a las reacciones 1, 2 y 3 en ese orden?",
+   "opciones": {
+    "A": "1: adición; 2: eliminación; 3: sustitución, según cambian las insaturaciones.",
+    "B": "1: sustitución; 2: adición; 3: eliminación, según el número de productos.",
+    "C": "1: eliminación; 2: adición; 3: sustitución, según dónde aparece el enlace doble.",
+    "D": "1: adición; 2: sustitución; 3: eliminación, según los átomos que salen."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/reacciones-organicas/3",
+    "C": "DIF:quimica/reacciones-organicas/1",
+    "D": "DIF:quimica/reacciones-organicas/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En la reacción 1 desaparece el enlace doble al incorporarse H y Br (adición); en la 2 se pierden H y OH de carbonos vecinos y se forma un enlace doble C=C (eliminación); en la 3 un Cl reemplaza a un H sin cambiar el grado de saturación (sustitución).",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.2"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Datos ya en lista, una reacción por línea, con 96 palabras (dentro del límite). Las opciones nombran criterios distintos y plausibles para clasificar; la clave se deduce de los datos sin pista gramatical."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.2/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.2"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.2",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Al calentar etanol (CH3–CH2–OH) con ácido sulfúrico concentrado se obtiene eteno (CH2=CH2) y agua (H2O). Clasifica esta reacción como sustitución, adición o eliminación, indica qué enlaces del reactivo se rompen y qué enlace nuevo se forma en el producto orgánico, y explica por qué ese cambio en el tipo de enlace carbono-carbono justifica tu clasificación.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "La deshidratación del etanol es una reacción de eliminación. En el etanol se rompen el enlace C–OH de un carbono y un enlace C–H del carbono vecino, cuyos átomos se unen para formar una molécula de agua (H2O). Como esos dos carbonos adyacentes pierden átomos sin recibir otros nuevos, comparten un par adicional de electrones y el enlace simple C–C pasa a ser un enlace doble C=C en el eteno. Este aumento en la insaturación de la cadena carbonada al salir una molécula pequeña es el criterio estructural que define a una eliminación.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Clasifica explícitamente la reacción como una reacción de eliminación.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Identifica que se rompen los enlaces C–OH y C–H en carbonos adyacentes (o que salen H y OH como agua) y que se forma un enlace doble carbono-carbono (C=C).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Relaciona el paso de un enlace simple C–C a un enlace múltiple (aumento de insaturación sin reemplazo de grupos) con la definición de eliminación.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "La clasifica como sustitución porque ve dos sustancias al final o cree que el doble enlace reemplaza al grupo OH.",
+      "ejemplo": "Es una sustitución porque el grupo OH del etanol se cambia por un doble enlace y queda agua aparte.",
+      "dificultad": "DIF:quimica/reacciones-organicas/3"
+     },
+     {
+      "descripcion": "Invierte el cambio de saturación y la llama adición porque se forma un enlace π nuevo.",
+      "ejemplo": "Es de adición porque se añade un segundo enlace entre los dos carbonos para formar el eteno.",
+      "dificultad": "DIF:quimica/reacciones-organicas/1"
+     }
+    ]
+   },
+   "retroalimentacion": "Cuando dos carbonos vecinos pierden átomos o grupos (aquí H y OH, que salen como H2O) y entre ellos un enlace simple C–C se convierte en doble C=C, la reacción es de eliminación.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.2"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.2)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide clasificar, nombrar enlaces rotos y formados y justificar con el cambio C–C: coincide con los tres criterios obligatorios. Rúbrica observable y dos errores típicos con ejemplo."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.3/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.3",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un grupo escribe dos ecuaciones balanceadas, con coeficientes enteros mínimos, para la combustión del propano, C₃H₈(g):\n- Reacción 1 (completa): los únicos productos son CO₂(g) y H₂O(g).\n- Reacción 2 (incompleta): los únicos productos son CO(g) y H₂O(g).\n¿Qué opción da correctamente el O₂(g) de cada ecuación y los compara bien?",
+   "opciones": {
+    "A": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 7 O₂(g) por 1 C₃H₈(g). La incompleta consume más oxígeno por mol de propano.",
+    "B": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 7 O₂(g) por 2 C₃H₈(g). La incompleta consume menos oxígeno por mol de propano.",
+    "C": "Reacción 1: 5 O₂(g) por 1 C₃H₈(g); reacción 2: 5 O₂(g) por 1 C₃H₈(g). El hidrógeno determina todo el oxígeno consumido.",
+    "D": "Reacción 1: 3 O₂(g) por 1 C₃H₈(g); reacción 2: 4 O₂(g) por 1 C₃H₈(g). Solo el carbono se combina con el oxígeno."
+   },
+   "correcta": "B",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La combustión completa balanceada es C3H8(g) + 5 O2(g) → 3 CO2(g) + 4 H2O(g) (5 mol de O2 por mol de propano). La incompleta a monóxido de carbono es 2 C3H8(g) + 7 O2(g) → 6 CO(g) + 8 H2O(g) (3.5 mol de O2 por mol de propano), porque ocurre con deficiencia de oxígeno.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La reformulación mantiene la clave B y compara cantidades por mol de combustible. Los balances conservan C, H y O: 1:5:3:4 para CO₂ y 2:7:6:8 para CO. La combustión a CO requiere 3.5 mol de O₂ por mol de propano, frente a 5 mol para CO₂; ningún distractor es una respuesta correcta."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Para comparar una combustión completa con una incompleta del propano, C3H8(g), un grupo escribe ecuaciones balanceadas con coeficientes enteros mínimos: en la reacción 1 los únicos productos son CO2(g) y H2O(g), y en la reacción 2 los únicos productos son CO(g) y H2O(g). ¿Qué relación es correcta entre los coeficientes del O2(g) y el tipo de reacción?",
+     "opciones": {
+      "A": "En la reacción 1 el coeficiente del O2(g) es 5 y en la 2 es 7, porque formar CO(g) exige más oxígeno por mol de propano.",
+      "B": "En la reacción 1 el coeficiente del O2(g) es 5 para 1 mol de C3H8(g) y en la 2 es 7 para 2 moles de C3H8(g), porque la combustión incompleta consume menos O2(g) por mol.",
+      "C": "En ambas reacciones el coeficiente del O2(g) es 5 por mol de C3H8(g), porque los átomos de hidrógeno determinan todo el oxígeno consumido.",
+      "D": "En la reacción 1 el coeficiente del O2(g) es 3 y en la 2 es 4, porque solo los átomos de carbono se combinan con el oxígeno."
+     }
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.3/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.3",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "En un video de laboratorio (datos de un grupo de ejemplo) se agregan gotas de bromo, Br₂, disuelto en un disolvente orgánico inerte (color pardo-rojizo) a tres hidrocarburos:\n- Tubo 1, hexano (C₆H₁₄): en oscuridad sigue pardo; con luz ultravioleta se decolora en 5 min y desprende HBr(g), que enrojece un papel tornasol azul húmedo.\n- Tubo 2, 1-hexeno (C₆H₁₂): en oscuridad se decolora en menos de 5 s, sin vapores ácidos.\n- Tubo 3, benceno (C₆H₆): en oscuridad y sin catalizador sigue pardo tras 10 min.\n¿Qué conclusión explica estos datos?",
+   "opciones": {
+    "A": "Tubo 1: adición al enlace C–C simple; tubo 2: sustitución por radicales, que consumió el HBr(g) formado; tubo 3: no reaccionó porque el benceno es saturado.",
+    "B": "Tubos 1 y 2: halogenación por radicales libres en ambos; tubo 3: no reaccionó porque el benceno carece de enlaces pi.",
+    "C": "Tubo 1: sustitución por radicales (C₆H₁₃Br y HBr); tubo 2: adición al doble enlace (C₆H₁₂Br₂); tubo 3: sin adición por su estabilidad aromática.",
+    "D": "Tubo 1: sustitución por radicales (C₆H₁₃Br y HBr); tubo 2: sustitución más rápida (C₆H₁₁Br y HBr); tubo 3: no reaccionó porque el benceno es saturado."
+   },
+   "correcta": "C",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El alcano (tubo 1) solo reacciona con luz UV, por sustitución por radicales libres: C6H14 + Br2 → C6H13Br + HBr(g) (mezcla de isómeros). El alqueno (tubo 2) sufre adición rápida al doble enlace C=C sin subproducto ácido: C6H12 + Br2 → C6H12Br2 (1,2-dibromohexano). El benceno (tubo 3) no adiciona porque perdería la deslocalización aromática; sin catalizador tampoco hay sustitución.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "El video y los datos de ejemplo delimitan las condiciones. Se conservan la clave C y ecuaciones balanceadas: sustitución radicalaria del hexano, adición de Br₂ al 1-hexeno y resistencia del benceno a la adición por aromaticidad. La retroalimentación reconoce la mezcla de isómeros; los distractores atribuyen mecanismos o saturación incorrectos. La lista del psicopedagogo mantiene el sentido científico."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "En un video de laboratorio (datos de un grupo de ejemplo) se agregan gotas de agua de bromo, Br2(ac) de color pardo-rojizo, a tres tubos con los hidrocarburos 1, 2 y 3:\n- Tubo 1 (hexano, C6H14): en oscuridad permanece pardo; bajo luz ultravioleta se decolora tras 5 min y desprende vapores ácidos de HBr(g).\n- Tubo 2 (1-hexeno, C6H12): en oscuridad se decolora en menos de 5 s sin desprender vapores ácidos.\n- Tubo 3 (benceno, C6H6): en oscuridad y bajo luz permanece pardo sin cambio tras 10 min.\n¿Qué conclusión relaciona correctamente los datos con las reacciones ocurridas?",
+     "opciones": {
+      "A": "En el tubo 1 hubo adición al enlace C–C simple y en el tubo 2 hubo sustitución por radicales libres que consumió todo el HBr(g) formado.",
+      "B": "En los tubos 1 y 2 hubo halogenación por radicales libres, mientras que el tubo 3 no reaccionó porque el benceno carece de enlaces pi.",
+      "C": "En el tubo 1 hubo sustitución por radicales libres (forma C6H13Br y HBr), en el tubo 2 adición al doble enlace (forma C6H12Br2) y el tubo 3 no adicionó por su estabilidad aromática.",
+      "D": "En el tubo 2 hubo combustión del alqueno con el agua y en el tubo 1 el hexano se isomerizó a benceno sin liberar subproductos."
+     },
+     "retroalimentacion": "El alcano (tubo 1) solo reacciona con luz UV mediante sustitución por radicales libres: C6H14(l) + Br2(ac) → C6H13Br(l) + HBr(g). El alqueno (tubo 2) sufre adición rápida en el enlace doble C=C sin subproducto ácido: C6H12(l) + Br2(ac) → C6H12Br2(l). El benceno (tubo 3) no da adición porque perdería la deslocalización aromática."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.3/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.3"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.3",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Escribe la ecuación química balanceada de la reacción entre el eteno, C2H4(g), y el bromo, Br2, disuelto en un disolvente orgánico inerte, y explica por qué el eteno decolora rápidamente esa disolución por adición mientras que el benceno, C6H6(l), no sufre esa adición y solo reacciona, en presencia de un catalizador como FeBr3, por sustitución.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "La reacción del eteno es C2H4(g) + Br2 → C2H4Br2(l) (1,2-dibromoetano). El eteno tiene un enlace pi localizado entre los dos carbonos que se rompe con facilidad para adicionar los dos átomos de bromo, por lo que consume el Br2 y decolora la disolución. En cambio, en el benceno los seis electrones pi están deslocalizados en todo el anillo aromático; una adición rompería esa estabilidad aromática, así que sin catalizador no reacciona, y con un catalizador como FeBr3 reacciona por sustitución, que conserva el anillo.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Escribe la ecuación balanceada de adición del eteno con el bromo: C2H4 + Br2 → C2H4Br2 (o CH2=CH2 + Br2 → CH2Br–CH2Br).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Relaciona la rápida decoloración en el eteno con la ruptura del enlace pi (doble enlace C=C) en una reacción de adición.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que el benceno no adiciona Br2 porque tiene electrones pi deslocalizados (estabilidad aromática) que se perderían en la adición, por lo que, con catalizador, reacciona por sustitución.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Escribe una reacción de sustitución para el eteno liberando HBr (C2H4 + Br2 → C2H3Br + HBr) en vez de la reacción de adición.",
+      "ejemplo": "El eteno cambia un hidrógeno por bromo: C2H4 + Br2 → C2H3Br + HBr.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Afirma que el benceno no reacciona con el bromo porque solo tiene enlaces simples C–C como un alcano.",
+      "ejemplo": "El benceno no decolora el bromo porque es un hidrocarburo saturado sin enlaces pi.",
+      "dificultad": null
+     }
+    ]
+   },
+   "retroalimentacion": "En el eteno el enlace pi localizado reacciona por adición formando 1,2-dibromoetano: C2H4(g) + Br2 → C2H4Br2(l). En el benceno los seis electrones pi están deslocalizados en el anillo aromático; adicionar bromo destruiría esa estabilidad, por lo que el benceno solo experimenta sustitución electrofílica en presencia de un catalizador como FeBr3.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.3"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.3)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide la ecuación y el porqué de la diferencia eteno-benceno, lo que cubren los tres criterios obligatorios. Corregido ya por el experto (disolvente inerte, catalizador). Rúbrica observable; la extensión no se restringe."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Escribe la ecuación química balanceada de la reacción entre el eteno, C2H4(g), y el agua de bromo, Br2(ac), y explica por qué el eteno decolora rápidamente el agua de bromo por adición mientras que el benceno, C6H6(l), no sufre esa adición en las mismas condiciones y reacciona preferentemente por sustitución.",
+     "rubrica": {
+      "respuesta_modelo": "La reacción del eteno es C2H4(g) + Br2(ac) → C2H4Br2(l) (1,2-dibromoetano). El eteno tiene un enlace pi localizado entre los dos carbonos que se rompe con facilidad para adicionar los dos átomos de bromo, por lo que consume el Br2(ac) y decolora la disolución. En cambio, en el benceno los seis electrones pi están deslocalizados en todo el anillo aromático; una adición rompería esa aromaticidad estable, así que solo reacciona con un catalizador mediante sustitución aromática para conservar el anillo.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Escribe la ecuación balanceada de adición del eteno con el bromo: C2H4 + Br2 → C2H4Br2 (o CH2=CH2 + Br2 → CH2Br–CH2Br).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la rápida decoloración en el eteno con la ruptura del enlace pi (doble enlace C=C) en una reacción de adición.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que el benceno no adiciona Br2(ac) porque tiene electrones pi deslocalizados (estabilidad aromática) que se perderían en la adición, por lo que prefiere la sustitución.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Escribe una reacción de sustitución para el eteno liberando HBr (C2H4 + Br2 → C2H3Br + HBr) en vez de la reacción de adición.",
+        "ejemplo": "El eteno cambia un hidrógeno por bromo: C2H4 + Br2 → C2H3Br + HBr.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Afirma que el benceno no reacciona con el agua de bromo porque solo tiene enlaces simples C–C como un alcano.",
+        "ejemplo": "El benceno no decolora el bromo porque es un hidrocarburo saturado sin enlaces pi.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "En el eteno el enlace pi localizado reacciona por adición formando 1,2-dibromoetano: C2H4(g) + Br2(ac) → C2H4Br2(l). En el benceno los seis electrones pi están deslocalizados en el anillo aromático; adicionar bromo destruiría esa estabilidad, por lo que el benceno experimenta sustitución electrofílica en presencia de un catalizador."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.4/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.4"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.4",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Mariana hace reaccionar por separado tres alcoholes en exceso de dicromato de potasio acidificado, K₂Cr₂O₇(ac) con H₂SO₄(ac), bajo calentamiento: en el tubo 1 pone 1-propanol, en el tubo 2 pone 2-propanol y en el tubo 3 pone 2-metil-2-propanol. ¿Qué producto orgánico principal se obtiene en cada tubo al finalizar la reacción?",
+   "opciones": {
+    "A": "En el tubo 1 propanal, en el tubo 2 ácido propanoico y en el tubo 3 propanona, porque todos los alcoholes se oxidan en medio ácido.",
+    "B": "En el tubo 1 ácido propanoico, en el tubo 2 propanona y en el tubo 3 no hay reacción porque el carbono con el grupo –OH no tiene hidrógenos unidos.",
+    "C": "En el tubo 1 propanona, en el tubo 2 propanal y en el tubo 3 ácido 2-metilpropanoico, según la posición del grupo hidroxilo en la cadena.",
+    "D": "En el tubo 1 propanal, en el tubo 2 propanona y en el tubo 3 no hay reacción porque el oxidante fuerte detiene la oxidación en el aldehído."
+   },
+   "correcta": "B",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con un oxidante fuerte y calor, el alcohol primario (1-propanol) se oxida pasando por propanal hasta ácido propanoico, y el secundario (2-propanol) forma una cetona (propanona). El alcohol terciario (2-metil-2-propanol) no se oxida en estas condiciones porque el carbono unido al grupo –OH carece de átomos de hidrógeno para eliminar.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.4"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Personaje (Mariana) con contexto concreto, tres tubos y una pregunta. Opciones parejas; los distractores recogen confusiones reales sobre alcoholes primarios, secundarios y terciarios. Clave B; la de obj-2 es D."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.4/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.4"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.4",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un grupo de ejemplo analiza tres líquidos desconocidos (muestras 1, 2 y 3). Son, sin orden, 2-propanol, propanal y propanona. Resultados:\n- Con K₂Cr₂O₇(ac)/H⁺, en tibio: las muestras 1 y 2 pasan de naranja a verde azulado; la muestra 3 sigue naranja.\n- Con reactivo de Fehling, en baño María: solo la muestra 1 forma un precipitado rojo ladrillo de Cu₂O(s).\n¿Qué compuesto contiene cada muestra?",
+   "opciones": {
+    "A": "La muestra 1 es 2-propanol, la muestra 2 es propanal y la muestra 3 es propanona, porque solo los alcoholes reducen al ion cúprico en caliente.",
+    "B": "La muestra 1 es propanona, la muestra 2 es 2-propanol y la muestra 3 es propanal, porque las cetonas dan precipitado rojo con el reactivo de Fehling.",
+    "C": "La muestra 1 es propanal, la muestra 2 es propanona y la muestra 3 es 2-propanol, porque los alcoholes secundarios no reaccionan con dicromato ácido.",
+    "D": "La muestra 1 es propanal, la muestra 2 es 2-propanol y la muestra 3 es propanona, porque el aldehído se oxida con ambos reactivos y la cetona con ninguno."
+   },
+   "correcta": "D",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "El propanal (muestra 1) se oxida a ácido propanoico con dicromato ácido y a propanoato con Fehling, cuyo medio es alcalino y forma Cu₂O. El 2-propanol (muestra 2) se oxida a propanona con dicromato ácido y no da la prueba de Fehling; la propanona (muestra 3) no reacciona con estos reactivos en las condiciones indicadas.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.4"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La clave D y las observaciones siguen siendo correctas. Se corrige la retroalimentación: Fehling es alcalino y produce propanoato, mientras el dicromato ácido produce ácido propanoico. La versión vigente presenta ambos productos como ácido, contradiciendo el efecto del medio. Se acota la resistencia de la propanona a las condiciones descritas."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Un grupo de ejemplo analiza tres líquidos desconocidos (muestras 1, 2 y 3), que corresponden sin orden a 2-propanol, propanal y propanona. En la tabla de resultados, con K₂Cr₂O₇(ac)/H⁺ en tibio las muestras 1 y 2 cambian de naranja a verde azulado y la muestra 3 permanece naranja; con el reactivo de Fehling en baño María solo la muestra 1 forma un precipitado rojo ladrillo de Cu₂O(s). ¿Qué compuesto contiene cada muestra?",
+     "retroalimentacion": "El propanal (aldehído) se oxida fácilmente a ácido propanoico tanto con dicromato ácido como con oxidantes suaves como el reactivo de Fehling (muestra 1). El 2-propanol (alcohol secundario) se oxida a propanona con dicromato ácido pero no reacciona con Fehling (muestra 2), y la propanona (cetona) no se oxida con ninguno de los dos reactivos (muestra 3)."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U9-9.4/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U9-9.4"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U9-9.4",
+    "CON:quimica/reacciones-organicas"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "En presencia de bacterias acéticas y oxígeno, el etanol, CH₃CH₂OH(ac), del vino puede oxidarse en dos etapas a ácido etanoico. Responde en un párrafo:\na) Nombra el compuesto intermedio y el producto orgánico final, con la familia (grupo funcional) de cada uno.\nb) Explica por qué la estructura del etanol permite esas dos etapas de oxidación.\nc) Explica cómo diferenciarías el compuesto intermedio de una cetona como la propanona con el reactivo de Tollens o el de Fehling, y por qué.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "En presencia de bacterias acéticas y oxígeno, el etanol puede oxidarse a etanal (aldehído) y después a ácido etanoico (ácido carboxílico). El etanol es primario porque el carbono que lleva –OH está unido a un solo carbono. Al formar etanal pierde formalmente el H del –OH y un H de ese carbono; el grupo –CHO puede oxidarse de nuevo. Etanal da espejo de plata con Tollens o precipitado rojo de Cu₂O con Fehling y se transforma en etanoato en esos medios alcalinos. La propanona no da esas pruebas en las condiciones habituales.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Nombra el intermedio como etanal (o acetaldehído, familia de los aldehídos) y el producto final como ácido etanoico (o ácido acético, familia de los ácidos carboxílicos).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Relaciona la oxidación con la estructura primaria del etanol (carbono con –OH unido a un solo carbono): puede formar –CHO, y el aldehído puede oxidarse posteriormente a ácido carboxílico.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que el etanal da prueba positiva con Tollens (espejo de plata) o Fehling (precipitado rojo ladrillo) porque los aldehídos se oxidan a carboxilato y las cetonas como la propanona no reaccionan.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Confunde la oxidación de un alcohol primario con la de uno secundario y afirma que el etanol forma una cetona.",
+      "ejemplo": "El etanol primero se oxida a propanona o etanona, que es una cetona, y después se vuelve ácido acético.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Atribuye prueba positiva de Tollens o Fehling tanto a aldehídos como a cetonas por tener ambos el grupo carbonilo.",
+      "ejemplo": "Tanto el etanal como la propanona forman el espejo de plata con Tollens porque los dos tienen el enlace doble C=O.",
+      "dificultad": null
+     }
+    ]
+   },
+   "retroalimentacion": "El etanol puede oxidarse primero a etanal y después a ácido etanoico porque es un alcohol primario y su aldehído conserva un H en el carbono carbonílico. El etanal da pruebas positivas con Tollens o Fehling y forma etanoato en esos medios alcalinos; la propanona no da esas pruebas.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U9-9.4"
+   },
+   "origen": "redactor-actividades (G11-QUI-U9-9.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "Se conserva la separación psicopedagógica de las tareas. Se explicitan bacterias acéticas y oxígeno: dejar vino abierto no garantiza producir vinagre. Se define alcohol primario por los carbonos unidos al carbono con –OH, no por un conteo de hidrógenos presentado como definición. La respuesta modelo mantiene la pérdida formal de dos H y precisa carboxilato en las pruebas alcalinas."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Cuando una botella de vino queda destapada varios días, el etanol, CH₃CH₂OH(ac), se oxida en dos etapas hasta convertirse en vinagre. Nombra el compuesto intermedio y el producto orgánico final, indica a qué familia (grupo funcional) pertenece cada uno, explica por qué el etanol puede experimentar ambas oxidaciones según su estructura y señala cómo diferenciarías experimentalmente al compuesto intermedio de una cetona como la propanona usando el reactivo de Tollens o el de Fehling.",
+     "rubrica": {
+      "respuesta_modelo": "El etanol es un alcohol primario porque el carbono unido al grupo –OH tiene dos hidrógenos unidos; por eso puede perder un hidrógeno para oxidarse primero a etanal (acetaldehído), que es un aldehído, y luego oxidarse de nuevo a ácido etanoico (ácido acético), que es un ácido carboxílico. El etanal se diferencia de la propanona porque el aldehído tiene un hidrógeno unido al carbono carbonílico (–CHO) y se oxida con el reactivo de Tollens formando un espejo de plata, Ag(s), o con el de Fehling dando un precipitado rojo ladrillo de Cu₂O(s), mientras que la cetona no reacciona.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Nombra el intermedio como etanal (o acetaldehído, familia de los aldehídos) y el producto final como ácido etanoico (o ácido acético, familia de los ácidos carboxílicos).",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Relaciona la doble oxidación con que el etanol es un alcohol primario cuyo carbono con el grupo –OH posee dos átomos de hidrógeno.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Justifica que el etanal da prueba positiva con Tollens (espejo de plata) o Fehling (precipitado rojo ladrillo) porque los aldehídos se oxidan a carboxilato y las cetonas como la propanona no reaccionan.",
+        "obligatorio": true
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Confunde la oxidación de un alcohol primario con la de uno secundario y afirma que el etanol forma una cetona.",
+        "ejemplo": "El etanol primero se oxida a propanona o etanona, que es una cetona, y después se vuelve ácido acético.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Atribuye prueba positiva de Tollens o Fehling tanto a aldehídos como a cetonas por tener ambos el grupo carbonilo.",
+        "ejemplo": "Tanto el etanal como la propanona forman el espejo de plata con Tollens porque los dos tienen el enlace doble C=O.",
+        "dificultad": null
+       }
+      ]
+     },
+     "retroalimentacion": "Por ser un alcohol primario, el etanol se oxida primero al aldehído etanal y luego al ácido carboxílico ácido etanoico. A diferencia de las cetonas, el etanal posee un hidrógeno unido al carbono carbonílico y se oxida frente a los reactivos de Tollens o de Fehling."
     }
    }
   }

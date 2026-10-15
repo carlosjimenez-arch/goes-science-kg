@@ -96,6 +96,9 @@
 - **ACT:G09-CIE-U2-2.9/obj-1** (objetivo, explicar, opcion_multiple): Gabriela pone la mano cerca de la rejilla de atrás de una refrigeradora mientras el compresor suena, y la siente tibia, más caliente que el aire de alrededor. ¿Cuál es la mejor explicación?
 - **ACT:G09-CIE-U2-2.9/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo, medidos con el compresor encendido: aire de la cocina, 28 °C; dentro de la refrigeradora, 5 °C; congelador, −15 °C; rejilla de atrás, 38 °C. ¿Qué conclusión apoyan estos datos?
 - **ACT:G09-CIE-U2-2.9/obj-abierta** (objetivo, explicar, abierta): Responde en 3 oraciones, una por pregunta, sobre una refrigeradora: (1) ¿de dónde viene el calor que sale por la parte de atrás? (2) ¿Por qué necesita estar conectada a la corriente para sacar ese calor? (3) Si se apaga,
+- **ACT:G10-FIS-U15-15.10/obj-1** (objetivo, razonar, opcion_multiple): Una inventora anuncia un motor que, en cada ciclo, recibe 1 000 J de calor de una fuente a 500 K, entrega 700 J de trabajo y cede 300 J al ambiente, que está a 300 K. ¿Puede funcionar ese motor?
+- **ACT:G10-FIS-U15-15.10/obj-2** (objetivo, interpretar_datos, numerica): Datos de ejemplo (no son de una central real): una central geotérmica extrae del fluido del subsuelo 800 MW de calor y entrega 100 MW de potencia eléctrica. El vapor entra a la turbina a 240 °C y el condensador está a 40
+- **ACT:G10-FIS-U15-15.10/obj-abierta** (objetivo, razonar, abierta): En una tarde calurosa en San Miguel, Óscar propone dejar abierta la puerta de la refrigeradora para refrescar la cocina, que está cerrada. En 2 o 3 oraciones: (1) di si, al cabo de un rato, la cocina se enfría, se calien
 
 ## Datos de referencia
 

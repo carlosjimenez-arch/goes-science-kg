@@ -439,6 +439,30 @@
    "senales": "Dice que el piso «no hace nada»; explica que cuesta más arrastrar algo sobre tierra porque ahí «pesa más»; al nombrar las fuerzas sobre un objeto solo menciona la mano o a la persona.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:quimica/atomo-y-particulas-subatomicas/1",
+   "concepto": "CON:quimica/atomo-y-particulas-subatomicas",
+   "descripcion": "Cree que los electrones tienen una masa comparable a la de protones y neutrones, o que aportan una parte importante de la masa del átomo porque ocupan casi todo su volumen.",
+   "senales": "Suma los electrones al número de masa (por ejemplo, «el helio tiene masa 6: 2 + 2 + 2») o reparte la masa del átomo según el volumen que ocupa cada parte.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/atomo-y-particulas-subatomicas/2",
+   "concepto": "CON:quimica/atomo-y-particulas-subatomicas",
+   "descripcion": "Cree que la función del neutrón es «neutralizar» la carga de los protones, y que el átomo es neutro porque tiene tantos neutrones como protones.",
+   "senales": "Explica la neutralidad del átomo con los neutrones en vez de con los electrones, o dice que un neutrón anula la carga de un protón.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/atomo-y-particulas-subatomicas/3",
+   "concepto": "CON:quimica/atomo-y-particulas-subatomicas",
+   "descripcion": "Imagina el átomo como un objeto macizo en el que el núcleo ocupa buena parte del volumen y los electrones están pegados a él; no dimensiona que el átomo es casi todo espacio con una nube de electrones.",
+   "senales": "Dibuja el núcleo como la mitad del átomo o los electrones como bolitas pegadas al núcleo; en un modelo a escala con un núcleo de 1 cm de diámetro pone los electrones a pocos centímetros, cuando estarían entre unos 90 m y 300 m.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [
@@ -653,6 +677,218 @@
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
     "valores_anteriores": {
      "duracion_min": 5
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U6-6.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U6-6.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U6-6.1",
+    "CON:fisica/carga-electrica-electrizacion"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Una esfera metálica neutra está sobre un soporte aislante. Mauricio le acerca una barra de PVC con carga negativa, sin tocarla. Con la barra todavía cerca, toca la esfera con un dedo, luego retira el dedo y, por último, aleja la barra. ¿Con qué carga queda la esfera y por qué?",
+   "opciones": {
+    "A": "Negativa, porque la barra le pasa a la esfera parte de sus electrones a través del aire.",
+    "B": "Positiva, porque los electrones repelidos por la barra se van a tierra por el dedo.",
+    "C": "Positiva, porque la barra atrae protones de la tierra que suben por el dedo a la esfera.",
+    "D": "Neutra, porque al alejar la barra las cargas separadas vuelven a juntarse en la esfera."
+   },
+   "correcta": "B",
+   "distractores": {
+    "C": "DIF:fisica/carga-electrica-electrizacion/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La barra negativa repele electrones de la esfera; al tocarla, el cuerpo los conduce a tierra. Al retirar el dedo antes que la barra, esos electrones ya no pueden volver, y la esfera queda positiva: perdió electrones. Los protones no se mueven, están en los núcleos. Si se alejara la barra antes de retirar el dedo, los electrones regresarían y la esfera quedaría neutra.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U6-6.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U6-6.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Secuencia de inducción en el orden que fijó el experto, en pasos cortos. Opciones de 15–17 palabras, paralelas. Retroalimentación de 64 palabras que explica también el orden inverso. Sin pistas."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U6-6.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U6-6.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U6-6.1",
+    "CON:fisica/carga-electrica-electrizacion"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Datos de un grupo de ejemplo. Cargan un electroscopio (hojas separadas) y tocan su esfera con distintos objetos sostenidos con la mano: clavo de hierro, las hojas se juntan al instante; mina de grafito de portaminas, se juntan al instante; lápiz de madera seca, se juntan poco a poco en unos 20 s; regla de plástico, siguen separadas después de 1 min. ¿Qué conclusión apoyan los datos?",
+   "opciones": {
+    "A": "El hierro y el grafito son conductores, porque en ellos los electrones se mueven con libertad por el material.",
+    "B": "Solo el hierro es conductor, porque los metales son los únicos materiales con electrones que se mueven.",
+    "C": "El plástico conduce mejor, porque guardó la carga del electroscopio y las hojas siguieron separadas.",
+    "D": "El hierro y el grafito son aislantes, porque al tocarlos la carga del electroscopio desapareció."
+   },
+   "correcta": "A",
+   "distractores": {
+    "D": "DIF:fisica/carga-electrica-electrizacion/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Las hojas se juntan cuando la carga sale del electroscopio por el objeto y por el cuerpo hacia tierra. En el hierro y el grafito hay electrones que se mueven con libertad, así que son conductores; aunque el grafito no es un metal, conduce. En el plástico los electrones están ligados a sus átomos: es aislante. La madera seca conduce muy poco. La carga no se destruye: se reparte.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U6-6.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U6-6.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Datos de ejemplo de electroscopio: no presupone el aparato. Opciones de 15–19 palabras; la clave incluye un no metal, lo que evita la pista de «metal». Retroalimentación de 69 palabras, con la conservación de la carga."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U6-6.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U6-6.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U6-6.1",
+    "CON:fisica/carga-electrica-electrizacion"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Daniela frota una barra de PVC, que queda con carga negativa, y la usa para cargar dos esferas metálicas neutras sobre soportes aislantes: la esfera 1 tocándola con la barra; la esfera 2 por inducción: acerca la barra sin tocarla, toca la esfera con un dedo, retira el dedo y después aleja la barra. Explica qué signo de carga queda en cada esfera y por qué, diciendo hacia dónde se mueven los electrones en cada caso.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Por contacto, la esfera queda con el mismo signo que la barra, porque recibe electrones de ella. Por inducción, queda con el signo contrario, porque sus propios electrones, repelidos por la barra, se van a tierra. En ningún caso se mueven protones ni se crea carga: solo se trasladan electrones.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U6-6.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "La esfera 1 queda negativa: al tocarla, parte de los electrones de sobra de la barra pasa a la esfera. La esfera 2 queda positiva: la barra negativa repele los electrones de la esfera hacia el dedo y se van a tierra; al retirar el dedo con la barra todavía cerca, a la esfera le faltan electrones. En la inducción la barra no pierde carga, porque no toca la esfera.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que la esfera 1 queda negativa porque recibe electrones de la barra al tocarla.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Dice que la esfera 2 queda positiva porque pierde electrones, que se van a tierra repelidos por la barra.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Indica que solo se mueven electrones (no protones) o que la carga total se conserva.",
+      "obligatorio": false
+     },
+     {
+      "id": "c4",
+      "descripcion": "Señala que el dedo debe retirarse antes de alejar la barra, o que la barra no pierde carga en la inducción.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Explica la carga positiva con protones que llegan o se crean.",
+      "ejemplo": "La esfera 2 queda positiva porque le suben protones desde la tierra por el dedo.",
+      "dificultad": "DIF:fisica/carga-electrica-electrizacion/1"
+     },
+     {
+      "descripcion": "Cree que toda carga transferida desde la barra da el mismo signo, también por inducción.",
+      "ejemplo": "Las dos quedan negativas porque la barra es negativa y les pasa sus electrones.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Confunde la inducción con una atracción magnética.",
+      "ejemplo": "La barra imanta la esfera 2 y por eso queda cargada al revés.",
+      "dificultad": "DIF:fisica/carga-electrica-electrizacion/3"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U6-6.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide signo, porqué y sentido del movimiento de electrones en cada esfera: cubre c1 y c2. Aviso: el ítem de opción múltiple del mismo tema y su retroalimentación resuelven la esfera 2; conviene presentar la abierta antes o sin esa retroalimentación a la vista."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Daniela frota una barra de PVC, que queda con carga negativa, y la usa para cargar dos esferas metálicas neutras sobre soportes aislantes: la esfera 1 tocándola con la barra, y la esfera 2 por inducción, conectándola a tierra con un dedo mientras la barra está cerca. Explica qué signo de carga queda en cada esfera y por qué, diciendo hacia dónde se mueven los electrones en cada caso."
     }
    }
   }

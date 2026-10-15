@@ -1,7 +1,8 @@
 # Paquetes de clase: lo que espera una decisión humana
 
-Dos elementos de 10.° Química (4.8) quedaron **sin consenso** en el panel de expertos IA y **no se marcan como
-revisados** en su paquete (aparecen en `sin_revision_del_panel`). El generador de clases no debería usarlos hasta que
+Seis elementos quedaron **sin consenso** en el panel de expertos IA: dos de Química de 10.°, tres actividades de
+Física de 10.° y una dificultad sobre aromaticidad de 11.°. **No se marcan como revisados** en sus paquetes
+(aparecen en `sin_revision_del_panel`). El generador de clases no debería usarlos hasta que
 una persona del equipo de Ciencias acepte o rechace la corrección propuesta. Son propuestas del panel, no
 confirmaciones del MINED.
 
@@ -57,3 +58,11 @@ el espejo cóncavo pasó a extensión.
 - reasignar el concepto del tema (espejos planos o formación de imágenes por reflexión y refracción) y redactar tres
   actividades nuevas para la fila; o
 - aceptar los espejos esféricos como extensión de «imagen formada por reflexión» y dejar las actividades como están.
+
+## 4. `DIF:quimica/hidrocarburos-aromaticos/3`: regla de Hückel como ampliación
+
+El experto consideró correcta la distinción entre sistemas aromáticos, antiaromáticos y no aromáticos, pero advirtió
+que la regla de Hückel excede el indicador de reconocimiento de aromáticos. El psicopedagogo dejó confianza baja
+por ese alcance curricular. La dificultad sigue sin revisión completa; hace falta decidir si se conserva como
+ampliación o se reemplaza por una idea previa que mida el indicador. No se registra una confirmación humana ni se
+aplica una decisión a partir de esta nota.

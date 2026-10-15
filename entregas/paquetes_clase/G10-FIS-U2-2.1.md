@@ -93,6 +93,9 @@
 - **ACT:G10-FIS-U2-2.1/obj-1** (objetivo, razonar, opcion_multiple): Para un problema de tránsito, Valeria escribe la ecuación x = v₀·t + a·t, donde x es una distancia (m), v₀ una rapidez (m/s), a una aceleración (m/s²) y t un tiempo (s). ¿Qué concluye el análisis dimensional de esa ecuac
 - **ACT:G10-FIS-U2-2.1/obj-2** (objetivo, interpretar_datos, numerica): Datos de un grupo de ejemplo: en una finca de Usulután, un tubo de riego llena un tanque. Anotaron el volumen acumulado: a los 0 min, 0 L; a los 5 min, 600 L; a los 10 min, 1 200 L; a los 15 min, 1 800 L. Si el caudal se
 - **ACT:G10-FIS-U2-2.1/obj-abierta** (objetivo, razonar, abierta): Para un informe sobre la carretera del Litoral, Kevin convirtió 90 km/h a m/s así: 90 km/h × 3.6 = 324 m/s. En 3 o 4 oraciones: explica qué error cometió; escribe la cadena de factores de conversión correcta, mostrando c
+- **ACT:G10-QUI-U1-1.7/obj-1** (objetivo, razonar, opcion_multiple): La masa de una molécula de agua es de 3.0 × 10⁻²³ g (valor aproximado). Una cucharada de agua tiene una masa de 15 g. Primero estima el orden de magnitud y luego calcula: ¿cuántas moléculas de agua hay en la cucharada?
+- **ACT:G10-QUI-U1-1.7/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de ejemplo de un análisis del agua de un pozo, con límites también de ejemplo. Arsénico: medido 1.5 × 10⁻² mg/L, límite 0.010 mg/L. Plomo: medido 4.0 × 10⁻³ mg/L, límite 0.010 mg/L. Nitrato: medido 4.5 × 10¹ mg/L, 
+- **ACT:G10-QUI-U1-1.7/obj-abierta** (objetivo, razonar, abierta): Una pila de 2 m³ está llena de agua. Mateo calculó que el agua tiene una masa de 2 × 10⁴ g. Usa que 1 L de agua tiene una masa aproximada de 1 kg. En 2 o 3 oraciones: (a) estima el orden de magnitud de la masa en gramos 
 
 ## Datos de referencia
 

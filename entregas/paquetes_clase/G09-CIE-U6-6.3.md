@@ -105,6 +105,9 @@
 - 8 cm: 2.81 N
 ¿Qué 
 - **ACT:G09-CIE-U6-6.3/obj-abierta** (objetivo, razonar, abierta): Dos esferas pequeñas, cada una con +4.0 μC, están a 10 cm de distancia y se repelen con una fuerza de 14.4 N. Valeria duplica la carga de una sola esfera y, al mismo tiempo, duplica la distancia entre ellas. Responde en 
+- **ACT:G11-FIS-U6-6.5/obj-1** (objetivo, razonar, opcion_multiple): Tres cargas puntuales forman un triángulo equilátero. En la base, q1 = +2 µC a la izquierda y q2 = −2 µC a la derecha; en el vértice superior está q3 = +1 µC. Sin calcular, ¿hacia dónde apunta la fuerza eléctrica neta so
+- **ACT:G11-FIS-U6-6.5/obj-2** (objetivo, interpretar_datos, numerica): Dos cargas están en un plano (x, y), con posiciones en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total
+- **ACT:G11-FIS-U6-6.5/obj-abierta** (objetivo, razonar, abierta): Sobre una recta están q1 = +4.0 µC en x = 0 y q2 = +1.0 µC en x = 0.60 m. Josué busca el punto donde una carga de prueba no siente fuerza neta. Indica si ese punto está entre las cargas o fuera de ellas y por qué, calcul
 
 ## Datos de referencia
 

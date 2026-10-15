@@ -96,7 +96,11 @@
 - **ACT:G09-CIE-U3-3.15/obj-1** (objetivo, explicar, opcion_multiple): Al correr, los músculos de Diego liberan ácido a la sangre. Aun así, el pH de su sangre se mantiene entre 7.35 y 7.45. ¿Cuál es la mejor explicación?
 - **ACT:G09-CIE-U3-3.15/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de ejemplo de un grupo. Agregaron vinagre de 2 en 2 mL a 100 mL de agua purificada (vaso 1, control) y a 100 mL de agua con bicarbonato (vaso 2). pH medido con tiras tras 0, 2, 4 y 6 mL: vaso 1: 7, 3, 3, 3; vaso 2:
 - **ACT:G09-CIE-U3-3.15/obj-abierta** (objetivo, razonar, abierta): Un grupo agregó 4 mL de vinagre a 100 mL de agua purificada y a 100 mL de agua con bicarbonato. El pH del agua bajó de 7 a 3 y el del bicarbonato solo de 8 a 7. En 2 o 3 oraciones: a) explica por qué el pH del agua con b
+- **ACT:G11-QUI-U4-4.9/obj-1** (objetivo, razonar, opcion_multiple): Durante una carrera intensa, los músculos de Valeria liberan iones H⁺ hacia la sangre. El sistema amortiguador principal del plasma sigue el equilibrio: CO₂(ac) + H₂O(l) ⇌ H₂CO₃(ac) ⇌ H⁺(ac) + HCO₃⁻(ac) (con pKa = 6.1 de
+- **ACT:G11-QUI-U4-4.9/obj-2** (objetivo, interpretar_datos, opcion_multiple): En un caso simulado, Elena tiene [HCO₃⁻]=24 mmol/L y [CO₂ disuelto]=1.2 mmol/L; Mateo, tras hiperventilar, tiene [HCO₃⁻]=24 mmol/L y [CO₂ disuelto]=0.60 mmol/L. Usa el modelo fisiológico pH=6.1+log₁₀([HCO₃⁻]/[CO₂ disuelt
+- **ACT:G11-QUI-U4-4.9/obj-abierta** (objetivo, explicar, abierta): Un anuncio afirma que beber «agua alcalina» sube el pH sanguíneo de 7.4 a 8.0 y previene enfermedades. Refútalo en 3 a 5 oraciones: nombra el par conjugado H₂CO₃/HCO₃⁻, en equilibrio con CO₂ disuelto; escribe o describe 
 
 ## Datos de referencia
 
 - **Pendiente de fuente** (tabla citable en data/fuentes/). Datos que piden los elementos:
+  - pKa — en «Durante una carrera intensa, los músculos de Valeria liberan iones H⁺ hacia la sangre. El » (ACT:G11-QUI-U4-4.9/obj-1)

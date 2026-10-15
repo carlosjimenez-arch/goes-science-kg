@@ -67,6 +67,9 @@
 
 ## Ideas previas erróneas
 
+- **DIF:quimica/ciencia-de-materiales/1** (revisado_panel): Cree que el oro es el mejor conductor eléctrico y que por eso se usa en contactos y conectores. Confunde el valor o la nobleza del metal con su conductividad: no reconoce que la plata y el cobre conducen más que el oro, que se elige por no oxidarse. *Señal:* Responde «se usa oro porque conduce mejor» o ordena la conductividad según el precio del metal (oro > plata > cobre).
+- **DIF:quimica/ciencia-de-materiales/2** (revisado_panel): Cree que todas las propiedades de una aleación son el promedio de las de sus metales, o que es un compuesto con fórmula fija. No reconoce que algunas propiedades no se promedian: una aleación puede fundir por debajo de todos sus componentes (como la soldadura de estaño y plomo) y ser más dura y peor conductora que el metal puro. *Señal:* Calcula o predice la temperatura de fusión de una soldadura como promedio de las de sus metales, o escribe una fórmula química para el bronce o la soldadura.
+- **DIF:quimica/ciencia-de-materiales/3** (revisado_panel): Confunde dureza con tenacidad: cree que un material que se quiebra al caer, como un azulejo o una cerámica, es blando, y que el material más duro es el que mejor resiste los golpes. No distingue resistencia al rayado de capacidad de deformarse sin romperse. *Señal:* Dice «el azulejo es más blando que el clavo porque se quiebra» o elige un cerámico frágil para una pieza que recibe golpes porque «es muy duro».
 - **DIF:quimica/enlace-metalico/1** (revisado_panel): Cree que un metal puro como el cobre no tiene enlace químico porque «es un solo elemento», o que sus átomos se unen de dos en dos con enlaces covalentes fijos. No reconoce el enlace metálico como la atracción entre una red de cationes y los electrones de valencia deslocalizados que comparten todos. *Señal:* Dice que en el hierro «los átomos solo están juntos»; dibuja pares de átomos de cobre unidos por una línea; no explica qué mantiene unido un trozo de metal.
 - **DIF:quimica/enlace-metalico/2** (revisado_panel): Cree que un material conduce mejor cuantos más electrones tiene, y que los aislantes no conducen porque tienen pocos electrones. No reconoce que lo que importa es si hay estados vacíos cercanos en energía (banda parcialmente llena o brecha pequeña) a los que los electrones puedan pasar. *Señal:* Explica que el vidrio no conduce «porque tiene pocos electrones» o que el oro conduce «porque tiene muchos»; no menciona la brecha ni las bandas en su explicación.
 - **DIF:quimica/enlace-metalico/3** (revisado_panel): Cree que un semiconductor es un «conductor a medias» con una conductividad fija, y que al calentarlo conduce peor, igual que un metal. No reconoce que en un semiconductor puro, como el silicio sin impurezas, la conductividad aumenta mucho con la temperatura o con la luz, porque más electrones saltan la brecha. *Señal:* Predice que el silicio puro o un termistor NTC (el tipo usado en la práctica) conducirán menos al calentarse; define semiconductor como «deja pasar la mitad de la corriente».
@@ -108,6 +111,18 @@
 - **ACT:G10-QUI-U5-5.14/obj-1** (objetivo, razonar, opcion_multiple): Josué, con lentes de protección, pone un clavo de hierro y un cristal grande de sal común sobre una tabla y le da a cada uno un golpe con un martillo. ¿Qué predicción y qué justificación son correctas?
 - **ACT:G10-QUI-U5-5.14/obj-2** (objetivo, interpretar_datos, opcion_multiple): Las líneas de alta tensión usan cables de aluminio (con un núcleo de acero) en lugar de cobre. Valores aproximados de una tabla de referencia: conductividad eléctrica relativa, cobre 100 y aluminio 61; densidad, cobre 8.
 - **ACT:G10-QUI-U5-5.14/obj-abierta** (objetivo, razonar, abierta): El cobre puro se estira en alambres finos y conduce muy bien; el bronce, una aleación de cobre con estaño, es más duro y se usaba para herramientas y campanas. En 2 o 3 oraciones, explica con el modelo de enlace metálico
+- **ACT:G11-QUI-U1-1.1/obj-1** (objetivo, explicar, opcion_multiple): Los contactos del conector de un cargador de teléfono son de cobre cubierto con una capa muy delgada de oro. ¿Cuál es la razón principal para recubrirlos de oro?
+- **ACT:G11-QUI-U1-1.1/obj-2** (objetivo, interpretar_datos, opcion_multiple): Una ficha técnica da estas temperaturas de fusión (valores aproximados de la tabla de referencia):
+• estaño: 232 °C
+• plata: 962 °C
+• cobre: 1085 °C
+• soldadura sin plomo (96.5 % de estaño, 3 % de plata y 0.5 % de cobre)
+- **ACT:G11-QUI-U1-1.1/obj-abierta** (objetivo, razonar, abierta): En el aire húmedo de El Salvador, ¿qué problema aparecería si los contactos de un cargador se fabricaran de hierro en lugar de cobre cubierto de oro? En 3 o 4 oraciones: nombra el problema, explica por qué afecta la carg
+- **ACT:G11-QUI-U1-1.2-v3/obj-1** (objetivo, explicar, opcion_multiple): En una bujía de motor, el electrodo central de metal va rodeado por una pieza de cerámica de alúmina (óxido de aluminio). ¿Por qué se usa ese cerámico y no un metal para rodear el electrodo?
+- **ACT:G11-QUI-U1-1.2-v3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo:
+• Rayado con la punta de un clavo de acero: el aluminio y la teja de barro quedan rayados; el azulejo esmaltado no (el trazo gris se borra con el dedo).
+• Golpe suave con martillo: el alumin
+- **ACT:G11-QUI-U1-1.2-v3/obj-abierta** (objetivo, explicar, abierta): Gabriela dice: «El azulejo es blando, porque se quiebra cuando cae al piso; el clavo es duro, porque no se quiebra». En la prueba de rayado el clavo no rayó el esmalte del azulejo. En 4 o 5 oraciones: di si Gabriela tien
 
 ## Datos de referencia
 

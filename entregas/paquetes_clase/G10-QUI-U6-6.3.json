@@ -455,6 +455,30 @@
    "fuente": null
   },
   {
+   "id": "DIF:quimica/estequiometria/1",
+   "concepto": "CON:quimica/estequiometria",
+   "descripcion": "Trata la masa total de una muestra impura o de una disolución como si fuera 100 % sustancia pura que reacciona: convierte directamente los gramos totales del mineral, tableta o mezcla a moles del reactivo sin descontar antes las impurezas ni el disolvente.",
+   "senales": "Divide la masa total de la roca caliza o de la tableta antiácida entre la masa molar del compuesto activo para hallar los moles que reaccionan; omite el porcentaje de pureza en el diagrama de factores de conversión.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/estequiometria/2",
+   "concepto": "CON:quimica/estequiometria",
+   "descripcion": "Invierte el factor de conversión del porcentaje de pureza: divide por la fracción de pureza cuando pasa de muestra impura a sustancia pura (obteniendo más masa pura que la muestra total), o multiplica por la pureza cuando busca qué masa de reactivo comercial impuro debe pesar.",
+   "senales": "Al tener 200 g de mineral al 85 % calcula 200 / 0.85 = 235.3 g de reactivo puro; o cuando necesita 80 g puros a partir de un reactivo al 80 % responde que bastan 80 × 0.80 = 64 g de muestra comercial.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/estequiometria/3",
+   "concepto": "CON:quimica/estequiometria",
+   "descripcion": "Confunde el volumen o la masa de una disolución acuosa con la cantidad de sustancia o masa de soluto, o multiplica concentración en mol/L por volumen en mililitros sin convertir a litros antes de aplicar la relación molar de la ecuación balanceada.",
+   "senales": "Toma 24 mL de disolución ácida como si fueran 24 g de ácido puro, o multiplica 1.00 mol/L × 24 mL = 24 mol de soluto sin pasar el volumen a litros.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:quimica/leyes-de-los-gases/1",
    "concepto": "CON:quimica/leyes-de-los-gases",
    "descripcion": "Entiende «inversamente proporcional» como «cuando uno sube, el otro baja la misma cantidad o el mismo porcentaje». Resta en lugar de dividir: cree que si la presión sube un 50 % el volumen baja un 50 %, o que la gráfica de P frente a V es una recta descendente cuya pendiente es la constante.",
@@ -480,6 +504,223 @@
   }
  ],
  "actividades": [
+  {
+   "id": "ACT:G10-QUI-U10-10.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U10-10.1"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U10-10.1",
+    "CON:quimica/estequiometria"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "En las caleras de Metapán se calcina piedra caliza según CaCO₃(s) → CaO(s) + CO₂(g). Sabiendo que las masas molares son 100.0 g/mol para CaCO₃ y 56.0 g/mol para CaO, ¿cuántos gramos de óxido de calcio se obtienen al descomponer por completo 200.0 g de una muestra de caliza con 85.0 % de pureza en CaCO₃?",
+   "opciones": {
+    "A": "95.2 g, porque solo reaccionan los 170.0 g de carbonato de calcio puro.",
+    "B": "112.0 g, porque los 200.0 g de la roca completa se transforman en producto.",
+    "C": "131.8 g, porque se divide la masa teórica entre el factor decimal de pureza.",
+    "D": "170.0 g, porque la relación molar 1:1 conserva la misma masa de reactivo puro."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/estequiometria/1",
+    "C": "DIF:quimica/estequiometria/2",
+    "D": "DIF:quimica/ecuacion-quimica-y-balanceo/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "De los 200.0 g de caliza, el 85.0 % son 170.0 g de CaCO₃ puro (1.70 mol). Como la relación molar es 1:1, se forman 1.70 mol de CaO, equivalentes a 1.70 mol × 56.0 g/mol = 95.2 g.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U10-10.1"
+   },
+   "origen": "redactor-actividades (G10-QUI-U10-10.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Ítem claro (56 palabras), tres datos manejables en el texto, contexto local (caleras de Metapán), opciones parejas y distractores ligados a errores reales. La clave no es la más larga y la retroalimentación explica sin nombrar letras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G10-QUI-U10-10.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U10-10.1"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U10-10.1",
+    "CON:quimica/estequiometria"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "La docente neutraliza con ácido una tableta antiácida cuyo único componente básico es carbonato de calcio. Reacción: CaCO₃(s) + 2HCl(ac) → CaCl₂(ac) + H₂O(l) + CO₂(g).\nDatos de ejemplo:\n- Masa de la tableta: 1.50 g.\n- Masa molar del CaCO₃: 100.0 g/mol.\n- HCl(ac) consumido: 24.0 mL (0.0240 L) de concentración 1.00 mol/L.\n¿Cuál es el porcentaje de pureza de CaCO₃ en la tableta?",
+   "opciones": {
+    "A": "100.0 %, porque se asume que toda la masa de la tableta es principio activo.",
+    "B": "50.0 %, porque el coeficiente 2 del HCl indica que la mitad de la masa de la tableta es carbonato.",
+    "C": "80.0 %, porque reaccionan 0.0120 mol equivalentes a 1.20 g de carbonato puro.",
+    "D": "160.0 %, porque los 0.0240 mol de ácido igualan los moles de carbonato puro."
+   },
+   "correcta": "C",
+   "distractores": {
+    "A": "DIF:quimica/estequiometria/1",
+    "B": "DIF:quimica/ecuacion-quimica-y-balanceo/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En 0.0240 L de HCl 1.00 mol/L hay 0.0240 mol de HCl. Como la relación molar es 1 mol de CaCO₃ por cada 2 mol de HCl, reaccionaron 0.0120 mol de CaCO₃, que pesan 1.20 g; divididos entre 1.50 g de tableta dan 80.0 % de pureza.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U10-10.1"
+   },
+   "origen": "redactor-actividades (G10-QUI-U10-10.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La clave C es correcta: 0.0240 mol de HCl consumen 0.0120 mol de CaCO₃, equivalentes a 1.20 g y 80.0 %. El distractor B no justificaba numéricamente su 50 % y D no representa interpretar coeficientes como masas. Se hace B diagnosticable para DIF de coeficientes y se retira el mapeo incorrecto de D."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "La docente neutraliza una tableta antiácida de 1.50 g (cuyo único componente básico es carbonato de calcio, CaCO₃, M = 100.0 g/mol) según CaCO₃(s) + 2HCl(ac) → CaCl₂(ac) + H₂O(l) + CO₂(g). Los datos de un grupo de ejemplo indican que se consumieron exactamente 24.0 mL (0.0240 L) de HCl(ac) de concentración 1.00 mol/L. ¿Cuál es el porcentaje de pureza de CaCO₃ en la tableta?",
+     "opciones": {
+      "A": "100.0 %, porque se asume que toda la masa de la tableta es principio activo.",
+      "B": "50.0 %, porque se relaciona directamente el volumen de ácido con la masa inicial.",
+      "C": "80.0 %, porque reaccionan 0.0120 mol equivalentes a 1.20 g de carbonato puro.",
+      "D": "160.0 %, porque los 0.0240 mol de ácido igualan los moles de carbonato puro."
+     },
+     "distractores": {
+      "A": "DIF:quimica/estequiometria/1",
+      "B": "DIF:quimica/estequiometria/3",
+      "D": "DIF:quimica/ecuacion-quimica-y-balanceo/2"
+     }
+    }
+   }
+  },
+  {
+   "id": "ACT:G10-QUI-U10-10.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U10-10.1"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U10-10.1",
+    "CON:quimica/estequiometria"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Para neutralizar una disolución ácida se necesitan exactamente 80.0 g de hidróxido de calcio puro, Ca(OH)₂. En la bodega solo hay cal apagada comercial con 80.0 % de pureza en Ca(OH)₂ (el resto son impurezas inertes). Explica si debes pesar 80.0 g, más de 80.0 g o menos de 80.0 g de la muestra comercial, calcula qué masa total debes pesar y justifica por qué la operación matemática con el porcentaje se aplica en ese sentido.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Como solo 80.0 de cada 100.0 g del producto comercial son Ca(OH)₂ puro, hay que pesar más de 80.0 g de muestra total: se divide 80.0 g entre 0.800 para obtener 100.0 g de muestra comercial.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U10-10.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Debo pesar más de 80.0 g de la muestra comercial, exactamente 100.0 g. Esto se debe a que el 20.0 % de la muestra son impurezas que no reaccionan y solo el 80.0 % es Ca(OH)₂ puro. Por eso se divide la masa pura requerida (80.0 g) entre la fracción de pureza (0.800), verificando que el 80.0 % de 100.0 g entrega los 80.0 g puros necesarios.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Indica que debe pesarse más de 80.0 g de muestra comercial y calcula el valor correcto de 100.0 g.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica que para hallar la masa impura total se divide la masa pura requerida entre la fracción de pureza (o regla de tres equivalente) porque parte de la muestra son impurezas inertes.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Comprueba que al aplicar el 80.0 % a los 100.0 g totales se recuperan los 80.0 g de Ca(OH)₂ puro.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Multiplica los 80.0 g requeridos por 0.800 en lugar de dividir, obteniendo una masa menor de muestra comercial.",
+      "ejemplo": "Hay que pesar menos, 80.0 g × 0.80 = 64.0 g de cal comercial porque tiene 80 % de pureza.",
+      "dificultad": "DIF:quimica/estequiometria/2"
+     },
+     {
+      "descripcion": "Ignora el porcentaje de pureza y afirma que bastan exactamente 80.0 g de muestra comercial.",
+      "ejemplo": "Debo pesar 80.0 g de la muestra comercial porque la receta pide 80.0 g de reactivo.",
+      "dificultad": "DIF:quimica/estequiometria/1"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-QUI-U10-10.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide decidir, calcular y justificar, justo lo que exigen los dos criterios obligatorios; no fija una extensión que se quede corta. Registro adecuado a 10.° y retroalimentación explicativa."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
   {
    "id": "ACT:G10-QUI-U6-6.3/obj-1",
    "tipo": "actividad",

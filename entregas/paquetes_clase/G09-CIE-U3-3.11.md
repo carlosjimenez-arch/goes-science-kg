@@ -108,6 +108,11 @@
 - **ACT:G09-CIE-U3-3.11/obj-1** (objetivo, razonar, numerica): Un limpiador de vidrios diluido tiene [OH⁻] = 1.0 × 10⁻³ mol/L a 25 °C. A esa temperatura, en toda disolución acuosa se cumple Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴. Calcula primero [H⁺] y después el pH con pH = −log[H⁺] (si [H⁺]
 - **ACT:G09-CIE-U3-3.11/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de ejemplo (no son de un informe real) de un monitoreo de agua: río 1, pH 7.0; río 2, pH 6.0; pozo, pH 5.0. ¿Qué comparación entre el agua del pozo y la del río 1 es correcta?
 - **ACT:G09-CIE-U3-3.11/obj-abierta** (objetivo, razonar, abierta): En un foro alguien afirma: «Una solución de pH 3 es solo el doble de ácida que una de pH 6». En 2 o 3 oraciones: a) di si la afirmación es correcta; b) calcula cuántas veces mayor es [H⁺] en la solución de pH 3; c) expli
+- **ACT:G11-QUI-U4-4.3/obj-1** (objetivo, razonar, opcion_multiple): Elena prepara en el laboratorio una disolución acuosa de hidróxido de bario, Ba(OH)₂(ac), de concentración 5.0 × 10⁻³ mol/L a 25 °C (Kw = 1.0 × 10⁻¹⁴). Sabiendo que el Ba(OH)₂ es una base fuerte que se disocia por comple
+- **ACT:G11-QUI-U4-4.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Un equipo diluye HCl(ac) 0.10 mol/L varias veces, 1:10 cada vez, a 25 °C. Datos de un grupo de ejemplo (pH calculado con −log[HCl] | pH medido):
+• Muestra 1 (1.0 × 10⁻¹ mol/L): 1.0 | 1.1
+• Muestra 3 (1.0 × 10⁻³ mol/L): 3
+- **ACT:G11-QUI-U4-4.3/obj-abierta** (objetivo, explicar, abierta): Mateo diluye un millón de veces (factor 1:1 000 000) una disolución acuosa de ácido nítrico, HNO₃(ac), de concentración inicial 1.0 × 10⁻² mol/L a 25 °C. Al calcular el pH final con la fórmula pH = −log[HNO₃], obtiene pH
 
 ## Datos de referencia
 

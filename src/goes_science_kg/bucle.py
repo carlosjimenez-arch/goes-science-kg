@@ -510,15 +510,16 @@ def _s(serie: str) -> str:
     return f"-{serie}" if serie else ""
 
 
-def impugnar(k: int, tipos: list[str] | None = None, serie: str = "") -> list[str]:
+def impugnar(k: int, tipos: list[str] | None = None, serie: str = "", prefijo: str = "") -> list[str]:
     """Lotes del refutador de la vuelta k: en la 1, todo lo resuelto en alcance; después, solo lo que la réplica de la
-    vuelta anterior cambió. Un lote por disciplina (partido por peso)."""
+    vuelta anterior cambió. `prefijo` restringe los ids sin reabrir otras tandas.
+    Un lote por disciplina (partido por peso)."""
     if k > config()["vueltas_max"]:
         raise ValueError(f"el bucle llega a {config()['vueltas_max']} vueltas (config/panel.yaml, bucle.vueltas_max)")
     estado = panel.cargar_estado()
     por_disciplina: dict[str, list[dict]] = defaultdict(list)
     for i, x in sorted(estado.items()):
-        if not _a_impugnar(x, k, tipos, serie):
+        if not i.startswith(prefijo) or not _a_impugnar(x, k, tipos, serie):
             continue
         exp = {"id": i, "tipo": x["tipo"], "titulo": x["titulo"], "opciones": panel.config()["tipos"][x["tipo"]][
             "opciones"], "datos": x["datos"], "resolucion": x["resolucion"],

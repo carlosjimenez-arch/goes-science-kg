@@ -382,6 +382,30 @@
    "senales": "Llama «rayos de luz» al haz o explica su desviación como un reflejo, sin mencionar carga ni partículas.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:quimica/radiactividad/1",
+   "concepto": "CON:quimica/radiactividad",
+   "descripcion": "Confunde cómo cambian el número atómico (Z) y el número másico (A) en las emisiones alfa y beta (leyes de Soddy y Fajans). Por ejemplo, resta 4 a Z y 2 a A en la emisión alfa, o resta 1 a Z en la beta negativa porque asocia la carga negativa del electrón con perder protones.",
+   "senales": "En una emisión α desplaza el elemento cuatro casillas a la izquierda o dos a la derecha; en una emisión β⁻ resta 1 a Z y ubica el producto una casilla a la izquierda en vez de a la derecha.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/radiactividad/2",
+   "concepto": "CON:quimica/radiactividad",
+   "descripcion": "Transfiere la conservación de los elementos de las reacciones químicas ordinarias a las reacciones nucleares y asume que al emitir partículas alfa o beta el átomo conserva su identidad química (mismo Z) y solo cambia su masa o su carga iónica.",
+   "senales": "Escribe el mismo símbolo químico antes y después de una desintegración α o β⁻ (por ejemplo, dice que el ²²⁶₈₈Ra pasa a ²²²₈₈Ra) o afirma que una emisión nuclear solo forma otro isótopo o ion del mismo elemento.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/radiactividad/3",
+   "concepto": "CON:quimica/radiactividad",
+   "descripcion": "Confunde la radiactividad natural espontánea con la fosforescencia o con un proceso químico inducible, creyendo que el mineral de uranio necesita absorber luz solar, calor o reaccionar con otro compuesto para emitir radiación.",
+   "senales": "Afirma que las sales de uranio solo velan la placa fotográfica si antes se exponen al Sol (cuando Becquerel comprobó que también lo hacían guardadas a oscuras), o que al enfriar el compuesto o cambiarlo por otro compuesto de uranio desaparece su actividad radiactiva.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [
@@ -796,6 +820,267 @@
      "psicopedagogo": "La pregunta guía da el andamio y las tres subpreguntas corresponden a c1–c3 obligatorios. Pedir 2 o 3 oraciones es exigente pero alcanzable en 10.°. Retroalimentación breve (42 palabras) y explicativa."
     },
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U8-8.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U8-8.1"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U8-8.1",
+    "CON:quimica/radiactividad"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Marie y Pierre Curie descubrieron el radio en estudios de la pechblenda. Uno de sus isótopos, radio-226 (²²⁶₈₈Ra), es un núclido inestable del grupo 2 que emite espontáneamente una partícula alfa (⁴₂He). Aplicando las leyes del desplazamiento de Soddy y Fajans, ¿qué núclido se forma y cómo se ubica respecto al radio en el orden de número atómico?",
+   "opciones": {
+    "A": "Se forma ²²²₈₆Rn, dos lugares antes del radio en el orden de número atómico, porque pierde dos protones y dos neutrones.",
+    "B": "Se forma ²²⁶₈₉Ac, un lugar después del radio en el orden de número atómico, porque un neutrón del núcleo se transforma en protón.",
+    "C": "Se forma ²²²₈₈Ra, en la misma casilla del radio, porque solo pierde cuatro neutrones y conserva sus protones.",
+    "D": "Se forma ²²⁴₈₄Po, cuatro lugares antes del radio en el orden de número atómico, porque el número atómico disminuye en cuatro unidades."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:quimica/radiactividad/1",
+    "C": "DIF:quimica/radiactividad/2",
+    "D": "DIF:quimica/radiactividad/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En una emisión alfa (⁴₂He), el número másico A disminuye en 4 (226 − 4 = 222) y el número atómico Z disminuye en 2 (88 − 2 = 86). Según la ley de Soddy y Fajans, el producto queda dos lugares antes en el orden de número atómico: es el radón-222 (²²²₈₆Rn), un gas noble del grupo 18 en el periodo 6. «Dos lugares antes» se cuenta por Z, no por columnas.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U8-8.1"
+   },
+   "origen": "redactor-actividades (G11-QUI-U8-8.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La abreviación de A conserva Ra-226→Rn-222. El enunciado confunde descubrimiento del radio por Marie y Pierre con aislamiento: el metal fue aislado por Marie y Debierne en 1910. Separo el dato histórico del ejemplo isotópico, manteniendo leyes de desplazamiento y opciones."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Marie y Pierre Curie aislaron a partir de la pechblenda el radio-226 (²²⁶₈₈Ra), un núclido inestable del grupo 2 que se desintegra espontáneamente emitiendo una partícula alfa (⁴₂He). Al aplicar las leyes del desplazamiento de Soddy y Fajans, ¿qué núclido se forma y cómo se ubica en la tabla periódica respecto al radio?",
+     "opciones": {
+      "A": "Se forma ²²²₈₆Rn, ubicado dos casillas a la izquierda porque pierde dos protones y cuatro nucleones.",
+      "B": "Se forma ²²⁶₈₉Ac, ubicado una casilla a la derecha porque un neutrón del núcleo se transforma en protón.",
+      "C": "Se forma ²²²₈₈Ra, ubicado en la misma casilla porque solo pierde cuatro neutrones y conserva sus protones.",
+      "D": "Se forma ²²⁴₈₄Po, ubicado cuatro casillas a la izquierda porque el número atómico disminuye en cuatro unidades."
+     },
+     "retroalimentacion": "En una emisión alfa (⁴₂He), el número másico A disminuye en 4 (226 − 4 = 222) y el número atómico Z disminuye en 2 (88 − 2 = 86). Según la ley de Soddy y Fajans, el producto se desplaza dos lugares hacia la izquierda en la tabla periódica y corresponde al radón-222 (²²²₈₆Rn)."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U8-8.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U8-8.1"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U8-8.1",
+    "CON:quimica/radiactividad"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un grupo de ejemplo reconstruye los primeros pasos de la serie del uranio-238 descubierta tras los hallazgos de Becquerel: paso 1: ²³⁸₉₂U → ²³⁴₉₀Th; paso 2: ²³⁴₉₀Th → ²³⁴₉₁Pa; paso 3: ²³⁴₉₁Pa → núclido X (mediante emisión β⁻, ⁰₋₁e). Según los datos de A y Z, ¿qué emisión ocurre en los pasos 1 y 2 y cuál es la composición de X?",
+   "opciones": {
+    "A": "Paso 1 es emisión β⁻ y paso 2 es α; el núclido X tiene A = 230 y Z = 89, desplazado a la izquierda.",
+    "B": "Paso 1 es emisión α y paso 2 es β⁻; el núclido X tiene A = 234 y Z = 90, regresando al torio.",
+    "C": "Paso 1 es emisión α y paso 2 es β⁻; el núclido X tiene A = 234 y Z = 92, un isótopo del uranio.",
+    "D": "Paso 1 es emisión α y paso 2 es γ; el núclido X tiene A = 233 y Z = 91, conservando el elemento."
+   },
+   "correcta": "C",
+   "distractores": {
+    "A": "DIF:quimica/radiactividad/1",
+    "B": "DIF:quimica/radiactividad/1",
+    "D": "DIF:quimica/radiactividad/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En el paso 1, A baja en 4 y Z baja en 2 (emisión α). En el paso 2, A se mantiene en 234 y Z sube de 90 a 91 (emisión β⁻). En el paso 3, otra emisión β⁻ aumenta Z en 1 (91 + 1 = 92) sin cambiar A = 234, formando ²³⁴₉₂U, isótopo del uranio inicial.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U8-8.1"
+   },
+   "origen": "redactor-actividades (G11-QUI-U8-8.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Datos de A y Z presentados por pasos, opciones paralelas y de longitud similar, cada distractor con un error plausible de cuenta o de tipo de emisión. Clave C, distinta de la de obj-1 (A). Retroalimentación paso a paso, sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-QUI-U8-8.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-QUI-U8-8.1"
+   ],
+   "evalua": [
+    "TEMA:G11-QUI-U8-8.1",
+    "CON:quimica/radiactividad"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Responde en un párrafo:\na) Explica qué observó Henri Becquerel en placas fotográficas guardadas en la oscuridad junto a sales de uranio, y por qué eso mostró que la radiación era una emisión espontánea del uranio y no fosforescencia causada por el Sol.\nb) Marie y Pierre Curie descubrieron el elemento polonio. Su isótopo polonio-210 (²¹⁰₈₄Po) emite una partícula alfa. Con las leyes de Soddy y Fajans, indica cómo cambian el número másico (A), el número atómico (Z) y la posición en la tabla periódica.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Las sales de uranio velaban placas protegidas de la luz en la oscuridad: su radiación no necesitaba iluminación solar. Después se reconoció la radiactividad como propiedad atómica y su origen nuclear. Marie y Pierre Curie descubrieron el elemento polonio. En el ejemplo Po-210, una emisión alfa deja A=206 y Z=82: Pb-206, dos lugares antes por número atómico, en el mismo periodo.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-QUI-U8-8.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Becquerel observó que las sales de uranio velaban placas protegidas de la luz aun guardadas en oscuridad. La emisión no requería iluminación solar; los estudios posteriores permitieron reconocer la radiactividad como propiedad atómica y, después, su origen nuclear. El elemento polonio fue descubierto por Marie y Pierre Curie. Para el ejemplo Po-210→Pb-206+He-4, A disminuye 4 y Z disminuye 2: el producto tiene A=206 y Z=82. Es plomo-206, dos lugares antes por número atómico, en el mismo periodo que el polonio.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Explica que las sales de uranio velaron la placa fotográfica en la oscuridad sin exposición solar previa, lo que descarta la fosforescencia y muestra que la emisión es espontánea del uranio.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Indica que alfa reduce A en 4, de 210 a 206, y Z en 2, de 84 a 82; ubica el producto dos lugares antes por Z (en este caso, dos columnas a la izquierda en el mismo periodo).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Escribe el símbolo o nombre del producto resultante como plomo-206 (²⁰⁶₈₂Pb).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Afirma que el mineral de uranio necesitaba absorber rayos solares o calentarse para activar la emisión radiactiva.",
+      "ejemplo": "Becquerel vio que la sal de uranio brillaba en la placa porque antes había guardado energía de la luz del Sol.",
+      "dificultad": "DIF:quimica/radiactividad/3"
+     },
+     {
+      "descripcion": "Intercambia los cambios de A y Z o desplaza el elemento hacia la derecha en la emisión alfa.",
+      "ejemplo": "Al emitir una partícula alfa, el polonio-210 baja su A en 2 y su Z en 4, o avanza dos lugares a la derecha.",
+      "dificultad": "DIF:quimica/radiactividad/1"
+     },
+     {
+      "descripcion": "Cree que al emitir radiación el núcleo sigue siendo polonio porque un elemento no puede transformarse en otro.",
+      "ejemplo": "El polonio-210 pierde masa y pasa a polonio-206, quedándose en la misma casilla Z = 84.",
+      "dificultad": "DIF:quimica/radiactividad/2"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-QUI-U8-8.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La rúbrica alineada con el enunciado es válida. Preciso que los Curie descubrieron el elemento polonio, sin atribuirles la identificación del isótopo Po-210. La ubicación se expresa por número atómico para no generalizar la regla como desplazamiento por columnas. El balance Po-210→Pb-206 conserva A y Z."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Explica qué observó Henri Becquerel en sus placas fotográficas guardadas en la oscuridad con sales de uranio y por qué ese hallazgo demostró que la radiación era una propiedad atómica espontánea y no fosforescencia inducida por el Sol. Además, aplica las leyes de Soddy y Fajans para indicar cómo cambian el número másico (A), el número atómico (Z) y la posición en la tabla periódica cuando el polonio-210 (²¹⁰₈₄Po), descubierto por Marie y Pierre Curie, emite una partícula alfa.",
+     "retroalimentacion": "Becquerel comprobó que las sales de uranio velaban la placa sin exposición solar previa, probando que la emisión proviene del núcleo atómico de forma espontánea. Al emitir una partícula alfa, el ²¹⁰₈₄Po reduce A en 4 (a 206) y Z en 2 (a 82, plomo), desplazándose dos casillas a la izquierda en la tabla periódica.",
+     "rubrica": {
+      "respuesta_modelo": "Becquerel observó que las sales de uranio velaban las placas fotográficas envueltas en papel negro aun después de varios días guardadas en un cajón oscuro sin recibir luz del Sol. Esto demostró que la radiación no era fosforescencia que requería absorber luz previa, sino una emisión espontánea propia de los átomos de uranio. Cuando el polonio-210 (²¹⁰₈₄Po) emite una partícula alfa (⁴₂He), su número másico A disminuye en 4 unidades (pasa a 206) y su número atómico Z disminuye en 2 unidades (pasa a 82), por lo que el producto se ubica dos casillas a la izquierda en la tabla periódica, formando plomo-206 (²⁰⁶₈₂Pb).",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Explica que las sales de uranio velaron la placa fotográfica en la oscuridad sin exposición solar previa, descartando la fosforescencia y mostrando que la emisión es espontánea del átomo.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Indica que en la emisión alfa del ²¹⁰₈₄Po el número másico A disminuye en 4 (a 206) y el número atómico Z disminuye en 2 (a 82), ubicando el producto dos casillas a la izquierda en la tabla periódica.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Escribe el símbolo o nombre del producto resultante como plomo-206 (²⁰⁶₈₂Pb).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Afirma que el mineral de uranio necesitaba absorber rayos solares o calentarse para activar la emisión radiactiva.",
+        "ejemplo": "Becquerel vio que la sal de uranio brillaba en la placa porque antes había guardado energía de la luz del Sol.",
+        "dificultad": "DIF:quimica/radiactividad/3"
+       },
+       {
+        "descripcion": "Intercambia los cambios de A y Z o desplaza el elemento hacia la derecha en la emisión alfa.",
+        "ejemplo": "Al emitir una partícula alfa, el polonio-210 baja su A en 2 y su Z en 4, o avanza dos lugares a la derecha.",
+        "dificultad": "DIF:quimica/radiactividad/1"
+       },
+       {
+        "descripcion": "Cree que al emitir radiación el núcleo sigue siendo polonio porque un elemento no puede transformarse en otro.",
+        "ejemplo": "El polonio-210 pierde masa y pasa a polonio-206, quedándose en la misma casilla Z = 84.",
+        "dificultad": "DIF:quimica/radiactividad/2"
+       }
+      ]
+     }
+    }
    }
   }
  ],

@@ -636,6 +636,207 @@
     },
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
+  },
+  {
+   "id": "ACT:G11-FIS-U6-6.5/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U6-6.5",
+    "CON:fisica/ley-coulomb"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Tres cargas puntuales forman un triángulo equilátero. En la base, q1 = +2 µC a la izquierda y q2 = −2 µC a la derecha; en el vértice superior está q3 = +1 µC. Sin calcular, ¿hacia dónde apunta la fuerza eléctrica neta sobre q3 y por qué?",
+   "opciones": {
+    "A": "Hacia la derecha, paralela a la base, porque las componentes verticales de las dos fuerzas se anulan.",
+    "B": "Hacia arriba, lejos de la base, porque las dos cargas de la base empujan a q3 hacia afuera.",
+    "C": "Hacia la derecha y abajo, hacia q2, porque la atracción es más intensa que la repulsión.",
+    "D": "No hay fuerza neta, porque una carga positiva y una negativa del mismo valor se cancelan."
+   },
+   "correcta": "A",
+   "distractores": {
+    "C": "DIF:fisica/ley-coulomb/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "q1 repele a q3 en la dirección de q1 hacia q3 (arriba a la derecha) y q2 la atrae hacia q2 (abajo a la derecha). Las dos fuerzas tienen el mismo tamaño, porque las cargas y las distancias son iguales: el signo cambia el sentido, no la magnitud. Sus componentes verticales se anulan y las horizontales se suman: la neta apunta hacia la derecha, paralela a la base.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U6-6.5"
+   },
+   "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide razonamiento cualitativo («sin calcular»), adecuado para fijar la superposición antes del cálculo. Opciones de 16–18 palabras, paralelas. Retroalimentación de 68 palabras, clara."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U6-6.5/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U6-6.5",
+    "CON:fisica/ley-coulomb"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Dos cargas están en un plano (x, y), con posiciones en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total en P por componentes y úsalo para hallar la magnitud de la fuerza sobre q0. Usa k ≈ 9.0 × 10⁹ N·m²/C² (valor aproximado de la tabla de referencia). Escribe solo el número, en µN.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": {},
+   "valor": 1.5,
+   "tolerancia": 0.05,
+   "unidad": "µN",
+   "retroalimentacion": "q1 está a 0.40 m de P: E1 = 450 N/C en +x (se aleja de la carga positiva). q2 está a 0.30 m, justo arriba de P: E2 = 600 N/C en +y (apunta hacia la carga negativa). El campo total mide √(450² + 600²) = 750 N/C. La fuerza sobre q0 mide |q0|·E = 2.0 × 10⁻⁹ × 750 = 1.5 × 10⁻⁶ N = 1.5 µN, en sentido contrario al campo porque q0 es negativa.",
+   "duracion_min": 9,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U6-6.5"
+   },
+   "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "Cambio solo de redacción: datos, unidad y valor intactos. E1 = 450 N/C (+x), E2 = 600 N/C (+y, hacia q2), |E| = 750 N/C, F = 1.5 µN; tolerancia razonable y k rotulada como aproximada."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Un problema de la hoja del equipo da las cargas y sus posiciones en un plano (x, y), en metros: q1 = +8.0 nC en (0, 0) y q2 = −6.0 nC en (0.40, 0.30). En el punto P = (0.40, 0) se coloca una carga de prueba q0 = −2.0 nC. Calcula el campo eléctrico total en P por componentes y úsalo para hallar la magnitud de la fuerza sobre q0. Usa k ≈ 9.0 × 10⁹ N·m²/C² (valor aproximado de la tabla de referencia). Escribe solo el número, en µN."
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U6-6.5/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U6-6.5"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U6-6.5",
+    "CON:fisica/ley-coulomb"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Sobre una recta están q1 = +4.0 µC en x = 0 y q2 = +1.0 µC en x = 0.60 m. Josué busca el punto donde una carga de prueba no siente fuerza neta. Indica si ese punto está entre las cargas o fuera de ellas y por qué, calcula su posición en metros desde q1, y di si la respuesta cambia cuando la carga de prueba es negativa.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Entre las cargas las dos fuerzas tienen sentidos opuestos; fuera, tienen el mismo sentido y no se anulan. Igualando kq1/x² = kq2/(0.60 − x)² sale x = 0.40 m, más cerca de la carga pequeña. Como las dos fuerzas dependen igual de la carga de prueba, ni su valor ni su signo cambian el punto.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U6-6.5"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Tiene que estar entre las cargas, porque ahí q1 empuja hacia la derecha y q2 hacia la izquierda; afuera las dos empujan hacia el mismo lado. Igualo k·4.0/x² = k·1.0/(0.60 − x)², saco raíz: 2/x = 1/(0.60 − x), y queda x = 0.40 m de q1, más cerca de q2 porque es la carga menor. Si la carga de prueba es negativa, las dos fuerzas cambian de sentido a la vez y siguen igualándose en el mismo punto.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Ubica el punto entre las cargas y lo justifica con el sentido de las dos fuerzas (opuestas entre las cargas, iguales afuera).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Plantea la igualdad de las dos fuerzas con el inverso del cuadrado de la distancia y obtiene x = 0.40 m desde q1 (o 0.20 m desde q2).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Afirma que el punto no cambia con el signo (ni con el valor) de la carga de prueba y lo justifica.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Usa la distancia sin elevar al cuadrado.",
+      "ejemplo": "4/x = 1/(0.60 − x), así que x = 0.48 m.",
+      "dificultad": "DIF:fisica/ley-coulomb/1"
+     },
+     {
+      "descripcion": "Pone el punto en el medio sin considerar el valor de las cargas.",
+      "ejemplo": "En x = 0.30 m, porque ahí está a la misma distancia de las dos.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Cree que una carga de prueba negativa mueve el punto o lo saca de entre las cargas.",
+      "ejemplo": "Si la carga es negativa, las dos la atraen y el punto queda afuera, a la derecha de q2.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U6-6.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide ubicar y justificar, calcular en metros desde q1 y valorar el signo de la carga de prueba: cubre c1–c3. Errores frecuentes bien elegidos. Retroalimentación de 55 palabras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   }
  ],
  "microtemas": [],
@@ -737,6 +938,7 @@
  "datos_de_referencia": {
   "valores": [],
   "hacen_falta_en": [
+   "ACT:G11-FIS-U6-6.5/obj-2",
    "EXP:G09-CIE-U6-6.3/1"
   ],
   "datos_que_faltan": [],

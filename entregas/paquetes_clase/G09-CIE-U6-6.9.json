@@ -386,6 +386,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:fisica/corriente-alterna-transformador/1",
+   "concepto": "CON:fisica/corriente-alterna-transformador",
+   "descripcion": "Cree que transportar la energía a alto voltaje aumenta las pérdidas en los cables, o que el alto voltaje sirve para «empujar» la electricidad más lejos, porque calcula la pérdida con V²/R usando el voltaje de la línea en lugar de la corriente de la línea (I²R) o de la caída de voltaje en los propios cables.",
+   "senales": "Concluye que a 115 kV se pierde más que a 23 kV; usa V²/R con el voltaje de la línea; explica el alto voltaje con la «fuerza» para llegar lejos, sin mencionar la corriente.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/corriente-alterna-transformador/2",
+   "concepto": "CON:fisica/corriente-alterna-transformador",
+   "descripcion": "Cree que un transformador funciona con corriente continua, por ejemplo con una pila o una batería de carro, sin reconocer que solo induce voltaje en el secundario si el flujo magnético del núcleo cambia, lo que exige corriente alterna o variable en el primario.",
+   "senales": "Propone subir el voltaje de una pila con un transformador; espera una lectura constante en el secundario con corriente continua; no relaciona el transformador con la ley de Faraday.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/corriente-alterna-transformador/3",
+   "concepto": "CON:fisica/corriente-alterna-transformador",
+   "descripcion": "Cree que los 120 V de la red son un voltaje constante o el valor máximo de la señal, sin reconocer que es el valor eficaz de un voltaje que cambia de signo 120 veces por segundo y cuyo máximo es cerca de 170 V; o cree que con la corriente alterna los electrones viajan desde la central hasta la casa.",
+   "senales": "Calcula el voltaje máximo de la red como 120 V; dibuja la corriente alterna como una línea recta; dice que la electricidad «llega» a la casa con los electrones que salieron de la central.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:fisica/semiconductores-dispositivos/1",
    "concepto": "CON:fisica/semiconductores-dispositivos",
    "descripcion": "Cree que el LED o el diodo conducen igual en los dos sentidos, como un foco o un cable, y que si no encienden al conectarlos al revés es porque se dañaron, en lugar de reconocer que un diodo solo deja pasar corriente en un sentido.",
@@ -884,6 +908,253 @@
        {
         "descripcion": "Cree que el capacitor es una batería de respaldo para cuando se va la luz.",
         "ejemplo": "El capacitor guarda electricidad para seguir cargando el celular si se va la luz.",
+        "dificultad": null
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U13-13.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U13-13.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U13-13.1",
+    "CON:fisica/corriente-alterna-transformador"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Una central entrega 10 MW a una línea de transmisión. Se compara enviar esa potencia por la misma línea a 115 kV o a 23 kV. ¿Qué pasa con la potencia que se pierde como calor en los cables al usar 115 kV en lugar de 23 kV?",
+   "opciones": {
+    "A": "Aumenta 25 veces, porque la pérdida va como V²/R y el voltaje es cinco veces mayor.",
+    "B": "Baja a 1/25, porque la corriente es cinco veces menor y la pérdida va como I²R.",
+    "C": "Baja a 1/5, porque la corriente es cinco veces menor y la pérdida es proporcional a ella.",
+    "D": "No cambia, porque la central entrega la misma potencia en los dos casos."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:fisica/corriente-alterna-transformador/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Con la misma potencia, P = VI: a un voltaje cinco veces mayor la corriente es cinco veces menor. La pérdida en los cables es I²R, con la corriente de la línea y la resistencia de los cables, así que baja 5² = 25 veces. V²/R solo sirve con la caída de voltaje en los propios cables, no con el voltaje de la línea.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U13-13.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Ítem de razonamiento proporcional adecuado a 11.°. A, B y C usan el mismo factor 5 con razonamientos distintos, de modo que no se acierta por el número; D es más corta pero plausible (conservación de la potencia). Retroalimentación breve y clara."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U13-13.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U13-13.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U13-13.1",
+    "CON:fisica/corriente-alterna-transformador"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Rebeca observa en un osciloscopio la señal de una fuente de corriente alterna de baja tensión (datos de ejemplo): hay una cresta de 8.5 V en t = 2.08 ms y el valle siguiente, de −8.5 V, en t = 10.41 ms. ¿Cuál es la frecuencia de la señal, en hertz (Hz)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 60.0,
+   "tolerancia": 1.0,
+   "unidad": "Hz",
+   "retroalimentacion": "De una cresta al valle siguiente pasa medio período: 10.41 − 2.08 = 8.33 ms. El período es T = 16.66 ms y la frecuencia f = 1/T ≈ 60 Hz, la misma de la red de El Salvador. Si se toma 8.33 ms como período completo, sale el doble, 120 Hz. El valor eficaz de esta señal es 8.5/√2 ≈ 6.0 V.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U13-13.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Datos de ejemplo de un osciloscopio, sin exigir el aparato; unidad pedida (Hz). La retroalimentación anticipa el error de tomar medio período y lo explica sin regañar, y conecta con los 60 Hz de la red salvadoreña."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U13-13.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U13-13.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U13-13.1",
+    "CON:fisica/corriente-alterna-transformador"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "La energía de la geotérmica de Berlín viaja por las líneas de transmisión a 115 kV; en una subestación se baja a 23 kV para la distribución, y un transformador en un poste de la colonia la baja a 120 V antes de llegar a las casas. En 2 o 3 oraciones explica por qué conviene transportar la energía a alto voltaje y no a 120 V, usando la relación entre potencia, voltaje y corriente y la pérdida en los cables, y por qué se baja el voltaje antes de entrar a las casas.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Para la misma potencia, P = VI, a alto voltaje la corriente es pequeña, y como la pérdida en los cables es I²R, baja muchísimo: a 120 V la corriente sería casi mil veces mayor y casi toda la energía se perdería como calor. En las casas se baja a 120 V porque es más seguro y los aparatos están hechos para ese voltaje.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U13-13.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Con la misma potencia, como P = VI, al subir el voltaje la corriente en los cables es mucho menor. La pérdida en los cables es I²R, así que con poca corriente se pierde muy poca energía como calor; a 120 V la corriente sería enorme y casi todo se perdería. Antes de las casas el transformador baja el voltaje a 120 V porque un voltaje tan alto sería muy peligroso y los aparatos funcionan con 120 V.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Relaciona, para la misma potencia (P = VI), un voltaje mayor con una corriente menor en la línea.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica con la pérdida I²R (o con que la pérdida crece con el cuadrado de la corriente) que a alto voltaje se pierde mucho menos.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica que se baja a 120 V por seguridad o porque los aparatos de las casas están hechos para ese voltaje.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Estima cuánto cambia la corriente o la pérdida (por ejemplo, unas mil veces menos corriente).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Usa V²/R con el voltaje de la línea y concluye que a alto voltaje se pierde más, o que el alto voltaje se usa «para que llegue con más fuerza».",
+      "ejemplo": "Se usa alto voltaje para empujar la electricidad hasta lejos, aunque se pierde más porque la pérdida es V²/R.",
+      "dificultad": "DIF:fisica/corriente-alterna-transformador/1"
+     },
+     {
+      "descripcion": "Cree que el transformador que sube el voltaje también aumenta la energía o la potencia.",
+      "ejemplo": "El transformador de la central le sube el voltaje y así la energía llega con más potencia.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Menciona la seguridad pero no explica la ventaja del alto voltaje en la línea.",
+      "ejemplo": "Se baja porque 115 kV es peligroso; en la línea no importa porque nadie toca los cables.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U13-13.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto salvadoreño significativo (geotérmica de Berlín, transformador de la colonia). Con la subestación de 23 kV del experto, el enunciado pide la ventaja del alto voltaje con P = VI y la pérdida (c1, c2) y por qué se baja en las casas (c3). Enunciado de 94 palabras, en el límite pero sin datos irrelevantes."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "La energía de la geotérmica de Berlín viaja por las líneas de transmisión a 115 kV, y un transformador en un poste de la colonia la baja antes de llegar a las casas, que usan 120 V. En 2 o 3 oraciones explica por qué conviene transportar la energía a alto voltaje y no a 120 V, usando la relación entre potencia, voltaje y corriente y la pérdida en los cables, y por qué se baja el voltaje antes de entrar a las casas.",
+     "rubrica": {
+      "respuesta_modelo": "Con la misma potencia, como P = VI, al subir el voltaje la corriente en los cables es mucho menor. La pérdida en los cables es I²R, así que con poca corriente se pierde muy poca energía como calor; a 120 V la corriente sería enorme y casi todo se perdería. Antes de las casas el transformador baja el voltaje a 120 V porque 115 kV sería muy peligroso y los aparatos funcionan con 120 V.",
+      "criterios": [
+       {
+        "id": "c1",
+        "descripcion": "Relaciona, para la misma potencia (P = VI), un voltaje mayor con una corriente menor en la línea.",
+        "obligatorio": true
+       },
+       {
+        "id": "c2",
+        "descripcion": "Justifica con la pérdida I²R (o con que la pérdida crece con el cuadrado de la corriente) que a alto voltaje se pierde mucho menos.",
+        "obligatorio": true
+       },
+       {
+        "id": "c3",
+        "descripcion": "Explica que se baja a 120 V por seguridad o porque los aparatos de las casas están hechos para ese voltaje.",
+        "obligatorio": true
+       },
+       {
+        "id": "c4",
+        "descripcion": "Estima cuánto cambia la corriente o la pérdida (por ejemplo, unas mil veces menos corriente).",
+        "obligatorio": false
+       }
+      ],
+      "errores": [
+       {
+        "descripcion": "Usa V²/R con el voltaje de la línea y concluye que a alto voltaje se pierde más, o que el alto voltaje se usa «para que llegue con más fuerza».",
+        "ejemplo": "Se usa alto voltaje para empujar la electricidad hasta lejos, aunque se pierde más porque la pérdida es V²/R.",
+        "dificultad": "DIF:fisica/corriente-alterna-transformador/1"
+       },
+       {
+        "descripcion": "Cree que el transformador que sube el voltaje también aumenta la energía o la potencia.",
+        "ejemplo": "El transformador de la central le sube el voltaje y así la energía llega con más potencia.",
+        "dificultad": null
+       },
+       {
+        "descripcion": "Menciona la seguridad pero no explica la ventaja del alto voltaje en la línea.",
+        "ejemplo": "Se baja porque 115 kV es peligroso; en la línea no importa porque nadie toca los cables.",
         "dificultad": null
        }
       ]

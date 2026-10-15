@@ -109,6 +109,12 @@
 - plancha: 1 200 W, 0.5 h al día
 - refrigeradora: 150 W, 10 h al día con el
 - **ACT:G09-CIE-U6-6.8/obj-abierta** (objetivo, explicar, abierta): Andrea compara dos focos que, según sus empaques, dan casi la misma luz: uno incandescente de 60 W y uno LED de 9 W. Los dos funcionan con 120 V. En 2 o 3 oraciones explica: (1) cuál consume más energía en un mes si se u
+- **ACT:G11-FIS-U9-9.4/obj-1** (objetivo, razonar, opcion_multiple): Mónica conecta por separado un resistor de 22 Ω y otro de 220 Ω, los dos de 2 W para que soporten el calor, a la misma batería de 4.5 V (tres pilas en serie; supón que su voltaje no cambia). ¿Cuál de los dos disipa más p
+- **ACT:G11-FIS-U9-9.4/obj-2** (objetivo, interpretar_datos, numerica): Tabla de consumo de una familia (datos de ejemplo), para un mes de 30 días: refrigeradora de 150 W cuyo compresor funciona en promedio 10 h al día; cinco focos LED de 9 W cada uno, encendidos 6 h al día; televisor de 80 
+- **ACT:G11-FIS-U9-9.4/obj-abierta** (objetivo, razonar, abierta): Natalia lee estos valores aproximados, que varían mucho entre personas: de una mano a la otra, el cuerpo tiene unos 100 000 Ω con la piel seca y unos 1 000 Ω con la piel mojada. Una corriente de unos 1 mA se siente; desd
+- **ACT:G11-FIS-U9-9.5/obj-1** (objetivo, razonar, opcion_multiple): Diego conecta dos focos iguales en paralelo a una pila. Supón que la pila es ideal: su voltaje no cambia al conectar más focos. Luego agrega un tercer foco igual en otra rama en paralelo. ¿Qué pasa con el brillo de los d
+- **ACT:G11-FIS-U9-9.5/obj-2** (objetivo, interpretar_datos, numerica): Un circuito mixto tiene una fuente de 6.0 V y un resistor R1 = 100 Ω en serie con dos ramas en paralelo: en una rama está R2 = 200 Ω y en la otra, R3 = 100 Ω y R4 = 100 Ω en serie. Un grupo midió con el voltímetro (datos
+- **ACT:G11-FIS-U9-9.5/obj-abierta** (objetivo, explicar, abierta): Mateo quiere medir el voltaje en el foco de una linterna alimentada con dos pilas (3 V), pero por error conecta el voltímetro en serie con el foco. El foco no enciende y el voltímetro marca casi 3 V. En 2 o 3 oraciones e
 
 ## Datos de referencia
 

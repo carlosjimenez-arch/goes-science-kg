@@ -435,6 +435,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:quimica/ecuacion-quimica-y-balanceo/1",
+   "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+   "descripcion": "Confunde coeficientes con subíndices: al balancear cambia los subíndices de las fórmulas (escribe H₂O₂ para igualar oxígenos en lugar de 2H₂O) o cree que un coeficiente cambia la composición de la sustancia.",
+   "senales": "Balancea 2H₂ + O₂ → H₂O₂ o dice que «5O₂» es una molécula con cinco o diez átomos de oxígeno.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/ecuacion-quimica-y-balanceo/2",
+   "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+   "descripcion": "Interpreta los coeficientes como masas: cree que una ecuación balanceada dice cuántos gramos de cada sustancia reaccionan, en lugar de cuántas partículas o moles.",
+   "senales": "Lee 2H₂ + O₂ → 2H₂O como «2 g de hidrógeno con 1 g de oxígeno dan 2 g de agua» y concluye que la masa no se conserva.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:quimica/ecuacion-quimica-y-balanceo/3",
+   "concepto": "CON:quimica/ecuacion-quimica-y-balanceo",
+   "descripcion": "Confunde o ignora los símbolos de estado: usa (l) para una sustancia disuelta, (ac) para un líquido puro, o los omite, y por eso no usa la ecuación para predecir qué escapa como gas o qué queda disuelto.",
+   "senales": "Escribe NaCl(l) para sal disuelta en agua o H₂O(ac), o predice que la masa de un vaso abierto no cambia aunque un producto sea (g).",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:quimica/equilibrio-dinamico/1",
    "concepto": "CON:quimica/equilibrio-dinamico",
    "descripcion": "Cree que al llegar al equilibrio la reacción se detiene: como las concentraciones ya no cambian, supone que reactivos y productos dejaron de transformarse.",
@@ -703,6 +727,221 @@
     "valores_anteriores": {
      "enunciado": "En clase se hizo este modelo: el grupo 1 empieza con 30 tapitas y el grupo 2 con ninguna. En cada ronda, al mismo tiempo, el grupo 1 pasa la mitad de sus tapitas al grupo 2 y el grupo 2 pasa la cuarta parte de las suyas al grupo 1 (redondeando). Después de unas cuatro rondas, el grupo 1 tiene siempre unas 10 y el grupo 2 unas 20, aunque las tapitas siguen pasando. a) Usa el modelo para explicar con tus palabras qué es el equilibrio químico: di qué pasa con la reacción directa y la inversa y qué pasa con las cantidades. b) Escribe una cosa del equilibrio químico real que este modelo no representa bien."
     }
+   }
+  },
+  {
+   "id": "ACT:G10-QUI-U12-12.8/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U12-12.8"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U12-12.8",
+    "CON:quimica/equilibrio-dinamico"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Para la reacción elemental 2 NO₂(g) ⇌ N₂O₄(g) en un recipiente cerrado a temperatura constante, las leyes de velocidad son vd = kd[NO₂]² y vi = ki[N₂O₄]. Cuando el sistema alcanza el equilibrio químico, ¿qué relación se cumple entre las velocidades y qué expresión corresponde al cociente kd/ki?",
+   "opciones": {
+    "A": "Se cumple vd = vi = 0, por lo que el cociente kd/ki es igual a [N₂O₄] − [NO₂]².",
+    "B": "Se cumple vd = vi > 0, por lo que el cociente kd/ki es igual a [N₂O₄] / [NO₂]².",
+    "C": "Se cumple vd = vi > 0, por lo que el cociente kd/ki es igual a [NO₂]² / [N₂O₄].",
+    "D": "Se cumple vd = 2vi > 0, por lo que el cociente kd/ki es igual a 2[N₂O₄] / [NO₂]."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:quimica/equilibrio-dinamico/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En el equilibrio dinámico ambas reacciones continúan ocurriendo con igual velocidad no nula (vd = vi > 0). Al igualar kd[NO₂]² = ki[N₂O₄] y despejar las constantes se obtiene Kc = kd/ki = [N₂O₄] / [NO₂]², que coincide con la ley de acción de masas.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U12-12.8"
+   },
+   "origen": "redactor-actividades (G10-QUI-U12-12.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Enunciado breve (48 palabras), opciones con la misma estructura y longitud; no hay pistas gramaticales. La retroalimentación muestra el despeje sin nombrar letras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G10-QUI-U12-12.8/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U12-12.8"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U12-12.8",
+    "CON:quimica/equilibrio-dinamico"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Un grupo modela la reacción elemental R(ac) ⇌ P(ac), con vd = kd[R] y vi = ki[P]. Datos de ejemplo:\n- t = 0 s: vd = 0.042 mol/(L·s); vi = 0.000 mol/(L·s); [R] = 0.40 mol/L; [P] = 0.00 mol/L.\n- t = 20 s: vd = 0.014 mol/(L·s); vi = 0.012 mol/(L·s).\n- t = 40 s y t = 60 s: vd = 0.013 mol/(L·s); vi = 0.013 mol/(L·s); [R] = 0.12 mol/L; [P] = 0.28 mol/L.\n¿En qué instante se alcanza el equilibrio y cuánto vale Kc = kd/ki?",
+   "opciones": {
+    "A": "A los 20 s, porque ambas reacciones ya ocurren, y Kc vale 1.17.",
+    "B": "A los 40 s, porque se igualan vd y vi, y Kc vale 1.00.",
+    "C": "A los 40 s, porque se igualan vd y vi, y Kc vale 2.33.",
+    "D": "En ningún instante, porque vd y vi no llegan a cero, y Kc vale 0.43."
+   },
+   "correcta": "C",
+   "distractores": {
+    "D": "DIF:quimica/equilibrio-dinamico/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Dentro de la precisión de los datos, el equilibrio se alcanza hacia los 40 s, cuando las velocidades directa e inversa se igualan en 0.013 mol/(L·s) y las concentraciones dejan de cambiar. Al igualar kd[R] = ki[P] se deduce Kc = kd/ki = [P]/[R] = 0.28 / 0.12 = 2.33.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U12-12.8"
+   },
+   "origen": "redactor-actividades (G10-QUI-U12-12.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-quimica": "La clave C es coherente con el equilibrio observado hacia 40 s y los datos redondeados. Igualar kd[R] y ki[P] da Kc=[P]/[R]=2.33, no el cociente de velocidades, que vale uno. Las concentraciones suman 0.40 mol/L y las pequeñas diferencias de constantes calculadas son compatibles con la precisión declarada."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "enunciado": "Un grupo modela la reacción elemental R(ac) ⇌ P(ac) (con vd = kd[R] y vi = ki[P]). Sus datos de ejemplo son: en t = 0 s, vd = 0.080 mol/(L·s), vi = 0.000 mol/(L·s), [R] = 0.40 mol/L y [P] = 0.00 mol/L; en t = 20 s, vd = 0.035 mol/(L·s) y vi = 0.022 mol/(L·s); en t = 40 s y t = 60 s, vd = 0.024 mol/(L·s), vi = 0.024 mol/(L·s), [R] = 0.12 mol/L y [P] = 0.28 mol/L. ¿En qué instante se alcanza el equilibrio y cuánto vale Kc = kd/ki?",
+     "opciones": {
+      "A": "A los 20 s, porque ambas reacciones ya ocurren, y Kc vale 1.59.",
+      "B": "A los 40 s, porque se igualan vd y vi, y Kc vale 1.00.",
+      "C": "A los 40 s, porque se igualan vd y vi, y Kc vale 2.33.",
+      "D": "En ningún instante, porque vd y vi no llegan a cero, y Kc vale 0.43."
+     },
+     "retroalimentacion": "El equilibrio se alcanza a los 40 s, cuando las velocidades directa e inversa se igualan en 0.024 mol/(L·s) y las concentraciones dejan de cambiar. Al igualar kd[R] = ki[P] se deduce Kc = kd/ki = [P]/[R] = 0.28 / 0.12 = 2.33."
+    }
+   }
+  },
+  {
+   "id": "ACT:G10-QUI-U12-12.8/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-QUI-U12-12.8"
+   ],
+   "evalua": [
+    "TEMA:G10-QUI-U12-12.8",
+    "CON:quimica/equilibrio-dinamico"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "Considera la reacción elemental A(g) + B(g) ⇌ C(g) en un recipiente cerrado a temperatura constante, cuyas leyes de velocidad son vd = kd[A][B] y vi = ki[C]. Escribe la condición que cumplen vd y vi al alcanzar el equilibrio, despeja paso a paso la expresión de Kc = kd/ki en función de las concentraciones y explica por qué las concentraciones permanecen constantes aunque las reacciones no se detienen.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "rubrica": {
+    "respuesta_modelo": "Al alcanzar el equilibrio químico, la velocidad de la reacción directa es igual a la de la reacción inversa (vd = vi) y ambas son mayores que cero. Al sustituir las leyes de velocidad se tiene kd[A][B] = ki[C]; al reordenar los términos resulta Kc = kd/ki = [C] / ([A][B]), que es la expresión de la ley de acción de masas. Las concentraciones de A, B y C permanecen constantes porque en cada segundo se consumen y se regeneran exactamente la misma cantidad de moles de cada sustancia en ambos sentidos.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Plantea que en el equilibrio las velocidades directa e inversa son iguales (vd = vi) y no nulas.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Sustituye kd[A][B] = ki[C] y despeja correctamente Kc = kd/ki = [C] / ([A][B]).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica que las concentraciones no cambian porque las sustancias se forman y se consumen a la misma rapidez simultáneamente.",
+      "obligatorio": true
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Afirma que en el equilibrio las velocidades directa e inversa se hacen cero porque la reacción se detiene.",
+      "ejemplo": "En el equilibrio vd = 0 y vi = 0 porque ya no reaccionan A ni B, por eso las concentraciones quedan fijas.",
+      "dificultad": "DIF:quimica/equilibrio-dinamico/1"
+     },
+     {
+      "descripcion": "Describe que primero ocurre toda la reacción directa y luego toda la inversa por turnos.",
+      "ejemplo": "Las concentraciones se mantienen porque primero A y B forman C y después se detienen para que C vuelva a formar A y B.",
+      "dificultad": "DIF:quimica/equilibrio-dinamico/2"
+     },
+     {
+      "descripcion": "Invierte el cociente al despejar y escribe los reactivos en el numerador y el producto en el denominador.",
+      "ejemplo": "Como kd[A][B] = ki[C], entonces kd/ki = [A][B] / [C].",
+      "dificultad": null
+     }
+    ]
+   },
+   "retroalimentacion": "En el equilibrio químico se igualan las velocidades directa e inversa (kd[A][B] = ki[C]), de donde se deduce Kc = kd/ki = [C]/([A][B]). Las concentraciones no cambian porque cada sustancia se forma y se consume al mismo ritmo.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-QUI-U12-12.8"
+   },
+   "origen": "redactor-actividades (G10-QUI-U12-12.8)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-quimica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide la condición, el despeje paso a paso y la explicación de por qué las concentraciones no cambian, en correspondencia con los tres criterios obligatorios; no limita la extensión."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
   },
   {

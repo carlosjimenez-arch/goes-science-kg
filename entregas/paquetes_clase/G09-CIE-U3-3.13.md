@@ -122,6 +122,25 @@
 - **ACT:G09-CIE-U3-3.7/obj-1** (objetivo, razonar, numerica): Datos de ejemplo. En un recipiente cerrado, a temperatura constante, se alcanza el equilibrio H₂(g) + I₂(g) ⇌ 2HI(g). Las concentraciones en el equilibrio son [H₂] = 0.020 mol/L, [I₂] = 0.020 mol/L y [HI] = 0.14 mol/L. E
 - **ACT:G09-CIE-U3-3.7/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de ejemplo. La reacción CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) llega al equilibrio en tres recipientes cerrados a la misma temperatura, con mezclas iniciales distintas. Concentraciones en el equilibrio, en mol/L. Recipien
 - **ACT:G09-CIE-U3-3.7/obj-abierta** (objetivo, razonar, abierta): El dióxido de nitrógeno de los escapes de los vehículos en San Salvador participa en el equilibrio 2NO₂(g) ⇌ N₂O₄(g). En un recipiente cerrado, a cierta temperatura, las concentraciones en el equilibrio son [NO₂] = 0.040
+- **ACT:G10-QUI-U12-12.10/obj-1** (objetivo, razonar, opcion_multiple): En un recipiente cerrado a temperatura constante ocurre el equilibrio A₂(g) ⇌ 2 A(g), con Kc = 4.0 × 10⁻⁶. Si se parte de una concentración inicial [A₂]₀ = 0.10 mol/L y sin producto, ¿qué fila de equilibrio (E) de la tab
+- **ACT:G10-QUI-U12-12.10/obj-2** (objetivo, interpretar_datos, numerica): Un grupo estudia la disociación N₂O₄(g) ⇌ 2 NO₂(g) a temperatura constante. Su tabla ICE (en mol/L):
+- Inicial: [N₂O₄] = 0.200; [NO₂] = 0.
+- Cambio: −x y +2x.
+- Equilibrio: 0.200 − x y 2x.
+En el equilibrio miden [NO₂] = 
+- **ACT:G10-QUI-U12-12.10/obj-abierta** (objetivo, razonar, abierta): Para una reacción HA(ac) ⇌ H⁺(ac) + A⁻(ac) con concentración inicial [HA]₀ = 0.10 mol/L, explica en un párrafo de 4 a 6 oraciones cómo cambia la expresión algebraica de Kc = x² / (0.10 − x) al aplicar la aproximación de 
+- **ACT:G10-QUI-U12-12.11/obj-1** (objetivo, razonar, opcion_multiple): Para la reacción N₂O₄(g) ⇌ 2 NO₂(g), la constante de equilibrio es Kc = 4.00 a cierta temperatura. En un recipiente rígido de 2.00 L se introducen 1.00 mol de N₂O₄ y 2.00 mol de NO₂ (datos de un grupo de ejemplo). ¿Cuál 
+- **ACT:G10-QUI-U12-12.11/obj-2** (objetivo, interpretar_datos, numerica): Un equipo estudia la isomerización A(ac) ⇌ B(ac), con Kc = 4.00 a 25 °C. Datos de ejemplo, sin cambio de volumen ni de temperatura:
+- Equilibrio inicial: [A] = 0.20 mol/L; [B] = 0.80 mol/L.
+- Justo después de agregar rea
+- **ACT:G10-QUI-U12-12.11/obj-abierta** (objetivo, razonar, abierta): En un recipiente cerrado con émbolo móvil, el sistema 2 SO₂(g) + O₂(g) ⇌ 2 SO₃(g) está en equilibrio a temperatura constante. Alguien del grupo empuja el émbolo y reduce el volumen a la mitad. Escribe cómo cambia la conc
+- **ACT:G11-QUI-U4-4.4/obj-1** (objetivo, razonar, numerica): En un análisis de laboratorio se prepara una disolución acuosa de un ácido monoprótico débil HA con concentración inicial 0.10 mol/L y constante de ionización Ka = 1.0 × 10⁻⁵ (datos de un grupo de ejemplo). Mediante una 
+- **ACT:G11-QUI-U4-4.4/obj-2** (objetivo, interpretar_datos, opcion_multiple): Un equipo de laboratorio evalúa tres ácidos monopróticos débiles a 25 °C (datos de un grupo de ejemplo): la muestra 1 (HA₁, 0.10 mol/L, Ka = 1.0 × 10⁻⁵), la muestra 2 (HA₂, 0.10 mol/L, Ka = 1.0 × 10⁻⁷) y la muestra 3 (HA
+- **ACT:G11-QUI-U4-4.4/obj-abierta** (objetivo, explicar, abierta): Al diluir una disolución de un ácido monoprótico débil HA desde 0.10 mol/L hasta 0.0010 mol/L a temperatura constante, ¿qué ocurre con el porcentaje de ionización y qué ocurre con el pH de la disolución? Explica el porqu
+- **ACT:G11-QUI-U4-4.7/obj-1** (objetivo, razonar, opcion_multiple): En un vaso se tiene una disolución acuosa de un ácido débil monoprótico HA 0.10 mol/L, con pKa aproximado de 4.74 (tabla de referencia). Sin cambiar el volumen de la mezcla, se disuelve la sal soluble NaA hasta alcanzar 
+- **ACT:G11-QUI-U4-4.7/obj-2** (objetivo, interpretar_datos, opcion_multiple): Un grupo de ejemplo calculó a temperatura constante el pH y el porcentaje de ionización de una disolución de ácido débil HA 0.10 mol/L con distintas concentraciones de su sal NaA:
+- Muestra 1 (sin NaA): pH = 2.87; ioniza
+- **ACT:G11-QUI-U4-4.7/obj-abierta** (objetivo, explicar, abierta): A una disolución acuosa de amoníaco, NH₃(ac) + H₂O(l) ⇌ NH₄⁺(ac) + OH⁻(ac), se le agrega cloruro de amonio sólido (NH₄Cl) sin cambiar el volumen. Nombra cuál es el ion común que aporta la sal, explica hacia dónde y por q
 - **ACT:quimica/constante-de-equilibrio/comprobacion-G09** (comprobacion, razonar, numerica): En un recipiente cerrado se alcanza el equilibrio 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) con [SO₃] = 0.40 mol/L, [SO₂] = 0.20 mol/L y [O₂] = 0.10 mol/L. Escribe la expresión de K y calcula su valor. Da solo el número.
 - **ACT:quimica/constante-de-equilibrio/practica-G09** (practica, explicar, opcion_multiple): Para la reacción H₂(g) + I₂(g) ⇌ 2HI(g), la constante de equilibrio es K = [HI]² / ([H₂][I₂]). ¿Por qué [HI] aparece elevada al cuadrado?
 - **ACT:quimica/constante-de-equilibrio/sondeo-1-G09** (sondeo, recordar, opcion_multiple): La cal que se usa para nixtamalizar el maíz es hidróxido de calcio. En agua forma este equilibrio: Ca(OH)₂(s) ⇌ Ca²⁺(aq) + 2OH⁻(aq). ¿Cuál es la expresión de su constante de equilibrio K?
@@ -129,4 +148,5 @@
 ## Datos de referencia
 
 - **Pendiente de fuente** (tabla citable en data/fuentes/). Datos que piden los elementos:
+  - pKa — en «En un vaso se tiene una disolución acuosa de un ácido débil monoprótico HA 0.10 mol/L, con» (ACT:G11-QUI-U4-4.7/obj-1)
   - Ka — en «Igual concentración, distinta ionización: conductividad y pH de ácidos fuertes y débiles» (EXP:G09-CIE-U3-3.13/1)

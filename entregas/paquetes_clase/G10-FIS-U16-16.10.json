@@ -406,6 +406,30 @@
    "fuente": null
   },
   {
+   "id": "DIF:fisica/lentes-delgadas/1",
+   "concepto": "CON:fisica/lentes-delgadas",
+   "descripcion": "Cree que cada parte de la lente forma una parte de la imagen, de modo que al tapar media lente desaparece media imagen, en lugar de reconocer que cada punto del objeto envía rayos a toda la lente y que tapar una parte solo reduce el brillo de la imagen completa.",
+   "senales": "Predice que la imagen quedará cortada a la mitad; dibuja un solo rayo por punto del objeto; se sorprende de que la imagen siga completa en el experimento.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/lentes-delgadas/2",
+   "concepto": "CON:fisica/lentes-delgadas",
+   "descripcion": "Confunde la corrección de los defectos visuales: cree que la miopía se corrige con una lente convergente «de aumento» porque la persona «ve pequeño», o ubica la imagen detrás de la retina en la miopía y delante en la hipermetropía, y asigna el signo de la potencia al revés.",
+   "senales": "Escribe dioptrías positivas para un miope; dice que la persona miope necesita ver las cosas más grandes; intercambia «delante» y «detrás» de la retina al explicar los dos defectos.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/lentes-delgadas/3",
+   "concepto": "CON:fisica/lentes-delgadas",
+   "descripcion": "Cree que el tipo de imagen depende solo de la lente: que una lente convergente siempre forma una imagen real e invertida, o siempre agranda, sin considerar dónde está el objeto respecto al foco; no reconoce que con el objeto dentro de la distancia focal la imagen es virtual, derecha y mayor, como en una lupa.",
+   "senales": "Busca en la pantalla la imagen de un objeto puesto dentro de f; no explica por qué la lupa muestra la imagen derecha; usa la ecuación y descarta el signo negativo de di.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:fisica/refraccion-luz/1",
    "concepto": "CON:fisica/refraccion-luz",
    "descripcion": "Mide los ángulos de incidencia y de refracción desde la superficie de separación y no desde la normal, de modo que aplica la ley de Snell o la condición del ángulo crítico con los complementos de los ángulos correctos.",
@@ -792,6 +816,206 @@
     "valores_anteriores": {
      "enunciado": "La fibra óptica que lleva internet a muchas casas tiene un núcleo de vidrio rodeado por un revestimiento de otro vidrio. En 2 o 3 oraciones explica: qué condición deben cumplir los índices de refracción del núcleo y del revestimiento; qué condición debe cumplir el ángulo con que la luz llega a la pared del núcleo para que no se escape; y por qué se pierde luz si la fibra se dobla demasiado."
     }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U17-17.4/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U17-17.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U17-17.4",
+    "CON:fisica/lentes-delgadas"
+   ],
+   "habilidad": "razonar",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Andrea tiene hipermetropía: su punto cercano está a 100 cm del ojo y quiere leer un libro a 25 cm. Supón que la lente correctora está pegada al ojo. ¿Qué potencia debe tener esa lente, en dioptrías? Escribe solo el número, con su signo.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 3.0,
+   "tolerancia": 0.1,
+   "unidad": "D (dioptrías)",
+   "retroalimentacion": "La lente debe formar una imagen virtual del libro, que está a 25 cm, en el punto cercano de Andrea, a 100 cm y del mismo lado: do = 0.25 m y di = −1.00 m. Entonces P = 1/do + 1/di = 4.0 − 1.0 = +3.0 D. El signo positivo indica una lente convergente.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U17-17.4"
+   },
+   "origen": "redactor-actividades (G11-FIS-U17-17.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Enunciado breve, con la idealización explícita, la unidad y el signo pedidos. La retroalimentación explica la imagen virtual en el punto cercano paso a paso. Adecuado al registro formal de 11.°."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U17-17.4/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U17-17.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U17-17.4",
+    "CON:fisica/lentes-delgadas"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un grupo ilumina una figura, la pone frente a una lupa y mueve una pantalla hasta ver la imagen nítida. Mide la distancia del objeto a la lente (do) y la de la imagen a la lente (di) (datos de un grupo de ejemplo): do = 20.0, 25.0, 30.0, 40.0 y 60.0 cm; di = 59.0, 37.8, 29.6, 24.2 y 20.1 cm. ¿Qué distancia focal y qué potencia tiene la lupa?",
+   "opciones": {
+    "A": "f ≈ 30 cm y P ≈ +3.3 D, porque con el objeto a 30 cm la imagen nítida quedó casi a la misma distancia.",
+    "B": "f ≈ 15 cm y P ≈ +6.7 D, porque 1/do + 1/di da casi el mismo valor, unos 0.067 cm⁻¹, en todas las filas.",
+    "C": "f ≈ 15 cm y P ≈ +0.067 D, porque la potencia es el inverso de la distancia focal expresada en centímetros.",
+    "D": "f ≈ 20 cm y P ≈ +5.0 D, porque la imagen más cercana a la lupa que se logró medir quedó a unos 20 cm."
+   },
+   "correcta": "B",
+   "distractores": {},
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En cada fila, 1/do + 1/di vale casi lo mismo, unos 0.067 cm⁻¹, así que f ≈ 15 cm. La potencia se calcula con f en metros: P = 1/0.15 m ≈ +6.7 D. Cuando do y di son casi iguales, ambas valen 2f, no f; y la imagen nunca queda más cerca que f, solo se acerca a f cuando el objeto se aleja mucho.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U17-17.4"
+   },
+   "origen": "redactor-actividades (G11-FIS-U17-17.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Tabla de datos legible, clave en B y opciones de largo parejo; cada distractor es un error real (2f por f, f en cm, imagen mínima). La retroalimentación corrige los tres sin regañar."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U17-17.4/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U17-17.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U17-17.4",
+    "CON:fisica/lentes-delgadas"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Diego tiene miopía: sin lentes ve nítido solo hasta 40 cm, que es su punto lejano. En 2 o 3 oraciones explica dónde se forma, dentro de su ojo, la imagen de un objeto lejano; qué tipo de lente corrige su visión, convergente o divergente; y por qué esa lente le permite ver nítido de lejos. Si puedes, calcula la potencia de la lente, supuesta pegada al ojo.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En el ojo miope, el cristalino y la córnea convergen demasiado para la longitud del ojo, y la imagen de un objeto lejano se forma delante de la retina. Una lente divergente separa los rayos y forma una imagen virtual del objeto lejano a 40 cm, donde Diego sí enfoca, y su ojo la proyecta en la retina. Su potencia es P = −1/0.40 m = −2.5 D.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U17-17.4"
+   },
+   "rubrica": {
+    "respuesta_modelo": "En el ojo de Diego la imagen de un objeto lejano se forma delante de la retina, porque su ojo converge demasiado. Lo corrige una lente divergente, que abre los rayos para que parezcan venir de un punto a 40 cm, donde él sí ve nítido, y así su ojo los junta justo en la retina. La potencia es −1/0.40 = −2.5 D.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que la imagen de un objeto lejano se forma delante de la retina (antes de llegar a ella).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Nombra una lente divergente (o de potencia negativa) como la correctora.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica que la lente hace divergir los rayos o forma una imagen virtual del objeto lejano en el punto lejano (40 cm), que el ojo sí enfoca en la retina.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Calcula la potencia: −2.5 D (acepta −2.5 o «menos 2.5 dioptrías»).",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Elige una lente convergente («de aumento») para la miopía.",
+      "ejemplo": "Necesita una lupa o lente de aumento para que las cosas lejanas se vean más grandes.",
+      "dificultad": "DIF:fisica/lentes-delgadas/2"
+     },
+     {
+      "descripcion": "Ubica la imagen detrás de la retina, como en la hipermetropía.",
+      "ejemplo": "La imagen se forma detrás de la retina y la lente divergente la adelanta.",
+      "dificultad": "DIF:fisica/lentes-delgadas/2"
+     },
+     {
+      "descripcion": "Nombra la lente correcta sin explicar qué hace con los rayos o con la imagen.",
+      "ejemplo": "Se corrige con lente divergente porque así lo recetan para la miopía.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U17-17.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "El enunciado pide lo que exigen los tres criterios obligatorios (dónde se forma la imagen, tipo de lente y por qué) y deja el cálculo como opcional, igual que c4. Extensión suficiente en 2 o 3 oraciones; respuesta modelo de 3."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
   }
  ],

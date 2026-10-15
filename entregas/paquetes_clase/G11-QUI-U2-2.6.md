@@ -64,6 +64,9 @@
 
 ## Ideas previas erróneas
 
+- **DIF:quimica/grupos-funcionales/1** (revisado_panel): Clasifica como alcohol a cualquier compuesto orgánico que contenga un grupo hidroxilo (–OH), sin distinguir si el carbono al que se une es saturado (sp³, alcohol) o forma parte de un anillo bencénico aromático (sp², fenol), o bien confunde un anillo cicloalcano con un anillo bencénico. *Señal:* Afirma que el fenol es un alcohol cíclico o secundario; clasifica el ciclohexanol como fenol solo por ver un hexágono; dice que todo compuesto con –OH pertenece a la función alcohol.
+- **DIF:quimica/grupos-funcionales/2** (revisado_panel): Determina si un alcohol es primario, secundario o terciario contando el número total de carbonos de la molécula o el número de grupos –OH presentes, en lugar de contar cuántos átomos de carbono están unidos directamente al carbono carbinol (el carbono sp³ que porta el grupo –OH). *Señal:* Llama alcohol secundario al 1,2-etanodiol porque tiene dos grupos –OH; dice que el 1-propanol es terciario porque tiene tres carbonos.
+- **DIF:quimica/grupos-funcionales/3** (revisado_panel): Asume que dos compuestos con la misma fórmula molecular o con un átomo de oxígeno tienen iguales fuerzas intermoleculares y propiedades físicas, creyendo que los éteres (R–O–R') forman puentes de hidrógeno entre sus propias moléculas igual que los alcoholes (R–OH). *Señal:* Predice puntos de ebullición similares para el etanol y el éter dimetílico; afirma que el oxígeno puente C–O–C forma enlaces de hidrógeno consigo mismo sin tener átomos de hidrógeno unidos al oxígeno.
 - **DIF:quimica/hidrocarburos-alifaticos/1** (revisado_panel): Clasifica como alcano a cualquier compuesto orgánico que contenga carbono e hidrógeno o enlaces simples, sin verificar que esté formado exclusivamente por C y H, que todos sus enlaces carbono–carbono sean simples y, si es de cadena abierta, que cumpla la fórmula CₙH₂ₙ₊₂ que lo distingue de alquenos, alquinos y compuestos oxigenados (los cicloalcanos, también saturados, siguen CₙH₂ₙ). *Señal:* Marca el etino (C₂H₂), el eteno (C₂H₄) o el etanol (C₂H₆O) como alcanos; afirma que toda sustancia combustible de carbono e hidrógeno es un alcano sin comprobar la fórmula CₙH₂ₙ₊₂.
 - **DIF:quimica/hidrocarburos-alifaticos/2** (revisado_panel): Asume que todos los alcanos son gases a temperatura ambiente por asociarlos únicamente con el gas de cocina, o cree que el propano y el butano son líquidos a 1 atm porque se escuchan líquidos dentro del cilindro presurizado. *Señal:* Descarta que sólidos como la parafina de las velas (mezcla de alcanos de unos 20 a 40 carbonos, como el C₂₀H₄₂) o semisólidos como la vaselina sean alcanos; afirma que el butano es líquido a temperatura y presión ambiente fuera del cilindro.
 - **DIF:quimica/hidrocarburos-alifaticos/3** (revisado_panel): Considera que el término «sustancia química» aplica solo a compuestos sintéticos, tóxicos o de laboratorio, creyendo que productos cotidianos como la vaselina o la cera de parafina pueden ser «libres de químicos». *Señal:* Da por válido un anuncio que dice «sin químicos» porque el producto no daña la piel, o afirma que la vaselina o la cera de parafina no están formadas por sustancias químicas porque son productos de uso diario.
@@ -136,6 +139,22 @@ Escribe el nombre IUPAC de cada compuesto y explica por qué la cadena principal
 • Estructura 2: CH₃–CH₂–CH(CH₃)–CH=CH₂ → 2-etilbut-3-eno
 • Estructura
 - **ACT:G11-QUI-U2-2.9/obj-abierta** (objetivo, explicar, abierta): Valeria nombró el compuesto CH₃–CH₂–CH=CH–CH₂–CH₃ como «hexeno», sin escribir ningún número localizador, argumentando que al ser simétrico no hace falta indicar la posición del doble enlace. Explica en 3 o 4 oraciones po
+- **ACT:G11-QUI-U3-3.12/obj-1** (objetivo, razonar, opcion_multiple): Alejandra analiza la molécula CH₃-CH(Br)-CH₂-CH(CH₃)-SH y quiere asignarle su nombre IUPAC sistemático. ¿Cuál es el nombre IUPAC correcto y por qué?
+- **ACT:G11-QUI-U3-3.12/obj-2** (objetivo, interpretar_datos, opcion_multiple): Mateo revisa una tabla con tres compuestos orgánicos:
+- Compuesto 1: CH₃-S-CH₂-CH₃ (tioéter)
+- Compuesto 2: CH₃-CH₂-NH-CH₃ (amina secundaria)
+- Compuesto 3: Cl-C₆H₄-CH₃, con los grupos en los carbonos 1 y 4 del anillo be
+- **ACT:G11-QUI-U3-3.12/obj-abierta** (objetivo, explicar, abierta): Observa la estructura de la amina sustituida CH₃-CH(Cl)-CH₂-NH-CH₂-CH₃. Escribe su nombre IUPAC completo y explica paso a paso: 1) cómo elegiste y numeraste la cadena principal según la prioridad entre el grupo amina y e
+- **ACT:G11-QUI-U3-3.3/obj-1** (objetivo, razonar, opcion_multiple): Daniela dibuja un anillo de benceno unido a tres grupos sustituyentes: un grupo etilo en el vértice superior, un átomo de cloro en el vértice inmediatamente contiguo a la derecha y un segundo átomo de cloro separado por 
+- **ACT:G11-QUI-U3-3.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): En un torneo de química, un equipo de ejemplo registra tres anillos de benceno disustituidos:
+• Compuesto 1: grupos –CH₃ y –Br separados por un carbono sin sustituir del anillo.
+• Compuesto 2: dos grupos –CH₂CH₃ en carbo
+- **ACT:G11-QUI-U3-3.3/obj-abierta** (objetivo, explicar, abierta): Mateo afirma que el dimetilbenceno (xileno) tiene cinco isómeros de posición porque el primer grupo metilo está fijo en el carbono 1 y el segundo puede colocarse en cualquiera de los otros cinco carbonos del anillo (2, 3
+- **ACT:G11-QUI-U3-3.9/obj-1** (objetivo, razonar, opcion_multiple): Daniela dibuja la estructura semidesarrollada CH₃–CH(C₂H₅)–CH(CH₃)–CHO. ¿Cuál es el nombre sistemático IUPAC correcto de este compuesto y por qué?
+- **ACT:G11-QUI-U3-3.9/obj-2** (objetivo, interpretar_datos, opcion_multiple): En un documento colaborativo de un grupo de ejemplo se registraron cuatro estructuras y los nombres IUPAC propuestos por el equipo:
+• Compuesto 1: CH₃–CH₂–CO–CH(CH₃)₂ → 2-metilpentan-3-ona
+• Compuesto 2: CH₃–CH(C₂H₅)–CH₂
+- **ACT:G11-QUI-U3-3.9/obj-abierta** (objetivo, explicar, abierta): En un sitio web aparece el nombre «propan-1-ona» para el compuesto CH₃–CH₂–CHO y el nombre «ácido 2-metil-4-oxopentan-5-oico» para HOOC–CH₂–CH(CH₃)–CHO. En 4 a 6 oraciones: (1) explica por qué no puede existir una «propa
 
 ## Datos de referencia
 

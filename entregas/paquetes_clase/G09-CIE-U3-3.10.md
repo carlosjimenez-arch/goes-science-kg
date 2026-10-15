@@ -110,6 +110,9 @@
 - **ACT:G09-CIE-U3-3.20/obj-1** (objetivo, razonar, opcion_multiple): Mientras destapa un lavamanos, a Marta le salpica en el brazo un destapacaños de hidróxido de sodio (una base fuerte). ¿Qué debe hacer primero?
 - **ACT:G09-CIE-U3-3.20/obj-2** (objetivo, interpretar_datos, opcion_multiple): Resumen de las fichas de seguridad de dos productos de limpieza. Ácido muriático: pH menor que 1, pictograma de corrosión (gotas que dañan una mano y una superficie), «no mezclar con lejía». Lejía: pH entre 11 y 13, pict
 - **ACT:G09-CIE-U3-3.20/obj-abierta** (objetivo, razonar, abierta): Una publicación en redes recomienda mezclar lejía con ácido muriático «para que limpie más». En 2 o 3 oraciones: a) explica por qué no se debe hacer, diciendo qué produce esa mezcla; b) propone dos medidas concretas para
+- **ACT:G11-QUI-U4-4.11/obj-1** (objetivo, razonar, opcion_multiple): Sofía titula 25.0 mL de amoníaco NH₃(ac) 0.10 mol/L con ácido clorhídrico HCl(ac) 0.10 mol/L. El punto de equivalencia se alcanza a pH aproximado de 5.3. Según una tabla de referencia, los intervalos de viraje aproximado
+- **ACT:G11-QUI-U4-4.11/obj-2** (objetivo, interpretar_datos, opcion_multiple): En la titulación de 25.0 mL de ácido acético CH₃COOH(ac) 0.10 mol/L con hidróxido de sodio NaOH(ac) 0.10 mol/L, un grupo de ejemplo registra estos datos de volumen de NaOH(ac) agregado y pH: 0.0 mL → pH 2.9; 12.5 mL → pH
+- **ACT:G11-QUI-U4-4.11/obj-abierta** (objetivo, explicar, abierta): Explica en tres a cinco oraciones cómo funciona un indicador ácido-base representado como un ácido débil HIn(ac), por qué su cambio de color ocurre en un intervalo de pH aproximado de pKa ± 1 y por qué ese intervalo debe
 
 ## Datos de referencia
 

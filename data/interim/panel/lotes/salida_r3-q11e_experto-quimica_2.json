@@ -1,0 +1,323 @@
+[
+ {
+  "id": "PED:EXP:G11-QUI-U8-8.2/1",
+  "decision": "corregir",
+  "justificacion": "Los tres balances son correctos y las semillas alcanzan. Se concreta la ficha para poder verificar también las siete ecuaciones restantes. Se distingue A de masa exacta, se explicita la omisión de neutrinos y se corrige el algoritmo: restar una partícula al núcleo inicial no basta en bombardeos. La extensión digital deja de prometer funciones isotópicas no comprobadas.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U8-8.2",
+    "cita": "8.2. Balancea ecuaciones nucleares de desintegración y de transmutación artificial identificando la partícula o el núclido faltante mediante la conservación de A y Z."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Soluciones sucesivas: ⁴He, ¹⁴N, ¹⁷O, ¹⁸O, ³He, ¹¹B, ¹⁵N, ⁴He, ¹⁴C y ⁴He. Los núcleos simultáneos requieren como máximo 9 protones y 10 neutrones; 25/30 piezas son suficientes."
+   }
+  ],
+  "confianza": "alta",
+  "motor_revision": "Codex",
+  "cambios": {
+   "proposito": "Representar con contadores núcleos y partículas para balancear desintegraciones alfa, beta menos y positrón, y transmutaciones inducidas. Verificar por conteo el número de nucleones y la carga eléctrica, clasificar diez ecuaciones y contrastar con las soluciones impresas o una hoja de cálculo.",
+   "materiales": [
+    "Por grupo: 25 frijoles rojos para protones (A = 1, carga +1) y 30 granos de maíz para neutrones (A = 1, carga 0); A es número de nucleones, no masa exacta.",
+    "Por grupo: 5 tapitas plásticas marcadas con «e⁻ (A = 0, Z = -1)» y 5 marcadas con «e⁺ (A = 0, Z = +1)»",
+    "Por grupo: 2 hojas de papel bond divididas a la mitad con una flecha grande en el centro («Reactivos → Productos») y una tabla periódica escolar",
+    "Por grupo: ficha impresa con estas diez ecuaciones incompletas y soluciones al reverso: ⁸₄Be → ⁴₂He + ___; ¹⁴₆C → ___ + e⁻; ¹⁴₇N + ⁴₂He → ___ + ¹₁p; ¹⁸₉F → ___ + e⁺; ³₁H → ___ + e⁻; ¹¹₆C → ___ + e⁺; ¹⁵₈O → ___ + e⁺; ¹⁰₅B + ¹₀n → ⁷₃Li + ___; ¹⁴₇N + ¹₀n → ___ + ¹₁p; ⁷₃Li + ¹₁p → ⁴₂He + ___. Incluir dos ejemplos con errores de signo, expresamente rotulados para corregir: ¹⁴₆C → ¹⁴₇N + e⁺ y ¹⁸₉F → ¹⁸₈O + e⁻. Calculadora u hoja de cálculo."
+   ],
+   "procedimiento": [
+    "1. (7 min) Formen grupos y organicen los materiales sobre la hoja con la flecha «Reactivos → Productos». Anoten la regla del modelo: el número atómico Z es la cantidad de frijoles (protones) y el número másico A es la suma total de frijoles más granos de maíz (protones + neutrones). Reutilicen las piezas entre ecuaciones; las tapitas representan partículas emitidas, no electrones almacenados en el núcleo. En beta se omiten del conteo neutrinos/antineutrinos (A = 0, carga 0), y no se modela el balance de energía.",
+    "2. (10 min) Reacción 1 (desintegración alfa del berilio-8, A = 8, Z = 4, como modelo a escala manejable): coloquen en el lado de reactivos un grupo de 4 frijoles y 4 maíces. Separen hacia el lado de productos una partícula alfa (2 frijoles y 2 maíces). Cuenten cuántos frijoles y maíces quedan en el núcleo hijo, anoten su A y su Z en la tabla y busquen el elemento en la tabla periódica.",
+    "3. (10 min) Reacción 2 (desintegración beta menos del carbono-14, A = 14, Z = 6): armen en reactivos el núcleo con 6 frijoles y 8 maíces. Para representar la emisión beta menos, cambien 1 grano de maíz por 1 frijol más 1 tapita «e⁻» y pasen todo a productos. Cuenten A y Z del núcleo resultante, verifiquen que la suma de cargas (Z) a la derecha sea 7 + (-1) = 6 y anoten la ecuación balanceada.",
+    "4. (10 min) Reacción 3 (transmutación de Rutherford: nitrógeno-14 con A = 14, Z = 7 más partícula alfa con A = 4, Z = 2): coloquen ambos grupos en reactivos (7 frijoles + 7 maíces por un lado, y 2 frijoles + 2 maíces por el otro). En productos separen un protón libre (1 frijol) y agrupen el resto para formar el núcleo producto. Cuenten su A y su Z e identifiquen el isótopo de oxígeno formado.",
+    "5. (10 min) Con la regla deducida del conteo de A y Z, completen las otras 7 ecuaciones nucleares de la hoja de trabajo (incluyendo emisión de positrón y bombardeo con neutrones), clasificando cada una como desintegración espontánea o transmutación artificial.",
+    "6. (8 min) Intercambien su hoja con otra pareja o compárenla con las respuestas impresas en la ficha de trabajo para detectar posibles errores de signo en Z, y respondan las dos primeras preguntas de análisis."
+   ],
+   "analisis": [
+    "¿Qué magnitudes se conservan siempre al pasar de los reactivos a los productos en las tres reacciones modeladas, a pesar de que los elementos químicos cambian?",
+    "En la desintegración beta menos del carbono-14, ¿por qué el número másico A permanece en 14 mientras que el número atómico Z aumenta de 6 a 7?",
+    "Tarea: escriban un algoritmo que calcule A_hijo y Z_hijo restando la partícula emitida en una desintegración. Para las reacciones inducidas, sumen primero A y Z de todos los reactivos y resten los de los otros productos. Pruébenlo con las diez ecuaciones.",
+    "Tarea: revisen las dos ecuaciones resueltas de ejemplo en su ficha donde se cometió un error de signo en la emisión beta; encierren el error y justifiquen la corrección mostrando el balance de A y Z."
+   ],
+   "datos_esperados": "En la Reacción 1 (berilio-8, A = 8, Z = 4), al retirar la partícula alfa (A = 4, Z = 2) queda otro núcleo de helio-4 (A = 4, Z = 2); la suma da A: 8 = 4 + 4 y Z: 4 = 2 + 2. En la Reacción 2 (carbono-14, A = 14, Z = 6), al transformar un neutrón en protón más electrón beta se obtiene nitrógeno-14 (A = 14, Z = 7) y e⁻ (A = 0, Z = -1); la suma de A es 14 = 14 + 0 y la de Z es 6 = 7 + (-1). En la Reacción 3 (nitrógeno-14 + helio-4), los reactivos suman A = 18 y Z = 9; al separar un protón (A = 1, Z = 1) el núcleo restante tiene 8 frijoles y 9 maíces, que corresponde al oxígeno-17 (A = 17, Z = 8). A se conserva como conteo de nucleones y la carga total se conserva incluyendo partículas emitidas; el número de protones del núcleo puede cambiar. Las partículas beta tienen masa física no nula aunque su número másico sea cero. La omisión de neutrinos no altera estos balances de A y carga.",
+   "variantes": "Sin dispositivo digital, verificar todos los balances con el conteo y la ficha de soluciones. Una hoja de cálculo puede sumar A y cargas de reactivos y productos; no predice estabilidad ni semivida a partir del balance."
+  }
+ },
+ {
+  "id": "PED:EXP:G11-QUI-U8-8.3/1",
+  "decision": "corregir",
+  "justificacion": "La serie, el radón en el paso 6 y las ocho alfa/seis beta están correctos. Se retira la probabilidad no justificada de frijoles marcados, se añade la bandeja exigida y el dato inicial k=0. La semivida describe una población, no un núcleo que pierde partes gradualmente. Los conteos esperados son medias, no resultados obligatorios.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U8-8.3",
+    "cita": "8.3. Reconstruye la serie de desintegración del uranio-238 hasta el plomo-206 y calcula el número de emisiones alfa y beta a partir del cambio de A y Z."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "ΔA=206−238=−32 implica ocho alfa; ΔZ=82−92=−10=−16+6 implica seis beta menos. Para dados, E(Nk)=60(5/6)^k y t½=ln(0.5)/ln(5/6)=3.802 tiradas."
+   },
+   {
+    "fuente": "https://www.nrc.gov/reading-rm/doc-collections/nuregs/staff/sr1501/sr1501.pdf (NUREG-1501, tabla 2.1)",
+    "cita": "La serie principal incluye ²³⁴Th, ²³⁴Pa metastable, ²³⁴U, ²³⁰Th, ²²⁶Ra y ²²²Rn; la semivida del radón-222 es aproximadamente 3.83 días."
+   }
+  ],
+  "confianza": "alta",
+  "motor_revision": "Codex",
+  "cambios": {
+   "proposito": "Reconstruir paso a paso la serie de desintegración natural del uranio-238 hasta el plomo-206 en una gráfica de número de neutrones (N) frente a número atómico (Z) a partir de la secuencia de emisiones alfa y beta, y modelar con un conjunto de dados cómo disminuye la población de núcleos de un radioisótopo de la serie según su período de semidesintegración.",
+   "materiales": [
+    "Por equipo de 4 estudiantes: 2 hojas de papel milimetrado, regla de 30 cm y lápices de dos colores distintos (uno para emisiones alfa y otro para emisiones beta)",
+    "Por equipo: tabla periódica de los elementos (para identificar el símbolo químico correspondiente a cada número atómico Z entre 81 y 92)",
+    "Por equipo: 60 dados de seis caras y recipiente para agitarlos; si faltan dados, tres equipos usan 20 cada uno y suman sus conteos para una población inicial conjunta de 60. No se atribuye probabilidad 1/2 a frijoles de forma irregular.",
+    "Por estudiante: cuaderno de trabajo y calculadora científica",
+    "Por equipo o conjunto: bandeja o caja baja para recoger los dados y ficha de registro con k = 0 a 10; gráfico de valores esperados 60·(5/6)^k para comparar, rotulado como expectativa matemática."
+   ],
+   "procedimiento": [
+    "1. (8 min) Copien en su cuaderno la secuencia de las 14 emisiones sucesivas de la rama principal de la serie del ²³⁸₉₂U: α, β⁻, β⁻, α, α, α, α, α, β⁻, β⁻, α, β⁻, β⁻, α. Construyan una tabla con las columnas: Paso (0 a 14), Emisión, A, Z, N = A − Z y Símbolo del elemento.",
+    "2. (12 min) Dividan la serie en dos tramos dentro del equipo (pasos 1 a 7 y pasos 8 a 14). Apliquen las leyes de desplazamiento de Soddy y Fajans en cada paso (emisión α: ΔA = −4, ΔZ = −2; emisión β⁻: ΔA = 0, ΔZ = +1), verifiquen el empalme en el paso 7 y completen los 15 núclidos desde ²³⁸₉₂U hasta el isótopo estable final. Al núcleo de protactinio-234 de la rama principal puede añadirse la marca metastable m; no cambia A, Z ni N.",
+    "3. (12 min) En la primera hoja de papel milimetrado, tracen los ejes con Z en el eje horizontal (de 80 a 94) y N en el eje vertical (de 122 a 148). Ubiquen cada núclido con su símbolo y número másico, y únanlos con flechas del color correspondiente a cada emisión (α o β⁻). Identifiquen en la gráfica el paso donde se forma el gas radón (Z = 86).",
+    "4. (13 min) Registren primero la población inicial de 60 núcleos en k = 0. Cada lanzamiento de dados representa el mismo intervalo Δt y retira únicamente los que muestran 1. Lancen dentro de la bandeja, cuenten los dados restantes y registren k = 1 a 10; si llegan a cero, completen con ceros. Al agrupar tres equipos, sumen sus supervivientes en cada k. El modelo sigue la población de un solo radioisótopo y cuenta sus desintegraciones, no toda la cadena simultáneamente.",
+    "5. (10 min) En la segunda hoja milimetrada, grafiquen los núcleos restantes N (eje vertical) frente al número de tiradas k (eje horizontal). Respondan en su cuaderno las dos primeras preguntas de análisis y anoten las dos restantes como tarea."
+   ],
+   "datos_esperados": "En la tabla y la gráfica N frente a Z, la serie inicia en ²³⁸₉₂U (Z = 92, N = 146), pasa por el gas ²²²₈₆Rn en el paso 6, con la cuarta emisión alfa (Z = 86, N = 136) y termina en el paso 14 en ²⁰⁶₈₂Pb (Z = 82, N = 124), sumando exactamente 8 flechas diagonales largas de emisión alfa (ΔZ = −2, ΔN = −2) y 6 flechas diagonales cortas de emisión beta negativa (ΔZ = +1, ΔN = −1). En la simulación con 60 dados de 6 caras (probabilidad de decaimiento p = 1/6 por tirada), el número de dados restantes disminuye de forma aproximadamente exponencial (valores típicos cercanos a 60, 50, 42, 35, 29, 24, 20, 17, 14, 12, 10), reduciéndose a la mitad (30 dados) alrededor de la tirada k = 4 (semivida teórica aproximada de 3.8 tiradas).  Los valores enumerados son medias matemáticas redondeadas; cada ensayo fluctúa y las dos semividas estimadas no tienen que coincidir exactamente.",
+   "variantes": "Si no hay 60 dados por equipo, combinar tres equipos de 20, registrando el mismo k en todos. Si solo se dispone de una ficha, analizar la curva de medias matemáticas e indicar que no es una medición aleatoria; no asignar probabilidades a semillas sin calibrarlas."
+  }
+ },
+ {
+  "id": "PED:EXP:G11-QUI-U9-9.1/1",
+  "decision": "corregir",
+  "justificacion": "La aclaración del carbocatión formal es útil, pero la heterólisis no es exclusiva de carbonos terciarios y la oxidación no demuestra nucleofilia. Se corrigen esas conclusiones y se normalizan concentraciones, vidrio, control y dispensación. La comparación húmeda requiere ensayo previo; no se garantiza un viraje en diez minutos ni se identifica el producto solo por color.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U9-9.1",
+    "cita": "9.1. Diferencia la ruptura homolítica de la heterolítica y clasifica reactivos orgánicos como nucleófilos, electrófilos o radicales según su distribución electrónica."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "La sustitución concertada de un haloalcano primario rompe C–Cl sin carbocatión libre. La prueba con permanganato sigue una reducción del oxidante; carga parcial y nucleofilia no equivalen a facilidad de oxidación."
+   },
+   {
+    "fuente": "data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H2_Chemistry_9476_2027.pdf (pp. 26 y 28 del PDF)",
+    "cita": "Distingue flujo de electrones, reactividad de halogenoalcanos y mecanismos de sustitución; los términos nucleófilo y electrófilo corresponden a Lewis base y ácido."
+   }
+  ],
+  "confianza": "media",
+  "motor_revision": "Codex",
+  "cambios": {
+   "proposito": "Modelar con flechas de media cabeza y cabeza completa el reparto de electrones en homólisis y heterólisis. Clasificar sitios nucleófilos y electrófilos mediante estructuras de Lewis y comparar, como observación complementaria, la oxidación de etanol y propanona acuosos bajo condiciones controladas.",
+   "materiales": [
+    "Por grupo: 13 bolitas de plasticina o durapax de tres colores (4 negras para carbono, 6 blancas para hidrógeno, 3 verdes para cloro o bromo) y 10 palillos de dientes partidos a la mitad (20 mitades para representar electrones individuales de los enlaces)",
+    "Por grupo: 2 hojas de papel bond, marcadores de dos colores para dibujar flechas curvas (media cabeza y cabeza completa)",
+    "Por grupo: tres vasos pequeños de vidrio, rotulados 1, 2 y 3, y goteros distintos; se evita plástico incompatible con disolventes.",
+    "Por grupo: 5 mL de etanol acuoso al 5 % v/v, 5 mL de propanona acuosa al 5 % v/v y 5 mL de agua destilada, preparados y rotulados previamente por la docente a partir de reactivos de composición conocida.",
+    "Por grupo, dispensado por la docente: 1 mL de KMnO₄(ac) al 0.05 % m/v, preparado antes de clase, sin manipular cristales junto a los disolventes.",
+    "Reloj o cronómetro, guantes de látex o nitrilo y lentes de seguridad",
+    "Para la docente: recipiente de residuos rotulado para las mezclas diluidas con manganeso, ficha de comparación de grupos funcionales y registro de su prueba previa del montaje."
+   ],
+   "procedimiento": [
+    "1. (10 min) En la hoja de papel, armen con plasticina el modelo de la molécula de cloro (Cl–Cl) y el del clorometano (CH3–Cl). En lugar de un palillo entero por enlace, coloquen dos mitades de palillo juntas entre los átomos para que cada mitad represente un electrón del par compartido.",
+    "2. (10 min) Simulen la ruptura homolítica en Cl–Cl separando los átomos de modo que cada uno conserve una mitad de palillo; dibujen en la hoja el mecanismo con dos flechas curvas de media cabeza. Luego simulen la ruptura heterolítica del enlace C–Cl en el clorometano llevando las dos mitades de palillo hacia el cloro; dibujen la flecha curva de cabeza completa e identifiquen el carbocatión (CH₃⁺) y el ion cloruro (Cl⁻). Recuerden que el CH₃⁺ es solo un modelo para ver el movimiento de electrones: no se representa una ionización espontánea del clorometano en agua. En una sustitución concertada puede romperse C–Cl sin formar CH₃⁺ libre.",
+    "3. (10 min) Dibujen las estructuras de Lewis del etanol, agua, amoníaco y propanona. Identifiquen pares libres que pueden donar y al carbono carbonílico como sitio electrófilo por su polaridad. Señalen δ+ y δ−; una carga parcial positiva por sí sola no garantiza que el sitio reaccione fácilmente con un nucleófilo.",
+    "4. (15 min) La docente dispensa 2 mL de agua, etanol acuoso y propanona acuosa en los vasos 1, 2 y 3 y agrega tres gotas de KMnO₄ al 0.05 % a cada uno. Registren el color inicial y a 5 y 10 minutos. Esta prueba compara oxidación bajo condiciones concretas; el color no mide nucleofilia. La docente habrá comprobado antes que el cambio es visible; de lo contrario, analicen su registro de ensayo o una ficha de datos expresamente rotulada como ejemplo.",
+    "5. (10 min) Comparen los resultados entre grupos y respondan en su cuaderno las dos primeras preguntas de análisis."
+   ],
+   "analisis": [
+    "¿Qué diferencia hay entre lo que representa una flecha curva de media cabeza y una de cabeza completa en sus modelos de Cl–Cl y CH3–Cl, y qué carga neta adquieren las especies formadas en cada caso?",
+    "En las estructuras de Lewis, ¿qué pares libres pueden donar etanol, agua y amoníaco, y por qué el carbono carbonílico de la propanona puede recibir un par? Expliquen por qué la polaridad del enlace C–O del etanol no garantiza un ataque nucleofílico fácil.",
+    "Tarea: completen una tabla clasificando doce especies químicas (CH3⁺, Cl·, OH⁻, H2O, NH3, Br⁻, H⁺, CH3O⁻, ·CH3, BF3, CH3NH2 y el carbono carbonílico de la propanona) en nucleófilos, electrófilos o radicales, justificando cada una según su estructura electrónica.",
+    "Tarea: describan qué cambios de color observaron con el oxidante y qué diferencias de oxidación apoyan. ¿Por qué ese ensayo no determina por sí solo si una molécula o un sitio es nucleófilo o electrófilo?"
+   ],
+   "datos_esperados": "La homólisis de Cl–Cl deja dos Cl· con un electrón desapareado. La heterólisis formal de CH₃–Cl asigna el par a Cl⁻ y deja seis electrones alrededor del carbono de CH₃⁺; no implica que ese catión se produzca libremente en agua. Los haloalcanos primarios también pueden romper C–halógeno en sustituciones concertadas. En la prueba diluida, la oxidación del etanol puede consumir color del permanganato y formar MnO₂ pardo; control y propanona pueden conservarlo en las condiciones ensayadas. La intensidad y el tiempo se registran, no se imponen; no identifican producto orgánico ni nucleofilia.",
+   "seguridad": [
+    "La docente prepara y dispensa las disoluciones; el alumnado no mezcla cristales de permanganato con disolventes. Usar vidrio, gafas, bata y guantes adecuados al reactivo.",
+    "Trabajar ventilado, sin llama, calor ni chispas. Los disolventes concentrados de preparación quedan a cargo de la docente, separados del oxidante.",
+    "No inhalar ni probar líquidos; ante contacto con ojos o piel, irrigar con agua abundante y avisar a la docente.",
+    "La docente recoge líquidos y primeros enjuagues en el recipiente rotulado para tratamiento autorizado; no verter mezclas con manganeso al drenaje."
+   ],
+   "variantes": "Sin reactivos para la prueba húmeda: realicen completa la sesión de modelado con plasticina y palillos añadiendo la representación del ataque de un nucleófilo (como OH⁻ o NH₃) al carbocatión CH₃⁺ para formar metanol o, con NH₃, el ion metilamonio (CH₃NH₃⁺), que al perder un H⁺ da metilamina. Si hay computadoras, pueden usar un visor molecular gratuito que la docente haya probado antes para ver la forma de las moléculas de etanol, propanona, amoníaco y clorometano. La sustitución del carbocatión formal se usa como modelo del movimiento de electrones, no como evidencia de su formación libre en una disolución."
+  }
+ },
+ {
+  "id": "PED:EXP:G11-QUI-U9-9.2/1",
+  "decision": "corregir",
+  "justificacion": "El cambio psicopedagógico de piezas es correcto. Se corrige la regla de valencia para OH⁻ y se deja de contar iones como moléculas. Se explicitan condiciones de deshidratación y límites del inventario para las tarjetas. Adición de HBr y eliminación de agua son inversas en el cambio C–C, pero no son la misma reacción invertida.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U9-9.2",
+    "cita": "9.2. Determina si una reacción orgánica es de sustitución, adición o eliminación comparando la estructura de reactivos y productos."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "OH⁻ tiene un enlace O–H; oxígeno neutro de un alcohol tiene dos enlaces. Sustitución conserva carga: C₂H₅Cl + OH⁻ → C₂H₅OH + Cl⁻. La deshidratación de etanol produce eteno y agua."
+   }
+  ],
+  "confianza": "alta",
+  "motor_revision": "Codex",
+  "cambios": {
+   "materiales": [
+    "Por grupo (4 estudiantes): 6 esferas o bolitas de plastilina negra de 2 cm (átomos de carbono, con 4 puntos de unión), 14 blancas de 1 cm (hidrógeno), 2 rojas de 1.5 cm (oxígeno) y 4 verdes o anaranjadas de 1.5 cm (halógenos: Cl o Br) Añadir etiquetas de carga −1 para OH⁻ y Cl⁻.",
+    "Por grupo: 20 palillos de dientes rígidos para representar enlaces simples (σ) y 4 pajillas plásticas o limpiapipas flexibles de 5 cm para representar los dos enlaces de un enlace doble C=C (uno σ y uno π)",
+    "Por grupo: un juego impreso de 15 tarjetas de ecuaciones orgánicas con fórmulas estructurales (5 de sustitución, 5 de adición y 5 de eliminación, incluyendo halogenación de alcanos, hidrogenación e hidrohalogenación de alquenos, deshidratación de alcoholes y sustitución en haloalcanos) Cada tarjeta debe incluir condiciones, ecuación balanceada y estructuras completas, con hasta cuatro carbonos por molécula y un inventario simultáneo no mayor que las piezas disponibles; las soluciones se imprimen al reverso.",
+    "Cuaderno de laboratorio, regla y lápices de colores para registrar la tabla de quince reacciones"
+   ],
+   "procedimiento": [
+    "1. (8 min) En equipo, revisen las reglas de valencia: cada carbono forma 4 enlaces, cada oxígeno neutro 2; en OH⁻ el oxígeno forma un enlace O–H y tiene carga −1 y cada hidrógeno o halógeno 1. Armen con las esferas y palillos el cloroetano (CH3–CH2–Cl) y el ion hidróxido (OH⁻), y dibujen sus estructuras iniciales en el cuaderno.",
+    "2. (10 min) Modelen una reacción de sustitución: retiren el palillo del enlace C–Cl del cloroetano y conecten en ese mismo agujero del carbono el grupo OH para obtener etanol (CH3–CH2–OH) y Cl⁻. Anoten cuántos enlaces se rompieron, cuántos se formaron y si cambió el tipo de enlace entre los dos carbonos.",
+    "3. (10 min) Armen el eteno (CH2=CH2) uniendo los dos carbonos con dos pajillas flexibles (enlace doble) y armen una molécula de H–Br. Modelen una adición: desconecten una de las pajillas entre los carbonos (ruptura del enlace π) y el palillo de H–Br, y unan el H a un carbono y el Br al otro para formar bromoetano (CH3–CH2–Br). Anoten el cambio de enlace doble a simple.",
+    "4. (10 min) Partiendo del modelo de etanol (CH3–CH2–OH), modelen una eliminación: retiren el grupo OH de un carbono y un H del carbono vecino para unirlos en una molécula de agua (H2O), y cambien el palillo entre ambos carbonos por dos pajillas flexibles (enlace doble) para restituir el eteno (CH2=CH2). Comparen este paso con el paso 3. Esta transformación representa el balance global de deshidratación bajo condiciones adecuadas de ácido y calor, no una reacción espontánea del etanol al separar piezas.",
+    "5. (12 min) Repartan las 15 tarjetas de reacciones orgánicas entre los integrantes del grupo. Para cada tarjeta, identifiquen en la cadena carbonada qué enlaces se rompen y cuáles se forman (si dudan en alguna, ármenla con el modelo) y completen la tabla de 15 reacciones con las columnas: Ecuación, Enlaces rotos, Enlaces formados, Cambio en enlaces C–C y Tipo de reacción.",
+    "6. (5 min) Comparen la clasificación de sus 15 tarjetas con la de otro equipo y respondan en el cuaderno las dos primeras preguntas de análisis."
+   ],
+   "datos_esperados": "La sustitución rompe C–Cl y forma C–O, conservando el enlace simple C–C y la carga total; se representan dos especies antes y dos después, incluidas las iónicas. La adición de HBr al eteno elimina el enlace π y H–Br y forma C–H y C–Br. La eliminación de agua del etanol rompe C–O y C–H vecinos y forma un enlace π y O–H. Los cambios de orden de enlace C–C son opuestos, pero invertir exactamente la adición de HBr requeriría eliminar HBr del bromoetano, no agua del etanol. Las quince tarjetas se clasifican por el balance estructural y sus condiciones."
+  }
+ },
+ {
+  "id": "PED:EXP:G11-QUI-U9-9.3/1",
+  "decision": "corregir",
+  "justificacion": "La sesión evita reactivos peligrosos y distingue correctamente bromohidrina acuosa del dibromuro modelado. Faltan piezas para construir 2 C₃H₈ y 7 O₂: se amplía el inventario y se separan balances de productos mixtos y de CO solo. Se acota la resistencia aromática a las condiciones observadas y se elimina una promesa no verificada del simulador.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U9-9.3",
+    "cita": "9.3. Escribe y balancea reacciones de combustión, halogenación por radicales y adición a alquenos, y explica la diferente reactividad del benceno."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "El balance solo a CO necesita 6 C, 16 H y 14 O; si se representan CO triples, necesita 34 palillos. 1 C₃H₈+3 O₂→2 CO+C+4 H₂O usa 3 O₂/mol, mientras CO solo requiere 3.5."
+   }
+  ],
+  "confianza": "alta",
+  "motor_revision": "Codex",
+  "cambios": {
+   "materiales": [
+    "Por grupo: 8 esferas negras de carbono, 16 blancas de hidrógeno, 14 rojas de oxígeno y 4 de halógeno; reutilizarlas entre modelos.",
+    "Por grupo: 36 palillos para representar enlaces simples, dobles y triples; pueden contarse los átomos sin representar enlaces de CO si el grupo aún no maneja esa estructura.",
+    "Para toda la clase: video seleccionado y verificado antes por la docente de pruebas con hidrocarburos y bromo, o ficha impresa que identifique explícitamente si las observaciones son del video o datos de ejemplo y si el disolvente es acuoso u orgánico inerte.",
+    "Por grupo: hoja de registro, tabla periódica y calculadora"
+   ],
+   "procedimiento": [
+    "1. (10 min) Combustión del propano (sin fuego): armen con las esferas y palillos 1 molécula de propano (C3H8, 3 negras y 8 blancas) y 5 moléculas de dioxígeno (O2, 10 rojas con enlaces dobles). Desarmen los enlaces y reordenen todas las esferas para formar 3 moléculas de CO2 y 4 de H2O. Comprueben que no sobran ni faltan átomos y escriban la ecuación balanceada con estados de agregación.",
+    "2. (10 min) Con 1 C₃H₈ y 3 O₂, formen 2 CO + C(s) + 4 H₂O y escriban ese balance de productos mixtos. Luego reutilicen las piezas para 2 C₃H₈ + 7 O₂ → 6 CO + 8 H₂O, que produce solo CO y agua. Distingan los consumos de O₂ por mol de propano y respondan la primera pregunta de análisis.",
+    "3. (12 min) Halogenación vs. adición: armen 1 molécula de etano (C2H6) y 1 de Br2 (2 verdes). Simulen la ruptura homolítica del enlace Br–Br bajo luz UV y la sustitución de un H para obtener C2H5Br y HBr. Para el balance de adición en disolvente orgánico inerte, armen 1 molécula de eteno (C2H4, con doble enlace) y 1 de Br2; rompan un enlace del doble enlace C=C y unan ambos átomos de bromo para formar 1,2-dibromoetano (C2H4Br2) sin subproductos. Escriban ambas ecuaciones y respondan la segunda pregunta de análisis.",
+    "4. (13 min) Análisis del video y del anillo de benceno: observen el video de la prueba con agua de bromo, Br2(ac), o lean la tabla de la ficha: Tubo 1 (ciclohexano): en oscuridad el color pardo anaranjado pasa a la capa del hidrocarburo y no desaparece; con luz intensa se decolora lentamente y el agua se acidifica (se forma HBr, que se detecta con papel tornasol); Tubo 2 (ciclohexeno): decolora en menos de 5 s en oscuridad; Tubo 3 (benceno): el color pasa a la capa del benceno y no se decolora. Armen el anillo de 6 carbonos del benceno (C6H6) y discutan por qué la deslocalización de sus 6 electrones pi desfavorece la adición bajo esas condiciones.",
+    "5. (10 min) Completen la tabla comparativa «Hidrocarburo · Tipo de reacción con Br2 · Condición necesaria · Productos» y respondan la tercera pregunta de análisis."
+   ],
+   "datos_esperados": "En el paso 1, las 3 esferas de C, 8 de H y 10 de O forman exactamente 3 CO2 + 4 H2O. En el paso 2, con 3 O2 (6 átomos de O) por 1 C3H8 se obtienen 2 CO + C + 4 H2O, En cambio, con otra proporción estequiométrica, 2 C3H8 + 7 O2 → 6 CO + 8 H2O se comprueba que la combustión incompleta consume 3.5 mol de O2 por mol de C3H8 frente a los 5.0 mol de O2 de la completa. En el paso 3, la sustitución en etano produce 2 especies (C2H5Br + HBr) y la adición en eteno produce 1 sola especie (C2H4Br2). En el paso 4, solo el alqueno (tubo 2) decolora de inmediato el Br2(ac) en oscuridad; en agua, el producto principal de esa adición es una bromohidrina, pero la decoloración indica igualmente la adición al C=C. En el video descrito, el ciclohexano reacciona al iluminarlo (sustitución, forma HBr) y el benceno no reacciona en esas condiciones.",
+   "variantes": "Sin proyector, usar la ficha impresa de observaciones y los modelos físicos. Si se dispone de recursos digitales, la docente puede elegir un visor o herramienta de balanceo que haya comprobado con las ecuaciones concretas; la ficha y el inventario de átomos bastan para completar la sesión."
+  }
+ },
+ {
+  "id": "PED:EXP:G11-QUI-U9-9.4/1",
+  "decision": "corregir",
+  "justificacion": "Se necesitan 4 mL de agua, no 3, y el Fehling compartido debe dimensionarse por grupos. El color no identifica etanal frente a ácido ni garantiza conversión completa con tan poco oxidante. Se conserva la comparación con glucosa/propanona, sin universalizarla a toda cetona. Se separan calentamiento y fuente eléctrica, y residuos de Mn y Cu.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U9-9.4",
+    "cita": "9.4. Predice si la oxidación de un alcohol produce un aldehído, una cetona o un ácido carboxílico y diferencia aldehídos de cetonas por su comportamiento frente a oxidantes."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "Tres gotas (~0.15 mL) de KMnO₄ al 0.05 % contienen unos 0.475 µmol de oxidante frente a milimoles de alcohol: el cambio de color no prueba conversión total ni producto final. Se usan 2 mL de agua en cada uno de dos testigos."
+   },
+   {
+    "fuente": "data/fuentes/externos/paises/singapur/sec_bach/SG_ALevel_H2_Chemistry_9476_2027.pdf (pp. 30 y 40 del PDF)",
+    "cita": "Incluye pruebas de Fehling y Tollens para identificar compuestos carbonílicos; distingue el precipitado de Fehling y el espejo de plata."
+   },
+   {
+    "fuente": "https://ehs.okstate.edu/laboratory-safety/liquid_safety (Flammable and Combustible Liquid Safety)",
+    "cita": "El manejo de líquidos inflamables requiere controlar ventilación e ignición; un baño de agua es un método de calentamiento apropiado frente a llama directa."
+   }
+  ],
+  "confianza": "media",
+  "motor_revision": "Codex",
+  "cambios": {
+   "materiales": [
+    "Por grupo: 6 tubos de ensayo de vidrio resistentes al calor y una gradilla (o 6 frascos pequeños de vidrio transparente de 30 mL)",
+    "Por grupo: 5 goteros plásticos limpios y rotulados, una cinta de enmascarar y un marcador para rotular los tubos del 1 al 6",
+    "Por grupo: 3 mL de etanol comercial al 70 % (alcohol etílico de farmacia), 3 mL de 2-propanol al 70 % (alcohol isopropílico de farmacia) y 5 mL de agua destilada",
+    "Por grupo: 3 mL de disolución acuosa de glucosa al 5 % (dextrosa al 5 % de farmacia; contiene el grupo aldehído en su forma abierta) y 2 mL de propanona diluida (5 gotas de acetona pura, sin colorante, en 2 mL de agua, preparada por la docente)",
+    "Por grupo, manejado por la docente: al menos 1 mL de KMnO₄(ac) al 0.05 % m/v, 2 mL de vinagre blanco al 5 % y 6 mL de reactivo de Fehling recién mezclado. Preparar antes de la sesión el total según el número de grupos, con reserva y composición conocida.",
+    "Estación docente: baño de agua previamente preparado a unos 75 °C, termómetro, pinzas y soporte estable separado de la fuente eléctrica. Dos recipientes rotulados, uno para mezclas con manganeso y otro para cobre, con manejo posterior autorizado.",
+    "Para todas las personas: gafas, bata y calzado cerrado; guantes adecuados para quien dispensa reactivos. Ficha teórica sobre Tollens, sin prepararlo, y registro de ensayo previo de las dos pruebas."
+   ],
+   "procedimiento": [
+    "1. (8 min) Pónganse las gafas de seguridad. Rotulen seis tubos de ensayo del 1 al 6. Dibujen en el cuaderno las estructuras del etanol, el 2-propanol, la propanona y la cadena abierta de la glucosa (aldohexosa), y escriban su predicción sobre cuáles se oxidarán en cada prueba.",
+    "2. (12 min) Parte 1 (oxidación de alcoholes): coloquen 2 mL de etanol en el tubo 1, 2 mL de 2-propanol en el tubo 2 y 2 mL de agua destilada (testigo) en el tubo 3. Añadan a cada tubo 10 gotas de vinagre blanco; la docente agrega luego 3 gotas de KMnO₄(ac) al 0.05 % a cada tubo. Agiten suavemente y anoten el color inicial y el color a los 3 minutos y a los 6 minutos a temperatura del aula (25–30 °C).",
+    "3. (15 min) Parte 2 (diferenciación entre aldehído y cetona): coloquen 2 mL de disolución de glucosa (con grupo aldehído libre en equilibrio) en el tubo 4, 2 mL de propanona diluida en el tubo 5 y 2 mL de agua destilada en el tubo 6. La docente agrega 2 mL de reactivo de Fehling recién mezclado a cada uno, usa el baño precalentado separado de la fuente eléctrica e introduce los tubos 4, 5 y 6 con pinzas en el baño María a unos 75 °C, con la boca de los tubos apuntando lejos de las personas, durante 4 minutos; observen desde su lugar el cambio de color y la formación de precipitado.",
+    "4. (12 min) Registren observaciones de los seis tubos. Representen con [O] los balances posibles CH₃CH₂OH + [O] → CH₃CHO + H₂O; CH₃CHO + [O] → CH₃COOH; y CH₃CH(OH)CH₃ + [O] → CH₃COCH₃ + H₂O. Distingan esos productos previstos por estructura de lo que permite identificar el color: el viraje solo confirma consumo del oxidante, no cuál producto orgánico se obtuvo.",
+    "5. (8 min) La docente recoge por separado las mezclas y primeros enjuagues con Mn y Cu en sus recipientes rotulados; después de descontaminar los tubos, el grupo termina la limpieza y responde las dos primeras preguntas. No neutralicen ni viertan residuos químicos al drenaje."
+   ],
+   "analisis": [
+    "¿Qué cambios de color apoyan oxidación de los alcoholes y qué aporta el testigo? ¿Permiten distinguir etanal de ácido etanoico sin una prueba adicional?",
+    "¿Por qué la glucosa reduce el cobre de Fehling a Cu₂O y la propanona no lo hace en estas condiciones? Relacionen con la forma abierta de la glucosa; no generalicen que toda cetona es negativa, pues algunos azúcares cetónicos también reducen estos reactivos.",
+    "Tarea: dibujen la estructura de un alcohol terciario como el 2-metil-2-propanol y expliquen por qué, en condiciones suaves, no se oxida con KMnO₄(ac) o K₂Cr₂O₇(ac) y no mostraría el cambio de color de los tubos 1 y 2.",
+    "Tarea: investiguen (en internet o en la ficha que entrega la docente) cómo funciona la prueba del espejo de plata con el reactivo de Tollens, Ag(NH₃)₂⁺(ac), y expliquen qué se observaría al aplicarla a muestras de propanal y de propanona."
+   ],
+   "datos_esperados": "En el ensayo previo, la docente verifica que el control conserva color y los alcoholes producen un cambio visible antes de clase; no se exige un viraje a los 3–6 minutos si no ocurre. Con acidez débil pueden verse especies de Mn distintas, incluido MnO₂ pardo; el color no distingue los productos orgánicos. En condiciones comprobadas de Fehling calentado, glucosa reduce Cu(II) y produce Cu₂O; propanona y el control permanecen azules. La glucosa puede oxidarse a gluconato en medio alcalino. Este resultado distingue estas muestras, no todos los aldehídos de todas las cetonas.",
+   "seguridad": [
+    "Usar gafas y bata; la docente prepara y dispensa oxidante y Fehling. Mantener recipientes de alcoholes y acetona tapados y lejos de cualquier ignición; trabajar ventilado y con extracción cuando proceda.",
+    "El baño se prepara antes; solo la docente mueve agua por encima de 50 °C y tubos con pinzas. Los tubos permanecen abiertos y orientados lejos de personas; no calentar sobre una fuente eléctrica o llama con los disolventes presentes.",
+    "Ante contacto con ojos o piel, irrigar inmediatamente con abundante agua y avisar; no aplicar neutralizantes a la persona.",
+    "Recoger mezclas y primeros enjuagues por separado según Mn o Cu; no verter al drenaje ni encargar neutralización al alumnado. La práctica húmeda requiere gestión autorizada de esos residuos; si no está disponible, usar la variante de video y ficha."
+   ]
+  }
+ },
+ {
+  "id": "PED:EXP:G11-QUI-U9-9.5/1",
+  "decision": "corregir",
+  "justificacion": "Aunque base y esferas ahora alcanzan, 1 mL de éster en 10 mL de agua no garantiza una capa observable; olor y pH tampoco prueban conversión. Se sustituye el calentamiento cerrado y venteo por una demostración cuantitativa diluida, a temperatura ambiente, documentada por retrovaloración. Se eliminan quitaesmalte y vertido al drenaje, conservando 55 minutos con montaje preparado.",
+  "evidencia": [
+   {
+    "fuente": "TEMA:G11-QUI-U9-9.5",
+    "cita": "9.5. Escribe las ecuaciones de esterificación e hidrólisis de ésteres, nombra los productos y explica por qué la esterificación es una reacción reversible."
+   },
+   {
+    "fuente": "criterio disciplinar",
+    "cita": "1 mL×0.90 g/mL÷88.1 g/mol≈10.2 mmol; NaOH original aporta 12.5 mmol, pero eso no garantiza evidencia visual. En la adaptación, 50 mL de cada disolución 0.0500 M dan 0.0250 M; cinco alícuotas requieren 50 mL de los 100 mL disponibles."
+   },
+   {
+    "fuente": "https://www.cdc.gov/niosh/npg/npgd0260.html (NIOSH, Ethyl acetate, propiedades y protección)",
+    "cita": "Masa molar 88.1 g/mol, densidad relativa 0.90 y solubilidad acuosa indicada de 10 % a 25 °C; es líquido inflamable y sus vapores requieren control."
+   },
+   {
+    "fuente": "https://uomustansiriyah.edu.iq/media/lectures/6/6_2019_01_09!05_38_11_PM.pdf (Experimental of Physical Chemistry, experimento 2, p. 5 del PDF)",
+    "cita": "Usa 50 mL de éster 0.05 N y 50 mL de NaOH 0.05 N; toma alícuotas de 10 mL cada tres minutos y realiza retrovaloración tras añadir HCl 0.025 N, con NaOH 0.025 N."
+   },
+   {
+    "fuente": "https://dea.lib.unideb.hu/bitstreams/7095fa7c-aa57-465f-bc30-2019e758d5e0/download (Laboratory Practicals in Medical Chemistry, 2016, pp. 125–126 impresas)",
+    "cita": "El consumo de hidróxido en la saponificación del etanoato de etilo se sigue volumétricamente a temperatura ambiente, con alícuotas tomadas a intervalos y concentraciones iniciales medidas."
+   }
+  ],
+  "confianza": "media",
+  "motor_revision": "Codex",
+  "cambios": {
+   "titulo": "Modelos de esterificación y seguimiento cuantitativo de saponificación por retrovaloración",
+   "proposito": "Representar la esterificación del ácido etanoico y etanol y comparar su reversibilidad con la hidrólisis básica. Seguir mediante una demostración docente el consumo de hidróxido en la saponificación del etanoato de etilo, sin usar olor o desaparición de capas como medida de conversión.",
+   "materiales": [
+    "Por grupo: 20 esferas (6 C, 4 O y 10 H), 20 palillos, cuaderno y ficha con balances de esterificación e hidrólisis.",
+    "Una estación docente para toda la clase: 50.0 mL de etanoato de etilo acuoso 0.0500 mol/L y 50.0 mL de NaOH 0.0500 mol/L, preparados y rotulados antes; 80 mL de HCl 0.0250 mol/L y 100 mL de NaOH 0.0250 mol/L para blanco y retrovaloraciones; 1 mL de fenolftaleína y 250 mL de agua destilada.",
+    "Estación: vaso de 250 mL para reacción, seis matraces de 125 mL, bureta de 25 mL con soporte, dos pipetas de 10 mL, distintas para muestra y ácido, con propipeta, dos probetas de 50 mL, termómetro, cronómetro, bandeja y recipiente de residuos rotulado.",
+    "Para toda persona: gafas, bata y calzado cerrado; guantes para la docente. La docente ensaya previamente cinco muestreos y titulaciones en 20 minutos y entrega una tabla de registro; si no es factible, entrega su registro o la ficha de ejemplo descrita en variantes."
+   ],
+   "procedimiento": [
+    "1. (10 min) Armen ácido etanoico y etanol con 17 esferas en total: 4 C, 3 O y 10 H. Reorganicen en éster y agua; anoten que es balance formal de condensación, no mecanismo completo ni síntesis real con plasticina.",
+    "2. (5 min) La docente muestra las disoluciones preparadas, la temperatura ambiente y el montaje listo. Comprueba y registra el volumen V_blanco del blanco de 10.0 mL de NaOH 0.0250 M con 10.0 mL de HCl 0.0250 M. Los grupos predicen productos y preparan su tabla; no manipulan éster concentrado ni base al 5 %.",
+    "3. (20 min) La docente mezcla los dos volúmenes de 50.0 mL y activa el cronómetro. A 3, 6, 9, 12 y 15 min toma alícuotas de 10.0 mL, añade a cada una 10.0 mL de HCl 0.0250 M y 10 mL de agua, y retrovalora inmediatamente con NaOH 0.0250 M y dos gotas de fenolftaleína hasta rosado pálido persistente. Registra volumen V de cada titulación; el grupo observa y anota. No se calienta ni se cierra herméticamente.",
+    "4. (12 min) Calculen [OH⁻] remanente = 0.0250·(10.0−V)/10.0 mol/L, usando V = volumen leído − V_blanco, en mL y concentraciones iguales de ácido y titulante. Comparen con 0.0250 mol/L inicial; escriban CH₃COOCH₂CH₃ + OH⁻ → CH₃COO⁻ + CH₃CH₂OH y respondan las dos primeras preguntas.",
+    "5. (8 min) La docente recoge mezclas y primeros enjuagues para gestión autorizada; el grupo guarda modelos y revisa el registro. Si las diferencias entre titulaciones no superan la incertidumbre del material, anótenlo y analicen la ficha de ejemplo sin presentar sus valores como mediciones reales."
+   ],
+   "seguridad": [
+    "Solo la docente prepara las disoluciones y realiza la demostración; consultar fichas de seguridad, evitar contacto, utilizar propipeta y nunca pipetear con la boca.",
+    "El etanoato de etilo concentrado es volátil e inflamable; su preparación se realiza antes, con ventilación adecuada, sin ignición. En clase se usan solo disoluciones acuosas diluidas a temperatura ambiente, sin llama, baño caliente ni recipientes herméticos.",
+    "No oler ni probar reactivos; usar gafas y bata. Irrigar con agua abundante ante contacto con ojos o piel y avisar a la docente.",
+    "Recolectar residuos y primeros enjuagues en el recipiente rotulado para gestión autorizada; no neutralizar para verter al desagüe. Sin material volumétrico o gestión de residuos, usar los modelos y datos de la variante."
+   ],
+   "datos_esperados": "Las piezas conservan 4 C, 3 O y 10 H entre reactivos y éster más agua. Tras mezclar, ambas concentraciones iniciales son 0.0250 M y el éster está disuelto; no se esperan capas como indicador. La hidrólisis produce etanoato y etanol y consume OH⁻. Con el método de retrovaloración, V debe aumentar mientras [OH⁻] disminuye, si el avance supera la incertidumbre; no se garantiza conversión completa en 15 min. Ejemplo de cálculo, no resultado obligatorio: V corregido por blanco = 4.00 mL implica [OH⁻] = 0.0150 M y consumo de 0.0100 M. El olor y un pH todavía básico no cuantifican la conversión.",
+   "analisis": [
+    "¿Qué átomos y enlaces cambian en el balance de esterificación y por qué no representa todo el mecanismo catalizado?",
+    "¿Cómo muestra la retrovaloración el consumo de OH⁻? Calculen una concentración remanente y nombren etanoato y etanol como productos; distingan carboxilato de ácido libre.",
+    "Tarea: comparen la esterificación/hidrólisis ácida reversible con la hidrólisis básica, fuertemente favorecida por la formación de carboxilato. Expliquen por qué acidificar después no reconstruye espontáneamente el éster.",
+    "Tarea: para el modelo de ejemplo de 1.0 mol de ácido y 1.0 mol de alcohol con 0.67 mol de éster al equilibrio, propongan retirar agua o usar exceso de un reactivo. Indiquen que asegurar más de 85 % requiere datos de equilibrio y condiciones; un catalizador por sí solo no aumenta el rendimiento de equilibrio."
+   ],
+   "duracion_min": 55,
+   "variantes": "Sin laboratorio, conservar los mismos cinco bloques de 10, 5, 20, 12 y 8 minutos: construir modelos, explicar el balance de retrovaloración, trabajar la ficha, interpretar y cerrar. La ficha se rotula Datos de ejemplo, no medición: V corregido por blanco = 0, 2, 4 y 6 mL corresponden a [OH⁻] = 0.0250, 0.0200, 0.0150 y 0.0100 mol/L; no asignar tiempos ni deducir una constante cinética de esos valores. Si hay un registro experimental docente, usar sus condiciones y su incertidumbre."
+  }
+ }
+]

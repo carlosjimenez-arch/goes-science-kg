@@ -445,6 +445,30 @@
  },
  "ideas_previas": [
   {
+   "id": "DIF:fisica/conservacion-energia-mecanica/1",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "descripcion": "Aplica la conservación de la energía mecánica a situaciones con fricción o resistencia del aire como si no las hubiera: espera que un carrito, una pelota o una canica vuelvan a la altura de partida, o atribuye toda diferencia entre lo calculado y lo medido a «errores de medición», sin reconocer la energía que las fuerzas no conservativas transforman en energía interna.",
+   "senales": "Dice que «la energía mecánica siempre se conserva»; predice la altura ideal para un sistema real sin mencionar pérdidas; explica la diferencia solo con «medimos mal».",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/2",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "descripcion": "Cree que la rapidez con que un cuerpo llega abajo depende del camino: que por una rampa más larga, más empinada o con curvas se llega con más o con menos rapidez aunque no haya fricción. No reconoce que el trabajo del peso solo depende del cambio de altura; lo que sí cambia con el camino es el tiempo que tarda.",
+   "senales": "Dice que en la rampa larga «tiene más tiempo para acelerar» o que en la empinada «llega con más fuerza»; calcula el trabajo del peso con la longitud de la rampa en lugar de la altura.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/conservacion-energia-mecanica/3",
+   "concepto": "CON:fisica/conservacion-energia-mecanica",
+   "descripcion": "Trata la energía potencial elástica como proporcional a la deformación: cree que comprimir el doble un resorte guarda el doble de energía y lanza un cuerpo al doble de altura, en lugar de usar ½kx², que se cuadruplica.",
+   "senales": "Predice «el doble de altura» al duplicar la compresión; escribe U = kx, o usa la fuerza del resorte como si fuera su energía.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
    "id": "DIF:fisica/fuerza-elastica-ley-hooke/1",
    "concepto": "CON:fisica/fuerza-elastica-ley-hooke",
    "descripcion": "Usar la longitud total del resorte en lugar de su alargamiento (el cambio respecto de la longitud natural) al aplicar F = kx, como si la fuerza fuera proporcional a la longitud.",
@@ -491,9 +515,227 @@
    "senales": "Dice que en el extremo de una oscilación o en lo más alto de un lanzamiento la aceleración es cero «porque está quieto»; pone la fuerza neta en el sentido del movimiento aunque el cuerpo vaya frenando; ubica la aceleración máxima del oscilador en el equilibrio, donde va más rápido; multiplica la masa por la velocidad para obtener la fuerza.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:fisica/segunda-ley-newton/2",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "descripcion": "Usa en ΣF = m·a una sola fuerza, la aplicada o la mayor, en lugar de la fuerza neta: deja fuera la fricción u otras fuerzas, o usa la fuerza completa de una cuerda inclinada en lugar de su componente en la dirección del movimiento. Por eso concluye que la ley «falla» cuando los datos no son proporcionales a la fuerza aplicada.",
+   "senales": "Calcula a = F/m con la fuerza de la cuerda sin descomponerla ni restar la fricción; espera que la gráfica a contra F pase por el origen y dice que el experimento salió mal si no pasa; no dibuja diagrama de cuerpo libre antes de escribir la ecuación; suma magnitudes de fuerzas con ángulos distintos como si fueran paralelas.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/segunda-ley-newton/3",
+   "concepto": "CON:fisica/segunda-ley-newton",
+   "descripcion": "Confunde masa con peso al aplicar la segunda ley: pone el peso en newtons donde va la masa (a = F/peso), usa la masa en kilogramos como si fuera una fuerza, o cree que un cuerpo de más masa acelera más con la misma fuerza neta porque «pesa más y empuja más».",
+   "senales": "Escribe a = F/(m·g) o F = m sin multiplicar por g; obtiene aceleraciones unas diez veces menores o mayores que las medidas; predice que al agregar masa al carrito con la misma fuerza neta la aceleración aumenta; escribe unidades como «kg» para el peso o «N» para la masa.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [
+  {
+   "id": "ACT:G10-FIS-U7-7.5/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U7-7.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    10
+   ],
+   "enunciado": "Un carrito de 0.20 kg está apoyado contra un resorte comprimido 3.0 cm sobre una pista horizontal. Al soltarlo, el carrito sale y sube por una rampa hasta una altura máxima de 5.0 cm. Supón que no hay fricción en la pista ni en la rampa. Si ahora se comprime el mismo resorte 6.0 cm, ¿hasta qué altura sube el carrito y por qué?",
+   "opciones": {
+    "A": "Hasta 10 cm, porque la energía que guarda el resorte es proporcional a su compresión.",
+    "B": "Hasta 20 cm, porque la energía que guarda el resorte crece con el cuadrado de la compresión.",
+    "C": "Hasta 20 cm, porque la fuerza del resorte se duplica y además empuja durante el doble de tiempo.",
+    "D": "Hasta 10 cm, porque la rapidez de salida se duplica y la altura es proporcional a la rapidez."
+   },
+   "correcta": "B",
+   "distractores": {
+    "A": "DIF:fisica/conservacion-energia-mecanica/3"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Sin fricción, toda la energía elástica ½kx² termina como potencial gravitatoria mgh, así que la altura es proporcional a x². Al duplicar la compresión, la energía elástica se multiplica por 4 y la altura también: 4 × 5.0 cm = 20 cm. La rapidez de salida sí se duplica, pero la altura depende de v², no de v; y el tiempo que el resorte empuja al carrito no depende de cuánto se comprime.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U7-7.5"
+   },
+   "origen": "redactor-actividades (G10-FIS-U7-7.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Opciones parejas en estructura (altura + razón), dos con el mismo número y razón distinta, así que se evalúa el porqué sin pistas. Retroalimentación de 73 palabras que aborda cada error."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G10-FIS-U7-7.5/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U7-7.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    10
+   ],
+   "enunciado": "Datos de un grupo de ejemplo. Un carrito de 0.50 kg pasa por la base de una rampa y sube por ella hasta detenerse. Con video midieron: en la base (altura 0) su rapidez es 2.00 m/s; a 0.10 m de altura, 1.35 m/s; en el punto más alto, a 0.18 m sobre la base, su rapidez es 0. Usa g ≈ 9.8 m/s² (valor aproximado de la tabla de referencia). ¿Cuánta energía mecánica disipó la fricción entre la base y el punto más alto? Responde en joules (J); escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 0.118,
+   "tolerancia": 0.01,
+   "unidad": "J",
+   "retroalimentacion": "En la base, la energía mecánica es ½(0.50)(2.00)² + 0 = 1.00 J. En el punto más alto es 0 + (0.50)(9.8)(0.18) ≈ 0.88 J. La fricción disipó 1.00 − 0.88 ≈ 0.12 J, que pasó a energía interna (calentamiento) del carrito, la rampa y el aire. A 0.10 m la energía mecánica es ≈ 0.95 J: baja poco a poco durante la subida. Sin fricción, el carrito habría llegado a v²/2g ≈ 0.20 m.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U7-7.5"
+   },
+   "origen": "redactor-actividades (G10-FIS-U7-7.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Datos de ejemplo, unidad indicada, g de la tabla de referencia. La retroalimentación (75 palabras) lleva la energía disipada a energía interna, sin decir que «se pierde»."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G10-FIS-U7-7.5/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G10-FIS-U7-7.5"
+   ],
+   "evalua": [
+    "TEMA:G10-FIS-U7-7.5",
+    "CON:fisica/conservacion-energia-mecanica"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    10
+   ],
+   "enunciado": "En un parque acuático hay dos toboganes que bajan desde la misma plataforma, a 4.0 m sobre el agua: uno es recto y el otro es más largo y con curvas. Ana dice que quien baja por el tobogán con curvas llega abajo con más rapidez, porque recorre más camino. En 3 o 4 oraciones: primero supón que no hay fricción y di si Ana tiene razón, explicando por qué con el trabajo que hace el peso en cada tobogán. Después di qué cambia si hay fricción y por qué.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Sin fricción, los dos llegan con la misma rapidez: el peso es una fuerza conservativa y su trabajo solo depende del cambio de altura (mgh), no del camino; v = √(2gh) ≈ 8.9 m/s en ambos. Llegar antes o después es otra cosa: el tiempo sí depende de la forma. Con fricción, el trabajo de la fricción (negativo) depende del camino, así que las rapideces ya no son iguales y en el tobogán más largo suele llegarse con menos.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G10-FIS-U7-7.5"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Sin fricción Ana no tiene razón: los dos llegan con la misma rapidez. El peso es una fuerza conservativa y su trabajo solo depende del cambio de altura, mgh, no del largo ni de la forma del tobogán, así que en los dos se gana la misma energía cinética. Con fricción cambia: la fricción no es conservativa y su trabajo depende del camino; en el tobogán largo se suele disipar más energía y se llega con menos rapidez.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Afirma que, sin fricción, por los dos toboganes se llega con la misma rapidez (Ana no tiene razón).",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Justifica que el trabajo del peso depende solo del cambio de altura (mgh) y no de la trayectoria, o que el peso es conservativo.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Explica que con fricción la energía disipada depende del camino (fuerza no conservativa), por lo que las rapideces ya no son iguales.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Distingue llegar antes (tiempo) de llegar con más rapidez, o calcula v ≈ 8.9 m/s.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Cree que el camino más largo da más rapidez aunque no haya fricción.",
+      "ejemplo": "Ana tiene razón: en el tobogán largo hay más tiempo para acelerar y llega más rápido.",
+      "dificultad": "DIF:fisica/conservacion-energia-mecanica/2"
+     },
+     {
+      "descripcion": "Aplica la conservación de la energía mecánica también con fricción.",
+      "ejemplo": "Con fricción da igual, la energía mecánica se conserva y llegan con la misma rapidez.",
+      "dificultad": "DIF:fisica/conservacion-energia-mecanica/1"
+     },
+     {
+      "descripcion": "Dice que la energía disipada por la fricción desaparece.",
+      "ejemplo": "Con fricción una parte de la energía se pierde y deja de existir, por eso llegan más lento.",
+      "dificultad": "DIF:fisica/conservacion-energia/1"
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G10-FIS-U7-7.5)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto atractivo, Ana se equivoca sin ser ridiculizada, el enunciado separa los dos casos (sin fricción, con fricción) y pide los tres criterios obligatorios; «3 o 4 oraciones» y 6 min son razonables."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
   {
    "id": "ACT:G11-FIS-U1-1.2/obj-1",
    "tipo": "actividad",
@@ -1649,7 +1891,9 @@
  ],
  "datos_de_referencia": {
   "valores": [],
-  "hacen_falta_en": [],
+  "hacen_falta_en": [
+   "ACT:G10-FIS-U7-7.5/obj-2"
+  ],
   "datos_que_faltan": [],
   "fuente_esperada": "tabla de referencia citable en data/fuentes/ (pendiente)"
  },

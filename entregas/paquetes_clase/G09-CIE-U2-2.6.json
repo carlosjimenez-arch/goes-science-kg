@@ -319,6 +319,22 @@
    "senales": "Dice que de 20 °C a 40 °C la temperatura se duplica; divide 57/27 para predecir la presión; trata 0 °C como cero absoluto.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:fisica/temperatura-medicion-escalas/2",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "descripcion": "Convierte una diferencia de temperatura como si fuera una temperatura: al pasar un aumento de °C a °F le suma 32, o al pasarlo de °C a K le suma 273. No distingue entre convertir una lectura del termómetro y convertir un cambio de temperatura.",
+   "senales": "Dice que un aumento de 10 °C equivale a 50 °F o a 283 K; en ΔL = α L₀ ΔT usa ΔT en kelvin sumando 273 a la diferencia y obtiene alargamientos enormes.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/temperatura-medicion-escalas/3",
+   "concepto": "CON:fisica/temperatura-medicion-escalas",
+   "descripcion": "Cree que las escalas Celsius y Fahrenheit son proporcionales, como si tuvieran el mismo cero: convierte con una multiplicación sola (°F = 1.8 · °C o °F = 2 · °C) o suma 32 antes de multiplicar. No reconoce que la relación es lineal pero con ceros distintos, fijados en puntos diferentes.",
+   "senales": "Convierte 25 °C en 45 °F o 50 °F; calcula (25 + 32) · 1.8; dice que 0 °C y 0 °F son la misma temperatura.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [

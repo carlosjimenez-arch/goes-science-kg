@@ -467,6 +467,54 @@
    "senales": "Predice franjas más juntas al estrechar la rendija o al usar luz roja en lugar de verde; usa Δy = λL/d con λ en el denominador; explica el cambio del patrón con la «fuerza» o la energía de la luz.",
    "estado": "revisado_panel",
    "fuente": null
+  },
+  {
+   "id": "DIF:fisica/ondas-electromagneticas-espectro/1",
+   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+   "descripcion": "Cree que las ondas de radio, de wifi o de telefonía son ondas de sonido, o que como el sonido necesitan aire u otro medio para viajar, sin reconocer que son ondas electromagnéticas, como la luz, que viajan también en el vacío.",
+   "senales": "Dice que la radio «manda el sonido por el aire»; afirma que en el espacio no puede haber ondas de radio; confunde la frecuencia de la emisora (en megahertz) con el tono de la música.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/ondas-electromagneticas-espectro/2",
+   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+   "descripcion": "Cree que en el vacío las ondas electromagnéticas viajan a distinta rapidez según su región del espectro (que los rayos X o la ultravioleta son más rápidos que las ondas de radio), en lugar de reconocer que todas viajan a c y que difieren en frecuencia y longitud de onda.",
+   "senales": "Explica que los rayos X atraviesan el cuerpo porque son más rápidos; al usar c = λf cambia c según la onda; dice que la luz azul llega antes que la roja desde el sol.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/ondas-electromagneticas-espectro/3",
+   "concepto": "CON:fisica/ondas-electromagneticas-espectro",
+   "descripcion": "Cree que toda «radiación» es igual de dañina y que las ondas de radio, wifi o microondas dañan el ADN como los rayos X. No distingue la radiación de alta frecuencia (rayos X, gamma y la ultravioleta), cuyos fotones tienen energía para ionizar átomos o romper enlaces del ADN, de las ondas de radio, wifi y microondas: sus fotones tienen al menos cientos de miles de veces menos energía y su único efecto comprobado a alta intensidad es el calentamiento.",
+   "senales": "Teme que el celular o la antena cercana causen cáncer como una radiografía; usa «radiación» como sinónimo de «radiactividad»; no considera la frecuencia ni la densidad de potencia al juzgar el riesgo.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/superposicion-interferencia/1",
+   "concepto": "CON:fisica/superposicion-interferencia",
+   "descripcion": "Creer que, cuando dos pulsos o dos ondas se encuentran, chocan y rebotan, o que se destruyen para siempre si se cancelan, en lugar de pasar uno a través del otro y seguir con su forma original.",
+   "senales": "Dibuja los pulsos regresando después del cruce o desaparecidos tras anularse; dice que la cancelación «elimina» las ondas y su energía.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/superposicion-interferencia/2",
+   "concepto": "CON:fisica/superposicion-interferencia",
+   "descripcion": "Pensar que dos parlantes conectados a la misma señal (misma frecuencia y fase) siempre se refuerzan y suenan más fuerte en todas partes, sin considerar que el resultado en cada punto depende de la diferencia de camino medida en longitudes de onda.",
+   "senales": "Predice el doble de volumen en cualquier lugar frente a dos parlantes; no espera puntos donde el sonido se debilite.",
+   "estado": "revisado_panel",
+   "fuente": null
+  },
+  {
+   "id": "DIF:fisica/superposicion-interferencia/3",
+   "concepto": "CON:fisica/superposicion-interferencia",
+   "descripcion": "Creer que una onda se abre más al pasar por una abertura más ancha, o que la difracción depende solo del tamaño de la abertura y no de su relación con la longitud de onda.",
+   "senales": "Dice que por una puerta abierta de par en par el sonido se dispersa más que por una entreabierta; no explica por qué el sonido rodea una puerta y la luz no.",
+   "estado": "revisado_panel",
+   "fuente": null
   }
  ],
  "actividades": [
@@ -675,6 +723,421 @@
     },
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
    }
+  },
+  {
+   "id": "ACT:G11-FIS-U12-12.4/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U12-12.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U12-12.4",
+    "CON:fisica/ondas-electromagneticas-espectro"
+   ],
+   "habilidad": "explicar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "La luz ultravioleta del sol puede dañar el ADN de las células de la piel. Las microondas de un router wifi, que también son ondas electromagnéticas, no pueden hacerlo. La ultravioleta tiene una frecuencia cientos de miles de veces mayor. ¿Por qué esa diferencia de frecuencia explica la diferencia de efectos?",
+   "opciones": {
+    "A": "Porque a mayor frecuencia la onda viaja más rápido, y la ultravioleta choca con más fuerza.",
+    "B": "Porque a mayor frecuencia la onda calienta más, y el ADN se daña con ese calor extra.",
+    "C": "Porque a mayor frecuencia la onda es siempre más intensa, y la ultravioleta lleva más potencia.",
+    "D": "Porque a mayor frecuencia cada fotón tiene más energía, y la ultravioleta puede romper enlaces."
+   },
+   "correcta": "D",
+   "distractores": {
+    "A": "DIF:fisica/ondas-electromagneticas-espectro/2"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "La energía de cada fotón es proporcional a la frecuencia (E = hf). Un fotón ultravioleta tiene energía suficiente para romper enlaces químicos, como los del ADN; uno de microondas, con cientos de miles de veces menos energía, no la tiene, por intensa que sea la onda. En el vacío todas las ondas electromagnéticas viajan a la misma rapidez, y el calentamiento no es lo que daña el ADN en este caso.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U12-12.4"
+   },
+   "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "corregir",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2,
+     3
+    ],
+    "justificaciones": {
+     "experto-fisica": "El psicopedagogo solo unificó el género («la ultravioleta») en las opciones. Clave D intacta (E = hf), distractor A mapeado a espectro/2, B y C siguen siendo ideas previas reales. La razón de frecuencias, unos 4 × 10⁵, cuadra con «cientos de miles»."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "valores_anteriores": {
+     "opciones": {
+      "A": "Porque a mayor frecuencia la onda viaja más rápido, y la ultravioleta choca con más fuerza.",
+      "B": "Porque a mayor frecuencia la onda calienta más, y el ADN se daña con ese calor extra.",
+      "C": "Porque a mayor frecuencia la onda es siempre más intensa, y la ultravioleta lleva más potencia.",
+      "D": "Porque a mayor frecuencia cada fotón tiene más energía, y el ultravioleta puede romper enlaces."
+     }
+    }
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U12-12.4/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U12-12.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U12-12.4",
+    "CON:fisica/ondas-electromagneticas-espectro"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Una gráfica muestra el campo eléctrico de una onda electromagnética que viaja en el aire, en un instante dado: las crestas están en x = 0, x = 12.2 cm y x = 24.4 cm, con amplitud de 30 V/m. El campo magnético, perpendicular al eléctrico, tiene sus crestas en las mismas posiciones. Con c de la tabla de referencia (aproximado 3.00 × 10⁸ m/s), ¿cuál es la frecuencia de la onda, en gigahertz (GHz)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 2.46,
+   "tolerancia": 0.03,
+   "unidad": "GHz",
+   "retroalimentacion": "La distancia entre dos crestas seguidas es la longitud de onda: λ = 12.2 cm = 0.122 m. Con c = λf, f = 3.00 × 10⁸ / 0.122 ≈ 2.46 × 10⁹ Hz = 2.46 GHz, en la banda de los hornos de microondas y del wifi de 2.4 GHz. La amplitud no interviene en la frecuencia; sirve para calcular la del campo magnético, E/c = 1.0 × 10⁻⁷ T.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U12-12.4"
+   },
+   "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "La gráfica viene descrita en texto (crestas y amplitud), lo que sirve también a quien no ve bien la figura. Unidad pedida (GHz) y c rotulada aproximada. El dato de amplitud distrae a propósito y la retroalimentación explica que no interviene: buena práctica de seleccionar datos en 11.°."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U12-12.4/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U12-12.4"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U12-12.4",
+    "CON:fisica/ondas-electromagneticas-espectro"
+   ],
+   "habilidad": "razonar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un mensaje en redes sociales afirma que el router wifi del aula «emite radiación como la de los rayos X» y daña el ADN. Datos de ejemplo: el router emite unos 0.1 W en la banda de 2.4 GHz; a 1 m la densidad de potencia es de unos 0.008 W/m², y el límite de referencia para el público en esa banda es de 10 W/m² (valor de ejemplo de las guías internacionales, que la docente verifica). En 2 o 3 oraciones evalúa la afirmación: di si la radiación del wifi es ionizante y por qué, y compara la densidad de potencia a 1 m con el límite.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Es falsa. El wifi es radiación no ionizante: su frecuencia es millones de veces menor que la de los rayos X y cada fotón no tiene energía para romper enlaces del ADN. Además, a 1 m llega más de mil veces menos potencia por metro cuadrado que el límite, que se fija para evitar el calentamiento, el único efecto comprobado a alta intensidad.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U12-12.4"
+   },
+   "rubrica": {
+    "respuesta_modelo": "La afirmación es falsa. El wifi es radiación no ionizante: su frecuencia es mucho menor que la de los rayos X, así que cada fotón tiene muy poca energía y no puede romper enlaces del ADN. Además, a 1 m la densidad de potencia es 0.008 W/m², más de mil veces menor que el límite de 10 W/m², que se pone para evitar que los tejidos se calienten.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Dice que la radiación del wifi no es ionizante y lo justifica con su frecuencia mucho menor que la de los rayos X, o con la poca energía de cada fotón.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Compara 0.008 W/m² con 10 W/m² y concluye que la exposición es más de mil veces menor que el límite (acepta «unas 1 250 veces»).",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Concluye que la afirmación no está respaldada por los datos.",
+      "obligatorio": true
+     },
+     {
+      "id": "c4",
+      "descripcion": "Menciona que el efecto comprobado de las radiofrecuencias intensas es el calentamiento, o que la densidad de potencia baja con el cuadrado de la distancia.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Trata toda radiación como igual de dañina, sin distinguir ionizante de no ionizante.",
+      "ejemplo": "Sí es peligroso, porque toda radiación daña las células, solo que el wifi lo hace más despacio.",
+      "dificultad": "DIF:fisica/ondas-electromagneticas-espectro/3"
+     },
+     {
+      "descripcion": "Usa la capacidad de atravesar paredes como prueba de que es ionizante.",
+      "ejemplo": "Es como los rayos X porque atraviesa las paredes, entonces también atraviesa el cuerpo y daña el ADN.",
+      "dificultad": null
+     },
+     {
+      "descripcion": "Compara los números al revés o sin calcular la razón.",
+      "ejemplo": "0.008 es casi cero y 10 es poco, así que están parecidos y hay que tener cuidado.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U12-12.4)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Contexto auténtico (desinformación en redes) que motiva sin alarmar. El enunciado pide si es ionizante y por qué (c1) y la comparación con el límite (c2); c3 se cubre con «evalúa la afirmación». El límite se presenta como valor de ejemplo que verifica la docente. Enunciado de 108 palabras, aceptable porque los datos son necesarios."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U18-18.1/obj-1",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U18-18.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "habilidad": "razonar",
+   "formato": "opcion_multiple",
+   "grados": [
+    11
+   ],
+   "enunciado": "En un simulador de interferencia, un grupo observa en la pantalla las franjas que forma una luz roja de 650 nm al pasar por una doble rendija. Sin mover la rendija ni la pantalla, cambia la luz por una verde de 532 nm. ¿Qué le pasa a la separación entre franjas brillantes vecinas?",
+   "opciones": {
+    "A": "Las franjas quedan más juntas, porque la separación es proporcional a la longitud de onda y la del verde es menor.",
+    "B": "Las franjas quedan más separadas, porque la luz verde tiene mayor frecuencia y cada fotón lleva más energía.",
+    "C": "Las franjas quedan igual de separadas, porque la separación depende solo de las rendijas y de la distancia a la pantalla.",
+    "D": "Las franjas oscuras desaparecen, porque la luz verde se ve más brillante y llena las sombras que dejan las rendijas."
+   },
+   "correcta": "A",
+   "distractores": {
+    "B": "DIF:fisica/interferencia-luz/3",
+    "C": "DIF:fisica/interferencia-luz/3",
+    "D": "DIF:fisica/interferencia-luz/1"
+   },
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "En ángulos pequeños la separación es Δy = λL/d: es proporcional a la longitud de onda. Con L y d fijos, pasar de 650 nm a 532 nm junta las franjas en un 18 %. La energía de cada fotón no interviene, y las franjas oscuras no son sombras: son lugares donde las ondas de las dos rendijas llegan desfasadas media longitud de onda y se anulan, con cualquier color.",
+   "duracion_min": 6,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U18-18.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U18-18.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Opciones parejas (18–21 palabras), sin pistas; los distractores recogen la idea de energía del fotón, de independencia de λ y de sombra. Una sola variable cambia en la situación. Se deja la clave en A porque los demás ítems del paquete se reordenan."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U18-18.1/obj-2",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U18-18.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "habilidad": "interpretar_datos",
+   "formato": "numerica",
+   "grados": [
+    11
+   ],
+   "enunciado": "Un láser ilumina una doble rendija con separación d = 0.25 mm, y el patrón se forma en una pared a L = 2.50 m. Un grupo mide 2.60 cm desde el centro de la franja brillante central hasta el centro de la cuarta franja brillante de un lado (datos de un grupo de ejemplo). Con la aproximación de ángulos pequeños, ¿cuál es la longitud de onda del láser, en nanómetros (nm)? Escribe solo el número.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": 650,
+   "tolerancia": 15,
+   "unidad": "nm",
+   "retroalimentacion": "Entre la franja central y la cuarta hay cuatro separaciones: Δy = 2.60 cm / 4 = 0.65 cm. Despejando de Δy = λL/d: λ = Δy·d/L = (0.0065 m)(0.00025 m)/(2.50 m) = 6.5 × 10⁻⁷ m = 650 nm, la de un láser rojo. Medir varias franjas y dividir reduce la incertidumbre relativa de la medición.",
+   "duracion_min": 7,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U18-18.1"
+   },
+   "origen": "redactor-actividades (G11-FIS-U18-18.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Dice desde dónde se mide (centro de la franja central a la cuarta), la unidad y que son datos de ejemplo. La retroalimentación muestra el conteo de separaciones, el error típico, y la ventaja de medir varias franjas."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
+  },
+  {
+   "id": "ACT:G11-FIS-U18-18.1/obj-abierta",
+   "tipo": "actividad",
+   "rol": "objetivo",
+   "objetivos": [
+    "TEMA:G11-FIS-U18-18.1"
+   ],
+   "evalua": [
+    "TEMA:G11-FIS-U18-18.1",
+    "CON:fisica/interferencia-luz"
+   ],
+   "habilidad": "explicar",
+   "formato": "abierta",
+   "grados": [
+    11
+   ],
+   "enunciado": "Al iluminar un cabello con un láser aparece en la pared una fila de manchas brillantes separadas por zonas oscuras, que ocupa varios centímetros. Mateo dice que las zonas oscuras son la sombra del cabello. En 2 o 3 oraciones explica por qué aparecen las zonas oscuras, diciendo qué les pasa a las ondas de luz que llegan ahí, y predice qué pasaría con la separación entre las manchas si el cabello fuera más delgado.",
+   "opciones": null,
+   "correcta": null,
+   "distractores": null,
+   "valor": null,
+   "tolerancia": null,
+   "unidad": null,
+   "retroalimentacion": "Las zonas oscuras son mínimos de difracción: a esos puntos llegan ondas que rodearon el cabello por distintos caminos y llegan desfasadas, de modo que se anulan. La sombra de un cabello de unos 0.07 mm sería una línea finísima, no una fila de zonas oscuras de centímetros. La posición de los mínimos es y ≈ mλL/a: con un cabello más delgado (a menor), las manchas se separan más.",
+   "duracion_min": 5,
+   "estado": "revisado_panel",
+   "fuente": {
+    "tipo": "malla",
+    "ref": "TEMA:G11-FIS-U18-18.1"
+   },
+   "rubrica": {
+    "respuesta_modelo": "Las zonas oscuras no son la sombra: ahí llegan ondas de luz que pasaron por los dos lados del cabello con distinta distancia recorrida, llegan desfasadas media longitud de onda y se anulan. Si el cabello fuera más delgado, las manchas se separarían más, porque la separación es inversamente proporcional al grosor del obstáculo.",
+    "criterios": [
+     {
+      "id": "c1",
+      "descripcion": "Explica que en las zonas oscuras llegan ondas desfasadas (diferencia de camino de media longitud de onda o fases opuestas) que se anulan: interferencia destructiva.",
+      "obligatorio": true
+     },
+     {
+      "id": "c2",
+      "descripcion": "Predice que con un cabello más delgado las manchas quedan más separadas.",
+      "obligatorio": true
+     },
+     {
+      "id": "c3",
+      "descripcion": "Justifica la predicción con la relación inversa entre la separación y el grosor (y ≈ mλL/a) o con que la difracción crece al acercarse el grosor a la longitud de onda.",
+      "obligatorio": false
+     },
+     {
+      "id": "c4",
+      "descripcion": "Rechaza la idea de sombra con un argumento: la sombra sería una sola línea muy fina, o la mancha central es brillante.",
+      "obligatorio": false
+     }
+    ],
+    "errores": [
+     {
+      "descripcion": "Acepta la idea de sombra o de lugares a los que no llega la luz.",
+      "ejemplo": "Las zonas oscuras son donde el cabello tapa la luz y no la deja pasar.",
+      "dificultad": "DIF:fisica/interferencia-luz/1"
+     },
+     {
+      "descripcion": "Predice el cambio al revés, como si el patrón fuera una sombra que se achica.",
+      "ejemplo": "Si el cabello es más delgado, las manchas quedan más juntas porque tapa menos.",
+      "dificultad": "DIF:fisica/interferencia-luz/3"
+     },
+     {
+      "descripcion": "Nombra la interferencia sin decir qué pasa con las ondas en las zonas oscuras.",
+      "ejemplo": "Es por interferencia de la luz y por eso se ven manchas.",
+      "dificultad": null
+     }
+    ]
+   },
+   "origen": "redactor-actividades (G11-FIS-U18-18.1)",
+   "version": "pedagogia-v1",
+   "revisado_por": "",
+   "revision_panel": {
+    "fecha": "2026-10-14",
+    "version": "panel-v1",
+    "decision": "aprobar",
+    "roles": [
+     "experto-fisica",
+     "psicopedagogo"
+    ],
+    "rondas": [
+     1,
+     2
+    ],
+    "justificaciones": {
+     "psicopedagogo": "Pide explícitamente lo de los dos criterios obligatorios (qué les pasa a las ondas y la predicción). Mateo plantea una idea previa sin ridiculizarlo; en el paquete se equivocan personajes de ambos géneros o nadie. 75 palabras."
+    },
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+   }
   }
  ],
  "microtemas": [],
@@ -766,7 +1229,9 @@
  ],
  "datos_de_referencia": {
   "valores": [],
-  "hacen_falta_en": [],
+  "hacen_falta_en": [
+   "ACT:G11-FIS-U12-12.4/obj-2"
+  ],
   "datos_que_faltan": [],
   "fuente_esperada": "tabla de referencia citable en data/fuentes/ (pendiente)"
  },

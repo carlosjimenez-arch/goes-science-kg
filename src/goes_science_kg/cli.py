@@ -799,11 +799,12 @@ def bucle_anclar(tipos: str = typer.Option(None, help="separados por coma")) -> 
 
 @bucle_app.command("impugnar")
 def bucle_impugnar(vuelta: int = typer.Option(...), tipos: str = typer.Option(None, help="separados por coma"),
-                   serie: str = typer.Option("", help="corrida aparte sobre expedientes nuevos (p. ej. inc9)")) -> None:
+                   serie: str = typer.Option("", help="corrida aparte sobre expedientes nuevos (p. ej. inc9)"),
+                   prefijo: str = typer.Option("", help="solo ids con este inicio (p. ej. RFZ:)")) -> None:
     """Lotes del refutador (revisor adversarial) → data/interim/panel/bucle/lotes/."""
     from goes_science_kg import bucle
 
-    for p in bucle.impugnar(vuelta, _tipos_opcion(tipos), serie):
+    for p in bucle.impugnar(vuelta, _tipos_opcion(tipos), serie, prefijo):
         typer.echo(f"→ {p}")
 
 

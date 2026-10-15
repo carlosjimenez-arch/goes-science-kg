@@ -95,6 +95,9 @@
 - **ACT:G09-CIE-U1-1.3/obj-1** (objetivo, explicar, opcion_multiple): Marta se pesa tres veces seguidas en la báscula de la unidad de salud y obtiene 52.3 kg, 52.5 kg y 52.4 kg. ¿Cuál es la mejor explicación de que los valores no coincidan?
 - **ACT:G09-CIE-U1-1.3/obj-2** (objetivo, interpretar_datos, opcion_multiple): Datos de un grupo de ejemplo. Midieron cinco veces el empuje sobre una botella con un dinamómetro que marca de 0.1 en 0.1 N y obtuvieron 2.4 N, 2.5 N, 2.6 N, 2.6 N y 2.6 N. La calculadora da un promedio de 2.54 N. ¿Cómo 
 - **ACT:G09-CIE-U1-1.3/obj-abierta** (objetivo, razonar, abierta): Kevin escribió en su informe: «El empuje sobre la botella fue 2.5371 N». Midió una sola vez, con un dinamómetro que marca de 0.1 en 0.1 N, y copió el número de la calculadora. En 2 o 3 oraciones: (1) explica qué informac
+- **ACT:G10-QUI-U1-1.8/obj-1** (objetivo, explicar, opcion_multiple): Una balanza digital marca 0.3 g cuando no tiene nada encima, y nadie la puso en cero. Daniela pesa cinco veces la misma muestra y obtiene valores que casi coinciden entre sí. ¿Qué se puede decir de su resultado?
+- **ACT:G10-QUI-U1-1.8/obj-2** (objetivo, interpretar_datos, numerica): Datos de un grupo de ejemplo: llenaron cinco veces un vaso de precipitados hasta la marca de 25 mL y pesaron cada volumen de agua: 26.0 g, 25.6 g, 26.4 g, 25.8 g y 26.2 g. Usa 25.0 g como masa de referencia aproximada de
+- **ACT:G10-QUI-U1-1.8/obj-abierta** (objetivo, razonar, abierta): Datos de ejemplo: un equipo midió cinco veces 25 mL de agua con dos instrumentos y pesó cada volumen; la masa de referencia aproximada es 25.0 g. Probeta: promedio 24.4 g, desviación estándar 0.1 g. Vaso de precipitados:
 
 ## Datos de referencia
 

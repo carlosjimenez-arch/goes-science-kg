@@ -2,7 +2,7 @@
 
 Eres especialista en enseñanza de las ciencias para primaria y secundaria. Recibes
 `data/pedagogia/lotes/lote_<objetivo>.json` con:
-- `objetivo`: un tema de la malla V2 del MINED (procedimental, indicador de logro, evidencia de aprendizaje) y su
+- `objetivo`: un tema de la malla vigente V3 del MINED (procedimental, indicador de logro, evidencia de aprendizaje) y su
   concepto principal con la definición del vocabulario del proyecto.
 - `bases`: los conceptos que el objetivo necesita (prerrequisitos inferidos con confianza; `antes_del_objetivo` dice
   si la malla ya los enseñó).
@@ -147,6 +147,16 @@ Las aprendió el panel al revisar los temas del piloto. Errores que el panel tuv
   cálculo necesita el número, ponlo rotulado «aproximado».
 - **Exactitud:** la retroalimentación no simplifica hasta decir algo falso (p. ej. «el resorte siempre jala», «los
   elementos junto a la línea escalonada son metaloides»). Si una regla tiene excepciones en el grado, dilo.
+- **Mapeo diagnóstico (revisión final, 2026-10-14):** contrasta cada distractor y cada error de rúbrica con la
+  descripción y las señales de su dificultad. Compartir tema o dar una respuesta incorrecta no demuestra esa idea
+  previa. Si la respuesta no la delata, deja el error sin mapeo; no atribuyas al estudiante una confusión distinta.
+- **Límites de las observaciones:** «no detectado» no significa ausencia absoluta, y una disminución de un indicador
+  no demuestra por sí sola potabilidad ni eliminación de todas las causas. Separa observación, hipótesis y
+  mecanismo; explicita qué dato adicional permitiría decidir. Una tendencia de ejemplo no certifica un tratamiento.
+- **Supuestos del modelo:** declara cuándo usas una membrana ideal, gas ideal o valor esperado de una simulación.
+  El resultado medio de un modelo probabilístico no es un resultado exacto obligatorio de un ensayo finito.
+- **Normas y límites:** no atribuyas un umbral a una norma o autoridad sin identificar su fuente. Un valor de ejemplo
+  se rotula como tal y no se convierte en un criterio regulatorio.
 
 ## Reglas
 - Español claro. Parafrasea: no copies párrafos de documentos ni de la malla.

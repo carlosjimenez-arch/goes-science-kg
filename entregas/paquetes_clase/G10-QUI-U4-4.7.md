@@ -131,4 +131,4 @@
   - energía de ionización — en «Una gráfica de la tabla de referencia muestra la primera energía de ionización contra el n» (ACT:quimica/propiedades-periodicas/practica-G10)
   - electronegatividades de Pauling — en «Δχ en papel y un LED en el vaso: ¿qué sustancias forman iones?» (EXP:G10-QUI-U4-4.7/1)
 
-*Sin revisión del panel todavía: 4 elementos.*
+*Sin revisión del panel todavía: 1 elementos.*
