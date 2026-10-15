@@ -167,6 +167,19 @@ V3 quitó.
 - [ ] 15.5 Redacción (`redactor-refuerzos`) y revisión del panel y del bucle
 - [ ] 15.6 Matrices reforzadas y resumen por grado
 
+**Tanda de Física y Química de 9.°–11.°, corte 2026-10-15:**
+- [x] Panel completo sobre las 24 redacciones disponibles, con continuación identificada como Codex.
+- [x] Impugnación de las 24: tres errores corregidos mediante réplica y sostenidos en la segunda vuelta.
+- [x] 23 redacciones sólidas: 18 notas propuestas, una fila nueva y cuatro descartes de adiciones.
+- [x] Una nota frágil retenida por falta de evidencia del montaje de esterificación. Registro en
+  `entregas/mallas_v3_reforzadas/REVISION_HUMANA.md`; no se incorpora a las instrucciones de clase.
+- [x] Snapshot actualizado con texto revisado, fuentes, presupuesto y estado de cada redacción.
+
+Este cierre corresponde solo a esas 24 redacciones. Las fases globales 15.3–15.6 siguen abiertas, incluida la
+generación de matrices Excel anotadas. La fila de espectros de masas/infrarrojo propone una sesión adicional de
+55 minutos, sin ahorro compensatorio demostrado: su adopción exige validar el presupuesto. Las notas tampoco
+presuponen coste didáctico nulo.
+
 ## Fase 6 · Revisión con el MINED y publicación
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).

@@ -84,4 +84,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_hallazgo:HAL:H911-especializacion (revisado_panel): Pasan a profundización o trato cualitativo: números cuánticos y orbitales (10.° 3.6–3.9; basta el modelo de capas), ley de Hess (11.1), carga formal y resonancia (5.1–5.2) y, en 11.°, hibridación (2.2), mecanismos (9.1), Kps (U5) y Henderson-Hasselbalch (4.4). Siguen en el núcleo: notación s, p, d (bloques, 4.2), estructuras de Lewis, entalpía, K, Ka, potenciales de celda y síntesis.
+- REF:panel_hallazgo:HAL:H911-especializacion (revisado_panel, solido): Pasan a profundización o trato cualitativo: números cuánticos y orbitales (10.° 3.6–3.9; basta el modelo de capas), ley de Hess (11.1), carga formal y resonancia (5.1–5.2) y, en 11.°, hibridación (2.2), mecanismos (9.1), Kps (U5) y Henderson-Hasselbalch (4.4). Siguen en el núcleo: notación s, p, d (bloques, 4.2), estructuras de Lewis, entalpía, K, Ka, potenciales de celda y síntesis.

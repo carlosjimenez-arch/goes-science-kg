@@ -181,8 +181,15 @@ def paquete(tema: str) -> dict:
     refuerzos = []
     p_ref = ruta("data/interim/refuerzo_v3/refuerzos.json")
     if p_ref.exists():
-        refuerzos = [{k: r.get(k) for k in ("id", "decision", "forma", "refuerzo", "fila", "estado", "origen")}
-                     for r in json.loads(p_ref.read_text(encoding="utf-8")) if r.get("tema_ancla") == i]
+        for r in json.loads(p_ref.read_text(encoding="utf-8")):
+            if r.get("tema_ancla") != i:
+                continue
+            s = (r.get("revision_panel") or {}).get("solidez", "sin_bucle")
+            refuerzos.append({**{k: r.get(k) for k in ("id", "decision", "forma", "refuerzo", "fila", "estado",
+                                                       "origen", "motivo", "confianza", "evidencia")},
+                              "solidez": s,
+                              "entregable": r.get("decision") == "inyectar" and r.get("estado") == "revisado_panel"
+                              and r.get("confianza") in ("alta", "media") and s in ("solido", "respaldado")})
     datos = _datos_referencia(todos)
     faltan_datos = [e["id"] for e in [*actividades, *experimentos, *microtemas] if _hace_falta_un_dato(e)]
     texto_tema = f"{t.contenido} {t.subcontenido} {t.procedimental} {t.indicador}"
@@ -275,7 +282,16 @@ def _markdown(p: dict) -> str:
         *[f"  - {x['dato']} — en «{x['contexto']}» ({x['elemento']})" for x in d.get("datos_que_faltan", [])]])
     if p["refuerzo_de_la_malla"]:
         md += ["", "## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)", ""]
-        md += [f"- {r['id']} ({r['estado']}): {r['refuerzo']}" for r in p["refuerzo_de_la_malla"]]
+        for r in p["refuerzo_de_la_malla"]:
+            if r.get("entregable"):
+                presupuesto = " Fila nueva propuesta: +1 sesión de 55 minutos, con presupuesto por validar." \
+                    if r.get("forma") == "fila_nueva" else ""
+                md.append(f"- {r['id']} ({r['estado']}, {r['solidez']}):{presupuesto} {r['refuerzo']}")
+            elif r.get("decision") == "descartar":
+                md.append(f"- {r['id']}: propuesta descartada. {r.get('motivo') or ''}")
+            else:
+                md.append(f"- {r['id']}: **pendiente de evidencia o revisión** ({r.get('solidez', 'sin_bucle')}); "
+                          "no incorporar la nota a la clase todavía.")
     if p["sin_revision_del_panel"]:
         md += ["", f"*Sin revisión del panel todavía: {len(p['sin_revision_del_panel'])} elementos.*"]
     return "\n".join(md) + "\n"

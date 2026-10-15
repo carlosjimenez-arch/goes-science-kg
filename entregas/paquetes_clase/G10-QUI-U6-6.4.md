@@ -101,4 +101,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales (propuesta_pendiente): La competencia de la unidad aún nombra gases reales y ley de Graham, quitados por la V3 y electivos fuera. Basta atenderla en 6.4 con el modelo cinético, de forma cualitativa: los gases ligeros se difunden más rápido y los reales se apartan del ideal a alta presión y baja temperatura, sin factor Z ni van der Waals.
+- REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales (revisado_panel, solido): Conservar cálculos de Dalton de 6.4. Después, contrastar difusión y efusión mediante esquemas. Resolver una comparación guiada de efusión a igual temperatura con r₁/r₂=√(M₂/M₁) antes de practicar. Explicar, con un dibujo de partículas, las desviaciones del gas ideal a alta presión y baja temperatura por volumen molecular e interacciones. No añadir problemas de Z ni van der Waals.

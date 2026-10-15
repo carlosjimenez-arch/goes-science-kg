@@ -151,4 +151,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_hallazgo:HAL:H911-secuencias (revisado_panel): Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5).
+- REF:panel_hallazgo:HAL:H911-secuencias (revisado_panel, solido): Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5).

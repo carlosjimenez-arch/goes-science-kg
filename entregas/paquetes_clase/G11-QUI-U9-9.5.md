@@ -171,4 +171,4 @@ b) Escribe o describe el balance formal de co
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_propuesta:PRO:quimica:G10-G11#12 (revisado_panel): En Indagar, con el video y datos dados, calcular el rendimiento teórico y porcentual (10.° 10.3) y justificar el exceso de reactivo y el ácido sulfúrico como catalizador (rapidez) y deshidratante (rendimiento). En Reforzar, diseñar en papel una ruta hacia un éster aromatizante: oxidar un alcohol primario hasta ácido (9.4), esterificar y purificar; valorarla con la economía atómica (7.4).
+- REF:panel_propuesta:PRO:quimica:G10-G11#12: **pendiente de evidencia o revisión** (fragil); no incorporar la nota a la clase todavía.

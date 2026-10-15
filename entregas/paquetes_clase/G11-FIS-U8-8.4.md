@@ -130,4 +130,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:fisica/potencial-electrico (propuesta_pendiente): Acotar sin quitar la clase (el potencial de campo es electivo fuera; en el núcleo, solo Estonia: voltaje y ΔV = E·d). Priorizar ΔV, trabajo y electronvolts en campo uniforme y las equipotenciales medidas. Analogía gravitatoria, cualitativa. Potencial total solo con dos cargas puntuales, destacando que se suma como escalar, no como vector (2.2).
+- REF:contraste:9_11:CON:fisica/potencial-electrico (revisado_panel, solido): Trabajar un ejemplo guiado con dos cargas antes de practicar y generalizar la suma escalar. Explicitar la referencia y distinguir potencial y energía: ΔU=qΔV; en campo uniforme, ΔV=−E⃗·Δr⃗. Registrar signos al relacionar trabajo y electronvolts. Comparar semejanzas y diferencias con gravedad; trazar equipotenciales medidas y justificar perpendicularidad del campo y trabajo nulo sobre ellas.

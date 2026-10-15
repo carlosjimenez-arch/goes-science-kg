@@ -522,7 +522,8 @@
     "justificaciones": {
      "psicopedagogo": "Situación concreta y breve; opciones de 19–21 palabras con estructura paralela (corrientes + razón), sin pistas. Los distractores recogen ideas previas reales. LED y resistor a 2 V: tensión segura de pilas. Retroalimentación de 61 palabras, clara."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -573,7 +574,8 @@
     "justificaciones": {
      "psicopedagogo": "Datos de ejemplo declarados, unidad y formato de respuesta explicados con un ejemplo, lo que evita errores de notación científica ajenos al objetivo. Carga adecuada para 11.° en 8 minutos. No requiere multímetro: los datos vienen dados."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -666,7 +668,8 @@
     "justificaciones": {
      "psicopedagogo": "El enunciado pide la conclusión, cálculos con dos datos y la causa en el filamento: cubre c1–c3. La respuesta modelo cabe en tres oraciones. Datos de ejemplo: no exige multímetro. Personaje femenino que mide, sin error atribuido."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -735,7 +738,8 @@
       "D": "0.30 A, y sale de la fuente de 3.0 V por su borne positivo, porque alimenta sola su propia rama."
      },
      "retroalimentacion": "Con V como el potencial del nudo de arriba respecto al de abajo, la regla de los nudos con la de las mallas da (6.0 − V)/10 + (3.0 − V)/10 = V/20, así que V = 3.6 V. En la rama derecha, (3.0 − 3.6)/10 = −0.06 A: el signo menos solo dice que la corriente va al revés de lo supuesto y entra a la fuente de 3.0 V por su borne positivo. Comprobación: 0.24 A − 0.06 A = 0.18 A por el resistor central."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -786,7 +790,8 @@
     "justificaciones": {
      "psicopedagogo": "Datos de ejemplo de una pila usada, unidad (Ω) explícita y andamio para la pendiente (usar el primer y el último punto). Personaje femenino que mide con éxito. La retroalimentación conecta la gráfica con el modelo V = ε − Ir y da sentido al corte con el eje."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -883,7 +888,8 @@
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
     "valores_anteriores": {
      "enunciado": "Al dar arranque a un carro, las luces encendidas se atenúan un momento. Supón una batería con fem de 12.6 V y resistencia interna de 0.020 Ω, y un motor de arranque que toma 150 A (valores aproximados de un ejemplo). En 2 o 3 oraciones: estima el voltaje entre los bornes durante el arranque; explica por qué baja aunque la fem no cambie y por qué eso atenúa las luces; y estima cuánto sería con una batería vieja de 0.050 Ω de resistencia interna, suponiendo la misma corriente."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -991,7 +997,8 @@
       "8. (20 min) Grafiquen R contra L, calculen la pendiente y la resistividad ρ = pendiente × A, y compárenla con el valor del nicromo de la tabla de referencia. Respondan en grupo las preguntas de análisis 2, 3 y 4."
      ],
      "variantes": "Sin nicromo: usen una mina de grafito de 0.7 mm de portaminas, de unos 6 cm, con caimanes en distintos puntos; su resistencia es de unos pocos a decenas de ohmios y la mina no es grafito puro (tiene arcilla), así que su resistividad sale mayor que la del grafito de tablas, lo que da una buena discusión. Con un solo multímetro: midan V e I por turnos sin desarmar el resto del circuito. Sin laboratorio ni internet: trabajen con estos datos de un grupo de ejemplo. Resistor: 1.49 V y 4.5 mA; 2.97 V y 9.0 mA; 4.45 V y 13.4 mA; 5.90 V y 17.9 mA. LED: 1.20 V y 0.00 mA; 1.71 V y 0.13 mA; 1.80 V y 1.2 mA; 1.85 V y 2.4 mA; 1.90 V y 4.9 mA; 1.95 V y 9.7 mA. Nicromo de 0.30 mm: 3.1, 6.2, 9.3, 12.4 y 15.5 Ω a 0.20, 0.40, 0.60, 0.80 y 1.00 m, ya restados los cables. Con internet: la simulación gratuita «Kit de construcción de circuitos: CD» de PhET tiene pilas, resistores, voltímetro y amperímetro: sirve para practicar las conexiones y armar la tabla V–I de un resistor; no incluye LED ni dibuja la gráfica, así que la curva del LED se hace con los datos de ejemplo."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -1017,7 +1024,33 @@
    "refuerzo": "La microhabilidad E1 pide «recordar» V = IR, pero ningún grado anterior la nombra, aunque 6.° mide voltaje y corriente y predice corrientes con la resistencia equivalente (3.5). Abrir con esas mediciones y establecer aquí la ley de Ohm: en el resistor, R (pendiente de V frente a I) es constante; en el LED, no. Opcional: nombrarla cualitativamente en 6.°.",
    "fila": null,
    "estado": "revisado_panel",
-   "origen": "error_malla"
+   "origen": "error_malla",
+   "motivo": null,
+   "confianza": "alta",
+   "evidencia": [
+    {
+     "fuente": "Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 11.°, fila 14 (TEMA:G11-FIS-U3-3.1-v3)",
+     "cita_literal": "Recuerda la relación V = IR"
+    },
+    {
+     "fuente": "TEMA:G06-CIE-U3-3.1",
+     "cita_literal": "Mide voltaje y corriente eléctrica empleando un multímetro"
+    },
+    {
+     "fuente": "TEMA:G06-CIE-U3-3.5",
+     "cita_literal": "Calcula la resistencia equivalente y continuidad de la corriente eléctrica en un circuito en serie"
+    },
+    {
+     "fuente": "TEMA:G06-CIE-U3-3.5",
+     "cita_literal": "predice la corriente a partir del cálculo"
+    },
+    {
+     "fuente": "TEMA:G11-FIS-U3-3.1-v3",
+     "cita_literal": "Compara las curvas del resistor y del LED para concluir cuál cumple la ley de Ohm en todo el rango medido"
+    }
+   ],
+   "solidez": "solido",
+   "entregable": true
   }
  ],
  "completitud": {

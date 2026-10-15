@@ -408,6 +408,29 @@ def test_el_paquete_de_clase_trae_texto_crudo_y_dice_lo_que_falta():
     assert paquete("TEMA:G09-CIE-U3-3.6")["tema"]["id"] == "G09-CIE-U3-3.3"   # absorbido por la V3
 
 
+def test_paquete_no_presenta_una_nota_fragil_como_instruccion_de_clase(tmp_path, monkeypatch):
+    import importlib
+    import json
+
+    modulo = importlib.import_module("goes_science_kg.aprendizaje.paquete")
+    base = {"tema_ancla": "G10-QUI-U9-9.2", "decision": "inyectar", "forma": "nota_en_tema",
+            "estado": "revisado_panel", "confianza": "alta"}
+    notas = [{**base, "id": "REF:apta", "refuerzo": "Identificar los agentes en ejemplos guiados.",
+              "revision_panel": {"solidez": "solido"}},
+             {**base, "id": "REF:fragil", "refuerzo": "Afirmación científica aún sin comprobar.",
+              "revision_panel": {"solidez": "fragil"}}]
+    archivo = tmp_path / "refuerzos.json"
+    archivo.write_text(json.dumps(notas), encoding="utf-8")
+    ruta_real = modulo.ruta
+    monkeypatch.setattr(modulo, "ruta", lambda p: archivo if str(p).endswith("/refuerzos.json") else ruta_real(p))
+    paquete = modulo.paquete("G10-QUI-U9-9.2")
+    assert [r["entregable"] for r in paquete["refuerzo_de_la_malla"]] == [True, False]
+    md = modulo._markdown(paquete)
+    assert notas[0]["refuerzo"] in md
+    assert notas[1]["refuerzo"] not in md
+    assert "REF:fragil: **pendiente de evidencia o revisión**" in md
+
+
 def test_datos_que_faltan_sin_ruido():
     """La sustancia no arrastra verbos («sea») y el plural no repite el dato."""
     from goes_science_kg.aprendizaje.paquete import _datos_que_faltan

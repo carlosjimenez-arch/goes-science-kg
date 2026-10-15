@@ -1,0 +1,488 @@
+{
+ "lote": "r3-rfz2_experto-fisica",
+ "ronda": 3,
+ "rol": "experto-fisica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-fisica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:fisica/capacitancia (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:fisica/capacitancia",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-FIS-U9-9.11",
+     "refuerzo": "Antes del montaje, comprobar V=IR. Medir C variando A, d o κ por separado. Resolver un ejemplo guiado de dos condensadores en serie/paralelo y calcular C equivalente y carga. Localizar τ al 37 % de V₀ en la descarga medida, comparar con RC y realizar el ajuste linealizado guiado. Aplicar U=½CV² con ejemplo resuelto y práctica.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 13)",
+       "cita": "11.° obligatorio: la clase 2.5 absorbió el circuito RC de la V2",
+       "cita_literal": "Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+       "cita": "Lo que la nota acota: el ajuste linealizado de la descarga",
+       "cita_literal": "linealizar y ajustar datos"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U3-3.1-v3 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 14)",
+       "cita": "La clase 3.1 recuerda V=IR; conviene verificar ese prerrequisito antes del montaje RC de 2.5, sin afirmar que 3.1 lo introduce por primera vez.",
+       "cita_literal": "Recuerda la relación V = IR"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 117",
+       "cita": "KR 물리학 (electiva) excluye capacitancia, conexiones y dieléctricos",
+       "cita_literal": "축전기의 전기 용량, 연결, 유전체는 포함하지 않는다"
+      },
+      {
+       "fuente": "KR-FIS-kr_mulli-p117-05",
+       "cita": "Aun en la electiva de KR, solo el principio de almacenamiento, cualitativo",
+       "cita_literal": "축전기에서 전기 에너지를 저장하는 원리가 각종 센서와 전기 신호 입력 장치 등 실생활 제품에서 활용됨을 설명할 수 있다"
+      },
+      {
+       "fuente": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11 (EE-FIS-ee_gym-p011-19)",
+       "cita": "El objetivo de Estonia explica almacenamiento de energía en campos; por sí solo no acredita combinaciones de condensadores ni análisis RC.",
+       "cita_literal": "selgitab elektri- ja magnetvälja energia salvestamise võimalusi"
+      },
+      {
+       "fuente": "JP-FIS-jp_35-p112-08",
+       "cita": "JP 物理 (electiva)",
+       "cita_literal": "コンデンサーの性質を理解するとともに"
+      },
+      {
+       "fuente": "SG-FIS-sg_h2_fis-p010-02",
+       "cita": "SG H2 (electiva)",
+       "cita_literal": "The consideration of charge storage in capacitors"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (V3, hoja «Física 11.°», fila 13)",
+       "cita": "La fila vigente conserva cálculo de energía almacenada, además de linealización y ajuste; la nota gradúa su enseñanza sin omitirlos.",
+       "cita_literal": "Aplica C = κε₀A/d y U = ½CV² para calcular la capacitancia y la energía almacenada"
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Capacitancia y condensadores: solo_especializacion",
+     "texto_base": "La V3 quitó la fila del circuito RC (G11-FIS-U9-9.12), pero la clase 11.° 2.5 la absorbió: capacitancia, combinaciones y constante de tiempo RC siguen en Física obligatoria. Fuera es electiva (ENG A level, JP 物理, KR 진로, SG H2) y solo EE roza el almacenamiento de energía en campos en su núcleo. La clase se mantiene; la recomendación sigue siendo acotar a lo cualitativo.",
+     "conceptos": [
+      "CON:fisica/capacitancia"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G09-CIE-U6-6.6",
+       "grado": 9,
+       "unidad": "6. Electricidad",
+       "contenido": "Dispositivos electrónicos",
+       "procedimental": "6.6. Explicación del funcionamiento de algunos componentes electrónicos.",
+       "indicador": "6.6. Explica el funcionamiento de algunos componentes electrónicos."
+      },
+      {
+       "id": "G11-FIS-U9-9.11",
+       "grado": 11,
+       "unidad": "2. Electrostática",
+       "contenido": "Condensadores",
+       "procedimental": "2.5. Construcción de un condensador de placas paralelas, cálculo de capacitancias equivalentes y medición de la carga y descarga en un circuito RC.",
+       "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-FIS-U9-9.11",
+     "grado": 11,
+     "unidad": "2. Electrostática",
+     "contenido": "Condensadores",
+     "procedimental": "2.5. Construcción de un condensador de placas paralelas, cálculo de capacitancias equivalentes y medición de la carga y descarga en un circuito RC.",
+     "indicador": "2.5. • Relaciona la capacitancia de un condensador de placas paralelas con el área, la separación y la constante dieléctrica del material entre las placas. • Calcula la capacitancia equivalente y la carga de cada condensador en combinaciones en serie y en paralelo. • Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida y la compara con el producto RC."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:fisica/capacitancia",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:fisica/capacitancia",
+     "decision": "corregir",
+     "justificacion": "La V3 absorbió RC y mantiene cálculo de carga, energía y ajuste linealizado: «sin linealizar» y energía solo cualitativa omiten tareas vigentes. Propongo graduar complejidad y apoyo, conservando indicadores y habilidades. El 37 % es una aproximación válida para descarga ideal. Verificar V=IR antes del montaje evita el problema de secuencia; 3.1 lo recuerda, no prueba su primera enseñanza.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 13)",
+       "cita": "11.° obligatorio: la clase 2.5 absorbió el circuito RC de la V2",
+       "cita_literal": "Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (V3, hoja «Física 11.°», fila 13)",
+       "cita": "La fila vigente conserva cálculo de energía almacenada, además de linealización y ajuste; la nota gradúa su enseñanza sin omitirlos.",
+       "cita_literal": "Aplica C = κε₀A/d y U = ½CV² para calcular la capacitancia y la energía almacenada"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U3-3.1-v3 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 14)",
+       "cita": "La clase 3.1 recuerda V=IR; conviene verificar ese prerrequisito antes del montaje RC de 2.5, sin afirmar que 3.1 lo introduce por primera vez.",
+       "cita_literal": "Recuerda la relación V = IR"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 117",
+       "cita": "KR 물리학 (electiva) excluye capacitancia, conexiones y dieléctricos",
+       "cita_literal": "축전기의 전기 용량, 연결, 유전체는 포함하지 않는다"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Descarga ideal: V(t)=V₀exp(−t/RC), V(τ)/V₀=e⁻¹≈0.368. En serie se conserva carga común; en paralelo, tensión común. Las diferencias internacionales permiten comparar profundidad, no retirar exigencias oficiales."
+      }
+     ],
+     "confianza": "media",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Graduar el formalismo: medir C frente a A, d y κ; calcular capacitancia equivalente y carga en pares serie/paralelo; leer τ al 37 % de V₀ y compararla con RC antes del ajuste linealizado guiado. Preparar V=IR antes del montaje. Aplicar U=½CV² en ejemplos cotidianos, conservando los indicadores.",
+      "evidencia": [
+       {
+        "fuente": "TEMA:G11-FIS-U9-9.11 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 13)",
+        "cita": "11.° obligatorio: la clase 2.5 absorbió el circuito RC de la V2",
+        "cita_literal": "Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida"
+       },
+       {
+        "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+        "cita": "Lo que la nota acota: el ajuste linealizado de la descarga",
+        "cita_literal": "linealizar y ajustar datos"
+       },
+       {
+        "fuente": "TEMA:G11-FIS-U3-3.1-v3 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 14)",
+        "cita": "La clase 3.1 recuerda V=IR; conviene verificar ese prerrequisito antes del montaje RC de 2.5, sin afirmar que 3.1 lo introduce por primera vez.",
+        "cita_literal": "Recuerda la relación V = IR"
+       },
+       {
+        "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 117",
+        "cita": "KR 물리학 (electiva) excluye capacitancia, conexiones y dieléctricos",
+        "cita_literal": "축전기의 전기 용량, 연결, 유전체는 포함하지 않는다"
+       },
+       {
+        "fuente": "KR-FIS-kr_mulli-p117-05",
+        "cita": "Aun en la electiva de KR, solo el principio de almacenamiento, cualitativo",
+        "cita_literal": "축전기에서 전기 에너지를 저장하는 원리가 각종 센서와 전기 신호 입력 장치 등 실생활 제품에서 활용됨을 설명할 수 있다"
+       },
+       {
+        "fuente": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11 (EE-FIS-ee_gym-p011-19)",
+        "cita": "El objetivo de Estonia explica almacenamiento de energía en campos; por sí solo no acredita combinaciones de condensadores ni análisis RC.",
+        "cita_literal": "selgitab elektri- ja magnetvälja energia salvestamise võimalusi"
+       },
+       {
+        "fuente": "JP-FIS-jp_35-p112-08",
+        "cita": "JP 物理 (electiva)",
+        "cita_literal": "コンデンサーの性質を理解するとともに"
+       },
+       {
+        "fuente": "SG-FIS-sg_h2_fis-p010-02",
+        "cita": "SG H2 (electiva)",
+        "cita_literal": "The consideration of charge storage in capacitors"
+       },
+       {
+        "fuente": "TEMA:G11-FIS-U9-9.11 (V3, hoja «Física 11.°», fila 13)",
+        "cita": "La fila vigente conserva cálculo de energía almacenada, además de linealización y ajuste; la nota gradúa su enseñanza sin omitirlos.",
+        "cita_literal": "Aplica C = κε₀A/d y U = ½CV² para calcular la capacitancia y la energía almacenada"
+       }
+      ]
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-15"
+    },
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:fisica/capacitancia",
+     "decision": "corregir",
+     "justificacion": "La nota conserva cálculos, medición, ajuste y energía, pero enumera muchas variables simultáneas. Organizo la enseñanza por etapas, explicito variar un factor por vez y añado ejemplo guiado antes de la práctica. No cambio fórmulas ni indicadores. El refuerzo permanece dentro del tema y cabe en 60 palabras.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U9-9.11 (V3, Física 11.º, fila 13)",
+       "cita": "La clase 2.5 relaciona geometría y capacitancia, calcula combinaciones y carga, y obtiene una constante de tiempo de una descarga medida para compararla con RC."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Separar variables, mostrar una resolución y después practicar permite atender a cada operación antes de integrar la secuencia."
+      },
+      {
+       "fuente": "specs/15_refuerzo_v3.md, sección 15.4, Presupuesto",
+       "cita": "Prioriza el refuerzo dentro del tema; una fila nueva requiere un faltante o recuperación con evidencia fuerte."
+      }
+     ],
+     "confianza": "alta",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Antes del montaje, comprobar V=IR. Medir C variando A, d o κ por separado. Resolver un ejemplo guiado de dos condensadores en serie/paralelo y calcular C equivalente y carga. Localizar τ al 37 % de V₀ en la descarga medida, comparar con RC y realizar el ajuste linealizado guiado. Aplicar U=½CV² con ejemplo resuelto y práctica."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-15"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:fisica/potencial-electrico (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:fisica/potencial-electrico",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-FIS-U8-8.4",
+     "refuerzo": "Trabajar un ejemplo guiado con dos cargas antes de practicar y generalizar la suma escalar. Explicitar la referencia y distinguir potencial y energía: ΔU=qΔV; en campo uniforme, ΔV=−E⃗·Δr⃗. Registrar signos al relacionar trabajo y electronvolts. Comparar semejanzas y diferencias con gravedad; trazar equipotenciales medidas y justificar perpendicularidad del campo y trabajo nulo sobre ellas.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 12)",
+       "cita": "Lo que la nota acota: superposición de potenciales de cargas puntuales",
+       "cita_literal": "Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (fila 12)",
+       "cita": "Lo que la nota prioriza, compartido con el núcleo de EE",
+       "cita_literal": "Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 10)",
+       "cita": "Contraste vectorial: el campo de varias cargas en la clase 2.2",
+       "cita_literal": "Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales"
+      },
+      {
+       "fuente": "EE-FIS-ee_gym-p011-17 (EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11)",
+       "cita": "Estonia exige relacionar voltaje e intensidad de campo; el objetivo no enumera superposición de potenciales de varias cargas.",
+       "cita_literal": "selgitab pinge mõistet ning rakendab pinge ja väljatugevuse seost"
+      },
+      {
+       "fuente": "SG_ALevel_H1_Physics_8867_2027.pdf p. 13",
+       "cita": "SG H1 (núcleo parcial): solo distinguir energías potenciales",
+       "cita_literal": "distinguish between gravitational potential energy, electric potential energy and elastic potential"
+      },
+      {
+       "fuente": "JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 112",
+       "cita": "JP 物理 (electiva)",
+       "cita_literal": "電界と電位との関係を静電気力による位置エネルギーと関連付けて理解すること"
+      },
+      {
+       "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 117",
+       "cita": "KR 물리학 (electiva)",
+       "cita_literal": "전하를 띤 입자들이 전기장과 전위차를 형성하여 서로 전기적으로 상호작용함을 설명"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (V3, hoja «Física 11.°», fila 12)",
+       "cita": "La fila vigente conserva analogía con semejanzas y diferencias y justificación de perpendicularidad, no solo medición de equipotenciales.",
+       "cita_literal": "Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas"
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Energía potencial y potencial eléctrico: solo_especializacion",
+     "texto_base": "La V3 quitó el potencial de varias cargas (G11-FIS-U8-8.3), pero la clase 11.° 2.4 conserva la energía potencial eléctrica, el potencial de cargas puntuales y las equipotenciales, obligatorios. «Retomado» se apoya en la energía potencial mecánica de 8.° (vecino). Fuera, el potencial de campo es electivo (AU, HK, JP, KR, ON, SG H2, TW); en el núcleo solo está EE (SG H1, parcial, solo energía potencial). Se mantiene.",
+     "conceptos": [
+      "CON:fisica/potencial-electrico"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G11-FIS-U8-8.4",
+       "grado": 11,
+       "unidad": "2. Electrostática",
+       "contenido": "Potencial eléctrico",
+       "procedimental": "2.4. Cálculo de la energía potencial eléctrica y del potencial de cargas puntuales, y medición de líneas equipotenciales en un medio conductor.",
+       "indicador": "2.4. • Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos. • Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias. • Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición. • Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas."
+      },
+      {
+       "id": "G08-CIE-U2-2.6",
+       "grado": 8,
+       "unidad": "2. Energía",
+       "contenido": "Tipos de energía mecánica",
+       "procedimental": "2.6. Cálculo de la energía total a partir de las energías cinética y potencial de objetos que se trasladan y rotan.",
+       "indicador": "2.6. Diferencia las energías cinética y potencial de la energía total de objetos que se trasladan y rotan."
+      },
+      {
+       "id": "G11-FIS-U9-9.5",
+       "grado": 11,
+       "unidad": "3. Circuitos de corriente continua",
+       "contenido": "Circuitos serie, paralelo y mixtos",
+       "procedimental": "3.2. Resolución de circuitos en serie, en paralelo y mixtos, con medición correcta de corriente y voltaje con el multímetro.",
+       "indicador": "3.2. • Determina la corriente, el voltaje y la potencia en cada resistencia de un circuito mixto de cuatro resistencias. • Calcula la resistencia equivalente, la corriente y la caída de voltaje en cada elemento de un circuito en serie y verifica sus resultados con mediciones. • Calcula la resistencia equivalente y la corriente en cada rama de un circuito en paralelo y explica por qué los aparatos del hogar se conectan de esta forma. • Conecta correctamente un amperímetro y un voltímetro en un circuito y explica cómo su resistencia interna afecta la medición."
+      },
+      {
+       "id": "G11-QUI-U6-6.5",
+       "grado": 11,
+       "unidad": "6. Electroquímica",
+       "contenido": "Electrolitos y celdas galvánicas",
+       "procedimental": "6.2. Construcción de una celda galvánica con implementos cotidianos.",
+       "indicador": "6.5. Construye una celda galvánica con implementos cotidianos."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-FIS-U8-8.4",
+     "grado": 11,
+     "unidad": "2. Electrostática",
+     "contenido": "Potencial eléctrico",
+     "procedimental": "2.4. Cálculo de la energía potencial eléctrica y del potencial de cargas puntuales, y medición de líneas equipotenciales en un medio conductor.",
+     "indicador": "2.4. • Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme y el trabajo necesario para trasladar una carga entre ellos. • Explica la energía potencial eléctrica de un sistema de cargas mediante la analogía con la energía potencial gravitatoria, señalando sus semejanzas y diferencias. • Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición. • Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:fisica/potencial-electrico",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:fisica/potencial-electrico",
+     "decision": "corregir",
+     "justificacion": "La ubicación en 11.º y el contraste escalar/vectorial son adecuados. Corrijo ΔV=E·d: exige convención de signo y dirección. «Solo dos cargas» pasa a ejemplo inicial generalizable. La nota debe conservar la comparación de semejanzas y diferencias con gravedad y la justificación de perpendicularidad del campo, requeridas por 2.4. La evidencia comparada no sustituye esos indicadores.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 12)",
+       "cita": "Lo que la nota acota: superposición de potenciales de cargas puntuales",
+       "cita_literal": "Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición"
+      },
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (V3, hoja «Física 11.°», fila 12)",
+       "cita": "La fila vigente conserva analogía con semejanzas y diferencias y justificación de perpendicularidad, no solo medición de equipotenciales.",
+       "cita_literal": "Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas"
+      },
+      {
+       "fuente": "EE-FIS-ee_gym-p011-17 (EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11)",
+       "cita": "Estonia exige relacionar voltaje e intensidad de campo; el objetivo no enumera superposición de potenciales de varias cargas.",
+       "cita_literal": "selgitab pinge mõistet ning rakendab pinge ja väljatugevuse seost"
+      },
+      {
+       "fuente": "JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 112",
+       "cita": "JP 物理 (electiva)",
+       "cita_literal": "電界と電位との関係を静電気力による位置エネルギーと関連付けて理解すること"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Con ΔV=V_B−V_A y campo uniforme: ΔV=−E⃗·(r⃗_B−r⃗_A). ΔU=qΔV para carga de prueba; trabajo del campo=−ΔU, trabajo externo cuasiestático=ΔU. Potenciales se suman escalarmente con una referencia común; sobre equipotencial ΔV=0."
+      }
+     ],
+     "confianza": "media",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Graduar la complejidad con dos cargas antes de generalizar la suma escalar. Fijar referencia de potencial y distinguir energía: para una carga de prueba, ΔU=qΔV; en campo uniforme, ΔV=−E⃗·Δr⃗. Relacionar trabajo y electronvolts conservando signos. Comparar semejanzas y diferencias con gravedad; medir equipotenciales y justificar campo perpendicular y trabajo nulo sobre ellas.",
+      "evidencia": [
+       {
+        "fuente": "TEMA:G11-FIS-U8-8.4 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 12)",
+        "cita": "Lo que la nota acota: superposición de potenciales de cargas puntuales",
+        "cita_literal": "Calcula el potencial eléctrico total en un punto debido a un sistema de cargas puntuales aplicando el principio de superposición"
+       },
+       {
+        "fuente": "TEMA:G11-FIS-U8-8.4 (fila 12)",
+        "cita": "Lo que la nota prioriza, compartido con el núcleo de EE",
+        "cita_literal": "Calcula la diferencia de potencial entre dos puntos de un campo eléctrico uniforme"
+       },
+       {
+        "fuente": "TEMA:G11-FIS-U6-6.5 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 10)",
+        "cita": "Contraste vectorial: el campo de varias cargas en la clase 2.2",
+        "cita_literal": "Calcula el vector campo eléctrico en un punto debido a una o varias cargas puntuales"
+       },
+       {
+        "fuente": "EE-FIS-ee_gym-p011-17 (EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11)",
+        "cita": "Estonia exige relacionar voltaje e intensidad de campo; el objetivo no enumera superposición de potenciales de varias cargas.",
+        "cita_literal": "selgitab pinge mõistet ning rakendab pinge ja väljatugevuse seost"
+       },
+       {
+        "fuente": "SG_ALevel_H1_Physics_8867_2027.pdf p. 13",
+        "cita": "SG H1 (núcleo parcial): solo distinguir energías potenciales",
+        "cita_literal": "distinguish between gravitational potential energy, electric potential energy and elastic potential"
+       },
+       {
+        "fuente": "JP_COS_Koko_2018_Gakushushidoyoryo.pdf p. 112",
+        "cita": "JP 物理 (electiva)",
+        "cita_literal": "電界と電位との関係を静電気力による位置エネルギーと関連付けて理解すること"
+       },
+       {
+        "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 117",
+        "cita": "KR 물리학 (electiva)",
+        "cita_literal": "전하를 띤 입자들이 전기장과 전위차를 형성하여 서로 전기적으로 상호작용함을 설명"
+       },
+       {
+        "fuente": "TEMA:G11-FIS-U8-8.4 (V3, hoja «Física 11.°», fila 12)",
+        "cita": "La fila vigente conserva analogía con semejanzas y diferencias y justificación de perpendicularidad, no solo medición de equipotenciales.",
+        "cita_literal": "Traza superficies equipotenciales a partir de mediciones y justifica por qué el campo eléctrico es perpendicular a ellas"
+       }
+      ]
+     },
+     "ronda": 1,
+     "rol": "experto-fisica",
+     "fecha": "2026-10-15"
+    },
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:fisica/potencial-electrico",
+     "decision": "corregir",
+     "justificacion": "La nota conserva las exigencias de 2.4, pero su inicio no explicita el apoyo docente. Incorporo un ejemplo guiado antes de practicar y una acción observable de registro de signos. Se mantienen suma escalar, relaciones de energía, comparación gravitatoria, medición y justificación de equipotenciales, sin ampliar contenido ni crear otra fila.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-FIS-U8-8.4 (V3, Física 11.º, fila 12)",
+       "cita": "El indicador combina cálculo de potencial y trabajo, analogía gravitatoria, superposición y trazado y justificación de equipotenciales."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Un ejemplo guiado y el registro de signos hacen verificables los pasos antes de generalizar a varias cargas."
+      },
+      {
+       "fuente": "specs/15_refuerzo_v3.md, sección 15.4, Presupuesto",
+       "cita": "Prioriza el refuerzo dentro del tema; una fila nueva requiere un faltante o recuperación con evidencia fuerte."
+      }
+     ],
+     "confianza": "alta",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Trabajar un ejemplo guiado con dos cargas antes de practicar y generalizar la suma escalar. Explicitar la referencia y distinguir potencial y energía: ΔU=qΔV; en campo uniforme, ΔV=−E⃗·Δr⃗. Registrar signos al relacionar trabajo y electronvolts. Comparar semejanzas y diferencias con gravedad; trazar equipotenciales medidas y justificar perpendicularidad del campo y trabajo nulo sobre ellas."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-15"
+    }
+   ]
+  }
+ ]
+}

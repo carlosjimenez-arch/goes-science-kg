@@ -100,4 +100,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:quimica/composicion-porcentual-y-formulas (revisado_panel): Mantener la composición centesimal (ACSCH007, pivote ACARA SS). Introducir la fórmula empírica desde la proporción de átomos o simplificando una fórmula molecular, como ENG Combined, y luego desde datos de masa de compuestos sencillos. Las razones como 1:1,5 (×2 → 2:3) siguen en el núcleo, como pide la V3; el análisis por combustión queda como profundización.
+- REF:contraste:9_11:CON:quimica/composicion-porcentual-y-formulas (revisado_panel, solido): Mantener la composición centesimal (ACSCH007, pivote ACARA SS). Introducir la fórmula empírica desde la proporción de átomos o simplificando una fórmula molecular, como ENG Combined, y luego desde datos de masa de compuestos sencillos. Las razones como 1:1,5 (×2 → 2:3) siguen en el núcleo, como pide la V3; el análisis por combustión queda como profundización.

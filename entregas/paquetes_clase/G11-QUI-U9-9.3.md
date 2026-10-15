@@ -161,6 +161,6 @@ a) Nombra el compuesto intermedio y el producto orgánico final, con l
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_propuesta:PRO:quimica:G10-G11#11 (revisado_panel): Al cerrar, retomar la tabla de combustibles de 10.° (11.1) y sumar gasolina y biodiésel: comparar con datos tabulados la energía por gramo y los productos de combustión, incluido el SO₂ de los combustibles con azufre, y recomendar uno para un uso local sin suponer que un biocombustible es neutro en carbono. No se queman combustibles en el aula.
+- REF:panel_propuesta:PRO:quimica:G10-G11#11 (revisado_panel, solido): Al cerrar, retomar la tabla de combustibles de 10.° (11.1) y sumar gasolina y biodiésel: comparar con datos tabulados la energía por gramo y los productos de combustión, incluido el SO₂ de los combustibles con azufre, y recomendar uno para un uso local sin suponer que un biocombustible es neutro en carbono. No se queman combustibles en el aula.
 
 *Sin revisión del panel todavía: 1 elementos.*

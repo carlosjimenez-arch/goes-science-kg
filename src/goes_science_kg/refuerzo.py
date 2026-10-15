@@ -510,8 +510,9 @@ def snapshot(asignaturas: tuple[str, ...], grados: tuple[int, ...], etapa: str) 
             continue
         por_grado.setdefault(max(gs), []).append({**f, "asignatura": a, "anclas": anclas})
     md += ["## 3. Candidatos a refuerzo, por grado", "",
-           "Cada candidato trae su evidencia y la solidez de lo que lo respalda. Todavía no está redactado como fila "
-           "de la malla (etapa 15.5).", ""]
+           "Este catálogo recoge el diagnóstico de origen, no la redacción final. Algunas propuestas ya se "
+           "redactaron o descartaron: su texto vigente y su revisión figuran en la sección 5. La solidez de esta "
+           "tabla corresponde al antecedente, no certifica la redacción del refuerzo.", ""]
     for g in sorted(por_grado, reverse=True):
         md += [f"### {g}.°", "", "| Id | Asignatura | Tipo | Origen | Tema de la V3 | Qué se propone | Evidencia | "
                "Solidez |", "|---|---|---|---|---|---|---|---|"]
@@ -537,11 +538,54 @@ def snapshot(asignaturas: tuple[str, ...], grados: tuple[int, ...], etapa: str) 
         res = x.get("resolucion", {}).get("decision") if x["estado"] == "resuelta" else x["estado"]
         ant = (x["datos"].get("decision_anterior") or {}).get("clase")
         md.append(f"- `{i}`: {x['titulo']}" + (f" (antes: {ant})" if ant else "") + f" → **{res}**")
-    md += ["", "## 5. Qué falta para la versión final", "",
+    # La redacción revisada puede corregir o descartar el diagnóstico del catálogo: mostrarla sin sustituirla
+    # por el texto_base ni confundir la solidez del antecedente con la del nuevo contenido.
+    p_redacciones = ruta(f"{DIR}/refuerzos.json")
+    redacciones = json.loads(p_redacciones.read_text(encoding="utf-8")) if p_redacciones.exists() else []
+    revisadas = []
+    for r in redacciones:
+        tema = v3.get((r.get("tema_ancla") or "").removeprefix("TEMA:"))
+        a = r.get("asignatura") or (asig3.get(tema.id) if tema else None)
+        gs = {tema.grado} if tema else set(r.get("grados_destino") or r.get("grados") or [])
+        if a in asignaturas and gs.intersection(grados):
+            x = estado.get("RFZ:" + r["id"], {})
+            s = (x.get("bucle") or {}).get("solidez", "sin_bucle")
+            apta = (x.get("estado") == "resuelta" and r.get("estado") == "revisado_panel"
+                    and s in SOLIDEZ_INYECTABLE and r.get("confianza") in ("alta", "media")
+                    and r.get("decision") == "inyectar")
+            revisadas.append((r, x, s, apta))
+    decisiones = Counter(r.get("decision") for r, _, _, _ in revisadas)
+    aptas = [r for r, _, _, apta in revisadas if apta]
+    filas_nuevas = sum(r.get("forma") == "fila_nueva" for r in aptas)
+    md += ["", "## 5. Redacciones vigentes y revisión de los refuerzos", "",
+           f"{len(revisadas)} redacciones en este alcance: {decisiones['inyectar']} propuestas de inserción y "
+           f"{decisiones['descartar']} descartes de propuestas. {len(aptas)} inserciones cumplen el filtro de "
+           f"panel resuelto, confianza suficiente y bucle sólido o respaldado; filas nuevas: {filas_nuevas}.",
+           "Descartar una propuesta no elimina un tema oficial. Las notas no agregan filas; su coste didáctico "
+           "debe comprobarse al integrarlas en la clase. Una revisión IA no es aprobación del MINED.", "",
+           "Citas y dictámenes completos: [registro de refuerzos](../../data/interim/refuerzo_v3/refuerzos.json). "
+           "Pendientes: [revisión humana](REVISION_HUMANA.md).", "",
+           f"**Presupuesto nominal adicional:** {filas_nuevas} {'sesión' if filas_nuevas == 1 else 'sesiones'} "
+           "de 55 minutos "
+           f"({filas_nuevas * 55} minutos). No hay ahorro compensatorio demostrado para estas filas; validar el "
+           "presupuesto antes de adoptarlas.", "",
+           "| Id | Tema ancla | Decisión | Texto vigente o motivo | Fuentes | Panel | Solidez del refuerzo | "
+           "Entregable |",
+           "|---|---|---|---|---|---|---|---|"]
+    for r, x, s, apta in sorted(revisadas, key=lambda f: f[0]["id"]):
+        texto = (r.get("refuerzo") if r.get("decision") == "inyectar" else r.get("motivo")) or "—"
+        texto = texto.replace("|", "/").replace("\n", " ")
+        fuentes = "; ".join(e.get("fuente", "") for e in r.get("evidencia", [])) or "—"
+        fuentes = fuentes.replace("|", "/").replace("\n", " ")
+        entrega = "propuesta revisada" if apta else "descarte documentado" if r.get("decision") == "descartar" \
+            else "pendiente de evidencia o revisión"
+        md.append(f"| {r['id']} | {r.get('tema_ancla') or '—'} | {r.get('decision', 'pendiente')} | {texto} | "
+                  f"{fuentes} | {x.get('estado', 'sin expediente')} | {s} | {entrega} |")
+    md += ["", "## 6. Qué falta para la versión final", "",
            "1. Cerrar la serie v3 del panel y pasarla por el bucle de fortalecimiento.",
            "2. Regenerar los candidatos con las clases nuevas.",
-           "3. Redactar cada refuerzo como nota o como fila de la malla (subagente `redactor-refuerzos`).",
-           "4. Revisión del panel (experto y psicopedagogo) de cada redacción, y bucle.",
+           "3. Redactar los candidatos aún sin redacción como nota o fila (subagente `redactor-refuerzos`).",
+           "4. Completar panel y bucle de lo pendiente; conseguir las fuentes de lo frágil antes de inyectarlo.",
            "5. Copias anotadas de sus Excel en `entregas/mallas_v3_reforzadas/`.", ""]
     return "\n".join(md)
 

@@ -92,4 +92,4 @@ a) qué tipo de ruptur
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:quimica/fundamentos-de-reactividad-organica (revisado_panel): Tratarlo breve y cualitativamente, como apoyo de 9.2 y 9.3: distinguir las rupturas por sus productos (radicales o iones) y reconocer nucleófilos, electrófilos y radicales en ejemplos guiados. Flechas curvas (media flecha en la homolítica), carbaniones y estabilidad de carbocationes van a profundización: no están en el pivote ACARA SS y los países los dan en electivas.
+- REF:contraste:9_11:CON:quimica/fundamentos-de-reactividad-organica (revisado_panel, solido): Tratarlo breve y cualitativamente, como apoyo de 9.2 y 9.3: distinguir las rupturas por sus productos (radicales o iones) y reconocer nucleófilos, electrófilos y radicales en ejemplos guiados. Flechas curvas (media flecha en la homolítica), carbaniones y estabilidad de carbocationes van a profundización: no están en el pivote ACARA SS y los países los dan en electivas.

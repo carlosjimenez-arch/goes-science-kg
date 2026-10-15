@@ -704,7 +704,8 @@
     "justificaciones": {
      "psicopedagogo": "Describe el diagrama en palabras, con tramos rotulados, y da las conversiones; pide joules. Una sola idea por tramo. Retroalimentación de 67 palabras que anticipa el error de 1200 J."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -774,7 +775,8 @@
       "D": "Isocórico, porque el volumen es lo que se cambia, de 4.0 a 1.0 L"
      },
      "retroalimentacion": "Al multiplicar presión por volumen en cada punto sale lo mismo: 4.0 × 60 = 3.0 × 80 = 2.0 × 120 = 1.0 × 240 = 240 kPa·L. Para un gas ideal, p · V constante indica temperatura constante: proceso isotérmico. El nombre del proceso dice qué se mantiene constante, no qué cambia; en uno adiabático la presión subiría más que aquí, porque el gas se calentaría."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -872,7 +874,8 @@
     "valores_anteriores": {
      "enunciado": "Kevin dibuja dos caminos en un diagrama p-V que van del mismo estado inicial (200 kPa y 1.0 L) al mismo estado final (100 kPa y 3.0 L). Camino 1: primero se expande a 200 kPa hasta 3.0 L y luego baja la presión a volumen constante hasta 100 kPa. Camino 2: primero baja la presión a volumen constante hasta 100 kPa y luego se expande a 100 kPa hasta 3.0 L. En 2 o 3 oraciones: (1) calcula el trabajo que hace el gas en cada camino, en joules; (2) explica por qué los tramos a volumen constante no aportan trabajo; y (3) explica, usando el área bajo la curva, por qué el trabajo no es igual en los dos caminos aunque empiezan y terminan en los mismos estados.",
      "duracion_min": 6
-    }
+    },
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -2905,7 +2908,8 @@
      ],
      "datos_esperados": "Estación 1 (casi isobárico: con el émbolo libre la presión del aire encerrado queda igual a la de afuera): el volumen sube al calentar y baja al enfriar. En un gas ideal a presión constante el volumen es proporcional a la temperatura en kelvin (T = °C + 273): de unos 5 °C (278 K) a unos 40 °C (313 K) crecería cerca de 13 %, unos 5 mL si había 40 mL de aire; en el aula es normal medir algo menos por el rozamiento del émbolo y porque el aire no alcanza del todo la temperatura del agua. El cociente V/T casi constante solo aparece con kelvin; con °C sale absurdo (de 5 °C a 40 °C serían 8 veces más). El globo se infla un poco en el agua tibia y se arruga o se mete hacia la botella en la fría. Estación 2 (isocórico mientras dura la cinta): el volumen no cambia, pero la presión sí, cerca de 13 % entre el hielo y el agua tibia (del orden de 10 000 Pa; la presión atmosférica del lugar es valor de la tabla de referencia y es menor en lugares altos). La evidencia es indirecta: al soltar, el émbolo entra después del frío y sale después del tibio, y termina cerca de las marcas de la estación 1. Estación 3 (casi isotérmico, por ser lento): al bajar el volumen sube la presión y p·V se mantiene casi igual; llegar a dos tercios del volumen exige cerca de 1.5 veces la presión inicial, una fuerza extra de decenas de newtons en una jeringa de 60 mL, y por eso cuesta más que llegar a tres cuartos. Al soltar, el émbolo vuelve casi al volumen inicial; si no vuelve, hubo fuga y cambió la cantidad de aire. Estación 4 (casi adiabático, por ser rápido): al soltar de golpe aparece una niebla tenue que desaparece al volver a apretar; el aire se expande sin tiempo para recibir calor, hace trabajo, se enfría y el vapor de agua se condensa. Simulador: a volumen fijo p y T suben en proporción; a presión fija V y T suben en proporción; a temperatura fija, al reducir V sube p; sin nada constante, comprimir rápido sube T y expandir la baja. Ningún proceso del aula es perfecto: lo esperable es la tendencia correcta y reconocer qué magnitud quedó casi constante.",
      "variantes": "Sin simulador ni electricidad: la docente copia en la pizarra una tabla rotulada «datos de un grupo de ejemplo, calculados con el modelo de gas ideal», por ejemplo a volumen fijo 300 K → 100 kPa, 330 K → 110 kPa, 360 K → 120 kPa, y a temperatura fija 30 mL → 100 kPa, 20 mL → 150 kPa, 15 mL → 200 kPa, para que los grupos identifiquen la magnitud constante y el proceso. Sin hielo: agua del chorro contra agua tibia (la diferencia es menor; conviene la jeringa de 60 mL). Sin jeringas: dos botellas PET con globo, una en agua tibia y otra en fría, y una botella PET enjuagada con agua tibia, tapada y puesta en agua fría, que se abolla porque baja la presión dentro. Ampliación para grupos rápidos: un compañero sostiene la jeringa vertical con la punta sellada hacia abajo sobre la mesa, se pega una tapa de cartón al émbolo y se ponen encima 1, 2 y 3 cuadernos iguales; al aumentar la carga el volumen baja cada vez menos (p·V casi constante)."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -2931,7 +2935,49 @@
    "refuerzo": "Presentarlo como relaciones entre presión, volumen y temperatura con una variable constante (Boyle, Charles, Gay-Lussac), que Física 10.° (6.4) presupone, y nombrar así los procesos isotérmico, isobárico e isocórico; el adiabático no intercambia calor, pero el gas se calienta al comprimirse. Después, trabajo como área solo en isocóricos (W = 0) e isobáricos; isotérmico y adiabático, en 10.° (6.5).",
    "fila": null,
    "estado": "revisado_panel",
-   "origen": "panel_hallazgo"
+   "origen": "panel_hallazgo",
+   "motivo": null,
+   "confianza": "alta",
+   "evidencia": [
+    {
+     "fuente": "TEMA:G09-CIE-U2-2.4",
+     "cita_literal": "Reconoce los procesos isotérmico, isobárico, isocórico y adiabático en un gas ideal"
+    },
+    {
+     "fuente": "TEMA:G09-CIE-U2-2.5",
+     "cita_literal": "calcula el trabajo como el área bajo la curva"
+    },
+    {
+     "fuente": "TEMA:G10-FIS-U14-14.1",
+     "cita_literal": "Recuerda las leyes de los gases trabajadas en 9.°"
+    },
+    {
+     "fuente": "TEMA:G10-FIS-U15-15.1",
+     "cita_literal": "Calcula el trabajo de expansiones isotérmicas y adiabáticas de un gas ideal"
+    },
+    {
+     "fuente": "TEMA:G10-QUI-U6-6.2",
+     "cita_literal": "Determina con datos experimentales la constante de proporcionalidad de la ley de Boyle-Mariotte"
+    },
+    {
+     "fuente": "TEMA:G10-FIS-U14-14.1",
+     "cita_literal": "Mide pares presión-volumen con una jeringa sellada y un manómetro"
+    },
+    {
+     "fuente": "internacional/README.md",
+     "cita": "Gases antes de procesos termodinámicos; coordinar Física y Química de 10.° para no repetir las leyes de los gases."
+    },
+    {
+     "fuente": "TEMA:G10-FIS-U15-15.1",
+     "cita_literal": "Calcula el trabajo realizado en procesos isobáricos e isocóricos como área bajo la curva"
+    },
+    {
+     "fuente": "Loverude, Kautz y Heron (2002), Am. J. Phys. 70(2), 137-148",
+     "cita": "Idea previa: en una compresión adiabática la temperatura no cambia porque no hay calor."
+    }
+   ],
+   "solidez": "solido",
+   "entregable": true
   }
  ],
  "completitud": {

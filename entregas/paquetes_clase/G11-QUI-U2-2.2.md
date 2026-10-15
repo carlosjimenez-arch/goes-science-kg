@@ -89,4 +89,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:quimica/enlace-de-valencia-y-orbitales-moleculares (propuesta_pendiente): Tratar la hibridación de forma cualitativa, al servicio de la geometría orgánica: desde la TRPECV de 10.° (5.4), asociar cuatro, tres o dos dominios del carbono con sp³, sp² o sp y con enlaces simples, dobles o triples (σ y π). Explicar cómo se forman los híbridos queda como profundización: el pivote ACARA SS solo usa la TRPECV.
+- REF:contraste:9_11:CON:quimica/enlace-de-valencia-y-orbitales-moleculares (revisado_panel, solido): Retomar TRPECV y representar sp³, sp² y sp del carbono como modelos de combinación de orbitales 2s y 2p, con geometrías ideales tetraédrica, trigonal plana y lineal. Distinguir enlaces σ y π y orbitales p no hibridados; usar metano, eteno y etino. Conservar la explicación cualitativa de formación exigida, sin derivaciones cuánticas ni nuevos diagramas de orbitales moleculares.

@@ -112,4 +112,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:quimica/quimica-verde (revisado_panel): None
+- REF:contraste:9_11:CON:quimica/quimica-verde: propuesta descartada. La V3 ya lo trata a un nivel adecuado: G11-QUI-U7-7.7 aplica los principios de la química verde, del pivote ACARA SS (ACSCH135), y la economía atómica, que ENG da en GCSE. La clase no señala nada que acotar.

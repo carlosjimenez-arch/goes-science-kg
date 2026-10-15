@@ -53,7 +53,8 @@ Python (`json.dump(..., ensure_ascii=False, indent=1)`):
   Escribe como el MINED:
   - el procedimental es un sustantivo de proceso («Indagación de…», «Descripción de…»);
   - el indicador, un verbo en tercera persona («Describe…»);
-  - las microhabilidades usan los códigos PISA del libro (E1–E4, D1–D4, I1–I5, en la hoja «Microhabilidades PISA»).
+  - las microhabilidades usan exactamente los códigos de la hoja «Microhabilidades PISA» del libro vigente;
+    verifica allí el catálogo antes de asignarlos.
 
   Numera con el número del tema ancla más una letra (p. ej., «5.12a.»), para no chocar con la numeración oficial.
 - `evidencia`: al menos una fuente primaria (fila de la malla, objetivo de un país o página de un PDF), con
@@ -68,6 +69,7 @@ Python (`json.dump(..., ensure_ascii=False, indent=1)`):
 3. **Adecuado al grado.** Usa el lenguaje y la profundidad del grado: en 2.°–4.°, nada de formalismo.
 4. **Parafrasea.** No copies párrafos de los PDF de los países. Las citas literales cortas van en `cita_literal`.
 5. **No inventes.** Cita solo fuentes del repo. Si un candidato no se sostiene en la fuente, descártalo.
+   Los conteos de verbos solo detectan candidatos: revisa la tarea completa antes de afirmar que falta razonar.
 6. Escribe solo tu `salida_*.json`. No leas ni imprimas `.env`. No modifiques `data/fuentes/`, `reportes/` ni
    `data/grafo/`.
 

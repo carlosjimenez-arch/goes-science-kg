@@ -1,0 +1,257 @@
+{
+ "lote": "b2-rfz_previos_refutador_fisica",
+ "vuelta": 2,
+ "rol": "refutador",
+ "disciplina": "fisica",
+ "version": "bucle-v1",
+ "instrucciones": [
+  "prompts/bucle_refutar.md",
+  ".claude/agents/refutador.md",
+  ".claude/agents/experto-fisica.md (solo «Tus criterios»)"
+ ],
+ "expedientes": [
+  {
+   "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+   "tipo": "contenido",
+   "titulo": "REF:panel_hallazgo:HAL:H911-razonar (precisar, 10.°)",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "datos": {
+    "candidato": {
+     "origen": "panel_hallazgo",
+     "problema": "Física pide poco razonamiento (10 % frente a 31 %)",
+     "texto_base": "Reescribir como razonar una parte de los indicadores de Física de 10.°–11.° que hoy son de calcular o resolver, sin agregar contenido y sin quitar el cálculo: predecir y justificar con un modelo antes de calcular, evaluar si un resultado es razonable (unidades, órdenes de magnitud, casos límite), diseñar y evaluar un experimento y argumentar con datos. Empezar por las 128 filas cuya columna de habilidad TIMSS ya declara «Razonar» pero cuyo indicador no lo pide: basta con llevar esa habilidad al indicador. Tomar el 10 % frente al 31 % como orientación, no como meta numérica.",
+     "conceptos": [],
+     "temas_ancla": [],
+     "solidez": "solido"
+    },
+    "tema_ancla": {
+     "id": "G10-FIS-U1-1.4",
+     "grado": 10,
+     "unidad": "1. La física como ciencia: indagación y herramientas",
+     "contenido": "Análisis de datos y modelos",
+     "procedimental": "1.2. Linealización de datos experimentales, interpretación física de la pendiente y el intercepto, y evaluación de los límites de validez de modelos idealizados.",
+     "indicador": "1.2. • Linealiza una relación no lineal entre dos magnitudes e interpreta el significado físico de la pendiente y del intercepto de la recta de ajuste. • Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "resolucion": {
+    "decision": "corregir",
+    "ronda": 12
+   },
+   "fundamentos": [
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "rol": "experto-fisica",
+     "ronda": 1,
+     "decision": "corregir",
+     "justificacion": "Recalculé con el clasificador del repositorio sobre la V3: 64 filas de Física 10.° y 11.°, 61 declaran Razonar y en 40 el indicador no lo pide; 22 de 202 enunciados (11 %) son de razonar. Las acciones son razonar en TIMSS (predecir, justificar, evaluar) y explicar es aplicar. Solo preciso el verbo: esos indicadores también usan reconoce o identifica, no solo calcular o explicar.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja Física 10.°, fila 33)",
+       "cita": "Ejemplo: la columna TIMSS declara razonar y el indicador solo resuelve problemas.",
+       "cita_literal": "Razonar: decidir si ocurre reflexión interna total"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7 (fila 33)",
+       "cita": "El indicador correspondiente.",
+       "cita_literal": "Resuelve problemas que involucran reflexión, refracción y reflexión interna total"
+      },
+      {
+       "fuente": "src/goes_science_kg/internacional/profundidad.py, demanda() sobre la malla V3",
+       "cita": "64 filas; 61 con Razonar en la columna TIMSS; 40 sin verbo de razonar en el indicador; verbos más frecuentes en esas 40: calcula 29, explica 23, determina 12, reconoce 8."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "Nota transversal para Física 10.°–11.°: en 40 de sus 64 filas la columna TIMSS declara «Razonar», pero el indicador no pasa de conocer o aplicar (calcular, explicar). Sin agregar contenido ni quitar el cálculo, evaluar también esa habilidad: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño."
+     }
+    },
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "rol": "psicopedagogo",
+     "ronda": 2,
+     "decision": "corregir",
+     "justificacion": "El diagnóstico y las acciones se mantienen. Corrijo un punto de evaluación justa: la nota pedía «evaluar» el razonamiento, pero juzgar si un resultado es razonable o evaluar un diseño no se aprende solo; hay que enseñarlo con un ejemplo resuelto antes de calificarlo. Las fases ya practican predecir (E3). Quito «(calcular, explicar)» por espacio: «conocer o aplicar» son las etiquetas de la propia columna TIMSS.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U1-1.4",
+       "cita": "Las fases ya practican la predicción; falta llevarla a lo que se evalúa.",
+       "cita_literal": "Predice la forma de la gráfica de iluminancia contra distancia"
+      },
+      {
+       "fuente": "Sweller y Cooper (1985), Cognition and Instruction 2(1), 59-89",
+       "cita": "Efecto del ejemplo resuelto: estudiar ejemplos antes de resolver mejora el aprendizaje de principiantes."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Evaluar una habilidad que no se enseñó mide lo que el estudiante trae de casa, no lo que aprendió."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "Transversal a Física 10.°–11.°: en 40 de 64 filas la columna TIMSS declara «Razonar», pero el indicador solo pide conocer o aplicar. Sin agregar contenido ni quitar el cálculo, enseñar esa habilidad con un ejemplo resuelto y evaluarla: predecir y justificar antes de calcular, juzgar si un resultado es razonable (unidades, orden de magnitud, casos límite) o evaluar un diseño."
+     }
+    },
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "rol": "experto-fisica",
+     "ronda": 3,
+     "decision": "aprobar",
+     "justificacion": "El psicopedagogo solo cambió la forma: pide enseñar la habilidad con un ejemplo resuelto antes de evaluarla y quita el paréntesis de los verbos. Las cifras (40 de 64 filas) y las acciones de razonar (predecir, juzgar si un resultado es razonable, evaluar un diseño) quedan como las fijé. «Conocer o aplicar» son categorías TIMSS. Sin errores científicos; 60 palabras.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7",
+       "cita": "La columna TIMSS declara razonar y el indicador solo resuelve problemas.",
+       "cita_literal": "Razonar: decidir si ocurre reflexión interna total"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U16-16.7",
+       "cita": "El indicador de la misma fila.",
+       "cita_literal": "Resuelve problemas que involucran reflexión, refracción y reflexión interna total"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Enseñar antes de evaluar no altera el diagnóstico ni el contenido físico de la nota."
+      }
+     ],
+     "confianza": "alta"
+    },
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "rol": "experto-fisica",
+     "ronda": 11,
+     "decision": "corregir",
+     "justificacion": "La impugnación derriba el diagnóstico categórico: verifiqué dos indicadores con evaluación de pérdidas y límites que el filtro clasifica como aplicar. TIMSS incluye evaluar modelos en razonar. Reproduje 64 filas, 61 con Razonar y 40 candidatas léxicas; el conteo no demuestra ausencia. Corrijo la nota y su evidencia, manteniendo enseñanza apoyada, evaluación, cálculo y formalismo, sin modificar indicadores oficiales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U12-12.8",
+       "cita": "Malla V3, Física 10.°, fila 26: exige evaluar pérdidas de calor, aunque el filtro la clasifica como aplicar.",
+       "cita_literal": "Determina el calor específico de un sólido mediante el método de mezclas y evalúa la pérdida de calor al entorno"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U1-1.4",
+       "cita": "Malla V3, Física 10.°, fila 4: pide determinar con datos los límites del modelo; el filtro la clasifica como aplicar.",
+       "cita_literal": "Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido"
+      },
+      {
+       "fuente": "T27_Assessment-Frameworks.pdf p. 50",
+       "cita": "TIMSS 2027, dominio Reasoning, Evaluate: evaluar modelos por sus méritos y limitaciones es razonamiento.",
+       "cita_literal": "Evaluate models in terms of their merits and limitations"
+      },
+      {
+       "fuente": "src/goes_science_kg/internacional/profundidad.py, demanda() sobre ingesta.mallas.extraer() de la V3",
+       "cita": "Recuento local reproducido: 64 filas de Física 10.°–11.°, 61 declaran Razonar; 40 no reciben razonar del filtro. Incluyen los dos contraejemplos citados; evalúa no figura entre las formas reconocidas. Es una selección para revisión, no una medición validada de ausencia."
+      }
+     ],
+     "confianza": "alta",
+     "cambios": {
+      "refuerzo": "En Física 10.°–11.°, el filtro léxico señala 40 de 64 filas como candidatas a revisión; algunas ya evalúan pérdidas o límites de modelos. Revisar cada tarea con TIMSS. Donde falte razonamiento, enseñarlo con un ejemplo resuelto y evaluarlo mediante predicción justificada, contraste con datos o análisis de límites, conservando el cálculo y el formalismo.",
+      "evidencia": [
+       {
+        "fuente": "TEMA:G10-FIS-U12-12.8",
+        "cita": "Malla V3, Física 10.°, fila 26: exige evaluar pérdidas de calor, aunque el filtro la clasifica como aplicar.",
+        "cita_literal": "Determina el calor específico de un sólido mediante el método de mezclas y evalúa la pérdida de calor al entorno"
+       },
+       {
+        "fuente": "TEMA:G10-FIS-U1-1.4",
+        "cita": "Malla V3, Física 10.°, fila 4: pide determinar con datos los límites del modelo; el filtro la clasifica como aplicar.",
+        "cita_literal": "Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido"
+       },
+       {
+        "fuente": "T27_Assessment-Frameworks.pdf p. 50",
+        "cita": "TIMSS 2027, dominio Reasoning, Evaluate: evaluar modelos por sus méritos y limitaciones es razonamiento.",
+        "cita_literal": "Evaluate models in terms of their merits and limitations"
+       },
+       {
+        "fuente": "src/goes_science_kg/internacional/profundidad.py, demanda() sobre ingesta.mallas.extraer() de la V3",
+        "cita": "Recuento local reproducido: 64 filas de Física 10.°–11.°, 61 declaran Razonar; 40 no reciben razonar del filtro. Incluyen los dos contraejemplos citados; evalúa no figura entre las formas reconocidas. Es una selección para revisión, no una medición validada de ausencia."
+       }
+      ]
+     }
+    },
+    {
+     "id": "RFZ:REF:panel_hallazgo:HAL:H911-razonar",
+     "rol": "psicopedagogo",
+     "ronda": 12,
+     "decision": "aprobar",
+     "justificacion": "Apruebo la versión corregida: 40 de 64 es un tamiz léxico que requiere revisar tareas completas, no una medición de ausencia de razonamiento. El ejemplo resuelto antes de evaluar ofrece andamiaje adecuado en 10.°–11.°. Las alternativas de predicción, datos y límites son observables y conservan cálculo y formalismo; no requieren alterar indicadores oficiales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-FIS-U12-12.8",
+       "cita": "Malla V3, Física 10.°, fila 26: exige evaluar pérdidas de calor, aunque el filtro la clasifica como aplicar.",
+       "cita_literal": "Determina el calor específico de un sólido mediante el método de mezclas y evalúa la pérdida de calor al entorno"
+      },
+      {
+       "fuente": "TEMA:G10-FIS-U1-1.4",
+       "cita": "Malla V3, Física 10.°, fila 4: pide determinar con datos los límites del modelo; el filtro la clasifica como aplicar.",
+       "cita_literal": "Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido"
+      },
+      {
+       "fuente": "T27_Assessment-Frameworks.pdf p. 50",
+       "cita": "TIMSS 2027, dominio Reasoning, Evaluate: evaluar modelos por sus méritos y limitaciones es razonamiento.",
+       "cita_literal": "Evaluate models in terms of their merits and limitations"
+      },
+      {
+       "fuente": "src/goes_science_kg/internacional/profundidad.py, demanda() sobre ingesta.mallas.extraer() de la V3",
+       "cita": "Recuento local reproducido: 64 filas de Física 10.°–11.°, 61 declaran Razonar; 40 no reciben razonar del filtro. Incluyen los dos contraejemplos citados; evalúa no figura entre las formas reconocidas. Es una selección para revisión, no una medición validada de ausencia."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Enseñar mediante un ejemplo resuelto antes de evaluar hace observable el razonamiento sin confundir una selección léxica con la capacidad del estudiante."
+      }
+     ],
+     "confianza": "alta"
+    }
+   ],
+   "anclaje": null,
+   "elemento_vigente": {
+    "id": "REF:panel_hallazgo:HAL:H911-razonar",
+    "tipo": "precisar",
+    "decision": "inyectar",
+    "motivo": null,
+    "forma": "nota_en_tema",
+    "tema_ancla": "G10-FIS-U1-1.4",
+    "refuerzo": "En Física 10.°–11.°, el filtro léxico señala 40 de 64 filas como candidatas a revisión; algunas ya evalúan pérdidas o límites de modelos. Revisar cada tarea con TIMSS. Donde falte razonamiento, enseñarlo con un ejemplo resuelto y evaluarlo mediante predicción justificada, contraste con datos o análisis de límites, conservando el cálculo y el formalismo.",
+    "fila": null,
+    "evidencia": [
+     {
+      "fuente": "TEMA:G10-FIS-U12-12.8",
+      "cita": "Malla V3, Física 10.°, fila 26: exige evaluar pérdidas de calor, aunque el filtro la clasifica como aplicar.",
+      "cita_literal": "Determina el calor específico de un sólido mediante el método de mezclas y evalúa la pérdida de calor al entorno"
+     },
+     {
+      "fuente": "TEMA:G10-FIS-U1-1.4",
+      "cita": "Malla V3, Física 10.°, fila 4: pide determinar con datos los límites del modelo; el filtro la clasifica como aplicar.",
+      "cita_literal": "Explica qué idealizaciones supone un modelo físico y determina, con datos, en qué condiciones deja de ser válido"
+     },
+     {
+      "fuente": "T27_Assessment-Frameworks.pdf p. 50",
+      "cita": "TIMSS 2027, dominio Reasoning, Evaluate: evaluar modelos por sus méritos y limitaciones es razonamiento.",
+      "cita_literal": "Evaluate models in terms of their merits and limitations"
+     },
+     {
+      "fuente": "src/goes_science_kg/internacional/profundidad.py, demanda() sobre ingesta.mallas.extraer() de la V3",
+      "cita": "Recuento local reproducido: 64 filas de Física 10.°–11.°, 61 declaran Razonar; 40 no reciben razonar del filtro. Incluyen los dos contraejemplos citados; evalúa no figura entre las formas reconocidas. Es una selección para revisión, no una medición validada de ausencia."
+     }
+    ],
+    "confianza": "media"
+   },
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ]
+  }
+ ]
+}

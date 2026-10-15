@@ -117,4 +117,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:error_malla:PROG-02 (revisado_panel): La microhabilidad E1 pide «recordar» V = IR, pero ningún grado anterior la nombra, aunque 6.° mide voltaje y corriente y predice corrientes con la resistencia equivalente (3.5). Abrir con esas mediciones y establecer aquí la ley de Ohm: en el resistor, R (pendiente de V frente a I) es constante; en el LED, no. Opcional: nombrarla cualitativamente en 6.°.
+- REF:error_malla:PROG-02 (revisado_panel, solido): La microhabilidad E1 pide «recordar» V = IR, pero ningún grado anterior la nombra, aunque 6.° mide voltaje y corriente y predice corrientes con la resistencia equivalente (3.5). Abrir con esas mediciones y establecer aquí la ley de Ohm: en el resistor, R (pendiente de V frente a I) es constante; en el LED, no. Opcional: nombrarla cualitativamente en 6.°.

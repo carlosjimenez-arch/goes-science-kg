@@ -396,7 +396,8 @@
     "justificaciones": {
      "psicopedagogo": "Enunciado breve con evidencia observable (burbujas, metal que se gasta); opciones parejas y la clave no es la más larga. Clave en otra letra que la otra opción múltiple del tema."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -466,7 +467,8 @@
       "D": "La fila 1, porque una síntesis solo puede ocurrir entre dos elementos libres"
      },
      "retroalimentacion": "La fila 4: los dos reactivos son compuestos que intercambian sus iones (el Na⁺ pasa con el Cl⁻ y el H⁺ con el OH⁻), así que es una doble sustitución; también se llama neutralización. En una sustitución simple reacciona un elemento libre con un compuesto. Las otras tres filas están bien: la combustión se reconoce por la reacción con O₂ en la ecuación, no por ver fuego."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -563,7 +565,8 @@
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
     "valores_anteriores": {
      "enunciado": "En una demostración, la docente quema una cinta de magnesio, que arde con una luz blanca intensa y deja un polvo blanco: 2Mg(s) + O₂(g) → 2MgO(s). Paola dice que es una síntesis; Mauricio, que es una combustión. En 2 o 3 oraciones: di si la ecuación cumple el criterio de síntesis y por qué; di si cumple el de combustión y por qué; y decide quién tiene razón."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -645,7 +648,8 @@
       "La astilla, los fósforos, la vela y la lana de acero los maneja solo la docente, sobre la bandeja con arena y lejos de papel; nadie mueve la vela encendida. La pila de 9 V se guarda separada de la lana de acero.",
       "Las disoluciones de cloruro de calcio y de carbonato de sodio irritan los ojos: solo la docente las maneja, con guantes y lentes."
      ]
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -660,10 +664,61 @@
    "id": "REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
    "decision": "inyectar",
    "forma": "nota_en_tema",
-   "refuerzo": "Sumar la mirada redox a la clasificación: con los números de oxidación de 7.° (1.1), reconocer como redox la síntesis con oxígeno, la sustitución simple y la combustión, e identificar qué especie se oxida, cuál se reduce, el agente oxidante y el reductor. En 11.°, 6.5 puede comparar su fuerza con los potenciales estándar (ACSCH106).",
+   "refuerzo": "Conservar la clasificación de 9.2. Resolver ejemplos guiados de combustión y desplazamiento metálico marcando cambios de números de oxidación; después practicar. Nombrar oxidante a quien acepta electrones y se reduce, y reductor a quien los cede y se oxida. Aclarar que no toda síntesis es redox. Retomar en 11.º, clase 6.5 (indicador 6.8), comparando potenciales estándar de reducción.",
    "fila": null,
-   "estado": "propuesta_pendiente",
-   "origen": "quitado_v3"
+   "estado": "revisado_panel",
+   "origen": "quitado_v3",
+   "motivo": null,
+   "confianza": "media",
+   "evidencia": [
+    {
+     "fuente": "TEMA:G10-QUI-U9-9.2",
+     "cita_literal": "Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión",
+     "cita": "10.°: clasificación sin criterio redox."
+    },
+    {
+     "fuente": "TEMA:G07-CIE-U1-1.1-v3",
+     "cita_literal": "Calcula el número de oxidación de cada elemento en compuestos cotidianos",
+     "cita": "7.°: números de oxidación, el prerrequisito."
+    },
+    {
+     "fuente": "ACSCH106",
+     "cita_literal": "The relative strength of oxidising and reducing agents can be determined by comparing standard electrode potentials",
+     "cita": "Pivote ACARA SS, unidad 3: los agentes en el núcleo del pivote."
+    },
+    {
+     "fuente": "ACSCH103",
+     "cita_literal": "displacement reactions of metals, combustion, corrosion, and electrochemical processes, can be modelled as redox reactions",
+     "cita": "Pivote ACARA SS, unidad 3."
+    },
+    {
+     "fuente": "TW-QUI-tw_req_contenido-p041-23",
+     "cita_literal": "氧化劑與還原劑的定義及常見氧化劑與還原劑",
+     "cita": "TW, núcleo: definición y ejemplos de oxidantes y reductores."
+    },
+    {
+     "fuente": "EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27",
+     "cita_literal": "know the behaviour of metals in chemical reactions as a reducing agent",
+     "cita": "EE, núcleo de la escuela básica."
+    },
+    {
+     "fuente": "ENG-QUI-eng_gcse_comb-p022-11",
+     "cita_literal": "explain reduction and oxidation in terms of gain or loss",
+     "cita": "ENG Combined, núcleo."
+    },
+    {
+     "fuente": "TEMA:G11-QUI-U6-6.1",
+     "cita": "Redox continúa en la malla aunque falte la denominación de agentes.",
+     "cita_literal": "Separa una reacción redox en semirreacciones y verifica en cada una la conservación de la masa y de la carga eléctrica"
+    },
+    {
+     "fuente": "TEMA:G11-QUI-U6-6.8",
+     "cita": "Clase 6.5 de la V3: comparación cuantitativa posterior basada en potenciales.",
+     "cita_literal": "Calcula el potencial estándar de celda con la tabla de potenciales de reducción para seis pares redox"
+    }
+   ],
+   "solidez": "solido",
+   "entregable": true
   }
  ],
  "completitud": {

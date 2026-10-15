@@ -101,4 +101,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_propuesta:PRO:quimica:G10-G11#10 (revisado_panel): Clase nueva al cierre de la unidad 3: confirmar la masa molar con el ion molecular del espectro de masas y elegir entre isómeros con bandas infrarrojas de una tabla dada: O–H de alcohol (≈3200–3550 cm⁻¹), O–H de ácido (≈2500–3300 cm⁻¹, muy ancha) y C=O (≈1680–1750 cm⁻¹). La V3 no trabaja la determinación estructural (ACSCH130).
+- REF:panel_propuesta:PRO:quimica:G10-G11#10 (revisado_panel, solido): Fila nueva propuesta: +1 sesión de 55 minutos, con presupuesto por validar. Clase nueva al cierre de la unidad 3: confirmar la masa molar con el ion molecular del espectro de masas y elegir entre isómeros con bandas infrarrojas de una tabla dada: O–H de alcohol (≈3200–3550 cm⁻¹), O–H de ácido (≈2500–3300 cm⁻¹, muy ancha) y C=O (≈1680–1750 cm⁻¹). La V3 no trabaja la determinación estructural (ACSCH130).

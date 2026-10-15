@@ -680,7 +680,7 @@ def cerrar_impugnacion(k: int, serie: str = "") -> dict:
             if serie:
                 v["serie"] = serie
             v["impugnacion"] = {**{c: d[c] for c in ("veredicto", "argumento", "confianza", "propuesta", "cambios",
-                                                      "patron") if d.get(c)},
+                                                      "patron", "motor_revision") if d.get(c)},
                                 "contraevidencia": [{**c, "donde": verificar(c["fuente"], c["cita_literal"])["donde"]}
                                                     for c in _citas(d, "contraevidencia")],
                                 "lote": lote["lote"], "fecha": hoy}
@@ -864,6 +864,8 @@ def _solidez(x: dict) -> tuple[str, str]:
         return "en_bucle", "réplica pendiente"
     if ult.get("replica") == "cambiada":
         return "fragil", f"cambió en la vuelta {ult['vuelta']} y no se volvió a impugnar"
+    if (ult.get("impugnacion") or {}).get("confianza") == "baja":
+        return "fragil", "el revisor adversarial no pudo verificar la decisión con confianza suficiente"
     # La sonda se compara con la resolución VIGENTE: si la réplica corrigió el dictamen y llegó a lo mismo que la sonda
     # dictaminó a ciegas, eso corrobora; solo es inestable si la sonda discrepa de lo que quedó.
     ciega = next((v["sonda"]["dictamenes"] for v in vueltas if (v.get("sonda") or {}).get("dictamenes")), None)

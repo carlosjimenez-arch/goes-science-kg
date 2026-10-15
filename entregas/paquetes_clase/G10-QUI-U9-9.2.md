@@ -106,4 +106,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores (propuesta_pendiente): Sumar la mirada redox a la clasificación: con los números de oxidación de 7.° (1.1), reconocer como redox la síntesis con oxígeno, la sustitución simple y la combustión, e identificar qué especie se oxida, cuál se reduce, el agente oxidante y el reductor. En 11.°, 6.5 puede comparar su fuerza con los potenciales estándar (ACSCH106).
+- REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores (revisado_panel, solido): Conservar la clasificación de 9.2. Resolver ejemplos guiados de combustión y desplazamiento metálico marcando cambios de números de oxidación; después practicar. Nombrar oxidante a quien acepta electrones y se reduce, y reductor a quien los cede y se oxida. Aclarar que no toda síntesis es redox. Retomar en 11.º, clase 6.5 (indicador 6.8), comparando potenciales estándar de reducción.

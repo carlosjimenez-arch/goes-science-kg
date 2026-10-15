@@ -96,4 +96,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:9_11:CON:fisica/capacitancia (propuesta_pendiente): Acotar sin quitar la clase, pues fuera es electiva: relación de C con A, d y κ como proporciones medidas; combinaciones de dos condensadores; τ leída en la curva de descarga (caída al 37 %), sin linealizar con logaritmos; energía almacenada, cualitativa (flash, desfibrilador). Conviene medir el RC después de 3.1, donde se establece V = IR.
+- REF:contraste:9_11:CON:fisica/capacitancia (revisado_panel, solido): Antes del montaje, comprobar V=IR. Medir C variando A, d o κ por separado. Resolver un ejemplo guiado de dos condensadores en serie/paralelo y calcular C equivalente y carga. Localizar τ al 37 % de V₀ en la descarga medida, comparar con RC y realizar el ajuste linealizado guiado. Aplicar U=½CV² con ejemplo resuelto y práctica.

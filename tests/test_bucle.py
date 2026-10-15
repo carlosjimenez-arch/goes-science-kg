@@ -144,6 +144,16 @@ def test_vuelta_completa_impugnacion_replica_y_nueva_impugnacion(aislado):
         bucle.impugnar(bucle.config()["vueltas_max"] + 1)
 
 
+def test_revision_adversarial_inconclusa_no_certifica_contenido(aislado):
+    """Una fuente ausente puede impedir refutar, pero tampoco permite certificar la recomendación."""
+    x = _resuelto("contenido", ["experto-quimica"], "aprobar", elemento="refuerzo")
+    x["bucle"] = {"vueltas": [{"vuelta": 1, "resultado": "sostenida", "impugnacion": {
+        "veredicto": "se_sostiene", "confianza": "baja"}}]}
+    panel._guardar_estado({"RFZ:x": x})
+    assert bucle.solidez()["contenido"] == {"fragil": 1}
+    assert "confianza suficiente" in panel.cargar_estado()["RFZ:x"]["bucle"]["motivo_solidez"]
+
+
 def test_replica_sin_unanimidad_tras_deliberar_va_a_una_persona(aislado):
     roles = ["experto-quimica", "psicopedagogo"]
     x = _resuelto("propuesta", roles, "adoptar")

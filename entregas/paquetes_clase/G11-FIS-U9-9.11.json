@@ -316,7 +316,8 @@
     "justificaciones": {
      "psicopedagogo": "Explica qué es un condensador de placas paralelas en el propio enunciado. Opciones parejas (16–19 palabras); D, el caso desconectado, es un distractor muy plausible y no correcto por accidente porque el enunciado dice «sin desconectarlo». La retroalimentación contrasta ambos casos sin regañar."
     },
-    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED"
+    "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -371,7 +372,8 @@
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
     "valores_anteriores": {
      "enunciado": "Un condensador electrolítico de 1000 µF nominales, cargado a 6.0 V, se descarga a través de un resistor de 47 kΩ. Un grupo leyó el voltaje del condensador cada 20 s (datos de un grupo de ejemplo): 0 s, 6.00 V; 20 s, 4.02 V; 40 s, 2.69 V; 60 s, 1.80 V; 80 s, 1.20 V; 100 s, 0.81 V. Determina la constante de tiempo (el tiempo en que el voltaje baja al 37 % del inicial) y con ella calcula la capacitancia real del condensador, en microfaradios (µF). Escribe solo el número."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   },
   {
@@ -508,7 +510,8 @@
        }
       ]
      }
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -593,7 +596,8 @@
     "nota": "dictamen del panel de expertos IA (spec 14); no es una confirmación del MINED",
     "valores_anteriores": {
      "variantes": "Sin capacímetro: la sesión 1 se trabaja con los datos de ejemplo de abajo, y las combinaciones de la sesión 2 se comprueban con el mismo método RC usando dos condensadores de 1000 µF y el resistor de 47 kΩ: en paralelo, τ se duplica; en serie, se reduce a la mitad. Sin laboratorio ni internet: datos de un grupo de ejemplo, con láminas de 0.040 m². Papel de 0.10 mm por hoja: 6.2 nF con 1 hoja, 3.2 nF con 2, 2.1 nF con 3 y 1.6 nF con 4. Plástico de 0.09 mm por lámina: 9.6 nF con 1 y 5.0 nF con 2. Descarga de un condensador de 1000 µF nominales con 47 kΩ, cada 10 s desde 0 s: 6.00, 4.80, 3.83, 3.06, 2.45, 1.96, 1.57, 1.25, 1.00, 0.80, 0.64, 0.51 y 0.41 V. Con internet: la simulación gratuita «Laboratorio de capacitores: básico» de PhET permite cambiar el área y la separación de las placas y ver la capacitancia y la carga; no incluye dieléctricos, así que la constante dieléctrica se trabaja con los datos de ejemplo."
-    }
+    },
+    "solidez": "sin_bucle"
    }
   }
  ],
@@ -610,10 +614,61 @@
    "id": "REF:contraste:9_11:CON:fisica/capacitancia",
    "decision": "inyectar",
    "forma": "nota_en_tema",
-   "refuerzo": "Acotar sin quitar la clase, pues fuera es electiva: relación de C con A, d y κ como proporciones medidas; combinaciones de dos condensadores; τ leída en la curva de descarga (caída al 37 %), sin linealizar con logaritmos; energía almacenada, cualitativa (flash, desfibrilador). Conviene medir el RC después de 3.1, donde se establece V = IR.",
+   "refuerzo": "Antes del montaje, comprobar V=IR. Medir C variando A, d o κ por separado. Resolver un ejemplo guiado de dos condensadores en serie/paralelo y calcular C equivalente y carga. Localizar τ al 37 % de V₀ en la descarga medida, comparar con RC y realizar el ajuste linealizado guiado. Aplicar U=½CV² con ejemplo resuelto y práctica.",
    "fila": null,
-   "estado": "propuesta_pendiente",
-   "origen": "contraste"
+   "estado": "revisado_panel",
+   "origen": "contraste",
+   "motivo": null,
+   "confianza": "media",
+   "evidencia": [
+    {
+     "fuente": "TEMA:G11-FIS-U9-9.11 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 13)",
+     "cita": "11.° obligatorio: la clase 2.5 absorbió el circuito RC de la V2",
+     "cita_literal": "Determina la constante de tiempo de un circuito RC a partir de la curva de descarga medida"
+    },
+    {
+     "fuente": "TEMA:G11-FIS-U9-9.11 (fila 13)",
+     "cita": "Lo que la nota acota: el ajuste linealizado de la descarga",
+     "cita_literal": "linealizar y ajustar datos"
+    },
+    {
+     "fuente": "TEMA:G11-FIS-U3-3.1-v3 (Matriz_Bachillerato_Fisica_10_11.xlsx, hoja «Física 11.°», fila 14)",
+     "cita": "La clase 3.1 recuerda V=IR; conviene verificar ese prerrequisito antes del montaje RC de 2.5, sin afirmar que 3.1 lo introduce por primera vez.",
+     "cita_literal": "Recuerda la relación V = IR"
+    },
+    {
+     "fuente": "KR_2022_Gwahak_Gyoyukgwajeong_Byeolchaek9.pdf p. 117",
+     "cita": "KR 물리학 (electiva) excluye capacitancia, conexiones y dieléctricos",
+     "cita_literal": "축전기의 전기 용량, 연결, 유전체는 포함하지 않는다"
+    },
+    {
+     "fuente": "KR-FIS-kr_mulli-p117-05",
+     "cita": "Aun en la electiva de KR, solo el principio de almacenamiento, cualitativo",
+     "cita_literal": "축전기에서 전기 에너지를 저장하는 원리가 각종 센서와 전기 신호 입력 장치 등 실생활 제품에서 활용됨을 설명할 수 있다"
+    },
+    {
+     "fuente": "EE_Gumnaasium_Lisa4_Loodusained_2023_et.pdf p. 11 (EE-FIS-ee_gym-p011-19)",
+     "cita": "El objetivo de Estonia explica almacenamiento de energía en campos; por sí solo no acredita combinaciones de condensadores ni análisis RC.",
+     "cita_literal": "selgitab elektri- ja magnetvälja energia salvestamise võimalusi"
+    },
+    {
+     "fuente": "JP-FIS-jp_35-p112-08",
+     "cita": "JP 物理 (electiva)",
+     "cita_literal": "コンデンサーの性質を理解するとともに"
+    },
+    {
+     "fuente": "SG-FIS-sg_h2_fis-p010-02",
+     "cita": "SG H2 (electiva)",
+     "cita_literal": "The consideration of charge storage in capacitors"
+    },
+    {
+     "fuente": "TEMA:G11-FIS-U9-9.11 (V3, hoja «Física 11.°», fila 13)",
+     "cita": "La fila vigente conserva cálculo de energía almacenada, además de linealización y ajuste; la nota gradúa su enseñanza sin omitirlos.",
+     "cita_literal": "Aplica C = κε₀A/d y U = ½CV² para calcular la capacitancia y la energía almacenada"
+    }
+   ],
+   "solidez": "solido",
+   "entregable": true
   }
  ],
  "completitud": {

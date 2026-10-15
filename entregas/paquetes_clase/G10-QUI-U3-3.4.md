@@ -113,4 +113,4 @@
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_propuesta:PRO:quimica:G10-G11#3 (revisado_panel): Obtener las masas y abundancias de los isótopos leyendo un espectro de masas sencillo (magnesio o boro) antes de calcular la masa atómica promedio, y describir en términos generales que el espectrómetro ioniza la muestra y separa los iones por su relación masa/carga. Con el cloro, usar solo los picos atómicos 35 y 37, no los de Cl₂.
+- REF:panel_propuesta:PRO:quimica:G10-G11#3 (revisado_panel, solido): Obtener las masas y abundancias de los isótopos leyendo un espectro de masas sencillo (magnesio o boro) antes de calcular la masa atómica promedio, y describir en términos generales que el espectrómetro ioniza la muestra y separa los iones por su relación masa/carga. Con el cloro, usar solo los picos atómicos 35 y 37, no los de Cl₂.

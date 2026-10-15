@@ -117,4 +117,4 @@ a) Explica qué observó Henri Becquerel en placas fotográficas guardadas en la
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:contraste:2_8:CON:quimica/radiactividad (propuesta_pendiente): None
+- REF:contraste:2_8:CON:quimica/radiactividad: propuesta descartada. Descartar esta adición: 5.º ya aporta isótopos y aplicaciones; 10.º compara alfa, beta y gamma; 11.º formaliza desintegración y balance nuclear. La evidencia reunida no justifica otra fila ni adelantar el formalismo a primaria.

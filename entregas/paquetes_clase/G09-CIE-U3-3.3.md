@@ -163,4 +163,4 @@ En el equilibrio miden [NO₂] =
 
 ## Refuerzo de la malla que toca este tema (propuesta GOES, no MINED)
 
-- REF:panel_hallazgo:HAL:H911-equilibrio (revisado_panel): Usar K solo cualitativamente: un valor grande o pequeño indica si en el equilibrio predominan productos o reactivos, no la rapidez. Escribir y calcular Kc (procedimentales 3.3 y 3.5) y expresar Ka y Kb (3.9) pasan a profundización; Química 10.° (12.3–12.5) y 11.° (4.2) deben enseñarlos desde cero, sin «recordarlos» de 9.°. Los buffers (3.10) siguen experimentales, sin Ka.
+- REF:panel_hallazgo:HAL:H911-equilibrio (revisado_panel, solido): En 9.°, interpretar K con ejemplos guiados de composición y estequiometría, sin inferir rapidez ni predominio absoluto. Proponer escribir y calcular Kc y expresar Ka/Kb como profundización, sin sustituir los indicadores oficiales. Introducir estos formalismos desde cero en Química 10.°–11.°, antes de utilizarlos. Mantener buffers experimentales, sin Ka.

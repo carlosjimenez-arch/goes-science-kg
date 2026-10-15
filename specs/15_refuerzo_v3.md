@@ -131,6 +131,14 @@ faltante o una recuperación con evidencia fuerte. El resumen por ciclo cuenta l
   `gskg bucle impugnar --vuelta 1 --tipos contenido --serie rfz --prefijo RFZ:`.
   Así no se incorporan también los paquetes pedagógicos recién revisados.
 
+**Corte parcial 2026-10-15 (Física y Química, 9.°–11.°):** las 24 redacciones disponibles pasaron el panel y la
+impugnación. Tres se corrigieron en réplica y resistieron una segunda vuelta. Quedan 23 sólidas (18 notas, una fila
+nueva y cuatro descartes de adiciones) y una frágil por falta de evidencia del montaje de esterificación. La fila
+nueva de espectros de masas/infrarrojo propone una sesión adicional de 55 minutos, sin ahorro compensatorio
+demostrado; su adopción exige validar el presupuesto. La propuesta frágil no
+se inyecta. El snapshot distingue el diagnóstico inicial, la redacción vigente y la solidez del refuerzo; la
+continuación de Codex queda identificada en cada dictamen. Las fases globales y las matrices de 15.6 siguen abiertas.
+
 ### 15.6 · Entregable
 `entregas/mallas_v3_reforzadas/` (se genera):
 - **Una copia anotada de cada matriz de la V3:**

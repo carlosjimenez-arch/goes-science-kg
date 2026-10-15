@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 from goes_science_kg import refuerzo
 
 
@@ -50,3 +52,28 @@ def test_el_validador_del_redactor():
     errores = " | ".join(refuerzo.errores_lote(_lote(), mal))
     for esperado in ("no está en la malla vigente", "una fila nueva solo para", "exige motivo"):
         assert esperado in errores
+
+
+def test_snapshot_distingue_redaccion_vigente_de_evidencia_pendiente(tmp_path, monkeypatch):
+    """El informe no debe recomendar una nota frágil ni reemplazar el texto revisado por su diagnóstico."""
+    from goes_science_kg import panel
+
+    base = {"asignatura": "quimica", "tema_ancla": "G10-QUI-U9-9.2", "grados": [10],
+            "decision": "inyectar", "forma": "nota_en_tema", "confianza": "alta", "estado": "revisado_panel"}
+    registros = [{**base, "id": "REF:apta", "refuerzo": "Comparar oxidación y reducción en ejemplos guiados."},
+                 {**base, "id": "REF:fragil", "refuerzo": "Verificar la función del ácido antes de proponerla."},
+                 {**base, "id": "REF:descarte", "decision": "descartar", "motivo": "La malla ya lo incluye."}]
+    archivo = tmp_path / "refuerzos.json"
+    archivo.write_text(json.dumps(registros), encoding="utf-8")
+    ruta_real = refuerzo.ruta
+    monkeypatch.setattr(refuerzo, "ruta", lambda p: archivo if str(p).endswith("/refuerzos.json") else ruta_real(p))
+    monkeypatch.setattr(refuerzo, "candidatos", lambda: [])
+    monkeypatch.setattr(panel, "cargar_estado", lambda: {
+        "RFZ:" + r["id"]: {"estado": "resuelta", "bucle": {"solidez": s}}
+        for r, s in zip(registros, ("solido", "fragil", "solido"), strict=True)})
+    texto = refuerzo.snapshot(("quimica",), (10,), "prueba")
+    assert "3 redacciones en este alcance: 2 propuestas de inserción y 1 descartes" in texto
+    assert "1 inserciones cumplen el filtro" in texto
+    assert "Comparar oxidación y reducción en ejemplos guiados." in texto
+    assert "pendiente de evidencia o revisión" in texto
+    assert "descarte documentado" in texto

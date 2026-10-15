@@ -91,6 +91,21 @@ requiere registros diarios. Las adaptaciones experimentales que dependen del mon
 y alternativas con datos de ejemplo. El [registro de validación](../data/interim/panel/validacion_paquetes_codex_2026-10-15.json)
 conserva el alcance, los reemplazos elegidos y los pendientes.
 
+El [snapshot de refuerzos V3](../entregas/mallas_v3_reforzadas/SNAPSHOT_fisica_quimica_9-11.md) recoge las 24
+redacciones de esta tanda: 18 notas y una fila nueva con bucle sólido, cuatro descartes de adiciones y una nota frágil
+pendiente de evidencia. La revisión independiente corrigió tres refuerzos: el conteo de verbos como falsa prueba de
+ausencia de razonamiento, la interpretación general de K y la asociación de exotermia con irreversibilidad.
+Las tres correcciones resistieron una segunda impugnación. La reubicación del formalismo de K sigue siendo una
+propuesta curricular, no una conclusión sobre el único grado posible ni una sustitución de indicadores oficiales.
+
+Los paquetes muestran el estado de cada refuerzo. Las notas sin evidencia o revisión suficiente quedan marcadas
+como pendientes y su texto no se presenta como instrucción de clase. La
+[síntesis de ésteres](../entregas/mallas_v3_reforzadas/REVISION_HUMANA.md) requiere revisar el video y las cantidades
+del montaje antes de sostener una función deshidratante del ácido sulfúrico. La fila nueva de espectros de masas e
+infrarrojo propone una sesión adicional de 55 minutos, sin ahorro compensatorio demostrado. Antes de adoptarla hay
+que validar ese presupuesto; las 18 notas también requieren comprobar su integración didáctica en el tiempo
+disponible. Este cierre no completa la spec 15 global.
+
 ## Prueba de humo con el modelo real (2026-10-12, 12 llamadas aprobadas)
 Se usó Gemini en Vertex con respuestas de ejemplo escritas por el equipo, sin datos de estudiantes.
 

@@ -1,0 +1,839 @@
+{
+ "lote": "r3-rfz2_experto-quimica",
+ "ronda": 3,
+ "rol": "experto-quimica",
+ "version": "panel-v1",
+ "instrucciones": [
+  "prompts/panel_dictaminar.md",
+  ".claude/agents/experto-quimica.md"
+ ],
+ "expedientes": [
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales (acotar, 10.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G10-QUI-U6-6.4",
+     "refuerzo": "Conservar cálculos de Dalton de 6.4. Después, contrastar difusión y efusión mediante esquemas. Resolver una comparación guiada de efusión a igual temperatura con r₁/r₂=√(M₂/M₁) antes de practicar. Explicar, con un dibujo de partículas, las desviaciones del gas ideal a alta presión y baja temperatura por volumen molecular e interacciones. No añadir problemas de Z ni van der Waals.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.1",
+       "cita_literal": "Explica las desviaciones del comportamiento ideal de los gases reales y la velocidad relativa de difusión y efusión con la ley de Graham",
+       "cita": "La competencia vigente de unidad conserva gases reales y la ley de Graham aunque desaparezcan las antiguas filas específicas."
+      },
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.4",
+       "cita_literal": "Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total",
+       "cita": "Lo que queda en la V3: ley de Dalton."
+      },
+      {
+       "fuente": "ACSCH060",
+       "cita_literal": "The behaviour of gases, including the qualitative relationships between pressure, temperature and volume, can be explained using kinetic theory",
+       "cita": "Pivote ACARA SS: explicación cualitativa de relaciones P-T-V mediante teoría cinética; no reemplaza los cálculos nacionales de Dalton o Graham."
+      },
+      {
+       "fuente": "TW-QUI-tw_ele-p053-23",
+       "cita_literal": "道耳頓分壓定律。理想氣體與真實氣體",
+       "cita": "TW 選修 (electiva): presiones parciales y gases reales."
+      },
+      {
+       "fuente": "ON-QUI-on_sch3u-p105-05",
+       "cita_literal": "explain Dalton’s law of partial pressures",
+       "cita": "ON SCH3U (electiva)."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Mezclas de gases, difusión y gases reales: solo_especializacion",
+     "texto_base": "La V3 quitó la ley de Graham y los gases reales (V2 G10-QUI-U6-6.6 y 6.7), pero Química 10.°, obligatoria, mantiene la ley de Dalton y las presiones parciales (G10-QUI-U6-6.4). Fuera, las presiones parciales son de electiva: JP 化学, ON SCH3U, TW 選修 y SG H2. El único núcleo (KR) es la difusión cualitativa, otro concepto. Sigue solo especialización; la V3 ya quitó la parte más exigente.",
+     "conceptos": [
+      "CON:quimica/difusion-efusion-y-gases-reales"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G10-QUI-U6-6.4",
+       "grado": 10,
+       "unidad": "6. Los gases",
+       "contenido": "Mezclas de gases",
+       "procedimental": "6.4. Cálculo de presiones parciales y fracciones molares en mezclas de gases, incluida la recolección de gases sobre agua.",
+       "indicador": "6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total."
+      },
+      {
+       "id": "G08-CIE-U4-4.1",
+       "grado": 8,
+       "unidad": "4. Estequiometría y dispersiones",
+       "contenido": "Unidades físicas de concentración",
+       "procedimental": "4.1. Identificación de las unidades físicas de concentración en sustancias de uso cotidiano y exploración de sus aplicaciones cotidianas, industriales y ambientales.",
+       "indicador": "4.1. Identifica las unidades físicas de concentración en sustancias de uso cotidiano y reconoce sus aplicaciones cotidianas, industriales y ambientales."
+      },
+      {
+       "id": "G08-CIE-U4-4.10",
+       "grado": 8,
+       "unidad": "4. Estequiometría y dispersiones",
+       "contenido": "Unidades químicas de concentración",
+       "procedimental": "4.9. Cálculo de concentraciones, gramos y moles de soluto empleando unidades químicas de concentración.",
+       "indicador": "4.10. Ejecuta cálculos de concentración, gramos y moles de soluto empleando unidades químicas de concentración."
+      },
+      {
+       "id": "G08-CIE-U4-4.9",
+       "grado": 8,
+       "unidad": "4. Estequiometría y dispersiones",
+       "contenido": "Unidades químicas de concentración",
+       "procedimental": "4.8. Identificación de las unidades químicas de concentración en sustancias de uso cotidiano.",
+       "indicador": "4.9. Identifica las unidades químicas de concentración en sustancias de uso cotidiano."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G10-QUI-U6-6.4",
+     "grado": 10,
+     "unidad": "6. Los gases",
+     "contenido": "Mezclas de gases",
+     "procedimental": "6.4. Cálculo de presiones parciales y fracciones molares en mezclas de gases, incluida la recolección de gases sobre agua.",
+     "indicador": "6.4. Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+     "decision": "corregir",
+     "justificacion": "La competencia vigente exige Graham; decir que basta lo cualitativo omite esa relación y no preserva el alcance de unidad. Distingo difusión de efusión y explicito igual temperatura para la comparación. La nota mantiene Dalton y limita formalismo adicional de gases reales. ACSCH060 orienta el modelo cinético, pero no anula exigencias cuantitativas de la V3.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.1",
+       "cita_literal": "Explica las desviaciones del comportamiento ideal de los gases reales y la velocidad relativa de difusión y efusión con la ley de Graham",
+       "cita": "La competencia vigente de unidad conserva gases reales y la ley de Graham aunque desaparezcan las antiguas filas específicas."
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Ley de Graham para efusión ideal a igual T: r₁/r₂=√(M₂/M₁). Difusión mezcla por movimiento molecular con colisiones; no es el mismo proceso. Dalton permanece Pᵢ=xᵢPtotal."
+      },
+      {
+       "fuente": "ACSCH060",
+       "cita_literal": "The behaviour of gases, including the qualitative relationships between pressure, temperature and volume, can be explained using kinetic theory",
+       "cita": "Pivote ACARA SS: explicación cualitativa de relaciones P-T-V mediante teoría cinética; no reemplaza los cálculos nacionales de Dalton o Graham."
+      }
+     ],
+     "confianza": "media",
+     "motor_revision": "Codex",
+     "cambios": {
+      "evidencia": [
+       {
+        "fuente": "TEMA:G10-QUI-U6-6.1",
+        "cita_literal": "Explica las desviaciones del comportamiento ideal de los gases reales y la velocidad relativa de difusión y efusión con la ley de Graham",
+        "cita": "La competencia vigente de unidad conserva gases reales y la ley de Graham aunque desaparezcan las antiguas filas específicas."
+       },
+       {
+        "fuente": "TEMA:G10-QUI-U6-6.4",
+        "cita_literal": "Calcula presiones parciales de los componentes de una mezcla gaseosa a partir de su fracción molar y de la presión total",
+        "cita": "Lo que queda en la V3: ley de Dalton."
+       },
+       {
+        "fuente": "ACSCH060",
+        "cita_literal": "The behaviour of gases, including the qualitative relationships between pressure, temperature and volume, can be explained using kinetic theory",
+        "cita": "Pivote ACARA SS: explicación cualitativa de relaciones P-T-V mediante teoría cinética; no reemplaza los cálculos nacionales de Dalton o Graham."
+       },
+       {
+        "fuente": "TW-QUI-tw_ele-p053-23",
+        "cita_literal": "道耳頓分壓定律。理想氣體與真實氣體",
+        "cita": "TW 選修 (electiva): presiones parciales y gases reales."
+       },
+       {
+        "fuente": "ON-QUI-on_sch3u-p105-05",
+        "cita_literal": "explain Dalton’s law of partial pressures",
+        "cita": "ON SCH3U (electiva)."
+       }
+      ],
+      "refuerzo": "Conservar los cálculos de Dalton de 6.4. Completar la competencia de unidad con difusión cualitativa y, para efusión a igual temperatura, comparar velocidades mediante r₁/r₂=√(M₂/M₁). Distinguir ambos procesos. Explicar desviaciones del gas ideal a alta presión y baja temperatura mediante volumen molecular e interacciones, sin añadir problemas de Z o van der Waals."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-15"
+    },
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:quimica/difusion-efusion-y-gases-reales",
+     "decision": "corregir",
+     "justificacion": "La nota reúne Dalton, dos procesos y desviaciones del modelo ideal. Ordeno el trabajo después de Dalton e incorporo esquemas y un ejemplo guiado para reducir la carga de representación simultánea. Conservo la comparación cuantitativa fijada por el experto y las restricciones de profundidad. No se sustituye el indicador de presiones parciales.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U6-6.4",
+       "cita": "El indicador pide calcular presiones parciales a partir de fracción molar y presión total; la nota vigente del experto conserva Dalton y la comparación de efusión."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Secuenciar representaciones verbales, esquemáticas y algebraicas permite distinguir procesos sin presentar todos los modelos a la vez."
+      },
+      {
+       "fuente": "specs/15_refuerzo_v3.md, sección 15.4, Presupuesto",
+       "cita": "Prioriza el refuerzo dentro del tema; una fila nueva requiere un faltante o recuperación con evidencia fuerte."
+      }
+     ],
+     "confianza": "alta",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Conservar cálculos de Dalton de 6.4. Después, contrastar difusión y efusión mediante esquemas. Resolver una comparación guiada de efusión a igual temperatura con r₁/r₂=√(M₂/M₁) antes de practicar. Explicar, con un dibujo de partículas, las desviaciones del gas ideal a alta presión y baja temperatura por volumen molecular e interacciones. No añadir problemas de Z ni van der Waals."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-15"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-QUI-U10-10.1",
+     "refuerzo": "Comparar dibujos de cadenas para relacionar monómero, ramificación, fuerzas entre cadenas y entrecruzamiento con propiedades; registrar la justificación en una tabla. Distinguir redes covalentes de cadenas que pueden reorganizarse. No identificar termoplásticos/termoestables solo por rigidez. Explicar cristalinidad como orden parcial que puede aumentar rigidez y densidad, sin generalizar. Conservar ecuaciones de iniciación, propagación y terminación de 10.1.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita_literal": "su estructura espacial determina propiedades como la rigidez, la cristalinidad y la resistencia a la degradación",
+       "cita": "La explicación vigente de unidad conserva una relación entre estructura, cristalinidad y propiedades; eliminar la fila V2 no elimina esta mención."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U1-1.4",
+       "cita_literal": "Predice qué envases del aula serán termoplásticos y cuáles termoestables",
+       "cita": "11.°, unidad 1: la predicción se apoya en el moldeado y la rigidez, no en la estructura."
+      },
+      {
+       "fuente": "ACSCH129",
+       "cita_literal": "synthetic polymers display properties including strength, density and biodegradability that can be explained by considering the primary, secondary or tertiary structures of the material",
+       "cita": "Pivote ACARA SS, unidad 4."
+      },
+      {
+       "fuente": "HK-QUI-hk_qui-p050-11",
+       "cita_literal": "uses of some common addition polymers can be related",
+       "cita": "HKDSE Chemistry (electiva)."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita": "La relación con propiedades se trabaja junto al mecanismo exigido.",
+       "cita_literal": "Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición"
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Estructura y propiedades de los polímeros: solo_especializacion",
+     "texto_base": "La V3 quitó cristalinidad y tacticidad (V2 G11-QUI-U10-10.3), pero Química 11.° sigue pidiendo la relación estructura–propiedad: predecir termoplásticos y termoestables (1.4) y relacionar el monómero con las propiedades del polímero (10.1). Fuera, esa relación es de electiva (HK, JP 化学, AU U4, ENG triple); SG H1 y JP 基礎 son núcleo parcial y el «tardío» se apoya en etiquetas de materiales. Sigue solo especialización, ya acotado.",
+     "conceptos": [
+      "CON:quimica/estructura-y-propiedades-de-polimeros"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G11-QUI-U1-1.4",
+       "grado": 11,
+       "unidad": "1. Ciencia de materiales",
+       "contenido": "Polímeros y materiales compuestos",
+       "procedimental": "1.3. Reconocimiento de la diversidad de polímeros sintéticos en el entorno.",
+       "indicador": "1.4. Reconoce distintos tipos de polímeros sintéticos de uso común."
+      },
+      {
+       "id": "G11-QUI-U10-10.1",
+       "grado": 11,
+       "unidad": "10. Polímeros y macromoléculas",
+       "contenido": "Reacciones de polimerización",
+       "procedimental": "10.1. Representación de las etapas de la polimerización por adición por radicales libres y relación de las propiedades de los polímeros de adición con sus usos.",
+       "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-QUI-U10-10.1",
+     "grado": 11,
+     "unidad": "10. Polímeros y macromoléculas",
+     "contenido": "Reacciones de polimerización",
+     "procedimental": "10.1. Representación de las etapas de la polimerización por adición por radicales libres y relación de las propiedades de los polímeros de adición con sus usos.",
+     "indicador": "10.1. Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición y relaciona el monómero con las propiedades del polímero obtenido."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros",
+     "decision": "corregir",
+     "justificacion": "La relación estructura-propiedad concuerda con ACSCH129. Preciso que rigidez no identifica por sí sola comportamiento térmico y que cristalinidad parcial no garantiza una propiedad universal. Conservo las ecuaciones de polimerización exigidas por el indicador 10.1; el refuerzo no debe sustituirlas por clasificación cualitativa. La omisión de una fila previa no elimina la competencia vigente.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita_literal": "su estructura espacial determina propiedades como la rigidez, la cristalinidad y la resistencia a la degradación",
+       "cita": "La explicación vigente de unidad conserva una relación entre estructura, cristalinidad y propiedades; eliminar la fila V2 no elimina esta mención."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita": "La relación con propiedades se trabaja junto al mecanismo exigido.",
+       "cita_literal": "Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Termoplasticidad depende de organización y movilidad de cadenas; una red covalente extensa impide fluir para remoldearse. Cristalinidad, temperatura y fuerzas intermoleculares también influyen; un polímero amorfo puede ser rígido."
+      },
+      {
+       "fuente": "ACSCH129",
+       "cita_literal": "synthetic polymers display properties including strength, density and biodegradability that can be explained by considering the primary, secondary or tertiary structures of the material",
+       "cita": "Pivote ACARA SS, unidad 4."
+      }
+     ],
+     "confianza": "media",
+     "motor_revision": "Codex",
+     "cambios": {
+      "evidencia": [
+       {
+        "fuente": "TEMA:G11-QUI-U10-10.1",
+        "cita_literal": "su estructura espacial determina propiedades como la rigidez, la cristalinidad y la resistencia a la degradación",
+        "cita": "La explicación vigente de unidad conserva una relación entre estructura, cristalinidad y propiedades; eliminar la fila V2 no elimina esta mención."
+       },
+       {
+        "fuente": "TEMA:G11-QUI-U1-1.4",
+        "cita_literal": "Predice qué envases del aula serán termoplásticos y cuáles termoestables",
+        "cita": "11.°, unidad 1: la predicción se apoya en el moldeado y la rigidez, no en la estructura."
+       },
+       {
+        "fuente": "ACSCH129",
+        "cita_literal": "synthetic polymers display properties including strength, density and biodegradability that can be explained by considering the primary, secondary or tertiary structures of the material",
+        "cita": "Pivote ACARA SS, unidad 4."
+       },
+       {
+        "fuente": "HK-QUI-hk_qui-p050-11",
+        "cita_literal": "uses of some common addition polymers can be related",
+        "cita": "HKDSE Chemistry (electiva)."
+       },
+       {
+        "fuente": "TEMA:G11-QUI-U10-10.1",
+        "cita": "La relación con propiedades se trabaja junto al mecanismo exigido.",
+        "cita_literal": "Representa con ecuaciones las etapas de iniciación, propagación y terminación de una polimerización por adición"
+       }
+      ],
+      "refuerzo": "Relacionar cualitativamente monómero, ramificación, fuerzas entre cadenas y entrecruzamiento con propiedades; distinguir una red covalente de cadenas que pueden reorganizarse. No clasificar termoplásticos/termoestables solo por rigidez. Describir cristalinidad como orden parcial que puede aumentar rigidez y densidad, sin generalizar. Conservar las ecuaciones de iniciación, propagación y terminación exigidas en 10.1."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-15"
+    },
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:quimica/estructura-y-propiedades-de-polimeros",
+     "decision": "corregir",
+     "justificacion": "La lista de relaciones estructurales carece de un producto observable que muestre la justificación del alumnado. Incorporo dibujos y una tabla para registrar conexiones estructura-propiedad, conservando términos, matices y etapas de polimerización. El apoyo visual no exige un recurso tecnológico y no sustituye las ecuaciones requeridas por el indicador.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U10-10.1",
+       "cita": "El indicador exige ecuaciones de iniciación, propagación y terminación y relacionar monómero con propiedades."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Una tabla de justificaciones apoyada en dibujos permite observar las relaciones que cada estudiante establece y ofrecer retroalimentación."
+      },
+      {
+       "fuente": "specs/15_refuerzo_v3.md, sección 15.4, Presupuesto",
+       "cita": "Prioriza el refuerzo dentro del tema; una fila nueva requiere un faltante o recuperación con evidencia fuerte."
+      }
+     ],
+     "confianza": "alta",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Comparar dibujos de cadenas para relacionar monómero, ramificación, fuerzas entre cadenas y entrecruzamiento con propiedades; registrar la justificación en una tabla. Distinguir redes covalentes de cadenas que pueden reorganizarse. No identificar termoplásticos/termoestables solo por rigidez. Explicar cristalinidad como orden parcial que puede aumentar rigidez y densidad, sin generalizar. Conservar ecuaciones de iniciación, propagación y terminación de 10.1."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-15"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos (acotar, 11.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos",
+     "tipo": "acotar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G11-QUI-U12-12.2",
+     "refuerzo": "Al cerrar 12.2, recuperar el modelo de ADN de Biología 10.º (clase 1.10, indicador 1.11), o un esquema equivalente, y compararlo con proteínas. Rotular esqueleto covalente —peptídico o fosfodiéster— e interacciones no covalentes; en ADN, puentes de hidrógeno entre bases y apilamiento. Mantener el análisis de niveles proteicos y evitar mecanismos nuevos de síntesis del fosfodiéster.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1",
+       "cita_literal": "las interacciones químicas que estabilizan la estructura de proteínas y ácidos nucleicos",
+       "cita": "La competencia de unidad conserva interacciones de proteínas y ácidos nucleicos; su explicación también nombra fosfodiéster, pese a no tener una clase específica de ácidos nucleicos."
+      },
+      {
+       "fuente": "TEMA:G10-BIO-U1-1.11",
+       "cita_literal": "Construye un modelo tridimensional de ADN respetando el apareamiento A-T y G-C",
+       "cita": "Biología 10.° ya trata la estructura de forma cualitativa."
+      },
+      {
+       "fuente": "ACSBL077",
+       "cita_literal": "including nucleotide composition and pairing and the weak bonds between strands of DNA",
+       "cita": "ACARA Biología SS aporta un antecedente sobre composición, apareamiento y enlaces débiles del ADN; no sustituye el pivote ACARA Química."
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_triple-p027-06",
+       "cita_literal": "recall that DNA is a polymer made from four different monomers called nucleotides",
+       "cita": "ENG: GCSE de química separada (electiva)."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1",
+       "cita": "La explicación de unidad ya reconoce el esqueleto covalente de ambas macromoléculas.",
+       "cita_literal": "enlaces covalentes, como el peptídico y el fosfodiéster"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El fosfodiéster une nucleótidos en cada cadena; apareamiento por puentes de hidrógeno y apilamiento estabilizan la doble hélice. No deben equipararse enlaces covalentes del esqueleto e interacciones entre bases."
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "contraste",
+     "problema": "Química de los ácidos nucleicos: solo_especializacion",
+     "texto_base": "En 6.° los ácidos nucleicos solo se nombran en la lista de biomoléculas y 7.° modela la doble hélice, que es estructura del ADN (concepto de Biología): no es «retomado». La química aparece en Biología 10.° (componentes químicos y apareamiento; G10-BIO-U1-1.11). Fuera, nucleótidos y enlaces son de electiva (ENG triple, HK, JP 化学, KR). La V3 ya quitó la fila más exigente (V2 G11-QUI-U12-12.4); basta mantener 1.11 cualitativo.",
+     "conceptos": [
+      "CON:quimica/quimica-de-los-acidos-nucleicos"
+     ],
+     "temas_ancla": [
+      {
+       "id": "G06-CIE-U5-5.1",
+       "grado": 6,
+       "unidad": "5. Célula.",
+       "contenido": "Biomoléculas.",
+       "procedimental": "5.1. Identificación experimental de los grupos de biomoléculas.",
+       "indicador": "5.1. Identifica los principales grupos de biomoléculas por sus características."
+      },
+      {
+       "id": "G10-BIO-U1-1.10",
+       "grado": 10,
+       "unidad": "1. Biomoléculas",
+       "contenido": "Ácidos nucleicos",
+       "procedimental": "1.9. Identificación de las funciones de los nucleótidos libres.",
+       "indicador": "1.10. Identifica las funciones de los nucleótidos libres."
+      },
+      {
+       "id": "G10-BIO-U1-1.11",
+       "grado": 10,
+       "unidad": "1. Biomoléculas",
+       "contenido": "Ácidos nucleicos",
+       "procedimental": "1.10. Interpretación de la estructura química de los ácidos nucleicos.",
+       "indicador": "1.11. Elabora modelos tridimensionales de las estructuras químicas de los ácidos nucleicos."
+      },
+      {
+       "id": "G11-QUI-U12-12.1",
+       "grado": 11,
+       "unidad": "12. Proteínas y ácidos nucleicos",
+       "contenido": "Química de los aminoácidos",
+       "procedimental": "12.1. Interpretación de la curva de titulación de un aminoácido para identificar sus formas iónicas y calcular su punto isoeléctrico.",
+       "indicador": "12.1. Calcula el punto isoeléctrico de un aminoácido a partir de sus valores de pKa y predice la carga neta que presenta a distintos valores de pH."
+      }
+     ],
+     "solidez": "revisada"
+    },
+    "tema_ancla": {
+     "id": "G11-QUI-U12-12.2",
+     "grado": 11,
+     "unidad": "12. Proteínas y ácidos nucleicos",
+     "contenido": "Estructura de las proteínas",
+     "procedimental": "12.2. Análisis de las fuerzas químicas que estabilizan cada nivel estructural de las proteínas.",
+     "indicador": "12.2. Relaciona cada nivel estructural de una proteína con el enlace o la interacción química que lo estabiliza: peptídico, puentes de hidrógeno, iónico, disulfuro o hidrofóbico."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos",
+     "decision": "corregir",
+     "justificacion": "La V3 ya nombra enlaces fosfodiéster en la explicación de unidad; no está totalmente ausente la química de ácidos nucleicos. La comparación en 12.2 puede completar esa competencia sin otra fila. Distingo enlaces covalentes y fuerzas no covalentes e incluyo apilamiento, evitando atribuir toda estabilidad del ADN a puentes de hidrógeno. ACSBL077 se usa como antecedente biológico, conservando el pivote de Química.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1",
+       "cita_literal": "las interacciones químicas que estabilizan la estructura de proteínas y ácidos nucleicos",
+       "cita": "La competencia de unidad conserva interacciones de proteínas y ácidos nucleicos; su explicación también nombra fosfodiéster, pese a no tener una clase específica de ácidos nucleicos."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.1",
+       "cita": "La explicación de unidad ya reconoce el esqueleto covalente de ambas macromoléculas.",
+       "cita_literal": "enlaces covalentes, como el peptídico y el fosfodiéster"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "El fosfodiéster une nucleótidos en cada cadena; apareamiento por puentes de hidrógeno y apilamiento estabilizan la doble hélice. No deben equipararse enlaces covalentes del esqueleto e interacciones entre bases."
+      },
+      {
+       "fuente": "Finding and visualizing nucleic acid base stacking (1996), PubMed PMID 8744567; https://pubmed.ncbi.nlm.nih.gov/8744567/",
+       "cita": "El estudio identifica el apilamiento de bases como factor importante de estabilización de estructuras de ácidos nucleicos."
+      }
+     ],
+     "confianza": "media",
+     "motor_revision": "Codex",
+     "cambios": {
+      "evidencia": [
+       {
+        "fuente": "TEMA:G11-QUI-U12-12.1",
+        "cita_literal": "las interacciones químicas que estabilizan la estructura de proteínas y ácidos nucleicos",
+        "cita": "La competencia de unidad conserva interacciones de proteínas y ácidos nucleicos; su explicación también nombra fosfodiéster, pese a no tener una clase específica de ácidos nucleicos."
+       },
+       {
+        "fuente": "TEMA:G10-BIO-U1-1.11",
+        "cita_literal": "Construye un modelo tridimensional de ADN respetando el apareamiento A-T y G-C",
+        "cita": "Biología 10.° ya trata la estructura de forma cualitativa."
+       },
+       {
+        "fuente": "ACSBL077",
+        "cita_literal": "including nucleotide composition and pairing and the weak bonds between strands of DNA",
+        "cita": "ACARA Biología SS aporta un antecedente sobre composición, apareamiento y enlaces débiles del ADN; no sustituye el pivote ACARA Química."
+       },
+       {
+        "fuente": "ENG-QUI-eng_gcse_triple-p027-06",
+        "cita_literal": "recall that DNA is a polymer made from four different monomers called nucleotides",
+        "cita": "ENG: GCSE de química separada (electiva)."
+       },
+       {
+        "fuente": "TEMA:G11-QUI-U12-12.1",
+        "cita": "La explicación de unidad ya reconoce el esqueleto covalente de ambas macromoléculas.",
+        "cita_literal": "enlaces covalentes, como el peptídico y el fosfodiéster"
+       },
+       {
+        "fuente": "criterio disciplinar",
+        "cita": "El fosfodiéster une nucleótidos en cada cadena; apareamiento por puentes de hidrógeno y apilamiento estabilizan la doble hélice. No deben equipararse enlaces covalentes del esqueleto e interacciones entre bases."
+       }
+      ],
+      "refuerzo": "Al cerrar 12.2, comparar el modelo de ADN de Biología 10.º, clase 1.10 (tema 1.11), con proteínas. Distinguir esqueleto covalente —peptídico o fosfodiéster— de interacciones no covalentes; en ADN, incluir puentes de hidrógeno entre bases y apilamiento. Conservar el análisis de los niveles proteicos; evitar mecanismos nuevos de síntesis del fosfodiéster."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-15"
+    },
+    {
+     "id": "RFZ:REF:contraste:9_11:CON:quimica/quimica-de-los-acidos-nucleicos",
+     "decision": "corregir",
+     "justificacion": "La comparación recupera un aprendizaje previo adecuado, pero no todos conservarán el modelo elaborado en 10.º. Ofrezco un esquema equivalente y pido rotularlo para hacer visible la distinción conceptual. Se conserva el cierre de 12.2, su análisis proteico y el contenido fijado sobre ADN, sin añadir mecanismos ni otra fila.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G11-QUI-U12-12.2",
+       "cita": "El indicador pide relacionar niveles estructurales de proteínas con enlaces o interacciones estabilizadoras."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Ofrecer un esquema como alternativa al objeto físico y pedir rotularlo preserva el objetivo con menor dependencia de materiales conservados de otro grado."
+      },
+      {
+       "fuente": "specs/15_refuerzo_v3.md, sección 15.4, Presupuesto",
+       "cita": "Prioriza el refuerzo dentro del tema; una fila nueva requiere un faltante o recuperación con evidencia fuerte."
+      }
+     ],
+     "confianza": "alta",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Al cerrar 12.2, recuperar el modelo de ADN de Biología 10.º (clase 1.10, indicador 1.11), o un esquema equivalente, y compararlo con proteínas. Rotular esqueleto covalente —peptídico o fosfodiéster— e interacciones no covalentes; en ADN, puentes de hidrógeno entre bases y apilamiento. Mantener el análisis de niveles proteicos y evitar mecanismos nuevos de síntesis del fosfodiéster."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-15"
+    }
+   ]
+  },
+  {
+   "tipo": "contenido",
+   "titulo": "REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores (recuperar, 10.°)",
+   "pregunta": "¿El refuerzo se puede proponer al MINED tal cual (ubicación, redacción, nivel del grado y evidencia)? Si no, corrígelo; si no se sostiene o la V3 ya lo cubre, conviértelo en descarte (decision «descartar» con motivo).",
+   "datos": {
+    "elemento": {
+     "id": "REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
+     "tipo": "recuperar",
+     "decision": "inyectar",
+     "motivo": null,
+     "forma": "nota_en_tema",
+     "tema_ancla": "G10-QUI-U9-9.2",
+     "refuerzo": "Conservar la clasificación de 9.2. Resolver ejemplos guiados de combustión y desplazamiento metálico marcando cambios de números de oxidación; después practicar. Nombrar oxidante a quien acepta electrones y se reduce, y reductor a quien los cede y se oxida. Aclarar que no toda síntesis es redox. Retomar en 11.º, clase 6.5 (indicador 6.8), comparando potenciales estándar de reducción.",
+     "fila": null,
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita_literal": "Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión",
+       "cita": "10.°: clasificación sin criterio redox."
+      },
+      {
+       "fuente": "TEMA:G07-CIE-U1-1.1-v3",
+       "cita_literal": "Calcula el número de oxidación de cada elemento en compuestos cotidianos",
+       "cita": "7.°: números de oxidación, el prerrequisito."
+      },
+      {
+       "fuente": "ACSCH106",
+       "cita_literal": "The relative strength of oxidising and reducing agents can be determined by comparing standard electrode potentials",
+       "cita": "Pivote ACARA SS, unidad 3: los agentes en el núcleo del pivote."
+      },
+      {
+       "fuente": "ACSCH103",
+       "cita_literal": "displacement reactions of metals, combustion, corrosion, and electrochemical processes, can be modelled as redox reactions",
+       "cita": "Pivote ACARA SS, unidad 3."
+      },
+      {
+       "fuente": "TW-QUI-tw_req_contenido-p041-23",
+       "cita_literal": "氧化劑與還原劑的定義及常見氧化劑與還原劑",
+       "cita": "TW, núcleo: definición y ejemplos de oxidantes y reductores."
+      },
+      {
+       "fuente": "EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27",
+       "cita_literal": "know the behaviour of metals in chemical reactions as a reducing agent",
+       "cita": "EE, núcleo de la escuela básica."
+      },
+      {
+       "fuente": "ENG-QUI-eng_gcse_comb-p022-11",
+       "cita_literal": "explain reduction and oxidation in terms of gain or loss",
+       "cita": "ENG Combined, núcleo."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.1",
+       "cita": "Redox continúa en la malla aunque falte la denominación de agentes.",
+       "cita_literal": "Separa una reacción redox en semirreacciones y verifica en cada una la conservación de la masa y de la carga eléctrica"
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.8",
+       "cita": "Clase 6.5 de la V3: comparación cuantitativa posterior basada en potenciales.",
+       "cita_literal": "Calcula el potencial estándar de celda con la tabla de potenciales de reducción para seis pares redox"
+      }
+     ],
+     "confianza": "media"
+    },
+    "candidato": {
+     "origen": "quitado_v3",
+     "problema": "Agentes oxidantes y reductores: la V2 lo enseñaba en 10.° y la V3 ya no lo enseña en 9.°–11.° (en ningún grado)",
+     "texto_base": "",
+     "conceptos": [
+      "CON:quimica/agentes-oxidantes-y-reductores"
+     ],
+     "temas_ancla": [],
+     "solidez": "calculada"
+    },
+    "tema_ancla": {
+     "id": "G10-QUI-U9-9.2",
+     "grado": 10,
+     "unidad": "9. Reacciones químicas",
+     "contenido": "Clasificación de las reacciones químicas",
+     "procedimental": "9.2. Clasificación de reacciones químicas cotidianas e industriales según la reorganización de sus reactivos y productos.",
+     "indicador": "9.2. Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión, justificando su criterio con la ecuación."
+    },
+    "adaptacion": {
+     "palabras_max": 100,
+     "registro": "modelos formales y cuantitativos"
+    }
+   },
+   "id": "RFZ:REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
+   "opciones": [
+    "aprobar",
+    "corregir"
+   ],
+   "etapa": "visto bueno final del experto",
+   "campos_editables": [
+    "decision",
+    "motivo",
+    "forma",
+    "tema_ancla",
+    "refuerzo",
+    "fila",
+    "evidencia",
+    "confianza"
+   ],
+   "revisiones_anteriores": [
+    {
+     "id": "RFZ:REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
+     "decision": "corregir",
+     "justificacion": "La V3 conserva semirreacciones y potenciales en 11.º, aunque no explicita nombres y papeles de ambos agentes; no es ausencia completa de redox. La nota en clasificación de 10.º sirve como conexión y precursor. Defino correctamente los agentes, evito generalizar toda síntesis como redox y hago inequívoca la referencia a clase 6.5, tema G11-QUI-U6-6.8.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita_literal": "Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión",
+       "cita": "10.°: clasificación sin criterio redox."
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.1",
+       "cita": "Redox continúa en la malla aunque falte la denominación de agentes.",
+       "cita_literal": "Separa una reacción redox en semirreacciones y verifica en cada una la conservación de la masa y de la carga eléctrica"
+      },
+      {
+       "fuente": "TEMA:G11-QUI-U6-6.8",
+       "cita": "Clase 6.5 de la V3: comparación cuantitativa posterior basada en potenciales.",
+       "cita_literal": "Calcula el potencial estándar de celda con la tabla de potenciales de reducción para seis pares redox"
+      },
+      {
+       "fuente": "criterio disciplinar",
+       "cita": "Oxidante acepta electrones y se reduce; reductor cede electrones y se oxida. Cambios de números de oxidación permiten diagnosticar redox; la etiqueta síntesis no basta."
+      },
+      {
+       "fuente": "ACSCH106",
+       "cita_literal": "The relative strength of oxidising and reducing agents can be determined by comparing standard electrode potentials",
+       "cita": "Pivote ACARA SS, unidad 3: los agentes en el núcleo del pivote."
+      },
+      {
+       "fuente": "ACSCH103",
+       "cita_literal": "displacement reactions of metals, combustion, corrosion, and electrochemical processes, can be modelled as redox reactions",
+       "cita": "Pivote ACARA SS, unidad 3."
+      }
+     ],
+     "confianza": "media",
+     "motor_revision": "Codex",
+     "cambios": {
+      "evidencia": [
+       {
+        "fuente": "TEMA:G10-QUI-U9-9.2",
+        "cita_literal": "Clasifica reacciones químicas de su entorno en síntesis, descomposición, sustitución simple, doble sustitución y combustión",
+        "cita": "10.°: clasificación sin criterio redox."
+       },
+       {
+        "fuente": "TEMA:G07-CIE-U1-1.1-v3",
+        "cita_literal": "Calcula el número de oxidación de cada elemento en compuestos cotidianos",
+        "cita": "7.°: números de oxidación, el prerrequisito."
+       },
+       {
+        "fuente": "ACSCH106",
+        "cita_literal": "The relative strength of oxidising and reducing agents can be determined by comparing standard electrode potentials",
+        "cita": "Pivote ACARA SS, unidad 3: los agentes en el núcleo del pivote."
+       },
+       {
+        "fuente": "ACSCH103",
+        "cita_literal": "displacement reactions of metals, combustion, corrosion, and electrochemical processes, can be modelled as redox reactions",
+        "cita": "Pivote ACARA SS, unidad 3."
+       },
+       {
+        "fuente": "TW-QUI-tw_req_contenido-p041-23",
+        "cita_literal": "氧化劑與還原劑的定義及常見氧化劑與還原劑",
+        "cita": "TW, núcleo: definición y ejemplos de oxidantes y reductores."
+       },
+       {
+        "fuente": "EE_Basic_Annex4_Natural_Science_2023_en.pdf p. 27",
+        "cita_literal": "know the behaviour of metals in chemical reactions as a reducing agent",
+        "cita": "EE, núcleo de la escuela básica."
+       },
+       {
+        "fuente": "ENG-QUI-eng_gcse_comb-p022-11",
+        "cita_literal": "explain reduction and oxidation in terms of gain or loss",
+        "cita": "ENG Combined, núcleo."
+       },
+       {
+        "fuente": "TEMA:G11-QUI-U6-6.1",
+        "cita": "Redox continúa en la malla aunque falte la denominación de agentes.",
+        "cita_literal": "Separa una reacción redox en semirreacciones y verifica en cada una la conservación de la masa y de la carga eléctrica"
+       },
+       {
+        "fuente": "TEMA:G11-QUI-U6-6.8",
+        "cita": "Clase 6.5 de la V3: comparación cuantitativa posterior basada en potenciales.",
+        "cita_literal": "Calcula el potencial estándar de celda con la tabla de potenciales de reducción para seis pares redox"
+       }
+      ],
+      "refuerzo": "Al clasificar ejemplos de 9.2, comprobar cambios de números de oxidación: no toda síntesis es redox. Nombrar oxidante a quien acepta electrones y se reduce, y reductor a quien los cede y se oxida. Usar combustión y desplazamientos metálicos; retomar en 11.º, clase 6.5 (indicador 6.8), comparando potenciales estándar de reducción."
+     },
+     "ronda": 1,
+     "rol": "experto-quimica",
+     "fecha": "2026-10-15"
+    },
+    {
+     "id": "RFZ:REF:quitado_v3:9_11:CON:quimica/agentes-oxidantes-y-reductores",
+     "decision": "corregir",
+     "justificacion": "El contenido permite conectar clasificación y agentes, pero conviene mostrar cómo realizar la comparación antes de exigirla. Incorporo ejemplos guiados, marcado de cambios y práctica posterior, preservando definiciones y proyección a 11.º. La clasificación original sigue explícita, el resultado es observable y la nota no se transforma en un tema separado.",
+     "evidencia": [
+      {
+       "fuente": "TEMA:G10-QUI-U9-9.2",
+       "cita": "El indicador exige clasificar reacciones y justificar el criterio mediante la ecuación, sin convertir la denominación de agentes en sustituto de esa clasificación."
+      },
+      {
+       "fuente": "criterio psicopedagógico",
+       "cita": "Marcar los cambios en un ejemplo trabajado y practicar después hace observable la relación entre clasificación y papeles de los agentes."
+      },
+      {
+       "fuente": "specs/15_refuerzo_v3.md, sección 15.4, Presupuesto",
+       "cita": "Prioriza el refuerzo dentro del tema; una fila nueva requiere un faltante o recuperación con evidencia fuerte."
+      }
+     ],
+     "confianza": "alta",
+     "motor_revision": "Codex",
+     "cambios": {
+      "refuerzo": "Conservar la clasificación de 9.2. Resolver ejemplos guiados de combustión y desplazamiento metálico marcando cambios de números de oxidación; después practicar. Nombrar oxidante a quien acepta electrones y se reduce, y reductor a quien los cede y se oxida. Aclarar que no toda síntesis es redox. Retomar en 11.º, clase 6.5 (indicador 6.8), comparando potenciales estándar de reducción."
+     },
+     "ronda": 2,
+     "rol": "psicopedagogo",
+     "fecha": "2026-10-15"
+    }
+   ]
+  }
+ ]
+}

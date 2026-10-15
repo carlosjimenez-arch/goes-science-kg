@@ -150,6 +150,8 @@ como pasó antes con la «Extension Part» en cursiva de HK (spec 12) o con la c
 2. **Asimetría de la prueba.** Para reabrir un expediente hace falta contraevidencia anclada, con confianza media o
    alta. En el contenido basta un error concreto con su corrección válida. Para sostenerlo hay que haber buscado: el
    refutador aporta anclas literales a favor, y lo que no tiene ninguna queda frágil.
+   Una revisión adversarial con confianza baja no reabre por sí sola, pero tampoco certifica: queda frágil hasta
+   conseguir evidencia suficiente, también en contenido pedagógico y refuerzos.
 3. **Independencia por postura.** El refutador no es miembro del panel y se le mide por los errores reales que
    encuentra. La sonda es ciega: no ve la resolución, ni los dictámenes, ni el informe.
 4. **Convergencia acotada.** Una vuelta impugna, replica y aplica. La siguiente solo vuelve a impugnar lo que cambió.
