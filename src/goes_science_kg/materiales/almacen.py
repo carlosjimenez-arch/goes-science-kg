@@ -65,6 +65,10 @@ def construir(registros: list[dict], archivos: dict[str, bytes], destino: Path, 
             documento = serializar(registro["documento"])
             valores = [registro[c] for c in COLUMNAS.split(",")[:-1]]
             texto = normalizar(" ".join(str(registro[c]) for c in ("titulo", "unidad", "asignatura", "id", "fila_id")))
+            if registro["tipo"] == "guion_clase":
+                texto += " " + normalizar(registro["documento"]["guion"]["objetivo"])
+            elif registro["tipo"] == "guion_unidad":
+                texto += " " + normalizar(" ".join(g["objetivo"] for g in registro["documento"]["guiones"]))
             db.execute(
                 "INSERT INTO materiales VALUES (?,?,?,?,?,?,?,?,?,?,?)", (*valores, sha(documento), documento, texto)
             )
@@ -221,3 +225,19 @@ class Biblioteca:
             rutas = [r[0] for r in db.execute("SELECT ruta FROM rutas WHERE sha256=? ORDER BY ruta", (digest,))]
         self.comprobar()
         return contenido, rutas
+
+    def exportar(self):
+        """Copia íntegra para una generación derivada; nunca cambia la biblioteca seleccionada."""
+        self.validar()
+        with closing(_conectar(self.base)) as db:
+            registros = []
+            for fila in db.execute("SELECT " + COLUMNAS + ",documento FROM materiales ORDER BY id"):
+                r = self._ficha(db, fila)
+                r["documento"] = json.loads(r["documento"])
+                registros.append(r)
+            archivos = {
+                r["ruta"]: r["contenido"]
+                for r in db.execute("SELECT ruta,contenido FROM rutas JOIN archivos USING(sha256) ORDER BY ruta")
+            }
+        self.comprobar()
+        return registros, archivos

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import tempfile
 import zipfile
 from pathlib import Path
@@ -19,7 +20,10 @@ RECIBO = "config/datos_ciencias.lock.json"
 
 
 def _almacen() -> AlmacenGCS:
-    return AlmacenGCS(ConfiguracionAlmacen.model_validate(cargar("almacen_ciencias")))
+    cfg = dict(cargar("almacen_ciencias"))
+    if os.environ.get("CLOUDSDK_PYTHON"):
+        cfg["python_gcloud"] = os.environ["CLOUDSDK_PYTHON"]
+    return AlmacenGCS(ConfiguracionAlmacen.model_validate(cfg))
 
 
 def _leer(recibo: Path | None) -> dict:
@@ -72,6 +76,7 @@ def subir(plan: Path, recibo: Annotated[Path | None, typer.Option()] = None) -> 
             "montajes": preparado["montajes"],
             "enlaces": preparado["enlaces"],
             "identidad_ledger": preparado["identidad_ledger"],
+            "max_bytes_sin_comprimir": datos.limite_bytes(preparado.get("max_bytes_sin_comprimir")),
         }
         descriptor = Path(temporal) / "recibo.json"
         _guardar(descriptor, comprobante)

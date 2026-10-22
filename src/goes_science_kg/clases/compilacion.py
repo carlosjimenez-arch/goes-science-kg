@@ -1,0 +1,182 @@
+"""Reconstruye la entrega desde los dictámenes exactos, sin heredar etiquetas de aprobación."""
+
+from __future__ import annotations
+
+import json
+from collections import defaultdict
+from pathlib import Path
+
+from goes_science_kg.clases.contratos import GuionClase
+from goes_science_kg.clases.preparacion import leer_preparacion, validar_importacion
+from goes_science_kg.clases.proveedor import MODELOS
+from goes_science_kg.clases.validacion import certificar_resultado
+from goes_science_kg.materiales.compilacion import _entrada, serializar, sha
+from goes_science_kg.motor.contratos import Evidencia
+
+LICENCIA = (
+    "Adaptación didáctica en español basada en OpenStax / Rice University, CC BY-NC-SA 4.0 "
+    "(https://creativecommons.org/licenses/by-nc-sa/4.0/). Se han creado actividades y explicaciones "
+    "para el contexto salvadoreño mediante IA y revisión automática. Se conservan las atribuciones "
+    "y licencias de cada fuente; no se atribuye su aprobación a OpenStax. Esta licencia se refiere "
+    "a las adaptaciones de Ciencias, no al código ni a los documentos curriculares originales del MINED."
+)
+
+
+def leer_propio(base: Path, nombre: str) -> Path:
+    p = base / nombre
+    if p.is_symlink() or any(t.is_symlink() for t in p.parents) or not p.resolve().is_relative_to(base.resolve()):
+        raise ValueError("El expediente requiere archivos propios dentro de su repositorio")
+    if not p.is_file():
+        raise ValueError("Falta un archivo regular del expediente")
+    return p
+
+
+def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro):
+    """La selección explícita no permite publicar pendientes ni omitir objetivos del catálogo."""
+    from goes_science_kg.clases.auditoria import verificar_trazas
+
+    objetivos = []
+    for offset in range(0, biblioteca.listar(tipo="paquete_objetivo", limite=1)["total"], 200):
+        objetivos.extend(biblioteca.listar(tipo="paquete_objetivo", limite=200, offset=offset)["materiales"])
+    esperados = {r["id"] for r in objetivos}
+    if set(seleccion) != esperados:
+        raise ValueError("La selección no cubre exactamente todos los objetivos de Ciencias de la biblioteca")
+    originales, resultados, preparaciones, auditorias = {}, {}, {}, {}
+    registros, unidades, contenidos = [], defaultdict(list), set()
+    for ficha in objetivos:
+        id_ = ficha["id"]
+        ref = seleccion[id_]
+        ruta_p, ruta_r = ref["preparacion"], ref["resultado"]
+        if ruta_p not in preparaciones:
+            pp = leer_propio(base, ruta_p)
+            preparaciones[ruta_p] = leer_preparacion(pp)
+            originales[ruta_p] = pp.read_bytes()
+        p = preparaciones[ruta_p]
+        validar_importacion(p, base)
+        if p["biblioteca_id"] != biblioteca.manifest["id"] or p["corpus_sha256"] != corpus.huella:
+            raise ValueError("La preparación no pertenece a la biblioteca y corpus solicitados")
+        if ruta_r not in resultados:
+            rr = leer_propio(base, ruta_r)
+            r = json.loads(rr.read_bytes())
+            certificar_resultado(r, p, MODELOS)
+            auditoria = verificar_trazas(base, rr, p, r, registro)
+            ruta_auditoria = "data/clases_v4/auditorias/" + sha(rr.read_bytes()) + ".json"
+            raw_auditoria = serializar(auditoria)
+            archivo_auditoria = base / ruta_auditoria
+            if archivo_auditoria.exists():
+                if leer_propio(base, ruta_auditoria).read_bytes() != raw_auditoria:
+                    raise ValueError("La auditoría existente corresponde a otro expediente")
+            else:
+                archivo_auditoria.parent.mkdir(parents=True, exist_ok=True)
+                with archivo_auditoria.open("xb") as f:
+                    f.write(raw_auditoria)
+            originales[ruta_auditoria] = raw_auditoria
+            auditorias[ruta_r] = ruta_auditoria
+            resultados[ruta_r] = r
+            originales[ruta_r] = rr.read_bytes()
+        r = resultados[ruta_r]
+        if r["preparacion_id"] != p["id"]:
+            raise ValueError("El resultado y la preparación seleccionados no corresponden")
+        final = r["filas"][id_]
+        if final["estado"] != "respaldado_automaticamente":
+            raise ValueError("No se libera una clase vetada o abstención como lista para impartir")
+        g = GuionClase.model_validate(final["guion"])
+        anterior = biblioteca.detalle(id_)["documento"]
+        fila = next(f for f in p["filas"] if f["fila_id"] == id_)
+        if g.objetivo != anterior["propuesta"]["objetivo_propuesto"] or p["snapshot_id"] != anterior["snapshot_id"]:
+            raise ValueError("La clase no conserva el objetivo y snapshot de su fila original")
+        # El título y objetivo no bastan para justificar cuerpos copiados entre objetivos.
+        cuerpo = sha(
+            serializar({k: v for k, v in final["guion"].items() if k not in {"fila_id", "titulo", "objetivo"}})
+        )
+        if cuerpo in contenidos:
+            raise ValueError("Dos objetivos presentan un cuerpo didáctico íntegramente duplicado")
+        contenidos.add(cuerpo)
+        fuentes = [e for e in p["fuentes"] if e["id"] in fila["fuentes_cientificas_ids"]]
+        for e in fuentes:
+            corpus.verificar(Evidencia.model_validate(e))
+        documento = {
+            "version_contenido": "guion-clase-v4-1",
+            "snapshot_id": p["snapshot_id"],
+            "preparacion_id": p["id"],
+            "huella_entorno": r["huella_entorno"],
+            "guion": final["guion"],
+            "dictamenes": final["dictamenes"],
+            "ronda_seleccionada": final["ronda_seleccionada"],
+            "origen": fila["origen"],
+            "alerta_original": anterior["alerta_original"],
+            "enmiendas": anterior["enmiendas"],
+            "fuentes_cientificas": fuentes,
+            "licencia_adaptacion": LICENCIA,
+            "expediente": ref,
+            "auditoria_revisiones": auditorias[ruta_r],
+            "revision_alcance": "guion_exacto_cuatro_roles_ciegos",
+            "guion_cronometrado": True,
+            "duracion_minutos": 60 * len(g.sesiones),
+            "validado_en_aula": False,
+            "aprobacion_institucional": False,
+        }
+        material_id = "CLASE-V4:" + sha(serializar([id_, p["id"], final["guion"]]))
+        registro = _entrada(
+            material_id,
+            "V4",
+            "guion_clase",
+            g.titulo,
+            documento,
+            grados=ficha["grados"],
+            asignatura=ficha["asignatura"],
+            unidad=ficha["unidad"],
+            fila_id=id_,
+            estado="respaldado_automaticamente",
+        )
+        registros.append(registro)
+        unidades[(ficha["grados"][0], ficha["asignatura"], ficha["unidad"])].append(registro)
+    for (grado, asignatura, unidad), clases in sorted(unidades.items()):
+        clases.sort(key=lambda c: (c["documento"]["origen"]["hoja"], c["documento"]["origen"]["fila"], c["fila_id"]))
+        documento = {
+            "version_contenido": "guion-unidad-v4-1",
+            "snapshot_id": biblioteca.manifest["procedencia"]["snapshot_id"],
+            "guiones": [
+                {
+                    "material_id": c["id"],
+                    "fila_id": c["fila_id"],
+                    "titulo": c["titulo"],
+                    "objetivo": c["documento"]["guion"]["objetivo"],
+                    "duracion_minutos": c["documento"]["duracion_minutos"],
+                }
+                for c in clases
+            ],
+            "orden": "documental; no secuencia pedagógica inferida ni carga horaria oficial",
+            "licencia_adaptacion": LICENCIA,
+        }
+        registros.append(
+            _entrada(
+                "CLASE-UNIDAD-V4:" + sha(serializar(documento)),
+                "V4",
+                "guion_unidad",
+                unidad,
+                documento,
+                grados=[grado],
+                asignatura=asignatura,
+                unidad=unidad,
+                estado="respaldado_automaticamente",
+            )
+        )
+    # Se redistribuyen las fuentes con atribuciones y licencias, sin alterar sus bytes.
+    originales["data/referencias_clases_2026/manifest.json"] = corpus.manifest_bytes
+    for libro in corpus.manifest["libros"]:
+        for ref in [libro["licencia"], libro["coleccion"], *libro["modulos"]]:
+            originales["data/referencias_clases_2026/" + ref["ruta"]] = corpus._leer(ref)
+    # Preserva también rechazos, abstenciones y controles; nunca se presentan como clases liberadas.
+    rutas = sorted((base / "data/clases_v4/ejecuciones").rglob("resultado_*.json"))
+    rutas += sorted((base / "data/clases_v4/ejecuciones").rglob("protocolo.json"))
+    rutas += sorted((base / "data/clases_v4/ejecuciones").rglob("preflight.json"))
+    rutas += sorted((base / "data/clases_v4/protocolos").glob("*.json"))
+    rutas += sorted((base / "data/clases_v4/protocolos").glob("*.zip"))
+    rutas += sorted((base / "data/clases_v4/controles_pre_escalado").glob("*.json"))
+    for carpeta in (base / "data/clases_v4/ejecuciones").glob("control_*"):
+        rutas += sorted(carpeta.glob("*.json"))
+    for archivo in rutas:
+        nombre = archivo.relative_to(base).as_posix()
+        originales[nombre] = leer_propio(base, nombre).read_bytes()
+    return registros, originales

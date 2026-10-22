@@ -1,5 +1,25 @@
 # goes-science-kg · Grafo de conocimiento de Ciencias (El Salvador)
 
+## Guiones completos (ampliación del 22 de octubre)
+
+El usuario autorizó 4.000 invocaciones y USD 3.500 de reserva **acumuladas**, manteniendo las 668
+anteriores en `ciencias_v4_curricularizacion_20261022`. La configuración está en
+`config/presupuesto_clases_v4.json`; se comprueba el prefijo histórico íntegro antes de usar el proveedor.
+No reiniciar el ledger. El piloto completo tiene 24 objetivos respaldados y la campaña exhaustiva
+está en curso. `clases/` implementa los guiones, cuatro lectores, reparación acotada, campaña,
+auditoría contra respuestas reales del ledger, ZIP y distribución. Se conservan P1–P4 y sus fallos.
+No cambiar los ocho archivos del entorno ni parámetros de modelos durante la campaña P5; el código
+está congelado en `data/clases_v4/protocolos/codigo_clases_p5.zip`. Los campos docentes admiten hasta
+2.000 caracteres; tiempos, fuentes y doce criterios siguen siendo obligatorios. No repetir votos
+del mismo contenido vetado. `docs/CLASES_V4.md` y `specs/19_guiones_completos_v4.md` fijan el alcance.
+La biblioteca anterior sigue publicada; no afirmar que todos los guiones nuevos están publicados
+hasta verificar 1.013 objetivos, artefactos, restauración desde GCS y actualizar ambos recibos.
+Al iniciar P5 había 71 guiones respaldados y 942 en cola. La rama técnica recupera sólo lectores sin
+dictamen válido una vez, conservando borrador y votos. Nunca se usa ante vetos semánticos. P1–P4
+siguen auditables. La migración del corpus admite más de diez bases y revierte instalaciones fallidas;
+el recibo nuevo declara su cota explícita, hasta 8 GiB. No restaurar el ledger anterior de 668 llamadas
+para continuar una campaña que ya gastó más: se requiere el respaldo actualizado o el ledger actual.
+
 ## Biblioteca docente (2026-10-22)
 
 `gskg materiales construir|validar|publicar|restaurar` prepara y distribuye 2.867 registros:

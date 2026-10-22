@@ -225,6 +225,10 @@ def compilar_historicos(archivos):
 def markdown(material: dict) -> str:
     """Exportación legible sin ejecutar HTML, código ni instrucciones de documentos fuente."""
     d = material["documento"]
+    if material["tipo"] in {"guion_clase", "guion_unidad"}:
+        from goes_science_kg.clases.lectura import markdown_clase, markdown_unidad
+
+        return (markdown_clase if material["tipo"] == "guion_clase" else markdown_unidad)(material)
     cabecera = (
         f"# {material['titulo']}\n\nVersión: {material['version_curriculo']} · "
         f"Tipo: {material['tipo']} · Estado: {material['estado']}\n\n"

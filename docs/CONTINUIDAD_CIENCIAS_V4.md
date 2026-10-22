@@ -2,6 +2,26 @@
 
 Actualización operativa: 22 de octubre de 2026, America/Bogota.
 
+## Ampliación de guiones de clase
+
+El usuario autorizó un máximo **acumulado** de 4.000 invocaciones y USD 3.500 de reserva para los
+1.013 guiones de Ciencias. Las 668 llamadas anteriores no se reinician. El recibo literal privado
+está en `data/operaciones/clases_v4_20261022/autorizacion.json`; `config/presupuesto_clases_v4.json`
+fija el prefijo de consumo y sus límites. El saldo se calcula desde el ledger real, no desde este texto.
+
+Al iniciar P5 se habían respaldado 71 guiones: 24 del piloto ampliado, 40 de la primera cohorte y
+siete recuperados o corregidos sin borrar sus antecedentes. Quedan 942 en la campaña P5. La
+publicación completa está pendiente y se exige cobertura exacta. El motor recupera una vez los
+lectores técnicamente fallidos sin repetir votos válidos; los vetos requieren contenido nuevo.
+[Contrato, operación y descarga](CLASES_V4.md). La biblioteca anterior sigue disponible.
+
+La copia original de 7.580 archivos corresponde al cierre curricular descrito debajo; no contiene
+el consumo posterior de esta ampliación. El respaldo final debe incluir el ledger y todos los nuevos
+checkpoints. La migración admite más de diez bases sin resetear presupuestos y revierte fallos de
+instalación. P5 fija ocho archivos y su perfil de recuperación técnica; no editarlos durante la campaña.
+
+## Cierre curricular anterior
+
 Estado vigente: P6 resolvió las diez incidencias y P7 corrigió un falso positivo adicional con fuentes
 primarias y cuatro votos sobre otro borrador. La publicación definitiva producto-4 selecciona las
 108 unidades y 1.013 filas de Ciencias, conservando las siete fuera de alcance. Se exportaron la

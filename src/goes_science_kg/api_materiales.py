@@ -27,6 +27,8 @@ Tipo = Literal[
     "dificultad",
     "recorrido",
     "unidad_experimental",
+    "guion_clase",
+    "guion_unidad",
 ]
 
 
@@ -129,13 +131,29 @@ def crear_router_materiales(base: Path):
         except KeyError as error:
             raise HTTPException(404, "Archivo no encontrado") from error
         extension = Path(rutas[0]).suffix
-        tipo = "application/json" if extension == ".json" else "text/markdown"
+        tipo = {
+            ".json": "application/json",
+            ".md": "text/markdown",
+            ".xml": "application/xml",
+            ".cnxml": "application/xml",
+            ".zip": "application/zip",
+            ".txt": "text/plain",
+        }.get(extension, "application/octet-stream")
         return descarga(contenido, tipo, digest + extension)
 
     @router.get("/descarga/{id_:path}")
-    def descargar(id_: str, formato: Literal["json", "md"] = "json"):
+    def descargar(
+        id_: str, formato: Literal["json", "md"] = "json", audiencia: Literal["docente", "estudiante"] = "docente"
+    ):
         d = obtener(id_)
-        contenido = serializar(d) if formato == "json" else markdown(d).encode()
+        if audiencia == "estudiante":
+            if formato != "md" or d["tipo"] != "guion_clase":
+                raise HTTPException(422, "La hoja de estudiante requiere un guion_clase y formato md")
+            from goes_science_kg.clases.lectura import markdown_clase
+
+            contenido = markdown_clase(d, estudiante=True).encode()
+        else:
+            contenido = serializar(d) if formato == "json" else markdown(d).encode()
         return descarga(
             contenido, "application/json" if formato == "json" else "text/markdown", sha(contenido) + "." + formato
         )

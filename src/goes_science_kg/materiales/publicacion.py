@@ -20,6 +20,10 @@ def publicar(destino: Path, almacen, recibo: Path) -> dict:
     """Guarda un recibo de progreso tras cada objeto para reanudar sin sobrescribirlo."""
     biblioteca = Biblioteca(destino)
     manifest = biblioteca.validar()
+    if manifest["por_tipo"].get("guion_clase") or manifest["por_tipo"].get("guion_unidad"):
+        from goes_science_kg.clases.paquete import validar_cobertura_publicable
+
+        validar_cobertura_publicable(manifest["por_tipo"])
     if recibo.is_symlink():
         raise ValueError("El recibo debe ser un archivo propio")
     progreso = (

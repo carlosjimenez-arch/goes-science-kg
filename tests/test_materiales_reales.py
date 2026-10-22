@@ -8,9 +8,10 @@ from collections import Counter
 import pytest
 
 from goes_science_kg.api_producto import _LecturaProducto
+from goes_science_kg.clases.presupuesto import comprobar_continuidad, configuracion
 from goes_science_kg.config import ruta
 from goes_science_kg.materiales.almacen import Biblioteca
-from goes_science_kg.materiales.compilacion import BANCOS, sha
+from goes_science_kg.materiales.compilacion import BANCOS
 
 BASE = ruta(".")
 pytestmark = pytest.mark.skipif(
@@ -71,5 +72,8 @@ def test_todos_los_historicos_y_originales_se_preservan_byte_a_byte():
         original = json.loads(p.read_bytes())
         assert b.detalle("V3:" + original["tema"]["id"])["documento"]["original"] == original
     ledger = BASE / "data/operaciones/registro.sqlite"
-    assert sha(ledger.read_bytes()) == b.manifest["procedencia"]["ledger_sha256"]
-    assert sha(ledger.read_bytes()) == "3ad9b798421a8b463f8d3dd924498330b42ddbd483ca4f774c5386bb74f722ae"
+    # La biblioteca anterior conserva su ledger de compilación. Las nuevas llamadas autorizadas
+    # amplían el mismo registro; se verifica todo el prefijo de 668 llamadas, no un archivo mutable.
+    cfg = configuracion()
+    assert b.manifest["procedencia"]["ledger_sha256"] == cfg["baseline"]["ledger_sha256"]
+    assert comprobar_continuidad(ledger)["llamadas"] >= cfg["baseline"]["llamadas"]

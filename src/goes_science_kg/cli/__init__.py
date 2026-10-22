@@ -10,6 +10,7 @@ from goes_science_kg.cli import (
     artefactos,
     bucle,
     catalogo,
+    clases,
     conceptos,
     datos,
     grados,
@@ -38,6 +39,7 @@ app.add_typer(grafo.app, name="grafo")
 app.add_typer(artefactos.app, name="artefactos")
 app.add_typer(datos.app, name="datos")
 app.add_typer(materiales.app, name="materiales")
+app.add_typer(clases.app, name="clases")
 app.add_typer(refuerzo.app, name="refuerzo")
 app.add_typer(catalogo.app, name="catalogo")
 app.add_typer(alinear.app, name="alinear")

@@ -16,6 +16,15 @@ from goes_science_kg.operacion.respaldo import crear_paquete, nombre_seguro, res
 VERSION = "datos-ciencias-1"
 TRANSITORIOS = {".DS_Store", ".gitkeep"}
 LEDGER = "data/operaciones/registro.sqlite"
+MAX_BYTES_PREDETERMINADO = 2 * 1024**3
+MAX_BYTES_PERMITIDO = 8 * 1024**3
+
+
+def limite_bytes(valor=None):
+    limite = MAX_BYTES_PREDETERMINADO if valor is None else valor
+    if type(limite) is not int or not MAX_BYTES_PREDETERMINADO <= limite <= MAX_BYTES_PERMITIDO:
+        raise ValueError("El límite del corpus debe ser un entero entre 2 y 8 GiB")
+    return limite
 
 
 def digest(archivo: Path) -> str:
@@ -44,7 +53,7 @@ def montajes(raiz: Path, configuracion: dict) -> list[str]:
     for patron in configuracion.get("patrones", []):
         rutas.update(p.relative_to(raiz).as_posix() for p in raiz.glob(patron))
     seleccion = sorted(nombre_seguro(p) for p in rutas if (raiz / p).exists())
-    if any(Path(b).is_relative_to(a) for i, a in enumerate(seleccion) for b in seleccion[i + 1:]):
+    if any(Path(b).is_relative_to(a) for i, a in enumerate(seleccion) for b in seleccion[i + 1 :]):
         raise ValueError("Las raíces de datos no pueden solaparse")
     return seleccion
 
@@ -91,7 +100,8 @@ def preparar(raiz: Path, configuracion: dict, destino: Path) -> dict:
                 if db.execute("PRAGMA wal_checkpoint(TRUNCATE)").fetchone()[0]:
                     raise ValueError("Hay un escritor SQLite activo; cierre la ejecución antes de preparar")
     originales, enlaces, wal = inventariar(raiz, rutas)
-    paquete = crear_paquete(raiz, list(originales), destino, max_bytes=2 * 1024**3)
+    max_bytes = limite_bytes(configuracion.get("max_bytes_sin_comprimir"))
+    paquete = crear_paquete(raiz, list(originales), destino, max_bytes=max_bytes)
     if inventariar(raiz, rutas) != (originales, enlaces, wal):
         raise ValueError("Los datos cambiaron durante el respaldo; espere al escritor y prepare otro paquete")
     return {
@@ -102,12 +112,14 @@ def preparar(raiz: Path, configuracion: dict, destino: Path) -> dict:
         "originales": originales,
         "wal": wal,
         "identidad_ledger": identidad_ledger(raiz / LEDGER),
+        "max_bytes_sin_comprimir": max_bytes,
     }
 
 
 def restaurar(archivo: Path, destino: Path, recibo: dict) -> dict:
     if recibo.get("version") != VERSION:
         raise ValueError("Recibo de datos incompatible")
+    max_bytes = limite_bytes(recibo.get("max_bytes_sin_comprimir"))
     rutas = [nombre_seguro(p) for p in recibo["montajes"]]
     # Validar enlaces y cobertura antes de escribir un solo archivo.
     with zipfile.ZipFile(archivo) as zip_:
@@ -127,14 +139,12 @@ def restaurar(archivo: Path, destino: Path, recibo: dict) -> dict:
             raise ValueError("Un enlace restaurado sale de los datos declarados")
         if any(Path(p).is_relative_to(relativo) for p in manifest["archivos"]):
             raise ValueError("Un enlace colisiona con un archivo")
-    resultado = restaurar_paquete(archivo, destino, sha256=recibo["paquete"]["sha256"], max_bytes=2 * 1024**3)
+    resultado = restaurar_paquete(archivo, destino, sha256=recibo["paquete"]["sha256"], max_bytes=max_bytes)
     for nombre, target in recibo["enlaces"].items():
         enlace = destino / nombre
         enlace.parent.mkdir(parents=True, exist_ok=True)
         enlace.symlink_to(target)
-    resultado["sqlite_verificados"] = {
-        n: v["sha256"] for n, v in manifest["archivos"].items() if n.endswith(".sqlite")
-    }
+    resultado["sqlite_verificados"] = {n: v["sha256"] for n, v in manifest["archivos"].items() if n.endswith(".sqlite")}
     return resultado
 
 
