@@ -9,6 +9,7 @@ países. El fin es **proponer, por asignatura, una curricularización mejor y co
 El producto y las evidencias V4 descritos aquí corresponden al entorno institucional local. La rama
 pública distribuye el código y su documentación; los insumos nuevos se conservan aparte.
 [Alcance del envío y reproducción](docs/PUBLICACION.md).
+[Estado comprobado de la entrega y pendientes educativos](docs/CIERRE_TECNICO.md).
 
 La entrega V4 es el objetivo de la reconstrucción. **El grafo histórico de este checkout sigue siendo V3**:
 no se etiqueta como V4 ni se trasladan inferencias sin comparar las fuentes. La copia local de Descargas estaba

@@ -30,6 +30,15 @@ confundir bandas documentales con equivalencias de grados o prerrequisitos indiv
 
 ## Límites del hito
 
+Verificación final: **1.260 pruebas aprobadas en 223,76 s**, Ruff y `git diff --check` en verde.
+El checkout separado de sólo código pasó otras **157 pruebas sintéticas en 4,49 s**, sin el corpus V4.
+La batería encontró y permitió corregir un problema del hook heredado: `uv` intentaba abrir su caché
+fuera del sandbox. Ahora reutiliza la CLI instalada y conserva el fallback con lock fijado; la salida
+inválida vuelve a bloquearse. No se desactivaron guardas ni se aceptó el fallo como prueba aprobada.
+Se añadieron casos de falsificación de archivos/citas/modelos, mutación de PDF y snapshot,
+aislamiento de fila, falta de presupuesto y protección común de destinos. Informe institucional:
+`docs/investigacion/verificacion_entrega_20261021.json`.
+
 No se declara terminado el contenido curricular completo. Falta ampliar las relaciones respaldadas y
 las unidades generadas a otras áreas; fundamentar progresiones locales; calibrar los jueces con casos
 independientes; y resolver los estados pendientes sin modificar los originales. La infraestructura

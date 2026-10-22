@@ -4,6 +4,9 @@ Corte: 2026-10-21. Las fuentes oficiales, los resultados observados y las recome
 
 | Documento | Contenido |
 |---|---|
+| [Estado de entrega](../CIERRE_TECNICO.md) | Capacidades comprobadas, preparación de 108 unidades y límites del hito |
+| [Integración PISA/ERCE](integracion_alineaciones_v4.md) | Producto-3, cuatro casos originales auditables y contexto obligatorio |
+| [Progresiones NGSS](progresiones_ngss_20261021.md) | Tres documentos oficiales, bandas nativas y decisiones de uso |
 | [Educación](educacion.md) | PISA, ERCE, TIMSS, países, pedagogía y adaptación a El Salvador |
 | [Auditoría de fuentes primarias](auditoria_fuentes_primarias.md) | Corrección de columnas TIMSS, identidad documental, páginas y límites de las 22 dimensiones |
 | [Anclas verificadas](dimensiones_verificadas.json) | Validación reproducible de las dimensiones frente a los PDF originales y sus SHA |
