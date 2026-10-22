@@ -1,5 +1,8 @@
 # Ciencias V4: continuidad y verificación
 
+> Cierre de la entrega curricular anterior, conservado como evidencia. La rama de mantenimiento actual
+> es `feat/api`; API, estilo y métricas vigentes: [índice](README.md) y [calidad](CALIDAD.md).
+
 Actualización operativa: 22 de octubre de 2026, America/Bogota.
 
 Estado vigente: P6 resolvió las diez incidencias y P7 corrigió un falso positivo adicional con fuentes

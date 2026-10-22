@@ -1,4 +1,4 @@
-"""Contrato de referentes y límites de procedencia; PDF sintético, sin red ni V4."""
+"""Test reference contracts and provenance limits using synthetic PDF sources."""
 
 from __future__ import annotations
 

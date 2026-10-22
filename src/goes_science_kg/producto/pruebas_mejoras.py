@@ -1,4 +1,4 @@
-"""Controles adversariales predeclarados: mutaciones sintéticas, etiquetas ocultas a los jueces."""
+"""Prepare declared adversarial controls with labels hidden from reviewers."""
 
 from __future__ import annotations
 
@@ -61,6 +61,8 @@ MUTACIONES = (
 
 
 def preparar_controles(caso) -> list[dict]:
+    """Prepare the declared independent adversarial controls before execution."""
+
     if caso.resultado.propuesta is None or caso.preparacion.solicitud.grado != 2:
         raise ValueError("Los controles requieren la propuesta respaldada del piloto de segundo grado")
     b = caso.resultado.propuesta
@@ -81,7 +83,7 @@ def preparar_controles(caso) -> list[dict]:
 
 
 class _ProveedorControl:
-    """Sólo el redactor es una mutación determinista; cada especialista usa el Vertex real inyectado."""
+    """Mutate only the draft deterministically while using explicitly injected real reviewers."""
 
     def __init__(self, proveedor, borrador):
         self.proveedor, self.borrador = proveedor, borrador
@@ -89,13 +91,19 @@ class _ProveedorControl:
         self.registro, self.ejecucion_id = proveedor.registro, proveedor.ejecucion_id
 
     def nombre_modelo(self, rol):
+        """Return the control provider's actual role-specific reviewer identity."""
+
         return "mutacion-determinista-sin-modelo" if rol == "redactor_curricular" else self.proveedor.nombre_modelo(rol)
 
     def generar(self, *, rol, **kwargs):
+        """Apply the fixed draft mutation or delegate the specialist review to the injected provider."""
+
         return self.borrador if rol == "redactor_curricular" else self.proveedor.generar(rol=rol, **kwargs)
 
 
 def ejecutar_controles(caso, proveedor, preparador, *, destino: Path, checkpoints: Path) -> dict:
+    """Execute all declared controls without exposing expected labels to reviewers."""
+
     from goes_science_kg.producto.mejoras_contratos import ROLES_MEJORA, BorradorMejora, RondaMejora
 
     controles = preparar_controles(caso)

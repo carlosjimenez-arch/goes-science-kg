@@ -1,4 +1,4 @@
-"""Respaldo inmutable, protección efectiva y restauración hostil; sin GCP."""
+"""Test immutable backups, effective storage protection, and hostile archives without GCP."""
 
 from __future__ import annotations
 
@@ -6,10 +6,13 @@ import hashlib
 import json
 import sqlite3
 import zipfile
+from contextlib import closing
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
+from goes_science_kg.operacion import respaldo
 from goes_science_kg.operacion.almacen_gcs import AlmacenGCS, ConfiguracionAlmacen
 from goes_science_kg.operacion.respaldo import crear_paquete, nombre_seguro, restaurar_paquete
 
@@ -140,7 +143,7 @@ def test_sqlite_wal_se_respalda_consistente_y_no_se_pierde_reserva(tmp_path):
     destino = tmp_path / "restaurado"
     r = restaurar_paquete(archivo, destino, sha256=plan["sha256"])
     assert r["archivos_restaurados"] == 2
-    with sqlite3.connect(destino / "registro.sqlite") as restaurada:
+    with closing(sqlite3.connect(destino / "registro.sqlite")) as restaurada, restaurada:
         assert restaurada.execute("SELECT * FROM llamadas").fetchall() == [("sin-reiniciar", 1.25)]
     con.close()
     with pytest.raises(ValueError, match="vacío"):
@@ -166,3 +169,42 @@ def test_zip_con_miembro_no_declarado_no_escribe_nada(tmp_path):
     with pytest.raises(ValueError, match="no declarados"):
         restaurar_paquete(p, tmp_path / "destino", sha256=hashlib.sha256(p.read_bytes()).hexdigest())
     assert not (tmp_path / "destino").exists() and not (tmp_path / "escapar.txt").exists()
+
+
+def test_seleccion_y_restauracion_preservan_app_y_herramientas_de_calidad(tmp_path, monkeypatch):
+    raiz = tmp_path / "original"
+    estaticos = Path(__file__).parents[1] / "src/goes_science_kg/interfaz/estaticos"
+    originales = {
+        f"src/goes_science_kg/interfaz/estaticos/{archivo.name}": archivo.read_bytes()
+        for archivo in estaticos.iterdir()
+        if archivo.is_file()
+    }
+    originales.update(
+        {
+            "scripts/generar_badges.py": b"# quality measurement\n",
+            "tests/js/producto.test.cjs": b"// browser regression\n",
+            ".github/workflows/quality.yml": b"name: GOEs quality\n",
+            "docs/badges/tests.svg": b"<svg/>\n",
+            "docs/auditoria/app-goes-2026.png": b"synthetic image\n",
+            "CONTRIBUTING.md": b"# Quality\n",
+            "NOTICE": b"GOEs\n",
+            ".gitignore": b".env\n",
+            ".gitattributes": b"* text=auto\n",
+        }
+    )
+    for relativo, contenido in originales.items():
+        archivo = raiz / relativo
+        archivo.parent.mkdir(parents=True, exist_ok=True)
+        archivo.write_bytes(contenido)
+    monkeypatch.setattr(
+        respaldo,
+        "cargar_producto",
+        lambda _: SimpleNamespace(manifest=SimpleNamespace(snapshot_id="a" * 64)),
+    )
+    seleccion = respaldo.seleccionar_artefactos(raiz)
+    assert set(seleccion) == set(originales)
+    paquete = tmp_path / "app.zip"
+    plan = crear_paquete(raiz, seleccion, paquete)
+    destino = tmp_path / "restaurado"
+    restaurar_paquete(paquete, destino, sha256=plan["sha256"])
+    assert {relativo: (destino / relativo).read_bytes() for relativo in originales} == originales

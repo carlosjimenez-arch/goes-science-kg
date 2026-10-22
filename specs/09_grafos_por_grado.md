@@ -1,5 +1,9 @@
 # 09 · Grafos por grado
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 El pedido del MINED es un grafo **por grado**: lo que vive un estudiante de El Salvador en un año escolar,
 conectado con lo que trae de años anteriores y con lo que se espera en los marcos y en otros países.
 

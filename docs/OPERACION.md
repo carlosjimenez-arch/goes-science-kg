@@ -3,13 +3,31 @@
 ## Instalación
 
 ```bash
-uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex --extra motor
+uv sync --frozen --all-extras
 uv run gskg --help
 uv run pytest -q
-uv run ruff check src tests .claude/hooks
+make lint
 ```
 
-Python mínimo 3.11; dependencias resueltas en `uv.lock`. En el sandbox de Codex, si la caché global de uv no es accesible, usa una caché temporal autorizada: `UV_CACHE_DIR=/tmp/goes-uv-cache uv run pytest -q`. No se desactivan hooks para hacer pasar pruebas. No se añade CI.
+Python mínimo 3.11; dependencias resueltas en `uv.lock`. En el sandbox de Codex, si la caché global de uv no es accesible, usa una caché temporal autorizada: `UV_CACHE_DIR=/tmp/goes-uv-cache uv run pytest -q`. No se desactivan hooks para hacer pasar pruebas. La CI portable se configura en `.github/workflows/quality.yml`; la suite integral usa el corpus local.
+
+## Servicio de aplicación y calidad
+
+```bash
+uv run --frozen gskg servir --puerto 8010
+make lint
+make cobertura
+make auditoria
+```
+
+La aplicación usa la selección definitiva `producto-4`. No regenerarla para consultar datos.
+`GET /health/live` indica que el proceso atiende; `GET /health/ready` verifica los datos. Una publicación
+ausente o modificada produce 503 y `estado: sin_datos`; resolver la fuente o restaurar y reiniciar.
+No convertir ese error en una respuesta vacía de éxito ni levantar otra versión silenciosamente.
+
+El corpus ya restaurado no se sobrescribe. Los perfiles de extracción fijan bytes de implementación;
+los dos extractores firmados se preservan y no se formatean. El código nuevo cambia huellas de workflow,
+por lo que no autoriza reanudar campañas antiguas. [Excepciones y métricas](CALIDAD.md).
 
 ## Datos y propuestas V4
 
@@ -160,7 +178,7 @@ prerrequisitos respaldados ni progresión verificada. Los rechazos también pued
 `producto juicios medir-contexto` mide los grupos sin modelos. Los comandos, soportes y límites están
 en [juicios de conocimiento](juicios_conocimiento.md).
 
-La publicación actual usa `producto-3`: añade `alineaciones.json` con los cuatro casos originales
+El hito histórico `producto-3` añadió `alineaciones.json` con los cuatro casos originales
 PISA/ERCE (un respaldo documental, un rechazo y dos abstenciones). Para reproducirla, `alineacion
 coleccionar <ids-originales> --salida <archivo.json>` verifica checkpoints en modo sólo lectura y relee
 fuentes; luego se pasa `--alineaciones <archivo.json>` junto a `--conocimiento` en `producto construir`.

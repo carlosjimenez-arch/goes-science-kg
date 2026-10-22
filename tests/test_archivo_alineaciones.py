@@ -1,4 +1,4 @@
-"""Conservación de negativos, relectura física y ataques contra la publicación documental."""
+"""Test negative-outcome preservation, physical source checks, and forged alignment archives."""
 
 from __future__ import annotations
 

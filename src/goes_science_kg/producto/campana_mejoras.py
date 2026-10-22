@@ -1,4 +1,4 @@
-"""Campañas finitas: presupuesto acumulativo, preparaciones completas y reanudación durable."""
+"""Run finite campaigns with cumulative budgets and durable unit preparation."""
 
 from __future__ import annotations
 
@@ -30,6 +30,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 def escribir_nuevo_o_igual(path: Path, datos: dict) -> None:
+    """Write an artifact only when absent or byte-identical to the existing file."""
+
     path = destino_generado(path)
     texto = json.dumps(datos, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -42,11 +44,11 @@ def escribir_nuevo_o_igual(path: Path, datos: dict) -> None:
 
 
 def reserva_unidad(p: PreparacionMejora, cfg: ConfiguracionVertex) -> dict:
-    """Cota en bytes UTF-8 del contexto completo y de una propuesta limitada por contrato.
+    """Bound complete unit context and contract-limited output in UTF-8 bytes."""
 
-    La reparación incluye el borrador previo y hasta 12 hallazgos por juez, acotados adicionalmente
-    por el controlador a 16 KiB. No son tokens facturados; las reservas del adaptador son acumulativas.
-    """
+    # Implementation notes:
+    # La reparación incluye el borrador previo y hasta 12 hallazgos por juez, acotados adicionalmente
+    # por el controlador a 16 KiB. No son tokens facturados; las reservas del adaptador son acumulativas.
     contexto = serializar(datos_mejora(p))
     bytes_contexto = len(contexto.encode())
     coste = 0.0
@@ -68,6 +70,8 @@ def reserva_unidad(p: PreparacionMejora, cfg: ConfiguracionVertex) -> dict:
 
 
 def crear_plan(directorio: Path, cfg: ConfiguracionVertex, ejecucion_id: str, motor: MotorMejoras) -> dict:
+    """Prepare a complete finite curriculum campaign with explicit unit identities and budget."""
+
     preparaciones = json.loads((directorio / "preparaciones.json").read_bytes())
     unidades = []
     for unidad in preparaciones["unidades"]:
@@ -106,6 +110,8 @@ def crear_plan(directorio: Path, cfg: ConfiguracionVertex, ejecucion_id: str, mo
 def ejecutar_campana(
     plan: dict, *, directorio: Path, raiz: Path, runtime, seleccion: tuple[str, ...] = (), trabajadores: int = 1
 ) -> dict:
+    """Execute or resume the fixed campaign without resetting accumulated reservations."""
+
     if plan["id"] != huella({k: v for k, v in plan.items() if k != "id"}):
         raise ValueError("El protocolo de campaña cambió")
     cfg = ConfiguracionVertex.model_validate(plan["configuracion"])

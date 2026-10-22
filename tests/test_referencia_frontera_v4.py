@@ -1,4 +1,4 @@
-"""La red importada de referencia no puede crear enlaces al currículo V4 publicado."""
+"""Prevent historical reference networks from creating accepted links to the V4 curriculum."""
 
 from __future__ import annotations
 

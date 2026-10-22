@@ -1,21 +1,21 @@
-"""Grafos por país y grafo de consenso internacional por asignatura, por tramo de grados (specs 11 y 12).
+"""Build country and international consensus graphs by subject and grade band."""
 
-Regla de presencia, la misma del grafo principal: un objetivo ENSEÑA un concepto si lo tiene como principal, o como
-secundario con confianza alta o media.
-
-Grado de un objetivo = punto medio de su rango SV (p. ej. «Sec 3–4» = 9,5).
-
-Doble lectura (tramos con `lectura_doble`, spec 12): además del primer grado de cada país con la regla de presencia
-(lectura amplia), se calcula el primer grado con presencia SÓLIDA en el núcleo (lectura estricta): 2 puntos por
-objetivo con el concepto como principal y 1 como secundario, acumulados por grado hasta llegar a 2. Ahí también se
-aplican las relaciones «parte de» (conceptos.partes()), además de las equivalencias.
-
-Antecedente: los objetivos de grados ≤ 8 solo sirven para fechar la primera aparición de un concepto. Así, algo que
-un país enseña en 7.° no aparece como «nuevo en 10.°». Son los de Inglaterra, Australia y Japón del grafo principal
-(data/interim/paises + etiquetado_paises) y, desde el 2026-10-13, los del núcleo de los demás países en el tramo
-2.°–8.° (spec 12), ya extraídos y etiquetados: primaria y secundaria baja de HK, SG y EE, y primaria de KR, TW y ON
-(su secundaria baja ya está en el tramo 9.°–11.° como documento de antecedente).
-"""
+# Historical implementation notes:
+# Regla de presencia, la misma del grafo principal: un objetivo ENSEÑA un concepto si lo tiene como principal, o como
+# secundario con confianza alta o media.
+#
+# Grado de un objetivo = punto medio de su rango SV (p. ej. «Sec 3–4» = 9,5).
+#
+# Doble lectura (tramos con `lectura_doble`, spec 12): además del primer grado de cada país con la regla de presencia
+# (lectura amplia), se calcula el primer grado con presencia SÓLIDA en el núcleo (lectura estricta): 2 puntos por
+# objetivo con el concepto como principal y 1 como secundario, acumulados por grado hasta llegar a 2. Ahí también se
+# aplican las relaciones «parte de» (conceptos.partes()), además de las equivalencias.
+#
+# Antecedente: los objetivos de grados ≤ 8 solo sirven para fechar la primera aparición de un concepto. Así, algo que
+# un país enseña en 7.° no aparece como «nuevo en 10.°». Son los de Inglaterra, Australia y Japón del grafo principal
+# (data/interim/paises + etiquetado_paises) y, desde el 2026-10-13, los del núcleo de los demás países en el tramo
+# 2.°–8.° (spec 12), ya extraídos y etiquetados: primaria y secundaria baja de HK, SG y EE, y primaria de KR, TW y ON
+# (su secundaria baja ya está en el tramo 9.°–11.° como documento de antecedente).
 
 from __future__ import annotations
 
@@ -35,17 +35,21 @@ VERSION = "grafo-internacional-v1"
 ANTECEDENTE = {"ENG": "inglaterra", "AU": "australia", "JP": "japon"}
 # Países cuyo antecedente sale del tramo 2.°–8.° (ENG, AU y JP ya lo traen del grafo principal).
 ANTECEDENTE_2_8 = ("EE", "HK", "KR", "ON", "SG", "TW")
-ASIG_SV = {"fisica": "fisica", "quimica": "quimica", "biologia": "biologia",
-           "ciencias_tierra_espacio": "tierra_espacio"}
+ASIG_SV = {
+    "fisica": "fisica",
+    "quimica": "quimica",
+    "biologia": "biologia",
+    "ciencias_tierra_espacio": "tierra_espacio",
+}
 
 
 def paises() -> list[str]:
-    """Códigos de los países del tramo activo (config/<tramo>.yaml), en orden alfabético."""
+    """Return the active grade band's configured country codes in alphabetical order."""
     return sorted(cargar(tramo.actual().config)["paises"])
 
 
 def objetivos() -> tuple[dict, ...]:
-    """Objetivos extraídos de todos los países del tramo activo, ordenados por id; con caché por tramo."""
+    """Load and cache the active band's country objectives in identity order."""
     return _objetivos(tramo.actual().clave)
 
 
@@ -60,13 +64,15 @@ def _objetivos(clave: str) -> tuple[dict, ...]:
 
 
 def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
-    """Etiqueta los objetivos de cada país (ver grupos_paises)."""
+    """Tag each country's objectives using the registered grouping rules."""
     return [etiquetar.etiquetar(*g) for g in grupos_paises(solo)]
 
 
 def grupos_paises(solo: list[str] | None = None) -> list[etiquetar.Grupo]:
-    """Grupos de etiquetado: objetivos de cada país agrupados por asignatura (los importados sin asignatura van con
-    todo el vocabulario)."""
+    """Group country objectives by their explicit subject metadata."""
+
+    # Implementation notes:
+    # todo el vocabulario).
     # Los documentos de antecedente (secundaria baja) van en grupos aparte: así no cambian los lotes ya etiquetados.
     antecedente = {d["id"] for d in cargar(tramo.actual().config)["documentos"] if d.get("antecedente")}
     resumen = []
@@ -84,42 +90,50 @@ def grupos_paises(solo: list[str] | None = None) -> list[etiquetar.Grupo]:
 
 
 def _registro_de_documentos() -> dict[str, dict]:
-    """Registro de fuentes (manifest.csv) indexado por nombre de archivo y por id, para enlazar cada objetivo con el
-    mismo nodo Documento que usa el grafo principal."""
+    """Index registered document metadata by filename and source identity."""
+
+    # Implementation notes:
+    # mismo nodo Documento que usa el grafo principal.
     filas = legado.manifiesto_fuentes()
-    return {**{Path(r["archivo_local"]).name: r for r in filas if r.get("archivo_local")},
-            **{r["id"]: r for r in filas}}
+    return {
+        **{Path(r["archivo_local"]).name: r for r in filas if r.get("archivo_local")},
+        **{r["id"]: r for r in filas},
+    }
 
 
 def ensenados(e: dict) -> list[str]:
-    """Conceptos que el enunciado enseña según la regla de presencia."""
+    """Return concepts taught by a statement under the configured presence rule."""
     sec = e["secundarios"] if e["confianza"] in ("alta", "media") else []
     return sorted({*e["principales"], *sec})
 
 
 def con_equivalentes(ids: list[str]) -> list[str]:
-    """Agrega los conceptos equivalentes entre asignaturas (conceptos.equivalencias(), revisadas por una persona): la
-    misma idea puede estar en Física en un currículo y en Tierra y Espacio en otro (p. ej. el Big Bang)."""
+    """Expand explicit, human-reviewed equivalences across subject vocabularies."""
+
+    # Implementation notes:
+    # misma idea puede estar en Física en un currículo y en Tierra y Espacio en otro (p. ej. el Big Bang).
     eq = _equivalencias()
     return sorted({*ids, *(y for x in ids for y in eq.get(x, ()))})
 
 
 def ampliar(ids: list[str]) -> list[str]:
-    """con_equivalentes más los todos de cada parte (conceptos.partes()) y sus equivalentes: si un enunciado enseña la
-    conservación de la energía mecánica, también enseña la conservación de la energía. Solo con doble lectura."""
+    """Expand part-of concepts and their explicitly reviewed equivalents."""
+
+    # Implementation notes:
+    # conservación de la energía mecánica, también enseña la conservación de la energía. Solo con doble lectura.
     base = con_equivalentes(ids)
     todos = _partes()
     return con_equivalentes(sorted({*base, *(t for x in base for t in todos.get(x, ()))}))
 
 
 def expandir(ids: list[str]) -> list[str]:
-    """La expansión del tramo activo: ampliar() con doble lectura y con_equivalentes() sin ella."""
+    """Apply the expansion policy selected for the active contrast method."""
     return ampliar(ids) if tramo.actual().lectura_doble else con_equivalentes(ids)
 
 
 @cache
 def _partes() -> dict[str, frozenset[str]]:
-    """Parte → todos que la contienen."""
+    """Map each part to the wholes that explicitly contain it."""
     todos: dict[str, set[str]] = defaultdict(set)
     for r in conceptos.partes():
         todos[r["parte"]].add(r["todo"])
@@ -127,8 +141,10 @@ def _partes() -> dict[str, frozenset[str]]:
 
 
 def primer_grado_solido(puntos: list[tuple[float, int]], minimo: int = 2) -> float | None:
-    """Primer grado en que los puntos acumulados (en orden de grado) llegan a `minimo`: un principal (2) o dos
-    secundarios (1 + 1)."""
+    """Find the first grade reaching the required accumulated concept-presence score."""
+
+    # Implementation notes:
+    # secundarios (1 + 1).
     acumulado = 0
     for g, p in sorted(puntos):
         acumulado += p
@@ -139,7 +155,7 @@ def primer_grado_solido(puntos: list[tuple[float, int]], minimo: int = 2) -> flo
 
 @cache
 def _equivalencias() -> dict[str, frozenset[str]]:
-    """Concepto → conceptos equivalentes. Se arma una vez: con_equivalentes se llama ~20 000 veces por corrida."""
+    """Cache concept equivalences for repeated international comparisons."""
     eq: dict[str, set[str]] = defaultdict(set)
     for e in conceptos.equivalencias():
         eq[e["a"]].add(e["b"])
@@ -152,25 +168,31 @@ def _grado(o: dict) -> float:
 
 
 def _antecedente() -> list[dict]:
-    """(pais, concepto, grado, puntos) de los objetivos de grados ≤ 8 ya etiquetados en el grafo principal; el primer
-    concepto de cada objetivo es el principal (2 puntos) y los demás, secundarios (1)."""
+    """Collect earlier country-objective evidence from the principal graph."""
+
+    # Implementation notes:
+    # concepto de cada objetivo es el principal (2 puntos) y los demás, secundarios (1).
     etq = conceptos.etiquetado_paises()
     filas = []
     for codigo, archivo in ANTECEDENTE.items():
         for o in json.loads(ruta(f"data/interim/paises/{archivo}.json").read_text(encoding="utf-8")):
             g = (o["grado_min"] + o["grado_max"]) / 2
-            if g > tramo.actual().grados[0] - 0.5 or o["id"] not in etq:   # solo lo anterior al tramo
+            if g > tramo.actual().grados[0] - 0.5 or o["id"] not in etq:  # solo lo anterior al tramo
                 continue
-            filas.extend({"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"], "puntos": 2 if i == 0 else 1}
-                         for i, c in enumerate(etq[o["id"]]["conceptos"]))
+            filas.extend(
+                {"pais": codigo, "concepto": c, "grado": g, "objetivo": o["id"], "puntos": 2 if i == 0 else 1}
+                for i, c in enumerate(etq[o["id"]]["conceptos"])
+            )
     return filas + _antecedente_2_8()
 
 
 def _antecedente_2_8() -> list[dict]:
-    """Lo mismo con los objetivos del NÚCLEO del tramo 2.°–8.° de los demás países (spec 12; sin la Extension Part de
-    HK ni otra especialización), salvo los documentos que el tramo activo ya tiene (kr_jung, tw_jh, on_snc1w). Lo
-    encontró el bucle el 2026-10-13: la reflexión interna total, núcleo de HK S1–3 (p. 74), salía como especialización
-    porque la secundaria baja de HK no contaba."""
+    """Collect earlier core objectives from other countries' grade-two-to-eight band."""
+
+    # Implementation notes:
+    # HK ni otra especialización), salvo los documentos que el tramo activo ya tiene (kr_jung, tw_jh, on_snc1w). Lo
+    # encontró el bucle el 2026-10-13: la reflexión interna total, núcleo de HK S1–3 (p. 74), salía como especialización
+    # porque la secundaria baja de HK no contaba.
     t28 = tramo.TRAMOS["2_8"]
     if tramo.actual().clave == t28.clave:
         return []
@@ -184,13 +206,21 @@ def _antecedente_2_8() -> list[dict]:
             e = etq.get(o["id"])
             if not e or o["nivel"] != "nucleo" or o["documento"] in propios or _grado(o) > limite:
                 continue
-            filas.extend({"pais": p, "concepto": c, "grado": _grado(o), "objetivo": o["id"],
-                          "puntos": 2 if c in e["principales"] else 1} for c in ensenados(e))
+            filas.extend(
+                {
+                    "pais": p,
+                    "concepto": c,
+                    "grado": _grado(o),
+                    "objetivo": o["id"],
+                    "puntos": 2 if c in e["principales"] else 1,
+                }
+                for c in ensenados(e)
+            )
     return filas
 
 
 def construir() -> dict:
-    """Escribe la carpeta del grafo del tramo activo: grafo (nodos, aristas) y consenso por concepto."""
+    """Write the active band's country graphs and concept-level consensus."""
     voc, prac = conceptos.vocabulario(), conceptos.practicas()
     etq = etiquetar.cargar_etiquetas("pais_")
     objs = [o for o in objetivos() if o["id"] in etq]
@@ -209,38 +239,105 @@ def construir() -> dict:
     for o in objs:
         e = etq[o["id"]]
         doc = registro.get(Path(o["archivo"]).name) or registro.get(o["documento"])
-        nodos.append({**{k: o[k] for k in (
-            "id", "pais", "documento", "archivo", "pagina", "curso", "nivel", "asignatura", "grado_sv_min",
-            "grado_sv_max", "eje", "demanda", "texto")}, "tipo": "ObjetivoPais", "tipo_objetivo": o["tipo"],
-            "validacion": o["validacion"]["veredicto"], "version": o["version"],
-            "documento_registro": doc["id"] if doc else None})
+        nodos.append(
+            {
+                **{
+                    k: o[k]
+                    for k in (
+                        "id",
+                        "pais",
+                        "documento",
+                        "archivo",
+                        "pagina",
+                        "curso",
+                        "nivel",
+                        "asignatura",
+                        "grado_sv_min",
+                        "grado_sv_max",
+                        "eje",
+                        "demanda",
+                        "texto",
+                    )
+                },
+                "tipo": "ObjetivoPais",
+                "tipo_objetivo": o["tipo"],
+                "validacion": o["validacion"]["veredicto"],
+                "version": o["version"],
+                "documento_registro": doc["id"] if doc else None,
+            }
+        )
         aristas.append({"origen": f"CURSO:{o['pais']}/{o['curso']}", "destino": o["id"], "tipo": "CONTIENE"})
-        if doc:   # mismo id que el nodo Documento del grafo principal: se navega documento ↔ objetivos
+        if doc:  # mismo id que el nodo Documento del grafo principal: se navega documento ↔ objetivos
             documentos[doc["id"]] = doc
-            aristas.append({"origen": o["id"], "destino": f"DOC:{doc['id']}", "tipo": "FUENTE",
-                            **({"pagina": o["pagina"]} if o.get("pagina") else {})})
+            aristas.append(
+                {
+                    "origen": o["id"],
+                    "destino": f"DOC:{doc['id']}",
+                    "tipo": "FUENTE",
+                    **({"pagina": o["pagina"]} if o.get("pagina") else {}),
+                }
+            )
         for c in e["principales"]:
-            aristas.append({"origen": o["id"], "destino": c, "tipo": "ENSEÑA", "peso": "principal",
-                            "confianza": e["confianza"], "justificacion": e["justificacion"], "version": e["version"]})
+            aristas.append(
+                {
+                    "origen": o["id"],
+                    "destino": c,
+                    "tipo": "ENSEÑA",
+                    "peso": "principal",
+                    "confianza": e["confianza"],
+                    "justificacion": e["justificacion"],
+                    "version": e["version"],
+                }
+            )
             usados.add(c)
         for c in e["secundarios"]:
-            aristas.append({"origen": o["id"], "destino": c, "tipo": "ENSEÑA", "peso": "secundario",
-                            "confianza": e["confianza"], "justificacion": e["justificacion"], "version": e["version"]})
+            aristas.append(
+                {
+                    "origen": o["id"],
+                    "destino": c,
+                    "tipo": "ENSEÑA",
+                    "peso": "secundario",
+                    "confianza": e["confianza"],
+                    "justificacion": e["justificacion"],
+                    "version": e["version"],
+                }
+            )
             usados.add(c)
         for pr in e["practicas"]:
             aristas.append({"origen": o["id"], "destino": pr, "tipo": "PRACTICA", "confianza": e["confianza"]})
             usados.add(pr)
     for d in documentos.values():
-        nodos.append({"id": f"DOC:{d['id']}", "tipo": "Documento", "nombre": d["titulo"],
-                      **{k: d.get(k) for k in ("organismo", "anio", "url", "archivo_local", "sha256")}})
+        nodos.append(
+            {
+                "id": f"DOC:{d['id']}",
+                "tipo": "Documento",
+                "nombre": d["titulo"],
+                **{k: d.get(k) for k in ("organismo", "anio", "url", "archivo_local", "sha256")},
+            }
+        )
     for c in sorted(usados):
         x = voc.get(c) or prac.get(c)
-        nodos.append({"id": c, "tipo": "Concepto" if c in voc else "Practica", "nombre": x["nombre"],
-                      "asignatura": x.get("asignatura"), "definicion": x.get("definicion")})
+        nodos.append(
+            {
+                "id": c,
+                "tipo": "Concepto" if c in voc else "Practica",
+                "nombre": x["nombre"],
+                "asignatura": x.get("asignatura"),
+                "definicion": x.get("definicion"),
+            }
+        )
 
-    aristas.extend({"origen": a["origen"], "destino": a["destino"], "tipo": "PRERREQUISITO",
-                    "confianza": a.get("confianza"), "tipo_evidencia": a.get("tipo_evidencia")}
-                   for a in cargar_prerrequisitos() if a["origen"] in usados and a["destino"] in usados)
+    aristas.extend(
+        {
+            "origen": a["origen"],
+            "destino": a["destino"],
+            "tipo": "PRERREQUISITO",
+            "confianza": a.get("confianza"),
+            "tipo_evidencia": a.get("tipo_evidencia"),
+        }
+        for a in cargar_prerrequisitos()
+        if a["origen"] in usados and a["destino"] in usados
+    )
 
     consenso = _consenso(objs, etq, voc)
     base = ruta(tramo.actual().grafo)
@@ -248,14 +345,22 @@ def construir() -> dict:
     nodos.sort(key=lambda n: n["id"])
     aristas.sort(key=lambda a: (a["tipo"], a["origen"], a["destino"], a.get("peso", "")))
     for nombre, filas in (("nodos", nodos), ("aristas", aristas)):
-        (base / f"{nombre}.jsonl").write_text("".join(json.dumps(f, ensure_ascii=False) + "\n" for f in filas),
-                                               encoding="utf-8")
+        (base / f"{nombre}.jsonl").write_text(
+            "".join(json.dumps(f, ensure_ascii=False) + "\n" for f in filas), encoding="utf-8"
+        )
     (base / "consenso.json").write_text(json.dumps(consenso, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    manifest = {"version": VERSION, "paises": paises(), "objetivos": len(objs),
-                "objetivos_sin_documento_registrado": sum(n.get("documento_registro") is None
-                                                          for n in nodos if n["tipo"] == "ObjetivoPais"),
-                "nodos": len(nodos), "aristas": len(aristas), "conceptos_en_consenso": len(consenso["conceptos"]),
-                "paises_con_nucleo_por_grado": consenso["paises_con_nucleo_por_grado"]}
+    manifest = {
+        "version": VERSION,
+        "paises": paises(),
+        "objetivos": len(objs),
+        "objetivos_sin_documento_registrado": sum(
+            n.get("documento_registro") is None for n in nodos if n["tipo"] == "ObjetivoPais"
+        ),
+        "nodos": len(nodos),
+        "aristas": len(aristas),
+        "conceptos_en_consenso": len(consenso["conceptos"]),
+        "paises_con_nucleo_por_grado": consenso["paises_con_nucleo_por_grado"],
+    }
     (base / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return manifest
 
@@ -270,8 +375,9 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
     # en S4–S6, no entra en el denominador (sí en la especialización).
     # «nucleo_parcial» (lo cursa la mayoría, no todos: SG Combined, JP 基礎) cuenta como núcleo en la presencia laxa de
     # los países y como especialización en la sólida (los puntos solo suman con el núcleo pleno).
-    con_nucleo = {g: sorted({o["pais"] for o in objs if o["nivel"] in NIVELES_NUCLEO and o["grado_sv_min"] <= g})
-                  for g in grados}
+    con_nucleo = {
+        g: sorted({o["pais"] for o in objs if o["nivel"] in NIVELES_NUCLEO and o["grado_sv_min"] <= g}) for g in grados
+    }
     por: dict[str, dict[str, dict]] = defaultdict(lambda: defaultdict(lambda: {"nucleo": [], "especializacion": []}))
     # Evidencia del núcleo por país: 2 puntos por objetivo con el concepto como principal, 1 como secundario.
     # Con ≥ 2 puntos el núcleo «lo enseña» de forma sólida (un principal, o al menos dos secundarios).
@@ -287,7 +393,7 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
                 puntos[c][o["pais"]].append((_grado(o), 2 if c in principales else 1))
     previo: dict[str, dict[str, float]] = defaultdict(dict)
     for a in _antecedente():
-        for c in (expandir([a["concepto"]]) if doble else [a["concepto"]]):
+        for c in expandir([a["concepto"]]) if doble else [a["concepto"]]:
             g = previo[c].get(a["pais"])
             previo[c][a["pais"]] = a["grado"] if g is None else min(g, a["grado"])
             puntos[c][a["pais"]].append((a["grado"], a["puntos"]))
@@ -312,10 +418,14 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             nucleo_en_tramo = any(gmax >= grados[0] for _, _, gmax in d["nucleo"])
             # Evidencia: primero los objetivos del núcleo, después los de especialización.
             ids = sorted({i for _, i, _ in d["nucleo"]}) + sorted({i for _, i, _ in d["especializacion"]})
-            filas[p] = {"primer_grado_nucleo": primero_nucleo, "primer_grado": primero,
-                        "antes_del_tramo": ga is not None, "en_especializacion": bool(ge),
-                        "nucleo_en_tramo": nucleo_en_tramo,
-                        "objetivos": list(dict.fromkeys(ids))[:12]}
+            filas[p] = {
+                "primer_grado_nucleo": primero_nucleo,
+                "primer_grado": primero,
+                "antes_del_tramo": ga is not None,
+                "en_especializacion": bool(ge),
+                "nucleo_en_tramo": nucleo_en_tramo,
+                "objetivos": list(dict.fromkeys(ids))[:12],
+            }
             if doble:
                 filas[p]["primer_grado_nucleo_solido"] = primer_grado_solido(puntos[c][p])
             if primero_nucleo is not None:
@@ -323,32 +433,53 @@ def _consenso(objs: list[dict], etq: dict, voc: dict) -> dict:
             primeros.append(primero)
         if not filas:
             continue
-        nucleo_hasta = {g: sorted(p for p, f in filas.items()
-                                  if f["primer_grado_nucleo"] is not None and f["primer_grado_nucleo"] <= g + 0.5)
-                        for g in grados}
+        nucleo_hasta = {
+            g: sorted(
+                p
+                for p, f in filas.items()
+                if f["primer_grado_nucleo"] is not None and f["primer_grado_nucleo"] <= g + 0.5
+            )
+            for g in grados
+        }
         extra = {}
         if doble:
-            solidos = [f["primer_grado_nucleo_solido"] for f in filas.values()
-                       if f["primer_grado_nucleo_solido"] is not None]
-            hasta = {g: sorted(p for p, f in filas.items() if f["primer_grado_nucleo_solido"] is not None
-                               and f["primer_grado_nucleo_solido"] <= g + 0.5) for g in grados}
-            extra = {"n_nucleo_solido": len(solidos),
-                     "mediana_primer_grado_nucleo_solido": statistics.median(solidos) if solidos else None,
-                     "nucleo_solido_hasta_grado": hasta,
-                     "proporcion_nucleo_solido_hasta_grado": {g: round(len(hasta[g]) / max(1, len(con_nucleo[g])), 3)
-                                                              for g in grados}}
-        salida.append({
-            "concepto": c, "nombre": voc[c]["nombre"], "asignatura": ASIG_SV.get(voc[c]["asignatura"]),
-            "paises": filas, "n_paises": len(filas),
-            "n_nucleo": len(primeros_nucleo),
-            "n_nucleo_en_tramo": sum(f["nucleo_en_tramo"] for f in filas.values()),
-            "n_nucleo_foco": sum(v >= 2 for v in foco[c].values()),
-            "n_solo_especializacion": sum(f["primer_grado_nucleo"] is None for f in filas.values()),
-            "mediana_primer_grado_nucleo": statistics.median(primeros_nucleo) if primeros_nucleo else None,
-            "mediana_primer_grado": statistics.median(primeros),
-            "nucleo_hasta_grado": nucleo_hasta,
-            "proporcion_nucleo_hasta_grado": {g: round(len(nucleo_hasta[g]) / max(1, len(con_nucleo[g])), 3)
-                                              for g in grados},
-            **extra,
-        })
+            solidos = [
+                f["primer_grado_nucleo_solido"] for f in filas.values() if f["primer_grado_nucleo_solido"] is not None
+            ]
+            hasta = {
+                g: sorted(
+                    p
+                    for p, f in filas.items()
+                    if f["primer_grado_nucleo_solido"] is not None and f["primer_grado_nucleo_solido"] <= g + 0.5
+                )
+                for g in grados
+            }
+            extra = {
+                "n_nucleo_solido": len(solidos),
+                "mediana_primer_grado_nucleo_solido": statistics.median(solidos) if solidos else None,
+                "nucleo_solido_hasta_grado": hasta,
+                "proporcion_nucleo_solido_hasta_grado": {
+                    g: round(len(hasta[g]) / max(1, len(con_nucleo[g])), 3) for g in grados
+                },
+            }
+        salida.append(
+            {
+                "concepto": c,
+                "nombre": voc[c]["nombre"],
+                "asignatura": ASIG_SV.get(voc[c]["asignatura"]),
+                "paises": filas,
+                "n_paises": len(filas),
+                "n_nucleo": len(primeros_nucleo),
+                "n_nucleo_en_tramo": sum(f["nucleo_en_tramo"] for f in filas.values()),
+                "n_nucleo_foco": sum(v >= 2 for v in foco[c].values()),
+                "n_solo_especializacion": sum(f["primer_grado_nucleo"] is None for f in filas.values()),
+                "mediana_primer_grado_nucleo": statistics.median(primeros_nucleo) if primeros_nucleo else None,
+                "mediana_primer_grado": statistics.median(primeros),
+                "nucleo_hasta_grado": nucleo_hasta,
+                "proporcion_nucleo_hasta_grado": {
+                    g: round(len(nucleo_hasta[g]) / max(1, len(con_nucleo[g])), 3) for g in grados
+                },
+                **extra,
+            }
+        )
     return {"version": VERSION, "paises_con_nucleo_por_grado": con_nucleo, "conceptos": salida}

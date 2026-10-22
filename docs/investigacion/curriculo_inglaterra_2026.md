@@ -1,5 +1,8 @@
 # Ciencias de Inglaterra: comprobación documental al 21 de octubre de 2026
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Los tres programas de ciencias enlazados actualmente por DfE/GOV.UK son los documentos de primaria KS1–2, KS3 y KS4 que ya existen en el repositorio. La descarga independiente a `/tmp` produjo **idénticos bytes y SHA-256 en los tres casos**. La fecha de comprobación 2026 no constituye una nueva edición curricular. La página oficial mantiene su última actualización en el 6 de mayo de 2015, cuando corrigió la sección de luz de Year 3; añadió KS4 el 2 de diciembre de 2014. [Publicación oficial de ciencias](https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study).
 
 Sólo se utilizaron fuentes primarias de GOV.UK, Department for Education y su agencia Standards and Testing Agency. El alcance es **Inglaterra**, sin extrapolar a las otras naciones del Reino Unido. No se consultaron datos V4 ni evaluaciones reservadas y no se ejecutaron modelos.

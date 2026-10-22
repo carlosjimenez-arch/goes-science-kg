@@ -1,5 +1,8 @@
 # Coherencia de lecturas de la API
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 La API fija el grafo al atender la primera petición y verifica sus bytes contra `manifest.json`. La inicialización se serializa con un `Lock`, por lo que peticiones concurrentes no pueden crear instancias de generaciones distintas al arrancar. Valida identificadores, extremos de las relaciones y conteos del manifiesto. El manifiesto, los modelos y el índice GraphRAG proceden de los mismos bytes capturados. No combina un índice antiguo con un manifiesto nuevo.
 
 Los diagnósticos, comunidades y simulaciones históricos no contienen la identidad del grafo que los produjo. Su coexistencia en el repositorio no acredita esa relación. La API no los adopta automáticamente ni escribe atestaciones durante una lectura.

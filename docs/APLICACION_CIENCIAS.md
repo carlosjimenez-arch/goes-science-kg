@@ -41,8 +41,33 @@ Inter se distribuye con su licencia OFL, conservada en `interfaz/estaticos/OFL-I
 El endpoint `/api/v4/interfaz/resumen` identifica el snapshot; los detalles y exportaciones corresponden
 a esa misma generación. Si un archivo publicado cambia, reiniciar sólo después de verificar la nueva
 publicación; la instancia no adopta silenciosamente otra generación.
+La compilación de briefs se invalida al cambiar formato, objetivos o visita; una respuesta tardía no
+restablece resultados anteriores. Las exportaciones Excel del mismo producto conservan los mismos
+bytes, con fechas internas fijas y texto seguro en todas las hojas, incluida la metadata de control.
 
-## Verificación de entrega · 22 de octubre de 2026
+## Revisión de API y calidad · feat/api
+
+La marca de la aplicación es GOEs · Departamento de AI · 2026. El CSS principal es idéntico al bloque
+`style` del HTML aportado; se conservaron los estilos y se adaptaron los datos a Ciencias. La referencia
+`eor-api` sigue bloqueada por macOS y no se declara inspeccionada.
+
+Las rutas `/health/live` y `/health/ready` separan proceso y disponibilidad de datos. Una raíz sin
+corpus mantiene accesibles `/app/` y `/docs`, pero las consultas responden 503 con `estado: sin_datos`
+y «No hay datos disponibles». Los errores históricos tampoco exponen rutas del servidor.
+Las identidades que contienen `/`, como `CON:fisica/sistema-internacional-unidades`, se resuelven
+completas. OpenAPI describe las respuestas de filas, documentos, grafo y briefs con contratos tipados.
+
+La capa HTTP delega en `ServicioInterfaz`, `RegistroActividad` y el lector de publicaciones. Los índices
+reutilizan texto normalizado y relaciones por nodo. Una campaña ausente conserva `reserva_usd: null`;
+una ausencia de telemetría no se muestra como gasto cero. Las descargas CSV y Excel conservan
+`X-Snapshot-ID` y el navegador rechaza otra generación.
+
+La medición vigente pasó **1.408 pruebas Python** sin advertencias; la cobertura de líneas es
+**79,37 %**. El informe fechado se publica en [medicion.json](badges/medicion.json).
+La CI tiene contratos portables comprobados localmente sobre una copia sin corpus; su ejecución
+remota está pendiente. El informe siguiente conserva la verificación de la entrega anterior.
+
+## Verificación anterior de entrega · 22 de octubre de 2026
 
 La versión final pasó **1.387 pruebas en 266,07 segundos**, incluidas 27 pruebas nuevas para la
 aplicación y sus límites. Ruff comprobó `src`, `tests` y `.claude/hooks`. Los 18 controles de calidad y

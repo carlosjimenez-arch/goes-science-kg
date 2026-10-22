@@ -1,4 +1,4 @@
-"""Comandos del grupo `internacional`."""
+"""Expose the internacional command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -15,15 +15,17 @@ CONFIRMAR = Annotated[bool, typer.Option("--confirmar", help="Pagar las llamadas
 def internacional_opciones(
     tramo: Annotated[str, typer.Option(help="Tramo de grados: 9_11 (spec 11) o 2_8 (spec 12)")] = "9_11",
 ) -> None:
-    """Grafos internacionales y contraste con la malla V2, por tramo de grados."""
+    """Select the grade band for international graph construction and comparison."""
     from goes_science_kg.internacional import tramo as tramos
 
     tramos.usar(tramo)
 
 
 def _frenar_si_hay_costo(pendientes: int, confirmar: bool) -> None:
-    """Sin --confirmar, no se gasta: informa cuántas llamadas pagaría y sale con código 1. La cifra es una cota
-    inferior (los reintentos y la validación de completitud suman: Ontario 1–2 estimó 24 y usó 29)."""
+    """Report estimated paid calls and stop unless spending was explicitly confirmed."""
+
+    # Implementation notes:
+    # inferior (los reintentos y la validación de completitud suman: Ontario 1–2 estimó 24 y usó 29).
     techo = pendientes + -(-pendientes // 4)  # +25 %, redondeado hacia arriba
     typer.echo(
         f"Llamadas a Vertex fuera de la caché: {pendientes} (al menos; pide aprobación para unas {techo})"
@@ -47,7 +49,7 @@ def _frenar_si_hay_costo(pendientes: int, confirmar: bool) -> None:
 def internacional_extraer(
     paises: Annotated[list[str] | None, typer.Argument(help="SG, JP…")] = None, confirmar: CONFIRMAR = False
 ) -> None:
-    """Extrae y valida con Vertex los objetivos de los países (config/internacional.yaml)."""
+    """Extract and validate country curriculum objectives through Vertex AI."""
     from goes_science_kg.internacional import consenso, extraer
 
     elegidos = paises or consenso.paises()
@@ -63,7 +65,7 @@ def internacional_extraer(
 def internacional_etiquetar(
     paises: Annotated[list[str] | None, typer.Argument(help="vacío = todos")] = None, confirmar: CONFIRMAR = False
 ) -> None:
-    """Etiqueta con conceptos los objetivos de los países y la malla V2 (2.°–11.°)."""
+    """Tag country objectives and V2 curriculum topics with registered concepts."""
     from goes_science_kg.internacional import consenso, etiquetar
 
     grupos = [*consenso.grupos_paises(paises or None), *etiquetar.grupos_malla_v2()]
@@ -74,7 +76,7 @@ def internacional_etiquetar(
 
 @app.command("congelar-catalogo")
 def internacional_congelar_catalogo(version: str) -> None:
-    """Congela el catálogo de etiquetado con el vocabulario vivo. Invalida la caché: re-etiquetar se paga completo."""
+    """Freeze the current vocabulary for tagging and explicitly invalidate the prior cache."""
     from goes_science_kg.internacional import etiquetar
 
     typer.echo(etiquetar.congelar_catalogo(version))
@@ -82,7 +84,7 @@ def internacional_congelar_catalogo(version: str) -> None:
 
 @app.command("corregir-metadatos")
 def internacional_corregir_metadatos() -> None:
-    """Corrige grados y nivel (Extension Part en cursiva) de los objetivos ya extraídos, sin Vertex (spec 12)."""
+    """Correct extracted grade metadata without invoking Vertex AI."""
     from goes_science_kg.internacional import extraer
 
     typer.echo(extraer.corregir_metadatos())
@@ -90,7 +92,7 @@ def internacional_corregir_metadatos() -> None:
 
 @app.command("construir")
 def internacional_construir() -> None:
-    """Arma data/grafo/internacional/ (grafo por país + consenso) y los informes de internacional/."""
+    """Build country graphs, international consensus, and comparison reports."""
     from goes_science_kg.internacional import consenso, informe
 
     typer.echo(consenso.construir())

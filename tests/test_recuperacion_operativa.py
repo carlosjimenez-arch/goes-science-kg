@@ -1,4 +1,4 @@
-"""Recuperación de transporte con Motor/SQLite reales y proveedor estrictamente sin red."""
+"""Test operational recovery with real SQLite workflows and strictly offline providers."""
 
 from __future__ import annotations
 

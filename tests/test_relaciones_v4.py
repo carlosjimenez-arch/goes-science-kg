@@ -1,4 +1,4 @@
-"""Colección entre lotes: juicios rehidratados, dependencias y ciclos sin fabricar progresiones."""
+"""Rehydrate cross-batch review collections and reject cycles without inventing progressions."""
 
 from __future__ import annotations
 

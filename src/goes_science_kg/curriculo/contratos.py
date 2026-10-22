@@ -1,4 +1,4 @@
-"""Contratos del currículo versionado, independientes del grafo y sus decisiones."""
+"""Define versioned curriculum contracts independently of graph decisions."""
 
 from __future__ import annotations
 
@@ -13,13 +13,13 @@ FASES: tuple[NombreFase, ...] = ("aproximar", "explorar", "explicar", "indagar",
 
 
 class ContratoCurricular(BaseModel):
-    """Rechaza atributos desconocidos; la ingesta no modifica contratos emitidos."""
+    """Reject unknown attributes and preserve issued curriculum contracts."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
 
 class FuenteCurricular(ContratoCurricular):
-    """Identidad del archivo exacto y su procedencia, sin otorgar permisos de lectura."""
+    """Identify exact source bytes and provenance without granting file access."""
 
     id: str
     version: str
@@ -31,7 +31,7 @@ class FuenteCurricular(ContratoCurricular):
 
 
 class ColumnaCurricular(ContratoCurricular):
-    """Una columna física: encabezados completos y rol lógico opcional."""
+    """Describe a physical spreadsheet column and its optional logical role."""
 
     columna: str
     indice: int = Field(ge=1)
@@ -40,7 +40,7 @@ class ColumnaCurricular(ContratoCurricular):
 
 
 class CeldaCurricular(ContratoCurricular):
-    """Valor original y valor de ancla combinada; nunca arrastra blancos ordinarios."""
+    """Preserve original and merged-anchor cell values without filling ordinary blanks."""
 
     coordenada: str
     fila: int = Field(ge=1)
@@ -55,14 +55,14 @@ class CeldaCurricular(ContratoCurricular):
 
 
 class RegistroHoja(ContratoCurricular):
-    """Fila física no vacía, incluso si no representa un tema curricular."""
+    """Represent a nonempty physical row even when it is not a curriculum topic."""
 
     fila: int = Field(ge=1)
     celdas: tuple[CeldaCurricular, ...]
 
 
 class FaseCurricular(ContratoCurricular):
-    """Anotación local del insumo: sus códigos no constituyen una taxonomía OECD."""
+    """Represent an original phase annotation without asserting an OECD taxonomy."""
 
     presente_en_hoja: bool
     texto: str = ""
@@ -72,7 +72,7 @@ class FaseCurricular(ContratoCurricular):
 
 
 class FilaCurricular(ContratoCurricular):
-    """Tema identificado por versión, archivo, hoja, fila física y contenido."""
+    """Identify a topic by version, workbook, sheet, physical row, and content."""
 
     id: str
     fuente_id: str
@@ -110,14 +110,14 @@ class FilaCurricular(ContratoCurricular):
 
     @model_validator(mode="after")
     def cinco_fases_explicitas(self) -> FilaCurricular:
-        """Una ausencia debe declararse, nunca desaparecer del contrato."""
+        """Require missing phases to remain explicit in the curriculum contract."""
         if set(self.fases) != set(FASES):
             raise ValueError("Cada fila debe declarar exactamente las cinco fases, incluso las ausentes.")
         return self
 
 
 class HojaCurricular(ContratoCurricular):
-    """Inventario exhaustivo de hojas y sus registros originales, no inferencias."""
+    """Inventory every sheet and its original records without inferred content."""
 
     fuente_id: str
     nombre: str
@@ -135,7 +135,7 @@ class HojaCurricular(ContratoCurricular):
 
 
 class AgrupacionCurricular(ContratoCurricular):
-    """Agrupación por asignatura declarada en la malla, sin clasificación heredada."""
+    """Group rows by declared curriculum subject without inherited classification."""
 
     grado: int
     asignatura_malla: str
@@ -144,7 +144,7 @@ class AgrupacionCurricular(ContratoCurricular):
 
 
 class Curriculo(ContratoCurricular):
-    """Resultado trazable de ingesta; no activa una versión ni aprueba su contenido."""
+    """Represent traceable ingestion without activating a version or approving its content."""
 
     version: str
     estado: Literal["ingerido_verificado"] = "ingerido_verificado"

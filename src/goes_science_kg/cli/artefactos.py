@@ -1,4 +1,4 @@
-"""Respaldo privado del producto; no envía datos a GitHub ni cambia IAM."""
+"""Back up private artifacts without publishing data to GitHub or changing IAM."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ app = typer.Typer(help="Respaldo privado y restauración verificable de Ciencias
 
 @app.command("preparar")
 def preparar(destino: Annotated[Path, typer.Option()]) -> None:
-    """Crea un paquete con inventario y SQLite consistente; cero nube."""
+    """Create a local package with a SHA inventory and consistent SQLite backups."""
     from goes_science_kg.operacion.respaldo import crear_paquete, seleccionar_artefactos
     from goes_science_kg.producto.almacen import cargar_producto
 
@@ -39,7 +39,7 @@ def preparar(destino: Annotated[Path, typer.Option()]) -> None:
 
 @app.command("subir")
 def subir(plan: Path, salida: Annotated[Path, typer.Option()]) -> None:
-    """Crea objetos nuevos en el prefijo autorizado, verifica PAP/UBLA y relee generaciones."""
+    """Upload new objects and verify storage protections and exact generations."""
     from goes_science_kg.operacion.almacen_gcs import AlmacenGCS, ConfiguracionAlmacen
 
     try:
@@ -73,7 +73,7 @@ def subir(plan: Path, salida: Annotated[Path, typer.Option()]) -> None:
 
 @app.command("restaurar")
 def restaurar(recibo: Path, destino: Annotated[Path, typer.Option()]) -> None:
-    """Descarga una generación fijada y restaura en un directorio vacío; cero modelos."""
+    """Download a pinned generation and restore it into an empty directory."""
     import tempfile
 
     from goes_science_kg.operacion.almacen_gcs import AlmacenGCS, ConfiguracionAlmacen

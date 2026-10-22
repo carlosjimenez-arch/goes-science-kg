@@ -1,4 +1,4 @@
-"""Contratos de descubrimiento: una hipótesis de enlace nunca es un dictamen."""
+"""Represent discovery hypotheses separately from reviewed knowledge relationships."""
 
 from __future__ import annotations
 
@@ -11,14 +11,14 @@ from goes_science_kg.motor.contratos import Evidencia
 
 
 class EdicionEsperada(ContratoCurricular):
-    """Edición fijada por el integrador; no afirma vigencia normativa por su fecha."""
+    """Pin a reference edition without inferring normative validity from its date."""
 
     sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     version_documental: str = Field(min_length=1)
 
 
 class PoliticaConocimiento(ContratoCurricular):
-    """Presupuestos explícitos para que la generación de propuestas sea reproducible."""
+    """Declare explicit discovery budgets for reproducible candidate preparation."""
 
     version: Literal["descubrimiento-1"] = "descubrimiento-1"
     campos_locales: tuple[str, ...] = (
@@ -53,7 +53,7 @@ class PoliticaConocimiento(ContratoCurricular):
 
 
 class CandidatoConocimiento(ContratoCurricular):
-    """Propuesta con anclas y bloqueos, excluida de toda arista curricular aceptada."""
+    """Represent an anchored, blocked relationship hypothesis outside accepted curriculum edges."""
 
     id: str
     tipo: Literal["fila_concepto", "fila_practica", "contraste_pais", "prerrequisito"]
@@ -71,7 +71,7 @@ class CandidatoConocimiento(ContratoCurricular):
 
 
 class DAGNoValidado(ContratoCurricular):
-    """Un DAG vacío no equivale a una progresión educativa verificada."""
+    """Represent an unvalidated DAG without asserting educational progression."""
 
     estado: Literal["sin_progresion_verificada"] = "sin_progresion_verificada"
     nodos: tuple[()] = ()
@@ -80,7 +80,7 @@ class DAGNoValidado(ContratoCurricular):
 
 
 class InformeConocimiento(ContratoCurricular):
-    """Paquete para juicio especializado posterior; no contiene la puerta de aceptación."""
+    """Package hypotheses for later specialist review without providing an acceptance gate."""
 
     version: Literal["conocimiento-candidatos-1"] = "conocimiento-candidatos-1"
     version_curriculo: Literal["V4"] = "V4"

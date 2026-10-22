@@ -1,4 +1,4 @@
-"""Similitud vectorizada opcional con validación de corpus, modelo y dimensiones."""
+"""Compute optional vector similarity with corpus, model, and dimension validation."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ def _numpy():
 
 
 class IndiceEmbeddings:
-    """Vectores en el orden recibido; no admite mezclar modelos ni corpus."""
+    """Index vectors in source order without mixing embedding models or corpora."""
 
     def __init__(self, documentos: Iterable[Documento], vectores: Sequence[Sequence[float]], *, modelo: str):
         np = _numpy()
@@ -49,7 +49,7 @@ class IndiceEmbeddings:
         self.huella_vectores = hashlib.sha256(self.matriz[posiciones].tobytes()).hexdigest()
 
     def validar_corpus(self, documentos: Iterable[Documento]) -> None:
-        """Bloquea el uso de vectores obsoletos incluso si los ids no cambiaron."""
+        """Reject stale vectors even when document identifiers remain unchanged."""
         if huella_corpus(documentos) != self.huella:
             raise ValueError("El corpus cambió: se deben regenerar los embeddings")
 
@@ -61,7 +61,7 @@ class IndiceEmbeddings:
         permitidos: set[str],
         limite: int,
     ) -> list[tuple[str, float]]:
-        """Calcula cosenos en una operación matricial sobre el subconjunto permitido."""
+        """Compute cosine scores in one matrix operation over the permitted subset."""
         np = _numpy()
         if modelo != self.modelo:
             raise ValueError("El vector de consulta pertenece a otro modelo de embeddings")
@@ -81,7 +81,7 @@ class IndiceEmbeddings:
         return [(self.ids[posiciones[int(i)]], float(puntajes[i])) for i in orden]
 
     def guardar(self, archivo: str | Path) -> None:
-        """Guarda sólo arrays y metadatos simples; nunca serializa objetos ejecutables."""
+        """Persist arrays and simple metadata without serializing executable objects."""
         np = _numpy()
         with Path(archivo).open("wb") as salida:
             np.savez_compressed(
@@ -94,7 +94,7 @@ class IndiceEmbeddings:
 
     @classmethod
     def cargar(cls, archivo: str | Path, documentos: Iterable[Documento], *, modelo: str) -> IndiceEmbeddings:
-        """Rechaza un archivo creado con otro modelo o versión del corpus."""
+        """Reject embedding artifacts from another model or corpus version."""
         np = _numpy()
         corpus = ordenar_documentos(documentos)
         with np.load(archivo, allow_pickle=False) as datos:

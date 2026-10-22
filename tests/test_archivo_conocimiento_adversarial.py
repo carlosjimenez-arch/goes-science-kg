@@ -1,4 +1,4 @@
-"""Archivos rehasheados no sustituyen el currículo ni la edición examinados por los jueces."""
+"""Reject rehashed archives that substitute the curriculum or edition reviewed originally."""
 
 from __future__ import annotations
 
@@ -23,11 +23,11 @@ def _archivo(datos):
 
 
 def _reconstruir(datos):
-    """Conserva votos sintéticos favorables y reconstruye todos los cierres derivados.
+    """Retain favorable synthetic votes while reconstructing all derived outcomes."""
 
-    Así las pruebas de preparación no dependen de detectar una huella vieja: el rechazo
-    debe proceder del contraste determinista con la fila y las fuentes canónicas.
-    """
+    # Historical test notes:
+    # Así las pruebas de preparación no dependen de detectar una huella vieja: el rechazo
+    # debe proceder del contraste determinista con la fila y las fuentes canónicas.
     resultados, filas = [], {}
     anteriores = {r["solicitud"]["candidato_id"]: r for r in datos["coleccion"]["resultados"]}
     usados = {i for registro in datos["expedientes"].values() for i in registro["evidencias_ids"]}
@@ -142,8 +142,9 @@ def test_celda_local_no_citada_sigue_siendo_obligatoria_en_el_expediente(prepara
     id_, registro = next(iter(datos["expedientes"].items()))
     resultado = next(r for r in datos["coleccion"]["resultados"] if r["solicitud"]["candidato_id"] == id_)
     citadas = {c["evidencia_id"] for d in resultado["dictamenes"] for c in d["citas"]}
-    omitida = next(i for i in registro["evidencias_ids"] if datos["evidencias"][i]["version"] == "V4"
-                   and i not in citadas)
+    omitida = next(
+        i for i in registro["evidencias_ids"] if datos["evidencias"][i]["version"] == "V4" and i not in citadas
+    )
     registro["evidencias_ids"].remove(omitida)
     preparacion = registro["preparacion"]
     preparacion["fragmentos"] = [f for f in preparacion["fragmentos"] if f["evidencia_id"] != omitida]
@@ -152,8 +153,10 @@ def test_celda_local_no_citada_sigue_siendo_obligatoria_en_el_expediente(prepara
     _rechaza(preparado, _reconstruir(datos))
 
 
-@pytest.mark.parametrize("campo", ["tipo_excel", "valor_real", "valor_original", "coordenada_origen",
-                                 "coordenada_solicitada", "valor_es_formula"])
+@pytest.mark.parametrize(
+    "campo",
+    ["tipo_excel", "valor_real", "valor_original", "coordenada_origen", "coordenada_solicitada", "valor_es_formula"],
+)
 def test_celda_fisica_modificada_con_hashes_coherentes_no_es_respaldo(preparado, campo):
     datos = preparado.archivo.model_dump(mode="json")
     prueba = next(e for e in datos["evidencias"].values() if e["version"] == "V4")
@@ -181,8 +184,7 @@ def test_identidad_de_evidencia_no_puede_atribuir_otra_celda_de_la_misma_fila(pr
             if fragmento["evidencia_id"] == anterior:
                 fragmento["evidencia_id"] = nueva
         registro["preparacion"]["grupos"] = {
-            g: [nueva if i == anterior else i for i in ids]
-            for g, ids in registro["preparacion"]["grupos"].items()
+            g: [nueva if i == anterior else i for i in ids] for g, ids in registro["preparacion"]["grupos"].items()
         }
     for resultado in datos["coleccion"]["resultados"]:
         for dictamen in resultado["dictamenes"]:

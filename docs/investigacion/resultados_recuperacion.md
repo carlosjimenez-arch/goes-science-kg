@@ -1,5 +1,8 @@
 # Comparación local de recuperación
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 2026-10-21T10:40:37.617475-05:00. Currículo detectado: **V3**.
 
 Benchmark sin ajuste de pesos, sin embeddings y sin llamadas cloud. Ambos candidatos conservan sus diferencias de texto, filtros y navegación; el baseline permanece disponible.

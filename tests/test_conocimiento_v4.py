@@ -1,4 +1,4 @@
-"""Candidatos reproducibles, ambigüedades y fronteras de evidencia; sin servicios remotos."""
+"""Test reproducible discovery candidates, ambiguity, and evidence boundaries without remote services."""
 
 from __future__ import annotations
 

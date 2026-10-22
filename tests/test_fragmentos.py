@@ -1,4 +1,4 @@
-"""Citas por registro: procedencia, límites de contexto y resolución sin literales libres."""
+"""Test registered quotations, provenance, context limits, and literal resolution."""
 
 from __future__ import annotations
 

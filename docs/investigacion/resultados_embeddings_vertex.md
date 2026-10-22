@@ -1,5 +1,8 @@
 # Experimento real de recuperación con Vertex
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 2026-10-21T10:57:49.929661-05:00. Currículo: **V3**. Modelo: **gemini-embedding-001**, 768 dimensiones, us-central1.
 
 Se usaron ADC y proyecto explícito. No se ajustaron pesos después de observar resultados. Los 98 casos históricos son regresión reutilizada; esta comparación no valida la V4.

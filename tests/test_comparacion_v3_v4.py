@@ -1,4 +1,4 @@
-"""Correspondencia conservadora sin heredar identidad, grados, disciplinas o decisiones."""
+"""Compare versions conservatively without inheriting identities, grades, or decisions."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ def _sha(contenido: bytes) -> str:
 
 
 def _historico(tmp_path: Path, filas: list[dict]):
-    """Grafo y XLSX sintéticos de fuente, ambos con hashes comprobados al cargar."""
+    """Build synthetic graph and workbook sources whose hashes are checked on loading."""
     libro = Workbook()
     hoja = libro.active
     hoja.title = "Unidad 1"
@@ -147,7 +147,7 @@ def _fila(
 
 
 def _curriculo(*filas):
-    """Contrato mínimo de comparación; no afirma una ingesta o activación real."""
+    """Provide the minimum comparison contract without claiming actual ingestion or activation."""
     return Curriculo(version="V4", huella="a" * 64, fuentes=(), hojas=(), agrupaciones=(), filas=filas)
 
 

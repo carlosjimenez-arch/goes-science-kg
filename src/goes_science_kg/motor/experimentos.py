@@ -1,4 +1,4 @@
-"""Comparación reproducible de jueces sobre casos sembrados; no mide eficacia educativa."""
+"""Compare reviewers reproducibly without claiming educational effectiveness."""
 
 from __future__ import annotations
 
@@ -22,6 +22,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Veredicto(Contrato):
+    """Record an experimental review decision, findings, and source identities."""
+
     decision: Literal["aprobar", "rechazar", "abstenerse"]
     hallazgos: list[str] = Field(max_length=8)
     fuentes_ids: list[str]
@@ -43,6 +45,8 @@ Si no alcanza la evidencia para decidir, abstente. Devuelve razones breves obser
 
 
 def resumir(filas: list[dict]) -> dict:
+    """Summarize reviewer outcomes without treating agreement as educational effectiveness."""
+
     total = len(filas)
     evaluadas = [f for f in filas if not f.get("error")]
     n = len(evaluadas)
@@ -70,6 +74,8 @@ def comparar_jueces(
     modelos: tuple[str, ...],
     concurrencia: int = 3,
 ) -> dict:
+    """Compare configured reviewers on the same declared experiment cases."""
+
     datos = json.loads(dataset.read_text(encoding="utf-8"))
     casos = datos["casos"]
     if not casos or len({c["id"] for c in casos}) != len(casos):

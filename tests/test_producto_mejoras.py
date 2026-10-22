@@ -1,4 +1,4 @@
-"""Producto-4 completo y falsificaciones: datos sintéticos, cuatro votos y denominador real."""
+"""Test complete product-4 proposals, forged archives, and the full original-row denominator."""
 
 from collections import defaultdict
 from pathlib import Path
@@ -306,11 +306,14 @@ def test_veto_posterior_conserva_auditoria_historica_y_bloquea_generacion(public
     )
     fila_id = p.alineaciones.casos[0].solicitud.fila_id
     original = garantias.bloqueos_cientificos
-    monkeypatch.setattr(
-        garantias,
-        "bloqueos_cientificos",
-        lambda c, f, a: {fila_id: "Veto posterior documentado de prueba"} if a.suffix == ".yaml" else original(c, f, a),
-    )
+    archivo_local = base / "config/alertas_derivadas_v4.yaml"
+
+    def bloqueos_locales(c, f, a):
+        if a.suffix == ".yaml":
+            return {fila_id: "Veto posterior documentado de prueba"} if a == archivo_local else {}
+        return original(c, f, a)
+
+    monkeypatch.setattr(garantias, "bloqueos_cientificos", bloqueos_locales)
     app = FastAPI()
     app.include_router(crear_router(base, destino=destino))
     cliente = TestClient(app)
@@ -325,6 +328,7 @@ def test_veto_posterior_conserva_auditoria_historica_y_bloquea_generacion(public
         raiz_v4=base / "insumos/v4",
         raiz_referencias=base / "data/referencias_2026",
         archivo_alertas=base / "docs/investigacion/alertas_v4.json",
+        archivo_alertas_derivadas=archivo_local,
     )
     with pytest.raises(ValueError, match="alerta científica"):
         runtime.buscador.buscar_fila(fila_id, version="V4", grado=10, asignatura="fisica")

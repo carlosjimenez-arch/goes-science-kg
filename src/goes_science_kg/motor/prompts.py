@@ -1,4 +1,4 @@
-"""Prompts versionados con criterios verificables y fuentes aisladas como datos."""
+"""Version review prompts and isolate untrusted source material as data."""
 
 import json
 
@@ -28,6 +28,8 @@ la explicación. Ajusta vocabulario, abstracción y carga al grado. Declara las 
 
 
 def juez(rol: str) -> str:
+    """Return the versioned prompt for a registered reviewer role."""
+
     criterios = ", ".join(sorted(CRITERIOS[rol]))
     return (
         BASE
@@ -43,5 +45,5 @@ No compenses un error científico con una buena redacción.
 
 
 def serializar(datos: dict) -> str:
-    """Un único contenedor de datos; evita interpolar fuentes como instrucciones del sistema."""
+    """Serialize untrusted source content into a single data container."""
     return json.dumps({"version_prompt": VERSION_PROMPT, "datos_no_confiables": datos}, ensure_ascii=False)

@@ -1,4 +1,4 @@
-"""Comandos del grupo `propuesta`."""
+"""Expose the propuesta command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -11,11 +11,11 @@ app = typer.Typer(help="Propuesta curricular por asignatura y ciclo (fase 5)", n
 
 @app.command("candidatos")
 def propuesta_candidatos(asignatura: str, desde: int, hasta: int, marco: str | None = None) -> None:
-    """Candidatos de cambio con evidencia → asignaturas/<x>/propuesta/candidatos_G..-G...json.
+    """Prepare evidence-backed curriculum change candidates for a subject and cycle."""
 
-    Sin --marco se usa el marco del ciclo: TIMSS 4.° (T4_27) hasta 4.°, TIMSS 8.° (T8_27) hasta 9.° y, en
-    Bachillerato, TIMSS Advanced (TA15) para Física y ACARA Senior Secondary (AUSS) para Biología y Química.
-    """
+    # Implementation notes:
+    # Sin --marco se usa el marco del ciclo: TIMSS 4.° (T4_27) hasta 4.°, TIMSS 8.° (T8_27) hasta 9.° y, en
+    # Bachillerato, TIMSS Advanced (TA15) para Física y ACARA Senior Secondary (AUSS) para Biología y Química.
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.propuesta import escribir_candidatos
 
@@ -27,7 +27,7 @@ def propuesta_candidatos(asignatura: str, desde: int, hasta: int, marco: str | N
 
 @app.command("simular")
 def propuesta_simular(asignatura: str, desde: int, hasta: int) -> None:
-    """Aplica la propuesta al grafo en memoria y mide el impacto → simulacion_G..-G...json."""
+    """Simulate a proposal in memory and record its graph impact."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.propuesta import escribir_simulacion
 
@@ -47,7 +47,7 @@ def propuesta_simular(asignatura: str, desde: int, hasta: int) -> None:
 
 @app.command("preparar-adopcion")
 def propuesta_preparar_adopcion() -> None:
-    """Lote para conciliar las acciones «nuevo» con los temas que agregó la V2 → data/interim/propuestas/."""
+    """Prepare reconciliation of proposed additions with topics adopted in V2."""
     from goes_science_kg.propuesta import preparar_adopcion_v2
 
     typer.echo(f"→ {preparar_adopcion_v2()}")
@@ -55,7 +55,7 @@ def propuesta_preparar_adopcion() -> None:
 
 @app.command("unir-adopcion")
 def propuesta_unir_adopcion() -> None:
-    """Valida la salida del especialista → data/interim/propuestas/adopcion_v2.json."""
+    """Validate the specialist's V2 adoption reconciliation output."""
     from goes_science_kg.propuesta import unir_adopcion_v2
 
     typer.echo(json.dumps(unir_adopcion_v2(), ensure_ascii=False))
@@ -63,7 +63,7 @@ def propuesta_unir_adopcion() -> None:
 
 @app.command("resumen")
 def propuesta_resumen() -> None:
-    """Tabla de todas las propuestas con su simulación → asignaturas/PROPUESTAS.md."""
+    """Write the proposal summary table with simulation results."""
     from goes_science_kg.propuesta import escribir_resumen
 
     typer.echo(f"→ {escribir_resumen()}")
@@ -71,7 +71,7 @@ def propuesta_resumen() -> None:
 
 @app.command("excel")
 def propuesta_excel(asignatura: str, desde: int, hasta: int) -> None:
-    """Libro Excel de la propuesta (después de que el especialista escribe propuesta_G..-G...json)."""
+    """Export the specialist's curriculum proposal to an Excel workbook."""
     from goes_science_kg.propuesta import escribir_excel
 
     typer.echo(f"→ {escribir_excel(asignatura, desde, hasta)}")

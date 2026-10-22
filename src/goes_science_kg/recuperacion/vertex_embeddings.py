@@ -1,8 +1,8 @@
-"""Embeddings Vertex por ADC con caché incremental y presupuesto persistente.
+"""Cache Vertex embeddings incrementally under a persistent budget."""
 
-No lee .env ni registra texto, credenciales o tokens de acceso. La reserva usa al menos
-el límite de 2048 tokens aceptados por el modelo; el uso real se registra aparte.
-"""
+# Historical implementation notes:
+# No lee .env ni registra texto, credenciales o tokens de acceso. La reserva usa al menos
+# el límite de 2048 tokens aceptados por el modelo; el uso real se registra aparte.
 
 from __future__ import annotations
 
@@ -13,10 +13,12 @@ import os
 import tempfile
 import threading
 import time
+from collections.abc import Iterator
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, TextIO
 
 import numpy as np
 
@@ -28,11 +30,11 @@ URL_PRECIO = "https://cloud.google.com/vertex-ai/generative-ai/pricing"
 
 
 class PresupuestoEmbeddingsAgotado(RuntimeError):
-    """La siguiente petición excedería el máximo de llamadas o USD reservados."""
+    """Stop before an embedding request exceeds persistent call or reservation limits."""
 
 
 class VertexEmbeddings:
-    """Un texto por llamada con task type real; no tiene fallback silencioso de modelo."""
+    """Embed one text per request with an explicit task type and no silent model fallback."""
 
     def __init__(
         self,
@@ -77,12 +79,24 @@ class VertexEmbeddings:
         self._completadas = 0
         self._errores = 0
         self.ledger.parent.mkdir(parents=True, exist_ok=True)
-        self._restaurar_ledger()
+        with self._ledger_bloqueado() as salida:
+            self._restaurar_ledger(salida)
 
-    def _restaurar_ledger(self) -> None:
-        if not self.ledger.exists():
-            return
-        for linea in self.ledger.read_text(encoding="utf-8").splitlines():
+    @contextmanager
+    def _ledger_bloqueado(self) -> Iterator[TextIO]:
+        """Serialize durable ledger access across provider instances and processes."""
+        import fcntl
+
+        descriptor = os.open(self.ledger, os.O_CREAT | os.O_RDWR | os.O_APPEND | os.O_NOFOLLOW, 0o600)
+        with os.fdopen(descriptor, "a+", encoding="utf-8") as salida:
+            fcntl.flock(salida, fcntl.LOCK_EX)
+            yield salida
+
+    def _restaurar_ledger(self, salida: TextIO) -> None:
+        self._requests = self._tokens_reservados = self._tokens_reportados = 0
+        self._completadas = self._cache_hits = self._errores = 0
+        salida.seek(0)
+        for linea in salida:
             evento = json.loads(linea)
             if evento.get("proyecto") != self.proyecto or evento.get("modelo") != self.modelo:
                 raise ValueError("El ledger pertenece a otro proyecto o modelo")
@@ -98,7 +112,7 @@ class VertexEmbeddings:
             elif tipo == "error":
                 self._errores += 1
 
-    def _evento(self, tipo: str, **campos) -> None:
+    def _escribir_evento(self, salida: TextIO, tipo: str, **campos) -> None:
         evento = {
             "fecha": datetime.now(UTC).isoformat(),
             "evento": tipo,
@@ -106,8 +120,15 @@ class VertexEmbeddings:
             "modelo": self.modelo,
             **campos,
         }
-        with self.ledger.open("a", encoding="utf-8") as salida:
-            salida.write(json.dumps(evento, ensure_ascii=False, sort_keys=True) + "\n")
+        salida.write(json.dumps(evento, ensure_ascii=False, sort_keys=True) + "\n")
+        salida.flush()
+        os.fsync(salida.fileno())
+
+    def _evento(self, tipo: str, **campos) -> None:
+        with self._ledger_bloqueado() as salida:
+            self._restaurar_ledger(salida)
+            self._escribir_evento(salida, tipo, **campos)
+            self._restaurar_ledger(salida)
 
     def _identidad(self, texto: str, tarea: str) -> dict:
         return {
@@ -121,14 +142,15 @@ class VertexEmbeddings:
         }
 
     def _reservar(self, clave: str, tokens: int) -> None:
-        with self._lock:
+        with self._lock, self._ledger_bloqueado() as salida:
             if self._abortar.is_set():
                 raise RuntimeError("La corrida de embeddings se detuvo por un fallo anterior")
+            self._restaurar_ledger(salida)
             coste = (self._tokens_reservados + tokens) * PRECIO_USD_MILLON / 1_000_000
             if self._requests >= self.max_requests or coste > self.max_usd:
                 self._abortar.set()
                 raise PresupuestoEmbeddingsAgotado("Se agotó el límite persistente de peticiones o USD")
-            self._evento("reserva", clave=clave, tokens_reservados=tokens)
+            self._escribir_evento(salida, "reserva", clave=clave, tokens_reservados=tokens)
             self._requests += 1
             self._tokens_reservados += tokens
 
@@ -177,7 +199,7 @@ class VertexEmbeddings:
                 temporal.unlink(missing_ok=True)
 
     def vectorizar_texto(self, texto: str, *, tarea: str) -> np.ndarray:
-        """Recupera de caché o realiza exactamente una petición de texto; nunca trunca."""
+        """Reuse a cached vector or issue one complete, untruncated text request."""
         if tarea not in TAREAS or not texto.strip() or len(texto) > self.max_caracteres:
             raise ValueError("Texto vacío/demasiado largo o task_type no permitido")
         identidad = self._identidad(texto, tarea)
@@ -186,7 +208,6 @@ class VertexEmbeddings:
         if archivo.exists():
             vector = self._leer_cache(archivo, identidad)
             with self._lock:
-                self._cache_hits += 1
                 self._evento("cache", clave=clave, tarea=tarea)
             return vector
         tokens_reservados = max(LIMITE_TOKENS_MODELO, len(texto.encode("utf-8")) + 256)
@@ -215,8 +236,6 @@ class VertexEmbeddings:
                 raise ValueError("El conteo de tokens no confirma la reserva conservadora")
             vector = self._validar_vector(embedding.values)
             with self._lock:
-                self._tokens_reportados += tokens
-                self._completadas += 1
                 self._evento(
                     "completada",
                     clave=clave,
@@ -229,13 +248,12 @@ class VertexEmbeddings:
         except Exception as error:
             self._abortar.set()
             with self._lock:
-                self._errores += 1
                 self._evento("error", clave=clave, tarea=tarea, tipo_error=type(error).__name__)
             LOGGER.error("Falló embedding %s: %s", clave[:12], type(error).__name__)
             raise
 
     def vectorizar(self, textos: list[str], *, tarea: str) -> np.ndarray:
-        """Resuelve duplicados antes de paralelizar y devuelve float32 en el orden original."""
+        """Deduplicate requests before concurrency and return float32 vectors in original order."""
         if not textos:
             return np.empty((0, self.dimensiones), dtype=np.float32)
         unicos = list(dict.fromkeys(textos))
@@ -257,8 +275,9 @@ class VertexEmbeddings:
         return np.asarray([vectores[texto] for texto in textos], dtype=np.float32)
 
     def resumen(self) -> dict:
-        """Contabilidad persistente: reserva superior y coste estimado por tokens reportados."""
-        with self._lock:
+        """Report persistent reservations and token-based estimated costs separately."""
+        with self._lock, self._ledger_bloqueado() as salida:
+            self._restaurar_ledger(salida)
             return {
                 "proyecto": self.proyecto,
                 "modelo": self.modelo,

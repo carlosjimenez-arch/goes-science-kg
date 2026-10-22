@@ -1,10 +1,10 @@
-"""Mapa de progresión por asignatura (asignaturas/<x>/progresion.html).
+"""Render subject-specific concept progression maps."""
 
-Filas: conceptos de la asignatura, ordenados por su nivel en el DAG de prerrequisitos (los de base arriba) y,
-dentro del nivel, por el primer grado en El Salvador. Columnas: grados 2.°–11.°. Cada fila marca el primer grado
-en El Salvador (■) y en cada país de referencia (letras), y colorea la distancia a la mediana de los países.
-Es una página estática y autocontenida (sin librerías externas), con modo claro y oscuro.
-"""
+# Historical implementation notes:
+# Filas: conceptos de la asignatura, ordenados por su nivel en el DAG de prerrequisitos (los de base arriba) y,
+# dentro del nivel, por el primer grado en El Salvador. Columnas: grados 2.°–11.°. Cada fila marca el primer grado
+# en El Salvador (■) y en cada país de referencia (letras), y colorea la distancia a la mediana de los países.
+# Es una página estática y autocontenida (sin librerías externas), con modo claro y oscuro.
 
 from __future__ import annotations
 
@@ -24,8 +24,11 @@ def _niveles(asig: str, nodos: list[Nodo], aristas: list[Arista]) -> dict[str, i
     ids = {n.id for n in nodos if n.tipo == TipoNodo.CONCEPTO and n.asignatura == asig}
     g = nx.DiGraph()
     g.add_nodes_from(ids)
-    g.add_edges_from((a.origen, a.destino) for a in aristas
-                     if a.tipo == TipoArista.PRERREQUISITO_DE and a.origen in ids and a.destino in ids)
+    g.add_edges_from(
+        (a.origen, a.destino)
+        for a in aristas
+        if a.tipo == TipoArista.PRERREQUISITO_DE and a.origen in ids and a.destino in ids
+    )
     nivel = {}
     for n in nx.topological_sort(g):
         nivel[n] = max((nivel[p] + 1 for p in g.predecessors(n)), default=0)
@@ -33,20 +36,31 @@ def _niveles(asig: str, nodos: list[Nodo], aristas: list[Arista]) -> dict[str, i
 
 
 def escribir(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> str:
-    """Escribe asignaturas/<x>/progresion.html de `asig`; `ev` es la salida de `evidencia_orden`. Devuelve la ruta
-    relativa."""
+    """Write one subject's progression map from explicit ordering evidence."""
+
+    # Implementation notes:
+    # relativa.
     por_id = {n.id: n for n in nodos}
     nivel = _niveles(asig, nodos, aristas)
     alto = paises_alto_desempeno()
     filas = []
     for cid in sorted(nivel, key=lambda c: (nivel[c], ev[c]["sv"] or 99, por_id[c].etiqueta)):
         e = ev[cid]
-        filas.append({"c": por_id[cid].etiqueta, "d": por_id[cid].props.get("definicion") or "", "n": nivel[cid],
-                      "sv": e["sv"], "p": dict(e["paises"]), "m": e["paises_mediana"]})
+        filas.append(
+            {
+                "c": por_id[cid].etiqueta,
+                "d": por_id[cid].props.get("definicion") or "",
+                "n": nivel[cid],
+                "sv": e["sv"],
+                "p": dict(e["paises"]),
+                "m": e["paises_mediana"],
+            }
+        )
     nombre = cargar("asignaturas")["asignaturas"][asig]["nombre"]
     datos = json.dumps({"filas": filas, "grados": GRADOS, "alto": sorted(alto)}, ensure_ascii=False)
-    pagina = PLANTILLA.replace("__TITULO__", html.escape(f"Progresión de conceptos · {nombre}")) \
-                      .replace("__DATOS__", datos.replace("</", "<\\/"))
+    pagina = PLANTILLA.replace("__TITULO__", html.escape(f"Progresión de conceptos · {nombre}")).replace(
+        "__DATOS__", datos.replace("</", "<\\/")
+    )
     p = ruta(cargar("asignaturas")["asignaturas"][asig]["carpeta"]) / "progresion.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(pagina, encoding="utf-8")
@@ -54,7 +68,7 @@ def escribir(asig: str, nodos: list[Nodo], aristas: list[Arista], ev: dict) -> s
 
 
 def escribir_todas(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
-    """Escribe el mapa de progresión de cada asignatura. Devuelve las rutas relativas."""
+    """Write every subject's progression map and return relative output paths."""
     ev = evidencia_orden(nodos, aristas)
     return [escribir(a, nodos, aristas, ev) for a in cargar("asignaturas")["asignaturas"]]
 

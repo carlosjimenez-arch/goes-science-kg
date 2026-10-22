@@ -1,8 +1,8 @@
-"""Clasificación disciplinar de la V4 con dos lecturas independientes y abstención.
+"""Classify V4 subject areas with independent readings and explicit abstention."""
 
-Clasificar una disciplina no alinea una competencia ni verifica los hechos que
-afirma la malla. Las dos lecturas nunca reciben la respuesta de la otra.
-"""
+# Historical implementation notes:
+# Clasificar una disciplina no alinea una competencia ni verifica los hechos que
+# afirma la malla. Las dos lecturas nunca reciben la respuesta de la otra.
 
 from __future__ import annotations
 
@@ -51,6 +51,8 @@ prerrequisitos, eficacia educativa ni corrección científica del contenido de l
 
 
 class DecisionDisciplina(ContratoCurricular):
+    """Represent one subject-classification reading and its explanation."""
+
     fila_id: str = Field(min_length=1)
     estado: Literal["en_alcance", "fuera_alcance", "insuficiente"]
     disciplinas: tuple[AsignaturaCiencia, ...] = ()
@@ -68,10 +70,14 @@ class DecisionDisciplina(ContratoCurricular):
 
 
 class LoteDisciplinas(ContratoCurricular):
+    """Collect subject-classification decisions for a complete requested batch."""
+
     decisiones: list[DecisionDisciplina] = Field(min_length=1, max_length=TAMANO_LOTE)
 
 
 class ClasificacionFila(ContratoCurricular):
+    """Preserve a row's consensus, disagreements, readings, and validation errors."""
+
     fila_id: str
     estado: Literal["declarado_malla", "coincidencia_automatica", "fuera_alcance", "abstencion"]
     disciplinas: tuple[AsignaturaCiencia, ...] = ()
@@ -82,7 +88,7 @@ class ClasificacionFila(ContratoCurricular):
 
     @model_validator(mode="after")
     def _coherencia_del_consenso(self) -> ClasificacionFila:
-        """Las vistas y lectores aplican las mismas invariantes que la materialización."""
+        """Apply the same classification invariants in views, readers, and materialization."""
         if len(self.disciplinas) != len(set(self.disciplinas)) or bool(self.disciplinas) != (
             self.estado in {"declarado_malla", "coincidencia_automatica"}
         ):
@@ -92,13 +98,19 @@ class ClasificacionFila(ContratoCurricular):
         if self.estado == "coincidencia_automatica":
             if set(self.lecturas) != set(ROLES) or self.errores:
                 raise ValueError("El consenso requiere dos lecturas completas sin errores")
-            if any(lectura.fila_id != self.fila_id or lectura.estado != "en_alcance"
-                   or set(lectura.disciplinas) != set(self.disciplinas) for lectura in self.lecturas.values()):
+            if any(
+                lectura.fila_id != self.fila_id
+                or lectura.estado != "en_alcance"
+                or set(lectura.disciplinas) != set(self.disciplinas)
+                for lectura in self.lecturas.values()
+            ):
                 raise ValueError("Las lecturas no respaldan el consenso declarado")
         return self
 
 
 class CatalogoDisciplinas(ContratoCurricular):
+    """Bind a discipline catalog to curriculum, prompt, harness, and model fingerprints."""
+
     version_pipeline: str = VERSION_CATALOGACION
     version_curriculo: str
     huella_curriculo: str
@@ -134,6 +146,8 @@ def _datos(fila: FilaCurricular, id_lote: str) -> dict:
 
 
 def plan_catalogacion(curriculo: Curriculo) -> dict:
+    """Plan subject-classification work without invoking models."""
+
     _validar_entrada(curriculo)
     pendientes = [f for f in curriculo.filas if f.asignatura_malla not in DECLARADAS]
     lotes = [pendientes[i : i + TAMANO_LOTE] for i in range(0, len(pendientes), TAMANO_LOTE)]
@@ -158,7 +172,7 @@ def plan_catalogacion(curriculo: Curriculo) -> dict:
 def clasificar_disciplinas(
     curriculo: Curriculo, modelo: ModeloEstructurado, *, max_concurrencia: int = 3, solo_piloto: bool = False
 ) -> CatalogoDisciplinas:
-    """Usa la asignatura explícita de Bachillerato; no hereda clasificaciones V3."""
+    """Use declared senior-secondary subjects without inheriting V3 classifications."""
     if not 1 <= max_concurrencia <= 4:
         raise ValueError("La concurrencia de catalogación debe estar entre uno y cuatro")
     _validar_entrada(curriculo)

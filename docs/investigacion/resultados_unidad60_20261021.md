@@ -1,5 +1,8 @@
 # Física 10.º: escenario de sesenta minutos
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. Se conservaron los ocho objetivos de la primera unidad V4 y se
 declararon sesiones de sesenta minutos, regla, transportador, calculadora científica, pizarra,
 marcador y trabajo sin conexión. Es un escenario propuesto: no establece carga oficial ni confirma

@@ -1,4 +1,4 @@
-"""Medición local de cobertura del contexto; no juzga relaciones ni consulta modelos."""
+"""Measure context availability locally without reviewing relationships or invoking models."""
 
 from __future__ import annotations
 
@@ -26,11 +26,11 @@ def _percentiles(valores: Sequence[float]) -> dict[str, float | None]:
 def medir_contexto_paises(
     preparador: PreparadorConocimiento, presupuestos: Sequence[int] = (18000, 24000, 40000)
 ) -> dict:
-    """Repite el mismo corpus completo de contrastes con edición fijada en cada presupuesto.
+    """Measure the same complete, pinned-edition contrast corpus under each context budget."""
 
-    Sólo accede al preparador y sus fuentes verificadas; no recibe un proveedor ni un gold.
-    Reutiliza la caché local y restaura el presupuesto original incluso ante un error.
-    """
+    # Implementation notes:
+    # Sólo accede al preparador y sus fuentes verificadas; no recibe un proveedor ni un gold.
+    # Reutiliza la caché local y restaura el presupuesto original incluso ante un error.
     if (
         not presupuestos
         or len(set(presupuestos)) != len(presupuestos)

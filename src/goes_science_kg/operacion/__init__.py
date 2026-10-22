@@ -1,1 +1,1 @@
-"""Recuperaciones operativas explícitas; separadas del protocolo de los jueces."""
+"""Provide explicit operational recovery outside the reviewer decision protocol."""

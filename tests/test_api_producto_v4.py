@@ -1,4 +1,4 @@
-"""API V4 contra un snapshot real temporal: fuentes, aislamiento y ausencia de generación."""
+"""Test the V4 API against a temporary real publication and verified original sources."""
 
 from __future__ import annotations
 

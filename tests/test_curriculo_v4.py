@@ -1,4 +1,4 @@
-"""Regresiones de ingesta exhaustiva: identidad, procedencia y estructura real V4."""
+"""Test exhaustive V4 ingestion, source identity, provenance, and original workbook structure."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ def _procedencia(base: Path, *, version: str = "V4") -> None:
 
 @pytest.fixture
 def configuracion(tmp_path: Path) -> Path:
-    """Libro pequeño con encabezados dobles, combinaciones y columnas no catalogadas."""
+    """Build a small workbook with compound headers, merged cells, and unmapped columns."""
     carpeta = tmp_path / "insumos"
     carpeta.mkdir()
     libro = Workbook()

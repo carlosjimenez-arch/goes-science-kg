@@ -1,4 +1,4 @@
-"""Selección progresiva de evidencia, sin truncar citas ni mezclar versiones de currículo."""
+"""Select bounded evidence without truncating quotations or mixing curriculum versions."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from goes_science_kg.recuperacion import Resultado
 
 
 def grupos_obligatorios(resultados: Sequence[Resultado], evidencias: Sequence[Evidencia]) -> dict | None:
-    """Reserva cada página primaria vinculada a la fila; nunca acepta perderla por ranking."""
+    """Reserve every primary page linked to the requested row before ranking other context."""
     requeridas = {r.documento.id for r in resultados if r.documento.metadata.get("obligatoria") is True}
     if not requeridas:
         return None
@@ -27,6 +27,8 @@ def construir_contexto(
     max_caracteres: int = 18000,
     fuentes: FuentesVerificadas | None = None,
 ) -> list[Evidencia]:
+    """Build bounded source-verified context for one explicit curriculum version."""
+
     if max_caracteres < 100:
         raise ValueError("El presupuesto de contexto debe ser al menos de 100 caracteres")
     if any(resultado.documento.fuente.get("celdas") for resultado in resultados):

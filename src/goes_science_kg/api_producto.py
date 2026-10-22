@@ -1,112 +1,39 @@
-"""API V4 sobre una publicación fijada, sin generación ni adopción implícita de otra versión."""
+"""Expose the pinned V4 curriculum and its source evidence through HTTP."""
 
 from __future__ import annotations
 
-import json
-import logging
-import re
 from pathlib import Path
-from threading import Lock
 from typing import Annotated
 
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import Field
 
 from goes_science_kg.motor.contratos import Asignatura, Contrato
-from goes_science_kg.producto.almacen import archivos_producto
-from goes_science_kg.producto.runtime import RuntimeProducto, cargar_runtime
+from goes_science_kg.producto.lectura import LecturaProducto
 from goes_science_kg.producto.unidades import ContextoAula, preparar_unidad
-
-LOGGER = logging.getLogger(__name__)
 
 
 class PreparacionUnidadAPI(Contrato):
+    """Validate a unit preparation request and its declared classroom context."""
+
     grado: int = Field(ge=2, le=11)
     asignatura_malla: str = Field(min_length=1, max_length=100)
     unidad: str = Field(min_length=1, max_length=300)
     contexto: ContextoAula = Field(default_factory=ContextoAula)
 
 
-def _observar(destino: Path) -> dict:
-    """Firma de archivos; las huellas de bytes se validan al cargar, fuera del camino frecuente."""
-    puntero = destino / "actual.json"
-    if puntero.stat().st_size > 4096:
-        raise ValueError("Puntero de publicación incompatible")
-    seleccion = json.loads(puntero.read_bytes())
-    identidad = seleccion.get("snapshot_id", "")
-    if not re.fullmatch(r"[a-f0-9]{64}", identidad):
-        raise ValueError("Identidad de snapshot incompatible")
-    generacion = destino / "snapshots" / identidad
-    archivos = [
-        puntero,
-        generacion / "manifest.json",
-        *(generacion / n for n in sorted(archivos_producto(seleccion.get("version")))),
-    ]
-    firmas = {}
-    for archivo in archivos:
-        actual = archivo
-        while actual != destino.parent:
-            if actual.is_symlink():
-                raise ValueError("La publicación no admite enlaces")
-            actual = actual.parent
-        s = archivo.stat()
-        firmas[str(archivo)] = (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns, s.st_ctime_ns)
-    return firmas
-
-
-class _LecturaProducto:
-    def __init__(self, base: Path, destino: Path):
-        self.base, self.destino = base, destino
-        self._runtime: RuntimeProducto | None = None
-        self._firmas = None
-        self._error = False
-        self._lock = Lock()
-
-    def leer(self) -> RuntimeProducto:
-        with self._lock:
-            try:
-                if self._error:
-                    raise ValueError("La instancia quedó invalidada")
-                firmas = _observar(self.destino)
-                if self._runtime is None:
-                    runtime = cargar_runtime(
-                        self.destino,
-                        raiz_v4=self.base / "insumos/v4",
-                        raiz_historica=self.base / "data/fuentes",
-                        raiz_referencias=self.base / "data/referencias_2026",
-                        raiz_paises=self.base / "data/referencias_paises_2026",
-                        raiz_cientificas=self.base / "data/referencias_cientificas_2026",
-                        archivo_alertas=self.base / "docs/investigacion/alertas_v4.json",
-                        raiz_progresiones=self.base / "data/referencias_progresiones_2026",
-                    )
-                    if firmas != _observar(self.destino):
-                        raise ValueError("La publicación cambió durante la carga")
-                    self._runtime, self._firmas = runtime, firmas
-                elif firmas != self._firmas:
-                    raise ValueError("La publicación cambió después de cargarse")
-                return self._runtime
-            except (ValueError, KeyError, OSError) as error:
-                self._error = True
-                LOGGER.error("ROJO API V4 sin publicación verificable: %s", type(error).__name__)
-                raise HTTPException(
-                    503,
-                    {
-                        "codigo": "producto_v4_no_disponible",
-                        "motivo": "Falta una publicación V4 íntegra o cambió; verifícala y reinicia el servicio",
-                    },
-                ) from error
-
-
-def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
-    """El anfitrión fija las rutas; las peticiones no reciben archivos ni destinos de publicación."""
+def crear_router(base: Path, *, destino: Path | None = None, lector: LecturaProducto | None = None) -> APIRouter:
+    """Bind publication roots in the host application rather than accepting request paths."""
     base = base.resolve()
-    lectura = _LecturaProducto(base, destino or base / "data/producto/V4")
+    lectura = lector or LecturaProducto(base, destino)
     router = APIRouter(prefix="/api/v4", tags=["Producto Ciencias V4"])
 
     def identidad(runtime):
+        """Return the curriculum and snapshot identities shared by this response."""
         return {"version_curriculo": "V4", "snapshot_id": runtime.producto.manifest.snapshot_id}
 
     def fila(runtime, fila_id):
+        """Find an exact row within the pinned publication or report a missing identity."""
         encontrada = next((f for f in runtime.producto.curriculo.filas if f.id == fila_id), None)
         if encontrada is None:
             raise HTTPException(404, "La fila no pertenece a esta publicación V4")
@@ -114,6 +41,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.get("/salud")
     def salud():
+        """Report the verified V4 publication and its complete row count."""
         r = lectura.leer()
         return identidad(r) | {
             "estado": "ok",
@@ -124,6 +52,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.get("/diagnostico")
     def diagnostico():
+        """Return the diagnostic recorded in the selected immutable generation."""
         r = lectura.leer()
         return identidad(r) | {"diagnostico": r.producto.diagnostico}
 
@@ -134,6 +63,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
         offset: int = Query(0, ge=0, le=100000),
         limite: int = Query(50, ge=1, le=200),
     ):
+        """List original curriculum rows with exact subject and grade filters."""
         r = lectura.leer()
         decisiones = {d.fila_id: d for d in r.producto.catalogo.filas}
         seleccion = [
@@ -161,6 +91,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.get("/filas/{fila_id}")
     def detalle_fila(fila_id: str):
+        """Rehydrate one original row and expose its evidence and recorded knowledge reviews."""
         from goes_science_kg.curriculo.contexto_fuentes import documento_de_fila
 
         r = lectura.leer()
@@ -188,6 +119,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
         grado: Annotated[int, Query(ge=2, le=11)],
         disciplina: Annotated[Asignatura, Query()],
     ):
+        """Retrieve verified evidence for an exact row under matching grade and subject filters."""
         from goes_science_kg.motor.contexto import construir_contexto
 
         r = lectura.leer()
@@ -203,6 +135,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.get("/juicios/{candidato_id}")
     def juicio(candidato_id: str):
+        """Audit one published knowledge review against its original physical sources."""
         from goes_science_kg.producto.consulta_conocimiento import fuentes_del_archivo, rehidratar_evidencias
 
         r = lectura.leer()
@@ -231,6 +164,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.get("/alineaciones")
     def alineaciones(fila_id: str | None = Query(None, max_length=200)):
+        """List the complete documentary alignment cohort, including negative outcomes."""
         from goes_science_kg.motor.contratos import huella
 
         r = lectura.leer()
@@ -256,6 +190,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.get("/alineaciones/{caso_id}")
     def auditar_alineacion(caso_id: str):
+        """Rehydrate one documentary alignment case without repeating its votes."""
         from goes_science_kg.motor.contratos import huella
         from goes_science_kg.recuperacion import Documento
 
@@ -280,6 +215,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
 
     @router.post("/unidades/preparar")
     def preparar(solicitud: PreparacionUnidadAPI):
+        """Prepare a complete teaching unit locally without invoking models."""
         r = lectura.leer()
         try:
             paquete = preparar_unidad(

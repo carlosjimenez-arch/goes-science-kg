@@ -1,5 +1,8 @@
 # Evaluación reservada de jueces
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 2026-10-21. Veinticuatro casos sintéticos plata creados sin consultar los prompts ni los resultados individuales del experimento inicial. Ocho aprobar, ocho rechazar y ocho abstenerse. Una evaluación por combinación, sin reajuste posterior de prompts.
 
 | Modelo / prompt | Coincidencia esperada | Error ejecución | Abstenciones | Media ms |

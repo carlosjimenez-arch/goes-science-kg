@@ -1,4 +1,4 @@
-"""Adaptador de juicios semánticos V4: expediente local antes de cuatro lectores remotos."""
+"""Prepare local V4 knowledge dossiers before invoking four remote reviewers."""
 
 from __future__ import annotations
 
@@ -21,6 +21,8 @@ app = typer.Typer(help="Juicios semánticos de conocimiento V4; sin modelos por 
 
 
 class ConfigJuicios(Contrato):
+    """Configure trusted knowledge-review inputs, storage, models, and execution limits."""
+
     candidatos: Path
     grafo_historico: Path
     raiz_historica: Path
@@ -124,15 +126,19 @@ def _vertex_config(cfg: ConfigJuicios):
 
 
 class _IdentidadesConfiguradas:
-    """Puerto incapaz de generar: permite revalidar resultados sin SDK, ADC ni ledger."""
+    """Expose reviewer identities without any generation capability."""
 
     def __init__(self, configuracion):
         self.configuracion = configuracion
 
     def nombre_modelo(self, rol):
+        """Expose the configured reviewer identity without initializing a provider."""
+
         return self.configuracion.modelos[rol]
 
     def generar(self, **kwargs):
+        """Reject generation through the identity-only review adapter."""
+
         raise RuntimeError("La consolidación es una operación local sin generación")
 
 
@@ -141,7 +147,7 @@ def medir_contexto(
     presupuesto: Annotated[list[int] | None, typer.Option(help="Repetible; por defecto 18000, 24000 y 40000")] = None,
     salida: Annotated[Path, typer.Option()] = Path("docs/investigacion/presupuesto_contexto_v4.json"),
 ) -> None:
-    """Mide todos los contrastes con edición fijada; cero modelos, sin gold ni juicios."""
+    """Measure pinned-edition context availability without reference labels or model calls."""
     from goes_science_kg.producto.medicion_contexto import medir_contexto_paises
 
     try:
@@ -177,7 +183,7 @@ def consolidar(
     soportes: Annotated[Path | None, typer.Option()] = None,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/juicios/relaciones.json"),
 ) -> None:
-    """Revalida todos los juicios indicados y bloquea admisión si sus dependencias forman ciclos."""
+    """Revalidate all selected reviews and reject cyclic relationship admission."""
     from goes_science_kg.motor.conocimiento import MotorConocimiento
     from goes_science_kg.producto.conocimiento_publicado import crear_archivo_conocimiento
 
@@ -250,7 +256,7 @@ def componer_cli(
     archivos: Annotated[list[Path], typer.Argument(help="Archivos originales completos; candidatos sin repetir")],
     salida: Annotated[Path, typer.Option()] = Path("data/producto/juicios/conocimiento_compuesto.json"),
 ) -> None:
-    """Une protocolos conservando sus originales; no vuelve a votar ni selecciona rondas favorables."""
+    """Compose original protocols without repeating votes or selecting favorable rounds."""
     from goes_science_kg.curriculo import cargar_curriculo
     from goes_science_kg.producto.composicion import componer_archivos
     from goes_science_kg.producto.conocimiento_publicado import ArchivoConocimiento
@@ -292,7 +298,7 @@ def evaluar(
     ejecucion: Annotated[str | None, typer.Option()] = None,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/juicios/resultado.json"),
 ) -> None:
-    """Prepara un expediente; --ejecutar habilita cuatro lecturas ciegas y presupuesto compartido."""
+    """Prepare a dossier unless explicit execution enables four budgeted blind readings."""
     from goes_science_kg.motor.conocimiento import MotorConocimiento
 
     try:
@@ -402,7 +408,7 @@ def preparar_lote_cli(
     soportes: Annotated[Path | None, typer.Option()] = None,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/juicios/plan_lote.json"),
 ) -> None:
-    """Fija evidencia, modelos y un único límite de todos los casos; cero generación."""
+    """Fix evidence, reviewer models, and one shared limit before execution."""
     from goes_science_kg.producto.lote_juicios import preparar_lote
 
     try:
@@ -432,7 +438,7 @@ def ejecutar_lote_cli(
     soportes: Annotated[Path | None, typer.Option()] = None,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/juicios/resultado_lote.json"),
 ) -> None:
-    """Verifica por defecto; --ejecutar comparte el ledger entre todos los expedientes fijados."""
+    """Verify by default and share one ledger when execution is explicitly enabled."""
     from goes_science_kg.producto.lote_juicios import PlanLoteJuicios, ejecutar_lote, verificar_lote
 
     try:

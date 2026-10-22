@@ -1,4 +1,4 @@
-"""Inventario y experimentos con separación explícita entre preparar y gastar."""
+"""Inventory sources and run explicit experiments with separate preparation and spending."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ app.add_typer(referencias_app, name="referencias")
 
 @app.command("inventariar")
 def inventariar(directorio: Path, salida: Annotated[Path, typer.Option()], version: str = typer.Option("V4")) -> None:
-    """Inspecciona libros sin modificarlos ni activar una nueva malla."""
+    """Inspect workbooks without modifying them or activating a curriculum version."""
     from goes_science_kg.ingesta.inventario import inventariar as inspeccionar
 
     origen = directorio.resolve()
@@ -47,7 +47,7 @@ def recuperacion(
     salida: Annotated[Path, typer.Option()] = Path("docs/investigacion/recuperacion_local.json"),
     repeticiones: int = typer.Option(3, min=1, max=10),
 ) -> None:
-    """Compara el baseline y candidatos locales; cero llamadas cloud."""
+    """Compare local retrieval candidates without cloud calls."""
     from goes_science_kg.recuperacion.evaluacion import comparar_recuperacion, escribir_comparacion
 
     datos = comparar_recuperacion(repeticiones=repeticiones)
@@ -63,7 +63,7 @@ def jueces(
     max_usd: float = typer.Option(10.0, min=0.01, max=100),
     ejecucion: str = typer.Option(None),
 ) -> None:
-    """Prepara o ejecuta el experimento definido; no declara eficacia educativa."""
+    """Prepare or execute the configured reviewer experiment without claiming learning efficacy."""
     from goes_science_kg.motor.experimentos import VARIANTES, comparar_jueces
     from goes_science_kg.motor.registro import Registro
     from goes_science_kg.motor.vertex import ConfiguracionVertex

@@ -1,4 +1,4 @@
-"""Restricciones de aula sobre una unidad íntegra; no simula aprendizaje ni valida tiempos."""
+"""Apply classroom constraints without simulating learning or validating teaching duration."""
 
 from __future__ import annotations
 
@@ -11,6 +11,8 @@ from goes_science_kg.producto.unidades import ContextoAula, PaqueteUnidad
 
 
 class RequisitoSesion(Contrato):
+    """Declare proposed session blocks and resources for one original objective."""
+
     fila_id: str = Field(min_length=1, max_length=200)
     bloques_propuestos: int = Field(ge=1, le=12)
     recursos_necesarios: tuple[str, ...] = Field(max_length=32)
@@ -25,6 +27,8 @@ class RequisitoSesion(Contrato):
 
 
 class EscenarioUnidad(Contrato):
+    """Bind an explicit classroom scenario to a complete prepared teaching unit."""
+
     nombre: str = Field(min_length=1, max_length=120)
     paquete_id: str = Field(pattern=r"^[a-f0-9]{64}$")
     aula_declarada: ContextoAula
@@ -40,7 +44,7 @@ def _recurso(texto: str) -> str:
 
 
 def evaluar_escenario(paquete: PaqueteUnidad, escenario: EscenarioUnidad) -> dict:
-    """Comprueba cobertura, tiempo y recursos explícitos; no mueve ni elimina objetivos."""
+    """Check coverage, time, and explicit resources without moving or deleting objectives."""
     if paquete.id != huella(paquete.model_dump(mode="json", exclude={"id"})) or escenario.paquete_id != paquete.id:
         raise ValueError("El escenario necesita la identidad íntegra de su paquete")
     filas = {f.id for f in paquete.filas}

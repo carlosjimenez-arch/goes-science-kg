@@ -1,4 +1,4 @@
-"""Recuperar una revisión ausente no cambia votos; un veto exige otro borrador."""
+"""Recover missing reviews without changing received votes or reusing vetoed drafts."""
 
 from types import SimpleNamespace
 

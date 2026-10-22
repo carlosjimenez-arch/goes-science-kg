@@ -1,4 +1,4 @@
-"""Comandos del grupo `revision`."""
+"""Expose the revision command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ app = typer.Typer(help="Revisión humana con el equipo de Ciencias del MINED", n
 
 @app.command("exportar")
 def revision_exportar() -> None:
-    """CSV por asignatura: etiquetas de confianza baja y prerrequisitos que sostienen hallazgos."""
+    """Export low-confidence labels and evidence-backed prerequisites for subject review."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.revision_humana import exportar
 
@@ -24,7 +24,7 @@ def revision_exportar() -> None:
 
 @app.command("exportar-decisiones")
 def revision_exportar_decisiones() -> None:
-    """CSV de las decisiones de contenido (equivalencias, prerrequisitos, divisiones, clases) para el MINED."""
+    """Export curriculum-content decisions for institutional review."""
     from goes_science_kg.revision_decisiones import exportar_decisiones
 
     for p in exportar_decisiones():
@@ -33,7 +33,7 @@ def revision_exportar_decisiones() -> None:
 
 @app.command("importar-decisiones")
 def revision_importar_decisiones(archivo: str) -> None:
-    """Registra el veredicto del MINED (aceptar | cambiar | rechazar). Luego: make todo."""
+    """Record institutional acceptance, changes, or rejection before rebuilding derivatives."""
     from goes_science_kg.revision_decisiones import importar_decisiones
 
     typer.echo(json.dumps(importar_decisiones(archivo), ensure_ascii=False))
@@ -41,7 +41,7 @@ def revision_importar_decisiones(archivo: str) -> None:
 
 @app.command("importar")
 def revision_importar(archivo: str) -> None:
-    """Convierte un CSV revisado en revisiones (data/interim/revisiones/). Luego: gskg grafo construir."""
+    """Import a reviewed CSV as explicit decisions before rebuilding the graph."""
     from goes_science_kg.revision_humana import importar
 
     typer.echo(json.dumps(importar(archivo), ensure_ascii=False))

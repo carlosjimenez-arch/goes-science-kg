@@ -1,5 +1,8 @@
 # Arquitectura de IA, recuperación y evaluación
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha de investigación: **21 de octubre de 2026**, zona horaria del usuario: América/Bogotá.
 Estado: decisiones iniciales contrastadas con fuentes primarias y mediciones locales. La superioridad
 educativa de una arquitectura o un modelo **no está demostrada** por estas mediciones. La ingestión V4

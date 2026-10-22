@@ -1,4 +1,4 @@
-"""Bloqueos localizados para errores científicos ya documentados en las fuentes."""
+"""Enforce localized blocks for documented scientific errors in original sources."""
 
 from __future__ import annotations
 
@@ -16,11 +16,11 @@ def _normalizar(texto: object) -> str:
 
 
 def bloqueos_cientificos(curriculo: Curriculo, fuentes: FuentesVerificadas, archivo: Path) -> dict[str, str]:
-    """Revalida el localizador de la alerta; no vuelve a certificar su contraste científico.
+    """Revalidate an alert's source locator without re-certifying its scientific judgment."""
 
-    El archivo de alertas es configuración de confianza del repositorio. Una alerta ajena a la
-    edición actual se rechaza. Se conservan los originales; los bloqueos se aplican a generación.
-    """
+    # Implementation notes:
+    # El archivo de alertas es configuración de confianza del repositorio. Una alerta ajena a la
+    # edición actual se rechaza. Se conservan los originales; los bloqueos se aplican a generación.
     if archivo.suffix.lower() in {".yaml", ".yml"}:
         import yaml
 

@@ -1,4 +1,4 @@
-"""Una edición previamente investigada debe coincidir antes de publicar el lote."""
+"""Require researched source editions to match before publishing an ingestion batch."""
 
 from __future__ import annotations
 

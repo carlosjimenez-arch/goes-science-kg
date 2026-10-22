@@ -1,4 +1,4 @@
-"""Snapshots de producto inmutables y selección atómica de una generación completa."""
+"""Store immutable product snapshots and select complete generations atomically."""
 
 from __future__ import annotations
 
@@ -47,6 +47,8 @@ LIMITES = (
 
 
 def archivos_producto(version: str) -> frozenset[str]:
+    """Return the exact required artifact names for a supported publication format."""
+
     if version == "producto-2":
         return ARCHIVOS
     if version == "producto-3":
@@ -64,7 +66,7 @@ class _Puntero(ContratoCurricular):
 
 
 def _segura(base: Path, relativo: str) -> Path:
-    """No sigue enlaces bajo el almacén ni admite rutas fuera de su raíz."""
+    """Reject paths outside the store and symlinks within it."""
     subruta = Path(relativo)
     if subruta.is_absolute() or ".." in subruta.parts:
         raise ValueError("Ruta fuera del almacén del producto")
@@ -307,7 +309,7 @@ def publicar_producto(
     alineaciones: ArchivoAlineaciones | None = None,
     mejoras: ArchivoMejoras | None = None,
 ) -> dict:
-    """Escribe una generación completa y cambia el puntero solo después de verificarla."""
+    """Write and verify a complete generation before changing its selection pointer."""
     import fcntl
 
     if conocimiento is not None:
@@ -394,7 +396,7 @@ def publicar_producto(
 
 
 def cargar_producto(destino: Path) -> ProductoMaterializado:
-    """Fija un puntero una vez; valida todos los bytes antes de exponer una generación."""
+    """Read one selection pointer and verify all bytes before exposing the generation."""
     base = _destino(destino, crear=False)
     puntero = _Puntero.model_validate_json(_segura(base, "actual.json").read_bytes())
     snapshot = _segura(base, f"snapshots/{puntero.snapshot_id}")

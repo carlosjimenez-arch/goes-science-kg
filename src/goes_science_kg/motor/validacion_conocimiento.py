@@ -1,8 +1,8 @@
-"""Reconstrucción determinista de juicios; no ejecuta modelos ni rehidrata las fuentes.
+"""Reconstruct knowledge reviews deterministically without invoking models."""
 
-El llamador verifica previamente el expediente y su vínculo con la solicitud contra los originales.
-Estos helpers aplican las mismas rúbricas, citas y reglas de cierre utilizadas por el Motor.
-"""
+# Historical implementation notes:
+# El llamador verifica previamente el expediente y su vínculo con la solicitud contra los originales.
+# Estos helpers aplican las mismas rúbricas, citas y reglas de cierre utilizadas por el Motor.
 
 from __future__ import annotations
 
@@ -21,6 +21,8 @@ from goes_science_kg.producto._juicios_contratos import (
 
 
 def validar_citas(dictamen: DictamenConocimiento, expediente: ExpedienteConocimiento) -> None:
+    """Validate unique literal quotations against the prepared evidence registry."""
+
     registro = {(f.evidencia_id, f.literal) for f in expediente.fragmentos}
     if len({(c.evidencia_id, c.literal) for c in dictamen.citas}) != len(dictamen.citas) or any(
         (c.evidencia_id, c.literal) not in registro for c in dictamen.citas
@@ -37,7 +39,7 @@ def validar_dictamen(
     expediente: ExpedienteConocimiento,
     modelos: Mapping[str, str] | None,
 ) -> DictamenConocimiento:
-    """Exige identidad, modelo, rúbrica exacta y citas únicas que cubran todos los grupos."""
+    """Validate review identity, model, exact rubric, and complete quotation-group coverage."""
     dictamen = DictamenConocimiento.model_validate(datos)
     esperados = set(ESQUEMAS_CONOCIMIENTO[rol].model_fields["criterios"].annotation.model_fields)
     if (
@@ -61,11 +63,11 @@ def resolver_resultado(
     modelos: Mapping[str, str] | None,
     salidas: Mapping[str, dict],
 ) -> ResultadoConocimiento:
-    """Reconstruye respaldo, veto o abstención sin confiar en un terminal persistido.
+    """Reconstruct support, rejection, or abstention independently of persisted terminal flags."""
 
-    Cada salida conserva el contrato ``{dictamen: datos|None, error: str|None}`` del workflow.
-    Un expediente no preparado conserva sus motivos y no admite dictámenes ni relación.
-    """
+    # Implementation notes:
+    # Cada salida conserva el contrato ``{dictamen: datos|None, error: str|None}`` del workflow.
+    # Un expediente no preparado conserva sus motivos y no admite dictámenes ni relación.
     motivos = list(expediente.motivos)
     dictamenes = []
     for rol in ROLES_CONOCIMIENTO:

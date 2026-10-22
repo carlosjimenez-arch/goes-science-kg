@@ -1,4 +1,4 @@
-"""Capturas HTML primarias por selector explícito; sin navegador, scripts ni paginación inventada."""
+"""Capture primary HTML sources through explicit selectors and verified byte snapshots."""
 
 from __future__ import annotations
 
@@ -21,12 +21,16 @@ MAX_BYTES = 8 * 1024 * 1024
 
 
 class SelectorWeb(Contrato):
+    """Declare the exact HTML element selector used for extraction."""
+
     etiqueta: str
     atributo: str | None = None
     valor: str | None = None
 
 
 class FuenteWeb(Contrato):
+    """Identify a primary scientific web source, edition, selector, and license."""
+
     id: str = Field(pattern=r"^[a-z0-9_]+$")
     titulo: str
     institucion: str
@@ -44,11 +48,15 @@ def _url(url: str) -> None:
 
 class _Redireccion(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        """Validate web download redirects before following them."""
+
         _url(newurl)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 def descargar_web(fuente: FuenteWeb) -> bytes:
+    """Download bounded public HTML without executing scripts or forwarding credentials."""
+
     import certifi
 
     _url(fuente.url)
@@ -72,6 +80,8 @@ class _Lectura(HTMLParser):
         self.coincidencias = 0
 
     def handle_starttag(self, tag, atributos):
+        """Track the selected DOM region and explicit hidden-content exclusions."""
+
         attrs = dict(atributos)
         vacio = tag in {
             "area",
@@ -108,17 +118,23 @@ class _Lectura(HTMLParser):
             self.pila.append((tag, activo, oculto))
 
     def handle_endtag(self, tag):
+        """Close DOM scopes while preserving extraction boundaries."""
+
         for i in range(len(self.pila) - 1, -1, -1):
             if self.pila[i][0] == tag:
                 del self.pila[i:]
                 return
 
     def handle_data(self, data):
+        """Collect visible text only within the explicitly selected source region."""
+
         if self.pila and self.pila[-1][1] and not self.pila[-1][2]:
             self.partes.append(data)
 
 
 def extraer_html(contenido: bytes, selector: SelectorWeb) -> str:
+    """Extract visible source text from the explicitly selected HTML region."""
+
     if not contenido or len(contenido) > MAX_BYTES:
         raise ValueError("Se requiere una captura HTML acotada")
     lector = _Lectura(selector)
@@ -130,10 +146,14 @@ def extraer_html(contenido: bytes, selector: SelectorWeb) -> str:
 
 
 class RepositorioWeb:
+    """Store and rehydrate immutable primary scientific HTML snapshots."""
+
     def __init__(self, raiz: Path):
         self.raiz = raiz
 
     def incorporar(self, fuente: FuenteWeb) -> dict:
+        """Register verified HTML bytes and extracted-text fingerprints atomically."""
+
         _url(fuente.url)
         contenido = descargar_web(fuente)
         texto = extraer_html(contenido, fuente.selector)
@@ -178,6 +198,8 @@ class RepositorioWeb:
         return registro
 
     def evidencia(self, id_: str) -> Evidencia:
+        """Rehydrate a registered web paragraph from its verified original snapshot."""
+
         manifest = json.loads((self.raiz / "manifest.json").read_bytes())
         r = manifest["fuentes"][id_]
         digest = r["sha256"]

@@ -1,4 +1,4 @@
-"""Representación explícita de relaciones condicionadas, fuera de la adyacencia global de GraphRAG."""
+"""Represent row-conditioned knowledge separately from global GraphRAG adjacency."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ ARISTAS_CONTEXTO = {TipoArista.EN_CONTEXTO, TipoArista.ORIGEN_RELACION, TipoAris
 
 
 def grafo_del_conocimiento(archivo: ArchivoConocimiento) -> tuple[list[Nodo], list[Arista]]:
-    """Una relación es un nodo con sus tres papeles; no proyecta A→B como prerrequisito universal."""
+    """Represent a conditioned relationship explicitly without creating universal prerequisites."""
     nodos, aristas = [], []
     extremos = {i for r in archivo.coleccion.relaciones_admisibles for i in (r.origen, r.destino)}
     for original in archivo.nodos_referencia:
@@ -71,7 +71,7 @@ def grafo_del_conocimiento(archivo: ArchivoConocimiento) -> tuple[list[Nodo], li
 
 
 def incorporar_conocimiento(nodos: list[Nodo], aristas: list[Arista], archivo: ArchivoConocimiento) -> None:
-    """No reemplaza fuentes ni extremos ya existentes con otro contenido."""
+    """Preserve existing source identities and endpoints rather than replacing their content."""
     nuevos, enlaces = grafo_del_conocimiento(archivo)
     usados = {a.destino for a in enlaces if a.tipo == TipoArista.FUENTE}
     existentes = {n.id: n for n in nodos}
@@ -97,7 +97,7 @@ def incorporar_conocimiento(nodos: list[Nodo], aristas: list[Arista], archivo: A
 
 
 def validar_grafo_conocimiento(nodos, aristas, archivo: ArchivoConocimiento | None) -> None:
-    """Exige correspondencia exacta entre representación reificada y archivo de juicios."""
+    """Require exact correspondence between the reified graph and its review archive."""
     presentes = {n.id: n for n in nodos if n.tipo == TipoNodo.RELACION_CURRICULAR}
     if archivo is None:
         if presentes or any(a.tipo in ARISTAS_CONTEXTO for a in aristas):

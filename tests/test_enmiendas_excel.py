@@ -1,4 +1,4 @@
-"""Una enmienda respaldada cambia sólo su celda; el paquete original no se vuelve a guardar."""
+"""Change only supported correction cells while preserving the original OOXML package."""
 
 import hashlib
 import zipfile

@@ -1,4 +1,4 @@
-"""Contexto V4 por celdas verificadas, separado de la ingesta y de la activación del grafo."""
+"""Build V4 context from verified spreadsheet cells without activating a graph."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ PRIORIDADES = {
 
 
 def catalogo_fuentes_v4(curriculo: Curriculo) -> dict[str, dict]:
-    """La ingesta aporta identidad; la raíz autorizada se inyecta por separado."""
+    """Build source identities from ingestion while injecting authorized roots separately."""
     catalogo = {}
     for fuente in curriculo.fuentes:
         if fuente.version != curriculo.version or fuente.id in catalogo:
@@ -60,7 +60,7 @@ def fuentes_del_curriculo(
     raiz_historica: Path | None = None,
     raiz_cientificas: Path | None = None,
 ) -> FuentesVerificadas:
-    """Combina permisos explícitos para V4 y, opcionalmente, fuentes históricas independientes."""
+    """Combine explicit source permissions for V4 and optional historical material."""
     catalogo = dict(catalogo_historico or {})
     nuevas = catalogo_fuentes_v4(curriculo)
     if set(catalogo).intersection(nuevas):
@@ -77,7 +77,7 @@ def fuentes_del_curriculo(
 
 
 def documento_de_fila(fila: FilaCurricular) -> Documento:
-    """Localizadores del registro: el texto de búsqueda no se convierte en evidencia."""
+    """Build a row locator without treating retrieval text as source evidence."""
     if not 1 <= len(fila.celdas) <= MAX_CELDAS or any(c.fila != fila.fila for c in fila.celdas):
         raise ValueError("La fila debe declarar entre una y 64 celdas de la misma fila física")
     coordenadas = [c.coordenada for c in fila.celdas]
@@ -106,11 +106,11 @@ def contexto_celdas(
     max_caracteres: int = 18000,
     max_filas: int = 3,
 ) -> list[Evidencia]:
-    """Prioriza objetivo, evaluación, cinco fases y contexto; no lee filas vecinas implícitas.
+    """Prioritize original objectives, assessment, phases, and context within the evidence budget."""
 
-    El presupuesto incluye el JSON completo de evidencias y procedencia. Los nombres de campo sólo
-    ordenan el contexto; los valores publicados se extraen nuevamente del snapshot, no de metadatos.
-    """
+    # Implementation notes:
+    # El presupuesto incluye el JSON completo de evidencias y procedencia. Los nombres de campo sólo
+    # ordenan el contexto; los valores publicados se extraen nuevamente del snapshot, no de metadatos.
     if max_caracteres < 100 or not 1 <= max_filas <= 16:
         raise ValueError("Presupuesto de al menos 100 caracteres y entre una y 16 filas")
     candidatos: list[tuple[int, int, int, Evidencia]] = []

@@ -1,5 +1,9 @@
 # 07 · Calidad y gobernanza
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 ## Invariantes (los revisa `gskg grafo validar`; si falla uno, es un ERROR)
 1. Ids únicos. Toda arista apunta a nodos existentes.
 2. Todo `Tema` trae archivo, hoja y fila. Todo `ObjetivoPais` trae documento y página.

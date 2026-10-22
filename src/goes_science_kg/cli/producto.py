@@ -1,4 +1,4 @@
-"""Casos de uso del producto V4, con preparación local antes de modelos remotos."""
+"""Prepare V4 product use cases before any explicit remote-model execution."""
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ def escenario_cli(
     escenario: Path,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/escenarios/resultado.json"),
 ) -> None:
-    """Evalúa tiempo/recursos declarados sin modificar currículo ni ejecutar modelos."""
+    """Evaluate declared classroom constraints without changing curricula or invoking models."""
     from goes_science_kg.producto.escenarios import EscenarioUnidad, evaluar_escenario
     from goes_science_kg.producto.unidades import PaqueteUnidad
 
@@ -68,7 +68,7 @@ def explorar(
     catalogo: Annotated[Path | None, typer.Option()] = None,
     alertas: Annotated[Path, typer.Option()] = Path("docs/investigacion/alertas_v4.json"),
 ) -> None:
-    """Genera el explorador sin conexión con las fuentes verificadas y sus alertas."""
+    """Generate the offline explorer from verified sources and scientific alerts."""
     from goes_science_kg.curriculo import cargar_curriculo
     from goes_science_kg.producto.vista import vista
 
@@ -89,7 +89,7 @@ def construir(
     ] = None,
     alineaciones: Annotated[Path | None, typer.Option(help="Cohorte completa de tres lectores por criterio")] = None,
 ) -> None:
-    """Publica una generación V4 completa y verificable, sin llamadas remotas."""
+    """Publish a complete verified V4 generation without remote calls."""
     from goes_science_kg.curriculo import cargar_curriculo
     from goes_science_kg.ingesta.dimensiones import CatalogoDimensiones
     from goes_science_kg.ingesta.referencias import RepositorioReferencias
@@ -140,7 +140,7 @@ def construir(
 
 @app.command("validar")
 def validar(destino: Annotated[Path, typer.Option()] = Path("data/producto/V4")) -> None:
-    """Comprueba una generación sin cambiar el puntero ni llamar a modelos."""
+    """Validate a generation without changing its selection pointer."""
     from goes_science_kg.producto import cargar_producto
 
     producto = cargar_producto(destino)
@@ -153,7 +153,7 @@ def comparar(
     salida_json: Annotated[Path, typer.Option()] = Path("docs/investigacion/comparacion_v3_v4.json"),
     salida_markdown: Annotated[Path, typer.Option()] = Path("docs/investigacion/comparacion_v3_v4.md"),
 ) -> None:
-    """Compara registros y campos verificables V3–V4 sin trasladar decisiones."""
+    """Compare verifiable V3 and V4 records without transferring decisions."""
     from goes_science_kg.curriculo import cargar_curriculo
     from goes_science_kg.curriculo.comparacion import comparar_curriculos, guardar_comparacion
     from goes_science_kg.producto.referencias import cargar_referencias_historicas
@@ -167,7 +167,7 @@ def comparar(
 
 @app.command("insumo")
 def insumo() -> None:
-    """Valida todas las fuentes y hojas V4; no activa ni escribe la malla histórica."""
+    """Validate all V4 sources and sheets without modifying the historical curriculum."""
     from goes_science_kg.curriculo.ingesta import cargar_curriculo
 
     curriculo = cargar_curriculo()
@@ -195,7 +195,7 @@ def conocimiento(
     salida: Annotated[Path, typer.Option()] = Path("data/producto/V4/candidatos_conocimiento.json"),
     politica: Annotated[Path | None, typer.Option(help="Ediciones y presupuestos explícitos, en YAML")] = None,
 ) -> None:
-    """Propone hipótesis con celdas originales; no acepta enlaces ni un DAG."""
+    """Propose relationship hypotheses from original cells without admitting links or a DAG."""
     import yaml
 
     from goes_science_kg.curriculo import cargar_curriculo
@@ -226,7 +226,7 @@ def catalogar(
     max_llamadas: int = typer.Option(54, min=1, max=200),
     ejecucion: str = typer.Option(None),
 ) -> None:
-    """Propone disciplinas con dos lecturas ciegas; por defecto muestra el plan sin GCP."""
+    """Plan or explicitly execute two blind subject-classification readings."""
     from goes_science_kg.curriculo.catalogacion import ROLES, clasificar_disciplinas, plan_catalogacion
     from goes_science_kg.curriculo.ingesta import cargar_curriculo
     from goes_science_kg.motor.registro import Registro

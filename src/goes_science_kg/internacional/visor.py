@@ -1,10 +1,10 @@
-"""Visor del contraste internacional del tramo activo (<informe>/visor.html, specs 11 y 12).
+"""Render the international comparison viewer for the active grade band."""
 
-Una pestaña por asignatura. Cada fila es un concepto con su clase, los grados de la V2 y, por país, el grado SV de
-primera aparición (resaltado si es núcleo; «e» si solo está en especialización). Al hacer clic se ve la evidencia:
-temas de la V2 (archivo, hoja y fila) y objetivos de los países (documento y página). Página estática y
-autocontenida (sin librerías externas), con modo claro y oscuro, como `progresion.html`.
-"""
+# Historical implementation notes:
+# Una pestaña por asignatura. Cada fila es un concepto con su clase, los grados de la V2 y, por país, el grado SV de
+# primera aparición (resaltado si es núcleo; «e» si solo está en especialización). Al hacer clic se ve la evidencia:
+# temas de la V2 (archivo, hoja y fila) y objetivos de los países (documento y página). Página estática y
+# autocontenida (sin librerías externas), con modo claro y oscuro, como `progresion.html`.
 
 from __future__ import annotations
 
@@ -19,12 +19,14 @@ from goes_science_kg.internacional.consenso import objetivos, paises
 if TYPE_CHECKING:
     from pathlib import Path
 
-POR_PAIS = 2   # objetivos citados por país en el detalle
+POR_PAIS = 2  # objetivos citados por país en el detalle
 
 
 def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str], destino: Path) -> str:
-    """Escribe `destino`/visor.html con las filas del contraste `r`, una pestaña por asignatura de `nombres`.
-    Devuelve la ruta relativa."""
+    """Write a subject-tabbed viewer for the selected international contrast."""
+
+    # Implementation notes:
+    # Devuelve la ruta relativa.
     objs = {o["id"]: o for o in objetivos()}
     ps = paises()
     filas = []
@@ -35,38 +37,65 @@ def escribir(r: dict, clases: list[tuple[str, str, str]], nombres: dict[str, str
             if not d:
                 continue
             celdas[p] = [d["primer_grado_nucleo"], d["en_especializacion"], d["nucleo_en_tramo"]]
-            evidencia.extend([p, o["curso"], o["nivel"], o["documento"], o.get("pagina") or "", o["texto"]]
-                             for i in d["objetivos"][:POR_PAIS] if (o := objs.get(i)))
+            evidencia.extend(
+                [p, o["curso"], o["nivel"], o["documento"], o.get("pagina") or "", o["texto"]]
+                for i in d["objetivos"][:POR_PAIS]
+                if (o := objs.get(i))
+            )
         temas = []
         for t in f["sv_temas"][:6]:
             x = r["temas"][t]
-            temas.append([t, x["archivo"].split("/")[-1], x["hoja"], x["fila"], x["grado"],
-                          f"{x['contenido']}. {x['indicador']}"[:260]])
-        filas.append({"a": f["asignatura"], "c": f["nombre"], "k": f["clase"], "sv": f["sv_primer_grado"],
-                      "s9": f.get("sv_en_tramo"), "n9": f["n_nucleo_en_tramo"], "ne": f["n_especializacion"],
-                      "p": celdas, "t": temas, "e": evidencia,
-                      **({"l": f["lecturas"]} if "lecturas" in f else {}),
-                      **({"al": _alertas(f["alertas"])} if f.get("alertas") else {})})
-    datos = {"filas": filas, "paises": ps, "clases": [[k, t, d] for k, t, d in clases],
-             "asignaturas": [[k, v] for k, v in nombres.items()]}
+            temas.append(
+                [
+                    t,
+                    x["archivo"].split("/")[-1],
+                    x["hoja"],
+                    x["fila"],
+                    x["grado"],
+                    f"{x['contenido']}. {x['indicador']}"[:260],
+                ]
+            )
+        filas.append(
+            {
+                "a": f["asignatura"],
+                "c": f["nombre"],
+                "k": f["clase"],
+                "sv": f["sv_primer_grado"],
+                "s9": f.get("sv_en_tramo"),
+                "n9": f["n_nucleo_en_tramo"],
+                "ne": f["n_especializacion"],
+                "p": celdas,
+                "t": temas,
+                "e": evidencia,
+                **({"l": f["lecturas"]} if "lecturas" in f else {}),
+                **({"al": _alertas(f["alertas"])} if f.get("alertas") else {}),
+            }
+        )
+    datos = {
+        "filas": filas,
+        "paises": ps,
+        "clases": [[k, t, d] for k, t, d in clases],
+        "asignaturas": [[k, v] for k, v in nombres.items()],
+    }
     t = tramo.actual()
-    pagina = (PLANTILLA.replace("__TITULO__", html.escape(f"Contraste internacional {t.etiqueta}"))
-              .replace("__TRAMO__", html.escape(t.etiqueta))
-              .replace("__README__", html.escape(f"{t.informe}/README.md"))
-              .replace("__DATOS__", json.dumps(datos, ensure_ascii=False).replace("</", "<\\/")))
+    pagina = (
+        PLANTILLA.replace("__TITULO__", html.escape(f"Contraste internacional {t.etiqueta}"))
+        .replace("__TRAMO__", html.escape(t.etiqueta))
+        .replace("__README__", html.escape(f"{t.informe}/README.md"))
+        .replace("__DATOS__", json.dumps(datos, ensure_ascii=False).replace("</", "<\\/"))
+    )
     p = destino / "visor.html"
     p.write_text(pagina, encoding="utf-8")
     return relativa(p)
 
 
 def _alertas(a: dict) -> list[str]:
-    """Alertas de una fila del contraste en frases cortas."""
+    """Summarize a contrast row's alerts in concise phrases."""
     salida = []
     if a.get("texto"):
         salida.append("el texto de " + ", ".join(a["texto"]) + " ya nombra el concepto")
     if a.get("vecinos"):
-        salida.append("los objetivos de los países también enseñan " + ", ".join(a["vecinos"])
-                      + ", que la V2 da antes")
+        salida.append("los objetivos de los países también enseñan " + ", ".join(a["vecinos"]) + ", que la V2 da antes")
     return salida
 
 

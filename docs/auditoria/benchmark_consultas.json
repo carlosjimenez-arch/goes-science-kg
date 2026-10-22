@@ -1,0 +1,51 @@
+{
+  "alcance": "Microbenchmark de selección: 5 consultas, 20 repeticiones por consulta; mismo snapshot e identidades seleccionadas idénticas. Excluye HTTP, serialización, carga e I/O de verificación. No es un SLA.",
+  "snapshot_id": "e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008",
+  "python": "3.14.3",
+  "plataforma": "Darwin arm64",
+  "mediciones": {
+    "anterior": {
+      "n": 100,
+      "p50_ms": 0.9917,
+      "p95_ms": 18.2761
+    },
+    "indexado": {
+      "n": 100,
+      "p50_ms": 0.0497,
+      "p95_ms": 0.3795
+    }
+  },
+  "ledger_sha256_antes": "3ad9b798421a8b463f8d3dd924498330b42ddbd483ca4f774c5386bb74f722ae",
+  "ledger_sha256_despues": "3ad9b798421a8b463f8d3dd924498330b42ddbd483ca4f774c5386bb74f722ae",
+  "commit_referencia": "d971920bde3d6adedb5a6160fce963e01e277685",
+  "consultas": [
+    {
+      "grado": null,
+      "disciplina": null,
+      "q": "materia"
+    },
+    {
+      "grado": 3,
+      "disciplina": "quimica",
+      "q": "agua"
+    },
+    {
+      "grado": 10,
+      "disciplina": "fisica",
+      "q": "energía"
+    },
+    {
+      "grado": 11,
+      "disciplina": "biologia",
+      "q": "célula"
+    },
+    {
+      "grado": 4,
+      "disciplina": null,
+      "q": "no-existe-goes"
+    }
+  ],
+  "repeticiones_por_consulta": 20,
+  "modulo_medido": "src/goes_science_kg/interfaz/consulta.py",
+  "sha256_modulo_medido": "ac6139ab4a1d1f07f390f234a08c52731b243991bb3856300cc40b057fd49f2a"
+}

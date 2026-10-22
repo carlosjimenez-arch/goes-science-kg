@@ -1,4 +1,4 @@
-"""La simulación no puede ahorrar tiempo eliminando objetivos ni suponer recursos ausentes."""
+"""Reject scenario shortcuts that remove objectives or assume unavailable resources."""
 
 from __future__ import annotations
 

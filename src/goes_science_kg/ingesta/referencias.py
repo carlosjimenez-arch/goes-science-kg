@@ -1,8 +1,8 @@
-"""Fuentes públicas PDF con identidad de bytes y extracción reproducible por página.
+"""Manage public PDF identities and reproducible page-level text extraction."""
 
-El catálogo de investigación no activa marcos en el grafo. La ingesta produce un
-manifiesto separado y rechaza sustituciones silenciosas de los documentos fijados.
-"""
+# Historical implementation notes:
+# El catálogo de investigación no activa marcos en el grafo. La ingesta produce un
+# manifiesto separado y rechaza sustituciones silenciosas de los documentos fijados.
 
 from __future__ import annotations
 
@@ -57,7 +57,7 @@ def _sha(contenido: bytes) -> str:
 
 
 class FuentePublica(BaseModel):
-    """Selección explícita del registro oficial; no acepta direcciones con credenciales."""
+    """Declare an explicit public source without credential-bearing URLs."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -79,7 +79,7 @@ class FuentePublica(BaseModel):
 
 
 class ReferenciaIngerida(FuentePublica):
-    """Identidad documental y del extractor; las páginas no son objetivos oficiales."""
+    """Identify document and extractor provenance without treating pages as official objectives."""
 
     url_final: str
     sha256: SHA
@@ -102,14 +102,20 @@ class ReferenciaIngerida(FuentePublica):
 
     @property
     def archivo_pdf(self) -> str:
+        """Resolve the content-addressed path of a registered PDF."""
+
         return f"objetos/{self.sha256}.pdf"
 
     @property
     def archivo_paginas(self) -> str:
+        """Resolve the stored page-extraction path for a registered PDF."""
+
         return f"paginas/{self.sha256_paginas}.jsonl"
 
 
 class ManifiestoReferencias(BaseModel):
+    """Index ingested reference documents under a versioned manifest."""
+
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     schema_version: Literal["1.0"] = "1.0"
@@ -117,7 +123,7 @@ class ManifiestoReferencias(BaseModel):
 
 
 def fuentes_del_catalogo(catalogo: dict, seleccion: list[str]) -> list[FuentePublica]:
-    """Solo documentos seleccionados: no rastrea enlaces ni inventa un PDF para una página."""
+    """Select registered documents without crawling links or guessing PDF locations."""
     if not seleccion or len(seleccion) != len(set(seleccion)):
         raise ValueError("Seleccione al menos una fuente, sin duplicados")
     salida = []
@@ -140,7 +146,7 @@ def fuentes_del_catalogo(catalogo: dict, seleccion: list[str]) -> list[FuentePub
 
 
 def descargar_pdf(fuente: FuentePublica) -> tuple[bytes, str]:
-    """Una descarga pública acotada. Nunca adjunta ADC, cookies ni tokens de GCP."""
+    """Download a bounded public PDF without attaching credentials or session tokens."""
     _validar_destino(fuente.url_documento)
     import certifi
 
@@ -169,18 +175,22 @@ def _validar_destino(url: str) -> None:
 
 class _RedireccionOficial(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        """Validate a redirect target before allowing a public reference download."""
+
         _validar_destino(newurl)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 class RepositorioReferencias:
-    """Objetos inmutables locales y manifiesto cuya escritura exige ingesta explícita."""
+    """Store immutable local documents under an explicitly managed manifest."""
 
     def __init__(self, raiz: Path):
         self.raiz = raiz.resolve()
         self.archivo_manifest = self.raiz / "manifest.json"
 
     def manifiesto(self) -> ManifiestoReferencias:
+        """Read and validate the local reference manifest."""
+
         self._resolver("manifest.json")
         if not self.archivo_manifest.exists():
             return ManifiestoReferencias()
@@ -236,7 +246,7 @@ class RepositorioReferencias:
         descargar: bool = False,
         sha256_esperados: Mapping[str, str] | None = None,
     ) -> ManifiestoReferencias:
-        """Sin --descargar solo comprueba. Un lote fallido nunca publica un manifiesto parcial."""
+        """Verify or ingest a complete batch without publishing partial failed manifests."""
         if len({fuente.id for fuente in fuentes}) != len(fuentes):
             raise ValueError("Identificadores de fuente duplicados")
         esperados = dict(sha256_esperados or {})
@@ -342,7 +352,7 @@ class RepositorioReferencias:
         return registro, serializado
 
     def documentos(self, seleccion: list[str] | None = None) -> list[Documento]:
-        """Páginas verificadas para localizar evidencia; no acreditan cobertura por tema."""
+        """Return verified pages for evidence retrieval without asserting topic coverage."""
         registros = self.manifiesto().referencias
         documentos = []
         for identificador in sorted(registros if seleccion is None else seleccion):
@@ -376,6 +386,8 @@ class RepositorioReferencias:
         return documentos
 
     def fuentes_verificadas(self) -> FuentesVerificadas:
+        """Expose the repository's verified source identities and allowed roots."""
+
         catalogo = {
             id_: {"archivo_local": r.archivo_pdf, "sha256": r.sha256}
             for id_, r in self.manifiesto().referencias.items()
@@ -383,7 +395,7 @@ class RepositorioReferencias:
         return FuentesVerificadas(catalogo, raiz_fuentes=self.raiz)
 
     def leer_pdf_verificado(self, identificador: str) -> bytes:
-        """Bytes de la edición fijada para extractores explícitos; no cambia su extracción original."""
+        """Read pinned PDF bytes without changing their original extraction."""
         registro = self.manifiesto().referencias[identificador]
         contenido = self._leer(registro.archivo_pdf, registro.sha256)
         if len(contenido) != registro.bytes:
@@ -391,6 +403,8 @@ class RepositorioReferencias:
         return contenido
 
     def pagina(self, identificador: str, pagina: int) -> Evidencia:
+        """Rehydrate one registered primary page after verifying its original bytes."""
+
         registros = self.manifiesto().referencias
         registro = registros[identificador]
         if not 1 <= pagina <= registro.paginas:

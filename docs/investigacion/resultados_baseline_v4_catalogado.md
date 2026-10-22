@@ -1,5 +1,8 @@
 # Baseline V4: medición local provisional
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Estado: **catalogo_completo**. Sin llamadas a GCP; sin ejecución del candidato AgenticRAG.
 
 Muestra: 19 consultas; 57 ejecuciones locales. Mínimo predeclarado: 20; selección insuficiente.

@@ -1,4 +1,4 @@
-"""Comparación real de embeddings Vertex sin ajustar parámetros a las métricas."""
+"""Compare real Vertex embeddings without tuning parameters to test metrics."""
 
 from __future__ import annotations
 
@@ -35,11 +35,11 @@ def ejecutar_experimento(
     repeticiones: int = 3,
     max_preguntas_autorizadas: int = 98,
 ) -> dict:
-    """Vectoriza V3 detectada, mide variantes fijas y conserva contabilidad y regresiones.
+    """Evaluate fixed embedding variants while retaining spending and regression evidence."""
 
-    La disponibilidad de V4 no se presume: la versión se fija desde el grafo cargado. El corpus
-    histórico no es un test independiente; estos resultados no cambian el default automáticamente.
-    """
+    # Implementation notes:
+    # La disponibilidad de V4 no se presume: la versión se fija desde el grafo cargado. El corpus
+    # histórico no es un test independiente; estos resultados no cambian el default automáticamente.
     if not 1 <= repeticiones <= 10 or not 1 <= max_preguntas_autorizadas <= 98:
         raise ValueError("El benchmark admite entre una y diez repeticiones")
     operacion = ruta(directorio_operacion)

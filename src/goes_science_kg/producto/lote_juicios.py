@@ -1,4 +1,4 @@
-"""Lotes fijados antes de juzgar: varios checkpoints y un único presupuesto durable."""
+"""Fix review cohorts before execution and share one durable budget across checkpoints."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ import fcntl
 import logging
 import os
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 from typing import Literal
 
@@ -23,6 +24,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 class PlanLoteJuicios(Contrato):
+    """Fix a complete review batch, its dossiers, execution identity, and shared limits."""
+
     version: Literal["lote-conocimiento-1"] = "lote-conocimiento-1"
     id: str = Field(pattern=r"^[a-f0-9]{64}$")
     ejecucion_id: str = Field(pattern=r"^[a-zA-Z0-9_-]{1,100}$")
@@ -51,7 +54,7 @@ def preparar_lote(
     configuracion: ConfiguracionVertex,
     ejecucion_id: str,
 ) -> PlanLoteJuicios:
-    """Fija todos los expedientes sin modelos; conserva también preparaciones en abstención."""
+    """Fix every review dossier before execution and retain preparations in abstention."""
     if not candidatos or len(set(candidatos)) != len(candidatos) or len(candidatos) > 50:
         raise ValueError("Se requieren entre uno y cincuenta candidatos únicos")
     solicitudes = tuple(SolicitudConocimiento(candidato_id=c) for c in candidatos)
@@ -67,14 +70,14 @@ def preparar_lote(
 
 
 def verificar_lote(plan: PlanLoteJuicios, preparador: PreparadorConocimiento) -> None:
-    """Un plan guardado no sustituye la comprobación actual de todas las fuentes."""
+    """Revalidate every source rather than trusting a saved execution plan."""
     actual = preparar_lote(preparador, [s.candidato_id for s in plan.solicitudes], plan.vertex, plan.ejecucion_id)
     if actual != plan:
         raise ValueError("Cambió el corpus, los soportes o la evidencia del lote preparado")
 
 
 def ejecutar_lote(plan: PlanLoteJuicios, motor: MotorConocimiento, *, checkpoints: Path) -> dict:
-    """Reanuda todos los casos del plan, sin redistribuir ni reiniciar las reservas."""
+    """Resume all planned cases without redistributing or resetting reservations."""
     verificar_lote(plan, motor.preparador)
     proveedor = motor.modelo
     if (
@@ -96,7 +99,7 @@ def ejecutar_lote(plan: PlanLoteJuicios, motor: MotorConocimiento, *, checkpoint
         ledger = proveedor.registro.archivo.resolve()
         estado_ledger = ledger.stat()
         identidad = huella([str(ledger), estado_ledger.st_dev, estado_ledger.st_ino])
-        with sqlite3.connect(archivo, timeout=30) as db:
+        with closing(sqlite3.connect(archivo, timeout=30)) as db, db:
             db.execute(
                 "CREATE TABLE IF NOT EXISTS lotes_conocimiento "
                 "(ejecucion TEXT PRIMARY KEY, plan TEXT, entorno TEXT, ledger TEXT)"

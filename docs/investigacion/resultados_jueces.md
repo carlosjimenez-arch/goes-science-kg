@@ -1,5 +1,8 @@
 # Experimento inicial de jueces
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Corte: 2026-10-21. Conjunto sintético plata de 16 casos (8 pares correctos/errores), sin datos de estudiantes. Una llamada por combinación, orden aleatorizado con semilla fija; etiquetas y motivos esperados no se enviaron al modelo.
 
 | Modelo/prompt | Aciertos | Aceptaciones incorrectas | Abstenciones | Latencia media ms |

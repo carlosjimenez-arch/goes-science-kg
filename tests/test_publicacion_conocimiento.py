@@ -1,4 +1,4 @@
-"""Integración local de juicios simulados, publicación y evidencia condicionada a filas reales V4."""
+"""Test simulated reviews and published evidence conditioned on actual V4 rows."""
 
 from __future__ import annotations
 

@@ -1,8 +1,8 @@
-"""Publicación explícita de derivados y lectura coherente por artículo para la API.
+"""Publish explicit graph derivatives and verify their article-level provenance."""
 
-Un sidecar sólo se publica desde un generador que verificó sus entradas contra el
-archivo de grafo. Capturar archivos históricos juntos no acredita su procedencia.
-"""
+# Historical implementation notes:
+# Un sidecar sólo se publica desde un generador que verificó sus entradas contra el
+# archivo de grafo. Capturar archivos históricos juntos no acredita su procedencia.
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ DIRECTORIO_PUBLICACIONES = "data/grafo/publicaciones_api"
 
 
 class PublicacionNoDisponible(RuntimeError):
-    """No se puede demostrar que el artículo corresponde al grafo fijado."""
+    """Signal that an article cannot be verified against the pinned graph."""
 
 
 def _sha(contenido: bytes) -> str:
@@ -58,7 +58,7 @@ def _huella_modelos(modelos: Sequence[Nodo] | Sequence[Arista]) -> str:
 
 
 def comprobar_entrada(nodos: list[Nodo], aristas: list[Arista], *, base: Path | None = None) -> dict[str, str]:
-    """Impide publicar con modelos ajenos o con un grafo en mitad de escritura."""
+    """Reject generators using foreign models or a graph being rewritten."""
     manifest, _ = _leer_grafo(base or raiz())
     esperadas = {nombre: manifest["sha256"][nombre] for nombre in ARCHIVOS_GRAFO}
     reales = dict(zip(ARCHIVOS_GRAFO, (_huella_modelos(nodos), _huella_modelos(aristas)), strict=True))
@@ -79,11 +79,11 @@ def _ruta_sidecar(base: Path, articulo: str) -> Path:
 def publicar_articulo(
     articulo: str, archivos: Sequence[str], grafo: dict[str, str], *, generador: str, base: Path | None = None
 ) -> None:
-    """Publica después de regenerar, comprobando grafo y derivados antes y después.
+    """Publish regenerated derivatives only after checking inputs and outputs before and after writing."""
 
-    No es un comando de adopción de resultados históricos. Los llamadores deben
-    producir todos los archivos con los modelos validados por comprobar_entrada.
-    """
+    # Implementation notes:
+    # No es un comando de adopción de resultados históricos. Los llamadores deben
+    # producir todos los archivos con los modelos validados por comprobar_entrada.
     base = (base or raiz()).resolve()
     manifest, _ = _leer_grafo(base)
     if any(manifest["sha256"].get(nombre) != grafo.get(nombre) for nombre in ARCHIVOS_GRAFO):
@@ -121,11 +121,11 @@ def publicar_articulo(
 
 
 class LecturaPublicada:
-    """Fija el grafo y cada artículo leído; las mutaciones requieren reiniciar el proceso.
+    """Pin graph and article identities until process restart."""
 
-    Los artículos aún no cargados pueden publicarse después si pertenecen al mismo
-    grafo. Un artículo inválido nunca invalida otro ni los servicios del grafo.
-    """
+    # Implementation notes:
+    # Los artículos aún no cargados pueden publicarse después si pertenecen al mismo
+    # grafo. Un artículo inválido nunca invalida otro ni los servicios del grafo.
 
     def __init__(self, base: Path):
         self.base = base.resolve()
@@ -151,6 +151,8 @@ class LecturaPublicada:
             raise PublicacionNoDisponible(f"Grafo no disponible: {error}") from error
 
     def verificar_grafo(self) -> None:
+        """Verify that persisted graph files still match the generation pinned by this reader."""
+
         with self._lock:
             if self._error_grafo:
                 raise PublicacionNoDisponible(self._error_grafo)
@@ -165,20 +167,24 @@ class LecturaPublicada:
                 raise PublicacionNoDisponible(self._error_grafo) from error
 
     def grafo(self):
+        """Return the pinned graph models and reusable retrieval index."""
+
         self.verificar_grafo()
         return self._grafo
 
     def manifest(self) -> dict:
+        """Return the verified manifest for this reader's pinned graph."""
+
         self.verificar_grafo()
         return json.loads(self._bytes_grafo["manifest.json"])
 
     def articulos_cargados(self) -> tuple[str, ...]:
-        """Conserva el conocimiento de un artículo aunque alguien borre sus archivos."""
+        """Retain known article identities even if their files disappear."""
         with self._lock:
             return tuple(sorted(self._articulos))
 
     def articulo(self, nombre: str, archivos: Sequence[str]) -> dict[str, object]:
-        """Lee exclusivamente las rutas que el endpoint espera, nunca rutas arbitrarias del sidecar."""
+        """Read only endpoint-approved paths rather than arbitrary sidecar paths."""
         with self._lock:
             self.verificar_grafo()
             if nombre in self._errores_articulos:

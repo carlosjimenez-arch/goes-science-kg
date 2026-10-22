@@ -1,4 +1,4 @@
-"""Proyecciones de lectura para la interfaz; nunca crean hechos ni recalifican dictámenes."""
+"""Indexed projections of published evidence for the GOEs curriculum interface."""
 
 from __future__ import annotations
 
@@ -7,27 +7,36 @@ import unicodedata
 from collections import Counter, defaultdict
 from urllib.parse import urlparse
 
+from goes_science_kg.curriculo.contratos import FilaCurricular
 from goes_science_kg.producto.mejoras_contratos import ROLES_MEJORA
+from goes_science_kg.producto.runtime import RuntimeProducto
 
 
-def normalizar(texto):
+def normalizar(texto: str) -> str:
+    """Normalize accents and case for deterministic substring matching."""
     return "".join(c for c in unicodedata.normalize("NFKD", str(texto).casefold()) if not unicodedata.combining(c))
 
 
-def orden_natural(texto):
+def orden_natural(texto: str) -> tuple:
+    """Sort mixed text and numeric unit labels in their natural order."""
     return tuple((0, int(p)) if p.isdigit() else (1, p.casefold()) for p in re.split(r"(\d+)", texto))
 
 
-def url_publica(valor):
-    """Sólo enlaces documentales HTTP(S); jamás ejecuta esquemas aportados por contenido."""
+def url_publica(valor: object) -> str | None:
+    """Accept only valid HTTP or HTTPS documentary links without embedded credentials."""
     if not isinstance(valor, str):
         return None
-    u = urlparse(valor)
-    return valor if u.scheme in {"https", "http"} and u.hostname and not u.username and not u.password else None
+    try:
+        u = urlparse(valor)
+        return valor if u.scheme in {"https", "http"} and u.hostname and not u.username and not u.password else None
+    except ValueError:
+        return None
 
 
 class ConsultaInterfaz:
-    def __init__(self, runtime):
+    """Index one verified snapshot without generating claims or changing reviews."""
+
+    def __init__(self, runtime: RuntimeProducto) -> None:
         self.runtime = runtime
         self.producto = p = runtime.producto
         if p.mejoras is None:
@@ -44,36 +53,63 @@ class ConsultaInterfaz:
                 self.propuestas.update({f.fila_id: f for f in caso.resultado.propuesta.filas})
         self.nodos = {n.id: n for n in p.nodos}
         self.vecinos = defaultdict(set)
+        self.aristas_por_nodo = defaultdict(list)
         for a in p.aristas:
             self.vecinos[a.origen].add(a.destino)
             self.vecinos[a.destino].add(a.origen)
+            self.aristas_por_nodo[a.origen].append(a)
+            if a.destino != a.origen:
+                self.aristas_por_nodo[a.destino].append(a)
         self.documentos = self._documentos()
 
-    def seleccionar(self, grado=None, disciplina=None, q=""):
-        consulta = normalizar(q).strip()
-        return [
-            f
-            for f in self.producto.curriculo.filas
-            if (grado is None or f.grado == grado)
-            and (disciplina is None or disciplina in self.decisiones[f.id].disciplinas)
-            and (
-                not consulta
-                or consulta
-                in normalizar(
-                    " ".join(
-                        (
-                            f.procedimental,
-                            f.unidad,
-                            f.contenido,
-                            f.asignatura_malla,
-                            self.propuestas[f.id].objetivo_propuesto if f.id in self.propuestas else "",
-                        )
+        self._texto_por_fila = {
+            f.id: normalizar(
+                " ".join(
+                    (
+                        f.procedimental,
+                        f.unidad,
+                        f.contenido,
+                        f.asignatura_malla,
+                        self.propuestas[f.id].objetivo_propuesto if f.id in self.propuestas else "",
                     )
                 )
             )
+            for f in p.curriculo.filas
+        }
+        self._ids_por_grado = defaultdict(set)
+        self._ids_por_disciplina = defaultdict(set)
+        for f in p.curriculo.filas:
+            self._ids_por_grado[f.grado].add(f.id)
+            for disciplina in self.decisiones[f.id].disciplinas:
+                self._ids_por_disciplina[disciplina].add(f.id)
+        self._orden_filas = tuple(
+            sorted(
+                self.filas,
+                key=lambda i: (
+                    self.filas[i].grado,
+                    self.filas[i].asignatura_malla,
+                    self.filas[i].hoja,
+                    self.filas[i].fila,
+                ),
+            )
+        )
+
+    def seleccionar(self, grado: int | None = None, disciplina: str | None = None, q: str = "") -> list[FilaCurricular]:
+        """Intersect grade and subject indexes before searching normalized row text."""
+        consulta = normalizar(q).strip()
+        ids = self.filas.keys()
+        if grado is not None:
+            ids = ids & self._ids_por_grado.get(grado, set())
+        if disciplina is not None:
+            ids = ids & self._ids_por_disciplina.get(disciplina, set())
+        return [
+            self.filas[i]
+            for i in self._orden_filas
+            if i in ids and (not consulta or consulta in self._texto_por_fila[i])
         ]
 
-    def ficha(self, f):
+    def ficha(self, f: FilaCurricular) -> dict:
+        """Return row metadata, proposal availability, review state, and original alerts."""
         c, propuesta = self.por_fila[f.id], self.propuestas.get(f.id)
         return {
             "id": f.id,
@@ -93,7 +129,8 @@ class ConsultaInterfaz:
             "fila": f.fila,
         }
 
-    def resumen(self):
+    def resumen(self) -> dict:
+        """Compute snapshot counts and explicitly report disconnected integrations."""
         p = self.producto
         grupos = defaultdict(list)
         for f in p.curriculo.filas:
@@ -148,7 +185,8 @@ class ConsultaInterfaz:
             },
         }
 
-    def _documentos(self):
+    def _documentos(self) -> dict:
+        """Collect source identities and count distinct unit-level evidence uses."""
         documentos = {}
         for id_, registro in self.runtime.fuentes.catalogo.items():
             nodo = self.nodos.get("DOC:" + id_)
@@ -189,7 +227,8 @@ class ConsultaInterfaz:
                     vistos.add(id_)
         return documentos
 
-    def grafo(self, *, grado=None, disciplina=None, q="", limite=220):
+    def grafo(self, *, grado=None, disciplina=None, q="", limite=220) -> dict:
+        """Select a bounded real subgraph, preserving edge types and both endpoints."""
         if grado is None and disciplina is None and not q.strip():
             permitidos = set(self.nodos)
         else:
@@ -231,10 +270,13 @@ class ConsultaInterfaz:
             "limite_semantico": "La disposición es visual. Cada arista conserva su tipo; no todas son prerrequisitos.",
         }
 
-    def detalle(self, fila_id):
+    def detalle(self, fila_id: str) -> dict:
+        """Expose a row and the evidence cited by its selected proposal."""
         f = self.filas[fila_id]
         c = self.por_fila[fila_id]
         propuesta = self.propuestas.get(fila_id)
+        ids_fragmentos = set(propuesta.fragmentos_ids) if propuesta else set()
+        ids_evidencias = {x.evidencia_id for x in c.preparacion.fragmentos if x.id in ids_fragmentos}
         return self.identidad | {
             **self.ficha(f),
             "original": f.model_dump(mode="json", exclude={"celdas"}),
@@ -243,22 +285,14 @@ class ConsultaInterfaz:
             "revisiones": self.revisiones(c),
             "motivos": c.resultado.motivos,
             "enmiendas": c.preparacion.correcciones_requeridas,
-            "fragmentos": [
-                x.model_dump(mode="json")
-                for x in c.preparacion.fragmentos
-                if propuesta and x.id in propuesta.fragmentos_ids
-            ],
-            "evidencias": [
-                e.model_dump(mode="json")
-                for e in c.preparacion.evidencias
-                if propuesta
-                and any(x.evidencia_id == e.id and x.id in propuesta.fragmentos_ids for x in c.preparacion.fragmentos)
-            ],
+            "fragmentos": [x.model_dump(mode="json") for x in c.preparacion.fragmentos if x.id in ids_fragmentos],
+            "evidencias": [e.model_dump(mode="json") for e in c.preparacion.evidencias if e.id in ids_evidencias],
             "limite": self.producto.mejoras.limite,
         }
 
     @staticmethod
-    def revisiones(caso):
+    def revisiones(caso) -> dict:
+        """Return the last recorded review round without re-evaluating votes."""
         ultima = caso.resultado.rondas[-1]
         return {
             "rondas": len(caso.resultado.rondas),
@@ -267,7 +301,8 @@ class ConsultaInterfaz:
             "errores_estructura": ultima.errores_estructura,
         }
 
-    def revision(self, grado=None, disciplina=None, q="", estado=None):
+    def revision(self, grado=None, disciplina=None, q="", estado=None) -> dict:
+        """Filter published unit reviews using the same row selection indexes."""
         ids = {self.por_fila[f.id].preparacion.id for f in self.seleccionar(grado, disciplina, q)}
         casos = [c for id_, c in self.casos.items() if id_ in ids and (estado is None or c.resultado.estado == estado)]
         return self.identidad | {
@@ -287,7 +322,8 @@ class ConsultaInterfaz:
             "limite": self.producto.mejoras.limite,
         }
 
-    def brief(self, fila_id, formato):
+    def brief(self, fila_id: str, formato: str) -> dict:
+        """Compile existing evidence and proposals into a traceable Markdown brief."""
         detalle = self.detalle(fila_id)
         propuesta = self.propuestas.get(fila_id)
         if propuesta is None or propuesta.accion == "fuera_alcance":

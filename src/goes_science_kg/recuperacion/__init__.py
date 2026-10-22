@@ -1,4 +1,4 @@
-"""Recuperación local híbrida y trazable; no realiza llamadas a proveedores cloud."""
+"""Provide traceable local retrieval without implicit cloud-provider calls."""
 
 from goes_science_kg.recuperacion.baseline import BuscadorBaseline, cargar_buscador_baseline
 from goes_science_kg.recuperacion.buscador import Buscador

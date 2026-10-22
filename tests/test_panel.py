@@ -1,5 +1,7 @@
-"""Panel de expertos IA (spec 14): validación de dictámenes, consolidación por unanimidad, deliberación y la secuencia
-experto → psicopedagogo → experto del contenido. Nada aquí llama a un modelo."""
+"""Test panel validation, unanimous consolidation, deliberation, and sequential content review."""
+
+# Historical test notes:
+# experto → psicopedagogo → experto del contenido. Nada aquí llama a un modelo.
 
 from __future__ import annotations
 
@@ -16,13 +18,19 @@ def _ev():
 
 
 def _dic(i, decision, confianza="alta", **extra):
-    return {"id": i, "decision": decision, "justificacion": "Criterio técnico breve.", "evidencia": _ev(),
-            "confianza": confianza, **extra}
+    return {
+        "id": i,
+        "decision": decision,
+        "justificacion": "Criterio técnico breve.",
+        "evidencia": _ev(),
+        "confianza": confianza,
+        **extra,
+    }
 
 
 @pytest.fixture
 def aislado(tmp_path, monkeypatch):
-    """El estado y los lotes del panel en tmp_path."""
+    """Isolate expert-panel state and batches in temporary storage."""
     real = panel.ruta
     monkeypatch.setattr(panel, "ruta", lambda rel: tmp_path / rel if str(rel).startswith(panel.DIR) else real(rel))
     return tmp_path
@@ -38,15 +46,25 @@ def test_cada_rol_tiene_agente_y_valida_su_salida():
 
 
 def test_errores_de_un_dictamen():
-    lote = {"expedientes": [
-        {"id": "A", "tipo": "decision", "opciones": ["aceptar", "rechazar"], "datos": {}},
-        {"id": "B", "tipo": "asignacion", "opciones": ["aceptar", "cambiar", "rechazar"],
-         "datos": {"asignado_a": ["CON:x"], "opciones": [{"id": "CON:x"}, {"id": "CON:y"}]}},
-        {"id": "C", "tipo": "hallazgo", "opciones": ["respaldar", "matizar", "no_respaldar"], "datos": {}}]}
+    lote = {
+        "expedientes": [
+            {"id": "A", "tipo": "decision", "opciones": ["aceptar", "rechazar"], "datos": {}},
+            {
+                "id": "B",
+                "tipo": "asignacion",
+                "opciones": ["aceptar", "cambiar", "rechazar"],
+                "datos": {"asignado_a": ["CON:x"], "opciones": [{"id": "CON:x"}, {"id": "CON:y"}]},
+            },
+            {"id": "C", "tipo": "hallazgo", "opciones": ["respaldar", "matizar", "no_respaldar"], "datos": {}},
+        ]
+    }
     bien = [_dic("A", "aceptar"), _dic("B", "cambiar", asignado_a=["CON:y"]), _dic("C", "matizar", texto="Matiz.")]
     assert panel.errores_lote(lote, bien) == []
-    mal = [_dic("A", "rechazar"), _dic("B", "cambiar", asignado_a=["CON:x"]),
-           {**_dic("C", "respaldar"), "evidencia": [], "justificacion": "x " * 80}]
+    mal = [
+        _dic("A", "rechazar"),
+        _dic("B", "cambiar", asignado_a=["CON:x"]),
+        {**_dic("C", "respaldar"), "evidencia": [], "justificacion": "x " * 80},
+    ]
     errores = " | ".join(panel.errores_lote(lote, mal))
     for esperado in ("exige «alternativa»", "distinto del actual", "evidencia", "justificación"):
         assert esperado in errores
@@ -59,26 +77,38 @@ def test_la_correccion_de_contenido_sigue_siendo_valida():
     act = Pedagogia.cargar().actividades["ACT:G09-CIE-U8-8.2/obj-1"]
     campos = panel.config()["campos_editables"]["actividad"]
     assert panel.errores_elemento_corregido(act, {"retroalimentacion": "Más clara."}, campos) == []
-    assert panel.errores_elemento_corregido(act, {"correcta": "Z"}, campos)     # la correcta fuera de las opciones
-    assert panel.errores_elemento_corregido(act, {"id": "ACT:otro"}, campos)    # campo no editable
+    assert panel.errores_elemento_corregido(act, {"correcta": "Z"}, campos)  # la correcta fuera de las opciones
+    assert panel.errores_elemento_corregido(act, {"id": "ACT:otro"}, campos)  # campo no editable
 
 
 def _expediente(tipo, roles, **extra):
-    return {"tipo": tipo, "titulo": "t", "pregunta": "p", "datos": {}, "roles": roles, "dictamenes": [],
-            "estado": "pendiente", **extra}
+    return {
+        "tipo": tipo,
+        "titulo": "t",
+        "pregunta": "p",
+        "datos": {},
+        "roles": roles,
+        "dictamenes": [],
+        "estado": "pendiente",
+        **extra,
+    }
 
 
 def test_unanimidad_deliberacion_y_sin_consenso(aislado):
-    estado = {"X": _expediente("hallazgo", ["experto-fisica", "psicopedagogo"]),
-              "Y": _expediente("hallazgo", ["experto-fisica", "psicopedagogo"])}
+    estado = {
+        "X": _expediente("hallazgo", ["experto-fisica", "psicopedagogo"]),
+        "Y": _expediente("hallazgo", ["experto-fisica", "psicopedagogo"]),
+    }
     panel._guardar_estado(estado)
     lotes = panel.preparar(1)
     assert {p.split("/")[-1] for p in lotes} == {"lote_r1_experto-fisica.json", "lote_r1_psicopedagogo.json"}
     d = aislado / panel.DIR / "lotes"
-    (d / "salida_r1_experto-fisica.json").write_text(json.dumps(
-        [_dic("X", "respaldar"), _dic("Y", "respaldar")]), encoding="utf-8")
-    (d / "salida_r1_psicopedagogo.json").write_text(json.dumps(
-        [_dic("X", "respaldar"), _dic("Y", "matizar", texto="Con apoyo concreto.")]), encoding="utf-8")
+    (d / "salida_r1_experto-fisica.json").write_text(
+        json.dumps([_dic("X", "respaldar"), _dic("Y", "respaldar")]), encoding="utf-8"
+    )
+    (d / "salida_r1_psicopedagogo.json").write_text(
+        json.dumps([_dic("X", "respaldar"), _dic("Y", "matizar", texto="Con apoyo concreto.")]), encoding="utf-8"
+    )
     panel.consolidar(1)
     e = panel.cargar_estado()
     assert e["X"]["estado"] == "resuelta" and e["Y"]["estado"] == "en_deliberacion"
@@ -86,10 +116,11 @@ def test_unanimidad_deliberacion_y_sin_consenso(aislado):
     lote = json.loads((d / "lote_r2_experto-fisica.json").read_text(encoding="utf-8"))
     assert [x["id"] for x in lote["expedientes"]] == ["Y"] and lote["expedientes"][0]["dictamenes_anteriores"]
     (d / "salida_r2_experto-fisica.json").write_text(json.dumps([_dic("Y", "respaldar")]), encoding="utf-8")
-    (d / "salida_r2_psicopedagogo.json").write_text(json.dumps([_dic("Y", "matizar", texto="Igual.")]),
-                                                    encoding="utf-8")
+    (d / "salida_r2_psicopedagogo.json").write_text(
+        json.dumps([_dic("Y", "matizar", texto="Igual.")]), encoding="utf-8"
+    )
     panel.consolidar(2)
-    assert panel.cargar_estado()["Y"]["estado"] == "sin_consenso"     # sin unanimidad tras deliberar: a una persona
+    assert panel.cargar_estado()["Y"]["estado"] == "sin_consenso"  # sin unanimidad tras deliberar: a una persona
 
 
 def test_confianza_baja_va_a_una_persona(aislado):
@@ -105,15 +136,20 @@ def test_contenido_en_secuencia(aislado):
     from goes_science_kg.aprendizaje.pedagogia import Pedagogia
 
     act = Pedagogia.cargar().actividades["ACT:G09-CIE-U8-8.2/obj-1"]
-    x = _expediente("contenido", ["experto-biologia", "psicopedagogo"], elemento="actividad",
-                    etapas=[["experto-biologia"], ["psicopedagogo"], ["experto-biologia"]])
+    x = _expediente(
+        "contenido",
+        ["experto-biologia", "psicopedagogo"],
+        elemento="actividad",
+        etapas=[["experto-biologia"], ["psicopedagogo"], ["experto-biologia"]],
+    )
     x["datos"] = {"elemento": act}
     panel._guardar_estado({"P": x})
     d = aislado / panel.DIR / "lotes"
     panel.preparar(1)
     assert (d / "lote_r1_experto-biologia.json").exists() and not (d / "lote_r1_psicopedagogo.json").exists()
-    (d / "salida_r1_experto-biologia.json").write_text(json.dumps(
-        [_dic("P", "corregir", cambios={"retroalimentacion": "Versión del experto."})]), encoding="utf-8")
+    (d / "salida_r1_experto-biologia.json").write_text(
+        json.dumps([_dic("P", "corregir", cambios={"retroalimentacion": "Versión del experto."})]), encoding="utf-8"
+    )
     panel.consolidar(1)
     panel.preparar(2)
     lote = json.loads((d / "lote_r2_psicopedagogo.json").read_text(encoding="utf-8"))
@@ -129,24 +165,31 @@ def test_el_dictamen_queda_como_del_panel_y_no_como_confirmacion():
     from goes_science_kg import revision_decisiones as rd
 
     x = _expediente("decision", ["experto-quimica"])
-    x["dictamenes"] = [{**_dic("X", "rechazar", alternativa="Mantener la clase automática."), "ronda": 1,
-                        "rol": "experto-quimica"}]
+    x["dictamenes"] = [
+        {**_dic("X", "rechazar", alternativa="Mantener la clase automática."), "ronda": 1, "rol": "experto-quimica"}
+    ]
     x["resolucion"] = {"decision": "rechazar", "ronda": 1}
     reg = panel._registro(x)
     assert "no es una confirmación del MINED" in reg["nota"] and reg["alternativa"]
     r = {"dictamenes_panel": [reg]}
     assert rd._estado(r).startswith("dictamen del panel: rechazar")
-    assert rd._estado({**r, "confirmaciones": [{"revisado_por": "MINED"}]}) == "confirmada"   # lo humano gana
+    assert rd._estado({**r, "confirmaciones": [{"revisado_por": "MINED"}]}) == "confirmada"  # lo humano gana
 
 
 def test_los_inciertos_son_expedientes_del_experto_de_la_disciplina():
-    """Cada concepto incierto sin revisión es un expediente del experto de su disciplina (puede no haber ninguno: desde
-    el 2026-10-13 todos están resueltos por el panel o por decisión delegada)."""
+    """Assign unresolved classification dossiers to the appropriate subject expert."""
+
+    # Historical test notes:
+    # el 2026-10-13 todos están resueltos por el panel o por decisión delegada).
     inc = panel._exp_inciertos()
-    pendientes = [f"INC:{c}" for c, f in panel._contraste("2_8").items()
-                  if f["clase"] == "incierto" and not f.get("revision")]
-    pendientes += [f"INC:9_11:{c}" for c, f in panel._contraste("9_11").items()
-                   if f["clase"] == "incierto" and not f.get("revision")]
+    pendientes = [
+        f"INC:{c}" for c, f in panel._contraste("2_8").items() if f["clase"] == "incierto" and not f.get("revision")
+    ]
+    pendientes += [
+        f"INC:9_11:{c}"
+        for c, f in panel._contraste("9_11").items()
+        if f["clase"] == "incierto" and not f.get("revision")
+    ]
     assert sorted(inc) == sorted(pendientes)
     assert all(x["datos"]["tramo"] == ("9_11" if i.startswith("INC:9_11:") else "2_8") for i, x in inc.items())
     assert all(len(x["roles"]) == 1 and x["roles"][0].startswith("experto-") for x in inc.values())
@@ -154,12 +197,16 @@ def test_los_inciertos_son_expedientes_del_experto_de_la_disciplina():
 
 
 def test_cada_clase_incierta_busca_su_registro_en_su_tramo():
-    """Antes, aplicar buscaba siempre en las revisiones de 2.°–8.°: la solidez de 9.°–11.° no llegaba a su registro y
-    pisaba la de un registro de 2.°–8.° del mismo concepto."""
-    por_tramo = {"2_8": [{"concepto": "CON:x", "dictamenes_panel": [{"decision": "posterior"}]}],
-                 "9_11": [{"concepto": "CON:x", "dictamenes_panel": [{"decision": "alineado"}]}]}
+    """Apply uncertain-classification decisions to the correct native grade-band review layer."""
+
+    # Historical test notes:
+    # pisaba la de un registro de 2.°–8.° del mismo concepto.
+    por_tramo = {
+        "2_8": [{"concepto": "CON:x", "dictamenes_panel": [{"decision": "posterior"}]}],
+        "9_11": [{"concepto": "CON:x", "dictamenes_panel": [{"decision": "alineado"}]}],
+    }
     x9 = {"tipo": "clase_incierta", "datos": {"tramo": "9_11", "concepto": {"id": "CON:x"}}}
-    x2 = {"tipo": "clase_incierta", "datos": {"concepto": {"id": "CON:x"}}}   # anterior a los tramos: 2.°–8.°
+    x2 = {"tipo": "clase_incierta", "datos": {"concepto": {"id": "CON:x"}}}  # anterior a los tramos: 2.°–8.°
     for x, esperada in ((x9, "alineado"), (x2, "posterior")):
         revs = panel._revisiones_del_tramo(x, por_tramo)
         assert panel._registro_en_capa("INC", x, {}, {}, {}, revs)["decision"] == esperada
@@ -167,27 +214,38 @@ def test_cada_clase_incierta_busca_su_registro_en_su_tramo():
 
 
 def test_las_clases_que_citan_temas_quitados_por_la_v3_vuelven_al_panel():
-    """Spec 15: una clase decidida con la V2 cuya evidencia cita temas que la V3 quitó o movió de grado vuelve al
-    panel («V3:<tramo>:<concepto>») con la decisión anterior y los temas perdidos a la vista."""
+    """Reopen reviewed classifications whose cited topics moved or disappeared in V3."""
+
+    # Historical test notes:
+    # panel («V3:<tramo>:<concepto>») con la decisión anterior y los temas perdidos a la vista.
     v3 = panel._exp_revision_v3()
     assert v3 and all(i.startswith(("V3:2_8:", "V3:9_11:")) for i in v3)
     for x in v3.values():
         assert x["datos"]["temas_que_la_v3_quito_o_movio"]
         assert x["datos"]["decision_anterior"]["clase"] in x["opciones"]
     # 7.° 2.15 (resistencia bacteriana) se movió a 9.°; 9.° 3.1 sigue en la malla
-    assert panel.temas_perdidos_en_v3({"justificacion": "ver G07-CIE-U2-2.15 y G09-CIE-U3-3.1."}) == \
-        ["G07-CIE-U2-2.15"]
+    assert panel.temas_perdidos_en_v3({"justificacion": "ver G07-CIE-U2-2.15 y G09-CIE-U3-3.1."}) == ["G07-CIE-U2-2.15"]
 
 
 def test_un_refuerzo_corregido_por_el_panel_sigue_las_reglas_del_redactor():
-    """Spec 15: el panel puede corregir un refuerzo o convertirlo en descarte, pero no romper las reglas."""
-    r = {"id": "REF:error_malla:ERR-01", "tipo": "corregir", "decision": "inyectar", "forma": "nota_en_tema",
-         "tema_ancla": "G05-CIE-U6-6.7", "refuerzo": "Usar «transformantes».", "evidencia": [{"fuente": "x"}],
-         "confianza": "alta"}
+    """Require panel-corrected reinforcement to satisfy the original writer contract."""
+    r = {
+        "id": "REF:error_malla:ERR-01",
+        "tipo": "corregir",
+        "decision": "inyectar",
+        "forma": "nota_en_tema",
+        "tema_ancla": "G05-CIE-U6-6.7",
+        "refuerzo": "Usar «transformantes».",
+        "evidencia": [{"fuente": "x"}],
+        "confianza": "alta",
+    }
     campos = panel.config()["campos_editables"]["refuerzo"]
-    assert panel.errores_elemento_corregido(r, {"refuerzo": "Bordes convergentes, divergentes y transformantes."},
-                                            campos) == []
-    assert panel.errores_elemento_corregido(r, {"decision": "descartar", "motivo": "La V3 ya lo corrige."},
-                                            campos) == []
-    assert panel.errores_elemento_corregido(r, {"forma": "fila_nueva"}, campos)   # una corrección no es fila nueva
-    assert panel.errores_elemento_corregido(r, {"id": "otro"}, campos)            # campo no editable
+    assert (
+        panel.errores_elemento_corregido(r, {"refuerzo": "Bordes convergentes, divergentes y transformantes."}, campos)
+        == []
+    )
+    assert (
+        panel.errores_elemento_corregido(r, {"decision": "descartar", "motivo": "La V3 ya lo corrige."}, campos) == []
+    )
+    assert panel.errores_elemento_corregido(r, {"forma": "fila_nueva"}, campos)  # una corrección no es fila nueva
+    assert panel.errores_elemento_corregido(r, {"id": "otro"}, campos)  # campo no editable

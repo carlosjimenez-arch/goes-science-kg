@@ -1,5 +1,9 @@
 # 02 · Modelo del grafo
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 Versión ejecutable: `src/goes_science_kg/modelos.py`. Si cambia uno, cambia el otro.
 
 ## Nodos

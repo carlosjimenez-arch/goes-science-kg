@@ -1,4 +1,4 @@
-"""Ingesta Excel exhaustiva sobre snapshots de bytes cotejados con su procedencia."""
+"""Ingest all configured Excel sheets from provenance-checked byte snapshots."""
 
 from __future__ import annotations
 
@@ -98,7 +98,7 @@ def _columnas(hoja: Worksheet, cfg: ConfigHoja, alias: dict[str, str]) -> tuple[
 
 
 def _combinadas(hoja: Worksheet) -> dict[tuple[int, int], str]:
-    """Expande exclusivamente rangos combinados explícitos, nunca blancos ordinarios."""
+    """Expand only explicitly merged ranges without forward-filling ordinary blank cells."""
     resultado = {}
     for rango in hoja.merged_cells.ranges:
         ancla = hoja.cell(rango.min_row, rango.min_col).coordinate
@@ -271,12 +271,12 @@ def _procedencia(contenido: bytes, cfg: ConfigCurriculo) -> tuple[dict[str, Any]
 
 
 def cargar_curriculo(config_path: str | Path | None = None, *, nombre: str = "mallas_v4") -> Curriculo:
-    """Verifica y carga todos los archivos/hojas declarados sin escribir o activar datos.
+    """Verify and load every configured workbook and sheet without modifying sources."""
 
-    Las rutas de fuentes se resuelven bajo ``raiz`` de la configuración, relativa al
-    propio YAML. El SHA y el tamaño se cotejan antes de parsear exactamente esos bytes.
-    Cualquier archivo u hoja sin decisión explícita interrumpe la ingesta.
-    """
+    # Implementation notes:
+    # Las rutas de fuentes se resuelven bajo ``raiz`` de la configuración, relativa al
+    # propio YAML. El SHA y el tamaño se cotejan antes de parsear exactamente esos bytes.
+    # Cualquier archivo u hoja sin decisión explícita interrumpe la ingesta.
     ruta_config = Path(config_path) if config_path is not None else config.ruta(f"config/{nombre}.yaml")
     ruta_config = ruta_config.resolve()
     bytes_config = ruta_config.read_bytes()

@@ -1,5 +1,9 @@
 # Alcance de publicación y reproducción
 
+Estado de mantenimiento: `feat/api`. Los resultados de pruebas y cobertura vigentes se consultan
+en [Calidad](CALIDAD.md) y [medicion.json](badges/medicion.json). Las verificaciones de entregas
+anteriores que siguen se conservan con su alcance original.
+
 El remoto `carlosjimenez-arch/goes-science-kg` es público. Autorizar commits no implica autorizar
 la exposición del corpus institucional completo. La rama de código se construye desde la base pública
 e incorpora código, pruebas, configuración, prompts y documentación. No debe incluir como ancestro

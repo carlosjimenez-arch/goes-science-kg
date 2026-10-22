@@ -1,4 +1,4 @@
-"""Propuestas curriculares V4: identidad por fila, fuentes y cuatro revisiones de la salida exacta."""
+"""Define row-identified proposals with four reviews of the exact output."""
 
 from __future__ import annotations
 
@@ -36,12 +36,16 @@ LIMITE_MEJORAS = (
 
 
 class SolicitudMejora(Contrato):
+    """Identify one exact grade, declared curriculum subject, and unit for improvement."""
+
     grado: int = Field(ge=2, le=11)
     asignatura_malla: str
     unidad: str
 
 
 class MejoraFila(Contrato):
+    """Propose one row's objective, assessment, didactics, safeguards, and selected evidence."""
+
     fila_id: str
     accion: Literal["mantener_objetivo", "precisar_objetivo", "fuera_alcance"]
     disciplinas_propuestas: tuple[AsignaturaCiencia, ...] = Field(max_length=4)
@@ -67,6 +71,8 @@ class MejoraFila(Contrato):
 
 
 class BorradorMejora(Contrato):
+    """Collect a complete unit proposal and its explicit corrections and limitations."""
+
     filas: tuple[MejoraFila, ...] = Field(min_length=1, max_length=30)
     enmiendas_aceptadas: tuple[str, ...] = Field(max_length=3)
     sintesis: str = Field(min_length=20, max_length=1200)
@@ -80,6 +86,8 @@ class BorradorMejora(Contrato):
 
 
 class PreparacionMejora(Contrato):
+    """Bind original rows, classifications, alerts, evidence, and fragments to a unit identity."""
+
     id: str = Field(pattern=r"^[a-f0-9]{64}$")
     solicitud: SolicitudMejora
     huella_curriculo: str
@@ -96,6 +104,8 @@ class PreparacionMejora(Contrato):
 
 
 class LecturaMejora(Contrato):
+    """Record a specialist reading with all mandatory criteria and evidence selections."""
+
     criterios: dict[str, Valor]
     fragmentos_ids: tuple[str, ...] = Field(min_length=1, max_length=60)
     hallazgos: tuple[str, ...] = Field(max_length=12)
@@ -103,6 +113,8 @@ class LecturaMejora(Contrato):
 
 
 def esquema_revision(rol: str) -> type[Contrato]:
+    """Build the exact mandatory review schema for the selected specialist role."""
+
     criterios = create_model("Criterios_" + rol, __base__=Contrato, **{c: (Valor, ...) for c in CRITERIOS_MEJORA[rol]})
     return create_model(
         "Lectura_" + rol,
@@ -115,6 +127,8 @@ def esquema_revision(rol: str) -> type[Contrato]:
 
 
 class DictamenMejora(Contrato):
+    """Bind a specialist's output or failure to the exact preparation and draft."""
+
     rol: str
     modelo: str
     huella_preparacion: str
@@ -124,6 +138,8 @@ class DictamenMejora(Contrato):
 
 
 class RondaMejora(Contrato):
+    """Preserve a complete draft round, validation errors, readings, and generation failures."""
+
     borrador: BorradorMejora | None
     errores_estructura: tuple[str, ...]
     dictamenes: tuple[DictamenMejora, ...]
@@ -133,6 +149,8 @@ class RondaMejora(Contrato):
 
 
 class ResultadoMejora(Contrato):
+    """Record the final unit outcome while retaining every review round and abstention reason."""
+
     solicitud: SolicitudMejora
     ejecucion_id: str
     preparacion_id: str

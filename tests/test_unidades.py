@@ -1,4 +1,4 @@
-"""Paquetes y orquestación con Motor real, fuentes sintéticas y modelos sin red."""
+"""Test unit packages and orchestration with real engine control and offline synthetic providers."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""Invariantes de materialización y correspondencia con celdas originales verificadas."""
+"""Validate materialized products against verified original curriculum cells."""
 
 from __future__ import annotations
 
@@ -19,16 +19,18 @@ TOTAL_FILAS_V4 = 1020
 
 
 def json_bytes(valor: object) -> bytes:
-    """Serialización canónica usada para identidad y comprobaciones de integridad."""
+    """Serialize canonical bytes for identity and integrity checks."""
     return json.dumps(valor, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
 
 
 def sha(contenido: bytes) -> str:
+    """Compute the SHA-256 fingerprint of canonical serialized bytes."""
+
     return hashlib.sha256(contenido).hexdigest()
 
 
 def validar_entrada(curriculo: Curriculo, catalogo: CatalogoDisciplinas) -> None:
-    """Rechaza pilotos, mezclas de versiones, pérdidas y asignaciones incoherentes."""
+    """Reject pilot catalogs, version mixtures, missing rows, and inconsistent assignments."""
     if curriculo.version != "V4" or catalogo.version_curriculo != "V4":
         raise ValueError("El producto V4 no admite otra versión curricular")
     if catalogo.modo != "completo" or not catalogo.piloto_superado:
@@ -156,7 +158,7 @@ def validar_entrada(curriculo: Curriculo, catalogo: CatalogoDisciplinas) -> None
 
 
 def verificar_celdas(curriculo: Curriculo, raiz_v4: Path) -> tuple[dict[str, dict], dict[str, int]]:
-    """Relee snapshots reales; los metadatos no sustituyen valores o citas originales."""
+    """Reopen original snapshots rather than substituting metadata for source values."""
     fuentes = fuentes_del_curriculo(curriculo, raiz_v4=raiz_v4)
     evidencias = {}
     for hoja in curriculo.hojas:

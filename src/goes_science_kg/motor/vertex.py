@@ -1,4 +1,4 @@
-"""Adaptador Vertex AI con ADC, esquema, timeout, reintentos selectivos y presupuesto durable."""
+"""Adapt Vertex AI with ADC, schemas, selective retries, timeouts, and durable budgets."""
 
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ def _validar_salida(esquema: type[T], texto: str) -> T:
 
 
 def _tokens_salida(uso) -> int | None:
-    """Ausencia de telemetría no significa cero tokens generados."""
+    """Distinguish missing token telemetry from an observed zero-token response."""
     candidatos = getattr(uso, "candidates_token_count", None)
     if candidatos is None:
         return None
@@ -39,13 +39,15 @@ def _tokens_salida(uso) -> int | None:
 
 
 class Tarifa(Contrato):
-    """Tarifas configurables, USD por millón; reserva conservadora, no importe facturado."""
+    """Configure conservative per-million-token reservations separately from billed charges."""
 
     entrada: float = Field(gt=0)
     salida: float = Field(gt=0)
 
 
 class ConfiguracionVertex(Contrato):
+    """Configure explicit Vertex models, prices, timeouts, concurrency, and durable limits."""
+
     proyecto: str = Field(min_length=5)
     region: str = "global"
     modelos: dict[str, str]
@@ -59,6 +61,8 @@ class ConfiguracionVertex(Contrato):
 
 
 class Vertex:
+    """Adapt structured Vertex generation to the durable execution and budget ports."""
+
     def __init__(self, configuracion: ConfiguracionVertex, registro: Registro, ejecucion_id: str):
         self.configuracion = configuracion
         self.registro = registro
@@ -68,6 +72,8 @@ class Vertex:
 
     @cached_property
     def cliente(self):
+        """Initialize the Vertex client lazily through application default credentials."""
+
         from google import genai
         from google.genai import types
 
@@ -85,9 +91,13 @@ class Vertex:
             return self._cliente_interno
 
     def nombre_modelo(self, rol: str) -> str:
+        """Return the configured model identity for the requested role."""
+
         return self.configuracion.modelos[rol]
 
     def generar(self, *, rol: str, sistema: str, mensaje: str, esquema: type[T]) -> T:
+        """Generate and validate one structured response under durable spending limits."""
+
         from google.genai import types
 
         cfg = self.configuracion

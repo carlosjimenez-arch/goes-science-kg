@@ -1,5 +1,8 @@
 # Ingesta rigurosa de la entrega V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Implementación: `curriculo/contratos.py`, `curriculo/_configuracion.py` y
 `curriculo/ingesta.py`. Configuración independiente: `config/mallas_v4.yaml`.
 La ingesta no activa la V4, no escribe los Excel ni modifica `config/mallas.yaml`,

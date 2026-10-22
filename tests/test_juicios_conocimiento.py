@@ -1,4 +1,4 @@
-"""Integración de fuentes nativas, juicios simulados y reanudación; nunca consume modelos reales."""
+"""Test native evidence, simulated knowledge reviews, and durable resumption without paid models."""
 
 from __future__ import annotations
 

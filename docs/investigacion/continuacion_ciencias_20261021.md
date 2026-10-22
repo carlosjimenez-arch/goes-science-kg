@@ -1,5 +1,8 @@
 # Continuación de Ciencias: juicios, contexto y producto
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. Las instrucciones de Matemáticas se omitieron por confirmación del
 usuario. Esta continuación no cambia su presupuesto, bucket, cuenta ni rama Git.
 

@@ -1,8 +1,8 @@
-"""Descubrimiento local de enlaces V4: hipótesis con anclas, nunca relaciones aprobadas.
+"""Discover locally anchored V4 relationship hypotheses without approving them."""
 
-La salida se entrega a un workflow especializado posterior. No modifica el grafo,
-el recuperador, la clasificación disciplinar ni la simulación histórica.
-"""
+# Historical implementation notes:
+# La salida se entrega a un workflow especializado posterior. No modifica el grafo,
+# el recuperador, la clasificación disciplinar ni la simulación histórica.
 
 from __future__ import annotations
 
@@ -67,7 +67,7 @@ def _descriptor(nodo: Nodo) -> dict:
 
 
 class _ReferenciasVerificables:
-    """Una unidad documental se verifica una vez; traducciones siguen sin validación semántica."""
+    """Verify native documentary units once without claiming semantic translation validation."""
 
     def __init__(self, referencia: ReferenciasProducto, politica: PoliticaConocimiento, raiz: Path):
         self.documentos = {}
@@ -84,6 +84,8 @@ class _ReferenciasVerificables:
         self.cache: dict[str, tuple[dict, tuple[str, ...], Evidencia | None]] = {}
 
     def consultar(self, nodo: Nodo) -> tuple[dict, tuple[str, ...], Evidencia | None]:
+        """Look up a native documentary unit through its verified source index."""
+
         if nodo.id in self.cache:
             return self.cache[nodo.id]
         fuente = nodo.fuente
@@ -150,7 +152,7 @@ def _evidencia_celda(fila_id: str, evidencia: dict, celda: dict) -> Evidencia:
 
 
 def _seleccionar_grupos(opciones: list[dict], limite: int) -> tuple[list[dict], list[str]]:
-    """Una ambigüedad no se resuelve descartando silenciosamente uno de sus miembros."""
+    """Preserve ambiguity rather than silently discarding competing group members."""
     seleccionados, omitidos, procesados = [], [], set()
     disponibles = {o["destino"] for o in opciones}
     for opcion in opciones:
@@ -173,7 +175,7 @@ def _seleccionar_grupos(opciones: list[dict], limite: int) -> tuple[list[dict], 
 
 
 def _rotar_paises(opciones: list[dict], limite: int) -> tuple[list[dict], list[str]]:
-    """Diversifica la cola de revisión por país, sin inferir superioridad o equivalencia."""
+    """Diversify review candidates by country without inferring superiority or equivalence."""
     por_pais = defaultdict(list)
     for opcion in opciones:
         por_pais[opcion["pais"]].append(opcion)
@@ -193,11 +195,11 @@ def generar_candidatos_conocimiento(
     raiz_historica: Path | None = None,
     politica: PoliticaConocimiento | None = None,
 ) -> InformeConocimiento:
-    """Propone enlaces desde celdas verificadas; no crea TRABAJA, CUBRE o un DAG aprobado.
+    """Propose links from verified cells without creating accepted curriculum edges or prerequisites."""
 
-    La referencia debe proceder del cargador histórico validado. Los IDs son opacos:
-    el tipo del nodo identifica conceptos, prácticas y objetivos de países.
-    """
+    # Implementation notes:
+    # La referencia debe proceder del cargador histórico validado. Los IDs son opacos:
+    # el tipo del nodo identifica conceptos, prácticas y objetivos de países.
     inicio = time.perf_counter()
     politica = politica or PoliticaConocimiento()
     if curriculo.version != "V4" or referencia_v3.procedencia.get("version_curriculo") != "V3":

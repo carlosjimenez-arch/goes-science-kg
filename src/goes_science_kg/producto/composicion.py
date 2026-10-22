@@ -1,4 +1,4 @@
-"""Composición de cohortes completas: conserva protocolos originales y rechaza rondas repetidas."""
+"""Compose complete cohorts while preserving protocols and rejecting repeated rounds."""
 
 from __future__ import annotations
 
@@ -19,11 +19,11 @@ def componer_archivos(
     modelos_esperados: dict[str, str] | None = None,
     validar_resultado: bool = True,
 ) -> ArchivoConocimiento:
-    """Revalida cada entrada, une todos sus resultados y comprueba ciclos entre cohortes.
+    """Revalidate all complete cohorts and reject dependency cycles across their composition."""
 
-    Los componentes originales se conservan completos para verificar su hash y su cierre. La vista
-    conjunta deduplica fuentes y evidencia para recuperación; nunca selecciona sólo los respaldos.
-    """
+    # Implementation notes:
+    # Los componentes originales se conservan completos para verificar su hash y su cierre. La vista
+    # conjunta deduplica fuentes y evidencia para recuperación; nunca selecciona sólo los respaldos.
     if not 2 <= len(archivos) <= 50 or any(a.version != "conocimiento-publicado-1" for a in archivos):
         raise ValueError("Se requieren de dos a cincuenta archivos originales, sin composiciones anidadas")
     archivos = tuple(sorted(archivos, key=lambda a: a.huella_archivo))

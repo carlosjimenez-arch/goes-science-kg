@@ -1,4 +1,4 @@
-"""Mejoras curriculares completas V4 y su ejecución finita con Vertex."""
+"""Prepare and execute finite V4 curriculum improvement campaigns."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ app = typer.Typer(help="Propuestas curriculares V4 completas, cuatro revisiones 
 
 @app.command("preparar")
 def preparar(destino: Annotated[Path, typer.Option()]) -> None:
-    """Relee todas las unidades y fuentes, conserva 1.020 filas; cero llamadas a modelos."""
+    """Rehydrate all units and sources while preserving the complete curriculum denominator."""
     from goes_science_kg.motor.mejoras import MotorMejoras
     from goes_science_kg.producto.mejoras_contratos import SolicitudMejora
     from goes_science_kg.producto.preparacion_mejoras import PreparadorMejoras, datos_mejora
@@ -75,7 +75,7 @@ def ejecutar(
     unidad_id: Annotated[list[str] | None, typer.Option(help="ID de preparación; opción repetible")] = None,
     trabajadores: Annotated[int, typer.Option(min=1, max=8)] = 1,
 ) -> None:
-    """Sin --ejecutar informa el plan. Con él conserva un único contador y checkpoint por unidad."""
+    """Show the plan or execute with one cumulative campaign counter and unit checkpoints."""
     from goes_science_kg.internacional.vertex import verificar_cuenta
     from goes_science_kg.observabilidad import configurar_logging
     from goes_science_kg.producto.runtime import cargar_runtime
@@ -139,7 +139,7 @@ def consolidar(
     seguimiento: Annotated[Path | None, typer.Option()] = None,
     rectificacion: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
-    """Exige todas las unidades y conserva las ejecuciones fallidas y controles adversariales."""
+    """Require complete unit coverage while retaining failed runs and adversarial controls."""
     from goes_science_kg.producto.publicacion_mejoras import consolidar_campana, guardar_archivo
     from goes_science_kg.producto.runtime import cargar_runtime
 
@@ -167,7 +167,7 @@ def seguimiento(
     destino: Annotated[Path, typer.Option()],
     ejecutar: bool = typer.Option(False, "--ejecutar"),
 ) -> None:
-    """Prepara un seguimiento de incidencias; sólo --ejecutar invoca modelos, con dos unidades concurrentes."""
+    """Prepare finite incident follow-up and invoke models only under explicit execution."""
     from collections import Counter
 
     from goes_science_kg.internacional.vertex import verificar_cuenta
@@ -199,7 +199,7 @@ def seguimiento(
 
 @app.command("publicar")
 def publicar(archivo: Path, destino: Annotated[Path, typer.Option()] = Path("data/producto/V4")) -> None:
-    """Relee todas las fuentes y selecciona atómicamente los diez archivos de producto-4."""
+    """Verify sources and atomically select the complete product-4 generation."""
     from goes_science_kg.producto.mejoras_publicadas import ArchivoMejoras
     from goes_science_kg.producto.publicacion_mejoras import publicar_mejoras
     from goes_science_kg.producto.runtime import cargar_runtime
@@ -218,7 +218,7 @@ def rectificar(
     destino: Annotated[Path, typer.Option()],
     ejecutar: bool = typer.Option(False, "--ejecutar"),
 ) -> None:
-    """Registra y corrige el falso positivo sobre levadura/cultivo bacteriano; conserva el caso anterior."""
+    """Record a corrected scientific false positive while preserving its original dossier."""
     from goes_science_kg.internacional.vertex import verificar_cuenta
     from goes_science_kg.observabilidad import configurar_logging
     from goes_science_kg.producto.mejoras_publicadas import CasoMejora
@@ -251,7 +251,7 @@ def rectificar(
 
 @app.command("exportar")
 def exportar(destino: Annotated[Path, typer.Option()]) -> None:
-    """Entrega Excel, CSV y vista local de la publicación actual, sin invocar modelos."""
+    """Export Excel, CSV, and offline views without invoking models."""
     from goes_science_kg.producto.exportacion_mejoras import exportar_entrega
     from goes_science_kg.producto.runtime import cargar_runtime
 
@@ -277,7 +277,7 @@ def ensayar(
     ] = None,
     ejecutar: bool = typer.Option(False, "--ejecutar"),
 ) -> None:
-    """Prueba cinco defectos distintos; las etiquetas esperadas nunca se envían al proveedor."""
+    """Test five declared defects without exposing expected labels to the provider."""
     from goes_science_kg.internacional.vertex import verificar_cuenta
     from goes_science_kg.observabilidad import configurar_logging
     from goes_science_kg.producto.mejoras_publicadas import CasoMejora

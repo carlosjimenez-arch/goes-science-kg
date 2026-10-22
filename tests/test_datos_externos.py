@@ -1,9 +1,10 @@
-"""La migración preserva el corpus y no retira datos cambiados o sin recibo coincidente."""
+"""Preserve corpus bytes and reject retirement after changes or receipt mismatches."""
 
 from __future__ import annotations
 
 import json
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 
 import pytest
@@ -120,7 +121,7 @@ def test_sqlite_respalda_transacciones_del_wal_y_excluye_locks(tmp_path):
     from goes_science_kg.operacion.respaldo import restaurar_paquete
 
     restaurar_paquete(archivo, tmp_path / "restaurado", sha256=plan["paquete_local"]["sha256"])
-    with sqlite3.connect(tmp_path / "restaurado/data/registro.sqlite") as restaurada:
+    with closing(sqlite3.connect(tmp_path / "restaurado/data/registro.sqlite")) as restaurada, restaurada:
         assert restaurada.execute("SELECT usd FROM reservas").fetchall() == [(1.25,)]
     con.close()
 
@@ -155,12 +156,17 @@ def test_presupuestos_restaurados_conservan_reservas_y_solo_migran_el_vinculo(tm
     original = tmp_path / "original"
     registro = Registro(original / datos.LEDGER)
     llamada = registro.reservar(
-        ejecucion="campana-original", clave="k", modelo="m", rol="r",
-        reserva_usd=1.25, max_llamadas=1, max_usd=2,
+        ejecucion="campana-original",
+        clave="k",
+        modelo="m",
+        rol="r",
+        reserva_usd=1.25,
+        max_llamadas=1,
+        max_usd=2,
     )
     registro.guardar_salida(llamada, "respuesta que se conserva")
     identidad = datos.identidad_ledger(registro.archivo)
-    with sqlite3.connect(original / "data/operaciones/checkpoints.sqlite") as db:
+    with closing(sqlite3.connect(original / "data/operaciones/checkpoints.sqlite")) as db, db:
         _vincular_presupuesto(db, "campana-original", json.dumps(identidad, sort_keys=True))
     archivo = tmp_path / "datos.zip"
     plan = datos.preparar(original, {"rutas": ["data"]}, archivo)
@@ -168,7 +174,9 @@ def test_presupuestos_restaurados_conservan_reservas_y_solo_migran_el_vinculo(tm
         "version": datos.VERSION,
         "paquete": {"sha256": plan["paquete_local"]["sha256"]},
         "huella_inventario": plan["paquete_local"]["huella_inventario"],
-        "montajes": ["data"], "enlaces": {}, "identidad_ledger": identidad,
+        "montajes": ["data"],
+        "enlaces": {},
+        "identidad_ledger": identidad,
     }
     destino = tmp_path / "restaurado"
     restauracion = datos.restaurar(archivo, destino, recibo)
@@ -180,7 +188,7 @@ def test_presupuestos_restaurados_conservan_reservas_y_solo_migran_el_vinculo(tm
     migracion = migrar_presupuestos(destino, recibo, restauracion["sqlite_verificados"])
     assert migracion["vinculos_actualizados"] == 1
     assert datos.digest(destino / datos.LEDGER) == ledger_sha
-    with sqlite3.connect(destino / "data/operaciones/checkpoints.sqlite") as db:
+    with closing(sqlite3.connect(destino / "data/operaciones/checkpoints.sqlite")) as db, db:
         _vincular_presupuesto(
             db, "campana-original", json.dumps(datos.identidad_ledger(destino / datos.LEDGER), sort_keys=True)
         )
@@ -188,8 +196,13 @@ def test_presupuestos_restaurados_conservan_reservas_y_solo_migran_el_vinculo(tm
     assert restaurado.salida("k") == "respuesta que se conserva"
     with pytest.raises(PresupuestoAgotado):
         restaurado.reservar(
-            ejecucion="campana-original", clave="otra", modelo="m", rol="r",
-            reserva_usd=0.1, max_llamadas=1, max_usd=2,
+            ejecucion="campana-original",
+            clave="otra",
+            modelo="m",
+            rol="r",
+            reserva_usd=0.1,
+            max_llamadas=1,
+            max_usd=2,
         )
     assert json.loads(Path(migracion["auditoria"]).read_bytes())["estado"] == "completado"
     with pytest.raises(ValueError, match="SQLite cambió"):

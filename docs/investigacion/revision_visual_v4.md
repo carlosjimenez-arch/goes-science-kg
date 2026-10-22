@@ -1,5 +1,8 @@
 # Revisión visual del explorador V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. **Resultado: escritorio y móvil revisados, descarga Markdown sin confirmar.**
 
 ## Continuación: vista móvil y corrección

@@ -1,4 +1,4 @@
-"""El RAG auxiliar reabre el párrafo exacto; sólo se evalúa su corpus delimitado."""
+"""Rehydrate exact primary paragraphs and evaluate only the declared scientific corpus."""
 
 import pytest
 

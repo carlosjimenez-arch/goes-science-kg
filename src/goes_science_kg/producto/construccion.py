@@ -1,4 +1,4 @@
-"""Construcción del grafo curricular V4, sin decisiones ni relaciones heredadas de temas V3."""
+"""Build the V4 graph without inheriting V3 topic decisions or relationships."""
 
 from __future__ import annotations
 
@@ -135,7 +135,7 @@ def _incorporar_referencias(
     aristas: list[Arista],
     referencias: ReferenciasProducto,
 ) -> None:
-    """Retiene red de referencia sin temas/propuestas anteriores ni documentos huérfanos."""
+    """Retain reference networks without inheriting prior topics, proposals, or orphan documents."""
     prohibidos = {
         TipoNodo.TEMA,
         TipoNodo.PROPUESTA,
@@ -217,7 +217,7 @@ def construir_producto(
     modelos_alineacion: dict[str, str] | None = None,
     paginas_alineacion=None,
 ) -> dict:
-    """Valida, construye y publica un snapshot completo fuera del grafo histórico."""
+    """Validate, build, and publish a complete V4 snapshot outside the historical graph."""
     from goes_science_kg.producto.almacen import publicar_producto
 
     LOGGER.info("Producto V4: validando integridad de currículo y catálogo")

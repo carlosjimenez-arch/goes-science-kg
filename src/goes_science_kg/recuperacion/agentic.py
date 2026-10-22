@@ -1,8 +1,8 @@
-"""Candidato experimental: una reformulación dirigida por una carencia determinista.
+"""Evaluate a bounded experimental query reformulation driven by explicit evidence gaps."""
 
-El plan no es evidencia y nunca selecciona documentos. Los filtros y el límite K pertenecen a la
-solicitud original; la hidratación posterior mantiene su propio presupuesto de contexto verificable.
-"""
+# Historical implementation notes:
+# El plan no es evidencia y nunca selecciona documentos. Los filtros y el límite K pertenecen a la
+# solicitud original; la hidratación posterior mantiene su propio presupuesto de contexto verificable.
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ COORDENADA = re.compile(r"^[A-Z]{1,3}[1-9][0-9]{0,6}$")
 
 
 class ConfiguracionAgentic(BaseModel):
-    """Parámetros congelables antes de medir; no se ajustan a partir del gold."""
+    """Freeze experimental retrieval parameters before evaluation against reference annotations."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
     cobertura_minima: float = Field(default=0.5, gt=0, le=1)
@@ -45,6 +45,8 @@ class ConfiguracionAgentic(BaseModel):
 
 
 class PlanBusqueda(BaseModel):
+    """Propose one bounded retrieval reformulation and its evidence-gap rationale."""
+
     model_config = ConfigDict(extra="forbid", frozen=True)
     consulta_busqueda: str = Field(min_length=3, max_length=600)
     motivo: str = Field(min_length=8, max_length=240)
@@ -74,12 +76,14 @@ class PlanBusqueda(BaseModel):
 
 @dataclass(frozen=True)
 class BusquedaAgentic:
+    """Retain experimental retrieval results with their complete bounded execution trace."""
+
     resultados: list[Resultado]
     traza: dict
 
 
 def es_objetivo_local(documento: Documento, version: str) -> bool:
-    """Identifica localizadores curriculares, sin convertir este diagnóstico en verificación."""
+    """Recognize local curriculum locators without treating recognition as source verification."""
     if documento.version != version or version == "referencia":
         return False
     if documento.fuente.get("tipo") == "derivada" or documento.metadata.get("fuente_primaria") is False:
@@ -98,7 +102,7 @@ def _asignatura(texto: str | None) -> tuple[str, ...] | None:
 
 
 class BuscadorAgentic:
-    """Wrapper del puerto Recuperador, sin herramientas abiertas ni bucles de planificación."""
+    """Wrap retrieval with bounded reformulation and no unrestricted planning tools."""
 
     def __init__(
         self,
@@ -123,8 +127,16 @@ class BuscadorAgentic:
             raise ValueError("El planificador debe declarar su modelo real")
         proveedor = getattr(modelo, "configuracion", None)
         configuracion_proveedor = {
-            clave: valor for clave in ("proyecto", "region", "max_salida_tokens", "timeout_segundos",
-                                      "reintentos", "max_llamadas", "max_usd")
+            clave: valor
+            for clave in (
+                "proyecto",
+                "region",
+                "max_salida_tokens",
+                "timeout_segundos",
+                "reintentos",
+                "max_llamadas",
+                "max_usd",
+            )
             if isinstance(valor := getattr(proveedor, clave, None), (str, int, float, bool))
         }
         niveles = getattr(proveedor, "niveles_razonamiento", {})
@@ -166,9 +178,14 @@ class BuscadorAgentic:
     def _diagnostico(self, consulta: str, resultados: Sequence[Resultado], version: str) -> dict:
         terminos = set(normalizar(consulta))
         locales = [r.documento for r in resultados if es_objetivo_local(r.documento, version)]
-        cobertura = max(
-            (len(terminos.intersection(normalizar(d.texto))) / len(terminos) for d in locales), default=0.0,
-        ) if terminos else 0.0
+        cobertura = (
+            max(
+                (len(terminos.intersection(normalizar(d.texto))) / len(terminos) for d in locales),
+                default=0.0,
+            )
+            if terminos
+            else 0.0
+        )
         motivo = "suficiente"
         if not terminos:
             motivo = "consulta_sin_terminos"
@@ -176,8 +193,12 @@ class BuscadorAgentic:
             motivo = "sin_objetivo_local"
         elif cobertura < self.configuracion.cobertura_minima:
             motivo = "cobertura_lexica_insuficiente"
-        return {"motivo": motivo, "cobertura_lexica": cobertura,
-                "resultados": len(resultados), "objetivos_locales": len(locales)}
+        return {
+            "motivo": motivo,
+            "cobertura_lexica": cobertura,
+            "resultados": len(resultados),
+            "objetivos_locales": len(locales),
+        }
 
     def _fusionar(self, iniciales, adicionales, *, version: str, k: int) -> list[Resultado]:
         puntos: dict[str, float] = {}
@@ -189,24 +210,50 @@ class BuscadorAgentic:
                     self.configuracion.constante_rrf + posicion
                 )
                 canales.setdefault(identificador, set()).update(resultado.canales)
-        orden = sorted(puntos, key=lambda i: (
-            not es_objetivo_local(self.documentos[i], version), -puntos[i], i,
-        ))[:k]
-        return [Resultado(documento=self.documentos[i].model_copy(deep=True), puntaje=puntos[i],
-                          canales=tuple(sorted(canales[i] | {"agentic"}))) for i in orden]
+        orden = sorted(
+            puntos,
+            key=lambda i: (
+                not es_objetivo_local(self.documentos[i], version),
+                -puntos[i],
+                i,
+            ),
+        )[:k]
+        return [
+            Resultado(
+                documento=self.documentos[i].model_copy(deep=True),
+                puntaje=puntos[i],
+                canales=tuple(sorted(canales[i] | {"agentic"})),
+            )
+            for i in orden
+        ]
 
     def buscar(
-        self, consulta: str, *, version: str | None = None, grado: int | None = None,
-        asignatura: str | None = None, k: int = 10, saltos_grafo: int = 1,
+        self,
+        consulta: str,
+        *,
+        version: str | None = None,
+        grado: int | None = None,
+        asignatura: str | None = None,
+        k: int = 10,
+        saltos_grafo: int = 1,
     ) -> list[Resultado]:
-        return self.buscar_con_traza(consulta, version=version, grado=grado, asignatura=asignatura,
-                                     k=k, saltos_grafo=saltos_grafo).resultados
+        """Retrieve through the bounded agentic candidate while preserving baseline fallback."""
+
+        return self.buscar_con_traza(
+            consulta, version=version, grado=grado, asignatura=asignatura, k=k, saltos_grafo=saltos_grafo
+        ).resultados
 
     def buscar_con_traza(
-        self, consulta: str, *, version: str | None = None, grado: int | None = None,
-        asignatura: str | None = None, k: int = 10, saltos_grafo: int = 1,
+        self,
+        consulta: str,
+        *,
+        version: str | None = None,
+        grado: int | None = None,
+        asignatura: str | None = None,
+        k: int = 10,
+        saltos_grafo: int = 1,
     ) -> BusquedaAgentic:
-        """Máximo dos búsquedas y una generación lógica; errores del planner conservan el baseline."""
+        """Run at most two searches and preserve the baseline if query planning fails."""
         if not isinstance(consulta, str) or len(consulta) > 2000:
             raise ValueError("La consulta debe ser texto de hasta 2.000 caracteres")
         if not isinstance(k, int) or isinstance(k, bool) or not 1 <= k <= 100 or not 0 <= saltos_grafo <= 2:
@@ -221,31 +268,49 @@ class BuscadorAgentic:
         if vigente not in self.versiones or len(vigente) > 32:
             raise ValueError("La versión debe identificar una malla presente en el corpus")
         inicio = time.perf_counter()
-        filtros = {"version": version, "grado": grado, "asignatura": asignatura, "k": k,
-                   "saltos_grafo": saltos_grafo}
-        iniciales = self._filtrar(self.baseline.buscar(consulta, **filtros), version=vigente,
-                                  grado=grado, asignatura=asignatura, k=k)
+        filtros = {"version": version, "grado": grado, "asignatura": asignatura, "k": k, "saltos_grafo": saltos_grafo}
+        iniciales = self._filtrar(
+            self.baseline.buscar(consulta, **filtros), version=vigente, grado=grado, asignatura=asignatura, k=k
+        )
         diagnostico = self._diagnostico(consulta, iniciales, vigente)
-        traza = {"diagnostico": diagnostico, "busquedas": 1, "planificaciones": 0, "errores": [],
-                 "consulta_reformulada": None, "motivo_plan": None}
+        traza = {
+            "diagnostico": diagnostico,
+            "busquedas": 1,
+            "planificaciones": 0,
+            "errores": [],
+            "consulta_reformulada": None,
+            "motivo_plan": None,
+        }
         salida = iniciales
         if diagnostico["motivo"] not in {"suficiente", "consulta_sin_terminos"}:
-            mensaje = json.dumps({"consulta": consulta, "filtros": {"version": version, "grado": grado,
-                                 "asignatura": asignatura}, "diagnostico": diagnostico}, ensure_ascii=False)
+            mensaje = json.dumps(
+                {
+                    "consulta": consulta,
+                    "filtros": {"version": version, "grado": grado, "asignatura": asignatura},
+                    "diagnostico": diagnostico,
+                },
+                ensure_ascii=False,
+            )
             caracteres = len(SISTEMA_PLANIFICADOR + mensaje + json.dumps(PlanBusqueda.model_json_schema()))
             if caracteres > self.configuracion.max_caracteres_plan:
                 traza["errores"].append("presupuesto_plan_insuficiente")
             else:
                 try:
                     traza["planificaciones"] = 1
-                    respuesta = self.modelo.generar(rol=ROL_PLANIFICADOR, sistema=SISTEMA_PLANIFICADOR,
-                                                    mensaje=mensaje, esquema=PlanBusqueda)
+                    respuesta = self.modelo.generar(
+                        rol=ROL_PLANIFICADOR, sistema=SISTEMA_PLANIFICADOR, mensaje=mensaje, esquema=PlanBusqueda
+                    )
                     plan = PlanBusqueda.model_validate(respuesta.model_dump())
                     traza.update(consulta_reformulada=plan.consulta_busqueda, motivo_plan=plan.motivo)
                     if normalizar(plan.consulta_busqueda) != normalizar(consulta):
                         traza["busquedas"] = 2
-                        adicionales = self._filtrar(self.baseline.buscar(plan.consulta_busqueda, **filtros),
-                                                   version=vigente, grado=grado, asignatura=asignatura, k=k)
+                        adicionales = self._filtrar(
+                            self.baseline.buscar(plan.consulta_busqueda, **filtros),
+                            version=vigente,
+                            grado=grado,
+                            asignatura=asignatura,
+                            k=k,
+                        )
                         if adicionales:
                             salida = self._fusionar(iniciales, adicionales, version=vigente, k=k)
                 except Exception as error:

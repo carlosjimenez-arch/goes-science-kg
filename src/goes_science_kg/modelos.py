@@ -1,12 +1,12 @@
-"""Contrato del grafo: tipos de nodo, tipos de arista y evidencia.
+"""Define graph node types, edge types, and source evidence contracts."""
 
-Es la versión ejecutable de specs/02_modelo_del_grafo.md. Si cambia una, cambia la otra.
-
-Invariantes (las revisa grafo.validar):
-- Todo nodo que sale de un documento trae `fuente` (documento + página, u hoja + fila en las mallas).
-- Toda arista inferida por IA trae confianza, justificación (≤ 15 palabras) y versión.
-- Los ids son estables y no dependen del orden de lectura.
-"""
+# Historical implementation notes:
+# Es la versión ejecutable de specs/02_modelo_del_grafo.md. Si cambia una, cambia la otra.
+#
+# Invariantes (las revisa grafo.validar):
+# - Todo nodo que sale de un documento trae `fuente` (documento + página, u hoja + fila en las mallas).
+# - Toda arista inferida por IA trae confianza, justificación (≤ 15 palabras) y versión.
+# - Los ids son estables y no dependen del orden de lectura.
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class TipoNodo(StrEnum):
-    """Tipos de nodo del grafo; el comentario de cada valor muestra el formato de su id."""
+    """Enumerate graph node types and their documented identity formats."""
 
     ASIGNATURA = "Asignatura"  # ASIG:biologia
     GRADO = "Grado"  # GRADO:07 (grados de El Salvador)
@@ -42,7 +42,7 @@ class TipoNodo(StrEnum):
 
 
 class TipoArista(StrEnum):
-    """Tipos de arista del grafo; el comentario de cada valor indica los tipos de nodo que une."""
+    """Enumerate typed graph relationships and their allowed endpoint categories."""
 
     EN_GRADO = "EN_GRADO"  # Tema → Grado
     DE_ASIGNATURA = "DE_ASIGNATURA"  # Tema | ObjetivoMarco | ObjetivoPais → Asignatura
@@ -81,7 +81,7 @@ ARISTAS_INFERIDAS = {
 
 
 class Confianza(StrEnum):
-    """Nivel de confianza de una arista inferida."""
+    """Represent the declared confidence of an inferred relationship."""
 
     ALTA = "alta"
     MEDIA = "media"
@@ -89,7 +89,7 @@ class Confianza(StrEnum):
 
 
 class Fuente(BaseModel):
-    """De dónde sale un nodo: documento externo (id del manifiesto + página o localizador) o malla (hoja + fila)."""
+    """Locate original evidence by registered document, page, sheet, row, or native code."""
 
     model_config = ConfigDict(extra="forbid")
 
@@ -110,7 +110,7 @@ class Fuente(BaseModel):
 
 
 class Nodo(BaseModel):
-    """Nodo del grafo: id estable, tipo, etiqueta y, según el tipo, asignatura, grado, fuente y propiedades."""
+    """Represent a stable graph node with its type, label, context, and provenance."""
 
     model_config = ConfigDict(extra="forbid")
 
@@ -124,8 +124,10 @@ class Nodo(BaseModel):
 
 
 class Arista(BaseModel):
-    """Arista dirigida entre dos ids; si es de un tipo inferido y su método es «ia», exige confianza, justificación
-    y versión."""
+    """Represent a typed directed edge with mandatory provenance for AI inferences."""
+
+    # Implementation notes:
+    # y versión.
 
     model_config = ConfigDict(extra="forbid")
 
@@ -149,5 +151,5 @@ class Arista(BaseModel):
 
     @property
     def clave(self) -> tuple[str, str, str, str | None]:
-        """Identidad de la arista: (origen, destino, tipo, rol)."""
+        """Return the edge's source, destination, type, and role identity."""
         return (self.origen, self.destino, self.tipo, self.rol)

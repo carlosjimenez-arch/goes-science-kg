@@ -42,9 +42,12 @@ def test_intencion_pais_reconoce_paises_y_gentilicios():
     def nombrados(plano):
         return {c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano)}
 
-    for consulta, codigo in [("¿Cómo enseña Japón las fases de la Luna?", "JP"),
-                             ("¿Qué aprenden los estudiantes japoneses sobre solubilidad?", "JP"),
-                             ("Currículo de Inglaterra en KS3", "ENG"), ("¿Y en Australia?", "AU")]:
+    for consulta, codigo in [
+        ("¿Cómo enseña Japón las fases de la Luna?", "JP"),
+        ("¿Qué aprenden los estudiantes japoneses sobre solubilidad?", "JP"),
+        ("Currículo de Inglaterra en KS3", "ENG"),
+        ("¿Y en Australia?", "AU"),
+    ]:
         plano = _sin_tildes(consulta)
         assert INTENCION_PAISES.search(plano), consulta
         assert codigo in nombrados(plano), consulta
@@ -55,7 +58,7 @@ def test_intencion_pais_reconoce_paises_y_gentilicios():
 
 
 def test_curriculo_australiano_es_marco_no_pais(grafo):
-    """«currículo australiano» apunta al marco ACARA: no debe reforzar los objetivos de Australia como país."""
+    """Interpret Australian curriculum queries as framework evidence rather than country-ranking intent."""
     from goes_science_kg.rag import GraphRAG
 
     nodos, aristas = grafo
@@ -68,9 +71,11 @@ def test_curriculo_australiano_es_marco_no_pais(grafo):
 def test_intencion_prerrequisito_con_redaccion_variada():
     from goes_science_kg.rag import INTENCION_PRERREQ, _sin_tildes
 
-    for consulta in ["¿Sobre qué conceptos se apoya la conservación de la energía?",
-                     "¿Qué base conceptual necesita un estudiante para calcular el pH?",
-                     "¿Qué tendría que haberse trabajado antes de la meiosis?"]:
+    for consulta in [
+        "¿Sobre qué conceptos se apoya la conservación de la energía?",
+        "¿Qué base conceptual necesita un estudiante para calcular el pH?",
+        "¿Qué tendría que haberse trabajado antes de la meiosis?",
+    ]:
         # Hueco conocido: «¿de qué depende…?» (orden invertido) no se reconoce;
         # se mide antes de ampliar (resultados.md).
         assert INTENCION_PRERREQ.search(_sin_tildes(consulta)), consulta

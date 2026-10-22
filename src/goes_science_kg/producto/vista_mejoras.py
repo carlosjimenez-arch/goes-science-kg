@@ -1,4 +1,4 @@
-"""Vista autocontenida de original/propuesta con evidencias y rondas conservadas."""
+"""Render original and proposed curricula with their evidence and review history."""
 
 import html
 from importlib.resources import files
@@ -27,6 +27,8 @@ ESTADOS = {
 
 
 def h(valor):
+    """Escape source values before interpolating them into the offline HTML view."""
+
     return html.escape(str(valor), quote=True)
 
 
@@ -127,6 +129,8 @@ def _unidad(caso):
 
 
 def vista_mejoras(curriculo, archivo) -> str:
+    """Render the complete original-versus-proposal view with evidence and review history."""
+
     progresiones = []
     for e in archivo.progresiones["catalogo"]["expectativas"]:
         progresiones.append(

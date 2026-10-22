@@ -1,4 +1,4 @@
-"""Integración de terminal con fuentes locales: controles previos a cualquier proveedor."""
+"""Check unit CLI preconditions before any provider can be initialized."""
 
 from __future__ import annotations
 
@@ -41,7 +41,7 @@ RUTA = ["producto", "unidades"]
 
 @pytest.fixture
 def entorno(tmp_path, monkeypatch):
-    """Dos filas reales y una publicación en memoria; Vertex queda prohibido por defecto."""
+    """Use real temporary rows with an in-memory publication and forbid Vertex by default."""
     monkeypatch.setenv("GSKG_RAIZ", str(tmp_path))
     directorio = tmp_path / "insumos/v4"
     directorio.mkdir(parents=True)

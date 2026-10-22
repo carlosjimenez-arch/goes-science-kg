@@ -1,4 +1,4 @@
-"""Preparación local y ejecución explícita de paquetes docentes por unidad."""
+"""Prepare teaching units locally and execute their explicitly selected objectives."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ app = typer.Typer(help="Unidades V4: objetivos, aula, evidencia y sesiones", no_
 
 
 def _destino(destino: Path) -> Path:
-    """Comprueba todos los nombres antes de preparar o invocar proveedores."""
+    """Validate destination names before preparing content or invoking providers."""
     if destino.is_symlink() or (destino.exists() and not destino.is_dir()):
         raise ValueError("El destino debe ser un directorio propio, no un archivo ni un enlace simbólico")
     for nombre in ("paquete.json", "paquete.md"):
@@ -31,7 +31,7 @@ def listar(
     grado: Annotated[int | None, typer.Option(min=2, max=11)] = None,
     asignatura_malla: Annotated[str | None, typer.Option()] = None,
 ) -> None:
-    """Muestra nombres exactos y cantidad de filas de cada unidad del insumo."""
+    """List exact unit names and their original row counts."""
     from goes_science_kg.curriculo import cargar_curriculo
 
     conteos = Counter(
@@ -61,7 +61,7 @@ def preparar(
     apoyo: Annotated[list[str] | None, typer.Option(help="Apoyo conocido; opción repetible")] = None,
     seguridad: Annotated[list[str] | None, typer.Option(help="Restricción conocida; opción repetible")] = None,
 ) -> None:
-    """Exporta todas las filas y sus evidencias; no genera respuestas ni usa GCP."""
+    """Export every original unit row and its evidence without generating responses."""
     from goes_science_kg.curriculo import cargar_curriculo
     from goes_science_kg.curriculo.catalogacion import CatalogoDisciplinas
     from goes_science_kg.curriculo.contexto_fuentes import fuentes_del_curriculo
@@ -126,7 +126,7 @@ def ejecutar(
     max_llamadas: Annotated[int, typer.Option(min=1, max=200)] = 24,
     max_salida_tokens: Annotated[int, typer.Option(min=256, max=16384)] = 4096,
 ) -> None:
-    """Muestra el plan; --ejecutar requiere la misma publicación completa que el paquete."""
+    """Plan or explicitly execute against the same complete publication as the package."""
     from goes_science_kg.motor.contratos import huella
     from goes_science_kg.producto.unidades import PaqueteUnidad
 
@@ -188,7 +188,7 @@ def ejecutar(
 
 
 def _crear_motor(paquete, id_ejecucion, max_usd, max_llamadas, max_salida_tokens):
-    """Revalida la publicación y prepara un proveedor; no solicita respuestas."""
+    """Revalidate the publication and prepare a provider without requesting responses."""
     from goes_science_kg.motor.contratos import huella
     from goes_science_kg.motor.flujo import Motor
     from goes_science_kg.motor.registro import Registro
@@ -241,7 +241,7 @@ def recuperar_transporte(
     ejecutar: bool = typer.Option(False, "--ejecutar"),
     max_salida_tokens: Annotated[int, typer.Option(min=256, max=16384)] = 4096,
 ) -> None:
-    """Una recuperación sin respuestas; conserva el ID, límites, ledger y archivo originales."""
+    """Recover one unanswered transport failure while preserving identities and budgets."""
     import hashlib
 
     from goes_science_kg.archivos import escribir_texto_generado

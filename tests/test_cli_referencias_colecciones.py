@@ -1,4 +1,4 @@
-"""Colecciones documentales separadas y exportación protegida, sin red ni modelos."""
+"""Isolate documentary collections and protect export destinations without network calls."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def _pdf(texto):
 
 @pytest.fixture
 def colecciones(tmp_path, monkeypatch):
-    """Un mismo ID con contenidos distintos demuestra aislamiento real entre repositorios."""
+    """Use conflicting same-ID documents to demonstrate actual repository isolation."""
     monkeypatch.setenv("GSKG_RAIZ", str(tmp_path))
     repositorios = {}
     catalogos = {}

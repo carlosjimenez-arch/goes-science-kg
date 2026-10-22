@@ -1,4 +1,4 @@
-"""Vocabulario explícito de materiales equivalentes; no infiere disponibilidad de aula."""
+"""Define explicit material equivalences without assuming classroom availability."""
 
 import re
 
@@ -19,5 +19,7 @@ POR_ALIAS = {_normalizar(alias): id_recurso for id_recurso, nombres in ALIAS.ite
 
 
 def canonico(recurso: str) -> str:
+    """Resolve an explicitly registered resource synonym to its canonical name."""
+
     limpio = _normalizar(recurso)
     return POR_ALIAS.get(limpio, limpio)

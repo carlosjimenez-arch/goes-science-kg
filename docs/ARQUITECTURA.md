@@ -1,6 +1,6 @@
 # Arquitectura del motor curricular
 
-La reconstrucción conserva el grafo y el pipeline anterior como referencia reproducible. Las capacidades nuevas tienen contratos de aplicación y adaptadores separados; la CLI es un paquete de grupos, con el mismo entrypoint `goes_science_kg.cli:app`. No hay CI en esta fase.
+La reconstrucción conserva el grafo y el pipeline anterior como referencia reproducible. Las capacidades nuevas tienen contratos de aplicación y adaptadores separados; la CLI es un paquete de grupos, con el mismo entrypoint `goes_science_kg.cli:app`. La CI portable y la medición integral local se describen en [Calidad](CALIDAD.md).
 
 ```text
 ingesta/         Fuentes y matriz local → inventario y unidades curriculares
@@ -13,6 +13,31 @@ operacion/       Recuperación única de transporte, sin repetir respuestas ni v
 cli/             Argumentos y JSON → casos de uso
 observabilidad   Terminal semafórica y log de operación
 ```
+
+## Aplicación y lectura HTTP · feat/api
+
+`api.py` compone FastAPI, OpenAPI y la aplicación. `producto/lectura.py::LecturaProducto` concentra
+la carga verificada, exclusión de inicialización e invalidación de una generación. Todos los routers
+V4 comparten ese lector; readiness no crea otro runtime. `/health/live` comprueba el proceso y
+`/health/ready` exige una publicación íntegra.
+El lector resuelve las fuentes y ambos archivos de alertas desde su base explícita. Una copia
+alternativa no hereda las alertas derivadas del checkout que ejecuta el proceso.
+
+`interfaz/servicio.py` separa el servicio de consultas y verificación física del adaptador HTTP.
+`RegistroActividad` abre SQLite en sólo lectura y distingue una campaña ausente de gasto cero.
+`interfaz/consulta.py` indexa texto normalizado, grado, disciplina, adyacencia y aristas por nodo;
+los filtros y detalles reutilizan esos índices. El lector revalida el snapshot antes de cada consulta.
+`interfaz/contratos.py` define los esquemas públicos del listado, fuentes, subgrafo y briefs.
+
+Los IDs de conceptos admiten `/` a través del convertidor de ruta; sólo se buscan en el índice y
+nunca se interpretan como rutas del sistema. La ausencia de datos produce un error explícito sin
+exponer rutas locales. CSV y Excel declaran la identidad de snapshot en su cabecera de descarga.
+Excel fija fechas internas para producir bytes reproducibles y protege los textos de todas sus hojas.
+La interfaz confirma los briefs sólo si siguen vigentes la visita, el formato y la selección usados.
+
+Los docstrings públicos están en inglés y Ruff comprueba su presencia. Los extractores originales
+`ingesta/extraccion.py` y `ingesta/estructurados.py` conservan sus bytes por compatibilidad de evidencia.
+La migración de esos identificadores queda fuera de una normalización de estilo. [Calidad](CALIDAD.md).
 
 ## Flujo y estados
 

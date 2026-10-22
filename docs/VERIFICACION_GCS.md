@@ -1,5 +1,8 @@
 # Verificación de recuperación de Ciencias V4 · 22 de octubre de 2026
 
+> Cierre de la entrega curricular anterior, conservado como evidencia. La rama de mantenimiento actual
+> es `feat/api`; API, estilo y métricas vigentes: [índice](README.md) y [calidad](CALIDAD.md).
+
 La generación final se creó en el mismo bucket, prefijo, proyecto y cuenta GOES aprobados. Cada escritura
 volvió a comprobar UBLA activo y prevención pública heredada con política efectiva enforced. Se usó
 precondición de generación cero; no se sobrescribieron objetos ni se cambió IAM. Se descargó y verificó

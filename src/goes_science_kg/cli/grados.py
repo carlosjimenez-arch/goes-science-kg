@@ -1,4 +1,4 @@
-"""Comandos del grupo `grados`."""
+"""Expose the grados command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ app = typer.Typer(help="Grafos por grado (2.° a 11.°)", no_args_is_help=True)
 
 @app.command("construir")
 def grados_construir() -> None:
-    """Subgrafo y diagnóstico de cada grado → data/grafo/grados/ y grados/G<gg>/ficha.md."""
+    """Build grade-specific subgraphs, diagnostics, and reports."""
     from goes_science_kg.grados import construir_grados
     from goes_science_kg.grafo.almacen import cargar
 
@@ -24,7 +24,7 @@ def grados_construir() -> None:
 
 @app.command("resumenes")
 def grados_resumenes() -> None:
-    """Une los títulos y resúmenes de bloques (subagentes) → data/interim/comunidades/resumenes.json."""
+    """Merge validated thematic-block titles and summaries."""
     from goes_science_kg.comunidades import consolidar_resumenes
 
     typer.echo(json.dumps(consolidar_resumenes(), ensure_ascii=False))

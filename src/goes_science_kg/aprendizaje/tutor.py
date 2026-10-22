@@ -1,18 +1,20 @@
-"""Agente tutor (spec 13, «Tutoría»): redacta cada turno del diálogo con un modelo de lenguaje.
+"""Generate evidence-grounded tutor turns through an explicit model adapter."""
 
-El tutor no decide nada sobre el estudiante. El diagnóstico, el plan de refuerzo y el dominio son deterministas
-(diagnostico.py, planificador.py, estudiante.py): la sesión le dice al tutor qué hacer en cada turno (`tarea`) y con qué
-contexto (`contexto.paquete`); el tutor solo decide cómo decirlo. Cada turno pasa guardas deterministas antes de
-mostrarse:
-- largo según el grado (config `adaptacion`) y una sola pregunta breve;
-- no revela la respuesta de la actividad que sigue (la letra o el texto de la opción correcta, el valor numérico, la
-  respuesta modelo de una abierta);
-- cita solo fuentes del paquete (F1…Fn); sin enlaces y sin pedir datos personales.
-Con un verificador de fidelidad (fidelidad.py), además, cada afirmación científica del turno tiene que estar
-respaldada con una cita literal del contexto revisado.
-Si un turno no pasa, se reintenta con los errores; si vuelve a fallar, se muestra el microtema tal como está en la capa
-pedagógica (respaldo determinista) y queda registrado.
-"""
+# Historical implementation notes:
+# El tutor no decide nada sobre el estudiante. El diagnóstico, el plan de refuerzo y el dominio son deterministas
+# (diagnostico.py, planificador.py, estudiante.py): la sesión le dice al tutor qué hacer en cada turno (`tarea`) y con
+# qué
+# contexto (`contexto.paquete`); el tutor solo decide cómo decirlo. Cada turno pasa guardas deterministas antes de
+# mostrarse:
+# - largo según el grado (config `adaptacion`) y una sola pregunta breve;
+# - no revela la respuesta de la actividad que sigue (la letra o el texto de la opción correcta, el valor numérico, la
+#   respuesta modelo de una abierta);
+# - cita solo fuentes del paquete (F1…Fn); sin enlaces y sin pedir datos personales.
+# Con un verificador de fidelidad (fidelidad.py), además, cada afirmación científica del turno tiene que estar
+# respaldada con una cita literal del contexto revisado.
+# Si un turno no pasa, se reintenta con los errores; si vuelve a fallar, se muestra el microtema tal como está en la
+# capa
+# pedagógica (respaldo determinista) y queda registrado.
 
 from __future__ import annotations
 
@@ -26,17 +28,20 @@ from goes_science_kg.aprendizaje.pedagogia import palabras_max, registro
 
 TAREAS = {
     "introducir": "Presenta el refuerzo: explica la idea del microtema con su ejemplo, en tus palabras, y pide al "
-                  "estudiante que intente la actividad que sigue.",
+    "estudiante que intente la actividad que sigue.",
     "retroalimentar": "El estudiante acaba de responder la actividad anterior. Si acertó, confirma en una oración por "
-                      "qué está bien. Si no, da UNA pista que apunte a su error, sin decir la respuesta. Después "
-                      "invítalo a la actividad que sigue.",
+    "qué está bien. Si no, da UNA pista que apunte a su error, sin decir la respuesta. Después "
+    "invítalo a la actividad que sigue.",
     "cerrar": "El refuerzo terminó. Resume en una oración lo que trabajó y dile que vuelve al objetivo de su clase.",
 }
 
 ESQUEMA = {
     "type": "OBJECT",
-    "properties": {"mensaje": {"type": "STRING"}, "pregunta": {"type": "STRING"},
-                   "fuentes": {"type": "ARRAY", "items": {"type": "STRING"}}},
+    "properties": {
+        "mensaje": {"type": "STRING"},
+        "pregunta": {"type": "STRING"},
+        "fuentes": {"type": "ARRAY", "items": {"type": "STRING"}},
+    },
     "required": ["mensaje", "pregunta", "fuentes"],
 }
 
@@ -57,14 +62,18 @@ Responde solo con el JSON pedido."""
 
 @dataclass
 class Turno:
+    """Represent a guarded tutor message with its evidence and generation origin."""
+
     tarea: str
     mensaje: str
     pregunta: str
     fuentes: list[str]
-    origen: str                      # «modelo» o «respaldo» (texto del microtema)
-    errores: list[str] = field(default_factory=list)   # guardas que fallaron en los intentos descartados
+    origen: str  # «modelo» o «respaldo» (texto del microtema)
+    errores: list[str] = field(default_factory=list)  # guardas que fallaron en los intentos descartados
 
     def texto(self) -> str:
+        """Render the tutor turn's learner-facing message and question."""
+
         return " ".join(x for x in (self.mensaje, self.pregunta) if x)
 
 
@@ -78,9 +87,11 @@ def _palabras(s: str) -> int:
 
 
 def fuentes(paq: dict, microtema: dict | None) -> dict[str, str]:
-    """Etiqueta → fuente que el tutor puede citar: objetivo, concepto foco, microtema y citas del paquete."""
-    lista = [f"objetivo de la malla {paq['objetivo']['id']}: {paq['objetivo']['indicador']}",
-             f"concepto {paq['foco']['nombre']}: {paq['foco']['definicion']}"]
+    """Register the objective, focus concept, reinforcement, and evidence the tutor may cite."""
+    lista = [
+        f"objetivo de la malla {paq['objetivo']['id']}: {paq['objetivo']['indicador']}",
+        f"concepto {paq['foco']['nombre']}: {paq['foco']['definicion']}",
+    ]
     if microtema:
         lista.append(f"microtema {microtema['id']} «{microtema['titulo']}» ({microtema['estado']})")
     lista += paq.get("fuentes", [])
@@ -89,11 +100,11 @@ def fuentes(paq: dict, microtema: dict | None) -> dict[str, str]:
 
 def _trigramas(s: str) -> set[tuple[str, ...]]:
     w = _norma(s).split()
-    return {tuple(w[i:i + 3]) for i in range(len(w) - 2)}
+    return {tuple(w[i : i + 3]) for i in range(len(w) - 2)}
 
 
 def revela(texto: str, actividad: dict | None) -> str | None:
-    """Por qué el texto revela la respuesta de la actividad (None si no la revela)."""
+    """Explain any detected disclosure of the activity answer, or return None."""
     if not actividad:
         return None
     t = _norma(texto)
@@ -116,12 +127,14 @@ def revela(texto: str, actividad: dict | None) -> str | None:
     return None
 
 
-_DATOS_PERSONALES = re.compile(r"\b(tu|su)\s+(nombre completo|apellido|direccion|telefono|celular|correo|contrasena)"
-                               r"|\bdonde vives\b|\bcuantos anos tienes\b")
+_DATOS_PERSONALES = re.compile(
+    r"\b(tu|su)\s+(nombre completo|apellido|direccion|telefono|celular|correo|contrasena)"
+    r"|\bdonde vives\b|\bcuantos anos tienes\b"
+)
 
 
 def errores_turno(t: dict, tarea: str, grado: int, permitidas: dict[str, str], actividad: dict | None) -> list[str]:
-    """Las guardas del docstring del módulo. Lista vacía: el turno se puede mostrar."""
+    """Return guard violations that prevent displaying a tutor turn."""
     e = []
     mensaje, pregunta = (t.get("mensaje") or "").strip(), (t.get("pregunta") or "").strip()
     if not mensaje:
@@ -147,24 +160,37 @@ def errores_turno(t: dict, tarea: str, grado: int, permitidas: dict[str, str], a
 
 
 def _sin_respuesta(a: dict | None) -> dict | None:
-    """La actividad tal como la ve el estudiante: sin la clave, la rúbrica ni la retroalimentación."""
+    """Remove answer keys, rubrics, and feedback from the learner's activity view."""
     if not a:
         return None
-    return {"enunciado": a["enunciado"], "formato": a["formato"], "habilidad": a["habilidad"],
-            **({"opciones": a["opciones"]} if a["formato"] == "opcion_multiple" else {}),
-            **({"unidad": a.get("unidad")} if a["formato"] == "numerica" else {})}
+    return {
+        "enunciado": a["enunciado"],
+        "formato": a["formato"],
+        "habilidad": a["habilidad"],
+        **({"opciones": a["opciones"]} if a["formato"] == "opcion_multiple" else {}),
+        **({"unidad": a.get("unidad")} if a["formato"] == "numerica" else {}),
+    }
 
 
-def prompt(tarea: str, paq: dict, microtema: dict | None, actividad: dict | None, ultimo: dict | None,
-           permitidas: dict[str, str]) -> str:
-    """El contexto del turno: objetivo, foco, microtema, fuentes, la actividad que sigue (sin la clave) y la última
-    respuesta. Del estudiante, solo su grado y su evidencia; nunca su identificador."""
+def prompt(
+    tarea: str,
+    paq: dict,
+    microtema: dict | None,
+    actividad: dict | None,
+    ultimo: dict | None,
+    permitidas: dict[str, str],
+) -> str:
+    """Build tutor context without exposing the upcoming activity's answer key."""
+
+    # Implementation notes:
+    # respuesta. Del estudiante, solo su grado y su evidencia; nunca su identificador.
     contexto = {
         "tarea": TAREAS[tarea],
         "objetivo": {k: paq["objetivo"][k] for k in ("procedimental", "indicador", "evidencia_de_logro")},
         "foco": {k: paq["foco"][k] for k in ("nombre", "definicion")},
-        "microtema": ({k: microtema[k] for k in ("titulo", "explicacion", "ejemplo", "criterio")}
-                      if microtema else None),
+        "microtema": (
+            {k: microtema[k] for k in ("titulo", "explicacion", "ejemplo", "criterio")} if microtema else None
+        ),
         "fuentes": permitidas,
         "actividad_que_sigue": _sin_respuesta(actividad),
         "ultima_respuesta": ultimo,
@@ -174,24 +200,32 @@ def prompt(tarea: str, paq: dict, microtema: dict | None, actividad: dict | None
 
 
 class Tutor:
-    """Redacta turnos con `modelo` (ver llm.py) y aplica las guardas."""
+    """Generate model-backed tutor turns and apply deterministic display safeguards."""
 
     def __init__(self, modelo, intentos: int | None = None, verificador=None):
         self.modelo, self.verificador = modelo, verificador
         self.intentos = intentos or config_llm()["intentos_tutor"]
         self.turnos: list[Turno] = []
 
-    def turno(self, tarea: str, paq: dict, microtema: dict | None, actividad: dict | None = None,
-              ultimo: dict | None = None) -> Turno:
+    def turno(
+        self, tarea: str, paq: dict, microtema: dict | None, actividad: dict | None = None, ultimo: dict | None = None
+    ) -> Turno:
+        """Generate a tutor turn or use the reviewed fallback when unavailable."""
+
         grado = paq["estudiante"]["grado"]
         permitidas = fuentes(paq, microtema)
-        sistema = SISTEMA.format(grado=grado, registro=registro(grado), palabras=palabras_max(grado),
-                                 pregunta=config_llm()["palabras_pregunta"])
+        sistema = SISTEMA.format(
+            grado=grado,
+            registro=registro(grado),
+            palabras=palabras_max(grado),
+            pregunta=config_llm()["palabras_pregunta"],
+        )
         base = prompt(tarea, paq, microtema, actividad, ultimo, permitidas)
         errores: list[str] = []
         for _ in range(self.intentos):
-            texto = base + (f"\n\nTu turno anterior se descartó por: {'; '.join(errores)}. Corrígelo."
-                            if errores else "")
+            texto = base + (
+                f"\n\nTu turno anterior se descartó por: {'; '.join(errores)}. Corrígelo." if errores else ""
+            )
             try:
                 r = self.modelo.generar(sistema, texto, ESQUEMA, rol="tutor")
             except Exception as ex:  # noqa: BLE001 — un fallo del modelo no detiene la sesión: se usa el respaldo
@@ -201,8 +235,14 @@ class Tutor:
             if not nuevos and self.verificador:
                 nuevos = self.verificador.revisar(f"{r['mensaje']} {r.get('pregunta') or ''}".strip(), paq, microtema)
             if not nuevos:
-                t = Turno(tarea, r["mensaje"].strip(), (r.get("pregunta") or "").strip(), sorted(r["fuentes"]),
-                          "modelo", errores)
+                t = Turno(
+                    tarea,
+                    r["mensaje"].strip(),
+                    (r.get("pregunta") or "").strip(),
+                    sorted(r["fuentes"]),
+                    "modelo",
+                    errores,
+                )
                 self.turnos.append(t)
                 return t
             errores = nuevos
@@ -212,12 +252,24 @@ class Tutor:
 
     @staticmethod
     def respaldo(tarea: str, microtema: dict | None, permitidas: dict[str, str], errores: list[str]) -> Turno:
-        """El texto revisable de la capa pedagógica, sin modelo: lo que el prototipo mostraba antes del tutor."""
+        """Return the reviewed pedagogical fallback without invoking a model."""
         etiqueta_mt = next((k for k, v in permitidas.items() if v.startswith("microtema ")), None)
         if tarea == "introducir" and microtema:
-            return Turno(tarea, f"{microtema['explicacion']} {microtema['ejemplo']}".strip(),
-                         "Intenta la actividad que sigue.", [etiqueta_mt] if etiqueta_mt else [], "respaldo", errores)
+            return Turno(
+                tarea,
+                f"{microtema['explicacion']} {microtema['ejemplo']}".strip(),
+                "Intenta la actividad que sigue.",
+                [etiqueta_mt] if etiqueta_mt else [],
+                "respaldo",
+                errores,
+            )
         if tarea == "retroalimentar":
-            return Turno(tarea, "Revisa la explicación y vuelve a intentarlo.", "Intenta la actividad que sigue.",
-                         [], "respaldo", errores)
+            return Turno(
+                tarea,
+                "Revisa la explicación y vuelve a intentarlo.",
+                "Intenta la actividad que sigue.",
+                [],
+                "respaldo",
+                errores,
+            )
         return Turno(tarea, "Volvemos al objetivo de tu clase.", "", [], "respaldo", errores)

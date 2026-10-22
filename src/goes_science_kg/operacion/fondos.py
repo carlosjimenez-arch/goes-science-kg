@@ -1,10 +1,12 @@
-"""Admisión concurrente conservadora: reserva margen para todas las unidades en curso."""
+"""Reserve conservative concurrent capacity for all active curriculum units."""
 
 from contextlib import contextmanager
 from threading import Condition
 
 
 class FondosCampana:
+    """Track conservative shared funding for concurrent curriculum units."""
+
     def __init__(self, registro, ejecucion_id, *, max_llamadas, max_usd):
         self.registro, self.ejecucion_id = registro, ejecucion_id
         self.max_llamadas, self.max_usd = max_llamadas, max_usd
@@ -13,7 +15,7 @@ class FondosCampana:
 
     @contextmanager
     def unidad(self, id_, cota):
-        """Las cotas activas se cuentan completas hasta cerrar; nunca descuenta llamadas reales."""
+        """Reserve each active unit's complete bound until closure without subtracting actual calls."""
         with self.condicion:
             if id_ in self.pendientes:
                 raise ValueError("La misma unidad ya tiene fondos asignados")

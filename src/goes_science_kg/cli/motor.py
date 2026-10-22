@@ -1,4 +1,4 @@
-"""Comandos del motor curricular: versión explícita, ejecución durable y gasto acotado."""
+"""Run the curriculum engine with explicit versions, durable state, and spending limits."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ app = typer.Typer(help="Motor curricular con evidencia y revisión automática",
 
 @app.command("estado")
 def estado() -> None:
-    """Disponibilidad de las mallas; no confunde versión de grafo con versión curricular."""
+    """Report curriculum availability while distinguishing curriculum and graph format versions."""
     cfg = cargar("motor")
     from goes_science_kg.curriculo import cargar_curriculo
     from goes_science_kg.producto.runtime import cargar_recursos
@@ -60,7 +60,7 @@ def buscar(
     k: int = typer.Option(10, min=1, max=60),
     fila_id: Annotated[str | None, typer.Option(help="Recupera sólo esta fila y sus fuentes admitidas")] = None,
 ) -> None:
-    """Recuperación local sobre la publicación seleccionada; no consume GCP."""
+    """Retrieve evidence locally from the selected publication without consuming GCP."""
     from goes_science_kg.producto.runtime import cargar_recursos
 
     version = version or cargar("motor")["version_objetivo"]
@@ -89,7 +89,7 @@ def responder(
     max_usd: Annotated[float | None, typer.Option(min=0.01, max=20)] = None,
     max_salida_tokens: Annotated[int | None, typer.Option(min=256, max=16384)] = None,
 ) -> None:
-    """Por defecto prepara el contexto. --ejecutar usa Vertex con límites persistentes."""
+    """Prepare context or explicitly invoke Vertex under persistent limits."""
     from goes_science_kg.motor.contexto import construir_contexto, grupos_obligatorios
     from goes_science_kg.motor.contratos import Solicitud
     from goes_science_kg.motor.fragmentos import datos_fragmentos, preparar_fragmentos

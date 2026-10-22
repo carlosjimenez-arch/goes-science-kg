@@ -1,4 +1,4 @@
-"""Comandos del grupo `lotes`."""
+"""Expose the lotes command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ def lotes_validar(
     agente: str = typer.Option(None, help="Nombre de un subagente de .claude/agents (usa su tipo de lote)"),
     base: str = typer.Option(None, hidden=True, help="Raíz alternativa donde buscar los lotes (pruebas)"),
 ) -> None:
-    """Valida cada salida_*.json contra su lote con las reglas de la unión. Sale con 1 si hay errores."""
+    """Validate batch outputs under consolidation rules and fail on invalid records."""
 
     from goes_science_kg.lotes import comando_union, tipo_de_agente, validar
 
@@ -48,7 +48,7 @@ def lotes_vertex(
         bool, typer.Option("--confirmar", help="Pagar las llamadas a Vertex que no están en caché")
     ] = False,
 ) -> None:
-    """Corre lotes de un agente en Vertex (Gemini) con las mismas validaciones del hook; sin --confirmar solo estima."""
+    """Estimate or explicitly execute Vertex batches with the registered validators."""
 
     from goes_science_kg import agentes_vertex
     from goes_science_kg.internacional import vertex

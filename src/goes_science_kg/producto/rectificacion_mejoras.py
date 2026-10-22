@@ -1,4 +1,4 @@
-"""Rectificación documentada de un falso positivo científico, con nuevo contexto y cuatro votos."""
+"""Document scientific false-positive corrections with new context and four reviews."""
 
 from __future__ import annotations
 
@@ -35,7 +35,11 @@ HALLAZGO = (
 
 
 class PreparadorRectificacion(PreparadorMejoras):
+    """Prepare corrected scientific context while preserving the original false-positive dossier."""
+
     def preparar(self, solicitud):
+        """Build the rectification preparation with original rows and targeted primary evidence."""
+
         p = super().preparar(solicitud)
         if (solicitud.grado, solicitud.asignatura_malla, solicitud.unidad) != SOLICITUD:
             raise ValueError("Esta rectificación sólo cubre el hallazgo científico documentado")
@@ -142,7 +146,11 @@ class PreparadorRectificacion(PreparadorMejoras):
 
 
 class MotorRectificacion(MotorSeguimiento):
+    """Run the existing improvement protocol against an explicit rectification context."""
+
     def entorno(self, p):
+        """Fingerprint the rectification environment and its explicit implementation."""
+
         return huella(
             {
                 "base": super().entorno(p),
@@ -152,6 +160,8 @@ class MotorRectificacion(MotorSeguimiento):
 
 
 def preparar_rectificacion(caso, *, configuracion, ejecucion_id, raiz, runtime, destino):
+    """Prepare one documented false-positive correction with its new evidence."""
+
     if not caso.resultado.propuesta:
         raise ValueError("La rectificación documenta un falso positivo previo, no oculta un veto")
     cfg = ConfiguracionVertex.model_validate(configuracion)
@@ -186,6 +196,8 @@ def preparar_rectificacion(caso, *, configuracion, ejecucion_id, raiz, runtime, 
 
 
 def ejecutar_rectificacion(plan, *, raiz, runtime, destino):
+    """Execute or resume the correction under its explicit durable budget."""
+
     if plan["id"] != huella({k: v for k, v in plan.items() if k != "id"}):
         raise ValueError("El protocolo de rectificación cambió")
     cfg = ConfiguracionVertex.model_validate(plan["configuracion"])
@@ -218,6 +230,8 @@ def ejecutar_rectificacion(plan, *, raiz, runtime, destino):
 
 
 def incorporar_rectificacion(casos, directorio):
+    """Incorporate the correction while retaining the prior case and full review history."""
+
     plan = json.loads((directorio / "plan.json").read_bytes())
     if plan["id"] != huella({k: v for k, v in plan.items() if k != "id"}):
         raise ValueError("La rectificación cambió")

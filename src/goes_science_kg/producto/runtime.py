@@ -1,4 +1,4 @@
-"""Ensamblaje de consulta desde una publicación curricular verificada."""
+"""Assemble query services from a verified curriculum publication."""
 
 from __future__ import annotations
 
@@ -18,6 +18,8 @@ from goes_science_kg.recuperacion import BuscadorBaseline, cargar_buscador_basel
 
 @dataclass(frozen=True)
 class RuntimeProducto:
+    """Group one verified product, its row-aware retriever, and permitted source repository."""
+
     producto: ProductoMaterializado
     buscador: BuscadorProducto
     fuentes: FuentesVerificadas
@@ -32,9 +34,10 @@ def cargar_runtime(
     raiz_paises: Path | None = None,
     raiz_cientificas: Path | None = None,
     archivo_alertas: Path | None = None,
+    archivo_alertas_derivadas: Path | None = None,
     raiz_progresiones: Path | None = None,
 ) -> RuntimeProducto:
-    """Fija una generación; las raíces permitidas no proceden de las consultas."""
+    """Pin one verified generation using explicit paths or configured defaults."""
     producto = cargar_producto(destino or ruta("data/producto/V4"))
     catalogo = catalogo_fuentes_v4(producto.curriculo)
     for nodo in producto.nodos:
@@ -96,7 +99,11 @@ def cargar_runtime(
         validar_archivo_alineaciones(producto.alineaciones, producto.curriculo, fuentes=fuentes, paginas=paginas)
     if producto.mejoras is not None:
         fuentes.bloqueos_derivados.update(
-            bloqueos_cientificos(producto.curriculo, fuentes, ruta("config/alertas_derivadas_v4.yaml"))
+            bloqueos_cientificos(
+                producto.curriculo,
+                fuentes,
+                archivo_alertas_derivadas or ruta("config/alertas_derivadas_v4.yaml"),
+            )
         )
         # Las enmiendas corrigen copias propuestas: los originales con errores siguen bloqueados
         # para la generación genérica, que no debe enseñar la errata como evidencia correcta.
@@ -122,7 +129,7 @@ def cargar_runtime(
 
 
 def cargar_recursos(version: str):
-    """La V4 se carga de su publicación; la V3 conserva una entrada explícita."""
+    """Load V4 from its publication and retain an explicit historical V3 entry point."""
     if version == "V4":
         runtime = cargar_runtime()
         return runtime.buscador, runtime.fuentes

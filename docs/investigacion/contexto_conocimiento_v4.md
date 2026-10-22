@@ -1,5 +1,8 @@
 # Empaquetado de evidencia para juicios V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Medición local del 21 de octubre de 2026. Se prepararon los mismos 1.203 candidatos de contraste
 documental con edición ENG/SG fijada, sin filtrar positivos esperados. No se usó un gold, un proveedor
 ni un resultado semántico para seleccionar el contexto. Las huellas del currículo, candidatos y código,

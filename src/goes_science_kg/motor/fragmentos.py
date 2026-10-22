@@ -1,8 +1,8 @@
-"""Citas por selección de IDs: el código copia el literal desde evidencia verificada.
+"""Resolve selected quotation identifiers to literals from verified evidence."""
 
-Esto elimina la invención del texto literal por el modelo. No demuestra que una cita implique
-una afirmación: las revisiones semánticas y el gate de versión/fuentes siguen siendo necesarios.
-"""
+# Historical implementation notes:
+# Esto elimina la invención del texto literal por el modelo. No demuestra que una cita implique
+# una afirmación: las revisiones semánticas y el gate de versión/fuentes siguen siendo necesarios.
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from goes_science_kg.recuperacion.lexico import normalizar
 
 
 class Fragmento(Contrato):
-    """Literal inmutable de un registro local; el modelo sólo elige su identificador."""
+    """Represent an immutable evidence quotation selected by its registered identity."""
 
     id: str = Field(min_length=1, max_length=100)
     evidencia_id: str = Field(min_length=1)
@@ -48,6 +48,8 @@ class Fragmento(Contrato):
 
 
 class AfirmacionBorrador(Contrato):
+    """Represent a draft factual statement using registered quotation identities."""
+
     texto: str = Field(min_length=10, max_length=1500)
     fragmentos_ids: list[str] = Field(min_length=1, max_length=5)
 
@@ -60,7 +62,7 @@ class AfirmacionBorrador(Contrato):
 
 
 class Borrador(Contrato):
-    """Salida del redactor: referencias al registro, sin campos de cita libres."""
+    """Represent a draft using registered references rather than free-form quotations."""
 
     afirmaciones: list[AfirmacionBorrador] = Field(min_length=1, max_length=8)
     anclaje_curricular: list[str] = Field(min_length=1, max_length=5)
@@ -119,7 +121,7 @@ def _ventanas(texto: str, *, palabras: int, solape: int) -> list[str]:
 def datos_fragmentos(
     fragmentos: Sequence[Fragmento], evidencias: Sequence[Evidencia], *, lectura_completa: bool = False
 ) -> dict:
-    """Payload presupuestado: citas breves y, cuando se solicita, lectura íntegra de sus fuentes."""
+    """Build a budgeted quotation payload with optional complete source readings."""
     por_id = {e.id: e for e in evidencias}
     seleccionados = sorted({f.evidencia_id for f in fragmentos})
     if not set(seleccionados).issubset(por_id):
@@ -148,11 +150,11 @@ def _anclajes_por_grupo(
     cabe: Callable[[list[Fragmento]], bool],
     max_fragmentos: int,
 ) -> list[Fragmento]:
-    """Reserva cobertura explícita antes de llenar el resto por coincidencia léxica.
+    """Reserve explicit group coverage before filling remaining context lexically."""
 
-    La selección voraz es determinista; no pretende resolver el empaquetado óptimo.
-    Un fragmento puede cubrir varios grupos superpuestos sin duplicarse.
-    """
+    # Implementation notes:
+    # La selección voraz es determinista; no pretende resolver el empaquetado óptimo.
+    # Un fragmento puede cubrir varios grupos superpuestos sin duplicarse.
     mascaras: dict[str, int] = {}
     for posicion, ids in enumerate(grupos):
         for evidencia_id in ids:
@@ -190,15 +192,15 @@ def preparar_fragmentos(
     grupos_obligatorios: Mapping[str, Sequence[str]] | None = None,
     lectura_completa: bool = False,
 ) -> list[Fragmento]:
-    """Selecciona ventanas citables y conserva al menos una del currículo local vigente.
+    """Select citable windows while retaining evidence from the current local curriculum."""
 
-    La única versión distinta de ``referencia`` identifica el currículo actual del contexto;
-    mezclar versiones o un presupuesto sin espacio para su anclaje produce un error explícito.
-    El límite comprende el JSON de ``datos_fragmentos`` con fuente, versión y huella.
-    Con ``lectura_completa`` cuenta también el texto íntegro de las fuentes seleccionadas.
-    Si se declaran grupos, reserva primero al menos una fuente de cada uno; no convierte
-    esa cobertura estructural en respaldo semántico.
-    """
+    # Implementation notes:
+    # La única versión distinta de ``referencia`` identifica el currículo actual del contexto;
+    # mezclar versiones o un presupuesto sin espacio para su anclaje produce un error explícito.
+    # El límite comprende el JSON de ``datos_fragmentos`` con fuente, versión y huella.
+    # Con ``lectura_completa`` cuenta también el texto íntegro de las fuentes seleccionadas.
+    # Si se declaran grupos, reserva primero al menos una fuente de cada uno; no convierte
+    # esa cobertura estructural en respaldo semántico.
     if max_caracteres <= 0 or max_fragmentos < 1 or not 1 <= max_palabras <= 20 or not 0 <= solape < max_palabras:
         raise ValueError("Presupuesto, cantidad de fragmentos o ventanas inválidos")
     por_id = _evidencias_verificadas(evidencias)
@@ -277,7 +279,7 @@ def preparar_fragmentos(
 
 
 def resolver_borrador(borrador: Borrador, fragmentos: Sequence[Fragmento]) -> Propuesta:
-    """Resuelve únicamente IDs conocidos; el literal nunca se toma de una salida del modelo."""
+    """Resolve known fragment identities to source literals without trusting model-written quotations."""
     registro = {f.id: f for f in fragmentos}
     if not registro or len(registro) != len(fragmentos):
         raise ValueError("El registro de fragmentos está vacío o contiene identificadores duplicados")

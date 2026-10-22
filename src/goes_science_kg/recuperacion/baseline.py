@@ -1,4 +1,4 @@
-"""Contrato común para el GraphRAG histórico, conservando su ranking original."""
+"""Adapt the historical GraphRAG baseline without changing its ranking."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from goes_science_kg.recuperacion.modelos import Resultado
 
 
 class BuscadorBaseline:
-    """Adapta el baseline sin fusionar rankings ni modificar sus filtros y pesos."""
+    """Adapt the baseline without merging rankings or changing filters and weights."""
 
     def __init__(self, nodos: list[Nodo], aristas: list[Arista], *, version: str):
         self._rag = GraphRAG(nodos, aristas)
@@ -48,7 +48,7 @@ class BuscadorBaseline:
         modelo_embeddings: str | None = None,
         saltos_grafo: int = 2,
     ) -> list[Resultado]:
-        """Aplica el algoritmo histórico exacto; por defecto conserva sus dos saltos."""
+        """Apply the original retrieval algorithm and its configured expansion depth."""
         if version is not None and version != self.version:
             raise ValueError(f"El baseline contiene {self.version}; se solicitó {version}")
         if vector_consulta is not None or modelo_embeddings is not None:
@@ -77,6 +77,6 @@ def cargar_buscador_baseline(
     *,
     version: str | None = None,
 ) -> BuscadorBaseline:
-    """Valida versión y carga una vez nodos y relaciones del baseline."""
+    """Validate the curriculum version and load baseline nodes and relationships once."""
     nodos, aristas, verificada = _cargar_grafo_validado(directorio, version=version)
     return BuscadorBaseline(nodos, aristas, version=verificada)

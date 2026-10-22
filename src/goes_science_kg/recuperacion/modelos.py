@@ -1,4 +1,4 @@
-"""Contratos de recuperación independientes del grafo y del proveedor de embeddings."""
+"""Define retrieval contracts independently of graph and embedding providers."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class Documento(BaseModel):
-    """Unidad recuperable: el texto y su procedencia conservan su versión de origen."""
+    """Preserve retrievable text and provenance under their original source version."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -39,7 +39,7 @@ class Documento(BaseModel):
 
 
 class Resultado(BaseModel):
-    """Resultado ordenado; el puntaje de fusión no representa una probabilidad."""
+    """Represent a ranked result without interpreting fusion scores as probabilities."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -49,7 +49,7 @@ class Resultado(BaseModel):
 
 
 class Enlace(BaseModel):
-    """Relación dirigida utilizable para expansión controlada de evidencia."""
+    """Represent a directed relationship for controlled evidence expansion."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -60,7 +60,7 @@ class Enlace(BaseModel):
 
 
 def ordenar_documentos(documentos: Iterable[Documento]) -> tuple[Documento, ...]:
-    """Copia y ordena el corpus; un identificador ambiguo invalida el índice."""
+    """Copy and sort the corpus while rejecting ambiguous document identities."""
     ordenados = tuple(sorted((d.model_copy(deep=True) for d in documentos), key=lambda d: d.id))
     ids = [d.id for d in ordenados]
     if len(ids) != len(set(ids)):
@@ -69,7 +69,7 @@ def ordenar_documentos(documentos: Iterable[Documento]) -> tuple[Documento, ...]
 
 
 def huella_corpus(documentos: Iterable[Documento]) -> str:
-    """Huella estable ante reordenamiento; cambia con texto, filtros o procedencia."""
+    """Fingerprint text, filters, and provenance independently of input ordering."""
     datos = [d.model_dump(mode="json") for d in ordenar_documentos(documentos)]
     contenido = json.dumps(datos, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(contenido.encode("utf-8")).hexdigest()

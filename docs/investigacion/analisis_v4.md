@@ -1,5 +1,8 @@
 # Análisis crítico del insumo V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Corte: **21 de octubre de 2026**. Se revisaron los once originales de `insumos/v4` en modo de solo lectura, su procedencia de Drive en `insumos/procedencia_v4.json` y el inventario en `data/interim/mallas/inventario_v4.json`. Los once SHA-256 coinciden con la procedencia capturada. Este informe realiza un censo estructural y un muestreo crítico de contenido; no certifica cada afirmación de la malla ni su aprobación ministerial. No se consultaron prompts ni resultados del motor y no se ejecutaron servicios cloud.
 
 ## Qué permite construir esta V4

@@ -1,14 +1,15 @@
-"""Pruebas adversariales del recorrido fuente→contexto→jueces→checkpoint→presupuesto.
+"""Test adversarial source hydration, context, review, checkpoints, and durable budgets."""
 
-Las fuentes son libros temporales y el proveedor está simulado; ninguna prueba
-usa credenciales, red, modelos remotos ni modifica las fuentes del repositorio.
-"""
+# Historical test notes:
+# Las fuentes son libros temporales y el proveedor está simulado; ninguna prueba
+# usa credenciales, red, modelos remotos ni modifica las fuentes del repositorio.
 
 from __future__ import annotations
 
 import hashlib
 import json
 import sqlite3
+from contextlib import closing
 from types import SimpleNamespace
 
 import openpyxl
@@ -48,7 +49,7 @@ def _propuesta() -> Propuesta:
 
 
 class ModeloSimulado:
-    """Obedece los esquemas reales; permite inyectar fallos de contenido o de revisión."""
+    """Follow production schemas while permitting explicit content and review faults."""
 
     def __init__(self, propuesta: Propuesta | None = None, revision_incompleta: str | None = None):
         self.propuesta = propuesta or _propuesta()
@@ -220,7 +221,7 @@ def test_un_checkpoint_parcial_reanuda_solo_los_jueces_y_persiste_el_resultado(e
     archivo = tmp_path / "checkpoints.sqlite"
     primero = ModeloSimulado()
     opciones = {"configurable": {"thread_id": "durable"}}
-    with sqlite3.connect(archivo, check_same_thread=False) as db:
+    with closing(sqlite3.connect(archivo, check_same_thread=False)) as db, db:
         motor = Motor(Buscador(entrega.documentos), primero, fuentes=entrega.fuentes, max_reparaciones=0)
         flujo = motor.compilar(checkpointer=SqliteSaver(db))
         flujo.invoke(
@@ -232,7 +233,7 @@ def test_un_checkpoint_parcial_reanuda_solo_los_jueces_y_persiste_el_resultado(e
         assert primero.llamadas == ["redactor"]
         assert flujo.get_state(opciones).next
     segundo = ModeloSimulado()
-    with sqlite3.connect(archivo, check_same_thread=False) as db:
+    with closing(sqlite3.connect(archivo, check_same_thread=False)) as db, db:
         motor = Motor(Buscador(entrega.documentos), segundo, fuentes=entrega.fuentes, max_reparaciones=0)
         flujo = motor.compilar(checkpointer=SqliteSaver(db))
         resultado = flujo.invoke(None, opciones, durability="sync")["resultado"]

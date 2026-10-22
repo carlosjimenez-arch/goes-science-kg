@@ -1,11 +1,11 @@
-"""Almacenamiento del grafo en archivos (fuente de verdad versionable en git).
+"""Persist graph models and manifests in deterministic JSONL files."""
 
-data/grafo/nodos.jsonl      un nodo por línea, ordenado por (tipo, id)
-data/grafo/aristas.jsonl    una arista por línea, ordenada por (tipo, origen, destino, rol)
-data/grafo/manifest.json    versión, conteos por tipo y SHA-256 de cada archivo
-
-Neo4j u otro motor es una proyección opcional de estos archivos (specs/01_arquitectura.md).
-"""
+# Historical implementation notes:
+# data/grafo/nodos.jsonl      un nodo por línea, ordenado por (tipo, id)
+# data/grafo/aristas.jsonl    una arista por línea, ordenada por (tipo, origen, destino, rol)
+# data/grafo/manifest.json    versión, conteos por tipo y SHA-256 de cada archivo
+#
+# Neo4j u otro motor es una proyección opcional de estos archivos (specs/01_arquitectura.md).
 
 from __future__ import annotations
 
@@ -25,15 +25,23 @@ def _sha(p: Path) -> str:
 
 
 def guardar(nodos: list[Nodo], aristas: list[Arista], version: str, directorio: str = DIR_GRAFO) -> dict:
-    """Escribe nodos.jsonl y aristas.jsonl (en el orden recibido) y manifest.json en `directorio`. Devuelve el
-    manifiesto."""
+    """Write ordered graph JSONL files and their integrity manifest."""
+
+    # Implementation notes:
+    # manifiesto.
     d = ruta(directorio)
     d.mkdir(parents=True, exist_ok=True)
     for nombre, filas in (("nodos.jsonl", nodos), ("aristas.jsonl", aristas)):
         with open(d / nombre, "w", encoding="utf-8") as f:
             for x in filas:
-                f.write(json.dumps(x.model_dump(mode="json", exclude_none=True, exclude_defaults=True),
-                                   ensure_ascii=False, sort_keys=True) + "\n")
+                f.write(
+                    json.dumps(
+                        x.model_dump(mode="json", exclude_none=True, exclude_defaults=True),
+                        ensure_ascii=False,
+                        sort_keys=True,
+                    )
+                    + "\n"
+                )
     manifest = {
         "version": version,
         "nodos": dict(sorted(Counter(n.tipo.value for n in nodos).items())),
@@ -45,7 +53,7 @@ def guardar(nodos: list[Nodo], aristas: list[Arista], version: str, directorio: 
 
 
 def cargar(directorio: str = DIR_GRAFO) -> tuple[list[Nodo], list[Arista]]:
-    """Lee los nodos y las aristas guardados en `directorio`."""
+    """Load the persisted graph nodes and edges."""
     d = ruta(directorio)
     with open(d / "nodos.jsonl", encoding="utf-8") as f:
         nodos = [Nodo.model_validate_json(linea) for linea in f]
@@ -55,7 +63,7 @@ def cargar(directorio: str = DIR_GRAFO) -> tuple[list[Nodo], list[Arista]]:
 
 
 def a_networkx(nodos: list[Nodo], aristas: list[Arista]) -> nx.MultiDiGraph:
-    """Proyección a un MultiDiGraph de networkx; la clave de cada arista es «tipo:rol»."""
+    """Project models into a NetworkX MultiDiGraph keyed by edge type and role."""
     g = nx.MultiDiGraph()
     for n in nodos:
         g.add_node(n.id, **n.model_dump(mode="json", exclude={"id"}))

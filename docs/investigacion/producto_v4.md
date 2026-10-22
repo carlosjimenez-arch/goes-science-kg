@@ -1,5 +1,8 @@
 # Materialización y consulta del producto V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 El paquete `producto/` construye publicaciones aisladas del grafo histórico. No
 modifica las fuentes, `config/mallas.yaml`, las decisiones anteriores o la API
 histórica; tampoco activa una versión por el solo hecho de escribirla.

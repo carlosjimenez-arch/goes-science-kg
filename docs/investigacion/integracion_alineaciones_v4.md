@@ -1,5 +1,8 @@
 # Integración documental PISA/ERCE · 21 de octubre de 2026
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 El formato `producto-3` exige nueve archivos, incluido `alineaciones.json`; el lector conserva
 compatibilidad con los ocho de `producto-2`. No migra silenciosamente generaciones anteriores.
 

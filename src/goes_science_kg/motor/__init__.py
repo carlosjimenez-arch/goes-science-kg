@@ -1,1 +1,1 @@
-"""Motor curricular: evidencia, contratos y revisión automática con abstención."""
+"""Coordinate curriculum evidence, structured proposals, review, and abstention."""

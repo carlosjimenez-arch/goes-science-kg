@@ -1,4 +1,4 @@
-"""Grafo de propuestas por fila y progresiones nativas: separado de los prerrequisitos reales."""
+"""Represent row proposals and native progressions separately from verified prerequisites."""
 
 from goes_science_kg.modelos import Arista, Fuente, Nodo, TipoArista, TipoNodo
 from goes_science_kg.motor.contratos import huella
@@ -15,6 +15,8 @@ ENLACES = {
 
 
 def grafo_mejoras(archivo: ArchivoMejoras):
+    """Build row-level proposal, review, and native-progression graph representations."""
+
     nodos, aristas = [], []
     for id_, fuente in sorted(archivo.fuentes_progresiones.items()):
         nodos.append(Nodo(id="DOC:" + id_, tipo=TipoNodo.DOCUMENTO, etiqueta=fuente["titulo"], props=fuente))
@@ -113,6 +115,8 @@ def grafo_mejoras(archivo: ArchivoMejoras):
 
 
 def incorporar_mejoras(nodos, aristas, archivo):
+    """Incorporate the complete proposal archive without inheriting universal prerequisites."""
+
     nuevos, enlaces = grafo_mejoras(archivo)
     existentes = {n.id: n for n in nodos}
     for n in nuevos:
@@ -131,6 +135,8 @@ def incorporar_mejoras(nodos, aristas, archivo):
 
 
 def validar_grafo_mejoras(nodos, aristas, archivo):
+    """Verify exact graph representation of the published improvement archive."""
+
     nuevos, enlaces = grafo_mejoras(archivo) if archivo else ([], [])
     presentes = {n.id: n for n in nodos if n.tipo in TIPOS}
     esperados = {n.id: n for n in nuevos if n.tipo in TIPOS}

@@ -1,4 +1,4 @@
-"""Una recuperación de transporte sin respuestas, preservando terminales y presupuesto."""
+"""Recover unanswered transport failures while preserving terminal states and budgets."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ import os
 import sqlite3
 import time
 from collections import Counter
+from contextlib import closing
 from pathlib import Path
 
 from goes_science_kg.motor.contratos import ResultadoMotor, huella
@@ -47,13 +48,13 @@ def recuperar_unidad_sin_respuesta(
     registro: Registro,
     directorio_operaciones: Path,
 ) -> ResultadoUnidad:
-    """Un único thread adicional por objetivo; nunca reevalúa respuestas o votos recibidos.
+    """Create one recovery thread only when no response or review was received."""
 
-    Sólo admite una unidad cuyos terminales originales fallaron íntegramente antes de recibir
-    propuestas o dictámenes. Comprueba los checkpoints, fuentes y entorno originales. El ID,
-    ledger y límites se conservan; la recuperación se puede reanudar, pero no volver a votar.
-    Un nuevo fallo de transporte detiene el resto de la unidad.
-    """
+    # Implementation notes:
+    # Sólo admite una unidad cuyos terminales originales fallaron íntegramente antes de recibir
+    # propuestas o dictámenes. Comprueba los checkpoints, fuentes y entorno originales. El ID,
+    # ledger y límites se conservan; la recuperación se puede reanudar, pero no volver a votar.
+    # Un nuevo fallo de transporte detiene el resto de la unidad.
     from langgraph.checkpoint.sqlite import SqliteSaver
 
     _comprobar_paquete(paquete)
@@ -94,7 +95,7 @@ def recuperar_unidad_sin_respuesta(
             fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError as error:
             raise ValueError("La recuperación ya está en curso") from error
-        with sqlite3.connect(archivo, check_same_thread=False, timeout=30) as db:
+        with closing(sqlite3.connect(archivo, check_same_thread=False, timeout=30)) as db, db:
             checkpointer = SqliteSaver(db)
             flujo = motor.compilar(checkpointer=checkpointer)
             for sesion, previa in zip(paquete.sesiones, original.sesiones, strict=True):

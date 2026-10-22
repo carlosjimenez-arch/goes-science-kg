@@ -1,5 +1,8 @@
 # Ciencias en Singapur y Japón: verificación documental al 21 de octubre de 2026
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Consulta y corrección documental: **2026-10-21**. Esta auditoría identifica documentos oficiales y su población; no acredita equivalencias con El Salvador ni explica causalmente resultados internacionales. El paquete adjunto, `curriculos_sg_jp_2026_fuentes.json`, contiene diez PDF con bytes verificados, SHA-256, tamaño y número de páginas, y candidatos pendientes claramente separados. Incluye la edición singapurense de **enero de 2026** localizada después de la primera entrega. La ingesta y su estado se administran en el registro compartido por la tarea principal; esta auditoría no lo modifica ni activa alineaciones.
 
 Las descargas y los renderizados se conservan exclusivamente en `/tmp/curriculos_sg_jp_2026/`. Las páginas indicadas son **PDF, empezando en 1**; el folio impreso puede diferir. Se verificaron portadas mediante renderizado, contenido mediante extracción local y versiones mediante índices oficiales. La vigencia se expresa como versión que el organismo publica para la población identificada, no como una conclusión obtenida de la fecha del nombre del archivo.

@@ -1,4 +1,4 @@
-"""Comandos del grupo `refuerzo`."""
+"""Expose the refuerzo command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ app = typer.Typer(help="Refuerzo de cada tema de la malla V3 con evidencia (spec
 
 @app.command("errores")
 def refuerzo_errores() -> None:
-    """Qué errores y problemas de progresión registrados siguen literales en la malla vigente."""
+    """List documented errors and sequencing issues still present in the current curriculum."""
     from goes_science_kg.refuerzo import errores_en_vigente
 
     for e in errores_en_vigente():
@@ -20,7 +20,7 @@ def refuerzo_errores() -> None:
 
 @app.command("candidatos")
 def refuerzo_candidatos() -> None:
-    """Catálogo de candidatos a refuerzo → data/interim/refuerzo_v3/candidatos.json."""
+    """Write the historical V3 reinforcement candidate catalog."""
     from goes_science_kg.refuerzo import escribir_candidatos
 
     typer.echo(json.dumps(escribir_candidatos(), ensure_ascii=False, indent=1))
@@ -32,7 +32,7 @@ def refuerzo_preparar(
     asignaturas: str = typer.Option(None, help="separadas por coma (vacío = todas)"),
     tramo: str = typer.Option(None, help="2_8 o 9_11 (vacío = los dos)"),
 ) -> None:
-    """Lotes del subagente redactor-refuerzos → data/interim/refuerzo_v3/lotes/ (sin reescribir los existentes)."""
+    """Prepare reinforcement-writing batches without overwriting existing outputs."""
     from goes_science_kg.refuerzo import preparar_lotes
 
     for p in preparar_lotes(serie, tuple(asignaturas.split(",")) if asignaturas else None, tramo):
@@ -45,7 +45,7 @@ def refuerzo_snapshot(
     grados: str = typer.Option("9-11", help="rango, p. ej. 9-11"),
     etapa: str = typer.Option(..., help="qué corte es (fecha y estado)"),
 ) -> None:
-    """Estado del refuerzo de esas asignaturas y grados → entregas/mallas_v3_reforzadas/SNAPSHOT_*.md."""
+    """Write a subject- and grade-specific reinforcement snapshot."""
     from goes_science_kg.refuerzo import escribir_snapshot
 
     g0, g1 = (int(x) for x in grados.split("-"))
@@ -54,7 +54,7 @@ def refuerzo_snapshot(
 
 @app.command("unir")
 def refuerzo_unir() -> None:
-    """Valida las salidas del redactor y escribe data/interim/refuerzo_v3/refuerzos.json."""
+    """Validate writer outputs and consolidate the reinforcement artifact."""
     from goes_science_kg.refuerzo import unir
 
     typer.echo(json.dumps(unir(), ensure_ascii=False, indent=1))

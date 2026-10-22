@@ -13,7 +13,7 @@ def grafo():
 
 @pytest.fixture(autouse=True)
 def proveedores_sin_red_y_logging_aislado(monkeypatch):
-    """Un test debe inyectar su cliente; no abre ADC ni GCP y restaura handlers de la terminal."""
+    """Require injected offline providers and restore isolated logging handlers after each test."""
     from goes_science_kg.motor.vertex import Vertex
 
     def prohibido(self):

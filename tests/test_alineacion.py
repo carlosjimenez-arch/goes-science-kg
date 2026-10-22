@@ -1,4 +1,4 @@
-"""Alineación con Excel/PDF temporales y modelos simulados; sin nube ni gold."""
+"""Test documentary alignment with temporary Excel and PDF sources and simulated models."""
 
 from __future__ import annotations
 
@@ -32,15 +32,17 @@ INDICADOR = "Compara los datos y explica la relación entre luz y crecimiento."
 
 def pdf_sintetico(texto):
     escritor = PdfWriter()
-    fuente = DictionaryObject({
-        NameObject("/Type"): NameObject("/Font"),
-        NameObject("/Subtype"): NameObject("/Type1"),
-        NameObject("/BaseFont"): NameObject("/Helvetica"),
-    })
+    fuente = DictionaryObject(
+        {
+            NameObject("/Type"): NameObject("/Font"),
+            NameObject("/Subtype"): NameObject("/Type1"),
+            NameObject("/BaseFont"): NameObject("/Helvetica"),
+        }
+    )
     pagina = escritor.add_blank_page(width=600, height=800)
-    pagina[NameObject("/Resources")] = DictionaryObject({
-        NameObject("/Font"): DictionaryObject({NameObject("/F1"): escritor._add_object(fuente)})
-    })
+    pagina[NameObject("/Resources")] = DictionaryObject(
+        {NameObject("/Font"): DictionaryObject({NameObject("/F1"): escritor._add_object(fuente)})}
+    )
     contenido = DecodedStreamObject()
     contenido.set_data(f"BT /F1 12 Tf 50 750 Td ({texto}) Tj ET".encode("ascii"))
     pagina[NameObject("/Contents")] = escritor._add_object(contenido)
@@ -68,13 +70,17 @@ class LectorSimulado:
         externo = next(f["id"] for f in datos["fragmentos"] if fuentes[f["evidencia_id"]]["version"] == "referencia")
         valor = "no" if self.negativo else ("insuficiente" if self.insuficiente else "si")
         criterios = dict.fromkeys(esquema.model_fields["criterios"].annotation.model_fields, valor)
-        return esquema.model_validate({
-            "criterios": criterios,
-            "fragmentos_locales": ["F:ajeno" if self.ids_falsos else externo if self.invierte else local],
-            "fragmentos_referente": [local if self.invierte else externo],
-            "explicacion": "La declaración y el criterio se relacionan en el alcance explícito de la tarea de prueba.",
-            "limites": ["El juicio simulado no acredita ejecución ni resultados de aprendizaje"],
-        })
+        return esquema.model_validate(
+            {
+                "criterios": criterios,
+                "fragmentos_locales": ["F:ajeno" if self.ids_falsos else externo if self.invierte else local],
+                "fragmentos_referente": [local if self.invierte else externo],
+                "explicacion": (
+                    "La declaración y el criterio se relacionan en el alcance explícito de la tarea de prueba."
+                ),
+                "limites": ["El juicio simulado no acredita ejecución ni resultados de aprendizaje"],
+            }
+        )
 
 
 @pytest.fixture
@@ -88,60 +94,114 @@ def entrada(tmp_path, monkeypatch):
     libro.save(archivo)
     libro.close()
     sha = hashlib.sha256(archivo.read_bytes()).hexdigest()
-    celdas = tuple(CeldaCurricular(
-        coordenada=f"{c}2", fila=2, columna=c, campo=campo,
-        valor_original=texto, valor=texto, tipo_excel="s",
-    ) for c, campo, texto in (("A", "procedimental", OBJETIVO), ("B", "indicadores_logro", INDICADOR)))
+    celdas = tuple(
+        CeldaCurricular(
+            coordenada=f"{c}2",
+            fila=2,
+            columna=c,
+            campo=campo,
+            valor_original=texto,
+            valor=texto,
+            tipo_excel="s",
+        )
+        for c, campo, texto in (("A", "procedimental", OBJETIVO), ("B", "indicadores_logro", INDICADOR))
+    )
     fila = FilaCurricular(
-        id="fila-local", fuente_id="malla", version="V4", hoja="Unidad 1", fila=2, grado=6,
-        asignatura_malla="Ciencias", unidad="U1", procedimental=OBJETIVO, indicadores_logro=INDICADOR, celdas=celdas,
+        id="fila-local",
+        fuente_id="malla",
+        version="V4",
+        hoja="Unidad 1",
+        fila=2,
+        grado=6,
+        asignatura_malla="Ciencias",
+        unidad="U1",
+        procedimental=OBJETIVO,
+        indicadores_logro=INDICADOR,
+        celdas=celdas,
         fases={f: FaseCurricular(presente_en_hoja=False) for f in FASES},
     )
     fuente = FuenteCurricular(
-        id="malla", version="V4", archivo=archivo.name, archivo_local=str(archivo),
-        sha256=sha, bytes=archivo.stat().st_size, procedencia={},
+        id="malla",
+        version="V4",
+        archivo=archivo.name,
+        archivo_local=str(archivo),
+        sha256=sha,
+        bytes=archivo.stat().st_size,
+        procedencia={},
     )
     curriculo = Curriculo(
-        version="V4", huella="a" * 64, fuentes=(fuente,), filas=(fila,), hojas=(), agrupaciones=(),
+        version="V4",
+        huella="a" * 64,
+        fuentes=(fuente,),
+        filas=(fila,),
+        hojas=(),
+        agrupaciones=(),
     )
-    fuentes = FuentesVerificadas({
-        "malla": {"archivo_local": archivo.name, "sha256": sha, "version_curriculo": "V4"}
-    }, raiz_fuentes=tmp_path)
+    fuentes = FuentesVerificadas(
+        {"malla": {"archivo_local": archivo.name, "sha256": sha, "version_curriculo": "V4"}}, raiz_fuentes=tmp_path
+    )
     texto = "Compare plants under controlled conditions. Use evidence to justify a conclusion."
     contenido = pdf_sintetico(texto)
-    monkeypatch.setattr(
-        "goes_science_kg.ingesta.referencias.descargar_pdf", lambda f: (contenido, f.url_documento)
-    )
+    monkeypatch.setattr("goes_science_kg.ingesta.referencias.descargar_pdf", lambda f: (contenido, f.url_documento))
     repositorio = RepositorioReferencias(tmp_path / "referencias")
-    registro = repositorio.incorporar([FuentePublica(
-        id="marco_sintetico", titulo="Fuente primaria sintética", institucion="Institución de prueba",
-        version_documental="edicion-2026", url_catalogo="https://www.oecd.org/marco",
-        url_documento="https://www.oecd.org/marco.pdf", estado_publicacion="publicado_final",
-    )], descargar=True).referencias["marco_sintetico"]
+    registro = repositorio.incorporar(
+        [
+            FuentePublica(
+                id="marco_sintetico",
+                titulo="Fuente primaria sintética",
+                institucion="Institución de prueba",
+                version_documental="edicion-2026",
+                url_catalogo="https://www.oecd.org/marco",
+                url_documento="https://www.oecd.org/marco.pdf",
+                estado_publicacion="publicado_final",
+            )
+        ],
+        descargar=True,
+    ).referencias["marco_sintetico"]
     referente = ReferenteOperativo(
-        id="LOCAL:comparar_plantas", marco="Marco sintético", ciclo="2026",
-        version_documental=registro.version_documental, fuente=registro.id, sha256=registro.sha256,
-        paginas_pdf=(1,), ancla="controlled conditions", descripcion="Comparar condiciones y justificar conclusiones.",
-        eje="practica", tipo="competencia", alcance="Alcance exclusivo de una fuente sintética de prueba.",
+        id="LOCAL:comparar_plantas",
+        marco="Marco sintético",
+        ciclo="2026",
+        version_documental=registro.version_documental,
+        fuente=registro.id,
+        sha256=registro.sha256,
+        paginas_pdf=(1,),
+        ancla="controlled conditions",
+        descripcion="Comparar condiciones y justificar conclusiones.",
+        eje="practica",
+        tipo="competencia",
+        alcance="Alcance exclusivo de una fuente sintética de prueba.",
     )
 
     def crear(modelo=None, *, max_caracteres=18000, ref=referente):
         return MotorAlineacion(
-            curriculo, {ref.id: ref}, fuentes, repositorio, modelo or LectorSimulado(),
+            curriculo,
+            {ref.id: ref},
+            fuentes,
+            repositorio,
+            modelo or LectorSimulado(),
             max_caracteres=max_caracteres,
         )
 
     solicitud = SolicitudAlineacion(fila_id=fila.id, referente_id=referente.id)
     return SimpleNamespace(
-        crear=crear, solicitud=solicitud, fuentes=fuentes, repositorio=repositorio,
-        archivo=archivo, referente=referente, curriculo=curriculo,
+        crear=crear,
+        solicitud=solicitud,
+        fuentes=fuentes,
+        repositorio=repositorio,
+        archivo=archivo,
+        referente=referente,
+        curriculo=curriculo,
     )
 
 
 def ejecutar(motor, solicitud):
-    return motor.compilar().invoke({
-        "solicitud": solicitud.model_dump(), "ejecucion_id": "alineacion-prueba",
-    })
+    return motor.compilar().invoke(
+        {
+            "solicitud": solicitud.model_dump(),
+            "ejecucion_id": "alineacion-prueba",
+        }
+    )
 
 
 def test_dos_fuentes_reales_tres_lecturas_ciegas_y_limite_documental(entrada):
@@ -228,8 +288,11 @@ def test_reanudar_y_no_reasignar_solicitud_entorno_o_presupuesto(entrada, tmp_pa
     modelo = LectorSimulado()
     motor = entrada.crear(modelo)
     kwargs = dict(
-        archivo=tmp_path / "checkpoints.sqlite", solicitud=entrada.solicitud.model_dump(),
-        thread_id="sesion-1", ejecucion_id="unidad-presupuesto", huella_entorno=motor.huella_entorno,
+        archivo=tmp_path / "checkpoints.sqlite",
+        solicitud=entrada.solicitud.model_dump(),
+        thread_id="sesion-1",
+        ejecucion_id="unidad-presupuesto",
+        huella_entorno=motor.huella_entorno,
     )
     uno = ejecutar_durable(motor, **kwargs)
     dos = ejecutar_durable(motor, **kwargs)

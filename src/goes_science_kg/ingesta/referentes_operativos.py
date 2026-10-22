@@ -1,8 +1,8 @@
-"""Criterios locales con jerarquía, cobertura declarada y evidencia documental real.
+"""Define local evaluation criteria with explicit hierarchy and documentary evidence."""
 
-La validación comprueba identidad y localización, nunca la alineación de una tarea.
-Una paráfrasis sólo adquiere procedencia verificada al cargarla junto al repositorio.
-"""
+# Historical implementation notes:
+# La validación comprueba identidad y localización, nunca la alineación de una tarea.
+# Una paráfrasis sólo adquiere procedencia verificada al cargarla junto al repositorio.
 
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ PaginaPDF = Annotated[int, Field(strict=True, ge=1)]
 
 
 def _normalizar(texto: str) -> str:
-    """Sólo normaliza Unicode y espacios: no elimina palabras, cifras ni signos."""
+    """Normalize Unicode and whitespace while preserving words, numbers, and punctuation."""
     return " ".join(unicodedata.normalize("NFKC", texto).split())
 
 
@@ -37,7 +37,7 @@ def _paginas_validas(paginas: tuple[int, ...]) -> tuple[int, ...]:
 
 
 class ReferenteOperativo(BaseModel):
-    """Unidad local de análisis; no es un código asignado por OECD o UNESCO."""
+    """Represent a local analysis criterion without claiming an OECD or UNESCO code."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -76,7 +76,7 @@ class ReferenteOperativo(BaseModel):
 
 
 class CoberturaReferentes(BaseModel):
-    """Conteo de una unidad visible en páginas concretas; no del marco completo."""
+    """Count visible criteria on explicit pages rather than claiming complete framework coverage."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -104,6 +104,8 @@ class CoberturaReferentes(BaseModel):
 
 
 class MetaReferentesOperativos(BaseModel):
+    """Describe local reference scope, consultation date, provenance, and limitations."""
+
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     clasificacion: Literal["parafrasis_del_proyecto"]
@@ -119,6 +121,8 @@ class MetaReferentesOperativos(BaseModel):
 
 
 class CatalogoReferentesOperativos(BaseModel):
+    """Collect versioned local assessment criteria and documentary metadata."""
+
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     schema_version: Literal["1.0"]
@@ -127,6 +131,8 @@ class CatalogoReferentesOperativos(BaseModel):
 
     @property
     def por_id(self) -> dict[str, ReferenteOperativo]:
+        """Index validated assessment criteria by their local identifiers."""
+
         return {referente.id: referente for referente in self.referentes}
 
     @model_validator(mode="after")
@@ -179,7 +185,7 @@ def evidencias_referentes(
     catalogo: CatalogoReferentesOperativos,
     repositorio: RepositorioReferencias,
 ) -> dict[str, tuple[Evidencia, ...]]:
-    """Verifica SHA, versión, páginas y literales contra los bytes PDF, sin red ni LLM."""
+    """Verify reference versions, pages, hashes, and literal anchors without network calls."""
     manifiesto = repositorio.manifiesto()
     for referente in catalogo.referentes:
         registro = manifiesto.referencias.get(referente.fuente)
@@ -211,7 +217,7 @@ def validar_referentes(
     catalogo: CatalogoReferentesOperativos,
     repositorio: RepositorioReferencias,
 ) -> dict:
-    """Informe auditable de procedencia; no asigna puntuaciones ni acredita alineación."""
+    """Report auditable reference provenance without scoring tasks or asserting alignment."""
     evidencias = evidencias_referentes(catalogo, repositorio)
     serializado = json.dumps(catalogo.model_dump(mode="json"), ensure_ascii=False, sort_keys=True).encode("utf-8")
     return {
@@ -241,7 +247,7 @@ def validar_referentes(
 
 
 def cargar_referentes(archivo: Path, repositorio: RepositorioReferencias) -> CatalogoReferentesOperativos:
-    """Lee YAML seguro y exige procedencia válida antes de devolver criterios utilizables."""
+    """Load safe YAML and require valid provenance before exposing usable criteria."""
     catalogo = CatalogoReferentesOperativos.model_validate(yaml.safe_load(archivo.read_text(encoding="utf-8")))
     evidencias_referentes(catalogo, repositorio)
     return catalogo

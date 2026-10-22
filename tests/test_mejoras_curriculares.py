@@ -1,4 +1,4 @@
-"""Contrato de cierre, citas por fila y reanudación sin invocar proveedores reales."""
+"""Test exact closure, row-specific quotations, and durable resumption without real providers."""
 
 import json
 from types import SimpleNamespace

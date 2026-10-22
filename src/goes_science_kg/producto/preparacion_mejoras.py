@@ -1,4 +1,4 @@
-"""Contexto completo de una unidad, fuentes externas acotadas y citas registradas por fila."""
+"""Prepare complete units with bounded external evidence and row-specific quotations."""
 
 from __future__ import annotations
 
@@ -18,12 +18,14 @@ from goes_science_kg.recuperacion.ciencia_web import IndiceCienciaWeb
 
 
 def compactar(e: Evidencia) -> Evidencia:
-    """El texto no cambia; la procedencia enviada omite valores de celda duplicados en sus metadatos."""
+    """Preserve source text while omitting duplicated cell values from transmitted provenance."""
     fuente = {k: v for k, v in e.fuente.items() if k != "celdas_verificadas"}
     return e.model_copy(update={"fuente": fuente})
 
 
 def datos_mejora(p: PreparacionMejora) -> dict:
+    """Build the complete proposal payload without dropping required source context."""
+
     referencias = [e for e in p.evidencias if e.version == "referencia"]
     filas, textos = internar_textos(p.filas_originales)
     citas = datos_fragmentos(p.fragmentos, p.evidencias)
@@ -60,7 +62,7 @@ def datos_mejora(p: PreparacionMejora) -> dict:
 
 
 def internar_textos(filas):
-    """Deduplicación exacta: todos los caracteres se conservan una vez, sin resumen ni traducción."""
+    """Intern exactly identical text without summarizing, translating, or losing characters."""
     contador = Counter()
 
     def contar(x):
@@ -90,6 +92,8 @@ def internar_textos(filas):
 
 
 class PreparadorMejoras:
+    """Prepare verifiable complete-unit context and row-specific quotation registries."""
+
     def __init__(self, runtime, *, raiz: Path, max_caracteres: int = 220000):
         self.runtime, self.raiz, self.max_caracteres = runtime, raiz, max_caracteres
         self.web = IndiceCienciaWeb(RepositorioWeb(raiz / "data/referencias_web_cientificas_2026"))
@@ -104,6 +108,8 @@ class PreparadorMejoras:
         self.paises = RepositorioReferencias(raiz / "data/referencias_paises_2026")
 
     def preparar(self, solicitud: SolicitudMejora) -> PreparacionMejora:
+        """Prepare the selected unit from original cells and bounded external evidence."""
+
         self.progresiones.validar(self.archivo_progresiones)
         filas = sorted(
             (
@@ -263,5 +269,7 @@ class PreparadorMejoras:
         return p
 
     def validar(self, p: PreparacionMejora) -> None:
+        """Revalidate a saved preparation against the same curriculum and source bytes."""
+
         if self.preparar(p.solicitud) != p:
             raise ValueError("El contexto de mejora cambió al releer las fuentes originales")

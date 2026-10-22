@@ -1,10 +1,10 @@
-"""Inventario de nuevas entregas Excel sin activar mallas ni modificar fuentes.
+"""Inventory Excel deliveries without activating curricula or modifying source files."""
 
-Los campos de cabecera son sugerencias por coincidencia exacta de etiquetas. Una
-hoja sin esquema conocido o con columnas ambiguas requiere mapeo antes de ingesta.
-``listo_inspeccion`` significa que el manifiesto puede revisarse; no certifica el
-contenido curricular ni convierte una versión declarada en la malla vigente.
-"""
+# Historical implementation notes:
+# Los campos de cabecera son sugerencias por coincidencia exacta de etiquetas. Una
+# hoja sin esquema conocido o con columnas ambiguas requiere mapeo antes de ingesta.
+# ``listo_inspeccion`` significa que el manifiesto puede revisarse; no certifica el
+# contenido curricular ni convierte una versión declarada en la malla vigente.
 
 from __future__ import annotations
 
@@ -63,13 +63,13 @@ CAMPOS_POR_ETIQUETA = {_normalizar(etiqueta): campo for campo, etiquetas in ETIQ
 
 
 class ContratoInventario(BaseModel):
-    """Metadatos inmutables que rechazan campos inesperados."""
+    """Define immutable inventory metadata that rejects unexpected fields."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
 
 class ColumnaDetectada(ContratoInventario):
-    """Etiqueta observada y sugerencia opcional, sin imponer una posición fija."""
+    """Record an observed column label and an optional mapping suggestion."""
 
     indice: int = Field(ge=1)
     letra: str
@@ -78,14 +78,14 @@ class ColumnaDetectada(ContratoInventario):
 
 
 class CabeceraDetectada(ContratoInventario):
-    """Fila con al menos dos etiquetas curriculares reconocidas."""
+    """Identify a candidate header with at least two recognized curriculum labels."""
 
     fila: int = Field(ge=1)
     columnas: tuple[ColumnaDetectada, ...]
 
 
 class HojaInventariada(ContratoInventario):
-    """Dimensiones reales de celdas con valor; no usa dimensiones declaradas por Excel."""
+    """Measure actual nonempty cell dimensions rather than trusting Excel declarations."""
 
     nombre: str
     visibilidad: str
@@ -100,7 +100,7 @@ class HojaInventariada(ContratoInventario):
 
 
 class ArchivoInventariado(ContratoInventario):
-    """Un libro identificado por ruta relativa y hash de sus bytes originales."""
+    """Identify a workbook by its relative path and original byte fingerprint."""
 
     archivo: str
     sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
@@ -110,7 +110,7 @@ class ArchivoInventariado(ContratoInventario):
 
 
 class InventarioCurricular(ContratoInventario):
-    """Manifiesto declarativo de una entrega; no cambia configuración vigente."""
+    """Describe a curriculum delivery without changing active configuration."""
 
     esquema_version: Literal["1"] = "1"
     version_declarada: str
@@ -131,7 +131,7 @@ def _sha256(archivo: Path) -> str:
 
 
 def _listar_archivos(base: Path) -> tuple[list[Path], list[Path]]:
-    """No oculta errores de permisos ni sigue enlaces simbólicos de las fuentes."""
+    """Enumerate sources without hiding permission failures or following symlinks."""
     archivos, enlaces = [], []
 
     def recorrer(directorio: Path) -> None:
@@ -176,7 +176,7 @@ def _cabecera(fila: int, valores: tuple) -> CabeceraDetectada | None:
 
 
 def _inspeccionar_hoja(hoja) -> HojaInventariada:
-    """Recorre la hoja una vez y conserva solo metadatos y candidatos de cabecera."""
+    """Inspect a sheet once while retaining only metadata and candidate headers."""
     # Algunos productores omiten o declaran mal <dimension>; el XML es la autoridad.
     hoja.reset_dimensions()
     filas = celdas = 0
@@ -252,14 +252,14 @@ def _inspeccionar_archivo(archivo: Path, base: Path) -> ArchivoInventariado:
 
 
 def inventariar(directorio: Path, version: str) -> InventarioCurricular:
-    """Inspecciona Excel recursivamente y devuelve un manifiesto sin escribir archivos.
+    """Inspect Excel files recursively and return a manifest without writing artifacts."""
 
-    Rechaza directorios sin libros y formatos Excel incompatibles o corruptos. Las
-    hojas sin cabecera reconocida o con un mapeo ambiguo dejan el estado incompleto.
-    Las hojas vacías se registran; no hacen fallar una entrega con tablas utilizables.
-    Los permisos denegados se propagan. Los enlaces simbólicos se registran como
-    omisiones pendientes de resolver y nunca se siguen, incluso dentro del árbol.
-    """
+    # Implementation notes:
+    # Rechaza directorios sin libros y formatos Excel incompatibles o corruptos. Las
+    # hojas sin cabecera reconocida o con un mapeo ambiguo dejan el estado incompleto.
+    # Las hojas vacías se registran; no hacen fallar una entrega con tablas utilizables.
+    # Los permisos denegados se propagan. Los enlaces simbólicos se registran como
+    # omisiones pendientes de resolver y nunca se siguen, incluso dentro del árbol.
     base = directorio.expanduser().resolve()
     try:
         es_directorio = stat.S_ISDIR(base.stat().st_mode)

@@ -1,4 +1,4 @@
-"""Reanudación adversarial de alineaciones con las fuentes sintéticas compartidas."""
+"""Test adversarial alignment resumption against shared synthetic physical sources."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""La API no mezcla generaciones: prueba con derivados regenerados en un repo temporal."""
+"""Reject mixed graph generations using regenerated derivatives in a temporary repository."""
 
 from __future__ import annotations
 

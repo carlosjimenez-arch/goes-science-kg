@@ -1,9 +1,10 @@
-"""Regresiones independientes de durabilidad, anclaje y escritura; sin nube ni gold."""
+"""Test durability, source anchoring, and safe writes independently of cloud services."""
 
 from __future__ import annotations
 
 import sqlite3
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import closing
 from threading import Barrier, Event
 from types import SimpleNamespace
 from typing import TypedDict
@@ -48,11 +49,16 @@ class MotorBloqueable:
 
 def test_mismo_checkpoint_no_ejecuta_dos_veces_concurrentemente(tmp_path):
     archivo = tmp_path / "checkpoints.sqlite"
-    with sqlite3.connect(archivo) as db:
+    with closing(sqlite3.connect(archivo)) as db, db:
         SqliteSaver(db).setup()
     motor = MotorBloqueable()
-    opciones = dict(archivo=archivo, solicitud={"consulta": "sintética"}, thread_id="mismo-thread",
-                    ejecucion_id="mismo-presupuesto", huella_entorno="mismo-entorno")
+    opciones = dict(
+        archivo=archivo,
+        solicitud={"consulta": "sintética"},
+        thread_id="mismo-thread",
+        ejecucion_id="mismo-presupuesto",
+        huella_entorno="mismo-entorno",
+    )
     with ThreadPoolExecutor(max_workers=2) as ejecutor:
         primera = ejecutor.submit(ejecutar_durable, motor, **opciones)
         assert motor.inicio.wait(timeout=5)
@@ -69,7 +75,7 @@ def test_mismo_checkpoint_no_ejecuta_dos_veces_concurrentemente(tmp_path):
 
 def test_checkpoint_no_sigue_enlace_sqlite_ni_modifica_original(tmp_path):
     original = tmp_path / "original.sqlite"
-    with sqlite3.connect(original) as db:
+    with closing(sqlite3.connect(original)) as db, db:
         db.execute("CREATE TABLE original (id TEXT)")
     antes = original.read_bytes()
     enlace = tmp_path / "checkpoint.sqlite"
@@ -97,10 +103,18 @@ def test_threads_distintos_no_serializan_trabajo_sobre_la_misma_base(tmp_path):
             return grafo.compile(checkpointer=checkpointer)
 
     with ThreadPoolExecutor(max_workers=2) as ejecutor:
-        futuros = [ejecutor.submit(
-            ejecutar_durable, MotorParalelo(), archivo=tmp_path / "checkpoints.sqlite",
-            solicitud={"consulta": i}, thread_id=str(i), ejecucion_id="unidad", huella_entorno="entorno",
-        ) for i in range(2)]
+        futuros = [
+            ejecutor.submit(
+                ejecutar_durable,
+                MotorParalelo(),
+                archivo=tmp_path / "checkpoints.sqlite",
+                solicitud={"consulta": i},
+                thread_id=str(i),
+                ejecucion_id="unidad",
+                huella_entorno="entorno",
+            )
+            for i in range(2)
+        ]
         assert {f.result(timeout=6)["resultado"]["consulta"] for f in futuros} == {0, 1}
 
 
@@ -108,8 +122,13 @@ def test_checkpoint_no_reasigna_el_ledger_aunque_se_conserve_id(tmp_path):
     motor = MotorBloqueable()
     motor.continuar.set()
     motor.modelo = SimpleNamespace(ejecucion_id="unidad", registro=SimpleNamespace(archivo=tmp_path / "ledger.sqlite"))
-    opciones = dict(archivo=tmp_path / "checkpoints.sqlite", solicitud={}, thread_id="objetivo-1",
-                    ejecucion_id="unidad", huella_entorno="entorno")
+    opciones = dict(
+        archivo=tmp_path / "checkpoints.sqlite",
+        solicitud={},
+        thread_id="objetivo-1",
+        ejecucion_id="unidad",
+        huella_entorno="entorno",
+    )
     ejecutar_durable(motor, **opciones)
     motor.modelo.registro.archivo = tmp_path / "ledger-vacio.sqlite"
     with pytest.raises(ValueError, match="ledger"):
@@ -125,24 +144,35 @@ def test_ejecucion_exige_el_id_real_del_proveedor_antes_de_escribir(tmp_path):
     motor.continuar.set()
     motor.modelo = SimpleNamespace(ejecucion_id="otro-presupuesto")
     with pytest.raises(ValueError, match="proveedor"):
-        ejecutar_durable(motor, archivo=tmp_path / "checkpoints.sqlite", solicitud={}, thread_id="x",
-                         ejecucion_id="unidad", huella_entorno="entorno")
+        ejecutar_durable(
+            motor,
+            archivo=tmp_path / "checkpoints.sqlite",
+            solicitud={},
+            thread_id="x",
+            ejecucion_id="unidad",
+            huella_entorno="entorno",
+        )
     assert motor.llamadas == 0
     assert list(tmp_path.iterdir()) == []
 
 
 def test_no_se_reanuda_con_ledger_vacio_sustituido_en_la_misma_ruta(tmp_path):
     ledger = tmp_path / "ledger.sqlite"
-    with sqlite3.connect(ledger) as db:
+    with closing(sqlite3.connect(ledger)) as db, db:
         db.execute("CREATE TABLE reservas (id TEXT)")
     motor = MotorBloqueable()
     motor.continuar.set()
     motor.modelo = SimpleNamespace(ejecucion_id="unidad", registro=SimpleNamespace(archivo=ledger))
-    opciones = dict(archivo=tmp_path / "checkpoints.sqlite", solicitud={}, thread_id="objetivo",
-                    ejecucion_id="unidad", huella_entorno="entorno")
+    opciones = dict(
+        archivo=tmp_path / "checkpoints.sqlite",
+        solicitud={},
+        thread_id="objetivo",
+        ejecucion_id="unidad",
+        huella_entorno="entorno",
+    )
     ejecutar_durable(motor, **opciones)
     ledger.rename(tmp_path / "ledger-anterior.sqlite")
-    with sqlite3.connect(ledger) as db:
+    with closing(sqlite3.connect(ledger)) as db, db:
         db.execute("CREATE TABLE reservas (id TEXT)")
     with pytest.raises(ValueError, match="ledger"):
         ejecutar_durable(motor, **opciones)
@@ -175,8 +205,13 @@ def test_cierre_rehidrata_fuentes_y_no_respalda_preparacion_stale(entrada, orige
 
 def test_terminal_durable_revalida_fuente_antes_de_mostrar_respaldo(entrada, tmp_path):
     motor = entrada.crear()
-    opciones = dict(archivo=tmp_path / "checkpoint.sqlite", solicitud=entrada.solicitud.model_dump(),
-                    thread_id="par", ejecucion_id="presupuesto", huella_entorno=motor.huella_entorno)
+    opciones = dict(
+        archivo=tmp_path / "checkpoint.sqlite",
+        solicitud=entrada.solicitud.model_dump(),
+        thread_id="par",
+        ejecucion_id="presupuesto",
+        huella_entorno=motor.huella_entorno,
+    )
     assert ejecutar_durable(motor, **opciones)["resultado"]["estado"] == "respaldo_documental_automatico"
     llamadas = len(motor.modelo.llamadas)
     entrada.archivo.write_bytes(b"Fuente cambiada entre ejecuciones")
@@ -190,23 +225,35 @@ def test_reanudar_parcial_rehidrata_antes_de_consumir_modelos(entrada, tmp_path)
     archivo = tmp_path / "checkpoint.sqlite"
     entorno = motor.huella_entorno
     datos = {"solicitud": entrada.solicitud.model_dump(), "ejecucion_id": "presupuesto", "huella_entorno": entorno}
-    with sqlite3.connect(archivo, check_same_thread=False) as db:
+    with closing(sqlite3.connect(archivo, check_same_thread=False)) as db, db:
         flujo = motor.compilar(checkpointer=SqliteSaver(db))
         flujo.invoke(datos, {"configurable": {"thread_id": "par"}}, interrupt_after=["contexto"], durability="sync")
     assert motor.modelo.llamadas == []
     entrada.archivo.write_bytes(b"Fuente cambiada entre contexto y revisiones")
     with pytest.raises(ValueError, match="rehidratar"):
-        ejecutar_durable(motor, archivo=archivo, solicitud=entrada.solicitud.model_dump(),
-                         thread_id="par", ejecucion_id="presupuesto", huella_entorno=entorno)
+        ejecutar_durable(
+            motor,
+            archivo=archivo,
+            solicitud=entrada.solicitud.model_dump(),
+            thread_id="par",
+            ejecucion_id="presupuesto",
+            huella_entorno=entorno,
+        )
     assert motor.modelo.llamadas == []
 
 
 @pytest.mark.parametrize("pagina", [True, 1.0, "1"])
 def test_perfil_no_acepta_alias_booleano_o_decimal_de_pagina(entrada, pagina):
     referente = entrada.referente
-    perfil = PerfilPaginaPDF(id="LOCAL:pagina", fuente=referente.fuente, sha256=referente.sha256,
-                             pagina_pdf=1, extractor="pdfplumber", version="1",
-                             regiones=(RegionPDF(id="LOCAL:region", bbox=(0, 0, 600, 800)),))
+    perfil = PerfilPaginaPDF(
+        id="LOCAL:pagina",
+        fuente=referente.fuente,
+        sha256=referente.sha256,
+        pagina_pdf=1,
+        extractor="pdfplumber",
+        version="1",
+        regiones=(RegionPDF(id="LOCAL:region", bbox=(0, 0, 600, 800)),),
+    )
     paginas = PaginasConPerfil(entrada.repositorio, CatalogoPerfilesPDF(schema_version="1.0", perfiles=(perfil,)))
     with pytest.raises(ValueError, match="entero"):
         paginas.pagina(referente.fuente, pagina)

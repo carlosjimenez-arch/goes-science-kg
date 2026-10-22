@@ -1,4 +1,4 @@
-"""Copias Excel derivadas: sólo cambian las celdas de enmiendas expresamente respaldadas."""
+"""Create derived workbook copies with explicitly supported cell corrections."""
 
 from __future__ import annotations
 
@@ -19,6 +19,8 @@ REL = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 
 
 def enmiendas_respaldadas(archivo):
+    """Select only corrections supported by the exact published unit reviews."""
+
     todas, aceptadas = {}, set()
     for c in archivo.unidades:
         for e in c.preparacion.correcciones_requeridas:
@@ -33,7 +35,7 @@ def enmiendas_respaldadas(archivo):
 
 
 def exportar_enmiendas(curriculo, archivo, *, raiz_v4: Path, destino: Path) -> dict:
-    """No cambia el original ni vuelve a guardar otras partes del paquete OOXML."""
+    """Write derived corrections without changing originals or unrelated OOXML package entries."""
     destino_generado(destino / "enmiendas.json")
     if destino.exists():
         raise ValueError("Las copias enmendadas requieren un directorio nuevo")

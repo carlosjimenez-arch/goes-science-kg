@@ -1,4 +1,4 @@
-"""Diagnóstico de declaraciones del insumo, separado de cobertura internacional verificada."""
+"""Diagnose curriculum declarations separately from verified international coverage."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ CAMPOS_DIAGNOSTICO = (
 
 
 def diagnosticar(curriculo: Curriculo, catalogo: CatalogoDisciplinas, nodos: list[Nodo]) -> dict:
-    """Cuenta declaraciones y ausencias; no atribuye competencia por compartir vocabulario."""
+    """Count declared content and absences without inferring competence from vocabulary overlap."""
     total = len(curriculo.filas)
     campos = {}
     for campo in CAMPOS_DIAGNOSTICO:
@@ -96,7 +96,7 @@ def construir_alertas(
     evidencias: dict[str, dict],
     solicitadas: tuple[AlertaSolicitada, ...],
 ) -> dict:
-    """Ancla cada observación en celdas reales, incluidas las vacías de una fila verificable."""
+    """Anchor every observation to real curriculum cells, including verified blanks."""
     por_id = {f.id: f for f in curriculo.filas}
     tareas: list[tuple[AlertaSolicitada, tuple[str, ...]]] = [(a, (a.fila_id,)) for a in solicitadas]
     for hoja in curriculo.hojas:

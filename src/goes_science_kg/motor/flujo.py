@@ -1,4 +1,4 @@
-"""Workflow LangGraph acotado: contexto, propuesta, jueces ciegos, reparación y abstención."""
+"""Coordinate a bounded LangGraph workflow with review, repair, and abstention."""
 
 from __future__ import annotations
 
@@ -33,6 +33,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 class Estado(TypedDict, total=False):
+    """Persist curriculum-engine context, proposals, reviews, repairs, and final outcome."""
+
     solicitud: dict
     ejecucion_id: str
     evidencias: list[dict]
@@ -48,6 +50,8 @@ class Estado(TypedDict, total=False):
 
 
 class Motor:
+    """Coordinate bounded generation and independent review over verified curriculum evidence."""
+
     def __init__(
         self,
         buscador: Recuperador,
@@ -191,7 +195,7 @@ class Motor:
         return {"errores": errores}
 
     def _anclar(self, estado: Estado) -> dict:
-        """No gastar tres revisiones en una propuesta con citas o condiciones inválidas."""
+        """Reject invalid citations or conditions before spending on three reviews."""
         if not estado.get("propuesta"):
             return {"errores": estado.get("errores") or ["No se generó una propuesta"]}
         errores = validar_propuesta(
@@ -249,11 +253,11 @@ class Motor:
         return dictamenes
 
     def _resultado_cierre(self, estado: Estado) -> ResultadoMotor:
-        """Reconstruye errores sin recuperar fuentes ni generar contenido con modelos.
+        """Reconstruct closure errors without retrieving sources or generating content."""
 
-        Un anclaje inválido omite jueces. En esa abstención, o tras fallar la redacción reparada,
-        pueden quedar dictámenes de una ronda anterior: se conservan como en el workflow original.
-        """
+        # Implementation notes:
+        # Un anclaje inválido omite jueces. En esa abstención, o tras fallar la redacción reparada,
+        # pueden quedar dictámenes de una ronda anterior: se conservan como en el workflow original.
         solicitud = Solicitud.model_validate(estado["solicitud"])
         evidencias = [Evidencia.model_validate(e) for e in estado.get("evidencias", [])]
         propuesta = Propuesta.model_validate(estado["propuesta"]) if estado.get("propuesta") else None
@@ -276,7 +280,7 @@ class Motor:
         )
 
     def validar_estado(self, estado: Estado) -> None:
-        """Preflight local de parciales y terminales; no busca evidencia ni consume modelos."""
+        """Validate partial and terminal state locally without retrieval or model calls."""
         solicitud = Solicitud.model_validate(estado["solicitud"])
         self._validar_evidencias(estado, solicitud)
         # Tras reparar puede persistir una revisión de la propuesta anterior hasta el siguiente fanout.
@@ -291,7 +295,7 @@ class Motor:
         return {"resultado": self._resultado_cierre(estado).model_dump()}
 
     def compilar(self, *, checkpointer=None):
-        """Los checkpoints persistentes se inyectan: SQLite local o un backend externo."""
+        """Compile the workflow with an explicitly injected persistent checkpoint backend."""
         from langgraph.graph import END, START, StateGraph
 
         flujo = StateGraph(Estado)

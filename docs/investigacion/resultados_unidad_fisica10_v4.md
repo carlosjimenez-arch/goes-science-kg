@@ -1,5 +1,8 @@
 # Ejecución real de la unidad de Física 10.º
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. Se ejecutaron las ocho sesiones propuestas de `1. La física como ciencia`
 sobre la publicación V4 con catálogo completo. Cuatro obtuvieron respaldo automático y cuatro quedaron
 en abstención. Este resultado no cierra la reconstrucción del producto ni acredita la unidad completa.

@@ -1,4 +1,4 @@
-"""Comandos del grupo `panel`."""
+"""Expose the panel command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ def panel_preparar(
     serie: str = typer.Option("", help="lotes aparte para un grupo de tipos"),
     prefijo: str = typer.Option("", help="solo expedientes cuyo id empieza así (p. ej. PED:)"),
 ) -> None:
-    """Lotes de la ronda para cada rol del panel → data/interim/panel/lotes/."""
+    """Prepare one panel round's batches for every required reviewer role."""
     from goes_science_kg import panel
 
     lista = tipos.split(",") if tipos else None
@@ -28,7 +28,7 @@ def panel_preparar(
 
 @app.command("consolidar")
 def panel_consolidar(ronda: int = typer.Option(...), serie: str = typer.Option("")) -> None:
-    """Valida las salidas de la ronda y avanza cada expediente (unanimidad, deliberación o secuencia)."""
+    """Validate round outputs and advance dossiers under the panel resolution rules."""
     from goes_science_kg import panel
 
     typer.echo(panel.consolidar(ronda, serie))
@@ -37,7 +37,7 @@ def panel_consolidar(ronda: int = typer.Option(...), serie: str = typer.Option("
 
 @app.command("aplicar")
 def panel_aplicar() -> None:
-    """Escribe lo resuelto en las capas (decisiones, asignaciones, capa pedagógica) con su procedencia."""
+    """Apply resolved decisions and pedagogical changes with their recorded provenance."""
     from goes_science_kg import panel
 
     typer.echo(panel.aplicar())
@@ -45,7 +45,7 @@ def panel_aplicar() -> None:
 
 @app.command("informe")
 def panel_informe() -> None:
-    """panel/DICTAMEN.md con lo resuelto, lo que quedó sin consenso y la asesoría del piloto."""
+    """Write the panel report with resolved and unresolved dossiers."""
     from goes_science_kg import panel
 
     typer.echo(f"→ {panel.informe()}")
@@ -53,7 +53,7 @@ def panel_informe() -> None:
 
 @app.command("resumen")
 def panel_resumen() -> None:
-    """Expedientes por tipo y estado."""
+    """Summarize panel dossiers by type and state."""
     from goes_science_kg import panel
 
     typer.echo(json.dumps(panel.resumen(), ensure_ascii=False, indent=1))

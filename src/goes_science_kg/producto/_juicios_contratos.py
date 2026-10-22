@@ -1,4 +1,4 @@
-"""Expedientes y resultados semánticos; distintos de hipótesis y de aprobación institucional."""
+"""Define semantic dossiers and outcomes separately from institutional approval."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ LIMITE_JUICIOS = (
 
 
 class SoporteSemantico(Contrato):
-    """Localizador de confianza: el texto se obtiene del catálogo documental, nunca de este registro."""
+    """Locate semantic evidence through a trusted documentary catalog."""
 
     candidato_id: str
     grupo: Literal["destino", "origen", "dependencia"]
@@ -32,10 +32,14 @@ class SoporteSemantico(Contrato):
 
 
 class SolicitudConocimiento(Contrato):
+    """Request review of one explicit knowledge-candidate identity."""
+
     candidato_id: str = Field(pattern=r"^CANDIDATO_V4:[a-f0-9]{64}$")
 
 
 class ExpedienteConocimiento(Contrato):
+    """Preserve a complete semantic-review dossier with verified source context."""
+
     version: Literal["juicio-conocimiento-1"] = VERSION_JUICIOS
     estado: Literal["preparado", "abstencion"]
     candidato_id: str
@@ -57,34 +61,46 @@ class ExpedienteConocimiento(Contrato):
 
 
 class CriteriosComunes(Contrato):
+    """Require source implication, bounded interpretation, and explicit relationship conditions."""
+
     fuentes_implican_relacion: Valor
     sin_extrapolar_de_mencion_o_orden: Valor
     alcance_y_condiciones_explicitos: Valor
 
 
 class CriteriosCiencia(CriteriosComunes):
+    """Require scientific correctness and primary evidence for definitions or performances."""
+
     significado_cientifico_correcto: Valor
     definicion_o_desempeno_primario: Valor
 
 
 class CriteriosCurriculo(CriteriosComunes):
+    """Require explicit local performance, compatible cognitive demand, and preserved modality."""
+
     desempeno_local_explicito: Valor
     demanda_cognitiva_compatible: Valor
     modalidades_y_traduccion_respetadas: Valor
 
 
 class CriteriosPsicopedagogia(CriteriosComunes):
+    """Require grade suitability, justified cognitive supports, and demonstrated applicability."""
+
     alcance_adecuado_al_grado_sv: Valor
     carga_y_apoyos_justificados: Valor
     necesidad_cognitiva_o_aplicabilidad_demostrada: Valor
 
 
 class CriteriosRefutacion(CriteriosComunes):
+    """Require ambiguity resolution and explicit dismissal of counterexamples and alternatives."""
+
     ambiguedades_y_negaciones_resueltas: Valor
     contraejemplos_y_alternativas_descartados: Valor
 
 
 class LecturaConocimiento(Contrato):
+    """Record a semantic reading with required criteria, fragment selections, and limitations."""
+
     criterios: CriteriosComunes
     fragmentos_ids: tuple[str, ...] = Field(min_length=2, max_length=12)
     explicacion: str = Field(min_length=20, max_length=1200)
@@ -99,18 +115,26 @@ class LecturaConocimiento(Contrato):
 
 
 class LecturaCiencia(LecturaConocimiento):
+    """Represent the scientific specialist's semantic relationship reading."""
+
     criterios: CriteriosCiencia
 
 
 class LecturaCurriculo(LecturaConocimiento):
+    """Represent the curriculum specialist's semantic relationship reading."""
+
     criterios: CriteriosCurriculo
 
 
 class LecturaPsicopedagogia(LecturaConocimiento):
+    """Represent the pedagogical specialist's semantic relationship reading."""
+
     criterios: CriteriosPsicopedagogia
 
 
 class LecturaRefutacion(LecturaConocimiento):
+    """Represent the adversarial specialist's semantic relationship reading."""
+
     criterios: CriteriosRefutacion
 
 
@@ -120,6 +144,8 @@ ESQUEMAS_CONOCIMIENTO = dict(
 
 
 class DictamenConocimiento(Contrato):
+    """Bind a semantic judgment to its exact task, reviewer model, criteria, and quotations."""
+
     rol: Literal["juez_ciencia", "juez_curriculo", "juez_psicopedagogia", "juez_refutador"]
     modelo: str = Field(min_length=1)
     huella_tarea: str
@@ -130,7 +156,7 @@ class DictamenConocimiento(Contrato):
 
 
 class RelacionRespaldada(Contrato):
-    """Relación condicionada a una fila; no se promueve a verdad global del concepto."""
+    """Represent a row-conditioned relationship without promoting it to universal concept truth."""
 
     id: str = Field(pattern=r"^RELACION_V4:[a-f0-9]{64}$")
     tipo: TipoRelacion
@@ -144,6 +170,8 @@ class RelacionRespaldada(Contrato):
 
 
 class ResultadoConocimiento(Contrato):
+    """Preserve the semantic outcome, all judgments, conditional relationship, and limitations."""
+
     version: Literal["juicio-conocimiento-1"] = VERSION_JUICIOS
     estado: Literal["respaldado", "no_respaldado", "abstencion"]
     solicitud: SolicitudConocimiento
@@ -157,6 +185,8 @@ class ResultadoConocimiento(Contrato):
 
 
 class ProyeccionDependencias(Contrato):
+    """Describe accepted dependency projection, topological order, and any cyclic components."""
+
     estado: Literal["sin_prerrequisitos_respaldados", "aciclica", "bloqueada_por_ciclos"]
     nodos: tuple[str, ...]
     aristas: tuple[RelacionRespaldada, ...]
@@ -168,6 +198,8 @@ class ProyeccionDependencias(Contrato):
 
 
 class ColeccionConocimiento(Contrato):
+    """Preserve the complete reviewed collection and its accepted and rejected relationships."""
+
     version: Literal["relaciones-v4-1"] = "relaciones-v4-1"
     huella_curriculo: str
     huella_motor: str

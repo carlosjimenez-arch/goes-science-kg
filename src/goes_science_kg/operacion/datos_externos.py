@@ -1,4 +1,4 @@
-"""Migración del corpus completo con restauración verificada y retiro condicionado."""
+"""Migrate and restore the complete corpus with verified retirement conditions."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ import shutil
 import sqlite3
 import tempfile
 import zipfile
+from contextlib import closing
 from pathlib import Path
 
 from goes_science_kg.operacion.respaldo import crear_paquete, nombre_seguro, restaurar_paquete
@@ -19,11 +20,15 @@ LEDGER = "data/operaciones/registro.sqlite"
 
 
 def digest(archivo: Path) -> str:
+    """Compute a file's SHA-256 fingerprint incrementally."""
+
     with archivo.open("rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def identidad_ledger(archivo: Path) -> dict | None:
+    """Record a ledger's physical identity without opening or modifying its data."""
+
     if not archivo.exists():
         return None
     estado = archivo.stat()
@@ -40,16 +45,20 @@ def _transitorio(archivo: Path) -> bool:
 
 
 def montajes(raiz: Path, configuracion: dict) -> list[str]:
+    """Resolve configured corpus roots while rejecting overlapping mounts."""
+
     rutas = set(configuracion["rutas"])
     for patron in configuracion.get("patrones", []):
         rutas.update(p.relative_to(raiz).as_posix() for p in raiz.glob(patron))
     seleccion = sorted(nombre_seguro(p) for p in rutas if (raiz / p).exists())
-    if any(Path(b).is_relative_to(a) for i, a in enumerate(seleccion) for b in seleccion[i + 1:]):
+    if any(Path(b).is_relative_to(a) for i, a in enumerate(seleccion) for b in seleccion[i + 1 :]):
         raise ValueError("Las raíces de datos no pueden solaparse")
     return seleccion
 
 
 def inventariar(raiz: Path, rutas: list[str]) -> tuple[dict, dict, dict]:
+    """Inventory corpus bytes, symlinks, and transient SQLite companions."""
+
     archivos, enlaces, wal = {}, {}, {}
     for rel in rutas:
         nombre_seguro(rel)
@@ -77,6 +86,8 @@ def inventariar(raiz: Path, rutas: list[str]) -> tuple[dict, dict, dict]:
 
 
 def preparar(raiz: Path, configuracion: dict, destino: Path) -> dict:
+    """Prepare a complete corpus package and deterministic retirement plan."""
+
     raiz = raiz.resolve()
     rutas = montajes(raiz, configuracion)
     if not rutas or any(destino.resolve().is_relative_to(raiz / p) for p in rutas):
@@ -87,7 +98,7 @@ def preparar(raiz: Path, configuracion: dict, destino: Path) -> dict:
         for archivo in (raiz / rel).rglob("*.sqlite"):
             if archivo.is_symlink() or not archivo.with_name(archivo.name + "-wal").exists():
                 continue
-            with sqlite3.connect(archivo.resolve().as_uri() + "?mode=rw", uri=True, timeout=1) as db:
+            with closing(sqlite3.connect(archivo.resolve().as_uri() + "?mode=rw", uri=True, timeout=1)) as db, db:
                 if db.execute("PRAGMA wal_checkpoint(TRUNCATE)").fetchone()[0]:
                     raise ValueError("Hay un escritor SQLite activo; cierre la ejecución antes de preparar")
     originales, enlaces, wal = inventariar(raiz, rutas)
@@ -106,6 +117,8 @@ def preparar(raiz: Path, configuracion: dict, destino: Path) -> dict:
 
 
 def restaurar(archivo: Path, destino: Path, recibo: dict) -> dict:
+    """Restore the exact remote corpus generation and verify all original paths."""
+
     if recibo.get("version") != VERSION:
         raise ValueError("Recibo de datos incompatible")
     rutas = [nombre_seguro(p) for p in recibo["montajes"]]
@@ -132,14 +145,12 @@ def restaurar(archivo: Path, destino: Path, recibo: dict) -> dict:
         enlace = destino / nombre
         enlace.parent.mkdir(parents=True, exist_ok=True)
         enlace.symlink_to(target)
-    resultado["sqlite_verificados"] = {
-        n: v["sha256"] for n, v in manifest["archivos"].items() if n.endswith(".sqlite")
-    }
+    resultado["sqlite_verificados"] = {n: v["sha256"] for n, v in manifest["archivos"].items() if n.endswith(".sqlite")}
     return resultado
 
 
 def incorporar(restaurado: Path, raiz: Path, rutas: list[str]) -> None:
-    """Repone las rutas originales sin reemplazar archivos ni seguir enlaces del checkout."""
+    """Restore original paths without overwriting files or following checkout symlinks."""
     raiz = raiz.resolve()
     for rel in rutas:
         nombre_seguro(rel)
@@ -168,7 +179,7 @@ def incorporar(restaurado: Path, raiz: Path, rutas: list[str]) -> None:
 
 
 def retirar(raiz: Path, plan: dict, recibo: dict, configuracion: dict) -> dict:
-    """Sólo tras restauración remota: rechaza cualquier cambio posterior al paquete."""
+    """Retire unchanged originals only after verified remote restoration."""
     if plan.get("version") != VERSION or recibo.get("version") != VERSION:
         raise ValueError("Plan o recibo incompatible")
     paquete = plan["paquete_local"]

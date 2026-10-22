@@ -1,4 +1,4 @@
-"""Benchmark local reproducible; mide candidatos sin modificar pesos ni anotaciones."""
+"""Benchmark retrieval candidates without modifying weights or reference annotations."""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ def _resumen_tiempos(tiempos: Sequence[float]) -> dict:
 
 
 def metricas_recuperacion(preguntas: Sequence[dict], ordenes: Sequence[Sequence[str]], *, ks=(5, 10, 25)) -> dict:
-    """Conserva todos los relevantes, incluidos los ausentes del corpus, en el denominador."""
+    """Retain all relevant references, including missing documents, in evaluation denominators."""
     if not preguntas or len(preguntas) != len(ordenes):
         raise ValueError("Se requiere un ranking por pregunta y al menos una pregunta")
     filas = []
@@ -79,11 +79,11 @@ def comparar_recuperacion(
     ks: tuple[int, ...] = (5, 10, 25),
     preguntas_permitidas: set[str] | None = None,
 ) -> dict:
-    """Compara el baseline contra candidatos léxicos con aristas reales y parámetros fijos.
+    """Compare fixed lexical candidates against the baseline using real graph edges."""
 
-    El candidato se denomina híbrido por su capacidad; este experimento NO llama a embeddings.
-    Los conjuntos históricos son regresiones plata y no una muestra representativa de V4.
-    """
+    # Implementation notes:
+    # El candidato se denomina híbrido por su capacidad; este experimento NO llama a embeddings.
+    # Los conjuntos históricos son regresiones plata y no una muestra representativa de V4.
     if repeticiones < 1 or not ks or min(ks) < 1 or max(ks) > 100:
         raise ValueError("Se requieren repeticiones positivas y k entre 1 y 100")
     archivos = [ruta(p) for p in conjuntos]
@@ -213,7 +213,7 @@ def comparar_recuperacion(
 
 
 def escribir_comparacion(datos: dict, *, salida_json: str | Path, salida_md: str | Path) -> None:
-    """Escribe resultados completos y una lectura breve sin ocultar regresiones."""
+    """Write complete comparison results and disclose retrieval regressions."""
     destino_json, destino_md = Path(salida_json), Path(salida_md)
     destino_json.parent.mkdir(parents=True, exist_ok=True)
     destino_md.parent.mkdir(parents=True, exist_ok=True)

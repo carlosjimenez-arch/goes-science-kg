@@ -1,4 +1,4 @@
-"""Comandos del grupo `conceptos`."""
+"""Expose the conceptos command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ app = typer.Typer(help="Capa de conceptos y prácticas (fase 3)", no_args_is_hel
 
 @app.command("preparar-vocabulario")
 def conceptos_preparar_vocabulario() -> None:
-    """Insumos por asignatura para que un subagente construya el vocabulario."""
+    """Prepare subject-specific inputs for concept vocabulary construction."""
     from goes_science_kg.conceptos import preparar_vocabulario
     from goes_science_kg.grafo.almacen import cargar
 
@@ -21,7 +21,7 @@ def conceptos_preparar_vocabulario() -> None:
 
 @app.command("consolidar")
 def conceptos_consolidar() -> None:
-    """Valida y une vocabulario_<asignatura>.json → vocabulario.json."""
+    """Validate and merge subject vocabularies into one registered vocabulary."""
     from goes_science_kg.conceptos import consolidar_vocabulario
 
     typer.echo(json.dumps(consolidar_vocabulario(), ensure_ascii=False))
@@ -32,7 +32,7 @@ def conceptos_preparar_etiquetado(
     todos: bool = typer.Option(False, "--todos", help="Rehace todos los lotes (si no, solo los temas pendientes)"),
     v3: bool = typer.Option(False, "--v3", help="Re-etiqueta los temas nuevos, parecidos y ampliados de la V3"),
 ) -> None:
-    """Lotes por asignatura y grado para etiquetar temas con conceptos y prácticas."""
+    """Prepare subject- and grade-specific concept and practice tagging batches."""
     from goes_science_kg.conceptos import preparar_etiquetado
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.ingesta.mallas import extraer
@@ -49,7 +49,7 @@ def conceptos_preparar_etiquetado(
 
 @app.command("unir-etiquetado")
 def conceptos_unir_etiquetado() -> None:
-    """Valida y une las salidas de los subagentes → etiquetado_temas.json."""
+    """Validate and merge topic-tagging batch outputs."""
     from goes_science_kg.conceptos import unir_etiquetado
 
     typer.echo(json.dumps(unir_etiquetado(), ensure_ascii=False))
@@ -57,7 +57,7 @@ def conceptos_unir_etiquetado() -> None:
 
 @app.command("preparar-paises")
 def conceptos_preparar_paises() -> None:
-    """Lotes para etiquetar los objetivos de países directamente con conceptos."""
+    """Prepare direct concept tagging batches for country objectives."""
     from goes_science_kg.conceptos import preparar_etiquetado_paises
     from goes_science_kg.grafo.almacen import cargar
 
@@ -67,7 +67,7 @@ def conceptos_preparar_paises() -> None:
 
 @app.command("unir-paises")
 def conceptos_unir_paises() -> None:
-    """Valida y une las salidas → etiquetado_paises.json."""
+    """Validate and merge country-objective tagging outputs."""
     from goes_science_kg.conceptos import unir_etiquetado_paises
 
     typer.echo(json.dumps(unir_etiquetado_paises(), ensure_ascii=False))
@@ -75,7 +75,7 @@ def conceptos_unir_paises() -> None:
 
 @app.command("preparar-prerrequisitos")
 def conceptos_preparar_prerrequisitos() -> None:
-    """Lotes por asignatura con la evidencia de orden (SV, países, marcos) para el subagente."""
+    """Prepare prerequisite batches with curriculum, country, and framework ordering evidence."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.prerrequisitos import preparar
 
@@ -85,7 +85,7 @@ def conceptos_preparar_prerrequisitos() -> None:
 
 @app.command("unir-prerrequisitos")
 def conceptos_unir_prerrequisitos() -> None:
-    """Valida, rompe ciclos y quita redundancias transitivas → prerrequisitos.json."""
+    """Validate prerequisites, break cycles, and remove transitive redundancies."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.prerrequisitos import unir
 

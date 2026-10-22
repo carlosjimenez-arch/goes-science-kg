@@ -1,5 +1,8 @@
 # Auditoría del repositorio para la reconstrucción del producto
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 2026-10-21. Alcance: código, configuración, contratos, documentación y fuentes locales del repositorio. No se leyeron secretos, no se ejecutaron llamadas a modelos ni se aprovisionó infraestructura. Las cifras describen el estado anterior a la reorganización de la CLI realizada en esta misma intervención.
 
 ## Hallazgo sobre el insumo V4

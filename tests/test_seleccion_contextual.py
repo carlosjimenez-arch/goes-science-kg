@@ -1,4 +1,4 @@
-"""Localizadores permitidos y grupos obligatorios sin relajar dictámenes ni agregar citas."""
+"""Preserve permitted locators and mandatory context groups without adding model-written citations."""
 
 from __future__ import annotations
 

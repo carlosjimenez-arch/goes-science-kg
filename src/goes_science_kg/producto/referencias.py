@@ -1,4 +1,4 @@
-"""Adaptadores explícitos de categorías documentales y redes históricas de referencia."""
+"""Adapt documentary categories and historical reference networks explicitly."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ def referencias_documentales(
     catalogo: CatalogoDimensiones,
     repositorio: RepositorioReferencias,
 ) -> ReferenciasProducto:
-    """Ancla categorías en páginas verificadas; no crea CUBRE ni objetivos oficiales."""
+    """Anchor local categories in verified pages without creating official objectives or coverage edges."""
     validacion = validar_dimensiones(catalogo, repositorio)
     manifiesto = repositorio.manifiesto()
     if sha(manifiesto.model_dump_json().encode("utf-8")) != validacion["huella_manifest"]:
@@ -100,7 +100,7 @@ def referencias_documentales(
 
 
 def cargar_referencias_historicas(directorio: Path) -> ReferenciasProducto:
-    """Lee bytes cotejados con manifiesto; preserva su versión y su condición histórica."""
+    """Load manifest-verified historical bytes while retaining their original version status."""
     base = directorio.resolve()
     archivo_manifest = base / "manifest.json"
     if archivo_manifest.is_symlink():
@@ -135,7 +135,7 @@ def cargar_referencias_historicas(directorio: Path) -> ReferenciasProducto:
 
 
 def combinar_referencias(*referencias: ReferenciasProducto) -> ReferenciasProducto:
-    """Combina conjuntos explícitos; una colisión de identidad requiere resolución previa."""
+    """Combine explicit reference sets only after resolving identity collisions."""
     nodos, aristas = [], []
     vistos = set()
     for referencia in referencias:

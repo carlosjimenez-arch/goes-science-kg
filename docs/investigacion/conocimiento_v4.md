@@ -1,5 +1,8 @@
 # Brecha de conocimiento V4 y motor local de candidatos
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Este informe contrasta el objetivo del producto con las capacidades materializadas.
 El módulo `producto/conocimiento.py` aproxima el siguiente paso de la fase 2:
 propone vínculos concretos desde las celdas V4 a vocabulario y objetivos extranjeros,

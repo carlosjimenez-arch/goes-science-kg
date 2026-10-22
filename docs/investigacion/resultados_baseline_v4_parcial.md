@@ -1,5 +1,8 @@
 # Baseline V4: medición local provisional
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Captura histórica del piloto. La medición posterior con catálogo completo está en
 [resultados del producto publicado](resultados_baseline_v4_catalogado.md); no reemplaza esta evidencia.
 

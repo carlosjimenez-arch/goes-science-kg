@@ -1,4 +1,4 @@
-"""Rehidratación de las páginas originales, incluidos sus perfiles de extracción fijados."""
+"""Rehydrate original reference pages using their pinned extraction profiles."""
 
 from __future__ import annotations
 
@@ -11,6 +11,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 class FuentesConAlineaciones(FuentesVerificadas):
+    """Rehydrate row-linked alignment evidence using the original extraction profiles."""
+
     def __init__(self, *args, alineaciones: ArchivoAlineaciones, paginas, **kwargs):
         super().__init__(*args, **kwargs)
         self._paginas_alineacion = paginas
@@ -25,6 +27,8 @@ class FuentesConAlineaciones(FuentesVerificadas):
                 self._evidencias_alineacion[e.id] = e.model_copy(deep=True)
 
     def hidratar(self, documento):
+        """Resolve verified local or documentary evidence under the alignment-aware source policy."""
+
         esperada = self._evidencias_alineacion.get(documento.id)
         if esperada is None:
             return super().hidratar(documento)

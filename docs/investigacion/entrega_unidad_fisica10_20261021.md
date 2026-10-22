@@ -1,5 +1,8 @@
 # Entrega experimental íntegra de Física 10.º
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. La propuesta conserva los **ocho objetivos V4** de «La física como
 ciencia» y dispone de respaldo automático de ciencia, psicopedagogía y revisión adversarial para
 cada objetivo bajo sus condiciones declaradas. Se organiza en **nueve encuentros de sesenta minutos,

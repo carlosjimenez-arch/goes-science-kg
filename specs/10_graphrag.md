@@ -1,5 +1,9 @@
 # 10 · GraphRAG
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 Consulta en lenguaje natural sobre el grafo, para el equipo curricular y, más adelante, para docentes.
 Por ejemplo: «¿qué necesita saber un estudiante de 7.° antes de genética?» o «¿cómo enseñan circuitos
 los países de referencia y en qué grado?».

@@ -1,4 +1,4 @@
-"""La inspección de entregas nuevas es declarativa, trazable y no activa currículos."""
+"""Inventory new deliveries declaratively without activating a curriculum version."""
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ def _libro(archivo: Path, filas: list[list], nombre: str = "Programa") -> None:
 
 
 def test_inventario_no_muta_fuentes_y_es_determinista(tmp_path):
-    """No presupone once archivos, nombres de hojas, columnas ni fila de cabecera."""
+    """Inspect workbook structure without assuming eleven files or mutating original bytes."""
     archivo = tmp_path / "ciclo" / "ciencias.xlsx"
     _libro(
         archivo,
@@ -123,7 +123,7 @@ def test_rechaza_version_sin_identidad(tmp_path, version):
 
 @pytest.mark.parametrize("anidado", [False, True])
 def test_permiso_denegado_no_se_confunde_con_directorio_vacio(tmp_path, monkeypatch, anidado):
-    """El sandbox y los permisos pueden impedir enumerar una entrega que sí existe."""
+    """Distinguish permission-denied inventory access from a genuinely empty directory."""
     import os
 
     from goes_science_kg.ingesta import inventario

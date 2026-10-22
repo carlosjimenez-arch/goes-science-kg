@@ -1,5 +1,8 @@
 # Recuperación adaptativa acotada para V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. Estado: candidato implementado, pruebas locales sintéticas; sin ejecución
 de modelos remotos ni lectura del conjunto reservado durante su desarrollo. El default continúa siendo
 el baseline. Esta implementación no declara una mejora de calidad en V4.

@@ -1,4 +1,4 @@
-"""Contrato puro del cierre reutilizable; sin Motor, proveedores, red ni archivos fuente."""
+"""Test pure reusable knowledge closure without providers, network, or original-source files."""
 
 from __future__ import annotations
 

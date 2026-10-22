@@ -1,4 +1,4 @@
-"""BM25 por listas invertidas: sólo recorre documentos con términos compartidos."""
+"""Score BM25 through inverted postings for documents sharing query terms."""
 
 from __future__ import annotations
 
@@ -15,14 +15,14 @@ VACIAS = frozenset("a al con de del el en es la las lo los o para por que se su 
 
 
 def normalizar(texto: str) -> list[str]:
-    """Normaliza mayúsculas y diacríticos sin borrar términos científicos Unicode."""
+    """Normalize case and diacritics while preserving Unicode scientific terms."""
     base = unicodedata.normalize("NFKD", texto.casefold())
     base = "".join(c for c in base if not unicodedata.combining(c))
     return [t for t in re.findall(r"[^\W_]+", base) if len(t) > 1 and t not in VACIAS]
 
 
 class IndiceLexico:
-    """Índice BM25 inmutable en operación; desempata de manera estable por id."""
+    """Index BM25 postings with deterministic identifier-based tie breaking."""
 
     def __init__(self, documentos: Iterable[Documento], *, k1: float = 1.4, b: float = 0.75):
         if not math.isfinite(k1) or k1 <= 0 or not math.isfinite(b) or not 0 <= b <= 1:
@@ -40,7 +40,7 @@ class IndiceLexico:
         self.promedio = sum(self.longitudes.values()) / max(1, self.n)
 
     def buscar(self, consulta: str, *, permitidos: set[str], limite: int) -> list[tuple[str, float]]:
-        """Devuelve documentos permitidos con puntaje positivo, sin completar con ruido."""
+        """Return permitted documents with positive scores without filling results with noise."""
         if not self.n or not self.promedio or not permitidos or limite <= 0:
             return []
         puntajes: dict[str, float] = defaultdict(float)

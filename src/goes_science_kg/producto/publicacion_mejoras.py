@@ -1,4 +1,4 @@
-"""Consolidar toda la campaña y publicar la mejora sobre la misma base curricular verificada."""
+"""Consolidate complete campaigns over the same verified curriculum base."""
 
 import json
 from pathlib import Path
@@ -23,6 +23,8 @@ def consolidar_campana(
     seguimiento: Path | None = None,
     rectificacion: Path | None = None,
 ) -> ArchivoMejoras:
+    """Consolidate every campaign unit while preserving failures and complete provenance."""
+
     plan = json.loads((directorio / "plan.json").read_bytes())
     if plan["id"] != huella({k: v for k, v in plan.items() if k != "id"}):
         raise ValueError("El plan no conserva su identidad")
@@ -80,6 +82,8 @@ def consolidar_campana(
 
 
 def publicar_mejoras(archivo: ArchivoMejoras, *, runtime, raiz: Path, destino: Path) -> dict:
+    """Verify and atomically publish the complete improvement generation."""
+
     modelos = cargar("mejoras_curriculares")["vertex"]["modelos"]
     validar_archivo_mejoras(
         archivo, runtime.producto.curriculo, runtime.producto.catalogo, modelos={r: modelos[r] for r in ROLES_MEJORA}
@@ -131,4 +135,6 @@ def publicar_mejoras(archivo: ArchivoMejoras, *, runtime, raiz: Path, destino: P
 
 
 def guardar_archivo(archivo: ArchivoMejoras, destino: Path):
+    """Write an archive without overwriting incompatible existing content."""
+
     escribir_nuevo_o_igual(destino, archivo.model_dump(mode="json"))

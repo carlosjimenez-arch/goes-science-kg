@@ -1,4 +1,4 @@
-"""Comandos principales del pipeline curricular."""
+"""Expose the primary science curriculum pipeline commands."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ app = typer.Typer(help="Grafo de conocimiento de Ciencias · El Salvador", no_ar
 
 @app.command()
 def temas() -> None:
-    """Extrae los temas de las mallas → data/interim/temas.json."""
+    """Extract curriculum topics into the deterministic intermediate artifact."""
     from goes_science_kg.ingesta.mallas import extraer
 
     ts = extraer()
@@ -25,7 +25,7 @@ def temas() -> None:
 
 @app.command("malla-correspondencia")
 def malla_correspondencia() -> None:
-    """Empareja la malla vigente (V3) con la anterior (V2) → data/interim/mallas/v2_a_v3.json (spec 15)."""
+    """Match historical V2 and V3 curricula under the documented correspondence contract."""
     from goes_science_kg.ingesta.mallas import escribir_correspondencia
 
     typer.echo(json.dumps(escribir_correspondencia(), ensure_ascii=False, indent=1))
@@ -40,7 +40,7 @@ def rag(
     responder_con_claude: bool = typer.Option(False, "--responder", help="Genera la respuesta con Claude"),
     global_: bool = typer.Option(False, "--global", help="Búsqueda global: bloques temáticos del grado"),
 ) -> None:
-    """GraphRAG: recupera evidencia del grafo (y opcionalmente responde con Claude)."""
+    """Retrieve GraphRAG evidence and optionally generate a response through Claude."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.rag import GraphRAG, busqueda_global, responder
 
@@ -65,7 +65,7 @@ def evaluar_rag(
         help="Archivo de preguntas (p. ej. el de prueba, que no se usa para ajustar)",
     ),
 ) -> None:
-    """Mide la recuperación de GraphRAG con un conjunto de preguntas (recall@k, MRR)."""
+    """Measure retrieval recall and reciprocal rank on an explicit question set."""
     from goes_science_kg.evaluacion import evaluar
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.rag import GraphRAG
@@ -75,7 +75,7 @@ def evaluar_rag(
 
 @app.command()
 def brechas() -> None:
-    """Análisis de brechas por asignatura → asignaturas/<x>/brechas/."""
+    """Generate subject-specific curriculum gap reports."""
     from goes_science_kg.brechas import escribir_brechas
     from goes_science_kg.grafo.almacen import cargar
 
@@ -85,7 +85,7 @@ def brechas() -> None:
 
 @app.command()
 def progresion() -> None:
-    """Mapa de progresión de conceptos por asignatura → asignaturas/<x>/progresion.html."""
+    """Render subject-specific concept progression maps."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.progresion import escribir_todas
 
@@ -95,7 +95,7 @@ def progresion() -> None:
 
 @app.command()
 def servir(puerto: int = 8010, host: str = "127.0.0.1") -> None:
-    """API de lectura (FastAPI) en http://127.0.0.1:<puerto>/docs. Requiere `uv sync --extra api`."""
+    """Serve the local read API and OpenAPI documentation through Uvicorn."""
     import uvicorn
 
     uvicorn.run("goes_science_kg.api:app", host=host, port=puerto)
@@ -103,7 +103,7 @@ def servir(puerto: int = 8010, host: str = "127.0.0.1") -> None:
 
 @app.command()
 def fichas() -> None:
-    """Genera asignaturas/<asignatura>/ficha.md desde el grafo guardado."""
+    """Generate subject reports from the stored graph."""
     import json as _json
 
     from goes_science_kg.fichas import escribir_fichas

@@ -1,4 +1,4 @@
-"""Archivo autosuficiente de conocimiento: evidencia deduplicada y juicios reconstruibles."""
+"""Publish deduplicated evidence with reconstructible knowledge reviews."""
 
 from __future__ import annotations
 
@@ -25,13 +25,15 @@ if TYPE_CHECKING:
 
 
 class RegistroExpediente(Contrato):
-    """La preparación se valida con ExpedienteConocimiento al resolver sus IDs de evidencia."""
+    """Resolve evidence identities before validating a stored knowledge-review preparation."""
 
     preparacion: dict
     evidencias_ids: tuple[str, ...]
 
 
 class ArchivoConocimiento(Contrato):
+    """Archive complete knowledge evidence, dossiers, configuration, and cohort composition."""
+
     version: Literal["conocimiento-publicado-1", "conocimiento-publicado-2"] = "conocimiento-publicado-1"
     huella_archivo: str = Field(pattern=r"^[a-f0-9]{64}$")
     huella_curriculo: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -47,6 +49,8 @@ class ArchivoConocimiento(Contrato):
     componentes: tuple[ArchivoConocimiento, ...] = Field(default=(), max_length=50, exclude_if=lambda v: not v)
 
     def expediente(self, candidato_id: str) -> ExpedienteConocimiento:
+        """Resolve one archived dossier and its deduplicated evidence identities."""
+
         registro = self.expedientes[candidato_id]
         if "evidencias" in registro.preparacion or len(set(registro.evidencias_ids)) != len(registro.evidencias_ids):
             raise ValueError("Registro de expediente ambiguo o con evidencias repetidas")
@@ -59,7 +63,7 @@ class ArchivoConocimiento(Contrato):
 
 
 def crear_archivo_conocimiento(motor: MotorConocimiento, estados: list[dict]) -> ArchivoConocimiento:
-    """Rehidrata antes de archivar; no admite sólo una colección con banderas favorables."""
+    """Rehydrate evidence before archiving rather than trusting favorable outcome flags."""
     coleccion = consolidar_relaciones(motor, estados)
     expedientes, evidencias = {}, {}
     for estado in estados:
@@ -220,7 +224,7 @@ def validar_archivo_conocimiento(
     catalogo: CatalogoDisciplinas | None = None,
     modelos_esperados: dict[str, str] | None = None,
 ) -> None:
-    """Integridad y cierre sin modelos. Los bytes físicos se rehidratan en publicación y consulta."""
+    """Validate knowledge archive integrity and closure without invoking models."""
     from goes_science_kg.motor.validacion_conocimiento import resolver_resultado
 
     if archivo.huella_archivo != huella(archivo.model_dump(mode="json", exclude={"huella_archivo"})):

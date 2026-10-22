@@ -1,4 +1,4 @@
-"""Seguimiento finito de incidencias: no reevalúa unidades aprobadas ni oculta antecedentes."""
+"""Follow finite incident cohorts without repeating approved units or hiding prior evidence."""
 
 from __future__ import annotations
 
@@ -45,9 +45,11 @@ inferiores al límite del contrato, no autorización para eliminar desempeños. 
 
 
 class PreparadorSeguimiento(PreparadorMejoras):
-    """Añade fuentes puntuales a dos unidades sin alterar el corpus de recuperación P5."""
+    """Add targeted incident evidence without changing the fixed P5 retrieval corpus."""
 
     def preparar(self, solicitud):
+        """Prepare targeted follow-up context without changing the fixed retrieval corpus."""
+
         p = super().preparar(solicitud)
         fuente = None
         if (solicitud.grado, solicitud.asignatura_malla, solicitud.unidad) == (
@@ -91,6 +93,8 @@ class PreparadorSeguimiento(PreparadorMejoras):
 
 
 def solo_revision_fallida(caso: CasoMejora) -> bool:
+    """Identify a missing review without repeating already received substantive votes."""
+
     r = caso.resultado.rondas[-1]
     return bool(
         r.borrador is not None
@@ -105,11 +109,15 @@ def solo_revision_fallida(caso: CasoMejora) -> bool:
 
 
 class MotorSeguimiento(MotorMejoras):
+    """Follow unresolved incidents under the original finite improvement protocol."""
+
     def __init__(self, preparador, modelo, anterior):
         super().__init__(preparador, modelo)
         self.anterior = anterior
 
     def entorno(self, p):
+        """Fingerprint the follow-up preparation and its original campaign environment."""
+
         return huella(
             {
                 "base": super().entorno(p),
@@ -183,6 +191,8 @@ class MotorSeguimiento(MotorMejoras):
 
 
 def crear_seguimiento(directorio, *, raiz, runtime, destino):
+    """Create a fixed follow-up plan retaining all prior unit outcomes."""
+
     plan_base = json.loads((directorio / "plan.json").read_bytes())
     if plan_base["id"] != huella({k: v for k, v in plan_base.items() if k != "id"}):
         raise ValueError("El plan anterior cambió")
@@ -231,6 +241,8 @@ def crear_seguimiento(directorio, *, raiz, runtime, destino):
 
 
 def ejecutar_seguimiento(plan, *, raiz, runtime, destino):
+    """Execute or resume unresolved incident work without resetting the shared budget."""
+
     if plan["id"] != huella({k: v for k, v in plan.items() if k != "id"}):
         raise ValueError("El plan de seguimiento cambió")
     cfg = ConfiguracionVertex.model_validate(plan["configuracion"])
@@ -269,6 +281,8 @@ def ejecutar_seguimiento(plan, *, raiz, runtime, destino):
 
 
 def incorporar_seguimiento(casos, directorio, plan_base):
+    """Incorporate follow-up results without erasing original failures or abstentions."""
+
     plan = json.loads((directorio / "plan.json").read_bytes())
     if (
         plan["id"] != huella({k: v for k, v in plan.items() if k != "id"})

@@ -1,4 +1,4 @@
-"""Regresiones de publicación automática, fallos de jueces y recuperación durable del presupuesto."""
+"""Test automatic publication, reviewer failures, and durable spending limits."""
 
 import json
 from concurrent.futures import ThreadPoolExecutor
@@ -113,7 +113,7 @@ class ModeloPrueba:
 
 
 class FuentesPrueba:
-    """Adaptador explícito para unit tests; producción verifica los archivos originales."""
+    """Provide an explicit test-only evidence adapter while production verifies physical sources."""
 
     def __init__(self, documentos):
         self.documentos = {d.id: d for d in documentos}

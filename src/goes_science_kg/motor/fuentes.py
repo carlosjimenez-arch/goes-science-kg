@@ -1,8 +1,8 @@
-"""Evidencia desde snapshots verificados de PDF, Excel y unidades DOCX/HTML por código.
+"""Rehydrate evidence from verified PDF, Excel, DOCX, and HTML snapshots."""
 
-Las raíces proceden del catálogo configurado, nunca del payload de un Documento. Cada archivo se
-lee y verifica una vez por instancia; si cambia su identidad en disco, se rechaza la caché completa.
-"""
+# Historical implementation notes:
+# Las raíces proceden del catálogo configurado, nunca del payload de un Documento. Cada archivo se
+# lee y verifica una vez por instancia; si cambia su identidad en disco, se rechaza la caché completa.
 
 from __future__ import annotations
 
@@ -50,7 +50,7 @@ def _entero_positivo(valor: Any) -> int:
 
 
 class FuentesVerificadas:
-    """Lectura acotada con caché de bytes, libros y localizadores; no ejecuta fórmulas."""
+    """Read verified byte, workbook, and locator caches without executing spreadsheet formulas."""
 
     def __init__(
         self,
@@ -79,16 +79,20 @@ class FuentesVerificadas:
 
     @property
     def bloqueos_efectivos(self) -> dict[str, str]:
-        """Une vetos para generación sin confundir su origen en el armado de contexto."""
+        """Combine generation blocks while preserving the distinction between their origins."""
         return self.bloqueos_curriculares | self.bloqueos_derivados
 
     def motivos_bloqueo(self, evidencias) -> list[str]:
+        """Return blocking scientific-alert reasons for the supplied evidence."""
+
         ids = {e.id.partition("#CELDA:")[0] for e in evidencias}
         bloqueos = self.bloqueos_efectivos
         return [bloqueos[i] for i in sorted(ids.intersection(bloqueos))]
 
     @classmethod
     def del_grafo(cls, nodos: Iterable[Nodo]) -> FuentesVerificadas:
+        """Build verified-source access from graph provenance and explicitly permitted roots."""
+
         catalogo = {n.id.removeprefix("DOC:"): n.props for n in nodos if n.tipo == TipoNodo.DOCUMENTO}
         return cls(catalogo, raiz_fuentes=ruta("data/fuentes"))
 
@@ -99,8 +103,7 @@ class FuentesVerificadas:
         raiz = self._raices[registro.get("raiz_fuente", "principal")]
         relativo = Path(registro["archivo_local"])
         opciones = (
-            [relativo] if relativo.is_absolute()
-            else [raiz / relativo, raiz / "externos" / relativo, ruta(relativo)]
+            [relativo] if relativo.is_absolute() else [raiz / relativo, raiz / "externos" / relativo, ruta(relativo)]
         )
         for candidato in opciones:
             archivo = candidato.resolve()
@@ -111,13 +114,15 @@ class FuentesVerificadas:
 
     @staticmethod
     def _abrir_seguro(archivo: Path, raiz: Path) -> int:
-        """Abre cada componente por descriptor, sin seguir enlaces sustituidos tras resolve()."""
+        """Open path components by descriptor without following substituted symlinks."""
         descriptor = os.open(raiz, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
         try:
             partes = archivo.relative_to(raiz).parts
             for directorio in partes[:-1]:
                 siguiente = os.open(
-                    directorio, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=descriptor,
+                    directorio,
+                    os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW,
+                    dir_fd=descriptor,
                 )
                 os.close(descriptor)
                 descriptor = siguiente
@@ -158,7 +163,7 @@ class FuentesVerificadas:
             return snapshot
 
     def _archivo(self, id_documento: str) -> tuple[Path, bytes]:
-        """Compatibilidad: siempre devuelve bytes de un snapshot validado."""
+        """Return bytes from a validated immutable source snapshot."""
         snapshot = self._snapshot(id_documento)
         return snapshot.archivo, snapshot.contenido
 
@@ -171,7 +176,10 @@ class FuentesVerificadas:
                 if sum(item.file_size for item in paquete.infolist()) > MAX_BYTES_XLSX_DESCOMPRIMIDOS:
                     raise ValueError("El XLSX descomprimido supera el presupuesto")
             self._libros[clave] = load_workbook(
-                BytesIO(snapshot.contenido), read_only=False, data_only=False, keep_links=False,
+                BytesIO(snapshot.contenido),
+                read_only=False,
+                data_only=False,
+                keep_links=False,
             )
         return self._libros[clave]
 
@@ -196,8 +204,9 @@ class FuentesVerificadas:
             area = (max_col - min_col + 1) * (max_fila - min_fila + 1)
             if min_col > max_col or min_fila > max_fila or area > MAX_CELDAS:
                 raise ValueError("El rango está invertido o supera 64 celdas")
-            coordenadas = [f"{get_column_letter(c)}{f}" for f in range(min_fila, max_fila + 1)
-                           for c in range(min_col, max_col + 1)]
+            coordenadas = [
+                f"{get_column_letter(c)}{f}" for f in range(min_fila, max_fila + 1) for c in range(min_col, max_col + 1)
+            ]
         else:
             fila = _entero_positivo(fuente.get("fila"))
             if not 1 <= hoja.max_column <= MAX_CELDAS:
@@ -217,21 +226,26 @@ class FuentesVerificadas:
         celdas = []
         for coordenada in self._seleccionar_celdas(fuente, hoja):
             original = hoja[coordenada]
-            rangos = [r for r in hoja.merged_cells.ranges
-                      if r.min_row <= original.row <= r.max_row and r.min_col <= original.column <= r.max_col]
+            rangos = [
+                r
+                for r in hoja.merged_cells.ranges
+                if r.min_row <= original.row <= r.max_row and r.min_col <= original.column <= r.max_col
+            ]
             if len(rangos) > 1:
                 raise ValueError("La celda pertenece a combinaciones superpuestas y ambiguas")
             rango = rangos[0] if rangos else None
             origen = hoja.cell(rango.min_row, rango.min_col) if rango is not None else original
-            celdas.append({
-                "coordenada_solicitada": coordenada,
-                "coordenada_origen": origen.coordinate,
-                "valor_original": original.value,
-                "valor_real": origen.value,
-                "tipo_excel": origen.data_type,
-                "rango_combinado": str(rango) if rango is not None else None,
-                "valor_es_formula": origen.data_type == "f",
-            })
+            celdas.append(
+                {
+                    "coordenada_solicitada": coordenada,
+                    "coordenada_origen": origen.coordinate,
+                    "valor_original": original.value,
+                    "valor_real": origen.value,
+                    "tipo_excel": origen.data_type,
+                    "rango_combinado": str(rango) if rango is not None else None,
+                    "valor_es_formula": origen.data_type == "f",
+                }
+            )
         return celdas
 
     @staticmethod
@@ -241,7 +255,8 @@ class FuentesVerificadas:
     def _fuente_verificada(self, fuente: dict, snapshot: _Snapshot) -> dict:
         # No devolver texto ni valores arbitrarios del payload como si fueran procedencia verificada.
         campos = (
-            ("documento", "localizador") if snapshot.archivo.suffix.lower() in {".docx", ".html", ".htm"}
+            ("documento", "localizador")
+            if snapshot.archivo.suffix.lower() in {".docx", ".html", ".htm"}
             else ("documento", "pagina", "hoja", "fila", "celdas", "rango")
         )
         registro = self._registro(fuente["documento"])
@@ -258,7 +273,7 @@ class FuentesVerificadas:
             raise ValueError("La versión solicitada no coincide con el catálogo configurado")
 
     def hidratar_celdas(self, documento: Documento) -> list[Evidencia]:
-        """Una evidencia por celda no vacía; una combinación conserva el ancla original."""
+        """Rehydrate each nonempty cell while retaining original merged-cell anchors."""
         try:
             with self._lock:
                 self._validar_version(documento)
@@ -279,16 +294,21 @@ class FuentesVerificadas:
                     fuente["celdas"] = [coordenada]
                     fuente["fila"] = coordinate_to_tuple(coordenada)[0]
                     fuente["celdas_verificadas"] = [celda]
-                    salida.append(Evidencia.crear(
-                        f"{documento.id}#CELDA:{coordenada}", texto, fuente, documento.version,
-                    ))
+                    salida.append(
+                        Evidencia.crear(
+                            f"{documento.id}#CELDA:{coordenada}",
+                            texto,
+                            fuente,
+                            documento.version,
+                        )
+                    )
                 return salida
         except Exception as error:  # Fallo cerrado también ante errores de parser de un archivo no confiable.
             LOGGER.warning("AMARILLO celdas %s omitidas: %s", documento.id, type(error).__name__)
             return []
 
     def hidratar(self, documento: Documento) -> Evidencia | None:
-        """Hidrata localizadores físicos; nunca emplea Documento.texto como respaldo."""
+        """Rehydrate physical locators without treating retrieval text as evidence."""
         try:
             with self._lock:
                 fuente = documento.fuente
@@ -304,8 +324,10 @@ class FuentesVerificadas:
                     unidad = self._estructurados[clave].extraer(fuente.get("localizador"))
                     texto = unidad.texto
                     verificada = self._fuente_verificada(fuente, snapshot) | {
-                        "localizador": unidad.localizador, "ubicacion": unidad.ubicacion,
-                        "extractor": unidad.metodo, "huella_implementacion": unidad.huella_implementacion,
+                        "localizador": unidad.localizador,
+                        "ubicacion": unidad.ubicacion,
+                        "extractor": unidad.metodo,
+                        "huella_implementacion": unidad.huella_implementacion,
                         "limites_visibilidad": unidad.limites,
                     }
                 elif snapshot.archivo.suffix.lower() == ".xlsx" and fuente.get("hoja"):
@@ -346,7 +368,7 @@ class FuentesVerificadas:
             return None
 
     def estadisticas(self) -> dict[str, int]:
-        """Contadores locales para comprobar que no se relee un XLSX por cada celda."""
+        """Report local counters for checking workbook reuse across cell reads."""
         with self._lock:
             return {
                 "archivos_leidos": self._lecturas,
@@ -356,6 +378,6 @@ class FuentesVerificadas:
             }
 
     def estadisticas_estructuradas(self) -> dict[str, int]:
-        """Contador separado para mantener el contrato histórico de estadisticas()."""
+        """Report structured-document counters separately from historical spreadsheet statistics."""
         with self._lock:
             return {"indices_parseados": len(self._estructurados)}

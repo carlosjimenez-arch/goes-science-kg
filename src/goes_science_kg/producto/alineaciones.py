@@ -1,4 +1,4 @@
-"""Archivos completos de alineación documental: conservación de votos y cierre verificable."""
+"""Preserve complete documentary alignment cohorts and reconstruct their review outcomes."""
 
 from __future__ import annotations
 
@@ -26,11 +26,15 @@ from goes_science_kg.recuperacion import Documento
 
 
 class LecturaArchivada(Contrato):
+    """Retain either an archived alignment judgment or its explicit failure."""
+
     dictamen: DictamenAlineacion | None
     error: str | None = Field(default=None, max_length=200)
 
 
 class CasoAlineacion(Contrato):
+    """Preserve one alignment request, preparation, complete readings, and reconstructed result."""
+
     solicitud: SolicitudAlineacion
     ejecucion_id: str = Field(min_length=1, max_length=100)
     huella_entorno: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -39,6 +43,8 @@ class CasoAlineacion(Contrato):
     resultado: ResultadoAlineacion
 
     def estado_original(self) -> dict:
+        """Reconstruct the workflow input state from the original archived alignment case."""
+
         return {
             "solicitud": self.solicitud.model_dump(mode="json"),
             "ejecucion_id": self.ejecucion_id,
@@ -50,6 +56,8 @@ class CasoAlineacion(Contrato):
 
 
 class ArchivoAlineaciones(Contrato):
+    """Archive a complete alignment cohort with source, extraction, and model identities."""
+
     version: Literal["alineaciones-publicadas-1"] = "alineaciones-publicadas-1"
     id: str = Field(pattern=r"^[a-f0-9]{64}$")
     huella_curriculo: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -63,6 +71,8 @@ class ArchivoAlineaciones(Contrato):
 
     @property
     def admitidos(self) -> tuple[CasoAlineacion, ...]:
+        """Return alignment cases that satisfy the documented admission rules."""
+
         return tuple(c for c in self.casos if c.resultado.estado == "respaldo_documental_automatico")
 
 
@@ -150,11 +160,11 @@ def validar_archivo_alineaciones(
     paginas=None,
     modelos: Mapping[str, str] | None = None,
 ) -> None:
-    """Reconstituye todos los cierres; con puertos físicos también rehidrata cada fuente.
+    """Reconstruct every alignment outcome and optionally rehydrate its physical sources."""
 
-    La selección histórica permanece intacta: no se vuelve a seleccionar contexto con un prompt
-    nuevo. El publicador exige ambos puertos físicos; un lector del snapshot valida su integridad.
-    """
+    # Implementation notes:
+    # La selección histórica permanece intacta: no se vuelve a seleccionar contexto con un prompt
+    # nuevo. El publicador exige ambos puertos físicos; un lector del snapshot valida su integridad.
     if (fuentes is None) != (paginas is None):
         raise ValueError("La comprobación física requiere fuentes locales y páginas primarias")
     if archivo.id != huella(archivo.model_dump(mode="json", exclude={"id"})):
@@ -188,7 +198,7 @@ def coleccionar_alineaciones(
     fuentes,
     paginas,
 ) -> ArchivoAlineaciones:
-    """Conserva todos los terminales entregados, también rechazos y abstenciones; cero modelos."""
+    """Preserve every supplied terminal outcome, including rejection and abstention, without model calls."""
     casos = tuple(
         CasoAlineacion(
             solicitud=s["solicitud"],

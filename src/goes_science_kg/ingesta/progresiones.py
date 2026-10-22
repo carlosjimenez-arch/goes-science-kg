@@ -1,4 +1,4 @@
-"""Expectativas por banda nativa extraídas de celdas PDF verificadas, sin equivalencias SV."""
+"""Extract native progression expectations from verified PDF cells without grade equivalence."""
 
 from __future__ import annotations
 
@@ -20,6 +20,8 @@ LIMITE = (
 
 
 class ExpectativaNativa(Contrato):
+    """Locate one native progression expectation in a pinned PDF edition and region."""
+
     id: str = Field(pattern=r"^NATIVA:[A-Z0-9_:]+$")
     grupo: str
     titulo: str
@@ -38,6 +40,8 @@ class ExpectativaNativa(Contrato):
 
 
 class CatalogoProgresiones(Contrato):
+    """Require complete native grade bands for every documented progression."""
+
     version: Literal["progresiones-documentales-1"] = "progresiones-documentales-1"
     expectativas: tuple[ExpectativaNativa, ...] = Field(min_length=4, max_length=1000)
     limite: Literal[LIMITE] = LIMITE
@@ -56,10 +60,14 @@ class CatalogoProgresiones(Contrato):
 
 
 class RepositorioProgresiones:
+    """Rehydrate native expectations from verified reference documents."""
+
     def __init__(self, repositorio: RepositorioReferencias, catalogo: CatalogoProgresiones):
         self.repositorio, self.catalogo = repositorio, catalogo
 
     def evidencia(self, expectativa: ExpectativaNativa) -> Evidencia:
+        """Extract and verify a native expectation's region, band heading, and literal anchors."""
+
         import pdfplumber
 
         r = self.repositorio.manifiesto().referencias[expectativa.fuente]
@@ -100,6 +108,8 @@ class RepositorioProgresiones:
         )
 
     def archivo(self) -> dict:
+        """Resolve the registered source document for a progression expectation."""
+
         evidencias = {r.id: self.evidencia(r).model_dump(mode="json") for r in self.catalogo.expectativas}
         cadenas = []
         for grupo in sorted({r.grupo for r in self.catalogo.expectativas}):
@@ -112,11 +122,15 @@ class RepositorioProgresiones:
         return {"id": huella(datos), **datos}
 
     def validar(self, archivo: dict) -> None:
+        """Validate all configured progression expectations against their pinned sources."""
+
         if archivo != self.archivo():
             raise ValueError("El archivo de progresiones cambió o no conserva sus fuentes originales")
 
 
 def cargar_progresiones(configuracion: Path, raiz: Path) -> RepositorioProgresiones:
+    """Load the configured native progression catalog."""
+
     import yaml
 
     catalogo = CatalogoProgresiones.model_validate(yaml.safe_load(configuracion.read_text()))

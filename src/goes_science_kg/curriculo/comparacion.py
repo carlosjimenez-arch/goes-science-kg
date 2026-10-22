@@ -1,4 +1,4 @@
-"""Correspondencia documental conservadora V3→V4, sin trasladar identidad ni decisiones."""
+"""Compare V3 and V4 conservatively without transferring identities or decisions."""
 
 from __future__ import annotations
 
@@ -67,7 +67,7 @@ INCORPORADOS = (
 
 
 def normalizar_literal(texto: str) -> str:
-    """Solo NFKC y espacios: conserva mayúsculas, tildes, puntuación, números y negaciones."""
+    """Normalize Unicode and whitespace while preserving meaningful literal differences."""
     return " ".join(unicodedata.normalize("NFKC", texto).split())
 
 
@@ -77,7 +77,7 @@ def _asignatura(texto: str) -> str:
 
 
 class RegistroComparado(ContratoCurricular):
-    """Registro sin disciplina inferida ni etiquetas que puedan heredarse."""
+    """Represent a comparison record without inferred disciplines or inherited labels."""
 
     id: str
     grado: int
@@ -89,6 +89,8 @@ class RegistroComparado(ContratoCurricular):
 
 
 class CampoComparado(ContratoCurricular):
+    """Compare one mapped field while retaining both original values and provenance."""
+
     campo_v3: str
     campo_v4: str | None
     estado: Literal[
@@ -106,6 +108,8 @@ class CampoComparado(ContratoCurricular):
 
 
 class CoincidenciaObjetivo(ContratoCurricular):
+    """Record an exact objective match and its field-level comparison."""
+
     estado: Literal["coincidencia_objetivo_1_a_1", "ambigua"]
     grado: int
     asignatura_malla: str
@@ -117,6 +121,8 @@ class CoincidenciaObjetivo(ContratoCurricular):
 
 
 class SinCorrespondencia(ContratoCurricular):
+    """Preserve an unmatched record without assuming deletion or equivalence."""
+
     registro: RegistroComparado
     estado: Literal["sin_coincidencia_exacta"] = "sin_coincidencia_exacta"
     mismo_objetivo_otro_contexto: tuple[RegistroComparado, ...] = ()
@@ -124,6 +130,8 @@ class SinCorrespondencia(ContratoCurricular):
 
 
 class ComparacionCurricular(ContratoCurricular):
+    """Archive a conservative curriculum comparison and its explicit criteria."""
+
     version: Literal["comparacion-1"] = "comparacion-1"
     version_anterior: Literal["V3"] = "V3"
     version_actual: Literal["V4"] = "V4"
@@ -140,7 +148,7 @@ class ComparacionCurricular(ContratoCurricular):
 
 
 class _DatosHistoricos:
-    """Localiza campos mediante cabecera y fila originales cotejadas con SHA."""
+    """Locate historical fields through SHA-verified original headers and rows."""
 
     def __init__(self, nodos: tuple[Nodo, ...], raiz_historica: Path):
         catalogo = {n.id.removeprefix("DOC:"): n.props for n in nodos if n.tipo == TipoNodo.DOCUMENTO}
@@ -192,6 +200,8 @@ class _DatosHistoricos:
         return self._filas[nodo.id]
 
     def dato(self, nodo: Nodo, campo: str) -> tuple[str, dict] | None:
+        """Read a verified historical field at its original physical source location."""
+
         columnas = self._columnas(nodo).get(campo, [])
         original = self._original(nodo)
         if len(columnas) != 1 or original is None:
@@ -213,6 +223,8 @@ class _DatosHistoricos:
         return valor or "", localizador
 
     def indicador(self, nodo: Nodo) -> tuple[str, dict] | None:
+        """Resolve the original achievement indicator for a historical topic."""
+
         almacenado = nodo.props.get("indicador")
         if not isinstance(almacenado, str) or not normalizar_literal(almacenado):
             return None
@@ -302,12 +314,12 @@ def comparar_curriculos(
     *,
     raiz_historica: Path | None = None,
 ) -> ComparacionCurricular:
-    """Relaciona objetivos exactos por contexto; nunca activa correspondencias o copia etiquetas.
+    """Match exact objectives by context without activating correspondences or copying labels."""
 
-    La entrada histórica debe proceder de ``cargar_referencias_historicas`` o de una
-    validación equivalente de bytes, manifiesto y versión. La tabla de representación
-    solo traduce los cuatro nombres de malla de config V3 a sus literales V4.
-    """
+    # Implementation notes:
+    # La entrada histórica debe proceder de ``cargar_referencias_historicas`` o de una
+    # validación equivalente de bytes, manifiesto y versión. La tabla de representación
+    # solo traduce los cuatro nombres de malla de config V3 a sus literales V4.
     if grafo_v3.procedencia.get("version_curriculo") != "V3" or curriculo_v4.version != "V4":
         raise ValueError("La comparación requiere una referencia histórica V3 y un currículo V4")
     LOGGER.info("Comparación documental V3→V4: comprobando claves y campos comparables")
@@ -445,7 +457,7 @@ def guardar_comparacion(
     salida_json: Path,
     salida_markdown: Path,
 ) -> None:
-    """Escribe el informe explícito sin tocar fuentes, grafos o correspondencias activas."""
+    """Write an explicit comparison report outside sources and active graphs."""
     if salida_json.resolve() == salida_markdown.resolve():
         raise ValueError("JSON y Markdown requieren destinos distintos")
     # Valida ambos antes de crear carpetas o tocar cualquiera de los archivos.
@@ -574,7 +586,7 @@ def _destino_informe(salida: Path, *, extension: str) -> Path:
 
 
 def _escribir_informe(destino: Path, texto: str) -> None:
-    """Reemplaza cada archivo completo; el par JSON/Markdown no es una transacción."""
+    """Replace complete report files without claiming a multi-file transaction."""
     destino.parent.mkdir(parents=True, exist_ok=True)
     temporal = tempfile.NamedTemporaryFile(
         mode="w", encoding="utf-8", prefix=f".{destino.name}.", dir=destino.parent, delete=False

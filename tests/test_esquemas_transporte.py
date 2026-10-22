@@ -1,4 +1,4 @@
-"""La simplificación de gramática nunca relaja la validación que acepta respuestas."""
+"""Preserve full local validation when simplifying provider transport schemas."""
 
 import pytest
 from pydantic import Field, ValidationError

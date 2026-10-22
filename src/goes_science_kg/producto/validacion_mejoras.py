@@ -1,4 +1,4 @@
-"""Cierre reproducible de propuestas: conserva filas y rondas, sin confianza en banderas persistidas."""
+"""Reconstruct proposal outcomes without trusting persisted approval flags."""
 
 from __future__ import annotations
 
@@ -14,6 +14,8 @@ from goes_science_kg.producto.mejoras_contratos import (
 
 
 def validar_borrador(b: BorradorMejora, p: PreparacionMejora) -> tuple[str, ...]:
+    """Validate every proposed row and citation against the complete unit preparation."""
+
     filas = {f["id"]: f for f in p.filas_originales}
     if [f.fila_id for f in b.filas] != list(filas):
         return ("La propuesta debe conservar exactamente todas las filas y su orden, sin duplicar ni eliminar",)
@@ -49,6 +51,8 @@ def validar_borrador(b: BorradorMejora, p: PreparacionMejora) -> tuple[str, ...]
 
 
 def evaluar_ronda(r: RondaMejora, p: PreparacionMejora, modelos: dict[str, str]) -> tuple[str, tuple[str, ...]]:
+    """Evaluate one exact draft round under all mandatory specialist criteria."""
+
     if r.borrador is None:
         return "abstencion", ("No existe un borrador válido: " + (r.error_generacion or "sin respuesta"),)
     errores = validar_borrador(r.borrador, p)
@@ -89,6 +93,8 @@ def evaluar_ronda(r: RondaMejora, p: PreparacionMejora, modelos: dict[str, str])
 def resolver_mejora(
     p: PreparacionMejora, rondas: tuple[RondaMejora, ...], *, ejecucion_id: str, modelos: dict[str, str]
 ) -> ResultadoMejora:
+    """Reconstruct final support, rejection, or abstention from the complete round history."""
+
     if not 1 <= len(rondas) <= 2:
         raise ValueError("Se admite una propuesta y una única reparación")
     for i, ronda in enumerate(rondas):

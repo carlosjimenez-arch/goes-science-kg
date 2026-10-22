@@ -9,7 +9,7 @@ la semilla, las cifras nacionales, los usuarios y el motor simulado quedan fuera
 
 `gskg servir` ofrece la aplicación en `/app/` y redirige `/` a esa ruta. Conserva las API anteriores y
 OpenAPI en `/docs`. Los assets HTML/CSS/JS y la fuente Inter se sirven localmente, sin CDN ni servicios
-web externos. `api_interfaz.py` comparte el lector de snapshot de `api_producto.py`; no carga otro grafo.
+web externos. `api_producto.py`, readiness y `api_interfaz.py` comparten `producto/lectura.py::LecturaProducto`; no cargan otro grafo.
 `interfaz/consulta.py` indexa una proyección de las filas, propuestas y relaciones verificadas. Cada
 petición revalida el lector, aunque la proyección ya esté en caché. Los cambios del snapshot invalidan
 la instancia. El navegador comprueba la identidad de cada respuesta y rechaza mezclar generaciones.
@@ -59,3 +59,16 @@ conservadora se diferencia del importe facturado, que no está disponible.
 
 Los datos se restauran desde el recibo institucional, ignorados por Git. El desarrollo y la consulta
 no publican el corpus en la rama de código ni ejecutan Vertex. Véase [operación](../docs/APLICACION_CIENCIAS.md).
+
+## Revisión del contrato · feat/api
+
+La API incorpora `/health/live` y `/health/ready`. Readiness exige publicación verificada y comparte
+el lector de V4. La ausencia de corpus o una publicación alterada devuelve 503 con `estado: sin_datos`
+y el texto «No hay datos disponibles». Los errores públicos no contienen rutas locales.
+Los conceptos usan `/nodos/{nodo_id:path}` para conservar IDs con barras; el valor sólo indexa nodos.
+
+`ServicioInterfaz` coordina la proyección y verificación física. `RegistroActividad` separa el ledger
+opcional de las rutas. Los índices de texto, grado, disciplina y adyacencia no cambian el contenido
+ni las clasificaciones del snapshot. Los contratos públicos de listados, documentos, grafo y briefs
+se validan mediante Pydantic y se publican en OpenAPI. Las exportaciones CSV y Excel identifican el
+snapshot. La interfaz conserva exactamente el CSS principal del HTML de referencia.

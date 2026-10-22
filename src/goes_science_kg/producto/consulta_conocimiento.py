@@ -1,4 +1,4 @@
-"""Consulta de evidencia por fila explícita; ninguna ruta de dependencias cruza contextos."""
+"""Retrieve evidence for explicit rows without crossing dependency contexts."""
 
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ def fuentes_del_archivo(
     raiz_paises: Path | None = None,
     raiz_cientificas: Path | None = None,
 ) -> FuentesVerificadas:
-    """Las raíces son configuración del anfitrión; un archivo de juicios no concede otros permisos."""
+    """Resolve source roots from host configuration rather than permissions claimed by an archive."""
     catalogo = catalogo_fuentes_v4(curriculo)
     for doc, registro in archivo.fuentes.items():
         if registro.get("raiz_fuente", "principal") not in {
@@ -56,6 +56,8 @@ def fuentes_del_archivo(
 
 
 def rehidratar_evidencias(archivo: ArchivoConocimiento, fuentes: FuentesVerificadas, ids) -> None:
+    """Rehydrate the selected archive evidence from permitted original sources."""
+
     for id_ in sorted(set(ids)):
         prueba = archivo.evidencias[id_]
         actual = fuentes.hidratar(
@@ -80,6 +82,8 @@ def rehidratar_archivo(
     raiz_historica: Path | None = None,
     archivo_alertas: Path | None = None,
 ) -> None:
+    """Rehydrate every archived evidence item before admitting it for query use."""
+
     from goes_science_kg.producto.garantias import bloqueos_cientificos
 
     fuentes = fuentes_del_archivo(archivo, curriculo, raiz_v4=raiz_v4, raiz_historica=raiz_historica)
@@ -92,7 +96,7 @@ def rehidratar_archivo(
 
 
 class BuscadorProducto:
-    """Conserva la búsqueda general; la selección exacta nunca usa el grafo histórico para expandir."""
+    """Preserve general retrieval while keeping exact row selection outside the historical graph."""
 
     def __init__(
         self,
@@ -133,10 +137,12 @@ class BuscadorProducto:
                     )
 
     def buscar(self, consulta: str, **kwargs) -> list[Resultado]:
+        """Retrieve general evidence while preserving the product's version and baseline semantics."""
+
         return self._baseline.buscar(consulta, **kwargs)
 
     def buscar_fila(self, fila_id: str, *, version: str, grado: int, asignatura: str, k: int = 16) -> list[Resultado]:
-        """Identidad y filtros exactos antes de fuentes; no hay unión de rutas entre filas."""
+        """Validate exact row identity and filters before retrieving any source evidence."""
         if fila_id not in self._filas or version != "V4" or not 1 <= k <= 100:
             raise ValueError("La fila, versión o límite no corresponde a esta publicación V4")
         fila, decision = self._filas[fila_id], self._clasificaciones[fila_id]

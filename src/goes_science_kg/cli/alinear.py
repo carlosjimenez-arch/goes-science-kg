@@ -1,4 +1,4 @@
-"""Comandos del grupo `alinear`."""
+"""Expose the alinear command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ def alinear_preparar(
     version: str = "auss-v1",
     todos: bool = typer.Option(False, "--todos", help="Rehace todos (si no, solo los pendientes)"),
 ) -> None:
-    """Lotes de Biología y Química 10.°–11.° contra AUSS (uno por asignatura y grado)."""
+    """Prepare Australian-reference batches for biology and chemistry in grades 10 and 11."""
     from goes_science_kg.alineacion import preparar_bachillerato
     from goes_science_kg.ingesta.legado import catalogo_acara_senior
 
@@ -24,7 +24,7 @@ def alinear_preparar(
 
 @app.command("unir-bachillerato")
 def alinear_unir() -> None:
-    """Valida y une las salidas de los subagentes → data/interim/alineaciones/bachillerato_auss.json."""
+    """Validate and merge the senior-secondary alignment batch outputs."""
     from goes_science_kg.alineacion import unir
     from goes_science_kg.ingesta.legado import catalogo_acara_senior
 
@@ -33,7 +33,7 @@ def alinear_unir() -> None:
 
 @app.command("preparar-temas")
 def alinear_preparar_temas() -> None:
-    """Lotes TIMSS 2027 y PISA 2025 para los temas de 2.°–9.° sin clasificación previa (los nuevos de la V2)."""
+    """Prepare TIMSS and PISA batches for previously unclassified topics in grades 2 to 9."""
     from goes_science_kg.alineacion import preparar_temas_nuevos
 
     escritos = preparar_temas_nuevos()
@@ -45,7 +45,7 @@ def alinear_preparar_temas() -> None:
 
 @app.command("unir-temas")
 def alinear_unir_temas() -> None:
-    """Valida y une las salidas → data/interim/alineaciones/temas_nuevos_{timss2027,pisa2025}.json."""
+    """Validate new-topic alignment outputs and write their configured artifacts."""
     from goes_science_kg.alineacion import unir_temas_nuevos
 
     typer.echo(json.dumps(unir_temas_nuevos(), ensure_ascii=False))

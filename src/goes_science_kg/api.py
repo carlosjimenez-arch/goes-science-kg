@@ -1,12 +1,13 @@
-"""API de lectura con grafo fijado y derivados publicados por artículo.
+"""Serve verified science graphs, versioned curriculum publications, and the GOEs application."""
 
-`gskg servir` no regenera ni adopta artefactos históricos. Cada generador publica
-su procedencia después de recalcular. Los cambios posteriores se rechazan hasta
-reiniciar el servicio; propuestas no publicadas no bloquean conceptos o GraphRAG.
-"""
+# Historical implementation notes:
+# `gskg servir` no regenera ni adopta artefactos históricos. Cada generador publica
+# su procedencia después de recalcular. Los cambios posteriores se rechazan hasta
+# reiniciar el servicio; propuestas no publicadas no bloquean conceptos o GraphRAG.
 
 from __future__ import annotations
 
+import logging
 import re
 from pathlib import Path
 from threading import Lock
@@ -16,16 +17,52 @@ from fastapi.responses import JSONResponse
 
 from goes_science_kg.config import raiz
 from goes_science_kg.modelos import TipoArista, TipoNodo
+from goes_science_kg.producto.lectura import LecturaProducto
 from goes_science_kg.publicacion_api import DIRECTORIO_PUBLICACIONES, LecturaPublicada, PublicacionNoDisponible
 from goes_science_kg.rag import BM25, normalizar
 
+LOGGER = logging.getLogger(__name__)
+
 
 def crear_app(base: Path | None = None) -> FastAPI:
-    """Crea una instancia aislada; para adoptar un grafo nuevo se reinicia el proceso."""
+    """Create an isolated application that pins graph generations until restart."""
     directorio = (base or raiz()).resolve()
     aplicacion = FastAPI(
-        title="goes-science-kg", description="Grafo de Ciencias · El Salvador (solo lectura)", version="1.1"
+        title="GOEs · AI Department · Curriculum Science API",
+        description=(
+            "Plataforma curricular de Ciencias del Departamento de AI de GOEs · El Salvador · 2026. "
+            "Consulta publicaciones verificadas y conserva la procedencia de cada resultado. "
+            "Sin publicación íntegra responde 503: no hay datos disponibles. "
+            "Los dictámenes automáticos no constituyen aprobación institucional."
+        ),
+        version="1.2.0",
+        contact={"name": "GOEs · Departamento de AI"},
+        openapi_tags=[
+            {"name": "Operación", "description": "Disponibilidad del proceso y de los datos publicados."},
+            {"name": "Producto Ciencias V4", "description": "Currículo V4 y evidencia del snapshot fijado."},
+            {
+                "name": "Aplicación curricular",
+                "description": "Consultas y briefs documentales; cero llamadas a modelos.",
+            },
+        ],
     )
+    producto = LecturaProducto(directorio)
+
+    @aplicacion.get("/health/live", tags=["Operación"])
+    def proceso_disponible() -> dict:
+        """Report process liveness independently of private corpus availability."""
+        return {"estado": "ok", "servicio": "goes-science-kg", "version": aplicacion.version}
+
+    @aplicacion.get("/health/ready", tags=["Operación"])
+    def datos_disponibles() -> dict:
+        """Report readiness only after verifying the selected curriculum publication."""
+        runtime = producto.leer()
+        return {
+            "estado": "ok",
+            "version_curriculo": "V4",
+            "snapshot_id": runtime.producto.manifest.snapshot_id,
+            "filas": len(runtime.producto.curriculo.filas),
+        }
 
     instancia: LecturaPublicada | None = None
     inicializacion = Lock()
@@ -39,8 +76,16 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.exception_handler(PublicacionNoDisponible)
     async def publicacion_no_disponible(_peticion: Request, error: PublicacionNoDisponible):
+        LOGGER.warning("AMARILLO: publicación histórica no disponible", exc_info=error)
         return JSONResponse(
-            status_code=503, content={"detail": {"codigo": "publicacion_no_disponible", "motivo": str(error)}}
+            status_code=503,
+            content={
+                "detail": {
+                    "codigo": "publicacion_no_disponible",
+                    "estado": "sin_datos",
+                    "motivo": "No hay datos disponibles: falta una publicación histórica verificable o cambió.",
+                }
+            },
         )
 
     def grado_publicado(g: int) -> tuple[dict, list]:
@@ -90,7 +135,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/salud")
     def salud() -> dict:
-        """Salud del grafo; cada artículo derivado se verifica cuando se solicita."""
+        """Report graph health and verify derived articles when requested."""
         return {
             "estado": "ok",
             "alcance": "grafo",
@@ -100,7 +145,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/grados")
     def grados(respuesta: Response) -> list[dict]:
-        """Grados publicados; la cabecera informa artículos ausentes o invalidados."""
+        """List verified grades and report unavailable articles in the response header."""
         lectura().verificar_grafo()
         salida, errores = [], []
         for g in range(2, 12):
@@ -120,7 +165,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/conceptos/{asignatura}/{slug}")
     def concepto(asignatura: str, slug: str) -> dict:
-        """Concepto y relaciones del mismo grafo verificado e inmutable en memoria."""
+        """Return a concept and its relationships from the same verified graph."""
         por_id, aristas, _ = lectura().grafo()
         cid = f"CON:{asignatura}/{slug}"
         if cid not in por_id:
@@ -176,7 +221,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/propuestas")
     def propuestas(respuesta: Response) -> list[dict]:
-        """Simulaciones recalculadas y publicadas; las históricas no se adoptan automáticamente."""
+        """List explicitly published simulations without adopting historical files implicitly."""
         lectura().verificar_grafo()
         candidatos = {
             (p.parent.parent.name, p.stem.removeprefix("simulacion_"))
@@ -200,7 +245,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/propuestas/{asignatura}/{ciclo}")
     def propuesta(asignatura: str, ciclo: str) -> dict:
-        """Estado y datos de una simulación independiente del resto del conjunto."""
+        """Return one published simulation independently of other proposals."""
         if not re.fullmatch(r"[a-z_]{1,70}", asignatura) or not re.fullmatch(r"G\d{2}-G\d{2}", ciclo):
             raise HTTPException(404, "Identificador de propuesta inválido")
         return propuesta_publicada(asignatura, ciclo)
@@ -240,7 +285,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/rag/global")
     def rag_global(q: str = Query(..., min_length=3), grado: int = Query(..., ge=2, le=11)) -> list[dict]:
-        """Busca exclusivamente en las comunidades capturadas del artículo validado."""
+        """Search only the communities captured in the verified grade article."""
         bloques = grado_publicado(grado)[1]
         try:
             coms = {c["id"]: c for c in bloques}
@@ -270,7 +315,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     from goes_science_kg.api_producto import crear_router
 
-    aplicacion.include_router(crear_router(directorio))
+    aplicacion.include_router(crear_router(directorio, lector=producto))
     from goes_science_kg.api_interfaz import registrar_interfaz
 
     registrar_interfaz(aplicacion)

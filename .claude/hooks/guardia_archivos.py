@@ -1,10 +1,10 @@
-"""PreToolUse (Edit, Write, MultiEdit, NotebookEdit): archivos que no se editan a mano.
+"""Protect source and generated artifacts from direct editor writes."""
 
-- deny: .env; data/fuentes/ y reportes/ (solo lectura); PDF; salidas generadas (data/grafo/, caché de Vertex), que se
-  regeneran con gskg: hay que cambiar el código o la capa de decisión, no el resultado.
-Las reglas permissions.deny de .claude/settings.json cubren lo mismo para .env y las fuentes; este hook además explica
-el motivo y cubre las salidas generadas.
-"""
+# Historical test notes:
+# - deny: .env; data/fuentes/ y reportes/ (solo lectura); PDF; salidas generadas (data/grafo/, caché de Vertex), que se
+#   regeneran con gskg: hay que cambiar el código o la capa de decisión, no el resultado.
+# Las reglas permissions.deny de .claude/settings.json cubren lo mismo para .env y las fuentes; este hook además explica
+# el motivo y cubre las salidas generadas.
 
 from __future__ import annotations
 
@@ -27,8 +27,11 @@ def revisar(ruta: str) -> None:
             decidir("deny", f"{prefijo} es de solo lectura (CLAUDE.md): no se modifica.")
     for prefijo in cfg["rutas_generadas"]:
         if rel.startswith(prefijo):
-            decidir("deny", f"{prefijo} se genera con gskg (salidas deterministas): cambia el código o la capa de "
-                            "decisión y regenera, en lugar de editar el resultado.")
+            decidir(
+                "deny",
+                f"{prefijo} se genera con gskg (salidas deterministas): cambia el código o la capa de "
+                "decisión y regenera, en lugar de editar el resultado.",
+            )
 
 
 if __name__ == "__main__":

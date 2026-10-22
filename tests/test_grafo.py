@@ -14,7 +14,7 @@ def test_grafo_sin_errores(grafo):
 def test_conteos(grafo):
     nodos, aristas = grafo
     n = Counter(x.tipo for x in nodos)
-    assert n[TipoNodo.TEMA] == 935   # malla V3 (spec 15)
+    assert n[TipoNodo.TEMA] == 935  # malla V3 (spec 15)
     assert n[TipoNodo.ASIGNATURA] == 4
     # 506 objetivos heredados (UY, CO, SG) + los países nuevos de data/interim/paises/ (ENG 270, AU 152).
     assert n[TipoNodo.OBJETIVO_PAIS] >= 506
@@ -56,7 +56,7 @@ def test_objetivos_de_paises_tienen_fuente_citable(grafo):
 
 
 def test_todo_objetivo_de_pais_esta_etiquetado_o_es_practica(grafo):
-    """Cada objetivo de país tiene conceptos o prácticas (etiquetado directo); si no, falta correr el etiquetado."""
+    """Require every country objective to carry direct concept or practice tagging."""
     nodos, aristas = grafo
     con_trabaja = {a.origen for a in aristas if a.tipo == TipoArista.TRABAJA and a.origen.startswith("OP:")}
     sin = [n.id for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id not in con_trabaja]
@@ -64,7 +64,7 @@ def test_todo_objetivo_de_pais_esta_etiquetado_o_es_practica(grafo):
 
 
 def test_japon_equivalencia_por_edad(grafo):
-    """Japón grado N → SV N−1: primaria 3.°–6.° cae en 2.°–5.° y secundaria baja en 6.°–8.°."""
+    """Preserve the explicitly configured age-based mapping for historical Japanese grade references."""
     nodos, _ = grafo
     jp = [n for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id.startswith("OP:JP-")]
     assert len(jp) >= 180

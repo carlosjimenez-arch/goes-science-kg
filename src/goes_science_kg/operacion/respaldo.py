@@ -1,4 +1,4 @@
-"""Paquetes portables con inventario SHA; SQLite usa copia consistente, nunca ficheros WAL sueltos."""
+"""Package portable SHA inventories and consistent SQLite backups."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import logging
 import sqlite3
 import tempfile
 import zipfile
+from contextlib import closing
 from pathlib import Path, PurePosixPath
 
 from goes_science_kg.motor.contratos import huella
@@ -31,6 +32,8 @@ RAICES = (
     "docs",
     "prompts",
     "specs",
+    "scripts",
+    ".github",
     ".claude",
 )
 SIMPLES = (
@@ -40,6 +43,11 @@ SIMPLES = (
     "README.md",
     "CLAUDE.md",
     "HANDOFF.md",
+    "HANDOFF_INTERNACIONAL.md",
+    "CONTRIBUTING.md",
+    "NOTICE",
+    ".gitignore",
+    ".gitattributes",
     "Makefile",
 )
 SQLITES = (
@@ -66,10 +74,18 @@ EXTENSIONES = {
     ".py",
     ".toml",
     ".lock",
+    ".js",
+    ".cjs",
+    ".css",
+    ".woff2",
+    ".svg",
+    ".png",
 }
 
 
 def nombre_seguro(nombre: str) -> str:
+    """Validate a safe relative artifact name without traversal or absolute paths."""
+
     p = PurePosixPath(nombre)
     if (
         p.is_absolute()
@@ -88,6 +104,8 @@ def nombre_seguro(nombre: str) -> str:
 
 
 def seleccionar_artefactos(raiz: Path) -> list[str]:
+    """Select explicitly configured artifacts while excluding secrets and transient files."""
+
     producto = cargar_producto(raiz / "data/producto/V4")
     seleccion = set()
     actual = producto.manifest.snapshot_id
@@ -113,7 +131,7 @@ def seleccionar_artefactos(raiz: Path) -> list[str]:
 
 
 def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: int = 1024**3) -> dict:
-    """Inventaría bytes exactos; no lee raíces implícitas ni credenciales externas."""
+    """Inventory exact bytes without implicit roots or external credentials."""
     raiz = raiz.resolve()
     if len(archivos) != len(set(archivos)) or not archivos:
         raise ValueError("Se requieren archivos únicos en una selección explícita")
@@ -130,8 +148,8 @@ def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: 
                     raise ValueError("El inventario sale de la raíz o contiene un archivo no regular")
                 if archivo.suffix == ".sqlite":
                     copia = Path(temporal) / "consistente.sqlite"
-                    with sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True) as original:
-                        with sqlite3.connect(copia) as receptor:
+                    with closing(sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True)) as original, original:
+                        with closing(sqlite3.connect(copia)) as receptor, receptor:
                             original.backup(receptor)
                     contenido = copia.read_bytes()
                     copia.unlink()
@@ -168,7 +186,7 @@ def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: 
 
 
 def restaurar_paquete(archivo: Path, destino: Path, *, sha256: str, max_bytes: int = 1024**3) -> dict:
-    """Restaura sólo en un directorio vacío, sin extractall, enlaces ni sobreescrituras."""
+    """Restore into an empty directory without unsafe extraction, links, or overwrites."""
     if hashlib.sha256(archivo.read_bytes()).hexdigest() != sha256:
         raise ValueError("El paquete no conserva su SHA de recepción")
     if destino.is_symlink() or (destino.exists() and (not destino.is_dir() or any(destino.iterdir()))):

@@ -1,4 +1,4 @@
-"""Los paquetes no pueden escribir sobre ninguna colección primaria o evaluación."""
+"""Reject unit-package output paths inside primary collections or evaluation datasets."""
 
 import pytest
 

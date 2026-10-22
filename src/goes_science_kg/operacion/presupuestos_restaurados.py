@@ -1,9 +1,10 @@
-"""Re-vincula copias verificadas del ledger sin modificar reservas ni checkpoints."""
+"""Rebind verified ledger copies without changing reservations or checkpoints."""
 
 from __future__ import annotations
 
 import json
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 from uuid import uuid4
 
@@ -12,7 +13,7 @@ from goes_science_kg.operacion.respaldo import nombre_seguro
 
 
 def migrar_presupuestos(raiz: Path, recibo: dict, sqlites: dict[str, str]) -> dict:
-    """Sólo para copias recién restauradas: todos los bytes deben coincidir con el paquete GCS."""
+    """Rebind only newly restored checkpoints after verifying every packaged byte."""
     if not sqlites:
         return {"vinculos_actualizados": 0}
     for rel, sha in sqlites.items():
@@ -25,7 +26,7 @@ def migrar_presupuestos(raiz: Path, recibo: dict, sqlites: dict[str, str]) -> di
     anterior = json.dumps(recibo["identidad_ledger"], sort_keys=True)
     nueva = json.dumps(identidad_ledger(raiz / LEDGER), sort_keys=True)
     cambios = []
-    with sqlite3.connect(":memory:", uri=True) as db:
+    with closing(sqlite3.connect(":memory:", uri=True)) as db, db:
         db.execute("ATTACH DATABASE ? AS registro", ((raiz / LEDGER).resolve().as_uri() + "?mode=ro",))
         resumen = db.execute(
             "SELECT ejecucion,COUNT(*),SUM(reserva_usd) FROM registro.llamadas GROUP BY ejecucion ORDER BY ejecucion"
@@ -35,9 +36,7 @@ def migrar_presupuestos(raiz: Path, recibo: dict, sqlites: dict[str, str]) -> di
                 continue
             alias = f"c{i}"
             db.execute(f"ATTACH DATABASE ? AS {alias}", ((raiz / rel).resolve().as_uri() + "?mode=rw",))
-            if not db.execute(
-                f"SELECT 1 FROM {alias}.sqlite_master WHERE name='checkpoint_presupuestos'"
-            ).fetchone():
+            if not db.execute(f"SELECT 1 FROM {alias}.sqlite_master WHERE name='checkpoint_presupuestos'").fetchone():
                 continue
             filas = db.execute(
                 f"SELECT ejecucion,ledger FROM {alias}.checkpoint_presupuestos ORDER BY ejecucion"

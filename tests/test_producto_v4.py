@@ -1,4 +1,4 @@
-"""Materialización V4, aislamiento del histórico y publicación coherente frente a alteraciones."""
+"""Test V4 materialization, historical isolation, and rejection of altered publications."""
 
 from __future__ import annotations
 

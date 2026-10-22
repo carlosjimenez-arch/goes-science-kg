@@ -1,4 +1,4 @@
-"""El motor depende de contratos, no de un SDK o proveedor específico."""
+"""Define engine ports independently of any provider SDK."""
 
 from typing import Protocol, TypeVar
 
@@ -10,6 +10,8 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class Recuperador(Protocol):
+    """Define the evidence-retrieval port required by the curriculum engine."""
+
     def buscar(
         self,
         consulta: str,
@@ -20,12 +22,14 @@ class Recuperador(Protocol):
         k: int = 10,
         saltos_grafo: int = 1,
     ) -> list[Resultado]:
-        """Recupera evidencia preservando la versión y el significado de las relaciones."""
+        """Retrieve evidence while preserving curriculum version and relationship semantics."""
 
 
 class ModeloEstructurado(Protocol):
+    """Define structured generation and model-identity ports independently of a provider SDK."""
+
     def generar(self, *, rol: str, sistema: str, mensaje: str, esquema: type[T]) -> T:
-        """Genera y valida un contrato, o lanza una excepción explícita."""
+        """Generate and validate a structured contract or raise an explicit failure."""
 
     def nombre_modelo(self, rol: str) -> str:
-        """Identificador real del modelo utilizado, para trazabilidad."""
+        """Return the actual model identity used for traceability."""

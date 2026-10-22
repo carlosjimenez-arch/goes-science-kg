@@ -1,4 +1,4 @@
-"""Seguridad y trazabilidad de la vista local, sin modelos ni reserva educativa."""
+"""Test local-view security and provenance without models or private evaluation labels."""
 
 from __future__ import annotations
 
@@ -22,7 +22,7 @@ from goes_science_kg.producto.vista import markdown, vista
 
 
 class Documento(HTMLParser):
-    """Lee el contenedor JSON con las reglas reales del parser HTML."""
+    """Parse the embedded JSON container with the actual HTML parser rules."""
 
     def __init__(self, contenido: str):
         super().__init__()

@@ -1,8 +1,8 @@
-"""Compatibilidad de los comandos públicos al reorganizar la interfaz de terminal.
+"""Preserve public CLI commands while reorganizing terminal adapters."""
 
-El contrato se capturó antes de dividir la CLI; admite nuevos comandos, pero evita
-romper scripts existentes y comprueba que la ayuda no ejecute trabajo de dominio.
-"""
+# Historical test notes:
+# El contrato se capturó antes de dividir la CLI; admite nuevos comandos, pero evita
+# romper scripts existentes y comprueba que la ayuda no ejecute trabajo de dominio.
 
 from pathlib import Path
 
@@ -25,7 +25,7 @@ def _rutas(comando, prefijo: tuple[str, ...] = ()) -> set[tuple[str, ...]]:
 
 
 def test_catalogo_publico_anterior_sigue_disponible():
-    """Toda ruta histórica sigue resolviendo; nuevas capacidades pueden ampliarla."""
+    """Keep every historical command path resolvable while permitting explicit additions."""
     assert {tuple(partes) for partes in COMANDOS} <= _rutas(get_command(app))
 
 
@@ -33,7 +33,7 @@ def test_catalogo_publico_anterior_sigue_disponible():
     "partes", [(), *((grupo,) for grupo in GRUPOS), *COMANDOS], ids=lambda p: " ".join(p) or "gskg"
 )
 def test_ayuda_publica_resuelve_sin_ejecutar_comandos(partes):
-    """La ayuda atraviesa todos los grupos y conserva el parser sin necesitar datos ni red."""
+    """Resolve every command group's help without executing data or network operations."""
     resultado = CliRunner().invoke(app, [*partes, "--help"])
     assert resultado.exit_code == 0, resultado.output
     assert "Usage:" in resultado.output

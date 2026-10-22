@@ -1,4 +1,4 @@
-"""Contratos de selección ligados al contexto: el modelo no inventa localizadores."""
+"""Bind model selections to registered context and source locators."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ def _campo_id(ids: Sequence[str]):
 
 
 def esquema_por_grupos(base: type[BaseModel], fragmentos, grupos: Mapping[str, Sequence[str]]) -> type[BaseModel]:
-    """Exige selección explícita en cada grupo; no completa citas por cuenta del modelo."""
+    """Require explicit fragment selections for every mandatory evidence group."""
     if "fragmentos_ids" not in base.model_fields or not grupos:
         raise ValueError("Se requiere el contrato de lectura y sus grupos de evidencia")
     seleccion = create_model(
@@ -43,5 +43,5 @@ def esquema_por_grupos(base: type[BaseModel], fragmentos, grupos: Mapping[str, S
 
 
 def ids_seleccionados(lectura: BaseModel) -> tuple[str, ...]:
-    """Un fragmento puede satisfacer varios grupos; se cita una sola vez después de seleccionarlo."""
+    """Deduplicate selected fragments that satisfy multiple evidence groups."""
     return tuple(dict.fromkeys(lectura.fragmentos_por_grupo.model_dump().values()))

@@ -29,7 +29,7 @@ def test_rag():
 
 
 def test_equivalentes_en_los_dos_sentidos():
-    """EQUIVALE_A se guarda en un sentido (a → b), pero la API la muestra desde los dos conceptos."""
+    """Expose symmetric equivalences from either concept despite storing one directed edge."""
     a = cliente.get("/api/conceptos/fisica/modelo-particulas").json()
     b = cliente.get("/api/conceptos/quimica/modelo-de-particulas").json()
     assert "CON:quimica/modelo-de-particulas" in {x["id"] for x in a["equivalentes"]}

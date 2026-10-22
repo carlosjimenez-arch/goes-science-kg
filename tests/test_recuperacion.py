@@ -1,4 +1,4 @@
-"""Relevancia y aislamiento de versiones para el recuperador híbrido."""
+"""Test retrieval relevance and curriculum-version isolation."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""Componer cohortes con protocolos distintos preserva fuentes, vetos y huellas originales."""
+"""Preserve original sources, vetoes, and fingerprints when composing different review protocols."""
 
 from __future__ import annotations
 

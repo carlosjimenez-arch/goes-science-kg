@@ -1,5 +1,8 @@
 # Contexto V4 verificable por celda
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. Alcance: lectura local de los XLSX entregados; sin llamadas a GCP,
 sin modificar los originales y sin activar por sí mismo una nueva versión del grafo. La verificación
 de bytes acredita fidelidad al insumo recibido, no aprobación oficial de su contenido curricular.

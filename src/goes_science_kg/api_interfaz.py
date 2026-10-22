@@ -1,46 +1,49 @@
-"""API de la aplicación curricular: consultas reales y briefs documentales sin invocar modelos."""
+"""Expose repository-backed curriculum queries and documentary briefs without model calls."""
 
 from __future__ import annotations
 
-import logging
-import sqlite3
 import tempfile
-from contextlib import closing
+from collections.abc import Callable
 from pathlib import Path
-from threading import Lock
 from typing import Annotated, Literal
 
-from fastapi import APIRouter, HTTPException, Query, Response
+from fastapi import APIRouter, FastAPI, HTTPException, Query, Request, Response
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
 
-from goes_science_kg.interfaz.consulta import ConsultaInterfaz, normalizar
+from goes_science_kg.interfaz.consulta import normalizar
+from goes_science_kg.interfaz.contratos import ListaDocumentos, PaginaFilas, RespuestaBriefs, RespuestaGrafo
+from goes_science_kg.interfaz.servicio import FuenteNoDisponible, RegistroActividad, ServicioInterfaz
 from goes_science_kg.motor.contratos import Asignatura
+from goes_science_kg.producto.runtime import RuntimeProducto
 
-LOGGER = logging.getLogger(__name__)
 DIRECTORIO = Path(__file__).parent / "interfaz" / "estaticos"
 Grado = Annotated[int | None, Query(ge=2, le=11)]
 Texto = Annotated[str, Query(max_length=200)]
 
 
 class SolicitudBrief(BaseModel):
+    """Select verified curriculum rows and a supported brief layout."""
+
     model_config = ConfigDict(extra="forbid")
     filas_ids: list[Annotated[str, Field(min_length=1, max_length=200)]] = Field(min_length=1, max_length=20)
     formato: Literal["evaluacion", "cinco_fases"] = "evaluacion"
 
 
-def registrar_interfaz(app):
-    """Los assets no contienen corpus ni semillas. El navegador consulta la API de su mismo origen."""
+def registrar_interfaz(app: FastAPI) -> None:
+    """Mount local application assets whose data comes exclusively from the API."""
 
     @app.get("/", include_in_schema=False)
     def inicio():
+        """Redirect the entry page to the local curriculum application."""
         return RedirectResponse("/app/", status_code=307)
 
     app.mount("/app", StaticFiles(directory=DIRECTORIO, html=True), name="interfaz")
 
     @app.middleware("http")
-    async def cabeceras(peticion, siguiente):
+    async def cabeceras(peticion: Request, siguiente: Callable) -> Response:
+        """Apply local application security and no-store response headers."""
         respuesta = await siguiente(peticion)
         if peticion.url.path.startswith(("/app", "/api/v4/interfaz")):
             respuesta.headers["X-Content-Type-Options"] = "nosniff"
@@ -54,35 +57,32 @@ def registrar_interfaz(app):
         return respuesta
 
 
-def crear_router_interfaz(leer, base: Path):
+def crear_router_interfaz(leer: Callable[[], RuntimeProducto], base: Path) -> APIRouter:
+    """Bind HTTP routes to a shared, verified curriculum application service."""
     router = APIRouter(prefix="/interfaz", tags=["Aplicación curricular"])
-    cache, lock = {}, Lock()
+    servicio = ServicioInterfaz(leer)
+    registro = RegistroActividad(base / "data/operaciones/registro.sqlite")
 
     def consultar():
-        runtime = leer()  # Revalida el snapshot también cuando la proyección ya está en caché.
-        with lock:
-            id_ = runtime.producto.manifest.snapshot_id
-            if id_ not in cache:
-                try:
-                    cache[id_] = ConsultaInterfaz(runtime)
-                except ValueError as error:
-                    raise HTTPException(409, str(error)) from error
-            return cache[id_]
-
-    def verificar_fila(servicio, fila_id):
-        from goes_science_kg.curriculo.contexto_fuentes import documento_de_fila
-
+        """Translate application compatibility errors into the public HTTP contract."""
         try:
-            if not servicio.runtime.fuentes.hidratar_celdas(documento_de_fila(servicio.filas[fila_id])):
-                raise ValueError("La fuente no contiene celdas verificables")
-        except (ValueError, KeyError, OSError) as error:
-            raise HTTPException(503, "No se pudo verificar la fuente original de la fila") from error
+            return servicio.consultar()
+        except ValueError as error:
+            raise HTTPException(409, str(error)) from error
+
+    def verificar_fila(consulta, fila_id: str) -> None:
+        """Require verifiable original cells before exposing row details or briefs."""
+        try:
+            servicio.verificar_fila(consulta, fila_id)
+        except FuenteNoDisponible as error:
+            raise HTTPException(503, str(error)) from error
 
     @router.get("/resumen")
     def resumen():
+        """Return verified snapshot counts and explicit integration availability."""
         return consultar().resumen()
 
-    @router.get("/filas")
+    @router.get("/filas", response_model=PaginaFilas)
     def filas(
         grado: Grado = None,
         disciplina: Asignatura | None = None,
@@ -91,6 +91,7 @@ def crear_router_interfaz(leer, base: Path):
         limite: Annotated[int, Query(ge=1, le=200)] = 40,
         solo_alertas: bool = False,
     ):
+        """Return a bounded, filtered page while preserving its complete row denominator."""
         s = consultar()
         seleccion = s.seleccionar(grado, disciplina, q)
         if solo_alertas:
@@ -105,14 +106,16 @@ def crear_router_interfaz(leer, base: Path):
 
     @router.get("/filas/{fila_id}")
     def fila(fila_id: str):
+        """Return one verified original row, its proposal, reviews, and cited evidence."""
         s = consultar()
         if fila_id not in s.filas:
             raise HTTPException(404, "La fila no pertenece al snapshot")
         verificar_fila(s, fila_id)
         return s.detalle(fila_id)
 
-    @router.get("/documentos")
+    @router.get("/documentos", response_model=ListaDocumentos)
     def documentos(q: Texto = "", tipo: Literal["curriculo", "referencia"] | None = None):
+        """List registered and cited documents using validated source metadata."""
         s = consultar()
         seleccion = [
             d
@@ -122,17 +125,19 @@ def crear_router_interfaz(leer, base: Path):
         ]
         return s.identidad | {"total": len(seleccion), "documentos": sorted(seleccion, key=lambda d: d["titulo"])}
 
-    @router.get("/grafo")
+    @router.get("/grafo", response_model=RespuestaGrafo)
     def grafo(
         grado: Grado = None,
         disciplina: Asignatura | None = None,
         q: Texto = "",
         limite: Annotated[int, Query(ge=10, le=800)] = 260,
     ):
+        """Return a bounded real subgraph with typed edges and explicit truncation."""
         return consultar().grafo(grado=grado, disciplina=disciplina, q=q, limite=limite)
 
-    @router.get("/nodos/{nodo_id}")
+    @router.get("/nodos/{nodo_id:path}")
     def nodo(nodo_id: str):
+        """Look up an exact node identity and its indexed relationships, including IDs with slashes."""
         s = consultar()
         if nodo_id not in s.nodos:
             raise HTTPException(404, "El nodo no pertenece al snapshot")
@@ -141,7 +146,7 @@ def crear_router_interfaz(leer, base: Path):
         n = s.nodos[nodo_id]
         return s.identidad | {
             "nodo": n.model_dump(mode="json"),
-            "relaciones": [a.model_dump(mode="json") for a in s.producto.aristas if nodo_id in (a.origen, a.destino)],
+            "relaciones": [a.model_dump(mode="json") for a in s.aristas_por_nodo[nodo_id]],
             "fila": s.detalle(nodo_id) if nodo_id in s.filas else None,
         }
 
@@ -152,10 +157,12 @@ def crear_router_interfaz(leer, base: Path):
         q: Texto = "",
         estado: Literal["respaldado_automaticamente", "no_respaldado", "abstencion"] | None = None,
     ):
+        """List published unit reviews under the same curriculum filters."""
         return consultar().revision(grado, disciplina, q, estado)
 
-    @router.post("/briefs")
+    @router.post("/briefs", response_model=RespuestaBriefs)
     def briefs(solicitud: SolicitudBrief):
+        """Compile existing proposals into documentary briefs without invoking models."""
         s = consultar()
         if len(solicitud.filas_ids) != len(set(solicitud.filas_ids)):
             raise HTTPException(422, "No se admiten filas duplicadas")
@@ -173,6 +180,7 @@ def crear_router_interfaz(leer, base: Path):
 
     @router.get("/exportaciones/matriz.xlsx")
     def excel():
+        """Export the full curricular comparison with its pinned snapshot identity."""
         from goes_science_kg.producto.exportacion_mejoras import exportar_excel
 
         s = consultar()
@@ -191,25 +199,9 @@ def crear_router_interfaz(leer, base: Path):
 
     @router.get("/administracion")
     def administracion():
+        """Report publication identity, local capabilities, and optional recorded campaign usage."""
         s = consultar()
-        ledger = base / "data/operaciones/registro.sqlite"
-        actividad = None
-        if ledger.is_file() and not ledger.is_symlink():
-            try:
-                with closing(sqlite3.connect(ledger.resolve().as_uri() + "?mode=ro", uri=True)) as db:
-                    filas = db.execute(
-                        "SELECT modelo,rol,estado,COUNT(*),SUM(reserva_usd) FROM llamadas "
-                        "WHERE ejecucion=? GROUP BY modelo,rol,estado ORDER BY modelo,rol,estado",
-                        ("ciencias_v4_curricularizacion_20261022",),
-                    ).fetchall()
-                actividad = {
-                    "llamadas": sum(f[3] for f in filas),
-                    "reserva_usd": sum(f[4] for f in filas),
-                    "detalle": [{"modelo": f[0], "rol": f[1], "estado": f[2], "llamadas": f[3]} for f in filas],
-                    "importe_facturado": None,
-                }
-            except sqlite3.Error:
-                LOGGER.warning("AMARILLO: ledger no disponible para la vista operativa")
+        actividad = registro.consultar("ciencias_v4_curricularizacion_20261022")
         return s.identidad | {
             "modo": "lectura_local",
             "usuarios": None,

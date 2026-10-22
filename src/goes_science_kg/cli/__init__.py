@@ -1,8 +1,8 @@
-"""CLI `gskg`: composición de grupos, con un único punto de entrada público.
+"""Compose the gskg command groups through one public entry point."""
 
-Cada grupo adapta argumentos de terminal a los casos de uso del dominio; los imports
-de dependencias opcionales se mantienen dentro del comando que las necesita.
-"""
+# Historical implementation notes:
+# Cada grupo adapta argumentos de terminal a los casos de uso del dominio; los imports
+# de dependencias opcionales se mantienen dentro del comando que las necesita.
 
 from goes_science_kg.cli import (
     alineacion,

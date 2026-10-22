@@ -1,5 +1,9 @@
 # 11 · Grafos internacionales de 9.° a 11.° y contraste con la malla Versión 2
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 > Pedido del 2026-10-07: construir, por ciencia, grafos de conocimiento de países con educación científica de
 > excelencia para 9.°–11.° y contrastarlos con las mallas sugeridas (Versión 2). Rol: especialista en educación
 > científica. Trabajo con la cuenta GOES (git y GCP).

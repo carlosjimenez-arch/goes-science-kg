@@ -1,4 +1,4 @@
-"""Curricularización por unidad: contexto íntegro, propuesta, cuatro jueces ciegos y una reparación."""
+"""Review complete unit proposals with four blind roles and bounded repair."""
 
 from __future__ import annotations
 
@@ -97,6 +97,8 @@ ENFOQUES = {
 
 
 def prompt_revision(rol: str) -> str:
+    """Build a blind role-specific review prompt for the exact unit proposal."""
+
     return (
         BASE
         + ENFOQUES[rol]
@@ -119,6 +121,8 @@ si están expresamente declaradas y el diseño sí exige obtener los recursos ne
 
 
 class EstadoMejora(TypedDict, total=False):
+    """Persist complete unit-improvement preparation, draft, errors, rounds, and outcome."""
+
     solicitud: dict
     ejecucion_id: str
     huella_entorno: str
@@ -138,10 +142,14 @@ class EstadoMejora(TypedDict, total=False):
 
 
 class MotorMejoras:
+    """Generate and review unit proposals through four blind roles and bounded repair."""
+
     def __init__(self, preparador: PreparadorMejoras, modelo):
         self.preparador, self.modelo = preparador, modelo
 
     def entorno(self, p: PreparacionMejora) -> str:
+        """Fingerprint the improvement engine and its explicit preparation environment."""
+
         raiz = Path(__file__).resolve().parents[1]
         modulos = (
             "motor/mejoras.py",
@@ -304,6 +312,8 @@ class MotorMejoras:
         return {"resultado": resultado.model_dump(mode="json")}
 
     def validar_estado(self, estado):
+        """Rehydrate and reconstruct an improvement checkpoint before resumption."""
+
         p = (
             PreparacionMejora.model_validate(estado["preparacion"])
             if estado.get("preparacion")
@@ -323,6 +333,8 @@ class MotorMejoras:
                 raise ValueError("El resultado curricular no corresponde a sus cuatro revisiones")
 
     def compilar(self, *, checkpointer=None):
+        """Compile the unit-improvement workflow with an injected checkpoint backend."""
+
         from langgraph.graph import END, START, StateGraph
 
         g = StateGraph(EstadoMejora)

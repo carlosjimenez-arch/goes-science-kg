@@ -1,4 +1,4 @@
-"""Preparación de juicios de conocimiento desde registros y bytes originales verificados."""
+"""Prepare knowledge-review dossiers from verified records and original bytes."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ _TIPOS = {
 
 
 def datos_juicio(expediente: ExpedienteConocimiento) -> dict:
-    """El proveedor recibe fragmentos y fuentes; no confianza, dictámenes o rutas históricas IA."""
+    """Send evidence to reviewers without prior confidence, votes, or historical AI paths."""
     return {
         "version": expediente.version,
         "datos_no_confiables": {
@@ -60,7 +60,7 @@ def datos_juicio(expediente: ExpedienteConocimiento) -> dict:
 
 
 class PreparadorConocimiento:
-    """El informe es transporte de candidatos: sus banderas no autorizan una relación."""
+    """Prepare review evidence without treating candidate transport flags as authorization."""
 
     def __init__(
         self,
@@ -122,6 +122,8 @@ class PreparadorConocimiento:
 
     @property
     def huella_entorno(self) -> str:
+        """Fingerprint the knowledge preparer and its explicit evidence environment."""
+
         return huella(
             {
                 "curriculo": self.curriculo.huella,
@@ -157,6 +159,8 @@ class PreparadorConocimiento:
         return evidencia
 
     def preparar(self, solicitud: SolicitudConocimiento) -> ExpedienteConocimiento:
+        """Prepare one candidate from verified original cells and primary documentary context."""
+
         candidato = self.candidatos[solicitud.candidato_id]
         fila = self.filas[candidato.fila_id]
         tipo_nodo, tipo_relacion = _TIPOS[candidato.tipo]

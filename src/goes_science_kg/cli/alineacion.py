@@ -1,10 +1,11 @@
-"""Preparación local y evaluación documental explícita, durable y con gasto acotado."""
+"""Prepare documentary alignment locally and execute explicit, budgeted reviews."""
 
 from __future__ import annotations
 
 import hashlib
 import json
 import re
+from contextlib import closing
 from pathlib import Path
 from typing import Annotated, Literal
 from uuid import uuid4
@@ -28,7 +29,7 @@ def coleccionar(
     ejecuciones: Annotated[list[str], typer.Argument(help="IDs originales de todos los casos de la cohorte")],
     salida: Annotated[Path, typer.Option()],
 ) -> None:
-    """Relee terminales y fuentes, preserva votos negativos y exporta sin crear proveedores."""
+    """Revalidate terminal states and sources before exporting the complete review cohort."""
     import sqlite3
 
     from langgraph.checkpoint.sqlite import SqliteSaver
@@ -45,7 +46,7 @@ def coleccionar(
         curriculo, referentes, fuentes, paginas = _contexto(cfg)
         estados = []
         archivo = ruta(cfg.checkpoints).resolve()
-        with sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True) as conexion:
+        with closing(sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True)) as conexion, conexion:
             saver = SqliteSaver(conexion)
             # El lector de checkpoints no debe intentar crear tablas en el almacén de sólo lectura.
             saver.is_setup = True
@@ -79,7 +80,7 @@ def coleccionar(
 
 
 class ConfigAlineacion(BaseModel):
-    """Configuración de confianza: versiones y rutas explícitas, tres lectores y límites."""
+    """Configure trusted paths, versions, three reviewer roles, and execution limits."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -207,7 +208,7 @@ def listar_referentes(
     marco: Annotated[str | None, typer.Option(help="Filtra PISA o ERCE sin cambiar el catálogo")] = None,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/alineaciones/referentes.json"),
 ) -> None:
-    """Lista criterios verificados con perfiles; no utiliza modelos ni activa el grafo."""
+    """List verified reference criteria without invoking models or activating a graph."""
     try:
         destino = _destino(salida, ".json")
         catalogo, paginas = _referentes(_configuracion())
@@ -236,7 +237,7 @@ def listar_referentes(
 def validar_referentes_cli(
     salida: Annotated[Path, typer.Option()] = Path("data/producto/alineaciones/auditoria_referentes.json"),
 ) -> None:
-    """Rehidrata fuentes y anclas usando perfiles y fija la huella de extracción del informe."""
+    """Rehydrate documentary anchors and record the extraction fingerprint."""
     try:
         destino = _destino(salida, ".json")
         catalogo, paginas = _referentes(_configuracion())
@@ -260,7 +261,7 @@ def preparar(
     referente_id: str,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/alineaciones/par_preparado.json"),
 ) -> None:
-    """Guarda evidencia real y fragmentos para un solo par, sin crear proveedor ni ledger."""
+    """Save one alignment pair's verified evidence without creating a model or ledger."""
     try:
         destino = _destino(salida, ".json")
         _, _, preparacion, paginas = _preparacion(fila_id, referente_id, _configuracion())
@@ -281,7 +282,7 @@ def evaluar(
     max_llamadas: Annotated[int | None, typer.Option(min=3, max=200)] = None,
     salida: Annotated[Path, typer.Option()] = Path("data/producto/alineaciones/resultado.json"),
 ) -> None:
-    """Prepara por defecto; sólo --ejecutar habilita tres lectores y checkpoints durables."""
+    """Prepare locally unless explicit execution enables durable, budgeted reviews."""
     try:
         cfg = _configuracion()
         destino = _destino(salida, ".json")

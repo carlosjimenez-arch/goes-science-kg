@@ -1,4 +1,4 @@
-"""Anclas documentales de dimensiones evaluativas, sin equiparar marcos ni grados."""
+"""Anchor evaluation dimensions in documentary evidence without equating frameworks or grades."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ def _normalizar(texto: str) -> str:
 
 
 class DimensionEvaluativa(BaseModel):
-    """Una categoría para analizar tareas; el identificador pertenece al proyecto."""
+    """Represent a project-defined category for analyzing assessment tasks."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -46,6 +46,8 @@ class DimensionEvaluativa(BaseModel):
 
 
 class MetadatosDimensiones(BaseModel):
+    """Describe dimension-catalog scope, provenance, limitations, and audit metadata."""
+
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     clasificacion: Literal["parafrasis_del_proyecto"]
@@ -59,6 +61,8 @@ class MetadatosDimensiones(BaseModel):
 
 
 class CatalogoDimensiones(BaseModel):
+    """Collect documentary assessment dimensions under a versioned schema."""
+
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     schema_version: Literal["1.0"]
@@ -73,7 +77,7 @@ class CatalogoDimensiones(BaseModel):
 
 
 def validar_dimensiones(catalogo: CatalogoDimensiones, repositorio: RepositorioReferencias) -> dict:
-    """Verifica bytes y localizadores. No decide si una tarea satisface la dimensión."""
+    """Verify document bytes and locators without asserting task alignment."""
     # Se lee un único manifiesto para comprobar que todas las páginas usan la misma edición.
     manifiesto = repositorio.manifiesto()
     huella_manifest = hashlib.sha256(manifiesto.model_dump_json().encode("utf-8")).hexdigest()

@@ -82,6 +82,7 @@ const S = {
   formato: 'evaluacion',
   seleccion: new Set(),
   briefs: [],
+  briefEpoch: 0,
   epoch: 0,
   desmontar: null,
   datosVista: null,
@@ -144,13 +145,13 @@ function shell() {
     `var(--${v.color === 'navy' ? 'navy-50' : v.color + '-100'})`,
   );
   $('title').textContent = v.nombre;
-  $('crumb').textContent = 'GOES · ' + v.sub;
+  $('crumb').textContent = 'GOEs · ' + v.sub;
   $('miniic').innerHTML = icono(v.icono);
   $('vg').textContent = numero(S.resumen.nodos);
   $('vr').textContent = numero(S.resumen.cobertura.unidades);
   $('snapshot').textContent =
     `Ciencias V4 · Snapshot ${S.resumen.snapshot_id} · Revisión automática; aprobación institucional no acreditada`;
-  document.title = `${v.nombre} · Ciencias · GOES`;
+  document.title = `${v.nombre} · Ciencias · GOEs`;
 }
 function inicio() {
   const r = S.resumen,
@@ -202,20 +203,18 @@ function panel() {
 }
 async function corpus() {
   const d = await api('/documentos' + parametros({ q: S.filtros.q, tipo: S.tipoFuente }));
-  S.datosVista = d;
-  return `${titulo('Corpus', 'Matrices y referencias utilizadas por el producto. Los originales conservan su identidad y procedencia.')}${filtros({ corpus: true })}
+  return { datos: d, html: `${titulo('Corpus', 'Matrices y referencias utilizadas por el producto. Los originales conservan su identidad y procedencia.')}${filtros({ corpus: true })}
     <div class="between"><p class="muted">${numero(d.total)} fuentes documentadas en la selección</p><span class="pill blue">Fuentes del snapshot V4</span></div>
     <div class="list">${d.documentos.map((x) => `<article class="li"><span class="tile">${icono('corpus')}</span><div><div class="ti">${esc(x.titulo)}</div><div class="sub">${x.tipo === 'curriculo' ? 'Currículo nacional' : 'Referencia'} · ${esc(x.version_documental || 'Edición en expediente')} · citada en ${x.usos} unidades</div><div class="clip-id">SHA ${esc(x.sha256 || 'No registrado en esta proyección')}</div>${x.licencia ? `<div class="mini">${esc(x.licencia)}</div>` : ''}</div><div class="rt">${enlaceSeguro(x.url, 'Fuente oficial')}</div></article>`).join('') || vacio('No hay fuentes con estos filtros.')}</div>
-    ${aviso('Este corpus es el que respalda la publicación seleccionada. Incorporar otro archivo requiere ingesta y verificación antes de que pueda respaldar el grafo.')}`;
+    ${aviso('Este corpus es el que respalda la publicación seleccionada. Incorporar otro archivo requiere ingesta y verificación antes de que pueda respaldar el grafo.')}` };
 }
 async function grafo() {
   const d = await api('/grafo' + parametros(S.filtros, { limite: 260 }));
-  S.datosVista = d;
-  return `${titulo('Grafo 3D de conocimiento', 'Explora las relaciones reales del producto: cada enlace conserva su tipo y su sentido documental.')}${filtros()}
+  return { datos: d, html: `${titulo('Grafo 3D de conocimiento', 'Explora las relaciones reales del producto: cada enlace conserva su tipo y su sentido documental.')}${filtros()}
     <div class="stats">${stat(S.resumen.nodos, 'nodos del snapshot', true)}${stat(S.resumen.aristas, 'relaciones del snapshot')}${stat(d.nodos.length, 'nodos visibles')}${stat(d.aristas.length, 'relaciones visibles')}</div>
     ${d.nodos.length ? `<div class="graph-stage"><canvas id="canvas-grafo" aria-label="Proyección tridimensional del subgrafo; alternativa accesible en la tabla inferior"></canvas><div class="graph-hover" id="graph-hover">Arrastra para rotar · selecciona un nodo</div><div class="graph-tools"><button class="btn sm" id="rotacion" aria-pressed="true">Pausar giro</button></div><div class="graph-legend"><span><i style="background:#3565fc"></i>Fila curricular</span><span><i style="background:#1c1e4d"></i>Unidad</span><span><i style="background:#0fae76"></i>Propuesta</span><span><i style="background:#0ea5a3"></i>Revisión</span><span><i style="background:#e0890b"></i>Fuente</span></div></div>` : vacio('No hay nodos con estos filtros.')}
     <p class="muted spaced">${d.recortado ? `Subgrafo de ${d.nodos.length} nodos sobre ${numero(d.total_nodos_filtrados)} relacionados con el filtro.` : 'Todos los nodos de la selección están visibles.'} La posición 3D es visual; las aristas no representan automáticamente prerrequisitos.</p>
-    <details class="card spaced"><summary>Ver nodos en tabla accesible · ${d.nodos.length}</summary><div class="table-wrap"><table class="atable"><thead><tr><th>Nodo</th><th>Tipo</th><th>Conexiones</th><th></th></tr></thead><tbody>${d.nodos.map((n) => `<tr><td class="objetivo">${esc(n.etiqueta)}</td><td>${esc(n.tipo)}</td><td>${n.conexiones}</td><td><button class="btn sm" data-action="nodo" data-id="${esc(n.id)}">Detalle</button></td></tr>`).join('')}</tbody></table></div></details>`;
+    <details class="card spaced"><summary>Ver nodos en tabla accesible · ${d.nodos.length}</summary><div class="table-wrap"><table class="atable"><thead><tr><th>Nodo</th><th>Tipo</th><th>Conexiones</th><th></th></tr></thead><tbody>${d.nodos.map((n) => `<tr><td class="objetivo">${esc(n.etiqueta)}</td><td>${esc(n.tipo)}</td><td>${n.conexiones}</td><td><button class="btn sm" data-action="nodo" data-id="${esc(n.id)}">Detalle</button></td></tr>`).join('')}</tbody></table></div></details>` };
 }
 function dots(revisiones) {
   return `<div class="dots">${Object.entries(ROLES)
@@ -229,20 +228,19 @@ function dots(revisiones) {
 }
 async function revision() {
   const d = await api('/revision' + parametros(S.filtros));
-  S.datosVista = d;
   const columnas = [
     ['respaldado_automaticamente', 'Respaldo automático', 'green'],
     ['abstencion', 'Abstención', 'amber'],
     ['no_respaldado', 'Sin respaldo', 'red'],
   ];
-  return `${titulo('Revisión de conocimiento', 'Dictámenes reales por unidad: ciencia, currículo, psicopedagogía y revisión adversarial.')}${filtros()}
+  return { datos: d, html: `${titulo('Revisión de conocimiento', 'Dictámenes reales por unidad: ciencia, currículo, psicopedagogía y revisión adversarial.')}${filtros()}
     <div class="review-board">${columnas
       .map(([key, label, color]) => {
         const unidades = d.unidades.filter((u) => u.estado === key);
         return `<section class="review-column"><div class="between"><h3>${label}</h3><span class="pill ${color}">${unidades.length}</span></div>${unidades.map((u) => `<button class="review-item" data-action="unidad" data-id="${u.id}"><span class="mini">${u.grado}.º · ${esc(u.asignatura_malla)}</span><strong>${esc(u.unidad)}</strong><span class="mini">${u.filas} filas · ${u.rondas} ronda${u.rondas === 1 ? '' : 's'}</span>${dots(u.dictamenes)}</button>`).join('') || vacio('No hay unidades en este estado.')}</section>`;
       })
       .join('')}</div>
-    ${aviso('Se muestran los resultados seleccionados y sus rondas reales. El expediente completo conserva los protocolos anteriores. Los especialistas que comparten proveedor no son estadísticamente independientes.')}`;
+    ${aviso('Se muestran los resultados seleccionados y sus rondas reales. El expediente completo conserva los protocolos anteriores. Los especialistas que comparten proveedor no son estadísticamente independientes.')}` };
 }
 function tablaFilas(d, { checks = false } = {}) {
   return `<div class="table-wrap"><table class="atable"><thead><tr>${checks ? '<th>Elegir</th>' : ''}<th>Grado</th><th>Asignatura y unidad</th><th>Objetivo original</th><th>Propuesta</th><th></th></tr></thead><tbody>${d.filas.map((f) => `<tr>${checks ? `<td><input type="checkbox" class="seleccionar-fila" data-id="${esc(f.id)}" aria-label="Elegir ${esc(f.objetivo_original)}" ${S.seleccion.has(f.id) ? 'checked' : ''} ${f.fuera_alcance || !f.objetivo_propuesto ? 'disabled' : ''}></td>` : ''}<td>${f.grado}.º</td><td>${esc(f.asignatura)}<div class="mini">${esc(f.unidad)}</div></td><td class="objetivo">${esc(f.objetivo_original)}${f.alerta_original ? '<div class="spaced"><span class="pill amber">Alerta del original</span></div>' : ''}</td><td class="objetivo">${f.fuera_alcance ? '<span class="pill gray">Fuera de Ciencias</span>' : esc(f.objetivo_propuesto || 'Sin propuesta respaldada')}</td><td><button class="btn sm" data-action="fila" data-id="${esc(f.id)}">Comparar</button></td></tr>`).join('')}</tbody></table></div>${!d.filas.length ? vacio('No hay filas con estos filtros.') : ''}${paginador(d)}`;
@@ -251,18 +249,16 @@ async function curricularizacion() {
   const d = await api(
     '/filas' + parametros(S.filtros, { offset: S.offset, limite: 25, solo_alertas: S.soloAlertas }),
   );
-  S.datosVista = d;
-  return `${titulo('Curricularización', 'Compara cada fila original con su propuesta: objetivos, indicadores, evaluación y didáctica.', excelBtn)}${filtros()}
+  return { datos: d, html: `${titulo('Curricularización', 'Compara cada fila original con su propuesta: objetivos, indicadores, evaluación y didáctica.', excelBtn)}${filtros()}
     <div class="between"><div class="tabs"><button data-action="alertas" data-value="false" class="${!S.soloAlertas ? 'on' : ''}">Toda la malla</button><button data-action="alertas" data-value="true" class="${S.soloAlertas ? 'on' : ''}">Alertas del original · ${S.resumen.alertas_originales}</button></div>${csvBtn}</div>
-    <section class="card spaced">${tablaFilas(d)}</section>${aviso('El orden es el de las filas del insumo. No se convierte en un calendario de 160 días: el grafo no contiene una carga lectiva oficial validada. Las propuestas corregidas conservan la alerta del original.')}`;
+    <section class="card spaced">${tablaFilas(d)}</section>${aviso('El orden es el de las filas del insumo. No se convierte en un calendario de 160 días: el grafo no contiene una carga lectiva oficial validada. Las propuestas corregidas conservan la alerta del original.')}` };
 }
 async function contenido() {
   const d = await api('/filas' + parametros(S.filtros, { offset: S.offset, limite: 20 }));
-  S.datosVista = d;
-  return `${titulo('Templates y Brief', 'Organiza propuestas respaldadas en un brief trazable para preparar clases.')}
+  return { datos: d, html: `${titulo('Templates y Brief', 'Organiza propuestas respaldadas en un brief trazable para preparar clases.')}
     <h3 class="h3">1 · Formato de organización</h3><div class="template-options"><label class="template-option"><input name="formato" type="radio" value="evaluacion" ${S.formato === 'evaluacion' ? 'checked' : ''}><b>Diseño por evidencias</b><p>Objetivo, indicador, producto y criterio de evaluación; didáctica, andamiaje, contexto y seguridad.</p></label><label class="template-option"><input name="formato" type="radio" value="cinco_fases" ${S.formato === 'cinco_fases' ? 'checked' : ''}><b>Cinco fases del insumo</b><p>Añade las fases originales: aproximar, explorar, explicar, indagar y reforzar. Las ausencias se indican.</p></label></div>
     <h3 class="h3 spaced">2 · Selecciona objetivos de Ciencias</h3>${filtros()}<div class="between"><p class="muted" id="seleccion-label">${S.seleccion.size} objetivos elegidos · máximo 20</p><button class="btn pri" data-action="briefs" id="compilar-briefs" ${!S.seleccion.size ? 'disabled' : ''}>${icono('content')}Compilar briefs</button></div><section class="card spaced">${tablaFilas(d, { checks: true })}</section>
-    <div id="briefs-resultados">${resultadosBriefs()}</div>${aviso('El brief se compila a partir del texto ya respaldado. No genera otra clase con IA ni consume Vertex; conserva las condiciones de recursos y los límites de la propuesta.')}`;
+    <div id="briefs-resultados">${resultadosBriefs()}</div>${aviso('El brief se compila a partir del texto ya respaldado. No genera otra clase con IA ni consume Vertex; conserva las condiciones de recursos y los límites de la propuesta.')}` };
 }
 function resultadosBriefs() {
   return S.briefs.length
@@ -271,31 +267,33 @@ function resultadosBriefs() {
 }
 async function admin() {
   const d = await api('/administracion');
-  S.datosVista = d;
-  const a = d.actividad_vertex;
-  return `${titulo('Administración', 'Estado de publicación, permisos de la aplicación y actividad registrada.')}
+  const a = d.actividad_vertex?.estado === "sin_datos" ? null : d.actividad_vertex;
+  return { datos: d, html: `${titulo('Administración', 'Estado de publicación, permisos de la aplicación y actividad registrada.')}
     <div class="stats">${stat('Lectura', 'modo de la aplicación', true)}${stat(Object.keys(d.archivos_snapshot).length, 'archivos del snapshot')}${stat(a ? a.llamadas : 'No disponible', 'invocaciones registradas')}${stat(4, 'roles de revisión')}</div>
-    <div class="g2">${bloque('Identidad y permisos', '<span class="pill gray">Consulta local</span><p>No hay proveedor de identidad conectado. Esta sesión no acredita un usuario GOES ni permite gestionar usuarios o aprobar el currículo institucionalmente.</p><div class="checks"><span class="pill green">Lectura</span><span class="pill gray">Sin generación de modelos</span></div>')}
+    <div class="g2">${bloque('Identidad y permisos', '<span class="pill gray">Consulta local</span><p>No hay proveedor de identidad conectado. Esta sesión no acredita un usuario GOEs ni permite gestionar usuarios o aprobar el currículo institucionalmente.</p><div class="checks"><span class="pill green">Lectura</span><span class="pill gray">Sin generación de modelos</span></div>')}
     ${bloque('Integridad de la publicación', `<p>Las consultas comparten un único snapshot verificado. Si sus archivos cambian, la API se invalida hasta reiniciar el servicio.</p><div class="clip-id">${esc(d.snapshot_id)}</div><p><a href="/docs" target="_blank" rel="noopener">Abrir contrato OpenAPI ↗</a></p>`)}</div>
     <div class="card spaced"><h3 class="h3">Actividad de Vertex · campaña curricular V4</h3>${a ? `<p class="muted">${a.llamadas} invocaciones registradas · USD ${a.reserva_usd.toFixed(6)} de reserva conservadora. El importe facturado no está disponible. Consultar esta pantalla no consume modelos.</p><div class="table-wrap"><table class="atable"><thead><tr><th>Modelo</th><th>Rol</th><th>Estado</th><th>Invocaciones</th></tr></thead><tbody>${a.detalle.map((x) => `<tr><td>${esc(x.modelo)}</td><td>${esc(ROLES[x.rol] || x.rol)}</td><td>${esc(x.estado)}</td><td>${x.llamadas}</td></tr>`).join('')}</tbody></table></div>` : vacio('No hay un ledger disponible para consultar. No se supone un gasto de cero.')}</div>
     <details class="card spaced"><summary>Huellas de los archivos publicados</summary>${Object.entries(
       d.archivos_snapshot,
     )
       .map(([n, h]) => `<p><b>${esc(n)}</b><br><span class="clip-id">${esc(h)}</span></p>`)
-      .join('')}</details>`;
+      .join('')}</details>` };
 }
 const RENDER = { inicio, panel, corpus, grafo, revision, curricularizacion, contenido, admin };
 async function render() {
   const epoch = ++S.epoch;
+  S.briefEpoch++;
+  S.datosVista = null;
   S.desmontar?.();
   S.desmontar = null;
   shell();
   $('view').setAttribute('aria-busy', 'true');
   $('view').classList.add('loading');
   try {
-    const html = await RENDER[S.ruta]();
+    const vista = await RENDER[S.ruta]();
     if (epoch !== S.epoch) return;
-    $('view').innerHTML = html;
+    S.datosVista = typeof vista === 'string' ? null : vista.datos;
+    $('view').innerHTML = typeof vista === 'string' ? vista : vista.html;
     $('view').classList.add('vin');
     if (S.ruta === 'grafo' && $('canvas-grafo'))
       S.desmontar = montarGrafo($('canvas-grafo'), S.datosVista, abrirNodo);
@@ -312,6 +310,7 @@ async function render() {
 }
 function navegar(ruta) {
   if (!VISTAS[ruta]) return;
+  S.briefEpoch++;
   cerrarModal();
   $('side').classList.remove('open');
   S.offset = 0;
@@ -448,6 +447,7 @@ async function accion(e) {
       S.offset = 0;
       await render();
     } else if (a === 'anterior' || a === 'siguiente') {
+      if (!Number.isInteger(S.datosVista?.limite)) return;
       S.offset = Math.max(0, S.offset + (a === 'siguiente' ? S.datosVista.limite : -S.datosVista.limite));
       await render();
       $('scroll-view').scrollTop = 0;
@@ -464,20 +464,33 @@ async function accion(e) {
         target.disabled = false;
       }
     } else if (a === 'briefs') {
+      if (S.ruta !== 'contenido' || !S.seleccion.size) return;
+      const turno = ++S.briefEpoch,
+        vista = S.epoch,
+        formato = S.formato,
+        filas = [...S.seleccion];
+      const vigente = () => turno === S.briefEpoch && vista === S.epoch &&
+        S.ruta === 'contenido' && formato === S.formato && filas.length === S.seleccion.size &&
+        filas.every((id) => S.seleccion.has(id));
       target.disabled = true;
       target.textContent = 'Compilando…';
       try {
         const d = await api('/briefs', {
           method: 'POST',
-          body: JSON.stringify({ filas_ids: [...S.seleccion], formato: S.formato }),
+          body: JSON.stringify({ filas_ids: filas, formato }),
         });
+        if (!vigente()) return;
         S.briefs = d.briefs;
         $('briefs-resultados').innerHTML = resultadosBriefs();
         $('briefs-resultados').scrollIntoView({ behavior: 'smooth' });
         toast(`${d.briefs.length} briefs compilados · 0 llamadas a modelos`);
+      } catch (error) {
+        if (vigente()) throw error;
       } finally {
-        target.disabled = !S.seleccion.size;
-        target.innerHTML = icono('content') + 'Compilar briefs';
+        if (vigente()) {
+          target.disabled = !S.seleccion.size;
+          target.innerHTML = icono('content') + 'Compilar briefs';
+        }
       }
     } else if (a === 'brief-descarga') {
       const b = S.briefs[Number(target.dataset.i)];
@@ -496,6 +509,13 @@ document.addEventListener('submit', (e) => {
   S.offset = 0;
   render();
 });
+function invalidarBriefs() {
+  S.briefEpoch++;
+  S.briefs = [];
+  $('briefs-resultados').innerHTML = '';
+  $('compilar-briefs').disabled = !S.seleccion.size;
+  $('compilar-briefs').innerHTML = icono('content') + 'Compilar briefs';
+}
 document.addEventListener('change', (e) => {
   if (e.target.closest('#filtros') && e.target.tagName === 'SELECT') {
     if (e.target.name === 'tipo') S.tipoFuente = e.target.value;
@@ -504,8 +524,7 @@ document.addEventListener('change', (e) => {
     render();
   } else if (e.target.name === 'formato') {
     S.formato = e.target.value;
-    S.briefs = [];
-    $('briefs-resultados').innerHTML = '';
+    invalidarBriefs();
   } else if (e.target.matches('.seleccionar-fila')) {
     const id = e.target.dataset.id;
     if (e.target.checked && S.seleccion.size >= 20) {
@@ -515,6 +534,7 @@ document.addEventListener('change', (e) => {
     }
     if (e.target.checked) S.seleccion.add(id);
     else S.seleccion.delete(id);
+    invalidarBriefs();
     $('seleccion-label').textContent = `${S.seleccion.size} objetivos elegidos · máximo 20`;
     $('compilar-briefs').disabled = !S.seleccion.size;
   }
@@ -547,7 +567,10 @@ window.addEventListener('hashchange', () => {
   S.offset = 0;
   render();
 });
-window.addEventListener('pagehide', () => S.desmontar?.());
+window.addEventListener('pagehide', () => {
+  S.briefEpoch++;
+  S.desmontar?.();
+});
 async function iniciar() {
   try {
     try {
@@ -559,7 +582,7 @@ async function iniciar() {
     await render();
   } catch (e) {
     $('view').innerHTML =
-      `<section class="card error-card"><h2 class="h2">Producto de Ciencias no disponible</h2><p>${esc(e.message)}</p><p class="muted">La aplicación necesita el snapshot y sus fuentes verificadas. Consulta el procedimiento de restauración institucional.</p><a class="btn" href="/docs">Consultar API</a></section>`;
+      `<section class="card error-card"><h2 class="h2">No hay datos disponibles</h2><p>${esc(e.message)}</p><p class="muted">La aplicación necesita el snapshot y sus fuentes verificadas. Consulta el procedimiento de restauración institucional.</p><a class="btn" href="/docs">Consultar API</a></section>`;
     $('snapshot').textContent = 'Sin publicación verificada · no se muestran datos de demostración';
   }
 }

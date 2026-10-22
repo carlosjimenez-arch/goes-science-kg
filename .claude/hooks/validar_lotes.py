@@ -1,16 +1,16 @@
-"""SubagentStop: un subagente de lotes no termina con una salida que la unión rechazaría.
+"""Reject agent completion when its batch output fails the registered consolidation contract."""
 
-Al terminar uno de los subagentes de .claude/agents que escriben `salida_*.json` (alineador-marcos,
-etiquetador-conceptos, ordenador-prerrequisitos, redactor-bloques, conciliador-propuestas), corre
-`uv run gskg lotes validar --agente <nombre>`, que aplica las mismas reglas que el «unir» de cada tipo de lote.
-
-- Salidas válidas: sin salida; el subagente termina.
-- Errores: {"decision": "block", "reason": ...}; el subagente sigue trabajando y ve qué corregir.
-- Tras MAX_INTENTOS bloqueos del mismo subagente lo deja terminar y avisa al usuario (systemMessage), para no entrar
-  en un ciclo. Si la validación no puede correr (uv ausente, error inesperado), avisa y no bloquea.
-
-GSKG_LOTES_BASE (solo pruebas) cambia la raíz donde se buscan los lotes.
-"""
+# Historical test notes:
+# Al terminar uno de los subagentes de .claude/agents que escriben `salida_*.json` (alineador-marcos,
+# etiquetador-conceptos, ordenador-prerrequisitos, redactor-bloques, conciliador-propuestas), corre
+# `uv run gskg lotes validar --agente <nombre>`, que aplica las mismas reglas que el «unir» de cada tipo de lote.
+#
+# - Salidas válidas: sin salida; el subagente termina.
+# - Errores: {"decision": "block", "reason": ...}; el subagente sigue trabajando y ve qué corregir.
+# - Tras MAX_INTENTOS bloqueos del mismo subagente lo deja terminar y avisa al usuario (systemMessage), para no entrar
+#   en un ciclo. Si la validación no puede correr (uv ausente, error inesperado), avisa y no bloquea.
+#
+# GSKG_LOTES_BASE (solo pruebas) cambia la raíz donde se buscan los lotes.
 
 from __future__ import annotations
 
@@ -46,7 +46,7 @@ def _responder(datos: dict) -> None:
 
 
 def _comando(agente: str) -> list[str]:
-    """La validación reutiliza el entorno instalado, sin resolver paquetes ni necesitar red."""
+    """Reuse the installed validation environment without package resolution or network access."""
     ejecutable = RAIZ / ".venv" / ("Scripts/gskg.exe" if os.name == "nt" else "bin/gskg")
     prefijo = (
         [str(ejecutable)]

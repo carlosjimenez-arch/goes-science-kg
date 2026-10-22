@@ -1,5 +1,8 @@
 # Referentes operativos internacionales para analizar tareas
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Consulta y verificación: **21 de octubre de 2026**. Este trabajo incorpora una fuente técnica real de ERCE y
 un catálogo de **29 paráfrasis locales**, con identidad documental, páginas, anclas y conteos explícitos.
 La presencia del ancla demuestra localización documental; **no demuestra alineación de una tarea**.

@@ -1,5 +1,8 @@
 # Auditoría de fuentes y dimensiones evaluativas
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Corte y consulta: **21 de octubre de 2026**. Alcance: revisión de las afirmaciones educativas introducidas en `educacion.md` y `config/referentes_2026.yaml`, con comprobación granular de tres documentos primarios. Se distingue lectura de fuente, metadatos bibliográficos, decisiones locales e ingesta. Esta auditoría no certifica eficacia pedagógica, alineación de la V4 ni aprobación ministerial.
 
 ## Corrección de puntajes TIMSS

@@ -132,8 +132,9 @@ data/operaciones/registro.sqlite
 La revisión `producto-4` contiene 2.202 nodos, 6.929 aristas y diez archivos. Snapshot:
 `6ca75555924ff9c2dcd362bfbef389649b2a2fd20ebc3cafb4cb844c0853feec`.
 Archivo de propuestas: `5210bea7db2cf9e60a6fbb875d575df130ebcd4aa4f823557152916eaacab590`.
-La selección estable `data/producto/V4/actual.json` conserva por ahora `producto-3`; la revisión completa
-se consulta indicando `data/producto/V4_revision_p5`. Se verifica antes de promover una nueva selección.
+En el hito histórico P5, la selección estable conservaba `producto-3` y la revisión se consultaba
+en `data/producto/V4_revision_p5`. P6/P7 promovieron después el `producto-4` definitivo identificado
+al inicio de este documento. Las cifras siguientes pertenecen al corte P5.
 
 El ledger único `ciencias_v4_curricularizacion_20261022` conserva **628 invocaciones**, 594 completadas,
 34 fallidas y **USD 682,815936 de reserva acumulada**, sin invocaciones pendientes. Los límites son

@@ -1,4 +1,4 @@
-"""Las erratas conocidas no se convierten en respaldo mediante una cita exacta."""
+"""Reject known source errors even when their quotations are literal."""
 
 import json
 
@@ -57,16 +57,27 @@ def test_error_cientifico_localizado_abstiene_antes_de_modelos(tmp_path):
             raise AssertionError("Una alerta bloqueante debe evitar cualquier generación")
 
     doc = Documento(
-        id="fila-bloqueada", texto="Objetivo curricular localizado con errata conocida",
-        fuente={"documento": "local", "hoja": "Biología", "fila": 3}, version="V4", grado=10,
+        id="fila-bloqueada",
+        texto="Objetivo curricular localizado con errata conocida",
+        fuente={"documento": "local", "hoja": "Biología", "fila": 3},
+        version="V4",
+        grado=10,
         asignatura="biologia",
     )
     fuentes = FuentesSimuladas(
         {}, raiz_fuentes=tmp_path, bloqueos_curriculares={doc.id: "Errata científica documentada"}
     )
-    salida = Motor(Buscador([doc]), ProveedorQueNoDebeLlamarse(), fuentes=fuentes).compilar().invoke(
-        {"solicitud": Solicitud(consulta="Objetivo curricular", version_curriculo="V4", grado=10,
-                                asignatura="biologia").model_dump(), "ejecucion_id": "bloqueo-local"}
-    )["resultado"]
+    salida = (
+        Motor(Buscador([doc]), ProveedorQueNoDebeLlamarse(), fuentes=fuentes)
+        .compilar()
+        .invoke(
+            {
+                "solicitud": Solicitud(
+                    consulta="Objetivo curricular", version_curriculo="V4", grado=10, asignatura="biologia"
+                ).model_dump(),
+                "ejecucion_id": "bloqueo-local",
+            }
+        )["resultado"]
+    )
     assert salida["estado"] == "abstencion" and salida["propuesta"] is None
     assert salida["motivos"] == ["Errata científica documentada"]

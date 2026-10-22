@@ -1,4 +1,4 @@
-"""Preparación, ejecución durable simulada y consolidación real por CLI; sin red ni credenciales."""
+"""Test local preparation, simulated execution, and real consolidation without credentials."""
 
 from __future__ import annotations
 

@@ -1,37 +1,38 @@
-# Ciencias V4 · cierre técnico del 22 de octubre de 2026
+# Continuidad · GOEs AI · feat/api
 
-La ampliación posterior adapta el HTML aportado a una aplicación y API con datos reales. Abrir
-`http://127.0.0.1:8010/app/` después de `gskg servir --puerto 8010`; contrato en `/docs`. Conserva las
-ocho secciones del diseño y usa el snapshot cerrado. La nueva API `/api/v4/interfaz` ofrece filtros,
-grafo 3D, documentos, dictámenes, comparación, Excel y briefs documentales sin modelos. Pasaron
-1.387 pruebas; se cotejaron las 1.020 filas por HTTP y el ledger quedó idéntico. No hay integración
-LXP/territorial ni autenticación institucional. Los datos están repuestos para servir y continúan
-ignorados por Git. Detalle: [APLICACION_CIENCIAS](docs/APLICACION_CIENCIAS.md).
+Corte: 22 de octubre de 2026. El estado vigente se concentra en [README](README.md),
+[documentación](docs/README.md) y [auditoría de esta rama](docs/auditoria/REVISION_API_2026.md).
 
-El producto técnico está terminado. La rama de entrega es `feat/ciencias-v4`; los commits se envían con
-la identidad GOES configurada. No aplicar instrucciones de Matemáticas a este repositorio.
+La aplicación usa el snapshot V4 `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`:
+1.020 originales, 1.013 propuestas de Ciencias, siete filas fuera de alcance y 108 unidades.
+Conserva treinta alertas científicas de los originales. Las propuestas corregidas no levantan sus vetos.
 
-- Selección estable `producto-4`: 108 unidades, 1.013 propuestas de Ciencias y siete filas fuera de
-  alcance preservadas, sobre 1.020 originales de once matrices y 126 hojas.
-- Snapshot: `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`.
-- P6 resolvió diez incidencias; P7 corrigió un falso positivo adicional con cuatro votos nuevos.
-  Se conservan todos los antecedentes, rechazos, abstenciones y fuentes originales.
-- Contador `ciencias_v4_curricularizacion_20261022`: 668 llamadas, 633 completadas, 35 fallidas,
-  cero pendientes, USD 731,1485125 de reserva conservadora. No es factura. No reiniciar ni revotar.
-- Hay treinta filas originales con veto científico efectivo. Corregir una propuesta no habilita el
-  original erróneo. Los expedientes históricos permanecen auditables sin habilitar generación nueva.
-- El respaldo privado de 7.580 archivos y siete SQLite se restauró dos veces desde GCS. Once terminales
-  P6/P7 se reanudaron sin llamadas nuevas y con el ledger idéntico byte a byte.
-- Se retiraron las copias del corpus de 61 rutas locales después de compararlas con el plan. El recibo
-  `config/datos_ciencias.lock.json` fija las generaciones y SHA. Recuperar con
-  `uv run gskg datos restaurar --en-repo`; después usar los comandos normales. No añadir datos a Git.
-- La suite integral pasó 1.360 pruebas en 262,79 segundos antes del retiro; Ruff y las verificaciones
-  de recuperación, grafo, API, interfaz y exportación están documentadas en el cierre.
+La rama `feat/api` contiene el refactor de consultas y publicación, índices, contratos de respuesta,
+docstrings en inglés, formato, controles de calidad y documentación. El diseño conserva el CSS del
+HTML aportado. La API de referencia `eor-api` está pendiente de acceso por macOS.
 
-Leer [CIERRE_TECNICO](docs/CIERRE_TECNICO.md), [CURRICULARIZACION_V4](docs/CURRICULARIZACION_V4.md),
-[VERIFICACION_GCS](docs/VERIFICACION_GCS.md), [DATOS_EXTERNOS](docs/DATOS_EXTERNOS.md) y
-[PUBLICACION](docs/PUBLICACION.md). El detalle histórico sigue en Git local y en el respaldo privado;
-no publicar ancestros privados ni usar push forzado.
+Los extractores `ingesta/extraccion.py` y `ingesta/estructurados.py` conservan sus bytes anteriores:
+son parte de la identidad de evidencia publicada. No formatearlos ni cambiar sus docstrings sin una
+migración explícita. El refactor cambia las huellas de los workflows; no reanudar presupuestos antiguos
+con el código nuevo ni repetir votos para resolver incompatibilidades.
 
-La revisión automática no constituye aprobación institucional ni eficacia de aprendizaje medida.
-La calibración independiente y el piloto de aula son evaluaciones posteriores, no estados de los agentes.
+El ledger `ciencias_v4_curricularizacion_20261022` conserva 668 invocaciones y
+USD 731,1485125 de reserva conservadora, sin pendientes. No es factura. La consulta no gasta modelos.
+El corpus está restaurado localmente, ignorado por Git y recuperable mediante
+`config/datos_ciencias.lock.json`. No repetir restauración sobre rutas existentes.
+
+Las métricas de esta entrega se generan en [medicion.json](docs/badges/medicion.json).
+La CI portable se ejecuta al publicar `feat/api`; su estado remoto se consulta desde el badge del
+README. El usuario autorizó el commit y envío de esta rama tras el cierre de QA. No se repitieron
+campañas. La aprobación institucional y el piloto educativo son procesos separados.
+
+Al preparar este envío, `origin/feat/ciencias-v4` avanzó a
+`663d071d31bc7e4689f6b04f60ee16f3b24589f3` con materiales docentes y guiones de clase. Esas
+funcionalidades están en otra rama y no pertenecen a la huella de código validada aquí. La entrega
+integral exige integrar ambas líneas y repetir la validación sobre el árbol resultante; esta rama
+constituye una entrega técnica verificada para revisión y piloto controlado.
+
+El [QA posterior independiente](docs/auditoria/QA_SEGUNDA_REVISION.md) revisó el conjunto del repo y
+motivó correcciones en el respaldo de assets, las respuestas tardías de briefs, las exportaciones
+Excel, el aislamiento de alertas por base y la reserva de embeddings entre procesos. No se migraron
+ledgers ni se reanudaron experimentos para probarlas.

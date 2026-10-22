@@ -1,4 +1,4 @@
-"""Adaptadores del grafo existente; la versión del formato no es la del currículo."""
+"""Adapt existing graphs while distinguishing format and curriculum versions."""
 
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def _version_nodos(nodos: Iterable[Nodo]) -> str | None:
 
 
 def _version_fuentes(nodos: Iterable[Nodo]) -> str | None:
-    """Compatibilidad legacy desde procedencia inmutable, nunca desde config mutable."""
+    """Infer historical versions from immutable provenance rather than mutable configuration."""
     nodos = tuple(nodos)
     documentos = {n.id: n for n in nodos if n.tipo == TipoNodo.DOCUMENTO}
     versiones = set()
@@ -88,11 +88,11 @@ def _resolver_version(nodos: Iterable[Nodo], version_manifest: str | None = None
 
 
 def documentos_del_grafo(nodos: Iterable[Nodo], *, version: str | None = None) -> list[Documento]:
-    """Convierte nodos; sólo los temas pertenecen a una versión de currículo local.
+    """Adapt graph nodes while assigning local curriculum versions only to topic nodes."""
 
-    En memoria se verifica contra metadatos del nodo o la configuración vigente. Los conceptos sin
-    fuente se marcan como derivados; no se presentan como páginas de una fuente primaria.
-    """
+    # Implementation notes:
+    # En memoria se verifica contra metadatos del nodo o la configuración vigente. Los conceptos sin
+    # fuente se marcan como derivados; no se presentan como páginas de una fuente primaria.
     nodos = tuple(nodos)
     verificada = _resolver_version(nodos)
     if version is not None and version != verificada:
@@ -144,7 +144,7 @@ def _convertir(nodos: Iterable[Nodo], version: str) -> list[Documento]:
 
 
 def aristas_del_grafo(aristas: Iterable[Arista]) -> list[Enlace]:
-    """Conserva direcciones curriculares; recorre prerrequisitos hacia sus antecedentes."""
+    """Preserve curriculum-edge direction and expand prerequisites toward their antecedents."""
     resultado = []
     for arista in aristas:
         if arista.tipo not in PESOS_RELACION:
@@ -168,11 +168,11 @@ def cargar_documentos_grafo(
     *,
     version: str | None = None,
 ) -> list[Documento]:
-    """Carga el grafo y rechaza un pedido que cambiaría su versión curricular.
+    """Load the graph and reject requests that misidentify its curriculum version."""
 
-    `manifest.version` describe el formato y no se usa. Los grafos nuevos deben declarar
-    `version_curriculo`; para el legado se consulta `config/mallas.yaml`.
-    """
+    # Implementation notes:
+    # `manifest.version` describe el formato y no se usa. Los grafos nuevos deben declarar
+    # `version_curriculo`; para el legado se consulta `config/mallas.yaml`.
     nodos, _, verificada = _cargar_grafo_validado(directorio, version=version)
     return _convertir(nodos, verificada)
 
@@ -196,6 +196,6 @@ def _cargar_grafo_validado(
 
 
 def cargar_buscador_grafo(directorio: str | Path = "data/grafo", *, version: str | None = None) -> Buscador:
-    """Carga una vez el grafo validado y añade sus relaciones al buscador local."""
+    """Load the verified graph once and attach its relationships to local retrieval."""
     nodos, aristas, verificada = _cargar_grafo_validado(directorio, version=version)
     return Buscador(_convertir(nodos, verificada), aristas=aristas_del_grafo(aristas))

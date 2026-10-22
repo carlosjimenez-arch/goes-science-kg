@@ -1,4 +1,4 @@
-"""CLI de alineación con Excel/PDF sintéticos, ledger y checkpoints locales; cero GCP."""
+"""Test the alignment CLI with synthetic sources and durable local budgets."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""Objetos inmutables en el bucket institucional; nunca cambia IAM ni sobrescribe generaciones."""
+"""Store immutable institutional objects without changing IAM or overwriting generations."""
 
 from __future__ import annotations
 
@@ -20,6 +20,8 @@ LOGGER = logging.getLogger(__name__)
 
 
 class ConfiguracionAlmacen(Contrato):
+    """Declare the institutional project, account, bucket, prefix, and gcloud runtime."""
+
     proyecto: str = Field(pattern=r"^[a-z][a-z0-9-]{4,62}$")
     bucket: str = Field(pattern=r"^[a-z0-9][a-z0-9.-]{1,220}[a-z0-9]$")
     prefijo: str = Field(pattern=r"^[a-z0-9][a-z0-9/_-]{1,150}$")
@@ -27,6 +29,8 @@ class ConfiguracionAlmacen(Contrato):
     python_gcloud: str | None = None
 
     def ruta(self, nombre: str) -> str:
+        """Resolve an object name within the explicitly authorized storage prefix."""
+
         if ".." in self.prefijo or any(c in nombre for c in ("..", "#", "?", "\\")):
             raise ValueError("El nombre de objeto sale del prefijo autorizado")
         if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9/_.-]{0,300}", nombre):
@@ -35,12 +39,14 @@ class ConfiguracionAlmacen(Contrato):
 
 
 class GCloud:
-    """CLI instalada, sin shell ni tokens en argumentos/salidas de aplicación."""
+    """Invoke the installed gcloud CLI without a shell or credential-bearing arguments."""
 
     def __init__(self, configuracion: ConfiguracionAlmacen):
         self.configuracion = configuracion
 
     def ejecutar(self, argumentos: list[str]) -> str:
+        """Run gcloud with structured arguments and bounded error handling."""
+
         entorno = dict(os.environ)
         python = self.configuracion.python_gcloud or shutil.which("python3.12")
         if python:
@@ -60,11 +66,15 @@ class GCloud:
 
 
 class AlmacenGCS:
+    """Create and retrieve immutable institutional object generations."""
+
     def __init__(self, configuracion: ConfiguracionAlmacen, *, cli=None):
         self.configuracion = configuracion
         self.cli = cli or GCloud(configuracion)
 
     def comprobar_proteccion(self) -> dict:
+        """Require public-access prevention and uniform bucket-level access."""
+
         cfg = self.configuracion
         cuenta = self.cli.ejecutar(["config", "get-value", "account"]).strip()
         if cuenta != cfg.cuenta:
@@ -116,6 +126,8 @@ class AlmacenGCS:
         return {"cuenta": cuenta, "bucket": bucket, "politica_efectiva": politica}
 
     def crear(self, archivo: Path, nombre: str) -> dict:
+        """Create a new object generation without overwriting an existing artifact."""
+
         if not archivo.is_file() or archivo.is_symlink():
             raise ValueError("Suba únicamente un archivo local regular")
         digest, tamano = _medir(archivo)
@@ -152,6 +164,8 @@ class AlmacenGCS:
         }
 
     def verificar(self, uri: str, generacion: str, digest: str, tamano: int, *, destino: Path | None = None) -> None:
+        """Verify the recorded generation, size, and SHA fingerprint of an object."""
+
         prefijo = f"gs://{self.configuracion.bucket}/{self.configuracion.prefijo.rstrip('/')}/"
         if not uri.startswith(prefijo) or uri != self.configuracion.ruta(uri.removeprefix(prefijo)):
             raise ValueError("El recibo apunta fuera del prefijo autorizado")
@@ -174,11 +188,13 @@ class AlmacenGCS:
                     raise ValueError("La copia local no conserva el SHA de la generación verificada")
 
     def descargar(self, recibo: dict, destino: Path) -> None:
+        """Download an explicitly pinned object generation and verify its bytes."""
+
         self.verificar(recibo["uri"], recibo["generacion"], recibo["sha256"], recibo["bytes"], destino=destino)
 
 
 def _medir(archivo: Path) -> tuple[str, int]:
-    """SHA incremental: evita cargar paquetes de cientos de MiB completos en RAM."""
+    """Hash artifacts incrementally without loading large packages into memory."""
     with archivo.open("rb") as stream:
         digest = hashlib.file_digest(stream, "sha256").hexdigest()
         tamano = stream.tell()

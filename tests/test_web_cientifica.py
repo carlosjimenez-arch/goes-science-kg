@@ -1,4 +1,4 @@
-"""Extracción HTML localizada, sin código activo ni confianza en texto cacheado."""
+"""Test explicit HTML extraction without active code or unverified cached text."""
 
 import json
 
@@ -13,7 +13,7 @@ SELECTOR = SelectorWeb(etiqueta="main", atributo="id", valor="main")
 def html(texto=TEXTO):
     return (
         f'<html><nav>no citar navegación</nav><main id="main"><p>{texto}</p>'
-        '<script>código</script><p hidden>secreto</p></main></html>'
+        "<script>código</script><p hidden>secreto</p></main></html>"
     ).encode()
 
 

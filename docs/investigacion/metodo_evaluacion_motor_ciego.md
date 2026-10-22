@@ -1,5 +1,8 @@
 # Prueba reservada del motor de jueces
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: **21 de octubre de 2026**. Conjunto: `data/evaluacion/motor_casos_ciegos_2026.json`. Estado: **`sintetico_plata`**, sin ejecución cloud por el autor de los casos, sin anotación experta independiente y sin eficacia educativa medida.
 
 ## Independencia y límites

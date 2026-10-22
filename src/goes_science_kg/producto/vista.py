@@ -1,4 +1,4 @@
-"""Explorador local del currículo: datos citables, filtros y exportación sin red."""
+"""Render a local curriculum explorer with cited data, filters, and offline export."""
 
 from __future__ import annotations
 
@@ -73,7 +73,7 @@ LIMITE = (
 
 
 def _url_web(valor: object) -> str:
-    """Solo permite enlaces HTTPS; el texto original nunca se usa como HTML."""
+    """Accept only HTTPS links and keep original content out of raw HTML interpolation."""
     if not isinstance(valor, str) or re.search(r"[\s\x00-\x1f\x7f]", valor):
         return ""
     try:
@@ -357,7 +357,7 @@ def markdown(
     *,
     fila_id: str | None = None,
 ) -> str:
-    """Exporta la captura o una ficha, escapando el contenido original como texto."""
+    """Export a snapshot or row report with source content escaped as text."""
     datos = _datos(curriculo, catalogo, alertas)
     filas = datos["filas"] if fila_id is None else [f for f in datos["filas"] if f["id"] == fila_id]
     if fila_id is not None and not filas:
@@ -371,7 +371,7 @@ def vista(
     catalogo: CatalogoDisciplinas | None = None,
     alertas: dict | None = None,
 ) -> str:
-    """Devuelve HTML autónomo sin peticiones de red ni interpolación HTML de datos."""
+    """Render a standalone explorer without network calls or unescaped source HTML."""
     datos = json.dumps(_datos(curriculo, catalogo, alertas), ensure_ascii=False, separators=(",", ":"))
     for caracter, escape in (
         ("&", "\\u0026"),

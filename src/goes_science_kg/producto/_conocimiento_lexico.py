@@ -1,4 +1,4 @@
-"""Coincidencias de frases completas, sin stemming ni equivalencia de conceptos."""
+"""Match complete phrases without stemming or assuming concept equivalence."""
 
 from __future__ import annotations
 
@@ -19,6 +19,8 @@ def _clave(token: str) -> str:
 
 @dataclass(frozen=True)
 class CoincidenciaAlias:
+    """Record one exact alias match and its normalized offsets and alternatives."""
+
     nodo_id: str
     alias: str
     literal: str
@@ -28,7 +30,7 @@ class CoincidenciaAlias:
 
 
 class IndiceAlias:
-    """Índice por primer término para evitar comparar cada alias con todas las celdas."""
+    """Index aliases by their first term to avoid exhaustive cell comparisons."""
 
     def __init__(self, nodos: list[Nodo]):
         por_clave = defaultdict(list)
@@ -49,7 +51,7 @@ class IndiceAlias:
             self._indice[tokens[0]].append((tokens, tuple(sorted(set(entradas))), alternativas))
 
     def buscar(self, texto: str) -> list[CoincidenciaAlias]:
-        """Los offsets corresponden a NFKC; se conserva también el texto fuente en la evidencia."""
+        """Return normalized-text offsets while retaining the original source text."""
         normalizado = unicodedata.normalize("NFKC", texto)
         palabras = list(_PALABRA.finditer(normalizado))
         claves = tuple(_clave(m.group()) for m in palabras)

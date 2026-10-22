@@ -1,4 +1,4 @@
-"""Presupuesto durable y caché por contenido; las reservas sobreviven a reinicios."""
+"""Persist budgets and content-addressed caches across process restarts."""
 
 from __future__ import annotations
 
@@ -10,10 +10,12 @@ from uuid import uuid4
 
 
 class PresupuestoAgotado(RuntimeError):
-    """No se inicia una llamada que sobrepase los límites de ejecución."""
+    """Prevent a paid call from exceeding durable execution limits."""
 
 
 class Registro:
+    """Persist transactional reservations, provider responses, cache entries, and accounting."""
+
     def __init__(self, archivo: Path):
         archivo.parent.mkdir(parents=True, exist_ok=True)
         self.archivo = archivo
@@ -37,6 +39,8 @@ class Registro:
 
     @contextmanager
     def conexion(self):
+        """Open the durable SQLite registry using its configured connection settings."""
+
         db = sqlite3.connect(self.archivo, timeout=30)
         db.row_factory = sqlite3.Row
         try:
@@ -56,6 +60,8 @@ class Registro:
         max_llamadas: int,
         max_usd: float,
     ) -> str:
+        """Reserve a call's conservative cost before invoking the provider."""
+
         if reserva_usd <= 0 or max_llamadas <= 0 or max_usd <= 0:
             raise ValueError("Presupuesto y reserva deben ser positivos")
         with self.conexion() as db:
@@ -82,6 +88,8 @@ class Registro:
         entrada_tokens: int | None = None,
         salida_tokens: int | None = None,
     ) -> None:
+        """Finalize a reservation with observed usage, state, and provider telemetry."""
+
         with self.conexion() as db:
             db.execute(
                 "UPDATE llamadas SET estado=?,latencia_ms=?,entrada_tokens=?,salida_tokens=? WHERE id=?",
@@ -89,12 +97,14 @@ class Registro:
             )
 
     def cache(self, clave: str) -> dict | None:
+        """Read a response cached under the exact request fingerprint."""
+
         with self.conexion() as db:
             fila = db.execute("SELECT respuesta FROM cache WHERE clave=?", (clave,)).fetchone()
         return json.loads(fila[0]) if fila else None
 
     def guardar_salida(self, llamada: str, texto: str) -> None:
-        """Retiene también respuestas inválidas en el ledger privado, sin exponerlas en logs."""
+        """Preserve even invalid responses in the private ledger without exposing them in logs."""
         import hashlib
 
         if len(texto.encode()) > 2 * 1024 * 1024:
@@ -105,7 +115,7 @@ class Registro:
             )
 
     def salida(self, clave: str) -> str | None:
-        """Una respuesta recibida sobrevive incluso si se interrumpe antes de poblar la caché."""
+        """Recover received responses even when cache population was interrupted."""
         import hashlib
 
         with self.conexion() as db:
@@ -121,10 +131,14 @@ class Registro:
         return fila[0]
 
     def guardar_cache(self, clave: str, respuesta: dict) -> None:
+        """Persist a validated response under its complete cache identity."""
+
         with self.conexion() as db:
             db.execute("INSERT OR REPLACE INTO cache VALUES(?,?)", (clave, json.dumps(respuesta, ensure_ascii=False)))
 
     def resumen(self, ejecucion: str) -> dict:
+        """Summarize durable calls, states, tokens, and conservative reservations."""
+
         with self.conexion() as db:
             filas = db.execute(
                 "SELECT modelo,rol,estado,reserva_usd,entrada_tokens,salida_tokens,latencia_ms "

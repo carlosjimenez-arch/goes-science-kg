@@ -1,4 +1,4 @@
-"""Configuración explícita de archivos, hojas y campos, sin selección por nombres."""
+"""Map workbooks, sheets, and fields explicitly without guessing from filenames."""
 
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ CAMPOS.update(f"fase_{fase}" for fase in FASES)
 
 
 class ConfigHoja(BaseModel):
-    """Cada hoja requiere una decisión explícita, motivada y verificable."""
+    """Require an explicit, documented ingestion decision for every workbook sheet."""
 
     model_config = ConfigDict(extra="forbid")
     nombre: str = Field(min_length=1)
@@ -38,7 +38,7 @@ class ConfigHoja(BaseModel):
 
     @model_validator(mode="after")
     def validar_esquema(self) -> ConfigHoja:
-        """Un tema requiere contexto de grado y encabezados; los campos son conocidos."""
+        """Require known fields, grade context, and explicit headers for curriculum sheets."""
         if not self.motivo.strip():
             raise ValueError("El motivo no puede estar vacío.")
         if self.tratamiento == "curricular" and (
@@ -56,7 +56,7 @@ class ConfigHoja(BaseModel):
 
 
 class ConfigFuente(BaseModel):
-    """Archivo por nombre exacto; los permisos no se deducen de la procedencia."""
+    """Identify an exact workbook without inferring read permissions from provenance."""
 
     model_config = ConfigDict(extra="forbid")
     archivo: str = Field(min_length=1)
@@ -64,7 +64,7 @@ class ConfigFuente(BaseModel):
 
     @model_validator(mode="after")
     def validar_archivo(self) -> ConfigFuente:
-        """No admite rutas ni hojas repetidas, aunque los encabezados coincidan."""
+        """Reject repeated paths or sheets even when their headers match."""
         if Path(self.archivo).name != self.archivo or "\\" in self.archivo or not self.archivo.endswith(".xlsx"):
             raise ValueError("Cada archivo debe ser un nombre .xlsx sin directorios.")
         nombres = [hoja.nombre for hoja in self.hojas]
@@ -74,7 +74,7 @@ class ConfigFuente(BaseModel):
 
 
 class ConfigCurriculo(BaseModel):
-    """Manifiesto declarativo de la ingesta, independiente de la malla activa."""
+    """Declare curriculum ingestion independently of the active historical configuration."""
 
     model_config = ConfigDict(extra="forbid")
     version: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
@@ -86,7 +86,7 @@ class ConfigCurriculo(BaseModel):
 
     @model_validator(mode="after")
     def validar_fuentes(self) -> ConfigCurriculo:
-        """La configuración no puede sobrescribir archivos o inventar roles de columnas."""
+        """Reject configuration that overwrites sources or invents column roles."""
         archivos = [fuente.archivo for fuente in self.fuentes]
         if len(set(archivos)) != len(archivos):
             raise ValueError("Archivos duplicados en configuración.")

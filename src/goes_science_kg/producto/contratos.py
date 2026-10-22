@@ -1,4 +1,4 @@
-"""Contratos de publicación del producto; sus estados no equivalen a aprobación oficial."""
+"""Define publication contracts independently of official curriculum approval."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from goes_science_kg.producto.mejoras_publicadas import ArchivoMejoras
 
 
 class ReferenciasProducto(ContratoCurricular):
-    """Referencias proporcionadas explícitamente; nunca contienen temas nuevos por herencia."""
+    """Declare explicit references without inheriting previous curriculum topics."""
 
     nodos: tuple[Nodo, ...] = ()
     aristas: tuple[Arista, ...] = ()
@@ -24,7 +24,7 @@ class ReferenciasProducto(ContratoCurricular):
 
 
 class AlertaSolicitada(ContratoCurricular):
-    """Observación pendiente: los localizadores y valores se verifican al materializar."""
+    """Record a pending observation whose locator and value require materialization checks."""
 
     fila_id: str
     campo: str
@@ -33,7 +33,7 @@ class AlertaSolicitada(ContratoCurricular):
 
 
 class ManifestProducto(ContratoCurricular):
-    """El formato de publicación y la versión curricular son dimensiones separadas."""
+    """Keep publication format and curriculum version as separate identities."""
 
     version: Literal["producto-2", "producto-3", "producto-4"] = "producto-2"
     version_curriculo: Literal["V4"] = "V4"
@@ -48,7 +48,7 @@ class ManifestProducto(ContratoCurricular):
 
 
 class ProductoMaterializado(ContratoCurricular):
-    """Una sola generación verificada, en memoria y con ruta estable del grafo."""
+    """Hold one verified generation and its stable in-memory graph."""
 
     ruta_grafo: Path
     manifest: ManifestProducto

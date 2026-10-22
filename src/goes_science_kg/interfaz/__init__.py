@@ -1,1 +1,1 @@
-"""Aplicación curricular de Ciencias sobre el snapshot V4 publicado."""
+"""Serve the GOEs science curriculum application over a published V4 snapshot."""

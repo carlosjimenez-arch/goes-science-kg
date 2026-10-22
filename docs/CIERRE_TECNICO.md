@@ -1,5 +1,8 @@
 # Estado de entrega de Ciencias · 22 de octubre de 2026
 
+> Cierre de la entrega curricular anterior, conservado como evidencia. La rama de mantenimiento actual
+> es `feat/api`; API, estilo y métricas vigentes: [índice](README.md) y [calidad](CALIDAD.md).
+
 Ampliación posterior: la [aplicación GOES y su API](APLICACION_CIENCIAS.md) adaptan el HTML aportado a
 los datos reales del snapshot. La versión ampliada pasó 1.387 pruebas y las comprobaciones HTTP y de
 navegador; no altera el currículo ni consume nuevas llamadas a Vertex. El detalle siguiente conserva

@@ -1,4 +1,4 @@
-"""Perfiles sobre la edición ERCE real; sin red y sin reescribir su extracción original."""
+"""Test extraction profiles against the pinned ERCE edition without altering raw text."""
 
 import re
 import shutil
@@ -81,7 +81,7 @@ def test_cache_no_encubre_mutacion_del_pdf_y_no_se_expone_mutable(originales, tm
         paginas.pagina(FUENTE, 11)
 
 
-@pytest.mark.parametrize("bbox", [(0, 0, 0, 20), (0, 0, 20, -1), (False, 0, 20, 30), (0, 0, float('nan'), 20)])
+@pytest.mark.parametrize("bbox", [(0, 0, 0, 20), (0, 0, 20, -1), (False, 0, 20, 30), (0, 0, float("nan"), 20)])
 def test_coordenadas_no_ambiguas_o_no_finitas_no_forman_un_perfil(bbox):
     with pytest.raises(ValidationError):
         RegionPDF(id="LOCAL:region", bbox=bbox)
@@ -106,9 +106,7 @@ def test_perfil_requiere_la_edicion_y_pagina_fijadas(originales, campo, valor):
 
 def test_region_fuera_de_la_pagina_se_rechaza_al_leer(originales):
     repo, perfiles = originales
-    p = perfiles.perfiles[0].model_copy(update={
-        "regiones": (RegionPDF(id="LOCAL:fuera", bbox=(0, 0, 1000, 1000)),)
-    })
+    p = perfiles.perfiles[0].model_copy(update={"regiones": (RegionPDF(id="LOCAL:fuera", bbox=(0, 0, 1000, 1000)),)})
     paginas = PaginasConPerfil(repo, CatalogoPerfilesPDF(schema_version="1.0", perfiles=(p,)))
     with pytest.raises(ValueError, match="dimensiones"):
         paginas.pagina(FUENTE, 11)

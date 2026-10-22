@@ -1,5 +1,9 @@
 # 15 · Entrega V3 del MINED y refuerzo de cada tema
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 Objetivo: tomar la entrega nueva del MINED (V3, 2026-10-13) y **reforzar cada tema con lo que el repo ya sabe**:
 errores corregidos, recomendaciones del panel, hallazgos del contraste internacional y lo que la V3 dejó de cubrir.
 El refuerzo se entrega en copias de las matrices del MINED con filas marcadas «Propuesta GOES», como el propio MINED
@@ -128,7 +132,11 @@ faltante o una recuperación con evidencia fuerte. El resumen por ciclo cuenta l
 - **Revisión:** el panel revisa las propuestas (experto de la disciplina y psicopedagogo), y el bucle de
   fortalecimiento las impugna con citas. Solo se entregan las propuestas sólidas o respaldadas.
 
-### 15.6 · Entregable
+### 15.6 · Entregable histórico
+
+El exportador V3 desconectado `refuerzo_excel.py` se retiró en `feat/api` tras comprobar la ausencia
+de consumidores. Las entregas V4 usan los exportadores activos de producto y enmiendas. El diseño
+siguiente conserva el requisito histórico; no afirma que exista un comando de exportación V3.
 `entregas/mallas_v3_reforzadas/` (se genera):
 - **Una copia anotada de cada matriz de la V3:**
   - las filas «Propuesta GOES» van junto al tema que refuerzan, con relleno verde claro;

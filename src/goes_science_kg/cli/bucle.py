@@ -1,4 +1,4 @@
-"""Comandos del grupo `bucle`."""
+"""Expose the bucle command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -12,13 +12,13 @@ app = typer.Typer(
 
 
 def _tipos_opcion(tipos: str | None) -> list[str] | None:
-    """Convierte el filtro opcional de terminal al contrato de los casos de uso."""
+    """Convert an optional CLI filter to the use-case contract."""
     return tipos.split(",") if tipos else None
 
 
 @app.command("anclar")
 def bucle_anclar(tipos: str = typer.Option(None, help="separados por coma")) -> None:
-    """Mide, sin IA, si la evidencia de cada dictamen está anclada en una fuente primaria."""
+    """Check primary-source anchors for panel reviews without invoking AI."""
     from goes_science_kg import bucle
 
     typer.echo(json.dumps(bucle.anclar(_tipos_opcion(tipos)), ensure_ascii=False, indent=1))
@@ -30,7 +30,7 @@ def bucle_impugnar(
     tipos: str = typer.Option(None, help="separados por coma"),
     serie: str = typer.Option("", help="corrida aparte sobre expedientes nuevos (p. ej. inc9)"),
 ) -> None:
-    """Lotes del refutador (revisor adversarial) → data/interim/panel/bucle/lotes/."""
+    """Prepare adversarial challenge batches for the selected review cycle."""
     from goes_science_kg import bucle
 
     for p in bucle.impugnar(vuelta, _tipos_opcion(tipos), serie):
@@ -44,7 +44,7 @@ def bucle_sonda(
     semilla: int = typer.Option(None),
     tipos: str = typer.Option(None, help="separados por coma"),
 ) -> None:
-    """Muestra ciega: los roles del panel dictaminan otra vez sin ver la resolución (lotes c<k>)."""
+    """Prepare blind repeat readings without exposing the previous resolution."""
     from goes_science_kg import bucle
 
     for p in bucle.sonda(vuelta, n, semilla, _tipos_opcion(tipos)):
@@ -53,7 +53,7 @@ def bucle_sonda(
 
 @app.command("cerrar-impugnacion")
 def bucle_cerrar_impugnacion(vuelta: int = typer.Option(...), serie: str = typer.Option("")) -> None:
-    """Verifica las citas por código y decide qué se sostiene y qué va a la réplica."""
+    """Verify literal quotations and determine which challenges require a response."""
     from goes_science_kg import bucle
 
     typer.echo(json.dumps(bucle.cerrar_impugnacion(vuelta, serie), ensure_ascii=False, indent=1))
@@ -61,7 +61,7 @@ def bucle_cerrar_impugnacion(vuelta: int = typer.Option(...), serie: str = typer
 
 @app.command("replicar")
 def bucle_replicar(vuelta: int = typer.Option(...), paso: int = typer.Option(1), serie: str = typer.Option("")) -> None:
-    """Lotes de la réplica para los roles del panel (ronda 10·vuelta + paso)."""
+    """Prepare response batches for challenged expert-panel dossiers."""
     from goes_science_kg import bucle
 
     for p in bucle.replicar(vuelta, paso, serie):
@@ -72,7 +72,7 @@ def bucle_replicar(vuelta: int = typer.Option(...), paso: int = typer.Option(1),
 def bucle_cerrar_replica(
     vuelta: int = typer.Option(...), paso: int = typer.Option(1), serie: str = typer.Option("")
 ) -> None:
-    """Mantiene o cambia cada resolución impugnada (unanimidad, deliberación o «sin consenso»)."""
+    """Resolve challenged decisions under unanimity, deliberation, or no-consensus rules."""
     from goes_science_kg import bucle
 
     typer.echo(json.dumps(bucle.cerrar_replica(vuelta, paso, serie), ensure_ascii=False, indent=1))
@@ -80,7 +80,7 @@ def bucle_cerrar_replica(
 
 @app.command("solidez")
 def bucle_solidez() -> None:
-    """Recalcula la solidez (sólido, respaldado, frágil, sin consenso) y muestra las métricas del bucle."""
+    """Recompute review strength and display the cycle metrics."""
     from goes_science_kg import bucle
 
     typer.echo(json.dumps({"solidez": bucle.solidez(), "metricas": bucle.metricas()}, ensure_ascii=False, indent=1))
@@ -88,7 +88,7 @@ def bucle_solidez() -> None:
 
 @app.command("snapshot")
 def bucle_snapshot(etapa: str = typer.Option(..., help="p. ej. «vuelta 2, réplica en curso»")) -> None:
-    """panel/bucle/<ciencia>.md y RESUMEN.md: el estado del reforzamiento por ciencia (se versiona en cada etapa)."""
+    """Write subject-specific snapshots of the panel strengthening process."""
     from goes_science_kg import bucle
 
     for p in bucle.snapshot(etapa):
@@ -97,7 +97,7 @@ def bucle_snapshot(etapa: str = typer.Option(..., help="p. ej. «vuelta 2, répl
 
 @app.command("cita")
 def bucle_cita(fuente: str, cita: str) -> None:
-    """¿Está la cita, literal, en esa fuente? (lo mismo que verifica el código al cerrar la impugnación)."""
+    """Check whether a literal quotation occurs in the registered source."""
     from goes_science_kg import bucle
 
     r = bucle.verificar(fuente, cita)
@@ -111,8 +111,10 @@ def bucle_cita(fuente: str, cita: str) -> None:
 
 @app.command("fuente")
 def bucle_fuente(fuente: str, caracteres: int = typer.Option(8000, help="0 = sin límite")) -> None:
-    """Muestra el texto en que el código busca las citas de esa fuente (fila completa de la malla, objetivo o página).
-    Avisa si recorta: en una fila de la malla, las microhabilidades y el indicador avanzado van al final."""
+    """Display the exact source text used by deterministic quotation checks."""
+
+    # Implementation notes:
+    # Avisa si recorta: en una fila de la malla, las microhabilidades y el indicador avanzado van al final.
     from goes_science_kg import bucle
 
     for donde, texto in bucle.textos_de_fuente(fuente):

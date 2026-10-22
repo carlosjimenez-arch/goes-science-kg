@@ -1,4 +1,4 @@
-"""Ingesta real de PDF sintético, sin red, credenciales ni fuentes históricas."""
+"""Ingest synthetic PDF bytes without network, credentials, or historical-source dependencies."""
 
 from __future__ import annotations
 

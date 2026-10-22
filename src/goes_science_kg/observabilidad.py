@@ -1,4 +1,4 @@
-"""Logging de terminal: verde para éxito, amarillo para advertencias y rojo para fallos."""
+"""Configure terminal logging with explicit success, warning, and failure levels."""
 
 import logging
 import os
@@ -12,7 +12,7 @@ from rich.theme import Theme
 
 
 def configurar_logging(*, nivel: str = "INFO", archivo: Path | None = None) -> None:
-    """Configura solo el logger del producto; no cambia el comportamiento de SDKs ajenos."""
+    """Configure only the product logger without changing third-party SDK logging."""
     logger = logging.getLogger("goes_science_kg")
     logger.setLevel(nivel)
     logger.propagate = False
@@ -42,7 +42,7 @@ def configurar_logging(*, nivel: str = "INFO", archivo: Path | None = None) -> N
 
 
 def instrumentar_cli(app) -> None:
-    """Instrumenta los callbacks preservando sus firmas, argumentos y códigos de salida."""
+    """Instrument CLI callbacks while preserving their signatures and exit behavior."""
     logger = logging.getLogger("goes_science_kg.cli")
 
     def envolver(funcion, nombre):

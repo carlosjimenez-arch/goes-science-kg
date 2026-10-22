@@ -1,8 +1,8 @@
-"""Paquetes docentes por unidad y ejecución durable del Motor existente por objetivo.
+"""Prepare teaching units and execute the existing durable engine per objective."""
 
-Una sesión por fila es una propuesta de organización, nunca una carga horaria normativa. Preparar
-conserva el insumo; ejecutar distingue cada respaldo, abstención y objetivo todavía no ejecutado.
-"""
+# Historical implementation notes:
+# Una sesión por fila es una propuesta de organización, nunca una carga horaria normativa. Preparar
+# conserva el insumo; ejecutar distingue cada respaldo, abstención y objetivo todavía no ejecutado.
 
 from __future__ import annotations
 
@@ -17,6 +17,7 @@ import sqlite3
 import time
 from collections import Counter
 from collections.abc import Sequence
+from contextlib import closing
 from pathlib import Path
 from typing import Literal
 from uuid import uuid4
@@ -44,6 +45,8 @@ LIMITE_ORGANIZACION = (
 
 
 class ContextoAula(ContratoCurricular):
+    """Declare classroom time, resources, connectivity, supports, and safety conditions."""
+
     minutos_por_sesion: int = Field(default=40, ge=5, le=120)
     recursos: tuple[str, ...] = ("papel", "lapiz")
     conectividad: Literal["sin_confirmar", "sin_conexion", "intermitente", "disponible"] = "sin_confirmar"
@@ -59,6 +62,8 @@ class ContextoAula(ContratoCurricular):
 
 
 class AlertaUnidad(ContratoCurricular):
+    """Preserve a unit-level source alert and its explicit validation state."""
+
     fila_id: str
     codigo: str
     descripcion: str
@@ -66,6 +71,8 @@ class AlertaUnidad(ContratoCurricular):
 
 
 class SesionUnidad(ContratoCurricular):
+    """Bind one proposed teaching session to its original curriculum row and request."""
+
     id: str
     numero_propuesto: int = Field(ge=1)
     fila_id: str
@@ -74,6 +81,8 @@ class SesionUnidad(ContratoCurricular):
 
 
 class PaqueteUnidad(ContratoCurricular):
+    """Package every original unit objective with source, classification, and completeness metadata."""
+
     id: str
     estado: Literal["preparado"] = "preparado"
     version_curriculo: str
@@ -96,6 +105,8 @@ class PaqueteUnidad(ContratoCurricular):
 
 
 class SesionEjecutada(ContratoCurricular):
+    """Record one executed session with its checkpoint, latency, outcome, and reasons."""
+
     sesion_id: str
     fila_id: str
     estado: Literal["respaldado_automaticamente", "abstencion", "no_ejecutada"]
@@ -107,6 +118,8 @@ class SesionEjecutada(ContratoCurricular):
 
 
 class ResultadoUnidad(ContratoCurricular):
+    """Preserve complete unit execution, coverage, timing, and cumulative spending observations."""
+
     paquete_id: str
     ejecucion_id: str
     huella_entorno: str
@@ -190,7 +203,7 @@ def preparar_unidad(
     fuentes: FuentesVerificadas,
     alertas: Sequence[AlertaSolicitada] = (),
 ) -> PaqueteUnidad:
-    """Selección exacta y exhaustiva; no propone ciencia, actividades ni prerrequisitos nuevos."""
+    """Select every original unit row without inventing science, activities, or prerequisites."""
     if catalogo.version_curriculo != curriculo.version or catalogo.huella_curriculo != curriculo.huella:
         raise ValueError("El catálogo no corresponde al currículo seleccionado")
     if Counter(f.id for f in curriculo.filas) != Counter(f.fila_id for f in catalogo.filas) or len(
@@ -373,7 +386,7 @@ def ejecutar_unidad(
     ejecucion_id: str,
     directorio_operaciones: Path,
 ) -> ResultadoUnidad:
-    """Reanuda el mismo Motor por sesión; un único ledger acota toda la unidad."""
+    """Resume the same engine per session under one unit-wide durable budget."""
     _comprobar_paquete(paquete)
     if paquete.catalogo_modo != "completo" or not paquete.piloto_superado:
         raise ValueError("La ejecución requiere un catálogo completo con piloto superado; preparación no es activación")
@@ -413,7 +426,7 @@ def _ejecutar_con_bloqueo(paquete, motor, registro, ejecucion_id, entorno, archi
     antes = registro.resumen(ejecucion_id)
     resultados = []
     filas = {f.id: f for f in paquete.filas}
-    with sqlite3.connect(archivo, check_same_thread=False, timeout=30) as db:
+    with closing(sqlite3.connect(archivo, check_same_thread=False, timeout=30)) as db, db:
         db.execute(
             "CREATE TABLE IF NOT EXISTS unidades_ejecuciones (id TEXT PRIMARY KEY, paquete TEXT, "
             "entorno TEXT, ledger TEXT)"
@@ -528,7 +541,7 @@ def _texto(valor) -> str:
 
 
 def exportar_unidad(paquete: PaqueteUnidad, destino: Path, *, resultado: ResultadoUnidad | None = None) -> dict:
-    """JSON íntegro y ficha Markdown; fuentes originales y respuestas automáticas quedan rotuladas."""
+    """Export complete JSON and Markdown with original sources and automatic outputs labeled."""
     _comprobar_paquete(paquete)
     if resultado is not None and resultado.paquete_id != paquete.id:
         raise ValueError("El resultado no pertenece a este paquete")

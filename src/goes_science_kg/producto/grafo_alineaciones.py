@@ -1,4 +1,4 @@
-"""Proyección documental condicionada; nunca produce aristas CUBRE ni equivalencias de grados."""
+"""Project conditional documentary relationships without asserting coverage or grade equivalence."""
 
 from __future__ import annotations
 
@@ -8,6 +8,8 @@ from goes_science_kg.producto.alineaciones import ArchivoAlineaciones
 
 
 def grafo_alineaciones(archivo: ArchivoAlineaciones) -> tuple[list[Nodo], list[Arista]]:
+    """Build typed graph nodes and links for the complete documentary alignment archive."""
+
     nodos, aristas = [], []
     for id_, fuente in sorted(archivo.fuentes.items()):
         nodos.append(Nodo(id=f"DOC:{id_}", tipo=TipoNodo.DOCUMENTO, etiqueta=fuente["titulo"], props=fuente))
@@ -61,6 +63,8 @@ def grafo_alineaciones(archivo: ArchivoAlineaciones) -> tuple[list[Nodo], list[A
 
 
 def incorporar_alineaciones(nodos, aristas, archivo: ArchivoAlineaciones) -> None:
+    """Add documentary alignments without replacing conflicting existing identities."""
+
     nuevos, enlaces = grafo_alineaciones(archivo)
     existentes = {n.id: n for n in nodos}
     for nodo in nuevos:
@@ -82,6 +86,8 @@ def incorporar_alineaciones(nodos, aristas, archivo: ArchivoAlineaciones) -> Non
 
 
 def validar_grafo_alineaciones(nodos, aristas, archivo: ArchivoAlineaciones | None) -> None:
+    """Require exact graph correspondence with the published alignment archive."""
+
     tipos_nodos = {TipoNodo.CRITERIO_EVALUATIVO, TipoNodo.ALINEACION_DOCUMENTAL}
     presentes = {n.id: n for n in nodos if n.tipo in tipos_nodos}
     esperados, enlaces = grafo_alineaciones(archivo) if archivo else ([], [])

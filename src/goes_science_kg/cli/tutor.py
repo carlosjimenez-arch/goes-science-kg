@@ -1,4 +1,4 @@
-"""Comandos del grupo `tutor`."""
+"""Expose the tutor command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ app = typer.Typer(help="Apoyo al aprendizaje sobre el grafo (spec 13, prototipo)
 
 
 def _nav():
-    """Carga el navegador curricular compartido solo cuando el comando lo necesita."""
+    """Load the shared curriculum navigator only when needed by a command."""
     from goes_science_kg.aprendizaje.pedagogia import navegador_compartido
 
     return navegador_compartido()
@@ -21,7 +21,7 @@ def _nav():
 
 @app.command("bases")
 def tutor_bases(tema: str, profundidad: int = 2) -> None:
-    """Desde un objetivo hacia sus bases: «¿qué necesita comprender?»."""
+    """Traverse an objective's prerequisite concepts."""
     nav = _nav()
     tema = tema if tema.startswith("TEMA:") else f"TEMA:{tema}"
     for b in nav.bases(tema, profundidad):
@@ -34,7 +34,7 @@ def tutor_bases(tema: str, profundidad: int = 2) -> None:
 
 @app.command("apoya")
 def tutor_apoya(concepto: str, grado: int = typer.Option(None), alcance: int = 2) -> None:
-    """Desde una base hacia lo que apoya: «¿dónde ayudará reforzar esto?»."""
+    """Find objectives supported by reinforcing a prerequisite concept."""
     for f in _nav().apoya(concepto, grado, alcance=alcance):
         typer.echo(
             f"distancia {f['distancia']} · {f['grado']}.° {f['tema'].removeprefix('TEMA:')} "
@@ -44,7 +44,7 @@ def tutor_apoya(concepto: str, grado: int = typer.Option(None), alcance: int = 2
 
 @app.command("alinear")
 def tutor_alinear(texto: str, grado: int = typer.Option(...), asignatura: str = typer.Option(None)) -> None:
-    """Identifica el objetivo de la malla para un texto del estudiante o del docente."""
+    """Identify candidate curriculum objectives for learner or teacher text."""
     from goes_science_kg.aprendizaje.contexto import alinear
 
     typer.echo(json.dumps(alinear(texto, grado, _nav(), asignatura), ensure_ascii=False, indent=1))
@@ -52,7 +52,7 @@ def tutor_alinear(texto: str, grado: int = typer.Option(...), asignatura: str = 
 
 @app.command("contexto")
 def tutor_contexto(tema: str, grado: int = typer.Option(...), concepto: str = typer.Option(None)) -> None:
-    """El contexto que se inyecta al agente tutor para un objetivo (estudiante nuevo, sin evidencia)."""
+    """Build tutor context for a new learner without observed evidence."""
     from goes_science_kg.aprendizaje.contexto import paquete
     from goes_science_kg.aprendizaje.estudiante import Perfil
     from goes_science_kg.aprendizaje.pedagogia import Pedagogia
@@ -66,7 +66,7 @@ def tutor_contexto(tema: str, grado: int = typer.Option(...), concepto: str = ty
 
 
 def _modelo_llm(rol: str, confirmar: bool):
-    """El modelo de Vertex del rol si hay --confirmar (tras verificar la cuenta GOES); si no, None (no se gasta)."""
+    """Create the role model only after explicit confirmation and account verification."""
     if not confirmar:
         return None
     from goes_science_kg.aprendizaje.llm import de_config
@@ -83,8 +83,10 @@ def tutor_turno(
     concepto: str = typer.Option(None),
     confirmar: bool = typer.Option(False, "--confirmar", help="Llama al modelo (Vertex: se paga)."),
 ) -> None:
-    """Un turno del agente tutor que presenta el refuerzo de un concepto del objetivo (estudiante nuevo, sin evidencia).
-    Sin --confirmar muestra el respaldo determinista y cuántas llamadas costaría; con --confirmar llama a Vertex."""
+    """Prepare a reinforcement tutor turn for a new learner."""
+
+    # Implementation notes:
+    # Sin --confirmar muestra el respaldo determinista y cuántas llamadas costaría; con --confirmar llama a Vertex.
     from goes_science_kg.aprendizaje.contexto import paquete
     from goes_science_kg.aprendizaje.estudiante import Perfil
     from goes_science_kg.aprendizaje.llm import config as config_llm
@@ -136,8 +138,10 @@ def tutor_evaluar(
     respuesta: str,
     confirmar: bool = typer.Option(False, "--confirmar", help="Llama al evaluador (Vertex: se paga)."),
 ) -> None:
-    """Califica una respuesta abierta con la rúbrica de la actividad. Sin --confirmar no hay evaluador: la respuesta
-    iría a revisión docente (se muestra la rúbrica); con --confirmar llama a Vertex (1 llamada)."""
+    """Assess an open response only when a model invocation was explicitly confirmed."""
+
+    # Implementation notes:
+    # iría a revisión docente (se muestra la rúbrica); con --confirmar llama a Vertex (1 llamada).
     from dataclasses import asdict
 
     from goes_science_kg.aprendizaje.evaluador import Evaluador
@@ -158,8 +162,10 @@ def tutor_evaluar(
 
 @app.command("paquete")
 def tutor_paquete(temas: Annotated[list[str], typer.Argument(help="ids de tema (TEMA:… o sin prefijo)")]) -> None:
-    """Paquete de clase por tema (texto crudo, ideas previas, actividades, experimentos, datos y completitud) →
-    entregas/paquetes_clase/."""
+    """Build topic-specific lesson packages with raw sources and completeness information."""
+
+    # Implementation notes:
+    # entregas/paquetes_clase/.
     from goes_science_kg.aprendizaje.paquete import escribir
 
     for p in escribir(temas):
@@ -174,7 +180,7 @@ def tutor_preparar_actividades(
         False, help="solo el objetivo, el experimento y las ideas previas (paquete de clase ligero)"
     ),
 ) -> None:
-    """Lotes para el subagente redactor-actividades (uno por objetivo) → data/pedagogia/lotes/."""
+    """Prepare one activity-writing batch per curriculum objective."""
     from goes_science_kg.aprendizaje.pedagogia import preparar_lote
 
     for p in preparar_lote(
@@ -187,7 +193,7 @@ def tutor_preparar_actividades(
 def tutor_unir_actividades(
     prefijo: Annotated[list[str] | None, typer.Option(help="Solo los lotes que empiezan así (G09-CIE-U1-)")] = None,
 ) -> None:
-    """Valida las salidas de redactor-actividades y las agrega a data/pedagogia/ (nacen «propuesta_pendiente»)."""
+    """Validate and append proposed activities to the pedagogical layer."""
     from goes_science_kg.aprendizaje.pedagogia import unir
 
     typer.echo(json.dumps(unir(prefijos=prefijo or None), ensure_ascii=False))
@@ -195,7 +201,7 @@ def tutor_unir_actividades(
 
 @app.command("validar")
 def tutor_validar() -> None:
-    """Integridad de la capa pedagógica (vínculos a objetivos e ids) y coherencia de las relaciones inversas."""
+    """Validate pedagogical links and the consistency of inverse relationships."""
     from goes_science_kg.aprendizaje.pedagogia import Pedagogia, errores_capa
     from goes_science_kg.aprendizaje.recorridos import errores_inversas
 
@@ -210,7 +216,7 @@ def tutor_validar() -> None:
 
 @app.command("recorridos")
 def tutor_recorridos() -> None:
-    """Corre los tres recorridos de ejemplo (estudiantes simulados) → aprendizaje/recorridos/."""
+    """Run three reproducible journeys with explicitly simulated learners."""
     from goes_science_kg.aprendizaje.recorridos import escribir_recorridos
 
     for p in escribir_recorridos():

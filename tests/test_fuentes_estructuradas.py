@@ -1,4 +1,4 @@
-"""Extracción estructurada real y adversarial, sin red, nube ni metadatos como evidencia."""
+"""Test native structured extraction and adversarial documents without network or metadata evidence."""
 
 from __future__ import annotations
 
@@ -25,31 +25,41 @@ DESCRIPCION = "Compare the life cycles of plants and animals using observations 
 def _docx(cuerpo: str, *, estilos: str | None = None) -> bytes:
     salida = BytesIO()
     with ZipFile(salida, "w", compression=ZIP_DEFLATED) as paquete:
-        paquete.writestr("word/document.xml", (
-            '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
-            f"<w:body>{cuerpo}</w:body></w:document>"
-        ))
+        paquete.writestr(
+            "word/document.xml",
+            (
+                '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+                f"<w:body>{cuerpo}</w:body></w:document>"
+            ),
+        )
         if estilos:
             paquete.writestr("word/styles.xml", estilos)
     return salida.getvalue()
 
 
 def _fila(codigo=CODIGO, texto=DESCRIPCION):
-    return (f"<w:tr><w:tc><w:p><w:r><w:t>{texto}</w:t></w:r></w:p>"
-            f"<w:p><w:r><w:t>{codigo}</w:t></w:r></w:p></w:tc>"
-            "<w:tc><w:p><w:r><w:t>Observe, compare and justify conclusions.</w:t></w:r></w:p></w:tc></w:tr>")
+    return (
+        f"<w:tr><w:tc><w:p><w:r><w:t>{texto}</w:t></w:r></w:p>"
+        f"<w:p><w:r><w:t>{codigo}</w:t></w:r></w:p></w:tc>"
+        "<w:tc><w:p><w:r><w:t>Observe, compare and justify conclusions.</w:t></w:r></w:p></w:tc></w:tr>"
+    )
 
 
 def _html(interior: str, *, codigo="ACSBL001", attrs="", antes="") -> bytes:
-    return (f'<!DOCTYPE html><html><head>{antes}</head><body><section id="{codigo}" {attrs}>'
-            f"{interior}</section></body></html>").encode()
+    return (
+        f'<!DOCTYPE html><html><head>{antes}</head><body><section id="{codigo}" {attrs}>'
+        f"{interior}</section></body></html>"
+    ).encode()
 
 
-@pytest.mark.parametrize("relativo,codigo,literal", [
-    ("paises/australia/AU_Science_F-6_v9_contenido.docx", "AC9S3U01", "compare characteristics of living"),
-    ("paises/australia/AU_Science_7-10_v9_contenido.docx", "AC9S7U01", "investigate the role of classification"),
-    ("bachillerato/AU_SeniorSecondary_Biology_v8.4_U1-3.html", "ACSBL001", "propose hypotheses"),
-])
+@pytest.mark.parametrize(
+    "relativo,codigo,literal",
+    [
+        ("paises/australia/AU_Science_F-6_v9_contenido.docx", "AC9S3U01", "compare characteristics of living"),
+        ("paises/australia/AU_Science_7-10_v9_contenido.docx", "AC9S7U01", "investigate the role of classification"),
+        ("bachillerato/AU_SeniorSecondary_Biology_v8.4_U1-3.html", "ACSBL001", "propose hypotheses"),
+    ],
+)
 def test_nativos_reales_conservan_ingles_codigo_unidad_y_bytes(relativo, codigo, literal):
     archivo = ruta("data/fuentes/externos") / relativo
     contenido = archivo.read_bytes()
@@ -92,20 +102,25 @@ def test_docx_no_acepta_prefijos_sufijos_o_codigo_con_diferente_caja(ancla):
         extraer_codigo(_docx("<w:tbl>" + _fila(ancla) + "</w:tbl>"), "docx", CODIGO)
 
 
-@pytest.mark.parametrize("cuerpo", [
-    "<w:tbl>" + _fila() + _fila() + "</w:tbl>",
-    "<w:tbl>" + _fila(texto=f"A second occurrence of {CODIGO} makes this ambiguous.") + "</w:tbl>",
-    f"<w:p><w:r><w:t>{CODIGO}</w:t></w:r></w:p>",
-])
+@pytest.mark.parametrize(
+    "cuerpo",
+    [
+        "<w:tbl>" + _fila() + _fila() + "</w:tbl>",
+        "<w:tbl>" + _fila(texto=f"A second occurrence of {CODIGO} makes this ambiguous.") + "</w:tbl>",
+        f"<w:p><w:r><w:t>{CODIGO}</w:t></w:r></w:p>",
+    ],
+)
 def test_docx_no_resuelve_codigo_ambiguo_ni_fuera_de_tabla(cuerpo):
     with pytest.raises(ValueError):
         extraer_codigo(_docx(cuerpo), "docx", CODIGO)
 
 
 def test_docx_omite_texto_oculto_eliminado_e_instrucciones_de_campos():
-    adicional = ("<w:p><w:r><w:rPr><w:vanish/></w:rPr><w:t>Hidden scientific assertion.</w:t></w:r>"
-                 "<w:del><w:r><w:delText>Deleted scientific assertion.</w:delText></w:r></w:del>"
-                 "<w:r><w:instrText>INCLUDETEXT external.docx</w:instrText></w:r></w:p>")
+    adicional = (
+        "<w:p><w:r><w:rPr><w:vanish/></w:rPr><w:t>Hidden scientific assertion.</w:t></w:r>"
+        "<w:del><w:r><w:delText>Deleted scientific assertion.</w:delText></w:r></w:del>"
+        "<w:r><w:instrText>INCLUDETEXT external.docx</w:instrText></w:r></w:p>"
+    )
     cuerpo = "<w:tbl>" + _fila().replace("</w:tc>", adicional + "</w:tc>", 1) + "</w:tbl>"
     resultado = extraer_codigo(_docx(cuerpo), "docx", CODIGO)
     assert "Hidden" not in resultado.texto and "Deleted" not in resultado.texto and "INCLUDETEXT" not in resultado.texto
@@ -118,16 +133,21 @@ def test_docx_codigo_solamente_oculto_no_se_vuelve_ancla():
 
 
 def test_docx_rechaza_estilos_ocultos_sin_interpretar_su_herencia():
-    estilos = ('<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
-               '<w:style w:styleId="Hidden"><w:rPr><w:vanish/></w:rPr></w:style></w:styles>')
+    estilos = (
+        '<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:style w:styleId="Hidden"><w:rPr><w:vanish/></w:rPr></w:style></w:styles>'
+    )
     with pytest.raises(ValueError, match="estilos"):
         extraer_codigo(_docx("<w:tbl>" + _fila() + "</w:tbl>", estilos=estilos), "docx", CODIGO)
 
 
-@pytest.mark.parametrize("xml", [
-    b'<!DOCTYPE doc [<!ENTITY fuga SYSTEM "file:///etc/passwd">]><doc>&fuga;</doc>',
-    '<?xml version="1.0" encoding="UTF-16"?><doc/>'.encode("utf-16"),
-])
+@pytest.mark.parametrize(
+    "xml",
+    [
+        b'<!DOCTYPE doc [<!ENTITY fuga SYSTEM "file:///etc/passwd">]><doc>&fuga;</doc>',
+        '<?xml version="1.0" encoding="UTF-16"?><doc/>'.encode("utf-16"),
+    ],
+)
 def test_xml_no_expande_entidades_ni_acepta_codificacion_alternativa(xml):
     salida = BytesIO()
     with ZipFile(salida, "w") as paquete:
@@ -153,8 +173,12 @@ def test_zip_bomb_acotada_y_partes_duplicadas_no_producen_indice(monkeypatch):
 @pytest.mark.parametrize("formato", ["docx", "html"])
 def test_limite_de_elementos_rechaza_estructura_antes_de_indexarla(monkeypatch, formato):
     monkeypatch.setattr(estructurados, "MAX_ELEMENTOS", 5)
-    contenido = _docx("<w:tbl>" + _fila() + "</w:tbl>") if formato == "docx" else _html(
-        "<p>Identify questions (ACSBL001)</p><p>Observe evidence</p>",
+    contenido = (
+        _docx("<w:tbl>" + _fila() + "</w:tbl>")
+        if formato == "docx"
+        else _html(
+            "<p>Identify questions (ACSBL001)</p><p>Observe evidence</p>",
+        )
     )
     with pytest.raises(ValueError, match="límites|límite"):
         indexar_documento(contenido, formato)
@@ -162,13 +186,13 @@ def test_limite_de_elementos_rechaza_estructura_antes_de_indexarla(monkeypatch, 
 
 def test_html_preserva_orden_inline_y_excluye_scripts_estilos_y_nodos_ocultos():
     contenido = _html(
-        '<p>Identify <span>questions</span> &amp; propose hypotheses (ACSBL001)</p>'
-        '<script>Invented script assertion</script><style>.safe {color:red}</style>'
+        "<p>Identify <span>questions</span> &amp; propose hypotheses (ACSBL001)</p>"
+        "<script>Invented script assertion</script><style>.safe {color:red}</style>"
         '<p hidden>Hidden assertion</p><p aria-hidden="true">ARIA assertion</p>'
         '<div style="display: none"><p>Display assertion</p></div>'
         '<span style="visibility:hidden">Invisible assertion</span>'
-        '<template>Template assertion</template><noscript>Conditional assertion</noscript>'
-        '<details><summary>Summary visible</summary><p>Collapsed assertion</p></details>'
+        "<template>Template assertion</template><noscript>Conditional assertion</noscript>"
+        "<details><summary>Summary visible</summary><p>Collapsed assertion</p></details>"
         '<p class="oculto">CSS assertion</p>',
         antes="<style>.oculto {display: none !important}</style>",
     )
@@ -178,34 +202,40 @@ def test_html_preserva_orden_inline_y_excluye_scripts_estilos_y_nodos_ocultos():
     assert "assertion" not in resultado.texto
 
 
-@pytest.mark.parametrize("attrs", ['hidden', 'hidden="false"', 'aria-hidden="TRUE"', 'style="display:none"'])
+@pytest.mark.parametrize("attrs", ["hidden", 'hidden="false"', 'aria-hidden="TRUE"', 'style="display:none"'])
 def test_html_codigo_en_seccion_oculta_no_da_evidencia(attrs):
     with pytest.raises(ValueError, match="visible"):
         extraer_codigo(_html("<p>Observation (ACSBL001)</p>", attrs=attrs), "html", "ACSBL001")
 
 
-@pytest.mark.parametrize("html", [
-    b'<section id="ACSBL001"><p>Data (ACSBL001X)</p></section>',
-    b'<section id="ACSBL001"><span>Data (ACSBL001)</span></section>',
-    b'<section id="ACSBL001"><p>Data <span hidden>(ACSBL001)</span></p></section>',
-    b'<section id="ACSBL001"><p>Data (ACSBL001) and (ACSBL001)</p></section>',
-    b'<section id="ACSBL001"><p>Data (ACSBL001)</p></section><section id="ACSBL001" hidden></section>',
-    b'<div id="ACSBL001"><p>Data (ACSBL001)</p></div>',
-    b'<section id="ACSBL001" id="ACSBL002"><p>Data (ACSBL001)</p></section>',
-    b'<section id="ACSBL001"><p>Data (ACSBL001)</p>',
-])
+@pytest.mark.parametrize(
+    "html",
+    [
+        b'<section id="ACSBL001"><p>Data (ACSBL001X)</p></section>',
+        b'<section id="ACSBL001"><span>Data (ACSBL001)</span></section>',
+        b'<section id="ACSBL001"><p>Data <span hidden>(ACSBL001)</span></p></section>',
+        b'<section id="ACSBL001"><p>Data (ACSBL001) and (ACSBL001)</p></section>',
+        b'<section id="ACSBL001"><p>Data (ACSBL001)</p></section><section id="ACSBL001" hidden></section>',
+        b'<div id="ACSBL001"><p>Data (ACSBL001)</p></div>',
+        b'<section id="ACSBL001" id="ACSBL002"><p>Data (ACSBL001)</p></section>',
+        b'<section id="ACSBL001"><p>Data (ACSBL001)</p>',
+    ],
+)
 def test_html_no_acepta_anclajes_parciales_ambiguos_o_sin_unidad_fisica(html):
     with pytest.raises(ValueError):
         extraer_codigo(html, "html", "ACSBL001")
 
 
-@pytest.mark.parametrize("contenido", [
-    b'<!DOCTYPE html SYSTEM "https://example.org/externo.dtd"><section/>',
-    b'<!ENTITY ext SYSTEM "file:///etc/passwd"><section/>',
-    _html('<p>Data (ACSBL001)</p>', attrs='style="d\\69splay:none"'),
-    _html('<p>Data (ACSBL001)</p>', attrs='style="display:var(--oculto)"'),
-    _html('<p>Data (ACSBL001)</p>', antes='<style>section:not(.visible) {display:none}</style>'),
-])
+@pytest.mark.parametrize(
+    "contenido",
+    [
+        b'<!DOCTYPE html SYSTEM "https://example.org/externo.dtd"><section/>',
+        b'<!ENTITY ext SYSTEM "file:///etc/passwd"><section/>',
+        _html("<p>Data (ACSBL001)</p>", attrs='style="d\\69splay:none"'),
+        _html("<p>Data (ACSBL001)</p>", attrs='style="display:var(--oculto)"'),
+        _html("<p>Data (ACSBL001)</p>", antes="<style>section:not(.visible) {display:none}</style>"),
+    ],
+)
 def test_html_no_expande_dtd_o_asume_visible_css_que_no_puede_interpretar(contenido):
     with pytest.raises(ValueError):
         extraer_codigo(contenido, "html", "ACSBL001")
@@ -236,11 +266,24 @@ def test_hidratacion_estructurada_verifica_sha_una_vez_cachea_indice_y_limpia_me
     monkeypatch.setattr(estructurados, "indexar_documento", observar)
 
     def documento(codigo):
-        return Documento(id=codigo, texto="Invented metadata scientific assertion.", version="referencia", fuente={
-            "documento": "au", "localizador": codigo, "pagina": 999, "hoja": "falsa", "fila": 30,
-            "celdas": ["X99"], "rango": "A1:Z99", "ubicacion": {"falsa": True},
-            "extractor": "inventado", "huella_implementacion": "0" * 64, "sha256": "0" * 64,
-        })
+        return Documento(
+            id=codigo,
+            texto="Invented metadata scientific assertion.",
+            version="referencia",
+            fuente={
+                "documento": "au",
+                "localizador": codigo,
+                "pagina": 999,
+                "hoja": "falsa",
+                "fila": 30,
+                "celdas": ["X99"],
+                "rango": "A1:Z99",
+                "ubicacion": {"falsa": True},
+                "extractor": "inventado",
+                "huella_implementacion": "0" * 64,
+                "sha256": "0" * 64,
+            },
+        )
 
     with ThreadPoolExecutor(max_workers=4) as ejecutor:
         evidencias = list(ejecutor.map(fuentes.hidratar, [documento(CODIGO), documento("AC9S4U01")] * 3))
@@ -278,29 +321,45 @@ def test_html_hidratado_no_usa_pagina_ni_fallback_y_sha_incorrecto_falla_antes_d
     assert incorrectas.estadisticas_estructuradas()["indices_parseados"] == 0
 
 
-@pytest.mark.parametrize("relativo,codigo,literal", [
-    ("paises/australia/AU_Science_F-6_v9_contenido.docx", "AC9S3U01", "compare characteristics of living"),
-    ("paises/australia/AU_Science_7-10_v9_contenido.docx", "AC9S7U01", "investigate the role of classification"),
-    ("bachillerato/AU_SeniorSecondary_Biology_v8.4_U1-3.html", "ACSBL001", "propose hypotheses"),
-])
+@pytest.mark.parametrize(
+    "relativo,codigo,literal",
+    [
+        ("paises/australia/AU_Science_F-6_v9_contenido.docx", "AC9S3U01", "compare characteristics of living"),
+        ("paises/australia/AU_Science_7-10_v9_contenido.docx", "AC9S7U01", "investigate the role of classification"),
+        ("bachillerato/AU_SeniorSecondary_Biology_v8.4_U1-3.html", "ACSBL001", "propose hypotheses"),
+    ],
+)
 def test_au_real_produce_evidencia_nativa_sin_aceptar_relacion_curricular(tmp_path, relativo, codigo, literal):
     original = ruta("data/fuentes/externos") / relativo
     contenido = original.read_bytes()
     archivo = tmp_path / original.name
     archivo.write_bytes(contenido)
     sha = hashlib.sha256(contenido).hexdigest()
-    documento = Nodo(id="DOC:au", tipo=TipoNodo.DOCUMENTO, etiqueta="Australia: snapshot de prueba",
-                     props={"archivo_local": archivo.name, "sha256": sha, "version_documental": "edicion-fijada"})
-    objetivo = Nodo(id=f"OP:AU:{codigo}", tipo=TipoNodo.OBJETIVO_PAIS,
-                    etiqueta="Representación histórica de seres vivos por revalidar.",
-                    fuente=Fuente(documento="au", localizador=codigo, pagina=999),
-                    props={"pais": "AU", "grado_o_tramo": "Tramo extranjero sin equivalencia"})
-    politica = PoliticaConocimiento(ediciones_por_documento={
-        "au": EdicionEsperada(sha256=sha, version_documental="edicion-fijada"),
-    })
-    informe = _generar(tmp_path, _referencia(_concepto("vida", "Seres vivos"), documento, objetivo),
-                       texto="Compara seres vivos y registra las diferencias.", contenido="Seres vivos",
-                       politica=politica)
+    documento = Nodo(
+        id="DOC:au",
+        tipo=TipoNodo.DOCUMENTO,
+        etiqueta="Australia: snapshot de prueba",
+        props={"archivo_local": archivo.name, "sha256": sha, "version_documental": "edicion-fijada"},
+    )
+    objetivo = Nodo(
+        id=f"OP:AU:{codigo}",
+        tipo=TipoNodo.OBJETIVO_PAIS,
+        etiqueta="Representación histórica de seres vivos por revalidar.",
+        fuente=Fuente(documento="au", localizador=codigo, pagina=999),
+        props={"pais": "AU", "grado_o_tramo": "Tramo extranjero sin equivalencia"},
+    )
+    politica = PoliticaConocimiento(
+        ediciones_por_documento={
+            "au": EdicionEsperada(sha256=sha, version_documental="edicion-fijada"),
+        }
+    )
+    informe = _generar(
+        tmp_path,
+        _referencia(_concepto("vida", "Seres vivos"), documento, objetivo),
+        texto="Compara seres vivos y registra las diferencias.",
+        contenido="Seres vivos",
+        politica=politica,
+    )
     candidato = next(c for c in informe.candidatos if c.tipo == "contraste_pais")
     assert candidato.estado == "candidato" and candidato.referencias_evidencia
     assert "juicio_especializado_pendiente" in candidato.bloqueos_aceptacion

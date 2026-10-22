@@ -1,4 +1,4 @@
-"""Dos expedientes reales de prueba: un solo contador, reanudación y plan inmutable."""
+"""Test two complete dossiers under one shared counter and an immutable review plan."""
 
 from __future__ import annotations
 

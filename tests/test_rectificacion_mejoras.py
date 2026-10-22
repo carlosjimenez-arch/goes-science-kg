@@ -1,4 +1,4 @@
-"""Un falso positivo se corrige con evidencia y otro texto; se conserva el respaldo anterior."""
+"""Correct a scientific false positive with new evidence while retaining the original review."""
 
 from types import SimpleNamespace
 

@@ -1,5 +1,8 @@
 # Evaluación inicial de los jueces del motor
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Corte: **21 de octubre de 2026**. Conjunto: `motor_jueces_2026_10_21`, versión de esquema `1.0`. Archivo: `data/evaluacion/motor_casos_2026.json`.
 
 ## Estado y alcance

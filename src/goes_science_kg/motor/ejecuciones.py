@@ -1,4 +1,4 @@
-"""Invocación durable común: identidad de solicitud, entorno y presupuesto inmutables."""
+"""Resume durable workflows with fixed request, environment, and budget identities."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import json
 import os
 import sqlite3
 from collections.abc import Iterator
-from contextlib import contextmanager
+from contextlib import closing, contextmanager
 from pathlib import Path
 from typing import Protocol
 
@@ -15,8 +15,10 @@ from goes_science_kg.motor.contratos import huella
 
 
 class MotorPersistible(Protocol):
+    """Define the compilation port required for durable workflow execution."""
+
     def compilar(self, *, checkpointer=None):
-        """Construye un workflow sin ejecutar modelos durante la compilación."""
+        """Compile a workflow without invoking models."""
 
 
 def _identidad_presupuesto(motor: MotorPersistible, ejecucion_id: str) -> str | None:
@@ -48,7 +50,7 @@ def _vincular_presupuesto(db: sqlite3.Connection, ejecucion_id: str, identidad: 
 
 @contextmanager
 def _bloqueo(archivo: Path, nombre: str, *, esperar: bool = False) -> Iterator[None]:
-    """Exclusión entre procesos y threads; el sistema libera el lock tras una interrupción."""
+    """Exclude concurrent execution of one checkpoint across processes and threads."""
     import fcntl
 
     lock = archivo.with_name(f".{archivo.name}.{nombre}.lock")
@@ -76,16 +78,16 @@ def ejecutar_durable(
     max_concurrencia: int = 3,
     recursion_limit: int = 30,
 ) -> dict:
-    """Reanuda un workflow sobre el mismo input; no crea ni reinicia un ledger.
+    """Resume the same durable request without creating or resetting its budget ledger."""
 
-    ``thread_id`` identifica el checkpoint; ``ejecucion_id`` identifica el presupuesto compartido.
-    Una unidad puede tener varios threads, conservando un único ID de presupuesto en su proveedor.
-    La exclusión por thread comprende lectura y ejecución; otros threads siguen siendo paralelos.
-    Si el proveedor expone Registro, se fijan su ruta e identidad física sin reiniciar reservas.
-    Antes de reutilizar un estado, el hook optativo ``motor.validar_estado(estado)`` debe comprobar
-    localmente sus fuentes, sin consumir modelos. El controlador calcula la huella de datos/código;
-    un motor sin ese hook conserva la responsabilidad de verificar sus fuentes antes de invocar.
-    """
+    # Implementation notes:
+    # ``thread_id`` identifica el checkpoint; ``ejecucion_id`` identifica el presupuesto compartido.
+    # Una unidad puede tener varios threads, conservando un único ID de presupuesto en su proveedor.
+    # La exclusión por thread comprende lectura y ejecución; otros threads siguen siendo paralelos.
+    # Si el proveedor expone Registro, se fijan su ruta e identidad física sin reiniciar reservas.
+    # Antes de reutilizar un estado, el hook optativo ``motor.validar_estado(estado)`` debe comprobar
+    # localmente sus fuentes, sin consumir modelos. El controlador calcula la huella de datos/código;
+    # un motor sin ese hook conserva la responsabilidad de verificar sus fuentes antes de invocar.
     from langgraph.checkpoint.sqlite import SqliteSaver
 
     if not thread_id or len(thread_id) > 500 or "\x00" in thread_id:
@@ -97,9 +99,11 @@ def ejecutar_durable(
     identidad_presupuesto = _identidad_presupuesto(motor, ejecucion_id)
     archivo = destino_generado(archivo)
     archivo.parent.mkdir(parents=True, exist_ok=True)
-    with _bloqueo(archivo, huella({"thread_id": thread_id})), sqlite3.connect(
-        archivo, check_same_thread=False, timeout=30
-    ) as db:
+    with (
+        _bloqueo(archivo, huella({"thread_id": thread_id})),
+        closing(sqlite3.connect(archivo, check_same_thread=False, timeout=30)) as db,
+        db,
+    ):
         checkpointer = SqliteSaver(db)
         # Inicializar WAL y tablas en paralelo puede fallar aun con timeout SQLite. La exclusión
         # de esquema termina antes del workflow y no serializa otros threads de esta base.
@@ -124,9 +128,13 @@ def ejecutar_durable(
                 validar(previo.values)
             if not previo.next and previo.values.get("resultado"):
                 return previo.values
-        entrada = None if previo.values else {
-            "solicitud": datos,
-            "ejecucion_id": ejecucion_id,
-            "huella_entorno": huella_entorno,
-        }
+        entrada = (
+            None
+            if previo.values
+            else {
+                "solicitud": datos,
+                "ejecucion_id": ejecucion_id,
+                "huella_entorno": huella_entorno,
+            }
+        )
         return flujo.invoke(entrada, parametros, durability="sync")

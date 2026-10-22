@@ -1,4 +1,4 @@
-"""Admisión paralela sin sobreasignar margen ni descontar consumos históricos."""
+"""Admit concurrent work without overallocating funds or subtracting historical spending."""
 
 from concurrent.futures import ThreadPoolExecutor
 from threading import Event

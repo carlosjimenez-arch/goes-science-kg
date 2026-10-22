@@ -1,4 +1,4 @@
-"""Operación explícita de referencias públicas; no activa ni reconstruye la malla."""
+"""Manage public references without activating or rebuilding the curriculum."""
 
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ def _coleccion(nombre: Coleccion):
 
 
 def _destino_evidencia(salida: Path, *, repositorio: Path | None = None) -> Path:
-    """Valida la salida antes de leer PDF; conserva almacenes personalizados de sólo lectura."""
+    """Validate an evidence output path while preserving custom read-only stores."""
     destino = destino_generado(salida, extension=".json", raiz=ruta("."))
     if repositorio is not None and destino.is_relative_to(repositorio.resolve()):
         raise ValueError("Guarde la evidencia fuera del almacén de referencias")
@@ -46,7 +46,7 @@ def _destino_evidencia(salida: Path, *, repositorio: Path | None = None) -> Path
 
 @app.command("estado")
 def estado(coleccion: Annotated[Coleccion, typer.Option()] = "evaluacion") -> None:
-    """Lee el manifiesto local; no realiza solicitudes de red."""
+    """Read the local reference manifest without network requests."""
     typer.echo(_coleccion(coleccion).manifiesto().model_dump_json(indent=2))
 
 
@@ -56,7 +56,7 @@ def ingerir(
     descargar: bool = typer.Option(False, "--descargar", help="Descargar solo los PDF seleccionados"),
     coleccion: Annotated[Coleccion, typer.Option()] = "evaluacion",
 ) -> None:
-    """Comprueba objetos locales o descarga fuentes públicas y fija sus huellas."""
+    """Verify local objects or explicitly download and fingerprint public sources."""
     from goes_science_kg.ingesta.referencias import fuentes_del_catalogo
 
     try:
@@ -86,7 +86,7 @@ def buscar(
     k: int = typer.Option(5, min=1, max=20),
     coleccion: Annotated[Coleccion, typer.Option()] = "evaluacion",
 ) -> None:
-    """Localiza páginas con BM25; un resultado no es una alineación curricular."""
+    """Locate reference pages with BM25 without asserting curriculum alignment."""
     from goes_science_kg.recuperacion import Buscador
 
     documentos = _coleccion(coleccion).documentos([fuente] if fuente else None)
@@ -105,7 +105,7 @@ def pagina(
     salida: Annotated[Path | None, typer.Option(help="Evidencia JSON, fuera del almacén de fuentes")] = None,
     coleccion: Annotated[Coleccion, typer.Option()] = "evaluacion",
 ) -> None:
-    """Extrae la página desde el PDF original y verifica nuevamente su SHA."""
+    """Re-extract an original PDF page after verifying its SHA fingerprint."""
     try:
         if salida is not None:
             _destino_evidencia(salida)
@@ -126,7 +126,7 @@ def pagina(
 
 @app.command("validar-dimensiones")
 def validar_dimensiones() -> None:
-    """Verifica las anclas del catálogo en las páginas originales, sin modelos remotos."""
+    """Verify dimension anchors in primary pages without remote models."""
     import json
 
     from goes_science_kg.ingesta.dimensiones import CatalogoDimensiones

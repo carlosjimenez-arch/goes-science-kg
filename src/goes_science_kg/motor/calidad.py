@@ -1,4 +1,4 @@
-"""Puertas deterministas: referencias, citas, versión, recursos y revisión de la salida exacta."""
+"""Validate references, quotations, versions, resources, and exact-output reviews."""
 
 from __future__ import annotations
 
@@ -16,10 +16,14 @@ CRITERIOS = {
 
 
 def normalizar(texto: str) -> str:
+    """Normalize whitespace for deterministic evidence comparisons."""
+
     return re.sub(r"\s+", " ", texto).strip().casefold()
 
 
 def validar_propuesta(propuesta: Propuesta, solicitud: Solicitud, evidencias: Sequence[Evidencia]) -> list[str]:
+    """Validate proposal claims, citations, curriculum version, and declared resources."""
+
     por_id = {e.id: e for e in evidencias}
     errores = []
     grupos = [(f"Afirmación {n}", a.citas) for n, a in enumerate(propuesta.afirmaciones, start=1)]
@@ -58,6 +62,8 @@ def validar_propuesta(propuesta: Propuesta, solicitud: Solicitud, evidencias: Se
 def validar_dictamenes(
     propuesta: Propuesta, dictamenes: Sequence[Dictamen], evidencias: Sequence[Evidencia]
 ) -> list[str]:
+    """Require all mandatory roles to review the exact proposal under complete criteria."""
+
     errores = []
     por_rol = {d.rol: d for d in dictamenes}
     ids = {e.id for e in evidencias}

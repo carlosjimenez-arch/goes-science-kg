@@ -1,5 +1,8 @@
 # Catalogación disciplinar V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Corte: 21 de octubre de 2026. Clasificar una disciplina permite filtrar y navegar; no verifica
 la ciencia, los prerrequisitos, la demanda de una tarea ni su alineación internacional.
 

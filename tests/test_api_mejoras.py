@@ -1,4 +1,4 @@
-"""Lectura de propuestas fijadas: filtros, identidad y ausencia explícita, sin modelos."""
+"""Test pinned proposal queries, explicit availability, and snapshot identity without models."""
 
 from types import SimpleNamespace
 

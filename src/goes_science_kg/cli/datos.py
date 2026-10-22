@@ -1,4 +1,4 @@
-"""Corpus externo: migración explícita y recuperación a las rutas originales."""
+"""Migrate and restore the external corpus through verified manifests."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ def _guardar(destino: Path, contenido: dict) -> None:
 
 @app.command("preparar")
 def preparar(destino: Annotated[Path, typer.Option()]) -> None:
-    """Empaqueta todo el corpus; no llama a GCS y no incluye .env ni código."""
+    """Package the corpus without uploading code or credentials."""
     if destino.with_suffix(".json").exists():
         raise typer.BadParameter("El plan ya existe; elija otro destino")
     plan = datos.preparar(ruta("."), cargar("datos_externos"), destino.resolve())
@@ -44,7 +44,7 @@ def preparar(destino: Annotated[Path, typer.Option()]) -> None:
 
 @app.command("subir")
 def subir(plan: Path, recibo: Annotated[Path | None, typer.Option()] = None) -> None:
-    """Sube objetos nuevos, verifica protección y vuelve a descargar los bytes."""
+    """Upload new protected objects and verify downloaded bytes."""
     salida = recibo or ruta(RECIBO)
     if salida.exists() or salida.is_symlink():
         raise typer.BadParameter("El recibo ya existe; use otro nombre para una nueva versión")
@@ -93,7 +93,7 @@ def restaurar(
     en_repo: Annotated[bool, typer.Option(help="Repone las rutas originales, ignoradas por Git")] = False,
     recibo: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
-    """Descarga una generación exacta y verifica cada archivo antes de habilitar su uso."""
+    """Restore an exact generation only after verifying every file."""
     if en_repo == (destino is not None):
         raise typer.BadParameter("Indique --destino vacío o --en-repo")
     comprobante = _leer(recibo)
@@ -112,7 +112,7 @@ def restaurar(
 
 @app.command("inventario")
 def inventario(recibo: Annotated[Path | None, typer.Option()] = None) -> None:
-    """Lista rutas, tamaños y SHA desde GCS sin descargar el corpus."""
+    """Read the remote path, size, and SHA inventory without downloading the corpus."""
     comprobante = _leer(recibo)
     with tempfile.TemporaryDirectory(prefix="goes-datos-inventario-") as temporal:
         archivo = Path(temporal) / "inventario.json"
@@ -122,7 +122,7 @@ def inventario(recibo: Annotated[Path | None, typer.Option()] = None) -> None:
 
 @app.command("retirar")
 def retirar(plan: Path, recibo: Annotated[Path | None, typer.Option()] = None) -> None:
-    """Prueba restauración desde GCS y retira sólo originales sin cambios desde el plan."""
+    """Verify remote restoration and retire only originals unchanged since the plan."""
     comprobante = _leer(recibo)
     with tempfile.TemporaryDirectory(prefix="goes-datos-verificados-") as temporal:
         verificacion = _descargar_restaurar(comprobante, Path(temporal) / "corpus")

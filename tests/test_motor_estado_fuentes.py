@@ -1,4 +1,4 @@
-"""Reanudación y cierre revalidados contra fuentes físicas, sin búsqueda ni modelos remotos."""
+"""Revalidate resumed and terminal workflows against original physical sources."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ import copy
 import hashlib
 import json
 import sqlite3
+from contextlib import closing
 from types import SimpleNamespace
 
 import openpyxl
@@ -252,7 +253,7 @@ def test_reanudar_parcial_con_instancia_nueva_verifica_sha_antes_de_modelos(tmp_
     e = _entrada(tmp_path, "pdf")
     archivo = tmp_path / "checkpoint.sqlite"
     opciones = {"configurable": {"thread_id": "sesion"}}
-    with sqlite3.connect(archivo, check_same_thread=False) as db:
+    with closing(sqlite3.connect(archivo, check_same_thread=False)) as db, db:
         flujo = e.motor.compilar(checkpointer=SqliteSaver(db))
         flujo.invoke(e.inicial, opciones, interrupt_after=["contexto"], durability="sync")
     assert e.modelo.llamadas == []

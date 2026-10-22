@@ -1,4 +1,4 @@
-"""Fusión de rankings y expansión dirigida con presupuestos de trabajo explícitos."""
+"""Fuse rankings and expand graph context under explicit work budgets."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ VERSION_REFERENCIA = "referencia"
 
 
 class Buscador:
-    """Recuperador local: BM25, coseno opcional, RRF y vecindad curricular limitada."""
+    """Retrieve locally with BM25, optional cosine similarity, rank fusion, and bounded adjacency."""
 
     def __init__(
         self,
@@ -102,11 +102,11 @@ class Buscador:
         modelo_embeddings: str | None = None,
         saltos_grafo: int = 1,
     ) -> list[Resultado]:
-        """Filtra antes del ranking; no mezcla versiones ni modelos de forma implícita.
+        """Filter before ranking without silently mixing models or curriculum versions."""
 
-        Sin vector usa BM25. Si se solicita búsqueda densa, el modelo y las dimensiones deben
-        coincidir con el índice. Una versión ausente es un error, no una consulta de otra malla.
-        """
+        # Implementation notes:
+        # Sin vector usa BM25. Si se solicita búsqueda densa, el modelo y las dimensiones deben
+        # coincidir con el índice. Una versión ausente es un error, no una consulta de otra malla.
         if not 0 <= saltos_grafo <= 2:
             raise ValueError("La expansión admite entre cero y dos saltos")
         if k < 1 or k > self.max_candidatos:

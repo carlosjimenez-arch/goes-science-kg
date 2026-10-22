@@ -33,7 +33,26 @@ pruebas:
 	uv run pytest -q
 
 lint:
-	uv run ruff check src tests .claude/hooks
+	uv run --frozen ruff check src tests scripts .claude/hooks
+	uv run --frozen ruff format --check src tests scripts .claude/hooks --output-format concise
+
+.PHONY: formato cobertura auditoria api pruebas-js
+
+pruebas-js:
+	node --test tests/js/*.test.cjs
+
+formato:
+	uv run --frozen ruff format src tests scripts .claude/hooks
+
+cobertura:
+	uv run --frozen pytest -q --cov=goes_science_kg --cov-report=xml:coverage.xml --junitxml=junit.xml
+	uv run --frozen python scripts/generar_badges.py --junit junit.xml --cobertura coverage.xml
+
+auditoria:
+	uv run --frozen python scripts/auditar_repo.py --salida docs/auditoria/inventario.json
+
+api:
+	uv run --frozen gskg servir --puerto 8010
 
 grados:
 	uv run gskg grados construir

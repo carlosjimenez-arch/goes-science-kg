@@ -1,14 +1,14 @@
-"""Propuesta curricular por asignatura y ciclo (fase 5; spec 06; skill propuesta-curricular).
+"""Prepare subject- and cycle-specific curriculum proposals and simulations."""
 
-Paso 1 (determinista, este módulo): CANDIDATOS de cambio con su evidencia, calculados sobre el grafo.
-- mover_antes: conceptos que El Salvador introduce ≥2 grados después que la mediana de los países, y cuyos
-  prerrequisitos ya se enseñan antes del grado destino (si no, se listan como bloqueos).
-- corregir_secuencia: prerrequisitos (confianza alta) que la malla enseña después del concepto que los necesita.
-- reforzar: objetivos del marco del ciclo con un solo tema (profundidad débil) o sin temas.
-- equilibrar: temas de la asignatura por grado del ciclo (un grado casi vacío es señal de mala distribución).
-Paso 2 (subagente especialista): redacta la propuesta con esos candidatos (prompts/propuesta_curricular.md).
-Paso 3 (determinista): `escribir_excel()` arma el libro de la propuesta para el MINED.
-"""
+# Historical implementation notes:
+# Paso 1 (determinista, este módulo): CANDIDATOS de cambio con su evidencia, calculados sobre el grafo.
+# - mover_antes: conceptos que El Salvador introduce ≥2 grados después que la mediana de los países, y cuyos
+#   prerrequisitos ya se enseñan antes del grado destino (si no, se listan como bloqueos).
+# - corregir_secuencia: prerrequisitos (confianza alta) que la malla enseña después del concepto que los necesita.
+# - reforzar: objetivos del marco del ciclo con un solo tema (profundidad débil) o sin temas.
+# - equilibrar: temas de la asignatura por grado del ciclo (un grado casi vacío es señal de mala distribución).
+# Paso 2 (subagente especialista): redacta la propuesta con esos candidatos (prompts/propuesta_curricular.md).
+# Paso 3 (determinista): `escribir_excel()` arma el libro de la propuesta para el MINED.
 
 from __future__ import annotations
 
@@ -33,8 +33,10 @@ if TYPE_CHECKING:
 
 
 def candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], aristas: list[Arista]) -> dict:
-    """Candidatos de cambio de `asig` en el ciclo g0–g1 (mover_antes, corregir_secuencia y reforzar frente a
-    `marco`) con su evidencia, más la distribución y la lista de temas del ciclo."""
+    """Prepare evidence-backed curriculum change candidates within the selected grade cycle."""
+
+    # Implementation notes:
+    # `marco`) con su evidencia, más la distribución y la lista de temas del ciclo.
     ev = evidencia_orden(nodos, aristas)
     por_id = {n.id: n for n in nodos}
     r = analizar(asig, nodos, aristas, ev)
@@ -52,35 +54,65 @@ def candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], arist
         destino = max(g0, math.floor(f["mediana_paises"] + 0.5))  # empates hacia arriba (como Math.round)
         if not (g0 <= destino <= g1) or f["sv"] <= destino:
             continue
-        bloqueos = [{"prerrequisito": por_id[a.origen].etiqueta, "primer_grado_sv": ev[a.origen]["sv"]}
-                    for a in prereqs[f["concepto"]]
-                    if ev[a.origen]["sv"] is None or ev[a.origen]["sv"] >= destino]
+        bloqueos = [
+            {"prerrequisito": por_id[a.origen].etiqueta, "primer_grado_sv": ev[a.origen]["sv"]}
+            for a in prereqs[f["concepto"]]
+            if ev[a.origen]["sv"] is None or ev[a.origen]["sv"] >= destino
+        ]
         temas = [t for t in temas_de[f["concepto"]] if t.grado == f["sv"]]
-        mover.append({"concepto": f["nombre"], "concepto_id": f["concepto"], "grado_actual": f["sv"],
-                      "grado_destino": destino, "paises": f["paises"], "bloqueos": bloqueos,
-                      "temas_actuales": [{"id": t.id.removeprefix("TEMA:"), "tema": t.etiqueta,
-                                          "unidad": t.props.get("unidad")} for t in temas]})
+        mover.append(
+            {
+                "concepto": f["nombre"],
+                "concepto_id": f["concepto"],
+                "grado_actual": f["sv"],
+                "grado_destino": destino,
+                "paises": f["paises"],
+                "bloqueos": bloqueos,
+                "temas_actuales": [
+                    {"id": t.id.removeprefix("TEMA:"), "tema": t.etiqueta, "unidad": t.props.get("unidad")}
+                    for t in temas
+                ],
+            }
+        )
     secuencia = [s for s in r["secuencia"] if s["confianza"] == "alta" and g0 <= s["grado_concepto"] <= g1]
     cob = r["cobertura"].get(marco, {})
     reforzar = cob.get("sin_cobertura", []) + cob.get("debiles", [])
-    por_grado = Counter(n.grado for n in nodos if n.tipo == TipoNodo.TEMA and n.asignatura == asig
-                        and g0 <= n.grado <= g1)
-    temas_ciclo = [{"id": n.id.removeprefix("TEMA:"), "grado": n.grado, "unidad": n.props.get("unidad"),
-                    "tema": n.etiqueta,
-                    "conceptos": [por_id[a.destino].etiqueta for a in aristas if a.origen == n.id
-                                  and a.tipo == TipoArista.TRABAJA and a.destino.startswith("CON:")]}
-                   for n in sorted(nodos, key=lambda x: x.id)
-                   if n.tipo == TipoNodo.TEMA and n.asignatura == asig and g0 <= (n.grado or 0) <= g1]
-    return {"asignatura": asig, "ciclo": [g0, g1], "marco": marco,
-            "temas_por_grado": {g: por_grado.get(g, 0) for g in range(g0, g1 + 1)},
-            "total_temas_ciclo": sum(por_grado.values()),
-            "mover_antes": mover, "corregir_secuencia": secuencia, "reforzar": reforzar,
-            "temas_del_ciclo": temas_ciclo}
+    por_grado = Counter(
+        n.grado for n in nodos if n.tipo == TipoNodo.TEMA and n.asignatura == asig and g0 <= n.grado <= g1
+    )
+    temas_ciclo = [
+        {
+            "id": n.id.removeprefix("TEMA:"),
+            "grado": n.grado,
+            "unidad": n.props.get("unidad"),
+            "tema": n.etiqueta,
+            "conceptos": [
+                por_id[a.destino].etiqueta
+                for a in aristas
+                if a.origen == n.id and a.tipo == TipoArista.TRABAJA and a.destino.startswith("CON:")
+            ],
+        }
+        for n in sorted(nodos, key=lambda x: x.id)
+        if n.tipo == TipoNodo.TEMA and n.asignatura == asig and g0 <= (n.grado or 0) <= g1
+    ]
+    return {
+        "asignatura": asig,
+        "ciclo": [g0, g1],
+        "marco": marco,
+        "temas_por_grado": {g: por_grado.get(g, 0) for g in range(g0, g1 + 1)},
+        "total_temas_ciclo": sum(por_grado.values()),
+        "mover_antes": mover,
+        "corregir_secuencia": secuencia,
+        "reforzar": reforzar,
+        "temas_del_ciclo": temas_ciclo,
+    }
 
 
 def escribir_candidatos(asig: str, g0: int, g1: int, marco: str, nodos: list[Nodo], aristas: list[Arista]) -> str:
-    """Escribe los candidatos en asignaturas/<asig>/propuesta/candidatos_G<g0>-G<g1>.json. Devuelve la ruta
-    relativa."""
+    """Write the selected subject and cycle's curriculum change candidates."""
+
+    # Implementation notes:
+    # relativa.
     c = candidatos(asig, g0, g1, marco, nodos, aristas)
     d = ruta(f"asignaturas/{asig}/propuesta")
     d.mkdir(parents=True, exist_ok=True)
@@ -94,8 +126,10 @@ VERDE, VERDE_CLARO, GRIS = "1E4D3A", "DDEBDD", "F2F2F2"
 
 
 def escribir_excel(asig: str, g0: int, g1: int) -> str:
-    """Libro para el MINED: pestañas «Acciones» y «Distribucion». Estilo de los libros 2027 (sin azul);
-    los totales y diferencias son fórmulas; compatible con Numbers (sin «·» en pestañas ni CHAR(10))."""
+    """Export proposal actions and distribution in the established institutional workbook style."""
+
+    # Implementation notes:
+    # los totales y diferencias son fórmulas; compatible con Numbers (sin «·» en pestañas ni CHAR(10)).
 
     d = ruta(f"asignaturas/{asig}/propuesta")
     p = json.loads((d / f"propuesta_G{g0:02d}-G{g1:02d}.json").read_text(encoding="utf-8"))
@@ -115,15 +149,42 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
 
     ws = wb.active
     ws.title = "Acciones"
-    cabecera(ws, ["N", "Acción", "Temas afectados", "N.° de temas", "Grado actual", "Grado propuesto",
-                  "Unidad propuesta", "Tema propuesto", "Indicador de logro", "Conceptos", "Evidencia",
-                  "Justificación"], [5, 11, 22, 9, 9, 10, 26, 48, 44, 32, 34, 48])
+    cabecera(
+        ws,
+        [
+            "N",
+            "Acción",
+            "Temas afectados",
+            "N.° de temas",
+            "Grado actual",
+            "Grado propuesto",
+            "Unidad propuesta",
+            "Tema propuesto",
+            "Indicador de logro",
+            "Conceptos",
+            "Evidencia",
+            "Justificación",
+        ],
+        [5, 11, 22, 9, 9, 10, 26, 48, 44, 32, 34, 48],
+    )
     for a in p["acciones"]:
         afectados = a.get("temas_afectados", [])
-        ws.append([a.get("n"), a.get("accion"), ", ".join(afectados), len(afectados),
-                   a.get("grado_actual"), a.get("grado_propuesto"), a.get("unidad_propuesta"), a.get("tema_propuesto"),
-                   a.get("indicador_logro"), ", ".join(a.get("conceptos", [])), "; ".join(a.get("evidencia", [])),
-                   a.get("justificacion")])
+        ws.append(
+            [
+                a.get("n"),
+                a.get("accion"),
+                ", ".join(afectados),
+                len(afectados),
+                a.get("grado_actual"),
+                a.get("grado_propuesto"),
+                a.get("unidad_propuesta"),
+                a.get("tema_propuesto"),
+                a.get("indicador_logro"),
+                ", ".join(a.get("conceptos", [])),
+                "; ".join(a.get("evidencia", [])),
+                a.get("justificacion"),
+            ]
+        )
     for fila in ws.iter_rows(min_row=2):
         for celda in fila:
             celda.font, celda.alignment = normal, ajuste
@@ -131,21 +192,43 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
                 celda.fill = PatternFill("solid", fgColor=GRIS)
 
     wd = wb.create_sheet("Distribucion")
-    cabecera(wd, ["Grado", "Temas actuales", "Temas propuestos", "Diferencia", "Acciones que salen del grado",
-                  "Acciones que llegan al grado"], [10, 15, 17, 12, 22, 22])
+    cabecera(
+        wd,
+        [
+            "Grado",
+            "Temas actuales",
+            "Temas propuestos",
+            "Diferencia",
+            "Acciones que salen del grado",
+            "Acciones que llegan al grado",
+        ],
+        [10, 15, 17, 12, 22, 22],
+    )
     grados = list(range(g0, g1 + 1))
     for i, g in enumerate(grados, 2):
-        wd.append([g, c["temas_por_grado"][str(g)], p["temas_por_grado_propuesto"][str(g)], f"=C{i}-B{i}",
-                   f'=COUNTIFS(Acciones!E:E,A{i},Acciones!B:B,"mover")',
-                   f'=COUNTIFS(Acciones!F:F,A{i},Acciones!B:B,"mover")'])
+        wd.append(
+            [
+                g,
+                c["temas_por_grado"][str(g)],
+                p["temas_por_grado_propuesto"][str(g)],
+                f"=C{i}-B{i}",
+                f'=COUNTIFS(Acciones!E:E,A{i},Acciones!B:B,"mover")',
+                f'=COUNTIFS(Acciones!F:F,A{i},Acciones!B:B,"mover")',
+            ]
+        )
     t = len(grados) + 2
-    wd.append(["Total", f"=SUM(B2:B{t - 1})", f"=SUM(C2:C{t - 1})", f"=C{t}-B{t}", f"=SUM(E2:E{t - 1})",
-               f"=SUM(F2:F{t - 1})"])
+    wd.append(
+        ["Total", f"=SUM(B2:B{t - 1})", f"=SUM(C2:C{t - 1})", f"=C{t}-B{t}", f"=SUM(E2:E{t - 1})", f"=SUM(F2:F{t - 1})"]
+    )
     for celda in wd[t]:
         celda.fill, celda.font = PatternFill("solid", fgColor=VERDE_CLARO), Font(name="Arial", bold=True)
     wd.append([])
-    wd.append(["Regla: el total del ciclo no cambia (Diferencia del total = 0). Fuente: gskg propuesta + revisión "
-               "del especialista; estado: borrador, pendiente de revisión del equipo de Ciencias del MINED."])
+    wd.append(
+        [
+            "Regla: el total del ciclo no cambia (Diferencia del total = 0). Fuente: gskg propuesta + revisión "
+            "del especialista; estado: borrador, pendiente de revisión del equipo de Ciencias del MINED."
+        ]
+    )
     for fila in wd.iter_rows(min_row=2, max_row=t - 1):
         for celda in fila:
             celda.font = normal
@@ -158,18 +241,28 @@ def escribir_excel(asig: str, g0: int, g1: int) -> str:
 def _metricas(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista]) -> dict:
     ev = evidencia_orden(nodos, aristas)
     r = analizar(asig, nodos, aristas, ev)
-    en_ciclo = [f for f in r["oportunidad_todos"] if (f["sv"] is not None and g0 <= f["sv"] <= g1)
-                or (f["mediana_paises"] is not None and g0 <= f["mediana_paises"] <= g1)]
-    return {"secuencia_en_ciclo": sum(1 for s in r["secuencia"] if g0 <= s["grado_concepto"] <= g1),
-            "secuencia_alta_en_ciclo": sum(1 for s in r["secuencia"]
-                                           if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"),
-            "llega_tarde_2mas": sum(1 for f in en_ciclo if f.get("oportunidad", 0) >= 2),
-            "desfase_medio": round(sum(abs(f["oportunidad"]) for f in en_ciclo if "oportunidad" in f)
-                                   / max(1, sum(1 for f in en_ciclo if "oportunidad" in f)), 2)}
+    en_ciclo = [
+        f
+        for f in r["oportunidad_todos"]
+        if (f["sv"] is not None and g0 <= f["sv"] <= g1)
+        or (f["mediana_paises"] is not None and g0 <= f["mediana_paises"] <= g1)
+    ]
+    return {
+        "secuencia_en_ciclo": sum(1 for s in r["secuencia"] if g0 <= s["grado_concepto"] <= g1),
+        "secuencia_alta_en_ciclo": sum(
+            1 for s in r["secuencia"] if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"
+        ),
+        "llega_tarde_2mas": sum(1 for f in en_ciclo if f.get("oportunidad", 0) >= 2),
+        "desfase_medio": round(
+            sum(abs(f["oportunidad"]) for f in en_ciclo if "oportunidad" in f)
+            / max(1, sum(1 for f in en_ciclo if "oportunidad" in f)),
+            2,
+        ),
+    }
 
 
 class _Simulacion:
-    """Grafo en memoria sobre el que se aplican, una a una, las acciones de una propuesta."""
+    """Apply proposal actions sequentially to an isolated in-memory graph."""
 
     def __init__(self, asig: str, nodos: list[Nodo], aristas: list[Arista], version: str):
         voc = cp.vocabulario()
@@ -184,11 +277,21 @@ class _Simulacion:
         self.retiradas = 0
 
     def resolver(self, nombre: str, de: str | None = None) -> str | None:
+        """Resolve one simulated topic identity from the isolated graph."""
+
         return self.por_asig_nombre.get((de or self.asig, nombre.lower())) or self.por_nombre.get(nombre.lower())
 
     def _trabaja(self, t: str, cid: str, rol: str, justificacion: str) -> Arista:
-        return Arista(origen=t, destino=cid, tipo=TipoArista.TRABAJA, metodo="ia", rol=rol, confianza=Confianza.ALTA,
-                      justificacion=justificacion, version=self.version)
+        return Arista(
+            origen=t,
+            destino=cid,
+            tipo=TipoArista.TRABAJA,
+            metodo="ia",
+            rol=rol,
+            confianza=Confianza.ALTA,
+            justificacion=justificacion,
+            version=self.version,
+        )
 
     def _agregar_conceptos(self, t: str, nombres: list[str]) -> None:
         for nombre in nombres:
@@ -199,21 +302,31 @@ class _Simulacion:
                 self.sin_resolver.append(nombre)
 
     def _sin_trabaja(self, temas: list[str], conceptos: set[str]) -> None:
-        """Retira las aristas TRABAJA de esos temas hacia esos conceptos."""
-        self.aristas = [x for x in self.aristas if not (x.origen in temas and x.destino in conceptos
-                                                        and x.tipo == TipoArista.TRABAJA)]
+        """Remove selected topic-to-concept teaching edges."""
+        self.aristas = [
+            x
+            for x in self.aristas
+            if not (x.origen in temas and x.destino in conceptos and x.tipo == TipoArista.TRABAJA)
+        ]
 
     def aplicar(self, a: dict) -> None:
+        """Apply one explicit curriculum proposal action to the in-memory graph."""
+
         afectados = [f"TEMA:{t}" for t in a.get("temas_afectados", [])]
         if a.get("quitar_conceptos"):
             self._quitar(a, afectados)
-        accion = {"mover": self._mover, "fusionar": self._fusionar, "revisar": self._revisar,
-                  "dividir": self._dividir, "nuevo": self._nuevo}.get(a["accion"])
+        accion = {
+            "mover": self._mover,
+            "fusionar": self._fusionar,
+            "revisar": self._revisar,
+            "dividir": self._dividir,
+            "nuevo": self._nuevo,
+        }.get(a["accion"])
         if accion:
             accion(a, afectados)
 
     def _quitar(self, a: dict, afectados: list[str]) -> None:
-        """Cualquier acción puede retirar etiquetas que no corresponden al tema reformulado."""
+        """Remove inappropriate concept labels explicitly named by a proposal action."""
         quitar = {self.resolver(n, a.get("origen")) for n in a["quitar_conceptos"]} - {None}
         self.sin_resolver += [n for n in a["quitar_conceptos"] if self.resolver(n) is None]
         antes = len(self.aristas)
@@ -229,12 +342,15 @@ class _Simulacion:
                 self._agregar_conceptos(t, a.get("conceptos", []))
 
     def _fusionar(self, a: dict, afectados: list[str]) -> None:
-        """El tema que queda hereda los conceptos de los absorbidos (y los que nombra la acción)."""
+        """Merge topics while retaining absorbed and explicitly proposed concept labels."""
         if len(afectados) <= 1:
             return
         queda = afectados[0]
-        heredadas = [x.model_copy(update={"origen": queda}) for x in self.aristas
-                     if x.origen in afectados[1:] and x.tipo == TipoArista.TRABAJA]
+        heredadas = [
+            x.model_copy(update={"origen": queda})
+            for x in self.aristas
+            if x.origen in afectados[1:] and x.tipo == TipoArista.TRABAJA
+        ]
         for t in afectados[1:]:
             self.nodos.pop(t, None)
         self.aristas = [x for x in self.aristas if x.origen in self.nodos and x.destino in self.nodos] + heredadas
@@ -243,12 +359,12 @@ class _Simulacion:
             self.nodos[queda].grado = a["grado_propuesto"]
 
     def _revisar(self, a: dict, afectados: list[str]) -> None:
-        """Reformular un tema: pasa a trabajar también los conceptos de la acción."""
+        """Add the action's concepts to the reformulated curriculum topic."""
         for t in afectados:
             self._agregar_conceptos(t, a.get("conceptos", []))
 
     def _dividir(self, a: dict, afectados: list[str]) -> None:
-        """Los conceptos de la acción se van al tema nuevo (en su grado) y salen del original."""
+        """Move selected concepts from the original topic to a new grade-specific topic."""
         if not afectados:
             return
         self._sin_trabaja(afectados, {self.resolver(n) for n in a.get("conceptos", [])} - {None})
@@ -262,25 +378,29 @@ class _Simulacion:
         for i, nombre in enumerate(a.get("conceptos", [])):
             cid = self.resolver(nombre)
             if cid:
-                self.aristas.append(self._trabaja(tid, cid, "principal" if i == 0 else "secundario",
-                                                  "Tema propuesto (simulación)."))
+                self.aristas.append(
+                    self._trabaja(tid, cid, "principal" if i == 0 else "secundario", "Tema propuesto (simulación).")
+                )
             else:
                 self.sin_resolver.append(nombre)
 
     def _tema_nuevo(self, a: dict, grado: int) -> str:
         tid = f"TEMA:PROP-{self.asig}-{a['n']}"
-        self.nodos[tid] = Nodo(id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=self.asig,
-                               grado=grado)
+        self.nodos[tid] = Nodo(
+            id=tid, tipo=TipoNodo.TEMA, etiqueta=a.get("tema_propuesto", ""), asignatura=self.asig, grado=grado
+        )
         return tid
 
 
 def _quitas_de_otras_asignaturas(asig: str, g0: int, g1: int, sim: _Simulacion) -> list[dict]:
-    """Etiquetas que retiran las propuestas de OTRAS asignaturas del mismo ciclo (p. ej., Biología deja de tratar
-    «Química de los carbohidratos» en 10.°): afectan el primer grado de conceptos de esta asignatura.
+    """Find concept labels removed by other subjects' proposals within the same grade cycle."""
 
-    Se aplican todas las que resuelven (retirar una etiqueta es local y seguro, y puede afectar a esta asignatura vía
-    un concepto equivalente); solo se reportan las que tocan conceptos de esta asignatura o sus equivalentes. Los
-    nombres que no resuelven los reporta la otra propuesta."""
+    # Implementation notes:
+    # «Química de los carbohidratos» en 10.°): afectan el primer grado de conceptos de esta asignatura.
+    #
+    # Se aplican todas las que resuelven (retirar una etiqueta es local y seguro, y puede afectar a esta asignatura vía
+    # un concepto equivalente); solo se reportan las que tocan conceptos de esta asignatura o sus equivalentes. Los
+    # nombres que no resuelven los reporta la otra propuesta.
     relevantes = {cid for cid, c in cp.vocabulario().items() if c["asignatura"] == asig}
     relevantes |= {x for e in cp.equivalencias() if {e["a"], e["b"]} & relevantes for x in (e["a"], e["b"])}
     cruzadas = []
@@ -292,8 +412,15 @@ def _quitas_de_otras_asignaturas(asig: str, g0: int, g1: int, sim: _Simulacion) 
             validos = [n for n in a.get("quitar_conceptos", []) if sim.resolver(n, de)]
             if validos:
                 ids = {sim.resolver(n, de) for n in validos}
-                cruzadas.append({**a, "accion": "_quitar", "origen": de, "quitar_conceptos": validos,
-                                 "relevante": bool(ids & relevantes)})
+                cruzadas.append(
+                    {
+                        **a,
+                        "accion": "_quitar",
+                        "origen": de,
+                        "quitar_conceptos": validos,
+                        "relevante": bool(ids & relevantes),
+                    }
+                )
     return cruzadas
 
 
@@ -310,7 +437,7 @@ def _temas_nuevos_v2() -> dict:
     from goes_science_kg.ingesta.mallas import extraer
 
     v1 = {t.id for t in extraer("mallas_v1")}
-    return {t.id: t for t in extraer("mallas_v2") if t.id not in v1}   # la conciliación es con la V2 (spec 15)
+    return {t.id: t for t in extraer("mallas_v2") if t.id not in v1}  # la conciliación es con la V2 (spec 15)
 
 
 def _conceptos_de_tema(tid: str) -> list[str]:
@@ -321,8 +448,10 @@ def _conceptos_de_tema(tid: str) -> list[str]:
 
 
 def preparar_adopcion_v2() -> str:
-    """Lote para el especialista: cada acción «nuevo» con los temas nuevos de la V2 que comparten un concepto o
-    tienen un texto parecido (candidatos). Devuelve la ruta relativa."""
+    """Prepare reconciliation between proposed additions and topics introduced in V2."""
+
+    # Implementation notes:
+    # tienen un texto parecido (candidatos). Devuelve la ruta relativa.
     import difflib
     import re
 
@@ -340,25 +469,49 @@ def preparar_adopcion_v2() -> str:
             candidatos = []
             for i, t in sorted(nuevos.items()):
                 comunes = sorted(set(a.get("conceptos", [])) & set(conceptos_v2[i]))
-                if comunes or difflib.SequenceMatcher(None, norma(a["tema_propuesto"]),
-                                                       norma(t.procedimental)).ratio() >= 0.5:
-                    candidatos.append({"id": i, "grado": t.grado, "unidad": t.unidad, "procedimental": t.procedimental,
-                                       "indicador": t.indicador, "conceptos": conceptos_v2[i],
-                                       "conceptos_compartidos": comunes})
-            items.append({"clave": f"{asig}:{ciclo}#{a['n']}", "asignatura": asig, "ciclo": ciclo, "accion": a["n"],
-                          "grado_propuesto": a["grado_propuesto"], "tema_propuesto": a["tema_propuesto"],
-                          "indicador_logro": a.get("indicador_logro"), "conceptos": a.get("conceptos", []),
-                          "candidatos_v2": candidatos})
+                if (
+                    comunes
+                    or difflib.SequenceMatcher(None, norma(a["tema_propuesto"]), norma(t.procedimental)).ratio() >= 0.5
+                ):
+                    candidatos.append(
+                        {
+                            "id": i,
+                            "grado": t.grado,
+                            "unidad": t.unidad,
+                            "procedimental": t.procedimental,
+                            "indicador": t.indicador,
+                            "conceptos": conceptos_v2[i],
+                            "conceptos_compartidos": comunes,
+                        }
+                    )
+            items.append(
+                {
+                    "clave": f"{asig}:{ciclo}#{a['n']}",
+                    "asignatura": asig,
+                    "ciclo": ciclo,
+                    "accion": a["n"],
+                    "grado_propuesto": a["grado_propuesto"],
+                    "tema_propuesto": a["tema_propuesto"],
+                    "indicador_logro": a.get("indicador_logro"),
+                    "conceptos": a.get("conceptos", []),
+                    "candidatos_v2": candidatos,
+                }
+            )
     destino = ruta(DIR_ADOPCION) / "lote_adopcion_v2.json"
     destino.parent.mkdir(parents=True, exist_ok=True)
-    destino.write_text(json.dumps({"lote": "adopcion_v2", "version": VERSION_ADOPCION, "items": items},
-                                  ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    destino.write_text(
+        json.dumps({"lote": "adopcion_v2", "version": VERSION_ADOPCION, "items": items}, ensure_ascii=False, indent=1)
+        + "\n",
+        encoding="utf-8",
+    )
     return relativa(destino)
 
 
 def errores_adopcion(lote: dict, salida: list[dict]) -> list[str]:
-    """Errores de la salida del lote de conciliación: los que hacen fallar unir_adopcion_v2 (y que revisa
-    `gskg lotes validar` al terminar el subagente conciliador-propuestas)."""
+    """Return reconciliation-batch errors under the adoption consolidation contract."""
+
+    # Implementation notes:
+    # `gskg lotes validar` al terminar el subagente conciliador-propuestas).
     items, por_clave = {i["clave"]: i for i in lote["items"]}, {s.get("clave"): s for s in salida}
     errores = [f"falta {c}" for c in sorted(items.keys() - por_clave.keys())]
     for clave in sorted(items.keys() & por_clave.keys()):
@@ -375,7 +528,7 @@ def errores_adopcion(lote: dict, salida: list[dict]) -> list[str]:
 
 
 def unir_adopcion_v2() -> dict:
-    """Valida la salida del especialista contra el lote y escribe adopcion_v2.json. Lanza ValueError si hay errores."""
+    """Validate the specialist's complete reconciliation before writing adoption records."""
     d = ruta(DIR_ADOPCION)
     datos_lote = json.loads((d / "lote_adopcion_v2.json").read_text(encoding="utf-8"))
     lista = json.loads((d / "salida_adopcion_v2.json").read_text(encoding="utf-8"))
@@ -384,10 +537,20 @@ def unir_adopcion_v2() -> dict:
     filas = []
     for clave in sorted(lote.keys() & salida.keys()):
         s = salida[clave]
-        filas.append({"clave": clave, "asignatura": lote[clave]["asignatura"], "ciclo": lote[clave]["ciclo"],
-                      "accion": lote[clave]["accion"], "estado": s.get("estado"),
-                      "temas_v2": sorted(s.get("temas_v2", [])), "confianza": s.get("confianza"),
-                      "justificacion": s.get("justificacion"), "version": VERSION_ADOPCION, "revisado_por": ""})
+        filas.append(
+            {
+                "clave": clave,
+                "asignatura": lote[clave]["asignatura"],
+                "ciclo": lote[clave]["ciclo"],
+                "accion": lote[clave]["accion"],
+                "estado": s.get("estado"),
+                "temas_v2": sorted(s.get("temas_v2", [])),
+                "confianza": s.get("confianza"),
+                "justificacion": s.get("justificacion"),
+                "version": VERSION_ADOPCION,
+                "revisado_por": "",
+            }
+        )
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     (d / "adopcion_v2.json").write_text(json.dumps(filas, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -395,16 +558,18 @@ def unir_adopcion_v2() -> dict:
 
 
 def adopcion_v2() -> dict[tuple[str, str, int], dict]:
-    """Conciliación por (asignatura, ciclo, n.° de acción); vacía si aún no existe."""
+    """Load adoption reconciliation by subject, cycle, and action number."""
     p = ruta(ADOPCION_V2)
     filas = json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
     return {(f["asignatura"], f["ciclo"], f["accion"]): f for f in filas}
 
 
 def simular(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista]) -> dict:
-    """Aplica mover / nuevo / fusionar / dividir / revisar (y quitar_conceptos) al grafo en memoria y compara
-    métricas antes y después. Las acciones que la V2 ya adoptó en el mismo grado no se aplican: su tema ya está
-    en la malla y en el «antes»."""
+    """Apply proposal actions in memory and compare their graph-level effects."""
+
+    # Implementation notes:
+    # métricas antes y después. Las acciones que la V2 ya adoptó en el mismo grado no se aplican: su tema ya está
+    # en la malla y en el «antes».
     ciclo = f"G{g0:02d}-G{g1:02d}"
     p = json.loads((ruta(f"asignaturas/{asig}/propuesta") / f"propuesta_{ciclo}.json").read_text(encoding="utf-8"))
     adopcion = adopcion_v2()
@@ -417,17 +582,33 @@ def simular(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista
     antes = _metricas(asig, g0, g1, nodos, aristas)
     despues = _metricas(asig, g0, g1, nuevos, sim.aristas)
     ev = evidencia_orden(nuevos, sim.aristas)
-    pendientes = [s for s in analizar(asig, nuevos, sim.aristas, ev)["secuencia"]
-                  if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"]
-    return {"antes": antes, "despues": despues, "secuencia_alta_pendiente": pendientes,
-            "acciones_ya_en_v2": sorted(a["n"] for a in p["acciones"] if a not in acciones),
-            "conceptos_no_resueltos": sorted(set(sim.sin_resolver)), "etiquetas_retiradas": sim.retiradas,
-            "quitas_de_otras_asignaturas": [{"asignatura": a["origen"], "accion": a["n"], "temas": a["temas_afectados"],
-                                             "conceptos": a["quitar_conceptos"]} for a in cruzadas if a["relevante"]]}
+    pendientes = [
+        s
+        for s in analizar(asig, nuevos, sim.aristas, ev)["secuencia"]
+        if g0 <= s["grado_concepto"] <= g1 and s["confianza"] == "alta"
+    ]
+    return {
+        "antes": antes,
+        "despues": despues,
+        "secuencia_alta_pendiente": pendientes,
+        "acciones_ya_en_v2": sorted(a["n"] for a in p["acciones"] if a not in acciones),
+        "conceptos_no_resueltos": sorted(set(sim.sin_resolver)),
+        "etiquetas_retiradas": sim.retiradas,
+        "quitas_de_otras_asignaturas": [
+            {
+                "asignatura": a["origen"],
+                "accion": a["n"],
+                "temas": a["temas_afectados"],
+                "conceptos": a["quitar_conceptos"],
+            }
+            for a in cruzadas
+            if a["relevante"]
+        ],
+    }
 
 
 def escribir_simulacion(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista]) -> dict:
-    """Recalcula y publica la simulación vinculada al grafo persistido, sin adoptar resultados antiguos."""
+    """Recalculate and publish a simulation bound to the persisted graph."""
     from goes_science_kg.publicacion_api import comprobar_entrada, publicar_articulo
 
     huellas = comprobar_entrada(nodos, aristas)
@@ -442,12 +623,16 @@ def escribir_simulacion(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas:
 
 
 # -- Resumen de todas las propuestas -----------------------------------------------------------------
-NOMBRES = {"biologia": "Biología", "fisica": "Física", "quimica": "Química",
-           "ciencias_tierra_espacio": "Tierra y Espacio"}
+NOMBRES = {
+    "biologia": "Biología",
+    "fisica": "Física",
+    "quimica": "Química",
+    "ciencias_tierra_espacio": "Tierra y Espacio",
+}
 
 
 def escribir_resumen() -> str:
-    """Escribe asignaturas/PROPUESTAS.md con el antes → después de cada simulación. Devuelve la ruta relativa."""
+    """Write the before-and-after summary of every curriculum proposal simulation."""
     filas, adoptadas = [], []
     adopcion = adopcion_v2()
     for p in sorted(ruta("asignaturas").glob("*/propuesta/simulacion_G*.json")):
@@ -459,61 +644,97 @@ def escribir_resumen() -> str:
         ant, des = s["antes"], s["despues"]
         tarde = "n/a" if g0 >= 10 else f"{ant['llega_tarde_2mas']} → **{des['llega_tarde_2mas']}**"
         desfase = "n/a" if g0 >= 10 else f"{ant['desfase_medio']} → **{des['desfase_medio']}**"
-        estados = Counter(adopcion[(asig, ciclo, a["n"])]["estado"] for a in pr["acciones"]
-                          if (asig, ciclo, a["n"]) in adopcion)
-        en_v2 = f"{estados['adoptada']} + {estados['adoptada_otro_grado']} + {estados['parcial']} de {acc['nuevo']}" \
-            if acc["nuevo"] else "—"
-        filas.append(f"| {NOMBRES[asig]} | {g0}.°–{g1}.° | {len(pr['acciones'])} ("
-                     + ", ".join(f"{k} {v}" for k, v in sorted(acc.items())) + f") | {en_v2} | "
-                     f"{ant['secuencia_alta_en_ciclo']} → **{des['secuencia_alta_en_ciclo']}** | {tarde} | {desfase} | "
-                     f"[informe]({asig}/propuesta/informe_{ciclo}.md) · "
-                     f"[Excel]({asig}/propuesta/Propuesta_{asig.capitalize()}_{ciclo}.xlsx) |")
+        estados = Counter(
+            adopcion[(asig, ciclo, a["n"])]["estado"] for a in pr["acciones"] if (asig, ciclo, a["n"]) in adopcion
+        )
+        en_v2 = (
+            f"{estados['adoptada']} + {estados['adoptada_otro_grado']} + {estados['parcial']} de {acc['nuevo']}"
+            if acc["nuevo"]
+            else "—"
+        )
+        filas.append(
+            f"| {NOMBRES[asig]} | {g0}.°–{g1}.° | {len(pr['acciones'])} ("
+            + ", ".join(f"{k} {v}" for k, v in sorted(acc.items()))
+            + f") | {en_v2} | "
+            f"{ant['secuencia_alta_en_ciclo']} → **{des['secuencia_alta_en_ciclo']}** | {tarde} | {desfase} | "
+            f"[informe]({asig}/propuesta/informe_{ciclo}.md) · "
+            f"[Excel]({asig}/propuesta/Propuesta_{asig.capitalize()}_{ciclo}.xlsx) |"
+        )
         for a in pr["acciones"]:
             f = adopcion.get((asig, ciclo, a["n"]))
             if f and f["estado"] != "no_adoptada":
-                adoptadas.append(f"| {NOMBRES[asig]} {g0}.°–{g1}.° | {a['n']} | {a['grado_propuesto']}.° | "
-                                 f"{a['tema_propuesto'][:90]} | {f['estado'].replace('_', ' ')} | "
-                                 f"{', '.join(f['temas_v2'])} | {f['confianza']} |")
-    md = ["# Propuestas curriculares (borrador) · resumen", "",
-          "Borradores por asignatura y ciclo, generados con el grafo de conocimiento (spec 06). Estado: **borrador**, "
-          "pendiente de la revisión del equipo de Ciencias del MINED. Ninguno quita temas y todos conservan el "
-          "total de su ciclo.", "",
-          "**Malla V2.** Las propuestas se escribieron sobre la V1 (2026-10-05). La V2 del MINED (2026-10-07) conserva "
-          "la V1 y agrega 47 temas, varios de ellos acciones «nuevo» de estas propuestas. La simulación corre sobre la "
-          "V2: el «antes» ya incluye lo que el MINED adoptó y las acciones adoptadas en el mismo grado no se vuelven a "
-          "aplicar. La conciliación acción por acción está al final.", "",
-          "**Verificación:** `gskg propuesta simular` aplica las acciones sobre el grafo (mover, fusionar, crear, "
-          "reformular, dividir y retirar etiquetas que un tema reformulado deja de trabajar), recalcula el diagnóstico "
-          "y compara antes y después. También aplica las etiquetas que retiran las propuestas de otras asignaturas del "
-          "mismo ciclo (p. ej., Biología 10.° deja de tratar la química de los carbohidratos):", "",
-          "- *Errores de secuencia (alta)*: prerrequisitos de confianza alta que la malla enseña después del concepto "
-          "que los necesita. Los que quedan son decisiones abiertas en cada informe.",
-          "- *Llegan ≥2 grados tarde*: conceptos del ciclo que El Salvador introduce dos o más grados después que la "
-          "mediana de los seis países del grafo (Uruguay, Colombia, Singapur, Inglaterra, Australia y Japón), con "
-          "grados equivalentes por edad. No aplica (n/a) en 10.°–11.°, porque los currículos de los países en el grafo "
-          "llegan solo a 9.°.",
-          "- *Desfase medio*: promedio de |grado SV − mediana de países| de los conceptos comparables del ciclo.", "",
-          "- *Ya en la V2*: de las acciones «nuevo», cuántas adoptó el MINED en el mismo grado + en otro grado + en "
-          "parte.", "",
-          "| Asignatura | Ciclo | Acciones | Ya en la V2 | Errores de secuencia (alta) | Llegan ≥2 grados tarde "
-          "| Desfase medio | Documentos |", "|---|---|---|---|---|---|---|---|", *filas, "",
-          "Notas:",
-          *([] if ruta("asignaturas/quimica/propuesta/propuesta_G02-G04.json").exists() else [
-              "- **Química 2.°–4.°** no tiene propuesta: la malla no tiene Química en 4.° y no hay conceptos que "
-              "lleguen tarde."]),
-          "- **Tierra y Espacio 5.°–8.°** casi no reduce los conceptos que llegan tarde: a propósito mueve la unidad "
-          "del espacio de 5.° a 6.° para que la gravedad y las órbitas vayan antes.",
-          "- Las propuestas de 2.°–8.° usan los 6 países (Singapur, Inglaterra, Australia y Japón son de alto "
-          "desempeño); las de 10.°–11.° se basan en los marcos (ACARA y TIMSS Advanced).",
-          "- Los errores de secuencia que quedan se explican en cada informe (introducciones cualitativas o etiquetas "
-          "por revisar). Cada informe lista sus **decisiones abiertas para el MINED**.",
-          "- Las propuestas de un ciclo afectan a los siguientes (por ejemplo, si un tema baja a 5.°, el de 9.° debe "
-          "profundizar). Coordinarlas es parte de la revisión (ver `HANDOFF.md`).", "",
-          *(["## Acciones que la V2 ya incorporó", "",
-             "Conciliación de cada acción «nuevo» con los 47 temas que agregó la V2 (juicio de especialista IA, "
-             f"`{ADOPCION_V2}`; pendiente de confirmar con el MINED). Las demás acciones siguen pendientes.", "",
-             "| Propuesta | Acción | Grado propuesto | Tema propuesto | Estado | Tema de la V2 | Confianza |",
-             "|---|---|---|---|---|---|---|", *adoptadas, ""] if adoptadas else [])]
+                adoptadas.append(
+                    f"| {NOMBRES[asig]} {g0}.°–{g1}.° | {a['n']} | {a['grado_propuesto']}.° | "
+                    f"{a['tema_propuesto'][:90]} | {f['estado'].replace('_', ' ')} | "
+                    f"{', '.join(f['temas_v2'])} | {f['confianza']} |"
+                )
+    md = [
+        "# Propuestas curriculares (borrador) · resumen",
+        "",
+        "Borradores por asignatura y ciclo, generados con el grafo de conocimiento (spec 06). Estado: **borrador**, "
+        "pendiente de la revisión del equipo de Ciencias del MINED. Ninguno quita temas y todos conservan el "
+        "total de su ciclo.",
+        "",
+        "**Malla V2.** Las propuestas se escribieron sobre la V1 (2026-10-05). La V2 del MINED (2026-10-07) conserva "
+        "la V1 y agrega 47 temas, varios de ellos acciones «nuevo» de estas propuestas. La simulación corre sobre la "
+        "V2: el «antes» ya incluye lo que el MINED adoptó y las acciones adoptadas en el mismo grado no se vuelven a "
+        "aplicar. La conciliación acción por acción está al final.",
+        "",
+        "**Verificación:** `gskg propuesta simular` aplica las acciones sobre el grafo (mover, fusionar, crear, "
+        "reformular, dividir y retirar etiquetas que un tema reformulado deja de trabajar), recalcula el diagnóstico "
+        "y compara antes y después. También aplica las etiquetas que retiran las propuestas de otras asignaturas del "
+        "mismo ciclo (p. ej., Biología 10.° deja de tratar la química de los carbohidratos):",
+        "",
+        "- *Errores de secuencia (alta)*: prerrequisitos de confianza alta que la malla enseña después del concepto "
+        "que los necesita. Los que quedan son decisiones abiertas en cada informe.",
+        "- *Llegan ≥2 grados tarde*: conceptos del ciclo que El Salvador introduce dos o más grados después que la "
+        "mediana de los seis países del grafo (Uruguay, Colombia, Singapur, Inglaterra, Australia y Japón), con "
+        "grados equivalentes por edad. No aplica (n/a) en 10.°–11.°, porque los currículos de los países en el grafo "
+        "llegan solo a 9.°.",
+        "- *Desfase medio*: promedio de |grado SV − mediana de países| de los conceptos comparables del ciclo.",
+        "",
+        "- *Ya en la V2*: de las acciones «nuevo», cuántas adoptó el MINED en el mismo grado + en otro grado + en "
+        "parte.",
+        "",
+        "| Asignatura | Ciclo | Acciones | Ya en la V2 | Errores de secuencia (alta) | Llegan ≥2 grados tarde "
+        "| Desfase medio | Documentos |",
+        "|---|---|---|---|---|---|---|---|",
+        *filas,
+        "",
+        "Notas:",
+        *(
+            []
+            if ruta("asignaturas/quimica/propuesta/propuesta_G02-G04.json").exists()
+            else [
+                "- **Química 2.°–4.°** no tiene propuesta: la malla no tiene Química en 4.° y no hay conceptos que "
+                "lleguen tarde."
+            ]
+        ),
+        "- **Tierra y Espacio 5.°–8.°** casi no reduce los conceptos que llegan tarde: a propósito mueve la unidad "
+        "del espacio de 5.° a 6.° para que la gravedad y las órbitas vayan antes.",
+        "- Las propuestas de 2.°–8.° usan los 6 países (Singapur, Inglaterra, Australia y Japón son de alto "
+        "desempeño); las de 10.°–11.° se basan en los marcos (ACARA y TIMSS Advanced).",
+        "- Los errores de secuencia que quedan se explican en cada informe (introducciones cualitativas o etiquetas "
+        "por revisar). Cada informe lista sus **decisiones abiertas para el MINED**.",
+        "- Las propuestas de un ciclo afectan a los siguientes (por ejemplo, si un tema baja a 5.°, el de 9.° debe "
+        "profundizar). Coordinarlas es parte de la revisión (ver `HANDOFF.md`).",
+        "",
+        *(
+            [
+                "## Acciones que la V2 ya incorporó",
+                "",
+                "Conciliación de cada acción «nuevo» con los 47 temas que agregó la V2 (juicio de especialista IA, "
+                f"`{ADOPCION_V2}`; pendiente de confirmar con el MINED). Las demás acciones siguen pendientes.",
+                "",
+                "| Propuesta | Acción | Grado propuesto | Tema propuesto | Estado | Tema de la V2 | Confianza |",
+                "|---|---|---|---|---|---|---|",
+                *adoptadas,
+                "",
+            ]
+            if adoptadas
+            else []
+        ),
+    ]
     p = ruta("asignaturas/PROPUESTAS.md")
     p.write_text("\n".join(md), encoding="utf-8")
     return relativa(p)

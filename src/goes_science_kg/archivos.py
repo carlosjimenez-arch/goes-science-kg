@@ -1,4 +1,4 @@
-"""Escritura de resultados derivados fuera de fuentes, código, configuración y evaluaciones."""
+"""Write derived artifacts outside protected sources, code, configuration, and evaluations."""
 
 from __future__ import annotations
 
@@ -28,6 +28,8 @@ PROTEGIDAS = (
 
 
 def destino_generado(salida: Path, *, extension: str | None = None, raiz: Path | None = None) -> Path:
+    """Validate an output destination outside protected source and evaluation paths."""
+
     if salida.is_symlink():
         raise ValueError("La salida debe ser un archivo propio, no un enlace simbólico")
     destino = salida.resolve()
@@ -46,6 +48,8 @@ def destino_generado(salida: Path, *, extension: str | None = None, raiz: Path |
 def escribir_texto_generado(
     salida: Path, texto: str, *, extension: str | None = None, raiz: Path | None = None
 ) -> Path:
+    """Write derived text only after validating its destination."""
+
     destino = destino_generado(salida, extension=extension, raiz=raiz)
     destino.parent.mkdir(parents=True, exist_ok=True)
     temporal = destino.with_name(f".{destino.name}.{uuid4().hex}.tmp")

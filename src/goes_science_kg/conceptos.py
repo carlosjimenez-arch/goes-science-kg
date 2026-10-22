@@ -1,19 +1,19 @@
-"""Capa de conceptos y prácticas (fase 3; skill grafo-conceptos).
+"""Manage curriculum concepts and scientific practices."""
 
-Un CONCEPTO es una idea científica enseñable y evaluable («fotosíntesis», «modelo de partículas»,
-«circuito en serie»). Una PRÁCTICA es una práctica científica transversal («controlar variables»,
-«construir explicaciones con evidencia»). Ninguno es un tema ni una actividad.
-
-Flujo (cada paso de IA lo hace un subagente; los pasos deterministas, este módulo):
-1. preparar_vocabulario()  → data/interim/conceptos/insumos/<asignatura>.json  (objetivos de los marcos)
-   subagente               → data/interim/conceptos/vocabulario_<asignatura>.json y practicas.json
-2. preparar_etiquetado()   → data/interim/conceptos/lotes/lote_<asig>_G<grado>.json (temas + vocabulario)
-   subagente               → salida_<asig>_G<grado>.json
-                             [{id, conceptos[], practicas[], nuevos[], confianza, justificacion}]
-3. unir_etiquetado()       → data/interim/conceptos/etiquetado_temas.json (validado: ids y códigos)
-
-El grafo (grafo/construir.py) lee el vocabulario y el etiquetado consolidados.
-"""
+# Historical implementation notes:
+# Un CONCEPTO es una idea científica enseñable y evaluable («fotosíntesis», «modelo de partículas»,
+# «circuito en serie»). Una PRÁCTICA es una práctica científica transversal («controlar variables»,
+# «construir explicaciones con evidencia»). Ninguno es un tema ni una actividad.
+#
+# Flujo (cada paso de IA lo hace un subagente; los pasos deterministas, este módulo):
+# 1. preparar_vocabulario()  → data/interim/conceptos/insumos/<asignatura>.json  (objetivos de los marcos)
+#    subagente               → data/interim/conceptos/vocabulario_<asignatura>.json y practicas.json
+# 2. preparar_etiquetado()   → data/interim/conceptos/lotes/lote_<asig>_G<grado>.json (temas + vocabulario)
+#    subagente               → salida_<asig>_G<grado>.json
+#                              [{id, conceptos[], practicas[], nuevos[], confianza, justificacion}]
+# 3. unir_etiquetado()       → data/interim/conceptos/etiquetado_temas.json (validado: ids y códigos)
+#
+# El grafo (grafo/construir.py) lee el vocabulario y el etiquetado consolidados.
 
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ CONFIANZAS = {"alta", "media", "baja"}
 
 
 def slug(texto: str) -> str:
-    """Texto en ASCII y minúsculas, con guiones en lugar de lo que no sea letra o dígito (máx. 60 caracteres)."""
+    """Create a bounded lowercase ASCII slug using hyphen-separated tokens."""
     t = unicodedata.normalize("NFKD", texto.lower()).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:60]
 
@@ -53,22 +53,30 @@ def _leer(rel: str):
 
 # -- 1. vocabulario -----------------------------------------------------------------------------
 def preparar_vocabulario(nodos: list[Nodo]) -> list[str]:
-    """Un insumo por asignatura con todos sus objetivos de marco (texto + subítems) y las unidades SV."""
+    """Prepare each subject's framework objectives and local units for vocabulary design."""
 
     escritos = []
     for asig in cargar("asignaturas")["asignaturas"]:
-        objs = [n for n in nodos if n.tipo == TipoNodo.OBJETIVO_MARCO and n.asignatura == asig
-                and n.props.get("marco") != "T23"]
+        objs = [
+            n
+            for n in nodos
+            if n.tipo == TipoNodo.OBJETIVO_MARCO and n.asignatura == asig and n.props.get("marco") != "T23"
+        ]
         temas = [n for n in nodos if n.tipo == TipoNodo.TEMA and n.asignatura == asig]
         unidades = Counter((t.grado, t.props.get("unidad")) for t in temas)
         insumo = {
             "asignatura": asig,
-            "objetivos_marco": [{
-                "codigo": o.id.removeprefix("OBJ:"), "marco": o.props["marco"], "texto": o.etiqueta,
-                "area": o.props.get("area") or o.props.get("tema") or o.props.get("grupo"),
-                "eje": o.props.get("eje"),
-                "subitems": [s["texto"] for s in o.props.get("subitems", [])],
-            } for o in sorted(objs, key=lambda x: x.id)],
+            "objetivos_marco": [
+                {
+                    "codigo": o.id.removeprefix("OBJ:"),
+                    "marco": o.props["marco"],
+                    "texto": o.etiqueta,
+                    "area": o.props.get("area") or o.props.get("tema") or o.props.get("grupo"),
+                    "eje": o.props.get("eje"),
+                    "subitems": [s["texto"] for s in o.props.get("subitems", [])],
+                }
+                for o in sorted(objs, key=lambda x: x.id)
+            ],
             "unidades_malla_sv": [{"grado": g, "unidad": u, "temas": k} for (g, u), k in sorted(unidades.items())],
         }
         escritos.append(relativa(_escribir(f"{DIR}/insumos/{asig}.json", insumo)))
@@ -77,7 +85,7 @@ def preparar_vocabulario(nodos: list[Nodo]) -> list[str]:
 
 @cache
 def vocabulario() -> dict[str, dict]:
-    """Conceptos consolidados (id → concepto), más los conceptos nuevos del triaje. Vacío si aún no existe."""
+    """Load consolidated vocabulary and explicitly admitted triage concepts."""
     p = ruta(f"{DIR}/vocabulario.json")
     voc = {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
     for c in conceptos_del_triaje():
@@ -85,8 +93,16 @@ def vocabulario() -> dict[str, dict]:
     for d in divisiones():
         if d["concepto"] in voc:
             voc[d["concepto"]] = {**voc[d["concepto"]], **d["redefinir"]}
-            voc.setdefault(d["nuevo"]["id"], {"sinonimos": [], "objetivos_marco": [], "origen": "division",
-                                              "version": VERSION_DIVISION, **d["nuevo"]})
+            voc.setdefault(
+                d["nuevo"]["id"],
+                {
+                    "sinonimos": [],
+                    "objetivos_marco": [],
+                    "origen": "division",
+                    "version": VERSION_DIVISION,
+                    **d["nuevo"],
+                },
+            )
     return voc
 
 
@@ -99,18 +115,20 @@ VERSION_DIVISION = "division-v1"
 
 @cache
 def divisiones() -> tuple[dict, ...]:
-    """Decisiones de división de conceptos. Vacío si no existe; con caché."""
+    """Load cached concept-splitting decisions or return an empty collection."""
     p = ruta(f"{DIR}/divisiones.json")
     return tuple(json.loads(p.read_text(encoding="utf-8"))["divisiones"]) if p.exists() else ()
 
 
 def aplicar_divisiones(conjunto: str, item: str, ids: list[str]) -> list[str]:
-    """Reemplaza en `ids` cada concepto dividido por los que la decisión asigna a `item` dentro de `conjunto`
-    (malla_v1, objetivos_pais, internacional o malla_v2), en la misma posición. Sin asignación, no cambia nada."""
+    """Replace split concepts using the explicit item-specific allocation decision."""
+
+    # Implementation notes:
+    # (malla_v1, objetivos_pais, internacional o malla_v2), en la misma posición. Sin asignación, no cambia nada.
     for d in divisiones():
         if d["concepto"] in ids and (nuevos := d["asignaciones"].get(conjunto, {}).get(item)):
             i = ids.index(d["concepto"])
-            ids = list(dict.fromkeys([*ids[:i], *nuevos, *ids[i + 1:]]))
+            ids = list(dict.fromkeys([*ids[:i], *nuevos, *ids[i + 1 :]]))
     return ids
 
 
@@ -124,7 +142,7 @@ VERSION_TRIAJE = "triaje-v1"
 
 @cache
 def triaje() -> list[dict]:
-    """Decisiones del triaje de conceptos propuestos, sin las de confianza baja. Vacío si no existe; con caché."""
+    """Load concept-triage decisions while excluding low-confidence proposals."""
     p = ruta(f"{DIR}/triaje_propuestos.json")
     return [t for t in json.loads(p.read_text(encoding="utf-8")) if t.get("confianza") != "baja"] if p.exists() else []
 
@@ -137,55 +155,72 @@ def _id_triaje(t: dict) -> str | None:
 
 @cache
 def conceptos_del_triaje() -> tuple[dict, ...]:
-    """Conceptos que el triaje decidió crear («nuevo»), uno por id con sus sinónimos y prerrequisitos sugeridos
-    acumulados; ordenados por id y con caché."""
+    """Return triage-approved new concepts with synonyms and suggested prerequisites."""
+
+    # Implementation notes:
+    # acumulados; ordenados por id y con caché.
     nuevos: dict[str, dict] = {}
     for t in triaje():
         if t["decision"] != "nuevo":
             continue
-        c = nuevos.setdefault(_id_triaje(t), {
-            "id": _id_triaje(t), "nombre": t["nombre"], "definicion": t["definicion"], "sinonimos": [],
-            "objetivos_marco": [], "origen": "triaje", "nivel": None, "asignatura": t["asignatura"],
-            "version": VERSION_TRIAJE, "prerrequisitos_sugeridos": []})
+        c = nuevos.setdefault(
+            _id_triaje(t),
+            {
+                "id": _id_triaje(t),
+                "nombre": t["nombre"],
+                "definicion": t["definicion"],
+                "sinonimos": [],
+                "objetivos_marco": [],
+                "origen": "triaje",
+                "nivel": None,
+                "asignatura": t["asignatura"],
+                "version": VERSION_TRIAJE,
+                "prerrequisitos_sugeridos": [],
+            },
+        )
         c["sinonimos"] = sorted({*c["sinonimos"], *(x for x in t.get("agrupa", [t["propuesto"]]) if x != t["nombre"])})
         c["prerrequisitos_sugeridos"] = sorted({*c["prerrequisitos_sugeridos"], *t.get("prerrequisitos_sugeridos", [])})
     return tuple(nuevos[k] for k in sorted(nuevos))
 
 
 def mapa_triaje() -> dict[str, str]:
-    """Nombre propuesto → id de concepto (nuevo, sinónimo o concepto del que es un detalle)."""
+    """Map proposed names to their resolved concept identities."""
     return {t["propuesto"]: cid for t in triaje() if (cid := _id_triaje(t))}
 
 
 @cache
 def equivalencias() -> list[dict]:
-    """Pares de conceptos equivalentes entre asignaturas (misma idea en dos vocabularios)."""
+    """Load explicit cross-subject concept equivalence pairs."""
     p = ruta(f"{DIR}/equivalencias.json")
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
 
 
 def partes() -> list[dict]:
-    """Relaciones «parte de» entre conceptos vecinos (capa de decisión, partes.json): enseñar la parte cuenta como
-    enseñar el todo, no al revés (la conservación de la energía mecánica es parte de la conservación de la energía).
-    Solo las usa el contraste internacional con doble lectura (spec 12)."""
+    """Load directional part-of decisions used by the historical international contrast."""
+
+    # Implementation notes:
+    # enseñar el todo, no al revés (la conservación de la energía mecánica es parte de la conservación de la energía).
+    # Solo las usa el contraste internacional con doble lectura (spec 12).
     p = ruta(f"{DIR}/partes.json")
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
 
 
 @cache
 def practicas() -> dict[str, dict]:
-    """Prácticas científicas (id → práctica). Vacío si aún no existe; con caché."""
+    """Load cached scientific practices or return an empty collection."""
     p = ruta(f"{DIR}/practicas.json")
     return {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
 def consolidar_vocabulario() -> dict:
-    """Une vocabulario_<asig>.json en vocabulario.json, validando ids, asignaturas y códigos de marco."""
+    """Validate and merge subject vocabularies and framework codes."""
 
-    codigos = ({o["codigo"] for o in legado.catalogo_timss2027()}
-               | {o["codigo"] for o in legado.catalogo_timss_v1() if o["marco"] == "TA"}
-               | {e["codigo"] for e in legado.catalogo_pisa2025()["elementos"]}
-               | {o["codigo"] for o in legado.catalogo_acara_senior()})
+    codigos = (
+        {o["codigo"] for o in legado.catalogo_timss2027()}
+        | {o["codigo"] for o in legado.catalogo_timss_v1() if o["marco"] == "TA"}
+        | {e["codigo"] for e in legado.catalogo_pisa2025()["elementos"]}
+        | {o["codigo"] for o in legado.catalogo_acara_senior()}
+    )
     todos, errores = [], []
     for asig in cargar("asignaturas")["asignaturas"]:
         for c in _leer(f"{DIR}/vocabulario_{asig}.json"):
@@ -198,8 +233,11 @@ def consolidar_vocabulario() -> dict:
             todos.append({**c, "asignatura": asig, "version": VERSION_VOCABULARIO})
     if dup := [i for i, k in Counter(c["id"] for c in todos).items() if k > 1]:
         errores.append(f"ids duplicados: {dup[:10]}")
-    errores.extend(f"{p['id']}: práctica sin prefijo PRAC:" for p in _leer(f"{DIR}/practicas.json")
-                   if not p["id"].startswith("PRAC:"))
+    errores.extend(
+        f"{p['id']}: práctica sin prefijo PRAC:"
+        for p in _leer(f"{DIR}/practicas.json")
+        if not p["id"].startswith("PRAC:")
+    )
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     _escribir(f"{DIR}/vocabulario.json", sorted(todos, key=lambda c: c["id"]))
@@ -210,16 +248,18 @@ def consolidar_vocabulario() -> dict:
 
 
 # -- 2. etiquetado ------------------------------------------------------------------------------
-def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True,
-                        reetiquetar: frozenset[str] = frozenset()) -> list[str]:
-    """Un lote por asignatura y grado con los temas y el vocabulario de ESA asignatura + prácticas.
+def preparar_etiquetado(
+    nodos: list[Nodo], solo_pendientes: bool = True, reetiquetar: frozenset[str] = frozenset()
+) -> list[str]:
+    """Prepare grade-specific topic tagging without overwriting completed batches."""
 
-    Con solo_pendientes, únicamente los temas sin etiquetar que tampoco están ya en un lote (p. ej. los que agregó
-    la V2), en lotes `<asig>_G<gg>_<n>` numerados tras los existentes; así no se reescriben lotes que ya tienen
-    salida y correrlo dos veces es seguro. Sin él, se rehacen los lotes base `<asig>_G<gg>`.
-
-    `reetiquetar` (spec 15): ids que se vuelven a etiquetar aunque ya tengan etiqueta (los temas de la V3 que
-    cambiaron), en lotes `<asig>_G<gg>_V3[_<n>]`; como se unen después de los anteriores, su etiqueta gana."""
+    # Implementation notes:
+    # Con solo_pendientes, únicamente los temas sin etiquetar que tampoco están ya en un lote (p. ej. los que agregó
+    # la V2), en lotes `<asig>_G<gg>_<n>` numerados tras los existentes; así no se reescriben lotes que ya tienen
+    # salida y correrlo dos veces es seguro. Sin él, se rehacen los lotes base `<asig>_G<gg>`.
+    #
+    # `reetiquetar` (spec 15): ids que se vuelven a etiquetar aunque ya tengan etiqueta (los temas de la V3 que
+    # cambiaron), en lotes `<asig>_G<gg>_V3[_<n>]`; como se unen después de los anteriores, su etiqueta gana.
 
     voc, prac = vocabulario(), practicas()
     escritos = []
@@ -229,8 +269,9 @@ def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True,
         en_lote = {p.stem: {i["id"] for i in json.loads(p.read_text(encoding="utf-8"))["items"]} for p in existentes}
         hechos = set(etiquetado()) | set().union(*en_lote.values())
         en_v3 = set().union(*(ids for n, ids in en_lote.items() if "_V3" in n))
-        temas = [t for t in temas if (i := t.id.removeprefix("TEMA:")) not in hechos
-                 or (i in reetiquetar and i not in en_v3)]
+        temas = [
+            t for t in temas if (i := t.id.removeprefix("TEMA:")) not in hechos or (i in reetiquetar and i not in en_v3)
+        ]
     for asig, grado in sorted({(t.asignatura, t.grado) for t in temas}):
         nombre = f"{asig}_G{grado:02d}"
         if solo_pendientes and reetiquetar:
@@ -239,23 +280,35 @@ def preparar_etiquetado(nodos: list[Nodo], solo_pendientes: bool = True,
         elif solo_pendientes:
             nombre += f"_{sum(1 for p in existentes if p.stem.startswith(f'lote_{nombre}')) + 1}"
         lote = {
-            "lote": nombre, "version": VERSION_ETIQUETADO,
+            "lote": nombre,
+            "version": VERSION_ETIQUETADO,
             "instrucciones": "prompts/etiquetar_conceptos.md",
-            "vocabulario": [{k: c[k] for k in ("id", "nombre", "definicion")} for c in voc.values()
-                            if c["asignatura"] == asig],
+            "vocabulario": [
+                {k: c[k] for k in ("id", "nombre", "definicion")} for c in voc.values() if c["asignatura"] == asig
+            ],
             "practicas": [{k: p[k] for k in ("id", "nombre")} for p in prac.values()],
-            "items": [{"id": t.id.removeprefix("TEMA:"), "unidad": t.props.get("unidad"),
-                       "contenido": t.props.get("contenido"), "subcontenido": t.props.get("subcontenido"),
-                       "procedimental": t.etiqueta, "indicador": t.props.get("indicador")}
-                      for t in sorted(temas, key=lambda x: x.id) if t.asignatura == asig and t.grado == grado],
+            "items": [
+                {
+                    "id": t.id.removeprefix("TEMA:"),
+                    "unidad": t.props.get("unidad"),
+                    "contenido": t.props.get("contenido"),
+                    "subcontenido": t.props.get("subcontenido"),
+                    "procedimental": t.etiqueta,
+                    "indicador": t.props.get("indicador"),
+                }
+                for t in sorted(temas, key=lambda x: x.id)
+                if t.asignatura == asig and t.grado == grado
+            ],
         }
         escritos.append(relativa(_escribir(f"{DIR}/lotes/lote_{lote['lote']}.json", lote)))
     return escritos
 
 
 def errores_lote_temas(lote: dict, salida: list[dict]) -> list[str]:
-    """Errores de la salida de un lote de temas: los mismos que hacen fallar unir_etiquetado (y que revisa
-    `gskg lotes validar` al terminar el subagente etiquetador-conceptos)."""
+    """Return topic-batch errors under the same rules used by consolidation."""
+
+    # Implementation notes:
+    # `gskg lotes validar` al terminar el subagente etiquetador-conceptos).
     voc, prac = vocabulario(), practicas()
     por_id = {s.get("id"): s for s in salida}
     faltan = {i["id"] for i in lote["items"]} - por_id.keys()
@@ -275,9 +328,11 @@ def errores_lote_temas(lote: dict, salida: list[dict]) -> list[str]:
 
 
 def unir_etiquetado() -> dict:
-    """Valida las salidas del subagente contra sus lotes y escribe etiquetado_temas.json y conceptos_propuestos.json
-    (nombres nuevos por frecuencia). Lanza ValueError si hay errores; devuelve los conteos."""
-    filas: dict[str, dict] = {}   # un id etiquetado en varios lotes: gana el último (los «_V3» van después)
+    """Validate topic-tagging outputs and write labels and proposed concepts."""
+
+    # Implementation notes:
+    # (nombres nuevos por frecuencia). Lanza ValueError si hay errores; devuelve los conteos.
+    filas: dict[str, dict] = {}  # un id etiquetado en varios lotes: gana el último (los «_V3» van después)
     errores, nuevos = [], Counter()
     for p_lote in sorted(ruta(f"{DIR}/lotes").glob("lote_*.json")):
         lote = json.loads(p_lote.read_text(encoding="utf-8"))
@@ -294,22 +349,30 @@ def unir_etiquetado() -> dict:
                 continue
             for n in s.get("nuevos", []):
                 nuevos[n] += 1
-            filas[item["id"]] = {"id": item["id"], "conceptos": s.get("conceptos", []),
-                                 "practicas": s.get("practicas", []), "nuevos": s.get("nuevos", []),
-                                 "confianza": s.get("confianza"), "justificacion": s.get("justificacion"),
-                                 "version": lote["version"]}
+            filas[item["id"]] = {
+                "id": item["id"],
+                "conceptos": s.get("conceptos", []),
+                "practicas": s.get("practicas", []),
+                "nuevos": s.get("nuevos", []),
+                "confianza": s.get("confianza"),
+                "justificacion": s.get("justificacion"),
+                "version": lote["version"],
+            }
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     _escribir(f"{DIR}/etiquetado_temas.json", sorted(filas.values(), key=lambda f: f["id"]))
     _escribir(f"{DIR}/conceptos_propuestos.json", sorted(nuevos.items(), key=lambda x: (-x[1], x[0])))
     etiquetado.cache_clear()
-    return {"temas": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas.values())),
-            "conceptos_propuestos": len(nuevos)}
+    return {
+        "temas": len(filas),
+        "confianza": dict(Counter(f["confianza"] for f in filas.values())),
+        "conceptos_propuestos": len(nuevos),
+    }
 
 
 @cache
 def etiquetado() -> dict[str, dict]:
-    """Etiquetado de temas; los nombres «nuevos» resueltos por el triaje se suman como conceptos secundarios."""
+    """Load topic labels and add triage-resolved concepts as secondary labels."""
     p = ruta(f"{DIR}/etiquetado_temas.json")
     filas = {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
     mapa, voc = mapa_triaje(), vocabulario()
@@ -334,12 +397,14 @@ def etiquetado() -> dict[str, dict]:
 # -- 2-bis. etiquetado directo de objetivos de países --------------------------------------------
 # Más preciso que heredar conceptos vía el objetivo de marco (spec 09, «Limitaciones»).
 def preparar_etiquetado_paises(nodos: list[Nodo], por_lote: int = 70, solo_pendientes: bool = True) -> list[str]:
-    """Lotes por país. Con solo_pendientes, únicamente los objetivos aún sin etiquetar (p. ej. un país nuevo)."""
+    """Prepare country tagging batches, optionally limited to untagged objectives."""
 
     voc, prac = vocabulario(), practicas()
     hechos = set(etiquetado_paises()) if solo_pendientes else set()
-    ops = sorted((n for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id.removeprefix("OP:") not in hechos),
-                 key=lambda n: n.id)
+    ops = sorted(
+        (n for n in nodos if n.tipo == TipoNodo.OBJETIVO_PAIS and n.id.removeprefix("OP:") not in hechos),
+        key=lambda n: n.id,
+    )
     escritos = []
     for pais in sorted({n.props["pais"] for n in ops}):
         items = [n for n in ops if n.props["pais"] == pais]
@@ -358,21 +423,31 @@ def preparar_etiquetado_paises(nodos: list[Nodo], por_lote: int = 70, solo_pendi
             base = 0
         for i in range(0, len(items), por_lote):
             lote = {
-                "lote": f"PAIS_{pais}_{base + i // por_lote + 1}", "version": "etiquetado-paises-v1",
+                "lote": f"PAIS_{pais}_{base + i // por_lote + 1}",
+                "version": "etiquetado-paises-v1",
                 "instrucciones": "prompts/etiquetar_conceptos.md (los ítems son objetivos de un país, no temas)",
-                "vocabulario": [{k: c[k] for k in ("id", "nombre", "definicion")} | {"asignatura": c["asignatura"]}
-                                for c in voc.values()],
+                "vocabulario": [
+                    {k: c[k] for k in ("id", "nombre", "definicion")} | {"asignatura": c["asignatura"]}
+                    for c in voc.values()
+                ],
                 "practicas": [{k: p[k] for k in ("id", "nombre")} for p in prac.values()],
-                "items": [{"id": n.id.removeprefix("OP:"), "texto": n.etiqueta, "eje": n.props.get("eje"),
-                           "grado_o_tramo": n.props.get("grado_o_tramo"), "asignatura_estimada": n.asignatura}
-                          for n in items[i:i + por_lote]],
+                "items": [
+                    {
+                        "id": n.id.removeprefix("OP:"),
+                        "texto": n.etiqueta,
+                        "eje": n.props.get("eje"),
+                        "grado_o_tramo": n.props.get("grado_o_tramo"),
+                        "asignatura_estimada": n.asignatura,
+                    }
+                    for n in items[i : i + por_lote]
+                ],
             }
             escritos.append(relativa(_escribir(f"{DIR}/lotes_paises/lote_{lote['lote']}.json", lote)))
     return escritos
 
 
 def errores_lote_paises(lote: dict, salida: list[dict]) -> list[str]:
-    """Errores de la salida de un lote de objetivos de países (los de unir_etiquetado_paises)."""
+    """Return country-objective batch errors under the consolidation contract."""
     voc, prac = vocabulario(), practicas()
     por_id = {s.get("id"): s for s in salida}
     errores = []
@@ -388,8 +463,10 @@ def errores_lote_paises(lote: dict, salida: list[dict]) -> list[str]:
 
 
 def unir_etiquetado_paises() -> dict:
-    """Valida las salidas de los lotes de países y escribe etiquetado_paises.json (un id repetido: gana el último).
-    Lanza ValueError si hay errores; devuelve los conteos."""
+    """Validate and merge country labels under the documented duplicate-resolution rule."""
+
+    # Implementation notes:
+    # Lanza ValueError si hay errores; devuelve los conteos.
     filas, errores = [], []
     for p_lote in sorted(ruta(f"{DIR}/lotes_paises").glob("lote_*.json")):
         lote = json.loads(p_lote.read_text(encoding="utf-8"))
@@ -403,21 +480,31 @@ def unir_etiquetado_paises() -> dict:
         for item in lote["items"]:
             if not (s := salida.get(item["id"])):
                 continue
-            filas.append({"id": item["id"], "conceptos": s.get("conceptos", []), "practicas": s.get("practicas", []),
-                          "confianza": s.get("confianza"), "justificacion": s.get("justificacion"),
-                          "version": lote["version"]})
+            filas.append(
+                {
+                    "id": item["id"],
+                    "conceptos": s.get("conceptos", []),
+                    "practicas": s.get("practicas", []),
+                    "confianza": s.get("confianza"),
+                    "justificacion": s.get("justificacion"),
+                    "version": lote["version"],
+                }
+            )
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     filas = list({f["id"]: f for f in filas}.values())  # un id repetido entre lotes: gana el último
     _escribir(f"{DIR}/etiquetado_paises.json", sorted(filas, key=lambda f: f["id"]))
     etiquetado_paises.cache_clear()
-    return {"objetivos": len(filas), "confianza": dict(Counter(f["confianza"] for f in filas)),
-            "sin_concepto": sum(not f["conceptos"] for f in filas)}
+    return {
+        "objetivos": len(filas),
+        "confianza": dict(Counter(f["confianza"] for f in filas)),
+        "sin_concepto": sum(not f["conceptos"] for f in filas),
+    }
 
 
 @cache
 def etiquetado_paises() -> dict[str, dict]:
-    """Etiquetado de objetivos de países, más los conceptos del triaje (etiquetado_paises_triaje.json)."""
+    """Load country-objective labels and explicit triage additions."""
     p = ruta(f"{DIR}/etiquetado_paises.json")
     filas = {f["id"]: f for f in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
     for f in filas.values():

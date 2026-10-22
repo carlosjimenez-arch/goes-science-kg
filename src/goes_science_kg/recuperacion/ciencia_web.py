@@ -1,4 +1,4 @@
-"""RAG auxiliar sobre párrafos primarios: índice invertido y expansión terminológica explícita."""
+"""Retrieve primary scientific paragraphs using inverted indexes and explicit term expansion."""
 
 from __future__ import annotations
 
@@ -45,6 +45,8 @@ TERMINOS = {
 
 
 def fragmentar_web(e: Evidencia) -> tuple[Evidencia, ...]:
+    """Split verified scientific web evidence into explicitly located paragraphs."""
+
     return tuple(
         Evidencia.crear(
             "WEBPAR:" + huella([e.id, i, linea]),
@@ -63,6 +65,8 @@ def fragmentar_web(e: Evidencia) -> tuple[Evidencia, ...]:
 
 
 class IndiceCienciaWeb:
+    """Index primary scientific paragraphs with explicit terminology expansion."""
+
     def __init__(self, repositorio: RepositorioWeb):
         self.repositorio = repositorio
         manifest = json.loads((repositorio.raiz / "manifest.json").read_bytes())
@@ -75,6 +79,8 @@ class IndiceCienciaWeb:
         )
 
     def buscar(self, consulta: str, *, k: int = 6, max_caracteres: int = 6000) -> tuple[Evidencia, ...]:
+        """Retrieve bounded scientific context from the permitted primary-source index."""
+
         terminos = set(normalizar(consulta))
         expansion = " ".join(v for prefijo, v in TERMINOS.items() if any(t.startswith(prefijo) for t in terminos))
         candidatos = self.indice.buscar(consulta + " " + expansion, permitidos=set(self.evidencias), limite=30)
@@ -89,6 +95,8 @@ class IndiceCienciaWeb:
         return tuple(seleccion)
 
     def rehidratar(self, e: Evidencia) -> Evidencia:
+        """Rehydrate a selected scientific paragraph from its verified HTML snapshot."""
+
         documento = self.repositorio.evidencia(e.fuente["documento"])
         candidatos = {p.id: p for p in fragmentar_web(documento)}
         if candidatos.get(e.id) != e:

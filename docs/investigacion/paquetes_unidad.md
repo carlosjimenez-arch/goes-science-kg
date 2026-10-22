@@ -1,5 +1,8 @@
 # Paquetes docentes por unidad
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Fecha: 21 de octubre de 2026. Preparación local y orquestación implementadas. La unidad V4 de Física
 10.º ya se ejecutó: cuatro sesiones respaldadas y cuatro abstenciones, 58 intentos y reserva USD 7,4261195.
 El escenario posterior de sesenta minutos obtuvo siete respaldos y una abstención. La

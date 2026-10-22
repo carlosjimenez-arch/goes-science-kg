@@ -1,5 +1,8 @@
 # Progresiones NGSS: evidencia y decisión de diseño
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Consulta: 21 de octubre de 2026. Se descargaron del [índice oficial de apéndices NGSS](https://www.nextgenscience.org/resources/ngss-appendices)
 los apéndices E, F y G. El almacén separado `data/referencias_progresiones_2026` conserva manifiesto,
 SHA-256, páginas físicas y versiones. La fecha de consulta no cambia las ediciones de 2013.

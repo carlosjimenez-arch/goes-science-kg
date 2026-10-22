@@ -1,4 +1,4 @@
-"""Producto-3 real, contexto obligatorio y API auditada, sin proveedores remotos."""
+"""Test real product-3 alignment, mandatory context, and source-audited API queries."""
 
 from __future__ import annotations
 

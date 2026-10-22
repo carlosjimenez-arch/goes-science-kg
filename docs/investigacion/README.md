@@ -1,6 +1,6 @@
 # Investigación y evidencia experimental
 
-Corte: 2026-10-21. Las fuentes oficiales, los resultados observados y las recomendaciones de diseño se distinguen en cada documento.
+Índice de antecedentes y experimentos del 21–22 de octubre de 2026. Estado vigente: [documentación](../README.md). Las fuentes oficiales, los resultados observados y las recomendaciones de diseño se distinguen en cada documento.
 
 | Documento | Contenido |
 |---|---|

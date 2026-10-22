@@ -1,5 +1,8 @@
 # Comparación documental V3 → V4
 
+> Registro histórico de investigación. Describe el corte y la ejecución indicados en este documento.
+> Estado vigente del código, API y métricas: [documentación actual](../README.md) y [calidad](../CALIDAD.md).
+
 Se compararon 935 registros del grafo V3 y 1020 filas V4.
 
 Hay **506 coincidencias únicas de objetivo** y **0 grupos ambiguos**. Permanecen sin coincidencia exacta 429 registros V3 y 514 filas V4.

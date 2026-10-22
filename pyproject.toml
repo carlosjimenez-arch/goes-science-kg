@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Grafo de conocimiento de Ciencias (Biología, Física, Química, Tierra y Espacio) para El Salvador, anclado en marcos internacionales y currículos de otros países."
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [{ name = "Equipo GOES — Gobierno de El Salvador" }]
+authors = [{ name = "GOEs · Departamento de AI · Gobierno de El Salvador" }]
 dependencies = [
     "pydantic>=2.12,<3",
     "pyyaml>=6.0",
@@ -30,7 +30,7 @@ api = ["fastapi>=0.110", "uvicorn>=0.29", "httpx>=0.27"]
 vertex = ["google-genai>=1.0", "python-dotenv>=1.0", "pypdf>=5.0", "fonttools>=4.0", "certifi>=2025.1.31"]
 # Motor curricular: orquestación durable; los modelos se ejecutan mediante ADC en Vertex.
 motor = ["pdfplumber>=0.11", "langgraph>=1.0,<2", "langgraph-checkpoint-sqlite>=3.0,<4", "google-genai>=2.0,<3", "pypdf>=5.0", "fonttools>=4.0", "certifi>=2025.1.31"]
-dev = ["pytest>=8", "ruff>=0.5"]
+dev = ["pytest>=8", "pytest-cov>=6,<8", "ruff>=0.16,<0.17"]
 
 [project.scripts]
 gskg = "goes_science_kg.cli:app"
@@ -47,7 +47,7 @@ line-length = 120
 target-version = "py311"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "B", "UP"]
+select = ["E", "F", "I", "B", "UP", "D100", "D101", "D102", "D103", "D104"]
 
 [tool.ruff.lint.per-file-ignores]
 # La plantilla HTML del visor es una cadena larga: el largo de línea no aplica.
@@ -56,3 +56,23 @@ select = ["E", "F", "I", "B", "UP"]
 "src/goes_science_kg/internacional/visor.py" = ["E501"]
 # Textos largos de los informes en Markdown.
 "src/goes_science_kg/internacional/informe.py" = ["E501"]
+"tests/**" = ["D100", "D101", "D102", "D103", "D104"]
+".claude/hooks/**" = ["D100", "D101", "D102", "D103", "D104"]
+# Published evidence pins these source bytes, including their historical docstrings.
+"src/goes_science_kg/ingesta/extraccion.py" = ["D101", "D102", "D103"]
+"src/goes_science_kg/ingesta/estructurados.py" = ["D101", "D102", "D103"]
+
+[tool.ruff.format]
+# These exact source bytes identify evidence in the published extraction profiles.
+exclude = ["src/goes_science_kg/ingesta/extraccion.py", "src/goes_science_kg/ingesta/estructurados.py"]
+
+[tool.coverage.run]
+source = ["goes_science_kg"]
+branch = true
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+precision = 2
+exclude_also = ["if TYPE_CHECKING:", "if __name__ == .__main__.:"]

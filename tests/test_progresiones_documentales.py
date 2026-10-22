@@ -1,4 +1,4 @@
-"""Bandas nativas, anclas físicas y cadenas documentales; sin equivalencias de grado."""
+"""Test native progression bands, physical anchors, and documentary chains without grade equivalence."""
 
 from pathlib import Path
 from types import SimpleNamespace

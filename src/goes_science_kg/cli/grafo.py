@@ -1,4 +1,4 @@
-"""Comandos del grupo `grafo`."""
+"""Expose the grafo command group for the science curriculum pipeline."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ app = typer.Typer(help="Construir, validar y exportar el grafo", no_args_is_help
 
 @app.command("construir")
 def grafo_construir() -> None:
-    """Construye el grafo desde las fuentes y lo guarda en data/grafo/."""
+    """Build and persist the graph from its configured sources."""
     from goes_science_kg.grafo.almacen import guardar
     from goes_science_kg.grafo.construir import VERSION_GRAFO, construir
     from goes_science_kg.grafo.validar import validar
@@ -30,7 +30,7 @@ def grafo_construir() -> None:
 
 @app.command("validar")
 def grafo_validar() -> None:
-    """Revisa los invariantes del grafo guardado (sale con código 1 si hay errores)."""
+    """Validate the stored graph and exit unsuccessfully when invariants fail."""
     from goes_science_kg.grafo.almacen import cargar
     from goes_science_kg.grafo.validar import validar
 
@@ -45,7 +45,7 @@ def grafo_validar() -> None:
 
 @app.command("exportar")
 def grafo_exportar(formato: str = typer.Option("graphml", help="graphml")) -> None:
-    """Exporta el grafo guardado (data/grafo/export/)."""
+    """Export the stored graph to the configured interchange formats."""
     import networkx as nx
 
     from goes_science_kg.grafo.almacen import a_networkx, cargar

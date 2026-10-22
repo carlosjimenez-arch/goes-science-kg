@@ -1,4 +1,4 @@
-"""Consolidación local: revalidar juicios antes de admitir relaciones y comprobar ciclos entre lotes."""
+"""Revalidate reviewed relationships and reject cycles across complete cohorts."""
 
 from __future__ import annotations
 
@@ -19,12 +19,12 @@ if TYPE_CHECKING:
 
 
 def consolidar_relaciones(motor: MotorConocimiento, estados: Sequence[dict]) -> ColeccionConocimiento:
-    """Examina la colección completa indicada; no afirma exhaustividad de todo el currículo.
+    """Inspect the complete selected collection without claiming curriculum-wide completeness."""
 
-    No confía en archivos de relaciones previamente respaldadas. Cada estado conserva preparación,
-    roles y terminal reconstruibles. Un conflicto entre juicios de un candidato invalida la unión;
-    un ciclo conserva todos los respaldos pero bloquea la admisión de la colección entera.
-    """
+    # Implementation notes:
+    # No confía en archivos de relaciones previamente respaldadas. Cada estado conserva preparación,
+    # roles y terminal reconstruibles. Un conflicto entre juicios de un candidato invalida la unión;
+    # un ciclo conserva todos los respaldos pero bloquea la admisión de la colección entera.
     por_candidato = {}
     for estado in estados:
         if not estado.get("preparacion") or not estado.get("resultado"):
@@ -51,7 +51,7 @@ def coleccionar_resultados(
     filas_por_candidato: Mapping[str, str],
     motores_por_candidato: Mapping[str, str] | None = None,
 ) -> ColeccionConocimiento:
-    """Unión estructural de resultados ya reconstruidos; no verifica fuentes ni autoriza dictámenes."""
+    """Combine reconstructed results without independently verifying sources or authorizing reviews."""
     por_candidato = {r.solicitud.candidato_id: r for r in resultados}
     if len(por_candidato) != len(resultados):
         raise ValueError("Candidato repetido en la colección")

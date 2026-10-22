@@ -1,4 +1,4 @@
-"""Dos lecturas distintas, alcance explícito y fallos que no se vuelven consenso."""
+"""Test independent classification readings, explicit scope, and failure-to-abstention rules."""
 
 import json
 

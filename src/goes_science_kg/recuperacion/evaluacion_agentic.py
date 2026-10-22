@@ -1,4 +1,4 @@
-"""Harness de recuperación: consultas públicas al candidato, gold de celdas sólo offline."""
+"""Evaluate public candidate queries while keeping reference cell annotations offline."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def _huella(datos: Any) -> str:
 
 
 class ConsultaEvaluacion(BaseModel):
-    """Lista blanca que puede salir hacia el recuperador; ningún campo de respuesta esperada."""
+    """Expose only whitelisted retrieval queries without expected-answer fields."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
     id: str = Field(min_length=1)
@@ -38,7 +38,7 @@ class ConsultaEvaluacion(BaseModel):
 
 
 class ObjetivoRelevante(BaseModel):
-    """Localizador de gold offline; documento es la identidad de fuente, no el ID de una fila."""
+    """Identify offline reference evidence by source document and physical locator."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
     documento: str = Field(min_length=1)
@@ -50,14 +50,15 @@ class ObjetivoRelevante(BaseModel):
     def _coordenadas(self):
         if len(self.celdas) != len(set(self.celdas)):
             raise ValueError("El gold no admite celdas duplicadas")
-        if any(not COORDENADA.fullmatch(celda) or int(re.search(r"\d+$", celda)[0]) != self.fila
-               for celda in self.celdas):
+        if any(
+            not COORDENADA.fullmatch(celda) or int(re.search(r"\d+$", celda)[0]) != self.fila for celda in self.celdas
+        ):
             raise ValueError("Cada celda relevante debe pertenecer a su fila física")
         return self
 
 
 class ConfiguracionComparacion(BaseModel):
-    """Gate de regresión predeclarado; cambiarlo exige otro experimento, no reetiquetar éste."""
+    """Declare the regression gate before execution rather than relabeling an experiment."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
     k: int = Field(default=10, ge=1, le=100)
@@ -82,18 +83,24 @@ class ConfiguracionComparacion(BaseModel):
 
 
 class Contextualizador(Protocol):
+    """Define an equal-budget evidence contextualization port for retrieval comparisons."""
+
     def __call__(
-        self, resultados: Sequence[Resultado], *, version: str, max_caracteres: int,
+        self,
+        resultados: Sequence[Resultado],
+        *,
+        version: str,
+        max_caracteres: int,
     ) -> list[Evidencia]:
-        """Mismo hidratador verificable y presupuesto para las dos variantes."""
+        """Apply the same verified hydration and evidence budget to both retrieval variants."""
 
 
 def cargar_consultas(archivo: Path) -> list[ConsultaEvaluacion]:
-    """Extrae sólo consultas/filtros, aunque el archivo contenga claves privadas de evaluación.
+    """Load only public queries and filters from mixed evaluation files."""
 
-    No consulta ni envía campos privados del evaluador. La correspondencia del gold debe
-    suministrarse mediante un mapping separado, construido fuera del modelo y del recuperador.
-    """
+    # Implementation notes:
+    # No consulta ni envía campos privados del evaluador. La correspondencia del gold debe
+    # suministrarse mediante un mapping separado, construido fuera del modelo y del recuperador.
     datos = json.loads(archivo.read_text(encoding="utf-8"))
     casos = datos["casos"] if isinstance(datos, dict) else datos
     campos = tuple(ConsultaEvaluacion.model_fields)
@@ -112,9 +119,12 @@ def _fila_documento(documento: Documento) -> tuple[str, str, int] | None:
 
 
 def resolver_objetivos(
-    objetivos: Sequence[ObjetivoRelevante], documentos: Mapping[str, Documento], *, version: str,
+    objetivos: Sequence[ObjetivoRelevante],
+    documentos: Mapping[str, Documento],
+    *,
+    version: str,
 ) -> dict:
-    """Resuelve celdas a IDs y filas; los ausentes permanecen en todos los denominadores."""
+    """Resolve reference cells while retaining absent objectives in every denominator."""
     if not objetivos:
         raise ValueError("Cada consulta necesita al menos un objetivo relevante offline")
     por_fila: dict[tuple, Documento] = {}
@@ -134,8 +144,13 @@ def resolver_objetivos(
         for coordenada in objetivo.celdas:
             celdas.add(f"{id_fila}#CELDA:{coordenada}")
             if documento is None or coordenada not in documento.fuente.get("celdas", []):
-                ausentes.append({**objetivo.model_dump(mode="json"), "celda": coordenada,
-                                 "motivo": "fila_ausente" if documento is None else "selector_ausente"})
+                ausentes.append(
+                    {
+                        **objetivo.model_dump(mode="json"),
+                        "celda": coordenada,
+                        "motivo": "fila_ausente" if documento is None else "selector_ausente",
+                    }
+                )
     return {"filas": sorted(filas), "celdas": sorted(celdas), "ausentes_en_indice": ausentes}
 
 
@@ -143,14 +158,17 @@ def _metricas(orden: Sequence[str], relevantes: Sequence[str], k: int) -> dict:
     esperados = set(relevantes)
     unicos = list(dict.fromkeys(orden))[:k]
     rango = next((i for i, identificador in enumerate(unicos, 1) if identificador in esperados), None)
-    return {"mrr": 1 / rango if rango else 0.0,
-            f"recall@{k}": len(esperados.intersection(unicos)) / len(esperados)}
+    return {"mrr": 1 / rango if rango else 0.0, f"recall@{k}": len(esperados.intersection(unicos)) / len(esperados)}
 
 
 def _tiempos(valores: Sequence[float]) -> dict:
     orden = sorted(valores)
-    return {"n": len(orden), "p50_ms": statistics.median(orden),
-            "p95_ms": orden[math.ceil(len(orden) * 0.95) - 1], "max_ms": max(orden)}
+    return {
+        "n": len(orden),
+        "p50_ms": statistics.median(orden),
+        "p95_ms": orden[math.ceil(len(orden) * 0.95) - 1],
+        "max_ms": max(orden),
+    }
 
 
 def _consumo(medir: Callable[[], Mapping] | None) -> dict | None:
@@ -173,7 +191,7 @@ def _diferencia(antes: dict | None, despues: dict | None) -> dict | None:
 
 
 def _validar_evidencias(evidencias: Sequence[Evidencia], resultados: Sequence[Resultado]) -> None:
-    """Comprueba correspondencia estructural; el callback confiable verifica los bytes de origen."""
+    """Validate structural evidence correspondence before a trusted byte-verification callback."""
     documentos = {r.documento.id: r.documento for r in resultados}
     vistos = set()
     for evidencia in evidencias:
@@ -191,19 +209,23 @@ def _validar_evidencias(evidencias: Sequence[Evidencia], resultados: Sequence[Re
 
 
 def _resumir(filas: Sequence[dict], k: int) -> dict:
-    salida = {"n_consultas": len({f["id"] for f in filas}), "n_ejecuciones": len(filas),
-              "errores": sum(bool(f["errores"]) for f in filas),
-              "latencia": _tiempos([f["latencia_ms"] for f in filas]),
-              "latencia_por_repeticion": {
-                  str(r): _tiempos([f["latencia_ms"] for f in filas if f["repeticion"] == r])
-                  for r in sorted({f["repeticion"] for f in filas})
-              }}
+    salida = {
+        "n_consultas": len({f["id"] for f in filas}),
+        "n_ejecuciones": len(filas),
+        "errores": sum(bool(f["errores"]) for f in filas),
+        "latencia": _tiempos([f["latencia_ms"] for f in filas]),
+        "latencia_por_repeticion": {
+            str(r): _tiempos([f["latencia_ms"] for f in filas if f["repeticion"] == r])
+            for r in sorted({f["repeticion"] for f in filas})
+        },
+    }
     for unidad in ("filas", "celdas"):
         medidas = ("mrr", f"recall@{k}" if unidad == "filas" else "recall_contexto")
         salida[unidad] = {m: statistics.mean(f[unidad][m] for f in filas) for m in medidas}
-    salida["rankings_estables"] = all(len({
-        json.dumps([f["ranking_filas"], f["ranking_celdas"]]) for f in filas if f["id"] == identificador
-    }) == 1 for identificador in {f["id"] for f in filas})
+    salida["rankings_estables"] = all(
+        len({json.dumps([f["ranking_filas"], f["ranking_celdas"]]) for f in filas if f["id"] == identificador}) == 1
+        for identificador in {f["id"] for f in filas}
+    )
     return salida
 
 
@@ -217,11 +239,11 @@ def comparar_agentic(
     configuracion: ConfiguracionComparacion | None = None,
     medir_consumo: Callable[[], Mapping] | None = None,
 ) -> dict:
-    """Ejecuta explícitamente una comparación; importar el módulo nunca hace llamadas de nube.
+    """Execute an explicit comparison without import-time cloud calls."""
 
-    La integración autoriza por separado corpus, consultas, modelo y presupuesto. Sólo esta función
-    ejecutada con un ModeloEstructurado real puede consumir el ledger y la red de ese proveedor.
-    """
+    # Implementation notes:
+    # La integración autoriza por separado corpus, consultas, modelo y presupuesto. Sólo esta función
+    # ejecutada con un ModeloEstructurado real puede consumir el ledger y la red de ese proveedor.
     cfg = configuracion or ConfiguracionComparacion()
     consultas = [ConsultaEvaluacion.model_validate(c.model_dump()) for c in consultas]
     ids = {c.id for c in consultas}
@@ -243,12 +265,16 @@ def comparar_agentic(
             for caso in consultas:
                 consumo_inicial = _consumo(medir_consumo)
                 inicio = time.perf_counter()
-                fila = {"id": caso.id, "grado": caso.grado, "repeticion": repeticion,
-                        "errores": [], "traza": None}
+                fila = {"id": caso.id, "grado": caso.grado, "repeticion": repeticion, "errores": [], "traza": None}
                 resultados, evidencias = [], []
                 try:
-                    parametros = {"version": caso.version, "grado": caso.grado, "asignatura": caso.asignatura,
-                                  "k": cfg.k, "saltos_grafo": cfg.saltos_grafo}
+                    parametros = {
+                        "version": caso.version,
+                        "grado": caso.grado,
+                        "asignatura": caso.asignatura,
+                        "k": cfg.k,
+                        "saltos_grafo": cfg.saltos_grafo,
+                    }
                     if variante == "baseline":
                         resultados = baseline.buscar(caso.consulta, **parametros)
                     else:
@@ -276,28 +302,33 @@ def comparar_agentic(
                 fila["filas"] = _metricas(fila["ranking_filas"], gold[caso.id]["filas"], cfg.k)
                 # K significa filas recuperadas. El contexto puede contener varias celdas por fila;
                 # no se trunca artificialmente a K celdas ni se oculta su presupuesto común.
-                fila["celdas"] = _metricas(fila["ranking_celdas"], gold[caso.id]["celdas"],
-                                           max(1, len(fila["ranking_celdas"])))
-                fila["celdas"]["recall_contexto"] = fila["celdas"].pop(
-                    f"recall@{max(1, len(fila['ranking_celdas']))}"
+                fila["celdas"] = _metricas(
+                    fila["ranking_celdas"], gold[caso.id]["celdas"], max(1, len(fila["ranking_celdas"]))
                 )
+                fila["celdas"]["recall_contexto"] = fila["celdas"].pop(f"recall@{max(1, len(fila['ranking_celdas']))}")
                 ejecuciones[variante].append(fila)
     resumen = {}
     for variante, filas in ejecuciones.items():
         resumen[variante] = _resumir(filas, cfg.k)
         resumen[variante]["por_grado"] = {
-            str(g): _resumir([f for f in filas if f["grado"] == g], cfg.k)
-            for g in sorted({c.grado for c in consultas})
+            str(g): _resumir([f for f in filas if f["grado"] == g], cfg.k) for g in sorted({c.grado for c in consultas})
         }
     gate = _evaluar_gate(consultas, ejecuciones, resumen, cfg)
     return {
-        "fecha": datetime.now(UTC).isoformat(), "python": platform.python_version(),
-        "configuracion": cfg.model_dump(mode="json"), "configuracion_sha256": config_hash,
-        "consultas_sha256": consultas_hash, "gold_sha256": gold_hash,
-        "corpus_sha256": huella_corpus(documentos.values()), "candidato": candidato.identidad,
+        "fecha": datetime.now(UTC).isoformat(),
+        "python": platform.python_version(),
+        "configuracion": cfg.model_dump(mode="json"),
+        "configuracion_sha256": config_hash,
+        "consultas_sha256": consultas_hash,
+        "gold_sha256": gold_hash,
+        "corpus_sha256": huella_corpus(documentos.values()),
+        "candidato": candidato.identidad,
         "candidato_sha256": candidato.huella,
         "harness_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        "gold_resuelto_offline": gold, "resumen": resumen, "ejecuciones": ejecuciones, "gate": gate,
+        "gold_resuelto_offline": gold,
+        "resumen": resumen,
+        "ejecuciones": ejecuciones,
+        "gate": gate,
         "limites": [
             "Los objetivos relevantes sólo intervienen offline; nunca forman parte del mensaje al planner.",
             "Los ausentes permanecen en recall y se reportan como defectos de cobertura del índice.",
@@ -341,9 +372,9 @@ def _evaluar_gate(consultas, ejecuciones, resumen, cfg: ConfiguracionComparacion
     base = {(f["id"], f["repeticion"]): f for f in ejecuciones["baseline"]}
     incrementos = {r: [] for r in range(cfg.repeticiones)}
     for fila in ejecuciones["agentic"]:
-        incrementos[fila["repeticion"]].append(max(0.0, fila["latencia_ms"] - base[
-            fila["id"], fila["repeticion"]
-        ]["latencia_ms"]))
+        incrementos[fila["repeticion"]].append(
+            max(0.0, fila["latencia_ms"] - base[fila["id"], fila["repeticion"]]["latencia_ms"])
+        )
     p95_incremental = max(_tiempos(v)["p95_ms"] for v in incrementos.values())
     if p95_total > cfg.max_p95_total_ms or p95_incremental > cfg.max_p95_incremental_ms:
         motivos.append("presupuesto_latencia_excedido")
@@ -352,10 +383,17 @@ def _evaluar_gate(consultas, ejecuciones, resumen, cfg: ConfiguracionComparacion
     if any(c is None for c in consumos):
         motivos.append("consumo_no_medido")
     else:
-        reserva = max(statistics.mean(f["consumo"]["reserva_usd"] for f in ejecuciones["agentic"]
-                                     if f["repeticion"] == r) for r in range(cfg.repeticiones))
+        reserva = max(
+            statistics.mean(f["consumo"]["reserva_usd"] for f in ejecuciones["agentic"] if f["repeticion"] == r)
+            for r in range(cfg.repeticiones)
+        )
         if reserva > cfg.max_reserva_usd_por_consulta:
             motivos.append("presupuesto_coste_excedido")
-    return {"seleccionar_candidato": not motivos, "default": "baseline", "motivos": motivos,
-            "p95_total_peor_repeticion_ms": p95_total, "p95_incremental_peor_repeticion_ms": p95_incremental,
-            "reserva_media_peor_repeticion_usd": reserva}
+    return {
+        "seleccionar_candidato": not motivos,
+        "default": "baseline",
+        "motivos": motivos,
+        "p95_total_peor_repeticion_ms": p95_total,
+        "p95_incremental_peor_repeticion_ms": p95_incremental,
+        "reserva_media_peor_repeticion_usd": reserva,
+    }

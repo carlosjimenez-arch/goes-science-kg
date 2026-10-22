@@ -1,4 +1,4 @@
-"""Archivo curricular autocontenido: denominador completo, votos y pruebas adversariales."""
+"""Archive complete curriculum denominators, votes, and adversarial verification results."""
 
 from __future__ import annotations
 
@@ -20,6 +20,8 @@ from goes_science_kg.producto.validacion_mejoras import evaluar_ronda, resolver_
 
 
 class CasoMejora(Contrato):
+    """Bind one published unit preparation to its execution outcome and environment."""
+
     preparacion: PreparacionMejora
     resultado: ResultadoMejora
     entorno: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -27,6 +29,8 @@ class CasoMejora(Contrato):
 
 
 class PruebaAdversarialMejora(Contrato):
+    """Declare an adversarial mutation and its hidden expected reviewer criterion."""
+
     id: str
     preparacion: PreparacionMejora
     ronda: RondaMejora
@@ -36,6 +40,8 @@ class PruebaAdversarialMejora(Contrato):
 
 
 class ArchivoMejoras(Contrato):
+    """Archive complete curriculum proposals, native progressions, sources, and adversarial controls."""
+
     version: Literal["mejoras-publicadas-1"] = "mejoras-publicadas-1"
     id: str = Field(pattern=r"^[a-f0-9]{64}$")
     huella_curriculo: str
@@ -50,6 +56,8 @@ class ArchivoMejoras(Contrato):
 
     @property
     def cobertura(self) -> dict:
+        """Report the complete original-row denominator and all proposal states."""
+
         return {
             "unidades": len(self.unidades),
             "filas": sum(len(c.preparacion.filas_originales) for c in self.unidades),
@@ -69,6 +77,8 @@ class ArchivoMejoras(Contrato):
 
 
 def verificar_preparacion(p: PreparacionMejora) -> None:
+    """Verify preparation fingerprints, complete source evidence, and quotation literals."""
+
     if p.id != huella(p.model_dump(mode="json", exclude={"id"})):
         raise ValueError("Preparación curricular modificada")
     evidencias = {e.id: e for e in p.evidencias}
@@ -96,12 +106,16 @@ def verificar_preparacion(p: PreparacionMejora) -> None:
 
 
 def huella_texto(texto):
+    """Fingerprint normalized text under the documented archive comparison policy."""
+
     import hashlib
 
     return hashlib.sha256(texto.encode()).hexdigest()
 
 
 def validar_pruebas(pruebas, modelos) -> None:
+    """Validate complete adversarial controls and their expected rejection criteria."""
+
     if len(pruebas) != 5 or len({p.id for p in pruebas}) != 5:
         raise ValueError("Se requieren cinco controles adversariales distintos")
     if len({huella(p.ronda.borrador) for p in pruebas}) != 5:
@@ -119,6 +133,8 @@ def validar_pruebas(pruebas, modelos) -> None:
 
 
 def validar_archivo_mejoras(archivo: ArchivoMejoras, curriculo: Curriculo, catalogo, *, modelos=None) -> None:
+    """Reconstruct and validate every published unit against its original curriculum."""
+
     if archivo.id != huella(archivo.model_dump(mode="json", exclude={"id"})):
         raise ValueError("El archivo curricular no conserva su identidad")
     if archivo.huella_curriculo != curriculo.huella or archivo.huella_catalogo != huella(catalogo):

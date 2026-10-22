@@ -1,4 +1,4 @@
-"""Contratos de aplicación; un dictamen automático nunca equivale a aprobación del MINED."""
+"""Define application contracts that distinguish automatic review from official approval."""
 
 from __future__ import annotations
 
@@ -13,12 +13,14 @@ Rol = Literal["cientifico", "psicopedagogo", "adversarial"]
 
 
 class Contrato(BaseModel):
-    """Rechaza campos inesperados, especialmente en las respuestas del modelo."""
+    """Reject unexpected fields, especially in structured model responses."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
 
 class Solicitud(Contrato):
+    """Declare the curriculum query, grade, subject, duration, resources, and optional exact row."""
+
     consulta: str = Field(min_length=5, max_length=2000)
     version_curriculo: str = Field(min_length=2, max_length=30)
     grado: int = Field(ge=2, le=11)
@@ -29,6 +31,8 @@ class Solicitud(Contrato):
 
 
 class Evidencia(Contrato):
+    """Bind evidence text to its source, curriculum version, and content fingerprint."""
+
     id: str
     texto: str
     fuente: dict[str, Any]
@@ -37,12 +41,16 @@ class Evidencia(Contrato):
 
     @classmethod
     def crear(cls, id: str, texto: str, fuente: dict, version: str) -> Evidencia:
+        """Create evidence with a deterministic content and provenance fingerprint."""
+
         return cls(
             id=id, texto=texto, fuente=fuente, version=version, huella=hashlib.sha256(texto.encode()).hexdigest()
         )
 
 
 class Cita(Contrato):
+    """Quote an exact literal from a registered evidence item."""
+
     evidencia_id: str
     literal: str = Field(min_length=12, max_length=280)
 
@@ -55,11 +63,15 @@ class Cita(Contrato):
 
 
 class Afirmacion(Contrato):
+    """Bind one factual statement to the evidence quotations supporting it."""
+
     texto: str = Field(min_length=10, max_length=1500)
     citas: list[Cita] = Field(min_length=1, max_length=5)
 
 
 class Actividad(Contrato):
+    """Describe a proposed learning activity and its observable assessment."""
+
     objetivo: str = Field(min_length=10)
     pasos: list[str] = Field(min_length=1, max_length=8)
     comprobacion: str = Field(min_length=10)
@@ -69,7 +81,7 @@ class Actividad(Contrato):
 
 
 class Propuesta(Contrato):
-    """Las afirmaciones son el texto factual publicable; la actividad es una propuesta."""
+    """Separate publishable factual statements from proposed learning activities."""
 
     afirmaciones: list[Afirmacion] = Field(min_length=1, max_length=8)
     anclaje_curricular: list[Cita] = Field(min_length=1, max_length=5)
@@ -78,7 +90,7 @@ class Propuesta(Contrato):
 
 
 class Revision(Contrato):
-    """Salida del juez. Su rol y la huella evaluada se añaden fuera del modelo."""
+    """Represent a review whose role and evaluated fingerprint are assigned outside the model."""
 
     aprobado: bool
     errores: list[str]
@@ -87,12 +99,16 @@ class Revision(Contrato):
 
 
 class CriteriosCientificos(Contrato):
+    """Require scientific accuracy, claim support, and curriculum alignment."""
+
     correccion_cientifica: bool
     respaldo_de_afirmaciones: bool
     alineacion_curricular: bool
 
 
 class CriteriosPsicopedagogicos(Contrato):
+    """Require grade suitability, bounded cognitive load, assessment, and accessibility."""
+
     adecuacion_al_grado: bool
     carga_cognitiva: bool
     evaluacion_del_objetivo: bool
@@ -100,12 +116,16 @@ class CriteriosPsicopedagogicos(Contrato):
 
 
 class CriteriosAdversariales(Contrato):
+    """Require consistency, evidential implication, safety, and feasibility."""
+
     sin_contradicciones: bool
     citas_implican_afirmaciones: bool
     seguridad_y_factibilidad: bool
 
 
 class RevisionCientifica(Contrato):
+    """Represent the scientific review with mandatory criteria and cited evidence."""
+
     aprobado: bool
     errores: list[str]
     criterios: CriteriosCientificos
@@ -113,6 +133,8 @@ class RevisionCientifica(Contrato):
 
 
 class RevisionPsicopedagogica(Contrato):
+    """Represent the pedagogical review with mandatory criteria and cited evidence."""
+
     aprobado: bool
     errores: list[str]
     criterios: CriteriosPsicopedagogicos
@@ -120,6 +142,8 @@ class RevisionPsicopedagogica(Contrato):
 
 
 class RevisionAdversarial(Contrato):
+    """Represent the adversarial review with mandatory criteria and cited evidence."""
+
     aprobado: bool
     errores: list[str]
     criterios: CriteriosAdversariales
@@ -134,6 +158,8 @@ ESQUEMAS_REVISION = {
 
 
 class Dictamen(Contrato):
+    """Bind a reviewer's output to its model and exact proposal fingerprint."""
+
     rol: Rol
     modelo: str
     huella_propuesta: str
@@ -141,6 +167,8 @@ class Dictamen(Contrato):
 
 
 class ResultadoMotor(Contrato):
+    """Preserve the engine outcome, evidence, reviews, iterations, and abstention reasons."""
+
     estado: Literal["respaldado_automaticamente", "abstencion"]
     ejecucion_id: str
     version_curriculo: str
@@ -152,6 +180,6 @@ class ResultadoMotor(Contrato):
 
 
 def huella(valor: BaseModel | dict | list) -> str:
-    """Identidad de contenido para invalidar dictámenes, cachés y checkpoints."""
+    """Fingerprint content to invalidate stale reviews, caches, and checkpoints."""
     datos = valor.model_dump(mode="json") if isinstance(valor, BaseModel) else valor
     return hashlib.sha256(json.dumps(datos, sort_keys=True, ensure_ascii=False).encode()).hexdigest()

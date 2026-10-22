@@ -1,4 +1,4 @@
-"""Redacción ligada a las citas conocidas: no ofrece un campo libre para inventar FIDs."""
+"""Constrain proposal generation to registered quotation identifiers."""
 
 from typing import Literal
 
@@ -8,6 +8,8 @@ from goes_science_kg.producto.mejoras_contratos import BorradorMejora, MejoraFil
 
 
 def esquema_redaccion(preparacion):
+    """Constrain proposal transport to the preparation's registered fragments and rows."""
+
     ids = Literal.__getitem__(tuple(f.id for f in preparacion.fragmentos))
     fila = create_model(
         "MejoraFilaContextual", __base__=MejoraFila, fragmentos_ids=(tuple[ids, ...], Field(min_length=2, max_length=6))
