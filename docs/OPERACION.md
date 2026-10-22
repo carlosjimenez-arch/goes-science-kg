@@ -11,6 +11,34 @@ uv run ruff check src tests .claude/hooks
 
 Python mínimo 3.11; dependencias resueltas en `uv.lock`. En el sandbox de Codex, si la caché global de uv no es accesible, usa una caché temporal autorizada: `UV_CACHE_DIR=/tmp/goes-uv-cache uv run pytest -q`. No se desactivan hooks para hacer pasar pruebas. No se añade CI.
 
+## Datos y propuestas V4
+
+Antes de usar el corpus en un checkout de código, ejecutar `uv run gskg datos restaurar --en-repo`.
+La recuperación requiere la misma cuenta GOES, verifica inventario y migra sólo la identidad física
+de los ledgers. [Respaldo y retiro](DATOS_EXTERNOS.md). No se restauran credenciales desde GCS.
+
+```bash
+uv run gskg producto mejoras preparar --destino data/operaciones/campana_nueva
+uv run gskg producto mejoras ejecutar data/operaciones/campana_nueva
+# Sólo tras revisar plan, presupuesto e identidad; no ejecutar de nuevo para sustituir votos:
+uv run gskg producto mejoras ejecutar data/operaciones/campana_nueva --ejecutar --trabajadores 2
+uv run gskg producto mejoras seguimiento data/operaciones/campana_nueva --destino data/operaciones/seguimiento_nuevo
+uv run gskg producto mejoras seguimiento data/operaciones/campana_nueva --destino data/operaciones/seguimiento_nuevo --ejecutar
+uv run gskg producto mejoras consolidar data/operaciones/campana_nueva --pruebas <controles.json> --seguimiento data/operaciones/seguimiento_nuevo --salida <archivo.json>
+uv run gskg producto mejoras publicar <archivo.json>
+uv run gskg producto mejoras exportar --destino <directorio_nuevo>
+```
+
+Preparar y ejecutar sin `--ejecutar` consumen cero llamadas. Preparar fija todas las unidades, fuentes,
+huellas, modelos y cotas. La cuenta se verifica antes de invocar Vertex. Mantener el mismo ID del ledger:
+una campaña nueva no reinicia consumos. La reanudación verifica el entorno y recupera terminales.
+Un cambio de contexto exige un protocolo nuevo con antecedentes conservados. Ante 429 no contar el
+fallo como voto; el seguimiento finito recupera las revisiones ausentes. Nunca repetir votos para buscar
+un consenso distinto sobre el mismo texto vetado. Los logs usan VERDE/AMARILLO/ROJO y archivo durable.
+
+La revisión P5 conserva diez incidencias; el plan P6 preparado las incluye todas. Consultar
+[el estado vigente y las rutas exactas](CURRICULARIZACION_V4.md) antes de gastar o promover una selección.
+
 ## Fuentes y versiones
 
 `gskg investigacion inventariar <directorio> --version V4 --salida <archivo.json>` lee libros y registra SHA, hojas, dimensiones y cabeceras candidatas. No activa la versión. Las hojas ambiguas o auxiliares necesitan mapeo/exclusión explícitos. No se deduce el currículo por el nombre de una carpeta, su fecha de modificación o el número esperado de libros.

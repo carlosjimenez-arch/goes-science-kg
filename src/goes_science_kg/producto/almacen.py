@@ -24,6 +24,8 @@ from goes_science_kg.producto.conocimiento_publicado import ArchivoConocimiento,
 from goes_science_kg.producto.contratos import ManifestProducto, ProductoMaterializado
 from goes_science_kg.producto.grafo_alineaciones import validar_grafo_alineaciones
 from goes_science_kg.producto.grafo_conocimiento import validar_grafo_conocimiento
+from goes_science_kg.producto.grafo_mejoras import validar_grafo_mejoras
+from goes_science_kg.producto.mejoras_publicadas import ArchivoMejoras, validar_archivo_mejoras
 
 ARCHIVOS = frozenset(
     {
@@ -49,11 +51,13 @@ def archivos_producto(version: str) -> frozenset[str]:
         return ARCHIVOS
     if version == "producto-3":
         return ARCHIVOS | {"alineaciones.json"}
+    if version == "producto-4":
+        return ARCHIVOS | {"alineaciones.json", "mejoras.json"}
     raise ValueError("Formato de publicación no admitido")
 
 
 class _Puntero(ContratoCurricular):
-    version: Literal["producto-2", "producto-3"]
+    version: Literal["producto-2", "producto-3", "producto-4"]
     version_curriculo: Literal["V4"]
     snapshot_id: str = Field(pattern=r"^[a-f0-9]{64}$")
     manifest_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -121,6 +125,7 @@ def _verificar_grafo(
     aristas: tuple[Arista, ...],
     conocimiento: ArchivoConocimiento | None = None,
     alineaciones: ArchivoAlineaciones | None = None,
+    mejoras: ArchivoMejoras | None = None,
 ) -> None:
     if conocimiento is not None and conocimiento.coleccion.proyeccion_dependencias.estado == "bloqueada_por_ciclos":
         raise ValueError("Una colección bloqueada por ciclos no puede formar parte del producto")
@@ -213,6 +218,7 @@ def _verificar_grafo(
         raise ValueError("Documento sin ningún nodo o relación que lo utilice")
     validar_grafo_conocimiento(nodos, aristas, conocimiento)
     validar_grafo_alineaciones(nodos, aristas, alineaciones)
+    validar_grafo_mejoras(nodos, aristas, mejoras)
 
 
 def _cargar_snapshot(base: Path, esperada: str, identidad: str) -> ProductoMaterializado:
@@ -246,14 +252,20 @@ def _cargar_snapshot(base: Path, esperada: str, identidad: str) -> ProductoMater
     if conocimiento is not None:
         validar_archivo_conocimiento(conocimiento, curriculo, catalogo=catalogo)
     alineaciones = None
-    if manifest.version == "producto-3":
-        alineaciones = ArchivoAlineaciones.model_validate_json(contenidos["alineaciones.json"])
-        validar_archivo_alineaciones(alineaciones, curriculo)
+    if manifest.version in {"producto-3", "producto-4"}:
+        datos = json.loads(contenidos["alineaciones.json"])
+        if datos is not None:
+            alineaciones = ArchivoAlineaciones.model_validate(datos)
+            validar_archivo_alineaciones(alineaciones, curriculo)
+    mejoras = None
+    if manifest.version == "producto-4":
+        mejoras = ArchivoMejoras.model_validate_json(contenidos["mejoras.json"])
+        validar_archivo_mejoras(mejoras, curriculo, catalogo)
     if manifest.nodos != dict(Counter(n.tipo.value for n in nodos)) or (
         manifest.aristas != dict(Counter(a.tipo.value for a in aristas))
     ):
         raise ValueError("Los conteos del manifiesto no corresponden al grafo")
-    _verificar_grafo(curriculo, catalogo, nodos, aristas, conocimiento, alineaciones)
+    _verificar_grafo(curriculo, catalogo, nodos, aristas, conocimiento, alineaciones, mejoras)
     derivados = {
         nombre: json.loads(contenidos[nombre])
         for nombre in ("diagnostico_v4.json", "alertas_v4.json", "publicacion.json")
@@ -277,6 +289,7 @@ def _cargar_snapshot(base: Path, esperada: str, identidad: str) -> ProductoMater
         publicacion=derivados["publicacion.json"],
         conocimiento=conocimiento,
         alineaciones=alineaciones,
+        mejoras=mejoras,
     )
 
 
@@ -292,6 +305,7 @@ def publicar_producto(
     publicacion: dict,
     conocimiento: ArchivoConocimiento | None = None,
     alineaciones: ArchivoAlineaciones | None = None,
+    mejoras: ArchivoMejoras | None = None,
 ) -> dict:
     """Escribe una generación completa y cambia el puntero solo después de verificarla."""
     import fcntl
@@ -300,7 +314,9 @@ def publicar_producto(
         validar_archivo_conocimiento(conocimiento, curriculo, catalogo=catalogo)
     if alineaciones is not None:
         validar_archivo_alineaciones(alineaciones, curriculo)
-    _verificar_grafo(curriculo, catalogo, tuple(nodos), tuple(aristas), conocimiento, alineaciones)
+    if mejoras is not None:
+        validar_archivo_mejoras(mejoras, curriculo, catalogo)
+    _verificar_grafo(curriculo, catalogo, tuple(nodos), tuple(aristas), conocimiento, alineaciones, mejoras)
     base = _destino(destino, crear=True)
     snapshots = _segura(base, "snapshots")
     snapshots.mkdir(exist_ok=True)
@@ -319,6 +335,13 @@ def publicar_producto(
     if alineaciones is not None:
         contenidos["alineaciones.json"] = alineaciones.model_dump_json().encode() + b"\n"
         huellas["alineaciones.json"] = sha(contenidos["alineaciones.json"])
+    if mejoras is not None:
+        formato = "producto-4"
+        if alineaciones is None:
+            contenidos["alineaciones.json"] = b"null\n"
+            huellas["alineaciones.json"] = sha(contenidos["alineaciones.json"])
+        contenidos["mejoras.json"] = mejoras.model_dump_json().encode() + b"\n"
+        huellas["mejoras.json"] = sha(contenidos["mejoras.json"])
     identidad = _identidad(huellas, formato)
     manifest = ManifestProducto(
         version=formato,

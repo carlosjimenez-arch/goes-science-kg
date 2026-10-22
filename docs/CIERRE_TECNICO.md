@@ -1,56 +1,40 @@
-# Estado de entrega de Ciencias · 21 de octubre de 2026
+# Estado de entrega de Ciencias · 22 de octubre de 2026
 
-La reconstrucción implementa un producto V4 consultable y un motor automático durable con fuentes
-verificadas, especialistas, psicopedagogía, revisión adversarial, presupuesto y abstención. El hito
-técnico no se presenta como aprobación oficial ni como validación del aprendizaje del currículo completo.
+**El proyecto sigue en cierre:** 98 unidades cuentan con respaldo automático y diez incidencias tienen
+un seguimiento finito en ejecución. La entrega de revisión conserva el denominador completo y sus
+estados. No se presenta como currículo aprobado por la institución ni como eficacia medida.
+[Resultados, artefactos y límites](CURRICULARIZACION_V4.md).
 
-## Evidencia comprobada
-
-| Capacidad | Comprobación |
+| Capacidad | Evidencia comprobada |
 |---|---|
-| Ingesta V4 | Once matrices, 126 hojas, 1.020 filas originales, SHA y celdas verificadas |
-| Publicación y API | `producto-3`, 1.191 nodos, 4.136 aristas, nueve archivos; aislamiento del histórico |
-| Conocimiento | Quince juicios originales, dos relaciones admitidas; rechazos y abstenciones conservados |
-| PISA/ERCE | Cuatro casos auditables, un respaldo documental limitado a su fila; sin votos nuevos |
-| Contexto | Lectura primaria completa, citas por ID, reserva de fuentes obligatorias y veto ante cambios |
-| Organización por unidades | 108 unidades y 1.020 filas rehidratadas; 853 solicitudes preparadas y 167 detenidas |
-| Caso de generación | Una unidad experimental íntegra de Física de décimo, ocho objetivos bajo tiempos propuestos |
-| Investigación adicional | NGSS E/F/G, tres PDF y 58 páginas, ediciones y huellas fijadas |
+| Ingesta V4 | Once matrices, 126 hojas, 1.020 filas y 108 unidades; SHA/celdas conservados |
+| Curricularización | 98 unidades respaldadas, 888 filas de Ciencias con propuestas; diez incidencias visibles |
+| Cuatro especialistas | Ciencia, currículo, psicopedagogía y adversarial; veto por criterio, huella exacta |
+| Controles | Cinco defectos distintos detectados por el criterio previsto; fallos no cuentan como aciertos |
+| Publicación de revisión | producto-4, diez archivos, 2.202 nodos y 6.929 aristas; fuente y grafo verificados |
+| Entrega utilizable | Excel/CSV original-propuesta, HTML sin conexión, fuentes y votos completos |
+| Biología | Copia derivada con tres enmiendas; otras celdas, estilos y partes OOXML preservados |
+| Progresiones nativas | Doce expectativas NGSS y nueve enlaces documentales; ninguna equivalencia de grados |
+| PISA/ERCE y conocimiento | Se conservan cuatro casos de alineación y quince juicios previos, con todos sus estados |
+| Respaldo previo | 7.397 archivos restaurados desde generaciones GCS; contador intacto tras migrar su identidad física |
 
-La preparación exhaustiva tardó 3.460 ms localmente y no invocó modelos. Sus 167 sesiones sin solicitud
-se explican por 140 clasificaciones pendientes/fuera de alcance o multidisciplinares y 27 filas con
-alertas científicas bloqueantes; no se desechan del paquete. Las 138 filas sin columna «Aproximar»
-mantienen esa ausencia. La preparación no evalúa la calidad de actividades aún no generadas ni adopta
-sesenta minutos como carga oficial. Evidencia institucional:
-`docs/investigacion/preparacion_exhaustiva_unidades_20261021.json`.
+La suite integral pasó **1.356 pruebas en 262,76 segundos**. Ruff está en verde. Incluye contratos,
+rehidratación, falsificaciones con identidad recalculada, votos ausentes, presupuestos concurrentes,
+mutación de publicación, protección GCS, restauración SQLite, exportación y no ejecución de fórmulas.
+La API de revisión devolvió 200 para salud, filas, propuestas, progresiones y CSV. La vista se comprobó
+en navegador con filtros reales y sin desbordamiento horizontal en la ventana ensayada.
 
-El [contrato de alineaciones](investigacion/integracion_alineaciones_v4.md) describe publicación,
-rehidratación y auditoría. Las [decisiones NGSS](investigacion/progresiones_ngss_20261021.md) impiden
-confundir bandas documentales con equivalencias de grados o prerrequisitos individuales.
+Se conservan los experimentos y fallos P1–P5. El seguimiento P6 conserva todos los antecedentes; no
+reevalúa las 98 unidades respaldadas. El contador permanece en el mismo ledger y el límite se aplica
+por llamada. La reanudación inicialmente bloqueada por Google se recuperó tras verificar nuevamente
+la identidad GOES, antes de gastar. [Continuidad operativa](CONTINUIDAD_CIENCIAS_V4.md).
 
-## Límites del hito
+Falta terminar el seguimiento, consolidar/promover la selección definitiva y respaldar/restaurar los
+resultados nuevos antes de retirar los datos temporales. La calibración independiente, validación en
+aula y aprobación institucional siguen siendo estados separados: no se obtienen por votación de agentes.
+El grafo no inventa prerrequisitos reales a partir de secuencias extranjeras.
 
-Verificación final: **1.260 pruebas aprobadas en 223,76 s**, Ruff y `git diff --check` en verde.
-El checkout separado de sólo código pasó otras **157 pruebas sintéticas en 4,49 s**, sin el corpus V4.
-La batería encontró y permitió corregir un problema del hook heredado: `uv` intentaba abrir su caché
-fuera del sandbox. Ahora reutiliza la CLI instalada y conserva el fallback con lock fijado; la salida
-inválida vuelve a bloquearse. No se desactivaron guardas ni se aceptó el fallo como prueba aprobada.
-Se añadieron casos de falsificación de archivos/citas/modelos, mutación de PDF y snapshot,
-aislamiento de fila, falta de presupuesto y protección común de destinos. Informe institucional:
-`docs/investigacion/verificacion_entrega_20261021.json`.
-
-No se declara terminado el contenido curricular completo. Falta ampliar las relaciones respaldadas y
-las unidades generadas a otras áreas; fundamentar progresiones locales; calibrar los jueces con casos
-independientes; y resolver los estados pendientes sin modificar los originales. La infraestructura
-puede preparar todas las unidades, pero esa disponibilidad no demuestra eficacia pedagógica.
-
-Las ejecuciones conservan contadores, fallos y terminales originales. Esta integración y las pruebas
-adicionales consumieron cero nuevas invocaciones de Vertex. Los USD documentados son reservas
-conservadoras de experimentos anteriores, no una factura ni un presupuesto reiniciado.
-
-## Entrega pública
-
-Se separa código de corpus institucional. La rama pública parte de la base existente y distribuye
-código, pruebas, configuración y documentación, conservando los nuevos insumos y evidencias localmente.
-No incorpora como ancestro el commit que contiene el corpus retenido. [Alcance y reproducción](PUBLICACION.md).
-No se instaló CI ni se modificaron proyectos, cuentas o buckets de Matemáticas.
+La entrega pública usa `feat/ciencias-v4` desde la base pública. Se incorporan código, pruebas,
+configuración y documentación y se retiran los datos del árbol, conservando su recuperación privada.
+No se publica la historia local que contiene el corpus nuevo; no se reescribe historia ni se usa push
+forzado. No se añadió CI ni se modificó IAM. [Publicación](PUBLICACION.md), [datos](DATOS_EXTERNOS.md).

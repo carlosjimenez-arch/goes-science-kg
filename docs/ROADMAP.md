@@ -2,6 +2,19 @@
 
 Corte de investigación: 21 de octubre de 2026. Objetivo: reconstruir el producto sobre la entrega V4 del MINED, con progresiones de ciencias, experiencias de enseñanza y evaluación contextualizadas para El Salvador. La versión de un currículo, la del formato del grafo y la de una ejecución son identidades diferentes.
 
+## Estado de ejecución del 22 de octubre
+
+La campaña completa ya evaluó 108 unidades y 1.020 filas: 98 unidades respaldadas, siete abstenciones
+y tres vetos. P6 atiende las diez incidencias con antecedentes, presupuesto acumulativo y menor
+concurrencia. La revisión producto-4, la matriz comparada, la copia enmendada de Biología y la vista
+sin conexión están verificadas. La suite pasó 1.356 pruebas. El cierre exige resolver el seguimiento,
+consolidar la selección definitiva y verificar el respaldo nuevo antes de retirar datos locales.
+Las progresiones NGSS verificadas son documentales; no se afirman prerrequisitos locales ni eficacia.
+[Resultados actuales y reproducción](CURRICULARIZACION_V4.md).
+
+Las fases siguientes conservan el plan y sus criterios; las descripciones del primer piloto son
+antecedentes del 21 de octubre, ampliados por la campaña completa.
+
 ## Decisiones fundamentadas
 
 1. El currículo nacional y la entrega V4 son la referencia local. PISA, ERCE y TIMSS son perspectivas de evaluación independientes; ningún ranking extranjero sustituye una decisión curricular salvadoreña.

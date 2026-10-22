@@ -30,6 +30,9 @@ class Registro:
                 CREATE TABLE IF NOT EXISTS cache (
                     clave TEXT PRIMARY KEY, respuesta TEXT NOT NULL
                 );
+                CREATE TABLE IF NOT EXISTS salidas_llm (
+                    llamada TEXT PRIMARY KEY, texto TEXT NOT NULL, sha256 TEXT NOT NULL
+                );
             """)
 
     @contextmanager
@@ -89,6 +92,33 @@ class Registro:
         with self.conexion() as db:
             fila = db.execute("SELECT respuesta FROM cache WHERE clave=?", (clave,)).fetchone()
         return json.loads(fila[0]) if fila else None
+
+    def guardar_salida(self, llamada: str, texto: str) -> None:
+        """Retiene también respuestas inválidas en el ledger privado, sin exponerlas en logs."""
+        import hashlib
+
+        if len(texto.encode()) > 2 * 1024 * 1024:
+            raise ValueError("La respuesta excede el tamaño de auditoría autorizado")
+        with self.conexion() as db:
+            db.execute(
+                "INSERT INTO salidas_llm VALUES(?,?,?)", (llamada, texto, hashlib.sha256(texto.encode()).hexdigest())
+            )
+
+    def salida(self, clave: str) -> str | None:
+        """Una respuesta recibida sobrevive incluso si se interrumpe antes de poblar la caché."""
+        import hashlib
+
+        with self.conexion() as db:
+            fila = db.execute(
+                "SELECT s.texto,s.sha256 FROM salidas_llm s JOIN llamadas l ON l.id=s.llamada "
+                "WHERE l.clave=? ORDER BY l.creada DESC,l.id DESC LIMIT 1",
+                (clave,),
+            ).fetchone()
+        if fila is None:
+            return None
+        if hashlib.sha256(fila[0].encode()).hexdigest() != fila[1]:
+            raise ValueError("La respuesta de auditoría no conserva su SHA")
+        return fila[0]
 
     def guardar_cache(self, clave: str, respuesta: dict) -> None:
         with self.conexion() as db:

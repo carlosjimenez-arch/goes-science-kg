@@ -16,6 +16,7 @@ PROTEGIDAS = (
     "data/referencias_paises_2026",
     "data/referencias_cientificas_2026",
     "data/referencias_progresiones_2026",
+    "data/referencias_web_cientificas_2026",
     "data/evaluacion",
     "src",
     "config",

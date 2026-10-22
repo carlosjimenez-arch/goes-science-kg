@@ -7,15 +7,18 @@ de dependencias opcionales se mantienen dentro del comando que las necesita.
 from goes_science_kg.cli import (
     alineacion,
     alinear,
+    artefactos,
     bucle,
     catalogo,
     conceptos,
+    datos,
     grados,
     grafo,
     internacional,
     investigacion,
     juicios,
     lotes,
+    mejoras,
     motor,
     panel,
     producto,
@@ -31,6 +34,8 @@ from goes_science_kg.observabilidad import instrumentar_cli
 __all__ = ["app"]
 
 app.add_typer(grafo.app, name="grafo")
+app.add_typer(artefactos.app, name="artefactos")
+app.add_typer(datos.app, name="datos")
 app.add_typer(refuerzo.app, name="refuerzo")
 app.add_typer(catalogo.app, name="catalogo")
 app.add_typer(alinear.app, name="alinear")
@@ -48,6 +53,7 @@ app.add_typer(motor.app, name="motor")
 app.add_typer(investigacion.app, name="investigacion")
 app.add_typer(producto.app, name="producto")
 producto.app.add_typer(unidades.app, name="unidades")
+producto.app.add_typer(mejoras.app, name="mejoras")
 producto.app.add_typer(juicios.app, name="juicios")
 
 instrumentar_cli(app)

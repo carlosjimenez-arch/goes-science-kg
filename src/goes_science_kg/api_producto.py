@@ -77,6 +77,7 @@ class _LecturaProducto:
                         raiz_paises=self.base / "data/referencias_paises_2026",
                         raiz_cientificas=self.base / "data/referencias_cientificas_2026",
                         archivo_alertas=self.base / "docs/investigacion/alertas_v4.json",
+                        raiz_progresiones=self.base / "data/referencias_progresiones_2026",
                     )
                     if firmas != _observar(self.destino):
                         raise ValueError("La publicación cambió durante la carga")
@@ -286,4 +287,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
             raise HTTPException(422, str(error)) from error
         return identidad(r) | {"paquete": paquete.model_dump(mode="json"), "llamadas_modelos": 0}
 
+    from goes_science_kg.api_mejoras import crear_router_mejoras
+
+    router.include_router(crear_router_mejoras(lectura.leer))
     return router

@@ -32,6 +32,7 @@ def cargar_runtime(
     raiz_paises: Path | None = None,
     raiz_cientificas: Path | None = None,
     archivo_alertas: Path | None = None,
+    raiz_progresiones: Path | None = None,
 ) -> RuntimeProducto:
     """Fija una generación; las raíces permitidas no proceden de las consultas."""
     producto = cargar_producto(destino or ruta("data/producto/V4"))
@@ -49,6 +50,7 @@ def cargar_runtime(
             "referencias_2026",
             "referencias_paises_2026",
             "referencias_cientificas_2026",
+            "referencias_progresiones_2026",
         }:
             raise ValueError("Raíz de referencia no autorizada para el producto")
         catalogo[id_fuente] = nodo.props
@@ -72,6 +74,7 @@ def cargar_runtime(
             "referencias_2026": raiz_referencias or ruta("data/referencias_2026"),
             "referencias_paises_2026": raiz_paises or ruta("data/referencias_paises_2026"),
             "referencias_cientificas_2026": raiz_cientificas or ruta("data/referencias_cientificas_2026"),
+            "referencias_progresiones_2026": raiz_progresiones or ruta("data/referencias_progresiones_2026"),
         },
         **opciones,
     )

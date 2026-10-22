@@ -519,3 +519,39 @@ def test_jueces_con_criterios_vacios_no_son_aprobaciones(entrega, rol_incompleto
     resultado = _ejecutar(entrega, ModeloCriteriosVacios())
     assert resultado["estado"] == "abstencion" and resultado["propuesta"] is None
     assert any(f"Falta revisión {rol_incompleto}" in motivo for motivo in resultado["motivos"])
+
+
+def test_respuesta_recibida_se_recupera_sin_cache_y_sin_llamada_nueva(tmp_path):
+    proveedor = _vertex_simulado(tmp_path)
+    proveedor.__dict__["cliente"] = SimpleNamespace(
+        models=SimpleNamespace(
+            generate_content=lambda **kwargs: SimpleNamespace(
+                text='{"valor":"respuesta original"}', usage_metadata=None
+            )
+        )
+    )
+    argumentos = dict(rol="redactor", sistema="Sistema", mensaje="Mismo mensaje", esquema=RespuestaProveedor)
+    assert proveedor.generar(**argumentos).valor == "respuesta original"
+    with proveedor.registro.conexion() as db:
+        db.execute("DELETE FROM cache")
+    reiniciado = _vertex_simulado(tmp_path)
+    # No se inyecta cliente: la fixture autouse fallaría si se intentara abrir ADC o Vertex.
+    assert reiniciado.generar(**argumentos).valor == "respuesta original"
+    assert reiniciado.registro.resumen("presupuesto-durable")["llamadas"] == 1
+
+
+def test_respuesta_invalida_se_preserva_con_diagnostico_y_no_se_vuelve_a_pagar(tmp_path):
+    proveedor = _vertex_simulado(tmp_path)
+    texto = '{"campo_no_admitido":"borrador no validado"}'
+    proveedor.__dict__["cliente"] = SimpleNamespace(
+        models=SimpleNamespace(generate_content=lambda **kwargs: SimpleNamespace(text=texto, usage_metadata=None))
+    )
+    argumentos = dict(rol="redactor", sistema="Sistema", mensaje="Mismo mensaje", esquema=RespuestaProveedor)
+    for _ in range(2):
+        with pytest.raises(ValueError) as error:
+            proveedor.generar(**argumentos)
+        assert error.value.texto_respuesta == texto
+        assert error.value.detalles_validacion
+    assert proveedor.registro.resumen("presupuesto-durable")["llamadas"] == 1
+    with proveedor.registro.conexion() as db:
+        assert db.execute("SELECT texto FROM salidas_llm").fetchone()[0] == texto

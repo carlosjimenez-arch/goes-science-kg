@@ -4,79 +4,43 @@ Grafo de conocimiento de **Ciencias** para El Salvador. Une la malla del MINED (
 marcos internacionales (TIMSS 2027, TIMSS Advanced, PISA 2025) y con los currículos de otros
 países. El fin es **proponer, por asignatura, una curricularización mejor y con evidencia**.
 
-## Reconstrucción del producto (2026-10-21)
+Los datos, PDF y entregables se recuperan desde el bucket institucional con
+`uv run gskg datos restaurar --en-repo`. Sus rutas están ignoradas por Git.
+[Restauración, inventario y migración verificable](docs/DATOS_EXTERNOS.md).
 
-El producto y las evidencias V4 descritos aquí corresponden al entorno institucional local. La rama
-pública distribuye el código y su documentación; los insumos nuevos se conservan aparte.
-[Alcance del envío y reproducción](docs/PUBLICACION.md).
-[Estado comprobado de la entrega y pendientes educativos](docs/CIERRE_TECNICO.md).
+## Producto V4 · 22 de octubre de 2026
 
-La entrega V4 es el objetivo de la reconstrucción. **El grafo histórico de este checkout sigue siendo V3**:
-no se etiqueta como V4 ni se trasladan inferencias sin comparar las fuentes. La copia local de Descargas estaba
-bloqueada por macOS; se recuperaron once matrices de la carpeta institucional V4 mediante el Drive conectado.
-Los originales están en `insumos/v4/`, con procedencia y SHA en `insumos/procedencia_v4.json`. La ingesta
-ya conserva las 126 hojas, 1.020 filas curriculares y sus campos/celdas. La continuación autorizada
-produjo 384 asignaturas declaradas, 561 coincidencias, 68 abstenciones y siete fuera de alcance.
-La [publicación V4 local](data/producto/V4/actual.json) ya está disponible para el runtime V4;
-el grafo y la configuración históricos siguen siendo V3. [Contabilidad y límites](docs/investigacion/catalogacion_v4.md).
+La entrega de revisión conserva once matrices, 126 hojas, **1.020 filas y 108 unidades** de 2.º a 11.º.
+Propone objetivos, indicadores, productos evaluables, criterios, orientaciones y apoyos para El Salvador.
+**98 unidades y 888 filas de Ciencias tienen respaldo automático completo**; diez unidades conservan
+sus incidencias y un seguimiento acotado preparado. No se declara cerrado el producto completo.
+[Resultados y reproducción](docs/CURRICULARIZACION_V4.md).
 
-El [explorador V4 local](data/producto/explorador_v4.html) permite filtrar por grado, unidad y disciplina,
-examinar fuentes y alertas y exportar Markdown sin conexión. Es una captura de revisión del insumo y del
-catálogo completo, incluidas las abstenciones; no equivale a una currícula mejorada aprobada.
-Se regenera con `gskg producto explorar --catalogo data/producto/V4/catalogo_disciplinas.json`.
+`producto-4` añade propuestas, evidencias y cuatro revisiones sobre el texto exacto. La entrega incluye
+Excel y CSV comparados, vista sin conexión y tres enmiendas en una copia derivada de Biología.
+Los originales, sus alertas, las fases ausentes y todos los resultados anteriores se conservan.
+La consulta ofrece `/api/v4/propuestas`, `/api/v4/progresiones` y exportación CSV.
 
-La investigación y las decisiones están en [el roadmap](docs/ROADMAP.md), [la arquitectura](docs/ARQUITECTURA.md),
-[la investigación educativa](docs/investigacion/educacion.md) y [la investigación de IA](docs/investigacion/arquitectura_ia.md).
-El catálogo nuevo `config/referentes_2026.yaml` distingue fuentes verificadas, pendientes de ingesta y borradores.
-PISA 2025 tiene marco final y resultados publicados; ERCE 2025 aún no tiene resultados al corte de investigación.
-Cuatro PDF de marcos/resultados (689 páginas), incluido el reporte técnico ERCE 2019 publicado en 2025, están fijados
-por SHA en [el almacén de referencias](data/referencias_2026/README.md). Hay 22 dimensiones de muestra y
-[29 criterios operativos PISA/ERCE](docs/investigacion/referentes_operativos_2026.md) con anclas documentales;
-su validación no acredita alineación de la V4.
+El flujo LangGraph usa ciencia, currículo, psicopedagogía y revisión adversarial, con veto por criterio,
+una reparación por protocolo, validación de fuentes, checkpoints y presupuesto acumulativo. Los
+especialistas que comparten modelo/proveedor no se consideran estadísticamente independientes.
+Las referencias PISA/ERCE, países y NGSS informan el diseño; no se homologan grados ni se afirma
+eficacia de aprendizaje. Las doce expectativas NGSS conservan sus bandas nativas.
 
-Una [colección de países](data/referencias_paises_2026/README.md) fija otros 12 PDF y 2.028 páginas de
-Inglaterra, Singapur y Japón, con ediciones, cohortes, modalidades y traducciones diferenciadas. Se cotejó
-la revisión MOE enero 2026 con los bytes existentes. Los DOCX/HTML australianos ya aportan evidencia
-por código oficial: quedan 602 candidatos históricos sin hidratador frente a 1.047 inicialmente;
-ningún vínculo se acepta por esa mejora documental.
+Los datos y resultados están separados del código público. El respaldo verificado previo fija 7.397
+archivos por generación y SHA; los resultados P5 posteriores todavía requieren un respaldo nuevo.
+La cuenta GOES se volvió a verificar; el seguimiento de las diez incidencias está en ejecución.
+[Estado de continuidad](docs/CONTINUIDAD_CIENCIAS_V4.md), [operación](docs/OPERACION.md) y
+[alcance de publicación](docs/PUBLICACION.md).
 
-La ejecución de [una unidad real de Física de 10.º](data/producto/unidades/fisica-10-v4-catalogada/paquete.md)
-conserva sus ocho objetivos, evidencias y contexto de aula: cuatro sesiones obtuvieron respaldo automático
-y cuatro quedaron en abstención. Consumió 58 intentos y USD 7,4261195 de reserva; reanudar recuperó
-los ocho checkpoints sin generar ni gastar. [Resultados y límites](docs/investigacion/resultados_unidad_fisica10_v4.md).
-La [entrega experimental íntegra](data/producto/unidades/fisica-10-entrega-experimental/unidad.md)
-conserva ocho objetivos y respaldo automático por objetivo en nueve encuentros propuestos de sesenta
-minutos: mantiene siete propuestas de la cohorte completa y organiza el objetivo de seno/coseno en
-dos encuentros. El escenario uniforme de sesenta minutos conserva su abstención y todos los estados
-anteriores siguen auditables. [Verificación, presupuesto y límites](docs/investigacion/entrega_unidad_fisica10_20261021.md).
-El [descubrimiento de conocimiento V4](docs/investigacion/conocimiento_v4.md) produjo 6.901 hipótesis
-con evidencia localizada; son candidatos para cotejo, sin admisión automática ni prerrequisitos verificados.
-El [flujo de juicios semánticos](docs/juicios_conocimiento.md) prepara cada enlace con fuentes rehidratadas,
-cuatro lectores ciegos y vetos por criterio. La consolidación reconstruye dictámenes y comprueba ciclos entre
-lotes. La publicación y la recuperación por fila ya incorporan esos archivos verificados, con evidencias
-deduplicadas y relaciones limitadas al objetivo solicitado. La publicación actual conserva quince juicios
-reales: dos respaldos, seis rechazos y siete abstenciones, sin progresiones verificadas. La composición
-conserva los protocolos originales y comprueba ciclos entre cohortes. Falta calibración independiente.
-La [medición de contexto](docs/investigacion/contexto_conocimiento_v4.md) pasó de 509 a 1.166 expedientes
-preparables de 1.203 con el mismo límite, sin llamadas a modelos. Ese resultado es estructural, no educativo.
+La investigación documenta [criterios educativos](docs/investigacion/educacion.md),
+[arquitectura de IA](docs/investigacion/arquitectura_ia.md), [roadmap](docs/ROADMAP.md) y
+[arquitectura implementada](docs/ARQUITECTURA.md). El recuperador conserva el baseline que ganó la
+comparación previa. La expansión terminológica del índice científico mejoró un diagnóstico pequeño;
+no se presenta como prueba de superioridad de Agentic RAG.
 
-La base nueva incorpora inventario de Excel, CLI por grupos, importaciones absolutas, recuperación léxica/densa,
-contratos de evidencia, un workflow LangGraph con tres revisores, presupuesto durable, checkpoints y abstención.
-La comparación local conserva el recuperador anterior: el candidato más rápido perdió calidad en varias pruebas.
-Los experimentos no equivalen a validación del aprendizaje.
-La [medición del baseline V4 publicado](docs/investigacion/resultados_baseline_v4_catalogado.md)
-registra cobertura y fallos sobre las mismas 19 consultas ya abiertas, sin cambiar ranking ni prompts.
-La entrega experimental conserva ocho objetivos respaldados bajo su escenario de nueve encuentros.
-La [continuación de Ciencias](docs/investigacion/continuacion_ciencias_20261021.md)
-registra los juicios, comparación de formatos, lectura primaria completa, API V4, escenarios y consumo.
-La API `/api/v4` consulta publicaciones verificadas y prepara unidades sin ejecutar modelos.
-
-La publicación local `producto-3` incorpora los cuatro casos PISA/ERCE originales y conserva todos sus
-estados. Un respaldo documental se limita a su fila; la API permite auditar fuentes y lectores.
-El contexto reserva las páginas admitidas antes del relleno opcional o se abstiene si no caben.
-[Contrato, reproducción y límites](docs/investigacion/integracion_alineaciones_v4.md).
-La nueva [colección NGSS](docs/investigacion/progresiones_ngss_20261021.md) fija tres documentos oficiales
-y 58 páginas; no afirma progresiones locales respaldadas ni equivalencias automáticas de grados.
+Las carpetas siguientes corresponden al grafo histórico V3 y se recuperan desde GCS. V4 usa su propia
+publicación: las relaciones y propuestas del histórico no se heredan por coincidencias de vocabulario.
 
 | Asignatura | Grados | Carpeta |
 |---|---|---|
@@ -88,9 +52,8 @@ y 58 páginas; no afirma progresiones locales respaldadas ni equivalencias autom
 ## Inicio rápido
 ```bash
 uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex --extra motor
-uv run gskg grafo construir    # arma el grafo en data/grafo/
-uv run gskg grafo validar      # revisa invariantes
-uv run gskg fichas             # genera asignaturas/<x>/ficha.md
+uv run gskg datos restaurar --en-repo
+uv run gskg producto validar
 uv run pytest -q
 ```
 

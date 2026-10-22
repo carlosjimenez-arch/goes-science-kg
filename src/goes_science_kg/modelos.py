@@ -36,6 +36,9 @@ class TipoNodo(StrEnum):
     RELACION_CURRICULAR = "RelacionCurricular"  # Juicio condicionado a una fila V4; identidad RELACION_V4
     CRITERIO_EVALUATIVO = "CriterioEvaluativo"  # Paráfrasis local de PISA/ERCE, con población y alcance
     ALINEACION_DOCUMENTAL = "AlineacionDocumental"  # Tres lectores; no acredita cobertura de un marco
+    EXPECTATIVA_NATIVA = "ExpectativaNativa"  # Banda y celda PDF del currículo extranjero
+    REVISION_UNIDAD = "RevisionUnidad"  # Estado de una unidad, incluidos rechazos y abstenciones
+    MEJORA_CURRICULAR = "MejoraCurricular"  # Propuesta exacta por fila con cuatro especialistas
 
 
 class TipoArista(StrEnum):
@@ -60,6 +63,10 @@ class TipoArista(StrEnum):
     DESTINO_RELACION = "DESTINO_RELACION"  # RelacionCurricular → extremo de destino
     DECLARADA_EN = "DECLARADA_EN"  # AlineacionDocumental → fila curricular exacta
     CON_CRITERIO = "CON_CRITERIO"  # AlineacionDocumental → criterio evaluativo local
+    SIGUE_EN_REFERENCIA = "SIGUE_EN_REFERENCIA"  # ExpectativaNativa → banda siguiente del documento
+    REVISA_UNIDAD = "REVISA_UNIDAD"  # RevisionUnidad → Unidad V4, sin reemplazar el original
+    PROPUESTA_PARA = "PROPUESTA_PARA"  # MejoraCurricular → fila original V4
+    PARTE_DE_REVISION = "PARTE_DE_REVISION"  # MejoraCurricular → RevisionUnidad
 
 
 # Aristas que siempre son inferencia (IA o regla) y por eso exigen trazabilidad completa.

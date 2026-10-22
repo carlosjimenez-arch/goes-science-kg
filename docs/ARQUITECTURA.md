@@ -138,3 +138,40 @@ La operación local usa `data/operaciones/`, ignorado por Git: registro de llama
 ## Límites de publicación
 
 `respaldado_automaticamente` indica que una salida pasó las reglas y los jueces de esa ejecución. No significa aprendizaje demostrado, ítem calibrado, currículo oficial ni confirmación del MINED. El estado de evidencia empírica se conserva aparte; no se obtiene por votación de agentes.
+
+
+## Curricularización completa y publicación producto-4
+
+`producto/preparacion_mejoras.py` conserva una unidad completa, las fases presentes/ausentes y sus
+celdas verificadas. Deduplica sólo cadenas idénticas; no resume ni recorta exigencias. Los párrafos
+científicos se rehidratan por DOM/SHA y las expectativas nativas por región PDF, encabezado y extremos.
+`recuperacion/ciencia_web.py` separa este índice auxiliar de la recuperación curricular seleccionada.
+
+`motor/mejoras.py` implementa contexto → redacción → contrato → cuatro revisiones ciegas → cierre.
+Permite una reparación real; el mismo borrador vetado no vuelve a votarse. Ciencia, currículo,
+psicopedagogía y adversarial tienen rúbricas completas; ningún criterio negativo se compensa por mayoría.
+La gramática de transporte reduce complejidad para Vertex; Pydantic aplica el contrato local íntegro.
+El ledger conserva incluso salidas inválidas y las recupera sin nueva invocación al reanudar.
+
+`producto/seguimiento_mejoras.py` registra un protocolo finito sobre todas las incidencias de una campaña,
+con sus antecedentes completos. Recupera sólo lecturas ausentes si las demás aprueban el mismo borrador;
+los vetos requieren modificación sustantiva. No reevalúa unidades aprobadas ni reinicia el presupuesto.
+`operacion/fondos.py` reserva la cota completa de las unidades en curso y el ledger impone el límite por
+llamada. Un lock serializa campañas del mismo presupuesto. Los checkpoints conservan la huella del
+código, prompts, contexto, contrato y modelos; cambios incompatibles impiden reanudar silenciosamente.
+
+`mejoras_publicadas.py` exige el denominador íntegro, reconstruye los cierres y valida cinco controles
+adversariales. `grafo_mejoras.py` publica `RevisionUnidad`, `MejoraCurricular` y `ExpectativaNativa`, con
+relaciones propias. No añade cobertura internacional ni prerrequisitos locales por orden documental.
+`producto-4` conserva diez archivos verificados en una generación inmutable. La API invalida su instancia
+si cualquiera cambia, incluso cuando se restaura después. Los formatos producto-2/3 siguen admitidos.
+
+La exportación conserva el original y muestra la propuesta y sus condiciones en Excel, CSV y HTML.
+Escapa texto y fórmulas; las enmiendas de Excel cambian sólo las celdas aceptadas en copias derivadas y
+verifican todas las celdas/estilos después. El runtime no indexa las propuestas como evidencia primaria.
+
+`operacion/almacen_gcs.py` comprueba identidad, proyecto, acceso uniforme y prevención pública efectiva
+por cada escritura. Crea objetos nuevos, fija generaciones y verifica sus SHA mediante descarga.
+`datos_externos.py` restaura el corpus por inventario. `presupuestos_restaurados.py` migra sólo la identidad
+física de los vínculos a ledgers íntegros; no borra llamadas ni reinicia reservas. No hay infraestructura
+nueva, IAM modificado ni CI. [Procedimiento](DATOS_EXTERNOS.md), [resultados](CURRICULARIZACION_V4.md).

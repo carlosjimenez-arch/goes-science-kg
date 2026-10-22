@@ -9,9 +9,9 @@ se borren sus archivos.
 El producto V4 descrito en esta documentación existe en el entorno institucional local. Las rutas
 `insumos/v4`, `data/producto`, checkpoints y reportes JSON nuevos **no se distribuyen en la rama de
 código**. Los enlaces a estos resultados son localizadores para ese entorno; no prometen que los
-archivos estén en GitHub. La historia de datos ya publicada antes de esta reconstrucción no se modifica.
+archivos estén en GitHub. La historia ya publicada no se reescribe; el nuevo árbol retira también los datos históricos tras verificar su recuperación privada.
 
-Para reproducir la prueba completa se necesita restaurar los once insumos originales, procedencia,
+Para reproducir la prueba completa se ejecuta `gskg datos restaurar --en-repo`, que recupera los once insumos originales, procedencia,
 catálogo y artefactos de las cohortes desde el entorno institucional autorizado, conservando sus SHA.
 Las referencias públicas se descargan por los comandos de ingesta con sus catálogos fijados. Una
 descarga pública no reconstruye los dictámenes originales; sus checkpoints y presupuestos se conservan
@@ -35,5 +35,5 @@ Estos casos crean Excel y PDF temporales, incluyen fallos y falsificaciones y pr
 remotos. No equivalen a la validación integral sobre los 1.020 registros originales.
 
 La publicación pública de los insumos requiere una decisión explícita de alcance. Un envío de código
-debe verificar que las carpetas de datos de su árbol sean idénticas a las de la base pública y que
-ningún ancestro nuevo contenga el corpus retenido. No usar un push forzado ni reescribir la base pública.
+debe verificar que su árbol no contiene el corpus privado y que ningún ancestro nuevo contiene
+los insumos o resultados retenidos. El retiro autorizado de los datos se documenta en DATOS_EXTERNOS.md. No usar un push forzado ni reescribir la base pública.

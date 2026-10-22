@@ -1,5 +1,9 @@
 # Specs
 
+La reconstrucción sobre V4 se rige por [`docs/ROADMAP.md`](../docs/ROADMAP.md) y
+[`docs/ARQUITECTURA.md`](../docs/ARQUITECTURA.md). Las specs 00–15 documentan el pipeline y las entregas
+anteriores; sus cifras y referencias V1/V2/V3 conservan su contexto histórico y no describen una V4 ya migrada.
+
 Especificación del proyecto. Claude Code las lee en este orden antes de implementar.
 
 | # | Archivo | Responde |
@@ -20,5 +24,6 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 13 | [apoyo_al_aprendizaje](13_apoyo_al_aprendizaje.md) | Tutor que complementa la malla sobre el grafo (diseño y prototipo) |
 | 14 | [panel_expertos](14_panel_expertos.md) | Panel de expertos IA y su bucle de fortalecimiento (revisión interina) |
 | 15 | [refuerzo_v3](15_refuerzo_v3.md) | Entrega V3 del MINED y refuerzo de cada tema con evidencia |
+| 16 | [producto_v4](16_producto_v4.md) | Ingesta rica, clasificación, snapshots, fuentes, vista y runtime V4 |
 
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.

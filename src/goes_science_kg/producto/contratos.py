@@ -12,6 +12,7 @@ from goes_science_kg.curriculo.contratos import ContratoCurricular, Curriculo
 from goes_science_kg.modelos import Arista, Nodo
 from goes_science_kg.producto.alineaciones import ArchivoAlineaciones
 from goes_science_kg.producto.conocimiento_publicado import ArchivoConocimiento
+from goes_science_kg.producto.mejoras_publicadas import ArchivoMejoras
 
 
 class ReferenciasProducto(ContratoCurricular):
@@ -34,7 +35,7 @@ class AlertaSolicitada(ContratoCurricular):
 class ManifestProducto(ContratoCurricular):
     """El formato de publicación y la versión curricular son dimensiones separadas."""
 
-    version: Literal["producto-2", "producto-3"] = "producto-2"
+    version: Literal["producto-2", "producto-3", "producto-4"] = "producto-2"
     version_curriculo: Literal["V4"] = "V4"
     snapshot_id: str = Field(pattern=r"^[a-f0-9]{64}$")
     huella_curriculo: str = Field(pattern=r"^[a-f0-9]{64}$")
@@ -60,3 +61,4 @@ class ProductoMaterializado(ContratoCurricular):
     publicacion: dict[str, Any]
     conocimiento: ArchivoConocimiento | None
     alineaciones: ArchivoAlineaciones | None = None
+    mejoras: ArchivoMejoras | None = None

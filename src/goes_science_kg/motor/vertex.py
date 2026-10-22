@@ -19,6 +19,17 @@ LOGGER = logging.getLogger(__name__)
 T = TypeVar("T", bound=BaseModel)
 
 
+def _validar_salida(esquema: type[T], texto: str) -> T:
+    try:
+        return esquema.model_validate_json(texto)
+    except ValidationError as error:
+        error.texto_respuesta = texto
+        error.detalles_validacion = tuple(
+            f"{'.'.join(str(x) for x in e['loc'])}: {e['type']}" for e in error.errors(include_input=False)
+        )
+        raise
+
+
 def _tokens_salida(uso) -> int | None:
     """Ausencia de telemetría no significa cero tokens generados."""
     candidatos = getattr(uso, "candidates_token_count", None)
@@ -41,8 +52,8 @@ class ConfiguracionVertex(Contrato):
     tarifas: dict[str, Tarifa]
     max_llamadas: int = Field(default=24, ge=1, le=10000)
     max_usd: float = Field(default=3.0, gt=0)
-    max_salida_tokens: int = Field(default=4096, ge=256, le=16384)
-    timeout_segundos: int = Field(default=60, ge=5, le=180)
+    max_salida_tokens: int = Field(default=4096, ge=256, le=65536)
+    timeout_segundos: int = Field(default=60, ge=5, le=600)
     reintentos: int = Field(default=1, ge=0, le=3)
     niveles_razonamiento: dict[str, Literal["LOW", "MEDIUM", "HIGH"]] = Field(default_factory=dict)
 
@@ -98,6 +109,12 @@ class Vertex:
         if respuesta := self.registro.cache(clave):
             LOGGER.info("VERDE %s: respuesta recuperada de caché", rol)
             return esquema.model_validate(respuesta)
+        recibida = self.registro.salida(clave)
+        if recibida is not None:
+            validada = _validar_salida(esquema, recibida)
+            self.registro.guardar_cache(clave, validada.model_dump(mode="json"))
+            LOGGER.info("VERDE %s: respuesta recibida recuperada del ledger, sin nueva invocación", rol)
+            return validada
         # Cada byte UTF-8 es una cota conservadora de tokens de entrada. Salida incluye razonamiento.
         entrada_maxima = len((sistema + mensaje + json.dumps(esquema.model_json_schema())).encode())
         reserva = (entrada_maxima * tarifa.entrada + cfg.max_salida_tokens * tarifa.salida) / 1_000_000
@@ -113,6 +130,7 @@ class Vertex:
             )
             inicio = time.perf_counter()
             uso = None
+            r = None
             LOGGER.info("%s: llamando %s (intento %d)", rol, modelo, intento + 1)
             try:
                 r = self.cliente.models.generate_content(
@@ -128,7 +146,8 @@ class Vertex:
                     ),
                 )
                 uso = r.usage_metadata
-                validada = esquema.model_validate_json(r.text or "")
+                self.registro.guardar_salida(id_llamada, r.text or "")
+                validada = _validar_salida(esquema, r.text or "")
                 self.registro.terminar(
                     id_llamada,
                     estado="completada",
