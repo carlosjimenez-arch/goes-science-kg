@@ -164,3 +164,16 @@ V3 quitó.
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).
 - Opcional: API de lectura y exportación a Neo4j, como en `goes-math-kg`.
+
+
+## Entrega de biblioteca docente · 2026-10-22
+
+- ✅ Reconstruir cómo se generaban los paquetes V3 y preservar versiones/pendientes.
+- ✅ Compilar 1.013 preparaciones V4 y 108 unidades desde propuestas revisadas, con fuentes físicas verificadas.
+- ✅ Conservar 316 archivos originales y los cuatro bancos pedagógicos, sin migración semántica implícita.
+- ✅ Distribuir una biblioteca SQLite inmutable y manifest en GCS con restauración independiente.
+- ✅ Exponer consulta, filtros, detalle y descargas en `/api/v4/materiales`.
+- ✅ Verificar correspondencia completa y presupuesto sin nuevas llamadas a modelos.
+
+Alcance: preparación de clases con material existente; no guiones nuevos completos por objetivo.
+Contrato: [18](18_materiales_docentes.md). Operación: [biblioteca docente](../docs/MATERIALES_DOCENTES.md).

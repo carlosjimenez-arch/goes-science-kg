@@ -1,5 +1,17 @@
 # goes-science-kg · Grafo de conocimiento de Ciencias (El Salvador)
 
+## Biblioteca docente (2026-10-22)
+
+`gskg materiales construir|validar|publicar|restaurar` prepara y distribuye 2.867 registros:
+1.013 paquetes V4 por objetivo, 108 por unidad, siete fuera de alcance, 150 paquetes V3,
+1.583 elementos pedagógicos históricos, cinco recorridos y una unidad experimental V4.
+El recibo `config/materiales_ciencias.lock.json` fija dos objetos privados de Ciencias.
+La API `/api/v4/materiales` es de lectura y funciona con sólo esta biblioteca restaurada.
+No equivale a guiones nuevos cronometrados: reutiliza propuestas con revisión de unidad;
+no trasladar estados V3/históricos ni la revisión experimental al snapshot curricular actual.
+Cero llamadas nuevas y ledger inalterado. Contrato: `specs/18_materiales_docentes.md`;
+operación y pruebas: `docs/MATERIALES_DOCENTES.md`. No editar los originales ni sus pendientes.
+
 ## Aplicación curricular (2026-10-22)
 
 `gskg servir` ofrece la interfaz GOES en `/app/`, OpenAPI en `/docs` y la nueva API en

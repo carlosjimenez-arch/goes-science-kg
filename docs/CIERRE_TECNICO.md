@@ -47,3 +47,14 @@ La entrega pública usa `feat/ciencias-v4` desde la base pública. Se incorporan
 configuración y documentación y se retiran los datos del árbol, conservando su recuperación privada.
 No se publica la historia local que contiene el corpus nuevo; no se reescribe historia ni se usa push
 forzado. No se añadió CI ni se modificó IAM. [Publicación](PUBLICACION.md), [datos](DATOS_EXTERNOS.md).
+
+
+La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
+V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
+Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
+La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
+clases; no se presentan como guiones completos nuevos para todos los objetivos.
+[Detalle, almacenamiento y pruebas](MATERIALES_DOCENTES.md).
+
+La ampliación docente pasó 1.416 pruebas integrales (267,76 s), Ruff, 367 peticiones HTTP
+correctas y restauración independiente desde GCS. Los 316 originales conservaron sus SHA.

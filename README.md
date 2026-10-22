@@ -57,6 +57,12 @@ Tras restaurar el corpus, iniciar `uv run gskg servir --puerto 8010` y abrir
 `http://127.0.0.1:8010/app/`. La API está en `/api/v4/interfaz` y su contrato en `/docs`.
 No se consumen modelos para navegar o compilar briefs. [Uso y límites](docs/APLICACION_CIENCIAS.md).
 
+
+La biblioteca docente está disponible en `/api/v4/materiales`: **1.013 paquetes V4 por objetivo y
+108 por unidad**, junto a 150 paquetes V3 y los bancos históricos con sus estados originales.
+Se recupera sin descargar todo el corpus con `uv run gskg materiales restaurar`.
+[Contenido, procedencia y ejemplos de consulta](docs/MATERIALES_DOCENTES.md).
+
 ## Inicio rápido
 ```bash
 uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex --extra motor

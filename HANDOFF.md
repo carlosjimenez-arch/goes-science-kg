@@ -35,3 +35,11 @@ no publicar ancestros privados ni usar push forzado.
 
 La revisión automática no constituye aprobación institucional ni eficacia de aprendizaje medida.
 La calibración independiente y el piloto de aula son evaluaciones posteriores, no estados de los agentes.
+
+
+La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
+V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
+Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
+La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
+clases; no se presentan como guiones completos nuevos para todos los objetivos.
+[Detalle, almacenamiento y pruebas](docs/MATERIALES_DOCENTES.md).

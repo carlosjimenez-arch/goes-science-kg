@@ -73,3 +73,11 @@ Excel, SQLite ni credenciales. SHA-256:
 `4e642c89e1ee9cf154f8eb4faac573316d0ca5e0d5c33e27d67768e655151eba`.
 Los datos restaurados para ejecutar la aplicación permanecen ignorados por Git y son recuperables
 desde la generación institucional fijada; el nuevo commit distribuye únicamente código y documentación.
+
+
+La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
+V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
+Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
+La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
+clases; no se presentan como guiones completos nuevos para todos los objetivos.
+[Detalle, almacenamiento y pruebas](MATERIALES_DOCENTES.md).
