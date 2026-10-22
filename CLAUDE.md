@@ -1,5 +1,16 @@
 # goes-science-kg · Grafo de conocimiento de Ciencias (El Salvador)
 
+## Cierre técnico V4 (2026-10-22)
+
+La selección estable es `producto-4`: 108 unidades y 1.013 propuestas de Ciencias sobre 1.020 filas,
+con siete fuera de alcance preservadas. P6 y P7 terminaron; no repetir sus votos ni reiniciar el ledger
+`ciencias_v4_curricularizacion_20261022` (668 invocaciones, USD 731,1485125 de reserva, cero pendientes).
+Treinta filas originales tienen veto científico efectivo; el respaldo de sus propuestas corregidas no
+elimina el veto del original. Los expedientes históricos siguen auditables. El código se entrega en
+`feat/ciencias-v4`; el corpus privado se recupera con `gskg datos restaurar --en-repo`, mediante el recibo
+`config/datos_ciencias.lock.json`. Estado, pruebas y límites: `docs/CIERRE_TECNICO.md` y
+`docs/VERIFICACION_GCS.md`. Los apartados siguientes conservan el desarrollo y pipeline histórico.
+
 ## Reconstrucción V4 (2026-10-21)
 
 El roadmap vigente para la reconstrucción está en `docs/ROADMAP.md`, la arquitectura en

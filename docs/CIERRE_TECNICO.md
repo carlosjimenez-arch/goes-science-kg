@@ -1,36 +1,40 @@
 # Estado de entrega de Ciencias · 22 de octubre de 2026
 
-**El proyecto sigue en cierre:** 98 unidades cuentan con respaldo automático y diez incidencias tienen
-un seguimiento finito en ejecución. La entrega de revisión conserva el denominador completo y sus
+**Cierre técnico completado:** 108 unidades y 1.013 filas de Ciencias cuentan con respaldo
+automático; se conservan las siete filas fuera de alcance. La entrega de revisión conserva el denominador completo y sus
 estados. No se presenta como currículo aprobado por la institución ni como eficacia medida.
 [Resultados, artefactos y límites](CURRICULARIZACION_V4.md).
 
 | Capacidad | Evidencia comprobada |
 |---|---|
 | Ingesta V4 | Once matrices, 126 hojas, 1.020 filas y 108 unidades; SHA/celdas conservados |
-| Curricularización | 98 unidades respaldadas, 888 filas de Ciencias con propuestas; diez incidencias visibles |
+| Curricularización | 108 unidades respaldadas y 1.013 filas de Ciencias con propuestas; antecedentes completos |
 | Cuatro especialistas | Ciencia, currículo, psicopedagogía y adversarial; veto por criterio, huella exacta |
 | Controles | Cinco defectos distintos detectados por el criterio previsto; fallos no cuentan como aciertos |
-| Publicación de revisión | producto-4, diez archivos, 2.202 nodos y 6.929 aristas; fuente y grafo verificados |
+| Publicación de revisión | producto-4, diez archivos, 2.327 nodos y 7.304 aristas; fuente y grafo verificados |
 | Entrega utilizable | Excel/CSV original-propuesta, HTML sin conexión, fuentes y votos completos |
-| Biología | Copia derivada con tres enmiendas; otras celdas, estilos y partes OOXML preservados |
+| Biología | Copia derivada con cuatro enmiendas; otras celdas, estilos y partes OOXML preservados |
 | Progresiones nativas | Doce expectativas NGSS y nueve enlaces documentales; ninguna equivalencia de grados |
 | PISA/ERCE y conocimiento | Se conservan cuatro casos de alineación y quince juicios previos, con todos sus estados |
-| Respaldo previo | 7.397 archivos restaurados desde generaciones GCS; contador intacto tras migrar su identidad física |
+| Respaldo final | 7.580 archivos y siete SQLite restaurados dos veces desde GCS; 61 rutas locales retiradas tras comparar todos los originales |
+| Reanudación recuperada | Diez terminales P6 y uno P7; cero llamadas nuevas y ledger idéntico byte a byte |
 
-La suite integral pasó **1.356 pruebas en 262,76 segundos**. Ruff está en verde. Incluye contratos,
+La suite integral pasó **1.360 pruebas en 262,79 segundos**. Ruff está en verde. Incluye contratos,
 rehidratación, falsificaciones con identidad recalculada, votos ausentes, presupuestos concurrentes,
 mutación de publicación, protección GCS, restauración SQLite, exportación y no ejecución de fórmulas.
 La API de revisión devolvió 200 para salud, filas, propuestas, progresiones y CSV. La vista se comprobó
 en navegador con filtros reales y sin desbordamiento horizontal en la ventana ensayada.
 
-Se conservan los experimentos y fallos P1–P5. El seguimiento P6 conserva todos los antecedentes; no
-reevalúa las 98 unidades respaldadas. El contador permanece en el mismo ledger y el límite se aplica
+Se conservan los experimentos y fallos P1–P5. P6 resolvió las diez incidencias en una ronda cada una, sin
+reevaluar las 98 unidades respaldadas. P7 corrigió un falso positivo científico adicional con fuentes
+primarias, conservando el caso previo y cuatro votos nuevos sobre la rectificación. El contador permanece en el mismo ledger y el límite se aplica
 por llamada. La reanudación inicialmente bloqueada por Google se recuperó tras verificar nuevamente
 la identidad GOES, antes de gastar. [Continuidad operativa](CONTINUIDAD_CIENCIAS_V4.md).
 
-Falta terminar el seguimiento, consolidar/promover la selección definitiva y respaldar/restaurar los
-resultados nuevos antes de retirar los datos temporales. La calibración independiente, validación en
+La selección definitiva está publicada y el corpus local fue retirado después de una segunda
+restauración completa. El recibo permite recuperarlo explícitamente; no hay datos privados en el árbol
+de código. Las 86 pruebas de contratos pasan desde el checkout público sin corpus.
+La calibración independiente, validación en
 aula y aprobación institucional siguen siendo estados separados: no se obtienen por votación de agentes.
 El grafo no inventa prerrequisitos reales a partir de secuencias extranjeras.
 

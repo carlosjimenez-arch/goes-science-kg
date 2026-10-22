@@ -12,12 +12,12 @@ Los datos, PDF y entregables se recuperan desde el bucket institucional con
 
 La entrega de revisión conserva once matrices, 126 hojas, **1.020 filas y 108 unidades** de 2.º a 11.º.
 Propone objetivos, indicadores, productos evaluables, criterios, orientaciones y apoyos para El Salvador.
-**98 unidades y 888 filas de Ciencias tienen respaldo automático completo**; diez unidades conservan
-sus incidencias y un seguimiento acotado preparado. No se declara cerrado el producto completo.
+**108 unidades y 1.013 filas de Ciencias tienen respaldo automático completo**; se conservan las
+siete filas fuera de Ciencias. La entrega final está seleccionada como producto-4.
 [Resultados y reproducción](docs/CURRICULARIZACION_V4.md).
 
 `producto-4` añade propuestas, evidencias y cuatro revisiones sobre el texto exacto. La entrega incluye
-Excel y CSV comparados, vista sin conexión y tres enmiendas en una copia derivada de Biología.
+Excel y CSV comparados, vista sin conexión y cuatro enmiendas en una copia derivada de Biología.
 Los originales, sus alertas, las fases ausentes y todos los resultados anteriores se conservan.
 La consulta ofrece `/api/v4/propuestas`, `/api/v4/progresiones` y exportación CSV.
 
@@ -27,9 +27,9 @@ especialistas que comparten modelo/proveedor no se consideran estadísticamente 
 Las referencias PISA/ERCE, países y NGSS informan el diseño; no se homologan grados ni se afirma
 eficacia de aprendizaje. Las doce expectativas NGSS conservan sus bandas nativas.
 
-Los datos y resultados están separados del código público. El respaldo verificado previo fija 7.397
-archivos por generación y SHA; los resultados P5 posteriores todavía requieren un respaldo nuevo.
-La cuenta GOES se volvió a verificar; el seguimiento de las diez incidencias está en ejecución.
+Los datos y resultados están separados del código público. El respaldo final fija **7.580 archivos**
+por generación y SHA, con restauración completa y reanudación de los once terminales P6/P7 sin nuevas
+llamadas a Vertex. [Evidencia de recuperación](docs/VERIFICACION_GCS.md).
 [Estado de continuidad](docs/CONTINUIDAD_CIENCIAS_V4.md), [operación](docs/OPERACION.md) y
 [alcance de publicación](docs/PUBLICACION.md).
 

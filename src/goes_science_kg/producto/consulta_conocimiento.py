@@ -150,7 +150,7 @@ class BuscadorProducto:
             }
         ):
             raise ValueError("La fila no corresponde al grado, disciplina o clasificación solicitados")
-        if fila_id in self._fuentes.bloqueos_curriculares:
+        if fila_id in self._fuentes.bloqueos_efectivos:
             raise ValueError("La fila tiene una alerta científica bloqueante")
         local = documento_de_fila(fila)
         candidatos = self._candidatos_por_fila.get(fila_id, [])

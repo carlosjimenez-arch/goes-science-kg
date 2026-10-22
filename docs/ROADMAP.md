@@ -4,12 +4,13 @@ Corte de investigación: 21 de octubre de 2026. Objetivo: reconstruir el product
 
 ## Estado de ejecución del 22 de octubre
 
-La campaña completa ya evaluó 108 unidades y 1.020 filas: 98 unidades respaldadas, siete abstenciones
-y tres vetos. P6 atiende las diez incidencias con antecedentes, presupuesto acumulativo y menor
-concurrencia. La revisión producto-4, la matriz comparada, la copia enmendada de Biología y la vista
-sin conexión están verificadas. La suite pasó 1.356 pruebas. El cierre exige resolver el seguimiento,
-consolidar la selección definitiva y verificar el respaldo nuevo antes de retirar datos locales.
-Las progresiones NGSS verificadas son documentales; no se afirman prerrequisitos locales ni eficacia.
+La entrega final producto-4 contiene 108 unidades respaldadas y 1.013 filas de Ciencias, con las siete
+fuera de alcance conservadas. P6 resolvió las diez incidencias y P7 corrigió un falso positivo adicional
+con nuevas fuentes y cuatro votos sobre otro borrador. La matriz comparada, la copia con cuatro
+enmiendas de Biología y la vista sin conexión están verificadas. La suite pasó 1.360 pruebas.
+La selección definitiva está publicada; el cierre operativo completó dos restauraciones del respaldo
+final y retiró el corpus del checkout después de comparar todos los originales con el plan.
+Las progresiones NGSS son documentales; no se afirman prerrequisitos locales ni eficacia de aprendizaje.
 [Resultados actuales y reproducción](CURRICULARIZACION_V4.md).
 
 Las fases siguientes conservan el plan y sus criterios; las descripciones del primer piloto son
@@ -34,11 +35,11 @@ Fuentes y límites: [investigación educativa](investigacion/educacion.md), [inv
 |---|---|---|---|
 | 0. Investigación y línea base | Fuentes oficiales, auditoría, métricas iniciales y casos de error | Fuentes/versiones identificadas, supuestos y límites explícitos | Cuatro PDF de marcos/resultados, 689 páginas, y 29 criterios PISA/ERCE; colección separada de 12 PDF/2.028 páginas de países, con ediciones y poblaciones documentadas |
 | 1. Identidad de V4 | Inventario de archivos, SHA, esquemas, exclusiones y correspondencia V3→V4 | Ninguna hoja curricular omitida; cambios/fusiones/separaciones sin identidad ambigua silenciosa | Once matrices y 126 hojas mapeadas; 506 coincidencias textuales únicas V3→V4; 429 registros V3 y 514 V4 sin correspondencia exacta, sin inferir eliminaciones/fusiones |
-| 2. Modelo curricular y evidencia | Grafo V4, catálogos de competencias, prácticas y progresiones | Integridad de fuentes, DAG y contratos; trazabilidad de toda inferencia; diferencias frente a V3 explicadas | Ingesta de 126 hojas/1.020 filas; snapshots y 22 categorías; quince juicios reales, dos conceptos admitidos y trece estados no respaldados; catálogo con 68 abstenciones; progresiones verificadas pendientes |
+| 2. Modelo curricular y evidencia | Grafo V4, catálogos de competencias, prácticas y progresiones | Integridad de fuentes, DAG y contratos; trazabilidad de toda inferencia; diferencias frente a V3 explicadas | Ingesta de 126 hojas/1.020 filas; snapshots y 22 categorías; quince juicios reales, dos conceptos admitidos y trece estados no respaldados; catálogo con 68 abstenciones; doce expectativas y nueve enlaces documentales nativos, sin prerrequisitos locales verificados |
 | 3. Motor automático y contexto | Workflow durable, presupuesto, citas verificadas, especialistas y reparación | Fallos provocados producen abstención; ningún dictamen de otro borrador se reutiliza; reinicio no resetea gasto | Implementado con LangGraph, lectura primaria completa y especialistas; actividades y juicios V4 ejecutados y reanudados sin generación, sin validación de eficacia |
 | 4. Experimentos y selección | Comparación de prompts/modelos y recuperación local/densa/híbrida/agentic | Gate declarado antes de comparar; no regresión material de calidad; costo y latencia publicados | Léxico e híbrido con embeddings rechazados como sustitutos; jueces en 16+24 casos; wrapper agentic y harness implementados; regresión V4 sobre las mismas 19 consultas con catálogo completo, sin selección de candidato ni ajuste al reservado |
-| 5. Producto curricular completo | Diagnóstico, prioridades, simulación viable y paquetes por unidad sobre V4 | Una unidad completa atraviesa ingesta→evidencia→propuesta→revisión→exportación, con tiempo/recursos de aula | Puerta funcional demostrada en Física 10.º: ocho objetivos con respaldo automático en nueve encuentros propuestos; originales y abstenciones conservados. La extensión al resto del currículo sigue pendiente |
-| 6. Operación y cierre | Documentación vigente, interfaz coherente, limpieza y pruebas locales | Instalación reproducible, fuentes intactas, comandos válidos, código retirado con evidencia, sin CI | API V4 verificada, CLI modular, lock sincronizado sin red, recuperación acotada y documentación actualizada; 1.218 pruebas y Ruff en verde. No acredita cierre del contenido curricular completo |
+| 5. Producto curricular completo | Diagnóstico, prioridades, simulación viable y paquetes por unidad sobre V4 | Una unidad completa atraviesa ingesta→evidencia→propuesta→revisión→exportación, con tiempo/recursos de aula | 108 unidades y 1.013 filas de Ciencias respaldadas, siete fuera de alcance conservadas; cuatro enmiendas derivadas, matriz comparada y vista sin conexión; recursos condicionales, sin eficacia medida |
+| 6. Operación y cierre | Documentación vigente, interfaz coherente, limpieza y pruebas locales | Instalación reproducible, fuentes intactas, comandos válidos, código retirado con evidencia, sin CI | Completado: API producto-4, CLI modular, 1.360 pruebas, Ruff; 7.580 archivos/siete SQLite restaurados dos veces, once terminales sin gasto y corpus local retirado |
 
 El cotejo de países confirmó los bytes de tres programas DfE y de la revisión MOE enero 2026 de primaria;
 no se rotulan como nuevas ediciones por la fecha de consulta. La revisión enero 2026 y la de octubre 2022

@@ -230,8 +230,8 @@ def preparar_unidad(
             if evidencia.fuente.get("sha256") != por_fuente[fila.fuente_id].sha256:
                 raise ValueError("La evidencia no coincide con la edición de fuente declarada en el currículo")
             evidencias.append(evidencia)
-        if fila.id in fuentes.bloqueos_curriculares:
-            descripcion = fuentes.bloqueos_curriculares[fila.id]
+        if fila.id in fuentes.bloqueos_efectivos:
+            descripcion = fuentes.bloqueos_efectivos[fila.id]
             registros.append(
                 AlertaUnidad(
                     fila_id=fila.id,
@@ -338,7 +338,7 @@ def _entorno(motor: Motor, paquete: PaqueteUnidad) -> str:
             "max_caracteres": motor.max_caracteres,
             "max_reparaciones": motor.max_reparaciones,
             "fuentes": motor.fuentes.catalogo,
-            "bloqueos": motor.fuentes.bloqueos_curriculares,
+            "bloqueos": motor.fuentes.bloqueos_efectivos,
             "codigo": {
                 f"{p.parent.name}/{p.name}": hashlib.sha256(p.read_bytes()).hexdigest()
                 for nombre in ("motor", "recuperacion", "curriculo", "producto", "ingesta")

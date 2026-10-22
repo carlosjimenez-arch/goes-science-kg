@@ -91,7 +91,23 @@ def cargar_runtime(
     if producto.alineaciones is not None:
         from goes_science_kg.producto.alineaciones import validar_archivo_alineaciones
 
+        # Revalida el expediente histórico en sus fuentes y alertas de origen. Los vetos
+        # posteriores se aplican a toda nueva consulta/generación sin reescribir sus votos.
         validar_archivo_alineaciones(producto.alineaciones, producto.curriculo, fuentes=fuentes, paginas=paginas)
+    if producto.mejoras is not None:
+        fuentes.bloqueos_derivados.update(
+            bloqueos_cientificos(producto.curriculo, fuentes, ruta("config/alertas_derivadas_v4.yaml"))
+        )
+        # Las enmiendas corrigen copias propuestas: los originales con errores siguen bloqueados
+        # para la generación genérica, que no debe enseñar la errata como evidencia correcta.
+        for caso in producto.mejoras.unidades:
+            fuentes.bloqueos_derivados.update(
+                {
+                    id_: motivo
+                    for id_, motivo in caso.preparacion.alertas.items()
+                    if id_ not in fuentes.bloqueos_curriculares
+                }
+            )
     buscador = BuscadorProducto(
         baseline,
         producto.curriculo,
@@ -101,7 +117,7 @@ def cargar_runtime(
         snapshot_id=producto.manifest.snapshot_id,
         alineaciones=producto.alineaciones,
     )
-    buscador.huella = huella({"indice": buscador.huella, "bloqueos": fuentes.bloqueos_curriculares})
+    buscador.huella = huella({"indice": buscador.huella, "bloqueos": fuentes.bloqueos_efectivos})
     return RuntimeProducto(producto=producto, buscador=buscador, fuentes=fuentes)
 
 

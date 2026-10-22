@@ -21,6 +21,7 @@ def consolidar_campana(
     pruebas: Path,
     historiales: tuple[Path, ...] = (),
     seguimiento: Path | None = None,
+    rectificacion: Path | None = None,
 ) -> ArchivoMejoras:
     plan = json.loads((directorio / "plan.json").read_bytes())
     if plan["id"] != huella({k: v for k, v in plan.items() if k != "id"}):
@@ -36,6 +37,11 @@ def consolidar_campana(
 
         casos = incorporar_seguimiento(casos, seguimiento, plan)
         historiales = (*historiales, directorio, seguimiento)
+    if rectificacion:
+        from goes_science_kg.producto.rectificacion_mejoras import incorporar_rectificacion
+
+        casos = incorporar_rectificacion(casos, rectificacion)
+        historiales = (*historiales, rectificacion)
     preparador = PreparadorMejoras(runtime, raiz=raiz)
     fuentes = {
         id_: r.model_dump(mode="json")
@@ -81,7 +87,16 @@ def publicar_mejoras(archivo: ArchivoMejoras, *, runtime, raiz: Path, destino: P
     preparador = PreparadorMejoras(runtime, raiz=raiz)
     preparador.progresiones.validar(archivo.progresiones)
     for caso in archivo.unidades:
-        if "complemento_cientifico" in caso.preparacion.grupos:
+        s = caso.preparacion.solicitud
+        if (s.grado, s.asignatura_malla, s.unidad) == (11, "Biología", "5. Biotecnología microbiana") and (
+            "distincion_hongos_bacterias" not in caso.preparacion.grupos
+        ):
+            raise ValueError("Falta la rectificación documentada del falso positivo sobre levadura/cultivo bacteriano")
+        if "distincion_hongos_bacterias" in caso.preparacion.grupos:
+            from goes_science_kg.producto.rectificacion_mejoras import PreparadorRectificacion
+
+            PreparadorRectificacion(runtime, raiz=raiz).validar(caso.preparacion)
+        elif "complemento_cientifico" in caso.preparacion.grupos:
             from goes_science_kg.producto.seguimiento_mejoras import PreparadorSeguimiento
 
             PreparadorSeguimiento(runtime, raiz=raiz).validar(caso.preparacion)

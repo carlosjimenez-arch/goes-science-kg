@@ -75,10 +75,17 @@ class FuentesVerificadas:
         self._lecturas = 0
         self._bytes_verificados = 0
         self.bloqueos_curriculares = dict(bloqueos_curriculares or {})
+        self.bloqueos_derivados: dict[str, str] = {}
+
+    @property
+    def bloqueos_efectivos(self) -> dict[str, str]:
+        """Une vetos para generación sin confundir su origen en el armado de contexto."""
+        return self.bloqueos_curriculares | self.bloqueos_derivados
 
     def motivos_bloqueo(self, evidencias) -> list[str]:
         ids = {e.id.partition("#CELDA:")[0] for e in evidencias}
-        return [self.bloqueos_curriculares[i] for i in sorted(ids.intersection(self.bloqueos_curriculares))]
+        bloqueos = self.bloqueos_efectivos
+        return [bloqueos[i] for i in sorted(ids.intersection(bloqueos))]
 
     @classmethod
     def del_grafo(cls, nodos: Iterable[Nodo]) -> FuentesVerificadas:

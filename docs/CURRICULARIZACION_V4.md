@@ -1,4 +1,45 @@
-# Curricularización de Ciencias V4 · revisión del 22 de octubre de 2026
+# Curricularización de Ciencias V4 · 22 de octubre de 2026
+
+Estado vigente: **108 unidades y 1.013 filas de Ciencias con propuestas respaldadas**. Las siete filas
+fuera de alcance se conservan, sobre 1.020 filas originales. P6 resolvió las diez incidencias y P7 corrigió
+un falso positivo adicional encontrado por revisión técnica. No se afirma eficacia medida ni aprobación
+institucional. La publicación definitiva está seleccionada; el respaldo nuevo está restaurado y verificado.
+
+La suite final pasó **1.360 pruebas en 262,79 segundos**; Ruff, calidad/determinismo (18 pruebas) y
+las 86 pruebas nuevas desde el checkout público sin corpus están en verde. Selección definitiva producto-4:
+`e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`.
+Manifiesto SHA: `af8f228bd397430585a751978e437d4988efedc81f94e46dcadaceb068b80789`.
+El recibo por generación está en `config/datos_ciencias.lock.json`;
+[restauración y reanudaciones verificadas](VERIFICACION_GCS.md).
+
+## Rectificación adicional P7
+
+La revisión técnica detectó que Biotecnología microbiana de 11.º ofrecía levadura como alternativa
+para el objetivo de cultivos bacterianos. El original K41 y la propuesta P5 conservaban esa contradicción,
+que los cuatro jueces no habían detectado. El expediente previo se conserva como falso positivo.
+P7 añade la definición primaria de [hongos y levaduras](https://openstax.org/books/biology-2e/pages/24-1-characteristics-of-fungi)
+y las páginas PDF 12, 47 y 48 de la [guía PHAC/CFIA para bioseguridad escolar](https://www.canada.ca/en/public-health/services/canadian-biosafety-standards-guidelines/guidance/elementary-intermediate-secondary-school-classroom/document.html).
+Se comprobaron las páginas completas y las dos últimas visualmente; la guía informa condiciones de
+diseño y no traslada obligaciones legales canadienses a El Salvador. SHA del PDF capturado por HTTPS:
+`0b40b03c9561f8da44d83310538742cdd3e96c0d7e886174d0a488d00040a500`.
+
+La rectificación conserva la intención bacteriana, distingue hongos y exige cepas identificadas de bajo
+riesgo, procedencia documentada, evaluación de riesgos y condiciones docentes. El primer borrador
+excedió el límite de un campo; la reparación pasó contrato y cuatro votos nuevos. Son dos rondas,
+seis invocaciones y 480,280 segundos. No se volvió a votar el mismo texto aprobado ni se borró el fallo.
+El publicador impide promover el caso conocido sin la rectificación. Los originales con erratas siguen
+bloqueados para generación genérica, incluso cuando la copia propuesta ya tiene corrección respaldada.
+
+Plan P7 definitivo: `d6a3b5f29a0e13950fd1ac2b96cf882841431901c0b02e5b3c1fcbaa3f23db63`.
+Archivo curricular consolidado: `471d0aeb9f5717ea5e32516bf00e69c0e5dcd1175fa2e42fbfa264833a8afa4a`.
+Contador final único: **668 invocaciones, 633 completadas, 35 fallidas, cero pendientes y
+USD 731,1485125 de reserva**, dentro de 1.100/USD 1.200. No es importe facturado. P6 añadió 34 llamadas
+y resolvió sus diez unidades en una ronda cada una, en 1.202,233 segundos. No se reinició el ledger.
+
+## Antecedentes P1–P6 y revisión P5
+
+Las secciones siguientes documentan el estado previo P5 y sus incidencias; sus cifras no sustituyen
+las del cierre indicado arriba.
 
 El producto propone una curricularización comparable con el insumo, con evidencias y decisiones por
 unidad. No se presenta como validación del aprendizaje ni aprobación institucional. El estado actual

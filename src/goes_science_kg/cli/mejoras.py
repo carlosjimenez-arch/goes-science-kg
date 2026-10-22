@@ -137,6 +137,7 @@ def consolidar(
     salida: Annotated[Path, typer.Option()],
     historial: Annotated[list[Path] | None, typer.Option()] = None,
     seguimiento: Annotated[Path | None, typer.Option()] = None,
+    rectificacion: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
     """Exige todas las unidades y conserva las ejecuciones fallidas y controles adversariales."""
     from goes_science_kg.producto.publicacion_mejoras import consolidar_campana, guardar_archivo
@@ -150,6 +151,7 @@ def consolidar(
             pruebas=pruebas,
             historiales=tuple(historial or ()),
             seguimiento=seguimiento,
+            rectificacion=rectificacion,
         )
         guardar_archivo(archivo, salida)
     except (ValueError, OSError) as error:
@@ -208,6 +210,43 @@ def publicar(archivo: Path, destino: Annotated[Path, typer.Option()] = Path("dat
     except (ValueError, OSError) as error:
         raise typer.BadParameter(str(error)) from error
     typer.echo(json.dumps(resultado, ensure_ascii=False, indent=2))
+
+
+@app.command("rectificar")
+def rectificar(
+    caso: Path,
+    destino: Annotated[Path, typer.Option()],
+    ejecutar: bool = typer.Option(False, "--ejecutar"),
+) -> None:
+    """Registra y corrige el falso positivo sobre levadura/cultivo bacteriano; conserva el caso anterior."""
+    from goes_science_kg.internacional.vertex import verificar_cuenta
+    from goes_science_kg.observabilidad import configurar_logging
+    from goes_science_kg.producto.mejoras_publicadas import CasoMejora
+    from goes_science_kg.producto.rectificacion_mejoras import ejecutar_rectificacion, preparar_rectificacion
+    from goes_science_kg.producto.runtime import cargar_runtime
+
+    try:
+        runtime = cargar_runtime()
+        if ejecutar:
+            plan = json.loads((destino / "plan.json").read_bytes())
+            verificar_cuenta()
+            configurar_logging(archivo=ruta("data/operaciones/rectificacion_mejoras.log"))
+            resultado = ejecutar_rectificacion(plan, raiz=ruta("."), runtime=runtime, destino=destino)
+            salida = {"plan_id": plan["id"], "estado": resultado.resultado.estado}
+        else:
+            cfg = cargar("mejoras_curriculares")
+            plan = preparar_rectificacion(
+                CasoMejora.model_validate_json(caso.read_bytes()),
+                configuracion=cfg["vertex"],
+                ejecucion_id=cfg["ejecucion_id"],
+                raiz=ruta("."),
+                runtime=runtime,
+                destino=destino,
+            )
+            salida = {"plan_id": plan["id"], "llamadas": 0, "preflight": plan["preflight"]}
+    except (ValueError, OSError) as error:
+        raise typer.BadParameter(str(error)) from error
+    typer.echo(json.dumps(salida, ensure_ascii=False, indent=2))
 
 
 @app.command("exportar")

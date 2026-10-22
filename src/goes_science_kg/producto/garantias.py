@@ -21,7 +21,12 @@ def bloqueos_cientificos(curriculo: Curriculo, fuentes: FuentesVerificadas, arch
     El archivo de alertas es configuración de confianza del repositorio. Una alerta ajena a la
     edición actual se rechaza. Se conservan los originales; los bloqueos se aplican a generación.
     """
-    documento = json.loads(archivo.read_text(encoding="utf-8"))
+    if archivo.suffix.lower() in {".yaml", ".yml"}:
+        import yaml
+
+        documento = yaml.safe_load(archivo.read_text(encoding="utf-8"))
+    else:
+        documento = json.loads(archivo.read_text(encoding="utf-8"))
     por_archivo = {f.archivo: f for f in curriculo.fuentes}
     bloqueos: dict[str, list[str]] = {}
     for alerta in documento["alertas"]:

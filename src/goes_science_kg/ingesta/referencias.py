@@ -47,6 +47,7 @@ HOSTS_PDF = frozenset(
         "www.moe.gov.sg",
         "www.bipm.org",
         "www.nextgenscience.org",
+        "www.canada.ca",
     }
 )
 

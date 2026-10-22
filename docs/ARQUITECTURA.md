@@ -175,3 +175,10 @@ por cada escritura. Crea objetos nuevos, fija generaciones y verifica sus SHA me
 `datos_externos.py` restaura el corpus por inventario. `presupuestos_restaurados.py` migra sólo la identidad
 física de los vínculos a ledgers íntegros; no borra llamadas ni reinicia reservas. No hay infraestructura
 nueva, IAM modificado ni CI. [Procedimiento](DATOS_EXTERNOS.md), [resultados](CURRICULARIZACION_V4.md).
+
+
+La rectificación científica documentada se registra en `producto/rectificacion_mejoras.py`: conserva el
+falso positivo previo, añade evidencia primaria, exige otro borrador y cuatro votos nuevos, y no convierte
+la observación técnica en un voto inventado. El publicador bloquea la omisión de esa rectificación conocida.
+La copia derivada puede corregir una celda, pero el runtime sigue bloqueando su original erróneo para que
+la generación genérica no lo enseñe como evidencia correcta. Los ensayos anteriores permanecen auditables.

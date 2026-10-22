@@ -274,3 +274,12 @@ un desbordamiento del SHA del pie. La descarga real de Markdown sigue sin confir
 exportación tiene pruebas locales de contenido y sintaxis. Ver [evidencia y límites](investigacion/revision_visual_v4.md).
 
 El plan aplica 76 intentos acumulados: 24 previos + hasta 52 nuevos, dentro del techo solicitado de 78.
+
+
+## Compatibilidad después de restaurar
+
+Las alertas de origen y las derivadas se conservan por separado. `bloqueos_efectivos` aplica ambas a
+la generación, consultas y sesiones; preparar el contexto de un protocolo conserva sólo sus alertas
+de origen más sus rectificaciones explícitas. Así, publicar una corrección no activa grupos de otra
+errata al reanudar un checkpoint. No editar huellas, borrar tablas ni cambiar el ID para recuperar
+una ejecución. [Ensayo real y conservación del contador](VERIFICACION_GCS.md).

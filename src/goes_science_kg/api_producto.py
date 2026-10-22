@@ -174,7 +174,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
             "fila": f.model_dump(mode="json"),
             "clasificacion": decision.model_dump(mode="json"),
             "evidencias": [e.model_dump(mode="json") for e in pruebas],
-            "alerta_cientifica": r.fuentes.bloqueos_curriculares.get(f.id),
+            "alerta_cientifica": r.fuentes.bloqueos_efectivos.get(f.id),
             "juicios_conocimiento": [
                 j.model_dump(mode="json")
                 for j in juicios
@@ -246,6 +246,8 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
                     "fila_id": c.solicitud.fila_id,
                     "referente_id": c.solicitud.referente_id,
                     "estado": c.resultado.estado,
+                    "alerta_cientifica_actual": r.fuentes.bloqueos_efectivos.get(c.solicitud.fila_id),
+                    "habilitada_para_generacion": c.solicitud.fila_id not in r.fuentes.bloqueos_efectivos,
                 }
                 for c in casos
             ],
@@ -268,7 +270,13 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
                 != e
             ):
                 raise HTTPException(503, "No se pudo verificar la fuente primaria de la alineación")
-        return identidad(r) | {"archivo_id": archivo.id, "caso": caso.model_dump(mode="json"), "limite": archivo.limite}
+        return identidad(r) | {
+            "archivo_id": archivo.id,
+            "caso": caso.model_dump(mode="json"),
+            "limite": archivo.limite,
+            "alerta_cientifica_actual": r.fuentes.bloqueos_efectivos.get(caso.solicitud.fila_id),
+            "habilitada_para_generacion": caso.solicitud.fila_id not in r.fuentes.bloqueos_efectivos,
+        }
 
     @router.post("/unidades/preparar")
     def preparar(solicitud: PreparacionUnidadAPI):

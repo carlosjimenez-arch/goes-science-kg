@@ -73,7 +73,24 @@ El inventario deja recuperar la procedencia exacta, pero no equivale a aprobaci�
 Retirar estos archivos del checkout y del siguiente commit no borra los objetos de commits
 anteriores. Esta migración no reescribe el historial de Git ni fuerza un push.
 
-## Verificación del traslado del 2026-10-21
+## Respaldo final del 22 de octubre de 2026
+
+El recibo vigente fija **7.580 archivos y siete SQLite**, 1.658.473.975 bytes originales y
+497.573.457 bytes comprimidos. La generación del paquete es `1792672061221417`, con SHA
+`b6b84b511df95ee7d85f11c0c94d03286c05594308e084282e91ec23803de065`.
+Se descargaron y verificaron todos los archivos y se reanudaron terminales reales P6/P7 con cero
+llamadas nuevas, conservando 668 invocaciones, USD 731,1485125 reservados y el SHA completo del ledger.
+El runtime restauró producto-4 con 108 unidades y 1.013 filas de Ciencias respaldadas, de 1.020
+originales. Se migraron 15 vínculos de presupuesto; no se reinició ningún contador.
+[Generaciones, ensayo y corrección de compatibilidad](VERIFICACION_GCS.md).
+
+El paquete conserva también todos los protocolos anteriores. El retiro local se completó después del
+cierre de escrituras, otra restauración real y la comparación exacta de originales/vínculos/WAL con el
+plan: **7.580 archivos retirados de 61 rutas**, sin cambios posteriores al paquete.
+La selección del recibo y la documentación están fuera del corpus para evitar una identidad circular.
+El respaldo anterior sigue disponible por su generación; no se sobrescribe ni elimina.
+
+## Antecedente: traslado del 21 de octubre
 
 Se subieron y restauraron desde GCS **7.397 archivos**, incluidos **120 PDF y siete SQLite**:
 946.322.945 bytes originales y 357.612.065 bytes de paquete. La restauración verificó todos los

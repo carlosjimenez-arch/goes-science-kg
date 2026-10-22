@@ -4,6 +4,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import pytest
+import test_producto_alineaciones
 import yaml
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
@@ -28,7 +29,10 @@ from goes_science_kg.producto.mejoras_publicadas import (
     PruebaAdversarialMejora,
     validar_archivo_mejoras,
 )
+from goes_science_kg.producto.runtime import cargar_runtime
 from goes_science_kg.producto.validacion_mejoras import resolver_mejora
+
+publicado_alineado = test_producto_alineaciones.publicado
 
 
 def identificar(modelo):
@@ -238,3 +242,89 @@ def test_diez_archivos_y_mutacion_invalida_api(publicado, archivo, tmp_path):
     assert cliente.get("/api/v4/propuestas").status_code == 503
     archivo_snapshot.write_bytes(original)
     assert cliente.get("/api/v4/propuestas").status_code == 503
+
+
+def test_original_con_errata_sigue_bloqueado_tras_publicar_propuesta(publicado, archivo, tmp_path):
+    c = archivo.unidades[-1]
+    fila_id = c.preparacion.filas_originales[0]["id"]
+    p = identificar(
+        c.preparacion.model_copy(update={"alertas": {fila_id: "Errata primaria documentada en prueba sintética."}})
+    )
+    ronda = c.resultado.rondas[0]
+    ronda = ronda.model_copy(
+        update={"dictamenes": tuple(d.model_copy(update={"huella_preparacion": p.id}) for d in ronda.dictamenes)}
+    )
+    c = c.model_copy(
+        update={
+            "preparacion": p,
+            "resultado": resolver_mejora(p, (ronda,), ejecucion_id="sintetica", modelos=archivo.modelos),
+        }
+    )
+    archivo = identificar(archivo.model_copy(update={"unidades": (*archivo.unidades[:-1], c)}))
+    base = cargar_producto(publicado[0])
+    nodos, aristas = list(base.nodos), list(base.aristas)
+    incorporar_mejoras(nodos, aristas, archivo)
+    destino = tmp_path / "errata"
+    publicar_producto(
+        destino=destino,
+        curriculo=base.curriculo,
+        catalogo=base.catalogo,
+        nodos=nodos,
+        aristas=aristas,
+        diagnostico=base.diagnostico,
+        alertas=base.alertas,
+        publicacion=base.publicacion,
+        mejoras=archivo,
+    )
+    runtime = cargar_runtime(destino)
+    assert fila_id in runtime.fuentes.bloqueos_efectivos
+    assert fila_id in runtime.fuentes.bloqueos_derivados
+    assert fila_id not in runtime.fuentes.bloqueos_curriculares
+    assert runtime.fuentes.motivos_bloqueo(p.evidencias[:1]) == ["Errata primaria documentada en prueba sintética."]
+    assert runtime.producto.mejoras.unidades[-1].resultado.propuesta is not None
+
+
+def test_veto_posterior_conserva_auditoria_historica_y_bloquea_generacion(publicado_alineado, archivo, monkeypatch):
+    import goes_science_kg.producto.garantias as garantias
+
+    base = publicado_alineado.base
+    p = cargar_producto(base / "data/producto/V4")
+    nodos, aristas = list(p.nodos), list(p.aristas)
+    incorporar_mejoras(nodos, aristas, archivo)
+    destino = base / "data/producto/V4_con_veto"
+    publicar_producto(
+        destino=destino,
+        curriculo=p.curriculo,
+        catalogo=p.catalogo,
+        nodos=nodos,
+        aristas=aristas,
+        diagnostico=p.diagnostico,
+        alertas=p.alertas,
+        publicacion=p.publicacion,
+        alineaciones=p.alineaciones,
+        mejoras=archivo,
+    )
+    fila_id = p.alineaciones.casos[0].solicitud.fila_id
+    original = garantias.bloqueos_cientificos
+    monkeypatch.setattr(
+        garantias,
+        "bloqueos_cientificos",
+        lambda c, f, a: {fila_id: "Veto posterior documentado de prueba"} if a.suffix == ".yaml" else original(c, f, a),
+    )
+    app = FastAPI()
+    app.include_router(crear_router(base, destino=destino))
+    cliente = TestClient(app)
+    casos = cliente.get("/api/v4/alineaciones")
+    assert casos.status_code == 200
+    caso = casos.json()["casos"][0]
+    assert caso["estado"] == "respaldo_documental_automatico" and not caso["habilitada_para_generacion"]
+    detalle = cliente.get("/api/v4/alineaciones/" + caso["id"])
+    assert detalle.status_code == 200 and detalle.json()["alerta_cientifica_actual"]
+    runtime = cargar_runtime(
+        destino,
+        raiz_v4=base / "insumos/v4",
+        raiz_referencias=base / "data/referencias_2026",
+        archivo_alertas=base / "docs/investigacion/alertas_v4.json",
+    )
+    with pytest.raises(ValueError, match="alerta científica"):
+        runtime.buscador.buscar_fila(fila_id, version="V4", grado=10, asignatura="fisica")

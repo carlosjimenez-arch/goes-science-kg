@@ -2,15 +2,19 @@
 
 Actualización operativa: 22 de octubre de 2026, America/Bogota.
 
-Estado vigente: P5 terminó con 98 unidades respaldadas, siete abstenciones y tres vetos. Se publicó
-una revisión íntegra de diez archivos, se verificó su API y se exportaron la matriz comparada y una
-copia de Biología con tres enmiendas. P6 atiende las diez incidencias sin reevaluar las 98 unidades
-respaldadas. Google pidió reautenticación antes de gastar; tras la respuesta del usuario se verificaron
-ADC y gcloud con la misma cuenta GOES y se reanudó el plan. [Resultados actuales](CURRICULARIZACION_V4.md).
+Estado vigente: P6 resolvió las diez incidencias y P7 corrigió un falso positivo adicional con fuentes
+primarias y cuatro votos sobre otro borrador. La publicación definitiva producto-4 selecciona las
+108 unidades y 1.013 filas de Ciencias, conservando las siete fuera de alcance. Se exportaron la
+matriz comparada, la vista y cuatro enmiendas en la copia derivada de Biología. Google pidió
+reautenticación antes de gastar; tras la respuesta del usuario se verificaron ADC y gcloud GOES.
+El ledger conserva 668 invocaciones y USD 731,1485125 de reserva, cero pendientes y ningún reinicio.
+La suite final pasó 1.360 pruebas. [Resultados actuales](CURRICULARIZACION_V4.md).
 
-El respaldo GCS de 7.397 archivos ya está verificado. Los resultados posteriores siguen en los datos
-locales ignorados por Git hasta crear, releer y restaurar un respaldo nuevo; no se retiran con el recibo
-anterior. Los apartados siguientes conservan las decisiones y etapas anteriores.
+El respaldo final GCS de 7.580 archivos ya está adoptado y restaurado. Los once terminales P6/P7 se
+reanudaron desde la copia recuperada con cero llamadas nuevas y ledger idéntico byte a byte.
+[Recibo y comprobaciones](VERIFICACION_GCS.md). Los apartados históricos conservan las etapas anteriores.
+El corpus local se retiró tras una segunda restauración y comparación completa: 7.580 archivos en
+61 rutas. La entrega de consulta se conserva fuera del checkout y dentro del respaldo privado.
 
 ## Alcance autorizado
 
@@ -42,9 +46,9 @@ Ese chat completó el traslado y la restauración de 7.397 archivos. El recibo p
 `config/datos_ciencias.lock.json`; no se subió el paquete base de 828 archivos rechazado. La autorización
 posterior cubre el corpus de Ciencias y no cambia cuenta, proyecto ni bucket. [Traslado verificado](DATOS_EXTERNOS.md).
 
-## Producto curricular
+## Antecedente: producto durante P5
 
-La publicación base verificable sigue siendo `producto-3`, snapshot
+Durante P5 la publicación base verificable era `producto-3`, snapshot
 `0e2da287eb9248c37df078835d00fb63cd9a7585c882fb1cbc1ba5ed543f41aa`.
 La revisión `producto-4` está publicada en `data/producto/V4_revision_p5`: propuesta curricular por unidad, matriz comparada,
 progresiones documentales nativas, evidencias, revisiones y vista sin conexión. No se selecciona una
@@ -85,15 +89,15 @@ Un diagnóstico de desarrollo del RAG auxiliar sobre siete consultas y seis secc
 con expansión terminológica frente a uno con búsqueda léxica estricta. No es conjunto ciego, no demuestra
 cobertura científica del currículo ni superioridad general de un enfoque agentic. El RAG sigue siendo auxiliar.
 
-## Trabajo pendiente de cierre
+## Registro del cierre técnico
 
-- Completar P6, con todos los antecedentes, cuatro criterios de revisión y límites acumulativos.
-- Consolidar la entrega definitiva, comprobar sus fuentes y promover la selección estable.
-- Cerrar la batería integral, documentación y envío de código a `feat/ciencias-v4`.
-- Crear el respaldo nuevo, restaurarlo y verificarlo antes de retirar datos del checkout.
+- P6 terminó sus diez incidencias y P7 rectificó otro falso positivo con fuentes y cuatro votos nuevos.
+- La entrega definitiva selecciona las 108 unidades y conserva todos los antecedentes y controles.
+- La batería integral y el envío de código se documentan en [CIERRE_TECNICO.md](CIERRE_TECNICO.md).
+- El recibo final fija 7.580 archivos; la restauración y las reanudaciones conservan el contador.
 
-El respaldo nuevo no impide seguir con implementación y evaluación local. El estado actual no
-se presenta como producto finalizado ni como aprobación institucional o eficacia de aprendizaje demostrada.
+El cierre corresponde al producto técnico. La aprobación institucional y la eficacia de aprendizaje
+requieren sus propios procesos; no se obtienen mediante votos de agentes.
 
 ## Coordinación posterior de migración (22 de octubre UTC)
 
