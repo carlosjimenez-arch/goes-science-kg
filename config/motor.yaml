@@ -1,0 +1,23 @@
+# Reconstrucción 2026-10-21. La V4 debe registrarse y validarse antes de generar entregas V4.
+version_objetivo: V4
+max_caracteres_contexto: 18000
+max_reparaciones: 1
+max_concurrencia: 3
+vertex:
+  proyecto: g-edu-lxp-xai-dev-prj-976d
+  region: global  # Solo contenido curricular público. No se admiten datos de estudiantes en este motor.
+  modelos:
+    redactor: gemini-3.8-flash
+    cientifico: gemini-4-argon
+    psicopedagogo: gemini-3.8-flash
+    adversarial: gemini-4-argon
+    planificador_recuperacion: gemini-3.8-flash
+  # Cotas conservadoras sin descuentos promocionales, hasta verificar factura/tarifas del proyecto.
+  tarifas:
+    gemini-3.8-flash: {entrada: 1.5, salida: 7.5}
+    gemini-4-argon: {entrada: 4.0, salida: 20.0}
+  max_llamadas: 24
+  max_usd: 3.0
+  max_salida_tokens: 4096
+  timeout_segundos: 60
+  reintentos: 1

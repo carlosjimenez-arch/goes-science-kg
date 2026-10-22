@@ -8,13 +8,15 @@ from goes_science_kg.api import app  # noqa: E402
 cliente = TestClient(app)
 
 
-def test_grados():
-    r = cliente.get("/api/grados")
-    assert r.status_code == 200 and [g["grado"] for g in r.json()] == list(range(2, 12))
+def test_salud_del_grafo_no_afirma_procedencia_de_derivados():
+    r = cliente.get("/api/salud")
+    assert r.status_code == 200 and r.json()["alcance"] == "grafo"
+    assert r.json()["derivados"] == "requieren_publicacion_por_articulo"
+    assert set(r.json()["manifest"]["sha256"]) == {"nodos.jsonl", "aristas.jsonl"}
 
 
 def test_grado_y_concepto():
-    assert cliente.get("/api/grados/7").json()["diagnostico"]["grado"] == 7
+    # El contrato 200 de grados se verifica con su generador en test_api_publicacion.
     assert cliente.get("/api/grados/13").status_code == 404
     c = cliente.get("/api/conceptos/biologia/fotosintesis")
     assert c.status_code == 200 and c.json()["temas_sv"]

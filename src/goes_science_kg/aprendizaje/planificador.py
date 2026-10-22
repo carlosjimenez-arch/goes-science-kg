@@ -15,11 +15,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from goes_science_kg.aprendizaje.estudiante import Intervencion, Perfil
+from goes_science_kg.aprendizaje.pedagogia import Pedagogia, proponer
+from goes_science_kg.aprendizaje.relaciones import CONFIANZA_ORDEN, Base, Navegador, orden_tema
 from goes_science_kg.config import cargar
-
-from .estudiante import Intervencion, Perfil
-from .pedagogia import Pedagogia, proponer
-from .relaciones import CONFIANZA_ORDEN, Base, Navegador, orden_tema
 
 
 def config() -> dict:

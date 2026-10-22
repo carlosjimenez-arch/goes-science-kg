@@ -1,0 +1,19 @@
+# Cuatro lectores; cada respaldo conserva fila y fuentes. No activa aristas del producto.
+candidatos: data/producto/V4/candidatos_conocimiento.json
+grafo_historico: data/grafo
+raiz_historica: data/fuentes
+raiz_v4: insumos/v4
+alertas: docs/investigacion/alertas_v4.json
+registro: data/operaciones/registro.sqlite
+checkpoints: data/operaciones/conocimiento_checkpoints.sqlite
+log: data/operaciones/conocimiento.log
+max_caracteres: 24000  # Lectura primaria completa; 40.000 no aumentó disponibilidad y eleva el payload.
+max_concurrencia: 4
+max_llamadas: 4
+max_usd: 2.0
+reintentos: 0
+roles_vertex:
+  juez_ciencia: cientifico
+  juez_curriculo: redactor
+  juez_psicopedagogia: psicopedagogo
+  juez_refutador: adversarial

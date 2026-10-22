@@ -26,6 +26,7 @@ from goes_science_kg.config import cargar, ruta
 from goes_science_kg.grafo.almacen import guardar
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 from goes_science_kg.prerrequisitos import evidencia_orden, paises_alto_desempeno
+from goes_science_kg.publicacion_api import comprobar_entrada, publicar_articulo
 from goes_science_kg.visor import escribir_visor
 
 GRADOS = range(2, 12)
@@ -211,6 +212,7 @@ def _hallazgos(diags: list[dict], por_id: dict[str, Nodo]) -> None:
 def construir_grados(nodos: list[Nodo], aristas: list[Arista], version: str) -> list[dict]:
     """Construye el subgrafo, el diagnóstico, las comunidades, la ficha y el visor de cada grado, más el índice y
     HALLAZGOS.md en grados/. Escribe en data/grafo/grados/ y grados/; devuelve un resumen por grado."""
+    huellas = comprobar_entrada(nodos, aristas)
     ev = evidencia_orden(nodos, aristas)
     por_id = {n.id: n for n in nodos}
     resumen, diags = [], []
@@ -222,6 +224,11 @@ def construir_grados(nodos: list[Nodo], aristas: list[Arista], version: str) -> 
         d["comunidades"] = comunidades_grado(g, nodos, aristas)
         (ruta(f"data/grafo/grados/G{g:02d}") / "comunidades.json").write_text(
             json.dumps(d["comunidades"], ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        publicar_articulo(
+            f"grado-G{g:02d}",
+            [f"data/grafo/grados/G{g:02d}/{nombre}.json" for nombre in ("diagnostico", "comunidades")],
+            huellas, generador="grados.construir_grados",
+        )
         p = ruta(f"grados/G{g:02d}")
         p.mkdir(parents=True, exist_ok=True)
         (p / "ficha.md").write_text(_ficha(d, por_id), encoding="utf-8")

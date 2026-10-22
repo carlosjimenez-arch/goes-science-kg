@@ -426,6 +426,21 @@ def simular(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista
                                              "conceptos": a["quitar_conceptos"]} for a in cruzadas if a["relevante"]]}
 
 
+def escribir_simulacion(asig: str, g0: int, g1: int, nodos: list[Nodo], aristas: list[Arista]) -> dict:
+    """Recalcula y publica la simulación vinculada al grafo persistido, sin adoptar resultados antiguos."""
+    from goes_science_kg.publicacion_api import comprobar_entrada, publicar_articulo
+
+    huellas = comprobar_entrada(nodos, aristas)
+    resultado = simular(asig, g0, g1, nodos, aristas)
+    ciclo = f"G{g0:02d}-G{g1:02d}"
+    relativo = f"asignaturas/{asig}/propuesta/simulacion_{ciclo}.json"
+    destino = ruta(relativo)
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    destino.write_text(json.dumps(resultado, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    publicar_articulo(f"propuesta-{asig}-{ciclo}", [relativo], huellas, generador="propuesta.escribir_simulacion")
+    return resultado
+
+
 # -- Resumen de todas las propuestas -----------------------------------------------------------------
 NOMBRES = {"biologia": "Biología", "fisica": "Física", "quimica": "Química",
            "ciencias_tierra_espacio": "Tierra y Espacio"}

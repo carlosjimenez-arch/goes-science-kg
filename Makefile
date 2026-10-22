@@ -1,8 +1,18 @@
 .PHONY: instalar temas grafo validar fichas exportar pruebas lint grados evaluar brechas todo progresion propuestas \
-	internacional internacional-ia
+	internacional internacional-ia v4-insumo v4-vista v4-validar
 
 instalar:
-	uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex
+	uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex --extra motor
+
+# Preparación V4 local; no llama a Vertex ni activa la malla histórica.
+v4-insumo:
+	uv run gskg producto insumo
+
+v4-vista:
+	uv run gskg producto explorar
+
+v4-validar:
+	uv run gskg producto validar
 
 temas:
 	uv run gskg temas

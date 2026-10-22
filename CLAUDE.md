@@ -1,5 +1,56 @@
 # goes-science-kg · Grafo de conocimiento de Ciencias (El Salvador)
 
+## Reconstrucción V4 (2026-10-21)
+
+El roadmap vigente para la reconstrucción está en `docs/ROADMAP.md`, la arquitectura en
+`docs/ARQUITECTURA.md` y la operación en `docs/OPERACION.md`. La configuración materializada sigue en V3
+hasta una migración explícita del pipeline histórico. El runtime V4 ya tiene publicación local
+validada, con catálogo completo de 1.020 estados: 384 declaradas, 561 coincidencias, 68 abstenciones
+y siete fuera de alcance. No confundir catálogo completo con clasificación de todas las filas.
+No confundir `manifest.version` (formato) con versión curricular.
+El runtime nuevo usa `motor/` y `recuperacion/`, con CLI modular en `cli/`, importaciones absolutas,
+logs semafóricos y evaluación previa a seleccionar modelos o algoritmos. No se añade CI.
+`curriculo/` preserva todos los campos y celdas V4; `producto/` publica generaciones aisladas y el explorador
+offline. Su contrato está en `specs/16_producto_v4.md`. No publicar el catálogo piloto como completo.
+`producto conocimiento` genera hipótesis sin aceptar enlaces. `producto unidades` conserva objetivos y aula;
+la ejecución exige catálogo completo y correspondencia íntegra con la publicación. `alineacion` usa 29
+criterios PISA/ERCE y tres lectores; su respaldo es documental y no crea `CUBRE`. Los perfiles de ERCE
+son extracciones adicionales por SHA/página/región, sin sobrescribir el raw.
+`ingesta/estructurados.py` hidrata DOCX/HTML por código nativo y ubicación XML/DOM; no inventar página ni
+usar metadata como texto. `--coleccion paises` mantiene aparte 12 PDF con ediciones, cohortes y modalidades.
+La política opcional de conocimiento fija cuatro registros ENG/SG; nunca equivale a aceptar un enlace.
+`producto juicios` prepara expedientes completos y reúne cuatro lectores ciegos para conocimiento.
+`producto/relaciones.py` reconstruye terminales y bloquea admisión de una colección con ciclos;
+`conocimiento_publicado.py` conserva evidencia deduplicada y cierres reconstruibles. `producto-2`
+exige ocho archivos, incluido `conocimiento.json` (null si no se aporta). `producto construir --conocimiento`
+rehidrata fuentes y publica `RelacionCurricular` por fila, sin prerrequisitos globales. `buscar_fila`
+recupera sólo vínculos admisibles de la identidad solicitada; las unidades fijan `Solicitud.fila_id` y
+el Motor veta otro anclaje antes de los jueces. La publicación V4 actual conserva quince juicios reales,
+dos respaldos, seis rechazos y siete abstenciones. `conocimiento-publicado-2` compone archivos originales
+sin normalizar protocolos ni seleccionar rondas favorables. Revalida componentes y ciclos conjuntos.
+La API `/api/v4` es local, versionada y sin generación; el grafo histórico queda separado. La autorización de clasificación se ejecutó dentro de
+52 intentos nuevos/76 acumulados y USD 8 acumulados. El usuario autorizó después continuar lo pendiente
+de Ciencias hasta cerrar. La unidad `unidad-fisica10-v4-20261021` ejecutó sus ocho sesiones con presupuesto
+único de 64 intentos/USD 8: cuatro respaldadas, cuatro abstenciones, 58 intentos y USD 7,4261195 reservados.
+La reanudación terminal consumió cero; no repetir las abstenciones para forzar acuerdo. Código de esa
+ejecución archivado por SHA; ver `docs/investigacion/resultados_unidad_fisica10_v4.*`.
+El escenario posterior de sesenta minutos conserva siete respaldos y una abstención: 64 intentos y
+USD 10,517924 acumulados, incluidos dieciséis TransportError sin respuesta. `operacion/` permite una
+recuperación explícita, única y con el mismo presupuesto, exclusivamente cuando no hubo propuestas
+ni dictámenes; fija su protocolo además del entorno del motor. No se usa para repetir votos.
+Una variante nueva del objetivo pendiente, en dos encuentros de sesenta minutos, obtuvo los tres
+respaldos con ocho intentos/USD 1,533031 dentro de 8/USD 2. La entrega experimental conserva ocho
+objetivos y nueve encuentros: `data/producto/unidades/fisica-10-entrega-experimental/`. Mantiene la
+cohorte original completa y sus abstenciones. No equivale a carga oficial ni cobertura de toda la V4.
+Sin fuentes de definición/dependencia se abstiene. Los grupos del contexto se reservan antes de
+llenar el resto por ranking; `producto juicios medir-contexto` mide disponibilidad, no calidad semántica.
+El respaldo de una relación se limita a su fila; no usarlo como verdad universal o equivalencia de grados.
+El reservado de evaluación V4 ya fue abierto por el evaluador: no usarlo para ajustar prompts o ranking.
+Los criterios científicos y pedagógicos se dictaminan automáticamente, con abstención cuando no alcanzan;
+esto no se transforma en aprobación oficial ni en evidencia de eficacia educativa.
+La selección de citas debe usar IDs de fragmentos de fuentes verificadas: el código reconstruye los literales.
+Las fuentes originales y los históricos siguen siendo solo lectura.
+
 ## Qué es
 Grafo de conocimiento de **Biología, Física, Química y Ciencias de la Tierra y del Espacio**
 (2.°–11.°) que une la malla del MINED con los marcos internacionales (TIMSS 2027, TIMSS Advanced,

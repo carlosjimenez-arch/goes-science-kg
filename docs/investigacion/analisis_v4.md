@@ -1,0 +1,91 @@
+# Análisis crítico del insumo V4
+
+Corte: **21 de octubre de 2026**. Se revisaron los once originales de `insumos/v4` en modo de solo lectura, su procedencia de Drive en `insumos/procedencia_v4.json` y el inventario en `data/interim/mallas/inventario_v4.json`. Los once SHA-256 coinciden con la procedencia capturada. Este informe realiza un censo estructural y un muestreo crítico de contenido; no certifica cada afirmación de la malla ni su aprobación ministerial. No se consultaron prompts ni resultados del motor y no se ejecutaron servicios cloud.
+
+## Qué permite construir esta V4
+
+La V4 contiene más que una lista de conceptos. Cada tabla curricular enlaza contenido, procedimiento, indicador avanzado, actitudes, competencia declarada, actividades por fase, habilidades, producto observable y actividad digital. Las hojas auxiliares explican microhabilidades, condiciones de uso, seguridad y decisiones editoriales. La unidad útil para el producto es una **tarea con objetivo, condiciones, evidencia y criterios**, vinculada a su contenido y a los fragmentos de procedencia.
+
+Hay oportunidades pedagógicas concretas: contrastar una afirmación inicial, predecir antes de observar, representar un modelo, comparar datos y discutir límites. El patrón de IA solicita una idea previa y una comprobación posterior. Eso permite preservar la contribución del estudiante y evaluar cambios en su explicación, si se conserva qué evidencia produjo realmente. Ninguno de estos elementos demuestra por sí mismo aprendizaje, transferencia o alineación internacional.
+
+La organización integra en segundo a noveno las cuatro disciplinas del producto: Biología, Física, Química y Ciencias de la Tierra y del Espacio. En Bachillerato hay libros separados de las tres primeras; los contenidos afines a Tierra y espacio se encuentran dentro de otras materias, por ejemplo `Matriz_Bachillerato_Fisica_10_11_V4.xlsx`, `Física 11.°`, unidad que comienza en **B61**. No corresponde inventar un cuarto libro de Bachillerato ni excluir esos contenidos por el nombre del archivo.
+
+## Estructura: diferencias que la ingesta debe respetar
+
+El censo detectó **126 hojas**, de las cuales **62** tienen `Contenido` en la primera fila de encabezados. Esta es una regla de identificación estructural, no un recuento de aprendizajes ni una medida de cobertura. Las otras 64 hojas incluyen mapas, notas y catálogos; requieren un tipo documental propio. El estado `incompleto` del inventario señala mapeos pendientes: no prueba que falten originales en la captura.
+
+| Hallazgo | Localizador comprobado | Implicación |
+| --- | --- | --- |
+| 54 tablas presentan cinco encabezados de fase y ocho presentan cuatro | Fila 2 de las 62 tablas; `Matriz_Ciencias_6to_Grado_V4.xlsx`, seis unidades, **I2:L2**; `Matriz_Ciencias_7mo_Grado_V4.xlsx`, `Unidad 5 - Recurso hídrico` y `Unidad 6 - Ambiente y energía`, **I2:L2** | En estas ocho tablas I es Explorar; no Aproximar. No desplazar columnas ni rellenar una fase ausente como si perteneciera al original. |
+| Conocimiento y contexto PISA son columnas explícitas en las 26 tablas de séptimo a noveno | Séptimo, unidades 1–4 y octavo/noveno: **N1:O1**; séptimo, unidades 5–6: **M1:N1** | En las otras 36 tablas no aparecen con esos encabezados. Eso significa ausencia del campo explícito, no ausencia demostrada del conocimiento o contexto en las actividades. |
+| Las posiciones cambian también en Bachillerato | Biología: contenido **C1**, fases **I2:M2**; Física: contenido **D1**, fases **J2:N2**; Química: contenido **C1**, fases **J2:N2** | Mapear por encabezado y versión, con validación del esquema. Una posición fija global perdería o atribuiría contenido incorrectamente. |
+| Una fila con texto no siempre es una tarea | Segundo, `Unidad 6 - Ambiente y salud`, **C23**; tercero, `Unidad 6 - Los microorganismos`, **C13** | Hay notas editoriales dentro del área de datos. No contar todo texto de la columna C como tema o concepto. |
+| Hay campos compartidos y celdas combinadas | Sexto, hoja `Notas`, **B4**; encabezados y valores de las unidades | Propagar un valor solo dentro del rango combinado comprobado, guardando la celda origen; no hacer relleno indiscriminado hacia abajo. |
+| La metadata narrativa puede estar desactualizada | Biología, `Notas!B3`, frente a `Biología 10.°!B3:B66` y `Biología 11.°!B3:B66` | La nota declara ocho unidades y 70/92 temas. Las hojas consultadas tienen siete unidades explícitas y 64 filas con contenido y procedimental cada una. Registrar la discrepancia y no usar la nota como total fiable. |
+
+Los nombres de hoja están truncados por el formato y algunos contienen espacios finales. Deben conservarse exactamente en los localizadores. Las columnas de origen oficial/propuesta tampoco aparecen en todas las tablas; un valor ausente no se puede convertir automáticamente en `oficial`.
+
+## Relación con PISA, TIMSS y otros marcos
+
+Las hojas `Microhabilidades PISA` enumeran E1–E6, D1–D4 e I1–I5 y reconocen traducción propia. Por ejemplo, en el libro de Biología, **A2:E16** contiene el catálogo, **A19:C23** vincula las cinco fases y **A25** declara la fuente y su alcance. Los códigos son identificadores del insumo para organizar sus adaptaciones; su presencia no permite atribuirles carácter oficial OCDE. Las tres competencias deben contrastarse con las definiciones del [marco final PISA 2025](https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/05/pisa-2025-assessment-and-analytical-framework_3abce6d6/86c36975-en.pdf), páginas PDF **34 y 36**, y el tipo de conocimiento con PDF **24 y 42**.
+
+Séptimo a noveno agregan códigos PR/EP a explicaciones concretas. Ejemplos: octavo, `Unidad 4 - Estequiometría y dis!N5`, EP9; noveno, `Unidad 5 - Geología de El Salva!N3`, PR8. Son localizadores internos que requieren una correspondencia independiente, versionada y justificada. En el segundo ejemplo, intercambiar clasificaciones entre grupos describe una acción; comprender por qué la crítica y la revisión aumentan la confiabilidad añade una cuestión epistémica. La arquitectura debe distinguir lo declarado en V4 de la interpretación verificada de la tarea.
+
+La fuente ya reconoce límites de edad: sexto, `Notas!B7`, y noveno, `Microhabilidades PISA!A25`, presentan PISA como orientación hacia los 15 años. En cambio, séptimo, `Notas!B7`, aproxima la distancia a esa edad a partir del grado. El producto debe conservar la edad real o el perfil de cohorte cuando sea necesario; no deducir automáticamente que todo séptimo tiene 13 años ni presentar primaria como población evaluada en PISA.
+
+TIMSS declara grados y procesos de su propio marco; una actividad rotulada Razonar no demuestra demanda alta PISA. Tampoco corresponde convertir las distribuciones de puntos de una evaluación en horas de clase. Biología, `Notas!B9`, identifica TIMSS Advanced con Física y Matemáticas avanzadas; `Notas!B1` describe su uso como aproximación para otras asignaturas. Debe mantenerse como una decisión local, sin crear un marco oficial Advanced de Biología o Química.
+
+`Competencia marco MEN` es un encabezado presente en la V4. El rótulo no identifica por sí solo institución, documento o jurisdicción normativa. Biología, `Notas!B5`, explica el uso de planeadores colombianos como detalle; eso no convierte sus textos en estándares salvadoreños. Toda atribución oficial requiere el documento nacional exacto y su contraste, además de la declaración del insumo.
+
+[DigComp 3.0 sí es un marco publicado por JRC](https://joint-research-centre.ec.europa.eu/scientific-activities/key-competences-lifelong-learning/digital-competence-framework-digcomp/digcomp-30-resources_en). Su existencia no valida cada código CS, traducción o nivel de la matriz. Separar competencia digital general de resultado específico con IA, que pueden tener niveles distintos en una misma celda: Física 10.º, **U4**, contiene ambos. No aplanarlos a un único nivel Básico.
+
+## Muestreo científico y contextual
+
+| Ejemplo | Hallazgo y decisión para el producto |
+| --- | --- |
+| Biología 10.º, **S3 y W3**; W14 repite la notación | S3 generaliza las biomoléculas como polímeros, lo que excluiría moléculas biológicas pequeñas; W3 escribe «Citocina» para la base C. La propuesta derivada debe distinguir biomolécula y biopolímero y corregir a citosina. Contraste: [IUPAC, polímeros](https://iupac.org/polymer-edu/what-are-polymers/), [NHGRI, composición del ADN](https://www.genome.gov/es/about-genomics/fact-sheets/acido-desoxirribonucleico) y [PubChem, citosina](https://pubchem.ncbi.nlm.nih.gov/compound/cytosine). Conservar original y corrección por separado. |
+| Tercero, `Unidad 1 - Medidas y fuerzas`, **L5 y P5** | La fila diferencia elongación en cm y lectura en N con instrumento apropiado. La generación debe conservar esa distinción; no convertir una liga sin calibración en medición absoluta de fuerza. Comparación y medición calibrada requieren criterios diferentes. |
+| Quinto, `Unidad 5 - Ciencias del espacio`, **K4:M4 y U4** | Conviven un rollo de tiempo de 10 m, una tira de 1 m en IA y una aplicación a distancias estelares. Debe explicitarse cada escala, recalcular posiciones y separar modelos de tiempo y distancia. La combinación sin mediación favorece una confusión conceptual. |
+| Octavo, `Unidad 4 - Estequiometría y dis`, **I5, L5, N5:O5** | La historia de mediciones de Avogadro es una oportunidad epistémica. Hay que distinguirla del valor fijado por definición y separar adopción en 2018 de vigencia en 2019: [BIPM, historia del mol](https://www.bipm.org/en/history-si/mole) y [resolución de 2018](https://www.bipm.org/en/committees/cg/cgpm/26-2018/resolution-1). |
+| Noveno, `Unidad 8 - La célula`, **E5, J5:L5, T5 y W5** | El cambio de color con levadura necesita límites de interpretación. Fotos y tiempo no aportan por sí solos calibración, concentración de oxígeno ni una DBO cuantitativa validada. El sistema debe abstenerse de inventar una medida o extrapolarla a contaminación de un río. |
+| Biología 11.º, **K24:P24 y V24** | La simulación de transferencia genética con fichas permite argumentar sobre un modelo. La referencia al Acelhuate en V24 no aporta un estudio local que demuestre presencia, frecuencia o vía de transferencia. Conservar el modelo y solicitar una fuente específica para la afirmación local. |
+| Séptimo, `Unidad 5 - Recurso hídrico`, **N3 y V3** | El problema de abastecimiento en San Salvador es relevante, pero el enlace genérico a ANDA no explica una interrupción concreta. Separar mecanismos generales, hipótesis y evidencia del lugar y fecha. |
+
+Estos ejemplos no convierten toda la V4 en un insumo inválido. Sí prueban que una columna rotulada oficial o una traducción bien redactada no sustituye la revisión científica. Los hallazgos confirmados, separados de la reserva de evaluación, están en `docs/investigacion/alertas_v4.json`: incluyen celdas, SHA, ancla original, contraste y límites. NHGRI pudo abrirse directamente; las definiciones y clasificación de IUPAC/PubChem se contrastaron con extractos indexados de sus sitios primarios, cuya apertura directa posterior presentó controles de acceso. No se declara ingesta íntegra de esas páginas. Biología, `Notas!B20`, reconoce datos locales pendientes sobre nombres comunes, viveros de tortugas y resistencia de mosquitos. Es una señal útil para generar una cola de evidencia pendiente, sin convertir esos ejemplos en hechos ya comprobados.
+
+## Edad, carga, seguridad y recursos
+
+En primaria conviene preservar predicción oral, dibujo, manipulación y comparación con pocas variables. Segundo, `Unidad 1 - Materia!I13:P13`, ofrece una tarea viable para revisar la generalización sobre el colador. Tercero, `Unidad 2 - Interacciones terres!K9:L9`, pide evaluar límites del modelo de rocas; la variante sin calor puede conservar ese objetivo. La complejidad no se decide solo por el verbo del código: importan cantidad de representaciones, lectura, conocimientos previos y apoyos efectivos.
+
+En sexto y séptimo la carga merece una revisión explícita. Sexto, `Notas!B5`, reconoce la complejidad de varios contenidos y señala 22 temas en siete semanas en una unidad. Séptimo, `Notas!B5`, reconoce su carga elevada. Son declaraciones del insumo que deben reconciliarse con las tablas y el horario real. En Bachillerato, Biología, `Notas!B6`, deja horas sin asignar y documenta una tensión entre disponibilidad anual y materiales de planeación. Un generador no debe prometer cubrir todas las tareas y añadir diez minutos de IA a cada una sin presupuesto temporal.
+
+La V4 incorpora salvaguardas concretas: segundo, `Unidad 4 - Seres vivos!E17 y P17`, mantiene bolsas de pan cerradas; cuarto, `Unidad 1 - Máquinas y energía!L12`, trabaja con una pila de 1,5 V; Biología, `Notas!B11:B12 y B19`, limita reactivos, datos personales y prácticas de microbiología. Deben recuperarse junto con la tarea, aunque estén en otra hoja. El texto «demostración docente» no confirma que existan instalaciones, preparación o gestión de residuos: Química 10.º, **M29**, requiere esa comprobación. Las [orientaciones ACS para seguridad escolar](https://www.acs.org/education/policies/middle-and-high-school-chemistry/safety.html) requieren valorar riesgos y condiciones de cada actividad, incluidas demostraciones. Ante condiciones insuficientes, corresponde una alternativa documental o una abstención acotada sobre ejecución.
+
+Cuarto, `Unidad 2 - Nutrición!L8:P8 y U8`, propone mediciones corporales privadas y reserva su interpretación al personal de salud. Una implementación que suba esos registros al motor o publique comparaciones destruiría esa salvaguarda. Para evaluar el producto pueden usarse siluetas y datos simulados; no se necesitan datos reales de estudiantes.
+
+## Digital e IA: condiciones y evidencia
+
+En segundo, `Herramientas IA!A2`, el uso se plantea individual y breve; **A19:I19** especifica consulta por voz con cuenta institucional. En Biología, `Notas!B10`, una actualización reemplaza la prohibición anterior de uso directo y reconoce que la directriz docente se elaboraría después. La recuperación debe distinguir la regla sustituida de la actualización vigente y de las correcciones posteriores; no sumar instrucciones contradictorias como si fueran simultáneas.
+
+La afirmación de acceso institucional a Gemini para todas las edades tiene respaldo general en la [ayuda oficial de Google para educación](https://support.google.com/gemini/answer/14620100?co=DASHER._Family%3DEducation&hl=en), pero esa misma página distingue licencias, funciones y restricciones por edad. No confirma que la escuela tenga habilitada una interfaz concreta de voz o todas sus funciones. El producto necesita un perfil de acceso confirmado; no debe abrir cuentas, asumir licencias ni convertir disponibilidad teórica en recurso de aula.
+
+La V4 propone respuesta impresa cuando falta internet: segundo, `Herramientas IA!C10`, y Biología, `Herramientas IA!A2`. Es una alternativa aprovechable si se entrega realmente la ficha, con respuesta rotulada, fecha, propósito y evidencia para revisarla. La mención de una ficha no equivale a que exista ese recurso en los once archivos. Debe inventariarse el paquete descargable y no fingir una conversación o una observación realizadas.
+
+El patrón idea inicial–respuesta de IA–comprobación puede evaluar pensamiento crítico. Un cheque o una equis al final resulta insuficiente si no registra afirmación, evidencia usada, error detectado y revisión del estudiante. Una IA que defiende un diseño con fallas, como en Física 10.º, **V4**, requiere una refutación con criterios y un cierre correcto; la persistencia o persuasión de la IA no debe ser la regla de corrección.
+
+## Contrato de producto y evaluación
+
+La arquitectura debe mantener separadas la transcripción inmutable, las declaraciones editoriales y las propuestas generadas. Cada tarea necesita recuperar fila, encabezados, rangos combinados, notas de seguridad, procedencia, recursos y evidencia esperada. Las cinco fases didácticas no tienen que convertirse en cinco agentes ni en una ejecución rígida: son una organización pedagógica del insumo, con ausencias y posibles revisiones. El flujo de IA necesita decisiones propias sobre evidencia suficiente, recursos, crítica y abstención.
+
+| Validación determinista | Revisión por especialista |
+| --- | --- |
+| SHA, archivo, hoja, fila y celda existentes; estructura y localizadores | Fidelidad científica de la explicación y sus límites |
+| Correspondencia de encabezados y celdas; fase ausente explícita | Si una adaptación conserva objetivo y evidencia de aprendizaje |
+| Códigos presentes en el catálogo local, con espacio de nombres local | Correspondencia razonada con un marco oficial y demanda real de la tarea |
+| Campos obligatorios, unidades y cálculos cuando hay datos suficientes | Carga cognitiva, conocimientos previos, andamiaje y adecuación de representaciones |
+| Restricciones explícitas de recursos; fechas y versiones declaradas | Riesgos de la actividad y suficiencia de las condiciones para proponer su ejecución |
+| Distinguir datos simulados, documentales y observados; impedir inferencias cuantitativas sin datos | Si las fuentes apoyan la afirmación concreta y si procede abstenerse parcial o totalmente |
+
+El conjunto `data/evaluacion/v4_casos_reservados.json` reúne **19 consultas sintéticas** ancladas en filas reales: cuatro de Química, cuatro de Física, seis de Biología y cinco de Tierra y espacio, desde primaria hasta Bachillerato. Sus criterios son `sintetico_plata`, sin eficacia medida ni validación externa como oro. Las condiciones de recursos de los escenarios son ficticias, no perfiles de escuelas ni datos de estudiantes.
+
+El archivo separa entrada visible y `reservado_evaluador`; el consumidor debe construir el contexto con una lista permitida de campos y nunca serializar el caso completo para el modelo que se evalúa. La reserva queda fuera de recuperación, entrenamiento, ajuste de prompts y selección de variantes, incluido su informe de criterios. Solo se comprobó estructura y procedencia; no se ejecutó la reserva. Su proximidad a los hallazgos de este análisis debe declararse: sirve como evaluación editorial dirigida a riesgos de V4, no como estimación estadística independiente de rendimiento general.

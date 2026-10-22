@@ -22,16 +22,15 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
+from goes_science_kg.aprendizaje import diagnostico, planificador
+from goes_science_kg.aprendizaje.contexto import paquete
+from goes_science_kg.aprendizaje.estudiante import Evidencia, Intervencion, Perfil
+from goes_science_kg.aprendizaje.evaluador import Evaluador
+from goes_science_kg.aprendizaje.pedagogia import Pedagogia
+from goes_science_kg.aprendizaje.relaciones import Navegador
+from goes_science_kg.aprendizaje.salvaguardas import limpiar, texto_para_estudiante
+from goes_science_kg.aprendizaje.tutor import Tutor
 from goes_science_kg.config import cargar
-
-from . import diagnostico, planificador
-from .contexto import paquete
-from .estudiante import Evidencia, Intervencion, Perfil
-from .evaluador import Evaluador
-from .pedagogia import Pedagogia
-from .relaciones import Navegador
-from .salvaguardas import limpiar, texto_para_estudiante
-from .tutor import Tutor
 
 
 def config() -> dict:

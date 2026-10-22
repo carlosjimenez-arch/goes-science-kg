@@ -16,11 +16,10 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
+from goes_science_kg.aprendizaje.estudiante import Evidencia, Hipotesis, Perfil
+from goes_science_kg.aprendizaje.pedagogia import Pedagogia
+from goes_science_kg.aprendizaje.relaciones import Navegador, antes_en_la_malla, confianza
 from goes_science_kg.config import cargar
-
-from .estudiante import Evidencia, Hipotesis, Perfil
-from .pedagogia import Pedagogia
-from .relaciones import Navegador, antes_en_la_malla, confianza
 
 
 def config() -> dict:

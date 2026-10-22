@@ -21,8 +21,8 @@ import re
 import unicodedata
 from dataclasses import dataclass, field
 
-from .llm import config as config_llm
-from .pedagogia import palabras_max, registro
+from goes_science_kg.aprendizaje.llm import config as config_llm
+from goes_science_kg.aprendizaje.pedagogia import palabras_max, registro
 
 TAREAS = {
     "introducir": "Presenta el refuerzo: explica la idea del microtema con su ejemplo, en tus palabras, y pide al "

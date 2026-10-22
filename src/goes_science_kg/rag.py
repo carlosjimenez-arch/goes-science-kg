@@ -27,7 +27,7 @@ from goes_science_kg.config import ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 TIPOS_INDEXADOS = {TipoNodo.TEMA, TipoNodo.CONCEPTO, TipoNodo.PRACTICA, TipoNodo.OBJETIVO_MARCO,
-                   TipoNodo.OBJETIVO_PAIS}
+                   TipoNodo.OBJETIVO_PAIS, TipoNodo.DIMENSION_DOCUMENTAL}
 PESO_ARISTA = {TipoArista.TRABAJA: 1.0, TipoArista.PRERREQUISITO_DE: 0.9, TipoArista.CUBRE: 0.8,
                TipoArista.ALINEA_CON: 0.6}
 VACIAS = set("""a al algo ante con contra de del desde donde durante e el ella ellas ellos en entre era es esa
@@ -63,7 +63,6 @@ MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "aca
 PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
 PESO_TIPO = {TipoNodo.CONCEPTO: 1.15}  # ablación en data/evaluacion/resultados.md
 PESO_CONCEPTO_PRERREQ = 1.6  # conceptos cuando la consulta pregunta por prerrequisitos (ablación en resultados.md)
-GARANTIA_MARCO = 0  # ObjetivoMarco garantizados arriba con intención de marco; 0 = no (sin efecto en la prueba ciega 3)
 PESO_PAIS_SIN_INTENCION = 0.8  # objetivos de país si la consulta no habla de países (ablación en resultados.md)
 
 
@@ -82,6 +81,11 @@ def _texto(n: Nodo) -> str:
     partes = [n.etiqueta, p.get("definicion"), p.get("unidad"), p.get("contenido"), p.get("subcontenido"),
               p.get("indicador"), p.get("area"), p.get("tema"), p.get("texto_en"), p.get("titulo_en"),
               " ".join(p.get("sinonimos") or [])]
+    if n.tipo == TipoNodo.TEMA and p.get("version_curriculo") == "V4":
+        partes.extend(p.get(c) for c in ("procedimental", "indicadores_logro", "indicador_avanzado",
+                                         "evidencia_aprendizaje"))
+    if n.tipo == TipoNodo.DIMENSION_DOCUMENTAL:
+        partes.extend(p.get(c) for c in ("alcance", "ancla"))
     return " ".join(x for x in partes if isinstance(x, str) and x)
 
 
@@ -153,6 +157,11 @@ class GraphRAG:
         self.bm25 = BM25({n.id: normalizar(_texto(n)) for n in nodos if n.tipo in TIPOS_INDEXADOS})
 
     def _admite(self, n: Nodo, grado: int | None, asignatura: str | None) -> bool:
+        if n.tipo == TipoNodo.TEMA and n.props.get("version_curriculo") == "V4":
+            if n.props.get("estado_clasificacion") not in {"declarado_malla", "coincidencia_automatica"}:
+                return False
+            if asignatura and asignatura not in n.props.get("disciplinas", []):
+                return False
         if n.props.get("marco") == "T23":  # TIMSS 2023 es referencia secundaria: no entra al contexto
             return False
         if asignatura and n.asignatura and n.asignatura != asignatura:
@@ -192,8 +201,6 @@ class GraphRAG:
         self._expandir(puntos, grado, asignatura, saltos)
         if intencion.prerreq:
             self._ancestros(puntos, asignatura)
-        if intencion.marco and GARANTIA_MARCO and puntos:
-            self._garantizar_marco(puntos, q, intencion.marcos)
         elegidos = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))[:k_final]
         return Contexto(consulta, grado, asignatura, [(self.por_id[d], s) for d, s in elegidos],
                         self._relaciones({d for d, _ in elegidos}))
@@ -238,18 +245,6 @@ class GraphRAG:
                 if s > puntos.get(v, 0.0):
                     puntos[v] = s
             frontera = nueva
-
-    def _garantizar_marco(self, puntos: dict[str, float], q: list[str], marcos: set[str]) -> None:
-        """Los objetivos del marco quedaban debajo de temas y conceptos: se suben los más pertinentes por BM25 (del
-        marco nombrado, si lo hay) justo debajo de la mejor semilla."""
-        objetivos = sorted(((d, self.bm25.puntaje(q, d)) for d in self.bm25.docs
-                            if self.por_id[d].tipo == TipoNodo.OBJETIVO_MARCO
-                            and (not marcos or self.por_id[d].props.get("marco") in marcos)),
-                           key=lambda x: (-x[1], x[0]))
-        tope = max(puntos.values())
-        pertinentes = [d for d, s in objetivos if s > 0][:GARANTIA_MARCO]
-        for i, d in enumerate(pertinentes):
-            puntos[d] = max(puntos.get(d, 0.0), tope * (0.9 - 0.01 * i))
 
     def _relaciones(self, ids: set[str]) -> list[Arista]:
         """Aristas entre los nodos elegidos, sin repetir y en orden estable."""

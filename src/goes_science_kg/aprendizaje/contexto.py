@@ -12,12 +12,11 @@ from __future__ import annotations
 import json
 from functools import cache
 
+from goes_science_kg.aprendizaje.estudiante import Perfil
+from goes_science_kg.aprendizaje.pedagogia import Pedagogia, palabras_max, registro
+from goes_science_kg.aprendizaje.relaciones import Navegador
 from goes_science_kg.config import ruta
 from goes_science_kg.modelos import TipoArista, TipoNodo
-
-from .estudiante import Perfil
-from .pedagogia import Pedagogia, palabras_max, registro
-from .relaciones import Navegador
 
 
 def alinear(texto: str, grado: int, nav: Navegador, asignatura: str | None = None, k: int = 3) -> dict:

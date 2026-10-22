@@ -19,9 +19,8 @@ from datetime import date
 from functools import cache
 from pathlib import Path
 
+from goes_science_kg.aprendizaje.relaciones import Navegador
 from goes_science_kg.config import cargar, relativa, ruta
-
-from .relaciones import Navegador
 
 HABILIDADES = ("recordar", "observar", "explicar", "interpretar_datos", "razonar")
 ROLES = ("objetivo", "sondeo", "practica", "comprobacion")

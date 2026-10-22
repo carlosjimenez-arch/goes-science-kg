@@ -113,7 +113,7 @@ class Evaluador:
         self.modelo = modelo
 
     def evaluar(self, actividad: dict, respuesta: str) -> Evaluacion:
-        from .salvaguardas import limpiar, senales_de_riesgo
+        from goes_science_kg.aprendizaje.salvaguardas import limpiar, senales_de_riesgo
 
         if riesgo := senales_de_riesgo(respuesta):   # no va al modelo ni se califica: al docente, con el protocolo
             return Evaluacion(None, None, "baja", requiere_docente=True, origen="salvaguarda",

@@ -17,16 +17,15 @@ from dataclasses import asdict
 from datetime import date
 from pathlib import Path
 
+from goes_science_kg.aprendizaje.estudiante import Almacen, Perfil
+from goes_science_kg.aprendizaje.evaluador import Evaluador
+from goes_science_kg.aprendizaje.llm import ModeloGuion
+from goes_science_kg.aprendizaje.pedagogia import Pedagogia, navegador_compartido
+from goes_science_kg.aprendizaje.relaciones import Navegador, confianza
+from goes_science_kg.aprendizaje.sesion import Guion, Sesion
+from goes_science_kg.aprendizaje.tutor import Tutor
 from goes_science_kg.config import cargar, relativa, ruta
 from goes_science_kg.modelos import TipoArista
-
-from .estudiante import Almacen, Perfil
-from .evaluador import Evaluador
-from .llm import ModeloGuion
-from .pedagogia import Pedagogia, navegador_compartido
-from .relaciones import Navegador, confianza
-from .sesion import Guion, Sesion
-from .tutor import Tutor
 
 FECHA = date(2026, 10, 12)
 
