@@ -182,3 +182,15 @@ falso positivo previo, añade evidencia primaria, exige otro borrador y cuatro v
 la observación técnica en un voto inventado. El publicador bloquea la omisión de esa rectificación conocida.
 La copia derivada puede corregir una celda, pero el runtime sigue bloqueando su original erróneo para que
 la generación genérica no lo enseñe como evidencia correcta. Los ensayos anteriores permanecen auditables.
+
+## Aplicación GOES conectada al snapshot
+
+La aplicación y sus assets se sirven desde el mismo proceso FastAPI, en `/app/`. El router
+`api_interfaz.py` recibe el lector de `api_producto.py`; cada consulta revalida ese lector antes de usar
+la proyección indexada en `interfaz/consulta.py`. No hay una semilla de demostración ni otro grafo
+cargado por el frontend. El navegador coteja las identidades de respuesta para evitar mezclar snapshots.
+
+Los módulos JS separan cliente HTTP/escape, iconos, proyección 3D y orquestación de vistas. El grafo
+renderizado preserva los tipos de arista y declara el recorte. El brief es una compilación documental
+sobre propuestas respaldadas; verifica el original y no invoca el motor. El ledger operativo se lee
+sin escrituras. [Contrato y límites de integración](../specs/17_aplicacion_curricular.md).

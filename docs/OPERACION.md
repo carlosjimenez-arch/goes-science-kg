@@ -283,3 +283,12 @@ la generación, consultas y sesiones; preparar el contexto de un protocolo conse
 de origen más sus rectificaciones explícitas. Así, publicar una corrección no activa grupos de otra
 errata al reanudar un checkpoint. No editar huellas, borrar tablas ni cambiar el ID para recuperar
 una ejecución. [Ensayo real y conservación del contador](VERIFICACION_GCS.md).
+
+## Interfaz curricular GOES
+
+Con el corpus repuesto, `uv run gskg servir --puerto 8010` abre la aplicación en
+`http://127.0.0.1:8010/app/`; la raíz redirige allí y OpenAPI continúa en `/docs`.
+Las API históricas y V4 conservan sus rutas. La nueva API de la interfaz está en `/api/v4/interfaz`.
+No necesita un build npm ni peticiones a CDN. Navegar, exportar y compilar briefs no consume Vertex.
+Los datos restaurados para servir quedan ignorados por Git; no se incluyen en los commits.
+[Operación y verificación de la aplicación](APLICACION_CIENCIAS.md).

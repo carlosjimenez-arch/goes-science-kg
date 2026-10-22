@@ -298,4 +298,7 @@ def crear_router(base: Path, *, destino: Path | None = None) -> APIRouter:
     from goes_science_kg.api_mejoras import crear_router_mejoras
 
     router.include_router(crear_router_mejoras(lectura.leer))
+    from goes_science_kg.api_interfaz import crear_router_interfaz
+
+    router.include_router(crear_router_interfaz(lectura.leer, base))
     return router

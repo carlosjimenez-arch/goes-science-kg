@@ -1,5 +1,10 @@
 # Estado de entrega de Ciencias · 22 de octubre de 2026
 
+Ampliación posterior: la [aplicación GOES y su API](APLICACION_CIENCIAS.md) adaptan el HTML aportado a
+los datos reales del snapshot. La versión ampliada pasó 1.387 pruebas y las comprobaciones HTTP y de
+navegador; no altera el currículo ni consume nuevas llamadas a Vertex. El detalle siguiente conserva
+la evidencia del cierre curricular anterior a esa ampliación.
+
 **Cierre técnico completado:** 108 unidades y 1.013 filas de Ciencias cuentan con respaldo
 automático; se conservan las siete filas fuera de alcance. La entrega de revisión conserva el denominador completo y sus
 estados. No se presenta como currículo aprobado por la institución ni como eficacia medida.

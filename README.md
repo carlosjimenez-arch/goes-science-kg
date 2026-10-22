@@ -49,6 +49,14 @@ publicación: las relaciones y propuestas del histórico no se heredan por coinc
 | Química | 2.°–11.° | [`asignaturas/quimica`](asignaturas/quimica) |
 | Ciencias de la Tierra y del Espacio | 2.°–9.° | [`asignaturas/ciencias_tierra_espacio`](asignaturas/ciencias_tierra_espacio) |
 
+## Aplicación web y API
+
+La interfaz adapta el diseño HTML aportado al producto real de Ciencias: ocho secciones, filtros,
+grafo 3D, revisión de especialistas, comparación curricular, exportaciones y briefs documentales.
+Tras restaurar el corpus, iniciar `uv run gskg servir --puerto 8010` y abrir
+`http://127.0.0.1:8010/app/`. La API está en `/api/v4/interfaz` y su contrato en `/docs`.
+No se consumen modelos para navegar o compilar briefs. [Uso y límites](docs/APLICACION_CIENCIAS.md).
+
 ## Inicio rápido
 ```bash
 uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex --extra motor

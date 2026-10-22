@@ -1,5 +1,15 @@
 # goes-science-kg · Grafo de conocimiento de Ciencias (El Salvador)
 
+## Aplicación curricular (2026-10-22)
+
+`gskg servir` ofrece la interfaz GOES en `/app/`, OpenAPI en `/docs` y la nueva API en
+`/api/v4/interfaz`. `api_interfaz.py` comparte el lector de snapshot V4; `interfaz/consulta.py`
+proyecta sus datos y `interfaz/estaticos/` contiene los assets locales. No incorporar la semilla ni el
+motor simulado del HTML adjunto. El detalle y los briefs verifican las celdas originales; compilar un
+brief no consume modelos ni modifica dictámenes. LXP/territorio/usuarios no tienen fuente conectada.
+El corpus se restauró para servir la aplicación y sigue ignorado por Git. Pruebas y límites actuales:
+`docs/APLICACION_CIENCIAS.md` y `specs/17_aplicacion_curricular.md`.
+
 ## Cierre técnico V4 (2026-10-22)
 
 La selección estable es `producto-4`: 108 unidades y 1.013 propuestas de Ciencias sobre 1.020 filas,

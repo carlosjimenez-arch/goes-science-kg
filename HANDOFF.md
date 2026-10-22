@@ -1,5 +1,13 @@
 # Ciencias V4 · cierre técnico del 22 de octubre de 2026
 
+La ampliación posterior adapta el HTML aportado a una aplicación y API con datos reales. Abrir
+`http://127.0.0.1:8010/app/` después de `gskg servir --puerto 8010`; contrato en `/docs`. Conserva las
+ocho secciones del diseño y usa el snapshot cerrado. La nueva API `/api/v4/interfaz` ofrece filtros,
+grafo 3D, documentos, dictámenes, comparación, Excel y briefs documentales sin modelos. Pasaron
+1.387 pruebas; se cotejaron las 1.020 filas por HTTP y el ledger quedó idéntico. No hay integración
+LXP/territorial ni autenticación institucional. Los datos están repuestos para servir y continúan
+ignorados por Git. Detalle: [APLICACION_CIENCIAS](docs/APLICACION_CIENCIAS.md).
+
 El producto técnico está terminado. La rama de entrega es `feat/ciencias-v4`; los commits se envían con
 la identidad GOES configurada. No aplicar instrucciones de Matemáticas a este repositorio.
 

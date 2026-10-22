@@ -25,5 +25,6 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 14 | [panel_expertos](14_panel_expertos.md) | Panel de expertos IA y su bucle de fortalecimiento (revisión interina) |
 | 15 | [refuerzo_v3](15_refuerzo_v3.md) | Entrega V3 del MINED y refuerzo de cada tema con evidencia |
 | 16 | [producto_v4](16_producto_v4.md) | Ingesta rica, clasificación, snapshots, fuentes, vista y runtime V4 |
+| 17 | [aplicacion_curricular](17_aplicacion_curricular.md) | Interfaz GOES y API sobre los datos reales de Ciencias |
 
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.
