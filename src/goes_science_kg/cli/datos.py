@@ -23,7 +23,10 @@ def _almacen() -> AlmacenGCS:
     cfg = dict(cargar("almacen_ciencias"))
     if os.environ.get("CLOUDSDK_PYTHON"):
         cfg["python_gcloud"] = os.environ["CLOUDSDK_PYTHON"]
-    return AlmacenGCS(ConfiguracionAlmacen.model_validate(cfg))
+    return AlmacenGCS(
+        ConfiguracionAlmacen.model_validate(cfg),
+        max_bytes_objeto=datos.limite_bytes(cargar("datos_externos").get("max_bytes_sin_comprimir")),
+    )
 
 
 def _leer(recibo: Path | None) -> dict:

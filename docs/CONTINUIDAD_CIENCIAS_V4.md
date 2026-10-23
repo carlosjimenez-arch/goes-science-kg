@@ -12,17 +12,18 @@ fija el prefijo de consumo y sus límites. El saldo se calcula desde el ledger r
 El corte de la campaña P11 cubre los 1.013 objetivos: 968 respaldos automáticos, 27 vetos y
 18 abstenciones. La revisión directa de los 32 casos está completa y conserva seguimientos
 adicionales: los defectos conocidos bloquean sus versiones aunque tengan votos positivos.
-La publicación íntegra de guiones y unidades continúa pendiente. Hay 33 resoluciones exactas
-registradas y otra precisión de equilibrio químico en revisión. El siguiente plan de 45 lotes
-requiere 225–450 llamadas y hasta USD 548,01496 de reserva. Su preflight no cabe en 4.000 llamadas;
+La publicación íntegra de guiones y unidades continúa pendiente. Hay 34 resoluciones exactas
+registradas y 2.060 trazas verificadas en 369 resultados seleccionados. El siguiente plan de 45 lotes
+requiere 225–450 llamadas y hasta USD 548,04604 de reserva. Su preflight no cabe en 4.000 llamadas;
 la solicitud a 4.400 está pendiente, conservando el máximo USD 3.500 y el contador.
+El cierre local conserva 3.941 llamadas y USD 2.912,1834795 de reserva, con cero llamadas pendientes.
 P9 permite correcciones explícitas y cuatro lecturas nuevas; P10/P11 separan historial y contexto,
 conservan pasajes completos y auditan los protocolos anteriores. [Estado y controles](CLASES_V4.md).
 
-El respaldo vigente contiene 12.640 archivos y 27 SQLite, y fija 3.227 llamadas acumuladas. Se
-restauró independientemente y se comprobaron 1.756 trazas y la recuperación de 18 terminales con
+El respaldo vigente contiene 13.762 archivos y 41 SQLite, y fija 3.941 llamadas acumuladas. Se
+restauró independientemente y se comprobaron 2.295 trazas y la recuperación de 32 terminales con
 cero llamadas nuevas. Un punto mínimo de continuidad impide reanudar desde un ledger antiguo que
-pierda el consumo posterior a las primeras 668 llamadas. La suite completa pasó 1.575 pruebas.
+pierda el consumo posterior a las primeras 668 llamadas. La suite completa pasó 1.581 pruebas.
 [Generaciones y reproducción](VERIFICACION_GCS.md). La biblioteca de preparaciones sigue disponible;
 no se presenta como entrega de clases completas.
 

@@ -229,7 +229,7 @@ El piloto documental de cuatro objetivos obtuvo cuatro respaldos automáticos, p
 directa señaló tres casos con dimensiones ambiguas o afirmaciones específicas sin respaldo
 en el contexto entregado. No se amplía ese piloto con base sólo en sus votos favorables.
 Los cuatro expedientes, los hallazgos y las versiones señaladas permanecen en la auditoría.
-La prueba completa de ingeniería pasó 1.575 casos (275,89 s); Ruff pasó sobre `src` y `tests`.
+La prueba completa de ingeniería pasó 1.581 casos (265,52 s); Ruff pasó sobre `src` y `tests`.
 Estas comprobaciones no miden exactitud científica poblacional.
 
 ## Correcciones editoriales y contexto de trabajo
@@ -272,7 +272,8 @@ La campaña de 57 lotes cubrió 202 objetivos: 157 respaldados, 27 con veto y 18
 Con las versiones anteriores, los 1.013 objetivos tienen un resultado. Los 45 negativos conservan
 sus hallazgos y no se sustituyen por un resultado favorable anterior. La recuperación R21 congela
 45 preparaciones con fuentes ampliadas: mínimo 225 llamadas, máximo 450 con una reparación por
-lote y reserva máxima USD 548,01496. No cabe en el saldo autorizado de 4.000 llamadas; la
+lote y reserva máxima USD 548,04604. El plan V2 añade también los hallazgos directos previos
+del caso estelar y conserva íntegro el plan anterior. No cabe en el saldo autorizado de 4.000 llamadas; la
 ampliación solicitada a 4.400 sigue pendiente y no habilita ejecución.
 
 Las versiones documentales conservan las tablas literales de equilibrio ácido-base, CDC y EPA
@@ -293,16 +294,24 @@ La revisión directa de los cuatro guiones de lagunas detectó nuevos defectos e
 textura mineral frente a humus, cociente muestral frente a parámetros Poisson y una constante
 antigua de K-40 añadida como dato actual. Las tres correcciones obtuvieron cuatro lecturas nuevas
 y resolución exacta tras comprobar que la salida coincidía con el borrador editorial revisado.
-Se conservan 33 expedientes de resolución y todos los seguimientos; su número no es una tasa de
-precisión. Una precisión adicional sobre el mecanismo de dilución de ácidos débiles está en
-revisión dentro del saldo vigente y conserva su versión anterior.
+Se conservan 34 expedientes de resolución y todos los seguimientos; su número no es una tasa de
+precisión. La precisión de dilución conserva el veto a su alternativa sin calculadora y una única
+reparación posterior, con cuatro nuevas lecturas y revisión directa de los cambios.
+
+El corte final local conserva 3.941 llamadas y USD 2.912,1834795 de reserva: quedan 59 llamadas.
+Se verificaron 2.060 trazas en 369 resultados seleccionados. El único caso de la revisión directa
+que sigue sin resolución es el estelar, incluido en los 45 negativos; esto no elimina los demás
+vetos. La solicitud de 4.400 llamadas sigue pendiente. El plan de recuperación no se ha ejecutado.
 
 ## Respaldo de continuidad verificado
 
-`config/datos_ciencias.lock.json` fija el respaldo de 12.640 archivos y 27 SQLite, incluidos ledger,
+`config/datos_ciencias.lock.json` fija el respaldo de 13.762 archivos y 41 SQLite, incluidos ledger,
 checkpoints, originales, respuestas y archivos de código de los protocolos. Se restauró desde GCS,
-se comprobaron 1.756 trazas de lectores y se recuperaron 18 terminales sin generación. El respaldo
-fija 3.227 llamadas/USD 2.340,8786235 de reserva. El punto mínimo de continuidad tiene hash por cada
+se comprobaron 2.295 trazas históricas y se recuperaron 32 terminales sin generación. El respaldo
+fija 3.941 llamadas/USD 2.912,1834795 de reserva. El punto mínimo de continuidad tiene hash por cada
 llamada: rechaza restauraciones que pierdan consumo posterior a las 668 iniciales. Su incorporación
-no amplía ni reinicia el presupuesto. Las operaciones posteriores requieren un nuevo respaldo al cierre.
+no amplía ni reinicia el presupuesto. El cliente del corpus usa una cota explícita de lectura de
+hasta 8 GiB; se validan tamaño antes de subir, generación y SHA. El intento inicial de este respaldo
+quedó en un objeto creado pero sin recibo por la antigua cota de 1 GiB: se recuperó por relectura
+exacta, sin sobrescribirlo. Las operaciones posteriores requieren un nuevo respaldo al cierre.
 [Recibo, generaciones y reproducción](VERIFICACION_GCS.md).

@@ -60,9 +60,16 @@ class GCloud:
 
 
 class AlmacenGCS:
-    def __init__(self, configuracion: ConfiguracionAlmacen, *, cli=None):
+    def __init__(self, configuracion: ConfiguracionAlmacen, *, cli=None, max_bytes_objeto: int = 1024**3):
+        if type(max_bytes_objeto) is not int or not 1 <= max_bytes_objeto <= 8 * 1024**3:
+            raise ValueError("El límite de objeto debe ser un entero positivo de hasta 8 GiB")
         self.configuracion = configuracion
         self.cli = cli or GCloud(configuracion)
+        self.max_bytes_objeto = max_bytes_objeto
+
+    def _validar_tamano(self, tamano: int) -> None:
+        if type(tamano) is not int or not 1 <= tamano <= self.max_bytes_objeto:
+            raise ValueError("El tamaño debe ser positivo y no exceder el límite de objeto configurado")
 
     def comprobar_proteccion(self) -> dict:
         cfg = self.configuracion
@@ -119,6 +126,7 @@ class AlmacenGCS:
         if not archivo.is_file() or archivo.is_symlink():
             raise ValueError("Suba únicamente un archivo local regular")
         digest, tamano = _medir(archivo)
+        self._validar_tamano(tamano)  # Fallar antes de crear un objeto que no podría releerse.
         destino = self.configuracion.ruta(nombre)
         proteccion = self.comprobar_proteccion()  # Relectura por cada escritura, no recibo histórico.
         self.cli.ejecutar(
@@ -155,8 +163,7 @@ class AlmacenGCS:
         prefijo = f"gs://{self.configuracion.bucket}/{self.configuracion.prefijo.rstrip('/')}/"
         if not uri.startswith(prefijo) or uri != self.configuracion.ruta(uri.removeprefix(prefijo)):
             raise ValueError("El recibo apunta fuera del prefijo autorizado")
-        if not isinstance(tamano, int) or isinstance(tamano, bool) or not 1 <= tamano <= 1024**3:
-            raise ValueError("La descarga requiere un tamaño positivo acotado a 1 GiB")
+        self._validar_tamano(tamano)
         if not re.fullmatch(r"[0-9]+", generacion) or not re.fullmatch(r"[a-f0-9]{64}", digest):
             raise ValueError("La generación y el SHA deben estar fijados")
         if destino is not None and (destino.exists() or destino.is_symlink()):

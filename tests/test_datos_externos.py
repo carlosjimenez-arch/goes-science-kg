@@ -13,6 +13,20 @@ from goes_science_kg.cli.datos import app
 from goes_science_kg.operacion import datos_externos as datos
 
 
+def test_solo_el_cliente_del_corpus_adopta_su_cota_explicita(monkeypatch):
+    from goes_science_kg.cli.datos import _almacen
+
+    cfg = {
+        "proyecto": "proyecto-ciencias", "bucket": "bucket-ciencias",
+        "prefijo": "ciencias/v4", "cuenta": "carlos.jimenez@goes.gob.sv",
+    }
+    monkeypatch.setattr(
+        "goes_science_kg.cli.datos.cargar",
+        lambda nombre: cfg if nombre == "almacen_ciencias" else {"max_bytes_sin_comprimir": 8 * 1024**3},
+    )
+    assert _almacen().max_bytes_objeto == 8 * 1024**3
+
+
 def preparar(tmp_path):
     raiz = tmp_path / "repo"
     (raiz / "data").mkdir(parents=True)

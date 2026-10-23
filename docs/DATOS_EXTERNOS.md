@@ -75,17 +75,20 @@ anteriores. Esta migración no reescribe el historial de Git ni fuerza un push.
 
 ## Respaldo vigente de clases
 
-El recibo actual fija **12.640 archivos y 27 SQLite**, con 2.929.446.834 bytes originales y
-1.062.223.923 comprimidos. SHA del ZIP:
-`7f759821cce24d08c029dd1460201f1bf27d94b5701e57402a111750ec2382f5`;
-generación `1792723241759606`. La restauración independiente verificó todos los archivos, 1.756
-trazas de lectores y 18 recuperaciones terminales sin llamar a modelos. Conserva 3.227 invocaciones
-y USD 2.340,8786235 de reserva. El punto mínimo de consumo está incluido en el respaldo y su SHA
+El recibo actual fija **13.762 archivos y 41 SQLite**, con 3.293.032.617 bytes originales y
+1.154.109.631 comprimidos. SHA del ZIP:
+`a61846aa6948c8743f504fdfaf48ec1e815313724652df36d2c636ba61fa173b`;
+generación `1792734820537079`. La restauración independiente verificó todos los archivos, 2.295
+trazas históricas y 32 recuperaciones terminales sin llamar a modelos. Conserva 3.941 invocaciones
+y USD 2.912,1834795 de reserva. El punto mínimo de consumo está incluido en el respaldo y su SHA
 en la configuración pública; restaurar una versión anterior no habilita un contador menor.
 [Generaciones y alcance](VERIFICACION_GCS.md). Los borradores pendientes no son clases liberadas.
 
 La cota del respaldo es explícita, hasta 8 GiB sin comprimir; el recibo fija la cota aplicable a su
-versión. No se retiran los datos locales durante esta ampliación. Las nuevas operaciones requieren
+versión. El cliente del corpus adopta también una cota explícita de lectura de objetos de hasta 8 GiB.
+El tamaño se valida antes de crear el objeto; se conserva la comprobación por generación, tamaño
+y SHA incremental. El cliente general conserva su valor predeterminado de 1 GiB.
+No se retiran los datos locales durante esta ampliación. Las nuevas operaciones requieren
 otro respaldo actualizado antes del cierre.
 
 ## Antecedente: respaldo del cierre curricular del 22 de octubre
