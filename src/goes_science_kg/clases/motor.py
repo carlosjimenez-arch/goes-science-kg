@@ -50,6 +50,7 @@ class EstadoClases(TypedDict, total=False):
     resultado: dict
     tipo_ronda: str
     siguiente: str
+    edicion_formato: dict | None
 
 
 class MotorClases:
@@ -85,6 +86,7 @@ class MotorClases:
                 if previo
                 else estado.get("respuesta_rechazada")
             )
+        edicion = None
         try:
             if (
                 len(json.dumps(mensaje.get("hallazgos_a_corregir", {}), ensure_ascii=False).encode())
@@ -93,7 +95,26 @@ class MotorClases:
                 raise ValueError(
                     "Los hallazgos exceden el contexto de reparación; se conservan íntegros sin truncarlos"
                 )
-            if not estado.get("iteracion") and p.get("borrador_inicial"):
+            if estado.get("iteracion") and hasattr(self.modelo, "editar_formato"):
+                from goes_science_kg.clases.edicion import preparar_edicion
+
+                solicitud_edicion = preparar_edicion(
+                    estado.get("respuesta_rechazada"), ids, estado["rondas"][-1]["filas"]
+                )
+            else:
+                solicitud_edicion = None
+            if solicitud_edicion:
+                from goes_science_kg.clases.edicion import aplicar_ediciones
+
+                edicion = {
+                    "solicitud": solicitud_edicion,
+                    "modelo": self.modelo.nombre_modelo("clases_editor"),
+                    "respuesta": None,
+                }
+                parches = self.modelo.editar_formato(solicitud_edicion)
+                edicion["respuesta"] = parches.model_dump(mode="json")
+                borrador = aplicar_ediciones(solicitud_edicion, edicion["respuesta"])
+            elif not estado.get("iteracion") and p.get("borrador_inicial"):
                 # Recuperación técnica: sólo cuando ese guion no recibió dictámenes válidos antes.
                 if not p.get("antecedente_sin_dictamenes"):
                     raise ValueError("No se importa un borrador sin un antecedente técnico explícito")
@@ -144,7 +165,8 @@ class MotorClases:
             "errores_estructura": errores,
             "error_generacion": error,
             "respuesta_rechazada": rechazada,
-            "tipo_ronda": "redaccion",
+            "tipo_ronda": "edicion_formato" if edicion is not None else "redaccion",
+            "edicion_formato": edicion,
         }
 
     def revisar(self, estado, rol, *, recuperacion_tecnica=False):
@@ -243,6 +265,8 @@ class MotorClases:
             "respuesta_rechazada": estado["respuesta_rechazada"],
             "tipo": estado.get("tipo_ronda", "redaccion"),
         }
+        if estado.get("edicion_formato"):
+            ronda["edicion_formato"] = estado["edicion_formato"]
         pendientes = [id_ for id_, r in resultados.items() if r["estado"] != "respaldado_automaticamente"]
         siguiente = "cerrar"
         if pendientes and estado["iteracion"] < 2:

@@ -102,6 +102,7 @@ def entorno(proveedor, corpus, protocolo):
         "validacion.py",
         "proveedor.py",
         "operacion.py",
+        "edicion.py",
     )
     return huella(
         {

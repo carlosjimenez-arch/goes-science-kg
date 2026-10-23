@@ -47,7 +47,7 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
     ref = json.loads(
         leer_propio(base, (archivo_resultado.parent / "protocolo.json").relative_to(base).as_posix()).read_bytes()
     )
-    m = re.fullmatch(r"clases-p([2345])(?:-(?:masivo|seguimiento)-[0-9]{3})?", ref["protocolo"])
+    m = re.fullmatch(r"clases-p([2345678])(?:-(?:masivo|seguimiento)-[0-9]{3})?", ref["protocolo"])
     if not m or preparacion["id"] not in ref["preparaciones"] or ref["ejecucion"] != EJECUCION:
         raise ValueError("El protocolo no pertenece a la ejecución y preparación de Ciencias")
     numero = int(m[1])
@@ -62,18 +62,27 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
             if isinstance(n, ast.Assign)
             and len(n.targets) == 1
             and isinstance(n.targets[0], ast.Name)
-            and n.targets[0].id in {"JUEZ", "ESPECIALIDADES"}
+            and n.targets[0].id in {"JUEZ", "ESPECIALIDADES", "EDITOR"}
         }
         archivos = ("contratos.py", "fuentes.py", "motor.py", "prompts.py", "preparacion.py", "validacion.py")
         if numero >= 5:
             archivos += ("proveedor.py", "operacion.py")
+        if numero >= 8:
+            archivos += ("edicion.py",)
+            constantes["_ESQUEMA_EDICION"] = json.loads(z.read("esquemas/edicion.json"))
         hashes = {n: sha(z.read(prefijo + n)) for n in archivos}
     configuracion = {
         rol: {
             "modelo": MODELOS[rol],
             "max_salida": (24576 if numero < 4 else 32768)
             if rol == "clases_redactor"
-            else (8192 if numero == 2 and rol == "clases_psicopedagogia" else 16384),
+            else (
+                8192
+                if numero == 2 and rol == "clases_psicopedagogia"
+                else 32768
+                if numero >= 7 and rol != "clases_psicopedagogia"
+                else 16384
+            ),
             "razonamiento": "MEDIUM" if rol in {"clases_redactor", "clases_psicopedagogia"} else "HIGH",
         }
         for rol in (*ROLES, "clases_redactor")
@@ -98,6 +107,45 @@ def verificar_trazas(base, archivo_resultado, preparacion, resultado, registro):
     )
     trazas = []
     for ronda in resultado["rondas"]:
+        edicion = ronda.get("edicion_formato")
+        if edicion and edicion.get("respuesta"):
+            from goes_science_kg.clases.edicion import EdicionesClases
+
+            clave = _clave(
+                "gemini-3.8-flash",
+                constantes["EDITOR"],
+                json.dumps(edicion["solicitud"], ensure_ascii=False, sort_keys=True),
+                constantes["_ESQUEMA_EDICION"],
+                16384,
+                "MEDIUM",
+            )
+            raw = registro.salida(clave)
+            if (
+                raw is None
+                or edicion["modelo"] != "gemini-3.8-flash"
+                or huella(EdicionesClases.model_validate_json(raw)) != huella(edicion["respuesta"])
+            ):
+                raise ValueError("El parche editorial no corresponde a una respuesta real del proveedor")
+            with registro.conexion() as db:
+                llamadas = [
+                    dict(f)
+                    for f in db.execute(
+                        "SELECT id,modelo,rol,estado FROM llamadas WHERE ejecucion=? AND clave=? ORDER BY creada,id",
+                        (EJECUCION, clave),
+                    )
+                ]
+            if not llamadas or any(f["modelo"] != "gemini-3.8-flash" or f["rol"] != "clases_editor" for f in llamadas):
+                raise ValueError("El parche no tiene una invocación editorial en el ledger acumulado")
+            trazas.append(
+                {
+                    "ronda": ronda["numero"],
+                    "rol": "clases_editor",
+                    "clave": clave,
+                    "salida_sha256": sha(raw.encode()),
+                    "archivo_salida": "data/clases_v4/auditorias/salidas/" + clave + ".json",
+                    "llamadas": llamadas,
+                }
+            )
         if not ronda["borrador"]:
             continue
         guiones = [g for g in ronda["borrador"]["guiones"] if g["fila_id"] not in ronda["errores_estructura"]]
@@ -144,11 +192,14 @@ def verificar_trazas(base, archivo_resultado, preparacion, resultado, registro):
                     "rol": rol,
                     "clave": clave,
                     "salida_sha256": sha(raw.encode()),
+                    "archivo_salida": "data/clases_v4/auditorias/salidas/" + clave + ".json",
                     "llamadas": llamadas,
                 }
             )
     return {
+        "version": "auditoria-clases-2",
         "preparacion_id": preparacion["id"],
+        "resultado_sha256": sha(archivo_resultado.read_bytes()),
         "codigo_archivado": archivo_codigo.relative_to(base).as_posix(),
         "codigo_sha256": codigo_sha,
         "trazas": trazas,

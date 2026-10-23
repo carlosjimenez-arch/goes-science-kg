@@ -14,7 +14,7 @@ app = typer.Typer(help="Guiones de clase V4 con cuatro revisiones y descarga ver
 
 
 def _preparar_ejecucion(preparaciones, paralelas):
-    from goes_science_kg.clases.fuentes import CorpusClases
+    from goes_science_kg.clases.corpora import cargar_corpus
     from goes_science_kg.clases.operacion import cargar_lotes
     from goes_science_kg.clases.proveedor import ProveedorClases
     from goes_science_kg.motor.registro import Registro
@@ -24,7 +24,11 @@ def _preparar_ejecucion(preparaciones, paralelas):
     if not ledger.is_file():
         raise typer.BadParameter("Falta el ledger acumulado; restaure el corpus completo antes de generar")
     proveedor = ProveedorClases(Registro(ledger), concurrencia=paralelas)
-    return cargar_lotes(preparaciones), proveedor, CorpusClases(base / "data/referencias_clases_2026")
+    lotes = cargar_lotes(preparaciones)
+    huellas = {p["corpus_sha256"] for p in lotes}
+    if len(huellas) != 1:
+        raise typer.BadParameter("La ejecución requiere preparaciones del mismo corpus científico")
+    return lotes, proveedor, cargar_corpus(base, next(iter(huellas)))
 
 
 @app.command("preflight")
@@ -75,7 +79,7 @@ def campana(
     plan: Annotated[Path, typer.Option(help="Plan congelado que fija el orden exacto de lotes")],
     destino: Annotated[Path, typer.Option()],
     control: Annotated[Path, typer.Option(help="Concurrencia ajustable entre bloques, sin cambiar los guiones")],
-    protocolo: Annotated[str, typer.Option()] = "clases-p5",
+    protocolo: Annotated[str, typer.Option()] = "clases-p8",
     confirmar: Annotated[bool, typer.Option()] = False,
 ):
     import zipfile
@@ -83,8 +87,8 @@ def campana(
     from goes_science_kg.clases.campana import ejecutar_campana, leer_control, planificar
     from goes_science_kg.materiales.compilacion import sha
 
-    if protocolo != "clases-p5":
-        raise typer.BadParameter("Esta campaña opera con el protocolo P5 congelado; los anteriores son históricos")
+    if protocolo not in {"clases-p5", "clases-p6", "clases-p7", "clases-p8"}:
+        raise typer.BadParameter("La campaña requiere un protocolo P5–P8 congelado")
     cfg = leer_control(control)
     lotes, proveedor, corpus = _preparar_ejecucion(preparaciones, cfg["vertex"])
     ref = json.loads(plan.read_bytes())
@@ -105,6 +109,7 @@ def campana(
             "validacion.py",
             "proveedor.py",
             "operacion.py",
+            *(("edicion.py",) if protocolo == "clases-p8" else ()),
         ):
             local = Path(__file__).parent.parent / "clases" / nombre
             if local.read_bytes() != z.read("src/goes_science_kg/clases/" + nombre):
@@ -133,14 +138,14 @@ def compilar(
     """Reconstruye los respaldos, conserva los materiales anteriores y exige cobertura exacta."""
     from goes_science_kg.clases.auditoria import cierre_presupuesto
     from goes_science_kg.clases.compilacion import compilar as reconstruir
-    from goes_science_kg.clases.fuentes import CorpusClases
+    from goes_science_kg.clases.corpora import cargar_corpus
     from goes_science_kg.clases.paquete import construir as empaquetar
     from goes_science_kg.materiales.almacen import Biblioteca, construir
     from goes_science_kg.motor.registro import Registro
 
     base = ruta(".")
     anterior = Biblioteca(biblioteca_origen or base / "data/materiales")
-    corpus = CorpusClases(base / "data/referencias_clases_2026")
+    corpus = cargar_corpus(base, todos=True)
     sel = json.loads(seleccion.read_bytes())
     registro = Registro(base / "data/operaciones/registro.sqlite")
     consumo = cierre_presupuesto(registro)

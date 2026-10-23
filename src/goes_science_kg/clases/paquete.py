@@ -11,7 +11,8 @@ from collections import Counter
 from pathlib import Path, PurePosixPath
 
 from goes_science_kg.archivos import destino_generado
-from goes_science_kg.clases.lectura import markdown_clase, markdown_unidad
+from goes_science_kg.clases.contratos import GuionClase
+from goes_science_kg.clases.lectura import markdown_clase, markdown_indice, markdown_unidad
 from goes_science_kg.materiales.compilacion import serializar, sha
 
 VERSION = "entrega-guiones-ciencias-1"
@@ -68,8 +69,10 @@ def construir(registros: list[dict], originales: dict[str, bytes], archivo: Path
             }
         )
     archivos["catalogo.json"] = serializar(catalogo)
+    archivos["INDICE.md"] = markdown_indice(registros).encode()
     archivos["LEEME.md"] = (
         "# Guiones de Ciencias V4\n\n"
+        "Comienza por [INDICE.md](INDICE.md) para navegar por grado, asignatura y unidad.\n"
         "Consulta `catalogo.json` para ubicar cada clase y unidad por grado, asignatura y fila.\n"
         "En `clases/`, cada JSON conserva el guion y cuatro dictámenes; `.docente.md` incluye\n"
         "el solucionario y `.estudiante.md` contiene únicamente las tareas. `unidades/` agrupa\n"
@@ -141,10 +144,43 @@ def validar(archivo: Path):
         filas = [r["fila_id"] for r in catalogo if r["tipo"] == "guion_clase"]
         if len(filas) != len(set(filas)):
             raise ValueError("El catálogo repite un objetivo curricular entre sus guiones")
+        clases, unidades = {}, []
         for r in catalogo:
             material = json.loads(z.read(r["archivo"]))
             if any(material[k] != r[k] for k in r if k != "archivo"):
                 raise ValueError("La ficha de catálogo no corresponde al material")
+            if material["estado"] != "respaldado_automaticamente":
+                raise ValueError("El paquete incluye un material no respaldado")
+            if material["tipo"] == "guion_clase":
+                g = GuionClase.model_validate(material["documento"]["guion"])
+                if g.fila_id != material["fila_id"] or g.titulo != material["titulo"]:
+                    raise ValueError("La identidad del guion difiere de la ficha")
+                clases[material["id"]] = material
+            elif material["tipo"] == "guion_unidad":
+                unidades.append(material)
+            else:
+                raise ValueError("Tipo de material incompatible con los guiones")
+        referidas, grupos = [], set()
+        for unidad in unidades:
+            clave = (unidad["grados"][0], unidad["asignatura"], unidad["unidad"])
+            if clave in grupos:
+                raise ValueError("El paquete repite una unidad curricular")
+            grupos.add(clave)
+            for ref in unidad["documento"]["guiones"]:
+                clase = clases.get(ref["material_id"])
+                if clase is None or (clase["grados"][0], clase["asignatura"], clase["unidad"]) != clave:
+                    raise ValueError("La unidad refiere una clase ausente o de otro grupo curricular")
+                g = clase["documento"]["guion"]
+                if (
+                    ref["fila_id"] != clase["fila_id"]
+                    or ref["titulo"] != clase["titulo"]
+                    or ref["objetivo"] != g["objetivo"]
+                    or ref["duracion_minutos"] != 60 * len(g["sesiones"])
+                ):
+                    raise ValueError("La unidad no corresponde al contenido exacto de su clase")
+                referidas.append(ref["material_id"])
+        if unidades and (len(referidas) != len(set(referidas)) or set(referidas) != set(clases)):
+            raise ValueError("Las unidades no cubren todas las clases exactamente una vez")
     return m
 
 

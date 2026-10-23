@@ -3,11 +3,17 @@
 ## Estado de esta ampliación
 
 El alcance son los 1.013 objetivos de Ciencias del snapshot producto-4, agrupados en 108 unidades.
-Los siete registros fuera de Ciencias se conservan fuera de generación. El piloto ampliado cubre
-24 objetivos y ya tiene cuatro revisiones sobre cada guion exacto. Al iniciar la campaña P5 se
-conservaron otros 40 respaldos y se resolvieron siete abstenciones; los 942 restantes están en
-ejecución. No se presenta la biblioteca de preparaciones ya publicada como esta entrega nueva.
-La publicación completa exige la cobertura exacta, sin promover vetos ni abstenciones.
+Los siete registros fuera de Ciencias se conservan fuera de generación. Los pilotos iniciales
+cubrieron 24 objetivos. La base previa a P7 acumuló 531 objetivos respaldados automáticamente,
+33 pendientes en lotes procesados y 449 aún sin procesar. Son estados mecánicos sujetos a la
+revisión del contenido. P8 terminó su piloto de 12 objetivos con 11 respaldados y una objeción
+sustantiva conservada; superó el umbral previamente fijado del 80 %. Su primera campaña fija
+64 lotes y 142 objetivos con selección documental suficiente: terminó con 129 respaldados
+automáticamente y 13 pendientes. Una segunda campaña agrupa 136 objetivos nuevos en 41 lotes. No se presenta la biblioteca
+de preparaciones ya publicada como esta entrega nueva.
+La publicación completa exige la cobertura exacta, sin promover vetos ni abstenciones. La revisión
+del contenido detectó defectos en algunos guiones respaldados automáticamente; esos votos no
+cancelan los hallazgos. La entrega completa queda bloqueada hasta corregirlos y terminar la muestra.
 
 La biblioteca anterior contiene 2.867 registros y 316 originales. Sus 1.013 `paquete_objetivo` y
 108 `paquete_unidad` son preparaciones curriculares. Las clases nuevas usan los tipos `guion_clase`
@@ -38,6 +44,23 @@ El contenido adaptado de esas fuentes conserva atribución y CC BY-NC-SA 4.0. Es
 extiende al código ni a las mallas originales del MINED. El corpus y sus fuentes completas están
 fuera de Git. El manifest privado es `data/referencias_clases_2026/manifest.json`.
 
+Los complementos conservan bytes originales y extractos literales con rangos de bytes, manifest,
+SHA, versión, URL y atribución. El registro adicional fija también el código del extractor y el
+corpus anterior; no sustituye los párrafos usados en ejecuciones históricas. Incluye la escala
+ICS 2026/06 y texto institucional USDA sobre oscurecimiento de alimentos. Sus licencias propias
+se conservan; no se extiende automáticamente la licencia de OpenStax a las fuentes adicionales.
+El registro `data/referencias_complementarias_clases/registro.json` permite reconstruir cada
+versión anterior por huella y reunir sus originales. Se añadieron leyendas, tablas y descripciones
+accesibles de los mismos módulos CNXML, sin descargar imágenes ni afirmar que una descripción
+acredita una observación. Los extractos NPS sirven para jerarquía y eventos geológicos; las edades
+numéricas se atribuyen a la edición correspondiente y se distinguen de los límites ICS actuales.
+
+Un insumo histórico de dengue conserva tres notificaciones semanales de sospechas de MINSAL
+de 2022, fechas y recibos literales breves. El servidor no permitió descargar los PDF originales;
+la evidencia disponible es su vista textual primaria indexada. La tabla declara esa limitación,
+no presenta casos confirmados ni estadísticas actuales y no demuestra causalidad con las lluvias.
+La compilación comprueba semana, fechas, indicador, valores y correspondencia exacta con las filas.
+
 | Revisión | Criterios |
 |---|---|
 | Ciencia | Exactitud, afirmaciones sustentadas y soluciones correctas |
@@ -48,8 +71,40 @@ fuera de Git. El manifest privado es `data/referencias_clases_2026/manifest.json
 Los cuatro lectores reciben el mismo borrador y contexto; no reciben los votos de los demás.
 Todos los criterios deben ser `si`. Las revisiones de la propuesta curricular anterior no son
 votos de la clase. Compartir proveedor o modelo no da independencia estadística.
-Los controles de desarrollo detectaron un error científico y una instrucción peligrosa introducidos
-a propósito, conservando dos casos correctos. No son una evaluación independiente de eficacia.
+Los primeros controles detectaron errores introducidos a propósito. Los controles P6/P7 también
+detectaron cuatro defectos concretos de contenido conservando dos casos sin defecto material.
+Son controles de desarrollo conocidos, sin independencia respecto al diseño de los prompts;
+no estiman precisión poblacional ni eficacia educativa.
+
+## Auditoría del contenido y cierre de defectos
+
+El plan privado `data/clases_v4/auditoria_contenido/plan.json` fija 32 casos con semilla 20261022:
+dos por estrato de grado/asignatura y cuatro casos dirigidos. Es una muestra de desarrollo asistida
+por Codex; no estima una tasa poblacional de precisión ni demuestra eficacia en aula. Se revisan
+explicaciones, sesiones, datos de tareas, soluciones, apoyos y límites de ejecución.
+
+Los hallazgos incluyen confundir concentración final de animales con movimiento dirigido,
+carga iónica con número de oxidación y ácido carbónico con bicarbonato; también se comprobaron
+conclusiones causales que excedían los datos. Se conserva el guion observado con su SHA. La
+revisión no cambia sus cuatro dictámenes anteriores ni los presenta como una norma oficial.
+
+La compilación completa exige los 32 casos revisados. Cada defecto necesita contenido distinto,
+cuatro revisiones reales y una resolución que identifique el resultado, su SHA y los hallazgos
+atendidos. Cambiar sólo el título, conservar el contenido señalado o cambiar después una versión
+revisada bloquea la entrega. El expediente completo se incorpora al paquete descargable.
+`seguimiento.json` conserva hallazgos adicionales sobre versiones corregidas y otros objetivos
+revisados de forma dirigida. También retiene esas versiones aunque sus cuatro lectores anteriores
+hayan sido positivos. Una corrección no se considera resuelta sólo por cambiar el texto.
+
+La recuperación documental reforzada limita libros por disciplina, descarta preguntas aisladas y
+combina la consulta completa con su concepto principal. Es un control de selección de contexto;
+el puntaje léxico no demuestra que un pasaje respalde una afirmación. Ese respaldo se debe revisar.
+El selector documental ofrece hasta dos decisiones; la campaña R4 se limitó a una por lote y
+127 llamadas en total. Busca pasajes completos, devuelve sus identidades y declara lagunas.
+Una segunda búsqueda requiere evidencia nueva. La conciliación R4 releyó las respuestas del ledger
+sin llamadas adicionales: recuperó 210 selecciones y conservó 223 objetivos con lagunas. Una
+referencia inválida se rechaza por fila y se conserva la respuesta original; no invalida las otras
+filas ni convierte una abstención en una clase lista para impartir.
 
 ## Flujo y controles de ingeniería
 
@@ -63,6 +118,11 @@ P5 conserva el guion y los dictámenes válidos cuando sólo falta un lector por
 hay vetos ni fallos estructurales. Recupera únicamente los roles sin dictamen, una vez, con una
 salida de hasta 32.768 tokens. Si existe un veto semántico se necesita otro contenido y las cuatro
 revisiones. La cota toma el mayor coste entre ambos caminos y sigue limitada a dos rondas.
+P8 añade un editor de formato únicamente cuando los defectos restantes son longitudes excesivas
+en tres campos de tareas. El parche enumera exactamente los campos y conserva todo lo demás;
+sustituye al segundo redactor y requiere cuatro lecturas nuevas del resultado exacto. No modifica
+soluciones, datos o contenido silenciosamente ni habilita una tercera ronda. Un control real de
+una llamada verificó el contrato del parche; sus textos no se publican como clases.
 La prueba de ingeniería en Vertex completó dos casos sintéticos con cuatro llamadas reales;
 el fallo inicial era simulado y no se repitieron votos válidos. Los casos no se publican como clases.
 Los campos docentes admiten hasta 2.000 caracteres; la cota del lote sigue siendo 120.000 bytes.
@@ -79,7 +139,9 @@ objetivos literales, tiempos, identidades y las fuentes asignadas a cada fila.
 La compilación reconstruye los dictámenes y, además, vuelve a calcular la clave de cada revisión
 con el prompt, contexto, borrador, esquema, modelo y parámetros congelados. Coteja la respuesta
 real y su SHA en el ledger. Cambiar juntos el histórico y la etiqueta terminal no fabrica un voto.
-El ZIP y la biblioteca conservan los expedientes, incluidos rechazos y abstenciones.
+El ZIP y la biblioteca conservan los expedientes, incluidos rechazos y abstenciones y las respuestas
+crudas de los lectores. El ZIP incluye `INDICE.md` y enlaces relativos de unidad a hojas docentes
+y de estudiante, además de comprobar que cada objetivo aparece exactamente en su unidad.
 
 ## Presupuesto y reanudación
 
@@ -112,7 +174,7 @@ Para un bloque concreto se usa `clases ejecutar` con `--plan` apuntando a su `pr
 el mismo `--protocolo`, directorio y preparaciones. No se crean nombres nuevos para repetir votos.
 Los logs están en `data/operaciones/clases_v4_20261022/` y conservan los estados VERDE, AMARILLO
 y ROJO; la campaña diferencia lotes terminados de objetivos respaldados.
-P1–P5 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
+P1–P8 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
 un juez no crean una norma institucional ni una equivalencia de grados sin una fuente oficial.
 
 ## Publicación y consumo
@@ -161,3 +223,11 @@ complejidad de los esquemas y que algunos límites de cadenas no se aplican en l
 [salida estructurada](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/control-generated-output)
 y [subconjunto de JSON Schema](https://ai.google.dev/gemini-api/docs/structured-output).
 Licencias: [información oficial de OpenStax](https://help.openstax.org/s/article/Licensing-information-of-OpenStax-textbooks).
+
+## Verificación del flujo de lectura por capítulos
+
+El piloto documental de cuatro objetivos obtuvo cuatro respaldos automáticos, pero la lectura
+directa señaló tres casos con dimensiones ambiguas o afirmaciones específicas sin respaldo
+en el contexto entregado. No se amplía ese piloto con base sólo en sus votos favorables.
+Los cuatro expedientes, los hallazgos y las versiones señaladas permanecen en la auditoría.
+La prueba completa de ingeniería pasa 1.535 casos; no mide exactitud científica poblacional.

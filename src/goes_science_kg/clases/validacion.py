@@ -166,6 +166,20 @@ def certificar_resultado(resultado, preparacion, modelos=None):
     if resultado["snapshot_id"] != preparacion["snapshot_id"] or not 1 <= len(resultado["rondas"]) <= 2:
         raise ValueError("Snapshot o número de rondas incompatible")
     for i, ronda in enumerate(resultado["rondas"]):
+        if ronda.get("tipo") == "edicion_formato":
+            from goes_science_kg.clases.edicion import aplicar_ediciones, preparar_edicion
+
+            if i != 1:
+                raise ValueError("La edición de formato sólo puede consumir la segunda y última ronda")
+            anterior = resultado["rondas"][0]
+            solicitud = preparar_edicion(anterior["respuesta_rechazada"], ronda["filas"], anterior["filas"])
+            edicion = ronda.get("edicion_formato") or {}
+            if solicitud is None or edicion.get("solicitud") != solicitud:
+                raise ValueError("La edición no corresponde a un fallo de longitud puro en el guion anterior")
+            if ronda["borrador"]:
+                reconstruido = aplicar_ediciones(solicitud, edicion["respuesta"]).model_dump(mode="json")
+                if reconstruido != ronda["borrador"]:
+                    raise ValueError("El guion editado cambia campos ajenos al parche autorizado")
         if ronda.get("tipo") != "recuperacion_tecnica":
             continue
         if i != 1:

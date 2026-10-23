@@ -12,6 +12,7 @@ EJECUCION = "ciencias_v4_curricularizacion_20261022"
 MODELOS = dict.fromkeys((*ROLES, "clases_redactor"), "gemini-4-argon") | {
     "clases_psicopedagogia": "gemini-3.8-flash",
     "clases_consulta": "gemini-3.8-flash",
+    "clases_editor": "gemini-3.8-flash",
 }
 TARIFAS = {"gemini-4-argon": {"entrada": 4, "salida": 20}, "gemini-3.8-flash": {"entrada": 1.5, "salida": 7.5}}
 
@@ -37,14 +38,18 @@ class ProveedorClases:
                 tarifas=TARIFAS,
                 max_llamadas=max_llamadas,
                 max_usd=max_usd,
-                timeout_segundos=600 if rol == "clases_redactor" else 360,
+                timeout_segundos=600
+                if rol not in {"clases_psicopedagogia", "clases_consulta", "clases_editor"}
+                else 360,
                 reintentos=0,
-                max_salida_tokens=32768 if rol == "clases_redactor" else 16384,
+                max_salida_tokens=32768
+                if rol not in {"clases_psicopedagogia", "clases_consulta", "clases_editor"}
+                else 16384,
                 niveles_razonamiento={
                     r: "LOW"
                     if r == "clases_consulta"
                     else "MEDIUM"
-                    if r in {"clases_redactor", "clases_psicopedagogia", "clases_consulta"}
+                    if r in {"clases_redactor", "clases_psicopedagogia", "clases_consulta", "clases_editor"}
                     else "HIGH"
                     for r in MODELOS
                 },
@@ -61,6 +66,20 @@ class ProveedorClases:
 
     def nombre_modelo(self, rol):
         return MODELOS[rol]
+
+    def editar_formato(self, solicitud):
+        import json
+
+        from goes_science_kg.clases.contratos import esquema_transporte
+        from goes_science_kg.clases.edicion import EdicionesClases
+        from goes_science_kg.clases.prompts import EDITOR
+
+        return self.generar(
+            rol="clases_editor",
+            sistema=EDITOR,
+            mensaje=json.dumps(solicitud, ensure_ascii=False, sort_keys=True),
+            esquema=esquema_transporte(EdicionesClases),
+        )
 
     def generar(self, **kwargs):
         tecnico = kwargs.pop("recuperacion_tecnica", False)

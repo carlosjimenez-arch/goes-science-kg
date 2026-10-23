@@ -63,11 +63,14 @@ La biblioteca docente está disponible en `/api/v4/materiales`: **1.013 paquetes
 Se recupera sin descargar todo el corpus con `uv run gskg materiales restaurar`.
 [Contenido, procedencia y ejemplos de consulta](docs/MATERIALES_DOCENTES.md).
 
-La ampliación de **guiones completos por objetivo** está en ejecución y tiene un piloto de 24
-objetivos respaldado por cuatro revisiones. Conserva el mismo ledger y el máximo acumulado
+La ampliación de **guiones completos por objetivo** está en ejecución. El piloto P8 terminó con
+11 de 12 guiones respaldados por las cuatro revisiones; los hallazgos posteriores de contenido
+siguen bloqueando las versiones afectadas. Conserva el mismo ledger y el máximo acumulado
 autorizado de 4.000 invocaciones/USD 3.500 de reserva. Incluye hojas de estudiante, solucionarios,
 validación numérica, comprobación de votos reales y descarga verificable; su publicación completa
-queda condicionada a cubrir los 1.013 objetivos. [Estado, operación y contrato de descarga](docs/CLASES_V4.md).
+queda condicionada a cubrir los 1.013 objetivos y resolver los defectos documentados.
+La descarga disponible hoy corresponde a las preparaciones curriculares; el recibo del ZIP completo
+se añadirá al verificar esa entrega. [Estado, operación y contrato de descarga](docs/CLASES_V4.md).
 
 ## Inicio rápido
 ```bash

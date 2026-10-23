@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections import defaultdict
 
 
 def markdown_clase(material: dict, *, estudiante: bool = False) -> str:
@@ -38,6 +39,14 @@ def markdown_clase(material: dict, *, estudiante: bool = False) -> str:
                     "Evidencia: " + bloque["evidencia_observable"],
                     "",
                 ]
+    datos = d.get("datos_contextuales")
+    if datos:
+        lineas += ["## Datos para las actividades", "", datos["titulo"], "", datos["descripcion_pedagogica"], ""]
+        columnas = list(datos["columnas"])
+        lineas += ["| " + " | ".join(datos["columnas"][k] for k in columnas) + " |"]
+        lineas += ["| " + " | ".join("---" for _ in columnas) + " |"]
+        lineas += ["| " + " | ".join(str(f[k]) for k in columnas) + " |" for f in datos["filas"]]
+        lineas += ["", *datos["limites_inferencia"], ""]
     lineas += ["## Hoja de trabajo del estudiante", ""]
     for numero, tarea in enumerate(g["tareas"], 1):
         lineas += [f"### Tarea {numero}", "", tarea["enunciado"], ""]
@@ -79,11 +88,22 @@ def markdown_clase(material: dict, *, estudiante: bool = False) -> str:
             valor = g[campo]
             lineas += ["## " + titulo, "", *(("- " + v for v in valor) if isinstance(valor, list) else [valor]), ""]
         lineas += ["## Fuentes, atribución y trazabilidad", ""]
+        if datos:
+            lineas += [datos["metodo_verificacion"], "", datos["limite_verificacion"], ""]
+            for f in datos["fuentes"]:
+                lineas += [f"- [Fuente del insumo tabular]({f['url']}).", ""]
         for fuente in d["fuentes_cientificas"]:
             f = fuente["fuente"]
+            localizador = f["localizador"]
+            ubicacion = (
+                "bloque " + localizador["bloque"]
+                if "bloque" in localizador
+                else "rangos de bytes " + ", ".join(f"{a}:{z}" for a, z in localizador["selecciones"])
+            )
+            edicion = f.get("libro", f.get("version_publicacion", f.get("fecha_publicacion", "")))
             lineas += [
-                f"- {fuente['id']}: {f['institucion']}, {f['libro']}, {f['titulo']}. "
-                f"[Texto fuente]({f['url']}); bloque {f['localizador']['bloque']}; "
+                f"- {fuente['id']}: {f['institucion']}, {edicion}, {f['titulo']}. "
+                f"[Texto fuente]({f['url']}); {ubicacion}; "
                 f"SHA-256 {f['sha256']}. [Licencia {f['licencia']}]({f['licencia_url']})."
             ]
         lineas += [
@@ -97,7 +117,12 @@ def markdown_clase(material: dict, *, estudiante: bool = False) -> str:
                 {
                     k: d[k]
                     for k in ("snapshot_id", "preparacion_id", "origen", "alerta_original", "enmiendas", "dictamenes")
-                },
+                }
+                | (
+                    {"ajuste_didactico_auditoria": d["ajuste_didactico_auditoria"]}
+                    if d.get("ajuste_didactico_auditoria")
+                    else {}
+                ),
                 ensure_ascii=False,
                 indent=2,
             ),
@@ -132,3 +157,33 @@ def markdown_unidad(material: dict) -> str:
     lineas += ["", "Los JSON y las hojas docente/estudiante se encuentran en `clases/` dentro de la descarga.", ""]
     lineas += [d["licencia_adaptacion"], ""]
     return "\n".join(lineas)
+
+
+def markdown_indice(materiales: list[dict]) -> str:
+    grupos = defaultdict(list)
+    for m in materiales:
+        grupos[(m["grados"][0], m["asignatura"])].append(m)
+    lineas = [
+        "# Índice de guiones de Ciencias V4",
+        "",
+        "Abre una unidad y sigue sus enlaces a la guía docente y a la hoja del estudiante.",
+        "Los archivos se pueden consultar sin conexión; los enlaces a las fuentes oficiales requieren Internet.",
+        "",
+    ]
+    for (grado, asignatura), grupo in sorted(grupos.items()):
+        lineas += [f"## Grado {grado} · {asignatura}", ""]
+        unidades = sorted((m for m in grupo if m["tipo"] == "guion_unidad"), key=lambda m: m["titulo"])
+        incluidos = {g["material_id"] for u in unidades for g in u["documento"]["guiones"]}
+        for m in unidades:
+            nombre = hashlib.sha256(m["id"].encode()).hexdigest()
+            lineas.append(f"- [{m['titulo']}](unidades/{nombre}.md) · {len(m['documento']['guiones'])} guiones.")
+        for m in sorted(
+            (m for m in grupo if m["tipo"] == "guion_clase" and m["id"] not in incluidos),
+            key=lambda m: m["titulo"],
+        ):
+            nombre = hashlib.sha256(m["id"].encode()).hexdigest()
+            lineas.append(
+                f"- [{m['titulo']}](clases/{nombre}.docente.md) · [Hoja de estudiante](clases/{nombre}.estudiante.md)."
+            )
+        lineas.append("")
+    return "\n".join(lineas) + "\n"

@@ -432,6 +432,84 @@ def test_motor_recupera_fila_valida_y_repara_solo_la_invalida(preparacion, tmp_p
     assert all([g["fila_id"] for g in m["guiones"]] in (["fila1"], ["fila2"]) for m in lectores)
 
 
+def test_editor_consume_segunda_ronda_y_requiere_cuatro_lecturas_del_guion_editado(preparacion, tmp_path):
+    import json
+
+    from goes_science_kg.clases.edicion import EdicionesClases
+    from goes_science_kg.clases.validacion import certificar_resultado
+    from goes_science_kg.motor.vertex import _validar_salida
+
+    class ConEditor(ProveedorGuion):
+        ediciones = 0
+
+        def generar(self, **kwargs):
+            r = super().generar(**kwargs)
+            if kwargs["rol"] == "clases_redactor" and self.redacciones == 1:
+                d = r.model_dump(mode="json")
+                d["guiones"][1]["tareas"][0]["enunciado"] = "Texto repetido innecesariamente. " * 70
+                return _validar_salida(kwargs["esquema"], json.dumps(d))
+            return r
+
+        def editar_formato(self, solicitud):
+            self.ediciones += 1
+            assert [f["fila_id"] for f in solicitud["filas"]] == ["fila2"]
+            return EdicionesClases.model_validate(
+                {
+                    "cambios": [
+                        {
+                            "fila_id": "fila2",
+                            "tarea": 0,
+                            "campo": "enunciado",
+                            "texto": guion("fila2").tareas[0].enunciado,
+                        }
+                    ]
+                }
+            )
+
+    proveedor = ConEditor()
+    r = ejecutar_durable(
+        MotorClases(proveedor, SimpleNamespace(huella="a" * 64, verificar=lambda e: None)),
+        archivo=tmp_path / "cp.sqlite",
+        solicitud=preparacion,
+        thread_id="edicion",
+        ejecucion_id="prueba",
+        huella_entorno="b" * 64,
+    )["resultado"]
+    certificar_resultado(r, preparacion)
+    assert r["estado"] == "respaldado_automaticamente"
+    assert proveedor.redacciones == 1 and proveedor.ediciones == 1
+    assert len(proveedor.llamadas) == 9  # Un redactor y ocho lectores; el editor del doble no invoca proveedor.
+    assert r["rondas"][1]["tipo"] == "edicion_formato"
+    assert "Texto repetido" in r["rondas"][0]["respuesta_rechazada"]
+    assert "Comprobación interna" not in json.dumps(r["filas"])
+    adulterado = deepcopy(r)
+    adulterado["rondas"][1]["borrador"]["guiones"][0]["seguridad"] += " CAMBIADA"
+    with pytest.raises(ValueError, match="campos ajenos"):
+        certificar_resultado(adulterado, preparacion)
+
+
+def test_editor_solo_admite_longitud_y_campos_exactos():
+    import json
+
+    from goes_science_kg.clases.edicion import aplicar_ediciones, preparar_edicion
+
+    original = guion().model_dump(mode="json")
+    original["tareas"][0]["enunciado"] = "Texto largo de la consigna. " * 80
+    raw = json.dumps({"guiones": [original]})
+    solicitud = preparar_edicion(raw, ["fila1"], ["fila1"])
+    assert solicitud and original["tareas"][0]["enunciado"] in json.dumps(solicitud)
+    cambio = {"fila_id": "fila1", "tarea": 0, "campo": "enunciado", "texto": guion().tareas[0].enunciado}
+    nuevo = aplicar_ediciones(solicitud, {"cambios": [cambio]}).guiones[0].model_dump(mode="json")
+    assert nuevo["seguridad"] == original["seguridad"] and nuevo["objetivo"] == original["objetivo"]
+    with pytest.raises(ValueError, match="exactamente los campos"):
+        aplicar_ediciones(solicitud, {"cambios": [cambio, cambio]})
+    with pytest.raises(ValueError):
+        aplicar_ediciones(solicitud, {"cambios": [cambio | {"campo": "seguridad"}]})
+    original["sesiones"][0]["bloques"][0]["minutos"] = 1
+    assert preparar_edicion(json.dumps({"guiones": [original]}), ["fila1"], ["fila1"]) is None
+    assert preparar_edicion(raw[:-2], ["fila1"], ["fila1"]) is None
+
+
 def test_error_400_detiene_sin_gastar_reparacion(preparacion, tmp_path):
     class ErrorConfiguracion(RuntimeError):
         code = 400
@@ -516,6 +594,61 @@ def test_api_entrega_guion_hoja_estudiante_y_fuente_cnxml(tmp_path):
         assert c.get(direccion + "?audiencia=estudiante").status_code == 422
         fuente = c.get("/api/v4/materiales/archivos/" + sha(raw))
         assert fuente.content == raw and fuente.headers["content-type"].startswith("application/xml")
+
+
+def test_lectura_presenta_fuente_primaria_con_rangos_de_bytes():
+    from goes_science_kg.clases.lectura import markdown_clase
+
+    material = material_clase()
+    material["documento"]["fuentes_cientificas"] = [
+        {
+            "id": "ICS:revision#Triassic",
+            "fuente": {
+                "institucion": "ICS",
+                "titulo": "International Chronostratigraphic Chart",
+                "version_publicacion": "2026-06",
+                "url": "https://stratigraphy.org/chart/",
+                "localizador": {"formato": "extractos_bytes_utf8", "selecciones": [[10, 100], [200, 300]]},
+                "sha256": "a" * 64,
+                "licencia": "CC BY 4.0",
+                "licencia_url": "https://creativecommons.org/licenses/by/4.0/",
+            },
+        }
+    ]
+    texto = markdown_clase(material)
+    assert "ICS, 2026-06" in texto and "10:100, 200:300" in texto
+    assert "https://stratigraphy.org/chart/" in texto
+
+
+@pytest.mark.parametrize("defecto", ["clase_ausente", "clase_repetida", "objetivo_distinto", "duracion_distinta"])
+def test_descarga_rechaza_unidades_que_no_corresponden_a_las_clases(tmp_path, defecto):
+    from goes_science_kg.clases.paquete import construir
+
+    clase = material_clase()
+    ref = {
+        "material_id": clase["id"],
+        "fila_id": clase["fila_id"],
+        "titulo": clase["titulo"],
+        "objetivo": clase["documento"]["guion"]["objetivo"],
+        "duracion_minutos": 60,
+    }
+    unidad = clase | {
+        "id": "unidad-prueba",
+        "tipo": "guion_unidad",
+        "titulo": "Materia",
+        "fila_id": None,
+        "documento": {"guiones": [ref], "licencia_adaptacion": "Atribución de prueba."},
+    }
+    if defecto == "clase_ausente":
+        ref["material_id"] = "inexistente"
+    elif defecto == "clase_repetida":
+        unidad["documento"]["guiones"].append(ref.copy())
+    elif defecto == "objetivo_distinto":
+        ref["objetivo"] = "Otro objetivo que no es el de la clase enlazada."
+    else:
+        ref["duracion_minutos"] = 120
+    with pytest.raises(ValueError, match="unidad|unidades"):
+        construir([clase, unidad], {}, tmp_path / "invalido.zip", procedencia={})
 
 
 def test_reanudar_terminal_no_reserva_un_lote_completo_de_nuevo(preparacion, tmp_path, monkeypatch):
