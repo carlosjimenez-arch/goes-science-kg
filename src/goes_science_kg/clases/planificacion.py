@@ -11,7 +11,7 @@ from goes_science_kg.materiales.compilacion import serializar, sha
 from goes_science_kg.motor.contratos import Evidencia, huella
 
 
-def reagrupar(preparaciones, corpus):
+def reagrupar(preparaciones, corpus, *, medir_contexto=contexto):
     """Sólo contextos sin borrador ni tabla externa; máximo cuatro objetivos y contexto íntegro por lote."""
     if not preparaciones:
         raise ValueError("No hay preparaciones documentales para agrupar")
@@ -79,7 +79,7 @@ def reagrupar(preparaciones, corpus):
                 "No declara equivalencias curriculares ni una nueva secuencia didáctica entre unidades."
             ),
         }
-        if len(serializar(contexto(p))) > MAX_CONTEXTO_BYTES:
+        if len(serializar(medir_contexto(p))) > MAX_CONTEXTO_BYTES:
             if len(filas_lote) == 1:
                 raise ValueError("Una fila excede el contexto; se requiere curación, no truncamiento")
             mitad = len(filas_lote) // 2

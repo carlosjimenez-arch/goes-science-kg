@@ -95,7 +95,7 @@ def campana(
     plan: Annotated[Path, typer.Option(help="Plan congelado que fija el orden exacto de lotes")],
     destino: Annotated[Path, typer.Option()],
     control: Annotated[Path, typer.Option(help="Concurrencia ajustable entre bloques, sin cambiar los guiones")],
-    protocolo: Annotated[str, typer.Option()] = "clases-p10",
+    protocolo: Annotated[str, typer.Option()] = "clases-p11",
     confirmar: Annotated[bool, typer.Option()] = False,
 ):
     import zipfile
@@ -103,8 +103,8 @@ def campana(
     from goes_science_kg.clases.campana import ejecutar_campana, leer_control, planificar
     from goes_science_kg.materiales.compilacion import sha
 
-    if protocolo not in {"clases-p5", "clases-p6", "clases-p7", "clases-p8", "clases-p9", "clases-p10"}:
-        raise typer.BadParameter("La campaña requiere un protocolo P5–P10 congelado")
+    if protocolo not in {f"clases-p{n}" for n in range(5, 12)}:
+        raise typer.BadParameter("La campaña requiere un protocolo P5–P11 congelado")
     numero = int(protocolo.removeprefix("clases-p"))
     cfg = leer_control(control)
     lotes, proveedor, corpus = _preparar_ejecucion(preparaciones, cfg["vertex"])

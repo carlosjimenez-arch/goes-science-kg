@@ -42,6 +42,7 @@ class CambioGuion(Contrato):
     fila_id: str
     resultado: str
     resultado_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    ronda_origen: int | None = Field(default=None, ge=1, le=2)
     campos: tuple[CambioCampo, ...] = Field(min_length=1, max_length=12)
 
 
@@ -62,6 +63,25 @@ def _leer_parche(base, referencia):
     return raw, ParcheEditorial.model_validate_json(raw)
 
 
+def _guion_antecedente(resultado, cambio):
+    terminal = resultado["filas"][cambio.fila_id]["guion"]
+    if cambio.ronda_origen is None:
+        if terminal is None:
+            raise ValueError("El antecedente editorial no contiene un guion")
+        return terminal
+    if terminal is not None:
+        raise ValueError("Existe un guion terminal; no se elige otra ronda retrospectivamente")
+    rondas = [r for r in resultado["rondas"] if r["numero"] == cambio.ronda_origen]
+    candidatos = [
+        g for r in rondas for g in (r.get("borrador") or {}).get("guiones", [])
+        if g["fila_id"] == cambio.fila_id
+    ]
+    if len(rondas) != 1 or len(candidatos) != 1:
+        raise ValueError("La ronda explícita no contiene un borrador completo inequívoco")
+    # No se reconstruye JSON truncado ni se importa una respuesta que incumpla el contrato.
+    return GuionClase.model_validate(candidatos[0]).model_dump(mode="json")
+
+
 def reconstruir(base, preparacion, referencia):
     _, parche = _leer_parche(base, referencia)
     ids = [c.fila_id for c in parche.cambios]
@@ -78,9 +98,7 @@ def reconstruir(base, preparacion, referencia):
         resultado = json.loads(raw)
         if resultado["snapshot_id"] != preparacion["snapshot_id"]:
             raise ValueError("La edición pertenece a otro snapshot")
-        anterior = resultado["filas"][cambio.fila_id]["guion"]
-        if anterior is None:
-            raise ValueError("El antecedente editorial no contiene un guion")
+        anterior = _guion_antecedente(resultado, cambio)
         nuevo = deepcopy(anterior)
         campos = [c.campo for c in cambio.campos]
         if len(set(campos)) != len(campos):
@@ -115,7 +133,7 @@ def preparar(base: Path, plantilla: dict, parche: Path):
         raw = leer_propio(base, cambio.resultado).read_bytes()
         if sha(raw) != cambio.resultado_sha256:
             raise ValueError("El resultado anterior cambió al preparar sus huellas")
-        anterior = json.loads(raw)["filas"][cambio.fila_id]["guion"]
+        anterior = _guion_antecedente(json.loads(raw), cambio)
         vetos[cambio.fila_id] = sorted(set(vetos.get(cambio.fila_id, [])) | {huella_contenido(anterior)})
     p["id"] = huella(p)
     return p

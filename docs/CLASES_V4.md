@@ -3,9 +3,9 @@
 ## Estado de esta ampliación
 
 El alcance son los 1.013 objetivos de Ciencias del snapshot producto-4, agrupados en 108 unidades.
-Los siete registros fuera de Ciencias se conservan fuera de generación. El inventario cerrado previo
-al control editorial P10 registra 803 guiones respaldados automáticamente, 30 con veto, 32 con
-abstención y 148 todavía sin resultado. El denominador permanece en 1.013. El inventario privado
+Los siete registros fuera de Ciencias se conservan fuera de generación. El corte de la campaña P11
+del 23 de octubre registra 968 guiones respaldados automáticamente, 27 con veto y 18 con abstención,
+sin objetivos pendientes de primera generación. El denominador permanece en 1.013. El inventario privado
 `data/clases_v4/auditoria_contenido/inventario_trabajo.json` fija el orden de versiones y conserva el
 último resultado incluso si es desfavorable; no elige retrospectivamente el voto más favorable.
 
@@ -50,8 +50,8 @@ ICS 2026/06 y texto institucional USDA sobre oscurecimiento de alimentos. Sus li
 se conservan; no se extiende automáticamente la licencia de OpenStax a las fuentes adicionales.
 El registro `data/referencias_complementarias_clases/registro.json` permite reconstruir cada
 versión anterior por huella y reunir sus originales. Se añadieron leyendas, tablas y descripciones
-accesibles de los mismos módulos CNXML, sin descargar imágenes ni afirmar que una descripción
-acredita una observación. Los extractos NPS sirven para jerarquía y eventos geológicos; las edades
+accesibles de los mismos módulos CNXML; una descripción no acredita una observación.
+Los extractos NPS sirven para jerarquía y eventos geológicos; las edades
 numéricas se atribuyen a la edición correspondiente y se distinguen de los límites ICS actuales.
 
 Un insumo histórico de dengue conserva tres notificaciones semanales de sospechas de MINSAL
@@ -173,7 +173,7 @@ Para un bloque concreto se usa `clases ejecutar` con `--plan` apuntando a su `pr
 el mismo `--protocolo`, directorio y preparaciones. No se crean nombres nuevos para repetir votos.
 Los logs están en `data/operaciones/clases_v4_20261022/` y conservan los estados VERDE, AMARILLO
 y ROJO; la campaña diferencia lotes terminados de objetivos respaldados.
-P1–P10 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
+P1–P11 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
 un juez no crean una norma institucional ni una equivalencia de grados sin una fuente oficial.
 
 ## Publicación y consumo
@@ -229,7 +229,7 @@ El piloto documental de cuatro objetivos obtuvo cuatro respaldos automáticos, p
 directa señaló tres casos con dimensiones ambiguas o afirmaciones específicas sin respaldo
 en el contexto entregado. No se amplía ese piloto con base sólo en sus votos favorables.
 Los cuatro expedientes, los hallazgos y las versiones señaladas permanecen en la auditoría.
-La prueba completa de ingeniería pasó 1.567 casos (272,64 s); Ruff pasó sobre `src` y `tests`.
+La prueba completa de ingeniería pasó 1.575 casos (275,89 s); Ruff pasó sobre `src` y `tests`.
 Estas comprobaciones no miden exactitud científica poblacional.
 
 ## Correcciones editoriales y contexto de trabajo
@@ -259,6 +259,43 @@ seguridad con su propia atribución; no se copian imágenes. Un pasaje de una fu
 puede contener errores: la revisión científica sigue siendo necesaria. El cargador comparte corpus
 aditivos sólo tras verificar metadatos, rangos, bytes y manifests de todas las versiones; ante conflictos
 reconstruye la colección separada. No se elimina evidencia histórica para ahorrar memoria.
+
+## Fuentes ampliadas y revisión P11
+
+P11 conserva el código del flujo por SHA y los contextos completos usados en cada voto. La curación
+documental combina consultas, elimina redundancia y conserva pasajes enteros dentro de la cota;
+el agrupador mide el contexto que reciben los agentes. Esos controles no acreditan suficiencia
+científica. Una salida truncada no se reconstruye como si hubiera sido un guion válido. La edición
+de una ronda tipada sin terminal conserva su antecedente y exige cuatro lecturas nuevas.
+
+La campaña de 57 lotes cubrió 202 objetivos: 157 respaldados, 27 con veto y 18 con abstención.
+Con las versiones anteriores, los 1.013 objetivos tienen un resultado. Los 45 negativos conservan
+sus hallazgos y no se sustituyen por un resultado favorable anterior. La recuperación R21 congela
+45 preparaciones con fuentes ampliadas: mínimo 225 llamadas, máximo 450 con una reparación por
+lote y reserva máxima USD 548,01496. No cabe en el saldo autorizado de 4.000 llamadas; la
+ampliación solicitada a 4.400 sigue pendiente y no habilita ejecución.
+
+Las versiones documentales conservan las tablas literales de equilibrio ácido-base, CDC y EPA
+para aire e higiene, UniProt y MeSH para catalasa, NIST para dispersión, USGS y NASA para geología,
+NHC para escala de viento, cono y registros históricos de Dora, y NASA para datos planetarios y
+evolución estelar. Son fuentes congeladas con sus condiciones, fechas y licencias propias.
+La versión R20 corrige de forma aditiva 98 títulos de Siyavula cuyo extractor había incluido cuerpo
+del documento; no reescribe las referencias históricas ni declara infalible su contenido.
+
+El informe MARN 2017 autoriza reproducción educativa o no comercial con atribución. Sus nueve
+parámetros y usos diferenciados se recuperan del PDF; los cinco rangos ICA se cotejaron en la
+leyenda del mapa de la página 8 y se conserva el facsímil y una transcripción visual identificada.
+Los porcentajes de sitios de la tabla próxima no son rangos ICA. Un ICA general no certifica
+potabilidad ni autoriza un uso concreto del agua. Los textos CDC, NOAA y NRCS recuperados mediante
+navegación cuando falló HTTP se identifican como capturas textuales, con localizadores propios.
+
+La revisión directa de los cuatro guiones de lagunas detectó nuevos defectos en tres versiones:
+textura mineral frente a humus, cociente muestral frente a parámetros Poisson y una constante
+antigua de K-40 añadida como dato actual. Las tres correcciones obtuvieron cuatro lecturas nuevas
+y resolución exacta tras comprobar que la salida coincidía con el borrador editorial revisado.
+Se conservan 33 expedientes de resolución y todos los seguimientos; su número no es una tasa de
+precisión. Una precisión adicional sobre el mecanismo de dilución de ácidos débiles está en
+revisión dentro del saldo vigente y conserva su versión anterior.
 
 ## Respaldo de continuidad verificado
 

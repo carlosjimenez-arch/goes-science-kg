@@ -102,6 +102,36 @@ def test_no_sobrescribe_ediciones_ni_sale_del_directorio_autorizado(expediente):
         preparar(base, p, archivo.parent / "../externo.json")
 
 
+def test_una_ronda_explicita_valida_no_hereda_dictamenes_del_intento_fallido(expediente):
+    base, p, archivo, parche, resultado = expediente
+    original = guion().model_dump(mode="json")
+    raw = serializar({"snapshot_id": "s", "filas": {"fila1": {"guion": None}}, "rondas": [
+        {"numero": 1, "borrador": {"guiones": [original]}},
+        {"numero": 2, "borrador": None, "respuesta_rechazada": "{JSON truncado"},
+    ]})
+    resultado.write_bytes(raw)
+    parche["cambios"][0].update(resultado_sha256=sha(raw), ronda_origen=1)
+    guardar_parche(base, archivo, parche)
+    nuevo = preparar(base, p, archivo)
+    assert validar(base, nuevo) == nuevo["borrador_inicial"]
+    assert resultado.read_bytes() == raw and "dictamenes" not in nuevo
+
+
+@pytest.mark.parametrize("ronda", [1, 2])
+def test_no_elige_ronda_si_hay_terminal_ni_recupera_json_truncado(expediente, ronda):
+    base, p, archivo, parche, resultado = expediente
+    d = json.loads(resultado.read_bytes())
+    d["rondas"] = [{"numero": 2, "borrador": None, "respuesta_rechazada": "{truncado"}]
+    if ronda == 2:
+        d["filas"]["fila1"]["guion"] = None
+    raw = serializar(d)
+    resultado.write_bytes(raw)
+    parche["cambios"][0].update(resultado_sha256=sha(raw), ronda_origen=ronda)
+    guardar_parche(base, archivo, parche)
+    with pytest.raises(ValueError, match="retrospectivamente|inequívoco"):
+        preparar(base, p, archivo)
+
+
 def test_edicion_salta_redaccion_y_exige_los_cuatro_lectores_de_su_contenido(expediente):
     from goes_science_kg.clases.contratos import ROLES
     from goes_science_kg.clases.motor import MotorClases

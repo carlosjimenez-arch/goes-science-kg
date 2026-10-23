@@ -1,6 +1,6 @@
 # Ciencias V4: continuidad y verificación
 
-Actualización operativa: 22 de octubre de 2026, America/Bogota.
+Actualización operativa: 23 de octubre de 2026, America/Bogota.
 
 ## Ampliación de guiones de clase
 
@@ -9,17 +9,20 @@ El usuario autorizó un máximo **acumulado** de 4.000 invocaciones y USD 3.500 
 está en `data/operaciones/clases_v4_20261022/autorizacion.json`; `config/presupuesto_clases_v4.json`
 fija el prefijo de consumo y sus límites. El saldo se calcula desde el ledger real, no desde este texto.
 
-El inventario cerrado anterior al control P10 conserva 803 guiones con respaldo automático,
-30 con veto, 32 con abstención y 148 sin generar. La revisión directa de los 32 casos está completa,
-y los defectos conocidos siguen bloqueando sus versiones aunque tengan votos positivos. La
-publicación íntegra de guiones y unidades continúa pendiente. P9 permite una corrección editorial
-explícita y cuatro lecturas nuevas; P10 separa antecedentes históricos del contexto de trabajo,
-con auditoría compatible con los protocolos anteriores. [Estado y controles](CLASES_V4.md).
+El corte de la campaña P11 cubre los 1.013 objetivos: 968 respaldos automáticos, 27 vetos y
+18 abstenciones. La revisión directa de los 32 casos está completa y conserva seguimientos
+adicionales: los defectos conocidos bloquean sus versiones aunque tengan votos positivos.
+La publicación íntegra de guiones y unidades continúa pendiente. Hay 33 resoluciones exactas
+registradas y otra precisión de equilibrio químico en revisión. El siguiente plan de 45 lotes
+requiere 225–450 llamadas y hasta USD 548,01496 de reserva. Su preflight no cabe en 4.000 llamadas;
+la solicitud a 4.400 está pendiente, conservando el máximo USD 3.500 y el contador.
+P9 permite correcciones explícitas y cuatro lecturas nuevas; P10/P11 separan historial y contexto,
+conservan pasajes completos y auditan los protocolos anteriores. [Estado y controles](CLASES_V4.md).
 
 El respaldo vigente contiene 12.640 archivos y 27 SQLite, y fija 3.227 llamadas acumuladas. Se
 restauró independientemente y se comprobaron 1.756 trazas y la recuperación de 18 terminales con
 cero llamadas nuevas. Un punto mínimo de continuidad impide reanudar desde un ledger antiguo que
-pierda el consumo posterior a las primeras 668 llamadas. La suite completa pasó 1.567 pruebas.
+pierda el consumo posterior a las primeras 668 llamadas. La suite completa pasó 1.575 pruebas.
 [Generaciones y reproducción](VERIFICACION_GCS.md). La biblioteca de preparaciones sigue disponible;
 no se presenta como entrega de clases completas.
 

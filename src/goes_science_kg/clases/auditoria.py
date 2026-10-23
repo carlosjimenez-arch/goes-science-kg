@@ -49,7 +49,10 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
         leer_propio(base, (archivo_resultado.parent / "protocolo.json").relative_to(base).as_posix()).read_bytes()
     )
     m = re.fullmatch(
-        r"clases-p([2-9]|10)(?:-(?:masivo|seguimiento|r10-correcciones|editorial)-[0-9]{3})?", ref["protocolo"]
+        r"clases-p([2-9]|1[01])"
+        r"(?:-(?:masivo|seguimiento|r10-correcciones|lagunas-r16|editorial(?:-(?:criticas|segunda|tercera))?)"
+        r"-[0-9]{3})?",
+        ref["protocolo"],
     )
     if not m or preparacion["id"] not in ref["preparaciones"] or ref["ejecucion"] != EJECUCION:
         raise ValueError("El protocolo no pertenece a la ejecución y preparación de Ciencias")

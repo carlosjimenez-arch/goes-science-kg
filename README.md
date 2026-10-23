@@ -63,11 +63,12 @@ La biblioteca docente está disponible en `/api/v4/materiales`: **1.013 paquetes
 Se recupera sin descargar todo el corpus con `uv run gskg materiales restaurar`.
 [Contenido, procedencia y ejemplos de consulta](docs/MATERIALES_DOCENTES.md).
 
-La ampliación de **guiones completos por objetivo** continúa en revisión. El último inventario cerrado
-registra 803 respaldos automáticos, 62 vetos/abstenciones y 148 objetivos todavía sin generar; la
-revisión directa de 32 casos conserva defectos que pueden bloquear también respaldos automáticos.
-Cuatro lectores favorables no cancelan esos hallazgos. La entrega completa de 1.013 guiones y 108
-unidades aún no está publicada.
+La ampliación de **guiones completos por objetivo** continúa en revisión. El corte de la campaña P11
+del 23 de octubre cubre los 1.013 objetivos: **968 respaldos automáticos y 45 vetos/abstenciones**,
+sin objetivos pendientes de primera generación. La revisión directa conserva además hallazgos sobre
+versiones con votos favorables y exige una resolución exacta. La entrega completa de 1.013 guiones
+y 108 unidades aún no está publicada. Las pruebas de ingeniería pasaron **1.575 casos** y Ruff;
+esas pruebas no acreditan exactitud científica o eficacia educativa de todos los guiones.
 
 **Descarga disponible:** preparaciones curriculares con `uv run gskg materiales restaurar`; corpus,
 guiones en desarrollo y checkpoints con `uv run gskg datos restaurar --destino /tmp/ciencias-restauradas`.
@@ -77,6 +78,9 @@ las rutas del proyecto vacío, usar `uv run gskg datos restaurar --en-repo`.
 
 El máximo autorizado sigue siendo acumulado: 4.000 invocaciones/USD 3.500 de reserva. El respaldo
 vigente conserva 3.227 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
+El trabajo posterior a ese respaldo conserva su consumo en el ledger local. El plan documental de
+los 45 pendientes necesita hasta 450 llamadas; su preflight queda bloqueado por el límite vigente.
+La solicitud de ampliación a 4.400 llamadas está pendiente: no constituye autorización para ejecutarlo.
 Los borradores conservan tareas, soluciones y expedientes de desarrollo; los resultados pendientes no son
 clases liberadas. El recibo del ZIP docente completo se añadirá después de cubrir todos los objetivos y
 resolver los defectos. [Estado, operación y contrato de descarga](docs/CLASES_V4.md).

@@ -92,6 +92,20 @@ def test_limite_de_contexto_divide_lote_sin_recortar_pasajes():
     )
 
 
+def test_mide_el_contexto_que_realmente_usa_p10_sin_borrar_el_historial():
+    from goes_science_kg.clases.contexto import contexto
+
+    ps = [preparacion(n, [fuente("e")]) for n in range(4)]
+    for p in ps:
+        p["filas"][0]["alerta_original"] = "Antecedente documental. " * 1800
+        p["id"] = huella({k: v for k, v in p.items() if k != "id"})
+    assert len(reagrupar(ps, corpus())) > 1
+    nuevos = reagrupar(ps, corpus(), medir_contexto=contexto)
+    assert len(nuevos) == 1 and len(nuevos[0]["filas"]) == 4
+    assert all(f["alerta_original"] for f in nuevos[0]["filas"])
+    assert all("alerta_original" not in f for f in contexto(nuevos[0])["filas"])
+
+
 @pytest.mark.parametrize("campo,valor", [("biblioteca_id", "otra"), ("snapshot_id", "otro"), ("escenario", {})])
 def test_no_se_mezclan_identidades_o_escenarios(campo, valor):
     a, b = [preparacion(n, [fuente("e")]) for n in (1, 2)]
