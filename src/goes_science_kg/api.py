@@ -17,6 +17,7 @@ from fastapi.responses import JSONResponse
 
 from goes_science_kg.config import raiz
 from goes_science_kg.modelos import TipoArista, TipoNodo
+from goes_science_kg.observabilidad_http import ObservabilidadHTTP
 from goes_science_kg.producto.lectura import LecturaProducto
 from goes_science_kg.publicacion_api import DIRECTORIO_PUBLICACIONES, LecturaPublicada, PublicacionNoDisponible
 from goes_science_kg.rag import BM25, normalizar
@@ -46,6 +47,7 @@ def crear_app(base: Path | None = None) -> FastAPI:
             },
         ],
     )
+    aplicacion.add_middleware(ObservabilidadHTTP)
     producto = LecturaProducto(directorio)
 
     @aplicacion.get("/health/live", tags=["Operación"])

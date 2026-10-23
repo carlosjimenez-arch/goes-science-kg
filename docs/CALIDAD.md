@@ -1,8 +1,9 @@
 # Calidad y mantenimiento · GOEs AI · 2026
 
 El estilo del proyecto usa Python 3.11+, Ruff y pytest. La referencia visual es el HTML curricular
-aportado; la referencia de estructura `eor-api` sigue pendiente de acceso por macOS y no se declara
-revisada. El inventario se reproduce con `make auditoria`.
+aportado; la referencia de estructura `eor-api` ya se revisó tras recuperar el acceso local.
+La [comparación y adaptación](REFERENCIA_EOR_API.md) explica las decisiones aplicadas a GOEs.
+El inventario se reproduce con `make auditoria`.
 
 ## Organización del código
 
@@ -78,3 +79,11 @@ estático no encuentre imports entrantes.
 Los documentos de investigación y las especificaciones antiguas son antecedentes auditables. Se
 rotulan como históricos y se enlazan al estado vigente; una fecha antigua o ausencia de enlaces no
 demuestra que sean prescindibles. [Índice documental](README.md).
+
+## Versionado y observabilidad
+
+La [auditoría de versionado](auditoria/GITIGNORE_2026.md) valida 49 escenarios de protección y
+visibilidad de archivos. Las variantes de secretos, bases y respaldos quedan excluidas sin ocultar
+contratos, recibos ni recursos públicos. La huella medida incluye ahora esas reglas, el Makefile y
+el workflow de CI. Los [eventos HTTP locales](REFERENCIA_EOR_API.md) correlacionan rutas, estado y
+tiempos sin registrar valores de consulta o cuerpos desde el middleware GOEs.

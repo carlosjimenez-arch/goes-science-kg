@@ -1,5 +1,7 @@
 # Segunda revisión QA independiente · GOEs · 2026-10-22
 
+Corte histórico de QA anterior a la revisión de versionado y observabilidad HTTP. La referencia `eor-api` se pudo inspeccionar después; consultar la [comparación posterior](../REFERENCIA_EOR_API.md). Las cifras de este informe describen su árbol original.
+
 ## Estado de la revisión
 
 Barrido independiente sobre la rama `feat/api`, solicitado expresamente por el usuario. La revisión fue de sólo lectura del repositorio; las reproducciones, exportaciones y copias auxiliares se guardaron bajo `/tmp/goes-qa-segunda`. El agente principal realizó las correcciones. Se confirmó el cierre de cinco hallazgos P2. No quedan hallazgos accionables abiertos dentro de los escenarios revisados; esto no certifica ausencia universal de defectos.

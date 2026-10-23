@@ -134,6 +134,10 @@ Estas rutas viven bajo `src/goes_science_kg/`. Los contratos y funciones puras p
 de los servicios con estado. Los índices evitan normalizar todo el currículo y recorrer todas las
 aristas en cada consulta de detalle. [Decisiones de arquitectura](docs/ARQUITECTURA.md).
 
+La [referencia de ingeniería `eor-api`](docs/REFERENCIA_EOR_API.md) ya se contrastó con la estructura
+GOEs. Las respuestas gestionadas incorporan un ID único y tiempos medidos; los eventos HTTP locales
+conservan plantilla de ruta, estado y duración sin incluir valores de consulta ni cuerpos.
+
 ## Calidad y reproducibilidad
 
 ```bash
@@ -152,6 +156,8 @@ enlaza el estado remoto de `feat/api`; sus resultados son independientes de la m
 Los docstrings mantenidos están en inglés y el formato se controla con Ruff. Dos extractores
 conservan sus bytes y docstrings históricos porque identifican evidencia publicada. La excepción,
 la retirada de código desconectado y los límites de la auditoría están en [Calidad](docs/CALIDAD.md).
+La [política de versionado](docs/auditoria/GITIGNORE_2026.md) protege secretos, corpus, SQLite y
+respaldos, conservando visibles el código, los contratos, los recibos de restauración y los badges.
 
 ## Documentación y contribución
 

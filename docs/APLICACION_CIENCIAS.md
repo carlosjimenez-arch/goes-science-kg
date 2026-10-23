@@ -49,7 +49,7 @@ bytes, con fechas internas fijas y texto seguro en todas las hojas, incluida la 
 
 La marca de la aplicación es GOEs · Departamento de AI · 2026. El CSS principal es idéntico al bloque
 `style` del HTML aportado; se conservaron los estilos y se adaptaron los datos a Ciencias. La referencia
-`eor-api` sigue bloqueada por macOS y no se declara inspeccionada.
+`eor-api` ya se revisó; la [comparación de ingeniería](REFERENCIA_EOR_API.md) explica la adaptación.
 
 Las rutas `/health/live` y `/health/ready` separan proceso y disponibilidad de datos. Una raíz sin
 corpus mantiene accesibles `/app/` y `/docs`, pero las consultas responden 503 con `estado: sin_datos`
@@ -62,10 +62,14 @@ reutilizan texto normalizado y relaciones por nodo. Una campaña ausente conserv
 una ausencia de telemetría no se muestra como gasto cero. Las descargas CSV y Excel conservan
 `X-Snapshot-ID` y el navegador rechaza otra generación.
 
-La medición vigente pasó **1.408 pruebas Python** sin advertencias; la cobertura de líneas es
-**79,37 %**. El informe fechado se publica en [medicion.json](badges/medicion.json).
-La CI tiene contratos portables comprobados localmente sobre una copia sin corpus; su ejecución
-remota está pendiente. El informe siguiente conserva la verificación de la entrega anterior.
+Las respuestas gestionadas incluyen `X-Request-ID` y el tiempo hasta iniciar la respuesta en
+`Server-Timing`. Los eventos del middleware GOEs usan plantillas de ruta, estado y duración sin
+incorporar valores de consulta, cuerpos o datos de usuario. Se emiten al logging local existente.
+
+La medición vigente pasó **1.462 pruebas Python** sin advertencias; la cobertura de líneas es
+**79,40 %**. El informe fechado se publica en [medicion.json](badges/medicion.json).
+La CI ejecuta contratos portables en Python 3.11 y 3.14; su estado remoto se consulta en el badge
+del README. El informe siguiente conserva la verificación de la entrega anterior.
 
 ## Verificación anterior de entrega · 22 de octubre de 2026
 

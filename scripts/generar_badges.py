@@ -29,7 +29,7 @@ def badge(etiqueta: str, valor: str, color: str) -> str:
 
 
 def huella_codigo(raiz: Path) -> str:
-    """Hash measured source, test, script, and dependency files deterministically."""
+    """Hash measured code, tests, dependencies, and operational quality policies."""
     digest = hashlib.sha256()
     archivos = sorted(
         [
@@ -38,7 +38,10 @@ def huella_codigo(raiz: Path) -> str:
             for p in (raiz / carpeta).rglob("*")
             if p.suffix in {".py", ".js", ".cjs", ".css", ".html"}
         ]
-        + [raiz / "pyproject.toml", raiz / "uv.lock"]
+        + [
+            raiz / nombre
+            for nombre in ("pyproject.toml", "uv.lock", ".gitignore", "Makefile", ".github/workflows/quality.yml")
+        ]
     )
     for archivo in archivos:
         digest.update(archivo.relative_to(raiz).as_posix().encode() + b"\0" + archivo.read_bytes() + b"\0")

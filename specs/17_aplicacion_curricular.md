@@ -72,3 +72,8 @@ opcional de las rutas. Los índices de texto, grado, disciplina y adyacencia no 
 ni las clasificaciones del snapshot. Los contratos públicos de listados, documentos, grafo y briefs
 se validan mediante Pydantic y se publican en OpenAPI. Las exportaciones CSV y Excel identifican el
 snapshot. La interfaz conserva exactamente el CSS principal del HTML de referencia.
+
+El middleware `ObservabilidadHTTP` correlaciona respuestas gestionadas mediante `X-Request-ID` y
+`Server-Timing`. Sus eventos locales registran plantilla de ruta, estado y duración; omiten valores
+de parámetros y consulta, cuerpos e identidades de usuario. La [adaptación de referencia](../docs/REFERENCIA_EOR_API.md)
+conserva el alcance Ciencias y no introduce credenciales o exportadores de otra plataforma.

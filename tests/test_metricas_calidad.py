@@ -2,6 +2,7 @@
 
 import json
 import runpy
+import shutil
 from pathlib import Path
 
 import pytest
@@ -33,3 +34,17 @@ def test_suite_vacia_no_publica_un_cien_por_ciento(generador, tmp_path):
     with pytest.raises(ValueError, match="denominador"):
         generador(junit, tmp_path / "no-existe.xml", tmp_path / "badges", Path(__file__).parents[1])
     assert not (tmp_path / "badges").exists()
+
+
+@pytest.mark.parametrize("politica", [".gitignore", ".github/workflows/quality.yml"])
+def test_huella_invalida_medicion_si_cambia_una_politica_operativa(tmp_path, politica):
+    raiz = Path(__file__).parents[1]
+    huella = runpy.run_path(str(raiz / "scripts/generar_badges.py"))["huella_codigo"]
+    for nombre in ("pyproject.toml", "uv.lock", ".gitignore", "Makefile", ".github/workflows/quality.yml"):
+        destino = tmp_path / nombre
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(raiz / nombre, destino)
+    anterior = huella(tmp_path)
+    archivo = tmp_path / politica
+    archivo.write_bytes(archivo.read_bytes() + b"\n# changed quality policy\n")
+    assert huella(tmp_path) != anterior

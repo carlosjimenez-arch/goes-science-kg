@@ -29,6 +29,10 @@ alternativa no hereda las alertas derivadas del checkout que ejecuta el proceso.
 los filtros y detalles reutilizan esos índices. El lector revalida el snapshot antes de cada consulta.
 `interfaz/contratos.py` define los esquemas públicos del listado, fuentes, subgrafo y briefs.
 
+`observabilidad_http.py::ObservabilidadHTTP` es middleware ASGI sin exportadores: genera un ID por
+petición, mide tiempos y emite eventos con plantilla de ruta y estado. No carga proveedores remotos.
+La [referencia de ingeniería](REFERENCIA_EOR_API.md) documenta la comparación con `eor-api`.
+
 Los IDs de conceptos admiten `/` a través del convertidor de ruta; sólo se buscan en el índice y
 nunca se interpretan como rutas del sistema. La ausencia de datos produce un error explícito sin
 exponer rutas locales. CSV y Excel declaran la identidad de snapshot en su cabecera de descarga.

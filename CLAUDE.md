@@ -31,6 +31,9 @@ Python 3.11+, `uv`, Ruff, pytest e imports absolutos. Formato uniforme a 120 col
 módulos, clases y funciones públicas en inglés; mensajes y contenido curricular en español.
 Conservar nombres de dominio e identidades públicas. Usar clases para estado, puertos y servicios;
 funciones para transformaciones puras. Las rutas HTTP delegan en servicios y repositorios.
+La [comparación con eor-api](docs/REFERENCIA_EOR_API.md) documenta la referencia ya accesible.
+La observabilidad HTTP emite eventos locales con ID único, plantilla, estado y tiempos; no registrar
+valores de consulta, cuerpos ni identidades de usuario desde ese middleware.
 
 **Excepción:** `ingesta/extraccion.py` e `ingesta/estructurados.py` tienen identidad por bytes ligada a
 evidencia publicada. Conservar sus bytes históricos, incluidos docstrings, hasta una migración de

@@ -1,16 +1,16 @@
 {
-  "archivos_inspeccionados": 529,
+  "archivos_inspeccionados": 534,
   "conteos": {
-    "AsyncFunctionDef": 2,
-    "AsyncFunctionDef_documentados": 1,
-    "ClassDef": 261,
-    "ClassDef_documentados": 248,
-    "FunctionDef": 1438,
+    "AsyncFunctionDef": 4,
+    "AsyncFunctionDef_documentados": 2,
+    "ClassDef": 262,
+    "ClassDef_documentados": 249,
+    "FunctionDef": 1439,
     "FunctionDef_documentados": 924,
-    "Module": 193,
-    "Module_documentados": 193,
-    "lineas_python": 41581,
-    "modulos_python": 193
+    "Module": 194,
+    "Module_documentados": 194,
+    "lineas_python": 41639,
+    "modulos_python": 194
   },
   "consumidores_estaticos": {
     "src/goes_science_kg/__init__.py": [
@@ -240,6 +240,7 @@
       "tests/test_motor.py",
       "tests/test_motor_estado_fuentes.py",
       "tests/test_motor_integracion.py",
+      "tests/test_observabilidad_http.py",
       "tests/test_panel.py",
       "tests/test_prerrequisitos.py",
       "tests/test_producto_alineaciones.py",
@@ -289,6 +290,7 @@
       "tests/test_api_operacion.py",
       "tests/test_api_producto_v4.py",
       "tests/test_api_publicacion.py",
+      "tests/test_observabilidad_http.py",
       "tests/test_producto_alineaciones.py"
     ],
     "src/goes_science_kg/api_interfaz.py": [
@@ -1672,6 +1674,10 @@
       "src/goes_science_kg/cli/motor.py",
       "src/goes_science_kg/cli/unidades.py"
     ],
+    "src/goes_science_kg/observabilidad_http.py": [
+      "src/goes_science_kg/api.py",
+      "tests/test_observabilidad_http.py"
+    ],
     "src/goes_science_kg/operacion/__init__.py": [
       "src/goes_science_kg/cli/artefactos.py",
       "src/goes_science_kg/cli/datos.py",
@@ -2458,6 +2464,10 @@
         {
           "destino": "HANDOFF.md",
           "estado": "versionado"
+        },
+        {
+          "destino": "docs/REFERENCIA_EOR_API.md",
+          "estado": "versionado"
         }
       ]
     },
@@ -2491,6 +2501,10 @@
         },
         {
           "destino": "docs/auditoria/REVISION_API_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "docs/REFERENCIA_EOR_API.md",
           "estado": "versionado"
         },
         {
@@ -2572,11 +2586,19 @@
           "estado": "versionado"
         },
         {
+          "destino": "docs/REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "docs/badges/medicion.json",
           "estado": "versionado"
         },
         {
           "destino": "docs/CALIDAD.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "docs/auditoria/GITIGNORE_2026.md",
           "estado": "versionado"
         },
         {
@@ -2662,6 +2684,10 @@
           "estado": "versionado"
         },
         {
+          "destino": "REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "badges/medicion.json",
           "estado": "versionado"
         }
@@ -2672,6 +2698,10 @@
       "enlaces": [
         {
           "destino": "CALIDAD.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "REFERENCIA_EOR_API.md",
           "estado": "versionado"
         },
         {
@@ -2712,11 +2742,23 @@
       "archivo": "docs/CALIDAD.md",
       "enlaces": [
         {
+          "destino": "REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "badges/medicion.json",
           "estado": "versionado"
         },
         {
           "destino": "README.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "auditoria/GITIGNORE_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "REFERENCIA_EOR_API.md",
           "estado": "versionado"
         }
       ]
@@ -2947,6 +2989,14 @@
           "estado": "versionado"
         },
         {
+          "destino": "REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "auditoria/GITIGNORE_2026.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "auditoria/REVISION_API_2026.md",
           "estado": "versionado"
         },
@@ -2984,6 +3034,27 @@
         },
         {
           "destino": "../specs/README.md",
+          "estado": "versionado"
+        }
+      ]
+    },
+    {
+      "archivo": "docs/REFERENCIA_EOR_API.md",
+      "enlaces": [
+        {
+          "destino": "CALIDAD.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "auditoria/GITIGNORE_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "auditoria/REVISION_API_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "APLICACION_CIENCIAS.md",
           "estado": "versionado"
         }
       ]
@@ -3064,8 +3135,21 @@
       ]
     },
     {
+      "archivo": "docs/auditoria/GITIGNORE_2026.md",
+      "enlaces": [
+        {
+          "destino": "../badges/medicion.json",
+          "estado": "versionado"
+        }
+      ]
+    },
+    {
       "archivo": "docs/auditoria/QA_INDEPENDIENTE.md",
       "enlaces": [
+        {
+          "destino": "../REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
         {
           "destino": "QA_SEGUNDA_REVISION.md",
           "estado": "versionado"
@@ -3075,6 +3159,10 @@
     {
       "archivo": "docs/auditoria/QA_SEGUNDA_REVISION.md",
       "enlaces": [
+        {
+          "destino": "../REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
         {
           "destino": "qa-briefs-2026.png",
           "estado": "versionado"
@@ -3097,6 +3185,10 @@
           "estado": "versionado"
         },
         {
+          "destino": "../REFERENCIA_EOR_API.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "benchmark_consultas.json",
           "estado": "versionado"
         },
@@ -3114,6 +3206,10 @@
         },
         {
           "destino": "QA_SEGUNDA_REVISION.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "GITIGNORE_2026.md",
           "estado": "versionado"
         }
       ]
@@ -4401,6 +4497,10 @@
       "enlaces": [
         {
           "destino": "../docs/APLICACION_CIENCIAS.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "../docs/REFERENCIA_EOR_API.md",
           "estado": "versionado"
         }
       ]

@@ -13,15 +13,16 @@ su estructura ejecutable al excluir docstrings; dieciséis incorporan cambios fu
 índices, SQLite, respaldo, exportación o presupuesto. No se interpreta el AST como prueba absoluta de equivalencia: los docstrings
 pueden cambiar descripciones de esquemas y huellas de ejecución.
 
-El paquete actual tiene 193 módulos Python. Ruff comprueba formato, imports y documentación pública;
+El paquete actual tiene 194 módulos Python. Ruff comprueba formato, imports y documentación pública;
 los docstrings mantenidos de producción, pruebas y hooks se escriben en inglés. Los comentarios
 extensos que explicaban decisiones anteriores se conservaron como notas de implementación.
 No se introdujo una clase por cada transformación: los servicios encapsulan estado y dependencias;
 las reglas puras permanecen como funciones.
 
-La carpeta de referencia `eor-api` fue inaccesible por permisos de macOS, también fuera del sandbox.
-No se afirma haberla leído ni haber reproducido exactamente su organización. Se aplicó una separación
-explícita de rutas, servicios, contratos y lector de publicación sobre el proyecto accesible.
+En el corte inicial la carpeta `eor-api` era inaccesible por macOS. La revisión posterior recuperó
+el acceso y contrastó sus ocho módulos de producción y siete de pruebas. La
+[comparación de arquitectura](../REFERENCIA_EOR_API.md) registra la adaptación a GOEs, incluida
+la observabilidad HTTP local. No se importaron clientes ni se copiaron secretos o código externo.
 
 ## Datos reales y correcciones
 
@@ -45,6 +46,8 @@ conservan. La campaña permanece en 668 invocaciones y USD 731,1485125 de reserv
 | Una compilación tardía restituía un brief obsoleto | Invalidación por formato, selección y visita; seis regresiones Node en el conjunto actual |
 | Excel idéntico cambiaba de bytes y no protegía metadata | Guardado determinista y texto seguro en todas las hojas, con regresiones de reloj y fórmulas |
 | Una base alternativa heredaba alertas de otro checkout | Configuración de alertas derivadas inyectada desde la base; alerta incompatible produce 503 |
+| Variantes de secretos y SQLite externos a data no se ignoraban | Política específica de 118 líneas; 49 escenarios reproducidos y protegidos sin ocultar contratos |
+| Faltaba correlación de operaciones HTTP | UUID por petición, tiempos medidos y eventos locales con plantilla de ruta; tres regresiones de privacidad y errores |
 | Dos adaptadores superaban un presupuesto JSONL compartido | Lectura/reserva bajo flock y fsync antes del proveedor; pruebas entre instancias y procesos sin red |
 
 `LecturaProducto` centraliza carga e invalidación. Readiness comparte el lector de los routers V4;
@@ -85,21 +88,22 @@ fuentes y el lector siguen verificándose: la mejora no elimina controles de pro
 
 ## Verificación y límites
 
-La línea base pasó 1.387 pruebas. La entrega final, después del segundo QA, pasó **1.408 pruebas Python**, sin fallos ni
-omisiones, en 413,19 segundos y sin advertencias. La cobertura de líneas medida es **79,37 %**
-(15681 de 19757 líneas ejecutables). Las métricas integrales finales se conservan en
+La línea base pasó 1.387 pruebas. La entrega final, después del QA y la revisión de referencia, pasó **1.462 pruebas Python**, sin fallos ni
+omisiones, en 276,75 segundos y sin advertencias. La cobertura de líneas medida es **79,40 %**
+(15711 de 19787 líneas ejecutables). Las métricas integrales finales se conservan en
 [medicion.json](../badges/medicion.json), con fecha, denominadores y huella del código. Las seis
 regresiones JavaScript pasan en Node.js 24; la sintaxis de los cuatro módulos también es válida.
-El conjunto portable actual pasó 149 contratos sobre una copia sin corpus y sin credenciales;
+El conjunto portable actual pasó 205 contratos sobre una copia sin corpus y sin credenciales;
 registró una advertencia de deprecación del SDK Google, sin fallos.
-La CI de Python 3.11/3.14 está configurada; su ejecución remota queda pendiente de publicar la rama.
+La CI ejecuta la matriz Python 3.11/3.14 por commit; su estado remoto se consulta en el badge del
+README y en los checks del PR. La medición integral local conserva su propio alcance.
 
 Se recorrieron las ocho secciones en navegador con el corpus real, se comprobó paginación y el modal
 original/propuesta. [Captura del inicio](app-goes-2026.png). El CSS principal es idéntico al bloque style
 del HTML aportado, SHA `a572956734a42bbd77ec1c787b7d0f748c8029f858fb8a35a6e996305ec719f1`.
 La revisión visual fue de escritorio; no constituye una auditoría completa de accesibilidad o móvil.
 
-El wheel se construye con 208 archivos, incluidos servicios y assets; no contiene corpus, PDF,
+El wheel se construye con 209 archivos, incluidos servicios y assets; no contiene corpus, PDF,
 Excel, SQLite, credenciales ni el exportador retirado. Las consultas y mediciones conservaron el ledger
 SHA `3ad9b798421a8b463f8d3dd924498330b42ddbd483ca4f774c5386bb74f722ae`.
 El [QA independiente inicial](QA_INDEPENDIENTE.md) cerró sus hallazgos y revisó el ciclo de vida SQLite.
@@ -109,3 +113,11 @@ reprodujo y revalidó cinco fallos adicionales. Conserva su alcance y sus límit
 Las pruebas evalúan integridad y comportamiento de software. No acreditan aprobación institucional,
 calibración educativa ni eficacia en aula. La cobertura de líneas tampoco significa que se hayan
 probado todas las combinaciones posibles.
+
+## Revisión posterior de referencia y versionado
+
+Se contrastó `eor-api` con la arquitectura GOEs y se añadió correlación HTTP local con pruebas de
+privacidad, respuestas 503 y unicidad por petición. La [auditoría de versionado](GITIGNORE_2026.md)
+reprodujo 17 huecos de las reglas anteriores; sus 49 escenarios pasan ahora. La huella de métricas
+incluye `.gitignore`, `Makefile` y el workflow. Se verificaron siete rutas reales, los errores de
+filtro 422, los estados sin corpus y la preservación del snapshot, CSS, extractores y ledger.

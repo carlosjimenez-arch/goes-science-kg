@@ -1,5 +1,7 @@
 # QA independiente · GOEs · 2026-10-22
 
+Corte histórico de QA anterior a la revisión de versionado y observabilidad HTTP. La referencia `eor-api` se pudo inspeccionar después; consultar la [comparación posterior](../REFERENCIA_EOR_API.md). Las cifras de este informe describen su árbol original.
+
 Este informe conserva el primer corte de QA y su revisión incremental SQLite. El barrido posterior,
 con cinco hallazgos adicionales corregidos, está en [Segunda revisión QA](QA_SEGUNDA_REVISION.md).
 Las cifras y comprobaciones siguientes describen aquel corte.

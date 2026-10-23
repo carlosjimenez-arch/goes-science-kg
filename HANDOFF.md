@@ -9,7 +9,8 @@ Conserva treinta alertas científicas de los originales. Las propuestas corregid
 
 La rama `feat/api` contiene el refactor de consultas y publicación, índices, contratos de respuesta,
 docstrings en inglés, formato, controles de calidad y documentación. El diseño conserva el CSS del
-HTML aportado. La API de referencia `eor-api` está pendiente de acceso por macOS.
+HTML aportado. La API de referencia `eor-api` ya se revisó tras recuperar el acceso local;
+la [adaptación](docs/REFERENCIA_EOR_API.md) documenta patrones y decisiones propias de GOEs.
 
 Los extractores `ingesta/extraccion.py` y `ingesta/estructurados.py` conservan sus bytes anteriores:
 son parte de la identidad de evidencia publicada. No formatearlos ni cambiar sus docstrings sin una
@@ -36,3 +37,7 @@ El [QA posterior independiente](docs/auditoria/QA_SEGUNDA_REVISION.md) revisó e
 motivó correcciones en el respaldo de assets, las respuestas tardías de briefs, las exportaciones
 Excel, el aislamiento de alertas por base y la reserva de embeddings entre procesos. No se migraron
 ledgers ni se reanudaron experimentos para probarlas.
+
+La revisión posterior al PR añade observabilidad HTTP local, 49 contratos de `.gitignore` y una
+huella de métricas que incluye las políticas de calidad. Se mantiene el alcance Ciencias confirmado
+por el usuario. No se incorporaron los módulos de materiales o clases de la otra rama.

@@ -12,6 +12,8 @@ se encuentran en [medicion.json](badges/medicion.json).
 | Restaurar el corpus privado | [Datos externos](DATOS_EXTERNOS.md) |
 | Ver alcance y límites de publicación | [Publicación](PUBLICACION.md) |
 | Aplicar estilo, pruebas y métricas | [Calidad](CALIDAD.md) |
+| Entender la adaptación del estilo de referencia | [Referencia eor-api y GOEs](REFERENCIA_EOR_API.md) |
+| Revisar exclusiones y protección de archivos | [Auditoría de versionado](auditoria/GITIGNORE_2026.md) |
 | Revisar esta homogeneización | [Auditoría de API 2026](auditoria/REVISION_API_2026.md) |
 | Revisar el barrido QA posterior y sus correcciones | [Segunda revisión QA](auditoria/QA_SEGUNDA_REVISION.md) |
 | Consultar resultados curriculares | [Curricularización V4](CURRICULARIZACION_V4.md) |
