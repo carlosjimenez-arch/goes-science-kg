@@ -5,10 +5,12 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import re
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
 from goes_science_kg.clases import prompts
+from goes_science_kg.clases.contexto import contexto
 from goes_science_kg.clases.contratos import (
     MAX_BYTES_BORRADOR,
     MAX_HALLAZGOS_BYTES,
@@ -17,7 +19,7 @@ from goes_science_kg.clases.contratos import (
     esquema_lectura,
 )
 from goes_science_kg.clases.motor import MotorClases
-from goes_science_kg.clases.preparacion import contexto, leer_preparacion
+from goes_science_kg.clases.preparacion import leer_preparacion
 from goes_science_kg.clases.proveedor import EJECUCION
 from goes_science_kg.clases.validacion import certificar_resultado
 from goes_science_kg.materiales.compilacion import serializar
@@ -104,6 +106,11 @@ def entorno(proveedor, corpus, protocolo):
         "operacion.py",
         "edicion.py",
     )
+    numero = re.fullmatch(r"clases-p([0-9]+)(?:-.*)?", protocolo)
+    if numero and int(numero[1]) >= 9:
+        archivos += ("editorial.py",)
+    if numero and int(numero[1]) >= 10:
+        archivos += ("contexto.py",)
     return huella(
         {
             "protocolo": protocolo,

@@ -137,8 +137,15 @@ def leer_preparacion(p):
 
 
 def validar_importacion(preparacion, base):
-    """Un guion importado debe corresponder a una abstención técnica real sin votos previos."""
+    """Reconstruye una edición explícita o comprueba una recuperación técnica sin votos previos."""
     if not preparacion.get("borrador_inicial"):
+        return
+    if preparacion.get("edicion_editorial"):
+        if preparacion.get("antecedente_sin_dictamenes"):
+            raise ValueError("La edición y la recuperación técnica son antecedentes distintos")
+        from goes_science_kg.clases.editorial import validar
+
+        validar(base, preparacion)
         return
     ref = preparacion["antecedente_sin_dictamenes"]
     p = base / ref["ruta"]

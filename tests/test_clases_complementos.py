@@ -157,3 +157,26 @@ def test_registro_rechaza_version_adulterada_aunque_sea_la_seleccionada(compleme
     segundo.write_bytes(segundo.read_bytes() + b" ")
     with pytest.raises(ValueError, match="manifest científico registrado cambió"):
         cargar_version(base)
+
+
+def test_ampliaciones_literales_comparten_una_sola_instancia_y_revalidan_manifests(complemento, monkeypatch):
+    from goes_science_kg.clases import corpora
+
+    base, archivo, manifest = complemento
+    versiones, _ = _registrar_versiones(base, archivo, manifest)
+    original, cargas = corpora.CorpusAmpliado, []
+
+    def contar(*args):
+        cargas.append(args[1])
+        return original(*args)
+
+    monkeypatch.setattr(corpora, "CorpusAmpliado", contar)
+    reunion = corpora.cargar_corpus(base, todos=True)
+    assert len(cargas) == 1
+    for version in versiones:
+        assert version.huella in reunion.huellas_compatibles
+        for evidencia in version.evidencias.values():
+            reunion.verificar(evidencia)
+    archivo.write_bytes(archivo.read_bytes() + b" ")
+    with pytest.raises(ValueError, match="manifest científico registrado cambió"):
+        reunion.originales_adicionales()

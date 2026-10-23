@@ -7,6 +7,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import TypedDict
 
+from goes_science_kg.clases.contexto import contexto
 from goes_science_kg.clases.contratos import (
     CRITERIOS,
     MAX_HALLAZGOS_BYTES,
@@ -16,7 +17,7 @@ from goes_science_kg.clases.contratos import (
     esquema_lectura,
     esquema_transporte,
 )
-from goes_science_kg.clases.preparacion import contexto, validar_importacion
+from goes_science_kg.clases.preparacion import validar_importacion
 from goes_science_kg.clases.prompts import ESPECIALIDADES, JUEZ, REDACTOR
 from goes_science_kg.clases.validacion import (
     certificar_resultado,
@@ -115,9 +116,8 @@ class MotorClases:
                 edicion["respuesta"] = parches.model_dump(mode="json")
                 borrador = aplicar_ediciones(solicitud_edicion, edicion["respuesta"])
             elif not estado.get("iteracion") and p.get("borrador_inicial"):
-                # Recuperación técnica: sólo cuando ese guion no recibió dictámenes válidos antes.
-                if not p.get("antecedente_sin_dictamenes"):
-                    raise ValueError("No se importa un borrador sin un antecedente técnico explícito")
+                if not p.get("antecedente_sin_dictamenes") and not p.get("edicion_editorial"):
+                    raise ValueError("No se importa un borrador sin antecedente técnico o edición explícita")
                 borrador = BorradorClases.model_validate(p["borrador_inicial"])
             else:
                 borrador = self.modelo.generar(
@@ -165,7 +165,11 @@ class MotorClases:
             "errores_estructura": errores,
             "error_generacion": error,
             "respuesta_rechazada": rechazada,
-            "tipo_ronda": "edicion_formato" if edicion is not None else "redaccion",
+            "tipo_ronda": "edicion_formato"
+            if edicion is not None
+            else "edicion_editorial_importada"
+            if not estado.get("iteracion") and p.get("edicion_editorial")
+            else "redaccion",
             "edicion_formato": edicion,
         }
 

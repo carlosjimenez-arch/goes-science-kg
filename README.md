@@ -27,9 +27,9 @@ especialistas que comparten modelo/proveedor no se consideran estadísticamente 
 Las referencias PISA/ERCE, países y NGSS informan el diseño; no se homologan grados ni se afirma
 eficacia de aprendizaje. Las doce expectativas NGSS conservan sus bandas nativas.
 
-Los datos y resultados están separados del código público. El respaldo final fija **7.580 archivos**
-por generación y SHA, con restauración completa y reanudación de los once terminales P6/P7 sin nuevas
-llamadas a Vertex. [Evidencia de recuperación](docs/VERIFICACION_GCS.md).
+Los datos y resultados están separados del código público. El respaldo vigente fija **12.640 archivos**
+y **27 SQLite** por generación y SHA. Se restauró en una carpeta vacía, se verificaron 1.756 trazas de
+lectores y se reanudaron 18 terminales de clases sin nuevas llamadas a Vertex. [Evidencia de recuperación](docs/VERIFICACION_GCS.md).
 [Estado de continuidad](docs/CONTINUIDAD_CIENCIAS_V4.md), [operación](docs/OPERACION.md) y
 [alcance de publicación](docs/PUBLICACION.md).
 
@@ -63,14 +63,23 @@ La biblioteca docente está disponible en `/api/v4/materiales`: **1.013 paquetes
 Se recupera sin descargar todo el corpus con `uv run gskg materiales restaurar`.
 [Contenido, procedencia y ejemplos de consulta](docs/MATERIALES_DOCENTES.md).
 
-La ampliación de **guiones completos por objetivo** está en ejecución. El piloto P8 terminó con
-11 de 12 guiones respaldados por las cuatro revisiones; los hallazgos posteriores de contenido
-siguen bloqueando las versiones afectadas. Conserva el mismo ledger y el máximo acumulado
-autorizado de 4.000 invocaciones/USD 3.500 de reserva. Incluye hojas de estudiante, solucionarios,
-validación numérica, comprobación de votos reales y descarga verificable; su publicación completa
-queda condicionada a cubrir los 1.013 objetivos y resolver los defectos documentados.
-La descarga disponible hoy corresponde a las preparaciones curriculares; el recibo del ZIP completo
-se añadirá al verificar esa entrega. [Estado, operación y contrato de descarga](docs/CLASES_V4.md).
+La ampliación de **guiones completos por objetivo** continúa en revisión. El último inventario cerrado
+registra 803 respaldos automáticos, 62 vetos/abstenciones y 148 objetivos todavía sin generar; la
+revisión directa de 32 casos conserva defectos que pueden bloquear también respaldos automáticos.
+Cuatro lectores favorables no cancelan esos hallazgos. La entrega completa de 1.013 guiones y 108
+unidades aún no está publicada.
+
+**Descarga disponible:** preparaciones curriculares con `uv run gskg materiales restaurar`; corpus,
+guiones en desarrollo y checkpoints con `uv run gskg datos restaurar --destino /tmp/ciencias-restauradas`.
+Ambos comandos verifican las generaciones y SHA fijados en `config/*ciencias.lock.json` y requieren
+acceso GOES al bucket `gs://goes-ai-kg-artefactos/ciencias/v4/`. Usar una carpeta nueva; para restaurar
+las rutas del proyecto vacío, usar `uv run gskg datos restaurar --en-repo`.
+
+El máximo autorizado sigue siendo acumulado: 4.000 invocaciones/USD 3.500 de reserva. El respaldo
+vigente conserva 3.227 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
+Los borradores conservan tareas, soluciones y expedientes de desarrollo; los resultados pendientes no son
+clases liberadas. El recibo del ZIP docente completo se añadirá después de cubrir todos los objetivos y
+resolver los defectos. [Estado, operación y contrato de descarga](docs/CLASES_V4.md).
 
 ## Inicio rápido
 ```bash

@@ -61,6 +61,9 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro):
             originales.update(archivos_insumos(base, preparaciones[ruta_p]))
         p = preparaciones[ruta_p]
         validar_importacion(p, base)
+        from goes_science_kg.clases.editorial import archivos as archivos_editoriales
+
+        originales.update(archivos_editoriales(base, p))
         huellas = getattr(corpus, "huellas_compatibles", {corpus.huella})
         if p["biblioteca_id"] != biblioteca.manifest["id"] or p["corpus_sha256"] not in huellas:
             raise ValueError("La preparación no pertenece a la biblioteca y corpus solicitados")

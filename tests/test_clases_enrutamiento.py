@@ -5,7 +5,8 @@ from types import SimpleNamespace
 
 import pytest
 
-from goes_science_kg.clases.enrutamiento import Rutas, preparar_contexto
+from goes_science_kg.clases.enrutamiento import Rutas, catalogo_relevante, preparar_contexto
+from goes_science_kg.materiales.compilacion import serializar
 from goes_science_kg.motor.contratos import Evidencia
 from goes_science_kg.recuperacion.lexico import IndiceLexico
 from goes_science_kg.recuperacion.modelos import Documento
@@ -92,3 +93,22 @@ def test_no_se_reanuda_si_el_expediente_documental_cambio(entorno, tmp_path, arc
     with pytest.raises(ValueError, match="cambió"):
         preparar_contexto(c, filas, p, tmp_path)
     assert p.llamadas == 1
+
+
+def test_catalogo_grande_con_indice_real_conserva_consulta_especifica():
+    catalogo, docs = {}, []
+    for n in range(600):
+        id_ = f"e{n}"
+        texto = "mangrove salinity" if n == 599 else "matter energy motion"
+        catalogo[f"d{n}"] = {
+            "titulo": texto + " Contexto documental explicativo." * 12,
+            "libro": "referencia",
+            "evidencias": [SimpleNamespace(id=id_)],
+        }
+        docs.append(Documento(id=id_, texto=texto, fuente={"documento": id_}, version="v1"))
+    corpus = SimpleNamespace(indice=IndiceLexico(docs))
+    filas = [{"consulta_recuperacion": "matter energy", "consultas_enrutamiento": ["mangrove salinity"]}]
+    reducido = catalogo_relevante(corpus, catalogo, filas)
+    assert len(serializar(reducido)) <= 145000
+    assert "d599" in {d["id"] for d in reducido}
+    assert len(reducido) < len(catalogo)

@@ -9,8 +9,9 @@ import re
 import zipfile
 
 from goes_science_kg.clases.compilacion import leer_propio
+from goes_science_kg.clases.contexto import contexto
 from goes_science_kg.clases.contratos import CRITERIOS, ROLES, LecturaClases, esquema_lectura, esquema_transporte
-from goes_science_kg.clases.preparacion import contexto
+from goes_science_kg.clases.preparacion import contexto as contexto_historico
 from goes_science_kg.clases.presupuesto import comprobar_continuidad
 from goes_science_kg.clases.proveedor import EJECUCION, MODELOS
 from goes_science_kg.materiales.compilacion import sha
@@ -47,7 +48,9 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
     ref = json.loads(
         leer_propio(base, (archivo_resultado.parent / "protocolo.json").relative_to(base).as_posix()).read_bytes()
     )
-    m = re.fullmatch(r"clases-p([2345678])(?:-(?:masivo|seguimiento)-[0-9]{3})?", ref["protocolo"])
+    m = re.fullmatch(
+        r"clases-p([2-9]|10)(?:-(?:masivo|seguimiento|r10-correcciones|editorial)-[0-9]{3})?", ref["protocolo"]
+    )
     if not m or preparacion["id"] not in ref["preparaciones"] or ref["ejecucion"] != EJECUCION:
         raise ValueError("El protocolo no pertenece a la ejecución y preparación de Ciencias")
     numero = int(m[1])
@@ -70,6 +73,11 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
         if numero >= 8:
             archivos += ("edicion.py",)
             constantes["_ESQUEMA_EDICION"] = json.loads(z.read("esquemas/edicion.json"))
+        if numero >= 9:
+            archivos += ("editorial.py",)
+        if numero >= 10:
+            archivos += ("contexto.py",)
+        constantes["_CONTEXTO_VERSION"] = 2 if numero >= 10 else 1
         hashes = {n: sha(z.read(prefijo + n)) for n in archivos}
     configuracion = {
         rol: {
@@ -157,8 +165,9 @@ def verificar_trazas(base, archivo_resultado, preparacion, resultado, registro):
             if not lector or lector["error"] or not lector["lectura"]:
                 continue
             cfg = configuracion[rol]
+            crear_contexto = contexto if constantes["_CONTEXTO_VERSION"] == 2 else contexto_historico
             mensaje = json.dumps(
-                contexto(preparacion, ids=ids) | {"guiones": guiones, "criterios_obligatorios": CRITERIOS[rol]},
+                crear_contexto(preparacion, ids=ids) | {"guiones": guiones, "criterios_obligatorios": CRITERIOS[rol]},
                 ensure_ascii=False,
                 sort_keys=True,
             )

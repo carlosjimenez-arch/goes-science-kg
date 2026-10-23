@@ -1,9 +1,52 @@
-# Verificación de recuperación de Ciencias V4 · 22 de octubre de 2026
+# Verificación de recuperación de Ciencias V4
 
-La generación final se creó en el mismo bucket, prefijo, proyecto y cuenta GOES aprobados. Cada escritura
+## Respaldo vigente de la ampliación de clases
+
+El recibo `config/datos_ciencias.lock.json` fija un objeto nuevo en el bucket GOES de Ciencias.
+Cada escritura verificó identidad, proyecto, UBLA y PAP heredada con política efectiva `enforced`;
+se usó precondición de generación cero y relectura por generación. No se cambió IAM.
+
+| Elemento | Identidad comprobada |
+|---|---|
+| Archivos / bases SQLite | 12.640 / 27 |
+| Bytes originales / comprimidos | 2.929.446.834 / 1.062.223.923 |
+| SHA del ZIP | `7f759821cce24d08c029dd1460201f1bf27d94b5701e57402a111750ec2382f5` |
+| Generación ZIP | `1792723241759606` |
+| Huella del inventario | `72630b7acc157560cd3414ea8a77a5e67a049e69320a1b41fdf40d1ab2091d1d` |
+| Generaciones inventario / descriptor | `1792723276602426` / `1792723284410915` |
+| Consumo conservado | 3.227 llamadas; USD 2.340,8786235 de reserva |
+
+Se descargó de GCS a una carpeta vacía, se verificó cada archivo y la integridad de las 27 bases.
+La migración de vínculos de presupuesto mantuvo intacto el ledger. Se cotejaron 1.756 trazas de
+lectores con sus respuestas reales y contexto congelado. Se reanudó un terminal por cada uno de
+18 bloques de clases con un proveedor que rechaza cualquier generación: cero llamadas nuevas y
+el mismo consumo al terminar. El ensayo usa la versión exacta del corpus de cada preparación.
+
+`config/presupuesto_clases_v4.json` adopta un punto mínimo de continuidad sólo después de esa
+verificación. El archivo privado incluido en el respaldo fija el hash de las 3.227 filas completas;
+se conservan además las 668 iniciales. Un respaldo anterior ya no habilita gasto nuevo bajo esta
+configuración. No se borran reservas ni se amplía el máximo de 4.000 llamadas/USD 3.500.
+
+Reproducción, sin Vertex:
+
+```bash
+uv run gskg datos restaurar --destino /tmp/ciencias-restauradas
+# Para reponer rutas en un checkout sin corpus:
+uv run gskg datos restaurar --en-repo
+```
+
+El respaldo conserva borradores, vetos y abstenciones: no constituye la publicación completa de los
+1.013 guiones. Las operaciones posteriores a ese punto necesitan otro respaldo antes de cerrar.
+La biblioteca docente de preparaciones mantiene su recibo independiente. La suite completa pasó
+1.567 pruebas en 272,64 s; Ruff pasó en `src` y `tests`. El ensayo detallado queda en
+`data/clases_v4/protocolos/verificacion_restauracion_20261023.json` (fecha UTC del ensayo).
+
+## Antecedente: respaldo del cierre curricular
+
+La generación del cierre curricular se creó en el mismo bucket, prefijo, proyecto y cuenta GOES aprobados. Cada escritura
 volvió a comprobar UBLA activo y prevención pública heredada con política efectiva enforced. Se usó
 precondición de generación cero; no se sobrescribieron objetos ni se cambió IAM. Se descargó y verificó
-cada generación. El recibo adoptado está en `config/datos_ciencias.lock.json`.
+cada generación. El recibo histórico permanece en Git y el objeto sigue recuperable por su generación.
 
 | Elemento | Identidad comprobada |
 |---|---|

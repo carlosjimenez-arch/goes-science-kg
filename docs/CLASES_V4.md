@@ -3,17 +3,16 @@
 ## Estado de esta ampliación
 
 El alcance son los 1.013 objetivos de Ciencias del snapshot producto-4, agrupados en 108 unidades.
-Los siete registros fuera de Ciencias se conservan fuera de generación. Los pilotos iniciales
-cubrieron 24 objetivos. La base previa a P7 acumuló 531 objetivos respaldados automáticamente,
-33 pendientes en lotes procesados y 449 aún sin procesar. Son estados mecánicos sujetos a la
-revisión del contenido. P8 terminó su piloto de 12 objetivos con 11 respaldados y una objeción
-sustantiva conservada; superó el umbral previamente fijado del 80 %. Su primera campaña fija
-64 lotes y 142 objetivos con selección documental suficiente: terminó con 129 respaldados
-automáticamente y 13 pendientes. Una segunda campaña agrupa 136 objetivos nuevos en 41 lotes. No se presenta la biblioteca
-de preparaciones ya publicada como esta entrega nueva.
-La publicación completa exige la cobertura exacta, sin promover vetos ni abstenciones. La revisión
-del contenido detectó defectos en algunos guiones respaldados automáticamente; esos votos no
-cancelan los hallazgos. La entrega completa queda bloqueada hasta corregirlos y terminar la muestra.
+Los siete registros fuera de Ciencias se conservan fuera de generación. El inventario cerrado previo
+al control editorial P10 registra 803 guiones respaldados automáticamente, 30 con veto, 32 con
+abstención y 148 todavía sin resultado. El denominador permanece en 1.013. El inventario privado
+`data/clases_v4/auditoria_contenido/inventario_trabajo.json` fija el orden de versiones y conserva el
+último resultado incluso si es desfavorable; no elige retrospectivamente el voto más favorable.
+
+Se completó la lectura directa de los 32 casos de la muestra. Los hallazgos conocidos bloquean las
+versiones afectadas aunque tengan cuatro votos favorables. La entrega completa exige cobertura
+exacta, resolución de todos los hallazgos y cuatro lecturas reales sobre cada versión seleccionada.
+No se presenta la biblioteca de preparaciones ya publicada como esta entrega nueva.
 
 La biblioteca anterior contiene 2.867 registros y 316 originales. Sus 1.013 `paquete_objetivo` y
 108 `paquete_unidad` son preparaciones curriculares. Las clases nuevas usan los tipos `guion_clase`
@@ -174,7 +173,7 @@ Para un bloque concreto se usa `clases ejecutar` con `--plan` apuntando a su `pr
 el mismo `--protocolo`, directorio y preparaciones. No se crean nombres nuevos para repetir votos.
 Los logs están en `data/operaciones/clases_v4_20261022/` y conservan los estados VERDE, AMARILLO
 y ROJO; la campaña diferencia lotes terminados de objetivos respaldados.
-P1–P8 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
+P1–P10 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
 un juez no crean una norma institucional ni una equivalencia de grados sin una fuente oficial.
 
 ## Publicación y consumo
@@ -230,4 +229,43 @@ El piloto documental de cuatro objetivos obtuvo cuatro respaldos automáticos, p
 directa señaló tres casos con dimensiones ambiguas o afirmaciones específicas sin respaldo
 en el contexto entregado. No se amplía ese piloto con base sólo en sus votos favorables.
 Los cuatro expedientes, los hallazgos y las versiones señaladas permanecen en la auditoría.
-La prueba completa de ingeniería pasa 1.535 casos; no mide exactitud científica poblacional.
+La prueba completa de ingeniería pasó 1.567 casos (272,64 s); Ruff pasó sobre `src` y `tests`.
+Estas comprobaciones no miden exactitud científica poblacional.
+
+## Correcciones editoriales y contexto de trabajo
+
+P9 introduce parches explícitos: SHA del antecedente, valores completos antes/después y motivo.
+Conserva el objetivo literal y todas las partes sin cambio; no edita resultados ni dictámenes antiguos.
+El candidato requiere cuatro lecturas nuevas y una resolución posterior de los hallazgos. El control
+real de análisis dimensional obtuvo cuatro lecturas nuevas con cero redacciones de Vertex en la
+primera ronda. La revisión directa comprobó SI, equivalencia comercial redondeada, datos simulados y
+soluciones. No se declara eficacia en aula ni aprobación institucional.
+
+P10 separa alertas, justificaciones y búsquedas históricas del contexto de los agentes. Mantiene íntegros
+objetivo, indicador, criterios, apoyos, seguridad, datos contextualizados y pasajes científicos. El
+historial sigue en la preparación inmutable. Las auditorías reconstruyen el contexto histórico de
+P2–P9 y el contexto filtrado de P10; no recalculan votos antiguos con el contexto nuevo.
+
+La lectura por capítulos tiene controles de desarrollo, no una validación de eficacia. El primer piloto
+dio cuatro votos favorables por objetivo y la revisión directa encontró tres defectos; no se amplió
+sobre esos votos. El experimento adicional de fundamentación acertó cinco de ocho controles conocidos
+y dejó `safe_to_expand=false`, incluido un error no detectado de masa. No es un gate de liberación.
+Las respuestas inválidas y el único intento documental incompleto se conservan. La conciliación de
+frases de búsqueda recuperó una respuesta real del ledger sin nuevas llamadas ni supresión de datos.
+
+El extractor de párrafos distingue `<p/>` de un párrafo abierto y conserva rangos literales verificables.
+Las ampliaciones incorporan textos de Siyavula con licencia expresa y fuentes específicas de salud y
+seguridad con su propia atribución; no se copian imágenes. Un pasaje de una fuente registrada también
+puede contener errores: la revisión científica sigue siendo necesaria. El cargador comparte corpus
+aditivos sólo tras verificar metadatos, rangos, bytes y manifests de todas las versiones; ante conflictos
+reconstruye la colección separada. No se elimina evidencia histórica para ahorrar memoria.
+
+## Respaldo de continuidad verificado
+
+`config/datos_ciencias.lock.json` fija el respaldo de 12.640 archivos y 27 SQLite, incluidos ledger,
+checkpoints, originales, respuestas y archivos de código de los protocolos. Se restauró desde GCS,
+se comprobaron 1.756 trazas de lectores y se recuperaron 18 terminales sin generación. El respaldo
+fija 3.227 llamadas/USD 2.340,8786235 de reserva. El punto mínimo de continuidad tiene hash por cada
+llamada: rechaza restauraciones que pierdan consumo posterior a las 668 iniciales. Su incorporación
+no amplía ni reinicia el presupuesto. Las operaciones posteriores requieren un nuevo respaldo al cierre.
+[Recibo, generaciones y reproducción](VERIFICACION_GCS.md).

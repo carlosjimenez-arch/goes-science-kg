@@ -13,6 +13,22 @@ from goes_science_kg.config import ruta
 app = typer.Typer(help="Guiones de clase V4 con cuatro revisiones y descarga verificable", no_args_is_help=True)
 
 
+@app.command("edicion")
+def edicion(plantilla: Path, parche: Path, destino: Annotated[Path, typer.Option()]):
+    """Prepara un cambio de contenido trazable; no llama a modelos ni modifica dictámenes."""
+    from goes_science_kg.archivos import destino_generado
+    from goes_science_kg.clases.editorial import preparar
+    from goes_science_kg.clases.preparacion import leer_preparacion
+    from goes_science_kg.materiales.compilacion import serializar
+
+    p = preparar(ruta("."), leer_preparacion(plantilla), parche.resolve())
+    salida = destino_generado(destino, extension=".json")
+    salida.parent.mkdir(parents=True, exist_ok=True)
+    with salida.open("xb") as f:
+        f.write(serializar(p))
+    typer.echo(json.dumps({"preparacion_id": p["id"], "destino": str(salida), "requiere_cuatro_lecturas_nuevas": True}))
+
+
 def _preparar_ejecucion(preparaciones, paralelas):
     from goes_science_kg.clases.corpora import cargar_corpus
     from goes_science_kg.clases.operacion import cargar_lotes
@@ -79,7 +95,7 @@ def campana(
     plan: Annotated[Path, typer.Option(help="Plan congelado que fija el orden exacto de lotes")],
     destino: Annotated[Path, typer.Option()],
     control: Annotated[Path, typer.Option(help="Concurrencia ajustable entre bloques, sin cambiar los guiones")],
-    protocolo: Annotated[str, typer.Option()] = "clases-p8",
+    protocolo: Annotated[str, typer.Option()] = "clases-p10",
     confirmar: Annotated[bool, typer.Option()] = False,
 ):
     import zipfile
@@ -87,8 +103,9 @@ def campana(
     from goes_science_kg.clases.campana import ejecutar_campana, leer_control, planificar
     from goes_science_kg.materiales.compilacion import sha
 
-    if protocolo not in {"clases-p5", "clases-p6", "clases-p7", "clases-p8"}:
-        raise typer.BadParameter("La campaña requiere un protocolo P5–P8 congelado")
+    if protocolo not in {"clases-p5", "clases-p6", "clases-p7", "clases-p8", "clases-p9", "clases-p10"}:
+        raise typer.BadParameter("La campaña requiere un protocolo P5–P10 congelado")
+    numero = int(protocolo.removeprefix("clases-p"))
     cfg = leer_control(control)
     lotes, proveedor, corpus = _preparar_ejecucion(preparaciones, cfg["vertex"])
     ref = json.loads(plan.read_bytes())
@@ -109,7 +126,9 @@ def campana(
             "validacion.py",
             "proveedor.py",
             "operacion.py",
-            *(("edicion.py",) if protocolo == "clases-p8" else ()),
+            *(("edicion.py",) if numero >= 8 else ()),
+            *(("editorial.py",) if numero >= 9 else ()),
+            *(("contexto.py",) if numero >= 10 else ()),
         ):
             local = Path(__file__).parent.parent / "clases" / nombre
             if local.read_bytes() != z.read("src/goes_science_kg/clases/" + nombre):

@@ -73,9 +73,24 @@ El inventario deja recuperar la procedencia exacta, pero no equivale a aprobaci�
 Retirar estos archivos del checkout y del siguiente commit no borra los objetos de commits
 anteriores. Esta migración no reescribe el historial de Git ni fuerza un push.
 
-## Respaldo final del 22 de octubre de 2026
+## Respaldo vigente de clases
 
-El recibo vigente fija **7.580 archivos y siete SQLite**, 1.658.473.975 bytes originales y
+El recibo actual fija **12.640 archivos y 27 SQLite**, con 2.929.446.834 bytes originales y
+1.062.223.923 comprimidos. SHA del ZIP:
+`7f759821cce24d08c029dd1460201f1bf27d94b5701e57402a111750ec2382f5`;
+generación `1792723241759606`. La restauración independiente verificó todos los archivos, 1.756
+trazas de lectores y 18 recuperaciones terminales sin llamar a modelos. Conserva 3.227 invocaciones
+y USD 2.340,8786235 de reserva. El punto mínimo de consumo está incluido en el respaldo y su SHA
+en la configuración pública; restaurar una versión anterior no habilita un contador menor.
+[Generaciones y alcance](VERIFICACION_GCS.md). Los borradores pendientes no son clases liberadas.
+
+La cota del respaldo es explícita, hasta 8 GiB sin comprimir; el recibo fija la cota aplicable a su
+versión. No se retiran los datos locales durante esta ampliación. Las nuevas operaciones requieren
+otro respaldo actualizado antes del cierre.
+
+## Antecedente: respaldo del cierre curricular del 22 de octubre
+
+El recibo histórico fijaba **7.580 archivos y siete SQLite**, 1.658.473.975 bytes originales y
 497.573.457 bytes comprimidos. La generación del paquete es `1792672061221417`, con SHA
 `b6b84b511df95ee7d85f11c0c94d03286c05594308e084282e91ec23803de065`.
 Se descargaron y verificaron todos los archivos y se reanudaron terminales reales P6/P7 con cero

@@ -8,6 +8,7 @@ from goes_science_kg.clases.complementos import CorpusAmpliado
 from goes_science_kg.clases.complementos import cargar_corpus as cargar_anterior
 from goes_science_kg.clases.fuentes import CorpusClases
 from goes_science_kg.materiales.compilacion import sha
+from goes_science_kg.motor.contratos import huella
 from goes_science_kg.recuperacion.lexico import IndiceLexico
 from goes_science_kg.recuperacion.modelos import Documento
 
@@ -21,13 +22,14 @@ def _indexar(corpus):
 
 
 class ColeccionCorpora:
-    def __init__(self, corpora, actual, registro, registro_raw):
+    def __init__(self, corpora, actual, registro, registro_raw, *, manifiestos=None, compatibles=()):
         self.corpora = corpora
         self.actual = actual
         self.huella = actual.huella
-        self.huellas_compatibles = {h for c in corpora for h in c.huellas_compatibles}
+        self.huellas_compatibles = {h for c in corpora for h in c.huellas_compatibles} | set(compatibles)
         self.manifest, self.manifest_bytes = actual.manifest, actual.manifest_bytes
         self._registro, self._registro_raw = registro, registro_raw
+        self._manifiestos = manifiestos or {}
         self._propietarios = {}
         for c in corpora:
             for id_, e in c.evidencias.items():
@@ -49,12 +51,41 @@ class ColeccionCorpora:
         if self._registro.read_bytes() != self._registro_raw:
             raise ValueError("El registro de fuentes cambió durante la compilación")
         salida = {"data/referencias_complementarias_clases/registro.json": self._registro_raw}
+        for archivo, raw in self._manifiestos.items():
+            if archivo.is_symlink() or any(p.is_symlink() for p in archivo.parents) or archivo.read_bytes() != raw:
+                raise ValueError("El manifest científico registrado cambió durante la compilación")
+            salida["data/referencias_complementarias_clases/" + archivo.name] = raw
         for c in self.corpora:
             for nombre, raw in c.originales_adicionales().items():
                 if nombre in salida and salida[nombre] != raw:
                     raise ValueError("Dos versiones intentan reemplazar el mismo original científico")
                 salida[nombre] = raw
         return salida
+
+
+def _incluido(anterior, actual):
+    """Una ampliación sólo comparte objetos cuando conserva metadatos y rangos exactos."""
+    documentos = {d["id"]: d for d in actual["documentos"]}
+    if len(documentos) != len(actual["documentos"]):
+        return False
+    vistos = set()
+    for d in anterior["documentos"]:
+        if d["id"] in vistos:
+            return False
+        vistos.add(d["id"])
+        presente = documentos.get(d["id"])
+        if presente is None or {k: v for k, v in d.items() if k != "extractos"} != {
+            k: v for k, v in presente.items() if k != "extractos"
+        }:
+            return False
+        extractos = {e["id"]: e for e in presente["extractos"]}
+        if len(extractos) != len(presente["extractos"]) or len({e["id"] for e in d["extractos"]}) != len(
+            d["extractos"]
+        ):
+            return False
+        if any(extractos.get(e["id"]) != e for e in d["extractos"]):
+            return False
+    return True
 
 
 def cargar_corpus(base, huella_solicitada=None, *, todos=False):
@@ -77,6 +108,29 @@ def cargar_corpus(base, huella_solicitada=None, *, todos=False):
             raise ValueError("El corpus solicitado no está registrado")
         return c
     objetivo = huella_solicitada or cfg["vigente"]
+    if todos:
+        manifiestos, datos = {}, {}
+        for ref in refs:
+            p = leer_propio(base, ref["ruta"])
+            contenido = p.read_bytes()
+            if sha(contenido) != ref["sha256"]:
+                raise ValueError("El manifest científico registrado cambió")
+            manifiestos[p], datos[ref["corpus_sha256"]] = contenido, json.loads(contenido)
+        actual_ref = next(r for r in refs if r["corpus_sha256"] == objetivo)
+        actual = CorpusAmpliado(base / "data/referencias_clases_2026", leer_propio(base, actual_ref["ruta"]))
+        for ref in refs:
+            m = datos[ref["corpus_sha256"]]
+            if (
+                m["version"] != actual.adicional["version"]
+                or m["extractor_sha256"] != actual.adicional["extractor_sha256"]
+                or m["corpus_base_sha256"] != actual.adicional["corpus_base_sha256"]
+                or huella({"base": m["corpus_base_sha256"], "complemento_sha256": ref["sha256"]})
+                != ref["corpus_sha256"]
+            ):
+                raise ValueError("La versión científica no corresponde al registro")
+        if all(_incluido(m, actual.adicional) for m in datos.values()):
+            return ColeccionCorpora([actual], actual, archivo, raw, manifiestos=manifiestos, compatibles=hashes)
+        # Si una versión no es una ampliación literal, mantiene la reunión completa y sus conflictos.
     corpora, actual = [], None
     for ref in refs:
         if not todos and ref["corpus_sha256"] != objetivo:
