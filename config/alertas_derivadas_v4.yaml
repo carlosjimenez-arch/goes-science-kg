@@ -1,0 +1,26 @@
+version: alertas-derivadas-ciencias-2026-10-22
+alertas:
+  - id: V4_FISICA10_PENDIENTE_RESORTE
+    clase: error_cientifico
+    estado_verificacion: confirmada
+    ancla_original: interpreta la pendiente como su constante elástica
+    fuente:
+      archivo: Matriz_Bachillerato_Fisica_10_11_V4.xlsx
+      sha256: 4be6680f2d4e13fff681322ab49864a839dc1eedfd926210bfe355c0f5dfe255
+      hoja: Física 10.°
+      celdas: [M5]
+    explicacion: La gráfica de alargamiento frente a fuerza indicada en K5 tiene pendiente 1/k, no k. La propuesta P6 corrige la relación; el original se conserva y se bloquea para generación genérica.
+    contraste_primario: https://openstax.org/books/college-physics-2e/pages/5-3-elasticity-stress-and-strain
+    expediente: mejoras_v4_20261022_p6
+  - id: V4_QUIMICA10_DISOLUCION_EVIDENCIAS
+    clase: error_cientifico
+    estado_verificacion: confirmada
+    ancla_original: cloruro de calcio en agua
+    fuente:
+      archivo: Matriz_Bachillerato_Quimica_10_11_V4.xlsx
+      sha256: eb8d6ba2154cd025ded04b6fc126b0eff877e188a568c260d9a5d3719628dedc
+      hoja: Química 10.°
+      celdas: [M56]
+    explicacion: La variación térmica de una disolución no basta para probar formación de sustancias nuevas. P6 distingue el control de disolución y explicita los reactivos del indicador; el original conserva su alerta.
+    contraste_primario: https://openstax.org/books/chemistry-2e/pages/11-1-the-dissolution-process
+    expediente: mejoras_v4_20261022_p6

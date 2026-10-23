@@ -1,4 +1,4 @@
-"""Agentes de lotes en Vertex: el mensaje lleva lo que el subagente buscaría con herramientas."""
+"""Verify that Vertex batch prompts contain the source context required by each agent."""
 
 from __future__ import annotations
 
@@ -7,7 +7,9 @@ from goes_science_kg import agentes_vertex
 
 def test_temas_y_desenvolver():
     assert agentes_vertex._temas('{"a": "TEMA:G11-QUI-U2-2.1", "b": ["TEMA:G11-FIS-U3-3.1-v3"]}') == [
-        "TEMA:G11-FIS-U3-3.1-v3", "TEMA:G11-QUI-U2-2.1"]
+        "TEMA:G11-FIS-U3-3.1-v3",
+        "TEMA:G11-QUI-U2-2.1",
+    ]
     assert agentes_vertex._desenvolver({"salida": [1, 2]}) == [1, 2]
     assert agentes_vertex._desenvolver([3]) == [3]
 

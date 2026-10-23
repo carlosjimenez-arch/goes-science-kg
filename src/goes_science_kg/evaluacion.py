@@ -1,12 +1,12 @@
-"""Evaluación de la recuperación de GraphRAG (spec 10, «Evaluación»).
+"""Evaluate GraphRAG retrieval using explicitly selected question sets."""
 
-Conjunto: data/evaluacion/rag_preguntas.json. Cada pregunta trae grado/asignatura opcionales y la lista de
-nodos `relevantes` (ids del grafo) que una buena recuperación debería traer. Es un conjunto «plata»: lo redactó
-un especialista (subagente) mirando el grafo; debe revisarlo el equipo de Ciencias para volverlo «oro».
-
-Métricas por pregunta y promedio: recall@k (fracción de relevantes en los k primeros), acierto@k (al menos uno)
-y MRR (rango recíproco del primer relevante).
-"""
+# Historical implementation notes:
+# Conjunto: data/evaluacion/rag_preguntas.json. Cada pregunta trae grado/asignatura opcionales y la lista de
+# nodos `relevantes` (ids del grafo) que una buena recuperación debería traer. Es un conjunto «plata»: lo redactó
+# un especialista (subagente) mirando el grafo; debe revisarlo el equipo de Ciencias para volverlo «oro».
+#
+# Métricas por pregunta y promedio: recall@k (fracción de relevantes en los k primeros), acierto@k (al menos uno)
+# y MRR (rango recíproco del primer relevante).
 
 from __future__ import annotations
 
@@ -20,9 +20,10 @@ CONJUNTO = "data/evaluacion/rag_preguntas.json"
 
 
 def evaluar(rag: GraphRAG, ks: tuple[int, ...] = (5, 10, 25), conjunto: str = CONJUNTO) -> dict:
-    """Mide la recuperación de `rag` sobre `conjunto`: promedios de recall@k, acierto@k y MRR, desglose por tipo
-    de pregunta (recall@10 y MRR) y las cinco peores preguntas.
-    """
+    """Measure retrieval recall, hit rate, and reciprocal rank on an explicit dataset."""
+
+    # Implementation notes:
+    # de pregunta (recall@10 y MRR) y las cinco peores preguntas.
     preguntas = json.loads(ruta(conjunto).read_text(encoding="utf-8"))
     filas = []
     for p in preguntas:
@@ -40,7 +41,14 @@ def evaluar(rag: GraphRAG, ks: tuple[int, ...] = (5, 10, 25), conjunto: str = CO
     por_tipo = {}
     for t in sorted({f["tipo"] for f in filas if f["tipo"]}):
         sub = [f for f in filas if f["tipo"] == t]
-        por_tipo[t] = {"n": len(sub), "recall@10": round(mean(f["recall@10"] for f in sub), 3),
-                       "mrr": round(mean(f["mrr"] for f in sub), 3)}
-    return {"preguntas": len(filas), **metricas, "por_tipo": por_tipo,
-            "peores": sorted(filas, key=lambda f: (f["recall@10"], f["mrr"]))[:5]}
+        por_tipo[t] = {
+            "n": len(sub),
+            "recall@10": round(mean(f["recall@10"] for f in sub), 3),
+            "mrr": round(mean(f["mrr"] for f in sub), 3),
+        }
+    return {
+        "preguntas": len(filas),
+        **metricas,
+        "por_tipo": por_tipo,
+        "peores": sorted(filas, key=lambda f: (f["recall@10"], f["mrr"]))[:5],
+    }

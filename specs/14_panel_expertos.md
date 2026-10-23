@@ -1,5 +1,9 @@
 # 14 · Panel de expertos IA: revisión técnica interina
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 > Creada el 2026-10-12, a pedido del responsable del proyecto: hoy no hay un equipo del MINED que revise. El panel
 > resuelve con criterio técnico las decisiones que esperaban esa revisión, para que el proyecto avance. Sus
 > dictámenes **no son confirmaciones del MINED**.

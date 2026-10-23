@@ -1,0 +1,26 @@
+# Campaña Ciencias V4 independiente de Matemáticas; un único ledger, sin reiniciar reservas.
+version: curricularizacion-v4-1
+ejecucion_id: ciencias_v4_curricularizacion_20261022
+vertex:
+  proyecto: g-edu-lxp-xai-dev-prj-976d
+  region: global
+  modelos:
+    redactor_curricular: gemini-4-argon
+    revision_ciencia: gemini-4-argon
+    revision_curriculo: gemini-4-argon
+    revision_psicopedagogia: gemini-3.8-flash
+    revision_adversarial: gemini-4-argon
+  tarifas:
+    gemini-3.8-flash: {entrada: 1.5, salida: 7.5}
+    gemini-4-argon: {entrada: 4.0, salida: 20.0}
+  max_llamadas: 1100
+  max_usd: 1200.0
+  max_salida_tokens: 32768
+  timeout_segundos: 600
+  reintentos: 0
+  niveles_razonamiento:
+    redactor_curricular: MEDIUM
+    revision_ciencia: HIGH
+    revision_curriculo: HIGH
+    revision_psicopedagogia: MEDIUM
+    revision_adversarial: HIGH

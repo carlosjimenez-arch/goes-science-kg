@@ -1,5 +1,9 @@
 # 13 · Sistema de apoyo al aprendizaje sobre el grafo (diseño y prototipo)
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 > Estado (2026-10-12): **prototipo reproducible** en `src/goes_science_kg/aprendizaje/`.
 > - El **tutor conversacional** (`tutor.py`) y el **evaluador de respuestas abiertas** (`evaluador.py`) están
 >   construidos, con guardas deterministas y modelos intercambiables (`llm.py`). Se probaron con modelos de guion;

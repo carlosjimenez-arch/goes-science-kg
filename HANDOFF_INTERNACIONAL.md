@@ -1,5 +1,8 @@
 # Traspaso: grafos internacionales de 9.°–11.° y contraste con la malla V2
 
+> Antecedente histórico del 7–8 de octubre de 2026. No es el estado actual ni la rama de entrega.
+> Continuidad vigente: [HANDOFF](HANDOFF.md) e [índice documental](docs/README.md).
+
 > Sesiones del 2026-10-07 y 2026-10-08. Rama `feat/grafos-internacionales-9-11`. Hallazgos y validación: `internacional/README.md`.
 > Diseño completo: `specs/11_grafos_internacionales_9_11.md`. Léelo antes que este archivo.
 

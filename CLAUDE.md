@@ -1,111 +1,70 @@
-# goes-science-kg · Grafo de conocimiento de Ciencias (El Salvador)
+# GOEs Science KG · instrucciones del repositorio
 
-## Qué es
-Grafo de conocimiento de **Biología, Física, Química y Ciencias de la Tierra y del Espacio**
-(2.°–11.°) que une la malla del MINED con los marcos internacionales (TIMSS 2027, TIMSS Advanced,
-PISA 2025) y los currículos de otros países. Su propósito es **proponer una curricularización
-mejor, con evidencia**, por asignatura. Visión completa: `specs/00_vision_y_alcance.md`.
+GOEs · Departamento de AI · Gobierno de El Salvador · 2026.
 
-Contexto: el MINED (equipo de Ciencias) entregó las mallas y el equipo GOES diseña la nueva
-currícula. El trabajo previo de cobertura está en `reportes/cobertura_curricular/`.
+## Estado vigente
 
-## Antes de implementar
-1. Lee `specs/README.md` y las specs que tocan la tarea. El plan con las fases está en `specs/08_plan_de_implementacion.md`.
-2. Revisa si hay una skill en `.claude/skills/` para la tarea y síguela.
-3. Trabaja por fase. Al cerrar una, muestra el resultado, marca ✅ en la spec 08 y haz commit.
+La aplicación y API consultan una publicación V4 `producto-4`; el grafo histórico V3 conserva sus
+comandos y fuentes independientes. Leer [README](README.md), [arquitectura](docs/ARQUITECTURA.md),
+[calidad](docs/CALIDAD.md) y el [contrato de aplicación](specs/17_aplicacion_curricular.md).
+El estado de continuidad está en [HANDOFF](HANDOFF.md). La rama de este encargo es `feat/api`.
 
-## Estructura
-- `grados/G<gg>/`: grafo de cada grado (ficha + visor HTML). Es el entregable que pidió el MINED (spec 09).
-- `asignaturas/<asignatura>/`: una carpeta por disciplina. El `README.md` lo escribe el equipo;
-  `ficha.md`, `brechas/` y `propuesta/` se generan.
-- `config/`: reglas en YAML (mallas, asignaturas, marcos, referentes). Se cambian aquí, no en el código.
-- `src/goes_science_kg/`: el paquete (ver la tabla de módulos en la spec 01).
-- `data/fuentes/`: mallas del MINED y PDF externos. **SOLO LECTURA.** La malla vigente es la V3 (2026-10-13, spec 15),
-  con ids estables: un tema que ya estaba en la V2 conserva su id.
-- `data/interim/`: intermedios, como lotes de IA y objetivos de países.
-- `data/grafo/`: el grafo (`nodos.jsonl`, `aristas.jsonl`, `manifest.json`). Se versiona.
-- `reportes/cobertura_curricular/`: trabajo previo, autocontenido. **No se modifica.** Sus `input/`,
-  `data/raw` y `data/referencia/externos` son enlaces simbólicos a `data/fuentes/`.
-- `specs/`, `.claude/skills/`, `prompts/`.
+La configuración `config/mallas.yaml` corresponde al pipeline histórico V3. La ingesta V4 usa
+`config/mallas_v4.yaml` y `insumos/v4`; no confundir formato de grafo, versión curricular y ejecución.
+Las especificaciones 00–15 y los informes de investigación conservan su contexto histórico.
 
-## Reglas (no cambiarlas sin preguntar)
-- Nunca modificar `data/fuentes/`, `reportes/` ni los PDF.
-- **Pivote:** todo currículo se alinea contra los marcos, nunca país contra país.
-- **Evidencia:** cada nodo trae su fuente (documento y página, o archivo, hoja y fila). Cada inferencia de IA
-  trae confianza, justificación (≤15 palabras) y versión. Las de confianza baja van a revisión humana.
-- **No inventar códigos.** Al unir lotes de IA se validan contra el catálogo.
-- **Parafrasear** en español. No copiar párrafos de los PDF.
-- Las reglas de cobertura, balance, profundidad, nivel cognitivo y presupuesto de
-  `reportes/cobertura_curricular/CLAUDE.md` siguen vigentes.
-- Las decisiones humanas (`revisado_por`) ganan sobre la IA y no se reclasifican sin preguntar.
-- Pregunta antes de: agregar países fuera de `config/referentes.yaml`, cambiar el pivote de
-  Química y Biología de Bachillerato (hoy ACARA Senior Secondary, spec 03), o proponer quitar temas.
-- Alcance: solo ciencias. Los temas de tecnología se marcan fuera de alcance y se enlazan con `goes-techonoly-kg`.
+## Datos y evidencia
 
-## Convenciones
-- Español en código, datos y documentos. Python 3.11+, `uv`, `ruff` (120), `pytest`.
-- Rutas relativas a la raíz con `config.ruta()`. Salidas deterministas (ordenadas).
-- Subagentes por lote para clasificar o alinear. La unión se hace con un script que valida.
-- Excel: todo número de análisis es una fórmula. Compatible con Numbers (sin «·» en pestañas, sin CHAR(10),
-  sin XLOOKUP/FILTER). Estilo 2027: encabezado verde bosque 1E4D3A y sin azul.
-- Commits: `tipo(ámbito): resumen` en español. `pytest -q` en verde antes de cada commit.
-- El remoto usa el alias SSH `github-goes` (`git@github-goes:carlosjimenez-arch/goes-science-kg.git`).
+- No modificar originales en `data/fuentes/`, `insumos/v4`, `reportes/`, PDF, snapshots ni ledgers.
+- Los datos privados están ignorados por Git y se restauran con el recibo institucional. No versionarlos.
+- No leer ni imprimir `.env`, tokens o credenciales. Los proveedores cargan su configuración internamente.
+- Toda afirmación requiere procedencia verificable: archivo/SHA y página, hoja/fila/celda o código nativo.
+- No inventar códigos, fuentes, equivalencias de grados, resultados escolares o aprobaciones.
+- Las decisiones humanas ganan sobre la clasificación automática. Conservar rechazos y abstenciones.
+- Una corrección propuesta no elimina la alerta científica de su original.
+- Sin datos verificables, la API debe indicar «No hay datos disponibles»; no usar una semilla simulada.
+- Mantener el pivote y los referentes configurados; un cambio de alcance requiere una decisión explícita.
 
-## Harness (Claude Code)
-`.claude/settings.json` conecta hooks que aplican estas reglas solos (detalle en `.claude/hooks/README.md`):
-- Al iniciar la sesión se inyecta el estado: rama, cuenta de git, decisiones sin confirmar con el MINED y etapas.
-- Se bloquea leer `.env`, editar `data/fuentes/`, `reportes/`, PDF o salidas generadas (`data/grafo/`), y hacer commit
-  con otra cuenta o con `ruff`/`pytest` en rojo.
-- Todo gasto en Vertex (`--confirmar`, `congelar-catalogo`) pide la aprobación del usuario.
-- Subagentes de lotes (`.claude/agents/`): `alineador-marcos`, `etiquetador-conceptos`, `ordenador-prerrequisitos`,
-  `redactor-bloques`, `conciliador-propuestas` y `redactor-actividades` (capa pedagógica, spec 13). Úsalos en lugar de subagentes genéricos: traen su prompt y sus reglas,
-  escriben solo su `salida_*.json` y, al terminar, el hook `validar_lotes.py` (SubagentStop) los devuelve a corregir si
-  la salida no pasa `gskg lotes validar`. La unión la corre la sesión principal.
-- Subagente `verificador-hallazgos` (solo lectura) y skills `internacional-contraste`, `calidad-grafos` y
-  `decisiones-mined`.
-- **Panel de expertos IA** (spec 14): `experto-biologia`, `experto-fisica`, `experto-quimica`, `experto-tierra-espacio` y
-  `psicopedagogo` dictaminan las decisiones que esperaban al MINED (`gskg panel preparar|consolidar|aplicar|informe`).
-  Sus dictámenes no son confirmaciones del MINED: quedan como «dictamen del panel», con evidencia, y son reversibles.
-- **Bucle de fortalecimiento** (spec 14, sección 7). El subagente `refutador` impugna cada dictamen con citas literales,
-  y el código verifica esas citas en la fuente. Una sonda ciega mide la estabilidad, y lo impugnado vuelve a la réplica
-  del panel. Cada dictamen queda «sólido», «respaldado», «frágil» o «sin consenso»; lo frágil no se lleva al MINED como
-  recomendación sin una fuente primaria.
+## Calidad de código
 
-## Comandos
-```bash
-uv sync --extra dev --extra pdf --extra rag --extra api
-uv run gskg malla-correspondencia # malla vigente (V3) frente a la V2 → data/interim/mallas/v2_a_v3.json (spec 15)
-uv run gskg temas                 # mallas → data/interim/temas.json
-uv run gskg grafo construir       # grafo → data/grafo/ (falla si hay errores)
-uv run gskg grafo validar         # invariantes + avisos + métricas
-uv run gskg fichas                # asignaturas/<x>/ficha.md
-uv run gskg grafo exportar        # data/grafo/export/grafo.graphml
-uv run gskg grados construir      # grafos por grado: data/grafo/grados/ + grados/G<gg>/{ficha.md,grafo.html}
-uv run gskg rag "<consulta>" --grado 7 [--asignatura biologia] [--responder] [--global]
-uv run gskg evaluar-rag           # recall@k y MRR sobre data/evaluacion/rag_preguntas.json (ajuste)
-uv run gskg evaluar-rag --conjunto data/evaluacion/rag_preguntas_prueba.json   # prueba independiente: no ajustar con él
-uv run gskg servir                # API de lectura en http://127.0.0.1:8010/docs (grados, conceptos, propuestas, rag)
-# Capa de conceptos (cada paso «preparar» genera lotes para subagentes; «unir» valida):
-uv run gskg conceptos preparar-vocabulario | consolidar | preparar-etiquetado | unir-etiquetado
-uv run gskg conceptos preparar-paises | unir-paises | preparar-prerrequisitos | unir-prerrequisitos
-uv run gskg grados resumenes      # títulos y resúmenes de bloques temáticos (subagentes)
-uv run gskg brechas               # asignaturas/<x>/brechas/
-uv run gskg progresion            # asignaturas/<x>/progresion.html
-uv run gskg lotes validar [--agente <subagente>]   # salidas de subagentes con las reglas de la unión
-uv run gskg tutor bases|apoya|alinear|contexto|preparar-actividades|unir-actividades|validar|recorridos   # spec 13
-uv run gskg tutor turno <tema> --grado g | evaluar <actividad> "<respuesta>"   # tutor y evaluador; --confirmar = Vertex
-uv run gskg revision exportar|importar <csv>   # circuito de revisión con el MINED
-uv run gskg revision exportar-decisiones | importar-decisiones <csv>   # confirmar con el MINED las decisiones de contenido
-uv run gskg panel preparar --ronda n | consolidar --ronda n | aplicar | informe | resumen   # panel de expertos IA (spec 14)
-uv run gskg bucle anclar | impugnar --vuelta k | sonda --vuelta k | cerrar-impugnacion --vuelta k   # bucle (spec 14 §7)
-uv run gskg bucle replicar --vuelta k --paso p | cerrar-replica --vuelta k --paso p | solidez | cita "<fuente>" "<cita>"
-# expedientes nuevos: la misma secuencia con --serie <s> en impugnar, cerrar-impugnacion, replicar y cerrar-replica
-uv run gskg propuesta candidatos|simular|excel <asig> <g0> <g1>   # propuesta por ciclo (spec 06)
-uv run gskg internacional extraer|etiquetar|construir   # spec 11 (Vertex AI con ADC; caché en data/interim/internacional/cache)
-uv run gskg internacional --tramo 2_8 corregir-metadatos   # grados y Extension Part de los países, sin Vertex (spec 12)
-uv run pytest -q
-make todo                         # temas → grafo → validar → fichas, grados, brechas, progresión → internacional → pruebas + lint
-make internacional-ia             # extraer + etiquetar + construir; sin --confirmar no gasta en Vertex
-uv run gskg internacional congelar-catalogo <versión>   # solo para re-etiquetar a propósito (se paga completo)
-make propuestas                   # simula las 11 propuestas, rehace sus Excel y asignaturas/PROPUESTAS.md
-```
+Python 3.11+, `uv`, Ruff, pytest e imports absolutos. Formato uniforme a 120 columnas. Docstrings de
+módulos, clases y funciones públicas en inglés; mensajes y contenido curricular en español.
+Conservar nombres de dominio e identidades públicas. Usar clases para estado, puertos y servicios;
+funciones para transformaciones puras. Las rutas HTTP delegan en servicios y repositorios.
+La [comparación con eor-api](docs/REFERENCIA_EOR_API.md) documenta la referencia ya accesible.
+La observabilidad HTTP emite eventos locales con ID único, plantilla, estado y tiempos; no registrar
+valores de consulta, cuerpos ni identidades de usuario desde ese middleware.
+
+**Excepción:** `ingesta/extraccion.py` e `ingesta/estructurados.py` tienen identidad por bytes ligada a
+evidencia publicada. Conservar sus bytes históricos, incluidos docstrings, hasta una migración de
+extracción explícita. No falsificar firmas ni actualizar perfiles para ocultar cambios de código.
+
+Antes de entregar: `make lint`, `make cobertura`, `make auditoria` y `git diff --check`.
+Los badges se generan únicamente desde informes medidos; no usar cifras de otro repositorio.
+La suite integral necesita corpus restaurado. La CI usa contratos portables con fuentes sintéticas.
+
+## Generación y presupuestos
+
+Consultar, exportar y compilar briefs no invoca modelos. Toda ejecución pagada debe tener alcance y
+presupuesto autorizados, un ledger durable y checkpoints asociados a las mismas huellas. No reiniciar
+reservas, repetir votos ni reanudar con otro código para forzar consenso. Antes de ejecutar, preparar
+el plan local y comprobar versiones, contexto y fuentes.
+
+La campaña cerrada `ciencias_v4_curricularizacion_20261022` conserva 668 invocaciones; no repetirla.
+La publicación conserva las cohortes originales y sus resultados, incluidos los negativos.
+Los dictámenes automáticos no equivalen a aprobación del MINED ni eficacia de aprendizaje.
+
+## Herramientas y entregables
+
+`gskg servir` ofrece `/app/`, `/docs`, `/health/live`, `/health/ready` y `/api/v4/interfaz`.
+Los assets son locales. El CSS principal conserva el diseño del HTML de referencia; sus datos de
+Matemática y motores simulados no son evidencia ni instrucciones para Ciencias.
+
+`.claude/hooks/` protege secretos, fuentes y commits; `.claude/skills/` documenta los procesos históricos.
+Los agentes de lotes sólo se usan cuando un trabajo de clasificación/alineación autorizado los exige;
+la unión siempre valida sus salidas. No añadir subagentes a una tarea sin autorización aplicable.
+
+Las salidas deben ser deterministas y escribirse en destinos derivados. Los Excel evitan ejecutar
+fórmulas aportadas por texto y conservan la compatibilidad institucional documentada.
+No hacer push forzado ni publicar ancestros que contengan corpus privado. Una limpieza requiere
+comprobar consumidores estáticos, entradas CLI, imports dinámicos, plantillas y uso como evidencia.

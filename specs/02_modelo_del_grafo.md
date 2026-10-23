@@ -1,5 +1,9 @@
 # 02 · Modelo del grafo
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 Versión ejecutable: `src/goes_science_kg/modelos.py`. Si cambia uno, cambia el otro.
 
 ## Nodos
@@ -15,16 +19,30 @@ Versión ejecutable: `src/goes_science_kg/modelos.py`. Si cambia uno, cambia el 
 | `Tema` | `TEMA:G07-CIE-U2-2.3` | Tema procedimental de la malla de El Salvador | archivo + hoja + fila |
 | `Concepto` *(fase 3)* | `CON:biologia/fotosintesis` | Idea científica enseñable | ≥1 arista TRABAJA con evidencia |
 | `Practica` *(fase 3)* | `PRAC:controlar-variables` | Práctica científica (TIMSS Investigations, PISA, NGSS) | documento + página |
+| `Unidad` *(V4)* | `UNIDAD:V4:<sha256>` | Agrupación declarada de grado, asignatura de malla y unidad | filas curriculares originales |
+| `DimensionDocumental` *(V4)* | `LOCAL:<nombre>` | Categoría local de análisis; no es código oficial ni objetivo cubierto | fuente + SHA + página y ancla |
+| `RevisionUnidad` *(producto-4)* | `REVISION_V4:<sha>` | Estado y motivos de cada unidad, incluso abstención/veto | expediente completo y cuatro revisiones |
+| `MejoraCurricular` *(producto-4)* | `MEJORA_V4:<sha>` | Propuesta respaldada para una fila de Ciencias | contexto, fuentes y borrador exacto revisado |
+| `ExpectativaNativa` *(producto-4)* | `NATIVA:<grupo>:<banda>` | Expectativa de una banda extranjera | SHA, región PDF y encabezado físico |
 | `PropuestaTema` *(fase 5)* | `PROP:biologia-G05-001` | Tema propuesto para la nueva malla | aristas PROPONE con evidencia |
 
 **Id de tema:** `G{grado}-{CIE|FIS|QUI|BIO}-U{unidad}-{código del procedimental}`. Si el código
 se repite, se agrega `-f{fila}`. No depende del orden de lectura. La llave de unión con las
 clasificaciones previas es `(archivo canónico, hoja, fila)`.
 
+Ese esquema corresponde al histórico. V4 utiliza `CURRICULO:V4:<sha256>` con la identidad completa
+de la fuente y contenido; su publicación aislada se especifica en [producto V4](16_producto_v4.md).
+
+Para evidencia granular de Excel, `Fuente.celdas` es opcional y admite de una a 64 coordenadas
+A1 únicas; exige `hoja`. La coordenada solicitada y el origen de una celda combinada se conservan
+por separado al hidratar. La ausencia del campo mantiene la lectura histórica por fila. Los campos
+de localización no sustituyen la verificación del archivo contra su SHA registrado.
+
 ## Aristas
 | Tipo | De → A | Atributos | Método |
 |---|---|---|---|
 | `EN_GRADO` | Tema → Grado | — | malla |
+| `EN_UNIDAD` *(V4)* | Tema → Unidad | — | malla |
 | `DE_ASIGNATURA` | Tema / ObjetivoMarco / ObjetivoPais → Asignatura | `via` (malla, timss, pisa, alineación) | malla / regla |
 | `EN_MARCO` | ObjetivoMarco → Marco | — | catálogo |
 | `DE_PAIS` | ObjetivoPais → Pais | — | catálogo |
@@ -36,6 +54,12 @@ clasificaciones previas es `(archivo canónico, hoja, fila)`.
 | `PRERREQUISITO_DE` *(f3)* | Concepto → Concepto | confianza, `evidencias` (lista de documentos y páginas o de órdenes observados) | ia / regla |
 | `PROPONE` *(f5)* | PropuestaTema → ObjetivoMarco / Concepto | justificación, evidencias | ia + revisión |
 | `REEMPLAZA` *(f5)* | PropuestaTema → Tema | `accion` (mantener, mover, fusionar, dividir, nuevo, quitar) | ia + revisión |
+
+Aristas adicionales de producto-4: `SIGUE_EN_REFERENCIA` une bandas de la misma dimensión y edición;
+`REVISA_UNIDAD` vincula revisión y unidad original; `PROPUESTA_PARA` vincula mejora y fila original;
+`PARTE_DE_REVISION` vincula mejora y su revisión. `FUENTE` conserva la procedencia. Estas relaciones
+no se interpretan como `CUBRE` ni `PRERREQUISITO_DE`. Los estados negativos siguen en RevisionUnidad
+sin crear una mejora aceptada. La lectura compara toda la proyección con el archivo de propuestas.
 
 ## Reglas
 1. Un tema tiene **un** objetivo principal y como máximo uno secundario por marco. Si no tiene

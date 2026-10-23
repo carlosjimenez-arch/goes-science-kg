@@ -1,1 +1,1 @@
-"""Ingesta: mallas del MINED y datos del trabajo previo (reportes/cobertura_curricular)."""
+"""Ingest MINED curricula and read the protected historical research artifacts."""

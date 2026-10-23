@@ -1,5 +1,9 @@
 # 12 · Grafos internacionales de 2.° a 8.° y contraste con la malla Versión 2
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 > **Construida el 2026-10-11** (extracción 2026-10-09 y 2026-10-11; etiquetado aprobado: 162 llamadas). 9 países,
 > 3.615 objetivos, 448 conceptos en consenso. La primera verificación (24 hallazgos) dio 46 % de falsos; con el
 > **método v2** (2026-10-12, sección «Método v2») una muestra nueva al azar dio 25 %. Al MINED solo se presentan los

@@ -45,6 +45,6 @@ def test_resumen_se_empareja_por_conceptos_aunque_cambie_el_id(monkeypatch):
 
     falso = {"COM:G05-01": {"id": "COM:G05-01", "conceptos": ["a", "b", "c", "d"], "titulo": "T", "resumen_ia": "R"}}
     monkeypatch.setattr(com, "resumenes", lambda: falso)
-    assert com.resumen_para(5, ["a", "b", "c", "d"])["titulo"] == "T"   # mismo bloque, otro id posible
-    assert com.resumen_para(5, ["a", "b", "x", "y"]) is None              # Jaccard 0,33
-    assert com.resumen_para(6, ["a", "b", "c", "d"]) is None              # otro grado
+    assert com.resumen_para(5, ["a", "b", "c", "d"])["titulo"] == "T"  # mismo bloque, otro id posible
+    assert com.resumen_para(5, ["a", "b", "x", "y"]) is None  # Jaccard 0,33
+    assert com.resumen_para(6, ["a", "b", "c", "d"]) is None  # otro grado

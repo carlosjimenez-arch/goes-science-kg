@@ -1,18 +1,19 @@
-"""Confirmación con el MINED de las decisiones tomadas fuera de la IA (spec 07, circuito de revisión humana).
+"""Record institutional confirmation of decisions made outside automatic classification."""
 
-Las decisiones de contenido viven en capas que se aplican al cargar: equivalencias retiradas, prerrequisitos
-rechazados, divisiones de conceptos, relaciones «parte de» y clases corregidas del contraste internacional. Este
-módulo las lleva al equipo de Ciencias y trae su veredicto, con las mismas columnas de decisión que los demás CSV de
-revisión:
-
-exportar_decisiones() → asignaturas/decisiones/<fecha>_decisiones.csv (una fila por decisión) y
-                        <fecha>_asignaciones_division.csv (una fila por elemento reasignado en cada división).
-importar_decisiones(csv) → en cada decisión:
-  - aceptar: agrega {revisado_por, fecha, comentario} a «confirmaciones».
-  - cambiar: solo en asignaciones; reemplaza los conceptos asignados (deben ser el original o el nuevo de la división).
-  - rechazar: agrega la objeción a «observaciones». No revierte nada: una objeción pide una nueva decisión
-    pedagógica, y queda listada hasta que se tome.
-"""
+# Historical implementation notes:
+# Las decisiones de contenido viven en capas que se aplican al cargar: equivalencias retiradas, prerrequisitos
+# rechazados, divisiones de conceptos, relaciones «parte de» y clases corregidas del contraste internacional. Este
+# módulo las lleva al equipo de Ciencias y trae su veredicto, con las mismas columnas de decisión que los demás CSV de
+# revisión:
+#
+# exportar_decisiones() → asignaturas/decisiones/<fecha>_decisiones.csv (una fila por decisión) y
+#                         <fecha>_asignaciones_division.csv (una fila por elemento reasignado en cada división).
+# importar_decisiones(csv) → en cada decisión:
+#   - aceptar: agrega {revisado_por, fecha, comentario} a «confirmaciones».
+#   - cambiar: solo en asignaciones; reemplaza los conceptos asignados (deben ser el original o el nuevo de la
+# división).
+#   - rechazar: agrega la objeción a «observaciones». No revierte nada: una objeción pide una nueva decisión
+#     pedagógica, y queda listada hasta que se tome.
 
 from __future__ import annotations
 
@@ -36,8 +37,16 @@ ARCHIVOS = {
     "clase_internacional_2_8": "data/interim/internacional_2_8/revisiones.json",
 }
 ENCABEZADO = ["clave", "tipo", "decision_tomada", "justificacion", "decidido_por", "estado", *COLUMNAS_DECISION]
-ENCABEZADO_ASIGNACIONES = ["clave", "concepto_dividido", "conjunto", "elemento", "texto", "asignado_a", "estado",
-                           *COLUMNAS_DECISION]
+ENCABEZADO_ASIGNACIONES = [
+    "clave",
+    "concepto_dividido",
+    "conjunto",
+    "elemento",
+    "texto",
+    "asignado_a",
+    "estado",
+    *COLUMNAS_DECISION,
+]
 
 
 def _leer(tipo: str) -> list[dict]:
@@ -64,32 +73,47 @@ def _nombre(cid: str) -> str:
 
 # Por tipo: (clave del registro, descripción de la decisión, justificación, quién decidió).
 DESCRIPCION: dict[str, tuple[Callable[[dict], str], Callable[[dict], str], str, str]] = {
-    "equivalencia_retirada": (lambda r: f"{r['a']}|{r['b']}",
-                              lambda r: f"Retirar la equivalencia «{_nombre(r['a'])}» ≡ «{_nombre(r['b'])}»",
-                              "motivo_retiro", "retirado_por"),
-    "prerrequisito_rechazado": (lambda r: f"{r['origen']}|{r['destino']}",
-                                lambda r: (f"Rechazar el prerrequisito «{_nombre(r['origen'])}» → "
-                                           f"«{_nombre(r['destino'])}»"),
-                                "comentario", "revisado_por"),
-    "division": (lambda r: r["concepto"],
-                 lambda r: f"Dividir «{_nombre(r['concepto'])}»: se crea «{r['nuevo']['nombre']}»",
-                 "justificacion", "revisado_por"),
-    "parte_de": (lambda r: f"{r['parte']}|{r['todo']}",
-                 lambda r: (f"Contar «{_nombre(r['parte'])}» como parte de «{_nombre(r['todo'])}» en el contraste "
-                            "internacional"),
-                 "justificacion", "revisado_por"),
-    "clase_internacional": (lambda r: r["concepto"],
-                            lambda r: f"Clase de «{r['nombre']}» en el contraste: {r['clase_ia']} → {r['clase']}",
-                            "justificacion", "revisado_por"),
-    "clase_internacional_2_8": (lambda r: r["concepto"],
-                                lambda r: (f"Clase de «{r['nombre']}» en el contraste de 2.°–8.°: {r['clase_ia']} → "
-                                           f"{r['clase']}"),
-                                "justificacion", "revisado_por"),
+    "equivalencia_retirada": (
+        lambda r: f"{r['a']}|{r['b']}",
+        lambda r: f"Retirar la equivalencia «{_nombre(r['a'])}» ≡ «{_nombre(r['b'])}»",
+        "motivo_retiro",
+        "retirado_por",
+    ),
+    "prerrequisito_rechazado": (
+        lambda r: f"{r['origen']}|{r['destino']}",
+        lambda r: f"Rechazar el prerrequisito «{_nombre(r['origen'])}» → «{_nombre(r['destino'])}»",
+        "comentario",
+        "revisado_por",
+    ),
+    "division": (
+        lambda r: r["concepto"],
+        lambda r: f"Dividir «{_nombre(r['concepto'])}»: se crea «{r['nuevo']['nombre']}»",
+        "justificacion",
+        "revisado_por",
+    ),
+    "parte_de": (
+        lambda r: f"{r['parte']}|{r['todo']}",
+        lambda r: f"Contar «{_nombre(r['parte'])}» como parte de «{_nombre(r['todo'])}» en el contraste internacional",
+        "justificacion",
+        "revisado_por",
+    ),
+    "clase_internacional": (
+        lambda r: r["concepto"],
+        lambda r: f"Clase de «{r['nombre']}» en el contraste: {r['clase_ia']} → {r['clase']}",
+        "justificacion",
+        "revisado_por",
+    ),
+    "clase_internacional_2_8": (
+        lambda r: r["concepto"],
+        lambda r: f"Clase de «{r['nombre']}» en el contraste de 2.°–8.°: {r['clase_ia']} → {r['clase']}",
+        "justificacion",
+        "revisado_por",
+    ),
 }
 
 
 def _estado_asignacion(d: dict, clave: str) -> str:
-    """Estado de una asignación de la división: observada por el panel, con dictamen del panel o pendiente."""
+    """Report whether a concept-division assignment is pending, reviewed, or observed."""
     if obs := (d.get("observaciones_asignaciones") or {}).get(clave):
         return f"observada (pide nueva decisión): {obs['comentario'][:160]}"
     if reg := (d.get("dictamenes_panel_asignaciones") or {}).get(clave):
@@ -102,7 +126,7 @@ def _estado(r: dict) -> str:
         return "observada (pide nueva decisión)"
     if r.get("confirmaciones"):
         return "confirmada"
-    if r.get("dictamenes_panel"):   # spec 14: dictamen del panel de expertos IA, no es una confirmación del MINED
+    if r.get("dictamenes_panel"):  # spec 14: dictamen del panel de expertos IA, no es una confirmación del MINED
         ult = r["dictamenes_panel"][-1]
         solidez = {"solido": ", sólido", "respaldado": ", respaldado", "fragil": ", frágil"}.get(ult.get("solidez"), "")
         return f"dictamen del panel: {ult['decision']}{solidez} (pendiente de confirmar)"
@@ -110,7 +134,7 @@ def _estado(r: dict) -> str:
 
 
 def _textos() -> dict[str, dict[str, str]]:
-    """Texto de cada elemento que puede tener una asignación, por conjunto."""
+    """Index the original text of assignable elements by collection."""
     from goes_science_kg.ingesta import legado
     from goes_science_kg.ingesta.mallas import extraer
     from goes_science_kg.internacional.consenso import objetivos
@@ -119,27 +143,53 @@ def _textos() -> dict[str, dict[str, str]]:
     # del grafo principal (subagentes) y «malla_v2» el del contraste internacional (Vertex). Los nombres se conservan
     # porque son la llave de las decisiones ya exportadas.
     textos = {t.id: f"{t.contenido}. {t.indicador}" for t in extraer()}
-    return {"malla_v1": textos, "malla_v2": textos,
-            "objetivos_pais": {o["id"]: o["texto"] for o in [*legado.alineacion_paises(), *legado.paises_nuevos()]},
-            "internacional": {o["id"]: o["texto"] for o in objetivos()}}
+    return {
+        "malla_v1": textos,
+        "malla_v2": textos,
+        "objetivos_pais": {o["id"]: o["texto"] for o in [*legado.alineacion_paises(), *legado.paises_nuevos()]},
+        "internacional": {o["id"]: o["texto"] for o in objetivos()},
+    }
 
 
 def exportar_decisiones(fecha: str | None = None) -> list[str]:
-    """Escribe los dos CSV para el equipo de Ciencias (sin sobrescribir los existentes). Devuelve las rutas."""
+    """Export institutional review CSVs without overwriting existing files."""
     fecha = fecha or date.today().isoformat()
     filas = []
     for tipo, (clave, descripcion, campo_just, campo_quien) in DESCRIPCION.items():
         for r in _leer(tipo):
-            filas.append([clave(r), tipo, descripcion(r), r.get(campo_just, ""), r.get(campo_quien, ""), _estado(r),
-                          "", "", "", ""])
+            filas.append(
+                [
+                    clave(r),
+                    tipo,
+                    descripcion(r),
+                    r.get(campo_just, ""),
+                    r.get(campo_quien, ""),
+                    _estado(r),
+                    "",
+                    "",
+                    "",
+                    "",
+                ]
+            )
     textos, asignaciones = _textos(), []
     for d in _leer("division"):
         for conjunto, items in sorted(d["asignaciones"].items()):
             for item, ids in sorted(items.items()):
-                asignaciones.append([f"{d['concepto']}::{conjunto}::{item}", _nombre(d["concepto"]), conjunto, item,
-                                     textos.get(conjunto, {}).get(item, "")[:300],
-                                     " + ".join(_nombre(i) for i in ids), _estado_asignacion(d, f"{conjunto}::{item}"),
-                                     "", "", "", ""])
+                asignaciones.append(
+                    [
+                        f"{d['concepto']}::{conjunto}::{item}",
+                        _nombre(d["concepto"]),
+                        conjunto,
+                        item,
+                        textos.get(conjunto, {}).get(item, "")[:300],
+                        " + ".join(_nombre(i) for i in ids),
+                        _estado_asignacion(d, f"{conjunto}::{item}"),
+                        "",
+                        "",
+                        "",
+                        "",
+                    ]
+                )
     p1, p2 = _libre(ruta(DIR) / f"{fecha}_decisiones.csv"), _libre(ruta(DIR) / f"{fecha}_asignaciones_division.csv")
     _escribir(p1, ENCABEZADO, filas)
     _escribir(p2, ENCABEZADO_ASIGNACIONES, asignaciones)
@@ -147,8 +197,10 @@ def exportar_decisiones(fecha: str | None = None) -> list[str]:
 
 
 def importar_decisiones(archivo: str | Path) -> dict:
-    """Aplica un CSV revisado (de decisiones o de asignaciones). Valida todo antes de escribir; lanza ValueError si
-    algo no cuadra. Devuelve los conteos y las decisiones observadas que piden una nueva decisión."""
+    """Validate an entire reviewed CSV before applying decision or assignment changes."""
+
+    # Implementation notes:
+    # algo no cuadra. Devuelve los conteos y las decisiones observadas que piden una nueva decisión.
     with open(ruta(archivo), encoding="utf-8-sig") as f:
         lector = csv.DictReader(f)
         es_asignacion = "conjunto" in (lector.fieldnames or [])
@@ -189,8 +241,10 @@ def importar_decisiones(archivo: str | Path) -> dict:
                 errores.append(f"fila {i}: decisión desconocida {r['tipo']}:{r['clave']}")
                 continue
             if decision == "cambiar":
-                errores.append(f"fila {i}: «cambiar» solo se usa en asignaciones; para otra decisión, «rechazar» y "
-                               "explicar en el comentario")
+                errores.append(
+                    f"fila {i}: «cambiar» solo se usa en asignaciones; para otra decisión, «rechazar» y "
+                    "explicar en el comentario"
+                )
                 continue
         clave = "observaciones" if decision == "rechazar" else "confirmaciones"
         registro.setdefault(clave, []).append(nota)

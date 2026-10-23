@@ -1,13 +1,13 @@
-"""Refuerzo de cada tema de la malla vigente (V3) con lo que el repo ya sabe (spec 15).
+"""Prepare evidence-backed reinforcement for the historical V3 curriculum."""
 
-Cuatro fuentes, solo con evidencia y sin quitar nada:
-- errores de la malla (`data/interim/refuerzo_v3/errores_malla.json`, curado): se buscan LITERALES en la vigente;
-- recomendaciones del panel con solidez «sólido» o «respaldado»;
-- hallazgos del contraste internacional;
-- lo que la V3 dejó de cubrir y los países o los marcos enseñan en el núcleo.
-
-Este módulo arma los candidatos (código, sin IA). La redacción de las filas propuestas y su revisión van después.
-"""
+# Historical implementation notes:
+# Cuatro fuentes, solo con evidencia y sin quitar nada:
+# - errores de la malla (`data/interim/refuerzo_v3/errores_malla.json`, curado): se buscan LITERALES en la vigente;
+# - recomendaciones del panel con solidez «sólido» o «respaldado»;
+# - hallazgos del contraste internacional;
+# - lo que la V3 dejó de cubrir y los países o los marcos enseñan en el núcleo.
+#
+# Este módulo arma los candidatos (código, sin IA). La redacción de las filas propuestas y su revisión van después.
 
 from __future__ import annotations
 
@@ -21,20 +21,22 @@ DIR = "data/interim/refuerzo_v3"
 
 
 def _plano(texto: str) -> str:
-    """Minúsculas, sin tildes y con los espacios normalizados: para buscar un fragmento literal."""
+    """Normalize literal-search text by case, accents, and whitespace."""
     t = unicodedata.normalize("NFKD", texto.lower())
     return " ".join("".join(c for c in t if not unicodedata.combining(c)).split())
 
 
 @cache
 def errores_malla() -> tuple[dict, ...]:
-    """Los errores y problemas de progresión curados, con su fragmento literal."""
+    """Load curated scientific errors and sequencing issues with their literal anchors."""
     return tuple(json.loads(ruta(f"{DIR}/errores_malla.json").read_text(encoding="utf-8")))
 
 
 def errores_en_vigente() -> list[dict]:
-    """Cada error con los temas de la malla vigente donde su fragmento sigue literal (en toda la fila). Sin temas, la
-    V3 lo corrigió o lo quitó: no se inyecta y se registra como «corregido_en_v3»."""
+    """Locate documented errors still present in complete current curriculum rows."""
+
+    # Implementation notes:
+    # V3 lo corrigió o lo quitó: no se inyecta y se registra como «corregido_en_v3».
     from goes_science_kg.ingesta.mallas import textos_completos
 
     textos = {i: _plano(t) for i, t in textos_completos().items()}
@@ -48,14 +50,20 @@ def errores_en_vigente() -> list[dict]:
 
 # -- catálogo de candidatos (15.4) ------------------------------------------------------------------------------------
 VERSION = "refuerzo-v3-1"
-SOLIDEZ_INYECTABLE = ("solido", "respaldado")   # lo frágil, sin consenso o sin bucle no se inyecta
+SOLIDEZ_INYECTABLE = ("solido", "respaldado")  # lo frágil, sin consenso o sin bucle no se inyecta
 ID_TEMA = r"G\d\d-[A-Z]{3}-U\d+-\d+(?:\.\d+)+(?:-f\d+|-v3)?"
 # Clase del contraste (con revisión) → tipo de refuerzo. «alineado», «retomado», «sin_referente» y «no_aplica» no
 # generan refuerzo: no afirman un desajuste.
 TIPO_POR_CLASE = {
     "2_8": {"tardio": "adelantar", "posterior": "agregar_precursor", "adelantado": "acotar", "faltante": "agregar"},
-    "9_11": {"previo": "adelantar", "solo_especializacion": "acotar", "faltante": "agregar", "no_retomado": "retomar",
-             "tardio": "adelantar", "adelantado": "acotar"},
+    "9_11": {
+        "previo": "adelantar",
+        "solo_especializacion": "acotar",
+        "faltante": "agregar",
+        "no_retomado": "retomar",
+        "tardio": "adelantar",
+        "adelantado": "acotar",
+    },
 }
 
 
@@ -68,8 +76,10 @@ def _movidos() -> dict[str, str]:
 
 
 def ubicacion_vigente(id_tema: str) -> str | None:
-    """El tema de la malla vigente donde está hoy el contenido de un tema citado: el mismo, el que lo absorbió o
-    aquel al que se movió de grado."""
+    """Resolve a cited topic to its current, absorbed, or explicitly comparable content location."""
+
+    # Implementation notes:
+    # aquel al que se movió de grado.
     from goes_science_kg.ingesta.mallas import vigente_de
 
     i = id_tema.removeprefix("TEMA:")
@@ -84,7 +94,7 @@ def _temas_citados(*textos: object) -> list[str]:
 
 
 def _grados_en(texto: str) -> list[int]:
-    """Grados nombrados en un texto («en 5.°–6.°», «7.°», «10.°»)."""
+    """Extract explicitly named grade numbers and ranges from text."""
     import re
 
     salida: set[int] = set()
@@ -95,7 +105,7 @@ def _grados_en(texto: str) -> list[int]:
 
 
 def _texto_final(x: dict) -> str:
-    """El texto con que el panel matizó o adaptó (el del experto de la disciplina, si lo hay)."""
+    """Return the final panel-adapted wording, preferring the subject expert's version."""
     from goes_science_kg import bucle
 
     finales = [d for d in bucle._finales(x) if d["decision"] == x["resolucion"]["decision"] and d.get("texto")]
@@ -108,16 +118,25 @@ def _candidatos_errores() -> list[dict]:
     for e in errores_en_vigente():
         if e["estado"] != "sigue":
             continue
-        salida.append({"origen": "error_malla", "tipo": "corregir" if e["tipo"] == "error_cientifico" else "precisar",
-                       "temas_v3": e["temas_v3"], "grados": [], "conceptos": [], "texto_base": e["correccion"],
-                       "problema": e["problema"],
-                       "evidencia": [{"fuente": f"TEMA:{t}", "cita_literal": e["cita_literal"]} for t in e["temas_v3"]],
-                       "solidez": "solido", "referencia": e["id"]})
+        salida.append(
+            {
+                "origen": "error_malla",
+                "tipo": "corregir" if e["tipo"] == "error_cientifico" else "precisar",
+                "temas_v3": e["temas_v3"],
+                "grados": [],
+                "conceptos": [],
+                "texto_base": e["correccion"],
+                "problema": e["problema"],
+                "evidencia": [{"fuente": f"TEMA:{t}", "cita_literal": e["cita_literal"]} for t in e["temas_v3"]],
+                "solidez": "solido",
+                "referencia": e["id"],
+            }
+        )
     return salida
 
 
 def _candidatos_panel() -> list[dict]:
-    """Hallazgos respaldados o matizados y propuestas adoptadas o adaptadas por el panel, con solidez inyectable."""
+    """Select supported panel findings and adopted proposals eligible for reinforcement."""
     from goes_science_kg import conceptos, panel
 
     voc = conceptos.vocabulario()
@@ -130,62 +149,100 @@ def _candidatos_panel() -> list[dict]:
         d, dec = x["datos"], x["resolucion"]["decision"]
         if x["tipo"] == "hallazgo" and dec in ("respaldar", "matizar"):
             texto = _texto_final(x) or d.get("recomendacion", "")
-            salida.append({"origen": "panel_hallazgo", "tipo": "precisar", "asignatura": d.get("asignatura"),
-                           "temas_v3": _temas_citados(d.get("evidencia"), d.get("recomendacion"), texto),
-                           "grados": _grados_en(f"{d.get('recomendacion', '')} {texto}"), "conceptos": [],
-                           "texto_base": texto, "problema": d.get("titulo", ""),
-                           "evidencia": [{"fuente": d.get("fuente", ""), "cita": d.get("evidencia", "")}],
-                           "solidez": s, "referencia": i})
+            salida.append(
+                {
+                    "origen": "panel_hallazgo",
+                    "tipo": "precisar",
+                    "asignatura": d.get("asignatura"),
+                    "temas_v3": _temas_citados(d.get("evidencia"), d.get("recomendacion"), texto),
+                    "grados": _grados_en(f"{d.get('recomendacion', '')} {texto}"),
+                    "conceptos": [],
+                    "texto_base": texto,
+                    "problema": d.get("titulo", ""),
+                    "evidencia": [{"fuente": d.get("fuente", ""), "cita": d.get("evidencia", "")}],
+                    "solidez": s,
+                    "referencia": i,
+                }
+            )
         elif x["tipo"] == "propuesta" and dec in ("adoptar", "adaptar"):
             nombres = d.get("conceptos") or []
             if isinstance(nombres, str):
                 nombres = [n.strip(" '\"") for n in nombres.strip("[]").split("',")]
             ids = [c for n in nombres if (c := por_nombre.get(n.strip(" '\"").lower()))]
             texto = _texto_final(x) if dec == "adaptar" else d.get("tema_propuesto", "")
-            salida.append({"origen": "panel_propuesta", "tipo": "agregar", "asignatura": d.get("asignatura"),
-                           "temas_v3": _temas_citados(d.get("unidad_propuesta"), d.get("justificacion")),
-                           "grados": [int(d["grado_propuesto"])] if str(d.get("grado_propuesto", "")).isdigit() else [],
-                           "conceptos": ids, "texto_base": texto or d.get("tema_propuesto", ""),
-                           "problema": d.get("justificacion", ""),
-                           "propuesta_original": {k: d.get(k) for k in ("unidad_propuesta", "tema_propuesto",
-                                                                        "indicador_logro")},
-                           "evidencia": [{"fuente": "propuesta curricular (spec 06)", "cita": d.get("evidencia", "")}],
-                           "solidez": s, "referencia": i})
+            salida.append(
+                {
+                    "origen": "panel_propuesta",
+                    "tipo": "agregar",
+                    "asignatura": d.get("asignatura"),
+                    "temas_v3": _temas_citados(d.get("unidad_propuesta"), d.get("justificacion")),
+                    "grados": [int(d["grado_propuesto"])] if str(d.get("grado_propuesto", "")).isdigit() else [],
+                    "conceptos": ids,
+                    "texto_base": texto or d.get("tema_propuesto", ""),
+                    "problema": d.get("justificacion", ""),
+                    "propuesta_original": {
+                        k: d.get(k) for k in ("unidad_propuesta", "tema_propuesto", "indicador_logro")
+                    },
+                    "evidencia": [{"fuente": "propuesta curricular (spec 06)", "cita": d.get("evidencia", "")}],
+                    "solidez": s,
+                    "referencia": i,
+                }
+            )
     return salida
 
 
 def _candidatos_contraste() -> list[dict]:
-    """Clases del contraste que afirman un desajuste y tienen revisión (panel, delegada o humana): las automáticas
-    sin verificar no se inyectan (spec 12: 25 % de falsos)."""
+    """Select reviewed international mismatch findings rather than unreviewed automatic classes."""
+
+    # Implementation notes:
+    # sin verificar no se inyectan (spec 12: 25 % de falsos).
     from goes_science_kg import panel
     from goes_science_kg import revision_decisiones as rd
 
     salida = []
     for tramo, tipos in TIPO_POR_CLASE.items():
-        revs = {r["concepto"]: r for r in rd._leer("clase_internacional_2_8" if tramo == "2_8" else
-                                                    "clase_internacional")}
+        revs = {
+            r["concepto"]: r for r in rd._leer("clase_internacional_2_8" if tramo == "2_8" else "clase_internacional")
+        }
         for c, f in sorted(panel._contraste(tramo).items()):
             if f["clase"] not in tipos or not f.get("revision") or c not in revs:
                 continue
             r = revs[c]
             temas = list(dict.fromkeys([*f.get("sv_temas", []), *f.get("sv_temas_texto", [])]))[:6]
             if not temas and tipos[f["clase"]] == "acotar":
-                continue   # la malla vigente ya no lo enseña: no hay nada que acotar
-            salida.append({"origen": "contraste", "tipo": tipos[f["clase"]], "tramo": tramo, "clase": f["clase"],
-                           "asignatura": f.get("asignatura"), "conceptos": [c], "temas_v3": temas,
-                           "grados": sorted({g for g in (f.get("grado_consenso"), f.get("grado_consenso_solido"),
-                                                         f.get("sv_primer_grado")) if g}),
-                           "texto_base": r.get("justificacion", ""), "problema": f"{f['nombre']}: {f['clase']}",
-                           "evidencia": r.get("evidencia") or [{"fuente": f"revisión ({r.get('revisado_por', '')})",
-                                                                "cita": r.get("justificacion", "")}],
-                           "solidez": "revisada",
-                           "referencia": f"{tramo}:{c}"})
+                continue  # la malla vigente ya no lo enseña: no hay nada que acotar
+            salida.append(
+                {
+                    "origen": "contraste",
+                    "tipo": tipos[f["clase"]],
+                    "tramo": tramo,
+                    "clase": f["clase"],
+                    "asignatura": f.get("asignatura"),
+                    "conceptos": [c],
+                    "temas_v3": temas,
+                    "grados": sorted(
+                        {
+                            g
+                            for g in (f.get("grado_consenso"), f.get("grado_consenso_solido"), f.get("sv_primer_grado"))
+                            if g
+                        }
+                    ),
+                    "texto_base": r.get("justificacion", ""),
+                    "problema": f"{f['nombre']}: {f['clase']}",
+                    "evidencia": r.get("evidencia")
+                    or [{"fuente": f"revisión ({r.get('revisado_por', '')})", "cita": r.get("justificacion", "")}],
+                    "solidez": "revisada",
+                    "referencia": f"{tramo}:{c}",
+                }
+            )
     return salida
 
 
 def _cobertura(version: str) -> dict[str, set[int]]:
-    """Concepto → grados en que lo enseña la malla `version` (etiquetado del grafo principal, con lo absorbido). Una
-    parte cubre a su todo (conceptos.partes()): «enlace iónico» enseña «enlace químico»."""
+    """Index curriculum concept coverage while accounting for explicitly absorbed topics."""
+
+    # Implementation notes:
+    # parte cubre a su todo (conceptos.partes()): «enlace iónico» enseña «enlace químico».
     from goes_science_kg import conceptos
     from goes_science_kg.ingesta.mallas import extraer
 
@@ -201,11 +258,13 @@ def _cobertura(version: str) -> dict[str, set[int]]:
 
 
 def _candidatos_quitado() -> list[dict]:
-    """Conceptos que la V2 enseñaba en un tramo y la V3 ya no enseña ahí (ni por etiqueta ni por el texto de la fila),
-    con núcleo sólido en ≥ 3 países, cuando los países los enseñan a esa edad:
-    - 2.°–8.°: la V3 ya no lo enseña o lo movió después de 8.°, y la mediana del núcleo es ≤ 8.°;
-    - 9.°–11.°: la V3 ya no lo enseña o lo dejó solo antes de 9.°, y la mediana del núcleo es ≥ 9.°.
-    Lo que la V3 dejó en un grado anterior y los países también enseñan antes no es una pérdida."""
+    """Find concepts no longer taught in a grade band under both labels and original text."""
+
+    # Implementation notes:
+    # con núcleo sólido en ≥ 3 países, cuando los países los enseñan a esa edad:
+    # - 2.°–8.°: la V3 ya no lo enseña o lo movió después de 8.°, y la mediana del núcleo es ≤ 8.°;
+    # - 9.°–11.°: la V3 ya no lo enseña o lo dejó solo antes de 9.°, y la mediana del núcleo es ≥ 9.°.
+    # Lo que la V3 dejó en un grado anterior y los países también enseñan antes no es una pérdida.
     from goes_science_kg import panel
     from goes_science_kg.ingesta.mallas import extraer
 
@@ -222,46 +281,72 @@ def _candidatos_quitado() -> list[dict]:
             if not f or (f.get("n_nucleo_solido") or 0) < 3:
                 continue
             if any(g0 <= grado.get(t, 0) <= g1 for t in f.get("sv_temas_texto", [])):
-                continue   # el texto de una fila del tramo lo enseña: falta la etiqueta, no el contenido
+                continue  # el texto de una fila del tramo lo enseña: falta la etiqueta, no el contenido
             mediana = f.get("mediana_primer_grado_nucleo_solido") or f.get("mediana_primer_grado_nucleo")
             if ahora.get(c) and mediana is not None and (mediana > g1 if tramo == "2_8" else mediana < g0):
-                continue   # la V3 lo enseña en otro grado y los países no lo esperan en este tramo
-            salida.append({"origen": "quitado_v3", "tipo": "recuperar", "tramo": tramo,
-                           "asignatura": f.get("asignatura"), "conceptos": [c], "temas_v3": [],
-                           "grados": grados_v2, "texto_base": "",
-                           "problema": f"{f['nombre']}: la V2 lo enseñaba en {', '.join(f'{g}.°' for g in grados_v2)}"
-                                       f" y la V3 ya no lo enseña en {g0}.°–{g1}.°"
-                                       + (f" (ahora en {', '.join(f'{g}.°' for g in sorted(ahora[c]))})"
-                                          if ahora.get(c) else " (en ningún grado)"),
-                           "evidencia": [{"fuente": f"contraste {tramo}",
-                                          "cita": f"núcleo sólido en {f['n_nucleo_solido']} países; mediana del "
-                                                  f"primer grado {mediana}"}],
-                           "solidez": "calculada", "referencia": f"{tramo}:{c}"})
+                continue  # la V3 lo enseña en otro grado y los países no lo esperan en este tramo
+            salida.append(
+                {
+                    "origen": "quitado_v3",
+                    "tipo": "recuperar",
+                    "tramo": tramo,
+                    "asignatura": f.get("asignatura"),
+                    "conceptos": [c],
+                    "temas_v3": [],
+                    "grados": grados_v2,
+                    "texto_base": "",
+                    "problema": f"{f['nombre']}: la V2 lo enseñaba en {', '.join(f'{g}.°' for g in grados_v2)}"
+                    f" y la V3 ya no lo enseña en {g0}.°–{g1}.°"
+                    + (
+                        f" (ahora en {', '.join(f'{g}.°' for g in sorted(ahora[c]))})"
+                        if ahora.get(c)
+                        else " (en ningún grado)"
+                    ),
+                    "evidencia": [
+                        {
+                            "fuente": f"contraste {tramo}",
+                            "cita": f"núcleo sólido en {f['n_nucleo_solido']} países; mediana del "
+                            f"primer grado {mediana}",
+                        }
+                    ],
+                    "solidez": "calculada",
+                    "referencia": f"{tramo}:{c}",
+                }
+            )
     return salida
 
 
 def candidatos() -> list[dict]:
-    """Todos los candidatos a refuerzo, con id estable («REF:<origen>:<referencia>»: no cambia al regenerar el
-    catálogo) y orden determinista."""
+    """Build all reinforcement candidates with stable origin-based identities."""
+
+    # Implementation notes:
+    # catálogo) y orden determinista.
     filas = [*_candidatos_errores(), *_candidatos_panel(), *_candidatos_contraste(), *_candidatos_quitado()]
     filas.sort(key=lambda f: (f["origen"], f["referencia"]))
     return [{"id": f"REF:{f['origen']}:{f['referencia']}", "version": VERSION, **f} for f in filas]
 
 
 def escribir_candidatos() -> dict:
+    """Write the complete evidence-backed reinforcement candidate catalog."""
+
     from collections import Counter
 
     filas = candidatos()
     p = ruta(f"{DIR}/candidatos.json")
     p.write_text(json.dumps(filas, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    return {"candidatos": len(filas), "por_origen": dict(Counter(f["origen"] for f in filas)),
-            "por_tipo": dict(Counter(f["tipo"] for f in filas)),
-            "sin_ubicacion": sum(1 for f in filas if not f["temas_v3"] and not f["grados"])}
+    return {
+        "candidatos": len(filas),
+        "por_origen": dict(Counter(f["origen"] for f in filas)),
+        "por_tipo": dict(Counter(f["tipo"] for f in filas)),
+        "sin_ubicacion": sum(1 for f in filas if not f["temas_v3"] and not f["grados"]),
+    }
 
 
 def grados_destino(f: dict, grado_de: dict[str, int]) -> list[int]:
-    """Dónde va el refuerzo de un candidato: lo que se adelanta, agrega o retoma va al grado que dicen los países (o el
-    panel); lo que se acota o corrige, donde la malla lo enseña hoy; lo que se recupera, donde lo tenía la V2."""
+    """Choose reinforcement grades using the documented reference and curriculum evidence."""
+
+    # Implementation notes:
+    # panel); lo que se acota o corrige, donde la malla lo enseña hoy; lo que se recupera, donde lo tenía la V2.
     anclas = sorted({grado_de[t] for t in f["temas_v3"] if t in grado_de})
     if f["origen"] == "contraste":
         g0, g1 = (2, 8) if f.get("tramo") == "2_8" else (9, 11)
@@ -282,28 +367,34 @@ CAMPOS_FILA = ("contenido", "procedimental", "indicador", "evidencia_aprendizaje
 
 
 def _asignatura_de_temas() -> dict[str, str]:
-    """Id del tema → asignatura (disciplina) en el grafo: en 2.°–9.° la malla es «ciencias» y la disciplina sale de la
-    clasificación o de la revisión."""
+    """Index topic disciplines from the current graph's explicit assignments."""
+
+    # Implementation notes:
+    # clasificación o de la revisión.
     from goes_science_kg.grafo.almacen import cargar
 
     return {n.id.removeprefix("TEMA:"): n.asignatura for n in cargar()[0] if n.tipo.value == "Tema" and n.asignatura}
 
 
 def _conceptos_en_re_decision() -> set[str]:
-    """Conceptos con un expediente de la serie v3 del panel todavía sin resolver: su clase puede cambiar."""
+    """Find concepts whose open V3 review could still change their classification."""
     from goes_science_kg import panel
 
-    ids = {e["id"] for p in sorted(ruta(f"{panel.DIR}/lotes").glob("lote_r1-v3_*.json"))
-           for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]}
+    ids = {
+        e["id"]
+        for p in sorted(ruta(f"{panel.DIR}/lotes").glob("lote_r1-v3_*.json"))
+        for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]
+    }
     estado = panel.cargar_estado()
     return {estado[i]["datos"]["concepto"]["id"] for i in ids if i in estado and estado[i]["estado"] != "resuelta"}
 
 
-def preparar_lotes(serie: str = "a", asignaturas: tuple[str, ...] | None = None,
-                   tramo: str | None = None) -> list[str]:
-    """Lotes por asignatura y tramo con los candidatos (candidatos.json), sus temas ancla y los temas de cada grado
-    destino, en una serie («lote_<asig>_<tramo>_<serie>»). No reescribe lotes: deja fuera los candidatos que ya están
-    en un lote y los del contraste cuyo concepto el panel todavía re-decide (serie v3)."""
+def preparar_lotes(serie: str = "a", asignaturas: tuple[str, ...] | None = None, tramo: str | None = None) -> list[str]:
+    """Prepare subject- and band-specific reinforcement batches with candidate anchors."""
+
+    # Implementation notes:
+    # destino, en una serie («lote_<asig>_<tramo>_<serie>»). No reescribe lotes: deja fuera los candidatos que ya están
+    # en un lote y los del contraste cuyo concepto el panel todavía re-decide (serie v3).
     from goes_science_kg.config import relativa
     from goes_science_kg.ingesta.mallas import extraer
 
@@ -313,9 +404,11 @@ def preparar_lotes(serie: str = "a", asignaturas: tuple[str, ...] | None = None,
     d.mkdir(parents=True, exist_ok=True)
     ya = {c["id"] for p in d.glob("lote_*.json") for c in json.loads(p.read_text(encoding="utf-8"))["candidatos"]}
     pendientes = _conceptos_en_re_decision()
-    filas = [f for f in json.loads(ruta(f"{DIR}/candidatos.json").read_text(encoding="utf-8"))
-             if f["id"] not in ya and not (f["origen"] in ("contraste", "quitado_v3") and set(f["conceptos"]) &
-                                           pendientes)]
+    filas = [
+        f
+        for f in json.loads(ruta(f"{DIR}/candidatos.json").read_text(encoding="utf-8"))
+        if f["id"] not in ya and not (f["origen"] in ("contraste", "quitado_v3") and set(f["conceptos"]) & pendientes)
+    ]
     grupos: dict[tuple[str, str], list[dict]] = {}
     for f in filas:
         anclas = [t for t in f["temas_v3"] if t in temas]
@@ -325,22 +418,44 @@ def preparar_lotes(serie: str = "a", asignaturas: tuple[str, ...] | None = None,
         su_tramo = "2_8" if grados and min(grados) <= 8 else "9_11"
         if (asignaturas and asig not in asignaturas) or (tramo and su_tramo != tramo):
             continue
-        f = {**f, "asignatura": asig, "grados_destino": grados,
-             "temas_ancla": [{"id": t, "grado": temas[t].grado, "unidad": temas[t].unidad,
-                              "contenido": temas[t].contenido, "procedimental": temas[t].procedimental,
-                              "indicador": temas[t].indicador} for t in anclas[:4]]}
+        f = {
+            **f,
+            "asignatura": asig,
+            "grados_destino": grados,
+            "temas_ancla": [
+                {
+                    "id": t,
+                    "grado": temas[t].grado,
+                    "unidad": temas[t].unidad,
+                    "contenido": temas[t].contenido,
+                    "procedimental": temas[t].procedimental,
+                    "indicador": temas[t].indicador,
+                }
+                for t in anclas[:4]
+            ],
+        }
         grupos.setdefault((asig, su_tramo), []).append(f)
     escritos = []
     for (asig, su_tramo), cands in sorted(grupos.items()):
-        partes = [cands[i:i + TAMANO_LOTE] for i in range(0, len(cands), TAMANO_LOTE)]
+        partes = [cands[i : i + TAMANO_LOTE] for i in range(0, len(cands), TAMANO_LOTE)]
         for k, parte in enumerate(partes, start=1):
             nombre = f"{asig}_{su_tramo}_{serie}" + (f"_{k}" if len(partes) > 1 else "")
             claves = sorted({(g, asig) for c in parte for g in c["grados_destino"]})
-            del_grado = {f"{g}:{a}": [f"{t.id} | {t.procedimental[:110]}" for t in temas.values()
-                                       if t.grado == g and (asig_de.get(t.id) == a or t.asignatura == a)]
-                         for g, a in claves}
-            lote = {"lote": nombre, "version": VERSION, "instrucciones": "prompts/redactar_refuerzos.md",
-                    "candidatos": parte, "temas_del_grado": del_grado}
+            del_grado = {
+                f"{g}:{a}": [
+                    f"{t.id} | {t.procedimental[:110]}"
+                    for t in temas.values()
+                    if t.grado == g and (asig_de.get(t.id) == a or t.asignatura == a)
+                ]
+                for g, a in claves
+            }
+            lote = {
+                "lote": nombre,
+                "version": VERSION,
+                "instrucciones": "prompts/redactar_refuerzos.md",
+                "candidatos": parte,
+                "temas_del_grado": del_grado,
+            }
             p = d / f"lote_{nombre}.json"
             p.write_text(json.dumps(lote, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
             escritos.append(relativa(p))
@@ -348,8 +463,10 @@ def preparar_lotes(serie: str = "a", asignaturas: tuple[str, ...] | None = None,
 
 
 def errores_lote(lote: dict, salida: list[dict]) -> list[str]:
-    """Errores de la salida del redactor-refuerzos: los mismos que hacen fallar unir() (y que revisa
-    `gskg lotes validar` al terminar el subagente)."""
+    """Return reinforcement-writer batch errors under the consolidation contract."""
+
+    # Implementation notes:
+    # `gskg lotes validar` al terminar el subagente).
     from goes_science_kg.ingesta.mallas import extraer
 
     ids_malla = {t.id for t in extraer()}
@@ -382,8 +499,9 @@ def errores_lote(lote: dict, salida: list[dict]) -> list[str]:
                 e.append("refuerzo vacío o de más de 60 palabras")
             if s.get("forma") == "fila_nueva":
                 if cands[i]["tipo"] not in TIPOS_CON_FILA:
-                    e.append(f"una fila nueva solo para {', '.join(TIPOS_CON_FILA)} "
-                             f"(el candidato es {cands[i]['tipo']})")
+                    e.append(
+                        f"una fila nueva solo para {', '.join(TIPOS_CON_FILA)} (el candidato es {cands[i]['tipo']})"
+                    )
                 fila = s.get("fila") or {}
                 if faltan_campos := [c for c in CAMPOS_FILA if not fila.get(c)]:
                     e.append(f"fila sin {faltan_campos}")
@@ -396,8 +514,10 @@ def errores_lote(lote: dict, salida: list[dict]) -> list[str]:
 
 
 def unir() -> dict:
-    """Valida todas las salidas (todo o nada) y escribe refuerzos.json: cada decisión del redactor con su candidato,
-    «propuesta_pendiente» hasta que la revise el panel."""
+    """Validate all writer outputs before writing the complete reinforcement collection."""
+
+    # Implementation notes:
+    # «propuesta_pendiente» hasta que la revise el panel.
     from collections import Counter
 
     d, filas, errores = ruta(f"{DIR}/lotes"), [], []
@@ -409,29 +529,48 @@ def unir() -> dict:
         lote, salida = (json.loads(x.read_text(encoding="utf-8")) for x in (p_lote, p_sal))
         errores += [f"{p_sal.name}: {e}" for e in errores_lote(lote, salida)]
         cands = {c["id"]: c for c in lote["candidatos"]}
-        filas += [{**cands[s["id"]], **s, "estado": "propuesta_pendiente", "origen_redaccion":
-                   f"redactor-refuerzos ({lote['lote']})", "version_redaccion": lote["version"]}
-                  for s in salida if s.get("id") in cands]
+        filas += [
+            {
+                **cands[s["id"]],
+                **s,
+                "estado": "propuesta_pendiente",
+                "origen_redaccion": f"redactor-refuerzos ({lote['lote']})",
+                "version_redaccion": lote["version"],
+            }
+            for s in salida
+            if s.get("id") in cands
+        ]
     if errores:
         raise ValueError(f"{len(errores)} errores: " + "; ".join(errores[:15]))
     # Lo que ya revisó el panel no se pisa: volver a unir solo agrega o actualiza lo que sigue pendiente.
     p = ruta(f"{DIR}/refuerzos.json")
     previos = {r["id"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
-    filas = [previos[f["id"]] if previos.get(f["id"], {}).get("estado", "propuesta_pendiente") != "propuesta_pendiente"
-             else f for f in filas]
+    filas = [
+        previos[f["id"]]
+        if previos.get(f["id"], {}).get("estado", "propuesta_pendiente") != "propuesta_pendiente"
+        else f
+        for f in filas
+    ]
     filas.sort(key=lambda f: f["id"])
     p.write_text(json.dumps(filas, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    return {"refuerzos": len(filas), "decision": dict(Counter(f["decision"] for f in filas)),
-            "forma": dict(Counter(f.get("forma") for f in filas if f["decision"] == "inyectar"))}
+    return {
+        "refuerzos": len(filas),
+        "decision": dict(Counter(f["decision"] for f in filas)),
+        "forma": dict(Counter(f.get("forma") for f in filas if f["decision"] == "inyectar")),
+    }
 
 
 # -- snapshot por asignatura y grados ---------------------------------------------------------------------------------
-NOMBRE_ASIG = {"fisica": "Física", "quimica": "Química", "biologia": "Biología",
-               "ciencias_tierra_espacio": "Ciencias de la Tierra y del Espacio"}
+NOMBRE_ASIG = {
+    "fisica": "Física",
+    "quimica": "Química",
+    "biologia": "Biología",
+    "ciencias_tierra_espacio": "Ciencias de la Tierra y del Espacio",
+}
 
 
 def _disciplina_v2() -> dict[str, str]:
-    """Disciplina de los temas de la V2: la del grafo vigente si el tema sigue; si no, la de su concepto principal."""
+    """Resolve a V2 topic's discipline from its surviving topic or principal concept."""
     from goes_science_kg import conceptos
 
     asig, voc, etq = _asignatura_de_temas(), conceptos.vocabulario(), conceptos.etiquetado()
@@ -449,7 +588,7 @@ def _disciplina_v2() -> dict[str, str]:
 
 
 def snapshot(asignaturas: tuple[str, ...], grados: tuple[int, ...], etapa: str) -> str:
-    """Markdown con el estado del refuerzo de esas asignaturas y grados (de mayor a menor grado)."""
+    """Render reinforcement status in descending grade order."""
     from collections import Counter
 
     from goes_science_kg import panel
@@ -464,36 +603,59 @@ def snapshot(asignaturas: tuple[str, ...], grados: tuple[int, ...], etapa: str) 
     v2 = {t.id: t for t in extraer("mallas_v2")}
     nombres = " y ".join(NOMBRE_ASIG[a] for a in asignaturas)
     rango = f"{max(grados)}.° a {min(grados)}.°"
-    md = [f"# Refuerzo de la malla V3: {nombres}, {rango}", "",
-          f"> **Corte: {etapa}.** Lo generó `gskg refuerzo snapshot`. Son propuestas del equipo GOES con evidencia, no "
-          "decisiones del MINED. El texto oficial no se modifica.", ""]
+    md = [
+        f"# Refuerzo de la malla V3: {nombres}, {rango}",
+        "",
+        f"> **Corte: {etapa}.** Lo generó `gskg refuerzo snapshot`. Son propuestas del equipo GOES con evidencia, no "
+        "decisiones del MINED. El texto oficial no se modifica.",
+        "",
+    ]
     # 1. qué cambió
-    md += ["## 1. Qué cambió la V3", "",
-           "| Grado | Asignatura | Temas V2 | Temas V3 | Idénticos | Parecidos | Ampliados | Nuevos | V2 absorbidos | "
-           "V2 movidos | V2 sin rastro |", "|---|---|---|---|---|---|---|---|---|---|---|"]
+    md += [
+        "## 1. Qué cambió la V3",
+        "",
+        "| Grado | Asignatura | Temas V2 | Temas V3 | Idénticos | Parecidos | Ampliados | Nuevos | V2 absorbidos | "
+        "V2 movidos | V2 sin rastro |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
+    ]
     for g in sorted(grados, reverse=True):
         for a in asignaturas:
             t3 = [t for t in v3.values() if t.grado == g and asig3.get(t.id) == a]
             t2 = [t for t in v2.values() if t.grado == g and asig2.get(t.id) == a]
             o = Counter(t.origen for t in t3)
             sp = [sin_par[t.id] for t in t2 if t.id in sin_par]
-            md.append(f"| {g}.° | {NOMBRE_ASIG[a]} | {len(t2)} | {len(t3)} | {o['identico']} | {o['parecido']} | "
-                      f"{o['ampliado']} | {o['nuevo']} | {sum(bool(x['absorbido_por']) for x in sp)} | "
-                      f"{sum(bool(x['movido_a']) for x in sp)} | "
-                      f"{sum(not x['absorbido_por'] and not x['movido_a'] for x in sp)} |")
-    md += ["", "*Ampliado: el tema de la V3 contiene casi entero uno de la V2 y conserva su id. Absorbido: el tema "
-           "de la V2 está dentro de otro tema de la V3. Sin rastro: no aparece en el texto de la V3; se juzga por "
-           "concepto.*", ""]
+            md.append(
+                f"| {g}.° | {NOMBRE_ASIG[a]} | {len(t2)} | {len(t3)} | {o['identico']} | {o['parecido']} | "
+                f"{o['ampliado']} | {o['nuevo']} | {sum(bool(x['absorbido_por']) for x in sp)} | "
+                f"{sum(bool(x['movido_a']) for x in sp)} | "
+                f"{sum(not x['absorbido_por'] and not x['movido_a'] for x in sp)} |"
+            )
+    md += [
+        "",
+        "*Ampliado: el tema de la V3 contiene casi entero uno de la V2 y conserva su id. Absorbido: el tema "
+        "de la V2 está dentro de otro tema de la V3. Sin rastro: no aparece en el texto de la V3; se juzga por "
+        "concepto.*",
+        "",
+    ]
     # 2. errores
-    errores = [e for e in errores_en_vigente() if any(asig3.get(t) in asignaturas and v3[t].grado in grados
-                                                     for t in e["temas_v3"]) or
-               (e["estado"] != "sigue" and v2.get(e["tema_v2"]) and v2[e["tema_v2"]].grado in grados
-                and asig2.get(e["tema_v2"]) in asignaturas)]
+    errores = [
+        e
+        for e in errores_en_vigente()
+        if any(asig3.get(t) in asignaturas and v3[t].grado in grados for t in e["temas_v3"])
+        or (
+            e["estado"] != "sigue"
+            and v2.get(e["tema_v2"])
+            and v2[e["tema_v2"]].grado in grados
+            and asig2.get(e["tema_v2"]) in asignaturas
+        )
+    ]
     md += ["## 2. Errores y problemas de progresión de la malla", ""]
     for e in errores:
         donde = ", ".join(e["temas_v3"]) or "—"
-        md.append(f"- **{e['id']}** ({'sigue en la V3' if e['estado'] == 'sigue' else 'corregido en la V3'}; "
-                  f"{donde}): {e['problema']} *Propuesta:* {e['correccion']}")
+        md.append(
+            f"- **{e['id']}** ({'sigue en la V3' if e['estado'] == 'sigue' else 'corregido en la V3'}; "
+            f"{donde}): {e['problema']} *Propuesta:* {e['correccion']}"
+        )
     if not errores:
         md.append("- Ninguno registrado en estas asignaturas y grados.")
     md.append("")
@@ -509,45 +671,76 @@ def snapshot(asignaturas: tuple[str, ...], grados: tuple[int, ...], etapa: str) 
         if not gs:
             continue
         por_grado.setdefault(max(gs), []).append({**f, "asignatura": a, "anclas": anclas})
-    md += ["## 3. Candidatos a refuerzo, por grado", "",
-           "Cada candidato trae su evidencia y la solidez de lo que lo respalda. Todavía no está redactado como fila "
-           "de la malla (etapa 15.5).", ""]
+    md += [
+        "## 3. Candidatos a refuerzo, por grado",
+        "",
+        "Cada candidato trae su evidencia y la solidez de lo que lo respalda. Todavía no está redactado como fila "
+        "de la malla (etapa 15.5).",
+        "",
+    ]
     for g in sorted(por_grado, reverse=True):
-        md += [f"### {g}.°", "", "| Id | Asignatura | Tipo | Origen | Tema de la V3 | Qué se propone | Evidencia | "
-               "Solidez |", "|---|---|---|---|---|---|---|---|"]
+        md += [
+            f"### {g}.°",
+            "",
+            "| Id | Asignatura | Tipo | Origen | Tema de la V3 | Qué se propone | Evidencia | Solidez |",
+            "|---|---|---|---|---|---|---|---|",
+        ]
         for f in sorted(por_grado[g], key=lambda f: (f["asignatura"], f["id"])):
             tema = "; ".join(f"{t} {v3[t].procedimental[:70]}" for t in f["anclas"] if v3[t].grado == g)[:160] or "—"
             que = (f.get("texto_base") or f.get("problema") or "").replace("|", "/").replace("\n", " ")
-            ev = " / ".join(str(e.get("cita_literal") or e.get("cita") or e.get("fuente", ""))[:90]
-                            for e in f["evidencia"][:2]).replace("|", "/").replace("\n", " ")
-            md.append(f"| {f['id']} | {NOMBRE_ASIG[f['asignatura']]} | {f['tipo']} | {f['origen']} | {tema} | "
-                      f"{que[:260]} | {ev} | {f['solidez']} |")
+            ev = (
+                " / ".join(
+                    str(e.get("cita_literal") or e.get("cita") or e.get("fuente", ""))[:90] for e in f["evidencia"][:2]
+                )
+                .replace("|", "/")
+                .replace("\n", " ")
+            )
+            md.append(
+                f"| {f['id']} | {NOMBRE_ASIG[f['asignatura']]} | {f['tipo']} | {f['origen']} | {tema} | "
+                f"{que[:260]} | {ev} | {f['solidez']} |"
+            )
         md.append("")
     # 4. re-decisiones del panel
     estado = panel.cargar_estado()
-    ids_v3 = {e["id"] for p in sorted(ruta(f"{panel.DIR}/lotes").glob("lote_r1-v3_*.json"))
-              for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]}
-    serie = {i: x for i, x in estado.items() if i in ids_v3
-             and x["datos"]["concepto"]["id"].split(":")[1].split("/")[0] in asignaturas
-             and (x["datos"].get("tramo", "2_8") == "9_11" if min(grados) >= 9 else True)}
+    ids_v3 = {
+        e["id"]
+        for p in sorted(ruta(f"{panel.DIR}/lotes").glob("lote_r1-v3_*.json"))
+        for e in json.loads(p.read_text(encoding="utf-8"))["expedientes"]
+    }
+    serie = {
+        i: x
+        for i, x in estado.items()
+        if i in ids_v3
+        and x["datos"]["concepto"]["id"].split(":")[1].split("/")[0] in asignaturas
+        and (x["datos"].get("tramo", "2_8") == "9_11" if min(grados) >= 9 else True)
+    }
     pend = {i: x for i, x in serie.items() if x["estado"] != "resuelta"}
-    md += ["## 4. Clases del contraste que el panel re-decide con la V3 (serie v3)", "",
-           f"{len(serie)} expedientes; {len(pend)} todavía sin resolver.", ""]
+    md += [
+        "## 4. Clases del contraste que el panel re-decide con la V3 (serie v3)",
+        "",
+        f"{len(serie)} expedientes; {len(pend)} todavía sin resolver.",
+        "",
+    ]
     for i, x in sorted(serie.items()):
         res = x.get("resolucion", {}).get("decision") if x["estado"] == "resuelta" else x["estado"]
         ant = (x["datos"].get("decision_anterior") or {}).get("clase")
         md.append(f"- `{i}`: {x['titulo']}" + (f" (antes: {ant})" if ant else "") + f" → **{res}**")
-    md += ["", "## 5. Qué falta para la versión final", "",
-           "1. Cerrar la serie v3 del panel y pasarla por el bucle de fortalecimiento.",
-           "2. Regenerar los candidatos con las clases nuevas.",
-           "3. Redactar cada refuerzo como nota o como fila de la malla (subagente `redactor-refuerzos`).",
-           "4. Revisión del panel (experto y psicopedagogo) de cada redacción, y bucle.",
-           "5. Copias anotadas de sus Excel en `entregas/mallas_v3_reforzadas/`.", ""]
+    md += [
+        "",
+        "## 5. Qué falta para la versión final",
+        "",
+        "1. Cerrar la serie v3 del panel y pasarla por el bucle de fortalecimiento.",
+        "2. Regenerar los candidatos con las clases nuevas.",
+        "3. Redactar cada refuerzo como nota o como fila de la malla (subagente `redactor-refuerzos`).",
+        "4. Revisión del panel (experto y psicopedagogo) de cada redacción, y bucle.",
+        "5. Copias anotadas de sus Excel en `entregas/mallas_v3_reforzadas/`.",
+        "",
+    ]
     return "\n".join(md)
 
 
 def escribir_snapshot(asignaturas: tuple[str, ...], grados: tuple[int, ...], etapa: str):
-    """Escribe el snapshot en entregas/mallas_v3_reforzadas/ y devuelve su ruta."""
+    """Write the reinforcement snapshot and return its output path."""
     nombre = "_".join(asignaturas) + f"_{min(grados)}-{max(grados)}"
     p = ruta(f"entregas/mallas_v3_reforzadas/SNAPSHOT_{nombre}.md")
     p.parent.mkdir(parents=True, exist_ok=True)

@@ -1,9 +1,9 @@
-"""Visor HTML interactivo del grafo de cada grado (grados/G<gg>/grafo.html).
+"""Render interactive grade-specific science graph viewers."""
 
-Un archivo autocontenido: los datos del subgrafo van incrustados como JSON y la librería vis-network
-se carga desde unpkg. Muestra temas (por asignatura), conceptos, prácticas y prerrequisitos; resalta
-en rojo los prerrequisitos que llegan tarde o nunca. Al hacer clic en un nodo se ve su detalle y su fuente.
-"""
+# Historical implementation notes:
+# Un archivo autocontenido: los datos del subgrafo van incrustados como JSON y la librería vis-network
+# se carga desde unpkg. Muestra temas (por asignatura), conceptos, prácticas y prerrequisitos; resalta
+# en rojo los prerrequisitos que llegan tarde o nunca. Al hacer clic en un nodo se ve su detalle y su fuente.
 
 from __future__ import annotations
 
@@ -18,8 +18,11 @@ TIPOS_ARISTA = {TipoArista.TRABAJA, TipoArista.PRERREQUISITO_DE}
 
 
 def _datos(g: int, nodos: list[Nodo], aristas: list[Arista], diagnostico: dict) -> dict:
-    tarde = {(a["prerrequisito"], a["concepto"]) for a in diagnostico.get("anclajes", [])
-             if a["estado"] in ("ausente", "posterior")}
+    tarde = {
+        (a["prerrequisito"], a["concepto"])
+        for a in diagnostico.get("anclajes", [])
+        if a["estado"] in ("ausente", "posterior")
+    }
     estado_ancla = {a["prerrequisito"]: a["estado"] for a in diagnostico.get("anclajes", [])}
     incluidos = {n.id for n in nodos if n.tipo in (TipoNodo.TEMA, TipoNodo.CONCEPTO, TipoNodo.PRACTICA)}
     temas = {n.id for n in nodos if n.tipo == TipoNodo.TEMA}
@@ -29,25 +32,51 @@ def _datos(g: int, nodos: list[Nodo], aristas: list[Arista], diagnostico: dict) 
         if n.id not in incluidos:
             continue
         f = n.fuente
-        fuente = "" if not f else " ".join(str(x) for x in (f.documento, f.pagina and f"p.{f.pagina}",
-                                                            f.hoja and f"hoja «{f.hoja}»", f.fila and f"fila {f.fila}") if x)
+        fuente = (
+            ""
+            if not f
+            else " ".join(
+                str(x)
+                for x in (
+                    f.documento,
+                    f.pagina and f"p.{f.pagina}",
+                    f.hoja and f"hoja «{f.hoja}»",
+                    f.fila and f"fila {f.fila}",
+                )
+                if x
+            )
+        )
         ancla = n.tipo == TipoNodo.CONCEPTO and n.id not in del_grado
-        vis_n.append({
-            "id": n.id, "label": (n.etiqueta[:40] + "…") if len(n.etiqueta) > 40 else n.etiqueta,
-            "tipo": n.tipo.value, "asignatura": n.asignatura or "", "titulo": n.etiqueta,
-            "detalle": n.props.get("definicion") or n.props.get("unidad") or "", "fuente": fuente,
-            "estado": estado_ancla.get(n.id, ""),
-            "shape": {"Tema": "dot", "Concepto": "box", "Practica": "diamond"}[n.tipo.value],
-            "color": COLOR_ASIG.get(n.asignatura or "", "#607D8B") if not ancla else "#9E9E9E",
-            "size": 8 if n.tipo == TipoNodo.TEMA else 14,
-        })
-    vis_a = [{"from": a.origen, "to": a.destino, "tipo": a.tipo.value,
-              "color": "#C62828" if (a.origen, a.destino) in tarde else
-              ("#424242" if a.tipo == TipoArista.PRERREQUISITO_DE else "#B0BEC5"),
-              "dashes": a.tipo == TipoArista.TRABAJA and a.rol != "principal",
-              "arrows": "to" if a.tipo == TipoArista.PRERREQUISITO_DE else "",
-              "width": 3 if (a.origen, a.destino) in tarde else 1}
-             for a in aristas if a.tipo in TIPOS_ARISTA and a.origen in incluidos and a.destino in incluidos]
+        vis_n.append(
+            {
+                "id": n.id,
+                "label": (n.etiqueta[:40] + "…") if len(n.etiqueta) > 40 else n.etiqueta,
+                "tipo": n.tipo.value,
+                "asignatura": n.asignatura or "",
+                "titulo": n.etiqueta,
+                "detalle": n.props.get("definicion") or n.props.get("unidad") or "",
+                "fuente": fuente,
+                "estado": estado_ancla.get(n.id, ""),
+                "shape": {"Tema": "dot", "Concepto": "box", "Practica": "diamond"}[n.tipo.value],
+                "color": COLOR_ASIG.get(n.asignatura or "", "#607D8B") if not ancla else "#9E9E9E",
+                "size": 8 if n.tipo == TipoNodo.TEMA else 14,
+            }
+        )
+    vis_a = [
+        {
+            "from": a.origen,
+            "to": a.destino,
+            "tipo": a.tipo.value,
+            "color": "#C62828"
+            if (a.origen, a.destino) in tarde
+            else ("#424242" if a.tipo == TipoArista.PRERREQUISITO_DE else "#B0BEC5"),
+            "dashes": a.tipo == TipoArista.TRABAJA and a.rol != "principal",
+            "arrows": "to" if a.tipo == TipoArista.PRERREQUISITO_DE else "",
+            "width": 3 if (a.origen, a.destino) in tarde else 1,
+        }
+        for a in aristas
+        if a.tipo in TIPOS_ARISTA and a.origen in incluidos and a.destino in incluidos
+    ]
     return {"grado": g, "nodos": vis_n, "aristas": vis_a}
 
 
@@ -116,7 +145,7 @@ red.on('click', p => {
 
 
 def escribir_visor(g: int, nodos: list[Nodo], aristas: list[Arista], diagnostico: dict) -> str:
-    """Escribe grados/G<gg>/grafo.html, el visor interactivo del subgrafo del grado. Devuelve la ruta relativa."""
+    """Write an interactive grade-subgraph viewer and return its relative path."""
     datos = json.dumps(_datos(g, nodos, aristas, diagnostico), ensure_ascii=False).replace("</", "<\\/")
     p = ruta(f"grados/G{g:02d}") / "grafo.html"
     p.parent.mkdir(parents=True, exist_ok=True)

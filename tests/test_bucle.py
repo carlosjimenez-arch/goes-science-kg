@@ -1,5 +1,7 @@
-"""Bucle de fortalecimiento del panel (spec 14, sección 7): anclaje de citas por código, impugnación adversarial,
-sonda ciega, réplica y solidez. Nada aquí llama a un modelo: las salidas de los subagentes se escriben a mano."""
+"""Test source anchoring, adversarial challenges, blind probes, and panel strengthening."""
+
+# Historical test notes:
+# sonda ciega, réplica y solidez. Nada aquí llama a un modelo: las salidas de los subagentes se escriben a mano.
 
 from __future__ import annotations
 
@@ -16,7 +18,7 @@ HK_CITA = "recognise that a solution is a mixture formed when a solute is dissol
 
 @pytest.fixture
 def aislado(tmp_path, monkeypatch):
-    """El estado y los lotes del panel y del bucle en tmp_path."""
+    """Isolate panel state and challenge batches in temporary storage."""
     real = panel.ruta
 
     def falsa(rel):
@@ -28,15 +30,31 @@ def aislado(tmp_path, monkeypatch):
 
 
 def _dic(i, decision, rol, ronda=1, confianza="alta", **extra):
-    return {"id": i, "decision": decision, "justificacion": "Criterio técnico breve.", "confianza": confianza,
-            "evidencia": [{"fuente": "criterio disciplinar", "cita": "argumento"}], "rol": rol, "ronda": ronda,
-            **extra}
+    return {
+        "id": i,
+        "decision": decision,
+        "justificacion": "Criterio técnico breve.",
+        "confianza": confianza,
+        "evidencia": [{"fuente": "criterio disciplinar", "cita": "argumento"}],
+        "rol": rol,
+        "ronda": ronda,
+        **extra,
+    }
 
 
 def _resuelto(tipo, roles, decision, **extra):
-    return {"tipo": tipo, "titulo": "t", "pregunta": "p", "datos": {}, "roles": roles, "estado": "resuelta",
-            "dictamenes": [_dic("?", decision, r) for r in roles], "resolucion": {"decision": decision, "ronda": 1},
-            "aplicado": "2026-10-12", **extra}
+    return {
+        "tipo": tipo,
+        "titulo": "t",
+        "pregunta": "p",
+        "datos": {},
+        "roles": roles,
+        "estado": "resuelta",
+        "dictamenes": [_dic("?", decision, r) for r in roles],
+        "resolucion": {"decision": decision, "ronda": 1},
+        "aplicado": "2026-10-12",
+        **extra,
+    }
 
 
 def _escribir(carpeta, nombre, datos):
@@ -46,15 +64,15 @@ def _escribir(carpeta, nombre, datos):
 def test_verificar_clasifica_y_ancla_en_la_fuente():
     tema = bucle.verificar("TEMA:G03-CIE-U3-3.5 (fila 7)", "Emplea un modelo de un acuífero para estudiar")
     assert tema["estado"] == "anclada" and "fila 7" in tema["donde"]
-    assert bucle.verificar("TEMA:G03-CIE-U3-3.5", "un acuífero en 3.° grado")["estado"] == "ubicada"   # paráfrasis
-    assert bucle.verificar("TEMA:G03-CIE-U3-3.5", "Acuíferos")["estado"] == "ubicada"   # muy corta para anclar
+    assert bucle.verificar("TEMA:G03-CIE-U3-3.5", "un acuífero en 3.° grado")["estado"] == "ubicada"  # paráfrasis
+    assert bucle.verificar("TEMA:G03-CIE-U3-3.5", "Acuíferos")["estado"] == "ubicada"  # muy corta para anclar
     falso = bucle.verificar("TEMA:G99-CIE-U3-3.5", "lo que sea")
     assert falso["estado"] == "inexistente" and falso["inexistentes"] == ["G99-CIE-U3-3.5"]
     assert bucle.verificar(HK, HK_CITA)["estado"] == "anclada"
-    assert bucle.verificar("HK p. 60", HK_CITA.upper())["estado"] == "anclada"   # sin depender de mayúsculas
+    assert bucle.verificar("HK p. 60", HK_CITA.upper())["estado"] == "anclada"  # sin depender de mayúsculas
     # La página impresa no es la posición en el PDF (KR: 6 páginas de diferencia): la ventana la encuentra.
     assert bucle.verificar("KR p. 49", "평면거울에서 상이 생기는 원리를 설명하고")["estado"] == "anclada"
-    assert bucle.verificar("internacional/2_8/README.md", HK_CITA)["tipo"] == "interna"   # circular
+    assert bucle.verificar("internacional/2_8/README.md", HK_CITA)["tipo"] == "interna"  # circular
     # Un objetivo de país ancla con su original (aquí, el .ttl del Course of Study de Japón), no con la paráfrasis
     # en español que escribió el proyecto.
     jp = "JP-8361223413100000"
@@ -66,10 +84,17 @@ def test_verificar_clasifica_y_ancla_en_la_fuente():
 
 
 def _lote_refutador():
-    return {"expedientes": [
-        {"id": "A", "tipo": "decision", "opciones": ["aceptar", "rechazar"], "resolucion": {"decision": "aceptar"}},
-        {"id": "B", "tipo": "hallazgo", "opciones": ["respaldar", "matizar", "no_respaldar"],
-         "resolucion": {"decision": "respaldar"}}]}
+    return {
+        "expedientes": [
+            {"id": "A", "tipo": "decision", "opciones": ["aceptar", "rechazar"], "resolucion": {"decision": "aceptar"}},
+            {
+                "id": "B",
+                "tipo": "hallazgo",
+                "opciones": ["respaldar", "matizar", "no_respaldar"],
+                "resolucion": {"decision": "respaldar"},
+            },
+        ]
+    }
 
 
 def _ver(i, veredicto, **extra):
@@ -79,44 +104,68 @@ def _ver(i, veredicto, **extra):
 def test_el_refutador_solo_impugna_con_citas_que_estan_en_la_fuente():
     lote = _lote_refutador()
     contra = [{"fuente": HK, "cita_literal": HK_CITA, "dice": "HK lo enseña en el núcleo"}]
-    bien = [_ver("A", "refutada", contraevidencia=contra, patron="conteo_de_paises", propuesta="rechazar"),
-            _ver("B", "se_sostiene", anclas=contra)]
+    bien = [
+        _ver("A", "refutada", contraevidencia=contra, patron="conteo_de_paises", propuesta="rechazar"),
+        _ver("B", "se_sostiene", anclas=contra),
+    ]
     assert bucle.errores_lote(lote, bien) == []
     inventada = [{"fuente": HK, "cita_literal": "students must memorise the periodic table by heart", "dice": "x"}]
-    mal = [_ver("A", "refutada", contraevidencia=inventada, patron="conteo_de_paises", propuesta="aceptar"),
-           _ver("B", "debilitada")]
+    mal = [
+        _ver("A", "refutada", contraevidencia=inventada, patron="conteo_de_paises", propuesta="aceptar"),
+        _ver("B", "debilitada"),
+    ]
     errores = " | ".join(bucle.errores_lote(lote, mal))
     for esperado in ("no aparece", "distinta de la resolución", "exige contraevidencia", "patrón"):
         assert esperado in errores
     circular = [{"fuente": "internacional/2_8/README.md", "cita_literal": HK_CITA, "dice": "x"}]
-    assert "no es una fuente primaria" in " ".join(bucle.errores_lote(lote, [bien[0], _ver("B", "se_sostiene",
-                                                                                              anclas=circular)]))
+    assert "no es una fuente primaria" in " ".join(
+        bucle.errores_lote(lote, [bien[0], _ver("B", "se_sostiene", anclas=circular)])
+    )
 
 
 def test_en_contenido_refutar_exige_una_correccion_valida():
     from goes_science_kg.aprendizaje.pedagogia import Pedagogia
 
     act = Pedagogia.cargar().actividades["ACT:G09-CIE-U8-8.2/obj-1"]
-    lote = {"expedientes": [{"id": "P", "tipo": "contenido", "opciones": ["aprobar", "corregir"],
-                             "resolucion": {"decision": "aprobar"}, "elemento_vigente": act,
-                             "campos_editables": panel.config()["campos_editables"]["actividad"]}]}
-    assert bucle.errores_lote(lote, [_ver("P", "refutada", patron="error_cientifico")])     # sin cambios
+    lote = {
+        "expedientes": [
+            {
+                "id": "P",
+                "tipo": "contenido",
+                "opciones": ["aprobar", "corregir"],
+                "resolucion": {"decision": "aprobar"},
+                "elemento_vigente": act,
+                "campos_editables": panel.config()["campos_editables"]["actividad"],
+            }
+        ]
+    }
+    assert bucle.errores_lote(lote, [_ver("P", "refutada", patron="error_cientifico")])  # sin cambios
     assert bucle.errores_lote(lote, [_ver("P", "refutada", patron="error_cientifico", cambios={"correcta": "Z"})])
-    assert bucle.errores_lote(lote, [_ver("P", "refutada", patron="error_cientifico",
-                                          cambios={"retroalimentacion": "Más precisa."})]) == []
+    assert (
+        bucle.errores_lote(
+            lote, [_ver("P", "refutada", patron="error_cientifico", cambios={"retroalimentacion": "Más precisa."})]
+        )
+        == []
+    )
 
 
 def test_vuelta_completa_impugnacion_replica_y_nueva_impugnacion(aislado):
     roles = ["experto-fisica", "psicopedagogo"]
-    panel._guardar_estado({"X": _resuelto("hallazgo", roles, "respaldar"),
-                           "Y": _resuelto("hallazgo", roles, "respaldar")})
+    panel._guardar_estado(
+        {"X": _resuelto("hallazgo", roles, "respaldar"), "Y": _resuelto("hallazgo", roles, "respaldar")}
+    )
     lotes = bucle.impugnar(1)
     assert [p.split("/")[-1] for p in lotes] == ["lote_b1_refutador_fisica.json"]
     d_b = aislado / bucle.DIR / "lotes"
     contra = [{"fuente": HK, "cita_literal": HK_CITA, "dice": "lo enseña antes"}]
-    _escribir(d_b, "salida_b1_refutador_fisica.json", [
-        _ver("X", "refutada", contraevidencia=contra, patron="grado_mal_mapeado", propuesta="matizar"),
-        _ver("Y", "debilitada", confianza="baja", contraevidencia=contra, patron="otro")])   # baja: no reabre
+    _escribir(
+        d_b,
+        "salida_b1_refutador_fisica.json",
+        [
+            _ver("X", "refutada", contraevidencia=contra, patron="grado_mal_mapeado", propuesta="matizar"),
+            _ver("Y", "debilitada", confianza="baja", contraevidencia=contra, patron="otro"),
+        ],
+    )  # baja: no reabre
     m = bucle.cerrar_impugnacion(1)
     assert m["impugnada"] == 1 and m["sostenida"] == 1
     e = panel.cargar_estado()
@@ -128,18 +177,21 @@ def test_vuelta_completa_impugnacion_replica_y_nueva_impugnacion(aislado):
     assert [x["id"] for x in lote["expedientes"]] == ["X"]
     assert lote["expedientes"][0]["impugnacion"]["contraevidencia"][0]["donde"].endswith("p. 60")
     for rol in roles:
-        _escribir(d_p, f"salida_r11_{rol}.json", [{k: v for k, v in _dic("X", "matizar", rol, texto="Con matiz.")
-                                                   .items() if k not in ("rol", "ronda")}])
+        _escribir(
+            d_p,
+            f"salida_r11_{rol}.json",
+            [{k: v for k, v in _dic("X", "matizar", rol, texto="Con matiz.").items() if k not in ("rol", "ronda")}],
+        )
     bucle.cerrar_replica(1, 1)
     x = panel.cargar_estado()["X"]
     assert x["resolucion"]["decision"] == "matizar" and x["historial_resoluciones"][0]["decision"] == "respaldar"
-    assert x["aplicado"] is None and x["bucle"]["solidez"] == "fragil"   # cambió y aún no se volvió a impugnar
+    assert x["aplicado"] is None and x["bucle"]["solidez"] == "fragil"  # cambió y aún no se volvió a impugnar
     # Vuelta 2: solo lo que cambió; se sostiene con una cita literal → sólido.
     assert [p.split("/")[-1] for p in bucle.impugnar(2)] == ["lote_b2_refutador_fisica.json"]
     _escribir(d_b, "salida_b2_refutador_fisica.json", [_ver("X", "se_sostiene", anclas=contra)])
     bucle.cerrar_impugnacion(2)
     s = bucle.solidez()
-    assert s["hallazgo"] == {"solido": 1, "fragil": 1}   # Y: sobrevivió, pero sin fuente primaria
+    assert s["hallazgo"] == {"solido": 1, "fragil": 1}  # Y: sobrevivió, pero sin fuente primaria
     with pytest.raises(ValueError, match="vueltas"):
         bucle.impugnar(bucle.config()["vueltas_max"] + 1)
 
@@ -152,12 +204,32 @@ def test_replica_sin_unanimidad_tras_deliberar_va_a_una_persona(aislado):
     d = aislado / panel.DIR / "lotes"
     for paso, (a, b) in ((1, ("adoptar", "descartar")), (2, ("adoptar", "descartar"))):
         bucle.replicar(1, paso)
-        _escribir(d, f"salida_r1{paso}_experto-quimica.json", [{"id": "X", "decision": a, "justificacion": "j",
-                                                                "evidencia": _dic("X", a, "")["evidencia"],
-                                                                "confianza": "alta"}])
-        _escribir(d, f"salida_r1{paso}_psicopedagogo.json", [{"id": "X", "decision": b, "justificacion": "j",
-                                                              "evidencia": _dic("X", b, "")["evidencia"],
-                                                              "confianza": "alta"}])
+        _escribir(
+            d,
+            f"salida_r1{paso}_experto-quimica.json",
+            [
+                {
+                    "id": "X",
+                    "decision": a,
+                    "justificacion": "j",
+                    "evidencia": _dic("X", a, "")["evidencia"],
+                    "confianza": "alta",
+                }
+            ],
+        )
+        _escribir(
+            d,
+            f"salida_r1{paso}_psicopedagogo.json",
+            [
+                {
+                    "id": "X",
+                    "decision": b,
+                    "justificacion": "j",
+                    "evidencia": _dic("X", b, "")["evidencia"],
+                    "confianza": "alta",
+                }
+            ],
+        )
         bucle.cerrar_replica(1, paso)
     x = panel.cargar_estado()["X"]
     assert x["estado"] == "sin_consenso" and "sin unanimidad" in x["motivo"]
@@ -167,12 +239,22 @@ def test_replica_sin_unanimidad_tras_deliberar_va_a_una_persona(aislado):
 def test_la_sonda_ciega_no_ve_la_resolucion_y_su_discrepancia_reabre(aislado):
     panel._guardar_estado({f"D{i}": _resuelto("decision", ["experto-biologia"], "aceptar") for i in range(3)})
     lotes = bucle.sonda(1, n=2, semilla=1)
-    lote = json.loads((ruta(lotes[0]) if not lotes[0].startswith(panel.DIR) else aislado / lotes[0])
-                      .read_text(encoding="utf-8"))
+    lote = json.loads(
+        (ruta(lotes[0]) if not lotes[0].startswith(panel.DIR) else aislado / lotes[0]).read_text(encoding="utf-8")
+    )
     assert lote["ciega"] and all("resolucion" not in x and "dictamenes" not in x for x in lote["expedientes"])
     ids = [x["id"] for x in lote["expedientes"]]
-    salida = [{"id": i, "decision": "rechazar" if i == ids[0] else "aceptar", "justificacion": "j",
-               "alternativa": "otra", "evidencia": _dic(i, "", "")["evidencia"], "confianza": "media"} for i in ids]
+    salida = [
+        {
+            "id": i,
+            "decision": "rechazar" if i == ids[0] else "aceptar",
+            "justificacion": "j",
+            "alternativa": "otra",
+            "evidencia": _dic(i, "", "")["evidencia"],
+            "confianza": "media",
+        }
+        for i in ids
+    ]
     _escribir(aislado / panel.DIR / "lotes", "salida_c1_experto-biologia.json", salida)
     m = bucle.cerrar_impugnacion(1)
     assert m["sonda"] == {"decision": {"acuerdo": len(ids) - 1, "discrepa": 1}}
@@ -194,35 +276,48 @@ def test_una_resolucion_posterior_supera_la_observacion_del_panel():
     panel._observacion_del_panel(r, {"decision": "rechazar", "fecha": "2026-10-12", "alternativa": "otra"})
     assert len(r["observaciones"]) == 2
     panel._observacion_del_panel(r, {"decision": "aceptar", "fecha": "2026-10-13"})
-    assert r["observaciones"] == [{"revisado_por": "MINED", "comentario": "humana"}]   # la humana no se toca
+    assert r["observaciones"] == [{"revisado_por": "MINED", "comentario": "humana"}]  # la humana no se toca
     assert r["observaciones_superadas"][0]["superada"] == "2026-10-13"
 
 
 def test_rechazar_una_asignacion_la_observa_sin_observar_toda_la_division():
     from goes_science_kg import revision_decisiones as rd
 
-    d = {"asignaciones": {"internacional": {"OBJ-1": ["CON:x"]}},
-         "observaciones_asignaciones": {"internacional::OBJ-1": {"comentario": "retirar la etiqueta"}},
-         "dictamenes_panel": [{"decision": "aceptar", "solidez": "solido"}]}
+    d = {
+        "asignaciones": {"internacional": {"OBJ-1": ["CON:x"]}},
+        "observaciones_asignaciones": {"internacional::OBJ-1": {"comentario": "retirar la etiqueta"}},
+        "dictamenes_panel": [{"decision": "aceptar", "solidez": "solido"}],
+    }
     assert rd._estado_asignacion(d, "internacional::OBJ-1").startswith("observada")
-    assert rd._estado(d) == "dictamen del panel: aceptar, sólido (pendiente de confirmar)"   # la división, no
+    assert rd._estado(d) == "dictamen del panel: aceptar, sólido (pendiente de confirmar)"  # la división, no
 
 
 def test_la_sonda_se_compara_con_la_resolucion_vigente():
-    """Si la réplica corrige el dictamen y llega a lo que la sonda dictaminó a ciegas, eso corrobora (no es inestable);
-    si la sonda discrepa de lo que quedó, el dictamen es inestable."""
+    """Compare blind probes with the current resolution after an accepted correction."""
+
+    # Historical test notes:
+    # si la sonda discrepa de lo que quedó, el dictamen es inestable.
     ancla = {"fuente": HK, "cita_literal": HK_CITA, "dice": "x", "vuelta": 1}
 
     def exp(final, ciega):
         x = _resuelto("clase_incierta", ["experto-fisica"], final)
-        x["dictamenes"] = [{**_dic("?", final, "experto-fisica", ronda=11), "evidencia": [
-            {"fuente": HK, "cita": HK_CITA}]}]
+        x["dictamenes"] = [
+            {**_dic("?", final, "experto-fisica", ronda=11), "evidencia": [{"fuente": HK, "cita": HK_CITA}]}
+        ]
         x["resolucion"] = {"decision": final, "ronda": 11}
-        x["bucle"] = {"anclas": [ancla], "vueltas": [
-            {"vuelta": 1, "resultado": "impugnada", "replica": "cambiada",
-             "impugnacion": {"veredicto": "se_sostiene"},
-             "sonda": {"acuerdo": False, "dictamenes": [{"decision": ciega, "rol": "experto-fisica"}]}},
-            {"vuelta": 2, "resultado": "sostenida", "impugnacion": {"veredicto": "se_sostiene"}}]}
+        x["bucle"] = {
+            "anclas": [ancla],
+            "vueltas": [
+                {
+                    "vuelta": 1,
+                    "resultado": "impugnada",
+                    "replica": "cambiada",
+                    "impugnacion": {"veredicto": "se_sostiene"},
+                    "sonda": {"acuerdo": False, "dictamenes": [{"decision": ciega, "rol": "experto-fisica"}]},
+                },
+                {"vuelta": 2, "resultado": "sostenida", "impugnacion": {"veredicto": "se_sostiene"}},
+            ],
+        }
         return x
 
     s, motivo = bucle._solidez(exp("adelantado", "adelantado"))
@@ -237,16 +332,22 @@ def test_los_objetivos_de_otros_paises_no_se_cuentan_en_los_grados_de_la_malla()
     i_malla = "ASG:CON:quimica/configuracion-electronica::malla_v2::G10-QUI-U13-13.1"
     assert bucle.grados_de(i_pais, x) == [] and bucle.tramo_de(i_pais, x) == "9-11"
     assert bucle.grados_de(i_malla, x) == [10]
-    h = _resuelto("hallazgo", ["experto-fisica"], "matizar",
-                  datos={"titulo": "El efecto invernadero no se retoma en 9.°–11.°", "evidencia": "", "tramo": "9_11"})
+    h = _resuelto(
+        "hallazgo",
+        ["experto-fisica"],
+        "matizar",
+        datos={"titulo": "El efecto invernadero no se retoma en 9.°–11.°", "evidencia": "", "tramo": "9_11"},
+    )
     assert bucle.grados_de("HAL:x", h) == [9, 10, 11]
     h["datos"]["titulo"] = "Física nuclear tardía"
     assert bucle.grados_de("HAL:x", h) == [] and bucle.tramo_de("HAL:x", h) == "9-11"
 
 
 def test_el_contraste_usa_las_etiquetas_revisadas():
-    """El contraste lee el grafo principal con sus revisiones (data/interim/revisiones/), no el etiquetado crudo: la
-    corrección del bucle que agrega epidemiología a 9.° (inmunidad colectiva, boletín del MINSAL) llega al contraste."""
+    """Use explicit reviewed graph labels rather than raw unreviewed topic tagging."""
+
+    # Historical test notes:
+    # corrección del bucle que agrega epidemiología a 9.° (inmunidad colectiva, boletín del MINSAL) llega al contraste.
     from goes_science_kg.ingesta.mallas import extraer
     from goes_science_kg.internacional.contraste import puntos_sv
 
@@ -255,8 +356,11 @@ def test_el_contraste_usa_las_etiquetas_revisadas():
 
 
 def test_lo_sin_consenso_decidido_por_delegacion_queda_como_delegado():
-    x = {**_resuelto("clase_incierta", ["experto-fisica"], "alineado"), "estado": "sin_consenso",
-         "motivo": "confianza baja de experto-fisica"}
+    x = {
+        **_resuelto("clase_incierta", ["experto-fisica"], "alineado"),
+        "estado": "sin_consenso",
+        "motivo": "confianza baja de experto-fisica",
+    }
     assert bucle._solidez(x)[0] == "sin_consenso"
     x["decision_delegada"] = {"decision": "alineado", "justificacion": "regla del umbral", "evidencia": []}
     s, motivo = bucle._solidez(x)
@@ -264,15 +368,19 @@ def test_lo_sin_consenso_decidido_por_delegacion_queda_como_delegado():
 
 
 def test_una_ausencia_no_se_afirma_si_el_concepto_esta_en_el_texto_de_la_fila():
-    """Salvaguarda del método v1 de 9.°–11.°: las 4 «no retomado» eran falsas porque el concepto estaba en columnas
-    que el etiquetado no lee. Sin la revisión experta, la clase de ausencia pasa a «incierto»."""
+    """Reject absence claims when the concept occurs in original curriculum-row text."""
+
+    # Historical test notes:
+    # que el etiquetado no lee. Sin la revisión experta, la clase de ausencia pasa a «incierto».
     from goes_science_kg import conceptos
     from goes_science_kg.ingesta.mallas import extraer
     from goes_science_kg.internacional.contraste import ausencias_con_texto
 
     temas = {t.id: t.dict() for t in extraer()}
-    filas = [{"concepto": "CON:ciencias_tierra_espacio/efecto-invernadero", "clase": "no_retomado"},
-             {"concepto": "CON:biologia/especies-clave", "clase": "alineado"}]
+    filas = [
+        {"concepto": "CON:ciencias_tierra_espacio/efecto-invernadero", "clase": "no_retomado"},
+        {"concepto": "CON:biologia/especies-clave", "clase": "alineado"},
+    ]
     assert ausencias_con_texto(filas, conceptos.vocabulario(), temas, (9, 10, 11)) == [filas[0]["concepto"]]
     assert filas[0]["clase"] == "incierto" and filas[0]["clase_v1"] == "no_retomado"
     assert any(t.startswith(("G10-", "G11-")) for t in filas[0]["alertas"]["ausencia_con_texto"])
@@ -280,8 +388,10 @@ def test_una_ausencia_no_se_afirma_si_el_concepto_esta_en_el_texto_de_la_fila():
 
 
 def test_una_serie_corre_aparte_sobre_expedientes_nuevos(aislado):
-    """Los expedientes nuevos pasan por el bucle en una serie propia (lotes b1-<serie>, r11-<serie>) sin tocar los de
-    la corrida anterior."""
+    """Isolate newly reviewed dossiers in their own challenge series."""
+
+    # Historical test notes:
+    # la corrida anterior.
     roles = ["experto-fisica"]
     viejo = _resuelto("hallazgo", roles, "respaldar")
     viejo["bucle"] = {"vueltas": [{"vuelta": 1, "impugnacion": {"veredicto": "se_sostiene"}, "resultado": "sostenida"}]}
@@ -292,41 +402,57 @@ def test_una_serie_corre_aparte_sobre_expedientes_nuevos(aislado):
     lote = json.loads((d_b / "lote_b1-inc9_refutador_fisica.json").read_text(encoding="utf-8"))
     assert [x["id"] for x in lote["expedientes"]] == ["N"]
     contra = [{"fuente": HK, "cita_literal": HK_CITA, "dice": "x"}]
-    _escribir(d_b, "salida_b1-inc9_refutador_fisica.json",
-              [_ver("N", "refutada", contraevidencia=contra, patron="otro", propuesta="matizar")])
+    _escribir(
+        d_b,
+        "salida_b1-inc9_refutador_fisica.json",
+        [_ver("N", "refutada", contraevidencia=contra, patron="otro", propuesta="matizar")],
+    )
     bucle.cerrar_impugnacion(1, serie="inc9")
     e = panel.cargar_estado()
     assert e["N"]["bucle"]["vueltas"][0]["serie"] == "inc9" and "serie" not in e["V"]["bucle"]["vueltas"][0]
     assert [p.split("/")[-1] for p in bucle.replicar(1, 1, serie="inc9")] == ["lote_r11-inc9_experto-fisica.json"]
-    assert bucle.replicar(1, 1) == []   # la serie principal no tiene nada pendiente
+    assert bucle.replicar(1, 1) == []  # la serie principal no tiene nada pendiente
 
 
 def test_la_vuelta_2_de_una_serie_solo_toma_sus_cambios():
-    """La vuelta 2 de una serie reimpugna lo que cambió en la vuelta 1 de esa serie, no lo de otra corrida ni lo que ya
-    se impugnó en la vuelta 2."""
+    """Restrict a second challenge cycle to changes from its own first cycle."""
+
+    # Historical test notes:
+    # se impugnó en la vuelta 2.
     cambiado = {"vuelta": 1, "impugnacion": {"veredicto": "refutada"}, "replica": "cambiada"}
     x = {"tipo": "hallazgo", "estado": "resuelta", "bucle": {"vueltas": [{**cambiado, "serie": "inc9"}]}}
     otra = {"tipo": "hallazgo", "estado": "resuelta", "bucle": {"vueltas": [cambiado]}}
-    hecha = {"tipo": "hallazgo", "estado": "resuelta",
-             "bucle": {"vueltas": [cambiado, {"vuelta": 2, "impugnacion": {"veredicto": "se_sostiene"}}]}}
+    hecha = {
+        "tipo": "hallazgo",
+        "estado": "resuelta",
+        "bucle": {"vueltas": [cambiado, {"vuelta": 2, "impugnacion": {"veredicto": "se_sostiene"}}]},
+    }
     assert bucle._a_impugnar(x, 2, None, "inc9") and not bucle._a_impugnar(x, 2, None)
     assert not bucle._a_impugnar(otra, 2, None, "inc9") and bucle._a_impugnar(otra, 2, None)
     assert not bucle._a_impugnar(hecha, 2, None)
 
 
 def test_el_verificador_reconoce_los_ids_nuevos_de_la_v3():
-    """Sin el sufijo «-v3», TEMA:G03-CIE-U5-5.11-v3 se leía como G03-CIE-U5-5.11 (otro tema de la V2)."""
+    """Preserve V3 identity suffixes when resolving original curriculum-topic citations."""
     r = bucle.verificar("TEMA:G03-CIE-U5-5.11-v3", "Estrategias que favorecen la supervivencia de la desce")
     assert r["refs"] == ["G03-CIE-U5-5.11-v3"] and r["estado"] == "anclada"
 
 
 def test_una_cita_que_solo_esta_en_la_v2_no_ancla_un_dictamen_sobre_la_v3():
-    """El verificador dice en qué versión de la malla está la cita; para un expediente dictaminado sobre la V3, una
-    cita que solo está en la V2 cuenta como ubicada, no como anclada (lo encontró el refutador de la serie v3)."""
+    """Reject V2-only quotations as anchors for a dossier evaluated against V3."""
+
+    # Historical test notes:
+    # cita que solo está en la V2 cuenta como ubicada, no como anclada (lo encontró el refutador de la serie v3).
     v2 = bucle.verificar("TEMA:G03-CIE-U4-4.6", "Clasificación de los grupos de plantas terrestres por su anatomía")
     v3 = bucle.verificar("TEMA:G03-CIE-U4-4.6", "Clasificación de los grupos de vasculares por su anatomía")
     assert (v2["estado"], v2["version"]) == ("anclada", "anterior") and v3["version"] == "vigente"
-    d = {"evidencia": [{"fuente": "TEMA:G03-CIE-U4-4.6",
-                        "cita_literal": "Clasificación de los grupos de plantas terrestres por su anatomía"}]}
+    d = {
+        "evidencia": [
+            {
+                "fuente": "TEMA:G03-CIE-U4-4.6",
+                "cita_literal": "Clasificación de los grupos de plantas terrestres por su anatomía",
+            }
+        ]
+    }
     assert bucle.anclaje({"dictamenes": [d]})["nivel"] == "anclado"
     assert bucle.anclaje({"dictamenes": [d], "malla": "V3"})["nivel"] == "ubicado"

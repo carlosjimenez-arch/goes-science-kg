@@ -1,14 +1,14 @@
-"""Asigna cada tema y cada objetivo a una de las cuatro asignaturas del grafo.
+"""Assign curriculum topics and framework objectives to the four science subjects."""
 
-Reglas (specs/05_asignaturas.md, config/asignaturas.yaml):
-1. Bachillerato: la asignatura de la malla.                         metodo = «malla»
-2. 2.°–9.°: el dominio del objetivo TIMSS 2027 principal (obj1);    metodo = «timss»
-   en TIMSS 4.° «Ciencias físicas» decide el área (P1 → química, resto → física).
-3. Si obj1 es FUERA: el contenido PISA principal (7.°–9.°).         metodo = «pisa»
-4. Si nada aplica: la decisión de la skill grafo-asignar-disciplina
-   (data/interim/asignacion_disciplina.json).                       metodo = «ia»
-   Puede dejar el tema fuera de alcance (tecnología o transversal).
-"""
+# Historical implementation notes:
+# Reglas (specs/05_asignaturas.md, config/asignaturas.yaml):
+# 1. Bachillerato: la asignatura de la malla.                         metodo = «malla»
+# 2. 2.°–9.°: el dominio del objetivo TIMSS 2027 principal (obj1);    metodo = «timss»
+#    en TIMSS 4.° «Ciencias físicas» decide el área (P1 → química, resto → física).
+# 3. Si obj1 es FUERA: el contenido PISA principal (7.°–9.°).         metodo = «pisa»
+# 4. Si nada aplica: la decisión de la skill grafo-asignar-disciplina
+#    (data/interim/asignacion_disciplina.json).                       metodo = «ia»
+#    Puede dejar el tema fuera de alcance (tecnología o transversal).
 
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ ASIGNACION_MANUAL = "data/interim/asignacion_disciplina.json"
 
 @cache
 def asignacion_manual() -> dict[str, dict]:
-    """Decisiones de la skill grafo-asignar-disciplina, por id de tema (sin prefijo TEMA:)."""
+    """Load explicit topic-level subject assignment decisions."""
     p = ruta(ASIGNACION_MANUAL)
     return {d["id"]: d for d in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
@@ -43,7 +43,7 @@ def _objetivos_timss() -> dict[str, dict]:
 
 
 def asignatura_de_objetivo(codigo: str) -> str | None:
-    """Asignatura de un objetivo TIMSS 2027, TIMSS Advanced o PISA (None si es transversal)."""
+    """Determine a framework objective's subject or return None for cross-cutting objectives."""
     reglas = cargar("asignaturas")["asignacion"]
     if codigo.startswith("TA-"):
         return "fisica"
@@ -67,9 +67,10 @@ def asignatura_de_objetivo(codigo: str) -> str | None:
     return _dominio_a_asignatura().get(o["dominio"])
 
 
-def asignatura_de_tema(asignatura_malla: str, timss: dict | None, pisa: dict | None,
-                       manual: dict | None = None) -> tuple[str | None, str]:
-    """Devuelve (asignatura, metodo)."""
+def asignatura_de_tema(
+    asignatura_malla: str, timss: dict | None, pisa: dict | None, manual: dict | None = None
+) -> tuple[str | None, str]:
+    """Return a curriculum topic's subject and assignment method."""
     if asignatura_malla != "ciencias":
         return asignatura_malla, "malla"
     obj1 = (timss or {}).get("obj1", "")

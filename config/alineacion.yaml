@@ -1,0 +1,20 @@
+# Alineación de una declaración local con un referente documental; no mide aprendizaje.
+version_curriculo: V4
+referentes: config/referentes_operativos_2026.yaml
+perfiles: config/extraccion_referencias_2026.yaml
+repositorio: data/referencias_2026
+raiz_v4: insumos/v4
+alertas: docs/investigacion/alertas_v4.json
+registro: data/operaciones/registro.sqlite
+checkpoints: data/operaciones/alineacion_checkpoints.sqlite
+log: data/operaciones/alineacion.log
+max_caracteres_contexto: 18000
+max_concurrencia: 3
+max_llamadas: 3
+max_usd: 1.5
+reintentos: 0
+# Hereda proyecto, región, modelos y tarifas de motor.yaml; no duplica credenciales.
+roles_vertex:
+  alineador_cientifico: cientifico
+  alineador_psicopedagogo: psicopedagogo
+  alineador_adversarial: adversarial
