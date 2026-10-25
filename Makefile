@@ -36,7 +36,7 @@ lint:
 	uv run --frozen ruff check src tests scripts .claude/hooks
 	uv run --frozen ruff format --check src tests scripts .claude/hooks --output-format concise
 
-.PHONY: formato cobertura auditoria api pruebas-js
+.PHONY: formato cobertura auditoria api pruebas-js producto datos-estado datos-verificar
 
 pruebas-js:
 	node --test tests/js/*.test.cjs
@@ -53,6 +53,17 @@ auditoria:
 
 api:
 	uv run --frozen gskg servir --puerto 8010
+
+# Producto local en una máquina nueva: dependencias, datos desde GCS (sólo lo que falte) y servicio.
+producto:
+	uv sync --frozen --all-extras
+	uv run --frozen gskg servir --puerto 8010 --sincronizar
+
+datos-estado:
+	uv run --frozen gskg datos estado
+
+datos-verificar:
+	uv run --frozen gskg datos verificar
 
 grados:
 	uv run gskg grados construir

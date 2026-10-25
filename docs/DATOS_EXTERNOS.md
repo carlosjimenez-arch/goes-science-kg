@@ -12,6 +12,20 @@ Hay también un inventario JSON y un recibo independientes en GCS. Los SQLite se
 su API de copia consistente, incluyendo las transacciones confirmadas en WAL; los locks, WAL,
 SHM y cachés de Python no se restauran como archivos independientes.
 
+## Todo desde el bucket
+
+| Comando | Efecto |
+|---|---|
+| `make producto` | Instala, descarga lo que falte desde GCS y sirve la aplicación en `127.0.0.1:8010` |
+| `gskg datos estado` | Compara corpus, biblioteca y guiones locales con sus recibos, sin descargar paquetes |
+| `gskg datos verificar` | Cotejo por SHA del corpus local contra el inventario remoto (código 1 si algo difiere o falta) |
+| `gskg datos sincronizar` | Descarga lo ausente; rechaza estados parciales o divergentes en vez de sobrescribir |
+| `gskg datos publicar --trabajo <carpeta nueva>` | Empaqueta, sube, restaura en la carpeta, compara y sólo entonces adopta el recibo nuevo |
+| `gskg servir --sincronizar` | Sincroniza antes de servir |
+
+Las bases SQLite operativas en WAL se guardan como copia consistente y se cuentan aparte en la verificación.
+Publicar un recibo nuevo es un cambio de código: se revisa y confirma con la identidad GOES.
+
 ## Recuperar y usar
 
 Requisitos: Python 3.11+, el entorno del proyecto y `gcloud` autenticado con acceso de lectura al bucket.

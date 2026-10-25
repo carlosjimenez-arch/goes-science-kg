@@ -57,9 +57,9 @@ al bucket. Si `gcloud storage` falla con Python 3.14, el código elige un Python
 respeta `CLOUDSDK_PYTHON`.
 
 ```bash
-uv sync --frozen --all-extras
-uv run --frozen gskg datos restaurar --en-repo   # corpus, derivados y biblioteca, sólo en un checkout sin datos
-uv run --frozen gskg servir --puerto 8010
+make producto                          # uv sync + descarga desde GCS de lo que falte + servicio en :8010
+uv run --frozen gskg datos estado      # qué está al día frente a los recibos
+uv run --frozen gskg datos verificar   # cotejo por SHA contra el inventario remoto
 ```
 
 Abrir [la aplicación](http://127.0.0.1:8010/app/) o [OpenAPI](http://127.0.0.1:8010/docs). La consulta,
