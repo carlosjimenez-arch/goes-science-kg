@@ -9,7 +9,8 @@ from goes_science_kg.clases.validacion import huella_contenido
 from goes_science_kg.materiales.compilacion import serializar, sha
 
 
-def validar_seleccion(base, seleccion, *, obligatoria=False):
+def validar_seleccion(base, seleccion, *, obligatoria=False, excluidos=frozenset()):
+    """Block released versions with known defects; objectives declared without a script keep their review open."""
     raiz = "data/clases_v4/auditoria_contenido/"
     archivo_plan = base / raiz / "plan.json"
     if not archivo_plan.exists() and not obligatoria:
@@ -41,11 +42,15 @@ def validar_seleccion(base, seleccion, *, obligatoria=False):
         seguimiento = json.loads(leer_propio(base, raiz + "seguimiento.json").read_bytes())
         if seguimiento["version"] != "seguimiento-contenido-clases-1":
             raise ValueError("Versión de seguimiento del contenido desconocida")
-        if any(r["fila_id"] not in seleccion for r in seguimiento["revisiones"]):
+        if any(r["fila_id"] not in seleccion and r["fila_id"] not in excluidos for r in seguimiento["revisiones"]):
             raise ValueError("El seguimiento incluye objetivos ajenos a la selección")
         revisiones.extend(seguimiento["revisiones"])
+    abiertas = 0
     for r in revisiones:
         id_ = r["fila_id"]
+        if id_ in excluidos:
+            abiertas += 1
+            continue
         anterior_raw = leer_propio(base, r["resultado"]).read_bytes()
         anterior = json.loads(anterior_raw)["filas"][id_]["guion"]
         if sha(anterior_raw) != r["resultado_sha256"] or sha(serializar(anterior)) != r["guion_sha256"]:
@@ -70,4 +75,9 @@ def validar_seleccion(base, seleccion, *, obligatoria=False):
             or any(not isinstance(h, str) or len(h.strip()) < 30 for h in resolucion.get("hallazgos_atendidos", []))
         ):
             raise ValueError("Un guion auditado cambió o conserva defectos sin una resolución exacta")
-    return {"plan_sha256": sha(plan_raw), "revision_sha256": sha(revision_raw), "casos": len(casos)}
+    return {
+        "plan_sha256": sha(plan_raw),
+        "revision_sha256": sha(revision_raw),
+        "casos": len(casos),
+        "revisiones_abiertas_sin_guion": abiertas,
+    }

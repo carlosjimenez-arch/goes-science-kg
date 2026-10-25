@@ -29,10 +29,13 @@ anterior. Sus hashes identifican el código que produjo evidencia archivada; inc
 formato o docstring rompe la verificación del producto actual. Ruff excluye estos dos archivos del
 formateo automático. La excepción incluye sus docstrings históricos en español.
 
-`clases/` y `cli/clases.py` siguen la misma regla mientras la campaña de guiones permanezca abierta: el
-entorno de cada protocolo P1–P11 fija los SHA de nueve a once módulos de `clases/`, y `contexto_agente.py`,
-`enrutamiento.py` y `complementos.py` comparan su propio archivo. `cli/clases.py` coteja los módulos con el
-ZIP de código congelado. Ruff no los formatea ni exige docstrings; conservan sus docstrings en español.
+`clases/` sigue la misma regla en sus módulos con huella: el entorno de cada protocolo P1–P11 fija los SHA de
+`contratos`, `fuentes`, `motor`, `prompts`, `preparacion`, `validacion`, `proveedor`, `operacion`, `edicion`,
+`editorial` y `contexto`, y `contexto_agente.py`, `enrutamiento.py` y `complementos.py` comparan su propio
+archivo. Esos bytes no se tocan. Los módulos sin huella (`compilacion`, `paquete`, `auditoria`, `publicacion`,
+`revision_contenido`) se corrigieron el 25 de octubre para la entrega parcial declarada y para verificar el
+parche editorial P11 con el esquema que su propio código envía. Ruff no formatea `clases/` ni exige allí
+docstrings, para no reescribir por accidente un módulo con huella.
 
 No se sustituyeron hashes, perfiles, snapshots ni dictámenes para ocultar esa incompatibilidad.
 Cambiar esos extractores requiere una migración de extracción versionada, rehidratación de evidencia

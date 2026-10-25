@@ -161,6 +161,9 @@ def compilar(
     biblioteca_origen: Annotated[
         Path | None, typer.Option(help="Biblioteca de preparaciones fijada en los insumos")
     ] = None,
+    pendientes: Annotated[
+        Path | None, typer.Option(help="JSON de objetivos declarados sin guion liberado, con motivo y expediente")
+    ] = None,
 ):
     """Reconstruye los respaldos, conserva los materiales anteriores y exige cobertura exacta."""
     from goes_science_kg.clases.auditoria import cierre_presupuesto
@@ -176,7 +179,17 @@ def compilar(
     sel = json.loads(seleccion.read_bytes())
     registro = Registro(base / "data/operaciones/registro.sqlite")
     consumo = cierre_presupuesto(registro)
-    nuevos, fuentes = reconstruir(base, anterior, corpus, sel, registro=registro)
+    declarados = json.loads(pendientes.read_bytes()) if pendientes else {}
+    nuevos, fuentes = reconstruir(base, anterior, corpus, sel, registro=registro, pendientes=declarados)
+    sin_guion = sorted(
+        (
+            p
+            for u in nuevos
+            if u["tipo"] == "guion_unidad"
+            for p in u["documento"].get("objetivos_sin_guion_liberado", [])
+        ),
+        key=lambda p: p["fila_id"],
+    )
     registros, originales = anterior.exportar()
     if set(originales) & set(fuentes):
         raise ValueError("Los expedientes nuevos no pueden sustituir originales existentes")
@@ -186,6 +199,7 @@ def compilar(
         "corpus_cientifico_sha256": corpus.huella,
         "metodo_guiones": "reconstruccion_de_cuatro_dictamenes_por_huella_del_guion",
         "consumo_cierre_guiones": consumo,
+        "objetivos_sin_guion_liberado": sin_guion,
     }
     entrega = empaquetar(nuevos, fuentes, archivo, procedencia=procedencia)
     m = construir(registros + nuevos, originales | fuentes, biblioteca, procedencia=procedencia)

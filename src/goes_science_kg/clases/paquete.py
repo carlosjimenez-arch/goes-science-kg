@@ -21,9 +21,29 @@ MAX_TOTAL = 2 * 1024**3
 COBERTURA_V4 = {"guion_clase": 1013, "guion_unidad": 108}
 
 
-def validar_cobertura_publicable(por_tipo):
-    if any(por_tipo.get(tipo, 0) != cantidad for tipo, cantidad in COBERTURA_V4.items()):
-        raise ValueError("La entrega completa requiere exactamente 1013 guiones y 108 unidades V4")
+# Una entrega puede declarar pocos objetivos sin guion liberado; nunca los omite ni los presenta como listos.
+MAX_SIN_GUION = 20
+
+
+def sin_guion_declarados(procedencia) -> list:
+    """Return the explicitly declared objectives without a released script, validating their shape."""
+    pendientes = (procedencia or {}).get("objetivos_sin_guion_liberado") or []
+    if not isinstance(pendientes, list) or len({p.get("fila_id") for p in pendientes}) != len(pendientes):
+        raise ValueError("Los objetivos sin guion deben declararse una sola vez cada uno")
+    if any(not p.get("motivo") or p.get("estado") not in {"no_respaldado", "abstencion"} for p in pendientes):
+        raise ValueError("Cada objetivo sin guion declara su estado negativo y su motivo")
+    return pendientes
+
+
+def validar_cobertura_publicable(por_tipo, sin_guion=0):
+    """Require all 108 units and every objective either released or explicitly declared without a script."""
+    if type(sin_guion) is not int or not 0 <= sin_guion <= MAX_SIN_GUION:
+        raise ValueError("La entrega admite como máximo 20 objetivos declarados sin guion liberado")
+    esperado = {"guion_clase": COBERTURA_V4["guion_clase"] - sin_guion, "guion_unidad": COBERTURA_V4["guion_unidad"]}
+    if any(por_tipo.get(tipo, 0) != cantidad for tipo, cantidad in esperado.items()):
+        raise ValueError(
+            "La entrega requiere 1013 guiones (o los declarados sin guion liberado) y 108 unidades V4"
+        )
 
 
 def _nombre(nombre):

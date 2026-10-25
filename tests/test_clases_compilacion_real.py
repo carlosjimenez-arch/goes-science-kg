@@ -70,3 +70,25 @@ def test_compila_varios_resultados_usando_el_ledger_en_todos(tmp_path):
         for traza in auditoria["trazas"]:
             assert sha(archivos[traza["archivo_salida"]]) == traza["salida_sha256"]
             assert (tmp_path / traza["archivo_salida"]).read_bytes() == archivos[traza["archivo_salida"]]
+
+
+@pytest.mark.skipif(
+    not list((BASE / "data/clases_v4/ejecuciones/recuperacion_r21_p11_v2").glob("resultado_2855ed95da*.json")),
+    reason="Ejecución R21 privada no restaurada",
+)
+def test_parche_editorial_p11_se_verifica_con_el_esquema_que_envia_su_codigo():
+    # El esquema archivado en el ZIP de P11 no coincide con el enviado; el código idéntico lo reconstruye.
+    from goes_science_kg.clases.auditoria import verificar_trazas
+    from goes_science_kg.clases.preparacion import leer_preparacion
+
+    archivo = next((BASE / "data/clases_v4/ejecuciones/recuperacion_r21_p11_v2").glob("resultado_2855ed95da*.json"))
+    resultado = json.loads(archivo.read_bytes())
+    preparacion = next(
+        leer_preparacion(p)
+        for p in (BASE / "data/clases_v4/preparaciones_recuperacion_r21_p11_v2").glob("lote_*.json")
+        if json.loads(p.read_bytes())["id"] == resultado["preparacion_id"]
+    )
+    trazas = verificar_trazas(
+        BASE, archivo, preparacion, resultado, Registro(BASE / "data/operaciones/registro.sqlite")
+    )
+    assert any(t["rol"] == "clases_editor" for t in trazas["trazas"])

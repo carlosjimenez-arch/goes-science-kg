@@ -7,6 +7,7 @@ import io
 import json
 import re
 import zipfile
+from pathlib import Path
 
 from goes_science_kg.clases.compilacion import leer_propio
 from goes_science_kg.clases.contexto import contexto
@@ -50,7 +51,8 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
     )
     m = re.fullmatch(
         r"clases-p([2-9]|1[01])"
-        r"(?:-(?:masivo|seguimiento|r10-correcciones|lagunas-r16|editorial(?:-(?:criticas|segunda|tercera))?)"
+        r"(?:-(?:masivo|seguimiento|r10-correcciones|lagunas-r16|recuperacion-r[0-9]{2}"
+        r"|editorial(?:-(?:criticas|segunda|tercera))?)"
         r"-[0-9]{3})?",
         ref["protocolo"],
     )
@@ -76,6 +78,16 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
         if numero >= 8:
             archivos += ("edicion.py",)
             constantes["_ESQUEMA_EDICION"] = json.loads(z.read("esquemas/edicion.json"))
+            # El esquema archivado de P11 no coincide con el que su código envía. Sólo si el código instalado es
+            # idéntico byte a byte al congelado se admite también el esquema que ese mismo código produce.
+            instalados = Path(__file__).parent
+            if all(
+                z.read(prefijo + n) == (instalados / n).read_bytes() for n in ("contratos.py", "edicion.py")
+            ):
+                from goes_science_kg.clases.contratos import esquema_transporte
+                from goes_science_kg.clases.edicion import EdicionesClases
+
+                constantes["_ESQUEMAS_EDICION_CODIGO"] = [esquema_transporte(EdicionesClases).model_json_schema()]
         if numero >= 9:
             archivos += ("editorial.py",)
         if numero >= 10:
@@ -122,15 +134,12 @@ def verificar_trazas(base, archivo_resultado, preparacion, resultado, registro):
         if edicion and edicion.get("respuesta"):
             from goes_science_kg.clases.edicion import EdicionesClases
 
-            clave = _clave(
-                "gemini-3.8-flash",
-                constantes["EDITOR"],
-                json.dumps(edicion["solicitud"], ensure_ascii=False, sort_keys=True),
-                constantes["_ESQUEMA_EDICION"],
-                16384,
-                "MEDIUM",
-            )
-            raw = registro.salida(clave)
+            mensaje_edicion = json.dumps(edicion["solicitud"], ensure_ascii=False, sort_keys=True)
+            for esquema in [constantes["_ESQUEMA_EDICION"], *constantes.get("_ESQUEMAS_EDICION_CODIGO", [])]:
+                clave = _clave("gemini-3.8-flash", constantes["EDITOR"], mensaje_edicion, esquema, 16384, "MEDIUM")
+                raw = registro.salida(clave)
+                if raw is not None:
+                    break
             if (
                 raw is None
                 or edicion["modelo"] != "gemini-3.8-flash"

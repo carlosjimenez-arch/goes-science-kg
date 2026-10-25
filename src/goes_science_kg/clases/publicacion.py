@@ -6,14 +6,17 @@ import json
 import tempfile
 from pathlib import Path
 
-from goes_science_kg.clases.paquete import VERSION, extraer, validar, validar_cobertura_publicable
+from goes_science_kg.clases.paquete import VERSION, extraer, sin_guion_declarados, validar, validar_cobertura_publicable
 from goes_science_kg.materiales.compilacion import serializar, sha
 
 
 def publicar(archivo: Path, almacen, recibo: Path):
     m = validar(archivo)
-    validar_cobertura_publicable(m["por_tipo"])
+    pendientes = sin_guion_declarados(m.get("procedencia"))
+    validar_cobertura_publicable(m["por_tipo"], len(pendientes))
     identidad = {"version": VERSION, "entrega_id": m["id"], "materiales": m["materiales"], "por_tipo": m["por_tipo"]}
+    if pendientes:
+        identidad["objetivos_sin_guion_liberado"] = pendientes
     nombre = f"clases/{m['id']}/guiones.zip"
     digest = sha(archivo.read_bytes())
     if recibo.is_symlink():
@@ -44,7 +47,7 @@ def publicar(archivo: Path, almacen, recibo: Path):
 def descargar(recibo: dict, destino: Path, almacen):
     if recibo["version"] != VERSION:
         raise ValueError("Recibo incompatible")
-    validar_cobertura_publicable(recibo["por_tipo"])
+    validar_cobertura_publicable(recibo["por_tipo"], len(sin_guion_declarados(recibo)))
     ref = recibo["objeto"]
     if ref["uri"] != almacen.configuracion.ruta(f"clases/{recibo['entrega_id']}/guiones.zip"):
         raise ValueError("El objeto no corresponde a la entrega solicitada")

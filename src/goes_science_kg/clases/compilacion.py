@@ -33,23 +33,51 @@ def leer_propio(base: Path, nombre: str) -> Path:
     return p
 
 
-def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro):
-    """La selección explícita no permite publicar pendientes ni omitir objetivos del catálogo."""
+def _pendiente_verificado(base: Path, id_: str, declarado: dict) -> dict:
+    # Un objetivo sin guion conserva su último resultado negativo real; no basta con declararlo.
+    expediente = declarado.get("expediente") or {}
+    raw = leer_propio(base, expediente.get("resultado", "")).read_bytes()
+    final = json.loads(raw)["filas"].get(id_)
+    if not final or final["estado"] == "respaldado_automaticamente" or final["estado"] != declarado.get("estado"):
+        raise ValueError("Un objetivo sin guion debe apuntar a su último resultado negativo real")
+    if not isinstance(declarado.get("motivo"), str) or len(declarado["motivo"].strip()) < 20:
+        raise ValueError("Cada objetivo sin guion declara un motivo concreto")
+    return {
+        "fila_id": id_,
+        "estado": final["estado"],
+        "motivo": declarado["motivo"],
+        "expediente": {"preparacion": expediente["preparacion"], "resultado": expediente["resultado"]},
+        "resultado_sha256": sha(raw),
+    }
+
+
+def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro, pendientes: dict | None = None):
+    """La selección explícita no permite publicar pendientes ni omitir objetivos del catálogo.
+
+    `pendientes` declara objetivos sin guion liberado: no se publican como clases, cada uno conserva su último
+    resultado negativo y su unidad lo indica. Selección y pendientes cubren exactamente el catálogo.
+    """
     from goes_science_kg.clases.auditoria import verificar_trazas
 
     objetivos = []
     for offset in range(0, biblioteca.listar(tipo="paquete_objetivo", limite=1)["total"], 200):
         objetivos.extend(biblioteca.listar(tipo="paquete_objetivo", limite=200, offset=offset)["materiales"])
     esperados = {r["id"] for r in objetivos}
-    if set(seleccion) != esperados:
+    pendientes = pendientes or {}
+    if set(seleccion) & set(pendientes) or set(seleccion) | set(pendientes) != esperados:
         raise ValueError("La selección no cubre exactamente todos los objetivos de Ciencias de la biblioteca")
     from goes_science_kg.clases.revision_contenido import validar_seleccion
 
-    validar_seleccion(base, seleccion, obligatoria=len(esperados) == 1013)
+    validar_seleccion(base, seleccion, obligatoria=len(esperados) == 1013, excluidos=frozenset(pendientes))
     originales, resultados, preparaciones, auditorias = {}, {}, {}, {}
     registros, unidades, contenidos = [], defaultdict(list), set()
+    sin_guion = defaultdict(list)
     for ficha in objetivos:
         id_ = ficha["id"]
+        if id_ in pendientes:
+            clave = (ficha["grados"][0], ficha["asignatura"], ficha["unidad"])
+            sin_guion[clave].append(_pendiente_verificado(base, id_, pendientes[id_]) | {"titulo": ficha["titulo"]})
+            continue
         ref = seleccion[id_]
         ruta_p, ruta_r = ref["preparacion"], ref["resultado"]
         if ruta_p not in preparaciones:
@@ -161,7 +189,10 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro):
         )
         registros.append(material)
         unidades[(ficha["grados"][0], ficha["asignatura"], ficha["unidad"])].append(material)
+    for clave in set(sin_guion) - set(unidades):
+        unidades[clave] = []
     for (grado, asignatura, unidad), clases in sorted(unidades.items()):
+        faltan = sorted(sin_guion.get((grado, asignatura, unidad), []), key=lambda x: x["fila_id"])
         clases.sort(key=lambda c: (c["documento"]["origen"]["hoja"], c["documento"]["origen"]["fila"], c["fila_id"]))
         documento = {
             "version_contenido": "guion-unidad-v4-1",
@@ -179,6 +210,9 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro):
             "orden": "documental; no secuencia pedagógica inferida ni carga horaria oficial",
             "licencia_adaptacion": LICENCIA,
         }
+        if faltan:
+            documento["completa"] = False
+            documento["objetivos_sin_guion_liberado"] = faltan
         registros.append(
             _entrada(
                 "CLASE-UNIDAD-V4:" + sha(serializar(documento)),
