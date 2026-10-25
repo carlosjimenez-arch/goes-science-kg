@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 import os
 import tempfile
-import zipfile
 from pathlib import Path
 from typing import Annotated
 
@@ -52,47 +51,19 @@ def preparar(destino: Annotated[Path, typer.Option()]) -> None:
 @app.command("subir")
 def subir(plan: Path, recibo: Annotated[Path | None, typer.Option()] = None) -> None:
     """Upload new protected objects and verify downloaded bytes."""
+    from goes_science_kg.operacion.sincronizacion import subir_paquete
+
     salida = recibo or ruta(RECIBO)
     if salida.exists() or salida.is_symlink():
         raise typer.BadParameter("El recibo ya existe; use otro nombre para una nueva versión")
-    preparado = _leer(plan)
-    if preparado.get("version") != datos.VERSION:
-        raise typer.BadParameter("Plan incompatible")
-    local = preparado["paquete_local"]
-    archivo = Path(local["archivo"])
-    if datos.digest(archivo) != local["sha256"]:
-        raise typer.BadParameter("El paquete cambió después de prepararse")
-    almacen = _almacen()
-    objeto = almacen.crear(archivo, f"repositorio/objetos/{local['sha256']}.zip")
-    with tempfile.TemporaryDirectory(prefix="goes-datos-manifest-") as temporal:
-        inventario = Path(temporal) / "inventario.json"
-        with zipfile.ZipFile(archivo) as zip_:
-            inventario.write_bytes(zip_.read("MANIFEST_RESPALDO.json"))
-        manifest = json.loads(inventario.read_bytes())
-        comprobante = {
-            "version": datos.VERSION,
-            "paquete": objeto,
-            "inventario": almacen.crear(inventario, f"repositorio/inventarios/{local['sha256']}.json"),
-            "huella_inventario": local["huella_inventario"],
-            "archivos": local["archivos"],
-            "bytes_originales": manifest["bytes_sin_comprimir"],
-            "montajes": preparado["montajes"],
-            "enlaces": preparado["enlaces"],
-            "identidad_ledger": preparado["identidad_ledger"],
-            "max_bytes_sin_comprimir": datos.limite_bytes(preparado.get("max_bytes_sin_comprimir")),
-        }
-        descriptor = Path(temporal) / "recibo.json"
-        _guardar(descriptor, comprobante)
-        comprobante["descriptor"] = almacen.crear(descriptor, f"repositorio/recibos/{local['sha256']}.json")
+    try:
+        comprobante = subir_paquete(_almacen(), _leer(plan))
+    except ValueError as error:
+        raise typer.BadParameter(str(error)) from error
     _guardar(salida, comprobante)
-    typer.echo(json.dumps({"recibo": str(salida), "uri": objeto["uri"], "archivos": local["archivos"]}))
-
-
-def _descargar_restaurar(comprobante: dict, destino: Path) -> dict:
-    with tempfile.TemporaryDirectory(prefix="goes-datos-gcs-") as temporal:
-        archivo = Path(temporal) / "datos.zip"
-        _almacen().descargar(comprobante["paquete"], archivo)
-        return datos.restaurar(archivo, destino, comprobante)
+    typer.echo(
+        json.dumps({"recibo": str(salida), "uri": comprobante["paquete"]["uri"], "archivos": comprobante["archivos"]})
+    )
 
 
 @app.command("restaurar")
@@ -102,20 +73,61 @@ def restaurar(
     recibo: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
     """Restore an exact generation only after verifying every file."""
+    from goes_science_kg.operacion.sincronizacion import descargar_corpus, restaurar_en_repo
+
     if en_repo == (destino is not None):
         raise typer.BadParameter("Indique --destino vacío o --en-repo")
     comprobante = _leer(recibo)
     if en_repo:
-        with tempfile.TemporaryDirectory(prefix="goes-datos-restaurados-") as temporal:
-            restaurado = Path(temporal) / "corpus"
-            resultado = _descargar_restaurar(comprobante, restaurado)
-            datos.incorporar(restaurado, ruta("."), comprobante["montajes"])
-            from goes_science_kg.operacion.presupuestos_restaurados import migrar_presupuestos
-
-            resultado["presupuestos"] = migrar_presupuestos(ruta("."), comprobante, resultado["sqlite_verificados"])
+        resultado = restaurar_en_repo(_almacen(), comprobante, ruta("."))
     else:
-        resultado = _descargar_restaurar(comprobante, destino.resolve())
+        resultado = descargar_corpus(_almacen(), comprobante, destino.resolve())
     typer.echo(json.dumps(resultado))
+
+
+def _sincronizador():
+    from goes_science_kg.operacion.sincronizacion import Sincronizador
+
+    return Sincronizador(ruta("."), _almacen())
+
+
+@app.command("estado")
+def estado() -> None:
+    """Compare local corpus, teacher library, and class delivery with their receipts, without downloading."""
+    typer.echo(json.dumps(_sincronizador().estado(), ensure_ascii=False, indent=2))
+
+
+@app.command("verificar")
+def verificar() -> None:
+    """Hash the local corpus against the remote inventory of the pinned generation."""
+    resultado = _sincronizador().verificar_corpus()
+    typer.echo(json.dumps(resultado, ensure_ascii=False, indent=2))
+    if resultado["total_distintos"] or resultado["total_faltan"]:
+        raise typer.Exit(1)
+
+
+@app.command("sincronizar")
+def sincronizar() -> None:
+    """Download from GCS every pinned component that is missing locally; never overwrite existing data."""
+    try:
+        resultado = _sincronizador().sincronizar()
+    except ValueError as error:
+        raise typer.BadParameter(str(error)) from error
+    typer.echo(json.dumps(resultado, ensure_ascii=False, indent=2))
+
+
+@app.command("publicar")
+def publicar(
+    trabajo: Annotated[Path, typer.Option(help="Carpeta nueva fuera del repositorio para el paquete")],
+) -> None:
+    """Package, upload, restore-verify, and adopt a new corpus receipt in one fail-closed step."""
+    if trabajo.resolve().is_relative_to(ruta(".").resolve()):
+        raise typer.BadParameter("La carpeta de trabajo debe estar fuera del repositorio")
+    try:
+        resultado = _sincronizador().publicar_corpus(cargar("datos_externos"), trabajo.resolve())
+    except ValueError as error:
+        raise typer.BadParameter(str(error)) from error
+    typer.echo(json.dumps(resultado, ensure_ascii=False, indent=2))
 
 
 @app.command("inventario")
@@ -131,8 +143,10 @@ def inventario(recibo: Annotated[Path | None, typer.Option()] = None) -> None:
 @app.command("retirar")
 def retirar(plan: Path, recibo: Annotated[Path | None, typer.Option()] = None) -> None:
     """Verify remote restoration and retire only originals unchanged since the plan."""
+    from goes_science_kg.operacion.sincronizacion import descargar_corpus
+
     comprobante = _leer(recibo)
     with tempfile.TemporaryDirectory(prefix="goes-datos-verificados-") as temporal:
-        verificacion = _descargar_restaurar(comprobante, Path(temporal) / "corpus")
+        verificacion = descargar_corpus(_almacen(), comprobante, Path(temporal) / "corpus")
         resultado = datos.retirar(ruta("."), _leer(plan), comprobante, cargar("datos_externos"))
     typer.echo(json.dumps(resultado | {"restauracion_verificada": verificacion}))

@@ -94,10 +94,22 @@ def progresion() -> None:
 
 
 @app.command()
-def servir(puerto: int = 8010, host: str = "127.0.0.1") -> None:
+def servir(
+    puerto: int = 8010,
+    host: str = "127.0.0.1",
+    sincronizar: bool = typer.Option(False, help="Descarga desde GCS los datos fijados que falten antes de servir"),
+) -> None:
     """Serve the local read API and OpenAPI documentation through Uvicorn."""
     import uvicorn
 
+    if sincronizar:
+        from goes_science_kg.cli.datos import _sincronizador
+
+        try:
+            acciones = _sincronizador().sincronizar()["acciones"]
+        except ValueError as error:
+            raise typer.BadParameter(str(error)) from error
+        typer.echo(json.dumps({"sincronizado": sorted(acciones) or "sin cambios"}, ensure_ascii=False))
     uvicorn.run("goes_science_kg.api:app", host=host, port=puerto)
 
 

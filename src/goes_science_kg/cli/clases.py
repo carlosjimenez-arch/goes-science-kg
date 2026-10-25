@@ -39,7 +39,15 @@ def _preparar_ejecucion(preparaciones, paralelas):
     ledger = base / "data/operaciones/registro.sqlite"
     if not ledger.is_file():
         raise typer.BadParameter("Falta el ledger acumulado; restaure el corpus completo antes de generar")
-    proveedor = ProveedorClases(Registro(ledger), concurrencia=paralelas)
+    from goes_science_kg.clases.presupuesto import configuracion
+
+    cfg = configuracion()
+    proveedor = ProveedorClases(
+        Registro(ledger),
+        concurrencia=paralelas,
+        max_llamadas=cfg["max_llamadas_acumuladas"],
+        max_usd=cfg["max_reserva_usd_acumulada"],
+    )
     lotes = cargar_lotes(preparaciones)
     huellas = {p["corpus_sha256"] for p in lotes}
     if len(huellas) != 1:

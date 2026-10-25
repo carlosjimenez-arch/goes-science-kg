@@ -367,6 +367,8 @@ async function abrirConcepto(id) {
   }
 }
 const TIPOS_MATERIAL = {
+  guion_clase: ['Guion de clase', 'V4'],
+  guion_unidad: ['Guion por unidad', 'V4'],
   paquete_objetivo: ['Preparación por objetivo', 'V4'],
   paquete_unidad: ['Preparación por unidad', 'V4'],
   unidad_experimental: ['Unidad experimental', 'V4'],
@@ -386,7 +388,7 @@ async function materiales() {
   ]);
   return { datos: d, html: `${titulo('Materiales docentes', 'Biblioteca verificada para preparar clases a partir de las propuestas y del material histórico revisado.')}
     <div class="stats">${stat(salud.materiales, 'registros en la biblioteca', true)}${stat(salud.por_tipo.paquete_objetivo || 0, 'preparaciones por objetivo')}${stat(salud.por_tipo.paquete_unidad || 0, 'preparaciones por unidad')}${stat(0, 'llamadas a modelos por consulta')}</div>
-    <div class="tabs tabs-wrap spaced">${Object.entries(TIPOS_MATERIAL).map(([k, [n]]) => `<button data-action="mat-tipo" data-value="${k}" class="${S.matTipo === k ? 'on' : ''}">${n} · ${numero(salud.por_tipo[k] || 0)}</button>`).join('')}</div>
+    <div class="tabs tabs-wrap spaced">${Object.entries(TIPOS_MATERIAL).filter(([k]) => !k.startsWith('guion_') || salud.por_tipo[k]).map(([k, [n]]) => `<button data-action="mat-tipo" data-value="${k}" class="${S.matTipo === k ? 'on' : ''}">${n} · ${numero(salud.por_tipo[k] || 0)}</button>`).join('')}</div>
     ${filtros({ disciplina: false })}
     <section class="card spaced"><div class="table-wrap"><table class="atable"><thead><tr><th>Material</th><th>Grados</th><th>Estado</th><th></th></tr></thead><tbody>${d.materiales.map((m) => `<tr><td class="objetivo">${esc(m.titulo)}<div class="mini">${esc(tipoNombre)} · ${esc(m.asignatura)}${m.unidad ? ' · ' + esc(m.unidad) : ''}</div></td><td>${esc(m.grados.map((g) => g + '.º').join(', ')) || '—'}</td><td><span class="pill ${/revisad|respaldad/.test(m.estado) ? 'green' : /pendiente/.test(m.estado) ? 'amber' : 'gray'}">${esc(m.estado.replaceAll('_', ' '))}</span></td><td><button class="btn sm" data-action="material" data-id="${esc(m.id)}">Abrir</button></td></tr>`).join('')}</tbody></table></div>${!d.materiales.length ? vacio('No hay materiales con estos filtros.') : ''}${paginador(d)}</section>
     ${aviso('Las preparaciones reutilizan propuestas con revisión automática de su unidad; no son guiones cronometrados nuevos ni acreditan aprobación institucional o eficacia en aula. El material histórico conserva su estado original, incluidos los pendientes.')}<p class="clip-id">Biblioteca ${esc(salud.biblioteca_id)} · snapshot ${esc(salud.snapshot_id)}</p>` };
@@ -404,7 +406,7 @@ async function abrirMaterial(id) {
     $('modal-title').textContent = m.titulo;
     $('modal-body').innerHTML =
       `<span class="pill purple">${esc(TIPOS_MATERIAL[m.tipo]?.[0] || m.tipo)}</span> <span class="pill gray">${esc(m.estado.replaceAll('_', ' '))}</span>
-      <div class="checks spaced"><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="md">${icono('dl')}Markdown</button><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="json">${icono('dl')}JSON</button>${m.fila_id ? `<button class="btn sm" data-action="fila" data-id="${esc(m.fila_id)}">Ver la fila curricular</button>` : ''}</div>
+      <div class="checks spaced"><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="md">${icono('dl')}Markdown</button><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="json">${icono('dl')}JSON</button>${m.tipo === 'guion_clase' ? `<button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="md" data-audiencia="estudiante">${icono('dl')}Hoja de estudiante</button>` : ''}${m.fila_id ? `<button class="btn sm" data-action="fila" data-id="${esc(m.fila_id)}">Ver la fila curricular</button>` : ''}</div>
       <pre class="source-text">${esc(md)}</pre><p class="clip-id">${esc(m.id)} · SHA ${esc(m.sha256)}</p>`;
   } catch (e) {
     if (turno === modalEpoch) $('modal-body').innerHTML = aviso(e.message);
@@ -572,9 +574,14 @@ async function accion(e) {
     else if (a === 'material') await abrirMaterial(target.dataset.id);
     else if (a === 'mat-descarga') {
       const formato = target.dataset.formato === 'json' ? 'json' : 'md';
+      const estudiante = target.dataset.audiencia === 'estudiante';
       await descargar(
-        '/api/v4/materiales/descarga/' + encodeURIComponent(target.dataset.id) + '?formato=' + formato,
-        `material-${target.dataset.id.slice(-12).replace(/[^a-zA-Z0-9_-]/g, '_')}.${formato}`,
+        '/api/v4/materiales/descarga/' +
+          encodeURIComponent(target.dataset.id) +
+          '?formato=' +
+          formato +
+          (estudiante ? '&audiencia=estudiante' : ''),
+        `${estudiante ? 'estudiante' : 'material'}-${target.dataset.id.slice(-12).replace(/[^a-zA-Z0-9_-]/g, '_')}.${formato}`,
       );
       toast('Material descargado · 0 llamadas a modelos');
     } else if (a === 'prog-vista' || a === 'prog-patron' || a === 'mat-tipo') {
