@@ -9,6 +9,7 @@ al grafo y sus expedientes. [Contrato de la aplicación](../specs/17_aplicacion_
 ```bash
 uv sync --extra dev --extra pdf --extra rag --extra api --extra motor
 uv run gskg datos restaurar --en-repo  # sólo si el corpus no está repuesto
+uv run gskg materiales restaurar       # biblioteca docente, desde su recibo propio
 uv run gskg servir --puerto 8010
 ```
 
@@ -23,11 +24,16 @@ La aplicación no necesita claves nuevas ni llama a Vertex para consultar, expor
   sin integración porque no hay resultados escolares conectados.
 - **Corpus:** documentos registrados o citados por los expedientes, con SHA, usos y enlaces disponibles.
 - **Grafo 3D:** relaciones reales, filtros de grado/disciplina/texto, giro, zoom, detalle y tabla accesible.
+- **Progresión 2.º–11.º:** cómo se introduce y refuerza cada concepto, patrones de refuerzo, prerrequisitos
+  tardíos clasificados, entrada a bachillerato y trayectorias con sus filas. Vista original o con propuestas.
+  [Método y límites](PROGRESION_2_11.md).
 - **Revisión:** dictámenes de ciencia, currículo, psicopedagogía y adversarial, con rondas y criterios.
 - **Curricularización:** comparación por fila, indicadores, evaluación, didáctica, fases y alertas del
   original. Exportación CSV o Excel íntegra, sin fórmulas ejecutables aportadas por contenido.
 - **Templates y Brief:** elegir hasta veinte objetivos y compilar briefs Markdown. Se organizan los
   textos ya respaldados; no se presentan como nuevas clases generadas o validadas.
+- **Materiales docentes:** preparaciones por objetivo y unidad, paquetes históricos y bancos de actividades,
+  experimentos, dificultades y microtemas, con descarga Markdown/JSON y enlace a la fila curricular.
 - **Administración:** snapshot, archivos y sus SHA; lectura del gasto reservado cuando existe ledger.
   No crea cuentas ni presupone una sesión institucional autenticada.
 

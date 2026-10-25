@@ -47,7 +47,7 @@ def registrar_interfaz(app: FastAPI) -> None:
     async def cabeceras(peticion: Request, siguiente: Callable) -> Response:
         """Apply local application security and no-store response headers."""
         respuesta = await siguiente(peticion)
-        if peticion.url.path.startswith(("/app", "/api/v4/interfaz")):
+        if peticion.url.path.startswith(("/app", "/api/v4/interfaz", "/api/v4/materiales")):
             respuesta.headers["X-Content-Type-Options"] = "nosniff"
             respuesta.headers["Referrer-Policy"] = "no-referrer"
             respuesta.headers["Cache-Control"] = "private, no-store"
@@ -200,7 +200,13 @@ def crear_router_interfaz(leer: Callable[[], RuntimeProducto], base: Path) -> AP
         s = consultar()
         try:
             detalle = progresion_disponible(
-                lambda: progresion_v4.concepto(s.producto.manifest.snapshot_id, vista, concepto_id, s.filas)
+                lambda: progresion_v4.concepto(
+                    s.producto.manifest.snapshot_id,
+                    vista,
+                    concepto_id,
+                    s.filas,
+                    (lambda f: s.ficha(s.filas[f]).get("objetivo_propuesto")) if vista == "propuesta" else None,
+                )
             )
         except KeyError as error:
             raise HTTPException(404, "El concepto no aparece en la progresión de esta publicación") from error

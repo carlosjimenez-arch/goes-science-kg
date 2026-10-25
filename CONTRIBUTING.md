@@ -23,8 +23,8 @@ Consultar [operación](docs/OPERACION.md) y [datos externos](docs/DATOS_EXTERNOS
 
 Las fuentes, publicaciones, dictámenes y ledgers existentes son evidencia. Cambiar un docstring en un
 extractor firmado puede invalidar publicaciones: `ingesta/extraccion.py` e `ingesta/estructurados.py`
-conservan sus bytes históricos. Una modificación exige una migración explícita y otra publicación
-verificada. No cambiar hashes esperados para hacer pasar una comprobación.
+conservan sus bytes históricos, igual que `clases/` y `cli/clases.py` mientras la campaña de guiones siga
+abierta. Una modificación exige una migración explícita y otra publicación verificada. No cambiar hashes esperados para hacer pasar una comprobación.
 
 Los tests deben inyectar proveedores simulados. Ninguna comprobación de calidad autoriza llamadas
 pagadas, reejecución de jueces ni reinicios de presupuesto. Las correcciones de comportamiento

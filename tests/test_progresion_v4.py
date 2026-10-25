@@ -199,15 +199,34 @@ def test_una_mencion_anterior_evita_un_falso_prerrequisito_tardio():
     assert len(sin["tardias"]) == 1 and con["tardias"] == [] and con["ordenadas"] == 1
 
 
-def test_siglas_distintivas_cuentan_como_mencion():
+def test_siglas_distintivas_cuentan_como_mencion_solo_en_mayusculas():
     voc = {
         "CON:b/atp": {"nombre": "ATP y energía en los sistemas vivos", "sinonimos": []},
+        "CON:f/mas": {"nombre": "Movimiento armónico simple", "sinonimos": ["MAS"]},
         "CON:b/adn": {"nombre": "Estructura del ADN", "sinonimos": []},
         "CON:b/rep": {"nombre": "Replicación del ADN", "sinonimos": []},
     }
     claves = p4.claves_lexicas(voc)
-    assert "atp" in claves["CON:b/atp"] and "adn" not in claves["CON:b/adn"]
-    assert p4.menciones({"f": (6, p4.plano("Formación de ATP"))}, claves) == {"CON:b/atp": [6]}
+    assert "SIGLA:ATP" in claves["CON:b/atp"] and "SIGLA:ADN" not in claves["CON:b/adn"]
+    textos = {
+        "f": (6, p4.plano("Formación de ATP"), "Formación de ATP"),
+        "g": (2, p4.plano("Explica más energía"), "Explica más energía"),
+    }
+    assert p4.menciones(textos, claves) == {"CON:b/atp": [6]}
+
+
+def test_fragmentos_genericos_o_compartidos_no_son_claves():
+    voc = {
+        "CON:t/luna": {"nombre": "La Luna: características y origen", "sinonimos": []},
+        "CON:b/a": {"nombre": "Seres vivos y su entorno", "sinonimos": []},
+        "CON:b/b": {"nombre": "Clasificación de seres vivos", "sinonimos": ["seres vivos"]},
+        "CON:f/c": {"nombre": "Fuerzas de contacto y a distancia", "sinonimos": []},
+        "CON:b/d": {"nombre": "Seres vivos y su hábitat", "sinonimos": []},
+    }
+    claves = p4.claves_lexicas(voc)
+    todas = {k for ks in claves.values() for k in ks}
+    assert {"caracteristicas", "seres vivos", "a distancia", "su entorno"}.isdisjoint(todas)
+    assert "la luna caracteristicas y origen" in claves["CON:t/luna"]
 
 
 def test_prerrequisito_solo_mencionado_conserva_nombre_y_se_marca():
@@ -224,3 +243,19 @@ def test_prerrequisito_solo_mencionado_conserva_nombre_y_se_marca():
     tardia = vista["prerrequisitos"]["tardias"][0]
     assert tardia["prerrequisito_solo_mencion"] and tardia["nombre_prerrequisito"] == "Catalizadores"
     assert tardia["grado_prerrequisito"] == 9
+
+
+def test_nombre_completo_no_se_pierde_por_fragmentos_ajenos():
+    voc = {
+        "CON:b/foto": {"nombre": "Fotosíntesis", "sinonimos": []},
+        "CON:b/fr": {"nombre": "Fotosíntesis y respiración celular", "sinonimos": []},
+    }
+    claves = p4.claves_lexicas(voc)
+    assert claves["CON:b/foto"] == ["fotosintesis"] and "respiracion celular" in claves["CON:b/fr"]
+
+
+def test_validador_exige_claves_y_objetos():
+    assert c4.errores_lote_v4(_lote(), {"id": "F1"}) == ["la salida debe ser un arreglo de objetos JSON"]
+    salida = _salida()
+    del salida[0]["conceptos"]
+    assert any("faltan las claves" in e for e in c4.errores_lote_v4(_lote(), salida))

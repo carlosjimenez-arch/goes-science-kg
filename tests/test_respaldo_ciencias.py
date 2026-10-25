@@ -263,3 +263,25 @@ def test_sqlite_sin_auxiliares_conserva_sus_bytes_exactos(tmp_path):
     with zipfile.ZipFile(archivo) as zip_:
         manifest = json.loads(zip_.read("MANIFEST_RESPALDO.json"))
     assert manifest["archivos"]["biblioteca.sqlite"]["copia_sqlite_consistente"] is False
+
+
+@pytest.mark.parametrize("modo", ["MEMORY", "OFF", "DELETE"])
+def test_escritor_sin_confirmar_no_entra_al_paquete_y_no_bloquea(tmp_path, monkeypatch, modo):
+    # Un escritor que vuelca páginas sin confirmar (incluso sin journal en disco) debe hacer fallar el respaldo.
+    monkeypatch.setattr(respaldo, "BACKUP_SEGUNDOS", 0.5)
+    monkeypatch.setattr(respaldo, "BLOQUEO_SEGUNDOS", 0.2)
+    raiz = tmp_path / "original"
+    raiz.mkdir()
+    con = sqlite3.connect(raiz / "x.sqlite", isolation_level=None)
+    con.execute(f"PRAGMA journal_mode={modo}")
+    con.execute("CREATE TABLE t (v TEXT)")
+    con.executemany("INSERT INTO t VALUES (?)", [("a" * 200,)] * 300)
+    con.execute("PRAGMA cache_size=5")
+    con.execute("BEGIN")
+    con.executemany("INSERT INTO t VALUES (?)", [("b" * 500,)] * 2000)
+    try:
+        with pytest.raises(TimeoutError, match="escritor SQLite"):
+            crear_paquete(raiz, ["x.sqlite"], tmp_path / "paquete.zip")
+    finally:
+        con.execute("ROLLBACK")
+        con.close()

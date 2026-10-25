@@ -14,8 +14,9 @@ web externos. `api_producto.py`, readiness y `api_interfaz.py` comparten `produc
 petición revalida el lector, aunque la proyección ya esté en caché. Los cambios del snapshot invalidan
 la instancia. El navegador comprueba la identidad de cada respuesta y rechaza mezclar generaciones.
 
-Se mantienen ocho secciones: inicio, monitoreo nacional, corpus, grafo 3D, revisión de conocimiento,
-curricularización, templates/brief y administración. Todos los conteos derivan del snapshot. LXP,
+La aplicación tiene diez secciones: inicio, monitoreo nacional, corpus, grafo 3D, progresión 2.º–11.º,
+revisión de conocimiento, curricularización, templates/brief, materiales docentes y administración
+(las dos nuevas se añadieron el 25 de octubre de 2026). Todos los conteos derivan del snapshot. LXP,
 territorio, autenticación/usuarios y aprobación institucional tienen estados explícitos sin datos o
 sin integración; no hay usuarios inventados ni edición implícita del currículo publicado.
 
@@ -33,6 +34,15 @@ sin integración; no hay usuarios inventados ni edición implícita del currícu
 | POST `/briefs` | Compilación documental de 1–20 objetivos respaldados; cero llamadas a modelos |
 | GET `/exportaciones/matriz.xlsx` | Matriz original/propuesta con identidad del snapshot |
 | GET `/administracion` | Identidad de publicación, permisos y lectura opcional del ledger |
+| GET `/progresion` | Patrones de refuerzo, orden de prerrequisitos, entrada a bachillerato y verificación |
+| GET `/progresion/conceptos` | Trayectorias filtradas por disciplina, patrón o texto, con grados y menciones |
+| GET `/progresion/conceptos/{concepto_id}` | Trayectoria y filas que la sustentan en cada grado |
+
+Las rutas de progresión aceptan `vista=original|propuesta`. Leen el artefacto derivado
+`data/producto/progresion_v4/progresion.json` sólo si pertenece al snapshot vigente; si falta o es de otra
+publicación responden 503 «No hay datos disponibles de progresión». La sección «Materiales docentes» consume
+la API de lectura `/api/v4/materiales` (spec 18); sin biblioteca restaurada declara que no hay datos.
+[Método y límites](../docs/PROGRESION_2_11.md).
 
 Los filtros rechazan grados, disciplinas, límites e identidades ajenas. El detalle y los briefs reabren
 las celdas originales con el verificador existente; una fuente modificada produce 503. El brief mantiene

@@ -32,29 +32,36 @@ class ProgresionCurricular:
         self.archivo = archivo
         self._lock = Lock()
         self._firma: tuple[int, int] | None = None
-        self._documento: dict | None = None
+        self._cargado: tuple[dict, str] | None = None
 
-    def documento(self, snapshot_id: str) -> dict:
-        """Return the progression document only when it belongs to the active snapshot."""
+    def _cargar(self) -> tuple[dict, str]:
+        """Return the cached document and the SHA-256 of the exact bytes it was parsed from."""
         with self._lock:
             try:
                 estado = self.archivo.stat()
-            except OSError as error:
+                firma = (estado.st_mtime_ns, estado.st_size)
+                if firma != self._firma or self._cargado is None:
+                    raw = self.archivo.read_bytes()
+                    documento = json.loads(raw)
+                    if not isinstance(documento, dict):
+                        raise ValueError("Documento de progresión inválido")
+                    self._cargado, self._firma = (documento, hashlib.sha256(raw).hexdigest()), firma
+            except (OSError, ValueError) as error:
                 raise FuenteNoDisponible(SIN_DATOS) from error
-            firma = (estado.st_mtime_ns, estado.st_size)
-            if firma != self._firma:
-                try:
-                    self._documento = json.loads(self.archivo.read_text(encoding="utf-8"))
-                except (OSError, ValueError) as error:
-                    raise FuenteNoDisponible(SIN_DATOS) from error
-                self._firma = firma
-        if self._documento.get("snapshot_id") != snapshot_id:
+            return self._cargado
+
+    def documento(self, snapshot_id: str) -> dict:
+        """Return the progression document only when it belongs to the active snapshot."""
+        documento, _ = self._cargar()
+        if documento.get("snapshot_id") != snapshot_id:
             raise FuenteNoDisponible(SIN_DATOS)
-        return self._documento
+        return documento
 
     def resumen(self, snapshot_id: str, vista: str) -> dict:
         """Return aggregate patterns, prerequisite order, transition, and grade summaries for one view."""
-        doc = self.documento(snapshot_id)
+        doc, sha = self._cargar()
+        if doc.get("snapshot_id") != snapshot_id:
+            raise FuenteNoDisponible(SIN_DATOS)
         v = doc["vistas"][vista]
         prer = v["prerrequisitos"]
         nombres = {c: d["nombre"] for c, d in v["conceptos"].items()}
@@ -72,7 +79,8 @@ class ProgresionCurricular:
             "grados_promedio_por_concepto": v["grados_promedio_por_concepto"],
             "patrones": v["patrones"],
             "patrones_con_menciones": v.get("patrones_con_menciones", {}),
-            "verificacion": self.verificacion(),
+            "verificacion": self.verificacion(sha),
+            "prerrequisitos_solo_etiquetas": v.get("prerrequisitos_solo_etiquetas"),
             "prerrequisitos": {
                 k: prer[k] for k in ("aristas_evaluables", "ordenadas", "simultaneas", "proporcion_ordenada")
             }
@@ -93,16 +101,15 @@ class ProgresionCurricular:
             "practicas": {p: {k: d[k] for k in CAMPOS_LISTADO if k in d} for p, d in sorted(v["practicas"].items())},
         }
 
-    def verificacion(self) -> dict | None:
-        """Return the independent verification summary only if it was made on this exact artifact."""
+    def verificacion(self, sha: str) -> dict | None:
+        """Return the independent verification summary only if it was made on the bytes being served."""
         for archivo in sorted(self.archivo.parent.glob("verificacion_prioritarias_*.json"), reverse=True):
             try:
                 datos = json.loads(archivo.read_text(encoding="utf-8"))
-                actual = hashlib.sha256(self.archivo.read_bytes()).hexdigest()
-            except (OSError, ValueError):
+                if datos.get("progresion_sha256") == sha:
+                    return {k: datos[k] for k in ("fecha", "metodo", "limite")} | {"conteo": datos["vigente"]["conteo"]}
+            except (OSError, ValueError, KeyError, TypeError, AttributeError):
                 continue
-            if datos.get("progresion_sha256") == actual:
-                return {k: datos[k] for k in ("fecha", "metodo", "limite")} | {"conteo": datos["vigente"]["conteo"]}
         return None
 
     def conceptos(self, snapshot_id: str, vista: str, *, disciplina=None, patron=None, q: str = "") -> list[dict]:
@@ -111,7 +118,7 @@ class ProgresionCurricular:
         consulta = normalizar(q)
         salida = []
         for ident, d in sorted(v["conceptos"].items(), key=lambda x: (x[1]["primera"], x[1]["nombre"])):
-            if disciplina and d["asignatura"] != disciplina:
+            if disciplina and disciplina not in (d.get("asignaturas") or [d["asignatura"]]):
                 continue
             if patron and d["patron"] != patron:
                 continue
@@ -119,12 +126,16 @@ class ProgresionCurricular:
                 continue
             salida.append(
                 {"id": ident, "nombre": d["nombre"], "asignatura": d["asignatura"], "nivel": d["nivel"]}
+                | {"asignaturas": d.get("asignaturas") or [d["asignatura"]]}
                 | {k: d[k] for k in CAMPOS_LISTADO}
             )
         return salida
 
-    def concepto(self, snapshot_id: str, vista: str, ident: str, filas: dict) -> dict:
-        """Return one concept trajectory with the verified row text behind each grade."""
+    def concepto(self, snapshot_id: str, vista: str, ident: str, filas: dict, objetivo=None) -> dict:
+        """Return one concept trajectory with the verified row text behind each grade.
+
+        `objetivo(fila_id)` may supply the proposal's refined objective for the proposals view.
+        """
         v = self.documento(snapshot_id)["vistas"][vista]
         if ident not in v["conceptos"]:
             raise KeyError(ident)
@@ -136,6 +147,7 @@ class ProgresionCurricular:
                     "asignatura_malla": filas[f].asignatura_malla,
                     "unidad": filas[f].unidad,
                     "procedimental": filas[f].procedimental,
+                    "objetivo_propuesto": objetivo(f) if objetivo else None,
                 }
                 for f in ids
                 if f in filas

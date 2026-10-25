@@ -34,38 +34,71 @@ def plano(texto: str) -> str:
     return " " + re.sub(r"[^a-z0-9]+", " ", sin_acentos).strip() + " "
 
 
-def claves_lexicas(vocabulario: dict[str, dict], *, min_palabra: int = 8) -> dict[str, list[str]]:
-    """Derive whole-word lookup keys per concept from its name, synonyms, and name segments.
+VACIAS = frozenset("a al con de del e el en la las lo los o para por se sin sobre su sus u un una y no".split())
+PREFIJO_SIGLA = "SIGLA:"
 
-    Multi-word segments are kept; a single-word key must be long and distinctive (used by one concept only),
-    so generic words such as "energía" or "movimiento" never count as a mention by themselves. Upper-case
-    acronyms (ATP, GPS) count when a single concept declares them.
+
+def _contenido(clave: str) -> int:
+    return sum(1 for p in clave.split() if p not in VACIAS)
+
+
+def claves_lexicas(vocabulario: dict[str, dict], *, min_palabra: int = 8) -> dict[str, list[str]]:
+    """Derive whole-word lookup keys per concept that a single concept owns.
+
+    A full name or synonym qualifies when no other concept declares it and it is not part of two or more other
+    names (then it is generic). A fragment
+    obtained by splitting a name on connectors needs two or more content words and must not appear anywhere
+    else in the vocabulary, so generic phrases ("seres vivos", "características") never count as a mention.
+    Upper-case acronyms (ATP) are kept with a marker and matched case-sensitively against the original text.
     """
-    candidatos: dict[str, set[str]] = {}
-    siglas: dict[str, set[str]] = {}
+    completos_por: dict[str, set[str]] = {}
+    fragmentos_por: dict[str, set[str]] = {}
+    siglas_por: dict[str, set[str]] = {}
     for ident, c in vocabulario.items():
         textos = [c.get("nombre", ""), *(c.get("sinonimos") or [])]
-        partes = {p for t in textos for p in re.split(r",|:|;|\(|\)| y | e | o ", t)}
-        candidatos[ident] = {k for p in [*textos, *partes] if (k := plano(p).strip())}
-        siglas[ident] = {plano(s).strip() for t in textos for s in re.findall(r"\b[A-Z]{3,5}\b", t)}
-    usos = Counter(k for ks in candidatos.values() for k in ks if " " not in k)
-    usos_siglas = Counter(k for ks in siglas.values() for k in ks)
+        completos_por[ident] = {k for t in textos if (k := plano(t).strip())}
+        fragmentos_por[ident] = {
+            k for t in textos for p in re.split(r",|:|;|\(|\)| y | e | o ", t) if (k := plano(p).strip())
+        } - completos_por[ident]
+        siglas_por[ident] = {PREFIJO_SIGLA + s for t in textos for s in re.findall(r"\b[A-Z]{3,5}\b", t)}
+    usos_completos = Counter(k for ks in completos_por.values() for k in ks)
+    usos_fragmentos = Counter(k for ks in fragmentos_por.values() for k in ks)
+    usos_todos = usos_completos + usos_fragmentos
+    usos_siglas = Counter(k for ks in siglas_por.values() for k in ks)
     claves = {}
-    for ident, ks in candidatos.items():
-        palabras = {k for k in ks if (" " in k and len(k) >= min_palabra) or (len(k) >= min_palabra and usos[k] == 1)}
-        claves[ident] = sorted(palabras | {k for k in siglas[ident] if usos_siglas[k] == 1})
+    for ident in vocabulario:
+        nombres = {
+            k
+            for k in completos_por[ident]
+            if len(k) >= min_palabra
+            and (" " in k or _contenido(k) == 1)
+            and usos_completos[k] == 1
+            and usos_fragmentos[k] < 2
+        }
+        partes = {
+            k for k in fragmentos_por[ident] if _contenido(k) >= 2 and len(k) >= min_palabra and usos_todos[k] == 1
+        }
+        siglas = {k for k in siglas_por[ident] if usos_siglas[k] == 1}
+        claves[ident] = sorted(nombres | partes | siglas)
     return claves
 
 
-def menciones(textos: dict[str, tuple[int, str]], claves: dict[str, list[str]]) -> dict[str, list[int]]:
-    """Return the grades whose row text mentions each concept by any key, allowing simple plurals."""
+def menciones(textos: dict[str, tuple], claves: dict[str, list[str]]) -> dict[str, list[int]]:
+    """Return the grades whose row text mentions each concept by any key, allowing simple plurals.
+
+    `textos` maps a row to `(grado, plano(texto))` or `(grado, plano(texto), texto)`; acronyms need the
+    original text and are ignored without it.
+    """
     resultado = {}
     for ident, ks in claves.items():
-        grados = {
-            grado
-            for grado, texto in textos.values()
-            if any(f" {k} " in texto or f" {k}s " in texto or f" {k}es " in texto for k in ks)
-        }
+        palabras = [k for k in ks if not k.startswith(PREFIJO_SIGLA)]
+        siglas = [re.compile(rf"\b{re.escape(k.removeprefix(PREFIJO_SIGLA))}\b") for k in ks if k not in palabras]
+        grados = set()
+        for grado, texto, *original in textos.values():
+            if any(f" {k} " in texto or f" {k}s " in texto or f" {k}es " in texto for k in palabras) or (
+                original and any(r.search(original[0]) for r in siglas)
+            ):
+                grados.add(grado)
         if grados:
             resultado[ident] = sorted(grados)
     return resultado
@@ -182,20 +215,20 @@ def construccion(conceptos: dict[str, dict], aristas: list[tuple[str, str]]) -> 
     return resultado
 
 
+def _asignaturas(ident: str, datos: dict, vocabulario: dict[str, dict]) -> list[str]:
+    return datos.get("asignaturas") or [vocabulario.get(ident, {}).get("asignatura")]
+
+
 def transicion_bachillerato(conceptos: dict[str, dict], vocabulario: dict[str, dict]) -> dict:
     """Measure whether grade 10–11 concepts of each discipline had prior exposure in grades 2–9."""
     resultado = {}
     for disciplina in ("biologia", "fisica", "quimica", "ciencias_tierra_espacio"):
         en_bach = [
-            c
-            for c, d in conceptos.items()
-            if vocabulario.get(c, {}).get("asignatura") == disciplina and d["ultima"] >= 10
+            c for c, d in conceptos.items() if disciplina in _asignaturas(c, d, vocabulario) and d["ultima"] >= 10
         ]
         con_antecedente = [c for c in en_bach if conceptos[c]["primera"] <= 9]
         previos = [
-            c
-            for c, d in conceptos.items()
-            if vocabulario.get(c, {}).get("asignatura") == disciplina and d["primera"] <= 9
+            c for c, d in conceptos.items() if disciplina in _asignaturas(c, d, vocabulario) and d["primera"] <= 9
         ]
         continuados = [c for c in previos if conceptos[c]["ultima"] >= 10]
         resultado[disciplina] = {
@@ -278,7 +311,14 @@ def analizar(
     """Build the full progression analysis for one view, merging equivalent concepts across disciplines."""
     mapa = canonicos(list(equivalencias))
     campo = "texto_propuesta" if vista == "propuesta" else "texto"
-    textos = {f: (d["grado"], d.get(campo) or d.get("texto") or " ") for f, d in filas.items()}
+    textos = {
+        f: (
+            d["grado"],
+            d.get(campo) or d.get("texto") or " ",
+            d.get(campo + "_original") or d.get("texto_original") or "",
+        )
+        for f, d in filas.items()
+    }
     por_mencion: dict[str, set[int]] = defaultdict(set)
     for ident, grados in menciones(textos, claves_lexicas(vocabulario)).items():
         por_mencion[mapa.get(ident, ident)].update(grados)
@@ -301,6 +341,8 @@ def analizar(
     for ident, datos in conceptos.items():
         v = vocabulario.get(ident, {})
         datos |= {"nombre": v.get("nombre", ident), "asignatura": v.get("asignatura"), "nivel": v.get("nivel")}
+        miembros = agrupa.get(ident, [ident])
+        datos["asignaturas"] = sorted({a for m in miembros if (a := vocabulario.get(m, {}).get("asignatura"))})
         datos["construido_en"] = construido[ident]
         datos["agrupa"] = sorted(agrupa.get(ident, [ident]))
         datos["grados_mencion"] = sorted(por_mencion.get(ident, ()))
@@ -318,6 +360,11 @@ def analizar(
         else 0,
         "patrones_con_menciones": {
             p: sum(d["patron_con_menciones"] == p for d in conceptos.values()) for p in PATRONES
+        },
+        "prerrequisitos_solo_etiquetas": {
+            k: v
+            for k, v in coherencia_prerrequisitos(conceptos, aristas, canon_conf).items()
+            if k in ("aristas_evaluables", "ordenadas", "simultaneas", "proporcion_ordenada", "tardias_por_clase")
         },
         "prerrequisitos": _nombrar(
             coherencia_prerrequisitos(conceptos, aristas, canon_conf, primera_mencion), vocabulario, conceptos

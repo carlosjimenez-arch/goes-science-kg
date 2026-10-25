@@ -234,3 +234,14 @@ sin escrituras. [Contrato y límites de integración](../specs/17_aplicacion_cur
 la biblioteca independientemente del resto del corpus. Cada consulta usa SQLite inmutable;
 una modificación de archivos invalida el lector. No genera nuevos dictámenes ni llama a GCS
 por petición. [Contrato y límites](MATERIALES_DOCENTES.md).
+
+## Capa de conceptos y progresión V4
+
+`producto/conceptos_v4.py` prepara lotes ciegos por grado y disciplina catalogada para las filas de Ciencias y
+los objetivos precisados por la propuesta. El agente `etiquetador-conceptos` escribe sus salidas; la unión
+(`gskg producto unir-conceptos`) exige vocabulario del lote, evidencia literal del ítem y el snapshot vigente.
+`producto/progresion_v4.py` son funciones puras: trayectorias por concepto, clases de equivalencia
+`EQUIVALE_A`, menciones léxicas, orden de prerrequisitos V3 y transición a bachillerato.
+`interfaz/progresion.py` sirve el artefacto derivado sólo si coincide con el snapshot y publica el resumen de
+verificación únicamente si está anclado al SHA del artefacto. Ni la consulta ni el cálculo invocan modelos.
+[Resultados y límites](PROGRESION_2_11.md).

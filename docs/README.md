@@ -1,7 +1,8 @@
 # Documentación · GOEs AI · 2026
 
-Estado vigente de la rama `feat/api`, 22 de octubre de 2026. La aplicación consulta la publicación
-V4 `producto-4`; el pipeline histórico V3 se conserva separado. Las métricas verificadas de código
+Estado vigente de la rama `feat/api`, 25 de octubre de 2026: un solo producto que integra la API, la
+aplicación, la biblioteca docente, el código de guiones y la progresión 2.º–11.º. La aplicación consulta la
+publicación V4 `producto-4`; el pipeline histórico V3 se conserva separado. Las métricas verificadas de código
 se encuentran en [medicion.json](badges/medicion.json).
 
 | Necesidad | Documento |
@@ -17,6 +18,9 @@ se encuentran en [medicion.json](badges/medicion.json).
 | Revisar esta homogeneización | [Auditoría de API 2026](auditoria/REVISION_API_2026.md) |
 | Revisar el barrido QA posterior y sus correcciones | [Segunda revisión QA](auditoria/QA_SEGUNDA_REVISION.md) |
 | Consultar resultados curriculares | [Curricularización V4](CURRICULARIZACION_V4.md) |
+| Ver cómo se introducen y refuerzan los conceptos de 2.º a 11.º | [Progresión 2.º–11.º](PROGRESION_2_11.md) |
+| Preparar clases con la biblioteca docente | [Materiales docentes](MATERIALES_DOCENTES.md) y [guiones V4](CLASES_V4.md) |
+| Revisar la auditoría integral de producto | [QA de producto 2026-10-25](auditoria/QA_PRODUCTO_20261025.md) |
 | Ver el cierre y su evidencia | [Cierre técnico](CIERRE_TECNICO.md) y [verificación GCS](VERIFICACION_GCS.md) |
 | Entender juicios y alineaciones | [Conocimiento](juicios_conocimiento.md) y [alineación](alineacion.md) |
 | Consultar planes y antecedentes | [Roadmap](ROADMAP.md), [investigación](investigacion/README.md) y [especificaciones](../specs/README.md) |

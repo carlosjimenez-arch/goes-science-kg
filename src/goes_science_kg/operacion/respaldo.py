@@ -7,6 +7,7 @@ import json
 import logging
 import sqlite3
 import tempfile
+import time
 import zipfile
 from contextlib import closing
 from pathlib import Path, PurePosixPath
@@ -130,13 +131,62 @@ def seleccionar_artefactos(raiz: Path) -> list[str]:
     return sorted(seleccion)
 
 
+BACKUP_SEGUNDOS = 300
+BLOQUEO_SEGUNDOS = 5
+
+
 def _sqlite_con_auxiliares(archivo: Path) -> bool:
-    # Sin WAL ni journal pendientes, los bytes del archivo ya son la base confirmada. Copiarlos tal cual conserva
-    # las bases inmutables fijadas por SHA (p. ej. la biblioteca docente); backup() las reescribiría.
     return any(
         (aux := archivo.with_name(archivo.name + sufijo)).exists() and aux.stat().st_size
         for sufijo in ("-wal", "-journal")
     )
+
+
+def _bytes_sqlite_estables(archivo: Path) -> bytes | None:
+    """Read a non-WAL database byte for byte under a SHARED lock, or return None when that is not provable."""
+    # Conservar los bytes exactos mantiene las bases fijadas por SHA (p. ej. la biblioteca docente); backup() las
+    # reescribiría. El bloqueo SHARED impide que un escritor vuelque páginas sin confirmar (incluso con journal en
+    # memoria) mientras se leen; ante cualquier duda se usa backup().
+    if _sqlite_con_auxiliares(archivo):
+        return None
+    antes = archivo.stat()
+    try:
+        with closing(
+            sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True, timeout=BLOQUEO_SEGUNDOS, isolation_level=None)
+        ) as db:
+            if db.execute("PRAGMA journal_mode").fetchone()[0].lower() == "wal":
+                return None
+            db.execute("BEGIN")
+            db.execute("SELECT COUNT(*) FROM sqlite_master").fetchone()
+            contenido = archivo.read_bytes()
+            db.execute("COMMIT")
+    except sqlite3.Error:
+        return None
+    despues = archivo.stat()
+    if _sqlite_con_auxiliares(archivo) or (antes.st_ino, antes.st_size, antes.st_mtime_ns) != (
+        despues.st_ino,
+        despues.st_size,
+        despues.st_mtime_ns,
+    ):
+        return None
+    return contenido
+
+
+def _copia_consistente(archivo: Path, copia: Path) -> bytes:
+    """Copy a live database with SQLite's online backup, failing closed instead of waiting forever."""
+    limite = time.monotonic() + BACKUP_SEGUNDOS
+
+    def progreso(_estado, _restantes, _total):
+        if time.monotonic() > limite:
+            raise TimeoutError("Un escritor SQLite bloquea el respaldo; cierre la ejecución antes de preparar")
+
+    origen = archivo.as_uri() + "?mode=ro"
+    with closing(sqlite3.connect(origen, uri=True, timeout=BLOQUEO_SEGUNDOS)) as original, original:
+        with closing(sqlite3.connect(copia)) as receptor, receptor:
+            original.backup(receptor, pages=256, progress=progreso, sleep=0.05)
+    contenido = copia.read_bytes()
+    copia.unlink()
+    return contenido
 
 
 def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: int = 1024**3) -> dict:
@@ -155,16 +205,11 @@ def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: 
                 archivo = raiz / rel
                 if archivo.is_symlink() or not archivo.resolve().is_relative_to(raiz) or not archivo.is_file():
                     raise ValueError("El inventario sale de la raíz o contiene un archivo no regular")
-                consistente = archivo.suffix == ".sqlite" and _sqlite_con_auxiliares(archivo)
-                if consistente:
-                    copia = Path(temporal) / "consistente.sqlite"
-                    with closing(sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True)) as original, original:
-                        with closing(sqlite3.connect(copia)) as receptor, receptor:
-                            original.backup(receptor)
-                    contenido = copia.read_bytes()
-                    copia.unlink()
-                else:
-                    contenido = archivo.read_bytes()
+                exacto = _bytes_sqlite_estables(archivo) if archivo.suffix == ".sqlite" else archivo.read_bytes()
+                consistente = exacto is None
+                contenido = (
+                    _copia_consistente(archivo, Path(temporal) / "consistente.sqlite") if consistente else exacto
+                )
                 total += len(contenido)
                 if total > max_bytes:
                     raise ValueError("El respaldo excede su cota declarada de bytes")

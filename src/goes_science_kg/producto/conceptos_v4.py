@@ -134,9 +134,11 @@ def escribir_lotes(lotes: list[dict], carpeta: Path) -> list[Path]:
 
 def errores_lote_v4(lote: dict, salida: list[dict]) -> list[str]:
     """Validate one output against the batch vocabulary, literal evidence, and size limits."""
+    if not isinstance(salida, list) or not all(isinstance(s, dict) for s in salida):
+        return ["la salida debe ser un arreglo de objetos JSON"]
     voc = {c["id"] for c in lote["vocabulario"]}
     prac = {p["id"] for p in lote["practicas"]}
-    por_id = {s.get("id"): s for s in salida if isinstance(s, dict)}
+    por_id = {s.get("id"): s for s in salida}
     esperados = [i["id"] for i in lote["items"]]
     errores = []
     if faltan := [i for i in esperados if i not in por_id]:
@@ -148,7 +150,10 @@ def errores_lote_v4(lote: dict, salida: list[dict]) -> list[str]:
     for item in lote["items"]:
         if not (s := por_id.get(item["id"])):
             continue
-        conceptos, practicas_ = s.get("conceptos", []), s.get("practicas", [])
+        if "conceptos" not in s or "practicas" not in s:
+            errores.append(f"{item['id']}: faltan las claves conceptos y prácticas")
+            continue
+        conceptos, practicas_ = s["conceptos"], s["practicas"]
         if not isinstance(conceptos, list) or not isinstance(practicas_, list):
             errores.append(f"{item['id']}: conceptos y prácticas deben ser listas")
             continue
@@ -194,14 +199,17 @@ def unir(carpeta: Path, producto: ProductoMaterializado, vocabulario: dict, prac
             errores.append(f"falta {p_sal.name}")
             continue
         salida = json.loads(p_sal.read_text(encoding="utf-8"))
-        errores += [f"{p_sal.name}: {e}" for e in errores_lote_v4(lote, salida)]
+        errores_salida = errores_lote_v4(lote, salida)
+        errores += [f"{p_sal.name}: {e}" for e in errores_salida]
         huellas[p_lote.name] = {"lote": sha_json(lote), "salida": hashlib.sha256(p_sal.read_bytes()).hexdigest()}
+        if errores_salida:
+            continue
         for s in salida:
             item = next((i for i in lote["items"] if i["id"] == s.get("id")), None)
             if item is None:
                 continue
-            if esperados.get(item["id"], {}).get("grado") != item["grado"]:
-                errores.append(f"{p_sal.name}: {item['id']} no corresponde al producto vigente")
+            if esperados.get(item["id"]) != item:
+                errores.append(f"{p_sal.name}: {item['id']} no coincide con el ítem del producto vigente")
                 continue
             if item["id"] in filas:
                 errores.append(f"{item['id']}: etiquetado en dos lotes")

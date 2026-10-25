@@ -350,6 +350,11 @@ def progresion(destino: Annotated[Path, typer.Option()] = Path("data/producto/V4
     etiquetado = json.loads(archivo.read_text(encoding="utf-8"))
     if etiquetado["snapshot_id"] != producto.manifest.snapshot_id:
         raise typer.BadParameter("El etiquetado pertenece a otra publicación; vuelva a preparar y unir")
+    vocabulario, practicas = conceptos.vocabulario(), conceptos.practicas()
+    if etiquetado["vocabulario_sha256"] != c4.sha_json(
+        sorted(vocabulario.values(), key=lambda c: c["id"])
+    ) or etiquetado["practicas_sha256"] != c4.sha_json(sorted(practicas.values(), key=lambda p: p["id"])):
+        raise typer.BadParameter("El vocabulario cambió después de etiquetar; vuelva a preparar y unir")
     catalogo = {f.fila_id: f.estado for f in producto.catalogo.filas}
     campos = ("contenido", "subcontenido", "procedimental", "indicadores_logro", "indicador_avanzado")
     campos += ("evidencia_aprendizaje",)
@@ -370,7 +375,9 @@ def progresion(destino: Annotated[Path, typer.Option()] = Path("data/producto/V4
             "unidad": f.unidad,
             "dominios_timss": p4.dominios_timss(f.habilidad_timss or ""),
             "texto": p4.plano(texto),
+            "texto_original": texto,
             "texto_propuesta": p4.plano(f"{texto} {propuestas.get(f.id, '')}"),
+            "texto_propuesta_original": f"{texto} {propuestas.get(f.id, '')}",
         }
     grafo = ruta("data/grafo/aristas.jsonl")
     registros = [json.loads(linea) for linea in grafo.read_text(encoding="utf-8").splitlines()]
@@ -393,7 +400,7 @@ def progresion(destino: Annotated[Path, typer.Option()] = Path("data/producto/V4
     documento = p4.construir(
         filas,
         etiquetado,
-        conceptos.vocabulario(),
+        vocabulario,
         aristas,
         etiquetas_v3=conceptos.etiquetado(),
         pares_v3_v4=pares,
