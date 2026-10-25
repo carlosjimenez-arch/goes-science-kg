@@ -310,3 +310,14 @@ html.dark .toast{background:var(--card);color:var(--ink);border:1px solid var(--
 .menu-btn{display:none}
 @media(max-width:760px){.app{grid-template-columns:1fr}.app.collapsed{grid-template-columns:1fr}.side{position:fixed;inset:0 auto 0 0;width:250px;z-index:66;transform:translateX(-100%);transition:transform .34s var(--eo);box-shadow:var(--shl)}.side.open{transform:none}.menu-btn{display:inline-flex}.vis .vischip span{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important;animation-duration:.001ms!important}}
+
+/* Progresión 2.º–11.º: franja de presencia por grado y enlaces en tablas. */
+.gstrip { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; min-width: 150px; margin: 6px 0; }
+.gstrip i { display: block; height: 14px; border-radius: 3px; background: var(--hair); }
+.gstrip i.on { background: var(--teal); }
+.gstrip-head span { font-size: 0.68rem; text-align: center; color: var(--g4); }
+.linkish { background: none; border: 0; padding: 0; font: inherit; font-weight: 600; color: var(--indigo); cursor: pointer; text-align: left; }
+.linkish:hover, .linkish:focus-visible { text-decoration: underline; }
+.pill.purple{background:var(--purple-100);color:var(--purple)}.pill.blue{background:var(--blue-100);color:var(--blue)}
+.tabs.tabs-wrap{flex-wrap:wrap;height:auto}
+.gstrip i.men { background: var(--teal-100); outline: 1px dashed var(--teal); outline-offset: -1px; }

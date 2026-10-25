@@ -14,6 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from goes_science_kg.interfaz.consulta import normalizar
 from goes_science_kg.interfaz.contratos import ListaDocumentos, PaginaFilas, RespuestaBriefs, RespuestaGrafo
+from goes_science_kg.interfaz.progresion import VISTAS, ProgresionCurricular
 from goes_science_kg.interfaz.servicio import FuenteNoDisponible, RegistroActividad, ServicioInterfaz
 from goes_science_kg.motor.contratos import Asignatura
 from goes_science_kg.producto.runtime import RuntimeProducto
@@ -21,6 +22,7 @@ from goes_science_kg.producto.runtime import RuntimeProducto
 DIRECTORIO = Path(__file__).parent / "interfaz" / "estaticos"
 Grado = Annotated[int | None, Query(ge=2, le=11)]
 Texto = Annotated[str, Query(max_length=200)]
+Vista = Literal[VISTAS]
 
 
 class SolicitudBrief(BaseModel):
@@ -62,6 +64,7 @@ def crear_router_interfaz(leer: Callable[[], RuntimeProducto], base: Path) -> AP
     router = APIRouter(prefix="/interfaz", tags=["Aplicación curricular"])
     servicio = ServicioInterfaz(leer)
     registro = RegistroActividad(base / "data/operaciones/registro.sqlite")
+    progresion_v4 = ProgresionCurricular(base / "data/producto/progresion_v4/progresion.json")
 
     def consultar():
         """Translate application compatibility errors into the public HTTP contract."""
@@ -159,6 +162,49 @@ def crear_router_interfaz(leer: Callable[[], RuntimeProducto], base: Path) -> AP
     ):
         """List published unit reviews under the same curriculum filters."""
         return consultar().revision(grado, disciplina, q, estado)
+
+    def progresion_disponible(llamada: Callable):
+        """Translate a missing or foreign progression artifact into the explicit no-data contract."""
+        try:
+            return llamada()
+        except FuenteNoDisponible as error:
+            raise HTTPException(503, str(error)) from error
+
+    @router.get("/progresion")
+    def progresion(vista: Vista = "original"):
+        """Return how concepts and practices are introduced and reinforced from grade 2 to 11."""
+        s = consultar()
+        return s.identidad | progresion_disponible(
+            lambda: progresion_v4.resumen(s.producto.manifest.snapshot_id, vista)
+        )
+
+    @router.get("/progresion/conceptos")
+    def progresion_conceptos(
+        vista: Vista = "original",
+        disciplina: Asignatura | None = None,
+        patron: Literal["aislado", "concentrado", "espiral", "intermitente"] | None = None,
+        q: Texto = "",
+    ):
+        """List concept trajectories with their grades, pattern, and largest gap."""
+        s = consultar()
+        conceptos = progresion_disponible(
+            lambda: progresion_v4.conceptos(
+                s.producto.manifest.snapshot_id, vista, disciplina=disciplina, patron=patron, q=q
+            )
+        )
+        return s.identidad | {"vista": vista, "total": len(conceptos), "conceptos": conceptos}
+
+    @router.get("/progresion/conceptos/{concepto_id:path}")
+    def progresion_concepto(concepto_id: str, vista: Vista = "original"):
+        """Return one concept trajectory with the curriculum rows behind each grade."""
+        s = consultar()
+        try:
+            detalle = progresion_disponible(
+                lambda: progresion_v4.concepto(s.producto.manifest.snapshot_id, vista, concepto_id, s.filas)
+            )
+        except KeyError as error:
+            raise HTTPException(404, "El concepto no aparece en la progresión de esta publicación") from error
+        return s.identidad | {"vista": vista, "concepto": detalle}
 
     @router.post("/briefs", response_model=RespuestaBriefs)
     def briefs(solicitud: SolicitudBrief):

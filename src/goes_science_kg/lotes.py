@@ -31,6 +31,7 @@ class TipoLote:
 def _tipos() -> dict[str, list[TipoLote]]:
     from goes_science_kg import alineacion, bucle, comunidades, conceptos, panel, prerrequisitos, propuesta, refuerzo
     from goes_science_kg.aprendizaje import pedagogia
+    from goes_science_kg.producto import conceptos_v4
 
     return {
         "alineacion": [
@@ -45,6 +46,7 @@ def _tipos() -> dict[str, list[TipoLote]]:
             TipoLote(
                 "data/interim/conceptos/lotes_paises", conceptos.errores_lote_paises, "gskg conceptos unir-paises"
             ),
+            TipoLote(conceptos_v4.DIR_LOTES, conceptos_v4.errores_lote_v4, "gskg producto unir-conceptos"),
         ],
         "prerrequisitos": [
             TipoLote(

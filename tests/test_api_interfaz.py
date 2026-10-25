@@ -252,3 +252,47 @@ def test_openapi_describe_respuestas_publicas_tipadas(aplicacion):
     assert "PaginaFilas" in esquema["components"]["schemas"]
     respuesta = esquema["paths"]["/api/v4/interfaz/filas"]["get"]["responses"]["200"]
     assert respuesta["content"]["application/json"]["schema"]["$ref"].endswith("PaginaFilas")
+
+
+def _progresion(aplicacion, snapshot_id):
+    import json
+
+    from goes_science_kg.producto import progresion_v4 as p4
+
+    fila = aplicacion.runtime.producto.curriculo.filas[0]
+    etiquetado = {
+        "snapshot_id": snapshot_id,
+        "etiquetas": [
+            {"fila_id": fila.id, "origen": "original", "conceptos": ["CON:fisica/fuerza"], "practicas": ["PRAC:medir"]}
+        ],
+    }
+    voc = {"CON:fisica/fuerza": {"nombre": "Fuerza", "asignatura": "fisica", "nivel": "primaria"}}
+    filas = {fila.id: {"grado": fila.grado, "dominios_timss": ("conocer",)}}
+    doc = p4.construir(filas, etiquetado, voc, [], etiquetas_v3={}, pares_v3_v4=[], procedencia={"prueba": True})
+    archivo = aplicacion.base / "data/producto/progresion_v4/progresion.json"
+    archivo.parent.mkdir(parents=True, exist_ok=True)
+    archivo.write_text(json.dumps(doc), encoding="utf-8")
+    return fila
+
+
+def test_progresion_sin_artefacto_declara_que_no_hay_datos(aplicacion):
+    r = aplicacion.cliente.get("/api/v4/interfaz/progresion")
+    assert r.status_code == 503 and "No hay datos disponibles" in r.json()["detail"]
+
+
+def test_progresion_de_otra_publicacion_no_se_sirve(aplicacion):
+    _progresion(aplicacion, "e" * 64)
+    assert aplicacion.cliente.get("/api/v4/interfaz/progresion/conceptos").status_code == 503
+
+
+def test_progresion_filtra_y_devuelve_las_filas_de_cada_grado(aplicacion):
+    fila = _progresion(aplicacion, "d" * 64)
+    c = aplicacion.cliente
+    resumen = c.get("/api/v4/interfaz/progresion").json()
+    assert resumen["conceptos_presentes"] == 1 and resumen["patrones"]["aislado"] == 1
+    assert c.get("/api/v4/interfaz/progresion/conceptos", params={"disciplina": "fisica"}).json()["total"] == 1
+    assert c.get("/api/v4/interfaz/progresion/conceptos", params={"disciplina": "quimica"}).json()["total"] == 0
+    assert c.get("/api/v4/interfaz/progresion/conceptos", params={"patron": "otro"}).status_code == 422
+    detalle = c.get("/api/v4/interfaz/progresion/conceptos/CON:fisica/fuerza").json()["concepto"]
+    assert detalle["filas"][str(fila.grado)][0]["procedimental"] == fila.procedimental
+    assert c.get("/api/v4/interfaz/progresion/conceptos/CON:fisica/otro").status_code == 404

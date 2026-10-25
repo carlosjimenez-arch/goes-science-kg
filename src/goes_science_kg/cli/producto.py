@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections import Counter
@@ -295,3 +296,117 @@ def catalogar(
     )
     if not resultado.piloto_superado:
         raise typer.Exit(2)
+
+
+@app.command("preparar-conceptos")
+def preparar_conceptos(
+    destino: Annotated[Path, typer.Option()] = Path("data/producto/V4"),
+    por_lote: Annotated[int, typer.Option(min=4, max=60)] = 24,
+) -> None:
+    """Prepare blind concept-tagging batches for V4 rows and refined proposals; no model is invoked."""
+    from goes_science_kg import conceptos
+    from goes_science_kg.producto import cargar_producto
+    from goes_science_kg.producto import conceptos_v4 as c4
+
+    producto = cargar_producto(ruta(str(destino)))
+    items = c4.items_v4(producto)
+    lotes = c4.armar_lotes(
+        items,
+        conceptos.vocabulario(),
+        conceptos.practicas(),
+        snapshot_id=producto.manifest.snapshot_id,
+        por_lote=por_lote,
+    )
+    escritos = c4.escribir_lotes(lotes, ruta(c4.DIR_LOTES))
+    origenes = Counter(i["origen"] for i in items)
+    typer.echo(json.dumps({"lotes": len(escritos), "items": dict(origenes)}, ensure_ascii=False))
+
+
+@app.command("unir-conceptos")
+def unir_conceptos(destino: Annotated[Path, typer.Option()] = Path("data/producto/V4")) -> None:
+    """Validate every V4 tagging output and write the joined labels to their derived destination."""
+    from goes_science_kg import conceptos
+    from goes_science_kg.producto import cargar_producto
+    from goes_science_kg.producto import conceptos_v4 as c4
+
+    producto = cargar_producto(ruta(str(destino)))
+    datos = c4.unir(ruta(c4.DIR_LOTES), producto, conceptos.vocabulario(), conceptos.practicas())
+    salida = ruta(c4.ARCHIVO_ETIQUETADO)
+    escribir_texto_generado(salida, json.dumps(datos, ensure_ascii=False, indent=1) + "\n")
+    confianza = Counter(e["confianza"] for e in datos["etiquetas"])
+    typer.echo(json.dumps({"etiquetas": len(datos["etiquetas"]), "confianza": dict(confianza)}, ensure_ascii=False))
+
+
+@app.command("progresion")
+def progresion(destino: Annotated[Path, typer.Option()] = Path("data/producto/V4")) -> None:
+    """Derive grade 2–11 concept and practice trajectories from the joined V4 labels; no model is invoked."""
+    from goes_science_kg import conceptos
+    from goes_science_kg.producto import cargar_producto
+    from goes_science_kg.producto import conceptos_v4 as c4
+    from goes_science_kg.producto import progresion_v4 as p4
+
+    producto = cargar_producto(ruta(str(destino)))
+    archivo = ruta(c4.ARCHIVO_ETIQUETADO)
+    etiquetado = json.loads(archivo.read_text(encoding="utf-8"))
+    if etiquetado["snapshot_id"] != producto.manifest.snapshot_id:
+        raise typer.BadParameter("El etiquetado pertenece a otra publicación; vuelva a preparar y unir")
+    catalogo = {f.fila_id: f.estado for f in producto.catalogo.filas}
+    campos = ("contenido", "subcontenido", "procedimental", "indicadores_logro", "indicador_avanzado")
+    campos += ("evidencia_aprendizaje",)
+    propuestas = {
+        f.fila_id: f"{f.objetivo_propuesto} {f.indicador_observable}"
+        for u in (producto.mejoras.unidades if producto.mejoras else ())
+        for f in (u.resultado.propuesta.filas if u.resultado.propuesta else ())
+        if f.accion == "precisar_objetivo"
+    }
+    filas = {}
+    for f in producto.curriculo.filas:
+        if catalogo[f.id] == "fuera_alcance":
+            continue
+        texto = " ".join(getattr(f, c) or "" for c in campos)
+        filas[f.id] = {
+            "grado": f.grado,
+            "asignatura_malla": f.asignatura_malla,
+            "unidad": f.unidad,
+            "dominios_timss": p4.dominios_timss(f.habilidad_timss or ""),
+            "texto": p4.plano(texto),
+            "texto_propuesta": p4.plano(f"{texto} {propuestas.get(f.id, '')}"),
+        }
+    grafo = ruta("data/grafo/aristas.jsonl")
+    registros = [json.loads(linea) for linea in grafo.read_text(encoding="utf-8").splitlines()]
+    aristas = [(a["origen"], a["destino"]) for a in registros if a["tipo"] == "PRERREQUISITO_DE"]
+    equivalencias = [(a["origen"], a["destino"]) for a in registros if a["tipo"] == "EQUIVALE_A"]
+    confianzas = {(a["origen"], a["destino"]): a.get("confianza") for a in registros if a["tipo"] == "PRERREQUISITO_DE"}
+    comparacion = json.loads(ruta("docs/investigacion/comparacion_v3_v4.json").read_text(encoding="utf-8"))
+    pares = [
+        (c["anteriores"][0]["id"].removeprefix("TEMA:"), c["actuales"][0]["id"])
+        for c in comparacion["coincidencias"]
+        if len(c["anteriores"]) == 1 and len(c["actuales"]) == 1
+    ]
+    procedencia = {
+        "etiquetado_sha256": c4.sha_json(etiquetado),
+        "grafo_v3_aristas_sha256": hashlib.sha256(grafo.read_bytes()).hexdigest(),
+        "comparacion_v3_v4_sha256": c4.sha_json(comparacion),
+        "prerrequisitos_v3": len(aristas),
+        "equivalencias_v3": len(equivalencias),
+    }
+    documento = p4.construir(
+        filas,
+        etiquetado,
+        conceptos.vocabulario(),
+        aristas,
+        etiquetas_v3=conceptos.etiquetado(),
+        pares_v3_v4=pares,
+        procedencia=procedencia,
+        equivalencias=equivalencias,
+        confianzas=confianzas,
+    )
+    salida = ruta(p4.ARCHIVO)
+    escribir_texto_generado(salida, json.dumps(documento, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
+    vista = documento["vistas"]["original"]
+    typer.echo(
+        json.dumps(
+            {"patrones": vista["patrones"], "prerrequisitos_ordenados": vista["prerrequisitos"]["proporcion_ordenada"]},
+            ensure_ascii=False,
+        )
+    )

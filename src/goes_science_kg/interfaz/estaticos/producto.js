@@ -1,6 +1,8 @@
 import {
   $,
   api,
+  apiMateriales,
+  textoMateriales,
   descargar,
   DISCIPLINAS,
   enlaceSeguro,
@@ -43,6 +45,13 @@ const VISTAS = {
     color: 'indigo',
     sub: 'Relaciones publicadas y trazables',
   },
+  progresion: {
+    nombre: 'Progresión 2.º–11.º',
+    grupo: 'M2 · Corpus y Grafo',
+    icono: 'layers',
+    color: 'teal',
+    sub: 'Cómo se introducen y refuerzan los conceptos',
+  },
   revision: {
     nombre: 'Revisión de conocimiento',
     grupo: 'M3 · Validación',
@@ -63,6 +72,13 @@ const VISTAS = {
     icono: 'content',
     color: 'purple',
     sub: 'De la propuesta al brief documental',
+  },
+  materiales: {
+    nombre: 'Materiales docentes',
+    grupo: 'M4 · Contenido',
+    icono: 'clip',
+    color: 'purple',
+    sub: 'Biblioteca para preparar clases',
   },
   admin: {
     nombre: 'Administración',
@@ -87,6 +103,9 @@ const S = {
   desmontar: null,
   datosVista: null,
   prevFocus: null,
+  progVista: 'original',
+  progPatron: '',
+  matTipo: 'paquete_objetivo',
 };
 const stat = (n, label, acento = false) =>
   `<div class="stat ${acento ? 'acc' : ''}"><b>${typeof n === 'number' ? numero(n) : esc(n)}</b><span>${esc(label)}</span></div>`;
@@ -107,7 +126,7 @@ function toast(texto) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3500);
 }
-function filtros({ corpus = false } = {}) {
+function filtros({ corpus = false, disciplina = true } = {}) {
   const grados = S.resumen.grados
     .map(
       (g) =>
@@ -117,7 +136,7 @@ function filtros({ corpus = false } = {}) {
   return `<form class="filters" id="filtros">${
     corpus
       ? `<select class="input" name="tipo" aria-label="Tipo de fuente"><option value="">Todas las fuentes</option><option value="curriculo" ${S.tipoFuente === 'curriculo' ? 'selected' : ''}>Currículo nacional</option><option value="referencia" ${S.tipoFuente === 'referencia' ? 'selected' : ''}>Referencias</option></select>`
-      : `<select class="input" name="grado" aria-label="Grado"><option value="">Todos los grados</option>${grados}</select><select class="input" name="disciplina" aria-label="Disciplina"><option value="">Todas las ciencias</option>${S.resumen.disciplinas.map((d) => `<option value="${esc(d)}" ${S.filtros.disciplina === d ? 'selected' : ''}>${esc(DISCIPLINAS[d] || d)}</option>`).join('')}</select>`
+      : `<select class="input" name="grado" aria-label="Grado"><option value="">Todos los grados</option>${grados}</select>${disciplina ? `<select class="input" name="disciplina" aria-label="Disciplina"><option value="">Todas las ciencias</option>${S.resumen.disciplinas.map((d) => `<option value="${esc(d)}" ${S.filtros.disciplina === d ? 'selected' : ''}>${esc(DISCIPLINAS[d] || d)}</option>`).join('')}</select>` : ''}`
   }
     <div class="search">${icono('search')}<input name="q" aria-label="Buscar" placeholder="${corpus ? 'Buscar una fuente…' : 'Buscar objetivos o unidades…'}" value="${esc(S.filtros.q)}"><button type="submit">Buscar</button></div>
     ${S.filtros.q || S.filtros.grado || S.filtros.disciplina ? '<button type="button" class="btn sm" data-action="limpiar">Limpiar</button>' : ''}</form>`;
@@ -279,7 +298,118 @@ async function admin() {
       .map(([n, h]) => `<p><b>${esc(n)}</b><br><span class="clip-id">${esc(h)}</span></p>`)
       .join('')}</details>` };
 }
-const RENDER = { inicio, panel, corpus, grafo, revision, curricularizacion, contenido, admin };
+const GRADOS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const PATRONES = {
+  aislado: ['Aislado', 'Aparece en un solo grado', 'gray'],
+  concentrado: ['Concentrado', 'Dos grados seguidos', 'blue'],
+  espiral: ['Espiral', 'Tres o más grados con huecos de un grado como máximo', 'green'],
+  intermitente: ['Intermitente', 'Vuelve tras dos o más grados sin tratarse', 'amber'],
+};
+const CLASES_TARDIAS = {
+  prioritaria: ['Prioritaria', 'red'],
+  revisar: ['Revisar', 'amber'],
+  introduccion_cualitativa: ['Introducción cualitativa', 'gray'],
+};
+const pct = (a, b) => (b ? `${Math.round((a / b) * 100)} %` : '—');
+function franja(c) {
+  return `<div class="gstrip" role="img" aria-label="Presente en ${c.grados.map((g) => g + '.º').join(', ')}">${GRADOS.map((g) => {
+    const n = c.filas_por_grado[String(g)] || 0;
+    const m = !n && (c.grados_mencion || []).includes(g);
+    return `<i class="${n ? 'on' : m ? 'men' : ''}" title="${g}.º · ${n ? `${n} fila${n === 1 ? '' : 's'} donde se trabaja` : m ? 'sólo mencionado' : 'ausente'}"></i>`;
+  }).join('')}</div>`;
+}
+async function progresion() {
+  const base = { vista: S.progVista };
+  const [r, l] = await Promise.all([
+    api('/progresion' + parametros(base)),
+    api(
+      '/progresion/conceptos' +
+        parametros(base, { disciplina: S.filtros.disciplina, patron: S.progPatron, q: S.filtros.q }),
+    ),
+  ]);
+  const conceptos = S.filtros.grado ? l.conceptos.filter((c) => c.grados.includes(Number(S.filtros.grado))) : l.conceptos;
+  const p = r.patrones,
+    total = r.conceptos_presentes,
+    pr = r.prerrequisitos,
+    a = r.acuerdo_v3,
+    clases = pr.tardias_por_clase || {};
+  const visibles = conceptos.slice(0, 150);
+  return { datos: r, html: `${titulo('Progresión de 2.º a 11.º', 'Cómo se introduce cada concepto en la malla y en qué grados se vuelve a trabajar. Abre un concepto para ver sus filas.')}
+    <div class="between"><div class="tabs"><button data-action="prog-vista" data-value="original" class="${S.progVista === 'original' ? 'on' : ''}">Malla original</button><button data-action="prog-vista" data-value="propuesta" class="${S.progVista === 'propuesta' ? 'on' : ''}">Con propuestas</button></div><span class="pill teal">${numero(r.filas_etiquetadas)} filas etiquetadas</span></div>
+    <div class="stats spaced">${stat(total, 'conceptos presentes', true)}${stat(r.grados_promedio_por_concepto.toLocaleString('es-SV', { maximumFractionDigits: 1 }), 'grados por concepto (promedio)')}${stat(pct(p.espiral, total), 'en espiral')}${stat(pct(pr.ordenadas, pr.aristas_evaluables), 'prerrequisitos en orden')}</div>
+    <div class="g2">${bloque('Patrón de refuerzo', barras(Object.entries(PATRONES).map(([k, v]) => [v[0], p[k]]), 'var(--teal)') + `<p class="mini">${Object.values(PATRONES).map((v) => `<b>${v[0]}</b>: ${v[1]}`).join(' · ')}</p><p class="mini">Contando también las menciones léxicas: ${Object.entries(PATRONES).map(([k, v]) => `${v[0].toLowerCase()} ${numero(r.patrones_con_menciones[k] || 0)}`).join(' · ')}.</p><p class="mini">Aislados de 2.º–9.º que no se retoman: <b>${numero(r.aislados_por_tramo['2_9_sin_retomar'] || 0)}</b> · aislados que se introducen en 10.º–11.º: <b>${numero(r.aislados_por_tramo['10_11'] || 0)}</b></p>`)}
+    ${bloque('Orden de prerrequisitos', `${barras([['En orden', pr.ordenadas], ['En el mismo grado', pr.simultaneas], ['Posterior', pr.total_tardias]], 'var(--indigo)')}<div class="checks">${Object.entries(CLASES_TARDIAS).map(([k, [n, c]]) => `<span class="pill ${c}">${n} · ${clases[k] || 0}</span>`).join('')}</div><p class="mini">Se evalúan ${numero(pr.aristas_evaluables)} prerrequisitos del grafo histórico; el prerrequisito cuenta desde su primera etiqueta o mención. Una introducción cualitativa temprana puede ser intencional.</p>${r.verificacion ? `<div class="notice amber"><b>Verificación independiente de la clase prioritaria</b><br>${Object.entries(r.verificacion.conteo).map(([k, n]) => `${esc(k)}: ${n}`).join(' · ')}. Son hipótesis para revisión experta, no hallazgos confirmados.</div>` : ''}`)}</div>
+    <div class="card spaced"><h3 class="h3">Introducción y refuerzo por grado</h3><div class="table-wrap"><table class="atable"><thead><tr><th>Grado</th><th>Filas</th><th>Conceptos</th><th>Nuevos</th><th>Retomados</th><th>Prácticas</th><th>Filas que anotan «Razonar» (TIMSS)</th></tr></thead><tbody>${r.grados.map((g) => `<tr><td>${g.grado}.º</td><td>${g.filas}</td><td>${g.conceptos}</td><td>${g.introducidos}</td><td>${g.reforzados}</td><td>${g.practicas.length}</td><td>${g.filas_con_razonar} · ${pct(g.filas_con_razonar, g.filas)}</td></tr>`).join('')}</tbody></table></div><p class="mini">La anotación TIMSS de la malla nombra varios dominios en casi todas las filas; no discrimina el nivel cognitivo y no se usa para medir profundización.</p></div>
+    <div class="card spaced"><h3 class="h3">Entrada a bachillerato</h3><div class="table-wrap"><table class="atable"><thead><tr><th>Disciplina</th><th>Conceptos en 10.º–11.º</th><th>Con antecedente en 2.º–9.º</th><th>Nuevos en bachillerato</th><th>Conceptos de 2.º–9.º que continúan</th></tr></thead><tbody>${Object.entries(r.transicion_bachillerato).map(([k, t]) => `<tr><td>${esc(DISCIPLINAS[k] || k)}</td><td>${t.conceptos_en_bachillerato}</td><td>${t.con_antecedente_2_9}</td><td>${t.nuevos_en_bachillerato.length}</td><td>${t.continuados_en_bachillerato} de ${t.conceptos_2_9}</td></tr>`).join('')}</tbody></table></div></div>
+    <details class="card spaced"><summary>Prerrequisitos que aparecen después del concepto que los necesita · ${numero(pr.total_tardias)}</summary><div class="table-wrap"><table class="atable"><thead><tr><th>Clase</th><th>Concepto</th><th>Prerrequisito</th><th>Desfase</th></tr></thead><tbody>${pr.tardias.map((t) => `<tr><td><span class="pill ${CLASES_TARDIAS[t.clase]?.[1] || 'gray'}">${esc(CLASES_TARDIAS[t.clase]?.[0] || t.clase)}</span></td><td><button class="linkish" data-action="concepto" data-id="${esc(t.concepto)}">${esc(t.nombre_concepto)}</button> · ${t.grado_concepto}.º</td><td>${t.prerrequisito_solo_mencion ? `${esc(t.nombre_prerrequisito)} <span class="mini">(sólo mencionado)</span>` : `<button class="linkish" data-action="concepto" data-id="${esc(t.prerrequisito)}">${esc(t.nombre_prerrequisito)}</button>`} · ${t.grado_prerrequisito}.º</td><td>${t.desfase} grado${t.desfase === 1 ? '' : 's'}</td></tr>`).join('')}</tbody></table></div></details>
+    <h3 class="h3 spaced">Trayectorias por concepto</h3>${filtros()}
+    <div class="tabs spaced"><button data-action="prog-patron" data-value="" class="${!S.progPatron ? 'on' : ''}">Todos</button>${Object.entries(PATRONES).map(([k, v]) => `<button data-action="prog-patron" data-value="${k}" class="${S.progPatron === k ? 'on' : ''}">${v[0]} · ${p[k]}</button>`).join('')}</div>
+    <section class="card spaced"><div class="table-wrap"><table class="atable"><thead><tr><th>Concepto</th><th>Disciplina</th><th><div class="gstrip gstrip-head">${GRADOS.map((g) => `<span>${g}</span>`).join('')}</div></th><th>Patrón</th><th>Mayor hueco</th></tr></thead><tbody>${visibles.map((c) => `<tr><td><button class="linkish" data-action="concepto" data-id="${esc(c.id)}">${esc(c.nombre)}</button><div class="mini">${esc(c.nivel || 'nivel no declarado')}</div></td><td>${esc(DISCIPLINAS[c.asignatura] || c.asignatura || '—')}</td><td>${franja(c)}</td><td><span class="pill ${PATRONES[c.patron][2]}">${PATRONES[c.patron][0]}</span></td><td>${c.max_hueco ? c.max_hueco + (c.max_hueco === 1 ? ' grado' : ' grados') : '—'}</td></tr>`).join('')}</tbody></table></div>${!conceptos.length ? vacio('No hay conceptos con estos filtros.') : conceptos.length > visibles.length ? `<p class="mini">Se muestran ${visibles.length} de ${numero(conceptos.length)}; filtra por disciplina, grado o texto.</p>` : ''}</section>
+    ${aviso(`Etiquetado de conceptos con ${numero(a.pares_evaluados)} filas comparables con la pasada V3: concepto principal coincidente ${pct(a.principal_coincide, 1)}, F1 ${a.f1_vs_v3}. ${r.limite}`)}` };
+}
+async function abrirConcepto(id) {
+  const turno = ++modalEpoch;
+  abrirModal('Trayectoria del concepto', aviso('Cargando trayectoria…'));
+  try {
+    const d = await api('/progresion/conceptos/' + encodeURIComponent(id) + parametros({ vista: S.progVista }));
+    if (turno !== modalEpoch) return;
+    const c = d.concepto;
+    $('modal-title').textContent = c.nombre;
+    $('modal-body').innerHTML =
+      `<span class="pill ${PATRONES[c.patron][2]}">${PATRONES[c.patron][0]}</span> <span class="pill gray">${esc(DISCIPLINAS[c.asignatura] || c.asignatura || '')}</span><div class="gstrip gstrip-head">${GRADOS.map((g) => `<span>${g}.º</span>`).join('')}</div>${franja(c)}
+      <p class="mini">Primera aparición ${c.primera}.º · última ${c.ultima}.º · mayor hueco ${c.max_hueco} grado${c.max_hueco === 1 ? '' : 's'}${c.construido_en.length ? ` · se construye sobre él en ${c.construido_en.map((g) => g + '.º').join(', ')}` : ''}</p>
+      ${c.agrupa.length > 1 ? `<p class="mini">Agrupa conceptos equivalentes: ${c.agrupa.map(esc).join(', ')}</p>` : ''}
+      ${Object.entries(c.filas).map(([g, filas]) => `<h3>${g}.º grado · ${filas.length} fila${filas.length === 1 ? '' : 's'}</h3><div class="list">${filas.map((f) => `<button class="review-item" data-action="fila" data-id="${esc(f.fila_id)}"><span class="mini">${esc(f.asignatura_malla)} · ${esc(f.unidad)}</span><strong>${esc(f.procedimental)}</strong><span class="mini">Comparar original y propuesta →</span></button>`).join('')}</div>`).join('')}
+      <p class="clip-id">${esc(c.id)}</p>`;
+  } catch (e) {
+    if (turno === modalEpoch) $('modal-body').innerHTML = aviso(e.message);
+  }
+}
+const TIPOS_MATERIAL = {
+  paquete_objetivo: ['Preparación por objetivo', 'V4'],
+  paquete_unidad: ['Preparación por unidad', 'V4'],
+  unidad_experimental: ['Unidad experimental', 'V4'],
+  paquete_historico: ['Paquete histórico', 'V3'],
+  actividad: ['Actividad', 'historico'],
+  experimento: ['Experimento', 'historico'],
+  dificultad: ['Dificultad frecuente', 'historico'],
+  microtema: ['Microtema de refuerzo', 'historico'],
+};
+async function materiales() {
+  const [tipoNombre, version] = TIPOS_MATERIAL[S.matTipo];
+  const [salud, d] = await Promise.all([
+    apiMateriales('/salud'),
+    apiMateriales(
+      parametros({ version, tipo: S.matTipo, grado: S.filtros.grado, q: S.filtros.q, limite: 25, offset: S.offset }),
+    ),
+  ]);
+  return { datos: d, html: `${titulo('Materiales docentes', 'Biblioteca verificada para preparar clases a partir de las propuestas y del material histórico revisado.')}
+    <div class="stats">${stat(salud.materiales, 'registros en la biblioteca', true)}${stat(salud.por_tipo.paquete_objetivo || 0, 'preparaciones por objetivo')}${stat(salud.por_tipo.paquete_unidad || 0, 'preparaciones por unidad')}${stat(0, 'llamadas a modelos por consulta')}</div>
+    <div class="tabs tabs-wrap spaced">${Object.entries(TIPOS_MATERIAL).map(([k, [n]]) => `<button data-action="mat-tipo" data-value="${k}" class="${S.matTipo === k ? 'on' : ''}">${n} · ${numero(salud.por_tipo[k] || 0)}</button>`).join('')}</div>
+    ${filtros({ disciplina: false })}
+    <section class="card spaced"><div class="table-wrap"><table class="atable"><thead><tr><th>Material</th><th>Grados</th><th>Estado</th><th></th></tr></thead><tbody>${d.materiales.map((m) => `<tr><td class="objetivo">${esc(m.titulo)}<div class="mini">${esc(tipoNombre)} · ${esc(m.asignatura)}${m.unidad ? ' · ' + esc(m.unidad) : ''}</div></td><td>${m.grados.map((g) => g + '.º').join(', ') || '—'}</td><td><span class="pill ${/revisad|respaldad/.test(m.estado) ? 'green' : /pendiente/.test(m.estado) ? 'amber' : 'gray'}">${esc(m.estado.replaceAll('_', ' '))}</span></td><td><button class="btn sm" data-action="material" data-id="${esc(m.id)}">Abrir</button></td></tr>`).join('')}</tbody></table></div>${!d.materiales.length ? vacio('No hay materiales con estos filtros.') : ''}${paginador(d)}</section>
+    ${aviso('Las preparaciones reutilizan propuestas con revisión automática de su unidad; no son guiones cronometrados nuevos ni acreditan aprobación institucional o eficacia en aula. El material histórico conserva su estado original, incluidos los pendientes.')}<p class="clip-id">Biblioteca ${esc(salud.biblioteca_id)} · snapshot ${esc(salud.snapshot_id)}</p>` };
+}
+async function abrirMaterial(id) {
+  const turno = ++modalEpoch;
+  abrirModal('Material docente', aviso('Cargando material…'));
+  try {
+    const [d, md] = await Promise.all([
+      apiMateriales('/detalle/' + encodeURIComponent(id)),
+      textoMateriales('/descarga/' + encodeURIComponent(id) + '?formato=md'),
+    ]);
+    if (turno !== modalEpoch) return;
+    const m = d.material;
+    $('modal-title').textContent = m.titulo;
+    $('modal-body').innerHTML =
+      `<span class="pill purple">${esc(TIPOS_MATERIAL[m.tipo]?.[0] || m.tipo)}</span> <span class="pill gray">${esc(m.estado.replaceAll('_', ' '))}</span>
+      <div class="checks spaced"><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="md">${icono('dl')}Markdown</button><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="json">${icono('dl')}JSON</button>${m.fila_id ? `<button class="btn sm" data-action="fila" data-id="${esc(m.fila_id)}">Ver la fila curricular</button>` : ''}</div>
+      <pre class="source-text">${esc(md)}</pre><p class="clip-id">${esc(m.id)} · SHA ${esc(m.sha256)}</p>`;
+  } catch (e) {
+    if (turno === modalEpoch) $('modal-body').innerHTML = aviso(e.message);
+  }
+}
+const RENDER = { inicio, panel, corpus, grafo, progresion, revision, curricularizacion, contenido, materiales, admin };
 async function render() {
   const epoch = ++S.epoch;
   S.briefEpoch++;
@@ -437,6 +567,22 @@ async function accion(e) {
     else if (a === 'fila') await abrirFila(target.dataset.id);
     else if (a === 'unidad') await abrirUnidad(target.dataset.id);
     else if (a === 'nodo') await abrirNodo(target.dataset.id);
+    else if (a === 'concepto') await abrirConcepto(target.dataset.id);
+    else if (a === 'material') await abrirMaterial(target.dataset.id);
+    else if (a === 'mat-descarga') {
+      const formato = target.dataset.formato === 'json' ? 'json' : 'md';
+      await descargar(
+        '/api/v4/materiales/descarga/' + encodeURIComponent(target.dataset.id) + '?formato=' + formato,
+        `material-${target.dataset.id.slice(-12).replace(/[^a-zA-Z0-9_-]/g, '_')}.${formato}`,
+      );
+      toast('Material descargado · 0 llamadas a modelos');
+    } else if (a === 'prog-vista' || a === 'prog-patron' || a === 'mat-tipo') {
+      if (a === 'prog-vista') S.progVista = target.dataset.value === 'propuesta' ? 'propuesta' : 'original';
+      else if (a === 'prog-patron') S.progPatron = target.dataset.value in PATRONES ? target.dataset.value : '';
+      else if (target.dataset.value in TIPOS_MATERIAL) S.matTipo = target.dataset.value;
+      S.offset = 0;
+      await render();
+    }
     else if (a === 'limpiar') {
       S.filtros = { grado: '', disciplina: '', q: '' };
       S.offset = 0;

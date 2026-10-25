@@ -16,6 +16,7 @@ from goes_science_kg.materiales.compilacion import serializar, sha
 
 LOGGER = logging.getLogger(__name__)
 VERSION = "biblioteca-docente-1"
+# Las páginas se ordenan por grado y título para docentes; el id desempata de forma determinista.
 COLUMNAS = "id,version_curriculo,tipo,titulo,asignatura,unidad,fila_id,estado,sha256"
 SQL = """
 CREATE TABLE materiales (
@@ -190,7 +191,12 @@ class Biblioteca:
         with closing(_conectar(self.base)) as db:
             total = db.execute("SELECT COUNT(*) FROM materiales WHERE " + condicion, valores).fetchone()[0]
             registros = db.execute(
-                "SELECT " + COLUMNAS + " FROM materiales WHERE " + condicion + " ORDER BY id LIMIT ? OFFSET ?",
+                "SELECT "
+                + COLUMNAS
+                + " FROM materiales WHERE "
+                + condicion
+                + " ORDER BY (SELECT MIN(grado) FROM grados WHERE material_id=materiales.id), titulo, id"
+                + " LIMIT ? OFFSET ?",
                 (*valores, limite, offset),
             ).fetchall()
             salida = {

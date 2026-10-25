@@ -84,3 +84,26 @@ export async function descargar(path, nombre) {
   if (id && snapshot && id !== snapshot) throw new Error('La exportación pertenece a otra publicación.');
   guardar(await r.blob(), nombre);
 }
+export async function apiMateriales(path) {
+  const response = await fetch('/api/v4/materiales' + path, { headers: { Accept: 'application/json' } });
+  let data;
+  try {
+    data = await response.json();
+  } catch {
+    throw new Error('La biblioteca docente no devolvió una respuesta válida.');
+  }
+  if (!response.ok)
+    throw new Error(
+      response.status === 503
+        ? 'No hay datos disponibles: la biblioteca docente no está restaurada en este servicio.'
+        : typeof data.detail === 'string'
+          ? data.detail
+          : 'No se pudo consultar la biblioteca docente.',
+    );
+  return data;
+}
+export async function textoMateriales(path) {
+  const response = await fetch('/api/v4/materiales' + path);
+  if (!response.ok) throw new Error('El material no está disponible en este formato.');
+  return response.text();
+}
