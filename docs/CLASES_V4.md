@@ -305,7 +305,7 @@ vetos. La solicitud de 4.400 llamadas sigue pendiente. El plan de recuperación 
 
 ## Respaldo de continuidad verificado
 
-`config/datos_ciencias.lock.json` fija el respaldo de 13.762 archivos y 41 SQLite, incluidos ledger,
+El respaldo P11 del 23 de octubre fijaba 13.762 archivos y 41 SQLite (el recibo vigente, del 25 de octubre, fija 13.919 y los incluye), incluidos ledger,
 checkpoints, originales, respuestas y archivos de código de los protocolos. Se restauró desde GCS,
 se comprobaron 2.295 trazas históricas y se recuperaron 32 terminales sin generación. El respaldo
 fija 3.941 llamadas/USD 2.912,1834795 de reserva. El punto mínimo de continuidad tiene hash por cada

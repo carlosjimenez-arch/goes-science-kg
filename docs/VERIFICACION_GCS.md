@@ -1,6 +1,45 @@
 # Verificación de recuperación de Ciencias V4
 
-## Respaldo vigente P11: 23 de octubre de 2026
+## Respaldo vigente: producto integrado, 25 de octubre de 2026
+
+`config/datos_ciencias.lock.json` fija la generación que acompaña a la integración de `feat/api` y
+`feat/ciencias-v4`. Contiene el corte P11 completo y los datos derivados nuevos: lotes y salidas del
+etiquetado de conceptos V4, etiquetas unidas, progresión 2.º–11.º, su verificación y el registro de la
+migración de vínculos. Mismo bucket, prefijo, proyecto y cuenta GOES; PAP efectiva comprobada antes de cada
+escritura, precondición de objeto nuevo y relectura por generación.
+
+| Elemento | Identidad comprobada |
+|---|---|
+| Archivos / bases SQLite | 13.919 / 41 |
+| Bytes originales / comprimidos | 3.303.147.808 / 1.156.479.224 |
+| SHA del ZIP | `06398b9ee906eafa2bc6e64e273f4163d27a412f002b982fc22d45eb7a403101` |
+| Generaciones ZIP / inventario / descriptor | `1792955294299402` / `1792955354275666` / `1792955365147936` |
+| Huella del inventario | `935ad33c5839cf006d28422cf4b66a2d836cfd69817e932c631938910e46580c` |
+| Consumo conservado en el ledger | 4.442 llamadas registradas (3.941 de la campaña de guiones); sin reinicio |
+
+El empaquetador conserva ahora los bytes exactos de una base sin WAL leída bajo bloqueo SHARED: la biblioteca
+docente del paquete coincide con el SHA de su recibo propio. Las 40 bases operativas en WAL usan la copia
+consistente de SQLite. Una generación intermedia (`59151f1e…`), subida antes de la revisión adversarial, se
+conserva sin adoptar.
+
+**Consumidor nuevo.** En un `git worktree` limpio de `feat/api`, sin datos, con su propio entorno `uv`, se
+adoptó sólo este recibo y se ejecutó `gskg datos restaurar --en-repo`: 13.919 archivos verificados por SHA y
+48 vínculos de presupuesto migrados con auditoría. `gskg materiales validar` (2.867 registros) y `gskg producto
+validar` pasaron. El servicio respondió 200 en readiness, resumen, filas, progresión, trayectorias, biblioteca,
+exportación Excel y aplicación; la progresión restaurada adjunta su verificación, lo que prueba que sus bytes
+son idénticos. Suite completa en ese checkout: **1.693 pruebas aprobadas, ninguna omitida ni fallida**, en 283 s.
+
+Reproducción, sin Vertex:
+
+```bash
+git worktree add --detach /tmp/ciencias-consumidor feat/api && cd /tmp/ciencias-consumidor
+uv sync --frozen --all-extras
+uv run gskg datos restaurar --en-repo        # corpus, derivados y biblioteca exacta
+uv run gskg materiales validar && uv run gskg producto validar
+uv run gskg servir --puerto 8010
+```
+
+## Antecedente: respaldo P11 del 23 de octubre de 2026
 
 El recibo actual `config/datos_ciencias.lock.json` fija el corte de desarrollo completo en el mismo
 bucket, prefijo, proyecto y cuenta GOES. Se creó el ZIP con precondición de generación cero y PAP

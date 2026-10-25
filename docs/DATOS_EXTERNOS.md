@@ -46,6 +46,17 @@ uv run gskg datos restaurar --destino /tmp/ciencias-restauradas
 reconstruyen dentro del corpus restaurado. Los tres enlaces históricos que siguen en Git apuntan
 a las rutas originales y vuelven a funcionar después de `--en-repo`.
 
+## Respaldo vigente · 25 de octubre de 2026
+
+El recibo fija **13.919 archivos y 41 SQLite** (3.303.147.808 bytes originales), generación
+`1792955294299402` del ZIP `06398b9e…`. Incluye el corte P11 y los derivados de la progresión 2.º–11.º. Se
+restauró desde GCS en un checkout limpio y la aplicación completa funcionó con esos datos.
+[Identidades y prueba del consumidor](VERIFICACION_GCS.md).
+
+La biblioteca docente tiene además su recibo propio (`config/materiales_ciencias.lock.json`) para quien sólo
+necesite los materiales. Tras restaurar el corpus con `--en-repo`, la biblioteca ya está en `data/materiales`
+con sus bytes exactos; `gskg materiales restaurar` es para un checkout sin corpus.
+
 ## Migraciones posteriores
 
 `config/datos_externos.yaml` declara las raíces y patrones. El plan fija la selección concreta,
@@ -73,9 +84,9 @@ El inventario deja recuperar la procedencia exacta, pero no equivale a aprobaci�
 Retirar estos archivos del checkout y del siguiente commit no borra los objetos de commits
 anteriores. Esta migración no reescribe el historial de Git ni fuerza un push.
 
-## Respaldo vigente de clases
+## Antecedente: respaldo de clases
 
-El recibo actual fija **13.762 archivos y 41 SQLite**, con 3.293.032.617 bytes originales y
+El recibo del 23 de octubre fijaba **13.762 archivos y 41 SQLite**, con 3.293.032.617 bytes originales y
 1.154.109.631 comprimidos. SHA del ZIP:
 `a61846aa6948c8743f504fdfaf48ec1e815313724652df36d2c636ba61fa173b`;
 generación `1792734820537079`. La restauración independiente verificó todos los archivos, 2.295

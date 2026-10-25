@@ -20,7 +20,7 @@ El cierre local conserva 3.941 llamadas y USD 2.912,1834795 de reserva, con cero
 P9 permite correcciones explícitas y cuatro lecturas nuevas; P10/P11 separan historial y contexto,
 conservan pasajes completos y auditan los protocolos anteriores. [Estado y controles](CLASES_V4.md).
 
-El respaldo vigente contiene 13.762 archivos y 41 SQLite, y fija 3.941 llamadas acumuladas. Se
+El respaldo P11 contenía 13.762 archivos y 41 SQLite y fijaba 3.941 llamadas acumuladas; el recibo vigente del 25 de octubre (13.919 archivos) lo incluye sin cambiar el contador. Se
 restauró independientemente y se comprobaron 2.295 trazas y la recuperación de 32 terminales con
 cero llamadas nuevas. Un punto mínimo de continuidad impide reanudar desde un ledger antiguo que
 pierda el consumo posterior a las primeras 668 llamadas. La suite completa pasó 1.581 pruebas.

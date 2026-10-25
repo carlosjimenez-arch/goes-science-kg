@@ -14,8 +14,8 @@ usuarios reales, con todos los datos en el bucket institucional y verificables d
 | Aplicación | La biblioteca docente sólo era accesible por API | Vistas «Progresión 2.º–11.º» y «Materiales docentes»; diez secciones probadas en escritorio y teléfono |
 | Calidad | Lint verde por rama; 1.462 pruebas en `feat/api` | Ver [Verificación final](#verificación-final) |
 
-No se ejecutaron campañas pagadas. La ampliación de la campaña de guiones (45 objetivos pendientes, hasta
-450 llamadas) **no se autorizó** en esta revisión; los guiones siguen como borradores en desarrollo.
+No se ejecutaron campañas pagadas. Consultado sobre ampliar la campaña de guiones (45 objetivos pendientes,
+hasta 450 llamadas), el usuario **decidió no ampliar por ahora**; los guiones siguen como borradores.
 
 ## 1. Integración del producto
 
@@ -50,7 +50,10 @@ Git. El repositorio contiene sólo código, configuración, pruebas, documentaci
 | `repositorio/inventarios/`, `recibos/`, `verificaciones/` | Inventario, descriptor y evidencia de restauración | Mismo recibo |
 | `materiales/<biblioteca_id>/` | Biblioteca docente (SQLite + manifest) | `config/materiales_ciencias.lock.json` |
 
-El detalle de generaciones y la restauración independiente están en [Verificación GCS](../VERIFICACION_GCS.md).
+Recibo vigente: 13.919 archivos y 41 SQLite, ZIP `06398b9e…` (generación `1792955294299402`). Un
+consumidor nuevo —`git worktree` limpio, entorno propio, sólo el recibo— restauró todo desde el bucket y
+ejecutó la suite completa: **1.693 pruebas aprobadas, ninguna omitida**. El servicio levantado desde ese
+checkout respondió en todas las rutas. Detalle en [Verificación GCS](../VERIFICACION_GCS.md).
 
 ## 3. Grafo de conocimiento: introducción y refuerzo 2.º–11.º
 
@@ -102,10 +105,25 @@ Antes de esas correcciones se había subido una generación intermedia del corpu
 (`59151f1e4b8faa72c575e661b39c640ae58e5c791de91a5100a0f42955fbfbd7`). No se adoptó y se conserva sin
 sobrescribir; el recibo vigente apunta a la generación posterior.
 
+## Verificación final
+
+| Control | Antes (`5e8079a`) | Después (`1c445fc` + documentación) |
+|---|---:|---:|
+| `make lint` (Ruff, formato a 120) | verde | verde |
+| `make cobertura`: pruebas aprobadas | 1.462 | **1.693 / 1.693**, ninguna omitida |
+| Cobertura de líneas | 79,4 % | **79,1 %** |
+| `make pruebas-js`, `make auditoria`, `git diff --check` | — | verde |
+| Consumidor nuevo restaurado sólo desde GCS | — | 1.693 aprobadas |
+| Diez vistas en 1440 px y 390 px | ocho vistas | sin errores ni desbordes |
+
+La cobertura baja tres décimas porque el código de guiones integrado tiene menos líneas cubiertas. La medición
+está en [medicion.json](../badges/medicion.json) con su huella de código. Las pruebas no acreditan
+exactitud científica de cada propuesta ni eficacia educativa.
+
 ## Riesgos y decisiones pendientes
 
 1. **Guiones de clase:** 968 respaldados, 27 vetos y 18 abstenciones. Publicarlos exige terminar los 45 y
-   resolver los hallazgos de auditoría (ampliación a 4.400 llamadas, sin autorizar).
+   resolver los hallazgos de auditoría (ampliación a 4.400 llamadas, pospuesta por decisión del usuario).
 2. **Aprobación institucional:** dictámenes automáticos y verificaciones por agentes no equivalen a una
    revisión del MINED ni a evidencia de aprendizaje. El piloto con usuarios es un proceso aparte.
 3. **Despliegue:** la aplicación es de uso local, sin autenticación. Exponerla a usuarios reales fuera del

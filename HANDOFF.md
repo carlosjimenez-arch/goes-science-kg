@@ -1,48 +1,55 @@
 # Continuidad · GOEs AI · feat/api
 
-Corte: 22 de octubre de 2026. El estado vigente se concentra en [README](README.md),
-[documentación](docs/README.md) y [auditoría de esta rama](docs/auditoria/REVISION_API_2026.md).
+Corte: 25 de octubre de 2026. Estado vigente en [README](README.md), [documentación](docs/README.md) y la
+[auditoría integral de producto](docs/auditoria/QA_PRODUCTO_20261025.md).
 
-La aplicación usa el snapshot V4 `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`:
-1.020 originales, 1.013 propuestas de Ciencias, siete filas fuera de alcance y 108 unidades.
-Conserva treinta alertas científicas de los originales. Las propuestas corregidas no levantan sus vetos.
+## Qué es la entrega
 
-La rama `feat/api` contiene el refactor de consultas y publicación, índices, contratos de respuesta,
-docstrings en inglés, formato, controles de calidad y documentación. El diseño conserva el CSS del
-HTML aportado. La API de referencia `eor-api` ya se revisó tras recuperar el acceso local;
-la [adaptación](docs/REFERENCIA_EOR_API.md) documenta patrones y decisiones propias de GOEs.
+`feat/api` es **un solo producto**. Integra la API y la aplicación homogeneizadas con la biblioteca docente,
+el código de guiones P1–P11 y el respaldo de `feat/ciencias-v4` (merge `ef411f3`). Añade la capa de
+conceptos V4 y la progresión 2.º–11.º con sus vistas. La rama `feat/ciencias-v4` queda contenida en
+`feat/api`; no hay otra línea de producto pendiente de integrar.
 
-Los extractores `ingesta/extraccion.py` y `ingesta/estructurados.py` conservan sus bytes anteriores:
-son parte de la identidad de evidencia publicada. No formatearlos ni cambiar sus docstrings sin una
-migración explícita. El refactor cambia las huellas de los workflows; no reanudar presupuestos antiguos
-con el código nuevo ni repetir votos para resolver incompatibilidades.
+- Publicación `producto-4`, snapshot `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`:
+  1.020 originales, 1.013 propuestas de Ciencias, 7 fuera de alcance, 108 unidades y 30 alertas que las
+  propuestas corregidas no levantan.
+- Aplicación con diez secciones, incluidas **Progresión 2.º–11.º** y **Materiales docentes**.
+- Biblioteca docente `5b64ee…` con 2.867 registros; no equivale a guiones cronometrados.
+- Progresión: [método, resultados y límites](docs/PROGRESION_2_11.md). Sus listas son triaje para expertos.
 
-El ledger `ciencias_v4_curricularizacion_20261022` conserva 668 invocaciones y
-USD 731,1485125 de reserva conservadora, sin pendientes. No es factura. La consulta no gasta modelos.
-El corpus está restaurado localmente, ignorado por Git y recuperable mediante
-`config/datos_ciencias.lock.json`. No repetir restauración sobre rutas existentes.
+## Datos
 
-Las métricas de esta entrega se generan en [medicion.json](docs/badges/medicion.json).
-La CI portable se ejecuta al publicar `feat/api`; su estado remoto se consulta desde el badge del
-README. El usuario autorizó el commit y envío de esta rama tras el cierre de QA. No se repitieron
-campañas. La aprobación institucional y el piloto educativo son procesos separados.
+Todo el corpus y los derivados están en `gs://goes-ai-kg-artefactos/ciencias/v4/`, fuera de Git.
+`config/datos_ciencias.lock.json` fija el ZIP `06398b9e…` (13.919 archivos, 41 SQLite). Un checkout limpio
+restauró todo desde el bucket y pasó 1.693 pruebas sin omisiones. [Verificación](docs/VERIFICACION_GCS.md).
+La generación intermedia `59151f1e…` se subió antes de la revisión adversarial y no se adoptó.
 
-El [QA posterior independiente](docs/auditoria/QA_SEGUNDA_REVISION.md) revisó el conjunto del repo y
-motivó correcciones en el respaldo de assets, las respuestas tardías de briefs, las exportaciones
-Excel, el aislamiento de alertas por base y la reserva de embeddings entre procesos. No se migraron
-ledgers ni se reanudaron experimentos para probarlas.
+El corpus local está restaurado y es idéntico al recibo, salvo las bases operativas en WAL que el paquete
+guarda como copia consistente. Los SQLite locales reemplazados al adoptar el corte P11 quedaron respaldados en
+`../_respaldos/goes-science-kg/20261025_previo_a61846/`, fuera del repositorio. No repetir restauraciones
+sobre rutas existentes.
 
-La revisión posterior al PR añade observabilidad HTTP local, 49 contratos de `.gitignore` y una
-huella de métricas que incluye las políticas de calidad. Se mantiene el alcance Ciencias confirmado
-por el usuario.
+Para producir datos derivados nuevos: generar, respaldar con `gskg datos preparar|subir`, restaurar en un
+checkout limpio y sólo entonces adoptar el recibo en un commit revisado.
 
-La revisión automática no constituye aprobación institucional ni eficacia de aprendizaje medida.
-La calibración independiente y el piloto de aula son evaluaciones posteriores, no estados de los agentes.
+## Presupuestos y campañas
 
+El ledger registra 4.442 invocaciones (reserva conservadora USD 2.961,97, no factura); la campaña de guiones
+`ciencias_v4_curricularizacion_20261022` conserva 3.941 de su máximo acumulado de 4.000 llamadas y USD 3.500.
+Quedan 45 objetivos sin guion liberable (27 vetos y 18 abstenciones). **El usuario decidió el 25 de octubre
+no ampliar a 4.400 llamadas por ahora**: los guiones siguen como borradores y no se publican. Esta sesión
+no consumió Vertex; el etiquetado V4 lo hicieron agentes de lote validados por reglas.
 
-La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
-V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
-Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
-La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
-clases; no se presentan como guiones completos nuevos para todos los objetivos.
-[Detalle, almacenamiento y pruebas](docs/MATERIALES_DOCENTES.md).
+`clases/` y `cli/clases.py` tienen bytes congelados por la campaña abierta (excepción de estilo documentada,
+como los extractores). Reanudarla exige autorización explícita y el mismo código.
+
+## Pendientes
+
+1. Decisión sobre la ampliación de guiones y, si se aprueba, auditoría de los 45 pendientes antes de compilar.
+2. Revisión experta del triaje de prerrequisitos (28 prioritarios: 3 confirmados, 18 parciales, 7 refutados)
+   y de las observaciones de fuente para el MINED.
+3. Decisión sobre los 173 conceptos que faltan en el vocabulario y el reparto de `configuracion-electronica`.
+4. Identidad institucional y control de acceso antes de exponer la aplicación fuera del equipo.
+5. Política de retención en el prefijo `ciencias/v4/` del bucket compartido (requiere su responsable).
+
+La aprobación del MINED, el piloto con usuarios y la eficacia de aprendizaje son procesos separados.
