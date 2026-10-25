@@ -130,6 +130,15 @@ def seleccionar_artefactos(raiz: Path) -> list[str]:
     return sorted(seleccion)
 
 
+def _sqlite_con_auxiliares(archivo: Path) -> bool:
+    # Sin WAL ni journal pendientes, los bytes del archivo ya son la base confirmada. Copiarlos tal cual conserva
+    # las bases inmutables fijadas por SHA (p. ej. la biblioteca docente); backup() las reescribiría.
+    return any(
+        (aux := archivo.with_name(archivo.name + sufijo)).exists() and aux.stat().st_size
+        for sufijo in ("-wal", "-journal")
+    )
+
+
 def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: int = 1024**3) -> dict:
     """Inventory exact bytes without implicit roots or external credentials."""
     raiz = raiz.resolve()
@@ -146,7 +155,8 @@ def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: 
                 archivo = raiz / rel
                 if archivo.is_symlink() or not archivo.resolve().is_relative_to(raiz) or not archivo.is_file():
                     raise ValueError("El inventario sale de la raíz o contiene un archivo no regular")
-                if archivo.suffix == ".sqlite":
+                consistente = archivo.suffix == ".sqlite" and _sqlite_con_auxiliares(archivo)
+                if consistente:
                     copia = Path(temporal) / "consistente.sqlite"
                     with closing(sqlite3.connect(archivo.as_uri() + "?mode=ro", uri=True)) as original, original:
                         with closing(sqlite3.connect(copia)) as receptor, receptor:
@@ -161,7 +171,7 @@ def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: 
                 inventario[rel] = {
                     "sha256": hashlib.sha256(contenido).hexdigest(),
                     "bytes": len(contenido),
-                    "copia_sqlite_consistente": archivo.suffix == ".sqlite",
+                    "copia_sqlite_consistente": consistente,
                 }
                 info = zipfile.ZipInfo(rel, date_time=(2026, 1, 1, 0, 0, 0))
                 info.compress_type = zipfile.ZIP_DEFLATED

@@ -310,3 +310,11 @@ Las API históricas y V4 conservan sus rutas. La nueva API de la interfaz está 
 No necesita un build npm ni peticiones a CDN. Navegar, exportar y compilar briefs no consume Vertex.
 Los datos restaurados para servir quedan ignorados por Git; no se incluyen en los commits.
 [Operación y verificación de la aplicación](APLICACION_CIENCIAS.md).
+
+
+La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
+V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
+Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
+La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
+clases; no se presentan como guiones completos nuevos para todos los objetivos.
+[Detalle, almacenamiento y pruebas](MATERIALES_DOCENTES.md).

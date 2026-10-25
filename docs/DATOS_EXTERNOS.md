@@ -73,9 +73,27 @@ El inventario deja recuperar la procedencia exacta, pero no equivale a aprobaci�
 Retirar estos archivos del checkout y del siguiente commit no borra los objetos de commits
 anteriores. Esta migración no reescribe el historial de Git ni fuerza un push.
 
-## Respaldo final del 22 de octubre de 2026
+## Respaldo vigente de clases
 
-El recibo vigente fija **7.580 archivos y siete SQLite**, 1.658.473.975 bytes originales y
+El recibo actual fija **13.762 archivos y 41 SQLite**, con 3.293.032.617 bytes originales y
+1.154.109.631 comprimidos. SHA del ZIP:
+`a61846aa6948c8743f504fdfaf48ec1e815313724652df36d2c636ba61fa173b`;
+generación `1792734820537079`. La restauración independiente verificó todos los archivos, 2.295
+trazas históricas y 32 recuperaciones terminales sin llamar a modelos. Conserva 3.941 invocaciones
+y USD 2.912,1834795 de reserva. El punto mínimo de consumo está incluido en el respaldo y su SHA
+en la configuración pública; restaurar una versión anterior no habilita un contador menor.
+[Generaciones y alcance](VERIFICACION_GCS.md). Los borradores pendientes no son clases liberadas.
+
+La cota del respaldo es explícita, hasta 8 GiB sin comprimir; el recibo fija la cota aplicable a su
+versión. El cliente del corpus adopta también una cota explícita de lectura de objetos de hasta 8 GiB.
+El tamaño se valida antes de crear el objeto; se conserva la comprobación por generación, tamaño
+y SHA incremental. El cliente general conserva su valor predeterminado de 1 GiB.
+No se retiran los datos locales durante esta ampliación. Las nuevas operaciones requieren
+otro respaldo actualizado antes del cierre.
+
+## Antecedente: respaldo del cierre curricular del 22 de octubre
+
+El recibo histórico fijaba **7.580 archivos y siete SQLite**, 1.658.473.975 bytes originales y
 497.573.457 bytes comprimidos. La generación del paquete es `1792672061221417`, con SHA
 `b6b84b511df95ee7d85f11c0c94d03286c05594308e084282e91ec23803de065`.
 Se descargaron y verificaron todos los archivos y se reanudaron terminales reales P6/P7 con cero

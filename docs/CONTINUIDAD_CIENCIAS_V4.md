@@ -1,9 +1,33 @@
 # Ciencias V4: continuidad y verificación
 
-> Cierre de la entrega curricular anterior, conservado como evidencia. La rama de mantenimiento actual
-> es `feat/api`; API, estilo y métricas vigentes: [índice](README.md) y [calidad](CALIDAD.md).
+Actualización operativa: 23 de octubre de 2026, America/Bogota.
 
-Actualización operativa: 22 de octubre de 2026, America/Bogota.
+## Ampliación de guiones de clase
+
+El usuario autorizó un máximo **acumulado** de 4.000 invocaciones y USD 3.500 de reserva para los
+1.013 guiones de Ciencias. Las 668 llamadas anteriores no se reinician. El recibo literal privado
+está en `data/operaciones/clases_v4_20261022/autorizacion.json`; `config/presupuesto_clases_v4.json`
+fija el prefijo de consumo y sus límites. El saldo se calcula desde el ledger real, no desde este texto.
+
+El corte de la campaña P11 cubre los 1.013 objetivos: 968 respaldos automáticos, 27 vetos y
+18 abstenciones. La revisión directa de los 32 casos está completa y conserva seguimientos
+adicionales: los defectos conocidos bloquean sus versiones aunque tengan votos positivos.
+La publicación íntegra de guiones y unidades continúa pendiente. Hay 34 resoluciones exactas
+registradas y 2.060 trazas verificadas en 369 resultados seleccionados. El siguiente plan de 45 lotes
+requiere 225–450 llamadas y hasta USD 548,04604 de reserva. Su preflight no cabe en 4.000 llamadas;
+la solicitud a 4.400 está pendiente, conservando el máximo USD 3.500 y el contador.
+El cierre local conserva 3.941 llamadas y USD 2.912,1834795 de reserva, con cero llamadas pendientes.
+P9 permite correcciones explícitas y cuatro lecturas nuevas; P10/P11 separan historial y contexto,
+conservan pasajes completos y auditan los protocolos anteriores. [Estado y controles](CLASES_V4.md).
+
+El respaldo vigente contiene 13.762 archivos y 41 SQLite, y fija 3.941 llamadas acumuladas. Se
+restauró independientemente y se comprobaron 2.295 trazas y la recuperación de 32 terminales con
+cero llamadas nuevas. Un punto mínimo de continuidad impide reanudar desde un ledger antiguo que
+pierda el consumo posterior a las primeras 668 llamadas. La suite completa pasó 1.581 pruebas.
+[Generaciones y reproducción](VERIFICACION_GCS.md). La biblioteca de preparaciones sigue disponible;
+no se presenta como entrega de clases completas.
+
+## Cierre curricular anterior
 
 Estado vigente: P6 resolvió las diez incidencias y P7 corrigió un falso positivo adicional con fuentes
 primarias y cuatro votos sobre otro borrador. La publicación definitiva producto-4 selecciona las
@@ -13,7 +37,7 @@ reautenticación antes de gastar; tras la respuesta del usuario se verificaron A
 El ledger conserva 668 invocaciones y USD 731,1485125 de reserva, cero pendientes y ningún reinicio.
 La suite final pasó 1.360 pruebas. [Resultados actuales](CURRICULARIZACION_V4.md).
 
-El respaldo final GCS de 7.580 archivos ya está adoptado y restaurado. Los once terminales P6/P7 se
+El respaldo histórico GCS de 7.580 archivos se adoptó y restauró antes de ampliar los guiones. Los once terminales P6/P7 se
 reanudaron desde la copia recuperada con cero llamadas nuevas y ledger idéntico byte a byte.
 [Recibo y comprobaciones](VERIFICACION_GCS.md). Los apartados históricos conservan las etapas anteriores.
 El corpus local se retiró tras una segunda restauración y comparación completa: 7.580 archivos en

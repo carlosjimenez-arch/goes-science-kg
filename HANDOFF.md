@@ -27,12 +27,6 @@ La CI portable se ejecuta al publicar `feat/api`; su estado remoto se consulta d
 README. El usuario autorizó el commit y envío de esta rama tras el cierre de QA. No se repitieron
 campañas. La aprobación institucional y el piloto educativo son procesos separados.
 
-Al preparar este envío, `origin/feat/ciencias-v4` avanzó a
-`663d071d31bc7e4689f6b04f60ee16f3b24589f3` con materiales docentes y guiones de clase. Esas
-funcionalidades están en otra rama y no pertenecen a la huella de código validada aquí. La entrega
-integral exige integrar ambas líneas y repetir la validación sobre el árbol resultante; esta rama
-constituye una entrega técnica verificada para revisión y piloto controlado.
-
 El [QA posterior independiente](docs/auditoria/QA_SEGUNDA_REVISION.md) revisó el conjunto del repo y
 motivó correcciones en el respaldo de assets, las respuestas tardías de briefs, las exportaciones
 Excel, el aislamiento de alertas por base y la reserva de embeddings entre procesos. No se migraron
@@ -40,4 +34,15 @@ ledgers ni se reanudaron experimentos para probarlas.
 
 La revisión posterior al PR añade observabilidad HTTP local, 49 contratos de `.gitignore` y una
 huella de métricas que incluye las políticas de calidad. Se mantiene el alcance Ciencias confirmado
-por el usuario. No se incorporaron los módulos de materiales o clases de la otra rama.
+por el usuario.
+
+La revisión automática no constituye aprobación institucional ni eficacia de aprendizaje medida.
+La calibración independiente y el piloto de aula son evaluaciones posteriores, no estados de los agentes.
+
+
+La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
+V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
+Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
+La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
+clases; no se presentan como guiones completos nuevos para todos los objetivos.
+[Detalle, almacenamiento y pruebas](docs/MATERIALES_DOCENTES.md).

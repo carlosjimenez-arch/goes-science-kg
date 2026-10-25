@@ -27,4 +27,7 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 16 | [producto_v4](16_producto_v4.md) | Ingesta rica, clasificación, snapshots, fuentes, vista y runtime V4 |
 | 17 | [aplicacion_curricular](17_aplicacion_curricular.md) | Interfaz GOES y API sobre los datos reales de Ciencias |
 
+| 18 | [materiales_docentes](18_materiales_docentes.md) | Biblioteca docente versionada, API y publicación privada verificable |
+| 19 | [guiones_completos_v4](19_guiones_completos_v4.md) | Guiones nuevos por objetivo, cuatro revisiones reales, presupuesto acumulado y entrega completa |
+
 Si el código y una spec no coinciden, se corrige uno de los dos en el mismo commit.

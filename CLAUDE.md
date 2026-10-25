@@ -54,6 +54,16 @@ La campaña cerrada `ciencias_v4_curricularizacion_20261022` conserva 668 invoca
 La publicación conserva las cohortes originales y sus resultados, incluidos los negativos.
 Los dictámenes automáticos no equivalen a aprobación del MINED ni eficacia de aprendizaje.
 
+## Guiones y biblioteca docente
+
+`clases/` produce guiones por objetivo con redacción, cuatro lectores ciegos y reparación acotada;
+`materiales/` empaqueta la biblioteca docente (2.867 registros) servida en `/api/v4/materiales`.
+La ampliación autorizó 4.000 invocaciones y USD 3.500 de reserva **acumuladas** sobre las 668 previas
+(`config/presupuesto_clases_v4.json`). No reiniciar el ledger ni repetir votos de un contenido vetado.
+La biblioteca publicada no equivale a guiones cronometrados nuevos ni a carga oficial. Alcance y
+límites: `specs/18_materiales_docentes.md`, `specs/19_guiones_completos_v4.md`,
+`docs/MATERIALES_DOCENTES.md` y `docs/CLASES_V4.md`.
+
 ## Herramientas y entregables
 
 `gskg servir` ofrece `/app/`, `/docs`, `/health/live`, `/health/ready` y `/api/v4/interfaz`.

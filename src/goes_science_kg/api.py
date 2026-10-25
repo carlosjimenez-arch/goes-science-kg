@@ -321,6 +321,9 @@ def crear_app(base: Path | None = None) -> FastAPI:
     from goes_science_kg.api_interfaz import registrar_interfaz
 
     registrar_interfaz(aplicacion)
+    from goes_science_kg.api_materiales import crear_router_materiales
+
+    aplicacion.include_router(crear_router_materiales(directorio))
     return aplicacion
 
 

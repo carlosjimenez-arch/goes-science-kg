@@ -30,6 +30,12 @@ resultados de aula y la eficacia de aprendizaje requieren evidencia propia.
 
 ![Aplicación GOEs con la publicación de Ciencias verificada](docs/auditoria/app-goes-2026.png)
 
+Los datos y resultados están separados del código público. El respaldo vigente fija **13.762 archivos**
+y **41 SQLite** por generación y SHA. Se restauró en una carpeta vacía, se verificaron 2.295 trazas de
+lectores y se reanudaron 32 terminales de clases sin nuevas llamadas a Vertex. [Evidencia de recuperación](docs/VERIFICACION_GCS.md).
+[Estado de continuidad](docs/CONTINUIDAD_CIENCIAS_V4.md), [operación](docs/OPERACION.md) y
+[alcance de publicación](docs/PUBLICACION.md).
+
 ## Producto disponible
 
 La selección local `producto-4`, verificada el **22 de octubre de 2026**, contiene:
@@ -107,6 +113,36 @@ una función recibe 409; la ausencia o alteración de evidencia produce 503. El 
 sus rutas `/api/*` y su propia procedencia. [Contrato completo](specs/17_aplicacion_curricular.md).
 
 ## Arquitectura
+
+La biblioteca docente está disponible en `/api/v4/materiales`: **1.013 paquetes V4 por objetivo y
+108 por unidad**, junto a 150 paquetes V3 y los bancos históricos con sus estados originales.
+Se recupera sin descargar todo el corpus con `uv run gskg materiales restaurar`.
+[Contenido, procedencia y ejemplos de consulta](docs/MATERIALES_DOCENTES.md).
+
+La ampliación de **guiones completos por objetivo** continúa en revisión. El corte de la campaña P11
+del 23 de octubre cubre los 1.013 objetivos: **968 respaldos automáticos y 45 vetos/abstenciones**,
+sin objetivos pendientes de primera generación. La revisión directa conserva además hallazgos sobre
+versiones con votos favorables y exige una resolución exacta. La entrega completa de 1.013 guiones
+y 108 unidades aún no está publicada. Las pruebas de ingeniería pasaron **1.581 casos** y Ruff;
+esas pruebas no acreditan exactitud científica o eficacia educativa de todos los guiones.
+
+**Descarga disponible:** preparaciones curriculares con `uv run gskg materiales restaurar`; corpus,
+guiones en desarrollo y checkpoints con `uv run gskg datos restaurar --destino /tmp/ciencias-restauradas`.
+Ambos comandos verifican las generaciones y SHA fijados en `config/*ciencias.lock.json` y requieren
+acceso GOES al bucket `gs://goes-ai-kg-artefactos/ciencias/v4/`. Usar una carpeta nueva; para restaurar
+las rutas del proyecto vacío, usar `uv run gskg datos restaurar --en-repo`.
+
+El máximo autorizado sigue siendo acumulado: 4.000 invocaciones/USD 3.500 de reserva. El respaldo
+vigente conserva 3.941 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
+Incluye las fuentes, los resultados y los checkpoints de este corte. El plan documental de
+los 45 pendientes necesita hasta 450 llamadas; su preflight queda bloqueado por el límite vigente.
+La solicitud de ampliación a 4.400 llamadas está pendiente: no constituye autorización para ejecutarlo.
+El cierre local conserva 3.941 llamadas, sin reinicio; 34 resoluciones exactas y 2.060 trazas verificadas
+en 369 resultados seleccionados. El caso estelar de la muestra sigue bloqueado dentro de los 45 pendientes.
+Los borradores conservan tareas, soluciones y expedientes de desarrollo; los resultados pendientes no son
+clases liberadas. El recibo del ZIP docente completo se añadirá después de cubrir todos los objetivos y
+resolver los defectos. [Estado, operación y contrato de descarga](docs/CLASES_V4.md).
+
 
 ```mermaid
 flowchart LR

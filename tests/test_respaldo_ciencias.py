@@ -122,6 +122,40 @@ def test_corrupcion_de_generacion_releida_impide_emitir_respaldo(tmp_path):
         almacen(cli).crear(p, "prueba.zip")
 
 
+def test_objeto_que_no_puede_releerse_se_rechaza_antes_de_subir(tmp_path, monkeypatch):
+    cli = GCloudSimulado()
+    p = tmp_path / "grande.zip"
+    p.write_bytes(b"tamanio simulado sin reservar un GiB en disco")
+    monkeypatch.setattr("goes_science_kg.operacion.almacen_gcs._medir", lambda _: ("a" * 64, 1024**3 + 1))
+    with pytest.raises(ValueError, match="límite de objeto"):
+        almacen(cli).crear(p, "repositorio/objetos/grande.zip")
+    assert not cli.llamadas
+
+
+def test_corpus_mayor_de_un_gib_requiere_cota_explicita_y_sigue_fijando_generacion(tmp_path, monkeypatch):
+    cli = GCloudSimulado()
+    a = almacen(cli)
+    uri = a.configuracion.ruta("repositorio/objetos/grande.zip")
+    cli.objetos[uri] = b"contenido simulado; la medida logica evita un archivo gigante en el test"
+    tamano = 1024**3 + 1
+    monkeypatch.setattr("goes_science_kg.operacion.almacen_gcs._medir", lambda _: ("a" * 64, tamano))
+    with pytest.raises(ValueError, match="límite de objeto"):
+        a.verificar(uri, "123", "a" * 64, tamano)
+    assert not cli.llamadas
+    ampliado = AlmacenGCS(a.configuracion, cli=cli, max_bytes_objeto=8 * 1024**3)
+    ampliado.verificar(uri, "123", "a" * 64, tamano, destino=tmp_path / "copia.zip")
+    assert cli.llamadas == [["storage", "cp", uri + "#123", cli.llamadas[0][3]]]
+    with pytest.raises(ValueError, match="límite de objeto"):
+        ampliado.verificar(uri, "123", "a" * 64, 8 * 1024**3 + 1)
+    assert len(cli.llamadas) == 1
+
+
+@pytest.mark.parametrize("limite", [0, True, 8 * 1024**3 + 1])
+def test_la_cota_de_objeto_no_admite_descargas_sin_limite(limite):
+    with pytest.raises(ValueError, match="hasta 8 GiB"):
+        AlmacenGCS(almacen(GCloudSimulado()).configuracion, max_bytes_objeto=limite)
+
+
 @pytest.mark.parametrize("ruta", ["../otro", "/absoluto", "x/.env", "x/.git/config", "x/../y", "x\\y"])
 def test_archivo_hostil_rechazado(ruta):
     with pytest.raises(ValueError):
@@ -208,3 +242,24 @@ def test_seleccion_y_restauracion_preservan_app_y_herramientas_de_calidad(tmp_pa
     destino = tmp_path / "restaurado"
     restaurar_paquete(paquete, destino, sha256=plan["sha256"])
     assert {relativo: (destino / relativo).read_bytes() for relativo in originales} == originales
+
+
+def test_sqlite_sin_auxiliares_conserva_sus_bytes_exactos(tmp_path):
+    # Una base inmutable fijada por SHA (biblioteca docente) debe restaurarse idéntica a su manifest.
+    raiz = tmp_path / "original"
+    raiz.mkdir()
+    db = raiz / "biblioteca.sqlite"
+    with closing(sqlite3.connect(db)) as con, con:
+        con.execute("PRAGMA page_size=1024")
+        con.execute("CREATE TABLE materiales (id TEXT PRIMARY KEY, documento TEXT)")
+        con.executemany("INSERT INTO materiales VALUES (?, ?)", [(f"m{i}", "x" * 300) for i in range(50)])
+        con.execute("DELETE FROM materiales WHERE id < 'm3'")
+    original = db.read_bytes()
+    archivo = tmp_path / "paquete.zip"
+    plan = crear_paquete(raiz, ["biblioteca.sqlite"], archivo)
+    destino = tmp_path / "restaurado"
+    restaurar_paquete(archivo, destino, sha256=plan["sha256"])
+    assert (destino / "biblioteca.sqlite").read_bytes() == original
+    with zipfile.ZipFile(archivo) as zip_:
+        manifest = json.loads(zip_.read("MANIFEST_RESPALDO.json"))
+    assert manifest["archivos"]["biblioteca.sqlite"]["copia_sqlite_consistente"] is False

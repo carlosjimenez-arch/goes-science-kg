@@ -223,3 +223,14 @@ Los módulos JS separan cliente HTTP/escape, iconos, proyección 3D y orquestaci
 renderizado preserva los tipos de arista y declara el recorte. El brief es una compilación documental
 sobre propuestas respaldadas; verifica el original y no invoca el motor. El ledger operativo se lee
 sin escrituras. [Contrato y límites de integración](../specs/17_aplicacion_curricular.md).
+
+
+## Biblioteca docente consultable
+
+`materiales/compilacion.py` adapta las propuestas V4 revisadas y los originales pedagógicos;
+`materiales/almacen.py` publica SQLite y manifest deterministas con índices, SHA e inventario.
+`materiales/publicacion.py` coordina creación privada, recibos y restauración atómica con el
+`AlmacenGCS` existente. `cli/materiales.py` expone los casos de uso y `api_materiales.py` lee
+la biblioteca independientemente del resto del corpus. Cada consulta usa SQLite inmutable;
+una modificación de archivos invalida el lector. No genera nuevos dictámenes ni llama a GCS
+por petición. [Contrato y límites](MATERIALES_DOCENTES.md).

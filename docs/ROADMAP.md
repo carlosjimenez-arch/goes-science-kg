@@ -85,3 +85,14 @@ La intervención agentic debe probarse después del baseline híbrido: como máx
 Cada propuesta deberá declarar grado/edad aplicable, objetivo observable, prerrequisitos, duración, recursos realmente disponibles, apoyo lector/matemático, seguridad, accesibilidad y una comprobación distinta de repetir la explicación. Agua, sismos, vulcanismo, biodiversidad o energía pueden ofrecer contextos locales; no se inventan estadísticas ni disponibilidad de laboratorio o conectividad. Se preservan variantes sin conexión y de materiales sencillos.
 
 La simulación debe mostrar qué mejora, qué carga agrega y qué compromisos introduce. La prioridad no se reduce a cuántos países mencionan un concepto: incluye dependencia conceptual, robustez de evidencia, viabilidad y oportunidades de aprendizaje.
+
+
+## Materiales docentes consultables · 22 de octubre de 2026
+
+Se completó la compilación y distribución de las propuestas revisadas como 1.013 paquetes de
+preparación por objetivo y 108 por unidad. La biblioteca conserva siete filas fuera de alcance,
+150 paquetes V3, 1.583 elementos pedagógicos históricos, cinco recorridos y la unidad experimental
+V4 con su snapshot propio: 2.867 registros y 316 originales. API de lectura, descargas y
+restauración independiente desde GCS con generación y SHA fijados. Cero invocaciones nuevas.
+No convierte las orientaciones en guiones nuevos cronometrados ni promueve pendientes históricos.
+[Contrato, contenido y reproducción](MATERIALES_DOCENTES.md).

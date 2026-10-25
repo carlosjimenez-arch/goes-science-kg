@@ -61,10 +61,18 @@ select = ["E", "F", "I", "B", "UP", "D100", "D101", "D102", "D103", "D104"]
 # Published evidence pins these source bytes, including their historical docstrings.
 "src/goes_science_kg/ingesta/extraccion.py" = ["D101", "D102", "D103"]
 "src/goes_science_kg/ingesta/estructurados.py" = ["D101", "D102", "D103"]
+# The open class campaign fingerprints these modules (protocol environment, code ZIP, self-hashes).
+"src/goes_science_kg/clases/**" = ["D101", "D102", "D103"]
+"src/goes_science_kg/cli/clases.py" = ["D101", "D102", "D103"]
 
 [tool.ruff.format]
 # These exact source bytes identify evidence in the published extraction profiles.
-exclude = ["src/goes_science_kg/ingesta/extraccion.py", "src/goes_science_kg/ingesta/estructurados.py"]
+exclude = [
+    "src/goes_science_kg/ingesta/extraccion.py",
+    "src/goes_science_kg/ingesta/estructurados.py",
+    "src/goes_science_kg/clases/**",
+    "src/goes_science_kg/cli/clases.py",
+]
 
 [tool.coverage.run]
 source = ["goes_science_kg"]

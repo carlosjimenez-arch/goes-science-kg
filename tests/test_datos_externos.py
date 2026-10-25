@@ -14,6 +14,22 @@ from goes_science_kg.cli.datos import app
 from goes_science_kg.operacion import datos_externos as datos
 
 
+def test_solo_el_cliente_del_corpus_adopta_su_cota_explicita(monkeypatch):
+    from goes_science_kg.cli.datos import _almacen
+
+    cfg = {
+        "proyecto": "proyecto-ciencias",
+        "bucket": "bucket-ciencias",
+        "prefijo": "ciencias/v4",
+        "cuenta": "carlos.jimenez@goes.gob.sv",
+    }
+    monkeypatch.setattr(
+        "goes_science_kg.cli.datos.cargar",
+        lambda nombre: cfg if nombre == "almacen_ciencias" else {"max_bytes_sin_comprimir": 8 * 1024**3},
+    )
+    assert _almacen().max_bytes_objeto == 8 * 1024**3
+
+
 def preparar(tmp_path):
     raiz = tmp_path / "repo"
     (raiz / "data").mkdir(parents=True)
@@ -207,3 +223,85 @@ def test_presupuestos_restaurados_conservan_reservas_y_solo_migran_el_vinculo(tm
     assert json.loads(Path(migracion["auditoria"]).read_bytes())["estado"] == "completado"
     with pytest.raises(ValueError, match="SQLite cambió"):
         migrar_presupuestos(destino, recibo, restauracion["sqlite_verificados"])
+
+
+def _restaurar_muchos_checkpoints(tmp_path, cantidad=20):
+    from contextlib import closing
+
+    from goes_science_kg.motor.ejecuciones import _vincular_presupuesto
+    from goes_science_kg.motor.registro import Registro
+
+    origen = tmp_path / "origen"
+    registro = Registro(origen / datos.LEDGER)
+    registro.reservar(ejecucion="prueba", clave="k", modelo="m", rol="r", reserva_usd=1, max_llamadas=1, max_usd=2)
+    identidad = datos.identidad_ledger(registro.archivo)
+    for i in range(cantidad):
+        with closing(sqlite3.connect(origen / f"data/operaciones/cp_{i:02d}.sqlite")) as db:
+            _vincular_presupuesto(db, "prueba", json.dumps(identidad, sort_keys=True))
+            db.execute("CREATE TABLE estados (id INTEGER PRIMARY KEY, contenido TEXT)")
+            db.execute("INSERT INTO estados VALUES (1,'estado del grafo que no se modifica')")
+            db.commit()
+    archivo = tmp_path / "muchas_bases.zip"
+    plan = datos.preparar(origen, {"rutas": ["data"]}, archivo)
+    recibo = {
+        "version": datos.VERSION,
+        "paquete": {"sha256": plan["paquete_local"]["sha256"]},
+        "huella_inventario": plan["paquete_local"]["huella_inventario"],
+        "montajes": ["data"],
+        "enlaces": {},
+        "identidad_ledger": identidad,
+    }
+    destino = tmp_path / "restaurado"
+    restaurado = datos.restaurar(archivo, destino, recibo)
+    return destino, recibo, restaurado["sqlite_verificados"]
+
+
+def test_migra_veinte_bases_sin_reiniciar_presupuesto_ni_cambiar_estados(tmp_path):
+    from contextlib import closing
+
+    from goes_science_kg.motor.registro import PresupuestoAgotado, Registro
+    from goes_science_kg.operacion.presupuestos_restaurados import migrar_presupuestos
+
+    base, recibo, sqlites = _restaurar_muchos_checkpoints(tmp_path)
+    assert migrar_presupuestos(base, recibo, sqlites)["vinculos_actualizados"] == 20
+    assert datos.digest(base / datos.LEDGER) == sqlites[datos.LEDGER]
+    for archivo in (base / "data/operaciones").glob("cp_*.sqlite"):
+        with closing(sqlite3.connect(archivo)) as db:
+            assert db.execute("SELECT contenido FROM estados").fetchone()[0] == "estado del grafo que no se modifica"
+            assert json.loads(
+                db.execute("SELECT ledger FROM checkpoint_presupuestos").fetchone()[0]
+            ) == datos.identidad_ledger(base / datos.LEDGER)
+    registro = Registro(base / datos.LEDGER)
+    with pytest.raises(PresupuestoAgotado):
+        registro.reservar(
+            ejecucion="prueba", clave="otra", modelo="m", rol="r", reserva_usd=1, max_llamadas=1, max_usd=2
+        )
+
+
+@pytest.mark.parametrize("fallo", [OSError, KeyboardInterrupt])
+def test_migracion_fallida_revierte_todos_los_bytes_sin_tocar_ledger(tmp_path, fallo):
+    import os
+
+    from goes_science_kg.operacion.presupuestos_restaurados import migrar_presupuestos
+
+    base, recibo, sqlites = _restaurar_muchos_checkpoints(tmp_path, cantidad=3)
+
+    def sustituir(origen, destino):
+        if Path(origen).name == "actualizado.sqlite" and Path(destino).name == "cp_01.sqlite":
+            raise fallo("Fallo controlado de instalación")
+        return os.replace(origen, destino)
+
+    with pytest.raises(fallo):
+        migrar_presupuestos(base, recibo, sqlites, sustituir=sustituir)
+    assert all(datos.digest(base / p) == sha for p, sha in sqlites.items())
+    assert (
+        json.loads(next((base / "data/operaciones/migraciones").glob("restauracion-*.json")).read_bytes())["estado"]
+        == "revertido"
+    )
+    assert migrar_presupuestos(base, recibo, sqlites)["vinculos_actualizados"] == 3
+
+
+@pytest.mark.parametrize("valor", [True, 0, 2**34, "8589934592"])
+def test_limite_de_corpus_explicito_y_acotado(valor):
+    with pytest.raises(ValueError, match="2 y 8"):
+        datos.limite_bytes(valor)
