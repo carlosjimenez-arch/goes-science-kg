@@ -33,25 +33,56 @@ def leer_propio(base: Path, nombre: str) -> Path:
     return p
 
 
-def _pendiente_verificado(base: Path, id_: str, declarado: dict) -> dict:
-    # Un objetivo sin guion conserva su último resultado negativo real; no basta con declararlo.
+def cargar_revisiones_directas(base: Path, rutas) -> dict:
+    """Load direct-review files, keyed by objective, with the exact script hash each verdict applies to."""
+    revisiones = {}
+    for ruta in rutas:
+        raw = leer_propio(base, ruta).read_bytes()
+        documento = json.loads(raw)
+        for r in documento["revisiones"]:
+            if r["veredicto"] not in {"liberable", "bloquear"} or r["fila_id"] in revisiones:
+                raise ValueError("Revisión directa con veredicto desconocido o duplicada")
+            revisiones[r["fila_id"]] = r | {"expediente": ruta, "expediente_sha256": sha(raw)}
+    return revisiones
+
+
+def _pendiente_verificado(base: Path, id_: str, declarado: dict, revisiones: dict) -> dict:
+    # Un objetivo sin guion conserva su último resultado real; no basta con declararlo.
     expediente = declarado.get("expediente") or {}
     raw = leer_propio(base, expediente.get("resultado", "")).read_bytes()
     final = json.loads(raw)["filas"].get(id_)
-    if not final or final["estado"] == "respaldado_automaticamente" or final["estado"] != declarado.get("estado"):
+    if declarado.get("estado") == "bloqueado_revision_directa":
+        revision = revisiones.get(id_) or {}
+        if (
+            not final
+            or final["estado"] != "respaldado_automaticamente"
+            or revision.get("veredicto") != "bloquear"
+            or revision.get("guion_sha256") != sha(serializar(final["guion"]))
+        ):
+            raise ValueError("Un bloqueo por revisión directa debe corresponder al guion exacto revisado")
+    elif not final or final["estado"] == "respaldado_automaticamente" or final["estado"] != declarado.get("estado"):
         raise ValueError("Un objetivo sin guion debe apuntar a su último resultado negativo real")
     if not isinstance(declarado.get("motivo"), str) or len(declarado["motivo"].strip()) < 20:
         raise ValueError("Cada objetivo sin guion declara un motivo concreto")
     return {
         "fila_id": id_,
-        "estado": final["estado"],
+        "estado": declarado["estado"],
         "motivo": declarado["motivo"],
         "expediente": {"preparacion": expediente["preparacion"], "resultado": expediente["resultado"]},
         "resultado_sha256": sha(raw),
     }
 
 
-def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro, pendientes: dict | None = None):
+def compilar(
+    base: Path,
+    biblioteca,
+    corpus,
+    seleccion: dict,
+    *,
+    registro,
+    pendientes: dict | None = None,
+    revisiones_directas: dict | None = None,
+):
     """La selección explícita no permite publicar pendientes ni omitir objetivos del catálogo.
 
     `pendientes` declara objetivos sin guion liberado: no se publican como clases, cada uno conserva su último
@@ -64,6 +95,7 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro, pendi
         objetivos.extend(biblioteca.listar(tipo="paquete_objetivo", limite=200, offset=offset)["materiales"])
     esperados = {r["id"] for r in objetivos}
     pendientes = pendientes or {}
+    revisiones_directas = revisiones_directas or {}
     if set(seleccion) & set(pendientes) or set(seleccion) | set(pendientes) != esperados:
         raise ValueError("La selección no cubre exactamente todos los objetivos de Ciencias de la biblioteca")
     from goes_science_kg.clases.revision_contenido import validar_seleccion
@@ -76,7 +108,8 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro, pendi
         id_ = ficha["id"]
         if id_ in pendientes:
             clave = (ficha["grados"][0], ficha["asignatura"], ficha["unidad"])
-            sin_guion[clave].append(_pendiente_verificado(base, id_, pendientes[id_]) | {"titulo": ficha["titulo"]})
+            verificado = _pendiente_verificado(base, id_, pendientes[id_], revisiones_directas)
+            sin_guion[clave].append(verificado | {"titulo": ficha["titulo"]})
             continue
         ref = seleccion[id_]
         ruta_p, ruta_r = ref["preparacion"], ref["resultado"]
@@ -135,6 +168,20 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro, pendi
         if final["estado"] != "respaldado_automaticamente":
             raise ValueError("No se libera una clase vetada o abstención como lista para impartir")
         g = GuionClase.model_validate(final["guion"])
+        revision = revisiones_directas.get(id_)
+        if revision and revision["guion_sha256"] != sha(serializar(final["guion"])):
+            revision = None  # La revisión corresponde a otra versión del guion.
+        if revision and revision["veredicto"] == "bloquear":
+            raise ValueError("No se libera un guion bloqueado por revisión directa")
+        revision_directa = (
+            {
+                "estado": "aprobada",
+                "expediente": revision["expediente"],
+                "expediente_sha256": revision["expediente_sha256"],
+            }
+            if revision
+            else {"estado": "no_realizada"}
+        )
         anterior = biblioteca.detalle(id_)["documento"]
         fila = next(f for f in p["filas"] if f["fila_id"] == id_)
         if g.objetivo != anterior["propuesta"]["objetivo_propuesto"] or p["snapshot_id"] != anterior["snapshot_id"]:
@@ -169,6 +216,7 @@ def compilar(base: Path, biblioteca, corpus, seleccion: dict, *, registro, pendi
             "expediente": ref,
             "auditoria_revisiones": auditorias[ruta_r],
             "revision_alcance": "guion_exacto_cuatro_roles_ciegos",
+            "revision_directa": revision_directa,
             "guion_cronometrado": True,
             "duracion_minutos": 60 * len(g.sesiones),
             "validado_en_aula": False,

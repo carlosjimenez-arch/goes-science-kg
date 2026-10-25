@@ -21,9 +21,9 @@ def publicar(destino: Path, almacen, recibo: Path) -> dict:
     biblioteca = Biblioteca(destino)
     manifest = biblioteca.validar()
     if manifest["por_tipo"].get("guion_clase") or manifest["por_tipo"].get("guion_unidad"):
-        from goes_science_kg.clases.paquete import validar_cobertura_publicable
+        from goes_science_kg.clases.paquete import sin_guion_declarados, validar_cobertura_publicable
 
-        validar_cobertura_publicable(manifest["por_tipo"])
+        validar_cobertura_publicable(manifest["por_tipo"], len(sin_guion_declarados(manifest.get("procedencia"))))
     if recibo.is_symlink():
         raise ValueError("El recibo debe ser un archivo propio")
     progreso = (

@@ -16,7 +16,9 @@ from goes_science_kg.motor.registro import Registro
 
 BASE = ruta(".")
 pytestmark = pytest.mark.skipif(
-    not (BASE / "data/clases_v4/seleccion_pilotos.json").is_file(), reason="Expedientes privados no restaurados"
+    not (BASE / "data/clases_v4/seleccion_pilotos.json").is_file()
+    or not (BASE / "data/materiales_preparaciones/manifest.json").is_file(),
+    reason="Expedientes privados o biblioteca de preparaciones no restaurados",
 )
 
 
@@ -42,7 +44,7 @@ def test_compila_varios_resultados_usando_el_ledger_en_todos(tmp_path):
     archivo = "data/clases_v4/protocolos/codigo_clases_p2.zip"
     (tmp_path / archivo).parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(BASE / archivo, tmp_path / archivo)
-    original = Biblioteca(BASE / "data/materiales")
+    original = Biblioteca(BASE / "data/materiales_preparaciones")
     fichas = [original.detalle(i) for i in elegidos]
 
     class Subconjunto:

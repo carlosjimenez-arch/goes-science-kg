@@ -13,8 +13,10 @@ from goes_science_kg.operacion import datos_externos as datos
 RECIBO_CORPUS = "config/datos_ciencias.lock.json"
 RECIBO_MATERIALES = "config/materiales_ciencias.lock.json"
 RECIBO_CLASES = "config/clases_ciencias.lock.json"
+RECIBO_PREPARACIONES = "config/materiales_preparaciones.lock.json"
 DIR_MATERIALES = "data/materiales"
 DIR_CLASES = "data/descargas/clases-v4"
+DIR_PREPARACIONES = "data/materiales_preparaciones"
 
 
 def _guardar(destino: Path, contenido: dict, *, reemplazar: bool = False) -> None:
@@ -101,6 +103,9 @@ class Sincronizador:
         manifest = self.raiz / DIR_MATERIALES / "manifest.json"
         local = json.loads(manifest.read_bytes()).get("id") if manifest.is_file() else None
         clases = self._recibo(RECIBO_CLASES)
+        preparaciones = self._recibo(RECIBO_PREPARACIONES)
+        manifest_prep = self.raiz / DIR_PREPARACIONES / "manifest.json"
+        local_prep = json.loads(manifest_prep.read_bytes()).get("id") if manifest_prep.is_file() else None
         return {
             "corpus": {
                 "recibo": corpus["paquete"]["sha256"] if corpus else None,
@@ -123,6 +128,17 @@ class Sincronizador:
                 if local == materiales["biblioteca_id"]
                 else "ausente"
                 if local is None
+                else "distinto",
+            },
+            "preparaciones": {
+                "recibo": preparaciones["biblioteca_id"] if preparaciones else None,
+                "local": local_prep,
+                "estado": "sin_recibo"
+                if not preparaciones
+                else "vigente"
+                if local_prep == preparaciones["biblioteca_id"]
+                else "ausente"
+                if local_prep is None
                 else "distinto",
             },
             "clases": {
@@ -183,6 +199,15 @@ class Sincronizador:
 
             manifest = restaurar_materiales(self._recibo(RECIBO_MATERIALES), self.raiz / DIR_MATERIALES, self.almacen)
             acciones["materiales"] = {"biblioteca_id": manifest["id"], "materiales": manifest["materiales"]}
+        if estado["preparaciones"]["estado"] == "distinto":
+            raise ValueError("La biblioteca de preparaciones local no coincide con su recibo; no se sobrescribe")
+        if estado["preparaciones"]["estado"] == "ausente":
+            from goes_science_kg.materiales.publicacion import restaurar as restaurar_materiales
+
+            manifest = restaurar_materiales(
+                self._recibo(RECIBO_PREPARACIONES), self.raiz / DIR_PREPARACIONES, self.almacen
+            )
+            acciones["preparaciones"] = {"biblioteca_id": manifest["id"], "materiales": manifest["materiales"]}
         if estado["clases"]["estado"] == "ausente":
             from goes_science_kg.clases.publicacion import descargar as descargar_clases
 

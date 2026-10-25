@@ -164,6 +164,9 @@ def compilar(
     pendientes: Annotated[
         Path | None, typer.Option(help="JSON de objetivos declarados sin guion liberado, con motivo y expediente")
     ] = None,
+    revision_directa: Annotated[
+        list[str] | None, typer.Option(help="Expedientes de revisión directa (rutas del repositorio)")
+    ] = None,
 ):
     """Reconstruye los respaldos, conserva los materiales anteriores y exige cobertura exacta."""
     from goes_science_kg.clases.auditoria import cierre_presupuesto
@@ -174,13 +177,19 @@ def compilar(
     from goes_science_kg.motor.registro import Registro
 
     base = ruta(".")
-    anterior = Biblioteca(biblioteca_origen or base / "data/materiales")
+    # Las preparaciones de los guiones están fijadas a la biblioteca base, no a la ampliada que se publica.
+    anterior = Biblioteca(biblioteca_origen or base / "data/materiales_preparaciones")
     corpus = cargar_corpus(base, todos=True)
     sel = json.loads(seleccion.read_bytes())
     registro = Registro(base / "data/operaciones/registro.sqlite")
     consumo = cierre_presupuesto(registro)
     declarados = json.loads(pendientes.read_bytes()) if pendientes else {}
-    nuevos, fuentes = reconstruir(base, anterior, corpus, sel, registro=registro, pendientes=declarados)
+    from goes_science_kg.clases.compilacion import cargar_revisiones_directas
+
+    revisiones = cargar_revisiones_directas(base, revision_directa or [])
+    nuevos, fuentes = reconstruir(
+        base, anterior, corpus, sel, registro=registro, pendientes=declarados, revisiones_directas=revisiones
+    )
     sin_guion = sorted(
         (
             p

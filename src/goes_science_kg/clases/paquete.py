@@ -23,6 +23,7 @@ COBERTURA_V4 = {"guion_clase": 1013, "guion_unidad": 108}
 
 # Una entrega puede declarar pocos objetivos sin guion liberado; nunca los omite ni los presenta como listos.
 MAX_SIN_GUION = 20
+ESTADOS_SIN_GUION = frozenset({"no_respaldado", "abstencion", "bloqueado_revision_directa"})
 
 
 def sin_guion_declarados(procedencia) -> list:
@@ -30,7 +31,7 @@ def sin_guion_declarados(procedencia) -> list:
     pendientes = (procedencia or {}).get("objetivos_sin_guion_liberado") or []
     if not isinstance(pendientes, list) or len({p.get("fila_id") for p in pendientes}) != len(pendientes):
         raise ValueError("Los objetivos sin guion deben declararse una sola vez cada uno")
-    if any(not p.get("motivo") or p.get("estado") not in {"no_respaldado", "abstencion"} for p in pendientes):
+    if any(not p.get("motivo") or p.get("estado") not in ESTADOS_SIN_GUION for p in pendientes):
         raise ValueError("Cada objetivo sin guion declara su estado negativo y su motivo")
     return pendientes
 

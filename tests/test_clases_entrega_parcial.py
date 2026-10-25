@@ -34,3 +34,10 @@ def test_declaracion_de_pendientes_exige_estado_negativo_motivo_y_unicidad():
     ):
         with pytest.raises(ValueError):
             sin_guion_declarados({"objetivos_sin_guion_liberado": malo})
+
+
+def test_bloqueo_por_revision_directa_es_un_estado_declarable():
+    pendiente = _pendiente(3, "bloqueado_revision_directa")
+    assert (
+        sin_guion_declarados({"objetivos_sin_guion_liberado": [pendiente]})[0]["estado"] == "bloqueado_revision_directa"
+    )

@@ -379,15 +379,16 @@ const TIPOS_MATERIAL = {
   microtema: ['Microtema de refuerzo', 'historico'],
 };
 async function materiales() {
+  const [salud, manifest] = await Promise.all([apiMateriales('/salud'), apiMateriales('/manifest')]);
+  if (!S.matTipoElegido && salud.por_tipo.guion_clase) S.matTipo = 'guion_clase';
   const [tipoNombre, version] = TIPOS_MATERIAL[S.matTipo];
-  const [salud, d] = await Promise.all([
-    apiMateriales('/salud'),
-    apiMateriales(
-      parametros({ version, tipo: S.matTipo, grado: S.filtros.grado, q: S.filtros.q, limite: 25, offset: S.offset }),
-    ),
-  ]);
+  const d = await apiMateriales(
+    parametros({ version, tipo: S.matTipo, grado: S.filtros.grado, q: S.filtros.q, limite: 25, offset: S.offset }),
+  );
+  const sinGuion = manifest.procedencia?.objetivos_sin_guion_liberado || [];
   return { datos: d, html: `${titulo('Materiales docentes', 'Biblioteca verificada para preparar clases a partir de las propuestas y del material histórico revisado.')}
-    <div class="stats">${stat(salud.materiales, 'registros en la biblioteca', true)}${stat(salud.por_tipo.paquete_objetivo || 0, 'preparaciones por objetivo')}${stat(salud.por_tipo.paquete_unidad || 0, 'preparaciones por unidad')}${stat(0, 'llamadas a modelos por consulta')}</div>
+    <div class="stats">${stat(salud.materiales, 'registros en la biblioteca', true)}${stat(salud.por_tipo.guion_clase || 0, 'guiones de clase')}${stat(salud.por_tipo.paquete_objetivo || 0, 'preparaciones por objetivo')}${stat(sinGuion.length, 'objetivos sin guion liberado')}</div>
+    ${sinGuion.length ? `<details class="card spaced"><summary>Objetivos sin guion liberado · ${numero(sinGuion.length)}</summary><p class="mini">No se publican como clases: conservan su preparación por objetivo y su último resultado. Los bloqueados por revisión directa tenían respaldo automático y un defecto material.</p><div class="table-wrap"><table class="atable"><thead><tr><th>Objetivo</th><th>Estado</th><th>Motivo</th></tr></thead><tbody>${sinGuion.map((p) => `<tr><td class="objetivo">${esc(p.titulo)}</td><td><span class="pill ${p.estado === 'bloqueado_revision_directa' ? 'amber' : 'red'}">${esc(p.estado.replaceAll('_', ' '))}</span></td><td class="mini">${esc(p.motivo)}</td></tr>`).join('')}</tbody></table></div></details>` : ''}
     <div class="tabs tabs-wrap spaced">${Object.entries(TIPOS_MATERIAL).filter(([k]) => !k.startsWith('guion_') || salud.por_tipo[k]).map(([k, [n]]) => `<button data-action="mat-tipo" data-value="${k}" class="${S.matTipo === k ? 'on' : ''}">${n} · ${numero(salud.por_tipo[k] || 0)}</button>`).join('')}</div>
     ${filtros({ disciplina: false })}
     <section class="card spaced"><div class="table-wrap"><table class="atable"><thead><tr><th>Material</th><th>Grados</th><th>Estado</th><th></th></tr></thead><tbody>${d.materiales.map((m) => `<tr><td class="objetivo">${esc(m.titulo)}<div class="mini">${esc(tipoNombre)} · ${esc(m.asignatura)}${m.unidad ? ' · ' + esc(m.unidad) : ''}</div></td><td>${esc(m.grados.map((g) => g + '.º').join(', ')) || '—'}</td><td><span class="pill ${/revisad|respaldad/.test(m.estado) ? 'green' : /pendiente/.test(m.estado) ? 'amber' : 'gray'}">${esc(m.estado.replaceAll('_', ' '))}</span></td><td><button class="btn sm" data-action="material" data-id="${esc(m.id)}">Abrir</button></td></tr>`).join('')}</tbody></table></div>${!d.materiales.length ? vacio('No hay materiales con estos filtros.') : ''}${paginador(d)}</section>
@@ -405,7 +406,7 @@ async function abrirMaterial(id) {
     const m = d.material;
     $('modal-title').textContent = m.titulo;
     $('modal-body').innerHTML =
-      `<span class="pill purple">${esc(TIPOS_MATERIAL[m.tipo]?.[0] || m.tipo)}</span> <span class="pill gray">${esc(m.estado.replaceAll('_', ' '))}</span>
+      `<span class="pill purple">${esc(TIPOS_MATERIAL[m.tipo]?.[0] || m.tipo)}</span> <span class="pill gray">${esc(m.estado.replaceAll('_', ' '))}</span>${m.documento?.revision_directa ? ` <span class="pill ${m.documento.revision_directa.estado === 'aprobada' ? 'green' : 'gray'}">Revisión directa: ${esc(m.documento.revision_directa.estado.replaceAll('_', ' '))}</span>` : ''}${m.documento?.completa === false ? ' <span class="pill amber">Unidad incompleta</span>' : ''}
       <div class="checks spaced"><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="md">${icono('dl')}Markdown</button><button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="json">${icono('dl')}JSON</button>${m.tipo === 'guion_clase' ? `<button class="btn sm" data-action="mat-descarga" data-id="${esc(m.id)}" data-formato="md" data-audiencia="estudiante">${icono('dl')}Hoja de estudiante</button>` : ''}${m.fila_id ? `<button class="btn sm" data-action="fila" data-id="${esc(m.fila_id)}">Ver la fila curricular</button>` : ''}</div>
       <pre class="source-text">${esc(md)}</pre><p class="clip-id">${esc(m.id)} · SHA ${esc(m.sha256)}</p>`;
   } catch (e) {
@@ -587,7 +588,10 @@ async function accion(e) {
     } else if (a === 'prog-vista' || a === 'prog-patron' || a === 'mat-tipo') {
       if (a === 'prog-vista') S.progVista = target.dataset.value === 'propuesta' ? 'propuesta' : 'original';
       else if (a === 'prog-patron') S.progPatron = target.dataset.value in PATRONES ? target.dataset.value : '';
-      else if (target.dataset.value in TIPOS_MATERIAL) S.matTipo = target.dataset.value;
+      else if (target.dataset.value in TIPOS_MATERIAL) {
+        S.matTipo = target.dataset.value;
+        S.matTipoElegido = true;
+      }
       S.offset = 0;
       await render();
     }
