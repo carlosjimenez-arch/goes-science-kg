@@ -110,20 +110,35 @@ sobrescribir; el recibo vigente apunta a la generación posterior.
 | Control | Antes (`5e8079a`) | Después (`1c445fc` + documentación) |
 |---|---:|---:|
 | `make lint` (Ruff, formato a 120) | verde | verde |
-| `make cobertura`: pruebas aprobadas | 1.462 | **1.693 / 1.693**, ninguna omitida |
+| `make cobertura`: pruebas aprobadas | 1.462 | **1.702 / 1.702**, ninguna omitida |
 | Cobertura de líneas | 79,4 % | **79,1 %** |
 | `make pruebas-js`, `make auditoria`, `git diff --check` | — | verde |
-| Consumidor nuevo restaurado sólo desde GCS | — | 1.693 aprobadas |
+| Consumidor nuevo restaurado sólo desde GCS | — | 1.702 aprobadas |
 | Diez vistas en 1440 px y 390 px | ocho vistas | sin errores ni desbordes |
 
 La cobertura baja tres décimas porque el código de guiones integrado tiene menos líneas cubiertas. La medición
 está en [medicion.json](../badges/medicion.json) con su huella de código. Las pruebas no acreditan
 exactitud científica de cada propuesta ni eficacia educativa.
 
+## 7. Segunda fase: guiones, sincronización y producto local
+
+Tras autorizar el usuario la ampliación a 4.400 llamadas, R21 y R22 resolvieron 42 de los 45 pendientes
+originales y el caso estelar. La revisión directa independiente de las 41 versiones recuperadas bloqueó 15 por
+defectos materiales. Se publicaron **994 guiones y 108 unidades** con 19 objetivos declarados sin guion
+([detalle](../CLASES_V4.md)). Consumo acumulado: 4.294 llamadas y USD 3.219,54 de reserva.
+
+| Control | Resultado |
+|---|---|
+| Sincronización con GCS | `gskg datos estado|verificar|sincronizar|publicar`, `make producto`; 4 componentes por recibo |
+| Corpus vigente | `d812b22d…`, 28.330 archivos; consumidor nuevo: 1.702 pruebas sin omisiones |
+| Producto local | 10 vistas sin errores en 390 y 1440 px; 1.200 peticiones concurrentes sin error (p95 217 ms) |
+| Auditoría de guiones | 409 resultados cotejados con el ledger tras corregir el esquema del editor P11 |
+
 ## Riesgos y decisiones pendientes
 
-1. **Guiones de clase:** 968 respaldados, 27 vetos y 18 abstenciones. Publicarlos exige terminar los 45 y
-   resolver los hallazgos de auditoría (ampliación a 4.400 llamadas, pospuesta por decisión del usuario).
+1. **Guiones de clase:** 994 publicados; 968 sólo tienen respaldo de cuatro lectores automáticos. Dado el 37 %
+   de defectos materiales en la cohorte recuperada, conviene una revisión de especialistas por muestreo antes
+   del piloto en aula. 19 objetivos siguen sin guion (106 llamadas disponibles en el tope).
 2. **Aprobación institucional:** dictámenes automáticos y verificaciones por agentes no equivalen a una
    revisión del MINED ni a evidencia de aprendizaje. El piloto con usuarios es un proceso aparte.
 3. **Despliegue:** la aplicación es de uso local, sin autenticación. Exponerla a usuarios reales fuera del

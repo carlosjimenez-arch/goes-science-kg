@@ -39,8 +39,8 @@ Publicación `producto-4`, snapshot `e92bc700d78f0f559671acc62f559f9e5176b09c334
 | Revisión | 108 unidades con cuatro dictámenes; 30 filas originales conservan alerta científica |
 | Grafo publicado | 2.327 nodos y 7.304 relaciones con fuente verificable |
 | Progresión 2.º–11.º | 1.314 etiquetas de concepto con evidencia literal, 468 trayectorias, triaje de prerrequisitos verificado |
-| Biblioteca docente | 2.867 registros: preparaciones por objetivo (1.013) y por unidad (108), paquetes V3 y bancos históricos |
-| Guiones de clase | 968 respaldados automáticamente y 45 con veto o abstención; **en desarrollo, no publicados** |
+| Guiones de clase | **994 guiones y 108 guiones de unidad publicados**; 19 objetivos declarados sin guion liberado con su motivo |
+| Biblioteca docente | 3.969 registros: guiones, preparaciones por objetivo (1.013) y por unidad (108), paquetes V3 y bancos históricos |
 
 Hallazgos principales de la progresión: el refuerzo es mayoritariamente **intermitente** (202 de 468
 conceptos vuelven tras dos o más grados de ausencia y sólo 33 forman una espiral continua); Química es la
@@ -73,8 +73,10 @@ El repositorio no contiene matrices, PDF, snapshots, SQLite ni resultados: todo 
 
 | Recibo | Contenido |
 |---|---|
-| `config/datos_ciencias.lock.json` | Corpus completo: 13.919 archivos y 41 SQLite, incluidos fuentes, publicación, guiones, ledgers y progresión |
-| `config/materiales_ciencias.lock.json` | Biblioteca docente sola, para consumidores que no necesitan el corpus |
+| `config/datos_ciencias.lock.json` | Corpus completo: 28.330 archivos, incluidos fuentes, publicación, campañas de guiones, ledgers y progresión |
+| `config/materiales_ciencias.lock.json` | Biblioteca docente ampliada con los guiones, para la aplicación |
+| `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
+| `config/materiales_preparaciones.lock.json` | Biblioteca base que fijan las preparaciones; necesaria sólo para recompilar guiones |
 
 El recibo vigente se restauró en un checkout limpio y la aplicación completa funcionó con esos datos.
 [Restauración y límites](docs/DATOS_EXTERNOS.md) · [verificación GCS](docs/VERIFICACION_GCS.md) ·
@@ -92,7 +94,7 @@ El recibo vigente se restauró en un checkout limpio y la aplicación completa f
 | Revisión de conocimiento | Dictámenes registrados por unidad, rol y ronda |
 | Curricularización | Comparación original/propuesta, indicadores, didáctica y alertas |
 | Templates y Brief | Organización documental de propuestas respaldadas, sin nueva generación |
-| Materiales docentes | Preparaciones por objetivo y unidad, bancos históricos y descargas |
+| Materiales docentes | Guiones de clase y de unidad, hoja de estudiante, preparaciones, bancos históricos y descargas |
 | Administración | Identidad del snapshot, permisos locales y actividad registrada disponible |
 
 | Método | Ruta | Resultado |

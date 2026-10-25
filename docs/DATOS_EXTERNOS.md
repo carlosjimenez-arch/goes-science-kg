@@ -17,7 +17,63 @@ SHM y cachés de Python no se restauran como archivos independientes.
 | Comando | Efecto |
 |---|---|
 | `make producto` | Instala, descarga lo que falte desde GCS y sirve la aplicación en `127.0.0.1:8010` |
-| `gskg datos estado` | Compara corpus, biblioteca y guiones locales con sus recibos, sin descargar paquetes |
+| `gskg datos estado` | Compara corpus, biblioteca, biblioteca de preparaciones y entrega de guiones con sus recibos |
+| `gskg datos verificar` | Cotejo por SHA del corpus local contra el inventario remoto (código 1 si algo difiere o falta) |
+| `gskg datos sincronizar` | Descarga lo ausente; rechaza estados parciales o divergentes en vez de sobrescribir |
+| `gskg datos publicar --trabajo <carpeta nueva>` | Empaqueta, sube, restaura en la carpeta, compara y sólo entonces adopta el recibo nuevo |
+| `gskg servir --sincronizar` | Sincroniza antes de servir |
+
+Las bases SQLite operativas en WAL se guardan como copia consistente y se cuentan aparte en la verificación.
+Publicar un recibo nuevo es un cambio de código: se revisa y confirma con la identidad GOES.
+
+## Recuperar y usar
+
+Requisitos: Python 3.11+, el entorno del proyecto y `gcloud` autenticado con acceso de lectura al bucket.
+Para reponer las rutas que esperan la CLI, las API, los informes y las pruebas:
+
+```bash
+uv sync --extra dev --extra pdf --extra rag --extra api --extra motor
+uv run gskg datos restaurar --en-repo
+uv run gskg producto validar
+uv run pytest -q
+```
+
+La restauración es explícita: descargar no ejecuta modelos. Comprueba el SHA del paquete y todos los
+archivos antes de incorporar las raíces. Rechaza cualquier raíz que ya exista para evitar perder
+trabajo local. Los datos recuperados quedan ignorados por Git; no usar `git add -f` sobre esas rutas.
+Al usar `--en-repo`, también verifica los bytes completos de todos los SQLite y migra únicamente
+la identidad física del ledger en `checkpoint_presupuestos`: una copia descargada tiene otro inodo.
+Conserva el contenido completo del ledger, las reservas, las respuestas y los mismos identificadores
+de presupuesto. Registra las identidades anterior/nueva y los vínculos en
+`data/operaciones/migraciones/restauracion-*.json`. Rechaza un checkpoint asociado a otra identidad
+original o un SQLite cambiado después de restaurar. Las comprobaciones de entorno de los motores
+siguen vigentes; esta operación no autoriza repetir llamadas ni reiniciar presupuestos.
+
+Para examinar el corpus sin reponerlo en el proyecto:
+
+```bash
+uv run gskg datos inventario > /tmp/inventario-ciencias.json
+uv run gskg datos restaurar --destino /tmp/ciencias-restauradas
+```
+
+`--destino` requiere una carpeta nueva o vacía. Los enlaces relativos de los reportes históricos se
+reconstruyen dentro del corpus restaurado. Los tres enlaces históricos que siguen en Git apuntan
+a las rutas originales y vuelven a funcionar después de `--en-repo`.
+
+## Respaldo vigente · 25 de octubre de 2026
+
+El recibo fija **28.330 archivos** (4.396.168.714 bytes originales), ZIP `d812b22d…`, generación
+`1792967167842706`. Incluye el ledger tras las campañas R21 y R22 (4.294 llamadas), las bibliotecas y la
+entrega de guiones. Se publicó con `gskg datos publicar` y se restauró desde GCS en un checkout limpio.
+[Identidades y prueba del consumidor](VERIFICACION_GCS.md). Las generaciones anteriores (`06398b9e…`,
+`59151f1e…`, `a61846aa…`) siguen en el bucket por su generación; no se sobrescriben.
+
+## Todo desde el bucket
+
+| Comando | Efecto |
+|---|---|
+| `make producto` | Instala, descarga lo que falte desde GCS y sirve la aplicación en `127.0.0.1:8010` |
+| `gskg datos estado` | Compara corpus, biblioteca, biblioteca de preparaciones y entrega de guiones con sus recibos |
 | `gskg datos verificar` | Cotejo por SHA del corpus local contra el inventario remoto (código 1 si algo difiere o falta) |
 | `gskg datos sincronizar` | Descarga lo ausente; rechaza estados parciales o divergentes en vez de sobrescribir |
 | `gskg datos publicar --trabajo <carpeta nueva>` | Empaqueta, sube, restaura en la carpeta, compara y sólo entonces adopta el recibo nuevo |

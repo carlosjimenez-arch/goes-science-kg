@@ -64,8 +64,11 @@ Los dictámenes automáticos no equivalen a aprobación del MINED ni eficacia de
 `materiales/` empaqueta la biblioteca docente (2.867 registros) servida en `/api/v4/materiales`.
 La ampliación autorizó 4.000 invocaciones y USD 3.500 de reserva **acumuladas** sobre las 668 previas
 (`config/presupuesto_clases_v4.json`). No reiniciar el ledger ni repetir votos de un contenido vetado.
-El 25 de octubre de 2026 el usuario decidió no ampliar a 4.400 llamadas: 45 objetivos siguen sin guion
-liberable. La biblioteca publicada no equivale a guiones cronometrados nuevos ni a carga oficial. Alcance y
+El 25 de octubre de 2026 el usuario amplió el tope a 4.400 llamadas: R21 y R22 dejaron 4.294 llamadas y
+USD 3.219,54 de reserva. Se publicaron 994 guiones y 19 objetivos quedan declarados sin guion. Ningún guion se
+libera sin cuatro lectores favorables ni con un bloqueo de revisión directa; los recuperados tras un veto
+requieren revisión directa independiente (37 % tuvo defectos materiales). Recompilar usa la biblioteca de
+preparaciones (`data/materiales_preparaciones`), no la ampliada. Alcance y
 límites: `specs/18_materiales_docentes.md`, `specs/19_guiones_completos_v4.md`,
 `docs/MATERIALES_DOCENTES.md` y `docs/CLASES_V4.md`.
 

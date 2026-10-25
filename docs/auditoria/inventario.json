@@ -1,16 +1,16 @@
 {
-  "archivos_inspeccionados": 605,
+  "archivos_inspeccionados": 610,
   "conteos": {
     "AsyncFunctionDef": 4,
     "AsyncFunctionDef_documentados": 2,
-    "ClassDef": 296,
-    "ClassDef_documentados": 252,
-    "FunctionDef": 1653,
-    "FunctionDef_documentados": 1015,
-    "Module": 235,
-    "Module_documentados": 235,
-    "lineas_python": 48445,
-    "modulos_python": 235
+    "ClassDef": 297,
+    "ClassDef_documentados": 253,
+    "FunctionDef": 1670,
+    "FunctionDef_documentados": 1030,
+    "Module": 236,
+    "Module_documentados": 236,
+    "lineas_python": 48867,
+    "modulos_python": 236
   },
   "consumidores_estaticos": {
     "src/goes_science_kg/__init__.py": [
@@ -151,6 +151,7 @@
       "src/goes_science_kg/operacion/presupuestos_restaurados.py",
       "src/goes_science_kg/operacion/recuperacion_unidad.py",
       "src/goes_science_kg/operacion/respaldo.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "src/goes_science_kg/panel.py",
       "src/goes_science_kg/prerrequisitos.py",
       "src/goes_science_kg/producto/__init__.py",
@@ -244,6 +245,7 @@
       "tests/test_clases_curacion.py",
       "tests/test_clases_editorial.py",
       "tests/test_clases_enrutamiento.py",
+      "tests/test_clases_entrega_parcial.py",
       "tests/test_clases_extractos.py",
       "tests/test_clases_fundamentacion.py",
       "tests/test_clases_insumos.py",
@@ -326,6 +328,7 @@
       "tests/test_seguimiento_mejoras.py",
       "tests/test_seleccion_contextual.py",
       "tests/test_simulador.py",
+      "tests/test_sincronizacion.py",
       "tests/test_unidades.py",
       "tests/test_validacion_conocimiento.py",
       "tests/test_web_cientifica.py"
@@ -533,6 +536,7 @@
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/materiales/compilacion.py",
       "src/goes_science_kg/materiales/publicacion.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_complementos.py",
@@ -541,6 +545,7 @@
       "tests/test_clases_curacion.py",
       "tests/test_clases_editorial.py",
       "tests/test_clases_enrutamiento.py",
+      "tests/test_clases_entrega_parcial.py",
       "tests/test_clases_extractos.py",
       "tests/test_clases_fundamentacion.py",
       "tests/test_clases_insumos.py",
@@ -554,6 +559,7 @@
     "src/goes_science_kg/clases/auditoria.py": [
       "src/goes_science_kg/clases/compilacion.py",
       "src/goes_science_kg/cli/clases.py",
+      "tests/test_clases_compilacion_real.py",
       "tests/test_clases_reales.py"
     ],
     "src/goes_science_kg/clases/campana.py": [
@@ -663,7 +669,8 @@
       "src/goes_science_kg/clases/publicacion.py",
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/materiales/publicacion.py",
-      "tests/test_clases.py"
+      "tests/test_clases.py",
+      "tests/test_clases_entrega_parcial.py"
     ],
     "src/goes_science_kg/clases/planificacion.py": [
       "tests/test_clases_planificacion.py"
@@ -677,6 +684,7 @@
       "src/goes_science_kg/clases/operacion.py",
       "src/goes_science_kg/clases/planificacion.py",
       "src/goes_science_kg/cli/clases.py",
+      "tests/test_clases_compilacion_real.py",
       "tests/test_clases_contexto.py",
       "tests/test_clases_planificacion.py"
     ],
@@ -684,6 +692,7 @@
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/proveedor.py",
+      "src/goes_science_kg/cli/clases.py",
       "tests/test_clases.py",
       "tests/test_clases_presupuesto.py",
       "tests/test_materiales_reales.py"
@@ -701,6 +710,7 @@
     ],
     "src/goes_science_kg/clases/publicacion.py": [
       "src/goes_science_kg/cli/clases.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_clases.py"
     ],
     "src/goes_science_kg/clases/recuperacion.py": [
@@ -729,6 +739,7 @@
       "src/goes_science_kg/cli/__main__.py",
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/cli/investigacion.py",
+      "src/goes_science_kg/cli/principales.py",
       "src/goes_science_kg/cli/producto.py",
       "tests/test_cli.py",
       "tests/test_cli_alineacion.py",
@@ -772,6 +783,7 @@
     ],
     "src/goes_science_kg/cli/datos.py": [
       "src/goes_science_kg/cli/__init__.py",
+      "src/goes_science_kg/cli/principales.py",
       "tests/test_datos_externos.py"
     ],
     "src/goes_science_kg/cli/grados.py": [
@@ -1546,6 +1558,7 @@
       "src/goes_science_kg/cli/materiales.py",
       "src/goes_science_kg/materiales/almacen.py",
       "src/goes_science_kg/materiales/publicacion.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_complementos.py",
@@ -1608,6 +1621,7 @@
     ],
     "src/goes_science_kg/materiales/publicacion.py": [
       "src/goes_science_kg/cli/materiales.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_materiales.py"
     ],
     "src/goes_science_kg/modelos.py": [
@@ -1726,6 +1740,7 @@
       "src/goes_science_kg/operacion/almacen_gcs.py",
       "src/goes_science_kg/operacion/recuperacion_unidad.py",
       "src/goes_science_kg/operacion/respaldo.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "src/goes_science_kg/producto/_conocimiento_contratos.py",
       "src/goes_science_kg/producto/_juicios_contratos.py",
       "src/goes_science_kg/producto/alineaciones.py",
@@ -1884,6 +1899,7 @@
       "src/goes_science_kg/operacion/almacen_gcs.py",
       "src/goes_science_kg/operacion/recuperacion_unidad.py",
       "src/goes_science_kg/operacion/respaldo.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "src/goes_science_kg/producto/_conocimiento_contratos.py",
       "src/goes_science_kg/producto/_juicios_contratos.py",
       "src/goes_science_kg/producto/alineaciones.py",
@@ -2141,13 +2157,15 @@
       "src/goes_science_kg/cli/unidades.py",
       "src/goes_science_kg/operacion/datos_externos.py",
       "src/goes_science_kg/operacion/presupuestos_restaurados.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "src/goes_science_kg/producto/campana_mejoras.py",
       "src/goes_science_kg/producto/rectificacion_mejoras.py",
       "src/goes_science_kg/producto/seguimiento_mejoras.py",
       "tests/test_datos_externos.py",
       "tests/test_fondos_campana.py",
       "tests/test_recuperacion_operativa.py",
-      "tests/test_respaldo_ciencias.py"
+      "tests/test_respaldo_ciencias.py",
+      "tests/test_sincronizacion.py"
     ],
     "src/goes_science_kg/operacion/almacen_gcs.py": [
       "src/goes_science_kg/cli/artefactos.py",
@@ -2158,6 +2176,7 @@
     "src/goes_science_kg/operacion/datos_externos.py": [
       "src/goes_science_kg/cli/datos.py",
       "src/goes_science_kg/operacion/presupuestos_restaurados.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_datos_externos.py"
     ],
     "src/goes_science_kg/operacion/fondos.py": [
@@ -2167,7 +2186,7 @@
       "tests/test_fondos_campana.py"
     ],
     "src/goes_science_kg/operacion/presupuestos_restaurados.py": [
-      "src/goes_science_kg/cli/datos.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_datos_externos.py"
     ],
     "src/goes_science_kg/operacion/recuperacion_unidad.py": [
@@ -2180,6 +2199,10 @@
       "src/goes_science_kg/operacion/presupuestos_restaurados.py",
       "tests/test_datos_externos.py",
       "tests/test_respaldo_ciencias.py"
+    ],
+    "src/goes_science_kg/operacion/sincronizacion.py": [
+      "src/goes_science_kg/cli/datos.py",
+      "tests/test_sincronizacion.py"
     ],
     "src/goes_science_kg/panel.py": [
       "src/goes_science_kg/bucle.py",
@@ -3011,7 +3034,11 @@
           "estado": "versionado"
         },
         {
-          "destino": "docs/VERIFICACION_GCS.md",
+          "destino": "docs/CLASES_V4.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "docs/CALIDAD.md",
           "estado": "versionado"
         }
       ]
@@ -3396,6 +3423,10 @@
         {
           "destino": "VERIFICACION_GCS.md",
           "estado": "versionado"
+        },
+        {
+          "destino": "VERIFICACION_GCS.md",
+          "estado": "versionado"
         }
       ]
     },
@@ -3753,6 +3784,14 @@
         },
         {
           "destino": "../PROGRESION_2_11.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "../badges/medicion.json",
+          "estado": "versionado"
+        },
+        {
+          "destino": "../CLASES_V4.md",
           "estado": "versionado"
         }
       ]

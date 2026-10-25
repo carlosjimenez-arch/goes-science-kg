@@ -1,6 +1,39 @@
 # Guiones completos de Ciencias V4
 
-## Estado de esta ampliación
+## Entrega publicada · 25 de octubre de 2026
+
+**994 guiones de clase y 108 guiones de unidad publicados**, con 19 objetivos declarados sin guion
+liberado. Entrega `9d949257f6752960333349a56cfad4f2da855041f45a97470655226b06ed493d`
+(`config/clases_ciencias.lock.json`) y biblioteca ampliada `5b80b556…` con 3.969 registros
+(`config/materiales_ciencias.lock.json`), ambas en el bucket y restauradas desde él.
+
+| Paso | Resultado |
+|---|---|
+| Autorización | El usuario amplió el tope acumulado a 4.400 llamadas con USD 3.500 sin cambio (recibo literal anclado por SHA en `config/presupuesto_clases_v4.json`) |
+| R21 (plan congelado de 45 pendientes) | 283 llamadas: 34 respaldados, 6 vetos y 5 abstenciones |
+| R22 (12: los 11 negativos y el caso estelar bloqueado por revisión directa) | 70 llamadas: 8 respaldados, 3 vetos y 1 abstención |
+| Consumo acumulado | 4.294 llamadas y USD 3.219,5365 de reserva; contador sin reinicio |
+| Revisión directa de las 41 versiones recuperadas | 26 aprobadas y 15 bloqueadas por defectos materiales |
+| Compilación | 409 resultados cotejados con el ledger; ningún guion liberado tiene un bloqueo conocido |
+
+La revisión directa la hicieron agentes revisores independientes de sólo lectura, que recalcularon cifras y
+contrastaron afirmaciones con las fuentes (`data/clases_v4/auditoria_contenido/revision_directa_*`). Los 15
+bloqueos incluyen datos reales erróneos (temperatura a 100 km, «694 veces» la distancia a Plutón), una cita
+oficial inventada, afirmaciones falsas heredadas literalmente de OpenStax convertidas en criterio evaluado
+(sin PSII no hay ATP, la codeína como anestésico local) y cláusulas del objetivo sin enseñar. **El respaldo de
+cuatro lectores automáticos no basta para liberar sin revisión:** en esta cohorte de recuperación el 37 % tenía
+un defecto material. Cada guion liberado declara `revision_directa`: «aprobada» (26) o «no_realizada» (968,
+respaldados por cuatro lectores en P5–P11; la muestra de 32 y sus seguimientos están en el expediente).
+
+Los 19 objetivos sin guion conservan su preparación por objetivo, su último resultado y su motivo; su unidad se
+marca `completa: false`. Una tercera ronda no cabía en el tope autorizado (quedan 106 llamadas).
+
+Dos correcciones de ingeniería, en módulos sin huella de protocolo: la auditoría admite la familia
+`clases-p11-recuperacion-rNN` y verifica el parche del editor con el esquema que envía el código P11 (el
+esquema archivado en su ZIP difiere; la clave recalculada coincide con el ledger). La compilación acepta
+objetivos declarados sin guion, siempre anclados a su resultado real o a la revisión que los bloqueó.
+
+## Estado de la ampliación al 23 de octubre (antecedente)
 
 El alcance son los 1.013 objetivos de Ciencias del snapshot producto-4, agrupados en 108 unidades.
 Los siete registros fuera de Ciencias se conservan fuera de generación. El corte de la campaña P11

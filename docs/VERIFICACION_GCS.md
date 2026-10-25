@@ -1,6 +1,32 @@
 # Verificación de recuperación de Ciencias V4
 
-## Respaldo vigente: producto integrado, 25 de octubre de 2026
+## Respaldo vigente: producto con guiones publicados, 25 de octubre de 2026
+
+Generación publicada con `gskg datos publicar`, que empaqueta, sube, restaura desde GCS en una carpeta de
+trabajo, compara y sólo entonces adopta el recibo. Incluye el ledger con las campañas R21 y R22, sus
+preparaciones, resultados y revisiones directas, la biblioteca ampliada, la de preparaciones y la entrega
+de guiones descomprimida.
+
+| Elemento | Identidad comprobada |
+|---|---|
+| Archivos | 28.330 |
+| Bytes originales / comprimidos | 4.396.168.714 / 1.489.918.355 |
+| SHA del ZIP | `d812b22d21fef61c774d42972259ec9a3fdd9ac1cd4ef1104acf7aa71b315c6c` |
+| Generaciones ZIP / inventario / descriptor | `1792967167842706` / `1792967226648808` / `1792967235380780` |
+| Huella del inventario | `079eca603d440f3cd7a46b893d210e4183e55ea496cb2fd8f4891f53d418b8f9` |
+| Ledger | 4.294 llamadas de la campaña de guiones; USD 3.219,5365 de reserva |
+
+Recibos complementarios: biblioteca ampliada `5b80b556…` (`config/materiales_ciencias.lock.json`), entrega
+de guiones `9d949257…` (`config/clases_ciencias.lock.json`) y biblioteca de preparaciones `5b64ee…`
+(`config/materiales_preparaciones.lock.json`).
+
+**Consumidor nuevo.** En un `git worktree` limpio, con su propio entorno y sólo los recibos, `gskg datos
+sincronizar` restauró todo en 68 s; `gskg datos verificar` encontró 28.288 archivos idénticos por SHA y 42
+SQLite operativos, sin diferencias ni faltantes. La suite completa pasó **1.702 pruebas sin omisiones** y el
+servicio respondió en readiness, resumen, progresión, biblioteca (994 guiones y 108 unidades), exportación y
+aplicación.
+
+## Antecedente: producto integrado antes de los guiones, 25 de octubre de 2026
 
 `config/datos_ciencias.lock.json` fija la generación que acompaña a la integración de `feat/api` y
 `feat/ciencias-v4`. Contiene el corte P11 completo y los datos derivados nuevos: lotes y salidas del
