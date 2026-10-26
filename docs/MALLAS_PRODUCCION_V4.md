@@ -1,5 +1,10 @@
 # Paquetes de las mallas finales · 26 de octubre de 2026
 
+> Actualización posterior del 26 de octubre: la entrega seleccionada ahora incluye diseño didáctico,
+> criterios y 14 casos, con revisión independiente pendiente y cero llamadas nuevas. Los recibos
+> principales apuntan a esta edición; los recibos `_bases.lock.json` conservan las bases descritas
+> abajo. [Estado actual, fuentes y descarga](DIDACTICA_CIENCIAS_V4.md).
+
 Se construyeron **1.128 paquetes base** de la entrega local final: **1.020 por objetivo y 108 por
 unidad**, con **14 ZIP por grado y asignatura**. Conservan los once Excel originales, las 126 hojas,
 los valores y coordenadas de todas las filas. Incluyen JSON, lectura docente Markdown, manifiestos

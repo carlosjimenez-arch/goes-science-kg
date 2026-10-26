@@ -216,17 +216,34 @@ def compilar(final: Curriculo, anterior: Curriculo, antecedentes: list[dict], *,
     return registros, informe
 
 
-def exportar(registros, originales, informe, destino: Path):
+def exportar(
+    registros,
+    originales,
+    informe,
+    destino: Path,
+    *,
+    version=VERSION,
+    estado_revision="pendiente_revision_nueva_edicion",
+    archivos_comunes=None,
+):
     """ZIP reproducible por grado/asignatura con JSON, Markdown, insumos y comprobantes SHA."""
     destino_generado(destino / "indice.json")
     if destino.exists() or destino.is_symlink():
         raise ValueError("Las exportaciones requieren un directorio nuevo")
+    for nombre, raw in (archivos_comunes or {}).items():
+        if (
+            not nombre.startswith("didactica/")
+            or any(p in {"", ".", ".."} for p in nombre.split("/"))
+            or "\\" in nombre
+            or not isinstance(raw, bytes)
+        ):
+            raise ValueError("Los archivos comunes requieren bytes y rutas propias bajo didactica/")
     destino.mkdir(parents=True)
     grupos = sorted({(r["grados"][0], r["asignatura"]) for r in registros})
     inventario = []
     for grado, asignatura in grupos:
         seleccion = [r for r in registros if r["grados"] == [grado] and r["asignatura"] == asignatura]
-        archivos = {"informe.json": serializar(informe)}
+        archivos = {"informe.json": serializar(informe), **(archivos_comunes or {})}
         usados = set()
         for r in seleccion:
             nombre = sha(r["id"].encode())
@@ -239,12 +256,12 @@ def exportar(registros, originales, informe, destino: Path):
             archivos[ruta] = originales[ruta]
         archivos["manifest.json"] = serializar(
             {
-                "version": VERSION,
+                "version": version,
                 "grado": grado,
                 "asignatura": asignatura,
                 "paquetes": len(seleccion),
                 "snapshot_id": informe["huella_final"],
-                "estado_revision": "pendiente_revision_nueva_edicion",
+                "estado_revision": estado_revision,
                 "archivos": {p: {"sha256": sha(b), "bytes": len(b)} for p, b in sorted(archivos.items())},
             }
         )

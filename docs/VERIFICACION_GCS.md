@@ -1,5 +1,10 @@
 # Verificación de recuperación de Ciencias V4
 
+> Actualización posterior del 26 de octubre: la entrega seleccionada ahora incluye diseño didáctico,
+> criterios y 14 casos, con revisión independiente pendiente y cero llamadas nuevas. Los recibos
+> principales apuntan a esta edición; los recibos `_bases.lock.json` conservan las bases descritas
+> abajo. [Estado actual, fuentes y descarga](DIDACTICA_CIENCIAS_V4.md).
+
 ## Mallas finales: 26 de octubre de 2026
 
 La nueva biblioteca está fijada en `config/materiales_produccion_ciencias.lock.json` y sus 14 ZIP

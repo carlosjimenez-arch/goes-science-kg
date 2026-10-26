@@ -14,6 +14,124 @@ from goes_science_kg.config import ruta
 app = typer.Typer(help="Paquetes base de las mallas finales; estados de revisión explícitos", no_args_is_help=True)
 
 
+@app.command("mejorar")
+def mejorar(
+    destino: Annotated[Path, typer.Option()],
+    exportaciones: Annotated[Path, typer.Option()],
+    origen: Annotated[Path, typer.Option()] = Path("data/materiales_produccion_v4"),
+    referencias: Annotated[Path, typer.Option()] = Path("data/didactica_ciencias_20261026/referencias"),
+):
+    """Añade diseño de habilidades, apoyos, casos y auditoría, sin Vertex ni votos heredados."""
+    from goes_science_kg.archivos import destino_generado
+    from goes_science_kg.clases.presupuesto import comprobar_continuidad
+    from goes_science_kg.curriculo.contratos import Curriculo
+    from goes_science_kg.materiales.almacen import Biblioteca
+    from goes_science_kg.materiales.almacen import construir as guardar
+    from goes_science_kg.materiales.compilacion import serializar, sha
+    from goes_science_kg.produccion.compilacion import exportar
+    from goes_science_kg.produccion.didactica.compilacion import VERSION, enriquecer
+
+    destino, exportaciones = ruta(destino), ruta(exportaciones)
+    for p in (destino, exportaciones):
+        destino_generado(p / "manifest.json")
+        if p.exists() or p.is_symlink():
+            raise typer.BadParameter("Los destinos deben ser directorios nuevos")
+    if destino == exportaciones or destino in exportaciones.parents or exportaciones in destino.parents:
+        raise typer.BadParameter("Los destinos deben ser independientes")
+    ledger = ruta("data/operaciones/registro.sqlite")
+    antes, consumo = sha(ledger.read_bytes()), comprobar_continuidad(ledger)
+    biblioteca = Biblioteca(ruta(origen))
+    biblioteca.validar()
+    registros, archivos = biblioteca.exportar()
+    curriculo = Curriculo.model_validate_json(archivos["curriculo.json"])
+    historica = Biblioteca(ruta("data/materiales"))
+    historica.validar()
+    h, _ = historica.exportar()
+    historicos = {r["id"]: r["documento"] for r in h if r["tipo"] == "paquete_objetivo"}
+    reglas_raw = ruta("config/didactica_ciencias.yaml").read_bytes()
+    casos_raw = ruta("config/casos_didacticos_ciencias.yaml").read_bytes()
+    diseno_sha = sha(serializar({"reglas": sha(reglas_raw), "casos": sha(casos_raw)}))
+    reglas = yaml.safe_load(reglas_raw)
+    propuestas, auditoria, indice, grafo = enriquecer(
+        registros,
+        curriculo,
+        reglas,
+        sha_reglas=diseno_sha,
+        biblioteca_base=biblioteca.manifest["id"],
+        historicos=historicos,
+        casos=yaml.safe_load(casos_raw),
+    )
+    originales = {p: b for p, b in archivos.items() if not p.startswith("paquetes/") and p != "informe.json"}
+    originales["edicion_base/informe.json"] = archivos["informe.json"]
+    originales["didactica/reglas.yaml"] = reglas_raw
+    originales["didactica/casos.yaml"] = casos_raw
+    originales["didactica/auditoria.json"] = serializar(auditoria)
+    originales["didactica/indice.json"] = serializar(indice)
+    originales["didactica/grafo.json"] = serializar(grafo)
+    originales["informe.json"] = serializar(auditoria)
+    fuentes = json.loads((ruta(referencias) / "manifest.json").read_bytes())
+    originales["didactica/referencias/manifest.json"] = serializar(fuentes)
+    for fuente in fuentes["fuentes"]:
+        if fuente["estado"] != "descargado":
+            continue
+        nombre = fuente["archivo"]
+        if Path(nombre).name != nombre:
+            raise ValueError("La fuente debe identificar un archivo simple")
+        archivo = ruta(referencias) / nombre
+        if archivo.is_symlink():
+            raise ValueError("La referencia debe ser un archivo propio")
+        raw = archivo.read_bytes()
+        if sha(raw) != fuente["sha256"] or len(raw) != fuente["bytes"]:
+            raise ValueError("La referencia no conserva su huella")
+        originales["didactica/referencias/" + nombre] = raw
+    fuentes_casos = {s["id"]: {k: v for k, v in s.items() if k not in {"archivo"}} for s in fuentes["fuentes"]}
+    for r in propuestas:
+        if r["tipo"] == "paquete_objetivo" and (caso := r["documento"]["didactica"]["caso_resuelto"]):
+            caso["fuentes"] = {id_: fuentes_casos[id_] for id_ in caso["referencias"]}
+    comunes = {"didactica/referencias.json": serializar(fuentes_casos), "didactica/reglas.yaml": reglas_raw}
+    comunes["didactica/casos.yaml"] = casos_raw
+    zips = exportar(
+        propuestas,
+        originales,
+        auditoria,
+        exportaciones,
+        version=VERSION,
+        estado_revision="propuesta_didactica_pendiente_revision",
+        archivos_comunes=comunes,
+    )
+    for p in [*(exportaciones / z["archivo"] for z in zips), exportaciones / "indice.json"]:
+        originales["paquetes/" + p.name] = p.read_bytes()
+    manifest = guardar(
+        propuestas,
+        originales,
+        destino,
+        procedencia={
+            "snapshot_id": curriculo.huella,
+            "edicion": "produccion-final-20261026",
+            "version_diseno": VERSION,
+            "biblioteca_base": biblioteca.manifest["id"],
+            "metodo": "diseno_instruccional_con_curacion_explicita_y_compilacion_sin_modelos",
+            "estado_revision": "propuesta_didactica_pendiente_revision",
+            "consumo_acumulado": consumo,
+            "ledger_sha256": antes,
+        },
+    )
+    if sha(ledger.read_bytes()) != antes:
+        raise ValueError("El ledger cambió durante el enriquecimiento")
+    typer.echo(
+        json.dumps(
+            {
+                "biblioteca_id": manifest["id"],
+                "materiales": manifest["materiales"],
+                "auditoria": auditoria,
+                "llamadas_vertex": 0,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+
+
 @app.command("preparar")
 def preparar(destino: Annotated[Path, typer.Option()]):
     """Contexto completo y reserva de las 108 unidades; no ejecuta Vertex ni aprueba el catálogo."""

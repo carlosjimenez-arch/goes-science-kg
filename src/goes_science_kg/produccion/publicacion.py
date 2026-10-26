@@ -56,7 +56,7 @@ def publicar(directorio: Path, biblioteca, almacen, recibo: Path):
             "version": VERSION,
             "biblioteca_id": manifest["id"],
             "snapshot_id": manifest["procedencia"]["snapshot_id"],
-            "estado_revision": "pendiente_revision_nueva_edicion",
+            "estado_revision": manifest["procedencia"].get("estado_revision", "pendiente_revision_nueva_edicion"),
             "objetos": {},
         }
     )

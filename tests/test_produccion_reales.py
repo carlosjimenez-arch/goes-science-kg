@@ -65,11 +65,14 @@ def test_todas_las_celdas_y_fases_corresponden_a_bytes_originales(entrega_final)
         ids = [f for u in unidades for f in u["documento"]["filas_ids"]]
         assert len(ids) == len(set(ids)) == 1020
         assert set(ids) == set(por_id)
-        informe = json.loads(archivos["informe.json"])
+        enriquecida = b.manifest["procedencia"].get("version_diseno") == "preparacion-malla-final-2"
+        informe = json.loads(archivos["edicion_base/informe.json" if enriquecida else "informe.json"])
         assert informe["objetivos_identicos"] == 1020
         assert informe["filas_con_cambios_logicos"] >= 884
         assert informe["filas_sin_paquete"] == []
-        assert b.manifest["procedencia"]["estado_revision"] == "pendiente_revision_nueva_edicion"
+        assert b.manifest["procedencia"]["estado_revision"] == (
+            "propuesta_didactica_pendiente_revision" if enriquecida else "pendiente_revision_nueva_edicion"
+        )
     finally:
         for libro in libros.values():
             libro.close()
@@ -105,7 +108,7 @@ def test_api_final_descarga_todos_los_json_markdown_y_originales(entrega_final):
     )
     c = TestClient(app)
     prefix = "/api/v4/produccion/materiales"
-    assert c.get(prefix + "/salud").json()["estado_revision_contenido"] == "pendiente_revision_nueva_edicion"
+    assert c.get(prefix + "/salud").json()["estado_revision_contenido"] == b.manifest["procedencia"]["estado_revision"]
     assert c.get(prefix + "?tipo=paquete_objetivo").json()["total"] == 1020
     assert c.get(prefix + "?tipo=paquete_unidad").json()["total"] == 108
     for r in registros:

@@ -282,9 +282,12 @@ def crear_app(base: Path | None = None) -> FastAPI:
             directorio,
             directorio="data/materiales_produccion_v4",
             prefijo="/api/v4/produccion/materiales",
-            etiqueta="Mallas finales: paquetes base pendientes de revisión",
+            etiqueta="Mallas finales: preparaciones docentes pendientes de revisión",
         )
     )
+    from goes_science_kg.api_didactica import crear_router_didactica
+
+    aplicacion.include_router(crear_router_didactica(directorio))
     return aplicacion
 
 

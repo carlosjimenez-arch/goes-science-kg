@@ -1,5 +1,10 @@
 # Biblioteca docente de Ciencias
 
+> Actualización posterior del 26 de octubre: la entrega seleccionada ahora incluye diseño didáctico,
+> criterios y 14 casos, con revisión independiente pendiente y cero llamadas nuevas. Los recibos
+> principales apuntan a esta edición; los recibos `_bases.lock.json` conservan las bases descritas
+> abajo. [Estado actual, fuentes y descarga](DIDACTICA_CIENCIAS_V4.md).
+
 La entrega final recibida el 26 de octubre tiene una biblioteca independiente en
 `/api/v4/produccion/materiales`: 1.020 paquetes base por objetivo y 108 por unidad, con revisión de
 contenido pendiente. Sus 14 ZIP se descargan con `gskg produccion descargar`.

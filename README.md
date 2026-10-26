@@ -10,19 +10,25 @@ Los datos, PDF y entregables se recuperan desde el bucket institucional con
 
 ## Mallas finales · 26 de octubre de 2026
 
-La nueva entrega tiene **1.020 paquetes base por objetivo y 108 por unidad**, en **14 ZIP por grado
-y asignatura**. Conserva los once Excel finales y sus coordenadas, interpreta los encabezados de
-fases combinados y mantiene la excepción de cinco fases de la última unidad de 9.º.
-**Su revisión científica y pedagógica está pendiente**: las propuestas y los votos de la captura
-anterior no se han trasladado. [Cambios, incidencias y alcance](docs/MALLAS_PRODUCCION_V4.md).
+La entrega actual mejora **1.020 paquetes por objetivo y 108 por unidad**, en **14 ZIP**. Añade
+4.880 actividades con procedencia, 4.457 grupos de criterios, apoyos y retirada gradual, aplicación,
+notas científicas y **14 casos resueltos**: uno por grupo de grado/asignatura. Preserva los once Excel
+finales y todos los originales. **Revisión científica y pedagógica independiente pendiente**; no se
+heredan votos ni se atribuyen resultados de aprendizaje. Una fila del insumo sigue sin fases ni evidencia.
+[Crítica, mejoras, fuentes y límites](docs/DIDACTICA_CIENCIAS_V4.md).
+[Ingesta y comparación de las mallas finales](docs/MALLAS_PRODUCCION_V4.md).
 
-Descargarlos del bucket privado con `uv run gskg produccion descargar --destino /tmp/paquetes-mallas-finales`.
-Para la API, restaurar la biblioteca con
+Descargarlos del bucket privado con `uv run gskg produccion descargar --destino /tmp/ciencias-didactica-v4`.
+El destino debe ser nuevo. Para la API, restaurar la biblioteca con
 `uv run gskg materiales restaurar --recibo config/materiales_produccion_ciencias.lock.json --destino data/materiales_produccion_v4`.
-La ruta nueva es `/api/v4/produccion/materiales`; los comandos comprueban las generaciones y SHA.
-El operador decidió **conservar el límite actual y entregar las bases con revisión pendiente**.
-Se mantienen 4.000 llamadas/USD 3.500 de máximo acumulado, con 3.941 llamadas ya registradas.
-La nueva campaña no se inicia; esta entrega no consumió invocaciones adicionales.
+Las rutas son `/api/v4/produccion/materiales` y `/api/v4/produccion/didactica/habilidades`.
+Los comandos verifican generación, tamaño y SHA. Los recibos con sufijo `_bases.lock.json` conservan
+la edición base anterior. Reiniciar un servidor ya abierto para cargar código y biblioteca nuevos.
+
+El operador decidió **conservar el límite actual y entregar las bases con revisión pendiente** y después
+pidió mejorar su diseño didáctico. Se mantienen 4.000 llamadas/USD 3.500 de máximo acumulado, con
+3.941 llamadas ya registradas. La campaña de nuevos jueces no se inicia; la mejora consume **cero
+invocaciones adicionales** y mantiene sus propuestas pendientes de revisión.
 Los resultados del 22–23 de octubre descritos
 abajo corresponden a la **captura anterior**, que continúa disponible por separado.
 
