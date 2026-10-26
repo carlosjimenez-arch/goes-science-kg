@@ -227,7 +227,11 @@ def crear_paquete(raiz: Path, archivos: list[str], destino: Path, *, max_bytes: 
                 "bytes_sin_comprimir": total,
                 "huella_inventario": huella(inventario),
             }
-            zip_.writestr("MANIFEST_RESPALDO.json", json.dumps(manifest, ensure_ascii=False, sort_keys=True))
+            # Fecha fija también en el manifiesto: el mismo inventario produce el mismo paquete y su plan de retiro.
+            info = zipfile.ZipInfo("MANIFEST_RESPALDO.json", date_time=(2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o100600 << 16
+            zip_.writestr(info, json.dumps(manifest, ensure_ascii=False, sort_keys=True))
     digest = hashlib.sha256(destino.read_bytes()).hexdigest()
     LOGGER.info("VERDE paquete privado: %d archivos; %d bytes comprimidos", len(inventario), destino.stat().st_size)
     return {

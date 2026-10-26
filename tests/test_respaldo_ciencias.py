@@ -285,3 +285,12 @@ def test_escritor_sin_confirmar_no_entra_al_paquete_y_no_bloquea(tmp_path, monke
     finally:
         con.execute("ROLLBACK")
         con.close()
+
+
+def test_mismo_inventario_produce_el_mismo_paquete(tmp_path, monkeypatch):
+    # El plan de retiro sólo casa con su recibo si empaquetar el mismo contenido da los mismos bytes.
+    (tmp_path / "dato.txt").write_text("contenido", encoding="utf-8")
+    primero = crear_paquete(tmp_path, ["dato.txt"], tmp_path / "a" / "p.zip")
+    monkeypatch.setattr("time.time", lambda: 2_000_000_000.0)
+    segundo = crear_paquete(tmp_path, ["dato.txt"], tmp_path / "b" / "p.zip")
+    assert primero["sha256"] == segundo["sha256"]
