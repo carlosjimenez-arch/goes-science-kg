@@ -111,7 +111,7 @@ def test_version_minima_conserva_explicacion_y_cabe_en_el_tiempo_efectivo():
     assert any("conserva la explicación" in e for e in errores)
     datos = anexo().model_dump(mode="json")
     datos["version_minima"]["minutos_efectivos"] = 30
-    assert any("excede" in e for e in validar_anexo(AnexoClase.model_validate(datos), guion(), SHA, CANDIDATOS))
+    assert any("debe sumar" in e for e in validar_anexo(AnexoClase.model_validate(datos), guion(), SHA, CANDIDATOS))
 
 
 def test_inclusion_exige_las_cuatro_discapacidades_basicas():

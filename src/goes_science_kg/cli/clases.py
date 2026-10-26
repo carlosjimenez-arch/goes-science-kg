@@ -254,3 +254,13 @@ def descargar(
     ref = json.loads((recibo or ruta("config/clases_ciencias.lock.json")).read_bytes())
     m = restaurar(ref, destino, _almacen())
     typer.echo(json.dumps({"estado": "verificado", "entrega_id": m["id"], "por_tipo": m["por_tipo"]}))
+
+
+@app.command("complementaria")
+def complementaria() -> None:
+    """Compila la capa complementaria revisada y fija su recibo; no invoca modelos."""
+    from goes_science_kg.clases.complementaria_publicacion import RECIBO, publicar
+
+    recibo = publicar(ruta("."))
+    ruta(RECIBO.as_posix()).write_text(json.dumps(recibo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    typer.echo(json.dumps(recibo, ensure_ascii=False))

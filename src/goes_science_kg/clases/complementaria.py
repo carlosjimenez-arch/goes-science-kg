@@ -251,8 +251,11 @@ def validar_anexo(anexo: AnexoClase, guion: GuionClase, guion_sha256: str, candi
                 errores.append(f"El bloque {clave} no puede durar más que en el guion")
         for sesion in guion.sesiones:
             usados = sum(ajustes[(sesion.numero, i)].minutos for i in range(1, len(sesion.bloques) + 1))
-            if usados > anexo.version_minima.minutos_efectivos:
-                errores.append(f"La sesión {sesion.numero} mínima excede los minutos efectivos declarados")
+            if usados != anexo.version_minima.minutos_efectivos:
+                errores.append(
+                    f"La sesión {sesion.numero} mínima suma {usados} minutos; debe sumar los "
+                    f"{anexo.version_minima.minutos_efectivos} minutos efectivos declarados"
+                )
         conservadas = {bloques[k].fase for k, a in ajustes.items() if a.accion != "omitir"}
         if "explicar" not in conservadas or not conservadas & {"explorar", "indagar"}:
             errores.append("La versión mínima conserva la explicación y al menos una fase de exploración o indagación")
