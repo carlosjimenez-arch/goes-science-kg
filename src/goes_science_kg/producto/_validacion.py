@@ -8,11 +8,13 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from openpyxl.utils.cell import coordinate_to_tuple, get_column_letter
+from openpyxl.utils.cell import column_index_from_string, coordinate_to_tuple, get_column_letter
+from openpyxl.worksheet.cell_range import CellRange
 
 from goes_science_kg.curriculo.catalogacion import DECLARADAS, ROLES, CatalogoDisciplinas
 from goes_science_kg.curriculo.contexto_fuentes import documento_de_fila, fuentes_del_curriculo
 from goes_science_kg.curriculo.contratos import Curriculo, RegistroHoja
+from goes_science_kg.curriculo.fases import texto_fase
 from goes_science_kg.recuperacion import Documento
 
 TOTAL_FILAS_V4 = 1020
@@ -99,21 +101,38 @@ def validar_entrada(curriculo: Curriculo, catalogo: CatalogoDisciplinas) -> None
             fisica, columna = coordinate_to_tuple(celda.coordenada)
             if fisica != fila.fila or get_column_letter(columna) != celda.columna:
                 raise ValueError("Coordenada física incompatible con su fila o columna")
-        if len(campos) != sum(c.campo is not None for c in fila.celdas) or any(
-            c.fila != fila.fila for c in fila.celdas
-        ):
+        sin_fase = [c.campo for c in fila.celdas if c.campo and not c.campo.startswith("fase_")]
+        if len(set(sin_fase)) != len(sin_fase) or any(c.fila != fila.fila for c in fila.celdas):
             raise ValueError("Campos repetidos o celdas de otra fila")
         for nombre, fase in fila.fases.items():
+            celdas_fase = [c for c in fila.celdas if c.campo == f"fase_{nombre}"]
+            if len(celdas_fase) > 1:
+                columnas = {column_index_from_string(c.columna) for c in celdas_fase}
+                if not any(
+                    rango.min_row <= encabezado <= rango.max_row
+                    and all(rango.min_col <= col <= rango.max_col for col in columnas)
+                    and re.fullmatch(
+                        rf"\d+\.\s*{re.escape(nombre)}",
+                        str(hoja.columnas[rango.min_col - 1].encabezados[hoja.filas_encabezado.index(encabezado)])
+                        .split("\n", 1)[0]
+                        .strip(),
+                        re.IGNORECASE,
+                    )
+                    for combinado in hoja.combinaciones
+                    for rango in [CellRange(combinado)]
+                    for encabezado in hoja.filas_encabezado
+                ):
+                    raise ValueError("Una fase repetida requiere un encabezado combinado explícito")
             if fase.presente_en_hoja != (f"fase_{nombre}" in campos) or (
                 not fase.presente_en_hoja and (fase.texto or fase.codigos_locales or fase.coordenadas)
             ):
                 raise ValueError("Ausencia de fase incoherente con el esquema de la fila")
+            if fase.texto != texto_fase(celdas_fase) or fase.coordenadas != tuple(c.coordenada for c in celdas_fase):
+                raise ValueError("La fase no corresponde a sus celdas originales")
         for campo, celda in campos.items():
             texto = "" if celda.valor is None else str(celda.valor).strip()
             if campo.startswith("fase_"):
-                fase = fila.fases[campo.removeprefix("fase_")]
-                if not fase.presente_en_hoja or fase.texto != texto:
-                    raise ValueError("La fase no corresponde a su celda original")
+                continue
             elif campo != "unidad" or hoja.unidad is None:
                 if getattr(fila, campo) != texto:
                     raise ValueError(f"El campo {campo} no corresponde a su celda original")

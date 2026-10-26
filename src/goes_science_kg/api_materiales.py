@@ -32,8 +32,14 @@ Tipo = Literal[
 ]
 
 
-def crear_router_materiales(base: Path):
-    router = APIRouter(prefix="/api/v4/materiales", tags=["Materiales docentes"])
+def crear_router_materiales(
+    base: Path,
+    *,
+    directorio: str = "data/materiales",
+    prefijo: str = "/api/v4/materiales",
+    etiqueta: str = "Materiales docentes",
+):
+    router = APIRouter(prefix=prefijo, tags=[etiqueta])
     biblioteca, lock = None, Lock()
 
     def leer():
@@ -41,7 +47,7 @@ def crear_router_materiales(base: Path):
         try:
             with lock:
                 if biblioteca is None:
-                    candidato = Biblioteca(base / "data/materiales")
+                    candidato = Biblioteca(base / directorio)
                     candidato.validar()
                     biblioteca = candidato
                 biblioteca.comprobar()
@@ -92,6 +98,8 @@ def crear_router_materiales(base: Path):
             "por_version": m["por_version"],
             "llamadas_modelos_por_peticion": 0,
             "snapshot_id": m["procedencia"]["snapshot_id"],
+            "edicion": m["procedencia"].get("edicion"),
+            "estado_revision_contenido": m["procedencia"].get("estado_revision"),
         }
 
     @router.get("/manifest")

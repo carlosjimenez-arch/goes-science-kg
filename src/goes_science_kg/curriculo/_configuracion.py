@@ -35,6 +35,7 @@ class ConfigHoja(BaseModel):
     unidad: str | None = None
     filas_encabezado: tuple[int, ...] = ()
     campos_por_columna: dict[str, str] = Field(default_factory=dict)
+    expandir_fases_combinadas: bool = False
 
     @model_validator(mode="after")
     def validar_esquema(self) -> ConfigHoja:

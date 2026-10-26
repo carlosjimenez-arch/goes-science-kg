@@ -32,6 +32,7 @@ from goes_science_kg.curriculo.contratos import (
     HojaCurricular,
     RegistroHoja,
 )
+from goes_science_kg.curriculo.fases import texto_fase
 
 _CODIGO_LOCAL = re.compile(r"(?<![\w])(?:EP|PR|E|D|I)\d+(?:\.\d+)*(?![\w])")
 LOGGER = logging.getLogger(__name__)
@@ -76,19 +77,36 @@ def _catalogo_alias(cfg: ConfigCurriculo) -> dict[str, str]:
 def _columnas(hoja: Worksheet, cfg: ConfigHoja, alias: dict[str, str]) -> tuple[ColumnaCurricular, ...]:
     columnas: list[ColumnaCurricular] = []
     usados: set[str] = set()
+    anclas_usadas: dict[str, set[str]] = {}
+    combinadas = _combinadas(hoja) if cfg.expandir_fases_combinadas else {}
     for indice in range(1, hoja.max_column + 1):
         letra = get_column_letter(indice)
         encabezados = tuple(hoja.cell(fila, indice).value for fila in cfg.filas_encabezado)
+        efectivos = [
+            hoja[combinadas.get((fila, indice), hoja.cell(fila, indice).coordinate)] for fila in cfg.filas_encabezado
+        ]
+        # Sólo se expanden encabezados de fases. Los demás campos siguen siendo únicos.
+        anclas = {c.coordinate for c in efectivos if alias.get(_normalizar(c.value), "").startswith("fase_")}
         campo = cfg.campos_por_columna.get(letra)
         if campo is None and cfg.tratamiento == "curricular":
             candidatos = {alias[n] for v in encabezados if (n := _normalizar(v)) in alias}
+            if cfg.expandir_fases_combinadas:
+                candidatos.update(
+                    alias[n] for c in efectivos if (n := _normalizar(c.value)) in alias and alias[n].startswith("fase_")
+                )
             if len(candidatos) > 1:
                 raise ValueError(f"Encabezados ambiguos en {hoja.title}!{letra}: {sorted(candidatos)}")
             campo = next(iter(candidatos), None)
         if campo is not None:
-            if campo in usados:
+            if campo in usados and not (
+                cfg.expandir_fases_combinadas
+                and campo.startswith("fase_")
+                and len(anclas) == 1
+                and anclas == anclas_usadas.get(campo)
+            ):
                 raise ValueError(f"Campo duplicado {campo!r} en hoja {hoja.title!r}; no se sobrescribe.")
             usados.add(campo)
+            anclas_usadas[campo] = anclas
         columnas.append(ColumnaCurricular(columna=letra, indice=indice, encabezados=encabezados, campo=campo))
     if fuera := set(cfg.campos_por_columna) - {c.columna for c in columnas}:
         raise ValueError(f"Columnas configuradas inexistentes en {hoja.title}: {sorted(fuera)}")
@@ -160,13 +178,13 @@ def _fila_curricular(
     fases = {}
     for fase in FASES:
         campo = f"fase_{fase}"
-        celda = por_campo.get(campo)
-        texto = _texto(celda.valor) if celda else ""
+        celdas_fase = [c for c in registro.celdas if c.campo == campo]
+        texto = texto_fase(celdas_fase)
         fases[fase] = FaseCurricular(
             presente_en_hoja=campo in campos_presentes,
             texto=texto,
             codigos_locales=tuple(dict.fromkeys(_CODIGO_LOCAL.findall(texto))),
-            coordenadas=(celda.coordenada,) if celda else (),
+            coordenadas=tuple(c.coordenada for c in celdas_fase),
         )
     unidad = cfg.unidad if cfg.unidad is not None else valores.pop("unidad", "")
     valores.pop("unidad", None)

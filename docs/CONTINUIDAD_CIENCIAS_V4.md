@@ -1,6 +1,23 @@
 # Ciencias V4: continuidad y verificación
 
-Actualización operativa: 23 de octubre de 2026, America/Bogota.
+Actualización operativa: 26 de octubre de 2026, America/Bogota.
+
+## Prioridad: mallas finales recibidas el 26 de octubre
+
+El usuario solicitó reconstruir los paquetes previos a las clases usando once archivos locales
+finales. Se preservaron ambos insumos, se corrigió la lectura de fases con encabezados combinados
+y se construyeron 1.020 paquetes base por objetivo y 108 por unidad, agrupados en 14 ZIP. No se
+trasladaron propuestas, clasificaciones ni votos de la captura anterior. La API nueva separada es
+`/api/v4/produccion/materiales`; la anterior continúa en `/api/v4/materiales`.
+
+Los contextos de las 108 unidades están preparados con un catálogo explícitamente provisional.
+No son un plan ejecutable. La primera pasada requiere 540 invocaciones, más la catalogación;
+quedan 59 bajo el máximo acumulado vigente. No se hicieron nuevas llamadas. Se solicitó un
+máximo acumulado de 5.200 llamadas/USD 5.500, pendiente de respuesta; no se ha adoptado como límite.
+[Estado exacto, incidencias y descarga](MALLAS_PRODUCCION_V4.md).
+
+La campaña de guiones P11 descrita abajo corresponde a los insumos anteriores. No se debe reanudar
+para cubrir la edición final ni sustituir sus fuentes debajo de un checkpoint existente.
 
 ## Ampliación de guiones de clase
 

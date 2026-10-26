@@ -28,6 +28,7 @@ from goes_science_kg.config import ruta
 from goes_science_kg.curriculo.catalogacion import DECLARADAS, CatalogoDisciplinas, ClasificacionFila
 from goes_science_kg.curriculo.contexto_fuentes import documento_de_fila
 from goes_science_kg.curriculo.contratos import FASES, ContratoCurricular, Curriculo, FilaCurricular, FuenteCurricular
+from goes_science_kg.curriculo.fases import texto_fase
 from goes_science_kg.motor.contratos import Evidencia, ResultadoMotor, Solicitud, huella
 from goes_science_kg.motor.ejecuciones import ejecutar_durable
 from goes_science_kg.motor.flujo import Motor
@@ -168,14 +169,20 @@ def _verificar_fila(fila: FilaCurricular, fuentes: FuentesVerificadas) -> Eviden
         ):
             raise ValueError("Una celda del paquete difiere del archivo original")
         texto = "" if celda.valor is None else str(celda.valor).strip()
-        if celda.campo and celda.campo != "unidad":
-            declarado = (
-                fila.fases[celda.campo.removeprefix("fase_")].texto
-                if celda.campo.startswith("fase_")
-                else getattr(fila, celda.campo)
-            )
+        if celda.campo and celda.campo != "unidad" and not celda.campo.startswith("fase_"):
+            declarado = getattr(fila, celda.campo)
             if declarado != texto:
                 raise ValueError("El campo curricular no coincide con su celda original")
+    for nombre, fase in fila.fases.items():
+        celdas = [c for c in fila.celdas if c.campo == f"fase_{nombre}"]
+        texto = texto_fase(celdas)
+        # Los paquetes antiguos de una columna podían omitir el localizador lógico;
+        # la comprobación física anterior sigue verificando cada celda. Una fase
+        # multicolumna siempre debe fijar todos sus localizadores.
+        if fase.texto != texto or (
+            (fase.coordenadas or len(celdas) > 1) and fase.coordenadas != tuple(c.coordenada for c in celdas)
+        ):
+            raise ValueError("La fase no coincide con sus celdas originales")
     return evidencia
 
 

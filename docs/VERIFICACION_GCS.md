@@ -1,5 +1,19 @@
 # Verificación de recuperación de Ciencias V4
 
+## Mallas finales: 26 de octubre de 2026
+
+La nueva biblioteca está fijada en `config/materiales_produccion_ciencias.lock.json` y sus 14 ZIP
+en `config/paquetes_produccion_ciencias.lock.json`. Son objetos nuevos del mismo bucket privado,
+con protección efectiva comprobada antes de cada escritura y relectura por generación.
+La biblioteca restaurada en `/private/tmp/ciencias-mallas-finales-restauradas-20261026` coincide
+exactamente con sus 1.128 registros y 30 archivos locales. La biblioteca anterior y el recibo
+integral P11 permanecen seleccionados por sus propias configuraciones; no se sobrescribieron.
+
+Esta entrega tiene integridad comprobada y **revisión de contenido pendiente**. Los detalles de
+identidad, incidencias, preflight y descarga están en [mallas finales](MALLAS_PRODUCCION_V4.md).
+El respaldo integral descrito abajo no incluye esta entrega posterior; restaurar también sus
+recibos específicos para disponer de ambas ediciones.
+
 ## Respaldo vigente P11: 23 de octubre de 2026
 
 El recibo actual `config/datos_ciencias.lock.json` fija el corte de desarrollo completo en el mismo

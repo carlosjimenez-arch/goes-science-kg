@@ -8,6 +8,22 @@ Los datos, PDF y entregables se recuperan desde el bucket institucional con
 `uv run gskg datos restaurar --en-repo`. Sus rutas están ignoradas por Git.
 [Restauración, inventario y migración verificable](docs/DATOS_EXTERNOS.md).
 
+## Mallas finales · 26 de octubre de 2026
+
+La nueva entrega tiene **1.020 paquetes base por objetivo y 108 por unidad**, en **14 ZIP por grado
+y asignatura**. Conserva los once Excel finales y sus coordenadas, interpreta los encabezados de
+fases combinados y mantiene la excepción de cinco fases de la última unidad de 9.º.
+**Su revisión científica y pedagógica está pendiente**: las propuestas y los votos de la captura
+anterior no se han trasladado. [Cambios, incidencias y alcance](docs/MALLAS_PRODUCCION_V4.md).
+
+Descargarlos del bucket privado con `uv run gskg produccion descargar --destino /tmp/paquetes-mallas-finales`.
+Para la API, restaurar la biblioteca con
+`uv run gskg materiales restaurar --recibo config/materiales_produccion_ciencias.lock.json --destino data/materiales_produccion_v4`.
+La ruta nueva es `/api/v4/produccion/materiales`; los comandos comprueban las generaciones y SHA.
+El contador acumulado conserva 3.941 llamadas; la revisión nueva no se ha ejecutado porque las
+59 llamadas disponibles no cubren la primera pasada. Los resultados del 22–23 de octubre descritos
+abajo corresponden a la **captura anterior**, que continúa disponible por separado.
+
 ## Producto V4 · 22 de octubre de 2026
 
 La entrega de revisión conserva once matrices, 126 hojas, **1.020 filas y 108 unidades** de 2.º a 11.º.

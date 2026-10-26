@@ -277,6 +277,14 @@ def crear_app(base: Path | None = None) -> FastAPI:
     from goes_science_kg.api_materiales import crear_router_materiales
 
     aplicacion.include_router(crear_router_materiales(directorio))
+    aplicacion.include_router(
+        crear_router_materiales(
+            directorio,
+            directorio="data/materiales_produccion_v4",
+            prefijo="/api/v4/produccion/materiales",
+            etiqueta="Mallas finales: paquetes base pendientes de revisión",
+        )
+    )
     return aplicacion
 
 

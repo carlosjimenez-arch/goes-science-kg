@@ -1,5 +1,11 @@
 # Biblioteca docente de Ciencias
 
+La entrega final recibida el 26 de octubre tiene una biblioteca independiente en
+`/api/v4/produccion/materiales`: 1.020 paquetes base por objetivo y 108 por unidad, con revisión de
+contenido pendiente. Sus 14 ZIP se descargan con `gskg produccion descargar`.
+[Edición final, incidencias y comandos](MALLAS_PRODUCCION_V4.md).
+Las propuestas revisadas descritas abajo pertenecen a la captura del 22 de octubre.
+
 La entrega del 22 de octubre de 2026 completa el empaquetado y la consulta de materiales para
 preparar clases a partir del grafo real. No requiere llamadas a modelos al construir ni consultar.
 El código está en `materiales/`, `api_materiales.py` y `cli/materiales.py`.
