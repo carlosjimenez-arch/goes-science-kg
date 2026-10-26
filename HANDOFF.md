@@ -21,7 +21,7 @@ secciones. Integra `feat/ciencias-v4` (merge `ef411f3`); no queda otra línea de
 
 | Recibo | Identidad |
 |---|---|
-| `config/datos_ciencias.lock.json` | Corpus `20c6e813…`, 29.086 archivos |
+| `config/datos_ciencias.lock.json` | Corpus `797eb37b…`, 29.415 archivos |
 | `config/materiales_ciencias.lock.json` | Biblioteca `8af1b65d…`, 3.837 registros |
 | `config/clases_ciencias.lock.json` | Entrega de guiones `e4b32786…` (862 + 108) |
 | `config/materiales_preparaciones.lock.json` | Biblioteca base `5b64ee…` que fijan las preparaciones |

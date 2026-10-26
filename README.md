@@ -77,7 +77,7 @@ El repositorio no contiene matrices, PDF, snapshots, SQLite ni resultados: todo 
 
 | Recibo | Contenido |
 |---|---|
-| `config/datos_ciencias.lock.json` | Corpus completo: 29.086 archivos, incluidos fuentes, publicación, campañas de guiones, ledgers y progresión |
+| `config/datos_ciencias.lock.json` | Corpus completo: 29.415 archivos, incluidos fuentes, publicación, campañas de guiones, ledgers y progresión |
 | `config/materiales_ciencias.lock.json` | Biblioteca docente ampliada con los guiones, para la aplicación |
 | `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
 | `config/materiales_preparaciones.lock.json` | Biblioteca base que fijan las preparaciones; necesaria sólo para recompilar guiones |
