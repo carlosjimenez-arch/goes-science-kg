@@ -97,10 +97,16 @@ requiere 540; la cota con una reparación es 1.080 y USD 2.192,843796 para esas 
 hasta 54 llamadas de catalogación y 20 controles adversariales, con su propia reserva.
 El preflight está bloqueado y esta entrega consumió **cero invocaciones nuevas**.
 
-Se solicitó ampliar el máximo acumulado a **5.200 llamadas/USD 5.500**. La solicitud no modifica
-los límites ni constituye autorización. El siguiente paso es completar la nueva catalogación,
-reconstruir las propuestas y someterlas a ciencia, currículo, psicopedagogía y revisión adversarial.
-Una propuesta negativa no se promoverá a entrega revisada por completar pruebas de ingeniería.
+El 26 de octubre de 2026 el operador respondió a la solicitud de ampliación a 5.200 llamadas/USD 5.500:
+
+> Conservar el límite actual y entregar las bases con revisión pendiente
+
+La decisión mantiene el máximo acumulado de **4.000 invocaciones/USD 3.500** y fija la entrega actual
+en los **1.128 paquetes base**, con revisión de contenido pendiente. No queda una solicitud de
+ampliación esperando respuesta. La nueva campaña de catalogación, redacción y cuatro revisiones
+no se inicia. Su eventual ejecución requerirá una nueva instrucción y presupuesto suficiente.
+El expediente inmutable en GCS conserva el estado anterior a esta decisión; este documento y el
+historial Git registran la decisión vigente, sin modificar ni reinterpretar aquel expediente.
 
 ## Verificación
 

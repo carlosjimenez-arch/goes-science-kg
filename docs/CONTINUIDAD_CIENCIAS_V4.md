@@ -12,8 +12,12 @@ trasladaron propuestas, clasificaciones ni votos de la captura anterior. La API 
 
 Los contextos de las 108 unidades están preparados con un catálogo explícitamente provisional.
 No son un plan ejecutable. La primera pasada requiere 540 invocaciones, más la catalogación;
-quedan 59 bajo el máximo acumulado vigente. No se hicieron nuevas llamadas. Se solicitó un
-máximo acumulado de 5.200 llamadas/USD 5.500, pendiente de respuesta; no se ha adoptado como límite.
+quedan 59 bajo el máximo acumulado vigente. No se hicieron nuevas llamadas. El 26 de octubre de 2026,
+ante la propuesta de ampliar a 5.200 llamadas/USD 5.500, el operador eligió literalmente:
+«Conservar el límite actual y entregar las bases con revisión pendiente».
+La entrega vigente son los 1.128 paquetes base ya publicados, con revisión de contenido pendiente.
+Se mantiene el máximo acumulado de 4.000 llamadas/USD 3.500 y no se inicia la nueva campaña.
+La solicitud de ampliación está resuelta; no debe seguir tratándose como una respuesta pendiente.
 [Estado exacto, incidencias y descarga](MALLAS_PRODUCCION_V4.md).
 
 La campaña de guiones P11 descrita abajo corresponde a los insumos anteriores. No se debe reanudar
@@ -32,7 +36,8 @@ adicionales: los defectos conocidos bloquean sus versiones aunque tengan votos p
 La publicación íntegra de guiones y unidades continúa pendiente. Hay 34 resoluciones exactas
 registradas y 2.060 trazas verificadas en 369 resultados seleccionados. El siguiente plan de 45 lotes
 requiere 225–450 llamadas y hasta USD 548,04604 de reserva. Su preflight no cabe en 4.000 llamadas;
-la solicitud a 4.400 está pendiente, conservando el máximo USD 3.500 y el contador.
+la solicitud anterior a 4.400 no amplió el límite. La decisión vigente del 26 de octubre conserva
+4.000 llamadas/USD 3.500 y la entrega de bases con revisión pendiente.
 El cierre local conserva 3.941 llamadas y USD 2.912,1834795 de reserva, con cero llamadas pendientes.
 P9 permite correcciones explícitas y cuatro lecturas nuevas; P10/P11 separan historial y contexto,
 conservan pasajes completos y auditan los protocolos anteriores. [Estado y controles](CLASES_V4.md).

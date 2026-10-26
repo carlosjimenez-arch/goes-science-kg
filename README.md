@@ -20,8 +20,10 @@ Descargarlos del bucket privado con `uv run gskg produccion descargar --destino 
 Para la API, restaurar la biblioteca con
 `uv run gskg materiales restaurar --recibo config/materiales_produccion_ciencias.lock.json --destino data/materiales_produccion_v4`.
 La ruta nueva es `/api/v4/produccion/materiales`; los comandos comprueban las generaciones y SHA.
-El contador acumulado conserva 3.941 llamadas; la revisión nueva no se ha ejecutado porque las
-59 llamadas disponibles no cubren la primera pasada. Los resultados del 22–23 de octubre descritos
+El operador decidió **conservar el límite actual y entregar las bases con revisión pendiente**.
+Se mantienen 4.000 llamadas/USD 3.500 de máximo acumulado, con 3.941 llamadas ya registradas.
+La nueva campaña no se inicia; esta entrega no consumió invocaciones adicionales.
+Los resultados del 22–23 de octubre descritos
 abajo corresponden a la **captura anterior**, que continúa disponible por separado.
 
 ## Producto V4 · 22 de octubre de 2026
@@ -96,8 +98,9 @@ El máximo autorizado sigue siendo acumulado: 4.000 invocaciones/USD 3.500 de re
 vigente conserva 3.941 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
 Incluye las fuentes, los resultados y los checkpoints de este corte. El plan documental de
 los 45 pendientes necesita hasta 450 llamadas; su preflight queda bloqueado por el límite vigente.
-La solicitud anterior de 4.400 llamadas para P11 quedó pendiente; no autoriza reanudarlo.
-Las mallas finales tienen su propio preflight y una nueva solicitud de presupuesto, también pendiente.
+La solicitud anterior de 4.400 llamadas para P11 no amplió el límite ni autoriza reanudarlo.
+El 26 de octubre se resolvió conservar el límite actual y entregar las bases de las mallas finales
+con revisión pendiente; la ampliación propuesta a 5.200 llamadas/USD 5.500 no fue autorizada.
 El cierre local conserva 3.941 llamadas, sin reinicio; 34 resoluciones exactas y 2.060 trazas verificadas
 en 369 resultados seleccionados. El caso estelar de la muestra sigue bloqueado dentro de los 45 pendientes.
 Los borradores conservan tareas, soluciones y expedientes de desarrollo; los resultados pendientes no son
